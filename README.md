@@ -574,6 +574,7 @@ Run the planner before wiring package builders:
 pnpm.cmd install:packages:plan
 pnpm.cmd install:packages:check
 pnpm.cmd install:package:check
+pnpm.cmd install:native:check
 pnpm.cmd install:init:smoke
 node scripts/plan-claw-router-install-packages.mjs --json --check
 ```
@@ -660,7 +661,8 @@ and must keep trusted forwarded headers disabled by default. Enable forwarded
 header trust only when a controlled reverse proxy is the sole inbound client.
 
 `scripts/build-claw-router-install-package.mjs` consumes the same matrix to
-create one install package from a staged production directory. The default
+create portable archive and container-context packages from a staged production
+directory. The default
 `pnpm.cmd install:package:check` command is dry-run only, so it validates the
 full 24-package builder matrix without requiring `pnpm.cmd build` output. To
 build a real package, stage the package contents under a directory shaped like
@@ -675,9 +677,8 @@ The builder writes the package archive, a per-package manifest, and
 packages use real ZIP bytes for `.zip`; Linux and macOS packages use real
 gzip-compressed tar bytes for `.tar.gz` and preserve executable mode on
 extensionless binaries under `bin/`. The tar writer supports standard ustar
-prefix paths for nested production asset names. Service packages generate
-Windows service, systemd, or launchd manifests from the shared package plan.
-All packages generate `config/sdkwork-claw-router.toml.example`. Container
+prefix paths for nested production asset names. All packages generate
+`config/sdkwork-claw-router.toml.example`. Container
 packages generate a `container/Containerfile`, platform-specific
 entrypoint (`container/entrypoint` on Linux/macOS,
 `container/entrypoint.ps1` on Windows), and `container/metadata.json` without
@@ -685,6 +686,27 @@ starting services. Desktop packages generate `desktop/metadata.json` with the
 desktop SQLite policy and OS config/data directories. The builder excludes
 `.env.release.local` even if it exists in the staging directory. Add `--json`
 for pure machine-readable output.
+
+`service` and `desktop` release assets must be final platform installers, not
+only portable archives. `scripts/build-claw-router-native-installer.mjs`
+consumes the same staged production directory and package plan to build:
+
+- Linux `.deb` packages for Ubuntu/Debian installation through
+  `apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb` or
+  `dpkg -i`.
+- Windows `.msi` packages through WiX for service and desktop install targets.
+- macOS `.pkg` packages through `pkgbuild` for service and desktop install
+  targets.
+
+The native installer builder writes the installer, a per-installer
+`.manifest.json`, and a scoped aggregate manifest. Linux `.deb` packages place
+binaries under `/opt/sdkwork-claw-router`, runtime templates under
+`/etc/sdkwork-claw-router`, docs under `/usr/share/doc/sdkwork-claw-router`,
+and service units under `/lib/systemd/system` for service mode. The Debian
+post-install script creates the `sdkwork` user/group, mutable data and log
+directories, a first-run TOML config copied from the example when missing, and
+runs `systemctl daemon-reload`; operators still configure the PostgreSQL DSN
+before enabling a server service.
 
 `scripts/smoke-install-package-init.mjs` validates the fast initialization
 contract separately from service startup. The default root command is a dry-run

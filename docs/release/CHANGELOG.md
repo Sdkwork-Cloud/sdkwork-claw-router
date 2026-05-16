@@ -19,6 +19,8 @@ All notable changes to `sdkwork-claw-router` release records will be documented 
 - Regenerated OpenAPI documents, API contract manifests, schema registry outputs, frontend manifests, and app/backend/open SDK surfaces for the new contracts.
 - Updated Rust tests to explicitly opt into non-default auth methods when testing bridge, QR, code login, and registration verification behavior.
 - Updated installer CLI tests so SQLite scenarios explicitly run under the desktop deployment profile.
+- Added native installer release assets for service and desktop modes: Linux `.deb`, Windows `.msi`, and macOS `.pkg`.
+- Updated release packaging so portable archives remain for `archive` and `container`, while native installers are uploaded for `service` and `desktop`.
 
 ### Verification
 
@@ -26,6 +28,11 @@ All notable changes to `sdkwork-claw-router` release records will be documented 
 - `cargo test -p sdkwork-claw-app-api --test app_session_route -- --nocapture`
 - `cargo test -p sdkwork-claw-product --test app_auth_api -- --nocapture`
 - `cargo test -p sdkwork-claw-installer --test installer_cli installer_cli_reports_invalid_env_catalog_root_as_machine_readable_config_error -- --nocapture`
+- `node scripts/plan-claw-router-install-packages.mjs --check`
+- `node scripts/build-claw-router-install-package.mjs --all --check --dry-run --json`
+- `node scripts/build-claw-router-native-installer.mjs --all --check --dry-run --json`
+- `node scripts/run-claw-router-product.test.mjs`
+- Local Windows WiX fixture build for `windows-x64-desktop` `.msi`
 
 ### Release Gate Status
 

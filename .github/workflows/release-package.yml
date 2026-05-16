@@ -41,6 +41,7 @@ on:
           - service
           - container
           - desktop
+          - native
       sdkwork_appbase_ref:
         description: sdkwork-appbase commit/ref
         required: true
@@ -106,7 +107,11 @@ jobs:
             (selectedPlatform === 'all' || item.platform === selectedPlatform)
             && (selectedArchitecture === 'all' || item.architecture === selectedArchitecture)
           );
-          const modes = selectedMode === 'all' ? allModes : [selectedMode];
+          const modes = selectedMode === 'all'
+            ? allModes
+            : selectedMode === 'native'
+              ? ['service', 'desktop']
+              : [selectedMode];
 
           if (include.length === 0) {
             throw new Error(`No package runners selected for platform=${selectedPlatform}, architecture=${selectedArchitecture}`);
@@ -145,6 +150,22 @@ jobs:
           lfs: true
           submodules: recursive
           token: ${{ secrets.SDKWORK_RELEASE_TOKEN || github.token }}
+
+      - name: Checkout release packaging tools
+        uses: actions/checkout@v4
+        with:
+          repository: Sdkwork-Cloud/sdkwork-claw-router
+          ref: ${{ github.sha }}
+          path: release-tools/sdkwork-claw-router
+          fetch-depth: 1
+          token: ${{ secrets.SDKWORK_RELEASE_TOKEN || github.token }}
+
+      - name: Overlay release packaging tools
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          Copy-Item -LiteralPath "release-tools/sdkwork-claw-router/scripts/build-claw-router-install-package.mjs" -Destination "apps/sdkwork-claw-router/scripts/build-claw-router-install-package.mjs" -Force
+          Copy-Item -LiteralPath "release-tools/sdkwork-claw-router/scripts/build-claw-router-native-installer.mjs" -Destination "apps/sdkwork-claw-router/scripts/build-claw-router-native-installer.mjs" -Force
 
       - name: Checkout sdkwork-appbase
         uses: actions/checkout@v4
@@ -206,6 +227,14 @@ jobs:
       - name: Set up Rust
         uses: dtolnay/rust-toolchain@stable
 
+      - name: Set up Windows installer tooling
+        if: matrix.platform == 'windows'
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          dotnet tool install --global wix --version 5.0.2
+          "$env:USERPROFILE\.dotnet\tools" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
       - name: Install portal workspace dependencies
         working-directory: apps/sdkwork-claw-router
         shell: pwsh
@@ -250,12 +279,29 @@ jobs:
           foreach ($mode in $modes) {
             $packageId = "$env:PACKAGE_PLATFORM-$env:PACKAGE_ARCHITECTURE-$mode"
             Write-Host "Building install package $packageId"
-            node scripts/build-claw-router-install-package.mjs `
-              --package-id $packageId `
-              --version $env:PACKAGE_VERSION `
-              --staging-root dist/install-package-staging `
-              --output-dir dist/install-packages `
-              --json
+            if ($mode -eq "service" -or $mode -eq "desktop") {
+              node scripts/build-claw-router-native-installer.mjs `
+                --package-id $packageId `
+                --version $env:PACKAGE_VERSION `
+                --staging-root dist/install-package-staging `
+                --output-dir dist/install-packages `
+                --json
+            } else {
+              node scripts/build-claw-router-install-package.mjs `
+                --package-id $packageId `
+                --version $env:PACKAGE_VERSION `
+                --staging-root dist/install-package-staging `
+                --output-dir dist/install-packages `
+                --json
+            }
+          }
+
+          $aggregateManifest = Join-Path (Get-Location) "dist/install-packages/install-packages-manifest.json"
+          if (Test-Path -LiteralPath $aggregateManifest) {
+            $modeSlug = ($modes -join "-")
+            $scopedManifest = Join-Path (Get-Location) "dist/install-packages/install-packages-manifest-$env:PACKAGE_PLATFORM-$env:PACKAGE_ARCHITECTURE-$modeSlug.json"
+            Copy-Item -LiteralPath $aggregateManifest -Destination $scopedManifest -Force
+            Remove-Item -LiteralPath $aggregateManifest -Force
           }
 
       - name: Upload workflow artifact

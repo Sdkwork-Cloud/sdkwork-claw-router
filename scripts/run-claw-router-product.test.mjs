@@ -101,6 +101,14 @@ test('root package exposes pnpm product entrypoints', () => {
     'node scripts/plan-claw-router-install-packages.mjs --check',
   );
   assert.equal(
+    rootPackage.scripts['install:native:build'],
+    'node scripts/build-claw-router-native-installer.mjs',
+  );
+  assert.equal(
+    rootPackage.scripts['install:native:check'],
+    'node scripts/build-claw-router-native-installer.mjs --check --dry-run --all',
+  );
+  assert.equal(
     rootPackage.scripts['app-store:seed:update'],
     'node scripts/update-app-store-seed.mjs',
   );
@@ -1862,6 +1870,104 @@ test('install package archive builder emits tar.gz bytes for non-Windows package
   } finally {
     rmSync(fixtureRoot, { recursive: true, force: true });
   }
+});
+
+test('native installer builder emits apt-installable Debian packages for Linux service mode', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'build-claw-router-native-installer.mjs')).href
+  );
+
+  assert.deepEqual(module.parseNativeInstallerBuildArgs(['--package-id', 'linux-x64-service', '--check']), {
+    all: false,
+    check: true,
+    dryRun: false,
+    help: false,
+    json: false,
+    outputDir: null,
+    packageId: 'linux-x64-service',
+    stagingRoot: null,
+    version: '0.2.0',
+  });
+
+  const fixtureRoot = path.join(workspaceRoot, '.tmp', 'native-installer-deb-test');
+  const stagingRoot = path.join(fixtureRoot, 'staging');
+  const outputDir = path.join(fixtureRoot, 'out');
+  rmSync(fixtureRoot, { recursive: true, force: true });
+  mkdirSync(path.join(stagingRoot, 'bin'), { recursive: true });
+  mkdirSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives'), { recursive: true });
+  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-gateway'), 'gateway-binary');
+  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-installer'), 'installer-binary');
+  writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'index.html'), '<!doctype html>');
+  writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives', 'sdk.zip'), 'sdk-archive');
+  writeFileSync(path.join(stagingRoot, '.env.release.example'), 'PORTAL_PUBLIC_API_BASE_URL=/v1\n');
+
+  try {
+    const plan = module.createNativeInstallerBuildPlan({
+      packageId: 'linux-x64-service',
+      stagingRoot,
+      outputDir,
+      version: '0.1.0',
+    });
+    assert.equal(plan.nativeFormat, 'deb');
+    assert.equal(plan.buildTool, 'internal-deb');
+    assert.equal(plan.installerName, 'sdkwork-claw-router-linux-x64-service-0.1.0.deb');
+    assert.deepEqual(module.validateNativeInstallerBuildPlan(plan), []);
+
+    const result = await module.buildNativeInstaller(plan);
+    assert.equal(result.installer.file, 'sdkwork-claw-router-linux-x64-service-0.1.0.deb');
+    assert.equal(result.installer.format, 'deb');
+    assert.equal(result.installer.kind, 'native-installer');
+    assert.match(result.installer.sha256, /^[a-f0-9]{64}$/u);
+
+    const arEntries = readArEntries(readFileSync(result.installerPath));
+    assert.ok(arEntries.has('debian-binary'));
+    assert.ok(arEntries.has('control.tar.gz'));
+    assert.ok(arEntries.has('data.tar.gz'));
+    assert.equal(arEntries.get('debian-binary').toString('utf8'), '2.0\n');
+
+    const controlTar = gunzipSync(arEntries.get('control.tar.gz'));
+    const controlText = readTarEntryText(controlTar, './control');
+    assert.ok(controlText.includes('Package: sdkwork-claw-router'));
+    assert.ok(controlText.includes('Architecture: amd64'));
+    assert.ok(readTarEntryText(controlTar, './postinst').includes('systemctl daemon-reload'));
+
+    const dataTar = gunzipSync(arEntries.get('data.tar.gz'));
+    const dataEntries = readTarEntries(dataTar);
+    assert.equal(dataEntries.get('./opt/sdkwork-claw-router/bin/sdkwork-claw-gateway')?.mode, 0o755);
+    assert.equal(dataEntries.get('./opt/sdkwork-claw-router/bin/sdkwork-claw-installer')?.mode, 0o755);
+    assert.ok(dataEntries.has('./opt/sdkwork-claw-router/portal/dist/index.html'));
+    assert.ok(dataEntries.has('./etc/sdkwork-claw-router/sdkwork-claw-router.toml.example'));
+    assert.ok(dataEntries.has('./lib/systemd/system/sdkwork-claw-router.service'));
+    assert.ok(dataEntries.has('./usr/share/sdkwork-claw-router/install-manifest.json'));
+
+    const aggregateManifest = JSON.parse(readFileSync(path.join(outputDir, 'install-packages-manifest.json'), 'utf8'));
+    assert.deepEqual(aggregateManifest.archives.map((archive) => archive.file), [
+      'sdkwork-claw-router-linux-x64-service-0.1.0.deb',
+    ]);
+  } finally {
+    rmSync(fixtureRoot, { recursive: true, force: true });
+  }
+});
+
+test('native installer builder CLI validates cross-platform service and desktop installers in dry-run mode', async () => {
+  const { stdout, stderr } = await execFileAsync(process.execPath, [
+    path.join(workspaceRoot, 'scripts', 'build-claw-router-native-installer.mjs'),
+    '--all',
+    '--check',
+    '--dry-run',
+    '--json',
+  ], {
+    cwd: workspaceRoot,
+    maxBuffer: 1024 * 1024 * 4,
+  });
+  const payload = JSON.parse(stdout);
+  assert.equal(stderr, '');
+  assert.equal(payload.ok, true);
+  assert.equal(payload.plans.length, 12);
+  assert.deepEqual(payload.issues, []);
+  assert.ok(payload.plans.some((plan) => plan.installerName === 'sdkwork-claw-router-linux-x64-service-0.2.0.deb'));
+  assert.ok(payload.plans.some((plan) => plan.installerName === 'sdkwork-claw-router-windows-arm64-desktop-0.2.0.msi'));
+  assert.ok(payload.plans.some((plan) => plan.installerName === 'sdkwork-claw-router-macos-x64-service-0.2.0.pkg'));
 });
 
 test('install package tar writer supports long production asset paths', async () => {
@@ -5765,6 +5871,21 @@ function readTarEntryText(buffer, expectedName) {
     offset += 512 + Math.ceil(size / 512) * 512;
   }
   throw new Error(`Missing tar entry: ${expectedName}`);
+}
+
+function readArEntries(buffer) {
+  assert.equal(buffer.subarray(0, 8).toString('ascii'), '!<arch>\n');
+  const entries = new Map();
+  for (let offset = 8; offset + 60 <= buffer.length;) {
+    const header = buffer.subarray(offset, offset + 60);
+    const name = header.subarray(0, 16).toString('ascii').trim().replace(/\/$/u, '');
+    const size = Number.parseInt(header.subarray(48, 58).toString('ascii').trim(), 10);
+    assert.equal(header.subarray(58, 60).toString('ascii'), '`\n');
+    const dataOffset = offset + 60;
+    entries.set(name, buffer.subarray(dataOffset, dataOffset + size));
+    offset = dataOffset + size + (size % 2);
+  }
+  return entries;
 }
 
 function readTarString(buffer, offset, length) {

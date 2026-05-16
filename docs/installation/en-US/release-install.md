@@ -32,9 +32,10 @@ Example package names:
 
 ```text
 sdkwork-claw-router-windows-x64-desktop-0.2.0.zip
+sdkwork-claw-router-windows-x64-desktop-0.2.0.msi
 sdkwork-claw-router-linux-x64-archive-0.2.0.tar.gz
-sdkwork-claw-router-linux-arm64-service-0.2.0.tar.gz
-sdkwork-claw-router-macos-arm64-desktop-0.2.0.tar.gz
+sdkwork-claw-router-linux-arm64-service-0.2.0.deb
+sdkwork-claw-router-macos-arm64-desktop-0.2.0.pkg
 ```
 
 From a source checkout, inspect the full matrix:
@@ -49,7 +50,29 @@ Inspect an older version matrix:
 node scripts/plan-claw-router-install-packages.mjs --version 0.1.0
 ```
 
-## 2. Extract The Package
+## 2. Install Or Extract The Package
+
+Use platform-native installers for `service` and `desktop` packages:
+
+Ubuntu/Debian:
+
+```bash
+sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
+```
+
+Windows:
+
+```powershell
+msiexec /i .\sdkwork-claw-router-windows-x64-desktop-0.2.0.msi
+```
+
+macOS:
+
+```bash
+sudo installer -pkg sdkwork-claw-router-macos-arm64-desktop-0.2.0.pkg -target /
+```
+
+Use archive packages only when you need a portable directory layout:
 
 Windows:
 
@@ -180,11 +203,22 @@ curl http://127.0.0.1:3900/readyz
 
 ## 7. Service And Container Packages
 
-`service` packages include host service manifests:
+`service` and `desktop` release assets are native installers:
 
-- Windows: `service/windows/sdkwork-claw-router.xml`
-- Linux: `service/linux/sdkwork-claw-router.service`
-- macOS: `service/macos/com.sdkwork.claw-router.plist`
+- Windows: `.msi`
+- Linux: `.deb`
+- macOS: `.pkg`
+
+The Linux `.deb` installer places the service unit at
+`/lib/systemd/system/sdkwork-claw-router.service`, creates
+`/etc/sdkwork-claw-router`, `/var/lib/sdkwork-claw-router`, and
+`/var/log/sdkwork-claw-router`, and runs `systemctl daemon-reload`.
+Configure `/etc/sdkwork-claw-router/sdkwork-claw-router.toml` with the target
+PostgreSQL DSN before enabling the server service:
+
+```bash
+sudo systemctl enable --now sdkwork-claw-router
+```
 
 `container` packages include:
 
