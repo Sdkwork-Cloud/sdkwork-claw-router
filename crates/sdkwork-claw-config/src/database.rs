@@ -237,7 +237,7 @@ impl DatabaseConfig {
             RuntimeConfigProfile::Desktop => "desktop",
         };
         let mut lines = vec![
-            "# SdkWork Claw Router runtime configuration.".to_owned(),
+            "# SdkWork ClawRouter runtime configuration.".to_owned(),
             "# This file was initialized automatically; edit [database].url for the target environment.".to_owned(),
             format!(
                 "# Runtime config file: {}",
@@ -437,40 +437,34 @@ impl RuntimeConfigLocation {
     pub fn for_platform(platform: &str, profile: RuntimeConfigProfile) -> Self {
         match (normalize_platform(platform).as_str(), profile) {
             ("windows", RuntimeConfigProfile::Server) => Self {
-                config_file: PathBuf::from(
-                    "%ProgramData%/SdkWork/Claw Router/sdkwork-claw-router.toml",
-                ),
-                data_directory: PathBuf::from("%ProgramData%/SdkWork/Claw Router/Data"),
+                config_file: PathBuf::from("%ProgramData%/SdkWork/ClawRouter/clawrouter.toml"),
+                data_directory: PathBuf::from("%ProgramData%/SdkWork/ClawRouter/Data"),
             },
             ("windows", RuntimeConfigProfile::Desktop) => Self {
-                config_file: PathBuf::from(
-                    "%APPDATA%/SdkWork/Claw Router/sdkwork-claw-router.toml",
-                ),
-                data_directory: PathBuf::from("%LOCALAPPDATA%/SdkWork/Claw Router"),
+                config_file: PathBuf::from("%APPDATA%/SdkWork/ClawRouter/clawrouter.toml"),
+                data_directory: PathBuf::from("%LOCALAPPDATA%/SdkWork/ClawRouter"),
             },
             ("macos", RuntimeConfigProfile::Server) => Self {
                 config_file: PathBuf::from(
-                    "/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml",
+                    "/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml",
                 ),
-                data_directory: PathBuf::from("/Library/Application Support/SdkWork/Claw Router"),
+                data_directory: PathBuf::from("/Library/Application Support/SdkWork/ClawRouter"),
             },
             ("macos", RuntimeConfigProfile::Desktop) => Self {
                 config_file: PathBuf::from(
-                    "~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml",
+                    "~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml",
                 ),
-                data_directory: PathBuf::from("~/Library/Application Support/SdkWork/Claw Router"),
+                data_directory: PathBuf::from("~/Library/Application Support/SdkWork/ClawRouter"),
             },
             (_, RuntimeConfigProfile::Server) => Self {
-                config_file: PathBuf::from("/etc/sdkwork-claw-router/sdkwork-claw-router.toml"),
-                data_directory: PathBuf::from("/var/lib/sdkwork-claw-router"),
+                config_file: PathBuf::from("/etc/clawrouter/clawrouter.toml"),
+                data_directory: PathBuf::from("/var/lib/clawrouter"),
             },
             (_, RuntimeConfigProfile::Desktop) => Self {
                 config_file: PathBuf::from(
-                    "${XDG_CONFIG_HOME:-~/.config}/sdkwork-claw-router/sdkwork-claw-router.toml",
+                    "${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml",
                 ),
-                data_directory: PathBuf::from(
-                    "${XDG_DATA_HOME:-~/.local/share}/sdkwork-claw-router",
-                ),
+                data_directory: PathBuf::from("${XDG_DATA_HOME:-~/.local/share}/clawrouter"),
             },
         }
     }
@@ -485,12 +479,9 @@ impl RuntimeConfigLocation {
                 let program_data = get_env("ProgramData")
                     .or_else(|| get_env("PROGRAMDATA"))
                     .unwrap_or_else(|| "C:/ProgramData".to_owned());
-                let root = join_runtime_path(&program_data, "SdkWork/Claw Router");
+                let root = join_runtime_path(&program_data, "SdkWork/ClawRouter");
                 Self {
-                    config_file: PathBuf::from(join_runtime_path(
-                        &root,
-                        "sdkwork-claw-router.toml",
-                    )),
+                    config_file: PathBuf::from(join_runtime_path(&root, "clawrouter.toml")),
                     data_directory: PathBuf::from(join_runtime_path(&root, "Data")),
                 }
             }
@@ -499,13 +490,10 @@ impl RuntimeConfigLocation {
                     .unwrap_or_else(|| "C:/Users/Default/AppData/Roaming".to_owned());
                 let local_app_data = get_env("LOCALAPPDATA")
                     .unwrap_or_else(|| "C:/Users/Default/AppData/Local".to_owned());
-                let config_root = join_runtime_path(&app_data, "SdkWork/Claw Router");
-                let data_root = join_runtime_path(&local_app_data, "SdkWork/Claw Router");
+                let config_root = join_runtime_path(&app_data, "SdkWork/ClawRouter");
+                let data_root = join_runtime_path(&local_app_data, "SdkWork/ClawRouter");
                 Self {
-                    config_file: PathBuf::from(join_runtime_path(
-                        &config_root,
-                        "sdkwork-claw-router.toml",
-                    )),
+                    config_file: PathBuf::from(join_runtime_path(&config_root, "clawrouter.toml")),
                     data_directory: PathBuf::from(data_root),
                 }
             }
@@ -513,12 +501,9 @@ impl RuntimeConfigLocation {
             ("macos", RuntimeConfigProfile::Desktop) => {
                 let home = get_env("HOME").unwrap_or_else(|| "~".to_owned());
                 let root =
-                    join_runtime_path(&home, "Library/Application Support/SdkWork/Claw Router");
+                    join_runtime_path(&home, "Library/Application Support/SdkWork/ClawRouter");
                 Self {
-                    config_file: PathBuf::from(join_runtime_path(
-                        &root,
-                        "sdkwork-claw-router.toml",
-                    )),
+                    config_file: PathBuf::from(join_runtime_path(&root, "clawrouter.toml")),
                     data_directory: PathBuf::from(root),
                 }
             }
@@ -529,13 +514,10 @@ impl RuntimeConfigLocation {
                     .unwrap_or_else(|| join_runtime_path(&home, ".config"));
                 let data_home = get_env("XDG_DATA_HOME")
                     .unwrap_or_else(|| join_runtime_path(&home, ".local/share"));
-                let config_root = join_runtime_path(&config_home, "sdkwork-claw-router");
-                let data_root = join_runtime_path(&data_home, "sdkwork-claw-router");
+                let config_root = join_runtime_path(&config_home, "clawrouter");
+                let data_root = join_runtime_path(&data_home, "clawrouter");
                 Self {
-                    config_file: PathBuf::from(join_runtime_path(
-                        &config_root,
-                        "sdkwork-claw-router.toml",
-                    )),
+                    config_file: PathBuf::from(join_runtime_path(&config_root, "clawrouter.toml")),
                     data_directory: PathBuf::from(data_root),
                 }
             }
@@ -545,7 +527,7 @@ impl RuntimeConfigLocation {
     pub fn sqlite_database_path(&self) -> PathBuf {
         PathBuf::from(join_runtime_path(
             self.data_directory.to_string_lossy().as_ref(),
-            "sdkwork-claw-router.sqlite",
+            "clawrouter.sqlite",
         ))
     }
 }

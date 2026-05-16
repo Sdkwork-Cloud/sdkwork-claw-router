@@ -9,7 +9,14 @@ const SUPPORTED_ARCHITECTURES = Object.freeze(['x64', 'arm64']);
 const SUPPORTED_DEPLOYMENT_MODES = Object.freeze(['archive', 'service', 'container', 'desktop']);
 const DEFAULT_VERSION = DEFAULT_RELEASE_VERSION;
 const HEALTH_CHECKS = Object.freeze(['/healthz', '/readyz']);
-const RUNTIME_CONFIG_TEMPLATE_PATH = 'config/sdkwork-claw-router.toml.example';
+const INTERNAL_PROJECT_NAME = 'sdkwork-claw-router';
+const PACKAGE_NAME = 'clawrouter';
+const RUNTIME_DISPLAY_NAME = 'SdkWork ClawRouter';
+const EDGE_BINARY_BASENAME = 'clawrouter';
+const INSTALLER_BINARY_BASENAME = 'clawrouterctl';
+const POSIX_INSTALL_ROOT = '/opt/clawrouter';
+const WINDOWS_INSTALL_ROOT = 'C:/clawrouter';
+const RUNTIME_CONFIG_TEMPLATE_PATH = 'config/clawrouter.toml.example';
 const POSTGRES_DSN_EXAMPLE = 'postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router';
 const FAST_INITIALIZATION_CONTRACT = Object.freeze([
   'host-env-prepare',
@@ -107,7 +114,10 @@ function createInstallPackagePlan({
 
   return {
     schemaVersion: INSTALL_PACKAGE_SCHEMA_VERSION,
-    product: 'sdkwork-claw-router',
+    product: INTERNAL_PROJECT_NAME,
+    packageName: PACKAGE_NAME,
+    runtimeName: PACKAGE_NAME,
+    displayName: RUNTIME_DISPLAY_NAME,
     version: normalizedVersion,
     platforms: selectedPlatforms,
     architectures: selectedArchitectures,
@@ -127,8 +137,8 @@ function createInstallPackagePlan({
 function createInstallPackageItem({ platform, architecture, deploymentMode, version }) {
   const exeSuffix = platform === 'windows' ? '.exe' : '';
   const archiveExtension = platform === 'windows' ? 'zip' : 'tar.gz';
-  const binaryName = `sdkwork-claw-gateway${exeSuffix}`;
-  const installerBinaryName = `sdkwork-claw-installer${exeSuffix}`;
+  const binaryName = `${EDGE_BINARY_BASENAME}${exeSuffix}`;
+  const installerBinaryName = `${INSTALLER_BINARY_BASENAME}${exeSuffix}`;
   const id = `${platform}-${architecture}-${deploymentMode}`;
   const runtimeProfile = runtimeProfileForMode(deploymentMode);
   const databasePolicy = databasePolicyFor({ platform, runtimeProfile });
@@ -140,7 +150,7 @@ function createInstallPackageItem({ platform, architecture, deploymentMode, vers
     architecture,
     deploymentMode,
     runtimeProfile,
-    archiveName: `sdkwork-claw-router-${id}-${version}.${archiveExtension}`,
+    archiveName: `${PACKAGE_NAME}-${id}-${version}.${archiveExtension}`,
     binaryName,
     installerBinaryName,
     packageKind: packageKindForMode(deploymentMode),
@@ -315,43 +325,43 @@ function runtimeConfigLocationsFor(platform, runtimeProfile) {
   if (runtimeProfile === 'desktop') {
     if (platform === 'windows') {
       return {
-        configFile: '%APPDATA%/SdkWork/Claw Router/sdkwork-claw-router.toml',
-        dataDirectory: '%LOCALAPPDATA%/SdkWork/Claw Router',
-        sqlitePath: '%LOCALAPPDATA%/SdkWork/Claw Router/sdkwork-claw-router.sqlite',
+        configFile: '%APPDATA%/SdkWork/ClawRouter/clawrouter.toml',
+        dataDirectory: '%LOCALAPPDATA%/SdkWork/ClawRouter',
+        sqlitePath: '%LOCALAPPDATA%/SdkWork/ClawRouter/clawrouter.sqlite',
       };
     }
     if (platform === 'macos') {
       return {
-        configFile: '~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml',
-        dataDirectory: '~/Library/Application Support/SdkWork/Claw Router',
-        sqlitePath: '~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sqlite',
+        configFile: '~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml',
+        dataDirectory: '~/Library/Application Support/SdkWork/ClawRouter',
+        sqlitePath: '~/Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite',
       };
     }
     return {
-      configFile: '${XDG_CONFIG_HOME:-~/.config}/sdkwork-claw-router/sdkwork-claw-router.toml',
-      dataDirectory: '${XDG_DATA_HOME:-~/.local/share}/sdkwork-claw-router',
-      sqlitePath: '${XDG_DATA_HOME:-~/.local/share}/sdkwork-claw-router/sdkwork-claw-router.sqlite',
+      configFile: '${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml',
+      dataDirectory: '${XDG_DATA_HOME:-~/.local/share}/clawrouter',
+      sqlitePath: '${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite',
     };
   }
 
   if (platform === 'windows') {
     return {
-      configFile: '%ProgramData%/SdkWork/Claw Router/sdkwork-claw-router.toml',
-      dataDirectory: '%ProgramData%/SdkWork/Claw Router/Data',
-      sqlitePath: '%ProgramData%/SdkWork/Claw Router/Data/sdkwork-claw-router.sqlite',
+      configFile: '%ProgramData%/SdkWork/ClawRouter/clawrouter.toml',
+      dataDirectory: '%ProgramData%/SdkWork/ClawRouter/Data',
+      sqlitePath: '%ProgramData%/SdkWork/ClawRouter/Data/clawrouter.sqlite',
     };
   }
   if (platform === 'macos') {
     return {
-      configFile: '/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml',
-      dataDirectory: '/Library/Application Support/SdkWork/Claw Router',
-      sqlitePath: '/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sqlite',
+      configFile: '/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml',
+      dataDirectory: '/Library/Application Support/SdkWork/ClawRouter',
+      sqlitePath: '/Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite',
     };
   }
   return {
-    configFile: '/etc/sdkwork-claw-router/sdkwork-claw-router.toml',
-    dataDirectory: '/var/lib/sdkwork-claw-router',
-    sqlitePath: '/var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite',
+    configFile: '/etc/clawrouter/clawrouter.toml',
+    dataDirectory: '/var/lib/clawrouter',
+    sqlitePath: '/var/lib/clawrouter/clawrouter.sqlite',
   };
 }
 
@@ -376,18 +386,18 @@ function serviceIntegrationFor(platform, deploymentMode) {
   if (platform === 'windows') {
     return {
       kind: 'windows-service',
-      manifest: 'service/windows/sdkwork-claw-router.xml',
+      manifest: 'service/windows/clawrouter.xml',
     };
   }
   if (platform === 'linux') {
     return {
       kind: 'systemd',
-      manifest: 'service/linux/sdkwork-claw-router.service',
+      manifest: 'service/linux/clawrouter.service',
     };
   }
   return {
     kind: 'launchd',
-    manifest: 'service/macos/com.sdkwork.claw-router.plist',
+    manifest: 'service/macos/com.sdkwork.clawrouter.plist',
   };
 }
 
@@ -399,8 +409,8 @@ function containerIntegrationFor(platform, deploymentMode, binaryName) {
     return {
       kind: 'container-image',
       baseImagePolicy: 'windows-nanoserver-runtime',
-      entrypoint: `C:/sdkwork-claw-router/bin/${binaryName}`,
-      workingDirectory: 'C:/sdkwork-claw-router',
+      entrypoint: `${WINDOWS_INSTALL_ROOT}/bin/${binaryName}`,
+      workingDirectory: WINDOWS_INSTALL_ROOT,
       runtimeUser: 'ContainerUser',
       exposedPorts: [3900],
     };
@@ -409,7 +419,7 @@ function containerIntegrationFor(platform, deploymentMode, binaryName) {
     kind: 'container-image',
     baseImagePolicy: 'distroless-or-minimal-runtime',
     entrypoint: containerEntrypoint(platform, binaryName),
-    workingDirectory: '/opt/sdkwork-claw-router',
+    workingDirectory: POSIX_INSTALL_ROOT,
     runtimeUser: 'sdkwork',
     exposedPorts: [3900],
   };
@@ -417,9 +427,9 @@ function containerIntegrationFor(platform, deploymentMode, binaryName) {
 
 function containerEntrypoint(platform, binaryName) {
   if (platform === 'windows') {
-    return `C:/sdkwork-claw-router/bin/${binaryName}`;
+    return `${WINDOWS_INSTALL_ROOT}/bin/${binaryName}`;
   }
-  return `/opt/sdkwork-claw-router/bin/${binaryName}`;
+  return `${POSIX_INSTALL_ROOT}/bin/${binaryName}`;
 }
 
 function validateInstallPackagePlan(plan) {
@@ -427,8 +437,14 @@ function validateInstallPackagePlan(plan) {
   if (plan.schemaVersion !== INSTALL_PACKAGE_SCHEMA_VERSION) {
     issues.push(`schemaVersion must be ${INSTALL_PACKAGE_SCHEMA_VERSION}`);
   }
-  if (!plan.product || plan.product !== 'sdkwork-claw-router') {
-    issues.push('product must be sdkwork-claw-router');
+  if (!plan.product || plan.product !== INTERNAL_PROJECT_NAME) {
+    issues.push(`product must be ${INTERNAL_PROJECT_NAME}`);
+  }
+  if (plan.packageName !== PACKAGE_NAME) {
+    issues.push(`packageName must be ${PACKAGE_NAME}`);
+  }
+  if (plan.runtimeName !== PACKAGE_NAME) {
+    issues.push(`runtimeName must be ${PACKAGE_NAME}`);
   }
   if (!plan.version || !/^[0-9A-Za-z][0-9A-Za-z._-]*$/u.test(plan.version)) {
     issues.push('version must be a non-empty package-safe value');
@@ -685,13 +701,20 @@ if (process.argv[1] && import.meta.url.endsWith(process.argv[1].replaceAll('\\',
 
 export {
   DEFAULT_VERSION,
+  EDGE_BINARY_BASENAME,
   FAST_INITIALIZATION_CONTRACT,
+  INSTALLER_BINARY_BASENAME,
   INSTALL_PACKAGE_SCHEMA_VERSION,
+  INTERNAL_PROJECT_NAME,
+  PACKAGE_NAME,
+  POSIX_INSTALL_ROOT,
   RUNTIME_CONFIG_TEMPLATE_PATH,
+  RUNTIME_DISPLAY_NAME,
   POSTGRES_DSN_EXAMPLE,
   SUPPORTED_ARCHITECTURES,
   SUPPORTED_DEPLOYMENT_MODES,
   SUPPORTED_PLATFORMS,
+  WINDOWS_INSTALL_ROOT,
   createInstallPackagePlan,
   databasePolicyFor,
   main,

@@ -17,7 +17,7 @@ const DEFAULT_APP_API_BIND = '127.0.0.1:18082';
 const DEFAULT_SERVER_BIND = '0.0.0.0:3900';
 const DEFAULT_PORTAL_BIND = '127.0.0.1:3901';
 const DEFAULT_EXTERNAL_SCHEME = 'http';
-const DEFAULT_DEV_DATABASE_RELATIVE_PATH = path.join('target', 'dev', 'sdkwork-claw-router.sqlite');
+const DEFAULT_DEV_DATABASE_RELATIVE_PATH = path.join('target', 'dev', 'clawrouter.sqlite');
 const DEFAULT_MODELS_CATALOG_RELATIVE_PATH = path.join('data', 'sdkwork-models');
 const DEFAULT_DEV_SECRET =
   'sdkwork-claw-router-local-dev-secret-20260507';

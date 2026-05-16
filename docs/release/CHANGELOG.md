@@ -22,7 +22,7 @@ All notable changes to `sdkwork-claw-router` release records will be documented 
 - Added native installer release assets for service and desktop modes: Linux `.deb`, Windows `.msi`, and macOS `.pkg`.
 - Updated release packaging so portable archives remain for `archive` and `container`, while native installers are uploaded for `service` and `desktop`.
 - Changed server/service package defaults to local SQLite for single-node zero-config startup, with PostgreSQL documented as the production and multi-node option.
-- Updated Linux `.deb` service installation so the package creates `/etc/default/sdkwork-claw-router`, generates the default runtime TOML, and runs installer initialization from systemd before starting the gateway.
+- Updated Linux `.deb` service installation so the package creates `/etc/default/clawrouter`, generates the default runtime TOML, and runs installer initialization from systemd before starting the gateway.
 - Simplified English and Chinese installation and initialization guides so Ubuntu/Debian service install is `apt install` plus `systemctl enable --now`.
 
 ### Verification

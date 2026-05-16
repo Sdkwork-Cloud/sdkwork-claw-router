@@ -136,18 +136,18 @@ SDK 包版本独立于 Claw Router release 版本。以 SDK package 自身 `pack
 
 ## 8. 运维检查
 
-下面的命令假设 `sdkwork-claw-installer` 已在 `PATH` 中。若从 release 包解压目录执行，Linux/macOS 使用 `./bin/sdkwork-claw-installer`，Windows 使用 `.\bin\sdkwork-claw-installer.exe`。
+下面的命令假设 `clawrouterctl` 已在 `PATH` 中。若从 release 包解压目录执行，Linux/macOS 使用 `./bin/clawrouterctl`，Windows 使用 `.\bin\clawrouterctl.exe`。
 
 查看安装状态：
 
 ```bash
-sdkwork-claw-installer status
+clawrouterctl status
 ```
 
 刷新模型目录：
 
 ```bash
-sdkwork-claw-installer refresh-catalog --force
+clawrouterctl refresh-catalog --force
 ```
 
 查看 readiness：

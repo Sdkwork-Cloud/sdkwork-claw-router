@@ -26,10 +26,10 @@ Release Date: 2026-05-16
 安装包命名使用这个版本号，例如：
 
 ```text
-sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sdkwork-claw-router-windows-x64-desktop-0.2.0.msi
-sdkwork-claw-router-macos-arm64-desktop-0.2.0.pkg
-sdkwork-claw-router-linux-x64-archive-0.2.0.tar.gz
+clawrouter-linux-x64-service-0.2.0.deb
+clawrouter-windows-x64-desktop-0.2.0.msi
+clawrouter-macos-arm64-desktop-0.2.0.pkg
+clawrouter-linux-x64-archive-0.2.0.tar.gz
 ```
 
 如需查看完整安装包矩阵：
@@ -65,37 +65,36 @@ pnpm start
 Ubuntu/Debian service 包：
 
 ```bash
-sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sudo systemctl enable --now sdkwork-claw-router
+sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
 curl http://127.0.0.1:3900/healthz
 curl http://127.0.0.1:3900/readyz
 ```
 
-Debian service 包会自动创建 `/etc/default/sdkwork-claw-router`、`/etc/sdkwork-claw-router/sdkwork-claw-router.toml`、数据目录和日志目录。systemd unit 会在 gateway 启动前自动执行初始化和 catalog 刷新。
+Debian service 包会自动创建 `/etc/default/clawrouter`、`/etc/clawrouter/clawrouter.toml`、数据目录和日志目录，在 systemd 主机上启用并启动 `clawrouter.service`。systemd unit 会在 gateway 启动前自动执行初始化和 catalog 刷新。
 
 Linux/macOS 原生 desktop 包：
 
 ```bash
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
-/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway
+/opt/clawrouter/bin/clawrouterctl ensure
+/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
+/opt/clawrouter/bin/clawrouter
 ```
 
 Linux/macOS 可移植 release 包根目录：
 
 ```bash
-./bin/sdkwork-claw-installer ensure
-./bin/sdkwork-claw-installer refresh-catalog --force
-./bin/sdkwork-claw-gateway
+./bin/clawrouterctl ensure
+./bin/clawrouterctl refresh-catalog --force
+./bin/clawrouter
 ```
 
 Windows MSI 安装目录：
 
 ```powershell
-Set-Location "C:\Program Files\SdkWork Claw Router"
-.\bin\sdkwork-claw-installer.exe ensure
-.\bin\sdkwork-claw-installer.exe refresh-catalog --force
-.\bin\sdkwork-claw-gateway.exe
+Set-Location "C:\Program Files\ClawRouter"
+.\bin\clawrouterctl.exe ensure
+.\bin\clawrouterctl.exe refresh-catalog --force
+.\bin\clawrouter.exe
 ```
 
 服务启动后访问：

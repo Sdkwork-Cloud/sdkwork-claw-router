@@ -209,7 +209,7 @@ pnpm install:init:smoke
 对已构建的真实 installer 执行初始化 smoke：
 
 ```powershell
-node scripts\smoke-install-package-init.mjs --package-id linux-x64-archive --package-root dist\install-package-staging --installer-bin bin\sdkwork-claw-installer --tmp-root target\install-init-smoke\linux-x64 --check
+node scripts\smoke-install-package-init.mjs --package-id linux-x64-archive --package-root dist\install-package-staging --installer-bin bin\clawrouterctl --tmp-root target\install-init-smoke\linux-x64 --check
 ```
 
 ## 8. 验证

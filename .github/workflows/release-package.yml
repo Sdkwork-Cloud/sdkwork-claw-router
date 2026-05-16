@@ -252,7 +252,7 @@ jobs:
         shell: pwsh
         run: |
           node scripts/build-claw-router-production.mjs
-          cargo build -p sdkwork-claw-installer --release
+          cargo build -p sdkwork-claw-installer --bin clawrouterctl --release
 
       - name: Stage production files for packaging
         working-directory: apps/sdkwork-claw-router
@@ -267,8 +267,8 @@ jobs:
           New-Item -ItemType Directory -Force -Path (Join-Path $stage "portal") | Out-Null
 
           $suffix = if ($IsWindows) { ".exe" } else { "" }
-          Copy-Item -LiteralPath "target/release/sdkwork-claw-gateway$suffix" -Destination (Join-Path $stage "bin/sdkwork-claw-gateway$suffix")
-          Copy-Item -LiteralPath "target/release/sdkwork-claw-installer$suffix" -Destination (Join-Path $stage "bin/sdkwork-claw-installer$suffix")
+          Copy-Item -LiteralPath "target/release/clawrouter$suffix" -Destination (Join-Path $stage "bin/clawrouter$suffix")
+          Copy-Item -LiteralPath "target/release/clawrouterctl$suffix" -Destination (Join-Path $stage "bin/clawrouterctl$suffix")
           Copy-Item -LiteralPath ".env.release.example" -Destination (Join-Path $stage ".env.release.example")
           Copy-Item -LiteralPath "apps/sdkwork-claw-router-portal/dist" -Destination (Join-Path $stage "portal/dist") -Recurse
 
@@ -309,7 +309,7 @@ jobs:
       - name: Upload workflow artifact
         uses: actions/upload-artifact@v4
         with:
-          name: sdkwork-claw-router-${{ inputs.tag }}-${{ matrix.platform }}-${{ matrix.architecture }}
+          name: clawrouter-${{ inputs.tag }}-${{ matrix.platform }}-${{ matrix.architecture }}
           path: apps/sdkwork-claw-router/dist/install-packages/*
           if-no-files-found: error
           retention-days: 30

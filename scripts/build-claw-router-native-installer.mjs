@@ -30,7 +30,11 @@ import {
 } from './build-claw-router-install-package.mjs';
 import {
   DEFAULT_VERSION,
+  PACKAGE_NAME,
+  POSIX_INSTALL_ROOT,
+  RUNTIME_DISPLAY_NAME,
   createInstallPackagePlan,
+  RUNTIME_CONFIG_TEMPLATE_PATH,
   validateInstallPackagePlan,
 } from './plan-claw-router-install-packages.mjs';
 
@@ -342,14 +346,14 @@ function createDebianPackage(plan, fileEntries) {
 function createDebianControl(plan) {
   const packageItem = plan.package;
   return [
-    'Package: sdkwork-claw-router',
+    `Package: ${PACKAGE_NAME}`,
     `Version: ${debianVersion(packageItem.version)}`,
     'Section: utils',
     'Priority: optional',
     `Architecture: ${debianArchitecture(packageItem.architecture)}`,
     'Maintainer: SdkWork Cloud <release@sdkwork.cloud>',
     'Homepage: https://github.com/Sdkwork-Cloud/sdkwork-claw-router',
-    'Description: SdkWork Claw Router edge runtime',
+    `Description: ${RUNTIME_DISPLAY_NAME} edge runtime`,
     ` Native ${packageItem.deploymentMode} installer for ${packageItem.platform}-${packageItem.architecture}.`,
     ' Installs the edge gateway, installer utility, production portal assets, runtime',
     ' configuration template, and platform service metadata without packaging secrets.',
@@ -362,6 +366,11 @@ function createDebianPostinst(plan) {
     ? [
       'if command -v systemctl >/dev/null 2>&1; then',
       '  systemctl daemon-reload || true',
+      '  if [ -d /run/systemd/system ]; then',
+      '    systemctl enable --now clawrouter.service',
+      '  else',
+      '    systemctl enable clawrouter.service >/dev/null 2>&1 || true',
+      '  fi',
       'fi',
     ]
     : [];
@@ -372,27 +381,29 @@ function createDebianPostinst(plan) {
     '  groupadd --system sdkwork',
     'fi',
     'if ! id -u sdkwork >/dev/null 2>&1; then',
-    '  useradd --system --gid sdkwork --home-dir /opt/sdkwork-claw-router --shell /usr/sbin/nologin sdkwork',
+    `  useradd --system --gid sdkwork --home-dir ${POSIX_INSTALL_ROOT} --shell /usr/sbin/nologin sdkwork`,
     'fi',
-    'mkdir -p /etc/sdkwork-claw-router /etc/default /var/lib/sdkwork-claw-router /var/log/sdkwork-claw-router',
-    'chown -R sdkwork:sdkwork /var/lib/sdkwork-claw-router /var/log/sdkwork-claw-router',
-    'chmod 0750 /var/lib/sdkwork-claw-router /var/log/sdkwork-claw-router',
-    'if [ ! -f /etc/sdkwork-claw-router/sdkwork-claw-router.toml ] && [ -f /etc/sdkwork-claw-router/sdkwork-claw-router.toml.example ]; then',
-    '  cp /etc/sdkwork-claw-router/sdkwork-claw-router.toml.example /etc/sdkwork-claw-router/sdkwork-claw-router.toml',
+    'mkdir -p /etc/clawrouter /etc/default /var/lib/clawrouter /var/log/clawrouter',
+    'chown -R sdkwork:sdkwork /var/lib/clawrouter /var/log/clawrouter',
+    'chmod 0750 /var/lib/clawrouter /var/log/clawrouter',
+    'if [ ! -f /etc/clawrouter/clawrouter.toml ] && [ -f /etc/clawrouter/clawrouter.toml.example ]; then',
+    '  cp /etc/clawrouter/clawrouter.toml.example /etc/clawrouter/clawrouter.toml',
     'fi',
-    'if [ -f /etc/sdkwork-claw-router/sdkwork-claw-router.toml ]; then',
-    '  chown root:sdkwork /etc/sdkwork-claw-router/sdkwork-claw-router.toml || true',
-    '  chmod 0640 /etc/sdkwork-claw-router/sdkwork-claw-router.toml || true',
+    'if [ -f /etc/clawrouter/clawrouter.toml ]; then',
+    '  chown root:sdkwork /etc/clawrouter/clawrouter.toml || true',
+    '  chmod 0640 /etc/clawrouter/clawrouter.toml || true',
     'fi',
-    'if [ ! -f /etc/default/sdkwork-claw-router ]; then',
-    '  if [ -f /etc/sdkwork-claw-router/.env.release.local ]; then',
-    '    cp /etc/sdkwork-claw-router/.env.release.local /etc/default/sdkwork-claw-router',
+    'if [ ! -f /etc/default/clawrouter ]; then',
+    '  if [ -f /etc/clawrouter/.env.release.local ]; then',
+    '    cp /etc/clawrouter/.env.release.local /etc/default/clawrouter',
     '  else',
-    '    cat > /etc/default/sdkwork-claw-router <<\'EOF\'',
-    '# SdkWork Claw Router service environment.',
-    '# Created by the Debian package for zero-config local startup.',
-    '# Keep secrets out of PORTAL_PUBLIC_* values because they are visible to browsers.',
+    '    cat > /etc/default/clawrouter <<\'EOF\'',
+    '# ClawRouter service environment.',
+    '# Created by the Debian package for zero-config single-node startup.',
+    '# Keep secrets out of PORTAL_PUBLIC_* values because browsers can read them.',
     'SDKWORK_CLAW_DEPLOYMENT_MODE=server',
+    'SDKWORK_CLAW_CONFIG_FILE=/etc/clawrouter/clawrouter.toml',
+    'SDKWORK_CLAW_SERVER_BIND=0.0.0.0:3900',
     'PORTAL_PUBLIC_API_BASE_URL=/v1',
     'PORTAL_PUBLIC_OPEN_API_BASE_URL=/v1',
     'PORTAL_PUBLIC_APP_API_BASE_URL=/app/v3/api',
@@ -403,9 +414,9 @@ function createDebianPostinst(plan) {
     'EOF',
     '  fi',
     'fi',
-    'if [ -f /etc/default/sdkwork-claw-router ]; then',
-    '  chown root:sdkwork /etc/default/sdkwork-claw-router || true',
-    '  chmod 0640 /etc/default/sdkwork-claw-router || true',
+    'if [ -f /etc/default/clawrouter ]; then',
+    '  chown root:sdkwork /etc/default/clawrouter || true',
+    '  chmod 0640 /etc/default/clawrouter || true',
     'fi',
     ...serviceCommands,
     'exit 0',
@@ -426,8 +437,8 @@ function createDebianPrerm(plan) {
     '#!/bin/sh',
     'set -e',
     'if [ "$1" = "remove" ] && command -v systemctl >/dev/null 2>&1; then',
-    '  systemctl stop sdkwork-claw-router.service >/dev/null 2>&1 || true',
-    '  systemctl disable sdkwork-claw-router.service >/dev/null 2>&1 || true',
+    '  systemctl stop clawrouter.service >/dev/null 2>&1 || true',
+    '  systemctl disable clawrouter.service >/dev/null 2>&1 || true',
     'fi',
     'exit 0',
     '',
@@ -449,29 +460,29 @@ function debianDataEntriesForPackageFile(plan, entry) {
 function debianInstallPathForArchivePath(plan, archivePath) {
   const normalized = String(archivePath).replaceAll('\\', '/');
   if (normalized.startsWith('bin/') || normalized.startsWith('portal/')) {
-    return `/opt/sdkwork-claw-router/${normalized}`;
+    return `${POSIX_INSTALL_ROOT}/${normalized}`;
   }
   if (normalized === '.env.release.example') {
-    return '/opt/sdkwork-claw-router/.env.release.example';
+    return `${POSIX_INSTALL_ROOT}/.env.release.example`;
   }
-  if (normalized === 'config/sdkwork-claw-router.toml.example') {
-    return '/etc/sdkwork-claw-router/sdkwork-claw-router.toml.example';
+  if (normalized === RUNTIME_CONFIG_TEMPLATE_PATH) {
+    return '/etc/clawrouter/clawrouter.toml.example';
   }
-  if (normalized === 'service/linux/sdkwork-claw-router.service') {
+  if (normalized === 'service/linux/clawrouter.service') {
     return plan.package.deploymentMode === 'service'
-      ? '/lib/systemd/system/sdkwork-claw-router.service'
+      ? '/lib/systemd/system/clawrouter.service'
       : null;
   }
   if (normalized === 'INSTALL.md') {
-    return '/usr/share/doc/sdkwork-claw-router/INSTALL.md';
+    return '/usr/share/doc/clawrouter/INSTALL.md';
   }
   if (normalized === PACKAGE_MANIFEST_FILE) {
-    return '/usr/share/sdkwork-claw-router/install-manifest.json';
+    return '/usr/share/clawrouter/install-manifest.json';
   }
   if (normalized.startsWith('desktop/')) {
-    return `/usr/share/sdkwork-claw-router/${normalized}`;
+    return `/usr/share/clawrouter/${normalized}`;
   }
-  return `/opt/sdkwork-claw-router/${normalized}`;
+  return `${POSIX_INSTALL_ROOT}/${normalized}`;
 }
 
 async function buildMacosPkg(plan, fileEntries) {
@@ -496,7 +507,7 @@ async function buildMacosPkg(plan, fileEntries) {
     '--scripts',
     scriptsRoot,
     '--identifier',
-    `cloud.sdkwork.claw-router.${plan.package.deploymentMode}`,
+    `cloud.sdkwork.clawrouter.${plan.package.deploymentMode}`,
     '--version',
     macosPackageVersion(plan.package.version),
     '--install-location',
@@ -512,48 +523,48 @@ async function buildMacosPkg(plan, fileEntries) {
 function macosInstallPathForArchivePath(plan, archivePath) {
   const normalized = String(archivePath).replaceAll('\\', '/');
   if (normalized.startsWith('bin/') || normalized.startsWith('portal/')) {
-    return `/opt/sdkwork-claw-router/${normalized}`;
+    return `${POSIX_INSTALL_ROOT}/${normalized}`;
   }
   if (normalized === '.env.release.example') {
-    return '/opt/sdkwork-claw-router/.env.release.example';
+    return `${POSIX_INSTALL_ROOT}/.env.release.example`;
   }
-  if (normalized === 'config/sdkwork-claw-router.toml.example') {
-    return '/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml.example';
+  if (normalized === RUNTIME_CONFIG_TEMPLATE_PATH) {
+    return '/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example';
   }
-  if (normalized === 'service/macos/com.sdkwork.claw-router.plist') {
+  if (normalized === 'service/macos/com.sdkwork.clawrouter.plist') {
     return plan.package.deploymentMode === 'service'
-      ? '/Library/LaunchDaemons/com.sdkwork.claw-router.plist'
+      ? '/Library/LaunchDaemons/com.sdkwork.clawrouter.plist'
       : null;
   }
   if (normalized === 'INSTALL.md') {
-    return '/usr/local/share/sdkwork-claw-router/INSTALL.md';
+    return '/usr/local/share/clawrouter/INSTALL.md';
   }
   if (normalized === PACKAGE_MANIFEST_FILE) {
-    return '/usr/local/share/sdkwork-claw-router/install-manifest.json';
+    return '/usr/local/share/clawrouter/install-manifest.json';
   }
   if (normalized.startsWith('desktop/')) {
-    return `/usr/local/share/sdkwork-claw-router/${normalized}`;
+    return `/usr/local/share/clawrouter/${normalized}`;
   }
-  return `/opt/sdkwork-claw-router/${normalized}`;
+  return `${POSIX_INSTALL_ROOT}/${normalized}`;
 }
 
 function createMacosPostinstall(plan) {
   const launchDaemon = plan.package.deploymentMode === 'service'
     ? [
-      'if [ -f /Library/LaunchDaemons/com.sdkwork.claw-router.plist ]; then',
-      '  chown root:wheel /Library/LaunchDaemons/com.sdkwork.claw-router.plist || true',
-      '  chmod 0644 /Library/LaunchDaemons/com.sdkwork.claw-router.plist || true',
+      'if [ -f /Library/LaunchDaemons/com.sdkwork.clawrouter.plist ]; then',
+      '  chown root:wheel /Library/LaunchDaemons/com.sdkwork.clawrouter.plist || true',
+      '  chmod 0644 /Library/LaunchDaemons/com.sdkwork.clawrouter.plist || true',
       'fi',
     ]
     : [];
   return [
     '#!/bin/sh',
     'set -e',
-    'mkdir -p "/Library/Application Support/SdkWork/Claw Router" /var/log/sdkwork-claw-router',
-    'if [ ! -f "/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml" ] && [ -f "/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml.example" ]; then',
-    '  cp "/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml.example" "/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml"',
+    'mkdir -p "/Library/Application Support/SdkWork/ClawRouter" /var/log/clawrouter',
+    'if [ ! -f "/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml" ] && [ -f "/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example" ]; then',
+    '  cp "/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example" "/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml"',
     'fi',
-    'chmod 0755 /opt/sdkwork-claw-router/bin/sdkwork-claw-gateway /opt/sdkwork-claw-router/bin/sdkwork-claw-installer 2>/dev/null || true',
+    `chmod 0755 ${POSIX_INSTALL_ROOT}/bin/${plan.package.binaryName} ${POSIX_INSTALL_ROOT}/bin/${plan.package.installerBinaryName} 2>/dev/null || true`,
     ...launchDaemon,
     'exit 0',
     '',
@@ -571,7 +582,7 @@ async function buildWindowsMsi(plan, fileEntries) {
   await writeMappedPackageFiles(payloadRoot, fileEntries, (entry) =>
     windowsPayloadPathForArchivePath(plan, entry.relativePath)
   );
-  const wixSourcePath = path.join(buildRoot, 'sdkwork-claw-router.wxs');
+  const wixSourcePath = path.join(buildRoot, 'clawrouter.wxs');
   await writeFile(wixSourcePath, createWixSource(plan, payloadRoot, fileEntries), 'utf8');
   await execFileAsync('wix', [
     'build',
@@ -599,7 +610,7 @@ function windowsPayloadPathForArchivePath(_plan, archivePath) {
 
 function createWixSource(plan, payloadRoot, fileEntries) {
   const componentRefs = [];
-  const directoryTree = new DirectoryNode('INSTALLFOLDER', 'SdkWork Claw Router');
+  const directoryTree = new DirectoryNode('INSTALLFOLDER', 'ClawRouter');
   for (const entry of fileEntries) {
     const payloadPath = windowsPayloadPathForArchivePath(plan, entry.relativePath);
     if (!payloadPath) {
@@ -618,13 +629,13 @@ function createWixSource(plan, payloadRoot, fileEntries) {
   return [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">',
-    `  <Package Name="SdkWork Claw Router" Manufacturer="SdkWork Cloud" Version="${xmlEscape(windowsPackageVersion(plan.package.version))}" UpgradeCode="{${WINDOWS_UPGRADE_CODE}}" Scope="perMachine">`,
-    '    <MajorUpgrade DowngradeErrorMessage="A newer version of SdkWork Claw Router is already installed." />',
+    `  <Package Name="${RUNTIME_DISPLAY_NAME}" Manufacturer="SdkWork Cloud" Version="${xmlEscape(windowsPackageVersion(plan.package.version))}" UpgradeCode="{${WINDOWS_UPGRADE_CODE}}" Scope="perMachine">`,
+    `    <MajorUpgrade DowngradeErrorMessage="A newer version of ${RUNTIME_DISPLAY_NAME} is already installed." />`,
     '    <MediaTemplate EmbedCab="yes" />',
     '    <StandardDirectory Id="ProgramFiles64Folder">',
     ...renderWixDirectory(directoryTree, 3),
     '    </StandardDirectory>',
-    '    <Feature Id="MainFeature" Title="SdkWork Claw Router" Level="1">',
+    `    <Feature Id="MainFeature" Title="${RUNTIME_DISPLAY_NAME}" Level="1">`,
     ...componentRefs.map((componentId) => `      <ComponentRef Id="${componentId}" />`),
     '    </Feature>',
     '  </Package>',
@@ -717,7 +728,7 @@ function currentHostNativePackageId(platform = process.platform, arch = process.
 }
 
 function nativeInstallerNameForPackage(packageItem) {
-  return `sdkwork-claw-router-${packageItem.id}-${packageItem.version}.${nativeInstallerFormatForPlatform(packageItem.platform)}`;
+  return `${PACKAGE_NAME}-${packageItem.id}-${packageItem.version}.${nativeInstallerFormatForPlatform(packageItem.platform)}`;
 }
 
 function nativeInstallerFormatForPlatform(platform) {

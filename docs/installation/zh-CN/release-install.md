@@ -39,14 +39,14 @@
 常见安装包名：
 
 ```text
-sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sdkwork-claw-router-linux-x64-desktop-0.2.0.deb
-sdkwork-claw-router-windows-x64-service-0.2.0.msi
-sdkwork-claw-router-windows-x64-desktop-0.2.0.msi
-sdkwork-claw-router-macos-arm64-service-0.2.0.pkg
-sdkwork-claw-router-macos-arm64-desktop-0.2.0.pkg
-sdkwork-claw-router-linux-x64-archive-0.2.0.tar.gz
-sdkwork-claw-router-windows-x64-archive-0.2.0.zip
+clawrouter-linux-x64-service-0.2.0.deb
+clawrouter-linux-x64-desktop-0.2.0.deb
+clawrouter-windows-x64-service-0.2.0.msi
+clawrouter-windows-x64-desktop-0.2.0.msi
+clawrouter-macos-arm64-service-0.2.0.pkg
+clawrouter-macos-arm64-desktop-0.2.0.pkg
+clawrouter-linux-x64-archive-0.2.0.tar.gz
+clawrouter-windows-x64-archive-0.2.0.zip
 ```
 
 在源码仓库中可查看完整矩阵：
@@ -62,36 +62,35 @@ node scripts\plan-claw-router-install-packages.mjs --json
 适用于 Ubuntu 或 Debian 上长期运行的服务：
 
 ```bash
-sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sudo systemctl enable --now sdkwork-claw-router
+sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
 curl http://127.0.0.1:3900/healthz
 curl http://127.0.0.1:3900/readyz
 ```
 
-`.deb` 包会创建 `sdkwork` 系统用户、`/etc/sdkwork-claw-router/sdkwork-claw-router.toml`、`/etc/default/sdkwork-claw-router`、`/var/lib/sdkwork-claw-router`、`/var/log/sdkwork-claw-router` 和 systemd unit。首次启动会通过 `ExecStartPre` 自动执行 `sdkwork-claw-installer ensure` 和 `sdkwork-claw-installer refresh-catalog --force`。
+`.deb` 包会创建 `sdkwork` 系统用户、`/etc/clawrouter/clawrouter.toml`、`/etc/default/clawrouter`、`/var/lib/clawrouter`、`/var/log/clawrouter` 和 systemd unit。在 systemd 主机上，安装过程会自动启用并启动 `clawrouter.service`。首次启动会通过 `ExecStartPre` 自动执行 `clawrouterctl ensure` 和 `clawrouterctl refresh-catalog --force`。
 
 默认数据库是本地 SQLite：
 
 ```toml
 [database]
 engine = "sqlite"
-url = "sqlite:///var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite"
+url = "sqlite:///var/lib/clawrouter/clawrouter.sqlite"
 max_connections = 1
 
 [paths]
-data_directory = "/var/lib/sdkwork-claw-router"
+data_directory = "/var/lib/clawrouter"
 
 [runtime]
 deployment_mode = "server"
 ```
 
-生产或多节点部署时，在 `/etc/default/sdkwork-claw-router` 中设置 PostgreSQL URL：
+生产或多节点部署时，在 `/etc/default/clawrouter` 中设置 PostgreSQL URL：
 
 ```text
 SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router
 ```
 
-也可以写入 `/etc/sdkwork-claw-router/sdkwork-claw-router.toml`：
+也可以写入 `/etc/clawrouter/clawrouter.toml`：
 
 ```toml
 [database]
@@ -105,17 +104,17 @@ deployment_mode = "server"
 
 `.deb` 安装脚本会创建：
 
-- `/opt/sdkwork-claw-router`
-- `/etc/sdkwork-claw-router`
-- `/var/lib/sdkwork-claw-router`
-- `/var/log/sdkwork-claw-router`
-- `/etc/default/sdkwork-claw-router`
-- `service` 包会安装 `/lib/systemd/system/sdkwork-claw-router.service`
+- `/opt/clawrouter`
+- `/etc/clawrouter`
+- `/var/lib/clawrouter`
+- `/var/log/clawrouter`
+- `/etc/default/clawrouter`
+- `service` 包会安装 `/lib/systemd/system/clawrouter.service`
 
 如果服务启动时自动初始化数据库，请从日志中保存首次管理员密码：
 
 ```bash
-sudo journalctl -u sdkwork-claw-router -n 200 --no-pager
+sudo journalctl -u clawrouter -n 200 --no-pager
 ```
 
 ### Linux 桌面/单机
@@ -123,10 +122,10 @@ sudo journalctl -u sdkwork-claw-router -n 200 --no-pager
 适用于本机 SQLite 试用：
 
 ```bash
-sudo apt install ./sdkwork-claw-router-linux-x64-desktop-0.2.0.deb
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
-/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway
+sudo apt install ./clawrouter-linux-x64-desktop-0.2.0.deb
+/opt/clawrouter/bin/clawrouterctl ensure
+/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
+/opt/clawrouter/bin/clawrouter
 ```
 
 `desktop` 模式使用当前 OS 用户的配置和数据目录，默认不要求 PostgreSQL。
@@ -136,22 +135,22 @@ sudo apt install ./sdkwork-claw-router-linux-x64-desktop-0.2.0.deb
 安装 MSI：
 
 ```powershell
-msiexec /i .\sdkwork-claw-router-windows-x64-desktop-0.2.0.msi
+msiexec /i .\clawrouter-windows-x64-desktop-0.2.0.msi
 ```
 
 默认安装目录：
 
 ```text
-C:\Program Files\SdkWork Claw Router
+C:\Program Files\ClawRouter
 ```
 
 初始化并启动。server/service 模式建议使用管理员 PowerShell，desktop 模式可使用普通 PowerShell：
 
 ```powershell
-Set-Location "C:\Program Files\SdkWork Claw Router"
-.\bin\sdkwork-claw-installer.exe ensure
-.\bin\sdkwork-claw-installer.exe refresh-catalog --force
-.\bin\sdkwork-claw-gateway.exe
+Set-Location "C:\Program Files\ClawRouter"
+.\bin\clawrouterctl.exe ensure
+.\bin\clawrouterctl.exe refresh-catalog --force
+.\bin\clawrouter.exe
 ```
 
 生产或多节点 server/service 部署需要在受保护的服务环境或运行时 TOML 中配置 PostgreSQL：
@@ -165,23 +164,23 @@ $env:SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.e
 安装 PKG：
 
 ```bash
-sudo installer -pkg sdkwork-claw-router-macos-arm64-desktop-0.2.0.pkg -target /
+sudo installer -pkg clawrouter-macos-arm64-desktop-0.2.0.pkg -target /
 ```
 
 默认运行文件：
 
 ```text
-Binaries: /opt/sdkwork-claw-router/bin
-Config template: /Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml.example
-Service plist for service package: /Library/LaunchDaemons/com.sdkwork.claw-router.plist
+Binaries: /opt/clawrouter/bin
+Config template: /Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example
+Service plist for service package: /Library/LaunchDaemons/com.sdkwork.clawrouter.plist
 ```
 
 初始化并启动：
 
 ```bash
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
-/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway
+/opt/clawrouter/bin/clawrouterctl ensure
+/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
+/opt/clawrouter/bin/clawrouter
 ```
 
 ### 可移植归档包
@@ -191,38 +190,38 @@ Service plist for service package: /Library/LaunchDaemons/com.sdkwork.claw-route
 Linux/macOS：
 
 ```bash
-mkdir -p /opt/sdkwork-claw-router
-tar -xzf sdkwork-claw-router-linux-x64-archive-0.2.0.tar.gz -C /opt/sdkwork-claw-router
-cd /opt/sdkwork-claw-router
+mkdir -p /opt/clawrouter
+tar -xzf clawrouter-linux-x64-archive-0.2.0.tar.gz -C /opt/clawrouter
+cd /opt/clawrouter
 cp .env.release.example .env.release.local
 editor .env.release.local
-./bin/sdkwork-claw-installer ensure
-./bin/sdkwork-claw-installer refresh-catalog --force
-./bin/sdkwork-claw-gateway
+./bin/clawrouterctl ensure
+./bin/clawrouterctl refresh-catalog --force
+./bin/clawrouter
 ```
 
 Windows：
 
 ```powershell
-Expand-Archive .\sdkwork-claw-router-windows-x64-archive-0.2.0.zip -DestinationPath C:\sdkwork-claw-router
-Set-Location C:\sdkwork-claw-router
+Expand-Archive .\clawrouter-windows-x64-archive-0.2.0.zip -DestinationPath C:\clawrouter
+Set-Location C:\clawrouter
 Copy-Item .env.release.example .env.release.local
 notepad .env.release.local
-.\bin\sdkwork-claw-installer.exe ensure
-.\bin\sdkwork-claw-installer.exe refresh-catalog --force
-.\bin\sdkwork-claw-gateway.exe
+.\bin\clawrouterctl.exe ensure
+.\bin\clawrouterctl.exe refresh-catalog --force
+.\bin\clawrouter.exe
 ```
 
 ## 3. 安装包内容
 
 release 包包含运行 Claw Router 所需文件：
 
-- `bin/sdkwork-claw-gateway` 或 `bin/sdkwork-claw-gateway.exe`
-- `bin/sdkwork-claw-installer` 或 `bin/sdkwork-claw-installer.exe`
+- `bin/clawrouter` 或 `bin/clawrouter.exe`
+- `bin/clawrouterctl` 或 `bin/clawrouterctl.exe`
 - `portal/dist`
 - `portal/dist/sdk-archives`
 - `.env.release.example`
-- `config/sdkwork-claw-router.toml.example`
+- `config/clawrouter.toml.example`
 - `INSTALL.md`
 - `install-manifest.json`
 
@@ -234,16 +233,16 @@ release 包包含运行 Claw Router 所需文件：
 
 `archive` 和 `container` release 资产仍然是可移植 `.tar.gz` 或 `.zip`。
 
-不要把 `.env.release.local` 打包或提交。归档部署可以在目标机器上生成它；Linux service 部署使用 `.deb` 自动创建的 `/etc/default/sdkwork-claw-router`。`PORTAL_PUBLIC_*` 只能放浏览器可见配置，不要放数据库密码、供应商密钥或管理员凭据。
+不要把 `.env.release.local` 打包或提交。归档部署可以在目标机器上生成它；Linux service 部署使用 `.deb` 自动创建的 `/etc/default/clawrouter`。`PORTAL_PUBLIC_*` 只能放浏览器可见配置，不要放数据库密码、供应商密钥或管理员凭据。
 
 ## 4. 数据库策略
 
 `desktop` 包默认使用 SQLite：
 
 ```text
-Windows: %LOCALAPPDATA%/SdkWork/Claw Router/sdkwork-claw-router.sqlite
-Linux: ${XDG_DATA_HOME:-~/.local/share}/sdkwork-claw-router/sdkwork-claw-router.sqlite
-macOS: ~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sqlite
+Windows: %LOCALAPPDATA%/SdkWork/ClawRouter/clawrouter.sqlite
+Linux: ${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite
+macOS: ~/Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite
 ```
 
 `archive`、`service`、`container` 包默认使用本地 SQLite，因此单节点可以零配置启动。生产或多节点部署请设置 `SDKWORK_CLAW_DATABASE_URL`，也可以把同一个 PostgreSQL DSN 写入运行时 TOML。
@@ -251,9 +250,9 @@ macOS: ~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sql
 server/service SQLite 默认路径：
 
 ```text
-Linux: /var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite
-Windows: %ProgramData%/SdkWork/Claw Router/Data/sdkwork-claw-router.sqlite
-macOS: /Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sqlite
+Linux: /var/lib/clawrouter/clawrouter.sqlite
+Windows: %ProgramData%/SdkWork/ClawRouter/Data/clawrouter.sqlite
+macOS: /Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite
 ```
 
 默认配置路径、数据库示例和 bootstrap admin 设置见 [initialization.md](./initialization.md)。
@@ -265,25 +264,25 @@ macOS: /Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sqli
 Linux/macOS 包目录：
 
 ```bash
-./bin/sdkwork-claw-installer status
-./bin/sdkwork-claw-installer ensure
-./bin/sdkwork-claw-installer refresh-catalog --force
+./bin/clawrouterctl status
+./bin/clawrouterctl ensure
+./bin/clawrouterctl refresh-catalog --force
 ```
 
 Windows 包目录：
 
 ```powershell
-.\bin\sdkwork-claw-installer.exe status
-.\bin\sdkwork-claw-installer.exe ensure
-.\bin\sdkwork-claw-installer.exe refresh-catalog --force
+.\bin\clawrouterctl.exe status
+.\bin\clawrouterctl.exe ensure
+.\bin\clawrouterctl.exe refresh-catalog --force
 ```
 
 Linux/macOS 原生安装路径：
 
 ```bash
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer status
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
+/opt/clawrouter/bin/clawrouterctl status
+/opt/clawrouter/bin/clawrouterctl ensure
+/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
 ```
 
 初始化命令输出 JSON。首次成功安装可能包含：
@@ -305,20 +304,19 @@ Linux/macOS 原生安装路径：
 从包目录直接启动：
 
 ```bash
-./bin/sdkwork-claw-gateway
+./bin/clawrouter
 ```
 
 Windows：
 
 ```powershell
-.\bin\sdkwork-claw-gateway.exe
+.\bin\clawrouter.exe
 ```
 
 Linux 服务：
 
 ```bash
-sudo systemctl enable --now sdkwork-claw-router
-sudo systemctl status sdkwork-claw-router --no-pager
+sudo systemctl status clawrouter --no-pager
 ```
 
 默认访问地址：
@@ -347,12 +345,12 @@ curl http://127.0.0.1:3900/readyz
 示例：
 
 ```bash
-tar -xzf sdkwork-claw-router-linux-x64-container-0.2.0.tar.gz -C /opt/sdkwork-claw-router
-cd /opt/sdkwork-claw-router
-docker build -f container/Containerfile -t sdkwork-claw-router:0.2.0 .
+tar -xzf clawrouter-linux-x64-container-0.2.0.tar.gz -C /opt/clawrouter
+cd /opt/clawrouter
+docker build -f container/Containerfile -t clawrouter:0.2.0 .
 docker run --rm -p 3900:3900 \
   -e SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router" \
-  sdkwork-claw-router:0.2.0
+  clawrouter:0.2.0
 ```
 
 生产服务和容器部署应把运行配置、日志和可变数据目录作为可写资源挂载，并通过受保护环境变量或受保护 TOML 注入 PostgreSQL URL。
@@ -363,9 +361,9 @@ docker run --rm -p 3900:3900 \
 2. 备份数据库和运行时配置。
 3. 停止旧版本服务。
 4. 安装或解压新 release 包。
-5. 保留目标机器上的 `/etc/default/sdkwork-claw-router`、归档部署可能使用的 `.env.release.local` 和运行时 TOML。
+5. 保留目标机器上的 `/etc/default/clawrouter`、归档部署可能使用的 `.env.release.local` 和运行时 TOML。
 6. Linux service 包直接启动服务，让 systemd 自动执行 `ensure` 和 `refresh-catalog --force`。
-7. archive/manual 部署手动执行 `sdkwork-claw-installer ensure` 和 `sdkwork-claw-installer refresh-catalog --force`。
+7. archive/manual 部署手动执行 `clawrouterctl ensure` 和 `clawrouterctl refresh-catalog --force`。
 8. 启动新版本并检查 `/healthz` 和 `/readyz`。
 
 ## 9. 故障排查
@@ -376,4 +374,4 @@ docker run --rm -p 3900:3900 \
 - `database_error`：数据库不可达、权限不足或 schema 初始化失败。
 - `catalog_error`：模型目录路径、版本或内容校验失败。
 - `/healthz` 成功但 `/readyz` 失败：edge 进程已启动，但 gateway/admin/app/portal upstream 或数据库未就绪。
-- Linux 服务启动后立即退出：检查 `/etc/default/sdkwork-claw-router`、`/etc/sdkwork-claw-router/sdkwork-claw-router.toml` 和 `journalctl -u sdkwork-claw-router`。
+- Linux 服务启动后立即退出：检查 `/etc/default/clawrouter`、`/etc/clawrouter/clawrouter.toml` 和 `journalctl -u clawrouter`。

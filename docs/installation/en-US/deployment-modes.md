@@ -25,17 +25,17 @@ Characteristics:
 Start:
 
 ```bash
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
-/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway
+/opt/clawrouter/bin/clawrouterctl ensure
+/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
+/opt/clawrouter/bin/clawrouter
 ```
 
 From a portable archive package root, use:
 
 ```bash
-./bin/sdkwork-claw-installer ensure
-./bin/sdkwork-claw-installer refresh-catalog --force
-./bin/sdkwork-claw-gateway
+./bin/clawrouterctl ensure
+./bin/clawrouterctl refresh-catalog --force
+./bin/clawrouter
 ```
 
 ## Archive
@@ -49,9 +49,9 @@ Characteristics:
 Start:
 
 ```bash
-./bin/sdkwork-claw-installer ensure
-./bin/sdkwork-claw-installer refresh-catalog --force
-./bin/sdkwork-claw-gateway
+./bin/clawrouterctl ensure
+./bin/clawrouterctl refresh-catalog --force
+./bin/clawrouter
 ```
 
 ## Service
@@ -62,23 +62,22 @@ Characteristics:
 - Linux `.deb` service packages install the systemd unit.
 - macOS `.pkg` service packages install the launchd plist.
 - Windows `.msi` packages install runtime files and service metadata for host-specific service registration.
-- Uses local SQLite by default and stores protected service overrides in `/etc/default/sdkwork-claw-router` on Linux.
+- Uses local SQLite by default and stores protected service overrides in `/etc/default/clawrouter` on Linux.
 - Use protected PostgreSQL configuration for production or multi-node deployments.
 
 Native service assets:
 
 ```text
-Windows: sdkwork-claw-router-windows-x64-service-0.2.0.msi
-Linux: sdkwork-claw-router-linux-x64-service-0.2.0.deb
-macOS: sdkwork-claw-router-macos-arm64-service-0.2.0.pkg
+Windows: clawrouter-windows-x64-service-0.2.0.msi
+Linux: clawrouter-linux-x64-service-0.2.0.deb
+macOS: clawrouter-macos-arm64-service-0.2.0.pkg
 ```
 
-Typical Linux systemd setup after installing the `.deb`:
+Typical Linux systemd check after installing the `.deb`:
 
 ```bash
-sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sudo systemctl enable --now sdkwork-claw-router
-sudo systemctl status sdkwork-claw-router --no-pager
+sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
+sudo systemctl status clawrouter --no-pager
 ```
 
 ## Container
@@ -92,16 +91,16 @@ Characteristics:
 Example:
 
 ```bash
-docker build -f container/Containerfile -t sdkwork-claw-router:0.2.0 .
+docker build -f container/Containerfile -t clawrouter:0.2.0 .
 docker run --rm -p 3900:3900 \
   -e SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router" \
-  sdkwork-claw-router:0.2.0
+  clawrouter:0.2.0
 ```
 
 For Kubernetes:
 
 - Store the database URL in a Secret.
-- Provide `sdkwork-claw-router.toml` through a ConfigMap or mounted file.
+- Provide `clawrouter.toml` through a ConfigMap or mounted file.
 - Point readinessProbe at `/readyz`.
 - Point livenessProbe at `/healthz`.
 - Do not bake `.env.release.local` into the image.

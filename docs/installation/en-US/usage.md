@@ -136,18 +136,18 @@ After first deployment:
 
 ## 8. Operations Checks
 
-The commands below assume `sdkwork-claw-installer` is on `PATH`. From an extracted release package root, use `./bin/sdkwork-claw-installer` on Linux/macOS and `.\bin\sdkwork-claw-installer.exe` on Windows.
+The commands below assume `clawrouterctl` is on `PATH`. From an extracted release package root, use `./bin/clawrouterctl` on Linux/macOS and `.\bin\clawrouterctl.exe` on Windows.
 
 Installation status:
 
 ```bash
-sdkwork-claw-installer status
+clawrouterctl status
 ```
 
 Refresh model catalog:
 
 ```bash
-sdkwork-claw-installer refresh-catalog --force
+clawrouterctl refresh-catalog --force
 ```
 
 Readiness:

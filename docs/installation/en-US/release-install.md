@@ -39,14 +39,14 @@ Supported deployment modes:
 Common package names:
 
 ```text
-sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sdkwork-claw-router-linux-x64-desktop-0.2.0.deb
-sdkwork-claw-router-windows-x64-service-0.2.0.msi
-sdkwork-claw-router-windows-x64-desktop-0.2.0.msi
-sdkwork-claw-router-macos-arm64-service-0.2.0.pkg
-sdkwork-claw-router-macos-arm64-desktop-0.2.0.pkg
-sdkwork-claw-router-linux-x64-archive-0.2.0.tar.gz
-sdkwork-claw-router-windows-x64-archive-0.2.0.zip
+clawrouter-linux-x64-service-0.2.0.deb
+clawrouter-linux-x64-desktop-0.2.0.deb
+clawrouter-windows-x64-service-0.2.0.msi
+clawrouter-windows-x64-desktop-0.2.0.msi
+clawrouter-macos-arm64-service-0.2.0.pkg
+clawrouter-macos-arm64-desktop-0.2.0.pkg
+clawrouter-linux-x64-archive-0.2.0.tar.gz
+clawrouter-windows-x64-archive-0.2.0.zip
 ```
 
 From a source checkout, inspect the full matrix:
@@ -62,36 +62,35 @@ node scripts/plan-claw-router-install-packages.mjs --json
 Use this path for a long-running server on Ubuntu or Debian:
 
 ```bash
-sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sudo systemctl enable --now sdkwork-claw-router
+sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
 curl http://127.0.0.1:3900/healthz
 curl http://127.0.0.1:3900/readyz
 ```
 
-The `.deb` package creates the `sdkwork` system user, `/etc/sdkwork-claw-router/sdkwork-claw-router.toml`, `/etc/default/sdkwork-claw-router`, `/var/lib/sdkwork-claw-router`, `/var/log/sdkwork-claw-router`, and the systemd unit. The first start runs `sdkwork-claw-installer ensure` and `sdkwork-claw-installer refresh-catalog --force` automatically from `ExecStartPre`.
+The `.deb` package creates the `sdkwork` system user, `/etc/clawrouter/clawrouter.toml`, `/etc/default/clawrouter`, `/var/lib/clawrouter`, `/var/log/clawrouter`, and the systemd unit. On systemd hosts it enables and starts `clawrouter.service` during installation. The first start runs `clawrouterctl ensure` and `clawrouterctl refresh-catalog --force` automatically from `ExecStartPre`.
 
 The default database is local SQLite:
 
 ```toml
 [database]
 engine = "sqlite"
-url = "sqlite:///var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite"
+url = "sqlite:///var/lib/clawrouter/clawrouter.sqlite"
 max_connections = 1
 
 [paths]
-data_directory = "/var/lib/sdkwork-claw-router"
+data_directory = "/var/lib/clawrouter"
 
 [runtime]
 deployment_mode = "server"
 ```
 
-For production or multi-node deployments, set the PostgreSQL URL in `/etc/default/sdkwork-claw-router`:
+For production or multi-node deployments, set the PostgreSQL URL in `/etc/default/clawrouter`:
 
 ```text
 SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router
 ```
 
-or set it in `/etc/sdkwork-claw-router/sdkwork-claw-router.toml`:
+or set it in `/etc/clawrouter/clawrouter.toml`:
 
 ```toml
 [database]
@@ -105,17 +104,17 @@ deployment_mode = "server"
 
 The `.deb` post-install script creates:
 
-- `/opt/sdkwork-claw-router`
-- `/etc/sdkwork-claw-router`
-- `/var/lib/sdkwork-claw-router`
-- `/var/log/sdkwork-claw-router`
-- `/etc/default/sdkwork-claw-router`
-- `/lib/systemd/system/sdkwork-claw-router.service` for `service` packages
+- `/opt/clawrouter`
+- `/etc/clawrouter`
+- `/var/lib/clawrouter`
+- `/var/log/clawrouter`
+- `/etc/default/clawrouter`
+- `/lib/systemd/system/clawrouter.service` for `service` packages
 
 Read startup logs and capture the first admin password if initialization happened during startup:
 
 ```bash
-sudo journalctl -u sdkwork-claw-router -n 200 --no-pager
+sudo journalctl -u clawrouter -n 200 --no-pager
 ```
 
 ### Linux Desktop
@@ -123,10 +122,10 @@ sudo journalctl -u sdkwork-claw-router -n 200 --no-pager
 Use this path for a local Linux trial with SQLite:
 
 ```bash
-sudo apt install ./sdkwork-claw-router-linux-x64-desktop-0.2.0.deb
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
-/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway
+sudo apt install ./clawrouter-linux-x64-desktop-0.2.0.deb
+/opt/clawrouter/bin/clawrouterctl ensure
+/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
+/opt/clawrouter/bin/clawrouter
 ```
 
 The desktop profile uses the current OS user's config and data directories and does not require PostgreSQL unless you explicitly configure it.
@@ -136,22 +135,22 @@ The desktop profile uses the current OS user's config and data directories and d
 Install the MSI:
 
 ```powershell
-msiexec /i .\sdkwork-claw-router-windows-x64-desktop-0.2.0.msi
+msiexec /i .\clawrouter-windows-x64-desktop-0.2.0.msi
 ```
 
 Default install root:
 
 ```text
-C:\Program Files\SdkWork Claw Router
+C:\Program Files\ClawRouter
 ```
 
 Initialize and start from an elevated PowerShell when using a server/service profile, or from a normal PowerShell for a desktop profile:
 
 ```powershell
-Set-Location "C:\Program Files\SdkWork Claw Router"
-.\bin\sdkwork-claw-installer.exe ensure
-.\bin\sdkwork-claw-installer.exe refresh-catalog --force
-.\bin\sdkwork-claw-gateway.exe
+Set-Location "C:\Program Files\ClawRouter"
+.\bin\clawrouterctl.exe ensure
+.\bin\clawrouterctl.exe refresh-catalog --force
+.\bin\clawrouter.exe
 ```
 
 For production or multi-node server/service deployment, set `SDKWORK_CLAW_DATABASE_URL` in the protected service environment or in the runtime TOML before starting the gateway:
@@ -165,23 +164,23 @@ $env:SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.e
 Install the package:
 
 ```bash
-sudo installer -pkg sdkwork-claw-router-macos-arm64-desktop-0.2.0.pkg -target /
+sudo installer -pkg clawrouter-macos-arm64-desktop-0.2.0.pkg -target /
 ```
 
 Default runtime files:
 
 ```text
-Binaries: /opt/sdkwork-claw-router/bin
-Config template: /Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml.example
-Service plist for service package: /Library/LaunchDaemons/com.sdkwork.claw-router.plist
+Binaries: /opt/clawrouter/bin
+Config template: /Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example
+Service plist for service package: /Library/LaunchDaemons/com.sdkwork.clawrouter.plist
 ```
 
 Initialize and start:
 
 ```bash
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
-/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway
+/opt/clawrouter/bin/clawrouterctl ensure
+/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
+/opt/clawrouter/bin/clawrouter
 ```
 
 ### Portable Archive
@@ -191,38 +190,38 @@ Use archive packages only when your deployment system manages files, service reg
 Linux/macOS:
 
 ```bash
-mkdir -p /opt/sdkwork-claw-router
-tar -xzf sdkwork-claw-router-linux-x64-archive-0.2.0.tar.gz -C /opt/sdkwork-claw-router
-cd /opt/sdkwork-claw-router
+mkdir -p /opt/clawrouter
+tar -xzf clawrouter-linux-x64-archive-0.2.0.tar.gz -C /opt/clawrouter
+cd /opt/clawrouter
 cp .env.release.example .env.release.local
 editor .env.release.local
-./bin/sdkwork-claw-installer ensure
-./bin/sdkwork-claw-installer refresh-catalog --force
-./bin/sdkwork-claw-gateway
+./bin/clawrouterctl ensure
+./bin/clawrouterctl refresh-catalog --force
+./bin/clawrouter
 ```
 
 Windows:
 
 ```powershell
-Expand-Archive .\sdkwork-claw-router-windows-x64-archive-0.2.0.zip -DestinationPath C:\sdkwork-claw-router
-Set-Location C:\sdkwork-claw-router
+Expand-Archive .\clawrouter-windows-x64-archive-0.2.0.zip -DestinationPath C:\clawrouter
+Set-Location C:\clawrouter
 Copy-Item .env.release.example .env.release.local
 notepad .env.release.local
-.\bin\sdkwork-claw-installer.exe ensure
-.\bin\sdkwork-claw-installer.exe refresh-catalog --force
-.\bin\sdkwork-claw-gateway.exe
+.\bin\clawrouterctl.exe ensure
+.\bin\clawrouterctl.exe refresh-catalog --force
+.\bin\clawrouter.exe
 ```
 
 ## 3. Package Contents
 
 Release packages include the runtime files needed to start Claw Router:
 
-- `bin/sdkwork-claw-gateway` or `bin/sdkwork-claw-gateway.exe`
-- `bin/sdkwork-claw-installer` or `bin/sdkwork-claw-installer.exe`
+- `bin/clawrouter` or `bin/clawrouter.exe`
+- `bin/clawrouterctl` or `bin/clawrouterctl.exe`
 - `portal/dist`
 - `portal/dist/sdk-archives`
 - `.env.release.example`
-- `config/sdkwork-claw-router.toml.example`
+- `config/clawrouter.toml.example`
 - `INSTALL.md`
 - `install-manifest.json`
 
@@ -234,16 +233,16 @@ Release packages include the runtime files needed to start Claw Router:
 
 `archive` and `container` release assets remain portable `.tar.gz` or `.zip` packages.
 
-Never package or commit `.env.release.local`. Archive deployments may generate it on the target host, while Linux service deployments use `/etc/default/sdkwork-claw-router` created by the `.deb` package. Keep `PORTAL_PUBLIC_*` values browser-safe; do not put database passwords, provider secrets, or admin credentials in `PORTAL_PUBLIC_*` variables.
+Never package or commit `.env.release.local`. Archive deployments may generate it on the target host, while Linux service deployments use `/etc/default/clawrouter` created by the `.deb` package. Keep `PORTAL_PUBLIC_*` values browser-safe; do not put database passwords, provider secrets, or admin credentials in `PORTAL_PUBLIC_*` variables.
 
 ## 4. Database Policy
 
 `desktop` packages use SQLite by default:
 
 ```text
-Windows: %LOCALAPPDATA%/SdkWork/Claw Router/sdkwork-claw-router.sqlite
-Linux: ${XDG_DATA_HOME:-~/.local/share}/sdkwork-claw-router/sdkwork-claw-router.sqlite
-macOS: ~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sqlite
+Windows: %LOCALAPPDATA%/SdkWork/ClawRouter/clawrouter.sqlite
+Linux: ${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite
+macOS: ~/Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite
 ```
 
 `archive`, `service`, and `container` packages use local SQLite by default so a single node can start without an external database. For production or multi-node deployments, set `SDKWORK_CLAW_DATABASE_URL` or write the same PostgreSQL DSN to the runtime TOML.
@@ -251,9 +250,9 @@ macOS: ~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sql
 Server/service SQLite default:
 
 ```text
-Linux: /var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite
-Windows: %ProgramData%/SdkWork/Claw Router/Data/sdkwork-claw-router.sqlite
-macOS: /Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sqlite
+Linux: /var/lib/clawrouter/clawrouter.sqlite
+Windows: %ProgramData%/SdkWork/ClawRouter/Data/clawrouter.sqlite
+macOS: /Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite
 ```
 
 See [initialization.md](./initialization.md) for default config paths, database examples, and bootstrap admin settings.
@@ -265,25 +264,25 @@ Run initialization before first startup whenever possible:
 Linux/macOS package root:
 
 ```bash
-./bin/sdkwork-claw-installer status
-./bin/sdkwork-claw-installer ensure
-./bin/sdkwork-claw-installer refresh-catalog --force
+./bin/clawrouterctl status
+./bin/clawrouterctl ensure
+./bin/clawrouterctl refresh-catalog --force
 ```
 
 Windows package root:
 
 ```powershell
-.\bin\sdkwork-claw-installer.exe status
-.\bin\sdkwork-claw-installer.exe ensure
-.\bin\sdkwork-claw-installer.exe refresh-catalog --force
+.\bin\clawrouterctl.exe status
+.\bin\clawrouterctl.exe ensure
+.\bin\clawrouterctl.exe refresh-catalog --force
 ```
 
 Native Linux/macOS install path:
 
 ```bash
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer status
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
+/opt/clawrouter/bin/clawrouterctl status
+/opt/clawrouter/bin/clawrouterctl ensure
+/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
 ```
 
 Installer commands print JSON. A successful first install can include:
@@ -305,20 +304,19 @@ Catalog refresh success returns:
 Start from a package root:
 
 ```bash
-./bin/sdkwork-claw-gateway
+./bin/clawrouter
 ```
 
 Windows:
 
 ```powershell
-.\bin\sdkwork-claw-gateway.exe
+.\bin\clawrouter.exe
 ```
 
 Linux service:
 
 ```bash
-sudo systemctl enable --now sdkwork-claw-router
-sudo systemctl status sdkwork-claw-router --no-pager
+sudo systemctl status clawrouter --no-pager
 ```
 
 Default portal:
@@ -347,12 +345,12 @@ curl http://127.0.0.1:3900/readyz
 Example:
 
 ```bash
-tar -xzf sdkwork-claw-router-linux-x64-container-0.2.0.tar.gz -C /opt/sdkwork-claw-router
-cd /opt/sdkwork-claw-router
-docker build -f container/Containerfile -t sdkwork-claw-router:0.2.0 .
+tar -xzf clawrouter-linux-x64-container-0.2.0.tar.gz -C /opt/clawrouter
+cd /opt/clawrouter
+docker build -f container/Containerfile -t clawrouter:0.2.0 .
 docker run --rm -p 3900:3900 \
   -e SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router" \
-  sdkwork-claw-router:0.2.0
+  clawrouter:0.2.0
 ```
 
 Service and container deployments must mount runtime configuration, logs, and mutable data as writable resources, and must inject the database URL through protected environment variables or protected TOML files.
@@ -363,9 +361,9 @@ Service and container deployments must mount runtime configuration, logs, and mu
 2. Back up the database and runtime configuration.
 3. Stop the old service.
 4. Install or extract the new release package.
-5. Preserve target-local `/etc/default/sdkwork-claw-router`, `.env.release.local` if used by archive deployments, and runtime TOML files.
+5. Preserve target-local `/etc/default/clawrouter`, `.env.release.local` if used by archive deployments, and runtime TOML files.
 6. For Linux service packages, start the service and let systemd run `ensure` and `refresh-catalog --force`.
-7. For archive/manual deployments, run `sdkwork-claw-installer ensure` and `sdkwork-claw-installer refresh-catalog --force`.
+7. For archive/manual deployments, run `clawrouterctl ensure` and `clawrouterctl refresh-catalog --force`.
 8. Start the new version and check `/healthz` and `/readyz`.
 
 ## 9. Troubleshooting
@@ -376,4 +374,4 @@ Service and container deployments must mount runtime configuration, logs, and mu
 - `database_error`: database is unreachable, permissions are missing, or schema initialization failed.
 - `catalog_error`: model catalog path, version, or content validation failed.
 - `/healthz` succeeds but `/readyz` fails: the edge process is up, but gateway/admin/app/portal upstreams or database dependencies are not ready.
-- Linux service exits immediately: check `/etc/default/sdkwork-claw-router`, `/etc/sdkwork-claw-router/sdkwork-claw-router.toml`, and `journalctl -u sdkwork-claw-router`.
+- Linux service exits immediately: check `/etc/default/clawrouter`, `/etc/clawrouter/clawrouter.toml`, and `journalctl -u clawrouter`.

@@ -29,7 +29,7 @@ Options:
   --package-id <id>      Package id from install package plan.
   --package-root <dir>   Optional extracted package root to validate.
   --tmp-root <dir>       Temporary install root.
-  --installer-bin <path> Optional real sdkwork-claw-installer binary to execute.
+  --installer-bin <path> Optional real clawrouterctl binary to execute.
   --version <value>      Product package version (default ${DEFAULT_VERSION}).
   --check                Validate the smoke plan.
   --dry-run              Do not execute installer commands.
@@ -139,11 +139,11 @@ function createInstallInitSmokePlan({
     throw new Error('--installer-bin is required unless --dry-run is used');
   }
 
-  const runtimeConfigPath = path.join(absoluteTmpRoot, 'sdkwork-claw-router.toml');
+  const runtimeConfigPath = path.join(absoluteTmpRoot, 'clawrouter.toml');
   const databaseEngine = packageItem.databasePolicy.defaultEngine;
   const deploymentMode = packageItem.runtimeProfile === 'desktop' ? 'desktop' : 'server';
   const databasePath = databaseEngine === 'sqlite'
-    ? path.join(absoluteTmpRoot, 'sdkwork-claw-router-install-init.sqlite')
+    ? path.join(absoluteTmpRoot, 'clawrouter-install-init.sqlite')
     : null;
   const databaseUrl = databaseEngine === 'sqlite'
     ? `sqlite://${toPosixPath(databasePath)}`

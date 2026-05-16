@@ -25,17 +25,17 @@ SDKWork Claw Router release 包覆盖 `archive`、`service`、`container`、`des
 启动：
 
 ```bash
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
-/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway
+/opt/clawrouter/bin/clawrouterctl ensure
+/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
+/opt/clawrouter/bin/clawrouter
 ```
 
 如果从可移植归档包根目录启动：
 
 ```bash
-./bin/sdkwork-claw-installer ensure
-./bin/sdkwork-claw-installer refresh-catalog --force
-./bin/sdkwork-claw-gateway
+./bin/clawrouterctl ensure
+./bin/clawrouterctl refresh-catalog --force
+./bin/clawrouter
 ```
 
 ## Archive
@@ -49,9 +49,9 @@ SDKWork Claw Router release 包覆盖 `archive`、`service`、`container`、`des
 启动：
 
 ```bash
-./bin/sdkwork-claw-installer ensure
-./bin/sdkwork-claw-installer refresh-catalog --force
-./bin/sdkwork-claw-gateway
+./bin/clawrouterctl ensure
+./bin/clawrouterctl refresh-catalog --force
+./bin/clawrouter
 ```
 
 ## Service
@@ -62,23 +62,22 @@ SDKWork Claw Router release 包覆盖 `archive`、`service`、`container`、`des
 - Linux `.deb` service 包会安装 systemd unit。
 - macOS `.pkg` service 包会安装 launchd plist。
 - Windows `.msi` 包安装运行文件和服务元数据，实际服务注册由目标主机部署系统配置。
-- 默认使用本地 SQLite，Linux 服务覆盖项保存在 `/etc/default/sdkwork-claw-router`。
+- 默认使用本地 SQLite，Linux 服务覆盖项保存在 `/etc/default/clawrouter`。
 - 生产或多节点部署使用受保护的 PostgreSQL 配置。
 
 原生服务资产：
 
 ```text
-Windows: sdkwork-claw-router-windows-x64-service-0.2.0.msi
-Linux: sdkwork-claw-router-linux-x64-service-0.2.0.deb
-macOS: sdkwork-claw-router-macos-arm64-service-0.2.0.pkg
+Windows: clawrouter-windows-x64-service-0.2.0.msi
+Linux: clawrouter-linux-x64-service-0.2.0.deb
+macOS: clawrouter-macos-arm64-service-0.2.0.pkg
 ```
 
-Linux 安装 `.deb` 后通常只需要：
+Linux 安装 `.deb` 后通常只需要检查服务状态：
 
 ```bash
-sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sudo systemctl enable --now sdkwork-claw-router
-sudo systemctl status sdkwork-claw-router --no-pager
+sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
+sudo systemctl status clawrouter --no-pager
 ```
 
 ## Container
@@ -92,16 +91,16 @@ sudo systemctl status sdkwork-claw-router --no-pager
 示例：
 
 ```bash
-docker build -f container/Containerfile -t sdkwork-claw-router:0.2.0 .
+docker build -f container/Containerfile -t clawrouter:0.2.0 .
 docker run --rm -p 3900:3900 \
   -e SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router" \
-  sdkwork-claw-router:0.2.0
+  clawrouter:0.2.0
 ```
 
 Kubernetes 部署时建议：
 
 - 使用 Secret 保存数据库 URL。
-- 使用 ConfigMap 或挂载文件提供 `sdkwork-claw-router.toml`。
+- 使用 ConfigMap 或挂载文件提供 `clawrouter.toml`。
 - 配置 readinessProbe 指向 `/readyz`。
 - 配置 livenessProbe 指向 `/healthz`。
 - 不把 `.env.release.local` bake 到镜像。

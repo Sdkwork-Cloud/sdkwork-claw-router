@@ -18,8 +18,7 @@ Portable `.tar.gz` and `.zip` assets remain available for `archive` and `contain
 Ubuntu/Debian service packages are zero-config for a single node:
 
 ```bash
-sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sudo systemctl enable --now sdkwork-claw-router
+sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
 ```
 
-The package creates the default TOML, `/etc/default/sdkwork-claw-router`, data/log directories, and runs initialization from systemd before startup.
+The package creates the default TOML, `/etc/default/clawrouter`, data/log directories, enables/starts `clawrouter.service` on systemd hosts, and runs initialization from systemd before startup.

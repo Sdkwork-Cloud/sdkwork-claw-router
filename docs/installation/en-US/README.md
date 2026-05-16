@@ -26,10 +26,10 @@ Release Date: 2026-05-16
 Package names use this version:
 
 ```text
-sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sdkwork-claw-router-windows-x64-desktop-0.2.0.msi
-sdkwork-claw-router-macos-arm64-desktop-0.2.0.pkg
-sdkwork-claw-router-linux-x64-archive-0.2.0.tar.gz
+clawrouter-linux-x64-service-0.2.0.deb
+clawrouter-windows-x64-desktop-0.2.0.msi
+clawrouter-macos-arm64-desktop-0.2.0.pkg
+clawrouter-linux-x64-archive-0.2.0.tar.gz
 ```
 
 From a source checkout, inspect the full package matrix with:
@@ -65,40 +65,40 @@ pnpm start
 Ubuntu/Debian service package:
 
 ```bash
-sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sudo systemctl enable --now sdkwork-claw-router
+sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
 curl http://127.0.0.1:3900/healthz
 curl http://127.0.0.1:3900/readyz
 ```
 
-The Debian service package creates `/etc/default/sdkwork-claw-router`,
-`/etc/sdkwork-claw-router/sdkwork-claw-router.toml`, and the writable data/log
+The Debian service package creates `/etc/default/clawrouter`,
+`/etc/clawrouter/clawrouter.toml`, and the writable data/log
 directories. The systemd unit runs installer initialization automatically before
-starting the gateway.
+starting the gateway, and the `.deb` enables/starts `clawrouter.service` on
+systemd hosts.
 
 Linux/macOS native desktop package:
 
 ```bash
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
-/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway
+/opt/clawrouter/bin/clawrouterctl ensure
+/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
+/opt/clawrouter/bin/clawrouter
 ```
 
 Portable release package root on Linux/macOS:
 
 ```bash
-./bin/sdkwork-claw-installer ensure
-./bin/sdkwork-claw-installer refresh-catalog --force
-./bin/sdkwork-claw-gateway
+./bin/clawrouterctl ensure
+./bin/clawrouterctl refresh-catalog --force
+./bin/clawrouter
 ```
 
 Windows MSI install root:
 
 ```powershell
-Set-Location "C:\Program Files\SdkWork Claw Router"
-.\bin\sdkwork-claw-installer.exe ensure
-.\bin\sdkwork-claw-installer.exe refresh-catalog --force
-.\bin\sdkwork-claw-gateway.exe
+Set-Location "C:\Program Files\ClawRouter"
+.\bin\clawrouterctl.exe ensure
+.\bin\clawrouterctl.exe refresh-catalog --force
+.\bin\clawrouter.exe
 ```
 
 After startup:

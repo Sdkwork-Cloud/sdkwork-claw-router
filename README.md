@@ -40,19 +40,20 @@ pnpm.cmd dev -- --install
 Quick Ubuntu/Debian service install from a release asset:
 
 ```bash
-sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sudo systemctl enable --now sdkwork-claw-router
+sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
 curl http://127.0.0.1:3900/healthz
 curl http://127.0.0.1:3900/readyz
 ```
 
-The `.deb` package creates `/etc/sdkwork-claw-router/sdkwork-claw-router.toml`,
-`/etc/default/sdkwork-claw-router`, `/var/lib/sdkwork-claw-router`, and the
-`sdkwork` system user. The Linux systemd service runs `sdkwork-claw-installer
-ensure` and `refresh-catalog --force` automatically before the gateway starts.
+The `.deb` package creates `/etc/clawrouter/clawrouter.toml`,
+`/etc/default/clawrouter`, `/var/lib/clawrouter`, and the
+`sdkwork` system user. The Linux systemd service runs `clawrouterctl
+ensure` and `refresh-catalog --force` automatically before the gateway starts,
+and service packages enable and start `clawrouter.service` during installation
+on systemd hosts.
 The default server database is local SQLite at
-`/var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite`; set
-`SDKWORK_CLAW_DATABASE_URL` in `/etc/default/sdkwork-claw-router` only when the
+`/var/lib/clawrouter/clawrouter.sqlite`; set
+`SDKWORK_CLAW_DATABASE_URL` in `/etc/default/clawrouter` only when the
 host should use managed PostgreSQL for production or multi-node deployments.
 
 On the first install or first startup, Claw Router initializes the bootstrap
@@ -64,26 +65,26 @@ it after first login.
 Quick MSI install root initialization on Windows:
 
 ```powershell
-Set-Location "C:\Program Files\SdkWork Claw Router"
-.\bin\sdkwork-claw-installer.exe ensure
-.\bin\sdkwork-claw-installer.exe refresh-catalog --force
-.\bin\sdkwork-claw-gateway.exe
+Set-Location "C:\Program Files\ClawRouter"
+.\bin\clawrouterctl.exe ensure
+.\bin\clawrouterctl.exe refresh-catalog --force
+.\bin\clawrouter.exe
 ```
 
 Quick native package initialization on Linux and macOS:
 
 ```bash
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
-/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway
+/opt/clawrouter/bin/clawrouterctl ensure
+/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
+/opt/clawrouter/bin/clawrouter
 ```
 
 Quick portable package initialization on Linux and macOS:
 
 ```bash
-./bin/sdkwork-claw-installer ensure
-./bin/sdkwork-claw-installer refresh-catalog --force
-./bin/sdkwork-claw-gateway
+./bin/clawrouterctl ensure
+./bin/clawrouterctl refresh-catalog --force
+./bin/clawrouter
 ```
 
 ## Architecture
@@ -202,10 +203,10 @@ $env:SDKWORK_MODELS_CATALOG_ROOT="D:\release\sdkwork-models"
 Refresh installed catalog rows without reinstalling the database:
 
 ```powershell
-sdkwork-claw-installer refresh-catalog
-sdkwork-claw-installer refresh-catalog --vendor openai
-sdkwork-claw-installer refresh-catalog --catalog-root D:\release\sdkwork-models --catalog-version 2026.05.08.1
-sdkwork-claw-installer refresh-catalog --vendor alibaba --dry-run
+clawrouterctl refresh-catalog
+clawrouterctl refresh-catalog --vendor openai
+clawrouterctl refresh-catalog --catalog-root D:\release\sdkwork-models --catalog-version 2026.05.08.1
+clawrouterctl refresh-catalog --vendor alibaba --dry-run
 ```
 
 Installer commands print one JSON object to stdout. `status`, `install`,
@@ -618,14 +619,14 @@ The default matrix contains 24 package contracts: `windows`, `linux`, and
 `linux-arm64-container`, and `macos-arm64-desktop`. Each package contract
 declares:
 
-- the Rust edge binary, `sdkwork-claw-gateway` or
-  `sdkwork-claw-gateway.exe`
-- the installer binary, `sdkwork-claw-installer` or
-  `sdkwork-claw-installer.exe`
+- the Rust edge binary, `clawrouter` or
+  `clawrouter.exe`
+- the installer binary, `clawrouterctl` or
+  `clawrouterctl.exe`
 - `portal/dist` production assets
 - `portal/dist/sdk-archives` generated SDK ZIP artifacts
 - `.env.release.example` as a reference template only
-- `config/sdkwork-claw-router.toml.example` as the runtime configuration
+- `config/clawrouter.toml.example` as the runtime configuration
   template
 - an `install-manifest.json`
 - service manifests for service mode and container entrypoint metadata for
@@ -645,7 +646,7 @@ The runtime config file is TOML and supports:
 ```toml
 [database]
 engine = "sqlite"
-url = "sqlite:///var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite"
+url = "sqlite:///var/lib/clawrouter/clawrouter.sqlite"
 max_connections = 1
 ```
 
@@ -660,12 +661,12 @@ max_connections = 16
 
 The standard config file locations are:
 
-- Linux server: `/etc/sdkwork-claw-router/sdkwork-claw-router.toml`
-- Linux desktop: `${XDG_CONFIG_HOME:-~/.config}/sdkwork-claw-router/sdkwork-claw-router.toml`
-- Windows server: `%ProgramData%/SdkWork/Claw Router/sdkwork-claw-router.toml`
-- Windows desktop: `%APPDATA%/SdkWork/Claw Router/sdkwork-claw-router.toml`
-- macOS server: `/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml`
-- macOS desktop: `~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml`
+- Linux server: `/etc/clawrouter/clawrouter.toml`
+- Linux desktop: `${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml`
+- Windows server: `%ProgramData%/SdkWork/ClawRouter/clawrouter.toml`
+- Windows desktop: `%APPDATA%/SdkWork/ClawRouter/clawrouter.toml`
+- macOS server: `/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml`
+- macOS desktop: `~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml`
 
 At runtime, `SDKWORK_CLAW_CONFIG_FILE` can point to any explicit TOML config
 file. `SDKWORK_CLAW_DATABASE_URL` and
@@ -680,8 +681,8 @@ and installer commands:
 ```powershell
 pnpm.cmd release:env:write -- --check
 pnpm.cmd release:env:write -- --force
-sdkwork-claw-installer ensure
-sdkwork-claw-installer refresh-catalog --force
+clawrouterctl ensure
+clawrouterctl refresh-catalog --force
 ```
 
 On Linux and macOS, the same package contract uses `pnpm` instead of
@@ -712,7 +713,7 @@ packages use real ZIP bytes for `.zip`; Linux and macOS packages use real
 gzip-compressed tar bytes for `.tar.gz` and preserve executable mode on
 extensionless binaries under `bin/`. The tar writer supports standard ustar
 prefix paths for nested production asset names. All packages generate
-`config/sdkwork-claw-router.toml.example`. Container
+`config/clawrouter.toml.example`. Container
 packages generate a `container/Containerfile`, platform-specific
 entrypoint (`container/entrypoint` on Linux/macOS,
 `container/entrypoint.ps1` on Windows), and `container/metadata.json` without
@@ -726,7 +727,7 @@ only portable archives. `scripts/build-claw-router-native-installer.mjs`
 consumes the same staged production directory and package plan to build:
 
 - Linux `.deb` packages for Ubuntu/Debian installation through
-  `apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb` or
+  `apt install ./clawrouter-linux-x64-service-0.2.0.deb` or
   `dpkg -i`.
 - Windows `.msi` packages through WiX for service and desktop install targets.
 - macOS `.pkg` packages through `pkgbuild` for service and desktop install
@@ -734,21 +735,22 @@ consumes the same staged production directory and package plan to build:
 
 The native installer builder writes the installer, a per-installer
 `.manifest.json`, and a scoped aggregate manifest. Linux `.deb` packages place
-binaries under `/opt/sdkwork-claw-router`, runtime templates under
-`/etc/sdkwork-claw-router`, docs under `/usr/share/doc/sdkwork-claw-router`,
+binaries under `/opt/clawrouter`, runtime templates under
+`/etc/clawrouter`, docs under `/usr/share/doc/clawrouter`,
 and service units under `/lib/systemd/system` for service mode. The Debian
 post-install script creates the `sdkwork` user/group, mutable data and log
 directories, a first-run TOML config copied from the example when missing, and
-runs `systemctl daemon-reload`; operators still configure the PostgreSQL DSN
-before enabling a server service.
+runs `systemctl daemon-reload` before enabling and starting `clawrouter.service`
+on systemd hosts. Operators still configure the PostgreSQL DSN for production
+or multi-node deployments through `/etc/default/clawrouter` or the runtime TOML.
 
 `scripts/smoke-install-package-init.mjs` validates the fast initialization
 contract separately from service startup. The default root command is a dry-run
 smoke that creates a temporary install root, writes a safe
-`.env.release.local`, writes a temporary `sdkwork-claw-router.toml`, verifies
+`.env.release.local`, writes a temporary `clawrouter.toml`, verifies
 that server package dry-runs use PostgreSQL while desktop package dry-runs use
-a file-backed SQLite URL, verifies `sdkwork-claw-installer ensure` plus
-`sdkwork-claw-installer refresh-catalog --force` are the only installer
+a file-backed SQLite URL, verifies `clawrouterctl ensure` plus
+`clawrouterctl refresh-catalog --force` are the only installer
 actions, and confirms `/healthz` plus `/readyz` remain the readiness contract.
 It never starts `pnpm dev`, the live edge dev smoke, or production services.
 
@@ -762,7 +764,7 @@ same smoke to a real installer check by passing `--installer-bin` and an
 isolated `--tmp-root`:
 
 ```powershell
-node scripts/smoke-install-package-init.mjs --package-id linux-x64-archive --package-root dist\install-package-staging --installer-bin bin\sdkwork-claw-installer --tmp-root target\install-init-smoke\linux-x64 --check
+node scripts/smoke-install-package-init.mjs --package-id linux-x64-archive --package-root dist\install-package-staging --installer-bin bin\clawrouterctl --tmp-root target\install-init-smoke\linux-x64 --check
 ```
 
 Relative `--installer-bin` values are resolved from `--package-root` first, then

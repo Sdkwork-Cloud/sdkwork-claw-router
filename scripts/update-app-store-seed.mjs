@@ -29,7 +29,7 @@ Options:
   --architecture <value>   Optional package architecture selector.
   --distro <value>         Optional Linux distro selector.
   --check                  Check data/app seed files without writing them.
-  --sync-db                After writing seed files, run sdkwork-claw-installer ensure.
+  --sync-db                After writing seed files, run clawrouterctl ensure through Cargo.
   --no-initialize-missing  Do not create missing sdkwork.app.config.json files.
   --force                  Rewrite existing app manifests through the standard initializer.
   --dry-run                Print intended writes and commands without changing files or database.
@@ -447,7 +447,7 @@ function printSummary(summary) {
     console.log(`[app-store-seed] initializedManifests=${summary.initializedManifests}`);
   }
   if (summary.databaseSynced) {
-    console.log('[app-store-seed] database synchronized through sdkwork-claw-installer ensure');
+    console.log('[app-store-seed] database synchronized through clawrouterctl ensure');
   }
 }
 

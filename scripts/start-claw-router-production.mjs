@@ -66,12 +66,12 @@ Production PostgreSQL configuration:
   Or edit [database].url in the generated runtime TOML.
 
 Default runtime config paths:
-  Linux server: /etc/sdkwork-claw-router/sdkwork-claw-router.toml
-  Linux desktop: \${XDG_CONFIG_HOME:-~/.config}/sdkwork-claw-router/sdkwork-claw-router.toml
-  Windows server: %ProgramData%/SdkWork/Claw Router/sdkwork-claw-router.toml
-  Windows desktop: %APPDATA%/SdkWork/Claw Router/sdkwork-claw-router.toml
-  macOS server: /Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml
-  macOS desktop: ~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml
+  Linux server: /etc/clawrouter/clawrouter.toml
+  Linux desktop: \${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml
+  Windows server: %ProgramData%/SdkWork/ClawRouter/clawrouter.toml
+  Windows desktop: %APPDATA%/SdkWork/ClawRouter/clawrouter.toml
+  macOS server: /Library/Application Support/SdkWork/ClawRouter/clawrouter.toml
+  macOS desktop: ~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml
 `;
 }
 
@@ -272,57 +272,57 @@ function runtimeConfigLocationForPlatform(
   if (normalizedPlatform === 'windows') {
     if (normalizedDeploymentMode === 'server') {
       const programData = getEnv('ProgramData') || getEnv('PROGRAMDATA') || 'C:/ProgramData';
-      const root = joinRuntimePath(programData, 'SdkWork/Claw Router');
+      const root = joinRuntimePath(programData, 'SdkWork/ClawRouter');
       return {
-        configFile: joinRuntimePath(root, 'sdkwork-claw-router.toml'),
+        configFile: joinRuntimePath(root, 'clawrouter.toml'),
         dataDirectory: joinRuntimePath(root, 'Data'),
-        sqlitePath: joinRuntimePath(root, 'Data/sdkwork-claw-router.sqlite'),
+        sqlitePath: joinRuntimePath(root, 'Data/clawrouter.sqlite'),
       };
     }
     const appData = getEnv('APPDATA') || 'C:/Users/Default/AppData/Roaming';
     const localAppData = getEnv('LOCALAPPDATA') || 'C:/Users/Default/AppData/Local';
-    const configRoot = joinRuntimePath(appData, 'SdkWork/Claw Router');
-    const dataDirectory = joinRuntimePath(localAppData, 'SdkWork/Claw Router');
+    const configRoot = joinRuntimePath(appData, 'SdkWork/ClawRouter');
+    const dataDirectory = joinRuntimePath(localAppData, 'SdkWork/ClawRouter');
     return {
-      configFile: joinRuntimePath(configRoot, 'sdkwork-claw-router.toml'),
+      configFile: joinRuntimePath(configRoot, 'clawrouter.toml'),
       dataDirectory,
-      sqlitePath: joinRuntimePath(dataDirectory, 'sdkwork-claw-router.sqlite'),
+      sqlitePath: joinRuntimePath(dataDirectory, 'clawrouter.sqlite'),
     };
   }
   if (normalizedPlatform === 'macos') {
     if (normalizedDeploymentMode === 'server') {
-      const root = '/Library/Application Support/SdkWork/Claw Router';
+      const root = '/Library/Application Support/SdkWork/ClawRouter';
       return {
-        configFile: joinRuntimePath(root, 'sdkwork-claw-router.toml'),
+        configFile: joinRuntimePath(root, 'clawrouter.toml'),
         dataDirectory: root,
-        sqlitePath: joinRuntimePath(root, 'sdkwork-claw-router.sqlite'),
+        sqlitePath: joinRuntimePath(root, 'clawrouter.sqlite'),
       };
     }
     const home = getEnv('HOME') || '~';
-    const root = joinRuntimePath(home, 'Library/Application Support/SdkWork/Claw Router');
+    const root = joinRuntimePath(home, 'Library/Application Support/SdkWork/ClawRouter');
     return {
-      configFile: joinRuntimePath(root, 'sdkwork-claw-router.toml'),
+      configFile: joinRuntimePath(root, 'clawrouter.toml'),
       dataDirectory: root,
-      sqlitePath: joinRuntimePath(root, 'sdkwork-claw-router.sqlite'),
+      sqlitePath: joinRuntimePath(root, 'clawrouter.sqlite'),
     };
   }
 
   if (normalizedDeploymentMode === 'server') {
     return {
-      configFile: '/etc/sdkwork-claw-router/sdkwork-claw-router.toml',
-      dataDirectory: '/var/lib/sdkwork-claw-router',
-      sqlitePath: '/var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite',
+      configFile: '/etc/clawrouter/clawrouter.toml',
+      dataDirectory: '/var/lib/clawrouter',
+      sqlitePath: '/var/lib/clawrouter/clawrouter.sqlite',
     };
   }
   const home = getEnv('HOME') || '~';
   const configHome = getEnv('XDG_CONFIG_HOME') || joinRuntimePath(home, '.config');
   const dataHome = getEnv('XDG_DATA_HOME') || joinRuntimePath(home, '.local/share');
-  const configRoot = joinRuntimePath(configHome, 'sdkwork-claw-router');
-  const dataDirectory = joinRuntimePath(dataHome, 'sdkwork-claw-router');
+  const configRoot = joinRuntimePath(configHome, 'clawrouter');
+  const dataDirectory = joinRuntimePath(dataHome, 'clawrouter');
   return {
-    configFile: joinRuntimePath(configRoot, 'sdkwork-claw-router.toml'),
+    configFile: joinRuntimePath(configRoot, 'clawrouter.toml'),
     dataDirectory,
-    sqlitePath: joinRuntimePath(dataDirectory, 'sdkwork-claw-router.sqlite'),
+    sqlitePath: joinRuntimePath(dataDirectory, 'clawrouter.sqlite'),
   };
 }
 

@@ -158,10 +158,14 @@ test('installation documentation covers release, source, initialization, usage, 
   const zhUsage = readFileSync(path.join(workspaceRoot, 'docs/installation/zh-CN/usage.md'), 'utf8');
   const enUsage = readFileSync(path.join(workspaceRoot, 'docs/installation/en-US/usage.md'), 'utf8');
 
-  assert.ok(zhRelease.includes('sdkwork-claw-router-linux-x64-archive-0.2.0.tar.gz'));
-  assert.ok(enRelease.includes('sdkwork-claw-router-linux-x64-archive-0.2.0.tar.gz'));
-  assert.ok(zhRelease.includes('./bin/sdkwork-claw-installer ensure'));
-  assert.ok(enRelease.includes('./bin/sdkwork-claw-installer ensure'));
+  assert.ok(zhRelease.includes('clawrouter-linux-x64-archive-0.2.0.tar.gz'));
+  assert.ok(enRelease.includes('clawrouter-linux-x64-archive-0.2.0.tar.gz'));
+  assert.ok(zhRelease.includes('sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb'));
+  assert.ok(enRelease.includes('sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb'));
+  assert.equal(zhRelease.includes('sudo systemctl enable --now clawrouter'), false);
+  assert.equal(enRelease.includes('sudo systemctl enable --now clawrouter'), false);
+  assert.ok(zhRelease.includes('./bin/clawrouterctl ensure'));
+  assert.ok(enRelease.includes('./bin/clawrouterctl ensure'));
   assert.ok(zhSource.includes('pnpm release:env:write -- --check'));
   assert.ok(enSource.includes('pnpm release:env:write -- --check'));
   assert.ok(zhSource.includes('目标机器后，不要求安装 `pnpm`'));
@@ -386,7 +390,7 @@ test('claw router workspace launch plan starts Rust services, portal, and edge R
   assert.equal(settings.serverBind, '0.0.0.0:3900');
   assert.equal(settings.portalBind, '127.0.0.1:3901');
   assert.equal(settings.portalDevBind, undefined);
-  assert.equal(settings.databaseUrl, 'sqlite://target/dev/sdkwork-claw-router.sqlite');
+  assert.equal(settings.databaseUrl, 'sqlite://target/dev/clawrouter.sqlite');
   assert.deepEqual(plan.steps.map((step) => step.name), [
     'installer',
     'model-catalog-refresh',
@@ -1031,7 +1035,7 @@ test('production starter supports help, dry-run, and full edge access matrix', a
       '--deployment-mode',
       'server',
       '--config-file',
-      '/etc/sdkwork-claw-router/sdkwork-claw-router.toml',
+      '/etc/clawrouter/clawrouter.toml',
       '--database-url',
       'postgresql://sdkwork:secret@db.internal:5432/sdkwork_claw_router',
       '--database-max-connections',
@@ -1053,7 +1057,7 @@ test('production starter supports help, dry-run, and full edge access matrix', a
       dryRun: true,
       initConfigOnly: false,
       deploymentMode: 'server',
-      configFile: '/etc/sdkwork-claw-router/sdkwork-claw-router.toml',
+      configFile: '/etc/clawrouter/clawrouter.toml',
       databaseUrl: 'postgresql://sdkwork:secret@db.internal:5432/sdkwork_claw_router',
       databaseMaxConnections: '24',
       serverBind: '0.0.0.0:12900',
@@ -1127,16 +1131,16 @@ test('production starter supports help, dry-run, and full edge access matrix', a
   assert.equal(env.CARGO_TARGET_DIR, 'target-codex');
   assert.equal(
     artifacts.productionGatewayBinaryPath({ env, platform: 'win32', workspaceRoot }),
-    path.join(workspaceRoot, 'target-codex', 'release', 'sdkwork-claw-gateway.exe'),
+    path.join(workspaceRoot, 'target-codex', 'release', 'clawrouter.exe'),
   );
   assert.deepEqual(
     module.resolveStartProductionCommand(
-      { ...env, SDKWORK_CLAW_GATEWAY_BIN: 'D:\\prod\\sdkwork-claw-gateway.exe' },
+      { ...env, SDKWORK_CLAW_GATEWAY_BIN: 'D:\\prod\\clawrouter.exe' },
       'win32',
       workspaceRoot,
     ),
     {
-      command: 'D:\\prod\\sdkwork-claw-gateway.exe',
+      command: 'D:\\prod\\clawrouter.exe',
       args: [],
       source: 'env',
     },
@@ -1187,11 +1191,11 @@ test('production starter resolves OS-standard runtime config locations', async (
   });
   assert.equal(
     slashPath(linuxDesktop.configFile),
-    '/home/ada/.config-xdg/sdkwork-claw-router/sdkwork-claw-router.toml',
+    '/home/ada/.config-xdg/clawrouter/clawrouter.toml',
   );
   assert.equal(
     slashPath(linuxDesktop.dataDirectory),
-    '/home/ada/.data-xdg/sdkwork-claw-router',
+    '/home/ada/.data-xdg/clawrouter',
   );
 
   const windowsServer = module.runtimeConfigLocationForPlatform('win32', 'server', {
@@ -1199,11 +1203,11 @@ test('production starter resolves OS-standard runtime config locations', async (
   });
   assert.equal(
     slashPath(windowsServer.configFile),
-    'C:/ProgramData/SdkWork/Claw Router/sdkwork-claw-router.toml',
+    'C:/ProgramData/SdkWork/ClawRouter/clawrouter.toml',
   );
   assert.equal(
     slashPath(windowsServer.dataDirectory),
-    'C:/ProgramData/SdkWork/Claw Router/Data',
+    'C:/ProgramData/SdkWork/ClawRouter/Data',
   );
 
   const macosDesktop = module.runtimeConfigLocationForPlatform('darwin', 'desktop', {
@@ -1211,11 +1215,11 @@ test('production starter resolves OS-standard runtime config locations', async (
   });
   assert.equal(
     slashPath(macosDesktop.configFile),
-    '/Users/ada/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml',
+    '/Users/ada/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml',
   );
   assert.equal(
     slashPath(macosDesktop.dataDirectory),
-    '/Users/ada/Library/Application Support/SdkWork/Claw Router',
+    '/Users/ada/Library/Application Support/SdkWork/ClawRouter',
   );
 });
 
@@ -1242,11 +1246,11 @@ test('production starter auto-initializes desktop SQLite runtime config', async 
   assert.equal(result.action, 'created');
   assert.equal(result.deploymentMode, 'desktop');
   assert.equal(result.databaseEngine, 'sqlite');
-  assert.equal(result.databaseUrl, `sqlite://${slashPath(path.join(env.XDG_DATA_HOME, 'sdkwork-claw-router', 'sdkwork-claw-router.sqlite'))}`);
+  assert.equal(result.databaseUrl, `sqlite://${slashPath(path.join(env.XDG_DATA_HOME, 'clawrouter', 'clawrouter.sqlite'))}`);
   assert.equal(result.blockingIssue, null);
   assert.equal(
     slashPath(result.configFile),
-    slashPath(path.join(env.XDG_CONFIG_HOME, 'sdkwork-claw-router', 'sdkwork-claw-router.toml')),
+    slashPath(path.join(env.XDG_CONFIG_HOME, 'clawrouter', 'clawrouter.toml')),
   );
   assert.equal(result.env.SDKWORK_CLAW_CONFIG_FILE, result.configFile);
   assert.equal(result.env.SDKWORK_CLAW_DEPLOYMENT_MODE, 'desktop');
@@ -1267,7 +1271,7 @@ test('production starter initializes zero-config server SQLite runtime config', 
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'start-claw-router-production.mjs')).href
   );
   const fixtureRoot = path.join(workspaceRoot, 'target', 'start-production-config-tests', `server-${Date.now()}`);
-  const configFile = path.join(fixtureRoot, 'etc', 'sdkwork-claw-router.toml');
+  const configFile = path.join(fixtureRoot, 'etc', 'clawrouter.toml');
   rmSync(fixtureRoot, { recursive: true, force: true });
   mkdirSync(fixtureRoot, { recursive: true });
 
@@ -1286,7 +1290,7 @@ test('production starter initializes zero-config server SQLite runtime config', 
   assert.equal(result.action, 'created');
   assert.equal(result.deploymentMode, 'server');
   assert.equal(result.databaseEngine, 'sqlite');
-  assert.equal(result.databaseUrl, 'sqlite:///var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite');
+  assert.equal(result.databaseUrl, 'sqlite:///var/lib/clawrouter/clawrouter.sqlite');
   assert.equal(result.env.SDKWORK_CLAW_CONFIG_FILE, configFile);
   assert.equal(result.env.SDKWORK_CLAW_DEPLOYMENT_MODE, 'server');
   assert.equal(result.blockingIssue, null);
@@ -1294,7 +1298,7 @@ test('production starter initializes zero-config server SQLite runtime config', 
 
   const content = readFileSync(configFile, 'utf8');
   assert.ok(content.includes('engine = "sqlite"'));
-  assert.ok(content.includes('sdkwork-claw-router.sqlite'));
+  assert.ok(content.includes('clawrouter.sqlite'));
   assert.ok(content.includes('max_connections = 1'));
   assert.ok(content.includes('For production or multi-node deployments'));
   rmSync(fixtureRoot, { recursive: true, force: true });
@@ -1316,12 +1320,12 @@ test('production starter help documents automatic runtime config initialization'
   assert.ok(stdout.includes('Desktop deployments default to SQLite and can start from the generated config.'));
   assert.ok(stdout.includes('pnpm start -- --init-config-only --deployment-mode server'));
   assert.ok(stdout.includes('SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"'));
-  assert.ok(stdout.includes('Linux server: /etc/sdkwork-claw-router/sdkwork-claw-router.toml'));
-  assert.ok(stdout.includes('Linux desktop: ${XDG_CONFIG_HOME:-~/.config}/sdkwork-claw-router/sdkwork-claw-router.toml'));
-  assert.ok(stdout.includes('Windows server: %ProgramData%/SdkWork/Claw Router/sdkwork-claw-router.toml'));
-  assert.ok(stdout.includes('Windows desktop: %APPDATA%/SdkWork/Claw Router/sdkwork-claw-router.toml'));
-  assert.ok(stdout.includes('macOS server: /Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml'));
-  assert.ok(stdout.includes('macOS desktop: ~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml'));
+  assert.ok(stdout.includes('Linux server: /etc/clawrouter/clawrouter.toml'));
+  assert.ok(stdout.includes('Linux desktop: ${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml'));
+  assert.ok(stdout.includes('Windows server: %ProgramData%/SdkWork/ClawRouter/clawrouter.toml'));
+  assert.ok(stdout.includes('Windows desktop: %APPDATA%/SdkWork/ClawRouter/clawrouter.toml'));
+  assert.ok(stdout.includes('macOS server: /Library/Application Support/SdkWork/ClawRouter/clawrouter.toml'));
+  assert.ok(stdout.includes('macOS desktop: ~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml'));
 });
 
 test('production build creates portal assets and Rust edge release artifact', async () => {
@@ -1364,12 +1368,12 @@ test('production build creates portal assets and Rust edge release artifact', as
   assert.deepEqual(plan[4].args, ['--dir', 'apps/sdkwork-claw-router-portal', 'build']);
   assert.deepEqual(plan[5].args, ['scripts/archive-claw-router-sdks.mjs']);
   assert.equal(plan[5].command, 'node');
-  assert.deepEqual(plan[6].args, ['build', '-p', 'sdkwork-claw-gateway', '--release']);
+  assert.deepEqual(plan[6].args, ['build', '-p', 'sdkwork-claw-gateway', '--bin', 'clawrouter', '--release']);
   assert.equal(plan[6].command, 'cargo.exe');
   assert.equal(plan[6].env.CARGO_TARGET_DIR, 'target-codex');
   assert.ok(
     module.renderProductionBuildPlan(plan, { CARGO_TARGET_DIR: 'target-codex' }, 'win32', workspaceRoot)
-      .some((line) => line.includes('target-codex') && line.includes('sdkwork-claw-gateway.exe')),
+      .some((line) => line.includes('target-codex') && line.includes('clawrouter.exe')),
   );
   assert.ok(
     module.renderProductionBuildPlan(plan, { CARGO_TARGET_DIR: 'target-codex' }, 'win32', workspaceRoot)
@@ -1408,7 +1412,7 @@ test('install package planner covers platforms, architectures, modes, fast init,
   assert.equal(defaultPlan.version, '0.2.0');
   assert.equal(
     defaultPlan.packages.find((item) => item.id === 'linux-x64-archive')?.archiveName,
-    'sdkwork-claw-router-linux-x64-archive-0.2.0.tar.gz',
+    'clawrouter-linux-x64-archive-0.2.0.tar.gz',
   );
 
   const plan = module.createInstallPackagePlan({
@@ -1419,6 +1423,10 @@ test('install package planner covers platforms, architectures, modes, fast init,
   });
 
   assert.equal(plan.schemaVersion, '2026-05-15.install-packages.v2');
+  assert.equal(plan.product, 'sdkwork-claw-router');
+  assert.equal(plan.packageName, 'clawrouter');
+  assert.equal(plan.runtimeName, 'clawrouter');
+  assert.equal(plan.displayName, 'SdkWork ClawRouter');
   assert.deepEqual(plan.platforms, ['windows', 'linux', 'macos']);
   assert.deepEqual(plan.architectures, ['x64', 'arm64']);
   assert.deepEqual(plan.deploymentModes, ['archive', 'service', 'container', 'desktop']);
@@ -1440,18 +1448,18 @@ test('install package planner covers platforms, architectures, modes, fast init,
   assert.ok(windowsService);
   assert.equal(windowsService.id, 'windows-x64-service');
   assert.equal(windowsService.version, '0.1.0');
-  assert.equal(windowsService.archiveName, 'sdkwork-claw-router-windows-x64-service-0.1.0.zip');
-  assert.equal(windowsService.binaryName, 'sdkwork-claw-gateway.exe');
-  assert.equal(windowsService.installerBinaryName, 'sdkwork-claw-installer.exe');
+  assert.equal(windowsService.archiveName, 'clawrouter-windows-x64-service-0.1.0.zip');
+  assert.equal(windowsService.binaryName, 'clawrouter.exe');
+  assert.equal(windowsService.installerBinaryName, 'clawrouterctl.exe');
   assert.deepEqual(windowsService.serviceIntegration, {
     kind: 'windows-service',
-    manifest: 'service/windows/sdkwork-claw-router.xml',
+    manifest: 'service/windows/clawrouter.xml',
   });
   assert.ok(windowsService.artifacts.some((artifact) =>
-    artifact.kind === 'edge-binary' && artifact.path === 'bin/sdkwork-claw-gateway.exe'
+    artifact.kind === 'edge-binary' && artifact.path === 'bin/clawrouter.exe'
   ));
   assert.ok(windowsService.artifacts.some((artifact) =>
-    artifact.kind === 'installer-binary' && artifact.path === 'bin/sdkwork-claw-installer.exe'
+    artifact.kind === 'installer-binary' && artifact.path === 'bin/clawrouterctl.exe'
   ));
   assert.ok(windowsService.artifacts.some((artifact) =>
     artifact.kind === 'portal-dist' && artifact.path === 'portal/dist'
@@ -1465,20 +1473,20 @@ test('install package planner covers platforms, architectures, modes, fast init,
   assert.ok(!windowsService.artifacts.some((artifact) => artifact.path === '.env.release.local'));
   assert.equal(windowsService.initCommands.length, 2);
   assert.ok(!windowsService.initCommands.some((command) => command.includes('pnpm')));
-  assert.ok(windowsService.initCommands.includes('.\\bin\\sdkwork-claw-installer.exe ensure'));
-  assert.ok(windowsService.initCommands.includes('.\\bin\\sdkwork-claw-installer.exe refresh-catalog --force'));
-  assert.equal(windowsService.startCommand, '.\\bin\\sdkwork-claw-gateway.exe');
+  assert.ok(windowsService.initCommands.includes('.\\bin\\clawrouterctl.exe ensure'));
+  assert.ok(windowsService.initCommands.includes('.\\bin\\clawrouterctl.exe refresh-catalog --force'));
+  assert.equal(windowsService.startCommand, '.\\bin\\clawrouter.exe');
   assert.deepEqual(windowsService.healthChecks, ['/healthz', '/readyz']);
   assert.equal(windowsService.runtimeProfile, 'server');
   assert.equal(windowsService.databasePolicy.defaultEngine, 'sqlite');
   assert.equal(windowsService.databasePolicy.configurableFromFile, true);
   assert.equal(windowsService.databasePolicy.requiresExternalDatabase, false);
-  assert.equal(windowsService.databasePolicy.configFile.path, '%ProgramData%/SdkWork/Claw Router/sdkwork-claw-router.toml');
+  assert.equal(windowsService.databasePolicy.configFile.path, '%ProgramData%/SdkWork/ClawRouter/clawrouter.toml');
   assert.equal(windowsService.databasePolicy.envOverrides.includes('SDKWORK_CLAW_DATABASE_URL'), true);
-  assert.equal(windowsService.databasePolicy.defaultUrl, 'sqlite://%ProgramData%/SdkWork/Claw Router/Data/sdkwork-claw-router.sqlite');
+  assert.equal(windowsService.databasePolicy.defaultUrl, 'sqlite://%ProgramData%/SdkWork/ClawRouter/Data/clawrouter.sqlite');
   assert.equal(windowsService.databasePolicy.productionRecommendedEngine, 'postgresql');
   assert.ok(windowsService.artifacts.some((artifact) =>
-    artifact.kind === 'runtime-config-template' && artifact.path === 'config/sdkwork-claw-router.toml.example'
+    artifact.kind === 'runtime-config-template' && artifact.path === 'config/clawrouter.toml.example'
   ));
   assert.ok(windowsService.artifacts.some((artifact) =>
     artifact.kind === 'install-guide' && artifact.path === 'INSTALL.md'
@@ -1491,7 +1499,7 @@ test('install package planner covers platforms, architectures, modes, fast init,
   );
   assert.ok(linuxContainer);
   assert.equal(linuxContainer.containerIntegration.kind, 'container-image');
-  assert.equal(linuxContainer.containerIntegration.entrypoint, '/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway');
+  assert.equal(linuxContainer.containerIntegration.entrypoint, '/opt/clawrouter/bin/clawrouter');
   for (const packageItem of plan.packages.filter((item) => item.deploymentMode === 'container')) {
     assert.equal(
       packageItem.startCommand,
@@ -1499,7 +1507,7 @@ test('install package planner covers platforms, architectures, modes, fast init,
       `${packageItem.id} must use one canonical container entrypoint`,
     );
   }
-  assert.ok(linuxContainer.initCommands.includes('./bin/sdkwork-claw-installer ensure'));
+  assert.ok(linuxContainer.initCommands.includes('./bin/clawrouterctl ensure'));
   assert.ok(!linuxContainer.initCommands.some((command) => command.includes('pnpm')));
   assert.ok(!linuxContainer.initCommands.some((command) => command.includes('pnpm dev')));
   assert.ok(!plan.packages.some((item) =>
@@ -1510,8 +1518,8 @@ test('install package planner covers platforms, architectures, modes, fast init,
     item.platform === 'windows' && item.architecture === 'x64' && item.deploymentMode === 'container'
   );
   assert.ok(windowsContainer);
-  assert.equal(windowsContainer.containerIntegration.entrypoint, 'C:/sdkwork-claw-router/bin/sdkwork-claw-gateway.exe');
-  assert.equal(windowsContainer.containerIntegration.workingDirectory, 'C:/sdkwork-claw-router');
+  assert.equal(windowsContainer.containerIntegration.entrypoint, 'C:/clawrouter/bin/clawrouter.exe');
+  assert.equal(windowsContainer.containerIntegration.workingDirectory, 'C:/clawrouter');
   assert.equal(windowsContainer.startCommand, windowsContainer.containerIntegration.entrypoint);
   assert.ok(windowsContainer.artifacts.some((artifact) =>
     artifact.kind === 'container-entrypoint' && artifact.path === 'container/entrypoint.ps1'
@@ -1523,10 +1531,10 @@ test('install package planner covers platforms, architectures, modes, fast init,
   assert.ok(linuxArchive);
   assert.equal(linuxArchive.runtimeProfile, 'server');
   assert.equal(linuxArchive.databasePolicy.defaultEngine, 'sqlite');
-  assert.equal(linuxArchive.databasePolicy.configFile.path, '/etc/sdkwork-claw-router/sdkwork-claw-router.toml');
-  assert.equal(linuxArchive.databasePolicy.dataDirectory.path, '/var/lib/sdkwork-claw-router');
-  assert.equal(linuxArchive.databasePolicy.defaultSqliteUrl, 'sqlite:///var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite');
-  assert.equal(linuxArchive.databasePolicy.defaultUrl, 'sqlite:///var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite');
+  assert.equal(linuxArchive.databasePolicy.configFile.path, '/etc/clawrouter/clawrouter.toml');
+  assert.equal(linuxArchive.databasePolicy.dataDirectory.path, '/var/lib/clawrouter');
+  assert.equal(linuxArchive.databasePolicy.defaultSqliteUrl, 'sqlite:///var/lib/clawrouter/clawrouter.sqlite');
+  assert.equal(linuxArchive.databasePolicy.defaultUrl, 'sqlite:///var/lib/clawrouter/clawrouter.sqlite');
   assert.equal(linuxArchive.databasePolicy.productionRecommendedEngine, 'postgresql');
 
   const macosDesktop = plan.packages.find((item) =>
@@ -1538,10 +1546,10 @@ test('install package planner covers platforms, architectures, modes, fast init,
   assert.equal(macosDesktop.packageKind, 'desktop-app-installer');
   assert.equal(macosDesktop.databasePolicy.defaultEngine, 'sqlite');
   assert.equal(macosDesktop.databasePolicy.requiresExternalDatabase, false);
-  assert.equal(macosDesktop.databasePolicy.configFile.path, '~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml');
-  assert.equal(macosDesktop.databasePolicy.dataDirectory.path, '~/Library/Application Support/SdkWork/Claw Router');
-  assert.equal(macosDesktop.databasePolicy.defaultSqlitePath, '~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sqlite');
-  assert.equal(macosDesktop.databasePolicy.defaultUrl, 'sqlite://~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sqlite');
+  assert.equal(macosDesktop.databasePolicy.configFile.path, '~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml');
+  assert.equal(macosDesktop.databasePolicy.dataDirectory.path, '~/Library/Application Support/SdkWork/ClawRouter');
+  assert.equal(macosDesktop.databasePolicy.defaultSqlitePath, '~/Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite');
+  assert.equal(macosDesktop.databasePolicy.defaultUrl, 'sqlite://~/Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite');
   assert.ok(macosDesktop.artifacts.some((artifact) =>
     artifact.kind === 'desktop-manifest' && artifact.path === 'desktop'
   ));
@@ -1550,8 +1558,8 @@ test('install package planner covers platforms, architectures, modes, fast init,
     item.platform === 'linux' && item.architecture === 'x64' && item.deploymentMode === 'desktop'
   );
   assert.ok(linuxDesktop);
-  assert.equal(linuxDesktop.databasePolicy.configFile.path, '${XDG_CONFIG_HOME:-~/.config}/sdkwork-claw-router/sdkwork-claw-router.toml');
-  assert.equal(linuxDesktop.databasePolicy.defaultSqlitePath, '${XDG_DATA_HOME:-~/.local/share}/sdkwork-claw-router/sdkwork-claw-router.sqlite');
+  assert.equal(linuxDesktop.databasePolicy.configFile.path, '${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml');
+  assert.equal(linuxDesktop.databasePolicy.defaultSqlitePath, '${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite');
 
   assert.deepEqual(module.validateInstallPackagePlan(plan), []);
   const rendered = module.renderInstallPackagePlan(plan).join('\n');
@@ -1609,8 +1617,8 @@ test('install package archive builder creates manifest-backed archives without l
   rmSync(fixtureRoot, { recursive: true, force: true });
   mkdirSync(path.join(stagingRoot, 'bin'), { recursive: true });
   mkdirSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives'), { recursive: true });
-  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-gateway.exe'), 'gateway-binary');
-  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-installer.exe'), 'installer-binary');
+  writeFileSync(path.join(stagingRoot, 'bin', 'clawrouter.exe'), 'gateway-binary');
+  writeFileSync(path.join(stagingRoot, 'bin', 'clawrouterctl.exe'), 'installer-binary');
   writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'index.html'), '<!doctype html>');
   writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives', 'sdk.zip'), 'sdk-archive');
   writeFileSync(path.join(stagingRoot, '.env.release.example'), 'PORTAL_PUBLIC_API_BASE_URL=/v1\n');
@@ -1624,25 +1632,25 @@ test('install package archive builder creates manifest-backed archives without l
       version: '0.1.0',
     });
     assert.equal(buildPlan.package.id, 'windows-x64-archive');
-    assert.equal(buildPlan.archivePath, path.join(outputDir, 'sdkwork-claw-router-windows-x64-archive-0.1.0.zip'));
-    assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'bin/sdkwork-claw-gateway.exe'));
+    assert.equal(buildPlan.archivePath, path.join(outputDir, 'clawrouter-windows-x64-archive-0.1.0.zip'));
+    assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'bin/clawrouter.exe'));
     assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'portal/dist/index.html'));
     assert.ok(buildPlan.entries.some((entry) => entry.archivePath === '.env.release.example'));
-    assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'config/sdkwork-claw-router.toml.example'));
+    assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'config/clawrouter.toml.example'));
     assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'INSTALL.md'));
     assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'install-manifest.json'));
     assert.ok(!buildPlan.entries.some((entry) => entry.archivePath === '.env.release.local'));
     assert.deepEqual(module.validateInstallPackageBuildPlan(buildPlan), []);
 
     const result = await module.buildInstallPackageArchive(buildPlan);
-    assert.equal(result.archive.file, 'sdkwork-claw-router-windows-x64-archive-0.1.0.zip');
+    assert.equal(result.archive.file, 'clawrouter-windows-x64-archive-0.1.0.zip');
     assert.equal(result.archive.version, '0.1.0');
     assert.equal(result.manifest.package.id, 'windows-x64-archive');
     assert.equal(result.manifest.package.version, '0.1.0');
     assert.equal(result.manifest.package.runtimeProfile, 'server');
     assert.equal(result.manifest.databasePolicy.defaultEngine, 'sqlite');
     assert.equal(result.manifest.generatedArtifacts.some((artifact) =>
-      artifact.path === 'config/sdkwork-claw-router.toml.example'
+      artifact.path === 'config/clawrouter.toml.example'
     ), true);
     assert.equal(result.manifest.generatedArtifacts.some((artifact) =>
       artifact.path === 'INSTALL.md'
@@ -1657,7 +1665,7 @@ test('install package archive builder creates manifest-backed archives without l
 
     const aggregateManifest = JSON.parse(readFileSync(path.join(outputDir, 'install-packages-manifest.json'), 'utf8'));
     assert.equal(aggregateManifest.archives.length, 1);
-    assert.equal(aggregateManifest.archives[0].file, 'sdkwork-claw-router-windows-x64-archive-0.1.0.zip');
+    assert.equal(aggregateManifest.archives[0].file, 'clawrouter-windows-x64-archive-0.1.0.zip');
     assert.equal(aggregateManifest.archives[0].packageId, 'windows-x64-archive');
     assert.equal(aggregateManifest.archives[0].version, '0.1.0');
     assert.match(aggregateManifest.archives[0].sha256, /^[a-f0-9]{64}$/u);
@@ -1682,8 +1690,8 @@ test('install package builder emits service and container deployment packages fr
   rmSync(fixtureRoot, { recursive: true, force: true });
   mkdirSync(path.join(stagingRoot, 'bin'), { recursive: true });
   mkdirSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives'), { recursive: true });
-  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-gateway'), 'gateway-binary');
-  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-installer'), 'installer-binary');
+  writeFileSync(path.join(stagingRoot, 'bin', 'clawrouter'), 'gateway-binary');
+  writeFileSync(path.join(stagingRoot, 'bin', 'clawrouterctl'), 'installer-binary');
   writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'index.html'), '<!doctype html>');
   writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives', 'sdk.zip'), 'sdk-archive');
   writeFileSync(path.join(stagingRoot, '.env.release.example'), 'PORTAL_PUBLIC_API_BASE_URL=/v1\n');
@@ -1697,22 +1705,22 @@ test('install package builder emits service and container deployment packages fr
     });
     assert.equal(servicePlan.package.deploymentMode, 'service');
     assert.ok(servicePlan.entries.some((entry) =>
-      entry.generated && entry.archivePath === 'service/linux/sdkwork-claw-router.service'
+      entry.generated && entry.archivePath === 'service/linux/clawrouter.service'
     ));
     assert.deepEqual(module.validateInstallPackageBuildPlan(servicePlan), []);
 
     const serviceResult = await module.buildInstallPackageArchive(servicePlan);
     const serviceTar = readTarEntries(gunzipSync(readFileSync(serviceResult.archivePath)));
-    assert.ok(serviceTar.has('service/linux/sdkwork-claw-router.service'));
-    assert.ok(serviceTar.has('config/sdkwork-claw-router.toml.example'));
+    assert.ok(serviceTar.has('service/linux/clawrouter.service'));
+    assert.ok(serviceTar.has('config/clawrouter.toml.example'));
     assert.ok(serviceTar.has('INSTALL.md'));
     const serviceConfigTemplate = readTarEntryText(
       gunzipSync(readFileSync(serviceResult.archivePath)),
-      'config/sdkwork-claw-router.toml.example',
+      'config/clawrouter.toml.example',
     );
     assert.ok(serviceConfigTemplate.includes('engine = "sqlite"'));
-    assert.ok(serviceConfigTemplate.includes('/var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite'));
-    assert.ok(serviceConfigTemplate.includes('/etc/sdkwork-claw-router/sdkwork-claw-router.toml'));
+    assert.ok(serviceConfigTemplate.includes('/var/lib/clawrouter/clawrouter.sqlite'));
+    assert.ok(serviceConfigTemplate.includes('/etc/clawrouter/clawrouter.toml'));
     const serviceInstallGuide = readTarEntryText(
       gunzipSync(readFileSync(serviceResult.archivePath)),
       'INSTALL.md',
@@ -1721,12 +1729,12 @@ test('install package builder emits service and container deployment packages fr
     assert.ok(serviceInstallGuide.includes('Version: 0.1.0'));
     assert.ok(serviceInstallGuide.includes('SDKWORK_CLAW_DATABASE_URL'));
     assert.ok(serviceInstallGuide.includes('Linux service packages run initialization automatically from systemd'));
-    assert.ok(serviceInstallGuide.includes('/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure'));
-    assert.ok(serviceInstallGuide.includes('/etc/sdkwork-claw-router/sdkwork-claw-router.toml'));
+    assert.ok(serviceInstallGuide.includes('/opt/clawrouter/bin/clawrouterctl ensure'));
+    assert.ok(serviceInstallGuide.includes('/etc/clawrouter/clawrouter.toml'));
     assert.ok(!serviceInstallGuide.includes('.env.release.local must be packaged'));
     assert.equal(
       serviceResult.manifest.generatedArtifacts.some((artifact) =>
-        artifact.path === 'service/linux/sdkwork-claw-router.service'
+        artifact.path === 'service/linux/clawrouter.service'
       ),
       true,
     );
@@ -1757,10 +1765,10 @@ test('install package builder emits service and container deployment packages fr
     const metadata = JSON.parse(readTarEntryText(containerTarBytes, 'container/metadata.json'));
     assert.equal(metadata.packageId, 'linux-arm64-container');
     assert.equal(metadata.version, '0.1.0');
-    assert.equal(metadata.entrypoint, '/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway');
+    assert.equal(metadata.entrypoint, '/opt/clawrouter/bin/clawrouter');
     assert.equal(metadata.runtimeUser, 'sdkwork');
     assert.equal(metadata.database.defaultEngine, 'sqlite');
-    assert.equal(metadata.configFile, '/etc/sdkwork-claw-router/sdkwork-claw-router.toml');
+    assert.equal(metadata.configFile, '/etc/clawrouter/clawrouter.toml');
     assert.equal(
       containerResult.manifest.generatedArtifacts.some((artifact) =>
         artifact.path === 'container/Containerfile'
@@ -1771,8 +1779,8 @@ test('install package builder emits service and container deployment packages fr
     const windowsStagingRoot = path.join(fixtureRoot, 'windows-staging');
     mkdirSync(path.join(windowsStagingRoot, 'bin'), { recursive: true });
     mkdirSync(path.join(windowsStagingRoot, 'portal', 'dist', 'sdk-archives'), { recursive: true });
-    writeFileSync(path.join(windowsStagingRoot, 'bin', 'sdkwork-claw-gateway.exe'), 'gateway-binary');
-    writeFileSync(path.join(windowsStagingRoot, 'bin', 'sdkwork-claw-installer.exe'), 'installer-binary');
+    writeFileSync(path.join(windowsStagingRoot, 'bin', 'clawrouter.exe'), 'gateway-binary');
+    writeFileSync(path.join(windowsStagingRoot, 'bin', 'clawrouterctl.exe'), 'installer-binary');
     writeFileSync(path.join(windowsStagingRoot, 'portal', 'dist', 'index.html'), '<!doctype html>');
     writeFileSync(path.join(windowsStagingRoot, 'portal', 'dist', 'sdk-archives', 'sdk.zip'), 'sdk-archive');
     writeFileSync(path.join(windowsStagingRoot, '.env.release.example'), 'PORTAL_PUBLIC_API_BASE_URL=/v1\n');
@@ -1787,7 +1795,7 @@ test('install package builder emits service and container deployment packages fr
     ));
     assert.deepEqual(module.validateInstallPackageBuildPlan(windowsContainerPlan), []);
     const windowsContainerResult = await module.buildInstallPackageArchive(windowsContainerPlan);
-    assert.equal(windowsContainerResult.archive.file, 'sdkwork-claw-router-windows-x64-container-0.1.0.zip');
+    assert.equal(windowsContainerResult.archive.file, 'clawrouter-windows-x64-container-0.1.0.zip');
     assert.equal(
       windowsContainerResult.manifest.generatedArtifacts.some((artifact) =>
         artifact.path === 'container/entrypoint.ps1'
@@ -1813,17 +1821,17 @@ test('install package builder emits service and container deployment packages fr
     assert.deepEqual(module.validateInstallPackageBuildPlan(desktopPlan), []);
     const desktopResult = await module.buildInstallPackageArchive(desktopPlan);
     const desktopTarBytes = gunzipSync(readFileSync(desktopResult.archivePath));
-    const desktopConfigTemplate = readTarEntryText(desktopTarBytes, 'config/sdkwork-claw-router.toml.example');
+    const desktopConfigTemplate = readTarEntryText(desktopTarBytes, 'config/clawrouter.toml.example');
     const desktopMetadata = JSON.parse(readTarEntryText(desktopTarBytes, 'desktop/metadata.json'));
     assert.ok(desktopConfigTemplate.includes('engine = "sqlite"'));
-    assert.ok(desktopConfigTemplate.includes('${XDG_CONFIG_HOME:-~/.config}/sdkwork-claw-router/sdkwork-claw-router.toml'));
-    assert.ok(desktopConfigTemplate.includes('${XDG_DATA_HOME:-~/.local/share}/sdkwork-claw-router/sdkwork-claw-router.sqlite'));
+    assert.ok(desktopConfigTemplate.includes('${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml'));
+    assert.ok(desktopConfigTemplate.includes('${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite'));
     assert.equal(desktopMetadata.database.defaultEngine, 'sqlite');
     assert.equal(desktopMetadata.database.requiresExternalDatabase, false);
     const desktopInstallGuide = readTarEntryText(desktopTarBytes, 'INSTALL.md');
     assert.ok(desktopInstallGuide.includes('Desktop deployments default to SQLite.'));
-    assert.ok(desktopInstallGuide.includes('${XDG_CONFIG_HOME:-~/.config}/sdkwork-claw-router/sdkwork-claw-router.toml'));
-    assert.ok(desktopInstallGuide.includes('${XDG_DATA_HOME:-~/.local/share}/sdkwork-claw-router/sdkwork-claw-router.sqlite'));
+    assert.ok(desktopInstallGuide.includes('${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml'));
+    assert.ok(desktopInstallGuide.includes('${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite'));
   } finally {
     rmSync(fixtureRoot, { recursive: true, force: true });
   }
@@ -1840,8 +1848,8 @@ test('install package archive builder emits tar.gz bytes for non-Windows package
   rmSync(fixtureRoot, { recursive: true, force: true });
   mkdirSync(path.join(stagingRoot, 'bin'), { recursive: true });
   mkdirSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives'), { recursive: true });
-  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-gateway'), 'gateway-binary');
-  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-installer'), 'installer-binary');
+  writeFileSync(path.join(stagingRoot, 'bin', 'clawrouter'), 'gateway-binary');
+  writeFileSync(path.join(stagingRoot, 'bin', 'clawrouterctl'), 'installer-binary');
   writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'index.html'), '<!doctype html>');
   writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives', 'sdk.zip'), 'sdk-archive');
   writeFileSync(path.join(stagingRoot, '.env.release.example'), 'PORTAL_PUBLIC_API_BASE_URL=/v1\n');
@@ -1855,13 +1863,13 @@ test('install package archive builder emits tar.gz bytes for non-Windows package
     });
     const result = await module.buildInstallPackageArchive(buildPlan);
     const archiveBytes = readFileSync(result.archivePath);
-    assert.equal(result.archive.file, 'sdkwork-claw-router-linux-arm64-archive-0.1.0.tar.gz');
+    assert.equal(result.archive.file, 'clawrouter-linux-arm64-archive-0.1.0.tar.gz');
     assert.equal(archiveBytes[0], 0x1f);
     assert.equal(archiveBytes[1], 0x8b);
     const tarBytes = gunzipSync(archiveBytes);
     const tarEntries = readTarEntries(tarBytes);
-    assert.equal(tarEntries.get('bin/sdkwork-claw-gateway')?.mode, 0o755);
-    assert.equal(tarEntries.get('bin/sdkwork-claw-installer')?.mode, 0o755);
+    assert.equal(tarEntries.get('bin/clawrouter')?.mode, 0o755);
+    assert.equal(tarEntries.get('bin/clawrouterctl')?.mode, 0o755);
     assert.equal(tarEntries.get('portal/dist/index.html')?.mode, 0o644);
     assert.match(result.archive.sha256, /^[a-f0-9]{64}$/u);
     assert.equal(result.manifest.package.id, 'linux-arm64-archive');
@@ -1893,8 +1901,8 @@ test('native installer builder emits apt-installable Debian packages for Linux s
   rmSync(fixtureRoot, { recursive: true, force: true });
   mkdirSync(path.join(stagingRoot, 'bin'), { recursive: true });
   mkdirSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives'), { recursive: true });
-  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-gateway'), 'gateway-binary');
-  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-installer'), 'installer-binary');
+  writeFileSync(path.join(stagingRoot, 'bin', 'clawrouter'), 'gateway-binary');
+  writeFileSync(path.join(stagingRoot, 'bin', 'clawrouterctl'), 'installer-binary');
   writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'index.html'), '<!doctype html>');
   writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives', 'sdk.zip'), 'sdk-archive');
   writeFileSync(path.join(stagingRoot, '.env.release.example'), 'PORTAL_PUBLIC_API_BASE_URL=/v1\n');
@@ -1908,11 +1916,11 @@ test('native installer builder emits apt-installable Debian packages for Linux s
     });
     assert.equal(plan.nativeFormat, 'deb');
     assert.equal(plan.buildTool, 'internal-deb');
-    assert.equal(plan.installerName, 'sdkwork-claw-router-linux-x64-service-0.1.0.deb');
+    assert.equal(plan.installerName, 'clawrouter-linux-x64-service-0.1.0.deb');
     assert.deepEqual(module.validateNativeInstallerBuildPlan(plan), []);
 
     const result = await module.buildNativeInstaller(plan);
-    assert.equal(result.installer.file, 'sdkwork-claw-router-linux-x64-service-0.1.0.deb');
+    assert.equal(result.installer.file, 'clawrouter-linux-x64-service-0.1.0.deb');
     assert.equal(result.installer.format, 'deb');
     assert.equal(result.installer.kind, 'native-installer');
     assert.match(result.installer.sha256, /^[a-f0-9]{64}$/u);
@@ -1925,29 +1933,30 @@ test('native installer builder emits apt-installable Debian packages for Linux s
 
     const controlTar = gunzipSync(arEntries.get('control.tar.gz'));
     const controlText = readTarEntryText(controlTar, './control');
-    assert.ok(controlText.includes('Package: sdkwork-claw-router'));
+    assert.ok(controlText.includes('Package: clawrouter'));
     assert.ok(controlText.includes('Architecture: amd64'));
     const postinstText = readTarEntryText(controlTar, './postinst');
-    assert.ok(postinstText.includes('/etc/default/sdkwork-claw-router'));
+    assert.ok(postinstText.includes('/etc/default/clawrouter'));
     assert.ok(postinstText.includes('SDKWORK_CLAW_DEPLOYMENT_MODE=server'));
     assert.ok(postinstText.includes('systemctl daemon-reload'));
+    assert.ok(postinstText.includes('systemctl enable --now clawrouter.service'));
 
     const dataTar = gunzipSync(arEntries.get('data.tar.gz'));
     const dataEntries = readTarEntries(dataTar);
-    assert.equal(dataEntries.get('./opt/sdkwork-claw-router/bin/sdkwork-claw-gateway')?.mode, 0o755);
-    assert.equal(dataEntries.get('./opt/sdkwork-claw-router/bin/sdkwork-claw-installer')?.mode, 0o755);
-    assert.ok(dataEntries.has('./opt/sdkwork-claw-router/portal/dist/index.html'));
-    assert.ok(dataEntries.has('./etc/sdkwork-claw-router/sdkwork-claw-router.toml.example'));
-    assert.ok(dataEntries.has('./lib/systemd/system/sdkwork-claw-router.service'));
-    assert.ok(dataEntries.has('./usr/share/sdkwork-claw-router/install-manifest.json'));
-    const systemdText = readTarEntryText(dataTar, './lib/systemd/system/sdkwork-claw-router.service');
-    assert.ok(systemdText.includes('EnvironmentFile=-/etc/default/sdkwork-claw-router'));
-    assert.ok(systemdText.includes('ExecStartPre=/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure'));
-    assert.ok(systemdText.includes('ExecStartPre=/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force'));
+    assert.equal(dataEntries.get('./opt/clawrouter/bin/clawrouter')?.mode, 0o755);
+    assert.equal(dataEntries.get('./opt/clawrouter/bin/clawrouterctl')?.mode, 0o755);
+    assert.ok(dataEntries.has('./opt/clawrouter/portal/dist/index.html'));
+    assert.ok(dataEntries.has('./etc/clawrouter/clawrouter.toml.example'));
+    assert.ok(dataEntries.has('./lib/systemd/system/clawrouter.service'));
+    assert.ok(dataEntries.has('./usr/share/clawrouter/install-manifest.json'));
+    const systemdText = readTarEntryText(dataTar, './lib/systemd/system/clawrouter.service');
+    assert.ok(systemdText.includes('EnvironmentFile=-/etc/default/clawrouter'));
+    assert.ok(systemdText.includes('ExecStartPre=/opt/clawrouter/bin/clawrouterctl ensure'));
+    assert.ok(systemdText.includes('ExecStartPre=/opt/clawrouter/bin/clawrouterctl refresh-catalog --force'));
 
     const aggregateManifest = JSON.parse(readFileSync(path.join(outputDir, 'install-packages-manifest.json'), 'utf8'));
     assert.deepEqual(aggregateManifest.archives.map((archive) => archive.file), [
-      'sdkwork-claw-router-linux-x64-service-0.1.0.deb',
+      'clawrouter-linux-x64-service-0.1.0.deb',
     ]);
   } finally {
     rmSync(fixtureRoot, { recursive: true, force: true });
@@ -1970,9 +1979,9 @@ test('native installer builder CLI validates cross-platform service and desktop 
   assert.equal(payload.ok, true);
   assert.equal(payload.plans.length, 12);
   assert.deepEqual(payload.issues, []);
-  assert.ok(payload.plans.some((plan) => plan.installerName === 'sdkwork-claw-router-linux-x64-service-0.2.0.deb'));
-  assert.ok(payload.plans.some((plan) => plan.installerName === 'sdkwork-claw-router-windows-arm64-desktop-0.2.0.msi'));
-  assert.ok(payload.plans.some((plan) => plan.installerName === 'sdkwork-claw-router-macos-x64-service-0.2.0.pkg'));
+  assert.ok(payload.plans.some((plan) => plan.installerName === 'clawrouter-linux-x64-service-0.2.0.deb'));
+  assert.ok(payload.plans.some((plan) => plan.installerName === 'clawrouter-windows-arm64-desktop-0.2.0.msi'));
+  assert.ok(payload.plans.some((plan) => plan.installerName === 'clawrouter-macos-x64-service-0.2.0.pkg'));
 });
 
 test('install package tar writer supports long production asset paths', async () => {
@@ -2000,8 +2009,8 @@ test('install package archive builder CLI emits pure JSON when requested', async
   rmSync(fixtureRoot, { recursive: true, force: true });
   mkdirSync(path.join(stagingRoot, 'bin'), { recursive: true });
   mkdirSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives'), { recursive: true });
-  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-gateway.exe'), 'gateway-binary');
-  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-installer.exe'), 'installer-binary');
+  writeFileSync(path.join(stagingRoot, 'bin', 'clawrouter.exe'), 'gateway-binary');
+  writeFileSync(path.join(stagingRoot, 'bin', 'clawrouterctl.exe'), 'installer-binary');
   writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'index.html'), '<!doctype html>');
   writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives', 'sdk.zip'), 'sdk-archive');
   writeFileSync(path.join(stagingRoot, '.env.release.example'), 'PORTAL_PUBLIC_API_BASE_URL=/v1\n');
@@ -2093,19 +2102,19 @@ test('install init smoke validates fast initialization without starting dev serv
     assert.equal(smokePlan.mode, 'contract-dry-run');
     assert.equal(smokePlan.databaseEngine, 'sqlite');
     assert.equal(smokePlan.deploymentMode, 'server');
-    assert.equal(smokePlan.databaseUrl, `sqlite://${path.join(fixtureRoot, 'sdkwork-claw-router-install-init.sqlite').replaceAll('\\', '/')}`);
-    assert.ok(smokePlan.databasePath.endsWith('sdkwork-claw-router-install-init.sqlite'));
+    assert.equal(smokePlan.databaseUrl, `sqlite://${path.join(fixtureRoot, 'clawrouter-install-init.sqlite').replaceAll('\\', '/')}`);
+    assert.ok(smokePlan.databasePath.endsWith('clawrouter-install-init.sqlite'));
     assert.equal(smokePlan.releaseEnvPath, path.join(fixtureRoot, '.env.release.local'));
-    assert.equal(smokePlan.runtimeConfigPath, path.join(fixtureRoot, 'sdkwork-claw-router.toml'));
+    assert.equal(smokePlan.runtimeConfigPath, path.join(fixtureRoot, 'clawrouter.toml'));
     assert.deepEqual(smokePlan.healthChecks, ['/healthz', '/readyz']);
     assert.ok(smokePlan.steps.some((step) =>
       step.id === 'release-env-write' && step.command.includes('write-release-env.mjs')
     ));
     assert.ok(smokePlan.steps.some((step) =>
-      step.id === 'database-ensure' && step.command === './bin/sdkwork-claw-installer ensure'
+      step.id === 'database-ensure' && step.command === './bin/clawrouterctl ensure'
     ));
     assert.ok(smokePlan.steps.some((step) =>
-      step.id === 'catalog-refresh' && step.command === './bin/sdkwork-claw-installer refresh-catalog --force'
+      step.id === 'catalog-refresh' && step.command === './bin/clawrouterctl refresh-catalog --force'
     ));
     assert.ok(!smokePlan.steps.some((step) =>
       step.command.includes('pnpm dev') || step.command.includes('smoke:dev')
@@ -2137,8 +2146,8 @@ test('install init smoke validates fast initialization without starting dev serv
       requireInstaller: false,
     });
     assert.equal(desktopSmokePlan.databaseEngine, 'sqlite');
-    assert.equal(desktopSmokePlan.databaseUrl, `sqlite://${path.join(fixtureRoot, 'desktop', 'sdkwork-claw-router-install-init.sqlite').replaceAll('\\', '/')}`);
-    assert.ok(desktopSmokePlan.databasePath.endsWith('sdkwork-claw-router-install-init.sqlite'));
+    assert.equal(desktopSmokePlan.databaseUrl, `sqlite://${path.join(fixtureRoot, 'desktop', 'clawrouter-install-init.sqlite').replaceAll('\\', '/')}`);
+    assert.ok(desktopSmokePlan.databasePath.endsWith('clawrouter-install-init.sqlite'));
     assert.deepEqual(module.validateInstallInitSmokePlan(desktopSmokePlan), []);
 
     const rendered = module.renderInstallInitSmokePlan(smokePlan).join('\n');
@@ -2192,25 +2201,25 @@ test('install init smoke resolves installer binaries from package root and rejec
   const packageRoot = path.join(fixtureRoot, 'package');
   rmSync(fixtureRoot, { recursive: true, force: true });
   mkdirSync(path.join(packageRoot, 'bin'), { recursive: true });
-  writeFileSync(path.join(packageRoot, 'bin', 'sdkwork-claw-installer'), 'installer-binary');
+  writeFileSync(path.join(packageRoot, 'bin', 'clawrouterctl'), 'installer-binary');
 
   try {
     const smokePlan = module.createInstallInitSmokePlan({
       packageId: 'linux-x64-archive',
       packageRoot,
       tmpRoot: path.join(fixtureRoot, 'tmp'),
-      installerBin: 'bin/sdkwork-claw-installer',
+      installerBin: 'bin/clawrouterctl',
       requireInstaller: true,
     });
     assert.equal(smokePlan.packageRoot, packageRoot);
-    assert.equal(smokePlan.installerBin, path.join(packageRoot, 'bin', 'sdkwork-claw-installer'));
+    assert.equal(smokePlan.installerBin, path.join(packageRoot, 'bin', 'clawrouterctl'));
     assert.deepEqual(module.validateInstallInitSmokePlan(smokePlan), []);
 
     const missingRootPlan = module.createInstallInitSmokePlan({
       packageId: 'linux-x64-archive',
       packageRoot: path.join(fixtureRoot, 'missing-package'),
       tmpRoot: path.join(fixtureRoot, 'tmp-missing'),
-      installerBin: 'bin/sdkwork-claw-installer',
+      installerBin: 'bin/clawrouterctl',
       requireInstaller: true,
     });
     assert.ok(
@@ -3762,14 +3771,14 @@ test('environment and deployment specs document Claw Router runtime config stand
     assert.ok(content.includes('SDKWORK_CLAW_DATABASE_URL'));
     assert.ok(content.includes('PORTAL_PUBLIC_BACKEND_API_BASE_URL'));
     assert.ok(content.includes('PORTAL_PUBLIC_APP_API_BASE_URL'));
-    assert.ok(content.includes('/etc/sdkwork-claw-router/sdkwork-claw-router.toml'));
-    assert.ok(content.includes('%ProgramData%/SdkWork/Claw Router/sdkwork-claw-router.toml'));
-    assert.ok(content.includes('~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml'));
+    assert.ok(content.includes('/etc/clawrouter/clawrouter.toml'));
+    assert.ok(content.includes('%ProgramData%/SdkWork/ClawRouter/clawrouter.toml'));
+    assert.ok(content.includes('~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml'));
   }
   assert.ok(environmentSpec.includes('Server deployments default to local SQLite for single-node startup.'));
   assert.ok(environmentSpec.includes('Desktop deployments default to SQLite.'));
-  assert.ok(deploymentSpec.includes('sdkwork-claw-installer ensure'));
-  assert.ok(deploymentSpec.includes('sdkwork-claw-installer refresh-catalog --force'));
+  assert.ok(deploymentSpec.includes('clawrouterctl ensure'));
+  assert.ok(deploymentSpec.includes('clawrouterctl refresh-catalog --force'));
 });
 
 test('release preflight parses main origin counts as local ahead then remote ahead', async () => {

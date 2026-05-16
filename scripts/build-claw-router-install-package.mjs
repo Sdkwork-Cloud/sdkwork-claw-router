@@ -10,8 +10,13 @@ import { gzipSync } from 'node:zlib';
 import { createZip } from './archive-claw-router-sdks.mjs';
 import {
   DEFAULT_VERSION,
+  INTERNAL_PROJECT_NAME,
+  PACKAGE_NAME,
+  POSIX_INSTALL_ROOT,
   createInstallPackagePlan,
   RUNTIME_CONFIG_TEMPLATE_PATH,
+  RUNTIME_DISPLAY_NAME,
+  WINDOWS_INSTALL_ROOT,
   validateInstallPackagePlan,
 } from './plan-claw-router-install-packages.mjs';
 
@@ -496,7 +501,10 @@ function createPackageManifest(buildPlan, artifactFiles, generatedArtifacts = []
   return {
     schemaVersion: '2026-05-15.install-manifest.v1',
     generatedAt: '2026-05-15T00:00:00.000Z',
-    product: 'sdkwork-claw-router',
+    product: INTERNAL_PROJECT_NAME,
+    packageName: PACKAGE_NAME,
+    runtimeName: PACKAGE_NAME,
+    displayName: RUNTIME_DISPLAY_NAME,
     package: {
       id: buildPlan.package.id,
       version: buildPlan.package.version,
@@ -547,7 +555,7 @@ function createGeneratedArtifactBytes(buildPlan, entry) {
 function createInstallGuide(packageItem) {
   const policy = packageItem.databasePolicy;
   const lines = [
-    '# SdkWork Claw Router Install Guide',
+    `# ${RUNTIME_DISPLAY_NAME} Install Guide`,
     '',
     `Package: ${packageItem.id}`,
     `Version: ${packageItem.version}`,
@@ -594,7 +602,7 @@ function createInstallGuide(packageItem) {
       'Linux service packages run initialization automatically from systemd before the gateway starts:',
       '',
       '```sh',
-      ...packageItem.initCommands.map((command) => command.replace('./bin/', '/opt/sdkwork-claw-router/bin/')),
+      ...packageItem.initCommands.map((command) => command.replace('./bin/', `${POSIX_INSTALL_ROOT}/bin/`)),
       '```',
       '',
       'Use the commands manually only for recovery or operator-driven catalog refreshes.',
@@ -656,7 +664,7 @@ function createInstallGuide(packageItem) {
 function createRuntimeConfigTemplate(packageItem) {
   const policy = packageItem.databasePolicy;
   const lines = [
-    '# SdkWork Claw Router runtime configuration template.',
+    `# ${RUNTIME_DISPLAY_NAME} runtime configuration template.`,
     `# Install this file as: ${policy.configFile.path}`,
     `# Runtime profile: ${packageItem.runtimeProfile}`,
     '',
@@ -705,9 +713,9 @@ function createServiceManifest(packageItem) {
   if (packageItem.platform === 'windows') {
     return [
       '<service>',
-      '  <id>sdkwork-claw-router</id>',
-      '  <name>SdkWork Claw Router</name>',
-      '  <description>SdkWork Claw Router edge server</description>',
+      '  <id>clawrouter</id>',
+      `  <name>${RUNTIME_DISPLAY_NAME}</name>`,
+      `  <description>${RUNTIME_DISPLAY_NAME} edge server</description>`,
       `  <executable>%BASE%\\bin\\${packageItem.binaryName}</executable>`,
       '  <workingdirectory>%BASE%</workingdirectory>',
       `  <env name="SDKWORK_CLAW_CONFIG_FILE" value="${packageItem.databasePolicy.configFile.path.replaceAll('/', '\\')}"/>`,
@@ -723,13 +731,13 @@ function createServiceManifest(packageItem) {
       '<plist version="1.0">',
       '<dict>',
       '  <key>Label</key>',
-      '  <string>com.sdkwork.claw-router</string>',
+      '  <string>com.sdkwork.clawrouter</string>',
       '  <key>ProgramArguments</key>',
       '  <array>',
-      `    <string>/opt/sdkwork-claw-router/bin/${packageItem.binaryName}</string>`,
+      `    <string>${POSIX_INSTALL_ROOT}/bin/${packageItem.binaryName}</string>`,
       '  </array>',
       '  <key>WorkingDirectory</key>',
-      '  <string>/opt/sdkwork-claw-router</string>',
+      `  <string>${POSIX_INSTALL_ROOT}</string>`,
       '  <key>EnvironmentVariables</key>',
       '  <dict>',
       '    <key>SDKWORK_CLAW_CONFIG_FILE</key>',
@@ -740,9 +748,9 @@ function createServiceManifest(packageItem) {
       '  <key>KeepAlive</key>',
       '  <true/>',
       '  <key>StandardOutPath</key>',
-      '  <string>/var/log/sdkwork-claw-router/stdout.log</string>',
+      '  <string>/var/log/clawrouter/stdout.log</string>',
       '  <key>StandardErrorPath</key>',
-      '  <string>/var/log/sdkwork-claw-router/stderr.log</string>',
+      '  <string>/var/log/clawrouter/stderr.log</string>',
       '</dict>',
       '</plist>',
       '',
@@ -750,19 +758,19 @@ function createServiceManifest(packageItem) {
   }
   return [
     '[Unit]',
-    'Description=SdkWork Claw Router edge server',
+    `Description=${RUNTIME_DISPLAY_NAME} edge server`,
     'After=network-online.target',
     'Wants=network-online.target',
     '',
     '[Service]',
     'Type=simple',
-    'WorkingDirectory=/opt/sdkwork-claw-router',
-    'EnvironmentFile=-/etc/default/sdkwork-claw-router',
+    `WorkingDirectory=${POSIX_INSTALL_ROOT}`,
+    'EnvironmentFile=-/etc/default/clawrouter',
     `Environment=SDKWORK_CLAW_CONFIG_FILE=${packageItem.databasePolicy.configFile.path}`,
     'Environment=SDKWORK_CLAW_DEPLOYMENT_MODE=server',
-    'ExecStartPre=/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure',
-    'ExecStartPre=/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force',
-    `ExecStart=/opt/sdkwork-claw-router/bin/${packageItem.binaryName}`,
+    `ExecStartPre=${POSIX_INSTALL_ROOT}/bin/${packageItem.installerBinaryName} ensure`,
+    `ExecStartPre=${POSIX_INSTALL_ROOT}/bin/${packageItem.installerBinaryName} refresh-catalog --force`,
+    `ExecStart=${POSIX_INSTALL_ROOT}/bin/${packageItem.binaryName}`,
     'Restart=on-failure',
     'RestartSec=5',
     'User=sdkwork',
@@ -771,7 +779,7 @@ function createServiceManifest(packageItem) {
     'PrivateTmp=true',
     'ProtectSystem=strict',
     'ProtectHome=true',
-    'ReadWritePaths=/var/lib/sdkwork-claw-router /var/log/sdkwork-claw-router /etc/sdkwork-claw-router',
+    'ReadWritePaths=/var/lib/clawrouter /var/log/clawrouter /etc/clawrouter',
     '',
     '[Install]',
     'WantedBy=multi-user.target',
@@ -781,14 +789,14 @@ function createServiceManifest(packageItem) {
 
 function createContainerfile(packageItem) {
   const entrypoint = packageItem.platform === 'windows'
-    ? '["powershell.exe", "-ExecutionPolicy", "Bypass", "-File", "C:/sdkwork-claw-router/container/entrypoint.ps1"]'
-    : '["/opt/sdkwork-claw-router/container/entrypoint"]';
+    ? `["powershell.exe", "-ExecutionPolicy", "Bypass", "-File", "${WINDOWS_INSTALL_ROOT}/container/entrypoint.ps1"]`
+    : `["${POSIX_INSTALL_ROOT}/container/entrypoint"]`;
   if (packageItem.platform === 'windows') {
     return [
       '# syntax=docker/dockerfile:1',
       'FROM mcr.microsoft.com/windows/nanoserver:ltsc2022',
-      'WORKDIR C:/sdkwork-claw-router',
-      'COPY . C:/sdkwork-claw-router',
+      `WORKDIR ${WINDOWS_INSTALL_ROOT}`,
+      `COPY . ${WINDOWS_INSTALL_ROOT}`,
       `ENV SDKWORK_CLAW_CONFIG_FILE="${packageItem.databasePolicy.configFile.path}"`,
       'EXPOSE 3900',
       `ENTRYPOINT ${entrypoint}`,
@@ -798,10 +806,10 @@ function createContainerfile(packageItem) {
   return [
     '# syntax=docker/dockerfile:1',
     'FROM debian:bookworm-slim',
-    'RUN groupadd --system sdkwork && useradd --system --gid sdkwork --home-dir /opt/sdkwork-claw-router sdkwork',
-    'WORKDIR /opt/sdkwork-claw-router',
-    'COPY . /opt/sdkwork-claw-router',
-    `RUN chmod 0755 /opt/sdkwork-claw-router/bin/${packageItem.binaryName} /opt/sdkwork-claw-router/bin/${packageItem.installerBinaryName} /opt/sdkwork-claw-router/container/entrypoint`,
+    `RUN groupadd --system sdkwork && useradd --system --gid sdkwork --home-dir ${POSIX_INSTALL_ROOT} sdkwork`,
+    `WORKDIR ${POSIX_INSTALL_ROOT}`,
+    `COPY . ${POSIX_INSTALL_ROOT}`,
+    `RUN chmod 0755 ${POSIX_INSTALL_ROOT}/bin/${packageItem.binaryName} ${POSIX_INSTALL_ROOT}/bin/${packageItem.installerBinaryName} ${POSIX_INSTALL_ROOT}/container/entrypoint`,
     `ENV SDKWORK_CLAW_CONFIG_FILE="${packageItem.databasePolicy.configFile.path}"`,
     'USER sdkwork',
     'EXPOSE 3900',
@@ -814,18 +822,18 @@ function createContainerEntrypoint(packageItem) {
   if (packageItem.platform === 'windows') {
     return [
       '$ErrorActionPreference = "Stop"',
-      `& "C:\\sdkwork-claw-router\\bin\\${packageItem.installerBinaryName}" ensure`,
-      `& "C:\\sdkwork-claw-router\\bin\\${packageItem.installerBinaryName}" refresh-catalog --force`,
-      `& "C:\\sdkwork-claw-router\\bin\\${packageItem.binaryName}" @args`,
+      `& "C:\\clawrouter\\bin\\${packageItem.installerBinaryName}" ensure`,
+      `& "C:\\clawrouter\\bin\\${packageItem.installerBinaryName}" refresh-catalog --force`,
+      `& "C:\\clawrouter\\bin\\${packageItem.binaryName}" @args`,
       '',
     ].join('\n');
   }
   return [
     '#!/bin/sh',
     'set -eu',
-    `/opt/sdkwork-claw-router/bin/${packageItem.installerBinaryName} ensure`,
-    `/opt/sdkwork-claw-router/bin/${packageItem.installerBinaryName} refresh-catalog --force`,
-    `exec /opt/sdkwork-claw-router/bin/${packageItem.binaryName} "$@"`,
+    `${POSIX_INSTALL_ROOT}/bin/${packageItem.installerBinaryName} ensure`,
+    `${POSIX_INSTALL_ROOT}/bin/${packageItem.installerBinaryName} refresh-catalog --force`,
+    `exec ${POSIX_INSTALL_ROOT}/bin/${packageItem.binaryName} "$@"`,
     '',
   ].join('\n');
 }
@@ -839,8 +847,8 @@ function createContainerMetadata(packageItem) {
     architecture: packageItem.architecture,
     entrypoint: packageItem.containerIntegration.entrypoint,
     entrypointScript: packageItem.platform === 'windows'
-      ? 'C:/sdkwork-claw-router/container/entrypoint.ps1'
-      : '/opt/sdkwork-claw-router/container/entrypoint',
+      ? `${WINDOWS_INSTALL_ROOT}/container/entrypoint.ps1`
+      : `${POSIX_INSTALL_ROOT}/container/entrypoint`,
     workingDirectory: packageItem.containerIntegration.workingDirectory,
     runtimeUser: packageItem.containerIntegration.runtimeUser,
     exposedPorts: packageItem.containerIntegration.exposedPorts,
@@ -881,7 +889,8 @@ function createAggregateManifest(buildPlan, archive) {
   return {
     schemaVersion: '2026-05-15.install-packages-manifest.v1',
     generatedAt: '2026-05-15T00:00:00.000Z',
-    product: 'sdkwork-claw-router',
+    product: INTERNAL_PROJECT_NAME,
+    packageName: PACKAGE_NAME,
     archives: [...archivesByPackageId.values()].sort((left, right) =>
       left.packageId.localeCompare(right.packageId)
     ),
@@ -896,7 +905,7 @@ function readExistingAggregateArchives(aggregateManifestPath) {
     const payload = JSON.parse(readFileSync(aggregateManifestPath, 'utf8'));
     if (
       payload?.schemaVersion !== '2026-05-15.install-packages-manifest.v1'
-      || payload?.product !== 'sdkwork-claw-router'
+      || payload?.product !== INTERNAL_PROJECT_NAME
       || !Array.isArray(payload.archives)
     ) {
       return [];
