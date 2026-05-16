@@ -164,6 +164,8 @@ jobs:
         shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
+          Copy-Item -LiteralPath "release-tools/sdkwork-claw-router/scripts/claw-router-release-version.mjs" -Destination "apps/sdkwork-claw-router/scripts/claw-router-release-version.mjs" -Force
+          Copy-Item -LiteralPath "release-tools/sdkwork-claw-router/scripts/plan-claw-router-install-packages.mjs" -Destination "apps/sdkwork-claw-router/scripts/plan-claw-router-install-packages.mjs" -Force
           Copy-Item -LiteralPath "release-tools/sdkwork-claw-router/scripts/build-claw-router-install-package.mjs" -Destination "apps/sdkwork-claw-router/scripts/build-claw-router-install-package.mjs" -Force
           Copy-Item -LiteralPath "release-tools/sdkwork-claw-router/scripts/build-claw-router-native-installer.mjs" -Destination "apps/sdkwork-claw-router/scripts/build-claw-router-native-installer.mjs" -Force
 
