@@ -958,3 +958,24 @@ configured but the normalized archive is missing, it returns
 7. Confirm no touched frontend business path bypasses generated SDK clients.
 8. Confirm production artifacts pass bundle budget and server smoke checks.
 9. Record command evidence in `CHECK_RESULT.md`.
+
+## License
+
+SDKWork Claw Router application source is licensed under
+`AGPL-3.0-or-later AND LicenseRef-SDKWork-Commercial-Restriction`. See
+[LICENSE](./LICENSE) and [COMMERCIAL-LICENSE.md](./COMMERCIAL-LICENSE.md).
+
+This is not an unmodified AGPL-only commercial grant. Commercial use requires
+prior written authorization from SDKWork. Unauthorized commercial deployment,
+SaaS or managed-service operation, commercial integration, resale, white-label
+delivery, paid implementation services, and commercial production use are
+prohibited.
+
+未经 SDKWork 书面授权，禁止商业使用、商业部署、商业集成、转售、托管服务、
+SaaS 服务、白标交付、付费咨询实施服务，以及任何营利性或商业组织生产环境使用。
+
+Generated SDK packages, standalone data packages, vendored artifacts, and
+third-party dependencies may include their own license files. Those package or
+artifact license files govern the corresponding generated, standalone,
+vendored, or third-party artifact unless SDKWork explicitly replaces that
+license notice in its package directory.
