@@ -57,6 +57,10 @@ on:
         description: sdkwork-im-sdk commit/ref
         required: true
         default: 8245ff9095f7d11c70aa062e16a9e42a715604b1
+      sdkwork_sdk_generator_ref:
+        description: sdkwork-sdk-generator commit/ref
+        required: true
+        default: 37144b075549a380f48203d1a385a63bad9ebc33
 
 permissions:
   contents: write
@@ -172,6 +176,14 @@ jobs:
           repository: Sdkwork-Cloud/sdkwork-im-sdk
           ref: ${{ inputs.sdkwork_im_sdk_ref }}
           path: apps/craw-chat/sdks/sdkwork-im-sdk
+          token: ${{ secrets.SDKWORK_RELEASE_TOKEN || github.token }}
+
+      - name: Checkout sdkwork-sdk-generator
+        uses: actions/checkout@v4
+        with:
+          repository: Sdkwork-Cloud/sdkwork-sdk-generator
+          ref: ${{ inputs.sdkwork_sdk_generator_ref }}
+          path: sdk/sdkwork-sdk-generator
           token: ${{ secrets.SDKWORK_RELEASE_TOKEN || github.token }}
 
       - name: Set up pnpm
