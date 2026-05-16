@@ -7,7 +7,7 @@ All notable changes to `sdkwork-claw-router` release records will be documented 
 ### Scope
 
 - Adds a complete runtime authentication settings capability after the successful `v0.1.0` release.
-- No failed post-`v0.1.0` GitHub release existed at preparation time, so the notes are reconstructed from the current code changes since `v0.1.0`.
+- No separately published failed version exists after `v0.1.0`; an initial `v0.2.0` package workflow failed before build due to Git LFS budget exhaustion and is folded into this successful release record.
 
 ### Delivered
 
@@ -24,6 +24,8 @@ All notable changes to `sdkwork-claw-router` release records will be documented 
 - Changed server/service package defaults to local SQLite for single-node zero-config startup, with PostgreSQL documented as the production and multi-node option.
 - Updated Linux `.deb` service installation so the package creates `/etc/default/clawrouter`, generates the default runtime TOML, and runs installer initialization from systemd before starting the gateway.
 - Simplified English and Chinese installation and initialization guides so Ubuntu/Debian service install is `apt install` plus `systemctl enable --now`.
+- Standardized the external runtime surface on `clawrouter`, including `clawrouter-*` release assets, the `clawrouter` gateway process, the `clawrouterctl` installer/admin CLI, `clawrouter.service`, and `/opt/clawrouter`, `/etc/clawrouter`, `/etc/default/clawrouter`, `/var/lib/clawrouter`, and `/var/log/clawrouter` runtime paths.
+- Removed release checkout dependency on Git LFS by committing curated runtime skill seed JSON files directly to Git while leaving large ClawHub mirror snapshots as optional LFS data.
 
 ### Verification
 
@@ -35,12 +37,16 @@ All notable changes to `sdkwork-claw-router` release records will be documented 
 - `node scripts/build-claw-router-install-package.mjs --all --check --dry-run --json`
 - `node scripts/build-claw-router-native-installer.mjs --all --check --dry-run --json`
 - `node scripts/run-claw-router-product.test.mjs`
+- `node scripts/release-preflight.mjs --dry-run --json`
+- `cargo test -p sdkwork-claw-product --test database_installer sqlite_installer_repairs`
 - Local Windows WiX fixture build for `windows-x64-desktop` `.msi`
+- GitHub Actions `Release Package` run `25956126725`, covering Linux x64, Linux arm64, Windows x64, Windows arm64, macOS x64, and macOS arm64.
 
 ### Release Gate Status
 
 - Sibling SDK/shared repository gate is satisfied: `sdkwork-appbase` is clean at `3280447`, `sdkwork-core` was committed and pushed at `339ab3e`, `sdkwork-ui` was committed and pushed at `a4c9094`, and the user-specified `sdkwork-im-sdk` checkout under `apps\craw-chat\sdks\sdkwork-im-sdk` was committed and pushed at `8245ff9`.
 - Full `pnpm verify` was skipped by release-operator instruction for this release attempt.
+- Git LFS is no longer a release package build requirement; it is only required when refreshing large ClawHub mirror snapshots.
 
 ## 2026-05-15 - v0.1.0
 
