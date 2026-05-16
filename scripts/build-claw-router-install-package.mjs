@@ -25,6 +25,8 @@ const __dirname = path.dirname(__filename);
 const workspaceRoot = path.resolve(__dirname, '..');
 const AGGREGATE_MANIFEST_FILE = 'install-packages-manifest.json';
 const PACKAGE_MANIFEST_FILE = 'install-manifest.json';
+const INSTALL_MANIFEST_SCHEMA_VERSION = '2026-05-15.install-manifest.v1';
+const INSTALL_PACKAGES_MANIFEST_SCHEMA_VERSION = '2026-05-15.install-packages-manifest.v1';
 
 function printHelp() {
   console.log(`Usage: node scripts/build-claw-router-install-package.mjs [options]
@@ -458,7 +460,8 @@ async function buildInstallPackageArchive(buildPlan) {
     });
   }
 
-  const packageManifest = createPackageManifest(buildPlan, artifactFiles, generatedArtifacts);
+  const generatedAt = resolveManifestGeneratedAt();
+  const packageManifest = createPackageManifest(buildPlan, artifactFiles, generatedArtifacts, { generatedAt });
   const manifestBytes = Buffer.from(`${JSON.stringify(packageManifest, null, 2)}\n`, 'utf8');
   fileEntries.push({
     relativePath: PACKAGE_MANIFEST_FILE,
@@ -480,7 +483,7 @@ async function buildInstallPackageArchive(buildPlan) {
     size: archiveBytes.length,
     sha256: sha256(archiveBytes),
   };
-  const aggregateManifest = createAggregateManifest(buildPlan, archive);
+  const aggregateManifest = createAggregateManifest(buildPlan, archive, { generatedAt });
   await writeFile(
     buildPlan.aggregateManifestPath,
     `${JSON.stringify(aggregateManifest, null, 2)}\n`,
@@ -497,10 +500,36 @@ async function buildInstallPackageArchive(buildPlan) {
   };
 }
 
-function createPackageManifest(buildPlan, artifactFiles, generatedArtifacts = []) {
+function normalizeManifestTimestamp(value, label) {
+  const date = value instanceof Date ? value : new Date(value);
+  if (!Number.isFinite(date.getTime())) {
+    throw new Error(`${label} must be a valid timestamp`);
+  }
+  return date.toISOString();
+}
+
+function resolveManifestGeneratedAt({ env = process.env, now = new Date() } = {}) {
+  const explicitGeneratedAt = String(env.SDKWORK_CLAW_RELEASE_GENERATED_AT ?? '').trim();
+  if (explicitGeneratedAt) {
+    return normalizeManifestTimestamp(explicitGeneratedAt, 'SDKWORK_CLAW_RELEASE_GENERATED_AT');
+  }
+
+  const sourceDateEpoch = String(env.SOURCE_DATE_EPOCH ?? '').trim();
+  if (sourceDateEpoch) {
+    if (!/^\d+$/u.test(sourceDateEpoch)) {
+      throw new Error('SOURCE_DATE_EPOCH must be an integer Unix timestamp in seconds');
+    }
+    return normalizeManifestTimestamp(new Date(Number(sourceDateEpoch) * 1000), 'SOURCE_DATE_EPOCH');
+  }
+
+  return normalizeManifestTimestamp(now, 'manifest generation time');
+}
+
+function createPackageManifest(buildPlan, artifactFiles, generatedArtifacts = [], options = {}) {
+  const generatedAt = options.generatedAt ?? resolveManifestGeneratedAt();
   return {
-    schemaVersion: '2026-05-15.install-manifest.v1',
-    generatedAt: '2026-05-15T00:00:00.000Z',
+    schemaVersion: INSTALL_MANIFEST_SCHEMA_VERSION,
+    generatedAt,
     product: INTERNAL_PROJECT_NAME,
     packageName: PACKAGE_NAME,
     runtimeName: PACKAGE_NAME,
@@ -877,7 +906,7 @@ function createDesktopMetadata(packageItem) {
   };
 }
 
-function createAggregateManifest(buildPlan, archive) {
+function createAggregateManifest(buildPlan, archive, options = {}) {
   const existingArchives = readExistingAggregateArchives(buildPlan.aggregateManifestPath);
   const archivesByPackageId = new Map();
   for (const existingArchive of existingArchives) {
@@ -886,9 +915,10 @@ function createAggregateManifest(buildPlan, archive) {
     }
   }
   archivesByPackageId.set(archive.packageId, archive);
+  const generatedAt = options.generatedAt ?? resolveManifestGeneratedAt();
   return {
-    schemaVersion: '2026-05-15.install-packages-manifest.v1',
-    generatedAt: '2026-05-15T00:00:00.000Z',
+    schemaVersion: INSTALL_PACKAGES_MANIFEST_SCHEMA_VERSION,
+    generatedAt,
     product: INTERNAL_PROJECT_NAME,
     packageName: PACKAGE_NAME,
     archives: [...archivesByPackageId.values()].sort((left, right) =>
@@ -904,7 +934,7 @@ function readExistingAggregateArchives(aggregateManifestPath) {
   try {
     const payload = JSON.parse(readFileSync(aggregateManifestPath, 'utf8'));
     if (
-      payload?.schemaVersion !== '2026-05-15.install-packages-manifest.v1'
+      payload?.schemaVersion !== INSTALL_PACKAGES_MANIFEST_SCHEMA_VERSION
       || payload?.product !== INTERNAL_PROJECT_NAME
       || !Array.isArray(payload.archives)
     ) {
@@ -1210,6 +1240,7 @@ export {
   modeForArchivePath,
   normalizeArchivePath,
   parseInstallPackageBuildArgs,
+  resolveManifestGeneratedAt,
   renderInstallPackageBuildPlan,
   runAllInstallPackageBuilds,
   sha256,

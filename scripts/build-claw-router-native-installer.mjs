@@ -25,6 +25,7 @@ import {
   defaultInstallPackageOutputDir,
   defaultStagingRoot,
   modeForArchivePath,
+  resolveManifestGeneratedAt,
   sha256,
   validateInstallPackageBuildPlan,
 } from './build-claw-router-install-package.mjs';
@@ -220,7 +221,8 @@ async function buildNativeInstaller(plan) {
   }
   await mkdir(plan.outputDir, { recursive: true });
 
-  const packageFiles = await collectPackageFileEntries(plan.archiveBuildPlan);
+  const generatedAt = resolveManifestGeneratedAt();
+  const packageFiles = await collectPackageFileEntries(plan.archiveBuildPlan, { generatedAt });
   if (plan.package.platform === 'linux') {
     await writeFile(plan.installerPath, createDebianPackage(plan, packageFiles.fileEntries));
   } else if (plan.package.platform === 'macos') {
@@ -242,7 +244,7 @@ async function buildNativeInstaller(plan) {
     size: installerBytes.length,
     sha256: sha256(installerBytes),
   };
-  const aggregateManifest = createAggregateManifest(plan, installer);
+  const aggregateManifest = createAggregateManifest(plan, installer, { generatedAt });
   await writeFile(
     plan.aggregateManifestPath,
     `${JSON.stringify(aggregateManifest, null, 2)}\n`,
@@ -259,7 +261,7 @@ async function buildNativeInstaller(plan) {
   };
 }
 
-async function collectPackageFileEntries(archiveBuildPlan) {
+async function collectPackageFileEntries(archiveBuildPlan, options = {}) {
   const artifactFiles = [];
   const generatedArtifacts = [];
   const fileEntries = [];
@@ -292,7 +294,7 @@ async function collectPackageFileEntries(archiveBuildPlan) {
     });
   }
 
-  const manifest = createPackageManifest(archiveBuildPlan, artifactFiles, generatedArtifacts);
+  const manifest = createPackageManifest(archiveBuildPlan, artifactFiles, generatedArtifacts, options);
   fileEntries.push({
     relativePath: PACKAGE_MANIFEST_FILE,
     data: Buffer.from(`${JSON.stringify(manifest, null, 2)}\n`, 'utf8'),

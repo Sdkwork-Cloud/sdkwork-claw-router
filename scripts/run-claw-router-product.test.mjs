@@ -1679,6 +1679,67 @@ test('install package archive builder creates manifest-backed archives without l
   }
 });
 
+test('install package manifests distinguish schema version dates from generation timestamps', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'build-claw-router-install-package.mjs')).href
+  );
+
+  const explicitGeneratedAt = module.resolveManifestGeneratedAt({
+    env: { SDKWORK_CLAW_RELEASE_GENERATED_AT: '2026-05-16T08:05:57Z' },
+  });
+  assert.equal(explicitGeneratedAt, '2026-05-16T08:05:57.000Z');
+  assert.equal(
+    module.resolveManifestGeneratedAt({ env: { SOURCE_DATE_EPOCH: '1710000000' } }),
+    new Date(1710000000 * 1000).toISOString(),
+  );
+  assert.throws(
+    () => module.resolveManifestGeneratedAt({ env: { SOURCE_DATE_EPOCH: 'not-a-number' } }),
+    /SOURCE_DATE_EPOCH/u,
+  );
+
+  const packageItem = {
+    id: 'linux-x64-service',
+    version: '0.2.0',
+    platform: 'linux',
+    architecture: 'x64',
+    deploymentMode: 'service',
+    runtimeProfile: 'server',
+    archiveName: 'clawrouter-linux-x64-service-0.2.0.tar.gz',
+    binaryName: 'clawrouter',
+    installerBinaryName: 'clawrouterctl',
+    startCommand: './bin/clawrouter',
+    healthChecks: ['/healthz', '/readyz'],
+    initCommands: ['./bin/clawrouterctl ensure'],
+    databasePolicy: {
+      configFile: { path: '/etc/clawrouter/clawrouter.toml' },
+      dataDirectory: { path: '/var/lib/clawrouter' },
+    },
+    security: { noSecretsInPackage: true },
+  };
+  const buildPlan = {
+    package: packageItem,
+    aggregateManifestPath: path.join(workspaceRoot, '.tmp', 'missing-install-packages-manifest.json'),
+  };
+  const manifest = module.createPackageManifest(buildPlan, [], [], { generatedAt: explicitGeneratedAt });
+  const aggregate = module.createAggregateManifest(
+    buildPlan,
+    {
+      file: 'clawrouter-linux-x64-service-0.2.0.deb',
+      packageId: packageItem.id,
+      version: packageItem.version,
+      size: 1,
+      sha256: 'a'.repeat(64),
+    },
+    { generatedAt: explicitGeneratedAt },
+  );
+
+  assert.equal(manifest.schemaVersion, '2026-05-15.install-manifest.v1');
+  assert.equal(aggregate.schemaVersion, '2026-05-15.install-packages-manifest.v1');
+  assert.equal(manifest.generatedAt, explicitGeneratedAt);
+  assert.equal(aggregate.generatedAt, explicitGeneratedAt);
+  assert.notEqual(manifest.generatedAt, '2026-05-15T00:00:00.000Z');
+});
+
 test('install package builder emits service and container deployment packages from the shared plan', async () => {
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'build-claw-router-install-package.mjs')).href
