@@ -18,7 +18,7 @@ use sdkwork_claw_product::infrastructure::provider::{
     ProviderSecretMapResolver, SecretRefOpenAiCompatibleProviderHealthProbe,
 };
 use sdkwork_claw_product::infrastructure::sql::installer::{
-    DatabaseInstallError, DatabaseInstaller,
+    log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
 };
 use sdkwork_claw_product::infrastructure::sql::postgres::{
     PostgresAccountSummaryReadStore, PostgresAdminAuthSettingsStore, PostgresAppAuthStore,
@@ -1121,10 +1121,11 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                     ProductCatalogRouterError::Sqlite(SqlCatalogLoadError::Database(error))
                 })?;
             if startup_install_mode.should_ensure() {
-                DatabaseInstaller::for_sqlite(pool.clone())
+                let install_report = DatabaseInstaller::for_sqlite(pool.clone())
                     .with_env_options()?
                     .ensure_installed()
                     .await?;
+                log_bootstrap_admin_report(SERVICE_NAME, &install_report);
             }
             let read_store = SqlitePricingCatalogLoader::new(pool.clone());
             let model_catalog_snapshot = read_store.load_snapshot().await?;
@@ -1237,10 +1238,11 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                     ProductCatalogRouterError::Postgres(PostgresCatalogLoadError::Database(error))
                 })?;
             if startup_install_mode.should_ensure() {
-                DatabaseInstaller::for_postgres(pool.clone())
+                let install_report = DatabaseInstaller::for_postgres(pool.clone())
                     .with_env_options()?
                     .ensure_installed()
                     .await?;
+                log_bootstrap_admin_report(SERVICE_NAME, &install_report);
             }
             let read_store = PostgresPricingCatalogLoader::new(pool.clone());
             let model_catalog_snapshot = read_store.load_snapshot().await?;

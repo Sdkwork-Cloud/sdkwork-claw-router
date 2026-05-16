@@ -1357,10 +1357,12 @@ dependencies = [
  "sdkwork-claw-observability",
  "sdkwork-claw-product",
  "sdkwork-claw-test-support",
+ "serde",
  "serde_json",
  "sqlx",
  "tokio",
  "tower",
+ "tracing",
 ]
 
 [[package]]
@@ -1481,6 +1483,7 @@ dependencies = [
  "axum",
  "bytes",
  "futures-util",
+ "getrandom 0.3.4",
  "hex",
  "hmac",
  "http-body-util",

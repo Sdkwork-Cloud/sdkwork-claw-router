@@ -17,7 +17,7 @@ use sdkwork_claw_product::infrastructure::provider::{
     SecretRefOpenAiCompatibleResponsesRelay, UpstreamProviderEndpoint,
 };
 use sdkwork_claw_product::infrastructure::sql::installer::{
-    DatabaseInstallError, DatabaseInstaller,
+    log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
 };
 use sdkwork_claw_product::infrastructure::sql::postgres::{
     PostgresCatalogLoadError, PostgresGatewayUsageRecorder, PostgresPricingCatalogLoader,
@@ -390,10 +390,11 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                     GatewayRouterError::Sqlite(SqlCatalogLoadError::Database(error))
                 })?;
             if startup_install_mode.should_ensure() {
-                DatabaseInstaller::for_sqlite(pool.clone())
+                let install_report = DatabaseInstaller::for_sqlite(pool.clone())
                     .with_env_options()?
                     .ensure_installed()
                     .await?;
+                log_bootstrap_admin_report("sdkwork-claw-gateway", &install_report);
             }
             let snapshot = SqlitePricingCatalogLoader::new(pool.clone())
                 .load_snapshot()
@@ -424,10 +425,11 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                     GatewayRouterError::Postgres(PostgresCatalogLoadError::Database(error))
                 })?;
             if startup_install_mode.should_ensure() {
-                DatabaseInstaller::for_postgres(pool.clone())
+                let install_report = DatabaseInstaller::for_postgres(pool.clone())
                     .with_env_options()?
                     .ensure_installed()
                     .await?;
+                log_bootstrap_admin_report("sdkwork-claw-gateway", &install_report);
             }
             let snapshot = PostgresPricingCatalogLoader::new(pool.clone())
                 .load_snapshot()

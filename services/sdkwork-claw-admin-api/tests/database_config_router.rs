@@ -158,6 +158,39 @@ async fn database_config_router_requires_admin_subject_for_backend_model_managem
 }
 
 #[tokio::test]
+async fn database_config_router_rejects_regular_user_session_for_backend_admin_routes() {
+    let catalog = seeded_sqlite_catalog().await.unwrap();
+
+    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        Some(trusted_subject_config()),
+        Some(app_session_config()),
+    )
+    .await
+    .unwrap();
+
+    let regular_user_subject = trusted_request_subject(10, 20, 31);
+    let response = router
+        .oneshot(app_session_request_for_subject(
+            "GET",
+            "/backend/v3/api/ai/models",
+            Body::empty(),
+            regular_user_subject,
+        ))
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::FORBIDDEN, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+
+    assert_eq!("4030", payload["code"]);
+}
+
+#[tokio::test]
 async fn database_config_router_serves_signed_subject_model_catalog_commands() {
     let database_url = unique_sqlite_url();
     let pool = create_sqlite_pool(&database_url).await;
@@ -1789,19 +1822,15 @@ async fn database_config_router_serves_signed_subject_admin_user_management() {
     )
     .unwrap();
     assert_eq!("2000", users_payload["code"]);
-    assert_eq!(
-        "owner@example.com",
-        users_payload["data"]["items"][0]["email"]
-    );
-    assert_eq!("$25.50", users_payload["data"]["items"][0]["balance"]);
-    assert_eq!(
-        "2026-04-29 09:00:00",
-        users_payload["data"]["items"][0]["lastActive"]
-    );
-    assert_eq!(
-        "2026-04-29 09:05:00",
-        users_payload["data"]["items"][0]["lastUsed"]
-    );
+    let owner_user = users_payload["data"]["items"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .find(|item| item["email"] == "owner@example.com")
+        .unwrap();
+    assert_eq!("$25.50", owner_user["balance"]);
+    assert_eq!("2026-04-29 09:00:00", owner_user["lastActive"]);
+    assert_eq!("2026-04-29 09:05:00", owner_user["lastUsed"]);
 
     let keys_response = router
         .clone()
@@ -2436,11 +2465,19 @@ fn signed_request_for_subject(
 }
 
 fn app_session_request(method: &str, path: &str, body: Body) -> Request<Body> {
+    app_session_request_for_subject(method, path, body, bootstrap_admin_subject())
+}
+
+fn app_session_request_for_subject(
+    method: &str,
+    path: &str,
+    body: Body,
+    subject: TrustedRequestSubject,
+) -> Request<Body> {
     let issued_at = current_unix_seconds();
     let expires_at = issued_at + 3600;
     let (authorization, access_token) =
-        app_session_dual_token_headers(default_trusted_request_subject(), issued_at, expires_at)
-            .unwrap();
+        app_session_dual_token_headers(subject, issued_at, expires_at).unwrap();
     Request::builder()
         .method(method)
         .uri(path)
@@ -2449,6 +2486,10 @@ fn app_session_request(method: &str, path: &str, body: Body) -> Request<Body> {
         .header("Sdkwork-Access-Token", access_token)
         .body(body)
         .unwrap()
+}
+
+fn bootstrap_admin_subject() -> TrustedRequestSubject {
+    trusted_request_subject(10, 20, 1)
 }
 
 async fn capture_provider_health_probe(
@@ -2496,8 +2537,7 @@ fn app_session_request_builder(method: &str, path: &str) -> axum::http::request:
     let issued_at = current_unix_seconds();
     let expires_at = issued_at + 3600;
     let (authorization, access_token) =
-        app_session_dual_token_headers(default_trusted_request_subject(), issued_at, expires_at)
-            .unwrap();
+        app_session_dual_token_headers(bootstrap_admin_subject(), issued_at, expires_at).unwrap();
     Request::builder()
         .method(method)
         .uri(path)

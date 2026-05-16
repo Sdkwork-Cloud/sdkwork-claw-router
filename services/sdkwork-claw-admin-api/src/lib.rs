@@ -1,18 +1,25 @@
 use std::sync::Arc;
 
+use axum::body::Body;
+use axum::extract::State;
+use axum::http::{HeaderMap, Request, StatusCode};
 use axum::middleware::from_fn_with_state;
+use axum::middleware::Next;
+use axum::response::{IntoResponse, Response};
+use axum::Json;
 use axum::Router;
 use sdkwork_claw_config::{
     ApiKeySecurityConfig, AppSessionConfig, DatabaseConfig, DatabaseEngine, DeploymentMode,
     ProviderSecretMapConfig, RuntimeConfigProfile, StartupInstallMode, TrustedSubjectConfig,
 };
+use sdkwork_claw_http::TrustedRequestSubject;
 use sdkwork_claw_product::application::{ApiKeySecretHasher, ModelRankingsService};
 use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
 use sdkwork_claw_product::infrastructure::provider::{
     ProviderSecretMapResolver, SecretRefOpenAiCompatibleProviderHealthProbe,
 };
 use sdkwork_claw_product::infrastructure::sql::installer::{
-    DatabaseInstallError, DatabaseInstaller,
+    log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
 };
 use sdkwork_claw_product::infrastructure::sql::postgres::{
     PostgresAdminAccessGroupStore, PostgresAdminAnnouncementStore,
@@ -46,6 +53,12 @@ use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
 use sqlx::{PgPool, SqlitePool};
 use std::str::FromStr;
 
+const X_SDKWORK_SUBJECT_TENANT_ID: &str = "x-sdkwork-subject-tenant-id";
+const X_SDKWORK_SUBJECT_ORGANIZATION_ID: &str = "x-sdkwork-subject-organization-id";
+const X_SDKWORK_SUBJECT_USER_ID: &str = "x-sdkwork-subject-user-id";
+const X_SDKWORK_SUBJECT_TIMESTAMP: &str = "x-sdkwork-subject-timestamp";
+const X_SDKWORK_SUBJECT_SIGNATURE: &str = "x-sdkwork-subject-signature";
+
 pub const SERVICE_NAME: &str = "sdkwork-claw-admin-api";
 type ApiKeyHasher = Arc<dyn ApiKeySecretHasher + Send + Sync>;
 type AdminAnnouncementRuntimeStore = Arc<dyn AdminAnnouncementStore + Send + Sync>;
@@ -69,6 +82,27 @@ type ModelRankingsRuntimeStore = Arc<dyn ModelRankingsReadModelStore + Send + Sy
 type ModelRankingRefreshRuntimeStore = Arc<dyn ModelRankingRefreshStore + Send + Sync>;
 type ProviderHealthProbeRuntime = Arc<dyn ProviderHealthProbe + Send + Sync>;
 type DatabaseInstallerRuntime = Arc<DatabaseInstaller>;
+
+#[derive(Clone)]
+enum AdminAccessChecker {
+    Sqlite(SqlitePool),
+    Postgres(PgPool),
+}
+
+#[derive(Clone)]
+struct AdminSubjectBoundaryConfig {
+    subject_boundary: sdkwork_claw_http::AppSubjectBoundaryConfig,
+    access_checker: AdminAccessChecker,
+}
+
+#[derive(serde::Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminBoundaryErrorEnvelope {
+    code: &'static str,
+    msg: String,
+    message: String,
+    data: Option<()>,
+}
 
 #[derive(Default)]
 struct AdminRouterRuntime<'a> {
@@ -96,6 +130,7 @@ struct AdminRouterRuntime<'a> {
     database_installer: Option<DatabaseInstallerRuntime>,
     trusted_subject_config: Option<TrustedSubjectConfig>,
     app_session_config: Option<AppSessionConfig>,
+    admin_access_checker: Option<AdminAccessChecker>,
 }
 
 pub fn router() -> Router {
@@ -149,6 +184,7 @@ where
         database_installer,
         trusted_subject_config,
         app_session_config,
+        admin_access_checker,
     } = runtime;
 
     let catalog_router = match api_key_hasher.as_ref() {
@@ -162,10 +198,6 @@ where
     if model_store.is_none() {
         router = router.merge(catalog_router);
     }
-    if let Some(installer) = database_installer {
-        router =
-            router.merge(sdkwork_claw_product::api::admin_system_router_with_installer(installer));
-    }
     let subject_boundary_config = match (trusted_subject_config.clone(), app_session_config.clone())
     {
         (Some(trusted_subject_config), Some(app_session_config)) => {
@@ -176,9 +208,33 @@ where
         }
         _ => None,
     };
+    let admin_subject_boundary_config = match (
+        subject_boundary_config.clone(),
+        admin_access_checker.clone(),
+    ) {
+        (Some(subject_boundary), Some(access_checker)) => Some(AdminSubjectBoundaryConfig {
+            subject_boundary,
+            access_checker,
+        }),
+        _ => None,
+    };
 
-    if let (Some(store), Some(subject_boundary_config)) =
-        (model_store.clone(), subject_boundary_config.clone())
+    if let Some(installer) = database_installer {
+        let system_router =
+            sdkwork_claw_product::api::admin_system_router_with_installer(installer);
+        router = match admin_subject_boundary_config.clone() {
+            Some(admin_subject_boundary_config) => {
+                router.merge(system_router.layer(from_fn_with_state(
+                    admin_subject_boundary_config,
+                    admin_request_subject_boundary,
+                )))
+            }
+            None => router.merge(system_router),
+        };
+    }
+
+    if let (Some(store), Some(admin_subject_boundary_config)) =
+        (model_store.clone(), admin_subject_boundary_config.clone())
     {
         router = router.merge(
             sdkwork_claw_product::api::admin_model_management_router_with_store(
@@ -186,24 +242,24 @@ where
                 Arc::new(OsApiKeySecretGenerator),
             )
             .layer(from_fn_with_state(
-                subject_boundary_config,
-                sdkwork_claw_http::app_request_subject_boundary,
+                admin_subject_boundary_config,
+                admin_request_subject_boundary,
             )),
         );
     }
     router = match (
         model_rankings_store,
         model_ranking_refresh_store,
-        subject_boundary_config,
+        admin_subject_boundary_config.clone(),
     ) {
-        (Some(read_store), Some(refresh_store), Some(subject_boundary_config)) => router.merge(
+        (Some(read_store), Some(refresh_store), Some(admin_subject_boundary_config)) => router.merge(
             sdkwork_claw_product::api::admin_model_rankings_router_with_read_store_and_refresh_store(
                 read_store,
                 refresh_store,
             )
             .layer(from_fn_with_state(
-                subject_boundary_config,
-                sdkwork_claw_http::app_request_subject_boundary,
+                admin_subject_boundary_config,
+                admin_request_subject_boundary,
             )),
         ),
         (Some(read_store), Some(refresh_store), None) => router.merge(
@@ -212,11 +268,11 @@ where
                 refresh_store,
             ),
         ),
-        (Some(read_store), None, Some(subject_boundary_config)) => router.merge(
+        (Some(read_store), None, Some(admin_subject_boundary_config)) => router.merge(
             sdkwork_claw_product::api::admin_model_rankings_router_with_read_store(read_store)
                 .layer(from_fn_with_state(
-                    subject_boundary_config,
-                    sdkwork_claw_http::app_request_subject_boundary,
+                    admin_subject_boundary_config,
+                    admin_request_subject_boundary,
                 )),
         ),
         (Some(read_store), None, None) => router.merge(
@@ -224,9 +280,7 @@ where
         ),
         (None, _, _) => router.merge(sdkwork_claw_product::api::admin_model_rankings_router()),
     };
-    if let (Some(trusted_subject_config), Some(app_session_config)) =
-        (trusted_subject_config, app_session_config)
-    {
+    if let Some(admin_subject_boundary_config) = admin_subject_boundary_config {
         if let Some(store) = announcement_store {
             router = router.merge(
                 sdkwork_claw_product::api::admin_announcement_router_with_store(
@@ -234,11 +288,8 @@ where
                     Arc::new(OsApiKeySecretGenerator),
                 )
                 .layer(from_fn_with_state(
-                    sdkwork_claw_http::AppSubjectBoundaryConfig::new(
-                        trusted_subject_config.clone(),
-                        app_session_config.clone(),
-                    ),
-                    sdkwork_claw_http::app_request_subject_boundary,
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
                 )),
             );
         }
@@ -249,11 +300,8 @@ where
                     Arc::new(OsApiKeySecretGenerator),
                 )
                 .layer(from_fn_with_state(
-                    sdkwork_claw_http::AppSubjectBoundaryConfig::new(
-                        trusted_subject_config.clone(),
-                        app_session_config.clone(),
-                    ),
-                    sdkwork_claw_http::app_request_subject_boundary,
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
                 )),
             );
         }
@@ -264,11 +312,8 @@ where
                     Arc::new(OsApiKeySecretGenerator),
                 )
                 .layer(from_fn_with_state(
-                    sdkwork_claw_http::AppSubjectBoundaryConfig::new(
-                        trusted_subject_config.clone(),
-                        app_session_config.clone(),
-                    ),
-                    sdkwork_claw_http::app_request_subject_boundary,
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
                 )),
             );
         }
@@ -279,11 +324,8 @@ where
                     Arc::new(OsApiKeySecretGenerator),
                 )
                 .layer(from_fn_with_state(
-                    sdkwork_claw_http::AppSubjectBoundaryConfig::new(
-                        trusted_subject_config.clone(),
-                        app_session_config.clone(),
-                    ),
-                    sdkwork_claw_http::app_request_subject_boundary,
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
                 )),
             );
         }
@@ -294,11 +336,8 @@ where
                     Arc::new(OsApiKeySecretGenerator),
                 )
                 .layer(from_fn_with_state(
-                    sdkwork_claw_http::AppSubjectBoundaryConfig::new(
-                        trusted_subject_config.clone(),
-                        app_session_config.clone(),
-                    ),
-                    sdkwork_claw_http::app_request_subject_boundary,
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
                 )),
             );
         }
@@ -309,11 +348,8 @@ where
                     Arc::new(OsApiKeySecretGenerator),
                 )
                 .layer(from_fn_with_state(
-                    sdkwork_claw_http::AppSubjectBoundaryConfig::new(
-                        trusted_subject_config.clone(),
-                        app_session_config.clone(),
-                    ),
-                    sdkwork_claw_http::app_request_subject_boundary,
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
                 )),
             );
         }
@@ -324,11 +360,8 @@ where
                     Arc::new(OsApiKeySecretGenerator),
                 )
                 .layer(from_fn_with_state(
-                    sdkwork_claw_http::AppSubjectBoundaryConfig::new(
-                        trusted_subject_config.clone(),
-                        app_session_config.clone(),
-                    ),
-                    sdkwork_claw_http::app_request_subject_boundary,
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
                 )),
             );
         }
@@ -339,11 +372,8 @@ where
                     Arc::new(OsApiKeySecretGenerator),
                 )
                 .layer(from_fn_with_state(
-                    sdkwork_claw_http::AppSubjectBoundaryConfig::new(
-                        trusted_subject_config.clone(),
-                        app_session_config.clone(),
-                    ),
-                    sdkwork_claw_http::app_request_subject_boundary,
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
                 )),
             );
         }
@@ -354,11 +384,8 @@ where
                     Arc::new(OsApiKeySecretGenerator),
                 )
                 .layer(from_fn_with_state(
-                    sdkwork_claw_http::AppSubjectBoundaryConfig::new(
-                        trusted_subject_config.clone(),
-                        app_session_config.clone(),
-                    ),
-                    sdkwork_claw_http::app_request_subject_boundary,
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
                 )),
             );
         }
@@ -369,11 +396,8 @@ where
                     Arc::new(OsApiKeySecretGenerator),
                 )
                 .layer(from_fn_with_state(
-                    sdkwork_claw_http::AppSubjectBoundaryConfig::new(
-                        trusted_subject_config.clone(),
-                        app_session_config.clone(),
-                    ),
-                    sdkwork_claw_http::app_request_subject_boundary,
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
                 )),
             );
         }
@@ -381,11 +405,8 @@ where
             router = router.merge(
                 sdkwork_claw_product::api::admin_finance_router_with_store(store).layer(
                     from_fn_with_state(
-                        sdkwork_claw_http::AppSubjectBoundaryConfig::new(
-                            trusted_subject_config.clone(),
-                            app_session_config.clone(),
-                        ),
-                        sdkwork_claw_http::app_request_subject_boundary,
+                        admin_subject_boundary_config.clone(),
+                        admin_request_subject_boundary,
                     ),
                 ),
             );
@@ -397,11 +418,8 @@ where
                     Arc::new(OsApiKeySecretGenerator),
                 )
                 .layer(from_fn_with_state(
-                    sdkwork_claw_http::AppSubjectBoundaryConfig::new(
-                        trusted_subject_config.clone(),
-                        app_session_config.clone(),
-                    ),
-                    sdkwork_claw_http::app_request_subject_boundary,
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
                 )),
             );
         }
@@ -409,11 +427,8 @@ where
             router = router.merge(
                 sdkwork_claw_product::api::admin_monitor_router_with_read_store(store).layer(
                     from_fn_with_state(
-                        sdkwork_claw_http::AppSubjectBoundaryConfig::new(
-                            trusted_subject_config.clone(),
-                            app_session_config.clone(),
-                        ),
-                        sdkwork_claw_http::app_request_subject_boundary,
+                        admin_subject_boundary_config.clone(),
+                        admin_request_subject_boundary,
                     ),
                 ),
             );
@@ -422,11 +437,8 @@ where
             router = router.merge(
                 sdkwork_claw_product::api::admin_record_router_with_store(store).layer(
                     from_fn_with_state(
-                        sdkwork_claw_http::AppSubjectBoundaryConfig::new(
-                            trusted_subject_config.clone(),
-                            app_session_config.clone(),
-                        ),
-                        sdkwork_claw_http::app_request_subject_boundary,
+                        admin_subject_boundary_config.clone(),
+                        admin_request_subject_boundary,
                     ),
                 ),
             );
@@ -438,11 +450,8 @@ where
                     Arc::new(OsApiKeySecretGenerator),
                 )
                 .layer(from_fn_with_state(
-                    sdkwork_claw_http::AppSubjectBoundaryConfig::new(
-                        trusted_subject_config.clone(),
-                        app_session_config.clone(),
-                    ),
-                    sdkwork_claw_http::app_request_subject_boundary,
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
                 )),
             );
         }
@@ -457,11 +466,8 @@ where
                         Arc::new(OsApiKeySecretGenerator),
                     )
                     .layer(from_fn_with_state(
-                        sdkwork_claw_http::AppSubjectBoundaryConfig::new(
-                            trusted_subject_config,
-                            app_session_config,
-                        ),
-                        sdkwork_claw_http::app_request_subject_boundary,
+                        admin_subject_boundary_config,
+                        admin_request_subject_boundary,
                     )),
                 );
         }
@@ -597,7 +603,8 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
             let database_installer =
                 Arc::new(DatabaseInstaller::for_sqlite(pool.clone()).with_env_options()?);
             if startup_install_mode.should_ensure() {
-                database_installer.ensure_installed().await?;
+                let install_report = database_installer.ensure_installed().await?;
+                log_bootstrap_admin_report(SERVICE_NAME, &install_report);
             }
             let snapshot = SqlitePricingCatalogLoader::new(pool.clone())
                 .load_snapshot()
@@ -640,6 +647,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                 model_rankings_service(Arc::new(SqliteModelRankingsReadStore::new(pool.clone())));
             let model_ranking_refresh_store: ModelRankingRefreshRuntimeStore =
                 Arc::new(SqliteModelRankingRefreshStore::new(pool.clone()));
+            let admin_access_checker = AdminAccessChecker::Sqlite(pool.clone());
             let user_store: AdminUserRuntimeStore = Arc::new(SqliteAdminUserStore::new(pool));
             Ok(router_with_product_catalog_and_runtime(
                 Arc::new(snapshot),
@@ -668,6 +676,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     database_installer: Some(Arc::clone(&database_installer)),
                     trusted_subject_config: Some(trusted_subject_config),
                     app_session_config: Some(app_session_config),
+                    admin_access_checker: Some(admin_access_checker),
                 },
             ))
         }
@@ -682,7 +691,8 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
             let database_installer =
                 Arc::new(DatabaseInstaller::for_postgres(pool.clone()).with_env_options()?);
             if startup_install_mode.should_ensure() {
-                database_installer.ensure_installed().await?;
+                let install_report = database_installer.ensure_installed().await?;
+                log_bootstrap_admin_report(SERVICE_NAME, &install_report);
             }
             let snapshot = PostgresPricingCatalogLoader::new(pool.clone())
                 .load_snapshot()
@@ -726,6 +736,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                 model_rankings_service(Arc::new(PostgresModelRankingsReadStore::new(pool.clone())));
             let model_ranking_refresh_store: ModelRankingRefreshRuntimeStore =
                 Arc::new(PostgresModelRankingRefreshStore::new(pool.clone()));
+            let admin_access_checker = AdminAccessChecker::Postgres(pool.clone());
             let user_store: AdminUserRuntimeStore = Arc::new(PostgresAdminUserStore::new(pool));
             Ok(router_with_product_catalog_and_runtime(
                 Arc::new(snapshot),
@@ -754,6 +765,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     database_installer: Some(Arc::clone(&database_installer)),
                     trusted_subject_config: Some(trusted_subject_config),
                     app_session_config: Some(app_session_config),
+                    admin_access_checker: Some(admin_access_checker),
                 },
             ))
         }
@@ -847,6 +859,156 @@ fn build_provider_health_probe(
 
 fn model_rankings_service(read_store: ModelRankingsRuntimeStore) -> ModelRankingsRuntimeStore {
     Arc::new(ModelRankingsService::new(read_store))
+}
+
+async fn admin_request_subject_boundary(
+    State(config): State<AdminSubjectBoundaryConfig>,
+    mut request: Request<Body>,
+    next: Next,
+) -> Response {
+    let method = request.method().as_str().to_owned();
+    let path_and_query = request
+        .uri()
+        .path_and_query()
+        .map(|value| value.as_str().to_owned())
+        .unwrap_or_else(|| request.uri().path().to_owned());
+    let was_signed_subject_request = has_any_signed_subject_header(request.headers());
+    match sdkwork_claw_http::inject_verified_app_request_subject(
+        request.headers_mut(),
+        &method,
+        &path_and_query,
+        &config.subject_boundary,
+        current_unix_seconds(),
+    ) {
+        Ok(()) => {}
+        Err(message) => return admin_unauthorized_response(message),
+    }
+
+    let subject = match TrustedRequestSubject::from_headers(request.headers()) {
+        Ok(subject) => subject,
+        Err(error) => return admin_unauthorized_response(error.to_string()),
+    };
+    if was_signed_subject_request {
+        return next.run(request).await;
+    }
+
+    match config.access_checker.has_admin_access(subject).await {
+        Ok(true) => next.run(request).await,
+        Ok(false) => admin_forbidden_response("admin access is required".to_owned()),
+        Err(error) => {
+            tracing::warn!(
+                tenant_id = subject.tenant_id,
+                organization_id = subject.organization_id,
+                user_id = subject.user_id,
+                error = %error,
+                "failed to verify admin access"
+            );
+            admin_internal_error_response("failed to verify admin access".to_owned())
+        }
+    }
+}
+
+impl AdminAccessChecker {
+    async fn has_admin_access(&self, subject: TrustedRequestSubject) -> Result<bool, sqlx::Error> {
+        match self {
+            Self::Sqlite(pool) => has_sqlite_admin_access(pool, subject).await,
+            Self::Postgres(pool) => has_postgres_admin_access(pool, subject).await,
+        }
+    }
+}
+
+async fn has_sqlite_admin_access(
+    pool: &SqlitePool,
+    subject: TrustedRequestSubject,
+) -> Result<bool, sqlx::Error> {
+    let count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM iam_organization_member
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND user_id = ?
+          AND status = 'active'
+          AND LOWER(COALESCE(role_code, '')) = 'admin'
+        "#,
+    )
+    .bind(subject.tenant_id.to_string())
+    .bind(subject.organization_id.to_string())
+    .bind(subject.user_id.to_string())
+    .fetch_one(pool)
+    .await?;
+    Ok(count > 0)
+}
+
+async fn has_postgres_admin_access(
+    pool: &PgPool,
+    subject: TrustedRequestSubject,
+) -> Result<bool, sqlx::Error> {
+    let count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM iam_organization_member
+        WHERE tenant_id = $1
+          AND organization_id = $2
+          AND user_id = $3
+          AND status = 'active'
+          AND LOWER(COALESCE(role_code, '')) = 'admin'
+        "#,
+    )
+    .bind(subject.tenant_id.to_string())
+    .bind(subject.organization_id.to_string())
+    .bind(subject.user_id.to_string())
+    .fetch_one(pool)
+    .await?;
+    Ok(count > 0)
+}
+
+fn has_any_signed_subject_header(headers: &HeaderMap) -> bool {
+    [
+        X_SDKWORK_SUBJECT_TENANT_ID,
+        X_SDKWORK_SUBJECT_ORGANIZATION_ID,
+        X_SDKWORK_SUBJECT_USER_ID,
+        X_SDKWORK_SUBJECT_TIMESTAMP,
+        X_SDKWORK_SUBJECT_SIGNATURE,
+    ]
+    .iter()
+    .any(|name| headers.contains_key(*name))
+}
+
+fn current_unix_seconds() -> i64 {
+    std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .map(|duration| duration.as_secs() as i64)
+        .unwrap_or(0)
+}
+
+fn admin_unauthorized_response(message: String) -> Response {
+    admin_boundary_error_response(StatusCode::UNAUTHORIZED, "4010", message)
+}
+
+fn admin_forbidden_response(message: String) -> Response {
+    admin_boundary_error_response(StatusCode::FORBIDDEN, "4030", message)
+}
+
+fn admin_internal_error_response(message: String) -> Response {
+    admin_boundary_error_response(StatusCode::INTERNAL_SERVER_ERROR, "5000", message)
+}
+
+fn admin_boundary_error_response(
+    status: StatusCode,
+    code: &'static str,
+    message: String,
+) -> Response {
+    (
+        status,
+        Json(AdminBoundaryErrorEnvelope {
+            code,
+            msg: message.clone(),
+            message,
+            data: None,
+        }),
+    )
+        .into_response()
 }
 
 fn require_api_key_security_config(

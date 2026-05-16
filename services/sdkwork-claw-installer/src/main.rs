@@ -1,7 +1,7 @@
 use sdkwork_claw_config::{DatabaseConfig, DatabaseEngine, DeploymentMode, RuntimeConfigProfile};
 use sdkwork_claw_product::infrastructure::sql::installer::{
-    CatalogRefreshOptions, CatalogRefreshReport, DatabaseInstallError, DatabaseInstaller,
-    InstallationReport, InstallationStatus,
+    BootstrapAdminReport, CatalogRefreshOptions, CatalogRefreshReport, DatabaseInstallError,
+    DatabaseInstaller, InstallationReport, InstallationStatus,
 };
 use serde::Serialize;
 use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
@@ -223,6 +223,8 @@ struct InstallationStatusOutput {
     environment: String,
     seed_profile: String,
     changed: bool,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    bootstrap_admin: Option<BootstrapAdminOutput>,
 }
 
 impl From<InstallationReport> for InstallationStatusOutput {
@@ -237,6 +239,37 @@ impl From<InstallationReport> for InstallationStatusOutput {
             environment: report.environment,
             seed_profile: report.seed_profile,
             changed: report.changed,
+            bootstrap_admin: report.bootstrap_admin.map(BootstrapAdminOutput::from),
+        }
+    }
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct BootstrapAdminOutput {
+    status: String,
+    tenant_id: String,
+    organization_id: String,
+    user_id: String,
+    username: String,
+    display_name: String,
+    email: String,
+    initial_password: String,
+    generated_password: bool,
+}
+
+impl From<BootstrapAdminReport> for BootstrapAdminOutput {
+    fn from(report: BootstrapAdminReport) -> Self {
+        Self {
+            status: report.status,
+            tenant_id: report.tenant_id,
+            organization_id: report.organization_id,
+            user_id: report.user_id,
+            username: report.username,
+            display_name: report.display_name,
+            email: report.email,
+            initial_password: report.initial_password,
+            generated_password: report.generated_password,
         }
     }
 }

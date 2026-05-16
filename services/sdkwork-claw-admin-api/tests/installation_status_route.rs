@@ -3,7 +3,7 @@ use axum::http::{Request, StatusCode};
 use sdkwork_claw_config::{ApiKeySecurityConfig, DatabaseConfig};
 use sdkwork_claw_test_support::{
     api_key_security_config, app_session_config, app_session_dual_token_headers,
-    default_trusted_request_subject, payment_webhook_config, trusted_subject_config,
+    payment_webhook_config, trusted_request_subject, trusted_subject_config,
 };
 use serde_json::Value;
 use std::sync::atomic::{AtomicU64, Ordering};
@@ -30,13 +30,11 @@ async fn admin_api_reports_database_installation_status_after_startup_install() 
     .unwrap();
 
     let response = router
-        .oneshot(
-            Request::builder()
-                .method("GET")
-                .uri("/backend/v3/api/system/installation/status")
-                .body(Body::empty())
-                .unwrap(),
-        )
+        .oneshot(app_session_request(
+            "GET",
+            "/backend/v3/api/system/installation/status",
+            Body::empty(),
+        ))
         .await
         .unwrap();
 
@@ -373,7 +371,7 @@ fn app_session_request(method: &str, path: &str, body: Body) -> Request<Body> {
     let issued_at = current_unix_seconds();
     let expires_at = issued_at + 3600;
     let (authorization, access_token) =
-        app_session_dual_token_headers(default_trusted_request_subject(), issued_at, expires_at)
+        app_session_dual_token_headers(trusted_request_subject(10, 20, 1), issued_at, expires_at)
             .unwrap();
     Request::builder()
         .method(method)

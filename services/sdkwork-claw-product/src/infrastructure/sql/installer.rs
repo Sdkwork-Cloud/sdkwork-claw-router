@@ -6,8 +6,9 @@ use std::time::{SystemTime, UNIX_EPOCH};
 
 use sdkwork_models::{catalog_key, ModelCatalog};
 use sha2::{Digest, Sha256};
-use sqlx::{PgPool, Row, SqlitePool};
+use sqlx::{PgPool, Postgres, Row, Sqlite, SqlitePool, Transaction};
 
+use crate::application::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
 use crate::infrastructure::sql::app_seed::{
     bundled_app_seed_payload, import_postgres_app_seed, import_sqlite_app_seed,
     postgres_app_seed_complete, sqlite_app_seed_complete,
@@ -38,6 +39,11 @@ pub const DEFAULT_INSTALL_ENVIRONMENT: &str = "production";
 pub const ENV_INSTALL_ENVIRONMENT: &str = "SDKWORK_CLAW_INSTALL_ENVIRONMENT";
 pub const ENV_INSTALL_SEED_PROFILE: &str = "SDKWORK_CLAW_INSTALL_SEED_PROFILE";
 pub const ENV_MODELS_CATALOG_ROOT: &str = "SDKWORK_MODELS_CATALOG_ROOT";
+pub const ENV_BOOTSTRAP_ADMIN_ENABLED: &str = "SDKWORK_CLAW_BOOTSTRAP_ADMIN_ENABLED";
+pub const ENV_BOOTSTRAP_ADMIN_USERNAME: &str = "SDKWORK_CLAW_BOOTSTRAP_ADMIN_USERNAME";
+pub const ENV_BOOTSTRAP_ADMIN_DISPLAY_NAME: &str = "SDKWORK_CLAW_BOOTSTRAP_ADMIN_DISPLAY_NAME";
+pub const ENV_BOOTSTRAP_ADMIN_EMAIL: &str = "SDKWORK_CLAW_BOOTSTRAP_ADMIN_EMAIL";
+pub const ENV_BOOTSTRAP_ADMIN_PASSWORD: &str = "SDKWORK_CLAW_BOOTSTRAP_ADMIN_PASSWORD";
 const DEFAULT_IAM_TENANT_ID: &str = "10";
 const DEFAULT_IAM_TENANT_CODE: &str = "default";
 const DEFAULT_IAM_TENANT_NAME: &str = "Default Tenant";
@@ -45,6 +51,14 @@ const DEFAULT_IAM_ORGANIZATION_ID: &str = "20";
 const DEFAULT_IAM_ORGANIZATION_CODE: &str = "root";
 const DEFAULT_IAM_ORGANIZATION_NAME: &str = "Root Organization";
 const DEFAULT_IAM_ORGANIZATION_PATH: &str = "/20";
+const DEFAULT_BOOTSTRAP_ADMIN_USERNAME: &str = "admin";
+const DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME: &str = "Administrator";
+const DEFAULT_BOOTSTRAP_ADMIN_EMAIL: &str = "admin@sdkwork.local";
+const MIN_BOOTSTRAP_ADMIN_PASSWORD_LEN: usize = 12;
+const MAX_BOOTSTRAP_ADMIN_PASSWORD_LEN: usize = 128;
+const GENERATED_BOOTSTRAP_ADMIN_PASSWORD_LEN: usize = 32;
+const BOOTSTRAP_ADMIN_PASSWORD_ALPHABET: &[u8] =
+    b"ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%+-_=.";
 const MAX_REFRESH_SOURCE_LEN: usize = 64;
 const MAX_REFRESH_MODE_LEN: usize = 64;
 const MAX_REFRESH_VENDOR_CODES: usize = 32;
@@ -128,6 +142,69 @@ impl DatabaseInstallOptions {
     }
 }
 
+impl Default for BootstrapAdminOptions {
+    fn default() -> Self {
+        Self {
+            enabled: true,
+            username: DEFAULT_BOOTSTRAP_ADMIN_USERNAME.to_owned(),
+            display_name: DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME.to_owned(),
+            email: DEFAULT_BOOTSTRAP_ADMIN_EMAIL.to_owned(),
+            password: None,
+        }
+    }
+}
+
+impl BootstrapAdminOptions {
+    fn from_env() -> Result<Self, DatabaseInstallError> {
+        let mut options = Self::default();
+        options.enabled = match std::env::var(ENV_BOOTSTRAP_ADMIN_ENABLED).ok() {
+            Some(value) => parse_env_bool(ENV_BOOTSTRAP_ADMIN_ENABLED, value.as_str())?,
+            None => true,
+        };
+        options.username = env_optional(ENV_BOOTSTRAP_ADMIN_USERNAME)
+            .map(|value| normalize_bootstrap_admin_username(value, ENV_BOOTSTRAP_ADMIN_USERNAME))
+            .transpose()?
+            .unwrap_or_else(|| DEFAULT_BOOTSTRAP_ADMIN_USERNAME.to_owned());
+        options.display_name = env_optional(ENV_BOOTSTRAP_ADMIN_DISPLAY_NAME)
+            .map(|value| {
+                normalize_bootstrap_admin_text(value, ENV_BOOTSTRAP_ADMIN_DISPLAY_NAME, 128, true)
+            })
+            .transpose()?
+            .unwrap_or_else(|| DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME.to_owned());
+        options.email = env_optional(ENV_BOOTSTRAP_ADMIN_EMAIL)
+            .map(|value| normalize_bootstrap_admin_email(value, ENV_BOOTSTRAP_ADMIN_EMAIL))
+            .transpose()?
+            .unwrap_or_else(|| DEFAULT_BOOTSTRAP_ADMIN_EMAIL.to_owned());
+        options.password = env_optional(ENV_BOOTSTRAP_ADMIN_PASSWORD)
+            .map(|value| normalize_bootstrap_admin_password(value, ENV_BOOTSTRAP_ADMIN_PASSWORD))
+            .transpose()?;
+        Ok(options)
+    }
+
+    fn password(&self) -> Result<String, DatabaseInstallError> {
+        self.password
+            .clone()
+            .map(|value| normalize_bootstrap_admin_password(value, ENV_BOOTSTRAP_ADMIN_PASSWORD))
+            .transpose()?
+            .map(Ok)
+            .unwrap_or_else(generate_bootstrap_admin_password)
+    }
+
+    fn report(&self, user_id: String, initial_password: String) -> BootstrapAdminReport {
+        BootstrapAdminReport {
+            status: "created".to_owned(),
+            tenant_id: DEFAULT_IAM_TENANT_ID.to_owned(),
+            organization_id: DEFAULT_IAM_ORGANIZATION_ID.to_owned(),
+            user_id,
+            username: self.username.clone(),
+            display_name: self.display_name.clone(),
+            email: self.email.clone(),
+            generated_password: self.password.is_none(),
+            initial_password,
+        }
+    }
+}
+
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum InstallationStatus {
     NotInstalled,
@@ -149,6 +226,35 @@ pub struct InstallationReport {
     pub environment: String,
     pub seed_profile: String,
     pub changed: bool,
+    pub bootstrap_admin: Option<BootstrapAdminReport>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct BootstrapAdminReport {
+    pub status: String,
+    pub tenant_id: String,
+    pub organization_id: String,
+    pub user_id: String,
+    pub username: String,
+    pub display_name: String,
+    pub email: String,
+    pub initial_password: String,
+    pub generated_password: bool,
+}
+
+pub fn log_bootstrap_admin_report(service_name: &str, report: &InstallationReport) {
+    if let Some(admin) = &report.bootstrap_admin {
+        tracing::warn!(
+            service = service_name,
+            username = %admin.username,
+            tenant_id = %admin.tenant_id,
+            organization_id = %admin.organization_id,
+            user_id = %admin.user_id,
+            generated_password = admin.generated_password,
+            initial_password = %admin.initial_password,
+            "SDKWork Claw Router bootstrap admin initialized; save this one-time initial password and rotate it after first login"
+        );
+    }
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -196,6 +302,7 @@ pub struct CatalogRefreshReport {
 pub struct DatabaseInstaller {
     backend: InstallerBackend,
     options: DatabaseInstallOptions,
+    bootstrap_admin_options: BootstrapAdminOptions,
 }
 
 enum InstallerBackend {
@@ -203,11 +310,21 @@ enum InstallerBackend {
     Postgres(PgPool),
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+struct BootstrapAdminOptions {
+    enabled: bool,
+    username: String,
+    display_name: String,
+    email: String,
+    password: Option<String>,
+}
+
 impl DatabaseInstaller {
     pub fn for_sqlite(pool: SqlitePool) -> Self {
         Self {
             backend: InstallerBackend::Sqlite(pool),
             options: DatabaseInstallOptions::commercial(),
+            bootstrap_admin_options: BootstrapAdminOptions::default(),
         }
     }
 
@@ -215,6 +332,7 @@ impl DatabaseInstaller {
         Self {
             backend: InstallerBackend::Postgres(pool),
             options: DatabaseInstallOptions::commercial(),
+            bootstrap_admin_options: BootstrapAdminOptions::default(),
         }
     }
 
@@ -227,7 +345,19 @@ impl DatabaseInstaller {
     }
 
     pub fn with_env_options(self) -> Result<Self, DatabaseInstallError> {
-        self.with_options(DatabaseInstallOptions::from_env()?)
+        Ok(self
+            .with_options(DatabaseInstallOptions::from_env()?)?
+            .with_bootstrap_admin_options(BootstrapAdminOptions::from_env()?))
+    }
+
+    fn with_bootstrap_admin_options(mut self, options: BootstrapAdminOptions) -> Self {
+        self.bootstrap_admin_options = options;
+        self
+    }
+
+    pub fn with_bootstrap_admin_password(mut self, password: impl Into<String>) -> Self {
+        self.bootstrap_admin_options.password = Some(password.into());
+        self
     }
 
     pub fn options(&self) -> &DatabaseInstallOptions {
@@ -291,6 +421,7 @@ impl DatabaseInstaller {
             environment: options.environment.clone(),
             seed_profile: options.seed_profile.clone(),
             changed: false,
+            bootstrap_admin: None,
         })
     }
 
@@ -596,8 +727,12 @@ impl DatabaseInstaller {
         options: &DatabaseInstallOptions,
     ) -> Result<InstallationStatus, DatabaseInstallError> {
         match &self.backend {
-            InstallerBackend::Sqlite(pool) => sqlite_status(pool, options).await,
-            InstallerBackend::Postgres(pool) => postgres_status(pool, options).await,
+            InstallerBackend::Sqlite(pool) => {
+                sqlite_status(pool, options, &self.bootstrap_admin_options).await
+            }
+            InstallerBackend::Postgres(pool) => {
+                postgres_status(pool, options, &self.bootstrap_admin_options).await
+            }
         }
     }
 
@@ -646,13 +781,18 @@ impl DatabaseInstaller {
                 environment: options.environment.clone(),
                 seed_profile: options.seed_profile.clone(),
                 changed: false,
+                bootstrap_admin: None,
             });
         }
 
-        match &self.backend {
-            InstallerBackend::Sqlite(pool) => install_sqlite(pool, &options).await?,
-            InstallerBackend::Postgres(pool) => install_postgres(pool, &options).await?,
-        }
+        let bootstrap_admin = match &self.backend {
+            InstallerBackend::Sqlite(pool) => {
+                install_sqlite(pool, &options, &self.bootstrap_admin_options).await?
+            }
+            InstallerBackend::Postgres(pool) => {
+                install_postgres(pool, &options, &self.bootstrap_admin_options).await?
+            }
+        };
 
         let last_catalog_refresh_status = self.last_catalog_refresh_status().await?;
         Ok(InstallationReport {
@@ -665,6 +805,7 @@ impl DatabaseInstaller {
             environment: options.environment.clone(),
             seed_profile: options.seed_profile.clone(),
             changed: true,
+            bootstrap_admin,
         })
     }
 }
@@ -692,6 +833,54 @@ fn installation_metadata(options: &DatabaseInstallOptions) -> String {
         "modelsCatalogRoot": options.models_catalog_root,
     })
     .to_string()
+}
+
+fn bootstrap_password_hash(
+    password: &str,
+    user_id: &str,
+    now: &str,
+) -> Result<String, DatabaseInstallError> {
+    Pbkdf2Sha256PasswordHasher
+        .hash_password(password, &format!("bootstrap-admin:{user_id}:{now}"))
+        .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))
+}
+
+fn generate_bootstrap_admin_password() -> Result<String, DatabaseInstallError> {
+    let mut bytes = [0_u8; GENERATED_BOOTSTRAP_ADMIN_PASSWORD_LEN];
+    getrandom::fill(&mut bytes).map_err(|error| {
+        DatabaseInstallError::InvalidState(format!(
+            "failed to generate bootstrap admin password: {error}"
+        ))
+    })?;
+    Ok(bytes
+        .iter()
+        .map(|byte| {
+            let index = usize::from(*byte) % BOOTSTRAP_ADMIN_PASSWORD_ALPHABET.len();
+            BOOTSTRAP_ADMIN_PASSWORD_ALPHABET[index] as char
+        })
+        .collect())
+}
+
+async fn sqlite_next_numeric_id(
+    tx: &mut Transaction<'_, Sqlite>,
+    table_name: &str,
+) -> Result<String, sqlx::Error> {
+    let sql = format!(
+        "SELECT COALESCE(MAX(CAST(id AS INTEGER)), 0) + 1 AS next_id FROM {table_name} WHERE id GLOB '[0-9]*'"
+    );
+    let value: i64 = sqlx::query_scalar(&sql).fetch_one(&mut **tx).await?;
+    Ok(value.to_string())
+}
+
+async fn postgres_next_numeric_id(
+    tx: &mut Transaction<'_, Postgres>,
+    table_name: &str,
+) -> Result<String, sqlx::Error> {
+    let sql = format!(
+        "SELECT COALESCE(MAX(NULLIF(regexp_replace(id, '[^0-9]', '', 'g'), '')::BIGINT), 0) + 1 AS next_id FROM {table_name}"
+    );
+    let value: i64 = sqlx::query_scalar(&sql).fetch_one(&mut **tx).await?;
+    Ok(value.to_string())
 }
 
 fn persisted_models_catalog_root_from_metadata(metadata: &str) -> Option<String> {
@@ -883,6 +1072,107 @@ fn normalize_refresh_token(
     {
         return Err(DatabaseInstallError::InvalidState(format!(
             "{name} must contain only letters, numbers, -, and _"
+        )));
+    }
+    Ok(value)
+}
+
+fn env_optional(name: &str) -> Option<String> {
+    std::env::var(name)
+        .ok()
+        .map(|value| value.trim().to_owned())
+        .filter(|value| !value.is_empty())
+}
+
+fn parse_env_bool(name: &str, value: &str) -> Result<bool, DatabaseInstallError> {
+    match value.trim().to_ascii_lowercase().as_str() {
+        "1" | "true" | "yes" | "y" | "on" => Ok(true),
+        "0" | "false" | "no" | "n" | "off" => Ok(false),
+        _ => Err(DatabaseInstallError::InvalidState(format!(
+            "{name} must be one of true, false, 1, 0, yes, no, on, or off"
+        ))),
+    }
+}
+
+fn normalize_bootstrap_admin_username(
+    value: String,
+    name: &str,
+) -> Result<String, DatabaseInstallError> {
+    let value = value.trim().to_ascii_lowercase();
+    if value.is_empty() {
+        return Err(DatabaseInstallError::InvalidState(format!(
+            "{name} must not be blank"
+        )));
+    }
+    if value.len() > 128 {
+        return Err(DatabaseInstallError::InvalidState(format!(
+            "{name} must be 128 characters or fewer"
+        )));
+    }
+    if !value
+        .bytes()
+        .all(|byte| byte.is_ascii_alphanumeric() || matches!(byte, b'.' | b'-' | b'_'))
+    {
+        return Err(DatabaseInstallError::InvalidState(format!(
+            "{name} may only contain letters, digits, '.', '-' and '_'"
+        )));
+    }
+    Ok(value)
+}
+
+fn normalize_bootstrap_admin_text(
+    value: String,
+    name: &str,
+    max_len: usize,
+    allow_blank: bool,
+) -> Result<String, DatabaseInstallError> {
+    let value = value.trim().to_owned();
+    if value.is_empty() && !allow_blank {
+        return Err(DatabaseInstallError::InvalidState(format!(
+            "{name} must not be blank"
+        )));
+    }
+    if value.chars().count() > max_len {
+        return Err(DatabaseInstallError::InvalidState(format!(
+            "{name} must be {max_len} characters or fewer"
+        )));
+    }
+    if value.chars().any(char::is_control) {
+        return Err(DatabaseInstallError::InvalidState(format!(
+            "{name} must not contain control characters"
+        )));
+    }
+    Ok(value)
+}
+
+fn normalize_bootstrap_admin_email(
+    value: String,
+    name: &str,
+) -> Result<String, DatabaseInstallError> {
+    let value = normalize_bootstrap_admin_text(value, name, 256, false)?;
+    if !value.contains('@') {
+        return Err(DatabaseInstallError::InvalidState(format!(
+            "{name} must be a valid email address"
+        )));
+    }
+    Ok(value)
+}
+
+fn normalize_bootstrap_admin_password(
+    value: String,
+    name: &str,
+) -> Result<String, DatabaseInstallError> {
+    let value = value.trim().to_owned();
+    if value.chars().count() < MIN_BOOTSTRAP_ADMIN_PASSWORD_LEN
+        || value.chars().count() > MAX_BOOTSTRAP_ADMIN_PASSWORD_LEN
+    {
+        return Err(DatabaseInstallError::InvalidState(format!(
+            "{name} must be between {MIN_BOOTSTRAP_ADMIN_PASSWORD_LEN} and {MAX_BOOTSTRAP_ADMIN_PASSWORD_LEN} characters"
+        )));
+    }
+    if value.chars().any(char::is_control) {
+        return Err(DatabaseInstallError::InvalidState(format!(
+            "{name} must not contain control characters"
         )));
     }
     Ok(value)
@@ -1089,6 +1379,7 @@ fn catalog_completeness_spec(catalog: &ModelCatalog) -> CatalogCompletenessSpec 
 async fn sqlite_status(
     pool: &SqlitePool,
     options: &DatabaseInstallOptions,
+    bootstrap_admin_options: &BootstrapAdminOptions,
 ) -> Result<InstallationStatus, DatabaseInstallError> {
     if !sqlite_table_exists(pool, "system_installation_state").await? {
         return Ok(InstallationStatus::NotInstalled);
@@ -1163,6 +1454,12 @@ async fn sqlite_status(
     if !sqlite_default_iam_subject_seed_complete(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
+    if bootstrap_admin_options.enabled
+        && !sqlite_bootstrap_admin_seed_complete(pool, bootstrap_admin_options.username.as_str())
+            .await?
+    {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
     if !sqlite_seed_migration_payload_current(
         pool,
         "course",
@@ -1220,6 +1517,7 @@ async fn prepare_sqlite_schema_with_catalog_version(
 async fn postgres_status(
     pool: &PgPool,
     options: &DatabaseInstallOptions,
+    bootstrap_admin_options: &BootstrapAdminOptions,
 ) -> Result<InstallationStatus, DatabaseInstallError> {
     if !postgres_table_exists(pool, "system_installation_state").await? {
         return Ok(InstallationStatus::NotInstalled);
@@ -1294,6 +1592,12 @@ async fn postgres_status(
     if !postgres_default_iam_subject_seed_complete(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
+    if bootstrap_admin_options.enabled
+        && !postgres_bootstrap_admin_seed_complete(pool, bootstrap_admin_options.username.as_str())
+            .await?
+    {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
     if !postgres_seed_migration_payload_current(
         pool,
         "course",
@@ -1351,7 +1655,8 @@ async fn prepare_postgres_schema_with_catalog_version(
 async fn install_sqlite(
     pool: &SqlitePool,
     options: &DatabaseInstallOptions,
-) -> Result<(), DatabaseInstallError> {
+    bootstrap_admin_options: &BootstrapAdminOptions,
+) -> Result<Option<BootstrapAdminReport>, DatabaseInstallError> {
     let catalog = load_install_model_catalog(options)?;
     let catalog_payload =
         crate::infrastructure::sql::model_catalog_import::catalog_payload(&catalog);
@@ -1385,14 +1690,17 @@ async fn install_sqlite(
     import_sqlite_bundled_course_seed(pool).await?;
     import_sqlite_bundled_forum_seed(pool).await?;
     import_sqlite_default_iam_subject_seed(pool).await?;
+    let bootstrap_admin =
+        bootstrap_sqlite_admin_user_if_needed(pool, bootstrap_admin_options).await?;
     mark_sqlite_installed(pool).await?;
-    Ok(())
+    Ok(bootstrap_admin)
 }
 
 async fn install_postgres(
     pool: &PgPool,
     options: &DatabaseInstallOptions,
-) -> Result<(), DatabaseInstallError> {
+    bootstrap_admin_options: &BootstrapAdminOptions,
+) -> Result<Option<BootstrapAdminReport>, DatabaseInstallError> {
     let catalog = load_install_model_catalog(options)?;
     let catalog_payload =
         crate::infrastructure::sql::model_catalog_import::catalog_payload(&catalog);
@@ -1426,8 +1734,10 @@ async fn install_postgres(
     import_postgres_bundled_course_seed(pool).await?;
     import_postgres_bundled_forum_seed(pool).await?;
     import_postgres_default_iam_subject_seed(pool).await?;
+    let bootstrap_admin =
+        bootstrap_postgres_admin_user_if_needed(pool, bootstrap_admin_options).await?;
     mark_postgres_installed(pool).await?;
-    Ok(())
+    Ok(bootstrap_admin)
 }
 
 async fn import_sqlite_bundled_app_seed(pool: &SqlitePool) -> Result<(), DatabaseInstallError> {
@@ -1532,6 +1842,94 @@ async fn import_postgres_default_iam_subject_seed(
     Ok(())
 }
 
+async fn bootstrap_sqlite_admin_user_if_needed(
+    pool: &SqlitePool,
+    options: &BootstrapAdminOptions,
+) -> Result<Option<BootstrapAdminReport>, DatabaseInstallError> {
+    if !options.enabled
+        || sqlite_bootstrap_admin_seed_complete(pool, options.username.as_str()).await?
+    {
+        return Ok(None);
+    }
+    let mut tx = pool.begin().await?;
+    let now = current_utc_timestamp_string();
+    let user_id =
+        match sqlite_bootstrap_admin_user_id_in_transaction(&mut tx, options.username.as_str())
+            .await?
+        {
+            Some(user_id) => user_id,
+            None => sqlite_next_numeric_id(&mut tx, "iam_user").await?,
+        };
+    let has_active_password =
+        sqlite_bootstrap_admin_has_active_password_credential_in_transaction(&mut tx, &user_id)
+            .await?;
+    let password_and_hash = if has_active_password {
+        None
+    } else {
+        let password = options.password()?;
+        let hash = bootstrap_password_hash(&password, &user_id, now.as_str())?;
+        Some((password, hash))
+    };
+    let password_written = upsert_sqlite_bootstrap_admin(
+        &mut tx,
+        options,
+        &user_id,
+        password_and_hash.as_ref().map(|(_, hash)| hash.as_str()),
+        &now,
+    )
+    .await?;
+    maybe_upsert_sqlite_legacy_admin(&mut tx, options, &user_id, &now).await?;
+    tx.commit().await?;
+    Ok(password_written.then(|| {
+        let (password, _) = password_and_hash.expect("password must exist when written");
+        options.report(user_id, password)
+    }))
+}
+
+async fn bootstrap_postgres_admin_user_if_needed(
+    pool: &PgPool,
+    options: &BootstrapAdminOptions,
+) -> Result<Option<BootstrapAdminReport>, DatabaseInstallError> {
+    if !options.enabled
+        || postgres_bootstrap_admin_seed_complete(pool, options.username.as_str()).await?
+    {
+        return Ok(None);
+    }
+    let mut tx = pool.begin().await?;
+    let now = current_utc_timestamp_string();
+    let user_id =
+        match postgres_bootstrap_admin_user_id_in_transaction(&mut tx, options.username.as_str())
+            .await?
+        {
+            Some(user_id) => user_id,
+            None => postgres_next_numeric_id(&mut tx, "iam_user").await?,
+        };
+    let has_active_password =
+        postgres_bootstrap_admin_has_active_password_credential_in_transaction(&mut tx, &user_id)
+            .await?;
+    let password_and_hash = if has_active_password {
+        None
+    } else {
+        let password = options.password()?;
+        let hash = bootstrap_password_hash(&password, &user_id, now.as_str())?;
+        Some((password, hash))
+    };
+    let password_written = upsert_postgres_bootstrap_admin(
+        &mut tx,
+        options,
+        &user_id,
+        password_and_hash.as_ref().map(|(_, hash)| hash.as_str()),
+        &now,
+    )
+    .await?;
+    maybe_upsert_postgres_legacy_admin(&mut tx, options, &user_id, &now).await?;
+    tx.commit().await?;
+    Ok(password_written.then(|| {
+        let (password, _) = password_and_hash.expect("password must exist when written");
+        options.report(user_id, password)
+    }))
+}
+
 async fn sqlite_default_iam_subject_seed_complete(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
     let count: i64 = sqlx::query_scalar(
         r#"
@@ -1578,6 +1976,649 @@ async fn postgres_default_iam_subject_seed_complete(pool: &PgPool) -> Result<boo
     Ok(count == 1)
 }
 
+async fn sqlite_bootstrap_admin_seed_complete(
+    pool: &SqlitePool,
+    username: &str,
+) -> Result<bool, sqlx::Error> {
+    let count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM iam_user u
+        JOIN iam_organization_member m
+          ON m.tenant_id = u.tenant_id
+         AND m.user_id = u.id
+         AND m.status = 'active'
+        JOIN iam_credential c
+          ON c.tenant_id = u.tenant_id
+         AND c.user_id = u.id
+         AND c.credential_type = 'password'
+         AND c.status = 'active'
+        WHERE u.tenant_id = ?
+          AND u.username = ?
+          AND u.status = 'active'
+          AND m.organization_id = ?
+          AND LOWER(COALESCE(m.role_code, '')) = 'admin'
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(username)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .fetch_one(pool)
+    .await?;
+    Ok(count > 0)
+}
+
+async fn postgres_bootstrap_admin_seed_complete(
+    pool: &PgPool,
+    username: &str,
+) -> Result<bool, sqlx::Error> {
+    let count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM iam_user u
+        JOIN iam_organization_member m
+          ON m.tenant_id = u.tenant_id
+         AND m.user_id = u.id
+         AND m.status = 'active'
+        JOIN iam_credential c
+          ON c.tenant_id = u.tenant_id
+         AND c.user_id = u.id
+         AND c.credential_type = 'password'
+         AND c.status = 'active'
+        WHERE u.tenant_id = $1
+          AND u.username = $2
+          AND u.status = 'active'
+          AND m.organization_id = $3
+          AND LOWER(COALESCE(m.role_code, '')) = 'admin'
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(username)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .fetch_one(pool)
+    .await?;
+    Ok(count > 0)
+}
+
+async fn sqlite_bootstrap_admin_user_id_in_transaction(
+    tx: &mut Transaction<'_, Sqlite>,
+    username: &str,
+) -> Result<Option<String>, sqlx::Error> {
+    sqlx::query_scalar(
+        r#"
+        SELECT id
+        FROM iam_user
+        WHERE tenant_id = ?
+          AND username = ?
+        ORDER BY CASE status WHEN 'active' THEN 1 ELSE 0 END DESC,
+                 updated_at DESC,
+                 id DESC
+        LIMIT 1
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(username)
+    .fetch_optional(&mut **tx)
+    .await
+}
+
+async fn postgres_bootstrap_admin_user_id_in_transaction(
+    tx: &mut Transaction<'_, Postgres>,
+    username: &str,
+) -> Result<Option<String>, sqlx::Error> {
+    sqlx::query_scalar(
+        r#"
+        SELECT id
+        FROM iam_user
+        WHERE tenant_id = $1
+          AND username = $2
+        ORDER BY CASE status WHEN 'active' THEN 1 ELSE 0 END DESC,
+                 updated_at DESC,
+                 id DESC
+        LIMIT 1
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(username)
+    .fetch_optional(&mut **tx)
+    .await
+}
+
+async fn sqlite_bootstrap_admin_has_active_password_credential_in_transaction(
+    tx: &mut Transaction<'_, Sqlite>,
+    user_id: &str,
+) -> Result<bool, sqlx::Error> {
+    let count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM iam_credential
+        WHERE tenant_id = ?
+          AND user_id = ?
+          AND credential_type = 'password'
+          AND status = 'active'
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(user_id)
+    .fetch_one(&mut **tx)
+    .await?;
+    Ok(count > 0)
+}
+
+async fn postgres_bootstrap_admin_has_active_password_credential_in_transaction(
+    tx: &mut Transaction<'_, Postgres>,
+    user_id: &str,
+) -> Result<bool, sqlx::Error> {
+    let count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM iam_credential
+        WHERE tenant_id = $1
+          AND user_id = $2
+          AND credential_type = 'password'
+          AND status = 'active'
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(user_id)
+    .fetch_one(&mut **tx)
+    .await?;
+    Ok(count > 0)
+}
+
+async fn sqlite_bootstrap_admin_member_id_in_transaction(
+    tx: &mut Transaction<'_, Sqlite>,
+    user_id: &str,
+) -> Result<Option<String>, sqlx::Error> {
+    sqlx::query_scalar(
+        r#"
+        SELECT id
+        FROM iam_organization_member
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND user_id = ?
+        LIMIT 1
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .bind(user_id)
+    .fetch_optional(&mut **tx)
+    .await
+}
+
+async fn postgres_bootstrap_admin_member_id_in_transaction(
+    tx: &mut Transaction<'_, Postgres>,
+    user_id: &str,
+) -> Result<Option<String>, sqlx::Error> {
+    sqlx::query_scalar(
+        r#"
+        SELECT id
+        FROM iam_organization_member
+        WHERE tenant_id = $1
+          AND organization_id = $2
+          AND user_id = $3
+        LIMIT 1
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .bind(user_id)
+    .fetch_optional(&mut **tx)
+    .await
+}
+
+async fn sqlite_bootstrap_admin_email_identity_id_in_transaction(
+    tx: &mut Transaction<'_, Sqlite>,
+    options: &BootstrapAdminOptions,
+) -> Result<Option<String>, sqlx::Error> {
+    sqlx::query_scalar(
+        r#"
+        SELECT id
+        FROM iam_user_identity
+        WHERE tenant_id = ?
+          AND provider = 'email'
+          AND subject = ?
+        LIMIT 1
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(&options.email)
+    .fetch_optional(&mut **tx)
+    .await
+}
+
+async fn postgres_bootstrap_admin_email_identity_id_in_transaction(
+    tx: &mut Transaction<'_, Postgres>,
+    options: &BootstrapAdminOptions,
+) -> Result<Option<String>, sqlx::Error> {
+    sqlx::query_scalar(
+        r#"
+        SELECT id
+        FROM iam_user_identity
+        WHERE tenant_id = $1
+          AND provider = 'email'
+          AND subject = $2
+        LIMIT 1
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(&options.email)
+    .fetch_optional(&mut **tx)
+    .await
+}
+
+async fn upsert_sqlite_bootstrap_admin(
+    tx: &mut Transaction<'_, Sqlite>,
+    options: &BootstrapAdminOptions,
+    user_id: &str,
+    password_hash: Option<&str>,
+    now: &str,
+) -> Result<bool, sqlx::Error> {
+    sqlx::query(
+        r#"
+        INSERT INTO iam_user
+            (id, tenant_id, username, display_name, email, phone, avatar_url, status, created_at, updated_at)
+        VALUES
+            (?, ?, ?, ?, ?, '', '', 'active', ?, ?)
+        ON CONFLICT(id) DO UPDATE SET
+            tenant_id = excluded.tenant_id,
+            username = excluded.username,
+            display_name = excluded.display_name,
+            email = excluded.email,
+            status = excluded.status,
+            updated_at = excluded.updated_at
+        "#,
+    )
+    .bind(user_id)
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(&options.username)
+    .bind(&options.display_name)
+    .bind(&options.email)
+    .bind(now)
+    .bind(now)
+    .execute(&mut **tx)
+    .await?;
+
+    let member_id = sqlite_bootstrap_admin_member_id_in_transaction(tx, user_id)
+        .await?
+        .unwrap_or_else(|| format!("member-{user_id}-admin"));
+    sqlx::query(
+        r#"
+        INSERT INTO iam_organization_member
+            (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
+        VALUES
+            (?, ?, ?, ?, 'admin', 'active', ?)
+        ON CONFLICT(id) DO UPDATE SET
+            tenant_id = excluded.tenant_id,
+            organization_id = excluded.organization_id,
+            user_id = excluded.user_id,
+            role_code = excluded.role_code,
+            status = excluded.status
+        "#,
+    )
+    .bind(member_id)
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .bind(user_id)
+    .bind(now)
+    .execute(&mut **tx)
+    .await?;
+
+    let mut password_written = false;
+    if let Some(password_hash) = password_hash {
+        sqlx::query(
+            r#"
+            INSERT INTO iam_credential
+                (id, tenant_id, user_id, credential_type, credential_hash, status, expires_at, created_at, updated_at)
+            VALUES
+                (?, ?, ?, 'password', ?, 'active', NULL, ?, ?)
+            ON CONFLICT(id) DO UPDATE SET
+                tenant_id = excluded.tenant_id,
+                user_id = excluded.user_id,
+                credential_type = excluded.credential_type,
+                credential_hash = excluded.credential_hash,
+                status = excluded.status,
+                expires_at = excluded.expires_at,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(format!("credential-{user_id}-bootstrap-password"))
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(user_id)
+        .bind(password_hash)
+        .bind(now)
+        .bind(now)
+        .execute(&mut **tx)
+        .await?;
+        password_written = true;
+    }
+
+    let identity_id = sqlite_bootstrap_admin_email_identity_id_in_transaction(tx, options)
+        .await?
+        .unwrap_or_else(|| format!("identity-{user_id}-bootstrap-email"));
+    sqlx::query(
+        r#"
+        INSERT INTO iam_user_identity
+            (id, tenant_id, user_id, provider, subject, email, created_at)
+        VALUES
+            (?, ?, ?, 'email', ?, ?, ?)
+        ON CONFLICT(id) DO UPDATE SET
+            tenant_id = excluded.tenant_id,
+            user_id = excluded.user_id,
+            provider = excluded.provider,
+            subject = excluded.subject,
+            email = excluded.email
+        "#,
+    )
+    .bind(identity_id)
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(user_id)
+    .bind(&options.email)
+    .bind(&options.email)
+    .bind(now)
+    .execute(&mut **tx)
+    .await?;
+    Ok(password_written)
+}
+
+async fn upsert_postgres_bootstrap_admin(
+    tx: &mut Transaction<'_, Postgres>,
+    options: &BootstrapAdminOptions,
+    user_id: &str,
+    password_hash: Option<&str>,
+    now: &str,
+) -> Result<bool, sqlx::Error> {
+    sqlx::query(
+        r#"
+        INSERT INTO iam_user
+            (id, tenant_id, username, display_name, email, phone, avatar_url, status, created_at, updated_at)
+        VALUES
+            ($1, $2, $3, $4, $5, '', '', 'active', $6::timestamptz, $6::timestamptz)
+        ON CONFLICT(id) DO UPDATE SET
+            tenant_id = excluded.tenant_id,
+            username = excluded.username,
+            display_name = excluded.display_name,
+            email = excluded.email,
+            status = excluded.status,
+            updated_at = excluded.updated_at
+        "#,
+    )
+    .bind(user_id)
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(&options.username)
+    .bind(&options.display_name)
+    .bind(&options.email)
+    .bind(now)
+    .execute(&mut **tx)
+    .await?;
+
+    let member_id = postgres_bootstrap_admin_member_id_in_transaction(tx, user_id)
+        .await?
+        .unwrap_or_else(|| format!("member-{user_id}-admin"));
+    sqlx::query(
+        r#"
+        INSERT INTO iam_organization_member
+            (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
+        VALUES
+            ($1, $2, $3, $4, 'admin', 'active', $5::timestamptz)
+        ON CONFLICT(id) DO UPDATE SET
+            tenant_id = excluded.tenant_id,
+            organization_id = excluded.organization_id,
+            user_id = excluded.user_id,
+            role_code = excluded.role_code,
+            status = excluded.status
+        "#,
+    )
+    .bind(member_id)
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .bind(user_id)
+    .bind(now)
+    .execute(&mut **tx)
+    .await?;
+
+    let mut password_written = false;
+    if let Some(password_hash) = password_hash {
+        sqlx::query(
+            r#"
+            INSERT INTO iam_credential
+                (id, tenant_id, user_id, credential_type, credential_hash, status, expires_at, created_at, updated_at)
+            VALUES
+                ($1, $2, $3, 'password', $4, 'active', NULL, $5::timestamptz, $5::timestamptz)
+            ON CONFLICT(id) DO UPDATE SET
+                tenant_id = excluded.tenant_id,
+                user_id = excluded.user_id,
+                credential_type = excluded.credential_type,
+                credential_hash = excluded.credential_hash,
+                status = excluded.status,
+                expires_at = excluded.expires_at,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(format!("credential-{user_id}-bootstrap-password"))
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(user_id)
+        .bind(password_hash)
+        .bind(now)
+        .execute(&mut **tx)
+        .await?;
+        password_written = true;
+    }
+
+    let identity_id = postgres_bootstrap_admin_email_identity_id_in_transaction(tx, options)
+        .await?
+        .unwrap_or_else(|| format!("identity-{user_id}-bootstrap-email"));
+    sqlx::query(
+        r#"
+        INSERT INTO iam_user_identity
+            (id, tenant_id, user_id, provider, subject, email, created_at)
+        VALUES
+            ($1, $2, $3, 'email', $4, $5, $6::timestamptz)
+        ON CONFLICT(id) DO UPDATE SET
+            tenant_id = excluded.tenant_id,
+            user_id = excluded.user_id,
+            provider = excluded.provider,
+            subject = excluded.subject,
+            email = excluded.email
+        "#,
+    )
+    .bind(identity_id)
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(user_id)
+    .bind(&options.email)
+    .bind(&options.email)
+    .bind(now)
+    .execute(&mut **tx)
+    .await?;
+    Ok(password_written)
+}
+
+async fn maybe_upsert_sqlite_legacy_admin(
+    tx: &mut Transaction<'_, Sqlite>,
+    options: &BootstrapAdminOptions,
+    user_id: &str,
+    now: &str,
+) -> Result<(), sqlx::Error> {
+    if !sqlite_table_exists_in_transaction(tx, "plus_user").await? {
+        return Ok(());
+    }
+    sqlx::query(
+        r#"
+        INSERT INTO plus_user
+            (id, uuid, tenant_id, organization_id, created_at, updated_at, v, username, nickname, password, platform, type, email, status)
+        VALUES
+            (?, ?, ?, ?, ?, ?, 0, ?, ?, '', 0, 1, ?, 1)
+        ON CONFLICT(id) DO UPDATE SET
+            uuid = excluded.uuid,
+            tenant_id = excluded.tenant_id,
+            organization_id = excluded.organization_id,
+            username = excluded.username,
+            nickname = excluded.nickname,
+            email = excluded.email,
+            status = excluded.status,
+            updated_at = excluded.updated_at
+        "#,
+    )
+    .bind(user_id)
+    .bind(format!("bootstrap-admin-{user_id}"))
+    .bind(DEFAULT_IAM_TENANT_ID.parse::<i64>().unwrap_or(10))
+    .bind(DEFAULT_IAM_ORGANIZATION_ID.parse::<i64>().unwrap_or(20))
+    .bind(now)
+    .bind(now)
+    .bind(&options.username)
+    .bind(&options.display_name)
+    .bind(&options.email)
+    .execute(&mut **tx)
+    .await?;
+
+    if sqlite_table_exists_in_transaction(tx, "plus_role").await? {
+        ensure_sqlite_legacy_admin_role(tx, now).await?;
+    }
+    let has_plus_user_role = sqlite_table_exists_in_transaction(tx, "plus_user_role").await?;
+    let has_plus_role = sqlite_table_exists_in_transaction(tx, "plus_role").await?;
+    if has_plus_user_role && has_plus_role {
+        let legacy_user_id = user_id.parse::<i64>().unwrap_or(0);
+        sqlx::query("DELETE FROM plus_user_role WHERE user_id = ?")
+            .bind(legacy_user_id)
+            .execute(&mut **tx)
+            .await?;
+        sqlx::query(
+            r#"
+            INSERT INTO plus_user_role
+                (user_id, role_id, created_at, updated_at, operator_id)
+            SELECT ?, r.id, ?, ?, 0
+            FROM plus_role r
+            WHERE r.code = 'admin'
+            LIMIT 1
+            "#,
+        )
+        .bind(legacy_user_id)
+        .bind(now)
+        .bind(now)
+        .execute(&mut **tx)
+        .await?;
+    }
+    Ok(())
+}
+
+async fn maybe_upsert_postgres_legacy_admin(
+    tx: &mut Transaction<'_, Postgres>,
+    options: &BootstrapAdminOptions,
+    user_id: &str,
+    now: &str,
+) -> Result<(), sqlx::Error> {
+    if !postgres_table_exists_in_transaction(tx, "plus_user").await? {
+        return Ok(());
+    }
+    sqlx::query(
+        r#"
+        INSERT INTO plus_user
+            (id, uuid, tenant_id, organization_id, created_at, updated_at, v, username, nickname, password, platform, type, email, status)
+        VALUES
+            ($1, $2, $3, $4, $5::timestamptz, $5::timestamptz, 0, $6, $7, '', 0, 1, $8, 1)
+        ON CONFLICT(id) DO UPDATE SET
+            uuid = excluded.uuid,
+            tenant_id = excluded.tenant_id,
+            organization_id = excluded.organization_id,
+            username = excluded.username,
+            nickname = excluded.nickname,
+            email = excluded.email,
+            status = excluded.status,
+            updated_at = excluded.updated_at
+        "#,
+    )
+    .bind(user_id.parse::<i64>().unwrap_or(1))
+    .bind(format!("bootstrap-admin-{user_id}"))
+    .bind(DEFAULT_IAM_TENANT_ID.parse::<i64>().unwrap_or(10))
+    .bind(DEFAULT_IAM_ORGANIZATION_ID.parse::<i64>().unwrap_or(20))
+    .bind(now)
+    .bind(&options.username)
+    .bind(&options.display_name)
+    .bind(&options.email)
+    .execute(&mut **tx)
+    .await?;
+
+    if postgres_table_exists_in_transaction(tx, "plus_role").await? {
+        ensure_postgres_legacy_admin_role(tx, now).await?;
+    }
+    let has_plus_user_role = postgres_table_exists_in_transaction(tx, "plus_user_role").await?;
+    let has_plus_role = postgres_table_exists_in_transaction(tx, "plus_role").await?;
+    if has_plus_user_role && has_plus_role {
+        let legacy_user_id = user_id.parse::<i64>().unwrap_or(0);
+        sqlx::query("DELETE FROM plus_user_role WHERE user_id = $1")
+            .bind(legacy_user_id)
+            .execute(&mut **tx)
+            .await?;
+        sqlx::query(
+            r#"
+            INSERT INTO plus_user_role
+                (user_id, role_id, created_at, updated_at, operator_id)
+            SELECT $1, r.id, $2::timestamptz, $2::timestamptz, 0
+            FROM plus_role r
+            WHERE r.code = 'admin'
+            LIMIT 1
+            "#,
+        )
+        .bind(legacy_user_id)
+        .bind(now)
+        .execute(&mut **tx)
+        .await?;
+    }
+    Ok(())
+}
+
+async fn ensure_sqlite_legacy_admin_role(
+    tx: &mut Transaction<'_, Sqlite>,
+    now: &str,
+) -> Result<(), sqlx::Error> {
+    let existing: Option<i64> =
+        sqlx::query_scalar("SELECT id FROM plus_role WHERE code = 'admin' LIMIT 1")
+            .fetch_optional(&mut **tx)
+            .await?;
+    if existing.is_some() {
+        return Ok(());
+    }
+    sqlx::query(
+        r#"
+        INSERT INTO plus_role
+            (uuid, created_at, updated_at, v, code, name, status)
+        VALUES
+            ('role-admin', ?, ?, 0, 'admin', 'admin', 1)
+        "#,
+    )
+    .bind(now)
+    .bind(now)
+    .execute(&mut **tx)
+    .await?;
+    Ok(())
+}
+
+async fn ensure_postgres_legacy_admin_role(
+    tx: &mut Transaction<'_, Postgres>,
+    now: &str,
+) -> Result<(), sqlx::Error> {
+    let existing: Option<i64> =
+        sqlx::query_scalar("SELECT id FROM plus_role WHERE code = 'admin' LIMIT 1 FOR UPDATE")
+            .fetch_optional(&mut **tx)
+            .await?;
+    if existing.is_some() {
+        return Ok(());
+    }
+    sqlx::query(
+        r#"
+        INSERT INTO plus_role
+            (uuid, created_at, updated_at, v, code, name, status)
+        VALUES
+            ('role-admin', $1::timestamptz, $1::timestamptz, 0, 'admin', 'admin', 1)
+        "#,
+    )
+    .bind(now)
+    .execute(&mut **tx)
+    .await?;
+    Ok(())
+}
+
 async fn sqlite_table_exists(pool: &SqlitePool, table_name: &str) -> Result<bool, sqlx::Error> {
     let count: i64 = sqlx::query_scalar(
         r#"
@@ -1593,6 +2634,24 @@ async fn sqlite_table_exists(pool: &SqlitePool, table_name: &str) -> Result<bool
     Ok(count == 1)
 }
 
+async fn sqlite_table_exists_in_transaction(
+    tx: &mut Transaction<'_, Sqlite>,
+    table_name: &str,
+) -> Result<bool, sqlx::Error> {
+    let count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM sqlite_master
+        WHERE type = 'table'
+          AND name = ?
+        "#,
+    )
+    .bind(table_name)
+    .fetch_one(&mut **tx)
+    .await?;
+    Ok(count == 1)
+}
+
 async fn postgres_table_exists(pool: &PgPool, table_name: &str) -> Result<bool, sqlx::Error> {
     let count: i64 = sqlx::query_scalar(
         r#"
@@ -1604,6 +2663,24 @@ async fn postgres_table_exists(pool: &PgPool, table_name: &str) -> Result<bool, 
     )
     .bind(table_name)
     .fetch_one(pool)
+    .await?;
+    Ok(count == 1)
+}
+
+async fn postgres_table_exists_in_transaction(
+    tx: &mut Transaction<'_, Postgres>,
+    table_name: &str,
+) -> Result<bool, sqlx::Error> {
+    let count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM information_schema.tables
+        WHERE table_schema = current_schema()
+          AND table_name = $1
+        "#,
+    )
+    .bind(table_name)
+    .fetch_one(&mut **tx)
     .await?;
     Ok(count == 1)
 }

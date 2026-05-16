@@ -26,6 +26,23 @@ fn installer_cli_reports_status_and_ensures_sqlite_database_once() {
     assert_eq!("installed", ensure_first_payload["status"]);
     assert_eq!(true, ensure_first_payload["changed"]);
     assert_eq!("not_run", ensure_first_payload["lastCatalogRefreshStatus"]);
+    assert_eq!("created", ensure_first_payload["bootstrapAdmin"]["status"]);
+    assert_eq!("admin", ensure_first_payload["bootstrapAdmin"]["username"]);
+    assert_eq!("10", ensure_first_payload["bootstrapAdmin"]["tenantId"]);
+    assert_eq!(
+        "20",
+        ensure_first_payload["bootstrapAdmin"]["organizationId"]
+    );
+    assert_eq!(
+        true,
+        ensure_first_payload["bootstrapAdmin"]["generatedPassword"]
+    );
+    assert!(
+        ensure_first_payload["bootstrapAdmin"]["initialPassword"]
+            .as_str()
+            .is_some_and(|value| value.len() >= 12),
+        "first installer ensure output must expose the one-time initial admin password"
+    );
 
     let status_after = run_installer(binary, &database_url, "status");
     assert!(status_after.status.success());
@@ -38,6 +55,11 @@ fn installer_cli_reports_status_and_ensures_sqlite_database_once() {
     let ensure_second_payload = stdout_json(&ensure_second);
     assert_eq!("installed", ensure_second_payload["status"]);
     assert_eq!(false, ensure_second_payload["changed"]);
+    assert!(
+        ensure_second_payload.get("bootstrapAdmin").is_none()
+            || ensure_second_payload["bootstrapAdmin"].is_null(),
+        "re-running ensure must not expose or reset the initial admin password"
+    );
 
     let refresh = run_installer_with_args(
         binary,

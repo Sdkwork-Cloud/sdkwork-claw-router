@@ -1,3 +1,4 @@
+use sdkwork_claw_product::application::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
 use sdkwork_claw_product::infrastructure::sql::installer::{
     CatalogRefreshOptions, DatabaseInstallOptions, DatabaseInstaller, InstallationStatus,
 };
@@ -258,6 +259,275 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
         .await
         .unwrap();
     assert_eq!(catalog_keys(&catalog).len() as i64, model_count_again);
+}
+
+#[tokio::test]
+async fn sqlite_installer_bootstraps_initial_admin_login_once() {
+    let pool = sqlite_pool().await;
+    let installer =
+        installer(pool.clone()).with_bootstrap_admin_password("Admin-Init-Test-Password-2026!");
+
+    let installed = installer.ensure_installed().await.unwrap();
+
+    let bootstrap = installed
+        .bootstrap_admin
+        .expect("first install must expose one-time bootstrap admin credentials");
+    assert_eq!("created", bootstrap.status);
+    assert_eq!("admin", bootstrap.username);
+    assert_eq!("10", bootstrap.tenant_id);
+    assert_eq!("20", bootstrap.organization_id);
+    assert_eq!("Admin-Init-Test-Password-2026!", bootstrap.initial_password);
+
+    let admin = sqlx::query(
+        r#"
+        SELECT
+            u.id,
+            u.tenant_id,
+            u.username,
+            u.display_name,
+            u.email,
+            u.status,
+            m.organization_id,
+            m.role_code,
+            c.credential_hash
+        FROM iam_user u
+        JOIN iam_organization_member m
+          ON m.tenant_id = u.tenant_id
+         AND m.user_id = u.id
+         AND m.status = 'active'
+        JOIN iam_credential c
+          ON c.tenant_id = u.tenant_id
+         AND c.user_id = u.id
+         AND c.credential_type = 'password'
+         AND c.status = 'active'
+        WHERE u.tenant_id = '10'
+          AND u.username = 'admin'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!("1", admin.get::<String, _>("id"));
+    assert_eq!("10", admin.get::<String, _>("tenant_id"));
+    assert_eq!("admin", admin.get::<String, _>("username"));
+    assert_eq!("Administrator", admin.get::<String, _>("display_name"));
+    assert_eq!("admin@sdkwork.local", admin.get::<String, _>("email"));
+    assert_eq!("active", admin.get::<String, _>("status"));
+    assert_eq!("20", admin.get::<String, _>("organization_id"));
+    assert_eq!("admin", admin.get::<String, _>("role_code"));
+    assert!(
+        Pbkdf2Sha256PasswordHasher
+            .verify_password(
+                "Admin-Init-Test-Password-2026!",
+                &admin.get::<String, _>("credential_hash"),
+            )
+            .unwrap(),
+        "bootstrap password must be stored with the normal IAM password hash format"
+    );
+
+    let installed_again = installer.ensure_installed().await.unwrap();
+    assert!(
+        installed_again.bootstrap_admin.is_none(),
+        "bootstrap password must not be returned after the admin account already exists"
+    );
+}
+
+#[tokio::test]
+async fn sqlite_installer_repairs_incomplete_bootstrap_admin_login() {
+    let pool = sqlite_pool().await;
+    let installer =
+        installer(pool.clone()).with_bootstrap_admin_password("Admin-Repair-Test-Password-2026!");
+
+    installer.ensure_installed().await.unwrap();
+    sqlx::query(
+        r#"
+        UPDATE iam_user_identity
+        SET id = 'identity-1-email'
+        WHERE tenant_id = '10'
+          AND user_id = '1'
+          AND provider = 'email'
+          AND subject = 'admin@sdkwork.local'
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        DELETE FROM iam_credential
+        WHERE tenant_id = '10'
+          AND user_id = '1'
+          AND credential_type = 'password'
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        DELETE FROM iam_organization_member
+        WHERE tenant_id = '10'
+          AND user_id = '1'
+          AND organization_id = '20'
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "startup status must detect incomplete bootstrap admin login state"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    let bootstrap = repaired
+        .bootstrap_admin
+        .expect("repair must expose the one-time password that was written");
+    assert_eq!("1", bootstrap.user_id);
+    assert_eq!("admin", bootstrap.username);
+    assert_eq!(
+        "Admin-Repair-Test-Password-2026!",
+        bootstrap.initial_password
+    );
+
+    let admin_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM iam_user
+        WHERE tenant_id = '10'
+          AND username = 'admin'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        1, admin_count,
+        "bootstrap repair must reuse the existing admin user instead of creating a duplicate"
+    );
+
+    let repaired_admin = sqlx::query(
+        r#"
+        SELECT
+            m.role_code,
+            c.credential_hash
+        FROM iam_user u
+        JOIN iam_organization_member m
+          ON m.tenant_id = u.tenant_id
+         AND m.user_id = u.id
+         AND m.status = 'active'
+        JOIN iam_credential c
+          ON c.tenant_id = u.tenant_id
+         AND c.user_id = u.id
+         AND c.credential_type = 'password'
+         AND c.status = 'active'
+        WHERE u.tenant_id = '10'
+          AND u.id = '1'
+          AND u.username = 'admin'
+          AND m.organization_id = '20'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!("admin", repaired_admin.get::<String, _>("role_code"));
+    assert!(
+        Pbkdf2Sha256PasswordHasher
+            .verify_password(
+                "Admin-Repair-Test-Password-2026!",
+                &repaired_admin.get::<String, _>("credential_hash"),
+            )
+            .unwrap(),
+        "repaired admin password must use the normal IAM password hash format"
+    );
+
+    let repaired_again = installer.ensure_installed().await.unwrap();
+    assert!(
+        repaired_again.bootstrap_admin.is_none(),
+        "repair password must not be returned after the admin login state is complete"
+    );
+}
+
+#[tokio::test]
+async fn sqlite_installer_repairs_bootstrap_admin_membership_without_resetting_password() {
+    let pool = sqlite_pool().await;
+    let installer =
+        installer(pool.clone()).with_bootstrap_admin_password("Admin-Original-Password-2026!");
+
+    installer.ensure_installed().await.unwrap();
+    let original_hash: String = sqlx::query_scalar(
+        r#"
+        SELECT credential_hash
+        FROM iam_credential
+        WHERE tenant_id = '10'
+          AND user_id = '1'
+          AND credential_type = 'password'
+          AND status = 'active'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        UPDATE iam_organization_member
+        SET id = 'member-1',
+            role_code = 'owner'
+        WHERE tenant_id = '10'
+          AND user_id = '1'
+          AND organization_id = '20'
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "startup status must detect incomplete bootstrap admin membership state"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert!(
+        repaired.bootstrap_admin.is_none(),
+        "membership-only repair must not expose or reset the existing admin password"
+    );
+    let repaired_hash: String = sqlx::query_scalar(
+        r#"
+        SELECT credential_hash
+        FROM iam_credential
+        WHERE tenant_id = '10'
+          AND user_id = '1'
+          AND credential_type = 'password'
+          AND status = 'active'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        original_hash, repaired_hash,
+        "membership-only repair must preserve the existing admin password hash"
+    );
+    let member_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM iam_organization_member
+        WHERE tenant_id = '10'
+          AND user_id = '1'
+          AND organization_id = '20'
+          AND role_code = 'admin'
+          AND status = 'active'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(1, member_count);
 }
 
 #[tokio::test]
