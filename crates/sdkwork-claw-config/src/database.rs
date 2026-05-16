@@ -144,9 +144,14 @@ impl DatabaseConfig {
     ) -> RuntimeConfigLocation {
         let default_location = RuntimeConfigLocation::for_current_platform(profile);
         if let Some(config_file) = explicit_runtime_config_file() {
+            let data_directory = config_file
+                .parent()
+                .filter(|path| !path.as_os_str().is_empty())
+                .map(|path| path.join("Data"))
+                .unwrap_or_else(|| default_location.data_directory.clone());
             RuntimeConfigLocation {
                 config_file,
-                data_directory: default_location.data_directory,
+                data_directory,
             }
         } else {
             default_location
