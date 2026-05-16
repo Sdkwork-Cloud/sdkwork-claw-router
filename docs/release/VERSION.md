@@ -2,7 +2,10 @@
 
 - Current Version: `0.2.0`
 - Release Date: `2026-05-16`
-- Status: `Prepared for GitHub release; sibling SDK repositories are clean and synced`
+- Status: `Released successfully on GitHub`
+- GitHub Release: `https://github.com/Sdkwork-Cloud/sdkwork-claw-router/releases/tag/v0.2.0`
+- Release Workflow: `https://github.com/Sdkwork-Cloud/sdkwork-claw-router/actions/runs/25956126725`
+- Release Asset Prefix: `clawrouter-*`
 - Previous Version: `0.1.0`
 - Previous Status: `Released successfully on GitHub`
 
