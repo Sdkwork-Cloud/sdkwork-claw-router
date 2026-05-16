@@ -124,7 +124,7 @@ function normalizeDashboardSnapshot(record: ApiRecord): DashboardSnapshot {
   const announcements = normalizeAnnouncements(record);
 
   return {
-    summary: normalizeSummary(recordValue(record, 'summary'), chartData, topModels),
+    summary: normalizeSummary(readRequiredRecordProperty(record, 'summary', 'Dashboard overview summary is required')),
     requestSparkline: normalizeSparkline(record, 'requestSparkline', 'request', chartData, (item) => totalModalityValue(item)),
     multimodalSparkline: normalizeSparkline(record, 'multimodalSparkline', 'multimodal', chartData, (item) => {
       return item[MODALITY_KEYS.image] + item[MODALITY_KEYS.video] + item[MODALITY_KEYS.audio] + item[MODALITY_KEYS.music];
@@ -138,7 +138,7 @@ function normalizeDashboardSnapshot(record: ApiRecord): DashboardSnapshot {
 }
 
 function normalizeChartData(record: ApiRecord): DashboardData[] {
-  return readOptionalRecordArray(record, 'chartData', 'Dashboard overview chart record is required')
+  return readRequiredRecordArray(record, 'chartData', 'Dashboard overview chartData is required', 'Dashboard overview chart record is required')
     .map((value) => {
       const item = readRequiredRecord(value, 'Dashboard overview chart record is required');
       return {
@@ -153,26 +153,25 @@ function normalizeChartData(record: ApiRecord): DashboardData[] {
 }
 
 function normalizeTopModels(record: ApiRecord): ModelUsage[] {
-  return readOptionalRecordArray(record, 'topModels', 'Dashboard top model record is required')
-    .map((item, index) => {
+  return readRequiredRecordArray(record, 'topModels', 'Dashboard overview topModels is required', 'Dashboard top model record is required')
+    .map((item) => {
       const trend = readRequiredFirstString(item, ['trend', 'change'], 'Dashboard top model trend is required');
       return {
-        rank: readOptionalFirstNumber(item, ['rank', 'rankNo'], index + 1),
+        rank: readRequiredPositiveRank(item, ['rank', 'rankNo'], 'Dashboard top model rank is required'),
         name: readRequiredFirstString(item, ['name', 'model'], 'Dashboard top model name is required'),
         supplier: readRequiredFirstString(item, ['supplier', 'vendor', 'vendorCode'], 'Dashboard top model supplier is required'),
         modality: normalizeModality(readRequiredFirstString(item, ['modality', 'type'], 'Dashboard top model modality is required')),
         requests: readRequiredFirstNumber(item, ['requests', 'requestCount', 'request_count'], 'Dashboard top model request count is required'),
         cost: readRequiredFirstNumber(item, ['cost', 'costAmount', 'cost_amount'], 'Dashboard top model cost is required'),
         trend,
-        isUp: readOptionalBoolean(item, 'isUp', !trend.trim().startsWith('-')),
+        isUp: readRequiredBoolean(item, 'isUp', 'Dashboard top model direction flag is required'),
       };
     })
-    .sort((left, right) => right.requests - left.requests)
-    .map((item, index) => ({ ...item, rank: index + 1 }));
+    .sort((left, right) => left.rank - right.rank);
 }
 
 function normalizeAnnouncements(record: ApiRecord): Announcement[] {
-  return readOptionalRecordArray(record, 'announcements', 'Dashboard announcement record is required')
+  return readRequiredRecordArray(record, 'announcements', 'Dashboard overview announcements is required', 'Dashboard announcement record is required')
     .map((item) => ({
       id: readRequiredFirstNumber(item, ['id', 'messageId', 'message_id'], 'Dashboard announcement id is required'),
       text: readRequiredFirstString(item, ['text', 'title', 'summary', 'content'], 'Dashboard announcement text is required'),
@@ -181,29 +180,18 @@ function normalizeAnnouncements(record: ApiRecord): Announcement[] {
     }));
 }
 
-function normalizeSummary(
-  summaryRecord: ApiRecord,
-  chartData: DashboardData[],
-  topModels: ModelUsage[],
-): SdkDashboardOverviewResponse['summary'] {
-  const requestCount =
-    readOptionalFirstNumber(summaryRecord, ['requestCount', 'requests', 'totalRequests'], 0) ||
-    topModels.reduce((sum, item) => sum + item.requests, 0) ||
-    chartData.reduce((sum, item) => sum + totalModalityValue(item), 0);
-
+function normalizeSummary(summaryRecord: ApiRecord): SdkDashboardOverviewResponse['summary'] {
   return {
-    availableCredits: readOptionalFirstNumber(summaryRecord, ['availableCredits', 'balance', 'credits'], 0),
-    usedCredits:
-      readOptionalFirstNumber(summaryRecord, ['usedCredits', 'cost', 'costAmount'], 0) ||
-      chartData.reduce((sum, item) => sum + totalModalityValue(item), 0),
-    requestCount,
-    errorCount: readOptionalFirstNumber(summaryRecord, ['errorCount', 'errors', 'failedRequests'], 0),
-    imageRequests: readOptionalFirstNumber(summaryRecord, ['imageRequests'], 0) || sumChartValue(chartData, MODALITY_KEYS.image),
-    videoRequests: readOptionalFirstNumber(summaryRecord, ['videoRequests'], 0) || sumChartValue(chartData, MODALITY_KEYS.video),
-    audioRequests: readOptionalFirstNumber(summaryRecord, ['audioRequests'], 0) || sumChartValue(chartData, MODALITY_KEYS.audio),
-    musicRequests: readOptionalFirstNumber(summaryRecord, ['musicRequests'], 0) || sumChartValue(chartData, MODALITY_KEYS.music),
-    rpm: readOptionalFirstNumber(summaryRecord, ['rpm', 'requestsPerMinute'], 0),
-    tpm: readOptionalFirstNumber(summaryRecord, ['tpm', 'tokensPerMinute', 'totalTokens'], 0),
+    availableCredits: readRequiredFirstNumber(summaryRecord, ['availableCredits', 'balance', 'credits'], 'Dashboard overview available credits are required'),
+    usedCredits: readRequiredFirstNumber(summaryRecord, ['usedCredits', 'cost', 'costAmount'], 'Dashboard overview used credits are required'),
+    requestCount: readRequiredFirstNumber(summaryRecord, ['requestCount', 'requests', 'totalRequests'], 'Dashboard overview request count is required'),
+    errorCount: readRequiredFirstNumber(summaryRecord, ['errorCount', 'errors', 'failedRequests'], 'Dashboard overview error count is required'),
+    imageRequests: readRequiredFirstNumber(summaryRecord, ['imageRequests'], 'Dashboard overview image requests are required'),
+    videoRequests: readRequiredFirstNumber(summaryRecord, ['videoRequests'], 'Dashboard overview video requests are required'),
+    audioRequests: readRequiredFirstNumber(summaryRecord, ['audioRequests'], 'Dashboard overview audio requests are required'),
+    musicRequests: readRequiredFirstNumber(summaryRecord, ['musicRequests'], 'Dashboard overview music requests are required'),
+    rpm: readRequiredFirstNumber(summaryRecord, ['rpm', 'requestsPerMinute'], 'Dashboard overview RPM is required'),
+    tpm: readRequiredFirstNumber(summaryRecord, ['tpm', 'tokensPerMinute', 'totalTokens'], 'Dashboard overview TPM is required'),
   };
 }
 
@@ -214,7 +202,12 @@ function normalizeSparkline(
   fallbackItems: DashboardData[],
   fallbackSelector: (item: DashboardData) => number,
 ): SdkDashboardOverviewResponse['requestSparkline'] {
-  const explicit = readOptionalRecordArray(record, key, `Dashboard ${label} sparkline record is required`)
+  const explicit = readRequiredRecordArray(
+    record,
+    key,
+    `Dashboard overview ${key} is required`,
+    `Dashboard ${label} sparkline record is required`,
+  )
     .map((item) => ({ value: readRequiredNonNegativeNumber(item, 'value', `Dashboard ${label} sparkline value is required`) }));
   if (explicit.length > 0) {
     return explicit;
@@ -229,16 +222,19 @@ function normalizeSparkline(
 function normalizeWarnings(record: ApiRecord): string[] {
   const value = record.warnings;
   if (!Array.isArray(value)) {
-    return [];
+    throw new Error('Dashboard overview warnings is required');
   }
   return value
     .map((item) => (typeof item === 'string' ? item : null))
     .filter((item): item is string => item !== null && item.trim() !== '');
 }
 
-function recordValue(record: ApiRecord, key: string): ApiRecord {
+function readRequiredRecordProperty(record: ApiRecord, key: string, message: string): ApiRecord {
   const value = record[key];
-  return isRecord(value) ? value : {};
+  if (!isRecord(value)) {
+    throw new Error(message);
+  }
+  return value;
 }
 
 function readOptionalFirstNumber(record: ApiRecord, keys: string[], fallback: number): number {
@@ -272,10 +268,18 @@ function readRequiredFirstNumber(record: ApiRecord, keys: string[], message: str
   throw new Error(message);
 }
 
-function readOptionalRecordArray(record: ApiRecord, key: string, itemMessage: string): ApiRecord[] {
+function readRequiredPositiveRank(record: ApiRecord, keys: string[], message: string): number {
+  const rank = readRequiredFirstNumber(record, keys, message);
+  if (!Number.isSafeInteger(rank) || rank < 1) {
+    throw new Error(message);
+  }
+  return rank;
+}
+
+function readRequiredRecordArray(record: ApiRecord, key: string, missingMessage: string, itemMessage: string): ApiRecord[] {
   const value = record[key];
   if (value === undefined || value === null) {
-    return [];
+    throw new Error(missingMessage);
   }
   if (!Array.isArray(value)) {
     throw new Error(`${key} must be an array`);
@@ -290,7 +294,7 @@ function readRequiredRecord(value: unknown, message: string): ApiRecord {
   return value;
 }
 
-function readOptionalBoolean(record: ApiRecord, key: string, fallback: boolean): boolean {
+function readRequiredBoolean(record: ApiRecord, key: string, message: string): boolean {
   const value = record[key];
   if (typeof value === 'boolean') {
     return value;
@@ -303,7 +307,7 @@ function readOptionalBoolean(record: ApiRecord, key: string, fallback: boolean):
       return false;
     }
   }
-  return fallback;
+  throw new Error(message);
 }
 
 function totalModalityValue(item: DashboardData): number {
@@ -314,13 +318,6 @@ function totalModalityValue(item: DashboardData): number {
     item[MODALITY_KEYS.audio] +
     item[MODALITY_KEYS.music]
   );
-}
-
-function sumChartValue(items: DashboardData[], key: keyof DashboardData): number {
-  return items.reduce((sum, item) => {
-    const value = item[key];
-    return sum + (typeof value === 'number' ? value : 0);
-  }, 0);
 }
 
 function normalizeModality(value: string): ModelUsage['modality'] {

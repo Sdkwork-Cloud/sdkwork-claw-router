@@ -140,17 +140,20 @@ function createInstallPackageItem({ platform, architecture, deploymentMode, vers
   const binaryName = `${EDGE_BINARY_BASENAME}${exeSuffix}`;
   const installerBinaryName = `${INSTALLER_BINARY_BASENAME}${exeSuffix}`;
   const id = `${platform}-${architecture}-${deploymentMode}`;
+  const artifactId = artifactIdForPackage({ platform, architecture, deploymentMode });
   const runtimeProfile = runtimeProfileForMode(deploymentMode);
   const databasePolicy = databasePolicyFor({ platform, runtimeProfile, deploymentMode });
+  const redisPolicy = redisPolicyFor({ platform, runtimeProfile, deploymentMode });
 
   return {
     id,
+    artifactId,
     version,
     platform,
     architecture,
     deploymentMode,
     runtimeProfile,
-    archiveName: `${PACKAGE_NAME}-${id}-${version}.${archiveExtension}`,
+    archiveName: `${PACKAGE_NAME}-${artifactId}-${version}.${archiveExtension}`,
     binaryName,
     installerBinaryName,
     packageKind: packageKindForMode(deploymentMode),
@@ -165,6 +168,7 @@ function createInstallPackageItem({ platform, architecture, deploymentMode, vers
       binaryName,
     }),
     databasePolicy,
+    redisPolicy,
     serviceIntegration: serviceIntegrationFor(platform, deploymentMode),
     containerIntegration: containerIntegrationFor(platform, deploymentMode, binaryName),
     healthChecks: [...HEALTH_CHECKS],
@@ -276,6 +280,63 @@ function runtimeProfileForMode(deploymentMode) {
   return deploymentMode === 'desktop' ? 'desktop' : 'server';
 }
 
+function artifactDeploymentLabelForMode(deploymentMode) {
+  return deploymentMode === 'service' ? 'server' : deploymentMode;
+}
+
+function artifactIdForPackage({ platform, architecture, deploymentMode }) {
+  return `${platform}-${architecture}-${artifactDeploymentLabelForMode(deploymentMode)}`;
+}
+
+function redisPolicyFor({ platform, runtimeProfile, deploymentMode = 'archive' }) {
+  const locations = runtimeConfigLocationsFor(platform, runtimeProfile);
+  return {
+    configSection: 'redis',
+    enabledByDefault: false,
+    required: false,
+    runtimeRequired: false,
+    requiredWhenEnabled: ['host', 'port', 'database'],
+    secretFields: ['password_file', 'password'],
+    defaultHost: 'redis.example.com',
+    defaultPort: 6379,
+    defaultDatabase: 0,
+    defaultUsername: null,
+    urlOverrideExample: 'redis://redis.example.com:6379/0',
+    passwordFile: {
+      path: redisPasswordFileFor(platform, deploymentMode, locations),
+      required: false,
+    },
+    keyPrefix: 'clawrouter',
+    tls: false,
+    maxConnections: runtimeProfile === 'desktop' ? 4 : 16,
+    connectTimeoutMs: 2000,
+    commandTimeoutMs: 1000,
+    poolIdleTimeoutSeconds: 60,
+    envOverrides: [
+      'SDKWORK_CLAW_REDIS_ENABLED',
+      'SDKWORK_CLAW_REDIS_HOST',
+      'SDKWORK_CLAW_REDIS_PORT',
+      'SDKWORK_CLAW_REDIS_DATABASE',
+      'SDKWORK_CLAW_REDIS_USERNAME',
+      'SDKWORK_CLAW_REDIS_URL',
+      'SDKWORK_CLAW_REDIS_PASSWORD_FILE',
+      'SDKWORK_CLAW_REDIS_PASSWORD',
+      'SDKWORK_CLAW_REDIS_KEY_PREFIX',
+      'SDKWORK_CLAW_REDIS_TLS',
+      'SDKWORK_CLAW_REDIS_MAX_CONNECTIONS',
+      'SDKWORK_CLAW_REDIS_CONNECT_TIMEOUT_MILLIS',
+      'SDKWORK_CLAW_REDIS_COMMAND_TIMEOUT_MILLIS',
+      'SDKWORK_CLAW_REDIS_POOL_IDLE_TIMEOUT_SECONDS',
+    ],
+    plannedUses: [
+      'shared-cache',
+      'distributed-locks',
+      'rate-limit-buckets',
+      'queue-state',
+    ],
+  };
+}
+
 function databasePolicyFor({ platform, runtimeProfile, deploymentMode = 'archive' }) {
   const locations = runtimeConfigLocationsFor(platform, runtimeProfile);
   const basePolicy = {
@@ -344,6 +405,26 @@ function postgresPasswordFileFor(platform, deploymentMode, locations) {
     return '/etc/clawrouter/database.secret';
   }
   return `${locations.dataDirectory}/database.secret`;
+}
+
+function redisPasswordFileFor(platform, deploymentMode, locations) {
+  if (deploymentMode === 'container') {
+    return platform === 'windows'
+      ? 'C:/clawrouter/secrets/redis-password'
+      : '/run/secrets/clawrouter-redis-password';
+  }
+  if (platform === 'windows') {
+    return deploymentMode === 'desktop'
+      ? `${locations.dataDirectory}/redis.secret`
+      : '%ProgramData%/SdkWork/ClawRouter/redis.secret';
+  }
+  if (platform === 'macos') {
+    return `${locations.dataDirectory}/redis.secret`;
+  }
+  if (locations.configFile === '/etc/clawrouter/clawrouter.toml') {
+    return '/etc/clawrouter/redis.secret';
+  }
+  return `${locations.dataDirectory}/redis.secret`;
 }
 
 function runtimeConfigLocationsFor(platform, runtimeProfile) {
@@ -515,6 +596,10 @@ function validatePackageItem(packageItem, seenIds, issues) {
   if (packageItem.id !== expectedId) {
     issues.push(`${packageItem.id ?? '(missing id)'} id must be ${expectedId}`);
   }
+  const expectedArtifactId = artifactIdForPackage(packageItem);
+  if (packageItem.artifactId !== expectedArtifactId) {
+    issues.push(`${packageItem.id} artifactId must be ${expectedArtifactId}`);
+  }
   if (!packageItem.version || !/^[0-9A-Za-z][0-9A-Za-z._-]*$/u.test(packageItem.version)) {
     issues.push(`${packageItem.id} version must be a non-empty package-safe value`);
   }
@@ -522,6 +607,11 @@ function validatePackageItem(packageItem, seenIds, issues) {
     issues.push(`${packageItem.id} is duplicated`);
   }
   seenIds.add(packageItem.id);
+  const expectedArchiveExtension = packageItem.platform === 'windows' ? 'zip' : 'tar.gz';
+  const expectedArchiveName = `${PACKAGE_NAME}-${expectedArtifactId}-${packageItem.version}.${expectedArchiveExtension}`;
+  if (packageItem.archiveName !== expectedArchiveName) {
+    issues.push(`${packageItem.id} archiveName must be ${expectedArchiveName}`);
+  }
 
   for (const artifactKind of [
     'edge-binary',
@@ -591,6 +681,42 @@ function validatePackageItem(packageItem, seenIds, issues) {
   }
   if (!packageItem.databasePolicy?.envOverrides?.includes('SDKWORK_CLAW_DATABASE_URL')) {
     issues.push(`${packageItem.id} databasePolicy must preserve SDKWORK_CLAW_DATABASE_URL override support`);
+  }
+  if (packageItem.redisPolicy?.configSection !== 'redis') {
+    issues.push(`${packageItem.id} redisPolicy must declare the redis config section`);
+  }
+  if (packageItem.redisPolicy?.enabledByDefault !== false) {
+    issues.push(`${packageItem.id} redisPolicy must be disabled by default`);
+  }
+  if (packageItem.redisPolicy?.required !== false || packageItem.redisPolicy?.runtimeRequired !== false) {
+    issues.push(`${packageItem.id} redisPolicy must be optional at install and startup`);
+  }
+  for (const key of ['host', 'port', 'database']) {
+    if (!packageItem.redisPolicy?.requiredWhenEnabled?.includes(key)) {
+      issues.push(`${packageItem.id} redisPolicy must require ${key} when Redis is enabled`);
+    }
+  }
+  if (!packageItem.redisPolicy?.defaultHost) {
+    issues.push(`${packageItem.id} redisPolicy must declare redisPolicy.defaultHost`);
+  }
+  if (!packageItem.redisPolicy?.defaultPort) {
+    issues.push(`${packageItem.id} redisPolicy must declare redisPolicy.defaultPort`);
+  }
+  if (typeof packageItem.redisPolicy?.defaultDatabase !== 'number') {
+    issues.push(`${packageItem.id} redisPolicy must declare redisPolicy.defaultDatabase`);
+  }
+  if (!packageItem.redisPolicy?.passwordFile?.path) {
+    issues.push(`${packageItem.id} redisPolicy must declare the standard optional password file path`);
+  }
+  for (const envKey of [
+    'SDKWORK_CLAW_REDIS_HOST',
+    'SDKWORK_CLAW_REDIS_PORT',
+    'SDKWORK_CLAW_REDIS_DATABASE',
+    'SDKWORK_CLAW_REDIS_URL',
+  ]) {
+    if (!packageItem.redisPolicy?.envOverrides?.includes(envKey)) {
+      issues.push(`${packageItem.id} redisPolicy must document ${envKey} override support`);
+    }
   }
   if (packageItem.runtimeProfile === 'desktop') {
     if (packageItem.databasePolicy?.defaultEngine !== 'sqlite') {
@@ -745,11 +871,14 @@ export {
   SUPPORTED_DEPLOYMENT_MODES,
   SUPPORTED_PLATFORMS,
   WINDOWS_INSTALL_ROOT,
+  artifactDeploymentLabelForMode,
+  artifactIdForPackage,
   createInstallPackagePlan,
   databasePolicyFor,
   main,
   parseArgs,
   renderInstallPackagePlan,
+  redisPolicyFor,
   runtimeConfigLocationsFor,
   runtimeProfileForMode,
   validateInstallPackagePlan,

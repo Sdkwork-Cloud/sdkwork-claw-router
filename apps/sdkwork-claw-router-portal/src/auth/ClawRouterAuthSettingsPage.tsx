@@ -256,9 +256,7 @@ export function ClawRouterAuthSettingsPage() {
               ]}
               onChange={(oauthRegion) => setForm((current) => ({ ...current, oauthRegion }))}
             />
-            <CheckboxGroup
-              label="OAuth providers"
-              options={OAUTH_PROVIDER_OPTIONS.map((value) => ({ label: providerLabel(value), value }))}
+            <OAuthProviderEditor
               values={form.oauthProviders}
               onChange={(oauthProviders) => setForm((current) => ({ ...current, oauthProviders }))}
             />
@@ -403,13 +401,59 @@ function CheckboxGroup<T extends string>({
   );
 }
 
-function toAuthSettingsForm(record: Record<string, unknown>): AuthSettingsForm {
+function OAuthProviderEditor({
+  onChange,
+  values,
+}: {
+  onChange: (values: string[]) => void,
+  values: readonly string[],
+}) {
+  const selected = new Set(values);
+  return (
+    <div>
+      <label htmlFor="oauth-provider-codes" className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">
+        OAuth provider codes
+      </label>
+      <textarea
+        id="oauth-provider-codes"
+        value={formatOAuthProviders(values)}
+        onChange={(event) => onChange(parseOAuthProviderText(event.target.value))}
+        rows={3}
+        placeholder="github, google, enterprise_iam"
+        className="w-full resize-none rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-sm text-slate-700 outline-none transition-colors placeholder:text-slate-400 focus:border-blue-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-100 dark:placeholder:text-slate-500"
+      />
+      <div className="mt-3 flex flex-wrap gap-2">
+        {OAUTH_PROVIDER_OPTIONS.map((value) => {
+          const active = selected.has(value);
+          return (
+            <button
+              key={value}
+              type="button"
+              onClick={() => {
+                const next = active ? values.filter((item) => item !== value) : [...values, value];
+                onChange(normalizeOAuthProviders(next));
+              }}
+              className={`rounded-md border px-2.5 py-1.5 text-xs font-medium transition-colors ${active
+                ? 'border-blue-500 bg-blue-50 text-blue-700 dark:border-blue-400/70 dark:bg-blue-500/10 dark:text-blue-300'
+                : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10'
+              }`}
+            >
+              {providerLabel(value)}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+export function toAuthSettingsForm(record: Record<string, unknown>): AuthSettingsForm {
   const config = mergeClawRouterAuthRuntimeConfig(record);
   return {
     leftRailMode: config.leftRailMode ?? DEFAULT_AUTH_SETTINGS_FORM.leftRailMode,
     loginMethods: loginMethods(config.loginMethods),
     oauthLoginEnabled: config.oauthLoginEnabled ?? DEFAULT_AUTH_SETTINGS_FORM.oauthLoginEnabled,
-    oauthProviders: stringArray(config.oauthProviders, DEFAULT_AUTH_SETTINGS_FORM.oauthProviders),
+    oauthProviders: normalizeOAuthProviders(config.oauthProviders ?? DEFAULT_AUTH_SETTINGS_FORM.oauthProviders),
     oauthRegion: readOAuthRegion(record.oauthRegion),
     qrLoginEnabled: config.qrLoginEnabled ?? DEFAULT_AUTH_SETTINGS_FORM.qrLoginEnabled,
     recoveryMethods: recoveryMethods(config.recoveryMethods),
@@ -423,14 +467,15 @@ function toAuthSettingsForm(record: Record<string, unknown>): AuthSettingsForm {
   };
 }
 
-function toAuthSettingsRequest(form: AuthSettingsForm): AdminAuthSettingsUpdateRequest {
+export function toAuthSettingsRequest(form: AuthSettingsForm): AdminAuthSettingsUpdateRequest {
   const qrLoginEnabled = form.leftRailMode === 'qr-only' ? true : form.qrLoginEnabled;
+  const oauthRegion = readRequiredOAuthRegion(form.oauthRegion);
   return {
     leftRailMode: qrLoginEnabled ? form.leftRailMode : form.leftRailMode === 'qr-only' ? 'highlights-only' : form.leftRailMode,
     loginMethods: effectiveLoginMethods(form),
     oauthLoginEnabled: form.oauthLoginEnabled,
-    oauthProviders: [...form.oauthProviders],
-    oauthRegion: form.oauthRegion,
+    oauthProviders: normalizeOAuthProviders(form.oauthProviders),
+    oauthRegion,
     qrLoginEnabled,
     recoveryMethods: [...form.recoveryMethods],
     registerMethods: [...form.registerMethods],
@@ -530,16 +575,49 @@ function filteredOptions<T extends string>(value: unknown, allowed: readonly T[]
   return filtered.length > 0 ? filtered : [...fallback];
 }
 
-function stringArray(value: unknown, fallback: string[]): string[] {
-  if (!Array.isArray(value)) {
-    return [...fallback];
+export function formatOAuthProviders(values: readonly string[]): string {
+  return normalizeOAuthProviders(values).join(', ');
+}
+
+export function parseOAuthProviderText(value: string): string[] {
+  return normalizeOAuthProviders(value.split(/[\s,]+/u));
+}
+
+function normalizeOAuthProviders(values: readonly unknown[]): string[] {
+  if (values.length > 16) {
+    throw new Error('oauthProviders must include at most 16 items');
   }
-  const filtered = value.filter((item): item is string => typeof item === 'string' && item.trim().length > 0);
-  return filtered.length > 0 ? filtered : [...fallback];
+  const normalized: string[] = [];
+  for (const item of values) {
+    if (typeof item !== 'string') {
+      throw new Error('oauthProviders items must be 64 characters or fewer and use letters, digits, underscore, or hyphen');
+    }
+    const value = item.trim();
+    if (!value) {
+      continue;
+    }
+    if (value.length > 64 || !/^[A-Za-z0-9_-]+$/.test(value)) {
+      throw new Error('oauthProviders items must be 64 characters or fewer and use letters, digits, underscore, or hyphen');
+    }
+    if (!normalized.includes(value)) {
+      normalized.push(value);
+    }
+  }
+  return normalized;
 }
 
 function readOAuthRegion(value: unknown): OAuthRegion {
-  return value === 'overseas' ? 'overseas' : 'mainland';
+  if (value === undefined || value === null || value === '') {
+    return 'mainland';
+  }
+  return readRequiredOAuthRegion(value);
+}
+
+function readRequiredOAuthRegion(value: unknown): OAuthRegion {
+  if (value === 'mainland' || value === 'overseas') {
+    return value;
+  }
+  throw new Error('oauthRegion must be one of mainland, overseas');
 }
 
 function providerLabel(value: string): string {

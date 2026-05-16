@@ -27,6 +27,7 @@ const OUTPUT_BILLING_METER_FILTER_SQL: &str =
 #[derive(Debug, Clone)]
 pub struct SqliteAdminModelStore {
     pool: SqlitePool,
+    models_catalog_root: Option<String>,
 }
 
 #[derive(Debug, Clone)]
@@ -66,7 +67,17 @@ struct EffectiveModelUpdate {
 
 impl SqliteAdminModelStore {
     pub fn new(pool: SqlitePool) -> Self {
-        Self { pool }
+        Self {
+            pool,
+            models_catalog_root: None,
+        }
+    }
+
+    pub fn with_models_catalog_root(pool: SqlitePool, models_catalog_root: Option<String>) -> Self {
+        Self {
+            pool,
+            models_catalog_root,
+        }
     }
 }
 
@@ -255,7 +266,7 @@ impl AdminModelStore for SqliteAdminModelStore {
         command: SyncAdminModelCatalogCommand,
     ) -> AdminModelCommandFuture<'a, AdminModelCatalogSyncItem> {
         Box::pin(async move {
-            let catalog = load_sync_model_catalog(&command)?;
+            let catalog = load_sync_model_catalog(&command, self.models_catalog_root.as_deref())?;
             let catalog_version = catalog.manifest.catalog_version.clone();
             let dry_run = is_dry_run_mode(&command.mode);
             let source_code = normalize_catalog_source_code(&command.source);
@@ -413,11 +424,13 @@ async fn apply_sdkwork_models_catalog_refresh(
 
 fn load_sync_model_catalog(
     command: &SyncAdminModelCatalogCommand,
+    configured_catalog_root: Option<&str>,
 ) -> DomainResult<sdkwork_models::ModelCatalog> {
     let env_root = std::env::var(ENV_MODELS_CATALOG_ROOT).ok();
     let root = command
         .catalog_root
         .as_deref()
+        .or(configured_catalog_root)
         .or_else(|| env_root.as_deref())
         .map(str::trim)
         .filter(|value| !value.is_empty());

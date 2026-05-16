@@ -18,6 +18,8 @@ import {
   clearStoredAppSessionToken,
   getStoredAppSessionAccessToken,
   getStoredAppSessionAuthToken,
+  loadStoredAppSessionToken,
+  storeAppSessionFromResult,
   } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
 import {
   buildPortalAuthLoginRedirect,
@@ -37,7 +39,8 @@ import {
   pruneUndefinedQueryParams,
   requiredSafePathSegment,
 } from "./packages/sdkwork-claw-router-commons/src/sdk-request-boundary.ts";
-import { createAppSession } from "./packages/sdkwork-claw-router-commons/src/sessionService.ts";
+import { createAppSession, revokeAppSession } from "./packages/sdkwork-claw-router-commons/src/sessionService.ts";
+import { verifyCurrentPortalAdminAccess } from "./packages/sdkwork-claw-router-commons/src/portal-session.ts";
 import { API_BASE_URL } from "./packages/sdkwork-claw-router-commons/src/utils/env.ts";
 import { syntaxHighlightJson } from "./packages/sdkwork-claw-router-commons/src/utils/index.ts";
 import {
@@ -197,6 +200,33 @@ test("generated SDK metadata declares independent runtime base URL variables for
   assert.equal(SDK_SYSTEM_CONFIG.gateway.runtimeEnvName, "VITE_CLAWROUTER_OPEN_API_BASE_URL");
   assert.equal(SDK_SYSTEM_CONFIG.app.runtimeEnvName, "VITE_CLAWROUTER_APP_API_BASE_URL");
   assert.equal(SDK_SYSTEM_CONFIG.backend.runtimeEnvName, "VITE_CLAWROUTER_BACKEND_API_BASE_URL");
+});
+
+test("console layout keeps readable navigation labels and valid logout markup", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-console-core/src/ConsoleLayout.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const label of [
+    "仪表盘",
+    "令牌管理",
+    "调用统计",
+    "钱包与充值",
+    "账单与报表",
+    "消息中心",
+    "工具配置",
+    "本地路由",
+    "账户详情",
+    "配置中心",
+    "退出登录",
+  ]) {
+    assert.match(source, new RegExp(`['">]${label}['"<]`));
+  }
+
+  assert.doesNotMatch(source, /浠|璋|閽|璐|娑|宸|鏈|閰|閫/);
+  assert.match(source, /<span>退出登录<\/span>/);
+  assert.doesNotMatch(source, /<span>[^<]*\/span>/);
 });
 
 test("portal auth helpers preserve the current route for login-required actions", () => {
@@ -522,6 +552,161 @@ test("createAppSession stores dual IAM tokens returned as generated SDK data obj
       Object.defineProperty(globalThis, "window", originalWindowDescriptor);
     } else {
       delete (globalThis as { window?: Window }).window;
+    }
+  }
+});
+
+test("current session retrieval preserves stored refresh token when the server omits it", () => {
+  clearStoredAppSessionToken();
+
+  try {
+    storeAppSessionFromResult({
+      accessToken: "access-token-old",
+      authToken: "auth-token-old",
+      refreshToken: "refresh-token-2026",
+      sessionId: "session-2026",
+      expiresAt: new Date(Date.now() + 3600_000).toISOString(),
+    });
+
+    const stored = storeAppSessionFromResult({
+      accessToken: "access-token-current",
+      authToken: "auth-token-current",
+      sessionId: "session-2026",
+      expiresAt: new Date(Date.now() + 3600_000).toISOString(),
+    });
+
+    assert.equal(stored.refreshToken, "refresh-token-2026");
+    assert.equal(stored.sessionId, "session-2026");
+    assert.equal(loadStoredAppSessionToken()?.refreshToken, "refresh-token-2026");
+    assert.equal(getStoredAppSessionAuthToken(), "auth-token-current");
+    assert.equal(getStoredAppSessionAccessToken(), "access-token-current");
+  } finally {
+    clearStoredAppSessionToken();
+  }
+});
+
+test("revokeAppSession deletes the persisted server session before clearing local tokens", async () => {
+  const captured: { url: string; method: string; headers: Record<string, string> }[] = [];
+  Object.defineProperty(globalThis, "window", {
+    configurable: true,
+    enumerable: true,
+    value: {},
+  });
+  globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
+    const url = typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url;
+    captured.push({
+      url,
+      method: init?.method ?? "GET",
+      headers: Object.fromEntries(new Headers(init?.headers).entries()),
+    });
+    return new Response(JSON.stringify({ code: "2000", msg: "success", data: {} }), {
+      status: 200,
+      headers: { "content-type": "application/json" },
+    });
+  }) as typeof fetch;
+  clearStoredAppSessionToken();
+  resetClawRouterSdkClients();
+  storeAppSessionFromResult({
+    accessToken: "access-token-logout",
+    authToken: "auth-token-logout",
+    refreshToken: "refresh-token-logout",
+    expiresAt: new Date(Date.now() + 3600_000).toISOString(),
+    sessionId: "session-logout",
+  });
+
+  try {
+    await revokeAppSession();
+
+    assert.equal(captured.length, 1);
+    assert.equal(captured[0].url, "/app/v3/api/auth/sessions/current");
+    assert.equal(captured[0].method, "DELETE");
+    assert.equal(captured[0].headers.authorization, "Bearer auth-token-logout");
+    assert.equal(captured[0].headers["sdkwork-access-token"], "access-token-logout");
+    assert.equal(getStoredAppSessionAuthToken(), undefined);
+    assert.equal(getStoredAppSessionAccessToken(), undefined);
+  } finally {
+    clearStoredAppSessionToken();
+    resetClawRouterSdkClients();
+    globalThis.fetch = originalFetch;
+    if (originalWindowDescriptor) {
+      Object.defineProperty(globalThis, "window", originalWindowDescriptor);
+    } else {
+      delete (globalThis as { window?: Window }).window;
+    }
+  }
+});
+
+test("portal admin access check denies non-admin sessions and clears expired sessions", async () => {
+  for (const [adminStatus, expectedState, shouldKeepTokens] of [
+    [200, "allowed", true],
+    [403, "forbidden", true],
+    [401, "anonymous", false],
+  ] as const) {
+    const captured: { url: string; method: string }[] = [];
+    Object.defineProperty(globalThis, "window", {
+      configurable: true,
+      enumerable: true,
+      value: {},
+    });
+    globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
+      const url = typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url;
+      captured.push({ url, method: init?.method ?? "GET" });
+      if (url === "/app/v3/api/auth/sessions/current") {
+        return new Response(
+          JSON.stringify({
+            code: "2000",
+            data: {
+              accessToken: `access-${adminStatus}`,
+              authToken: `auth-${adminStatus}`,
+              sessionId: `session-${adminStatus}`,
+              expiresAt: new Date(Date.now() + 3600_000).toISOString(),
+            },
+          }),
+          {
+            status: 200,
+            headers: { "content-type": "application/json" },
+          },
+        );
+      }
+      if (url === "/backend/v3/api/system/dashboard/admin/overview") {
+        if (adminStatus === 200) {
+          return new Response(JSON.stringify({ code: "2000", data: { metrics: [] } }), {
+            status: 200,
+            headers: { "content-type": "application/json" },
+          });
+        }
+        return new Response(JSON.stringify({ code: String(adminStatus), msg: "admin access denied" }), {
+          status: adminStatus,
+          headers: { "content-type": "application/json" },
+        });
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    }) as typeof fetch;
+    clearStoredAppSessionToken();
+    resetClawRouterSdkClients();
+
+    try {
+      const state = await verifyCurrentPortalAdminAccess();
+
+      assert.equal(state, expectedState);
+      assert.deepEqual(
+        captured.map((request) => `${request.method} ${request.url}`),
+        [
+          "GET /app/v3/api/auth/sessions/current",
+          "GET /backend/v3/api/system/dashboard/admin/overview",
+        ],
+      );
+      assert.equal(getStoredAppSessionAuthToken(), shouldKeepTokens ? `auth-${adminStatus}` : undefined);
+      assert.equal(getStoredAppSessionAccessToken(), shouldKeepTokens ? `access-${adminStatus}` : undefined);
+    } finally {
+      clearStoredAppSessionToken();
+      resetClawRouterSdkClients();
+      globalThis.fetch = originalFetch;
+      if (originalWindowDescriptor) {
+        Object.defineProperty(globalThis, "window", originalWindowDescriptor);
+      } else {
+        delete (globalThis as { window?: Window }).window;
+      }
     }
   }
 });

@@ -23,7 +23,8 @@ use crate::ports::{
 
 type HmacSha256 = Hmac<Sha256>;
 
-const MAX_CALLBACK_BODY_BYTES: usize = 64 * 1024;
+const DEFAULT_CALLBACK_BODY_MAX_BYTES: usize =
+    sdkwork_claw_config::RequestLimitsConfig::DEFAULT_PAYMENT_CALLBACK_BODY_MAX_BYTES;
 const MAX_HEADER_VALUE_LEN: usize = 256;
 const MAX_TRADE_NO_LEN: usize = 128;
 
@@ -32,6 +33,7 @@ struct AppPaymentCallbackState {
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
     payment_webhook_config: Option<PaymentWebhookConfig>,
     store_available: bool,
+    body_max_bytes: usize,
 }
 
 impl Clone for AppPaymentCallbackState {
@@ -41,6 +43,7 @@ impl Clone for AppPaymentCallbackState {
             entity_uuid_generator: Arc::clone(&self.entity_uuid_generator),
             payment_webhook_config: self.payment_webhook_config.clone(),
             store_available: self.store_available,
+            body_max_bytes: self.body_max_bytes,
         }
     }
 }
@@ -66,6 +69,7 @@ pub fn app_payment_callback_router() -> Router {
         Arc::new(OsApiKeySecretGenerator),
         None,
         false,
+        DEFAULT_CALLBACK_BODY_MAX_BYTES,
     )
 }
 
@@ -74,11 +78,26 @@ pub fn app_payment_callback_router_with_store(
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
     payment_webhook_config: PaymentWebhookConfig,
 ) -> Router {
+    app_payment_callback_router_with_store_and_body_limit(
+        store,
+        entity_uuid_generator,
+        payment_webhook_config,
+        DEFAULT_CALLBACK_BODY_MAX_BYTES,
+    )
+}
+
+pub fn app_payment_callback_router_with_store_and_body_limit(
+    store: Arc<dyn PaymentCallbackStore + Send + Sync>,
+    entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    payment_webhook_config: PaymentWebhookConfig,
+    body_max_bytes: usize,
+) -> Router {
     app_payment_callback_router_with_state(
         store,
         entity_uuid_generator,
         Some(payment_webhook_config),
         true,
+        body_max_bytes,
     )
 }
 
@@ -87,6 +106,7 @@ fn app_payment_callback_router_with_state(
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
     payment_webhook_config: Option<PaymentWebhookConfig>,
     store_available: bool,
+    body_max_bytes: usize,
 ) -> Router {
     Router::new()
         .route(
@@ -106,6 +126,7 @@ fn app_payment_callback_router_with_state(
             entity_uuid_generator,
             payment_webhook_config,
             store_available,
+            body_max_bytes: body_max_bytes.max(1),
         })
 }
 
@@ -190,7 +211,7 @@ fn build_payment_callback_command(
 ) -> Result<PaymentCallbackCommand, String> {
     let provider_raw = provider.unwrap_or_default();
     let (provider, provider_key) = parse_payment_provider(&provider_raw)?;
-    let parsed = validate_payment_callback(&provider_key, body)?;
+    let parsed = validate_payment_callback(&provider_key, body, state.body_max_bytes)?;
     let payload_digest = sha256_hex(body);
     let payment_webhook_config = state.payment_webhook_config.as_ref().ok_or_else(|| {
         format!(
@@ -259,13 +280,14 @@ fn generate_entity_uuid(state: &AppPaymentCallbackState) -> Result<String, Strin
 fn validate_payment_callback(
     provider_key: &str,
     body: &[u8],
+    max_body_bytes: usize,
 ) -> Result<ParsedPaymentCallback, String> {
     if body.is_empty() {
         return Err("payment callback payload must not be empty".to_owned());
     }
-    if body.len() > MAX_CALLBACK_BODY_BYTES {
+    if body.len() > max_body_bytes {
         return Err(format!(
-            "payment callback payload length must not exceed {MAX_CALLBACK_BODY_BYTES} bytes"
+            "payment callback payload length must not exceed {max_body_bytes} bytes"
         ));
     }
     let raw = std::str::from_utf8(body)

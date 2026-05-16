@@ -161,6 +161,14 @@ pub fn admin_access_group_router_with_store(
             "/backend/v3/api/router/access_groups/{group_id}",
             patch(update_access_group).delete(delete_access_group),
         )
+        .route(
+            "/backend/v3/api/iam/access_groups",
+            get(fetch_access_groups).post(create_access_group),
+        )
+        .route(
+            "/backend/v3/api/iam/access_groups/{group_id}",
+            patch(update_access_group).delete(delete_access_group),
+        )
         .with_state(AdminAccessGroupState {
             store,
             entity_uuid_generator,

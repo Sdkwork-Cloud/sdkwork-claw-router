@@ -6,6 +6,7 @@ import {
   isRecord,
   readApiData,
   readApiRecord,
+  readBoolean,
   readRequiredApiItems,
   readRequiredApiItem,
   readRequiredNumber,
@@ -133,7 +134,7 @@ export class UserService {
     const result = await getClawRouterBackendSdkClient().iam.apiKeys.delete(
       requiredSafePathSegment(keyId, 'apiKeyId'),
     );
-    ensurePlusApiSuccess(result, 'Failed to delete API key');
+    ensureDeleteResult(result, 'API key delete confirmation is required');
     void userId;
   }
 }
@@ -207,6 +208,13 @@ function idempotencyTokens(scope: string): { idempotencyKey: string; requestId: 
   };
 }
 
+function ensureDeleteResult(result: unknown, message: string): void {
+  ensurePlusApiSuccess(result, message);
+  if (readBoolean(readApiRecord(result), 'deleted') !== true) {
+    throw new Error(message);
+  }
+}
+
 function normalizeUser(value: unknown): UserListItem {
   const item = readRequiredRecord(value, 'User record is required');
   return {
@@ -237,15 +245,15 @@ function normalizeApiKey(value: unknown): ApiKeyItem {
 function normalizeApiKeysMap(data: unknown): Record<number, ApiKeyItem[]> {
   const result: Record<number, ApiKeyItem[]> = {};
   if (!isRecord(data)) {
-    return result;
+    throw new Error('API key map is required');
   }
   for (const [key, value] of Object.entries(data)) {
     if (!Array.isArray(value)) {
-      continue;
+      throw new Error(`API key list for user ${key} is required`);
     }
     const userId = Number(key);
-    if (!Number.isFinite(userId)) {
-      continue;
+    if (!Number.isSafeInteger(userId) || userId < 1 || String(userId) !== key) {
+      throw new Error('API key map user id must be a positive integer');
     }
     result[userId] = value.map(normalizeApiKey);
   }

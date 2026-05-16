@@ -8,18 +8,23 @@ use axum::response::{IntoResponse, Response};
 use axum::routing::{get, post};
 use axum::{Json, Router};
 use sdkwork_claw_config::{AppSessionConfig, TrustedSubjectConfig};
-use sdkwork_claw_http::{sign_app_session_token, TrustedRequestSubject};
+use sdkwork_claw_http::{
+    sign_app_session_token, verify_app_session_authorization_header, verify_app_session_token,
+    TrustedRequestSubject,
+};
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 
 use crate::api::response::PlusApiResult;
 use crate::application::{EntityUuidGenerator, PasswordHasher};
 use crate::ports::{
-    AdminAuthSettings, AdminAuthSettingsStore, AppAuthPasswordResetCodeCommand,
+    ActiveAppSession, AdminAuthSettings, AdminAuthSettingsStore, AppAuthPasswordResetCodeCommand,
     AppAuthPasswordResetCommand, AppAuthRegistrationCommand, AppAuthStore, AppAuthUserCredential,
     AppAuthVerificationCodeCommand, AppAuthVerificationCodeLookup, AppSessionEventStore,
-    DebugVerificationCodeSender, GetAdminAuthSettingsScopeQuery,
-    RecordAppSessionIssuedEventCommand, VerificationCodeDeliveryRequest, VerificationCodeSender,
+    AppSessionRecord, AppSessionUserRecord, DebugVerificationCodeSender,
+    GetAdminAuthSettingsScopeQuery, LoadActiveAppSessionQuery, RecordAppSessionIssuedEventCommand,
+    ResolveAppSessionOrganizationQuery, RevokeAppSessionCommand, RotateAppSessionTokensCommand,
+    VerificationCodeDeliveryRequest, VerificationCodeSender,
 };
 
 const APP_ID: &str = "sdkwork-claw-router";
@@ -37,10 +42,14 @@ const MAX_PHONE_LENGTH: usize = 32;
 const MAX_CODE_TARGET_LENGTH: usize = 256;
 const MAX_TENANT_CODE_LENGTH: usize = 64;
 const MAX_ORGANIZATION_CODE_LENGTH: usize = 64;
+const MAX_ORGANIZATION_ID_LENGTH: usize = 128;
+const MAX_DEVICE_NAME_LENGTH: usize = 128;
 const VERIFICATION_CODE_TTL_SECONDS: i64 = 300;
 const PASSWORD_RESET_CODE_TTL_SECONDS: i64 = 900;
 const LOGIN_QR_CODE_TTL_SECONDS: i64 = 300;
 const LOCAL_DEBUG_VERIFICATION_CODE: &str = "666666";
+const AUTHORIZATION_HEADER: &str = "authorization";
+const SDKWORK_ACCESS_TOKEN_HEADER: &str = "Sdkwork-Access-Token";
 
 #[derive(Clone)]
 struct AppAuthState {
@@ -65,6 +74,20 @@ struct IamSessionCreateRequest {
     code: Option<String>,
     tenant_code: Option<String>,
     organization_code: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct IamSessionRefreshRequest {
+    refresh_token: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct IamCurrentSessionUpdateRequest {
+    device_name: Option<String>,
+    organization_code: Option<String>,
+    organization_id: Option<String>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -183,7 +206,8 @@ struct IamRuntimeAuthVerificationPolicyResponse {
 pub(crate) struct IamSessionResponse {
     pub access_token: String,
     pub auth_token: String,
-    pub refresh_token: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub refresh_token: Option<String>,
     pub session_id: String,
     pub expires_at: String,
     pub context: IamAppContext,
@@ -350,6 +374,13 @@ pub fn app_auth_router_with_store_auth_settings_store_and_verification_sender(
     Router::new()
         .route(APP_SESSION_PATH, post(create_session))
         .route(
+            "/app/v3/api/auth/sessions/current",
+            get(retrieve_current_session)
+                .delete(delete_current_session)
+                .patch(update_current_session),
+        )
+        .route("/app/v3/api/auth/sessions/refresh", post(refresh_session))
+        .route(
             "/app/v3/api/auth/qr_login_codes",
             post(create_login_qr_code),
         )
@@ -409,6 +440,13 @@ pub fn app_sessions_router_with_store(
 ) -> Router {
     Router::new()
         .route(APP_SESSION_PATH, post(create_session))
+        .route(
+            "/app/v3/api/auth/sessions/current",
+            get(retrieve_current_session)
+                .delete(delete_current_session)
+                .patch(update_current_session),
+        )
+        .route("/app/v3/api/auth/sessions/refresh", post(refresh_session))
         .route(
             "/app/v3/api/auth/qr_login_codes",
             post(create_login_qr_code),
@@ -475,6 +513,13 @@ pub fn app_sessions_router_with_store_and_verification_sender(
 ) -> Router {
     Router::new()
         .route(APP_SESSION_PATH, post(create_session))
+        .route(
+            "/app/v3/api/auth/sessions/current",
+            get(retrieve_current_session)
+                .delete(delete_current_session)
+                .patch(update_current_session),
+        )
+        .route("/app/v3/api/auth/sessions/refresh", post(refresh_session))
         .route(
             "/app/v3/api/auth/qr_login_codes",
             post(create_login_qr_code),
@@ -946,6 +991,581 @@ async fn create_session_inner(
         request_id,
     )
     .await
+}
+
+async fn retrieve_current_session(
+    State(state): State<AppAuthState>,
+    headers: HeaderMap,
+) -> Response {
+    match load_current_session_response(&state, &headers, true).await {
+        Ok(response) => Json(PlusApiResult::success(response)).into_response(),
+        Err(error) => auth_error_response(error),
+    }
+}
+
+async fn delete_current_session(State(state): State<AppAuthState>, headers: HeaderMap) -> Response {
+    match delete_current_session_inner(state, headers).await {
+        Ok(response) => Json(PlusApiResult::success(response)).into_response(),
+        Err(error) => auth_error_response(error),
+    }
+}
+
+async fn delete_current_session_inner(
+    state: AppAuthState,
+    headers: HeaderMap,
+) -> Result<NoData, AppSessionCreateError> {
+    let presented = PresentedSessionTokens::from_headers(&state.app_session_config, &headers)?;
+    let Some(active) = load_active_session_for_presented_tokens(&state, &presented, false).await?
+    else {
+        return Err(AppSessionCreateError::Unauthorized);
+    };
+    let revoked_at = current_unix_seconds().to_string();
+    let revoked = state
+        .event_store
+        .revoke_app_session(RevokeAppSessionCommand {
+            session_id: active.session.session_id.clone(),
+            tenant_id: active.session.tenant_id,
+            user_id: active.session.user_id,
+            expected_auth_token_hash: presented.auth_token_hash,
+            expected_access_token_hash: presented.access_token_hash,
+            revoked_at: revoked_at.clone(),
+            security_event_id: generate_session_event_uuid(&state)?,
+            detail_json: serde_json::json!({
+                "event": "sessions.revoke",
+                "sessionIdHash": sha256_hex(&active.session.session_id),
+                "revokedAt": revoked_at,
+            })
+            .to_string(),
+        })
+        .await
+        .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
+    if !revoked {
+        return Err(AppSessionCreateError::Unauthorized);
+    }
+    Ok(NoData {})
+}
+
+async fn refresh_session(
+    State(state): State<AppAuthState>,
+    headers: HeaderMap,
+    Json(request): Json<IamSessionRefreshRequest>,
+) -> Response {
+    match refresh_session_inner(state, headers, request).await {
+        Ok(response) => Json(PlusApiResult::success(response)).into_response(),
+        Err(error) => auth_error_response(error),
+    }
+}
+
+async fn refresh_session_inner(
+    state: AppAuthState,
+    headers: HeaderMap,
+    request: IamSessionRefreshRequest,
+) -> Result<IamSessionResponse, AppSessionCreateError> {
+    let refresh_token = normalize_required_field(
+        "refreshToken",
+        request.refresh_token.as_deref().unwrap_or_default(),
+        4096,
+    )?;
+    let mut presented = PresentedSessionTokens::from_headers(&state.app_session_config, &headers)?;
+    presented.verify_refresh_token(&state.app_session_config, &refresh_token)?;
+    let Some(active) = load_active_session_for_presented_tokens(&state, &presented, true).await?
+    else {
+        return Err(AppSessionCreateError::Unauthorized);
+    };
+    rotate_current_session_tokens(
+        &state,
+        active,
+        presented,
+        None,
+        None,
+        "sessions.refresh",
+        serde_json::json!({
+            "event": "sessions.refresh",
+        }),
+    )
+    .await
+}
+
+async fn update_current_session(
+    State(state): State<AppAuthState>,
+    headers: HeaderMap,
+    Json(request): Json<IamCurrentSessionUpdateRequest>,
+) -> Response {
+    match update_current_session_inner(state, headers, request).await {
+        Ok(response) => Json(PlusApiResult::success(response)).into_response(),
+        Err(error) => auth_error_response(error),
+    }
+}
+
+async fn update_current_session_inner(
+    state: AppAuthState,
+    headers: HeaderMap,
+    request: IamCurrentSessionUpdateRequest,
+) -> Result<IamSessionResponse, AppSessionCreateError> {
+    let presented = PresentedSessionTokens::from_headers(&state.app_session_config, &headers)?;
+    let Some(active) = load_active_session_for_presented_tokens(&state, &presented, false).await?
+    else {
+        return Err(AppSessionCreateError::Unauthorized);
+    };
+    let organization_id = normalize_optional_field(
+        "organizationId",
+        request.organization_id.as_deref(),
+        MAX_ORGANIZATION_ID_LENGTH,
+    )?;
+    let organization_code = normalize_optional_field(
+        "organizationCode",
+        request.organization_code.as_deref(),
+        MAX_ORGANIZATION_CODE_LENGTH,
+    )?;
+    let device_name = normalize_optional_field(
+        "deviceName",
+        request.device_name.as_deref(),
+        MAX_DEVICE_NAME_LENGTH,
+    )?;
+    let requested_organization = if organization_id.is_empty() && organization_code.is_empty() {
+        None
+    } else {
+        let resolved = state
+            .event_store
+            .resolve_app_session_organization(ResolveAppSessionOrganizationQuery {
+                tenant_id: active.session.tenant_id,
+                user_id: active.session.user_id,
+                organization_id: optional_string(organization_id),
+                organization_code: optional_string(organization_code),
+            })
+            .await
+            .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
+        let Some(resolved) = resolved else {
+            return Err(AppSessionCreateError::BadRequest(
+                "organization is not available for current user".to_owned(),
+            ));
+        };
+        Some(resolved.organization_id)
+    };
+
+    if requested_organization.is_none() && device_name.is_empty() {
+        return load_current_session_response(&state, &headers, true).await;
+    }
+
+    let detail = serde_json::json!({
+        "event": "sessions.update",
+        "deviceName": optional_string(device_name),
+        "organizationId": requested_organization.map(|value| value.to_string()),
+    });
+    rotate_current_session_tokens(
+        &state,
+        active,
+        presented,
+        requested_organization,
+        None,
+        "sessions.update",
+        detail,
+    )
+    .await
+}
+
+async fn load_current_session_response(
+    state: &AppAuthState,
+    headers: &HeaderMap,
+    include_refresh_token: bool,
+) -> Result<IamSessionResponse, AppSessionCreateError> {
+    let presented = PresentedSessionTokens::from_headers(&state.app_session_config, headers)?;
+    let Some(active) =
+        load_active_session_for_presented_tokens(state, &presented, include_refresh_token).await?
+    else {
+        return Err(AppSessionCreateError::Unauthorized);
+    };
+    Ok(session_response_from_active_session(
+        active,
+        presented.auth_token,
+        presented.access_token,
+        if include_refresh_token {
+            presented.refresh_token
+        } else {
+            None
+        },
+    ))
+}
+
+async fn load_active_session_for_presented_tokens(
+    state: &AppAuthState,
+    presented: &PresentedSessionTokens,
+    require_refresh_token: bool,
+) -> Result<Option<ActiveAppSession>, AppSessionCreateError> {
+    let active = state
+        .event_store
+        .load_active_app_session(LoadActiveAppSessionQuery {
+            auth_token_hash: presented.auth_token_hash.clone(),
+            access_token_hash: presented.access_token_hash.clone(),
+            refresh_token_hash: if require_refresh_token {
+                presented.refresh_token_hash.clone()
+            } else {
+                None
+            },
+            now: current_unix_seconds(),
+        })
+        .await
+        .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
+    Ok(active.filter(|active| {
+        let session = &active.session;
+        session.tenant_id == presented.subject.tenant_id
+            && session.organization_id == presented.subject.organization_id
+            && session.user_id == presented.subject.user_id
+            && session.app_id == APP_ID
+            && session.environment == ENVIRONMENT
+            && session.deployment_mode == DEPLOYMENT_MODE
+            && active.user.status == "active"
+    }))
+}
+
+struct PresentedSessionTokens {
+    auth_token: String,
+    access_token: String,
+    refresh_token: Option<String>,
+    auth_token_hash: String,
+    access_token_hash: String,
+    refresh_token_hash: Option<String>,
+    subject: TrustedRequestSubject,
+}
+
+impl PresentedSessionTokens {
+    fn from_headers(
+        app_session_config: &AppSessionConfig,
+        headers: &HeaderMap,
+    ) -> Result<Self, AppSessionCreateError> {
+        let now = current_unix_seconds();
+        let authorization = header_value(headers, AUTHORIZATION_HEADER)?;
+        let subject =
+            verify_app_session_authorization_header(app_session_config, &authorization, now)
+                .map_err(|_| AppSessionCreateError::Unauthorized)?;
+        let auth_token = bearer_token_from_authorization_header(&authorization)?;
+        let access_token = header_value(headers, SDKWORK_ACCESS_TOKEN_HEADER)?;
+        let access_subject = verify_app_session_token(app_session_config, &access_token, now)
+            .map_err(|_| AppSessionCreateError::Unauthorized)?;
+        if subject != access_subject {
+            return Err(AppSessionCreateError::Unauthorized);
+        }
+        Ok(Self {
+            auth_token_hash: sha256_hex(&auth_token),
+            access_token_hash: sha256_hex(&access_token),
+            auth_token,
+            access_token,
+            refresh_token: None,
+            refresh_token_hash: None,
+            subject,
+        })
+    }
+
+    fn verify_refresh_token(
+        &mut self,
+        app_session_config: &AppSessionConfig,
+        refresh_token: &str,
+    ) -> Result<(), AppSessionCreateError> {
+        let refresh_subject =
+            verify_app_session_token(app_session_config, refresh_token, current_unix_seconds())
+                .map_err(|_| AppSessionCreateError::Unauthorized)?;
+        if refresh_subject != self.subject {
+            return Err(AppSessionCreateError::Unauthorized);
+        }
+        self.refresh_token = Some(refresh_token.to_owned());
+        self.refresh_token_hash = Some(sha256_hex(refresh_token));
+        Ok(())
+    }
+}
+
+struct IssuedIamSession {
+    data_scope: Vec<String>,
+    response: IamSessionResponse,
+}
+
+impl IssuedIamSession {
+    fn into_response(self) -> IamSessionResponse {
+        self.response
+    }
+}
+
+fn sign_iam_session_tokens(
+    app_session_config: &AppSessionConfig,
+    entity_uuid_generator: &(dyn EntityUuidGenerator + Send + Sync),
+    user: IamSessionIssueUser,
+    auth_level: &str,
+    session_id: Option<String>,
+    expires_at_override: Option<i64>,
+    minimum_issued_at: Option<i64>,
+) -> Result<IssuedIamSession, AppSessionCreateError> {
+    let issued_at = minimum_issued_at
+        .map(|minimum| current_unix_seconds().max(minimum))
+        .unwrap_or_else(current_unix_seconds);
+    let expires_at_unix = match expires_at_override {
+        Some(value) => value,
+        None => expires_at(app_session_config, issued_at)?,
+    };
+    let subject = TrustedRequestSubject {
+        tenant_id: user.tenant_id,
+        organization_id: user.organization_id,
+        user_id: user.id,
+        operator_id: user.id,
+        operator_type: 1,
+    };
+    let auth_token =
+        sign_app_session_token(app_session_config, subject, issued_at, expires_at_unix);
+    let access_token = sign_app_session_token(
+        app_session_config,
+        subject,
+        issued_at + 1,
+        expires_at_unix + 1,
+    );
+    let refresh_token = sign_app_session_token(
+        app_session_config,
+        subject,
+        issued_at + 2,
+        expires_at_unix + 2,
+    );
+    let session_id = match session_id {
+        Some(session_id) => session_id,
+        None => entity_uuid_generator
+            .generate_entity_uuid()
+            .map_err(|error| AppSessionCreateError::System(error.to_string()))?,
+    };
+    let expires_at = expires_at_unix.to_string();
+    let data_scope = vec![
+        format!("tenant:{}", user.tenant_id),
+        format!("organization:{}", user.organization_id),
+        format!("user:{}", user.id),
+    ];
+    let permission_scope = vec!["clawrouter:console".to_owned()];
+    let context = IamAppContext {
+        app_id: APP_ID.to_owned(),
+        auth_level: auth_level.to_owned(),
+        data_scope: data_scope.clone(),
+        deployment_mode: DEPLOYMENT_MODE.to_owned(),
+        environment: ENVIRONMENT.to_owned(),
+        organization_id: user.organization_id.to_string(),
+        permission_scope,
+        session_id: session_id.clone(),
+        tenant_id: user.tenant_id.to_string(),
+        user_id: user.id.to_string(),
+    };
+    let response = IamSessionResponse {
+        access_token: access_token.clone(),
+        auth_token: auth_token.clone(),
+        refresh_token: Some(refresh_token.clone()),
+        session_id: session_id.clone(),
+        expires_at: expires_at.clone(),
+        context,
+        user: IamUserResponse {
+            id: user.id.to_string(),
+            username: user.username,
+            display_name: user.display_name,
+            email: user.email,
+            avatar_url: user.avatar_url,
+            phone: user.phone,
+            language: normalize_language(user.language),
+            is_verified: user.is_verified,
+            status: user.status,
+            registered_at: user.registered_at,
+            last_login: user.last_login,
+            last_login_ip: user.last_login_ip,
+            password_last_changed: user.password_last_changed,
+            two_factor_enabled: user.two_factor_enabled,
+            third_party_bound: user.third_party_bound,
+        },
+    };
+    Ok(IssuedIamSession {
+        data_scope,
+        response,
+    })
+}
+
+fn session_response_from_active_session(
+    active: ActiveAppSession,
+    auth_token: String,
+    access_token: String,
+    refresh_token: Option<String>,
+) -> IamSessionResponse {
+    IamSessionResponse {
+        access_token,
+        auth_token,
+        refresh_token,
+        session_id: active.session.session_id.clone(),
+        expires_at: active.session.expires_at.clone(),
+        context: IamAppContext {
+            app_id: active.session.app_id,
+            auth_level: active.session.auth_level,
+            data_scope: parse_scope_json(&active.session.data_scope_json),
+            deployment_mode: active.session.deployment_mode,
+            environment: active.session.environment,
+            organization_id: active.session.organization_id.to_string(),
+            permission_scope: parse_scope_json(&active.session.permission_scope_json),
+            session_id: active.session.session_id,
+            tenant_id: active.session.tenant_id.to_string(),
+            user_id: active.session.user_id.to_string(),
+        },
+        user: user_response_from_record(active.user),
+    }
+}
+
+fn user_response_from_record(user: AppSessionUserRecord) -> IamUserResponse {
+    IamUserResponse {
+        id: user.id.to_string(),
+        username: user.username,
+        display_name: user.display_name,
+        email: user.email,
+        avatar_url: user.avatar_url,
+        phone: user.phone,
+        language: normalize_language(user.language),
+        is_verified: user.is_verified,
+        status: user.status,
+        registered_at: user.registered_at,
+        last_login: user.last_login,
+        last_login_ip: user.last_login_ip,
+        password_last_changed: user.password_last_changed,
+        two_factor_enabled: user.two_factor_enabled,
+        third_party_bound: user.third_party_bound,
+    }
+}
+
+fn parse_scope_json(value: &str) -> Vec<String> {
+    serde_json::from_str::<Vec<String>>(value).unwrap_or_default()
+}
+
+fn header_value(headers: &HeaderMap, name: &'static str) -> Result<String, AppSessionCreateError> {
+    let value = headers
+        .get(name)
+        .ok_or(AppSessionCreateError::Unauthorized)?
+        .to_str()
+        .map_err(|_| AppSessionCreateError::Unauthorized)?
+        .trim();
+    if value.is_empty() {
+        return Err(AppSessionCreateError::Unauthorized);
+    }
+    Ok(value.to_owned())
+}
+
+fn bearer_token_from_authorization_header(value: &str) -> Result<String, AppSessionCreateError> {
+    let mut parts = value.trim().splitn(2, char::is_whitespace);
+    let scheme = parts.next().unwrap_or_default();
+    let token = parts.next().unwrap_or_default().trim();
+    if !scheme.eq_ignore_ascii_case("Bearer") || token.is_empty() {
+        return Err(AppSessionCreateError::Unauthorized);
+    }
+    Ok(token.to_owned())
+}
+
+fn generate_session_event_uuid(state: &AppAuthState) -> Result<String, AppSessionCreateError> {
+    state
+        .entity_uuid_generator
+        .generate_entity_uuid()
+        .map_err(|error| AppSessionCreateError::System(error.to_string()))
+}
+
+fn session_event_detail_json(
+    detail: serde_json::Value,
+    session_id: &str,
+    expires_at: &str,
+    updated_at: &str,
+) -> String {
+    let mut detail = detail;
+    if let Some(object) = detail.as_object_mut() {
+        object.insert(
+            "sessionIdHash".to_owned(),
+            serde_json::Value::String(sha256_hex(session_id)),
+        );
+        object.insert(
+            "expiresAt".to_owned(),
+            serde_json::Value::String(expires_at.to_owned()),
+        );
+        object.insert(
+            "updatedAt".to_owned(),
+            serde_json::Value::String(updated_at.to_owned()),
+        );
+    }
+    detail.to_string()
+}
+
+fn next_issued_at_after_session_update(session: &AppSessionRecord) -> Option<i64> {
+    parse_unix_seconds(&session.updated_at).map(|value| value.saturating_add(1))
+}
+
+fn parse_unix_seconds(value: &str) -> Option<i64> {
+    value.trim().parse::<i64>().ok()
+}
+
+async fn rotate_current_session_tokens(
+    state: &AppAuthState,
+    active: ActiveAppSession,
+    presented: PresentedSessionTokens,
+    organization_id: Option<i64>,
+    expires_at_override: Option<i64>,
+    event_type: &str,
+    detail: serde_json::Value,
+) -> Result<IamSessionResponse, AppSessionCreateError> {
+    let target_organization_id = organization_id.unwrap_or(active.session.organization_id);
+    let user = IamSessionIssueUser {
+        id: active.user.id,
+        tenant_id: active.user.tenant_id,
+        organization_id: target_organization_id,
+        username: active.user.username.clone(),
+        display_name: active.user.display_name.clone(),
+        email: active.user.email.clone(),
+        avatar_url: active.user.avatar_url.clone(),
+        phone: active.user.phone.clone(),
+        language: active.user.language.clone(),
+        is_verified: active.user.is_verified,
+        status: active.user.status.clone(),
+        registered_at: active.user.registered_at.clone(),
+        last_login: active.user.last_login.clone(),
+        last_login_ip: active.user.last_login_ip.clone(),
+        password_last_changed: active.user.password_last_changed.clone(),
+        two_factor_enabled: active.user.two_factor_enabled,
+        third_party_bound: active.user.third_party_bound.clone(),
+    };
+    let issued = sign_iam_session_tokens(
+        &state.app_session_config,
+        state.entity_uuid_generator.as_ref(),
+        user,
+        &active.session.auth_level,
+        Some(active.session.session_id.clone()),
+        expires_at_override,
+        next_issued_at_after_session_update(&active.session),
+    )?;
+    let data_scope_json = serde_json::to_string(&issued.data_scope)
+        .unwrap_or_else(|_| active.session.data_scope_json.clone());
+    let issued_response = issued.into_response();
+    let updated_at = current_unix_seconds().to_string();
+    let rotated = state
+        .event_store
+        .rotate_app_session_tokens(RotateAppSessionTokensCommand {
+            session_id: active.session.session_id.clone(),
+            tenant_id: active.session.tenant_id,
+            user_id: active.session.user_id,
+            expected_auth_token_hash: presented.auth_token_hash,
+            expected_access_token_hash: presented.access_token_hash,
+            expected_refresh_token_hash: presented.refresh_token_hash,
+            auth_token_hash: sha256_hex(&issued_response.auth_token),
+            access_token_hash: sha256_hex(&issued_response.access_token),
+            refresh_token_hash: sha256_hex(
+                issued_response.refresh_token.as_deref().unwrap_or_default(),
+            ),
+            organization_id,
+            data_scope_json: organization_id.map(|_| data_scope_json),
+            expires_at: issued_response.expires_at.clone(),
+            updated_at: updated_at.clone(),
+            security_event_id: generate_session_event_uuid(state)?,
+            event_type: event_type.to_owned(),
+            detail_json: session_event_detail_json(
+                detail,
+                &active.session.session_id,
+                issued_response.expires_at.as_str(),
+                updated_at.as_str(),
+            ),
+        })
+        .await
+        .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
+    if !rotated {
+        return Err(AppSessionCreateError::Unauthorized);
+    }
+    Ok(issued_response)
 }
 
 async fn create_code_login_session(
@@ -1507,61 +2127,28 @@ pub(crate) async fn issue_iam_session(
     request_id: Option<String>,
 ) -> Result<IamSessionResponse, AppSessionCreateError> {
     let issued_at = current_unix_seconds();
-    let expires_at_unix = expires_at(app_session_config, issued_at)?;
-    let subject = TrustedRequestSubject {
-        tenant_id: user.tenant_id,
-        organization_id: user.organization_id,
-        user_id: user.id,
-        operator_id: user.id,
-        operator_type: 1,
-    };
-    let auth_token =
-        sign_app_session_token(app_session_config, subject, issued_at, expires_at_unix);
-    let access_token = sign_app_session_token(
+    let issued = sign_iam_session_tokens(
         app_session_config,
-        subject,
-        issued_at + 1,
-        expires_at_unix + 1,
-    );
-    let refresh_token = sign_app_session_token(
-        app_session_config,
-        subject,
-        issued_at + 2,
-        expires_at_unix + 2,
-    );
-    let session_id = entity_uuid_generator
-        .generate_entity_uuid()
-        .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
+        entity_uuid_generator,
+        user.clone(),
+        auth_level,
+        None,
+        None,
+        None,
+    )?;
     let security_event_id = entity_uuid_generator
         .generate_entity_uuid()
         .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
     let audit_event_id = entity_uuid_generator
         .generate_entity_uuid()
         .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
-    let expires_at = expires_at_unix.to_string();
     let created_at = issued_at.to_string();
-    let data_scope = vec![
-        format!("tenant:{}", user.tenant_id),
-        format!("organization:{}", user.organization_id),
-        format!("user:{}", user.id),
-    ];
-    let permission_scope = vec!["clawrouter:console".to_owned()];
-    let context = IamAppContext {
-        app_id: APP_ID.to_owned(),
-        auth_level: auth_level.to_owned(),
-        data_scope: data_scope.clone(),
-        deployment_mode: DEPLOYMENT_MODE.to_owned(),
-        environment: ENVIRONMENT.to_owned(),
-        organization_id: user.organization_id.to_string(),
-        permission_scope: permission_scope.clone(),
-        session_id: session_id.clone(),
-        tenant_id: user.tenant_id.to_string(),
-        user_id: user.id.to_string(),
-    };
+    let response = issued.into_response();
+    let permission_scope = response.context.permission_scope.clone();
 
     event_store
         .record_app_session_issued(RecordAppSessionIssuedEventCommand {
-            session_id: session_id.clone(),
+            session_id: response.session_id.clone(),
             security_event_id,
             audit_event_id,
             tenant_id: user.tenant_id,
@@ -1572,46 +2159,25 @@ pub(crate) async fn issue_iam_session(
             app_id: APP_ID.to_owned(),
             environment: ENVIRONMENT.to_owned(),
             deployment_mode: DEPLOYMENT_MODE.to_owned(),
-            auth_token_hash: sha256_hex(&auth_token),
-            access_token_hash: sha256_hex(&access_token),
-            refresh_token_hash: Some(sha256_hex(&refresh_token)),
-            session_id_hash: sha256_hex(&session_id),
+            auth_token_hash: sha256_hex(&response.auth_token),
+            access_token_hash: sha256_hex(&response.access_token),
+            refresh_token_hash: Some(sha256_hex(
+                response.refresh_token.as_deref().unwrap_or_default(),
+            )),
+            session_id_hash: sha256_hex(&response.session_id),
             sharding_key: user.tenant_id.to_string(),
             sharding_strategy: "tenant".to_owned(),
-            data_scope_json: serde_json::to_string(&data_scope).unwrap_or_else(|_| "[]".to_owned()),
+            data_scope_json: serde_json::to_string(&response.context.data_scope)
+                .unwrap_or_else(|_| "[]".to_owned()),
             permission_scope_json: serde_json::to_string(&permission_scope)
                 .unwrap_or_else(|_| "[]".to_owned()),
-            expires_at: expires_at.clone(),
+            expires_at: response.expires_at.clone(),
             created_at: created_at.clone(),
         })
         .await
         .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
 
-    Ok(IamSessionResponse {
-        access_token,
-        auth_token,
-        refresh_token,
-        session_id: session_id.clone(),
-        expires_at,
-        context,
-        user: IamUserResponse {
-            id: user.id.to_string(),
-            username: user.username,
-            display_name: user.display_name,
-            email: user.email,
-            avatar_url: user.avatar_url,
-            phone: user.phone,
-            language: normalize_language(user.language),
-            is_verified: user.is_verified,
-            status: user.status,
-            registered_at: user.registered_at,
-            last_login: user.last_login,
-            last_login_ip: user.last_login_ip,
-            password_last_changed: user.password_last_changed,
-            two_factor_enabled: user.two_factor_enabled,
-            third_party_bound: user.third_party_bound,
-        },
-    })
+    Ok(response)
 }
 
 fn to_auth_settings_response(

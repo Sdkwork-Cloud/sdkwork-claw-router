@@ -158,12 +158,22 @@ test('installation documentation covers release, source, initialization, usage, 
   const zhUsage = readFileSync(path.join(workspaceRoot, 'docs/installation/zh-CN/usage.md'), 'utf8');
   const enUsage = readFileSync(path.join(workspaceRoot, 'docs/installation/en-US/usage.md'), 'utf8');
 
-  assert.ok(zhRelease.includes('clawrouter-linux-x64-archive-0.2.0.tar.gz'));
-  assert.ok(enRelease.includes('clawrouter-linux-x64-archive-0.2.0.tar.gz'));
-  assert.ok(zhRelease.includes('sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb'));
-  assert.ok(enRelease.includes('sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb'));
+  assert.ok(zhRelease.includes('clawrouter-linux-x64-archive-0.3.0.tar.gz'));
+  assert.ok(enRelease.includes('clawrouter-linux-x64-archive-0.3.0.tar.gz'));
+  assert.ok(zhRelease.includes('sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb'));
+  assert.ok(enRelease.includes('sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb'));
   assert.equal(zhRelease.includes('sudo systemctl enable --now clawrouter'), false);
   assert.equal(enRelease.includes('sudo systemctl enable --now clawrouter'), false);
+  assert.ok(zhRelease.includes('[redis]'));
+  assert.ok(enRelease.includes('[redis]'));
+  assert.ok(zhRelease.includes('/etc/clawrouter/redis.secret'));
+  assert.ok(enRelease.includes('/etc/clawrouter/redis.secret'));
+  assert.ok(zhRelease.includes('host = "redis.example.com"'));
+  assert.ok(enRelease.includes('host = "redis.example.com"'));
+  assert.ok(zhRelease.includes('port = 6379'));
+  assert.ok(enRelease.includes('port = 6379'));
+  assert.ok(zhRelease.includes('database = 0'));
+  assert.ok(enRelease.includes('database = 0'));
   assert.ok(zhRelease.includes('./bin/clawrouterctl ensure'));
   assert.ok(enRelease.includes('./bin/clawrouterctl ensure'));
   assert.ok(zhSource.includes('pnpm release:env:write -- --check'));
@@ -326,11 +336,17 @@ test('Rust edge server owns configurable portal CSP connect-src policy', () => {
   const readmeSource = readFileSync(path.join(workspaceRoot, 'README.md'), 'utf8');
 
   assert.ok(edgeServerSource.includes('with_portal_csp_connect_src'));
+  assert.ok(edgeServerSource.includes('with_portal_csp_frame_src'));
+  assert.ok(edgeServerSource.includes('with_portal_strict_transport_security'));
   assert.ok(edgeServerSource.includes('normalize_portal_csp_connect_src'));
+  assert.ok(edgeServerSource.includes('normalize_portal_csp_frame_src_origin'));
   assert.ok(edgeServerSource.includes('build_portal_content_security_policy'));
   assert.ok(edgeServerSource.includes('portal_public_url_origin'));
   assert.ok(edgeServerSource.includes('"content-security-policy"'));
+  assert.ok(edgeServerSource.includes('"strict-transport-security"'));
   assert.ok(gatewayMainSource.includes('PORTAL_CSP_CONNECT_SRC'));
+  assert.ok(gatewayMainSource.includes('PORTAL_SECURITY_HSTS_ENABLED'));
+  assert.ok(gatewayMainSource.includes('PORTAL_SECURITY_CSP_FRAME_SRC'));
   assert.ok(gatewayMainSource.includes('PORTAL_TOOL_API_RATE_LIMIT_REQUESTS'));
   assert.ok(gatewayMainSource.includes('PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS'));
   assert.ok(gatewayMainSource.includes('PORTAL_TOOL_API_SDK_ARCHIVE_ROOT'));
@@ -343,6 +359,7 @@ test('Rust edge server owns configurable portal CSP connect-src policy', () => {
   assert.ok(edgeServerSource.includes('header::RETRY_AFTER'));
   assert.ok(edgeServerSource.includes('ratelimit-limit'));
   assert.ok(readmeSource.includes('PORTAL_CSP_CONNECT_SRC'));
+  assert.ok(readmeSource.includes('[portal.security]'));
   assert.ok(readmeSource.includes('PORTAL_TOOL_API_RATE_LIMIT_REQUESTS'));
   assert.ok(readmeSource.includes('PORTAL_TOOL_API_SDK_ARCHIVE_ROOT'));
   assert.ok(readmeSource.includes('prebuilt SDK ZIP archives'));
@@ -1512,13 +1529,13 @@ test('install package planner covers platforms, architectures, modes, fast init,
   assert.deepEqual(module.SUPPORTED_PLATFORMS, ['windows', 'linux', 'macos']);
   assert.deepEqual(module.SUPPORTED_ARCHITECTURES, ['x64', 'arm64']);
   assert.deepEqual(module.SUPPORTED_DEPLOYMENT_MODES, ['archive', 'service', 'container', 'desktop']);
-  assert.equal(module.DEFAULT_VERSION, '0.2.0');
+  assert.equal(module.DEFAULT_VERSION, '0.3.0');
 
   const defaultPlan = module.createInstallPackagePlan();
-  assert.equal(defaultPlan.version, '0.2.0');
+  assert.equal(defaultPlan.version, '0.3.0');
   assert.equal(
     defaultPlan.packages.find((item) => item.id === 'linux-x64-archive')?.archiveName,
-    'clawrouter-linux-x64-archive-0.2.0.tar.gz',
+    'clawrouter-linux-x64-archive-0.3.0.tar.gz',
   );
 
   const plan = module.createInstallPackagePlan({
@@ -1553,8 +1570,9 @@ test('install package planner covers platforms, architectures, modes, fast init,
   );
   assert.ok(windowsService);
   assert.equal(windowsService.id, 'windows-x64-service');
+  assert.equal(windowsService.artifactId, 'windows-x64-server');
   assert.equal(windowsService.version, '0.1.0');
-  assert.equal(windowsService.archiveName, 'clawrouter-windows-x64-service-0.1.0.zip');
+  assert.equal(windowsService.archiveName, 'clawrouter-windows-x64-server-0.1.0.zip');
   assert.equal(windowsService.binaryName, 'clawrouter.exe');
   assert.equal(windowsService.installerBinaryName, 'clawrouterctl.exe');
   assert.deepEqual(windowsService.serviceIntegration, {
@@ -1593,6 +1611,31 @@ test('install package planner covers platforms, architectures, modes, fast init,
   assert.equal(windowsService.databasePolicy.defaultDatabase, 'sdkwork_claw_router');
   assert.equal(windowsService.databasePolicy.defaultUsername, 'sdkwork_claw_router');
   assert.equal(windowsService.databasePolicy.passwordFile.path, '%ProgramData%/SdkWork/ClawRouter/database.secret');
+  assert.equal(windowsService.redisPolicy.configSection, 'redis');
+  assert.equal(windowsService.redisPolicy.enabledByDefault, false);
+  assert.equal(windowsService.redisPolicy.required, false);
+  assert.equal(windowsService.redisPolicy.requiredWhenEnabled.includes('host'), true);
+  assert.equal(windowsService.redisPolicy.requiredWhenEnabled.includes('port'), true);
+  assert.equal(windowsService.redisPolicy.requiredWhenEnabled.includes('database'), true);
+  assert.equal(windowsService.redisPolicy.defaultHost, 'redis.example.com');
+  assert.equal(windowsService.redisPolicy.defaultPort, 6379);
+  assert.equal(windowsService.redisPolicy.defaultDatabase, 0);
+  assert.equal(windowsService.redisPolicy.urlOverrideExample, 'redis://redis.example.com:6379/0');
+  assert.equal(windowsService.redisPolicy.passwordFile.path, '%ProgramData%/SdkWork/ClawRouter/redis.secret');
+  assert.equal(windowsService.redisPolicy.envOverrides.includes('SDKWORK_CLAW_REDIS_HOST'), true);
+  assert.equal(windowsService.redisPolicy.envOverrides.includes('SDKWORK_CLAW_REDIS_PORT'), true);
+  assert.equal(windowsService.redisPolicy.envOverrides.includes('SDKWORK_CLAW_REDIS_DATABASE'), true);
+  assert.equal(windowsService.redisPolicy.envOverrides.includes('SDKWORK_CLAW_REDIS_URL'), true);
+  assert.equal(windowsService.redisPolicy.envOverrides.includes('SDKWORK_CLAW_REDIS_KEY_PREFIX'), true);
+  assert.equal(windowsService.redisPolicy.envOverrides.includes('SDKWORK_CLAW_REDIS_TLS'), true);
+  assert.equal(windowsService.redisPolicy.envOverrides.includes('SDKWORK_CLAW_REDIS_MAX_CONNECTIONS'), true);
+  assert.equal(windowsService.redisPolicy.envOverrides.includes('SDKWORK_CLAW_REDIS_CONNECT_TIMEOUT_MILLIS'), true);
+  assert.equal(windowsService.redisPolicy.envOverrides.includes('SDKWORK_CLAW_REDIS_COMMAND_TIMEOUT_MILLIS'), true);
+  assert.equal(windowsService.redisPolicy.envOverrides.includes('SDKWORK_CLAW_REDIS_POOL_IDLE_TIMEOUT_SECONDS'), true);
+  assert.equal(windowsService.redisPolicy.keyPrefix, 'clawrouter');
+  assert.equal(windowsService.redisPolicy.maxConnections, 16);
+  assert.equal(windowsService.redisPolicy.connectTimeoutMs, 2000);
+  assert.equal(windowsService.redisPolicy.commandTimeoutMs, 1000);
   assert.ok(windowsService.artifacts.some((artifact) =>
     artifact.kind === 'runtime-config-template' && artifact.path === 'config/clawrouter.toml.example'
   ));
@@ -1609,6 +1652,8 @@ test('install package planner covers platforms, architectures, modes, fast init,
   assert.equal(linuxContainer.databasePolicy.defaultEngine, 'postgresql');
   assert.equal(linuxContainer.databasePolicy.requiresExternalDatabase, true);
   assert.equal(linuxContainer.databasePolicy.passwordFile.path, '/run/secrets/clawrouter-postgres-password');
+  assert.equal(linuxContainer.redisPolicy.passwordFile.path, '/run/secrets/clawrouter-redis-password');
+  assert.equal(linuxContainer.redisPolicy.required, false);
   assert.equal(linuxContainer.containerIntegration.kind, 'container-image');
   assert.equal(linuxContainer.containerIntegration.entrypoint, '/opt/clawrouter/bin/clawrouter');
   for (const packageItem of plan.packages.filter((item) => item.deploymentMode === 'container')) {
@@ -1664,6 +1709,9 @@ test('install package planner covers platforms, architectures, modes, fast init,
   assert.equal(macosDesktop.databasePolicy.dataDirectory.path, '~/Library/Application Support/SdkWork/ClawRouter');
   assert.equal(macosDesktop.databasePolicy.defaultSqlitePath, '~/Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite');
   assert.equal(macosDesktop.databasePolicy.defaultUrl, 'sqlite://~/Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite');
+  assert.equal(macosDesktop.redisPolicy.enabledByDefault, false);
+  assert.equal(macosDesktop.redisPolicy.required, false);
+  assert.equal(macosDesktop.redisPolicy.passwordFile.path, '~/Library/Application Support/SdkWork/ClawRouter/redis.secret');
   assert.ok(macosDesktop.artifacts.some((artifact) =>
     artifact.kind === 'desktop-manifest' && artifact.path === 'desktop'
   ));
@@ -1711,7 +1759,7 @@ test('install package archive builder creates manifest-backed archives without l
     outputDir: null,
     packageId: 'windows-x64-archive',
     stagingRoot: null,
-    version: '0.2.0',
+    version: '0.3.0',
   });
   assert.deepEqual(module.parseInstallPackageBuildArgs(['--all', '--check', '--dry-run']), {
     all: true,
@@ -1722,7 +1770,7 @@ test('install package archive builder creates manifest-backed archives without l
     outputDir: null,
     packageId: 'windows-x64-archive',
     stagingRoot: null,
-    version: '0.2.0',
+    version: '0.3.0',
   });
 
   const fixtureRoot = path.join(workspaceRoot, '.tmp', 'install-package-builder-test');
@@ -1763,6 +1811,55 @@ test('install package archive builder creates manifest-backed archives without l
     assert.equal(result.manifest.package.version, '0.1.0');
     assert.equal(result.manifest.package.runtimeProfile, 'server');
     assert.equal(result.manifest.databasePolicy.defaultEngine, 'postgresql');
+    assert.equal(
+      result.manifest.installConfiguration.schemaVersion,
+      '2026-05-16.install-configuration.v1',
+    );
+    assert.equal(result.manifest.installConfiguration.files.runtimeConfig, '%ProgramData%/SdkWork/ClawRouter/clawrouter.toml');
+    assert.equal(result.manifest.installConfiguration.files.passwordFile, '%ProgramData%/SdkWork/ClawRouter/database.secret');
+    assert.equal(result.manifest.installConfiguration.files.redisPasswordFile, '%ProgramData%/SdkWork/ClawRouter/redis.secret');
+    assert.equal(result.manifest.installConfiguration.database.engine, 'postgresql');
+    assert.equal(result.manifest.installConfiguration.database.externalRequired, true);
+    assert.ok(result.manifest.installConfiguration.database.requiredFields.includes('password_file or password'));
+    assert.equal(result.manifest.installConfiguration.redis.configSection, 'redis');
+    assert.equal(result.manifest.installConfiguration.redis.enabledByDefault, false);
+    assert.equal(result.manifest.installConfiguration.redis.required, false);
+    assert.equal(result.manifest.installConfiguration.redis.runtimeRequired, false);
+    assert.deepEqual(result.manifest.installConfiguration.redis.requiredFieldsWhenEnabled, ['host', 'port', 'database']);
+    assert.deepEqual(result.manifest.installConfiguration.redis.secretFields, ['password_file', 'password']);
+    assert.equal(result.manifest.installConfiguration.redis.host, 'redis.example.com');
+    assert.equal(result.manifest.installConfiguration.redis.port, 6379);
+    assert.equal(result.manifest.installConfiguration.redis.database, 0);
+    assert.equal(result.manifest.installConfiguration.redis.urlOverrideExample, 'redis://redis.example.com:6379/0');
+    assert.equal(result.manifest.installConfiguration.redis.passwordFile, '%ProgramData%/SdkWork/ClawRouter/redis.secret');
+    assert.equal(result.manifest.installConfiguration.redis.keyPrefix, 'clawrouter');
+    assert.equal(result.manifest.installConfiguration.redis.tls, false);
+    assert.equal(result.manifest.installConfiguration.redis.maxConnections, 16);
+    assert.equal(result.manifest.installConfiguration.redis.connectTimeoutMs, 2000);
+    assert.equal(result.manifest.installConfiguration.redis.commandTimeoutMs, 1000);
+    assert.equal(result.manifest.installConfiguration.redis.poolIdleTimeoutSeconds, 60);
+    assert.equal(result.manifest.installConfiguration.edge.configSection, 'edge');
+    assert.equal(result.manifest.installConfiguration.edge.enabledByDefault, true);
+    assert.equal(result.manifest.installConfiguration.edge.upstreamRequestTimeoutMillis, 30000);
+    assert.equal(result.manifest.installConfiguration.edge.upstreamReadyTimeoutMillis, 2000);
+    assert.equal(result.manifest.installConfiguration.providerRelay.runtime.responseTimeoutMillis, 120000);
+    assert.equal(result.manifest.installConfiguration.providerRelay.runtime.healthProbeTimeoutMillis, 10000);
+    assert.equal(result.manifest.installConfiguration.providerRelay.retry.maxAttempts, 2);
+    assert.deepEqual(result.manifest.installConfiguration.providerRelay.retry.retryableStatusCodes, [429, 500, 502, 503, 504]);
+    assert.equal(result.manifest.installConfiguration.providerRelay.retry.backoffMillis, 0);
+    assert.equal(result.manifest.installConfiguration.portal.staticConfigSection, 'portal.static');
+    assert.equal(result.manifest.installConfiguration.portal.htmlCacheControl, 'no-store');
+    assert.equal(result.manifest.installConfiguration.portal.assetCacheControl, 'public, max-age=31536000, immutable');
+    assert.equal(result.manifest.installConfiguration.portal.toolApiMaxBodyBytes, 1048576);
+    assert.ok(result.manifest.installConfiguration.nextSteps.some((step) =>
+      step.includes('clawrouter.toml')
+    ));
+    assert.ok(result.manifest.installConfiguration.nextSteps.some((step) =>
+      step.includes('password_file')
+    ));
+    assert.ok(result.manifest.installConfiguration.nextSteps.some((step) =>
+      step.includes('[redis].enabled')
+    ));
     assert.equal(result.manifest.generatedArtifacts.some((artifact) =>
       artifact.path === 'config/clawrouter.toml.example'
     ), true);
@@ -1813,12 +1910,13 @@ test('install package manifests distinguish schema version dates from generation
 
   const packageItem = {
     id: 'linux-x64-service',
-    version: '0.2.0',
+    version: '0.3.0',
     platform: 'linux',
     architecture: 'x64',
     deploymentMode: 'service',
     runtimeProfile: 'server',
-    archiveName: 'clawrouter-linux-x64-service-0.2.0.tar.gz',
+    artifactId: 'linux-x64-server',
+    archiveName: 'clawrouter-linux-x64-server-0.3.0.tar.gz',
     binaryName: 'clawrouter',
     installerBinaryName: 'clawrouterctl',
     startCommand: './bin/clawrouter',
@@ -1838,7 +1936,7 @@ test('install package manifests distinguish schema version dates from generation
   const aggregate = module.createAggregateManifest(
     buildPlan,
     {
-      file: 'clawrouter-linux-x64-service-0.2.0.deb',
+      file: 'clawrouter-linux-x64-server-0.3.0.deb',
       packageId: packageItem.id,
       version: packageItem.version,
       size: 1,
@@ -1898,17 +1996,127 @@ test('install package builder emits service and container deployment packages fr
     assert.ok(serviceConfigTemplate.includes('database = "sdkwork_claw_router"'));
     assert.ok(serviceConfigTemplate.includes('username = "sdkwork_claw_router"'));
     assert.ok(serviceConfigTemplate.includes('password_file = "/etc/clawrouter/database.secret"'));
+    assert.ok(serviceConfigTemplate.includes('[redis]'));
+    assert.ok(serviceConfigTemplate.includes('enabled = false'));
+    assert.ok(serviceConfigTemplate.includes('host = "redis.example.com"'));
+    assert.ok(serviceConfigTemplate.includes('port = 6379'));
+    assert.ok(serviceConfigTemplate.includes('database = 0'));
+    assert.ok(serviceConfigTemplate.includes('# username = "default"'));
+    assert.ok(serviceConfigTemplate.includes('# url = "redis://redis.example.com:6379/0"'));
+    assert.ok(serviceConfigTemplate.includes('# password_file = "/etc/clawrouter/redis.secret"'));
+    assert.ok(serviceConfigTemplate.includes('# password = "change-me"'));
+    assert.ok(serviceConfigTemplate.includes('key_prefix = "clawrouter"'));
+    assert.ok(serviceConfigTemplate.includes('tls = false'));
+    assert.ok(serviceConfigTemplate.includes('connect_timeout_millis = 2000'));
+    assert.ok(serviceConfigTemplate.includes('command_timeout_millis = 1000'));
+    assert.ok(serviceConfigTemplate.includes('pool_idle_timeout_seconds = 60'));
+    assert.ok(serviceConfigTemplate.includes('[observability]'));
+    assert.ok(serviceConfigTemplate.includes('log_filter = "info"'));
+    assert.ok(serviceConfigTemplate.includes('log_format = "compact"'));
+    assert.ok(serviceConfigTemplate.includes('log_ansi = false'));
+    assert.ok(serviceConfigTemplate.includes('log_target = true'));
+    assert.ok(serviceConfigTemplate.includes('log_thread_names = false'));
+    assert.ok(serviceConfigTemplate.includes('log_thread_ids = false'));
+    assert.ok(serviceConfigTemplate.includes('[paths]'));
+    assert.ok(serviceConfigTemplate.includes('data_directory = "/var/lib/clawrouter"'));
+    assert.ok(serviceConfigTemplate.includes('course_upload_root = "/var/lib/clawrouter/uploads/courses"'));
+    assert.ok(serviceConfigTemplate.includes('[courses]'));
+    assert.ok(serviceConfigTemplate.includes('video_upload_max_bytes = 1073741824'));
+    assert.ok(serviceConfigTemplate.includes('video_upload_body_limit_bytes = 1074790400'));
+    assert.ok(serviceConfigTemplate.includes('[request_limits]'));
+    assert.ok(serviceConfigTemplate.includes('admin_app_json_body_max_bytes = 131072'));
+    assert.ok(serviceConfigTemplate.includes('admin_skill_json_body_max_bytes = 65536'));
+    assert.ok(serviceConfigTemplate.includes('forum_json_body_max_bytes = 262144'));
+    assert.ok(serviceConfigTemplate.includes('payment_callback_body_max_bytes = 65536'));
+    assert.ok(serviceConfigTemplate.includes('# models_catalog_root = "/opt/clawrouter/catalog"'));
+    assert.ok(serviceConfigTemplate.includes('[services.gateway]'));
+    assert.ok(serviceConfigTemplate.includes('[services.admin_api]'));
+    assert.ok(serviceConfigTemplate.includes('[services.app_api]'));
+    assert.ok(serviceConfigTemplate.includes('[server]'));
+    assert.ok(serviceConfigTemplate.includes('bind = "0.0.0.0:3900"'));
+    assert.ok(serviceConfigTemplate.includes('external_scheme = "http"'));
+    assert.ok(serviceConfigTemplate.includes('trust_forwarded_headers = false'));
+    assert.ok(serviceConfigTemplate.includes('[edge]'));
+    assert.ok(serviceConfigTemplate.includes('gateway_base_url = "http://127.0.0.1:18080"'));
+    assert.ok(serviceConfigTemplate.includes('backend_api_base_url = "http://127.0.0.1:18081"'));
+    assert.ok(serviceConfigTemplate.includes('app_api_base_url = "http://127.0.0.1:18082"'));
+    assert.ok(serviceConfigTemplate.includes('portal_static_dist = "/opt/clawrouter/portal/dist"'));
+    assert.ok(serviceConfigTemplate.includes('cors_allowed_origins = []'));
+    assert.ok(serviceConfigTemplate.includes('upstream_request_timeout_millis = 30000'));
+    assert.ok(serviceConfigTemplate.includes('upstream_ready_timeout_millis = 2000'));
+    assert.ok(serviceConfigTemplate.includes('[portal.public]'));
+    assert.ok(serviceConfigTemplate.includes('api_base_url = "/v1"'));
+    assert.ok(serviceConfigTemplate.includes('backend_api_base_url = "/backend/v3/api"'));
+    assert.ok(serviceConfigTemplate.includes('tool_api_enabled = false'));
+    assert.ok(serviceConfigTemplate.includes('[portal.static]'));
+    assert.ok(serviceConfigTemplate.includes('html_cache_control = "no-store"'));
+    assert.ok(serviceConfigTemplate.includes('asset_cache_control = "public, max-age=31536000, immutable"'));
+    assert.ok(serviceConfigTemplate.includes('[portal.security]'));
+    assert.ok(serviceConfigTemplate.includes('hsts_enabled = false'));
+    assert.ok(serviceConfigTemplate.includes('hsts_max_age_seconds = 31536000'));
+    assert.ok(serviceConfigTemplate.includes('hsts_include_subdomains = true'));
+    assert.ok(serviceConfigTemplate.includes('hsts_preload = false'));
+    assert.ok(serviceConfigTemplate.includes('csp_frame_src = ["https://player.bilibili.com"]'));
+    assert.ok(serviceConfigTemplate.includes('[portal.tools]'));
+    assert.ok(serviceConfigTemplate.includes('rate_limit_requests = 120'));
+    assert.ok(serviceConfigTemplate.includes('rate_limit_window_seconds = 60'));
+    assert.ok(serviceConfigTemplate.includes('max_body_bytes = 1048576'));
+    assert.ok(serviceConfigTemplate.includes('sdk_archive_root = "/opt/clawrouter/portal/dist/sdk-archives"'));
+    assert.ok(serviceConfigTemplate.includes('[security]'));
+    assert.ok(serviceConfigTemplate.includes('api_key_pepper_file = "/etc/clawrouter/api-key-pepper.secret"'));
+    assert.ok(serviceConfigTemplate.includes('trusted_subject_secret_file = "/etc/clawrouter/trusted-subject.secret"'));
+    assert.ok(serviceConfigTemplate.includes('app_session_secret_file = "/etc/clawrouter/app-session.secret"'));
+    assert.ok(serviceConfigTemplate.includes('payment_webhook_secret_file = "/etc/clawrouter/payment-webhook.secret"'));
+    assert.ok(serviceConfigTemplate.includes('[provider_relay.openai]'));
+    assert.ok(serviceConfigTemplate.includes('bearer_token_file = "/etc/clawrouter/openai-relay.secret"'));
+    assert.ok(serviceConfigTemplate.includes('[provider_relay.runtime]'));
+    assert.ok(serviceConfigTemplate.includes('response_timeout_millis = 120000'));
+    assert.ok(serviceConfigTemplate.includes('health_probe_timeout_millis = 10000'));
+    assert.ok(serviceConfigTemplate.includes('[provider_relay.retry]'));
+    assert.ok(serviceConfigTemplate.includes('max_attempts = 2'));
+    assert.ok(serviceConfigTemplate.includes('retryable_status_codes = [429, 500, 502, 503, 504]'));
+    assert.ok(serviceConfigTemplate.includes('backoff_millis = 0'));
+    assert.ok(serviceConfigTemplate.includes('[provider_secret_map]'));
+    assert.ok(serviceConfigTemplate.includes('json_file = "/etc/clawrouter/provider-secrets.json"'));
+    assert.ok(serviceConfigTemplate.includes('[usage_settlement]'));
+    assert.ok(serviceConfigTemplate.includes('batch_size = 100'));
+    assert.ok(serviceConfigTemplate.includes('[model_ranking]'));
+    assert.ok(serviceConfigTemplate.includes('rank_scope = "global"'));
+    assert.ok(serviceConfigTemplate.includes('run_on_startup = true'));
+    assert.ok(serviceConfigTemplate.includes('[forum]'));
+    assert.ok(serviceConfigTemplate.includes('community_links_json_file = "/etc/clawrouter/forum-community-links.json"'));
+    assert.ok(serviceConfigTemplate.includes('[install]'));
+    assert.ok(serviceConfigTemplate.includes('environment = "production"'));
+    assert.ok(serviceConfigTemplate.includes('seed_profile = "commercial"'));
+    assert.ok(serviceConfigTemplate.includes('startup_mode = "ensure"'));
+    assert.ok(serviceConfigTemplate.includes('[bootstrap_admin]'));
+    assert.ok(serviceConfigTemplate.includes('username = "admin"'));
+    assert.ok(serviceConfigTemplate.includes('email = "admin@sdkwork.local"'));
     assert.ok(serviceConfigTemplate.includes('/etc/clawrouter/clawrouter.toml'));
     const serviceInstallGuide = readTarEntryText(
       gunzipSync(readFileSync(serviceResult.archivePath)),
       'INSTALL.md',
     );
     assert.ok(serviceInstallGuide.includes('configured for external PostgreSQL'));
+    assert.ok(serviceInstallGuide.includes('Redis is optional and disabled by default'));
+    assert.ok(serviceInstallGuide.includes('[redis].enabled = true'));
+    assert.ok(serviceInstallGuide.includes('/etc/clawrouter/redis.secret'));
+    assert.ok(serviceInstallGuide.includes('Course upload storage is configured in [paths] and [courses].'));
+    assert.ok(serviceInstallGuide.includes('[courses].video_upload_max_bytes defaults to 1073741824'));
+    assert.ok(serviceInstallGuide.includes('Request body limits are configured in [request_limits].'));
+    assert.ok(serviceInstallGuide.includes('Admin app JSON defaults to 131072 bytes'));
+    assert.ok(serviceInstallGuide.includes('payment callback payloads default to 65536 bytes'));
     assert.ok(serviceInstallGuide.includes('Version: 0.1.0'));
     assert.ok(serviceInstallGuide.includes('password_file'));
     assert.ok(serviceInstallGuide.includes('Linux service packages run initialization automatically from systemd'));
     assert.ok(serviceInstallGuide.includes('/opt/clawrouter/bin/clawrouterctl ensure'));
     assert.ok(serviceInstallGuide.includes('/etc/clawrouter/clawrouter.toml'));
+    assert.ok(serviceInstallGuide.includes('Configuration Files'));
+    assert.ok(serviceInstallGuide.includes('PostgreSQL password file: /etc/clawrouter/database.secret'));
+    assert.ok(serviceInstallGuide.includes('First Start'));
+    assert.ok(serviceInstallGuide.includes('sudo editor /etc/clawrouter/database.secret'));
+    assert.ok(serviceInstallGuide.includes('sudo systemctl start clawrouter'));
+    assert.ok(serviceInstallGuide.includes('sudo journalctl -u clawrouter -f'));
     assert.ok(!serviceInstallGuide.includes('.env.release.local must be packaged'));
     assert.equal(
       serviceResult.manifest.generatedArtifacts.some((artifact) =>
@@ -1916,6 +2124,39 @@ test('install package builder emits service and container deployment packages fr
       ),
       true,
     );
+    assert.equal(serviceResult.manifest.runtimeConfig.courseUploadRoot, '/var/lib/clawrouter/uploads/courses');
+    assert.equal(serviceResult.manifest.installConfiguration.courses.videoUploadMaxBytes, 1073741824);
+    assert.equal(serviceResult.manifest.installConfiguration.courses.videoUploadBodyLimitBytes, 1074790400);
+    assert.deepEqual(serviceResult.manifest.installConfiguration.requestLimits, {
+      configSection: 'request_limits',
+      adminAppJsonBodyMaxBytes: 131072,
+      adminSkillJsonBodyMaxBytes: 65536,
+      forumJsonBodyMaxBytes: 262144,
+      paymentCallbackBodyMaxBytes: 65536,
+      envOverrides: [
+        'SDKWORK_CLAW_ADMIN_APP_JSON_BODY_MAX_BYTES',
+        'SDKWORK_CLAW_ADMIN_SKILL_JSON_BODY_MAX_BYTES',
+        'SDKWORK_CLAW_FORUM_JSON_BODY_MAX_BYTES',
+        'SDKWORK_CLAW_PAYMENT_CALLBACK_BODY_MAX_BYTES',
+      ],
+    });
+    assert.equal(serviceResult.manifest.installConfiguration.observability.logFilter, 'info');
+    assert.equal(serviceResult.manifest.installConfiguration.observability.logFormat, 'compact');
+    assert.equal(serviceResult.manifest.installConfiguration.observability.logAnsi, false);
+    assert.equal(serviceResult.manifest.installConfiguration.observability.logTarget, true);
+    assert.equal(serviceResult.manifest.installConfiguration.observability.logThreadNames, false);
+    assert.equal(serviceResult.manifest.installConfiguration.observability.logThreadIds, false);
+    assert.equal(serviceResult.manifest.installConfiguration.observability.envOverride, 'RUST_LOG');
+    assert.deepEqual(serviceResult.manifest.installConfiguration.edge.corsAllowedOriginsDefault, []);
+    assert.equal(serviceResult.manifest.installConfiguration.edge.corsAllowedOriginsField, 'cors_allowed_origins');
+    assert.deepEqual(serviceResult.manifest.installConfiguration.portal.security, {
+      configSection: 'portal.security',
+      hstsEnabled: false,
+      hstsMaxAgeSeconds: 31536000,
+      hstsIncludeSubdomains: true,
+      hstsPreload: false,
+      cspFrameSrc: ['https://player.bilibili.com'],
+    });
 
     const containerPlan = module.createInstallPackageBuildPlan({
       packageId: 'linux-arm64-container',
@@ -1946,7 +2187,22 @@ test('install package builder emits service and container deployment packages fr
     assert.equal(metadata.entrypoint, '/opt/clawrouter/bin/clawrouter');
     assert.equal(metadata.runtimeUser, 'sdkwork');
     assert.equal(metadata.database.defaultEngine, 'postgresql');
+    assert.equal(metadata.redis.defaultHost, 'redis.example.com');
+    assert.equal(metadata.redis.defaultPort, 6379);
+    assert.equal(metadata.redis.defaultDatabase, 0);
+    assert.equal(metadata.redis.urlOverrideExample, 'redis://redis.example.com:6379/0');
+    assert.equal(metadata.redis.enabledByDefault, false);
+    assert.equal(metadata.courses.uploadRoot, '/var/lib/clawrouter/uploads/courses');
+    assert.equal(metadata.courses.videoUploadMaxBytes, 1073741824);
+    assert.equal(metadata.courses.videoUploadBodyLimitBytes, 1074790400);
     assert.equal(metadata.configFile, '/etc/clawrouter/clawrouter.toml');
+    const containerInstallGuide = readTarEntryText(containerTarBytes, 'INSTALL.md');
+    assert.ok(containerInstallGuide.includes('Configuration Files'));
+    assert.ok(containerInstallGuide.includes('/run/secrets/clawrouter-postgres-password'));
+    assert.ok(containerInstallGuide.includes('/run/secrets/clawrouter-redis-password'));
+    assert.ok(containerInstallGuide.includes('Redis is optional and disabled by default'));
+    assert.ok(containerInstallGuide.includes(':ro'));
+    assert.ok(!containerInstallGuide.includes('--secret clawrouter-postgres-password'));
     assert.equal(
       containerResult.manifest.generatedArtifacts.some((artifact) =>
         artifact.path === 'container/Containerfile'
@@ -2002,14 +2258,115 @@ test('install package builder emits service and container deployment packages fr
     const desktopConfigTemplate = readTarEntryText(desktopTarBytes, 'config/clawrouter.toml.example');
     const desktopMetadata = JSON.parse(readTarEntryText(desktopTarBytes, 'desktop/metadata.json'));
     assert.ok(desktopConfigTemplate.includes('engine = "sqlite"'));
+    assert.ok(desktopConfigTemplate.includes('[redis]'));
+    assert.ok(desktopConfigTemplate.includes('enabled = false'));
     assert.ok(desktopConfigTemplate.includes('${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml'));
     assert.ok(desktopConfigTemplate.includes('${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite'));
+    assert.ok(desktopConfigTemplate.includes('course_upload_root = "${XDG_DATA_HOME:-~/.local/share}/clawrouter/uploads/courses"'));
+    assert.ok(desktopConfigTemplate.includes('[courses]'));
+    assert.ok(desktopConfigTemplate.includes('video_upload_max_bytes = 1073741824'));
+    assert.ok(desktopConfigTemplate.includes('video_upload_body_limit_bytes = 1074790400'));
+    assert.ok(desktopConfigTemplate.includes('[request_limits]'));
+    assert.ok(desktopConfigTemplate.includes('admin_app_json_body_max_bytes = 131072'));
+    assert.ok(desktopConfigTemplate.includes('forum_json_body_max_bytes = 262144'));
     assert.equal(desktopMetadata.database.defaultEngine, 'sqlite');
+    assert.equal(desktopMetadata.redis.enabledByDefault, false);
+    assert.equal(desktopMetadata.courses.uploadRoot, '${XDG_DATA_HOME:-~/.local/share}/clawrouter/uploads/courses');
+    assert.equal(desktopMetadata.courses.videoUploadMaxBytes, 1073741824);
+    assert.equal(desktopMetadata.requestLimits.paymentCallbackBodyMaxBytes, 65536);
     assert.equal(desktopMetadata.database.requiresExternalDatabase, false);
     const desktopInstallGuide = readTarEntryText(desktopTarBytes, 'INSTALL.md');
     assert.ok(desktopInstallGuide.includes('Desktop deployments default to SQLite.'));
+    assert.ok(desktopInstallGuide.includes('Redis is optional and disabled by default'));
     assert.ok(desktopInstallGuide.includes('${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml'));
     assert.ok(desktopInstallGuide.includes('${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite'));
+    assert.ok(desktopInstallGuide.includes('Configuration Files'));
+    assert.ok(desktopInstallGuide.includes('Database: SQLite'));
+    assert.ok(desktopInstallGuide.includes('First Start'));
+    assert.ok(desktopInstallGuide.includes('Request body limits are configured in [request_limits].'));
+    assert.ok(desktopInstallGuide.includes('/opt/clawrouter/bin/clawrouterctl ensure'));
+    assert.ok(desktopInstallGuide.includes('/opt/clawrouter/bin/clawrouterctl refresh-catalog --force'));
+    assert.ok(desktopInstallGuide.includes('/opt/clawrouter/bin/clawrouter'));
+  } finally {
+    rmSync(fixtureRoot, { recursive: true, force: true });
+  }
+});
+
+test('generated install guides use native desktop install paths across platforms', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'build-claw-router-install-package.mjs')).href
+  );
+  const planner = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'plan-claw-router-install-packages.mjs')).href
+  );
+
+  const plan = planner.createInstallPackagePlan({
+    version: '0.1.0',
+    platforms: ['windows', 'macos'],
+    architectures: ['x64'],
+    deploymentModes: ['desktop'],
+  });
+  const windowsDesktop = plan.packages.find((item) => item.id === 'windows-x64-desktop');
+  const macosDesktop = plan.packages.find((item) => item.id === 'macos-x64-desktop');
+
+  const windowsGuide = module.createInstallGuide(windowsDesktop);
+  assert.ok(windowsGuide.includes('```powershell'));
+  assert.ok(windowsGuide.includes('& "C:/Program Files/ClawRouter/bin/clawrouterctl.exe" ensure'));
+  assert.ok(windowsGuide.includes('& "C:/Program Files/ClawRouter/bin/clawrouterctl.exe" refresh-catalog --force'));
+  assert.ok(windowsGuide.includes('& "C:/Program Files/ClawRouter/bin/clawrouter.exe"'));
+  assert.ok(!windowsGuide.includes('.\\bin\\clawrouterctl.exe ensure'));
+
+  const macosGuide = module.createInstallGuide(macosDesktop);
+  assert.ok(macosGuide.includes('/opt/clawrouter/bin/clawrouterctl ensure'));
+  assert.ok(macosGuide.includes('/opt/clawrouter/bin/clawrouterctl refresh-catalog --force'));
+  assert.ok(macosGuide.includes('/opt/clawrouter/bin/clawrouter'));
+  assert.ok(!macosGuide.includes('./bin/clawrouterctl ensure'));
+});
+
+test('macOS service packages run initialization through a launchd runner', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'build-claw-router-install-package.mjs')).href
+  );
+
+  const fixtureRoot = path.join(workspaceRoot, '.tmp', 'install-package-macos-service-runner-test');
+  const stagingRoot = path.join(fixtureRoot, 'staging');
+  const outputDir = path.join(fixtureRoot, 'out');
+  rmSync(fixtureRoot, { recursive: true, force: true });
+  mkdirSync(path.join(stagingRoot, 'bin'), { recursive: true });
+  mkdirSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives'), { recursive: true });
+  writeFileSync(path.join(stagingRoot, 'bin', 'clawrouter'), 'gateway-binary');
+  writeFileSync(path.join(stagingRoot, 'bin', 'clawrouterctl'), 'installer-binary');
+  writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'index.html'), '<!doctype html>');
+  writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives', 'sdk.zip'), 'sdk-archive');
+  writeFileSync(path.join(stagingRoot, '.env.release.example'), 'PORTAL_PUBLIC_API_BASE_URL=/v1\n');
+
+  try {
+    const servicePlan = module.createInstallPackageBuildPlan({
+      packageId: 'macos-x64-service',
+      stagingRoot,
+      outputDir,
+      version: '0.1.0',
+    });
+    assert.ok(servicePlan.entries.some((entry) =>
+      entry.archivePath === 'service/macos/clawrouter-service-runner'
+      && entry.generated
+      && entry.generatedKind === 'service-runner'
+      && entry.mode === 0o755
+    ));
+    assert.deepEqual(module.validateInstallPackageBuildPlan(servicePlan), []);
+
+    const serviceResult = await module.buildInstallPackageArchive(servicePlan);
+    const tarBytes = gunzipSync(readFileSync(serviceResult.archivePath));
+    const tarEntries = readTarEntries(tarBytes);
+    assert.equal(tarEntries.get('service/macos/clawrouter-service-runner')?.mode, 0o755);
+    const runnerText = readTarEntryText(tarBytes, 'service/macos/clawrouter-service-runner');
+    assert.ok(runnerText.includes('/opt/clawrouter/bin/clawrouterctl ensure'));
+    assert.ok(runnerText.includes('/opt/clawrouter/bin/clawrouterctl refresh-catalog --force'));
+    assert.ok(runnerText.includes('exec /opt/clawrouter/bin/clawrouter "$@"'));
+
+    const plistText = readTarEntryText(tarBytes, 'service/macos/com.sdkwork.clawrouter.plist');
+    assert.ok(plistText.includes('/opt/clawrouter/service/macos/clawrouter-service-runner'));
+    assert.ok(!plistText.includes('/opt/clawrouter/bin/clawrouter</string>'));
   } finally {
     rmSync(fixtureRoot, { recursive: true, force: true });
   }
@@ -2070,7 +2427,7 @@ test('native installer builder emits apt-installable Debian packages for Linux s
     outputDir: null,
     packageId: 'linux-x64-service',
     stagingRoot: null,
-    version: '0.2.0',
+    version: '0.3.0',
   });
 
   const fixtureRoot = path.join(workspaceRoot, '.tmp', 'native-installer-deb-test');
@@ -2094,14 +2451,43 @@ test('native installer builder emits apt-installable Debian packages for Linux s
     });
     assert.equal(plan.nativeFormat, 'deb');
     assert.equal(plan.buildTool, 'internal-deb');
-    assert.equal(plan.installerName, 'clawrouter-linux-x64-service-0.1.0.deb');
+    assert.equal(plan.installerName, 'clawrouter-linux-x64-server-0.1.0.deb');
     assert.deepEqual(module.validateNativeInstallerBuildPlan(plan), []);
 
     const result = await module.buildNativeInstaller(plan);
-    assert.equal(result.installer.file, 'clawrouter-linux-x64-service-0.1.0.deb');
+    assert.equal(result.installer.file, 'clawrouter-linux-x64-server-0.1.0.deb');
     assert.equal(result.installer.format, 'deb');
     assert.equal(result.installer.kind, 'native-installer');
     assert.match(result.installer.sha256, /^[a-f0-9]{64}$/u);
+    assert.equal(result.manifest.nativeInstall.schemaVersion, '2026-05-16.native-install-layout.v1');
+    assert.equal(result.manifest.nativeInstall.format, 'deb');
+    assert.equal(result.manifest.nativeInstall.installRoot, '/opt/clawrouter');
+    assert.equal(result.manifest.nativeInstall.files.binary, '/opt/clawrouter/bin/clawrouter');
+    assert.equal(result.manifest.nativeInstall.files.installer, '/opt/clawrouter/bin/clawrouterctl');
+    assert.equal(result.manifest.nativeInstall.files.runtimeConfig, '/etc/clawrouter/clawrouter.toml');
+    assert.equal(result.manifest.nativeInstall.files.runtimeConfigTemplate, '/etc/clawrouter/clawrouter.toml.example');
+    assert.equal(result.manifest.nativeInstall.files.serviceEnvironment, '/etc/clawrouter/clawrouter.env');
+    assert.equal(result.manifest.nativeInstall.files.passwordFile, '/etc/clawrouter/database.secret');
+    assert.equal(result.manifest.nativeInstall.files.redisPasswordFile, '/etc/clawrouter/redis.secret');
+    assert.equal(result.manifest.nativeInstall.files.installManifest, '/usr/share/clawrouter/install-manifest.json');
+    assert.equal(result.manifest.nativeInstall.service.manager, 'systemd');
+    assert.equal(result.manifest.nativeInstall.service.name, 'clawrouter.service');
+    assert.equal(result.manifest.nativeInstall.service.enabledOnInstall, true);
+    assert.equal(result.manifest.nativeInstall.service.startedOnInstall, false);
+    assert.ok(result.manifest.nativeInstall.permissions.some((item) =>
+      item.path === '/etc/clawrouter/database.secret'
+      && item.owner === 'root'
+      && item.group === 'sdkwork'
+      && item.mode === '0640'
+    ));
+    assert.ok(result.manifest.nativeInstall.permissions.some((item) =>
+      item.path === '/etc/clawrouter/redis.secret'
+      && item.owner === 'root'
+      && item.group === 'sdkwork'
+      && item.mode === '0640'
+    ));
+    assert.equal(result.manifest.nativeInstall.commands.configure[0], 'sudo editor /etc/clawrouter/clawrouter.toml');
+    assert.equal(result.manifest.nativeInstall.commands.start, 'sudo systemctl start clawrouter');
 
     const arEntries = readArEntries(readFileSync(result.installerPath));
     assert.ok(arEntries.has('debian-binary'));
@@ -2116,7 +2502,21 @@ test('native installer builder emits apt-installable Debian packages for Linux s
     const postinstText = readTarEntryText(controlTar, './postinst');
     assert.ok(postinstText.includes('/etc/clawrouter/clawrouter.env'));
     assert.ok(postinstText.includes('/etc/clawrouter/database.secret'));
+    assert.ok(postinstText.includes('/etc/clawrouter/redis.secret'));
+    assert.ok(postinstText.includes('chown root:sdkwork /etc/clawrouter'));
+    assert.ok(postinstText.includes('chmod 0750 /etc/clawrouter'));
+    assert.ok(postinstText.includes('chown root:sdkwork /etc/clawrouter/clawrouter.toml.example'));
+    assert.ok(postinstText.includes('chmod 0640 /etc/clawrouter/clawrouter.toml.example'));
     assert.ok(postinstText.includes('SDKWORK_CLAW_DEPLOYMENT_MODE=server'));
+    assert.ok(postinstText.includes('ClawRouter installation summary'));
+    assert.ok(postinstText.includes('Runtime TOML: /etc/clawrouter/clawrouter.toml'));
+    assert.ok(postinstText.includes('Service environment: /etc/clawrouter/clawrouter.env'));
+    assert.ok(postinstText.includes('PostgreSQL password file: /etc/clawrouter/database.secret'));
+    assert.ok(postinstText.includes('Optional Redis password file: /etc/clawrouter/redis.secret'));
+    assert.ok(postinstText.includes('Redis is disabled by default; enable [redis] only when a deployment needs shared cache, locks, queues, or rate-limit buckets.'));
+    assert.ok(postinstText.includes('sudo editor /etc/clawrouter/clawrouter.toml'));
+    assert.ok(postinstText.includes('sudo editor /etc/clawrouter/database.secret'));
+    assert.ok(postinstText.includes('sudo systemctl start clawrouter'));
     assert.ok(postinstText.includes('systemctl daemon-reload'));
     assert.ok(postinstText.includes('systemctl enable clawrouter.service'));
     assert.ok(!postinstText.includes('systemctl enable --now clawrouter.service'));
@@ -2133,11 +2533,88 @@ test('native installer builder emits apt-installable Debian packages for Linux s
     assert.ok(systemdText.includes('EnvironmentFile=-/etc/clawrouter/clawrouter.env'));
     assert.ok(systemdText.includes('ExecStartPre=/opt/clawrouter/bin/clawrouterctl ensure'));
     assert.ok(systemdText.includes('ExecStartPre=/opt/clawrouter/bin/clawrouterctl refresh-catalog --force'));
+    assert.ok(systemdText.includes('UMask=0027'));
+    assert.ok(systemdText.includes('StateDirectory=clawrouter'));
+    assert.ok(systemdText.includes('LogsDirectory=clawrouter'));
+    assert.ok(systemdText.includes('ConfigurationDirectory=clawrouter'));
+    assert.ok(systemdText.includes('ProtectKernelTunables=true'));
+    assert.ok(systemdText.includes('ProtectKernelModules=true'));
+    assert.ok(systemdText.includes('ProtectControlGroups=true'));
+    assert.ok(systemdText.includes('RestrictSUIDSGID=true'));
+    assert.ok(systemdText.includes('SystemCallArchitectures=native'));
+    assert.ok(systemdText.includes('LimitNOFILE=65535'));
+    assert.ok(systemdText.includes('ReadWritePaths=/var/lib/clawrouter /var/log/clawrouter'));
+    assert.ok(systemdText.includes('ReadOnlyPaths=/etc/clawrouter'));
+    assert.ok(!systemdText.includes('ReadWritePaths=/var/lib/clawrouter /var/log/clawrouter /etc/clawrouter'));
 
     const aggregateManifest = JSON.parse(readFileSync(path.join(outputDir, 'install-packages-manifest.json'), 'utf8'));
     assert.deepEqual(aggregateManifest.archives.map((archive) => archive.file), [
-      'clawrouter-linux-x64-service-0.1.0.deb',
+      'clawrouter-linux-x64-server-0.1.0.deb',
     ]);
+  } finally {
+    rmSync(fixtureRoot, { recursive: true, force: true });
+  }
+});
+
+test('native installer builder keeps Linux desktop packages user-scoped and self-describing', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'build-claw-router-native-installer.mjs')).href
+  );
+
+  const fixtureRoot = path.join(workspaceRoot, '.tmp', 'native-installer-linux-desktop-test');
+  const stagingRoot = path.join(fixtureRoot, 'staging');
+  const outputDir = path.join(fixtureRoot, 'out');
+  rmSync(fixtureRoot, { recursive: true, force: true });
+  mkdirSync(path.join(stagingRoot, 'bin'), { recursive: true });
+  mkdirSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives'), { recursive: true });
+  writeFileSync(path.join(stagingRoot, 'bin', 'clawrouter'), 'gateway-binary');
+  writeFileSync(path.join(stagingRoot, 'bin', 'clawrouterctl'), 'installer-binary');
+  writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'index.html'), '<!doctype html>');
+  writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives', 'sdk.zip'), 'sdk-archive');
+  writeFileSync(path.join(stagingRoot, '.env.release.example'), 'PORTAL_PUBLIC_API_BASE_URL=/v1\n');
+
+  try {
+    const plan = module.createNativeInstallerBuildPlan({
+      packageId: 'linux-x64-desktop',
+      stagingRoot,
+      outputDir,
+      version: '0.1.0',
+    });
+    assert.equal(plan.nativeFormat, 'deb');
+    assert.deepEqual(module.validateNativeInstallerBuildPlan(plan), []);
+
+    const result = await module.buildNativeInstaller(plan);
+    assert.equal(result.installer.file, 'clawrouter-linux-x64-desktop-0.1.0.deb');
+    assert.equal(result.manifest.installConfiguration.database.engine, 'sqlite');
+    assert.equal(result.manifest.installConfiguration.database.externalRequired, false);
+    assert.equal(result.manifest.installConfiguration.redis.enabledByDefault, false);
+    assert.equal(result.manifest.installConfiguration.redis.required, false);
+    assert.equal(result.manifest.nativeInstall.schemaVersion, '2026-05-16.native-install-layout.v1');
+    assert.equal(result.manifest.nativeInstall.format, 'deb');
+    assert.equal(result.manifest.nativeInstall.files.runtimeConfigTemplate, '/usr/share/clawrouter/config/clawrouter.toml.example');
+    assert.equal(result.manifest.nativeInstall.files.runtimeConfig, '${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml');
+    assert.equal(result.manifest.nativeInstall.files.installManifest, '/usr/share/clawrouter/install-manifest.json');
+    assert.equal(result.manifest.nativeInstall.service, null);
+    assert.deepEqual(result.manifest.nativeInstall.permissions, []);
+    assert.equal(
+      result.manifest.installConfiguration.files.runtimeConfig,
+      '${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml',
+    );
+
+    const arEntries = readArEntries(readFileSync(result.installerPath));
+    const controlTar = gunzipSync(arEntries.get('control.tar.gz'));
+    const postinstText = readTarEntryText(controlTar, './postinst');
+    assert.ok(postinstText.includes('ClawRouter installation summary'));
+    assert.ok(postinstText.includes('Desktop config file: ${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml'));
+    assert.ok(postinstText.includes('Database: SQLite'));
+    assert.ok(!postinstText.includes('/etc/clawrouter/database.secret'));
+    assert.ok(!postinstText.includes('SDKWORK_CLAW_DEPLOYMENT_MODE=server'));
+    assert.ok(!postinstText.includes('systemctl enable clawrouter.service'));
+
+    const dataTar = gunzipSync(arEntries.get('data.tar.gz'));
+    const dataEntries = readTarEntries(dataTar);
+    assert.ok(dataEntries.has('./usr/share/clawrouter/config/clawrouter.toml.example'));
+    assert.ok(!dataEntries.has('./etc/clawrouter/clawrouter.toml.example'));
   } finally {
     rmSync(fixtureRoot, { recursive: true, force: true });
   }
@@ -2159,9 +2636,36 @@ test('native installer builder CLI validates cross-platform service and desktop 
   assert.equal(payload.ok, true);
   assert.equal(payload.plans.length, 12);
   assert.deepEqual(payload.issues, []);
-  assert.ok(payload.plans.some((plan) => plan.installerName === 'clawrouter-linux-x64-service-0.2.0.deb'));
-  assert.ok(payload.plans.some((plan) => plan.installerName === 'clawrouter-windows-arm64-desktop-0.2.0.msi'));
-  assert.ok(payload.plans.some((plan) => plan.installerName === 'clawrouter-macos-x64-service-0.2.0.pkg'));
+  assert.ok(payload.plans.some((plan) => plan.installerName === 'clawrouter-linux-x64-server-0.3.0.deb'));
+  assert.ok(payload.plans.some((plan) => plan.installerName === 'clawrouter-windows-arm64-desktop-0.3.0.msi'));
+  assert.ok(payload.plans.some((plan) => plan.installerName === 'clawrouter-macos-x64-server-0.3.0.pkg'));
+  const linuxService = payload.plans.find((plan) => plan.package.id === 'linux-x64-service');
+  assert.equal(linuxService.nativeInstallLayout.schemaVersion, '2026-05-16.native-install-layout.v1');
+  assert.equal(linuxService.nativeInstallLayout.files.runtimeConfig, '/etc/clawrouter/clawrouter.toml');
+  assert.equal(linuxService.nativeInstallLayout.service.name, 'clawrouter.service');
+  assert.equal(linuxService.nativeInstallLayout.commands.start, 'sudo systemctl start clawrouter');
+  const windowsService = payload.plans.find((plan) => plan.package.id === 'windows-x64-service');
+  assert.equal(windowsService.nativeInstallLayout.format, 'msi');
+  assert.equal(windowsService.nativeInstallLayout.installRoot, '%ProgramFiles%/ClawRouter');
+  assert.equal(windowsService.nativeInstallLayout.files.binary, '%ProgramFiles%/ClawRouter/bin/clawrouter.exe');
+  assert.equal(windowsService.nativeInstallLayout.commands.installService, '%ProgramFiles%/ClawRouter/bin/clawrouterctl.exe ensure');
+  const macosDesktop = payload.plans.find((plan) => plan.package.id === 'macos-arm64-desktop');
+  assert.equal(macosDesktop.nativeInstallLayout.format, 'pkg');
+  assert.equal(macosDesktop.nativeInstallLayout.service, null);
+  assert.equal(
+    macosDesktop.nativeInstallLayout.files.runtimeConfigTemplate,
+    '/usr/local/share/clawrouter/config/clawrouter.toml.example',
+  );
+  assert.equal(
+    macosDesktop.nativeInstallLayout.files.runtimeConfig,
+    '~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml',
+  );
+  const macosService = payload.plans.find((plan) => plan.package.id === 'macos-x64-service');
+  assert.equal(macosService.nativeInstallLayout.service.manager, 'launchd');
+  assert.equal(
+    macosService.nativeInstallLayout.files.serviceRunner,
+    '/opt/clawrouter/service/macos/clawrouter-service-runner',
+  );
 });
 
 test('install package tar writer supports long production asset paths', async () => {
@@ -2266,7 +2770,7 @@ test('install init smoke validates fast initialization without starting dev serv
     packageId: 'windows-x64-archive',
     packageRoot: null,
     tmpRoot: null,
-    version: '0.2.0',
+    version: '0.3.0',
   });
 
   const fixtureRoot = path.join(workspaceRoot, '.tmp', 'install-init-smoke-test');
@@ -3953,6 +4457,16 @@ test('environment and deployment specs document Claw Router runtime config stand
     assert.ok(content.includes('SDKWORK_CLAW_CONFIG_FILE'));
     assert.ok(content.includes('SDKWORK_CLAW_DEPLOYMENT_MODE'));
     assert.ok(content.includes('SDKWORK_CLAW_DATABASE_URL'));
+    assert.ok(content.includes('SDKWORK_CLAW_REDIS_HOST'));
+    assert.ok(content.includes('SDKWORK_CLAW_REDIS_PORT'));
+    assert.ok(content.includes('SDKWORK_CLAW_REDIS_DATABASE'));
+    assert.ok(content.includes('SDKWORK_CLAW_REDIS_URL'));
+    assert.ok(content.includes('SDKWORK_CLAW_REDIS_KEY_PREFIX'));
+    assert.ok(content.includes('SDKWORK_CLAW_REDIS_TLS'));
+    assert.ok(content.includes('SDKWORK_CLAW_REDIS_MAX_CONNECTIONS'));
+    assert.ok(content.includes('SDKWORK_CLAW_REDIS_CONNECT_TIMEOUT_MILLIS'));
+    assert.ok(content.includes('SDKWORK_CLAW_REDIS_COMMAND_TIMEOUT_MILLIS'));
+    assert.ok(content.includes('SDKWORK_CLAW_REDIS_POOL_IDLE_TIMEOUT_SECONDS'));
     assert.ok(content.includes('PORTAL_PUBLIC_BACKEND_API_BASE_URL'));
     assert.ok(content.includes('PORTAL_PUBLIC_APP_API_BASE_URL'));
     assert.ok(content.includes('/etc/clawrouter/clawrouter.toml'));
@@ -3961,7 +4475,14 @@ test('environment and deployment specs document Claw Router runtime config stand
   }
   assert.ok(environmentSpec.includes('Server and container deployments default to PostgreSQL.'));
   assert.ok(environmentSpec.includes('password_file = "/etc/clawrouter/database.secret"'));
+  assert.ok(environmentSpec.includes('[redis]'));
+  assert.ok(environmentSpec.includes('enabled = false'));
+  assert.ok(environmentSpec.includes('host = "redis.example.com"'));
+  assert.ok(environmentSpec.includes('port = 6379'));
+  assert.ok(environmentSpec.includes('database = 0'));
+  assert.ok(environmentSpec.includes('password_file = "/etc/clawrouter/redis.secret"'));
   assert.ok(environmentSpec.includes('Desktop deployments default to SQLite.'));
+  assert.ok(deploymentSpec.includes('Redis is optional and disabled by default.'));
   assert.ok(deploymentSpec.includes('clawrouterctl ensure'));
   assert.ok(deploymentSpec.includes('clawrouterctl refresh-catalog --force'));
 });

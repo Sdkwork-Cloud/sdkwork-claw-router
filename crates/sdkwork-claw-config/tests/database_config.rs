@@ -1,6 +1,6 @@
 use sdkwork_claw_config::{
     DatabaseConfig, DatabaseEngine, RuntimeConfigInitializationAction, RuntimeConfigLocation,
-    RuntimeConfigProfile, StartupInstallMode,
+    RuntimeConfigProfile, RuntimeTomlConfig, StartupInstallMode,
 };
 use std::env;
 use std::fs;
@@ -621,6 +621,30 @@ fn runtime_config_locations_resolve_to_real_os_paths_for_process_lookup() {
     assert_eq!(
         "/Users/ada/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml",
         slash_path(&macos_desktop.config_file)
+    );
+}
+
+#[test]
+fn runtime_config_profile_reads_runtime_toml_with_env_override() {
+    let _env_lock = ENV_LOCK.lock().unwrap();
+    let _guard = EnvGuard::set(&[("SDKWORK_CLAW_DEPLOYMENT_MODE", None)]);
+    let runtime_toml = RuntimeTomlConfig::from_toml_str(
+        r#"
+[runtime]
+deployment_mode = "desktop"
+"#,
+    )
+    .unwrap();
+
+    assert_eq!(
+        RuntimeConfigProfile::Desktop,
+        RuntimeConfigProfile::from_env_or_runtime_toml(Some(&runtime_toml)).unwrap()
+    );
+
+    let _guard = EnvGuard::set(&[("SDKWORK_CLAW_DEPLOYMENT_MODE", Some("server".to_owned()))]);
+    assert_eq!(
+        RuntimeConfigProfile::Server,
+        RuntimeConfigProfile::from_env_or_runtime_toml(Some(&runtime_toml)).unwrap()
     );
 }
 

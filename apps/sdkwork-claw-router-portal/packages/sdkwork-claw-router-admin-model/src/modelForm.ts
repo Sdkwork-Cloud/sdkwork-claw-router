@@ -8,7 +8,6 @@ type KnownVendorOption = {
 
 const DEFAULT_VENDOR_COLOR = 'bg-indigo-500';
 const DEFAULT_VENDOR_DESCRIPTION = 'Custom model vendor';
-const DEFAULT_CONTEXT_TOKENS = '8k';
 const MODEL_TYPES: readonly Model['type'][] = ['Chat', 'Image', 'Audio', 'Embedding', 'Music', 'SoundEffect', 'Video'];
 
 export function createVendorInputFromForm(
@@ -46,7 +45,16 @@ export function createModelInputFromForm(formData: FormData, vendorId: string): 
     type: readModelType(formData.get('type')),
     priceIn: readDecimalText(formData.get('priceIn')),
     priceOut: readDecimalText(formData.get('priceOut')),
-    contextTokens: firstNonEmpty(readFormText(formData, 'contextTokens'), DEFAULT_CONTEXT_TOKENS),
+    contextTokens: readRequiredFormText(formData, 'contextTokens'),
+    maxOutputTokens: readOptionalNonNegativeInteger(formData, 'maxOutputTokens'),
+    description: readOptionalFormText(formData, 'description'),
+    capabilityIntro: readOptionalFormText(formData, 'capabilityIntro'),
+    limitations: readCsvFormText(formData, 'limitations'),
+    supportedLanguages: readCsvFormText(formData, 'supportedLanguages'),
+    useCases: readCsvFormText(formData, 'useCases'),
+    supportsStreaming: readFormBoolean(formData, 'supportsStreaming'),
+    supportsTools: readFormBoolean(formData, 'supportsTools'),
+    supportsJsonSchema: readFormBoolean(formData, 'supportsJsonSchema'),
   };
 }
 
@@ -66,15 +74,74 @@ function readFormText(formData: FormData, key: string): string {
   return typeof value === 'string' ? value.trim() : '';
 }
 
-function readModelType(value: FormDataEntryValue | null): Model['type'] {
-  if (typeof value === 'string' && MODEL_TYPES.includes(value as Model['type'])) {
-    return value as Model['type'];
+function readOptionalFormText(formData: FormData, key: string): string | null {
+  const normalized = readFormText(formData, key);
+  return normalized || null;
+}
+
+function readRequiredFormText(formData: FormData, key: string): string {
+  const normalized = readFormText(formData, key);
+  if (!normalized) {
+    throw new Error(`${key} is required`);
   }
-  return 'Chat';
+  return normalized;
+}
+
+function readModelType(value: FormDataEntryValue | null): Model['type'] {
+  if (typeof value !== 'string' || !value.trim()) {
+    throw new Error('Model type is required');
+  }
+  const normalized = value.trim();
+  if (MODEL_TYPES.includes(normalized as Model['type'])) {
+    return normalized as Model['type'];
+  }
+  throw new Error(`Unsupported model type: ${normalized}`);
 }
 
 function readDecimalText(value: FormDataEntryValue | null): string {
   return typeof value === 'string' ? value.trim().replace(/,/g, '') : '';
+}
+
+function readOptionalNonNegativeInteger(formData: FormData, key: string): number | null {
+  const value = readFormText(formData, key);
+  if (!value) {
+    return null;
+  }
+  if (!/^\d+$/.test(value)) {
+    throw new Error(`${key} must be a non-negative integer`);
+  }
+  const parsed = Number(value);
+  if (!Number.isSafeInteger(parsed)) {
+    throw new Error(`${key} must be a non-negative integer`);
+  }
+  return parsed;
+}
+
+function readCsvFormText(formData: FormData, key: string): string[] {
+  const value = readFormText(formData, key);
+  if (!value) {
+    return [];
+  }
+  return uniqueStrings(value.split(/[\n,]/u).map(item => item.trim()).filter(Boolean));
+}
+
+function readFormBoolean(formData: FormData, key: string): boolean {
+  const values = formData.getAll(key).filter((value): value is string => typeof value === 'string');
+  const value = values.at(-1)?.trim().toLowerCase() ?? '';
+  return value === 'true' || value === '1' || value === 'yes' || value === 'on';
+}
+
+function uniqueStrings(values: string[]): string[] {
+  const seen = new Set<string>();
+  const result: string[] = [];
+  for (const value of values) {
+    const key = value.toLowerCase();
+    if (!seen.has(key)) {
+      seen.add(key);
+      result.push(value);
+    }
+  }
+  return result;
 }
 
 function firstNonEmpty(...values: Array<string | undefined>): string {

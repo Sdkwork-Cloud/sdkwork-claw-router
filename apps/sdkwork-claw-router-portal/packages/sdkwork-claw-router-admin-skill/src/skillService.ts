@@ -436,8 +436,8 @@ export class AdminSkillService {
     const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.delete(
       requiredSafePathSegment(packageId, 'packageId'),
     );
-    ensurePlusApiSuccess(result, 'Failed to delete skill package');
-    return readBoolean(readApiRecord(result), 'deleted', false);
+    ensureDeleteResult(result, 'Skill package delete confirmation is required');
+    return true;
   }
 
   static async enableSkillPackage(packageId: string): Promise<AdminSkillPackage> {
@@ -446,7 +446,11 @@ export class AdminSkillService {
       createRequestParams('admin-skill-package-enable'),
     );
     ensurePlusApiSuccess(result, 'Failed to enable skill package');
-    return normalizeSkillPackage(readRequiredApiItem(result, 'Enabled skill package response is missing data'));
+    return ensureSkillPackageEnabled(
+      normalizeSkillPackage(readRequiredApiItem(result, 'Enabled skill package response is missing data')),
+      true,
+      'Enabled skill package response must have enabled=true',
+    );
   }
 
   static async disableSkillPackage(packageId: string): Promise<AdminSkillPackage> {
@@ -455,7 +459,11 @@ export class AdminSkillService {
       createRequestParams('admin-skill-package-disable'),
     );
     ensurePlusApiSuccess(result, 'Failed to disable skill package');
-    return normalizeSkillPackage(readRequiredApiItem(result, 'Disabled skill package response is missing data'));
+    return ensureSkillPackageEnabled(
+      normalizeSkillPackage(readRequiredApiItem(result, 'Disabled skill package response is missing data')),
+      false,
+      'Disabled skill package response must have enabled=false',
+    );
   }
 
   static async fetchSkills(query: AdminSkillListInput = {}): Promise<AdminSkill[]> {
@@ -496,8 +504,8 @@ export class AdminSkillService {
     const result = await getClawRouterBackendSdkClient().ecosystem.skills.delete(
       requiredSafePathSegment(skillId, 'skillId'),
     );
-    ensurePlusApiSuccess(result, 'Failed to delete skill');
-    return readBoolean(readApiRecord(result), 'deleted', false);
+    ensureDeleteResult(result, 'Skill delete confirmation is required');
+    return true;
   }
 
   static async enableSkill(skillId: string): Promise<AdminSkill> {
@@ -506,7 +514,11 @@ export class AdminSkillService {
       createRequestParams('admin-skill-enable'),
     );
     ensurePlusApiSuccess(result, 'Failed to enable skill');
-    return normalizeSkill(readRequiredApiItem(result, 'Enabled skill response is missing data'));
+    return ensureSkillEnabled(
+      normalizeSkill(readRequiredApiItem(result, 'Enabled skill response is missing data')),
+      true,
+      'Enabled skill response must have enabled=true',
+    );
   }
 
   static async disableSkill(skillId: string): Promise<AdminSkill> {
@@ -515,7 +527,11 @@ export class AdminSkillService {
       createRequestParams('admin-skill-disable'),
     );
     ensurePlusApiSuccess(result, 'Failed to disable skill');
-    return normalizeSkill(readRequiredApiItem(result, 'Disabled skill response is missing data'));
+    return ensureSkillEnabled(
+      normalizeSkill(readRequiredApiItem(result, 'Disabled skill response is missing data')),
+      false,
+      'Disabled skill response must have enabled=false',
+    );
   }
 
   static async publishSkill(skillId: string): Promise<AdminSkill> {
@@ -524,7 +540,11 @@ export class AdminSkillService {
       createRequestParams('admin-skill-publish'),
     );
     ensurePlusApiSuccess(result, 'Failed to publish skill');
-    return normalizeSkill(readRequiredApiItem(result, 'Published skill response is missing data'));
+    return ensureSkillMarketStatus(
+      normalizeSkill(readRequiredApiItem(result, 'Published skill response is missing data')),
+      'PUBLISHED',
+      'Published skill response must have PUBLISHED market status',
+    );
   }
 
   static async offlineSkill(skillId: string): Promise<AdminSkill> {
@@ -533,7 +553,11 @@ export class AdminSkillService {
       createRequestParams('admin-skill-offline'),
     );
     ensurePlusApiSuccess(result, 'Failed to offline skill');
-    return normalizeSkill(readRequiredApiItem(result, 'Offline skill response is missing data'));
+    return ensureSkillMarketStatus(
+      normalizeSkill(readRequiredApiItem(result, 'Offline skill response is missing data')),
+      'OFFLINE',
+      'Offline skill response must have OFFLINE market status',
+    );
   }
 
   static async approveSkill(skillId: string, reviewComment?: string): Promise<AdminSkill> {
@@ -543,7 +567,11 @@ export class AdminSkillService {
       createRequestParams('admin-skill-review-approve'),
     );
     ensurePlusApiSuccess(result, 'Failed to approve skill');
-    return normalizeSkill(readRequiredApiItem(result, 'Approved skill response is missing data'));
+    return ensureSkillReviewStatus(
+      normalizeSkill(readRequiredApiItem(result, 'Approved skill response is missing data')),
+      'APPROVED',
+      'Approved skill response must have APPROVED review status',
+    );
   }
 
   static async rejectSkill(skillId: string, reviewComment?: string): Promise<AdminSkill> {
@@ -553,7 +581,11 @@ export class AdminSkillService {
       createRequestParams('admin-skill-review-reject'),
     );
     ensurePlusApiSuccess(result, 'Failed to reject skill');
-    return normalizeSkill(readRequiredApiItem(result, 'Rejected skill response is missing data'));
+    return ensureSkillReviewStatus(
+      normalizeSkill(readRequiredApiItem(result, 'Rejected skill response is missing data')),
+      'REJECTED',
+      'Rejected skill response must have REJECTED review status',
+    );
   }
 
   static async fetchSkillAssets(skillId: string): Promise<AdminSkillAsset[]> {
@@ -601,8 +633,8 @@ export class AdminSkillService {
       requiredSafePathSegment(assetId, 'assetId'),
       createRequestParams('admin-skill-asset-delete'),
     );
-    ensurePlusApiSuccess(result, 'Failed to delete skill asset');
-    return readBoolean(readApiRecord(result), 'deleted', false);
+    ensureDeleteResult(result, 'Skill asset delete confirmation is required');
+    return true;
   }
 
   static async fetchSkillArtifacts(skillId: string): Promise<AdminSkillArtifact[]> {
@@ -650,8 +682,8 @@ export class AdminSkillService {
       requiredSafePathSegment(artifactId, 'artifactId'),
       createRequestParams('admin-skill-artifact-delete'),
     );
-    ensurePlusApiSuccess(result, 'Failed to delete skill artifact');
-    return readBoolean(readApiRecord(result), 'deleted', false);
+    ensureDeleteResult(result, 'Skill artifact delete confirmation is required');
+    return true;
   }
 }
 
@@ -679,11 +711,11 @@ export function createSkillCategoryInputFromForm(form: FormData): AdminSkillCate
   if (path !== undefined) {
     input.path = path;
   }
-  const sortWeight = optionalFormInteger(form, 'sortWeight');
+  const sortWeight = optionalFormNonNegativeInteger(form, 'sortWeight');
   if (sortWeight !== undefined) {
     input.sortWeight = sortWeight;
   }
-  const status = optionalFormInteger(form, 'status');
+  const status = optionalFormNonNegativeInteger(form, 'status');
   if (status !== undefined) {
     input.status = status;
   }
@@ -803,6 +835,8 @@ function normalizeCreateCategoryRequest(input: AdminSkillCategoryCreateInput): A
     icon: optionalText(input.icon, 'icon', 255),
     parentId: normalizeNullableId(input.parentId),
     path: optionalText(input.path, 'path', 1024),
+    sortWeight: input.sortWeight === undefined ? undefined : nonNegativeInteger(input.sortWeight, 'sortWeight', 1_000_000),
+    status: input.status === undefined ? undefined : nonNegativeInteger(input.status, 'status', 1_000_000),
   };
 }
 
@@ -869,6 +903,7 @@ function normalizeCreatePackageRequest(input: AdminSkillPackageCreateInput): Adm
     icon: optionalUrlOrPath(input.icon, 'icon', 255),
     coverImage: optionalUrlOrPath(input.coverImage, 'coverImage', 255),
     categoryId: normalizeNullableId(input.categoryId),
+    sortWeight: input.sortWeight === undefined ? undefined : nonNegativeInteger(input.sortWeight, 'sortWeight', 1_000_000),
     tags: normalizeStringArray(input.tags, 'tags'),
   });
 }
@@ -883,6 +918,7 @@ function normalizeUpdatePackageRequest(input: AdminSkillPackageUpdateInput): Adm
     icon: normalizeNullableUrlOrPath(input.icon, 'icon', 255),
     coverImage: normalizeNullableUrlOrPath(input.coverImage, 'coverImage', 255),
     categoryId: normalizeNullableId(input.categoryId),
+    sortWeight: input.sortWeight === undefined ? undefined : nonNegativeInteger(input.sortWeight, 'sortWeight', 1_000_000),
     tags: input.tags ? normalizeStringArray(input.tags, 'tags') : undefined,
   });
 }
@@ -912,6 +948,7 @@ function normalizeCreateSkillRequest(input: AdminSkillCreateInput): AdminSkillCr
     marketStatus: readMarketStatus(input.marketStatus ?? 'DRAFT'),
     visibility: readVisibility(input.visibility ?? 'PUBLIC'),
     reviewStatus: readReviewStatus(input.reviewStatus ?? 'PENDING'),
+    recommendWeight: input.recommendWeight === undefined ? undefined : nonNegativeInteger(input.recommendWeight, 'recommendWeight', 1_000_000),
     price: normalizeNullableDecimal(input.price),
     currency: normalizeCurrency(input.currency ?? 'CNY'),
     tags: normalizeStringArray(input.tags, 'tags'),
@@ -944,6 +981,7 @@ function normalizeUpdateSkillRequest(input: AdminSkillUpdateInput): AdminSkillUp
     licenseName: normalizeNullableText(input.licenseName, 'licenseName', 128),
     sourceType: input.sourceType ? readSourceType(input.sourceType) : undefined,
     visibility: input.visibility ? readVisibility(input.visibility) : undefined,
+    recommendWeight: input.recommendWeight === undefined ? undefined : nonNegativeInteger(input.recommendWeight, 'recommendWeight', 1_000_000),
     price: normalizeNullableDecimal(input.price),
     currency: input.currency ? normalizeCurrency(input.currency) : undefined,
     tags: input.tags ? normalizeStringArray(input.tags, 'tags') : undefined,
@@ -1048,7 +1086,7 @@ function normalizeUpdateArtifactRequest(input: AdminSkillArtifactUpdateInput): A
 
 function normalizeSkillCategory(value: unknown): AdminSkillCategory {
   const item = readRequiredRecord(value, 'Skill category record is required');
-  const type = readNumber(item, 'type', 19);
+  const type = readRequiredNonNegativeInteger(item, 'type', 'Skill category type is required');
   if (type !== 19 && type !== 20) {
     throw new Error(`Unsupported skill category type: ${type}`);
   }
@@ -1058,11 +1096,11 @@ function normalizeSkillCategory(value: unknown): AdminSkillCategory {
     description: readString(item, 'description'),
     code: readString(item, 'code'),
     icon: readString(item, 'icon'),
-    sortWeight: readNumber(item, 'sortWeight'),
+    sortWeight: readRequiredNonNegativeInteger(item, 'sortWeight', 'Skill category sort weight is required'),
     parentId: readNullableString(item, 'parentId'),
     path: readString(item, 'path'),
-    visible: readBoolean(item, 'visible', true),
-    status: readNumber(item, 'status', 1),
+    visible: readRequiredBoolean(item, 'visible', 'Skill category visibility is required'),
+    status: readRequiredNonNegativeInteger(item, 'status', 'Skill category status is required'),
     type,
   };
 }
@@ -1078,13 +1116,13 @@ function normalizeSkillPackage(value: unknown): AdminSkillPackage {
     icon: readString(item, 'icon'),
     coverImage: readString(item, 'coverImage'),
     categoryId: readNullableString(item, 'categoryId'),
-    enabled: readBoolean(item, 'enabled', true),
-    featured: readBoolean(item, 'featured'),
-    sortWeight: readNumber(item, 'sortWeight'),
-    tags: uniqueStrings(readStringArray(item, 'tags')),
+    enabled: readRequiredBoolean(item, 'enabled', 'Skill package enabled flag is required'),
+    featured: readRequiredBoolean(item, 'featured', 'Skill package featured flag is required'),
+    sortWeight: readRequiredNonNegativeInteger(item, 'sortWeight', 'Skill package sort weight is required'),
+    tags: uniqueStrings(readRequiredStringArray(item, 'tags', 'Skill package tags are required')),
     latestPublishedAt: readString(item, 'latestPublishedAt'),
-    createdAt: readString(item, 'createdAt'),
-    updatedAt: readString(item, 'updatedAt'),
+    createdAt: readRequiredString(item, 'createdAt', 'Skill package created time is required'),
+    updatedAt: readRequiredString(item, 'updatedAt', 'Skill package updated time is required'),
   };
 }
 
@@ -1110,36 +1148,36 @@ function normalizeSkill(value: unknown): AdminSkill {
     homepageUrl: readString(item, 'homepageUrl'),
     documentationUrl: readString(item, 'documentationUrl'),
     licenseName: readString(item, 'licenseName'),
-    sourceType: readSourceType(readString(item, 'sourceType', 'COMMUNITY')),
-    marketStatus: readMarketStatus(readString(item, 'marketStatus', 'DRAFT')),
-    visibility: readVisibility(readString(item, 'visibility', 'PUBLIC')),
-    reviewStatus: readReviewStatus(readString(item, 'reviewStatus', 'PENDING')),
+    sourceType: readSourceType(readRequiredString(item, 'sourceType', 'Skill source type is required')),
+    marketStatus: readMarketStatus(readRequiredString(item, 'marketStatus', 'Skill market status is required')),
+    visibility: readVisibility(readRequiredString(item, 'visibility', 'Skill visibility is required')),
+    reviewStatus: readReviewStatus(readRequiredString(item, 'reviewStatus', 'Skill review status is required')),
     reviewComment: readString(item, 'reviewComment'),
     reviewedBy: readString(item, 'reviewedBy'),
     reviewedAt: readString(item, 'reviewedAt'),
-    builtin: readBoolean(item, 'builtin'),
-    isBuiltin: readBoolean(item, 'isBuiltin'),
-    enabled: readBoolean(item, 'enabled'),
-    featured: readBoolean(item, 'featured'),
-    recommendWeight: readNumber(item, 'recommendWeight'),
+    builtin: readRequiredBoolean(item, 'builtin', 'Skill builtin flag is required'),
+    isBuiltin: readRequiredBoolean(item, 'isBuiltin', 'Skill legacy builtin flag is required'),
+    enabled: readRequiredBoolean(item, 'enabled', 'Skill enabled flag is required'),
+    featured: readRequiredBoolean(item, 'featured', 'Skill featured flag is required'),
+    recommendWeight: readRequiredNonNegativeInteger(item, 'recommendWeight', 'Skill recommend weight is required'),
     price: readNullableString(item, 'price'),
-    currency: readString(item, 'currency', 'CNY'),
-    installCount: readString(item, 'installCount', '0'),
-    ratingAvg: readString(item, 'ratingAvg', '0'),
-    ratingCount: readString(item, 'ratingCount', '0'),
-    tags: uniqueStrings(readStringArray(item, 'tags')),
-    capabilities: uniqueStrings(readStringArray(item, 'capabilities')),
-    configSchema: readRecord(item, 'configSchema'),
-    defaultConfig: readRecord(item, 'defaultConfig'),
+    currency: readRequiredString(item, 'currency', 'Skill currency is required'),
+    installCount: readRequiredString(item, 'installCount', 'Skill install count is required'),
+    ratingAvg: readRequiredString(item, 'ratingAvg', 'Skill rating average is required'),
+    ratingCount: readRequiredString(item, 'ratingCount', 'Skill rating count is required'),
+    tags: uniqueStrings(readRequiredStringArray(item, 'tags', 'Skill tags are required')),
+    capabilities: uniqueStrings(readRequiredStringArray(item, 'capabilities', 'Skill capabilities are required')),
+    configSchema: readRequiredJsonRecord(item, 'configSchema', 'Skill config schema is required'),
+    defaultConfig: readRequiredJsonRecord(item, 'defaultConfig', 'Skill default config is required'),
     latestPublishedAt: readString(item, 'latestPublishedAt'),
-    createdAt: readString(item, 'createdAt'),
-    updatedAt: readString(item, 'updatedAt'),
+    createdAt: readRequiredString(item, 'createdAt', 'Skill created time is required'),
+    updatedAt: readRequiredString(item, 'updatedAt', 'Skill updated time is required'),
   };
 }
 
 function normalizeSkillAsset(value: unknown): AdminSkillAsset {
   const item = readRequiredRecord(value, 'Skill asset record is required');
-  const targetType = readNumber(item, 'targetType', 35);
+  const targetType = readRequiredNonNegativeInteger(item, 'targetType', 'Skill asset target type is required');
   if (targetType !== 35) {
     throw new Error(`Unsupported skill asset target type: ${targetType}`);
   }
@@ -1149,7 +1187,7 @@ function normalizeSkillAsset(value: unknown): AdminSkillAsset {
     targetType,
     targetId: readRequiredString(item, 'targetId', 'Skill asset target id is required'),
     artifactId: readNullableString(item, 'artifactId'),
-    assetType: readNumber(item, 'assetType', 1),
+    assetType: readRequiredNonNegativeInteger(item, 'assetType', 'Skill asset type is required'),
     assetUrl: readRequiredString(item, 'assetUrl', 'Skill asset URL is required'),
     thumbnailUrl: readNullableString(item, 'thumbnailUrl'),
     title: readNullableString(item, 'title'),
@@ -1159,17 +1197,17 @@ function normalizeSkillAsset(value: unknown): AdminSkillAsset {
     height: readNullableNumber(item, 'height'),
     durationSeconds: readNullableString(item, 'durationSeconds'),
     fileSize: readNullableNumber(item, 'fileSize'),
-    sortOrder: readNumber(item, 'sortOrder'),
-    status: readNumber(item, 'status', 1),
+    sortOrder: readRequiredNonNegativeInteger(item, 'sortOrder', 'Skill asset sort order is required'),
+    status: readRequiredNonNegativeInteger(item, 'status', 'Skill asset status is required'),
     publishedAt: readNullableString(item, 'publishedAt'),
-    createdAt: readString(item, 'createdAt'),
-    updatedAt: readString(item, 'updatedAt'),
+    createdAt: readRequiredString(item, 'createdAt', 'Skill asset created time is required'),
+    updatedAt: readRequiredString(item, 'updatedAt', 'Skill asset updated time is required'),
   };
 }
 
 function normalizeSkillArtifact(value: unknown): AdminSkillArtifact {
   const item = readRequiredRecord(value, 'Skill artifact record is required');
-  const targetType = readNumber(item, 'targetType', 35);
+  const targetType = readRequiredNonNegativeInteger(item, 'targetType', 'Skill artifact target type is required');
   if (targetType !== 35) {
     throw new Error(`Unsupported skill artifact target type: ${targetType}`);
   }
@@ -1178,23 +1216,23 @@ function normalizeSkillArtifact(value: unknown): AdminSkillArtifact {
     skillId: readRequiredString(item, 'skillId', 'Skill artifact skill id is required'),
     targetType,
     targetId: readRequiredString(item, 'targetId', 'Skill artifact target id is required'),
-    artifactType: readNumber(item, 'artifactType', 1),
+    artifactType: readRequiredNonNegativeInteger(item, 'artifactType', 'Skill artifact type is required'),
     version: readRequiredString(item, 'version', 'Skill artifact version is required'),
     platformType: readRequiredString(item, 'platformType', 'Skill artifact platform type is required'),
     osName: readRequiredString(item, 'osName', 'Skill artifact OS name is required'),
     artifactRef: readNullableString(item, 'artifactRef'),
     artifactUrl: readNullableString(item, 'artifactUrl'),
-    artifactSizeBytes: readNumber(item, 'artifactSizeBytes'),
+    artifactSizeBytes: readRequiredNonNegativeInteger(item, 'artifactSizeBytes', 'Skill artifact size is required'),
     runtime: readNullableString(item, 'runtime'),
-    frameworks: uniqueStrings(readStringArray(item, 'frameworks')),
+    frameworks: uniqueStrings(readRequiredStringArray(item, 'frameworks', 'Skill artifact frameworks are required')),
     licenseName: readNullableString(item, 'licenseName'),
     checksumHash: readNullableString(item, 'checksumHash'),
     releaseNotes: readNullableString(item, 'releaseNotes'),
-    status: readNumber(item, 'status', 1),
+    status: readRequiredNonNegativeInteger(item, 'status', 'Skill artifact status is required'),
     publishedAt: readNullableString(item, 'publishedAt'),
     deprecatedAt: readNullableString(item, 'deprecatedAt'),
-    createdAt: readString(item, 'createdAt'),
-    updatedAt: readString(item, 'updatedAt'),
+    createdAt: readRequiredString(item, 'createdAt', 'Skill artifact created time is required'),
+    updatedAt: readRequiredString(item, 'updatedAt', 'Skill artifact updated time is required'),
   };
 }
 
@@ -1224,7 +1262,7 @@ function mergeSharedSkillFormFields(input: AdminSkillCreateInput | AdminSkillUpd
       input[key] = value;
     }
   }
-  const recommendWeight = optionalFormInteger(form, 'recommendWeight');
+  const recommendWeight = optionalFormNonNegativeInteger(form, 'recommendWeight');
   if (recommendWeight !== undefined) {
     input.recommendWeight = recommendWeight;
   }
@@ -1270,7 +1308,7 @@ function mergeSharedPackageFormFields(input: AdminSkillPackageCreateInput | Admi
       input[key] = value;
     }
   }
-  const sortWeight = optionalFormInteger(form, 'sortWeight');
+  const sortWeight = optionalFormNonNegativeInteger(form, 'sortWeight');
   if (sortWeight !== undefined) {
     input.sortWeight = sortWeight;
   }
@@ -1292,7 +1330,7 @@ function mergeSharedAssetFormFields(input: AdminSkillAssetCreateInput | AdminSki
     input.artifactId = artifactId;
   }
   for (const key of ['assetType', 'width', 'height', 'fileSize', 'sortOrder', 'status'] as const) {
-    const value = optionalFormInteger(form, key);
+    const value = optionalFormNonNegativeInteger(form, key);
     if (value !== undefined) {
       input[key] = value;
     }
@@ -1318,7 +1356,7 @@ function mergeSharedAssetFormFields(input: AdminSkillAssetCreateInput | AdminSki
 
 function mergeSharedArtifactFormFields(input: AdminSkillArtifactCreateInput | AdminSkillArtifactUpdateInput, form: FormData): void {
   for (const key of ['artifactType', 'artifactSizeBytes', 'status'] as const) {
-    const value = optionalFormInteger(form, key);
+    const value = optionalFormNonNegativeInteger(form, key);
     if (value !== undefined) {
       input[key] = value;
     }
@@ -1368,6 +1406,17 @@ function optionalFormInteger(form: FormData, key: string): number | undefined {
     throw new Error(`${key} must be an integer`);
   }
   return numberValue;
+}
+
+function optionalFormNonNegativeInteger(form: FormData, key: string): number | undefined {
+  const value = optionalFormInteger(form, key);
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value < 0) {
+    throw new Error(`${key} must be a non-negative integer`);
+  }
+  return value;
 }
 
 function optionalFormBoolean(form: FormData, key: string): boolean | undefined {
@@ -1622,6 +1671,82 @@ function readNullableNumber(record: ApiRecord, key: string): number | null {
   }
   const numberValue = readNumber(record, key, Number.NaN);
   return Number.isFinite(numberValue) ? numberValue : null;
+}
+
+function ensureDeleteResult(result: unknown, message: string): void {
+  ensurePlusApiSuccess(result, message);
+  if (readBoolean(readApiRecord(result), 'deleted') !== true) {
+    throw new Error(message);
+  }
+}
+
+function ensureSkillPackageEnabled(
+  skillPackage: AdminSkillPackage,
+  enabled: boolean,
+  message: string,
+): AdminSkillPackage {
+  if (skillPackage.enabled !== enabled) {
+    throw new Error(message);
+  }
+  return skillPackage;
+}
+
+function ensureSkillEnabled(skill: AdminSkill, enabled: boolean, message: string): AdminSkill {
+  if (skill.enabled !== enabled) {
+    throw new Error(message);
+  }
+  return skill;
+}
+
+function ensureSkillMarketStatus(skill: AdminSkill, marketStatus: SkillMarketStatus, message: string): AdminSkill {
+  if (skill.marketStatus !== marketStatus) {
+    throw new Error(message);
+  }
+  return skill;
+}
+
+function ensureSkillReviewStatus(skill: AdminSkill, reviewStatus: SkillReviewStatus, message: string): AdminSkill {
+  if (skill.reviewStatus !== reviewStatus) {
+    throw new Error(message);
+  }
+  return skill;
+}
+
+function readRequiredBoolean(record: ApiRecord, key: string, message: string): boolean {
+  const value = record[key];
+  if (typeof value !== 'boolean') {
+    throw new Error(message);
+  }
+  return value;
+}
+
+function readRequiredStringArray(record: ApiRecord, key: string, message: string): string[] {
+  const value = record[key];
+  if (!Array.isArray(value)) {
+    throw new Error(message);
+  }
+  return value.map((item) => {
+    if (typeof item !== 'string') {
+      throw new Error(message);
+    }
+    return item;
+  });
+}
+
+function readRequiredJsonRecord(record: ApiRecord, key: string, message: string): JsonObject {
+  const value = record[key];
+  if (!isRecord(value)) {
+    throw new Error(message);
+  }
+  return normalizeJsonObject(value, key);
+}
+
+function readRequiredNonNegativeInteger(record: ApiRecord, key: string, message: string): number {
+  const numberValue = readNumber(record, key, Number.NaN);
+  if (!Number.isSafeInteger(numberValue) || numberValue < 0) {
+    throw new Error(message);
+  }
+  return numberValue;
 }
 
 function readSourceType(value: string): SkillSourceType {

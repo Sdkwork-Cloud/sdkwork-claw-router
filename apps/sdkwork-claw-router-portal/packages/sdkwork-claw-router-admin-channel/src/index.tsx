@@ -1,17 +1,14 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   AlertCircle,
-  ArrowRight,
   Ban,
   Check,
   CheckCircle,
-  CheckCircle2,
   ChevronLeft,
   ChevronRight,
   Cpu,
   Edit2,
   Image as ImageIcon,
-  Info,
   Key,
   Layers,
   Loader2,
@@ -43,6 +40,10 @@ import {
   createProviderSecretInputFromForm,
   createProviderSecretStatusUpdateInput,
   createProviderSecretUpdateInputFromForm,
+  resolveAuthTypeFormValue,
+  resolveAuthTypeSubmitValue,
+  resolveChannelSelectFormValue,
+  resolveChannelSelectSubmitValue,
   type ChannelFormValues,
   type ProviderSecretFormValues,
 } from './channelForm';
@@ -103,11 +104,6 @@ function providerCodeForVendor(vendor: string): string {
   return (mapping[normalized] ?? normalized.replace(/\s+/g, '_')).replace(/[^a-z0-9_-]/g, '');
 }
 
-function authTypeId(value?: string): string {
-  const normalized = (value ?? '').trim().toLowerCase();
-  return authTypesList.find((type) => type.id === normalized || type.title.toLowerCase() === normalized)?.id ?? 'api-key';
-}
-
 function isValidSecretRef(value: string): boolean {
   const locator = value.startsWith('vault://')
     ? value.slice('vault://'.length)
@@ -119,6 +115,22 @@ function isValidSecretRef(value: string): boolean {
 
 function getLoadErrorMessage(error: unknown, fallback: string): string {
   return error instanceof Error && error.message ? error.message : fallback;
+}
+
+function readPositiveIntegerFormValue(formData: FormData, key: string): number {
+  const rawValue = formData.get(key);
+  const normalized = typeof rawValue === 'string' ? rawValue.trim() : '';
+  if (!normalized) {
+    throw new Error(`${key} is required.`);
+  }
+  if (!/^\d+$/.test(normalized)) {
+    throw new Error(`${key} must be a positive integer.`);
+  }
+  const value = Number(normalized);
+  if (!Number.isSafeInteger(value) || value < 1) {
+    throw new Error(`${key} must be a positive integer.`);
+  }
+  return value;
 }
 
 function AddAccountModal({
@@ -136,21 +148,16 @@ function AddAccountModal({
   onClose: () => void;
   onSubmit: (channel: ChannelFormValues) => Promise<void>;
 }) {
-  const [selectedProtocol, setSelectedProtocol] = useState(initialChannel?.protocol || 'OpenAI');
-  const [activeAuthType, setActiveAuthType] = useState(authTypeId(initialChannel?.accessType));
+  const [selectedProtocol, setSelectedProtocol] = useState(resolveChannelSelectFormValue(initialChannel?.protocol, protocolsList, 'OpenAI'));
+  const [activeAuthType, setActiveAuthType] = useState(resolveAuthTypeFormValue(initialChannel?.accessType, authTypesList));
   const [showMoreAuth, setShowMoreAuth] = useState(false);
-  const [modelMode, setModelMode] = useState<'whitelist' | 'mapping'>('whitelist');
-  const [modelVendor, setModelVendor] = useState(initialChannel?.vendor || 'OpenAI');
+  const [modelVendor, setModelVendor] = useState(resolveChannelSelectFormValue(initialChannel?.vendor, knownModelVendors, 'OpenAI'));
   const [whitelist, setWhitelist] = useState<string[]>(initialChannel?.models?.length ? initialChannel.models : []);
   const [capabilities, setCapabilities] = useState<string[]>(
     initialChannel?.capabilities?.length ? initialChannel.capabilities : ['llm'],
   );
   const [secretRef, setSecretRef] = useState(initialChannel?.secretRef ?? '');
   const [customModel, setCustomModel] = useState('');
-  const [mappings, setMappings] = useState<{ from: string; to: string }[]>([
-    { from: 'gpt-4', to: 'gpt-4o' },
-    { from: 'claude-3-opus', to: 'claude-3-opus-20240229' },
-  ]);
   const [localError, setLocalError] = useState<string | null>(null);
 
   const isEdit = mode === 'edit';
@@ -198,16 +205,6 @@ function AddAccountModal({
     setWhitelist((current) => current.filter((item) => item !== model));
   };
 
-  const addMapping = () => setMappings((current) => [...current, { from: '', to: '' }]);
-  const removeMapping = (index: number) => setMappings((current) => current.filter((_, i) => i !== index));
-  const updateMapping = (index: number, key: 'from' | 'to', value: string) => {
-    setMappings((current) => {
-      const next = [...current];
-      next[index] = { ...next[index], [key]: value };
-      return next;
-    });
-  };
-
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLocalError(null);
@@ -215,12 +212,7 @@ function AddAccountModal({
     const name = String(formData.get('name') ?? '').trim();
     const baseUrl = String(formData.get('baseUrl') ?? '').trim();
     const submittedSecretRef = String(formData.get('secretRef') ?? '').trim();
-    const weight = Number.parseInt(String(formData.get('weight') ?? '100'), 10);
-    const auth = authTypesList.find((item) => item.id === activeAuthType) ?? authTypesList[0];
-    const models =
-      modelMode === 'mapping'
-        ? mappings.map((item) => item.to.trim()).filter(Boolean)
-        : whitelist.map((item) => item.trim()).filter(Boolean);
+    const models = whitelist.map((item) => item.trim()).filter(Boolean);
 
     if (!name) {
       setLocalError('Channel name is required.');
@@ -240,16 +232,17 @@ function AddAccountModal({
     }
 
     try {
+      const weight = readPositiveIntegerFormValue(formData, 'weight');
       await onSubmit({
         name,
         vendor: modelVendor,
-        protocol: selectedProtocol,
-        accessType: auth.title,
+        protocol: resolveChannelSelectSubmitValue(selectedProtocol, protocolsList, 'protocol'),
+        accessType: resolveAuthTypeSubmitValue(activeAuthType, authTypesList),
         baseUrl,
         secretRef: submittedSecretRef,
         capabilities,
         models,
-        weight: Number.isFinite(weight) && weight > 0 ? weight : 100,
+        weight,
         status: initialChannel?.status ?? 'active',
       });
     } catch (err) {
@@ -311,6 +304,9 @@ function AddAccountModal({
                           {vendor.name}
                         </option>
                       ))}
+                      {!knownModelVendors.some((vendor) => vendor.id === modelVendor) && (
+                        <option value={modelVendor}>{modelVendor}</option>
+                      )}
                     </select>
                     <ChevronRight className="w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none rotate-90" />
                   </div>
@@ -346,6 +342,19 @@ function AddAccountModal({
                       </button>
                     );
                   })}
+                  {!protocolsList.some((protocol) => protocol.id === selectedProtocol) && (
+                    <button
+                      type="button"
+                      key={selectedProtocol}
+                      onClick={() => setSelectedProtocol(selectedProtocol)}
+                      className="flex items-center gap-1.5 rounded-md bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-800 ring-1 ring-amber-300 dark:bg-amber-500/10 dark:text-amber-200 dark:ring-amber-500/40"
+                    >
+                      <span className="flex h-3.5 w-3.5 items-center justify-center rounded-sm border border-amber-500 bg-amber-500">
+                        <Check className="h-2.5 w-2.5 text-white" />
+                      </span>
+                      {selectedProtocol}
+                    </button>
+                  )}
                 </div>
               </div>
 
@@ -361,7 +370,7 @@ function AddAccountModal({
                   </button>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {authTypesList
+                {authTypesList
                     .filter((type) => !type.isSpecial || showMoreAuth)
                     .map((type) => {
                       const isActive = activeAuthType === type.id;
@@ -396,6 +405,20 @@ function AddAccountModal({
                         </button>
                       );
                     })}
+                  {!authTypesList.some((type) => type.id === activeAuthType) && (
+                    <button
+                      key={activeAuthType}
+                      type="button"
+                      onClick={() => setActiveAuthType(activeAuthType)}
+                      className="flex items-center gap-2 rounded-lg border px-3 py-2 text-left text-xs transition-all border-amber-300 bg-amber-50 text-amber-800 dark:border-amber-500/40 dark:bg-amber-500/10 dark:text-amber-200"
+                    >
+                      <Key className="h-4 w-4" />
+                      <span>
+                        <span className="block font-semibold">{activeAuthType}</span>
+                        <span className="text-[10px] opacity-80">Custom backend auth type</span>
+                      </span>
+                    </button>
+                  )}
                 </div>
               </div>
 
@@ -477,142 +500,82 @@ function AddAccountModal({
             </div>
 
             <div className="flex-1 px-6 py-4 bg-slate-50 dark:bg-transparent overflow-y-auto custom-scrollbar flex flex-col h-[70vh] lg:h-auto">
-              <div className="flex bg-slate-100 dark:bg-[#121212] rounded-lg p-1 mb-4 border border-slate-200 dark:border-white/5 w-full shrink-0">
-                <button
-                  type="button"
-                  onClick={() => setModelMode('whitelist')}
-                  className={`flex-1 py-1.5 text-sm rounded-md flex items-center justify-center gap-2 transition-all font-medium ${
-                    modelMode === 'whitelist'
-                      ? 'bg-white dark:bg-black text-emerald-600 dark:text-emerald-400 shadow'
-                      : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
-                  }`}
-                >
-                  <CheckCircle2 className="w-4 h-4" />
-                  Model allowlist
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setModelMode('mapping')}
-                  className={`flex-1 py-1.5 text-sm rounded-md flex items-center justify-center gap-2 transition-all font-medium ${
-                    modelMode === 'mapping'
-                      ? 'bg-white dark:bg-black text-purple-600 dark:text-purple-400 shadow'
-                      : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
-                  }`}
-                >
-                  <ArrowRight className="w-4 h-4" />
-                  Model mapping
-                </button>
+              <div className="mb-4 shrink-0">
+                <h4 className="text-sm font-semibold text-slate-900 dark:text-white">Model allowlist</h4>
+                <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                  Bind the provider models supported by this channel. Global model mapping is managed by the routing strategy contract.
+                </p>
               </div>
 
-              {modelMode === 'whitelist' ? (
-                <div className="flex flex-col flex-1 h-full min-h-0">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 bg-white dark:bg-black p-4 rounded-xl border border-slate-200 dark:border-white/10 overflow-y-auto max-h-[300px]">
-                    {whitelist.map((model) => (
-                      <div
-                        key={model}
-                        className="flex justify-between items-center bg-slate-50 dark:bg-[#1e1e1e] border border-slate-100 dark:border-white/5 rounded-lg px-3 py-2 text-sm text-slate-700 dark:text-slate-300 group"
-                      >
-                        <span className="flex items-center gap-2 truncate pr-2">
-                          <Sparkles className="w-3.5 h-3.5 text-amber-500 shrink-0" />
-                          <span className="truncate">{model}</span>
-                        </span>
-                        <button type="button" onClick={() => removeModel(model)} className="text-slate-400 hover:text-red-500 transition-colors shrink-0">
-                          <X className="w-4 h-4" />
-                        </button>
-                      </div>
-                    ))}
-                    {whitelist.length === 0 && (
-                      <div className="col-span-2 text-slate-500 text-sm text-center py-8">No models bound.</div>
-                    )}
-                  </div>
-
-                  <div className="mt-auto space-y-4 shrink-0">
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-slate-500 dark:text-slate-400">{whitelist.length} models</span>
-                    </div>
-
-                    <div className="flex flex-wrap gap-3">
-                      <button
-                        type="button"
-                        onClick={fillRelatedModels}
-                        className="border border-indigo-500 text-indigo-500 dark:border-indigo-500/50 dark:text-indigo-400 px-4 py-2 rounded-lg text-sm hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-colors font-medium"
-                      >
-                        Apply defaults
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setWhitelist([])}
-                        className="border border-red-500 text-red-500 dark:border-red-500/50 dark:text-red-400 px-4 py-2 rounded-lg text-sm hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors font-medium"
-                      >
-                        Clear all
+              <div className="flex flex-col flex-1 h-full min-h-0">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 bg-white dark:bg-black p-4 rounded-xl border border-slate-200 dark:border-white/10 overflow-y-auto max-h-[300px]">
+                  {whitelist.map((model) => (
+                    <div
+                      key={model}
+                      className="flex justify-between items-center bg-slate-50 dark:bg-[#1e1e1e] border border-slate-100 dark:border-white/5 rounded-lg px-3 py-2 text-sm text-slate-700 dark:text-slate-300 group"
+                    >
+                      <span className="flex items-center gap-2 truncate pr-2">
+                        <Sparkles className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                        <span className="truncate">{model}</span>
+                      </span>
+                      <button type="button" onClick={() => removeModel(model)} className="text-slate-400 hover:text-red-500 transition-colors shrink-0">
+                        <X className="w-4 h-4" />
                       </button>
                     </div>
-
-                    <div className="pt-4 border-t border-slate-200 dark:border-white/10">
-                      <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2">Add model</label>
-                      <div className="flex gap-2">
-                        <input
-                          value={customModel}
-                          onChange={(event) => setCustomModel(event.target.value)}
-                          onKeyDown={(event) => {
-                            if (event.key === 'Enter') {
-                              event.preventDefault();
-                              addCustomModel();
-                            }
-                          }}
-                          className="flex-1 bg-white dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-4 py-2 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500"
-                          placeholder="provider/model-name"
-                        />
-                        <button
-                          type="button"
-                          onClick={addCustomModel}
-                          className="bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-500 border border-emerald-200 dark:border-emerald-500/20 px-6 py-2 rounded-lg text-sm hover:bg-emerald-100 dark:hover:bg-emerald-500/20 font-medium transition-colors"
-                        >
-                          Add
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                  ))}
+                  {whitelist.length === 0 && (
+                    <div className="col-span-2 text-slate-500 text-sm text-center py-8">At least one model must be bound to the channel.</div>
+                  )}
                 </div>
-              ) : (
-                <div className="flex flex-col flex-1 h-full min-h-0">
-                  <div className="bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/20 text-purple-700 dark:text-purple-300 p-3.5 rounded-xl text-sm mb-4 flex items-start gap-3 shrink-0">
-                    <Info className="w-5 h-5 mt-0.5 shrink-0" />
-                    <span>Only the target model values are persisted for this channel.</span>
+
+                <div className="mt-auto space-y-4 shrink-0">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-slate-500 dark:text-slate-400">{whitelist.length} models</span>
                   </div>
 
-                  <div className="space-y-3 overflow-y-auto flex-1 mb-4">
-                    {mappings.map((mapping, index) => (
-                      <div key={`${mapping.from}-${index}`} className="flex items-center gap-2">
-                        <input
-                          value={mapping.from}
-                          onChange={(event) => updateMapping(index, 'from', event.target.value)}
-                          placeholder="Gateway model"
-                          className="flex-1 bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-purple-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none"
-                        />
-                        <ArrowRight className="w-4 h-4 text-slate-400 shrink-0" />
-                        <input
-                          value={mapping.to}
-                          onChange={(event) => updateMapping(index, 'to', event.target.value)}
-                          placeholder="Provider model"
-                          className="flex-1 bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-purple-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none"
-                        />
-                        <button type="button" onClick={() => removeMapping(index)} className="text-slate-400 hover:text-red-500 p-2 shrink-0 transition-colors">
-                          <Trash2 className="w-4 h-4" />
-                        </button>
-                      </div>
-                    ))}
+                  <div className="flex flex-wrap gap-3">
                     <button
                       type="button"
-                      onClick={addMapping}
-                      className="w-full border border-dashed border-slate-300 dark:border-white/20 text-slate-500 dark:text-slate-400 py-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-white/5 flex justify-center items-center gap-2 transition-colors font-medium text-sm"
+                      onClick={fillRelatedModels}
+                      className="border border-indigo-500 text-indigo-500 dark:border-indigo-500/50 dark:text-indigo-400 px-4 py-2 rounded-lg text-sm hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-colors font-medium"
                     >
-                      <Plus className="w-4 h-4" />
-                      Add mapping
+                      Apply defaults
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setWhitelist([])}
+                      className="border border-red-500 text-red-500 dark:border-red-500/50 dark:text-red-400 px-4 py-2 rounded-lg text-sm hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors font-medium"
+                    >
+                      Clear all
                     </button>
                   </div>
+
+                  <div className="pt-4 border-t border-slate-200 dark:border-white/10">
+                    <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2">Add model</label>
+                    <div className="flex gap-2">
+                      <input
+                        value={customModel}
+                        onChange={(event) => setCustomModel(event.target.value)}
+                        onKeyDown={(event) => {
+                          if (event.key === 'Enter') {
+                            event.preventDefault();
+                            addCustomModel();
+                          }
+                        }}
+                        className="flex-1 bg-white dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-4 py-2 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500"
+                        placeholder="provider/model-name"
+                      />
+                      <button
+                        type="button"
+                        onClick={addCustomModel}
+                        className="bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-500 border border-emerald-200 dark:border-emerald-500/20 px-6 py-2 rounded-lg text-sm hover:bg-emerald-100 dark:hover:bg-emerald-500/20 font-medium transition-colors"
+                      >
+                        Add
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
           </div>
 
@@ -654,7 +617,7 @@ function ProviderSecretModal({
   onSubmit: (secret: ProviderSecretFormValues) => Promise<void>;
 }) {
   const [providerCode, setProviderCode] = useState(initialSecret?.providerCode ?? 'openai');
-  const [authType, setAuthType] = useState(authTypeId(initialSecret?.authType));
+  const [authType, setAuthType] = useState(resolveAuthTypeFormValue(initialSecret?.authType, authTypesList));
   const [secretRef, setSecretRef] = useState(initialSecret?.secretRef ?? '');
   const [status, setStatus] = useState<'active' | 'disabled'>(initialSecret?.status ?? 'active');
   const [localError, setLocalError] = useState<string | null>(null);
@@ -736,6 +699,9 @@ function ProviderSecretModal({
                     </option>
                   );
                 })}
+                {!knownModelVendors.some((vendor) => providerCodeForVendor(vendor.id) === providerCode) && (
+                  <option value={providerCode}>{providerCode}</option>
+                )}
               </select>
             </div>
             <div>
@@ -764,6 +730,9 @@ function ProviderSecretModal({
                     {type.title}
                   </option>
                 ))}
+                {!authTypesList.some((type) => type.id === authType) && (
+                  <option value={authType}>{authType}</option>
+                )}
               </select>
             </div>
             <div>

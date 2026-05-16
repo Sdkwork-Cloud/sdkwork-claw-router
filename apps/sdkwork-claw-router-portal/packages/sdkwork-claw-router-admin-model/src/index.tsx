@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
-import { Search, Plus, Cpu, X, Settings2, Sparkles, Layers, Image as ImageIcon, MessageSquare, Headphones, ChevronRight, Activity, Trash2, Edit, Music, Loader2, RefreshCw, Video, Volume2, AlertTriangle, CheckCircle2, Clock3 } from 'lucide-react';
+import { Search, Plus, Cpu, X, Sparkles, Layers, Image as ImageIcon, MessageSquare, Headphones, ChevronRight, Activity, Trash2, Edit, Music, Loader2, RefreshCw, Video, Volume2, AlertTriangle, CheckCircle2, Clock3 } from 'lucide-react';
 import { ModelService, Vendor, Model, KNOWN_VENDORS, selectPreferredModelVendorId, type ModelRankingRefreshStatusView } from './modelService';
 import { createModelInputFromForm, createVendorInputFromForm, updateModelInputFromForm } from './modelForm';
 import { deriveModelRankingRefreshDiagnostics, type ModelRankingRefreshHealthTone } from './modelRankingRefreshDiagnostics';
@@ -208,7 +208,7 @@ export function ModelAdmin() {
     }
   };
 
-  const formatContextTokens = (tokens: number) => {
+  const formatContextTokens = (tokens: number | null) => {
     if (!Number.isFinite(tokens) || tokens <= 0) {
       return '-';
     }
@@ -225,84 +225,60 @@ export function ModelAdmin() {
     const inputBaseCls = "w-full bg-white dark:bg-[#1a1a1a] border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-900 dark:text-white shadow-sm transition-all";
     const labelCls = "block text-xs font-medium text-slate-500 mb-1.5";
 
-    switch (selectedModality) {
-      case 'Chat': return (
-        <div className="space-y-4 pt-4 border-t border-slate-200 dark:border-white/10">
-          <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-300">Text model defaults (LLM Defaults)</h4>
-          <div className="grid grid-cols-2 gap-4">
-            <div><label className={labelCls}>Max Tokens</label><input type="number" defaultValue={4096} className={inputBaseCls} /></div>
-            <div><label className={labelCls}>Temperature (0-2)</label><input type="number" step="0.1" defaultValue={0.7} className={inputBaseCls} /></div>
-            <div><label className={labelCls}>Top P</label><input type="number" step="0.05" defaultValue={1.0} className={inputBaseCls} /></div>
-            <div><label className={labelCls}>Frequency Penalty</label><input type="number" step="0.1" defaultValue={0} className={inputBaseCls} /></div>
+    const defaultCapability = selectedModality === 'Chat'
+      ? { supportsStreaming: true, supportsTools: true, supportsJsonSchema: true }
+      : { supportsStreaming: false, supportsTools: false, supportsJsonSchema: false };
+    const supportsStreaming = editingModel?.supportsStreaming ?? defaultCapability.supportsStreaming;
+    const supportsTools = editingModel?.supportsTools ?? defaultCapability.supportsTools;
+    const supportsJsonSchema = editingModel?.supportsJsonSchema ?? defaultCapability.supportsJsonSchema;
+
+    return (
+      <div className="space-y-4 pt-4 border-t border-slate-200 dark:border-white/10">
+        <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-300">Persisted model capabilities</h4>
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className={labelCls}>Max output tokens</label>
+            <input name="maxOutputTokens" type="number" min="0" step="1" defaultValue={editingModel?.maxOutputTokens ?? ''} placeholder="Optional" className={inputBaseCls} />
+          </div>
+          <div>
+            <label className={labelCls}>Supported languages</label>
+            <input name="supportedLanguages" type="text" defaultValue={editingModel?.supportedLanguages.join(', ') ?? ''} placeholder="English, Chinese" className={inputBaseCls} />
           </div>
         </div>
-      );
-      case 'Image': return (
-        <div className="space-y-4 pt-4 border-t border-slate-200 dark:border-white/10">
-          <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-300">Image model defaults (Diffusion Defaults)</h4>
-          <div className="grid grid-cols-2 gap-4">
-            <div><label className={labelCls}>Default Resolution</label><select className={inputBaseCls}><option>1024x1024</option><option>512x512</option></select></div>
-            <div><label className={labelCls}>Steps</label><input type="number" defaultValue={30} className={inputBaseCls} /></div>
-            <div><label className={labelCls}>Sampler</label><input type="text" defaultValue="DPM++ 2M Karras" className={inputBaseCls} /></div>
-            <div><label className={labelCls}>Guidance Scale (CFG)</label><input type="number" step="0.5" defaultValue={7.5} className={inputBaseCls} /></div>
+        <div>
+          <label className={labelCls}>Description</label>
+          <textarea name="description" rows={2} defaultValue={editingModel?.description ?? ''} placeholder="Short operator-facing model description" className={`${inputBaseCls} resize-none`} />
+        </div>
+        <div>
+          <label className={labelCls}>Capability intro</label>
+          <textarea name="capabilityIntro" rows={2} defaultValue={editingModel?.capabilityIntro ?? ''} placeholder="Summarize model strengths and routing fit" className={`${inputBaseCls} resize-none`} />
+        </div>
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className={labelCls}>Limitations</label>
+            <textarea name="limitations" rows={2} defaultValue={editingModel?.limitations.join(', ') ?? ''} placeholder="No medical diagnosis, No legal advice" className={`${inputBaseCls} resize-none`} />
+          </div>
+          <div>
+            <label className={labelCls}>Use cases</label>
+            <textarea name="useCases" rows={2} defaultValue={editingModel?.useCases.join(', ') ?? ''} placeholder="Customer support, Data extraction" className={`${inputBaseCls} resize-none`} />
           </div>
         </div>
-      );
-      case 'Audio': return (
-        <div className="space-y-4 pt-4 border-t border-slate-200 dark:border-white/10">
-          <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-300">Audio model defaults (TTS/STT Defaults)</h4>
-          <div className="grid grid-cols-2 gap-4">
-            <div><label className={labelCls}>Default Voice ID</label><input type="text" defaultValue="alloy" className={inputBaseCls} /></div>
-            <div><label className={labelCls}>Speed</label><input type="number" step="0.1" defaultValue={1.0} className={inputBaseCls} /></div>
-            <div><label className={labelCls}>Format</label><select className={inputBaseCls}><option>mp3</option><option>wav</option><option>opus</option></select></div>
-            <div><label className={labelCls}>Sample Rate</label><input type="number" defaultValue={24000} className={inputBaseCls} /></div>
-          </div>
+        <div className="grid grid-cols-3 gap-3">
+          <label className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-600 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a] dark:text-slate-300">
+            <input name="supportsStreaming" type="checkbox" defaultChecked={supportsStreaming} className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500" />
+            Streaming
+          </label>
+          <label className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-600 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a] dark:text-slate-300">
+            <input name="supportsTools" type="checkbox" defaultChecked={supportsTools} className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500" />
+            Tools
+          </label>
+          <label className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-600 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a] dark:text-slate-300">
+            <input name="supportsJsonSchema" type="checkbox" defaultChecked={supportsJsonSchema} className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500" />
+            JSON Schema
+          </label>
         </div>
-      );
-      case 'Music': return (
-        <div className="space-y-4 pt-4 border-t border-slate-200 dark:border-white/10">
-          <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-300">Music model defaults (MusicGen Defaults)</h4>
-          <div className="grid grid-cols-2 gap-4">
-            <div><label className={labelCls}>Max Duration (seconds)</label><input type="number" defaultValue={30} className={inputBaseCls} /></div>
-            <div><label className={labelCls}>Generate Instrumental</label><select className={inputBaseCls}><option>True (instrumental)</option><option>False (with vocals)</option></select></div>
-            <div><label className={labelCls}>Style / Genre</label><input type="text" defaultValue="pop, cinematic" className={inputBaseCls} /></div>
-            <div><label className={labelCls}>Default Tempo (BPM)</label><input type="text" placeholder="Auto" className={inputBaseCls} /></div>
-          </div>
-        </div>
-      );
-      case 'SoundEffect': return (
-        <div className="space-y-4 pt-4 border-t border-slate-200 dark:border-white/10">
-          <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-300">Sound effect defaults</h4>
-          <div className="grid grid-cols-2 gap-4">
-            <div><label className={labelCls}>Max Duration (seconds)</label><input type="number" defaultValue={8} className={inputBaseCls} /></div>
-            <div><label className={labelCls}>Output Format</label><select className={inputBaseCls}><option>wav</option><option>mp3</option><option>flac</option></select></div>
-            <div><label className={labelCls}>Sample Rate</label><input type="number" defaultValue={48000} className={inputBaseCls} /></div>
-            <div><label className={labelCls}>Variation Count</label><input type="number" defaultValue={1} className={inputBaseCls} /></div>
-          </div>
-        </div>
-      );
-      case 'Video': return (
-        <div className="space-y-4 pt-4 border-t border-slate-200 dark:border-white/10">
-          <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-300">Video generation defaults</h4>
-          <div className="grid grid-cols-2 gap-4">
-            <div><label className={labelCls}>Default Resolution</label><select className={inputBaseCls}><option>1080p</option><option>720p</option><option>4K</option></select></div>
-            <div><label className={labelCls}>Max Duration (seconds)</label><input type="number" defaultValue={10} className={inputBaseCls} /></div>
-            <div><label className={labelCls}>Frame Rate</label><input type="number" defaultValue={24} className={inputBaseCls} /></div>
-            <div><label className={labelCls}>Aspect Ratio</label><select className={inputBaseCls}><option>16:9</option><option>9:16</option><option>1:1</option></select></div>
-          </div>
-        </div>
-      );
-      case 'Embedding': return (
-        <div className="space-y-4 pt-4 border-t border-slate-200 dark:border-white/10">
-          <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-300">Embedding model defaults (Embedding Defaults)</h4>
-          <div className="grid grid-cols-2 gap-4">
-            <div><label className={labelCls}>Dimensions</label><input type="number" defaultValue={1536} className={inputBaseCls} /></div>
-            <div><label className={labelCls}>Encoding Format</label><select className={inputBaseCls}><option>float</option><option>base64</option></select></div>
-          </div>
-        </div>
-      );
-    }
-    return null;
+      </div>
+    );
   };
 
   const renderRankingRefreshDiagnostics = () => {
@@ -510,9 +486,6 @@ export function ModelAdmin() {
                     </div>
                  </div>
                  <div className="flex gap-3">
-                   <button className="px-3 py-2 bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-sm font-medium flex items-center gap-2">
-                     <Settings2 className="w-4 h-4" /> Vendor settings
-                   </button>
                    <button onClick={openAddModelModal} className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg shadow-sm transition-colors text-sm font-medium flex items-center gap-2">
                      <Plus className="w-4 h-4" /> Add model
                    </button>

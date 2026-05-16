@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
@@ -7,11 +8,19 @@ import { MarketingService } from "./packages/sdkwork-claw-router-admin-marketing
 import {
   createCouponBatchGenerateInputFromForm,
   createCouponInputFromForm,
+  createExchangeRuleInputFromForm,
   createRechargePackageInputFromForm,
 } from "./packages/sdkwork-claw-router-admin-marketing/src/marketingForm.ts";
 
 const originalFetch = globalThis.fetch;
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
+
+function readMarketingAdminSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-marketing/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+}
 
 type CapturedBackendRequest = {
   url: string;
@@ -74,45 +83,76 @@ test("admin coupon create input does not reuse returned coupon view model", () =
   }
 });
 
-test("admin coupon create input defaults unsupported coupon type safely", () => {
+test("admin coupon create input rejects unsupported coupon type", () => {
   const form = new FormData();
   form.set("name", " Retention ");
   form.set("type", "bonus");
   form.set("value", " 15% ");
 
-  assert.deepEqual(createCouponInputFromForm(form), {
-    name: "Retention",
-    type: "amount",
-    value: "15%",
-  });
+  assert.throws(() => createCouponInputFromForm(form), /type must be amount or discount/);
 });
 
 test("admin coupon batch generate input normalizes form values", () => {
   const form = new FormData();
   form.set("batchName", " Launch Batch ");
-  form.set("count", " 12.7 ");
+  form.set("count", " 12 ");
   form.set("prefix", " launch-2026 ");
 
   assert.deepEqual(createCouponBatchGenerateInputFromForm(form, " 99 "), {
     couponId: "99",
     name: "Launch Batch",
-    count: 13,
+    count: 12,
     prefix: "LAUNCH-2026",
   });
 });
 
-test("admin coupon batch generate input defaults invalid numeric count safely", () => {
-  const form = new FormData();
-  form.set("batchName", " ");
-  form.set("count", "0");
-  form.set("prefix", " ");
+test("admin coupon batch generate input rejects invalid values instead of defaulting", () => {
+  for (const [field, value, message] of [
+    ["batchName", " ", /batchName is required/],
+    ["count", "0", /count must be between 1 and 10000/],
+    ["count", "12.7", /count must be a positive integer/],
+    ["count", "not-a-number", /count must be a positive integer/],
+    ["prefix", " ", /prefix is required/],
+    ["prefix", "promo code", /prefix may only contain letters, numbers, -, and _/],
+  ] as const) {
+    const form = new FormData();
+    form.set("batchName", "Launch Batch");
+    form.set("count", "12");
+    form.set("prefix", "LAUNCH");
+    form.set(field, value);
 
-  assert.deepEqual(createCouponBatchGenerateInputFromForm(form, "101"), {
-    couponId: "101",
-    name: "Coupon batch",
-    count: 1,
-    prefix: "COUPON",
-  });
+    assert.throws(() => createCouponBatchGenerateInputFromForm(form, "101"), message);
+  }
+});
+
+test("admin marketing coupon edit action is backed by the generated backend SDK update workflow", () => {
+  const source = readMarketingAdminSource();
+
+  assert.match(source, /const \[editingCoupon, setEditingCoupon\] = useState<Coupon \| null>\(null\)/);
+  assert.match(source, /const openEditCouponModal = \(coupon: Coupon\) => \{/);
+  assert.match(source, /MarketingService\.updateCoupon\(editingCoupon\.id, createCouponInputFromForm\(formData\)\)/);
+  assert.match(source, /onClick=\{\(\) => openEditCouponModal\(c\)\}/);
+  assert.match(source, /defaultValue=\{editingCoupon\?\.name \?\? ''\}/);
+  assert.match(source, /defaultValue=\{editingCoupon\?\.type \?\? 'amount'\}/);
+  assert.match(source, /defaultValue=\{editingCoupon\?\.value \?\? ''\}/);
+});
+
+test("admin marketing batch and referral actions do not expose unsupported fake controls", () => {
+  const source = readMarketingAdminSource();
+
+  assert.equal(source.includes("券码抬头前缀 (选填)"), false);
+  assert.match(source, /<input\s+required\s+name="prefix"/);
+  assert.equal(source.includes("分销规则设置"), false);
+});
+
+test("admin marketing promo code export is wired to a real local page export", () => {
+  const source = readMarketingAdminSource();
+
+  assert.match(source, /const exportCurrentPromoCodes = \(\) => \{/);
+  assert.match(source, /const blob = new Blob\(\[csv\], \{ type: 'text\/csv;charset=utf-8;' \}\)/);
+  assert.match(source, /link\.download = `promo-codes-\$\{selectedBatchId\}-\$\{new Date\(\)\.toISOString\(\)\.slice\(0, 10\)\}\.csv`/);
+  assert.match(source, /onClick=\{exportCurrentPromoCodes\}/);
+  assert.match(source, /disabled=\{displayCodes\.length === 0\}/);
 });
 
 test("admin recharge package input normalizes form values", () => {
@@ -275,6 +315,129 @@ test("admin marketing service creates and updates recharge packages through gene
   );
 });
 
+test("admin marketing service reads and upserts exchange rules through generated backend SDK", async () => {
+  await withBackendSdkResponse(
+    {
+      code: "2000",
+      data: [
+        {
+          id: "exchange-1",
+          sourceAssetType: "POINTS",
+          targetAssetType: "CASH",
+          rate: "120.000000",
+          status: "active",
+        },
+      ],
+    },
+    async (captured) => {
+      const rules = await MarketingService.listExchangeRules({
+        sourceAssetType: "POINTS",
+        targetAssetType: "CASH",
+        status: "active",
+      });
+
+      assert.equal(
+        captured[0].url,
+        "/backend/v3/api/billing/exchange_rules?source_asset_type=POINTS&target_asset_type=CASH&status=active",
+      );
+      assert.equal(captured[0].method, "GET");
+      assert.deepEqual(rules, [
+        {
+          id: "exchange-1",
+          sourceAssetType: "POINTS",
+          targetAssetType: "CASH",
+          rate: "120",
+          status: "active",
+        },
+      ]);
+    },
+  );
+
+  await withBackendSdkResponse(
+    {
+      code: "2000",
+      data: {
+        item: {
+          id: "exchange-1",
+          sourceAssetType: "POINTS",
+          targetAssetType: "CASH",
+          rate: "250.000000",
+          status: "active",
+        },
+      },
+    },
+    async (captured) => {
+      const rule = await MarketingService.upsertExchangeRule({
+        sourceAssetType: "points",
+        targetAssetType: "cash",
+        rate: "250.000000",
+        status: "active",
+      });
+
+      assert.equal(captured[0].url, "/backend/v3/api/billing/exchange_rules");
+      assert.equal(captured[0].method, "PUT");
+      assert.deepEqual(rule, {
+        id: "exchange-1",
+        sourceAssetType: "POINTS",
+        targetAssetType: "CASH",
+        rate: "250",
+        status: "active",
+      });
+    },
+  );
+});
+
+test("admin exchange rule form input normalizes the only supported rule pair", () => {
+  const form = new FormData();
+  form.set("rate", " 250.000000 ");
+
+  assert.deepEqual(createExchangeRuleInputFromForm(form), {
+    sourceAssetType: "POINTS",
+    targetAssetType: "CASH",
+    rate: "250.000000",
+    status: "active",
+  });
+
+  form.set("rate", "0.5");
+  assert.throws(() => createExchangeRuleInputFromForm(form), /rate must be between 1 and 1000000/);
+});
+
+test("admin marketing service normalizes payment attempts through generated backend SDK", async () => {
+  await withBackendSdkResponse(
+    {
+      code: "2000",
+      data: {
+        items: [
+          {
+            id: "payment-1",
+            orderNo: "ORDER-1",
+            provider: "provider-7",
+            amount: "25.5",
+            status: "success",
+            createdAt: "2026-04-29 09:10:00",
+          },
+        ],
+      },
+    },
+    async (captured) => {
+      const attempts = await MarketingService.listPaymentAttempts();
+
+      assert.equal(captured[0].url, "/backend/v3/api/billing/payments/attempts");
+      assert.equal(captured[0].method, "GET");
+      assert.deepEqual(attempts, [
+        {
+          id: "payment-1",
+          orderNo: "ORDER-1",
+          provider: "provider-7",
+          amount: "25.50",
+          status: "success",
+          createdAt: "2026-04-29 09:10:00",
+        },
+      ]);
+    },
+  );
+});
+
 test("admin marketing service rejects unsafe SDK path ids before calling generated backend SDK", async () => {
   await withBackendSdkResponse(
     {
@@ -297,6 +460,121 @@ test("admin marketing service rejects unsafe SDK path ids before calling generat
       await assert.rejects(
         () => MarketingService.deleteRechargePackage("package?debug=true"),
         /packageId must be a safe path segment/,
+      );
+      assert.equal(captured.length, 0);
+    },
+  );
+
+  await withBackendSdkResponse(
+    {
+      code: "2000",
+      data: [
+        {
+          id: "exchange-1",
+          sourceAssetType: "CASH",
+          targetAssetType: "POINTS",
+          rate: "250",
+          status: "active",
+        },
+      ],
+    },
+    async () => {
+      await assert.rejects(
+        () => MarketingService.listExchangeRules(),
+        /exchange rule sourceAssetType must be POINTS/,
+      );
+    },
+  );
+});
+
+test("admin coupon delete fails closed unless backend confirms deletion", async () => {
+  for (const response of [{}, { deleted: false }]) {
+    await withBackendSdkResponse(
+      {
+        code: "2000",
+        data: response,
+      },
+      async () => {
+        await assert.rejects(
+          () => MarketingService.deleteCoupon("coupon-9"),
+          /Coupon delete confirmation is required/,
+        );
+      },
+    );
+  }
+});
+
+test("admin promo code status update fails closed unless backend confirms update", async () => {
+  for (const response of [{}, { updated: false }]) {
+    await withBackendSdkResponse(
+      {
+        code: "2000",
+        data: response,
+      },
+      async () => {
+        await assert.rejects(
+          () => MarketingService.updatePromoCodeStatus("promo-1", "voided"),
+          /Promo code status update confirmation is required/,
+        );
+      },
+    );
+  }
+});
+
+test("admin recharge package delete fails closed unless backend confirms deletion", async () => {
+  for (const response of [{}, { deleted: false }]) {
+    await withBackendSdkResponse(
+      {
+        code: "2000",
+        data: response,
+      },
+      async () => {
+        await assert.rejects(
+          () => MarketingService.deleteRechargePackage("pkg-10"),
+          /Recharge package delete confirmation is required/,
+        );
+      },
+    );
+  }
+});
+
+test("admin marketing exchange rules fail closed on malformed rows and unsupported requests", async () => {
+  await withBackendSdkResponse(
+    {
+      code: "2000",
+      data: ["malformed-exchange-rule"],
+    },
+    async () => {
+      await assert.rejects(
+        () => MarketingService.listExchangeRules(),
+        /Exchange rule record is required/,
+      );
+    },
+  );
+
+  await withBackendSdkResponse(
+    {
+      code: "2000",
+      data: {
+        item: {
+          id: "exchange-1",
+          sourceAssetType: "POINTS",
+          targetAssetType: "CASH",
+          rate: "250",
+          status: "active",
+        },
+      },
+    },
+    async (captured) => {
+      await assert.rejects(
+        () =>
+          MarketingService.upsertExchangeRule({
+            sourceAssetType: "POINTS",
+            targetAssetType: "CASH",
+            rate: "250",
+            status: "inactive",
+          }),
+        /exchange rule status only supports active/,
       );
       assert.equal(captured.length, 0);
     },

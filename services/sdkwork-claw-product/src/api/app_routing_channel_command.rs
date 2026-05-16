@@ -13,7 +13,7 @@ use serde_json::{Map, Value};
 
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
-use crate::domain::DomainError;
+use crate::domain::{DomainError, ProviderRetryPolicy};
 use crate::infrastructure::OsApiKeySecretGenerator;
 use crate::ports::{
     AppRoutingChannelCommandFuture, AppRoutingChannelCommandStore, AppRoutingChannelDeleteOutcome,
@@ -33,6 +33,8 @@ const MAX_MODEL_LEN: usize = 128;
 const MAX_MODELS: usize = 200;
 const MAX_CAPABILITIES: usize = 16;
 const MAX_REQUEST_ID_LEN: usize = 128;
+const MIN_TIMEOUT_MS: i64 = 1;
+const MAX_TIMEOUT_MS: i64 = 600_000;
 const MIN_WEIGHT: i64 = 1;
 const MAX_WEIGHT: i64 = 10_000;
 const REQUEST_ID_HEADER: &str = "X-Request-Id";
@@ -56,6 +58,8 @@ struct NormalizedCreateRoutingChannelRequest {
     models: Vec<String>,
     capabilities: Vec<String>,
     is_multimodal: bool,
+    timeout_ms: Option<i64>,
+    retry_policy_json: Option<String>,
     weight: i64,
     status: String,
 }
@@ -72,6 +76,8 @@ struct NormalizedUpdateRoutingChannelRequest {
     secret_ref: Option<String>,
     models: Option<Vec<String>>,
     capabilities: Option<Vec<String>>,
+    timeout_ms: Option<Option<i64>>,
+    retry_policy_json: Option<Option<String>>,
     weight: Option<i64>,
     status: Option<String>,
 }
@@ -437,6 +443,10 @@ fn normalize_create_request(
     )?
     .unwrap_or_else(|| vec!["llm".to_owned()]);
     let capabilities = normalize_capabilities(capabilities)?;
+    let timeout_ms = optional_non_null_integer(&request, "timeoutMs")?
+        .map(normalize_timeout_ms)
+        .transpose()?;
+    let retry_policy_json = optional_non_null_retry_policy_json(&request, "retryPolicy")?;
     let weight = optional_integer(&request, "weight")?.unwrap_or(100);
     let weight = normalize_weight(weight)?;
     let status = optional_text(&request, "status", "channel status", 32)?
@@ -455,6 +465,8 @@ fn normalize_create_request(
         models,
         capabilities,
         is_multimodal,
+        timeout_ms,
+        retry_policy_json,
         weight,
         status,
     })
@@ -499,6 +511,10 @@ fn normalize_update_request(
     )?
     .map(normalize_capabilities)
     .transpose()?;
+    let timeout_ms = optional_nullable_integer(&request, "timeoutMs")?
+        .map(|value| value.map(normalize_timeout_ms).transpose())
+        .transpose()?;
+    let retry_policy_json = optional_retry_policy_json(&request, "retryPolicy")?;
     let weight = optional_integer(&request, "weight")?
         .map(normalize_weight)
         .transpose()?;
@@ -514,6 +530,8 @@ fn normalize_update_request(
         && secret_ref.is_none()
         && models.is_none()
         && capabilities.is_none()
+        && timeout_ms.is_none()
+        && retry_policy_json.is_none()
         && weight.is_none()
         && status.is_none()
     {
@@ -531,6 +549,8 @@ fn normalize_update_request(
         secret_ref,
         models,
         capabilities,
+        timeout_ms,
+        retry_policy_json,
         weight,
         status,
     })
@@ -720,6 +740,122 @@ fn optional_integer(request: &Map<String, Value>, key: &str) -> Result<Option<i6
     }
 }
 
+fn optional_non_null_integer(
+    request: &Map<String, Value>,
+    key: &str,
+) -> Result<Option<i64>, String> {
+    if request.get(key).is_some_and(Value::is_null) {
+        return Err(format!("{key} must be an integer"));
+    }
+    optional_integer(request, key)
+}
+
+fn optional_nullable_integer(
+    request: &Map<String, Value>,
+    key: &str,
+) -> Result<Option<Option<i64>>, String> {
+    let Some(value) = request.get(key) else {
+        return Ok(None);
+    };
+    match value {
+        Value::Null => Ok(Some(None)),
+        Value::Number(value) => value
+            .as_i64()
+            .ok_or_else(|| format!("{key} must be an integer"))
+            .map(Some)
+            .map(Some),
+        Value::String(value) => {
+            let value = value.trim();
+            if value.is_empty() {
+                return Ok(Some(None));
+            }
+            value
+                .parse::<i64>()
+                .map(Some)
+                .map(Some)
+                .map_err(|_| format!("{key} must be an integer"))
+        }
+        _ => Err(format!("{key} must be an integer")),
+    }
+}
+
+fn optional_retry_policy_json(
+    request: &Map<String, Value>,
+    key: &str,
+) -> Result<Option<Option<String>>, String> {
+    let Some(value) = request.get(key) else {
+        return Ok(None);
+    };
+    if value.is_null() {
+        return Ok(Some(None));
+    }
+    let Value::Object(object) = value else {
+        return Err("retryPolicy must be a JSON object or null".to_owned());
+    };
+    for key in object.keys() {
+        if !matches!(
+            key.as_str(),
+            "maxAttempts" | "retryableStatusCodes" | "backoffMs"
+        ) {
+            return Err(format!("retryPolicy contains unsupported field: {key}"));
+        }
+    }
+    let max_attempts = object
+        .get("maxAttempts")
+        .and_then(Value::as_u64)
+        .ok_or_else(|| "retryPolicy.maxAttempts must be a positive integer".to_owned())?;
+    let retryable_status_codes = object
+        .get("retryableStatusCodes")
+        .and_then(Value::as_array)
+        .ok_or_else(|| "retryPolicy.retryableStatusCodes must be an array".to_owned())?
+        .iter()
+        .map(|value| {
+            value
+                .as_u64()
+                .and_then(|value| u16::try_from(value).ok())
+                .ok_or_else(|| {
+                    "retryPolicy.retryableStatusCodes must contain integer HTTP statuses".to_owned()
+                })
+        })
+        .collect::<Result<Vec<_>, _>>()?;
+    let backoff_ms = object
+        .get("backoffMs")
+        .map(|value| {
+            value
+                .as_u64()
+                .ok_or_else(|| "retryPolicy.backoffMs must be a non-negative integer".to_owned())
+        })
+        .transpose()?
+        .unwrap_or(0);
+
+    let canonical = ProviderRetryPolicy::new(
+        usize::try_from(max_attempts)
+            .map_err(|_| "retryPolicy.maxAttempts must be a positive integer".to_owned())?,
+        retryable_status_codes,
+        backoff_ms,
+    )
+    .map_err(|error| retry_policy_error_message(&error.to_string()))?;
+    serde_json::to_string(&serde_json::json!({
+        "max_attempts": canonical.max_attempts,
+        "retryable_status_codes": canonical.retryable_status_codes,
+        "backoff_ms": canonical.backoff_ms
+    }))
+    .map(Some)
+    .map(Some)
+    .map_err(|error| format!("retryPolicy could not be serialized: {error}"))
+}
+
+fn optional_non_null_retry_policy_json(
+    request: &Map<String, Value>,
+    key: &str,
+) -> Result<Option<String>, String> {
+    match optional_retry_policy_json(request, key)? {
+        Some(Some(value)) => Ok(Some(value)),
+        Some(None) => Err("retryPolicy must be a JSON object".to_owned()),
+        None => Ok(None),
+    }
+}
+
 fn normalize_provider_code(vendor: &str) -> Result<String, String> {
     let normalized = vendor.trim().to_ascii_lowercase();
     let code = match normalized.as_str() {
@@ -829,6 +965,15 @@ fn normalize_weight(weight: i64) -> Result<i64, String> {
     Ok(weight)
 }
 
+fn normalize_timeout_ms(timeout_ms: i64) -> Result<i64, String> {
+    if !(MIN_TIMEOUT_MS..=MAX_TIMEOUT_MS).contains(&timeout_ms) {
+        return Err(format!(
+            "channel timeoutMs must be between {MIN_TIMEOUT_MS} and {MAX_TIMEOUT_MS}"
+        ));
+    }
+    Ok(timeout_ms)
+}
+
 fn normalize_status(value: &str) -> Result<String, String> {
     let value = value.trim().to_ascii_lowercase();
     match value.as_str() {
@@ -887,6 +1032,17 @@ fn parse_positive_id(value: &str, field_name: &str) -> Result<i64, String> {
     Ok(id)
 }
 
+fn retry_policy_error_message(message: &str) -> String {
+    message
+        .replace("integration_channel.retry_policy", "retryPolicy")
+        .replace("retryPolicy max_attempts", "retryPolicy.maxAttempts")
+        .replace(
+            "retryPolicy retryable_status_codes",
+            "retryPolicy.retryableStatusCodes",
+        )
+        .replace("retryPolicy backoff_ms", "retryPolicy.backoffMs")
+}
+
 fn build_create_command(
     state: AppRoutingChannelCommandState,
     headers: &HeaderMap,
@@ -912,6 +1068,8 @@ fn build_create_command(
         models: request.models,
         capabilities: request.capabilities,
         is_multimodal: request.is_multimodal,
+        timeout_ms: request.timeout_ms,
+        retry_policy_json: request.retry_policy_json,
         weight: request.weight,
         status: request.status,
         request_id: normalize_request_id(headers, &state)?,
@@ -945,6 +1103,8 @@ fn build_update_command(
         secret_ref: request.secret_ref,
         models: request.models,
         capabilities: request.capabilities,
+        timeout_ms: request.timeout_ms,
+        retry_policy_json: request.retry_policy_json,
         weight: request.weight,
         status: request.status,
         request_id: normalize_request_id(headers, &state)?,
@@ -1116,4 +1276,64 @@ fn civil_from_days(days: i64) -> (i64, i64, i64) {
     let month = month_prime + if month_prime < 10 { 3 } else { -9 };
     let year = year + if month <= 2 { 1 } else { 0 };
     (year, month, day)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn create_routing_channel_accepts_timeout_and_retry_policy_controls() {
+        let request = serde_json::json!({
+            "name": "OpenAI primary",
+            "vendor": "OpenAI",
+            "protocol": "OpenAI",
+            "accessType": "api-key",
+            "baseUrl": "https://api.openai.test/v1",
+            "secretRef": "vault://providers/openai/account/main",
+            "models": ["openai/global/gpt-4o-mini"],
+            "capabilities": ["llm"],
+            "timeoutMs": 60000,
+            "retryPolicy": {
+                "maxAttempts": 3,
+                "retryableStatusCodes": [429, 503],
+                "backoffMs": 25
+            },
+            "weight": 80,
+            "status": "active"
+        });
+
+        let request = request.as_object().cloned().expect("object request");
+        let normalized = normalize_create_request(request).expect("valid create request");
+
+        assert_eq!(Some(60_000), normalized.timeout_ms);
+        assert_eq!(
+            serde_json::json!({
+                "max_attempts": 3,
+                "retryable_status_codes": [429, 503],
+                "backoff_ms": 25
+            }),
+            serde_json::from_str::<Value>(
+                normalized
+                    .retry_policy_json
+                    .as_deref()
+                    .expect("retry policy json")
+            )
+            .expect("retry policy should be valid json"),
+        );
+    }
+
+    #[test]
+    fn update_routing_channel_allows_clearing_timeout_and_retry_policy() {
+        let request = serde_json::json!({
+            "timeoutMs": null,
+            "retryPolicy": null
+        });
+
+        let request = request.as_object().cloned().expect("object request");
+        let normalized = normalize_update_request(42, request).expect("valid update request");
+
+        assert_eq!(Some(None), normalized.timeout_ms);
+        assert_eq!(Some(None), normalized.retry_policy_json);
+    }
 }

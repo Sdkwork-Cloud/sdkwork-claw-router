@@ -28,8 +28,10 @@ const DEFAULT_FORWARD_TIMEOUT: Duration = Duration::from_secs(30);
 const READY_CHECK_TIMEOUT: Duration = Duration::from_secs(2);
 const PRODUCTION_ASSET_CACHE_CONTROL: &str = "public, max-age=31536000, immutable";
 const PRODUCTION_HTML_CACHE_CONTROL: &str = "no-store";
+const DEFAULT_HSTS_MAX_AGE_SECONDS: u64 = 31_536_000;
 const RUNTIME_ENV_SCRIPT_PATH: &str = "/runtime-env.js";
 const TOOL_API_MAX_BODY_BYTES: usize = 1024 * 1024;
+const MIN_RUNTIME_TIMEOUT: Duration = Duration::from_millis(1);
 const DEFAULT_TOOL_API_RATE_LIMIT_REQUESTS: u32 = 120;
 const DEFAULT_TOOL_API_RATE_LIMIT_WINDOW: Duration = Duration::from_secs(60);
 const TOOL_API_RATE_LIMIT_KEY: &str = "portal-tool-api";
@@ -114,9 +116,17 @@ pub struct EdgeServerConfig {
     portal_static_dist: Option<PathBuf>,
     portal_runtime_env: PortalRuntimeEnv,
     portal_csp_connect_src_extra_origins: Vec<String>,
+    portal_csp_frame_src: Vec<String>,
+    portal_cors_allowed_origins: Vec<String>,
     portal_content_security_policy: HeaderValue,
+    portal_strict_transport_security: Option<HeaderValue>,
     external_scheme: HeaderValue,
     trust_forwarded_headers: bool,
+    upstream_request_timeout: Duration,
+    ready_check_timeout: Duration,
+    portal_html_cache_control: HeaderValue,
+    portal_asset_cache_control: HeaderValue,
+    portal_tool_api_max_body_bytes: usize,
     portal_tool_api_rate_limit: ToolApiRateLimitConfig,
     portal_tool_api_sdk_archive_root: Option<PathBuf>,
     portal_tool_api_sdk_generator_base_url: Option<String>,
@@ -174,9 +184,17 @@ impl EdgeServerConfig {
             portal_static_dist: None,
             portal_runtime_env: PortalRuntimeEnv::default(),
             portal_csp_connect_src_extra_origins: Vec::new(),
+            portal_csp_frame_src: default_portal_csp_frame_src(),
+            portal_cors_allowed_origins: Vec::new(),
             portal_content_security_policy: default_portal_content_security_policy(),
+            portal_strict_transport_security: None,
             external_scheme: HeaderValue::from_static("http"),
             trust_forwarded_headers: false,
+            upstream_request_timeout: DEFAULT_FORWARD_TIMEOUT,
+            ready_check_timeout: READY_CHECK_TIMEOUT,
+            portal_html_cache_control: HeaderValue::from_static(PRODUCTION_HTML_CACHE_CONTROL),
+            portal_asset_cache_control: HeaderValue::from_static(PRODUCTION_ASSET_CACHE_CONTROL),
+            portal_tool_api_max_body_bytes: TOOL_API_MAX_BODY_BYTES,
             portal_tool_api_rate_limit: ToolApiRateLimitConfig::default(),
             portal_tool_api_sdk_archive_root: None,
             portal_tool_api_sdk_generator_base_url: None,
@@ -194,6 +212,22 @@ impl EdgeServerConfig {
         self
     }
 
+    pub fn with_upstream_request_timeout(mut self, value: Duration) -> Result<Self, String> {
+        if value < MIN_RUNTIME_TIMEOUT {
+            return Err("edge upstream request timeout must be greater than 0".to_owned());
+        }
+        self.upstream_request_timeout = value;
+        Ok(self)
+    }
+
+    pub fn with_ready_check_timeout(mut self, value: Duration) -> Result<Self, String> {
+        if value < MIN_RUNTIME_TIMEOUT {
+            return Err("edge ready check timeout must be greater than 0".to_owned());
+        }
+        self.ready_check_timeout = value;
+        Ok(self)
+    }
+
     pub fn with_portal_static_dist(mut self, path: impl Into<PathBuf>) -> Result<Self, String> {
         let path = path.into();
         if !path.join("index.html").is_file() {
@@ -203,6 +237,22 @@ impl EdgeServerConfig {
             ));
         }
         self.portal_static_dist = Some(path);
+        Ok(self)
+    }
+
+    pub fn with_portal_static_cache_control(
+        mut self,
+        html_cache_control: impl AsRef<str>,
+        asset_cache_control: impl AsRef<str>,
+    ) -> Result<Self, String> {
+        self.portal_html_cache_control = normalize_cache_control_header(
+            html_cache_control.as_ref(),
+            "portal HTML cache-control",
+        )?;
+        self.portal_asset_cache_control = normalize_cache_control_header(
+            asset_cache_control.as_ref(),
+            "portal asset cache-control",
+        )?;
         Ok(self)
     }
 
@@ -250,6 +300,14 @@ impl EdgeServerConfig {
     pub fn with_portal_public_tool_api_enabled(mut self, value: bool) -> Self {
         self.portal_runtime_env.tool_api_enabled = value;
         self
+    }
+
+    pub fn with_portal_tool_api_max_body_bytes(mut self, value: usize) -> Result<Self, String> {
+        if value == 0 {
+            return Err("portal tool API max body bytes must be greater than 0".to_owned());
+        }
+        self.portal_tool_api_max_body_bytes = value;
+        Ok(self)
     }
 
     pub fn with_portal_tool_api_rate_limit(
@@ -319,6 +377,55 @@ impl EdgeServerConfig {
         self.portal_csp_connect_src_extra_origins =
             normalize_portal_csp_connect_src(value.as_ref())?;
         self.refresh_portal_content_security_policy()?;
+        Ok(self)
+    }
+
+    pub fn with_portal_csp_frame_src<I, S>(mut self, origins: I) -> Result<Self, String>
+    where
+        I: IntoIterator<Item = S>,
+        S: AsRef<str>,
+    {
+        let mut normalized_origins = default_portal_csp_frame_src();
+        for origin in origins {
+            let normalized_origin = normalize_portal_csp_frame_src_origin(origin.as_ref())?;
+            if !normalized_origins.contains(&normalized_origin) {
+                normalized_origins.push(normalized_origin);
+            }
+        }
+        self.portal_csp_frame_src = normalized_origins;
+        self.refresh_portal_content_security_policy()?;
+        Ok(self)
+    }
+
+    pub fn with_portal_strict_transport_security(
+        mut self,
+        enabled: bool,
+        max_age_seconds: u64,
+        include_subdomains: bool,
+        preload: bool,
+    ) -> Result<Self, String> {
+        self.portal_strict_transport_security = strict_transport_security_header(
+            enabled,
+            max_age_seconds,
+            include_subdomains,
+            preload,
+        )?;
+        Ok(self)
+    }
+
+    pub fn with_cors_allowed_origins<I, S>(mut self, origins: I) -> Result<Self, String>
+    where
+        I: IntoIterator<Item = S>,
+        S: AsRef<str>,
+    {
+        let mut normalized = Vec::new();
+        for origin in origins {
+            let origin = normalize_edge_cors_allowed_origin(origin.as_ref())?;
+            if !normalized.contains(&origin) {
+                normalized.push(origin);
+            }
+        }
+        self.portal_cors_allowed_origins = normalized;
         Ok(self)
     }
 
@@ -477,7 +584,7 @@ async fn forward_request(state: &EdgeServerState, request: Request) -> Result<Re
         .body(body)
         .map_err(|error| format!("failed to build upstream request: {error}"))?;
     let upstream_response = tokio::time::timeout(
-        DEFAULT_FORWARD_TIMEOUT,
+        state.config.upstream_request_timeout,
         state.client.request(upstream_request),
     )
     .await
@@ -504,7 +611,7 @@ async fn serve_portal_static(state: &EdgeServerState, request: Request) -> Respo
         return portal_static_response(
             StatusCode::OK,
             "application/javascript; charset=utf-8",
-            PRODUCTION_HTML_CACHE_CONTROL,
+            &state.config.portal_html_cache_control,
             build_portal_runtime_env_script(&state.config.portal_runtime_env),
             &state.config,
         );
@@ -520,7 +627,7 @@ async fn serve_portal_static(state: &EdgeServerState, request: Request) -> Respo
                     return portal_static_response(
                         StatusCode::OK,
                         "text/html; charset=utf-8",
-                        PRODUCTION_HTML_CACHE_CONTROL,
+                        &state.config.portal_html_cache_control,
                         html,
                         &state.config,
                     )
@@ -544,7 +651,7 @@ async fn serve_portal_static(state: &EdgeServerState, request: Request) -> Respo
             );
             response.headers_mut().insert(
                 header::CACHE_CONTROL,
-                HeaderValue::from_static(PRODUCTION_ASSET_CACHE_CONTROL),
+                state.config.portal_asset_cache_control.clone(),
             );
             response
         }
@@ -609,7 +716,12 @@ async fn handle_portal_tool_api(state: &EdgeServerState, request: Request) -> Re
         );
     }
 
-    let body = match to_bytes(request.into_body(), TOOL_API_MAX_BODY_BYTES).await {
+    let body = match to_bytes(
+        request.into_body(),
+        state.config.portal_tool_api_max_body_bytes,
+    )
+    .await
+    {
         Ok(body) => body,
         Err(_) => {
             return with_rate_limit_headers(
@@ -1994,7 +2106,7 @@ where
 fn portal_static_response(
     status: StatusCode,
     content_type: &'static str,
-    cache_control: &'static str,
+    cache_control: &HeaderValue,
     body: String,
     config: &EdgeServerConfig,
 ) -> Response {
@@ -2004,10 +2116,9 @@ fn portal_static_response(
     response
         .headers_mut()
         .insert(header::CONTENT_TYPE, HeaderValue::from_static(content_type));
-    response.headers_mut().insert(
-        header::CACHE_CONTROL,
-        HeaderValue::from_static(cache_control),
-    );
+    response
+        .headers_mut()
+        .insert(header::CACHE_CONTROL, cache_control.clone());
     response
 }
 
@@ -2029,6 +2140,9 @@ fn apply_portal_security_headers(headers: &mut axum::http::HeaderMap, config: &E
         "content-security-policy",
         config.portal_content_security_policy.clone(),
     );
+    if let Some(value) = &config.portal_strict_transport_security {
+        headers.insert("strict-transport-security", value.clone());
+    }
 }
 
 fn portal_file_path(dist_root: &Path, request_path: &str) -> Option<PathBuf> {
@@ -2181,7 +2295,12 @@ async fn check_upstream_health(
         }
     };
 
-    match tokio::time::timeout(READY_CHECK_TIMEOUT, state.client.request(request)).await {
+    match tokio::time::timeout(
+        state.config.ready_check_timeout,
+        state.client.request(request),
+    )
+    .await
+    {
         Ok(Ok(response)) => {
             let status = response.status();
             ReadinessCheck {
@@ -2336,6 +2455,64 @@ fn normalize_portal_csp_origin(value: &str) -> Result<String, String> {
     Ok(trimmed.to_owned())
 }
 
+fn normalize_portal_csp_frame_src_origin(value: &str) -> Result<String, String> {
+    let trimmed = value.trim().trim_end_matches('/');
+    if trimmed.is_empty()
+        || trimmed == "*"
+        || trimmed.contains(['\r', '\n'])
+        || trimmed.contains('\\')
+        || trimmed.contains('"')
+        || trimmed.contains('\'')
+        || trimmed.contains(';')
+    {
+        return Err(
+            "portal CSP frame-src entries must be explicit HTTP/HTTPS origins without directives"
+                .to_owned(),
+        );
+    }
+    let uri = trimmed.parse::<Uri>().map_err(|error| {
+        format!("portal CSP frame-src entry must be an HTTP/HTTPS origin: {error}")
+    })?;
+    if !matches!(uri.scheme_str(), Some("http" | "https")) || uri.authority().is_none() {
+        return Err("portal CSP frame-src entries must be HTTP/HTTPS origins".to_owned());
+    }
+    if uri.path() != "/" || uri.query().is_some() {
+        return Err("portal CSP frame-src entries must not include path or query".to_owned());
+    }
+    Ok(trimmed.to_owned())
+}
+
+fn normalize_edge_cors_allowed_origin(value: &str) -> Result<String, String> {
+    let trimmed = value.trim().trim_end_matches('/');
+    if trimmed.is_empty()
+        || trimmed == "*"
+        || trimmed.contains(['\r', '\n'])
+        || trimmed.contains('\\')
+        || trimmed.contains('"')
+        || trimmed.contains('\'')
+        || trimmed.contains(';')
+    {
+        return Err(
+            "edge CORS allowed origins must be explicit HTTP/HTTPS origins without directives"
+                .to_owned(),
+        );
+    }
+    let uri = trimmed.parse::<Uri>().map_err(|error| {
+        format!("edge CORS allowed origin must be an HTTP/HTTPS origin: {error}")
+    })?;
+    if !matches!(uri.scheme_str(), Some("http" | "https")) || uri.authority().is_none() {
+        return Err("edge CORS allowed origins must be HTTP/HTTPS origins".to_owned());
+    }
+    if uri.path() != "/" || uri.query().is_some() {
+        return Err("edge CORS allowed origins must not include path or query".to_owned());
+    }
+    Ok(trimmed.to_owned())
+}
+
+fn default_portal_csp_frame_src() -> Vec<String> {
+    vec!["https://player.bilibili.com".to_owned()]
+}
+
 fn default_portal_content_security_policy() -> HeaderValue {
     HeaderValue::from_static(
         "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; connect-src 'self' https://api.sdkwork.com; frame-src 'self' https://player.bilibili.com; frame-ancestors 'none'",
@@ -2358,9 +2535,15 @@ fn build_portal_content_security_policy(config: &EdgeServerConfig) -> Result<Hea
         push_unique(&mut connect_src, origin.clone());
     }
 
+    let mut frame_src = vec!["'self'".to_owned()];
+    for origin in &config.portal_csp_frame_src {
+        push_unique(&mut frame_src, origin.clone());
+    }
+
     let policy = format!(
-        "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; connect-src {}; frame-src 'self' https://player.bilibili.com; frame-ancestors 'none'",
-        connect_src.join(" ")
+        "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; connect-src {}; frame-src {}; frame-ancestors 'none'",
+        connect_src.join(" "),
+        frame_src.join(" ")
     );
     HeaderValue::from_str(&policy)
         .map_err(|error| format!("failed to build portal content-security-policy: {error}"))
@@ -2395,6 +2578,46 @@ fn normalize_external_scheme(value: &str) -> Result<HeaderValue, String> {
         "https" => Ok(HeaderValue::from_static("https")),
         _ => Err("external scheme must be http or https".to_owned()),
     }
+}
+
+fn strict_transport_security_header(
+    enabled: bool,
+    max_age_seconds: u64,
+    include_subdomains: bool,
+    preload: bool,
+) -> Result<Option<HeaderValue>, String> {
+    if !enabled {
+        return Ok(None);
+    }
+    if max_age_seconds == 0 {
+        return Err("portal HSTS max-age seconds must be greater than 0".to_owned());
+    }
+    if preload && (max_age_seconds < DEFAULT_HSTS_MAX_AGE_SECONDS || !include_subdomains) {
+        return Err(
+            "portal HSTS preload requires max-age >= 31536000 and includeSubDomains".to_owned(),
+        );
+    }
+    let mut value = format!("max-age={max_age_seconds}");
+    if include_subdomains {
+        value.push_str("; includeSubDomains");
+    }
+    if preload {
+        value.push_str("; preload");
+    }
+    HeaderValue::from_str(&value)
+        .map(Some)
+        .map_err(|error| format!("failed to build strict-transport-security header: {error}"))
+}
+
+fn normalize_cache_control_header(value: &str, label: &str) -> Result<HeaderValue, String> {
+    let trimmed = value.trim();
+    if trimmed.is_empty() {
+        return Err(format!("{label} must not be blank"));
+    }
+    if trimmed.contains(['\r', '\n']) {
+        return Err(format!("{label} must be a single header value"));
+    }
+    HeaderValue::from_str(trimmed).map_err(|_| format!("{label} must be a valid header value"))
 }
 
 fn is_valid_forwarded_proto(value: &HeaderValue) -> bool {
@@ -2499,6 +2722,14 @@ fn cors_origin_for_request(state: &EdgeServerState, request: &Request) -> Option
     let origin = request.headers().get(header::ORIGIN)?;
     let origin_text = origin.to_str().ok()?;
     if origin_text == state.config.portal_base_url {
+        return Some(origin.clone());
+    }
+    if state
+        .config
+        .portal_cors_allowed_origins
+        .iter()
+        .any(|allowed_origin| allowed_origin == origin_text)
+    {
         return Some(origin.clone());
     }
     None

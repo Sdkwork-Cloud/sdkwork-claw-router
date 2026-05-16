@@ -373,6 +373,7 @@ export type { PreflightReleasesCreateResult } from './preflight-releases-create-
 export type { PreflightSettlementsCreateResult } from './preflight-settlements-create-result';
 export type { ProblemDetail } from './problem-detail';
 export type { ProviderConfig } from './provider-config';
+export type { ProviderRetryPolicy } from './provider-retry-policy';
 export type { ProvidersListResult } from './providers-list-result';
 export type { ProvidersResponse } from './providers-response';
 export type { RankingVendorOption } from './ranking-vendor-option';

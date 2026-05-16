@@ -134,7 +134,7 @@ export function CreateKeyDrawer({
       modalities: Array.from(allowedModalities),
       ipLimit: ipLimit.trim(),
       expires: expiryType === 'never' ? 'never' : expiryDate,
-      createCount: Math.min(100, Math.max(1, createCount || 1)),
+      createCount,
     });
   };
 

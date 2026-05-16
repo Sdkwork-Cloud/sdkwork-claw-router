@@ -8,7 +8,16 @@ impl StartupInstallMode {
     pub const ENV_STARTUP_INSTALL_MODE: &'static str = "SDKWORK_CLAW_STARTUP_INSTALL_MODE";
 
     pub fn from_env() -> Result<Self, String> {
-        Self::from_optional_part(std::env::var(Self::ENV_STARTUP_INSTALL_MODE).ok())
+        Self::from_env_or_runtime_toml(None)
+    }
+
+    pub fn from_env_or_runtime_toml(
+        runtime_toml: Option<&crate::RuntimeTomlConfig>,
+    ) -> Result<Self, String> {
+        Self::from_optional_part(
+            crate::runtime::env_optional(Self::ENV_STARTUP_INSTALL_MODE)
+                .or_else(|| runtime_toml.and_then(|config| config.install.startup_mode.clone())),
+        )
     }
 
     pub fn from_optional_part(value: Option<String>) -> Result<Self, String> {

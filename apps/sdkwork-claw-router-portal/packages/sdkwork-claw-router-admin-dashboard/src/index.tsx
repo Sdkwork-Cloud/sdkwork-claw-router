@@ -1,7 +1,8 @@
-import { useState, useMemo, useEffect } from 'react';
-import { Key, Server, BarChart2, Users, Coins, Database, Zap, Clock, Calendar, RefreshCw, ChevronDown, Activity, Fingerprint, Image, Mic, MessageSquare, ArrowDownRight, ArrowUpRight, TrendingUp, ExternalLink, Loader2 } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Key, BarChart2, Users, Coins, Database, Zap, Clock, Activity, Fingerprint, Image, Mic, MessageSquare, ArrowDownRight, ArrowUpRight, ExternalLink, Loader2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Cell, PieChart, Pie, Legend } from 'recharts';
-import { AdminDashboardService, PieChartData, RecentUsageTrace } from './dashboardService';
+import { AdminDashboardService, DashboardSummaryCard, PieChartData, RecentUsageTrace, TrafficData } from './dashboardService';
 
 type ChartPayloadEntry = {
   color?: string;
@@ -23,57 +24,68 @@ type CustomPieLegendProps = {
   unit: '$' | '%';
 };
 
+const SUMMARY_CARD_ICONS = [Users, Database, BarChart2, Coins, Activity, Clock, Key, Zap] as const;
+const SUMMARY_CARD_COLORS = [
+  'text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-500/10',
+  'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-500/10',
+  'text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10',
+  'text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-500/10',
+  'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10',
+  'text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-500/10',
+  'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10',
+  'text-pink-600 dark:text-pink-400 bg-pink-50 dark:bg-pink-500/10',
+] as const;
+
 export function DashboardAdmin() {
-  const [timeRange, setTimeRange] = useState('今日');
-  const [granularity, setGranularity] = useState('按小时');
   const [chartTab, setChartTab] = useState<'模型分布' | '用户消费榜'>('模型分布');
   const [trendMetric, setTrendMetric] = useState<'tokens' | 'cost' | 'requests'>('tokens');
   const [chartType, setChartType] = useState<'area' | 'bar'>('area');
 
   const [loading, setLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [summaryCards, setSummaryCards] = useState<DashboardSummaryCard[]>([]);
   const [userConsumptionData, setUserConsumptionData] = useState<PieChartData[]>([]);
   const [multimodalData, setMultimodalData] = useState<PieChartData[]>([]);
+  const [trafficData, setTrafficData] = useState<TrafficData[]>([]);
   const [modelDistribution, setModelDistribution] = useState<PieChartData[]>([]);
   const [recentUsage, setRecentUsage] = useState<RecentUsageTrace[]>([]);
   useEffect(() => {
-    AdminDashboardService.fetchDashboardData().then(data => {
-      setUserConsumptionData(data.userConsumption);
-      setMultimodalData(data.multimodal);
-      setModelDistribution(data.modelDistribution);
-      setRecentUsage(data.recentUsage);
-      setLoading(false);
-    });
+    let disposed = false;
+    setLoading(true);
+    setErrorMessage('');
+    AdminDashboardService.fetchDashboardData()
+      .then(data => {
+        if (disposed) {
+          return;
+        }
+        setSummaryCards(data.summaryCards);
+        setUserConsumptionData(data.userConsumption);
+        setMultimodalData(data.multimodal);
+        setTrafficData(data.traffic);
+        setModelDistribution(data.modelDistribution);
+        setRecentUsage(data.recentUsage);
+      })
+      .catch(error => {
+        if (disposed) {
+          return;
+        }
+        setSummaryCards([]);
+        setUserConsumptionData([]);
+        setMultimodalData([]);
+        setTrafficData([]);
+        setModelDistribution([]);
+        setRecentUsage([]);
+        setErrorMessage(error instanceof Error ? error.message : '加载大盘数据失败');
+      })
+      .finally(() => {
+        if (!disposed) {
+          setLoading(false);
+        }
+      });
+    return () => {
+      disposed = true;
+    };
   }, []);
-
-  const TIME_RANGES = ['今日', '昨日', '本周', '本月', '今年', '近7天', '近30天'];
-
-  const availableGranularities = useMemo(() => {
-    switch (timeRange) {
-      case '今日':
-      case '昨日':
-        return ['按分钟', '按小时'];
-      case '本周':
-      case '近7天':
-        return ['按小时', '按天'];
-      case '本月':
-      case '近30天':
-        return ['按天', '按周'];
-      case '今年':
-        return ['按月', '按季度'];
-      default:
-        return ['按天'];
-    }
-  }, [timeRange]);
-
-  useEffect(() => {
-    if (!availableGranularities.includes(granularity)) {
-      setGranularity(availableGranularities[0]); // fallback to the first valid granularity
-    }
-  }, [timeRange, availableGranularities, granularity]);
-
-  const activeChartData = useMemo(() => {
-    return AdminDashboardService.generateTrafficData(timeRange, granularity);
-  }, [timeRange, granularity]);
 
   const CustomTooltip = ({ active, payload = [], label }: CustomTooltipProps) => {
     if (active && payload.length) {
@@ -126,108 +138,37 @@ export function DashboardAdmin() {
     );
   }
 
+  if (errorMessage) {
+    return (
+      <div className="w-full h-full flex flex-col items-center justify-center space-y-3 px-6 text-center">
+        <Activity className="w-8 h-8 text-red-500" />
+        <span className="text-sm font-medium text-slate-900 dark:text-white">大盘数据加载失败</span>
+        <span className="max-w-xl text-xs text-slate-500 dark:text-slate-400">{errorMessage}</span>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full h-full flex flex-col space-y-4 overflow-y-auto pb-8 custom-scrollbar">
 
       {/* Top Value Cards (Grid of 8) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 shrink-0">
-        <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm flex items-start gap-4 hover:border-slate-300 dark:hover:border-white/20 transition-all hover:-translate-y-1">
-          <div className="p-3 bg-blue-50 dark:bg-blue-500/10 rounded-lg text-blue-600 dark:text-blue-400 mt-1">
-            <Key className="w-5 h-5" />
-          </div>
-          <div>
-            <p className="text-sm font-medium text-slate-500 dark:text-slate-400">API 密钥</p>
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-1">1</h3>
-            <p className="text-xs text-emerald-600 dark:text-emerald-400 mt-1 font-medium flex items-center"><Activity className="w-3 h-3 mr-1" /> 1 启用</p>
-          </div>
-        </div>
-
-        <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm flex items-start gap-4 hover:border-slate-300 dark:hover:border-white/20 transition-all hover:-translate-y-1">
-          <div className="p-3 bg-indigo-50 dark:bg-indigo-500/10 rounded-lg text-indigo-600 dark:text-indigo-400 mt-1">
-            <Server className="w-5 h-5" />
-          </div>
-          <div>
-            <p className="text-sm font-medium text-slate-500 dark:text-slate-400">账号池数</p>
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-1">12</h3>
-            <p className="text-xs text-emerald-600 dark:text-emerald-400 mt-1 font-medium flex items-center"><Activity className="w-3 h-3 mr-1" /> 12 启用</p>
-          </div>
-        </div>
-
-        <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm flex items-start gap-4 hover:border-slate-300 dark:hover:border-white/20 transition-all hover:-translate-y-1">
-          <div className="p-3 bg-emerald-50 dark:bg-emerald-500/10 rounded-lg text-emerald-600 dark:text-emerald-400 mt-1">
-            <BarChart2 className="w-5 h-5" />
-          </div>
-          <div>
-            <p className="text-sm font-medium text-slate-500 dark:text-slate-400">今日请求</p>
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-1 tracking-tight">8,401</h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1">
-              <span className="text-emerald-500 flex items-center font-medium"><TrendingUp className="w-3 h-3 mr-0.5" /> 12.5%</span> 较昨日
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm flex items-start gap-4 hover:border-slate-300 dark:hover:border-white/20 transition-all hover:-translate-y-1">
-          <div className="p-3 bg-teal-50 dark:bg-teal-500/10 rounded-lg text-teal-600 dark:text-teal-400 mt-1">
-            <Users className="w-5 h-5" />
-          </div>
-          <div>
-            <p className="text-sm font-medium text-slate-500 dark:text-slate-400">总用户数</p>
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-1 tracking-tight">245</h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1">
-              <span className="text-emerald-500 flex items-center font-medium"><TrendingUp className="w-3 h-3 mr-0.5" /> 24</span> 本月新增
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm flex items-start gap-4 hover:border-slate-300 dark:hover:border-white/20 transition-all hover:-translate-y-1">
-          <div className="p-3 bg-amber-50 dark:bg-amber-500/10 rounded-lg text-amber-600 dark:text-amber-400 mt-1">
-            <Coins className="w-5 h-5" />
-          </div>
-          <div>
-            <p className="text-sm font-medium text-slate-500 dark:text-slate-400">今日使用 (Tokens/金额)</p>
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-1 tracking-tight">1.2M</h3>
-            <p className="text-xs flex items-center gap-1 mt-1 flex-wrap">
-              <span className="text-emerald-500 font-medium">$12.40</span> <span className="opacity-50 dark:text-slate-500">/</span> <span className="text-slate-500">$24.80</span> <span className="opacity-50 dark:text-slate-500">/</span> <span className="text-amber-500 font-medium">$12.40</span>
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm flex items-start gap-4 hover:border-slate-300 dark:hover:border-white/20 transition-all hover:-translate-y-1">
-          <div className="p-3 bg-purple-50 dark:bg-purple-500/10 rounded-lg text-purple-600 dark:text-purple-400 mt-1">
-            <Database className="w-5 h-5" />
-          </div>
-          <div>
-            <p className="text-sm font-medium text-slate-500 dark:text-slate-400">总消耗 (Tokens/金额)</p>
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-1 tracking-tight">84.5M</h3>
-            <p className="text-xs flex items-center gap-1 mt-1 flex-wrap">
-              <span className="text-blue-500 font-medium">$840.50</span> <span className="opacity-50 dark:text-slate-500">/</span> <span className="text-slate-500">$1,200.00</span> <span className="opacity-50 dark:text-slate-500">/</span> <span className="text-amber-500 font-medium tracking-tight">$359.50</span>
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm flex items-start gap-4 hover:border-slate-300 dark:hover:border-white/20 transition-all hover:-translate-y-1">
-          <div className="p-3 bg-pink-50 dark:bg-pink-500/10 rounded-lg text-pink-600 dark:text-pink-400 mt-1">
-            <Zap className="w-5 h-5" />
-          </div>
-          <div>
-            <p className="text-sm font-medium text-slate-500 dark:text-slate-400">性能监控 (RPM/TPM)</p>
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-1 tracking-tight">45 <span className="text-sm font-normal text-slate-500">RPM</span></h3>
-            <p className="text-xs text-emerald-500 dark:text-emerald-400 mt-1 flex items-center gap-1 font-medium">
-              <Activity className="w-3 h-3" /> 系统运行平稳
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm flex items-start gap-4 hover:border-slate-300 dark:hover:border-white/20 transition-all hover:-translate-y-1">
-          <div className="p-3 bg-red-50 dark:bg-red-500/10 rounded-lg text-red-600 dark:text-red-400 mt-1">
-            <Clock className="w-5 h-5" />
-          </div>
-          <div>
-            <p className="text-sm font-medium text-slate-500 dark:text-slate-400">平均响应</p>
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-1">850ms</h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">12 活跃用户</p>
-          </div>
-        </div>
+        {summaryCards.map((card, index) => {
+          const Icon = SUMMARY_CARD_ICONS[index] ?? Activity;
+          const color = SUMMARY_CARD_COLORS[index] ?? 'text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-white/10';
+          return (
+            <div key={card.label} className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm flex items-start gap-4 hover:border-slate-300 dark:hover:border-white/20 transition-all hover:-translate-y-1">
+              <div className={`p-3 rounded-lg mt-1 ${color}`}>
+                <Icon className="w-5 h-5" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">{card.label}</p>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-1 tracking-tight">{card.value}</h3>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 truncate">{card.detail}</p>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       {/* Main Full-Width Chart Card with Integrated Filters */}
@@ -237,39 +178,7 @@ export function DashboardAdmin() {
             <h3 className="text-base font-bold text-slate-900 dark:text-white whitespace-nowrap">聚合指标大盘</h3>
             <div className="h-6 w-px bg-slate-200 dark:bg-white/10 hidden lg:block"></div>
 
-            {/* Integrated Filters */}
-            <div className="flex items-center gap-2">
-              <div className="relative">
-                <select
-                  value={timeRange}
-                  onChange={e => setTimeRange(e.target.value)}
-                  className="appearance-none bg-slate-50 dark:bg-[#121212] border border-slate-200 dark:border-white/10 rounded-lg pl-8 pr-8 py-1.5 text-xs focus:outline-none focus:border-emerald-500 text-slate-900 dark:text-white cursor-pointer transition-colors"
-                >
-                  {TIME_RANGES.map(range => (
-                    <option key={range} value={range}>{range}</option>
-                  ))}
-                </select>
-                <Calendar className="w-3.5 h-3.5 absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
-                <ChevronDown className="w-3.5 h-3.5 absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
-              </div>
-
-              <div className="relative">
-                <select
-                  value={granularity}
-                  onChange={e => setGranularity(e.target.value)}
-                  className="appearance-none bg-slate-50 dark:bg-[#121212] border border-slate-200 dark:border-white/10 rounded-lg pl-3 pr-8 py-1.5 text-xs focus:outline-none focus:border-emerald-500 text-slate-900 dark:text-white cursor-pointer transition-colors"
-                >
-                  {availableGranularities.map(g => (
-                    <option key={g} value={g}>{g}</option>
-                  ))}
-                </select>
-                <ChevronDown className="w-3.5 h-3.5 absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
-              </div>
-
-              <button className="bg-slate-50 dark:bg-[#121212] border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 text-slate-700 dark:text-slate-300 px-2 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1.5">
-                <RefreshCw className="w-3.5 h-3.5" />
-              </button>
-            </div>
+            <span className="text-xs text-slate-500 dark:text-slate-400">后端 usage_fact 聚合快照</span>
           </div>
 
           <div className="flex items-center gap-3">
@@ -318,7 +227,7 @@ export function DashboardAdmin() {
         <div className="flex-1 min-h-0 relative mt-2">
           <ResponsiveContainer width="100%" height="100%">
             {chartType === 'area' ? (
-              <AreaChart data={activeChartData} margin={{ top: 10, right: 0, left: -20, bottom: 0 }}>
+              <AreaChart data={trafficData} margin={{ top: 10, right: 0, left: -20, bottom: 0 }}>
                 <defs>
                   <linearGradient id="colorMetric" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor={trendMetric === 'cost' ? '#f59e0b' : trendMetric === 'requests' ? '#10b981' : '#3b82f6'} stopOpacity={0.3}/>
@@ -339,7 +248,7 @@ export function DashboardAdmin() {
                 />
               </AreaChart>
             ) : (
-              <BarChart data={activeChartData} margin={{ top: 10, right: 0, left: -20, bottom: 0 }}>
+              <BarChart data={trafficData} margin={{ top: 10, right: 0, left: -20, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#888" strokeOpacity={0.15} />
                 <XAxis dataKey="time" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#888' }} dy={10} />
                 <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#888' }} tickFormatter={(val: number) => trendMetric === 'cost' ? `$${val}` : trendMetric === 'tokens' ? `${val/1000}k` : String(val)} />
@@ -474,11 +383,11 @@ export function DashboardAdmin() {
 
       {/* Bottom Table */}
       <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm shrink-0 flex-1 mt-2">
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="text-base font-bold text-slate-900 dark:text-white">平台实时调用流水 (Live Traces)</h3>
-          <button className="text-xs text-blue-500 hover:text-blue-600 font-medium flex items-center px-2 py-1 rounded hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-colors gap-1">
+          <div className="flex justify-between items-center mb-4">
+            <h3 className="text-base font-bold text-slate-900 dark:text-white">平台实时调用流水 (Live Traces)</h3>
+          <Link to="/admin/record" className="text-xs text-blue-500 hover:text-blue-600 font-medium flex items-center px-2 py-1 rounded hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-colors gap-1">
             查看完整日志 <ExternalLink className="w-3 h-3" />
-          </button>
+          </Link>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 whitespace-nowrap">
@@ -494,7 +403,10 @@ export function DashboardAdmin() {
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 dark:divide-white/5">
-              {recentUsage.map((item) => (
+              {recentUsage.map((item) => {
+                const isSuccess = item.status.trim().toLowerCase() === 'success';
+                const statusLabel = item.status.trim() || 'unknown';
+                return (
                 <tr key={item.id} className="hover:bg-slate-50 dark:hover:bg-white/[0.02] transition-colors">
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-2">
@@ -544,12 +456,13 @@ export function DashboardAdmin() {
                   <td className="px-4 py-3 font-mono text-emerald-600 dark:text-emerald-400">{item.cost}</td>
                   <td className="px-4 py-3 text-slate-500 font-mono text-[11px] tracking-tight">{item.time}</td>
                   <td className="px-4 py-3">
-                    <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 text-xs font-medium bg-emerald-50 dark:bg-emerald-500/10 px-2 py-1 rounded w-fit border border-emerald-100 dark:border-emerald-500/20">
-                       <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> 成功
+                    <span className={`flex items-center gap-1.5 text-xs font-medium px-2 py-1 rounded w-fit border ${isSuccess ? 'text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 border-emerald-100 dark:border-emerald-500/20' : 'text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-500/10 border-red-100 dark:border-red-500/20'}`}>
+                       <div className={`w-1.5 h-1.5 rounded-full ${isSuccess ? 'bg-emerald-500' : 'bg-red-500'}`} /> {statusLabel}
                     </span>
                   </td>
                 </tr>
-              ))}
+                );
+              })}
             </tbody>
           </table>
         </div>

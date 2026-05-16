@@ -12,11 +12,14 @@ SDKWork Claw Router release 包覆盖 `archive`、`service`、`container`、`des
 | `container` | `container-image` | PostgreSQL | Containerfile / entrypoint | Docker、Kubernetes、容器平台 |
 | `source` | 源码工作区 | 开发 SQLite 或 PostgreSQL | `pnpm dev` / `pnpm start` | 开发、验证、私有构建 |
 
+Redis 在所有模式下都是可选配置且默认关闭。只有部署需要共享缓存、分布式锁、队列或限流桶时，才把 `[redis]` 作为启用项配置。
+
 ## Desktop
 
 特点：
 
 - 默认 SQLite。
+- `clawrouter.toml` 中包含 Redis 配置，但默认保持关闭。
 - 自动使用 OS 用户目录下的配置和数据目录。
 - 不要求外部 PostgreSQL。
 - Linux、Windows、macOS 均发布为平台原生安装包。
@@ -44,6 +47,7 @@ SDKWork Claw Router release 包覆盖 `archive`、`service`、`container`、`des
 
 - 自包含服务端归档。
 - 默认 PostgreSQL。
+- 可按需通过 `[redis]` 启用 Redis。
 - 配置、数据、日志由部署脚本或运维系统管理。
 
 启动：
@@ -61,22 +65,26 @@ SDKWork Claw Router release 包覆盖 `archive`、`service`、`container`、`des
 - Linux、Windows、macOS 均发布为平台原生安装包。
 - Linux `.deb` service 包会安装 systemd unit。
 - macOS `.pkg` service 包会安装 launchd plist。
+- macOS service 包通过 launchd runner 启动，runner 会在 gateway 前执行 `ensure` 和 `refresh-catalog --force`。
 - Windows `.msi` 包安装运行文件和服务元数据，实际服务注册由目标主机部署系统配置。
 - 默认使用 PostgreSQL，Linux 服务覆盖项保存在 `/etc/clawrouter/clawrouter.env`。
 - PostgreSQL 密码默认放在 `/etc/clawrouter/database.secret`，也可以在受保护 TOML 中直接配置 `password`。
+- 如启用 Redis，可使用 `/etc/clawrouter/redis.secret` 保存 Redis 密码。
+- Linux service 包会让运行中的服务只读访问 `/etc/clawrouter`，只允许写入数据和日志目录。
+- 原生安装包 manifest 包含 `nativeInstall`，记录最终路径、服务元数据、权限和运维命令。
 
 原生服务资产：
 
 ```text
-Windows: clawrouter-windows-x64-service-0.2.0.msi
-Linux: clawrouter-linux-x64-service-0.2.0.deb
-macOS: clawrouter-macos-arm64-service-0.2.0.pkg
+Windows: clawrouter-windows-x64-server-0.3.0.msi
+Linux: clawrouter-linux-x64-server-0.3.0.deb
+macOS: clawrouter-macos-arm64-server-0.3.0.pkg
 ```
 
 Linux 安装 `.deb` 后通常只需要检查服务状态：
 
 ```bash
-sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
+sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb
 sudo editor /etc/clawrouter/clawrouter.toml
 sudo systemctl start clawrouter
 sudo systemctl status clawrouter --no-pager
@@ -88,21 +96,23 @@ sudo systemctl status clawrouter --no-pager
 
 - 包含 `container/Containerfile` 和 entrypoint。
 - entrypoint 会执行 `ensure` 和 `refresh-catalog --force`，再启动 gateway。
-- PostgreSQL 配置、密码文件、日志和可写数据目录建议通过环境变量、平台 Secret 或挂载传入。
+- PostgreSQL 配置、可选 Redis 配置、密码文件、日志和可写数据目录建议通过环境变量、平台 Secret 或挂载传入。
 
 示例：
 
 ```bash
-docker build -f container/Containerfile -t clawrouter:0.2.0 .
+docker build -f container/Containerfile -t clawrouter:0.3.0 .
 docker run --rm -p 3900:3900 \
   -v "$PWD/config/clawrouter.toml.example:/etc/clawrouter/clawrouter.toml:ro" \
   -v "$PWD/secrets/postgres-password:/run/secrets/clawrouter-postgres-password:ro" \
-  clawrouter:0.2.0
+  -v "$PWD/secrets/redis-password:/run/secrets/clawrouter-redis-password:ro" \
+  clawrouter:0.3.0
 ```
 
 Kubernetes 部署时建议：
 
 - 使用 Secret 保存数据库 URL。
+- 只有 `[redis].enabled = true` 时才为 Redis 密码配置 Secret。
 - 使用 ConfigMap 或挂载文件提供 `clawrouter.toml`。
 - 配置 readinessProbe 指向 `/readyz`。
 - 配置 livenessProbe 指向 `/healthz`。

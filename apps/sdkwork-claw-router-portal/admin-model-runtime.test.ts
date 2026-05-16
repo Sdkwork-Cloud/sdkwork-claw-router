@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
@@ -22,6 +24,7 @@ const KNOWN_VENDORS = [
 
 const originalFetch = globalThis.fetch;
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
+const PORTAL_ROOT = import.meta.dirname;
 
 type CapturedBackendRequest = {
   url: string;
@@ -29,6 +32,64 @@ type CapturedBackendRequest = {
   headers: Record<string, string>;
   body: string;
 };
+
+function adminVendor(overrides: Record<string, unknown> = {}): Record<string, unknown> {
+  const vendor = {
+    id: "vendor-1",
+    vendorCode: "openai",
+    name: "OpenAI",
+    status: "active",
+    color: "bg-indigo-500",
+    description: "Valid row",
+    ...overrides,
+  };
+  for (const [key, value] of Object.entries(vendor)) {
+    if (value === undefined) {
+      delete vendor[key as keyof typeof vendor];
+    }
+  }
+  return vendor;
+}
+
+function adminModel(overrides: Record<string, unknown> = {}): Record<string, unknown> {
+  const model = {
+    id: "model-1",
+    vendorId: "vendor-1",
+    vendorCode: "openai",
+    name: "gpt-4o-mini",
+    type: "Chat",
+    priceIn: "0.1500",
+    priceOut: "0.6000",
+    status: "active",
+    calls: "42",
+    description: null,
+    modalities: ["text"],
+    inputModalities: ["text"],
+    outputModalities: ["text"],
+    apiFormat: "openai_responses",
+    capabilityIntro: null,
+    limitations: [],
+    supportedLanguages: [],
+    useCases: [],
+    trainingDataCutoff: null,
+    contextTokens: 128000,
+    maxOutputTokens: null,
+    supportsStreaming: true,
+    supportsTools: true,
+    supportsJsonSchema: true,
+    releaseStage: 1,
+    shelfState: 1,
+    routingState: 1,
+    replacementModel: null,
+    ...overrides,
+  };
+  for (const [key, value] of Object.entries(model)) {
+    if (value === undefined) {
+      delete model[key as keyof typeof model];
+    }
+  }
+  return model;
+}
 
 async function withBackendSdkFetch<T>(
   handler: (url: string, init?: RequestInit) => unknown,
@@ -116,6 +177,7 @@ test("admin model vendor selection uses persisted vendor ids instead of shortcut
   const vendors = [
     {
       id: "model-vendor-openai",
+      vendorCode: "openai",
       name: "OpenAI",
       status: "active",
       color: "bg-indigo-500",
@@ -123,6 +185,7 @@ test("admin model vendor selection uses persisted vendor ids instead of shortcut
     },
     {
       id: "model-vendor-anthropic",
+      vendorCode: "anthropic",
       name: "Anthropic",
       status: "active",
       color: "bg-orange-500",
@@ -135,13 +198,22 @@ test("admin model vendor selection uses persisted vendor ids instead of shortcut
   assert.equal(selectPreferredModelVendorId([], "v_openai"), "");
 });
 
+test("admin model page does not expose unsupported vendor settings action", () => {
+  const source = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/index.tsx"),
+    "utf8",
+  );
+
+  assert.doesNotMatch(source, /Vendor settings/);
+});
+
 test("admin ai model create input does not reuse returned model view model", () => {
   const form = new FormData();
   form.set("name", " gpt-4o-mini ");
   form.set("type", "Chat");
   form.set("priceIn", " 0.1500 ");
   form.set("priceOut", " 0.6000 ");
-  form.set("contextTokens", " ");
+  form.set("contextTokens", "128k");
 
   const input = createModelInputFromForm(form, "v_openai");
 
@@ -151,7 +223,16 @@ test("admin ai model create input does not reuse returned model view model", () 
     type: "Chat",
     priceIn: "0.1500",
     priceOut: "0.6000",
-    contextTokens: "8k",
+    contextTokens: "128k",
+    maxOutputTokens: null,
+    description: null,
+    capabilityIntro: null,
+    limitations: [],
+    supportedLanguages: [],
+    useCases: [],
+    supportsStreaming: false,
+    supportsTools: false,
+    supportsJsonSchema: false,
   });
   for (const field of ["id", "calls", "status"]) {
     assert.equal(field in input, false);
@@ -169,6 +250,7 @@ test("admin ai model update input preserves current type marker for partial upda
   const input = updateModelInputFromForm(form, "v_openai", {
     id: "model-1",
     vendorId: "v_openai",
+    vendorCode: "openai",
     name: "gpt-4o-mini",
     type: "Chat",
     priceIn: "0.1500",
@@ -203,8 +285,54 @@ test("admin ai model update input preserves current type marker for partial upda
     priceIn: "0.2000",
     priceOut: "0.8000",
     contextTokens: "128k",
+    maxOutputTokens: null,
+    description: null,
+    capabilityIntro: null,
+    limitations: [],
+    supportedLanguages: [],
+    useCases: [],
+    supportsStreaming: false,
+    supportsTools: false,
+    supportsJsonSchema: false,
     currentType: "Chat",
   });
+});
+
+test("admin ai model form rejects missing or unsupported model types", () => {
+  const missing = new FormData();
+  missing.set("name", "gpt-4o-mini");
+  missing.set("priceIn", "0.1500");
+  missing.set("priceOut", "0.6000");
+
+  assert.throws(
+    () => createModelInputFromForm(missing, "v_openai"),
+    /Model type is required/,
+  );
+
+  const unsupported = new FormData();
+  unsupported.set("name", "gpt-4o-mini");
+  unsupported.set("type", "Vision");
+  unsupported.set("priceIn", "0.1500");
+  unsupported.set("priceOut", "0.6000");
+
+  assert.throws(
+    () => createModelInputFromForm(unsupported, "v_openai"),
+    /Unsupported model type: Vision/,
+  );
+});
+
+test("admin ai model form rejects missing context tokens instead of defaulting", () => {
+  const form = new FormData();
+  form.set("name", "gpt-4o-mini");
+  form.set("type", "Chat");
+  form.set("priceIn", "0.1500");
+  form.set("priceOut", "0.6000");
+  form.set("contextTokens", " ");
+
+  assert.throws(
+    () => createModelInputFromForm(form, "v_openai"),
+    /contextTokens is required/,
+  );
 });
 
 test("admin model service calls generated backend SDK paths and normalizes model catalog data", async () => {
@@ -214,29 +342,20 @@ test("admin model service calls generated backend SDK paths and normalizes model
       if (url === "/backend/v3/api/ai/model_vendors" && method === "GET") {
         return {
           items: [
-            {
-              id: "vendor-1",
-              name: "OpenAI",
+            adminVendor({
               status: "inactive",
               color: "bg-green-600",
               description: "Public models",
-            },
+            }),
           ],
         };
       }
       if (url === "/backend/v3/api/ai/models" && method === "GET") {
         return {
           items: [
-            {
-              id: "model-1",
-              vendorId: "vendor-1",
-              name: "gpt-4o-mini",
+            adminModel({
               type: "Image",
-              priceIn: "0.1500",
-              priceOut: "0.6000",
               status: "inactive",
-              calls: "42",
-              contextTokens: 128000,
               modalities: ["image"],
               inputModalities: ["text", "image"],
               outputModalities: ["image"],
@@ -244,7 +363,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
               supportsStreaming: false,
               supportsTools: false,
               supportsJsonSchema: false,
-            },
+            }),
           ],
         };
       }
@@ -282,57 +401,49 @@ test("admin model service calls generated backend SDK paths and normalizes model
           snapshotId: "snapshot-1",
           syncRunId: "sync-run-1",
           vendors: [
-            {
+            adminVendor({
               id: "vendor-2",
+              vendorCode: "anthropic",
               name: "Anthropic",
-              status: "active",
               color: "bg-orange-500",
               description: "Claude",
-            },
+            }),
           ],
           models: [
-            {
+            adminModel({
               id: "model-2",
               vendorId: "vendor-2",
+              vendorCode: "anthropic",
               name: "claude-3-5-sonnet",
-              type: "Chat",
               priceIn: "3",
               priceOut: "15",
-              status: "active",
               calls: "7",
               contextTokens: 200000,
-              modalities: ["text"],
               inputModalities: ["text", "image"],
-              outputModalities: ["text"],
-              apiFormat: "openai_responses",
-              supportsStreaming: true,
-              supportsTools: true,
-              supportsJsonSchema: true,
-            },
+            }),
           ],
         };
       }
       if (url === "/backend/v3/api/ai/model_vendors" && method === "POST") {
         return {
-          item: {
+          item: adminVendor({
             id: "vendor-3",
+            vendorCode: "custom-ai",
             name: "Custom AI",
-            status: "active",
-            color: "bg-indigo-500",
             description: "Custom endpoint",
-          },
+          }),
         };
       }
       if (url === "/backend/v3/api/ai/models" && method === "POST") {
         return {
-          item: {
+          item: adminModel({
             id: "model-3",
             vendorId: "vendor-3",
+            vendorCode: "custom-ai",
             name: "custom/model-v1",
             type: "Embedding",
             priceIn: "0.01",
             priceOut: "0.02",
-            status: "active",
             calls: "0",
             contextTokens: 32000,
             modalities: ["embedding"],
@@ -342,19 +453,19 @@ test("admin model service calls generated backend SDK paths and normalizes model
             supportsStreaming: false,
             supportsTools: false,
             supportsJsonSchema: false,
-          },
+          }),
         };
       }
       if (url === "/backend/v3/api/ai/models/model-3" && method === "PATCH") {
         return {
-          item: {
+          item: adminModel({
             id: "model-3",
             vendorId: "vendor-3",
+            vendorCode: "custom-ai",
             name: "custom/model-v2",
             type: "Embedding",
             priceIn: "0.03",
             priceOut: "0.04",
-            status: "active",
             calls: "0",
             contextTokens: 64000,
             modalities: ["embedding"],
@@ -364,7 +475,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
             supportsStreaming: false,
             supportsTools: false,
             supportsJsonSchema: false,
-          },
+          }),
         };
       }
       if (url === "/backend/v3/api/ai/models/model-3" && method === "DELETE") {
@@ -768,24 +879,7 @@ test("admin model list remains usable when model ranking enhancement fails", asy
       if (url === "/backend/v3/api/ai/models" && method === "GET") {
         return {
           items: [
-            {
-              id: "model-1",
-              vendorId: "vendor-1",
-              name: "gpt-4o-mini",
-              type: "Chat",
-              priceIn: "0.1500",
-              priceOut: "0.6000",
-              status: "active",
-              calls: "42",
-              contextTokens: 128000,
-              modalities: ["text"],
-              inputModalities: ["text"],
-              outputModalities: ["text"],
-              apiFormat: "openai_responses",
-              supportsStreaming: true,
-              supportsTools: true,
-              supportsJsonSchema: true,
-            },
+            adminModel(),
           ],
         };
       }
@@ -858,24 +952,9 @@ test("admin model list keeps backend calls when ranking summary is malformed", a
       if (url === "/backend/v3/api/ai/models" && method === "GET") {
         return {
           items: [
-            {
-              id: "model-1",
-              vendorId: "vendor-1",
-              name: "gpt-4o-mini",
-              type: "Chat",
-              priceIn: "0.1500",
-              priceOut: "0.6000",
-              status: "active",
-              calls: "42",
-              contextTokens: 128000,
-              modalities: ["text"],
-              inputModalities: ["text"],
-              outputModalities: ["text"],
+            adminModel({
               apiFormat: "openai_compatible",
-              supportsStreaming: true,
-              supportsTools: true,
-              supportsJsonSchema: true,
-            },
+            }),
           ],
         };
       }
@@ -966,6 +1045,18 @@ test("admin model service rejects invalid commands before calling generated back
           }),
         /Unsupported model type: Vision/,
       );
+      await assert.rejects(
+        () =>
+          ModelService.addModel({
+            vendorId: "vendor-1",
+            name: "gpt-4o-mini",
+            type: "Chat",
+            priceIn: "0.1",
+            priceOut: "0.2",
+            contextTokens: "",
+          }),
+        /contextTokens is required/,
+      );
       assert.equal(captured.length, 0);
     },
   );
@@ -999,18 +1090,36 @@ test("admin model service rejects unsafe SDK path ids before calling generated b
   );
 });
 
+test("admin model delete fails closed unless backend confirms deletion", async () => {
+  for (const response of [{}, { deleted: false }]) {
+    await withBackendSdkFetch(
+      (url, init) => {
+        if (url === "/backend/v3/api/ai/models/model-3" && init?.method === "DELETE") {
+          return response;
+        }
+        throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => ModelService.deleteModel("model-3"),
+          /Model delete confirmation is required/,
+        );
+      },
+    );
+  }
+});
+
 test("admin model vendor list fails closed when backend omits stable vendor ids", async () => {
   await withBackendSdkFetch(
     (url, init) => {
       if (url === "/backend/v3/api/ai/model_vendors" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
-            {
+            adminVendor({
+              id: undefined,
               name: "Missing Id Vendor",
-              status: "active",
-              color: "bg-indigo-500",
               description: "Invalid contract",
-            },
+            }),
           ],
         };
       }
@@ -1031,13 +1140,7 @@ test("admin model vendor list fails closed when backend returns malformed rows",
       if (url === "/backend/v3/api/ai/model_vendors" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
-            {
-              id: "vendor-1",
-              name: "OpenAI",
-              status: "active",
-              color: "bg-indigo-500",
-              description: "Valid row",
-            },
+            adminVendor(),
             "malformed-vendor-row",
           ],
         };
@@ -1053,22 +1156,71 @@ test("admin model vendor list fails closed when backend returns malformed rows",
   );
 });
 
+test("admin model vendor list fails closed when backend omits required vendor fields", async () => {
+  const cases: Array<[string, RegExp]> = [
+    ["vendorCode", /Vendor code is required/],
+    ["name", /Vendor name is required/],
+    ["status", /Vendor status is required/],
+    ["color", /Vendor color is required/],
+    ["description", /Vendor description is required/],
+  ];
+
+  for (const [field, error] of cases) {
+    await withBackendSdkFetch(
+      (url, init) => {
+        if (url === "/backend/v3/api/ai/model_vendors" && (init?.method ?? "GET") === "GET") {
+          return {
+            items: [
+              adminVendor({
+                [field]: undefined,
+              }),
+            ],
+          };
+        }
+        throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => ModelService.fetchVendors(),
+          error,
+        );
+      },
+    );
+  }
+});
+
+test("admin model vendor list fails closed when backend returns unsupported vendor status", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/ai/model_vendors" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            adminVendor({
+              status: "archived",
+            }),
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => ModelService.fetchVendors(),
+        /Unsupported vendor status: archived/,
+      );
+    },
+  );
+});
+
 test("admin model list fails closed when backend omits stable model ids", async () => {
   await withBackendSdkFetch(
     (url, init) => {
       if (url === "/backend/v3/api/ai/models" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
-            {
-              vendorId: "vendor-1",
-              name: "gpt-4o-mini",
-              type: "Chat",
-              priceIn: "0.15",
-              priceOut: "0.60",
-              status: "active",
-              calls: "0",
-              contextTokens: 128000,
-            },
+            adminModel({
+              id: undefined,
+            }),
           ],
         };
       }
@@ -1089,17 +1241,7 @@ test("admin model list fails closed when backend returns malformed rows", async 
       if (url === "/backend/v3/api/ai/models" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
-            {
-              id: "model-1",
-              vendorId: "vendor-1",
-              name: "gpt-4o-mini",
-              type: "Chat",
-              priceIn: "0.15",
-              priceOut: "0.60",
-              status: "active",
-              calls: "0",
-              contextTokens: 128000,
-            },
+            adminModel(),
             "malformed-model-row",
           ],
         };
@@ -1121,17 +1263,9 @@ test("admin model list fails closed when backend returns unsupported model types
       if (url === "/backend/v3/api/ai/models" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
-            {
-              id: "model-1",
-              vendorId: "vendor-1",
-              name: "gpt-4o-mini",
+            adminModel({
               type: "Vision",
-              priceIn: "0.15",
-              priceOut: "0.60",
-              status: "active",
-              calls: "0",
-              contextTokens: 128000,
-            },
+            }),
           ],
         };
       }
@@ -1144,6 +1278,133 @@ test("admin model list fails closed when backend returns unsupported model types
       );
     },
   );
+});
+
+test("admin model list fails closed when backend omits required model fields", async () => {
+  const cases: Array<[string, RegExp]> = [
+    ["vendorCode", /Model vendor code is required/],
+    ["name", /Model name is required/],
+    ["priceIn", /Model input price is required/],
+    ["priceOut", /Model output price is required/],
+    ["status", /Model status is required/],
+    ["calls", /Model calls are required/],
+    ["description", /Model description field is required/],
+    ["modalities", /Model modalities are required/],
+    ["inputModalities", /Model input modalities are required/],
+    ["outputModalities", /Model output modalities are required/],
+    ["apiFormat", /Model API format field is required/],
+    ["capabilityIntro", /Model capability intro field is required/],
+    ["limitations", /Model limitations are required/],
+    ["supportedLanguages", /Model supported languages are required/],
+    ["useCases", /Model use cases are required/],
+    ["trainingDataCutoff", /Model training data cutoff field is required/],
+    ["contextTokens", /Model context tokens field is required/],
+    ["maxOutputTokens", /Model max output tokens field is required/],
+    ["supportsStreaming", /Model streaming support flag is required/],
+    ["supportsTools", /Model tools support flag is required/],
+    ["supportsJsonSchema", /Model JSON schema support flag is required/],
+    ["releaseStage", /Model release stage field is required/],
+    ["shelfState", /Model shelf state field is required/],
+    ["routingState", /Model routing state field is required/],
+    ["replacementModel", /Model replacement model field is required/],
+  ];
+
+  for (const [field, error] of cases) {
+    await withBackendSdkFetch(
+      (url, init) => {
+        if (url === "/backend/v3/api/ai/models" && (init?.method ?? "GET") === "GET") {
+          return {
+            items: [
+              adminModel({
+                [field]: undefined,
+              }),
+            ],
+          };
+        }
+        if (url === "/backend/v3/api/ai/model_rankings?limit=200" && (init?.method ?? "GET") === "GET") {
+          return { items: [] };
+        }
+        throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => ModelService.fetchModels(),
+          error,
+        );
+      },
+    );
+  }
+});
+
+test("admin model list fails closed when backend returns unsupported model status", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/ai/models" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            adminModel({
+              status: "archived",
+            }),
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/ai/model_rankings?limit=200" && (init?.method ?? "GET") === "GET") {
+        return { items: [] };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => ModelService.fetchModels(),
+        /Unsupported model status: archived/,
+      );
+    },
+  );
+});
+
+test("admin model list fails closed when backend returns malformed model field containers", async () => {
+  const cases: Array<[string, unknown, RegExp]> = [
+    ["modalities", "text", /Model modalities are required/],
+    ["inputModalities", "text", /Model input modalities are required/],
+    ["outputModalities", "text", /Model output modalities are required/],
+    ["limitations", "none", /Model limitations are required/],
+    ["supportedLanguages", "en", /Model supported languages are required/],
+    ["useCases", "chat", /Model use cases are required/],
+    ["supportsStreaming", "true", /Model streaming support flag is required/],
+    ["supportsTools", "true", /Model tools support flag is required/],
+    ["supportsJsonSchema", "true", /Model JSON schema support flag is required/],
+    ["contextTokens", 1.5, /Model context tokens must be a non-negative integer/],
+    ["maxOutputTokens", -1, /Model max output tokens must be a non-negative integer/],
+    ["releaseStage", "stable", /Model release stage must be a number or null/],
+    ["shelfState", "listed", /Model shelf state must be a number or null/],
+    ["routingState", "enabled", /Model routing state must be a number or null/],
+  ];
+
+  for (const [field, value, error] of cases) {
+    await withBackendSdkFetch(
+      (url, init) => {
+        if (url === "/backend/v3/api/ai/models" && (init?.method ?? "GET") === "GET") {
+          return {
+            items: [
+              adminModel({
+                [field]: value,
+              }),
+            ],
+          };
+        }
+        if (url === "/backend/v3/api/ai/model_rankings?limit=200" && (init?.method ?? "GET") === "GET") {
+          return { items: [] };
+        }
+        throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => ModelService.fetchModels(),
+          error,
+        );
+      },
+    );
+  }
 });
 
 test("admin model catalog sync fails closed when backend returns malformed model rows", async () => {
@@ -1169,13 +1430,7 @@ test("admin model catalog sync fails closed when backend returns malformed model
           rankingCount: 1,
           acceptedCount: 28,
           vendors: [
-            {
-              id: "vendor-1",
-              name: "OpenAI",
-              status: "active",
-              color: "bg-indigo-500",
-              description: "Valid row",
-            },
+            adminVendor(),
           ],
           models: ["malformed-model-row"],
         };

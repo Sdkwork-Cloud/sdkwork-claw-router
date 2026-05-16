@@ -241,7 +241,7 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/dashboard/admin/overview",
+      "api_path": "/backend/v3/api/system/dashboard/admin/overview",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "read",
@@ -1996,6 +1996,23 @@
         "iam_session",
         "iam_security_event",
         "iam_audit_event"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/app/v3/api/auth/sessions/current",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "revokeAppSession",
+      "read_sources": [
+        "iam_session"
+      ],
+      "route": "/auth/login",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sessionService.ts",
+      "write_tables": [
+        "iam_session",
+        "iam_security_event"
       ]
     },
     {
@@ -4519,8 +4536,8 @@
     }
   ],
   "summary": {
-    "operation_count": 263,
+    "operation_count": 264,
     "source_file_count": 38,
-    "write_operation_count": 132
+    "write_operation_count": 133
   }
 }

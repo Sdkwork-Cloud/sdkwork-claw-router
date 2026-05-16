@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { BusinessStateTableRow, CopyButton } from 'sdkwork-claw-router-commons';
-import { Search, Plus, User, Shield, CheckCircle2, X, Edit, MoreHorizontal, RefreshCw, Key, Users, MinusCircle, DollarSign, Wallet } from 'lucide-react';
+import { BusinessStatePanel, BusinessStateTableRow, CopyButton } from 'sdkwork-claw-router-commons';
+import { Search, Plus, User, Shield, CheckCircle2, X, Edit, MoreHorizontal, Key, Users, MinusCircle, DollarSign, Wallet } from 'lucide-react';
 import { UserService, UserListItem, ApiKeyItem } from './userService';
 import {
   createApiKeyInputFromForm,
@@ -8,7 +8,14 @@ import {
   createUserGroupUpdateInputFromForm,
   createUserInputFromForm,
   createUserProfileUpdateInputFromForm,
+  createUserStatusUpdateInput,
 } from './userForm';
+
+const DEFAULT_USER_GROUP_OPTIONS = [
+  { value: 'default', label: 'default (Default group)' },
+  { value: 'vip', label: 'VIP (Advanced users)' },
+  { value: 'svip', label: 'SVIP (Premium users)' },
+] as const;
 
 export function UserAdmin() {
   const [search, setSearch] = useState('');
@@ -23,7 +30,6 @@ export function UserAdmin() {
   const [newlyCreatedKey, setNewlyCreatedKey] = useState<string | null>(null);
   const [recordsTab, setRecordsTab] = useState<'recharge' | 'exchange'>('recharge');
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
-  const [generatedPassword, setGeneratedPassword] = useState('');
 
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -63,24 +69,12 @@ export function UserAdmin() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const generateRandomPassword = () => {
-    const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*';
-    const randomValues = new Uint32Array(16);
-    crypto.getRandomValues(randomValues);
-    let pass = '';
-    for (let i = 0; i < 16; i++) {
-        pass += chars.charAt(randomValues[i] % chars.length);
-    }
-    setGeneratedPassword(pass);
-  };
-
   const handleAddUser = async (e: React.FormEvent) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
     const user = await UserService.addUser(createUserInputFromForm(formData));
     setUsers((currentUsers) => [user, ...currentUsers]);
     setIsModalOpen(false);
-    setGeneratedPassword('');
   };
 
   const handleRechargeSubmit = async (e: React.FormEvent) => {
@@ -132,7 +126,6 @@ export function UserAdmin() {
     }
 
     setEditTarget(null);
-    setGeneratedPassword('');
   };
 
   const handleCreateApiKeySubmit = async (e: React.FormEvent) => {
@@ -175,6 +168,15 @@ export function UserAdmin() {
       setUsers((currentUsers) => currentUsers.map((user) => user.id === updatedUser.id ? updatedUser : user));
     }
     setGroupsTarget(null);
+  };
+
+  const handleStatusToggle = async (target: UserListItem) => {
+    const nextStatus = target.status === 'active' ? 'banned' : 'active';
+    const updatedUser = await UserService.updateUser(target.id, createUserStatusUpdateInput(nextStatus));
+    if (updatedUser) {
+      setUsers((currentUsers) => currentUsers.map((user) => user.id === updatedUser.id ? updatedUser : user));
+    }
+    setActiveDropdown(null);
   };
 
   return (
@@ -325,6 +327,13 @@ export function UserAdmin() {
                           </div>
                           <div className="py-1">
                             <button
+                              onClick={() => { void handleStatusToggle(u); }}
+                              className="w-full px-4 py-2.5 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 flex items-center gap-3 transition-colors"
+                            >
+                              <Shield className="w-4 h-4 text-slate-400" />
+                              {u.status === 'active' ? '禁用' : '启用'}
+                            </button>
+                            <button
                               onClick={() => { setRechargeTarget(u); setActiveDropdown(null); }}
                               className="w-full px-4 py-2.5 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 flex items-center gap-3 transition-colors"
                             >
@@ -374,28 +383,16 @@ export function UserAdmin() {
                   <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">邮箱</label>
                   <input required name="email" type="email" placeholder="请输入邮箱" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">密码</label>
-                  <div className="flex gap-2">
-                    <input required name="password" type="text" value={generatedPassword} onChange={(e) => setGeneratedPassword(e.target.value)} placeholder="请输入密码" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
-                    <button type="button" onClick={generateRandomPassword} className="px-3 rounded-xl border border-slate-300 dark:border-white/10 bg-slate-50 dark:bg-[#1e1e1e] text-slate-500 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
-                        <RefreshCw className="w-4 h-4" />
-                    </button>
-                  </div>
+                <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2.5 text-sm text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300">
+                  Password setup is managed by IAM registration and reset flows. This admin user command only creates the account profile fields exposed by the backend contract.
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">用户名</label>
                   <input name="username" type="text" placeholder="请输入用户名 (选填)" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">余额</label>
-                    <input required name="balance" type="number" step="0.01" defaultValue="0" min="0" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">并发数</label>
-                    <input required name="concurrency" type="number" step="1" defaultValue="1" min="1" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
-                  </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">余额</label>
+                  <input required name="balance" type="number" step="0.01" defaultValue="0" min="0" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
                 </div>
               </div>
               <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212] rounded-b-2xl">
@@ -438,13 +435,8 @@ export function UserAdmin() {
                   <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">充值金额</label>
                   <div className="relative">
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 font-medium">$</span>
-                    <input required name="amount" type="number" step="0.01" min="0" placeholder="0" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl pl-8 pr-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
+                    <input required name="amount" type="number" step="0.01" min="0.01" placeholder="0.00" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl pl-8 pr-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
                   </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">备注</label>
-                  <textarea name="remark" rows={3} className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white transition-all resize-none shadow-sm"></textarea>
                 </div>
               </div>
 
@@ -488,16 +480,11 @@ export function UserAdmin() {
                   <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">退款金额</label>
                   <div className="relative flex items-center">
                     <span className="absolute left-3 text-slate-500 font-medium z-10">$</span>
-                    <input id="refund_amount" required name="amount" type="number" step="0.01" min="0" placeholder="0" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl pl-8 pr-16 py-2.5 text-sm focus:outline-none focus:border-red-500 dark:focus:border-red-500 focus:ring-1 focus:ring-red-500 text-slate-900 dark:text-white shadow-sm transition-all" />
+                    <input id="refund_amount" required name="amount" type="number" step="0.01" min="0.01" placeholder="0.00" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl pl-8 pr-16 py-2.5 text-sm focus:outline-none focus:border-red-500 dark:focus:border-red-500 focus:ring-1 focus:ring-red-500 text-slate-900 dark:text-white shadow-sm transition-all" />
                     <button type="button" onClick={() => setRefundAll(refundTarget)} className="absolute right-2 px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 rounded-md transition-colors">
                       全部
                     </button>
                   </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">备注</label>
-                  <textarea name="remark" rows={3} className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-red-500 dark:focus:border-red-500 focus:ring-1 focus:ring-red-500 text-slate-900 dark:text-white transition-all resize-none shadow-sm"></textarea>
                 </div>
               </div>
 
@@ -546,60 +533,12 @@ export function UserAdmin() {
 
             {/* Content Area */}
             <div className="flex-1 overflow-y-auto p-5">
-              {recordsTab === 'recharge' ? (
-                <div className="border border-slate-200 dark:border-white/10 rounded-xl overflow-hidden">
-                   <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
-                    <thead className="bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
-                      <tr>
-                        <th className="px-4 py-3 font-medium">交易时间</th>
-                        <th className="px-4 py-3 font-medium">用户ID</th>
-                        <th className="px-4 py-3 font-medium">充值金额</th>
-                        <th className="px-4 py-3 font-medium">状态</th>
-                        <th className="px-4 py-3 font-medium">备注</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-200 dark:divide-white/5">
-                      <tr className="hover:bg-slate-50 dark:hover:bg-white/5">
-                        <td className="px-4 py-3 font-mono text-xs">Unavailable</td>
-                        <td className="px-4 py-3 font-mono text-xs">{recordsTarget.id}</td>
-                        <td className="px-4 py-3 text-slate-500 font-medium">Unavailable</td>
-                        <td className="px-4 py-3"><span className="text-emerald-600 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded text-xs">成功</span></td>
-                        <td className="px-4 py-3 text-xs text-slate-500">支付宝充值</td>
-                      </tr>
-                      <tr className="hover:bg-slate-50 dark:hover:bg-white/5">
-                        <td className="px-4 py-3 font-mono text-xs">Unavailable</td>
-                        <td className="px-4 py-3 font-mono text-xs">{recordsTarget.id}</td>
-                        <td className="px-4 py-3 text-slate-500 font-medium">Unavailable</td>
-                        <td className="px-4 py-3"><span className="text-emerald-600 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded text-xs">成功</span></td>
-                        <td className="px-4 py-3 text-xs text-slate-500">微信扫码</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              ) : (
-                <div className="border border-slate-200 dark:border-white/10 rounded-xl overflow-hidden">
-                   <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
-                    <thead className="bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
-                      <tr>
-                        <th className="px-4 py-3 font-medium">兑换时间</th>
-                        <th className="px-4 py-3 font-medium">用户ID</th>
-                        <th className="px-4 py-3 font-medium">兑换码</th>
-                        <th className="px-4 py-3 font-medium">额度发放</th>
-                        <th className="px-4 py-3 font-medium">状态</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-200 dark:divide-white/5">
-                      <tr className="hover:bg-slate-50 dark:hover:bg-white/5">
-                        <td className="px-4 py-3 font-mono text-xs">Unavailable</td>
-                        <td className="px-4 py-3 font-mono text-xs">{recordsTarget.id}</td>
-                        <td className="px-4 py-3 font-mono text-xs text-slate-500">Unavailable</td>
-                        <td className="px-4 py-3 text-slate-500 font-medium">Unavailable</td>
-                        <td className="px-4 py-3"><span className="text-emerald-600 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded text-xs">成功</span></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              )}
+              <BusinessStatePanel
+                kind="empty"
+                title={recordsTab === 'recharge' ? 'No recharge records loaded' : 'No exchange records loaded'}
+                description="Records are available from the billing history and recharge records modules; this user dialog does not synthesize transaction rows."
+                className="rounded-xl border border-dashed border-slate-200 bg-slate-50/70 dark:border-white/10 dark:bg-white/[0.02]"
+              />
             </div>
           </div>
          </div>
@@ -622,14 +561,8 @@ export function UserAdmin() {
                   <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">用户名</label>
                   <input name="username" type="text" defaultValue={editTarget.username !== '-' ? editTarget.username : ''} placeholder="请输入新的用户名" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-slate-900 dark:text-white shadow-sm transition-all" />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">修改密码 (留空则不修改)</label>
-                  <div className="flex gap-2">
-                    <input name="password" type="text" value={generatedPassword} onChange={(e) => setGeneratedPassword(e.target.value)} placeholder="如需重置密码，请输入新密码" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-slate-900 dark:text-white shadow-sm transition-all" />
-                    <button type="button" onClick={generateRandomPassword} className="px-3 rounded-xl border border-slate-300 dark:border-white/10 bg-slate-50 dark:bg-[#1e1e1e] text-slate-500 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
-                        <RefreshCw className="w-4 h-4" />
-                    </button>
-                  </div>
+                <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2.5 text-sm text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300">
+                  Password setup is managed by IAM registration and reset flows. No password update is sent from this profile dialog.
                 </div>
               </div>
               <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212] rounded-b-2xl">
@@ -718,9 +651,12 @@ export function UserAdmin() {
               <div className="p-5">
                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">为用户 {groupsTarget.email} 选择分组</label>
                 <select name="group" defaultValue={groupsTarget.group} className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-slate-900 dark:text-white shadow-sm transition-all appearance-none cursor-pointer">
-                  <option value="default">default (默认分组)</option>
-                  <option value="vip">VIP (高级用户)</option>
-                  <option value="svip">SVIP (超级用户)</option>
+                  {DEFAULT_USER_GROUP_OPTIONS.map((group) => (
+                    <option key={group.value} value={group.value}>{group.label}</option>
+                  ))}
+                  {!DEFAULT_USER_GROUP_OPTIONS.some((group) => group.value === groupsTarget.group) && (
+                    <option value={groupsTarget.group}>{groupsTarget.group} (current)</option>
+                  )}
                 </select>
               </div>
               <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212]">

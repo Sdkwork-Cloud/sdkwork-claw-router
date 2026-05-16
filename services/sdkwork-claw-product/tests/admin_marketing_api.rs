@@ -5,13 +5,15 @@ use axum::http::{Request, StatusCode};
 use sdkwork_claw_product::application::EntityUuidGenerator;
 use sdkwork_claw_product::domain::DomainResult;
 use sdkwork_claw_product::ports::{
-    AdminCouponBatchItem, AdminCouponItem, AdminMarketingCommandFuture, AdminMarketingStore,
-    AdminPromoCodeItem, AdminRechargePackageItem, AdminRechargeRecordItem,
-    AdminRedemptionRecordItem, AdminReferralStatItem, CreateAdminCouponCommand,
-    CreateAdminRechargePackageCommand, DeleteAdminCouponCommand, DeleteAdminRechargePackageCommand,
-    GenerateAdminCouponBatchCommand, ListAdminCouponBatchesQuery, ListAdminCouponsQuery,
-    ListAdminPromoCodesQuery, ListAdminRechargePackagesQuery, ListAdminRechargeRecordsQuery,
-    ListAdminRedemptionRecordsQuery, ListAdminReferralStatsQuery,
+    AdminCouponBatchItem, AdminCouponItem, AdminExchangeRuleItem, AdminMarketingCommandFuture,
+    AdminMarketingStore, AdminPaymentAttemptItem, AdminPromoCodeItem, AdminRechargePackageItem,
+    AdminRechargeRecordItem, AdminRedemptionRecordItem, AdminReferralStatItem,
+    CreateAdminCouponCommand, CreateAdminRechargePackageCommand, DeleteAdminCouponCommand,
+    DeleteAdminRechargePackageCommand, GenerateAdminCouponBatchCommand,
+    ListAdminCouponBatchesQuery, ListAdminCouponsQuery, ListAdminExchangeRulesQuery,
+    ListAdminPaymentAttemptsQuery, ListAdminPromoCodesQuery, ListAdminRechargePackagesQuery,
+    ListAdminRechargeRecordsQuery, ListAdminRedemptionRecordsQuery, ListAdminReferralStatsQuery,
+    LoadAdminRechargeRecordQuery, UpdateAdminCouponCommand, UpdateAdminExchangeRuleCommand,
     UpdateAdminPromoCodeStatusCommand, UpdateAdminRechargePackageCommand,
 };
 use serde_json::Value;
@@ -74,6 +76,19 @@ async fn admin_marketing_route_lists_all_marketing_read_models() {
     assert_eq!("1000", recharges["data"]["items"][0]["usd_credited"]);
     assert_eq!("stripe", recharges["data"]["items"][0]["method"]);
 
+    let recharge = request_json(
+        router.clone(),
+        signed_request(
+            "GET",
+            "/backend/v3/api/billing/recharges/records/recharge-100",
+            "",
+        ),
+    )
+    .await;
+    assert_eq!("recharge-100", recharge["data"]["item"]["tradeNo"]);
+    assert_eq!("30", recharge["data"]["item"]["userId"]);
+    assert_eq!("completed", recharge["data"]["item"]["status"]);
+
     let recharge_packages = request_json(
         router.clone(),
         signed_request("GET", "/backend/v3/api/billing/recharges/packages", ""),
@@ -83,6 +98,28 @@ async fn admin_marketing_route_lists_all_marketing_read_models() {
     assert_eq!("10.00", recharge_packages["data"]["items"][0]["rmb"]);
     assert_eq!(25, recharge_packages["data"]["items"][0]["bonus"]);
     assert_eq!(125, recharge_packages["data"]["items"][0]["points"]);
+
+    let exchange_rules = request_json(
+        router.clone(),
+        signed_request("GET", "/backend/v3/api/billing/exchange_rules", ""),
+    )
+    .await;
+    assert_eq!("exchange-1", exchange_rules["data"][0]["id"]);
+    assert_eq!("POINTS", exchange_rules["data"][0]["sourceAssetType"]);
+    assert_eq!("CASH", exchange_rules["data"][0]["targetAssetType"]);
+    assert_eq!("120", exchange_rules["data"][0]["rate"]);
+    assert_eq!("active", exchange_rules["data"][0]["status"]);
+
+    let payment_attempts = request_json(
+        router.clone(),
+        signed_request("GET", "/backend/v3/api/billing/payments/attempts", ""),
+    )
+    .await;
+    assert_eq!("payment-1", payment_attempts["data"]["items"][0]["id"]);
+    assert_eq!("order-100", payment_attempts["data"]["items"][0]["orderNo"]);
+    assert_eq!("wechat", payment_attempts["data"]["items"][0]["provider"]);
+    assert_eq!("25.50", payment_attempts["data"]["items"][0]["amount"]);
+    assert_eq!("success", payment_attempts["data"]["items"][0]["status"]);
 
     let referrals = request_json(
         router,
@@ -114,6 +151,24 @@ async fn admin_marketing_route_creates_deletes_generates_and_updates_codes() {
     assert_eq!("Launch credit", create_coupon["data"]["item"]["name"]);
     assert_eq!("$8.50", create_coupon["data"]["item"]["value"]);
     assert_eq!("active", create_coupon["data"]["item"]["status"]);
+
+    let update_coupon = request_json(
+        router.clone(),
+        signed_request(
+            "PUT",
+            "/backend/v3/api/billing/coupons/99",
+            r#"{"name":"Launch credit updated","type":"discount","value":"15%","status":"inactive"}"#,
+        ),
+    )
+    .await;
+    assert_eq!("99", update_coupon["data"]["item"]["id"]);
+    assert_eq!(
+        "Launch credit updated",
+        update_coupon["data"]["item"]["name"]
+    );
+    assert_eq!("discount", update_coupon["data"]["item"]["type"]);
+    assert_eq!("15.00%", update_coupon["data"]["item"]["value"]);
+    assert_eq!("inactive", update_coupon["data"]["item"]["status"]);
 
     let generate_batch = request_json(
         router.clone(),
@@ -167,6 +222,30 @@ async fn admin_marketing_route_creates_deletes_generates_and_updates_codes() {
     assert_eq!(50, update_package["data"]["item"]["bonus"]);
     assert_eq!(250, update_package["data"]["item"]["points"]);
 
+    let update_exchange_rule = request_json(
+        router.clone(),
+        signed_request(
+            "PUT",
+            "/backend/v3/api/billing/exchange_rules",
+            r#"{"sourceAssetType":"points","targetAssetType":"cash","rate":"250.000000","status":"active"}"#,
+        ),
+    )
+    .await;
+    assert_eq!(
+        "exchange-upserted",
+        update_exchange_rule["data"]["item"]["id"]
+    );
+    assert_eq!(
+        "POINTS",
+        update_exchange_rule["data"]["item"]["sourceAssetType"]
+    );
+    assert_eq!(
+        "CASH",
+        update_exchange_rule["data"]["item"]["targetAssetType"]
+    );
+    assert_eq!("250", update_exchange_rule["data"]["item"]["rate"]);
+    assert_eq!("active", update_exchange_rule["data"]["item"]["status"]);
+
     let delete_package = request_json(
         router.clone(),
         signed_request(
@@ -188,10 +267,12 @@ async fn admin_marketing_route_creates_deletes_generates_and_updates_codes() {
     assert_eq!(
         vec![
             "create_coupon",
+            "update_coupon",
             "generate_batch",
             "update_promo_code_status",
             "create_recharge_package",
             "update_recharge_package",
+            "update_exchange_rule",
             "delete_recharge_package",
             "delete_coupon"
         ],
@@ -246,6 +327,33 @@ async fn admin_marketing_route_rejects_invalid_batch_count_without_calling_store
         .as_str()
         .unwrap()
         .contains("count must be between"));
+    assert!(store.commands.lock().unwrap().is_empty());
+}
+
+#[tokio::test]
+async fn admin_marketing_route_rejects_inactive_exchange_rules_without_calling_store() {
+    let store = Arc::new(TestAdminMarketingStore::default());
+    let router = sdkwork_claw_product::api::admin_marketing_router_with_store(
+        store.clone(),
+        Arc::new(TestUuidGenerator),
+    );
+
+    let response = router
+        .oneshot(signed_request(
+            "PUT",
+            "/backend/v3/api/billing/exchange_rules",
+            r#"{"sourceAssetType":"POINTS","targetAssetType":"CASH","rate":"250","status":"inactive"}"#,
+        ))
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::BAD_REQUEST, response.status());
+    let payload = json_payload(response).await;
+    assert_eq!("4001", payload["code"]);
+    assert!(payload["msg"]
+        .as_str()
+        .unwrap()
+        .contains("exchange rule status only supports active"));
     assert!(store.commands.lock().unwrap().is_empty());
 }
 
@@ -323,6 +431,29 @@ impl AdminMarketingStore for TestAdminMarketingStore {
             self.commands.lock().unwrap().push("delete_coupon");
             assert_eq!(99, command.coupon_id);
             Ok(true)
+        })
+    }
+
+    fn update_coupon<'a>(
+        &'a self,
+        command: UpdateAdminCouponCommand,
+    ) -> AdminMarketingCommandFuture<'a, AdminCouponItem> {
+        Box::pin(async move {
+            self.commands.lock().unwrap().push("update_coupon");
+            assert_eq!(99, command.coupon_id);
+            assert_eq!("Launch credit updated", command.name);
+            assert_eq!("discount", command.coupon_type);
+            assert_eq!("15.00%", command.value);
+            assert_eq!(0, command.amount_cents);
+            assert_eq!(Some("15.0000".to_owned()), command.discount_value);
+            assert_eq!("inactive", command.status);
+            Ok(AdminCouponItem {
+                id: command.coupon_id.to_string(),
+                name: command.name,
+                coupon_type: command.coupon_type,
+                value: command.value,
+                status: command.status,
+            })
         })
     }
 
@@ -449,6 +580,26 @@ impl AdminMarketingStore for TestAdminMarketingStore {
         })
     }
 
+    fn load_recharge_record<'a>(
+        &'a self,
+        query: LoadAdminRechargeRecordQuery,
+    ) -> AdminMarketingCommandFuture<'a, Option<AdminRechargeRecordItem>> {
+        Box::pin(async move {
+            assert_eq!("recharge-100", query.order_no);
+            Ok(Some(AdminRechargeRecordItem {
+                id: "100".to_owned(),
+                trade_no: "recharge-100".to_owned(),
+                user_id: "30".to_owned(),
+                user: "owner@example.com".to_owned(),
+                amount: "10.00".to_owned(),
+                usd_credited: "1000".to_owned(),
+                method: "stripe".to_owned(),
+                status: "completed".to_owned(),
+                time: "2026-04-29 10:00:00".to_owned(),
+            }))
+        })
+    }
+
     fn list_recharge_packages<'a>(
         &'a self,
         query: ListAdminRechargePackagesQuery,
@@ -460,6 +611,31 @@ impl AdminMarketingStore for TestAdminMarketingStore {
                 rmb: "10.00".to_owned(),
                 bonus: 25,
                 points: 125,
+            }])
+        })
+    }
+
+    fn list_exchange_rules<'a>(
+        &'a self,
+        query: ListAdminExchangeRulesQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<AdminExchangeRuleItem>> {
+        Box::pin(async move {
+            assert_eq!(10, query.subject.tenant_id);
+            if let Some(source_asset_type) = query.source_asset_type.as_deref() {
+                assert_eq!("POINTS", source_asset_type);
+            }
+            if let Some(target_asset_type) = query.target_asset_type.as_deref() {
+                assert_eq!("CASH", target_asset_type);
+            }
+            if let Some(status) = query.status.as_deref() {
+                assert_eq!("active", status);
+            }
+            Ok(vec![AdminExchangeRuleItem {
+                id: "exchange-1".to_owned(),
+                source_asset_type: "POINTS".to_owned(),
+                target_asset_type: "CASH".to_owned(),
+                rate: "120".to_owned(),
+                status: "active".to_owned(),
             }])
         })
     }
@@ -505,6 +681,27 @@ impl AdminMarketingStore for TestAdminMarketingStore {
         })
     }
 
+    fn update_exchange_rule<'a>(
+        &'a self,
+        command: UpdateAdminExchangeRuleCommand,
+    ) -> AdminMarketingCommandFuture<'a, AdminExchangeRuleItem> {
+        Box::pin(async move {
+            self.commands.lock().unwrap().push("update_exchange_rule");
+            assert_eq!(10, command.subject.tenant_id);
+            assert_eq!(20, command.subject.organization_id);
+            assert_eq!("POINTS", command.source_asset_type);
+            assert_eq!("CASH", command.target_asset_type);
+            assert_eq!("250", command.rate);
+            Ok(AdminExchangeRuleItem {
+                id: "exchange-upserted".to_owned(),
+                source_asset_type: command.source_asset_type,
+                target_asset_type: command.target_asset_type,
+                rate: command.rate,
+                status: "active".to_owned(),
+            })
+        })
+    }
+
     fn delete_recharge_package<'a>(
         &'a self,
         command: DeleteAdminRechargePackageCommand,
@@ -516,6 +713,23 @@ impl AdminMarketingStore for TestAdminMarketingStore {
                 .push("delete_recharge_package");
             assert_eq!(901, command.package_id);
             Ok(true)
+        })
+    }
+
+    fn list_payment_attempts<'a>(
+        &'a self,
+        query: ListAdminPaymentAttemptsQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<AdminPaymentAttemptItem>> {
+        Box::pin(async move {
+            assert_eq!(10, query.subject.tenant_id);
+            Ok(vec![AdminPaymentAttemptItem {
+                id: "payment-1".to_owned(),
+                order_no: "order-100".to_owned(),
+                provider: "wechat".to_owned(),
+                amount: "25.50".to_owned(),
+                status: "success".to_owned(),
+                created_at: "2026-04-29 09:10:00".to_owned(),
+            }])
         })
     }
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Activity, Search, Filter } from 'lucide-react';
+import { Activity } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { RoutingService, RoutingUsageData, RoutingModelStats } from '../routingService';
 
@@ -20,11 +20,6 @@ export function UsageTab() {
         <div>
           <h3 className="text-xl font-bold text-slate-900 dark:text-white">调用记录统计</h3>
           <p className="text-sm text-slate-500 mt-1">查看经过本地路由的 API 请求量和响应延迟趋势。</p>
-        </div>
-        <div className="flex gap-3">
-          <button className="flex items-center gap-2 bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer">
-            <Filter className="w-4 h-4" /> 筛选条件
-          </button>
         </div>
       </div>
 

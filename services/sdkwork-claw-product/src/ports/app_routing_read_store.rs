@@ -3,7 +3,7 @@ use std::pin::Pin;
 
 use serde::Serialize;
 
-use crate::domain::DomainResult;
+use crate::domain::{DomainResult, ProviderRetryPolicy};
 
 pub type AppRoutingReadFuture<'a, T> = Pin<Box<dyn Future<Output = DomainResult<T>> + Send + 'a>>;
 
@@ -41,12 +41,36 @@ pub struct AppRoutingChannelItem {
     pub models: Vec<String>,
     pub capabilities: Vec<String>,
     pub is_multimodal: bool,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub timeout_ms: Option<i64>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub retry_policy: Option<AppRoutingRetryPolicyItem>,
     pub weight: i64,
     pub status: String,
     pub latency: String,
     pub rpm: i64,
     pub balance: String,
     pub errors: i64,
+}
+
+#[derive(Debug, Clone, Default, Serialize, PartialEq, Eq)]
+#[serde(rename_all = "camelCase")]
+pub struct AppRoutingRetryPolicyItem {
+    pub max_attempts: usize,
+    pub retryable_status_codes: Vec<u16>,
+    pub backoff_ms: u64,
+}
+
+impl AppRoutingRetryPolicyItem {
+    pub fn from_json(value: &str) -> Option<Self> {
+        ProviderRetryPolicy::from_json_str(value)
+            .ok()
+            .map(|policy| Self {
+                max_attempts: policy.max_attempts,
+                retryable_status_codes: policy.retryable_status_codes,
+                backoff_ms: policy.backoff_ms,
+            })
+    }
 }
 
 #[derive(Debug, Clone, Default, Serialize, PartialEq)]
@@ -70,6 +94,20 @@ pub struct AppRoutingRequestTraceItem {
     pub status: i64,
     pub duration: String,
     pub tokens: i64,
+    pub trace_id: String,
+    pub request_id: String,
+    pub request_path: String,
+    pub http_method: String,
+    pub request_payload_hash: String,
+    pub response_payload_hash: String,
+    pub request_bytes: i64,
+    pub response_bytes: i64,
+    pub provider_error_code: String,
+    pub error_type: String,
+    pub error_message_masked: String,
+    pub started_at: String,
+    pub ended_at: String,
+    pub streaming: bool,
 }
 
 #[derive(Debug, Clone, Default, Serialize, PartialEq)]

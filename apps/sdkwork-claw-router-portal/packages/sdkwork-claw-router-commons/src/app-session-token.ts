@@ -16,12 +16,18 @@ let memoryToken: StoredAppSessionToken | null = null;
 let storageLoaded = false;
 
 export function storeAppSessionFromResult(result: unknown): StoredAppSessionToken {
+  const previousToken = loadStoredAppSessionToken();
   const data = readAppSessionPayload(result);
   const accessToken = readString(data, 'accessToken');
   const authToken = readString(data, 'authToken');
   const expiresAt = readOptionalExpiry(data, 'expiresAt');
-  const refreshToken = readString(data, 'refreshToken');
-  const sessionId = readString(data, 'sessionId');
+  const responseRefreshToken = readString(data, 'refreshToken');
+  const responseSessionId = readString(data, 'sessionId');
+  const sameSession =
+    Boolean(previousToken) &&
+    (!responseSessionId || previousToken?.sessionId === responseSessionId);
+  const refreshToken = responseRefreshToken || (sameSession ? previousToken?.refreshToken ?? '' : '');
+  const sessionId = responseSessionId || (sameSession ? previousToken?.sessionId ?? '' : '');
 
   if (!accessToken || !authToken) {
     throw new Error('App session response is missing valid SDKWork IAM token data');

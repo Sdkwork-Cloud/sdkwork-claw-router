@@ -25,7 +25,7 @@ curl http://127.0.0.1:3900/readyz
 
 ## 2. Login And Authentication Methods
 
-`v0.2.0` supports admin-configured login methods, QR login, OAuth visibility, recovery methods, registration methods, and verification-code policy.
+`v0.3.0` supports admin-configured login methods, QR login, OAuth visibility, recovery methods, registration methods, and verification-code policy.
 
 The default posture is strict:
 

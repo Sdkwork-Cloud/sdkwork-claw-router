@@ -1,3 +1,6 @@
+import type { JsonNull } from './json-null';
+import type { ProviderRetryPolicy } from './provider-retry-policy';
+
 /** Update routing channel request schema exposed by Claw Router. */
 export interface UpdateRoutingChannelRequest {
   /** Access type field on update routing channel request. */
@@ -12,10 +15,14 @@ export interface UpdateRoutingChannelRequest {
   name?: string;
   /** Protocol field on update routing channel request. */
   protocol?: string;
+  /** Retry policy field on update routing channel request. */
+  retryPolicy?: ProviderRetryPolicy | JsonNull;
   /** Vault/KMS secret reference. Plaintext credential fields are forbidden. */
   secretRef?: string;
   /** Status field on update routing channel request. */
   status?: 'active' | 'disabled' | 'error';
+  /** Timeout ms field on update routing channel request. */
+  timeoutMs?: number | null;
   /** Vendor field on update routing channel request. */
   vendor?: string;
   /** Weight field on update routing channel request. */

@@ -160,6 +160,68 @@ async fn spawn_health_upstream(name: &'static str, healthy: bool) -> UpstreamSer
     }
 }
 
+async fn slow_upstream(State(delay): State<Duration>) -> Response {
+    sleep(delay).await;
+    Json(json!({
+        "status": "ok",
+        "service": "slow-upstream",
+    }))
+    .into_response()
+}
+
+async fn spawn_slow_upstream(delay: Duration) -> UpstreamServer {
+    let app = Router::new().fallback(slow_upstream).with_state(delay);
+    let listener = TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let address = listener.local_addr().unwrap();
+    let (stop, stopped) = oneshot::channel::<()>();
+
+    tokio::spawn(async move {
+        axum::serve(listener, app)
+            .with_graceful_shutdown(async {
+                let _ = stopped.await;
+            })
+            .await
+            .unwrap();
+    });
+
+    UpstreamServer {
+        base_url: format!("http://{address}"),
+        stop,
+    }
+}
+
+async fn slow_health(State(delay): State<Duration>) -> Response {
+    sleep(delay).await;
+    Json(json!({
+        "status": "ok",
+        "service": "slow-health",
+    }))
+    .into_response()
+}
+
+async fn spawn_slow_health_upstream(delay: Duration) -> UpstreamServer {
+    let app = Router::new()
+        .route("/healthz", axum::routing::get(slow_health))
+        .with_state(delay);
+    let listener = TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let address = listener.local_addr().unwrap();
+    let (stop, stopped) = oneshot::channel::<()>();
+
+    tokio::spawn(async move {
+        axum::serve(listener, app)
+            .with_graceful_shutdown(async {
+                let _ = stopped.await;
+            })
+            .await
+            .unwrap();
+    });
+
+    UpstreamServer {
+        base_url: format!("http://{address}"),
+        stop,
+    }
+}
+
 async fn sdk_generator_fixture_handler(
     State(state): State<SdkGeneratorFixtureState>,
     request: Request,
@@ -692,6 +754,83 @@ async fn edge_server_readyz_returns_unavailable_when_any_upstream_is_unhealthy()
 }
 
 #[tokio::test]
+async fn edge_server_uses_configured_ready_timeout() {
+    let gateway = spawn_slow_health_upstream(Duration::from_millis(80)).await;
+    let admin = spawn_health_upstream("admin", true).await;
+    let app = spawn_health_upstream("app", true).await;
+    let portal = spawn_health_upstream("portal", true).await;
+    let router = sdkwork_claw_gateway::edge_server_router(
+        sdkwork_claw_gateway::EdgeServerConfig::try_new(
+            &gateway.base_url,
+            &admin.base_url,
+            &app.base_url,
+            &portal.base_url,
+        )
+        .unwrap()
+        .with_ready_check_timeout(Duration::from_millis(20))
+        .unwrap(),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method(Method::GET)
+                .uri("/readyz")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::SERVICE_UNAVAILABLE, response.status());
+    let body = to_bytes(response.into_body(), usize::MAX).await.unwrap();
+    let json: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!(
+        "upstream health check timed out",
+        json["upstreams"]["gateway"]["error"]
+    );
+
+    let _ = gateway.stop.send(());
+    let _ = admin.stop.send(());
+    let _ = app.stop.send(());
+    let _ = portal.stop.send(());
+}
+
+#[tokio::test]
+async fn edge_server_uses_configured_upstream_request_timeout() {
+    let upstream = spawn_slow_upstream(Duration::from_millis(80)).await;
+    let router = sdkwork_claw_gateway::edge_server_router(
+        sdkwork_claw_gateway::EdgeServerConfig::try_new(
+            &upstream.base_url,
+            &upstream.base_url,
+            &upstream.base_url,
+            &upstream.base_url,
+        )
+        .unwrap()
+        .with_upstream_request_timeout(Duration::from_millis(20))
+        .unwrap(),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method(Method::GET)
+                .uri("/v1/models")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::BAD_GATEWAY, response.status());
+    let body = to_bytes(response.into_body(), usize::MAX).await.unwrap();
+    let json: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!("upstream request timed out", json["error"]);
+
+    let _ = upstream.stop.send(());
+}
+
+#[tokio::test]
 async fn edge_server_streams_request_bodies_without_buffering_before_upstream() {
     let upstream = spawn_request_streaming_upstream().await;
     let router = sdkwork_claw_gateway::edge_server_router(
@@ -850,6 +989,8 @@ async fn edge_server_can_serve_portal_dist_without_node_server() {
     .unwrap()
     .with_portal_public_backend_api_base_url("/backend/v3/api")
     .unwrap()
+    .with_portal_static_cache_control("private, no-cache", "public, max-age=86400, immutable")
+    .unwrap()
     .with_portal_public_tool_api_enabled(false);
     let router = sdkwork_claw_gateway::edge_server_router(config);
 
@@ -892,7 +1033,7 @@ async fn edge_server_can_serve_portal_dist_without_node_server() {
     assert!(content_security_policy.contains("connect-src 'self' https://api.sdkwork.com"));
     assert!(content_security_policy.contains("https://tenant-api.example.com"));
     assert_eq!(
-        "no-store",
+        "private, no-cache",
         root_response
             .headers()
             .get(header::CACHE_CONTROL)
@@ -962,7 +1103,7 @@ async fn edge_server_can_serve_portal_dist_without_node_server() {
         .unwrap();
     assert_eq!(StatusCode::OK, asset_response.status());
     assert_eq!(
-        "public, max-age=31536000, immutable",
+        "public, max-age=86400, immutable",
         asset_response
             .headers()
             .get(header::CACHE_CONTROL)
@@ -1154,6 +1295,48 @@ async fn edge_server_handles_enabled_portal_tool_api_inside_rust_edge() {
     .await;
     assert_eq!(StatusCode::BAD_GATEWAY, status);
     assert_eq!("sdk_generator_failed", payload["code"]);
+
+    let _ = std::fs::remove_dir_all(&portal_dist);
+    let _ = gateway.stop.send(());
+    let _ = admin.stop.send(());
+    let _ = app.stop.send(());
+}
+
+#[tokio::test]
+async fn edge_server_uses_configured_portal_tool_api_max_body_bytes() {
+    let gateway = spawn_upstream("gateway").await;
+    let admin = spawn_upstream("admin").await;
+    let app = spawn_upstream("app").await;
+    let portal_dist = temp_portal_dist_dir("portal-tool-api-body-limit");
+    write_portal_dist_fixture(&portal_dist);
+
+    let config = sdkwork_claw_gateway::EdgeServerConfig::try_new(
+        &gateway.base_url,
+        &admin.base_url,
+        &app.base_url,
+        "http://127.0.0.1:3901",
+    )
+    .unwrap()
+    .with_portal_static_dist(portal_dist.clone())
+    .unwrap()
+    .with_portal_public_tool_api_enabled(true)
+    .with_portal_tool_api_max_body_bytes(32)
+    .unwrap();
+    let router = sdkwork_claw_gateway::edge_server_router(config);
+
+    let response = request_with_json_body(
+        router,
+        Method::POST,
+        "/api/code-snippet",
+        r#"{"path":"/v1/models","method":"get","baseUrl":"/v1"}"#,
+    )
+    .await;
+
+    assert_eq!(StatusCode::PAYLOAD_TOO_LARGE, response.status());
+    assert_eq!("no-store", response.headers()[header::CACHE_CONTROL]);
+    let body = to_bytes(response.into_body(), usize::MAX).await.unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!("Request body is too large", payload["error"]);
 
     let _ = std::fs::remove_dir_all(&portal_dist);
     let _ = gateway.stop.send(());
@@ -1819,6 +2002,26 @@ fn edge_server_portal_csp_rejects_non_origin_connect_src_values() {
         .is_err());
 }
 
+#[test]
+fn edge_server_rejects_unsafe_cors_allowed_origins() {
+    let config = sdkwork_claw_gateway::EdgeServerConfig::try_new(
+        "http://127.0.0.1:18080",
+        "http://127.0.0.1:18081",
+        "http://127.0.0.1:18082",
+        "http://127.0.0.1:3901",
+    )
+    .unwrap();
+
+    assert!(config.clone().with_cors_allowed_origins(["*"]).is_err());
+    assert!(config
+        .clone()
+        .with_cors_allowed_origins(["https://portal.example.com/app"])
+        .is_err());
+    assert!(config
+        .with_cors_allowed_origins(["javascript:alert(1)"])
+        .is_err());
+}
+
 #[tokio::test]
 async fn edge_server_handles_direct_portal_dev_cors_preflight() {
     let upstream = spawn_upstream("unused").await;
@@ -1891,6 +2094,47 @@ async fn edge_server_handles_direct_portal_dev_cors_preflight() {
         .headers()
         .get(header::ACCESS_CONTROL_ALLOW_ORIGIN)
         .is_none());
+
+    let _ = upstream.stop.send(());
+}
+
+#[tokio::test]
+async fn edge_server_allows_configured_external_cors_origins() {
+    let upstream = spawn_upstream("unused").await;
+    let config = sdkwork_claw_gateway::EdgeServerConfig::try_new(
+        &upstream.base_url,
+        &upstream.base_url,
+        &upstream.base_url,
+        &upstream.base_url,
+    )
+    .unwrap()
+    .with_cors_allowed_origins(["https://portal.customer.example"])
+    .unwrap();
+    let router = sdkwork_claw_gateway::edge_server_router(config);
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method(Method::OPTIONS)
+                .uri("/app/v3/api/ai/models")
+                .header(header::ORIGIN, "https://portal.customer.example")
+                .header(header::ACCESS_CONTROL_REQUEST_METHOD, "GET")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::NO_CONTENT, response.status());
+    assert_eq!(
+        "https://portal.customer.example",
+        response
+            .headers()
+            .get(header::ACCESS_CONTROL_ALLOW_ORIGIN)
+            .unwrap()
+            .to_str()
+            .unwrap(),
+    );
 
     let _ = upstream.stop.send(());
 }
@@ -2227,5 +2471,111 @@ fn edge_server_config_rejects_invalid_portal_tool_api_rate_limit() {
         .is_err());
     assert!(config
         .with_portal_tool_api_rate_limit(1, Duration::ZERO)
+        .is_err());
+}
+
+#[tokio::test]
+async fn edge_server_applies_configured_portal_security_policy_headers() {
+    let gateway = spawn_upstream("gateway").await;
+    let admin = spawn_upstream("admin").await;
+    let app = spawn_upstream("app").await;
+    let portal_dist = temp_portal_dist_dir("portal-security-policy");
+    write_portal_dist_fixture(&portal_dist);
+
+    let config = sdkwork_claw_gateway::EdgeServerConfig::try_new(
+        &gateway.base_url,
+        &admin.base_url,
+        &app.base_url,
+        "http://127.0.0.1:3901",
+    )
+    .unwrap()
+    .with_portal_static_dist(portal_dist.clone())
+    .unwrap()
+    .with_portal_strict_transport_security(true, 31_536_000, true, true)
+    .unwrap()
+    .with_portal_csp_frame_src(["https://player.example.com", "https://videos.example.com"])
+    .unwrap();
+    let router = sdkwork_claw_gateway::edge_server_router(config);
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method(Method::GET)
+                .uri("/")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    assert_eq!(
+        "max-age=31536000; includeSubDomains; preload",
+        response
+            .headers()
+            .get("strict-transport-security")
+            .unwrap()
+            .to_str()
+            .unwrap()
+    );
+    assert_eq!(
+        "strict-origin-when-cross-origin",
+        response
+            .headers()
+            .get("referrer-policy")
+            .unwrap()
+            .to_str()
+            .unwrap()
+    );
+    assert_eq!(
+        "camera=(), microphone=(), geolocation=(), payment=()",
+        response
+            .headers()
+            .get("permissions-policy")
+            .unwrap()
+            .to_str()
+            .unwrap()
+    );
+    let csp = response
+        .headers()
+        .get("content-security-policy")
+        .unwrap()
+        .to_str()
+        .unwrap();
+    assert!(csp.contains(
+        "frame-src 'self' https://player.bilibili.com https://player.example.com https://videos.example.com"
+    ));
+    assert!(csp.contains("frame-ancestors 'none'"));
+
+    let _ = std::fs::remove_dir_all(&portal_dist);
+    let _ = gateway.stop.send(());
+    let _ = admin.stop.send(());
+    let _ = app.stop.send(());
+}
+
+#[test]
+fn edge_server_rejects_unsafe_portal_security_policy_values() {
+    let config = sdkwork_claw_gateway::EdgeServerConfig::try_new(
+        "http://127.0.0.1:18080",
+        "http://127.0.0.1:18081",
+        "http://127.0.0.1:18082",
+        "http://127.0.0.1:3901",
+    )
+    .unwrap();
+
+    assert!(config
+        .clone()
+        .with_portal_strict_transport_security(true, 0, true, false)
+        .is_err());
+    assert!(config
+        .clone()
+        .with_portal_strict_transport_security(true, 300, true, true)
+        .is_err());
+    assert!(config
+        .clone()
+        .with_portal_csp_frame_src(["https://player.example.com/embed"])
+        .is_err());
+    assert!(config
+        .with_portal_csp_frame_src(["javascript:alert(1)"])
         .is_err());
 }

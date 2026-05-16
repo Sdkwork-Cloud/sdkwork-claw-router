@@ -84,16 +84,28 @@ impl DatabaseInstallOptions {
     }
 
     pub fn from_env() -> Result<Self, DatabaseInstallError> {
-        let environment = std::env::var(ENV_INSTALL_ENVIRONMENT)
-            .ok()
-            .unwrap_or_else(|| DEFAULT_INSTALL_ENVIRONMENT.to_owned());
-        let seed_profile = std::env::var(ENV_INSTALL_SEED_PROFILE)
-            .ok()
-            .unwrap_or_else(|| DEFAULT_SEED_PROFILE.to_owned());
-        let models_catalog_root = std::env::var(ENV_MODELS_CATALOG_ROOT)
-            .ok()
-            .map(|value| value.trim().to_owned())
-            .filter(|value| !value.is_empty());
+        let runtime_toml = sdkwork_claw_config::RuntimeTomlConfig::from_env_config_file()
+            .map_err(DatabaseInstallError::InvalidState)?;
+        Self::from_env_or_runtime_toml(runtime_toml.as_ref())
+    }
+
+    pub fn from_env_or_runtime_toml(
+        runtime_toml: Option<&sdkwork_claw_config::RuntimeTomlConfig>,
+    ) -> Result<Self, DatabaseInstallError> {
+        let environment = sdkwork_claw_config::runtime::config_value(
+            ENV_INSTALL_ENVIRONMENT,
+            runtime_toml.and_then(|config| config.install.environment.as_deref()),
+        )
+        .unwrap_or_else(|| DEFAULT_INSTALL_ENVIRONMENT.to_owned());
+        let seed_profile = sdkwork_claw_config::runtime::config_value(
+            ENV_INSTALL_SEED_PROFILE,
+            runtime_toml.and_then(|config| config.install.seed_profile.as_deref()),
+        )
+        .unwrap_or_else(|| DEFAULT_SEED_PROFILE.to_owned());
+        let models_catalog_root = sdkwork_claw_config::runtime::config_value(
+            ENV_MODELS_CATALOG_ROOT,
+            runtime_toml.and_then(|config| config.install.models_catalog_root.as_deref()),
+        );
         Self::new(environment, seed_profile)?.with_models_catalog_root(models_catalog_root)
     }
 
@@ -156,28 +168,56 @@ impl Default for BootstrapAdminOptions {
 
 impl BootstrapAdminOptions {
     fn from_env() -> Result<Self, DatabaseInstallError> {
+        let runtime_toml = sdkwork_claw_config::RuntimeTomlConfig::from_env_config_file()
+            .map_err(DatabaseInstallError::InvalidState)?;
+        Self::from_env_or_runtime_toml(runtime_toml.as_ref())
+    }
+
+    fn from_env_or_runtime_toml(
+        runtime_toml: Option<&sdkwork_claw_config::RuntimeTomlConfig>,
+    ) -> Result<Self, DatabaseInstallError> {
         let mut options = Self::default();
-        options.enabled = match std::env::var(ENV_BOOTSTRAP_ADMIN_ENABLED).ok() {
-            Some(value) => parse_env_bool(ENV_BOOTSTRAP_ADMIN_ENABLED, value.as_str())?,
+        options.enabled = match sdkwork_claw_config::runtime::config_bool(
+            ENV_BOOTSTRAP_ADMIN_ENABLED,
+            runtime_toml.and_then(|config| config.bootstrap_admin.enabled),
+        )
+        .map_err(DatabaseInstallError::InvalidState)?
+        {
+            Some(value) => value,
             None => true,
         };
-        options.username = env_optional(ENV_BOOTSTRAP_ADMIN_USERNAME)
-            .map(|value| normalize_bootstrap_admin_username(value, ENV_BOOTSTRAP_ADMIN_USERNAME))
-            .transpose()?
-            .unwrap_or_else(|| DEFAULT_BOOTSTRAP_ADMIN_USERNAME.to_owned());
-        options.display_name = env_optional(ENV_BOOTSTRAP_ADMIN_DISPLAY_NAME)
-            .map(|value| {
-                normalize_bootstrap_admin_text(value, ENV_BOOTSTRAP_ADMIN_DISPLAY_NAME, 128, true)
-            })
-            .transpose()?
-            .unwrap_or_else(|| DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME.to_owned());
-        options.email = env_optional(ENV_BOOTSTRAP_ADMIN_EMAIL)
-            .map(|value| normalize_bootstrap_admin_email(value, ENV_BOOTSTRAP_ADMIN_EMAIL))
-            .transpose()?
-            .unwrap_or_else(|| DEFAULT_BOOTSTRAP_ADMIN_EMAIL.to_owned());
-        options.password = env_optional(ENV_BOOTSTRAP_ADMIN_PASSWORD)
-            .map(|value| normalize_bootstrap_admin_password(value, ENV_BOOTSTRAP_ADMIN_PASSWORD))
-            .transpose()?;
+        options.username = sdkwork_claw_config::runtime::config_value(
+            ENV_BOOTSTRAP_ADMIN_USERNAME,
+            runtime_toml.and_then(|config| config.bootstrap_admin.username.as_deref()),
+        )
+        .map(|value| normalize_bootstrap_admin_username(value, ENV_BOOTSTRAP_ADMIN_USERNAME))
+        .transpose()?
+        .unwrap_or_else(|| DEFAULT_BOOTSTRAP_ADMIN_USERNAME.to_owned());
+        options.display_name = sdkwork_claw_config::runtime::config_value(
+            ENV_BOOTSTRAP_ADMIN_DISPLAY_NAME,
+            runtime_toml.and_then(|config| config.bootstrap_admin.display_name.as_deref()),
+        )
+        .map(|value| {
+            normalize_bootstrap_admin_text(value, ENV_BOOTSTRAP_ADMIN_DISPLAY_NAME, 128, true)
+        })
+        .transpose()?
+        .unwrap_or_else(|| DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME.to_owned());
+        options.email = sdkwork_claw_config::runtime::config_value(
+            ENV_BOOTSTRAP_ADMIN_EMAIL,
+            runtime_toml.and_then(|config| config.bootstrap_admin.email.as_deref()),
+        )
+        .map(|value| normalize_bootstrap_admin_email(value, ENV_BOOTSTRAP_ADMIN_EMAIL))
+        .transpose()?
+        .unwrap_or_else(|| DEFAULT_BOOTSTRAP_ADMIN_EMAIL.to_owned());
+        options.password = sdkwork_claw_config::runtime::config_secret_value(
+            ENV_BOOTSTRAP_ADMIN_PASSWORD,
+            "SDKWORK_CLAW_BOOTSTRAP_ADMIN_PASSWORD_FILE",
+            None,
+            runtime_toml.and_then(|config| config.bootstrap_admin.password_file.as_deref()),
+        )
+        .map_err(DatabaseInstallError::InvalidState)?
+        .map(|value| normalize_bootstrap_admin_password(value, ENV_BOOTSTRAP_ADMIN_PASSWORD))
+        .transpose()?;
         Ok(options)
     }
 
@@ -1094,23 +1134,6 @@ fn normalize_refresh_token(
         )));
     }
     Ok(value)
-}
-
-fn env_optional(name: &str) -> Option<String> {
-    std::env::var(name)
-        .ok()
-        .map(|value| value.trim().to_owned())
-        .filter(|value| !value.is_empty())
-}
-
-fn parse_env_bool(name: &str, value: &str) -> Result<bool, DatabaseInstallError> {
-    match value.trim().to_ascii_lowercase().as_str() {
-        "1" | "true" | "yes" | "y" | "on" => Ok(true),
-        "0" | "false" | "no" | "n" | "off" => Ok(false),
-        _ => Err(DatabaseInstallError::InvalidState(format!(
-            "{name} must be one of true, false, 1, 0, yes, no, on, or off"
-        ))),
-    }
 }
 
 fn normalize_bootstrap_admin_username(

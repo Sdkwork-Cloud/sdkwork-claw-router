@@ -31,3 +31,13 @@ export function clearAppSession(): void {
   resetClawRouterSdkClients();
   resetClawRouterIamRuntime();
 }
+
+export async function revokeAppSession(): Promise<void> {
+  try {
+    await getClawRouterAppSdkClient().auth.sessions.current.delete();
+  } catch {
+    // Logout must always clear local state, even when the server session is already gone.
+  } finally {
+    clearAppSession();
+  }
+}

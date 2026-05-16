@@ -20887,6 +20887,39 @@
       ]
     },
     {
+      "api_method": "DELETE",
+      "api_path": "/app/v3/api/auth/sessions/current",
+      "api_surface": "app",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sessionService.ts#revokeAppSession",
+      "kind": "delete",
+      "module": "commons",
+      "openapi_exposed": false,
+      "operation": "revokeAppSession",
+      "operation_id": "sessions.current.delete",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "iam_session"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "route": "/auth/login",
+      "route_scope": "public",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "iam",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sessionService.ts",
+      "tag": "auth",
+      "write_tables": [
+        "iam_session",
+        "iam_security_event"
+      ]
+    },
+    {
       "api_method": "GET",
       "api_path": "/app/v3/api/billing/account/summary",
       "api_surface": "app",
@@ -27246,6 +27279,45 @@
               "minLength": 1,
               "type": "string"
             },
+            "retryPolicy": {
+              "additionalProperties": false,
+              "name": "ProviderRetryPolicy",
+              "properties": {
+                "backoffMs": {
+                  "maximum": 2000,
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "maxAttempts": {
+                  "maximum": 5,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "retryableStatusCodes": {
+                  "items": {
+                    "enum": [
+                      408,
+                      409,
+                      425,
+                      429,
+                      500,
+                      502,
+                      503,
+                      504
+                    ],
+                    "type": "integer"
+                  },
+                  "maxItems": 8,
+                  "type": "array",
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "maxAttempts",
+                "retryableStatusCodes"
+              ],
+              "type": "object"
+            },
             "secretRef": {
               "description": "Vault/KMS secret reference. Plaintext credential fields are forbidden.",
               "maxLength": 256,
@@ -27260,6 +27332,13 @@
                 "error"
               ],
               "type": "string"
+            },
+            "timeoutMs": {
+              "description": "Per-channel upstream response timeout in milliseconds.",
+              "format": "int64",
+              "maximum": 600000,
+              "minimum": 1,
+              "type": "integer"
             },
             "vendor": {
               "maxLength": 64,
@@ -27342,6 +27421,45 @@
                 "providerCode": {
                   "type": "string"
                 },
+                "retryPolicy": {
+                  "additionalProperties": false,
+                  "name": "ProviderRetryPolicy",
+                  "properties": {
+                    "backoffMs": {
+                      "maximum": 2000,
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "maxAttempts": {
+                      "maximum": 5,
+                      "minimum": 1,
+                      "type": "integer"
+                    },
+                    "retryableStatusCodes": {
+                      "items": {
+                        "enum": [
+                          408,
+                          409,
+                          425,
+                          429,
+                          500,
+                          502,
+                          503,
+                          504
+                        ],
+                        "type": "integer"
+                      },
+                      "maxItems": 8,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "maxAttempts",
+                    "retryableStatusCodes"
+                  ],
+                  "type": "object"
+                },
                 "rpm": {
                   "format": "int64",
                   "type": "integer"
@@ -27353,6 +27471,12 @@
                     "error"
                   ],
                   "type": "string"
+                },
+                "timeoutMs": {
+                  "format": "int64",
+                  "maximum": 600000,
+                  "minimum": 1,
+                  "type": "integer"
                 },
                 "vendor": {
                   "type": "string"
@@ -27626,6 +27750,45 @@
                   "providerCode": {
                     "type": "string"
                   },
+                  "retryPolicy": {
+                    "additionalProperties": false,
+                    "name": "ProviderRetryPolicy",
+                    "properties": {
+                      "backoffMs": {
+                        "maximum": 2000,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "maxAttempts": {
+                        "maximum": 5,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "retryableStatusCodes": {
+                        "items": {
+                          "enum": [
+                            408,
+                            409,
+                            425,
+                            429,
+                            500,
+                            502,
+                            503,
+                            504
+                          ],
+                          "type": "integer"
+                        },
+                        "maxItems": 8,
+                        "type": "array",
+                        "uniqueItems": true
+                      }
+                    },
+                    "required": [
+                      "maxAttempts",
+                      "retryableStatusCodes"
+                    ],
+                    "type": "object"
+                  },
                   "rpm": {
                     "format": "int64",
                     "type": "integer"
@@ -27637,6 +27800,12 @@
                       "error"
                     ],
                     "type": "string"
+                  },
+                  "timeoutMs": {
+                    "format": "int64",
+                    "maximum": 600000,
+                    "minimum": 1,
+                    "type": "integer"
                   },
                   "vendor": {
                     "type": "string"
@@ -27725,15 +27894,59 @@
                   "duration": {
                     "type": "string"
                   },
+                  "endedAt": {
+                    "type": "string"
+                  },
+                  "errorMessageMasked": {
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "errorType": {
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "httpMethod": {
+                    "type": "string"
+                  },
                   "id": {
                     "type": "string"
                   },
                   "model": {
                     "type": "string"
                   },
+                  "providerErrorCode": {
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "requestBytes": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "requestId": {
+                    "type": "string"
+                  },
+                  "requestPath": {
+                    "type": "string"
+                  },
+                  "requestPayloadHash": {
+                    "type": "string"
+                  },
+                  "responseBytes": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "responsePayloadHash": {
+                    "type": "string"
+                  },
+                  "startedAt": {
+                    "type": "string"
+                  },
                   "status": {
                     "format": "int64",
                     "type": "integer"
+                  },
+                  "streaming": {
+                    "type": "boolean"
                   },
                   "time": {
                     "type": "string"
@@ -27741,6 +27954,9 @@
                   "tokens": {
                     "format": "int64",
                     "type": "integer"
+                  },
+                  "traceId": {
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -27750,7 +27966,21 @@
                   "channel",
                   "status",
                   "duration",
-                  "tokens"
+                  "tokens",
+                  "traceId",
+                  "requestId",
+                  "requestPath",
+                  "httpMethod",
+                  "requestPayloadHash",
+                  "responsePayloadHash",
+                  "requestBytes",
+                  "responseBytes",
+                  "providerErrorCode",
+                  "errorType",
+                  "errorMessageMasked",
+                  "startedAt",
+                  "endedAt",
+                  "streaming"
                 ],
                 "type": "object"
               },
@@ -28054,6 +28284,45 @@
                 "providerCode": {
                   "type": "string"
                 },
+                "retryPolicy": {
+                  "additionalProperties": false,
+                  "name": "ProviderRetryPolicy",
+                  "properties": {
+                    "backoffMs": {
+                      "maximum": 2000,
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "maxAttempts": {
+                      "maximum": 5,
+                      "minimum": 1,
+                      "type": "integer"
+                    },
+                    "retryableStatusCodes": {
+                      "items": {
+                        "enum": [
+                          408,
+                          409,
+                          425,
+                          429,
+                          500,
+                          502,
+                          503,
+                          504
+                        ],
+                        "type": "integer"
+                      },
+                      "maxItems": 8,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "maxAttempts",
+                    "retryableStatusCodes"
+                  ],
+                  "type": "object"
+                },
                 "rpm": {
                   "format": "int64",
                   "type": "integer"
@@ -28065,6 +28334,12 @@
                     "error"
                   ],
                   "type": "string"
+                },
+                "timeoutMs": {
+                  "format": "int64",
+                  "maximum": 600000,
+                  "minimum": 1,
+                  "type": "integer"
                 },
                 "vendor": {
                   "type": "string"
@@ -28202,6 +28477,45 @@
                 "providerCode": {
                   "type": "string"
                 },
+                "retryPolicy": {
+                  "additionalProperties": false,
+                  "name": "ProviderRetryPolicy",
+                  "properties": {
+                    "backoffMs": {
+                      "maximum": 2000,
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "maxAttempts": {
+                      "maximum": 5,
+                      "minimum": 1,
+                      "type": "integer"
+                    },
+                    "retryableStatusCodes": {
+                      "items": {
+                        "enum": [
+                          408,
+                          409,
+                          425,
+                          429,
+                          500,
+                          502,
+                          503,
+                          504
+                        ],
+                        "type": "integer"
+                      },
+                      "maxItems": 8,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "maxAttempts",
+                    "retryableStatusCodes"
+                  ],
+                  "type": "object"
+                },
                 "rpm": {
                   "format": "int64",
                   "type": "integer"
@@ -28213,6 +28527,12 @@
                     "error"
                   ],
                   "type": "string"
+                },
+                "timeoutMs": {
+                  "format": "int64",
+                  "maximum": 600000,
+                  "minimum": 1,
+                  "type": "integer"
                 },
                 "vendor": {
                   "type": "string"
@@ -28362,6 +28682,46 @@
               "minLength": 1,
               "type": "string"
             },
+            "retryPolicy": {
+              "additionalProperties": false,
+              "name": "ProviderRetryPolicy",
+              "nullable": true,
+              "properties": {
+                "backoffMs": {
+                  "maximum": 2000,
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "maxAttempts": {
+                  "maximum": 5,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "retryableStatusCodes": {
+                  "items": {
+                    "enum": [
+                      408,
+                      409,
+                      425,
+                      429,
+                      500,
+                      502,
+                      503,
+                      504
+                    ],
+                    "type": "integer"
+                  },
+                  "maxItems": 8,
+                  "type": "array",
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "maxAttempts",
+                "retryableStatusCodes"
+              ],
+              "type": "object"
+            },
             "secretRef": {
               "description": "Vault/KMS secret reference. Plaintext credential fields are forbidden.",
               "maxLength": 256,
@@ -28376,6 +28736,14 @@
                 "error"
               ],
               "type": "string"
+            },
+            "timeoutMs": {
+              "description": "Per-channel upstream response timeout in milliseconds. Null clears the channel override.",
+              "format": "int64",
+              "maximum": 600000,
+              "minimum": 1,
+              "nullable": true,
+              "type": "integer"
             },
             "vendor": {
               "maxLength": 64,
@@ -28453,6 +28821,45 @@
                 "providerCode": {
                   "type": "string"
                 },
+                "retryPolicy": {
+                  "additionalProperties": false,
+                  "name": "ProviderRetryPolicy",
+                  "properties": {
+                    "backoffMs": {
+                      "maximum": 2000,
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "maxAttempts": {
+                      "maximum": 5,
+                      "minimum": 1,
+                      "type": "integer"
+                    },
+                    "retryableStatusCodes": {
+                      "items": {
+                        "enum": [
+                          408,
+                          409,
+                          425,
+                          429,
+                          500,
+                          502,
+                          503,
+                          504
+                        ],
+                        "type": "integer"
+                      },
+                      "maxItems": 8,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "maxAttempts",
+                    "retryableStatusCodes"
+                  ],
+                  "type": "object"
+                },
                 "rpm": {
                   "format": "int64",
                   "type": "integer"
@@ -28464,6 +28871,12 @@
                     "error"
                   ],
                   "type": "string"
+                },
+                "timeoutMs": {
+                  "format": "int64",
+                  "maximum": 600000,
+                  "minimum": 1,
+                  "type": "integer"
                 },
                 "vendor": {
                   "type": "string"
@@ -42123,24 +42536,24 @@
   },
   "summary": {
     "api_method_counts": {
-      "DELETE": 22,
+      "DELETE": 23,
       "GET": 131,
       "PATCH": 6,
       "POST": 88,
       "PUT": 16
     },
     "api_surface_counts": {
-      "app": 151,
+      "app": 152,
       "backend": 112
     },
-    "operation_count": 263,
+    "operation_count": 264,
     "route_scope_counts": {
       "admin": 112,
       "console": 81,
-      "public": 70
+      "public": 71
     },
     "sdk_client_counts": {
-      "SdkworkAppClient": 151,
+      "SdkworkAppClient": 152,
       "SdkworkBackendClient": 112
     }
   }

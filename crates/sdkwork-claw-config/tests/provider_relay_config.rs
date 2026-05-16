@@ -1,6 +1,6 @@
 use sdkwork_claw_config::{
     ProviderPassthroughAuth, ProviderPassthroughAuthType, ProviderPassthroughHeader,
-    ProviderRelayConfig, ProviderSecretMapConfig,
+    ProviderRelayConfig, ProviderSecretMapConfig, RuntimeTomlConfig,
 };
 
 #[test]
@@ -361,6 +361,76 @@ fn parses_provider_secret_map_without_leaking_secret_values() {
 }
 
 #[test]
+fn reads_provider_relay_and_secret_map_from_runtime_toml_files() {
+    let openai_token_path = unique_secret_path("openai-relay");
+    let google_token_path = unique_secret_path("google-provider");
+    let secret_map_path = unique_secret_path("provider-secret-map");
+    std::fs::write(&openai_token_path, "sk-openai-relay\n").unwrap();
+    std::fs::write(&google_token_path, "sk-google-provider\n").unwrap();
+    std::fs::write(
+        &secret_map_path,
+        r#"{"vault://providers/openrouter/account/main":"sk-provider-token"}"#,
+    )
+    .unwrap();
+    let config = RuntimeTomlConfig::from_toml_str(&format!(
+        r#"
+[provider_relay.openai]
+base_url = "https://openai-compatible.internal/v1"
+bearer_token_file = "{}"
+
+[provider_relay.passthrough.google]
+base_url = "https://generativelanguage.googleapis.com"
+auth_type = "header"
+auth_name = "x-goog-api-key"
+auth_value_file = "{}"
+
+[provider_relay.passthrough.google.default_headers]
+x-goog-api-client = "clawrouter"
+
+[provider_secret_map]
+json_file = "{}"
+"#,
+        openai_token_path.display().to_string().replace('\\', "/"),
+        google_token_path.display().to_string().replace('\\', "/"),
+        secret_map_path.display().to_string().replace('\\', "/")
+    ))
+    .unwrap();
+
+    let relay = ProviderRelayConfig::from_env_or_runtime_toml(Some(&config))
+        .unwrap()
+        .unwrap();
+    assert_eq!(
+        "https://openai-compatible.internal/v1",
+        relay.openai_relay().unwrap().base_url()
+    );
+    assert_eq!(
+        "sk-openai-relay",
+        relay.openai_relay().unwrap().bearer_token()
+    );
+    let google = relay.provider_passthrough("google").unwrap();
+    assert_eq!(
+        &ProviderPassthroughAuth::header("x-goog-api-key", "sk-google-provider").unwrap(),
+        google.auth()
+    );
+    assert_eq!(
+        &[ProviderPassthroughHeader::new("x-goog-api-client", "clawrouter").unwrap()],
+        google.default_headers()
+    );
+
+    let secret_map = ProviderSecretMapConfig::from_env_or_runtime_toml(Some(&config))
+        .unwrap()
+        .unwrap();
+    assert_eq!(
+        Some("sk-provider-token"),
+        secret_map.secret_value("vault://providers/openrouter/account/main")
+    );
+
+    let _ = std::fs::remove_file(openai_token_path);
+    let _ = std::fs::remove_file(google_token_path);
+    let _ = std::fs::remove_file(secret_map_path);
+}
+
+#[test]
 fn missing_provider_secret_map_keeps_resolver_unset() {
     assert_eq!(
         None,
@@ -384,4 +454,15 @@ fn rejects_invalid_provider_secret_map_config() {
         ProviderSecretMapConfig::from_json(r#"{"vault://providers/openrouter/account/main":"  "}"#)
             .unwrap_err();
     assert!(blank_secret_value.contains("secret value must not be blank"));
+}
+
+fn unique_secret_path(name: &str) -> std::path::PathBuf {
+    std::env::temp_dir().join(format!(
+        "clawrouter-{name}-{}-{}.secret",
+        std::process::id(),
+        std::time::SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .unwrap()
+            .as_nanos()
+    ))
 }

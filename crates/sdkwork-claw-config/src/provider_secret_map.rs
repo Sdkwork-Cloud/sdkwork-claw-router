@@ -69,7 +69,19 @@ impl ProviderSecretMapConfig {
     }
 
     pub fn from_env() -> Result<Option<Self>, String> {
-        Self::from_optional_json(std::env::var(Self::ENV_PROVIDER_SECRET_MAP_JSON).ok())
+        Self::from_env_or_runtime_toml(None)
+    }
+
+    pub fn from_env_or_runtime_toml(
+        runtime_toml: Option<&crate::RuntimeTomlConfig>,
+    ) -> Result<Option<Self>, String> {
+        let secret_map_json = crate::runtime::config_secret_value(
+            Self::ENV_PROVIDER_SECRET_MAP_JSON,
+            "SDKWORK_CLAW_PROVIDER_SECRET_MAP_JSON_FILE",
+            runtime_toml.and_then(|config| config.provider_secret_map.json.as_deref()),
+            runtime_toml.and_then(|config| config.provider_secret_map.json_file.as_deref()),
+        )?;
+        Self::from_optional_json(secret_map_json)
     }
 
     pub fn secret_count(&self) -> usize {

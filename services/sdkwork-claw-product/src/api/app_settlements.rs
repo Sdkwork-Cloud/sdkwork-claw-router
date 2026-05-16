@@ -76,6 +76,10 @@ fn app_settlements_dashboard_router_with_state(
             "/app/v3/api/router/settlements/dashboard",
             get(fetch_settlements_dashboard),
         )
+        .route(
+            "/app/v3/api/billing/settlements/dashboard",
+            get(fetch_settlements_dashboard),
+        )
         .with_state(AppSettlementsDashboardState {
             read_store,
             require_subject,

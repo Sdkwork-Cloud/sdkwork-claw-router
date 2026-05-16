@@ -7,9 +7,6 @@ type AnnouncementFormValues = {
   content: string;
 };
 
-const DEFAULT_TARGET: AnnouncementCreateInput['target'] = 'all';
-const DEFAULT_STATUS: AnnouncementCreateInput['status'] = 'published';
-
 export function createAnnouncementInputFromForm(values: AnnouncementFormValues): AnnouncementCreateInput {
   return {
     title: values.title.trim(),
@@ -37,7 +34,7 @@ function readAnnouncementTarget(value: string): AnnouncementCreateInput['target'
   if (normalized === 'all' || normalized === 'vip' || normalized === 'free' || normalized === 'beta') {
     return normalized;
   }
-  return DEFAULT_TARGET;
+  throw new Error('target must be one of all, vip, free, beta');
 }
 
 function readAnnouncementStatus(value: string): AnnouncementCreateInput['status'] {
@@ -45,5 +42,5 @@ function readAnnouncementStatus(value: string): AnnouncementCreateInput['status'
   if (normalized === 'published' || normalized === 'draft') {
     return normalized;
   }
-  return DEFAULT_STATUS;
+  throw new Error('status must be one of published, draft');
 }

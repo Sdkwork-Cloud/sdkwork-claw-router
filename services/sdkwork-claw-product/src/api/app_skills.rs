@@ -158,6 +158,10 @@ fn app_skills_router_with_state(
         .route("/app/v3/api/ecosystem/skills", get(fetch_skills))
         .route("/app/v3/api/ecosystem/skills/mine", get(fetch_user_skills))
         .route(
+            "/app/v3/api/ecosystem/users/current/skills",
+            get(fetch_user_skills),
+        )
+        .route(
             "/app/v3/api/ecosystem/skills/categories",
             get(fetch_categories),
         )

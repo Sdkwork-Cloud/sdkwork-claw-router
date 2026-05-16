@@ -91,6 +91,10 @@ pub fn admin_api_key_rate_limit_router_with_store(
             "/backend/v3/api/router/rate_limits/api_keys",
             get(fetch_api_key_rate_limits).post(create_api_key_rate_limit),
         )
+        .route(
+            "/backend/v3/api/system/rate_limits/api_keys",
+            get(fetch_api_key_rate_limits).post(create_api_key_rate_limit),
+        )
         .with_state(AdminApiKeyRateLimitState {
             store,
             entity_uuid_generator,

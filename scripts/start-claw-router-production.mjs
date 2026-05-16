@@ -7,6 +7,7 @@ import process from 'node:process';
 import { fileURLToPath } from 'node:url';
 import { createRuntimeConfigTemplate } from './build-claw-router-install-package.mjs';
 import { productionGatewayBinaryPath } from './claw-router-production-artifacts.mjs';
+import { redisPolicyFor } from './plan-claw-router-install-packages.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -402,8 +403,13 @@ function runtimeConfigTemplateContent({
   maxConnections,
   sqlitePath,
 }) {
+  const normalizedDeploymentMode = normalizeDeploymentMode(deploymentMode);
+  const runtimeProfile = normalizedDeploymentMode === 'desktop' ? 'desktop' : 'server';
+  const platform = process.platform === 'win32' ? 'windows' : process.platform === 'darwin' ? 'macos' : 'linux';
   return createRuntimeConfigTemplate({
     runtimeProfile: deploymentMode,
+    deploymentMode: normalizedDeploymentMode,
+    platform,
     databasePolicy: {
       defaultEngine: databaseEngine,
       defaultUrl: databaseUrl,
@@ -430,6 +436,11 @@ function runtimeConfigTemplateContent({
         path: dataDirectory,
       },
     },
+    redisPolicy: redisPolicyFor({
+      platform,
+      runtimeProfile,
+      deploymentMode: normalizedDeploymentMode,
+    }),
   });
 }
 
@@ -472,16 +483,17 @@ function readRuntimeConfigSnapshot(configFile, env = process.env) {
 }
 
 function runtimeConfigSnapshotFromContent(content, configFile = null, env = process.env) {
-  const databaseUrl = matchConfigValue(content, 'url');
-  const databaseEngine = matchConfigValue(content, 'engine');
-  const maxConnections = matchConfigNumber(content, 'max_connections');
-  const host = matchConfigValue(content, 'host');
-  const port = matchConfigNumber(content, 'port');
-  const database = matchConfigValue(content, 'database');
-  const username = matchConfigValue(content, 'username');
-  const password = matchConfigValue(content, 'password');
-  const passwordFile = matchConfigValue(content, 'password_file');
-  const sslMode = matchConfigValue(content, 'ssl_mode');
+  const databaseSection = runtimeConfigSection(content, 'database');
+  const databaseUrl = matchConfigValue(databaseSection, 'url');
+  const databaseEngine = matchConfigValue(databaseSection, 'engine');
+  const maxConnections = matchConfigNumber(databaseSection, 'max_connections');
+  const host = matchConfigValue(databaseSection, 'host');
+  const port = matchConfigNumber(databaseSection, 'port');
+  const database = matchConfigValue(databaseSection, 'database');
+  const username = matchConfigValue(databaseSection, 'username');
+  const password = matchConfigValue(databaseSection, 'password');
+  const passwordFile = matchConfigValue(databaseSection, 'password_file');
+  const sslMode = matchConfigValue(databaseSection, 'ssl_mode');
   const passwordFileSnapshot = readRuntimeConfigPasswordFile(passwordFile, configFile, env);
   return {
     exists: true,
@@ -508,6 +520,29 @@ function runtimeConfigSnapshotFromContent(content, configFile = null, env = proc
     passwordFileError: passwordFileSnapshot.error,
     sslMode,
   };
+}
+
+function runtimeConfigSection(content, sectionName) {
+  const lines = String(content ?? '').split(/\r?\n/u);
+  const sectionHeader = `[${sectionName}]`;
+  const collected = [];
+  let inSection = false;
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (/^\[[^\]]+\]\s*$/u.test(trimmed)) {
+      if (trimmed === sectionHeader) {
+        inSection = true;
+        continue;
+      }
+      if (inSection) {
+        break;
+      }
+    }
+    if (inSection) {
+      collected.push(line);
+    }
+  }
+  return collected.join('\n');
 }
 
 function runtimeConfigPostgresUrlFromStructuredFields({

@@ -1,8 +1,8 @@
 import React, { useCallback, useState, useEffect } from 'react';
-import { CreditCard, Gift, Wallet, Zap, CheckCircle2, AlertCircle, RefreshCw, Link as LinkIcon, QrCode, Loader2 } from 'lucide-react';
+import { CreditCard, Gift, Wallet, Zap, CheckCircle2, AlertCircle, RefreshCw, Link as LinkIcon, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import { BusinessStatePanel, BusinessStateTableRow, CopyButton } from 'sdkwork-claw-router-commons';
+import { BusinessStatePanel, BusinessStateTableRow } from 'sdkwork-claw-router-commons';
 import { AccountService, AccountStats } from 'sdkwork-claw-router-console-account';
 import { RechargePackage, RechargeService } from 'sdkwork-claw-router-console-recharge';
 import { BillingService, RedeemHistoryItem, RechargeHistoryItem } from './billingService';
@@ -444,20 +444,8 @@ export function BillingView() {
                 <label className="text-xs font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
                   <LinkIcon className="w-3.5 h-3.5" /> 专属推广链接
                 </label>
-                <div className="flex items-center gap-2">
-                   <input
-                     type="text"
-                     readOnly
-                     value={referralContractUnavailable}
-                     className="flex-1 bg-white dark:bg-[#151515] border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2.5 text-sm text-slate-700 dark:text-slate-300 font-mono focus:outline-none shadow-sm dark:shadow-none"
-                   />
-                   <CopyButton
-                     text={referralContractUnavailable}
-                     label="Copy promotion link"
-                     title="Copy promotion link"
-                     disabled
-                     className="h-10 w-10 border border-slate-200 bg-white dark:border-white/10 dark:bg-white/5"
-                   />
+                <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2.5 text-sm text-amber-700 shadow-sm dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300">
+                  {referralContractUnavailable}
                 </div>
               </div>
 
@@ -466,23 +454,16 @@ export function BillingView() {
                 <label className="text-xs font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
                   <Gift className="w-3.5 h-3.5" /> 专属邀请码
                 </label>
-                <div className="flex items-center justify-between bg-white dark:bg-[#151515] border border-slate-200 dark:border-white/10 rounded-lg px-4 py-3 shadow-sm dark:shadow-none">
-                  <span className="text-sm font-medium text-slate-500 dark:text-slate-400">{referralContractUnavailable}</span>
-                  <CopyButton
-                    text={referralContractUnavailable}
-                    label="Copy invitation code"
-                    title="Copy invitation code"
-                    disabled
-                    className="ml-3"
-                  />
+                <div className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-500 shadow-sm dark:border-white/10 dark:bg-[#151515] dark:text-slate-400">
+                  暂不可用
                 </div>
               </div>
 
               {/* QR Code */}
               <div className="pt-2">
                 <div className="border border-slate-200 dark:border-white/10 rounded-xl p-5 bg-white dark:bg-[#151515] flex flex-col items-center justify-center gap-4 shadow-sm dark:shadow-none">
-                  <div className="w-32 h-32 bg-white rounded-lg p-2 flex items-center justify-center border border-slate-100 dark:border-transparent">
-                    <QrCode className="w-full h-full text-black" />
+                  <div className="flex h-32 w-32 items-center justify-center rounded-lg border border-dashed border-slate-200 bg-slate-50 p-3 text-center text-xs font-medium text-slate-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-400">
+                    二维码暂不可用
                   </div>
                   <div className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 text-center text-xs font-medium text-slate-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-400">
                     {readOnlyBillingDownloads}

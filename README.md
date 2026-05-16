@@ -10,7 +10,7 @@ Rust handlers, persistence implementations, and repeatable verification.
 
 ## Installation And Usage
 
-Current release: `0.2.0` (`2026-05-16`). Release records live under
+Current release: `0.3.0` (`2026-05-17`). Release records live under
 [docs/release](./docs/release/).
 
 Primary installation and usage guides:
@@ -40,8 +40,9 @@ pnpm.cmd dev -- --install
 Quick Ubuntu/Debian service install from a release asset:
 
 ```bash
-sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
+sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb
 sudo editor /etc/clawrouter/clawrouter.toml
+sudo editor /etc/clawrouter/database.secret
 sudo systemctl start clawrouter
 curl http://127.0.0.1:3900/healthz
 curl http://127.0.0.1:3900/readyz
@@ -56,6 +57,10 @@ and service packages enable `clawrouter.service` during installation on systemd
 hosts. The service is not started until the operator configures PostgreSQL in
 `/etc/clawrouter/clawrouter.toml` or uses a protected
 `SDKWORK_CLAW_DATABASE_URL` override in `/etc/clawrouter/clawrouter.env`.
+The package post-install step prints the runtime TOML, service environment,
+PostgreSQL password file, systemd service name, and the exact first-start
+commands so the operator can configure the service without hunting through
+package contents.
 The generated `/etc/clawrouter/database.secret` contains the placeholder
 `change-me`; replace it with the real PostgreSQL password before starting the
 service. Startup rejects default placeholder hosts or passwords.
@@ -656,6 +661,112 @@ password_file = "/etc/clawrouter/database.secret"
 # password = "change-me"
 ssl_mode = "require"
 max_connections = 16
+
+[redis]
+# Redis is optional. Leave disabled unless this deployment needs shared cache,
+# distributed locks, queues, or rate-limit buckets.
+enabled = false
+host = "redis.example.com"
+port = 6379
+database = 0
+# username = "default"
+# url = "redis://redis.example.com:6379/0"
+# password_file = "/etc/clawrouter/redis.secret"
+# password = "change-me"
+key_prefix = "clawrouter"
+tls = false
+max_connections = 16
+connect_timeout_millis = 2000
+command_timeout_millis = 1000
+pool_idle_timeout_seconds = 60
+
+[observability]
+log_filter = "info"
+log_format = "compact"
+log_ansi = false
+log_target = true
+log_thread_names = false
+log_thread_ids = false
+
+[services.gateway]
+bind = "0.0.0.0:18080"
+
+[services.admin_api]
+bind = "0.0.0.0:18081"
+
+[services.app_api]
+bind = "0.0.0.0:18082"
+
+[server]
+bind = "0.0.0.0:3900"
+external_scheme = "http"
+trust_forwarded_headers = false
+
+[edge]
+enabled = true
+gateway_base_url = "http://127.0.0.1:18080"
+backend_api_base_url = "http://127.0.0.1:18081"
+app_api_base_url = "http://127.0.0.1:18082"
+portal_base_url = "http://127.0.0.1:3901"
+portal_static_dist = "/opt/clawrouter/portal/dist"
+cors_allowed_origins = []
+upstream_request_timeout_millis = 30000
+upstream_ready_timeout_millis = 2000
+
+[portal.public]
+api_base_url = "/v1"
+open_api_base_url = "/v1"
+app_api_base_url = "/app/v3/api"
+backend_api_base_url = "/backend/v3/api"
+tool_api_enabled = false
+
+[portal.static]
+html_cache_control = "no-store"
+asset_cache_control = "public, max-age=31536000, immutable"
+
+[portal.security]
+hsts_enabled = false
+hsts_max_age_seconds = 31536000
+hsts_include_subdomains = true
+hsts_preload = false
+csp_frame_src = ["https://player.bilibili.com"]
+
+[portal.tools]
+rate_limit_requests = 120
+rate_limit_window_seconds = 60
+max_body_bytes = 1048576
+sdk_archive_root = "/opt/clawrouter/portal/dist/sdk-archives"
+
+[provider_relay.openai]
+# base_url = "https://api.openai.com/v1"
+# bearer_token_file = "/etc/clawrouter/openai-relay.secret"
+
+[provider_relay.runtime]
+response_timeout_millis = 120000
+health_probe_timeout_millis = 10000
+
+[provider_relay.retry]
+max_attempts = 2
+retryable_status_codes = [429, 500, 502, 503, 504]
+backoff_millis = 0
+
+[paths]
+data_directory = "/var/lib/clawrouter"
+course_upload_root = "/var/lib/clawrouter/uploads/courses"
+
+[courses]
+video_upload_max_bytes = 1073741824
+video_upload_body_limit_bytes = 1074790400
+
+[request_limits]
+admin_app_json_body_max_bytes = 131072
+admin_skill_json_body_max_bytes = 65536
+forum_json_body_max_bytes = 262144
+payment_callback_body_max_bytes = 65536
+
+[install]
+# Optional override for externally mounted sdkwork-models catalog data.
+# models_catalog_root = "/opt/clawrouter/catalog"
 ```
 
 `password_file` may be an absolute path, a path relative to `clawrouter.toml`,
@@ -664,6 +775,55 @@ or a path that uses standard environment variable expansion such as
 `%ProgramData%/SdkWork/ClawRouter/database.secret`. Generated service templates
 use placeholder values and startup refuses server configurations that still use
 `db.example.com` or `change-me`.
+
+Redis configuration is part of the standard runtime TOML but is disabled by
+default. Current installs do not require Redis and do not start a Redis client
+unless a future runtime capability explicitly enables it. When Redis is enabled,
+set `[redis].enabled = true`, configure `[redis].host`, `[redis].port`, and
+`[redis].database`, and prefer `[redis].password_file` over `[redis].password`.
+Use `[redis].url` only as an advanced override for managed Redis endpoints that
+cannot be represented cleanly with separate fields. Standard optional secret
+paths are `/etc/clawrouter/redis.secret` for Linux service installs,
+`/run/secrets/clawrouter-redis-password` for containers, and the matching
+ClawRouter config/data directory on Windows, macOS, and desktop installs.
+
+`[paths]` contains runtime-owned filesystem roots. `data_directory` is the
+long-lived application state directory and `course_upload_root` is where local
+course application video uploads are stored and served from `/uploads/courses/*`.
+Keep both paths on durable storage for service and container deployments.
+`[courses]` controls local course upload capacity. Keep reverse proxy,
+container ingress, and load balancer request-body limits at or above
+`video_upload_body_limit_bytes`.
+
+`[request_limits]` controls runtime body limits for high-risk write entrypoints:
+backend app JSON, backend skill JSON, public forum JSON, and payment provider
+callbacks. Keep reverse proxy, load balancer, and container ingress request-body
+limits aligned with these values so oversized requests fail before expensive
+application work.
+
+`[edge]` owns the packaged Rust edge entrypoint, upstream targets, readiness
+timeouts, and the portal static asset root. `[portal.static]` separates
+no-store HTML/runtime environment responses from long-lived hashed assets.
+`[portal.security]` controls browser-facing portal security policy. Keep HSTS
+disabled until the public hostname is served through HTTPS, then enable it with
+`hsts_enabled = true`; `hsts_preload = true` requires `hsts_max_age_seconds >=
+31536000` and `hsts_include_subdomains = true`. Use `csp_frame_src` only for
+explicit trusted HTTP/HTTPS origins that are allowed to be embedded by portal
+pages.
+`[portal.tools]` keeps the optional local tool API rate and body limits in the
+same audited config file. `[observability]` owns production logging defaults:
+`log_filter` sets the tracing filter, `log_format` is one of `compact`, `json`,
+`pretty`, or `full`, `log_ansi` should stay `false` for systemd and container
+logs, and the target/thread fields control emitted log metadata. Set `RUST_LOG`
+only for temporary process-level diagnostics.
+`[edge].cors_allowed_origins` is an explicit allowlist for additional trusted
+browser origins, such as an external CDN-hosted portal. Leave it empty for the
+packaged same-origin edge deployment; wildcard origins and origins with paths
+are rejected.
+`[provider_relay.runtime]` controls global OpenAI-compatible upstream response
+timeouts and channel health-check timeouts. `[provider_relay.retry]` is the
+default retry policy when a database routing channel does not define its own
+retry policy.
 
 Protected TOML files may place the password directly in `clawrouter.toml`
 instead of using a separate password file:
@@ -748,23 +908,35 @@ only portable archives. `scripts/build-claw-router-native-installer.mjs`
 consumes the same staged production directory and package plan to build:
 
 - Linux `.deb` packages for Ubuntu/Debian installation through
-  `apt install ./clawrouter-linux-x64-service-0.2.0.deb` or
+  `apt install ./clawrouter-linux-x64-server-0.3.0.deb` or
   `dpkg -i`.
 - Windows `.msi` packages through WiX for service and desktop install targets.
 - macOS `.pkg` packages through `pkgbuild` for service and desktop install
   targets.
+  macOS service packages include a launchd runner at
+  `/opt/clawrouter/service/macos/clawrouter-service-runner` so launchd runs
+  `clawrouterctl ensure` and `clawrouterctl refresh-catalog --force` before
+  starting the gateway.
 
 The native installer builder writes the installer, a per-installer
-`.manifest.json`, and a scoped aggregate manifest. Linux `.deb` packages place
-binaries under `/opt/clawrouter`, runtime templates under
-`/etc/clawrouter`, docs under `/usr/share/doc/clawrouter`,
-and service units under `/lib/systemd/system` for service mode. The Debian
-post-install script creates the `sdkwork` user/group, mutable data and log
-directories, a first-run TOML config copied from the example when missing, and
-runs `systemctl daemon-reload` before enabling `clawrouter.service` on systemd
-hosts. Operators configure PostgreSQL through `/etc/clawrouter/clawrouter.toml`,
-`/etc/clawrouter/database.secret`, or a protected override in
-`/etc/clawrouter/clawrouter.env`, then start the service.
+`.manifest.json`, and a scoped aggregate manifest. Each native manifest includes
+`nativeInstall`, a machine-readable install layout with the final binary,
+installer CLI, runtime TOML, template, data directory, service metadata,
+permissions, and first-start commands. Linux `.deb` packages place binaries
+under `/opt/clawrouter`, runtime templates under `/etc/clawrouter`, docs under
+`/usr/share/doc/clawrouter`, and service units under `/lib/systemd/system` for
+service mode. The Debian post-install script creates the `sdkwork` user/group,
+mutable data and log directories, a first-run TOML config copied from the
+example when missing, and runs `systemctl daemon-reload` before enabling
+`clawrouter.service` on systemd hosts. The generated service unit uses a
+restricted runtime profile with `NoNewPrivileges`, `ProtectSystem=strict`,
+`ProtectHome=true`, systemd-managed state/log/config directories, kernel and
+control-group protections, native syscall architecture filtering, and
+`LimitNOFILE=65535`. The running service can write data and logs, while
+`/etc/clawrouter` stays read-only to the service process after installation.
+Operators configure PostgreSQL through
+`/etc/clawrouter/clawrouter.toml`, `/etc/clawrouter/database.secret`, or a
+protected override in `/etc/clawrouter/clawrouter.env`, then start the service.
 
 `scripts/smoke-install-package-init.mjs` validates the fast initialization
 contract separately from service startup. The default root command is a dry-run

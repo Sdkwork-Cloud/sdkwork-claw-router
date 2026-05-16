@@ -15,8 +15,6 @@ export const DEFAULT_API_KEY_MODALITIES = ['text', 'image', 'video', 'audio', 'm
 
 type ApiKeyModality = (typeof DEFAULT_API_KEY_MODALITIES)[number];
 
-const DEFAULT_API_KEY_NAME = 'API key';
-const DEFAULT_API_KEY_GROUP = 'default';
 const DEFAULT_API_KEY_QUOTA = '0.000000';
 const DEFAULT_IP_LIMIT = 'unrestricted';
 const DEFAULT_EXPIRATION = 'never';
@@ -24,8 +22,8 @@ const MAX_BATCH_CREATE_COUNT = 100;
 
 export function createApiKeyInputFromForm(values: ApiKeyFormValues, _index = 0): CreateApiKeyInput {
   return {
-    name: normalizeOptionalText(values.name, DEFAULT_API_KEY_NAME),
-    group: normalizeOptionalText(values.group, DEFAULT_API_KEY_GROUP),
+    name: requiredText(values.name, 'name'),
+    group: requiredText(values.group, 'group'),
     quota: normalizeQuota(values.quota, values.isUnlimitedQuota),
     isUnlimitedQuota: values.isUnlimitedQuota,
     modalities: normalizeModalities(values.modalities),
@@ -36,7 +34,7 @@ export function createApiKeyInputFromForm(values: ApiKeyFormValues, _index = 0):
 
 export function createApiKeyInputsFromForm(values: ApiKeyFormValues): CreateApiKeyInput[] {
   const count = normalizeCreateCount(values.createCount);
-  const baseName = normalizeOptionalText(values.name, DEFAULT_API_KEY_NAME);
+  const baseName = requiredText(values.name, 'name');
 
   return Array.from({ length: count }, (_, index) => ({
     ...createApiKeyInputFromForm({
@@ -44,6 +42,14 @@ export function createApiKeyInputsFromForm(values: ApiKeyFormValues): CreateApiK
       name: count > 1 ? `${baseName} ${index + 1}` : baseName,
     }),
   }));
+}
+
+function requiredText(value: string, fieldName: string): string {
+  const text = value.trim();
+  if (!text) {
+    throw new Error(`${fieldName} is required`);
+  }
+  return text;
 }
 
 function normalizeOptionalText(value: string, fallback: string): string {
@@ -57,31 +63,42 @@ function normalizeQuota(value: string, isUnlimitedQuota: boolean): string {
   }
 
   const text = value.trim();
-  if (!/^\d+(?:\.\d+)?$/.test(text)) {
-    return DEFAULT_API_KEY_QUOTA;
+  if (!/^\d+(?:\.\d{1,6})?$/.test(text)) {
+    throw new Error('quota must be a non-negative decimal');
   }
 
   const parsed = Number(text);
   if (!Number.isFinite(parsed) || parsed < 0) {
-    return DEFAULT_API_KEY_QUOTA;
+    throw new Error('quota must be a non-negative decimal');
   }
 
   return text;
 }
 
 function normalizeModalities(values: string[]): ApiKeyModality[] {
-  const modalities = values
-    .map((value) => value.trim().toLowerCase())
-    .filter(isApiKeyModality);
+  const modalities: ApiKeyModality[] = [];
+  for (const rawValue of values) {
+    const value = rawValue.trim().toLowerCase();
+    if (!value) {
+      continue;
+    }
+    if (!isApiKeyModality(value)) {
+      throw new Error(`Unsupported API key modality: ${value}`);
+    }
+    modalities.push(value);
+  }
   const uniqueModalities = [...new Set(modalities)];
-  return uniqueModalities.length > 0 ? uniqueModalities : [...DEFAULT_API_KEY_MODALITIES];
+  if (uniqueModalities.length === 0) {
+    throw new Error('modalities must include at least one item');
+  }
+  return uniqueModalities;
 }
 
 function normalizeCreateCount(value: number): number {
-  if (!Number.isFinite(value)) {
-    return 1;
+  if (!Number.isFinite(value) || !Number.isInteger(value) || value < 1 || value > MAX_BATCH_CREATE_COUNT) {
+    throw new Error(`createCount must be between 1 and ${MAX_BATCH_CREATE_COUNT}`);
   }
-  return Math.min(MAX_BATCH_CREATE_COUNT, Math.max(1, Math.trunc(value)));
+  return value;
 }
 
 function isApiKeyModality(value: string): value is ApiKeyModality {

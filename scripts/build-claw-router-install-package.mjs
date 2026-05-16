@@ -27,6 +27,29 @@ const AGGREGATE_MANIFEST_FILE = 'install-packages-manifest.json';
 const PACKAGE_MANIFEST_FILE = 'install-manifest.json';
 const INSTALL_MANIFEST_SCHEMA_VERSION = '2026-05-15.install-manifest.v1';
 const INSTALL_PACKAGES_MANIFEST_SCHEMA_VERSION = '2026-05-15.install-packages-manifest.v1';
+const INSTALL_CONFIGURATION_SCHEMA_VERSION = '2026-05-16.install-configuration.v1';
+const COURSE_VIDEO_UPLOAD_MAX_BYTES = 1024 * 1024 * 1024;
+const COURSE_VIDEO_UPLOAD_BODY_LIMIT_BYTES = COURSE_VIDEO_UPLOAD_MAX_BYTES + 1024 * 1024;
+const PROVIDER_RESPONSE_TIMEOUT_MILLIS = 120_000;
+const PROVIDER_HEALTH_PROBE_TIMEOUT_MILLIS = 10_000;
+const PROVIDER_RETRY_MAX_ATTEMPTS = 2;
+const PROVIDER_RETRYABLE_STATUS_CODES = [429, 500, 502, 503, 504];
+const PROVIDER_RETRY_BACKOFF_MILLIS = 0;
+const OBSERVABILITY_LOG_FILTER = 'info';
+const OBSERVABILITY_LOG_FORMAT = 'compact';
+const OBSERVABILITY_LOG_ANSI = false;
+const OBSERVABILITY_LOG_TARGET = true;
+const OBSERVABILITY_LOG_THREAD_NAMES = false;
+const OBSERVABILITY_LOG_THREAD_IDS = false;
+const PORTAL_SECURITY_HSTS_ENABLED = false;
+const PORTAL_SECURITY_HSTS_MAX_AGE_SECONDS = 31_536_000;
+const PORTAL_SECURITY_HSTS_INCLUDE_SUBDOMAINS = true;
+const PORTAL_SECURITY_HSTS_PRELOAD = false;
+const PORTAL_SECURITY_CSP_FRAME_SRC = ['https://player.bilibili.com'];
+const REQUEST_LIMIT_ADMIN_APP_JSON_BODY_MAX_BYTES = 128 * 1024;
+const REQUEST_LIMIT_ADMIN_SKILL_JSON_BODY_MAX_BYTES = 64 * 1024;
+const REQUEST_LIMIT_FORUM_JSON_BODY_MAX_BYTES = 256 * 1024;
+const REQUEST_LIMIT_PAYMENT_CALLBACK_BODY_MAX_BYTES = 64 * 1024;
 
 function printHelp() {
   console.log(`Usage: node scripts/build-claw-router-install-package.mjs [options]
@@ -174,7 +197,7 @@ function createArchiveEntriesForPackage(packageItem, stagingRoot, { requireStage
       continue;
     }
     if (artifact.kind === 'service-manifest') {
-      entries.push(createGeneratedServiceManifestEntry(packageItem));
+      entries.push(...createGeneratedServiceEntries(packageItem));
       continue;
     }
     if (artifact.kind === 'container-entrypoint') {
@@ -225,15 +248,28 @@ function createGeneratedInstallGuideEntry() {
   };
 }
 
-function createGeneratedServiceManifestEntry(packageItem) {
-  return {
+function createGeneratedServiceEntries(packageItem) {
+  const entries = [{
     archivePath: normalizeArchivePath(packageItem.serviceIntegration.manifest),
     sourcePath: null,
     generated: true,
     generatedKind: 'service-manifest',
     mode: 0o644,
     required: true,
-  };
+  }];
+
+  if (packageItem.platform === 'macos') {
+    entries.push({
+      archivePath: 'service/macos/clawrouter-service-runner',
+      sourcePath: null,
+      generated: true,
+      generatedKind: 'service-runner',
+      mode: 0o755,
+      required: true,
+    });
+  }
+
+  return entries;
 }
 
 function createGeneratedDesktopEntries() {
@@ -392,6 +428,14 @@ function validateInstallPackageBuildPlan(buildPlan) {
     )) {
       issues.push(`${buildPlan.package.id} must generate ${expectedManifest ?? 'a service manifest'}`);
     }
+    if (buildPlan.package.platform === 'macos' && !buildPlan.entries.some((entry) =>
+      entry.archivePath === 'service/macos/clawrouter-service-runner'
+      && entry.generated
+      && entry.generatedKind === 'service-runner'
+      && entry.mode === 0o755
+    )) {
+      issues.push(`${buildPlan.package.id} must generate executable service/macos/clawrouter-service-runner`);
+    }
   }
   if (buildPlan.package.deploymentMode === 'container') {
     const expectedContainerArtifacts = [
@@ -527,6 +571,7 @@ function resolveManifestGeneratedAt({ env = process.env, now = new Date() } = {}
 
 function createPackageManifest(buildPlan, artifactFiles, generatedArtifacts = [], options = {}) {
   const generatedAt = options.generatedAt ?? resolveManifestGeneratedAt();
+  const courseUploadPolicy = courseUploadPolicyFor(buildPlan.package);
   return {
     schemaVersion: INSTALL_MANIFEST_SCHEMA_VERSION,
     generatedAt,
@@ -549,21 +594,305 @@ function createPackageManifest(buildPlan, artifactFiles, generatedArtifacts = []
     },
     initCommands: buildPlan.package.initCommands,
     databasePolicy: buildPlan.package.databasePolicy,
+    redisPolicy: buildPlan.package.redisPolicy,
     runtimeConfig: {
       templatePath: RUNTIME_CONFIG_TEMPLATE_PATH,
       configFile: buildPlan.package.databasePolicy.configFile.path,
       dataDirectory: buildPlan.package.databasePolicy.dataDirectory.path,
+      courseUploadRoot: courseUploadPolicy.uploadRoot,
     },
+    installConfiguration: createInstallConfiguration(buildPlan.package),
     artifacts: artifactFiles,
     generatedArtifacts,
     security: buildPlan.package.security,
   };
 }
 
+function createInstallConfiguration(packageItem) {
+  const policy = packageItem.databasePolicy;
+  const redisPolicy = packageItem.redisPolicy;
+  const courseUploadPolicy = courseUploadPolicyFor(packageItem);
+  const requestLimitsPolicy = requestLimitsPolicyFor();
+  const isPostgresql = policy.defaultEngine === 'postgresql';
+  const isLinuxService = packageItem.platform === 'linux' && packageItem.deploymentMode === 'service';
+  const files = {
+    runtimeConfig: policy.configFile.path,
+    runtimeConfigTemplate: RUNTIME_CONFIG_TEMPLATE_PATH,
+    dataDirectory: policy.dataDirectory.path,
+    installGuide: 'INSTALL.md',
+    manifest: PACKAGE_MANIFEST_FILE,
+  };
+  if (isPostgresql) {
+    files.passwordFile = policy.passwordFile.path;
+  }
+  if (redisPolicy?.passwordFile?.path) {
+    files.redisPasswordFile = redisPolicy.passwordFile.path;
+  }
+  if (isLinuxService) {
+    files.serviceEnvironment = '/etc/clawrouter/clawrouter.env';
+    files.systemdUnit = '/lib/systemd/system/clawrouter.service';
+  }
+  if (packageItem.serviceIntegration?.manifest) {
+    files.serviceManifest = packageItem.serviceIntegration.manifest;
+  }
+
+  return {
+    schemaVersion: INSTALL_CONFIGURATION_SCHEMA_VERSION,
+    packageId: packageItem.id,
+    deploymentMode: packageItem.deploymentMode,
+    runtimeProfile: packageItem.runtimeProfile,
+    files,
+    database: {
+      engine: policy.defaultEngine,
+      externalRequired: Boolean(policy.requiresExternalDatabase),
+      requiredFields: isPostgresql
+        ? ['host', 'port', 'database', 'username', 'password_file or password', 'ssl_mode']
+        : ['url'],
+      host: isPostgresql ? policy.defaultHost : null,
+      port: isPostgresql ? policy.defaultPort : null,
+      database: isPostgresql ? policy.defaultDatabase : null,
+      username: isPostgresql ? policy.defaultUsername : null,
+      passwordFile: isPostgresql ? policy.passwordFile.path : null,
+      maxConnections: policy.maxConnections,
+      sqlitePath: policy.defaultSqlitePath ?? null,
+    },
+    redis: redisPolicy
+      ? {
+        configSection: redisPolicy.configSection,
+        enabledByDefault: redisPolicy.enabledByDefault,
+        required: redisPolicy.required,
+        runtimeRequired: redisPolicy.runtimeRequired,
+        requiredFieldsWhenEnabled: [...redisPolicy.requiredWhenEnabled],
+        secretFields: [...redisPolicy.secretFields],
+        host: redisPolicy.defaultHost,
+        port: redisPolicy.defaultPort,
+        database: redisPolicy.defaultDatabase,
+        username: redisPolicy.defaultUsername,
+        urlOverrideExample: redisPolicy.urlOverrideExample,
+        passwordFile: redisPolicy.passwordFile.path,
+        keyPrefix: redisPolicy.keyPrefix,
+        tls: redisPolicy.tls,
+        maxConnections: redisPolicy.maxConnections,
+        connectTimeoutMs: redisPolicy.connectTimeoutMs,
+        commandTimeoutMs: redisPolicy.commandTimeoutMs,
+        poolIdleTimeoutSeconds: redisPolicy.poolIdleTimeoutSeconds,
+        envOverrides: [...redisPolicy.envOverrides],
+        plannedUses: [...redisPolicy.plannedUses],
+      }
+      : null,
+    edge: {
+      configSection: 'edge',
+      enabledByDefault: true,
+      upstreamRequestTimeoutMillis: 30_000,
+      upstreamReadyTimeoutMillis: 2_000,
+      trustForwardedHeadersDefault: false,
+      cspConnectSrcField: 'csp_connect_src',
+      corsAllowedOriginsField: 'cors_allowed_origins',
+      corsAllowedOriginsDefault: [],
+    },
+    portal: {
+      publicConfigSection: 'portal.public',
+      staticConfigSection: 'portal.static',
+      toolsConfigSection: 'portal.tools',
+      htmlCacheControl: 'no-store',
+      assetCacheControl: 'public, max-age=31536000, immutable',
+      security: {
+        configSection: 'portal.security',
+        hstsEnabled: PORTAL_SECURITY_HSTS_ENABLED,
+        hstsMaxAgeSeconds: PORTAL_SECURITY_HSTS_MAX_AGE_SECONDS,
+        hstsIncludeSubdomains: PORTAL_SECURITY_HSTS_INCLUDE_SUBDOMAINS,
+        hstsPreload: PORTAL_SECURITY_HSTS_PRELOAD,
+        cspFrameSrc: [...PORTAL_SECURITY_CSP_FRAME_SRC],
+      },
+      toolApiEnabledByDefault: false,
+      toolApiMaxBodyBytes: 1_048_576,
+      toolApiRateLimitRequests: 120,
+      toolApiRateLimitWindowSeconds: 60,
+    },
+    providerRelay: {
+      openaiConfigSection: 'provider_relay.openai',
+      runtime: {
+        configSection: 'provider_relay.runtime',
+        responseTimeoutMillis: PROVIDER_RESPONSE_TIMEOUT_MILLIS,
+        healthProbeTimeoutMillis: PROVIDER_HEALTH_PROBE_TIMEOUT_MILLIS,
+      },
+      retry: {
+        configSection: 'provider_relay.retry',
+        maxAttempts: PROVIDER_RETRY_MAX_ATTEMPTS,
+        retryableStatusCodes: [...PROVIDER_RETRYABLE_STATUS_CODES],
+        backoffMillis: PROVIDER_RETRY_BACKOFF_MILLIS,
+      },
+    },
+    courses: courseUploadPolicy,
+    requestLimits: requestLimitsPolicy,
+    observability: {
+      configSection: 'observability',
+      logFilter: OBSERVABILITY_LOG_FILTER,
+      logFormat: OBSERVABILITY_LOG_FORMAT,
+      logAnsi: OBSERVABILITY_LOG_ANSI,
+      logTarget: OBSERVABILITY_LOG_TARGET,
+      logThreadNames: OBSERVABILITY_LOG_THREAD_NAMES,
+      logThreadIds: OBSERVABILITY_LOG_THREAD_IDS,
+      envOverride: 'RUST_LOG',
+    },
+    commands: installConfigurationCommands(packageItem),
+    nextSteps: installConfigurationNextSteps(packageItem),
+  };
+}
+
+function requestLimitsPolicyFor() {
+  return {
+    configSection: 'request_limits',
+    adminAppJsonBodyMaxBytes: REQUEST_LIMIT_ADMIN_APP_JSON_BODY_MAX_BYTES,
+    adminSkillJsonBodyMaxBytes: REQUEST_LIMIT_ADMIN_SKILL_JSON_BODY_MAX_BYTES,
+    forumJsonBodyMaxBytes: REQUEST_LIMIT_FORUM_JSON_BODY_MAX_BYTES,
+    paymentCallbackBodyMaxBytes: REQUEST_LIMIT_PAYMENT_CALLBACK_BODY_MAX_BYTES,
+    envOverrides: [
+      'SDKWORK_CLAW_ADMIN_APP_JSON_BODY_MAX_BYTES',
+      'SDKWORK_CLAW_ADMIN_SKILL_JSON_BODY_MAX_BYTES',
+      'SDKWORK_CLAW_FORUM_JSON_BODY_MAX_BYTES',
+      'SDKWORK_CLAW_PAYMENT_CALLBACK_BODY_MAX_BYTES',
+    ],
+  };
+}
+
+function courseUploadPolicyFor(packageItem) {
+  const policy = packageItem.databasePolicy;
+  const uploadRoot = packageItem.platform === 'windows'
+    ? `${policy.dataDirectory.path}/Uploads/Courses`
+    : `${policy.dataDirectory.path}/uploads/courses`;
+  return {
+    configSection: 'courses',
+    uploadRootConfigSection: 'paths',
+    uploadRoot,
+    videoUploadMaxBytes: COURSE_VIDEO_UPLOAD_MAX_BYTES,
+    videoUploadBodyLimitBytes: COURSE_VIDEO_UPLOAD_BODY_LIMIT_BYTES,
+    bodyLimitIncludesMultipartOverhead: true,
+    envOverrides: [
+      'SDKWORK_CLAW_COURSE_UPLOAD_ROOT',
+      'SDKWORK_CLAW_COURSE_VIDEO_UPLOAD_MAX_BYTES',
+      'SDKWORK_CLAW_COURSE_VIDEO_UPLOAD_BODY_LIMIT_BYTES',
+    ],
+  };
+}
+
+function installConfigurationCommands(packageItem) {
+  if (packageItem.platform === 'linux' && packageItem.deploymentMode === 'service') {
+    return {
+      editConfig: 'sudo editor /etc/clawrouter/clawrouter.toml',
+      editDatabasePassword: 'sudo editor /etc/clawrouter/database.secret',
+      start: 'sudo systemctl start clawrouter',
+      status: 'sudo systemctl status clawrouter --no-pager',
+      logs: 'sudo journalctl -u clawrouter -f',
+    };
+  }
+  if (packageItem.deploymentMode === 'desktop') {
+    const binaryRoot = nativeBinaryRootForInstallGuide(packageItem);
+    return {
+      init: executableCommandForInstallGuide(packageItem.platform, binaryRoot, packageItem.installerBinaryName, 'ensure'),
+      refreshCatalog: executableCommandForInstallGuide(
+        packageItem.platform,
+        binaryRoot,
+        packageItem.installerBinaryName,
+        'refresh-catalog --force',
+      ),
+      start: executableCommandForInstallGuide(packageItem.platform, binaryRoot, packageItem.binaryName),
+    };
+  }
+  if (packageItem.deploymentMode === 'container') {
+    const configFile = packageItem.databasePolicy.configFile.path;
+    const passwordFile = packageItem.databasePolicy.passwordFile.path;
+    const redisPasswordFile = packageItem.redisPolicy.passwordFile.path;
+    const configMount = packageItem.platform === 'windows'
+      ? `%CD%\\clawrouter.toml:${configFile.replaceAll('/', '\\')}:ro`
+      : `$PWD/clawrouter.toml:${configFile}:ro`;
+    const passwordMount = packageItem.platform === 'windows'
+      ? `%CD%\\secrets\\postgres-password:${passwordFile.replaceAll('/', '\\')}:ro`
+      : `$PWD/secrets/postgres-password:${passwordFile}:ro`;
+    const redisPasswordMount = packageItem.platform === 'windows'
+      ? `%CD%\\secrets\\redis-password:${redisPasswordFile.replaceAll('/', '\\')}:ro`
+      : `$PWD/secrets/redis-password:${redisPasswordFile}:ro`;
+    return {
+      build: 'docker build -f container/Containerfile -t clawrouter:local .',
+      run: `docker run --rm -p 3900:3900 -v "${configMount}" -v "${passwordMount}" -v "${redisPasswordMount}" clawrouter:local`,
+    };
+  }
+  return {
+    init: packageItem.initCommands.join(' && '),
+    start: packageItem.startCommand,
+  };
+}
+
+function nativeBinaryRootForInstallGuide(packageItem) {
+  if (packageItem.platform === 'windows') {
+    return 'C:/Program Files/ClawRouter/bin';
+  }
+  return `${POSIX_INSTALL_ROOT}/bin`;
+}
+
+function executableCommandForInstallGuide(platform, binaryRoot, binaryName, args = '') {
+  const executablePath = `${binaryRoot}/${binaryName}`;
+  if (platform === 'windows') {
+    return `& "${executablePath}"${args ? ` ${args}` : ''}`;
+  }
+  return `${executablePath}${args ? ` ${args}` : ''}`;
+}
+
+function initializationCommandsForInstallGuide(packageItem, installConfiguration) {
+  if (packageItem.deploymentMode === 'desktop') {
+    return [
+      installConfiguration.commands.init,
+      installConfiguration.commands.refreshCatalog,
+    ];
+  }
+  if (packageItem.deploymentMode === 'service' && packageItem.platform === 'linux') {
+    return packageItem.initCommands.map((command) => command.replace('./bin/', `${POSIX_INSTALL_ROOT}/bin/`));
+  }
+  return packageItem.initCommands;
+}
+
+function installConfigurationNextSteps(packageItem) {
+  const policy = packageItem.databasePolicy;
+  const redisPolicy = packageItem.redisPolicy;
+  const redisStep = redisPolicy
+    ? `Keep [redis].enabled = false unless this deployment needs shared cache, locks, queues, or rate-limit buckets; when enabled, set [redis].host, [redis].port, [redis].database, and use [redis].password_file at ${redisPolicy.passwordFile.path} or protected [redis].password. Use [redis].url only as an advanced override for managed Redis endpoints.`
+    : null;
+  if (policy.defaultEngine === 'postgresql') {
+    const steps = [
+      `Edit ${policy.configFile.path} and set [database].host, [database].database, [database].username, and [database].ssl_mode.`,
+      `Set [database].password_file to ${policy.passwordFile.path}, or use [database].password only when clawrouter.toml is protected as a secret-bearing file.`,
+      'Replace generated placeholder values before first start; startup rejects db.example.com and change-me.',
+    ];
+    if (redisStep) {
+      steps.push(redisStep);
+    }
+    if (packageItem.platform === 'linux' && packageItem.deploymentMode === 'service') {
+      steps.push(
+        'Start the service with sudo systemctl start clawrouter after PostgreSQL is reachable.',
+        'Check startup with sudo systemctl status clawrouter --no-pager and sudo journalctl -u clawrouter -f.',
+      );
+    } else if (packageItem.deploymentMode === 'container') {
+      steps.push('Mount clawrouter.toml and the PostgreSQL secret into the container before starting it.');
+    } else {
+      steps.push(`Run ${packageItem.initCommands.join(' && ')} before sending traffic.`);
+    }
+    return steps;
+  }
+
+  return [
+    `Desktop config file: ${policy.configFile.path}`,
+    `SQLite database file: ${policy.defaultSqlitePath}`,
+    redisStep,
+    'Start the desktop package as the target OS user so user-scoped config and data directories are created in that account.',
+  ].filter(Boolean);
+}
+
 function createGeneratedArtifactBytes(buildPlan, entry) {
   switch (entry.generatedKind) {
     case 'service-manifest':
       return Buffer.from(createServiceManifest(buildPlan.package), 'utf8');
+    case 'service-runner':
+      return Buffer.from(createServiceRunner(buildPlan.package), 'utf8');
     case 'install-guide':
       return Buffer.from(createInstallGuide(buildPlan.package), 'utf8');
     case 'runtime-config-template':
@@ -583,6 +912,7 @@ function createGeneratedArtifactBytes(buildPlan, entry) {
 
 function createInstallGuide(packageItem) {
   const policy = packageItem.databasePolicy;
+  const installConfiguration = createInstallConfiguration(packageItem);
   const lines = [
     `# ${RUNTIME_DISPLAY_NAME} Install Guide`,
     '',
@@ -593,13 +923,39 @@ function createInstallGuide(packageItem) {
     `Config file: ${policy.configFile.path}`,
     `Data directory: ${policy.dataDirectory.path}`,
     '',
+    '## Configuration Files',
+    '',
+    `Runtime TOML: ${installConfiguration.files.runtimeConfig}`,
+    `Runtime TOML template: ${installConfiguration.files.runtimeConfigTemplate}`,
+    `Data directory: ${installConfiguration.files.dataDirectory}`,
+  ];
+
+  if (installConfiguration.files.serviceEnvironment) {
+    lines.push(`Service environment: ${installConfiguration.files.serviceEnvironment}`);
+  }
+  if (installConfiguration.files.passwordFile) {
+    lines.push(`PostgreSQL password file: ${installConfiguration.files.passwordFile}`);
+  }
+  if (installConfiguration.files.redisPasswordFile) {
+    lines.push(`Optional Redis password file: ${installConfiguration.files.redisPasswordFile}`);
+  }
+  if (installConfiguration.files.systemdUnit) {
+    lines.push(`Systemd unit: ${installConfiguration.files.systemdUnit}`);
+  }
+
+  lines.push(
+    `Database: ${policy.defaultEngine === 'postgresql' ? 'PostgreSQL' : 'SQLite'}`,
+    '',
+  );
+
+  lines.push(
     '## Runtime Configuration',
     '',
     `The runtime TOML template is packaged at ${RUNTIME_CONFIG_TEMPLATE_PATH}.`,
     `Set SDKWORK_CLAW_CONFIG_FILE to use a custom config file path; otherwise use ${policy.configFile.path}.`,
     'Set SDKWORK_CLAW_DEPLOYMENT_MODE to server for archive, service, and container deployments, or desktop for desktop deployments.',
     '',
-  ];
+  );
 
   if (packageItem.databasePolicy.defaultEngine === 'sqlite') {
     lines.push(
@@ -619,6 +975,90 @@ function createInstallGuide(packageItem) {
     );
   }
 
+  if (installConfiguration.redis) {
+    lines.push(
+      'Redis is optional and disabled by default.',
+      `Keep [redis].enabled = false unless this deployment needs shared cache, locks, queues, or rate-limit buckets.`,
+      `When enabling Redis, set [redis].enabled = true, [redis].host, [redis].port, and [redis].database; prefer [redis].password_file = "${installConfiguration.redis.passwordFile}" over direct [redis].password.`,
+      `[redis].url is an optional advanced override for managed Redis endpoints. Example: ${installConfiguration.redis.urlOverrideExample}`,
+      '',
+    );
+  }
+
+  lines.push(
+    'Course upload storage is configured in [paths] and [courses].',
+    `[paths].course_upload_root defaults to ${installConfiguration.courses.uploadRoot}.`,
+    `[courses].video_upload_max_bytes defaults to ${installConfiguration.courses.videoUploadMaxBytes}; keep reverse proxy and container ingress limits at or above [courses].video_upload_body_limit_bytes (${installConfiguration.courses.videoUploadBodyLimitBytes}).`,
+    '',
+  );
+
+  lines.push(
+    'Request body limits are configured in [request_limits].',
+    `Admin app JSON defaults to ${installConfiguration.requestLimits.adminAppJsonBodyMaxBytes} bytes; admin skill JSON defaults to ${installConfiguration.requestLimits.adminSkillJsonBodyMaxBytes} bytes.`,
+    `Forum JSON defaults to ${installConfiguration.requestLimits.forumJsonBodyMaxBytes} bytes; payment callback payloads default to ${installConfiguration.requestLimits.paymentCallbackBodyMaxBytes} bytes.`,
+    'Keep load balancer, reverse proxy, and container ingress body limits aligned with these values.',
+    '',
+  );
+
+  lines.push(
+    '## First Start',
+    '',
+  );
+  if (packageItem.platform === 'linux' && packageItem.deploymentMode === 'service') {
+    lines.push(
+      '```sh',
+      installConfiguration.commands.editConfig,
+      installConfiguration.commands.editDatabasePassword,
+      installConfiguration.commands.start,
+      installConfiguration.commands.status,
+      installConfiguration.commands.logs,
+      '```',
+      '',
+      'The Debian package enables the service on systemd hosts but does not start it before PostgreSQL is configured.',
+      '',
+    );
+  } else if (packageItem.platform === 'linux' && packageItem.deploymentMode === 'desktop') {
+    lines.push(
+      '```sh',
+      installConfiguration.commands.init,
+      installConfiguration.commands.refreshCatalog,
+      installConfiguration.commands.start,
+      '```',
+      '',
+      'Run the desktop package as the target user so config and SQLite files are created in that user account.',
+      '',
+    );
+  } else if (packageItem.deploymentMode === 'desktop') {
+    lines.push(
+      packageItem.platform === 'windows' ? '```powershell' : '```sh',
+      installConfiguration.commands.init,
+      installConfiguration.commands.refreshCatalog,
+      installConfiguration.commands.start,
+      '```',
+      '',
+      'Run the desktop package as the target user so config and SQLite files are created in that user account.',
+      '',
+    );
+  } else if (packageItem.deploymentMode === 'container') {
+    lines.push(
+      '```sh',
+      installConfiguration.commands.build,
+      installConfiguration.commands.run,
+      '```',
+      '',
+      'Use platform secrets or mounted files for PostgreSQL password material.',
+      '',
+    );
+  } else {
+    lines.push(
+      '```sh',
+      installConfiguration.commands.init,
+      installConfiguration.commands.start,
+      '```',
+      '',
+    );
+  }
+
   lines.push(
     '## Fast Initialization',
     '',
@@ -628,7 +1068,7 @@ function createInstallGuide(packageItem) {
       'Linux service packages run initialization automatically from systemd before the gateway starts:',
       '',
       '```sh',
-      ...packageItem.initCommands.map((command) => command.replace('./bin/', `${POSIX_INSTALL_ROOT}/bin/`)),
+      ...initializationCommandsForInstallGuide(packageItem, installConfiguration),
       '```',
       '',
       'Use the commands manually only for recovery or operator-driven catalog refreshes.',
@@ -638,8 +1078,8 @@ function createInstallGuide(packageItem) {
     lines.push(
       'Run these commands after unpacking and before enabling traffic:',
       '',
-      '```sh',
-      ...packageItem.initCommands,
+      packageItem.platform === 'windows' && packageItem.deploymentMode === 'desktop' ? '```powershell' : '```sh',
+      ...initializationCommandsForInstallGuide(packageItem, installConfiguration),
       '```',
       '',
     );
@@ -652,6 +1092,7 @@ function createInstallGuide(packageItem) {
     'Do not package .env.release.local.',
     'Generate host-local env files on the target machine and keep secret values outside browser-visible PORTAL_PUBLIC_* variables.',
     'Prefer password_file for database secrets. Use [database].password only when the runtime TOML is protected as a secret-bearing file.',
+    'Prefer [redis].password_file for Redis secrets. Use [redis].password only when the runtime TOML is protected as a secret-bearing file.',
     '',
   );
 
@@ -689,6 +1130,15 @@ function createInstallGuide(packageItem) {
 
 function createRuntimeConfigTemplate(packageItem) {
   const policy = packageItem.databasePolicy;
+  const redisPolicy = packageItem.redisPolicy;
+  const courseUploadPolicy = courseUploadPolicyFor(packageItem);
+  const requestLimitsPolicy = requestLimitsPolicyFor();
+  const portalStaticDist = runtimeInstallPath(packageItem, 'portal/dist');
+  const sdkArchiveRoot = runtimeInstallPath(packageItem, 'portal/dist/sdk-archives');
+  const modelsCatalogRoot = runtimeInstallPath(packageItem, 'catalog');
+  const secretRoot = packageItem.platform === 'windows'
+    ? 'C:/ProgramData/SdkWork/ClawRouter/Secrets'
+    : '/etc/clawrouter';
   const lines = [
     `# ${RUNTIME_DISPLAY_NAME} runtime configuration template.`,
     `# Install this file as: ${policy.configFile.path}`,
@@ -736,8 +1186,181 @@ function createRuntimeConfigTemplate(packageItem) {
 
   lines.push(
     '',
+    '[redis]',
+    '# Redis is optional. Leave disabled unless this deployment needs shared cache, locks, queues, or rate-limit buckets.',
+    `enabled = ${redisPolicy.enabledByDefault ? 'true' : 'false'}`,
+    `host = "${redisPolicy.defaultHost}"`,
+    `port = ${redisPolicy.defaultPort}`,
+    `database = ${redisPolicy.defaultDatabase}`,
+    '# username = "default"',
+    `# url = "${redisPolicy.urlOverrideExample}"`,
+    `# password_file = "${redisPolicy.passwordFile.path}"`,
+    '# password = "change-me"',
+    `key_prefix = "${redisPolicy.keyPrefix}"`,
+    `tls = ${redisPolicy.tls ? 'true' : 'false'}`,
+    `max_connections = ${redisPolicy.maxConnections}`,
+    `connect_timeout_millis = ${redisPolicy.connectTimeoutMs}`,
+    `command_timeout_millis = ${redisPolicy.commandTimeoutMs}`,
+    `pool_idle_timeout_seconds = ${redisPolicy.poolIdleTimeoutSeconds}`,
+    '',
+    '[observability]',
+    '# Production logging policy. RUST_LOG remains available as a temporary process-level override.',
+    `log_filter = "${OBSERVABILITY_LOG_FILTER}"`,
+    `log_format = "${OBSERVABILITY_LOG_FORMAT}"`,
+    `log_ansi = ${OBSERVABILITY_LOG_ANSI ? 'true' : 'false'}`,
+    `log_target = ${OBSERVABILITY_LOG_TARGET ? 'true' : 'false'}`,
+    `log_thread_names = ${OBSERVABILITY_LOG_THREAD_NAMES ? 'true' : 'false'}`,
+    `log_thread_ids = ${OBSERVABILITY_LOG_THREAD_IDS ? 'true' : 'false'}`,
+    '',
+    '[services.gateway]',
+    'bind = "0.0.0.0:18080"',
+    '',
+    '[services.admin_api]',
+    'bind = "0.0.0.0:18081"',
+    '',
+    '[services.app_api]',
+    'bind = "0.0.0.0:18082"',
+    '',
+    '[server]',
+    `bind = "${packageItem.runtimeProfile === 'desktop' ? '127.0.0.1:3900' : '0.0.0.0:3900'}"`,
+    'external_scheme = "http"',
+    'trust_forwarded_headers = false',
+    '',
+    '[edge]',
+    '# The packaged binary starts the Rust edge server so portal, gateway, app API, and backend API share one install entrypoint.',
+    'enabled = true',
+    'gateway_base_url = "http://127.0.0.1:18080"',
+    'backend_api_base_url = "http://127.0.0.1:18081"',
+    'app_api_base_url = "http://127.0.0.1:18082"',
+    'portal_base_url = "http://127.0.0.1:3901"',
+    `portal_static_dist = "${portalStaticDist}"`,
+    '# csp_connect_src = "https://api.example.com"',
+    'cors_allowed_origins = []',
+    'upstream_request_timeout_millis = 30000',
+    'upstream_ready_timeout_millis = 2000',
+    '',
+    '[portal.public]',
+    'api_base_url = "/v1"',
+    'open_api_base_url = "/v1"',
+    'app_api_base_url = "/app/v3/api"',
+    'backend_api_base_url = "/backend/v3/api"',
+    'tool_api_enabled = false',
+    '',
+    '[portal.static]',
+    'html_cache_control = "no-store"',
+    'asset_cache_control = "public, max-age=31536000, immutable"',
+    '',
+    '[portal.security]',
+    '# Enable HSTS only after HTTPS is available at the public edge hostname.',
+    `hsts_enabled = ${PORTAL_SECURITY_HSTS_ENABLED ? 'true' : 'false'}`,
+    `hsts_max_age_seconds = ${PORTAL_SECURITY_HSTS_MAX_AGE_SECONDS}`,
+    `hsts_include_subdomains = ${PORTAL_SECURITY_HSTS_INCLUDE_SUBDOMAINS ? 'true' : 'false'}`,
+    `hsts_preload = ${PORTAL_SECURITY_HSTS_PRELOAD ? 'true' : 'false'}`,
+    `csp_frame_src = [${PORTAL_SECURITY_CSP_FRAME_SRC.map((origin) => `"${origin}"`).join(', ')}]`,
+    '',
+    '[portal.tools]',
+    'rate_limit_requests = 120',
+    'rate_limit_window_seconds = 60',
+    'max_body_bytes = 1048576',
+    `sdk_archive_root = "${sdkArchiveRoot}"`,
+    '# sdk_generator_base_url = "https://sdk-generator.internal"',
+    `# sdk_generator_api_key_file = "${secretRoot}/sdk-generator.secret"`,
+    '',
+    '[security]',
+    '# Required for gateway API key hashing and signed app/admin subjects.',
+    `api_key_pepper_file = "${secretRoot}/api-key-pepper.secret"`,
+    `trusted_subject_secret_file = "${secretRoot}/trusted-subject.secret"`,
+    'trusted_subject_max_clock_skew_seconds = 300',
+    `app_session_secret_file = "${secretRoot}/app-session.secret"`,
+    'app_session_ttl_seconds = 86400',
+    'app_session_max_clock_skew_seconds = 300',
+    `payment_webhook_secret_file = "${secretRoot}/payment-webhook.secret"`,
+    'payment_webhook_max_clock_skew_seconds = 600',
+    '',
+    '[provider_relay.openai]',
+    '# Optional OpenAI-compatible upstream relay. Prefer bearer_token_file for production secrets.',
+    '# base_url = "https://api.openai.com/v1"',
+    `# bearer_token_file = "${secretRoot}/openai-relay.secret"`,
+    '',
+    '[provider_relay.runtime]',
+    '# Global defaults for OpenAI-compatible upstream requests and admin/app channel health checks.',
+    `response_timeout_millis = ${PROVIDER_RESPONSE_TIMEOUT_MILLIS}`,
+    `health_probe_timeout_millis = ${PROVIDER_HEALTH_PROBE_TIMEOUT_MILLIS}`,
+    '',
+    '[provider_relay.retry]',
+    '# Default retry policy used when a database routing channel does not define retry_policy.',
+    `max_attempts = ${PROVIDER_RETRY_MAX_ATTEMPTS}`,
+    `retryable_status_codes = [${PROVIDER_RETRYABLE_STATUS_CODES.join(', ')}]`,
+    `backoff_millis = ${PROVIDER_RETRY_BACKOFF_MILLIS}`,
+    '',
+    '[provider_relay.passthrough]',
+    '# Add provider-native passthrough targets as [provider_relay.passthrough.<provider_code>].',
+    '# Example:',
+    '# [provider_relay.passthrough.google]',
+    '# base_url = "https://generativelanguage.googleapis.com"',
+    '# auth_type = "header"',
+    '# auth_name = "x-goog-api-key"',
+    `# auth_value_file = "${secretRoot}/google-provider.secret"`,
+    '',
+    '[provider_secret_map]',
+    '# Optional route-scoped provider secrets used by database-stored channel secret_ref values.',
+    `# json_file = "${secretRoot}/provider-secrets.json"`,
+    '',
+    '[usage_settlement]',
+    'enabled = true',
+    'tenant_id = 0',
+    'organization_id = 0',
+    'batch_size = 100',
+    'interval_millis = 30000',
+    '',
+    '[model_ranking]',
+    'enabled = true',
+    'tenant_id = 0',
+    'organization_id = 0',
+    'rank_scope = "global"',
+    'snapshot_period = "daily"',
+    'limit = 200',
+    'lookback_days = 7',
+    'interval_millis = 3600000',
+    'cache_max_age_seconds = 60',
+    'run_timeout_millis = 300000',
+    'max_retry_attempts = 1',
+    'retry_backoff_millis = 1000',
+    'run_on_startup = true',
+    'alert_after_consecutive_failures = 3',
+    '',
+    '[forum]',
+    '# Optional public community links shown in the app forum overview.',
+    `# community_links_json_file = "${secretRoot}/forum-community-links.json"`,
+    '',
+    '[install]',
+    'environment = "production"',
+    'seed_profile = "commercial"',
+    `# models_catalog_root = "${modelsCatalogRoot}"`,
+    'startup_mode = "ensure"',
+    '',
+    '[bootstrap_admin]',
+    'enabled = true',
+    'username = "admin"',
+    'display_name = "Administrator"',
+    'email = "admin@sdkwork.local"',
+    `# password_file = "${secretRoot}/bootstrap-admin.secret"`,
+    '',
     '[paths]',
     `data_directory = "${policy.dataDirectory.path}"`,
+    `course_upload_root = "${courseUploadPolicy.uploadRoot}"`,
+    '',
+    '[courses]',
+    '# Local course application video upload policy. Keep upstream proxy/body limits at or above video_upload_body_limit_bytes.',
+    `video_upload_max_bytes = ${courseUploadPolicy.videoUploadMaxBytes}`,
+    `video_upload_body_limit_bytes = ${courseUploadPolicy.videoUploadBodyLimitBytes}`,
+    '',
+    '[request_limits]',
+    '# Runtime API request body limits. Keep reverse proxy and container ingress limits aligned.',
+    `admin_app_json_body_max_bytes = ${requestLimitsPolicy.adminAppJsonBodyMaxBytes}`,
+    `admin_skill_json_body_max_bytes = ${requestLimitsPolicy.adminSkillJsonBodyMaxBytes}`,
+    `forum_json_body_max_bytes = ${requestLimitsPolicy.forumJsonBodyMaxBytes}`,
+    `payment_callback_body_max_bytes = ${requestLimitsPolicy.paymentCallbackBodyMaxBytes}`,
     '',
     '[runtime]',
     `deployment_mode = "${packageItem.runtimeProfile === 'desktop' ? 'desktop' : 'server'}"`,
@@ -745,6 +1368,14 @@ function createRuntimeConfigTemplate(packageItem) {
   );
 
   return lines.join('\n');
+}
+
+function runtimeInstallPath(packageItem, relativePath) {
+  const normalizedRelativePath = relativePath.replaceAll('\\', '/').replace(/^\/+/u, '');
+  if (packageItem.platform === 'windows') {
+    return `${WINDOWS_INSTALL_ROOT}/${normalizedRelativePath}`;
+  }
+  return `${POSIX_INSTALL_ROOT}/${normalizedRelativePath}`;
 }
 
 function createServiceManifest(packageItem) {
@@ -757,6 +1388,7 @@ function createServiceManifest(packageItem) {
       `  <executable>%BASE%\\bin\\${packageItem.binaryName}</executable>`,
       '  <workingdirectory>%BASE%</workingdirectory>',
       `  <env name="SDKWORK_CLAW_CONFIG_FILE" value="${packageItem.databasePolicy.configFile.path.replaceAll('/', '\\')}"/>`,
+      '  <env name="SDKWORK_CLAW_DEPLOYMENT_MODE" value="server"/>',
       '  <onfailure action="restart" delay="5 sec"/>',
       '</service>',
       '',
@@ -772,7 +1404,7 @@ function createServiceManifest(packageItem) {
       '  <string>com.sdkwork.clawrouter</string>',
       '  <key>ProgramArguments</key>',
       '  <array>',
-      `    <string>${POSIX_INSTALL_ROOT}/bin/${packageItem.binaryName}</string>`,
+      `    <string>${POSIX_INSTALL_ROOT}/service/macos/clawrouter-service-runner</string>`,
       '  </array>',
       '  <key>WorkingDirectory</key>',
       `  <string>${POSIX_INSTALL_ROOT}</string>`,
@@ -780,6 +1412,8 @@ function createServiceManifest(packageItem) {
       '  <dict>',
       '    <key>SDKWORK_CLAW_CONFIG_FILE</key>',
       `    <string>${packageItem.databasePolicy.configFile.path}</string>`,
+      '    <key>SDKWORK_CLAW_DEPLOYMENT_MODE</key>',
+      '    <string>server</string>',
       '  </dict>',
       '  <key>RunAtLoad</key>',
       '  <true/>',
@@ -813,14 +1447,41 @@ function createServiceManifest(packageItem) {
     'RestartSec=5',
     'User=sdkwork',
     'Group=sdkwork',
+    'UMask=0027',
+    'StateDirectory=clawrouter',
+    'LogsDirectory=clawrouter',
+    'ConfigurationDirectory=clawrouter',
     'NoNewPrivileges=true',
     'PrivateTmp=true',
     'ProtectSystem=strict',
     'ProtectHome=true',
-    'ReadWritePaths=/var/lib/clawrouter /var/log/clawrouter /etc/clawrouter',
+    'ProtectKernelTunables=true',
+    'ProtectKernelModules=true',
+    'ProtectControlGroups=true',
+    'RestrictSUIDSGID=true',
+    'SystemCallArchitectures=native',
+    'LimitNOFILE=65535',
+    'ReadWritePaths=/var/lib/clawrouter /var/log/clawrouter',
+    'ReadOnlyPaths=/etc/clawrouter',
     '',
     '[Install]',
     'WantedBy=multi-user.target',
+    '',
+  ].join('\n');
+}
+
+function createServiceRunner(packageItem) {
+  if (packageItem.platform !== 'macos') {
+    throw new Error(`Unsupported service runner platform: ${packageItem.platform}`);
+  }
+  return [
+    '#!/bin/sh',
+    'set -eu',
+    `export SDKWORK_CLAW_CONFIG_FILE="${packageItem.databasePolicy.configFile.path}"`,
+    'export SDKWORK_CLAW_DEPLOYMENT_MODE=server',
+    `${POSIX_INSTALL_ROOT}/bin/${packageItem.installerBinaryName} ensure`,
+    `${POSIX_INSTALL_ROOT}/bin/${packageItem.installerBinaryName} refresh-catalog --force`,
+    `exec ${POSIX_INSTALL_ROOT}/bin/${packageItem.binaryName} "$@"`,
     '',
   ].join('\n');
 }
@@ -836,6 +1497,7 @@ function createContainerfile(packageItem) {
       `WORKDIR ${WINDOWS_INSTALL_ROOT}`,
       `COPY . ${WINDOWS_INSTALL_ROOT}`,
       `ENV SDKWORK_CLAW_CONFIG_FILE="${packageItem.databasePolicy.configFile.path}"`,
+      'ENV SDKWORK_CLAW_DEPLOYMENT_MODE="server"',
       'EXPOSE 3900',
       `ENTRYPOINT ${entrypoint}`,
       '',
@@ -849,6 +1511,7 @@ function createContainerfile(packageItem) {
     `COPY . ${POSIX_INSTALL_ROOT}`,
     `RUN chmod 0755 ${POSIX_INSTALL_ROOT}/bin/${packageItem.binaryName} ${POSIX_INSTALL_ROOT}/bin/${packageItem.installerBinaryName} ${POSIX_INSTALL_ROOT}/container/entrypoint`,
     `ENV SDKWORK_CLAW_CONFIG_FILE="${packageItem.databasePolicy.configFile.path}"`,
+    'ENV SDKWORK_CLAW_DEPLOYMENT_MODE="server"',
     'USER sdkwork',
     'EXPOSE 3900',
     `ENTRYPOINT ${entrypoint}`,
@@ -860,6 +1523,7 @@ function createContainerEntrypoint(packageItem) {
   if (packageItem.platform === 'windows') {
     return [
       '$ErrorActionPreference = "Stop"',
+      '$env:SDKWORK_CLAW_DEPLOYMENT_MODE = "server"',
       `& "C:\\clawrouter\\bin\\${packageItem.installerBinaryName}" ensure`,
       `& "C:\\clawrouter\\bin\\${packageItem.installerBinaryName}" refresh-catalog --force`,
       `& "C:\\clawrouter\\bin\\${packageItem.binaryName}" @args`,
@@ -869,6 +1533,7 @@ function createContainerEntrypoint(packageItem) {
   return [
     '#!/bin/sh',
     'set -eu',
+    'export SDKWORK_CLAW_DEPLOYMENT_MODE=server',
     `${POSIX_INSTALL_ROOT}/bin/${packageItem.installerBinaryName} ensure`,
     `${POSIX_INSTALL_ROOT}/bin/${packageItem.installerBinaryName} refresh-catalog --force`,
     `exec ${POSIX_INSTALL_ROOT}/bin/${packageItem.binaryName} "$@"`,
@@ -892,6 +1557,9 @@ function createContainerMetadata(packageItem) {
     exposedPorts: packageItem.containerIntegration.exposedPorts,
     configFile: packageItem.databasePolicy.configFile.path,
     database: packageItem.databasePolicy,
+    redis: packageItem.redisPolicy,
+    courses: courseUploadPolicyFor(packageItem),
+    requestLimits: requestLimitsPolicyFor(),
     healthChecks: packageItem.healthChecks,
     initCommands: packageItem.initCommands,
     noSecretsInPackage: packageItem.security.noSecretsInPackage,
@@ -909,6 +1577,9 @@ function createDesktopMetadata(packageItem) {
     configFile: packageItem.databasePolicy.configFile.path,
     dataDirectory: packageItem.databasePolicy.dataDirectory.path,
     database: packageItem.databasePolicy,
+    redis: packageItem.redisPolicy,
+    courses: courseUploadPolicyFor(packageItem),
+    requestLimits: requestLimitsPolicyFor(),
     healthChecks: packageItem.healthChecks,
     initCommands: packageItem.initCommands,
     noSecretsInPackage: packageItem.security.noSecretsInPackage,
@@ -1233,10 +1904,13 @@ if (process.argv[1] && import.meta.url.endsWith(process.argv[1].replaceAll('\\',
 export {
   AGGREGATE_MANIFEST_FILE,
   PACKAGE_MANIFEST_FILE,
+  INSTALL_CONFIGURATION_SCHEMA_VERSION,
   buildInstallPackageArchive,
   createAggregateManifest,
   createGeneratedArtifactBytes,
+  createInstallGuide,
   createInstallArchiveBytes,
+  createInstallConfiguration,
   createInstallPackageBuildPlan,
   createPackageManifest,
   createRuntimeConfigTemplate,

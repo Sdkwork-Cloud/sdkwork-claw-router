@@ -2,13 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
 import { Plus, Search, Trash2, Edit, ChevronDown, RefreshCw, ArrowUpDown, Settings, LayoutGrid, X } from 'lucide-react';
 import { GroupService, GroupData } from './groupService';
-import { createGroupInputFromForm } from './groupForm';
+import { createGroupInputFromForm, createGroupUpdateInputFromForm } from './groupForm';
 
 export function GroupAdmin() {
   const [groups, setGroups] = useState<GroupData[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingGroup, setEditingGroup] = useState<GroupData | null>(null);
+  const [platformFilter, setPlatformFilter] = useState('');
+  const [statusFilter, setStatusFilter] = useState('');
+  const [typeFilter, setTypeFilter] = useState('');
+  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
   const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<GroupData | null>(null);
   const [deletingGroupId, setDeletingGroupId] = useState<string | null>(null);
@@ -30,16 +36,54 @@ export function GroupAdmin() {
     void loadGroups();
   }, []);
 
-  const filteredGroups = groups.filter(g =>
-    g.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const platformOptions = Array.from(new Set(groups.map(group => group.platform).filter(Boolean))).sort();
+
+  const filteredGroups = groups
+    .filter(group => group.name.toLowerCase().includes(searchQuery.toLowerCase()))
+    .filter(group => !platformFilter || group.platform === platformFilter)
+    .filter(group => !statusFilter || group.status === statusFilter)
+    .filter(group => !typeFilter || group.type === typeFilter)
+    .sort((left, right) => {
+      const result = left.name.localeCompare(right.name);
+      return sortDirection === 'asc' ? result : -result;
+    });
+
+  const openCreateModal = () => {
+    setEditingGroup(null);
+    setIsModalOpen(true);
+  };
+
+  const openEditModal = (group: GroupData) => {
+    setEditingGroup(group);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    if (saving) {
+      return;
+    }
+    setIsModalOpen(false);
+    setEditingGroup(null);
+  };
 
   const handleAddGroup = async (e: React.FormEvent) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
-    const added = await GroupService.addGroup(createGroupInputFromForm(formData));
-    setGroups([added, ...groups]);
-    setIsModalOpen(false);
+    setSaving(true);
+    try {
+      if (editingGroup) {
+        const updated = await GroupService.updateGroup(editingGroup.id, createGroupUpdateInputFromForm(formData));
+        setGroups(current => current.map(group => group.id === updated.id ? updated : group));
+      } else {
+        const added = await GroupService.addGroup(createGroupInputFromForm(formData));
+        setGroups(current => [added, ...current]);
+      }
+      setIsModalOpen(false);
+      setEditingGroup(null);
+      setLoadError(null);
+    } finally {
+      setSaving(false);
+    }
   };
 
   const closeDeleteConfirmation = () => {
@@ -82,38 +126,42 @@ export function GroupAdmin() {
           </div>
 
           <div className="relative">
-            <select className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-4 pr-10 py-2 text-sm focus:outline-none focus:border-emerald-500 text-slate-700 dark:text-slate-300 appearance-none shadow-sm cursor-pointer w-[140px]">
+            <select value={platformFilter} onChange={e => setPlatformFilter(e.target.value)} className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-4 pr-10 py-2 text-sm focus:outline-none focus:border-emerald-500 text-slate-700 dark:text-slate-300 appearance-none shadow-sm cursor-pointer w-[140px]">
               <option value="">全部平台</option>
-              <option value="Anthropic">Anthropic</option>
+              {platformOptions.map(platform => (
+                <option key={platform} value={platform}>{platform}</option>
+              ))}
             </select>
             <ChevronDown className="w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
           </div>
 
           <div className="relative">
-            <select className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-4 pr-10 py-2 text-sm focus:outline-none focus:border-emerald-500 text-slate-700 dark:text-slate-300 appearance-none shadow-sm cursor-pointer w-[140px]">
+            <select value={statusFilter} onChange={e => setStatusFilter(e.target.value)} className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-4 pr-10 py-2 text-sm focus:outline-none focus:border-emerald-500 text-slate-700 dark:text-slate-300 appearance-none shadow-sm cursor-pointer w-[140px]">
               <option value="">全部状态</option>
               <option value="active">正常</option>
+              <option value="disabled">异常</option>
             </select>
             <ChevronDown className="w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
           </div>
 
           <div className="relative">
-            <select className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-4 pr-10 py-2 text-sm focus:outline-none focus:border-emerald-500 text-slate-700 dark:text-slate-300 appearance-none shadow-sm cursor-pointer w-[140px]">
+            <select value={typeFilter} onChange={e => setTypeFilter(e.target.value)} className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-4 pr-10 py-2 text-sm focus:outline-none focus:border-emerald-500 text-slate-700 dark:text-slate-300 appearance-none shadow-sm cursor-pointer w-[140px]">
               <option value="">全部分组</option>
-              <option value="test">测试</option>
+              <option value="public">公开</option>
+              <option value="dedicated">专属</option>
             </select>
             <ChevronDown className="w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
           </div>
         </div>
 
         <div className="flex items-center gap-3 shrink-0 ml-auto xl:ml-0">
-          <button className="p-2 border border-slate-200 dark:border-white/10 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+          <button onClick={() => { void loadGroups(); }} className="p-2 border border-slate-200 dark:border-white/10 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
             <RefreshCw className="w-4 h-4" />
           </button>
-          <button className="flex items-center gap-2 px-3 py-2 border border-slate-200 dark:border-white/10 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-sm font-medium">
+          <button onClick={() => setSortDirection(current => current === 'asc' ? 'desc' : 'asc')} className="flex items-center gap-2 px-3 py-2 border border-slate-200 dark:border-white/10 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-sm font-medium">
             <ArrowUpDown className="w-4 h-4" /> 排序
           </button>
-          <button onClick={() => setIsModalOpen(true)} className="bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 shadow-sm">
+          <button onClick={openCreateModal} className="bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 shadow-sm">
             <Plus className="w-4 h-4" /> 创建分组
           </button>
         </div>
@@ -202,11 +250,8 @@ export function GroupAdmin() {
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-4 text-xs font-medium text-slate-400">
-                      <button className="flex flex-col items-center gap-1 hover:text-blue-500 transition-colors">
+                      <button onClick={() => openEditModal(group)} className="flex flex-col items-center gap-1 hover:text-blue-500 transition-colors">
                         <Edit className="w-4 h-4" /> <span>编辑</span>
-                      </button>
-                      <button className="flex flex-col items-center gap-1 hover:text-amber-500 transition-colors">
-                        <span className="w-4 h-4 flex items-center justify-center border border-current rounded-full leading-none font-bold">$</span> <span>专属倍率</span>
                       </button>
                       <button onClick={() => setDeleteTarget(group)} className="flex flex-col items-center gap-1 hover:text-red-500 transition-colors">
                         <Trash2 className="w-4 h-4" /> <span>删除</span>
@@ -225,8 +270,8 @@ export function GroupAdmin() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm overflow-y-auto pt-10 pb-10">
           <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-xl flex flex-col my-auto relative">
             <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">创建分组</h3>
-              <button onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{editingGroup ? '编辑分组' : '创建分组'}</h3>
+              <button onClick={closeModal} disabled={saving} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors disabled:cursor-not-allowed disabled:opacity-60">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -235,20 +280,18 @@ export function GroupAdmin() {
               <div className="p-6 space-y-6">
                 <div>
                   <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2">名称</label>
-                  <input required name="name" type="text" placeholder="请输入分组名称" className="w-full bg-transparent border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 text-slate-900 dark:text-white transition-colors" />
-                </div>
-
-                <div>
-                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2">描述</label>
-                  <textarea name="description" rows={3} placeholder="可选描述" className="w-full bg-transparent border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 text-slate-900 dark:text-white resize-none transition-colors"></textarea>
+                  <input required name="name" type="text" placeholder="请输入分组名称" defaultValue={editingGroup?.name ?? ''} className="w-full bg-transparent border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 text-slate-900 dark:text-white transition-colors" />
                 </div>
 
                 <div>
                   <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2">平台</label>
                   <div className="relative">
-                    <select name="platform" className="w-full bg-transparent border border-slate-300 dark:border-white/10 rounded-lg pl-3 pr-10 py-2 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 text-slate-900 dark:text-white appearance-none cursor-pointer transition-colors">
+                    <select name="platform" defaultValue={editingGroup?.platform ?? 'Anthropic'} className="w-full bg-transparent border border-slate-300 dark:border-white/10 rounded-lg pl-3 pr-10 py-2 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 text-slate-900 dark:text-white appearance-none cursor-pointer transition-colors">
                       <option value="Anthropic">Anthropic</option>
                       <option value="OpenAI">OpenAI</option>
+                      {editingGroup && !['Anthropic', 'OpenAI'].includes(editingGroup.platform) && (
+                        <option value={editingGroup.platform}>{editingGroup.platform}</option>
+                      )}
                     </select>
                     <ChevronDown className="w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
                   </div>
@@ -257,99 +300,46 @@ export function GroupAdmin() {
 
                 <div>
                   <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2">费率倍数</label>
-                  <input required name="rateMultiplier" type="number" step="0.1" defaultValue="1" className="w-full bg-transparent border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 text-slate-900 dark:text-white transition-colors" />
+                  <input required name="rateMultiplier" type="number" min="0.01" step="0.01" defaultValue={editingGroup?.rateMultiplier ?? 1} className="w-full bg-transparent border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 text-slate-900 dark:text-white transition-colors" />
                   <p className="text-xs text-slate-500 mt-1.5">1.0 = 标准费率， 0.5 = 半价， 2.0 = 双倍</p>
                 </div>
 
-                <div className="border-b border-slate-200 dark:border-white/10 pb-6">
-                  <div className="flex items-center gap-2 mb-2">
-                    <label className="block text-sm text-slate-700 dark:text-slate-300">专属分组</label>
-                    <div className="w-3.5 h-3.5 rounded-full border border-slate-400 text-slate-400 flex items-center justify-center text-[10px] cursor-help" title="是否为专属分组">?</div>
+                <div>
+                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2">容量总额</label>
+                  <input required name="capacityTotal" type="number" min="1" step="1" defaultValue={editingGroup?.capacity.total ?? 100} className="w-full bg-transparent border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 text-slate-900 dark:text-white transition-colors" />
+                  <p className="text-xs text-slate-500 mt-1.5">后端将按此容量上限创建分组策略。</p>
+                </div>
+
+                <div>
+                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2">分组类型</label>
+                  <div className="relative">
+                    <select name="type" defaultValue={editingGroup?.type ?? 'public'} className="w-full bg-transparent border border-slate-300 dark:border-white/10 rounded-lg pl-3 pr-10 py-2 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 text-slate-900 dark:text-white appearance-none cursor-pointer transition-colors">
+                      <option value="public">公开</option>
+                      <option value="dedicated">专属</option>
+                    </select>
+                    <ChevronDown className="w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
                   </div>
-                  <label className="flex items-center gap-3 cursor-pointer">
-                    <div className="relative">
-                      <input type="checkbox" name="isPublic" className="sr-only peer" defaultChecked />
-                      <div className="w-10 h-5 bg-slate-300 dark:bg-white/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-500"></div>
-                    </div>
-                    <span className="text-sm text-slate-700 dark:text-slate-300">公开</span>
-                  </label>
                 </div>
 
                 <div>
                   <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2">计费类型</label>
                   <div className="relative">
-                    <select name="billingType" className="w-full bg-transparent border border-slate-300 dark:border-white/10 rounded-lg pl-3 pr-10 py-2 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 text-slate-900 dark:text-white appearance-none cursor-pointer transition-colors">
-                      <option value="标准 (余额)">标准 (余额)</option>
-                      <option value="订阅">订阅</option>
+                    <select name="billingType" defaultValue={editingGroup?.billingType ?? 'standard'} className="w-full bg-transparent border border-slate-300 dark:border-white/10 rounded-lg pl-3 pr-10 py-2 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 text-slate-900 dark:text-white appearance-none cursor-pointer transition-colors">
+                      <option value="standard">标准 (余额)</option>
+                      <option value="subscription">订阅</option>
                     </select>
                     <ChevronDown className="w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
                   </div>
                   <p className="text-xs text-slate-500 mt-1.5">标准计费从用户余额扣除。订阅模式使用配额限制。</p>
                 </div>
 
-                <div className="border-b border-slate-200 dark:border-white/10 pb-6">
-                  <div className="flex items-center gap-2 mb-2">
-                    <label className="block text-sm text-slate-700 dark:text-slate-300">Claude Code 客户端限制</label>
-                    <div className="w-3.5 h-3.5 rounded-full border border-slate-400 text-slate-400 flex items-center justify-center text-[10px] cursor-help" title="限制规则">?</div>
-                  </div>
-                  <label className="flex items-center gap-3 cursor-pointer">
-                    <div className="relative">
-                      <input type="checkbox" name="allowAllClients" className="sr-only peer" defaultChecked />
-                      <div className="w-10 h-5 bg-slate-300 dark:bg-white/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-500"></div>
-                    </div>
-                    <span className="text-sm text-slate-700 dark:text-slate-300">允许所有客户端</span>
-                  </label>
-                </div>
-
-                <div className="space-y-4 border-b border-slate-200 dark:border-white/10 pb-6">
-                  <label className="block text-sm text-slate-700 dark:text-slate-300">账号过滤控制</label>
-
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-sm text-slate-700 dark:text-slate-300">仅允许 OAuth 账号</div>
-                      <div className="text-xs text-slate-500 mt-0.5">未启用</div>
-                    </div>
-                    <label className="flex items-center cursor-pointer">
-                      <div className="relative">
-                        <input type="checkbox" className="sr-only peer" />
-                        <div className="w-10 h-5 bg-slate-300 dark:bg-white/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-500"></div>
-                      </div>
-                    </label>
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-sm text-slate-700 dark:text-slate-300">仅允许隐私保护已设置的账号</div>
-                      <div className="text-xs text-slate-500 mt-0.5">未启用</div>
-                    </div>
-                    <label className="flex items-center cursor-pointer">
-                      <div className="relative">
-                        <input type="checkbox" className="sr-only peer" />
-                        <div className="w-10 h-5 bg-slate-300 dark:bg-white/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-500"></div>
-                      </div>
-                    </label>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2">无效请求兜底分组</label>
-                  <div className="relative">
-                    <select name="fallbackGroup" className="w-full bg-transparent border border-slate-300 dark:border-white/10 rounded-lg pl-3 pr-10 py-2 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 text-slate-900 dark:text-white appearance-none cursor-pointer transition-colors">
-                      <option value="none">不兜底</option>
-                      <option value="default">默认分组</option>
-                    </select>
-                    <ChevronDown className="w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
-                  </div>
-                  <p className="text-xs text-slate-500 mt-1.5">仅当上游明确返回 prompt too long 时才会触发，留空表示不兜底</p>
-                </div>
-
               </div>
               <div className="p-5 flex justify-end gap-3 rounded-b-2xl">
-                <button type="button" onClick={() => setIsModalOpen(false)} className="px-5 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 border border-transparent dark:border-white/10 rounded-xl transition-colors bg-slate-50 dark:bg-[#1a1a1a]">
+                <button type="button" onClick={closeModal} disabled={saving} className="px-5 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 border border-transparent dark:border-white/10 rounded-xl transition-colors bg-slate-50 dark:bg-[#1a1a1a] disabled:cursor-not-allowed disabled:opacity-60">
                   取消
                 </button>
-                <button type="submit" className="px-5 py-2.5 text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 rounded-xl shadow-sm transition-colors border border-transparent dark:border-[rgba(255,255,255,0.1)]">
-                  创建
+                <button type="submit" disabled={saving} className="px-5 py-2.5 text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 rounded-xl shadow-sm transition-colors border border-transparent dark:border-[rgba(255,255,255,0.1)] disabled:cursor-not-allowed disabled:opacity-70">
+                  {editingGroup ? '保存' : '创建'}
                 </button>
               </div>
             </form>

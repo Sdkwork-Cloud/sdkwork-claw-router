@@ -4,6 +4,7 @@ import {
   getClawRouterBackendSdkClient,
   isRecord,
   readApiRecord,
+  readBoolean,
   readRequiredApiItems,
   readRequiredApiItem,
   readRequiredNonNegativeNumber,
@@ -17,6 +18,8 @@ import type {
   AdminCouponBatchGenerateRequest,
   AdminCouponCreateRequest,
   AdminPromoCodeStatusUpdateRequest,
+  BillingExchangeRulesListParams,
+  BillingPaymentsAttemptsListParams,
   CommerceExchangeRuleUpsertRequest,
   CommerceRechargePackageMutationRequest,
 } from '@sdkwork/clawrouter-backend-sdk';
@@ -74,6 +77,23 @@ export interface RechargePackage {
   bonus: number;
   points: number;
   status: 'active' | 'inactive';
+}
+
+export interface ExchangeRule {
+  id: string;
+  sourceAssetType: 'POINTS';
+  targetAssetType: 'CASH';
+  rate: string;
+  status: 'active';
+}
+
+export interface PaymentAttempt {
+  id: string;
+  orderNo: string;
+  provider: string;
+  amount: string;
+  status: 'pending' | 'success' | 'failed' | 'expired';
+  createdAt: string;
 }
 
 export interface ReferralStat {
@@ -152,7 +172,7 @@ export class MarketingService {
 
   static async deleteCoupon(id: string): Promise<boolean> {
     const result = await getClawRouterBackendSdkClient().billing.coupons.delete(requiredSafePathSegment(id, 'couponId'));
-    ensurePlusApiSuccess(result, 'Failed to delete coupon');
+    ensureDeleteResult(result, 'Coupon delete confirmation is required');
     return true;
   }
 
@@ -179,7 +199,7 @@ export class MarketingService {
       toUpdatePromoCodeStatusRequest(status),
       createRequestParams('admin-promo-code-status-update'),
     );
-    ensurePlusApiSuccess(result, 'Failed to update promo code status');
+    ensureUpdatedResult(result, 'Promo code status update confirmation is required');
     return true;
   }
 
@@ -231,29 +251,31 @@ export class MarketingService {
     const result = await getClawRouterBackendSdkClient().billing.recharges.packages.delete(
       requiredSafePathSegment(packageId, 'packageId'),
     );
-    ensurePlusApiSuccess(result, 'Failed to delete recharge package');
+    ensureDeleteResult(result, 'Recharge package delete confirmation is required');
     return true;
   }
 
-  static async listExchangeRules(params?: Record<string, unknown>): Promise<unknown> {
+  static async listExchangeRules(params?: BillingExchangeRulesListParams): Promise<ExchangeRule[]> {
     const result = await getClawRouterBackendSdkClient().billing.exchangeRules.list(params);
     ensurePlusApiSuccess(result, 'Failed to fetch exchange rules');
-    return readApiRecord(result);
+    return readRequiredApiItems(result, 'Failed to fetch exchange rules')
+      .map(normalizeExchangeRule);
   }
 
-  static async upsertExchangeRule(body: CommerceExchangeRuleUpsertRequest): Promise<unknown> {
+  static async upsertExchangeRule(body: CommerceExchangeRuleUpsertRequest): Promise<ExchangeRule> {
     const result = await getClawRouterBackendSdkClient().billing.exchangeRules.update(
-      body,
+      toExchangeRuleUpsertRequest(body),
       createRequestParams('admin-exchange-rule-upsert'),
     );
     ensurePlusApiSuccess(result, 'Failed to upsert exchange rule');
-    return readApiRecord(result);
+    return normalizeExchangeRule(readRequiredApiItem(result, 'Updated exchange rule response is missing data', ['item']));
   }
 
-  static async listPaymentAttempts(params?: Record<string, unknown>): Promise<unknown> {
+  static async listPaymentAttempts(params?: BillingPaymentsAttemptsListParams): Promise<PaymentAttempt[]> {
     const result = await getClawRouterBackendSdkClient().billing.payments.attempts.list(params);
     ensurePlusApiSuccess(result, 'Failed to fetch payment attempts');
-    return readApiRecord(result);
+    return readRequiredApiItems(result, 'Failed to fetch payment attempts')
+      .map(normalizePaymentAttempt);
   }
 }
 
@@ -263,6 +285,20 @@ function toCreateCouponRequest(coupon: CouponCreateInput): AdminCouponCreateRequ
     type: couponType(coupon.type),
     value: requiredText(coupon.value, 'value'),
   };
+}
+
+function ensureDeleteResult(result: unknown, message: string): void {
+  ensurePlusApiSuccess(result, message);
+  if (readBoolean(readApiRecord(result), 'deleted') !== true) {
+    throw new Error(message);
+  }
+}
+
+function ensureUpdatedResult(result: unknown, message: string): void {
+  ensurePlusApiSuccess(result, message);
+  if (readBoolean(readApiRecord(result), 'updated') !== true) {
+    throw new Error(message);
+  }
 }
 
 function toGenerateBatchRequest(batch: CouponBatchGenerateInput): AdminCouponBatchGenerateRequest {
@@ -288,6 +324,26 @@ function toRechargePackageMutationRequest(
   };
   if (record.status !== undefined && record.status !== null && readString(record, 'status').trim()) {
     request.status = rechargePackageStatusInput(record.status);
+  }
+  return request;
+}
+
+function toExchangeRuleUpsertRequest(
+  value: CommerceExchangeRuleUpsertRequest,
+): CommerceExchangeRuleUpsertRequest {
+  const record = readRequiredRecord(value, 'Exchange rule request is required');
+  const request: CommerceExchangeRuleUpsertRequest = {
+    sourceAssetType: exchangeRuleAssetType(readRequiredString(record, 'sourceAssetType', 'sourceAssetType is required')),
+    targetAssetType: exchangeRuleAssetType(readRequiredString(record, 'targetAssetType', 'targetAssetType is required')),
+    rate: decimalRateInput(record.rate, 'rate'),
+  };
+  if (request.sourceAssetType !== 'POINTS' || request.targetAssetType !== 'CASH') {
+    throw new Error('exchange rule currently supports POINTS to CASH only');
+  }
+  if (record.status !== undefined && record.status !== null && readString(record, 'status').trim()) {
+    request.status = exchangeRuleStatusInput(record.status);
+  } else {
+    request.status = 'active';
   }
   return request;
 }
@@ -428,6 +484,34 @@ function normalizeRechargePackage(value: unknown): RechargePackage {
   };
 }
 
+function normalizeExchangeRule(value: unknown): ExchangeRule {
+  const item = readRequiredRecord(value, 'Exchange rule record is required');
+  return {
+    id: readRequiredString(item, 'id', 'Exchange rule id is required'),
+    sourceAssetType: readExpectedExchangeRuleAssetType(item, 'sourceAssetType', 'POINTS'),
+    targetAssetType: readExpectedExchangeRuleAssetType(item, 'targetAssetType', 'CASH'),
+    rate: readDecimalRateString(item, 'rate', 'Exchange rule rate is required'),
+    status: readExchangeRuleStatus(item),
+  };
+}
+
+function normalizePaymentAttempt(value: unknown): PaymentAttempt {
+  const item = readRequiredRecord(value, 'Payment attempt record is required');
+  return {
+    id: readRequiredString(item, 'id', 'Payment attempt id is required'),
+    orderNo: readRequiredString(item, 'orderNo', 'Payment attempt order number is required'),
+    provider: readRequiredString(item, 'provider', 'Payment attempt provider is required'),
+    amount: readCanonicalMoneyString(
+      item,
+      'amount',
+      'Payment attempt amount is required',
+      'Payment attempt amount must be a money string',
+    ),
+    status: readPaymentAttemptStatus(item),
+    createdAt: readRequiredString(item, 'createdAt', 'Payment attempt created time is required'),
+  };
+}
+
 function normalizeReferralStat(value: unknown): ReferralStat {
   const item = readRequiredRecord(value, 'Referral stat record is required');
   return {
@@ -519,6 +603,53 @@ function readRechargePackageStatus(item: ApiRecord): RechargePackage['status'] {
   throw new Error(`Unsupported recharge package status: ${rawStatus}`);
 }
 
+function readExpectedExchangeRuleAssetType<T extends 'POINTS' | 'CASH'>(
+  item: ApiRecord,
+  key: 'sourceAssetType' | 'targetAssetType',
+  expected: T,
+): T {
+  const value = exchangeRuleAssetType(readRequiredString(item, key, `${key} is required`));
+  if (value !== expected) {
+    throw new Error(`exchange rule ${key} must be ${expected}`);
+  }
+  return expected;
+}
+
+function exchangeRuleAssetType(value: string): 'POINTS' | 'CASH' {
+  const normalized = value.trim().toUpperCase();
+  if (normalized === 'POINTS' || normalized === 'CASH') {
+    return normalized;
+  }
+  throw new Error(`Unsupported exchange rule asset type: ${value}`);
+}
+
+function readExchangeRuleStatus(item: ApiRecord): ExchangeRule['status'] {
+  const status = readRequiredString(item, 'status', 'Exchange rule status is required').trim().toLowerCase();
+  if (status === 'active' || status === 'enabled' || status === 'normal') {
+    return 'active';
+  }
+  throw new Error(`Unsupported exchange rule status: ${status}`);
+}
+
+function exchangeRuleStatusInput(value: unknown): CommerceExchangeRuleUpsertRequest['status'] {
+  const status = typeof value === 'string' ? value.trim().toLowerCase() : '';
+  if (status === 'active' || status === 'enabled' || status === 'normal') {
+    return 'active';
+  }
+  if (status === 'inactive' || status === 'disabled') {
+    throw new Error('exchange rule status only supports active');
+  }
+  throw new Error('exchange rule status must be active');
+}
+
+function readPaymentAttemptStatus(item: ApiRecord): PaymentAttempt['status'] {
+  const status = readRequiredString(item, 'status', 'Payment attempt status is required').trim().toLowerCase();
+  if (status === 'pending' || status === 'success' || status === 'failed' || status === 'expired') {
+    return status;
+  }
+  throw new Error(`Unsupported payment attempt status: ${status}`);
+}
+
 function rechargePackageStatusInput(value: unknown): CommerceRechargePackageMutationRequest['status'] {
   const status = typeof value === 'string' ? value.trim().toLowerCase() : '';
   if (status === 'active' || status === 'inactive') {
@@ -541,6 +672,11 @@ function readCanonicalMoneyString(item: ApiRecord, key: string, missingMessage: 
     throw new Error(invalidMessage);
   }
   return formatMoneyString(value);
+}
+
+function readDecimalRateString(item: ApiRecord, key: string, missingMessage: string): string {
+  const value = readRequiredString(item, key, missingMessage);
+  return decimalRateString(value);
 }
 
 function readRequiredNonNegativeInteger(
@@ -602,6 +738,31 @@ function nonNegativeIntegerInput(value: unknown, fieldName: string): number {
 
 function isCanonicalMoneyString(value: string): boolean {
   return /^\d+(?:\.\d{1,2})?$/.test(value.trim());
+}
+
+function decimalRateInput(value: unknown, fieldName: string): string {
+  if (typeof value !== 'string' && typeof value !== 'number') {
+    throw new Error(`${fieldName} must be a positive decimal string`);
+  }
+  return decimalRateString(String(value));
+}
+
+function decimalRateString(value: string): string {
+  const normalized = value.trim().replace(/,/g, '');
+  if (!/^\d+(?:\.\d{1,6})?$/.test(normalized)) {
+    throw new Error('Exchange rule rate must be a positive decimal string');
+  }
+  const [wholeRaw, fractionRaw = ''] = normalized.split('.');
+  const whole = Number(wholeRaw);
+  if (!Number.isSafeInteger(whole) || whole < 1 || whole > 1_000_000) {
+    throw new Error('Exchange rule rate must be between 1 and 1000000');
+  }
+  if (whole === 1_000_000 && /[1-9]/.test(fractionRaw)) {
+    throw new Error('Exchange rule rate must be between 1 and 1000000');
+  }
+  const wholeText = wholeRaw.replace(/^0+(?=\d)/, '') || '0';
+  const fraction = fractionRaw.replace(/0+$/, '');
+  return fraction ? `${wholeText}.${fraction}` : wholeText;
 }
 
 function formatMoneyString(value: string): string {

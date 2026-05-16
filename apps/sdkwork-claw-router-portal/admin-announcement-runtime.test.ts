@@ -77,18 +77,25 @@ test("admin announcement create input does not reuse returned announcement view 
   }
 });
 
-test("admin announcement create input defaults unsupported enums safely", () => {
-  assert.deepEqual(createAnnouncementInputFromForm({
-    title: " Migration ",
-    target: "legacy-users",
-    status: "archived",
-    content: " Details ",
-  }), {
-    title: "Migration",
-    target: "all",
-    status: "published",
-    content: "Details",
-  });
+test("admin announcement create input rejects unsupported enums instead of widening audience", () => {
+  assert.throws(
+    () => createAnnouncementInputFromForm({
+      title: " Migration ",
+      target: "legacy-users",
+      status: "draft",
+      content: " Details ",
+    }),
+    /target must be one of all, vip, free, beta/,
+  );
+  assert.throws(
+    () => createAnnouncementInputFromForm({
+      title: " Migration ",
+      target: "all",
+      status: "archived",
+      content: " Details ",
+    }),
+    /status must be one of published, draft/,
+  );
 });
 
 test("admin announcement update input normalizes editable fields only", () => {
@@ -218,6 +225,25 @@ test("admin announcement service rejects unsafe SDK path ids before calling gene
   );
 });
 
+test("admin announcement delete fails closed unless backend confirms deletion", async () => {
+  for (const response of [{}, { deleted: false }]) {
+    await withBackendSdkFetch(
+      (url, init) => {
+        if (url === "/backend/v3/api/content/announcements/ann-1" && init?.method === "DELETE") {
+          return response;
+        }
+        throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => AnnouncementService.deleteAnnouncement("ann-1"),
+          /Announcement delete confirmation is required/,
+        );
+      },
+    );
+  }
+});
+
 test("admin announcement list fails closed when backend omits stable announcement ids", async () => {
   await withBackendSdkFetch(
     (url, init) => {
@@ -316,6 +342,34 @@ test("admin announcement list fails closed when backend returns unsupported anno
       await assert.rejects(
         () => AnnouncementService.fetchAnnouncements(),
         /Unsupported announcement status: archived/,
+      );
+    },
+  );
+});
+
+test("admin announcement list fails closed when backend returns unsupported announcement target", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/content/announcements" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            {
+              id: "ann-1",
+              title: "Migration",
+              target: "legacy-users",
+              status: "draft",
+              date: "2026-05-05",
+              content: "Prepare migration.",
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => AnnouncementService.fetchAnnouncements(),
+        /Unsupported announcement target: legacy-users/,
       );
     },
   );

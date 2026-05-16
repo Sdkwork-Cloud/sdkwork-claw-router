@@ -12,7 +12,7 @@ pub use access::{
 pub use catalog::{
     AiModel, AiModelPublicMetadata, ModelProviderRoute, ModelVendorDefinition,
     ProviderAccountPoolRoute, ProviderAuthHeader, ProviderAuthProfile, ProviderAuthType,
-    ProviderRetryPolicy,
+    ProviderRetryPolicy, DEFAULT_PROVIDER_RETRY_ATTEMPTS, DEFAULT_RETRYABLE_PROVIDER_STATUS_CODES,
 };
 pub use error::{DomainError, DomainResult};
 pub use money::{DecimalValue, Money};

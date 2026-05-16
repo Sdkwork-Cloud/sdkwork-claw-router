@@ -39,27 +39,15 @@ export interface RecentUsageTrace {
   cost: string;
 }
 
+export interface DashboardSummaryCard {
+  label: string;
+  value: string;
+  detail: string;
+}
+
 export class AdminDashboardService {
-  static generateTrafficData(timeRange: string, granularity: string): TrafficData[] {
-    const data: TrafficData[] = [];
-    const pointCount = granularity === 'minutes' ? 24 : granularity === 'hours' ? 24 : granularity === 'weeks' ? 12 : 30;
-    const base = timeRange === '浠婃棩' || timeRange === '鏄ㄦ棩' ? 1 : timeRange === '鏈懆' ? 4 : timeRange === '鏈湀' ? 12 : 24;
-
-    for (let index = 0; index < pointCount; index += 1) {
-      const wave = Math.sin(index * 0.7) * 0.25 + Math.cos(index * 0.21) * 0.15 + 1;
-      const tokens = Math.max(10, Math.floor(12000 * base * wave * (1 + index / (pointCount * 2))));
-      data.push({
-        time: formatTrafficLabel(index, granularity),
-        tokens,
-        requests: Math.max(1, Math.floor(tokens / 100)),
-        cost: Number(((tokens / 1000) * 0.012).toFixed(2)),
-      });
-    }
-
-    return data.length > 0 ? data : [{ time: 'N/A', tokens: 0, requests: 0, cost: 0 }];
-  }
-
   static async fetchDashboardData(): Promise<{
+    summaryCards: DashboardSummaryCard[];
     userConsumption: PieChartData[];
     multimodal: PieChartData[];
     traffic: TrafficData[];
@@ -69,12 +57,29 @@ export class AdminDashboardService {
     const result = await getClawRouterBackendSdkClient().system.dashboard.admin.overview.retrieve();
     ensurePlusApiSuccess(result, 'Failed to fetch admin dashboard');
     const data = readApiRecord(result);
+    const userConsumption = readRequiredRecordArray(data, 'userConsumption', 'Dashboard userConsumption is required', 'Dashboard pie chart record is required')
+      .map(normalizePieChartData);
+    const multimodal = readRequiredRecordArray(data, 'multimodal', 'Dashboard multimodal is required', 'Dashboard pie chart record is required')
+      .map(normalizePieChartData);
+    const traffic = readRequiredRecordArray(data, 'traffic', 'Dashboard traffic is required', 'Dashboard traffic record is required')
+      .map(normalizeTrafficData);
+    const modelDistribution = readRequiredRecordArray(data, 'modelDistribution', 'Dashboard modelDistribution is required', 'Dashboard pie chart record is required')
+      .map(normalizePieChartData);
+    const recentUsage = readRequiredRecordArray(data, 'recentUsage', 'Dashboard recentUsage is required', 'Recent usage trace record is required')
+      .map(normalizeRecentUsageTrace);
     return {
-      userConsumption: readOptionalRecordArray(data, 'userConsumption', 'Dashboard pie chart record is required').map(normalizePieChartData),
-      multimodal: readOptionalRecordArray(data, 'multimodal', 'Dashboard pie chart record is required').map(normalizePieChartData),
-      traffic: readOptionalRecordArray(data, 'traffic', 'Dashboard traffic record is required').map(normalizeTrafficData),
-      modelDistribution: readOptionalRecordArray(data, 'modelDistribution', 'Dashboard pie chart record is required').map(normalizePieChartData),
-      recentUsage: readOptionalRecordArray(data, 'recentUsage', 'Recent usage trace record is required').map(normalizeRecentUsageTrace),
+      summaryCards: createSummaryCards({
+        userConsumption,
+        multimodal,
+        traffic,
+        modelDistribution,
+        recentUsage,
+      }),
+      userConsumption,
+      multimodal,
+      traffic,
+      modelDistribution,
+      recentUsage,
     };
   }
 
@@ -85,29 +90,12 @@ export class AdminDashboardService {
   }
 }
 
-function formatTrafficLabel(index: number, granularity: string): string {
-  if (granularity === 'minutes') {
-    const minutes = index * 15;
-    return `${String(Math.floor(minutes / 60)).padStart(2, '0')}:${String(minutes % 60).padStart(2, '0')}`;
-  }
-  if (granularity === 'hours') {
-    return `${String(index).padStart(2, '0')}:00`;
-  }
-  if (granularity === '鎸夊懆') {
-    return `W${index + 1}`;
-  }
-  if (granularity === '鎸夋湀') {
-    return `${index + 1}月`;
-  }
-  return `${String(index + 1).padStart(2, '0')}`;
-}
-
 function normalizePieChartData(value: unknown): PieChartData {
   const item = readRequiredRecord(value, 'Dashboard pie chart record is required');
   return {
     name: readRequiredString(item, 'name', 'Dashboard pie chart name is required'),
     value: readRequiredNonNegativeNumber(item, 'value', 'Dashboard pie chart value is required'),
-    color: readString(item, 'color', '#64748b'),
+    color: readRequiredString(item, 'color', 'Dashboard pie chart color is required'),
   };
 }
 
@@ -151,10 +139,10 @@ function optionalNumber(item: ApiRecord, key: string, message: string): number |
     : readRequiredNonNegativeNumber(item, key, message);
 }
 
-function readOptionalRecordArray(record: ApiRecord, key: string, itemMessage: string): ApiRecord[] {
+function readRequiredRecordArray(record: ApiRecord, key: string, missingMessage: string, itemMessage: string): ApiRecord[] {
   const value = record[key];
   if (value === undefined || value === null) {
-    return [];
+    throw new Error(missingMessage);
   }
   if (!Array.isArray(value)) {
     throw new Error(`${key} must be an array`);
@@ -229,4 +217,98 @@ function readRequiredDecimalString(
     throw new Error(invalidMessage);
   }
   return readDecimalString(record, key);
+}
+
+function createSummaryCards(snapshot: {
+  userConsumption: PieChartData[];
+  multimodal: PieChartData[];
+  traffic: TrafficData[];
+  modelDistribution: PieChartData[];
+  recentUsage: RecentUsageTrace[];
+}): DashboardSummaryCard[] {
+  const userConsumptionTotal = sumBy(snapshot.userConsumption, (item) => item.value);
+  const modelCallTotal = sumBy(snapshot.modelDistribution, (item) => item.value);
+  const trafficRequests = sumBy(snapshot.traffic, (item) => item.requests);
+  const trafficTokens = sumBy(snapshot.traffic, (item) => item.tokens);
+  const trafficCost = sumBy(snapshot.traffic, (item) => item.cost);
+  const multimodalTotal = sumBy(snapshot.multimodal, (item) => item.value);
+  const successfulUsage = snapshot.recentUsage.filter((item) => item.status.trim().toLowerCase() === 'success').length;
+  const failedUsage = snapshot.recentUsage.length - successfulUsage;
+  const apiUsage = snapshot.recentUsage.filter((item) => item.isApiUser).length;
+  const apiUsageRatio = snapshot.recentUsage.length > 0 ? (apiUsage / snapshot.recentUsage.length) * 100 : 0;
+  const averageRequestCost = trafficRequests > 0 ? trafficCost / trafficRequests : 0;
+
+  return [
+    {
+      label: '活跃用户',
+      value: formatInteger(snapshot.userConsumption.length),
+      detail: `${formatMoney(userConsumptionTotal)} 用户消费`,
+    },
+    {
+      label: '模型覆盖',
+      value: formatInteger(snapshot.modelDistribution.length),
+      detail: `${formatInteger(modelCallTotal)} 次模型调用`,
+    },
+    {
+      label: '总请求',
+      value: formatInteger(trafficRequests),
+      detail: '来自后端 traffic 快照',
+    },
+    {
+      label: '总 Tokens',
+      value: formatCompactNumber(trafficTokens),
+      detail: `累计计费 ${formatMoney(trafficCost)}`,
+    },
+    {
+      label: '模态调用',
+      value: formatInteger(multimodalTotal),
+      detail: `${formatInteger(snapshot.multimodal.length)} 个模态`,
+    },
+    {
+      label: '实时流水',
+      value: formatInteger(snapshot.recentUsage.length),
+      detail: `${formatInteger(successfulUsage)} 成功 / ${formatInteger(failedUsage)} 失败`,
+    },
+    {
+      label: '最近 API 调用',
+      value: formatInteger(apiUsage),
+      detail: `${apiUsageRatio.toFixed(1)}% API Key`,
+    },
+    {
+      label: '平均单次成本',
+      value: formatMoney(averageRequestCost),
+      detail: '按请求数计算',
+    },
+  ];
+}
+
+function sumBy<T>(items: T[], project: (item: T) => number): number {
+  return items.reduce((total, item) => total + project(item), 0);
+}
+
+function formatInteger(value: number): string {
+  return Math.round(value).toLocaleString('en-US');
+}
+
+function formatMoney(value: number): string {
+  return `$${value.toFixed(2)}`;
+}
+
+function formatCompactNumber(value: number): string {
+  const absolute = Math.abs(value);
+  if (absolute >= 1_000_000_000) {
+    return `${formatCompactUnit(value, 1_000_000_000)}B`;
+  }
+  if (absolute >= 1_000_000) {
+    return `${formatCompactUnit(value, 1_000_000)}M`;
+  }
+  if (absolute >= 1_000) {
+    return `${formatCompactUnit(value, 1_000)}K`;
+  }
+  return formatInteger(value);
+}
+
+function formatCompactUnit(value: number, unit: number): string {
+  const normalized = value / unit;
+  return Number.isInteger(normalized) ? String(normalized) : normalized.toFixed(1);
 }

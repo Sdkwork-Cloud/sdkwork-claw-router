@@ -1,12 +1,15 @@
 use std::fs;
 use std::path::PathBuf;
 use std::sync::Arc;
+use std::sync::{Mutex, OnceLock};
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use axum::body::Body;
 use axum::http::{header, Request, StatusCode};
 use sdkwork_claw_product::api::{
     app_course_router_with_store, app_course_router_with_store_and_upload_root,
+    app_course_router_with_store_upload_root_and_upload_limits, configured_course_upload_limits,
+    configured_course_upload_root, CourseUploadLimits,
 };
 use sdkwork_claw_product::infrastructure::sql::installer::{
     DatabaseInstallOptions, DatabaseInstaller,
@@ -286,6 +289,106 @@ async fn course_application_video_upload_rejects_non_video_files() {
     assert_eq!("4001", payload["code"]);
 }
 
+#[tokio::test]
+async fn course_application_video_upload_uses_configured_size_limit() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    DatabaseInstaller::for_sqlite(pool.clone())
+        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
+        .unwrap()
+        .ensure_installed()
+        .await
+        .unwrap();
+
+    let upload_root = unique_upload_root("course-upload-size-limit");
+    let store = Arc::new(SqliteCourseStore::new(pool));
+    let router = app_course_router_with_store_upload_root_and_upload_limits(
+        store.clone(),
+        store,
+        upload_root,
+        CourseUploadLimits {
+            video_upload_max_bytes: 4,
+            video_upload_body_limit_bytes: 1024,
+        },
+    );
+    let boundary = "sdkwork-course-upload-boundary";
+    let body = multipart_body(boundary, "file", "lesson.mp4", "video/mp4", b"12345");
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/courses/applications/videos")
+                .header(
+                    header::CONTENT_TYPE,
+                    format!("multipart/form-data; boundary={boundary}"),
+                )
+                .body(Body::from(body))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::BAD_REQUEST, response.status());
+    let payload = response_json(response).await;
+    assert_eq!("file must be at most 4 bytes", payload["message"]);
+}
+
+#[test]
+fn configured_course_upload_root_reads_runtime_toml_paths_section() {
+    let _guard = env_guard().lock().unwrap();
+    let upload_root = unique_upload_root("course-upload-configured");
+    let config_path = upload_root.with_extension("toml");
+    fs::write(
+        &config_path,
+        format!(
+            "[paths]\ncourse_upload_root = \"{}\"\n",
+            toml_path(&upload_root)
+        ),
+    )
+    .unwrap();
+    let saved_config_file = std::env::var("SDKWORK_CLAW_CONFIG_FILE").ok();
+    let saved_upload_root = std::env::var("SDKWORK_CLAW_COURSE_UPLOAD_ROOT").ok();
+    std::env::set_var("SDKWORK_CLAW_CONFIG_FILE", &config_path);
+    std::env::remove_var("SDKWORK_CLAW_COURSE_UPLOAD_ROOT");
+
+    assert_eq!(upload_root, configured_course_upload_root());
+
+    restore_env_var("SDKWORK_CLAW_CONFIG_FILE", saved_config_file);
+    restore_env_var("SDKWORK_CLAW_COURSE_UPLOAD_ROOT", saved_upload_root);
+}
+
+#[test]
+fn configured_course_upload_limits_read_runtime_toml_courses_section() {
+    let _guard = env_guard().lock().unwrap();
+    let config_path = unique_upload_root("course-upload-limits-configured").with_extension("toml");
+    fs::write(
+        &config_path,
+        "[courses]\nvideo_upload_max_bytes = 4096\nvideo_upload_body_limit_bytes = 8192\n",
+    )
+    .unwrap();
+    let saved_config_file = std::env::var("SDKWORK_CLAW_CONFIG_FILE").ok();
+    let saved_max = std::env::var("SDKWORK_CLAW_COURSE_VIDEO_UPLOAD_MAX_BYTES").ok();
+    let saved_body_limit = std::env::var("SDKWORK_CLAW_COURSE_VIDEO_UPLOAD_BODY_LIMIT_BYTES").ok();
+    std::env::set_var("SDKWORK_CLAW_CONFIG_FILE", &config_path);
+    std::env::remove_var("SDKWORK_CLAW_COURSE_VIDEO_UPLOAD_MAX_BYTES");
+    std::env::remove_var("SDKWORK_CLAW_COURSE_VIDEO_UPLOAD_BODY_LIMIT_BYTES");
+
+    let limits = configured_course_upload_limits();
+
+    assert_eq!(4096, limits.video_upload_max_bytes);
+    assert_eq!(8192, limits.video_upload_body_limit_bytes);
+
+    restore_env_var("SDKWORK_CLAW_CONFIG_FILE", saved_config_file);
+    restore_env_var("SDKWORK_CLAW_COURSE_VIDEO_UPLOAD_MAX_BYTES", saved_max);
+    restore_env_var(
+        "SDKWORK_CLAW_COURSE_VIDEO_UPLOAD_BODY_LIMIT_BYTES",
+        saved_body_limit,
+    );
+}
+
 async fn response_json(response: axum::response::Response) -> Value {
     let body = axum::body::to_bytes(response.into_body(), usize::MAX)
         .await
@@ -320,4 +423,20 @@ fn unique_upload_root(label: &str) -> PathBuf {
         .unwrap()
         .as_millis();
     std::env::temp_dir().join(format!("sdkwork-{label}-{millis}"))
+}
+
+fn toml_path(path: &std::path::Path) -> String {
+    path.to_string_lossy().replace('\\', "\\\\")
+}
+
+fn env_guard() -> &'static Mutex<()> {
+    static LOCK: OnceLock<Mutex<()>> = OnceLock::new();
+    LOCK.get_or_init(|| Mutex::new(()))
+}
+
+fn restore_env_var(name: &str, value: Option<String>) {
+    match value {
+        Some(value) => std::env::set_var(name, value),
+        None => std::env::remove_var(name),
+    }
 }

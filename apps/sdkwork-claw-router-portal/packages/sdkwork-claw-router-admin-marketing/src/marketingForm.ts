@@ -1,10 +1,11 @@
-import type { CommerceRechargePackageMutationRequest } from '@sdkwork/clawrouter-backend-sdk';
+import type {
+  CommerceExchangeRuleUpsertRequest,
+  CommerceRechargePackageMutationRequest,
+} from '@sdkwork/clawrouter-backend-sdk';
 import type { CouponBatchGenerateInput, CouponCreateInput } from './marketingService';
 
-const DEFAULT_COUPON_TYPE: CouponCreateInput['type'] = 'amount';
-const DEFAULT_BATCH_NAME = 'Coupon batch';
-const DEFAULT_BATCH_PREFIX = 'COUPON';
-const DEFAULT_BATCH_COUNT = 1;
+const MAX_BATCH_COUNT = 10_000;
+const MAX_BATCH_PREFIX_LENGTH = 32;
 
 export function createCouponInputFromForm(formData: FormData): CouponCreateInput {
   return {
@@ -20,9 +21,9 @@ export function createCouponBatchGenerateInputFromForm(
 ): CouponBatchGenerateInput {
   return {
     couponId: couponId.trim(),
-    name: firstNonEmpty(readFormText(formData, 'batchName'), DEFAULT_BATCH_NAME),
+    name: readRequiredText(formData, 'batchName'),
     count: readPositiveInteger(formData, 'count'),
-    prefix: firstNonEmpty(readFormText(formData, 'prefix'), DEFAULT_BATCH_PREFIX).toUpperCase(),
+    prefix: readBatchPrefix(formData),
   };
 }
 
@@ -31,6 +32,15 @@ export function createRechargePackageInputFromForm(formData: FormData): Commerce
     rmb: readMoneyAmount(readFormText(formData, 'rmb'), 'rmb'),
     bonus: readNonNegativeInteger(readFormText(formData, 'bonus'), 'bonus'),
     status: readRechargePackageStatus(formData.get('status')),
+  };
+}
+
+export function createExchangeRuleInputFromForm(formData: FormData): CommerceExchangeRuleUpsertRequest {
+  return {
+    sourceAssetType: 'POINTS',
+    targetAssetType: 'CASH',
+    rate: readExchangeRate(readFormText(formData, 'rate')),
+    status: 'active',
   };
 }
 
@@ -44,15 +54,38 @@ function readCouponType(value: FormDataEntryValue | null): CouponCreateInput['ty
   if (normalized === 'amount' || normalized === 'discount') {
     return normalized;
   }
-  return DEFAULT_COUPON_TYPE;
+  throw new Error('type must be amount or discount');
 }
 
 function readPositiveInteger(formData: FormData, key: string): number {
-  const value = Number(readFormText(formData, key));
-  if (!Number.isFinite(value) || value < 1) {
-    return DEFAULT_BATCH_COUNT;
+  const text = readFormText(formData, key);
+  if (!/^\d+$/.test(text)) {
+    throw new Error(`${key} must be a positive integer`);
   }
-  return Math.round(value);
+  const value = Number(text);
+  if (!Number.isSafeInteger(value) || value < 1 || value > MAX_BATCH_COUNT) {
+    throw new Error(`${key} must be between 1 and ${MAX_BATCH_COUNT}`);
+  }
+  return value;
+}
+
+function readRequiredText(formData: FormData, key: string): string {
+  const value = readFormText(formData, key);
+  if (!value) {
+    throw new Error(`${key} is required`);
+  }
+  return value;
+}
+
+function readBatchPrefix(formData: FormData): string {
+  const prefix = readRequiredText(formData, 'prefix').toUpperCase();
+  if (prefix.length > MAX_BATCH_PREFIX_LENGTH) {
+    throw new Error(`prefix must be at most ${MAX_BATCH_PREFIX_LENGTH} characters`);
+  }
+  if (!/^[A-Z0-9_-]+$/.test(prefix)) {
+    throw new Error('prefix may only contain letters, numbers, -, and _');
+  }
+  return prefix;
 }
 
 function readMoneyAmount(value: string, fieldName: string): string {
@@ -86,12 +119,14 @@ function readRechargePackageStatus(value: FormDataEntryValue | null): CommerceRe
   throw new Error('status must be active or inactive');
 }
 
-function firstNonEmpty(...values: string[]): string {
-  for (const value of values) {
-    const normalized = value.trim();
-    if (normalized) {
-      return normalized;
-    }
+function readExchangeRate(value: string): string {
+  const normalized = value.replace(/,/g, '');
+  if (!/^\d+(?:\.\d{1,6})?$/.test(normalized)) {
+    throw new Error('rate must be a positive decimal string with at most 6 decimal places');
   }
-  return '';
+  const numeric = Number(normalized);
+  if (!Number.isFinite(numeric) || numeric < 1 || numeric > 1_000_000) {
+    throw new Error('rate must be between 1 and 1000000');
+  }
+  return normalized;
 }

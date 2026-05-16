@@ -24,6 +24,10 @@ use crate::ports::{
     CourseSubject, CreateCourseApplicationCommand,
 };
 
+const ENV_COURSE_UPLOAD_ROOT: &str = "SDKWORK_CLAW_COURSE_UPLOAD_ROOT";
+const ENV_COURSE_VIDEO_UPLOAD_MAX_BYTES: &str = "SDKWORK_CLAW_COURSE_VIDEO_UPLOAD_MAX_BYTES";
+const ENV_COURSE_VIDEO_UPLOAD_BODY_LIMIT_BYTES: &str =
+    "SDKWORK_CLAW_COURSE_VIDEO_UPLOAD_BODY_LIMIT_BYTES";
 const DEFAULT_COURSE_PAGE_SIZE: i64 = 12;
 const MAX_COURSE_PAGE_SIZE: i64 = 240;
 const MAX_QUERY_TEXT_LEN: usize = 128;
@@ -36,8 +40,9 @@ const MAX_COURSE_APPLICATION_VIDEO_URL_LEN: usize = 1024;
 const MAX_COURSE_APPLICATION_CONTACT_NAME_LEN: usize = 128;
 const MAX_COURSE_APPLICATION_CONTACT_EMAIL_LEN: usize = 254;
 const MAX_COURSE_APPLICATION_NOTES_LEN: usize = 2000;
-const MAX_COURSE_VIDEO_UPLOAD_BYTES: usize = 1024 * 1024 * 1024;
-const COURSE_VIDEO_UPLOAD_BODY_LIMIT_BYTES: usize = MAX_COURSE_VIDEO_UPLOAD_BYTES + 1024 * 1024;
+const DEFAULT_COURSE_VIDEO_UPLOAD_MAX_BYTES: usize = 1024 * 1024 * 1024;
+const DEFAULT_COURSE_VIDEO_UPLOAD_BODY_LIMIT_BYTES: usize =
+    DEFAULT_COURSE_VIDEO_UPLOAD_MAX_BYTES + 1024 * 1024;
 const COURSE_UPLOAD_APPLICATIONS_DIR: &str = "applications";
 
 #[derive(Clone)]
@@ -46,6 +51,7 @@ struct AppCourseState {
     command_store: Option<Arc<dyn CourseApplicationCommandStore + Send + Sync>>,
     require_subject: bool,
     upload_root: Arc<PathBuf>,
+    upload_limits: CourseUploadLimits,
 }
 
 #[derive(Debug, Deserialize)]
@@ -90,6 +96,12 @@ struct CourseApplicationVideoUploadResponse {
     size_bytes: u64,
     sha256: String,
     uploaded_at: String,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct CourseUploadLimits {
+    pub video_upload_max_bytes: usize,
+    pub video_upload_body_limit_bytes: usize,
 }
 
 struct EmptyCourseReadStore;
@@ -139,14 +151,14 @@ pub fn app_course_router() -> Router {
         Arc::new(EmptyCourseReadStore),
         None,
         false,
-        default_course_upload_root(),
+        configured_course_upload_root(),
     )
 }
 
 pub fn app_course_router_with_read_store(
     read_store: Arc<dyn CourseReadStore + Send + Sync>,
 ) -> Router {
-    app_course_router_with_state(read_store, None, false, default_course_upload_root())
+    app_course_router_with_state(read_store, None, false, configured_course_upload_root())
 }
 
 pub fn app_course_router_with_store(
@@ -157,7 +169,7 @@ pub fn app_course_router_with_store(
         read_store,
         Some(command_store),
         false,
-        default_course_upload_root(),
+        configured_course_upload_root(),
     )
 }
 
@@ -166,7 +178,28 @@ pub fn app_course_router_with_store_and_upload_root(
     command_store: Arc<dyn CourseApplicationCommandStore + Send + Sync>,
     upload_root: impl Into<PathBuf>,
 ) -> Router {
-    app_course_router_with_state(read_store, Some(command_store), false, upload_root.into())
+    app_course_router_with_state_and_upload_limits(
+        read_store,
+        Some(command_store),
+        false,
+        upload_root.into(),
+        configured_course_upload_limits(),
+    )
+}
+
+pub fn app_course_router_with_store_upload_root_and_upload_limits(
+    read_store: Arc<dyn CourseReadStore + Send + Sync>,
+    command_store: Arc<dyn CourseApplicationCommandStore + Send + Sync>,
+    upload_root: impl Into<PathBuf>,
+    upload_limits: CourseUploadLimits,
+) -> Router {
+    app_course_router_with_state_and_upload_limits(
+        read_store,
+        Some(command_store),
+        false,
+        upload_root.into(),
+        upload_limits,
+    )
 }
 
 fn app_course_router_with_state(
@@ -174,6 +207,22 @@ fn app_course_router_with_state(
     command_store: Option<Arc<dyn CourseApplicationCommandStore + Send + Sync>>,
     require_subject: bool,
     upload_root: PathBuf,
+) -> Router {
+    app_course_router_with_state_and_upload_limits(
+        read_store,
+        command_store,
+        require_subject,
+        upload_root,
+        configured_course_upload_limits(),
+    )
+}
+
+fn app_course_router_with_state_and_upload_limits(
+    read_store: Arc<dyn CourseReadStore + Send + Sync>,
+    command_store: Option<Arc<dyn CourseApplicationCommandStore + Send + Sync>>,
+    require_subject: bool,
+    upload_root: PathBuf,
+    upload_limits: CourseUploadLimits,
 ) -> Router {
     Router::new()
         .route("/app/v3/api/courses", get(fetch_courses))
@@ -195,12 +244,15 @@ fn app_course_router_with_state(
             "/uploads/courses/{*filePath}",
             get(serve_course_upload_asset),
         )
-        .layer(DefaultBodyLimit::max(COURSE_VIDEO_UPLOAD_BODY_LIMIT_BYTES))
+        .layer(DefaultBodyLimit::max(
+            upload_limits.video_upload_body_limit_bytes,
+        ))
         .with_state(AppCourseState {
             read_store,
             command_store,
             require_subject,
             upload_root: Arc::new(upload_root),
+            upload_limits,
         })
 }
 
@@ -383,10 +435,11 @@ async fn store_course_application_video(
                 return bad_request("file is too large".to_owned());
             }
         };
-        if size_bytes > MAX_COURSE_VIDEO_UPLOAD_BYTES {
+        if size_bytes > state.upload_limits.video_upload_max_bytes {
             remove_file_quietly(&temp_path).await;
             return bad_request(format!(
-                "file must be at most {MAX_COURSE_VIDEO_UPLOAD_BYTES} bytes"
+                "file must be at most {} bytes",
+                state.upload_limits.video_upload_max_bytes
             ));
         }
         hasher.update(&chunk);
@@ -689,16 +742,70 @@ fn is_safe_course_video_url(value: &str) -> bool {
         || value.starts_with("http://127.0.0.1/")
 }
 
-fn default_course_upload_root() -> PathBuf {
-    std::env::var("SDKWORK_CLAW_COURSE_UPLOAD_ROOT")
+pub fn configured_course_upload_root() -> PathBuf {
+    let runtime_toml = sdkwork_claw_config::RuntimeTomlConfig::from_env_config_file()
         .ok()
-        .and_then(|value| {
-            normalize_optional_text(Some(value), "SDKWORK_CLAW_COURSE_UPLOAD_ROOT", 1024)
-                .ok()
-                .flatten()
-        })
-        .map(PathBuf::from)
-        .unwrap_or_else(|| PathBuf::from("uploads").join("courses"))
+        .flatten();
+    sdkwork_claw_config::runtime::config_value(
+        ENV_COURSE_UPLOAD_ROOT,
+        runtime_toml
+            .as_ref()
+            .and_then(|config| config.paths.course_upload_root.as_deref()),
+    )
+    .and_then(|value| {
+        normalize_optional_text(Some(value), ENV_COURSE_UPLOAD_ROOT, 1024)
+            .ok()
+            .flatten()
+    })
+    .map(PathBuf::from)
+    .unwrap_or_else(default_course_upload_root)
+}
+
+pub fn configured_course_upload_limits() -> CourseUploadLimits {
+    let runtime_toml = sdkwork_claw_config::RuntimeTomlConfig::from_env_config_file()
+        .ok()
+        .flatten();
+    let default_limits = CourseUploadLimits::default();
+    let video_upload_max_bytes = configured_usize(
+        ENV_COURSE_VIDEO_UPLOAD_MAX_BYTES,
+        runtime_toml
+            .as_ref()
+            .and_then(|config| config.courses.video_upload_max_bytes),
+        default_limits.video_upload_max_bytes,
+    );
+    let configured_body_limit = configured_usize(
+        ENV_COURSE_VIDEO_UPLOAD_BODY_LIMIT_BYTES,
+        runtime_toml
+            .as_ref()
+            .and_then(|config| config.courses.video_upload_body_limit_bytes),
+        default_limits.video_upload_body_limit_bytes,
+    );
+    CourseUploadLimits {
+        video_upload_max_bytes,
+        video_upload_body_limit_bytes: configured_body_limit.max(video_upload_max_bytes),
+    }
+}
+
+impl Default for CourseUploadLimits {
+    fn default() -> Self {
+        Self {
+            video_upload_max_bytes: DEFAULT_COURSE_VIDEO_UPLOAD_MAX_BYTES,
+            video_upload_body_limit_bytes: DEFAULT_COURSE_VIDEO_UPLOAD_BODY_LIMIT_BYTES,
+        }
+    }
+}
+
+fn default_course_upload_root() -> PathBuf {
+    PathBuf::from("uploads").join("courses")
+}
+
+fn configured_usize(name: &str, config_value: Option<u64>, default_value: usize) -> usize {
+    sdkwork_claw_config::runtime::env_optional(name)
+        .and_then(|value| value.parse::<u64>().ok())
+        .or(config_value)
+        .and_then(|value| usize::try_from(value).ok())
+        .filter(|value| *value > 0)
+        .unwrap_or(default_value)
 }
 
 fn validate_course_video_upload_metadata(

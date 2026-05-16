@@ -1,10 +1,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { BusinessStateTableRow } from 'sdkwork-claw-router-commons';
-import { Search, Plus, Network, Key, AlertCircle, RefreshCw, MoreVertical, X, Eye, Layers, Cpu, ChevronLeft, ChevronRight, Sparkles, Cloud, Hash, GitMerge, Check, ArrowRightLeft, Info, Trash2, CheckCircle2, ArrowRight, Server, MessageSquare, Image as ImageIcon, Mic, Music, Video, Volume2, PlayCircle, FilePlus2, Edit2, Ban, CheckCircle } from 'lucide-react';
+import { Search, Plus, Network, Key, AlertCircle, RefreshCw, X, Layers, Cpu, ChevronLeft, ChevronRight, Sparkles, Check, Trash2, Server, MessageSquare, Image as ImageIcon, Mic, Music, Video, Volume2, PlayCircle, FilePlus2, Edit2, Ban, CheckCircle } from 'lucide-react';
 import { RoutingService, protocolsList, authTypesList, knownModelVendors, prefillModels } from '../routingService';
 import {
   createRoutingChannelInputFromForm,
   createRoutingChannelUpdateInputFromForm,
+  resolveRoutingAuthTypeFormValue,
+  resolveRoutingAuthTypeSubmitValue,
+  resolveRoutingMultiProtocolFormValue,
+  resolveRoutingMultiProtocolSubmitValue,
+  resolveRoutingSelectFormValue,
   type RoutingChannelFormValues,
 } from '../channelForm';
 import type { Channel } from '../types';
@@ -37,7 +42,18 @@ function readFormText(formData: FormData, key: string): string {
 function readFormInteger(formData: FormData, key: string): number {
   const value = readFormText(formData, key);
   const parsed = Number.parseInt(value, 10);
-  return Number.isFinite(parsed) ? parsed : 1;
+  if (!Number.isFinite(parsed)) {
+    throw new Error(`${key} must be an integer`);
+  }
+  return parsed;
+}
+
+function readOptionalFormInteger(formData: FormData, key: string): string {
+  return readFormText(formData, key);
+}
+
+function readRetryEnabled(formData: FormData): boolean {
+  return formData.get('retryEnabled') === 'on';
 }
 
 const channelVendorTabs: Array<{ id: ChannelVendorFilter; label: string }> = [
@@ -63,22 +79,15 @@ const capabilityBadgeConfig: Record<string, CapabilityBadgeConfig> = {
 function AddAccountModal({ onClose, onAdd, initialData, submitting, submitError }: AddAccountModalProps) {
   const isInitialMount = React.useRef(true);
   const [selectedProtocols, setSelectedProtocols] = useState<string[]>(
-    initialData
-      ? protocolsList.filter(p => (initialData.protocol || '').includes(p.label)).map(p => p.id)
-      : ['OpenAI']
+    resolveRoutingMultiProtocolFormValue(initialData?.protocol, protocolsList, ['OpenAI'])
   );
-  const [activeAuthType, setActiveAuthType] = useState(initialData ? (authTypesList.find(t => t.title === initialData.accessType)?.id || 'api-key') : 'api-key');
+  const [activeAuthType, setActiveAuthType] = useState(resolveRoutingAuthTypeFormValue(initialData?.accessType, authTypesList));
   const [showMoreAuth, setShowMoreAuth] = useState(false);
 
-  const [modelMode, setModelMode] = useState<'whitelist' | 'mapping'>('whitelist');
-  const [modelVendor, setModelVendor] = useState(initialData?.vendor || 'OpenAI'); // Right side Model Vendor
+  const [modelVendor, setModelVendor] = useState(resolveRoutingSelectFormValue(initialData?.vendor, knownModelVendors, 'OpenAI')); // Right side Model Vendor
   const [whitelist, setWhitelist] = useState<string[]>(initialData?.models || []);
   const [capabilities, setCapabilities] = useState<string[]>(initialData?.capabilities || ['llm']);
   const [customModel, setCustomModel] = useState('');
-  const [mappings, setMappings] = useState<{from: string, to: string}[]>([
-    { from: 'gpt-4', to: 'gpt-4o' },
-    { from: 'claude-3-opus', to: 'claude-3-opus-20240229' },
-  ]);
 
   useEffect(() => {
     if (isInitialMount.current) {
@@ -100,18 +109,21 @@ function AddAccountModal({ onClose, onAdd, initialData, submitting, submitError 
       return;
     }
     const formData = new FormData(e.target as HTMLFormElement);
-    const authObj = authTypesList.find(t => t.id === activeAuthType);
-
     const secretRef = readFormText(formData, 'authKey');
     const input: RoutingChannelFormValues = {
       name: readFormText(formData, 'name'),
       vendor: modelVendor,
-      protocol: selectedProtocols.map(p => protocolsList.find(pl => pl.id === p)?.label || p).join(', '),
-      accessType: authObj?.title || 'API Key',
+      protocol: resolveRoutingMultiProtocolSubmitValue(selectedProtocols, protocolsList),
+      accessType: resolveRoutingAuthTypeSubmitValue(activeAuthType, authTypesList),
       baseUrl: readFormText(formData, 'baseUrl') || initialData?.baseUrl || '',
       secretRef,
       capabilities,
       models: whitelist,
+      timeoutMs: readOptionalFormInteger(formData, 'timeoutMs'),
+      retryEnabled: readRetryEnabled(formData),
+      retryMaxAttempts: readOptionalFormInteger(formData, 'retryMaxAttempts'),
+      retryableStatusCodes: readFormText(formData, 'retryableStatusCodes'),
+      retryBackoffMs: readOptionalFormInteger(formData, 'retryBackoffMs'),
       weight: readFormInteger(formData, 'weight'),
       status: initialData?.status || 'active',
     };
@@ -131,14 +143,6 @@ function AddAccountModal({ onClose, onAdd, initialData, submitting, submitError 
 
   const removeModel = (m: string) => {
     setWhitelist(whitelist.filter(x => x !== m));
-  };
-
-  const addMapping = () => setMappings([...mappings, { from: '', to: '' }]);
-  const removeMapping = (idx: number) => setMappings(mappings.filter((_, i) => i !== idx));
-  const updateMapping = (idx: number, key: 'from' | 'to', val: string) => {
-    const newM = [...mappings];
-    newM[idx][key] = val;
-    setMappings(newM);
   };
 
   return (
@@ -184,6 +188,9 @@ function AddAccountModal({ onClose, onAdd, initialData, submitting, submitError 
                     {knownModelVendors.map(v => (
                       <option key={v.id} value={v.id}>{v.name}</option>
                     ))}
+                    {!knownModelVendors.some((vendor) => vendor.id === modelVendor) && (
+                      <option value={modelVendor}>{modelVendor}</option>
+                    )}
                   </select>
                   <ChevronRight className="w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none rotate-90" />
                 </div>
@@ -221,6 +228,26 @@ function AddAccountModal({ onClose, onAdd, initialData, submitting, submitError 
                       </label>
                     );
                   })}
+                  {selectedProtocols.filter((protocol) => !protocolsList.some((item) => item.id === protocol)).map((protocol) => (
+                    <label key={protocol} className="flex items-center gap-1.5 rounded-md bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-800 ring-1 ring-amber-300 dark:bg-amber-500/10 dark:text-amber-200 dark:ring-amber-500/40">
+                      <div className="relative flex h-3.5 w-3.5 items-center justify-center">
+                        <input
+                          type="checkbox"
+                          className="peer sr-only"
+                          checked
+                          onChange={(e) => {
+                            if (!e.target.checked && selectedProtocols.length > 1) {
+                              setSelectedProtocols(selectedProtocols.filter((id) => id !== protocol));
+                            }
+                          }}
+                        />
+                        <div className="flex h-3.5 w-3.5 items-center justify-center rounded-sm border border-amber-500 bg-amber-500">
+                          <Check className="h-2.5 w-2.5 text-white" />
+                        </div>
+                      </div>
+                      {protocol}
+                    </label>
+                  ))}
                 </div>
               </div>
 
@@ -249,6 +276,20 @@ function AddAccountModal({ onClose, onAdd, initialData, submitting, submitError 
                       </button>
                     );
                   })}
+                  {!authTypesList.some((type) => type.id === activeAuthType) && (
+                    <button
+                      key={activeAuthType}
+                      type="button"
+                      onClick={() => setActiveAuthType(activeAuthType)}
+                      className="flex items-center gap-2 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-left text-xs text-amber-800 transition-all dark:border-amber-500/40 dark:bg-amber-500/10 dark:text-amber-200"
+                    >
+                      <Key className="h-4 w-4" />
+                      <span>
+                        <span className="block font-semibold">{activeAuthType}</span>
+                        <span className="text-[10px] opacity-80">Custom backend auth type</span>
+                      </span>
+                    </button>
+                  )}
                 </div>
               </div>
 
@@ -266,7 +307,37 @@ function AddAccountModal({ onClose, onAdd, initialData, submitting, submitError 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">流控权重</label>
-                  <input required name="weight" type="number" min="1" max="100" defaultValue={initialData?.weight || "10"} className="w-full flex-1 bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors" />
+                  <input required name="weight" type="number" min="1" max="10000" defaultValue={initialData?.weight ?? ""} className="w-full flex-1 bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors" />
+                </div>
+                <div>
+                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">Timeout ms</label>
+                  <input name="timeoutMs" type="number" min="1" max="600000" placeholder="60000" defaultValue={initialData?.timeoutMs ?? ""} className="w-full flex-1 bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors" />
+                </div>
+              </div>
+
+              <div className="border border-slate-200 dark:border-white/10 rounded-xl p-4 bg-slate-50 dark:bg-[#121212]">
+                <label className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
+                  <input
+                    name="retryEnabled"
+                    type="checkbox"
+                    defaultChecked={Boolean(initialData?.retryPolicy)}
+                    className="w-4 h-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
+                  />
+                  Retry policy
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <div>
+                    <label className="block text-xs text-slate-500 mb-1">Max attempts</label>
+                    <input name="retryMaxAttempts" type="number" min="1" max="5" defaultValue={initialData?.retryPolicy?.maxAttempts ?? 3} className="w-full bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors" />
+                  </div>
+                  <div>
+                    <label className="block text-xs text-slate-500 mb-1">HTTP statuses</label>
+                    <input name="retryableStatusCodes" type="text" placeholder="429, 500, 502, 503, 504" defaultValue={initialData?.retryPolicy?.retryableStatusCodes.join(', ') ?? '429, 500, 502, 503, 504'} className="w-full bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors" />
+                  </div>
+                  <div>
+                    <label className="block text-xs text-slate-500 mb-1">Backoff ms</label>
+                    <input name="retryBackoffMs" type="number" min="0" max="2000" defaultValue={initialData?.retryPolicy?.backoffMs ?? 0} className="w-full bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors" />
+                  </div>
                 </div>
               </div>
 
@@ -300,86 +371,46 @@ function AddAccountModal({ onClose, onAdd, initialData, submitting, submitError 
 
             {/* RIGHT COLUMN: Model Configuration */}
             <div className="flex-1 px-6 py-4 bg-slate-50 dark:bg-transparent overflow-y-auto custom-scrollbar flex flex-col h-[70vh] lg:h-auto">
-              <div className="flex bg-slate-100 dark:bg-[#121212] rounded-lg p-1 mb-4 border border-slate-200 dark:border-white/5 w-full shrink-0">
-                <button type="button" onClick={() => setModelMode('whitelist')} className={`flex-1 py-1.5 text-sm rounded-md flex items-center justify-center gap-2 transition-all font-medium ${modelMode === 'whitelist' ? 'bg-white dark:bg-black text-emerald-600 dark:text-emerald-400 shadow' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}>
-                  <CheckCircle2 className="w-4 h-4" /> 模型白名单
-                </button>
-                <button type="button" onClick={() => setModelMode('mapping')} className={`flex-1 py-1.5 text-sm rounded-md flex items-center justify-center gap-2 transition-all font-medium ${modelMode === 'mapping' ? 'bg-white dark:bg-black text-purple-600 dark:text-purple-400 shadow' : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'}`}>
-                  <ArrowRightLeft className="w-4 h-4" /> 模型映射
-                </button>
+              <div className="mb-4 shrink-0">
+                <h4 className="text-sm font-semibold text-slate-900 dark:text-white">模型白名单</h4>
+                <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">按当前通道契约绑定可用模型池；全局映射规则请在路由与负载均衡中配置。</p>
               </div>
 
-              {modelMode === 'whitelist' ? (
-                <div className="flex flex-col flex-1 h-full min-h-0">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 bg-white dark:bg-black p-4 rounded-xl border border-slate-200 dark:border-white/10 overflow-y-auto max-h-[300px]">
-                    {whitelist.map(model => (
-                      <div key={model} className="flex justify-between items-center bg-slate-50 dark:bg-[#1e1e1e] border border-slate-100 dark:border-white/5 rounded-lg px-3 py-2 text-sm text-slate-700 dark:text-slate-300 group">
-                        <span className="flex items-center gap-2 truncate pr-2">
-                          <Sparkles className="w-3.5 h-3.5 text-amber-500 shrink-0" />
-                          <span className="truncate">{model}</span>
-                        </span>
-                        <button type="button" onClick={() => removeModel(model)} className="text-slate-400 hover:text-red-500 transition-colors shrink-0">
-                          <X className="w-4 h-4" />
-                        </button>
-                      </div>
-                    ))}
-                    {whitelist.length === 0 && <div className="col-span-2 text-slate-500 text-sm text-center py-8">暂未配置模型，全部放行</div>}
+              <div className="flex flex-col flex-1 h-full min-h-0">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 bg-white dark:bg-black p-4 rounded-xl border border-slate-200 dark:border-white/10 overflow-y-auto max-h-[300px]">
+                  {whitelist.map(model => (
+                    <div key={model} className="flex justify-between items-center bg-slate-50 dark:bg-[#1e1e1e] border border-slate-100 dark:border-white/5 rounded-lg px-3 py-2 text-sm text-slate-700 dark:text-slate-300 group">
+                      <span className="flex items-center gap-2 truncate pr-2">
+                        <Sparkles className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                        <span className="truncate">{model}</span>
+                      </span>
+                      <button type="button" onClick={() => removeModel(model)} className="text-slate-400 hover:text-red-500 transition-colors shrink-0">
+                        <X className="w-4 h-4" />
+                      </button>
+                    </div>
+                  ))}
+                  {whitelist.length === 0 && <div className="col-span-2 text-slate-500 text-sm text-center py-8">至少添加一个模型后才能保存</div>}
+                </div>
+
+                <div className="mt-auto space-y-4 shrink-0">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-slate-500 dark:text-slate-400">{whitelist.length} 个模型</span>
                   </div>
 
-                  <div className="mt-auto space-y-4 shrink-0">
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-slate-500 dark:text-slate-400">{whitelist.length} 个模型</span>
-                    </div>
+                  <div className="flex gap-3">
+                    <button type="button" onClick={fillRelatedModels} className="border border-indigo-500 text-indigo-500 dark:border-indigo-500/50 dark:text-indigo-400 px-4 py-2 rounded-lg text-sm hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-colors font-medium">应用默认白名单</button>
+                    <button type="button" onClick={() => setWhitelist([])} className="border border-red-500 text-red-500 dark:border-red-500/50 dark:text-red-400 px-4 py-2 rounded-lg text-sm hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors font-medium">清除所有</button>
+                  </div>
 
-                    <div className="flex gap-3">
-                      <button type="button" onClick={fillRelatedModels} className="border border-indigo-500 text-indigo-500 dark:border-indigo-500/50 dark:text-indigo-400 px-4 py-2 rounded-lg text-sm hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-colors font-medium">应用默认白名单</button>
-                      <button type="button" onClick={() => setWhitelist([])} className="border border-red-500 text-red-500 dark:border-red-500/50 dark:text-red-400 px-4 py-2 rounded-lg text-sm hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors font-medium">清除所有</button>
-                    </div>
-
-                    <div className="pt-4 border-t border-slate-200 dark:border-white/10">
-                      <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2">自定义追加</label>
-                      <div className="flex gap-2">
-                         <input value={customModel} onChange={e => setCustomModel(e.target.value)} onKeyDown={e => e.key === 'Enter' && (e.preventDefault(), addCustomModel())} className="flex-1 bg-white dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-4 py-2 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500" placeholder="输入自定义模型名称" />
-                         <button type="button" onClick={addCustomModel} className="bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-500 border border-emerald-200 dark:border-emerald-500/20 px-6 py-2 rounded-lg text-sm hover:bg-emerald-100 dark:hover:bg-emerald-500/20 font-medium transition-colors">添加</button>
-                      </div>
+                  <div className="pt-4 border-t border-slate-200 dark:border-white/10">
+                    <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2">自定义追加</label>
+                    <div className="flex gap-2">
+                       <input value={customModel} onChange={e => setCustomModel(e.target.value)} onKeyDown={e => e.key === 'Enter' && (e.preventDefault(), addCustomModel())} className="flex-1 bg-white dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-4 py-2 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500" placeholder="输入自定义模型名称" />
+                       <button type="button" onClick={addCustomModel} className="bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-500 border border-emerald-200 dark:border-emerald-500/20 px-6 py-2 rounded-lg text-sm hover:bg-emerald-100 dark:hover:bg-emerald-500/20 font-medium transition-colors">添加</button>
                     </div>
                   </div>
                 </div>
-              ) : (
-                <div className="flex flex-col flex-1 h-full min-h-0">
-                  <div className="bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/20 text-purple-700 dark:text-purple-300 p-3.5 rounded-xl text-sm mb-4 flex items-start gap-3 shrink-0">
-                    <Info className="w-5 h-5 mt-0.5 shrink-0" />
-                    <span>将请求侧模型标识隐式映射为厂家实际模型（如 gpt-4 映射为 gpt-4o）。</span>
-                  </div>
-
-                  <div className="space-y-3 overflow-y-auto flex-1 mb-4">
-                    {mappings.map((m, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                         <input value={m.from} onChange={e => updateMapping(idx, 'from', e.target.value)} placeholder="源模型" className="flex-1 bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-purple-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none" />
-                         <ArrowRight className="w-4 h-4 text-slate-400 shrink-0" />
-                         <input value={m.to} onChange={e => updateMapping(idx, 'to', e.target.value)} placeholder="目标模型" className="flex-1 bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-purple-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none" />
-                         <button type="button" onClick={() => removeMapping(idx)} className="text-slate-400 hover:text-red-500 p-2 shrink-0 transition-colors">
-                           <Trash2 className="w-4 h-4" />
-                         </button>
-                      </div>
-                    ))}
-                    <button type="button" onClick={addMapping} className="w-full border border-dashed border-slate-300 dark:border-white/20 text-slate-500 dark:text-slate-400 py-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-white/5 flex justify-center items-center gap-2 transition-colors font-medium text-sm">
-                       <Plus className="w-4 h-4" /> 添加一条映射规则
-                    </button>
-                  </div>
-
-                  {modelVendor === 'Anthropic' && (
-                    <div className="mt-auto pt-4 border-t border-slate-200 dark:border-white/10 space-y-3 shrink-0">
-                       <span className="text-sm text-slate-500 dark:text-slate-400 block mb-2">快捷推荐配置 (仅示例)</span>
-                       <div className="flex flex-wrap gap-2">
-                          <button type="button" className="bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-500/20 px-3 py-1.5 rounded-md text-xs hover:bg-indigo-100 dark:hover:bg-indigo-500/20">+ Sonnet 4.5</button>
-                          <button type="button" className="bg-purple-50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-500/20 px-3 py-1.5 rounded-md text-xs hover:bg-purple-100 dark:hover:bg-purple-500/20">+ Opus 4.5</button>
-                          <button type="button" className="bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-500/20 px-3 py-1.5 rounded-md text-xs hover:bg-amber-100 dark:hover:bg-amber-500/20">+ Opus-&gt;Sonnet</button>
-                       </div>
-                    </div>
-                  )}
-                </div>
-              )}
+              </div>
             </div>
           </div>
 
@@ -709,6 +740,12 @@ export function ChannelsTab() {
                       <div className="flex items-center gap-1.5 text-xs text-slate-500">
                          <Key className="w-3.5 h-3.5" /> <span>{c.accessType}</span>
                       </div>
+                      {(c.timeoutMs || c.retryPolicy) && (
+                        <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                           <RefreshCw className="w-3.5 h-3.5" />
+                           <span>{c.timeoutMs ? `${c.timeoutMs}ms` : 'default timeout'}{c.retryPolicy ? `, retry ${c.retryPolicy.maxAttempts}x` : ''}</span>
+                        </div>
+                      )}
                     </div>
                   </td>
                   <td className="px-6 py-4 align-top">

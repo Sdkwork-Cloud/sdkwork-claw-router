@@ -1,4 +1,4 @@
-use sdkwork_claw_config::AppSessionConfig;
+use sdkwork_claw_config::{AppSessionConfig, RuntimeTomlConfig};
 
 #[test]
 fn parses_app_session_config_without_leaking_secret() {
@@ -57,4 +57,43 @@ fn rejects_blank_short_or_invalid_app_session_config() {
     )
     .unwrap_err();
     assert!(excessive_skew.contains("at most"));
+}
+
+#[test]
+fn reads_app_session_config_from_runtime_toml_secret_file() {
+    let secret_path = unique_secret_path("app-session");
+    std::fs::write(&secret_path, "app-session-secret-0123456789abcd\n").unwrap();
+    let config = RuntimeTomlConfig::from_toml_str(&format!(
+        r#"
+[security]
+app_session_secret_file = "{}"
+app_session_ttl_seconds = 7200
+app_session_max_clock_skew_seconds = 90
+"#,
+        secret_path.display().to_string().replace('\\', "/")
+    ))
+    .unwrap();
+
+    let session = AppSessionConfig::from_env_or_runtime_toml(Some(&config))
+        .unwrap()
+        .unwrap();
+
+    assert_eq!(
+        "app-session-secret-0123456789abcd",
+        session.signing_secret()
+    );
+    assert_eq!(7200, session.session_ttl_seconds());
+    assert_eq!(90, session.max_clock_skew_seconds());
+    let _ = std::fs::remove_file(secret_path);
+}
+
+fn unique_secret_path(name: &str) -> std::path::PathBuf {
+    std::env::temp_dir().join(format!(
+        "clawrouter-{name}-{}-{}.secret",
+        std::process::id(),
+        std::time::SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .unwrap()
+            .as_nanos()
+    ))
 }

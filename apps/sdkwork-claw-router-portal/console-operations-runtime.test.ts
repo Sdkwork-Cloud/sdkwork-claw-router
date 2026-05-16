@@ -4,11 +4,18 @@ import test from "node:test";
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
 import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
 import { AccountService } from "./packages/sdkwork-claw-router-console-account/src/accountService.ts";
+import { createApiKeyInputFromForm, createApiKeyInputsFromForm } from "./packages/sdkwork-claw-router-console-api-keys/src/apiKeyForm.ts";
+import { ApiKeyService } from "./packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts";
 import { DashboardService } from "./packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts";
 import { ProviderService } from "./packages/sdkwork-claw-router-console-providers/src/providerService.ts";
 import { RechargeService } from "./packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts";
 import { SettingsService } from "./packages/sdkwork-claw-router-console-settings/src/settingsService.ts";
 import { SettlementsService } from "./packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts";
+import {
+  buildSettlementSummary,
+  buildSettlementYearOptions,
+  getDefaultSettlementYear,
+} from "./packages/sdkwork-claw-router-console-settlements/src/settlementViewModel.ts";
 import { UsageService } from "./packages/sdkwork-claw-router-console-usage/src/usageService.ts";
 
 const originalFetch = globalThis.fetch;
@@ -60,51 +67,65 @@ async function withAppSdkFetch<T>(
   }
 }
 
+function dashboardOverviewFixture(overrides: Record<string, unknown> = {}): Record<string, unknown> {
+  return {
+    summary: {
+      availableCredits: "125.5",
+      usedCredits: "30.25",
+      requestCount: "42",
+      errorCount: 1,
+      imageRequests: 3,
+      videoRequests: 2,
+      audioRequests: 1,
+      musicRequests: 0,
+      rpm: 20,
+      tpm: 1200,
+    },
+    requestSparkline: [{ value: 42 }],
+    multimodalSparkline: [{ value: 6 }],
+    performanceSparkline: [{ value: 120 }],
+    chartData: [
+      {
+        day: "2026-05-05",
+        textRequests: 20,
+        imageRequests: 3,
+        videoRequests: 2,
+        audioRequests: 1,
+        musicRequests: 0,
+      },
+    ],
+    topModels: [
+      {
+        rank: 1,
+        model: "gpt-4o-mini",
+        vendor: "openai",
+        type: "text",
+        requestCount: 20,
+        costAmount: "0.42",
+        trend: "+10%",
+        isUp: true,
+      },
+    ],
+    announcements: [
+      {
+        id: "7",
+        title: "Routing update",
+        createdAt: "2026-05-05T08:00:00Z",
+        messageType: "warning",
+      },
+    ],
+    warnings: [],
+    ...overrides,
+  };
+}
+
 test("console dashboard service reads overview data from generated app SDK", async () => {
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
       assert.equal(requestUrl.pathname, "/app/v3/api/ai/dashboard/overview");
       assert.equal(requestUrl.searchParams.get("time_range"), "daily");
-      return {
-        summary: {
-          availableCredits: "125.5",
-          usedCredits: "30.25",
-          requestCount: "42",
-          errorCount: 1,
-          imageRequests: 3,
-          rpm: 20,
-          tpm: 1200,
-        },
-        chartData: [
-          {
-            day: "2026-05-05",
-            textRequests: 20,
-            imageRequests: 3,
-            videoRequests: 2,
-            audioRequests: 1,
-            musicRequests: 0,
-          },
-        ],
-        topModels: [
-          {
-            model: "gpt-4o-mini",
-            vendor: "openai",
-            type: "text",
-            requestCount: 20,
-            costAmount: "0.42",
-            trend: "+10%",
-          },
-        ],
-        announcements: [
-          {
-            id: "7",
-            title: "Routing update",
-            createdAt: "2026-05-05T08:00:00Z",
-            messageType: "warning",
-          },
-        ],
-      };
+      return dashboardOverviewFixture();
     },
     async (captured) => {
       const result = await DashboardService.fetchDashboardOverview("daily");
@@ -125,27 +146,168 @@ test("console dashboard service fails closed when app SDK returns malformed over
     ["topModels", "not-a-model-record", /Dashboard top model record is required/],
     ["announcements", "not-an-announcement-record", /Dashboard announcement record is required/],
     ["requestSparkline", "not-a-sparkline-record", /Dashboard request sparkline record is required/],
+    ["multimodalSparkline", "not-a-sparkline-record", /Dashboard multimodal sparkline record is required/],
+    ["performanceSparkline", "not-a-sparkline-record", /Dashboard performance sparkline record is required/],
   ] as const) {
     await withAppSdkFetch(
       (url) => {
         const requestUrl = new URL(url, "http://localhost");
         if (requestUrl.pathname === "/app/v3/api/ai/dashboard/overview") {
-          return {
-            summary: {
-              availableCredits: "125.5",
-              usedCredits: "30.25",
-              requestCount: "42",
-              errorCount: 1,
-              imageRequests: 3,
-              rpm: 20,
-              tpm: 1200,
-            },
+          return dashboardOverviewFixture({
             chartData: [],
             topModels: [],
             announcements: [],
             requestSparkline: [],
+            multimodalSparkline: [],
+            performanceSparkline: [],
             [field]: [row],
-          };
+          });
+        }
+        throw new Error(`unexpected SDK URL: ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => DashboardService.fetchDashboardOverview("daily"),
+          message,
+        );
+      },
+    );
+  }
+});
+
+test("console dashboard service fails closed when app SDK omits required top-level dashboard fields", async () => {
+  for (const [field, message] of [
+    ["summary", /Dashboard overview summary is required/],
+    ["chartData", /Dashboard overview chartData is required/],
+    ["topModels", /Dashboard overview topModels is required/],
+    ["announcements", /Dashboard overview announcements is required/],
+    ["requestSparkline", /Dashboard overview requestSparkline is required/],
+    ["multimodalSparkline", /Dashboard overview multimodalSparkline is required/],
+    ["performanceSparkline", /Dashboard overview performanceSparkline is required/],
+    ["warnings", /Dashboard overview warnings is required/],
+  ] as const) {
+    await withAppSdkFetch(
+      (url) => {
+        const requestUrl = new URL(url, "http://localhost");
+        if (requestUrl.pathname === "/app/v3/api/ai/dashboard/overview") {
+          const response = dashboardOverviewFixture();
+          delete response[field];
+          return response;
+        }
+        throw new Error(`unexpected SDK URL: ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => DashboardService.fetchDashboardOverview("daily"),
+          message,
+        );
+      },
+    );
+  }
+});
+
+test("console dashboard service fails closed when app SDK omits required summary metrics", async () => {
+  for (const [field, message] of [
+    ["availableCredits", /Dashboard overview available credits are required/],
+    ["usedCredits", /Dashboard overview used credits are required/],
+    ["requestCount", /Dashboard overview request count is required/],
+    ["errorCount", /Dashboard overview error count is required/],
+    ["imageRequests", /Dashboard overview image requests are required/],
+    ["videoRequests", /Dashboard overview video requests are required/],
+    ["audioRequests", /Dashboard overview audio requests are required/],
+    ["musicRequests", /Dashboard overview music requests are required/],
+    ["rpm", /Dashboard overview RPM is required/],
+    ["tpm", /Dashboard overview TPM is required/],
+  ] as const) {
+    await withAppSdkFetch(
+      (url) => {
+        const requestUrl = new URL(url, "http://localhost");
+        if (requestUrl.pathname === "/app/v3/api/ai/dashboard/overview") {
+          const response = dashboardOverviewFixture();
+          delete (response.summary as Record<string, unknown>)[field];
+          return response;
+        }
+        throw new Error(`unexpected SDK URL: ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => DashboardService.fetchDashboardOverview("daily"),
+          message,
+        );
+      },
+    );
+  }
+});
+
+test("console dashboard service preserves backend model ranking fields", async () => {
+  await withAppSdkFetch(
+    (url) => {
+      const requestUrl = new URL(url, "http://localhost");
+      if (requestUrl.pathname === "/app/v3/api/ai/dashboard/overview") {
+        return dashboardOverviewFixture({
+          topModels: [
+            {
+              rank: 2,
+              model: "model-b",
+              vendor: "vendor-b",
+              type: "text",
+              requestCount: 100,
+              costAmount: "2",
+              trend: "-1%",
+              isUp: false,
+            },
+            {
+              rank: 1,
+              model: "model-a",
+              vendor: "vendor-a",
+              type: "text",
+              requestCount: 10,
+              costAmount: "1",
+              trend: "+1%",
+              isUp: true,
+            },
+          ],
+        });
+      }
+      throw new Error(`unexpected SDK URL: ${url}`);
+    },
+    async () => {
+      const result = await DashboardService.fetchDashboardOverview("daily");
+
+      assert.equal(result.topModels[0].rank, 1);
+      assert.equal(result.topModels[0].name, "model-a");
+      assert.equal(result.topModels[1].rank, 2);
+      assert.equal(result.topModels[1].name, "model-b");
+      assert.equal(result.topModels[1].isUp, false);
+    },
+  );
+});
+
+test("console dashboard service fails closed when app SDK omits required model ranking fields", async () => {
+  for (const [field, message] of [
+    ["rank", /Dashboard top model rank is required/],
+    ["isUp", /Dashboard top model direction flag is required/],
+  ] as const) {
+    await withAppSdkFetch(
+      (url) => {
+        const requestUrl = new URL(url, "http://localhost");
+        if (requestUrl.pathname === "/app/v3/api/ai/dashboard/overview") {
+          const model = {
+            rank: 1,
+            model: "gpt-4o-mini",
+            vendor: "openai",
+            type: "text",
+            requestCount: 20,
+            costAmount: "0.42",
+            trend: "+10%",
+            isUp: true,
+          } as Record<string, unknown>;
+          delete model[field];
+          return dashboardOverviewFixture({
+            chartData: [],
+            topModels: [model],
+            announcements: [],
+          });
         }
         throw new Error(`unexpected SDK URL: ${url}`);
       },
@@ -164,20 +326,11 @@ test("console dashboard service fails closed when app SDK omits required overvie
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
       if (requestUrl.pathname === "/app/v3/api/ai/dashboard/overview") {
-        return {
-          summary: {
-            availableCredits: "125.5",
-            usedCredits: "30.25",
-            requestCount: "42",
-            errorCount: 1,
-            imageRequests: 3,
-            rpm: 20,
-            tpm: 1200,
-          },
+        return dashboardOverviewFixture({
           chartData: [{ textRequests: 20, imageRequests: 3, videoRequests: 2, audioRequests: 1, musicRequests: 0 }],
           topModels: [],
           announcements: [],
-        };
+        });
       }
       throw new Error(`unexpected SDK URL: ${url}`);
     },
@@ -193,20 +346,11 @@ test("console dashboard service fails closed when app SDK omits required overvie
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
       if (requestUrl.pathname === "/app/v3/api/ai/dashboard/overview") {
-        return {
-          summary: {
-            availableCredits: "125.5",
-            usedCredits: "30.25",
-            requestCount: "42",
-            errorCount: 1,
-            imageRequests: 3,
-            rpm: 20,
-            tpm: 1200,
-          },
+        return dashboardOverviewFixture({
           chartData: [],
-          topModels: [{ vendor: "openai", type: "text", requestCount: 20, costAmount: "0.42", trend: "+10%" }],
+          topModels: [{ rank: 1, vendor: "openai", type: "text", requestCount: 20, costAmount: "0.42", trend: "+10%", isUp: true }],
           announcements: [],
-        };
+        });
       }
       throw new Error(`unexpected SDK URL: ${url}`);
     },
@@ -222,20 +366,11 @@ test("console dashboard service fails closed when app SDK omits required overvie
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
       if (requestUrl.pathname === "/app/v3/api/ai/dashboard/overview") {
-        return {
-          summary: {
-            availableCredits: "125.5",
-            usedCredits: "30.25",
-            requestCount: "42",
-            errorCount: 1,
-            imageRequests: 3,
-            rpm: 20,
-            tpm: 1200,
-          },
+        return dashboardOverviewFixture({
           chartData: [],
           topModels: [],
           announcements: [{ id: "7", createdAt: "2026-05-05T08:00:00Z", messageType: "warning" }],
-        };
+        });
       }
       throw new Error(`unexpected SDK URL: ${url}`);
     },
@@ -394,6 +529,85 @@ test("console settlements service reads dashboard decimals from generated app SD
       assert.deepEqual(result.bills[0].breakdown.image.models, ["dall-e"]);
     },
   );
+});
+
+test("console settlements view model derives year options and current-month totals without fake comparisons", () => {
+  const referenceDate = new Date("2027-02-15T08:00:00Z");
+  assert.equal(getDefaultSettlementYear(referenceDate), "2027");
+
+  const yearOptions = buildSettlementYearOptions({
+    selectedYear: "2024",
+    referenceDate,
+    bills: [
+      {
+        id: "bill-2023",
+        period: "2023-12",
+        startDate: "2023-12-01",
+        endDate: "2023-12-31",
+        totalTokens: "1",
+        totalCost: "10.000000",
+        status: "已结清",
+        breakdown: {
+          text: { cost: "0", usage: "0", models: [] },
+          image: { cost: "0", usage: "0", models: [] },
+          video: { cost: "0", usage: "0", models: [] },
+          audio: { cost: "0", usage: "0", models: [] },
+          music: { cost: "0", usage: "0", models: [] },
+        },
+      },
+    ],
+  });
+  assert.deepEqual(yearOptions, ["2027", "2026", "2025", "2024", "2023"]);
+
+  const summary = buildSettlementSummary({
+    selectedYear: "2027",
+    referenceDate,
+    chartData: [
+      { day: "2027-02-01", text: "1.000000", image: "2.000000", video: "0", audio: "0", music: "0" },
+      { day: "2027-01-31", text: "100.000000", image: "0", video: "0", audio: "0", music: "0" },
+      { day: "2026-02-15", text: "500.000000", image: "0", video: "0", audio: "0", music: "0" },
+    ],
+    bills: [
+      {
+        id: "bill-1",
+        period: "2027-02",
+        startDate: "2027-02-01",
+        endDate: "2027-02-28",
+        totalTokens: "12000",
+        totalCost: "36.500000",
+        status: "待结算",
+        breakdown: {
+          text: { cost: "12.345678", usage: "10k", models: ["gpt-4o-mini"] },
+          image: { cost: "2", usage: "3", models: ["dall-e"] },
+          video: { cost: "0", usage: "0", models: [] },
+          audio: { cost: "0", usage: "0", models: [] },
+          music: { cost: "0", usage: "0", models: [] },
+        },
+      },
+      {
+        id: "bill-2",
+        period: "2027-01",
+        startDate: "2027-01-01",
+        endDate: "2027-01-31",
+        totalTokens: "100",
+        totalCost: "3.500000",
+        status: "已结清",
+        breakdown: {
+          text: { cost: "0", usage: "0", models: [] },
+          image: { cost: "0", usage: "0", models: [] },
+          video: { cost: "0", usage: "0", models: [] },
+          audio: { cost: "0", usage: "0", models: [] },
+          music: { cost: "0", usage: "0", models: [] },
+        },
+      },
+    ],
+  });
+
+  assert.equal(summary.annualTotalCost, "40.000000");
+  assert.equal(summary.currentMonthUnbilledCost, "3.000000");
+  assert.equal(summary.nextSettlementDate, "2027-02-28 00:00:00");
+  assert.equal(summary.billCount, 2);
+  assert.equal(summary.supportsYearOverYearComparison, false);
 });
 
 test("console settlements lists fail closed when app SDK returns malformed dashboard rows", async () => {
@@ -1018,6 +1232,104 @@ test("console settings service validates outbound settings before calling genera
   );
 });
 
+test("console settings service fails closed when app SDK omits required settings fields", async () => {
+  for (const [field, message] of [
+    ["language", /Settings language is required/],
+    ["timezone", /Settings timezone is required/],
+    ["webhookUrl", /Settings webhook URL is required/],
+    ["notifications", /Settings notifications are required/],
+  ] as const) {
+    await withAppSdkFetch(
+      (url, init) => {
+        if (url === "/app/v3/api/iam/users/settings" && (init?.method ?? "GET") === "GET") {
+          const response = {
+            language: "zh-CN",
+            timezone: "Asia/Shanghai",
+            webhookUrl: "https://hooks.example.test/router",
+            notifications: {
+              billReminder: true,
+              quotaWarning: false,
+              apiMonitor: true,
+            },
+          } as Record<string, unknown>;
+          delete response[field];
+          return response;
+        }
+        throw new Error(`unexpected SDK URL: ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => SettingsService.fetchSettings(),
+          message,
+        );
+      },
+    );
+  }
+});
+
+test("console settings service fails closed when app SDK omits required notification flags", async () => {
+  for (const [field, message] of [
+    ["billReminder", /Settings bill reminder flag is required/],
+    ["quotaWarning", /Settings quota warning flag is required/],
+    ["apiMonitor", /Settings API monitor flag is required/],
+  ] as const) {
+    await withAppSdkFetch(
+      (url, init) => {
+        if (url === "/app/v3/api/iam/users/settings" && (init?.method ?? "GET") === "GET") {
+          const notifications = {
+            billReminder: true,
+            quotaWarning: false,
+            apiMonitor: true,
+          } as Record<string, unknown>;
+          delete notifications[field];
+          return {
+            language: "zh-CN",
+            timezone: "Asia/Shanghai",
+            webhookUrl: "https://hooks.example.test/router",
+            notifications,
+          };
+        }
+        throw new Error(`unexpected SDK URL: ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => SettingsService.fetchSettings(),
+          message,
+        );
+      },
+    );
+  }
+});
+
+test("console settings update fails closed unless app SDK confirms success", async () => {
+  for (const response of [{}, { success: false }]) {
+    await withAppSdkFetch(
+      (url, init) => {
+        if (url === "/app/v3/api/iam/users/settings" && init?.method === "PUT") {
+          return response;
+        }
+        throw new Error(`unexpected SDK URL: ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () =>
+            SettingsService.updateSettings({
+              language: "en",
+              timezone: "UTC",
+              webhookUrl: "",
+              notifications: {
+                billReminder: false,
+                quotaWarning: true,
+                apiMonitor: false,
+              },
+            }),
+          /Settings update confirmation is required/,
+        );
+      },
+    );
+  }
+});
+
 test("console provider service reads provider configs through generated app SDK", async () => {
   await withAppSdkFetch(
     (url) => {
@@ -1045,6 +1357,231 @@ test("console provider service reads provider configs through generated app SDK"
       assert.equal(result[0].status, "inactive");
     },
   );
+});
+
+test("console API key form rejects missing or invalid command fields instead of defaulting permissions", () => {
+  const validForm = {
+    name: "Production key",
+    group: "default",
+    quota: "1000.000000",
+    isUnlimitedQuota: false,
+    modalities: ["text"],
+    ipLimit: "unrestricted",
+    expires: "never",
+    createCount: 1,
+  };
+
+  assert.deepEqual(createApiKeyInputFromForm(validForm), {
+    name: "Production key",
+    group: "default",
+    quota: "1000.000000",
+    isUnlimitedQuota: false,
+    modalities: ["text"],
+    ipLimit: "unrestricted",
+    expires: "never",
+  });
+  assert.throws(
+    () => createApiKeyInputFromForm({ ...validForm, name: "" }),
+    /name is required/,
+  );
+  assert.throws(
+    () => createApiKeyInputFromForm({ ...validForm, group: "" }),
+    /group is required/,
+  );
+  assert.throws(
+    () => createApiKeyInputFromForm({ ...validForm, quota: "bad-decimal" }),
+    /quota must be a non-negative decimal/,
+  );
+  assert.throws(
+    () => createApiKeyInputFromForm({ ...validForm, modalities: [] }),
+    /modalities must include at least one item/,
+  );
+  assert.throws(
+    () => createApiKeyInputsFromForm({ ...validForm, createCount: 0 }),
+    /createCount must be between 1 and 100/,
+  );
+});
+
+test("console API key drawer passes create count unchanged to form validation", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(new URL("./packages/sdkwork-claw-router-console-api-keys/src/CreateKeyDrawer.tsx", import.meta.url), "utf8"),
+  );
+
+  assert.doesNotMatch(source, /Math\.min\(100,\s*Math\.max\(1,\s*createCount\s*\|\|\s*1\)\)/);
+  assert.match(source, /createCount,\s*\n\s*}\);/);
+});
+
+test("console API key service reads and creates keys through generated app SDK", async () => {
+  await withAppSdkFetch(
+    (url, init) => {
+      if (url === "/app/v3/api/iam/api_keys" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            {
+              id: "key-1",
+              name: "Production key",
+              maskedKey: "sk-prod********1234",
+              group: "default",
+              rate: "1x",
+              quota: "1000.000000",
+              usedQuota: "10.000000",
+              modalities: ["text", "image"],
+              ipLimit: "unrestricted",
+              created: "2026-05-05T08:00:00Z",
+              expires: "never",
+              status: "enabled",
+            },
+          ],
+          groups: [
+            {
+              id: "group-1",
+              code: "default",
+              name: "Default",
+              rate: "1x",
+            },
+          ],
+        };
+      }
+      if (url === "/app/v3/api/iam/api_keys" && init?.method === "POST") {
+        return {
+          item: {
+            id: "key-2",
+            name: "Batch key",
+            maskedKey: "sk-new********5678",
+            group: "default",
+            rate: null,
+            quota: "unlimited",
+            usedQuota: "0.000000",
+            modalities: ["text"],
+            ipLimit: "unrestricted",
+            created: "2026-05-05T09:00:00Z",
+            expires: "never",
+            status: "enabled",
+          },
+          rawKey: "sk-live-new-secret",
+        };
+      }
+      throw new Error(`unexpected SDK URL: ${init?.method ?? "GET"} ${url}`);
+    },
+    async (captured) => {
+      const page = await ApiKeyService.fetchKeys();
+      const created = await ApiKeyService.createKey({
+        name: "Batch key",
+        group: "default",
+        quota: "0.000000",
+        isUnlimitedQuota: true,
+        modalities: ["text"],
+        ipLimit: "unrestricted",
+        expires: "never",
+      });
+
+      assert.equal(page.keys[0].id, "key-1");
+      assert.deepEqual(page.keys[0].modalities, ["text", "image"]);
+      assert.equal(page.groups[0].code, "default");
+      assert.equal(created.rawKey, "sk-live-new-secret");
+      assert.deepEqual(
+        captured.map((request) => `${request.method} ${request.url}`),
+        ["GET /app/v3/api/iam/api_keys", "POST /app/v3/api/iam/api_keys"],
+      );
+      assert.deepEqual(JSON.parse(captured[1].body), {
+        name: "Batch key",
+        group: "default",
+        quota: "0.000000",
+        isUnlimitedQuota: true,
+        modalities: ["text"],
+        ipLimit: "unrestricted",
+        expires: "never",
+      });
+    },
+  );
+});
+
+test("console API key service fails closed when app SDK omits required key fields", async () => {
+  for (const [field, message] of [
+    ["name", /API key name is required/],
+    ["group", /API key group is required/],
+    ["quota", /API key quota is required/],
+    ["usedQuota", /API key used quota is required/],
+    ["modalities", /API key modalities are required/],
+    ["ipLimit", /API key IP limit is required/],
+    ["created", /API key created time is required/],
+    ["expires", /API key expiration is required/],
+    ["status", /API key status is required/],
+  ] as const) {
+    await withAppSdkFetch(
+      (url, init) => {
+        if (url === "/app/v3/api/iam/api_keys" && (init?.method ?? "GET") === "GET") {
+          const key = {
+            id: "key-1",
+            name: "Production key",
+            maskedKey: "sk-prod********1234",
+            group: "default",
+            quota: "1000.000000",
+            usedQuota: "10.000000",
+            modalities: ["text"],
+            ipLimit: "unrestricted",
+            created: "2026-05-05T08:00:00Z",
+            expires: "never",
+            status: "enabled",
+          } as Record<string, unknown>;
+          delete key[field];
+          return {
+            items: [key],
+            groups: [{ id: "group-1", code: "default", name: "Default", rate: "1x" }],
+          };
+        }
+        throw new Error(`unexpected SDK URL: ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => ApiKeyService.fetchKeys(),
+          message,
+        );
+      },
+    );
+  }
+});
+
+test("console API key service fails closed when app SDK omits required group fields", async () => {
+  for (const [field, message] of [
+    ["id", /API key group id is required/],
+    ["code", /API key group code is required/],
+    ["name", /API key group name is required/],
+  ] as const) {
+    await withAppSdkFetch(
+      (url, init) => {
+        if (url === "/app/v3/api/iam/api_keys" && (init?.method ?? "GET") === "GET") {
+          const group = { id: "group-1", code: "default", name: "Default", rate: "1x" } as Record<string, unknown>;
+          delete group[field];
+          return {
+            items: [
+              {
+                id: "key-1",
+                name: "Production key",
+                maskedKey: "sk-prod********1234",
+                group: "default",
+                quota: "1000.000000",
+                usedQuota: "10.000000",
+                modalities: ["text"],
+                ipLimit: "unrestricted",
+                created: "2026-05-05T08:00:00Z",
+                expires: "never",
+                status: "enabled",
+              },
+            ],
+            groups: [group],
+          };
+        }
+        throw new Error(`unexpected SDK URL: ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => ApiKeyService.fetchKeys(),
+          message,
+        );
+      },
+    );
+  }
 });
 
 test("console usage logs fail closed when app SDK omits stable usage log ids", async () => {
@@ -1550,6 +2087,69 @@ test("console provider configs fail closed when app SDK returns unsupported prov
       await assert.rejects(
         () => ProviderService.fetchProviders(),
         /Unsupported provider family: unknown-provider/,
+      );
+    },
+  );
+});
+
+test("console provider configs fail closed when app SDK omits required provider fields", async () => {
+  for (const [field, message] of [
+    ["name", /Provider name is required/],
+    ["description", /Provider description is required/],
+    ["url", /Provider url is required/],
+    ["status", /Provider status is required/],
+  ] as const) {
+    await withAppSdkFetch(
+      (url) => {
+        if (url === "/app/v3/api/ai/providers") {
+          const provider = {
+            id: "provider-1",
+            providerFamily: "gemini",
+            integrationType: "model_vendor_direct",
+            name: "Gemini",
+            description: "Google model provider",
+            url: "https://generativelanguage.googleapis.com",
+            status: "inactive",
+          } as Record<string, unknown>;
+          delete provider[field];
+          return { items: [provider] };
+        }
+        throw new Error(`unexpected SDK URL: ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => ProviderService.fetchProviders(),
+          message,
+        );
+      },
+    );
+  }
+});
+
+test("console provider configs fail closed when app SDK returns unsupported provider status", async () => {
+  await withAppSdkFetch(
+    (url) => {
+      if (url === "/app/v3/api/ai/providers") {
+        return {
+          items: [
+            {
+              id: "provider-1",
+              providerFamily: "gemini",
+              integrationType: "model_vendor_direct",
+              name: "Gemini",
+              description: "Google model provider",
+              url: "https://generativelanguage.googleapis.com",
+              status: "maintenance",
+            },
+          ],
+        };
+      }
+      throw new Error(`unexpected SDK URL: ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => ProviderService.fetchProviders(),
+        /Unsupported provider status: maintenance/,
       );
     },
   );

@@ -2,15 +2,16 @@ use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::{
-    AdminCouponBatchItem, AdminCouponItem, AdminMarketingCommandFuture, AdminMarketingStore,
-    AdminPromoCodeItem, AdminRechargePackageItem, AdminRechargePackageStatus,
-    AdminRechargeRecordItem, AdminRedemptionRecordItem, AdminReferralStatItem,
-    CreateAdminCouponCommand, CreateAdminRechargePackageCommand, DeleteAdminCouponCommand,
-    DeleteAdminRechargePackageCommand, GenerateAdminCouponBatchCommand,
-    ListAdminCouponBatchesQuery, ListAdminCouponsQuery, ListAdminPromoCodesQuery,
-    ListAdminRechargePackagesQuery, ListAdminRechargeRecordsQuery, ListAdminRedemptionRecordsQuery,
-    ListAdminReferralStatsQuery, UpdateAdminPromoCodeStatusCommand,
-    UpdateAdminRechargePackageCommand,
+    AdminCouponBatchItem, AdminCouponItem, AdminExchangeRuleItem, AdminMarketingCommandFuture,
+    AdminMarketingStore, AdminPaymentAttemptItem, AdminPromoCodeItem, AdminRechargePackageItem,
+    AdminRechargePackageStatus, AdminRechargeRecordItem, AdminRedemptionRecordItem,
+    AdminReferralStatItem, CreateAdminCouponCommand, CreateAdminRechargePackageCommand,
+    DeleteAdminCouponCommand, DeleteAdminRechargePackageCommand, GenerateAdminCouponBatchCommand,
+    ListAdminCouponBatchesQuery, ListAdminCouponsQuery, ListAdminExchangeRulesQuery,
+    ListAdminPaymentAttemptsQuery, ListAdminPromoCodesQuery, ListAdminRechargePackagesQuery,
+    ListAdminRechargeRecordsQuery, ListAdminRedemptionRecordsQuery, ListAdminReferralStatsQuery,
+    LoadAdminRechargeRecordQuery, UpdateAdminCouponCommand, UpdateAdminExchangeRuleCommand,
+    UpdateAdminPromoCodeStatusCommand, UpdateAdminRechargePackageCommand,
 };
 
 const COUPON_TYPE_AMOUNT: i64 = 1;
@@ -28,8 +29,10 @@ const TARGET_TYPE_COUPON: i32 = 71;
 const TARGET_TYPE_COUPON_BATCH: i32 = 72;
 const TARGET_TYPE_PROMO_CODE: i32 = 73;
 const TARGET_TYPE_RECHARGE_PACKAGE: i32 = 74;
+const TARGET_TYPE_EXCHANGE_RULE: i32 = 75;
 const RECHARGE_PACKAGE_TYPE: i64 = 2;
 const RECHARGE_PRODUCT_CATEGORY_ID: i64 = 1;
+const ACCOUNT_EXCHANGE_POINTS_TO_CASH_RATE: &str = "POINTS_TO_CASH_RATE";
 
 #[derive(Debug, Clone)]
 struct PromoCodeStatusFact {
@@ -138,6 +141,54 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
                 store_error("failed to commit admin coupon delete transaction", error)
             })?;
             Ok(deleted)
+        })
+    }
+
+    fn update_coupon<'a>(
+        &'a self,
+        command: UpdateAdminCouponCommand,
+    ) -> AdminMarketingCommandFuture<'a, AdminCouponItem> {
+        Box::pin(async move {
+            let mut tx = self.pool.begin().await.map_err(|error| {
+                store_error("failed to begin admin coupon update transaction", error)
+            })?;
+            let updated = update_coupon_row(&mut tx, &command).await?;
+            if !updated {
+                return Err(DomainError::not_found("coupon was not found"));
+            }
+            insert_audit_log(
+                &mut tx,
+                &command.audit_log_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.operator_id,
+                command.subject.operator_type,
+                "update_coupon",
+                TARGET_TYPE_COUPON,
+                command.coupon_id,
+                serde_json::json!({
+                    "action": "update_coupon",
+                    "couponId": command.coupon_id,
+                    "name": &command.name,
+                    "type": &command.coupon_type,
+                    "value": &command.value,
+                    "status": &command.status
+                }),
+            )
+            .await?;
+            let item = load_coupon_by_id(
+                &mut tx,
+                command.coupon_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+            )
+            .await?
+            .ok_or_else(|| DomainError::new("updated coupon could not be reloaded"))?;
+            tx.commit().await.map_err(|error| {
+                store_error("failed to commit admin coupon update transaction", error)
+            })?;
+            Ok(item)
         })
     }
 
@@ -267,11 +318,25 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
         Box::pin(async move { list_recharge_records(&self.pool, query).await })
     }
 
+    fn load_recharge_record<'a>(
+        &'a self,
+        query: LoadAdminRechargeRecordQuery,
+    ) -> AdminMarketingCommandFuture<'a, Option<AdminRechargeRecordItem>> {
+        Box::pin(async move { load_recharge_record(&self.pool, query).await })
+    }
+
     fn list_recharge_packages<'a>(
         &'a self,
         query: ListAdminRechargePackagesQuery,
     ) -> AdminMarketingCommandFuture<'a, Vec<AdminRechargePackageItem>> {
         Box::pin(async move { list_recharge_packages(&self.pool, query).await })
+    }
+
+    fn list_exchange_rules<'a>(
+        &'a self,
+        query: ListAdminExchangeRulesQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<AdminExchangeRuleItem>> {
+        Box::pin(async move { list_exchange_rules(&self.pool, query).await })
     }
 
     fn create_recharge_package<'a>(
@@ -422,6 +487,57 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
             })?;
             Ok(deleted)
         })
+    }
+
+    fn update_exchange_rule<'a>(
+        &'a self,
+        command: UpdateAdminExchangeRuleCommand,
+    ) -> AdminMarketingCommandFuture<'a, AdminExchangeRuleItem> {
+        Box::pin(async move {
+            let mut tx = self.pool.begin().await.map_err(|error| {
+                store_error("failed to begin exchange rule update transaction", error)
+            })?;
+            let exchange_rule_id = upsert_exchange_rule(&mut tx, &command).await?;
+            insert_audit_log(
+                &mut tx,
+                &command.audit_log_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.operator_id,
+                command.subject.operator_type,
+                "update_exchange_rule",
+                TARGET_TYPE_EXCHANGE_RULE,
+                exchange_rule_id,
+                serde_json::json!({
+                    "action": "update_exchange_rule",
+                    "exchangeRuleId": exchange_rule_id,
+                    "sourceAssetType": &command.source_asset_type,
+                    "targetAssetType": &command.target_asset_type,
+                    "rate": &command.rate
+                }),
+            )
+            .await?;
+            let item = load_exchange_rule_by_id(
+                &mut tx,
+                exchange_rule_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+            )
+            .await?
+            .ok_or_else(|| DomainError::new("updated exchange rule could not be reloaded"))?;
+            tx.commit().await.map_err(|error| {
+                store_error("failed to commit exchange rule update transaction", error)
+            })?;
+            Ok(item)
+        })
+    }
+
+    fn list_payment_attempts<'a>(
+        &'a self,
+        query: ListAdminPaymentAttemptsQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<AdminPaymentAttemptItem>> {
+        Box::pin(async move { list_payment_attempts(&self.pool, query).await })
     }
 
     fn list_referral_stats<'a>(
@@ -585,6 +701,41 @@ async fn soft_delete_coupon(
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to delete coupon", error))?;
+    Ok(result.rows_affected() > 0)
+}
+
+async fn update_coupon_row(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &UpdateAdminCouponCommand,
+) -> DomainResult<bool> {
+    let result = sqlx::query(
+        r#"
+        UPDATE plus_coupon
+        SET name = ?,
+            type = ?,
+            amount = ?,
+            discount = ?,
+            status = ?,
+            updated_at = ?,
+            v = COALESCE(v, 0) + 1
+        WHERE id = ?
+          AND tenant_id = ?
+          AND organization_id = ?
+          AND status >= 0
+        "#,
+    )
+    .bind(&command.name)
+    .bind(coupon_type_code(&command.coupon_type))
+    .bind(command.amount_cents)
+    .bind(command.discount_value.as_deref())
+    .bind(coupon_status_code(&command.status))
+    .bind(&command.requested_at)
+    .bind(command.coupon_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update coupon", error))?;
     Ok(result.rows_affected() > 0)
 }
 
@@ -1209,22 +1360,50 @@ async fn list_recharge_records(
     .await
     .map_err(|error| store_error("failed to list recharge records", error))?;
 
-    rows.iter()
-        .map(|row| {
-            let status = recharge_status_label(integer_cell(row, "status"))?.to_owned();
-            Ok(AdminRechargeRecordItem {
-                id: string_cell(row, "id"),
-                trade_no: string_cell(row, "trade_no"),
-                user_id: string_cell(row, "user_id"),
-                user: string_cell(row, "user_name"),
-                amount: decimal_money_string(&string_cell(row, "amount")),
-                usd_credited: string_cell(row, "point_amount"),
-                method: string_cell(row, "method"),
-                status,
-                time: string_cell(row, "time"),
-            })
-        })
-        .collect()
+    rows.iter().map(recharge_record_from_row).collect()
+}
+
+async fn load_recharge_record(
+    pool: &SqlitePool,
+    query: LoadAdminRechargeRecordQuery,
+) -> DomainResult<Option<AdminRechargeRecordItem>> {
+    let row = sqlx::query(
+        r#"
+        SELECT
+            CAST(vr.id AS TEXT) AS id,
+            COALESCE(NULLIF(vr.transaction_no, ''), 'recharge-' || vr.id) AS trade_no,
+            CAST(vr.user_id AS TEXT) AS user_id,
+            COALESCE(NULLIF(u.email, ''), NULLIF(u.username, ''), '') AS user_name,
+            CAST(COALESCE(vr.amount, 0) AS TEXT) AS amount,
+            CAST(COALESCE(vr.point_amount, 0) AS TEXT) AS point_amount,
+            COALESCE(NULLIF(m.method_key, ''), NULLIF(m.name, ''), 'manual') AS method,
+            vr.status AS status,
+            CAST(COALESCE(vr.recharge_time, vr.updated_at, vr.created_at) AS TEXT) AS time
+        FROM plus_vip_recharge vr
+        LEFT JOIN plus_vip_recharge_method m
+          ON m.id = vr.recharge_method_id
+        LEFT JOIN plus_user u
+          ON u.id = vr.user_id
+         AND u.tenant_id = vr.tenant_id
+         AND u.organization_id = vr.organization_id
+        WHERE vr.tenant_id = ?
+          AND vr.organization_id = ?
+          AND (
+              vr.transaction_no = ?
+              OR 'recharge-' || vr.id = ?
+          )
+        LIMIT 1
+        "#,
+    )
+    .bind(query.subject.tenant_id)
+    .bind(query.subject.organization_id)
+    .bind(&query.order_no)
+    .bind(&query.order_no)
+    .fetch_optional(pool)
+    .await
+    .map_err(|error| store_error("failed to load recharge record", error))?;
+
+    row.as_ref().map(recharge_record_from_row).transpose()
 }
 
 async fn list_recharge_packages(
@@ -1261,6 +1440,40 @@ async fn list_recharge_packages(
         .map_err(|error| store_error("failed to list recharge packages", error))?;
 
     rows.iter().map(recharge_package_from_row).collect()
+}
+
+async fn list_exchange_rules(
+    pool: &SqlitePool,
+    query: ListAdminExchangeRulesQuery,
+) -> DomainResult<Vec<AdminExchangeRuleItem>> {
+    let rows = sqlx::query(
+        r#"
+        SELECT
+            COALESCE(NULLIF(uuid, ''), CAST(id AS TEXT)) AS id,
+            COALESCE(config_key, '') AS config_key,
+            CAST(COALESCE(config_value, 0) AS TEXT) AS rate
+        FROM plus_account_exchange_config
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND config_key = ?
+        ORDER BY updated_at DESC, id DESC
+        LIMIT 500
+        "#,
+    )
+    .bind(query.subject.tenant_id)
+    .bind(query.subject.organization_id)
+    .bind(ACCOUNT_EXCHANGE_POINTS_TO_CASH_RATE)
+    .fetch_all(pool)
+    .await
+    .map_err(|error| store_error("failed to list exchange rules", error))?;
+
+    rows.iter()
+        .map(exchange_rule_from_row)
+        .filter(|item| match item {
+            Ok(item) => exchange_rule_matches_filters(item, &query),
+            Err(_) => true,
+        })
+        .collect()
 }
 
 async fn insert_recharge_package(
@@ -1413,6 +1626,122 @@ async fn load_recharge_package_by_id(
     .map_err(|error| store_error("failed to load recharge package", error))?;
 
     row.as_ref().map(recharge_package_from_row).transpose()
+}
+
+async fn upsert_exchange_rule(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &UpdateAdminExchangeRuleCommand,
+) -> DomainResult<i64> {
+    let updated = sqlx::query(
+        r#"
+        UPDATE plus_account_exchange_config
+        SET config_value = ?,
+            remarks = ?,
+            updated_at = ?,
+            v = COALESCE(v, 0) + 1
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND config_key = ?
+        "#,
+    )
+    .bind(&command.rate)
+    .bind(exchange_rule_remarks(command))
+    .bind(&command.requested_at)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(ACCOUNT_EXCHANGE_POINTS_TO_CASH_RATE)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update exchange rule", error))?;
+
+    if updated.rows_affected() > 0 {
+        return load_exchange_rule_id(
+            tx,
+            command.subject.tenant_id,
+            command.subject.organization_id,
+        )
+        .await?
+        .ok_or_else(|| DomainError::new("updated exchange rule id could not be reloaded"));
+    }
+
+    sqlx::query(
+        r#"
+        INSERT INTO plus_account_exchange_config
+            (uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, config_key, config_value, remarks)
+        VALUES
+            (?, ?, ?, 0, ?, ?, 1, ?, ?, ?)
+        "#,
+    )
+    .bind(format!("exchange-rule-{}", command.audit_log_uuid))
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(ACCOUNT_EXCHANGE_POINTS_TO_CASH_RATE)
+    .bind(&command.rate)
+    .bind(exchange_rule_remarks(command))
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to insert exchange rule", error))?;
+
+    sqlx::query_scalar("SELECT last_insert_rowid()")
+        .fetch_one(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to read created exchange rule id", error))
+}
+
+async fn load_exchange_rule_id(
+    tx: &mut Transaction<'_, Sqlite>,
+    tenant_id: i64,
+    organization_id: i64,
+) -> DomainResult<Option<i64>> {
+    sqlx::query_scalar(
+        r#"
+        SELECT id
+        FROM plus_account_exchange_config
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND config_key = ?
+        LIMIT 1
+        "#,
+    )
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(ACCOUNT_EXCHANGE_POINTS_TO_CASH_RATE)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load exchange rule id", error))
+}
+
+async fn load_exchange_rule_by_id(
+    tx: &mut Transaction<'_, Sqlite>,
+    exchange_rule_id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+) -> DomainResult<Option<AdminExchangeRuleItem>> {
+    let row = sqlx::query(
+        r#"
+        SELECT
+            COALESCE(NULLIF(uuid, ''), CAST(id AS TEXT)) AS id,
+            COALESCE(config_key, '') AS config_key,
+            CAST(COALESCE(config_value, 0) AS TEXT) AS rate
+        FROM plus_account_exchange_config
+        WHERE id = ?
+          AND tenant_id = ?
+          AND organization_id = ?
+          AND config_key = ?
+        LIMIT 1
+        "#,
+    )
+    .bind(exchange_rule_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(ACCOUNT_EXCHANGE_POINTS_TO_CASH_RATE)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load exchange rule", error))?;
+
+    row.as_ref().map(exchange_rule_from_row).transpose()
 }
 
 async fn sync_recharge_package_product_for_create(
@@ -1714,6 +2043,37 @@ async fn list_referral_stats(
         .collect()
 }
 
+async fn list_payment_attempts(
+    pool: &SqlitePool,
+    query: ListAdminPaymentAttemptsQuery,
+) -> DomainResult<Vec<AdminPaymentAttemptItem>> {
+    let rows = sqlx::query(
+        r#"
+        SELECT
+            'payment-' || p.id AS id,
+            COALESCE(NULLIF(p.out_trade_no, ''), NULLIF(o.order_sn, ''), '') AS order_no,
+            p.provider AS provider,
+            CAST(COALESCE(p.amount, 0) AS TEXT) AS amount,
+            p.status AS status,
+            CAST(COALESCE(p.success_time, p.updated_at, p.created_at) AS TEXT) AS created_at
+        FROM plus_payment p
+        LEFT JOIN plus_order o
+          ON o.id = p.order_id
+        WHERE p.tenant_id = ?
+          AND p.organization_id = ?
+        ORDER BY COALESCE(p.success_time, p.updated_at, p.created_at) DESC, p.id DESC
+        LIMIT 500
+        "#,
+    )
+    .bind(query.subject.tenant_id)
+    .bind(query.subject.organization_id)
+    .fetch_all(pool)
+    .await
+    .map_err(|error| store_error("failed to list payment attempts", error))?;
+
+    rows.iter().map(payment_attempt_from_row).collect()
+}
+
 async fn insert_audit_log(
     tx: &mut Transaction<'_, Sqlite>,
     audit_log_uuid: &str,
@@ -1828,6 +2188,23 @@ fn promo_code_from_row(row: &sqlx::sqlite::SqliteRow) -> DomainResult<AdminPromo
         status,
         used_by: optional_string_cell(row, "used_by").filter(|value| !value.is_empty()),
         used_at,
+    })
+}
+
+fn recharge_record_from_row(
+    row: &sqlx::sqlite::SqliteRow,
+) -> DomainResult<AdminRechargeRecordItem> {
+    let status = recharge_status_label(integer_cell(row, "status"))?.to_owned();
+    Ok(AdminRechargeRecordItem {
+        id: string_cell(row, "id"),
+        trade_no: string_cell(row, "trade_no"),
+        user_id: string_cell(row, "user_id"),
+        user: string_cell(row, "user_name"),
+        amount: decimal_money_string(&string_cell(row, "amount")),
+        usd_credited: string_cell(row, "point_amount"),
+        method: string_cell(row, "method"),
+        status,
+        time: string_cell(row, "time"),
     })
 }
 
@@ -1961,6 +2338,32 @@ fn recharge_package_from_row(
     })
 }
 
+fn exchange_rule_from_row(row: &sqlx::sqlite::SqliteRow) -> DomainResult<AdminExchangeRuleItem> {
+    let config_key = string_cell(row, "config_key");
+    let (source_asset_type, target_asset_type) = exchange_config_key_asset_pair(&config_key)?;
+    Ok(AdminExchangeRuleItem {
+        id: string_cell(row, "id"),
+        source_asset_type: source_asset_type.to_owned(),
+        target_asset_type: target_asset_type.to_owned(),
+        rate: canonical_decimal_string(&string_cell(row, "rate"), 6, "exchange rule rate")?,
+        status: "active".to_owned(),
+    })
+}
+
+fn payment_attempt_from_row(
+    row: &sqlx::sqlite::SqliteRow,
+) -> DomainResult<AdminPaymentAttemptItem> {
+    Ok(AdminPaymentAttemptItem {
+        id: string_cell(row, "id"),
+        order_no: string_cell(row, "order_no"),
+        provider: payment_provider_label(&string_cell(row, "provider")),
+        amount: canonical_money_string(&string_cell(row, "amount"), "payment attempt amount")?,
+        status: payment_status_label(required_integer_cell(row, "status", "payment attempt")?)?
+            .to_owned(),
+        created_at: string_cell(row, "created_at"),
+    })
+}
+
 fn recharge_package_status_code(status: AdminRechargePackageStatus) -> i64 {
     match status {
         AdminRechargePackageStatus::Active => COUPON_STATUS_ACTIVE,
@@ -1975,6 +2378,60 @@ fn recharge_package_status_label(status: AdminRechargePackageStatus) -> &'static
     }
 }
 
+fn exchange_rule_matches_filters(
+    item: &AdminExchangeRuleItem,
+    query: &ListAdminExchangeRulesQuery,
+) -> bool {
+    query
+        .source_asset_type
+        .as_deref()
+        .map(|value| value == item.source_asset_type)
+        .unwrap_or(true)
+        && query
+            .target_asset_type
+            .as_deref()
+            .map(|value| value == item.target_asset_type)
+            .unwrap_or(true)
+        && query
+            .status
+            .as_deref()
+            .map(|value| value == item.status)
+            .unwrap_or(true)
+}
+
+fn exchange_config_key_asset_pair(config_key: &str) -> DomainResult<(&'static str, &'static str)> {
+    match config_key {
+        ACCOUNT_EXCHANGE_POINTS_TO_CASH_RATE => Ok(("POINTS", "CASH")),
+        value => Err(DomainError::new(format!(
+            "unsupported exchange rule config key: {value}"
+        ))),
+    }
+}
+
+fn payment_provider_label(value: &str) -> String {
+    let value = value.trim();
+    if value.is_empty() {
+        return "unknown".to_owned();
+    }
+    if value.bytes().all(|byte| byte.is_ascii_digit()) {
+        format!("provider-{value}")
+    } else {
+        value.to_owned()
+    }
+}
+
+fn payment_status_label(status: i64) -> DomainResult<&'static str> {
+    match status {
+        0 | 1 => Ok("pending"),
+        2 => Ok("success"),
+        3 => Ok("failed"),
+        4 | 5 => Ok("expired"),
+        value => Err(DomainError::new(format!(
+            "unsupported admin payment attempt status: {value}"
+        ))),
+    }
+}
+
 fn recharge_base_points(amount: &str) -> DomainResult<i64> {
     let cents = money_cents(amount)?;
     Ok(((cents + 5) / 10).max(1))
@@ -1984,6 +2441,41 @@ fn canonical_money_string(value: &str, field_name: &str) -> DomainResult<String>
     let cents = money_cents(value)
         .map_err(|_| DomainError::new(format!("invalid {field_name}: {value}")))?;
     Ok(format!("{}.{:02}", cents / 100, cents.rem_euclid(100)))
+}
+
+fn canonical_decimal_string(value: &str, scale: usize, field_name: &str) -> DomainResult<String> {
+    let value = value.trim().replace(',', "");
+    if value.is_empty() || value.starts_with('-') || value.starts_with('+') {
+        return Err(DomainError::new(format!("invalid {field_name}: {value}")));
+    }
+    let mut parts = value.split('.');
+    let whole = parts
+        .next()
+        .unwrap_or_default()
+        .trim_start_matches('0')
+        .to_owned();
+    let fraction = parts.next().unwrap_or_default();
+    if parts.next().is_some()
+        || whole.chars().any(|ch| !ch.is_ascii_digit())
+        || fraction.chars().any(|ch| !ch.is_ascii_digit())
+        || fraction.len() > scale
+    {
+        return Err(DomainError::new(format!("invalid {field_name}: {value}")));
+    }
+    let whole = if whole.is_empty() { "0" } else { &whole };
+    let fraction = fraction.trim_end_matches('0');
+    if fraction.is_empty() {
+        Ok(whole.to_owned())
+    } else {
+        Ok(format!("{whole}.{fraction}"))
+    }
+}
+
+fn exchange_rule_remarks(command: &UpdateAdminExchangeRuleCommand) -> String {
+    format!(
+        "{} to {} exchange rate",
+        command.source_asset_type, command.target_asset_type
+    )
 }
 
 fn money_cents(amount: &str) -> DomainResult<i64> {

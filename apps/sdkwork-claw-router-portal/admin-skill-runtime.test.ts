@@ -379,6 +379,32 @@ test("admin skill asset and artifact form helpers normalize marketplace resource
   });
 });
 
+test("admin skill form helpers reject negative control values before submit", () => {
+  const categoryForm = new FormData();
+  categoryForm.set("name", "Productivity");
+  categoryForm.set("status", "-1");
+  assert.throws(
+    () => createSkillCategoryInputFromForm(categoryForm),
+    /status must be a non-negative integer/,
+  );
+
+  const assetForm = new FormData();
+  assetForm.set("assetUrl", "artifact://skills/research/cover.png");
+  assetForm.set("assetType", "-1");
+  assert.throws(
+    () => createSkillAssetInputFromForm(assetForm),
+    /assetType must be a non-negative integer/,
+  );
+
+  const artifactForm = new FormData();
+  artifactForm.set("artifactUrl", "artifact://skills/research/skill.json");
+  artifactForm.set("artifactType", "-1");
+  assert.throws(
+    () => createSkillArtifactInputFromForm(artifactForm),
+    /artifactType must be a non-negative integer/,
+  );
+});
+
 test("admin skill page exposes SDK-backed asset and artifact management surface", async () => {
   const source = await import("node:fs/promises").then((fs) =>
     fs.readFile(new URL("./packages/sdkwork-claw-router-admin-skill/src/index.tsx", import.meta.url), "utf8"),
@@ -830,4 +856,317 @@ test("admin skill service validates path segments and structured JSON form field
   form.set("name", "Invalid JSON");
   form.set("configSchema", "[1,2,3]");
   assert.throws(() => createSkillInputFromForm(form), /configSchema must be a JSON object/);
+});
+
+test("admin skill service fails closed when backend omits resource type and status fields", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ecosystem/skills/categories" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "1901",
+              name: "Productivity",
+              description: "Agent productivity",
+              code: "productivity",
+              icon: "/icons/productivity.svg",
+              sortWeight: 1,
+              parentId: "",
+              path: "/skills/productivity",
+              visible: true,
+              status: 1,
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected request ${method} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => AdminSkillService.fetchSkillCategories(),
+        /Skill category type is required/,
+      );
+    },
+  );
+
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ecosystem/skills/8101/assets" && method === "GET") {
+        return {
+          items: [
+            sampleAsset({
+              targetType: undefined,
+              assetType: undefined,
+              status: undefined,
+            }),
+          ],
+        };
+      }
+      throw new Error(`Unexpected request ${method} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => AdminSkillService.fetchSkillAssets("8101"),
+        /Skill asset target type is required/,
+      );
+    },
+  );
+
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ecosystem/skills/8101/artifacts" && method === "GET") {
+        return {
+          items: [
+            sampleArtifact({
+              artifactType: undefined,
+              status: undefined,
+            }),
+          ],
+        };
+      }
+      throw new Error(`Unexpected request ${method} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => AdminSkillService.fetchSkillArtifacts("8101"),
+        /Skill artifact type is required/,
+      );
+    },
+  );
+});
+
+test("admin skill asset and artifact reads fail closed when backend omits required timestamps", async () => {
+  for (const [url, action, response, message] of [
+    [
+      "/backend/v3/api/ecosystem/skills/8101/assets",
+      () => AdminSkillService.fetchSkillAssets("8101"),
+      { items: [sampleAsset({ createdAt: undefined })] },
+      /Skill asset created time is required/,
+    ],
+    [
+      "/backend/v3/api/ecosystem/skills/8101/assets",
+      () => AdminSkillService.fetchSkillAssets("8101"),
+      { items: [sampleAsset({ updatedAt: undefined })] },
+      /Skill asset updated time is required/,
+    ],
+    [
+      "/backend/v3/api/ecosystem/skills/8101/artifacts",
+      () => AdminSkillService.fetchSkillArtifacts("8101"),
+      { items: [sampleArtifact({ createdAt: undefined })] },
+      /Skill artifact created time is required/,
+    ],
+    [
+      "/backend/v3/api/ecosystem/skills/8101/artifacts",
+      () => AdminSkillService.fetchSkillArtifacts("8101"),
+      { items: [sampleArtifact({ updatedAt: undefined })] },
+      /Skill artifact updated time is required/,
+    ],
+  ] as const) {
+    await withBackendSdkFetch(
+      (requestUrl, init) => {
+        if (requestUrl === url && (init?.method ?? "GET") === "GET") {
+          return response;
+        }
+        throw new Error(`Unexpected request ${init?.method ?? "GET"} ${requestUrl}`);
+      },
+      async () => {
+        await assert.rejects(action, message);
+      },
+    );
+  }
+});
+
+test("admin skill delete operations fail closed unless backend confirms deletion", async () => {
+  for (const [label, url, action, message] of [
+    [
+      "package",
+      "/backend/v3/api/ecosystem/skills/package/7101",
+      () => AdminSkillService.deleteSkillPackage("7101"),
+      /Skill package delete confirmation is required/,
+    ],
+    [
+      "skill",
+      "/backend/v3/api/ecosystem/skills/8101",
+      () => AdminSkillService.deleteSkill("8101"),
+      /Skill delete confirmation is required/,
+    ],
+    [
+      "asset",
+      "/backend/v3/api/ecosystem/skills/8101/assets/9101",
+      () => AdminSkillService.deleteSkillAsset("8101", "9101"),
+      /Skill asset delete confirmation is required/,
+    ],
+    [
+      "artifact",
+      "/backend/v3/api/ecosystem/skills/8101/artifacts/9201",
+      () => AdminSkillService.deleteSkillArtifact("8101", "9201"),
+      /Skill artifact delete confirmation is required/,
+    ],
+  ] as const) {
+    await withBackendSdkFetch(
+      (requestUrl, init) => {
+        if (requestUrl === url && init?.method === "DELETE") {
+          return {};
+        }
+        throw new Error(`Unexpected ${label} delete request ${init?.method ?? "GET"} ${requestUrl}`);
+      },
+      async () => {
+        await assert.rejects(action, message);
+      },
+    );
+
+    await withBackendSdkFetch(
+      (requestUrl, init) => {
+        if (requestUrl === url && init?.method === "DELETE") {
+          return { deleted: false };
+        }
+        throw new Error(`Unexpected ${label} delete request ${init?.method ?? "GET"} ${requestUrl}`);
+      },
+      async () => {
+        await assert.rejects(action, message);
+      },
+    );
+  }
+});
+
+test("admin skill lifecycle actions fail closed unless backend returns the requested state", async () => {
+  for (const [url, action, response, message] of [
+    [
+      "/backend/v3/api/ecosystem/skills/package/7101/enable",
+      () => AdminSkillService.enableSkillPackage("7101"),
+      samplePackage({ enabled: false }),
+      /Enabled skill package response must have enabled=true/,
+    ],
+    [
+      "/backend/v3/api/ecosystem/skills/package/7101/disable",
+      () => AdminSkillService.disableSkillPackage("7101"),
+      samplePackage({ enabled: true }),
+      /Disabled skill package response must have enabled=false/,
+    ],
+    [
+      "/backend/v3/api/ecosystem/skills/8101/enable",
+      () => AdminSkillService.enableSkill("8101"),
+      sampleSkill({ enabled: false }),
+      /Enabled skill response must have enabled=true/,
+    ],
+    [
+      "/backend/v3/api/ecosystem/skills/8101/disable",
+      () => AdminSkillService.disableSkill("8101"),
+      sampleSkill({ enabled: true }),
+      /Disabled skill response must have enabled=false/,
+    ],
+    [
+      "/backend/v3/api/ecosystem/skills/8101/publish",
+      () => AdminSkillService.publishSkill("8101"),
+      sampleSkill({ marketStatus: "DRAFT" }),
+      /Published skill response must have PUBLISHED market status/,
+    ],
+    [
+      "/backend/v3/api/ecosystem/skills/8101/unpublish",
+      () => AdminSkillService.offlineSkill("8101"),
+      sampleSkill({ marketStatus: "PUBLISHED" }),
+      /Offline skill response must have OFFLINE market status/,
+    ],
+    [
+      "/backend/v3/api/ecosystem/skills/8101/review/approve",
+      () => AdminSkillService.approveSkill("8101"),
+      sampleSkill({ reviewStatus: "PENDING" }),
+      /Approved skill response must have APPROVED review status/,
+    ],
+    [
+      "/backend/v3/api/ecosystem/skills/8101/review/reject",
+      () => AdminSkillService.rejectSkill("8101"),
+      sampleSkill({ reviewStatus: "PENDING" }),
+      /Rejected skill response must have REJECTED review status/,
+    ],
+  ] as const) {
+    await withBackendSdkFetch(
+      (requestUrl, init) => {
+        if (requestUrl === url && init?.method === "POST") {
+          return { item: response };
+        }
+        throw new Error(`Unexpected lifecycle request ${init?.method ?? "GET"} ${requestUrl}`);
+      },
+      async () => {
+        await assert.rejects(action, message);
+      },
+    );
+  }
+});
+
+test("admin skill service fails closed when backend omits required marketplace state fields", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ecosystem/skills/categories" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "1901",
+              name: "Productivity",
+              sortWeight: 1,
+              status: 1,
+              type: 19,
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected request ${method} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => AdminSkillService.fetchSkillCategories(),
+        /Skill category visibility is required/,
+      );
+    },
+  );
+
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ecosystem/skills/package" && method === "GET") {
+        return {
+          items: [
+            samplePackage({
+              enabled: undefined,
+            }),
+          ],
+        };
+      }
+      throw new Error(`Unexpected request ${method} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => AdminSkillService.fetchSkillPackages(),
+        /Skill package enabled flag is required/,
+      );
+    },
+  );
+
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ecosystem/skills" && method === "GET") {
+        return {
+          items: [
+            sampleSkill({
+              sourceType: undefined,
+              currency: undefined,
+              configSchema: undefined,
+            }),
+          ],
+        };
+      }
+      throw new Error(`Unexpected request ${method} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => AdminSkillService.fetchSkills(),
+        /Skill source type is required/,
+      );
+    },
+  );
 });

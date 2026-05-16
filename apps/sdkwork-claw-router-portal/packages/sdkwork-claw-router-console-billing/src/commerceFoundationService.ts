@@ -1,4 +1,13 @@
-import { createRequestParams, getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/runtime';
+import {
+  createRequestParams,
+  ensurePlusApiSuccess,
+  getClawRouterAppSdkClient,
+  isRecord,
+  readApiRecord,
+  readRequiredApiItems,
+  readRequiredString,
+  type ApiRecord,
+} from 'sdkwork-claw-router-commons/runtime';
 import type {
   BillingAccountPointsExchangesRulesListParams,
   BillingAccountPointsHistoryListParams,
@@ -17,6 +26,17 @@ import type {
   CommerceVipPurchaseRequest,
   CommerceWalletCommandRequest,
 } from '@sdkwork/clawrouter-app-sdk';
+
+export interface PointsExchangeRate {
+  sourceAssetType: 'POINTS';
+  targetAssetType: 'CASH';
+  rate: string;
+}
+
+export interface PointsExchangeRule extends PointsExchangeRate {
+  id: string;
+  status: 'active';
+}
 
 export class CommerceFoundationService {
   static async retrieveWalletOverview(): Promise<unknown> {
@@ -75,8 +95,10 @@ export class CommerceFoundationService {
     return getClawRouterAppSdkClient().billing.account.points.history.list(params);
   }
 
-  static async retrieveAccountPointsExchangeRate(): Promise<unknown> {
-    return getClawRouterAppSdkClient().billing.account.points.exchangeRate.retrieve();
+  static async retrieveAccountPointsExchangeRate(): Promise<PointsExchangeRate> {
+    const result = await getClawRouterAppSdkClient().billing.account.points.exchangeRate.retrieve();
+    ensurePlusApiSuccess(result, 'Failed to fetch account points exchange rate');
+    return normalizePointsExchangeRate(readApiRecord(result));
   }
 
   static async listAccountPointsRechargePackages(): Promise<unknown> {
@@ -109,8 +131,11 @@ export class CommerceFoundationService {
     );
   }
 
-  static async listAccountPointsExchangeRules(params?: BillingAccountPointsExchangesRulesListParams): Promise<unknown> {
-    return getClawRouterAppSdkClient().billing.account.points.exchanges.rules.list(params);
+  static async listAccountPointsExchangeRules(params?: BillingAccountPointsExchangesRulesListParams): Promise<PointsExchangeRule[]> {
+    const result = await getClawRouterAppSdkClient().billing.account.points.exchanges.rules.list(params);
+    ensurePlusApiSuccess(result, 'Failed to fetch account points exchange rules');
+    return readRequiredApiItems(result, 'Failed to fetch account points exchange rules')
+      .map(normalizePointsExchangeRule);
   }
 
   static async createAccountPointsExchange(body: CommerceWalletCommandRequest): Promise<unknown> {
@@ -287,4 +312,82 @@ export class CommerceFoundationService {
       createRequestParams('commerce-preflight-release'),
     );
   }
+}
+
+function normalizePointsExchangeRate(value: unknown): PointsExchangeRate {
+  const item = readRequiredRecord(value, 'Exchange rate record is required');
+  return {
+    sourceAssetType: readExpectedExchangeAssetType(item, 'sourceAssetType', 'POINTS'),
+    targetAssetType: readExpectedExchangeAssetType(item, 'targetAssetType', 'CASH'),
+    rate: readDecimalRateString(item, 'rate', 'Exchange rate is required'),
+  };
+}
+
+function normalizePointsExchangeRule(value: unknown): PointsExchangeRule {
+  const item = readRequiredRecord(value, 'Exchange rule record is required');
+  return {
+    id: readRequiredString(item, 'id', 'Exchange rule id is required'),
+    sourceAssetType: readExpectedExchangeAssetType(item, 'sourceAssetType', 'POINTS'),
+    targetAssetType: readExpectedExchangeAssetType(item, 'targetAssetType', 'CASH'),
+    rate: readDecimalRateString(item, 'rate', 'Exchange rule rate is required'),
+    status: readExchangeRuleStatus(item),
+  };
+}
+
+function readRequiredRecord(value: unknown, message: string): ApiRecord {
+  if (!isRecord(value)) {
+    throw new Error(message);
+  }
+  return value;
+}
+
+function readExchangeAssetType(item: ApiRecord, key: 'sourceAssetType' | 'targetAssetType'): 'POINTS' | 'CASH' {
+  const value = readRequiredString(item, key, `${key} is required`).trim().toUpperCase();
+  if (value === 'POINTS' || value === 'CASH') {
+    return value;
+  }
+  throw new Error(`Unsupported exchange asset type: ${value}`);
+}
+
+function readExpectedExchangeAssetType<T extends 'POINTS' | 'CASH'>(
+  item: ApiRecord,
+  key: 'sourceAssetType' | 'targetAssetType',
+  expected: T,
+): T {
+  const value = readExchangeAssetType(item, key);
+  if (value !== expected) {
+    throw new Error(`exchange ${key} must be ${expected}`);
+  }
+  return expected;
+}
+
+function readExchangeRuleStatus(item: ApiRecord): PointsExchangeRule['status'] {
+  const status = readRequiredString(item, 'status', 'Exchange rule status is required').trim().toLowerCase();
+  if (status === 'active' || status === 'enabled' || status === 'normal') {
+    return 'active';
+  }
+  throw new Error(`Unsupported exchange rule status: ${status}`);
+}
+
+function readDecimalRateString(item: ApiRecord, key: string, missingMessage: string): string {
+  const value = readRequiredString(item, key, missingMessage);
+  return decimalRateString(value);
+}
+
+function decimalRateString(value: string): string {
+  const normalized = value.trim().replace(/,/g, '');
+  if (!/^\d+(?:\.\d{1,6})?$/.test(normalized)) {
+    throw new Error('Exchange rate must be a positive decimal string');
+  }
+  const [wholeRaw, fractionRaw = ''] = normalized.split('.');
+  const whole = Number(wholeRaw);
+  if (!Number.isSafeInteger(whole) || whole < 1 || whole > 1_000_000) {
+    throw new Error('Exchange rate must be between 1 and 1000000');
+  }
+  if (whole === 1_000_000 && /[1-9]/.test(fractionRaw)) {
+    throw new Error('Exchange rate must be between 1 and 1000000');
+  }
+  const wholeText = wholeRaw.replace(/^0+(?=\d)/, '') || '0';
+  const fraction = fractionRaw.replace(/0+$/, '');
+  return fraction ? `${wholeText}.${fraction}` : wholeText;
 }

@@ -44,10 +44,10 @@ function normalizeProviderConfig(value: unknown): ProviderConfig {
     id: readRequiredString(item, 'id', 'Provider id is required'),
     providerFamily,
     integrationType: readIntegrationProviderType(item),
-    name: readString(item, 'name'),
-    description: readString(item, 'description'),
-    url: readString(item, 'url'),
-    status: readString(item, 'status') === 'inactive' ? 'inactive' : 'active',
+    name: readRequiredString(item, 'name', 'Provider name is required'),
+    description: readRequiredString(item, 'description', 'Provider description is required'),
+    url: readRequiredString(item, 'url', 'Provider url is required'),
+    status: readProviderStatus(item),
   };
 }
 
@@ -84,4 +84,12 @@ function readIntegrationProviderType(item: ApiRecord): IntegrationProviderType {
       ? `Unsupported integration provider type: ${integrationType}`
       : 'Integration provider type is required',
   );
+}
+
+function readProviderStatus(item: ApiRecord): ProviderConfig['status'] {
+  const status = readRequiredString(item, 'status', 'Provider status is required').toLowerCase();
+  if (status === 'active' || status === 'inactive') {
+    return status;
+  }
+  throw new Error(`Unsupported provider status: ${status}`);
 }

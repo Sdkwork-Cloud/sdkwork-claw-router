@@ -2,11 +2,14 @@ use std::sync::Arc;
 
 use axum::Router;
 use sdkwork_claw_config::{
-    ApiKeySecurityConfig, DatabaseConfig, DatabaseEngine, DeploymentMode, ProviderRelayConfig,
-    ProviderSecretMapConfig, RuntimeConfigProfile, StartupInstallMode,
+    ApiKeySecurityConfig, DatabaseConfig, DatabaseEngine, ProviderRelayConfig,
+    ProviderSecretMapConfig, RuntimeConfigProfile, RuntimeTomlConfig, StartupInstallMode,
 };
 use sdkwork_claw_product::application::{
     ApiKeySecretHasher, UsageSettlementWorker, UsageSettlementWorkerConfig,
+};
+use sdkwork_claw_product::domain::{
+    ProviderRetryPolicy, DEFAULT_PROVIDER_RETRY_ATTEMPTS, DEFAULT_RETRYABLE_PROVIDER_STATUS_CODES,
 };
 use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
 use sdkwork_claw_product::infrastructure::provider::{
@@ -15,6 +18,7 @@ use sdkwork_claw_product::infrastructure::provider::{
     SecretRefOpenAiCompatibleChatCompletionRelay,
     SecretRefOpenAiCompatibleChatCompletionStreamRelay, SecretRefOpenAiCompatibleEmbeddingsRelay,
     SecretRefOpenAiCompatibleResponsesRelay, UpstreamProviderEndpoint,
+    DEFAULT_PROVIDER_RESPONSE_TIMEOUT_MILLIS,
 };
 use sdkwork_claw_product::infrastructure::sql::installer::{
     log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
@@ -371,12 +375,36 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
     usage_settlement_worker_config: UsageSettlementWorkerConfig,
     startup_install_mode: StartupInstallMode,
 ) -> Result<Router, GatewayRouterError> {
+    router_with_database_api_key_provider_configs_usage_settlement_worker_config_startup_install_mode_and_runtime_toml(
+        config,
+        api_key_config,
+        provider_relay_config,
+        provider_secret_map_config,
+        usage_settlement_worker_config,
+        startup_install_mode,
+        None,
+    )
+    .await
+}
+
+async fn router_with_database_api_key_provider_configs_usage_settlement_worker_config_startup_install_mode_and_runtime_toml(
+    config: DatabaseConfig,
+    api_key_config: Option<ApiKeySecurityConfig>,
+    provider_relay_config: Option<ProviderRelayConfig>,
+    provider_secret_map_config: Option<ProviderSecretMapConfig>,
+    usage_settlement_worker_config: UsageSettlementWorkerConfig,
+    startup_install_mode: StartupInstallMode,
+    runtime_toml: Option<&RuntimeTomlConfig>,
+) -> Result<Router, GatewayRouterError> {
     let api_key_hasher = build_api_key_hasher(api_key_config)?;
     let provider_passthrough_config = provider_relay_config.clone();
     let provider_secret_resolver = provider_secret_map_config
         .map(|config| Arc::new(ProviderSecretMapResolver::from_config(config)));
-    let relays =
-        build_openai_runtime_relays(provider_relay_config, provider_secret_resolver.clone())?;
+    let relays = build_openai_runtime_relays(
+        provider_relay_config,
+        provider_secret_resolver.clone(),
+        runtime_toml,
+    )?;
     match config.engine {
         DatabaseEngine::Sqlite => {
             let sqlite_options = SqliteConnectOptions::from_str(config.url.as_str())
@@ -497,25 +525,32 @@ pub async fn router_with_optional_database_api_key_and_provider_configs(
 }
 
 pub async fn router_from_env() -> Result<Router, GatewayRouterError> {
-    let config = database_config_from_env_for_startup()?;
-    let api_key_config = ApiKeySecurityConfig::from_env().map_err(GatewayRouterError::Config)?;
+    let runtime_toml =
+        RuntimeTomlConfig::from_env_config_file().map_err(GatewayRouterError::Config)?;
+    let config = database_config_from_env_for_startup(runtime_toml.as_ref())?;
+    let api_key_config = ApiKeySecurityConfig::from_env_or_runtime_toml(runtime_toml.as_ref())
+        .map_err(GatewayRouterError::Config)?;
     let provider_relay_config =
-        ProviderRelayConfig::from_env().map_err(GatewayRouterError::Config)?;
+        ProviderRelayConfig::from_env_or_runtime_toml(runtime_toml.as_ref())
+            .map_err(GatewayRouterError::Config)?;
     let provider_secret_map_config =
-        ProviderSecretMapConfig::from_env().map_err(GatewayRouterError::Config)?;
+        ProviderSecretMapConfig::from_env_or_runtime_toml(runtime_toml.as_ref())
+            .map_err(GatewayRouterError::Config)?;
     let usage_settlement_worker_config =
-        usage_settlement_worker_config_from_env().map_err(GatewayRouterError::Config)?;
-    let startup_install_mode =
-        StartupInstallMode::from_env().map_err(GatewayRouterError::Config)?;
+        usage_settlement_worker_config_from_env_or_toml(runtime_toml.as_ref())
+            .map_err(GatewayRouterError::Config)?;
+    let startup_install_mode = StartupInstallMode::from_env_or_runtime_toml(runtime_toml.as_ref())
+        .map_err(GatewayRouterError::Config)?;
     match config {
         Some(config) => {
-            router_with_database_api_key_provider_configs_usage_settlement_worker_config_and_startup_install_mode(
+            router_with_database_api_key_provider_configs_usage_settlement_worker_config_startup_install_mode_and_runtime_toml(
                 config,
                 api_key_config,
                 provider_relay_config,
                 provider_secret_map_config,
                 usage_settlement_worker_config,
                 startup_install_mode,
+                runtime_toml.as_ref(),
             )
             .await
         }
@@ -523,10 +558,14 @@ pub async fn router_from_env() -> Result<Router, GatewayRouterError> {
     }
 }
 
-fn database_config_from_env_for_startup() -> Result<Option<DatabaseConfig>, GatewayRouterError> {
-    let profile = runtime_config_profile_from_deployment_mode();
+fn database_config_from_env_for_startup(
+    runtime_toml: Option<&RuntimeTomlConfig>,
+) -> Result<Option<DatabaseConfig>, GatewayRouterError> {
+    let profile = RuntimeConfigProfile::from_env_or_runtime_toml(runtime_toml)
+        .map_err(GatewayRouterError::Config)?;
     if profile == RuntimeConfigProfile::Server {
-        return DatabaseConfig::from_env_or_initialize().map_err(GatewayRouterError::Config);
+        return DatabaseConfig::from_env_or_runtime_toml_or_initialize(runtime_toml)
+            .map_err(GatewayRouterError::Config);
     }
 
     let config = DatabaseConfig::from_env().map_err(GatewayRouterError::Config)?;
@@ -538,15 +577,6 @@ fn database_config_from_env_for_startup() -> Result<Option<DatabaseConfig>, Gate
         return Ok(Some(config.clone()));
     }
     Ok(None)
-}
-
-fn runtime_config_profile_from_deployment_mode() -> RuntimeConfigProfile {
-    match DeploymentMode::from_env() {
-        DeploymentMode::Desktop => RuntimeConfigProfile::Desktop,
-        DeploymentMode::Server | DeploymentMode::Docker | DeploymentMode::Kubernetes => {
-            RuntimeConfigProfile::Server
-        }
-    }
 }
 
 async fn maybe_spawn_sqlite_usage_settlement_worker(
@@ -667,7 +697,9 @@ async fn postgres_usage_settlement_schema_ready(pool: &PgPool) -> Result<bool, s
     Ok(table_count == 4 && usage_column_count == 3)
 }
 
-fn usage_settlement_worker_config_from_env() -> Result<UsageSettlementWorkerConfig, String> {
+fn usage_settlement_worker_config_from_env_or_toml(
+    runtime_toml: Option<&RuntimeTomlConfig>,
+) -> Result<UsageSettlementWorkerConfig, String> {
     const ENABLED: &str = "SDKWORK_CLAW_USAGE_SETTLEMENT_WORKER_ENABLED";
     const TENANT_ID: &str = "SDKWORK_CLAW_USAGE_SETTLEMENT_TENANT_ID";
     const ORGANIZATION_ID: &str = "SDKWORK_CLAW_USAGE_SETTLEMENT_ORGANIZATION_ID";
@@ -676,66 +708,127 @@ fn usage_settlement_worker_config_from_env() -> Result<UsageSettlementWorkerConf
 
     let defaults = UsageSettlementWorkerConfig::default();
     Ok(UsageSettlementWorkerConfig {
-        enabled: parse_optional_bool_env(ENABLED)?.unwrap_or(defaults.enabled),
-        tenant_id: parse_non_negative_i64_env(TENANT_ID, defaults.tenant_id)?,
-        organization_id: parse_non_negative_i64_env(ORGANIZATION_ID, defaults.organization_id)?,
-        batch_size: parse_positive_i64_env(BATCH_SIZE, defaults.batch_size)?,
-        interval_millis: parse_positive_u64_env(INTERVAL_MILLIS, defaults.interval_millis)?,
+        enabled: parse_optional_bool_config(
+            ENABLED,
+            runtime_toml.and_then(|config| config.usage_settlement.enabled),
+        )?
+        .unwrap_or(defaults.enabled),
+        tenant_id: parse_non_negative_i64_config(
+            TENANT_ID,
+            runtime_toml.and_then(|config| config.usage_settlement.tenant_id),
+            defaults.tenant_id,
+        )?,
+        organization_id: parse_non_negative_i64_config(
+            ORGANIZATION_ID,
+            runtime_toml.and_then(|config| config.usage_settlement.organization_id),
+            defaults.organization_id,
+        )?,
+        batch_size: parse_positive_i64_config(
+            BATCH_SIZE,
+            runtime_toml.and_then(|config| config.usage_settlement.batch_size),
+            defaults.batch_size,
+        )?,
+        interval_millis: parse_positive_u64_config(
+            INTERVAL_MILLIS,
+            runtime_toml.and_then(|config| config.usage_settlement.interval_millis),
+            defaults.interval_millis,
+        )?,
     })
 }
 
-fn parse_optional_bool_env(name: &str) -> Result<Option<bool>, String> {
-    let Some(value) = std::env::var(name).ok() else {
-        return Ok(None);
-    };
-    let normalized = value.trim().to_ascii_lowercase();
-    match normalized.as_str() {
-        "1" | "true" | "yes" | "on" => Ok(Some(true)),
-        "0" | "false" | "no" | "off" => Ok(Some(false)),
-        _ => Err(format!("{name} must be a boolean value")),
-    }
+fn parse_optional_bool_config(
+    name: &str,
+    config_value: Option<bool>,
+) -> Result<Option<bool>, String> {
+    sdkwork_claw_config::runtime::config_bool(name, config_value)
 }
 
-fn parse_non_negative_i64_env(name: &str, default: i64) -> Result<i64, String> {
-    let Some(value) = std::env::var(name).ok() else {
-        return Ok(default);
-    };
-    let parsed = value
-        .trim()
-        .parse::<i64>()
-        .map_err(|_| format!("{name} must be a non-negative integer"))?;
+fn parse_non_negative_i64_config(
+    name: &str,
+    config_value: Option<i64>,
+    default: i64,
+) -> Result<i64, String> {
+    let parsed = sdkwork_claw_config::runtime::config_i64(name, config_value)?.unwrap_or(default);
     if parsed < 0 {
         return Err(format!("{name} must be a non-negative integer"));
     }
     Ok(parsed)
 }
 
-fn parse_positive_i64_env(name: &str, default: i64) -> Result<i64, String> {
-    let Some(value) = std::env::var(name).ok() else {
-        return Ok(default);
-    };
-    let parsed = value
-        .trim()
-        .parse::<i64>()
-        .map_err(|_| format!("{name} must be a positive integer"))?;
+fn parse_positive_i64_config(
+    name: &str,
+    config_value: Option<i64>,
+    default: i64,
+) -> Result<i64, String> {
+    let parsed = sdkwork_claw_config::runtime::config_i64(name, config_value)?.unwrap_or(default);
     if parsed <= 0 {
         return Err(format!("{name} must be a positive integer"));
     }
     Ok(parsed)
 }
 
-fn parse_positive_u64_env(name: &str, default: u64) -> Result<u64, String> {
-    let Some(value) = std::env::var(name).ok() else {
-        return Ok(default);
-    };
-    let parsed = value
-        .trim()
-        .parse::<u64>()
-        .map_err(|_| format!("{name} must be a positive integer"))?;
+fn parse_positive_u64_config(
+    name: &str,
+    config_value: Option<u64>,
+    default: u64,
+) -> Result<u64, String> {
+    let parsed = sdkwork_claw_config::runtime::config_u64(name, config_value)?.unwrap_or(default);
     if parsed == 0 {
         return Err(format!("{name} must be a positive integer"));
     }
     Ok(parsed)
+}
+
+fn parse_non_negative_u64_config(
+    name: &str,
+    config_value: Option<u64>,
+    default: u64,
+) -> Result<u64, String> {
+    Ok(sdkwork_claw_config::runtime::config_u64(name, config_value)?.unwrap_or(default))
+}
+
+fn parse_positive_usize_config(
+    name: &str,
+    config_value: Option<usize>,
+    default: usize,
+) -> Result<usize, String> {
+    let parsed = match sdkwork_claw_config::runtime::env_optional(name) {
+        Some(value) => value
+            .parse::<usize>()
+            .map_err(|_| format!("{name} must be a positive integer"))?,
+        None => config_value.unwrap_or(default),
+    };
+    if parsed == 0 {
+        return Err(format!("{name} must be a positive integer"));
+    }
+    Ok(parsed)
+}
+
+fn parse_retryable_status_codes_config(
+    name: &str,
+    config_value: Option<&[u16]>,
+    default: &[u16],
+) -> Result<Vec<u16>, String> {
+    let Some(value) = sdkwork_claw_config::runtime::env_optional(name) else {
+        return Ok(config_value
+            .filter(|values| !values.is_empty())
+            .unwrap_or(default)
+            .to_vec());
+    };
+    let status_codes = value
+        .split(',')
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(|value| {
+            value
+                .parse::<u16>()
+                .map_err(|_| format!("{name} must contain comma-separated HTTP status codes"))
+        })
+        .collect::<Result<Vec<_>, _>>()?;
+    if status_codes.is_empty() {
+        return Err(format!("{name} must contain at least one HTTP status code"));
+    }
+    Ok(status_codes)
 }
 
 fn build_api_key_hasher(
@@ -754,21 +847,40 @@ fn build_api_key_hasher(
 fn build_openai_runtime_relays(
     config: Option<ProviderRelayConfig>,
     provider_secret_resolver: Option<Arc<ProviderSecretMapResolver>>,
+    runtime_toml: Option<&RuntimeTomlConfig>,
 ) -> Result<OpenAiRuntimeRelays, GatewayRouterError> {
+    let provider_runtime = provider_relay_runtime_config_from_env_or_toml(runtime_toml)
+        .map_err(GatewayRouterError::Config)?;
     if let Some(resolver) = provider_secret_resolver {
         return Ok(OpenAiRuntimeRelays {
-            chat: Some(Arc::new(SecretRefOpenAiCompatibleChatCompletionRelay::new(
-                resolver.clone(),
-            ))),
-            chat_stream: Some(Arc::new(
-                SecretRefOpenAiCompatibleChatCompletionStreamRelay::new(resolver.clone()),
+            chat: Some(Arc::new(
+                SecretRefOpenAiCompatibleChatCompletionRelay::with_runtime(
+                    resolver.clone(),
+                    provider_runtime.response_timeout,
+                    provider_runtime.default_retry_policy.clone(),
+                ),
             )),
-            embeddings: Some(Arc::new(SecretRefOpenAiCompatibleEmbeddingsRelay::new(
-                resolver.clone(),
-            ))),
-            responses: Some(Arc::new(SecretRefOpenAiCompatibleResponsesRelay::new(
-                resolver,
-            ))),
+            chat_stream: Some(Arc::new(
+                SecretRefOpenAiCompatibleChatCompletionStreamRelay::with_runtime(
+                    resolver.clone(),
+                    provider_runtime.response_timeout,
+                    provider_runtime.default_retry_policy.clone(),
+                ),
+            )),
+            embeddings: Some(Arc::new(
+                SecretRefOpenAiCompatibleEmbeddingsRelay::with_runtime(
+                    resolver.clone(),
+                    provider_runtime.response_timeout,
+                    provider_runtime.default_retry_policy.clone(),
+                ),
+            )),
+            responses: Some(Arc::new(
+                SecretRefOpenAiCompatibleResponsesRelay::with_runtime(
+                    resolver,
+                    provider_runtime.response_timeout,
+                    provider_runtime.default_retry_policy,
+                ),
+            )),
         });
     }
 
@@ -784,16 +896,81 @@ fn build_openai_runtime_relays(
     )
     .map_err(|error| GatewayRouterError::Config(error.to_string()))?;
     Ok(OpenAiRuntimeRelays {
-        chat: Some(Arc::new(OpenAiCompatibleChatCompletionRelay::new(
+        chat: Some(Arc::new(OpenAiCompatibleChatCompletionRelay::with_runtime(
             endpoint.clone(),
+            provider_runtime.response_timeout,
+            provider_runtime.default_retry_policy.clone(),
         ))),
-        chat_stream: Some(Arc::new(OpenAiCompatibleChatCompletionStreamRelay::new(
+        chat_stream: Some(Arc::new(
+            OpenAiCompatibleChatCompletionStreamRelay::with_runtime(
+                endpoint.clone(),
+                provider_runtime.response_timeout,
+                provider_runtime.default_retry_policy.clone(),
+            ),
+        )),
+        embeddings: Some(Arc::new(OpenAiCompatibleEmbeddingsRelay::with_runtime(
             endpoint.clone(),
+            provider_runtime.response_timeout,
+            provider_runtime.default_retry_policy.clone(),
         ))),
-        embeddings: Some(Arc::new(OpenAiCompatibleEmbeddingsRelay::new(
-            endpoint.clone(),
+        responses: Some(Arc::new(OpenAiCompatibleResponsesRelay::with_runtime(
+            endpoint,
+            provider_runtime.response_timeout,
+            provider_runtime.default_retry_policy,
         ))),
-        responses: Some(Arc::new(OpenAiCompatibleResponsesRelay::new(endpoint))),
+    })
+}
+
+#[derive(Clone)]
+struct ProviderRelayRuntimeConfig {
+    response_timeout: Duration,
+    default_retry_policy: ProviderRetryPolicy,
+}
+
+fn provider_relay_runtime_config_from_env_or_toml(
+    runtime_toml: Option<&RuntimeTomlConfig>,
+) -> Result<ProviderRelayRuntimeConfig, String> {
+    const RESPONSE_TIMEOUT: &str = "SDKWORK_CLAW_PROVIDER_RESPONSE_TIMEOUT_MILLIS";
+    const RETRY_MAX_ATTEMPTS: &str = "SDKWORK_CLAW_PROVIDER_RETRY_MAX_ATTEMPTS";
+    const RETRY_STATUS_CODES: &str = "SDKWORK_CLAW_PROVIDER_RETRYABLE_STATUS_CODES";
+    const RETRY_BACKOFF: &str = "SDKWORK_CLAW_PROVIDER_RETRY_BACKOFF_MILLIS";
+
+    let response_timeout_millis = parse_positive_u64_config(
+        RESPONSE_TIMEOUT,
+        runtime_toml.and_then(|config| config.provider_relay.runtime.response_timeout_millis),
+        DEFAULT_PROVIDER_RESPONSE_TIMEOUT_MILLIS,
+    )?;
+    let retry_max_attempts = parse_positive_usize_config(
+        RETRY_MAX_ATTEMPTS,
+        runtime_toml.and_then(|config| config.provider_relay.retry.max_attempts),
+        DEFAULT_PROVIDER_RETRY_ATTEMPTS,
+    )?;
+    let retryable_status_codes = parse_retryable_status_codes_config(
+        RETRY_STATUS_CODES,
+        runtime_toml.map(|config| {
+            config
+                .provider_relay
+                .retry
+                .retryable_status_codes
+                .as_slice()
+        }),
+        DEFAULT_RETRYABLE_PROVIDER_STATUS_CODES.as_slice(),
+    )?;
+    let retry_backoff_millis = parse_non_negative_u64_config(
+        RETRY_BACKOFF,
+        runtime_toml.and_then(|config| config.provider_relay.retry.backoff_millis),
+        0,
+    )?;
+    let default_retry_policy = ProviderRetryPolicy::new(
+        retry_max_attempts,
+        retryable_status_codes,
+        retry_backoff_millis,
+    )
+    .map_err(|error| error.to_string())?;
+
+    Ok(ProviderRelayRuntimeConfig {
+        response_timeout: Duration::from_millis(response_timeout_millis),
+        default_retry_policy,
     })
 }
 

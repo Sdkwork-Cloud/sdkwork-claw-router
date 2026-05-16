@@ -30,6 +30,7 @@ async fn app_api_forum_boundary_allows_public_reads_and_public_publishing_while_
         comment_store,
         trusted_subject_config().unwrap(),
         app_session_config().unwrap(),
+        sdkwork_claw_config::RequestLimitsConfig::DEFAULT_FORUM_JSON_BODY_MAX_BYTES,
     );
 
     let public_list_response = router

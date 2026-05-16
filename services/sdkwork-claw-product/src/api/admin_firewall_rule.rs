@@ -122,6 +122,14 @@ pub fn admin_firewall_rule_router_with_store(
             "/backend/v3/api/router/firewall/rules/{rule_id}",
             axum::routing::delete(delete_firewall_rule),
         )
+        .route(
+            "/backend/v3/api/system/firewalls/rules",
+            get(fetch_firewall_rules).post(create_firewall_rule),
+        )
+        .route(
+            "/backend/v3/api/system/firewalls/rules/{rule_id}",
+            axum::routing::delete(delete_firewall_rule),
+        )
         .with_state(AdminFirewallRuleState {
             store,
             entity_uuid_generator,

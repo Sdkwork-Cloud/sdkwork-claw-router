@@ -3,6 +3,8 @@ import {
   ensurePlusApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
+  readApiRecord,
+  readBoolean,
   readRequiredApiItems,
   readRequiredApiItem,
   requiredSafePathSegment,
@@ -18,7 +20,7 @@ import type {
 export interface Announcement {
   id: string;
   title: string;
-  target: string;
+  target: 'all' | 'vip' | 'free' | 'beta';
   status: 'published' | 'draft';
   date: string;
   content: string;
@@ -69,7 +71,7 @@ export class AnnouncementService {
     const result = await announcementBackendClient().content.announcements.delete(
       requiredSafePathSegment(id, 'announcementId'),
     );
-    ensurePlusApiSuccess(result, 'Failed to delete announcement');
+    ensureDeleteResult(result, 'Announcement delete confirmation is required');
     return true;
   }
 }
@@ -135,12 +137,19 @@ function requestParams(scope: string): { xRequestId: string } {
   return { xRequestId: createRequestToken(scope) };
 }
 
+function ensureDeleteResult(result: unknown, message: string): void {
+  ensurePlusApiSuccess(result, message);
+  if (readBoolean(readApiRecord(result), 'deleted') !== true) {
+    throw new Error(message);
+  }
+}
+
 function normalizeAnnouncement(value: unknown): Announcement {
   const item = readRequiredRecord(value, 'Announcement record is required');
   return {
     id: readRequiredString(item, 'id', 'Announcement id is required'),
     title: readRequiredString(item, 'title', 'Announcement title is required'),
-    target: readRequiredString(item, 'target', 'Announcement target is required'),
+    target: readAnnouncementTarget(item),
     status: readAnnouncementStatus(item),
     date: readRequiredString(item, 'date', 'Announcement date is required'),
     content: readRequiredString(item, 'content', 'Announcement content is required'),
@@ -160,4 +169,12 @@ function readAnnouncementStatus(item: ApiRecord): Announcement['status'] {
     return status;
   }
   throw new Error(status ? `Unsupported announcement status: ${status}` : 'Announcement status is required');
+}
+
+function readAnnouncementTarget(item: ApiRecord): Announcement['target'] {
+  const target = readString(item, 'target');
+  if (target === 'all' || target === 'vip' || target === 'free' || target === 'beta') {
+    return target;
+  }
+  throw new Error(target ? `Unsupported announcement target: ${target}` : 'Announcement target is required');
 }

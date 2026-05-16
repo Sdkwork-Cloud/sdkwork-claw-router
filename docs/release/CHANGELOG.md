@@ -2,6 +2,54 @@
 
 All notable changes to `sdkwork-claw-router` release records will be documented here.
 
+## 2026-05-17 - v0.3.0
+
+### Scope
+
+- Adds a commercial runtime and installation hardening slice after the successful `v0.2.0` release.
+- No separately published failed `v0.3.0` version existed before this record. The unpublished install/configuration polishing that was initially drafted into the `v0.2.0` notes is consolidated here so the current release record matches the code baseline being published.
+
+### Delivered
+
+- Added a professional TOML runtime configuration surface for server, edge, portal, observability, request limits, provider relay retry/runtime controls, paths, courses, and install metadata.
+- Added first-class PostgreSQL structured configuration with host, port, database, username, password file, optional inline password, SSL mode, and max-connection fields; server, service, and container modes default to PostgreSQL while desktop mode keeps SQLite.
+- Added the standard optional `[redis]` runtime configuration section to install templates, manifests, native installer layouts, Linux post-install summaries, and installation documentation. Redis is disabled by default, keeps `host`, `port`, and `database` as primary fields, and reserves `url` for advanced managed-endpoint overrides.
+- Added runtime body-size limit configuration for admin app writes, admin skill writes, forum writes, and payment callback entrypoints so reverse proxies and application limits can be aligned.
+- Added a shared `installConfiguration` manifest section and generated install guide configuration summary so every package publishes the runtime TOML, data directory, database policy, required PostgreSQL fields, password file, first-start commands, and follow-up steps in machine-readable and human-readable form.
+- Added a `nativeInstall` manifest section and dry-run build-plan layout for native installers so deployment automation can audit final install roots, runtime config paths, service metadata, permissions, and operator commands before or after package build.
+- Updated Debian post-install output to print the runtime TOML, service environment file, PostgreSQL password file, optional Redis password file, systemd service name, and first-start commands immediately after installation.
+- Scoped Linux desktop `.deb` packages to desktop behavior: they install the shared TOML template under `/usr/share/clawrouter/config/clawrouter.toml.example` and do not create `/etc/clawrouter` runtime files or a systemd service.
+- Hardened the Linux systemd service unit with a stricter default runtime profile, including systemd-managed state/log/config directories, `NoNewPrivileges`, `ProtectSystem=strict`, `ProtectHome=true`, kernel and control-group protections, native syscall architecture filtering, `UMask=0027`, `LimitNOFILE=65535`, writable data/log directories, and read-only `/etc/clawrouter` access for the running process.
+- Updated generated package `INSTALL.md` files so desktop native installers use final install paths and include both `ensure` and `refresh-catalog --force` before first startup.
+- Added a macOS launchd service runner so `.pkg` service packages run `clawrouterctl ensure` and `clawrouterctl refresh-catalog --force` before replacing the runner with the gateway process.
+- Standardized public host-service release asset names on `server` while keeping internal package IDs and deployment mode as `service`; for example `linux-x64-service` now builds `clawrouter-linux-x64-server-0.3.0.deb`.
+- Expanded admin and console portal SDK-backed runtime behavior across routing, channels, models, skills, marketing, finance, settlements, dashboards, API keys, billing, and operations surfaces.
+- Added SQL-backed dashboard, marketing, app commerce exchange, app routing command/read, app session event, and settlement-support stores across PostgreSQL and SQLite where needed by the new product surfaces.
+- Regenerated OpenAPI documents, API contract manifests, frontend schema registry outputs, frontend operation audits, and generated TypeScript SDK files for the updated app/open contracts.
+- Updated the release workflow default dependency pin for `sdkwork-sdk-generator` to `c20c147b69453a64535e25fc18032597e8af9e75`, after committing and pushing the sibling generator repository.
+
+### Verification
+
+- `npm test` in `sdkwork-sdk-generator`: 40 test files, 431 tests passed.
+- `npm run lint` in `sdkwork-sdk-generator`.
+- `git diff --check` in `sdkwork-sdk-generator`.
+- `node --check scripts/plan-claw-router-install-packages.mjs`
+- `node --check scripts/build-claw-router-native-installer.mjs`
+- `node --check scripts/run-claw-router-product.test.mjs`
+- `node scripts/plan-claw-router-install-packages.mjs --check --json`
+- `node scripts/build-claw-router-native-installer.mjs --package-id linux-x64-service --check --dry-run --json`
+- `node scripts/build-claw-router-install-package.mjs --all --check --dry-run --json`
+- `node scripts/build-claw-router-native-installer.mjs --all --check --dry-run --json`
+- `pnpm app-store:seed:check`
+- `cargo test -p sdkwork-claw-config`
+- `node --test scripts/run-claw-router-product.test.mjs --test-name-pattern "installation documentation covers release|install package planner covers|install package manifests distinguish|install package builder emits service and container|native installer builder emits apt-installable|native installer builder CLI validates"`
+
+### Release Gate Status
+
+- Sibling SDK/shared repository gate is satisfied before local publication preparation: `sdkwork-appbase` is clean at `3280447a2166a86b7e20bcfa394611effa0c9ec3`, `sdkwork-core` is clean at `339ab3e063671e0f97db92bf098c9e9d8768d8dd`, `sdkwork-ui` is clean at `a4c90948ab5e43241a8e06303891bdc370702fad`, the user-specified `sdkwork-im-sdk` checkout under `apps\craw-chat\sdks\sdkwork-im-sdk` is clean at `8245ff9095f7d11c70aa062e16a9e42a715604b1`, and `sdkwork-sdk-generator` was committed and pushed at `c20c147b69453a64535e25fc18032597e8af9e75`.
+- Local development keeps relative workspace/link dependencies for sibling SDK and UI repositories; the GitHub release workflow checks out pinned GitHub refs for release packaging.
+- Full `pnpm verify` was not run for this release record because this publication uses the faster focused release checks listed above.
+
 ## 2026-05-16 - v0.2.0
 
 ### Scope

@@ -3,8 +3,7 @@ import {
   getClawRouterAppSdkClient,
   isRecord,
   readApiRecord,
-  readBoolean,
-  readString,
+  readRequiredString,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
 import type {
@@ -36,7 +35,7 @@ export class SettingsService {
 
   static async updateSettings(data: SettingsData): Promise<void> {
     const result = await getClawRouterAppSdkClient().iam.users.settings.update(toUpdateSettingsRequest(data));
-    ensurePlusApiSuccess(result, 'Failed to update settings');
+    ensureSettingsUpdateSuccess(result);
   }
 }
 
@@ -73,15 +72,49 @@ function webhookUrl(value: string): string {
 }
 
 function normalizeSettings(data: ApiRecord): SettingsData {
-  const notifications = isRecord(data.notifications) ? data.notifications : {};
+  const notifications = readRequiredRecord(data, 'notifications', 'Settings notifications are required');
   return {
-    language: readString(data, 'language'),
-    timezone: readString(data, 'timezone'),
-    webhookUrl: readString(data, 'webhookUrl'),
+    language: readRequiredString(data, 'language', 'Settings language is required'),
+    timezone: readRequiredString(data, 'timezone', 'Settings timezone is required'),
+    webhookUrl: readRequiredExistingString(data, 'webhookUrl', 'Settings webhook URL is required'),
     notifications: {
-      billReminder: readBoolean(notifications, 'billReminder'),
-      quotaWarning: readBoolean(notifications, 'quotaWarning'),
-      apiMonitor: readBoolean(notifications, 'apiMonitor'),
+      billReminder: readRequiredBoolean(notifications, 'billReminder', 'Settings bill reminder flag is required'),
+      quotaWarning: readRequiredBoolean(notifications, 'quotaWarning', 'Settings quota warning flag is required'),
+      apiMonitor: readRequiredBoolean(notifications, 'apiMonitor', 'Settings API monitor flag is required'),
     },
   };
+}
+
+function ensureSettingsUpdateSuccess(result: unknown): void {
+  try {
+    ensurePlusApiSuccess(result, 'Settings update confirmation is required');
+  } catch {
+    throw new Error('Settings update confirmation is required');
+  }
+  if (readRequiredBoolean(readApiRecord(result), 'success', 'Settings update confirmation is required') !== true) {
+    throw new Error('Settings update confirmation is required');
+  }
+}
+
+function readRequiredRecord(record: ApiRecord, key: string, message: string): ApiRecord {
+  const value = record[key];
+  if (!isRecord(value)) {
+    throw new Error(message);
+  }
+  return value;
+}
+
+function readRequiredExistingString(record: ApiRecord, key: string, message: string): string {
+  if (!(key in record) || typeof record[key] !== 'string') {
+    throw new Error(message);
+  }
+  return record[key];
+}
+
+function readRequiredBoolean(record: ApiRecord, key: string, message: string): boolean {
+  const value = record[key];
+  if (typeof value !== 'boolean') {
+    throw new Error(message);
+  }
+  return value;
 }

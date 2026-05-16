@@ -136,7 +136,28 @@ impl DatabaseConfig {
     }
 
     pub fn from_env_or_initialize() -> Result<Option<Self>, String> {
-        let profile = runtime_config_profile_from_env();
+        let profile = RuntimeConfigProfile::from_env_or_runtime_toml(None)?;
+        let location = Self::runtime_config_location_from_env(profile);
+        let env_config = Self::from_optional_parts(
+            std::env::var("SDKWORK_CLAW_DATABASE_URL").ok(),
+            std::env::var("SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS").ok(),
+        )?;
+        if let Some(config) = env_config {
+            config.validate_for_runtime_profile_at(profile, &location)?;
+            return Ok(Some(config));
+        }
+
+        let report = Self::initialize_default_runtime_config_at(profile, &location)?;
+        report
+            .database
+            .validate_for_runtime_profile_at(profile, &report.location)?;
+        Ok(Some(report.database))
+    }
+
+    pub fn from_env_or_runtime_toml_or_initialize(
+        runtime_toml: Option<&crate::RuntimeTomlConfig>,
+    ) -> Result<Option<Self>, String> {
+        let profile = RuntimeConfigProfile::from_env_or_runtime_toml(runtime_toml)?;
         let location = Self::runtime_config_location_from_env(profile);
         let env_config = Self::from_optional_parts(
             std::env::var("SDKWORK_CLAW_DATABASE_URL").ok(),
@@ -891,6 +912,30 @@ impl RuntimeConfigLocation {
     }
 }
 
+impl RuntimeConfigProfile {
+    pub fn from_env_or_runtime_toml(
+        runtime_toml: Option<&crate::RuntimeTomlConfig>,
+    ) -> Result<Self, String> {
+        let Some(deployment_mode) = std::env::var(crate::DeploymentMode::ENV_DEPLOYMENT_MODE)
+            .ok()
+            .or_else(|| runtime_toml.and_then(|config| config.runtime.deployment_mode.clone()))
+        else {
+            return Ok(Self::Server);
+        };
+        let deployment_mode = crate::DeploymentMode::from_optional_part(Some(deployment_mode))?;
+        Ok(Self::from_deployment_mode(deployment_mode))
+    }
+
+    pub fn from_deployment_mode(deployment_mode: crate::DeploymentMode) -> Self {
+        match deployment_mode {
+            crate::DeploymentMode::Desktop => Self::Desktop,
+            crate::DeploymentMode::Server
+            | crate::DeploymentMode::Docker
+            | crate::DeploymentMode::Kubernetes => Self::Server,
+        }
+    }
+}
+
 fn explicit_runtime_config_file() -> Option<PathBuf> {
     std::env::var(DatabaseConfig::ENV_CONFIG_FILE)
         .ok()
@@ -900,15 +945,7 @@ fn explicit_runtime_config_file() -> Option<PathBuf> {
 }
 
 fn runtime_config_profile_from_env() -> RuntimeConfigProfile {
-    match std::env::var("SDKWORK_CLAW_DEPLOYMENT_MODE")
-        .unwrap_or_default()
-        .trim()
-        .to_ascii_lowercase()
-        .as_str()
-    {
-        "desktop" => RuntimeConfigProfile::Desktop,
-        _ => RuntimeConfigProfile::Server,
-    }
+    RuntimeConfigProfile::from_env_or_runtime_toml(None).unwrap_or(RuntimeConfigProfile::Server)
 }
 
 fn normalize_platform(platform: &str) -> String {

@@ -1,11 +1,12 @@
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::Arc;
+use std::sync::{Mutex, OnceLock};
 
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
 use sdkwork_claw_product::api::{
     app_forum_router_with_store, app_forum_router_with_store_and_community_links,
-    parse_forum_community_links_config,
+    configured_forum_community_links, parse_forum_community_links_config,
 };
 use sdkwork_claw_product::application::EntityUuidGenerator;
 use sdkwork_claw_product::domain::DomainResult;
@@ -359,6 +360,43 @@ fn app_forum_community_link_config_keeps_only_public_deployment_links() {
     assert_eq!("blue", links[1].tone);
     assert_eq!("badqr", links[2].id);
     assert!(links[2].qr_code_url.is_none());
+}
+
+#[test]
+fn app_forum_community_link_config_reads_runtime_toml_file() {
+    let _guard = env_guard().lock().unwrap();
+    let config_path = unique_config_path("forum-community-links");
+    let links_path = config_path.with_file_name("forum-links.json");
+    std::fs::create_dir_all(config_path.parent().unwrap()).unwrap();
+    std::fs::write(
+        &links_path,
+        r#"[{"id":"forum","label":"Forum Community","url":"https://community.example.com/forum","tone":"teal"}]"#,
+    )
+    .unwrap();
+    std::fs::write(
+        &config_path,
+        format!(
+            "[forum]\ncommunity_links_json_file = \"{}\"\n",
+            links_path.display().to_string().replace('\\', "/")
+        ),
+    )
+    .unwrap();
+    let saved_config_file = std::env::var("SDKWORK_CLAW_CONFIG_FILE").ok();
+    let saved_links = std::env::var("SDKWORK_CLAW_FORUM_COMMUNITY_LINKS").ok();
+    std::env::set_var("SDKWORK_CLAW_CONFIG_FILE", &config_path);
+    std::env::remove_var("SDKWORK_CLAW_FORUM_COMMUNITY_LINKS");
+
+    let links = configured_forum_community_links();
+
+    restore_env_var("SDKWORK_CLAW_CONFIG_FILE", saved_config_file);
+    restore_env_var("SDKWORK_CLAW_FORUM_COMMUNITY_LINKS", saved_links);
+    let _ = std::fs::remove_file(&links_path);
+    let _ = std::fs::remove_file(&config_path);
+    assert_eq!(1, links.len());
+    assert_eq!("forum", links[0].id);
+    assert_eq!("Forum Community", links[0].label);
+    assert_eq!("https://community.example.com/forum", links[0].url);
+    assert_eq!("teal", links[0].tone);
 }
 
 #[tokio::test]
@@ -1073,5 +1111,30 @@ impl EntityUuidGenerator for TestUuidGenerator {
     fn generate_entity_uuid(&self) -> DomainResult<String> {
         let sequence = TEST_UUID_SEQUENCE.fetch_add(1, Ordering::Relaxed);
         Ok(format!("forum-api-generated-uuid-{sequence}"))
+    }
+}
+
+fn env_guard() -> &'static Mutex<()> {
+    static LOCK: OnceLock<Mutex<()>> = OnceLock::new();
+    LOCK.get_or_init(|| Mutex::new(()))
+}
+
+fn unique_config_path(name: &str) -> std::path::PathBuf {
+    std::env::temp_dir()
+        .join("clawrouter-forum-tests")
+        .join(format!(
+            "{name}-{}-{}.toml",
+            std::process::id(),
+            std::time::SystemTime::now()
+                .duration_since(std::time::UNIX_EPOCH)
+                .unwrap()
+                .as_nanos()
+        ))
+}
+
+fn restore_env_var(name: &str, value: Option<String>) {
+    match value {
+        Some(value) => std::env::set_var(name, value),
+        None => std::env::remove_var(name),
     }
 }

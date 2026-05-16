@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { ShieldAlert, Plus, Search, Globe, Key, Database, MoreVertical, X, Lock, Gauge, Trash2 } from 'lucide-react';
+import { ShieldAlert, Plus, Search, Globe, Key, Database, X, Lock, Gauge, Trash2, Loader2, AlertTriangle } from 'lucide-react';
 import { BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
 import { RateLimitService, IpLimitRule, TokenLimitRule, ModelLimitRule, FirewallRule } from './ratelimitService';
 import {
@@ -80,11 +80,147 @@ export function RateLimitAdmin() {
 
 // 1. 全局风控大盘
 function RiskDashboardView() {
+  const [snapshot, setSnapshot] = useState<{
+    ipLimits: IpLimitRule[];
+    tokenLimits: TokenLimitRule[];
+    modelLimits: ModelLimitRule[];
+    firewallRules: FirewallRule[];
+  } | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
+
+  const loadDashboard = useCallback(async (isActive: () => boolean = () => true) => {
+    setLoading(true);
+    setLoadError(null);
+    try {
+      const [ipLimits, tokenLimits, modelLimits, firewallRules] = await Promise.all([
+        RateLimitService.fetchIpLimits(),
+        RateLimitService.fetchTokenLimits(),
+        RateLimitService.fetchModelLimits(),
+        RateLimitService.fetchFirewalls(),
+      ]);
+      if (isActive()) {
+        setSnapshot({ ipLimits, tokenLimits, modelLimits, firewallRules });
+      }
+    } catch (error) {
+      if (isActive()) {
+        setSnapshot(null);
+        setLoadError(getLoadErrorMessage(error, 'Failed to load risk control dashboard.'));
+      }
+    } finally {
+      if (isActive()) {
+        setLoading(false);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    void loadDashboard(() => active);
+    return () => {
+      active = false;
+    };
+  }, [loadDashboard]);
+
+  if (loading) {
+    return (
+      <div className="flex-1 flex flex-col items-center justify-center text-slate-500">
+        <Loader2 className="w-8 h-8 mb-3 animate-spin text-red-500" />
+        <span className="text-sm">Loading risk control rule aggregates...</span>
+      </div>
+    );
+  }
+
+  if (loadError) {
+    return (
+      <div className="flex-1 flex flex-col items-center justify-center text-center px-6 text-slate-500">
+        <AlertTriangle className="w-10 h-10 mb-3 text-amber-500" />
+        <h3 className="text-lg font-medium text-slate-900 dark:text-white mb-2">风控规则概览加载失败</h3>
+        <p className="text-sm max-w-lg mb-4">{loadError}</p>
+        <button
+          type="button"
+          onClick={() => void loadDashboard()}
+          className="px-4 py-2 rounded-lg bg-red-600 text-sm font-medium text-white hover:bg-red-700 transition-colors"
+        >
+          Retry
+        </button>
+      </div>
+    );
+  }
+
+  const ipLimits = snapshot?.ipLimits ?? [];
+  const tokenLimits = snapshot?.tokenLimits ?? [];
+  const modelLimits = snapshot?.modelLimits ?? [];
+  const firewallRules = snapshot?.firewallRules ?? [];
+  const activeIpLimits = ipLimits.filter(rule => rule.status === 'active').length;
+  const exhaustedTokenLimits = tokenLimits.filter(rule => rule.status === 'exhausted').length;
+  const activeModelLimits = modelLimits.filter(rule => rule.status === 'active').length;
+  const totalFirewallRules = firewallRules.length;
+  const totalConfiguredRules = ipLimits.length + tokenLimits.length + modelLimits.length + firewallRules.length;
+
   return (
-    <div className="flex-1 flex flex-col p-5 items-center justify-center text-slate-500">
-      <Gauge className="w-12 h-12 mb-4 text-slate-300 dark:text-slate-600" />
-      <h3 className="text-lg font-medium text-slate-900 dark:text-white mb-2">安全防护大盘</h3>
-      <p className="text-sm">查看系统被拦截的非法请求、异常频率抓取、IP封禁趋势图。</p>
+    <div className="flex-1 overflow-auto p-5 space-y-5">
+      <div>
+        <h3 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+          <Gauge className="w-5 h-5 text-red-500" />
+          安全防护规则概览
+        </h3>
+        <p className="text-sm text-slate-500 mt-1">基于当前后端已配置的限流、限额和 WAF 规则汇总。</p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        {[
+          { title: '生效 IP 限流', value: activeIpLimits, detail: `${ipLimits.length} 条 IP 规则`, icon: Globe, color: 'text-blue-500', bg: 'bg-blue-50 dark:bg-blue-500/10' },
+          { title: '耗尽令牌限额', value: exhaustedTokenLimits, detail: `${tokenLimits.length} 条 API Key 规则`, icon: Key, color: 'text-amber-500', bg: 'bg-amber-50 dark:bg-amber-500/10' },
+          { title: '强制模型频控', value: activeModelLimits, detail: `${modelLimits.length} 条模型规则`, icon: Database, color: 'text-purple-500', bg: 'bg-purple-50 dark:bg-purple-500/10' },
+          { title: 'WAF 名单规则', value: totalFirewallRules, detail: `${totalConfiguredRules} 条总规则`, icon: Lock, color: 'text-red-500', bg: 'bg-red-50 dark:bg-red-500/10' },
+        ].map(item => (
+          <div key={item.title} className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm flex items-center justify-between">
+            <div>
+              <p className="text-sm font-medium text-slate-500">{item.title}</p>
+              <p className="mt-1 text-2xl font-bold text-slate-900 dark:text-white">{item.value}</p>
+              <p className="mt-1 text-xs text-slate-500">{item.detail}</p>
+            </div>
+            <div className={`p-3 rounded-lg ${item.bg} ${item.color}`}>
+              <item.icon className="w-6 h-6" />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm">
+          <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-4">最高 IP RPS 限制</h4>
+          <div className="space-y-3">
+            {[...ipLimits].sort((a, b) => b.rps - a.rps).slice(0, 5).map(rule => (
+              <div key={rule.id} className="flex items-center justify-between gap-4 text-sm">
+                <div className="min-w-0">
+                  <div className="font-medium text-slate-900 dark:text-white truncate">{rule.ruleName}</div>
+                  <div className="text-xs text-slate-500 font-mono truncate">{rule.targetIp}</div>
+                </div>
+                <div className="font-mono text-red-600 dark:text-red-400">{rule.rps} rps</div>
+              </div>
+            ))}
+            {ipLimits.length === 0 && <p className="text-sm text-slate-500">No IP rate limit rules configured.</p>}
+          </div>
+        </div>
+
+        <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm">
+          <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-4">模型频控覆盖</h4>
+          <div className="space-y-3">
+            {[...modelLimits].sort((a, b) => b.tpm - a.tpm).slice(0, 5).map(rule => (
+              <div key={rule.id} className="flex items-center justify-between gap-4 text-sm">
+                <div className="min-w-0">
+                  <div className="font-medium text-slate-900 dark:text-white truncate">{rule.model}</div>
+                  <div className="text-xs text-slate-500 truncate">{rule.group}</div>
+                </div>
+                <div className="font-mono text-red-600 dark:text-red-400">{rule.tpm.toLocaleString()} tpm</div>
+              </div>
+            ))}
+            {modelLimits.length === 0 && <p className="text-sm text-slate-500">No model rate limit rules configured.</p>}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -165,15 +301,14 @@ function IpRateLimitView({ search, setSearch }: { search: string, setSearch: (s:
               <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">每分钟请求限制 (RPM)</th>
               <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">惩罚封禁时长</th>
               <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">状态</th>
-              <th className="px-4 py-3 text-right font-semibold text-slate-900 dark:text-white">操作</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-white/5 bg-white dark:bg-transparent">
             {loading ? (
-              <BusinessStateTableRow colSpan={7} kind="loading" title="Loading IP limit rules..." />
+              <BusinessStateTableRow colSpan={6} kind="loading" title="Loading IP limit rules..." />
             ) : loadError ? (
               <BusinessStateTableRow
-                colSpan={7}
+                colSpan={6}
                 kind="error"
                 title="IP limit rules could not be loaded"
                 description={loadError}
@@ -181,7 +316,7 @@ function IpRateLimitView({ search, setSearch }: { search: string, setSearch: (s:
               />
             ) : filteredLimits.length === 0 ? (
               <BusinessStateTableRow
-                colSpan={7}
+                colSpan={6}
                 kind="empty"
                 title="No IP limit rules found"
                 description="Create a rule to control request rates for an IP address or CIDR range."
@@ -196,9 +331,6 @@ function IpRateLimitView({ search, setSearch }: { search: string, setSearch: (s:
                 <td className="px-4 py-3 text-red-600 dark:text-red-400 text-xs font-semibold">{rule.blockDuration}</td>
                 <td className="px-4 py-3">
                   <span className={`px-2 py-1 rounded text-xs ${rule.status === 'active' ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400' : 'bg-slate-100 text-slate-500 dark:bg-white/10 dark:text-slate-400'}`}>{rule.status === 'active' ? '生效中' : '已停用'}</span>
-                </td>
-                <td className="px-4 py-3 text-right">
-                  <button className="text-slate-400 hover:text-red-500"><MoreVertical className="w-4 h-4 ml-auto" /></button>
                 </td>
               </tr>
             ))}
@@ -229,12 +361,16 @@ function IpRateLimitView({ search, setSearch }: { search: string, setSearch: (s:
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">每秒限制 (RPS)</label>
-                    <input required name="rps" type="number" placeholder="10" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
+                    <input required name="rps" type="number" min="1" step="1" placeholder="10" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">每分钟限制 (RPM)</label>
-                    <input required name="rpm" type="number" placeholder="300" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
+                    <input required name="rpm" type="number" min="1" step="1" placeholder="300" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
                   </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">惩罚封禁时长</label>
+                  <input required name="blockDuration" type="text" placeholder="例如: 10m, 1h, 24h" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
                 </div>
               </div>
               <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212] rounded-b-2xl">
@@ -325,15 +461,14 @@ function TokenRateLimitView({ search, setSearch }: { search: string, setSearch: 
               <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">并发缓冲 (Burst)</th>
               <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">每日调用上限 (RPD)</th>
               <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">额度状态</th>
-              <th className="px-4 py-3 text-right font-semibold text-slate-900 dark:text-white">操作</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-white/5 bg-white dark:bg-transparent">
             {loading ? (
-              <BusinessStateTableRow colSpan={7} kind="loading" title="Loading token limit rules..." />
+              <BusinessStateTableRow colSpan={6} kind="loading" title="Loading token limit rules..." />
             ) : loadError ? (
               <BusinessStateTableRow
-                colSpan={7}
+                colSpan={6}
                 kind="error"
                 title="Token limit rules could not be loaded"
                 description={loadError}
@@ -341,7 +476,7 @@ function TokenRateLimitView({ search, setSearch }: { search: string, setSearch: 
               />
             ) : filteredLimits.length === 0 ? (
               <BusinessStateTableRow
-                colSpan={7}
+                colSpan={6}
                 kind="empty"
                 title="No token limit rules found"
                 description="Create a token rule to control per-key request rates and daily quotas."
@@ -356,9 +491,6 @@ function TokenRateLimitView({ search, setSearch }: { search: string, setSearch: 
                 <td className="px-4 py-3 font-mono">{token.rpd} rq/d</td>
                 <td className="px-4 py-3">
                   <span className={`px-2 py-1 rounded text-xs ${token.status === 'active' ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400' : 'bg-red-50 text-red-600 dark:bg-red-500/10 dark:text-red-400'}`}>{token.status === 'active' ? '健康可用' : '触发熔断'}</span>
-                </td>
-                <td className="px-4 py-3 text-right">
-                  <button className="text-slate-400 hover:text-red-500"><MoreVertical className="w-4 h-4 ml-auto" /></button>
                 </td>
               </tr>
             ))}
@@ -386,21 +518,21 @@ function TokenRateLimitView({ search, setSearch }: { search: string, setSearch: 
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">API Key (留空影响所有此用户的Key)</label>
-                  <input name="keyPrefix" type="text" placeholder="sk-proj-..." className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
+                  <input required name="keyPrefix" type="text" placeholder="sk-proj-..." className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">RPS</label>
-                    <input required name="rps" type="number" placeholder="5" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white" />
+                    <input required name="rps" type="number" min="1" step="1" placeholder="5" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Burst</label>
-                    <input required name="burst" type="number" placeholder="10" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white" />
+                    <input required name="burst" type="number" min="1" step="1" placeholder="10" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white" />
                   </div>
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">RPD</label>
-                  <input required name="rpd" type="number" placeholder="1000" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white" />
+                  <input required name="rpd" type="number" min="1" step="1" placeholder="1000" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white" />
                 </div>
               </div>
               <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212]">
@@ -547,11 +679,11 @@ function ModelRateLimitView({ search, setSearch }: { search: string, setSearch: 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">分钟级请求限度 (RPM)</label>
-                    <input required name="rpm" type="number" placeholder="5" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
+                    <input required name="rpm" type="number" min="1" step="1" placeholder="5" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">分钟级Token吞吐 (TPM)</label>
-                    <input required name="tpm" type="number" placeholder="20000" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
+                    <input required name="tpm" type="number" min="1" step="1" placeholder="20000" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
                   </div>
                 </div>
               </div>

@@ -6,11 +6,11 @@ on:
       tag:
         description: Release tag to package
         required: true
-        default: v0.2.0
+        default: v0.3.0
       package_version:
         description: Package version used in archive names
         required: true
-        default: 0.2.0
+        default: 0.3.0
       platform:
         description: Platform subset
         required: true
@@ -61,7 +61,7 @@ on:
       sdkwork_sdk_generator_ref:
         description: sdkwork-sdk-generator commit/ref
         required: true
-        default: 37144b075549a380f48203d1a385a63bad9ebc33
+        default: c20c147b69453a64535e25fc18032597e8af9e75
 
 permissions:
   contents: write

@@ -2,13 +2,13 @@ use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use axum::body::Bytes;
-use axum::extract::{Path, State};
+use axum::extract::{Path, Query, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
-use axum::routing::{delete, post};
+use axum::routing::{delete, get, post};
 use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 use serde_json::{Map, Value};
 
 use crate::api::response::PlusApiResult;
@@ -35,6 +35,12 @@ struct AdminProviderSecretState {
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 struct NormalizedListRequest {
+    provider_code: Option<String>,
+    status: Option<String>,
+}
+
+#[derive(Debug, Default, Deserialize)]
+struct ProviderSecretListQuery {
     provider_code: Option<String>,
     status: Option<String>,
 }
@@ -115,6 +121,16 @@ pub fn admin_provider_secret_router_with_store(
             "/backend/v3/api/provider_secrets/{secret_id}",
             delete(delete_provider_secret),
         )
+        .route(
+            "/backend/v3/api/integration/provider_secrets",
+            get(fetch_provider_secrets_from_query)
+                .post(create_provider_secret)
+                .put(update_provider_secret),
+        )
+        .route(
+            "/backend/v3/api/integration/provider_secrets/{secret_id}",
+            delete(delete_provider_secret),
+        )
         .with_state(AdminProviderSecretState {
             store,
             entity_uuid_generator,
@@ -135,6 +151,39 @@ async fn fetch_provider_secrets(
         Err(message) => return bad_request(message),
     };
     let request = match normalize_list_request(request) {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
+
+    match state
+        .store
+        .list_provider_secrets(ListAdminProviderSecretsQuery {
+            subject,
+            provider_code: request.provider_code,
+            status: request.status,
+        })
+        .await
+    {
+        Ok(items) => Json(PlusApiResult::success(AdminProviderSecretListResponse {
+            items: items.into_iter().map(to_item_response).collect(),
+        }))
+        .into_response(),
+        Err(error) => {
+            provider_secret_system_response("provider secret read model is unavailable", error)
+        }
+    }
+}
+
+async fn fetch_provider_secrets_from_query(
+    State(state): State<AdminProviderSecretState>,
+    headers: HeaderMap,
+    Query(query): Query<ProviderSecretListQuery>,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let request = match normalize_list_query(query) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
@@ -307,6 +356,27 @@ fn normalize_list_request(request: Map<String, Value>) -> Result<NormalizedListR
     .transpose()?;
     let status = optional_text(&request, "status", "provider secret status", 32)?
         .map(|status| normalize_status(&status))
+        .transpose()?;
+    Ok(NormalizedListRequest {
+        provider_code,
+        status,
+    })
+}
+
+fn normalize_list_query(query: ProviderSecretListQuery) -> Result<NormalizedListRequest, String> {
+    let provider_code = query
+        .provider_code
+        .as_deref()
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(normalize_provider_code)
+        .transpose()?;
+    let status = query
+        .status
+        .as_deref()
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(normalize_status)
         .transpose()?;
     Ok(NormalizedListRequest {
         provider_code,
@@ -788,4 +858,21 @@ fn civil_from_days(days: i64) -> (i64, i64, i64) {
     let month = month_prime + if month_prime < 10 { 3 } else { -9 };
     let year = year + if month <= 2 { 1 } else { 0 };
     (year, month, day)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn provider_secret_sdk_query_maps_to_normalized_filters() {
+        let request = normalize_list_query(ProviderSecretListQuery {
+            provider_code: Some("OpenAI".to_owned()),
+            status: Some("disabled".to_owned()),
+        })
+        .expect("provider secret query should normalize");
+
+        assert_eq!(Some("openai".to_owned()), request.provider_code);
+        assert_eq!(Some("disabled".to_owned()), request.status);
+    }
 }

@@ -5,7 +5,8 @@ use axum::middleware::from_fn_with_state;
 use axum::Router;
 use sdkwork_claw_config::{
     ApiKeySecurityConfig, AppSessionConfig, DatabaseConfig, DatabaseEngine, DeploymentMode,
-    PaymentWebhookConfig, ProviderSecretMapConfig, StartupInstallMode, TrustedSubjectConfig,
+    PaymentWebhookConfig, ProviderSecretMapConfig, RequestLimitsConfig, RuntimeConfigProfile,
+    RuntimeTomlConfig, StartupInstallMode, TrustedSubjectConfig,
 };
 use sdkwork_claw_http::AppSubjectBoundaryConfig;
 use sdkwork_claw_product::application::{
@@ -16,18 +17,19 @@ use sdkwork_claw_product::application::{
 use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
 use sdkwork_claw_product::infrastructure::provider::{
     ProviderSecretMapResolver, SecretRefOpenAiCompatibleProviderHealthProbe,
+    DEFAULT_HEALTH_PROBE_TIMEOUT_MILLIS,
 };
 use sdkwork_claw_product::infrastructure::sql::installer::{
     log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
 };
 use sdkwork_claw_product::infrastructure::sql::postgres::{
     PostgresAccountSummaryReadStore, PostgresAdminAuthSettingsStore, PostgresAppAuthStore,
-    PostgresAppGatewayTracesReadStore, PostgresAppGenerationHistoryReadStore,
-    PostgresAppMessagesReadStore, PostgresAppProvidersReadStore,
-    PostgresAppRoutingChannelCommandStore, PostgresAppRoutingReadStore,
-    PostgresAppRoutingStrategyStore, PostgresAppSessionEventStore, PostgresAppSkillsReadStore,
-    PostgresAppStoreReadStore, PostgresAppUserProfileReadStore, PostgresBillingStore,
-    PostgresCatalogLoadError, PostgresCheckoutStore, PostgresCourseStore,
+    PostgresAppCommerceExchangeStore, PostgresAppGatewayTracesReadStore,
+    PostgresAppGenerationHistoryReadStore, PostgresAppMessagesReadStore,
+    PostgresAppProvidersReadStore, PostgresAppRoutingChannelCommandStore,
+    PostgresAppRoutingReadStore, PostgresAppRoutingStrategyStore, PostgresAppSessionEventStore,
+    PostgresAppSkillsReadStore, PostgresAppStoreReadStore, PostgresAppUserProfileReadStore,
+    PostgresBillingStore, PostgresCatalogLoadError, PostgresCheckoutStore, PostgresCourseStore,
     PostgresDashboardOverviewReadStore, PostgresForumStore, PostgresGatewayApiKeyCommandStore,
     PostgresModelRankingRefreshStore, PostgresModelRankingsReadStore, PostgresPaymentCallbackStore,
     PostgresPricingCatalogLoader, PostgresRechargeStore, PostgresSettingsStore,
@@ -36,31 +38,32 @@ use sdkwork_claw_product::infrastructure::sql::postgres::{
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
     SqlCatalogLoadError, SqliteAccountSummaryReadStore, SqliteAdminAuthSettingsStore,
-    SqliteAppAuthStore, SqliteAppGatewayTracesReadStore, SqliteAppGenerationHistoryReadStore,
-    SqliteAppMessagesReadStore, SqliteAppProvidersReadStore, SqliteAppRoutingChannelCommandStore,
-    SqliteAppRoutingReadStore, SqliteAppRoutingStrategyStore, SqliteAppSessionEventStore,
-    SqliteAppSkillsReadStore, SqliteAppStoreReadStore, SqliteAppUserProfileReadStore,
-    SqliteBillingStore, SqliteCheckoutStore, SqliteCourseStore, SqliteDashboardOverviewReadStore,
-    SqliteForumStore, SqliteGatewayApiKeyCommandStore, SqliteModelRankingRefreshStore,
-    SqliteModelRankingsReadStore, SqlitePaymentCallbackStore, SqlitePricingCatalogLoader,
-    SqliteRechargeStore, SqliteSettingsStore, SqliteSettlementsDashboardReadStore,
-    SqliteUsageLogsReadStore, SqliteVerificationDeliveryConfigStore,
+    SqliteAppAuthStore, SqliteAppCommerceExchangeStore, SqliteAppGatewayTracesReadStore,
+    SqliteAppGenerationHistoryReadStore, SqliteAppMessagesReadStore, SqliteAppProvidersReadStore,
+    SqliteAppRoutingChannelCommandStore, SqliteAppRoutingReadStore, SqliteAppRoutingStrategyStore,
+    SqliteAppSessionEventStore, SqliteAppSkillsReadStore, SqliteAppStoreReadStore,
+    SqliteAppUserProfileReadStore, SqliteBillingStore, SqliteCheckoutStore, SqliteCourseStore,
+    SqliteDashboardOverviewReadStore, SqliteForumStore, SqliteGatewayApiKeyCommandStore,
+    SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore, SqlitePaymentCallbackStore,
+    SqlitePricingCatalogLoader, SqliteRechargeStore, SqliteSettingsStore,
+    SqliteSettlementsDashboardReadStore, SqliteUsageLogsReadStore,
+    SqliteVerificationDeliveryConfigStore,
 };
 use sdkwork_claw_product::infrastructure::OsApiKeySecretGenerator;
 use sdkwork_claw_product::ports::PricingCatalog;
 use sdkwork_claw_product::ports::{
-    AccountSummaryReadStore, AdminAuthSettingsStore, AppAuthStore, AppGatewayTracesReadStore,
-    AppGenerationHistoryReadStore, AppMessagesReadStore, AppProvidersReadStore,
-    AppRoutingChannelCommandStore, AppRoutingReadStore, AppRoutingStrategyStore,
-    AppSessionEventStore, AppSkillsCommandStore, AppSkillsReadStore, AppStoreReadStore,
-    AppUserProfileReadStore, BillingStore, CheckoutStore, CourseApplicationCommandStore,
-    CourseReadStore, DashboardOverviewReadStore, ForumCommentCommandStore, ForumCommentReadStore,
-    ForumFeedCommandStore, ForumFeedReadStore, GatewayApiKeyCommandStore,
-    GatewayApiKeyManagementReadStore, ModelRankingRefreshOutcome, ModelRankingRefreshRunStatus,
-    ModelRankingRefreshStore, ModelRankingsCacheInvalidation, ModelRankingsReadModelStore,
-    PaymentCallbackStore, ProviderHealthProbe, RechargeStore, SettingsStore,
-    SettlementsDashboardReadStore, UnconfiguredProviderHealthProbe, UsageLogsReadStore,
-    VerificationCodeSender,
+    AccountSummaryReadStore, AdminAuthSettingsStore, AppAuthStore, AppCommerceExchangeReadStore,
+    AppGatewayTracesReadStore, AppGenerationHistoryReadStore, AppMessagesReadStore,
+    AppProvidersReadStore, AppRoutingChannelCommandStore, AppRoutingReadStore,
+    AppRoutingStrategyStore, AppSessionEventStore, AppSkillsCommandStore, AppSkillsReadStore,
+    AppStoreReadStore, AppUserProfileReadStore, BillingStore, CheckoutStore,
+    CourseApplicationCommandStore, CourseReadStore, DashboardOverviewReadStore,
+    ForumCommentCommandStore, ForumCommentReadStore, ForumFeedCommandStore, ForumFeedReadStore,
+    GatewayApiKeyCommandStore, GatewayApiKeyManagementReadStore, ModelRankingRefreshOutcome,
+    ModelRankingRefreshRunStatus, ModelRankingRefreshStore, ModelRankingsCacheInvalidation,
+    ModelRankingsReadModelStore, PaymentCallbackStore, ProviderHealthProbe, RechargeStore,
+    SettingsStore, SettlementsDashboardReadStore, UnconfiguredProviderHealthProbe,
+    UsageLogsReadStore, VerificationCodeSender,
 };
 use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
 use sqlx::{PgPool, SqlitePool};
@@ -78,6 +81,7 @@ type AppRoutingChannelCommandRuntimeStore = Arc<dyn AppRoutingChannelCommandStor
 type AppRoutingStore = Arc<dyn AppRoutingReadStore + Send + Sync>;
 type AppRoutingStrategyRuntimeStore = Arc<dyn AppRoutingStrategyStore + Send + Sync>;
 type AppAuthRuntimeStore = Arc<dyn AppAuthStore + Send + Sync>;
+type AppCommerceExchangeRuntimeStore = Arc<dyn AppCommerceExchangeReadStore + Send + Sync>;
 type AppAuthSettingsRuntimeStore = Arc<dyn AdminAuthSettingsStore + Send + Sync>;
 type AppSessionAuditStore = Arc<dyn AppSessionEventStore + Send + Sync>;
 type AppVerificationCodeSender = Arc<dyn VerificationCodeSender + Send + Sync>;
@@ -196,6 +200,8 @@ pub fn router_with_api_key_management_read_store_command_store_and_api_key_secur
         None,
         None,
         None,
+        None,
+        RequestLimitsConfig::default(),
     ))
 }
 
@@ -318,6 +324,7 @@ fn router_with_api_key_management_store_and_database_status(
     verification_code_sender: AppVerificationCodeSender,
     expose_debug_verification_code: bool,
     payment_webhook_config: Option<PaymentWebhookConfig>,
+    app_commerce_exchange_store: Option<AppCommerceExchangeRuntimeStore>,
     account_summary_read_store: Option<AccountSummaryStore>,
     app_user_profile_read_store: Option<AppUserProfileStore>,
     billing_store: Option<BillingRuntimeStore>,
@@ -346,6 +353,7 @@ fn router_with_api_key_management_store_and_database_status(
     app_routing_channel_command_store: Option<AppRoutingChannelCommandRuntimeStore>,
     model_catalog_router: Option<Router>,
     config: Option<&DatabaseConfig>,
+    request_limits_config: RequestLimitsConfig,
 ) -> Router {
     let subject_boundary_config =
         AppSubjectBoundaryConfig::new(trusted_subject_config.clone(), app_session_config.clone());
@@ -371,7 +379,20 @@ fn router_with_api_key_management_store_and_database_status(
             subject_boundary_config.clone(),
             sdkwork_claw_http::app_request_subject_boundary,
         ));
-    let mut router = merge_commerce_foundation_router(router_with_database_status(config))
+    let foundation_router = match app_commerce_exchange_store {
+        Some(exchange_store) => {
+            sdkwork_claw_product::api::app_commerce_foundation_router_with_exchange_store(
+                exchange_store,
+            )
+            .layer(from_fn_with_state(
+                subject_boundary_config.clone(),
+                sdkwork_claw_http::app_request_subject_boundary,
+            ))
+        }
+        None => sdkwork_claw_product::api::app_commerce_foundation_router(),
+    };
+    let mut router = router_with_database_status(config)
+        .merge(foundation_router)
         .merge(app_session_router)
         .merge(api_key_router);
     if let Some(model_catalog_router) = model_catalog_router {
@@ -439,10 +460,11 @@ fn router_with_api_key_management_store_and_database_status(
     router = match payment_callback_store {
         Some(store) => match payment_webhook_config {
             Some(payment_webhook_config) => router.merge(
-                sdkwork_claw_product::api::app_payment_callback_router_with_store(
+                sdkwork_claw_product::api::app_payment_callback_router_with_store_and_body_limit(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
                     payment_webhook_config,
+                    request_limits_config.payment_callback_body_max_bytes(),
                 ),
             ),
             None => router.merge(sdkwork_claw_product::api::app_payment_callback_router()),
@@ -566,6 +588,7 @@ fn router_with_api_key_management_store_and_database_status(
             comment_command_store,
             subject_boundary_config.trusted_subject().clone(),
             subject_boundary_config.app_session().clone(),
+            request_limits_config.forum_json_body_max_bytes(),
         )),
         _ => router.merge(sdkwork_claw_product::api::app_forum_router()),
     };
@@ -769,13 +792,16 @@ pub fn app_forum_router_with_store_and_subject_boundary(
     comment_command_store: Arc<dyn ForumCommentCommandStore + Send + Sync>,
     trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
+    json_body_max_bytes: usize,
 ) -> Router {
-    sdkwork_claw_product::api::app_forum_router_with_store(
+    sdkwork_claw_product::api::app_forum_router_with_store_community_links_and_json_body_limit(
         feed_read_store,
         feed_command_store,
         comment_read_store,
         comment_command_store,
         Arc::new(OsApiKeySecretGenerator),
+        sdkwork_claw_product::api::configured_forum_community_links(),
+        json_body_max_bytes,
     )
     .layer(from_fn_with_state(
         AppSubjectBoundaryConfig::new(trusted_subject_config, app_session_config),
@@ -804,6 +830,7 @@ pub async fn router_with_sqlite_product_catalog(
     let account_summary_read_store = Arc::new(SqliteAccountSummaryReadStore::new(pool.clone()));
     let app_user_profile_read_store = Arc::new(SqliteAppUserProfileReadStore::new(pool.clone()));
     let billing_store = Arc::new(SqliteBillingStore::new(pool.clone()));
+    let app_commerce_exchange_store = Arc::new(SqliteAppCommerceExchangeStore::new(pool.clone()));
     let checkout_store = Arc::new(SqliteCheckoutStore::new(pool.clone()));
     let recharge_store = Arc::new(SqliteRechargeStore::new(pool.clone()));
     let payment_callback_store = Arc::new(SqlitePaymentCallbackStore::new(pool.clone()));
@@ -842,6 +869,7 @@ pub async fn router_with_sqlite_product_catalog(
         Arc::new(sdkwork_claw_product::ports::DebugVerificationCodeSender),
         true,
         Some(payment_webhook_config),
+        Some(app_commerce_exchange_store),
         Some(account_summary_read_store),
         Some(app_user_profile_read_store),
         Some(billing_store),
@@ -870,6 +898,7 @@ pub async fn router_with_sqlite_product_catalog(
         Some(app_routing_channel_command_store),
         Some(model_catalog_router),
         None,
+        RequestLimitsConfig::default(),
     ))
 }
 
@@ -894,6 +923,7 @@ pub async fn router_with_postgres_product_catalog(
     let account_summary_read_store = Arc::new(PostgresAccountSummaryReadStore::new(pool.clone()));
     let app_user_profile_read_store = Arc::new(PostgresAppUserProfileReadStore::new(pool.clone()));
     let billing_store = Arc::new(PostgresBillingStore::new(pool.clone()));
+    let app_commerce_exchange_store = Arc::new(PostgresAppCommerceExchangeStore::new(pool.clone()));
     let checkout_store = Arc::new(PostgresCheckoutStore::new(pool.clone()));
     let recharge_store = Arc::new(PostgresRechargeStore::new(pool.clone()));
     let payment_callback_store = Arc::new(PostgresPaymentCallbackStore::new(pool.clone()));
@@ -932,6 +962,7 @@ pub async fn router_with_postgres_product_catalog(
         Arc::new(sdkwork_claw_product::ports::DebugVerificationCodeSender),
         true,
         Some(payment_webhook_config),
+        Some(app_commerce_exchange_store),
         Some(account_summary_read_store),
         Some(app_user_profile_read_store),
         Some(billing_store),
@@ -960,6 +991,7 @@ pub async fn router_with_postgres_product_catalog(
         Some(app_routing_channel_command_store),
         Some(model_catalog_router),
         None,
+        RequestLimitsConfig::default(),
     ))
 }
 
@@ -1090,6 +1122,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
         provider_secret_map_config,
         deployment_mode,
         StartupInstallMode::Ensure,
+        None,
     )
     .await
 }
@@ -1103,9 +1136,13 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
     provider_secret_map_config: Option<ProviderSecretMapConfig>,
     deployment_mode: DeploymentMode,
     startup_install_mode: StartupInstallMode,
+    runtime_toml: Option<&RuntimeTomlConfig>,
 ) -> Result<Router, ProductCatalogRouterError> {
+    let request_limits_config = RequestLimitsConfig::from_env_or_runtime_toml(runtime_toml)
+        .map_err(ProductCatalogRouterError::Config)?;
     let api_key_hasher = api_key_hasher_from_config(api_key_security_config)?;
-    let provider_health_probe = build_provider_health_probe(provider_secret_map_config);
+    let provider_health_probe =
+        build_provider_health_probe(provider_secret_map_config, runtime_toml)?;
     match config.engine {
         DatabaseEngine::Sqlite => {
             let sqlite_options = SqliteConnectOptions::from_str(config.url.as_str())
@@ -1133,7 +1170,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 model_rankings_service(Arc::new(SqliteModelRankingsReadStore::new(pool.clone())));
             maybe_spawn_sqlite_model_ranking_refresh_worker(
                 &pool,
-                model_ranking_refresh_worker_config_from_env()
+                model_ranking_refresh_worker_config_from_env_or_toml(runtime_toml)
                     .map_err(ProductCatalogRouterError::Config)?,
                 Some(Arc::clone(&model_rankings_store)),
             )
@@ -1151,6 +1188,8 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
             let app_user_profile_read_store =
                 Arc::new(SqliteAppUserProfileReadStore::new(pool.clone()));
             let billing_store = Arc::new(SqliteBillingStore::new(pool.clone()));
+            let app_commerce_exchange_store =
+                Arc::new(SqliteAppCommerceExchangeStore::new(pool.clone()));
             let checkout_store = Arc::new(SqliteCheckoutStore::new(pool.clone()));
             let recharge_store = Arc::new(SqliteRechargeStore::new(pool.clone()));
             let payment_callback_store = Arc::new(SqlitePaymentCallbackStore::new(pool.clone()));
@@ -1199,6 +1238,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 verification_code_sender,
                 expose_debug_verification_code,
                 Some(payment_webhook_config),
+                Some(app_commerce_exchange_store),
                 Some(account_summary_read_store),
                 Some(app_user_profile_read_store),
                 Some(billing_store),
@@ -1227,6 +1267,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(app_routing_channel_command_store),
                 Some(model_catalog_router),
                 Some(&config),
+                request_limits_config,
             ))
         }
         DatabaseEngine::Postgres => {
@@ -1250,7 +1291,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 model_rankings_service(Arc::new(PostgresModelRankingsReadStore::new(pool.clone())));
             maybe_spawn_postgres_model_ranking_refresh_worker(
                 &pool,
-                model_ranking_refresh_worker_config_from_env()
+                model_ranking_refresh_worker_config_from_env_or_toml(runtime_toml)
                     .map_err(ProductCatalogRouterError::Config)?,
                 Some(Arc::clone(&model_rankings_store)),
             )
@@ -1268,6 +1309,8 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
             let app_user_profile_read_store =
                 Arc::new(PostgresAppUserProfileReadStore::new(pool.clone()));
             let billing_store = Arc::new(PostgresBillingStore::new(pool.clone()));
+            let app_commerce_exchange_store =
+                Arc::new(PostgresAppCommerceExchangeStore::new(pool.clone()));
             let checkout_store = Arc::new(PostgresCheckoutStore::new(pool.clone()));
             let recharge_store = Arc::new(PostgresRechargeStore::new(pool.clone()));
             let payment_callback_store = Arc::new(PostgresPaymentCallbackStore::new(pool.clone()));
@@ -1319,6 +1362,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 verification_code_sender,
                 expose_debug_verification_code,
                 Some(payment_webhook_config),
+                Some(app_commerce_exchange_store),
                 Some(account_summary_read_store),
                 Some(app_user_profile_read_store),
                 Some(billing_store),
@@ -1347,6 +1391,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(app_routing_channel_command_store),
                 Some(model_catalog_router),
                 Some(&config),
+                request_limits_config,
             ))
         }
     }
@@ -1362,21 +1407,29 @@ pub async fn router_with_optional_database_config(
 }
 
 pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
+    let runtime_toml =
+        RuntimeTomlConfig::from_env_config_file().map_err(ProductCatalogRouterError::Config)?;
     let config = require_database_config(
-        DatabaseConfig::from_env_or_initialize().map_err(ProductCatalogRouterError::Config)?,
+        DatabaseConfig::from_env_or_runtime_toml_or_initialize(runtime_toml.as_ref())
+            .map_err(ProductCatalogRouterError::Config)?,
+        runtime_toml.as_ref(),
     )?;
-    let startup_install_mode =
-        StartupInstallMode::from_env().map_err(ProductCatalogRouterError::Config)?;
+    let startup_install_mode = StartupInstallMode::from_env_or_runtime_toml(runtime_toml.as_ref())
+        .map_err(ProductCatalogRouterError::Config)?;
     let api_key_security_config =
-        ApiKeySecurityConfig::from_env().map_err(ProductCatalogRouterError::Config)?;
+        ApiKeySecurityConfig::from_env_or_runtime_toml(runtime_toml.as_ref())
+            .map_err(ProductCatalogRouterError::Config)?;
     let trusted_subject_config =
-        TrustedSubjectConfig::from_env().map_err(ProductCatalogRouterError::Config)?;
-    let app_session_config =
-        AppSessionConfig::from_env().map_err(ProductCatalogRouterError::Config)?;
+        TrustedSubjectConfig::from_env_or_runtime_toml(runtime_toml.as_ref())
+            .map_err(ProductCatalogRouterError::Config)?;
+    let app_session_config = AppSessionConfig::from_env_or_runtime_toml(runtime_toml.as_ref())
+        .map_err(ProductCatalogRouterError::Config)?;
     let payment_webhook_config =
-        PaymentWebhookConfig::from_env().map_err(ProductCatalogRouterError::Config)?;
+        PaymentWebhookConfig::from_env_or_runtime_toml(runtime_toml.as_ref())
+            .map_err(ProductCatalogRouterError::Config)?;
     let provider_secret_map_config =
-        ProviderSecretMapConfig::from_env().map_err(ProductCatalogRouterError::Config)?;
+        ProviderSecretMapConfig::from_env_or_runtime_toml(runtime_toml.as_ref())
+            .map_err(ProductCatalogRouterError::Config)?;
     router_with_database_config_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config_and_startup_install_mode(
         config,
         require_api_key_security_config(api_key_security_config)?,
@@ -1384,8 +1437,10 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
         require_app_session_config(app_session_config)?,
         require_payment_webhook_config(payment_webhook_config)?,
         provider_secret_map_config,
-        DeploymentMode::from_env(),
+        deployment_mode_from_env_or_toml(runtime_toml.as_ref())
+            .map_err(ProductCatalogRouterError::Config)?,
         startup_install_mode,
+        runtime_toml.as_ref(),
     )
     .await
 }
@@ -1401,14 +1456,37 @@ fn api_key_hasher_from_config(
 
 fn build_provider_health_probe(
     provider_secret_map_config: Option<ProviderSecretMapConfig>,
-) -> ProviderHealthProbeRuntime {
+    runtime_toml: Option<&RuntimeTomlConfig>,
+) -> Result<ProviderHealthProbeRuntime, ProductCatalogRouterError> {
+    let health_probe_timeout = provider_health_probe_timeout_from_env_or_toml(runtime_toml)
+        .map_err(ProductCatalogRouterError::Config)?;
     match provider_secret_map_config {
         Some(config) => {
             let resolver = Arc::new(ProviderSecretMapResolver::from_config(config));
-            Arc::new(SecretRefOpenAiCompatibleProviderHealthProbe::new(resolver))
+            Ok(Arc::new(
+                SecretRefOpenAiCompatibleProviderHealthProbe::with_response_timeout(
+                    resolver,
+                    health_probe_timeout,
+                ),
+            ))
         }
-        None => Arc::new(UnconfiguredProviderHealthProbe),
+        None => Ok(Arc::new(UnconfiguredProviderHealthProbe)),
     }
+}
+
+fn provider_health_probe_timeout_from_env_or_toml(
+    runtime_toml: Option<&RuntimeTomlConfig>,
+) -> Result<Duration, String> {
+    const HEALTH_PROBE_TIMEOUT: &str = "SDKWORK_CLAW_PROVIDER_HEALTH_PROBE_TIMEOUT_MILLIS";
+    let timeout_millis = sdkwork_claw_config::runtime::config_u64(
+        HEALTH_PROBE_TIMEOUT,
+        runtime_toml.and_then(|config| config.provider_relay.runtime.health_probe_timeout_millis),
+    )?
+    .unwrap_or(DEFAULT_HEALTH_PROBE_TIMEOUT_MILLIS);
+    if timeout_millis == 0 {
+        return Err(format!("{HEALTH_PROBE_TIMEOUT} must be a positive integer"));
+    }
+    Ok(Duration::from_millis(timeout_millis))
 }
 
 fn model_rankings_service(read_store: ModelRankingsRuntimeStore) -> ModelRankingsRuntimeStore {
@@ -1649,8 +1727,15 @@ async fn postgres_model_ranking_schema_ready(pool: &PgPool) -> Result<bool, sqlx
         && job_column_count == 6)
 }
 
+#[cfg(test)]
 fn model_ranking_refresh_worker_config_from_env() -> Result<ModelRankingRefreshWorkerConfig, String>
 {
+    model_ranking_refresh_worker_config_from_env_or_toml(None)
+}
+
+fn model_ranking_refresh_worker_config_from_env_or_toml(
+    runtime_toml: Option<&RuntimeTomlConfig>,
+) -> Result<ModelRankingRefreshWorkerConfig, String> {
     const ENABLED: &str = "SDKWORK_CLAW_MODEL_RANKING_REFRESH_WORKER_ENABLED";
     const TENANT_ID: &str = "SDKWORK_CLAW_MODEL_RANKING_TENANT_ID";
     const ORGANIZATION_ID: &str = "SDKWORK_CLAW_MODEL_RANKING_ORGANIZATION_ID";
@@ -1669,106 +1754,137 @@ fn model_ranking_refresh_worker_config_from_env() -> Result<ModelRankingRefreshW
 
     let defaults = ModelRankingRefreshWorkerConfig::default();
     Ok(ModelRankingRefreshWorkerConfig {
-        enabled: parse_optional_bool_env(ENABLED)?.unwrap_or(defaults.enabled),
-        tenant_id: parse_non_negative_i64_env(TENANT_ID, defaults.tenant_id)?,
-        organization_id: parse_non_negative_i64_env(ORGANIZATION_ID, defaults.organization_id)?,
-        rank_scope: parse_non_empty_string_env(RANK_SCOPE, defaults.rank_scope)?,
-        snapshot_period: parse_non_empty_string_env(SNAPSHOT_PERIOD, defaults.snapshot_period)?,
-        limit: parse_positive_i64_env(LIMIT, defaults.limit)?,
-        lookback_days: parse_positive_i64_env(LOOKBACK_DAYS, defaults.lookback_days)?,
-        interval_millis: parse_positive_u64_env(INTERVAL_MILLIS, defaults.interval_millis)?,
-        cache_max_age_seconds: parse_positive_i64_env(
+        enabled: parse_optional_bool_config(
+            ENABLED,
+            runtime_toml.and_then(|config| config.model_ranking.enabled),
+        )?
+        .unwrap_or(defaults.enabled),
+        tenant_id: parse_non_negative_i64_config(
+            TENANT_ID,
+            runtime_toml.and_then(|config| config.model_ranking.tenant_id),
+            defaults.tenant_id,
+        )?,
+        organization_id: parse_non_negative_i64_config(
+            ORGANIZATION_ID,
+            runtime_toml.and_then(|config| config.model_ranking.organization_id),
+            defaults.organization_id,
+        )?,
+        rank_scope: parse_non_empty_string_config(
+            RANK_SCOPE,
+            runtime_toml.and_then(|config| config.model_ranking.rank_scope.as_deref()),
+            defaults.rank_scope,
+        )?,
+        snapshot_period: parse_non_empty_string_config(
+            SNAPSHOT_PERIOD,
+            runtime_toml.and_then(|config| config.model_ranking.snapshot_period.as_deref()),
+            defaults.snapshot_period,
+        )?,
+        limit: parse_positive_i64_config(
+            LIMIT,
+            runtime_toml.and_then(|config| config.model_ranking.limit),
+            defaults.limit,
+        )?,
+        lookback_days: parse_positive_i64_config(
+            LOOKBACK_DAYS,
+            runtime_toml.and_then(|config| config.model_ranking.lookback_days),
+            defaults.lookback_days,
+        )?,
+        interval_millis: parse_positive_u64_config(
+            INTERVAL_MILLIS,
+            runtime_toml.and_then(|config| config.model_ranking.interval_millis),
+            defaults.interval_millis,
+        )?,
+        cache_max_age_seconds: parse_positive_i64_config(
             CACHE_MAX_AGE_SECONDS,
+            runtime_toml.and_then(|config| config.model_ranking.cache_max_age_seconds),
             defaults.cache_max_age_seconds,
         )?,
-        run_timeout_millis: parse_positive_u64_env(
+        run_timeout_millis: parse_positive_u64_config(
             RUN_TIMEOUT_MILLIS,
+            runtime_toml.and_then(|config| config.model_ranking.run_timeout_millis),
             defaults.run_timeout_millis,
         )?,
-        max_retry_attempts: parse_non_negative_u32_env(
+        max_retry_attempts: parse_non_negative_u32_config(
             MAX_RETRY_ATTEMPTS,
+            runtime_toml.and_then(|config| config.model_ranking.max_retry_attempts),
             defaults.max_retry_attempts,
         )?,
-        retry_backoff_millis: parse_positive_u64_env(
+        retry_backoff_millis: parse_positive_u64_config(
             RETRY_BACKOFF_MILLIS,
+            runtime_toml.and_then(|config| config.model_ranking.retry_backoff_millis),
             defaults.retry_backoff_millis,
         )?,
-        run_on_startup: parse_optional_bool_env(RUN_ON_STARTUP)?.unwrap_or(defaults.run_on_startup),
-        alert_after_consecutive_failures: parse_positive_i64_env(
+        run_on_startup: parse_optional_bool_config(
+            RUN_ON_STARTUP,
+            runtime_toml.and_then(|config| config.model_ranking.run_on_startup),
+        )?
+        .unwrap_or(defaults.run_on_startup),
+        alert_after_consecutive_failures: parse_positive_i64_config(
             ALERT_AFTER_CONSECUTIVE_FAILURES,
+            runtime_toml.and_then(|config| config.model_ranking.alert_after_consecutive_failures),
             defaults.alert_after_consecutive_failures,
         )?,
         trigger_type: defaults.trigger_type,
     })
 }
 
-fn parse_optional_bool_env(name: &str) -> Result<Option<bool>, String> {
-    let Some(value) = std::env::var(name).ok() else {
-        return Ok(None);
-    };
-    let normalized = value.trim().to_ascii_lowercase();
-    match normalized.as_str() {
-        "1" | "true" | "yes" | "on" => Ok(Some(true)),
-        "0" | "false" | "no" | "off" => Ok(Some(false)),
-        _ => Err(format!("{name} must be a boolean value")),
-    }
+fn parse_optional_bool_config(
+    name: &str,
+    config_value: Option<bool>,
+) -> Result<Option<bool>, String> {
+    sdkwork_claw_config::runtime::config_bool(name, config_value)
 }
 
-fn parse_non_negative_i64_env(name: &str, default: i64) -> Result<i64, String> {
-    let Some(value) = std::env::var(name).ok() else {
-        return Ok(default);
-    };
-    let parsed = value
-        .trim()
-        .parse::<i64>()
-        .map_err(|_| format!("{name} must be a non-negative integer"))?;
+fn parse_non_negative_i64_config(
+    name: &str,
+    config_value: Option<i64>,
+    default: i64,
+) -> Result<i64, String> {
+    let parsed = sdkwork_claw_config::runtime::config_i64(name, config_value)?.unwrap_or(default);
     if parsed < 0 {
         return Err(format!("{name} must be a non-negative integer"));
     }
     Ok(parsed)
 }
 
-fn parse_positive_i64_env(name: &str, default: i64) -> Result<i64, String> {
-    let Some(value) = std::env::var(name).ok() else {
-        return Ok(default);
-    };
-    let parsed = value
-        .trim()
-        .parse::<i64>()
-        .map_err(|_| format!("{name} must be a positive integer"))?;
+fn parse_positive_i64_config(
+    name: &str,
+    config_value: Option<i64>,
+    default: i64,
+) -> Result<i64, String> {
+    let parsed = sdkwork_claw_config::runtime::config_i64(name, config_value)?.unwrap_or(default);
     if parsed <= 0 {
         return Err(format!("{name} must be a positive integer"));
     }
     Ok(parsed)
 }
 
-fn parse_positive_u64_env(name: &str, default: u64) -> Result<u64, String> {
-    let Some(value) = std::env::var(name).ok() else {
-        return Ok(default);
-    };
-    let parsed = value
-        .trim()
-        .parse::<u64>()
-        .map_err(|_| format!("{name} must be a positive integer"))?;
+fn parse_positive_u64_config(
+    name: &str,
+    config_value: Option<u64>,
+    default: u64,
+) -> Result<u64, String> {
+    let parsed = sdkwork_claw_config::runtime::config_u64(name, config_value)?.unwrap_or(default);
     if parsed == 0 {
         return Err(format!("{name} must be a positive integer"));
     }
     Ok(parsed)
 }
 
-fn parse_non_negative_u32_env(name: &str, default: u32) -> Result<u32, String> {
-    let Some(value) = std::env::var(name).ok() else {
-        return Ok(default);
-    };
-    let parsed = value
-        .trim()
-        .parse::<u32>()
-        .map_err(|_| format!("{name} must be a non-negative integer"))?;
-    Ok(parsed)
+fn parse_non_negative_u32_config(
+    name: &str,
+    config_value: Option<u32>,
+    default: u32,
+) -> Result<u32, String> {
+    Ok(sdkwork_claw_config::runtime::config_u32(name, config_value)?.unwrap_or(default))
 }
 
-fn parse_non_empty_string_env(name: &str, default: String) -> Result<String, String> {
-    let Some(value) = std::env::var(name).ok() else {
+fn parse_non_empty_string_config(
+    name: &str,
+    config_value: Option<&str>,
+    default: String,
+) -> Result<String, String> {
+    let Some(value) = sdkwork_claw_config::runtime::config_value(name, config_value) else {
         return Ok(default);
     };
     let trimmed = value.trim();
@@ -1824,10 +1940,12 @@ fn require_payment_webhook_config(
 
 fn require_database_config(
     config: Option<DatabaseConfig>,
+    runtime_toml: Option<&RuntimeTomlConfig>,
 ) -> Result<DatabaseConfig, ProductCatalogRouterError> {
     config.ok_or_else(|| {
-        let help_text =
-            DatabaseConfig::startup_help_text(runtime_config_profile_from_deployment_mode());
+        let profile = RuntimeConfigProfile::from_env_or_runtime_toml(runtime_toml)
+            .unwrap_or(RuntimeConfigProfile::Server);
+        let help_text = DatabaseConfig::startup_help_text(profile);
         ProductCatalogRouterError::Config(
             format!(
                 "SDKWORK_CLAW_DATABASE_URL is required for sdkwork-claw-app-api startup so install checks can run.\n{help_text}"
@@ -1836,13 +1954,14 @@ fn require_database_config(
     })
 }
 
-fn runtime_config_profile_from_deployment_mode() -> sdkwork_claw_config::RuntimeConfigProfile {
-    match DeploymentMode::from_env() {
-        DeploymentMode::Desktop => sdkwork_claw_config::RuntimeConfigProfile::Desktop,
-        DeploymentMode::Server | DeploymentMode::Docker | DeploymentMode::Kubernetes => {
-            sdkwork_claw_config::RuntimeConfigProfile::Server
-        }
-    }
+fn deployment_mode_from_env_or_toml(
+    runtime_toml: Option<&RuntimeTomlConfig>,
+) -> Result<DeploymentMode, String> {
+    DeploymentMode::from_optional_part(
+        std::env::var(DeploymentMode::ENV_DEPLOYMENT_MODE)
+            .ok()
+            .or_else(|| runtime_toml.and_then(|config| config.runtime.deployment_mode.clone())),
+    )
 }
 
 #[derive(Debug)]
@@ -1885,7 +2004,19 @@ impl From<PostgresCatalogLoadError> for ProductCatalogRouterError {
 }
 
 pub async fn serve(bind_addr: &str) -> anyhow::Result<()> {
-    sdkwork_claw_observability::init_tracing();
+    let runtime_toml = sdkwork_claw_config::RuntimeTomlConfig::from_env_config_file()
+        .map_err(anyhow::Error::msg)?;
+    serve_with_runtime_config(bind_addr, runtime_toml.as_ref()).await
+}
+
+pub async fn serve_with_runtime_config(
+    bind_addr: &str,
+    runtime_toml: Option<&sdkwork_claw_config::RuntimeTomlConfig>,
+) -> anyhow::Result<()> {
+    sdkwork_claw_observability::init_tracing_with_runtime_config(
+        runtime_toml.map(|config| &config.observability),
+    )
+    .map_err(anyhow::Error::msg)?;
     let listener = tokio::net::TcpListener::bind(bind_addr).await?;
     axum::serve(listener, router_from_env().await?).await?;
     Ok(())

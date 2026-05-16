@@ -141,6 +141,342 @@ async fn app_auth_sessions_create_issues_dual_token_context_for_active_iam_user_
 }
 
 #[tokio::test]
+async fn app_auth_sessions_current_retrieve_returns_active_persisted_session() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
+    let router = app_auth_router(pool);
+
+    let login_response = router
+        .clone()
+        .oneshot(login_request("alice@example.com", "correct-password"))
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, login_response.status());
+    let login_payload = response_json(login_response).await;
+    let auth_token = login_payload["data"]["authToken"].as_str().unwrap();
+    let access_token = login_payload["data"]["accessToken"].as_str().unwrap();
+    let session_id = login_payload["data"]["sessionId"].as_str().unwrap();
+    assert_eq!("20", login_payload["data"]["context"]["organizationId"]);
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/auth/sessions/current")
+                .header("authorization", format!("Bearer {auth_token}"))
+                .header("Sdkwork-Access-Token", access_token)
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    assert_eq!("2000", payload["code"]);
+    assert_eq!(session_id, payload["data"]["sessionId"]);
+    assert_eq!("30", payload["data"]["user"]["id"]);
+    assert_eq!("alice", payload["data"]["user"]["username"]);
+    assert_eq!("alice@example.com", payload["data"]["user"]["email"]);
+    assert_eq!("Alice Router", payload["data"]["user"]["displayName"]);
+    assert_eq!("password", payload["data"]["context"]["authLevel"]);
+    assert_eq!("10", payload["data"]["context"]["tenantId"]);
+    assert_eq!("20", payload["data"]["context"]["organizationId"]);
+    assert_eq!("30", payload["data"]["context"]["userId"]);
+    assert_eq!(auth_token, payload["data"]["authToken"]);
+    assert_eq!(access_token, payload["data"]["accessToken"]);
+    assert!(payload["data"].get("refreshToken").is_none());
+    assert!(payload["data"]["user"].get("password").is_none());
+}
+
+#[tokio::test]
+async fn app_auth_sessions_current_delete_revokes_active_session() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
+    let router = app_auth_router(pool.clone());
+
+    let login_response = router
+        .clone()
+        .oneshot(login_request("alice@example.com", "correct-password"))
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, login_response.status());
+    let login_payload = response_json(login_response).await;
+    let auth_token = login_payload["data"]["authToken"].as_str().unwrap();
+    let access_token = login_payload["data"]["accessToken"].as_str().unwrap();
+    let session_id = login_payload["data"]["sessionId"].as_str().unwrap();
+
+    let delete_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("DELETE")
+                .uri("/app/v3/api/auth/sessions/current")
+                .header("authorization", format!("Bearer {auth_token}"))
+                .header("Sdkwork-Access-Token", access_token)
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, delete_response.status());
+    let delete_payload = response_json(delete_response).await;
+    assert_eq!("2000", delete_payload["code"]);
+    assert!(delete_payload["data"].as_object().unwrap().is_empty());
+
+    let revoked_at: Option<String> =
+        sqlx::query_scalar("SELECT revoked_at FROM iam_session WHERE id = ?")
+            .bind(session_id)
+            .fetch_one(&pool)
+            .await
+            .unwrap();
+    assert!(revoked_at.is_some());
+    let security_event_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM iam_security_event WHERE session_id = ? AND event_type = 'sessions.revoke'",
+    )
+    .bind(session_id)
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(1, security_event_count);
+
+    let current_response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/auth/sessions/current")
+                .header("authorization", format!("Bearer {auth_token}"))
+                .header("Sdkwork-Access-Token", access_token)
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::UNAUTHORIZED, current_response.status());
+}
+
+#[tokio::test]
+async fn app_auth_sessions_refresh_rotates_tokens_for_active_session() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
+    let router = app_auth_router(pool.clone());
+
+    let login_response = router
+        .clone()
+        .oneshot(login_request("alice@example.com", "correct-password"))
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, login_response.status());
+    let login_payload = response_json(login_response).await;
+    let auth_token = login_payload["data"]["authToken"].as_str().unwrap();
+    let access_token = login_payload["data"]["accessToken"].as_str().unwrap();
+    let refresh_token = login_payload["data"]["refreshToken"].as_str().unwrap();
+    let old_session_id = login_payload["data"]["sessionId"].as_str().unwrap();
+
+    let refresh_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/auth/sessions/refresh")
+                .header("content-type", "application/json")
+                .header("authorization", format!("Bearer {auth_token}"))
+                .header("Sdkwork-Access-Token", access_token)
+                .body(Body::from(
+                    json!({
+                        "refreshToken": refresh_token
+                    })
+                    .to_string(),
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, refresh_response.status());
+    let refresh_payload = response_json(refresh_response).await;
+    assert_eq!("2000", refresh_payload["code"]);
+    assert_ne!(auth_token, refresh_payload["data"]["authToken"]);
+    assert_ne!(access_token, refresh_payload["data"]["accessToken"]);
+    assert_ne!(refresh_token, refresh_payload["data"]["refreshToken"]);
+    assert_eq!(old_session_id, refresh_payload["data"]["sessionId"]);
+    assert_eq!("30", refresh_payload["data"]["user"]["id"]);
+    assert_eq!("20", refresh_payload["data"]["context"]["organizationId"]);
+
+    let old_revoked_at: Option<String> =
+        sqlx::query_scalar("SELECT revoked_at FROM iam_session WHERE id = ?")
+            .bind(old_session_id)
+            .fetch_one(&pool)
+            .await
+            .unwrap();
+    assert!(old_revoked_at.is_none());
+    let active_session_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM iam_session WHERE user_id = '30' AND revoked_at IS NULL",
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(1, active_session_count);
+
+    let old_current_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/auth/sessions/current")
+                .header("authorization", format!("Bearer {auth_token}"))
+                .header("Sdkwork-Access-Token", access_token)
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::UNAUTHORIZED, old_current_response.status());
+
+    let new_current_response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/auth/sessions/current")
+                .header(
+                    "authorization",
+                    format!(
+                        "Bearer {}",
+                        refresh_payload["data"]["authToken"].as_str().unwrap()
+                    ),
+                )
+                .header(
+                    "Sdkwork-Access-Token",
+                    refresh_payload["data"]["accessToken"].as_str().unwrap(),
+                )
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, new_current_response.status());
+}
+
+#[tokio::test]
+async fn app_auth_sessions_current_update_rotates_session_to_active_member_organization() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
+    seed_second_organization_membership(&pool, 30).await;
+    let router = app_auth_router(pool.clone());
+
+    let login_response = router
+        .clone()
+        .oneshot(login_request("alice@example.com", "correct-password"))
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, login_response.status());
+    let login_payload = response_json(login_response).await;
+    let auth_token = login_payload["data"]["authToken"].as_str().unwrap();
+    let access_token = login_payload["data"]["accessToken"].as_str().unwrap();
+    let session_id = login_payload["data"]["sessionId"].as_str().unwrap();
+
+    let update_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("PATCH")
+                .uri("/app/v3/api/auth/sessions/current")
+                .header("content-type", "application/json")
+                .header("authorization", format!("Bearer {auth_token}"))
+                .header("Sdkwork-Access-Token", access_token)
+                .body(Body::from(
+                    json!({
+                        "organizationCode": "workspace",
+                        "deviceName": "Console Workstation"
+                    })
+                    .to_string(),
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, update_response.status());
+    let update_payload = response_json(update_response).await;
+    assert_eq!("2000", update_payload["code"]);
+    assert_eq!(session_id, update_payload["data"]["sessionId"]);
+    assert_eq!("21", update_payload["data"]["context"]["organizationId"]);
+    assert_ne!(auth_token, update_payload["data"]["authToken"]);
+    assert_ne!(access_token, update_payload["data"]["accessToken"]);
+    assert!(
+        update_payload["data"]["refreshToken"]
+            .as_str()
+            .unwrap()
+            .len()
+            > 32
+    );
+
+    let stored_organization_id: String =
+        sqlx::query_scalar("SELECT organization_id FROM iam_session WHERE id = ?")
+            .bind(session_id)
+            .fetch_one(&pool)
+            .await
+            .unwrap();
+    assert_eq!("21", stored_organization_id);
+    let update_event_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM iam_security_event WHERE session_id = ? AND event_type = 'sessions.update'",
+    )
+    .bind(session_id)
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(1, update_event_count);
+
+    let old_current_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/auth/sessions/current")
+                .header("authorization", format!("Bearer {auth_token}"))
+                .header("Sdkwork-Access-Token", access_token)
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::UNAUTHORIZED, old_current_response.status());
+
+    let new_current_response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/auth/sessions/current")
+                .header(
+                    "authorization",
+                    format!(
+                        "Bearer {}",
+                        update_payload["data"]["authToken"].as_str().unwrap()
+                    ),
+                )
+                .header(
+                    "Sdkwork-Access-Token",
+                    update_payload["data"]["accessToken"].as_str().unwrap(),
+                )
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, new_current_response.status());
+    let new_current_payload = response_json(new_current_response).await;
+    assert_eq!(
+        "21",
+        new_current_payload["data"]["context"]["organizationId"]
+    );
+}
+
+#[tokio::test]
 async fn app_auth_sessions_create_rejects_bad_password_without_disclosing_account_state() {
     let pool = create_pool().await;
     create_minimal_auth_schema(&pool).await;
@@ -819,6 +1155,50 @@ async fn create_minimal_auth_schema(pool: &SqlitePool) {
     .execute(pool)
     .await
     .unwrap();
+    sqlx::query(
+        r#"
+        CREATE TABLE iam_user_preference (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            user_id INTEGER NOT NULL,
+            language TEXT
+        )
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        CREATE TABLE iam_user_security_setting (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            user_id INTEGER NOT NULL,
+            password_last_changed_at TEXT,
+            mfa_enabled INTEGER NOT NULL
+        )
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        CREATE TABLE iam_user_login_event (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            user_id INTEGER NOT NULL,
+            occurred_at TEXT,
+            client_ip_masked TEXT
+        )
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
 }
 
 async fn seed_user(
@@ -901,6 +1281,34 @@ async fn seed_user(
     .bind(user_id.to_string())
     .bind(password_hash)
     .bind(if status == 1 { "active" } else { "disabled" })
+    .execute(pool)
+    .await
+    .unwrap();
+}
+
+async fn seed_second_organization_membership(pool: &SqlitePool, user_id: i64) {
+    sqlx::query(
+        r#"
+        INSERT OR IGNORE INTO iam_organization
+            (id, tenant_id, parent_id, code, name, path, status, created_at, updated_at)
+        VALUES
+            ('21', '10', NULL, 'workspace', 'Workspace Organization', '/21', 'active', '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO iam_organization_member
+            (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
+        VALUES
+            (?, '10', '21', ?, 'member', 'active', '2026-04-30T00:00:00Z')
+        "#,
+    )
+    .bind(format!("workspace-member-{user_id}"))
+    .bind(user_id.to_string())
     .execute(pool)
     .await
     .unwrap();

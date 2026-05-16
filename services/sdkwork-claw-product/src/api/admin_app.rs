@@ -2,7 +2,7 @@ use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use axum::body::Bytes;
-use axum::extract::{Path, State};
+use axum::extract::{Path, Query, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, post};
@@ -29,12 +29,14 @@ const MAX_VERSION_LEN: usize = 64;
 const MAX_URL_LEN: usize = 512;
 const MAX_PACKAGE_LEN: usize = 255;
 const MAX_DESCRIPTION_LEN: usize = 4000;
-const MAX_JSON_BYTES: usize = 128 * 1024;
+const DEFAULT_JSON_BODY_MAX_BYTES: usize =
+    sdkwork_claw_config::RequestLimitsConfig::DEFAULT_ADMIN_APP_JSON_BODY_MAX_BYTES;
 
 #[derive(Clone)]
 struct AdminAppState {
     store: Arc<dyn AdminAppStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    json_body_max_bytes: usize,
 }
 
 #[derive(Debug, Default, Deserialize)]
@@ -45,6 +47,16 @@ struct ListAppsRequest {
     market_status: Option<String>,
     app_type: Option<String>,
     page_no: Option<i64>,
+    page_size: Option<i64>,
+}
+
+#[derive(Debug, Default, Deserialize)]
+struct ListAppsQuery {
+    q: Option<String>,
+    status: Option<String>,
+    market_status: Option<String>,
+    app_type: Option<String>,
+    page: Option<i64>,
     page_size: Option<i64>,
 }
 
@@ -173,13 +185,41 @@ impl From<String> for AdminAppCommandBuildError {
     }
 }
 
+impl From<ListAppsQuery> for ListAppsRequest {
+    fn from(value: ListAppsQuery) -> Self {
+        Self {
+            keyword: value.q,
+            status: value.status,
+            market_status: value.market_status,
+            app_type: value.app_type,
+            page_no: value.page,
+            page_size: value.page_size,
+        }
+    }
+}
+
 pub fn admin_app_router_with_store(
     store: Arc<dyn AdminAppStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
 ) -> Router {
+    admin_app_router_with_store_and_json_body_limit(
+        store,
+        entity_uuid_generator,
+        DEFAULT_JSON_BODY_MAX_BYTES,
+    )
+}
+
+pub fn admin_app_router_with_store_and_json_body_limit(
+    store: Arc<dyn AdminAppStore + Send + Sync>,
+    entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    json_body_max_bytes: usize,
+) -> Router {
     Router::new()
         .route("/backend/v3/api/platform/apps/list", post(fetch_apps))
-        .route("/backend/v3/api/platform/apps", post(create_app))
+        .route(
+            "/backend/v3/api/platform/apps",
+            get(fetch_apps_from_query).post(create_app),
+        )
         .route(
             "/backend/v3/api/platform/apps/{app_id}",
             get(fetch_app).put(update_app).delete(delete_app),
@@ -200,9 +240,14 @@ pub fn admin_app_router_with_store(
             "/backend/v3/api/platform/apps/{app_id}/offline",
             post(offline_app),
         )
+        .route(
+            "/backend/v3/api/platform/apps/{app_id}/unpublish",
+            post(offline_app),
+        )
         .with_state(AdminAppState {
             store,
             entity_uuid_generator,
+            json_body_max_bytes: json_body_max_bytes.max(1),
         })
 }
 
@@ -215,11 +260,38 @@ async fn fetch_apps(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let request = match parse_optional_json_body::<ListAppsRequest>(&body, "app list") {
+    let request = match parse_optional_json_body::<ListAppsRequest>(
+        &body,
+        "app list",
+        state.json_body_max_bytes,
+    ) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
     let query = match normalize_list_query(subject, request) {
+        Ok(query) => query,
+        Err(error) => return command_build_error_response(error),
+    };
+
+    match state.store.list_apps(query).await {
+        Ok(items) => Json(PlusApiResult::success(AdminAppListResponse {
+            items: items.into_iter().map(to_app_response).collect(),
+        }))
+        .into_response(),
+        Err(error) => admin_app_system_response("app read model is unavailable", error),
+    }
+}
+
+async fn fetch_apps_from_query(
+    State(state): State<AdminAppState>,
+    headers: HeaderMap,
+    Query(query): Query<ListAppsQuery>,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let query = match normalize_list_query(subject, query.into()) {
         Ok(query) => query,
         Err(error) => return command_build_error_response(error),
     };
@@ -270,7 +342,8 @@ async fn create_app(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let request = match parse_json_body::<CreateAppRequest>(&body, "app") {
+    let request = match parse_json_body::<CreateAppRequest>(&body, "app", state.json_body_max_bytes)
+    {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
@@ -298,10 +371,11 @@ async fn update_app(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let request = match parse_json_body::<UpdateAppRequest>(&body, "app update") {
-        Ok(request) => request,
-        Err(message) => return bad_request(message),
-    };
+    let request =
+        match parse_json_body::<UpdateAppRequest>(&body, "app update", state.json_body_max_bytes) {
+            Ok(request) => request,
+            Err(message) => return bad_request(message),
+        };
     let command = match build_update_app_command(state.clone(), &headers, subject, app_id, request)
     {
         Ok(command) => command,
@@ -422,11 +496,11 @@ fn resolve_subject(headers: &HeaderMap) -> Result<AdminAppSubject, Response> {
         })
 }
 
-fn parse_json_body<T>(body: &[u8], entity_name: &str) -> Result<T, String>
+fn parse_json_body<T>(body: &[u8], entity_name: &str, max_bytes: usize) -> Result<T, String>
 where
     T: for<'de> Deserialize<'de>,
 {
-    if body.len() > MAX_JSON_BYTES {
+    if body.len() > max_bytes {
         return Err(format!("{entity_name} request body is too large"));
     }
     if body.iter().all(u8::is_ascii_whitespace) {
@@ -436,11 +510,15 @@ where
         .map_err(|error| format!("invalid {entity_name} request body: {error}"))
 }
 
-fn parse_optional_json_body<T>(body: &[u8], entity_name: &str) -> Result<T, String>
+fn parse_optional_json_body<T>(
+    body: &[u8],
+    entity_name: &str,
+    max_bytes: usize,
+) -> Result<T, String>
 where
     T: Default + for<'de> Deserialize<'de>,
 {
-    if body.len() > MAX_JSON_BYTES {
+    if body.len() > max_bytes {
         return Err(format!("{entity_name} request body is too large"));
     }
     if body.iter().all(u8::is_ascii_whitespace) {
@@ -1073,4 +1151,40 @@ fn admin_app_system_response(context: &str, error: DomainError) -> Response {
         Json(PlusApiResult::error("5000", format!("{context}: {error}"))),
     )
         .into_response()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn subject() -> AdminAppSubject {
+        AdminAppSubject {
+            tenant_id: 10,
+            organization_id: 20,
+            operator_id: 30,
+            operator_type: 1,
+        }
+    }
+
+    #[test]
+    fn app_sdk_query_maps_to_internal_list_request() {
+        let request: ListAppsRequest = ListAppsQuery {
+            q: Some("billing".to_owned()),
+            status: Some("ACTIVE".to_owned()),
+            market_status: Some("PUBLISHED".to_owned()),
+            app_type: Some("console".to_owned()),
+            page: Some(2),
+            page_size: Some(50),
+        }
+        .into();
+        let query = normalize_list_query(subject(), request)
+            .unwrap_or_else(|_| panic!("app query should normalize"));
+
+        assert_eq!(Some("billing".to_owned()), query.keyword);
+        assert_eq!(Some("ACTIVE".to_owned()), query.status);
+        assert_eq!(Some("PUBLISHED".to_owned()), query.market_status);
+        assert_eq!(Some("console".to_owned()), query.app_type);
+        assert_eq!(Some(2), query.page_no);
+        assert_eq!(Some(50), query.page_size);
+    }
 }

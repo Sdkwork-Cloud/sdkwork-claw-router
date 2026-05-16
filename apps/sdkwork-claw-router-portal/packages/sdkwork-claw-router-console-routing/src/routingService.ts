@@ -15,8 +15,8 @@ import {
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
 import type { Channel } from './types';
-import type { ChannelStatus } from './types';
-import type { CreateRoutingChannelRequest, UpdateRoutingChannelRequest } from '@sdkwork/clawrouter-app-sdk';
+import type { ChannelStatus, RetryableStatusCode, RoutingRetryPolicy } from './types';
+import type { CreateRoutingChannelRequest, ProviderRetryPolicy, UpdateRoutingChannelRequest } from '@sdkwork/clawrouter-app-sdk';
 
 export interface RequestTrace {
   id: string;
@@ -26,6 +26,20 @@ export interface RequestTrace {
   status: number;
   duration: string;
   tokens: number;
+  traceId: string;
+  requestId: string;
+  requestPath: string;
+  httpMethod: string;
+  requestPayloadHash: string;
+  responsePayloadHash: string;
+  requestBytes: number;
+  responseBytes: number;
+  providerErrorCode: string | null;
+  errorType: string | null;
+  errorMessageMasked: string | null;
+  startedAt: string;
+  endedAt: string;
+  streaming: boolean;
 }
 
 export interface RoutingUsageData {
@@ -67,6 +81,7 @@ export interface RoutingApiKey {
 }
 
 type RoutingChannelCapability = 'llm' | 'image' | 'audio' | 'music' | 'sfx' | 'video';
+type RoutingChannelCommandStatus = 'active' | 'disabled';
 
 export type RoutingChannelMutationInput = {
   name: string;
@@ -77,6 +92,8 @@ export type RoutingChannelMutationInput = {
   secretRef: string;
   models: string[];
   capabilities?: string[];
+  timeoutMs?: number;
+  retryPolicy?: RoutingRetryPolicy;
   weight?: number;
   status?: ChannelStatus;
 };
@@ -90,6 +107,8 @@ export type RoutingChannelUpdateInput = {
   secretRef?: string;
   models?: string[];
   capabilities?: string[];
+  timeoutMs?: number | null;
+  retryPolicy?: RoutingRetryPolicy | null;
   weight?: number;
   status?: ChannelStatus;
 };
@@ -111,7 +130,7 @@ export const protocolsList = [
 ];
 
 export const authTypesList = [
-  { id: 'api-key', title: '鏍囧噯 API Key', desc: 'Bearer Token 閴存潈 (榛樿)', isSpecial: false },
+  { id: 'api-key', title: 'API Key', desc: 'Bearer token or provider API key', isSpecial: false, aliases: ['Standard API Key'] },
   { id: 'oauth-gcp', title: 'GCP Vertex OAuth', desc: 'OAuth 2.0 / Service Account', isSpecial: true },
   { id: 'aws-bedrock', title: 'AWS Bedrock', desc: 'AWS SigV4', isSpecial: true },
   { id: 'azure-ad', title: 'Azure OpenAI', desc: 'Azure AD', isSpecial: true },
@@ -189,12 +208,12 @@ export class RoutingService {
 
   static async deleteChannel(channelId: string): Promise<boolean> {
     const result = await getClawRouterAppSdkClient().ai.routing.channels.delete(requiredSafePathSegment(channelId, 'channelId'));
-    ensurePlusApiSuccess(result, 'Failed to delete routing channel');
-    return readBoolean(readApiRecord(result), 'deleted');
+    ensureDeleteResult(result, 'Routing channel delete confirmation is required');
+    return true;
   }
 
-  static async setChannelStatus(channelId: string, status: ChannelStatus): Promise<Channel> {
-    const normalizedStatus = status === 'disabled' ? 'disabled' : 'active';
+  static async setChannelStatus(channelId: string, status: RoutingChannelCommandStatus): Promise<Channel> {
+    const normalizedStatus = normalizeChannelCommandStatus(status);
     const result = await getClawRouterAppSdkClient().ai.routing.channels.status.update(
       requiredSafePathSegment(channelId, 'channelId'),
       { status: normalizedStatus },
@@ -209,10 +228,10 @@ export class RoutingService {
     ensurePlusApiSuccess(result, 'Failed to test routing channel');
     const data = readApiRecord(result);
     return {
-      channelId: readString(data, 'channelId', normalizedChannelId),
+      channelId: readRequiredString(data, 'channelId', 'Routing channel test channel id is required'),
       success: readBoolean(data, 'success'),
-      status: readChannelStatus(readString(data, 'status', 'active')),
-      latency: readString(data, 'latency'),
+      status: readChannelStatus(readRequiredString(data, 'status', 'Routing channel test status is required')),
+      latency: readRequiredString(data, 'latency', 'Routing channel test latency is required'),
       item: normalizeRoutingChannel(readRequiredApiItem(result, 'Routing channel test response is missing channel data', ['item'])),
     };
   }
@@ -254,9 +273,18 @@ function toCreateRoutingChannelRequest(input: RoutingChannelMutationInput): Crea
     secretRef,
     models: requiredStringList(input.models, 'models'),
     capabilities: normalizeCapabilities(input.capabilities),
+    timeoutMs: optionalBoundedInteger(input.timeoutMs, 'timeoutMs', 1, 600_000),
+    retryPolicy: normalizeRetryPolicy(input.retryPolicy),
     weight: optionalPositiveInteger(input.weight, 'weight'),
-    status: input.status,
+    status: input.status === undefined ? undefined : normalizeChannelStatus(input.status),
   };
+}
+
+function ensureDeleteResult(result: unknown, message: string): void {
+  ensurePlusApiSuccess(result, message);
+  if (readBoolean(readApiRecord(result), 'deleted') !== true) {
+    throw new Error(message);
+  }
 }
 
 function toUpdateRoutingChannelRequest(input: RoutingChannelUpdateInput): UpdateRoutingChannelRequest {
@@ -279,20 +307,36 @@ function toUpdateRoutingChannelRequest(input: RoutingChannelUpdateInput): Update
   }
   if (input.models !== undefined) request.models = requiredStringList(input.models, 'models');
   if (input.capabilities !== undefined) request.capabilities = normalizeCapabilities(input.capabilities);
+  if (input.timeoutMs !== undefined) {
+    request.timeoutMs = input.timeoutMs === null ? null : optionalBoundedInteger(input.timeoutMs, 'timeoutMs', 1, 600_000);
+  }
+  if (input.retryPolicy !== undefined) {
+    request.retryPolicy = input.retryPolicy === null ? null : normalizeRetryPolicy(input.retryPolicy);
+  }
   if (input.weight !== undefined) request.weight = optionalPositiveInteger(input.weight, 'weight');
-  if (input.status !== undefined) request.status = input.status;
+  if (input.status !== undefined) request.status = normalizeChannelStatus(input.status);
   return request;
 }
 
 function readChannelStatus(value: string): ChannelStatus {
   const status = value.trim().toLowerCase();
-  if (status === 'disabled') {
-    return 'disabled';
+  return normalizeChannelStatus(status);
+}
+
+function normalizeChannelStatus(value: string): ChannelStatus {
+  const status = value.trim().toLowerCase();
+  if (status === 'active' || status === 'disabled' || status === 'error') {
+    return status;
   }
-  if (status === 'error') {
-    return 'error';
+  throw new Error(status ? `Unsupported routing channel status: ${status}` : 'Routing channel status is required');
+}
+
+function normalizeChannelCommandStatus(value: string): RoutingChannelCommandStatus {
+  const status = value.trim().toLowerCase();
+  if (status === 'active' || status === 'disabled') {
+    return status;
   }
-  return 'active';
+  throw new Error(status ? `Unsupported routing channel command status: ${status}` : 'Routing channel command status is required');
 }
 
 function isSecretRef(value: string): boolean {
@@ -332,17 +376,65 @@ function optionalPositiveInteger(value: number | undefined, fieldName: string): 
   if (value === undefined) {
     return undefined;
   }
-  if (!Number.isFinite(value) || value < 1) {
+  if (!Number.isFinite(value) || !Number.isInteger(value) || value < 1) {
     throw new Error(`${fieldName} must be a positive integer`);
   }
-  return Math.round(value);
+  return value;
+}
+
+function optionalBoundedInteger(value: number | undefined, fieldName: string, min: number, max: number): number | undefined {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (!Number.isFinite(value) || !Number.isInteger(value) || value < min || value > max) {
+    throw new Error(`${fieldName} must be between ${min} and ${max}`);
+  }
+  return value;
+}
+
+function normalizeRetryPolicy(value: RoutingRetryPolicy | undefined): ProviderRetryPolicy | undefined {
+  if (value === undefined) {
+    return undefined;
+  }
+  const maxAttempts = optionalBoundedInteger(value.maxAttempts, 'retryPolicy.maxAttempts', 1, 5);
+  if (maxAttempts === undefined) {
+    throw new Error('retryPolicy.maxAttempts is required');
+  }
+  const retryableStatusCodes = normalizeRetryableStatusCodes(value.retryableStatusCodes);
+  if (maxAttempts > 1 && retryableStatusCodes.length === 0) {
+    throw new Error('retryPolicy.retryableStatusCodes is required when maxAttempts is greater than 1');
+  }
+  return {
+    maxAttempts,
+    retryableStatusCodes,
+    backoffMs: optionalBoundedInteger(value.backoffMs ?? 0, 'retryPolicy.backoffMs', 0, 2000),
+  };
+}
+
+function normalizeRetryableStatusCodes(values: number[]): RetryableStatusCode[] {
+  const allowed = new Set<number>([408, 409, 425, 429, 500, 502, 503, 504]);
+  const normalized: RetryableStatusCode[] = [];
+  for (const value of values) {
+    if (!Number.isInteger(value) || !allowed.has(value)) {
+      throw new Error(`retryPolicy.retryableStatusCodes contains unsupported status: ${value}`);
+    }
+    if (!normalized.includes(value as RetryableStatusCode)) {
+      normalized.push(value as RetryableStatusCode);
+    }
+  }
+  return normalized;
 }
 
 function normalizeCapabilities(values: string[] | undefined): RoutingChannelCapability[] | undefined {
   const allowed = new Set<RoutingChannelCapability>(['llm', 'image', 'audio', 'music', 'sfx', 'video']);
-  const capabilities = normalizeStringList(values).filter((value): value is RoutingChannelCapability =>
-    allowed.has(value as RoutingChannelCapability),
-  );
+  const capabilities: RoutingChannelCapability[] = [];
+  for (const rawValue of normalizeStringList(values)) {
+    const value = rawValue.toLowerCase();
+    if (!allowed.has(value as RoutingChannelCapability)) {
+      throw new Error(`Unsupported routing channel capability: ${value}`);
+    }
+    capabilities.push(value as RoutingChannelCapability);
+  }
   return capabilities.length > 0 ? capabilities : undefined;
 }
 
@@ -356,6 +448,20 @@ function normalizeRequestTrace(value: unknown): RequestTrace {
     status: readRequiredNumber(item, 'status', 'Request trace status is required'),
     duration: readRequiredString(item, 'duration', 'Request trace duration is required'),
     tokens: readRequiredNonNegativeMetric(item, 'tokens', 'Request trace tokens are required'),
+    traceId: readRequiredString(item, 'traceId', 'Request trace trace id is required'),
+    requestId: readRequiredString(item, 'requestId', 'Request trace request id is required'),
+    requestPath: readRequiredString(item, 'requestPath', 'Request trace request path is required'),
+    httpMethod: readRequiredString(item, 'httpMethod', 'Request trace HTTP method is required'),
+    requestPayloadHash: readRequiredString(item, 'requestPayloadHash', 'Request trace request payload hash is required'),
+    responsePayloadHash: readRequiredString(item, 'responsePayloadHash', 'Request trace response payload hash is required'),
+    requestBytes: readRequiredNonNegativeMetric(item, 'requestBytes', 'Request trace request bytes are required'),
+    responseBytes: readRequiredNonNegativeMetric(item, 'responseBytes', 'Request trace response bytes are required'),
+    providerErrorCode: nullableString(item, 'providerErrorCode'),
+    errorType: nullableString(item, 'errorType'),
+    errorMessageMasked: nullableString(item, 'errorMessageMasked'),
+    startedAt: readRequiredString(item, 'startedAt', 'Request trace started time is required'),
+    endedAt: readRequiredString(item, 'endedAt', 'Request trace ended time is required'),
+    streaming: readRequiredBoolean(item, 'streaming', 'Request trace streaming flag is required'),
   };
 }
 
@@ -381,34 +487,58 @@ function normalizeRoutingModelStats(value: unknown): RoutingModelStats {
 
 function normalizeRoutingChannel(value: unknown): Channel {
   const item = readRequiredRecord(value, 'Routing channel record is required');
+  const id = readRequiredAnyString(item, ['id', 'uuid', 'channelCode', 'channel_code'], 'Routing channel id is required');
   const vendor = readRequiredFirstString(item, ['vendor', 'provider', 'providerCode', 'provider_code'], 'Routing channel vendor is required');
-  const providerCode = readFirstString(item, ['providerCode', 'provider_code'], vendor);
+  const providerCode = readRequiredFirstString(item, ['providerCode', 'provider_code'], 'Routing channel provider code is required');
   const capabilities = readRequiredFirstStringArray(item, ['capabilities', 'modalities'], 'Routing channel capabilities are required');
-  const errors = readNumber(item, 'errors', readNumber(item, 'consecutiveErrorCount'));
+  const errors = readRequiredNonNegativeMetric(item, 'errors', 'Routing channel errors are required');
+  const retryPolicy = readRoutingRetryPolicy(item, 'retryPolicy');
 
   return {
-    id: readRequiredAnyString(item, ['id', 'uuid', 'channelCode', 'channel_code'], 'Routing channel id is required'),
+    id,
     name: readRequiredFirstString(item, ['name', 'channelName', 'channel_name'], 'Routing channel name is required'),
     vendor,
-    provider: readFirstString(item, ['provider', 'providerName', 'provider_name'], vendor),
+    provider: readRequiredFirstString(item, ['provider', 'providerName', 'provider_name'], 'Routing channel provider is required'),
     providerCode,
-    protocol: readFirstString(item, ['protocol'], vendor),
-    accessType: readFirstString(item, ['accessType', 'access_type'], 'api-key'),
-    baseUrl: readFirstString(item, ['baseUrl', 'base_url', 'baseUrlOverride', 'base_url_override']),
+    protocol: readRequiredFirstString(item, ['protocol'], 'Routing channel protocol is required'),
+    accessType: readRequiredFirstString(item, ['accessType', 'access_type'], 'Routing channel access type is required'),
+    baseUrl: readRequiredFirstString(item, ['baseUrl', 'base_url', 'baseUrlOverride', 'base_url_override'], 'Routing channel base URL is required'),
     apiKey: readRequiredFirstString(item, ['apiKey', 'secretRef', 'secret_ref', 'maskedLabel', 'masked_label'], 'Routing channel secret reference is required'),
     models: readRequiredFirstStringArray(item, ['models', 'modelList', 'model_list'], 'Routing channel models are required'),
     capabilities,
-    isMultimodal: readBoolean(
-      item,
-      'isMultimodal',
-      readBoolean(item, 'is_multimodal', capabilities.some((capability) => capability !== 'llm')),
-    ),
-    weight: readNumber(item, 'weight', 1),
+    isMultimodal: readRequiredFirstBoolean(item, ['isMultimodal', 'is_multimodal'], 'Routing channel multimodal flag is required'),
+    timeoutMs: readOptionalBoundedMetric(item, 'timeoutMs', 1, 600_000),
+    retryPolicy,
+    weight: readRequiredPositiveInteger(item, 'weight', 'Routing channel weight is required'),
     status: readRoutingChannelStatus(item, errors),
-    latency: readFirstString(item, ['latency', 'latencyP95', 'latency_p95'], 'N/A'),
-    rpm: readNumber(item, 'rpm'),
-    balance: readFirstString(item, ['balance'], 'N/A'),
+    latency: readRequiredFirstString(item, ['latency', 'latencyP95', 'latency_p95'], 'Routing channel latency is required'),
+    rpm: readRequiredNonNegativeMetric(item, 'rpm', 'Routing channel rpm is required'),
+    balance: readRequiredFirstString(item, ['balance'], 'Routing channel balance is required'),
     errors,
+  };
+}
+
+function readRoutingRetryPolicy(item: ApiRecord, key: string): RoutingRetryPolicy | undefined {
+  const value = item[key];
+  if (value === undefined || value === null) {
+    return undefined;
+  }
+  if (!isRecord(value)) {
+    throw new Error('Routing channel retryPolicy must be an object');
+  }
+  const maxAttempts = readRequiredNonNegativeMetric(value, 'maxAttempts', 'Routing channel retryPolicy.maxAttempts is required');
+  if (maxAttempts < 1 || maxAttempts > 5) {
+    throw new Error('Routing channel retryPolicy.maxAttempts must be between 1 and 5');
+  }
+  const retryableStatusCodes = readRetryableStatusCodes(value, 'retryableStatusCodes');
+  const backoffMs = readOptionalNonNegativeMetric(value, 'backoffMs');
+  if (backoffMs > 2000) {
+    throw new Error('Routing channel retryPolicy.backoffMs must be between 0 and 2000');
+  }
+  return {
+    maxAttempts,
+    retryableStatusCodes,
+    backoffMs,
   };
 }
 
@@ -459,22 +589,30 @@ function toUpdateMappingRuleRequest(rule: MappingRule): Record<string, unknown> 
 }
 
 function readRoutingChannelStatus(item: ApiRecord, errors = readNumber(item, 'errors')): Channel['status'] {
-  const status = readFirstString(item, ['status', 'healthStatus', 'health_status']).trim().toLowerCase();
-  if (status === 'disabled' || status === 'inactive' || status === '0') {
+  const status = readRequiredFirstString(item, ['status', 'healthStatus', 'health_status'], 'Routing channel status is required')
+    .trim()
+    .toLowerCase();
+  if (status === 'disabled') {
     return 'disabled';
   }
-  if (status === 'error' || status === 'warning' || status === 'unhealthy' || status === '2' || errors > 0) {
+  if (status === 'error' || errors > 0) {
     return 'error';
   }
-  return 'active';
+  if (status === 'active') {
+    return 'active';
+  }
+  throw new Error(`Unsupported routing channel status: ${status}`);
 }
 
 function readRoutingApiKeyStatus(item: ApiRecord): RoutingApiKeyStatus {
-  const status = readFirstString(item, ['status']).trim().toLowerCase();
+  const status = readRequiredFirstString(item, ['status'], 'Routing API key status is required').trim().toLowerCase();
   if (status === 'enabled' || status === 'active' || status === 'normal' || status === '1') {
     return 'enabled';
   }
-  return 'disabled';
+  if (status === 'disabled' || status === 'inactive' || status === 'banned' || status === '0') {
+    return 'disabled';
+  }
+  throw new Error(`Unsupported routing API key status: ${status}`);
 }
 
 function readStrategyType(item: ApiRecord): StrategyType {
@@ -521,12 +659,83 @@ function readRequiredAnyString(item: ApiRecord, keys: string[], message: string)
   throw new Error(message);
 }
 
+function readRequiredFirstBoolean(item: ApiRecord, keys: string[], message: string): boolean {
+  for (const key of keys) {
+    const value = item[key];
+    if (typeof value === 'boolean') {
+      return value;
+    }
+    if (value !== undefined && value !== null && value !== '') {
+      throw new Error(message);
+    }
+  }
+  throw new Error(message);
+}
+
+function readRequiredBoolean(item: ApiRecord, key: string, message: string): boolean {
+  const value = item[key];
+  if (typeof value !== 'boolean') {
+    throw new Error(message);
+  }
+  return value;
+}
+
 function readRequiredNonNegativeMetric(item: ApiRecord, key: string, message: string): number {
   const value = readNumber(item, key, Number.NaN);
   if (!Number.isFinite(value) || value < 0) {
     throw new Error(message);
   }
   return value;
+}
+
+function readRequiredPositiveInteger(item: ApiRecord, key: string, message: string): number {
+  const value = readNumber(item, key, Number.NaN);
+  if (!Number.isFinite(value) || !Number.isInteger(value) || value < 1) {
+    throw new Error(message);
+  }
+  return value;
+}
+
+function readOptionalNonNegativeMetric(item: ApiRecord, key: string): number {
+  const value = readNumber(item, key, 0);
+  if (!Number.isFinite(value) || value < 0) {
+    throw new Error(`${key} must be a non-negative number`);
+  }
+  return value;
+}
+
+function readOptionalBoundedMetric(item: ApiRecord, key: string, min: number, max: number): number | undefined {
+  if (!(key in item) || item[key] === null || item[key] === undefined || item[key] === '') {
+    return undefined;
+  }
+  const value = readNumber(item, key, Number.NaN);
+  if (!Number.isFinite(value) || !Number.isInteger(value) || value < min || value > max) {
+    throw new Error(`${key} must be an integer between ${min} and ${max}`);
+  }
+  return value;
+}
+
+function readRetryableStatusCodes(item: ApiRecord, key: string): RetryableStatusCode[] {
+  const rawValues = item[key];
+  if (!Array.isArray(rawValues)) {
+    throw new Error('Routing channel retryPolicy.retryableStatusCodes is required');
+  }
+  return normalizeRetryableStatusCodes(
+    rawValues.map((value) => {
+      if (typeof value === 'number') {
+        return value;
+      }
+      if (typeof value === 'string' && value.trim()) {
+        return Number.parseInt(value, 10);
+      }
+      return Number.NaN;
+    }),
+  );
+}
+
+function nullableString(item: ApiRecord, key: string): string | null {
+  const value = readString(item, key).trim();
+  return value || null;
 }
 
 function readFirstStringArray(item: ApiRecord, keys: string[], fallback: string[] = []): string[] {

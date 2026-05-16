@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { BusinessStateTableRow } from 'sdkwork-claw-router-commons';
 import {
   DollarSign, Search, CreditCard, Download, ArrowUpRight, ArrowDownRight,
-  Activity, Calendar, Filter, ChevronLeft, ChevronRight, FileText,
+  Activity, Calendar, ChevronLeft, ChevronRight, FileText,
   CheckCircle2, AlertCircle
 } from 'lucide-react';
 import { FinanceService, TransactionRecord, BillingRecord } from './financeService';
+import { buildFinanceOverviewCards, buildFinanceReportCsv, formatCurrency, moneyCents } from './financeViewModel';
 
 export function FinanceAdmin() {
   const [search, setSearch] = useState('');
@@ -61,13 +62,17 @@ export function FinanceAdmin() {
 
   const paginatedTransactions = filteredTransactions.slice((currentPage - 1) * pageSize, currentPage * pageSize);
   const paginatedBilling = filteredBilling.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  const overviewCards = buildFinanceOverviewCards(transactions, billing);
 
-  const formatCurrency = (amount: string) => {
-    const value = formatMoneyAmount(amount);
-    const sign = value.startsWith('-') ? '-' : '';
-    const unsigned = sign ? value.slice(1) : value;
-    const [whole, fraction = '00'] = unsigned.split('.');
-    return `${sign}$${groupThousands(whole)}.${fraction}`;
+  const exportCurrentReport = () => {
+    const csv = buildFinanceReportCsv(activeTab === 'transactions' ? filteredTransactions : filteredBilling, activeTab);
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `finance-${activeTab}-${new Date().toISOString().slice(0, 10)}.csv`;
+    link.click();
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -91,7 +96,11 @@ export function FinanceAdmin() {
               className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-emerald-500 w-full sm:w-64 text-slate-900 dark:text-white placeholder-slate-500 transition-colors shadow-sm"
             />
           </div>
-          <button className="bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 flex-shrink-0">
+          <button
+            onClick={exportCurrentReport}
+            disabled={totalItems === 0}
+            className="bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
             <Download className="w-4 h-4" />
             <span className="hidden sm:inline">导出报表</span>
           </button>
@@ -100,25 +109,22 @@ export function FinanceAdmin() {
 
        {/* Overview Cards */}
        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        {[
-          { title: '今日充值总计', value: formatCurrency('12450.00'), target: '+15%', icon: ArrowUpRight, color: 'text-emerald-500', bg: 'bg-emerald-50 dark:bg-emerald-500/10' },
-          { title: '本月消费总计', value: formatCurrency('98230.50'), target: '+5%', icon: Activity, color: 'text-blue-500', bg: 'bg-blue-50 dark:bg-blue-500/10' },
-          { title: '今日退款', value: formatCurrency('350.00'), target: '-2%', icon: ArrowDownRight, color: 'text-rose-500', bg: 'bg-rose-50 dark:bg-rose-500/10' },
-          { title: '待结算账单', value: '14 笔', target: '处理中', icon: FileText, color: 'text-amber-500', bg: 'bg-amber-50 dark:bg-amber-500/10' },
-        ].map((stat, i) => (
+        {overviewCards.map((stat, i) => {
+          const presentation = financeOverviewPresentation[stat.tone];
+          return (
           <div key={i} className="bg-white dark:bg-[#1a1a1a] p-5 rounded-xl border border-slate-200 dark:border-white/10 shadow-sm flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-slate-500">{stat.title}</p>
               <div className="mt-1">
                 <p className="text-2xl font-bold text-slate-900 dark:text-white">{stat.value}</p>
               </div>
-              <p className={`text-xs mt-1 ${stat.target.startsWith('+') ? 'text-emerald-500' : stat.target.startsWith('-') ? 'text-rose-500' : 'text-amber-500'}`}>{stat.target}</p>
+              <p className={`text-xs mt-1 ${presentation.targetColor}`}>{stat.target}</p>
             </div>
-            <div className={`p-3 rounded-lg ${stat.bg} ${stat.color}`}>
-              <stat.icon className="w-6 h-6" />
+            <div className={`p-3 rounded-lg ${presentation.bg} ${presentation.color}`}>
+              <presentation.icon className="w-6 h-6" />
             </div>
           </div>
-        ))}
+        )})}
       </div>
 
       <div className="flex items-center gap-1 border-b border-slate-200 dark:border-white/10 pb-4">
@@ -149,9 +155,7 @@ export function FinanceAdmin() {
           <>
             <div className="p-4 border-b border-slate-200 dark:border-white/10 flex items-center justify-between">
               <h3 className="font-medium text-slate-900 dark:text-white">最近交易明细</h3>
-              <button className="flex items-center gap-2 px-3 py-1.5 text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/10 rounded-lg hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
-                <Filter className="w-4 h-4" /> 过滤
-              </button>
+              <span className="text-xs text-slate-500 dark:text-slate-400">搜索框会筛选当前流水列表</span>
             </div>
             <div className="overflow-x-auto flex-1">
               <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
@@ -240,9 +244,7 @@ export function FinanceAdmin() {
           <>
             <div className="p-4 border-b border-slate-200 dark:border-white/10 flex items-center justify-between">
               <h3 className="font-medium text-slate-900 dark:text-white">用户账单</h3>
-              <button className="flex items-center gap-2 px-3 py-1.5 text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/10 rounded-lg hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
-                <Filter className="w-4 h-4" /> 过滤
-              </button>
+              <span className="text-xs text-slate-500 dark:text-slate-400">搜索框会筛选当前账单列表</span>
             </div>
             <div className="overflow-x-auto flex-1">
               <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
@@ -255,15 +257,14 @@ export function FinanceAdmin() {
                     <th className="px-6 py-4 text-right">总金额</th>
                     <th className="px-6 py-4">结算期限</th>
                     <th className="px-6 py-4">状态</th>
-                    <th className="px-6 py-4">操作</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-200 dark:divide-white/5">
                   {loading ? (
-                    <BusinessStateTableRow colSpan={8} kind="loading" title="Loading billing records..." />
+                    <BusinessStateTableRow colSpan={7} kind="loading" title="Loading billing records..." />
                   ) : loadError ? (
                     <BusinessStateTableRow
-                      colSpan={8}
+                      colSpan={7}
                       kind="error"
                       title="Billing records could not be loaded"
                       description={loadError}
@@ -272,7 +273,7 @@ export function FinanceAdmin() {
                     />
                   ) : paginatedBilling.length === 0 ? (
                     <BusinessStateTableRow
-                      colSpan={8}
+                      colSpan={7}
                       kind="empty"
                       title="No billing records found"
                       description="Adjust the search filter or wait for billing cycle records to be generated."
@@ -291,11 +292,6 @@ export function FinanceAdmin() {
                         <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${b.status === 'paid' ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400' : b.status === 'unpaid' ? 'bg-amber-50 text-amber-600 dark:bg-amber-500/10 dark:text-amber-400' : 'bg-rose-50 text-rose-600 dark:bg-rose-500/10 dark:text-rose-400'}`}>
                           {b.status === 'paid' ? '已结清' : b.status === 'unpaid' ? '待结算' : '已逾期'}
                         </span>
-                      </td>
-                      <td className="px-6 py-4">
-                        <button className="text-emerald-600 dark:text-emerald-400 font-medium hover:underline text-xs">
-                           查看详情
-                        </button>
                       </td>
                     </tr>
                   ))}
@@ -341,27 +337,29 @@ function isPositiveMoney(amount: string): boolean {
   return moneyCents(amount) > 0;
 }
 
-function moneyCents(amount: string): number {
-  const value = amount.trim();
-  if (!/^-?\d+(?:\.\d{1,2})?$/.test(value)) {
-    return 0;
-  }
-  const sign = value.startsWith('-') ? -1 : 1;
-  const unsigned = sign < 0 ? value.slice(1) : value;
-  const [whole, fraction = ''] = unsigned.split('.');
-  const cents = Number.parseInt(whole, 10) * 100 + Number.parseInt(fraction.padEnd(2, '0'), 10);
-  return Number.isSafeInteger(cents) ? sign * cents : 0;
-}
-
-function formatMoneyAmount(amount: string): string {
-  const cents = moneyCents(amount);
-  const sign = cents < 0 ? '-' : '';
-  const absolute = Math.abs(cents);
-  const whole = Math.floor(absolute / 100);
-  const fraction = String(absolute % 100).padStart(2, '0');
-  return `${sign}${whole}.${fraction}`;
-}
-
-function groupThousands(value: string): string {
-  return value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
+const financeOverviewPresentation = {
+  recharge: {
+    icon: ArrowUpRight,
+    color: 'text-emerald-500',
+    bg: 'bg-emerald-50 dark:bg-emerald-500/10',
+    targetColor: 'text-emerald-500',
+  },
+  consume: {
+    icon: Activity,
+    color: 'text-blue-500',
+    bg: 'bg-blue-50 dark:bg-blue-500/10',
+    targetColor: 'text-blue-500',
+  },
+  refund: {
+    icon: ArrowDownRight,
+    color: 'text-rose-500',
+    bg: 'bg-rose-50 dark:bg-rose-500/10',
+    targetColor: 'text-rose-500',
+  },
+  billing: {
+    icon: FileText,
+    color: 'text-amber-500',
+    bg: 'bg-amber-50 dark:bg-amber-500/10',
+    targetColor: 'text-amber-500',
+  },
+} as const;

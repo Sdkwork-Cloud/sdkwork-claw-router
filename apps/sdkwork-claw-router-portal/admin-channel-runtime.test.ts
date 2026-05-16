@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
@@ -11,7 +12,12 @@ import {
   createProviderSecretInputFromForm,
   createProviderSecretStatusUpdateInput,
   createProviderSecretUpdateInputFromForm,
+  resolveAuthTypeFormValue,
+  resolveAuthTypeSubmitValue,
+  resolveChannelSelectFormValue,
+  resolveChannelSelectSubmitValue,
 } from "./packages/sdkwork-claw-router-admin-channel/src/channelForm.ts";
+import { knownModelVendors, protocolsList } from "./packages/sdkwork-claw-router-admin-channel/src/channelOptions.tsx";
 
 const originalFetch = globalThis.fetch;
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
@@ -74,9 +80,9 @@ test("admin channel create input does not reuse returned channel view model", ()
     accessType: " Standard API Key ",
     baseUrl: " https://api.openai.com/v1 ",
     secretRef: " vault://providers/openai/account/main ",
-    capabilities: ["llm", " image ", "unknown", "llm"],
+    capabilities: ["llm", " image ", "llm"],
     models: [" gpt-4o ", " ", "gpt-4o-mini"],
-    weight: 125.4,
+    weight: 125,
     status: "active",
   });
 
@@ -97,26 +103,55 @@ test("admin channel create input does not reuse returned channel view model", ()
   }
 });
 
-test("admin channel create input defaults invalid optional values safely", () => {
-  assert.deepEqual(createChannelInputFromForm({
-    name: " Custom ",
-    vendor: " Custom ",
-    protocol: " ",
-    accessType: " ",
-    baseUrl: " ",
-    secretRef: " secret://providers/custom/main ",
-    capabilities: [],
-    models: ["default-custom-model"],
-    weight: Number.NaN,
-    status: "archived",
-  }), {
-    name: "Custom",
-    vendor: "Custom",
-    secretRef: "secret://providers/custom/main",
-    models: ["default-custom-model"],
-    weight: 100,
-    status: "active",
-  });
+test("admin channel create input rejects invalid optional values before persistence", () => {
+  assert.throws(
+    () =>
+      createChannelInputFromForm({
+        name: " Custom ",
+        vendor: " Custom ",
+        protocol: " ",
+        accessType: " ",
+        baseUrl: " ",
+        secretRef: " secret://providers/custom/main ",
+        capabilities: [],
+        models: ["default-custom-model"],
+        weight: Number.NaN,
+        status: "active",
+      }),
+    /weight must be a positive integer/,
+  );
+  assert.throws(
+    () =>
+      createChannelInputFromForm({
+        name: " Custom ",
+        vendor: " Custom ",
+        protocol: " ",
+        accessType: " ",
+        baseUrl: " ",
+        secretRef: " secret://providers/custom/main ",
+        capabilities: [],
+        models: ["default-custom-model"],
+        weight: 100,
+        status: "archived",
+      }),
+    /Unsupported channel status: archived/,
+  );
+  assert.throws(
+    () =>
+      createChannelInputFromForm({
+        name: " Custom ",
+        vendor: " Custom ",
+        protocol: " ",
+        accessType: " ",
+        baseUrl: " ",
+        secretRef: " secret://providers/custom/main ",
+        capabilities: ["llm", "unknown"],
+        models: ["default-custom-model"],
+        weight: 100,
+        status: "active",
+      }),
+    /Unsupported channel capability: unknown/,
+  );
 });
 
 test("admin channel update input does not reuse returned channel view model", () => {
@@ -151,6 +186,33 @@ test("admin channel update input does not reuse returned channel view model", ()
 test("admin channel status update input is a minimal command", () => {
   assert.deepEqual(createChannelStatusUpdateInput("disabled"), { status: "disabled" });
   assert.deepEqual(createChannelStatusUpdateInput("active"), { status: "active" });
+});
+
+test("admin channel modal rejects invalid traffic weight instead of defaulting it", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /readPositiveIntegerFormValue\(formData, 'weight'\)/);
+  assert.doesNotMatch(source, /Number\.parseInt\(String\(formData\.get\('weight'\) \?\? '100'\), 10\)/);
+  assert.doesNotMatch(source, /weight:\s*Number\.isFinite\(weight\) && weight > 0 \? weight : 100/);
+});
+
+test("admin channel modal does not expose unsupported per-channel model mapping controls", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.doesNotMatch(source, /Model mapping/);
+  assert.doesNotMatch(source, /Only the target model values are persisted for this channel/);
+  assert.doesNotMatch(source, /Add mapping/);
+  assert.doesNotMatch(source, /modelMode === 'mapping'/);
+  assert.doesNotMatch(source, /setMappings|addMapping|updateMapping/);
+  assert.doesNotMatch(source, /Gateway model|Provider model/);
+  assert.match(source, /const models = whitelist\.map/);
+  assert.match(source, /At least one model must be bound to the channel/);
 });
 
 test("admin provider secret create input does not reuse returned credential fields", () => {
@@ -194,9 +256,46 @@ test("admin provider secret update input is a dedicated command", () => {
   }
 });
 
+test("admin channel auth type helpers preserve unknown backend auth types", () => {
+  const knownAuthTypes = [
+    { id: "api-key", title: "Standard API Key" },
+    { id: "aws-bedrock", title: "AWS Bedrock" },
+  ];
+
+  assert.equal(resolveAuthTypeFormValue(" Standard API Key ", knownAuthTypes), "api-key");
+  assert.equal(resolveAuthTypeFormValue("custom-sigv4", knownAuthTypes), "custom-sigv4");
+  assert.equal(resolveAuthTypeSubmitValue("api-key", knownAuthTypes), "Standard API Key");
+  assert.equal(resolveAuthTypeSubmitValue("custom-sigv4", knownAuthTypes), "custom-sigv4");
+  assert.throws(
+    () => resolveAuthTypeSubmitValue(" ", knownAuthTypes),
+    /authType is required/,
+  );
+});
+
+test("admin channel select helpers preserve custom vendors and protocols", () => {
+  assert.equal(resolveChannelSelectFormValue(undefined, knownModelVendors, "OpenAI"), "OpenAI");
+  assert.equal(resolveChannelSelectFormValue(" DeepSeek ", knownModelVendors, "OpenAI"), "DeepSeek");
+  assert.equal(resolveChannelSelectFormValue("acme-ai", knownModelVendors, "OpenAI"), "acme-ai");
+
+  assert.equal(resolveChannelSelectFormValue("OpenAI compatible", protocolsList, "OpenAI"), "OpenAI");
+  assert.equal(resolveChannelSelectFormValue("Acme RPC", protocolsList, "OpenAI"), "Acme RPC");
+
+  assert.equal(resolveChannelSelectSubmitValue("OpenAI", protocolsList, "protocol"), "OpenAI");
+  assert.equal(resolveChannelSelectSubmitValue("OpenAI compatible", protocolsList, "protocol"), "OpenAI");
+  assert.equal(resolveChannelSelectSubmitValue("Acme RPC", protocolsList, "protocol"), "Acme RPC");
+  assert.throws(
+    () => resolveChannelSelectSubmitValue(" ", protocolsList, "protocol"),
+    /protocol is required/,
+  );
+});
+
 test("admin provider secret status update input is a minimal command", () => {
   assert.deepEqual(createProviderSecretStatusUpdateInput("disabled"), { status: "disabled" });
-  assert.deepEqual(createProviderSecretStatusUpdateInput("unexpected"), { status: "active" });
+  assert.deepEqual(createProviderSecretStatusUpdateInput("active"), { status: "active" });
+  assert.throws(
+    () => createProviderSecretStatusUpdateInput("unexpected"),
+    /Unsupported provider credential status: unexpected/,
+  );
 });
 
 test("admin channel service calls generated backend SDK paths and normalizes channel data", async () => {
@@ -220,7 +319,7 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
               timeoutMs: "30000",
               retryPolicy: {
                 maxAttempts: 3,
-                retryableStatusCodes: [429, 500, 418],
+                retryableStatusCodes: [429, 500],
                 backoffMs: 250,
               },
               weight: "100",
@@ -510,6 +609,28 @@ test("admin channel service rejects invalid commands before calling generated ba
       );
       await assert.rejects(
         () =>
+          ChannelService.addChannel({
+            name: "OpenAI",
+            vendor: "OpenAI",
+            secretRef: "vault://providers/openai/main",
+            models: ["gpt-4o"],
+            capabilities: ["llm", "unknown"],
+          }),
+        /Unsupported channel capability: unknown/,
+      );
+      await assert.rejects(
+        () =>
+          ChannelService.addChannel({
+            name: "OpenAI",
+            vendor: "OpenAI",
+            secretRef: "vault://providers/openai/main",
+            models: ["gpt-4o"],
+            weight: 1.5,
+          }),
+        /value must be a positive integer/,
+      );
+      await assert.rejects(
+        () =>
           ProviderSecretService.addProviderSecret({
             providerCode: "",
             name: "OpenAI Primary",
@@ -584,6 +705,52 @@ test("admin channel test fails closed when backend success response omits the te
       );
     },
   );
+});
+
+test("admin channel test fails closed when backend omits required test metadata", async () => {
+  const baseItem = {
+    id: "channel-2",
+    name: "Anthropic Backup",
+    vendor: "Anthropic",
+    protocol: "Anthropic",
+    accessType: "api-key",
+    models: ["claude-3-5-sonnet"],
+    capabilities: ["llm"],
+    isMultimodal: false,
+    weight: 20,
+    status: "active",
+    balance: "N/A",
+    errors: 0,
+  };
+
+  for (const [field, message] of [
+    ["channelId", /Channel test channel id is required/],
+    ["success", /Channel test success flag is required/],
+    ["latency", /Channel test latency is required/],
+  ] as const) {
+    await withBackendSdkFetch(
+      (url, init) => {
+        if (url === "/backend/v3/api/integration/channels/channel-2/verify" && init?.method === "POST") {
+          const response = {
+            channelId: "channel-2",
+            success: true,
+            status: "active",
+            latency: "88ms",
+            item: baseItem,
+          } as Record<string, unknown>;
+          delete response[field];
+          return response;
+        }
+        throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => ChannelService.testChannel("channel-2"),
+          message,
+        );
+      },
+    );
+  }
 });
 
 test("admin channel list fails closed when backend omits stable channel ids", async () => {
@@ -720,6 +887,117 @@ test("admin channel list fails closed when backend returns unsupported channel s
       await assert.rejects(
         () => ChannelService.fetchChannels(),
         /Unsupported channel status: archived/,
+      );
+    },
+  );
+});
+
+test("admin channel delete fails closed when backend omits delete confirmation", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/integration/channels/channel-2" && init?.method === "DELETE") {
+        return {};
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => ChannelService.deleteChannel("channel-2"),
+        /Channel delete confirmation is required/,
+      );
+    },
+  );
+});
+
+test("admin provider secret delete fails closed when backend omits delete confirmation", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/integration/provider_secrets/secret-2" && init?.method === "DELETE") {
+        return {};
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => ProviderSecretService.deleteProviderSecret("secret-2"),
+        /Provider credential delete confirmation is required/,
+      );
+    },
+  );
+});
+
+test("admin channel list fails closed when backend returns incomplete retry policy", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/integration/channels" && init?.method === "GET") {
+        return {
+          items: [
+            {
+              id: "channel-1",
+              name: "OpenAI Primary",
+              vendor: "OpenAI",
+              protocol: "OpenAI",
+              accessType: "api-key",
+              secretRef: "vault://providers/openai/main",
+              models: ["gpt-4o"],
+              capabilities: ["llm"],
+              isMultimodal: false,
+              retryPolicy: {
+                retryableStatusCodes: [429],
+              },
+              weight: 100,
+              status: "active",
+              balance: "N/A",
+              errors: 0,
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => ChannelService.fetchChannels(),
+        /Channel retryPolicy.maxAttempts is required/,
+      );
+    },
+  );
+});
+
+test("admin channel list fails closed when backend returns unsupported retry statuses", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/integration/channels" && init?.method === "GET") {
+        return {
+          items: [
+            {
+              id: "channel-1",
+              name: "OpenAI Primary",
+              vendor: "OpenAI",
+              protocol: "OpenAI",
+              accessType: "api-key",
+              secretRef: "vault://providers/openai/main",
+              models: ["gpt-4o"],
+              capabilities: ["llm"],
+              isMultimodal: false,
+              retryPolicy: {
+                maxAttempts: 3,
+                retryableStatusCodes: [429, 418],
+              },
+              weight: 100,
+              status: "active",
+              balance: "N/A",
+              errors: 0,
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => ChannelService.fetchChannels(),
+        /Channel retryPolicy\.retryableStatusCodes contains unsupported status: 418/,
       );
     },
   );

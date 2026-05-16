@@ -147,6 +147,36 @@ async fn app_skills_my_route_returns_user_installations() {
 }
 
 #[tokio::test]
+async fn app_skills_current_user_route_matches_app_sdk_contract() {
+    let router = app_skills_router_with_store(
+        Arc::new(FixedAppSkillsReadStore),
+        Arc::new(FixedAppSkillsCommandStore),
+        Arc::new(TestUuidGenerator),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .uri("/app/v3/api/ecosystem/users/current/skills")
+                .header("x-sdkwork-tenant-id", "10")
+                .header("x-sdkwork-organization-id", "20")
+                .header("x-sdkwork-user-id", "30")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+
+    assert_eq!("2000", payload["code"]);
+    assert_eq!("install-routing-skill", payload["data"]["items"][0]["id"]);
+    assert_eq!("routing-skill", payload["data"]["items"][0]["skillId"]);
+    assert_eq!(true, payload["data"]["items"][0]["enabled"]);
+}
+
+#[tokio::test]
 async fn app_skills_enable_route_installs_or_reenables_skill() {
     let router = app_skills_router_with_store(
         Arc::new(FixedAppSkillsReadStore),

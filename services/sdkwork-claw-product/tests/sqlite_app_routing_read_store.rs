@@ -56,6 +56,60 @@ async fn sqlite_routing_channels_include_rfc3339_effective_channel_models() {
         channels[0].models
     );
     assert_eq!("active", channels[0].status);
+    assert_eq!(Some(60_000), channels[0].timeout_ms);
+    let retry_policy = channels[0]
+        .retry_policy
+        .as_ref()
+        .expect("retry policy should be projected from integration_channel");
+    assert_eq!(3, retry_policy.max_attempts);
+    assert_eq!(vec![429, 503], retry_policy.retryable_status_codes);
+    assert_eq!(25, retry_policy.backoff_ms);
+}
+
+#[tokio::test]
+async fn sqlite_routing_request_traces_expose_safe_audit_metadata_without_payloads() {
+    let pool = sqlite_pool().await;
+    create_routing_usage_tables(&pool).await;
+    insert_trace(&pool, "req-safe-audit", Some(345), "2026-05-03 10:00:00").await;
+    sqlx::query(
+        r#"
+        UPDATE ai_request_trace
+        SET trace_id = 'trace-safe-audit',
+            request_path = '/v1/chat/completions',
+            http_method = 'POST',
+            request_payload_hash = 'sha256:req',
+            response_payload_hash = 'sha256:res',
+            request_bytes = 512,
+            response_bytes = 4096,
+            error_message_masked = 'provider timeout',
+            streaming = 1,
+            ended_at = '2026-05-03 10:00:00.345'
+        WHERE request_id = 'req-safe-audit'
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    let store = SqliteAppRoutingReadStore::new(pool);
+    let traces = store
+        .load_routing_request_traces(Some(owner_subject()))
+        .await
+        .unwrap();
+
+    assert_eq!(1, traces.len());
+    assert_eq!("trace-safe-audit", traces[0].trace_id);
+    assert_eq!("req-safe-audit", traces[0].request_id);
+    assert_eq!("/v1/chat/completions", traces[0].request_path);
+    assert_eq!("POST", traces[0].http_method);
+    assert_eq!("sha256:req", traces[0].request_payload_hash);
+    assert_eq!("sha256:res", traces[0].response_payload_hash);
+    assert_eq!(512, traces[0].request_bytes);
+    assert_eq!(4096, traces[0].response_bytes);
+    assert_eq!("provider timeout", traces[0].error_message_masked);
+    assert!(traces[0].streaming);
+    assert_eq!("2026-05-03 10:00:00", traces[0].started_at);
+    assert_eq!("2026-05-03 10:00:00.345", traces[0].ended_at);
 }
 
 async fn sqlite_pool() -> SqlitePool {
@@ -83,15 +137,27 @@ async fn create_routing_usage_tables(pool: &SqlitePool) {
             organization_id INTEGER NOT NULL,
             user_id INTEGER NOT NULL,
             request_id TEXT NOT NULL,
+            trace_id TEXT,
             status INTEGER NOT NULL,
             created_at TEXT,
             started_at TEXT,
+            ended_at TEXT,
+            channel_name_snapshot TEXT,
             requested_model TEXT,
             provider_model TEXT,
+            request_path TEXT,
+            http_method TEXT,
             http_status INTEGER,
             error_type INTEGER,
             provider_error_code TEXT,
-            latency_ms INTEGER
+            error_message_masked TEXT,
+            request_payload_hash TEXT,
+            response_payload_hash TEXT,
+            request_bytes INTEGER,
+            response_bytes INTEGER,
+            streaming INTEGER,
+            latency_ms INTEGER,
+            total_tokens INTEGER
         )
         "#,
         r#"
@@ -101,7 +167,8 @@ async fn create_routing_usage_tables(pool: &SqlitePool) {
             organization_id INTEGER NOT NULL,
             request_id TEXT NOT NULL,
             status INTEGER NOT NULL,
-            resolved_model TEXT
+            resolved_model TEXT,
+            selected_channel_id INTEGER
         )
         "#,
         r#"
@@ -136,6 +203,8 @@ async fn create_routing_channel_tables(pool: &SqlitePool) {
             access_type INTEGER NOT NULL,
             base_url_override TEXT,
             capabilities TEXT,
+            timeout_ms INTEGER,
+            retry_policy TEXT,
             weight INTEGER,
             status INTEGER NOT NULL,
             health_status INTEGER NOT NULL,
@@ -197,12 +266,14 @@ async fn seed_routing_channel(pool: &SqlitePool) {
         r#"
         INSERT INTO integration_channel (
             id, tenant_id, organization_id, name, provider_code, protocol, access_type,
-            base_url_override, capabilities, weight, status, health_status, last_latency_ms,
+            base_url_override, capabilities, timeout_ms, retry_policy, weight, status, health_status, last_latency_ms,
             rpm_limit, consecutive_error_count, account_id, priority
         )
         VALUES (
             2001, 10, 20, 'OpenAI primary', 'openai', 1, 1,
-            'https://api.openai.test/v1', '["llm"]', 100, 1, 1, 120,
+            'https://api.openai.test/v1', '["llm"]', 60000,
+            '{"max_attempts":3,"retryable_status_codes":[429,503],"backoff_ms":25}',
+            100, 1, 1, 120,
             600, 0, 9001, 1
         )
         "#,
@@ -234,10 +305,10 @@ async fn insert_trace(
         r#"
         INSERT INTO ai_request_trace (
             tenant_id, organization_id, user_id, request_id, status, created_at, started_at,
-            requested_model, provider_model, http_status, error_type, provider_error_code,
-            latency_ms
+            channel_name_snapshot, requested_model, provider_model, http_status, error_type, provider_error_code,
+            latency_ms, total_tokens
         )
-        VALUES (10, 20, 30, ?, 1, ?, ?, 'openai/global/gpt-4o-mini', '', 200, NULL, NULL, ?)
+        VALUES (10, 20, 30, ?, 1, ?, ?, 'OpenAI primary', 'openai/global/gpt-4o-mini', '', 200, NULL, NULL, ?, 9)
         "#,
     )
     .bind(request_id)

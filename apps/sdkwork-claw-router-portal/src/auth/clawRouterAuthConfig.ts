@@ -69,69 +69,118 @@ export async function fetchClawRouterAuthRuntimeConfig(): Promise<SdkworkAuthRun
 export function mergeClawRouterAuthRuntimeConfig(record: ApiRecord): SdkworkAuthRuntimeConfig {
   return {
     ...DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG,
-    ...readAuthRuntimeConfigPatch(record),
+    leftRailMode: readRequiredEnum(record, 'leftRailMode', LEFT_RAIL_MODES, 'Auth leftRailMode is required', 'Unsupported auth leftRailMode'),
+    loginMethods: readRequiredEnumArray(record, 'loginMethods', LOGIN_METHODS, 'Auth loginMethods are required', 'Unsupported auth loginMethods'),
+    oauthLoginEnabled: readRequiredBoolean(record, 'oauthLoginEnabled', 'Auth oauthLoginEnabled flag is required'),
+    oauthProviders: readRequiredProviderArray(record, 'oauthProviders', 'Auth oauthProviders are required'),
+    ...(readOptionalEnum(record, 'oauthRegion', OAUTH_REGIONS, 'Unsupported auth oauthRegion') === undefined
+      ? {}
+      : { oauthProviderRegion: readOptionalEnum(record, 'oauthRegion', OAUTH_REGIONS, 'Unsupported auth oauthRegion') }),
+    qrLoginEnabled: readRequiredBoolean(record, 'qrLoginEnabled', 'Auth qrLoginEnabled flag is required'),
+    recoveryMethods: readRequiredEnumArray(record, 'recoveryMethods', RECOVERY_METHODS, 'Auth recoveryMethods are required', 'Unsupported auth recoveryMethods'),
+    registerMethods: readRequiredEnumArray(record, 'registerMethods', REGISTER_METHODS, 'Auth registerMethods are required', 'Unsupported auth registerMethods'),
+    verificationPolicy: readVerificationPolicy(record.verificationPolicy),
   };
 }
 
-function readAuthRuntimeConfigPatch(record: ApiRecord): Partial<SdkworkAuthRuntimeConfig> {
-  const verificationPolicy = readVerificationPolicy(record.verificationPolicy);
-  return {
-    ...(readEnum(record.leftRailMode, LEFT_RAIL_MODES) ? { leftRailMode: readEnum(record.leftRailMode, LEFT_RAIL_MODES) } : {}),
-    ...(readEnumArray(record.loginMethods, LOGIN_METHODS).length > 0
-      ? { loginMethods: readEnumArray(record.loginMethods, LOGIN_METHODS) }
-      : {}),
-    ...(typeof record.oauthLoginEnabled === 'boolean' ? { oauthLoginEnabled: record.oauthLoginEnabled } : {}),
-    ...(Array.isArray(record.oauthProviders) ? { oauthProviders: readStringArray(record.oauthProviders) } : {}),
-    ...(readEnum(record.oauthRegion, OAUTH_REGIONS) ? { oauthProviderRegion: readEnum(record.oauthRegion, OAUTH_REGIONS) } : {}),
-    ...(typeof record.qrLoginEnabled === 'boolean' ? { qrLoginEnabled: record.qrLoginEnabled } : {}),
-    ...(readEnumArray(record.recoveryMethods, RECOVERY_METHODS).length > 0
-      ? { recoveryMethods: readEnumArray(record.recoveryMethods, RECOVERY_METHODS) }
-      : {}),
-    ...(readEnumArray(record.registerMethods, REGISTER_METHODS).length > 0
-      ? { registerMethods: readEnumArray(record.registerMethods, REGISTER_METHODS) }
-      : {}),
-    ...(verificationPolicy ? { verificationPolicy } : {}),
-  };
-}
-
-function readVerificationPolicy(value: unknown): SdkworkAuthVerificationPolicyConfig | undefined {
+function readVerificationPolicy(value: unknown): SdkworkAuthVerificationPolicyConfig {
   if (!isRecord(value)) {
-    return undefined;
+    throw new Error('Auth verificationPolicy is required');
   }
-  const current = DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG.verificationPolicy;
   return {
-    emailCodeLoginEnabled: typeof value.emailCodeLoginEnabled === 'boolean'
-      ? value.emailCodeLoginEnabled
-      : current?.emailCodeLoginEnabled ?? false,
-    emailRegistrationVerificationRequired: typeof value.emailRegistrationVerificationRequired === 'boolean'
-      ? value.emailRegistrationVerificationRequired
-      : current?.emailRegistrationVerificationRequired ?? false,
-    phoneCodeLoginEnabled: typeof value.phoneCodeLoginEnabled === 'boolean'
-      ? value.phoneCodeLoginEnabled
-      : current?.phoneCodeLoginEnabled ?? false,
-    phoneRegistrationVerificationRequired: typeof value.phoneRegistrationVerificationRequired === 'boolean'
-      ? value.phoneRegistrationVerificationRequired
-      : current?.phoneRegistrationVerificationRequired ?? false,
+    emailCodeLoginEnabled: readRequiredBoolean(value, 'emailCodeLoginEnabled', 'Auth emailCodeLoginEnabled flag is required'),
+    emailRegistrationVerificationRequired: readRequiredBoolean(value, 'emailRegistrationVerificationRequired', 'Auth emailRegistrationVerificationRequired flag is required'),
+    phoneCodeLoginEnabled: readRequiredBoolean(value, 'phoneCodeLoginEnabled', 'Auth phoneCodeLoginEnabled flag is required'),
+    phoneRegistrationVerificationRequired: readRequiredBoolean(value, 'phoneRegistrationVerificationRequired', 'Auth phoneRegistrationVerificationRequired flag is required'),
   };
 }
 
-function readStringArray(value: unknown): string[] {
-  if (!Array.isArray(value)) {
-    return [];
+function readRequiredBoolean(record: ApiRecord, key: string, message: string): boolean {
+  const value = record[key];
+  if (typeof value !== 'boolean') {
+    throw new Error(message);
   }
-  return value.filter((item): item is string => typeof item === 'string' && item.trim().length > 0);
+  return value;
 }
 
-function readEnumArray<T extends string>(value: unknown, allowed: readonly T[]): T[] {
-  const allowedValues = new Set<string>(allowed);
-  return readStringArray(value).filter((item): item is T => allowedValues.has(item));
+function readRequiredEnum<T extends string>(
+  record: ApiRecord,
+  key: string,
+  allowed: readonly T[],
+  missingMessage: string,
+  unsupportedPrefix: string,
+): T {
+  const value = record[key];
+  if (typeof value !== 'string' || !value.trim()) {
+    throw new Error(missingMessage);
+  }
+  const normalized = value.trim();
+  if ((allowed as readonly string[]).includes(normalized)) {
+    return normalized as T;
+  }
+  throw new Error(`${unsupportedPrefix}: ${normalized}`);
 }
 
-function readEnum<T extends string>(value: unknown, allowed: readonly T[]): T | undefined {
-  if (typeof value !== 'string') {
+function readOptionalEnum<T extends string>(
+  record: ApiRecord,
+  key: string,
+  allowed: readonly T[],
+  unsupportedPrefix: string,
+): T | undefined {
+  const value = record[key];
+  if (value === undefined || value === null || value === '') {
     return undefined;
   }
-  return (allowed as readonly string[]).includes(value) ? value as T : undefined;
+  if (typeof value !== 'string') {
+    throw new Error(`${unsupportedPrefix}: ${String(value)}`);
+  }
+  const normalized = value.trim();
+  if ((allowed as readonly string[]).includes(normalized)) {
+    return normalized as T;
+  }
+  throw new Error(`${unsupportedPrefix}: ${normalized}`);
+}
+
+function readRequiredEnumArray<T extends string>(
+  record: ApiRecord,
+  key: string,
+  allowed: readonly T[],
+  missingMessage: string,
+  unsupportedPrefix: string,
+): T[] {
+  const values = record[key];
+  if (!Array.isArray(values) || values.length === 0) {
+    throw new Error(missingMessage);
+  }
+  const allowedValues = new Set<string>(allowed);
+  const normalized = values.map((item) => {
+    if (typeof item !== 'string' || !item.trim()) {
+      throw new Error(`${unsupportedPrefix}: ${String(item)}`);
+    }
+    const value = item.trim();
+    if (!allowedValues.has(value)) {
+      throw new Error(`${unsupportedPrefix}: ${value}`);
+    }
+    return value as T;
+  });
+  return [...new Set(normalized)];
+}
+
+function readRequiredProviderArray(record: ApiRecord, key: string, missingMessage: string): string[] {
+  const values = record[key];
+  if (!Array.isArray(values)) {
+    throw new Error(missingMessage);
+  }
+  return values.map((item) => {
+    if (typeof item !== 'string' || !item.trim()) {
+      throw new Error('Auth oauth provider is invalid');
+    }
+    const value = item.trim();
+    if (!/^[A-Za-z0-9_-]+$/.test(value) || value.length > 64) {
+      throw new Error(`Auth oauth provider is invalid: ${value}`);
+    }
+    return value;
+  });
 }
 
 function isRecord(value: unknown): value is ApiRecord {

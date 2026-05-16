@@ -1,0 +1,68 @@
+use std::sync::Arc;
+
+use axum::extract::State;
+use axum::http::{HeaderMap, StatusCode};
+use axum::response::{IntoResponse, Response};
+use axum::routing::get;
+use axum::{Json, Router};
+use sdkwork_claw_http::TrustedRequestSubject;
+
+use crate::api::response::PlusApiResult;
+use crate::ports::{AdminDashboardQuery, AdminDashboardReadStore, AdminDashboardSubject};
+
+#[derive(Clone)]
+struct AdminDashboardState {
+    read_store: Arc<dyn AdminDashboardReadStore + Send + Sync>,
+}
+
+pub fn admin_dashboard_router_with_read_store(
+    read_store: Arc<dyn AdminDashboardReadStore + Send + Sync>,
+) -> Router {
+    Router::new()
+        .route(
+            "/backend/v3/api/system/dashboard/admin/overview",
+            get(fetch_admin_dashboard_overview),
+        )
+        .with_state(AdminDashboardState { read_store })
+}
+
+async fn fetch_admin_dashboard_overview(
+    State(state): State<AdminDashboardState>,
+    headers: HeaderMap,
+) -> Response {
+    let query = match dashboard_query_from_headers(&headers) {
+        Ok(query) => query,
+        Err(response) => return response,
+    };
+
+    match state.read_store.load_dashboard(query).await {
+        Ok(snapshot) => Json(PlusApiResult::success(snapshot)).into_response(),
+        Err(error) => (
+            StatusCode::INTERNAL_SERVER_ERROR,
+            Json(PlusApiResult::error(
+                "5000",
+                format!("admin dashboard read model is unavailable: {error}"),
+            )),
+        )
+            .into_response(),
+    }
+}
+
+fn dashboard_query_from_headers(headers: &HeaderMap) -> Result<AdminDashboardQuery, Response> {
+    TrustedRequestSubject::from_headers(headers)
+        .map(|subject| AdminDashboardQuery {
+            subject: AdminDashboardSubject {
+                tenant_id: subject.tenant_id,
+                organization_id: subject.organization_id,
+                operator_id: subject.operator_id,
+                operator_type: subject.operator_type,
+            },
+        })
+        .map_err(|error| {
+            (
+                StatusCode::UNAUTHORIZED,
+                Json(PlusApiResult::error("4010", error.to_string())),
+            )
+                .into_response()
+        })
+}

@@ -4,10 +4,10 @@ use serde_json::Value;
 
 use crate::domain::{DomainError, DomainResult, ModelVendor};
 
-const DEFAULT_PROVIDER_RETRY_ATTEMPTS: usize = 2;
-const MAX_PROVIDER_RETRY_ATTEMPTS: usize = 5;
-const MAX_PROVIDER_RETRY_BACKOFF_MS: u64 = 2_000;
-const DEFAULT_RETRYABLE_PROVIDER_STATUS_CODES: [u16; 5] = [429, 500, 502, 503, 504];
+pub const DEFAULT_PROVIDER_RETRY_ATTEMPTS: usize = 2;
+pub const MAX_PROVIDER_RETRY_ATTEMPTS: usize = 5;
+pub const MAX_PROVIDER_RETRY_BACKOFF_MS: u64 = 2_000;
+pub const DEFAULT_RETRYABLE_PROVIDER_STATUS_CODES: [u16; 5] = [429, 500, 502, 503, 504];
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ModelVendorDefinition {

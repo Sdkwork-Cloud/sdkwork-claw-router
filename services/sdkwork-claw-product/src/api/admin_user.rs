@@ -6,7 +6,7 @@ use axum::body::Bytes;
 use axum::extract::{Path, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
-use axum::routing::{delete, post};
+use axum::routing::{delete, get, post};
 use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
@@ -107,6 +107,19 @@ pub fn admin_user_router_with_store(
         .route("/backend/v3/api/apikey", post(create_api_key))
         .route(
             "/backend/v3/api/apikey/{api_key_id}",
+            delete(delete_api_key),
+        )
+        .route("/backend/v3/api/iam/users", get(fetch_users))
+        .route(
+            "/backend/v3/api/system/users",
+            post(create_user).put(update_user),
+        )
+        .route(
+            "/backend/v3/api/iam/api_keys",
+            get(fetch_api_keys_map).post(create_api_key),
+        )
+        .route(
+            "/backend/v3/api/iam/api_keys/{api_key_id}",
             delete(delete_api_key),
         )
         .route(

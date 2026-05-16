@@ -8,9 +8,10 @@ use crate::domain::{DomainError, DomainResult};
 use crate::ports::{
     AppRoutingChannelCommandFuture, AppRoutingChannelCommandStore, AppRoutingChannelDeleteOutcome,
     AppRoutingChannelItem, AppRoutingChannelMutationOutcome, AppRoutingChannelTestOutcome,
-    CreateAppRoutingChannelCommand, DeleteAppRoutingChannelCommand, ProviderHealthProbe,
-    ProviderHealthProbeOutcome, ProviderHealthProbeRequest, SetAppRoutingChannelStatusCommand,
-    TestAppRoutingChannelCommand, UnconfiguredProviderHealthProbe, UpdateAppRoutingChannelCommand,
+    AppRoutingRetryPolicyItem, CreateAppRoutingChannelCommand, DeleteAppRoutingChannelCommand,
+    ProviderHealthProbe, ProviderHealthProbeOutcome, ProviderHealthProbeRequest,
+    SetAppRoutingChannelStatusCommand, TestAppRoutingChannelCommand,
+    UnconfiguredProviderHealthProbe, UpdateAppRoutingChannelCommand,
 };
 
 const CHANNEL_TARGET_TYPE: i32 = 10;
@@ -103,6 +104,8 @@ impl AppRoutingChannelCommandStore for SqliteAppRoutingChannelCommandStore {
                     "providerCode": &command.provider_code,
                     "models": &command.models,
                     "capabilities": &command.capabilities,
+                    "timeoutMs": command.timeout_ms,
+                    "retryPolicyConfigured": command.retry_policy_json.is_some(),
                     "secretStoredAsRef": true
                 }),
             )
@@ -201,6 +204,8 @@ impl AppRoutingChannelCommandStore for SqliteAppRoutingChannelCommandStore {
                     "name": command.name,
                     "providerCode": command.provider_code,
                     "modelsChanged": command.models.is_some(),
+                    "timeoutChanged": command.timeout_ms.is_some(),
+                    "retryPolicyChanged": command.retry_policy_json.is_some(),
                     "secretRefChanged": command.secret_ref.is_some()
                 }),
                 &command.requested_at,
@@ -219,6 +224,8 @@ impl AppRoutingChannelCommandStore for SqliteAppRoutingChannelCommandStore {
                     "action": "update_channel",
                     "channelId": command.channel_id,
                     "modelsChanged": command.models.is_some(),
+                    "timeoutChanged": command.timeout_ms.is_some(),
+                    "retryPolicyChanged": command.retry_policy_json.is_some(),
                     "secretRefChanged": command.secret_ref.is_some(),
                     "status": command.status
                 }),
@@ -586,9 +593,9 @@ async fn insert_channel(
     sqlx::query(
         r#"
         INSERT INTO integration_channel
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, provider_id, provider_code, channel_code, name, protocol, access_type, base_url_override, model_mode, environment, capabilities, priority, weight, account_id, health_status, last_latency_ms, rpm_limit, consecutive_error_count)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, provider_id, provider_code, channel_code, name, protocol, access_type, base_url_override, timeout_ms, retry_policy, model_mode, environment, capabilities, priority, weight, account_id, health_status, last_latency_ms, rpm_limit, consecutive_error_count)
         VALUES
-            (?, ?, ?, 1, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, 1, 1, ?, 100, ?, ?, ?, 0, 0, 0)
+            (?, ?, ?, 1, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 1, ?, 100, ?, ?, ?, 0, 0, 0)
         "#,
     )
     .bind(&command.channel_uuid)
@@ -604,6 +611,8 @@ async fn insert_channel(
     .bind(protocol_code(&command.protocol))
     .bind(access_type_code(&command.access_type))
     .bind(command.base_url.as_deref())
+    .bind(command.timeout_ms)
+    .bind(command.retry_policy_json.as_deref())
     .bind(capabilities_json)
     .bind(command.weight)
     .bind(account_id)
@@ -625,6 +634,13 @@ async fn update_channel(
 ) -> DomainResult<bool> {
     let base_url_touched = command.base_url.is_some();
     let base_url = command.base_url.as_ref().and_then(|value| value.as_deref());
+    let timeout_touched = command.timeout_ms.is_some();
+    let timeout_ms = command.timeout_ms.flatten();
+    let retry_policy_touched = command.retry_policy_json.is_some();
+    let retry_policy_json = command
+        .retry_policy_json
+        .as_ref()
+        .and_then(|value| value.as_deref());
     let capabilities_json = command
         .capabilities
         .as_ref()
@@ -639,6 +655,8 @@ async fn update_channel(
             protocol = COALESCE(?, protocol),
             access_type = COALESCE(?, access_type),
             base_url_override = CASE WHEN ? THEN ? ELSE base_url_override END,
+            timeout_ms = CASE WHEN ? THEN ? ELSE timeout_ms END,
+            retry_policy = CASE WHEN ? THEN ? ELSE retry_policy END,
             capabilities = COALESCE(?, capabilities),
             weight = COALESCE(?, weight),
             status = COALESCE(?, status),
@@ -663,6 +681,10 @@ async fn update_channel(
     )
     .bind(base_url_touched)
     .bind(base_url)
+    .bind(timeout_touched)
+    .bind(timeout_ms)
+    .bind(retry_policy_touched)
+    .bind(retry_policy_json)
     .bind(capabilities_json)
     .bind(command.weight)
     .bind(command.status.as_ref().map(|value| status_code(value)))
@@ -1100,6 +1122,8 @@ async fn load_channel_by_id(
             COALESCE(NULLIF(c.base_url_override, ''), '') AS base_url,
             COALESCE(NULLIF(a.masked_label, ''), 'configured') AS api_key,
             COALESCE(CAST(c.capabilities AS TEXT), '["llm"]') AS capabilities_json,
+            c.timeout_ms,
+            c.retry_policy AS retry_policy_json,
             COALESCE(c.weight, 0) AS weight,
             c.status AS status,
             c.health_status AS health_status,
@@ -1200,6 +1224,7 @@ fn row_to_channel(
     let errors = integer_cell(&row, "channel_errors") + integer_cell(&row, "account_errors");
     let status = required_integer_cell(&row, "status")?;
     let health_status = required_integer_cell(&row, "health_status")?;
+    let retry_policy_json = string_cell(&row, "retry_policy_json");
     Ok(AppRoutingChannelItem {
         id: id.clone(),
         name: string_cell(&row, "name"),
@@ -1213,6 +1238,12 @@ fn row_to_channel(
         models: models.get(&id).cloned().unwrap_or_default(),
         is_multimodal: capabilities.iter().any(|capability| capability != "llm"),
         capabilities,
+        timeout_ms: row.try_get("timeout_ms").ok().flatten(),
+        retry_policy: retry_policy_json
+            .trim()
+            .is_empty()
+            .then_some(None)
+            .unwrap_or_else(|| AppRoutingRetryPolicyItem::from_json(&retry_policy_json)),
         weight: integer_cell(&row, "weight"),
         status: status_label(status, health_status, errors)?,
         latency: duration_or_na(integer_cell(&row, "latency_ms")),

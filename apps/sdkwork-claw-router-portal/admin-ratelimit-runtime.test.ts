@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
@@ -70,6 +71,7 @@ test("admin IP limit create input does not reuse returned rule view model", () =
   form.set("targetIp", " 10.0.0.0/24 ");
   form.set("rps", " 15 ");
   form.set("rpm", " 900 ");
+  form.set("blockDuration", " 10m ");
 
   const input = createIpLimitInputFromForm(form);
 
@@ -85,7 +87,7 @@ test("admin IP limit create input does not reuse returned rule view model", () =
   }
 });
 
-test("admin token limit create input defaults invalid numeric values safely", () => {
+test("admin ratelimit form rejects invalid required values instead of creating placeholder rules", () => {
   const form = new FormData();
   form.set("keyPrefix", " ");
   form.set("user", " Platform Ops ");
@@ -93,13 +95,83 @@ test("admin token limit create input defaults invalid numeric values safely", ()
   form.set("rpd", "-1");
   form.set("burst", "0");
 
-  assert.deepEqual(createTokenLimitInputFromForm(form), {
-    keyPrefix: "sk-proj-...",
-    user: "Platform Ops",
-    rps: 1,
-    rpd: 1,
-    burst: 1,
-  });
+  assert.throws(
+    () => createTokenLimitInputFromForm(form),
+    /keyPrefix is required/,
+  );
+
+  form.set("keyPrefix", "sk-prod");
+  assert.throws(
+    () => createTokenLimitInputFromForm(form),
+    /rps must be a positive integer/,
+  );
+
+  const ipForm = new FormData();
+  ipForm.set("ruleName", "Edge CIDR");
+  ipForm.set("targetIp", "10.0.0.0/24");
+  ipForm.set("rps", "0");
+  ipForm.set("rpm", "900");
+  ipForm.set("blockDuration", "10m");
+  assert.throws(
+    () => createIpLimitInputFromForm(ipForm),
+    /rps must be a positive integer/,
+  );
+  ipForm.set("rps", "12.5");
+  assert.throws(
+    () => createIpLimitInputFromForm(ipForm),
+    /rps must be a positive integer/,
+  );
+  ipForm.set("rps", "12");
+  ipForm.set("blockDuration", " ");
+  assert.throws(
+    () => createIpLimitInputFromForm(ipForm),
+    /blockDuration is required/,
+  );
+
+  const modelForm = new FormData();
+  modelForm.set("model", "gpt-4o-mini");
+  modelForm.set("group", "enterprise");
+  modelForm.set("rpm", "60");
+  modelForm.set("tpm", "not-a-number");
+  assert.throws(
+    () => createModelLimitInputFromForm(modelForm),
+    /tpm must be a positive integer/,
+  );
+});
+
+test("admin ratelimit modals expose browser constraints matching backend positive integer commands", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-ratelimit/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const field of ["rps", "rpm", "burst", "rpd", "tpm"]) {
+    assert.match(
+      source,
+      new RegExp(`name="${field}" type="number"[^>]*min="1"[^>]*step="1"`),
+      `${field} should be constrained to positive integers in the UI`,
+    );
+  }
+  assert.match(source, /name="blockDuration"/);
+});
+
+test("admin ratelimit page does not expose unsupported row menus and dashboard loads backend rule aggregates", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-ratelimit/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.doesNotMatch(source, /MoreVertical/);
+  assert.doesNotMatch(source, /<button className="text-slate-400 hover:text-red-500"/);
+  assert.match(source, /Promise\.all\(\[/);
+  assert.match(source, /RateLimitService\.fetchIpLimits\(\)/);
+  assert.match(source, /RateLimitService\.fetchTokenLimits\(\)/);
+  assert.match(source, /RateLimitService\.fetchModelLimits\(\)/);
+  assert.match(source, /RateLimitService\.fetchFirewalls\(\)/);
+  assert.match(source, /activeIpLimits/);
+  assert.match(source, /exhaustedTokenLimits/);
+  assert.match(source, /activeModelLimits/);
+  assert.match(source, /firewallRules/);
 });
 
 test("admin model limit create input does not reuse returned model limit view model", () => {
@@ -356,6 +428,27 @@ test("admin ratelimit service rejects invalid commands before calling generated 
       );
       await assert.rejects(
         () =>
+          RateLimitService.addIpLimit({
+            ruleName: "Fractional CIDR",
+            targetIp: "10.0.0.0/24",
+            rps: 1.5,
+            rpm: 60,
+            blockDuration: "10m",
+          }),
+        /rps must be a positive integer/,
+      );
+      await assert.rejects(
+        () =>
+          RateLimitService.addModelLimit({
+            model: "gpt-4o-mini",
+            group: "enterprise",
+            rpm: 60,
+            tpm: 100.5,
+          }),
+        /tpm must be a positive integer/,
+      );
+      await assert.rejects(
+        () =>
           RateLimitService.addFirewall({
             type: "IP deny",
             value: "",
@@ -381,6 +474,25 @@ test("admin ratelimit service rejects unsafe firewall path ids before calling ge
       assert.equal(captured.length, 0);
     },
   );
+});
+
+test("admin firewall delete fails closed unless backend confirms deletion", async () => {
+  for (const response of [{}, { deleted: false }]) {
+    await withBackendSdkFetch(
+      (url, init) => {
+        if (url === "/backend/v3/api/system/firewalls/rules/firewall-2" && init?.method === "DELETE") {
+          return response;
+        }
+        throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => RateLimitService.removeFirewall("firewall-2"),
+          /Firewall rule delete confirmation is required/,
+        );
+      },
+    );
+  }
 });
 
 test("admin IP limit list fails closed when backend omits stable rule ids", async () => {
@@ -469,6 +581,41 @@ test("admin IP limit list fails closed when backend omits positive thresholds", 
   );
 });
 
+test("admin IP limit list fails closed when backend omits or corrupts status", async () => {
+  for (const [patch, message] of [
+    [{ status: undefined }, /IP limit status is required/],
+    [{ status: "paused" }, /Unsupported IP limit status: paused/],
+  ] as const) {
+    await withBackendSdkFetch(
+      (url, init) => {
+        if (url === "/backend/v3/api/system/rate_limits/ip" && (init?.method ?? "GET") === "GET") {
+          const rule = {
+            id: "ip-1",
+            ruleName: "Edge CIDR",
+            targetIp: "10.0.0.0/24",
+            rps: 15,
+            rpm: 900,
+            blockDuration: "10m",
+            status: "active",
+            ...patch,
+          } as Record<string, unknown>;
+          if (patch.status === undefined) {
+            delete rule.status;
+          }
+          return { items: [rule] };
+        }
+        throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => RateLimitService.fetchIpLimits(),
+          message,
+        );
+      },
+    );
+  }
+});
+
 test("admin token limit list fails closed when backend returns malformed rows", async () => {
   await withBackendSdkFetch(
     (url, init) => {
@@ -486,6 +633,41 @@ test("admin token limit list fails closed when backend returns malformed rows", 
       );
     },
   );
+});
+
+test("admin token limit list fails closed when backend omits or corrupts status", async () => {
+  for (const [patch, message] of [
+    [{ status: undefined }, /Token limit status is required/],
+    [{ status: "disabled" }, /Unsupported token limit status: disabled/],
+  ] as const) {
+    await withBackendSdkFetch(
+      (url, init) => {
+        if (url === "/backend/v3/api/system/rate_limits/api_keys" && (init?.method ?? "GET") === "GET") {
+          const rule = {
+            id: "token-1",
+            keyPrefix: "sk-prod",
+            user: "Platform Ops",
+            rps: 2,
+            rpd: 10000,
+            burst: 8,
+            status: "active",
+            ...patch,
+          } as Record<string, unknown>;
+          if (patch.status === undefined) {
+            delete rule.status;
+          }
+          return { items: [rule] };
+        }
+        throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => RateLimitService.fetchTokenLimits(),
+          message,
+        );
+      },
+    );
+  }
 });
 
 test("admin model limit list fails closed when backend omits stable rule ids", async () => {
@@ -513,6 +695,40 @@ test("admin model limit list fails closed when backend omits stable rule ids", a
       );
     },
   );
+});
+
+test("admin model limit list fails closed when backend omits or corrupts status", async () => {
+  for (const [patch, message] of [
+    [{ status: undefined }, /Model limit status is required/],
+    [{ status: "paused" }, /Unsupported model limit status: paused/],
+  ] as const) {
+    await withBackendSdkFetch(
+      (url, init) => {
+        if (url === "/backend/v3/api/system/rate_limits/models" && (init?.method ?? "GET") === "GET") {
+          const rule = {
+            id: "model-limit-1",
+            model: "gpt-4o-mini",
+            group: "enterprise",
+            rpm: 60,
+            tpm: 200000,
+            status: "active",
+            ...patch,
+          } as Record<string, unknown>;
+          if (patch.status === undefined) {
+            delete rule.status;
+          }
+          return { items: [rule] };
+        }
+        throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => RateLimitService.fetchModelLimits(),
+          message,
+        );
+      },
+    );
+  }
 });
 
 test("admin firewall list fails closed when backend omits stable rule ids", async () => {

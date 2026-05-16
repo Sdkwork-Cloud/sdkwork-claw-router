@@ -54,14 +54,39 @@ pub(crate) fn router_with_database_status_and_passthrough_placeholder(
 }
 
 pub async fn serve(bind_addr: &str) -> anyhow::Result<()> {
-    sdkwork_claw_observability::init_tracing();
+    let runtime_toml = sdkwork_claw_config::RuntimeTomlConfig::from_env_config_file()
+        .map_err(anyhow::Error::msg)?;
+    serve_with_runtime_config(bind_addr, runtime_toml.as_ref()).await
+}
+
+pub async fn serve_with_runtime_config(
+    bind_addr: &str,
+    runtime_toml: Option<&sdkwork_claw_config::RuntimeTomlConfig>,
+) -> anyhow::Result<()> {
+    sdkwork_claw_observability::init_tracing_with_runtime_config(
+        runtime_toml.map(|config| &config.observability),
+    )
+    .map_err(anyhow::Error::msg)?;
     let listener = tokio::net::TcpListener::bind(bind_addr).await?;
     axum::serve(listener, router_from_env().await?).await?;
     Ok(())
 }
 
 pub async fn serve_edge_server(bind_addr: &str, config: EdgeServerConfig) -> anyhow::Result<()> {
-    sdkwork_claw_observability::init_tracing();
+    let runtime_toml = sdkwork_claw_config::RuntimeTomlConfig::from_env_config_file()
+        .map_err(anyhow::Error::msg)?;
+    serve_edge_server_with_runtime_config(bind_addr, config, runtime_toml.as_ref()).await
+}
+
+pub async fn serve_edge_server_with_runtime_config(
+    bind_addr: &str,
+    config: EdgeServerConfig,
+    runtime_toml: Option<&sdkwork_claw_config::RuntimeTomlConfig>,
+) -> anyhow::Result<()> {
+    sdkwork_claw_observability::init_tracing_with_runtime_config(
+        runtime_toml.map(|config| &config.observability),
+    )
+    .map_err(anyhow::Error::msg)?;
     let listener = tokio::net::TcpListener::bind(bind_addr).await?;
     axum::serve(listener, edge_server_router(config)).await?;
     Ok(())

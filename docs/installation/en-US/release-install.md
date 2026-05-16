@@ -1,6 +1,6 @@
 # Install By Release Version
 
-This guide explains how to install SDKWork Claw Router from a formal release package. The current release version comes from [docs/release/VERSION.md](../../release/VERSION.md); the current version is `0.2.0`.
+This guide explains how to install SDKWork Claw Router from a formal release package. The current release version comes from [docs/release/VERSION.md](../../release/VERSION.md); the current version is `0.3.0`.
 
 Use the platform-native installers for the fastest deployment path:
 
@@ -17,6 +17,10 @@ Package IDs use three dimensions:
 ```text
 <platform>-<architecture>-<deploymentMode>
 ```
+
+Service package IDs keep the internal `service` deployment mode because they drive systemd,
+launchd, and Windows service integration. Public release asset names use `server` for that
+same mode, for example `linux-x64-service` builds `clawrouter-linux-x64-server-0.3.0.deb`.
 
 Supported platforms:
 
@@ -39,14 +43,14 @@ Supported deployment modes:
 Common package names:
 
 ```text
-clawrouter-linux-x64-service-0.2.0.deb
-clawrouter-linux-x64-desktop-0.2.0.deb
-clawrouter-windows-x64-service-0.2.0.msi
-clawrouter-windows-x64-desktop-0.2.0.msi
-clawrouter-macos-arm64-service-0.2.0.pkg
-clawrouter-macos-arm64-desktop-0.2.0.pkg
-clawrouter-linux-x64-archive-0.2.0.tar.gz
-clawrouter-windows-x64-archive-0.2.0.zip
+clawrouter-linux-x64-server-0.3.0.deb
+clawrouter-linux-x64-desktop-0.3.0.deb
+clawrouter-windows-x64-server-0.3.0.msi
+clawrouter-windows-x64-desktop-0.3.0.msi
+clawrouter-macos-arm64-server-0.3.0.pkg
+clawrouter-macos-arm64-desktop-0.3.0.pkg
+clawrouter-linux-x64-archive-0.3.0.tar.gz
+clawrouter-windows-x64-archive-0.3.0.zip
 ```
 
 From a source checkout, inspect the full matrix:
@@ -62,14 +66,24 @@ node scripts/plan-claw-router-install-packages.mjs --json
 Use this path for a long-running server on Ubuntu or Debian:
 
 ```bash
-sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
+sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb
 sudo editor /etc/clawrouter/clawrouter.toml
+sudo editor /etc/clawrouter/database.secret
 sudo systemctl start clawrouter
 curl http://127.0.0.1:3900/healthz
 curl http://127.0.0.1:3900/readyz
 ```
 
-The `.deb` package creates the `sdkwork` system user, `/etc/clawrouter/clawrouter.toml`, `/etc/clawrouter/clawrouter.env`, `/etc/clawrouter/database.secret`, `/var/lib/clawrouter`, `/var/log/clawrouter`, and the systemd unit. On systemd hosts it enables `clawrouter.service` during installation but does not start it until the operator configures PostgreSQL. The first service start runs `clawrouterctl ensure` and `clawrouterctl refresh-catalog --force` automatically from `ExecStartPre`.
+The `.deb` package creates the `sdkwork` system user, `/etc/clawrouter/clawrouter.toml`, `/etc/clawrouter/clawrouter.env`, `/etc/clawrouter/database.secret`, `/var/lib/clawrouter`, `/var/log/clawrouter`, and the systemd unit. On systemd hosts it enables `clawrouter.service` during installation but does not start it until the operator configures PostgreSQL. The first service start runs `clawrouterctl ensure` and `clawrouterctl refresh-catalog --force` automatically from `ExecStartPre`. The generated systemd unit uses a restricted runtime profile with `NoNewPrivileges`, `ProtectSystem=strict`, `ProtectHome=true`, systemd-managed state/log/config directories, kernel and control-group protections, native syscall architecture filtering, and `LimitNOFILE=65535`. The service can write data and logs, while `/etc/clawrouter` remains read-only to the running process.
+
+The post-install output prints a short configuration summary with the runtime TOML, service environment file, PostgreSQL password file, service name, and first-start commands:
+
+```text
+Runtime TOML: /etc/clawrouter/clawrouter.toml
+Service environment: /etc/clawrouter/clawrouter.env
+PostgreSQL password file: /etc/clawrouter/database.secret
+Systemd service: clawrouter.service
+```
 
 The default server database configuration is external PostgreSQL:
 
@@ -85,8 +99,89 @@ password_file = "/etc/clawrouter/database.secret"
 ssl_mode = "require"
 max_connections = 16
 
+[observability]
+log_filter = "info"
+log_format = "compact"
+log_ansi = false
+log_target = true
+log_thread_names = false
+log_thread_ids = false
+
+[services.gateway]
+bind = "0.0.0.0:18080"
+
+[services.admin_api]
+bind = "0.0.0.0:18081"
+
+[services.app_api]
+bind = "0.0.0.0:18082"
+
+[server]
+bind = "0.0.0.0:3900"
+external_scheme = "http"
+trust_forwarded_headers = false
+
+[edge]
+enabled = true
+gateway_base_url = "http://127.0.0.1:18080"
+backend_api_base_url = "http://127.0.0.1:18081"
+app_api_base_url = "http://127.0.0.1:18082"
+portal_base_url = "http://127.0.0.1:3901"
+portal_static_dist = "/opt/clawrouter/portal/dist"
+cors_allowed_origins = []
+upstream_request_timeout_millis = 30000
+upstream_ready_timeout_millis = 2000
+
+[portal.public]
+api_base_url = "/v1"
+open_api_base_url = "/v1"
+app_api_base_url = "/app/v3/api"
+backend_api_base_url = "/backend/v3/api"
+tool_api_enabled = false
+
+[portal.static]
+html_cache_control = "no-store"
+asset_cache_control = "public, max-age=31536000, immutable"
+
+[portal.security]
+hsts_enabled = false
+hsts_max_age_seconds = 31536000
+hsts_include_subdomains = true
+hsts_preload = false
+csp_frame_src = ["https://player.bilibili.com"]
+
+[portal.tools]
+rate_limit_requests = 120
+rate_limit_window_seconds = 60
+max_body_bytes = 1048576
+sdk_archive_root = "/opt/clawrouter/portal/dist/sdk-archives"
+
+[provider_relay.openai]
+# base_url = "https://api.openai.com/v1"
+# bearer_token_file = "/etc/clawrouter/openai-relay.secret"
+
+[provider_relay.runtime]
+response_timeout_millis = 120000
+health_probe_timeout_millis = 10000
+
+[provider_relay.retry]
+max_attempts = 2
+retryable_status_codes = [429, 500, 502, 503, 504]
+backoff_millis = 0
+
 [paths]
 data_directory = "/var/lib/clawrouter"
+course_upload_root = "/var/lib/clawrouter/uploads/courses"
+
+[courses]
+video_upload_max_bytes = 1073741824
+video_upload_body_limit_bytes = 1074790400
+
+[request_limits]
+admin_app_json_body_max_bytes = 131072
+admin_skill_json_body_max_bytes = 65536
+forum_json_body_max_bytes = 262144
+payment_callback_body_max_bytes = 65536
 
 [runtime]
 deployment_mode = "server"
@@ -146,20 +241,20 @@ sudo journalctl -u clawrouter -n 200 --no-pager
 Use this path for a local Linux trial with SQLite:
 
 ```bash
-sudo apt install ./clawrouter-linux-x64-desktop-0.2.0.deb
+sudo apt install ./clawrouter-linux-x64-desktop-0.3.0.deb
 /opt/clawrouter/bin/clawrouterctl ensure
 /opt/clawrouter/bin/clawrouterctl refresh-catalog --force
 /opt/clawrouter/bin/clawrouter
 ```
 
-The desktop profile uses the current OS user's config and data directories and does not require PostgreSQL unless you explicitly configure it.
+The desktop profile uses the current OS user's config and data directories and does not require PostgreSQL unless you explicitly configure it. The Linux desktop `.deb` installs the shared template under `/usr/share/clawrouter/config/clawrouter.toml.example`; it does not create `/etc/clawrouter/clawrouter.toml`, `/etc/clawrouter/database.secret`, or a systemd service.
 
 ### Windows Desktop Or Service Files
 
 Install the MSI:
 
 ```powershell
-msiexec /i .\clawrouter-windows-x64-desktop-0.2.0.msi
+msiexec /i .\clawrouter-windows-x64-desktop-0.3.0.msi
 ```
 
 Default install root:
@@ -188,15 +283,18 @@ $env:SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.e
 Install the package:
 
 ```bash
-sudo installer -pkg clawrouter-macos-arm64-desktop-0.2.0.pkg -target /
+sudo installer -pkg clawrouter-macos-arm64-desktop-0.3.0.pkg -target /
 ```
 
 Default runtime files:
 
 ```text
 Binaries: /opt/clawrouter/bin
-Config template: /Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example
+Desktop config template: /usr/local/share/clawrouter/config/clawrouter.toml.example
+Desktop runtime config: ~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml
+Service config template: /Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example
 Service plist for service package: /Library/LaunchDaemons/com.sdkwork.clawrouter.plist
+Service runner for service package: /opt/clawrouter/service/macos/clawrouter-service-runner
 ```
 
 Initialize and start:
@@ -207,6 +305,8 @@ Initialize and start:
 /opt/clawrouter/bin/clawrouter
 ```
 
+For macOS service packages, launchd starts the service runner. The runner executes `clawrouterctl ensure` and `clawrouterctl refresh-catalog --force`, then replaces itself with the gateway process.
+
 ### Portable Archive
 
 Use archive packages only when your deployment system manages files, service registration, writable directories, and secrets:
@@ -215,7 +315,7 @@ Linux/macOS:
 
 ```bash
 mkdir -p /opt/clawrouter
-tar -xzf clawrouter-linux-x64-archive-0.2.0.tar.gz -C /opt/clawrouter
+tar -xzf clawrouter-linux-x64-archive-0.3.0.tar.gz -C /opt/clawrouter
 cd /opt/clawrouter
 cp .env.release.example .env.release.local
 editor .env.release.local
@@ -227,7 +327,7 @@ editor .env.release.local
 Windows:
 
 ```powershell
-Expand-Archive .\clawrouter-windows-x64-archive-0.2.0.zip -DestinationPath C:\clawrouter
+Expand-Archive .\clawrouter-windows-x64-archive-0.3.0.zip -DestinationPath C:\clawrouter
 Set-Location C:\clawrouter
 Copy-Item .env.release.example .env.release.local
 notepad .env.release.local
@@ -257,6 +357,8 @@ Release packages include the runtime files needed to start Claw Router:
 
 `archive` and `container` release assets remain portable `.tar.gz` or `.zip` packages.
 
+Every package manifest includes an `installConfiguration` section with the runtime TOML, template, database policy, required fields, password path, first-start commands, and next steps. Native installer manifests also include `nativeInstall`, a machine-readable final install layout covering paths such as `/opt/clawrouter/bin/clawrouter`, `/etc/clawrouter/clawrouter.toml`, `/etc/clawrouter/database.secret`, `/lib/systemd/system/clawrouter.service`, service startup policy, permissions, and operator commands. Use these fields for deployment automation instead of scraping `INSTALL.md`.
+
 Never package or commit `.env.release.local`. Archive deployments may generate it on the target host, while Linux service deployments use `/etc/clawrouter/clawrouter.env` for protected process overrides and `/etc/clawrouter/clawrouter.toml` for the primary runtime configuration. Keep `PORTAL_PUBLIC_*` values browser-safe; do not put database passwords, provider secrets, or admin credentials in `PORTAL_PUBLIC_*` variables.
 
 ## 4. Database Policy
@@ -271,7 +373,31 @@ macOS: ~/Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite
 
 `archive`, `service`, and `container` packages use PostgreSQL by default. Configure PostgreSQL with structured TOML fields: `host`, `port`, `database`, `username`, and either `password_file` or `password`. Keep `password_file` as the normal production path. Use direct `password` only when `clawrouter.toml` is protected as a secret-bearing file.
 
-See [initialization.md](./initialization.md) for default config paths, database examples, and bootstrap admin settings.
+Redis is part of the same runtime TOML standard, but it is optional and disabled by default:
+
+```toml
+[redis]
+enabled = false
+host = "redis.example.com"
+port = 6379
+database = 0
+# username = "default"
+# url = "redis://redis.example.com:6379/0"
+# password_file = "/etc/clawrouter/redis.secret"
+# password = "change-me"
+key_prefix = "clawrouter"
+tls = false
+max_connections = 16
+connect_timeout_millis = 2000
+command_timeout_millis = 1000
+pool_idle_timeout_seconds = 60
+```
+
+Leave `[redis].enabled = false` unless the deployment needs shared cache, distributed locks, queues, or rate-limit buckets. When Redis is enabled, set `host`, `port`, and `database`; use `url` only as an advanced override for managed Redis endpoints. Prefer `password_file` over direct `password`. Linux service installs use `/etc/clawrouter/redis.secret`; container packages mount `/run/secrets/clawrouter-redis-password`.
+
+`[edge]` owns the packaged Rust edge server, upstream service targets, portal static root, upstream timeouts, and the extra CORS origin allowlist. Leave `cors_allowed_origins` empty for same-origin packages; use explicit HTTP/HTTPS origins only when an external trusted portal or CDN must call the edge API from a different browser origin. Wildcards and origins with paths are rejected. `[portal.static]` separates no-store HTML/runtime environment responses from long-lived hashed assets. `[portal.security]` controls browser-facing security policy. Keep HSTS disabled until the public hostname is served through HTTPS; HSTS preload requires `hsts_max_age_seconds >= 31536000` and `hsts_include_subdomains = true`. Add only explicit trusted HTTP/HTTPS origins to `csp_frame_src` for embedded players or other framed content. `[portal.tools]` keeps the optional tool API body limit and rate limit in TOML. `[provider_relay.runtime]` controls global OpenAI-compatible upstream response timeouts and channel health-check timeouts. `[provider_relay.retry]` is the default retry policy when a database routing channel does not define one. `[courses]` controls local course video upload size; keep reverse proxy, container ingress, and load balancer request-body limits at or above `video_upload_body_limit_bytes`. `[request_limits]` controls admin app JSON, admin skill JSON, public forum JSON, and payment callback body limits; keep load balancer, reverse proxy, and container ingress limits aligned with these values. `[observability]` owns production logging defaults: `log_filter` sets the tracing filter, `log_format` is one of `compact`, `json`, `pretty`, or `full`, `log_ansi` should stay `false` for systemd and container logs, and the target/thread fields control emitted log metadata. Use `RUST_LOG` only as a temporary process-level override.
+
+See [initialization.md](./initialization.md) for default config paths, database examples, Redis settings, and bootstrap admin settings.
 
 ## 5. Initialize Database And Catalog
 
@@ -361,20 +487,20 @@ curl http://127.0.0.1:3900/readyz
 Example:
 
 ```bash
-tar -xzf clawrouter-linux-x64-container-0.2.0.tar.gz -C /opt/clawrouter
+tar -xzf clawrouter-linux-x64-container-0.3.0.tar.gz -C /opt/clawrouter
 cd /opt/clawrouter
-docker build -f container/Containerfile -t clawrouter:0.2.0 .
+docker build -f container/Containerfile -t clawrouter:0.3.0 .
 docker run --rm -p 3900:3900 \
   -v "$PWD/config/clawrouter.toml.example:/etc/clawrouter/clawrouter.toml:ro" \
   -v "$PWD/secrets/postgres-password:/run/secrets/clawrouter-postgres-password:ro" \
-  clawrouter:0.2.0
+  clawrouter:0.3.0
 ```
 
 Service and container deployments must mount runtime configuration, logs, and mutable data as writable resources, and must inject database credentials through protected TOML files, password files, or platform secrets. `SDKWORK_CLAW_DATABASE_URL` remains available only for explicit operator override.
 
 ## 8. Upgrade A Release
 
-1. Read the target release note, for example [v0.2.0](../../release/2026-05-16-v0.2.0.md).
+1. Read the target release note, for example [v0.3.0](../../release/2026-05-17-v0.3.0.md).
 2. Back up the database and runtime configuration.
 3. Stop the old service.
 4. Install or extract the new release package.

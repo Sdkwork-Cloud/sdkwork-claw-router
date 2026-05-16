@@ -1,4 +1,4 @@
-use sdkwork_claw_config::TrustedSubjectConfig;
+use sdkwork_claw_config::{RuntimeTomlConfig, TrustedSubjectConfig};
 
 #[test]
 fn parses_trusted_subject_config_without_leaking_secret() {
@@ -45,4 +45,41 @@ fn rejects_blank_short_or_invalid_trusted_subject_config() {
     )
     .unwrap_err();
     assert!(oversized_skew.contains("at most 3600"));
+}
+
+#[test]
+fn reads_trusted_subject_config_from_runtime_toml_secret_file() {
+    let secret_path = unique_secret_path("trusted-subject");
+    std::fs::write(&secret_path, "trusted-subject-secret-0123456789\n").unwrap();
+    let config = RuntimeTomlConfig::from_toml_str(&format!(
+        r#"
+[security]
+trusted_subject_secret_file = "{}"
+trusted_subject_max_clock_skew_seconds = 180
+"#,
+        secret_path.display().to_string().replace('\\', "/")
+    ))
+    .unwrap();
+
+    let subject = TrustedSubjectConfig::from_env_or_runtime_toml(Some(&config))
+        .unwrap()
+        .unwrap();
+
+    assert_eq!(
+        "trusted-subject-secret-0123456789",
+        subject.signing_secret()
+    );
+    assert_eq!(180, subject.max_clock_skew_seconds());
+    let _ = std::fs::remove_file(secret_path);
+}
+
+fn unique_secret_path(name: &str) -> std::path::PathBuf {
+    std::env::temp_dir().join(format!(
+        "clawrouter-{name}-{}-{}.secret",
+        std::process::id(),
+        std::time::SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .unwrap()
+            .as_nanos()
+    ))
 }

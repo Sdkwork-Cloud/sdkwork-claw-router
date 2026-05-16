@@ -93,17 +93,111 @@ impl ProviderRelayConfig {
     }
 
     pub fn from_env() -> Result<Option<Self>, String> {
+        Self::from_env_or_runtime_toml(None)
+    }
+
+    pub fn from_env_or_runtime_toml(
+        runtime_toml: Option<&crate::RuntimeTomlConfig>,
+    ) -> Result<Option<Self>, String> {
         let openai_relay = Self::from_optional_parts(
-            std::env::var(Self::ENV_OPENAI_RELAY_BASE_URL).ok(),
-            std::env::var(Self::ENV_OPENAI_RELAY_BEARER_TOKEN).ok(),
+            crate::runtime::config_value(
+                Self::ENV_OPENAI_RELAY_BASE_URL,
+                runtime_toml.and_then(|config| config.provider_relay.openai.base_url.as_deref()),
+            ),
+            crate::runtime::config_secret_value(
+                Self::ENV_OPENAI_RELAY_BEARER_TOKEN,
+                "SDKWORK_CLAW_OPENAI_RELAY_BEARER_TOKEN_FILE",
+                runtime_toml
+                    .and_then(|config| config.provider_relay.openai.bearer_token.as_deref()),
+                runtime_toml
+                    .and_then(|config| config.provider_relay.openai.bearer_token_file.as_deref()),
+            )?,
         )?;
-        let provider_passthrough_json = std::env::var(Self::ENV_PROVIDER_PASSTHROUGH_JSON).ok();
-        match (openai_relay, provider_passthrough_json) {
-            (None, None) => Ok(None),
-            (Some(config), None) => Ok(Some(config)),
-            (Some(config), Some(json)) => Ok(Some(config.with_provider_passthrough_json(json)?)),
-            (None, Some(json)) => Ok(Some(Self::from_provider_passthrough_json(json)?)),
+        let provider_passthrough_json =
+            crate::runtime::env_optional(Self::ENV_PROVIDER_PASSTHROUGH_JSON);
+        let mut config: Option<Self> = match (openai_relay, provider_passthrough_json) {
+            (None, None) => None,
+            (Some(config), None) => Some(config),
+            (Some(config), Some(json)) => Some(config.with_provider_passthrough_json(json)?),
+            (None, Some(json)) => Some(Self::from_provider_passthrough_json(json)?),
+        };
+
+        let Some(runtime_toml) = runtime_toml else {
+            return Ok(config);
+        };
+        for (provider, passthrough) in &runtime_toml.provider_relay.passthrough {
+            let base_url = match crate::runtime::config_value("", passthrough.base_url.as_deref()) {
+                Some(value) => value,
+                None => continue,
+            };
+            let auth_value = crate::runtime::config_secret_value(
+                "",
+                &format!("runtime config [provider_relay.passthrough.{provider}].auth_value_file"),
+                passthrough
+                    .auth_value
+                    .as_deref()
+                    .or(passthrough.bearer_token.as_deref()),
+                passthrough
+                    .auth_value_file
+                    .as_deref()
+                    .or(passthrough.bearer_token_file.as_deref()),
+            )?
+            .ok_or_else(|| {
+                format!("runtime config [provider_relay.passthrough.{provider}] requires auth_value, auth_value_file, bearer_token, or bearer_token_file")
+            })?;
+            let auth = match passthrough
+                .auth_type
+                .as_deref()
+                .unwrap_or("bearer")
+                .trim()
+                .to_ascii_lowercase()
+                .as_str()
+            {
+                "bearer" => ProviderPassthroughAuth::bearer(auth_value)?,
+                "header" => ProviderPassthroughAuth::header(
+                    passthrough.auth_name.as_deref().ok_or_else(|| {
+                        format!("runtime config [provider_relay.passthrough.{provider}].auth_name is required when auth_type is header")
+                    })?,
+                    auth_value,
+                )?,
+                "query" => ProviderPassthroughAuth::query(
+                    passthrough.auth_name.as_deref().ok_or_else(|| {
+                        format!("runtime config [provider_relay.passthrough.{provider}].auth_name is required when auth_type is query")
+                    })?,
+                    auth_value,
+                )?,
+                other => {
+                    return Err(format!(
+                        "runtime config [provider_relay.passthrough.{provider}].auth_type must be bearer, header, or query: {other}"
+                    ))
+                }
+            };
+            let default_headers = passthrough
+                .default_headers
+                .iter()
+                .map(|(name, value)| ProviderPassthroughHeader::new(name, value))
+                .collect::<Result<Vec<_>, _>>()?;
+            let target = ProviderPassthroughRelayConfig::from_parts_with_auth_and_default_headers(
+                provider,
+                base_url,
+                auth,
+                default_headers,
+            )?;
+            let relay = config.get_or_insert_with(|| Self {
+                openai_relay: None,
+                provider_passthrough: Vec::new(),
+            });
+            if let Some(existing) = relay
+                .provider_passthrough
+                .iter_mut()
+                .find(|existing| existing.provider == target.provider)
+            {
+                *existing = target;
+            } else {
+                relay.provider_passthrough.push(target);
+            }
         }
+        Ok(config)
     }
 
     pub fn openai_relay(&self) -> Option<&OpenAiRelayConfig> {

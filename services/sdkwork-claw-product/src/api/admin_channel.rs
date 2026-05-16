@@ -5,7 +5,7 @@ use axum::body::Bytes;
 use axum::extract::{Path, State};
 use axum::http::{HeaderMap, StatusCode, Uri};
 use axum::response::{IntoResponse, Response};
-use axum::routing::{delete, post};
+use axum::routing::{delete, get, post};
 use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Serialize;
@@ -158,6 +158,18 @@ pub fn admin_channel_router_with_store(
         )
         .route(
             "/backend/v3/api/channel/{channel_id}/test",
+            post(test_channel),
+        )
+        .route(
+            "/backend/v3/api/integration/channels",
+            get(fetch_channels).post(create_channel).put(update_channel),
+        )
+        .route(
+            "/backend/v3/api/integration/channels/{channel_id}",
+            delete(delete_channel),
+        )
+        .route(
+            "/backend/v3/api/integration/channels/{channel_id}/verify",
             post(test_channel),
         )
         .with_state(AdminChannelState {

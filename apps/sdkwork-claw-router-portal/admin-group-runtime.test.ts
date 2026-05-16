@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
@@ -70,7 +71,8 @@ test("admin group create input does not fabricate client persistence ids", () =>
   form.set("platform", " OpenAI ");
   form.set("billingType", "subscription quota");
   form.set("rateMultiplier", "2.5");
-  form.set("isPublic", "on");
+  form.set("capacityTotal", "100");
+  form.set("type", "public");
 
   const input = createGroupInputFromForm(form);
 
@@ -88,22 +90,65 @@ test("admin group create input does not fabricate client persistence ids", () =>
   assert.equal("usage" in input, false);
 });
 
-test("admin group create input defaults invalid numeric and private group values safely", () => {
+test("admin group create input rejects invalid numeric values instead of defaulting rates", () => {
   const form = new FormData();
   form.set("name", " Dedicated ");
   form.set("platform", " Anthropic ");
   form.set("billingType", "standard");
   form.set("rateMultiplier", "not-a-number");
 
-  assert.deepEqual(createGroupInputFromForm(form), {
-    name: "Dedicated",
-    platform: "Anthropic",
-    billingType: "standard",
-    rateMultiplier: 1,
-    type: "dedicated",
-    capacity: { total: 100 },
-    status: "active",
-  });
+  assert.throws(() => createGroupInputFromForm(form), /rateMultiplier must be greater than zero/);
+});
+
+test("admin group create form reads backend-supported capacity instead of hardcoding it", () => {
+  const form = new FormData();
+  form.set("name", " Enterprise Pool ");
+  form.set("platform", " OpenAI ");
+  form.set("billingType", "standard");
+  form.set("rateMultiplier", "1.25");
+  form.set("capacityTotal", "250");
+  form.set("type", "public");
+
+  const input = createGroupInputFromForm(form);
+
+  assert.equal(input.capacity.total, 250);
+});
+
+test("admin group create modal uses backend enums and does not expose ignored controls", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /<option value="standard">/);
+  assert.match(source, /<option value="subscription">/);
+  assert.match(source, /<option value="public">/);
+  assert.match(source, /<option value="dedicated">/);
+  assert.doesNotMatch(source, /name="isPublic"/);
+  assert.match(source, /name="capacityTotal" type="number"[^>]*min="1"[^>]*step="1"/);
+  for (const field of ["description", "allowAllClients", "fallbackGroup"]) {
+    assert.doesNotMatch(source, new RegExp(`name="${field}"`), `${field} is not supported by the backend command`);
+  }
+  for (const unsupportedControl of ["仅允许 OAuth 账号", "仅允许隐私保护已设置的账号"]) {
+    assert.doesNotMatch(source, new RegExp(unsupportedControl), `${unsupportedControl} is not supported by the backend command`);
+  }
+});
+
+test("admin group table actions are wired to real supported workflows", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /createGroupUpdateInputFromForm/);
+  assert.match(source, /GroupService\.updateGroup/);
+  assert.match(source, /onClick=\{\(\) => openEditModal\(group\)\}/);
+  assert.match(source, /onClick=\{\(\) => \{ void loadGroups\(\); \}\}/);
+  assert.match(source, /value=\{platformFilter\}/);
+  assert.match(source, /value=\{statusFilter\}/);
+  assert.match(source, /value=\{typeFilter\}/);
+  assert.match(source, /setSortDirection/);
+  assert.doesNotMatch(source, /专属倍率/);
 });
 
 test("admin group update input does not reuse returned group view model", () => {
@@ -112,7 +157,8 @@ test("admin group update input does not reuse returned group view model", () => 
   form.set("platform", " OpenAI ");
   form.set("billingType", "subscription quota");
   form.set("rateMultiplier", "1.75");
-  form.set("isPublic", "on");
+  form.set("capacityTotal", "100");
+  form.set("type", "public");
 
   const input = createGroupUpdateInputFromForm(form);
 
@@ -280,8 +326,58 @@ test("admin group service rejects invalid command values before calling backend 
         /capacity.total must be a positive integer/,
       );
       await assert.rejects(
+        () =>
+          GroupService.addGroup({
+            name: "Fractional Capacity",
+            platform: "OpenAI",
+            billingType: "standard",
+            rateMultiplier: 1,
+            type: "public",
+            capacity: { total: 1.5 },
+            status: "active",
+          }),
+        /capacity.total must be a positive integer/,
+      );
+      await assert.rejects(
         () => GroupService.updateGroup("group-1", { rateMultiplier: -1 }),
         /rateMultiplier must be greater than zero/,
+      );
+      await assert.rejects(
+        () => GroupService.updateGroup("group-1", { capacity: { total: 2.25 } }),
+        /capacity.total must be a positive integer/,
+      );
+      await assert.rejects(
+        () =>
+          GroupService.addGroup({
+            name: "Invalid Billing",
+            platform: "OpenAI",
+            billingType: "enterprise",
+            rateMultiplier: 1,
+            type: "public",
+            capacity: { total: 100 },
+            status: "active",
+          }),
+        /billingType must be standard or subscription/,
+      );
+      await assert.rejects(
+        () =>
+          GroupService.addGroup({
+            name: "Invalid Type",
+            platform: "OpenAI",
+            billingType: "standard",
+            rateMultiplier: 1,
+            type: "private" as never,
+            capacity: { total: 100 },
+            status: "active",
+          }),
+        /type must be public or dedicated/,
+      );
+      await assert.rejects(
+        () =>
+          GroupService.updateGroup("group-1", {
+            status: "archived" as never,
+          }),
+        /status must be active or disabled/,
       );
       assert.equal(captured.length, 0);
     },
@@ -322,6 +418,25 @@ test("admin group update fails closed when backend success response omits the up
       );
     },
   );
+});
+
+test("admin group delete fails closed unless backend confirms deletion", async () => {
+  for (const response of [{}, { deleted: false }]) {
+    await withBackendSdkFetch(
+      (url, init) => {
+        if (url === "/backend/v3/api/iam/access_groups/group-2" && init?.method === "DELETE") {
+          return response;
+        }
+        throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => GroupService.deleteGroup("group-2"),
+          /Group delete confirmation is required/,
+        );
+      },
+    );
+  }
 });
 
 test("admin group list fails closed when backend omits stable group ids", async () => {

@@ -25,21 +25,34 @@ use crate::ports::{
 type RequestBody = Full<Bytes>;
 type ProviderConnector = HttpsConnector<HttpConnector>;
 type ProviderClient = Client<ProviderConnector, RequestBody>;
-const DEFAULT_PROVIDER_RESPONSE_TIMEOUT: Duration = Duration::from_secs(120);
-const DEFAULT_HEALTH_PROBE_TIMEOUT: Duration = Duration::from_secs(10);
+pub const DEFAULT_PROVIDER_RESPONSE_TIMEOUT_MILLIS: u64 = 120_000;
+pub const DEFAULT_HEALTH_PROBE_TIMEOUT_MILLIS: u64 = 10_000;
+const DEFAULT_PROVIDER_RESPONSE_TIMEOUT: Duration =
+    Duration::from_millis(DEFAULT_PROVIDER_RESPONSE_TIMEOUT_MILLIS);
+const DEFAULT_HEALTH_PROBE_TIMEOUT: Duration =
+    Duration::from_millis(DEFAULT_HEALTH_PROBE_TIMEOUT_MILLIS);
 const MAX_HEALTH_PROBE_ERROR_MESSAGE_LEN: usize = 512;
 
 #[derive(Clone)]
 struct ProviderRelayRuntime {
     client: ProviderClient,
     response_timeout: Duration,
+    default_retry_policy: ProviderRetryPolicy,
 }
 
 impl ProviderRelayRuntime {
     fn new(response_timeout: Duration) -> Self {
+        Self::with_default_retry_policy(response_timeout, ProviderRetryPolicy::default())
+    }
+
+    fn with_default_retry_policy(
+        response_timeout: Duration,
+        default_retry_policy: ProviderRetryPolicy,
+    ) -> Self {
         Self {
             client: build_provider_client(),
             response_timeout,
+            default_retry_policy,
         }
     }
 
@@ -51,6 +64,7 @@ impl ProviderRelayRuntime {
         Self {
             client: self.client.clone(),
             response_timeout,
+            default_retry_policy: self.default_retry_policy.clone(),
         }
     }
 }
@@ -155,9 +169,20 @@ impl OpenAiCompatibleChatCompletionRelay {
         endpoint: UpstreamProviderEndpoint,
         response_timeout: Duration,
     ) -> Self {
+        Self::with_runtime(endpoint, response_timeout, ProviderRetryPolicy::default())
+    }
+
+    pub fn with_runtime(
+        endpoint: UpstreamProviderEndpoint,
+        response_timeout: Duration,
+        default_retry_policy: ProviderRetryPolicy,
+    ) -> Self {
         Self {
             endpoint,
-            runtime: ProviderRelayRuntime::new(response_timeout),
+            runtime: ProviderRelayRuntime::with_default_retry_policy(
+                response_timeout,
+                default_retry_policy,
+            ),
         }
     }
 }
@@ -180,9 +205,20 @@ impl OpenAiCompatibleChatCompletionStreamRelay {
         endpoint: UpstreamProviderEndpoint,
         response_timeout: Duration,
     ) -> Self {
+        Self::with_runtime(endpoint, response_timeout, ProviderRetryPolicy::default())
+    }
+
+    pub fn with_runtime(
+        endpoint: UpstreamProviderEndpoint,
+        response_timeout: Duration,
+        default_retry_policy: ProviderRetryPolicy,
+    ) -> Self {
         Self {
             endpoint,
-            runtime: ProviderRelayRuntime::new(response_timeout),
+            runtime: ProviderRelayRuntime::with_default_retry_policy(
+                response_timeout,
+                default_retry_policy,
+            ),
         }
     }
 }
@@ -205,9 +241,24 @@ impl SecretRefOpenAiCompatibleChatCompletionRelay {
         secret_resolver: std::sync::Arc<dyn ProviderSecretResolver + Send + Sync>,
         response_timeout: Duration,
     ) -> Self {
+        Self::with_runtime(
+            secret_resolver,
+            response_timeout,
+            ProviderRetryPolicy::default(),
+        )
+    }
+
+    pub fn with_runtime(
+        secret_resolver: std::sync::Arc<dyn ProviderSecretResolver + Send + Sync>,
+        response_timeout: Duration,
+        default_retry_policy: ProviderRetryPolicy,
+    ) -> Self {
         Self {
             secret_resolver,
-            runtime: ProviderRelayRuntime::new(response_timeout),
+            runtime: ProviderRelayRuntime::with_default_retry_policy(
+                response_timeout,
+                default_retry_policy,
+            ),
         }
     }
 }
@@ -230,9 +281,24 @@ impl SecretRefOpenAiCompatibleChatCompletionStreamRelay {
         secret_resolver: std::sync::Arc<dyn ProviderSecretResolver + Send + Sync>,
         response_timeout: Duration,
     ) -> Self {
+        Self::with_runtime(
+            secret_resolver,
+            response_timeout,
+            ProviderRetryPolicy::default(),
+        )
+    }
+
+    pub fn with_runtime(
+        secret_resolver: std::sync::Arc<dyn ProviderSecretResolver + Send + Sync>,
+        response_timeout: Duration,
+        default_retry_policy: ProviderRetryPolicy,
+    ) -> Self {
         Self {
             secret_resolver,
-            runtime: ProviderRelayRuntime::new(response_timeout),
+            runtime: ProviderRelayRuntime::with_default_retry_policy(
+                response_timeout,
+                default_retry_policy,
+            ),
         }
     }
 }
@@ -299,9 +365,20 @@ impl OpenAiCompatibleResponsesRelay {
         endpoint: UpstreamProviderEndpoint,
         response_timeout: Duration,
     ) -> Self {
+        Self::with_runtime(endpoint, response_timeout, ProviderRetryPolicy::default())
+    }
+
+    pub fn with_runtime(
+        endpoint: UpstreamProviderEndpoint,
+        response_timeout: Duration,
+        default_retry_policy: ProviderRetryPolicy,
+    ) -> Self {
         Self {
             endpoint,
-            runtime: ProviderRelayRuntime::new(response_timeout),
+            runtime: ProviderRelayRuntime::with_default_retry_policy(
+                response_timeout,
+                default_retry_policy,
+            ),
         }
     }
 }
@@ -324,9 +401,20 @@ impl OpenAiCompatibleEmbeddingsRelay {
         endpoint: UpstreamProviderEndpoint,
         response_timeout: Duration,
     ) -> Self {
+        Self::with_runtime(endpoint, response_timeout, ProviderRetryPolicy::default())
+    }
+
+    pub fn with_runtime(
+        endpoint: UpstreamProviderEndpoint,
+        response_timeout: Duration,
+        default_retry_policy: ProviderRetryPolicy,
+    ) -> Self {
         Self {
             endpoint,
-            runtime: ProviderRelayRuntime::new(response_timeout),
+            runtime: ProviderRelayRuntime::with_default_retry_policy(
+                response_timeout,
+                default_retry_policy,
+            ),
         }
     }
 }
@@ -349,9 +437,24 @@ impl SecretRefOpenAiCompatibleResponsesRelay {
         secret_resolver: std::sync::Arc<dyn ProviderSecretResolver + Send + Sync>,
         response_timeout: Duration,
     ) -> Self {
+        Self::with_runtime(
+            secret_resolver,
+            response_timeout,
+            ProviderRetryPolicy::default(),
+        )
+    }
+
+    pub fn with_runtime(
+        secret_resolver: std::sync::Arc<dyn ProviderSecretResolver + Send + Sync>,
+        response_timeout: Duration,
+        default_retry_policy: ProviderRetryPolicy,
+    ) -> Self {
         Self {
             secret_resolver,
-            runtime: ProviderRelayRuntime::new(response_timeout),
+            runtime: ProviderRelayRuntime::with_default_retry_policy(
+                response_timeout,
+                default_retry_policy,
+            ),
         }
     }
 }
@@ -374,9 +477,24 @@ impl SecretRefOpenAiCompatibleEmbeddingsRelay {
         secret_resolver: std::sync::Arc<dyn ProviderSecretResolver + Send + Sync>,
         response_timeout: Duration,
     ) -> Self {
+        Self::with_runtime(
+            secret_resolver,
+            response_timeout,
+            ProviderRetryPolicy::default(),
+        )
+    }
+
+    pub fn with_runtime(
+        secret_resolver: std::sync::Arc<dyn ProviderSecretResolver + Send + Sync>,
+        response_timeout: Duration,
+        default_retry_policy: ProviderRetryPolicy,
+    ) -> Self {
         Self {
             secret_resolver,
-            runtime: ProviderRelayRuntime::new(response_timeout),
+            runtime: ProviderRelayRuntime::with_default_retry_policy(
+                response_timeout,
+                default_retry_policy,
+            ),
         }
     }
 }
@@ -744,7 +862,7 @@ async fn send_openai_json_with_runtime(
 ) -> DomainResult<(u16, Value)> {
     let body = upstream_request_body(request_body, provider_model, request_label)?;
     let body_bytes = Bytes::from(body.to_string());
-    let retry_policy = retry_policy.unwrap_or_default();
+    let retry_policy = retry_policy.unwrap_or_else(|| runtime.default_retry_policy.clone());
 
     for attempt in 1..=retry_policy.max_attempts {
         let http_request = Request::builder()

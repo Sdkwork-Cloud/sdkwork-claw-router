@@ -41,10 +41,40 @@ pub struct ListAdminRechargeRecordsQuery {
     pub subject: AdminMarketingSubject,
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct LoadAdminRechargeRecordQuery {
+    pub subject: AdminMarketingSubject,
+    pub order_no: String,
+}
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct ListAdminRechargePackagesQuery {
     pub subject: AdminMarketingSubject,
     pub status: Option<AdminRechargePackageStatus>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ListAdminExchangeRulesQuery {
+    pub subject: AdminMarketingSubject,
+    pub source_asset_type: Option<String>,
+    pub target_asset_type: Option<String>,
+    pub status: Option<String>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct UpdateAdminExchangeRuleCommand {
+    pub subject: AdminMarketingSubject,
+    pub audit_log_uuid: String,
+    pub source_asset_type: String,
+    pub target_asset_type: String,
+    pub rate: String,
+    pub request_id: String,
+    pub requested_at: String,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct ListAdminPaymentAttemptsQuery {
+    pub subject: AdminMarketingSubject,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -79,6 +109,21 @@ pub struct DeleteAdminCouponCommand {
     pub subject: AdminMarketingSubject,
     pub coupon_id: i64,
     pub audit_log_uuid: String,
+    pub request_id: String,
+    pub requested_at: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct UpdateAdminCouponCommand {
+    pub subject: AdminMarketingSubject,
+    pub coupon_id: i64,
+    pub audit_log_uuid: String,
+    pub name: String,
+    pub coupon_type: String,
+    pub value: String,
+    pub amount_cents: i64,
+    pub discount_value: Option<String>,
+    pub status: String,
     pub request_id: String,
     pub requested_at: String,
 }
@@ -214,6 +259,27 @@ pub struct AdminRechargePackageItem {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct AdminExchangeRuleItem {
+    pub id: String,
+    pub source_asset_type: String,
+    pub target_asset_type: String,
+    pub rate: String,
+    pub status: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct AdminPaymentAttemptItem {
+    pub id: String,
+    pub order_no: String,
+    pub provider: String,
+    pub amount: String,
+    pub status: String,
+    pub created_at: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
 pub struct AdminReferralStatItem {
     pub id: String,
     pub inviter: String,
@@ -238,6 +304,11 @@ pub trait AdminMarketingStore {
         &'a self,
         command: DeleteAdminCouponCommand,
     ) -> AdminMarketingCommandFuture<'a, bool>;
+
+    fn update_coupon<'a>(
+        &'a self,
+        command: UpdateAdminCouponCommand,
+    ) -> AdminMarketingCommandFuture<'a, AdminCouponItem>;
 
     fn list_batches<'a>(
         &'a self,
@@ -269,10 +340,20 @@ pub trait AdminMarketingStore {
         query: ListAdminRechargeRecordsQuery,
     ) -> AdminMarketingCommandFuture<'a, Vec<AdminRechargeRecordItem>>;
 
+    fn load_recharge_record<'a>(
+        &'a self,
+        query: LoadAdminRechargeRecordQuery,
+    ) -> AdminMarketingCommandFuture<'a, Option<AdminRechargeRecordItem>>;
+
     fn list_recharge_packages<'a>(
         &'a self,
         query: ListAdminRechargePackagesQuery,
     ) -> AdminMarketingCommandFuture<'a, Vec<AdminRechargePackageItem>>;
+
+    fn list_exchange_rules<'a>(
+        &'a self,
+        query: ListAdminExchangeRulesQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<AdminExchangeRuleItem>>;
 
     fn create_recharge_package<'a>(
         &'a self,
@@ -288,6 +369,16 @@ pub trait AdminMarketingStore {
         &'a self,
         command: DeleteAdminRechargePackageCommand,
     ) -> AdminMarketingCommandFuture<'a, bool>;
+
+    fn update_exchange_rule<'a>(
+        &'a self,
+        command: UpdateAdminExchangeRuleCommand,
+    ) -> AdminMarketingCommandFuture<'a, AdminExchangeRuleItem>;
+
+    fn list_payment_attempts<'a>(
+        &'a self,
+        query: ListAdminPaymentAttemptsQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<AdminPaymentAttemptItem>>;
 
     fn list_referral_stats<'a>(
         &'a self,

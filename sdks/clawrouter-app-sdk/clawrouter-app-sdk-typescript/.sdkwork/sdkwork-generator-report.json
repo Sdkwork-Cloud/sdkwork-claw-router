@@ -10,37 +10,125 @@
   },
   "status": "ok",
   "mode": "apply",
-  "hasChanges": false,
+  "hasChanges": true,
   "hasDestructiveChanges": false,
-  "changeFingerprint": "5f84d53bfbf4edd8bcec2e0554afc6f3ac03be4649ea49758bdf9be58848ea61",
+  "changeFingerprint": "802e0c79455e507eb032f61af3f7cb150c03a6e340074ed726338a310a55b501",
   "changeImpact": {
     "schemaVersion": 1,
-    "areas": [],
-    "details": [],
-    "requiresVerification": false,
-    "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped."
+    "areas": [
+      "models"
+    ],
+    "details": [
+      {
+        "area": "models",
+        "paths": [
+          "src/types/create-routing-channel-request.ts",
+          "src/types/index.ts",
+          "src/types/provider-retry-policy.ts",
+          "src/types/routing-channel-item.ts",
+          "src/types/routing-channels-response.ts",
+          "src/types/update-routing-channel-request.ts"
+        ]
+      }
+    ],
+    "requiresVerification": true,
+    "summary": "Detected impact areas: models. Verification is required."
   },
   "executionDecision": {
     "schemaVersion": 1,
-    "riskLevel": "low",
-    "nextAction": "skip",
+    "riskLevel": "medium",
+    "nextAction": "verify",
     "requiresManualReview": false,
     "applyRequiresExpectedFingerprint": false,
-    "summary": "No actionable changes were detected. No apply or verification step is required.",
+    "summary": "Changes have been applied. Run the required verification plan now.",
     "reasons": [
-      "no-actionable-changes"
+      "verification-required"
     ]
   },
   "executionHandoff": {
     "schemaVersion": 1,
-    "summary": "No further commands are required.",
-    "steps": []
+    "summary": "Run the required verification commands now.",
+    "steps": [
+      {
+        "id": "verify-check",
+        "title": "Unified package check",
+        "required": true,
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
+        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
+        "command": "node",
+        "args": [
+          "./bin/publish-core.mjs",
+          "--language",
+          "typescript",
+          "--project-dir",
+          ".",
+          "--action",
+          "check"
+        ],
+        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action check"
+      },
+      {
+        "id": "verify-build",
+        "title": "Unified package build",
+        "required": true,
+        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: models.",
+        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
+        "command": "node",
+        "args": [
+          "./bin/publish-core.mjs",
+          "--language",
+          "typescript",
+          "--project-dir",
+          ".",
+          "--action",
+          "build"
+        ],
+        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action build"
+      }
+    ]
   },
   "verificationPlan": {
-    "shouldRun": false,
-    "runPhase": "skip",
-    "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped.",
-    "steps": []
+    "shouldRun": true,
+    "runPhase": "now",
+    "summary": "Detected impact areas: models. Verification is required. Run the required verification commands now against the generated SDK output.",
+    "steps": [
+      {
+        "id": "check",
+        "title": "Unified package check",
+        "required": true,
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
+        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
+        "command": "node",
+        "args": [
+          "./bin/publish-core.mjs",
+          "--language",
+          "typescript",
+          "--project-dir",
+          ".",
+          "--action",
+          "check"
+        ],
+        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action check"
+      },
+      {
+        "id": "build",
+        "title": "Unified package build",
+        "required": true,
+        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: models.",
+        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
+        "command": "node",
+        "args": [
+          "./bin/publish-core.mjs",
+          "--language",
+          "typescript",
+          "--project-dir",
+          ".",
+          "--action",
+          "build"
+        ],
+        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action build"
+      }
+    ]
   },
   "sdk": {
     "name": "clawrouter-app-sdk",
@@ -55,10 +143,10 @@
     "localVersions": []
   },
   "stats": {
-    "totalFiles": 512,
-    "models": 481,
+    "totalFiles": 513,
+    "models": 482,
     "apis": 8,
-    "types": 483
+    "types": 484
   },
   "warnings": [
     {
@@ -388,15 +476,23 @@
   ],
   "syncSummary": {
     "dryRun": false,
-    "writtenFiles": 0,
+    "writtenFiles": 6,
     "skippedScaffoldFiles": 2,
-    "skippedUnchangedGeneratedFiles": 509,
+    "skippedUnchangedGeneratedFiles": 504,
     "deletedGeneratedFiles": 0,
     "changeSummaryPath": ".sdkwork/sdkwork-generator-changes.json",
-    "changeFingerprint": "5f84d53bfbf4edd8bcec2e0554afc6f3ac03be4649ea49758bdf9be58848ea61",
+    "changeFingerprint": "802e0c79455e507eb032f61af3f7cb150c03a6e340074ed726338a310a55b501",
     "changes": {
-      "createdGeneratedFiles": [],
-      "updatedGeneratedFiles": [],
+      "createdGeneratedFiles": [
+        "src/types/provider-retry-policy.ts"
+      ],
+      "updatedGeneratedFiles": [
+        "src/types/create-routing-channel-request.ts",
+        "src/types/index.ts",
+        "src/types/routing-channel-item.ts",
+        "src/types/routing-channels-response.ts",
+        "src/types/update-routing-channel-request.ts"
+      ],
       "unchangedGeneratedFiles": [
         "bin/publish-core.mjs",
         "bin/publish.ps1",
@@ -596,7 +692,6 @@
         "src/types/courses-retrieve-result.ts",
         "src/types/create-api-key-request.ts",
         "src/types/create-api-key-response.ts",
-        "src/types/create-routing-channel-request.ts",
         "src/types/dashboard-announcement.ts",
         "src/types/dashboard-chart-point.ts",
         "src/types/dashboard-overview-response.ts",
@@ -679,7 +774,6 @@
         "src/types/iam-verification-code-response.ts",
         "src/types/iam-verification-code-verify-request.ts",
         "src/types/iam-verification-code-verify-response.ts",
-        "src/types/index.ts",
         "src/types/integration-channel-model-record.ts",
         "src/types/integration-channel-record.ts",
         "src/types/integration-provider-account-record.ts",
@@ -812,13 +906,11 @@
         "src/types/routing-api-keys-list-result.ts",
         "src/types/routing-api-keys-response.ts",
         "src/types/routing-channel-delete-response.ts",
-        "src/types/routing-channel-item.ts",
         "src/types/routing-channel-mutation-response.ts",
         "src/types/routing-channel-test-response.ts",
         "src/types/routing-channels-create-result.ts",
         "src/types/routing-channels-delete-result.ts",
         "src/types/routing-channels-list-result.ts",
-        "src/types/routing-channels-response.ts",
         "src/types/routing-channels-status-update-result.ts",
         "src/types/routing-channels-update-result.ts",
         "src/types/routing-channels-verify-result.ts",
@@ -862,7 +954,6 @@
         "src/types/submit-recharge-response.ts",
         "src/types/system-installation-state-record.ts",
         "src/types/system-schema-migration-record.ts",
-        "src/types/update-routing-channel-request.ts",
         "src/types/update-routing-strategy-request.ts",
         "src/types/update-routing-strategy-response.ts",
         "src/types/update-settings-request.ts",
@@ -918,26 +1009,77 @@
     },
     "impact": {
       "schemaVersion": 1,
-      "areas": [],
-      "details": [],
-      "requiresVerification": false,
-      "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped."
+      "areas": [
+        "models"
+      ],
+      "details": [
+        {
+          "area": "models",
+          "paths": [
+            "src/types/create-routing-channel-request.ts",
+            "src/types/index.ts",
+            "src/types/provider-retry-policy.ts",
+            "src/types/routing-channel-item.ts",
+            "src/types/routing-channels-response.ts",
+            "src/types/update-routing-channel-request.ts"
+          ]
+        }
+      ],
+      "requiresVerification": true,
+      "summary": "Detected impact areas: models. Verification is required."
     },
     "verificationPlan": {
-      "shouldRun": false,
-      "runPhase": "skip",
-      "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped.",
-      "steps": []
+      "shouldRun": true,
+      "runPhase": "now",
+      "summary": "Detected impact areas: models. Verification is required. Run the required verification commands now against the generated SDK output.",
+      "steps": [
+        {
+          "id": "check",
+          "title": "Unified package check",
+          "required": true,
+          "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
+          "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
+          "command": "node",
+          "args": [
+            "./bin/publish-core.mjs",
+            "--language",
+            "typescript",
+            "--project-dir",
+            ".",
+            "--action",
+            "check"
+          ],
+          "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action check"
+        },
+        {
+          "id": "build",
+          "title": "Unified package build",
+          "required": true,
+          "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: models.",
+          "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
+          "command": "node",
+          "args": [
+            "./bin/publish-core.mjs",
+            "--language",
+            "typescript",
+            "--project-dir",
+            ".",
+            "--action",
+            "build"
+          ],
+          "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action build"
+        }
+      ]
     },
     "executionDecision": {
       "schemaVersion": 1,
-      "riskLevel": "low",
-      "nextAction": "skip",
+      "riskLevel": "medium",
+      "nextAction": "verify",
       "requiresManualReview": false,
       "applyRequiresExpectedFingerprint": false,
-      "summary": "No actionable changes were detected. No apply or verification step is required.",
+      "summary": "Changes have been applied. Run the required verification plan now.",
       "reasons": [
-        "no-actionable-changes"
+        "verification-required"
       ]
     },
     "backedUpFiles": [],

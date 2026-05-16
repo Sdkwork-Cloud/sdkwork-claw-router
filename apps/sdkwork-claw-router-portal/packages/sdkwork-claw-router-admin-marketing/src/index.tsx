@@ -1,8 +1,8 @@
 import React, { useCallback, useState, useRef, useEffect, useMemo } from 'react';
 import { Search, Plus, TrendingUp, Hash, Ticket, History, Wallet, ListOrdered, Share2, MoreVertical, Settings, X, Edit, Trash2, Download, Layers } from 'lucide-react';
 import { BusinessStatePanel, BusinessStateTableRow, ConfirmDialog, CopyButton } from 'sdkwork-claw-router-commons';
-import { MarketingService, Coupon, Batch, PromoCode, RedemptionRecord, RechargePackage, RechargeRecord, ReferralStat } from './marketingService';
-import { createCouponBatchGenerateInputFromForm, createCouponInputFromForm, createRechargePackageInputFromForm } from './marketingForm';
+import { MarketingService, Coupon, Batch, PromoCode, RedemptionRecord, RechargePackage, RechargeRecord, ReferralStat, ExchangeRule, PaymentAttempt } from './marketingService';
+import { createCouponBatchGenerateInputFromForm, createCouponInputFromForm, createExchangeRuleInputFromForm, createRechargePackageInputFromForm } from './marketingForm';
 
 function CopyableText({ text }: { text: string }) {
   return (
@@ -23,7 +23,9 @@ const MARKETING_TABS = [
   { id: 'promo-codes', label: '发券批次与券码', icon: <Hash className="w-4 h-4" /> },
   { id: 'redemptions', label: '兑换记录查询', icon: <History className="w-4 h-4" /> },
   { id: 'recharge', label: '充值管理', icon: <Wallet className="w-4 h-4" /> },
+  { id: 'exchange-rules', label: '积分兑换规则', icon: <Settings className="w-4 h-4" /> },
   { id: 'recharge-records', label: '充值记录查询', icon: <ListOrdered className="w-4 h-4" /> },
+  { id: 'payment-attempts', label: '支付尝试流水', icon: <ListOrdered className="w-4 h-4" /> },
   { id: 'referrals', label: '分享推荐活动管理', icon: <Share2 className="w-4 h-4" /> },
 ];
 
@@ -92,22 +94,31 @@ export function MarketingAdmin() {
   }, [loadMarketingData]);
 
   const renderContent = () => {
-    if (loading) {
-      return (
-        <BusinessStatePanel kind="loading" title="Loading marketing data..." className="h-full" />
-      );
-    }
+    const renderMarketingLoadState = () => {
+      if (loading) {
+        return (
+          <BusinessStatePanel kind="loading" title="Loading marketing data..." className="h-full" />
+        );
+      }
+      if (loadError) {
+        return (
+          <BusinessStatePanel
+            kind="error"
+            title="Marketing data could not be loaded"
+            description={loadError}
+            onRetry={() => void loadMarketingData()}
+            className="h-full"
+          />
+        );
+      }
+      return null;
+    };
 
-    if (loadError) {
-      return (
-        <BusinessStatePanel
-          kind="error"
-          title="Marketing data could not be loaded"
-          description={loadError}
-          onRetry={() => void loadMarketingData()}
-          className="h-full"
-        />
-      );
+    if (activeTab === 'coupons' || activeTab === 'promo-codes') {
+      const loadState = renderMarketingLoadState();
+      if (loadState) {
+        return loadState;
+      }
     }
 
     switch (activeTab) {
@@ -119,8 +130,12 @@ export function MarketingAdmin() {
         return <RedemptionsView search={search} setSearch={setSearch} />;
       case 'recharge':
         return <RechargeManageView />;
+      case 'exchange-rules':
+        return <ExchangeRulesView search={search} setSearch={setSearch} />;
       case 'recharge-records':
         return <RechargeRecordsView search={search} setSearch={setSearch} />;
+      case 'payment-attempts':
+        return <PaymentAttemptsView search={search} setSearch={setSearch} />;
       case 'referrals':
         return <ReferralsView search={search} setSearch={setSearch} />;
       default:
@@ -176,6 +191,7 @@ function CouponsView({
   setPromoCodes
 }: CouponsViewProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingCoupon, setEditingCoupon] = useState<Coupon | null>(null);
   const [isBatchModalOpen, setIsBatchModalOpen] = useState(false);
   const [selectedCouponId, setSelectedCouponId] = useState<string | null>(null);
 
@@ -201,6 +217,22 @@ function CouponsView({
     setDeleteTarget(null);
   };
 
+  const openCreateCouponModal = () => {
+    setEditingCoupon(null);
+    setIsModalOpen(true);
+  };
+
+  const openEditCouponModal = (coupon: Coupon) => {
+    setEditingCoupon(coupon);
+    setActiveDropdown(null);
+    setIsModalOpen(true);
+  };
+
+  const closeCouponModal = () => {
+    setIsModalOpen(false);
+    setEditingCoupon(null);
+  };
+
   const executeDelete = async () => {
     if (!deleteTarget) {
       return;
@@ -222,9 +254,14 @@ function CouponsView({
   const handleAddCoupon = async (e: React.FormEvent) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
-    const added = await MarketingService.addCoupon(createCouponInputFromForm(formData));
-    setCoupons((current) => [added, ...current]);
-    setIsModalOpen(false);
+    if (editingCoupon) {
+      const updated = await MarketingService.updateCoupon(editingCoupon.id, createCouponInputFromForm(formData));
+      setCoupons((current) => current.map((coupon) => coupon.id === updated.id ? updated : coupon));
+    } else {
+      const added = await MarketingService.addCoupon(createCouponInputFromForm(formData));
+      setCoupons((current) => [added, ...current]);
+    }
+    closeCouponModal();
   };
 
   const handleGenerateBatch = async (e: React.FormEvent) => {
@@ -253,7 +290,7 @@ function CouponsView({
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
             <input type="text" placeholder="搜索优惠券名称..." value={search} onChange={e => setSearch(e.target.value)} className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:border-pink-500 w-64 text-slate-900 dark:text-white" />
           </div>
-          <button onClick={() => setIsModalOpen(true)} className="bg-pink-600 hover:bg-pink-700 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2">
+          <button onClick={openCreateCouponModal} className="bg-pink-600 hover:bg-pink-700 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2">
             <Plus className="w-4 h-4" /> 创建新模板
           </button>
         </div>
@@ -277,7 +314,7 @@ function CouponsView({
                 kind="empty"
                 title="No coupon templates found"
                 description="Create a coupon template before generating coupon batches and promo codes."
-                action={{ label: 'Create template', onClick: () => setIsModalOpen(true) }}
+                action={{ label: 'Create template', onClick: openCreateCouponModal }}
               />
             ) : filteredCoupons.map((c) => {
               const relatedBatches = batches.filter((b) => b.couponId === c.id);
@@ -315,7 +352,7 @@ function CouponsView({
                       <button onClick={() => setActiveDropdown(activeDropdown === c.id ? null : c.id)} className="p-1.5 text-slate-400 hover:text-pink-500 hover:bg-pink-50 dark:hover:bg-pink-500/10 rounded-md transition-colors"><MoreVertical className="w-4 h-4" /></button>
                       {activeDropdown === c.id && (
                         <div ref={dropdownRef} className="absolute right-0 top-10 w-32 bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg shadow-xl z-50 overflow-hidden text-left origin-top-right">
-                          <button className="w-full px-4 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 flex items-center gap-2 transition-colors">
+                          <button onClick={() => openEditCouponModal(c)} className="w-full px-4 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 flex items-center gap-2 transition-colors">
                             <Edit className="w-4 h-4" /> 编辑属性
                           </button>
                           <button
@@ -344,9 +381,9 @@ function CouponsView({
           <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col">
             <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                 <Ticket className="w-5 h-5 text-pink-500" /> 定义基础优惠券模板
+                 <Ticket className="w-5 h-5 text-pink-500" /> {editingCoupon ? '编辑优惠券模板' : '定义基础优惠券模板'}
               </h3>
-              <button onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+              <button onClick={closeCouponModal} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -355,28 +392,28 @@ function CouponsView({
               <div className="p-5 space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">内部模板标识名称</label>
-                  <input required name="name" type="text" placeholder="例如：新用户首次充值10元抵扣券" className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-pink-500 text-slate-900 dark:text-white" />
+                  <input required name="name" type="text" defaultValue={editingCoupon?.name ?? ''} placeholder="例如：新用户首次充值10元抵扣券" className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-pink-500 text-slate-900 dark:text-white" />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">基础抵扣规则</label>
-                    <select required name="type" className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-pink-500 text-slate-900 dark:text-white">
+                    <select required name="type" defaultValue={editingCoupon?.type ?? 'amount'} className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-pink-500 text-slate-900 dark:text-white">
                       <option value="amount">固定面额抵扣</option>
                       <option value="discount">订单百分比折扣</option>
                     </select>
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">具体面额 / 折扣率</label>
-                    <input required name="value" type="text" placeholder="例: ¥10.00 或 20%" className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-pink-500 text-slate-900 dark:text-white font-mono" />
+                    <input required name="value" type="text" defaultValue={editingCoupon?.value ?? ''} placeholder="例: ¥10.00 或 20%" className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-pink-500 text-slate-900 dark:text-white font-mono" />
                   </div>
                 </div>
               </div>
               <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212]">
-                <button type="button" onClick={() => setIsModalOpen(false)} className="px-4 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-[#1a1a1a] border border-slate-300 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-white/5 rounded-lg transition-colors">
+                <button type="button" onClick={closeCouponModal} className="px-4 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-[#1a1a1a] border border-slate-300 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-white/5 rounded-lg transition-colors">
                   取消
                 </button>
                 <button type="submit" className="px-4 py-2.5 text-sm font-medium text-white bg-pink-600 hover:bg-pink-700 rounded-lg shadow-sm transition-colors">
-                  保存并创建模板
+                  {editingCoupon ? '保存模板变更' : '保存并创建模板'}
                 </button>
               </div>
             </form>
@@ -412,12 +449,12 @@ function CouponsView({
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">券码抬头前缀 (选填)</label>
-                    <input name="prefix" type="text" placeholder="如: FB2024" className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-pink-500 text-slate-900 dark:text-white uppercase font-mono" />
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">券码抬头前缀</label>
+                    <input required name="prefix" type="text" placeholder="如: FB2024" className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-pink-500 text-slate-900 dark:text-white uppercase font-mono" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">本次生成数量</label>
-                    <input required name="count" type="number" min="1" max="10000" defaultValue={100} className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-pink-500 text-slate-900 dark:text-white font-mono" />
+                    <input required name="count" type="number" min="1" max="10000" step="1" defaultValue={100} className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-pink-500 text-slate-900 dark:text-white font-mono" />
                   </div>
                 </div>
               </div>
@@ -485,6 +522,39 @@ function PromoCodesView({ search, setSearch, coupons, batches, promoCodes, setPr
     return filtered;
   }, [promoCodes, selectedBatchId, search]);
 
+  const exportCurrentPromoCodes = () => {
+    if (displayCodes.length === 0) {
+      return;
+    }
+    const headers = ['code', 'status', 'batch_id', 'batch_name', 'coupon_id', 'coupon_name', 'coupon_value', 'used_by', 'used_at'];
+    const rows = displayCodes.map((code) => {
+      const batch = batches.find((item) => item.id === code.batchId);
+      const coupon = coupons.find((item) => item.id === batch?.couponId);
+      return [
+        code.code,
+        code.status,
+        code.batchId,
+        batch?.name ?? '',
+        batch?.couponId ?? '',
+        coupon?.name ?? '',
+        coupon?.value ?? '',
+        code.usedBy ?? '',
+        code.usedAt ?? '',
+      ];
+    });
+    const escapeCsvCell = (value: string) => `"${value.replace(/"/g, '""')}"`;
+    const csv = [headers, ...rows]
+      .map((row) => row.map((value) => escapeCsvCell(String(value))).join(','))
+      .join('\n');
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `promo-codes-${selectedBatchId}-${new Date().toISOString().slice(0, 10)}.csv`;
+    link.click();
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="flex-1 flex flex-col overflow-hidden">
       <div className="p-5 border-b border-slate-200 dark:border-white/10 flex justify-between items-center bg-slate-50/50 dark:bg-[#121212]/50">
@@ -507,7 +577,7 @@ function PromoCodesView({ search, setSearch, coupons, batches, promoCodes, setPr
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
             <input type="text" placeholder="精确搜索券码字符..." value={search} onChange={e => setSearch(e.target.value)} className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:border-pink-500 w-64 text-slate-900 dark:text-white shadow-sm" />
           </div>
-          <button className="bg-white dark:bg-black border border-slate-200 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-white/5 text-slate-700 dark:text-slate-200 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 shadow-sm">
+          <button onClick={exportCurrentPromoCodes} disabled={displayCodes.length === 0} className="bg-white dark:bg-black border border-slate-200 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-white/5 text-slate-700 dark:text-slate-200 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed">
             <Download className="w-4 h-4" /> 导出当页
           </button>
         </div>
@@ -627,6 +697,22 @@ function PromoCodesView({ search, setSearch, coupons, batches, promoCodes, setPr
 
 function getLoadErrorMessage(error: unknown, fallback: string): string {
   return error instanceof Error && error.message ? error.message : fallback;
+}
+
+function statusBadgeClass(status: 'active' | 'pending' | 'success' | 'failed' | 'expired'): string {
+  switch (status) {
+    case 'active':
+    case 'success':
+      return 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400';
+    case 'pending':
+      return 'bg-amber-50 text-amber-600 dark:bg-amber-500/10 dark:text-amber-400';
+    case 'failed':
+      return 'bg-red-50 text-red-600 dark:bg-red-500/10 dark:text-red-400';
+    case 'expired':
+      return 'bg-slate-100 text-slate-500 dark:bg-white/10 dark:text-slate-400';
+    default:
+      return 'bg-slate-100 text-slate-500 dark:bg-white/10 dark:text-slate-400';
+  }
 }
 
 // 3. 兑换记录查询
@@ -963,6 +1049,157 @@ function RechargeManageView() {
   );
 }
 
+function ExchangeRulesView({ search, setSearch }: { search: string, setSearch: (s: string) => void }) {
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [rules, setRules] = useState<ExchangeRule[]>([]);
+  const [saving, setSaving] = useState(false);
+  const [mutationError, setMutationError] = useState<string | null>(null);
+  const [rateInput, setRateInput] = useState('');
+
+  const loadExchangeRules = useCallback(async (isActive: () => boolean = () => true) => {
+    setLoading(true);
+    setLoadError(null);
+    try {
+      const data = await MarketingService.listExchangeRules({
+        sourceAssetType: 'POINTS',
+        targetAssetType: 'CASH',
+        status: 'active',
+      });
+      if (isActive()) {
+        setRules(data);
+        setRateInput(data[0]?.rate ?? '');
+      }
+    } catch (error) {
+      if (isActive()) {
+        setLoadError(getLoadErrorMessage(error, 'Failed to load exchange rules.'));
+      }
+    } finally {
+      if (isActive()) {
+        setLoading(false);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    void loadExchangeRules(() => active);
+    return () => {
+      active = false;
+    };
+  }, [loadExchangeRules]);
+
+  const handleSubmitRule = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSaving(true);
+    setMutationError(null);
+    try {
+      const updated = await MarketingService.upsertExchangeRule(createExchangeRuleInputFromForm(new FormData(event.currentTarget)));
+      setRules((current) => {
+        const exists = current.some((item) => item.id === updated.id);
+        return exists
+          ? current.map((item) => item.id === updated.id ? updated : item)
+          : [updated, ...current];
+      });
+      setRateInput(updated.rate);
+    } catch (error) {
+      setMutationError(getLoadErrorMessage(error, 'Failed to save exchange rule.'));
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const normalizedSearch = search.trim().toLowerCase();
+  const filteredRules = normalizedSearch
+    ? rules.filter((rule) => [
+      rule.id,
+      rule.sourceAssetType,
+      rule.targetAssetType,
+      rule.rate,
+      rule.status,
+    ].some((value) => value.toLowerCase().includes(normalizedSearch)))
+    : rules;
+
+  return (
+    <div className="flex-1 flex flex-col overflow-hidden">
+      <div className="p-5 border-b border-slate-200 dark:border-white/10 flex justify-between items-center bg-slate-50/50 dark:bg-[#121212]/50">
+        <h3 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+          <Settings className="w-5 h-5 text-slate-400" />
+          积分兑换规则
+        </h3>
+        <div className="relative">
+          <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+          <input type="text" placeholder="搜索规则 ID 或兑换对..." value={search} onChange={e => setSearch(e.target.value)} className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:border-blue-500 w-64 text-slate-900 dark:text-white" />
+        </div>
+      </div>
+      <div className="flex-1 overflow-auto p-5 space-y-5">
+        <form onSubmit={handleSubmitRule} className="border border-slate-200 dark:border-white/10 rounded-lg bg-slate-50/70 dark:bg-[#121212]/50 p-4">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-4 items-end">
+            <div>
+              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">兑换方向</label>
+              <div className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm font-mono text-slate-900 dark:text-white">
+                {'POINTS -> CASH'}
+              </div>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">兑换比例</label>
+              <input required name="rate" type="text" inputMode="decimal" value={rateInput} onChange={(event) => setRateInput(event.target.value)} placeholder="120" className="w-full bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500 text-slate-900 dark:text-white font-mono" />
+            </div>
+            <button type="submit" disabled={saving} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-60">
+              {saving ? '保存中...' : '保存规则'}
+            </button>
+          </div>
+          {mutationError && (
+            <div className="mt-3 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
+              {mutationError}
+            </div>
+          )}
+        </form>
+
+        <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-white/10 rounded-lg overflow-hidden">
+          <thead className="bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
+            <tr>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">规则 ID</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">兑换方向</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">兑换比例</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">状态</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-200 dark:divide-white/5 bg-white dark:bg-transparent">
+            {loading ? (
+              <BusinessStateTableRow colSpan={4} kind="loading" title="Loading exchange rules..." />
+            ) : loadError ? (
+              <BusinessStateTableRow
+                colSpan={4}
+                kind="error"
+                title="Exchange rules could not be loaded"
+                description={loadError}
+                onRetry={() => void loadExchangeRules()}
+              />
+            ) : filteredRules.length === 0 ? (
+              <BusinessStateTableRow
+                colSpan={4}
+                kind="empty"
+                title="No exchange rules found"
+                description="Save the POINTS to CASH rule before users read the exchange rate."
+              />
+            ) : filteredRules.map((rule) => (
+              <tr key={rule.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
+                <td className="px-4 py-3"><CopyableText text={rule.id} /></td>
+                <td className="px-4 py-3 font-mono text-slate-900 dark:text-slate-200">{`${rule.sourceAssetType} -> ${rule.targetAssetType}`}</td>
+                <td className="px-4 py-3 font-mono font-semibold text-blue-600 dark:text-blue-400">{rule.rate}</td>
+                <td className="px-4 py-3">
+                  <span className={`px-2 py-1 rounded text-xs ${statusBadgeClass(rule.status)}`}>{rule.status}</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
 // 5. 充值记录查询
 function RechargeRecordsView({ search, setSearch }: { search: string, setSearch: (s: string) => void }) {
   const [loading, setLoading] = useState(true);
@@ -1063,6 +1300,111 @@ function RechargeRecordsView({ search, setSearch }: { search: string, setSearch:
   );
 }
 
+function PaymentAttemptsView({ search, setSearch }: { search: string, setSearch: (s: string) => void }) {
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [paymentAttempts, setPaymentAttempts] = useState<PaymentAttempt[]>([]);
+
+  const loadPaymentAttempts = useCallback(async (isActive: () => boolean = () => true) => {
+    setLoading(true);
+    setLoadError(null);
+    try {
+      const data = await MarketingService.listPaymentAttempts();
+      if (isActive()) {
+        setPaymentAttempts(data);
+      }
+    } catch (error) {
+      if (isActive()) {
+        setLoadError(getLoadErrorMessage(error, 'Failed to load payment attempts.'));
+      }
+    } finally {
+      if (isActive()) {
+        setLoading(false);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    void loadPaymentAttempts(() => active);
+    return () => {
+      active = false;
+    };
+  }, [loadPaymentAttempts]);
+
+  const normalizedSearch = search.trim().toLowerCase();
+  const filteredAttempts = normalizedSearch
+    ? paymentAttempts.filter((item) => [
+      item.id,
+      item.orderNo,
+      item.provider,
+      item.amount,
+      item.status,
+      item.createdAt,
+    ].some((value) => value.toLowerCase().includes(normalizedSearch)))
+    : paymentAttempts;
+
+  return (
+    <div className="flex-1 flex flex-col overflow-hidden">
+      <div className="p-5 border-b border-slate-200 dark:border-white/10 flex justify-between items-center bg-slate-50/50 dark:bg-[#121212]/50">
+        <h3 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+          <ListOrdered className="w-5 h-5 text-slate-400" />
+          支付尝试流水
+        </h3>
+        <div className="relative">
+          <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+          <input type="text" placeholder="搜索订单、支付 ID 或渠道..." value={search} onChange={e => setSearch(e.target.value)} className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:border-blue-500 w-64 text-slate-900 dark:text-white" />
+        </div>
+      </div>
+      <div className="flex-1 overflow-auto p-5">
+        <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-white/10 rounded-lg overflow-hidden">
+          <thead className="bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
+            <tr>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">时间</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">支付 ID</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">订单号</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">渠道</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">金额</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">状态</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-200 dark:divide-white/5 bg-white dark:bg-transparent">
+            {loading ? (
+              <BusinessStateTableRow colSpan={6} kind="loading" title="Loading payment attempts..." />
+            ) : loadError ? (
+              <BusinessStateTableRow
+                colSpan={6}
+                kind="error"
+                title="Payment attempts could not be loaded"
+                description={loadError}
+                onRetry={() => void loadPaymentAttempts()}
+              />
+            ) : filteredAttempts.length === 0 ? (
+              <BusinessStateTableRow
+                colSpan={6}
+                kind="empty"
+                title="No payment attempts found"
+                description="Payment attempts will appear here after users create payment records."
+              />
+            ) : filteredAttempts.map((item) => (
+              <tr key={item.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
+                <td className="px-4 py-3 font-mono text-xs">{item.createdAt}</td>
+                <td className="px-4 py-3"><CopyableText text={item.id} /></td>
+                <td className="px-4 py-3 font-mono text-xs text-blue-600 dark:text-blue-400">{item.orderNo}</td>
+                <td className="px-4 py-3 font-mono">{item.provider}</td>
+                <td className="px-4 py-3 font-mono font-medium text-slate-900 dark:text-slate-200">{item.amount}</td>
+                <td className="px-4 py-3">
+                  <span className={`px-2 py-1 rounded text-xs ${statusBadgeClass(item.status)}`}>{item.status}</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
 // 6. 分享推荐活动管理
 function ReferralsView({ search, setSearch }: { search: string, setSearch: (s: string) => void }) {
   const [loading, setLoading] = useState(true);
@@ -1110,9 +1452,6 @@ function ReferralsView({ search, setSearch }: { search: string, setSearch: (s: s
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
             <input type="text" placeholder="搜索邀请人账号..." value={search} onChange={e => setSearch(e.target.value)} className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:border-blue-500 w-64 text-slate-900 dark:text-white" />
           </div>
-          <button className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 px-4 py-1.5 rounded-lg text-sm font-medium transition-colors hover:bg-slate-50 dark:hover:bg-white/5">
-            分销规则设置
-          </button>
         </div>
       </div>
       <div className="flex-1 overflow-auto p-5">

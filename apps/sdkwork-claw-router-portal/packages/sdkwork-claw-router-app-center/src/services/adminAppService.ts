@@ -9,7 +9,6 @@ import {
   readRequiredApiItem,
   readRequiredApiItems,
   readRequiredString,
-  readString,
   requiredSafePathSegment,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
@@ -165,8 +164,8 @@ export class AdminAppService {
       requiredSafePathSegment(appId, 'appId'),
       createRequestParams('admin-app-delete'),
     );
-    ensurePlusApiSuccess(result, 'Failed to delete app');
-    return readBoolean(readApiRecord(result), 'deleted', false);
+    ensureDeleteResult(result, 'App delete confirmation is required');
+    return true;
   }
 
   static async enableApp(appId: string): Promise<AdminApp> {
@@ -175,7 +174,11 @@ export class AdminAppService {
       createRequestParams('admin-app-enable'),
     );
     ensurePlusApiSuccess(result, 'Failed to enable app');
-    return normalizeAdminApp(readRequiredApiItem(result, 'Enabled app response is missing data'));
+    return ensureAppStatus(
+      normalizeAdminApp(readRequiredApiItem(result, 'Enabled app response is missing data')),
+      'ACTIVE',
+      'Enabled app response must have ACTIVE status',
+    );
   }
 
   static async disableApp(appId: string): Promise<AdminApp> {
@@ -184,7 +187,11 @@ export class AdminAppService {
       createRequestParams('admin-app-disable'),
     );
     ensurePlusApiSuccess(result, 'Failed to disable app');
-    return normalizeAdminApp(readRequiredApiItem(result, 'Disabled app response is missing data'));
+    return ensureAppStatus(
+      normalizeAdminApp(readRequiredApiItem(result, 'Disabled app response is missing data')),
+      'INACTIVE',
+      'Disabled app response must have INACTIVE status',
+    );
   }
 
   static async publishApp(appId: string): Promise<AdminApp> {
@@ -193,7 +200,11 @@ export class AdminAppService {
       createRequestParams('admin-app-publish'),
     );
     ensurePlusApiSuccess(result, 'Failed to publish app');
-    return normalizeAdminApp(readRequiredApiItem(result, 'Published app response is missing data'));
+    return ensureAppMarketStatus(
+      normalizeAdminApp(readRequiredApiItem(result, 'Published app response is missing data')),
+      'PUBLISHED',
+      'Published app response must have PUBLISHED market status',
+    );
   }
 
   static async offlineApp(appId: string): Promise<AdminApp> {
@@ -202,7 +213,11 @@ export class AdminAppService {
       createRequestParams('admin-app-offline'),
     );
     ensurePlusApiSuccess(result, 'Failed to offline app');
-    return normalizeAdminApp(readRequiredApiItem(result, 'Offline app response is missing data'));
+    return ensureAppMarketStatus(
+      normalizeAdminApp(readRequiredApiItem(result, 'Offline app response is missing data')),
+      'OFFLINE',
+      'Offline app response must have OFFLINE market status',
+    );
   }
 }
 
@@ -281,6 +296,27 @@ function normalizeCreateRequest(input: AdminAppCreateInput): AdminAppCreateReque
   });
 }
 
+function ensureDeleteResult(result: unknown, message: string): void {
+  ensurePlusApiSuccess(result, message);
+  if (readBoolean(readApiRecord(result), 'deleted') !== true) {
+    throw new Error(message);
+  }
+}
+
+function ensureAppStatus(app: AdminApp, status: AdminAppStatus, message: string): AdminApp {
+  if (app.status !== status) {
+    throw new Error(message);
+  }
+  return app;
+}
+
+function ensureAppMarketStatus(app: AdminApp, marketStatus: AdminAppMarketStatus, message: string): AdminApp {
+  if (app.marketStatus !== marketStatus) {
+    throw new Error(message);
+  }
+  return app;
+}
+
 function normalizeUpdateRequest(input: AdminAppUpdateInput): AdminAppUpdateRequest {
   const config = input.config === undefined ? undefined : normalizeAppConfig(input.config);
   return pruneUndefined({
@@ -310,7 +346,7 @@ function normalizeUpdateRequest(input: AdminAppUpdateInput): AdminAppUpdateReque
 
 function normalizeAdminApp(value: unknown): AdminApp {
   const item = readRequiredRecord(value, 'App record is required');
-  const config = normalizeAppConfig(readRecord(item, 'config'));
+  const config = normalizeAppConfig(readRequiredRecordField(item, 'config', 'App config is required'));
   return {
     id: readRequiredString(item, 'id', 'App id is required'),
     uuid: readRequiredString(item, 'uuid', 'App uuid is required'),
@@ -318,27 +354,27 @@ function normalizeAdminApp(value: unknown): AdminApp {
     name: readRequiredString(item, 'name', 'App name is required'),
     description: readNullableString(item, 'description'),
     version: readNullableString(item, 'version'),
-    icon: readRecord(item, 'icon'),
+    icon: readRequiredRecordField(item, 'icon', 'App icon is required'),
     iconUrl: readNullableString(item, 'iconUrl'),
-    resourceList: readRecord(item, 'resourceList'),
+    resourceList: readRequiredRecordField(item, 'resourceList', 'App resource list is required'),
     projectId: readNullableString(item, 'projectId'),
     accessUrl: readNullableString(item, 'accessUrl'),
     config,
     appKey: readNullableString(item, 'appKey'),
-    status: readStatus(readString(item, 'status', 'ACTIVE')),
-    marketStatus: readMarketStatus(readString(item, 'marketStatus', 'DRAFT')),
+    status: readStatus(readRequiredString(item, 'status', 'App status is required')),
+    marketStatus: readMarketStatus(readRequiredString(item, 'marketStatus', 'App market status is required')),
     appType: readNullableString(item, 'appType'),
-    platforms: readRecord(item, 'platforms'),
-    installPlatforms: readRecord(item, 'installPlatforms'),
-    installSkill: readRecord(item, 'installSkill'),
-    installConfig: readRecord(item, 'installConfig'),
-    releaseNotes: readRecordArray(item, 'releaseNotes'),
+    platforms: readRequiredRecordField(item, 'platforms', 'App platforms are required'),
+    installPlatforms: readRequiredRecordField(item, 'installPlatforms', 'App install platforms are required'),
+    installSkill: readRequiredRecordField(item, 'installSkill', 'App install skill is required'),
+    installConfig: readRequiredRecordField(item, 'installConfig', 'App install config is required'),
+    releaseNotes: readRequiredRecordArray(item, 'releaseNotes', 'App release notes are required'),
     packageName: readNullableString(item, 'packageName'),
     bundleId: readNullableString(item, 'bundleId'),
     storeUrl: readNullableString(item, 'storeUrl'),
     downloadUrl: readNullableString(item, 'downloadUrl'),
-    createdAt: readString(item, 'createdAt'),
-    updatedAt: readString(item, 'updatedAt'),
+    createdAt: readRequiredString(item, 'createdAt', 'App created time is required'),
+    updatedAt: readRequiredString(item, 'updatedAt', 'App updated time is required'),
   };
 }
 
@@ -614,14 +650,20 @@ function readMarketStatus(value: string): AdminAppMarketStatus {
   throw new Error(`Unsupported app market status: ${value}`);
 }
 
-function readRecord(record: ApiRecord, key: string): Record<string, unknown> {
+function readRequiredRecordField(record: ApiRecord, key: string, message: string): Record<string, unknown> {
   const value = record[key];
-  return isRecord(value) ? value : {};
+  if (!isRecord(value)) {
+    throw new Error(message);
+  }
+  return value;
 }
 
-function readRecordArray(record: ApiRecord, key: string): Record<string, unknown>[] {
+function readRequiredRecordArray(record: ApiRecord, key: string, message: string): Record<string, unknown>[] {
   const value = record[key];
-  return Array.isArray(value) ? value.filter(isRecord) : [];
+  if (!Array.isArray(value) || value.some((item) => !isRecord(item))) {
+    throw new Error(message);
+  }
+  return value;
 }
 
 function readRequiredRecord(value: unknown, message: string): ApiRecord {

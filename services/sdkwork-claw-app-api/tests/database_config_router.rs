@@ -251,6 +251,195 @@ async fn database_config_password_login_issues_app_session_and_records_password_
 }
 
 #[tokio::test]
+async fn database_config_app_session_current_refresh_update_and_logout_use_persisted_session() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog_with_two_user_api_keys(&pool).await;
+    seed_app_user_data(&pool).await;
+    seed_second_app_organization_membership(&pool).await;
+    pool.close().await;
+
+    let router = configured_router(&database_url).await;
+    let (login_status, login_payload, _) = request_json(
+        router.clone(),
+        Request::builder()
+            .method("POST")
+            .uri("/app/v3/api/auth/sessions")
+            .header("content-type", "application/json")
+            .body(Body::from(
+                json!({
+                    "grantType": "password",
+                    "username": "owner@example.com",
+                    "password": "correct-password"
+                })
+                .to_string(),
+            ))
+            .unwrap(),
+    )
+    .await;
+    assert_eq!(StatusCode::OK, login_status);
+    let auth_token = login_payload["data"]["authToken"].as_str().unwrap();
+    let access_token = login_payload["data"]["accessToken"].as_str().unwrap();
+    let refresh_token = login_payload["data"]["refreshToken"].as_str().unwrap();
+    let session_id = login_payload["data"]["sessionId"].as_str().unwrap();
+    assert_eq!("20", login_payload["data"]["context"]["organizationId"]);
+
+    let (current_status, current_payload, current_body_text) = request_json(
+        router.clone(),
+        Request::builder()
+            .method("GET")
+            .uri("/app/v3/api/auth/sessions/current")
+            .header("authorization", format!("Bearer {auth_token}"))
+            .header("Sdkwork-Access-Token", access_token)
+            .body(Body::empty())
+            .unwrap(),
+    )
+    .await;
+    assert_eq!(StatusCode::OK, current_status);
+    assert_eq!("2000", current_payload["code"]);
+    assert_eq!(session_id, current_payload["data"]["sessionId"]);
+    assert_eq!("30", current_payload["data"]["user"]["id"]);
+    assert_eq!(
+        "owner@example.com",
+        current_payload["data"]["user"]["email"]
+    );
+    assert_eq!("20", current_payload["data"]["context"]["organizationId"]);
+    assert!(current_payload["data"].get("refreshToken").is_none());
+    assert!(!current_body_text.contains("correct-password"));
+    assert!(!current_body_text.contains("pbkdf2-sha256"));
+
+    let (refresh_status, refresh_payload, refresh_body_text) = request_json(
+        router.clone(),
+        Request::builder()
+            .method("POST")
+            .uri("/app/v3/api/auth/sessions/refresh")
+            .header("content-type", "application/json")
+            .header("authorization", format!("Bearer {auth_token}"))
+            .header("Sdkwork-Access-Token", access_token)
+            .body(Body::from(
+                json!({
+                    "refreshToken": refresh_token
+                })
+                .to_string(),
+            ))
+            .unwrap(),
+    )
+    .await;
+    assert_eq!(StatusCode::OK, refresh_status);
+    assert_eq!("2000", refresh_payload["code"]);
+    assert_eq!(session_id, refresh_payload["data"]["sessionId"]);
+    assert_ne!(auth_token, refresh_payload["data"]["authToken"]);
+    assert_ne!(access_token, refresh_payload["data"]["accessToken"]);
+    assert_ne!(refresh_token, refresh_payload["data"]["refreshToken"]);
+    assert!(!refresh_body_text.contains("correct-password"));
+
+    let new_auth_token = refresh_payload["data"]["authToken"].as_str().unwrap();
+    let new_access_token = refresh_payload["data"]["accessToken"].as_str().unwrap();
+    let old_current_status = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/auth/sessions/current")
+                .header("authorization", format!("Bearer {auth_token}"))
+                .header("Sdkwork-Access-Token", access_token)
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap()
+        .status();
+    assert_eq!(StatusCode::UNAUTHORIZED, old_current_status);
+
+    let (update_status, update_payload, _) = request_json(
+        router.clone(),
+        Request::builder()
+            .method("PATCH")
+            .uri("/app/v3/api/auth/sessions/current")
+            .header("content-type", "application/json")
+            .header("authorization", format!("Bearer {new_auth_token}"))
+            .header("Sdkwork-Access-Token", new_access_token)
+            .body(Body::from(
+                json!({
+                    "organizationCode": "workspace"
+                })
+                .to_string(),
+            ))
+            .unwrap(),
+    )
+    .await;
+    assert_eq!(StatusCode::OK, update_status);
+    assert_eq!("21", update_payload["data"]["context"]["organizationId"]);
+    assert_eq!(session_id, update_payload["data"]["sessionId"]);
+    let updated_auth_token = update_payload["data"]["authToken"].as_str().unwrap();
+    let updated_access_token = update_payload["data"]["accessToken"].as_str().unwrap();
+
+    let (logout_status, logout_payload, _) = request_json(
+        router.clone(),
+        Request::builder()
+            .method("DELETE")
+            .uri("/app/v3/api/auth/sessions/current")
+            .header("authorization", format!("Bearer {updated_auth_token}"))
+            .header("Sdkwork-Access-Token", updated_access_token)
+            .body(Body::empty())
+            .unwrap(),
+    )
+    .await;
+    assert_eq!(StatusCode::OK, logout_status);
+    assert_eq!("2000", logout_payload["code"]);
+
+    let revoked_current_status = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/auth/sessions/current")
+                .header("authorization", format!("Bearer {updated_auth_token}"))
+                .header("Sdkwork-Access-Token", updated_access_token)
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap()
+        .status();
+    assert_eq!(StatusCode::UNAUTHORIZED, revoked_current_status);
+
+    let verification_pool = create_sqlite_pool(&database_url).await;
+    let active_count: i64 =
+        sqlx::query_scalar("SELECT COUNT(1) FROM iam_session WHERE id = ? AND revoked_at IS NULL")
+            .bind(session_id)
+            .fetch_one(&verification_pool)
+            .await
+            .unwrap();
+    let refresh_event_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM iam_security_event WHERE session_id = ? AND event_type = 'sessions.refresh'",
+    )
+    .bind(session_id)
+    .fetch_one(&verification_pool)
+    .await
+    .unwrap();
+    let update_event_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM iam_security_event WHERE session_id = ? AND event_type = 'sessions.update'",
+    )
+    .bind(session_id)
+    .fetch_one(&verification_pool)
+    .await
+    .unwrap();
+    let revoke_event_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM iam_security_event WHERE session_id = ? AND event_type = 'sessions.revoke'",
+    )
+    .bind(session_id)
+    .fetch_one(&verification_pool)
+    .await
+    .unwrap();
+    verification_pool.close().await;
+    assert_eq!(0, active_count);
+    assert_eq!(1, refresh_event_count);
+    assert_eq!(1, update_event_count);
+    assert_eq!(1, revoke_event_count);
+}
+
+#[tokio::test]
 async fn database_config_auth_identity_routes_register_verify_and_reset_password() {
     let database_url = unique_sqlite_url();
     let pool = create_sqlite_pool(&database_url).await;
@@ -2562,6 +2751,72 @@ async fn database_config_recharge_lists_packages_and_persists_pending_payment_or
 }
 
 #[tokio::test]
+async fn database_config_commerce_foundation_reads_exchange_rules_for_session_scope() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog_with_two_user_api_keys(&pool).await;
+    seed_exchange_rule_runtime_data(&pool).await;
+    pool.close().await;
+
+    let router = configured_router(&database_url).await;
+    let unauthenticated_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/billing/account/points/exchange_rate")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::UNAUTHORIZED, unauthenticated_response.status());
+
+    let (rate_status, rate_payload, rate_body_text) = request_json(
+        router.clone(),
+        session_request(
+            "GET",
+            "/app/v3/api/billing/account/points/exchange_rate",
+            Body::empty(),
+            10,
+            20,
+            30,
+        ),
+    )
+    .await;
+    assert_eq!(StatusCode::OK, rate_status);
+    assert_eq!("2000", rate_payload["code"]);
+    assert_eq!("POINTS", rate_payload["data"]["sourceAssetType"]);
+    assert_eq!("CASH", rate_payload["data"]["targetAssetType"]);
+    assert_eq!("120", rate_payload["data"]["rate"]);
+    assert!(!rate_body_text.contains("Other Org Exchange Rule"));
+
+    let (rules_status, rules_payload, rules_body_text) = request_json(
+        router,
+        session_request(
+            "GET",
+            "/app/v3/api/billing/account/points/exchanges/rules?source_asset_type=points&target_asset_type=cash",
+            Body::empty(),
+            10,
+            20,
+            30,
+        ),
+    )
+    .await;
+    assert_eq!(StatusCode::OK, rules_status);
+    assert_eq!("2000", rules_payload["code"]);
+    let rules = rules_payload["data"].as_array().unwrap();
+    assert_eq!(1, rules.len());
+    assert_eq!("exchange-1", rules[0]["id"]);
+    assert_eq!("POINTS", rules[0]["sourceAssetType"]);
+    assert_eq!("CASH", rules[0]["targetAssetType"]);
+    assert_eq!("120", rules[0]["rate"]);
+    assert_eq!("active", rules[0]["status"]);
+    assert!(!rules_body_text.contains("Other Org Exchange Rule"));
+}
+
+#[tokio::test]
 async fn database_config_settings_requires_session_and_upserts_subject_preferences_and_webhook() {
     let database_url = unique_sqlite_url();
     let pool = create_sqlite_pool(&database_url).await;
@@ -3722,6 +3977,20 @@ async fn create_schema(pool: &SqlitePool) {
             frozen_token INTEGER,
             status INTEGER NOT NULL
         )"#,
+        r#"CREATE TABLE plus_account_exchange_config (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            data_scope INTEGER,
+            created_at TEXT,
+            updated_at TEXT,
+            v INTEGER,
+            config_key TEXT NOT NULL,
+            config_value TEXT NOT NULL,
+            remarks TEXT
+        )"#,
+        "CREATE UNIQUE INDEX uk_account_exchange_config_tenant_org_key ON plus_account_exchange_config (tenant_id, organization_id, config_key)",
         r#"CREATE TABLE plus_account_history (
             id INTEGER PRIMARY KEY,
             uuid TEXT,
@@ -4049,6 +4318,19 @@ async fn seed_app_user_data(pool: &SqlitePool) {
     }
 }
 
+async fn seed_second_app_organization_membership(pool: &SqlitePool) {
+    for statement in [
+        r#"INSERT INTO iam_organization
+            (id, tenant_id, parent_id, code, name, path, status, created_at, updated_at)
+            VALUES ('21', '10', NULL, 'workspace', 'Workspace Organization', '/21', 'active', '2026-04-02 00:00:00', '2026-04-29 08:00:00')"#,
+        r#"INSERT INTO iam_organization_member
+            (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
+            VALUES ('member-30-workspace', '10', '21', '30', 'member', 'active', '2026-03-31 08:00:00')"#,
+    ] {
+        sqlx::query(statement).execute(pool).await.unwrap();
+    }
+}
+
 async fn seed_auth_settings_snapshot(pool: &SqlitePool, payload: Value) {
     sqlx::query(
         r#"
@@ -4266,6 +4548,19 @@ async fn seed_recharge_runtime_data(pool: &SqlitePool) {
         r#"INSERT INTO plus_sku
             (id, tenant_id, organization_id, product_id, name, title, specs, price, status)
             VALUES (6302, 10, 20, 6301, 'Starter Recharge Pack', 'Starter Recharge Pack', '{"amount":"10.00"}', '10.00', 1)"#,
+    ] {
+        sqlx::query(statement).execute(pool).await.unwrap();
+    }
+}
+
+async fn seed_exchange_rule_runtime_data(pool: &SqlitePool) {
+    for statement in [
+        r#"INSERT INTO plus_account_exchange_config
+            (id, uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, config_key, config_value, remarks)
+            VALUES (6501, 'exchange-1', 10, 20, 1, '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, 'POINTS_TO_CASH_RATE', '120.000000', 'Owner Exchange Rule')"#,
+        r#"INSERT INTO plus_account_exchange_config
+            (id, uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, config_key, config_value, remarks)
+            VALUES (6502, 'exchange-other-org', 10, 21, 1, '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, 'POINTS_TO_CASH_RATE', '999.000000', 'Other Org Exchange Rule')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }

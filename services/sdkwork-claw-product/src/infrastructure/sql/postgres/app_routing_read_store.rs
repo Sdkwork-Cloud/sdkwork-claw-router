@@ -5,8 +5,8 @@ use sqlx::{PgPool, Row};
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::{
     AppRoutingApiKeyItem, AppRoutingChannelItem, AppRoutingModelStats, AppRoutingReadFuture,
-    AppRoutingReadStore, AppRoutingRequestTraceItem, AppRoutingSubject, AppRoutingUsageData,
-    AppRoutingUsageSnapshot,
+    AppRoutingReadStore, AppRoutingRequestTraceItem, AppRoutingRetryPolicyItem, AppRoutingSubject,
+    AppRoutingUsageData, AppRoutingUsageSnapshot,
 };
 
 const LOAD_ROUTING_CHANNELS: &str = r#"
@@ -21,6 +21,8 @@ SELECT
     COALESCE(NULLIF(c.base_url_override, ''), '') AS base_url,
     COALESCE(NULLIF(a.masked_label, ''), 'configured') AS api_key,
     CAST(COALESCE(c.capabilities, '["llm"]'::jsonb) AS TEXT) AS capabilities_json,
+    c.timeout_ms,
+    c.retry_policy::text AS retry_policy_json,
     COALESCE(c.weight, 0) AS weight,
     c.status AS status,
     c.health_status AS health_status,
@@ -85,17 +87,27 @@ WITH selected_trace AS (
     SELECT
         id,
         request_id,
+        trace_id,
         tenant_id,
         organization_id,
         user_id,
         status,
         created_at,
+        ended_at,
         channel_name_snapshot,
         requested_model,
         provider_model,
+        request_path,
+        http_method,
         http_status,
         provider_error_code,
         error_type,
+        error_message_masked,
+        request_payload_hash,
+        response_payload_hash,
+        request_bytes,
+        response_bytes,
+        streaming,
         started_at,
         latency_ms,
         total_tokens
@@ -103,17 +115,27 @@ WITH selected_trace AS (
         SELECT
             t.id,
             t.request_id,
+            t.trace_id,
             t.tenant_id,
             t.organization_id,
             t.user_id,
             t.status,
             t.created_at,
+            t.ended_at,
             t.channel_name_snapshot,
             t.requested_model,
             t.provider_model,
+            t.request_path,
+            t.http_method,
             t.http_status,
             t.provider_error_code,
             t.error_type,
+            t.error_message_masked,
+            t.request_payload_hash,
+            t.response_payload_hash,
+            t.request_bytes,
+            t.response_bytes,
+            t.streaming,
             t.started_at,
             t.latency_ms,
             t.total_tokens,
@@ -147,11 +169,23 @@ usage_by_request AS (
 SELECT
     CAST(t.id AS TEXT) AS id,
     COALESCE(CAST(t.started_at AS TEXT), CAST(t.created_at AS TEXT), '') AS trace_time,
+    COALESCE(NULLIF(t.trace_id, ''), '') AS trace_id,
+    COALESCE(NULLIF(t.request_id, ''), '') AS request_id,
     COALESCE(NULLIF(u.catalog_key, ''), NULLIF(d.resolved_model, ''), NULLIF(t.provider_model, ''), NULLIF(t.requested_model, ''), '-') AS model,
     COALESCE(NULLIF(t.channel_name_snapshot, ''), CAST(d.selected_channel_id AS TEXT), '-') AS channel,
+    COALESCE(NULLIF(t.request_path, ''), '') AS request_path,
+    COALESCE(NULLIF(t.http_method, ''), '') AS http_method,
     t.http_status AS http_status,
-    t.provider_error_code AS provider_error_code,
-    t.error_type AS error_type,
+    COALESCE(NULLIF(t.provider_error_code, ''), '') AS provider_error_code,
+    COALESCE(CAST(t.error_type AS TEXT), '') AS error_type,
+    COALESCE(NULLIF(t.error_message_masked, ''), '') AS error_message_masked,
+    COALESCE(NULLIF(t.request_payload_hash, ''), '') AS request_payload_hash,
+    COALESCE(NULLIF(t.response_payload_hash, ''), '') AS response_payload_hash,
+    COALESCE(t.request_bytes, 0) AS request_bytes,
+    COALESCE(t.response_bytes, 0) AS response_bytes,
+    COALESCE(CAST(t.started_at AS TEXT), '') AS started_at,
+    COALESCE(CAST(t.ended_at AS TEXT), '') AS ended_at,
+    CASE WHEN COALESCE(t.streaming, false) THEN 1 ELSE 0 END AS streaming,
     t.latency_ms AS latency_ms,
     COALESCE(u.total_tokens, t.total_tokens, 0) AS total_tokens
 FROM selected_trace t
@@ -378,6 +412,7 @@ fn row_to_channel(
     let errors = integer_cell(&row, "errors");
     let status = required_integer_cell(&row, "status")?;
     let health_status = required_integer_cell(&row, "health_status")?;
+    let retry_policy_json = string_cell(&row, "retry_policy_json");
     Ok(AppRoutingChannelItem {
         id: id.clone(),
         name: string_cell(&row, "name"),
@@ -391,6 +426,12 @@ fn row_to_channel(
         models: models.get(&id).cloned().unwrap_or_default(),
         is_multimodal: capabilities.iter().any(|capability| capability != "llm"),
         capabilities,
+        timeout_ms: row.try_get("timeout_ms").ok().flatten(),
+        retry_policy: retry_policy_json
+            .trim()
+            .is_empty()
+            .then_some(None)
+            .unwrap_or_else(|| AppRoutingRetryPolicyItem::from_json(&retry_policy_json)),
         weight: integer_cell(&row, "weight"),
         status: status_label(status, health_status, errors)?,
         latency: duration_or_na(integer_cell(&row, "latency_ms")),
@@ -425,6 +466,20 @@ fn row_to_request_trace(row: sqlx::postgres::PgRow) -> DomainResult<AppRoutingRe
         status: http_status,
         duration: duration_label(latency_ms),
         tokens: integer_cell(&row, "total_tokens"),
+        trace_id: string_cell(&row, "trace_id"),
+        request_id: string_cell(&row, "request_id"),
+        request_path: string_cell(&row, "request_path"),
+        http_method: string_cell(&row, "http_method"),
+        request_payload_hash: string_cell(&row, "request_payload_hash"),
+        response_payload_hash: string_cell(&row, "response_payload_hash"),
+        request_bytes: integer_cell(&row, "request_bytes"),
+        response_bytes: integer_cell(&row, "response_bytes"),
+        provider_error_code: string_cell(&row, "provider_error_code"),
+        error_type: string_cell(&row, "error_type"),
+        error_message_masked: string_cell(&row, "error_message_masked"),
+        started_at: string_cell(&row, "started_at"),
+        ended_at: string_cell(&row, "ended_at"),
+        streaming: integer_cell(&row, "streaming") != 0,
     })
 }
 

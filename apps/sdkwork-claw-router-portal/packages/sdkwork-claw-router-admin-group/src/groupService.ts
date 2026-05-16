@@ -3,6 +3,8 @@ import {
   ensurePlusApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
+  readApiRecord,
+  readBoolean,
   readRequiredApiItems,
   readRequiredApiItem,
   requiredSafePathSegment,
@@ -81,7 +83,7 @@ export class GroupService {
     const result = await getClawRouterBackendSdkClient().iam.accessGroups.delete(
       requiredSafePathSegment(id, 'groupId'),
     );
-    ensurePlusApiSuccess(result, 'Failed to delete group');
+    ensureDeleteResult(result, 'Group delete confirmation is required');
     return true;
   }
 }
@@ -122,15 +124,27 @@ function toUpdateCapacityRequest(capacity: NonNullable<GroupUpdateInput['capacit
 
 function toBackendBillingType(billingType: string): AdminAccessGroupCreateRequest['billingType'] {
   const normalized = billingType.trim().toLowerCase();
-  return normalized.includes('subscription') || normalized.includes('quota') ? 'subscription' : 'standard';
+  if (normalized === 'standard') {
+    return 'standard';
+  }
+  if (normalized === 'subscription' || normalized === 'subscription quota') {
+    return 'subscription';
+  }
+  throw new Error('billingType must be standard or subscription');
 }
 
 function toBackendGroupType(type: GroupData['type']): AdminAccessGroupCreateRequest['type'] {
-  return type === 'dedicated' ? 'dedicated' : 'public';
+  if (type === 'public' || type === 'dedicated') {
+    return type;
+  }
+  throw new Error('type must be public or dedicated');
 }
 
 function toBackendStatus(status: GroupData['status']): AdminAccessGroupCreateRequest['status'] {
-  return status === 'disabled' ? 'disabled' : 'active';
+  if (status === 'active' || status === 'disabled') {
+    return status;
+  }
+  throw new Error('status must be active or disabled');
 }
 
 function optionalText(value: string | undefined): string | undefined {
@@ -160,10 +174,10 @@ function optionalPositiveInteger(value: number | undefined, fieldName: string): 
   if (value === undefined) {
     return undefined;
   }
-  if (!Number.isFinite(value) || value < 1) {
+  if (!Number.isFinite(value) || !Number.isInteger(value) || value < 1) {
     throw new Error(`${fieldName} must be a positive integer`);
   }
-  return Math.round(value);
+  return value;
 }
 
 function pruneUndefined<T extends Record<string, unknown>>(value: T): T {
@@ -172,6 +186,13 @@ function pruneUndefined<T extends Record<string, unknown>>(value: T): T {
 
 function requestParams(scope: string): { xRequestId: string } {
   return { xRequestId: createRequestToken(scope) };
+}
+
+function ensureDeleteResult(result: unknown, message: string): void {
+  ensurePlusApiSuccess(result, message);
+  if (readBoolean(readApiRecord(result), 'deleted') !== true) {
+    throw new Error(message);
+  }
 }
 
 function normalizeGroup(value: unknown): GroupData {

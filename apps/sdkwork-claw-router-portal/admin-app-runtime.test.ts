@@ -358,6 +358,122 @@ test("admin app service validates path segments and structured JSON form fields"
   assert.throws(() => createAdminAppInputFromForm(arrayForm), /releaseNotes must be a JSON array of objects/);
 });
 
+test("admin app delete fails closed unless backend confirms deletion", async () => {
+  for (const response of [{}, { deleted: false }]) {
+    await withBackendSdkFetch(
+      (url, init) => {
+        if (url === "/backend/v3/api/platform/apps/8101" && init?.method === "DELETE") {
+          return response;
+        }
+        throw new Error(`Unexpected request ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => AdminAppService.deleteApp("8101"),
+          /App delete confirmation is required/,
+        );
+      },
+    );
+  }
+});
+
+test("admin app lifecycle actions fail closed unless backend returns the requested state", async () => {
+  for (const [url, action, response, message] of [
+    [
+      "/backend/v3/api/platform/apps/8101/enable",
+      () => AdminAppService.enableApp("8101"),
+      sampleApp({ status: "INACTIVE" }),
+      /Enabled app response must have ACTIVE status/,
+    ],
+    [
+      "/backend/v3/api/platform/apps/8101/disable",
+      () => AdminAppService.disableApp("8101"),
+      sampleApp({ status: "ACTIVE" }),
+      /Disabled app response must have INACTIVE status/,
+    ],
+    [
+      "/backend/v3/api/platform/apps/8101/publish",
+      () => AdminAppService.publishApp("8101"),
+      sampleApp({ marketStatus: "DRAFT" }),
+      /Published app response must have PUBLISHED market status/,
+    ],
+    [
+      "/backend/v3/api/platform/apps/8101/unpublish",
+      () => AdminAppService.offlineApp("8101"),
+      sampleApp({ marketStatus: "PUBLISHED" }),
+      /Offline app response must have OFFLINE market status/,
+    ],
+  ] as const) {
+    await withBackendSdkFetch(
+      (requestUrl, init) => {
+        if (requestUrl === url && init?.method === "POST") {
+          return { item: response };
+        }
+        throw new Error(`Unexpected request ${init?.method ?? "GET"} ${requestUrl}`);
+      },
+      async () => {
+        await assert.rejects(action, message);
+      },
+    );
+  }
+});
+
+test("admin app service fails closed when backend omits required app state fields", async () => {
+  for (const [field, message] of [
+    ["icon", /App icon is required/],
+    ["resourceList", /App resource list is required/],
+    ["status", /App status is required/],
+    ["marketStatus", /App market status is required/],
+    ["platforms", /App platforms are required/],
+    ["installPlatforms", /App install platforms are required/],
+    ["installSkill", /App install skill is required/],
+    ["installConfig", /App install config is required/],
+    ["releaseNotes", /App release notes are required/],
+    ["createdAt", /App created time is required/],
+    ["updatedAt", /App updated time is required/],
+  ] as const) {
+    await withBackendSdkFetch(
+      (url, init) => {
+        if (url === "/backend/v3/api/platform/apps/8101" && (init?.method ?? "GET") === "GET") {
+          const app = sampleApp();
+          delete app[field];
+          return { item: app };
+        }
+        throw new Error(`Unexpected request ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => AdminAppService.fetchApp("8101"),
+          message,
+        );
+      },
+    );
+  }
+});
+
+test("admin app service fails closed when backend returns malformed app state containers", async () => {
+  for (const [field, value, message] of [
+    ["icon", "not-object", /App icon is required/],
+    ["platforms", [], /App platforms are required/],
+    ["releaseNotes", ["not-record"], /App release notes are required/],
+  ] as const) {
+    await withBackendSdkFetch(
+      (url, init) => {
+        if (url === "/backend/v3/api/platform/apps/8101" && (init?.method ?? "GET") === "GET") {
+          return { item: sampleApp({ [field]: value }) };
+        }
+        throw new Error(`Unexpected request ${init?.method ?? "GET"} ${url}`);
+      },
+      async () => {
+        await assert.rejects(
+          () => AdminAppService.fetchApp("8101"),
+          message,
+        );
+      },
+    );
+  }
+});
+
 test("admin app service fails closed when backend app config omits the standard app key", async () => {
   await withBackendSdkFetch(
     (url, init) => {

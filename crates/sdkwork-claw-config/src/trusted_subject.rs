@@ -58,9 +58,25 @@ impl TrustedSubjectConfig {
     }
 
     pub fn from_env() -> Result<Option<Self>, String> {
+        Self::from_env_or_runtime_toml(None)
+    }
+
+    pub fn from_env_or_runtime_toml(
+        runtime_toml: Option<&crate::RuntimeTomlConfig>,
+    ) -> Result<Option<Self>, String> {
+        let signing_secret = crate::runtime::config_secret_value(
+            Self::ENV_TRUSTED_SUBJECT_SECRET,
+            "SDKWORK_CLAW_TRUSTED_SUBJECT_SECRET_FILE",
+            runtime_toml.and_then(|config| config.security.trusted_subject_secret.as_deref()),
+            runtime_toml.and_then(|config| config.security.trusted_subject_secret_file.as_deref()),
+        )?;
+        let max_clock_skew_seconds = crate::runtime::config_u64(
+            Self::ENV_TRUSTED_SUBJECT_MAX_CLOCK_SKEW_SECONDS,
+            runtime_toml.and_then(|config| config.security.trusted_subject_max_clock_skew_seconds),
+        )?;
         Self::from_optional_parts(
-            std::env::var(Self::ENV_TRUSTED_SUBJECT_SECRET).ok(),
-            std::env::var(Self::ENV_TRUSTED_SUBJECT_MAX_CLOCK_SKEW_SECONDS).ok(),
+            signing_secret,
+            max_clock_skew_seconds.map(|value| value.to_string()),
         )
     }
 

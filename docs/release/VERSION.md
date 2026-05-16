@@ -1,12 +1,12 @@
 # Current Version
 
-- Current Version: `0.2.0`
-- Release Date: `2026-05-16`
-- Status: `Released successfully on GitHub`
-- GitHub Release: `https://github.com/Sdkwork-Cloud/sdkwork-claw-router/releases/tag/v0.2.0`
-- Release Workflow: `https://github.com/Sdkwork-Cloud/sdkwork-claw-router/actions/runs/25957200472`
+- Current Version: `0.3.0`
+- Release Date: `2026-05-17`
+- Status: `Release prepared locally; GitHub publication pending`
+- GitHub Release: `https://github.com/Sdkwork-Cloud/sdkwork-claw-router/releases/tag/v0.3.0`
+- Release Workflow: `pending`
 - Release Asset Prefix: `clawrouter-*`
-- Previous Version: `0.1.0`
+- Previous Version: `0.2.0`
 - Previous Status: `Released successfully on GitHub`
 
 ## Versioning Rules

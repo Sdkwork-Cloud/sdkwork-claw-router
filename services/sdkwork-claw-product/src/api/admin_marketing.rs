@@ -18,17 +18,21 @@ use crate::ports::{
     AdminCouponBatchItem, AdminMarketingStore, AdminMarketingSubject, AdminPromoCodeItem,
     AdminRechargePackageStatus, CreateAdminCouponCommand, CreateAdminRechargePackageCommand,
     DeleteAdminCouponCommand, DeleteAdminRechargePackageCommand, GenerateAdminCouponBatchCommand,
-    ListAdminCouponBatchesQuery, ListAdminCouponsQuery, ListAdminPromoCodesQuery,
-    ListAdminRechargePackagesQuery, ListAdminRechargeRecordsQuery, ListAdminRedemptionRecordsQuery,
-    ListAdminReferralStatsQuery, UpdateAdminPromoCodeStatusCommand,
-    UpdateAdminRechargePackageCommand,
+    ListAdminCouponBatchesQuery, ListAdminCouponsQuery, ListAdminExchangeRulesQuery,
+    ListAdminPaymentAttemptsQuery, ListAdminPromoCodesQuery, ListAdminRechargePackagesQuery,
+    ListAdminRechargeRecordsQuery, ListAdminRedemptionRecordsQuery, ListAdminReferralStatsQuery,
+    LoadAdminRechargeRecordQuery, UpdateAdminCouponCommand, UpdateAdminExchangeRuleCommand,
+    UpdateAdminPromoCodeStatusCommand, UpdateAdminRechargePackageCommand,
 };
 
 const REQUEST_ID_HEADER: &str = "X-Request-Id";
 const MAX_NAME_LEN: usize = 128;
 const MAX_PREFIX_LEN: usize = 32;
+const MAX_ASSET_TYPE_LEN: usize = 32;
 const MAX_REQUEST_ID_LEN: usize = 128;
 const MAX_BATCH_COUNT: i64 = 10_000;
+const POINTS_ASSET_TYPE: &str = "POINTS";
+const CASH_ASSET_TYPE: &str = "CASH";
 
 #[derive(Clone)]
 struct AdminMarketingState {
@@ -106,6 +110,26 @@ struct RechargePackageMutationRequest {
     status: Option<String>,
 }
 
+#[derive(Debug, Deserialize)]
+struct ExchangeRuleListQueryRequest {
+    #[serde(rename = "source_asset_type", alias = "sourceAssetType")]
+    source_asset_type: Option<String>,
+    #[serde(rename = "target_asset_type", alias = "targetAssetType")]
+    target_asset_type: Option<String>,
+    status: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct ExchangeRuleMutationRequest {
+    #[serde(alias = "source_asset_type")]
+    source_asset_type: Option<String>,
+    #[serde(alias = "target_asset_type")]
+    target_asset_type: Option<String>,
+    rate: Option<Value>,
+    status: Option<String>,
+}
+
 #[derive(Debug, Clone, PartialEq, Eq)]
 struct NormalizedCouponValue {
     value: String,
@@ -118,6 +142,13 @@ struct NormalizedRechargePackageMutation {
     rmb: String,
     bonus: i64,
     status: AdminRechargePackageStatus,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+struct NormalizedExchangeRuleMutation {
+    source_asset_type: String,
+    target_asset_type: String,
+    rate: String,
 }
 
 enum AdminMarketingCommandBuildError {
@@ -160,7 +191,7 @@ pub fn admin_marketing_router_with_store(
         )
         .route(
             "/backend/v3/api/billing/recharges/records/{order_no}",
-            get(unavailable_path_item),
+            get(fetch_recharge_record),
         )
         .route(
             "/backend/v3/api/billing/recharges/packages",
@@ -172,11 +203,18 @@ pub fn admin_marketing_router_with_store(
         )
         .route(
             "/backend/v3/api/billing/exchange_rules",
-            get(empty_list).put(unavailable_command),
+            get(fetch_exchange_rules).put(update_exchange_rule),
         )
-        .route("/backend/v3/api/billing/payments/attempts", get(empty_list))
+        .route(
+            "/backend/v3/api/billing/payments/attempts",
+            get(fetch_payment_attempts),
+        )
         .route(
             "/backend/v3/api/router/referrals/stats",
+            get(fetch_referral_stats),
+        )
+        .route(
+            "/backend/v3/api/billing/referrals/stats",
             get(fetch_referral_stats),
         )
         .with_state(AdminMarketingState {
@@ -256,14 +294,38 @@ async fn delete_coupon(
     }
 }
 
-async fn update_coupon(headers: HeaderMap, Path(coupon_id): Path<String>) -> Response {
-    if let Err(response) = resolve_subject(&headers) {
-        return response;
+async fn update_coupon(
+    State(state): State<AdminMarketingState>,
+    headers: HeaderMap,
+    Path(coupon_id): Path<String>,
+    body: Bytes,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let coupon_id = match parse_positive_id(&coupon_id, "coupon id") {
+        Ok(coupon_id) => coupon_id,
+        Err(message) => return bad_request(message),
+    };
+    let request = match parse_json_body::<CreateCouponRequest>(&body, "coupon") {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
+    let command =
+        match build_update_coupon_command(state.clone(), &headers, subject, coupon_id, request) {
+            Ok(command) => command,
+            Err(error) => return command_build_error_response(error),
+        };
+
+    match state.store.update_coupon(command).await {
+        Ok(item) => {
+            Json(PlusApiResult::success(AdminMarketingItemEnvelope { item })).into_response()
+        }
+        Err(error) if error.is_not_found() => not_found_response("coupon was not found"),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => marketing_system_response("coupon command store is unavailable", error),
     }
-    if let Err(message) = parse_positive_id(&coupon_id, "coupon id") {
-        return bad_request(message);
-    }
-    unavailable_command_response()
 }
 
 async fn fetch_batches(State(state): State<AdminMarketingState>, headers: HeaderMap) -> Response {
@@ -402,6 +464,32 @@ async fn fetch_recharge_records(
         .await
     {
         Ok(items) => list_response(items),
+        Err(error) => marketing_system_response("recharge read model is unavailable", error),
+    }
+}
+
+async fn fetch_recharge_record(
+    State(state): State<AdminMarketingState>,
+    headers: HeaderMap,
+    Path(order_no): Path<String>,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let order_no = match normalize_order_no(order_no.as_str()) {
+        Ok(order_no) => order_no,
+        Err(message) => return bad_request(message),
+    };
+    match state
+        .store
+        .load_recharge_record(LoadAdminRechargeRecordQuery { subject, order_no })
+        .await
+    {
+        Ok(Some(item)) => {
+            Json(PlusApiResult::success(AdminMarketingItemEnvelope { item })).into_response()
+        }
+        Ok(None) => not_found_response("recharge record was not found"),
         Err(error) => marketing_system_response("recharge read model is unavailable", error),
     }
 }
@@ -554,32 +642,97 @@ async fn fetch_referral_stats(
     }
 }
 
+async fn fetch_exchange_rules(
+    State(state): State<AdminMarketingState>,
+    Query(params): Query<ExchangeRuleListQueryRequest>,
+    headers: HeaderMap,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let source_asset_type = match normalize_optional_asset_type(params.source_asset_type.as_deref())
+    {
+        Ok(value) => value,
+        Err(error) => return command_build_error_response(error),
+    };
+    let target_asset_type = match normalize_optional_asset_type(params.target_asset_type.as_deref())
+    {
+        Ok(value) => value,
+        Err(error) => return command_build_error_response(error),
+    };
+    let status = match normalize_optional_exchange_rule_status(params.status.as_deref()) {
+        Ok(value) => value,
+        Err(error) => return command_build_error_response(error),
+    };
+    match state
+        .store
+        .list_exchange_rules(ListAdminExchangeRulesQuery {
+            subject,
+            source_asset_type,
+            target_asset_type,
+            status,
+        })
+        .await
+    {
+        Ok(items) => Json(PlusApiResult::success(items)).into_response(),
+        Err(error) => marketing_system_response("exchange rule read model is unavailable", error),
+    }
+}
+
+async fn update_exchange_rule(
+    State(state): State<AdminMarketingState>,
+    headers: HeaderMap,
+    body: Bytes,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let request = match parse_json_body::<ExchangeRuleMutationRequest>(&body, "exchange rule") {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
+    let command =
+        match build_update_exchange_rule_command(state.clone(), &headers, subject, request) {
+            Ok(command) => command,
+            Err(error) => return command_build_error_response(error),
+        };
+
+    match state.store.update_exchange_rule(command).await {
+        Ok(item) => {
+            Json(PlusApiResult::success(AdminMarketingItemEnvelope { item })).into_response()
+        }
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => {
+            marketing_system_response("exchange rule command store is unavailable", error)
+        }
+    }
+}
+
+async fn fetch_payment_attempts(
+    State(state): State<AdminMarketingState>,
+    headers: HeaderMap,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    match state
+        .store
+        .list_payment_attempts(ListAdminPaymentAttemptsQuery { subject })
+        .await
+    {
+        Ok(items) => list_response(items),
+        Err(error) => marketing_system_response("payment attempt read model is unavailable", error),
+    }
+}
+
 fn list_response<T>(items: Vec<T>) -> Response
 where
     T: Serialize,
 {
     Json(PlusApiResult::success(AdminMarketingListResponse { items })).into_response()
-}
-
-async fn empty_list(headers: HeaderMap) -> Response {
-    if let Err(response) = resolve_subject(&headers) {
-        return response;
-    }
-    list_response(Vec::<serde_json::Value>::new())
-}
-
-async fn unavailable_path_item(headers: HeaderMap, Path(_id): Path<String>) -> Response {
-    if let Err(response) = resolve_subject(&headers) {
-        return response;
-    }
-    unavailable_read().await
-}
-
-async fn unavailable_command(headers: HeaderMap) -> Response {
-    if let Err(response) = resolve_subject(&headers) {
-        return response;
-    }
-    unavailable_command_response()
 }
 
 fn resolve_subject(headers: &HeaderMap) -> Result<AdminMarketingSubject, Response> {
@@ -646,6 +799,32 @@ fn build_delete_coupon_command(
         subject,
         coupon_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
+        request_id: normalize_request_id(headers, &state)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn build_update_coupon_command(
+    state: AdminMarketingState,
+    headers: &HeaderMap,
+    subject: AdminMarketingSubject,
+    coupon_id: i64,
+    request: CreateCouponRequest,
+) -> Result<UpdateAdminCouponCommand, AdminMarketingCommandBuildError> {
+    let name = normalize_required_text(request.name.as_deref(), "coupon name", MAX_NAME_LEN)?;
+    let coupon_type = normalize_coupon_type(request.coupon_type.as_deref())?;
+    let value = normalize_coupon_value(request.value.as_ref(), &coupon_type)?;
+    let status = normalize_coupon_status(request.status.as_deref())?;
+    Ok(UpdateAdminCouponCommand {
+        subject,
+        coupon_id,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        name,
+        coupon_type,
+        value: value.value,
+        amount_cents: value.amount_cents,
+        discount_value: value.discount_value,
+        status,
         request_id: normalize_request_id(headers, &state)?,
         requested_at: current_timestamp_string(),
     })
@@ -744,6 +923,24 @@ fn build_delete_recharge_package_command(
         subject,
         package_id,
         audit_log_uuid: generate_entity_uuid(&state)?,
+        request_id: normalize_request_id(headers, &state)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn build_update_exchange_rule_command(
+    state: AdminMarketingState,
+    headers: &HeaderMap,
+    subject: AdminMarketingSubject,
+    request: ExchangeRuleMutationRequest,
+) -> Result<UpdateAdminExchangeRuleCommand, AdminMarketingCommandBuildError> {
+    let mutation = normalize_exchange_rule_mutation(request)?;
+    Ok(UpdateAdminExchangeRuleCommand {
+        subject,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        source_asset_type: mutation.source_asset_type,
+        target_asset_type: mutation.target_asset_type,
+        rate: mutation.rate,
         request_id: normalize_request_id(headers, &state)?,
         requested_at: current_timestamp_string(),
     })
@@ -1052,6 +1249,165 @@ fn normalize_promo_code_status(
     }
 }
 
+fn normalize_exchange_rule_mutation(
+    request: ExchangeRuleMutationRequest,
+) -> Result<NormalizedExchangeRuleMutation, AdminMarketingCommandBuildError> {
+    let source_asset_type =
+        normalize_required_asset_type(request.source_asset_type.as_deref(), "sourceAssetType")?;
+    let target_asset_type =
+        normalize_required_asset_type(request.target_asset_type.as_deref(), "targetAssetType")?;
+    ensure_supported_exchange_pair(&source_asset_type, &target_asset_type)?;
+    normalize_exchange_rule_status(request.status.as_deref())?;
+    let rate = normalize_exchange_rate_value(request.rate.as_ref())?;
+    Ok(NormalizedExchangeRuleMutation {
+        source_asset_type,
+        target_asset_type,
+        rate,
+    })
+}
+
+fn normalize_required_asset_type(
+    value: Option<&str>,
+    field_name: &str,
+) -> Result<String, AdminMarketingCommandBuildError> {
+    let value = value.unwrap_or("").trim();
+    if value.is_empty() {
+        return Err(AdminMarketingCommandBuildError::BadRequest(format!(
+            "{field_name} is required"
+        )));
+    }
+    normalize_asset_type(value, field_name)
+}
+
+fn normalize_optional_asset_type(
+    value: Option<&str>,
+) -> Result<Option<String>, AdminMarketingCommandBuildError> {
+    let Some(value) = value.map(str::trim).filter(|value| !value.is_empty()) else {
+        return Ok(None);
+    };
+    normalize_asset_type(value, "asset type").map(Some)
+}
+
+fn normalize_asset_type(
+    value: &str,
+    field_name: &str,
+) -> Result<String, AdminMarketingCommandBuildError> {
+    let normalized = value.trim().to_ascii_uppercase();
+    if normalized.chars().count() > MAX_ASSET_TYPE_LEN {
+        return Err(AdminMarketingCommandBuildError::BadRequest(format!(
+            "{field_name} must be at most {MAX_ASSET_TYPE_LEN} characters"
+        )));
+    }
+    if !normalized
+        .bytes()
+        .all(|byte| byte.is_ascii_alphanumeric() || matches!(byte, b'-' | b'_'))
+    {
+        return Err(AdminMarketingCommandBuildError::BadRequest(format!(
+            "{field_name} may only contain letters, numbers, -, and _"
+        )));
+    }
+    Ok(normalized)
+}
+
+fn ensure_supported_exchange_pair(
+    source_asset_type: &str,
+    target_asset_type: &str,
+) -> Result<(), AdminMarketingCommandBuildError> {
+    if source_asset_type == POINTS_ASSET_TYPE && target_asset_type == CASH_ASSET_TYPE {
+        return Ok(());
+    }
+    Err(AdminMarketingCommandBuildError::BadRequest(
+        "exchange rule currently supports POINTS to CASH only".to_owned(),
+    ))
+}
+
+fn normalize_exchange_rule_status(
+    value: Option<&str>,
+) -> Result<String, AdminMarketingCommandBuildError> {
+    let status = value.unwrap_or("active").trim().to_ascii_lowercase();
+    if status == "active" || status == "enabled" || status == "normal" {
+        return Ok("active".to_owned());
+    }
+    if status == "inactive" || status == "disabled" {
+        return Err(AdminMarketingCommandBuildError::BadRequest(
+            "exchange rule status only supports active because legacy storage has no inactive field"
+                .to_owned(),
+        ));
+    }
+    Err(AdminMarketingCommandBuildError::BadRequest(
+        "exchange rule status must be active".to_owned(),
+    ))
+}
+
+fn normalize_optional_exchange_rule_status(
+    value: Option<&str>,
+) -> Result<Option<String>, AdminMarketingCommandBuildError> {
+    let Some(value) = value.map(str::trim).filter(|value| !value.is_empty()) else {
+        return Ok(None);
+    };
+    normalize_exchange_rule_status(Some(value)).map(Some)
+}
+
+fn normalize_exchange_rate_value(
+    value: Option<&Value>,
+) -> Result<String, AdminMarketingCommandBuildError> {
+    let raw = match value {
+        Some(Value::String(value)) => value.trim().to_owned(),
+        Some(Value::Number(value)) => value.to_string(),
+        Some(_) => {
+            return Err(AdminMarketingCommandBuildError::BadRequest(
+                "exchange rule rate must be a number or string".to_owned(),
+            ))
+        }
+        None => {
+            return Err(AdminMarketingCommandBuildError::BadRequest(
+                "exchange rule rate is required".to_owned(),
+            ))
+        }
+    };
+    normalize_exchange_rate_text(&raw)
+}
+
+fn normalize_exchange_rate_text(value: &str) -> Result<String, AdminMarketingCommandBuildError> {
+    let normalized = value.trim().replace(',', "");
+    if normalized.is_empty() || normalized.starts_with('-') || normalized.starts_with('+') {
+        return Err(AdminMarketingCommandBuildError::BadRequest(
+            "exchange rule rate must be between 1 and 1000000".to_owned(),
+        ));
+    }
+    let parts: Vec<&str> = normalized.split('.').collect();
+    if parts.len() > 2 || parts[0].is_empty() || !parts[0].chars().all(|ch| ch.is_ascii_digit()) {
+        return Err(AdminMarketingCommandBuildError::BadRequest(
+            "exchange rule rate must be a valid decimal".to_owned(),
+        ));
+    }
+    let whole = parts[0].parse::<i64>().map_err(|_| {
+        AdminMarketingCommandBuildError::BadRequest("exchange rule rate is too large".to_owned())
+    })?;
+    if !(1..=1_000_000).contains(&whole) {
+        return Err(AdminMarketingCommandBuildError::BadRequest(
+            "exchange rule rate must be between 1 and 1000000".to_owned(),
+        ));
+    }
+    let fraction = parts.get(1).copied().unwrap_or("");
+    if fraction.len() > 6 || !fraction.chars().all(|ch| ch.is_ascii_digit()) {
+        return Err(AdminMarketingCommandBuildError::BadRequest(
+            "exchange rule rate must have at most 6 decimal places".to_owned(),
+        ));
+    }
+    if whole == 1_000_000 && fraction.chars().any(|ch| ch != '0') {
+        return Err(AdminMarketingCommandBuildError::BadRequest(
+            "exchange rule rate must be between 1 and 1000000".to_owned(),
+        ));
+    }
+    let fraction = fraction.trim_end_matches('0');
+    if fraction.is_empty() {
+        Ok(whole.to_string())
+    } else {
+        Ok(format!("{whole}.{fraction}"))
+    }
+}
+
 fn parse_positive_id(value: &str, field_name: &str) -> Result<i64, String> {
     let id = value
         .trim()
@@ -1061,6 +1417,22 @@ fn parse_positive_id(value: &str, field_name: &str) -> Result<i64, String> {
         return Err(format!("{field_name} must be a positive integer"));
     }
     Ok(id)
+}
+
+fn normalize_order_no(value: &str) -> Result<String, String> {
+    let value = value.trim();
+    if value.is_empty() {
+        return Err("order no is required".to_owned());
+    }
+    if value.chars().count() > MAX_REQUEST_ID_LEN {
+        return Err(format!(
+            "order no must be at most {MAX_REQUEST_ID_LEN} characters"
+        ));
+    }
+    if !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte)) {
+        return Err("order no must contain visible ASCII only".to_owned());
+    }
+    Ok(value.to_owned())
 }
 
 fn generate_entity_uuid(
@@ -1134,28 +1506,6 @@ fn marketing_system_response(context: &str, error: DomainError) -> Response {
     (
         StatusCode::INTERNAL_SERVER_ERROR,
         Json(PlusApiResult::error("5000", format!("{context}: {error}"))),
-    )
-        .into_response()
-}
-
-async fn unavailable_read() -> Response {
-    (
-        StatusCode::NOT_IMPLEMENTED,
-        Json(PlusApiResult::error(
-            "5010",
-            "commerce admin read model is not configured",
-        )),
-    )
-        .into_response()
-}
-
-fn unavailable_command_response() -> Response {
-    (
-        StatusCode::NOT_IMPLEMENTED,
-        Json(PlusApiResult::error(
-            "5010",
-            "commerce admin command store is not configured",
-        )),
     )
         .into_response()
 }

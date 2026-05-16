@@ -3,6 +3,16 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import {
+  mergeClawRouterAuthRuntimeConfig,
+  DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG,
+} from "./src/auth/clawRouterAuthConfig.ts";
+import {
+  formatOAuthProviders,
+  parseOAuthProviderText,
+  toAuthSettingsForm,
+  toAuthSettingsRequest,
+} from "./src/auth/ClawRouterAuthSettingsPage.tsx";
+import {
   PROTECTED_PORTAL_ROUTE_PREFIXES,
   buildProtectedPortalLoginRedirect,
   isProtectedPortalPath,
@@ -11,6 +21,26 @@ import {
 
 function readPortalFile(relativePath: string): string {
   return readFileSync(new URL(relativePath, import.meta.url), "utf8");
+}
+
+function authRuntimeSettingsFixture(overrides: Record<string, unknown> = {}): Record<string, unknown> {
+  return {
+    leftRailMode: "auto",
+    loginMethods: ["password", "emailCode"],
+    oauthLoginEnabled: true,
+    oauthProviders: ["github"],
+    oauthRegion: "overseas",
+    qrLoginEnabled: true,
+    recoveryMethods: ["email"],
+    registerMethods: ["email", "phone"],
+    verificationPolicy: {
+      emailCodeLoginEnabled: true,
+      emailRegistrationVerificationRequired: false,
+      phoneCodeLoginEnabled: false,
+      phoneRegistrationVerificationRequired: true,
+    },
+    ...overrides,
+  };
 }
 
 test("portal exposes appbase auth routes as standalone React routes", () => {
@@ -80,15 +110,26 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   assert.doesNotMatch(controllerSource, /\bfetch\s*\(/);
   assert.doesNotMatch(controllerSource, /\baxios\b/);
   assert.doesNotMatch(controllerSource, /\/app\/v3\/api/);
+  assert.match(coreCompatSource, /from 'sdkwork-claw-router-commons\/runtime'/);
+  assert.match(coreCompatSource, /getClawRouterAppSdkClient/);
+  assert.match(coreCompatSource, /auth:\s*\{\s*\.\.\.client\.auth/);
   assert.match(coreCompatSource, /sessions:\s*\{/);
-  assert.match(coreCompatSource, /create: createUnavailableClientMethod\('auth\.sessions\.create'\)/);
-  assert.match(coreCompatSource, /delete: createUnavailableClientMethod\('auth\.sessions\.current\.delete'\)/);
+  assert.match(coreCompatSource, /create:\s*client\.auth\.sessions\.create\.bind\(client\.auth\.sessions\)/);
+  assert.match(coreCompatSource, /delete:\s*client\.auth\.sessions\.current\.delete\.bind\(client\.auth\.sessions\.current\)/);
   assert.match(coreCompatSource, /registrations:\s*\{/);
-  assert.match(coreCompatSource, /create: createUnavailableClientMethod\('auth\.registrations\.create'\)/);
+  assert.match(coreCompatSource, /create:\s*client\.auth\.registrations\.create\.bind\(client\.auth\.registrations\)/);
   assert.match(coreCompatSource, /verificationCodes:\s*\{/);
   assert.match(coreCompatSource, /passwordResetRequests:\s*\{/);
   assert.match(coreCompatSource, /oauthAuthorizationUrls:\s*\{/);
-  assert.match(coreCompatSource, /users:\s*\{\s*current:\s*\{/);
+  assert.match(coreCompatSource, /users:\s*\{/);
+  assert.match(coreCompatSource, /current:\s*\{\s*retrieve:\s*client\.iam\.users\.current\.retrieve\.bind\(client\.iam\.users\.current\)/);
+  assert.match(coreCompatSource, /verificationPolicy:\s*\{\s*retrieve:\s*\(\) => retrieveVerificationPolicy\(client\)/);
+  assert.match(coreCompatSource, /function retrieveVerificationPolicy/);
+  assert.match(coreCompatSource, /function retrieveOAuthAuthorizationUrl/);
+  assert.match(coreCompatSource, /createUnavailableClientMethod\('auth\.loginQrCodes\.confirm'\)/);
+  assert.doesNotMatch(coreCompatSource, /createUnavailableClientMethod\('auth\.sessions\.create'\)/);
+  assert.doesNotMatch(coreCompatSource, /createUnavailableClientMethod\('auth\.registrations\.create'\)/);
+  assert.doesNotMatch(coreCompatSource, /createUnavailableClientMethod\('iam\.users\.current\.retrieve'\)/);
   assert.doesNotMatch(coreCompatSource, /'auth\.login'/);
   assert.doesNotMatch(coreCompatSource, /'auth\.register'/);
   assert.doesNotMatch(coreCompatSource, /'auth\.sendSmsCode'/);
@@ -131,6 +172,84 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   assert.doesNotMatch(routeSource, /surfaceAppearance/);
   assert.doesNotMatch(configSource, /leftRailMode:\s*'qr-only'/);
   assert.doesNotMatch(configSource, /qrLoginEnabled:\s*true/);
+});
+
+test("auth runtime config applies backend IAM settings without tenant or organization being required", () => {
+  const config = mergeClawRouterAuthRuntimeConfig(authRuntimeSettingsFixture());
+
+  assert.equal(config.leftRailMode, "auto");
+  assert.deepEqual(config.loginMethods, ["password", "emailCode"]);
+  assert.equal(config.oauthLoginEnabled, true);
+  assert.deepEqual(config.oauthProviders, ["github"]);
+  assert.equal(config.oauthProviderRegion, "overseas");
+  assert.equal(config.qrLoginEnabled, true);
+  assert.deepEqual(config.recoveryMethods, ["email"]);
+  assert.deepEqual(config.registerMethods, ["email", "phone"]);
+  assert.deepEqual(config.verificationPolicy, {
+    emailCodeLoginEnabled: true,
+    emailRegistrationVerificationRequired: false,
+    phoneCodeLoginEnabled: false,
+    phoneRegistrationVerificationRequired: true,
+  });
+  assert.equal(DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG.verificationPolicy?.emailRegistrationVerificationRequired, false);
+});
+
+test("auth runtime config fails closed when backend omits required IAM runtime fields", () => {
+  for (const [field, message] of [
+    ["leftRailMode", /Auth leftRailMode is required/],
+    ["loginMethods", /Auth loginMethods are required/],
+    ["oauthLoginEnabled", /Auth oauthLoginEnabled flag is required/],
+    ["oauthProviders", /Auth oauthProviders are required/],
+    ["qrLoginEnabled", /Auth qrLoginEnabled flag is required/],
+    ["recoveryMethods", /Auth recoveryMethods are required/],
+    ["registerMethods", /Auth registerMethods are required/],
+    ["verificationPolicy", /Auth verificationPolicy is required/],
+  ] as const) {
+    const settings = authRuntimeSettingsFixture();
+    delete settings[field];
+    assert.throws(
+      () => mergeClawRouterAuthRuntimeConfig(settings),
+      message,
+    );
+  }
+});
+
+test("auth runtime config fails closed when backend returns unsupported IAM runtime options", () => {
+  for (const [patch, message] of [
+    [{ leftRailMode: "banner-only" }, /Unsupported auth leftRailMode: banner-only/],
+    [{ loginMethods: ["password", "magicLink"] }, /Unsupported auth loginMethods: magicLink/],
+    [{ oauthRegion: "antarctica" }, /Unsupported auth oauthRegion: antarctica/],
+    [{ recoveryMethods: ["email", "totp"] }, /Unsupported auth recoveryMethods: totp/],
+    [{ registerMethods: ["email", "username"] }, /Unsupported auth registerMethods: username/],
+    [{ loginMethods: [] }, /Auth loginMethods are required/],
+  ] as const) {
+    assert.throws(
+      () => mergeClawRouterAuthRuntimeConfig(authRuntimeSettingsFixture(patch)),
+      message,
+    );
+  }
+});
+
+test("auth runtime config fails closed when backend omits verification policy flags", () => {
+  for (const [field, message] of [
+    ["emailCodeLoginEnabled", /Auth emailCodeLoginEnabled flag is required/],
+    ["emailRegistrationVerificationRequired", /Auth emailRegistrationVerificationRequired flag is required/],
+    ["phoneCodeLoginEnabled", /Auth phoneCodeLoginEnabled flag is required/],
+    ["phoneRegistrationVerificationRequired", /Auth phoneRegistrationVerificationRequired flag is required/],
+  ] as const) {
+    const verificationPolicy = {
+      emailCodeLoginEnabled: true,
+      emailRegistrationVerificationRequired: false,
+      phoneCodeLoginEnabled: false,
+      phoneRegistrationVerificationRequired: true,
+    } as Record<string, unknown>;
+    delete verificationPolicy[field];
+
+    assert.throws(
+      () => mergeClawRouterAuthRuntimeConfig(authRuntimeSettingsFixture({ verificationPolicy })),
+      message,
+    );
+  }
 });
 
 test("claw router app auth is declared through appbase IAM standard contract and generated SDK", () => {
@@ -297,6 +416,8 @@ test("portal exposes backend-backed admin auth settings configuration", () => {
   assert.match(settingsPageSource, /emailRegistrationVerificationRequired/);
   assert.match(settingsPageSource, /phoneRegistrationVerificationRequired/);
   assert.match(settingsPageSource, /qrLoginEnabled/);
+  assert.match(settingsPageSource, /OAuth provider codes/);
+  assert.match(settingsPageSource, /parseOAuthProviderText/);
   assert.match(settingsServiceSource, /getClawRouterBackendSdkClient\(\)\.system\.auth\.settings\.retrieve\(\)/);
   assert.match(settingsServiceSource, /getClawRouterBackendSdkClient\(\)\.system\.auth\.settings\.update\(input/);
   assert.doesNotMatch(settingsServiceSource, /\bfetch\s*\(/);
@@ -305,6 +426,36 @@ test("portal exposes backend-backed admin auth settings configuration", () => {
   assert.match(routeClassificationSource, /route:\s*\/admin\/settings/);
   assert.match(routeClassificationSource, /api_surface:\s*backend/);
   assert.match(routeClassificationSource, /apps\/sdkwork-claw-router-portal\/src\/auth\/ClawRouterAuthSettingsPage\.tsx/);
+});
+
+test("admin auth settings form preserves flexible OAuth providers and validates provider codes", () => {
+  const form = toAuthSettingsForm(authRuntimeSettingsFixture({
+    oauthProviders: [" github ", "custom-provider", "github", "enterprise_iam"],
+  }));
+
+  assert.deepEqual(form.oauthProviders, ["github", "custom-provider", "enterprise_iam"]);
+  assert.equal(formatOAuthProviders(form.oauthProviders), "github, custom-provider, enterprise_iam");
+  assert.deepEqual(parseOAuthProviderText("github, custom-provider enterprise_iam\ngithub"), [
+    "github",
+    "custom-provider",
+    "enterprise_iam",
+  ]);
+
+  assert.deepEqual(
+    toAuthSettingsRequest({
+      ...form,
+      oauthProviders: ["github", " custom-provider ", "github", " "],
+    }).oauthProviders,
+    ["github", "custom-provider"],
+  );
+  assert.throws(
+    () => toAuthSettingsRequest({ ...form, oauthProviders: ["github", "bad.provider"] }),
+    /oauthProviders items must be 64 characters or fewer and use letters, digits, underscore, or hyphen/,
+  );
+  assert.throws(
+    () => toAuthSettingsRequest({ ...form, oauthRegion: "antarctica" as never }),
+    /oauthRegion must be one of mainland, overseas/,
+  );
 });
 
 test("generated claw router app SDK surface satisfies appbase IAM SDK port contract", () => {
@@ -474,12 +625,18 @@ test("portal wires console and admin routes through the protected session guard"
 
   assert.match(appSource, /RequirePortalSession/);
   assert.match(appSource, /<Route path="\/console" element=\{<RequirePortalSession><ConsoleLayout/);
-  assert.match(appSource, /<Route path="\/admin" element=\{<RequirePortalSession><AdminLayout/);
+  assert.match(appSource, /RequireAdminSession/);
+  assert.match(appSource, /<Route path="\/admin" element=\{<RequireAdminSession><AdminLayout/);
   assert.match(appSource, /<Route path="\*" element=\{<Navigate to="\/console\/dashboard" replace \/>} \/>/);
   assert.match(appSource, /<Route path="\*" element=\{<Navigate to="\/admin\/dashboard" replace \/>} \/>/);
   assert.match(guardSource, /hasStoredPortalSession/);
   assert.match(guardSource, /buildPortalAuthLoginRedirect/);
+  assert.match(guardSource, /verifyCurrentPortalAdminAccess/);
+  assert.match(guardSource, /RequireAdminSession/);
+  assert.match(guardSource, /adminAccessState === 'forbidden'/);
+  assert.match(guardSource, /to: '\/console\/dashboard'/);
   assert.match(guardSource, /\.\.\/\.\.\/packages\/sdkwork-claw-router-commons\/src\/portal-auth\.ts/);
+  assert.match(guardSource, /\.\.\/\.\.\/packages\/sdkwork-claw-router-commons\/src\/portal-session\.ts/);
   assert.doesNotMatch(guardSource, /sdkwork-claw-router-commons\/runtime/);
   assert.match(sharedAuthSource, /getStoredAppSessionAuthToken/);
   assert.match(sharedAuthSource, /getStoredAppSessionAccessToken/);
@@ -491,6 +648,20 @@ test("portal wires console and admin routes through the protected session guard"
   assert.doesNotMatch(sharedAuthSource, /\baxios\b/);
   assert.doesNotMatch(sharedAuthSource, /Authorization/);
   assert.doesNotMatch(sharedAuthSource, /Access-Token/);
+});
+
+test("console and admin logout revoke the current IAM session through the app SDK", () => {
+  const consoleLayoutSource = readPortalFile("./packages/sdkwork-claw-router-console-core/src/ConsoleLayout.tsx");
+  const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
+  const sessionServiceSource = readPortalFile("./packages/sdkwork-claw-router-commons/src/sessionService.ts");
+
+  assert.match(consoleLayoutSource, /revokeAppSession/);
+  assert.doesNotMatch(consoleLayoutSource, /clearAppSession/);
+  assert.match(adminLayoutSource, /revokeAppSession/);
+  assert.match(sessionServiceSource, /auth\.sessions\.current\.delete\(\)/);
+  assert.match(sessionServiceSource, /finally \{\s*clearAppSession\(\);\s*\}/);
+  assert.doesNotMatch(sessionServiceSource, /\bfetch\s*\(/);
+  assert.doesNotMatch(sessionServiceSource, /\baxios\b/);
 });
 
 test("portal aliases appbase auth and Tauri host packages for local reuse", () => {

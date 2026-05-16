@@ -139,7 +139,7 @@ export class ChannelService {
 
   static async deleteChannel(id: string): Promise<boolean> {
     const result = await channelBackendClient().integration.channels.delete(requiredSafePathSegment(id, 'channelId'));
-    ensurePlusApiSuccess(result, 'Failed to delete channel');
+    ensureDeleteResult(result, 'Channel delete confirmation is required');
     return true;
   }
 
@@ -152,10 +152,10 @@ export class ChannelService {
     ensurePlusApiSuccess(result, 'Failed to test channel');
     const data = readApiRecord(result);
     return {
-      channelId: readString(data, 'channelId') || channelId,
-      success: readBoolean(data, 'success'),
+      channelId: readRequiredString(data, 'channelId', 'Channel test channel id is required'),
+      success: readRequiredBoolean(data, 'success', 'Channel test success flag is required'),
       status: readChannelStatus(data),
-      latency: readString(data, 'latency'),
+      latency: readRequiredString(data, 'latency', 'Channel test latency is required'),
       item: normalizeChannel(readRequiredApiItem(result, 'Channel test response is missing channel data', ['item'])),
     };
   }
@@ -195,7 +195,7 @@ export class ProviderSecretService {
     const result = await channelBackendClient().integration.providerSecrets.delete(
       requiredSafePathSegment(id, 'providerSecretId'),
     );
-    ensurePlusApiSuccess(result, 'Failed to delete provider credential');
+    ensureDeleteResult(result, 'Provider credential delete confirmation is required');
     return true;
   }
 }
@@ -279,11 +279,14 @@ function toChannelCapabilities(
     'sfx',
     'video',
   ]);
-  const normalized = normalizedStringArray(capabilities)
-    .map((capability) => capability.toLowerCase())
-    .filter((capability): capability is NonNullable<AdminChannelCreateRequest['capabilities']>[number] =>
-      allowed.has(capability as NonNullable<AdminChannelCreateRequest['capabilities']>[number]),
-    );
+  const normalized: NonNullable<AdminChannelCreateRequest['capabilities']> = [];
+  for (const rawCapability of normalizedStringArray(capabilities)) {
+    const capability = rawCapability.toLowerCase();
+    if (!allowed.has(capability as NonNullable<AdminChannelCreateRequest['capabilities']>[number])) {
+      throw new Error(`Unsupported channel capability: ${capability}`);
+    }
+    normalized.push(capability as NonNullable<AdminChannelCreateRequest['capabilities']>[number]);
+  }
   return normalized.length > 0 ? normalized : undefined;
 }
 
@@ -316,10 +319,10 @@ function optionalInteger(value: number | undefined): number | undefined {
   if (value === undefined) {
     return undefined;
   }
-  if (!Number.isFinite(value) || value < 1) {
+  if (!Number.isSafeInteger(value) || value < 1) {
     throw new Error('value must be a positive integer');
   }
-  return Math.round(value);
+  return value;
 }
 
 function optionalNullableInteger(value: number | null | undefined): number | null | undefined {
@@ -337,6 +340,13 @@ function requestParams(scope: string): { xRequestId: string } {
   return { xRequestId: createRequestToken(scope) };
 }
 
+function ensureDeleteResult(result: unknown, message: string): void {
+  ensurePlusApiSuccess(result, message);
+  if (readBoolean(readApiRecord(result), 'deleted') !== true) {
+    throw new Error(message);
+  }
+}
+
 function channelBackendClient() {
   return getClawRouterBackendSdkClient();
 }
@@ -352,13 +362,13 @@ function normalizeChannel(value: unknown): ChannelItem {
     baseUrl: readOptionalString(item, 'baseUrl'),
     models: readRequiredStringArray(item, 'models', 'Channel models are required'),
     capabilities: readRequiredStringArray(item, 'capabilities', 'Channel capabilities are required'),
-    isMultimodal: readBoolean(item, 'isMultimodal'),
+    isMultimodal: readRequiredBoolean(item, 'isMultimodal', 'Channel multimodal flag is required'),
     timeoutMs: readOptionalNumber(item, 'timeoutMs'),
     retryPolicy: readRetryPolicy(item),
     weight: readRequiredNumber(item, 'weight', 'Channel weight is required'),
     status: readChannelStatus(item),
-    balance: readString(item, 'balance') || 'N/A',
-    errors: readNumber(item, 'errors'),
+    balance: readRequiredString(item, 'balance', 'Channel balance is required'),
+    errors: readRequiredNonNegativeInteger(item, 'errors', 'Channel errors are required'),
   };
 }
 
@@ -368,8 +378,14 @@ function readOptionalString(item: ApiRecord, key: string): string | undefined {
 }
 
 function readOptionalNumber(item: ApiRecord, key: string): number | undefined {
-  const value = readNumber(item, key);
-  return value > 0 ? value : undefined;
+  if (!(key in item) || item[key] === null || item[key] === undefined || item[key] === '') {
+    return undefined;
+  }
+  const value = readNumber(item, key, Number.NaN);
+  if (!Number.isFinite(value) || !Number.isInteger(value) || value < 1) {
+    throw new Error(`${key} must be a positive integer`);
+  }
+  return value;
 }
 
 function readRequiredRecord(value: unknown, message: string): ApiRecord {
@@ -389,32 +405,75 @@ function readRequiredStringArray(item: ApiRecord, key: string, message: string):
 
 function readRetryPolicy(item: ApiRecord): ProviderRetryPolicy | undefined {
   const value = item.retryPolicy;
+  if (value === undefined || value === null) {
+    return undefined;
+  }
   if (!isRecord(value)) {
-    return undefined;
+    throw new Error('Channel retryPolicy must be an object');
   }
-  const retryableStatusCodes = Array.isArray(value.retryableStatusCodes)
-    ? value.retryableStatusCodes
-        .filter(isRetryableProviderStatus)
-    : [];
-  const maxAttempts = readNumber(value, 'maxAttempts');
-  if (maxAttempts <= 0) {
-    return undefined;
+  const maxAttempts = readRequiredBoundedInteger(
+    value,
+    'maxAttempts',
+    'Channel retryPolicy.maxAttempts is required',
+    1,
+    5,
+  );
+  const rawStatuses = value.retryableStatusCodes;
+  if (!Array.isArray(rawStatuses)) {
+    throw new Error('Channel retryPolicy.retryableStatusCodes is required');
   }
+  const retryableStatusCodes = rawStatuses.map(readRetryableProviderStatus);
   return pruneUndefined({
     maxAttempts,
     retryableStatusCodes,
-    backoffMs: readOptionalNumber(value, 'backoffMs'),
+    backoffMs: readOptionalBoundedInteger(value, 'backoffMs', 0, 2000),
   });
 }
 
-function isRetryableProviderStatus(
-  status: unknown,
-): status is ProviderRetryPolicy['retryableStatusCodes'][number] {
-  return (
-    typeof status === 'number' &&
-    Number.isInteger(status) &&
-    [408, 409, 425, 429, 500, 502, 503, 504].includes(status)
-  );
+function readRetryableProviderStatus(status: unknown): ProviderRetryPolicy['retryableStatusCodes'][number] {
+  const value = typeof status === 'number'
+    ? status
+    : typeof status === 'string' && status.trim()
+      ? Number(status)
+      : Number.NaN;
+  if (
+    !Number.isInteger(value)
+    || ![408, 409, 425, 429, 500, 502, 503, 504].includes(value)
+  ) {
+    throw new Error(`Channel retryPolicy.retryableStatusCodes contains unsupported status: ${String(status)}`);
+  }
+  return value as ProviderRetryPolicy['retryableStatusCodes'][number];
+}
+
+function readOptionalBoundedInteger(item: ApiRecord, key: string, min: number, max: number): number | undefined {
+  if (!(key in item) || item[key] === null || item[key] === undefined || item[key] === '') {
+    return undefined;
+  }
+  return readRequiredBoundedInteger(item, key, `${key} must be between ${min} and ${max}`, min, max);
+}
+
+function readRequiredBoundedInteger(item: ApiRecord, key: string, message: string, min: number, max: number): number {
+  const value = readNumber(item, key, Number.NaN);
+  if (!Number.isFinite(value) || !Number.isInteger(value) || value < min || value > max) {
+    throw new Error(message);
+  }
+  return value;
+}
+
+function readRequiredNonNegativeInteger(item: ApiRecord, key: string, message: string): number {
+  const value = readNumber(item, key, Number.NaN);
+  if (!Number.isFinite(value) || !Number.isInteger(value) || value < 0) {
+    throw new Error(message);
+  }
+  return value;
+}
+
+function readRequiredBoolean(item: ApiRecord, key: string, message: string): boolean {
+  const value = item[key];
+  if (typeof value !== 'boolean') {
+    throw new Error(message);
+  }
+  return value;
 }
 
 function readChannelStatus(item: ApiRecord): 'active' | 'error' | 'disabled' {

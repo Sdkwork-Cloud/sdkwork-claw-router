@@ -13117,6 +13117,14 @@
             "minLength": 1,
             "type": "string"
           },
+          "retryPolicy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderRetryPolicy"
+              }
+            ],
+            "description": "Retry policy field on create routing channel request."
+          },
           "secretRef": {
             "description": "Vault/KMS secret reference. Plaintext credential fields are forbidden.",
             "maxLength": 256,
@@ -13132,6 +13140,13 @@
               "error"
             ],
             "type": "string"
+          },
+          "timeoutMs": {
+            "description": "Per-channel upstream response timeout in milliseconds.",
+            "format": "int64",
+            "maximum": 600000,
+            "minimum": 1,
+            "type": "integer"
           },
           "vendor": {
             "description": "Vendor field on create routing channel request.",
@@ -23216,6 +23231,49 @@
         ],
         "type": "object"
       },
+      "ProviderRetryPolicy": {
+        "additionalProperties": false,
+        "description": "Provider retry policy schema exposed by Claw Router.",
+        "properties": {
+          "backoffMs": {
+            "description": "Backoff ms field on provider retry policy.",
+            "maximum": 2000,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "maxAttempts": {
+            "description": "Max attempts field on provider retry policy.",
+            "maximum": 5,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "retryableStatusCodes": {
+            "description": "Retryable status codes field on provider retry policy.",
+            "items": {
+              "description": "Retryable status codes field on provider retry policy.",
+              "enum": [
+                408,
+                409,
+                425,
+                429,
+                500,
+                502,
+                503,
+                504
+              ],
+              "type": "integer"
+            },
+            "maxItems": 8,
+            "type": "array",
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "maxAttempts",
+          "retryableStatusCodes"
+        ],
+        "type": "object"
+      },
       "ProvidersListResult": {
         "additionalProperties": false,
         "description": "Providers list result schema exposed by Claw Router.",
@@ -23616,6 +23674,14 @@
             "description": "Provider code field on routing channel item.",
             "type": "string"
           },
+          "retryPolicy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderRetryPolicy"
+              }
+            ],
+            "description": "Retry policy field on routing channel item."
+          },
           "rpm": {
             "description": "Rpm field on routing channel item.",
             "format": "int64",
@@ -23629,6 +23695,13 @@
               "error"
             ],
             "type": "string"
+          },
+          "timeoutMs": {
+            "description": "Timeout ms field on routing channel item.",
+            "format": "int64",
+            "maximum": 600000,
+            "minimum": 1,
+            "type": "integer"
           },
           "vendor": {
             "description": "Vendor field on routing channel item.",
@@ -23894,6 +23967,14 @@
                   "description": "Provider code field on routing channels response.",
                   "type": "string"
                 },
+                "retryPolicy": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ProviderRetryPolicy"
+                    }
+                  ],
+                  "description": "Retry policy field on routing channels response."
+                },
                 "rpm": {
                   "description": "Rpm field on routing channels response.",
                   "format": "int64",
@@ -23907,6 +23988,13 @@
                     "error"
                   ],
                   "type": "string"
+                },
+                "timeoutMs": {
+                  "description": "Timeout ms field on routing channels response.",
+                  "format": "int64",
+                  "maximum": 600000,
+                  "minimum": 1,
+                  "type": "integer"
                 },
                 "vendor": {
                   "description": "Vendor field on routing channels response.",
@@ -24091,6 +24179,24 @@
                   "description": "Duration field on routing request traces response.",
                   "type": "string"
                 },
+                "endedAt": {
+                  "description": "Ended at field on routing request traces response.",
+                  "type": "string"
+                },
+                "errorMessageMasked": {
+                  "description": "Error message masked field on routing request traces response.",
+                  "nullable": true,
+                  "type": "string"
+                },
+                "errorType": {
+                  "description": "Error type field on routing request traces response.",
+                  "nullable": true,
+                  "type": "string"
+                },
+                "httpMethod": {
+                  "description": "Http method field on routing request traces response.",
+                  "type": "string"
+                },
                 "id": {
                   "description": "Id field on routing request traces response.",
                   "type": "string"
@@ -24099,10 +24205,49 @@
                   "description": "Model field on routing request traces response.",
                   "type": "string"
                 },
+                "providerErrorCode": {
+                  "description": "Provider error code field on routing request traces response.",
+                  "nullable": true,
+                  "type": "string"
+                },
+                "requestBytes": {
+                  "description": "Request bytes field on routing request traces response.",
+                  "format": "int64",
+                  "type": "integer"
+                },
+                "requestId": {
+                  "description": "Request id field on routing request traces response.",
+                  "type": "string"
+                },
+                "requestPath": {
+                  "description": "Request path field on routing request traces response.",
+                  "type": "string"
+                },
+                "requestPayloadHash": {
+                  "description": "Request payload hash field on routing request traces response.",
+                  "type": "string"
+                },
+                "responseBytes": {
+                  "description": "Response bytes field on routing request traces response.",
+                  "format": "int64",
+                  "type": "integer"
+                },
+                "responsePayloadHash": {
+                  "description": "Response payload hash field on routing request traces response.",
+                  "type": "string"
+                },
+                "startedAt": {
+                  "description": "Started at field on routing request traces response.",
+                  "type": "string"
+                },
                 "status": {
                   "description": "Status field on routing request traces response.",
                   "format": "int64",
                   "type": "integer"
+                },
+                "streaming": {
+                  "description": "Streaming field on routing request traces response.",
+                  "type": "boolean"
                 },
                 "time": {
                   "description": "Time field on routing request traces response.",
@@ -24112,6 +24257,10 @@
                   "description": "Tokens field on routing request traces response.",
                   "format": "int64",
                   "type": "integer"
+                },
+                "traceId": {
+                  "description": "Trace id field on routing request traces response.",
+                  "type": "string"
                 }
               },
               "required": [
@@ -24121,7 +24270,21 @@
                 "channel",
                 "status",
                 "duration",
-                "tokens"
+                "tokens",
+                "traceId",
+                "requestId",
+                "requestPath",
+                "httpMethod",
+                "requestPayloadHash",
+                "responsePayloadHash",
+                "requestBytes",
+                "responseBytes",
+                "providerErrorCode",
+                "errorType",
+                "errorMessageMasked",
+                "startedAt",
+                "endedAt",
+                "streaming"
               ],
               "type": "object"
             },
@@ -26107,6 +26270,27 @@
             "minLength": 1,
             "type": "string"
           },
+          "retryPolicy": {
+            "description": "Retry policy field on update routing channel request.",
+            "oneOf": [
+              {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/ProviderRetryPolicy"
+                  }
+                ],
+                "description": "Retry policy field on update routing channel request."
+              },
+              {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/JsonNull"
+                  }
+                ],
+                "description": "Null variant accepted by retry policy."
+              }
+            ]
+          },
           "secretRef": {
             "description": "Vault/KMS secret reference. Plaintext credential fields are forbidden.",
             "maxLength": 256,
@@ -26122,6 +26306,14 @@
               "error"
             ],
             "type": "string"
+          },
+          "timeoutMs": {
+            "description": "Timeout ms field on update routing channel request.",
+            "format": "int64",
+            "maximum": 600000,
+            "minimum": 1,
+            "nullable": true,
+            "type": "integer"
           },
           "vendor": {
             "description": "Vendor field on update routing channel request.",

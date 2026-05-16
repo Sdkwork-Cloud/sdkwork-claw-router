@@ -31,6 +31,7 @@ import type {
 
 export interface Vendor {
   id: string;
+  vendorCode: string;
   name: string;
   status: 'active' | 'inactive';
   color: string;
@@ -40,6 +41,7 @@ export interface Vendor {
 export interface Model {
   id: string;
   vendorId: string;
+  vendorCode: string;
   name: string;
   type: 'Chat' | 'Image' | 'Audio' | 'Embedding' | 'Music' | 'SoundEffect' | 'Video';
   priceIn: string;
@@ -56,7 +58,7 @@ export interface Model {
   supportedLanguages: string[];
   useCases: string[];
   trainingDataCutoff: string | null;
-  contextTokens: number;
+  contextTokens: number | null;
   maxOutputTokens: number | null;
   supportsStreaming: boolean;
   supportsTools: boolean;
@@ -128,6 +130,15 @@ export type ModelCreateInput = {
   priceIn: string;
   priceOut: string;
   contextTokens: string;
+  maxOutputTokens?: number | null;
+  description?: string | null;
+  capabilityIntro?: string | null;
+  limitations?: string[];
+  supportedLanguages?: string[];
+  useCases?: string[];
+  supportsStreaming?: boolean;
+  supportsTools?: boolean;
+  supportsJsonSchema?: boolean;
 };
 
 export type ModelUpdateInput = ModelCreateInput & {
@@ -274,8 +285,15 @@ export class ModelService {
 
   static async deleteModel(id: string): Promise<boolean> {
     const result = await getClawRouterBackendSdkClient().ai.models.delete(requiredSafePathSegment(id, 'modelId'));
-    ensurePlusApiSuccess(result, 'Failed to delete model');
+    ensureDeleteResult(result, 'Model delete confirmation is required');
     return true;
+  }
+}
+
+function ensureDeleteResult(result: unknown, message: string): void {
+  ensurePlusApiSuccess(result, message);
+  if (readBoolean(readApiRecord(result), 'deleted') !== true) {
+    throw new Error(message);
   }
 }
 
@@ -395,8 +413,9 @@ function toCreateModelRequest(model: ModelCreateInput): AdminAiModelCreateReques
     type: modelType(model.type),
     priceIn: decimalAmount(model.priceIn, 'priceIn'),
     priceOut: decimalAmount(model.priceOut, 'priceOut'),
-    contextTokens: requiredText(model.contextTokens || '8k', 'contextTokens'),
+    contextTokens: requiredText(model.contextTokens, 'contextTokens'),
     ...defaultModelCreateMetadata(model.type),
+    ...modelCapabilityMetadata(model),
   };
 }
 
@@ -407,7 +426,8 @@ function toUpdateModelRequest(model: ModelUpdateInput): AdminAiModelUpdateReques
     name: modelName(model.name),
     priceIn: decimalAmount(model.priceIn, 'priceIn'),
     priceOut: decimalAmount(model.priceOut, 'priceOut'),
-    contextTokens: requiredText(model.contextTokens || '8k', 'contextTokens'),
+    contextTokens: requiredText(model.contextTokens, 'contextTokens'),
+    ...modelCapabilityMetadata(model),
   };
   if (!model.currentType || model.currentType !== nextType) {
     request.type = nextType;
@@ -424,12 +444,23 @@ function requiredText(value: string, fieldName: string): string {
   return normalized;
 }
 
-function optionalText(value: string, fieldName: string, maxLength: number): string {
+function optionalText(value: string | undefined, fieldName: string, maxLength: number): string {
+  if (value === undefined) {
+    return '';
+  }
   const normalized = value.trim();
   if (normalized.length > maxLength) {
     throw new Error(`${fieldName} must be at most ${maxLength} characters`);
   }
   return normalized;
+}
+
+function optionalNullableText(value: string | null | undefined, fieldName: string, maxLength: number): string | null {
+  if (value === null) {
+    return null;
+  }
+  const normalized = optionalText(value, fieldName, maxLength);
+  return normalized || null;
 }
 
 function modelName(value: string): string {
@@ -459,6 +490,73 @@ function decimalAmount(value: string, fieldName: string): string {
   return normalized;
 }
 
+function optionalNonNegativeInteger(value: number | null | undefined, fieldName: string): number | null {
+  if (value === null || value === undefined) {
+    return null;
+  }
+  if (!Number.isSafeInteger(value) || value < 0) {
+    throw new Error(`${fieldName} must be a non-negative integer`);
+  }
+  return value;
+}
+
+function boundedStringArray(values: string[] | undefined, fieldName: string, maxItems: number, maxLength: number): string[] {
+  const normalizedValues = values ?? [];
+  if (normalizedValues.length > maxItems) {
+    throw new Error(`${fieldName} must contain at most ${maxItems} items`);
+  }
+  return normalizedValues.map((value) => {
+    const normalized = requiredText(value, fieldName);
+    if (normalized.length > maxLength) {
+      throw new Error(`${fieldName} items must be at most ${maxLength} characters`);
+    }
+    return normalized;
+  });
+}
+
+function modelCapabilityMetadata(model: ModelCreateInput): Partial<Pick<
+  AdminAiModelCreateRequest,
+  | 'description'
+  | 'capabilityIntro'
+  | 'limitations'
+  | 'supportedLanguages'
+  | 'useCases'
+  | 'maxOutputTokens'
+  | 'supportsStreaming'
+  | 'supportsTools'
+  | 'supportsJsonSchema'
+>> {
+  const metadata: Partial<AdminAiModelCreateRequest> = {};
+  if (model.description !== undefined) {
+    metadata.description = optionalNullableText(model.description, 'description', 2048);
+  }
+  if (model.capabilityIntro !== undefined) {
+    metadata.capabilityIntro = optionalNullableText(model.capabilityIntro, 'capabilityIntro', 4096);
+  }
+  if (model.limitations !== undefined) {
+    metadata.limitations = boundedStringArray(model.limitations, 'limitations', 64, 512);
+  }
+  if (model.supportedLanguages !== undefined) {
+    metadata.supportedLanguages = boundedStringArray(model.supportedLanguages, 'supportedLanguages', 128, 128);
+  }
+  if (model.useCases !== undefined) {
+    metadata.useCases = boundedStringArray(model.useCases, 'useCases', 64, 256);
+  }
+  if (model.maxOutputTokens !== undefined) {
+    metadata.maxOutputTokens = optionalNonNegativeInteger(model.maxOutputTokens, 'maxOutputTokens');
+  }
+  if (typeof model.supportsStreaming === 'boolean') {
+    metadata.supportsStreaming = model.supportsStreaming;
+  }
+  if (typeof model.supportsTools === 'boolean') {
+    metadata.supportsTools = model.supportsTools;
+  }
+  if (typeof model.supportsJsonSchema === 'boolean') {
+    metadata.supportsJsonSchema = model.supportsJsonSchema;
+  }
+  return metadata;
+}
+
 function safeStyleToken(value: string): string {
   const normalized = requiredText(value, 'color');
   if (!/^[A-Za-z0-9_:/#-]{1,64}$/.test(normalized)) {
@@ -471,10 +569,11 @@ function normalizeVendor(value: unknown): Vendor {
   const item = readRequiredRecord(value, 'Vendor record is required');
   return {
     id: readRequiredString(item, 'id', 'Vendor id is required'),
-    name: readString(item, 'name'),
-    status: readString(item, 'status') === 'inactive' ? 'inactive' : 'active',
-    color: readString(item, 'color', 'bg-slate-700'),
-    description: readString(item, 'description'),
+    vendorCode: readRequiredString(item, 'vendorCode', 'Vendor code is required'),
+    name: readRequiredString(item, 'name', 'Vendor name is required'),
+    status: readVendorStatus(item),
+    color: readRequiredString(item, 'color', 'Vendor color is required'),
+    description: readRequiredString(item, 'description', 'Vendor description is required'),
   };
 }
 
@@ -483,31 +582,32 @@ function normalizeModel(value: unknown): Model {
   return {
     id: readRequiredString(item, 'id', 'Model id is required'),
     vendorId: readRequiredString(item, 'vendorId', 'Model vendor id is required'),
-    name: readString(item, 'name'),
+    vendorCode: readRequiredString(item, 'vendorCode', 'Model vendor code is required'),
+    name: readRequiredString(item, 'name', 'Model name is required'),
     type: readModelType(item),
-    priceIn: readString(item, 'priceIn'),
-    priceOut: readString(item, 'priceOut'),
-    status: readString(item, 'status') === 'inactive' ? 'inactive' : 'active',
-    calls: readString(item, 'calls'),
-    description: readNullableString(item, 'description'),
-    modalities: readStringArray(item, 'modalities'),
-    inputModalities: readStringArray(item, 'inputModalities'),
-    outputModalities: readStringArray(item, 'outputModalities'),
-    apiFormat: readNullableString(item, 'apiFormat'),
-    capabilityIntro: readNullableString(item, 'capabilityIntro'),
-    limitations: readStringArray(item, 'limitations'),
-    supportedLanguages: readStringArray(item, 'supportedLanguages'),
-    useCases: readStringArray(item, 'useCases'),
-    trainingDataCutoff: readNullableString(item, 'trainingDataCutoff'),
-    contextTokens: readNumber(item, 'contextTokens'),
-    maxOutputTokens: readNullableNumber(item, 'maxOutputTokens'),
-    supportsStreaming: readBoolean(item, 'supportsStreaming'),
-    supportsTools: readBoolean(item, 'supportsTools'),
-    supportsJsonSchema: readBoolean(item, 'supportsJsonSchema'),
-    releaseStage: readNullableNumber(item, 'releaseStage'),
-    shelfState: readNullableNumber(item, 'shelfState'),
-    routingState: readNullableNumber(item, 'routingState'),
-    replacementModel: readNullableString(item, 'replacementModel'),
+    priceIn: readRequiredString(item, 'priceIn', 'Model input price is required'),
+    priceOut: readRequiredString(item, 'priceOut', 'Model output price is required'),
+    status: readModelStatus(item),
+    calls: readRequiredString(item, 'calls', 'Model calls are required'),
+    description: readRequiredNullableString(item, 'description', 'Model description field is required'),
+    modalities: readRequiredStringArray(item, 'modalities', 'Model modalities are required'),
+    inputModalities: readRequiredStringArray(item, 'inputModalities', 'Model input modalities are required'),
+    outputModalities: readRequiredStringArray(item, 'outputModalities', 'Model output modalities are required'),
+    apiFormat: readRequiredNullableString(item, 'apiFormat', 'Model API format field is required'),
+    capabilityIntro: readRequiredNullableString(item, 'capabilityIntro', 'Model capability intro field is required'),
+    limitations: readRequiredStringArray(item, 'limitations', 'Model limitations are required'),
+    supportedLanguages: readRequiredStringArray(item, 'supportedLanguages', 'Model supported languages are required'),
+    useCases: readRequiredStringArray(item, 'useCases', 'Model use cases are required'),
+    trainingDataCutoff: readRequiredNullableString(item, 'trainingDataCutoff', 'Model training data cutoff field is required'),
+    contextTokens: readRequiredContextTokens(item),
+    maxOutputTokens: readRequiredNullableNonNegativeInteger(item, 'maxOutputTokens', 'Model max output tokens field is required', 'Model max output tokens'),
+    supportsStreaming: readRequiredBoolean(item, 'supportsStreaming', 'Model streaming support flag is required'),
+    supportsTools: readRequiredBoolean(item, 'supportsTools', 'Model tools support flag is required'),
+    supportsJsonSchema: readRequiredBoolean(item, 'supportsJsonSchema', 'Model JSON schema support flag is required'),
+    releaseStage: readRequiredNullableNumber(item, 'releaseStage', 'Model release stage field is required', 'Model release stage'),
+    shelfState: readRequiredNullableNumber(item, 'shelfState', 'Model shelf state field is required', 'Model shelf state'),
+    routingState: readRequiredNullableNumber(item, 'routingState', 'Model routing state field is required', 'Model routing state'),
+    replacementModel: readRequiredNullableString(item, 'replacementModel', 'Model replacement model field is required'),
   };
 }
 
@@ -552,6 +652,64 @@ function readRequiredPositiveInteger(record: ApiRecord, key: string, label: stri
   return value;
 }
 
+function readRequiredStringArray(item: ApiRecord, key: string, message: string): string[] {
+  if (!Array.isArray(item[key])) {
+    throw new Error(message);
+  }
+  return readStringArray(item, key);
+}
+
+function readRequiredNullableString(item: ApiRecord, key: string, message: string): string | null {
+  if (!(key in item)) {
+    throw new Error(message);
+  }
+  return readNullableString(item, key);
+}
+
+function readRequiredNullableNumber(item: ApiRecord, key: string, message: string, label: string): number | null {
+  if (!(key in item)) {
+    throw new Error(message);
+  }
+  const value = item[key];
+  if (value === null || value === '') {
+    return null;
+  }
+  const parsed = readNumber(item, key, Number.NaN);
+  if (!Number.isFinite(parsed)) {
+    throw new Error(`${label} must be a number or null`);
+  }
+  return parsed;
+}
+
+function readRequiredContextTokens(item: ApiRecord): number | null {
+  return readRequiredNullableNonNegativeInteger(
+    item,
+    'contextTokens',
+    'Model context tokens field is required',
+    'Model context tokens',
+  );
+}
+
+function readRequiredNullableNonNegativeInteger(
+  item: ApiRecord,
+  key: string,
+  missingMessage: string,
+  label: string,
+): number | null {
+  if (!(key in item)) {
+    throw new Error(missingMessage);
+  }
+  const value = item[key];
+  if (value === null) {
+    return null;
+  }
+  const parsed = readNumber(item, key, Number.NaN);
+  if (!Number.isInteger(parsed) || parsed < 0) {
+    throw new Error(`${label} must be a non-negative integer`);
+  }
+  return parsed;
+}
+
 function formatCount(value: number): string {
   if (!Number.isFinite(value) || value <= 0) {
     return '0';
@@ -585,6 +743,22 @@ function readRequiredBoolean(item: ApiRecord, key: string, message: string): boo
     return value;
   }
   throw new Error(message);
+}
+
+function readVendorStatus(item: ApiRecord): Vendor['status'] {
+  const status = readRequiredString(item, 'status', 'Vendor status is required');
+  if (status === 'active' || status === 'inactive') {
+    return status;
+  }
+  throw new Error(`Unsupported vendor status: ${status}`);
+}
+
+function readModelStatus(item: ApiRecord): Model['status'] {
+  const status = readRequiredString(item, 'status', 'Model status is required');
+  if (status === 'active' || status === 'inactive') {
+    return status;
+  }
+  throw new Error(`Unsupported model status: ${status}`);
 }
 
 function readSyncMode(item: ApiRecord): AdminModelCatalogSyncResponse['mode'] {

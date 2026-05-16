@@ -8,6 +8,11 @@ import {
   sumDecimalStrings,
 } from 'sdkwork-claw-router-commons/runtime';
 import { SettlementsService, SettlementChartData, Bill } from './settlementsService';
+import {
+  buildSettlementSummary,
+  buildSettlementYearOptions,
+  getDefaultSettlementYear,
+} from './settlementViewModel';
 
 const readOnlySettlementActions =
   'Read-only settlement dashboard. Statement exports, invoice downloads, and settlement commands require explicit settlement command contracts before they can be enabled.';
@@ -17,7 +22,7 @@ function getSettlementLoadErrorMessage(error: unknown, fallback: string): string
 }
 
 export function SettlementsView() {
-  const [selectedYear, setSelectedYear] = useState('2026');
+  const [selectedYear, setSelectedYear] = useState(() => getDefaultSettlementYear());
   const [expandedBill, setExpandedBill] = useState<string | null>(null);
   const [chartData, setChartData] = useState<SettlementChartData[]>([]);
   const [settlementBills, setSettlementBills] = useState<Bill[]>([]);
@@ -66,13 +71,12 @@ export function SettlementsView() {
     music: chartDecimalNumber(item.music),
   }));
   const formatCurrency = (val: string) => `${formatDecimalAmount(val, 6)} 积分`;
-  const annualTotalCost = sumDecimalStrings(settlementBills.map(bill => bill.totalCost), 6);
-  const currentMonthUnbilledCost = sumDecimalStrings(
-    chartData.flatMap(item => [item.text, item.image, item.video, item.audio, item.music]),
-    6,
-  );
-  const yearOverYearChangePercent = 0;
-  const nextSettlementDate = settlementBills[0]?.endDate ? `${settlementBills[0].endDate} 00:00:00` : '-';
+  const yearOptions = buildSettlementYearOptions({ selectedYear, bills: settlementBills });
+  const settlementSummary = buildSettlementSummary({
+    selectedYear,
+    chartData,
+    bills: settlementBills,
+  });
   const hasSettlementData = chartData.length > 0 || settlementBills.length > 0;
 
   return (
@@ -97,8 +101,9 @@ export function SettlementsView() {
               onChange={(e) => setSelectedYear(e.target.value)}
               className="bg-transparent text-sm text-slate-300 focus:outline-none cursor-pointer"
             >
-              <option value="2026">2026年度账单</option>
-              <option value="2025">2025年度账单</option>
+              {yearOptions.map(year => (
+                <option key={year} value={year}>{year}年度账单</option>
+              ))}
             </select>
           </div>
         </div>
@@ -147,12 +152,12 @@ export function SettlementsView() {
             <div className="relative z-10">
               <p className="text-sm font-medium text-slate-400 mb-1 flex items-center gap-2">今年累计账单总计</p>
               <div className="text-4xl font-bold text-white mb-2 tracking-tight flex items-center gap-2">
-                {formatCurrency(annualTotalCost)}
+                {formatCurrency(settlementSummary.annualTotalCost)}
               </div>
               <div className="flex items-center gap-1.5 text-xs text-slate-400">
                 <span className="text-emerald-400 flex items-center font-medium bg-emerald-500/10 px-1.5 py-0.5 rounded">
-                  <TrendingUp className="w-3 h-3 mr-1" /> {yearOverYearChangePercent >= 0 ? '+' : ''}{yearOverYearChangePercent.toFixed(1)}%
-                </span>较去年同期
+                  <TrendingUp className="w-3 h-3 mr-1" /> {settlementSummary.billCount}
+                </span>笔账单来自结算看板
               </div>
             </div>
           </div>
@@ -164,9 +169,9 @@ export function SettlementsView() {
             </div>
             <div className="relative z-10">
               <p className="text-sm font-medium text-slate-400 mb-1 flex items-center gap-2">当月未出账预估消耗</p>
-              <div className="text-4xl font-bold text-amber-500 mb-2 tracking-tight">{formatCurrency(currentMonthUnbilledCost)}</div>
+              <div className="text-4xl font-bold text-amber-500 mb-2 tracking-tight">{formatCurrency(settlementSummary.currentMonthUnbilledCost)}</div>
               <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                结算日期: <span className="text-slate-300 font-mono">{nextSettlementDate}</span>
+                结算日期: <span className="text-slate-300 font-mono">{settlementSummary.nextSettlementDate}</span>
               </div>
             </div>
           </div>

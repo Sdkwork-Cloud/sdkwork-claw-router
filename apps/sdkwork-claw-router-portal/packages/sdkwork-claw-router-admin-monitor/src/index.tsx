@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import {
   Activity, Server, AlertTriangle, Cpu, Globe,
-  CheckCircle2, AlertCircle, Clock, Search, Filter
+  CheckCircle2, AlertCircle, Clock, Search
 } from 'lucide-react';
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
@@ -15,6 +15,7 @@ function NodesTab() {
   const [perfData, setPerfData] = useState<PerformanceDatum[]>([]);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
+  const [nodeSearch, setNodeSearch] = useState('');
 
   const loadNodes = async () => {
     setLoading(true);
@@ -54,15 +55,33 @@ function NodesTab() {
     );
   }
 
+  const avgCpu = nodes.length === 0 ? 0 : nodes.reduce((sum, node) => sum + node.cpu, 0) / nodes.length;
+  const onlineNodes = nodes.filter((node) => node.status === 'online').length;
+  const healthRate = nodes.length === 0 ? 0 : (onlineNodes / nodes.length) * 100;
+  const activeIncidents = nodes.filter((node) => node.status !== 'online').length;
+  const regions = new Set(nodes.map((node) => node.region)).size;
+  const normalizedNodeSearch = nodeSearch.trim().toLowerCase();
+  const filteredNodes = nodes.filter((node) => {
+    if (!normalizedNodeSearch) {
+      return true;
+    }
+    return [
+      node.name,
+      node.ip,
+      node.region,
+      node.status,
+    ].some((value) => value.toLowerCase().includes(normalizedNodeSearch));
+  });
+
   return (
     <div className="space-y-6">
       {/* Overview Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {[
-          { title: 'Total Nodes', value: '1,248', desc: 'Across 12 regions', icon: Server, color: 'text-blue-500' },
-          { title: 'System Health', value: '98.5%', desc: 'API Success Rate', icon: Activity, color: 'text-green-500' },
-          { title: 'Avg CPU Load', value: '42%', desc: 'Normal range', icon: Cpu, color: 'text-yellow-500' },
-          { title: 'Active Incidents', value: '3', desc: 'Needs attention', icon: AlertTriangle, color: 'text-red-500' },
+          { title: 'Total Nodes', value: String(nodes.length), desc: `Across ${regions} regions`, icon: Server, color: 'text-blue-500' },
+          { title: 'System Health', value: `${healthRate.toFixed(1)}%`, desc: `${onlineNodes}/${nodes.length} nodes online`, icon: Activity, color: 'text-green-500' },
+          { title: 'Avg CPU Load', value: `${avgCpu.toFixed(1)}%`, desc: 'Backend reported average', icon: Cpu, color: 'text-yellow-500' },
+          { title: 'Active Incidents', value: String(activeIncidents), desc: 'Warning or offline nodes', icon: AlertTriangle, color: 'text-red-500' },
         ].map((stat, i) => (
           <div key={i} className="bg-white dark:bg-[#1a1a1a] p-5 rounded-xl border border-slate-200 dark:border-white/10 shadow-sm flex items-center justify-between">
             <div>
@@ -134,13 +153,12 @@ function NodesTab() {
                 <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
+                  value={nodeSearch}
+                  onChange={(event) => setNodeSearch(event.target.value)}
                   placeholder="Search nodes..."
                   className="pl-9 pr-4 py-1.5 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500/50"
                 />
              </div>
-             <button className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-white bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-lg">
-                <Filter className="w-4 h-4" />
-             </button>
           </div>
         </div>
         <div className="overflow-x-auto">
@@ -156,7 +174,7 @@ function NodesTab() {
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 dark:divide-white/5">
-              {nodes.map((node) => (
+              {filteredNodes.map((node) => (
                 <tr key={node.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
                   <td className="px-6 py-4">
                     <div className="flex flex-col">
@@ -227,6 +245,8 @@ function AlertsTab() {
   const [alerts, setAlerts] = useState<Alert[]>([]);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
+  const [severityFilter, setSeverityFilter] = useState<'all' | Alert['severity']>('all');
+  const [statusFilter, setStatusFilter] = useState<'all' | Alert['status']>('all');
 
   const loadAlerts = async () => {
     setLoading(true);
@@ -262,6 +282,12 @@ function AlertsTab() {
     );
   }
 
+  const filteredAlerts = alerts.filter((alert) => {
+    const severityMatches = severityFilter === 'all' || alert.severity === severityFilter;
+    const statusMatches = statusFilter === 'all' || alert.status === statusFilter;
+    return severityMatches && statusMatches;
+  });
+
   return (
     <div className="space-y-6">
       {/* Alert Stats */}
@@ -269,7 +295,7 @@ function AlertsTab() {
          <div className="bg-red-50 dark:bg-red-500/5 p-5 rounded-xl border border-red-100 dark:border-red-500/10 flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-red-600 dark:text-red-400">Critical Alerts</p>
-              <p className="text-3xl font-bold text-red-700 dark:text-red-500 mt-1">2</p>
+              <p className="text-3xl font-bold text-red-700 dark:text-red-500 mt-1">{alerts.filter((alert) => alert.severity === 'critical' && alert.status === 'active').length}</p>
             </div>
             <div className="p-3 bg-red-100 dark:bg-red-500/20 text-red-600 dark:text-red-500 rounded-lg">
               <AlertTriangle className="w-6 h-6" />
@@ -278,7 +304,7 @@ function AlertsTab() {
          <div className="bg-yellow-50 dark:bg-yellow-500/5 p-5 rounded-xl border border-yellow-100 dark:border-yellow-500/10 flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-yellow-600 dark:text-yellow-400">Warnings</p>
-              <p className="text-3xl font-bold text-yellow-700 dark:text-yellow-500 mt-1">12</p>
+              <p className="text-3xl font-bold text-yellow-700 dark:text-yellow-500 mt-1">{alerts.filter((alert) => alert.severity === 'warning' && alert.status === 'active').length}</p>
             </div>
             <div className="p-3 bg-yellow-100 dark:bg-yellow-500/20 text-yellow-600 dark:text-yellow-500 rounded-lg">
               <AlertCircle className="w-6 h-6" />
@@ -287,7 +313,7 @@ function AlertsTab() {
          <div className="bg-blue-50 dark:bg-blue-500/5 p-5 rounded-xl border border-blue-100 dark:border-blue-500/10 flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-blue-600 dark:text-blue-400">Resolved Today</p>
-              <p className="text-3xl font-bold text-blue-700 dark:text-blue-500 mt-1">45</p>
+              <p className="text-3xl font-bold text-blue-700 dark:text-blue-500 mt-1">{alerts.filter((alert) => alert.status === 'resolved').length}</p>
             </div>
             <div className="p-3 bg-blue-100 dark:bg-blue-500/20 text-blue-600 dark:text-blue-500 rounded-lg">
               <CheckCircle2 className="w-6 h-6" />
@@ -300,22 +326,30 @@ function AlertsTab() {
         <div className="p-4 border-b border-slate-200 dark:border-white/10 flex flex-wrap items-center justify-between gap-4">
           <h3 className="font-medium text-slate-900 dark:text-white">Recent Alerts</h3>
           <div className="flex gap-2">
-            <select className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 text-sm rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-red-500/50">
-              <option>All Severities</option>
-              <option>Critical</option>
-              <option>Warning</option>
-              <option>Info</option>
+            <select
+              value={severityFilter}
+              onChange={(event) => setSeverityFilter(event.target.value as 'all' | Alert['severity'])}
+              className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 text-sm rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-red-500/50"
+            >
+              <option value="all">All Severities</option>
+              <option value="critical">Critical</option>
+              <option value="warning">Warning</option>
+              <option value="info">Info</option>
             </select>
-            <select className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 text-sm rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-red-500/50">
-              <option>All Status</option>
-              <option>Active</option>
-              <option>Resolved</option>
+            <select
+              value={statusFilter}
+              onChange={(event) => setStatusFilter(event.target.value as 'all' | Alert['status'])}
+              className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 text-sm rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-red-500/50"
+            >
+              <option value="all">All Status</option>
+              <option value="active">Active</option>
+              <option value="resolved">Resolved</option>
             </select>
           </div>
         </div>
 
         <div className="divide-y divide-slate-200 dark:divide-white/5">
-           {alerts.map(alert => (
+           {filteredAlerts.map(alert => (
              <div key={alert.id} className={`p-4 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors ${alert.status === 'resolved' ? 'opacity-70' : ''}`}>
                 <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                    <div className="flex items-start gap-4">
@@ -339,11 +373,6 @@ function AlertsTab() {
                         </div>
                       </div>
                    </div>
-                   {alert.status === 'active' && (
-                     <button className="self-start text-xs font-medium text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 dark:text-slate-300 dark:bg-[#222] dark:border-white/10 dark:hover:bg-[#333] px-3 py-1.5 rounded-lg whitespace-nowrap">
-                       Acknowledge
-                     </button>
-                   )}
                 </div>
              </div>
            ))}

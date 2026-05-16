@@ -32,6 +32,12 @@ pub fn admin_monitor_router_with_read_store(
             "/backend/v3/api/router/monitor/performance",
             get(fetch_performance),
         )
+        .route("/backend/v3/api/system/monitor/nodes", get(fetch_nodes))
+        .route("/backend/v3/api/system/monitor/alerts", get(fetch_alerts))
+        .route(
+            "/backend/v3/api/system/monitor/performance",
+            get(fetch_performance),
+        )
         .with_state(AdminMonitorState { read_store })
 }
 

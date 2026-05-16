@@ -37,12 +37,12 @@ Recommended order for archive/manual deployments:
 6. Start `clawrouter`.
 7. Check `/healthz` and `/readyz`.
 
-For Linux `service` deployments, the `.deb` creates the default runtime TOML, `/etc/clawrouter/clawrouter.env`, and `/etc/clawrouter/database.secret`. The systemd unit runs `ensure` and `refresh-catalog --force` automatically before the gateway starts.
+For Linux `service` deployments, the `.deb` creates the default runtime TOML, `/etc/clawrouter/clawrouter.env`, and `/etc/clawrouter/database.secret`. The systemd unit runs `ensure` and `refresh-catalog --force` automatically before the gateway starts. The service can write `/var/lib/clawrouter` and `/var/log/clawrouter`; `/etc/clawrouter` is read-only to the running process.
 
 Linux service packages should follow this order:
 
 ```bash
-sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
+sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb
 sudo editor /etc/clawrouter/clawrouter.toml
 sudo systemctl start clawrouter
 sudo systemctl status clawrouter --no-pager
@@ -86,6 +86,8 @@ Native package install locations:
 | Windows `.msi` | `C:\Program Files\ClawRouter\bin` | The MSI installs runtime files; configure service hosting separately when needed. |
 | macOS `.pkg` | `/opt/clawrouter/bin` | `service` packages also install `/Library/LaunchDaemons/com.sdkwork.clawrouter.plist`. |
 
+Every package includes `install-manifest.json` with `installConfiguration`. Native installers also include `nativeInstall`, which describes the final install paths, service metadata, permissions, and operator commands.
+
 ## Database Policy
 
 desktop:
@@ -115,14 +117,159 @@ password_file = "/etc/clawrouter/database.secret"
 ssl_mode = "require"
 max_connections = 16
 
+[redis]
+enabled = false
+host = "redis.example.com"
+port = 6379
+database = 0
+# username = "default"
+# url = "redis://redis.example.com:6379/0"
+# password_file = "/etc/clawrouter/redis.secret"
+# password = "change-me"
+key_prefix = "clawrouter"
+tls = false
+max_connections = 16
+connect_timeout_millis = 2000
+command_timeout_millis = 1000
+pool_idle_timeout_seconds = 60
+
+[observability]
+log_filter = "info"
+log_format = "compact"
+log_ansi = false
+log_target = true
+log_thread_names = false
+log_thread_ids = false
+
+[services.gateway]
+bind = "0.0.0.0:18080"
+
+[services.admin_api]
+bind = "0.0.0.0:18081"
+
+[services.app_api]
+bind = "0.0.0.0:18082"
+
+[server]
+bind = "0.0.0.0:3900"
+external_scheme = "http"
+trust_forwarded_headers = false
+
+[edge]
+enabled = true
+gateway_base_url = "http://127.0.0.1:18080"
+backend_api_base_url = "http://127.0.0.1:18081"
+app_api_base_url = "http://127.0.0.1:18082"
+portal_base_url = "http://127.0.0.1:3901"
+portal_static_dist = "/opt/clawrouter/portal/dist"
+cors_allowed_origins = []
+upstream_request_timeout_millis = 30000
+upstream_ready_timeout_millis = 2000
+
+[portal.public]
+api_base_url = "/v1"
+open_api_base_url = "/v1"
+app_api_base_url = "/app/v3/api"
+backend_api_base_url = "/backend/v3/api"
+tool_api_enabled = false
+
+[portal.static]
+html_cache_control = "no-store"
+asset_cache_control = "public, max-age=31536000, immutable"
+
+[portal.security]
+hsts_enabled = false
+hsts_max_age_seconds = 31536000
+hsts_include_subdomains = true
+hsts_preload = false
+csp_frame_src = ["https://player.bilibili.com"]
+
+[portal.tools]
+rate_limit_requests = 120
+rate_limit_window_seconds = 60
+max_body_bytes = 1048576
+sdk_archive_root = "/opt/clawrouter/portal/dist/sdk-archives"
+
+[provider_relay.openai]
+# base_url = "https://api.openai.com/v1"
+# bearer_token_file = "/etc/clawrouter/openai-relay.secret"
+
+[provider_relay.runtime]
+response_timeout_millis = 120000
+health_probe_timeout_millis = 10000
+
+[provider_relay.retry]
+max_attempts = 2
+retryable_status_codes = [429, 500, 502, 503, 504]
+backoff_millis = 0
+
 [paths]
 data_directory = "/var/lib/clawrouter"
+course_upload_root = "/var/lib/clawrouter/uploads/courses"
+
+[courses]
+video_upload_max_bytes = 1073741824
+video_upload_body_limit_bytes = 1074790400
+
+[request_limits]
+admin_app_json_body_max_bytes = 131072
+admin_skill_json_body_max_bytes = 65536
+forum_json_body_max_bytes = 262144
+payment_callback_body_max_bytes = 65536
 
 [runtime]
 deployment_mode = "server"
 ```
 
 The `.deb` package creates `/etc/clawrouter/database.secret` with the placeholder value `change-me`. Replace that file with the real PostgreSQL password before starting `clawrouter`; startup rejects server configurations that still use `db.example.com` or `change-me`.
+
+Redis is initialized as configuration only. It is not required for first start,
+and `[redis].enabled = false` is the correct default for single-node or
+database-only deployments. Enable Redis only when the deployment needs shared
+cache, distributed locks, queues, or rate-limit buckets. When enabled, set
+`[redis].host`, `[redis].port`, and `[redis].database`; use `[redis].url` only
+as an advanced managed-endpoint override. Use `/etc/clawrouter/redis.secret` or
+another protected `password_file`, and keep direct `[redis].password` only for
+TOML files managed as secret-bearing files.
+
+`[paths].course_upload_root` stores local course application video uploads. Put
+it on durable storage for service and container deployments and keep it inside
+the application data volume unless a deployment intentionally mounts a separate
+media volume.
+`[courses].video_upload_max_bytes` is the accepted video payload size, and
+`[courses].video_upload_body_limit_bytes` includes multipart overhead. Configure
+reverse proxies, container ingress, and load balancer request-body limits at or
+above the body limit.
+
+`[request_limits]` controls runtime JSON and webhook body limits for
+high-risk write APIs. `admin_app_json_body_max_bytes` and
+`admin_skill_json_body_max_bytes` protect backend management APIs,
+`forum_json_body_max_bytes` protects public app forum writes, and
+`payment_callback_body_max_bytes` protects payment provider callbacks. Keep
+reverse proxy, load balancer, and container ingress request-body limits aligned
+with these values so oversized requests fail before expensive application work.
+
+`[edge]` configures the packaged Rust edge server and upstream service targets.
+`[portal.static]` keeps HTML/runtime environment responses uncached while
+allowing long-lived hashed static assets. `[portal.security]` controls
+browser-facing security policy. Keep HSTS disabled until the public hostname is
+served through HTTPS; when enabling preload, keep `hsts_max_age_seconds >=
+31536000` and `hsts_include_subdomains = true`. Add only explicit trusted
+HTTP/HTTPS origins to `csp_frame_src` for embedded players or other framed
+content. `[portal.tools]` controls the optional
+local tool API body size and rate limit. `[observability]` owns production
+logging defaults: `log_filter` sets the tracing filter, `log_format` is one of
+`compact`, `json`, `pretty`, or `full`, `log_ansi` should stay `false` for
+systemd and container logs, and the target/thread fields control emitted log
+metadata. Use `RUST_LOG` only for temporary process-level diagnostics.
+`[edge].cors_allowed_origins` is an explicit allowlist for additional trusted
+browser origins, such as an external CDN-hosted portal. Leave it empty for the
+packaged same-origin edge deployment; wildcard origins and origins with paths
+are rejected.
+`[provider_relay.runtime]` configures global OpenAI-compatible upstream response
+timeouts and admin/app channel health-check timeouts. `[provider_relay.retry]`
+is the default retry policy when a database routing channel does not define its
+own retry policy.
 
 For production server/service/container deployments, use the structured TOML fields above. `password_file` is the preferred secret path. Direct `password` is supported only when the TOML file is protected as a secret-bearing file:
 
@@ -143,6 +290,17 @@ max_connections = 16
 
 [paths]
 data_directory = "/var/lib/clawrouter"
+course_upload_root = "/var/lib/clawrouter/uploads/courses"
+
+[courses]
+video_upload_max_bytes = 1073741824
+video_upload_body_limit_bytes = 1074790400
+
+[request_limits]
+admin_app_json_body_max_bytes = 131072
+admin_skill_json_body_max_bytes = 65536
+forum_json_body_max_bytes = 262144
+payment_callback_body_max_bytes = 65536
 
 [runtime]
 deployment_mode = "server"
@@ -310,6 +468,6 @@ Example installer output:
 }
 ```
 
-Claw Router login methods, registration, QR login, verification-code policy, and recovery options are controlled by IAM runtime settings. `v0.2.0` keeps a strict default posture: password login is available by default, while QR login, code login, OAuth, and session bridge require explicit enablement.
+Claw Router login methods, registration, QR login, verification-code policy, and recovery options are controlled by IAM runtime settings. `v0.3.0` keeps a strict default posture: password login is available by default, while QR login, code login, OAuth, and session bridge require explicit enablement.
 
 After first login, use the admin backend to configure IAM policy for login methods, QR login, registration verification, OAuth visibility, and account recovery.

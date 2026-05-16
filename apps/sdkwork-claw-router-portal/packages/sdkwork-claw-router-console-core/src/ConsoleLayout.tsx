@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 
 import { Navbar } from 'sdkwork-claw-router-commons';
-import { clearAppSession } from 'sdkwork-claw-router-commons/runtime';
+import { revokeAppSession } from 'sdkwork-claw-router-commons/runtime';
 
 const mainNavigation = [
   { name: '仪表盘', path: '/console/dashboard', icon: LayoutDashboard },
@@ -78,7 +78,7 @@ export function ConsoleLayout({ isDark, toggleTheme, setTheme }: ConsoleLayoutPr
   const currentWidth = sidebarOpen ? sidebarWidth : 80;
 
   const handleLogout = useCallback(() => {
-    clearAppSession();
+    void revokeAppSession();
     navigate('/', { replace: true });
   }, [navigate]);
 

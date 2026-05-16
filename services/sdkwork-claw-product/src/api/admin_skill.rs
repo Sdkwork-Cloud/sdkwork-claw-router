@@ -2,7 +2,7 @@ use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use axum::body::Bytes;
-use axum::extract::{Path, State};
+use axum::extract::{Path, Query, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, post};
@@ -48,13 +48,15 @@ const MAX_RESOURCE_REF_LEN: usize = 1024;
 const MAX_RELEASE_NOTES_LEN: usize = 4000;
 const MAX_ARRAY_ITEMS: usize = 64;
 const MAX_ARRAY_ITEM_LEN: usize = 64;
-const MAX_JSON_BYTES: usize = 64 * 1024;
+const DEFAULT_JSON_BODY_MAX_BYTES: usize =
+    sdkwork_claw_config::RequestLimitsConfig::DEFAULT_ADMIN_SKILL_JSON_BODY_MAX_BYTES;
 const CATEGORY_TYPE_SKILLS: i32 = 19;
 
 #[derive(Clone)]
 struct AdminSkillState {
     store: Arc<dyn AdminSkillStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    json_body_max_bytes: usize,
 }
 
 #[derive(Debug, Deserialize)]
@@ -80,6 +82,15 @@ struct ListPackagesRequest {
     enabled: Option<bool>,
     category_id: Option<Value>,
     page_no: Option<i64>,
+    page_size: Option<i64>,
+}
+
+#[derive(Debug, Default, Deserialize)]
+struct ListPackagesQuery {
+    q: Option<String>,
+    enabled: Option<bool>,
+    category_id: Option<String>,
+    page: Option<i64>,
     page_size: Option<i64>,
 }
 
@@ -129,6 +140,18 @@ struct ListSkillsRequest {
     enabled: Option<bool>,
     category_id: Option<Value>,
     page_no: Option<i64>,
+    page_size: Option<i64>,
+}
+
+#[derive(Debug, Default, Deserialize)]
+struct ListSkillsQuery {
+    q: Option<String>,
+    market_status: Option<String>,
+    review_status: Option<String>,
+    visibility: Option<String>,
+    enabled: Option<bool>,
+    category_id: Option<String>,
+    page: Option<i64>,
     page_size: Option<i64>,
 }
 
@@ -517,6 +540,18 @@ pub fn admin_skill_router_with_store(
     store: Arc<dyn AdminSkillStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
 ) -> Router {
+    admin_skill_router_with_store_and_json_body_limit(
+        store,
+        entity_uuid_generator,
+        DEFAULT_JSON_BODY_MAX_BYTES,
+    )
+}
+
+pub fn admin_skill_router_with_store_and_json_body_limit(
+    store: Arc<dyn AdminSkillStore + Send + Sync>,
+    entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    json_body_max_bytes: usize,
+) -> Router {
     Router::new()
         .route(
             "/backend/v3/api/skill/categories",
@@ -588,9 +623,84 @@ pub fn admin_skill_router_with_store(
             "/backend/v3/api/skill/{skill_id}/review/reject",
             post(reject_skill),
         )
+        .route(
+            "/backend/v3/api/ecosystem/skills/categories",
+            get(fetch_categories).post(create_category),
+        )
+        .route(
+            "/backend/v3/api/ecosystem/skills/package",
+            get(fetch_packages_from_query).post(create_package),
+        )
+        .route(
+            "/backend/v3/api/ecosystem/skills/package/{package_id}",
+            get(fetch_package)
+                .put(update_package)
+                .delete(delete_package),
+        )
+        .route(
+            "/backend/v3/api/ecosystem/skills/package/{package_id}/enable",
+            post(enable_package),
+        )
+        .route(
+            "/backend/v3/api/ecosystem/skills/package/{package_id}/disable",
+            post(disable_package),
+        )
+        .route(
+            "/backend/v3/api/ecosystem/skills",
+            get(fetch_skills_from_query).post(create_skill),
+        )
+        .route(
+            "/backend/v3/api/ecosystem/skills/{skill_id}",
+            get(fetch_skill).put(update_skill).delete(delete_skill),
+        )
+        .route(
+            "/backend/v3/api/ecosystem/skills/{skill_id}/assets",
+            get(fetch_skill_assets).post(create_skill_asset),
+        )
+        .route(
+            "/backend/v3/api/ecosystem/skills/{skill_id}/assets/{asset_id}",
+            get(fetch_skill_asset)
+                .put(update_skill_asset)
+                .delete(delete_skill_asset),
+        )
+        .route(
+            "/backend/v3/api/ecosystem/skills/{skill_id}/artifacts",
+            get(fetch_skill_artifacts).post(create_skill_artifact),
+        )
+        .route(
+            "/backend/v3/api/ecosystem/skills/{skill_id}/artifacts/{artifact_id}",
+            get(fetch_skill_artifact)
+                .put(update_skill_artifact)
+                .delete(delete_skill_artifact),
+        )
+        .route(
+            "/backend/v3/api/ecosystem/skills/{skill_id}/enable",
+            post(enable_skill),
+        )
+        .route(
+            "/backend/v3/api/ecosystem/skills/{skill_id}/disable",
+            post(disable_skill),
+        )
+        .route(
+            "/backend/v3/api/ecosystem/skills/{skill_id}/publish",
+            post(publish_skill),
+        )
+        .route(
+            "/backend/v3/api/ecosystem/skills/{skill_id}/unpublish",
+            post(offline_skill),
+        )
+        .route(
+            "/backend/v3/api/ecosystem/skills/{skill_id}/review/approve",
+            post(approve_skill),
+        )
+        .route(
+            "/backend/v3/api/ecosystem/skills/{skill_id}/review/reject",
+            post(reject_skill),
+        )
         .with_state(AdminSkillState {
             store,
             entity_uuid_generator,
+            json_body_max_bytes: json_body_max_bytes.max(1),
         })
 }
 
@@ -623,7 +733,11 @@ async fn create_category(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let request = match parse_json_body::<CreateCategoryRequest>(&body, "skill category") {
+    let request = match parse_json_body::<CreateCategoryRequest>(
+        &body,
+        "skill category",
+        state.json_body_max_bytes,
+    ) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
@@ -652,12 +766,37 @@ async fn fetch_packages(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let request = match parse_optional_json_body::<ListPackagesRequest>(&body, "skill package list")
-    {
+    let request = match parse_optional_json_body::<ListPackagesRequest>(
+        &body,
+        "skill package list",
+        state.json_body_max_bytes,
+    ) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
     let query = match build_list_packages_query(subject, request) {
+        Ok(query) => query,
+        Err(message) => return bad_request(message),
+    };
+    match state.store.list_packages(query).await {
+        Ok(items) => Json(PlusApiResult::success(AdminSkillListResponse {
+            items: items.into_iter().map(to_package_response).collect(),
+        }))
+        .into_response(),
+        Err(error) => admin_skill_system_response("skill package read model is unavailable", error),
+    }
+}
+
+async fn fetch_packages_from_query(
+    State(state): State<AdminSkillState>,
+    headers: HeaderMap,
+    Query(query): Query<ListPackagesQuery>,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let query = match build_list_packages_query(subject, query.into()) {
         Ok(query) => query,
         Err(message) => return bad_request(message),
     };
@@ -706,7 +845,11 @@ async fn create_package(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let request = match parse_json_body::<CreatePackageRequest>(&body, "skill package") {
+    let request = match parse_json_body::<CreatePackageRequest>(
+        &body,
+        "skill package",
+        state.json_body_max_bytes,
+    ) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
@@ -741,7 +884,11 @@ async fn update_package(
         Ok(package_id) => package_id,
         Err(message) => return bad_request(message),
     };
-    let request = match parse_json_body::<UpdatePackageRequest>(&body, "skill package update") {
+    let request = match parse_json_body::<UpdatePackageRequest>(
+        &body,
+        "skill package update",
+        state.json_body_max_bytes,
+    ) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
@@ -810,11 +957,37 @@ async fn fetch_skills(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let request = match parse_optional_json_body::<ListSkillsRequest>(&body, "skill list") {
+    let request = match parse_optional_json_body::<ListSkillsRequest>(
+        &body,
+        "skill list",
+        state.json_body_max_bytes,
+    ) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
     let query = match build_list_query(subject, request) {
+        Ok(query) => query,
+        Err(message) => return bad_request(message),
+    };
+    match state.store.list_skills(query).await {
+        Ok(items) => Json(PlusApiResult::success(AdminSkillListResponse {
+            items: items.into_iter().map(to_skill_response).collect(),
+        }))
+        .into_response(),
+        Err(error) => admin_skill_system_response("skill read model is unavailable", error),
+    }
+}
+
+async fn fetch_skills_from_query(
+    State(state): State<AdminSkillState>,
+    headers: HeaderMap,
+    Query(query): Query<ListSkillsQuery>,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let query = match build_list_query(subject, query.into()) {
         Ok(query) => query,
         Err(message) => return bad_request(message),
     };
@@ -863,10 +1036,11 @@ async fn create_skill(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let request = match parse_json_body::<CreateSkillRequest>(&body, "skill") {
-        Ok(request) => request,
-        Err(message) => return bad_request(message),
-    };
+    let request =
+        match parse_json_body::<CreateSkillRequest>(&body, "skill", state.json_body_max_bytes) {
+            Ok(request) => request,
+            Err(message) => return bad_request(message),
+        };
     let command = match build_create_skill_command(state.clone(), &headers, subject, request) {
         Ok(command) => command,
         Err(error) => return command_build_error_response(error),
@@ -896,7 +1070,11 @@ async fn update_skill(
         Ok(skill_id) => skill_id,
         Err(message) => return bad_request(message),
     };
-    let request = match parse_json_body::<UpdateSkillRequest>(&body, "skill update") {
+    let request = match parse_json_body::<UpdateSkillRequest>(
+        &body,
+        "skill update",
+        state.json_body_max_bytes,
+    ) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
@@ -1069,7 +1247,11 @@ async fn create_skill_asset(
         Ok(skill_id) => skill_id,
         Err(message) => return bad_request(message),
     };
-    let request = match parse_json_body::<CreateSkillAssetRequest>(&body, "skill asset") {
+    let request = match parse_json_body::<CreateSkillAssetRequest>(
+        &body,
+        "skill asset",
+        state.json_body_max_bytes,
+    ) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
@@ -1109,7 +1291,11 @@ async fn update_skill_asset(
         Ok(asset_id) => asset_id,
         Err(message) => return bad_request(message),
     };
-    let request = match parse_json_body::<UpdateSkillAssetRequest>(&body, "skill asset update") {
+    let request = match parse_json_body::<UpdateSkillAssetRequest>(
+        &body,
+        "skill asset update",
+        state.json_body_max_bytes,
+    ) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
@@ -1242,7 +1428,11 @@ async fn create_skill_artifact(
         Ok(skill_id) => skill_id,
         Err(message) => return bad_request(message),
     };
-    let request = match parse_json_body::<CreateSkillArtifactRequest>(&body, "skill artifact") {
+    let request = match parse_json_body::<CreateSkillArtifactRequest>(
+        &body,
+        "skill artifact",
+        state.json_body_max_bytes,
+    ) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
@@ -1282,11 +1472,14 @@ async fn update_skill_artifact(
         Ok(artifact_id) => artifact_id,
         Err(message) => return bad_request(message),
     };
-    let request =
-        match parse_json_body::<UpdateSkillArtifactRequest>(&body, "skill artifact update") {
-            Ok(request) => request,
-            Err(message) => return bad_request(message),
-        };
+    let request = match parse_json_body::<UpdateSkillArtifactRequest>(
+        &body,
+        "skill artifact update",
+        state.json_body_max_bytes,
+    ) {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
     let command = match build_update_artifact_command(
         state.clone(),
         &headers,
@@ -1446,7 +1639,11 @@ async fn review_skill_response(
         Ok(skill_id) => skill_id,
         Err(message) => return bad_request(message),
     };
-    let request = match parse_optional_json_body::<ReviewSkillRequest>(&body, "skill review") {
+    let request = match parse_optional_json_body::<ReviewSkillRequest>(
+        &body,
+        "skill review",
+        state.json_body_max_bytes,
+    ) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
@@ -1484,13 +1681,13 @@ fn resolve_subject(headers: &HeaderMap) -> Result<AdminSkillSubject, Response> {
         })
 }
 
-fn parse_json_body<T>(body: &[u8], entity_name: &str) -> Result<T, String>
+fn parse_json_body<T>(body: &[u8], entity_name: &str, max_bytes: usize) -> Result<T, String>
 where
     T: for<'de> Deserialize<'de>,
 {
-    if body.len() > MAX_JSON_BYTES {
+    if body.len() > max_bytes {
         return Err(format!(
-            "{entity_name} request body must be at most {MAX_JSON_BYTES} bytes"
+            "{entity_name} request body must be at most {max_bytes} bytes"
         ));
     }
     if body.iter().all(u8::is_ascii_whitespace) {
@@ -1500,13 +1697,17 @@ where
         .map_err(|error| format!("invalid {entity_name} request body: {error}"))
 }
 
-fn parse_optional_json_body<T>(body: &[u8], entity_name: &str) -> Result<T, String>
+fn parse_optional_json_body<T>(
+    body: &[u8],
+    entity_name: &str,
+    max_bytes: usize,
+) -> Result<T, String>
 where
     T: Default + for<'de> Deserialize<'de>,
 {
-    if body.len() > MAX_JSON_BYTES {
+    if body.len() > max_bytes {
         return Err(format!(
-            "{entity_name} request body must be at most {MAX_JSON_BYTES} bytes"
+            "{entity_name} request body must be at most {max_bytes} bytes"
         ));
     }
     if body.iter().all(u8::is_ascii_whitespace) {
@@ -1546,6 +1747,33 @@ impl Default for ListPackagesRequest {
             category_id: None,
             page_no: None,
             page_size: None,
+        }
+    }
+}
+
+impl From<ListSkillsQuery> for ListSkillsRequest {
+    fn from(value: ListSkillsQuery) -> Self {
+        Self {
+            keyword: value.q,
+            market_status: value.market_status,
+            review_status: value.review_status,
+            visibility: value.visibility,
+            enabled: value.enabled,
+            category_id: value.category_id.map(Value::String),
+            page_no: value.page,
+            page_size: value.page_size,
+        }
+    }
+}
+
+impl From<ListPackagesQuery> for ListPackagesRequest {
+    fn from(value: ListPackagesQuery) -> Self {
+        Self {
+            keyword: value.q,
+            enabled: value.enabled,
+            category_id: value.category_id.map(Value::String),
+            page_no: value.page,
+            page_size: value.page_size,
         }
     }
 }
@@ -3373,5 +3601,64 @@ fn civil_from_days(days: i64) -> (i64, i64, i64) {
 impl From<String> for AdminSkillCommandBuildError {
     fn from(value: String) -> Self {
         Self::BadRequest(value)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn subject() -> AdminSkillSubject {
+        AdminSkillSubject {
+            tenant_id: 10,
+            organization_id: 20,
+            operator_id: 30,
+            operator_type: 1,
+        }
+    }
+
+    #[test]
+    fn skill_sdk_query_maps_to_internal_list_request() {
+        let request: ListSkillsRequest = ListSkillsQuery {
+            q: Some("router".to_owned()),
+            market_status: Some("published".to_owned()),
+            review_status: Some("approved".to_owned()),
+            visibility: Some("public".to_owned()),
+            enabled: Some(true),
+            category_id: Some("11".to_owned()),
+            page: Some(3),
+            page_size: Some(25),
+        }
+        .into();
+        let query = build_list_query(subject(), request).expect("skill query should normalize");
+
+        assert_eq!(Some("router".to_owned()), query.keyword);
+        assert_eq!(Some("PUBLISHED".to_owned()), query.market_status);
+        assert_eq!(Some("APPROVED".to_owned()), query.review_status);
+        assert_eq!(Some("PUBLIC".to_owned()), query.visibility);
+        assert_eq!(Some(true), query.enabled);
+        assert_eq!(Some(11), query.category_id);
+        assert_eq!(Some(3), query.page_no);
+        assert_eq!(Some(25), query.page_size);
+    }
+
+    #[test]
+    fn skill_package_sdk_query_maps_to_internal_list_request() {
+        let request: ListPackagesRequest = ListPackagesQuery {
+            q: Some("starter".to_owned()),
+            enabled: Some(false),
+            category_id: Some("12".to_owned()),
+            page: Some(2),
+            page_size: Some(40),
+        }
+        .into();
+        let query = build_list_packages_query(subject(), request)
+            .expect("skill package query should normalize");
+
+        assert_eq!(Some("starter".to_owned()), query.keyword);
+        assert_eq!(Some(false), query.enabled);
+        assert_eq!(Some(12), query.category_id);
+        assert_eq!(Some(2), query.page_no);
+        assert_eq!(Some(40), query.page_size);
     }
 }

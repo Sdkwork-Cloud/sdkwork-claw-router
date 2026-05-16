@@ -1,8 +1,11 @@
-use sqlx::SqlitePool;
+use sqlx::{Row, SqlitePool};
 
 use crate::domain::DomainError;
 use crate::ports::{
-    AppSessionEventStore, AppSessionEventStoreFuture, RecordAppSessionIssuedEventCommand,
+    ActiveAppSession, AppSessionEventStore, AppSessionEventStoreFuture, AppSessionRecord,
+    AppSessionUserRecord, LoadActiveAppSessionQuery, RecordAppSessionIssuedEventCommand,
+    ResolveAppSessionOrganizationQuery, ResolvedAppSessionOrganization, RevokeAppSessionCommand,
+    RotateAppSessionTokensCommand,
 };
 
 #[derive(Debug, Clone)]
@@ -106,7 +109,326 @@ impl AppSessionEventStore for SqliteAppSessionEventStore {
             Ok(())
         })
     }
+
+    fn load_active_app_session<'a>(
+        &'a self,
+        query: LoadActiveAppSessionQuery,
+    ) -> AppSessionEventStoreFuture<'a, Option<ActiveAppSession>> {
+        Box::pin(async move { load_active_app_session(&self.pool, query).await })
+    }
+
+    fn resolve_app_session_organization<'a>(
+        &'a self,
+        query: ResolveAppSessionOrganizationQuery,
+    ) -> AppSessionEventStoreFuture<'a, Option<ResolvedAppSessionOrganization>> {
+        Box::pin(async move { resolve_app_session_organization(&self.pool, query).await })
+    }
+
+    fn rotate_app_session_tokens<'a>(
+        &'a self,
+        command: RotateAppSessionTokensCommand,
+    ) -> AppSessionEventStoreFuture<'a, bool> {
+        Box::pin(async move { rotate_app_session_tokens(&self.pool, command).await })
+    }
+
+    fn revoke_app_session<'a>(
+        &'a self,
+        command: RevokeAppSessionCommand,
+    ) -> AppSessionEventStoreFuture<'a, bool> {
+        Box::pin(async move { revoke_app_session(&self.pool, command).await })
+    }
 }
+
+async fn load_active_app_session(
+    pool: &SqlitePool,
+    query: LoadActiveAppSessionQuery,
+) -> crate::domain::DomainResult<Option<ActiveAppSession>> {
+    let mut sql = LOAD_ACTIVE_APP_SESSION.to_owned();
+    if query.refresh_token_hash.is_some() {
+        sql.push_str(" AND s.refresh_token_hash = ?3");
+    }
+    sql.push_str(" LIMIT 1");
+    let mut query_builder = sqlx::query(&sql)
+        .bind(query.auth_token_hash)
+        .bind(query.access_token_hash);
+    if let Some(refresh_token_hash) = query.refresh_token_hash {
+        query_builder = query_builder.bind(refresh_token_hash);
+    }
+    let row = query_builder
+        .fetch_optional(pool)
+        .await
+        .map_err(|error| store_error("failed to load active IAM session", error))?;
+    let Some(row) = row else {
+        return Ok(None);
+    };
+    let session = session_record_from_row(&row)?;
+    if !session_is_active(&session.expires_at, query.now) {
+        return Ok(None);
+    }
+    Ok(Some(ActiveAppSession {
+        session,
+        user: user_record_from_row(&row)?,
+    }))
+}
+
+async fn resolve_app_session_organization(
+    pool: &SqlitePool,
+    query: ResolveAppSessionOrganizationQuery,
+) -> crate::domain::DomainResult<Option<ResolvedAppSessionOrganization>> {
+    let row = match (query.organization_id, query.organization_code) {
+        (Some(organization_id), _) => {
+            sqlx::query(
+                r#"
+                SELECT CAST(o.id AS TEXT) AS organization_id
+                FROM iam_organization o
+                JOIN iam_organization_member om
+                  ON om.tenant_id = o.tenant_id
+                 AND om.organization_id = o.id
+                 AND om.user_id = ?
+                 AND om.status = 'active'
+                WHERE o.tenant_id = ?
+                  AND o.id = ?
+                  AND o.status = 'active'
+                LIMIT 1
+                "#,
+            )
+            .bind(query.user_id.to_string())
+            .bind(query.tenant_id.to_string())
+            .bind(organization_id)
+            .fetch_optional(pool)
+            .await
+        }
+        (None, Some(organization_code)) => {
+            sqlx::query(
+                r#"
+                SELECT CAST(o.id AS TEXT) AS organization_id
+                FROM iam_organization o
+                JOIN iam_organization_member om
+                  ON om.tenant_id = o.tenant_id
+                 AND om.organization_id = o.id
+                 AND om.user_id = ?
+                 AND om.status = 'active'
+                WHERE o.tenant_id = ?
+                  AND o.code = ?
+                  AND o.status = 'active'
+                ORDER BY o.updated_at DESC, o.id DESC
+                LIMIT 1
+                "#,
+            )
+            .bind(query.user_id.to_string())
+            .bind(query.tenant_id.to_string())
+            .bind(organization_code)
+            .fetch_optional(pool)
+            .await
+        }
+        (None, None) => return Ok(None),
+    }
+    .map_err(|error| store_error("failed to resolve app session organization", error))?;
+    row.map(|row| {
+        Ok(ResolvedAppSessionOrganization {
+            organization_id: parse_i64(&string_cell(&row, "organization_id"), "organization_id")?,
+        })
+    })
+    .transpose()
+}
+
+async fn rotate_app_session_tokens(
+    pool: &SqlitePool,
+    command: RotateAppSessionTokensCommand,
+) -> crate::domain::DomainResult<bool> {
+    let mut tx = pool
+        .begin()
+        .await
+        .map_err(|error| store_error("failed to begin IAM session rotate transaction", error))?;
+    let result = sqlx::query(
+        r#"
+        UPDATE iam_session
+        SET auth_token_hash = ?,
+            access_token_hash = ?,
+            refresh_token_hash = ?,
+            organization_id = COALESCE(?, organization_id),
+            data_scope_json = COALESCE(?, data_scope_json),
+            expires_at = ?,
+            updated_at = ?
+        WHERE id = ?
+          AND tenant_id = ?
+          AND user_id = ?
+          AND auth_token_hash = ?
+          AND access_token_hash = ?
+          AND (? IS NULL OR refresh_token_hash = ?)
+          AND revoked_at IS NULL
+        "#,
+    )
+    .bind(&command.auth_token_hash)
+    .bind(&command.access_token_hash)
+    .bind(&command.refresh_token_hash)
+    .bind(command.organization_id.map(|value: i64| value.to_string()))
+    .bind(command.data_scope_json.as_deref())
+    .bind(&command.expires_at)
+    .bind(&command.updated_at)
+    .bind(&command.session_id)
+    .bind(command.tenant_id.to_string())
+    .bind(command.user_id.to_string())
+    .bind(&command.expected_auth_token_hash)
+    .bind(&command.expected_access_token_hash)
+    .bind(command.expected_refresh_token_hash.as_deref())
+    .bind(command.expected_refresh_token_hash.as_deref())
+    .execute(&mut *tx)
+    .await
+    .map_err(|error| store_error("failed to rotate IAM session tokens", error))?;
+    if result.rows_affected() == 0 {
+        tx.rollback().await.map_err(|error| {
+            store_error("failed to rollback IAM session rotate transaction", error)
+        })?;
+        return Ok(false);
+    }
+
+    insert_security_event(
+        &mut tx,
+        InsertSecurityEvent {
+            id: &command.security_event_id,
+            tenant_id: command.tenant_id,
+            user_id: command.user_id,
+            session_id: &command.session_id,
+            event_type: &command.event_type,
+            severity: "info",
+            detail_json: &command.detail_json,
+            created_at: &command.updated_at,
+        },
+    )
+    .await?;
+    tx.commit()
+        .await
+        .map_err(|error| store_error("failed to commit IAM session rotate transaction", error))?;
+    Ok(true)
+}
+
+async fn revoke_app_session(
+    pool: &SqlitePool,
+    command: RevokeAppSessionCommand,
+) -> crate::domain::DomainResult<bool> {
+    let mut tx = pool
+        .begin()
+        .await
+        .map_err(|error| store_error("failed to begin IAM session revoke transaction", error))?;
+    let result = sqlx::query(
+        r#"
+        UPDATE iam_session
+        SET revoked_at = ?,
+            updated_at = ?
+        WHERE id = ?
+          AND tenant_id = ?
+          AND user_id = ?
+          AND auth_token_hash = ?
+          AND access_token_hash = ?
+          AND revoked_at IS NULL
+        "#,
+    )
+    .bind(&command.revoked_at)
+    .bind(&command.revoked_at)
+    .bind(&command.session_id)
+    .bind(command.tenant_id.to_string())
+    .bind(command.user_id.to_string())
+    .bind(&command.expected_auth_token_hash)
+    .bind(&command.expected_access_token_hash)
+    .execute(&mut *tx)
+    .await
+    .map_err(|error| store_error("failed to revoke IAM session", error))?;
+    if result.rows_affected() == 0 {
+        tx.rollback().await.map_err(|error| {
+            store_error("failed to rollback IAM session revoke transaction", error)
+        })?;
+        return Ok(false);
+    }
+
+    insert_security_event(
+        &mut tx,
+        InsertSecurityEvent {
+            id: &command.security_event_id,
+            tenant_id: command.tenant_id,
+            user_id: command.user_id,
+            session_id: &command.session_id,
+            event_type: "sessions.revoke",
+            severity: "info",
+            detail_json: &command.detail_json,
+            created_at: &command.revoked_at,
+        },
+    )
+    .await?;
+    tx.commit()
+        .await
+        .map_err(|error| store_error("failed to commit IAM session revoke transaction", error))?;
+    Ok(true)
+}
+
+const LOAD_ACTIVE_APP_SESSION: &str = r#"
+SELECT
+    CAST(s.id AS TEXT) AS session_id,
+    CAST(s.tenant_id AS TEXT) AS session_tenant_id,
+    CAST(COALESCE(s.organization_id, '') AS TEXT) AS session_organization_id,
+    CAST(s.user_id AS TEXT) AS session_user_id,
+    COALESCE(s.app_id, '') AS app_id,
+    COALESCE(s.environment, '') AS environment,
+    COALESCE(s.deployment_mode, '') AS deployment_mode,
+    COALESCE(s.auth_level, '') AS auth_level,
+    COALESCE(CAST(s.data_scope_json AS TEXT), '[]') AS data_scope_json,
+    COALESCE(CAST(s.permission_scope_json AS TEXT), '[]') AS permission_scope_json,
+    CAST(s.expires_at AS TEXT) AS expires_at,
+    CAST(s.updated_at AS TEXT) AS session_updated_at,
+    CAST(u.id AS TEXT) AS user_id,
+    CAST(u.tenant_id AS TEXT) AS user_tenant_id,
+    COALESCE(u.username, '') AS username,
+    COALESCE(NULLIF(u.display_name, ''), NULLIF(u.username, ''), 'SDKWork User') AS display_name,
+    COALESCE(u.email, '') AS email,
+    COALESCE(u.avatar_url, '') AS avatar_url,
+    COALESCE(u.phone, '') AS phone,
+    COALESCE(NULLIF(pref.language, ''), 'en-US') AS language,
+    COALESCE(u.status, '') AS user_status,
+    CAST(u.created_at AS TEXT) AS registered_at,
+    COALESCE(CAST(ll.occurred_at AS TEXT), CAST(s.created_at AS TEXT), '') AS last_login,
+    COALESCE(ll.client_ip_masked, '') AS last_login_ip,
+    COALESCE(CAST(sec.password_last_changed_at AS TEXT), '') AS password_last_changed,
+    COALESCE(sec.mfa_enabled, 0) AS mfa_enabled,
+    COALESCE(ib.identity_binding_count, 0) AS identity_binding_count
+FROM iam_session s
+JOIN iam_user u
+  ON u.tenant_id = s.tenant_id
+ AND u.id = s.user_id
+JOIN iam_organization_member om
+  ON om.tenant_id = s.tenant_id
+ AND om.organization_id = s.organization_id
+ AND om.user_id = s.user_id
+ AND om.status = 'active'
+LEFT JOIN iam_user_preference pref
+  ON pref.tenant_id = s.tenant_id
+ AND pref.organization_id = s.organization_id
+ AND pref.user_id = s.user_id
+LEFT JOIN iam_user_security_setting sec
+  ON sec.tenant_id = s.tenant_id
+ AND sec.organization_id = s.organization_id
+ AND sec.user_id = s.user_id
+LEFT JOIN (
+    SELECT tenant_id, user_id, COUNT(DISTINCT provider) AS identity_binding_count
+    FROM iam_user_identity
+    GROUP BY tenant_id, user_id
+) ib
+  ON ib.tenant_id = s.tenant_id
+ AND ib.user_id = s.user_id
+LEFT JOIN iam_user_login_event ll
+  ON ll.id = (
+      SELECT id
+      FROM iam_user_login_event
+      WHERE tenant_id = s.tenant_id
+        AND organization_id = s.organization_id
+        AND user_id = s.user_id
+      ORDER BY occurred_at DESC, id DESC
+      LIMIT 1
+  )
+WHERE s.auth_token_hash = ?1
+  AND s.access_token_hash = ?2
+  AND s.revoked_at IS NULL
+  AND u.status = 'active'
+"#;
 
 fn security_event_detail_json(command: &RecordAppSessionIssuedEventCommand) -> String {
     serde_json::json!({
@@ -127,6 +449,173 @@ fn audit_event_detail_json(command: &RecordAppSessionIssuedEventCommand) -> Stri
         "sessionIdHash": command.session_id_hash,
     })
     .to_string()
+}
+
+struct InsertSecurityEvent<'a> {
+    id: &'a str,
+    tenant_id: i64,
+    user_id: i64,
+    session_id: &'a str,
+    event_type: &'a str,
+    severity: &'a str,
+    detail_json: &'a str,
+    created_at: &'a str,
+}
+
+async fn insert_security_event(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    event: InsertSecurityEvent<'_>,
+) -> crate::domain::DomainResult<()> {
+    sqlx::query(
+        r#"
+        INSERT INTO iam_security_event
+            (id, tenant_id, user_id, session_id, event_type, severity, detail_json, created_at)
+        VALUES
+            (?, ?, ?, ?, ?, ?, ?, ?)
+        "#,
+    )
+    .bind(event.id)
+    .bind(event.tenant_id.to_string())
+    .bind(event.user_id.to_string())
+    .bind(event.session_id)
+    .bind(event.event_type)
+    .bind(event.severity)
+    .bind(event.detail_json)
+    .bind(event.created_at)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to insert IAM session security event", error))?;
+    Ok(())
+}
+
+fn session_record_from_row(
+    row: &sqlx::sqlite::SqliteRow,
+) -> crate::domain::DomainResult<AppSessionRecord> {
+    Ok(AppSessionRecord {
+        session_id: string_cell(row, "session_id"),
+        tenant_id: parse_i64(&string_cell(row, "session_tenant_id"), "tenant_id")?,
+        organization_id: parse_i64(
+            &string_cell(row, "session_organization_id"),
+            "organization_id",
+        )?,
+        user_id: parse_i64(&string_cell(row, "session_user_id"), "user_id")?,
+        app_id: string_cell(row, "app_id"),
+        environment: string_cell(row, "environment"),
+        deployment_mode: string_cell(row, "deployment_mode"),
+        auth_level: string_cell(row, "auth_level"),
+        data_scope_json: string_cell(row, "data_scope_json"),
+        permission_scope_json: string_cell(row, "permission_scope_json"),
+        expires_at: string_cell(row, "expires_at"),
+        updated_at: string_cell(row, "session_updated_at"),
+    })
+}
+
+fn user_record_from_row(
+    row: &sqlx::sqlite::SqliteRow,
+) -> crate::domain::DomainResult<AppSessionUserRecord> {
+    let status = string_cell(row, "user_status");
+    Ok(AppSessionUserRecord {
+        id: parse_i64(&string_cell(row, "user_id"), "user_id")?,
+        tenant_id: parse_i64(&string_cell(row, "user_tenant_id"), "tenant_id")?,
+        organization_id: parse_i64(
+            &string_cell(row, "session_organization_id"),
+            "organization_id",
+        )?,
+        username: string_cell(row, "username"),
+        display_name: string_cell(row, "display_name"),
+        email: string_cell(row, "email"),
+        avatar_url: string_cell(row, "avatar_url"),
+        phone: string_cell(row, "phone"),
+        language: string_cell(row, "language"),
+        is_verified: status == "active",
+        status,
+        registered_at: string_cell(row, "registered_at"),
+        last_login: string_cell(row, "last_login"),
+        last_login_ip: string_cell(row, "last_login_ip"),
+        password_last_changed: string_cell(row, "password_last_changed"),
+        two_factor_enabled: bool_cell(row, "mfa_enabled"),
+        third_party_bound: integer_cell(row, "identity_binding_count")
+            .max(0)
+            .to_string(),
+    })
+}
+
+fn string_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> String {
+    row.try_get::<Option<String>, _>(column)
+        .ok()
+        .flatten()
+        .unwrap_or_default()
+}
+
+fn integer_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> i64 {
+    string_cell(row, column)
+        .parse::<i64>()
+        .or_else(|_| row.try_get::<i64, _>(column))
+        .or_else(|_| row.try_get::<i32, _>(column).map(i64::from))
+        .unwrap_or(0)
+}
+
+fn bool_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> bool {
+    row.try_get::<bool, _>(column)
+        .ok()
+        .or_else(|| Some(integer_cell(row, column) != 0))
+        .unwrap_or(false)
+}
+
+fn parse_i64(value: &str, field: &str) -> crate::domain::DomainResult<i64> {
+    value
+        .trim()
+        .parse::<i64>()
+        .map_err(|_| DomainError::new(format!("invalid IAM session {field} value")))
+}
+
+fn session_is_active(expires_at: &str, now: i64) -> bool {
+    parse_unix_or_rfc3339_seconds(expires_at)
+        .map(|expires_at| expires_at > now)
+        .unwrap_or(false)
+}
+
+fn parse_unix_or_rfc3339_seconds(value: &str) -> Option<i64> {
+    let trimmed = value.trim();
+    if trimmed.is_empty() {
+        return None;
+    }
+    if let Ok(value) = trimmed.parse::<i64>() {
+        return Some(value);
+    }
+    parse_rfc3339_like_seconds(trimmed)
+}
+
+fn parse_rfc3339_like_seconds(value: &str) -> Option<i64> {
+    let normalized = value
+        .trim()
+        .replace(' ', "T")
+        .trim_end_matches('Z')
+        .to_owned();
+    let (date, time) = normalized.split_once('T')?;
+    let mut date_parts = date.split('-');
+    let year = date_parts.next()?.parse::<i64>().ok()?;
+    let month = date_parts.next()?.parse::<i64>().ok()?;
+    let day = date_parts.next()?.parse::<i64>().ok()?;
+    let mut time_parts = time.split(':');
+    let hour = time_parts.next()?.parse::<i64>().ok()?;
+    let minute = time_parts.next()?.parse::<i64>().ok()?;
+    let second = time_parts
+        .next()
+        .and_then(|value| value.split('.').next())
+        .and_then(|value| value.parse::<i64>().ok())
+        .unwrap_or(0);
+    Some(days_from_civil(year, month, day) * 86_400 + hour * 3_600 + minute * 60 + second)
+}
+
+fn days_from_civil(year: i64, month: i64, day: i64) -> i64 {
+    let year = year - if month <= 2 { 1 } else { 0 };
+    let era = if year >= 0 { year } else { year - 399 } / 400;
+    let year_of_era = year - era * 400;
+    let month_prime = month + if month > 2 { -3 } else { 9 };
+    let day_of_year = (153 * month_prime + 2) / 5 + day - 1;
+    let day_of_era = year_of_era * 365 + year_of_era / 4 - year_of_era / 100 + day_of_year;
+    era * 146_097 + day_of_era - 719_468
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {

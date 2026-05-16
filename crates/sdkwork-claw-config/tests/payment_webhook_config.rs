@@ -1,4 +1,4 @@
-use sdkwork_claw_config::PaymentWebhookConfig;
+use sdkwork_claw_config::{PaymentWebhookConfig, RuntimeTomlConfig};
 
 #[test]
 fn payment_webhook_config_accepts_valid_secret_and_defaults() {
@@ -65,4 +65,41 @@ fn payment_webhook_config_debug_redacts_secret() {
 
     assert!(debug.contains("[REDACTED]"));
     assert!(!debug.contains("payment-webhook-secret-0123456789abcdef"));
+}
+
+#[test]
+fn reads_payment_webhook_config_from_runtime_toml_secret_file() {
+    let secret_path = unique_secret_path("payment-webhook");
+    std::fs::write(&secret_path, "payment-webhook-secret-0123456789abcdef\n").unwrap();
+    let config = RuntimeTomlConfig::from_toml_str(&format!(
+        r#"
+[security]
+payment_webhook_secret_file = "{}"
+payment_webhook_max_clock_skew_seconds = 300
+"#,
+        secret_path.display().to_string().replace('\\', "/")
+    ))
+    .unwrap();
+
+    let webhook = PaymentWebhookConfig::from_env_or_runtime_toml(Some(&config))
+        .unwrap()
+        .unwrap();
+
+    assert_eq!(
+        "payment-webhook-secret-0123456789abcdef",
+        webhook.signing_secret()
+    );
+    assert_eq!(300, webhook.max_clock_skew_seconds());
+    let _ = std::fs::remove_file(secret_path);
+}
+
+fn unique_secret_path(name: &str) -> std::path::PathBuf {
+    std::env::temp_dir().join(format!(
+        "clawrouter-{name}-{}-{}.secret",
+        std::process::id(),
+        std::time::SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .unwrap()
+            .as_nanos()
+    ))
 }

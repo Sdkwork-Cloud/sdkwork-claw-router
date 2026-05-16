@@ -35,7 +35,19 @@ impl ApiKeySecurityConfig {
     }
 
     pub fn from_env() -> Result<Option<Self>, String> {
-        Self::from_optional_parts(std::env::var(Self::ENV_API_KEY_PEPPER).ok())
+        Self::from_env_or_runtime_toml(None)
+    }
+
+    pub fn from_env_or_runtime_toml(
+        runtime_toml: Option<&crate::RuntimeTomlConfig>,
+    ) -> Result<Option<Self>, String> {
+        let pepper_secret = crate::runtime::config_secret_value(
+            Self::ENV_API_KEY_PEPPER,
+            "SDKWORK_CLAW_API_KEY_PEPPER_FILE",
+            runtime_toml.and_then(|config| config.security.api_key_pepper.as_deref()),
+            runtime_toml.and_then(|config| config.security.api_key_pepper_file.as_deref()),
+        )?;
+        Self::from_optional_parts(pepper_secret)
     }
 
     pub fn pepper_secret(&self) -> &str {

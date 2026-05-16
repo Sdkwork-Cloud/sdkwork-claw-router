@@ -37,12 +37,12 @@ archive/manual 部署推荐顺序：
 6. 启动 `clawrouter`。
 7. 检查 `/healthz` 和 `/readyz`。
 
-Linux `service` 部署中，`.deb` 会创建默认运行时 TOML、`/etc/clawrouter/clawrouter.env` 和 `/etc/clawrouter/database.secret`。systemd unit 会在 gateway 启动前自动执行 `ensure` 和 `refresh-catalog --force`。
+Linux `service` 部署中，`.deb` 会创建默认运行时 TOML、`/etc/clawrouter/clawrouter.env` 和 `/etc/clawrouter/database.secret`。systemd unit 会在 gateway 启动前自动执行 `ensure` 和 `refresh-catalog --force`。运行中的服务只能写入 `/var/lib/clawrouter` 和 `/var/log/clawrouter`；`/etc/clawrouter` 对服务进程保持只读。
 
 Linux service 包推荐顺序：
 
 ```bash
-sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
+sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb
 sudo editor /etc/clawrouter/clawrouter.toml
 sudo systemctl start clawrouter
 sudo systemctl status clawrouter --no-pager
@@ -86,6 +86,8 @@ $env:SDKWORK_CLAW_CONFIG_FILE="C:\ProgramData\SdkWork\ClawRouter\clawrouter.toml
 | Windows `.msi` | `C:\Program Files\ClawRouter\bin` | MSI 安装运行文件；如需 Windows Service 托管，按部署系统单独配置。 |
 | macOS `.pkg` | `/opt/clawrouter/bin` | `service` 包还会安装 `/Library/LaunchDaemons/com.sdkwork.clawrouter.plist`。 |
 
+每个包都包含带 `installConfiguration` 的 `install-manifest.json`。原生安装包还包含 `nativeInstall`，用于描述最终安装路径、服务元数据、权限和运维命令。
+
 ## 数据库策略
 
 desktop：
@@ -115,14 +117,122 @@ password_file = "/etc/clawrouter/database.secret"
 ssl_mode = "require"
 max_connections = 16
 
+[redis]
+enabled = false
+host = "redis.example.com"
+port = 6379
+database = 0
+# username = "default"
+# url = "redis://redis.example.com:6379/0"
+# password_file = "/etc/clawrouter/redis.secret"
+# password = "change-me"
+key_prefix = "clawrouter"
+tls = false
+max_connections = 16
+connect_timeout_millis = 2000
+command_timeout_millis = 1000
+pool_idle_timeout_seconds = 60
+
+[observability]
+log_filter = "info"
+log_format = "compact"
+log_ansi = false
+log_target = true
+log_thread_names = false
+log_thread_ids = false
+
+[services.gateway]
+bind = "0.0.0.0:18080"
+
+[services.admin_api]
+bind = "0.0.0.0:18081"
+
+[services.app_api]
+bind = "0.0.0.0:18082"
+
+[server]
+bind = "0.0.0.0:3900"
+external_scheme = "http"
+trust_forwarded_headers = false
+
+[edge]
+enabled = true
+gateway_base_url = "http://127.0.0.1:18080"
+backend_api_base_url = "http://127.0.0.1:18081"
+app_api_base_url = "http://127.0.0.1:18082"
+portal_base_url = "http://127.0.0.1:3901"
+portal_static_dist = "/opt/clawrouter/portal/dist"
+cors_allowed_origins = []
+upstream_request_timeout_millis = 30000
+upstream_ready_timeout_millis = 2000
+
+[portal.public]
+api_base_url = "/v1"
+open_api_base_url = "/v1"
+app_api_base_url = "/app/v3/api"
+backend_api_base_url = "/backend/v3/api"
+tool_api_enabled = false
+
+[portal.static]
+html_cache_control = "no-store"
+asset_cache_control = "public, max-age=31536000, immutable"
+
+[portal.security]
+hsts_enabled = false
+hsts_max_age_seconds = 31536000
+hsts_include_subdomains = true
+hsts_preload = false
+csp_frame_src = ["https://player.bilibili.com"]
+
+[portal.tools]
+rate_limit_requests = 120
+rate_limit_window_seconds = 60
+max_body_bytes = 1048576
+sdk_archive_root = "/opt/clawrouter/portal/dist/sdk-archives"
+
+[provider_relay.openai]
+# base_url = "https://api.openai.com/v1"
+# bearer_token_file = "/etc/clawrouter/openai-relay.secret"
+
+[provider_relay.runtime]
+response_timeout_millis = 120000
+health_probe_timeout_millis = 10000
+
+[provider_relay.retry]
+max_attempts = 2
+retryable_status_codes = [429, 500, 502, 503, 504]
+backoff_millis = 0
+
 [paths]
 data_directory = "/var/lib/clawrouter"
+course_upload_root = "/var/lib/clawrouter/uploads/courses"
+
+[courses]
+video_upload_max_bytes = 1073741824
+video_upload_body_limit_bytes = 1074790400
+
+[request_limits]
+admin_app_json_body_max_bytes = 131072
+admin_skill_json_body_max_bytes = 65536
+forum_json_body_max_bytes = 262144
+payment_callback_body_max_bytes = 65536
 
 [runtime]
 deployment_mode = "server"
 ```
 
 `.deb` 包创建的 `/etc/clawrouter/database.secret` 初始内容是占位值 `change-me`。启动 `clawrouter` 前必须替换为真实 PostgreSQL 密码；server 配置仍使用 `db.example.com` 或 `change-me` 时会被启动校验拒绝。
+
+Redis 目前只作为标准配置初始化，不是首次启动必需依赖。单节点或仅数据库部署保持 `[redis].enabled = false`。只有需要共享缓存、分布式锁、队列或限流桶时才启用 Redis。启用时优先配置 `[redis].host`、`[redis].port`、`[redis].database`；只有托管 Redis 端点无法用分离字段清晰表达时，才使用 `[redis].url` 作为高级覆盖。优先使用 `/etc/clawrouter/redis.secret` 或其他受保护的 `password_file`，只有 TOML 文件本身按密钥文件管理时才直接使用 `[redis].password`。
+
+`[paths].course_upload_root` 用于保存本地课程申请视频上传文件。service 和 container 部署应放在持久化存储中，默认保持在应用数据卷内；只有明确挂载独立媒体卷时才改到其他目录。
+`[courses].video_upload_max_bytes` 是允许的视频文件大小，`[courses].video_upload_body_limit_bytes` 包含 multipart 开销。反向代理、容器 ingress 和负载均衡的请求体限制应不低于 body limit。
+
+`[request_limits]` 控制运行时 JSON 和 webhook 请求体限制，属于高风险写入入口的防护配置。`admin_app_json_body_max_bytes` 和 `admin_skill_json_body_max_bytes` 保护后台管理 API，`forum_json_body_max_bytes` 保护公开应用论坛写入，`payment_callback_body_max_bytes` 保护支付供应商回调。反向代理、负载均衡和容器 ingress 的请求体限制应与这些值保持一致，使超大请求在进入昂贵业务处理前被拒绝。
+
+`[edge]` 配置打包后的 Rust edge server 和上游服务目标。`[portal.static]` 将 HTML/runtime env 的 no-store 缓存策略与长期缓存的 hash 静态资源分离。`[portal.security]` 控制浏览器侧安全策略；只有公网主机名已经通过 HTTPS 访问时才启用 HSTS，启用 preload 时保持 `hsts_max_age_seconds >= 31536000` 且 `hsts_include_subdomains = true`。`csp_frame_src` 只填写允许 portal 嵌入的明确信任 HTTP/HTTPS origin。`[portal.tools]` 控制可选本地工具 API 的请求体大小和限流。`[observability]` 负责生产日志默认策略：`log_filter` 是 tracing 过滤器，`log_format` 可选 `compact`、`json`、`pretty` 或 `full`，systemd 和 container 日志建议保持 `log_ansi = false`，target/thread 字段控制输出的日志元信息；`RUST_LOG` 只建议用于临时进程级诊断覆盖。
+`[edge].cors_allowed_origins` 是额外可信浏览器 origin 的显式 allowlist，例如外部 CDN 托管的 portal。打包后的同源 edge 部署保持空数组；通配符 origin 和带 path 的 origin 会被拒绝。
+`[provider_relay.runtime]` 配置 OpenAI-compatible 上游请求的全局响应超时，以及 admin/app 渠道健康检查超时。`[provider_relay.retry]` 是数据库路由渠道未单独定义 retry policy 时使用的默认重试策略。
 
 生产 server/service/container 部署使用结构化 TOML。推荐使用 `password_file`，只有当 TOML 文件本身作为密钥文件保护时才直接使用 `password`：
 
@@ -143,6 +253,17 @@ max_connections = 16
 
 [paths]
 data_directory = "/var/lib/clawrouter"
+course_upload_root = "/var/lib/clawrouter/uploads/courses"
+
+[courses]
+video_upload_max_bytes = 1073741824
+video_upload_body_limit_bytes = 1074790400
+
+[request_limits]
+admin_app_json_body_max_bytes = 131072
+admin_skill_json_body_max_bytes = 65536
+forum_json_body_max_bytes = 262144
+payment_callback_body_max_bytes = 65536
 
 [runtime]
 deployment_mode = "server"
@@ -310,6 +431,6 @@ installer 输出示例：
 }
 ```
 
-Claw Router 的登录、注册、二维码登录、验证码策略和恢复方式由 IAM 运行时配置控制。`v0.2.0` 默认保持严格姿态：密码登录默认可用，二维码、验证码登录、OAuth、session bridge 等能力需要显式开启。
+Claw Router 的登录、注册、二维码登录、验证码策略和恢复方式由 IAM 运行时配置控制。`v0.3.0` 默认保持严格姿态：密码登录默认可用，二维码、验证码登录、OAuth、session bridge 等能力需要显式开启。
 
 首次登录后，请在后台配置 IAM 策略，包括登录方式、二维码登录、注册验证码、OAuth 展示和账号恢复方式。

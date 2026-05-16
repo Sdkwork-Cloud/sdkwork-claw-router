@@ -1,3 +1,5 @@
+import type { ProviderRetryPolicy } from './provider-retry-policy';
+
 /** Routing channel item schema exposed by Claw Router. */
 export interface RoutingChannelItem {
   /** Access type field on routing channel item. */
@@ -28,10 +30,14 @@ export interface RoutingChannelItem {
   provider: string;
   /** Provider code field on routing channel item. */
   providerCode: string;
+  /** Retry policy field on routing channel item. */
+  retryPolicy?: ProviderRetryPolicy;
   /** Rpm field on routing channel item. */
   rpm: number;
   /** Status field on routing channel item. */
   status: 'active' | 'disabled' | 'error';
+  /** Timeout ms field on routing channel item. */
+  timeoutMs?: number;
   /** Vendor field on routing channel item. */
   vendor: string;
   /** Weight field on routing channel item. */

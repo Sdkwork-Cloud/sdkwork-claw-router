@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
@@ -10,6 +11,7 @@ import {
   createUserGroupUpdateInputFromForm,
   createUserInputFromForm,
   createUserProfileUpdateInputFromForm,
+  createUserStatusUpdateInput,
 } from "./packages/sdkwork-claw-router-admin-user/src/userForm.ts";
 
 const originalFetch = globalThis.fetch;
@@ -78,13 +80,17 @@ test("admin user create input does not reuse the returned user view model", () =
   }
 });
 
-test("admin user create input defaults invalid balances to a decimal command value", () => {
+test("admin user create input rejects invalid balances instead of defaulting to zero", () => {
   const form = new FormData();
   form.set("email", "billing@example.com");
   form.set("username", " ");
   form.set("balance", "not-a-number");
 
-  assert.deepEqual(createUserInputFromForm(form), {
+  assert.throws(() => createUserInputFromForm(form), /balance must be a non-negative money amount/);
+
+  const blankBalance = new FormData();
+  blankBalance.set("email", "billing@example.com");
+  assert.deepEqual(createUserInputFromForm(blankBalance), {
     email: "billing@example.com",
     balance: "0.00",
   });
@@ -111,6 +117,7 @@ test("admin user balance adjustment input is parsed as an explicit command", () 
   recharge.set("amount", " 1,234.567 ");
   recharge.set("id", "99");
   recharge.set("balance", "999999");
+  recharge.set("remark", "ignored because backend has no remark field");
 
   assert.deepEqual(createUserBalanceAdjustmentInputFromForm(recharge, "recharge"), {
     amount: 1234.57,
@@ -120,10 +127,60 @@ test("admin user balance adjustment input is parsed as an explicit command", () 
   const invalidRefund = new FormData();
   invalidRefund.set("amount", "-10");
 
-  assert.deepEqual(createUserBalanceAdjustmentInputFromForm(invalidRefund, "refund"), {
-    amount: 0,
-    type: "refund",
-  });
+  assert.throws(
+    () => createUserBalanceAdjustmentInputFromForm(invalidRefund, "refund"),
+    /amount must be greater than zero/,
+  );
+
+  const missingAmount = new FormData();
+  assert.throws(
+    () => createUserBalanceAdjustmentInputFromForm(missingAmount, "recharge"),
+    /amount is required/,
+  );
+});
+
+test("admin user balance adjustment modals do not expose unsupported remark fields", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-user/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.doesNotMatch(source, /name="remark"/);
+  assert.doesNotMatch(source, />备注<\/label>/);
+});
+
+test("admin user records modal does not render static fake success rows", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-user/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.doesNotMatch(source, /<td className="px-4 py-3 font-mono text-xs">Unavailable<\/td>/);
+  assert.doesNotMatch(source, /text-emerald-600 bg-emerald-50[^>]+>.*鎴愬姛/);
+  assert.match(source, /Records are available from the billing history and recharge records modules/);
+});
+
+test("admin user modals do not expose password controls without a backend password command", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-user/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.doesNotMatch(source, /name="password"/);
+  assert.doesNotMatch(source, /generatedPassword/);
+  assert.doesNotMatch(source, /generateRandomPassword/);
+  assert.match(source, /Password setup is managed by IAM registration and reset flows/);
+});
+
+test("admin user create modal does not expose unsupported concurrency controls", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-user/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.doesNotMatch(source, /name="concurrency"/);
+  assert.doesNotMatch(source, />并发数<\/label>/);
+  assert.doesNotMatch(source, />Concurrency<\/label>/);
 });
 
 test("admin user profile update input does not reuse returned user fields", () => {
@@ -156,6 +213,41 @@ test("admin user group update input is isolated from the user view model", () =>
   assert.deepEqual(createUserGroupUpdateInputFromForm(form), {
     group: "vip",
   });
+});
+
+test("admin user status update input uses the backend supported status enum", () => {
+  assert.deepEqual(createUserStatusUpdateInput("active"), {
+    status: "active",
+  });
+  assert.deepEqual(createUserStatusUpdateInput("banned"), {
+    status: "banned",
+  });
+  assert.throws(
+    () => createUserStatusUpdateInput("disabled"),
+    /status must be active or banned/,
+  );
+});
+
+test("admin user table exposes backend-backed status toggle actions", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-user/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /handleStatusToggle/);
+  assert.match(source, /createUserStatusUpdateInput\(nextStatus\)/);
+  assert.match(source, /u\.status === 'active' \? '禁用' : '启用'/);
+});
+
+test("admin user group selector preserves backend custom groups", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-user/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /DEFAULT_USER_GROUP_OPTIONS/);
+  assert.match(source, /DEFAULT_USER_GROUP_OPTIONS\.some\(\(group\) => group\.value === groupsTarget\.group\)/);
+  assert.match(source, /<option value=\{groupsTarget\.group\}>\{groupsTarget\.group\} \(current\)<\/option>/);
 });
 
 test("admin user service reads created API key data returned by the generated backend SDK", async () => {
@@ -198,6 +290,23 @@ test("admin user service rejects unsafe API key path ids before calling generate
       assert.equal(captured.length, 0);
     },
   );
+});
+
+test("admin API key delete fails closed unless backend confirms deletion", async () => {
+  for (const response of [{}, { deleted: false }]) {
+    await withBackendSdkResponse(
+      {
+        code: "2000",
+        data: response,
+      },
+      async () => {
+        await assert.rejects(
+          () => UserService.deleteApiKey(42, "admin-key-1"),
+          /API key delete confirmation is required/,
+        );
+      },
+    );
+  }
 });
 
 test("admin user list fails closed when backend omits stable user ids", async () => {
@@ -334,6 +443,28 @@ test("admin API key map fails closed when backend returns malformed key rows", a
       );
     },
   );
+});
+
+test("admin API key map fails closed when backend returns malformed map shape", async () => {
+  for (const [data, message] of [
+    [{ 42: { id: "key-1" } }, /API key list for user 42 is required/],
+    [{ guest: [] }, /API key map user id must be a positive integer/],
+    [{ 0: [] }, /API key map user id must be a positive integer/],
+    [{ "42.5": [] }, /API key map user id must be a positive integer/],
+  ] as const) {
+    await withBackendSdkResponse(
+      {
+        code: "2000",
+        data,
+      },
+      async () => {
+        await assert.rejects(
+          () => UserService.fetchApiKeysMap(),
+          message,
+        );
+      },
+    );
+  }
 });
 
 test("admin API key map fails closed when backend omits stable key ids", async () => {

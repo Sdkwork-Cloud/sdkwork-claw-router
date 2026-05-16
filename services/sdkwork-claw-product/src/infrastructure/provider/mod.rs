@@ -7,6 +7,7 @@ pub use openai_compatible_relay::{
     SecretRefOpenAiCompatibleChatCompletionRelay,
     SecretRefOpenAiCompatibleChatCompletionStreamRelay, SecretRefOpenAiCompatibleEmbeddingsRelay,
     SecretRefOpenAiCompatibleProviderHealthProbe, SecretRefOpenAiCompatibleResponsesRelay,
-    UpstreamProviderEndpoint,
+    UpstreamProviderEndpoint, DEFAULT_HEALTH_PROBE_TIMEOUT_MILLIS,
+    DEFAULT_PROVIDER_RESPONSE_TIMEOUT_MILLIS,
 };
 pub use provider_secret_map_resolver::ProviderSecretMapResolver;

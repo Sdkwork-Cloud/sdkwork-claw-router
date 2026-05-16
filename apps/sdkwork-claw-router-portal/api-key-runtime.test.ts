@@ -70,7 +70,7 @@ test("console api key form values normalize into a single create command", () =>
     group: " default ",
     quota: " 123.450000 ",
     isUnlimitedQuota: false,
-    modalities: ["text", "image", "text", "invalid"],
+    modalities: ["text", "image", "text"],
     ipLimit: " 10.0.0.0/24, 192.168.1.10 ",
     expires: " 2026-06-01T08:30 ",
     createCount: 2,
@@ -93,58 +93,52 @@ test("console api key form values normalize into a single create command", () =>
   assert.equal("status" in input, false);
 });
 
-test("console api key batch form values cap count and create deterministic names", () => {
+test("console api key batch form values create deterministic names", () => {
   const values: ApiKeyFormValues = {
     name: " Key ",
     group: " standard ",
     quota: "",
     isUnlimitedQuota: true,
-    modalities: [],
+    modalities: ["text"],
     ipLimit: "",
     expires: "",
-    createCount: 150,
+    createCount: 2,
   };
 
   const inputs = createApiKeyInputsFromForm(values);
 
-  assert.equal(inputs.length, 100);
+  assert.equal(inputs.length, 2);
   assert.equal(inputs[0].name, "Key 1");
-  assert.equal(inputs[99].name, "Key 100");
+  assert.equal(inputs[1].name, "Key 2");
   assert.deepEqual(inputs[0], {
     name: "Key 1",
     group: "standard",
     quota: "0.000000",
     isUnlimitedQuota: true,
-    modalities: ["text", "image", "video", "audio", "music"],
+    modalities: ["text"],
     ipLimit: "unrestricted",
     expires: "never",
   });
 });
 
-test("console api key form values default blank command fields safely", () => {
-  const input = createApiKeyInputFromForm(
-    {
-      name: "",
-      group: "",
-      quota: "not-a-number",
-      isUnlimitedQuota: false,
-      modalities: ["unknown"],
-      ipLimit: "",
-      expires: "",
-      createCount: 0,
-    },
-    0,
-  );
-
-  assert.deepEqual(input, {
-    name: "API key",
+test("console api key form values reject blank or invalid command fields", () => {
+  const values: ApiKeyFormValues = {
+    name: "Production",
     group: "default",
-    quota: "0.000000",
+    quota: "100",
     isUnlimitedQuota: false,
-    modalities: ["text", "image", "video", "audio", "music"],
-    ipLimit: "unrestricted",
-    expires: "never",
-  });
+    modalities: ["text"],
+    ipLimit: "",
+    expires: "",
+    createCount: 1,
+  };
+
+  assert.throws(() => createApiKeyInputFromForm({ ...values, name: "" }), /name is required/);
+  assert.throws(() => createApiKeyInputFromForm({ ...values, group: "" }), /group is required/);
+  assert.throws(() => createApiKeyInputFromForm({ ...values, quota: "not-a-number" }), /quota must be a non-negative decimal/);
+  assert.throws(() => createApiKeyInputFromForm({ ...values, modalities: ["text", "unknown"] }), /Unsupported API key modality: unknown/);
+  assert.throws(() => createApiKeyInputFromForm({ ...values, modalities: [] }), /modalities must include at least one item/);
+  assert.throws(() => createApiKeyInputsFromForm({ ...values, createCount: 150 }), /createCount must be between 1 and 100/);
 });
 
 test("console api key service fetches keys through the generated app SDK and normalizes envelope data", async () => {
@@ -194,6 +188,14 @@ test("console api key service creates keys through the generated app SDK with re
           name: "Created",
           maskedKey: "sk-****wxyz",
           group: "default",
+          rate: null,
+          quota: "0.000000",
+          usedQuota: "0.000000",
+          modalities: ["text"],
+          ipLimit: "unrestricted",
+          created: "2026-05-05T09:00:00Z",
+          expires: "never",
+          status: "enabled",
         },
         rawKey: "sk-live-created-secret",
       },
@@ -204,7 +206,7 @@ test("console api key service creates keys through the generated app SDK with re
         group: "default",
         quota: "0.000000",
         isUnlimitedQuota: true,
-        modalities: [],
+        modalities: ["text"],
         ipLimit: "unrestricted",
         expires: "never",
       });
@@ -280,6 +282,14 @@ test("console api key service fails closed when fetched groups omit stable codes
             name: "Production",
             maskedKey: "sk-****abcd",
             group: "default",
+            rate: null,
+            quota: "100.000000",
+            usedQuota: "3.500000",
+            modalities: ["text"],
+            ipLimit: "unrestricted",
+            created: "2026-05-05T09:00:00Z",
+            expires: "never",
+            status: "enabled",
           },
         ],
         groups: [{ id: "group-1", name: "Missing Code" }],
@@ -289,6 +299,39 @@ test("console api key service fails closed when fetched groups omit stable codes
       await assert.rejects(
         () => ApiKeyService.fetchKeys(),
         /API key group code is required/,
+      );
+    },
+  );
+});
+
+test("console api key service fails closed when fetched keys contain unsupported modalities", async () => {
+  await withApiKeySdkResponse(
+    {
+      code: "2000",
+      data: {
+        items: [
+          {
+            id: "key-1",
+            name: "Production",
+            maskedKey: "sk-****abcd",
+            group: "default",
+            rate: null,
+            quota: "100.000000",
+            usedQuota: "3.500000",
+            modalities: ["text", "unknown"],
+            ipLimit: "unrestricted",
+            created: "2026-05-05T09:00:00Z",
+            expires: "never",
+            status: "enabled",
+          },
+        ],
+        groups: [{ id: "group-1", code: "default", name: "Default", rate: null }],
+      },
+    },
+    async () => {
+      await assert.rejects(
+        () => ApiKeyService.fetchKeys(),
+        /Unsupported API key modality: unknown/,
       );
     },
   );
@@ -310,7 +353,7 @@ test("console api key creation fails closed when response omits stable key entit
             group: "default",
             quota: "0.000000",
             isUnlimitedQuota: true,
-            modalities: [],
+            modalities: ["text"],
             ipLimit: "unrestricted",
             expires: "never",
           }),
@@ -330,6 +373,14 @@ test("console api key creation fails closed when response omits raw key material
           name: "Created",
           maskedKey: "sk-****wxyz",
           group: "default",
+          rate: null,
+          quota: "0.000000",
+          usedQuota: "0.000000",
+          modalities: ["text"],
+          ipLimit: "unrestricted",
+          created: "2026-05-05T09:00:00Z",
+          expires: "never",
+          status: "enabled",
         },
       },
     },
@@ -341,7 +392,7 @@ test("console api key creation fails closed when response omits raw key material
             group: "default",
             quota: "0.000000",
             isUnlimitedQuota: true,
-            modalities: [],
+            modalities: ["text"],
             ipLimit: "unrestricted",
             expires: "never",
           }),
@@ -371,7 +422,7 @@ test("console api key service rejects invalid create commands before calling gen
             group: "default",
             quota: "0.000000",
             isUnlimitedQuota: true,
-            modalities: [],
+            modalities: ["text"],
             ipLimit: "unrestricted",
             expires: "never",
           }),
@@ -402,6 +453,32 @@ test("console api key service rejects invalid create commands before calling gen
             expires: "never",
           }),
         /quota must be a non-negative decimal/,
+      );
+      await assert.rejects(
+        () =>
+          ApiKeyService.createKey({
+            name: "Production",
+            group: "default",
+            quota: "0.000000",
+            isUnlimitedQuota: true,
+            modalities: [],
+            ipLimit: "unrestricted",
+            expires: "never",
+          }),
+        /modalities must include at least one item/,
+      );
+      await assert.rejects(
+        () =>
+          ApiKeyService.createKey({
+            name: "Production",
+            group: "default",
+            quota: "0.000000",
+            isUnlimitedQuota: true,
+            modalities: ["unknown"],
+            ipLimit: "unrestricted",
+            expires: "never",
+          }),
+        /Unsupported API key modality: unknown/,
       );
       assert.equal(captured.length, 0);
     },

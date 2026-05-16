@@ -6,7 +6,7 @@ import {
   resolveInitialThemePreference,
   type ThemePreference,
 } from './themePreference';
-import { RequirePortalSession } from './auth/protectedPortalRoutes';
+import { RequireAdminSession, RequirePortalSession } from './auth/protectedPortalRoutes';
 
 const Home = lazyRoute(() => import('sdkwork-claw-router-home'), 'Home');
 const Models = lazyRoute(() => import('sdkwork-claw-router-models/models'), 'Models');
@@ -185,7 +185,7 @@ export default function App() {
             </Route>
 
             {/* Admin Routes */}
-            <Route path="/admin" element={<RequirePortalSession><AdminLayout isDark={isDark} toggleTheme={toggleTheme} /></RequirePortalSession>}>
+            <Route path="/admin" element={<RequireAdminSession><AdminLayout isDark={isDark} toggleTheme={toggleTheme} /></RequireAdminSession>}>
               <Route index element={<Navigate to="/admin/dashboard" replace />} />
               <Route path="dashboard" element={<DashboardAdmin />} />
               <Route path="user" element={<UserAdmin />} />

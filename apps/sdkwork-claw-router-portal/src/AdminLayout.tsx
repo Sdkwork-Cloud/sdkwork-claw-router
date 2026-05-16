@@ -5,6 +5,7 @@ import {
   TrendingUp, Activity, Database, LogOut, Search, Settings, Link, ShieldAlert, Store, Package, ShieldCheck
 } from 'lucide-react';
 import { Navbar } from 'sdkwork-claw-router-commons';
+import { revokeAppSession } from 'sdkwork-claw-router-commons/runtime';
 
 const ADMIN_LINKS = [
   { path: '/admin/dashboard', icon: <LayoutDashboard className="w-4 h-4" />, label: '仪表盘' },
@@ -64,7 +65,10 @@ export function AdminLayout({ isDark, toggleTheme }: { isDark: boolean, toggleTh
           <div className="p-4 border-t border-slate-200 dark:border-white/10 shrink-0">
             <button
               className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors"
-              onClick={() => navigate('/')}
+              onClick={() => {
+                void revokeAppSession();
+                navigate('/', { replace: true });
+              }}
             >
               <LogOut className="w-4 h-4" />
               退出登录

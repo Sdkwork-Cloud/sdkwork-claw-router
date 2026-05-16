@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
@@ -72,6 +73,19 @@ test("billing redeem code uses the generated app SDK path and returns confirmed 
       assert.match(captured[0].body, /GIFT-2026/);
     },
   );
+});
+
+test("billing referral contract gap is displayed as unavailable instead of copyable placeholder data", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-console-billing/src/BillingView.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /referralContractUnavailable/);
+  assert.doesNotMatch(source, /value=\{referralContractUnavailable\}/);
+  assert.doesNotMatch(source, /text=\{referralContractUnavailable\}/);
+  assert.doesNotMatch(source, /label="Copy promotion link"|label="Copy invitation code"/);
+  assert.doesNotMatch(source, /<QrCode\b/);
 });
 
 test("billing redeem code reports API business failures without throwing away the message", async () => {
@@ -527,6 +541,115 @@ test("commerce foundation service calls generated app SDK account points paths",
       assert.equal(captured.length, 1);
       assert.equal(captured[0].url, "/app/v3/api/billing/account/points");
       assert.equal(captured[0].method, "GET");
+    },
+  );
+});
+
+test("commerce foundation service normalizes generated app SDK exchange rate and rule responses", async () => {
+  await withBillingSdkResponse(
+    {
+      code: "2000",
+      data: {
+        sourceAssetType: "POINTS",
+        targetAssetType: "CASH",
+        rate: "120.000000",
+      },
+    },
+    async (captured) => {
+      const rate = await CommerceFoundationService.retrieveAccountPointsExchangeRate();
+
+      assert.equal(captured[0].url, "/app/v3/api/billing/account/points/exchange_rate");
+      assert.equal(captured[0].method, "GET");
+      assert.deepEqual(rate, {
+        sourceAssetType: "POINTS",
+        targetAssetType: "CASH",
+        rate: "120",
+      });
+    },
+  );
+
+  await withBillingSdkResponse(
+    {
+      code: "2000",
+      data: [
+        {
+          id: "exchange-1",
+          sourceAssetType: "POINTS",
+          targetAssetType: "CASH",
+          rate: "120.000000",
+          status: "active",
+        },
+      ],
+    },
+    async (captured) => {
+      const rules = await CommerceFoundationService.listAccountPointsExchangeRules({
+        sourceAssetType: "POINTS",
+        targetAssetType: "CASH",
+      });
+
+      assert.equal(
+        captured[0].url,
+        "/app/v3/api/billing/account/points/exchanges/rules?source_asset_type=POINTS&target_asset_type=CASH",
+      );
+      assert.equal(captured[0].method, "GET");
+      assert.deepEqual(rules, [
+        {
+          id: "exchange-1",
+          sourceAssetType: "POINTS",
+          targetAssetType: "CASH",
+          rate: "120",
+          status: "active",
+        },
+      ]);
+    },
+  );
+});
+
+test("commerce foundation exchange rules fail closed on malformed generated SDK data", async () => {
+  await withBillingSdkResponse(
+    {
+      code: "2000",
+      data: {
+        sourceAssetType: "POINTS",
+        targetAssetType: "CASH",
+        rate: "free",
+      },
+    },
+    async () => {
+      await assert.rejects(
+        () => CommerceFoundationService.retrieveAccountPointsExchangeRate(),
+        /Exchange rate must be a positive decimal string/,
+      );
+    },
+  );
+
+  await withBillingSdkResponse(
+    {
+      code: "2000",
+      data: ["malformed-rule"],
+    },
+    async () => {
+      await assert.rejects(
+        () => CommerceFoundationService.listAccountPointsExchangeRules(),
+        /Exchange rule record is required/,
+      );
+    },
+  );
+
+  await withBillingSdkResponse(
+    {
+      code: "2000",
+      data: {
+        sourceAssetType: "CASH",
+        targetAssetType: "POINTS",
+        rate: "120",
+      },
+    },
+    async () => {
+      await assert.rejects(
+        () => CommerceFoundationService.retrieveAccountPointsExchangeRate(),
+        /exchange sourceAssetType must be POINTS/,
+      );
     },
   );
 });

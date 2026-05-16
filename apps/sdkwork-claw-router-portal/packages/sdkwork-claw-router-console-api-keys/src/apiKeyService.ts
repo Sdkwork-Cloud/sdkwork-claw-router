@@ -9,7 +9,6 @@ import {
   readRequiredApiItems,
   readRequiredString,
   readString,
-  readStringArray,
 } from 'sdkwork-claw-router-commons/runtime';
 import type { CreateApiKeyRequest } from '@sdkwork/clawrouter-app-sdk';
 import type { AppApiKeyListResponse as SdkAppApiKeyListResponse } from '@sdkwork/clawrouter-app-sdk';
@@ -151,16 +150,16 @@ function normalizeApiKey(value: unknown): ApiKey {
 
   return {
     id,
-    name: readString(value, 'name', id),
+    name: readRequiredString(value, 'name', 'API key name is required'),
     maskedKey,
-    group: readString(value, 'group', 'unassigned'),
+    group: readRequiredString(value, 'group', 'API key group is required'),
     rate: readNullableString(value, 'rate'),
-    quota: readString(value, 'quota', 'unlimited'),
-    usedQuota: readString(value, 'usedQuota', '0.000000'),
+    quota: readRequiredString(value, 'quota', 'API key quota is required'),
+    usedQuota: readRequiredString(value, 'usedQuota', 'API key used quota is required'),
     modalities: readApiKeyModalities(value),
-    ipLimit: readString(value, 'ipLimit', 'unrestricted'),
-    created: readString(value, 'created'),
-    expires: readString(value, 'expires', 'never'),
+    ipLimit: readRequiredString(value, 'ipLimit', 'API key IP limit is required'),
+    created: readRequiredString(value, 'created', 'API key created time is required'),
+    expires: readRequiredString(value, 'expires', 'API key expiration is required'),
     status: readApiKeyStatus(value),
   };
 }
@@ -170,19 +169,32 @@ function normalizeApiKeyGroup(value: unknown): ApiKeyGroup {
     throw new Error('API key group record is required');
   }
 
-  const code = readRequiredString(value, 'code', 'API key group code is required');
-
   return {
-    id: readString(value, 'id', code),
-    code,
-    name: readString(value, 'name', code),
+    id: readRequiredString(value, 'id', 'API key group id is required'),
+    code: readRequiredString(value, 'code', 'API key group code is required'),
+    name: readRequiredString(value, 'name', 'API key group name is required'),
     rate: readNullableString(value, 'rate'),
   };
 }
 
 function toApiKeyModalities(values: string[]): ApiKeyModality[] {
-  const modalities = values.filter(isApiKeyModality);
-  return modalities.length > 0 ? modalities : [...UNRESTRICTED_MODALITIES];
+  const modalities: ApiKeyModality[] = [];
+  for (const value of values) {
+    const modality = value.trim().toLowerCase();
+    if (!modality) {
+      continue;
+    }
+    if (!isApiKeyModality(modality)) {
+      throw new Error(`Unsupported API key modality: ${modality}`);
+    }
+    if (!modalities.includes(modality)) {
+      modalities.push(modality);
+    }
+  }
+  if (modalities.length === 0) {
+    throw new Error('modalities must include at least one item');
+  }
+  return modalities;
 }
 
 function isApiKeyModality(value: string): value is ApiKeyModality {
@@ -190,12 +202,29 @@ function isApiKeyModality(value: string): value is ApiKeyModality {
 }
 
 function readApiKeyModalities(value: Record<string, unknown>): SdkAppApiKeyListResponse['items'][number]['modalities'] {
-  const modalities = readStringArray(value, 'modalities', UNRESTRICTED_MODALITIES).filter(isApiKeyModality);
-  return modalities.length > 0 ? modalities : [...UNRESTRICTED_MODALITIES];
+  const raw = value.modalities;
+  if (!Array.isArray(raw)) {
+    throw new Error('API key modalities are required');
+  }
+  const modalities: ApiKeyModality[] = [];
+  for (const item of raw) {
+    const modality = typeof item === 'string' ? item.trim().toLowerCase() : '';
+    if (!modality) {
+      throw new Error('API key modalities are required');
+    }
+    if (!isApiKeyModality(modality)) {
+      throw new Error(`Unsupported API key modality: ${modality}`);
+    }
+    modalities.push(modality);
+  }
+  if (modalities.length === 0) {
+    throw new Error('API key modalities are required');
+  }
+  return [...new Set(modalities)];
 }
 
 function readApiKeyStatus(value: Record<string, unknown>): SdkAppApiKeyListResponse['items'][number]['status'] {
-  const status = readString(value, 'status', 'enabled');
+  const status = readRequiredString(value, 'status', 'API key status is required');
   if (status === 'enabled' || status === 'disabled') {
     return status;
   }

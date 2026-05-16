@@ -1,4 +1,5 @@
 use std::sync::Arc;
+use std::time::Duration;
 
 use axum::body::Body;
 use axum::extract::State;
@@ -9,14 +10,16 @@ use axum::response::{IntoResponse, Response};
 use axum::Json;
 use axum::Router;
 use sdkwork_claw_config::{
-    ApiKeySecurityConfig, AppSessionConfig, DatabaseConfig, DatabaseEngine, DeploymentMode,
-    ProviderSecretMapConfig, RuntimeConfigProfile, StartupInstallMode, TrustedSubjectConfig,
+    ApiKeySecurityConfig, AppSessionConfig, DatabaseConfig, DatabaseEngine,
+    ProviderSecretMapConfig, RequestLimitsConfig, RuntimeConfigProfile, RuntimeTomlConfig,
+    StartupInstallMode, TrustedSubjectConfig,
 };
 use sdkwork_claw_http::TrustedRequestSubject;
 use sdkwork_claw_product::application::{ApiKeySecretHasher, ModelRankingsService};
 use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
 use sdkwork_claw_product::infrastructure::provider::{
     ProviderSecretMapResolver, SecretRefOpenAiCompatibleProviderHealthProbe,
+    DEFAULT_HEALTH_PROBE_TIMEOUT_MILLIS,
 };
 use sdkwork_claw_product::infrastructure::sql::installer::{
     log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
@@ -24,30 +27,31 @@ use sdkwork_claw_product::infrastructure::sql::installer::{
 use sdkwork_claw_product::infrastructure::sql::postgres::{
     PostgresAdminAccessGroupStore, PostgresAdminAnnouncementStore,
     PostgresAdminApiKeyRateLimitStore, PostgresAdminAppStore, PostgresAdminAuthSettingsStore,
-    PostgresAdminChannelStore, PostgresAdminFinanceStore, PostgresAdminFirewallRuleStore,
-    PostgresAdminIpRateLimitStore, PostgresAdminMarketingStore, PostgresAdminModelRateLimitStore,
-    PostgresAdminModelStore, PostgresAdminMonitorReadStore, PostgresAdminProviderSecretStore,
-    PostgresAdminRecordStore, PostgresAdminSkillStore, PostgresAdminUserStore,
-    PostgresCatalogLoadError, PostgresModelRankingRefreshStore, PostgresModelRankingsReadStore,
-    PostgresPricingCatalogLoader,
+    PostgresAdminChannelStore, PostgresAdminDashboardReadStore, PostgresAdminFinanceStore,
+    PostgresAdminFirewallRuleStore, PostgresAdminIpRateLimitStore, PostgresAdminMarketingStore,
+    PostgresAdminModelRateLimitStore, PostgresAdminModelStore, PostgresAdminMonitorReadStore,
+    PostgresAdminProviderSecretStore, PostgresAdminRecordStore, PostgresAdminSkillStore,
+    PostgresAdminUserStore, PostgresCatalogLoadError, PostgresModelRankingRefreshStore,
+    PostgresModelRankingsReadStore, PostgresPricingCatalogLoader,
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
     SqlCatalogLoadError, SqliteAdminAccessGroupStore, SqliteAdminAnnouncementStore,
     SqliteAdminApiKeyRateLimitStore, SqliteAdminAppStore, SqliteAdminAuthSettingsStore,
-    SqliteAdminChannelStore, SqliteAdminFinanceStore, SqliteAdminFirewallRuleStore,
-    SqliteAdminIpRateLimitStore, SqliteAdminMarketingStore, SqliteAdminModelRateLimitStore,
-    SqliteAdminModelStore, SqliteAdminMonitorReadStore, SqliteAdminProviderSecretStore,
-    SqliteAdminRecordStore, SqliteAdminSkillStore, SqliteAdminUserStore,
-    SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore, SqlitePricingCatalogLoader,
+    SqliteAdminChannelStore, SqliteAdminDashboardReadStore, SqliteAdminFinanceStore,
+    SqliteAdminFirewallRuleStore, SqliteAdminIpRateLimitStore, SqliteAdminMarketingStore,
+    SqliteAdminModelRateLimitStore, SqliteAdminModelStore, SqliteAdminMonitorReadStore,
+    SqliteAdminProviderSecretStore, SqliteAdminRecordStore, SqliteAdminSkillStore,
+    SqliteAdminUserStore, SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore,
+    SqlitePricingCatalogLoader,
 };
 use sdkwork_claw_product::infrastructure::OsApiKeySecretGenerator;
 use sdkwork_claw_product::ports::{
     AdminAccessGroupStore, AdminAnnouncementStore, AdminApiKeyRateLimitStore, AdminAppStore,
-    AdminAuthSettingsStore, AdminChannelStore, AdminFinanceStore, AdminFirewallRuleStore,
-    AdminIpRateLimitStore, AdminMarketingStore, AdminModelRateLimitStore, AdminModelStore,
-    AdminMonitorReadStore, AdminProviderSecretStore, AdminRecordStore, AdminSkillStore,
-    AdminUserStore, ModelRankingRefreshStore, ModelRankingsReadModelStore, PricingCatalog,
-    ProviderHealthProbe, UnconfiguredProviderHealthProbe,
+    AdminAuthSettingsStore, AdminChannelStore, AdminDashboardReadStore, AdminFinanceStore,
+    AdminFirewallRuleStore, AdminIpRateLimitStore, AdminMarketingStore, AdminModelRateLimitStore,
+    AdminModelStore, AdminMonitorReadStore, AdminProviderSecretStore, AdminRecordStore,
+    AdminSkillStore, AdminUserStore, ModelRankingRefreshStore, ModelRankingsReadModelStore,
+    PricingCatalog, ProviderHealthProbe, UnconfiguredProviderHealthProbe,
 };
 use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
 use sqlx::{PgPool, SqlitePool};
@@ -74,6 +78,7 @@ type AdminModelRateLimitRuntimeStore = Arc<dyn AdminModelRateLimitStore + Send +
 type AdminModelRuntimeStore = Arc<dyn AdminModelStore + Send + Sync>;
 type AdminFinanceRuntimeStore = Arc<dyn AdminFinanceStore + Send + Sync>;
 type AdminMarketingRuntimeStore = Arc<dyn AdminMarketingStore + Send + Sync>;
+type AdminDashboardRuntimeReadStore = Arc<dyn AdminDashboardReadStore + Send + Sync>;
 type AdminMonitorRuntimeReadStore = Arc<dyn AdminMonitorReadStore + Send + Sync>;
 type AdminRecordRuntimeStore = Arc<dyn AdminRecordStore + Send + Sync>;
 type AdminSkillRuntimeStore = Arc<dyn AdminSkillStore + Send + Sync>;
@@ -121,6 +126,7 @@ struct AdminRouterRuntime<'a> {
     model_store: Option<AdminModelRuntimeStore>,
     finance_store: Option<AdminFinanceRuntimeStore>,
     marketing_store: Option<AdminMarketingRuntimeStore>,
+    dashboard_read_store: Option<AdminDashboardRuntimeReadStore>,
     monitor_read_store: Option<AdminMonitorRuntimeReadStore>,
     record_store: Option<AdminRecordRuntimeStore>,
     skill_store: Option<AdminSkillRuntimeStore>,
@@ -131,6 +137,7 @@ struct AdminRouterRuntime<'a> {
     trusted_subject_config: Option<TrustedSubjectConfig>,
     app_session_config: Option<AppSessionConfig>,
     admin_access_checker: Option<AdminAccessChecker>,
+    request_limits_config: RequestLimitsConfig,
 }
 
 pub fn router() -> Router {
@@ -175,6 +182,7 @@ where
         model_store,
         finance_store,
         marketing_store,
+        dashboard_read_store,
         monitor_read_store,
         record_store,
         skill_store,
@@ -185,6 +193,7 @@ where
         trusted_subject_config,
         app_session_config,
         admin_access_checker,
+        request_limits_config,
     } = runtime;
 
     let catalog_router = match api_key_hasher.as_ref() {
@@ -295,9 +304,10 @@ where
         }
         if let Some(store) = app_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_app_router_with_store(
+                sdkwork_claw_product::api::admin_app_router_with_store_and_json_body_limit(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
+                    request_limits_config.admin_app_json_body_max_bytes(),
                 )
                 .layer(from_fn_with_state(
                     admin_subject_boundary_config.clone(),
@@ -423,6 +433,16 @@ where
                 )),
             );
         }
+        if let Some(store) = dashboard_read_store {
+            router = router.merge(
+                sdkwork_claw_product::api::admin_dashboard_router_with_read_store(store).layer(
+                    from_fn_with_state(
+                        admin_subject_boundary_config.clone(),
+                        admin_request_subject_boundary,
+                    ),
+                ),
+            );
+        }
         if let Some(store) = monitor_read_store {
             router = router.merge(
                 sdkwork_claw_product::api::admin_monitor_router_with_read_store(store).layer(
@@ -445,9 +465,10 @@ where
         }
         if let Some(store) = skill_store {
             router = router.merge(
-                sdkwork_claw_product::api::admin_skill_router_with_store(
+                sdkwork_claw_product::api::admin_skill_router_with_store_and_json_body_limit(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
+                    request_limits_config.admin_skill_json_body_max_bytes(),
                 )
                 .layer(from_fn_with_state(
                     admin_subject_boundary_config.clone(),
@@ -570,6 +591,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
         app_session_config,
         provider_secret_map_config,
         StartupInstallMode::Ensure,
+        None,
     )
     .await
 }
@@ -581,11 +603,15 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
     app_session_config: Option<AppSessionConfig>,
     provider_secret_map_config: Option<ProviderSecretMapConfig>,
     startup_install_mode: StartupInstallMode,
+    runtime_toml: Option<&RuntimeTomlConfig>,
 ) -> Result<Router, ProductCatalogRouterError> {
+    let request_limits_config = RequestLimitsConfig::from_env_or_runtime_toml(runtime_toml)
+        .map_err(ProductCatalogRouterError::Config)?;
     let api_key_hasher = build_api_key_hasher(api_key_config)?;
     let trusted_subject_config = require_trusted_subject_config(trusted_subject_config)?;
     let app_session_config = require_app_session_config(app_session_config)?;
-    let provider_health_probe = build_provider_health_probe(provider_secret_map_config);
+    let provider_health_probe =
+        build_provider_health_probe(provider_secret_map_config, runtime_toml)?;
     match config.engine {
         DatabaseEngine::Sqlite => {
             let sqlite_options = SqliteConnectOptions::from_str(config.url.as_str())
@@ -632,11 +658,16 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
             let model_rate_limit_store: AdminModelRateLimitRuntimeStore =
                 Arc::new(SqliteAdminModelRateLimitStore::new(pool.clone()));
             let model_store: AdminModelRuntimeStore =
-                Arc::new(SqliteAdminModelStore::new(pool.clone()));
+                Arc::new(SqliteAdminModelStore::with_models_catalog_root(
+                    pool.clone(),
+                    configured_models_catalog_root(runtime_toml),
+                ));
             let finance_store: AdminFinanceRuntimeStore =
                 Arc::new(SqliteAdminFinanceStore::new(pool.clone()));
             let marketing_store: AdminMarketingRuntimeStore =
                 Arc::new(SqliteAdminMarketingStore::new(pool.clone()));
+            let dashboard_read_store: AdminDashboardRuntimeReadStore =
+                Arc::new(SqliteAdminDashboardReadStore::new(pool.clone()));
             let monitor_read_store: AdminMonitorRuntimeReadStore =
                 Arc::new(SqliteAdminMonitorReadStore::new(pool.clone()));
             let record_store: AdminRecordRuntimeStore =
@@ -667,6 +698,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     model_store: Some(model_store),
                     finance_store: Some(finance_store),
                     marketing_store: Some(marketing_store),
+                    dashboard_read_store: Some(dashboard_read_store),
                     monitor_read_store: Some(monitor_read_store),
                     record_store: Some(record_store),
                     skill_store: Some(skill_store),
@@ -677,6 +709,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     trusted_subject_config: Some(trusted_subject_config),
                     app_session_config: Some(app_session_config),
                     admin_access_checker: Some(admin_access_checker),
+                    request_limits_config,
                 },
             ))
         }
@@ -721,11 +754,16 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
             let model_rate_limit_store: AdminModelRateLimitRuntimeStore =
                 Arc::new(PostgresAdminModelRateLimitStore::new(pool.clone()));
             let model_store: AdminModelRuntimeStore =
-                Arc::new(PostgresAdminModelStore::new(pool.clone()));
+                Arc::new(PostgresAdminModelStore::with_models_catalog_root(
+                    pool.clone(),
+                    configured_models_catalog_root(runtime_toml),
+                ));
             let finance_store: AdminFinanceRuntimeStore =
                 Arc::new(PostgresAdminFinanceStore::new(pool.clone()));
             let marketing_store: AdminMarketingRuntimeStore =
                 Arc::new(PostgresAdminMarketingStore::new(pool.clone()));
+            let dashboard_read_store: AdminDashboardRuntimeReadStore =
+                Arc::new(PostgresAdminDashboardReadStore::new(pool.clone()));
             let monitor_read_store: AdminMonitorRuntimeReadStore =
                 Arc::new(PostgresAdminMonitorReadStore::new(pool.clone()));
             let record_store: AdminRecordRuntimeStore =
@@ -756,6 +794,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     model_store: Some(model_store),
                     finance_store: Some(finance_store),
                     marketing_store: Some(marketing_store),
+                    dashboard_read_store: Some(dashboard_read_store),
                     monitor_read_store: Some(monitor_read_store),
                     record_store: Some(record_store),
                     skill_store: Some(skill_store),
@@ -766,6 +805,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     trusted_subject_config: Some(trusted_subject_config),
                     app_session_config: Some(app_session_config),
                     admin_access_checker: Some(admin_access_checker),
+                    request_limits_config,
                 },
             ))
         }
@@ -782,17 +822,21 @@ pub async fn router_with_optional_database_config(
 }
 
 pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
-    let config = database_config_from_env_for_startup()?;
-    let startup_install_mode =
-        StartupInstallMode::from_env().map_err(ProductCatalogRouterError::Config)?;
-    let api_key_config =
-        ApiKeySecurityConfig::from_env().map_err(ProductCatalogRouterError::Config)?;
+    let runtime_toml =
+        RuntimeTomlConfig::from_env_config_file().map_err(ProductCatalogRouterError::Config)?;
+    let config = database_config_from_env_for_startup(runtime_toml.as_ref())?;
+    let startup_install_mode = StartupInstallMode::from_env_or_runtime_toml(runtime_toml.as_ref())
+        .map_err(ProductCatalogRouterError::Config)?;
+    let api_key_config = ApiKeySecurityConfig::from_env_or_runtime_toml(runtime_toml.as_ref())
+        .map_err(ProductCatalogRouterError::Config)?;
     let trusted_subject_config =
-        TrustedSubjectConfig::from_env().map_err(ProductCatalogRouterError::Config)?;
-    let app_session_config =
-        AppSessionConfig::from_env().map_err(ProductCatalogRouterError::Config)?;
+        TrustedSubjectConfig::from_env_or_runtime_toml(runtime_toml.as_ref())
+            .map_err(ProductCatalogRouterError::Config)?;
+    let app_session_config = AppSessionConfig::from_env_or_runtime_toml(runtime_toml.as_ref())
+        .map_err(ProductCatalogRouterError::Config)?;
     let provider_secret_map_config =
-        ProviderSecretMapConfig::from_env().map_err(ProductCatalogRouterError::Config)?;
+        ProviderSecretMapConfig::from_env_or_runtime_toml(runtime_toml.as_ref())
+            .map_err(ProductCatalogRouterError::Config)?;
     match config {
         Some(config) => {
             router_with_database_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config_and_startup_install_mode(
@@ -802,6 +846,7 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
                 Some(require_app_session_config(app_session_config)?),
                 provider_secret_map_config,
                 startup_install_mode,
+                runtime_toml.as_ref(),
             )
             .await
         }
@@ -810,10 +855,13 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
 }
 
 fn database_config_from_env_for_startup(
+    runtime_toml: Option<&RuntimeTomlConfig>,
 ) -> Result<Option<DatabaseConfig>, ProductCatalogRouterError> {
-    let profile = runtime_config_profile_from_deployment_mode();
+    let profile = RuntimeConfigProfile::from_env_or_runtime_toml(runtime_toml)
+        .map_err(ProductCatalogRouterError::Config)?;
     if profile == RuntimeConfigProfile::Server {
-        return DatabaseConfig::from_env_or_initialize().map_err(ProductCatalogRouterError::Config);
+        return DatabaseConfig::from_env_or_runtime_toml_or_initialize(runtime_toml)
+            .map_err(ProductCatalogRouterError::Config);
     }
 
     let config = DatabaseConfig::from_env().map_err(ProductCatalogRouterError::Config)?;
@@ -827,13 +875,11 @@ fn database_config_from_env_for_startup(
     Ok(None)
 }
 
-fn runtime_config_profile_from_deployment_mode() -> RuntimeConfigProfile {
-    match DeploymentMode::from_env() {
-        DeploymentMode::Desktop => RuntimeConfigProfile::Desktop,
-        DeploymentMode::Server | DeploymentMode::Docker | DeploymentMode::Kubernetes => {
-            RuntimeConfigProfile::Server
-        }
-    }
+fn configured_models_catalog_root(runtime_toml: Option<&RuntimeTomlConfig>) -> Option<String> {
+    sdkwork_claw_config::runtime::config_value(
+        sdkwork_claw_product::infrastructure::sql::installer::ENV_MODELS_CATALOG_ROOT,
+        runtime_toml.and_then(|config| config.install.models_catalog_root.as_deref()),
+    )
 }
 
 fn build_api_key_hasher(
@@ -847,14 +893,37 @@ fn build_api_key_hasher(
 
 fn build_provider_health_probe(
     provider_secret_map_config: Option<ProviderSecretMapConfig>,
-) -> ProviderHealthProbeRuntime {
+    runtime_toml: Option<&RuntimeTomlConfig>,
+) -> Result<ProviderHealthProbeRuntime, ProductCatalogRouterError> {
+    let health_probe_timeout = provider_health_probe_timeout_from_env_or_toml(runtime_toml)
+        .map_err(ProductCatalogRouterError::Config)?;
     match provider_secret_map_config {
         Some(config) => {
             let resolver = Arc::new(ProviderSecretMapResolver::from_config(config));
-            Arc::new(SecretRefOpenAiCompatibleProviderHealthProbe::new(resolver))
+            Ok(Arc::new(
+                SecretRefOpenAiCompatibleProviderHealthProbe::with_response_timeout(
+                    resolver,
+                    health_probe_timeout,
+                ),
+            ))
         }
-        None => Arc::new(UnconfiguredProviderHealthProbe),
+        None => Ok(Arc::new(UnconfiguredProviderHealthProbe)),
     }
+}
+
+fn provider_health_probe_timeout_from_env_or_toml(
+    runtime_toml: Option<&RuntimeTomlConfig>,
+) -> Result<Duration, String> {
+    const HEALTH_PROBE_TIMEOUT: &str = "SDKWORK_CLAW_PROVIDER_HEALTH_PROBE_TIMEOUT_MILLIS";
+    let timeout_millis = sdkwork_claw_config::runtime::config_u64(
+        HEALTH_PROBE_TIMEOUT,
+        runtime_toml.and_then(|config| config.provider_relay.runtime.health_probe_timeout_millis),
+    )?
+    .unwrap_or(DEFAULT_HEALTH_PROBE_TIMEOUT_MILLIS);
+    if timeout_millis == 0 {
+        return Err(format!("{HEALTH_PROBE_TIMEOUT} must be a positive integer"));
+    }
+    Ok(Duration::from_millis(timeout_millis))
 }
 
 fn model_rankings_service(read_store: ModelRankingsRuntimeStore) -> ModelRankingsRuntimeStore {
@@ -1084,7 +1153,19 @@ impl From<PostgresCatalogLoadError> for ProductCatalogRouterError {
 }
 
 pub async fn serve(bind_addr: &str) -> anyhow::Result<()> {
-    sdkwork_claw_observability::init_tracing();
+    let runtime_toml = sdkwork_claw_config::RuntimeTomlConfig::from_env_config_file()
+        .map_err(anyhow::Error::msg)?;
+    serve_with_runtime_config(bind_addr, runtime_toml.as_ref()).await
+}
+
+pub async fn serve_with_runtime_config(
+    bind_addr: &str,
+    runtime_toml: Option<&sdkwork_claw_config::RuntimeTomlConfig>,
+) -> anyhow::Result<()> {
+    sdkwork_claw_observability::init_tracing_with_runtime_config(
+        runtime_toml.map(|config| &config.observability),
+    )
+    .map_err(anyhow::Error::msg)?;
     let listener = tokio::net::TcpListener::bind(bind_addr).await?;
     axum::serve(listener, router_from_env().await?).await?;
     Ok(())

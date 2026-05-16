@@ -1,11 +1,36 @@
-use axum::extract::Path;
-use axum::http::StatusCode;
+use std::sync::Arc;
+
+use axum::extract::{Path, Query, State};
+use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, post};
 use axum::{Json, Router};
-use serde::Serialize;
+use sdkwork_claw_http::TrustedRequestSubject;
+use serde::{Deserialize, Serialize};
 
 use crate::api::response::PlusApiResult;
+use crate::ports::{
+    AppCommerceExchangeReadStore, AppCommerceExchangeRuleQuery,
+    AppCommercePointsExchangeRateResponse, AppCommerceSubject,
+};
+
+const MAX_ASSET_TYPE_LEN: usize = 32;
+const POINTS_ASSET_TYPE: &str = "POINTS";
+const CASH_ASSET_TYPE: &str = "CASH";
+
+#[derive(Clone)]
+struct AppCommerceState {
+    exchange_store: Option<Arc<dyn AppCommerceExchangeReadStore + Send + Sync>>,
+    require_subject: bool,
+}
+
+#[derive(Debug, Deserialize)]
+struct ExchangeRulesQueryRequest {
+    #[serde(rename = "source_asset_type", alias = "sourceAssetType")]
+    source_asset_type: Option<String>,
+    #[serde(rename = "target_asset_type", alias = "targetAssetType")]
+    target_asset_type: Option<String>,
+}
 
 #[derive(Debug, Default, Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -45,6 +70,22 @@ struct DailyRewardStatusResponse {
 }
 
 pub fn app_commerce_foundation_router() -> Router {
+    app_commerce_foundation_router_with_state(AppCommerceState {
+        exchange_store: None,
+        require_subject: false,
+    })
+}
+
+pub fn app_commerce_foundation_router_with_exchange_store(
+    exchange_store: Arc<dyn AppCommerceExchangeReadStore + Send + Sync>,
+) -> Router {
+    app_commerce_foundation_router_with_state(AppCommerceState {
+        exchange_store: Some(exchange_store),
+        require_subject: true,
+    })
+}
+
+fn app_commerce_foundation_router_with_state(state: AppCommerceState) -> Router {
     Router::new()
         .route("/app/v3/api/billing/wallet/overview", get(wallet_overview))
         .route("/app/v3/api/billing/wallet/accounts", get(empty_list))
@@ -75,7 +116,7 @@ pub fn app_commerce_foundation_router() -> Router {
         )
         .route(
             "/app/v3/api/billing/account/points/exchange_rate",
-            get(unavailable_read),
+            get(points_exchange_rate),
         )
         .route(
             "/app/v3/api/billing/account/points/recharges/records",
@@ -95,7 +136,7 @@ pub fn app_commerce_foundation_router() -> Router {
         )
         .route(
             "/app/v3/api/billing/account/points/exchanges/rules",
-            get(empty_list),
+            get(points_exchange_rules),
         )
         .route(
             "/app/v3/api/billing/account/points/exchanges",
@@ -203,6 +244,7 @@ pub fn app_commerce_foundation_router() -> Router {
             "/app/v3/api/billing/preflight/releases",
             post(unavailable_command),
         )
+        .with_state(state)
 }
 
 async fn wallet_overview() -> Response {
@@ -233,6 +275,67 @@ async fn vip_info() -> Response {
 
 async fn daily_reward_status() -> Response {
     Json(PlusApiResult::success(DailyRewardStatusResponse::default())).into_response()
+}
+
+async fn points_exchange_rate(
+    State(state): State<AppCommerceState>,
+    headers: HeaderMap,
+) -> Response {
+    let Some(store) = state.exchange_store.as_ref() else {
+        return unavailable_read().await;
+    };
+    let subject = match resolve_subject(&headers, state.require_subject) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    match store.load_points_exchange_rate(subject).await {
+        Ok(Some(item)) => Json(PlusApiResult::success(
+            AppCommercePointsExchangeRateResponse {
+                source_asset_type: item.source_asset_type,
+                target_asset_type: item.target_asset_type,
+                rate: item.rate,
+            },
+        ))
+        .into_response(),
+        Ok(None) => not_found_response("exchange rule was not found"),
+        Err(error) => commerce_system_response("exchange rule read model is unavailable", error),
+    }
+}
+
+async fn points_exchange_rules(
+    State(state): State<AppCommerceState>,
+    Query(params): Query<ExchangeRulesQueryRequest>,
+    headers: HeaderMap,
+) -> Response {
+    let Some(store) = state.exchange_store.as_ref() else {
+        return empty_list().await;
+    };
+    let subject = match resolve_subject(&headers, state.require_subject) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let source_asset_type = match normalize_optional_asset_type(params.source_asset_type.as_deref())
+    {
+        Ok(value) => value,
+        Err(message) => return bad_request(message),
+    };
+    let target_asset_type = match normalize_optional_asset_type(params.target_asset_type.as_deref())
+    {
+        Ok(value) => value,
+        Err(message) => return bad_request(message),
+    };
+
+    match store
+        .list_exchange_rules(AppCommerceExchangeRuleQuery {
+            subject,
+            source_asset_type,
+            target_asset_type,
+        })
+        .await
+    {
+        Ok(items) => Json(PlusApiResult::success(items)).into_response(),
+        Err(error) => commerce_system_response("exchange rule read model is unavailable", error),
+    }
 }
 
 async fn empty_list() -> Response {
@@ -269,6 +372,71 @@ async fn unavailable_command() -> Response {
             "5010",
             "commerce foundation command store is not configured",
         )),
+    )
+        .into_response()
+}
+
+fn resolve_subject(
+    headers: &HeaderMap,
+    required: bool,
+) -> Result<Option<AppCommerceSubject>, Response> {
+    match TrustedRequestSubject::from_headers(headers) {
+        Ok(subject) => Ok(Some(AppCommerceSubject {
+            tenant_id: subject.tenant_id,
+            organization_id: subject.organization_id,
+            user_id: subject.user_id,
+        })),
+        Err(error) if required => Err((
+            StatusCode::UNAUTHORIZED,
+            Json(PlusApiResult::error("4010", error.to_string())),
+        )
+            .into_response()),
+        Err(_) => Ok(None),
+    }
+}
+
+fn normalize_optional_asset_type(value: Option<&str>) -> Result<Option<String>, String> {
+    let Some(value) = value.map(str::trim).filter(|value| !value.is_empty()) else {
+        return Ok(None);
+    };
+    let normalized = value.to_ascii_uppercase();
+    if normalized.chars().count() > MAX_ASSET_TYPE_LEN {
+        return Err(format!(
+            "asset type must be at most {MAX_ASSET_TYPE_LEN} characters"
+        ));
+    }
+    if !normalized
+        .bytes()
+        .all(|byte| byte.is_ascii_alphanumeric() || matches!(byte, b'-' | b'_'))
+    {
+        return Err("asset type may only contain letters, numbers, -, and _".to_owned());
+    }
+    if normalized != POINTS_ASSET_TYPE && normalized != CASH_ASSET_TYPE {
+        return Err("exchange rule currently supports POINTS to CASH only".to_owned());
+    }
+    Ok(Some(normalized))
+}
+
+fn bad_request(message: impl Into<String>) -> Response {
+    (
+        StatusCode::BAD_REQUEST,
+        Json(PlusApiResult::error("4001", message.into())),
+    )
+        .into_response()
+}
+
+fn not_found_response(message: &'static str) -> Response {
+    (
+        StatusCode::NOT_FOUND,
+        Json(PlusApiResult::error("4040", message)),
+    )
+        .into_response()
+}
+
+fn commerce_system_response(context: &str, error: crate::domain::DomainError) -> Response {
+    (
+        StatusCode::INTERNAL_SERVER_ERROR,
+        Json(PlusApiResult::error("5000", format!("{context}: {error}"))),
     )
         .into_response()
 }

@@ -30,7 +30,8 @@ const DEFAULT_FEED_LIMIT: i64 = 10;
 const DEFAULT_TOP_FEED_LIMIT: i64 = 5;
 const MAX_PAGE_SIZE: i64 = 100;
 const MAX_QUERY_TEXT_LEN: usize = 128;
-const MAX_FORUM_BODY_BYTES: usize = 256 * 1024;
+const DEFAULT_JSON_BODY_MAX_BYTES: usize =
+    sdkwork_claw_config::RequestLimitsConfig::DEFAULT_FORUM_JSON_BODY_MAX_BYTES;
 const MAX_FEED_IMAGES: usize = 20;
 const MAX_FEED_IMAGE_LEN: usize = 2048;
 const MAX_FEED_TAGS: usize = 20;
@@ -48,6 +49,7 @@ struct AppForumState {
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
     community_links: Arc<Vec<ForumCommunityLink>>,
     require_subject: bool,
+    json_body_max_bytes: usize,
 }
 
 #[derive(Debug, Deserialize)]
@@ -358,6 +360,7 @@ pub fn app_forum_router() -> Router {
         Arc::new(OsApiKeySecretGenerator),
         configured_forum_community_links(),
         false,
+        DEFAULT_JSON_BODY_MAX_BYTES,
     )
 }
 
@@ -368,13 +371,14 @@ pub fn app_forum_router_with_store(
     comment_command_store: Arc<dyn ForumCommentCommandStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
 ) -> Router {
-    app_forum_router_with_store_and_community_links(
+    app_forum_router_with_store_community_links_and_json_body_limit(
         feed_read_store,
         feed_command_store,
         comment_read_store,
         comment_command_store,
         entity_uuid_generator,
         configured_forum_community_links(),
+        DEFAULT_JSON_BODY_MAX_BYTES,
     )
 }
 
@@ -386,6 +390,26 @@ pub fn app_forum_router_with_store_and_community_links(
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
     community_links: Vec<ForumCommunityLink>,
 ) -> Router {
+    app_forum_router_with_store_community_links_and_json_body_limit(
+        feed_read_store,
+        feed_command_store,
+        comment_read_store,
+        comment_command_store,
+        entity_uuid_generator,
+        community_links,
+        DEFAULT_JSON_BODY_MAX_BYTES,
+    )
+}
+
+pub fn app_forum_router_with_store_community_links_and_json_body_limit(
+    feed_read_store: Arc<dyn ForumFeedReadStore + Send + Sync>,
+    feed_command_store: Arc<dyn ForumFeedCommandStore + Send + Sync>,
+    comment_read_store: Arc<dyn ForumCommentReadStore + Send + Sync>,
+    comment_command_store: Arc<dyn ForumCommentCommandStore + Send + Sync>,
+    entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    community_links: Vec<ForumCommunityLink>,
+    json_body_max_bytes: usize,
+) -> Router {
     app_forum_router_with_state(
         feed_read_store,
         feed_command_store,
@@ -394,6 +418,7 @@ pub fn app_forum_router_with_store_and_community_links(
         entity_uuid_generator,
         community_links,
         false,
+        json_body_max_bytes,
     )
 }
 
@@ -405,6 +430,7 @@ fn app_forum_router_with_state(
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
     community_links: Vec<ForumCommunityLink>,
     require_subject: bool,
+    json_body_max_bytes: usize,
 ) -> Router {
     let community_links = Arc::new(community_links);
     Router::new()
@@ -502,6 +528,7 @@ fn app_forum_router_with_state(
             entity_uuid_generator,
             community_links,
             require_subject,
+            json_body_max_bytes: json_body_max_bytes.max(1),
         })
 }
 
@@ -687,7 +714,11 @@ async fn create_feed(
         Err(response) => return response,
     };
     let subject = request_subject.unwrap_or_else(public_forum_subject);
-    let request = match parse_json_body::<CreateFeedRequest>(&body, "feed request") {
+    let request = match parse_json_body::<CreateFeedRequest>(
+        &body,
+        "feed request",
+        state.json_body_max_bytes,
+    ) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
@@ -957,7 +988,11 @@ async fn create_comment(
         Err(response) => return response,
     };
     let subject = request_subject.unwrap_or_else(public_forum_subject);
-    let request = match parse_json_body::<CreateCommentRequest>(&body, "comment request") {
+    let request = match parse_json_body::<CreateCommentRequest>(
+        &body,
+        "comment request",
+        state.json_body_max_bytes,
+    ) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
@@ -1002,7 +1037,11 @@ async fn reply_comment(
         Err(response) => return response,
     };
     let subject = request_subject.unwrap_or_else(public_forum_subject);
-    let request = match parse_json_body::<ReplyCommentRequest>(&body, "comment reply request") {
+    let request = match parse_json_body::<ReplyCommentRequest>(
+        &body,
+        "comment reply request",
+        state.json_body_max_bytes,
+    ) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
@@ -1386,9 +1425,22 @@ fn public_forum_subject() -> ForumSubject {
     }
 }
 
-fn configured_forum_community_links() -> Vec<ForumCommunityLink> {
-    let Ok(raw) = std::env::var(ENV_FORUM_COMMUNITY_LINKS) else {
-        return Vec::new();
+pub fn configured_forum_community_links() -> Vec<ForumCommunityLink> {
+    let runtime_toml = sdkwork_claw_config::RuntimeTomlConfig::from_env_config_file()
+        .ok()
+        .flatten();
+    let raw = match sdkwork_claw_config::runtime::config_secret_value(
+        ENV_FORUM_COMMUNITY_LINKS,
+        "SDKWORK_CLAW_FORUM_COMMUNITY_LINKS_FILE",
+        runtime_toml
+            .as_ref()
+            .and_then(|config| config.forum.community_links_json.as_deref()),
+        runtime_toml
+            .as_ref()
+            .and_then(|config| config.forum.community_links_json_file.as_deref()),
+    ) {
+        Ok(Some(raw)) => raw,
+        Ok(None) | Err(_) => return Vec::new(),
     };
     parse_forum_community_links_config(&raw)
 }
@@ -1533,14 +1585,12 @@ fn is_public_dns_label(label: &str) -> bool {
             .all(|ch| ch.is_ascii_alphanumeric() || ch == '-')
 }
 
-fn parse_json_body<T>(body: &[u8], name: &str) -> Result<T, String>
+fn parse_json_body<T>(body: &[u8], name: &str, max_bytes: usize) -> Result<T, String>
 where
     T: for<'de> Deserialize<'de>,
 {
-    if body.len() > MAX_FORUM_BODY_BYTES {
-        return Err(format!(
-            "{name} body must be at most {MAX_FORUM_BODY_BYTES} bytes"
-        ));
+    if body.len() > max_bytes {
+        return Err(format!("{name} body must be at most {max_bytes} bytes"));
     }
     serde_json::from_slice::<T>(body).map_err(|error| format!("invalid {name} body: {error}"))
 }

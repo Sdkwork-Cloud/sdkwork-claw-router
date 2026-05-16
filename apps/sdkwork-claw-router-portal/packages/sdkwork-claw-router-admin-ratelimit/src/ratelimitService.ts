@@ -3,6 +3,8 @@ import {
   ensurePlusApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
+  readApiRecord,
+  readBoolean,
   readRequiredApiItems,
   readRequiredApiItem,
   readNumber,
@@ -154,7 +156,7 @@ export class RateLimitService {
     const result = await getClawRouterBackendSdkClient().system.firewalls.rules.delete(
       requiredSafePathSegment(id, 'firewallRuleId'),
     );
-    ensurePlusApiSuccess(result, 'Failed to remove firewall rule');
+    ensureDeleteResult(result, 'Firewall rule delete confirmation is required');
     return true;
   }
 }
@@ -205,14 +207,21 @@ function requiredText(value: string, fieldName: string): string {
 }
 
 function positiveInteger(value: number, fieldName: string): number {
-  if (!Number.isFinite(value) || value < 1) {
+  if (!Number.isSafeInteger(value) || value < 1) {
     throw new Error(`${fieldName} must be a positive integer`);
   }
-  return Math.round(value);
+  return value;
 }
 
 function requestParams(scope: string): { xRequestId: string } {
   return { xRequestId: createRequestToken(scope) };
+}
+
+function ensureDeleteResult(result: unknown, message: string): void {
+  ensurePlusApiSuccess(result, message);
+  if (readBoolean(readApiRecord(result), 'deleted') !== true) {
+    throw new Error(message);
+  }
 }
 
 function normalizeIpLimit(value: unknown): IpLimitRule {
@@ -224,7 +233,7 @@ function normalizeIpLimit(value: unknown): IpLimitRule {
     rps: readRequiredNumber(item, 'rps', 'IP limit rps is required'),
     rpm: readRequiredNumber(item, 'rpm', 'IP limit rpm is required'),
     blockDuration: readRequiredString(item, 'blockDuration', 'IP limit block duration is required'),
-    status: readString(item, 'status') === 'inactive' ? 'inactive' : 'active',
+    status: readIpLimitStatus(item),
   };
 }
 
@@ -237,7 +246,7 @@ function normalizeTokenLimit(value: unknown): TokenLimitRule {
     rps: readRequiredNumber(item, 'rps', 'Token limit rps is required'),
     rpd: readRequiredNumber(item, 'rpd', 'Token limit rpd is required'),
     burst: readRequiredNumber(item, 'burst', 'Token limit burst is required'),
-    status: readString(item, 'status') === 'exhausted' ? 'exhausted' : 'active',
+    status: readTokenLimitStatus(item),
   };
 }
 
@@ -249,7 +258,7 @@ function normalizeModelLimit(value: unknown): ModelLimitRule {
     group: readRequiredString(item, 'group', 'Model limit group is required'),
     rpm: readRequiredNumber(item, 'rpm', 'Model limit rpm is required'),
     tpm: readRequiredNumber(item, 'tpm', 'Model limit tpm is required'),
-    status: readString(item, 'status') === 'inactive' ? 'inactive' : 'active',
+    status: readModelLimitStatus(item),
   };
 }
 
@@ -269,4 +278,28 @@ function readRequiredRecord(value: unknown, message: string): ApiRecord {
     throw new Error(message);
   }
   return value;
+}
+
+function readIpLimitStatus(item: ApiRecord): IpLimitRule['status'] {
+  const status = readRequiredString(item, 'status', 'IP limit status is required').toLowerCase();
+  if (status === 'active' || status === 'inactive') {
+    return status;
+  }
+  throw new Error(`Unsupported IP limit status: ${status}`);
+}
+
+function readTokenLimitStatus(item: ApiRecord): TokenLimitRule['status'] {
+  const status = readRequiredString(item, 'status', 'Token limit status is required').toLowerCase();
+  if (status === 'active' || status === 'exhausted') {
+    return status;
+  }
+  throw new Error(`Unsupported token limit status: ${status}`);
+}
+
+function readModelLimitStatus(item: ApiRecord): ModelLimitRule['status'] {
+  const status = readRequiredString(item, 'status', 'Model limit status is required').toLowerCase();
+  if (status === 'active' || status === 'inactive') {
+    return status;
+  }
+  throw new Error(`Unsupported model limit status: ${status}`);
 }

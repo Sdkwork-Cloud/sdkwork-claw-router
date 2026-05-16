@@ -1699,6 +1699,151 @@ async fn database_config_router_serves_signed_subject_firewall_rule_crud() {
 }
 
 #[tokio::test]
+async fn database_config_router_serves_backend_sdk_contract_aliases() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog(&pool).await;
+    seed_monitoring(&pool).await;
+    seed_admin_users(&pool).await;
+    seed_admin_record(&pool).await;
+    seed_admin_marketing(&pool).await;
+    pool.close().await;
+
+    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+        DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
+        Some(api_key_security_config()),
+        Some(trusted_subject_config()),
+        Some(app_session_config()),
+    )
+    .await
+    .unwrap();
+
+    for path in [
+        "/backend/v3/api/system/monitor/nodes",
+        "/backend/v3/api/system/monitor/alerts",
+        "/backend/v3/api/system/monitor/performance",
+        "/backend/v3/api/system/dashboard/admin/overview",
+        "/backend/v3/api/system/rate_limits/ip",
+        "/backend/v3/api/system/rate_limits/api_keys",
+        "/backend/v3/api/system/rate_limits/models",
+        "/backend/v3/api/system/firewalls/rules",
+        "/backend/v3/api/iam/users",
+        "/backend/v3/api/iam/api_keys",
+        "/backend/v3/api/iam/access_groups",
+        "/backend/v3/api/integration/channels",
+        "/backend/v3/api/integration/provider_secrets",
+        "/backend/v3/api/ecosystem/skills/categories",
+        "/backend/v3/api/ecosystem/skills/package",
+        "/backend/v3/api/ecosystem/skills",
+        "/backend/v3/api/platform/apps",
+        "/backend/v3/api/billing/referrals/stats",
+    ] {
+        let response = router
+            .clone()
+            .oneshot(signed_request("GET", path, Body::empty()))
+            .await
+            .unwrap();
+        assert_eq!(StatusCode::OK, response.status(), "{path}");
+        let payload: serde_json::Value = serde_json::from_slice(
+            &axum::body::to_bytes(response.into_body(), usize::MAX)
+                .await
+                .unwrap(),
+        )
+        .unwrap();
+        assert_eq!("2000", payload["code"], "{path}");
+        if path == "/backend/v3/api/system/dashboard/admin/overview" {
+            assert!(
+                payload["data"]["userConsumption"].is_array(),
+                "{path} must expose userConsumption"
+            );
+            assert!(
+                payload["data"]["multimodal"].is_array(),
+                "{path} must expose multimodal"
+            );
+            assert!(
+                payload["data"]["traffic"].is_array(),
+                "{path} must expose traffic"
+            );
+            assert!(
+                payload["data"]["modelDistribution"].is_array(),
+                "{path} must expose modelDistribution"
+            );
+            assert!(
+                payload["data"]["recentUsage"].is_array(),
+                "{path} must expose recentUsage"
+            );
+        }
+    }
+}
+
+#[tokio::test]
+async fn database_config_router_serves_signed_subject_admin_dashboard_overview() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog(&pool).await;
+    seed_admin_users(&pool).await;
+    seed_admin_record(&pool).await;
+    pool.close().await;
+
+    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+        DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
+        Some(api_key_security_config()),
+        Some(trusted_subject_config()),
+        Some(app_session_config()),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(signed_request(
+            "GET",
+            "/backend/v3/api/system/dashboard/admin/overview",
+            Body::empty(),
+        ))
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, response.status());
+    let payload: serde_json::Value = serde_json::from_slice(
+        &axum::body::to_bytes(response.into_body(), usize::MAX)
+            .await
+            .unwrap(),
+    )
+    .unwrap();
+
+    assert_eq!("2000", payload["code"]);
+    assert_eq!(
+        "owner@example.com",
+        payload["data"]["userConsumption"][0]["name"]
+    );
+    assert_eq!(0.0123, payload["data"]["userConsumption"][0]["value"]);
+    assert_eq!("text", payload["data"]["multimodal"][0]["name"]);
+    assert_eq!(1.0, payload["data"]["multimodal"][0]["value"]);
+    assert_eq!("2026-04-29", payload["data"]["traffic"][0]["time"]);
+    assert_eq!(1628.0, payload["data"]["traffic"][0]["tokens"]);
+    assert_eq!(1.0, payload["data"]["traffic"][0]["requests"]);
+    assert_eq!(0.0123, payload["data"]["traffic"][0]["cost"]);
+    assert_eq!(
+        "gpt-4o-mini",
+        payload["data"]["modelDistribution"][0]["name"]
+    );
+    assert_eq!("trace-100", payload["data"]["recentUsage"][0]["id"]);
+    assert_eq!(
+        "owner@example.com",
+        payload["data"]["recentUsage"][0]["user"]
+    );
+    assert_eq!(true, payload["data"]["recentUsage"][0]["isApiUser"]);
+    assert_eq!("gpt-4o-mini", payload["data"]["recentUsage"][0]["model"]);
+    assert_eq!("usage", payload["data"]["recentUsage"][0]["billingMode"]);
+    assert_eq!(1200.0, payload["data"]["recentUsage"][0]["usageIn"]);
+    assert_eq!(300.0, payload["data"]["recentUsage"][0]["usageOut"]);
+    assert_eq!(1.0, payload["data"]["recentUsage"][0]["usageCount"]);
+    assert_eq!("success", payload["data"]["recentUsage"][0]["status"]);
+    assert_eq!("0.012300", payload["data"]["recentUsage"][0]["cost"]);
+}
+
+#[tokio::test]
 async fn database_config_router_serves_signed_subject_monitor_reads() {
     let database_url = unique_sqlite_url();
     let pool = create_sqlite_pool(&database_url).await;
@@ -2014,6 +2159,19 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         recharges_payload["data"]["items"][0]["usd_credited"]
     );
 
+    let recharge_payload = request_json(
+        router.clone(),
+        signed_request(
+            "GET",
+            "/backend/v3/api/billing/recharges/records/recharge-100",
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert_eq!("recharge-100", recharge_payload["data"]["item"]["tradeNo"]);
+    assert_eq!("30", recharge_payload["data"]["item"]["userId"]);
+    assert_eq!("success", recharge_payload["data"]["item"]["status"]);
+
     let recharge_packages_payload = request_json(
         router.clone(),
         signed_request(
@@ -2029,6 +2187,84 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
     );
     assert_eq!(25, recharge_packages_payload["data"]["items"][0]["bonus"]);
     assert_eq!(125, recharge_packages_payload["data"]["items"][0]["points"]);
+
+    let exchange_rules_payload = request_json(
+        router.clone(),
+        signed_request(
+            "GET",
+            "/backend/v3/api/billing/exchange_rules?source_asset_type=points&target_asset_type=cash&status=active",
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert_eq!("2000", exchange_rules_payload["code"]);
+    assert_eq!("exchange-1", exchange_rules_payload["data"][0]["id"]);
+    assert_eq!(
+        "POINTS",
+        exchange_rules_payload["data"][0]["sourceAssetType"]
+    );
+    assert_eq!("CASH", exchange_rules_payload["data"][0]["targetAssetType"]);
+    assert_eq!("120", exchange_rules_payload["data"][0]["rate"]);
+    assert_eq!("active", exchange_rules_payload["data"][0]["status"]);
+
+    let update_exchange_rule_payload = request_json(
+        router.clone(),
+        signed_request_with_header(
+            "PUT",
+            "/backend/v3/api/billing/exchange_rules",
+            Body::from(
+                r#"{"sourceAssetType":"points","targetAssetType":"cash","rate":"250.000000","status":"active"}"#,
+            ),
+            "X-Request-Id",
+            "exchange-rule-update-1",
+        ),
+    )
+    .await;
+    assert_eq!("2000", update_exchange_rule_payload["code"]);
+    assert_eq!(
+        "POINTS",
+        update_exchange_rule_payload["data"]["item"]["sourceAssetType"]
+    );
+    assert_eq!(
+        "CASH",
+        update_exchange_rule_payload["data"]["item"]["targetAssetType"]
+    );
+    assert_eq!("250", update_exchange_rule_payload["data"]["item"]["rate"]);
+    assert_eq!(
+        "active",
+        update_exchange_rule_payload["data"]["item"]["status"]
+    );
+
+    let payment_attempts_payload = request_json(
+        router.clone(),
+        signed_request(
+            "GET",
+            "/backend/v3/api/billing/payments/attempts",
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert_eq!("2000", payment_attempts_payload["code"]);
+    assert_eq!(
+        "payment-910",
+        payment_attempts_payload["data"]["items"][0]["id"]
+    );
+    assert_eq!(
+        "order-900",
+        payment_attempts_payload["data"]["items"][0]["orderNo"]
+    );
+    assert_eq!(
+        "provider-7",
+        payment_attempts_payload["data"]["items"][0]["provider"]
+    );
+    assert_eq!(
+        "25.50",
+        payment_attempts_payload["data"]["items"][0]["amount"]
+    );
+    assert_eq!(
+        "success",
+        payment_attempts_payload["data"]["items"][0]["status"]
+    );
 
     let referrals_payload = request_json(
         router.clone(),
@@ -2061,6 +2297,32 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         .as_str()
         .unwrap()
         .to_owned();
+
+    let update_coupon_payload = request_json(
+        router.clone(),
+        signed_request(
+            "PUT",
+            format!("/backend/v3/api/billing/coupons/{new_coupon_id}").as_str(),
+            Body::from(
+                r#"{"name":"Launch discount","type":"discount","value":"15%","status":"inactive"}"#,
+            ),
+        ),
+    )
+    .await;
+    assert_eq!(
+        new_coupon_id,
+        update_coupon_payload["data"]["item"]["id"]
+            .as_str()
+            .unwrap()
+    );
+    assert_eq!(
+        "Launch discount",
+        update_coupon_payload["data"]["item"]["name"]
+    );
+    assert_eq!("discount", update_coupon_payload["data"]["item"]["type"]);
+    assert_eq!("15.00%", update_coupon_payload["data"]["item"]["value"]);
+    assert_eq!("inactive", update_coupon_payload["data"]["item"]["status"]);
+
     let generate_payload = request_json(
         router.clone(),
         signed_request(
@@ -2259,6 +2521,23 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
     )
     .await;
     assert_eq!(true, delete_payload["data"]["deleted"]);
+
+    let verification_pool = create_sqlite_pool(&database_url).await;
+    let exchange_rate: String = sqlx::query_scalar(
+        "SELECT CAST(config_value AS TEXT) FROM plus_account_exchange_config WHERE tenant_id = 10 AND organization_id = 20 AND config_key = 'POINTS_TO_CASH_RATE'",
+    )
+    .fetch_one(&verification_pool)
+    .await
+    .unwrap();
+    let audit_action: String = sqlx::query_scalar(
+        "SELECT action FROM ops_audit_log WHERE request_id = 'exchange-rule-update-1'",
+    )
+    .fetch_one(&verification_pool)
+    .await
+    .unwrap();
+    verification_pool.close().await;
+    assert_eq!("250", exchange_rate);
+    assert_eq!("update_exchange_rule", audit_action);
 }
 
 #[tokio::test]
@@ -2445,6 +2724,29 @@ fn signed_request_for_subject(
     body: Body,
     subject: TrustedRequestSubject,
 ) -> Request<Body> {
+    signed_request_builder_for_subject(method, path, subject)
+        .body(body)
+        .unwrap()
+}
+
+fn signed_request_with_header(
+    method: &str,
+    path: &str,
+    body: Body,
+    header_name: &'static str,
+    header_value: &'static str,
+) -> Request<Body> {
+    signed_request_builder_for_subject(method, path, default_trusted_request_subject())
+        .header(header_name, header_value)
+        .body(body)
+        .unwrap()
+}
+
+fn signed_request_builder_for_subject(
+    method: &str,
+    path: &str,
+    subject: TrustedRequestSubject,
+) -> axum::http::request::Builder {
     let timestamp = current_unix_seconds();
     let timestamp_value = timestamp.to_string();
     let signature = trusted_subject_signature(subject, timestamp, method, path).unwrap();
@@ -2460,8 +2762,6 @@ fn signed_request_for_subject(
         .header("x-sdkwork-subject-user-id", subject.user_id.to_string())
         .header("x-sdkwork-subject-timestamp", timestamp_value)
         .header("x-sdkwork-subject-signature", signature)
-        .body(body)
-        .unwrap()
 }
 
 fn app_session_request(method: &str, path: &str, body: Body) -> Request<Body> {
@@ -2852,8 +3152,10 @@ async fn create_schema(pool: &SqlitePool) {
             owner_name_snapshot TEXT,
             api_key_name_snapshot TEXT,
             api_key_group_snapshot TEXT,
+            catalog_key TEXT,
             model TEXT,
             modality INTEGER,
+            request_count INTEGER,
             prompt_tokens INTEGER,
             completion_tokens INTEGER,
             cached_tokens INTEGER,
@@ -2905,6 +3207,20 @@ async fn create_schema(pool: &SqlitePool) {
             frozen_token INTEGER NOT NULL,
             status INTEGER NOT NULL
         )"#,
+        r#"CREATE TABLE plus_account_exchange_config (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL UNIQUE,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            v INTEGER NOT NULL DEFAULT 0,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            config_key TEXT NOT NULL,
+            config_value TEXT NOT NULL,
+            remarks TEXT
+        )"#,
+        "CREATE UNIQUE INDEX uk_account_exchange_config_tenant_org_key ON plus_account_exchange_config (tenant_id, organization_id, config_key)",
         "CREATE UNIQUE INDEX uk_plus_account_user_type ON plus_account (tenant_id, organization_id, user_id, account_type)",
         "CREATE INDEX idx_plus_account_user_id ON plus_account (user_id)",
         "CREATE INDEX idx_plus_account_owner_id ON plus_account (owner, owner_id)",
@@ -4369,6 +4685,15 @@ async fn seed_admin_marketing(pool: &SqlitePool) {
         r#"INSERT INTO plus_vip_recharge_pack
             (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, app_id, name, description, price, point_amount, vip_duration_days, status, sort_weight, valid_from, valid_to, remark, recharge_type)
             VALUES (801, 'recharge-pack-801', '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, 10, 20, 1, 1, 'Starter Recharge Pack', '', '10.00', 25, NULL, 1, 1, NULL, NULL, '', 2)"#,
+        r#"INSERT INTO plus_account_exchange_config
+            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, config_key, config_value, remarks)
+            VALUES (1, 'exchange-1', '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, 10, 20, 1, 'POINTS_TO_CASH_RATE', '120.000000', 'Points to cash rate')"#,
+        r#"INSERT INTO plus_order
+            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, subject, order_type, owner, owner_id, user_id, order_sn, transaction_id, out_trade_no, total_amount, paid_amount, status, category_id, pay_success_time, remark, refunded_amount, currency, payment_method)
+            VALUES (900, 'order-900', '2026-04-29 09:00:00', '2026-04-29 09:10:00', 0, 10, 20, 1, 'Recharge order', 1, 1, 30, 30, 'ORDER-900', 'pay-txn-900', 'order-900', '25.50', '25.50', 2, 1, '2026-04-29 09:10:00', 'Wallet recharge', '0.00', 'USD', 'stripe')"#,
+        r#"INSERT INTO plus_payment
+            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, subject, purpose, order_id, transaction_id, out_trade_no, channel, provider, status, amount, success_time, remark)
+            VALUES (910, 'payment-910', '2026-04-29 09:00:00', '2026-04-29 09:10:00', 0, 10, 20, 1, 'Recharge payment', 'POINTS', 900, 'pay-txn-900', 'order-900', 1, 7, 2, '25.50', '2026-04-29 09:10:00', 'Payment success')"#,
         r#"INSERT INTO ops_referral_stat_snapshot
             (id, uuid, tenant_id, organization_id, source_type, source_id, source_version, status, created_at, updated_at, rebuild_version, metadata, inviter_user_id, inviter_name_snapshot, inviter_email_snapshot, invitation_code_id, invitation_code, invite_link, snapshot_period, period_start, period_end, total_invited_count, direct_invited_count, secondary_invited_count, paid_invitee_count, total_revenue_amount, reward_awarded_amount, reward_pending_amount, currency, snapshot_at)
             VALUES (801, 'referral-801', 10, 20, 'daily', 30, 1, 1, '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, '{}', 30, 'Owner', 'owner@example.com', 1, 'OWNER', 'https://claw.local/invite/OWNER', 'daily', '2026-04-29 00:00:00', '2026-04-29 23:59:59', 3, 2, 1, 1, '120.00', '12.00', '1.00', 'USD', '2026-04-29 10:00:00')"#,
@@ -4420,8 +4745,8 @@ async fn seed_admin_record(pool: &SqlitePool) {
             (id, uuid, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, api_key_name_snapshot, api_key_group_snapshot, owner_name_snapshot, requested_model, provider_model, endpoint, request_path, http_status, provider_error_code, error_type, started_at, latency_ms, ttft_ms, streaming, prompt_tokens, completion_tokens, cached_tokens, reasoning_effort, client_ip_masked)
             VALUES (100, 'trace-100', 10, 20, 30, 'req-admin-record-1', 'trace-admin-record-1', 1, '2026-04-29 09:29:59', 'Production', 'standard-group', 'owner@example.com', 'gpt-4o-mini', 'openai/global/gpt-4o-mini', '/v1/chat/completions', '/v1/chat/completions', 200, NULL, NULL, '2026-04-29 09:30:00', 842, 120, 1, 1000, 240, 100, 'medium', '203.0.113.***')"#,
         r#"INSERT INTO ai_usage_fact
-            (id, uuid, tenant_id, organization_id, user_id, request_id, status, created_at, owner_name_snapshot, api_key_name_snapshot, api_key_group_snapshot, model, modality, prompt_tokens, completion_tokens, cached_tokens, total_tokens, customer_charge_amount, cost_amount, rate_multiplier, base_input_unit_price, base_output_unit_price, cache_read_unit_price, occurred_at)
-            VALUES (200, 'usage-200', 10, 20, 30, 'req-admin-record-1', 1, '2026-04-29 09:30:01', 'owner@example.com', 'Production', 'standard-group', 'gpt-4o-mini', 1, 1200, 300, 128, 1628, '0.012300', '0.010000', '1.200000', '0.150000', '0.600000', '0.030000', '2026-04-29 09:30:01')"#,
+            (id, uuid, tenant_id, organization_id, user_id, request_id, status, created_at, owner_name_snapshot, api_key_name_snapshot, api_key_group_snapshot, model, modality, request_count, prompt_tokens, completion_tokens, cached_tokens, total_tokens, customer_charge_amount, cost_amount, rate_multiplier, base_input_unit_price, base_output_unit_price, cache_read_unit_price, occurred_at)
+            VALUES (200, 'usage-200', 10, 20, 30, 'req-admin-record-1', 1, '2026-04-29 09:30:01', 'owner@example.com', 'Production', 'standard-group', 'gpt-4o-mini', 1, 1, 1200, 300, 128, 1628, '0.012300', '0.010000', '1.200000', '0.150000', '0.600000', '0.030000', '2026-04-29 09:30:01')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }

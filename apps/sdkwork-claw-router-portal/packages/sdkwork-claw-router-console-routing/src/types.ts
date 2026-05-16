@@ -1,4 +1,11 @@
 export type ChannelStatus = 'active' | 'disabled' | 'error';
+export type RetryableStatusCode = 408 | 409 | 425 | 429 | 500 | 502 | 503 | 504;
+
+export interface RoutingRetryPolicy {
+  maxAttempts: number;
+  retryableStatusCodes: RetryableStatusCode[];
+  backoffMs?: number;
+}
 
 export interface Channel {
   id: string;
@@ -13,6 +20,8 @@ export interface Channel {
   models: string[];
   capabilities: string[];
   isMultimodal: boolean;
+  timeoutMs?: number;
+  retryPolicy?: RoutingRetryPolicy;
   weight: number;
   status: ChannelStatus;
   latency: string;
