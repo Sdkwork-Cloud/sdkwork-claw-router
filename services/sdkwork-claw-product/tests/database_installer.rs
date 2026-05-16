@@ -531,6 +531,64 @@ async fn sqlite_installer_repairs_bootstrap_admin_membership_without_resetting_p
 }
 
 #[tokio::test]
+async fn sqlite_installer_bootstraps_admin_when_legacy_plus_user_has_no_v_column() {
+    let pool = sqlite_pool().await;
+    sqlx::query(
+        r#"
+        CREATE TABLE plus_user (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            nickname TEXT,
+            username TEXT,
+            email TEXT,
+            phone TEXT,
+            avatar TEXT,
+            password TEXT,
+            salt TEXT,
+            status INTEGER NOT NULL,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
+        )
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    let installer =
+        installer(pool.clone()).with_bootstrap_admin_password("Admin-Legacy-Test-Password-2026!");
+
+    let installed = installer.ensure_installed().await.unwrap();
+
+    assert_eq!(InstallationStatus::Installed, installed.status);
+    let bootstrap = installed
+        .bootstrap_admin
+        .expect("legacy plus_user compatibility must not skip bootstrap admin creation");
+    assert_eq!("created", bootstrap.status);
+    assert_eq!("1", bootstrap.user_id);
+
+    let legacy_admin = sqlx::query(
+        r#"
+        SELECT username, nickname, email, status
+        FROM plus_user
+        WHERE id = 1
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!("admin", legacy_admin.get::<String, _>("username"));
+    assert_eq!("Administrator", legacy_admin.get::<String, _>("nickname"));
+    assert_eq!(
+        "admin@sdkwork.local",
+        legacy_admin.get::<String, _>("email")
+    );
+    assert_eq!(1, legacy_admin.get::<i64, _>("status"));
+}
+
+#[tokio::test]
 async fn sqlite_installer_keeps_regional_vendor_models_as_distinct_catalog_rows() {
     let pool = sqlite_pool().await;
     let installer = installer(pool.clone());
@@ -2266,6 +2324,67 @@ async fn sqlite_installer_ensure_upgrade_report_preserves_latest_catalog_refresh
         "success", report.last_catalog_refresh_status,
         "upgrade reports must preserve the latest catalog refresh observability state"
     );
+}
+
+#[tokio::test]
+async fn sqlite_installer_refresh_catalog_bootstraps_admin_on_empty_full_install() {
+    let catalog_root = single_vendor_catalog_root("openai");
+    let pool = sqlite_pool().await;
+    let installer =
+        installer(pool.clone()).with_bootstrap_admin_password("Admin-Refresh-Test-Password-2026!");
+
+    installer
+        .refresh_catalog(CatalogRefreshOptions {
+            catalog_root: Some(catalog_root.to_string_lossy().to_string()),
+            force: true,
+            ..CatalogRefreshOptions::default()
+        })
+        .await
+        .unwrap();
+
+    assert_eq!(
+        InstallationStatus::Installed,
+        installer.status().await.unwrap(),
+        "full refresh-catalog on an empty database must leave the installation usable without a follow-up ensure"
+    );
+
+    let admin = sqlx::query(
+        r#"
+        SELECT
+            u.id,
+            m.role_code,
+            c.credential_hash
+        FROM iam_user u
+        JOIN iam_organization_member m
+          ON m.tenant_id = u.tenant_id
+         AND m.user_id = u.id
+         AND m.status = 'active'
+        JOIN iam_credential c
+          ON c.tenant_id = u.tenant_id
+         AND c.user_id = u.id
+         AND c.credential_type = 'password'
+         AND c.status = 'active'
+        WHERE u.tenant_id = '10'
+          AND u.username = 'admin'
+          AND m.organization_id = '20'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!("1", admin.get::<String, _>("id"));
+    assert_eq!("admin", admin.get::<String, _>("role_code"));
+    assert!(
+        Pbkdf2Sha256PasswordHasher
+            .verify_password(
+                "Admin-Refresh-Test-Password-2026!",
+                &admin.get::<String, _>("credential_hash"),
+            )
+            .unwrap(),
+        "refresh-catalog bootstrap admin password must use the normal IAM hash format"
+    );
+
+    remove_catalog_root(catalog_root);
 }
 
 #[tokio::test]

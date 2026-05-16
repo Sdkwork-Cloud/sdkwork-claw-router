@@ -297,6 +297,7 @@ pub struct CatalogRefreshReport {
     pub accepted_count: i64,
     pub snapshot_id: Option<String>,
     pub sync_run_id: Option<String>,
+    pub bootstrap_admin: Option<BootstrapAdminReport>,
 }
 
 pub struct DatabaseInstaller {
@@ -535,11 +536,15 @@ impl DatabaseInstaller {
                 return Err(error);
             }
         };
-        if item.synced && full_catalog_refresh {
+        let bootstrap_admin = if item.synced && full_catalog_refresh {
             self.import_installation_support_seeds().await?;
+            let bootstrap_admin = self.bootstrap_admin_user_if_needed().await?;
             self.mark_installed_with_options(&install_options, catalog_version.as_str())
                 .await?;
-        }
+            bootstrap_admin
+        } else {
+            None
+        };
 
         Ok(CatalogRefreshReport {
             synced: item.synced,
@@ -557,6 +562,7 @@ impl DatabaseInstaller {
             accepted_count: counts.accepted_count(),
             snapshot_id: item.snapshot_id,
             sync_run_id: item.sync_run_id,
+            bootstrap_admin,
         })
     }
 
@@ -688,6 +694,19 @@ impl DatabaseInstaller {
             }
         }
         Ok(())
+    }
+
+    async fn bootstrap_admin_user_if_needed(
+        &self,
+    ) -> Result<Option<BootstrapAdminReport>, DatabaseInstallError> {
+        match &self.backend {
+            InstallerBackend::Sqlite(pool) => {
+                bootstrap_sqlite_admin_user_if_needed(pool, &self.bootstrap_admin_options).await
+            }
+            InstallerBackend::Postgres(pool) => {
+                bootstrap_postgres_admin_user_if_needed(pool, &self.bootstrap_admin_options).await
+            }
+        }
     }
 
     async fn try_record_failed_catalog_refresh(
@@ -2443,34 +2462,7 @@ async fn maybe_upsert_sqlite_legacy_admin(
     if !sqlite_table_exists_in_transaction(tx, "plus_user").await? {
         return Ok(());
     }
-    sqlx::query(
-        r#"
-        INSERT INTO plus_user
-            (id, uuid, tenant_id, organization_id, created_at, updated_at, v, username, nickname, password, platform, type, email, status)
-        VALUES
-            (?, ?, ?, ?, ?, ?, 0, ?, ?, '', 0, 1, ?, 1)
-        ON CONFLICT(id) DO UPDATE SET
-            uuid = excluded.uuid,
-            tenant_id = excluded.tenant_id,
-            organization_id = excluded.organization_id,
-            username = excluded.username,
-            nickname = excluded.nickname,
-            email = excluded.email,
-            status = excluded.status,
-            updated_at = excluded.updated_at
-        "#,
-    )
-    .bind(user_id)
-    .bind(format!("bootstrap-admin-{user_id}"))
-    .bind(DEFAULT_IAM_TENANT_ID.parse::<i64>().unwrap_or(10))
-    .bind(DEFAULT_IAM_ORGANIZATION_ID.parse::<i64>().unwrap_or(20))
-    .bind(now)
-    .bind(now)
-    .bind(&options.username)
-    .bind(&options.display_name)
-    .bind(&options.email)
-    .execute(&mut **tx)
-    .await?;
+    upsert_sqlite_legacy_admin_user(tx, options, user_id, now).await?;
 
     if sqlite_table_exists_in_transaction(tx, "plus_role").await? {
         ensure_sqlite_legacy_admin_role(tx, now).await?;
@@ -2502,6 +2494,106 @@ async fn maybe_upsert_sqlite_legacy_admin(
     Ok(())
 }
 
+async fn upsert_sqlite_legacy_admin_user(
+    tx: &mut Transaction<'_, Sqlite>,
+    options: &BootstrapAdminOptions,
+    user_id: &str,
+    now: &str,
+) -> Result<(), sqlx::Error> {
+    let table_columns = sqlite_table_columns_in_transaction(tx, "plus_user").await?;
+    if !table_columns.contains("id") {
+        return Ok(());
+    }
+    let candidate_columns = [
+        "id",
+        "uuid",
+        "tenant_id",
+        "organization_id",
+        "data_scope",
+        "created_at",
+        "updated_at",
+        "v",
+        "version",
+        "username",
+        "nickname",
+        "password",
+        "platform",
+        "type",
+        "email",
+        "status",
+    ];
+    let insert_columns = candidate_columns
+        .into_iter()
+        .filter(|column| table_columns.contains(*column))
+        .collect::<Vec<_>>();
+    if insert_columns.is_empty() {
+        return Ok(());
+    }
+    let placeholders = std::iter::repeat_n("?", insert_columns.len())
+        .collect::<Vec<_>>()
+        .join(", ");
+    let update_columns = insert_columns
+        .iter()
+        .copied()
+        .filter(|column| {
+            matches!(
+                *column,
+                "uuid"
+                    | "tenant_id"
+                    | "organization_id"
+                    | "username"
+                    | "nickname"
+                    | "email"
+                    | "status"
+                    | "updated_at"
+            )
+        })
+        .collect::<Vec<_>>();
+    let conflict_clause = if update_columns.is_empty() {
+        "DO NOTHING".to_owned()
+    } else {
+        format!(
+            "DO UPDATE SET {}",
+            update_columns
+                .iter()
+                .map(|column| format!("{column} = excluded.{column}"))
+                .collect::<Vec<_>>()
+                .join(", ")
+        )
+    };
+    let sql = format!(
+        "INSERT INTO plus_user ({}) VALUES ({}) ON CONFLICT(id) {}",
+        insert_columns.join(", "),
+        placeholders,
+        conflict_clause
+    );
+    let legacy_user_id = user_id.parse::<i64>().unwrap_or(1);
+    let tenant_id = DEFAULT_IAM_TENANT_ID.parse::<i64>().unwrap_or(10);
+    let organization_id = DEFAULT_IAM_ORGANIZATION_ID.parse::<i64>().unwrap_or(20);
+    let mut query = sqlx::query(sql.as_str());
+    for column in insert_columns {
+        query = match column {
+            "id" => query.bind(legacy_user_id),
+            "uuid" => query.bind(format!("bootstrap-admin-{user_id}")),
+            "tenant_id" => query.bind(tenant_id),
+            "organization_id" => query.bind(organization_id),
+            "data_scope" => query.bind(1_i64),
+            "created_at" | "updated_at" => query.bind(now),
+            "v" | "version" => query.bind(0_i64),
+            "username" => query.bind(&options.username),
+            "nickname" => query.bind(&options.display_name),
+            "password" => query.bind(""),
+            "platform" => query.bind(0_i64),
+            "type" => query.bind(1_i64),
+            "email" => query.bind(&options.email),
+            "status" => query.bind(1_i64),
+            _ => query,
+        };
+    }
+    query.execute(&mut **tx).await?;
+    Ok(())
+}
+
 async fn maybe_upsert_postgres_legacy_admin(
     tx: &mut Transaction<'_, Postgres>,
     options: &BootstrapAdminOptions,
@@ -2511,33 +2603,7 @@ async fn maybe_upsert_postgres_legacy_admin(
     if !postgres_table_exists_in_transaction(tx, "plus_user").await? {
         return Ok(());
     }
-    sqlx::query(
-        r#"
-        INSERT INTO plus_user
-            (id, uuid, tenant_id, organization_id, created_at, updated_at, v, username, nickname, password, platform, type, email, status)
-        VALUES
-            ($1, $2, $3, $4, $5::timestamptz, $5::timestamptz, 0, $6, $7, '', 0, 1, $8, 1)
-        ON CONFLICT(id) DO UPDATE SET
-            uuid = excluded.uuid,
-            tenant_id = excluded.tenant_id,
-            organization_id = excluded.organization_id,
-            username = excluded.username,
-            nickname = excluded.nickname,
-            email = excluded.email,
-            status = excluded.status,
-            updated_at = excluded.updated_at
-        "#,
-    )
-    .bind(user_id.parse::<i64>().unwrap_or(1))
-    .bind(format!("bootstrap-admin-{user_id}"))
-    .bind(DEFAULT_IAM_TENANT_ID.parse::<i64>().unwrap_or(10))
-    .bind(DEFAULT_IAM_ORGANIZATION_ID.parse::<i64>().unwrap_or(20))
-    .bind(now)
-    .bind(&options.username)
-    .bind(&options.display_name)
-    .bind(&options.email)
-    .execute(&mut **tx)
-    .await?;
+    upsert_postgres_legacy_admin_user(tx, options, user_id, now).await?;
 
     if postgres_table_exists_in_transaction(tx, "plus_role").await? {
         ensure_postgres_legacy_admin_role(tx, now).await?;
@@ -2565,6 +2631,107 @@ async fn maybe_upsert_postgres_legacy_admin(
         .execute(&mut **tx)
         .await?;
     }
+    Ok(())
+}
+
+async fn upsert_postgres_legacy_admin_user(
+    tx: &mut Transaction<'_, Postgres>,
+    options: &BootstrapAdminOptions,
+    user_id: &str,
+    now: &str,
+) -> Result<(), sqlx::Error> {
+    let table_columns = postgres_table_columns_in_transaction(tx, "plus_user").await?;
+    if !table_columns.contains("id") {
+        return Ok(());
+    }
+    let candidate_columns = [
+        "id",
+        "uuid",
+        "tenant_id",
+        "organization_id",
+        "data_scope",
+        "created_at",
+        "updated_at",
+        "v",
+        "version",
+        "username",
+        "nickname",
+        "password",
+        "platform",
+        "type",
+        "email",
+        "status",
+    ];
+    let insert_columns = candidate_columns
+        .into_iter()
+        .filter(|column| table_columns.contains(*column))
+        .collect::<Vec<_>>();
+    if insert_columns.is_empty() {
+        return Ok(());
+    }
+    let placeholders = (1..=insert_columns.len())
+        .map(|index| format!("${index}"))
+        .collect::<Vec<_>>()
+        .join(", ");
+    let update_columns = insert_columns
+        .iter()
+        .copied()
+        .filter(|column| {
+            matches!(
+                *column,
+                "uuid"
+                    | "tenant_id"
+                    | "organization_id"
+                    | "username"
+                    | "nickname"
+                    | "email"
+                    | "status"
+                    | "updated_at"
+            )
+        })
+        .collect::<Vec<_>>();
+    let conflict_clause = if update_columns.is_empty() {
+        "DO NOTHING".to_owned()
+    } else {
+        format!(
+            "DO UPDATE SET {}",
+            update_columns
+                .iter()
+                .map(|column| format!("{column} = excluded.{column}"))
+                .collect::<Vec<_>>()
+                .join(", ")
+        )
+    };
+    let sql = format!(
+        "INSERT INTO plus_user ({}) VALUES ({}) ON CONFLICT(id) {}",
+        insert_columns.join(", "),
+        placeholders,
+        conflict_clause
+    );
+    let legacy_user_id = user_id.parse::<i64>().unwrap_or(1);
+    let tenant_id = DEFAULT_IAM_TENANT_ID.parse::<i64>().unwrap_or(10);
+    let organization_id = DEFAULT_IAM_ORGANIZATION_ID.parse::<i64>().unwrap_or(20);
+    let mut query = sqlx::query(sql.as_str());
+    for column in insert_columns {
+        query = match column {
+            "id" => query.bind(legacy_user_id),
+            "uuid" => query.bind(format!("bootstrap-admin-{user_id}")),
+            "tenant_id" => query.bind(tenant_id),
+            "organization_id" => query.bind(organization_id),
+            "data_scope" => query.bind(1_i64),
+            "created_at" | "updated_at" => query.bind(now),
+            "v" | "version" => query.bind(0_i64),
+            "username" => query.bind(&options.username),
+            "nickname" => query.bind(&options.display_name),
+            "password" => query.bind(""),
+            "platform" => query.bind(0_i64),
+            "type" => query.bind(1_i64),
+            "email" => query.bind(&options.email),
+            "status" => query.bind(1_i64),
+            _ => query,
+        };
+    }
+    query.execute(&mut **tx).await?;
     Ok(())
 }
 
@@ -2652,6 +2819,19 @@ async fn sqlite_table_exists_in_transaction(
     Ok(count == 1)
 }
 
+async fn sqlite_table_columns_in_transaction(
+    tx: &mut Transaction<'_, Sqlite>,
+    table_name: &str,
+) -> Result<BTreeSet<String>, sqlx::Error> {
+    let pragma = format!("PRAGMA table_info({})", quote_sqlite_identifier(table_name));
+    let rows = sqlx::query(pragma.as_str()).fetch_all(&mut **tx).await?;
+    Ok(rows
+        .into_iter()
+        .filter_map(|row| row.try_get::<String, _>("name").ok())
+        .map(|name| name.to_ascii_lowercase())
+        .collect())
+}
+
 async fn postgres_table_exists(pool: &PgPool, table_name: &str) -> Result<bool, sqlx::Error> {
     let count: i64 = sqlx::query_scalar(
         r#"
@@ -2683,6 +2863,28 @@ async fn postgres_table_exists_in_transaction(
     .fetch_one(&mut **tx)
     .await?;
     Ok(count == 1)
+}
+
+async fn postgres_table_columns_in_transaction(
+    tx: &mut Transaction<'_, Postgres>,
+    table_name: &str,
+) -> Result<BTreeSet<String>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT column_name
+        FROM information_schema.columns
+        WHERE table_schema = current_schema()
+          AND table_name = $1
+        "#,
+    )
+    .bind(table_name)
+    .fetch_all(&mut **tx)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .filter_map(|row| row.try_get::<String, _>("column_name").ok())
+        .map(|name| name.to_ascii_lowercase())
+        .collect())
 }
 
 async fn sqlite_generated_schema_tables_exist(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
