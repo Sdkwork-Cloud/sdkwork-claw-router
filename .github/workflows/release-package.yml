@@ -139,6 +139,8 @@ jobs:
           path: apps/sdkwork-claw-router
           fetch-depth: 0
           lfs: true
+          submodules: recursive
+          token: ${{ secrets.SDKWORK_RELEASE_TOKEN || github.token }}
 
       - name: Checkout sdkwork-appbase
         uses: actions/checkout@v4
