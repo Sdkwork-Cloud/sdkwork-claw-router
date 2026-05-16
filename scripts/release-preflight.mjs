@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { execFile } from 'node:child_process';
-import { open, readFile, readdir, stat } from 'node:fs/promises';
+import { readFile, readdir, stat } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import process from 'node:process';
@@ -25,12 +25,13 @@ const CODEX_SESSION_WARN_BYTES = 1_000 * 1024 * 1024;
 const CODEX_SESSION_WARN_COUNT = 12;
 const GIT_LOOSE_OBJECT_WARN_COUNT = 1_000;
 const LFS_POINTER_PREFIX = 'version https://git-lfs.github.com/spec/v1';
-const LFS_MANAGED_SKILL_SEED_FILES = [
+const RUNTIME_SKILL_SEED_FILES = [
+  'data/skills/install-manifest.json',
+  'data/skills/categories.json',
+  'data/skills/packages.json',
   'data/skills/skills.json',
   'data/skills/artifacts.json',
   'data/skills/assets.json',
-  'data/skills/clawhub/raw/checkpoint.json',
-  'data/skills/clawhub/raw/index.json',
 ];
 
 function printHelp() {
@@ -276,30 +277,27 @@ function parseGitObjectHealth(raw) {
   };
 }
 
-async function readFilePrefix(filePath, byteCount = 128) {
-  const fileHandle = await open(filePath, 'r');
-  try {
-    const buffer = Buffer.alloc(byteCount);
-    const { bytesRead } = await fileHandle.read(buffer, 0, byteCount, 0);
-    return buffer.subarray(0, bytesRead).toString('utf8');
-  } finally {
-    await fileHandle.close();
-  }
-}
-
-async function collectLfsHydrationStatus(workspaceRoot) {
+async function collectRuntimeSkillSeedStatus(workspaceRoot) {
   const files = [];
-  for (const relativePath of LFS_MANAGED_SKILL_SEED_FILES) {
+  for (const relativePath of RUNTIME_SKILL_SEED_FILES) {
     try {
-      const prefix = await readFilePrefix(path.join(workspaceRoot, relativePath));
+      const content = await readFile(path.join(workspaceRoot, relativePath), 'utf8');
+      const pointer = content.startsWith(LFS_POINTER_PREFIX);
+      let validJson = false;
+      if (!pointer) {
+        JSON.parse(content);
+        validJson = true;
+      }
       files.push({
         path: relativePath,
-        hydrated: !prefix.startsWith(LFS_POINTER_PREFIX),
+        pointer,
+        validJson,
       });
     } catch (error) {
       files.push({
         path: relativePath,
-        hydrated: false,
+        pointer: false,
+        validJson: false,
         error: error instanceof Error ? error.message : String(error),
       });
     }
@@ -416,7 +414,7 @@ async function collectReleasePreflightProbes({
       codexSessionStats: await collectCodexSessionStats(),
       gitObjectHealth: { count: 0, size: 'unknown', inPack: 0, sizePack: 'unknown' },
       gitLfsVersion: '',
-      lfsHydrationFiles: [],
+      runtimeSkillSeedFiles: [],
     };
   }
   const mainOriginRaw = await runCommand('git', ['rev-list', '--left-right', '--count', 'main...origin/main'], {
@@ -446,7 +444,7 @@ async function collectReleasePreflightProbes({
     codexSessionStats: await collectCodexSessionStats(),
     gitObjectHealth: parseGitObjectHealth(gitObjectRaw),
     gitLfsVersion,
-    lfsHydrationFiles: await collectLfsHydrationStatus(workspaceRoot),
+    runtimeSkillSeedFiles: await collectRuntimeSkillSeedStatus(workspaceRoot),
   };
 }
 
@@ -632,34 +630,36 @@ function buildReleasePreflightReport({
   checks.push(createCheck(
     'tools.gitLfs',
     'Git LFS availability',
-    localProbeSkipped ? 'WARN' : gitLfsVersionDetails ? 'PASS' : 'FAIL',
+    localProbeSkipped ? 'WARN' : gitLfsVersionDetails ? 'PASS' : 'WARN',
     childProcessBlocked && gitLfsVersionBlocked
       ? `git lfs was not probed because child process execution is blocked: ${gitLfsVersionDetails}`
       : childProcessBlocked
       ? 'git lfs was not probed because child process execution is blocked'
       : dryRun
         ? gitLfsVersionDetails || 'dry-run: would run git lfs version'
-      : gitLfsVersionDetails || 'git lfs is not available from this shell',
-    'Install Git LFS and run git lfs pull before release packaging.',
+      : gitLfsVersionDetails || 'git lfs is not available from this shell; release packaging no longer requires LFS hydration',
+    'Git LFS is only needed when refreshing large ClawHub mirror snapshots, not for release package builds.',
   ));
 
-  const lfsHydrationFiles = probes.lfsHydrationFiles ?? [];
-  const blockedLfsHydrationProbe = localProbeSkipped || lfsHydrationFiles.length === 0;
-  const unhydratedLfsFiles = lfsHydrationFiles.filter((file) => file.hydrated !== true);
+  const runtimeSkillSeedFiles = probes.runtimeSkillSeedFiles ?? [];
+  const blockedRuntimeSkillSeedProbe = localProbeSkipped || runtimeSkillSeedFiles.length === 0;
+  const invalidRuntimeSkillSeedFiles = runtimeSkillSeedFiles.filter((file) =>
+    file.validJson !== true || file.pointer === true
+  );
   checks.push(createCheck(
-    'data.skillSeedsLfsHydrated',
-    'Skill seed LFS hydration',
-    blockedLfsHydrationProbe ? 'WARN' : unhydratedLfsFiles.length === 0 ? 'PASS' : 'FAIL',
+    'data.runtimeSkillSeeds',
+    'Runtime skill seed JSON',
+    blockedRuntimeSkillSeedProbe ? 'WARN' : invalidRuntimeSkillSeedFiles.length === 0 ? 'PASS' : 'FAIL',
     childProcessBlocked
-      ? 'skill seed LFS files were not probed because child process execution is blocked'
+      ? 'runtime skill seed files were not probed because child process execution is blocked'
       : dryRun
-      ? 'dry-run: skill seed LFS hydration was not probed'
-      : blockedLfsHydrationProbe
-      ? 'skill seed LFS hydration was not probed'
-      : unhydratedLfsFiles.length === 0
-      ? `${lfsHydrationFiles.length} Git LFS skill seed files are hydrated`
-      : `unhydrated or unreadable Git LFS skill seed files: ${unhydratedLfsFiles.map((file) => file.path).join(', ')}`,
-    'Run git lfs pull so Rust include_str! reads real JSON seed data instead of LFS pointer files.',
+      ? 'dry-run: runtime skill seed JSON was not probed'
+      : blockedRuntimeSkillSeedProbe
+      ? 'runtime skill seed JSON was not probed'
+      : invalidRuntimeSkillSeedFiles.length === 0
+      ? `${runtimeSkillSeedFiles.length} runtime skill seed JSON files are readable and not Git LFS pointers`
+      : `invalid runtime skill seed JSON files: ${invalidRuntimeSkillSeedFiles.map((file) => file.path).join(', ')}`,
+    'Regenerate the curated runtime skill seed JSON; do not commit LFS pointers for files compiled with Rust include_str!.',
   ));
 
   const recommendedCommands = [
@@ -736,7 +736,7 @@ function buildDryRunProbes(platform = process.platform) {
     codexSessionStats: { count: 0, totalBytes: 0 },
     gitObjectHealth: { count: 0, size: '0 bytes', inPack: 0, sizePack: '0 bytes' },
     gitLfsVersion: 'dry-run: would run git lfs version',
-    lfsHydrationFiles: [],
+    runtimeSkillSeedFiles: [],
   };
 }
 
@@ -784,7 +784,7 @@ export {
   buildDryRunProbes,
   buildReleasePreflightReport,
   collectCodexSessionStats,
-  collectLfsHydrationStatus,
+  collectRuntimeSkillSeedStatus,
   collectReleasePreflightProbes,
   formatBytes,
   formatReport,

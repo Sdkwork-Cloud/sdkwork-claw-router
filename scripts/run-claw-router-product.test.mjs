@@ -3467,7 +3467,7 @@ test('release preflight env-file values satisfy strict release environment check
       codexSessionStats: { count: 0, totalBytes: 0 },
       gitObjectHealth: { count: 0, size: '0 bytes', inPack: 1, sizePack: '1 MiB' },
       gitLfsVersion: 'git-lfs/3.7.1',
-      lfsHydrationFiles: [{ path: 'data/skills/skills.json', hydrated: true }],
+      runtimeSkillSeedFiles: [{ path: 'data/skills/skills.json', validJson: true, pointer: false }],
     },
   });
   const byId = Object.fromEntries(result.checks.map((check) => [check.id, check]));
@@ -3721,7 +3721,7 @@ test('release preflight rejects malformed release environment values in strict m
       codexSessionStats: { count: 0, totalBytes: 0 },
       gitObjectHealth: { count: 0, size: '0 bytes', inPack: 1, sizePack: '1 MiB' },
       gitLfsVersion: 'git-lfs/3.7.1',
-      lfsHydrationFiles: [{ path: 'data/skills/skills.json', hydrated: true }],
+      runtimeSkillSeedFiles: [{ path: 'data/skills/skills.json', validJson: true, pointer: false }],
     },
   });
   const byId = Object.fromEntries(result.checks.map((check) => [check.id, check]));
@@ -3840,8 +3840,8 @@ test('release preflight dry-run reports plan-only probes without factual cleanli
   assert.ok(byId['io.gitObjects'].details.includes('dry-run: Git object IO footprint was not probed'));
   assert.equal(byId['tools.gitLfs'].status, 'WARN');
   assert.ok(byId['tools.gitLfs'].details.includes('dry-run: would run git lfs version'));
-  assert.equal(byId['data.skillSeedsLfsHydrated'].status, 'WARN');
-  assert.ok(byId['data.skillSeedsLfsHydrated'].details.includes('dry-run: skill seed LFS hydration was not probed'));
+  assert.equal(byId['data.runtimeSkillSeeds'].status, 'WARN');
+  assert.ok(byId['data.runtimeSkillSeeds'].details.includes('dry-run: runtime skill seed JSON was not probed'));
 });
 
 test('release preflight dry-run probe collector reuses plan-only semantics', async () => {
@@ -3884,7 +3884,7 @@ test('release preflight defaults missing staging environment to warnings', async
       codexSessionStats: { count: 8, totalBytes: 349 * 1024 * 1024 },
       gitObjectHealth: { count: 0, size: '0 bytes', inPack: 100, sizePack: '20 MiB' },
       gitLfsVersion: 'git-lfs/3.7.1',
-      lfsHydrationFiles: [{ path: 'data/skills/skills.json', hydrated: true }],
+      runtimeSkillSeedFiles: [{ path: 'data/skills/skills.json', validJson: true, pointer: false }],
     },
   });
 
@@ -3900,7 +3900,7 @@ test('release preflight defaults missing staging environment to warnings', async
   assert.equal(byId['io.codexSessions'].status, 'PASS');
   assert.equal(byId['io.gitObjects'].status, 'PASS');
   assert.equal(byId['tools.gitLfs'].status, 'PASS');
-  assert.equal(byId['data.skillSeedsLfsHydrated'].status, 'PASS');
+  assert.equal(byId['data.runtimeSkillSeeds'].status, 'PASS');
   assert.deepEqual(result.recommendedCommands, [
     'pnpm.cmd models:check',
     'pnpm.cmd verify',
@@ -3937,9 +3937,9 @@ test('release preflight strict mode fails missing release environment and app di
       codexSessionStats: { count: 18, totalBytes: 2_200 * 1024 * 1024 },
       gitObjectHealth: { count: 5000, size: '950 MiB', inPack: 100, sizePack: '3 GiB' },
       gitLfsVersion: '',
-      lfsHydrationFiles: [
-        { path: 'data/skills/skills.json', hydrated: true },
-        { path: 'data/skills/artifacts.json', hydrated: false },
+      runtimeSkillSeedFiles: [
+        { path: 'data/skills/skills.json', validJson: true, pointer: false },
+        { path: 'data/skills/artifacts.json', validJson: false, pointer: true },
       ],
     },
   });
@@ -3951,10 +3951,10 @@ test('release preflight strict mode fails missing release environment and app di
   assert.equal(byId['git.sync'].status, 'FAIL');
   assert.equal(byId['git.appClean'].status, 'FAIL');
   assert.equal(byId['tools.cargo'].status, 'FAIL');
-  assert.equal(byId['tools.gitLfs'].status, 'FAIL');
+  assert.equal(byId['tools.gitLfs'].status, 'WARN');
   assert.equal(byId['env.postgres'].status, 'FAIL');
   assert.equal(byId['env.portalPublic'].status, 'FAIL');
-  assert.equal(byId['data.skillSeedsLfsHydrated'].status, 'FAIL');
+  assert.equal(byId['data.runtimeSkillSeeds'].status, 'FAIL');
   assert.equal(byId['io.codexSessions'].status, 'WARN');
   assert.equal(byId['io.gitObjects'].status, 'WARN');
   assert.ok(byId['env.portalPublic'].details.includes('PORTAL_PUBLIC_BACKEND_API_BASE_URL'));
@@ -3991,7 +3991,7 @@ test('release preflight json output is machine readable', async () => {
       codexSessionStats: { count: 0, totalBytes: 0 },
       gitObjectHealth: { count: 0, size: '0 bytes', inPack: 1, sizePack: '1 MiB' },
       gitLfsVersion: 'git-lfs/3.7.1',
-      lfsHydrationFiles: [{ path: 'data/skills/skills.json', hydrated: true }],
+      runtimeSkillSeedFiles: [{ path: 'data/skills/skills.json', validJson: true, pointer: false }],
     },
   });
   const parsed = JSON.parse(module.formatReport(result, { json: true }));
@@ -4017,8 +4017,8 @@ test('release preflight report builder handles missing probes defensively', asyn
   assert.equal(result.exitCode, 1);
   assert.equal(result.checks.find((check) => check.id === 'git.branch').status, 'FAIL');
   assert.equal(result.checks.find((check) => check.id === 'tools.git').status, 'FAIL');
-  assert.equal(result.checks.find((check) => check.id === 'tools.gitLfs').status, 'FAIL');
-  assert.equal(result.checks.find((check) => check.id === 'data.skillSeedsLfsHydrated').status, 'WARN');
+  assert.equal(result.checks.find((check) => check.id === 'tools.gitLfs').status, 'WARN');
+  assert.equal(result.checks.find((check) => check.id === 'data.runtimeSkillSeeds').status, 'WARN');
   assert.equal(result.checks.find((check) => check.id === 'io.codexSessions').status, 'PASS');
 });
 
@@ -4050,7 +4050,7 @@ test('release preflight reports blocked child process probes without misdiagnosi
       codexSessionStats: { count: 0, totalBytes: 0 },
       gitObjectHealth: { count: 0, size: '0 bytes', inPack: 0, sizePack: '0 bytes' },
       gitLfsVersion: '',
-      lfsHydrationFiles: [],
+      runtimeSkillSeedFiles: [],
     },
   });
 
@@ -4077,8 +4077,8 @@ test('release preflight reports blocked child process probes without misdiagnosi
   assert.ok(byId['io.gitObjects'].details.includes('not probed because child process execution is blocked'));
   assert.equal(byId['tools.gitLfs'].status, 'WARN');
   assert.ok(byId['tools.gitLfs'].details.includes('not probed because child process execution is blocked'));
-  assert.equal(byId['data.skillSeedsLfsHydrated'].status, 'WARN');
-  assert.ok(byId['data.skillSeedsLfsHydrated'].details.includes('not probed because child process execution is blocked'));
+  assert.equal(byId['data.runtimeSkillSeeds'].status, 'WARN');
+  assert.ok(byId['data.runtimeSkillSeeds'].details.includes('not probed because child process execution is blocked'));
 });
 
 test('release preflight reports late blocked tool probes without stringifying probe objects', async () => {
@@ -4112,7 +4112,7 @@ test('release preflight reports late blocked tool probes without stringifying pr
       codexSessionStats: { count: 0, totalBytes: 0 },
       gitObjectHealth: { count: 0, size: '0 bytes', inPack: 0, sizePack: '0 bytes' },
       gitLfsVersion: 'git-lfs/3.7.1',
-      lfsHydrationFiles: [{ path: 'data/skills/skills.json', hydrated: true }],
+      runtimeSkillSeedFiles: [{ path: 'data/skills/skills.json', validJson: true, pointer: false }],
     },
   });
 
@@ -4128,10 +4128,10 @@ test('release preflight reports late blocked tool probes without stringifying pr
   assert.equal(byId['git.branch'].status, 'WARN');
   assert.equal(byId['io.gitObjects'].status, 'WARN');
   assert.equal(byId['tools.gitLfs'].status, 'WARN');
-  assert.equal(byId['data.skillSeedsLfsHydrated'].status, 'WARN');
+  assert.equal(byId['data.runtimeSkillSeeds'].status, 'WARN');
 });
 
-test('release preflight fails when LFS-managed skill seed files are not hydrated', async () => {
+test('release preflight fails when runtime skill seed JSON is invalid', async () => {
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'release-preflight.mjs')).href
   );
@@ -4161,9 +4161,9 @@ test('release preflight fails when LFS-managed skill seed files are not hydrated
       codexSessionStats: { count: 0, totalBytes: 0 },
       gitObjectHealth: { count: 0, size: '0 bytes', inPack: 1, sizePack: '1 MiB' },
       gitLfsVersion: 'git-lfs/3.7.1',
-      lfsHydrationFiles: [
-        { path: 'data/skills/skills.json', hydrated: true },
-        { path: 'data/skills/artifacts.json', hydrated: false },
+      runtimeSkillSeedFiles: [
+        { path: 'data/skills/skills.json', validJson: true, pointer: false },
+        { path: 'data/skills/artifacts.json', validJson: false, pointer: true },
       ],
     },
   });
@@ -4171,9 +4171,9 @@ test('release preflight fails when LFS-managed skill seed files are not hydrated
 
   assert.equal(result.exitCode, 1);
   assert.equal(byId['tools.gitLfs'].status, 'PASS');
-  assert.equal(byId['data.skillSeedsLfsHydrated'].status, 'FAIL');
-  assert.ok(byId['data.skillSeedsLfsHydrated'].details.includes('data/skills/artifacts.json'));
-  assert.ok(byId['data.skillSeedsLfsHydrated'].recommendation.includes('git lfs pull'));
+  assert.equal(byId['data.runtimeSkillSeeds'].status, 'FAIL');
+  assert.ok(byId['data.runtimeSkillSeeds'].details.includes('data/skills/artifacts.json'));
+  assert.ok(byId['data.runtimeSkillSeeds'].recommendation.includes('Regenerate the curated runtime skill seed JSON'));
 });
 
 test('verification plan includes all commercial contract guardians before tests', async () => {

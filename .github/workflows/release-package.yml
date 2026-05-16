@@ -147,7 +147,7 @@ jobs:
           ref: ${{ inputs.tag }}
           path: apps/sdkwork-claw-router
           fetch-depth: 0
-          lfs: true
+          lfs: false
           submodules: recursive
           token: ${{ secrets.SDKWORK_RELEASE_TOKEN || github.token }}
 
