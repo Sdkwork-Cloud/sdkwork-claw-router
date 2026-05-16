@@ -6,7 +6,7 @@ This documentation is for operators, developers, and delivery engineers who inst
 
 | Scenario | Guide | Default database policy | Audience |
 | --- | --- | --- | --- |
-| Install from a GitHub release or delivery package | [release-install.md](./release-install.md) | desktop uses SQLite; server/service/container use PostgreSQL | deployment and delivery |
+| Install from a GitHub release or delivery package | [release-install.md](./release-install.md) | desktop and server packages use local SQLite by default; PostgreSQL is recommended for production and multi-node deployments | deployment and delivery |
 | Install, run, or build from source | [source-install.md](./source-install.md) | development can use local SQLite; server mode should use PostgreSQL | developers and integrators |
 | First-time initialization only | [initialization.md](./initialization.md) | depends on deployment mode | operators |
 | Use the portal and APIs | [usage.md](./usage.md) | initialized database required | admins and users |
@@ -42,9 +42,9 @@ node scripts/plan-claw-router-install-packages.mjs --json
 ## Deployment Modes
 
 - `desktop`: single-machine package, local SQLite by default.
-- `archive`: self-contained server archive, external PostgreSQL by default.
-- `service`: platform-native host service package, external PostgreSQL by default.
-- `container`: container image package, external PostgreSQL by default.
+- `archive`: self-contained server archive, local SQLite by default; PostgreSQL recommended for production.
+- `service`: platform-native host service package, local SQLite by default; PostgreSQL recommended for production.
+- `container`: container image package, local SQLite by default; mount PostgreSQL configuration for production.
 - `source`: source checkout for development, validation, private builds, and integration work.
 
 ## Quick Path
@@ -66,12 +66,15 @@ Ubuntu/Debian service package:
 
 ```bash
 sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sudo install -o root -g sdkwork -m 0640 /opt/sdkwork-claw-router/.env.release.example /etc/sdkwork-claw-router/.env.release.local
-sudo editor /etc/sdkwork-claw-router/.env.release.local
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
 sudo systemctl enable --now sdkwork-claw-router
+curl http://127.0.0.1:3900/healthz
+curl http://127.0.0.1:3900/readyz
 ```
+
+The Debian service package creates `/etc/default/sdkwork-claw-router`,
+`/etc/sdkwork-claw-router/sdkwork-claw-router.toml`, and the writable data/log
+directories. The systemd unit runs installer initialization automatically before
+starting the gateway.
 
 Linux/macOS native desktop package:
 

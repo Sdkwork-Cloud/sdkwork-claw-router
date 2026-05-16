@@ -27,27 +27,22 @@ C:\Program Files\SdkWork Claw Router
 
 ## Initialization Order
 
-Recommended order:
+Recommended order for archive/manual deployments:
 
-1. Prepare `.env.release.local` or protected process environment variables.
+1. Prepare protected process environment variables when defaults are not enough.
 2. Prepare runtime TOML configuration.
-3. Set the database URL.
+3. Set the database URL only when using managed PostgreSQL.
 4. Run `sdkwork-claw-installer ensure`.
 5. Run `sdkwork-claw-installer refresh-catalog --force`.
 6. Start `sdkwork-claw-gateway`.
 7. Check `/healthz` and `/readyz`.
 
-For `service` deployments, do not enable the service until the PostgreSQL URL and runtime TOML are present. This avoids a service boot loop while the database is still unset.
+For Linux `service` deployments, the `.deb` creates the default runtime TOML and `/etc/default/sdkwork-claw-router`. The systemd unit runs `ensure` and `refresh-catalog --force` automatically before the gateway starts.
 
 Linux service packages should follow this order:
 
 ```bash
 sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sudo install -o root -g sdkwork -m 0640 /opt/sdkwork-claw-router/.env.release.example /etc/sdkwork-claw-router/.env.release.local
-sudo editor /etc/sdkwork-claw-router/.env.release.local
-sudo editor /etc/sdkwork-claw-router/sdkwork-claw-router.toml
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
 sudo systemctl enable --now sdkwork-claw-router
 sudo systemctl status sdkwork-claw-router --no-pager
 ```
@@ -100,24 +95,39 @@ desktop:
 
 server/service/container:
 
-- PostgreSQL by default
-- `max_connections = 16` by default
-- placeholder PostgreSQL URLs must be replaced
-- best for teams, production, SaaS, managed services, and commercial deployments
+- SQLite by default for single-node zero-config startup
+- `max_connections = 1` by default for local SQLite
+- PostgreSQL is recommended for teams, production, SaaS, managed services, multi-node deployments, and commercial deployments
+- PostgreSQL deployments should use `max_connections = 16` or another capacity-planned value
 
-For server/service/container deployments, the minimum required database setting is:
+For a default Linux service deployment, the package creates this runtime database configuration:
+
+```toml
+[database]
+engine = "sqlite"
+url = "sqlite:///var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite"
+max_connections = 1
+
+[paths]
+data_directory = "/var/lib/sdkwork-claw-router"
+
+[runtime]
+deployment_mode = "server"
+```
+
+For production or multi-node server/service/container deployments, set:
 
 ```bash
 export SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
 ```
 
-Systemd service packages read `/etc/sdkwork-claw-router/.env.release.local`, so put the same value there for Linux service deployments:
+Systemd service packages read `/etc/default/sdkwork-claw-router`, so put the same value there for Linux service deployments:
 
 ```text
 SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router
 ```
 
-Example TOML:
+Production PostgreSQL TOML:
 
 ```toml
 [database]
@@ -213,12 +223,12 @@ Windows commands use `.exe`:
 Installer stdout is one JSON object. Errors are JSON on stderr:
 
 ```json
-{"status":"error","errorCode":"missing_database_url","message":"..."}
+{"status":"error","errorCode":"database_error","message":"..."}
 ```
 
 Stable error codes:
 
-- `missing_database_url`
+- `missing_database_url` when a deployment explicitly requires PostgreSQL but no PostgreSQL URL is provided
 - `invalid_argument`
 - `invalid_state`
 - `database_error`

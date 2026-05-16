@@ -6,7 +6,7 @@
 
 | 场景 | 推荐文档 | 数据库默认策略 | 适用对象 |
 | --- | --- | --- | --- |
-| 从 GitHub release 或交付包安装 | [release-install.md](./release-install.md) | desktop 用 SQLite，server/service/container 用 PostgreSQL | 部署和交付 |
+| 从 GitHub release 或交付包安装 | [release-install.md](./release-install.md) | desktop 和 server 包默认用本地 SQLite；生产和多节点建议 PostgreSQL | 部署和交付 |
 | 从源码安装、开发、二次构建 | [source-install.md](./source-install.md) | 开发模式可自动使用本地 SQLite，server 模式建议 PostgreSQL | 开发者和集成方 |
 | 只关注首次初始化 | [initialization.md](./initialization.md) | 按部署模式决定 | 运维和交付 |
 | 使用控制台和 API | [usage.md](./usage.md) | 已初始化数据库 | 管理员和最终用户 |
@@ -42,9 +42,9 @@ node scripts\plan-claw-router-install-packages.mjs --json
 ## 部署模式摘要
 
 - `desktop`：桌面/单机体验包，默认使用本机 SQLite，不要求外部 PostgreSQL。
-- `archive`：自包含服务端归档包，默认要求外部 PostgreSQL。
-- `service`：平台原生主机服务包，默认要求外部 PostgreSQL。
-- `container`：容器镜像构建包，默认要求外部 PostgreSQL。
+- `archive`：自包含服务端归档包，默认使用本地 SQLite；生产建议 PostgreSQL。
+- `service`：平台原生主机服务包，默认使用本地 SQLite；生产建议 PostgreSQL。
+- `container`：容器镜像构建包，默认使用本地 SQLite；生产建议挂载 PostgreSQL 配置。
 - `source`：源码方式运行或构建，可用于开发、验证、私有构建和二次集成。
 
 ## 快速路径
@@ -66,12 +66,12 @@ Ubuntu/Debian service 包：
 
 ```bash
 sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sudo install -o root -g sdkwork -m 0640 /opt/sdkwork-claw-router/.env.release.example /etc/sdkwork-claw-router/.env.release.local
-sudo editor /etc/sdkwork-claw-router/.env.release.local
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
 sudo systemctl enable --now sdkwork-claw-router
+curl http://127.0.0.1:3900/healthz
+curl http://127.0.0.1:3900/readyz
 ```
+
+Debian service 包会自动创建 `/etc/default/sdkwork-claw-router`、`/etc/sdkwork-claw-router/sdkwork-claw-router.toml`、数据目录和日志目录。systemd unit 会在 gateway 启动前自动执行初始化和 catalog 刷新。
 
 Linux/macOS 原生 desktop 包：
 

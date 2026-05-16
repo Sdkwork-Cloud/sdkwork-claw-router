@@ -7,9 +7,9 @@ SDKWork Claw Router release 包覆盖 `archive`、`service`、`container`、`des
 | 模式 | 包类型 | 默认数据库 | 启动方式 | 推荐场景 |
 | --- | --- | --- | --- | --- |
 | `desktop` | 原生安装包（`.deb`、`.msi`、`.pkg`） | SQLite | 直接运行 gateway | 单机体验、本地演示 |
-| `archive` | `self-contained-archive` | PostgreSQL | 直接运行 gateway | 私有服务器、手动部署 |
-| `service` | 原生安装包（`.deb`、`.msi`、`.pkg`） | PostgreSQL | 主机服务管理器 | 长期运行生产服务 |
-| `container` | `container-image` | PostgreSQL | Containerfile / entrypoint | Docker、Kubernetes、容器平台 |
+| `archive` | `self-contained-archive` | SQLite | 直接运行 gateway | 私有服务器、手动部署 |
+| `service` | 原生安装包（`.deb`、`.msi`、`.pkg`） | SQLite | 主机服务管理器 | 长期运行生产服务 |
+| `container` | `container-image` | SQLite | Containerfile / entrypoint | Docker、Kubernetes、容器平台 |
 | `source` | 源码工作区 | 开发 SQLite 或 PostgreSQL | `pnpm dev` / `pnpm start` | 开发、验证、私有构建 |
 
 ## Desktop
@@ -43,13 +43,12 @@ SDKWork Claw Router release 包覆盖 `archive`、`service`、`container`、`des
 特点：
 
 - 自包含服务端归档。
-- 默认 PostgreSQL。
+- 默认本地 SQLite；生产或多节点部署配置 PostgreSQL。
 - 配置、数据、日志由部署脚本或运维系统管理。
 
 启动：
 
 ```bash
-export SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
 ./bin/sdkwork-claw-installer ensure
 ./bin/sdkwork-claw-installer refresh-catalog --force
 ./bin/sdkwork-claw-gateway
@@ -63,7 +62,8 @@ export SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db
 - Linux `.deb` service 包会安装 systemd unit。
 - macOS `.pkg` service 包会安装 launchd plist。
 - Windows `.msi` 包安装运行文件和服务元数据，实际服务注册由目标主机部署系统配置。
-- 需要把配置和数据库 URL 放在受保护位置。
+- 默认使用本地 SQLite，Linux 服务覆盖项保存在 `/etc/default/sdkwork-claw-router`。
+- 生产或多节点部署使用受保护的 PostgreSQL 配置。
 
 原生服务资产：
 
@@ -73,13 +73,10 @@ Linux: sdkwork-claw-router-linux-x64-service-0.2.0.deb
 macOS: sdkwork-claw-router-macos-arm64-service-0.2.0.pkg
 ```
 
-Linux 安装 `.deb` 后通常需要：
+Linux 安装 `.deb` 后通常只需要：
 
 ```bash
-sudo install -o root -g sdkwork -m 0640 /opt/sdkwork-claw-router/.env.release.example /etc/sdkwork-claw-router/.env.release.local
-sudo editor /etc/sdkwork-claw-router/.env.release.local
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
+sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
 sudo systemctl enable --now sdkwork-claw-router
 sudo systemctl status sdkwork-claw-router --no-pager
 ```
@@ -90,7 +87,7 @@ sudo systemctl status sdkwork-claw-router --no-pager
 
 - 包含 `container/Containerfile` 和 entrypoint。
 - entrypoint 会执行 `ensure` 和 `refresh-catalog --force`，再启动 gateway。
-- 必须把数据库、配置和可写数据目录通过环境变量或挂载传入。
+- 单节点试用可以使用本地 SQLite；生产数据库、配置和可写数据目录建议通过环境变量或挂载传入。
 
 示例：
 

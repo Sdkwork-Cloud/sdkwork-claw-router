@@ -41,12 +41,19 @@ Quick Ubuntu/Debian service install from a release asset:
 
 ```bash
 sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sudo install -o root -g sdkwork -m 0640 /opt/sdkwork-claw-router/.env.release.example /etc/sdkwork-claw-router/.env.release.local
-sudo editor /etc/sdkwork-claw-router/.env.release.local
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
 sudo systemctl enable --now sdkwork-claw-router
+curl http://127.0.0.1:3900/healthz
+curl http://127.0.0.1:3900/readyz
 ```
+
+The `.deb` package creates `/etc/sdkwork-claw-router/sdkwork-claw-router.toml`,
+`/etc/default/sdkwork-claw-router`, `/var/lib/sdkwork-claw-router`, and the
+`sdkwork` system user. The Linux systemd service runs `sdkwork-claw-installer
+ensure` and `refresh-catalog --force` automatically before the gateway starts.
+The default server database is local SQLite at
+`/var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite`; set
+`SDKWORK_CLAW_DATABASE_URL` in `/etc/default/sdkwork-claw-router` only when the
+host should use managed PostgreSQL for production or multi-node deployments.
 
 On the first install or first startup, Claw Router initializes the bootstrap
 administrator login when it is missing or incomplete. The default username is
@@ -626,28 +633,29 @@ declares:
 - desktop metadata for desktop mode
 
 Database defaults are explicit by package profile. `archive`, `service`, and
-`container` are server release profiles and default to PostgreSQL. Server
-packages require the deployed host to provide a managed PostgreSQL DSN in the
-runtime TOML config or through `SDKWORK_CLAW_DATABASE_URL`. The desktop packages default to a local SQLite database in the operating system user data directory
-and may still be pointed at another database through the same runtime config
-file.
+`container` are server release profiles and now default to local SQLite for
+single-node zero-config startup. Production and multi-node deployments should
+set a managed PostgreSQL DSN in the runtime TOML config or through
+`SDKWORK_CLAW_DATABASE_URL`. Desktop packages also default to local SQLite in
+the operating system user data directory and may still be pointed at another
+database through the same runtime config file.
 
 The runtime config file is TOML and supports:
 
 ```toml
 [database]
-engine = "postgresql"
-url = "postgresql://sdkwork_claw_router:change-me@localhost:5432/sdkwork_claw_router"
-max_connections = 16
+engine = "sqlite"
+url = "sqlite:///var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite"
+max_connections = 1
 ```
 
-Desktop templates use:
+Production PostgreSQL deployments use:
 
 ```toml
 [database]
-engine = "sqlite"
-url = "sqlite://<os-user-data-dir>/sdkwork-claw-router.sqlite"
-max_connections = 1
+engine = "postgresql"
+url = "postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
+max_connections = 16
 ```
 
 The standard config file locations are:

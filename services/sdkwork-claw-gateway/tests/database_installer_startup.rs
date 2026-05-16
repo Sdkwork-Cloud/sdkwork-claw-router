@@ -147,38 +147,36 @@ async fn gateway_env_startup_can_skip_installer_when_workspace_already_ensured_d
 }
 
 #[tokio::test]
-async fn gateway_env_startup_requires_database_url_in_server_mode() {
+async fn gateway_env_startup_initializes_zero_config_server_sqlite() {
     let _guard = env_guard().lock().unwrap();
     let saved_database_url = std::env::var("SDKWORK_CLAW_DATABASE_URL").ok();
     let saved_deployment_mode = std::env::var("SDKWORK_CLAW_DEPLOYMENT_MODE").ok();
     let saved_config_file = std::env::var("SDKWORK_CLAW_CONFIG_FILE").ok();
+    let saved_api_key_pepper = std::env::var("SDKWORK_CLAW_API_KEY_PEPPER").ok();
     let config_path = unique_runtime_config_path();
     std::env::remove_var("SDKWORK_CLAW_DATABASE_URL");
     std::env::set_var("SDKWORK_CLAW_DEPLOYMENT_MODE", "server");
     std::env::set_var("SDKWORK_CLAW_CONFIG_FILE", &config_path);
+    std::env::set_var(
+        "SDKWORK_CLAW_API_KEY_PEPPER",
+        "0123456789abcdef0123456789abcdef",
+    );
 
-    let error = sdkwork_claw_gateway::runtime::router_from_env()
+    let router = sdkwork_claw_gateway::runtime::router_from_env()
         .await
-        .expect_err("gateway startup must not silently skip a missing server database");
+        .expect("gateway startup should initialize local SQLite by default");
 
     restore_env_var("SDKWORK_CLAW_DATABASE_URL", saved_database_url);
     restore_env_var("SDKWORK_CLAW_DEPLOYMENT_MODE", saved_deployment_mode);
     restore_env_var("SDKWORK_CLAW_CONFIG_FILE", saved_config_file);
+    restore_env_var("SDKWORK_CLAW_API_KEY_PEPPER", saved_api_key_pepper);
 
-    assert!(
-        error
-            .to_string()
-            .contains("PostgreSQL configuration is required"),
-        "unexpected startup error: {error}"
-    );
-    assert!(error.to_string().contains("Runtime config file:"));
-    assert!(error
-        .to_string()
-        .contains("PostgreSQL is required for server deployments."));
+    drop(router);
     assert!(config_path.exists());
     let generated_config = std::fs::read_to_string(config_path).unwrap();
-    assert!(generated_config.contains("engine = \"postgresql\""));
-    assert!(generated_config.contains("change-me@localhost"));
+    assert!(generated_config.contains("engine = \"sqlite\""));
+    assert!(generated_config.contains("deployment_mode = \"server\""));
+    assert!(generated_config.contains("sdkwork-claw-router.sqlite"));
 }
 
 fn unique_sqlite_url() -> String {

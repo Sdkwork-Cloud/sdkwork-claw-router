@@ -304,7 +304,7 @@ fn initializes_default_desktop_runtime_config_at_explicit_location() {
 }
 
 #[test]
-fn from_env_or_initialize_creates_server_template_and_blocks_placeholder_postgres() {
+fn from_env_or_initialize_creates_zero_config_server_sqlite_template() {
     let _env_lock = ENV_LOCK.lock().unwrap();
     let root = temp_root("server-runtime-init");
     let config_path = root.join("config").join("sdkwork-claw-router.toml");
@@ -327,15 +327,54 @@ fn from_env_or_initialize_creates_server_template_and_blocks_placeholder_postgre
         ),
     ]);
 
-    let error = DatabaseConfig::from_env_or_initialize().unwrap_err();
+    let config = DatabaseConfig::from_env_or_initialize().unwrap();
 
     assert!(config_path.exists());
     let content = fs::read_to_string(config_path).unwrap();
-    assert!(content.contains("engine = \"postgresql\""));
-    assert!(content.contains(DatabaseConfig::SERVER_DEFAULT_POSTGRES_URL));
-    assert!(error.contains("PostgreSQL"));
-    assert!(error.contains("SDKWORK_CLAW_DATABASE_URL"));
-    assert!(error.contains("runtime TOML"));
+    assert_eq!(DatabaseEngine::Sqlite, config.unwrap().engine);
+    assert!(content.contains("engine = \"sqlite\""));
+    assert!(content.contains("sdkwork-claw-router.sqlite"));
+    assert!(content.contains("deployment_mode = \"server\""));
+    assert!(content.contains("For production or multi-node deployments"));
+}
+
+#[test]
+fn explicit_runtime_config_file_uses_neighbor_data_directory_for_sqlite_default() {
+    let _env_lock = ENV_LOCK.lock().unwrap();
+    let root = temp_root("explicit-config-neighbor-data");
+    let config_path = root.join("custom").join("sdkwork-claw-router.toml");
+    let program_data = root.join("program-data");
+    let _guard = EnvGuard::set(&[
+        (
+            "SDKWORK_CLAW_CONFIG_FILE",
+            Some(config_path.to_string_lossy().to_string()),
+        ),
+        ("SDKWORK_CLAW_DATABASE_URL", None),
+        ("SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS", None),
+        ("SDKWORK_CLAW_DEPLOYMENT_MODE", Some("server".to_owned())),
+        (
+            "ProgramData",
+            Some(program_data.to_string_lossy().to_string()),
+        ),
+        (
+            "PROGRAMDATA",
+            Some(program_data.to_string_lossy().to_string()),
+        ),
+    ]);
+
+    let config = DatabaseConfig::from_env_or_initialize().unwrap().unwrap();
+    let expected_data_directory = config_path.parent().unwrap().join("Data");
+    let expected_database_url = format!(
+        "sqlite://{}",
+        slash_path(&expected_data_directory.join("sdkwork-claw-router.sqlite"))
+    );
+
+    assert_eq!(expected_database_url, config.url);
+    assert!(expected_data_directory.exists());
+    assert!(
+        !program_data.join("SdkWork").exists(),
+        "explicit config files must not silently reuse or create the global server data directory"
+    );
 }
 
 #[test]
@@ -349,6 +388,7 @@ fn startup_help_text_covers_standard_config_paths_and_database_guidance() {
     assert!(server_help.contains("/etc/sdkwork-claw-router/sdkwork-claw-router.toml"));
     assert!(server_help.contains("SDKWORK_CLAW_DATABASE_URL"));
     assert!(server_help.contains("SDKWORK_CLAW_CONFIG_FILE"));
+    assert!(server_help.contains("SQLite"));
     assert!(server_help.contains("PostgreSQL"));
 
     let linux_desktop = RuntimeConfigLocation::for_platform("linux", RuntimeConfigProfile::Desktop);

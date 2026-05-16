@@ -31,9 +31,9 @@
 
 支持部署模式：
 
-- `archive`：可移植服务端目录，默认使用 PostgreSQL。
-- `service`：主机服务安装包，默认使用 PostgreSQL。
-- `container`：容器构建包，默认使用 PostgreSQL。
+- `archive`：可移植服务端目录，默认使用本地 SQLite；生产建议 PostgreSQL。
+- `service`：主机服务安装包，默认使用本地 SQLite；生产建议 PostgreSQL。
+- `container`：容器构建包，默认使用本地 SQLite；生产建议挂载 PostgreSQL 配置。
 - `desktop`：单机安装包，默认使用 SQLite。
 
 常见安装包名：
@@ -63,17 +63,29 @@ node scripts\plan-claw-router-install-packages.mjs --json
 
 ```bash
 sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sudo install -o root -g sdkwork -m 0640 /opt/sdkwork-claw-router/.env.release.example /etc/sdkwork-claw-router/.env.release.local
-sudo editor /etc/sdkwork-claw-router/.env.release.local
-sudo editor /etc/sdkwork-claw-router/sdkwork-claw-router.toml
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
 sudo systemctl enable --now sdkwork-claw-router
 curl http://127.0.0.1:3900/healthz
 curl http://127.0.0.1:3900/readyz
 ```
 
-执行 `systemctl enable --now` 前，必须在 `/etc/sdkwork-claw-router/.env.release.local` 中写入 PostgreSQL URL：
+`.deb` 包会创建 `sdkwork` 系统用户、`/etc/sdkwork-claw-router/sdkwork-claw-router.toml`、`/etc/default/sdkwork-claw-router`、`/var/lib/sdkwork-claw-router`、`/var/log/sdkwork-claw-router` 和 systemd unit。首次启动会通过 `ExecStartPre` 自动执行 `sdkwork-claw-installer ensure` 和 `sdkwork-claw-installer refresh-catalog --force`。
+
+默认数据库是本地 SQLite：
+
+```toml
+[database]
+engine = "sqlite"
+url = "sqlite:///var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite"
+max_connections = 1
+
+[paths]
+data_directory = "/var/lib/sdkwork-claw-router"
+
+[runtime]
+deployment_mode = "server"
+```
+
+生产或多节点部署时，在 `/etc/default/sdkwork-claw-router` 中设置 PostgreSQL URL：
 
 ```text
 SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router
@@ -97,6 +109,7 @@ deployment_mode = "server"
 - `/etc/sdkwork-claw-router`
 - `/var/lib/sdkwork-claw-router`
 - `/var/log/sdkwork-claw-router`
+- `/etc/default/sdkwork-claw-router`
 - `service` 包会安装 `/lib/systemd/system/sdkwork-claw-router.service`
 
 如果服务启动时自动初始化数据库，请从日志中保存首次管理员密码：
@@ -141,7 +154,7 @@ Set-Location "C:\Program Files\SdkWork Claw Router"
 .\bin\sdkwork-claw-gateway.exe
 ```
 
-server/service 部署需要在受保护的服务环境或运行时 TOML 中配置 PostgreSQL：
+生产或多节点 server/service 部署需要在受保护的服务环境或运行时 TOML 中配置 PostgreSQL：
 
 ```powershell
 $env:SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
@@ -221,7 +234,7 @@ release 包包含运行 Claw Router 所需文件：
 
 `archive` 和 `container` release 资产仍然是可移植 `.tar.gz` 或 `.zip`。
 
-不要把 `.env.release.local` 打包或提交。它必须在目标机器上创建。`PORTAL_PUBLIC_*` 只能放浏览器可见配置，不要放数据库密码、供应商密钥或管理员凭据。
+不要把 `.env.release.local` 打包或提交。归档部署可以在目标机器上生成它；Linux service 部署使用 `.deb` 自动创建的 `/etc/default/sdkwork-claw-router`。`PORTAL_PUBLIC_*` 只能放浏览器可见配置，不要放数据库密码、供应商密钥或管理员凭据。
 
 ## 4. 数据库策略
 
@@ -233,7 +246,15 @@ Linux: ${XDG_DATA_HOME:-~/.local/share}/sdkwork-claw-router/sdkwork-claw-router.
 macOS: ~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sqlite
 ```
 
-`archive`、`service`、`container` 包默认使用 PostgreSQL。可以设置 `SDKWORK_CLAW_DATABASE_URL`，也可以把同一个 DSN 写入运行时 TOML。
+`archive`、`service`、`container` 包默认使用本地 SQLite，因此单节点可以零配置启动。生产或多节点部署请设置 `SDKWORK_CLAW_DATABASE_URL`，也可以把同一个 PostgreSQL DSN 写入运行时 TOML。
+
+server/service SQLite 默认路径：
+
+```text
+Linux: /var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite
+Windows: %ProgramData%/SdkWork/Claw Router/Data/sdkwork-claw-router.sqlite
+macOS: /Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sqlite
+```
 
 默认配置路径、数据库示例和 bootstrap admin 设置见 [initialization.md](./initialization.md)。
 
@@ -334,7 +355,7 @@ docker run --rm -p 3900:3900 \
   sdkwork-claw-router:0.2.0
 ```
 
-服务和容器部署必须把运行配置、日志和可变数据目录作为可写资源挂载，并通过受保护环境变量或受保护 TOML 注入数据库 URL。
+生产服务和容器部署应把运行配置、日志和可变数据目录作为可写资源挂载，并通过受保护环境变量或受保护 TOML 注入 PostgreSQL URL。
 
 ## 8. 升级 release 版本
 
@@ -342,17 +363,17 @@ docker run --rm -p 3900:3900 \
 2. 备份数据库和运行时配置。
 3. 停止旧版本服务。
 4. 安装或解压新 release 包。
-5. 保留目标机器上的 `.env.release.local` 和运行时 TOML。
-6. 执行 `sdkwork-claw-installer ensure`。
-7. 执行 `sdkwork-claw-installer refresh-catalog --force`。
+5. 保留目标机器上的 `/etc/default/sdkwork-claw-router`、归档部署可能使用的 `.env.release.local` 和运行时 TOML。
+6. Linux service 包直接启动服务，让 systemd 自动执行 `ensure` 和 `refresh-catalog --force`。
+7. archive/manual 部署手动执行 `sdkwork-claw-installer ensure` 和 `sdkwork-claw-installer refresh-catalog --force`。
 8. 启动新版本并检查 `/healthz` 和 `/readyz`。
 
 ## 9. 故障排查
 
-- `missing_database_url`：server/service/container 模式缺少 PostgreSQL URL。
+- `missing_database_url`：部署明确要求 PostgreSQL，但没有提供 PostgreSQL URL。
 - `invalid_argument`：命令参数不受支持或格式错误。
 - `invalid_state`：当前安装状态不能满足请求的命令。
 - `database_error`：数据库不可达、权限不足或 schema 初始化失败。
 - `catalog_error`：模型目录路径、版本或内容校验失败。
 - `/healthz` 成功但 `/readyz` 失败：edge 进程已启动，但 gateway/admin/app/portal upstream 或数据库未就绪。
-- Linux 服务启动后立即退出：检查 `/etc/sdkwork-claw-router/.env.release.local`、`/etc/sdkwork-claw-router/sdkwork-claw-router.toml` 和 `journalctl -u sdkwork-claw-router`。
+- Linux 服务启动后立即退出：检查 `/etc/default/sdkwork-claw-router`、`/etc/sdkwork-claw-router/sdkwork-claw-router.toml` 和 `journalctl -u sdkwork-claw-router`。

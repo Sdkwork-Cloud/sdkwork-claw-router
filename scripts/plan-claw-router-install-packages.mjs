@@ -10,7 +10,7 @@ const SUPPORTED_DEPLOYMENT_MODES = Object.freeze(['archive', 'service', 'contain
 const DEFAULT_VERSION = DEFAULT_RELEASE_VERSION;
 const HEALTH_CHECKS = Object.freeze(['/healthz', '/readyz']);
 const RUNTIME_CONFIG_TEMPLATE_PATH = 'config/sdkwork-claw-router.toml.example';
-const SERVER_POSTGRES_DEFAULT_URL = 'postgresql://sdkwork_claw_router:change-me@localhost:5432/sdkwork_claw_router';
+const POSTGRES_DSN_EXAMPLE = 'postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router';
 const FAST_INITIALIZATION_CONTRACT = Object.freeze([
   'host-env-prepare',
   'runtime-config-write',
@@ -300,12 +300,14 @@ function databasePolicyFor({ platform, runtimeProfile }) {
 
   return {
     ...basePolicy,
-    defaultEngine: 'postgresql',
-    defaultUrl: SERVER_POSTGRES_DEFAULT_URL,
-    defaultSqlitePath: null,
-    defaultSqliteUrl: null,
-    maxConnections: 16,
-    requiresExternalDatabase: true,
+    defaultEngine: 'sqlite',
+    defaultUrl: `sqlite://${locations.sqlitePath}`,
+    defaultSqlitePath: locations.sqlitePath,
+    defaultSqliteUrl: `sqlite://${locations.sqlitePath}`,
+    maxConnections: 1,
+    requiresExternalDatabase: false,
+    productionRecommendedEngine: 'postgresql',
+    productionDatabaseUrlExample: POSTGRES_DSN_EXAMPLE,
   };
 }
 
@@ -336,20 +338,20 @@ function runtimeConfigLocationsFor(platform, runtimeProfile) {
     return {
       configFile: '%ProgramData%/SdkWork/Claw Router/sdkwork-claw-router.toml',
       dataDirectory: '%ProgramData%/SdkWork/Claw Router/Data',
-      sqlitePath: null,
+      sqlitePath: '%ProgramData%/SdkWork/Claw Router/Data/sdkwork-claw-router.sqlite',
     };
   }
   if (platform === 'macos') {
     return {
       configFile: '/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml',
       dataDirectory: '/Library/Application Support/SdkWork/Claw Router',
-      sqlitePath: null,
+      sqlitePath: '/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sqlite',
     };
   }
   return {
     configFile: '/etc/sdkwork-claw-router/sdkwork-claw-router.toml',
     dataDirectory: '/var/lib/sdkwork-claw-router',
-    sqlitePath: null,
+    sqlitePath: '/var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite',
   };
 }
 
@@ -556,10 +558,16 @@ function validatePackageItem(packageItem, seenIds, issues) {
     if (!packageItem.databasePolicy?.defaultSqlitePath) {
       issues.push(`${packageItem.id} desktop packages must declare the default SQLite file path`);
     }
-  } else if (packageItem.databasePolicy?.defaultEngine !== 'postgresql') {
-    issues.push(`${packageItem.id} server packages must default to PostgreSQL`);
-  } else if (packageItem.databasePolicy?.defaultSqliteUrl !== null) {
-    issues.push(`${packageItem.id} server packages must not default to SQLite`);
+  } else {
+    if (packageItem.databasePolicy?.defaultEngine !== 'sqlite') {
+      issues.push(`${packageItem.id} server package modes must default to local SQLite for zero-config single-node startup`);
+    }
+    if (!packageItem.databasePolicy?.defaultSqlitePath) {
+      issues.push(`${packageItem.id} server package modes must declare the default SQLite file path`);
+    }
+    if (packageItem.databasePolicy?.productionRecommendedEngine !== 'postgresql') {
+      issues.push(`${packageItem.id} server package modes must recommend PostgreSQL for production`);
+    }
   }
   if (
     packageItem.deploymentMode === 'container'
@@ -680,7 +688,7 @@ export {
   FAST_INITIALIZATION_CONTRACT,
   INSTALL_PACKAGE_SCHEMA_VERSION,
   RUNTIME_CONFIG_TEMPLATE_PATH,
-  SERVER_POSTGRES_DEFAULT_URL,
+  POSTGRES_DSN_EXAMPLE,
   SUPPORTED_ARCHITECTURES,
   SUPPORTED_DEPLOYMENT_MODES,
   SUPPORTED_PLATFORMS,

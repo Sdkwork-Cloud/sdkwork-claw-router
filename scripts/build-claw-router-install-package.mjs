@@ -564,16 +564,20 @@ function createInstallGuide(packageItem) {
     '',
   ];
 
-  if (packageItem.runtimeProfile === 'desktop') {
+  if (packageItem.databasePolicy.defaultEngine === 'sqlite') {
     lines.push(
-      'Desktop deployments default to SQLite.',
+      packageItem.runtimeProfile === 'desktop'
+        ? 'Desktop deployments default to SQLite.'
+        : 'This package is runnable out of the box with local SQLite for single-node deployments.',
       `Default SQLite file: ${policy.defaultSqlitePath}`,
-      'Override SDKWORK_CLAW_DATABASE_URL only for diagnostics or managed private deployments.',
+      packageItem.runtimeProfile === 'desktop'
+        ? 'Override SDKWORK_CLAW_DATABASE_URL only for diagnostics or managed private deployments.'
+        : `For production or multi-node deployments, set SDKWORK_CLAW_DATABASE_URL to a managed PostgreSQL DSN, for example ${policy.productionDatabaseUrlExample}.`,
       '',
     );
   } else {
     lines.push(
-      'PostgreSQL is required for server deployments.',
+      'This package is configured for external PostgreSQL.',
       'Set SDKWORK_CLAW_DATABASE_URL to the managed PostgreSQL DSN before first start.',
       'Example: SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router',
       `Set SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS to ${policy.maxConnections} or another capacity-planned value.`,
@@ -584,12 +588,29 @@ function createInstallGuide(packageItem) {
   lines.push(
     '## Fast Initialization',
     '',
-    'Run these commands after unpacking and before enabling traffic:',
-    '',
-    '```sh',
-    ...packageItem.initCommands,
-    '```',
-    '',
+  );
+  if (packageItem.deploymentMode === 'service' && packageItem.platform === 'linux') {
+    lines.push(
+      'Linux service packages run initialization automatically from systemd before the gateway starts:',
+      '',
+      '```sh',
+      ...packageItem.initCommands.map((command) => command.replace('./bin/', '/opt/sdkwork-claw-router/bin/')),
+      '```',
+      '',
+      'Use the commands manually only for recovery or operator-driven catalog refreshes.',
+      '',
+    );
+  } else {
+    lines.push(
+      'Run these commands after unpacking and before enabling traffic:',
+      '',
+      '```sh',
+      ...packageItem.initCommands,
+      '```',
+      '',
+    );
+  }
+  lines.push(
     'The installer writes missing runtime config files, validates database readiness, refreshes the SDK catalog, and then leaves startup to the package mode.',
     '',
     '## Security',
@@ -645,6 +666,14 @@ function createRuntimeConfigTemplate(packageItem) {
     lines.push(
       '# Server, service, archive, and container releases require an external PostgreSQL database.',
       '# Replace the url with the managed PostgreSQL DSN for the target environment.',
+      '',
+    );
+  } else if (packageItem.runtimeProfile === 'server') {
+    lines.push(
+      '# This server/service package runs with local SQLite by default for quick single-node installs.',
+      `# Default SQLite file: ${policy.defaultSqlitePath}`,
+      '# For production or multi-node deployments, change engine to "postgresql" and set url to a managed PostgreSQL DSN.',
+      `# Example PostgreSQL url: ${policy.productionDatabaseUrlExample}`,
       '',
     );
   } else {
@@ -728,9 +757,12 @@ function createServiceManifest(packageItem) {
     '[Service]',
     'Type=simple',
     'WorkingDirectory=/opt/sdkwork-claw-router',
-    `ExecStart=/opt/sdkwork-claw-router/bin/${packageItem.binaryName}`,
-    'EnvironmentFile=/etc/sdkwork-claw-router/.env.release.local',
+    'EnvironmentFile=-/etc/default/sdkwork-claw-router',
     `Environment=SDKWORK_CLAW_CONFIG_FILE=${packageItem.databasePolicy.configFile.path}`,
+    'Environment=SDKWORK_CLAW_DEPLOYMENT_MODE=server',
+    'ExecStartPre=/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure',
+    'ExecStartPre=/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force',
+    `ExecStart=/opt/sdkwork-claw-router/bin/${packageItem.binaryName}`,
     'Restart=on-failure',
     'RestartSec=5',
     'User=sdkwork',

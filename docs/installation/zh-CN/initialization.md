@@ -27,27 +27,22 @@ C:\Program Files\SdkWork Claw Router
 
 ## 初始化顺序
 
-推荐顺序：
+archive/manual 部署推荐顺序：
 
-1. 准备 `.env.release.local` 或受保护的进程环境变量。
+1. 默认配置不足时，准备受保护的进程环境变量。
 2. 准备运行时 TOML 配置。
-3. 设置数据库 URL。
+3. 只有使用托管 PostgreSQL 时才设置数据库 URL。
 4. 执行 `sdkwork-claw-installer ensure`。
 5. 执行 `sdkwork-claw-installer refresh-catalog --force`。
 6. 启动 `sdkwork-claw-gateway`。
 7. 检查 `/healthz` 和 `/readyz`。
 
-`service` 部署不要在 PostgreSQL URL 和运行时 TOML 准备好之前启用服务，避免服务因为缺少数据库配置而反复重启。
+Linux `service` 部署中，`.deb` 会创建默认运行时 TOML 和 `/etc/default/sdkwork-claw-router`。systemd unit 会在 gateway 启动前自动执行 `ensure` 和 `refresh-catalog --force`。
 
 Linux service 包推荐顺序：
 
 ```bash
 sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sudo install -o root -g sdkwork -m 0640 /opt/sdkwork-claw-router/.env.release.example /etc/sdkwork-claw-router/.env.release.local
-sudo editor /etc/sdkwork-claw-router/.env.release.local
-sudo editor /etc/sdkwork-claw-router/sdkwork-claw-router.toml
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
 sudo systemctl enable --now sdkwork-claw-router
 sudo systemctl status sdkwork-claw-router --no-pager
 ```
@@ -100,24 +95,39 @@ desktop：
 
 server/service/container：
 
-- 默认 PostgreSQL
-- 默认 `max_connections = 16`
-- 必须替换占位 PostgreSQL URL
-- 适合团队、生产、SaaS、托管服务和商业部署
+- 默认本地 SQLite，支持单节点零配置启动
+- 本地 SQLite 默认 `max_connections = 1`
+- 生产、团队、SaaS、托管服务、多节点和商业部署建议 PostgreSQL
+- PostgreSQL 部署使用 `max_connections = 16` 或经过容量规划的值
 
-server/service/container 部署的最小数据库配置是：
+默认 Linux service 部署会创建以下运行时数据库配置：
+
+```toml
+[database]
+engine = "sqlite"
+url = "sqlite:///var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite"
+max_connections = 1
+
+[paths]
+data_directory = "/var/lib/sdkwork-claw-router"
+
+[runtime]
+deployment_mode = "server"
+```
+
+生产或多节点 server/service/container 部署可设置：
 
 ```bash
 export SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
 ```
 
-Linux systemd service 包会读取 `/etc/sdkwork-claw-router/.env.release.local`，因此服务部署建议把同一配置写入该文件：
+Linux systemd service 包会读取 `/etc/default/sdkwork-claw-router`，因此生产服务部署可把同一配置写入该文件：
 
 ```text
 SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router
 ```
 
-示例 TOML：
+生产 PostgreSQL TOML：
 
 ```toml
 [database]
@@ -213,12 +223,12 @@ Windows 命令使用 `.exe`：
 installer 标准输出为一个 JSON 对象。错误输出也是 JSON：
 
 ```json
-{"status":"error","errorCode":"missing_database_url","message":"..."}
+{"status":"error","errorCode":"database_error","message":"..."}
 ```
 
 稳定错误码：
 
-- `missing_database_url`
+- `missing_database_url`：部署明确要求 PostgreSQL，但没有提供 PostgreSQL URL
 - `invalid_argument`
 - `invalid_state`
 - `database_error`

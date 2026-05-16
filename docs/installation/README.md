@@ -14,3 +14,12 @@ For `v0.2.0` and later, prefer native installers for quick deployment:
 - macOS service/desktop: `.pkg`
 
 Portable `.tar.gz` and `.zip` assets remain available for `archive` and `container` modes.
+
+Ubuntu/Debian service packages are zero-config for a single node:
+
+```bash
+sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
+sudo systemctl enable --now sdkwork-claw-router
+```
+
+The package creates the default TOML, `/etc/default/sdkwork-claw-router`, data/log directories, and runs initialization from systemd before startup.

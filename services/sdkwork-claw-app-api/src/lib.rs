@@ -1963,19 +1963,41 @@ mod tests {
     }
 
     #[tokio::test(flavor = "current_thread")]
-    async fn router_from_env_requires_database_url_for_install_checked_startup() {
+    async fn router_from_env_initializes_zero_config_server_sqlite() {
         let _guard = env_guard().lock().unwrap();
         let saved_database_url = std::env::var("SDKWORK_CLAW_DATABASE_URL").ok();
         let saved_deployment_mode = std::env::var("SDKWORK_CLAW_DEPLOYMENT_MODE").ok();
         let saved_config_file = std::env::var("SDKWORK_CLAW_CONFIG_FILE").ok();
+        let saved_api_key_pepper = std::env::var("SDKWORK_CLAW_API_KEY_PEPPER").ok();
+        let saved_trusted_subject_secret =
+            std::env::var("SDKWORK_CLAW_TRUSTED_SUBJECT_SECRET").ok();
+        let saved_app_session_secret = std::env::var("SDKWORK_CLAW_APP_SESSION_SECRET").ok();
+        let saved_payment_webhook_secret =
+            std::env::var("SDKWORK_CLAW_PAYMENT_WEBHOOK_SECRET").ok();
         let config_path = unique_runtime_config_path();
         std::env::remove_var("SDKWORK_CLAW_DATABASE_URL");
         std::env::set_var("SDKWORK_CLAW_DEPLOYMENT_MODE", "server");
         std::env::set_var("SDKWORK_CLAW_CONFIG_FILE", &config_path);
+        std::env::set_var(
+            "SDKWORK_CLAW_API_KEY_PEPPER",
+            "0123456789abcdef0123456789abcdef",
+        );
+        std::env::set_var(
+            "SDKWORK_CLAW_TRUSTED_SUBJECT_SECRET",
+            "trusted-subject-secret-0123456789",
+        );
+        std::env::set_var(
+            "SDKWORK_CLAW_APP_SESSION_SECRET",
+            "app-session-secret-0123456789abcd",
+        );
+        std::env::set_var(
+            "SDKWORK_CLAW_PAYMENT_WEBHOOK_SECRET",
+            "payment-webhook-secret-0123456789abcdef",
+        );
 
-        let error = router_from_env()
+        let router = router_from_env()
             .await
-            .expect_err("app-api startup must fail instead of serving an empty App Center store");
+            .expect("app-api startup should initialize local SQLite by default");
 
         if let Some(value) = saved_database_url {
             std::env::set_var("SDKWORK_CLAW_DATABASE_URL", value);
@@ -1990,20 +2012,22 @@ mod tests {
         } else {
             std::env::remove_var("SDKWORK_CLAW_CONFIG_FILE");
         }
-        assert!(
-            error
-                .to_string()
-                .contains("PostgreSQL configuration is required"),
-            "unexpected startup error: {error}"
+        restore_env_var("SDKWORK_CLAW_API_KEY_PEPPER", saved_api_key_pepper);
+        restore_env_var(
+            "SDKWORK_CLAW_TRUSTED_SUBJECT_SECRET",
+            saved_trusted_subject_secret,
         );
-        assert!(error.to_string().contains("Runtime config file:"));
-        assert!(error
-            .to_string()
-            .contains("PostgreSQL is required for server deployments."));
+        restore_env_var("SDKWORK_CLAW_APP_SESSION_SECRET", saved_app_session_secret);
+        restore_env_var(
+            "SDKWORK_CLAW_PAYMENT_WEBHOOK_SECRET",
+            saved_payment_webhook_secret,
+        );
+        drop(router);
         assert!(config_path.exists());
         let generated_config = std::fs::read_to_string(config_path).unwrap();
-        assert!(generated_config.contains("engine = \"postgresql\""));
-        assert!(generated_config.contains("change-me@localhost"));
+        assert!(generated_config.contains("engine = \"sqlite\""));
+        assert!(generated_config.contains("deployment_mode = \"server\""));
+        assert!(generated_config.contains("sdkwork-claw-router.sqlite"));
     }
 
     #[test]
@@ -2094,5 +2118,13 @@ mod tests {
         path.push(format!("sdkwork-claw-app-api-runtime-{millis}"));
         path.push("sdkwork-claw-router.toml");
         path
+    }
+
+    fn restore_env_var(name: &str, value: Option<String>) {
+        if let Some(value) = value {
+            std::env::set_var(name, value);
+        } else {
+            std::env::remove_var(name);
+        }
     }
 }

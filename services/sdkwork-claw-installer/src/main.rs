@@ -298,6 +298,8 @@ struct CatalogRefreshOutput {
     snapshot_id: Option<String>,
     sync_run_id: Option<String>,
     last_catalog_refresh_status: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    bootstrap_admin: Option<BootstrapAdminOutput>,
 }
 
 #[derive(Debug, Serialize)]
@@ -414,6 +416,7 @@ impl CatalogRefreshOutput {
             snapshot_id: refresh.snapshot_id,
             sync_run_id: refresh.sync_run_id,
             last_catalog_refresh_status: status_report.last_catalog_refresh_status,
+            bootstrap_admin: refresh.bootstrap_admin.map(BootstrapAdminOutput::from),
         }
     }
 }

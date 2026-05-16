@@ -7,9 +7,9 @@ SDKWork Claw Router release packages cover `archive`, `service`, `container`, an
 | Mode | Package kind | Default database | Startup | Recommended use |
 | --- | --- | --- | --- | --- |
 | `desktop` | native installer (`.deb`, `.msi`, `.pkg`) | SQLite | run gateway directly | local trial and demo |
-| `archive` | `self-contained-archive` | PostgreSQL | run gateway directly | private server, manual deployment |
-| `service` | native installer (`.deb`, `.msi`, `.pkg`) | PostgreSQL | host service manager | long-running production service |
-| `container` | `container-image` | PostgreSQL | Containerfile / entrypoint | Docker, Kubernetes, container platforms |
+| `archive` | `self-contained-archive` | SQLite | run gateway directly | private server, manual deployment |
+| `service` | native installer (`.deb`, `.msi`, `.pkg`) | SQLite | host service manager | long-running production service |
+| `container` | `container-image` | SQLite | Containerfile / entrypoint | Docker, Kubernetes, container platforms |
 | `source` | source checkout | development SQLite or PostgreSQL | `pnpm dev` / `pnpm start` | development, validation, private builds |
 
 ## Desktop
@@ -43,13 +43,12 @@ From a portable archive package root, use:
 Characteristics:
 
 - Self-contained server archive.
-- PostgreSQL by default.
+- Local SQLite by default; configure PostgreSQL for production or multi-node deployments.
 - Configuration, data, and logs are managed by deployment scripts or operations tooling.
 
 Start:
 
 ```bash
-export SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
 ./bin/sdkwork-claw-installer ensure
 ./bin/sdkwork-claw-installer refresh-catalog --force
 ./bin/sdkwork-claw-gateway
@@ -63,7 +62,8 @@ Characteristics:
 - Linux `.deb` service packages install the systemd unit.
 - macOS `.pkg` service packages install the launchd plist.
 - Windows `.msi` packages install runtime files and service metadata for host-specific service registration.
-- Requires protected configuration and database URL storage.
+- Uses local SQLite by default and stores protected service overrides in `/etc/default/sdkwork-claw-router` on Linux.
+- Use protected PostgreSQL configuration for production or multi-node deployments.
 
 Native service assets:
 
@@ -76,10 +76,7 @@ macOS: sdkwork-claw-router-macos-arm64-service-0.2.0.pkg
 Typical Linux systemd setup after installing the `.deb`:
 
 ```bash
-sudo install -o root -g sdkwork -m 0640 /opt/sdkwork-claw-router/.env.release.example /etc/sdkwork-claw-router/.env.release.local
-sudo editor /etc/sdkwork-claw-router/.env.release.local
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
+sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
 sudo systemctl enable --now sdkwork-claw-router
 sudo systemctl status sdkwork-claw-router --no-pager
 ```
@@ -90,7 +87,7 @@ Characteristics:
 
 - Includes `container/Containerfile` and entrypoint.
 - Entrypoint runs `ensure`, `refresh-catalog --force`, then starts gateway.
-- Database, configuration, and writable data must be injected through environment variables or mounts.
+- Local SQLite can be used for single-node trials; production database, configuration, and writable data should be injected through environment variables or mounts.
 
 Example:
 

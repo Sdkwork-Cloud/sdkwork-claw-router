@@ -174,6 +174,17 @@ async fn installer_cli_refresh_catalog_auto_install_uses_requested_catalog_root(
     assert_eq!(1, refresh_payload["vendorCount"]);
     assert_eq!("installed", refresh_payload["installationStatus"]);
     assert_eq!(true, refresh_payload["externalCatalog"]);
+    assert_eq!("created", refresh_payload["bootstrapAdmin"]["status"]);
+    assert_eq!("admin", refresh_payload["bootstrapAdmin"]["username"]);
+    assert_eq!("10", refresh_payload["bootstrapAdmin"]["tenantId"]);
+    assert_eq!("20", refresh_payload["bootstrapAdmin"]["organizationId"]);
+    assert_eq!(true, refresh_payload["bootstrapAdmin"]["generatedPassword"]);
+    assert!(
+        refresh_payload["bootstrapAdmin"]["initialPassword"]
+            .as_str()
+            .is_some_and(|value| value.len() >= 12),
+        "first refresh-catalog output must expose the one-time initial admin password when it performs the full install"
+    );
     assert_eq!(
         catalog_root.to_string_lossy().as_ref(),
         refresh_payload["catalogSource"]
@@ -479,9 +490,9 @@ async fn installer_cli_status_remains_machine_readable_when_persisted_external_c
 }
 
 #[test]
-fn installer_cli_reports_missing_database_url_as_machine_readable_error() {
+fn installer_cli_auto_initializes_server_sqlite_runtime_config() {
     let binary = env!("CARGO_BIN_EXE_sdkwork-claw-installer");
-    let config_path = unique_runtime_config_path("server-missing-db");
+    let config_path = unique_runtime_config_path("server-sqlite");
 
     let output = Command::new(binary)
         .arg("status")
@@ -491,34 +502,20 @@ fn installer_cli_reports_missing_database_url_as_machine_readable_error() {
         .output()
         .unwrap();
 
-    assert!(!output.status.success());
-    assert_eq!(
-        "",
-        stdout_trim(&output),
-        "installer errors must not mix human text into stdout"
+    assert!(
+        output.status.success(),
+        "server installer startup should initialize local SQLite config and continue: {}",
+        stderr_trim(&output)
     );
-    let payload = stderr_json(&output);
-    assert_eq!("error", payload["status"]);
-    assert_eq!("missing_database_url", payload["errorCode"]);
-    assert!(payload["message"]
-        .as_str()
-        .unwrap()
-        .contains("PostgreSQL configuration is required before the server can start"));
-    assert!(payload["message"]
-        .as_str()
-        .unwrap()
-        .contains("Runtime config file:"));
-    assert!(payload["message"]
-        .as_str()
-        .unwrap()
-        .contains("PostgreSQL is required for server deployments."));
+    assert_eq!("not_installed", stdout_json(&output)["status"]);
     assert!(
         config_path.exists(),
-        "missing server runtime TOML must be initialized before the PostgreSQL guidance is reported"
+        "missing server runtime TOML must be initialized automatically"
     );
     let generated_config = fs::read_to_string(config_path).unwrap();
-    assert!(generated_config.contains("engine = \"postgresql\""));
-    assert!(generated_config.contains("change-me@localhost"));
+    assert!(generated_config.contains("engine = \"sqlite\""));
+    assert!(generated_config.contains("deployment_mode = \"server\""));
+    assert!(generated_config.contains("sdkwork-claw-router.sqlite"));
 }
 
 #[test]

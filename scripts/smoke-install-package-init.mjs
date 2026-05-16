@@ -141,6 +141,7 @@ function createInstallInitSmokePlan({
 
   const runtimeConfigPath = path.join(absoluteTmpRoot, 'sdkwork-claw-router.toml');
   const databaseEngine = packageItem.databasePolicy.defaultEngine;
+  const deploymentMode = packageItem.runtimeProfile === 'desktop' ? 'desktop' : 'server';
   const databasePath = databaseEngine === 'sqlite'
     ? path.join(absoluteTmpRoot, 'sdkwork-claw-router-install-init.sqlite')
     : null;
@@ -152,6 +153,7 @@ function createInstallInitSmokePlan({
   const env = createSmokeEnvironment({
     databaseUrl,
     databaseEngine,
+    deploymentMode,
     releaseEnvPath,
     runtimeConfigPath,
     modelsCatalogRoot,
@@ -176,6 +178,7 @@ function createInstallInitSmokePlan({
     releaseEnvPath,
     runtimeConfigPath,
     databaseEngine,
+    deploymentMode,
     databasePath,
     databaseUrl,
     modelsCatalogRoot,
@@ -219,7 +222,7 @@ function createInstallInitSmokePlan({
   };
 }
 
-function createSmokeEnvironment({ databaseUrl, databaseEngine, releaseEnvPath, runtimeConfigPath, modelsCatalogRoot }) {
+function createSmokeEnvironment({ databaseUrl, databaseEngine, deploymentMode, releaseEnvPath, runtimeConfigPath, modelsCatalogRoot }) {
   const env = {
     SDKWORK_MODELS_CATALOG_ROOT: modelsCatalogRoot,
     SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL: DEFAULT_RELEASE_POSTGRES_URL,
@@ -230,7 +233,7 @@ function createSmokeEnvironment({ databaseUrl, databaseEngine, releaseEnvPath, r
     PORTAL_PUBLIC_TOOL_API_ENABLED: 'false',
     SDKWORK_CLAW_RELEASE_ENV_FILE: releaseEnvPath,
     SDKWORK_CLAW_CONFIG_FILE: runtimeConfigPath,
-    SDKWORK_CLAW_DEPLOYMENT_MODE: databaseEngine === 'sqlite' ? 'desktop' : 'server',
+    SDKWORK_CLAW_DEPLOYMENT_MODE: deploymentMode,
   };
   if (databaseEngine === 'sqlite') {
     env.SDKWORK_CLAW_DATABASE_URL = databaseUrl;
@@ -254,7 +257,7 @@ function validateInstallInitSmokePlan(plan) {
     issues.push('releaseEnvPath must be an absolute path');
   }
   if (plan.databaseEngine === 'sqlite' && !plan.databaseUrl?.startsWith('sqlite://')) {
-    issues.push('desktop install init smoke must use sqlite://');
+    issues.push('SQLite install init smoke must use sqlite://');
   }
   if (plan.databaseEngine === 'postgresql' && !plan.databaseUrl?.startsWith('postgresql://')) {
     issues.push('server install init smoke must use postgresql://');
@@ -289,7 +292,7 @@ function validateInstallInitSmokePlan(plan) {
     issues.push('installer environment must include config file and model catalog roots');
   }
   if (plan.databaseEngine === 'sqlite' && !plan.env?.SDKWORK_CLAW_DATABASE_URL) {
-    issues.push('desktop installer environment must include SDKWORK_CLAW_DATABASE_URL for SQLite smoke');
+    issues.push('installer environment must include SDKWORK_CLAW_DATABASE_URL for SQLite smoke');
   }
   if (plan.mode === 'real-installer' && !plan.installerBin) {
     issues.push('real-installer mode requires installerBin');
@@ -375,7 +378,7 @@ async function writeRuntimeConfigForSmoke(plan) {
     `data_directory = "${toPosixPath(plan.tmpRoot)}"`,
     '',
     '[runtime]',
-    `deployment_mode = "${plan.databaseEngine === 'sqlite' ? 'desktop' : 'server'}"`,
+    `deployment_mode = "${plan.deploymentMode}"`,
     '',
   ].join('\n');
   await mkdir(path.dirname(plan.runtimeConfigPath), { recursive: true });

@@ -241,10 +241,18 @@ impl DatabaseConfig {
             String::new(),
         ];
         if profile == RuntimeConfigProfile::Server {
-            lines.push("# Server deployments require PostgreSQL.".to_owned());
             lines.push(
-                "# Replace the placeholder password/host before starting the server.".to_owned(),
+                "# Server/service deployments run with local SQLite by default for quick single-node installs."
+                    .to_owned(),
             );
+            lines.push(
+                "# For production or multi-node deployments, set [database].engine to \"postgresql\" and replace [database].url with a managed PostgreSQL DSN."
+                    .to_owned(),
+            );
+            lines.push(format!(
+                "# Default SQLite file: {}",
+                location.sqlite_database_path().display()
+            ));
             lines.push(String::new());
         } else {
             lines.push("# Desktop deployments default to a local SQLite database.".to_owned());
@@ -278,7 +286,13 @@ impl DatabaseConfig {
         location: &RuntimeConfigLocation,
     ) -> Result<Self, String> {
         match profile {
-            RuntimeConfigProfile::Server => Self::from_url(Self::SERVER_DEFAULT_POSTGRES_URL),
+            RuntimeConfigProfile::Server => Self::from_url_with_max_connections(
+                format!(
+                    "sqlite://{}",
+                    portable_path(&location.sqlite_database_path())
+                ),
+                1,
+            ),
             RuntimeConfigProfile::Desktop => Self::from_url_with_max_connections(
                 format!(
                     "sqlite://{}",
@@ -297,16 +311,11 @@ impl DatabaseConfig {
         if profile != RuntimeConfigProfile::Server {
             return Ok(());
         }
-        if self.engine != DatabaseEngine::Postgres {
+        if self.engine == DatabaseEngine::Postgres
+            && self.url.trim() == Self::SERVER_DEFAULT_POSTGRES_URL
+        {
             return Err(runtime_profile_error(
-                "PostgreSQL is required for server deployments, but the configured database URL is not PostgreSQL.",
-                profile,
-                location,
-            ));
-        }
-        if self.url.trim() == Self::SERVER_DEFAULT_POSTGRES_URL {
-            return Err(runtime_profile_error(
-                "PostgreSQL configuration is required before the server can start; the runtime TOML still contains the default placeholder URL.",
+                "PostgreSQL configuration is incomplete; the runtime TOML still contains the default placeholder URL.",
                 profile,
                 location,
             ));
@@ -359,13 +368,18 @@ impl DatabaseConfig {
                 format!("Runtime config file: {}", location.config_file.display()),
                 format!("Data directory: {}", location.data_directory.display()),
                 "Set SDKWORK_CLAW_CONFIG_FILE to override the runtime TOML location.".to_owned(),
-                "PostgreSQL is required for server deployments.".to_owned(),
+                "Server/service deployments default to local SQLite for quick single-node installs."
+                    .to_owned(),
                 format!(
-                    "Set SDKWORK_CLAW_DATABASE_URL or edit [database].url in {}",
+                    "Default SQLite file: {}",
+                    location.sqlite_database_path().display()
+                ),
+                format!(
+                    "For production PostgreSQL, set SDKWORK_CLAW_DATABASE_URL or edit [database].url in {}",
                     location.config_file.display()
                 ),
                 format!(
-                    "Default PostgreSQL URL placeholder: {}",
+                    "PostgreSQL DSN example: {}",
                     Self::SERVER_DEFAULT_POSTGRES_URL
                 ),
             ],

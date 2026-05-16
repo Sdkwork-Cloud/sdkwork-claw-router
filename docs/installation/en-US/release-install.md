@@ -31,9 +31,9 @@ Supported architectures:
 
 Supported deployment modes:
 
-- `archive`: portable server directory, PostgreSQL by default.
-- `service`: host service installer, PostgreSQL by default.
-- `container`: container build package, PostgreSQL by default.
+- `archive`: portable server directory, local SQLite by default; PostgreSQL recommended for production.
+- `service`: host service installer, local SQLite by default; PostgreSQL recommended for production.
+- `container`: container build package, local SQLite by default; mount PostgreSQL configuration for production.
 - `desktop`: single-machine installer, SQLite by default.
 
 Common package names:
@@ -63,23 +63,35 @@ Use this path for a long-running server on Ubuntu or Debian:
 
 ```bash
 sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
-sudo install -o root -g sdkwork -m 0640 /opt/sdkwork-claw-router/.env.release.example /etc/sdkwork-claw-router/.env.release.local
-sudo editor /etc/sdkwork-claw-router/.env.release.local
-sudo editor /etc/sdkwork-claw-router/sdkwork-claw-router.toml
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
-sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
 sudo systemctl enable --now sdkwork-claw-router
 curl http://127.0.0.1:3900/healthz
 curl http://127.0.0.1:3900/readyz
 ```
 
-Before `systemctl enable --now`, set the PostgreSQL URL in either `/etc/sdkwork-claw-router/.env.release.local`:
+The `.deb` package creates the `sdkwork` system user, `/etc/sdkwork-claw-router/sdkwork-claw-router.toml`, `/etc/default/sdkwork-claw-router`, `/var/lib/sdkwork-claw-router`, `/var/log/sdkwork-claw-router`, and the systemd unit. The first start runs `sdkwork-claw-installer ensure` and `sdkwork-claw-installer refresh-catalog --force` automatically from `ExecStartPre`.
+
+The default database is local SQLite:
+
+```toml
+[database]
+engine = "sqlite"
+url = "sqlite:///var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite"
+max_connections = 1
+
+[paths]
+data_directory = "/var/lib/sdkwork-claw-router"
+
+[runtime]
+deployment_mode = "server"
+```
+
+For production or multi-node deployments, set the PostgreSQL URL in `/etc/default/sdkwork-claw-router`:
 
 ```text
 SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router
 ```
 
-or in `/etc/sdkwork-claw-router/sdkwork-claw-router.toml`:
+or set it in `/etc/sdkwork-claw-router/sdkwork-claw-router.toml`:
 
 ```toml
 [database]
@@ -97,6 +109,7 @@ The `.deb` post-install script creates:
 - `/etc/sdkwork-claw-router`
 - `/var/lib/sdkwork-claw-router`
 - `/var/log/sdkwork-claw-router`
+- `/etc/default/sdkwork-claw-router`
 - `/lib/systemd/system/sdkwork-claw-router.service` for `service` packages
 
 Read startup logs and capture the first admin password if initialization happened during startup:
@@ -141,7 +154,7 @@ Set-Location "C:\Program Files\SdkWork Claw Router"
 .\bin\sdkwork-claw-gateway.exe
 ```
 
-For server/service deployment, set `SDKWORK_CLAW_DATABASE_URL` in the protected service environment or in the runtime TOML before starting the gateway:
+For production or multi-node server/service deployment, set `SDKWORK_CLAW_DATABASE_URL` in the protected service environment or in the runtime TOML before starting the gateway:
 
 ```powershell
 $env:SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
@@ -221,7 +234,7 @@ Release packages include the runtime files needed to start Claw Router:
 
 `archive` and `container` release assets remain portable `.tar.gz` or `.zip` packages.
 
-Never package or commit `.env.release.local`. Generate or create it on the target host. Keep `PORTAL_PUBLIC_*` values browser-safe; do not put database passwords, provider secrets, or admin credentials in `PORTAL_PUBLIC_*` variables.
+Never package or commit `.env.release.local`. Archive deployments may generate it on the target host, while Linux service deployments use `/etc/default/sdkwork-claw-router` created by the `.deb` package. Keep `PORTAL_PUBLIC_*` values browser-safe; do not put database passwords, provider secrets, or admin credentials in `PORTAL_PUBLIC_*` variables.
 
 ## 4. Database Policy
 
@@ -233,7 +246,15 @@ Linux: ${XDG_DATA_HOME:-~/.local/share}/sdkwork-claw-router/sdkwork-claw-router.
 macOS: ~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sqlite
 ```
 
-`archive`, `service`, and `container` packages use PostgreSQL by default. Set `SDKWORK_CLAW_DATABASE_URL` or write the same DSN to the runtime TOML.
+`archive`, `service`, and `container` packages use local SQLite by default so a single node can start without an external database. For production or multi-node deployments, set `SDKWORK_CLAW_DATABASE_URL` or write the same PostgreSQL DSN to the runtime TOML.
+
+Server/service SQLite default:
+
+```text
+Linux: /var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite
+Windows: %ProgramData%/SdkWork/Claw Router/Data/sdkwork-claw-router.sqlite
+macOS: /Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sqlite
+```
 
 See [initialization.md](./initialization.md) for default config paths, database examples, and bootstrap admin settings.
 
@@ -342,17 +363,17 @@ Service and container deployments must mount runtime configuration, logs, and mu
 2. Back up the database and runtime configuration.
 3. Stop the old service.
 4. Install or extract the new release package.
-5. Preserve target-local `.env.release.local` and runtime TOML files.
-6. Run `sdkwork-claw-installer ensure`.
-7. Run `sdkwork-claw-installer refresh-catalog --force`.
+5. Preserve target-local `/etc/default/sdkwork-claw-router`, `.env.release.local` if used by archive deployments, and runtime TOML files.
+6. For Linux service packages, start the service and let systemd run `ensure` and `refresh-catalog --force`.
+7. For archive/manual deployments, run `sdkwork-claw-installer ensure` and `sdkwork-claw-installer refresh-catalog --force`.
 8. Start the new version and check `/healthz` and `/readyz`.
 
 ## 9. Troubleshooting
 
-- `missing_database_url`: server/service/container mode has no PostgreSQL URL.
+- `missing_database_url`: a deployment explicitly required PostgreSQL but no PostgreSQL URL was provided.
 - `invalid_argument`: unsupported command or malformed option.
 - `invalid_state`: current installation state cannot satisfy the requested command.
 - `database_error`: database is unreachable, permissions are missing, or schema initialization failed.
 - `catalog_error`: model catalog path, version, or content validation failed.
 - `/healthz` succeeds but `/readyz` fails: the edge process is up, but gateway/admin/app/portal upstreams or database dependencies are not ready.
-- Linux service exits immediately: check `/etc/sdkwork-claw-router/.env.release.local`, `/etc/sdkwork-claw-router/sdkwork-claw-router.toml`, and `journalctl -u sdkwork-claw-router`.
+- Linux service exits immediately: check `/etc/default/sdkwork-claw-router`, `/etc/sdkwork-claw-router/sdkwork-claw-router.toml`, and `journalctl -u sdkwork-claw-router`.

@@ -52,14 +52,15 @@ Options:
 
 Runtime config initialization:
   Missing runtime TOML files are created automatically before startup.
-  Server deployments require PostgreSQL before the process can start.
+  Server deployments default to local SQLite for quick single-node startup.
+  Use PostgreSQL for production, HA, and multi-node deployments.
   Desktop deployments default to SQLite and can start from the generated config.
 
 Common initialization commands:
   pnpm start -- --init-config-only --deployment-mode server
   pnpm start -- --init-config-only --deployment-mode desktop
 
-Server PostgreSQL configuration:
+Production PostgreSQL configuration:
   SDKWORK_CLAW_DATABASE_URL="${EXAMPLE_POSTGRES_URL}" pnpm start -- --deployment-mode server
   pnpm start -- --deployment-mode server --database-url "${EXAMPLE_POSTGRES_URL}"
   Or edit [database].url in the generated runtime TOML.
@@ -275,7 +276,7 @@ function runtimeConfigLocationForPlatform(
       return {
         configFile: joinRuntimePath(root, 'sdkwork-claw-router.toml'),
         dataDirectory: joinRuntimePath(root, 'Data'),
-        sqlitePath: null,
+        sqlitePath: joinRuntimePath(root, 'Data/sdkwork-claw-router.sqlite'),
       };
     }
     const appData = getEnv('APPDATA') || 'C:/Users/Default/AppData/Roaming';
@@ -294,7 +295,7 @@ function runtimeConfigLocationForPlatform(
       return {
         configFile: joinRuntimePath(root, 'sdkwork-claw-router.toml'),
         dataDirectory: root,
-        sqlitePath: null,
+        sqlitePath: joinRuntimePath(root, 'sdkwork-claw-router.sqlite'),
       };
     }
     const home = getEnv('HOME') || '~';
@@ -310,7 +311,7 @@ function runtimeConfigLocationForPlatform(
     return {
       configFile: '/etc/sdkwork-claw-router/sdkwork-claw-router.toml',
       dataDirectory: '/var/lib/sdkwork-claw-router',
-      sqlitePath: null,
+      sqlitePath: '/var/lib/sdkwork-claw-router/sdkwork-claw-router.sqlite',
     };
   }
   const home = getEnv('HOME') || '~';
@@ -338,21 +339,34 @@ function joinRuntimePath(base, child) {
 }
 
 function runtimeConfigEngineForMode(deploymentMode) {
-  return normalizeDeploymentMode(deploymentMode) === 'desktop' ? 'sqlite' : 'postgresql';
+  normalizeDeploymentMode(deploymentMode);
+  return 'sqlite';
+}
+
+function runtimeConfigSqliteUrl(sqlitePath) {
+  const normalizedPath = String(sqlitePath ?? '').trim();
+  if (!normalizedPath) {
+    throw new Error('runtime config requires a SQLite path for the zero-config default');
+  }
+  const portablePath = path.isAbsolute(normalizedPath)
+    || normalizedPath.startsWith('~')
+    || normalizedPath.startsWith('$')
+    || normalizedPath.startsWith('%')
+    ? toPortablePath(normalizedPath)
+    : toPortablePath(path.resolve(normalizedPath));
+  return `sqlite://${portablePath}`;
 }
 
 function runtimeConfigDefaultUrlForMode(deploymentMode, sqlitePath = null) {
   if (normalizeDeploymentMode(deploymentMode) === 'desktop') {
-    if (!sqlitePath) {
-      throw new Error('desktop runtime config requires a SQLite path');
-    }
-    return `sqlite://${toPortablePath(path.resolve(sqlitePath))}`;
+    return runtimeConfigSqliteUrl(sqlitePath);
   }
-  return SERVER_DEFAULT_POSTGRES_URL;
+  return runtimeConfigSqliteUrl(sqlitePath);
 }
 
 function runtimeConfigDefaultMaxConnectionsForMode(deploymentMode) {
-  return normalizeDeploymentMode(deploymentMode) === 'desktop' ? 1 : 16;
+  normalizeDeploymentMode(deploymentMode);
+  return 1;
 }
 
 function runtimeConfigRedactedUrl(url) {
@@ -389,7 +403,8 @@ function runtimeConfigTemplateContent({
       defaultEngine: databaseEngine,
       defaultUrl: databaseUrl,
       defaultSqlitePath: sqlitePath,
-      defaultSqliteUrl: sqlitePath ? `sqlite://${toPortablePath(path.resolve(sqlitePath))}` : null,
+      defaultSqliteUrl: sqlitePath ? runtimeConfigSqliteUrl(sqlitePath) : null,
+      productionDatabaseUrlExample: EXAMPLE_POSTGRES_URL,
       maxConnections,
       configFile: {
         path: configFile,
@@ -451,7 +466,8 @@ function buildRuntimeConfigHelpLines(result) {
 
   if (result.deploymentMode === 'server') {
     lines.push(
-      `[start-production]   Configure PostgreSQL in ${result.configFile} or set SDKWORK_CLAW_DATABASE_URL`,
+      `[start-production]   The zero-config server profile uses local SQLite at ${result.sqlitePath}`,
+      `[start-production]   For production PostgreSQL, configure ${result.configFile} or set SDKWORK_CLAW_DATABASE_URL`,
       `[start-production]   Example: SDKWORK_CLAW_DATABASE_URL="${EXAMPLE_POSTGRES_URL}" pnpm start -- --deployment-mode server`,
       `[start-production]   CLI override: pnpm start -- --deployment-mode server --database-url "${EXAMPLE_POSTGRES_URL}"`,
       '[start-production]   Initialize only: pnpm start -- --init-config-only --deployment-mode server',
@@ -505,11 +521,12 @@ function prepareStartProductionRuntimeConfig({
     sqlitePath,
   );
   const databaseUrl = explicitDatabaseUrl || defaultDatabaseUrl;
-  const databaseEngine = runtimeConfigEngineForMode(deploymentMode);
+  const databaseEngine = runtimeConfigEngineForUrl(databaseUrl)
+    || runtimeConfigEngineForMode(deploymentMode);
   const databaseMaxConnections = String(
     settings.databaseMaxConnections
       ?? baseEnv.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS
-      ?? runtimeConfigDefaultMaxConnectionsForMode(deploymentMode),
+      ?? (databaseEngine === 'postgresql' ? 16 : runtimeConfigDefaultMaxConnectionsForMode(deploymentMode)),
   ).trim();
   const configSnapshot = readRuntimeConfigSnapshot(configFile);
   const desiredTemplate = runtimeConfigTemplateContent({
@@ -586,34 +603,21 @@ function determineRuntimeConfigBlockingIssue({
     return null;
   }
   if (explicitDatabaseUrl) {
-    if (
-      explicitDatabaseUrl.startsWith('postgres://')
-      || explicitDatabaseUrl.startsWith('postgresql://')
-    ) {
-      if (explicitDatabaseUrl !== SERVER_DEFAULT_POSTGRES_URL) {
-        return null;
-      }
+    const explicitEngine = runtimeConfigEngineForUrl(explicitDatabaseUrl);
+    if (explicitEngine === 'sqlite') {
+      return null;
+    }
+    if (explicitEngine === 'postgresql' && explicitDatabaseUrl !== SERVER_DEFAULT_POSTGRES_URL) {
+      return null;
     }
     return {
-      code: 'postgresql_configuration_required',
-      message: `runtime config ${configFile} must use a PostgreSQL database URL`,
+      code: 'database_configuration_required',
+      message: `runtime database override for ${configFile} must be SQLite or a non-placeholder PostgreSQL URL`,
     };
   }
-  if (!configSnapshot?.exists) {
+  if (databaseEngine === 'postgresql' && databaseUrl === SERVER_DEFAULT_POSTGRES_URL) {
     return {
-      code: 'postgresql_configuration_required',
-      message: 'PostgreSQL configuration is required before the server can start.',
-    };
-  }
-  if (databaseEngine !== 'postgresql') {
-    return {
-      code: 'postgresql_configuration_required',
-      message: `runtime config ${configFile} must use a PostgreSQL database for server deployment`,
-    };
-  }
-  if (!databaseUrl || databaseUrl === SERVER_DEFAULT_POSTGRES_URL) {
-    return {
-      code: 'postgresql_configuration_required',
+      code: 'database_configuration_required',
       message: `runtime config ${configFile} still points at the default placeholder PostgreSQL URL`,
     };
   }
