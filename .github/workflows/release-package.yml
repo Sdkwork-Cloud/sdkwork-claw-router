@@ -1,0 +1,263 @@
+name: Release Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to package
+        required: true
+        default: v0.2.0
+      package_version:
+        description: Package version used in archive names
+        required: true
+        default: 0.2.0
+      platform:
+        description: Platform subset
+        required: true
+        default: all
+        type: choice
+        options:
+          - all
+          - linux
+          - windows
+          - macos
+      architecture:
+        description: CPU architecture subset
+        required: true
+        default: all
+        type: choice
+        options:
+          - all
+          - x64
+          - arm64
+      deployment_mode:
+        description: Deployment mode subset
+        required: true
+        default: all
+        type: choice
+        options:
+          - all
+          - archive
+          - service
+          - container
+          - desktop
+      sdkwork_appbase_ref:
+        description: sdkwork-appbase commit/ref
+        required: true
+        default: 3280447a2166a86b7e20bcfa394611effa0c9ec3
+      sdkwork_core_ref:
+        description: sdkwork-core commit/ref
+        required: true
+        default: 339ab3e063671e0f97db92bf098c9e9d8768d8dd
+      sdkwork_ui_ref:
+        description: sdkwork-ui commit/ref
+        required: true
+        default: a4c90948ab5e43241a8e06303891bdc370702fad
+      sdkwork_im_sdk_ref:
+        description: sdkwork-im-sdk commit/ref
+        required: true
+        default: 8245ff9095f7d11c70aa062e16a9e42a715604b1
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: release-package-${{ inputs.tag }}-${{ inputs.platform }}-${{ inputs.architecture }}-${{ inputs.deployment_mode }}
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    name: Plan package matrix
+    runs-on: ubuntu-24.04
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      deployment_modes_csv: ${{ steps.plan.outputs.deployment_modes_csv }}
+    steps:
+      - id: plan
+        name: Select runners and package modes
+        shell: bash
+        env:
+          INPUT_PLATFORM: ${{ inputs.platform }}
+          INPUT_ARCHITECTURE: ${{ inputs.architecture }}
+          INPUT_DEPLOYMENT_MODE: ${{ inputs.deployment_mode }}
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+
+          const platforms = [
+            { platform: 'linux', architecture: 'x64', runs_on: 'ubuntu-24.04' },
+            { platform: 'linux', architecture: 'arm64', runs_on: 'ubuntu-24.04-arm' },
+            { platform: 'windows', architecture: 'x64', runs_on: 'windows-2022' },
+            { platform: 'windows', architecture: 'arm64', runs_on: 'windows-11-arm' },
+            { platform: 'macos', architecture: 'x64', runs_on: 'macos-13' },
+            { platform: 'macos', architecture: 'arm64', runs_on: 'macos-14' },
+          ];
+          const allModes = ['archive', 'service', 'container', 'desktop'];
+          const selectedPlatform = process.env.INPUT_PLATFORM || 'all';
+          const selectedArchitecture = process.env.INPUT_ARCHITECTURE || 'all';
+          const selectedMode = process.env.INPUT_DEPLOYMENT_MODE || 'all';
+
+          const include = platforms.filter((item) =>
+            (selectedPlatform === 'all' || item.platform === selectedPlatform)
+            && (selectedArchitecture === 'all' || item.architecture === selectedArchitecture)
+          );
+          const modes = selectedMode === 'all' ? allModes : [selectedMode];
+
+          if (include.length === 0) {
+            throw new Error(`No package runners selected for platform=${selectedPlatform}, architecture=${selectedArchitecture}`);
+          }
+          if (!modes.every((mode) => allModes.includes(mode))) {
+            throw new Error(`Unsupported deployment mode: ${selectedMode}`);
+          }
+
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `matrix=${JSON.stringify({ include })}\n`);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `deployment_modes_csv=${modes.join(',')}\n`);
+          NODE
+
+  package:
+    name: Package ${{ matrix.platform }}-${{ matrix.architecture }}
+    needs: plan
+    runs-on: ${{ matrix.runs_on }}
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
+    env:
+      RELEASE_TAG: ${{ inputs.tag }}
+      PACKAGE_VERSION: ${{ inputs.package_version }}
+      PACKAGE_PLATFORM: ${{ matrix.platform }}
+      PACKAGE_ARCHITECTURE: ${{ matrix.architecture }}
+      PACKAGE_MODES: ${{ needs.plan.outputs.deployment_modes_csv }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout release source
+        uses: actions/checkout@v4
+        with:
+          repository: Sdkwork-Cloud/sdkwork-claw-router
+          ref: ${{ inputs.tag }}
+          path: apps/sdkwork-claw-router
+          fetch-depth: 0
+          lfs: true
+
+      - name: Checkout sdkwork-appbase
+        uses: actions/checkout@v4
+        with:
+          repository: Sdkwork-Cloud/sdkwork-appbase
+          ref: ${{ inputs.sdkwork_appbase_ref }}
+          path: apps/sdkwork-appbase
+          token: ${{ secrets.SDKWORK_RELEASE_TOKEN || github.token }}
+
+      - name: Checkout sdkwork-core
+        uses: actions/checkout@v4
+        with:
+          repository: Sdkwork-Cloud/sdkwork-core
+          ref: ${{ inputs.sdkwork_core_ref }}
+          path: apps/sdkwork-core
+          token: ${{ secrets.SDKWORK_RELEASE_TOKEN || github.token }}
+
+      - name: Checkout sdkwork-ui
+        uses: actions/checkout@v4
+        with:
+          repository: Sdkwork-Cloud/sdkwork-ui
+          ref: ${{ inputs.sdkwork_ui_ref }}
+          path: apps/sdkwork-ui
+          token: ${{ secrets.SDKWORK_RELEASE_TOKEN || github.token }}
+
+      - name: Checkout sdkwork-im-sdk
+        uses: actions/checkout@v4
+        with:
+          repository: Sdkwork-Cloud/sdkwork-im-sdk
+          ref: ${{ inputs.sdkwork_im_sdk_ref }}
+          path: apps/craw-chat/sdks/sdkwork-im-sdk
+          token: ${{ secrets.SDKWORK_RELEASE_TOKEN || github.token }}
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: apps/sdkwork-claw-router/apps/sdkwork-claw-router-portal/pnpm-lock.yaml
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install portal workspace dependencies
+        working-directory: apps/sdkwork-claw-router
+        shell: pwsh
+        run: pnpm --dir apps/sdkwork-claw-router-portal install --frozen-lockfile
+
+      - name: Validate install package matrix
+        working-directory: apps/sdkwork-claw-router
+        shell: pwsh
+        run: node scripts/plan-claw-router-install-packages.mjs --check --version $env:PACKAGE_VERSION
+
+      - name: Build production artifacts
+        working-directory: apps/sdkwork-claw-router
+        shell: pwsh
+        run: |
+          node scripts/build-claw-router-production.mjs
+          cargo build -p sdkwork-claw-installer --release
+
+      - name: Stage production files for packaging
+        working-directory: apps/sdkwork-claw-router
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $stage = Join-Path (Get-Location) "dist/install-package-staging"
+          $output = Join-Path (Get-Location) "dist/install-packages"
+          Remove-Item -LiteralPath $stage -Recurse -Force -ErrorAction SilentlyContinue
+          Remove-Item -LiteralPath $output -Recurse -Force -ErrorAction SilentlyContinue
+          New-Item -ItemType Directory -Force -Path (Join-Path $stage "bin") | Out-Null
+          New-Item -ItemType Directory -Force -Path (Join-Path $stage "portal") | Out-Null
+
+          $suffix = if ($IsWindows) { ".exe" } else { "" }
+          Copy-Item -LiteralPath "target/release/sdkwork-claw-gateway$suffix" -Destination (Join-Path $stage "bin/sdkwork-claw-gateway$suffix")
+          Copy-Item -LiteralPath "target/release/sdkwork-claw-installer$suffix" -Destination (Join-Path $stage "bin/sdkwork-claw-installer$suffix")
+          Copy-Item -LiteralPath ".env.release.example" -Destination (Join-Path $stage ".env.release.example")
+          Copy-Item -LiteralPath "apps/sdkwork-claw-router-portal/dist" -Destination (Join-Path $stage "portal/dist") -Recurse
+
+      - name: Build selected install packages
+        working-directory: apps/sdkwork-claw-router
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $modes = $env:PACKAGE_MODES -split ","
+          foreach ($mode in $modes) {
+            $packageId = "$env:PACKAGE_PLATFORM-$env:PACKAGE_ARCHITECTURE-$mode"
+            Write-Host "Building install package $packageId"
+            node scripts/build-claw-router-install-package.mjs `
+              --package-id $packageId `
+              --version $env:PACKAGE_VERSION `
+              --staging-root dist/install-package-staging `
+              --output-dir dist/install-packages `
+              --json
+          }
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sdkwork-claw-router-${{ inputs.tag }}-${{ matrix.platform }}-${{ matrix.architecture }}
+          path: apps/sdkwork-claw-router/dist/install-packages/*
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload assets to GitHub Release
+        working-directory: apps/sdkwork-claw-router
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $files = Get-ChildItem -Path "dist/install-packages" -File
+          foreach ($file in $files) {
+            gh release upload $env:RELEASE_TAG $file.FullName --repo $env:GITHUB_REPOSITORY --clobber
+          }
