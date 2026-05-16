@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url';
 import { buildReleaseEnvFilePlan } from './write-release-env.mjs';
 import { currentHostArchivePackageId } from './build-claw-router-install-package.mjs';
 import {
+  DEFAULT_VERSION,
   createInstallPackagePlan,
   validateInstallPackagePlan,
 } from './plan-claw-router-install-packages.mjs';
@@ -16,7 +17,6 @@ import {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const workspaceRoot = path.resolve(__dirname, '..');
-const DEFAULT_VERSION = '0.1.0';
 const DEFAULT_RELEASE_POSTGRES_URL = 'postgres://release-smoke.invalid:5432/sdkwork_claw_router';
 const DEFAULT_RELEASE_POSTGRES_RUNTIME_URL = 'postgresql://release-smoke.invalid:5432/sdkwork_claw_router';
 
@@ -157,6 +157,7 @@ function createInstallInitSmokePlan({
     modelsCatalogRoot,
   });
   const installerCommand = absoluteInstallerBin ?? packageItem.installerBinaryName;
+  const [databaseEnsureCommand, catalogRefreshCommand] = packageItem.initCommands;
   const releaseEnvCommand = [
     process.execPath,
     path.join(root, 'scripts', 'write-release-env.mjs'),
@@ -192,7 +193,7 @@ function createInstallInitSmokePlan({
       },
       {
         id: 'database-ensure',
-        command: `${path.basename(installerCommand)} ensure`,
+        command: databaseEnsureCommand,
         executable: installerCommand,
         args: ['ensure'],
         env,
@@ -200,7 +201,7 @@ function createInstallInitSmokePlan({
       },
       {
         id: 'catalog-refresh',
-        command: `${path.basename(installerCommand)} refresh-catalog --force`,
+        command: catalogRefreshCommand,
         executable: installerCommand,
         args: ['refresh-catalog', '--force'],
         env,

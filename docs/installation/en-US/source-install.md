@@ -1,0 +1,222 @@
+# Source Installation And Deployment
+
+Use source installation for local development, integration work, private builds, and release package production. Run commands from the repository root unless noted otherwise.
+
+## 1. Prerequisites
+
+Install:
+
+- Git
+- Node.js 22 or compatible
+- pnpm `10.33.0`
+- Rust toolchain and Cargo
+- Python 3
+- Optional: Docker Desktop for PostgreSQL integration tests
+- Production server mode: PostgreSQL
+
+Quick check:
+
+```bash
+git --version
+node --version
+pnpm --version
+cargo --version
+python --version
+```
+
+## 2. Clone
+
+```bash
+git clone https://github.com/Sdkwork-Cloud/sdkwork-claw-router.git
+cd sdkwork-claw-router
+```
+
+Install portal workspace dependencies:
+
+```bash
+pnpm --dir apps/sdkwork-claw-router-portal install
+```
+
+Or let the root launcher install them when needed:
+
+```bash
+pnpm dev -- --install
+```
+
+## 3. Development Runtime
+
+Full development workspace:
+
+```bash
+pnpm dev
+```
+
+Server development mode only:
+
+```bash
+pnpm server:dev
+```
+
+Standalone portal browser development server:
+
+```bash
+pnpm portal:dev
+```
+
+Print the startup plan without starting services:
+
+```bash
+pnpm server:plan
+```
+
+Default access:
+
+```text
+Edge Portal: http://127.0.0.1:3900/
+Direct Portal Dev: http://127.0.0.1:3901/
+Gateway: http://127.0.0.1:3900/v1
+Admin API: http://127.0.0.1:3900/backend/v3/api
+App API: http://127.0.0.1:3900/app/v3/api
+```
+
+## 4. Bind Addresses And Forwarding
+
+Expose development services externally:
+
+```bash
+pnpm dev -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
+```
+
+Forward the edge server to existing upstream services:
+
+```bash
+pnpm dev -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
+```
+
+HTTPS reverse proxy:
+
+```bash
+pnpm dev -- --external-scheme https --trust-forwarded-headers
+```
+
+Only trust forwarded headers behind a controlled reverse proxy.
+
+## 5. Production Build From Source
+
+```bash
+pnpm build
+```
+
+This command:
+
+- generates the gateway OpenAPI document
+- builds app/backend/open TypeScript SDK runtimes
+- builds portal production assets
+- creates SDK ZIP archives
+- builds the Rust edge release binary
+
+Start the production portal after building:
+
+```bash
+pnpm start
+```
+
+Initialize config without starting:
+
+```bash
+pnpm start -- --init-config-only --deployment-mode server
+pnpm start -- --init-config-only --deployment-mode desktop
+```
+
+A source checkout or CI release host can generate `.env.release.local` from protected process environment variables:
+
+```bash
+pnpm release:env:write -- --check
+pnpm release:env:write -- --force
+```
+
+This command is only for source workspaces. After a formal release package is extracted on a target host, the host does not need `pnpm` or source scripts; copy `.env.release.example`, inject protected environment variables, or use the runtime TOML instead.
+
+Server mode with PostgreSQL:
+
+```bash
+SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router" pnpm start -- --deployment-mode server
+```
+
+## 6. Build Release Packages From Source
+
+View the current package matrix:
+
+```bash
+pnpm install:packages:plan
+```
+
+Validate the matrix:
+
+```bash
+pnpm install:packages:check
+```
+
+Build production artifacts:
+
+```bash
+pnpm build
+```
+
+Package building requires a staging directory containing release binaries, portal dist, SDK archives, and `.env.release.example`. Build one package:
+
+```bash
+pnpm install:package:build -- --package-id linux-x64-archive --staging-root dist/install-package-staging --output-dir dist/install-packages
+```
+
+Validate all package build plans without writing archives:
+
+```bash
+pnpm install:package:check
+```
+
+Use an older package version explicitly:
+
+```bash
+node scripts/build-claw-router-install-package.mjs --package-id linux-x64-archive --version 0.1.0 --check --dry-run
+```
+
+## 7. Source Initialization Smoke
+
+Validate the fast initialization contract:
+
+```bash
+pnpm install:init:smoke
+```
+
+Run the smoke against a real built installer:
+
+```bash
+node scripts/smoke-install-package-init.mjs --package-id linux-x64-archive --package-root dist/install-package-staging --installer-bin bin/sdkwork-claw-installer --tmp-root target/install-init-smoke/linux-x64 --check
+```
+
+## 8. Verification
+
+Development loop:
+
+```bash
+pnpm verify:fast
+```
+
+Before delivery:
+
+```bash
+pnpm verify
+```
+
+Release host:
+
+```bash
+pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean
+```
+
+Docker PostgreSQL integration tests:
+
+```bash
+pnpm test:postgres:docker
+```

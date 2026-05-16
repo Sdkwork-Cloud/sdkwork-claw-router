@@ -8,6 +8,51 @@ Claw Router product. The core rule is simple: product UI and service code must
 be backed by schema registry contracts, generated OpenAPI specs, generated SDKs,
 Rust handlers, persistence implementations, and repeatable verification.
 
+## Installation And Usage
+
+Current release: `0.2.0` (`2026-05-16`). Release records live under
+[docs/release](./docs/release/).
+
+Primary installation and usage guides:
+
+- [Installation index](./docs/installation/README.md)
+- 中文: [安装与使用指南](./docs/installation/zh-CN/README.md)
+- English: [Installation And Usage Guide](./docs/installation/en-US/README.md)
+
+Use the release guides when installing a published package for a specific
+version:
+
+- 中文: [按 Release 版本安装](./docs/installation/zh-CN/release-install.md)
+- English: [Install By Release Version](./docs/installation/en-US/release-install.md)
+
+Use the source guides when cloning this repository, running a development
+workspace, building production artifacts, or producing private release packages:
+
+- 中文: [源码安装与部署](./docs/installation/zh-CN/source-install.md)
+- English: [Source Installation And Deployment](./docs/installation/en-US/source-install.md)
+
+Quick source start:
+
+```powershell
+pnpm.cmd dev -- --install
+```
+
+Quick release package initialization on Windows:
+
+```powershell
+.\bin\sdkwork-claw-installer.exe ensure
+.\bin\sdkwork-claw-installer.exe refresh-catalog --force
+.\bin\sdkwork-claw-gateway.exe
+```
+
+Quick release package initialization on Linux and macOS:
+
+```bash
+./bin/sdkwork-claw-installer ensure
+./bin/sdkwork-claw-installer refresh-catalog --force
+./bin/sdkwork-claw-gateway
+```
+
 ## Architecture
 
 - Gateway service exposes OpenAI-compatible `/v1/*` APIs.

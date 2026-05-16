@@ -118,6 +118,56 @@ test('root package exposes pnpm product entrypoints', () => {
   );
 });
 
+test('installation documentation covers release, source, initialization, usage, and valid local links', () => {
+  const rootReadme = readFileSync(path.join(workspaceRoot, 'README.md'), 'utf8');
+  const requiredDocs = [
+    'docs/installation/README.md',
+    'docs/installation/zh-CN/README.md',
+    'docs/installation/zh-CN/release-install.md',
+    'docs/installation/zh-CN/source-install.md',
+    'docs/installation/zh-CN/initialization.md',
+    'docs/installation/zh-CN/deployment-modes.md',
+    'docs/installation/zh-CN/usage.md',
+    'docs/installation/en-US/README.md',
+    'docs/installation/en-US/release-install.md',
+    'docs/installation/en-US/source-install.md',
+    'docs/installation/en-US/initialization.md',
+    'docs/installation/en-US/deployment-modes.md',
+    'docs/installation/en-US/usage.md',
+  ];
+  for (const relativePath of requiredDocs) {
+    assert.equal(existsSync(path.join(workspaceRoot, relativePath)), true, `${relativePath} must exist`);
+  }
+
+  assert.ok(rootReadme.includes('./docs/installation/README.md'));
+  assert.ok(rootReadme.includes('./docs/installation/zh-CN/release-install.md'));
+  assert.ok(rootReadme.includes('./docs/installation/en-US/source-install.md'));
+
+  const zhRelease = readFileSync(path.join(workspaceRoot, 'docs/installation/zh-CN/release-install.md'), 'utf8');
+  const enRelease = readFileSync(path.join(workspaceRoot, 'docs/installation/en-US/release-install.md'), 'utf8');
+  const zhSource = readFileSync(path.join(workspaceRoot, 'docs/installation/zh-CN/source-install.md'), 'utf8');
+  const enSource = readFileSync(path.join(workspaceRoot, 'docs/installation/en-US/source-install.md'), 'utf8');
+  const zhUsage = readFileSync(path.join(workspaceRoot, 'docs/installation/zh-CN/usage.md'), 'utf8');
+  const enUsage = readFileSync(path.join(workspaceRoot, 'docs/installation/en-US/usage.md'), 'utf8');
+
+  assert.ok(zhRelease.includes('sdkwork-claw-router-linux-x64-archive-0.2.0.tar.gz'));
+  assert.ok(enRelease.includes('sdkwork-claw-router-linux-x64-archive-0.2.0.tar.gz'));
+  assert.ok(zhRelease.includes('./bin/sdkwork-claw-installer ensure'));
+  assert.ok(enRelease.includes('./bin/sdkwork-claw-installer ensure'));
+  assert.ok(zhSource.includes('pnpm release:env:write -- --check'));
+  assert.ok(enSource.includes('pnpm release:env:write -- --check'));
+  assert.ok(zhSource.includes('目标机器后，不要求安装 `pnpm`'));
+  assert.ok(enSource.includes('the host does not need `pnpm`'));
+  assert.ok(zhUsage.includes('注册是否需要验证码由 IAM 运行时策略控制'));
+  assert.ok(enUsage.includes('Whether registration requires verification code is controlled by IAM runtime policy'));
+  assert.ok(zhUsage.includes('SDK 包版本独立于 Claw Router release 版本'));
+  assert.ok(enUsage.includes('SDK package versions are independent from Claw Router release versions'));
+
+  for (const relativePath of ['README.md', ...requiredDocs]) {
+    assertMarkdownLocalLinksExist(relativePath);
+  }
+});
+
 test('root release entrypoint regenerates the release env before strict preflight and verify', () => {
   const rootPackage = JSON.parse(
     readFileSync(path.join(workspaceRoot, 'package.json'), 'utf8'),
@@ -1348,6 +1398,14 @@ test('install package planner covers platforms, architectures, modes, fast init,
   assert.deepEqual(module.SUPPORTED_PLATFORMS, ['windows', 'linux', 'macos']);
   assert.deepEqual(module.SUPPORTED_ARCHITECTURES, ['x64', 'arm64']);
   assert.deepEqual(module.SUPPORTED_DEPLOYMENT_MODES, ['archive', 'service', 'container', 'desktop']);
+  assert.equal(module.DEFAULT_VERSION, '0.2.0');
+
+  const defaultPlan = module.createInstallPackagePlan();
+  assert.equal(defaultPlan.version, '0.2.0');
+  assert.equal(
+    defaultPlan.packages.find((item) => item.id === 'linux-x64-archive')?.archiveName,
+    'sdkwork-claw-router-linux-x64-archive-0.2.0.tar.gz',
+  );
 
   const plan = module.createInstallPackagePlan({
     version: '0.1.0',
@@ -1365,7 +1423,9 @@ test('install package planner covers platforms, architectures, modes, fast init,
   assert.equal(plan.artifactPolicy.envLocalGeneratedOnHost, true);
   assert.equal(plan.artifactPolicy.envExampleReferenceOnly, true);
   assert.equal(plan.artifactPolicy.releaseEnvLocalExcluded, true);
-  assert.ok(plan.fastInitializationContract.includes('release-env-check'));
+  assert.ok(plan.fastInitializationContract.includes('host-env-prepare'));
+  assert.ok(!plan.fastInitializationContract.includes('release-env-check'));
+  assert.ok(!plan.fastInitializationContract.includes('release-env-write'));
   assert.ok(plan.fastInitializationContract.includes('database-ensure'));
   assert.ok(plan.fastInitializationContract.includes('catalog-refresh'));
   assert.ok(plan.fastInitializationContract.includes('edge-readiness'));
@@ -1375,6 +1435,7 @@ test('install package planner covers platforms, architectures, modes, fast init,
   );
   assert.ok(windowsService);
   assert.equal(windowsService.id, 'windows-x64-service');
+  assert.equal(windowsService.version, '0.1.0');
   assert.equal(windowsService.archiveName, 'sdkwork-claw-router-windows-x64-service-0.1.0.zip');
   assert.equal(windowsService.binaryName, 'sdkwork-claw-gateway.exe');
   assert.equal(windowsService.installerBinaryName, 'sdkwork-claw-installer.exe');
@@ -1398,11 +1459,11 @@ test('install package planner covers platforms, architectures, modes, fast init,
     artifact.kind === 'env-template' && artifact.path === '.env.release.example'
   ));
   assert.ok(!windowsService.artifacts.some((artifact) => artifact.path === '.env.release.local'));
-  assert.ok(windowsService.initCommands.includes('pnpm.cmd release:env:write -- --check'));
-  assert.ok(windowsService.initCommands.includes('pnpm.cmd release:env:write -- --force'));
-  assert.ok(windowsService.initCommands.includes('sdkwork-claw-installer.exe ensure'));
-  assert.ok(windowsService.initCommands.includes('sdkwork-claw-installer.exe refresh-catalog --force'));
-  assert.equal(windowsService.startCommand, 'sdkwork-claw-gateway.exe');
+  assert.equal(windowsService.initCommands.length, 2);
+  assert.ok(!windowsService.initCommands.some((command) => command.includes('pnpm')));
+  assert.ok(windowsService.initCommands.includes('.\\bin\\sdkwork-claw-installer.exe ensure'));
+  assert.ok(windowsService.initCommands.includes('.\\bin\\sdkwork-claw-installer.exe refresh-catalog --force'));
+  assert.equal(windowsService.startCommand, '.\\bin\\sdkwork-claw-gateway.exe');
   assert.deepEqual(windowsService.healthChecks, ['/healthz', '/readyz']);
   assert.equal(windowsService.runtimeProfile, 'server');
   assert.equal(windowsService.databasePolicy.defaultEngine, 'postgresql');
@@ -1434,10 +1495,11 @@ test('install package planner covers platforms, architectures, modes, fast init,
       `${packageItem.id} must use one canonical container entrypoint`,
     );
   }
-  assert.ok(linuxContainer.initCommands.includes('pnpm release:env:write -- --check'));
+  assert.ok(linuxContainer.initCommands.includes('./bin/sdkwork-claw-installer ensure'));
+  assert.ok(!linuxContainer.initCommands.some((command) => command.includes('pnpm')));
   assert.ok(!linuxContainer.initCommands.some((command) => command.includes('pnpm dev')));
   assert.ok(!plan.packages.some((item) =>
-    item.initCommands.some((command) => command.includes('smoke:dev') || command.includes('pnpm dev'))
+    item.initCommands.some((command) => command.includes('smoke:dev') || command.includes('pnpm'))
   ));
 
   const windowsContainer = plan.packages.find((item) =>
@@ -1523,7 +1585,7 @@ test('install package archive builder creates manifest-backed archives without l
     outputDir: null,
     packageId: 'windows-x64-archive',
     stagingRoot: null,
-    version: '0.1.0',
+    version: '0.2.0',
   });
   assert.deepEqual(module.parseInstallPackageBuildArgs(['--all', '--check', '--dry-run']), {
     all: true,
@@ -1534,7 +1596,7 @@ test('install package archive builder creates manifest-backed archives without l
     outputDir: null,
     packageId: 'windows-x64-archive',
     stagingRoot: null,
-    version: '0.1.0',
+    version: '0.2.0',
   });
 
   const fixtureRoot = path.join(workspaceRoot, '.tmp', 'install-package-builder-test');
@@ -1570,7 +1632,9 @@ test('install package archive builder creates manifest-backed archives without l
 
     const result = await module.buildInstallPackageArchive(buildPlan);
     assert.equal(result.archive.file, 'sdkwork-claw-router-windows-x64-archive-0.1.0.zip');
+    assert.equal(result.archive.version, '0.1.0');
     assert.equal(result.manifest.package.id, 'windows-x64-archive');
+    assert.equal(result.manifest.package.version, '0.1.0');
     assert.equal(result.manifest.package.runtimeProfile, 'server');
     assert.equal(result.manifest.databasePolicy.defaultEngine, 'postgresql');
     assert.equal(result.manifest.generatedArtifacts.some((artifact) =>
@@ -1591,6 +1655,7 @@ test('install package archive builder creates manifest-backed archives without l
     assert.equal(aggregateManifest.archives.length, 1);
     assert.equal(aggregateManifest.archives[0].file, 'sdkwork-claw-router-windows-x64-archive-0.1.0.zip');
     assert.equal(aggregateManifest.archives[0].packageId, 'windows-x64-archive');
+    assert.equal(aggregateManifest.archives[0].version, '0.1.0');
     assert.match(aggregateManifest.archives[0].sha256, /^[a-f0-9]{64}$/u);
 
     const rendered = module.renderInstallPackageBuildPlan(buildPlan).join('\n');
@@ -1648,6 +1713,7 @@ test('install package builder emits service and container deployment packages fr
       'INSTALL.md',
     );
     assert.ok(serviceInstallGuide.includes('PostgreSQL is required for server deployments.'));
+    assert.ok(serviceInstallGuide.includes('Version: 0.1.0'));
     assert.ok(serviceInstallGuide.includes('SDKWORK_CLAW_DATABASE_URL'));
     assert.ok(serviceInstallGuide.includes('sdkwork-claw-installer ensure'));
     assert.ok(serviceInstallGuide.includes('/etc/sdkwork-claw-router/sdkwork-claw-router.toml'));
@@ -1684,6 +1750,7 @@ test('install package builder emits service and container deployment packages fr
     assert.equal(containerTar.get('container/Containerfile')?.mode, 0o644);
     const metadata = JSON.parse(readTarEntryText(containerTarBytes, 'container/metadata.json'));
     assert.equal(metadata.packageId, 'linux-arm64-container');
+    assert.equal(metadata.version, '0.1.0');
     assert.equal(metadata.entrypoint, '/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway');
     assert.equal(metadata.runtimeUser, 'sdkwork');
     assert.equal(metadata.database.defaultEngine, 'postgresql');
@@ -1899,7 +1966,7 @@ test('install init smoke validates fast initialization without starting dev serv
     packageId: 'windows-x64-archive',
     packageRoot: null,
     tmpRoot: null,
-    version: '0.1.0',
+    version: '0.2.0',
   });
 
   const fixtureRoot = path.join(workspaceRoot, '.tmp', 'install-init-smoke-test');
@@ -1923,10 +1990,10 @@ test('install init smoke validates fast initialization without starting dev serv
       step.id === 'release-env-write' && step.command.includes('write-release-env.mjs')
     ));
     assert.ok(smokePlan.steps.some((step) =>
-      step.id === 'database-ensure' && step.command === 'sdkwork-claw-installer ensure'
+      step.id === 'database-ensure' && step.command === './bin/sdkwork-claw-installer ensure'
     ));
     assert.ok(smokePlan.steps.some((step) =>
-      step.id === 'catalog-refresh' && step.command === 'sdkwork-claw-installer refresh-catalog --force'
+      step.id === 'catalog-refresh' && step.command === './bin/sdkwork-claw-installer refresh-catalog --force'
     ));
     assert.ok(!smokePlan.steps.some((step) =>
       step.command.includes('pnpm dev') || step.command.includes('smoke:dev')
@@ -5710,6 +5777,24 @@ function readTarString(buffer, offset, length) {
 
 function slashPath(value) {
   return String(value).replaceAll('\\', '/');
+}
+
+function assertMarkdownLocalLinksExist(relativePath) {
+  const absolutePath = path.join(workspaceRoot, relativePath);
+  const markdown = readFileSync(absolutePath, 'utf8');
+  const linkPattern = /\[[^\]]+\]\((?!https?:|mailto:|#)([^)]+)\)/gu;
+  for (const match of markdown.matchAll(linkPattern)) {
+    const targetRef = match[1].split('#')[0].trim().replace(/^<|>$/gu, '');
+    if (!targetRef) {
+      continue;
+    }
+    const targetPath = path.resolve(path.dirname(absolutePath), targetRef);
+    assert.equal(
+      existsSync(targetPath),
+      true,
+      `${relativePath} links to missing local target ${targetRef}`,
+    );
+  }
 }
 
 let failed = 0;

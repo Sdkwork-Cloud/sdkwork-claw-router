@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url';
 import { gzipSync } from 'node:zlib';
 import { createZip } from './archive-claw-router-sdks.mjs';
 import {
+  DEFAULT_VERSION,
   createInstallPackagePlan,
   RUNTIME_CONFIG_TEMPLATE_PATH,
   validateInstallPackagePlan,
@@ -17,7 +18,6 @@ import {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const workspaceRoot = path.resolve(__dirname, '..');
-const DEFAULT_VERSION = '0.1.0';
 const AGGREGATE_MANIFEST_FILE = 'install-packages-manifest.json';
 const PACKAGE_MANIFEST_FILE = 'install-manifest.json';
 
@@ -471,6 +471,7 @@ async function buildInstallPackageArchive(buildPlan) {
   const archive = {
     file: path.basename(buildPlan.archivePath),
     packageId: buildPlan.package.id,
+    version: buildPlan.package.version,
     size: archiveBytes.length,
     sha256: sha256(archiveBytes),
   };
@@ -498,6 +499,7 @@ function createPackageManifest(buildPlan, artifactFiles, generatedArtifacts = []
     product: 'sdkwork-claw-router',
     package: {
       id: buildPlan.package.id,
+      version: buildPlan.package.version,
       platform: buildPlan.package.platform,
       architecture: buildPlan.package.architecture,
       deploymentMode: buildPlan.package.deploymentMode,
@@ -548,6 +550,7 @@ function createInstallGuide(packageItem) {
     '# SdkWork Claw Router Install Guide',
     '',
     `Package: ${packageItem.id}`,
+    `Version: ${packageItem.version}`,
     `Deployment mode: ${packageItem.deploymentMode}`,
     `Runtime profile: ${packageItem.runtimeProfile}`,
     `Config file: ${policy.configFile.path}`,
@@ -799,6 +802,7 @@ function createContainerMetadata(packageItem) {
   return {
     schemaVersion: '2026-05-15.container-package.v1',
     packageId: packageItem.id,
+    version: packageItem.version,
     platform: packageItem.platform,
     architecture: packageItem.architecture,
     entrypoint: packageItem.containerIntegration.entrypoint,
@@ -820,6 +824,7 @@ function createDesktopMetadata(packageItem) {
   return {
     schemaVersion: '2026-05-15.desktop-package.v1',
     packageId: packageItem.id,
+    version: packageItem.version,
     platform: packageItem.platform,
     architecture: packageItem.architecture,
     runtimeProfile: packageItem.runtimeProfile,
@@ -868,6 +873,7 @@ function readExistingAggregateArchives(aggregateManifestPath) {
       archive
       && typeof archive.file === 'string'
       && typeof archive.packageId === 'string'
+      && typeof archive.version === 'string'
       && typeof archive.size === 'number'
       && typeof archive.sha256 === 'string'
     );

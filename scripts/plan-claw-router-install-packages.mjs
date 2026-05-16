@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 
 import process from 'node:process';
+import { DEFAULT_RELEASE_VERSION } from './claw-router-release-version.mjs';
 
 const INSTALL_PACKAGE_SCHEMA_VERSION = '2026-05-15.install-packages.v2';
 const SUPPORTED_PLATFORMS = Object.freeze(['windows', 'linux', 'macos']);
 const SUPPORTED_ARCHITECTURES = Object.freeze(['x64', 'arm64']);
 const SUPPORTED_DEPLOYMENT_MODES = Object.freeze(['archive', 'service', 'container', 'desktop']);
-const DEFAULT_VERSION = '0.1.0';
+const DEFAULT_VERSION = DEFAULT_RELEASE_VERSION;
 const HEALTH_CHECKS = Object.freeze(['/healthz', '/readyz']);
 const RUNTIME_CONFIG_TEMPLATE_PATH = 'config/sdkwork-claw-router.toml.example';
 const SERVER_POSTGRES_DEFAULT_URL = 'postgresql://sdkwork_claw_router:change-me@localhost:5432/sdkwork_claw_router';
 const FAST_INITIALIZATION_CONTRACT = Object.freeze([
-  'release-env-check',
-  'release-env-write',
+  'host-env-prepare',
   'runtime-config-write',
   'database-ensure',
   'catalog-refresh',
@@ -126,7 +126,6 @@ function createInstallPackagePlan({
 
 function createInstallPackageItem({ platform, architecture, deploymentMode, version }) {
   const exeSuffix = platform === 'windows' ? '.exe' : '';
-  const pnpm = platform === 'windows' ? 'pnpm.cmd' : 'pnpm';
   const archiveExtension = platform === 'windows' ? 'zip' : 'tar.gz';
   const binaryName = `sdkwork-claw-gateway${exeSuffix}`;
   const installerBinaryName = `sdkwork-claw-installer${exeSuffix}`;
@@ -136,6 +135,7 @@ function createInstallPackageItem({ platform, architecture, deploymentMode, vers
 
   return {
     id,
+    version,
     platform,
     architecture,
     deploymentMode,
@@ -146,10 +146,8 @@ function createInstallPackageItem({ platform, architecture, deploymentMode, vers
     packageKind: packageKindForMode(deploymentMode),
     artifacts: buildArtifacts(binaryName, installerBinaryName, deploymentMode, platform),
     initCommands: [
-      `${pnpm} release:env:write -- --check`,
-      `${pnpm} release:env:write -- --force`,
-      `${installerBinaryName} ensure`,
-      `${installerBinaryName} refresh-catalog --force`,
+      `${packageBinaryCommand(platform, installerBinaryName)} ensure`,
+      `${packageBinaryCommand(platform, installerBinaryName)} refresh-catalog --force`,
     ],
     startCommand: startCommandForMode({
       platform,
@@ -359,7 +357,14 @@ function startCommandForMode({ platform, deploymentMode, binaryName }) {
   if (deploymentMode === 'container') {
     return containerEntrypoint(platform, binaryName);
   }
-  return binaryName;
+  return packageBinaryCommand(platform, binaryName);
+}
+
+function packageBinaryCommand(platform, binaryName) {
+  if (platform === 'windows') {
+    return `.\\bin\\${binaryName}`;
+  }
+  return `./bin/${binaryName}`;
 }
 
 function serviceIntegrationFor(platform, deploymentMode) {
@@ -467,6 +472,9 @@ function validatePackageItem(packageItem, seenIds, issues) {
   if (packageItem.id !== expectedId) {
     issues.push(`${packageItem.id ?? '(missing id)'} id must be ${expectedId}`);
   }
+  if (!packageItem.version || !/^[0-9A-Za-z][0-9A-Za-z._-]*$/u.test(packageItem.version)) {
+    issues.push(`${packageItem.id} version must be a non-empty package-safe value`);
+  }
   if (seenIds.has(packageItem.id)) {
     issues.push(`${packageItem.id} is duplicated`);
   }
@@ -489,18 +497,23 @@ function validatePackageItem(packageItem, seenIds, issues) {
   if (packageItem.artifacts?.some((artifact) => String(artifact.path).includes('.env.release.local'))) {
     issues.push(`${packageItem.id} must not include host-local release env output`);
   }
-  if (!Array.isArray(packageItem.initCommands) || packageItem.initCommands.length < 4) {
+  if (!Array.isArray(packageItem.initCommands) || packageItem.initCommands.length < 2) {
     issues.push(`${packageItem.id} must include fast initialization commands`);
   } else {
     for (const command of [
-      'release:env:write -- --check',
-      'release:env:write -- --force',
       'ensure',
       'refresh-catalog --force',
     ]) {
       if (!packageItem.initCommands.some((initCommand) => initCommand.includes(command))) {
         issues.push(`${packageItem.id} initCommands must include ${command}`);
       }
+    }
+    if (packageItem.initCommands.some((initCommand) => /pnpm(\.cmd)?\s+release:env:write/u.test(initCommand))) {
+      issues.push(`${packageItem.id} must not require source-only release env scripts during package initialization`);
+    }
+    const commandPrefix = packageItem.platform === 'windows' ? '.\\bin\\' : './bin/';
+    if (!packageItem.initCommands.every((initCommand) => initCommand.startsWith(commandPrefix))) {
+      issues.push(`${packageItem.id} initCommands must use package-local bin paths`);
     }
     if (packageItem.initCommands.some((initCommand) => /pnpm(\.cmd)?\s+dev|smoke:dev/u.test(initCommand))) {
       issues.push(`${packageItem.id} must not start the live development workspace during install initialization`);
@@ -553,6 +566,12 @@ function validatePackageItem(packageItem, seenIds, issues) {
     && packageItem.startCommand !== packageItem.containerIntegration?.entrypoint
   ) {
     issues.push(`${packageItem.id} startCommand must match the container entrypoint`);
+  }
+  if (packageItem.deploymentMode !== 'container') {
+    const commandPrefix = packageItem.platform === 'windows' ? '.\\bin\\' : './bin/';
+    if (!String(packageItem.startCommand).startsWith(commandPrefix)) {
+      issues.push(`${packageItem.id} startCommand must use the package-local gateway binary`);
+    }
   }
 }
 
@@ -657,6 +676,7 @@ if (process.argv[1] && import.meta.url.endsWith(process.argv[1].replaceAll('\\',
 }
 
 export {
+  DEFAULT_VERSION,
   FAST_INITIALIZATION_CONTRACT,
   INSTALL_PACKAGE_SCHEMA_VERSION,
   RUNTIME_CONFIG_TEMPLATE_PATH,
