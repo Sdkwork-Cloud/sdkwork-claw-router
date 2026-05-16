@@ -43,12 +43,15 @@ All notable changes to `sdkwork-claw-router` release records will be documented 
 - `pnpm app-store:seed:check`
 - `cargo test -p sdkwork-claw-config`
 - `node --test scripts/run-claw-router-product.test.mjs --test-name-pattern "installation documentation covers release|install package planner covers|install package manifests distinguish|install package builder emits service and container|native installer builder emits apt-installable|native installer builder CLI validates"`
+- GitHub Actions `Release Package` run `25969690825`, covering Linux x64, Linux arm64, Windows x64, Windows arm64, macOS x64, and macOS arm64.
 
 ### Release Gate Status
 
 - Sibling SDK/shared repository gate is satisfied before local publication preparation: `sdkwork-appbase` is clean at `3280447a2166a86b7e20bcfa394611effa0c9ec3`, `sdkwork-core` is clean at `339ab3e063671e0f97db92bf098c9e9d8768d8dd`, `sdkwork-ui` is clean at `a4c90948ab5e43241a8e06303891bdc370702fad`, the user-specified `sdkwork-im-sdk` checkout under `apps\craw-chat\sdks\sdkwork-im-sdk` is clean at `8245ff9095f7d11c70aa062e16a9e42a715604b1`, and `sdkwork-sdk-generator` was committed and pushed at `c20c147b69453a64535e25fc18032597e8af9e75`.
 - Local development keeps relative workspace/link dependencies for sibling SDK and UI repositories; the GitHub release workflow checks out pinned GitHub refs for release packaging.
 - Full `pnpm verify` was not run for this release record because this publication uses the faster focused release checks listed above.
+- GitHub release `v0.3.0` is published at `https://github.com/Sdkwork-Cloud/sdkwork-claw-router/releases/tag/v0.3.0` from commit `ddec86eb884a2b9e2a33f1a9cf608520b5ae5ec2`.
+- Release assets were verified after publication: 54 assets uploaded, the six required `server` native installers are present, and no public `-service-0.3.0` artifact names were uploaded.
 
 ## 2026-05-16 - v0.2.0
 
