@@ -26,8 +26,10 @@ Release Date: 2026-05-16
 安装包命名使用这个版本号，例如：
 
 ```text
+sdkwork-claw-router-linux-x64-service-0.2.0.deb
+sdkwork-claw-router-windows-x64-desktop-0.2.0.msi
+sdkwork-claw-router-macos-arm64-desktop-0.2.0.pkg
 sdkwork-claw-router-linux-x64-archive-0.2.0.tar.gz
-sdkwork-claw-router-windows-x64-desktop-0.2.0.zip
 ```
 
 如需查看完整安装包矩阵：
@@ -41,7 +43,7 @@ node scripts\plan-claw-router-install-packages.mjs --json
 
 - `desktop`：桌面/单机体验包，默认使用本机 SQLite，不要求外部 PostgreSQL。
 - `archive`：自包含服务端归档包，默认要求外部 PostgreSQL。
-- `service`：系统服务包，Windows Service、Linux systemd、macOS launchd，默认要求外部 PostgreSQL。
+- `service`：平台原生主机服务包，默认要求外部 PostgreSQL。
 - `container`：容器镜像构建包，默认要求外部 PostgreSQL。
 - `source`：源码方式运行或构建，可用于开发、验证、私有构建和二次集成。
 
@@ -60,7 +62,26 @@ pnpm build
 pnpm start
 ```
 
-release 包初始化 Linux/macOS：
+Ubuntu/Debian service 包：
+
+```bash
+sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
+sudo install -o root -g sdkwork -m 0640 /opt/sdkwork-claw-router/.env.release.example /etc/sdkwork-claw-router/.env.release.local
+sudo editor /etc/sdkwork-claw-router/.env.release.local
+sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
+sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
+sudo systemctl enable --now sdkwork-claw-router
+```
+
+Linux/macOS 原生 desktop 包：
+
+```bash
+/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
+/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
+/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway
+```
+
+Linux/macOS 可移植 release 包根目录：
 
 ```bash
 ./bin/sdkwork-claw-installer ensure
@@ -68,9 +89,10 @@ release 包初始化 Linux/macOS：
 ./bin/sdkwork-claw-gateway
 ```
 
-release 包初始化 Windows：
+Windows MSI 安装目录：
 
 ```powershell
+Set-Location "C:\Program Files\SdkWork Claw Router"
 .\bin\sdkwork-claw-installer.exe ensure
 .\bin\sdkwork-claw-installer.exe refresh-catalog --force
 .\bin\sdkwork-claw-gateway.exe

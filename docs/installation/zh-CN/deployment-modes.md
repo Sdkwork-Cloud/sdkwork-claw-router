@@ -6,9 +6,9 @@ SDKWork Claw Router release 包覆盖 `archive`、`service`、`container`、`des
 
 | 模式 | 包类型 | 默认数据库 | 启动方式 | 推荐场景 |
 | --- | --- | --- | --- | --- |
-| `desktop` | `desktop-app-installer` | SQLite | 直接运行 gateway | 单机体验、本地演示 |
+| `desktop` | 原生安装包（`.deb`、`.msi`、`.pkg`） | SQLite | 直接运行 gateway | 单机体验、本地演示 |
 | `archive` | `self-contained-archive` | PostgreSQL | 直接运行 gateway | 私有服务器、手动部署 |
-| `service` | `host-service-package` | PostgreSQL | Windows Service / systemd / launchd | 长期运行生产服务 |
+| `service` | 原生安装包（`.deb`、`.msi`、`.pkg`） | PostgreSQL | 主机服务管理器 | 长期运行生产服务 |
 | `container` | `container-image` | PostgreSQL | Containerfile / entrypoint | Docker、Kubernetes、容器平台 |
 | `source` | 源码工作区 | 开发 SQLite 或 PostgreSQL | `pnpm dev` / `pnpm start` | 开发、验证、私有构建 |
 
@@ -19,9 +19,18 @@ SDKWork Claw Router release 包覆盖 `archive`、`service`、`container`、`des
 - 默认 SQLite。
 - 自动使用 OS 用户目录下的配置和数据目录。
 - 不要求外部 PostgreSQL。
+- Linux、Windows、macOS 均发布为平台原生安装包。
 - 适合个人试用、演示和本地调试。
 
 启动：
+
+```bash
+/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
+/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
+/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway
+```
+
+如果从可移植归档包根目录启动：
 
 ```bash
 ./bin/sdkwork-claw-installer ensure
@@ -50,27 +59,29 @@ export SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db
 
 特点：
 
-- 包含平台服务清单。
-- 适合 systemd、Windows Service、launchd 托管。
+- Linux、Windows、macOS 均发布为平台原生安装包。
+- Linux `.deb` service 包会安装 systemd unit。
+- macOS `.pkg` service 包会安装 launchd plist。
+- Windows `.msi` 包安装运行文件和服务元数据，实际服务注册由目标主机部署系统配置。
 - 需要把配置和数据库 URL 放在受保护位置。
 
-服务清单：
+原生服务资产：
 
 ```text
-Windows: service/windows/sdkwork-claw-router.xml
-Linux: service/linux/sdkwork-claw-router.service
-macOS: service/macos/com.sdkwork.claw-router.plist
+Windows: sdkwork-claw-router-windows-x64-service-0.2.0.msi
+Linux: sdkwork-claw-router-linux-x64-service-0.2.0.deb
+macOS: sdkwork-claw-router-macos-arm64-service-0.2.0.pkg
 ```
 
-Linux systemd 通常需要：
+Linux 安装 `.deb` 后通常需要：
 
 ```bash
-sudo useradd --system --home /opt/sdkwork-claw-router --shell /usr/sbin/nologin sdkwork
-sudo mkdir -p /etc/sdkwork-claw-router /var/lib/sdkwork-claw-router /var/log/sdkwork-claw-router
-sudo chown -R sdkwork:sdkwork /var/lib/sdkwork-claw-router /var/log/sdkwork-claw-router
-sudo cp service/linux/sdkwork-claw-router.service /etc/systemd/system/sdkwork-claw-router.service
-sudo systemctl daemon-reload
+sudo install -o root -g sdkwork -m 0640 /opt/sdkwork-claw-router/.env.release.example /etc/sdkwork-claw-router/.env.release.local
+sudo editor /etc/sdkwork-claw-router/.env.release.local
+sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
+sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
 sudo systemctl enable --now sdkwork-claw-router
+sudo systemctl status sdkwork-claw-router --no-pager
 ```
 
 ## Container

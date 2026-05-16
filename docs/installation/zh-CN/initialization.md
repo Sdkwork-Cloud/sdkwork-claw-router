@@ -2,6 +2,29 @@
 
 初始化负责创建运行时配置、安装数据库 schema、导入或刷新模型目录，并确认运行时健康检查路径。不同部署模式的数据库默认策略不同。
 
+最快路径是在首次启动前完成初始化：
+
+```bash
+sdkwork-claw-installer status
+sdkwork-claw-installer ensure
+sdkwork-claw-installer refresh-catalog --force
+sdkwork-claw-gateway
+```
+
+如果安装的是 Linux 或 macOS 原生包，二进制文件位于 `/opt/sdkwork-claw-router/bin`：
+
+```bash
+/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
+/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
+/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway
+```
+
+如果安装的是 Windows MSI，默认安装目录为：
+
+```text
+C:\Program Files\SdkWork Claw Router
+```
+
 ## 初始化顺序
 
 推荐顺序：
@@ -13,6 +36,21 @@
 5. 执行 `sdkwork-claw-installer refresh-catalog --force`。
 6. 启动 `sdkwork-claw-gateway`。
 7. 检查 `/healthz` 和 `/readyz`。
+
+`service` 部署不要在 PostgreSQL URL 和运行时 TOML 准备好之前启用服务，避免服务因为缺少数据库配置而反复重启。
+
+Linux service 包推荐顺序：
+
+```bash
+sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
+sudo install -o root -g sdkwork -m 0640 /opt/sdkwork-claw-router/.env.release.example /etc/sdkwork-claw-router/.env.release.local
+sudo editor /etc/sdkwork-claw-router/.env.release.local
+sudo editor /etc/sdkwork-claw-router/sdkwork-claw-router.toml
+sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
+sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
+sudo systemctl enable --now sdkwork-claw-router
+sudo systemctl status sdkwork-claw-router --no-pager
+```
 
 ## 运行时配置路径
 
@@ -44,6 +82,14 @@ PowerShell：
 $env:SDKWORK_CLAW_CONFIG_FILE="C:\ProgramData\SdkWork\Claw Router\sdkwork-claw-router.toml"
 ```
 
+原生安装包默认位置：
+
+| 平台 | 二进制目录 | 说明 |
+| --- | --- | --- |
+| Linux `.deb` | `/opt/sdkwork-claw-router/bin` | `service` 包还会安装 `/lib/systemd/system/sdkwork-claw-router.service`。 |
+| Windows `.msi` | `C:\Program Files\SdkWork Claw Router\bin` | MSI 安装运行文件；如需 Windows Service 托管，按部署系统单独配置。 |
+| macOS `.pkg` | `/opt/sdkwork-claw-router/bin` | `service` 包还会安装 `/Library/LaunchDaemons/com.sdkwork.claw-router.plist`。 |
+
 ## 数据库策略
 
 desktop：
@@ -58,6 +104,18 @@ server/service/container：
 - 默认 `max_connections = 16`
 - 必须替换占位 PostgreSQL URL
 - 适合团队、生产、SaaS、托管服务和商业部署
+
+server/service/container 部署的最小数据库配置是：
+
+```bash
+export SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
+```
+
+Linux systemd service 包会读取 `/etc/sdkwork-claw-router/.env.release.local`，因此服务部署建议把同一配置写入该文件：
+
+```text
+SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router
+```
 
 示例 TOML：
 
@@ -89,6 +147,23 @@ deployment_mode = "desktop"
 ## Installer 命令
 
 下面的命令假设 `sdkwork-claw-installer` 已在 `PATH` 中。若从 release 包解压目录执行，Linux/macOS 使用 `./bin/sdkwork-claw-installer`，Windows 使用 `.\bin\sdkwork-claw-installer.exe`。
+
+Linux/macOS 原生安装包使用：
+
+```bash
+/opt/sdkwork-claw-router/bin/sdkwork-claw-installer status
+/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
+/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
+```
+
+Windows MSI 默认安装目录中使用：
+
+```powershell
+Set-Location "C:\Program Files\SdkWork Claw Router"
+.\bin\sdkwork-claw-installer.exe status
+.\bin\sdkwork-claw-installer.exe ensure
+.\bin\sdkwork-claw-installer.exe refresh-catalog --force
+```
 
 查看状态：
 
@@ -161,8 +236,58 @@ curl http://127.0.0.1:3900/readyz
 
 `/healthz` 只表示 edge server 进程健康。`/readyz` 会检查 gateway、backend/admin API、app API、portal upstream 和数据库相关依赖。
 
+Linux service 还应检查 systemd 和日志：
+
+```bash
+sudo systemctl status sdkwork-claw-router --no-pager
+sudo journalctl -u sdkwork-claw-router -n 200 --no-pager
+```
+
 ## 首次账号和 IAM
+
+首次安装或首次启动时，如果配置的 bootstrap admin 登录链路不完整，Claw Router 会自动创建或修复初始化管理员账号。默认账号为：
+
+- 用户名：`admin`
+- 租户：`default`（`tenantId: "10"`）
+- 组织：`root`（`organizationId: "20"`）
+
+初始密码默认由操作系统随机源生成；如果设置了 `SDKWORK_CLAW_BOOTSTRAP_ADMIN_PASSWORD`，则使用该显式密码。只要本次确实写入了新的初始化密码，系统会在两个位置输出一次：
+
+- installer JSON 输出的 `bootstrapAdmin.initialPassword`
+- gateway/admin/app 服务启动日志中的 `initial_password`
+
+请立即保存该密码，并在首次登录后立刻轮换。后续重复执行 `ensure` 或重启服务时，如果管理员登录链路已经完整，不会再次输出或重置密码。如果已有 admin 用户和有效密码，只是 IAM 组织成员关系缺失，启动修复只会补齐成员关系，不会改密码，也不会输出密码。
+
+bootstrap admin 环境变量：
+
+| 变量 | 默认值 | 说明 |
+| --- | --- | --- |
+| `SDKWORK_CLAW_BOOTSTRAP_ADMIN_ENABLED` | `true` | 设置为 `false` 可关闭自动创建和修复 bootstrap admin。 |
+| `SDKWORK_CLAW_BOOTSTRAP_ADMIN_USERNAME` | `admin` | 初始化用户名。允许字母、数字、`.`、`-`、`_`。 |
+| `SDKWORK_CLAW_BOOTSTRAP_ADMIN_DISPLAY_NAME` | `Administrator` | 初始化用户显示名。 |
+| `SDKWORK_CLAW_BOOTSTRAP_ADMIN_EMAIL` | `admin@sdkwork.local` | 初始化用户邮箱身份。 |
+| `SDKWORK_CLAW_BOOTSTRAP_ADMIN_PASSWORD` | 随机生成 | 可选显式初始密码，长度 12 到 128 个字符。 |
+
+installer 输出示例：
+
+```json
+{
+  "status": "installed",
+  "changed": true,
+  "bootstrapAdmin": {
+    "status": "created",
+    "tenantId": "10",
+    "organizationId": "20",
+    "userId": "1",
+    "username": "admin",
+    "displayName": "Administrator",
+    "email": "admin@sdkwork.local",
+    "initialPassword": "generated-or-configured-password",
+    "generatedPassword": true
+  }
+}
+```
 
 Claw Router 的登录、注册、二维码登录、验证码策略和恢复方式由 IAM 运行时配置控制。`v0.2.0` 默认保持严格姿态：密码登录默认可用，二维码、验证码登录、OAuth、session bridge 等能力需要显式开启。
 
-不要在部署文档中假设固定默认管理员账号。生产环境应接入既有 IAM 租户/组织策略，或由授权的初始化流程创建管理员账号。
+首次登录后，请在后台配置 IAM 策略，包括登录方式、二维码登录、注册验证码、OAuth 展示和账号恢复方式。

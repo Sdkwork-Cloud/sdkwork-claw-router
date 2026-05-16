@@ -144,6 +144,8 @@ $env:SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.e
 pnpm start -- --deployment-mode server
 ```
 
+首次执行 `pnpm dev -- --install`、`pnpm start` 或 installer `ensure` 时，会按需初始化 bootstrap admin 登录。请保存 installer JSON 中的 `bootstrapAdmin.initialPassword`，或启动日志中的 `initial_password`，首次登录后立即轮换。管理员登录链路完整后，后续初始化不会再输出或重置密码。
+
 ## 6. 从源码构建 release 安装包
 
 查看当前安装包矩阵：
@@ -175,6 +177,20 @@ pnpm install:package:build -- --package-id windows-x64-archive --staging-root di
 ```powershell
 pnpm install:package:check
 ```
+
+校验全部原生安装包计划，不写真实安装包：
+
+```powershell
+pnpm install:native:check
+```
+
+构建当前主机对应的原生安装包：
+
+```powershell
+pnpm install:native:build -- --package-id windows-x64-service --staging-root dist\install-package-staging --output-dir dist\install-packages
+```
+
+原生安装包格式与构建操作系统绑定：Linux 生成 `.deb`，Windows 生成 `.msi`，macOS 生成 `.pkg`，应在匹配的 runner 或主机上构建。
 
 指定旧版本包名：
 

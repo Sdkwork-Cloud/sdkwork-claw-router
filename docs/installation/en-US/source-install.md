@@ -143,6 +143,8 @@ Server mode with PostgreSQL:
 SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router" pnpm start -- --deployment-mode server
 ```
 
+The first `pnpm dev -- --install`, `pnpm start`, or installer `ensure` run initializes the bootstrap admin login when needed. Save `bootstrapAdmin.initialPassword` from installer JSON or `initial_password` from startup logs, then rotate it after first login. Re-running initialization does not print or reset the password once the admin login is complete.
+
 ## 6. Build Release Packages From Source
 
 View the current package matrix:
@@ -174,6 +176,20 @@ Validate all package build plans without writing archives:
 ```bash
 pnpm install:package:check
 ```
+
+Validate all native installer plans without writing installers:
+
+```bash
+pnpm install:native:check
+```
+
+Build a native installer for the current host:
+
+```bash
+pnpm install:native:build -- --package-id linux-x64-service --staging-root dist/install-package-staging --output-dir dist/install-packages
+```
+
+Native installer formats are platform-specific: `.deb` on Linux, `.msi` on Windows, and `.pkg` on macOS. Build them on matching runner operating systems.
 
 Use an older package version explicitly:
 

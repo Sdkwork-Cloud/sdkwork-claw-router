@@ -33,7 +33,7 @@ The default posture is strict:
 - QR login, email code login, phone code login, OAuth, and session bridge require explicit enablement.
 - Whether registration requires verification code is controlled by IAM runtime policy.
 
-Production deployments should have authorized administrators configure IAM policy in the backend. Do not assume a fixed default administrator account.
+The first install/start initializes a bootstrap administrator when needed. The default username is `admin`; the one-time password appears as `bootstrapAdmin.initialPassword` in installer output or `initial_password` in startup logs. Rotate it after first login, then configure IAM policy in the backend.
 
 ## 3. Admin Console
 

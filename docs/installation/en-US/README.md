@@ -26,8 +26,10 @@ Release Date: 2026-05-16
 Package names use this version:
 
 ```text
+sdkwork-claw-router-linux-x64-service-0.2.0.deb
+sdkwork-claw-router-windows-x64-desktop-0.2.0.msi
+sdkwork-claw-router-macos-arm64-desktop-0.2.0.pkg
 sdkwork-claw-router-linux-x64-archive-0.2.0.tar.gz
-sdkwork-claw-router-windows-x64-desktop-0.2.0.zip
 ```
 
 From a source checkout, inspect the full package matrix with:
@@ -41,7 +43,7 @@ node scripts/plan-claw-router-install-packages.mjs --json
 
 - `desktop`: single-machine package, local SQLite by default.
 - `archive`: self-contained server archive, external PostgreSQL by default.
-- `service`: host service package for Windows Service, Linux systemd, or macOS launchd, external PostgreSQL by default.
+- `service`: platform-native host service package, external PostgreSQL by default.
 - `container`: container image package, external PostgreSQL by default.
 - `source`: source checkout for development, validation, private builds, and integration work.
 
@@ -60,7 +62,26 @@ pnpm build
 pnpm start
 ```
 
-Release package initialization on Linux/macOS:
+Ubuntu/Debian service package:
+
+```bash
+sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
+sudo install -o root -g sdkwork -m 0640 /opt/sdkwork-claw-router/.env.release.example /etc/sdkwork-claw-router/.env.release.local
+sudo editor /etc/sdkwork-claw-router/.env.release.local
+sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
+sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
+sudo systemctl enable --now sdkwork-claw-router
+```
+
+Linux/macOS native desktop package:
+
+```bash
+/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
+/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
+/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway
+```
+
+Portable release package root on Linux/macOS:
 
 ```bash
 ./bin/sdkwork-claw-installer ensure
@@ -68,9 +89,10 @@ Release package initialization on Linux/macOS:
 ./bin/sdkwork-claw-gateway
 ```
 
-Release package initialization on Windows:
+Windows MSI install root:
 
 ```powershell
+Set-Location "C:\Program Files\SdkWork Claw Router"
 .\bin\sdkwork-claw-installer.exe ensure
 .\bin\sdkwork-claw-installer.exe refresh-catalog --force
 .\bin\sdkwork-claw-gateway.exe

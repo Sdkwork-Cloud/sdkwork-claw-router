@@ -37,15 +37,41 @@ Quick source start:
 pnpm.cmd dev -- --install
 ```
 
-Quick release package initialization on Windows:
+Quick Ubuntu/Debian service install from a release asset:
+
+```bash
+sudo apt install ./sdkwork-claw-router-linux-x64-service-0.2.0.deb
+sudo install -o root -g sdkwork -m 0640 /opt/sdkwork-claw-router/.env.release.example /etc/sdkwork-claw-router/.env.release.local
+sudo editor /etc/sdkwork-claw-router/.env.release.local
+sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
+sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
+sudo systemctl enable --now sdkwork-claw-router
+```
+
+On the first install or first startup, Claw Router initializes the bootstrap
+administrator login when it is missing or incomplete. The default username is
+`admin`. Save the one-time password from installer JSON
+`bootstrapAdmin.initialPassword` or startup logs `initial_password`, then rotate
+it after first login.
+
+Quick MSI install root initialization on Windows:
 
 ```powershell
+Set-Location "C:\Program Files\SdkWork Claw Router"
 .\bin\sdkwork-claw-installer.exe ensure
 .\bin\sdkwork-claw-installer.exe refresh-catalog --force
 .\bin\sdkwork-claw-gateway.exe
 ```
 
-Quick release package initialization on Linux and macOS:
+Quick native package initialization on Linux and macOS:
+
+```bash
+/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
+/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
+/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway
+```
+
+Quick portable package initialization on Linux and macOS:
 
 ```bash
 ./bin/sdkwork-claw-installer ensure

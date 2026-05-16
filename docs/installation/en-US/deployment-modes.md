@@ -6,9 +6,9 @@ SDKWork Claw Router release packages cover `archive`, `service`, `container`, an
 
 | Mode | Package kind | Default database | Startup | Recommended use |
 | --- | --- | --- | --- | --- |
-| `desktop` | `desktop-app-installer` | SQLite | run gateway directly | local trial and demo |
+| `desktop` | native installer (`.deb`, `.msi`, `.pkg`) | SQLite | run gateway directly | local trial and demo |
 | `archive` | `self-contained-archive` | PostgreSQL | run gateway directly | private server, manual deployment |
-| `service` | `host-service-package` | PostgreSQL | Windows Service / systemd / launchd | long-running production service |
+| `service` | native installer (`.deb`, `.msi`, `.pkg`) | PostgreSQL | host service manager | long-running production service |
 | `container` | `container-image` | PostgreSQL | Containerfile / entrypoint | Docker, Kubernetes, container platforms |
 | `source` | source checkout | development SQLite or PostgreSQL | `pnpm dev` / `pnpm start` | development, validation, private builds |
 
@@ -19,9 +19,18 @@ Characteristics:
 - SQLite by default.
 - Uses OS user config and data directories automatically.
 - Does not require external PostgreSQL.
+- Released as a native installer for Linux, Windows, and macOS.
 - Best for personal trials, demos, and local debugging.
 
 Start:
+
+```bash
+/opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
+/opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
+/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway
+```
+
+From a portable archive package root, use:
 
 ```bash
 ./bin/sdkwork-claw-installer ensure
@@ -50,27 +59,29 @@ export SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db
 
 Characteristics:
 
-- Includes host service manifests.
-- Fits systemd, Windows Service, and launchd.
+- Released as a native installer for Linux, Windows, and macOS.
+- Linux `.deb` service packages install the systemd unit.
+- macOS `.pkg` service packages install the launchd plist.
+- Windows `.msi` packages install runtime files and service metadata for host-specific service registration.
 - Requires protected configuration and database URL storage.
 
-Service manifests:
+Native service assets:
 
 ```text
-Windows: service/windows/sdkwork-claw-router.xml
-Linux: service/linux/sdkwork-claw-router.service
-macOS: service/macos/com.sdkwork.claw-router.plist
+Windows: sdkwork-claw-router-windows-x64-service-0.2.0.msi
+Linux: sdkwork-claw-router-linux-x64-service-0.2.0.deb
+macOS: sdkwork-claw-router-macos-arm64-service-0.2.0.pkg
 ```
 
-Typical Linux systemd setup:
+Typical Linux systemd setup after installing the `.deb`:
 
 ```bash
-sudo useradd --system --home /opt/sdkwork-claw-router --shell /usr/sbin/nologin sdkwork
-sudo mkdir -p /etc/sdkwork-claw-router /var/lib/sdkwork-claw-router /var/log/sdkwork-claw-router
-sudo chown -R sdkwork:sdkwork /var/lib/sdkwork-claw-router /var/log/sdkwork-claw-router
-sudo cp service/linux/sdkwork-claw-router.service /etc/systemd/system/sdkwork-claw-router.service
-sudo systemctl daemon-reload
+sudo install -o root -g sdkwork -m 0640 /opt/sdkwork-claw-router/.env.release.example /etc/sdkwork-claw-router/.env.release.local
+sudo editor /etc/sdkwork-claw-router/.env.release.local
+sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer ensure
+sudo /opt/sdkwork-claw-router/bin/sdkwork-claw-installer refresh-catalog --force
 sudo systemctl enable --now sdkwork-claw-router
+sudo systemctl status sdkwork-claw-router --no-pager
 ```
 
 ## Container

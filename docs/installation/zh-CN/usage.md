@@ -33,7 +33,7 @@ curl http://127.0.0.1:3900/readyz
 - 二维码登录、邮箱验证码登录、手机验证码登录、OAuth、session bridge 默认需要显式开启。
 - 注册是否需要验证码由 IAM 运行时策略控制。
 
-生产环境应由授权管理员在后台配置 IAM 策略，不要假设固定默认管理员账号。
+首次安装或启动会按需初始化 bootstrap 管理员。默认用户名为 `admin`；一次性密码会出现在 installer 输出的 `bootstrapAdmin.initialPassword`，或启动日志的 `initial_password` 中。首次登录后请立即轮换密码，并在后台配置 IAM 策略。
 
 ## 3. 管理后台
 
