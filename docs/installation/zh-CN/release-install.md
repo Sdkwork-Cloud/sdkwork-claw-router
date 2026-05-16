@@ -31,9 +31,9 @@
 
 支持部署模式：
 
-- `archive`：可移植服务端目录，默认使用本地 SQLite；生产建议 PostgreSQL。
-- `service`：主机服务安装包，默认使用本地 SQLite；生产建议 PostgreSQL。
-- `container`：容器构建包，默认使用本地 SQLite；生产建议挂载 PostgreSQL 配置。
+- `archive`：可移植服务端目录，默认使用 PostgreSQL。
+- `service`：主机服务安装包，默认使用 PostgreSQL。
+- `container`：容器构建包，默认使用 PostgreSQL；生产建议挂载 TOML 配置和密钥。
 - `desktop`：单机安装包，默认使用 SQLite。
 
 常见安装包名：
@@ -63,19 +63,27 @@ node scripts\plan-claw-router-install-packages.mjs --json
 
 ```bash
 sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
+sudo editor /etc/clawrouter/clawrouter.toml
+sudo systemctl start clawrouter
 curl http://127.0.0.1:3900/healthz
 curl http://127.0.0.1:3900/readyz
 ```
 
-`.deb` 包会创建 `sdkwork` 系统用户、`/etc/clawrouter/clawrouter.toml`、`/etc/default/clawrouter`、`/var/lib/clawrouter`、`/var/log/clawrouter` 和 systemd unit。在 systemd 主机上，安装过程会自动启用并启动 `clawrouter.service`。首次启动会通过 `ExecStartPre` 自动执行 `clawrouterctl ensure` 和 `clawrouterctl refresh-catalog --force`。
+`.deb` 包会创建 `sdkwork` 系统用户、`/etc/clawrouter/clawrouter.toml`、`/etc/clawrouter/clawrouter.env`、`/etc/clawrouter/database.secret`、`/var/lib/clawrouter`、`/var/log/clawrouter` 和 systemd unit。在 systemd 主机上，安装过程会启用但不会立即启动 `clawrouter.service`。首次启动会通过 `ExecStartPre` 自动执行 `clawrouterctl ensure` 和 `clawrouterctl refresh-catalog --force`。
 
-默认数据库是本地 SQLite：
+默认服务端数据库配置是外部 PostgreSQL：
 
 ```toml
 [database]
-engine = "sqlite"
-url = "sqlite:///var/lib/clawrouter/clawrouter.sqlite"
-max_connections = 1
+engine = "postgresql"
+host = "db.example.com"
+port = 5432
+database = "sdkwork_claw_router"
+username = "sdkwork_claw_router"
+password_file = "/etc/clawrouter/database.secret"
+# password = "change-me"
+ssl_mode = "require"
+max_connections = 16
 
 [paths]
 data_directory = "/var/lib/clawrouter"
@@ -84,31 +92,35 @@ data_directory = "/var/lib/clawrouter"
 deployment_mode = "server"
 ```
 
-生产或多节点部署时，在 `/etc/default/clawrouter` 中设置 PostgreSQL URL：
+首次启动前请编辑 `/etc/clawrouter/clawrouter.toml`。推荐把数据库密码保存在 `/etc/clawrouter/database.secret`。如果 TOML 文件本身由密钥系统保护，也可以直接配置 `password`：
 
-```text
-SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router
-```
-
-也可以写入 `/etc/clawrouter/clawrouter.toml`：
+`.deb` 包创建的 `database.secret` 初始内容是占位值 `change-me`。启动服务前必须替换为真实 PostgreSQL 密码；server 配置仍使用 `db.example.com` 或 `change-me` 时会被启动校验拒绝。`password_file` 可以是绝对路径、相对 `clawrouter.toml` 所在目录的路径，也可以使用 `${VAR}`、`$VAR`、`%VAR%` 或 `~` 展开，用于平台 Secret 路径。
 
 ```toml
 [database]
 engine = "postgresql"
-url = "postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
+host = "db.internal"
+port = 5432
+database = "sdkwork_claw_router"
+username = "sdkwork_claw_router"
+password = "real-password"
+ssl_mode = "require"
 max_connections = 16
 
 [runtime]
 deployment_mode = "server"
 ```
 
+`SDKWORK_CLAW_DATABASE_URL` 仍可写入 `/etc/clawrouter/clawrouter.env`，但只建议作为明确的运维覆盖或平台密钥注入方式。
+
 `.deb` 安装脚本会创建：
 
 - `/opt/clawrouter`
 - `/etc/clawrouter`
+- `/etc/clawrouter/clawrouter.env`
+- `/etc/clawrouter/database.secret`
 - `/var/lib/clawrouter`
 - `/var/log/clawrouter`
-- `/etc/default/clawrouter`
 - `service` 包会安装 `/lib/systemd/system/clawrouter.service`
 
 如果服务启动时自动初始化数据库，请从日志中保存首次管理员密码：
@@ -233,7 +245,7 @@ release 包包含运行 Claw Router 所需文件：
 
 `archive` 和 `container` release 资产仍然是可移植 `.tar.gz` 或 `.zip`。
 
-不要把 `.env.release.local` 打包或提交。归档部署可以在目标机器上生成它；Linux service 部署使用 `.deb` 自动创建的 `/etc/default/clawrouter`。`PORTAL_PUBLIC_*` 只能放浏览器可见配置，不要放数据库密码、供应商密钥或管理员凭据。
+不要把 `.env.release.local` 打包或提交。归档部署可以在目标机器上生成它；Linux service 部署使用 `/etc/clawrouter/clawrouter.env` 保存受保护的进程覆盖项，并使用 `/etc/clawrouter/clawrouter.toml` 作为主要运行时配置。`PORTAL_PUBLIC_*` 只能放浏览器可见配置，不要放数据库密码、供应商密钥或管理员凭据。
 
 ## 4. 数据库策略
 
@@ -245,15 +257,7 @@ Linux: ${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite
 macOS: ~/Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite
 ```
 
-`archive`、`service`、`container` 包默认使用本地 SQLite，因此单节点可以零配置启动。生产或多节点部署请设置 `SDKWORK_CLAW_DATABASE_URL`，也可以把同一个 PostgreSQL DSN 写入运行时 TOML。
-
-server/service SQLite 默认路径：
-
-```text
-Linux: /var/lib/clawrouter/clawrouter.sqlite
-Windows: %ProgramData%/SdkWork/ClawRouter/Data/clawrouter.sqlite
-macOS: /Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite
-```
+`archive`、`service`、`container` 包默认使用 PostgreSQL。请在 TOML 中配置 `host`、`port`、`database`、`username`，并使用 `password_file` 或受保护的 `password`。生产环境优先使用 `password_file`。
 
 默认配置路径、数据库示例和 bootstrap admin 设置见 [initialization.md](./initialization.md)。
 
@@ -349,11 +353,12 @@ tar -xzf clawrouter-linux-x64-container-0.2.0.tar.gz -C /opt/clawrouter
 cd /opt/clawrouter
 docker build -f container/Containerfile -t clawrouter:0.2.0 .
 docker run --rm -p 3900:3900 \
-  -e SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router" \
+  -v "$PWD/config/clawrouter.toml.example:/etc/clawrouter/clawrouter.toml:ro" \
+  -v "$PWD/secrets/postgres-password:/run/secrets/clawrouter-postgres-password:ro" \
   clawrouter:0.2.0
 ```
 
-生产服务和容器部署应把运行配置、日志和可变数据目录作为可写资源挂载，并通过受保护环境变量或受保护 TOML 注入 PostgreSQL URL。
+生产服务和容器部署应把运行配置、日志和可变数据目录作为可写资源挂载，并通过受保护 TOML、密码文件或平台 Secret 注入 PostgreSQL 密码。
 
 ## 8. 升级 release 版本
 
@@ -361,7 +366,7 @@ docker run --rm -p 3900:3900 \
 2. 备份数据库和运行时配置。
 3. 停止旧版本服务。
 4. 安装或解压新 release 包。
-5. 保留目标机器上的 `/etc/default/clawrouter`、归档部署可能使用的 `.env.release.local` 和运行时 TOML。
+5. 保留目标机器上的 `/etc/clawrouter/clawrouter.env`、`/etc/clawrouter/database.secret`、归档部署可能使用的 `.env.release.local` 和运行时 TOML。
 6. Linux service 包直接启动服务，让 systemd 自动执行 `ensure` 和 `refresh-catalog --force`。
 7. archive/manual 部署手动执行 `clawrouterctl ensure` 和 `clawrouterctl refresh-catalog --force`。
 8. 启动新版本并检查 `/healthz` 和 `/readyz`。
@@ -374,4 +379,4 @@ docker run --rm -p 3900:3900 \
 - `database_error`：数据库不可达、权限不足或 schema 初始化失败。
 - `catalog_error`：模型目录路径、版本或内容校验失败。
 - `/healthz` 成功但 `/readyz` 失败：edge 进程已启动，但 gateway/admin/app/portal upstream 或数据库未就绪。
-- Linux 服务启动后立即退出：检查 `/etc/default/clawrouter`、`/etc/clawrouter/clawrouter.toml` 和 `journalctl -u clawrouter`。
+- Linux 服务启动后立即退出：检查 `/etc/clawrouter/clawrouter.toml`、`/etc/clawrouter/database.secret`、`/etc/clawrouter/clawrouter.env` 和 `journalctl -u clawrouter`。

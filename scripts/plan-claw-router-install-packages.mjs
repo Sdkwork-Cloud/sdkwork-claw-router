@@ -141,7 +141,7 @@ function createInstallPackageItem({ platform, architecture, deploymentMode, vers
   const installerBinaryName = `${INSTALLER_BINARY_BASENAME}${exeSuffix}`;
   const id = `${platform}-${architecture}-${deploymentMode}`;
   const runtimeProfile = runtimeProfileForMode(deploymentMode);
-  const databasePolicy = databasePolicyFor({ platform, runtimeProfile });
+  const databasePolicy = databasePolicyFor({ platform, runtimeProfile, deploymentMode });
 
   return {
     id,
@@ -276,7 +276,7 @@ function runtimeProfileForMode(deploymentMode) {
   return deploymentMode === 'desktop' ? 'desktop' : 'server';
 }
 
-function databasePolicyFor({ platform, runtimeProfile }) {
+function databasePolicyFor({ platform, runtimeProfile, deploymentMode = 'archive' }) {
   const locations = runtimeConfigLocationsFor(platform, runtimeProfile);
   const basePolicy = {
     configurableFromFile: true,
@@ -308,17 +308,42 @@ function databasePolicyFor({ platform, runtimeProfile }) {
     };
   }
 
+  const passwordFile = postgresPasswordFileFor(platform, deploymentMode, locations);
   return {
     ...basePolicy,
-    defaultEngine: 'sqlite',
-    defaultUrl: `sqlite://${locations.sqlitePath}`,
+    defaultEngine: 'postgresql',
+    defaultHost: 'db.example.com',
+    defaultPort: 5432,
+    defaultDatabase: 'sdkwork_claw_router',
+    defaultUsername: 'sdkwork_claw_router',
+    passwordFile: {
+      path: passwordFile,
+      required: true,
+    },
     defaultSqlitePath: locations.sqlitePath,
     defaultSqliteUrl: `sqlite://${locations.sqlitePath}`,
-    maxConnections: 1,
-    requiresExternalDatabase: false,
-    productionRecommendedEngine: 'postgresql',
+    maxConnections: 16,
+    requiresExternalDatabase: true,
     productionDatabaseUrlExample: POSTGRES_DSN_EXAMPLE,
   };
+}
+
+function postgresPasswordFileFor(platform, deploymentMode, locations) {
+  if (deploymentMode === 'container') {
+    return platform === 'windows'
+      ? 'C:/clawrouter/secrets/postgres-password'
+      : '/run/secrets/clawrouter-postgres-password';
+  }
+  if (platform === 'windows') {
+    return '%ProgramData%/SdkWork/ClawRouter/database.secret';
+  }
+  if (platform === 'macos') {
+    return '/Library/Application Support/SdkWork/ClawRouter/database.secret';
+  }
+  if (locations.configFile === '/etc/clawrouter/clawrouter.toml') {
+    return '/etc/clawrouter/database.secret';
+  }
+  return `${locations.dataDirectory}/database.secret`;
 }
 
 function runtimeConfigLocationsFor(platform, runtimeProfile) {
@@ -575,14 +600,19 @@ function validatePackageItem(packageItem, seenIds, issues) {
       issues.push(`${packageItem.id} desktop packages must declare the default SQLite file path`);
     }
   } else {
-    if (packageItem.databasePolicy?.defaultEngine !== 'sqlite') {
-      issues.push(`${packageItem.id} server package modes must default to local SQLite for zero-config single-node startup`);
+    if (packageItem.databasePolicy?.defaultEngine !== 'postgresql') {
+      issues.push(`${packageItem.id} server package modes must default to PostgreSQL`);
     }
-    if (!packageItem.databasePolicy?.defaultSqlitePath) {
-      issues.push(`${packageItem.id} server package modes must declare the default SQLite file path`);
+    if (packageItem.databasePolicy?.requiresExternalDatabase !== true) {
+      issues.push(`${packageItem.id} server package modes must require an external database`);
     }
-    if (packageItem.databasePolicy?.productionRecommendedEngine !== 'postgresql') {
-      issues.push(`${packageItem.id} server package modes must recommend PostgreSQL for production`);
+    for (const key of ['defaultHost', 'defaultPort', 'defaultDatabase', 'defaultUsername']) {
+      if (!packageItem.databasePolicy?.[key]) {
+        issues.push(`${packageItem.id} server package modes must declare databasePolicy.${key}`);
+      }
+    }
+    if (!packageItem.databasePolicy?.passwordFile?.path) {
+      issues.push(`${packageItem.id} server package modes must declare databasePolicy.passwordFile.path`);
     }
   }
   if (

@@ -1266,7 +1266,7 @@ test('production starter auto-initializes desktop SQLite runtime config', async 
   rmSync(fixtureRoot, { recursive: true, force: true });
 });
 
-test('production starter initializes zero-config server SQLite runtime config', async () => {
+test('production starter initializes server PostgreSQL runtime config template', async () => {
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'start-claw-router-production.mjs')).href
   );
@@ -1289,18 +1289,124 @@ test('production starter initializes zero-config server SQLite runtime config', 
 
   assert.equal(result.action, 'created');
   assert.equal(result.deploymentMode, 'server');
-  assert.equal(result.databaseEngine, 'sqlite');
-  assert.equal(result.databaseUrl, 'sqlite:///var/lib/clawrouter/clawrouter.sqlite');
+  assert.equal(result.databaseEngine, 'postgresql');
+  assert.equal(result.databaseUrl, 'postgresql://sdkwork_claw_router@db.example.com:5432/sdkwork_claw_router?sslmode=require');
   assert.equal(result.env.SDKWORK_CLAW_CONFIG_FILE, configFile);
   assert.equal(result.env.SDKWORK_CLAW_DEPLOYMENT_MODE, 'server');
-  assert.equal(result.blockingIssue, null);
+  assert.equal(result.blockingIssue.code, 'database_configuration_required');
+  assert.ok(result.blockingIssue.message.includes('default placeholder PostgreSQL host or password'));
   assert.equal(existsSync(configFile), true);
 
   const content = readFileSync(configFile, 'utf8');
-  assert.ok(content.includes('engine = "sqlite"'));
-  assert.ok(content.includes('clawrouter.sqlite'));
-  assert.ok(content.includes('max_connections = 1'));
-  assert.ok(content.includes('For production or multi-node deployments'));
+  assert.ok(content.includes('engine = "postgresql"'));
+  assert.ok(content.includes('host = "db.example.com"'));
+  assert.ok(content.includes('database = "sdkwork_claw_router"'));
+  assert.ok(content.includes('username = "sdkwork_claw_router"'));
+  assert.ok(content.includes(`password_file = "${slashPath(path.join(fixtureRoot, 'etc', 'database.secret'))}"`));
+  assert.ok(content.includes('# password = "change-me"'));
+  assert.ok(content.includes('ssl_mode = "require"'));
+  assert.ok(content.includes('max_connections = 16'));
+  rmSync(fixtureRoot, { recursive: true, force: true });
+});
+
+test('production starter blocks placeholder PostgreSQL password files', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'start-claw-router-production.mjs')).href
+  );
+  const fixtureRoot = path.join(workspaceRoot, 'target', 'start-production-config-tests', `server-password-file-${Date.now()}`);
+  const configFile = path.join(fixtureRoot, 'etc', 'clawrouter.toml');
+  const passwordFile = path.join(fixtureRoot, 'etc', 'database.secret');
+  rmSync(fixtureRoot, { recursive: true, force: true });
+  mkdirSync(path.dirname(configFile), { recursive: true });
+  writeFileSync(passwordFile, 'change-me\n', 'utf8');
+  writeFileSync(configFile, [
+    '[database]',
+    'engine = "postgresql"',
+    'host = "db.internal"',
+    'port = 5432',
+    'database = "sdkwork_claw_router"',
+    'username = "sdkwork_claw_router"',
+    `password_file = "${slashPath(passwordFile)}"`,
+    'ssl_mode = "require"',
+    'max_connections = 16',
+    '',
+    '[paths]',
+    `data_directory = "${slashPath(path.join(fixtureRoot, 'data'))}"`,
+    '',
+    '[runtime]',
+    'deployment_mode = "server"',
+    '',
+  ].join('\n'), 'utf8');
+
+  const result = module.prepareStartProductionRuntimeConfig({
+    baseEnv: { HOME: path.join(fixtureRoot, 'home') },
+    settings: module.parseStartProductionArgs([
+      '--deployment-mode',
+      'server',
+      '--config-file',
+      configFile,
+    ]),
+    platform: 'linux',
+    write: false,
+  });
+
+  assert.equal(result.action, 'existing');
+  assert.equal(result.databaseEngine, 'postgresql');
+  assert.equal(result.blockingIssue.code, 'database_configuration_required');
+  assert.ok(result.blockingIssue.message.includes('default placeholder PostgreSQL host or password'));
+  rmSync(fixtureRoot, { recursive: true, force: true });
+});
+
+test('production starter expands password_file environment variables', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'start-claw-router-production.mjs')).href
+  );
+  const fixtureRoot = path.join(workspaceRoot, 'target', 'start-production-config-tests', `server-password-env-${Date.now()}`);
+  const configFile = path.join(fixtureRoot, 'etc', 'clawrouter.toml');
+  const secretRoot = path.join(fixtureRoot, 'secrets');
+  const passwordFile = path.join(secretRoot, 'database.secret');
+  rmSync(fixtureRoot, { recursive: true, force: true });
+  mkdirSync(secretRoot, { recursive: true });
+  mkdirSync(path.dirname(configFile), { recursive: true });
+  writeFileSync(passwordFile, 'real-password\n', 'utf8');
+  writeFileSync(configFile, [
+    '[database]',
+    'engine = "postgresql"',
+    'host = "db.internal"',
+    'port = 5432',
+    'database = "sdkwork_claw_router"',
+    'username = "sdkwork_claw_router"',
+    'password_file = "${SDKWORK_CLAW_TEST_SECRET_ROOT}/database.secret"',
+    'ssl_mode = "require"',
+    'max_connections = 16',
+    '',
+    '[paths]',
+    `data_directory = "${slashPath(path.join(fixtureRoot, 'data'))}"`,
+    '',
+    '[runtime]',
+    'deployment_mode = "server"',
+    '',
+  ].join('\n'), 'utf8');
+
+  const result = module.prepareStartProductionRuntimeConfig({
+    baseEnv: {
+      HOME: path.join(fixtureRoot, 'home'),
+      SDKWORK_CLAW_TEST_SECRET_ROOT: secretRoot,
+    },
+    settings: module.parseStartProductionArgs([
+      '--deployment-mode',
+      'server',
+      '--config-file',
+      configFile,
+    ]),
+    platform: 'linux',
+    write: false,
+  });
+
+  assert.equal(result.action, 'existing');
+  assert.equal(result.databaseEngine, 'postgresql');
+  assert.equal(result.databaseUrl, 'postgresql://sdkwork_claw_router:real-password@db.internal:5432/sdkwork_claw_router?sslmode=require');
+  assert.equal(result.blockingIssue, null);
   rmSync(fixtureRoot, { recursive: true, force: true });
 });
 
@@ -1315,8 +1421,8 @@ test('production starter help documents automatic runtime config initialization'
 
   assert.ok(stdout.includes('Runtime config initialization:'));
   assert.ok(stdout.includes('Missing runtime TOML files are created automatically before startup.'));
-  assert.ok(stdout.includes('Server deployments default to local SQLite for quick single-node startup.'));
-  assert.ok(stdout.includes('Use PostgreSQL for production, HA, and multi-node deployments.'));
+  assert.ok(stdout.includes('Server deployments use external PostgreSQL by default.'));
+  assert.ok(stdout.includes('Configure PostgreSQL in clawrouter.toml with host, database, username,'));
   assert.ok(stdout.includes('Desktop deployments default to SQLite and can start from the generated config.'));
   assert.ok(stdout.includes('pnpm start -- --init-config-only --deployment-mode server'));
   assert.ok(stdout.includes('SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"'));
@@ -1478,13 +1584,15 @@ test('install package planner covers platforms, architectures, modes, fast init,
   assert.equal(windowsService.startCommand, '.\\bin\\clawrouter.exe');
   assert.deepEqual(windowsService.healthChecks, ['/healthz', '/readyz']);
   assert.equal(windowsService.runtimeProfile, 'server');
-  assert.equal(windowsService.databasePolicy.defaultEngine, 'sqlite');
+  assert.equal(windowsService.databasePolicy.defaultEngine, 'postgresql');
   assert.equal(windowsService.databasePolicy.configurableFromFile, true);
-  assert.equal(windowsService.databasePolicy.requiresExternalDatabase, false);
+  assert.equal(windowsService.databasePolicy.requiresExternalDatabase, true);
   assert.equal(windowsService.databasePolicy.configFile.path, '%ProgramData%/SdkWork/ClawRouter/clawrouter.toml');
   assert.equal(windowsService.databasePolicy.envOverrides.includes('SDKWORK_CLAW_DATABASE_URL'), true);
-  assert.equal(windowsService.databasePolicy.defaultUrl, 'sqlite://%ProgramData%/SdkWork/ClawRouter/Data/clawrouter.sqlite');
-  assert.equal(windowsService.databasePolicy.productionRecommendedEngine, 'postgresql');
+  assert.equal(windowsService.databasePolicy.defaultHost, 'db.example.com');
+  assert.equal(windowsService.databasePolicy.defaultDatabase, 'sdkwork_claw_router');
+  assert.equal(windowsService.databasePolicy.defaultUsername, 'sdkwork_claw_router');
+  assert.equal(windowsService.databasePolicy.passwordFile.path, '%ProgramData%/SdkWork/ClawRouter/database.secret');
   assert.ok(windowsService.artifacts.some((artifact) =>
     artifact.kind === 'runtime-config-template' && artifact.path === 'config/clawrouter.toml.example'
   ));
@@ -1498,6 +1606,9 @@ test('install package planner covers platforms, architectures, modes, fast init,
     item.platform === 'linux' && item.architecture === 'arm64' && item.deploymentMode === 'container'
   );
   assert.ok(linuxContainer);
+  assert.equal(linuxContainer.databasePolicy.defaultEngine, 'postgresql');
+  assert.equal(linuxContainer.databasePolicy.requiresExternalDatabase, true);
+  assert.equal(linuxContainer.databasePolicy.passwordFile.path, '/run/secrets/clawrouter-postgres-password');
   assert.equal(linuxContainer.containerIntegration.kind, 'container-image');
   assert.equal(linuxContainer.containerIntegration.entrypoint, '/opt/clawrouter/bin/clawrouter');
   for (const packageItem of plan.packages.filter((item) => item.deploymentMode === 'container')) {
@@ -1530,12 +1641,15 @@ test('install package planner covers platforms, architectures, modes, fast init,
   );
   assert.ok(linuxArchive);
   assert.equal(linuxArchive.runtimeProfile, 'server');
-  assert.equal(linuxArchive.databasePolicy.defaultEngine, 'sqlite');
+  assert.equal(linuxArchive.databasePolicy.defaultEngine, 'postgresql');
+  assert.equal(linuxArchive.databasePolicy.requiresExternalDatabase, true);
   assert.equal(linuxArchive.databasePolicy.configFile.path, '/etc/clawrouter/clawrouter.toml');
   assert.equal(linuxArchive.databasePolicy.dataDirectory.path, '/var/lib/clawrouter');
-  assert.equal(linuxArchive.databasePolicy.defaultSqliteUrl, 'sqlite:///var/lib/clawrouter/clawrouter.sqlite');
-  assert.equal(linuxArchive.databasePolicy.defaultUrl, 'sqlite:///var/lib/clawrouter/clawrouter.sqlite');
-  assert.equal(linuxArchive.databasePolicy.productionRecommendedEngine, 'postgresql');
+  assert.equal(linuxArchive.databasePolicy.defaultHost, 'db.example.com');
+  assert.equal(linuxArchive.databasePolicy.defaultPort, 5432);
+  assert.equal(linuxArchive.databasePolicy.defaultDatabase, 'sdkwork_claw_router');
+  assert.equal(linuxArchive.databasePolicy.defaultUsername, 'sdkwork_claw_router');
+  assert.equal(linuxArchive.databasePolicy.passwordFile.path, '/etc/clawrouter/database.secret');
 
   const macosDesktop = plan.packages.find((item) =>
     item.platform === 'macos' && item.architecture === 'arm64' && item.deploymentMode === 'desktop'
@@ -1648,7 +1762,7 @@ test('install package archive builder creates manifest-backed archives without l
     assert.equal(result.manifest.package.id, 'windows-x64-archive');
     assert.equal(result.manifest.package.version, '0.1.0');
     assert.equal(result.manifest.package.runtimeProfile, 'server');
-    assert.equal(result.manifest.databasePolicy.defaultEngine, 'sqlite');
+    assert.equal(result.manifest.databasePolicy.defaultEngine, 'postgresql');
     assert.equal(result.manifest.generatedArtifacts.some((artifact) =>
       artifact.path === 'config/clawrouter.toml.example'
     ), true);
@@ -1779,16 +1893,19 @@ test('install package builder emits service and container deployment packages fr
       gunzipSync(readFileSync(serviceResult.archivePath)),
       'config/clawrouter.toml.example',
     );
-    assert.ok(serviceConfigTemplate.includes('engine = "sqlite"'));
-    assert.ok(serviceConfigTemplate.includes('/var/lib/clawrouter/clawrouter.sqlite'));
+    assert.ok(serviceConfigTemplate.includes('engine = "postgresql"'));
+    assert.ok(serviceConfigTemplate.includes('host = "db.example.com"'));
+    assert.ok(serviceConfigTemplate.includes('database = "sdkwork_claw_router"'));
+    assert.ok(serviceConfigTemplate.includes('username = "sdkwork_claw_router"'));
+    assert.ok(serviceConfigTemplate.includes('password_file = "/etc/clawrouter/database.secret"'));
     assert.ok(serviceConfigTemplate.includes('/etc/clawrouter/clawrouter.toml'));
     const serviceInstallGuide = readTarEntryText(
       gunzipSync(readFileSync(serviceResult.archivePath)),
       'INSTALL.md',
     );
-    assert.ok(serviceInstallGuide.includes('runnable out of the box with local SQLite'));
+    assert.ok(serviceInstallGuide.includes('configured for external PostgreSQL'));
     assert.ok(serviceInstallGuide.includes('Version: 0.1.0'));
-    assert.ok(serviceInstallGuide.includes('SDKWORK_CLAW_DATABASE_URL'));
+    assert.ok(serviceInstallGuide.includes('password_file'));
     assert.ok(serviceInstallGuide.includes('Linux service packages run initialization automatically from systemd'));
     assert.ok(serviceInstallGuide.includes('/opt/clawrouter/bin/clawrouterctl ensure'));
     assert.ok(serviceInstallGuide.includes('/etc/clawrouter/clawrouter.toml'));
@@ -1828,7 +1945,7 @@ test('install package builder emits service and container deployment packages fr
     assert.equal(metadata.version, '0.1.0');
     assert.equal(metadata.entrypoint, '/opt/clawrouter/bin/clawrouter');
     assert.equal(metadata.runtimeUser, 'sdkwork');
-    assert.equal(metadata.database.defaultEngine, 'sqlite');
+    assert.equal(metadata.database.defaultEngine, 'postgresql');
     assert.equal(metadata.configFile, '/etc/clawrouter/clawrouter.toml');
     assert.equal(
       containerResult.manifest.generatedArtifacts.some((artifact) =>
@@ -1997,10 +2114,12 @@ test('native installer builder emits apt-installable Debian packages for Linux s
     assert.ok(controlText.includes('Package: clawrouter'));
     assert.ok(controlText.includes('Architecture: amd64'));
     const postinstText = readTarEntryText(controlTar, './postinst');
-    assert.ok(postinstText.includes('/etc/default/clawrouter'));
+    assert.ok(postinstText.includes('/etc/clawrouter/clawrouter.env'));
+    assert.ok(postinstText.includes('/etc/clawrouter/database.secret'));
     assert.ok(postinstText.includes('SDKWORK_CLAW_DEPLOYMENT_MODE=server'));
     assert.ok(postinstText.includes('systemctl daemon-reload'));
-    assert.ok(postinstText.includes('systemctl enable --now clawrouter.service'));
+    assert.ok(postinstText.includes('systemctl enable clawrouter.service'));
+    assert.ok(!postinstText.includes('systemctl enable --now clawrouter.service'));
 
     const dataTar = gunzipSync(arEntries.get('data.tar.gz'));
     const dataEntries = readTarEntries(dataTar);
@@ -2011,7 +2130,7 @@ test('native installer builder emits apt-installable Debian packages for Linux s
     assert.ok(dataEntries.has('./lib/systemd/system/clawrouter.service'));
     assert.ok(dataEntries.has('./usr/share/clawrouter/install-manifest.json'));
     const systemdText = readTarEntryText(dataTar, './lib/systemd/system/clawrouter.service');
-    assert.ok(systemdText.includes('EnvironmentFile=-/etc/default/clawrouter'));
+    assert.ok(systemdText.includes('EnvironmentFile=-/etc/clawrouter/clawrouter.env'));
     assert.ok(systemdText.includes('ExecStartPre=/opt/clawrouter/bin/clawrouterctl ensure'));
     assert.ok(systemdText.includes('ExecStartPre=/opt/clawrouter/bin/clawrouterctl refresh-catalog --force'));
 
@@ -2161,10 +2280,11 @@ test('install init smoke validates fast initialization without starting dev serv
     });
     assert.equal(smokePlan.package.id, 'linux-x64-archive');
     assert.equal(smokePlan.mode, 'contract-dry-run');
-    assert.equal(smokePlan.databaseEngine, 'sqlite');
+    assert.equal(smokePlan.databaseEngine, 'postgresql');
     assert.equal(smokePlan.deploymentMode, 'server');
-    assert.equal(smokePlan.databaseUrl, `sqlite://${path.join(fixtureRoot, 'clawrouter-install-init.sqlite').replaceAll('\\', '/')}`);
-    assert.ok(smokePlan.databasePath.endsWith('clawrouter-install-init.sqlite'));
+    assert.equal(smokePlan.databaseUrl, 'postgresql://release-smoke.invalid:5432/sdkwork_claw_router');
+    assert.equal(smokePlan.databasePath, null);
+    assert.ok(smokePlan.databasePasswordPath.endsWith('database.secret'));
     assert.equal(smokePlan.releaseEnvPath, path.join(fixtureRoot, '.env.release.local'));
     assert.equal(smokePlan.runtimeConfigPath, path.join(fixtureRoot, 'clawrouter.toml'));
     assert.deepEqual(smokePlan.healthChecks, ['/healthz', '/readyz']);
@@ -2195,8 +2315,10 @@ test('install init smoke validates fast initialization without starting dev serv
     assert.ok(!writtenEnv.includes('SDKWORK_CLAW_DATABASE_URL="sqlite://'));
     assert.ok(writtenEnv.includes('SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL="postgres://release-smoke.invalid:5432/sdkwork_claw_router"'));
     const writtenConfig = readFileSync(smokePlan.runtimeConfigPath, 'utf8');
-    assert.ok(writtenConfig.includes('engine = "sqlite"'));
-    assert.ok(writtenConfig.includes(`url = "${smokePlan.databaseUrl}"`));
+    assert.ok(writtenConfig.includes('engine = "postgresql"'));
+    assert.ok(writtenConfig.includes('host = "release-smoke.invalid"'));
+    assert.ok(writtenConfig.includes('username = "release_smoke"'));
+    assert.ok(writtenConfig.includes('password_file = "'));
     assert.ok(writtenConfig.includes('deployment_mode = "server"'));
     assert.ok(!writtenEnv.includes('SDKWORK_SECRET'));
 
@@ -2214,7 +2336,7 @@ test('install init smoke validates fast initialization without starting dev serv
     const rendered = module.renderInstallInitSmokePlan(smokePlan).join('\n');
     assert.ok(rendered.includes('[install-init-smoke] package: linux-x64-archive'));
     assert.ok(rendered.includes('[install-init-smoke] mode: contract-dry-run'));
-    assert.ok(rendered.includes('[install-init-smoke] database: sqlite'));
+    assert.ok(rendered.includes('[install-init-smoke] database: postgresql'));
     assert.ok(!rendered.includes('pnpm dev'));
   } finally {
     rmSync(fixtureRoot, { recursive: true, force: true });
@@ -2246,7 +2368,8 @@ test('install init smoke CLI emits pure JSON for CI dry-run checks', async () =>
     assert.equal(payload.result.releaseEnv.containsLocalDatabaseUrl, false);
     assert.equal(payload.result.releaseEnv.containsConfigFile, true);
     assert.equal(payload.plan.deploymentMode, 'server');
-    assert.equal(payload.result.database.engine, 'sqlite');
+    assert.equal(payload.result.database.engine, 'postgresql');
+    assert.equal(payload.result.database.passwordFileExists, true);
     assert.ok(!stdout.includes('[install-init-smoke] package:'));
   } finally {
     rmSync(fixtureRoot, { recursive: true, force: true });
@@ -3836,7 +3959,8 @@ test('environment and deployment specs document Claw Router runtime config stand
     assert.ok(content.includes('%ProgramData%/SdkWork/ClawRouter/clawrouter.toml'));
     assert.ok(content.includes('~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml'));
   }
-  assert.ok(environmentSpec.includes('Server deployments default to local SQLite for single-node startup.'));
+  assert.ok(environmentSpec.includes('Server and container deployments default to PostgreSQL.'));
+  assert.ok(environmentSpec.includes('password_file = "/etc/clawrouter/database.secret"'));
   assert.ok(environmentSpec.includes('Desktop deployments default to SQLite.'));
   assert.ok(deploymentSpec.includes('clawrouterctl ensure'));
   assert.ok(deploymentSpec.includes('clawrouterctl refresh-catalog --force'));

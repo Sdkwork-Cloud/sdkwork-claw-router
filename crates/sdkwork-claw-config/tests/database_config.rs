@@ -142,6 +142,99 @@ max_connections = 18
 }
 
 #[test]
+fn runtime_config_file_supports_structured_postgres_password_directly() {
+    let config = DatabaseConfig::from_runtime_config_toml(
+        r#"
+[database]
+engine = "postgresql"
+host = "db.internal"
+port = 5432
+database = "sdkwork_claw_router"
+username = "sdkwork_claw_router"
+password = "secret-password"
+max_connections = 18
+"#,
+    )
+    .unwrap();
+
+    assert_eq!(DatabaseEngine::Postgres, config.engine);
+    assert_eq!(
+        "postgresql://sdkwork_claw_router:secret-password@db.internal:5432/sdkwork_claw_router",
+        config.url
+    );
+    assert_eq!(18, config.max_connections);
+}
+
+#[test]
+fn runtime_config_file_supports_structured_postgres_password_from_file() {
+    let secret_path = write_temp_secret("postgres-password-file", "secret-password");
+    let config_path = write_temp_config(
+        "structured-postgres-password-file",
+        &format!(
+            r#"
+[database]
+engine = "postgresql"
+host = "db.internal"
+port = 5432
+database = "sdkwork_claw_router"
+username = "sdkwork_claw_router"
+password_file = "{}"
+max_connections = 20
+"#,
+            slash_path(&secret_path)
+        ),
+    );
+
+    let config = DatabaseConfig::from_config_file(&config_path)
+        .unwrap()
+        .unwrap();
+
+    assert_eq!(DatabaseEngine::Postgres, config.engine);
+    assert_eq!(
+        "postgresql://sdkwork_claw_router:secret-password@db.internal:5432/sdkwork_claw_router",
+        config.url
+    );
+    assert_eq!(20, config.max_connections);
+}
+
+#[test]
+fn runtime_config_file_expands_password_file_environment_variables() {
+    let _env_lock = ENV_LOCK.lock().unwrap();
+    let root = temp_root("postgres-password-env-file");
+    fs::create_dir_all(&root).unwrap();
+    let secret_path = root.join("database.secret");
+    fs::write(&secret_path, "secret-password").unwrap();
+    let _guard = EnvGuard::set(&[(
+        "SDKWORK_CLAW_TEST_SECRET_ROOT",
+        Some(root.to_string_lossy().to_string()),
+    )]);
+    let config_path = write_temp_config(
+        "structured-postgres-password-env-file",
+        r#"
+[database]
+engine = "postgresql"
+host = "db.internal"
+port = 5432
+database = "sdkwork_claw_router"
+username = "sdkwork_claw_router"
+password_file = "${SDKWORK_CLAW_TEST_SECRET_ROOT}/database.secret"
+max_connections = 20
+"#,
+    );
+
+    let config = DatabaseConfig::from_config_file(&config_path)
+        .unwrap()
+        .unwrap();
+
+    assert_eq!(DatabaseEngine::Postgres, config.engine);
+    assert_eq!(
+        "postgresql://sdkwork_claw_router:secret-password@db.internal:5432/sdkwork_claw_router",
+        config.url
+    );
+    assert_eq!(20, config.max_connections);
+}
+
+#[test]
 fn environment_database_parts_override_runtime_config_file() {
     let _env_lock = ENV_LOCK.lock().unwrap();
     let config_path = write_temp_config(
@@ -259,9 +352,7 @@ fn runtime_config_locations_follow_platform_conventions() {
 fn runtime_config_locations_expose_desktop_sqlite_database_paths() {
     let linux_desktop = RuntimeConfigLocation::for_platform("linux", RuntimeConfigProfile::Desktop);
     assert_eq!(
-        PathBuf::from(
-            "${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite"
-        ),
+        PathBuf::from("${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite"),
         linux_desktop.sqlite_database_path()
     );
 
@@ -304,7 +395,7 @@ fn initializes_default_desktop_runtime_config_at_explicit_location() {
 }
 
 #[test]
-fn from_env_or_initialize_creates_zero_config_server_sqlite_template() {
+fn from_env_or_initialize_creates_server_postgres_template_and_requires_real_database() {
     let _env_lock = ENV_LOCK.lock().unwrap();
     let root = temp_root("server-runtime-init");
     let config_path = root.join("config").join("clawrouter.toml");
@@ -327,19 +418,29 @@ fn from_env_or_initialize_creates_zero_config_server_sqlite_template() {
         ),
     ]);
 
-    let config = DatabaseConfig::from_env_or_initialize().unwrap();
+    let error = DatabaseConfig::from_env_or_initialize().unwrap_err();
 
     assert!(config_path.exists());
-    let content = fs::read_to_string(config_path).unwrap();
-    assert_eq!(DatabaseEngine::Sqlite, config.unwrap().engine);
-    assert!(content.contains("engine = \"sqlite\""));
-    assert!(content.contains("clawrouter.sqlite"));
+    let content = fs::read_to_string(&config_path).unwrap();
+    assert!(error.contains("PostgreSQL configuration is incomplete"));
+    assert!(error.contains("default placeholder host or password"));
+    assert!(content.contains("engine = \"postgresql\""));
+    assert!(content.contains("host = \"db.example.com\""));
+    assert!(content.contains("port = 5432"));
+    assert!(content.contains("database = \"sdkwork_claw_router\""));
+    assert!(content.contains("username = \"sdkwork_claw_router\""));
+    assert!(content.contains(&format!(
+        "password_file = \"{}\"",
+        slash_path(&config_path.parent().unwrap().join("database.secret"))
+    )));
+    assert!(content.contains("# password = \"change-me\""));
+    assert!(content.contains("ssl_mode = \"require\""));
+    assert!(content.contains("max_connections = 16"));
     assert!(content.contains("deployment_mode = \"server\""));
-    assert!(content.contains("For production or multi-node deployments"));
 }
 
 #[test]
-fn explicit_runtime_config_file_uses_neighbor_data_directory_for_sqlite_default() {
+fn explicit_runtime_config_file_uses_neighbor_data_directory_for_server_template_paths() {
     let _env_lock = ENV_LOCK.lock().unwrap();
     let root = temp_root("explicit-config-neighbor-data");
     let config_path = root.join("custom").join("clawrouter.toml");
@@ -362,15 +463,21 @@ fn explicit_runtime_config_file_uses_neighbor_data_directory_for_sqlite_default(
         ),
     ]);
 
-    let config = DatabaseConfig::from_env_or_initialize().unwrap().unwrap();
+    let error = DatabaseConfig::from_env_or_initialize().unwrap_err();
     let expected_data_directory = config_path.parent().unwrap().join("Data");
-    let expected_database_url = format!(
-        "sqlite://{}",
-        slash_path(&expected_data_directory.join("clawrouter.sqlite"))
-    );
 
-    assert_eq!(expected_database_url, config.url);
+    assert!(error.contains("PostgreSQL configuration is incomplete"));
     assert!(expected_data_directory.exists());
+    let content = fs::read_to_string(config_path).unwrap();
+    assert!(content.contains("engine = \"postgresql\""));
+    assert!(content.contains(&format!(
+        "password_file = \"{}\"",
+        slash_path(&root.join("custom").join("database.secret"))
+    )));
+    assert!(content.contains(&format!(
+        "data_directory = \"{}\"",
+        slash_path(&expected_data_directory)
+    )));
     assert!(
         !program_data.join("SdkWork").exists(),
         "explicit config files must not silently reuse or create the global server data directory"
@@ -388,8 +495,8 @@ fn startup_help_text_covers_standard_config_paths_and_database_guidance() {
     assert!(server_help.contains("/etc/clawrouter/clawrouter.toml"));
     assert!(server_help.contains("SDKWORK_CLAW_DATABASE_URL"));
     assert!(server_help.contains("SDKWORK_CLAW_CONFIG_FILE"));
-    assert!(server_help.contains("SQLite"));
     assert!(server_help.contains("PostgreSQL"));
+    assert!(server_help.contains("password/password_file"));
 
     let linux_desktop = RuntimeConfigLocation::for_platform("linux", RuntimeConfigProfile::Desktop);
     let desktop_help = DatabaseConfig::startup_help_lines_for_location(
@@ -397,13 +504,41 @@ fn startup_help_text_covers_standard_config_paths_and_database_guidance() {
         &linux_desktop,
     )
     .join("\n");
-    assert!(desktop_help
-        .contains("${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml"));
-    assert!(desktop_help.contains(
-        "${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite"
-    ));
+    assert!(desktop_help.contains("${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml"));
+    assert!(desktop_help.contains("${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite"));
     assert!(desktop_help.contains("SDKWORK_CLAW_CONFIG_FILE"));
     assert!(desktop_help.contains("SQLite"));
+}
+
+#[test]
+fn server_runtime_validation_rejects_placeholder_postgres_host_and_password() {
+    let location = RuntimeConfigLocation::for_platform("linux", RuntimeConfigProfile::Server);
+
+    for url in [
+        "postgresql://sdkwork_claw_router:change-me@db.example.com:5432/sdkwork_claw_router?sslmode=require",
+        "postgresql://sdkwork_claw_router:secret@db.example.com:5432/sdkwork_claw_router?sslmode=require",
+        "postgresql://sdkwork_claw_router:change-me@db.internal:5432/sdkwork_claw_router?sslmode=require",
+        "postgresql://sdkwork_claw_router:change-me@localhost:5432/sdkwork_claw_router",
+    ] {
+        let config = DatabaseConfig::from_url(url).unwrap();
+        let error = config
+            .validate_for_runtime_profile_at(RuntimeConfigProfile::Server, &location)
+            .unwrap_err();
+        assert!(error.contains("PostgreSQL configuration is incomplete"));
+    }
+}
+
+#[test]
+fn server_runtime_validation_accepts_real_postgres_location_and_password() {
+    let location = RuntimeConfigLocation::for_platform("linux", RuntimeConfigProfile::Server);
+    let config = DatabaseConfig::from_url(
+        "postgresql://sdkwork_claw_router:real-password@db.internal:5432/sdkwork_claw_router?sslmode=require",
+    )
+    .unwrap();
+
+    config
+        .validate_for_runtime_profile_at(RuntimeConfigProfile::Server, &location)
+        .unwrap();
 }
 
 #[test]
@@ -514,6 +649,14 @@ fn write_temp_config(label: &str, content: &str) -> PathBuf {
     let root = temp_root(label);
     fs::create_dir_all(&root).unwrap();
     let path = root.join("clawrouter.toml");
+    fs::write(&path, content.trim()).unwrap();
+    path
+}
+
+fn write_temp_secret(label: &str, content: &str) -> PathBuf {
+    let root = temp_root(label);
+    fs::create_dir_all(&root).unwrap();
+    let path = root.join("database.secret");
     fs::write(&path, content.trim()).unwrap();
     path
 }

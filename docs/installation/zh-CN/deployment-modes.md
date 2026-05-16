@@ -7,9 +7,9 @@ SDKWork Claw Router release 包覆盖 `archive`、`service`、`container`、`des
 | 模式 | 包类型 | 默认数据库 | 启动方式 | 推荐场景 |
 | --- | --- | --- | --- | --- |
 | `desktop` | 原生安装包（`.deb`、`.msi`、`.pkg`） | SQLite | 直接运行 gateway | 单机体验、本地演示 |
-| `archive` | `self-contained-archive` | SQLite | 直接运行 gateway | 私有服务器、手动部署 |
-| `service` | 原生安装包（`.deb`、`.msi`、`.pkg`） | SQLite | 主机服务管理器 | 长期运行生产服务 |
-| `container` | `container-image` | SQLite | Containerfile / entrypoint | Docker、Kubernetes、容器平台 |
+| `archive` | `self-contained-archive` | PostgreSQL | 直接运行 gateway | 私有服务器、手动部署 |
+| `service` | 原生安装包（`.deb`、`.msi`、`.pkg`） | PostgreSQL | 主机服务管理器 | 长期运行生产服务 |
+| `container` | `container-image` | PostgreSQL | Containerfile / entrypoint | Docker、Kubernetes、容器平台 |
 | `source` | 源码工作区 | 开发 SQLite 或 PostgreSQL | `pnpm dev` / `pnpm start` | 开发、验证、私有构建 |
 
 ## Desktop
@@ -43,7 +43,7 @@ SDKWork Claw Router release 包覆盖 `archive`、`service`、`container`、`des
 特点：
 
 - 自包含服务端归档。
-- 默认本地 SQLite；生产或多节点部署配置 PostgreSQL。
+- 默认 PostgreSQL。
 - 配置、数据、日志由部署脚本或运维系统管理。
 
 启动：
@@ -62,8 +62,8 @@ SDKWork Claw Router release 包覆盖 `archive`、`service`、`container`、`des
 - Linux `.deb` service 包会安装 systemd unit。
 - macOS `.pkg` service 包会安装 launchd plist。
 - Windows `.msi` 包安装运行文件和服务元数据，实际服务注册由目标主机部署系统配置。
-- 默认使用本地 SQLite，Linux 服务覆盖项保存在 `/etc/default/clawrouter`。
-- 生产或多节点部署使用受保护的 PostgreSQL 配置。
+- 默认使用 PostgreSQL，Linux 服务覆盖项保存在 `/etc/clawrouter/clawrouter.env`。
+- PostgreSQL 密码默认放在 `/etc/clawrouter/database.secret`，也可以在受保护 TOML 中直接配置 `password`。
 
 原生服务资产：
 
@@ -77,6 +77,8 @@ Linux 安装 `.deb` 后通常只需要检查服务状态：
 
 ```bash
 sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
+sudo editor /etc/clawrouter/clawrouter.toml
+sudo systemctl start clawrouter
 sudo systemctl status clawrouter --no-pager
 ```
 
@@ -86,14 +88,15 @@ sudo systemctl status clawrouter --no-pager
 
 - 包含 `container/Containerfile` 和 entrypoint。
 - entrypoint 会执行 `ensure` 和 `refresh-catalog --force`，再启动 gateway。
-- 单节点试用可以使用本地 SQLite；生产数据库、配置和可写数据目录建议通过环境变量或挂载传入。
+- PostgreSQL 配置、密码文件、日志和可写数据目录建议通过环境变量、平台 Secret 或挂载传入。
 
 示例：
 
 ```bash
 docker build -f container/Containerfile -t clawrouter:0.2.0 .
 docker run --rm -p 3900:3900 \
-  -e SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router" \
+  -v "$PWD/config/clawrouter.toml.example:/etc/clawrouter/clawrouter.toml:ro" \
+  -v "$PWD/secrets/postgres-password:/run/secrets/clawrouter-postgres-password:ro" \
   clawrouter:0.2.0
 ```
 

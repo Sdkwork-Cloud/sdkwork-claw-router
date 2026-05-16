@@ -12,7 +12,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const workspaceRoot = path.resolve(__dirname, '..');
 const portalDist = path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'dist');
-const SERVER_DEFAULT_POSTGRES_URL = 'postgresql://sdkwork_claw_router:change-me@localhost:5432/sdkwork_claw_router';
+const SERVER_DEFAULT_POSTGRES_HOST = 'db.example.com';
+const SERVER_DEFAULT_POSTGRES_PORT = 5432;
+const SERVER_DEFAULT_POSTGRES_DATABASE = 'sdkwork_claw_router';
+const SERVER_DEFAULT_POSTGRES_USERNAME = 'sdkwork_claw_router';
+const SERVER_DEFAULT_POSTGRES_PASSWORD = 'change-me';
+const SERVER_DEFAULT_POSTGRES_SSL_MODE = 'require';
+const SERVER_DEFAULT_POSTGRES_URL = `postgresql://${SERVER_DEFAULT_POSTGRES_USERNAME}:${SERVER_DEFAULT_POSTGRES_PASSWORD}@${SERVER_DEFAULT_POSTGRES_HOST}:${SERVER_DEFAULT_POSTGRES_PORT}/${SERVER_DEFAULT_POSTGRES_DATABASE}?sslmode=${SERVER_DEFAULT_POSTGRES_SSL_MODE}`;
 const EXAMPLE_POSTGRES_URL = 'postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router';
 
 function cargoCommand(platform = process.platform) {
@@ -52,8 +58,9 @@ Options:
 
 Runtime config initialization:
   Missing runtime TOML files are created automatically before startup.
-  Server deployments default to local SQLite for quick single-node startup.
-  Use PostgreSQL for production, HA, and multi-node deployments.
+  Server deployments use external PostgreSQL by default.
+  Configure PostgreSQL in clawrouter.toml with host, database, username,
+  and password_file or protected password.
   Desktop deployments default to SQLite and can start from the generated config.
 
 Common initialization commands:
@@ -63,7 +70,7 @@ Common initialization commands:
 Production PostgreSQL configuration:
   SDKWORK_CLAW_DATABASE_URL="${EXAMPLE_POSTGRES_URL}" pnpm start -- --deployment-mode server
   pnpm start -- --deployment-mode server --database-url "${EXAMPLE_POSTGRES_URL}"
-  Or edit [database].url in the generated runtime TOML.
+  Or edit [database] in the generated runtime TOML.
 
 Default runtime config paths:
   Linux server: /etc/clawrouter/clawrouter.toml
@@ -339,14 +346,13 @@ function joinRuntimePath(base, child) {
 }
 
 function runtimeConfigEngineForMode(deploymentMode) {
-  normalizeDeploymentMode(deploymentMode);
-  return 'sqlite';
+  return normalizeDeploymentMode(deploymentMode) === 'desktop' ? 'sqlite' : 'postgresql';
 }
 
 function runtimeConfigSqliteUrl(sqlitePath) {
   const normalizedPath = String(sqlitePath ?? '').trim();
   if (!normalizedPath) {
-    throw new Error('runtime config requires a SQLite path for the zero-config default');
+    throw new Error('desktop runtime config requires a SQLite path');
   }
   const portablePath = path.isAbsolute(normalizedPath)
     || normalizedPath.startsWith('~')
@@ -361,12 +367,11 @@ function runtimeConfigDefaultUrlForMode(deploymentMode, sqlitePath = null) {
   if (normalizeDeploymentMode(deploymentMode) === 'desktop') {
     return runtimeConfigSqliteUrl(sqlitePath);
   }
-  return runtimeConfigSqliteUrl(sqlitePath);
+  return SERVER_DEFAULT_POSTGRES_URL;
 }
 
 function runtimeConfigDefaultMaxConnectionsForMode(deploymentMode) {
-  normalizeDeploymentMode(deploymentMode);
-  return 1;
+  return normalizeDeploymentMode(deploymentMode) === 'desktop' ? 1 : 16;
 }
 
 function runtimeConfigRedactedUrl(url) {
@@ -402,6 +407,18 @@ function runtimeConfigTemplateContent({
     databasePolicy: {
       defaultEngine: databaseEngine,
       defaultUrl: databaseUrl,
+      ...(databaseEngine === 'postgresql'
+        ? {
+          defaultHost: SERVER_DEFAULT_POSTGRES_HOST,
+          defaultPort: SERVER_DEFAULT_POSTGRES_PORT,
+          defaultDatabase: SERVER_DEFAULT_POSTGRES_DATABASE,
+          defaultUsername: SERVER_DEFAULT_POSTGRES_USERNAME,
+          passwordFile: {
+            path: runtimeConfigPasswordFileForMode(deploymentMode, configFile, dataDirectory),
+            required: true,
+          },
+        }
+        : {}),
       defaultSqlitePath: sqlitePath,
       defaultSqliteUrl: sqlitePath ? runtimeConfigSqliteUrl(sqlitePath) : null,
       productionDatabaseUrlExample: EXAMPLE_POSTGRES_URL,
@@ -416,7 +433,22 @@ function runtimeConfigTemplateContent({
   });
 }
 
-function readRuntimeConfigSnapshot(configFile) {
+function runtimeConfigPasswordFileForMode(deploymentMode, configFile, dataDirectory) {
+  if (normalizeDeploymentMode(deploymentMode) === 'desktop') {
+    return null;
+  }
+  const normalizedConfigFile = toPortablePath(configFile);
+  if (normalizedConfigFile === '/etc/clawrouter/clawrouter.toml') {
+    return '/etc/clawrouter/database.secret';
+  }
+  const normalizedDataDirectory = toPortablePath(dataDirectory);
+  if (normalizedConfigFile.endsWith('/clawrouter.toml')) {
+    return `${normalizedConfigFile.slice(0, -'/clawrouter.toml'.length)}/database.secret`;
+  }
+  return joinRuntimePath(normalizedDataDirectory, 'database.secret');
+}
+
+function readRuntimeConfigSnapshot(configFile, env = process.env) {
   if (!configFile || !existsSync(configFile)) {
     return {
       exists: false,
@@ -424,19 +456,151 @@ function readRuntimeConfigSnapshot(configFile) {
       databaseUrl: null,
       databaseEngine: null,
       maxConnections: null,
+      host: null,
+      port: null,
+      database: null,
+      username: null,
+      password: null,
+      passwordFile: null,
+      passwordFileValue: null,
+      passwordFileError: null,
+      sslMode: null,
     };
   }
   const content = readFileSync(configFile, 'utf8');
+  return runtimeConfigSnapshotFromContent(content, configFile, env);
+}
+
+function runtimeConfigSnapshotFromContent(content, configFile = null, env = process.env) {
   const databaseUrl = matchConfigValue(content, 'url');
   const databaseEngine = matchConfigValue(content, 'engine');
   const maxConnections = matchConfigNumber(content, 'max_connections');
+  const host = matchConfigValue(content, 'host');
+  const port = matchConfigNumber(content, 'port');
+  const database = matchConfigValue(content, 'database');
+  const username = matchConfigValue(content, 'username');
+  const password = matchConfigValue(content, 'password');
+  const passwordFile = matchConfigValue(content, 'password_file');
+  const sslMode = matchConfigValue(content, 'ssl_mode');
+  const passwordFileSnapshot = readRuntimeConfigPasswordFile(passwordFile, configFile, env);
   return {
     exists: true,
     content,
-    databaseUrl,
+    databaseUrl: databaseUrl ?? runtimeConfigPostgresUrlFromStructuredFields({
+      host,
+      port,
+      database,
+      username,
+      password,
+      passwordFile,
+      passwordFileValue: passwordFileSnapshot.value,
+      sslMode,
+    }),
     databaseEngine,
     maxConnections,
+    host,
+    port,
+    database,
+    username,
+    password,
+    passwordFile: passwordFileSnapshot.path ?? passwordFile,
+    passwordFileValue: passwordFileSnapshot.value,
+    passwordFileError: passwordFileSnapshot.error,
+    sslMode,
   };
+}
+
+function runtimeConfigPostgresUrlFromStructuredFields({
+  host,
+  port,
+  database,
+  username,
+  password,
+  passwordFile,
+  passwordFileValue,
+  sslMode,
+}) {
+  if (!host || !database || !username) {
+    return null;
+  }
+  const parsed = new URL('postgresql://localhost');
+  parsed.hostname = host;
+  parsed.port = String(port || SERVER_DEFAULT_POSTGRES_PORT);
+  parsed.pathname = `/${database}`;
+  parsed.username = username;
+  if (password) {
+    parsed.password = password;
+  } else if (passwordFileValue) {
+    parsed.password = passwordFileValue;
+  } else if (!passwordFile) {
+    parsed.password = SERVER_DEFAULT_POSTGRES_PASSWORD;
+  }
+  if (sslMode) {
+    parsed.searchParams.set('sslmode', sslMode);
+  }
+  return parsed.toString();
+}
+
+function readRuntimeConfigPasswordFile(passwordFile, configFile, env = process.env) {
+  const normalizedPasswordFile = String(passwordFile ?? '').trim();
+  if (!normalizedPasswordFile) {
+    return { path: null, value: null, error: null };
+  }
+  const resolvedPath = resolveRuntimeConfigPasswordFilePath(
+    normalizedPasswordFile,
+    configFile,
+    env,
+  );
+  if (!resolvedPath) {
+    return { path: normalizedPasswordFile, value: null, error: null };
+  }
+  try {
+    const value = readFileSync(resolvedPath, 'utf8').trim();
+    if (!value) {
+      return {
+        path: toPortablePath(resolvedPath),
+        value: null,
+        error: `runtime config [database].password_file ${toPortablePath(resolvedPath)} must not be blank`,
+      };
+    }
+    return { path: toPortablePath(resolvedPath), value, error: null };
+  } catch (error) {
+    return {
+      path: toPortablePath(resolvedPath),
+      value: null,
+      error: `runtime config [database].password_file ${toPortablePath(resolvedPath)} cannot be read: ${error.message}`,
+    };
+  }
+}
+
+function resolveRuntimeConfigPasswordFilePath(passwordFile, configFile, env = process.env) {
+  const expanded = expandRuntimePathVariables(passwordFile, env);
+  const normalized = expanded.replaceAll('\\', '/');
+  if (/^[A-Za-z]:\//u.test(normalized) || path.isAbsolute(expanded)) {
+    return expanded;
+  }
+  const configDirectory = configFile ? path.dirname(configFile) : process.cwd();
+  return path.resolve(configDirectory, expanded);
+}
+
+function expandRuntimePathVariables(value, env = process.env) {
+  let expanded = String(value ?? '');
+  expanded = expanded.replace(/\$\{([A-Za-z_][A-Za-z0-9_]*)\}/gu, (match, name) =>
+    env?.[name] ? String(env[name]) : match
+  );
+  expanded = expanded.replace(/%([A-Za-z_][A-Za-z0-9_]*)%/gu, (match, name) =>
+    env?.[name] ? String(env[name]) : match
+  );
+  expanded = expanded.replace(/\$([A-Za-z_][A-Za-z0-9_]*)/gu, (match, name) =>
+    env?.[name] ? String(env[name]) : match
+  );
+  if (expanded === '~' || expanded.startsWith('~/') || expanded.startsWith('~\\')) {
+    const home = env?.HOME || env?.USERPROFILE;
+    if (home) {
+      return expanded === '~' ? String(home) : path.join(String(home), expanded.slice(2));
+    }
+  }
+  return expanded;
 }
 
 function matchConfigValue(content, key) {
@@ -466,8 +630,9 @@ function buildRuntimeConfigHelpLines(result) {
 
   if (result.deploymentMode === 'server') {
     lines.push(
-      `[start-production]   The zero-config server profile uses local SQLite at ${result.sqlitePath}`,
-      `[start-production]   For production PostgreSQL, configure ${result.configFile} or set SDKWORK_CLAW_DATABASE_URL`,
+      `[start-production]   Server deployments use PostgreSQL configured in ${result.configFile}`,
+      '[start-production]   Set [database].host, [database].database, [database].username, and [database].password_file',
+      '[start-production]   Use [database].password directly only when the runtime TOML is protected as a secret-bearing file',
       `[start-production]   Example: SDKWORK_CLAW_DATABASE_URL="${EXAMPLE_POSTGRES_URL}" pnpm start -- --deployment-mode server`,
       `[start-production]   CLI override: pnpm start -- --deployment-mode server --database-url "${EXAMPLE_POSTGRES_URL}"`,
       '[start-production]   Initialize only: pnpm start -- --init-config-only --deployment-mode server',
@@ -494,7 +659,7 @@ function buildRuntimeConfigStatusLines(result) {
     `[start-production]   Database engine: ${result.databaseEngine}`,
     `[start-production]   Database URL: ${runtimeConfigRedactedUrl(result.databaseUrl)}`,
   ];
-  if (result.sqlitePath) {
+  if (result.databaseEngine === 'sqlite' && result.sqlitePath) {
     lines.push(`[start-production]   SQLite file: ${result.sqlitePath}`);
   }
   return lines;
@@ -526,9 +691,9 @@ function prepareStartProductionRuntimeConfig({
   const databaseMaxConnections = String(
     settings.databaseMaxConnections
       ?? baseEnv.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS
-      ?? (databaseEngine === 'postgresql' ? 16 : runtimeConfigDefaultMaxConnectionsForMode(deploymentMode)),
+      ?? runtimeConfigDefaultMaxConnectionsForMode(deploymentMode),
   ).trim();
-  const configSnapshot = readRuntimeConfigSnapshot(configFile);
+  const configSnapshot = readRuntimeConfigSnapshot(configFile, baseEnv);
   const desiredTemplate = runtimeConfigTemplateContent({
     deploymentMode,
     configFile,
@@ -546,13 +711,9 @@ function prepareStartProductionRuntimeConfig({
     action = 'created';
   }
 
-  const finalConfigSnapshot = configSnapshot.exists ? configSnapshot : {
-    exists: true,
-    content: desiredTemplate,
-    databaseUrl,
-    databaseEngine,
-    maxConnections: Number.parseInt(databaseMaxConnections, 10),
-  };
+  const finalConfigSnapshot = configSnapshot.exists
+    ? configSnapshot
+    : runtimeConfigSnapshotFromContent(desiredTemplate, configFile, baseEnv);
   const normalizedDatabaseUrl = explicitDatabaseUrl
     || finalConfigSnapshot.databaseUrl
     || databaseUrl;
@@ -602,12 +763,18 @@ function determineRuntimeConfigBlockingIssue({
   if (deploymentMode !== 'server') {
     return null;
   }
+  if (configSnapshot?.password && configSnapshot?.passwordFile) {
+    return {
+      code: 'database_configuration_required',
+      message: `runtime config ${configFile} must use only one of [database].password or [database].password_file`,
+    };
+  }
   if (explicitDatabaseUrl) {
     const explicitEngine = runtimeConfigEngineForUrl(explicitDatabaseUrl);
     if (explicitEngine === 'sqlite') {
       return null;
     }
-    if (explicitEngine === 'postgresql' && explicitDatabaseUrl !== SERVER_DEFAULT_POSTGRES_URL) {
+    if (explicitEngine === 'postgresql' && !runtimeConfigPostgresUrlUsesPlaceholder(explicitDatabaseUrl)) {
       return null;
     }
     return {
@@ -615,13 +782,37 @@ function determineRuntimeConfigBlockingIssue({
       message: `runtime database override for ${configFile} must be SQLite or a non-placeholder PostgreSQL URL`,
     };
   }
-  if (databaseEngine === 'postgresql' && databaseUrl === SERVER_DEFAULT_POSTGRES_URL) {
+  if (databaseEngine === 'postgresql' && runtimeConfigPostgresUrlUsesPlaceholder(databaseUrl)) {
     return {
       code: 'database_configuration_required',
-      message: `runtime config ${configFile} still points at the default placeholder PostgreSQL URL`,
+      message: `runtime config ${configFile} still contains the default placeholder PostgreSQL host or password`,
+    };
+  }
+  if (databaseEngine === 'postgresql' && configSnapshot?.passwordFileError) {
+    return {
+      code: 'database_configuration_required',
+      message: configSnapshot.passwordFileError,
     };
   }
   return null;
+}
+
+function runtimeConfigPostgresUrlUsesPlaceholder(value) {
+  const normalized = String(value ?? '').trim();
+  if (!normalized) {
+    return false;
+  }
+  const legacyDefault = 'postgresql://sdkwork_claw_router:change-me@localhost:5432/sdkwork_claw_router';
+  if (normalized === SERVER_DEFAULT_POSTGRES_URL || normalized === legacyDefault) {
+    return true;
+  }
+  try {
+    const parsed = new URL(normalized);
+    return parsed.hostname === SERVER_DEFAULT_POSTGRES_HOST
+      || parsed.password === SERVER_DEFAULT_POSTGRES_PASSWORD;
+  } catch {
+    return false;
+  }
 }
 
 function runtimeConfigEngineForUrl(value) {

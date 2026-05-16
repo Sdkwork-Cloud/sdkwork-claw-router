@@ -7,9 +7,9 @@ SDKWork Claw Router release packages cover `archive`, `service`, `container`, an
 | Mode | Package kind | Default database | Startup | Recommended use |
 | --- | --- | --- | --- | --- |
 | `desktop` | native installer (`.deb`, `.msi`, `.pkg`) | SQLite | run gateway directly | local trial and demo |
-| `archive` | `self-contained-archive` | SQLite | run gateway directly | private server, manual deployment |
-| `service` | native installer (`.deb`, `.msi`, `.pkg`) | SQLite | host service manager | long-running production service |
-| `container` | `container-image` | SQLite | Containerfile / entrypoint | Docker, Kubernetes, container platforms |
+| `archive` | `self-contained-archive` | PostgreSQL | run gateway directly | private server, manual deployment |
+| `service` | native installer (`.deb`, `.msi`, `.pkg`) | PostgreSQL | host service manager | long-running production service |
+| `container` | `container-image` | PostgreSQL | Containerfile / entrypoint | Docker, Kubernetes, container platforms |
 | `source` | source checkout | development SQLite or PostgreSQL | `pnpm dev` / `pnpm start` | development, validation, private builds |
 
 ## Desktop
@@ -43,7 +43,7 @@ From a portable archive package root, use:
 Characteristics:
 
 - Self-contained server archive.
-- Local SQLite by default; configure PostgreSQL for production or multi-node deployments.
+- PostgreSQL by default.
 - Configuration, data, and logs are managed by deployment scripts or operations tooling.
 
 Start:
@@ -62,8 +62,8 @@ Characteristics:
 - Linux `.deb` service packages install the systemd unit.
 - macOS `.pkg` service packages install the launchd plist.
 - Windows `.msi` packages install runtime files and service metadata for host-specific service registration.
-- Uses local SQLite by default and stores protected service overrides in `/etc/default/clawrouter` on Linux.
-- Use protected PostgreSQL configuration for production or multi-node deployments.
+- Uses PostgreSQL by default and stores protected service overrides in `/etc/clawrouter/clawrouter.env` on Linux.
+- Stores PostgreSQL password material in `/etc/clawrouter/database.secret` by default, or directly in protected TOML when the TOML file is managed as a secret-bearing file.
 
 Native service assets:
 
@@ -77,6 +77,8 @@ Typical Linux systemd check after installing the `.deb`:
 
 ```bash
 sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
+sudo editor /etc/clawrouter/clawrouter.toml
+sudo systemctl start clawrouter
 sudo systemctl status clawrouter --no-pager
 ```
 
@@ -86,20 +88,21 @@ Characteristics:
 
 - Includes `container/Containerfile` and entrypoint.
 - Entrypoint runs `ensure`, `refresh-catalog --force`, then starts gateway.
-- Local SQLite can be used for single-node trials; production database, configuration, and writable data should be injected through environment variables or mounts.
+- PostgreSQL configuration, password files, logs, and writable data should be injected through environment variables, platform secrets, or mounts.
 
 Example:
 
 ```bash
 docker build -f container/Containerfile -t clawrouter:0.2.0 .
 docker run --rm -p 3900:3900 \
-  -e SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router" \
+  -v "$PWD/config/clawrouter.toml.example:/etc/clawrouter/clawrouter.toml:ro" \
+  -v "$PWD/secrets/postgres-password:/run/secrets/clawrouter-postgres-password:ro" \
   clawrouter:0.2.0
 ```
 
 For Kubernetes:
 
-- Store the database URL in a Secret.
+- Store the database password in a Secret.
 - Provide `clawrouter.toml` through a ConfigMap or mounted file.
 - Point readinessProbe at `/readyz`.
 - Point livenessProbe at `/healthz`.

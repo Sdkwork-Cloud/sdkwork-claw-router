@@ -37,12 +37,14 @@ archive/manual 部署推荐顺序：
 6. 启动 `clawrouter`。
 7. 检查 `/healthz` 和 `/readyz`。
 
-Linux `service` 部署中，`.deb` 会创建默认运行时 TOML 和 `/etc/default/clawrouter`。systemd unit 会在 gateway 启动前自动执行 `ensure` 和 `refresh-catalog --force`。
+Linux `service` 部署中，`.deb` 会创建默认运行时 TOML、`/etc/clawrouter/clawrouter.env` 和 `/etc/clawrouter/database.secret`。systemd unit 会在 gateway 启动前自动执行 `ensure` 和 `refresh-catalog --force`。
 
 Linux service 包推荐顺序：
 
 ```bash
 sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
+sudo editor /etc/clawrouter/clawrouter.toml
+sudo systemctl start clawrouter
 sudo systemctl status clawrouter --no-pager
 ```
 
@@ -94,44 +96,23 @@ desktop：
 
 server/service/container：
 
-- 默认本地 SQLite，支持单节点零配置启动
-- 本地 SQLite 默认 `max_connections = 1`
-- 生产、团队、SaaS、托管服务、多节点和商业部署建议 PostgreSQL
+- 默认 PostgreSQL
+- 默认 `max_connections = 16`
+- 生产、团队、SaaS、托管服务、多节点和商业部署使用 PostgreSQL
 - PostgreSQL 部署使用 `max_connections = 16` 或经过容量规划的值
 
 默认 Linux service 部署会创建以下运行时数据库配置：
 
 ```toml
 [database]
-engine = "sqlite"
-url = "sqlite:///var/lib/clawrouter/clawrouter.sqlite"
-max_connections = 1
-
-[paths]
-data_directory = "/var/lib/clawrouter"
-
-[runtime]
-deployment_mode = "server"
-```
-
-生产或多节点 server/service/container 部署可设置：
-
-```bash
-export SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
-```
-
-Linux systemd service 包会读取 `/etc/default/clawrouter`，因此生产服务部署可把同一配置写入该文件：
-
-```text
-SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router
-```
-
-生产 PostgreSQL TOML：
-
-```toml
-[database]
 engine = "postgresql"
-url = "postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
+host = "db.example.com"
+port = 5432
+database = "sdkwork_claw_router"
+username = "sdkwork_claw_router"
+password_file = "/etc/clawrouter/database.secret"
+# password = "change-me"
+ssl_mode = "require"
 max_connections = 16
 
 [paths]
@@ -139,6 +120,38 @@ data_directory = "/var/lib/clawrouter"
 
 [runtime]
 deployment_mode = "server"
+```
+
+`.deb` 包创建的 `/etc/clawrouter/database.secret` 初始内容是占位值 `change-me`。启动 `clawrouter` 前必须替换为真实 PostgreSQL 密码；server 配置仍使用 `db.example.com` 或 `change-me` 时会被启动校验拒绝。
+
+生产 server/service/container 部署使用结构化 TOML。推荐使用 `password_file`，只有当 TOML 文件本身作为密钥文件保护时才直接使用 `password`：
+
+- `password_file` 可以是绝对路径。
+- `password_file` 可以是相对 `clawrouter.toml` 所在目录的路径。
+- `password_file` 可以使用 `${VAR}`、`$VAR`、`%VAR%` 或 `~` 展开，用于平台 Secret 路径。
+
+```toml
+[database]
+engine = "postgresql"
+host = "db.internal"
+port = 5432
+database = "sdkwork_claw_router"
+username = "sdkwork_claw_router"
+password = "real-password"
+ssl_mode = "require"
+max_connections = 16
+
+[paths]
+data_directory = "/var/lib/clawrouter"
+
+[runtime]
+deployment_mode = "server"
+```
+
+`SDKWORK_CLAW_DATABASE_URL` 仍可在 `/etc/clawrouter/clawrouter.env` 或进程环境中作为明确运维覆盖：
+
+```text
+SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router
 ```
 
 desktop SQLite 示例：

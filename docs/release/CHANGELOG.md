@@ -21,10 +21,10 @@ All notable changes to `sdkwork-claw-router` release records will be documented 
 - Updated installer CLI tests so SQLite scenarios explicitly run under the desktop deployment profile.
 - Added native installer release assets for service and desktop modes: Linux `.deb`, Windows `.msi`, and macOS `.pkg`.
 - Updated release packaging so portable archives remain for `archive` and `container`, while native installers are uploaded for `service` and `desktop`.
-- Changed server/service package defaults to local SQLite for single-node zero-config startup, with PostgreSQL documented as the production and multi-node option.
-- Updated Linux `.deb` service installation so the package creates `/etc/default/clawrouter`, generates the default runtime TOML, and runs installer initialization from systemd before starting the gateway.
-- Simplified English and Chinese installation and initialization guides so Ubuntu/Debian service install is `apt install` plus `systemctl enable --now`.
-- Standardized the external runtime surface on `clawrouter`, including `clawrouter-*` release assets, the `clawrouter` gateway process, the `clawrouterctl` installer/admin CLI, `clawrouter.service`, and `/opt/clawrouter`, `/etc/clawrouter`, `/etc/default/clawrouter`, `/var/lib/clawrouter`, and `/var/log/clawrouter` runtime paths.
+- Changed server/service/container package defaults to structured PostgreSQL runtime configuration, while desktop packages keep local SQLite by default.
+- Updated Linux `.deb` service installation so the package creates `/etc/clawrouter/clawrouter.toml`, `/etc/clawrouter/clawrouter.env`, and `/etc/clawrouter/database.secret`, then enables but does not start the service until PostgreSQL is configured.
+- Simplified English and Chinese installation and initialization guides around `apt install`, protected PostgreSQL TOML/password configuration, `systemctl start clawrouter`, and health checks.
+- Standardized the external runtime surface on `clawrouter`, including `clawrouter-*` release assets, the `clawrouter` gateway process, the `clawrouterctl` installer/admin CLI, `clawrouter.service`, and `/opt/clawrouter`, `/etc/clawrouter`, `/etc/clawrouter/clawrouter.env`, `/var/lib/clawrouter`, and `/var/log/clawrouter` runtime paths.
 - Removed release checkout dependency on Git LFS by committing curated runtime skill seed JSON files directly to Git while leaving large ClawHub mirror snapshots as optional LFS data.
 
 ### Verification
@@ -58,7 +58,7 @@ All notable changes to `sdkwork-claw-router` release records will be documented 
 ### Delivered
 
 - Added runtime configuration management with OS-standard config paths for server and desktop deployments.
-- Made server deployments default to PostgreSQL and block startup when the database URL is missing or still points at the placeholder value.
+- Made server deployments default to PostgreSQL and block startup when database configuration is missing or still uses placeholder host/password values.
 - Made desktop deployments default to SQLite and auto-initialize a platform-appropriate config and data location.
 - Added release environment contract tooling so `.env.release.local` can be generated and validated from the executable contract instead of hand-written.
 - Added release preflight checks for environment completeness, root cleanliness, and release-safe configuration values.

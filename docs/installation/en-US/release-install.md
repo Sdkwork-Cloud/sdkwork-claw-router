@@ -31,9 +31,9 @@ Supported architectures:
 
 Supported deployment modes:
 
-- `archive`: portable server directory, local SQLite by default; PostgreSQL recommended for production.
-- `service`: host service installer, local SQLite by default; PostgreSQL recommended for production.
-- `container`: container build package, local SQLite by default; mount PostgreSQL configuration for production.
+- `archive`: portable server directory, PostgreSQL by default.
+- `service`: host service installer, PostgreSQL by default.
+- `container`: container build package, PostgreSQL by default; mount TOML configuration and secrets.
 - `desktop`: single-machine installer, SQLite by default.
 
 Common package names:
@@ -63,19 +63,27 @@ Use this path for a long-running server on Ubuntu or Debian:
 
 ```bash
 sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
+sudo editor /etc/clawrouter/clawrouter.toml
+sudo systemctl start clawrouter
 curl http://127.0.0.1:3900/healthz
 curl http://127.0.0.1:3900/readyz
 ```
 
-The `.deb` package creates the `sdkwork` system user, `/etc/clawrouter/clawrouter.toml`, `/etc/default/clawrouter`, `/var/lib/clawrouter`, `/var/log/clawrouter`, and the systemd unit. On systemd hosts it enables and starts `clawrouter.service` during installation. The first start runs `clawrouterctl ensure` and `clawrouterctl refresh-catalog --force` automatically from `ExecStartPre`.
+The `.deb` package creates the `sdkwork` system user, `/etc/clawrouter/clawrouter.toml`, `/etc/clawrouter/clawrouter.env`, `/etc/clawrouter/database.secret`, `/var/lib/clawrouter`, `/var/log/clawrouter`, and the systemd unit. On systemd hosts it enables `clawrouter.service` during installation but does not start it until the operator configures PostgreSQL. The first service start runs `clawrouterctl ensure` and `clawrouterctl refresh-catalog --force` automatically from `ExecStartPre`.
 
-The default database is local SQLite:
+The default server database configuration is external PostgreSQL:
 
 ```toml
 [database]
-engine = "sqlite"
-url = "sqlite:///var/lib/clawrouter/clawrouter.sqlite"
-max_connections = 1
+engine = "postgresql"
+host = "db.example.com"
+port = 5432
+database = "sdkwork_claw_router"
+username = "sdkwork_claw_router"
+password_file = "/etc/clawrouter/database.secret"
+# password = "change-me"
+ssl_mode = "require"
+max_connections = 16
 
 [paths]
 data_directory = "/var/lib/clawrouter"
@@ -84,31 +92,47 @@ data_directory = "/var/lib/clawrouter"
 deployment_mode = "server"
 ```
 
-For production or multi-node deployments, set the PostgreSQL URL in `/etc/default/clawrouter`:
+Edit `/etc/clawrouter/clawrouter.toml` before first start. For most service deployments, keep the password in `/etc/clawrouter/database.secret`:
 
-```text
-SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router
+```bash
+sudo install -o root -g sdkwork -m 0640 /dev/null /etc/clawrouter/database.secret
+sudo editor /etc/clawrouter/database.secret
 ```
 
-or set it in `/etc/clawrouter/clawrouter.toml`:
+The package-created `database.secret` contains the placeholder `change-me`.
+Replace it with the real PostgreSQL password before starting the service.
+Startup rejects server configurations that still use `db.example.com` or
+`change-me`. `password_file` may be absolute, relative to `clawrouter.toml`, or
+use `${VAR}`, `$VAR`, `%VAR%`, or `~` expansion for platform-managed secret
+paths.
+
+For controlled deployments where the TOML file itself is managed as a secret-bearing file, `password` may be configured directly:
 
 ```toml
 [database]
 engine = "postgresql"
-url = "postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
+host = "db.internal"
+port = 5432
+database = "sdkwork_claw_router"
+username = "sdkwork_claw_router"
+password = "real-password"
+ssl_mode = "require"
 max_connections = 16
 
 [runtime]
 deployment_mode = "server"
 ```
 
+`SDKWORK_CLAW_DATABASE_URL` remains available in `/etc/clawrouter/clawrouter.env` only as an explicit operator override for emergency operations or platform-managed secret injection.
+
 The `.deb` post-install script creates:
 
 - `/opt/clawrouter`
 - `/etc/clawrouter`
+- `/etc/clawrouter/clawrouter.env`
+- `/etc/clawrouter/database.secret`
 - `/var/lib/clawrouter`
 - `/var/log/clawrouter`
-- `/etc/default/clawrouter`
 - `/lib/systemd/system/clawrouter.service` for `service` packages
 
 Read startup logs and capture the first admin password if initialization happened during startup:
@@ -153,7 +177,7 @@ Set-Location "C:\Program Files\ClawRouter"
 .\bin\clawrouter.exe
 ```
 
-For production or multi-node server/service deployment, set `SDKWORK_CLAW_DATABASE_URL` in the protected service environment or in the runtime TOML before starting the gateway:
+For Windows server/service deployment, set PostgreSQL in the runtime TOML before starting the gateway. A protected process override remains available when the service manager injects secrets:
 
 ```powershell
 $env:SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
@@ -233,7 +257,7 @@ Release packages include the runtime files needed to start Claw Router:
 
 `archive` and `container` release assets remain portable `.tar.gz` or `.zip` packages.
 
-Never package or commit `.env.release.local`. Archive deployments may generate it on the target host, while Linux service deployments use `/etc/default/clawrouter` created by the `.deb` package. Keep `PORTAL_PUBLIC_*` values browser-safe; do not put database passwords, provider secrets, or admin credentials in `PORTAL_PUBLIC_*` variables.
+Never package or commit `.env.release.local`. Archive deployments may generate it on the target host, while Linux service deployments use `/etc/clawrouter/clawrouter.env` for protected process overrides and `/etc/clawrouter/clawrouter.toml` for the primary runtime configuration. Keep `PORTAL_PUBLIC_*` values browser-safe; do not put database passwords, provider secrets, or admin credentials in `PORTAL_PUBLIC_*` variables.
 
 ## 4. Database Policy
 
@@ -245,15 +269,7 @@ Linux: ${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite
 macOS: ~/Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite
 ```
 
-`archive`, `service`, and `container` packages use local SQLite by default so a single node can start without an external database. For production or multi-node deployments, set `SDKWORK_CLAW_DATABASE_URL` or write the same PostgreSQL DSN to the runtime TOML.
-
-Server/service SQLite default:
-
-```text
-Linux: /var/lib/clawrouter/clawrouter.sqlite
-Windows: %ProgramData%/SdkWork/ClawRouter/Data/clawrouter.sqlite
-macOS: /Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite
-```
+`archive`, `service`, and `container` packages use PostgreSQL by default. Configure PostgreSQL with structured TOML fields: `host`, `port`, `database`, `username`, and either `password_file` or `password`. Keep `password_file` as the normal production path. Use direct `password` only when `clawrouter.toml` is protected as a secret-bearing file.
 
 See [initialization.md](./initialization.md) for default config paths, database examples, and bootstrap admin settings.
 
@@ -349,11 +365,12 @@ tar -xzf clawrouter-linux-x64-container-0.2.0.tar.gz -C /opt/clawrouter
 cd /opt/clawrouter
 docker build -f container/Containerfile -t clawrouter:0.2.0 .
 docker run --rm -p 3900:3900 \
-  -e SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router" \
+  -v "$PWD/config/clawrouter.toml.example:/etc/clawrouter/clawrouter.toml:ro" \
+  -v "$PWD/secrets/postgres-password:/run/secrets/clawrouter-postgres-password:ro" \
   clawrouter:0.2.0
 ```
 
-Service and container deployments must mount runtime configuration, logs, and mutable data as writable resources, and must inject the database URL through protected environment variables or protected TOML files.
+Service and container deployments must mount runtime configuration, logs, and mutable data as writable resources, and must inject database credentials through protected TOML files, password files, or platform secrets. `SDKWORK_CLAW_DATABASE_URL` remains available only for explicit operator override.
 
 ## 8. Upgrade A Release
 
@@ -361,17 +378,17 @@ Service and container deployments must mount runtime configuration, logs, and mu
 2. Back up the database and runtime configuration.
 3. Stop the old service.
 4. Install or extract the new release package.
-5. Preserve target-local `/etc/default/clawrouter`, `.env.release.local` if used by archive deployments, and runtime TOML files.
+5. Preserve target-local `/etc/clawrouter/clawrouter.env`, `/etc/clawrouter/database.secret`, `.env.release.local` if used by archive deployments, and runtime TOML files.
 6. For Linux service packages, start the service and let systemd run `ensure` and `refresh-catalog --force`.
 7. For archive/manual deployments, run `clawrouterctl ensure` and `clawrouterctl refresh-catalog --force`.
 8. Start the new version and check `/healthz` and `/readyz`.
 
 ## 9. Troubleshooting
 
-- `missing_database_url`: a deployment explicitly required PostgreSQL but no PostgreSQL URL was provided.
+- `missing_database_url`: a deployment explicitly required PostgreSQL but no PostgreSQL configuration was provided.
 - `invalid_argument`: unsupported command or malformed option.
 - `invalid_state`: current installation state cannot satisfy the requested command.
 - `database_error`: database is unreachable, permissions are missing, or schema initialization failed.
 - `catalog_error`: model catalog path, version, or content validation failed.
 - `/healthz` succeeds but `/readyz` fails: the edge process is up, but gateway/admin/app/portal upstreams or database dependencies are not ready.
-- Linux service exits immediately: check `/etc/default/clawrouter`, `/etc/clawrouter/clawrouter.toml`, and `journalctl -u clawrouter`.
+- Linux service exits immediately: check `/etc/clawrouter/clawrouter.toml`, `/etc/clawrouter/database.secret`, `/etc/clawrouter/clawrouter.env`, and `journalctl -u clawrouter`.

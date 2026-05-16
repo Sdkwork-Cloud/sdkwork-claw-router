@@ -29,20 +29,22 @@ C:\Program Files\ClawRouter
 
 Recommended order for archive/manual deployments:
 
-1. Prepare protected process environment variables when defaults are not enough.
+1. Prepare PostgreSQL and protected process environment variables when defaults are not enough.
 2. Prepare runtime TOML configuration.
-3. Set the database URL only when using managed PostgreSQL.
+3. Set `host`, `database`, `username`, and either `password_file` or protected `password`.
 4. Run `clawrouterctl ensure`.
 5. Run `clawrouterctl refresh-catalog --force`.
 6. Start `clawrouter`.
 7. Check `/healthz` and `/readyz`.
 
-For Linux `service` deployments, the `.deb` creates the default runtime TOML and `/etc/default/clawrouter`. The systemd unit runs `ensure` and `refresh-catalog --force` automatically before the gateway starts.
+For Linux `service` deployments, the `.deb` creates the default runtime TOML, `/etc/clawrouter/clawrouter.env`, and `/etc/clawrouter/database.secret`. The systemd unit runs `ensure` and `refresh-catalog --force` automatically before the gateway starts.
 
 Linux service packages should follow this order:
 
 ```bash
 sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
+sudo editor /etc/clawrouter/clawrouter.toml
+sudo systemctl start clawrouter
 sudo systemctl status clawrouter --no-pager
 ```
 
@@ -94,44 +96,23 @@ desktop:
 
 server/service/container:
 
-- SQLite by default for single-node zero-config startup
-- `max_connections = 1` by default for local SQLite
-- PostgreSQL is recommended for teams, production, SaaS, managed services, multi-node deployments, and commercial deployments
+- PostgreSQL by default
+- `max_connections = 16` by default
+- PostgreSQL is required for teams, production, SaaS, managed services, multi-node deployments, and commercial deployments
 - PostgreSQL deployments should use `max_connections = 16` or another capacity-planned value
 
 For a default Linux service deployment, the package creates this runtime database configuration:
 
 ```toml
 [database]
-engine = "sqlite"
-url = "sqlite:///var/lib/clawrouter/clawrouter.sqlite"
-max_connections = 1
-
-[paths]
-data_directory = "/var/lib/clawrouter"
-
-[runtime]
-deployment_mode = "server"
-```
-
-For production or multi-node server/service/container deployments, set:
-
-```bash
-export SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
-```
-
-Systemd service packages read `/etc/default/clawrouter`, so put the same value there for Linux service deployments:
-
-```text
-SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router
-```
-
-Production PostgreSQL TOML:
-
-```toml
-[database]
 engine = "postgresql"
-url = "postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
+host = "db.example.com"
+port = 5432
+database = "sdkwork_claw_router"
+username = "sdkwork_claw_router"
+password_file = "/etc/clawrouter/database.secret"
+# password = "change-me"
+ssl_mode = "require"
 max_connections = 16
 
 [paths]
@@ -139,6 +120,38 @@ data_directory = "/var/lib/clawrouter"
 
 [runtime]
 deployment_mode = "server"
+```
+
+The `.deb` package creates `/etc/clawrouter/database.secret` with the placeholder value `change-me`. Replace that file with the real PostgreSQL password before starting `clawrouter`; startup rejects server configurations that still use `db.example.com` or `change-me`.
+
+For production server/service/container deployments, use the structured TOML fields above. `password_file` is the preferred secret path. Direct `password` is supported only when the TOML file is protected as a secret-bearing file:
+
+- `password_file` can be absolute.
+- `password_file` can be relative to the directory containing `clawrouter.toml`.
+- `password_file` can use `${VAR}`, `$VAR`, `%VAR%`, or `~` expansion for platform-managed secret paths.
+
+```toml
+[database]
+engine = "postgresql"
+host = "db.internal"
+port = 5432
+database = "sdkwork_claw_router"
+username = "sdkwork_claw_router"
+password = "real-password"
+ssl_mode = "require"
+max_connections = 16
+
+[paths]
+data_directory = "/var/lib/clawrouter"
+
+[runtime]
+deployment_mode = "server"
+```
+
+`SDKWORK_CLAW_DATABASE_URL` remains available in `/etc/clawrouter/clawrouter.env` or the process environment only as an explicit operator override:
+
+```text
+SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router
 ```
 
 Desktop SQLite example:
@@ -227,7 +240,7 @@ Installer stdout is one JSON object. Errors are JSON on stderr:
 
 Stable error codes:
 
-- `missing_database_url` when a deployment explicitly requires PostgreSQL but no PostgreSQL URL is provided
+- `missing_database_url` when a deployment explicitly requires PostgreSQL but no PostgreSQL configuration is provided
 - `invalid_argument`
 - `invalid_state`
 - `database_error`

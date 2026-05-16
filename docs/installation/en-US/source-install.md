@@ -143,6 +143,20 @@ Server mode with PostgreSQL:
 SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router" pnpm start -- --deployment-mode server
 ```
 
+Generated server TOML uses structured PostgreSQL fields. Prefer `password_file`; use direct `password` only when the TOML file is protected as a secret-bearing file:
+
+```toml
+[database]
+engine = "postgresql"
+host = "db.internal"
+port = 5432
+database = "sdkwork_claw_router"
+username = "sdkwork_claw_router"
+password = "real-password"
+ssl_mode = "require"
+max_connections = 16
+```
+
 The first `pnpm dev -- --install`, `pnpm start`, or installer `ensure` run initializes the bootstrap admin login when needed. Save `bootstrapAdmin.initialPassword` from installer JSON or `initial_password` from startup logs, then rotate it after first login. Re-running initialization does not print or reset the password once the admin login is complete.
 
 ## 6. Build Release Packages From Source

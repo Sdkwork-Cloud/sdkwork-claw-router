@@ -49,7 +49,14 @@ struct RuntimeConfigFile {
 #[derive(Debug, Deserialize)]
 struct RuntimeDatabaseConfig {
     engine: Option<String>,
-    url: String,
+    url: Option<String>,
+    host: Option<String>,
+    port: Option<u16>,
+    database: Option<String>,
+    username: Option<String>,
+    password: Option<String>,
+    password_file: Option<String>,
+    ssl_mode: Option<String>,
     max_connections: Option<u32>,
 }
 
@@ -57,7 +64,15 @@ impl DatabaseConfig {
     pub const DEFAULT_MAX_CONNECTIONS: u32 = 16;
     pub const ENV_CONFIG_FILE: &'static str = "SDKWORK_CLAW_CONFIG_FILE";
     pub const SERVER_DEFAULT_POSTGRES_URL: &'static str =
-        "postgresql://sdkwork_claw_router:change-me@localhost:5432/sdkwork_claw_router";
+        "postgresql://sdkwork_claw_router:change-me@db.example.com:5432/sdkwork_claw_router?sslmode=require";
+    pub const SERVER_DEFAULT_POSTGRES_HOST: &'static str = "db.example.com";
+    pub const SERVER_DEFAULT_POSTGRES_PORT: u16 = 5432;
+    pub const SERVER_DEFAULT_POSTGRES_DATABASE: &'static str = "sdkwork_claw_router";
+    pub const SERVER_DEFAULT_POSTGRES_USERNAME: &'static str = "sdkwork_claw_router";
+    pub const SERVER_DEFAULT_POSTGRES_PASSWORD: &'static str = "change-me";
+    pub const SERVER_DEFAULT_POSTGRES_PASSWORD_FILE: &'static str =
+        "/etc/clawrouter/database.secret";
+    pub const SERVER_DEFAULT_POSTGRES_SSL_MODE: &'static str = "require";
 
     pub fn from_url(url: impl Into<String>) -> Result<Self, String> {
         Self::from_url_with_max_connections(url, Self::DEFAULT_MAX_CONNECTIONS)
@@ -238,7 +253,7 @@ impl DatabaseConfig {
         };
         let mut lines = vec![
             "# SdkWork ClawRouter runtime configuration.".to_owned(),
-            "# This file was initialized automatically; edit [database].url for the target environment.".to_owned(),
+            "# This file was initialized automatically; edit [database] for the target environment.".to_owned(),
             format!(
                 "# Runtime config file: {}",
                 location.config_file.display()
@@ -247,17 +262,12 @@ impl DatabaseConfig {
         ];
         if profile == RuntimeConfigProfile::Server {
             lines.push(
-                "# Server/service deployments run with local SQLite by default for quick single-node installs."
-                    .to_owned(),
+                "# Server/service deployments use external PostgreSQL by default.".to_owned(),
             );
             lines.push(
-                "# For production or multi-node deployments, set [database].engine to \"postgresql\" and replace [database].url with a managed PostgreSQL DSN."
+                "# Configure host, database, username, and password_file. You may use password directly only when this TOML is protected as a secret-bearing file."
                     .to_owned(),
             );
-            lines.push(format!(
-                "# Default SQLite file: {}",
-                location.sqlite_database_path().display()
-            ));
             lines.push(String::new());
         } else {
             lines.push("# Desktop deployments default to a local SQLite database.".to_owned());
@@ -267,11 +277,29 @@ impl DatabaseConfig {
             ));
             lines.push(String::new());
         }
+        lines.extend(["[database]".to_owned(), format!("engine = \"{engine}\"")]);
+        if database.engine == DatabaseEngine::Postgres {
+            let password_file = server_default_postgres_password_file(location);
+            lines.extend([
+                format!("host = \"{}\"", Self::SERVER_DEFAULT_POSTGRES_HOST),
+                format!("port = {}", Self::SERVER_DEFAULT_POSTGRES_PORT),
+                format!("database = \"{}\"", Self::SERVER_DEFAULT_POSTGRES_DATABASE),
+                format!("username = \"{}\"", Self::SERVER_DEFAULT_POSTGRES_USERNAME),
+                format!("password_file = \"{}\"", toml_string(&password_file)),
+                format!(
+                    "# password = \"{}\"",
+                    Self::SERVER_DEFAULT_POSTGRES_PASSWORD
+                ),
+                format!("ssl_mode = \"{}\"", Self::SERVER_DEFAULT_POSTGRES_SSL_MODE),
+                format!("max_connections = {}", database.max_connections),
+            ]);
+        } else {
+            lines.extend([
+                format!("url = \"{}\"", toml_string(&database.url)),
+                format!("max_connections = {}", database.max_connections),
+            ]);
+        }
         lines.extend([
-            "[database]".to_owned(),
-            format!("engine = \"{engine}\""),
-            format!("url = \"{}\"", toml_string(&database.url)),
-            format!("max_connections = {}", database.max_connections),
             String::new(),
             "[paths]".to_owned(),
             format!(
@@ -293,10 +321,13 @@ impl DatabaseConfig {
         match profile {
             RuntimeConfigProfile::Server => Self::from_url_with_max_connections(
                 format!(
-                    "sqlite://{}",
-                    portable_path(&location.sqlite_database_path())
+                    "postgresql://{}:change-me@{}:{}/{}?sslmode=require",
+                    Self::SERVER_DEFAULT_POSTGRES_USERNAME,
+                    Self::SERVER_DEFAULT_POSTGRES_HOST,
+                    Self::SERVER_DEFAULT_POSTGRES_PORT,
+                    Self::SERVER_DEFAULT_POSTGRES_DATABASE
                 ),
-                1,
+                Self::DEFAULT_MAX_CONNECTIONS,
             ),
             RuntimeConfigProfile::Desktop => Self::from_url_with_max_connections(
                 format!(
@@ -316,11 +347,9 @@ impl DatabaseConfig {
         if profile != RuntimeConfigProfile::Server {
             return Ok(());
         }
-        if self.engine == DatabaseEngine::Postgres
-            && self.url.trim() == Self::SERVER_DEFAULT_POSTGRES_URL
-        {
+        if self.engine == DatabaseEngine::Postgres && is_placeholder_postgres_url(&self.url) {
             return Err(runtime_profile_error(
-                "PostgreSQL configuration is incomplete; the runtime TOML still contains the default placeholder URL.",
+                "PostgreSQL configuration is incomplete; the runtime TOML still contains a default placeholder host or password.",
                 profile,
                 location,
             ));
@@ -332,25 +361,41 @@ impl DatabaseConfig {
         let path = path.as_ref();
         let content = std::fs::read_to_string(path)
             .map_err(|error| format!("failed to read {}: {error}", path.display()))?;
-        Self::from_runtime_config_toml(&content).map(Some)
+        Self::from_runtime_config_toml_at(&content, path).map(Some)
     }
 
     pub fn from_runtime_config_toml(content: &str) -> Result<Self, String> {
+        Self::from_runtime_config_toml_inner(content, None)
+    }
+
+    fn from_runtime_config_toml_at(content: &str, path: &Path) -> Result<Self, String> {
+        Self::from_runtime_config_toml_inner(content, Some(path))
+    }
+
+    fn from_runtime_config_toml_inner(
+        content: &str,
+        config_path: Option<&Path>,
+    ) -> Result<Self, String> {
         let runtime_config: RuntimeConfigFile = toml::from_str(content)
             .map_err(|error| format!("invalid runtime config TOML: {error}"))?;
         let database = runtime_config.database;
         let max_connections = database
             .max_connections
             .unwrap_or(Self::DEFAULT_MAX_CONNECTIONS);
+        let declared_engine = database
+            .engine
+            .as_deref()
+            .map(normalize_database_engine_name)
+            .transpose()?;
+        let url = runtime_database_url(database, declared_engine.as_deref(), config_path)?;
 
-        let config = Self::from_url_with_max_connections(database.url, max_connections)?;
-        if let Some(engine) = database.engine {
-            let engine = engine.trim().to_ascii_lowercase();
+        let config = Self::from_url_with_max_connections(url, max_connections)?;
+        if let Some(engine) = declared_engine {
             let expected = match config.engine {
                 DatabaseEngine::Sqlite => "sqlite",
                 DatabaseEngine::Postgres => "postgresql",
             };
-            if engine != expected && !(engine == "postgres" && expected == "postgresql") {
+            if engine != expected {
                 return Err(format!(
                     "runtime config [database].engine {engine} does not match database url scheme {expected}"
                 ));
@@ -373,20 +418,12 @@ impl DatabaseConfig {
                 format!("Runtime config file: {}", location.config_file.display()),
                 format!("Data directory: {}", location.data_directory.display()),
                 "Set SDKWORK_CLAW_CONFIG_FILE to override the runtime TOML location.".to_owned(),
-                "Server/service deployments default to local SQLite for quick single-node installs."
-                    .to_owned(),
+                "Server/service deployments use external PostgreSQL by default.".to_owned(),
                 format!(
-                    "Default SQLite file: {}",
-                    location.sqlite_database_path().display()
-                ),
-                format!(
-                    "For production PostgreSQL, set SDKWORK_CLAW_DATABASE_URL or edit [database].url in {}",
+                    "Configure PostgreSQL host, database, username, and password/password_file in {}",
                     location.config_file.display()
                 ),
-                format!(
-                    "PostgreSQL DSN example: {}",
-                    Self::SERVER_DEFAULT_POSTGRES_URL
-                ),
+                "SDKWORK_CLAW_DATABASE_URL remains available as an explicit operator override.".to_owned(),
             ],
             RuntimeConfigProfile::Desktop => vec![
                 format!("Runtime config file: {}", location.config_file.display()),
@@ -420,6 +457,328 @@ impl DatabaseEngine {
         }
         Err(format!("unsupported database url scheme: {url}"))
     }
+}
+
+fn server_default_postgres_password_file(location: &RuntimeConfigLocation) -> String {
+    let config_file = portable_path(&location.config_file);
+    if config_file == "/etc/clawrouter/clawrouter.toml" {
+        return DatabaseConfig::SERVER_DEFAULT_POSTGRES_PASSWORD_FILE.to_owned();
+    }
+    if let Some(parent) = location
+        .config_file
+        .parent()
+        .filter(|parent| !parent.as_os_str().is_empty())
+    {
+        return portable_path(&PathBuf::from(join_runtime_path(
+            parent.to_string_lossy().as_ref(),
+            "database.secret",
+        )));
+    }
+    portable_path(&PathBuf::from(join_runtime_path(
+        location.data_directory.to_string_lossy().as_ref(),
+        "database.secret",
+    )))
+}
+
+fn normalize_database_engine_name(value: &str) -> Result<String, String> {
+    match value.trim().to_ascii_lowercase().as_str() {
+        "sqlite" => Ok("sqlite".to_owned()),
+        "postgres" | "postgresql" => Ok("postgresql".to_owned()),
+        other => Err(format!(
+            "unsupported runtime config [database].engine: {other}"
+        )),
+    }
+}
+
+fn runtime_database_url(
+    database: RuntimeDatabaseConfig,
+    declared_engine: Option<&str>,
+    config_path: Option<&Path>,
+) -> Result<String, String> {
+    if let Some(url) = database.url.as_ref() {
+        let url = required_value("runtime config [database].url", Some(url.to_owned()))?;
+        if has_structured_postgres_fields(&database) {
+            return Err(
+                "runtime config [database] must use either url or structured PostgreSQL fields, not both"
+                    .to_owned(),
+            );
+        }
+        return Ok(url);
+    }
+
+    match declared_engine.as_deref() {
+        Some("postgresql") => structured_postgres_url(database, config_path),
+        Some("sqlite") => Err(
+            "runtime config [database].url is required when [database].engine is sqlite"
+                .to_owned(),
+        ),
+        Some(other) => Err(format!(
+            "runtime config [database].engine {other} is not supported"
+        )),
+        None => Err(
+            "runtime config [database] must declare either url or structured PostgreSQL fields with engine = \"postgresql\""
+                .to_owned(),
+        ),
+    }
+}
+
+fn has_structured_postgres_fields(database: &RuntimeDatabaseConfig) -> bool {
+    database.host.is_some()
+        || database.port.is_some()
+        || database.database.is_some()
+        || database.username.is_some()
+        || database.password.is_some()
+        || database.password_file.is_some()
+        || database.ssl_mode.is_some()
+}
+
+fn structured_postgres_url(
+    database: RuntimeDatabaseConfig,
+    config_path: Option<&Path>,
+) -> Result<String, String> {
+    let host = required_value("runtime config [database].host", database.host)?;
+    let port = database.port.unwrap_or(5432);
+    let database_name = required_value("runtime config [database].database", database.database)?;
+    let username = required_value("runtime config [database].username", database.username)?;
+    let password =
+        structured_postgres_password(database.password, database.password_file, config_path)?;
+    let ssl_mode = database
+        .ssl_mode
+        .map(normalize_postgres_ssl_mode)
+        .transpose()?;
+
+    let mut url = url::Url::parse("postgresql://localhost")
+        .map_err(|error| format!("failed to initialize PostgreSQL URL: {error}"))?;
+    url.set_host(Some(host.as_str()))
+        .map_err(|_| format!("runtime config [database].host is not valid: {host}"))?;
+    url.set_port(Some(port))
+        .map_err(|_| format!("runtime config [database].port is not valid: {port}"))?;
+    url.set_path(database_name.as_str());
+    url.set_username(username.as_str()).map_err(|_| {
+        "runtime config [database].username cannot be represented in a PostgreSQL URL".to_owned()
+    })?;
+    url.set_password(Some(password.as_str())).map_err(|_| {
+        "runtime config [database].password cannot be represented in a PostgreSQL URL".to_owned()
+    })?;
+    if let Some(ssl_mode) = ssl_mode {
+        url.query_pairs_mut()
+            .append_pair("sslmode", ssl_mode.as_str());
+    }
+    Ok(url.to_string())
+}
+
+fn structured_postgres_password(
+    password: Option<String>,
+    password_file: Option<String>,
+    config_path: Option<&Path>,
+) -> Result<String, String> {
+    match (password, password_file) {
+        (Some(_), Some(_)) => Err(
+            "runtime config [database] must use only one of password or password_file".to_owned(),
+        ),
+        (Some(password), None) => {
+            required_value("runtime config [database].password", Some(password))
+        }
+        (None, Some(password_file)) => {
+            let password_file = required_value(
+                "runtime config [database].password_file",
+                Some(password_file),
+            )?;
+            let path = resolve_password_file_path(&password_file, config_path);
+            let password = std::fs::read_to_string(&path).map_err(|error| {
+                format!(
+                    "failed to read runtime config [database].password_file {}: {error}",
+                    path.display()
+                )
+            })?;
+            required_value(
+                &format!("runtime config [database].password_file {}", path.display()),
+                Some(password),
+            )
+        }
+        (None, None) => Err(
+            "runtime config [database] must provide password or password_file for PostgreSQL"
+                .to_owned(),
+        ),
+    }
+}
+
+fn resolve_password_file_path(value: &str, config_path: Option<&Path>) -> PathBuf {
+    let expanded = expand_runtime_path_variables(value);
+    let path = PathBuf::from(expanded);
+    if path.is_absolute() {
+        return path;
+    }
+    config_path
+        .and_then(Path::parent)
+        .filter(|parent| !parent.as_os_str().is_empty())
+        .map(|parent| parent.join(path.as_path()))
+        .unwrap_or(path)
+}
+
+fn expand_runtime_path_variables(value: &str) -> String {
+    let expanded = expand_braced_env_variables(value);
+    let expanded = expand_percent_env_variables(&expanded);
+    let expanded = expand_dollar_env_variables(&expanded);
+    expand_home_directory(&expanded)
+}
+
+fn expand_braced_env_variables(value: &str) -> String {
+    let mut output = String::with_capacity(value.len());
+    let mut cursor = 0;
+    while let Some(start) = value[cursor..].find("${") {
+        let absolute_start = cursor + start;
+        output.push_str(&value[cursor..absolute_start]);
+        let name_start = absolute_start + 2;
+        let Some(end_offset) = value[name_start..].find('}') else {
+            output.push_str(&value[absolute_start..]);
+            return output;
+        };
+        let name_end = name_start + end_offset;
+        let name = &value[name_start..name_end];
+        if !name.is_empty() {
+            if let Ok(replacement) = std::env::var(name) {
+                output.push_str(&replacement);
+            } else {
+                output.push_str(&value[absolute_start..=name_end]);
+            }
+        } else {
+            output.push_str(&value[absolute_start..=name_end]);
+        }
+        cursor = name_end + 1;
+    }
+    output.push_str(&value[cursor..]);
+    output
+}
+
+fn expand_percent_env_variables(value: &str) -> String {
+    let mut output = String::with_capacity(value.len());
+    let mut cursor = 0;
+    while let Some(start) = value[cursor..].find('%') {
+        let absolute_start = cursor + start;
+        output.push_str(&value[cursor..absolute_start]);
+        let name_start = absolute_start + 1;
+        let Some(end_offset) = value[name_start..].find('%') else {
+            output.push_str(&value[absolute_start..]);
+            return output;
+        };
+        let name_end = name_start + end_offset;
+        let name = &value[name_start..name_end];
+        if !name.is_empty() {
+            if let Ok(replacement) = std::env::var(name) {
+                output.push_str(&replacement);
+            } else {
+                output.push_str(&value[absolute_start..=name_end]);
+            }
+        } else {
+            output.push_str(&value[absolute_start..=name_end]);
+        }
+        cursor = name_end + 1;
+    }
+    output.push_str(&value[cursor..]);
+    output
+}
+
+fn expand_dollar_env_variables(value: &str) -> String {
+    let mut output = String::with_capacity(value.len());
+    let mut chars = value.char_indices().peekable();
+    while let Some((index, character)) = chars.next() {
+        if character != '$' {
+            output.push(character);
+            continue;
+        }
+        if matches!(chars.peek(), Some((_, '{'))) {
+            output.push('$');
+            continue;
+        }
+        let name_start = index + 1;
+        let mut name_end = name_start;
+        while let Some((next_index, next_character)) = chars.peek().copied() {
+            if next_character == '_' || next_character.is_ascii_alphanumeric() {
+                name_end = next_index + next_character.len_utf8();
+                chars.next();
+            } else {
+                break;
+            }
+        }
+        if name_end == name_start {
+            output.push('$');
+            continue;
+        }
+        let name = &value[name_start..name_end];
+        if let Ok(replacement) = std::env::var(name) {
+            output.push_str(&replacement);
+        } else {
+            output.push('$');
+            output.push_str(name);
+        }
+    }
+    output
+}
+
+fn expand_home_directory(value: &str) -> String {
+    if value == "~" {
+        return std::env::var("HOME")
+            .or_else(|_| std::env::var("USERPROFILE"))
+            .unwrap_or_else(|_| value.to_owned());
+    }
+    let Some(rest) = value
+        .strip_prefix("~/")
+        .or_else(|| value.strip_prefix("~\\"))
+    else {
+        return value.to_owned();
+    };
+    let Ok(home) = std::env::var("HOME").or_else(|_| std::env::var("USERPROFILE")) else {
+        return value.to_owned();
+    };
+    let mut path = PathBuf::from(home);
+    path.push(rest);
+    path.to_string_lossy().to_string()
+}
+
+fn normalize_postgres_ssl_mode(value: String) -> Result<String, String> {
+    let value = value.trim().to_ascii_lowercase();
+    match value.as_str() {
+        "disable" | "allow" | "prefer" | "require" | "verify-ca" | "verify-full" => Ok(value),
+        "" => Err("runtime config [database].ssl_mode must not be blank".to_owned()),
+        other => Err(format!(
+            "runtime config [database].ssl_mode is unsupported: {other}"
+        )),
+    }
+}
+
+fn required_value(label: &str, value: Option<String>) -> Result<String, String> {
+    let Some(value) = value else {
+        return Err(format!("{label} is required"));
+    };
+    let value = value.trim();
+    if value.is_empty() {
+        return Err(format!("{label} must not be blank"));
+    }
+    Ok(value.to_owned())
+}
+
+fn is_placeholder_postgres_url(value: &str) -> bool {
+    const LEGACY_SERVER_DEFAULT_POSTGRES_URL: &str =
+        "postgresql://sdkwork_claw_router:change-me@localhost:5432/sdkwork_claw_router";
+
+    let value = value.trim();
+    if value == DatabaseConfig::SERVER_DEFAULT_POSTGRES_URL
+        || value == LEGACY_SERVER_DEFAULT_POSTGRES_URL
+    {
+        return true;
+    }
+
+    let Ok(parsed) = url::Url::parse(value) else {
+        return false;
+    };
+    let host = parsed.host_str().unwrap_or_default().to_ascii_lowercase();
+    if host == DatabaseConfig::SERVER_DEFAULT_POSTGRES_HOST {
+        return true;
+    }
+    parsed
+        .password()
+        .is_some_and(|password| password == DatabaseConfig::SERVER_DEFAULT_POSTGRES_PASSWORD)
 }
 
 impl RuntimeConfigLocation {

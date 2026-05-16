@@ -41,20 +41,24 @@ Quick Ubuntu/Debian service install from a release asset:
 
 ```bash
 sudo apt install ./clawrouter-linux-x64-service-0.2.0.deb
+sudo editor /etc/clawrouter/clawrouter.toml
+sudo systemctl start clawrouter
 curl http://127.0.0.1:3900/healthz
 curl http://127.0.0.1:3900/readyz
 ```
 
 The `.deb` package creates `/etc/clawrouter/clawrouter.toml`,
-`/etc/default/clawrouter`, `/var/lib/clawrouter`, and the
+`/etc/clawrouter/clawrouter.env`, `/etc/clawrouter/database.secret`,
+`/var/lib/clawrouter`, and the
 `sdkwork` system user. The Linux systemd service runs `clawrouterctl
 ensure` and `refresh-catalog --force` automatically before the gateway starts,
-and service packages enable and start `clawrouter.service` during installation
-on systemd hosts.
-The default server database is local SQLite at
-`/var/lib/clawrouter/clawrouter.sqlite`; set
-`SDKWORK_CLAW_DATABASE_URL` in `/etc/default/clawrouter` only when the
-host should use managed PostgreSQL for production or multi-node deployments.
+and service packages enable `clawrouter.service` during installation on systemd
+hosts. The service is not started until the operator configures PostgreSQL in
+`/etc/clawrouter/clawrouter.toml` or uses a protected
+`SDKWORK_CLAW_DATABASE_URL` override in `/etc/clawrouter/clawrouter.env`.
+The generated `/etc/clawrouter/database.secret` contains the placeholder
+`change-me`; replace it with the real PostgreSQL password before starting the
+service. Startup rejects default placeholder hosts or passwords.
 
 On the first install or first startup, Claw Router initializes the bootstrap
 administrator login when it is missing or incomplete. The default username is
@@ -225,7 +229,7 @@ Stable installer error codes are `missing_database_url`, `invalid_argument`,
 `invalid_state`, `database_error`, `catalog_error`, and `installer_error`.
 The CLI validates command syntax before reading database configuration, so
 unsupported commands or refresh options always return `invalid_argument` even
-when `SDKWORK_CLAW_DATABASE_URL` is missing. This keeps CI checks and language
+when database configuration is incomplete. This keeps CI checks and language
 wrappers able to validate invocations without requiring a live database.
 `status`, `install`, `upgrade`, and `ensure` reject unexpected extra arguments;
 only `refresh-catalog` accepts refresh-specific options.
@@ -634,28 +638,45 @@ declares:
 - desktop metadata for desktop mode
 
 Database defaults are explicit by package profile. `archive`, `service`, and
-`container` are server release profiles and now default to local SQLite for
-single-node zero-config startup. Production and multi-node deployments should
-set a managed PostgreSQL DSN in the runtime TOML config or through
-`SDKWORK_CLAW_DATABASE_URL`. Desktop packages also default to local SQLite in
-the operating system user data directory and may still be pointed at another
-database through the same runtime config file.
+`container` are server release profiles and default to external PostgreSQL.
+Desktop packages default to local SQLite in the operating system user data
+directory and may still be pointed at another database through the same runtime
+config file.
 
 The runtime config file is TOML and supports:
 
 ```toml
 [database]
-engine = "sqlite"
-url = "sqlite:///var/lib/clawrouter/clawrouter.sqlite"
-max_connections = 1
+engine = "postgresql"
+host = "db.example.com"
+port = 5432
+database = "sdkwork_claw_router"
+username = "sdkwork_claw_router"
+password_file = "/etc/clawrouter/database.secret"
+# password = "change-me"
+ssl_mode = "require"
+max_connections = 16
 ```
 
-Production PostgreSQL deployments use:
+`password_file` may be an absolute path, a path relative to `clawrouter.toml`,
+or a path that uses standard environment variable expansion such as
+`${SECRET_ROOT}/database.secret`, `$SECRET_ROOT/database.secret`, or
+`%ProgramData%/SdkWork/ClawRouter/database.secret`. Generated service templates
+use placeholder values and startup refuses server configurations that still use
+`db.example.com` or `change-me`.
+
+Protected TOML files may place the password directly in `clawrouter.toml`
+instead of using a separate password file:
 
 ```toml
 [database]
 engine = "postgresql"
-url = "postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
+host = "db.internal"
+port = 5432
+database = "sdkwork_claw_router"
+username = "sdkwork_claw_router"
+password = "real-password"
+ssl_mode = "require"
 max_connections = 16
 ```
 
@@ -740,9 +761,10 @@ binaries under `/opt/clawrouter`, runtime templates under
 and service units under `/lib/systemd/system` for service mode. The Debian
 post-install script creates the `sdkwork` user/group, mutable data and log
 directories, a first-run TOML config copied from the example when missing, and
-runs `systemctl daemon-reload` before enabling and starting `clawrouter.service`
-on systemd hosts. Operators still configure the PostgreSQL DSN for production
-or multi-node deployments through `/etc/default/clawrouter` or the runtime TOML.
+runs `systemctl daemon-reload` before enabling `clawrouter.service` on systemd
+hosts. Operators configure PostgreSQL through `/etc/clawrouter/clawrouter.toml`,
+`/etc/clawrouter/database.secret`, or a protected override in
+`/etc/clawrouter/clawrouter.env`, then start the service.
 
 `scripts/smoke-install-package-init.mjs` validates the fast initialization
 contract separately from service startup. The default root command is a dry-run

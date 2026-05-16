@@ -603,20 +603,17 @@ function createInstallGuide(packageItem) {
 
   if (packageItem.databasePolicy.defaultEngine === 'sqlite') {
     lines.push(
-      packageItem.runtimeProfile === 'desktop'
-        ? 'Desktop deployments default to SQLite.'
-        : 'This package is runnable out of the box with local SQLite for single-node deployments.',
+      'Desktop deployments default to SQLite.',
       `Default SQLite file: ${policy.defaultSqlitePath}`,
-      packageItem.runtimeProfile === 'desktop'
-        ? 'Override SDKWORK_CLAW_DATABASE_URL only for diagnostics or managed private deployments.'
-        : `For production or multi-node deployments, set SDKWORK_CLAW_DATABASE_URL to a managed PostgreSQL DSN, for example ${policy.productionDatabaseUrlExample}.`,
+      'Override SDKWORK_CLAW_DATABASE_URL only for diagnostics or managed private deployments.',
       '',
     );
   } else {
     lines.push(
       'This package is configured for external PostgreSQL.',
-      'Set SDKWORK_CLAW_DATABASE_URL to the managed PostgreSQL DSN before first start.',
-      'Example: SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router',
+      `Set [database].host, [database].database, [database].username, and [database].password_file in ${policy.configFile.path}.`,
+      `Write the PostgreSQL password to ${policy.passwordFile.path}, or set [database].password directly in protected TOML for controlled deployments.`,
+      'SDKWORK_CLAW_DATABASE_URL remains available only as an explicit operator override.',
       `Set SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS to ${policy.maxConnections} or another capacity-planned value.`,
       '',
     );
@@ -654,7 +651,7 @@ function createInstallGuide(packageItem) {
     '',
     'Do not package .env.release.local.',
     'Generate host-local env files on the target machine and keep secret values outside browser-visible PORTAL_PUBLIC_* variables.',
-    'Keep database URLs in protected process env or protected TOML files only.',
+    'Prefer password_file for database secrets. Use [database].password only when the runtime TOML is protected as a secret-bearing file.',
     '',
   );
 
@@ -701,16 +698,9 @@ function createRuntimeConfigTemplate(packageItem) {
 
   if (policy.defaultEngine === 'postgresql') {
     lines.push(
-      '# Server, service, archive, and container releases require an external PostgreSQL database.',
-      '# Replace the url with the managed PostgreSQL DSN for the target environment.',
-      '',
-    );
-  } else if (packageItem.runtimeProfile === 'server') {
-    lines.push(
-      '# This server/service package runs with local SQLite by default for quick single-node installs.',
-      `# Default SQLite file: ${policy.defaultSqlitePath}`,
-      '# For production or multi-node deployments, change engine to "postgresql" and set url to a managed PostgreSQL DSN.',
-      `# Example PostgreSQL url: ${policy.productionDatabaseUrlExample}`,
+      '# Server and container-grade releases require external PostgreSQL.',
+      '# Configure connection location here. Store secret material in password_file,',
+      '# or set password directly only when this TOML is protected as a secret-bearing file.',
       '',
     );
   } else {
@@ -724,8 +714,27 @@ function createRuntimeConfigTemplate(packageItem) {
   lines.push(
     '[database]',
     `engine = "${policy.defaultEngine}"`,
-    `url = "${policy.defaultUrl}"`,
-    `max_connections = ${policy.maxConnections}`,
+  );
+
+  if (policy.defaultEngine === 'postgresql') {
+    lines.push(
+      `host = "${policy.defaultHost}"`,
+      `port = ${policy.defaultPort}`,
+      `database = "${policy.defaultDatabase}"`,
+      `username = "${policy.defaultUsername}"`,
+      `password_file = "${policy.passwordFile.path}"`,
+      '# password = "change-me"',
+      'ssl_mode = "require"',
+      `max_connections = ${policy.maxConnections}`,
+    );
+  } else {
+    lines.push(
+      `url = "${policy.defaultUrl}"`,
+      `max_connections = ${policy.maxConnections}`,
+    );
+  }
+
+  lines.push(
     '',
     '[paths]',
     `data_directory = "${policy.dataDirectory.path}"`,
@@ -794,7 +803,7 @@ function createServiceManifest(packageItem) {
     '[Service]',
     'Type=simple',
     `WorkingDirectory=${POSIX_INSTALL_ROOT}`,
-    'EnvironmentFile=-/etc/default/clawrouter',
+    'EnvironmentFile=-/etc/clawrouter/clawrouter.env',
     `Environment=SDKWORK_CLAW_CONFIG_FILE=${packageItem.databasePolicy.configFile.path}`,
     'Environment=SDKWORK_CLAW_DEPLOYMENT_MODE=server',
     `ExecStartPre=${POSIX_INSTALL_ROOT}/bin/${packageItem.installerBinaryName} ensure`,
