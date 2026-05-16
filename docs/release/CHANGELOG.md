@@ -40,7 +40,7 @@ All notable changes to `sdkwork-claw-router` release records will be documented 
 - `node scripts/release-preflight.mjs --dry-run --json`
 - `cargo test -p sdkwork-claw-product --test database_installer sqlite_installer_repairs`
 - Local Windows WiX fixture build for `windows-x64-desktop` `.msi`
-- GitHub Actions `Release Package` run `25956126725`, covering Linux x64, Linux arm64, Windows x64, Windows arm64, macOS x64, and macOS arm64.
+- GitHub Actions `Release Package` run `25957200472`, covering Linux x64, Linux arm64, Windows x64, Windows arm64, macOS x64, and macOS arm64.
 
 ### Release Gate Status
 
