@@ -168,6 +168,7 @@ jobs:
           Copy-Item -LiteralPath "release-tools/sdkwork-claw-router/scripts/plan-claw-router-install-packages.mjs" -Destination "apps/sdkwork-claw-router/scripts/plan-claw-router-install-packages.mjs" -Force
           Copy-Item -LiteralPath "release-tools/sdkwork-claw-router/scripts/build-claw-router-install-package.mjs" -Destination "apps/sdkwork-claw-router/scripts/build-claw-router-install-package.mjs" -Force
           Copy-Item -LiteralPath "release-tools/sdkwork-claw-router/scripts/build-claw-router-native-installer.mjs" -Destination "apps/sdkwork-claw-router/scripts/build-claw-router-native-installer.mjs" -Force
+          Copy-Item -LiteralPath "release-tools/sdkwork-claw-router/scripts/validate-claw-router-install-artifacts.mjs" -Destination "apps/sdkwork-claw-router/scripts/validate-claw-router-install-artifacts.mjs" -Force
 
       - name: Checkout sdkwork-appbase
         uses: actions/checkout@v4
@@ -304,6 +305,28 @@ jobs:
             $scopedManifest = Join-Path (Get-Location) "dist/install-packages/install-packages-manifest-$env:PACKAGE_PLATFORM-$env:PACKAGE_ARCHITECTURE-$modeSlug.json"
             Copy-Item -LiteralPath $aggregateManifest -Destination $scopedManifest -Force
             Remove-Item -LiteralPath $aggregateManifest -Force
+          }
+
+      - name: Validate built install package payloads
+        working-directory: apps/sdkwork-claw-router
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $modes = $env:PACKAGE_MODES -split ","
+          foreach ($mode in $modes) {
+            $packageId = "$env:PACKAGE_PLATFORM-$env:PACKAGE_ARCHITECTURE-$mode"
+            $artifactId = if ($mode -eq "service") { "$env:PACKAGE_PLATFORM-$env:PACKAGE_ARCHITECTURE-server" } else { "$env:PACKAGE_PLATFORM-$env:PACKAGE_ARCHITECTURE-$mode" }
+            $pattern = "clawrouter-$artifactId-$env:PACKAGE_VERSION.*"
+            $file = Get-ChildItem -Path "dist/install-packages" -File |
+              Where-Object { $_.Name -like $pattern -and $_.Name -notlike "*.manifest.json" -and $_.Name -notlike "install-packages-manifest*.json" } |
+              Select-Object -First 1
+            if (-not $file) {
+              throw "Missing built install package artifact matching $pattern"
+            }
+            node scripts/validate-claw-router-install-artifacts.mjs `
+              --package-id $packageId `
+              --artifact-path $file.FullName `
+              --version $env:PACKAGE_VERSION
           }
 
       - name: Upload workflow artifact

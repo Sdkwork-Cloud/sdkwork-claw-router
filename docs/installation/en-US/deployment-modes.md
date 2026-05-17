@@ -27,7 +27,15 @@ Characteristics:
 - Released as a native installer for Linux, Windows, and macOS.
 - Best for personal trials, demos, and local debugging.
 
-Start:
+Start on Linux native `.deb`:
+
+```bash
+/usr/bin/clawrouterctl ensure
+/usr/bin/clawrouterctl refresh-catalog --force
+/usr/bin/clawrouter
+```
+
+Start on macOS native `.pkg`:
 
 ```bash
 /opt/clawrouter/bin/clawrouterctl ensure

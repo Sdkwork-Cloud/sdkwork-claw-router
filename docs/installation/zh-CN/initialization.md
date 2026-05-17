@@ -11,7 +11,15 @@ clawrouterctl refresh-catalog --force
 clawrouter
 ```
 
-如果安装的是 Linux 或 macOS 原生包，二进制文件位于 `/opt/clawrouter/bin`：
+如果安装的是 Linux 原生 `.deb`，公共命令位于 `/usr/bin`，私有运行时文件位于 `/usr/lib/clawrouter`：
+
+```bash
+/usr/bin/clawrouterctl ensure
+/usr/bin/clawrouterctl refresh-catalog --force
+/usr/bin/clawrouter
+```
+
+如果安装的是 macOS 原生 `.pkg`，desktop 二进制位于 `/opt/clawrouter/bin`，service 二进制位于 `/Library/Application Support/SdkWork/ClawRouter/bin`：
 
 ```bash
 /opt/clawrouter/bin/clawrouterctl ensure
@@ -82,9 +90,9 @@ $env:SDKWORK_CLAW_CONFIG_FILE="C:\ProgramData\SdkWork\ClawRouter\clawrouter.toml
 
 | 平台 | 二进制目录 | 说明 |
 | --- | --- | --- |
-| Linux `.deb` | `/opt/clawrouter/bin` | `service` 包还会安装 `/lib/systemd/system/clawrouter.service`。 |
+| Linux `.deb` | `/usr/bin` 公共命令，`/usr/lib/clawrouter/bin` 私有二进制 | `service` 包还会安装 `/lib/systemd/system/clawrouter.service`、`/etc/clawrouter`、`/var/lib/clawrouter` 和 `/var/log/clawrouter`。 |
 | Windows `.msi` | `C:\Program Files\ClawRouter\bin` | MSI 安装运行文件；如需 Windows Service 托管，按部署系统单独配置。 |
-| macOS `.pkg` | `/opt/clawrouter/bin` | `service` 包还会安装 `/Library/LaunchDaemons/com.sdkwork.clawrouter.plist`。 |
+| macOS `.pkg` | desktop 为 `/opt/clawrouter/bin`，service 为 `/Library/Application Support/SdkWork/ClawRouter/bin` | `service` 包还会安装 `/Library/LaunchDaemons/com.sdkwork.clawrouter.plist`。 |
 
 每个包都包含带 `installConfiguration` 的 `install-manifest.json`。原生安装包还包含 `nativeInstall`，用于描述最终安装路径、服务元数据、权限和运维命令。
 
@@ -161,7 +169,7 @@ gateway_base_url = "http://127.0.0.1:18080"
 backend_api_base_url = "http://127.0.0.1:18081"
 app_api_base_url = "http://127.0.0.1:18082"
 portal_base_url = "http://127.0.0.1:3901"
-portal_static_dist = "/opt/clawrouter/portal/dist"
+portal_static_dist = "/usr/lib/clawrouter/portal/dist"
 cors_allowed_origins = []
 upstream_request_timeout_millis = 30000
 upstream_ready_timeout_millis = 2000
@@ -188,7 +196,7 @@ csp_frame_src = ["https://player.bilibili.com"]
 rate_limit_requests = 120
 rate_limit_window_seconds = 60
 max_body_bytes = 1048576
-sdk_archive_root = "/opt/clawrouter/portal/dist/sdk-archives"
+sdk_archive_root = "/usr/lib/clawrouter/portal/dist/sdk-archives"
 
 [provider_relay.openai]
 # base_url = "https://api.openai.com/v1"
@@ -291,7 +299,15 @@ deployment_mode = "desktop"
 
 下面的命令假设 `clawrouterctl` 已在 `PATH` 中。若从 release 包解压目录执行，Linux/macOS 使用 `./bin/clawrouterctl`，Windows 使用 `.\bin\clawrouterctl.exe`。
 
-Linux/macOS 原生安装包使用：
+Linux 原生 `.deb` 安装包使用：
+
+```bash
+/usr/bin/clawrouterctl status
+/usr/bin/clawrouterctl ensure
+/usr/bin/clawrouterctl refresh-catalog --force
+```
+
+macOS 原生 `.pkg` desktop 安装包使用：
 
 ```bash
 /opt/clawrouter/bin/clawrouterctl status

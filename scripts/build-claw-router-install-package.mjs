@@ -827,6 +827,12 @@ function nativeBinaryRootForInstallGuide(packageItem) {
   if (packageItem.platform === 'windows') {
     return 'C:/Program Files/ClawRouter/bin';
   }
+  if (packageItem.platform === 'linux' && ['service', 'desktop'].includes(packageItem.deploymentMode)) {
+    return '/usr/bin';
+  }
+  if (packageItem.platform === 'macos' && packageItem.deploymentMode === 'service') {
+    return '/Library/Application Support/SdkWork/ClawRouter/bin';
+  }
   return `${POSIX_INSTALL_ROOT}/bin`;
 }
 
@@ -846,7 +852,7 @@ function initializationCommandsForInstallGuide(packageItem, installConfiguration
     ];
   }
   if (packageItem.deploymentMode === 'service' && packageItem.platform === 'linux') {
-    return packageItem.initCommands.map((command) => command.replace('./bin/', `${POSIX_INSTALL_ROOT}/bin/`));
+    return packageItem.initCommands.map((command) => command.replace('./bin/', '/usr/bin/'));
   }
   return packageItem.initCommands;
 }
@@ -1133,9 +1139,10 @@ function createRuntimeConfigTemplate(packageItem) {
   const redisPolicy = packageItem.redisPolicy;
   const courseUploadPolicy = courseUploadPolicyFor(packageItem);
   const requestLimitsPolicy = requestLimitsPolicyFor();
-  const portalStaticDist = runtimeInstallPath(packageItem, 'portal/dist');
-  const sdkArchiveRoot = runtimeInstallPath(packageItem, 'portal/dist/sdk-archives');
-  const modelsCatalogRoot = runtimeInstallPath(packageItem, 'catalog');
+  const runtimeAssetRoot = nativeRuntimeAssetRoot(packageItem);
+  const portalStaticDist = `${runtimeAssetRoot}/portal/dist`;
+  const sdkArchiveRoot = `${runtimeAssetRoot}/portal/dist/sdk-archives`;
+  const modelsCatalogRoot = `${runtimeAssetRoot}/catalog`;
   const secretRoot = packageItem.platform === 'windows'
     ? 'C:/ProgramData/SdkWork/ClawRouter/Secrets'
     : '/etc/clawrouter';
@@ -1378,6 +1385,16 @@ function runtimeInstallPath(packageItem, relativePath) {
   return `${POSIX_INSTALL_ROOT}/${normalizedRelativePath}`;
 }
 
+function nativeRuntimeAssetRoot(packageItem) {
+  if (packageItem.platform === 'linux' && ['service', 'desktop'].includes(packageItem.deploymentMode)) {
+    return '/usr/lib/clawrouter';
+  }
+  if (packageItem.platform === 'macos' && packageItem.deploymentMode === 'service') {
+    return '/Library/Application Support/SdkWork/ClawRouter';
+  }
+  return runtimeInstallPath(packageItem, '').replace(/\/$/u, '');
+}
+
 function createServiceManifest(packageItem) {
   if (packageItem.platform === 'windows') {
     return [
@@ -1395,6 +1412,7 @@ function createServiceManifest(packageItem) {
     ].join('\n');
   }
   if (packageItem.platform === 'macos') {
+    const runtimeRoot = nativeRuntimeAssetRoot(packageItem);
     return [
       '<?xml version="1.0" encoding="UTF-8"?>',
       '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">',
@@ -1404,10 +1422,10 @@ function createServiceManifest(packageItem) {
       '  <string>com.sdkwork.clawrouter</string>',
       '  <key>ProgramArguments</key>',
       '  <array>',
-      `    <string>${POSIX_INSTALL_ROOT}/service/macos/clawrouter-service-runner</string>`,
+      `    <string>${runtimeRoot}/service/macos/clawrouter-service-runner</string>`,
       '  </array>',
       '  <key>WorkingDirectory</key>',
-      `  <string>${POSIX_INSTALL_ROOT}</string>`,
+      `  <string>${runtimeRoot}</string>`,
       '  <key>EnvironmentVariables</key>',
       '  <dict>',
       '    <key>SDKWORK_CLAW_CONFIG_FILE</key>',
@@ -1428,6 +1446,8 @@ function createServiceManifest(packageItem) {
       '',
     ].join('\n');
   }
+  const linuxRuntimeRoot = packageItem.deploymentMode === 'service' ? '/usr/lib/clawrouter' : POSIX_INSTALL_ROOT;
+  const linuxBinaryRoot = packageItem.deploymentMode === 'service' ? '/usr/bin' : `${POSIX_INSTALL_ROOT}/bin`;
   return [
     '[Unit]',
     `Description=${RUNTIME_DISPLAY_NAME} edge server`,
@@ -1436,21 +1456,24 @@ function createServiceManifest(packageItem) {
     '',
     '[Service]',
     'Type=simple',
-    `WorkingDirectory=${POSIX_INSTALL_ROOT}`,
+    `WorkingDirectory=${linuxRuntimeRoot}`,
     'EnvironmentFile=-/etc/clawrouter/clawrouter.env',
     `Environment=SDKWORK_CLAW_CONFIG_FILE=${packageItem.databasePolicy.configFile.path}`,
     'Environment=SDKWORK_CLAW_DEPLOYMENT_MODE=server',
-    `ExecStartPre=${POSIX_INSTALL_ROOT}/bin/${packageItem.installerBinaryName} ensure`,
-    `ExecStartPre=${POSIX_INSTALL_ROOT}/bin/${packageItem.installerBinaryName} refresh-catalog --force`,
-    `ExecStart=${POSIX_INSTALL_ROOT}/bin/${packageItem.binaryName}`,
+    `ExecStartPre=${linuxBinaryRoot}/${packageItem.installerBinaryName} ensure`,
+    `ExecStartPre=${linuxBinaryRoot}/${packageItem.installerBinaryName} refresh-catalog --force`,
+    `ExecStart=${linuxBinaryRoot}/${packageItem.binaryName}`,
     'Restart=on-failure',
     'RestartSec=5',
     'User=sdkwork',
     'Group=sdkwork',
     'UMask=0027',
     'StateDirectory=clawrouter',
+    'StateDirectoryMode=0750',
     'LogsDirectory=clawrouter',
+    'LogsDirectoryMode=0750',
     'ConfigurationDirectory=clawrouter',
+    'ConfigurationDirectoryMode=0750',
     'NoNewPrivileges=true',
     'PrivateTmp=true',
     'ProtectSystem=strict',
@@ -1462,7 +1485,7 @@ function createServiceManifest(packageItem) {
     'SystemCallArchitectures=native',
     'LimitNOFILE=65535',
     'ReadWritePaths=/var/lib/clawrouter /var/log/clawrouter',
-    'ReadOnlyPaths=/etc/clawrouter',
+    `ReadOnlyPaths=${linuxRuntimeRoot} /etc/clawrouter`,
     '',
     '[Install]',
     'WantedBy=multi-user.target',
@@ -1474,14 +1497,15 @@ function createServiceRunner(packageItem) {
   if (packageItem.platform !== 'macos') {
     throw new Error(`Unsupported service runner platform: ${packageItem.platform}`);
   }
+  const runtimeRoot = nativeRuntimeAssetRoot(packageItem);
   return [
     '#!/bin/sh',
     'set -eu',
     `export SDKWORK_CLAW_CONFIG_FILE="${packageItem.databasePolicy.configFile.path}"`,
     'export SDKWORK_CLAW_DEPLOYMENT_MODE=server',
-    `${POSIX_INSTALL_ROOT}/bin/${packageItem.installerBinaryName} ensure`,
-    `${POSIX_INSTALL_ROOT}/bin/${packageItem.installerBinaryName} refresh-catalog --force`,
-    `exec ${POSIX_INSTALL_ROOT}/bin/${packageItem.binaryName} "$@"`,
+    `${runtimeRoot}/bin/${packageItem.installerBinaryName} ensure`,
+    `${runtimeRoot}/bin/${packageItem.installerBinaryName} refresh-catalog --force`,
+    `exec ${runtimeRoot}/bin/${packageItem.binaryName} "$@"`,
     '',
   ].join('\n');
 }
@@ -1648,14 +1672,15 @@ function createTar(fileEntries) {
   for (const entry of fileEntries) {
     const data = Buffer.from(entry.data);
     const name = normalizeArchivePath(entry.relativePath);
-    const header = createTarHeader(name, data.length, entry.mode ?? modeForArchivePath(name));
+    const type = entry.type === 'directory' ? 'directory' : 'file';
+    const header = createTarHeader(name, data.length, entry.mode ?? modeForArchivePath(name), type);
     chunks.push(header, data, Buffer.alloc(paddingForTar(data.length)));
   }
   chunks.push(Buffer.alloc(1024));
   return Buffer.concat(chunks);
 }
 
-function createTarHeader(name, size, mode = 0o644) {
+function createTarHeader(name, size, mode = 0o644, type = 'file') {
   const tarPath = splitTarPath(name);
   const nameBytes = Buffer.from(tarPath.name, 'utf8');
   const prefixBytes = Buffer.from(tarPath.prefix, 'utf8');
@@ -1671,7 +1696,7 @@ function createTarHeader(name, size, mode = 0o644) {
   writeTarOctal(header, 124, 12, size);
   writeTarOctal(header, 136, 12, 0);
   header.fill(0x20, 148, 156);
-  header[156] = 0x30;
+  header[156] = type === 'directory' ? 0x35 : 0x30;
   Buffer.from('ustar\0', 'ascii').copy(header, 257);
   Buffer.from('00', 'ascii').copy(header, 263);
   const checksum = header.reduce((sum, byte) => sum + byte, 0);

@@ -25,7 +25,15 @@ Redis 在所有模式下都是可选配置且默认关闭。只有部署需要�
 - Linux、Windows、macOS 均发布为平台原生安装包。
 - 适合个人试用、演示和本地调试。
 
-启动：
+Linux 原生 `.deb` 启动：
+
+```bash
+/usr/bin/clawrouterctl ensure
+/usr/bin/clawrouterctl refresh-catalog --force
+/usr/bin/clawrouter
+```
+
+macOS 原生 `.pkg` 启动：
 
 ```bash
 /opt/clawrouter/bin/clawrouterctl ensure

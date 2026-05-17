@@ -89,7 +89,15 @@ diagnostics. Redis is standardized in `clawrouter.toml` but disabled by default;
 enable `[redis]` only when a deployment needs shared cache, distributed locks,
 queues, or rate-limit buckets.
 
-Linux/macOS native desktop package:
+Linux native desktop package:
+
+```bash
+/usr/bin/clawrouterctl ensure
+/usr/bin/clawrouterctl refresh-catalog --force
+/usr/bin/clawrouter
+```
+
+macOS native desktop package:
 
 ```bash
 /opt/clawrouter/bin/clawrouterctl ensure

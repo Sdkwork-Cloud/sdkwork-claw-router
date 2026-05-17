@@ -127,7 +127,7 @@ gateway_base_url = "http://127.0.0.1:18080"
 backend_api_base_url = "http://127.0.0.1:18081"
 app_api_base_url = "http://127.0.0.1:18082"
 portal_base_url = "http://127.0.0.1:3901"
-portal_static_dist = "/opt/clawrouter/portal/dist"
+portal_static_dist = "/usr/lib/clawrouter/portal/dist"
 cors_allowed_origins = []
 upstream_request_timeout_millis = 30000
 upstream_ready_timeout_millis = 2000
@@ -154,7 +154,7 @@ csp_frame_src = ["https://player.bilibili.com"]
 rate_limit_requests = 120
 rate_limit_window_seconds = 60
 max_body_bytes = 1048576
-sdk_archive_root = "/opt/clawrouter/portal/dist/sdk-archives"
+sdk_archive_root = "/usr/lib/clawrouter/portal/dist/sdk-archives"
 
 [provider_relay.openai]
 # base_url = "https://api.openai.com/v1"
@@ -210,13 +210,17 @@ deployment_mode = "server"
 
 `.deb` 安装脚本会创建：
 
-- `/opt/clawrouter`
+- `/usr/bin/clawrouter`
+- `/usr/bin/clawrouterctl`
+- `/usr/lib/clawrouter`
 - `/etc/clawrouter`
 - `/etc/clawrouter/clawrouter.env`
 - `/etc/clawrouter/database.secret`
 - `/var/lib/clawrouter`
 - `/var/log/clawrouter`
 - `service` 包会安装 `/lib/systemd/system/clawrouter.service`
+
+Linux `.deb` payload 使用标准系统目录：不可变私有运行时文件位于 `/usr/lib/clawrouter`，公共运维命令位于 `/usr/bin`，服务配置位于 `/etc/clawrouter`，可变状态位于 `/var/lib/clawrouter`，日志位于 `/var/log/clawrouter`。服务配置文件和模板使用 `root:sdkwork`、`0640` 文件权限；`/etc/clawrouter`、`/var/lib/clawrouter` 和 `/var/log/clawrouter` 使用 `0750` 目录权限。
 
 如果服务启动时自动初始化数据库，请从日志中保存首次管理员密码：
 
@@ -230,9 +234,9 @@ sudo journalctl -u clawrouter -n 200 --no-pager
 
 ```bash
 sudo apt install ./clawrouter-linux-x64-desktop-0.3.0.deb
-/opt/clawrouter/bin/clawrouterctl ensure
-/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
-/opt/clawrouter/bin/clawrouter
+/usr/bin/clawrouterctl ensure
+/usr/bin/clawrouterctl refresh-catalog --force
+/usr/bin/clawrouter
 ```
 
 `desktop` 模式使用当前 OS 用户的配置和数据目录，默认不要求 PostgreSQL。Linux desktop `.deb` 会把共享模板安装到 `/usr/share/clawrouter/config/clawrouter.toml.example`，不会创建 `/etc/clawrouter/clawrouter.toml`、`/etc/clawrouter/database.secret` 或 systemd 服务。
@@ -266,6 +270,8 @@ Set-Location "C:\Program Files\ClawRouter"
 $env:SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
 ```
 
+Windows `.msi` 会把程序二进制放在 `%ProgramFiles%/ClawRouter`，把共享模板放在 `%ProgramData%/SdkWork/ClawRouter`。原生安装清单会记录 service 模板、运行时 TOML、密码文件和数据目录继承 ProgramData ACL；desktop 运行时文件由当前用户初始化到 `%APPDATA%/SdkWork/ClawRouter` 和 `%LOCALAPPDATA%/SdkWork/ClawRouter`，使用当前用户 profile ACL。
+
 ### macOS 桌面或服务文件
 
 安装 PKG：
@@ -282,7 +288,7 @@ Desktop config template: /usr/local/share/clawrouter/config/clawrouter.toml.exam
 Desktop runtime config: ~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml
 Service config template: /Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example
 Service plist for service package: /Library/LaunchDaemons/com.sdkwork.clawrouter.plist
-Service runner for service package: /opt/clawrouter/service/macos/clawrouter-service-runner
+Service runner for service package: /Library/Application Support/SdkWork/ClawRouter/service/macos/clawrouter-service-runner
 ```
 
 初始化并启动：
@@ -294,6 +300,8 @@ Service runner for service package: /opt/clawrouter/service/macos/clawrouter-ser
 ```
 
 macOS service 包由 launchd 启动 service runner。runner 会先执行 `clawrouterctl ensure` 和 `clawrouterctl refresh-catalog --force`，然后用 gateway 进程替换自身。
+
+macOS service 包会把服务运行文件安装到 `/Library/Application Support/SdkWork/ClawRouter`，使用 `root:wheel` 所有权；服务根目录为 `0750`，服务模板和复制出的运行时 TOML 为 `0640`，`/Library/LaunchDaemons/com.sdkwork.clawrouter.plist` 为 `0644`。macOS desktop 包仍把运行时配置放在当前用户的 Application Support 目录中。
 
 ### 可移植归档包
 
@@ -345,7 +353,7 @@ release 包包含运行 Claw Router 所需文件：
 
 `archive` 和 `container` release 资产仍然是可移植 `.tar.gz` 或 `.zip`。
 
-每个包的 `install-manifest.json` 都包含 `installConfiguration`，记录运行时 TOML、模板、数据库策略、必填字段、密码路径、首次启动命令和后续步骤。原生安装包还包含 `nativeInstall`，用机器可读方式描述最终安装布局，例如 `/opt/clawrouter/bin/clawrouter`、`/etc/clawrouter/clawrouter.toml`、`/etc/clawrouter/database.secret`、`/lib/systemd/system/clawrouter.service`、服务启动策略、权限和运维命令。部署自动化应读取这些字段，而不是解析 `INSTALL.md`。
+每个包的 `install-manifest.json` 都包含 `installConfiguration`，记录运行时 TOML、模板、数据库策略、必填字段、密码路径、首次启动命令和后续步骤。原生安装包还包含 `nativeInstall`，用机器可读方式描述最终安装布局，例如 `/usr/bin/clawrouter`、`/usr/lib/clawrouter/portal/dist`、`/etc/clawrouter/clawrouter.toml`、`/etc/clawrouter/database.secret`、`/lib/systemd/system/clawrouter.service`、服务启动策略、权限和运维命令。部署自动化应读取这些字段，而不是解析 `INSTALL.md`。
 
 不要把 `.env.release.local` 打包或提交。归档部署可以在目标机器上生成它；Linux service 部署使用 `/etc/clawrouter/clawrouter.env` 保存受保护的进程覆盖项，并使用 `/etc/clawrouter/clawrouter.toml` 作为主要运行时配置。`PORTAL_PUBLIC_*` 只能放浏览器可见配置，不要放数据库密码、供应商密钥或管理员凭据。
 
@@ -407,7 +415,15 @@ Windows 包目录：
 .\bin\clawrouterctl.exe refresh-catalog --force
 ```
 
-Linux/macOS 原生安装路径：
+Linux 原生 `.deb` 安装路径：
+
+```bash
+/usr/bin/clawrouterctl status
+/usr/bin/clawrouterctl ensure
+/usr/bin/clawrouterctl refresh-catalog --force
+```
+
+macOS 原生 `.pkg` desktop 安装路径：
 
 ```bash
 /opt/clawrouter/bin/clawrouterctl status

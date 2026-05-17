@@ -127,7 +127,7 @@ gateway_base_url = "http://127.0.0.1:18080"
 backend_api_base_url = "http://127.0.0.1:18081"
 app_api_base_url = "http://127.0.0.1:18082"
 portal_base_url = "http://127.0.0.1:3901"
-portal_static_dist = "/opt/clawrouter/portal/dist"
+portal_static_dist = "/usr/lib/clawrouter/portal/dist"
 cors_allowed_origins = []
 upstream_request_timeout_millis = 30000
 upstream_ready_timeout_millis = 2000
@@ -154,7 +154,7 @@ csp_frame_src = ["https://player.bilibili.com"]
 rate_limit_requests = 120
 rate_limit_window_seconds = 60
 max_body_bytes = 1048576
-sdk_archive_root = "/opt/clawrouter/portal/dist/sdk-archives"
+sdk_archive_root = "/usr/lib/clawrouter/portal/dist/sdk-archives"
 
 [provider_relay.openai]
 # base_url = "https://api.openai.com/v1"
@@ -222,13 +222,17 @@ deployment_mode = "server"
 
 The `.deb` post-install script creates:
 
-- `/opt/clawrouter`
+- `/usr/bin/clawrouter`
+- `/usr/bin/clawrouterctl`
+- `/usr/lib/clawrouter`
 - `/etc/clawrouter`
 - `/etc/clawrouter/clawrouter.env`
 - `/etc/clawrouter/database.secret`
 - `/var/lib/clawrouter`
 - `/var/log/clawrouter`
 - `/lib/systemd/system/clawrouter.service` for `service` packages
+
+Linux `.deb` payloads follow standard system locations: immutable private runtime assets live under `/usr/lib/clawrouter`, public operator commands under `/usr/bin`, service configuration under `/etc/clawrouter`, mutable state under `/var/lib/clawrouter`, and logs under `/var/log/clawrouter`. Service config files and templates are owned by `root:sdkwork` with `0640` file modes; `/etc/clawrouter`, `/var/lib/clawrouter`, and `/var/log/clawrouter` use `0750` directory modes.
 
 Read startup logs and capture the first admin password if initialization happened during startup:
 
@@ -242,9 +246,9 @@ Use this path for a local Linux trial with SQLite:
 
 ```bash
 sudo apt install ./clawrouter-linux-x64-desktop-0.3.0.deb
-/opt/clawrouter/bin/clawrouterctl ensure
-/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
-/opt/clawrouter/bin/clawrouter
+/usr/bin/clawrouterctl ensure
+/usr/bin/clawrouterctl refresh-catalog --force
+/usr/bin/clawrouter
 ```
 
 The desktop profile uses the current OS user's config and data directories and does not require PostgreSQL unless you explicitly configure it. The Linux desktop `.deb` installs the shared template under `/usr/share/clawrouter/config/clawrouter.toml.example`; it does not create `/etc/clawrouter/clawrouter.toml`, `/etc/clawrouter/database.secret`, or a systemd service.
@@ -278,6 +282,8 @@ For Windows server/service deployment, set PostgreSQL in the runtime TOML before
 $env:SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
 ```
 
+Windows `.msi` packages keep program binaries under `%ProgramFiles%/ClawRouter` and shared templates under `%ProgramData%/SdkWork/ClawRouter`. The native manifest records inherited ProgramData ACLs for service templates, runtime TOML, password files, and data directories. Desktop runtime files are created during user initialization under `%APPDATA%/SdkWork/ClawRouter` and `%LOCALAPPDATA%/SdkWork/ClawRouter`, using the current user's profile ACLs.
+
 ### macOS Desktop Or Service Files
 
 Install the package:
@@ -294,7 +300,7 @@ Desktop config template: /usr/local/share/clawrouter/config/clawrouter.toml.exam
 Desktop runtime config: ~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml
 Service config template: /Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example
 Service plist for service package: /Library/LaunchDaemons/com.sdkwork.clawrouter.plist
-Service runner for service package: /opt/clawrouter/service/macos/clawrouter-service-runner
+Service runner for service package: /Library/Application Support/SdkWork/ClawRouter/service/macos/clawrouter-service-runner
 ```
 
 Initialize and start:
@@ -306,6 +312,8 @@ Initialize and start:
 ```
 
 For macOS service packages, launchd starts the service runner. The runner executes `clawrouterctl ensure` and `clawrouterctl refresh-catalog --force`, then replaces itself with the gateway process.
+
+macOS service packages install service runtime files under `/Library/Application Support/SdkWork/ClawRouter` with `root:wheel` ownership, `0750` on the service root, `0640` on service templates and copied runtime TOML, and `0644` on `/Library/LaunchDaemons/com.sdkwork.clawrouter.plist`. macOS desktop packages keep runtime config in the user's Application Support directory.
 
 ### Portable Archive
 
@@ -357,7 +365,7 @@ Release packages include the runtime files needed to start Claw Router:
 
 `archive` and `container` release assets remain portable `.tar.gz` or `.zip` packages.
 
-Every package manifest includes an `installConfiguration` section with the runtime TOML, template, database policy, required fields, password path, first-start commands, and next steps. Native installer manifests also include `nativeInstall`, a machine-readable final install layout covering paths such as `/opt/clawrouter/bin/clawrouter`, `/etc/clawrouter/clawrouter.toml`, `/etc/clawrouter/database.secret`, `/lib/systemd/system/clawrouter.service`, service startup policy, permissions, and operator commands. Use these fields for deployment automation instead of scraping `INSTALL.md`.
+Every package manifest includes an `installConfiguration` section with the runtime TOML, template, database policy, required fields, password path, first-start commands, and next steps. Native installer manifests also include `nativeInstall`, a machine-readable final install layout covering paths such as `/usr/bin/clawrouter`, `/usr/lib/clawrouter/portal/dist`, `/etc/clawrouter/clawrouter.toml`, `/etc/clawrouter/database.secret`, `/lib/systemd/system/clawrouter.service`, service startup policy, permissions, and operator commands. Use these fields for deployment automation instead of scraping `INSTALL.md`.
 
 Never package or commit `.env.release.local`. Archive deployments may generate it on the target host, while Linux service deployments use `/etc/clawrouter/clawrouter.env` for protected process overrides and `/etc/clawrouter/clawrouter.toml` for the primary runtime configuration. Keep `PORTAL_PUBLIC_*` values browser-safe; do not put database passwords, provider secrets, or admin credentials in `PORTAL_PUBLIC_*` variables.
 
@@ -419,7 +427,15 @@ Windows package root:
 .\bin\clawrouterctl.exe refresh-catalog --force
 ```
 
-Native Linux/macOS install path:
+Native Linux `.deb` install path:
+
+```bash
+/usr/bin/clawrouterctl status
+/usr/bin/clawrouterctl ensure
+/usr/bin/clawrouterctl refresh-catalog --force
+```
+
+Native macOS `.pkg` desktop install path:
 
 ```bash
 /opt/clawrouter/bin/clawrouterctl status

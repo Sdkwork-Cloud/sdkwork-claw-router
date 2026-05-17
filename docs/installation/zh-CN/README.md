@@ -75,7 +75,15 @@ curl http://127.0.0.1:3900/readyz
 
 Debian service 包会创建 `/etc/clawrouter/clawrouter.toml`、`/etc/clawrouter/clawrouter.env`、`/etc/clawrouter/database.secret`、可选的 `/etc/clawrouter/redis.secret`、数据目录和日志目录，在 systemd 主机上启用但不会立即启动 `clawrouter.service`。请先配置 PostgreSQL，再启动服务。systemd unit 会在 gateway 启动前自动执行初始化和 catalog 刷新，并使用文件系统、内核、control group、系统调用架构和打开文件数等 systemd 限制。安装后输出会直接打印运行时 TOML、服务环境文件、PostgreSQL 密码文件、可选 Redis 密码文件、systemd 服务名和首次启动命令。安装清单还包含 `nativeInstall` 布局，方便部署自动化和售后诊断读取最终路径。Redis 已纳入 `clawrouter.toml` 标准配置，但默认关闭；只有部署需要共享缓存、分布式锁、队列或限流桶时才启用 `[redis]`。
 
-Linux/macOS 原生 desktop 包：
+Linux 原生 desktop 包：
+
+```bash
+/usr/bin/clawrouterctl ensure
+/usr/bin/clawrouterctl refresh-catalog --force
+/usr/bin/clawrouter
+```
+
+macOS 原生 desktop 包：
 
 ```bash
 /opt/clawrouter/bin/clawrouterctl ensure

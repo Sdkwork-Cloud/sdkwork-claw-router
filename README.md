@@ -80,7 +80,15 @@ Set-Location "C:\Program Files\ClawRouter"
 .\bin\clawrouter.exe
 ```
 
-Quick native package initialization on Linux and macOS:
+Quick Linux native desktop package initialization:
+
+```bash
+/usr/bin/clawrouterctl ensure
+/usr/bin/clawrouterctl refresh-catalog --force
+/usr/bin/clawrouter
+```
+
+Quick macOS native package initialization:
 
 ```bash
 /opt/clawrouter/bin/clawrouterctl ensure
@@ -708,7 +716,7 @@ gateway_base_url = "http://127.0.0.1:18080"
 backend_api_base_url = "http://127.0.0.1:18081"
 app_api_base_url = "http://127.0.0.1:18082"
 portal_base_url = "http://127.0.0.1:3901"
-portal_static_dist = "/opt/clawrouter/portal/dist"
+portal_static_dist = "/usr/lib/clawrouter/portal/dist"
 cors_allowed_origins = []
 upstream_request_timeout_millis = 30000
 upstream_ready_timeout_millis = 2000
@@ -735,7 +743,7 @@ csp_frame_src = ["https://player.bilibili.com"]
 rate_limit_requests = 120
 rate_limit_window_seconds = 60
 max_body_bytes = 1048576
-sdk_archive_root = "/opt/clawrouter/portal/dist/sdk-archives"
+sdk_archive_root = "/usr/lib/clawrouter/portal/dist/sdk-archives"
 
 [provider_relay.openai]
 # base_url = "https://api.openai.com/v1"
@@ -766,7 +774,7 @@ payment_callback_body_max_bytes = 65536
 
 [install]
 # Optional override for externally mounted sdkwork-models catalog data.
-# models_catalog_root = "/opt/clawrouter/catalog"
+# models_catalog_root = "/usr/lib/clawrouter/catalog"
 ```
 
 `password_file` may be an absolute path, a path relative to `clawrouter.toml`,
@@ -914,29 +922,44 @@ consumes the same staged production directory and package plan to build:
 - macOS `.pkg` packages through `pkgbuild` for service and desktop install
   targets.
   macOS service packages include a launchd runner at
-  `/opt/clawrouter/service/macos/clawrouter-service-runner` so launchd runs
-  `clawrouterctl ensure` and `clawrouterctl refresh-catalog --force` before
-  starting the gateway.
+  `/Library/Application Support/SdkWork/ClawRouter/service/macos/clawrouter-service-runner`
+  so launchd runs `clawrouterctl ensure` and
+  `clawrouterctl refresh-catalog --force` before starting the gateway.
 
 The native installer builder writes the installer, a per-installer
 `.manifest.json`, and a scoped aggregate manifest. Each native manifest includes
 `nativeInstall`, a machine-readable install layout with the final binary,
 installer CLI, runtime TOML, template, data directory, service metadata,
-permissions, and first-start commands. Linux `.deb` packages place binaries
-under `/opt/clawrouter`, runtime templates under `/etc/clawrouter`, docs under
-`/usr/share/doc/clawrouter`, and service units under `/lib/systemd/system` for
-service mode. The Debian post-install script creates the `sdkwork` user/group,
-mutable data and log directories, a first-run TOML config copied from the
-example when missing, and runs `systemctl daemon-reload` before enabling
-`clawrouter.service` on systemd hosts. The generated service unit uses a
-restricted runtime profile with `NoNewPrivileges`, `ProtectSystem=strict`,
-`ProtectHome=true`, systemd-managed state/log/config directories, kernel and
+permissions, and first-start commands. Linux `.deb` packages place public
+commands under `/usr/bin`, immutable private runtime assets under
+`/usr/lib/clawrouter`, service configuration and templates under
+`/etc/clawrouter`, mutable data/logs under `/var/lib/clawrouter` and
+`/var/log/clawrouter`, docs under `/usr/share/doc/clawrouter`, and service
+units under `/lib/systemd/system` for service mode. The Debian post-install
+script creates the `sdkwork` user/group, applies root-owned `0755` modes to
+runtime binaries, keeps service config templates and secrets as `root:sdkwork`
+`0640`, creates `0750` mutable data and log directories for `sdkwork`, copies a
+first-run TOML config from the example when missing, and runs
+`systemctl daemon-reload` before enabling `clawrouter.service` on systemd
+hosts. The generated service unit uses a restricted runtime profile with
+`NoNewPrivileges`, `ProtectSystem=strict`, `ProtectHome=true`, systemd-managed
+state/log/config directories with `0750` directory modes, kernel and
 control-group protections, native syscall architecture filtering, and
 `LimitNOFILE=65535`. The running service can write data and logs, while
-`/etc/clawrouter` stays read-only to the service process after installation.
+`/usr/lib/clawrouter` and `/etc/clawrouter` stay read-only to the service
+process after installation.
 Operators configure PostgreSQL through
 `/etc/clawrouter/clawrouter.toml`, `/etc/clawrouter/database.secret`, or a
 protected override in `/etc/clawrouter/clawrouter.env`, then start the service.
+Windows `.msi` packages keep binaries under `%ProgramFiles%/ClawRouter` and
+shared templates under `%ProgramData%/SdkWork/ClawRouter`; native manifests
+record inherited ProgramData ACLs for service templates, runtime TOML, secrets,
+and data directories, while desktop runtime files remain user-profile ACLs
+under `%APPDATA%` and `%LOCALAPPDATA%`. macOS service packages install service
+runtime files under `/Library/Application Support/SdkWork/ClawRouter` with
+`root:wheel` ownership, `0750` on the service root, `0640` on service templates
+and copied runtime TOML, and `0644` on the launchd plist; macOS desktop keeps
+runtime config in the user's Application Support directory.
 
 `scripts/smoke-install-package-init.mjs` validates the fast initialization
 contract separately from service startup. The default root command is a dry-run

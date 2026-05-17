@@ -164,6 +164,13 @@ test('installation documentation covers release, source, initialization, usage, 
   assert.ok(enRelease.includes('sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb'));
   assert.equal(zhRelease.includes('sudo systemctl enable --now clawrouter'), false);
   assert.equal(enRelease.includes('sudo systemctl enable --now clawrouter'), false);
+  assert.ok(enRelease.includes('/usr/bin/clawrouter'));
+  assert.ok(enRelease.includes('/usr/lib/clawrouter'));
+  assert.ok(enRelease.includes('root:sdkwork'));
+  assert.ok(enRelease.includes('0640'));
+  assert.ok(enRelease.includes('0750'));
+  assert.ok(enRelease.includes('inherited ProgramData ACLs'));
+  assert.ok(enRelease.includes('root:wheel'));
   assert.ok(zhRelease.includes('[redis]'));
   assert.ok(enRelease.includes('[redis]'));
   assert.ok(zhRelease.includes('/etc/clawrouter/redis.secret'));
@@ -2028,7 +2035,7 @@ test('install package builder emits service and container deployment packages fr
     assert.ok(serviceConfigTemplate.includes('admin_skill_json_body_max_bytes = 65536'));
     assert.ok(serviceConfigTemplate.includes('forum_json_body_max_bytes = 262144'));
     assert.ok(serviceConfigTemplate.includes('payment_callback_body_max_bytes = 65536'));
-    assert.ok(serviceConfigTemplate.includes('# models_catalog_root = "/opt/clawrouter/catalog"'));
+    assert.ok(serviceConfigTemplate.includes('# models_catalog_root = "/usr/lib/clawrouter/catalog"'));
     assert.ok(serviceConfigTemplate.includes('[services.gateway]'));
     assert.ok(serviceConfigTemplate.includes('[services.admin_api]'));
     assert.ok(serviceConfigTemplate.includes('[services.app_api]'));
@@ -2040,7 +2047,7 @@ test('install package builder emits service and container deployment packages fr
     assert.ok(serviceConfigTemplate.includes('gateway_base_url = "http://127.0.0.1:18080"'));
     assert.ok(serviceConfigTemplate.includes('backend_api_base_url = "http://127.0.0.1:18081"'));
     assert.ok(serviceConfigTemplate.includes('app_api_base_url = "http://127.0.0.1:18082"'));
-    assert.ok(serviceConfigTemplate.includes('portal_static_dist = "/opt/clawrouter/portal/dist"'));
+    assert.ok(serviceConfigTemplate.includes('portal_static_dist = "/usr/lib/clawrouter/portal/dist"'));
     assert.ok(serviceConfigTemplate.includes('cors_allowed_origins = []'));
     assert.ok(serviceConfigTemplate.includes('upstream_request_timeout_millis = 30000'));
     assert.ok(serviceConfigTemplate.includes('upstream_ready_timeout_millis = 2000'));
@@ -2061,7 +2068,7 @@ test('install package builder emits service and container deployment packages fr
     assert.ok(serviceConfigTemplate.includes('rate_limit_requests = 120'));
     assert.ok(serviceConfigTemplate.includes('rate_limit_window_seconds = 60'));
     assert.ok(serviceConfigTemplate.includes('max_body_bytes = 1048576'));
-    assert.ok(serviceConfigTemplate.includes('sdk_archive_root = "/opt/clawrouter/portal/dist/sdk-archives"'));
+    assert.ok(serviceConfigTemplate.includes('sdk_archive_root = "/usr/lib/clawrouter/portal/dist/sdk-archives"'));
     assert.ok(serviceConfigTemplate.includes('[security]'));
     assert.ok(serviceConfigTemplate.includes('api_key_pepper_file = "/etc/clawrouter/api-key-pepper.secret"'));
     assert.ok(serviceConfigTemplate.includes('trusted_subject_secret_file = "/etc/clawrouter/trusted-subject.secret"'));
@@ -2109,7 +2116,7 @@ test('install package builder emits service and container deployment packages fr
     assert.ok(serviceInstallGuide.includes('Version: 0.1.0'));
     assert.ok(serviceInstallGuide.includes('password_file'));
     assert.ok(serviceInstallGuide.includes('Linux service packages run initialization automatically from systemd'));
-    assert.ok(serviceInstallGuide.includes('/opt/clawrouter/bin/clawrouterctl ensure'));
+    assert.ok(serviceInstallGuide.includes('/usr/bin/clawrouterctl ensure'));
     assert.ok(serviceInstallGuide.includes('/etc/clawrouter/clawrouter.toml'));
     assert.ok(serviceInstallGuide.includes('Configuration Files'));
     assert.ok(serviceInstallGuide.includes('PostgreSQL password file: /etc/clawrouter/database.secret'));
@@ -2284,9 +2291,9 @@ test('install package builder emits service and container deployment packages fr
     assert.ok(desktopInstallGuide.includes('Database: SQLite'));
     assert.ok(desktopInstallGuide.includes('First Start'));
     assert.ok(desktopInstallGuide.includes('Request body limits are configured in [request_limits].'));
-    assert.ok(desktopInstallGuide.includes('/opt/clawrouter/bin/clawrouterctl ensure'));
-    assert.ok(desktopInstallGuide.includes('/opt/clawrouter/bin/clawrouterctl refresh-catalog --force'));
-    assert.ok(desktopInstallGuide.includes('/opt/clawrouter/bin/clawrouter'));
+    assert.ok(desktopInstallGuide.includes('/usr/bin/clawrouterctl ensure'));
+    assert.ok(desktopInstallGuide.includes('/usr/bin/clawrouterctl refresh-catalog --force'));
+    assert.ok(desktopInstallGuide.includes('/usr/bin/clawrouter'));
   } finally {
     rmSync(fixtureRoot, { recursive: true, force: true });
   }
@@ -2360,13 +2367,13 @@ test('macOS service packages run initialization through a launchd runner', async
     const tarEntries = readTarEntries(tarBytes);
     assert.equal(tarEntries.get('service/macos/clawrouter-service-runner')?.mode, 0o755);
     const runnerText = readTarEntryText(tarBytes, 'service/macos/clawrouter-service-runner');
-    assert.ok(runnerText.includes('/opt/clawrouter/bin/clawrouterctl ensure'));
-    assert.ok(runnerText.includes('/opt/clawrouter/bin/clawrouterctl refresh-catalog --force'));
-    assert.ok(runnerText.includes('exec /opt/clawrouter/bin/clawrouter "$@"'));
+    assert.ok(runnerText.includes('/Library/Application Support/SdkWork/ClawRouter/bin/clawrouterctl ensure'));
+    assert.ok(runnerText.includes('/Library/Application Support/SdkWork/ClawRouter/bin/clawrouterctl refresh-catalog --force'));
+    assert.ok(runnerText.includes('exec /Library/Application Support/SdkWork/ClawRouter/bin/clawrouter "$@"'));
 
     const plistText = readTarEntryText(tarBytes, 'service/macos/com.sdkwork.clawrouter.plist');
-    assert.ok(plistText.includes('/opt/clawrouter/service/macos/clawrouter-service-runner'));
-    assert.ok(!plistText.includes('/opt/clawrouter/bin/clawrouter</string>'));
+    assert.ok(plistText.includes('/Library/Application Support/SdkWork/ClawRouter/service/macos/clawrouter-service-runner'));
+    assert.ok(!plistText.includes('/Library/Application Support/SdkWork/ClawRouter/bin/clawrouter</string>'));
   } finally {
     rmSync(fixtureRoot, { recursive: true, force: true });
   }
@@ -2461,19 +2468,59 @@ test('native installer builder emits apt-installable Debian packages for Linux s
     assert.match(result.installer.sha256, /^[a-f0-9]{64}$/u);
     assert.equal(result.manifest.nativeInstall.schemaVersion, '2026-05-16.native-install-layout.v1');
     assert.equal(result.manifest.nativeInstall.format, 'deb');
-    assert.equal(result.manifest.nativeInstall.installRoot, '/opt/clawrouter');
-    assert.equal(result.manifest.nativeInstall.files.binary, '/opt/clawrouter/bin/clawrouter');
-    assert.equal(result.manifest.nativeInstall.files.installer, '/opt/clawrouter/bin/clawrouterctl');
+    assert.equal(result.manifest.nativeInstall.installRoot, '/usr/lib/clawrouter');
+    assert.equal(result.manifest.nativeInstall.files.binary, '/usr/bin/clawrouter');
+    assert.equal(result.manifest.nativeInstall.files.installer, '/usr/bin/clawrouterctl');
+    assert.equal(result.manifest.nativeInstall.files.privateBinary, '/usr/lib/clawrouter/bin/clawrouter');
+    assert.equal(result.manifest.nativeInstall.files.privateInstaller, '/usr/lib/clawrouter/bin/clawrouterctl');
+    assert.equal(result.manifest.nativeInstall.files.portal, '/usr/lib/clawrouter/portal/dist');
     assert.equal(result.manifest.nativeInstall.files.runtimeConfig, '/etc/clawrouter/clawrouter.toml');
     assert.equal(result.manifest.nativeInstall.files.runtimeConfigTemplate, '/etc/clawrouter/clawrouter.toml.example');
     assert.equal(result.manifest.nativeInstall.files.serviceEnvironment, '/etc/clawrouter/clawrouter.env');
     assert.equal(result.manifest.nativeInstall.files.passwordFile, '/etc/clawrouter/database.secret');
     assert.equal(result.manifest.nativeInstall.files.redisPasswordFile, '/etc/clawrouter/redis.secret');
     assert.equal(result.manifest.nativeInstall.files.installManifest, '/usr/share/clawrouter/install-manifest.json');
+    assert.equal(result.manifest.nativeInstall.files.releaseEnvTemplate, '/etc/clawrouter/.env.release.example');
     assert.equal(result.manifest.nativeInstall.service.manager, 'systemd');
     assert.equal(result.manifest.nativeInstall.service.name, 'clawrouter.service');
     assert.equal(result.manifest.nativeInstall.service.enabledOnInstall, true);
     assert.equal(result.manifest.nativeInstall.service.startedOnInstall, false);
+    assert.ok(result.manifest.nativeInstall.permissions.some((item) =>
+      item.path === '/usr/lib/clawrouter'
+      && item.owner === 'root'
+      && item.group === 'root'
+      && item.mode === '0755'
+    ));
+    assert.ok(result.manifest.nativeInstall.permissions.some((item) =>
+      item.path === '/usr/lib/clawrouter/bin'
+      && item.owner === 'root'
+      && item.group === 'root'
+      && item.mode === '0755'
+    ));
+    assert.ok(result.manifest.nativeInstall.permissions.some((item) =>
+      item.path === '/usr/bin/clawrouter'
+      && item.owner === 'root'
+      && item.group === 'root'
+      && item.mode === '0755'
+    ));
+    assert.ok(result.manifest.nativeInstall.permissions.some((item) =>
+      item.path === '/etc/clawrouter'
+      && item.owner === 'root'
+      && item.group === 'sdkwork'
+      && item.mode === '0750'
+    ));
+    assert.ok(result.manifest.nativeInstall.permissions.some((item) =>
+      item.path === '/etc/clawrouter/clawrouter.toml.example'
+      && item.owner === 'root'
+      && item.group === 'sdkwork'
+      && item.mode === '0640'
+    ));
+    assert.ok(result.manifest.nativeInstall.permissions.some((item) =>
+      item.path === '/etc/clawrouter/.env.release.example'
+      && item.owner === 'root'
+      && item.group === 'sdkwork'
+      && item.mode === '0640'
+    ));
     assert.ok(result.manifest.nativeInstall.permissions.some((item) =>
       item.path === '/etc/clawrouter/database.secret'
       && item.owner === 'root'
@@ -2503,10 +2550,14 @@ test('native installer builder emits apt-installable Debian packages for Linux s
     assert.ok(postinstText.includes('/etc/clawrouter/clawrouter.env'));
     assert.ok(postinstText.includes('/etc/clawrouter/database.secret'));
     assert.ok(postinstText.includes('/etc/clawrouter/redis.secret'));
+    assert.ok(postinstText.includes('chown root:root /usr/lib/clawrouter /usr/lib/clawrouter/bin /usr/bin/clawrouter /usr/bin/clawrouterctl'));
+    assert.ok(postinstText.includes('chmod 0755 /usr/lib/clawrouter /usr/lib/clawrouter/bin /usr/bin/clawrouter /usr/bin/clawrouterctl'));
     assert.ok(postinstText.includes('chown root:sdkwork /etc/clawrouter'));
     assert.ok(postinstText.includes('chmod 0750 /etc/clawrouter'));
     assert.ok(postinstText.includes('chown root:sdkwork /etc/clawrouter/clawrouter.toml.example'));
     assert.ok(postinstText.includes('chmod 0640 /etc/clawrouter/clawrouter.toml.example'));
+    assert.ok(postinstText.includes('chown root:sdkwork /etc/clawrouter/.env.release.example'));
+    assert.ok(postinstText.includes('chmod 0640 /etc/clawrouter/.env.release.example'));
     assert.ok(postinstText.includes('SDKWORK_CLAW_DEPLOYMENT_MODE=server'));
     assert.ok(postinstText.includes('ClawRouter installation summary'));
     assert.ok(postinstText.includes('Runtime TOML: /etc/clawrouter/clawrouter.toml'));
@@ -2523,20 +2574,38 @@ test('native installer builder emits apt-installable Debian packages for Linux s
 
     const dataTar = gunzipSync(arEntries.get('data.tar.gz'));
     const dataEntries = readTarEntries(dataTar);
-    assert.equal(dataEntries.get('./opt/clawrouter/bin/clawrouter')?.mode, 0o755);
-    assert.equal(dataEntries.get('./opt/clawrouter/bin/clawrouterctl')?.mode, 0o755);
-    assert.ok(dataEntries.has('./opt/clawrouter/portal/dist/index.html'));
+    const dataEntryNames = [...dataEntries.keys()];
+    assert.equal(dataEntries.get('./usr/bin')?.type, 'directory');
+    assert.equal(dataEntries.get('./usr/lib/clawrouter')?.type, 'directory');
+    assert.equal(dataEntries.get('./usr/lib/clawrouter/bin')?.type, 'directory');
+    assert.equal(dataEntries.get('./etc/clawrouter')?.type, 'directory');
+    assert.ok(!dataEntryNames.some((entry) => entry.startsWith('./opt/clawrouter')));
+    assertTarParentBeforeChild(dataEntryNames, './etc/clawrouter', './etc/clawrouter/.env.release.example');
+    assertTarParentBeforeChild(dataEntryNames, './usr/bin', './usr/bin/clawrouter');
+    assertTarParentBeforeChild(dataEntryNames, './usr/lib/clawrouter', './usr/lib/clawrouter/bin/clawrouter');
+    assertTarParentBeforeChild(dataEntryNames, './etc/clawrouter', './etc/clawrouter/clawrouter.toml.example');
+    assert.equal(dataEntries.get('./usr/bin/clawrouter')?.mode, 0o755);
+    assert.equal(dataEntries.get('./usr/bin/clawrouterctl')?.mode, 0o755);
+    assert.equal(dataEntries.get('./usr/lib/clawrouter/bin/clawrouter')?.mode, 0o755);
+    assert.equal(dataEntries.get('./usr/lib/clawrouter/bin/clawrouterctl')?.mode, 0o755);
+    assert.ok(dataEntries.has('./usr/lib/clawrouter/portal/dist/index.html'));
+    assert.equal(dataEntries.get('./etc/clawrouter/.env.release.example')?.mode, 0o640);
+    assert.equal(dataEntries.get('./etc/clawrouter/clawrouter.toml.example')?.mode, 0o640);
+    assert.ok(!dataEntries.has('./usr/lib/clawrouter/.env.release.example'));
     assert.ok(dataEntries.has('./etc/clawrouter/clawrouter.toml.example'));
     assert.ok(dataEntries.has('./lib/systemd/system/clawrouter.service'));
     assert.ok(dataEntries.has('./usr/share/clawrouter/install-manifest.json'));
     const systemdText = readTarEntryText(dataTar, './lib/systemd/system/clawrouter.service');
     assert.ok(systemdText.includes('EnvironmentFile=-/etc/clawrouter/clawrouter.env'));
-    assert.ok(systemdText.includes('ExecStartPre=/opt/clawrouter/bin/clawrouterctl ensure'));
-    assert.ok(systemdText.includes('ExecStartPre=/opt/clawrouter/bin/clawrouterctl refresh-catalog --force'));
+    assert.ok(systemdText.includes('ExecStartPre=/usr/bin/clawrouterctl ensure'));
+    assert.ok(systemdText.includes('ExecStartPre=/usr/bin/clawrouterctl refresh-catalog --force'));
     assert.ok(systemdText.includes('UMask=0027'));
     assert.ok(systemdText.includes('StateDirectory=clawrouter'));
+    assert.ok(systemdText.includes('StateDirectoryMode=0750'));
     assert.ok(systemdText.includes('LogsDirectory=clawrouter'));
+    assert.ok(systemdText.includes('LogsDirectoryMode=0750'));
     assert.ok(systemdText.includes('ConfigurationDirectory=clawrouter'));
+    assert.ok(systemdText.includes('ConfigurationDirectoryMode=0750'));
     assert.ok(systemdText.includes('ProtectKernelTunables=true'));
     assert.ok(systemdText.includes('ProtectKernelModules=true'));
     assert.ok(systemdText.includes('ProtectControlGroups=true'));
@@ -2544,13 +2613,31 @@ test('native installer builder emits apt-installable Debian packages for Linux s
     assert.ok(systemdText.includes('SystemCallArchitectures=native'));
     assert.ok(systemdText.includes('LimitNOFILE=65535'));
     assert.ok(systemdText.includes('ReadWritePaths=/var/lib/clawrouter /var/log/clawrouter'));
-    assert.ok(systemdText.includes('ReadOnlyPaths=/etc/clawrouter'));
+    assert.ok(systemdText.includes('ReadOnlyPaths=/usr/lib/clawrouter /etc/clawrouter'));
     assert.ok(!systemdText.includes('ReadWritePaths=/var/lib/clawrouter /var/log/clawrouter /etc/clawrouter'));
 
     const aggregateManifest = JSON.parse(readFileSync(path.join(outputDir, 'install-packages-manifest.json'), 'utf8'));
     assert.deepEqual(aggregateManifest.archives.map((archive) => archive.file), [
       'clawrouter-linux-x64-server-0.1.0.deb',
     ]);
+
+    const { stdout, stderr } = await execFileAsync(process.execPath, [
+      path.join(workspaceRoot, 'scripts', 'validate-claw-router-install-artifacts.mjs'),
+      '--package-id',
+      'linux-x64-service',
+      '--artifact-path',
+      result.installerPath,
+      '--version',
+      '0.1.0',
+      '--json',
+    ], {
+      cwd: workspaceRoot,
+      maxBuffer: 1024 * 1024 * 4,
+    });
+    assert.equal(stderr, '');
+    const validation = JSON.parse(stdout);
+    assert.equal(validation.ok, true);
+    assert.deepEqual(validation.issues, []);
   } finally {
     rmSync(fixtureRoot, { recursive: true, force: true });
   }
@@ -2592,10 +2679,31 @@ test('native installer builder keeps Linux desktop packages user-scoped and self
     assert.equal(result.manifest.nativeInstall.schemaVersion, '2026-05-16.native-install-layout.v1');
     assert.equal(result.manifest.nativeInstall.format, 'deb');
     assert.equal(result.manifest.nativeInstall.files.runtimeConfigTemplate, '/usr/share/clawrouter/config/clawrouter.toml.example');
+    assert.equal(result.manifest.nativeInstall.files.releaseEnvTemplate, '${XDG_CONFIG_HOME:-~/.config}/clawrouter/.env.release.example');
+    assert.equal(result.manifest.nativeInstall.files.binary, '/usr/bin/clawrouter');
+    assert.equal(result.manifest.nativeInstall.files.privateBinary, '/usr/lib/clawrouter/bin/clawrouter');
+    assert.equal(result.manifest.nativeInstall.files.portal, '/usr/lib/clawrouter/portal/dist');
     assert.equal(result.manifest.nativeInstall.files.runtimeConfig, '${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml');
     assert.equal(result.manifest.nativeInstall.files.installManifest, '/usr/share/clawrouter/install-manifest.json');
     assert.equal(result.manifest.nativeInstall.service, null);
-    assert.deepEqual(result.manifest.nativeInstall.permissions, []);
+    assert.ok(result.manifest.nativeInstall.permissions.some((item) =>
+      item.path === '/usr/lib/clawrouter'
+      && item.owner === 'root'
+      && item.group === 'root'
+      && item.mode === '0755'
+    ));
+    assert.ok(result.manifest.nativeInstall.permissions.some((item) =>
+      item.path === '/usr/share/clawrouter'
+      && item.owner === 'root'
+      && item.group === 'root'
+      && item.mode === '0755'
+    ));
+    assert.ok(result.manifest.nativeInstall.permissions.some((item) =>
+      item.path === '/usr/bin/clawrouter'
+      && item.owner === 'root'
+      && item.group === 'root'
+      && item.mode === '0755'
+    ));
     assert.equal(
       result.manifest.installConfiguration.files.runtimeConfig,
       '${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml',
@@ -2607,12 +2715,20 @@ test('native installer builder keeps Linux desktop packages user-scoped and self
     assert.ok(postinstText.includes('ClawRouter installation summary'));
     assert.ok(postinstText.includes('Desktop config file: ${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml'));
     assert.ok(postinstText.includes('Database: SQLite'));
+    assert.ok(postinstText.includes('chmod 0755 /usr/lib/clawrouter /usr/lib/clawrouter/bin /usr/bin/clawrouter /usr/bin/clawrouterctl'));
     assert.ok(!postinstText.includes('/etc/clawrouter/database.secret'));
     assert.ok(!postinstText.includes('SDKWORK_CLAW_DEPLOYMENT_MODE=server'));
     assert.ok(!postinstText.includes('systemctl enable clawrouter.service'));
 
     const dataTar = gunzipSync(arEntries.get('data.tar.gz'));
     const dataEntries = readTarEntries(dataTar);
+    const dataEntryNames = [...dataEntries.keys()];
+    assert.equal(dataEntries.get('./usr/lib/clawrouter')?.type, 'directory');
+    assert.equal(dataEntries.get('./usr/share/clawrouter/config')?.type, 'directory');
+    assert.ok(!dataEntryNames.some((entry) => entry.startsWith('./opt/clawrouter')));
+    assertTarParentBeforeChild(dataEntryNames, './usr/share/clawrouter/config', './usr/share/clawrouter/config/clawrouter.toml.example');
+    assert.ok(![...dataEntries.keys()].some((entry) => entry.endsWith('/.env.release.example')));
+    assert.ok(!dataEntries.has('./usr/lib/clawrouter/.env.release.example'));
     assert.ok(dataEntries.has('./usr/share/clawrouter/config/clawrouter.toml.example'));
     assert.ok(!dataEntries.has('./etc/clawrouter/clawrouter.toml.example'));
   } finally {
@@ -2621,6 +2737,12 @@ test('native installer builder keeps Linux desktop packages user-scoped and self
 });
 
 test('native installer builder CLI validates cross-platform service and desktop installers in dry-run mode', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'build-claw-router-native-installer.mjs')).href
+  );
+  const validator = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'validate-claw-router-install-artifacts.mjs')).href
+  );
   const { stdout, stderr } = await execFileAsync(process.execPath, [
     path.join(workspaceRoot, 'scripts', 'build-claw-router-native-installer.mjs'),
     '--all',
@@ -2642,13 +2764,74 @@ test('native installer builder CLI validates cross-platform service and desktop 
   const linuxService = payload.plans.find((plan) => plan.package.id === 'linux-x64-service');
   assert.equal(linuxService.nativeInstallLayout.schemaVersion, '2026-05-16.native-install-layout.v1');
   assert.equal(linuxService.nativeInstallLayout.files.runtimeConfig, '/etc/clawrouter/clawrouter.toml');
+  assert.equal(linuxService.nativeInstallLayout.files.releaseEnvTemplate, '/etc/clawrouter/.env.release.example');
+  assert.equal(linuxService.nativeInstallLayout.files.binary, '/usr/bin/clawrouter');
+  assert.equal(linuxService.nativeInstallLayout.files.privateBinary, '/usr/lib/clawrouter/bin/clawrouter');
   assert.equal(linuxService.nativeInstallLayout.service.name, 'clawrouter.service');
   assert.equal(linuxService.nativeInstallLayout.commands.start, 'sudo systemctl start clawrouter');
   const windowsService = payload.plans.find((plan) => plan.package.id === 'windows-x64-service');
   assert.equal(windowsService.nativeInstallLayout.format, 'msi');
   assert.equal(windowsService.nativeInstallLayout.installRoot, '%ProgramFiles%/ClawRouter');
   assert.equal(windowsService.nativeInstallLayout.files.binary, '%ProgramFiles%/ClawRouter/bin/clawrouter.exe');
+  assert.equal(windowsService.nativeInstallLayout.files.runtimeConfigTemplate, '%ProgramData%/SdkWork/ClawRouter/clawrouter.toml.example');
+  assert.equal(windowsService.nativeInstallLayout.files.releaseEnvTemplate, '%ProgramData%/SdkWork/ClawRouter/.env.release.example');
   assert.equal(windowsService.nativeInstallLayout.commands.installService, '%ProgramFiles%/ClawRouter/bin/clawrouterctl.exe ensure');
+  assertNativePermission(windowsService.nativeInstallLayout.permissions, {
+    path: '%ProgramData%/SdkWork/ClawRouter',
+    owner: 'SYSTEM',
+    group: 'Administrators',
+    mode: 'inherited-programdata-acl',
+  });
+  assertNativePermission(windowsService.nativeInstallLayout.permissions, {
+    path: '%ProgramData%/SdkWork/ClawRouter/.env.release.example',
+    owner: 'SYSTEM',
+    group: 'Administrators',
+    mode: 'inherited-programdata-acl',
+  });
+  assert.equal(
+    module.windowsPayloadPathForArchivePath(windowsService, '.env.release.example'),
+    'ProgramData/SdkWork/ClawRouter/.env.release.example',
+  );
+  assert.equal(
+    module.windowsPayloadPathForArchivePath(windowsService, 'config/clawrouter.toml.example'),
+    'ProgramData/SdkWork/ClawRouter/clawrouter.toml.example',
+  );
+  const serviceWix = module.createWixSource(windowsService, 'C:/payload', [
+    { relativePath: '.env.release.example', data: Buffer.from('env') },
+    { relativePath: 'config/clawrouter.toml.example', data: Buffer.from('toml') },
+    { relativePath: 'bin/clawrouter.exe', data: Buffer.from('exe') },
+  ]);
+  assert.ok(serviceWix.includes('<StandardDirectory Id="ProgramFiles64Folder">'));
+  assert.ok(serviceWix.includes('<StandardDirectory Id="CommonAppDataFolder">'));
+  assert.ok(!serviceWix.includes('<StandardDirectory Id="AppDataFolder">'));
+  assert.equal((serviceWix.match(/Name="SdkWork"/g) ?? []).length, 1);
+  assert.ok(serviceWix.includes('Name="ClawRouter"'));
+  const windowsDesktop = payload.plans.find((plan) => plan.package.id === 'windows-x64-desktop');
+  assert.equal(windowsDesktop.nativeInstallLayout.files.runtimeConfigTemplate, '%ProgramData%/SdkWork/ClawRouter/clawrouter.toml.example');
+  assert.equal(windowsDesktop.nativeInstallLayout.files.releaseEnvTemplate, '%ProgramData%/SdkWork/ClawRouter/.env.release.example');
+  assertNativePermission(windowsDesktop.nativeInstallLayout.permissions, {
+    path: '%ProgramData%/SdkWork/ClawRouter',
+    owner: 'SYSTEM',
+    group: 'Administrators',
+    mode: 'inherited-programdata-acl',
+  });
+  assert.equal(
+    module.windowsPayloadPathForArchivePath(windowsDesktop, '.env.release.example'),
+    'ProgramData/SdkWork/ClawRouter/.env.release.example',
+  );
+  assert.equal(
+    module.windowsPayloadPathForArchivePath(windowsDesktop, 'config/clawrouter.toml.example'),
+    'ProgramData/SdkWork/ClawRouter/clawrouter.toml.example',
+  );
+  const desktopWix = module.createWixSource(windowsDesktop, 'C:/payload', [
+    { relativePath: '.env.release.example', data: Buffer.from('env') },
+    { relativePath: 'config/clawrouter.toml.example', data: Buffer.from('toml') },
+    { relativePath: 'bin/clawrouter.exe', data: Buffer.from('exe') },
+  ]);
+  assert.ok(desktopWix.includes('<StandardDirectory Id="ProgramFiles64Folder">'));
+  assert.ok(desktopWix.includes('<StandardDirectory Id="CommonAppDataFolder">'));
+  assert.ok(!desktopWix.includes('<StandardDirectory Id="AppDataFolder">'));
+  assert.equal((desktopWix.match(/Name="SdkWork"/g) ?? []).length, 1);
   const macosDesktop = payload.plans.find((plan) => plan.package.id === 'macos-arm64-desktop');
   assert.equal(macosDesktop.nativeInstallLayout.format, 'pkg');
   assert.equal(macosDesktop.nativeInstallLayout.service, null);
@@ -2657,15 +2840,78 @@ test('native installer builder CLI validates cross-platform service and desktop 
     '/usr/local/share/clawrouter/config/clawrouter.toml.example',
   );
   assert.equal(
+    macosDesktop.nativeInstallLayout.files.releaseEnvTemplate,
+    '~/Library/Application Support/SdkWork/ClawRouter/.env.release.example',
+  );
+  assert.equal(
     macosDesktop.nativeInstallLayout.files.runtimeConfig,
     '~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml',
   );
+  assertNativePermission(macosDesktop.nativeInstallLayout.permissions, {
+    path: '/opt/clawrouter',
+    owner: 'root',
+    group: 'wheel',
+    mode: '0755',
+  });
+  assertNativePermission(macosDesktop.nativeInstallLayout.permissions, {
+    path: '/usr/local/share/clawrouter/config',
+    owner: 'root',
+    group: 'wheel',
+    mode: '0755',
+  });
   const macosService = payload.plans.find((plan) => plan.package.id === 'macos-x64-service');
   assert.equal(macosService.nativeInstallLayout.service.manager, 'launchd');
   assert.equal(
     macosService.nativeInstallLayout.files.serviceRunner,
-    '/opt/clawrouter/service/macos/clawrouter-service-runner',
+    '/Library/Application Support/SdkWork/ClawRouter/service/macos/clawrouter-service-runner',
   );
+  assertNativePermission(macosService.nativeInstallLayout.permissions, {
+    path: '/Library/Application Support/SdkWork/ClawRouter',
+    owner: 'root',
+    group: 'wheel',
+    mode: '0750',
+  });
+  assertNativePermission(macosService.nativeInstallLayout.permissions, {
+    path: '/Library/Application Support/SdkWork/ClawRouter/.env.release.example',
+    owner: 'root',
+    group: 'wheel',
+    mode: '0640',
+  });
+  assertNativePermission(macosService.nativeInstallLayout.permissions, {
+    path: '/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example',
+    owner: 'root',
+    group: 'wheel',
+    mode: '0640',
+  });
+  assertNativePermission(macosService.nativeInstallLayout.permissions, {
+    path: '/var/log/clawrouter',
+    owner: 'root',
+    group: 'wheel',
+    mode: '0750',
+  });
+  const macosServicePostinstall = module.createMacosPostinstall(macosService);
+  assert.ok(macosServicePostinstall.includes('chown root:wheel "/Library/Application Support/SdkWork/ClawRouter"'));
+  assert.ok(macosServicePostinstall.includes('chmod 0750 "/Library/Application Support/SdkWork/ClawRouter"'));
+  assert.ok(macosServicePostinstall.includes('chmod 0640 "/Library/Application Support/SdkWork/ClawRouter/.env.release.example"'));
+  assert.ok(macosServicePostinstall.includes('chmod 0640 "/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example"'));
+  assert.ok(macosServicePostinstall.includes('chown root:wheel /var/log/clawrouter'));
+  assert.ok(macosServicePostinstall.includes('chmod 0750 /var/log/clawrouter'));
+  assert.deepEqual(
+    validator.validateWindowsNativeManifest(windowsService.package, { nativeInstall: windowsService.nativeInstallLayout }),
+    [],
+  );
+  assert.deepEqual(
+    validator.validateMacosNativeManifest(macosService.package, { nativeInstall: macosService.nativeInstallLayout }),
+    [],
+  );
+});
+
+test('release workflow validates native installer payload layouts before upload', () => {
+  const workflow = readFileSync(path.join(workspaceRoot, '.github', 'workflows', 'release-package.yml'), 'utf8');
+  assert.ok(workflow.includes('Validate built install package payloads'));
+  assert.ok(workflow.includes('node scripts/validate-claw-router-install-artifacts.mjs'));
+  assert.ok(workflow.includes('--package-id $packageId'));
+  assert.ok(workflow.includes('--artifact-path $file.FullName'));
 });
 
 test('install package tar writer supports long production asset paths', async () => {
@@ -6571,10 +6817,36 @@ function readTarEntries(buffer) {
     const name = prefixPart ? `${prefixPart}/${namePart}` : namePart;
     const mode = Number.parseInt(readTarString(header, 100, 8) || '0', 8);
     const size = Number.parseInt(readTarString(header, 124, 12) || '0', 8);
-    entries.set(name, { mode, size });
+    const typeflag = header.subarray(156, 157).toString('ascii');
+    entries.set(name, {
+      mode,
+      size,
+      type: typeflag === '5' ? 'directory' : 'file',
+      typeflag,
+    });
     offset += 512 + Math.ceil(size / 512) * 512;
   }
   return entries;
+}
+
+function assertTarParentBeforeChild(entryNames, parent, child) {
+  const parentIndex = entryNames.indexOf(parent);
+  const childIndex = entryNames.indexOf(child);
+  assert.ok(parentIndex >= 0, `Missing tar parent directory entry: ${parent}`);
+  assert.ok(childIndex >= 0, `Missing tar child entry: ${child}`);
+  assert.ok(parentIndex < childIndex, `${parent} must appear before ${child}`);
+}
+
+function assertNativePermission(permissions, expected) {
+  assert.ok(
+    permissions.some((item) =>
+      item.path === expected.path
+      && item.owner === expected.owner
+      && item.group === expected.group
+      && item.mode === expected.mode
+    ),
+    `Missing native permission ${expected.path} ${expected.owner}:${expected.group} ${expected.mode}`,
+  );
 }
 
 function readTarEntryText(buffer, expectedName) {

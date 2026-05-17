@@ -11,7 +11,15 @@ clawrouterctl refresh-catalog --force
 clawrouter
 ```
 
-If you installed a native Linux or macOS package, the binaries are under `/opt/clawrouter/bin`:
+If you installed a native Linux `.deb`, public commands are under `/usr/bin` and private runtime assets are under `/usr/lib/clawrouter`:
+
+```bash
+/usr/bin/clawrouterctl ensure
+/usr/bin/clawrouterctl refresh-catalog --force
+/usr/bin/clawrouter
+```
+
+If you installed a native macOS `.pkg`, desktop binaries are under `/opt/clawrouter/bin`; service binaries are under `/Library/Application Support/SdkWork/ClawRouter/bin`:
 
 ```bash
 /opt/clawrouter/bin/clawrouterctl ensure
@@ -82,9 +90,9 @@ Native package install locations:
 
 | Platform | Binaries | Notes |
 | --- | --- | --- |
-| Linux `.deb` | `/opt/clawrouter/bin` | `service` packages also install `/lib/systemd/system/clawrouter.service`. |
-| Windows `.msi` | `C:\Program Files\ClawRouter\bin` | The MSI installs runtime files; configure service hosting separately when needed. |
-| macOS `.pkg` | `/opt/clawrouter/bin` | `service` packages also install `/Library/LaunchDaemons/com.sdkwork.clawrouter.plist`. |
+| Linux `.deb` | `/usr/bin` public commands, `/usr/lib/clawrouter/bin` private binaries | `service` packages also install `/lib/systemd/system/clawrouter.service`, `/etc/clawrouter`, `/var/lib/clawrouter`, and `/var/log/clawrouter`. |
+| Windows `.msi` | `C:\Program Files\ClawRouter\bin` | Shared config templates use `%ProgramData%/SdkWork/ClawRouter`; desktop runtime config is created under `%APPDATA%/SdkWork/ClawRouter` during user initialization. |
+| macOS `.pkg` | `/opt/clawrouter/bin` for desktop, `/Library/Application Support/SdkWork/ClawRouter/bin` for service | `service` packages also install `/Library/LaunchDaemons/com.sdkwork.clawrouter.plist`. |
 
 Every package includes `install-manifest.json` with `installConfiguration`. Native installers also include `nativeInstall`, which describes the final install paths, service metadata, permissions, and operator commands.
 
@@ -161,7 +169,7 @@ gateway_base_url = "http://127.0.0.1:18080"
 backend_api_base_url = "http://127.0.0.1:18081"
 app_api_base_url = "http://127.0.0.1:18082"
 portal_base_url = "http://127.0.0.1:3901"
-portal_static_dist = "/opt/clawrouter/portal/dist"
+portal_static_dist = "/usr/lib/clawrouter/portal/dist"
 cors_allowed_origins = []
 upstream_request_timeout_millis = 30000
 upstream_ready_timeout_millis = 2000
@@ -188,7 +196,7 @@ csp_frame_src = ["https://player.bilibili.com"]
 rate_limit_requests = 120
 rate_limit_window_seconds = 60
 max_body_bytes = 1048576
-sdk_archive_root = "/opt/clawrouter/portal/dist/sdk-archives"
+sdk_archive_root = "/usr/lib/clawrouter/portal/dist/sdk-archives"
 
 [provider_relay.openai]
 # base_url = "https://api.openai.com/v1"
@@ -328,7 +336,15 @@ deployment_mode = "desktop"
 
 The examples below assume `clawrouterctl` is on `PATH`. From an extracted release package root, use `./bin/clawrouterctl` on Linux/macOS and `.\bin\clawrouterctl.exe` on Windows.
 
-From native Linux/macOS packages, use:
+From native Linux `.deb` packages, use:
+
+```bash
+/usr/bin/clawrouterctl status
+/usr/bin/clawrouterctl ensure
+/usr/bin/clawrouterctl refresh-catalog --force
+```
+
+From native macOS `.pkg` desktop packages, use:
 
 ```bash
 /opt/clawrouter/bin/clawrouterctl status
