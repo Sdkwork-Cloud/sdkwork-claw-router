@@ -11,6 +11,8 @@ import {
 } from 'sdkwork-claw-router-commons/runtime';
 import type { InstallationStatusResponse } from '@sdkwork/clawrouter-backend-sdk';
 
+export type AdminDashboardTranslator = (key: string, fallback: string, options?: Record<string, unknown>) => string;
+
 export interface PieChartData {
   name: string;
   value: number;
@@ -46,7 +48,7 @@ export interface DashboardSummaryCard {
 }
 
 export class AdminDashboardService {
-  static async fetchDashboardData(): Promise<{
+  static async fetchDashboardData(t: AdminDashboardTranslator): Promise<{
     summaryCards: DashboardSummaryCard[];
     userConsumption: PieChartData[];
     multimodal: PieChartData[];
@@ -74,7 +76,7 @@ export class AdminDashboardService {
         traffic,
         modelDistribution,
         recentUsage,
-      }),
+      }, t),
       userConsumption,
       multimodal,
       traffic,
@@ -225,7 +227,7 @@ function createSummaryCards(snapshot: {
   traffic: TrafficData[];
   modelDistribution: PieChartData[];
   recentUsage: RecentUsageTrace[];
-}): DashboardSummaryCard[] {
+}, t: AdminDashboardTranslator): DashboardSummaryCard[] {
   const userConsumptionTotal = sumBy(snapshot.userConsumption, (item) => item.value);
   const modelCallTotal = sumBy(snapshot.modelDistribution, (item) => item.value);
   const trafficRequests = sumBy(snapshot.traffic, (item) => item.requests);
@@ -240,44 +242,47 @@ function createSummaryCards(snapshot: {
 
   return [
     {
-      label: '活跃用户',
+      label: t('admin.dashboard.summary.activeUsers.label', '活跃用户'),
       value: formatInteger(snapshot.userConsumption.length),
-      detail: `${formatMoney(userConsumptionTotal)} 用户消费`,
+      detail: t('admin.dashboard.summary.activeUsers.detail', '{{amount}} 用户消费', { amount: formatMoney(userConsumptionTotal) }),
     },
     {
-      label: '模型覆盖',
+      label: t('admin.dashboard.summary.modelCoverage.label', '模型覆盖'),
       value: formatInteger(snapshot.modelDistribution.length),
-      detail: `${formatInteger(modelCallTotal)} 次模型调用`,
+      detail: t('admin.dashboard.summary.modelCoverage.detail', '{{count}} 次模型调用', { count: formatInteger(modelCallTotal) }),
     },
     {
-      label: '总请求',
+      label: t('admin.dashboard.summary.totalRequests.label', '总请求'),
       value: formatInteger(trafficRequests),
-      detail: '来自后端 traffic 快照',
+      detail: t('admin.dashboard.summary.totalRequests.detail', '来自后端 traffic 快照'),
     },
     {
-      label: '总 Tokens',
+      label: t('admin.dashboard.summary.totalTokens.label', '总 Tokens'),
       value: formatCompactNumber(trafficTokens),
-      detail: `累计计费 ${formatMoney(trafficCost)}`,
+      detail: t('admin.dashboard.summary.totalTokens.detail', '累计计费 {{amount}}', { amount: formatMoney(trafficCost) }),
     },
     {
-      label: '模态调用',
+      label: t('admin.dashboard.summary.modalityCalls.label', '模态调用'),
       value: formatInteger(multimodalTotal),
-      detail: `${formatInteger(snapshot.multimodal.length)} 个模态`,
+      detail: t('admin.dashboard.summary.modalityCalls.detail', '{{count}} 个模态', { count: formatInteger(snapshot.multimodal.length) }),
     },
     {
-      label: '实时流水',
+      label: t('admin.dashboard.summary.liveTraces.label', '实时流水'),
       value: formatInteger(snapshot.recentUsage.length),
-      detail: `${formatInteger(successfulUsage)} 成功 / ${formatInteger(failedUsage)} 失败`,
+      detail: t('admin.dashboard.summary.liveTraces.detail', '{{success}} 成功 / {{failed}} 失败', {
+        success: formatInteger(successfulUsage),
+        failed: formatInteger(failedUsage),
+      }),
     },
     {
-      label: '最近 API 调用',
+      label: t('admin.dashboard.summary.recentApiCalls.label', '最近 API 调用'),
       value: formatInteger(apiUsage),
       detail: `${apiUsageRatio.toFixed(1)}% API Key`,
     },
     {
-      label: '平均单次成本',
+      label: t('admin.dashboard.summary.averageRequestCost.label', '平均单次成本'),
       value: formatMoney(averageRequestCost),
-      detail: '按请求数计算',
+      detail: t('admin.dashboard.summary.averageRequestCost.detail', '按请求数计算'),
     },
   ];
 }

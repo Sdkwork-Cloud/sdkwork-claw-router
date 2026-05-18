@@ -8,6 +8,9 @@ pub const DEFAULT_PROVIDER_RETRY_ATTEMPTS: usize = 2;
 pub const MAX_PROVIDER_RETRY_ATTEMPTS: usize = 5;
 pub const MAX_PROVIDER_RETRY_BACKOFF_MS: u64 = 2_000;
 pub const DEFAULT_RETRYABLE_PROVIDER_STATUS_CODES: [u16; 5] = [429, 500, 502, 503, 504];
+pub const DEFAULT_PROVIDER_CIRCUIT_BREAKER_FAILURE_THRESHOLD: usize = 1;
+pub const MAX_PROVIDER_CIRCUIT_BREAKER_FAILURE_THRESHOLD: usize = 100;
+pub const DEFAULT_PROVIDER_CIRCUIT_BREAKER_RECOVERY_WINDOW_SECONDS: u64 = 60;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ModelVendorDefinition {
@@ -281,6 +284,61 @@ impl Default for ProviderRetryPolicy {
 
 fn is_allowed_retryable_provider_status(status_code: u16) -> bool {
     matches!(status_code, 408 | 409 | 425 | 429 | 500 | 502 | 503 | 504)
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ProviderCircuitBreakerPolicy {
+    pub failure_threshold: usize,
+}
+
+impl ProviderCircuitBreakerPolicy {
+    pub fn new(failure_threshold: usize) -> DomainResult<Self> {
+        if failure_threshold == 0
+            || failure_threshold > MAX_PROVIDER_CIRCUIT_BREAKER_FAILURE_THRESHOLD
+        {
+            return Err(DomainError::new(format!(
+                "integration_channel.circuit_breaker_policy failure_threshold must be between 1 and {MAX_PROVIDER_CIRCUIT_BREAKER_FAILURE_THRESHOLD}: {failure_threshold}"
+            )));
+        }
+        Ok(Self { failure_threshold })
+    }
+
+    pub fn from_json_str(value: &str) -> DomainResult<Self> {
+        let value: Value = serde_json::from_str(value).map_err(|error| {
+            DomainError::new(format!(
+                "integration_channel.circuit_breaker_policy must be valid JSON: {error}"
+            ))
+        })?;
+        let object = value.as_object().ok_or_else(|| {
+            DomainError::new("integration_channel.circuit_breaker_policy must be a JSON object")
+        })?;
+        for key in object.keys() {
+            if key != "failure_threshold" {
+                return Err(DomainError::new(format!(
+                    "integration_channel.circuit_breaker_policy contains unsupported field: {key}"
+                )));
+            }
+        }
+
+        let failure_threshold = object
+            .get("failure_threshold")
+            .and_then(Value::as_u64)
+            .and_then(|value| usize::try_from(value).ok())
+            .ok_or_else(|| {
+                DomainError::new(
+                    "integration_channel.circuit_breaker_policy failure_threshold must be a positive integer",
+                )
+            })?;
+        Self::new(failure_threshold)
+    }
+}
+
+impl Default for ProviderCircuitBreakerPolicy {
+    fn default() -> Self {
+        Self {
+            failure_threshold: DEFAULT_PROVIDER_CIRCUIT_BREAKER_FAILURE_THRESHOLD,
+        }
+    }
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]

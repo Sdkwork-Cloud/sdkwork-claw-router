@@ -11,6 +11,31 @@ class SystemApi {
 
   SystemApi(this._client);
 
+  /// Retrieve IAM auth runtime settings
+  Future<AuthSettingsRetrieveResult?> authSettingsRetrieve() async {
+    final response = await _client.get(ApiPaths.backendPath('/system/auth/settings'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AuthSettingsRetrieveResult.fromJson(map);
+    })();
+  }
+
+  /// Update IAM auth runtime settings
+  Future<AuthSettingsUpdateResult?> authSettingsUpdate(AdminAuthSettingsUpdateRequest body, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.patch(ApiPaths.backendPath('/system/auth/settings'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AuthSettingsUpdateResult.fromJson(map);
+    })();
+  }
+
   /// List dashboard data
   Future<DashboardAdminOverviewRetrieveResult?> dashboardAdminOverviewRetrieve() async {
     final response = await _client.get(ApiPaths.backendPath('/system/dashboard/admin/overview'));
@@ -178,38 +203,6 @@ class SystemApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : RecordsListResult.fromJson(map);
-    })();
-  }
-
-  /// Create user
-  Future<UsersCreateResult?> usersCreate(AdminUserCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/system/users'), body: payload, headers: requestHeaders, contentType: 'application/json');
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : UsersCreateResult.fromJson(map);
-    })();
-  }
-
-  /// Update user
-  Future<UsersUpdateResult?> usersUpdate(AdminUserUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/system/users'), body: payload, headers: requestHeaders, contentType: 'application/json');
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : UsersUpdateResult.fromJson(map);
     })();
   }
 }

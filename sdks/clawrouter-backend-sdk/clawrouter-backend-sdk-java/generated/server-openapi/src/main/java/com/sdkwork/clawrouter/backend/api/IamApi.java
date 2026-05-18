@@ -73,6 +73,26 @@ public class IamApi {
         return client.convertValue(raw, new TypeReference<UsersListResult>() {});
     }
 
+    /** Create user */
+    public UsersCreateResult usersCreate(AdminUserCreateRequest body, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.backendPath("/iam/users"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<UsersCreateResult>() {});
+    }
+
+    /** Update user */
+    public UsersUpdateResult usersUpdate(AdminUserUpdateRequest body, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.put(ApiPaths.backendPath("/iam/users"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<UsersUpdateResult>() {});
+    }
+
     private record PathParameterSpec(String name, String style, boolean explode) {}
 
     private static String serializePathParameter(Object value, PathParameterSpec spec) {

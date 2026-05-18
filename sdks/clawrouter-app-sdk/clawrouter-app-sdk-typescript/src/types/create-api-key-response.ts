@@ -4,6 +4,6 @@ import type { AppApiKeyItem } from './app-api-key-item';
 export interface CreateApiKeyResponse {
   /** Item field on create api key response. */
   item: AppApiKeyItem;
-  /** One-time raw API key secret. It is never returned by list/read APIs. */
+  /** Full raw API key secret returned by create responses. Authenticated owner management list and update responses also expose this value as item.copyableKey for console copy actions. */
   rawKey: string;
 }

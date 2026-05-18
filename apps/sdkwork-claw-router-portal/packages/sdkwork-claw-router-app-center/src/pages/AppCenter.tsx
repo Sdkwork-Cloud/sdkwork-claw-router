@@ -42,10 +42,10 @@ export function AppCenter() {
     } catch (error) {
       if (isActive()) {
         setCategories([]);
-        setCategoryLoadError(getLoadErrorMessage(error, 'Failed to load app categories.'));
+        setCategoryLoadError(getLoadErrorMessage(error, t('apps.errors.categoriesLoadFallback')));
       }
     }
-  }, []);
+  }, [t]);
 
   const loadApps = useCallback(async (isActive: () => boolean = () => true) => {
     setIsLoading(true);
@@ -63,14 +63,14 @@ export function AppCenter() {
     } catch (error) {
       if (isActive()) {
         setApps([]);
-        setLoadError(getLoadErrorMessage(error, 'Failed to load apps.'));
+        setLoadError(getLoadErrorMessage(error, t('apps.errors.loadFallback')));
       }
     } finally {
       if (isActive()) {
         setIsLoading(false);
       }
     }
-  }, [searchQuery, selectedPlatforms, selectedCategory, sortBy]);
+  }, [searchQuery, selectedPlatforms, selectedCategory, sortBy, t]);
 
   useEffect(() => {
     let active = true;
@@ -107,6 +107,16 @@ export function AppCenter() {
     },
   });
 
+  const sortLabel = (option: AppSortKey) => {
+    if (option === 'Highest Rated') {
+      return t('apps.sort.rated');
+    }
+    if (option === 'Newest') {
+      return t('apps.sort.newest');
+    }
+    return t('apps.sort.popular');
+  };
+
   return (
     <div
       data-business-state={loadError ? 'error' : undefined}
@@ -114,13 +124,13 @@ export function AppCenter() {
     >
       {/* Sidebar Filters */}
       <FilterSidebar>
-        <CollapsibleSection title="Categories" icon={LayoutGrid}>
+        <CollapsibleSection title={t('apps.category')} icon={LayoutGrid}>
           <div className="space-y-2">
             {view.categoryOptions.map(category => (
               <FilterCheckbox
                 key={category.id}
                 checked={selectedCategory === category.id}
-                label={category.id === 'All' ? 'All' : category.label}
+                label={category.id === 'All' ? t('apps.category.all') : category.label}
                 onClick={() => setSelectedCategory(category.id)}
                 activeColorClass="bg-lobster-500 border-lobster-500"
               />
@@ -128,7 +138,7 @@ export function AppCenter() {
           </div>
         </CollapsibleSection>
 
-        <CollapsibleSection title="Platforms" icon={Smartphone}>
+        <CollapsibleSection title={t('apps.platform')} icon={Smartphone}>
           <div className="space-y-2">
             {view.platformOptions.map(platform => (
               <FilterCheckbox
@@ -145,7 +155,7 @@ export function AppCenter() {
         {categoryLoadError ? (
           <BusinessStatePanel
             kind="error"
-            title="App categories could not be loaded"
+            title={t('apps.state.categoriesLoadError')}
             description={categoryLoadError}
             onRetry={() => void loadCategories()}
             className="min-h-0 rounded-xl border border-red-200 bg-white/70 px-3 py-4 dark:border-red-500/20 dark:bg-white/[0.03]"
@@ -173,7 +183,7 @@ export function AppCenter() {
                   className="bg-white dark:bg-[#0a0a0a] border border-slate-200 dark:border-white/10 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-lobster-500 focus:ring-1 focus:ring-lobster-500 shadow-sm cursor-pointer transition-all hover:border-slate-300 dark:hover:border-white/20"
                 >
                   {view.sortOptions.map(option => (
-                    <option key={option} value={option}>{option}</option>
+                    <option key={option} value={option}>{sortLabel(option)}</option>
                   ))}
                 </select>
               </div>
@@ -256,7 +266,7 @@ export function AppCenter() {
                 <div className="col-span-full">
                   <BusinessStatePanel
                     kind="error"
-                    title="Apps could not be loaded"
+                    title={t('apps.state.loadError')}
                     description={loadError}
                     onRetry={() => void loadApps()}
                     className="min-h-[360px] rounded-2xl border border-slate-200 bg-white dark:border-white/10 dark:bg-[#0a0a0a]"
@@ -267,8 +277,8 @@ export function AppCenter() {
                   <div className="w-16 h-16 bg-slate-100 dark:bg-white/5 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Search className="w-8 h-8 text-slate-400" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">No apps found</h3>
-                  <p className="text-slate-500">Try adjusting your search or filters.</p>
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{t('apps.noResults')}</h3>
+                  <p className="text-slate-500">{t('apps.noResultsDesc')}</p>
                 </div>
               )}
             </div>

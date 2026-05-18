@@ -1,6 +1,7 @@
 use sqlx::{Row, SqlitePool};
 
 use crate::domain::DomainError;
+use crate::infrastructure::sql::read_model::is_missing_sqlite_read_model;
 use crate::ports::{
     AccountConsumptionItem, AccountInvoiceSettings, AccountLoginLog, AccountSecuritySummary,
     AccountSummaryReadFuture, AccountSummaryReadStore, AccountSummarySnapshot,
@@ -10,24 +11,26 @@ use crate::ports::{
 const LOAD_ACCOUNT_PROFILE: &str = r#"
 SELECT
     CAST(u.id AS TEXT) AS user_id,
-    COALESCE(NULLIF(u.nickname, ''), NULLIF(u.username, ''), 'User') AS name,
+    COALESCE(NULLIF(u.display_name, ''), NULLIF(u.username, ''), 'User') AS name,
     COALESCE(u.email, '') AS email,
     COALESCE(o.name, '') AS organization,
-    CAST(COALESCE(SUM(CASE WHEN a.account_type = 2 AND a.status = 1 THEN COALESCE(a.available_points, 0) ELSE 0 END), 0) AS TEXT) AS available_points
-FROM plus_user u
-LEFT JOIN plus_organization o
-    ON o.tenant_id = ?1
+    '0' AS available_points
+FROM iam_user u
+LEFT JOIN iam_organization o
+    ON o.tenant_id = u.tenant_id
    AND o.id = ?2
-LEFT JOIN plus_account a
-    ON a.tenant_id = ?1
-   AND a.organization_id = ?2
-   AND a.user_id = u.id
-   AND a.owner_id = u.id
 WHERE u.tenant_id = ?1
-  AND u.organization_id = ?2
   AND u.id = ?3
-GROUP BY u.id, u.nickname, u.username, u.email, o.name
 LIMIT 1
+"#;
+
+const LOAD_ACCOUNT_POINTS: &str = r#"
+SELECT CAST(COALESCE(SUM(CASE WHEN account_type = 2 AND status = 1 THEN COALESCE(available_points, 0) ELSE 0 END), 0) AS TEXT) AS available_points
+FROM plus_account
+WHERE tenant_id = ?1
+  AND organization_id = ?2
+  AND user_id = ?3
+  AND owner_id = ?3
 "#;
 
 const LOAD_MONTHLY_CONSUMPTION: &str = r#"
@@ -164,14 +167,14 @@ async fn load_profile(
     subject: AccountSummarySubject,
 ) -> Result<AccountProfile, DomainError> {
     let row = sqlx::query(LOAD_ACCOUNT_PROFILE)
-        .bind(subject.tenant_id)
-        .bind(subject.organization_id)
-        .bind(subject.user_id)
+        .bind(subject.tenant_id.to_string())
+        .bind(subject.organization_id.to_string())
+        .bind(subject.user_id.to_string())
         .fetch_optional(pool)
         .await
-        .map_err(sql_error)?;
+        .or_else(optional_row_when_read_model_is_missing)?;
 
-    Ok(row
+    let mut profile = row
         .as_ref()
         .map(|row| AccountProfile {
             id: string_cell(row, "user_id"),
@@ -180,26 +183,54 @@ async fn load_profile(
             organization: string_cell(row, "organization"),
             available_points: decimal_cell(row, "available_points"),
         })
-        .unwrap_or_else(|| AccountProfile {
-            id: subject.user_id.to_string(),
-            name: String::new(),
-            email: String::new(),
-            organization: String::new(),
-            available_points: 0.0,
-        }))
+        .unwrap_or_else(|| default_profile(subject));
+    profile.available_points = load_account_points(pool, subject).await?;
+    Ok(profile)
+}
+
+async fn load_account_points(
+    pool: &SqlitePool,
+    subject: AccountSummarySubject,
+) -> Result<f64, DomainError> {
+    let Some(row) = sqlx::query(LOAD_ACCOUNT_POINTS)
+        .bind(subject.tenant_id)
+        .bind(subject.organization_id)
+        .bind(subject.user_id)
+        .fetch_one(pool)
+        .await
+        .map(Some)
+        .or_else(optional_row_when_read_model_is_missing)?
+    else {
+        return Ok(0.0);
+    };
+    Ok(decimal_cell(&row, "available_points"))
+}
+
+fn default_profile(subject: AccountSummarySubject) -> AccountProfile {
+    AccountProfile {
+        id: subject.user_id.to_string(),
+        name: String::new(),
+        email: String::new(),
+        organization: String::new(),
+        available_points: 0.0,
+    }
 }
 
 async fn load_monthly_consumption(
     pool: &SqlitePool,
     subject: AccountSummarySubject,
 ) -> Result<f64, DomainError> {
-    let row = sqlx::query(LOAD_MONTHLY_CONSUMPTION)
+    let Some(row) = sqlx::query(LOAD_MONTHLY_CONSUMPTION)
         .bind(subject.tenant_id)
         .bind(subject.organization_id)
         .bind(subject.user_id)
         .fetch_one(pool)
         .await
-        .map_err(sql_error)?;
+        .map(Some)
+        .or_else(optional_row_when_read_model_is_missing)?
+    else {
+        return Ok(0.0);
+    };
     Ok(decimal_cell(&row, "monthly_consumption"))
 }
 
@@ -213,7 +244,7 @@ async fn load_consumption_by_service(
         .bind(subject.user_id)
         .fetch_all(pool)
         .await
-        .map_err(sql_error)?;
+        .or_else(empty_rows_when_read_model_is_missing)?;
     let mut items: Vec<AccountConsumptionItem> = rows
         .iter()
         .map(|row| {
@@ -240,7 +271,7 @@ async fn load_invoice_settings(
         .bind(subject.user_id)
         .fetch_optional(pool)
         .await
-        .map_err(sql_error)?;
+        .or_else(optional_row_when_read_model_is_missing)?;
 
     Ok(row
         .as_ref()
@@ -263,7 +294,7 @@ async fn load_security(
         .bind(subject.user_id)
         .fetch_optional(pool)
         .await
-        .map_err(sql_error)?;
+        .or_else(optional_row_when_read_model_is_missing)?;
 
     Ok(row
         .as_ref()
@@ -285,7 +316,7 @@ async fn load_login_logs(
         .bind(subject.user_id)
         .fetch_all(pool)
         .await
-        .map_err(sql_error)?;
+        .or_else(empty_rows_when_read_model_is_missing)?;
 
     Ok(rows
         .iter()
@@ -403,6 +434,26 @@ fn bool_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> bool {
 
 fn sql_error(error: sqlx::Error) -> DomainError {
     DomainError::new(error.to_string())
+}
+
+fn optional_row_when_read_model_is_missing(
+    error: sqlx::Error,
+) -> Result<Option<sqlx::sqlite::SqliteRow>, DomainError> {
+    if is_missing_sqlite_read_model(&error) {
+        Ok(None)
+    } else {
+        Err(sql_error(error))
+    }
+}
+
+fn empty_rows_when_read_model_is_missing(
+    error: sqlx::Error,
+) -> Result<Vec<sqlx::sqlite::SqliteRow>, DomainError> {
+    if is_missing_sqlite_read_model(&error) {
+        Ok(Vec::new())
+    } else {
+        Err(sql_error(error))
+    }
 }
 
 #[cfg(test)]

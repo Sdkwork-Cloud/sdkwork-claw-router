@@ -266,18 +266,18 @@ export function SkillDetails() {
               >
                 {installationState.action === 'disable' ? <Power className="w-5 h-5" /> : <Terminal className="w-5 h-5" />}
                 {isInstallActionPending
-                  ? 'Updating...'
+                  ? t('common.actions.updating')
                   : installationState.action === 'disable'
-                    ? 'Disable Skill'
+                    ? t('common.actions.disableSkill')
                     : t('skills.get')}
               </button>
 
               <CopyButton
                 text={buildPortalShareUrl(`/skills-hub/${detailSkill.id}`)}
-                label="Share"
-                copiedLabel="Link copied"
-                errorLabel="Copy failed"
-                title="Copy skill link"
+                label={t('common.actions.share')}
+                copiedLabel={t('common.actions.linkCopied')}
+                errorLabel={t('common.actions.copyFailed')}
+                title={t('common.actions.copySkillLink')}
                 className="p-3 rounded-xl bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-white/10 transition-colors border border-slate-200 dark:border-white/10"
                 iconClassName="w-5 h-5"
               />
@@ -458,7 +458,7 @@ export function SkillDetails() {
                     className="inline-flex items-center gap-1.5 rounded-lg border border-lobster-500/30 bg-lobster-50 px-3 py-1.5 text-xs font-semibold text-lobster-700 transition-colors hover:bg-lobster-100 disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 dark:bg-lobster-500/10 dark:text-lobster-300 dark:hover:bg-lobster-500/20 dark:disabled:border-white/10 dark:disabled:bg-white/5 dark:disabled:text-slate-500"
                   >
                     <Save className="w-3.5 h-3.5" />
-                    {isConfigSavePending ? 'Saving' : 'Save'}
+                    {isConfigSavePending ? t('common.actions.saving') : t('common.actions.save')}
                   </button>
                 </div>
                 <textarea

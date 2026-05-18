@@ -239,7 +239,7 @@ def serialize_header_primitive(value: Any) -> str:
 
 class EcosystemApi:
     """ecosystem ecosystem API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.skills = EcosystemSkillsApi(client)
@@ -248,7 +248,7 @@ class EcosystemApi:
 
 class EcosystemSkillsApi:
     """ecosystem ecosystem.skills API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.categories = EcosystemSkillsCategoriesApi(client)
@@ -293,7 +293,7 @@ class EcosystemSkillsApi:
 
 class EcosystemSkillsCategoriesApi:
     """ecosystem ecosystem.skills.categories API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -304,7 +304,7 @@ class EcosystemSkillsCategoriesApi:
 
 class EcosystemSkillsConfigApi:
     """ecosystem ecosystem.skills.config API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -321,7 +321,7 @@ class EcosystemSkillsConfigApi:
 
 class EcosystemUsersApi:
     """ecosystem ecosystem.users API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.current = EcosystemUsersCurrentApi(client)
@@ -329,7 +329,7 @@ class EcosystemUsersApi:
 
 class EcosystemUsersCurrentApi:
     """ecosystem ecosystem.users.current API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.skills = EcosystemUsersCurrentSkillsApi(client)
@@ -337,7 +337,7 @@ class EcosystemUsersCurrentApi:
 
 class EcosystemUsersCurrentSkillsApi:
     """ecosystem ecosystem.users.current.skills API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 

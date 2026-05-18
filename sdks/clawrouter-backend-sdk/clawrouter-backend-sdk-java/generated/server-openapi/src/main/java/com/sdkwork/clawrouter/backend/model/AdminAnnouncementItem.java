@@ -5,6 +5,7 @@ public class AdminAnnouncementItem {
     private String content;
     private String date;
     private String id;
+    private Boolean showAsPopup;
     private String status;
     private String target;
     private String title;
@@ -31,6 +32,14 @@ public class AdminAnnouncementItem {
     
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Boolean getShowAsPopup() {
+        return this.showAsPopup;
+    }
+    
+    public void setShowAsPopup(Boolean showAsPopup) {
+        this.showAsPopup = showAsPopup;
     }
 
     public String getStatus() {

@@ -373,11 +373,11 @@ export function ApiEndpointView({ endpoint }: ApiEndpointProps) {
               </code>
               <CopyButton
                 text={requestUrl}
-                label="Copy URL"
-                copiedLabel="URL copied"
+                label={t('common.actions.copyUrl')}
+                copiedLabel={t('common.actions.urlCopied')}
                 className="p-1.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 opacity-0 group-hover:opacity-100 transition-all rounded-md hover:bg-slate-200 dark:hover:bg-white/10"
                 iconClassName="w-3.5 h-3.5"
-                title="Copy URL"
+                title={t('common.actions.copyUrl')}
               />
             </motion.div>
           )}
@@ -482,10 +482,10 @@ export function ApiEndpointView({ endpoint }: ApiEndpointProps) {
                   </div>
                   <CopyButton
                     text={generatedCode}
-                    label="Copy code"
-                    copiedLabel="Code copied"
+                    label={t('common.actions.copyCode')}
+                    copiedLabel={t('common.actions.codeCopied')}
                     className="p-1.5 shrink-0 text-slate-500 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-400 dark:hover:text-white dark:hover:bg-white/10 rounded-md transition-colors ml-2"
-                    title="Copy code"
+                    title={t('common.actions.copyCode')}
                   />
                 </div>
               </div>
@@ -504,10 +504,10 @@ export function ApiEndpointView({ endpoint }: ApiEndpointProps) {
                 <span className="text-[13px] font-medium text-slate-500 dark:text-slate-400">JSON</span>
                 <CopyButton
                   text={endpoint.response}
-                  label="Copy response"
-                  copiedLabel="Response copied"
+                  label={t('common.actions.copyResponse')}
+                  copiedLabel={t('common.actions.responseCopied')}
                   className="p-1.5 -mr-2 text-slate-500 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-400 dark:hover:text-white dark:hover:bg-white/10 rounded-md transition-colors"
-                  title="Copy response"
+                  title={t('common.actions.copyResponse')}
                 />
               </div>
               <div className="p-5 overflow-x-auto custom-scrollbar max-h-[400px] text-slate-700 dark:text-slate-300">

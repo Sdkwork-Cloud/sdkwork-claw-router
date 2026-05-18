@@ -1,6 +1,42 @@
 {
   "operations": [
     {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/agents",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listAgents",
+      "read_sources": [
+        "ai_agent",
+        "ai_agent_version",
+        "ai_agent_tool_binding",
+        "ai_agent_mcp_server",
+        "ai_agent_memory"
+      ],
+      "route": "/admin/agents",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/agents/{agentId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveAgent",
+      "read_sources": [
+        "ai_agent",
+        "ai_agent_version",
+        "ai_agent_tool_binding",
+        "ai_agent_mcp_server",
+        "ai_agent_memory"
+      ],
+      "route": "/admin/agents",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts",
+      "write_tables": []
+    },
+    {
       "api_method": "POST",
       "api_path": "/backend/v3/api/content/announcements",
       "api_surface": "backend",
@@ -761,6 +797,32 @@
       ]
     },
     {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/ai/models/refresh",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "fetchInitializedCatalog",
+      "read_sources": [
+        "ai_model_vendor",
+        "ai_model",
+        "ai_model_capability",
+        "ai_model_pricing",
+        "ai_model_rank_snapshot",
+        "ai_pricing_import_snapshot"
+      ],
+      "route": "/admin/model",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": [
+        "ai_model_vendor",
+        "ai_model",
+        "ai_model_capability",
+        "ai_model_pricing",
+        "ai_pricing_import_snapshot",
+        "ops_audit_log"
+      ]
+    },
+    {
       "api_method": "GET",
       "api_path": "/backend/v3/api/ai/model_rankings/jobs",
       "api_surface": "backend",
@@ -1273,6 +1335,25 @@
     },
     {
       "api_method": "DELETE",
+      "api_path": "/backend/v3/api/ecosystem/skills/categories/{categoryId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deleteSkillCategory",
+      "read_sources": [
+        "plus_category",
+        "plus_agent_skill_package",
+        "plus_agent_skill"
+      ],
+      "route": "/admin/skill",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts",
+      "write_tables": [
+        "plus_category",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
       "api_path": "/backend/v3/api/ecosystem/skills/package/{packageId}",
       "api_surface": "backend",
       "file_targets": [],
@@ -1609,6 +1690,23 @@
     },
     {
       "api_method": "PUT",
+      "api_path": "/backend/v3/api/ecosystem/skills/categories/{categoryId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateSkillCategory",
+      "read_sources": [
+        "plus_category"
+      ],
+      "route": "/admin/skill",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts",
+      "write_tables": [
+        "plus_category",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PUT",
       "api_path": "/backend/v3/api/ecosystem/skills/package/{packageId}",
       "api_surface": "backend",
       "file_targets": [],
@@ -1633,16 +1731,16 @@
       "kind": "create",
       "operation": "addUser",
       "read_sources": [
-        "plus_user",
-        "plus_role",
-        "plus_user_role"
+        "iam_user",
+        "iam_role",
+        "iam_user_role"
       ],
       "route": "/admin/user",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts",
       "write_tables": [
-        "plus_user",
+        "iam_user",
         "plus_account",
-        "plus_user_role",
+        "iam_user_role",
         "ops_audit_log"
       ]
     },
@@ -1654,15 +1752,13 @@
       "kind": "create",
       "operation": "createApiKey",
       "read_sources": [
-        "plus_user",
-        "iam_gateway_api_key",
-        "plus_api_key"
+        "iam_user",
+        "iam_gateway_api_key"
       ],
       "route": "/admin/user",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts",
       "write_tables": [
         "iam_gateway_api_key",
-        "plus_api_key",
         "ops_audit_log"
       ]
     },
@@ -1674,15 +1770,13 @@
       "kind": "delete",
       "operation": "deleteApiKey",
       "read_sources": [
-        "plus_user",
-        "iam_gateway_api_key",
-        "plus_api_key"
+        "iam_user",
+        "iam_gateway_api_key"
       ],
       "route": "/admin/user",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts",
       "write_tables": [
         "iam_gateway_api_key",
-        "plus_api_key",
         "ops_audit_log"
       ]
     },
@@ -1694,8 +1788,7 @@
       "kind": "read",
       "operation": "fetchApiKeysMap",
       "read_sources": [
-        "iam_gateway_api_key",
-        "plus_api_key"
+        "iam_gateway_api_key"
       ],
       "route": "/admin/user",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts",
@@ -1709,10 +1802,10 @@
       "kind": "read",
       "operation": "fetchUsers",
       "read_sources": [
-        "plus_user",
+        "iam_user",
         "plus_account",
-        "plus_role",
-        "plus_user_role",
+        "iam_role",
+        "iam_user_role",
         "iam_user_login_event"
       ],
       "route": "/admin/user",
@@ -1727,7 +1820,7 @@
       "kind": "action",
       "operation": "updateBalance",
       "read_sources": [
-        "plus_user",
+        "iam_user",
         "plus_account",
         "plus_account_history",
         "plus_vip_point_change",
@@ -1751,15 +1844,15 @@
       "kind": "update",
       "operation": "updateUser",
       "read_sources": [
-        "plus_user",
-        "plus_role",
-        "plus_user_role"
+        "iam_user",
+        "iam_role",
+        "iam_user_role"
       ],
       "route": "/admin/user",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts",
       "write_tables": [
-        "plus_user",
-        "plus_user_role",
+        "iam_user",
+        "iam_user_role",
         "ops_audit_log"
       ]
     },
@@ -1980,6 +2073,21 @@
       "write_tables": []
     },
     {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/communication/notifications",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchNotifications",
+      "read_sources": [
+        "ops_notification_message",
+        "ops_notification_delivery"
+      ],
+      "route": "/console/notifications",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts",
+      "write_tables": []
+    },
+    {
       "api_method": "POST",
       "api_path": "/app/v3/api/auth/sessions",
       "api_surface": "app",
@@ -2023,9 +2131,9 @@
       "kind": "read",
       "operation": "fetchAccountDetails",
       "read_sources": [
-        "plus_user",
+        "iam_user",
         "plus_account",
-        "plus_organization",
+        "iam_organization",
         "plus_invoice",
         "iam_user_security_setting",
         "iam_user_login_event",
@@ -2033,6 +2141,60 @@
       ],
       "route": "/console/account",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src/accountService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/agents",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createAgent",
+      "read_sources": [
+        "ai_agent",
+        "ai_agent_version"
+      ],
+      "route": "/console/agents",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts",
+      "write_tables": [
+        "ai_agent",
+        "ai_agent_version"
+      ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/agents",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listAgents",
+      "read_sources": [
+        "ai_agent",
+        "ai_agent_version",
+        "ai_agent_tool_binding",
+        "ai_agent_mcp_server",
+        "ai_agent_memory"
+      ],
+      "route": "/console/agents",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/agents/{agentId}",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveAgent",
+      "read_sources": [
+        "ai_agent",
+        "ai_agent_version",
+        "ai_agent_tool_binding",
+        "ai_agent_mcp_server",
+        "ai_agent_memory"
+      ],
+      "route": "/console/agents",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts",
       "write_tables": []
     },
     {
@@ -2048,11 +2210,45 @@
       "route": "/console/api-keys",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts",
       "write_tables": [
+        "iam_gateway_api_key_group",
         "iam_gateway_api_key",
         "iam_gateway_access_policy",
         "ai_quota_policy",
         "ops_audit_log"
       ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/app/v3/api/iam/api_keys/{apiKeyId}",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deleteKey",
+      "read_sources": [
+        "iam_gateway_api_key"
+      ],
+      "route": "/console/api-keys",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts",
+      "write_tables": [
+        "iam_gateway_api_key",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/iam/api_key_groups",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchGroups",
+      "read_sources": [
+        "iam_gateway_api_key_group",
+        "iam_gateway_api_key_group_metric_snapshot",
+        "ai_pricing_plan"
+      ],
+      "route": "/console/api-keys",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts",
+      "write_tables": []
     },
     {
       "api_method": "GET",
@@ -2073,6 +2269,28 @@
       "route": "/console/api-keys",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts",
       "write_tables": []
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/app/v3/api/iam/api_keys/{apiKeyId}",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateKey",
+      "read_sources": [
+        "iam_gateway_api_key",
+        "iam_gateway_api_key_group",
+        "iam_gateway_access_policy",
+        "ai_quota_policy"
+      ],
+      "route": "/console/api-keys",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts",
+      "write_tables": [
+        "iam_gateway_api_key",
+        "iam_gateway_access_policy",
+        "ai_quota_policy",
+        "ops_audit_log"
+      ]
     },
     {
       "api_method": "GET",
@@ -3027,21 +3245,6 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/communication/notifications",
-      "api_surface": "app",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "fetchMessages",
-      "read_sources": [
-        "ops_notification_message",
-        "ops_notification_delivery"
-      ],
-      "route": "/console/messages",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-messages/src/messagesService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
       "api_path": "/app/v3/api/ai/providers",
       "api_surface": "app",
       "file_targets": [],
@@ -3992,6 +4195,54 @@
     },
     {
       "api_method": "GET",
+      "api_path": "/v1/chat/completions/{completionId}/messages",
+      "api_surface": "openai_v1",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchMessages",
+      "read_sources": [
+        "ai_request_trace",
+        "ai_usage_fact"
+      ],
+      "route": "/playground",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/v1/chat/completions",
+      "api_surface": "openai_v1",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchSessions",
+      "read_sources": [
+        "ai_request_trace",
+        "ai_usage_fact"
+      ],
+      "route": "/playground",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/v1/chat/completions",
+      "api_surface": "openai_v1",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "sendMessage",
+      "read_sources": [
+        "ai_request_trace",
+        "ai_usage_fact"
+      ],
+      "route": "/playground",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts",
+      "write_tables": [
+        "ai_request_trace",
+        "ai_usage_fact"
+      ]
+    },
+    {
+      "api_method": "GET",
       "api_path": "/app/v3/api/ai/generations",
       "api_surface": "app",
       "file_targets": [],
@@ -4023,6 +4274,31 @@
       "route": "/playground",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts",
       "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/ai/generation/agents/runs",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "runAgentGeneration",
+      "read_sources": [
+        "ai_agent",
+        "ai_agent_version",
+        "ai_agent_tool_binding",
+        "ai_agent_mcp_server",
+        "ai_model_vendor",
+        "ai_model",
+        "ai_model_capability"
+      ],
+      "route": "/playground",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts",
+      "write_tables": [
+        "ai_agent_run",
+        "ai_agent_run_step",
+        "ai_generation_job",
+        "ai_usage_fact"
+      ]
     },
     {
       "api_method": "GET",
@@ -4216,6 +4492,24 @@
       "route": "/auth/login",
       "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
       "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/auth/qr_login_codes/confirm",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "confirmLoginQrCode",
+      "read_sources": [
+        "iam_session",
+        "iam_user",
+        "iam_security_event"
+      ],
+      "route": "/auth/login",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+      "write_tables": [
+        "iam_security_event"
+      ]
     },
     {
       "api_method": "POST",
@@ -4518,6 +4812,20 @@
       "write_tables": []
     },
     {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/auth/verification_policy",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchClawRouterAuthVerificationPolicy",
+      "read_sources": [
+        "ops_config_snapshot"
+      ],
+      "route": "/auth/login",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts",
+      "write_tables": []
+    },
+    {
       "api_method": "PATCH",
       "api_path": "/backend/v3/api/system/auth/settings",
       "api_surface": "backend",
@@ -4536,8 +4844,8 @@
     }
   ],
   "summary": {
-    "operation_count": 264,
-    "source_file_count": 38,
-    "write_operation_count": 133
+    "operation_count": 281,
+    "source_file_count": 41,
+    "write_operation_count": 142
   }
 }

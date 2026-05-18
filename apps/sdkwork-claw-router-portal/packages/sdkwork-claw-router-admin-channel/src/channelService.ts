@@ -21,6 +21,7 @@ import type {
   AdminProviderSecretCreateRequest,
   AdminProviderSecretUpdateRequest,
   IntegrationProviderSecretsListParams,
+  ProviderCircuitBreakerPolicy,
   ProviderRetryPolicy,
 } from '@sdkwork/clawrouter-backend-sdk';
 
@@ -37,6 +38,7 @@ export interface ChannelItem {
   isMultimodal: boolean;
   timeoutMs?: number;
   retryPolicy?: ProviderRetryPolicy;
+  circuitBreakerPolicy?: ProviderCircuitBreakerPolicy;
   weight: number;
   status: 'active' | 'error' | 'disabled';
   balance: string;
@@ -49,11 +51,13 @@ export type ChannelCreateInput = {
   protocol?: string;
   accessType?: string;
   baseUrl?: string;
-  secretRef: string;
+  apiKey?: string;
+  secretRef?: string;
   models: string[];
   capabilities?: NonNullable<AdminChannelCreateRequest['capabilities']>;
   timeoutMs?: number;
   retryPolicy?: ProviderRetryPolicy;
+  circuitBreakerPolicy?: ProviderCircuitBreakerPolicy;
   weight?: number;
   status?: AdminChannelCreateRequest['status'];
 };
@@ -64,11 +68,13 @@ export type ChannelUpdateInput = {
   protocol?: string;
   accessType?: string;
   baseUrl?: string | null;
+  apiKey?: string;
   secretRef?: string;
   models?: string[];
   capabilities?: NonNullable<AdminChannelUpdateRequest['capabilities']>;
   timeoutMs?: number | null;
   retryPolicy?: ProviderRetryPolicy | null;
+  circuitBreakerPolicy?: ProviderCircuitBreakerPolicy | null;
   weight?: number;
   status?: AdminChannelUpdateRequest['status'];
 };
@@ -201,17 +207,29 @@ export class ProviderSecretService {
 }
 
 function toCreateChannelRequest(channel: ChannelCreateInput): AdminChannelCreateRequest {
+  const apiKey = optionalText(channel.apiKey);
+  const secretRef = optionalText(channel.secretRef);
+  if (!apiKey && !secretRef) {
+    throw new Error('apiKey is required');
+  }
+  if (apiKey && secretRef) {
+    throw new Error('channel credential must provide either apiKey or secretRef, not both');
+  }
   return pruneUndefined({
     name: requiredText(channel.name, 'name'),
     vendor: requiredText(channel.vendor, 'vendor'),
     protocol: optionalText(channel.protocol),
     accessType: optionalText(channel.accessType),
     baseUrl: optionalText(channel.baseUrl),
-    secretRef: requiredText(channel.secretRef, 'secretRef'),
+    apiKey,
+    secretRef,
     models: requiredStringArray(channel.models, 'models'),
     capabilities: channel.capabilities === undefined ? undefined : toChannelCapabilities(channel.capabilities),
     timeoutMs: optionalInteger(channel.timeoutMs),
     retryPolicy: channel.retryPolicy,
+    circuitBreakerPolicy: channel.circuitBreakerPolicy === undefined
+      ? undefined
+      : normalizeCircuitBreakerPolicy(channel.circuitBreakerPolicy),
     weight: optionalInteger(channel.weight),
     status: channel.status,
   });
@@ -225,11 +243,17 @@ function toUpdateChannelRequest(id: string, updates: ChannelUpdateInput): AdminC
     protocol: optionalText(updates.protocol),
     accessType: optionalText(updates.accessType),
     baseUrl: updates.baseUrl === undefined ? undefined : updates.baseUrl === null ? null : updates.baseUrl.trim(),
+    apiKey: optionalText(updates.apiKey),
     secretRef: optionalText(updates.secretRef),
     models: updates.models === undefined ? undefined : requiredStringArray(updates.models, 'models'),
     capabilities: updates.capabilities === undefined ? undefined : toChannelCapabilities(updates.capabilities),
     timeoutMs: updates.timeoutMs === undefined ? undefined : optionalNullableInteger(updates.timeoutMs),
     retryPolicy: updates.retryPolicy,
+    circuitBreakerPolicy: updates.circuitBreakerPolicy === undefined
+      ? undefined
+      : updates.circuitBreakerPolicy === null
+        ? null
+        : normalizeCircuitBreakerPolicy(updates.circuitBreakerPolicy),
     weight: optionalInteger(updates.weight),
     status: updates.status,
   });
@@ -307,8 +331,8 @@ function optionalText(value: string | undefined): string | undefined {
   return normalized ? normalized : undefined;
 }
 
-function requiredText(value: string, fieldName: string): string {
-  const normalized = value.trim();
+function requiredText(value: string | undefined, fieldName: string): string {
+  const normalized = value?.trim();
   if (!normalized) {
     throw new Error(`${fieldName} is required`);
   }
@@ -360,11 +384,13 @@ function normalizeChannel(value: unknown): ChannelItem {
     protocol: readRequiredString(item, 'protocol', 'Channel protocol is required'),
     accessType: readRequiredString(item, 'accessType', 'Channel access type is required'),
     baseUrl: readOptionalString(item, 'baseUrl'),
+    secretRef: readOptionalString(item, 'secretRef'),
     models: readRequiredStringArray(item, 'models', 'Channel models are required'),
     capabilities: readRequiredStringArray(item, 'capabilities', 'Channel capabilities are required'),
     isMultimodal: readRequiredBoolean(item, 'isMultimodal', 'Channel multimodal flag is required'),
     timeoutMs: readOptionalNumber(item, 'timeoutMs'),
     retryPolicy: readRetryPolicy(item),
+    circuitBreakerPolicy: readCircuitBreakerPolicy(item),
     weight: readRequiredNumber(item, 'weight', 'Channel weight is required'),
     status: readChannelStatus(item),
     balance: readRequiredString(item, 'balance', 'Channel balance is required'),
@@ -428,6 +454,51 @@ function readRetryPolicy(item: ApiRecord): ProviderRetryPolicy | undefined {
     retryableStatusCodes,
     backoffMs: readOptionalBoundedInteger(value, 'backoffMs', 0, 2000),
   });
+}
+
+function readCircuitBreakerPolicy(item: ApiRecord): ProviderCircuitBreakerPolicy | undefined {
+  const value = item.circuitBreakerPolicy;
+  if (value === undefined || value === null) {
+    return undefined;
+  }
+  if (!isRecord(value)) {
+    throw new Error('Channel circuitBreakerPolicy must be an object');
+  }
+  return normalizeCircuitBreakerPolicy({
+    failureThreshold: readRequiredBoundedInteger(
+      value,
+      'failureThreshold',
+      'Channel circuitBreakerPolicy.failureThreshold must be between 1 and 100',
+      1,
+      100,
+    ),
+  });
+}
+
+function normalizeCircuitBreakerPolicy(value: ProviderCircuitBreakerPolicy): ProviderCircuitBreakerPolicy {
+  if (!isRecord(value)) {
+    throw new Error('circuitBreakerPolicy must be an object');
+  }
+  return {
+    failureThreshold: boundedIntegerValue(
+      value.failureThreshold,
+      'circuitBreakerPolicy.failureThreshold',
+      1,
+      100,
+    ),
+  };
+}
+
+function boundedIntegerValue(value: unknown, fieldName: string, min: number, max: number): number {
+  const number = typeof value === 'number'
+    ? value
+    : typeof value === 'string' && value.trim()
+      ? Number(value)
+      : Number.NaN;
+  if (!Number.isSafeInteger(number) || number < min || number > max) {
+    throw new Error(`${fieldName} must be between ${min} and ${max}`);
+  }
+  return number;
 }
 
 function readRetryableProviderStatus(status: unknown): ProviderRetryPolicy['retryableStatusCodes'][number] {

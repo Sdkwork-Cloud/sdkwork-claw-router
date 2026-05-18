@@ -1,6 +1,7 @@
 package com.sdkwork.clawrouter.app
 
 data class AppApiKeyItem(
+    val copyableKey: String? = null,
     val created: String? = null,
     val expires: String? = null,
     val group: String? = null,

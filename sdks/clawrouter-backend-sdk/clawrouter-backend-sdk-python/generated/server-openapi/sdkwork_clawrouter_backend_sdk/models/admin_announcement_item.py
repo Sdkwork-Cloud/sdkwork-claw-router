@@ -9,6 +9,7 @@ class AdminAnnouncementItem:
     content: str
     date: str
     id: str
+    show_as_popup: bool
     status: str
     target: str
     title: str

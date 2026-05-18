@@ -5,7 +5,7 @@ use axum::extract::State;
 use axum::http::{HeaderMap, StatusCode};
 use axum::routing::post;
 use axum::{Json, Router};
-use sdkwork_claw_product::domain::ProviderRetryPolicy;
+use sdkwork_claw_product::domain::{ProviderAuthHeader, ProviderAuthProfile, ProviderRetryPolicy};
 use sdkwork_claw_product::infrastructure::provider::{
     OpenAiCompatibleChatCompletionRelay, UpstreamProviderEndpoint,
 };
@@ -18,6 +18,8 @@ use tokio::io::{AsyncReadExt, AsyncWriteExt};
 #[derive(Debug, Default)]
 struct CapturedUpstreamRequest {
     authorization: Option<String>,
+    api_key: Option<String>,
+    account_tier: Option<String>,
     body: serde_json::Value,
 }
 
@@ -45,6 +47,9 @@ async fn openai_compatible_relay_posts_provider_model_and_upstream_secret() {
     let response = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
             pricing_plan_code: "standard".to_owned(),
@@ -53,6 +58,7 @@ async fn openai_compatible_relay_posts_provider_model_and_upstream_secret() {
             provider_model: "openai/global/gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+            provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
             request_body: json!({
@@ -94,6 +100,66 @@ async fn openai_compatible_relay_posts_provider_model_and_upstream_secret() {
 }
 
 #[tokio::test]
+async fn openai_compatible_relay_uses_provider_account_header_auth_profile() {
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let provider = Router::new()
+        .route("/v1/chat/completions", post(capture_chat_completion))
+        .with_state(Arc::clone(&captured));
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let addr = listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(listener, provider).await.unwrap();
+    });
+
+    let mut auth_profile = ProviderAuthProfile::header("x-api-key");
+    auth_profile.default_headers.push(ProviderAuthHeader {
+        name: "x-account-tier".to_owned(),
+        value: "premium".to_owned(),
+    });
+    let endpoint =
+        UpstreamProviderEndpoint::new(format!("http://{addr}"), "sk-upstream-provider-secret")
+            .unwrap()
+            .with_auth_profile(auth_profile.clone());
+    let relay = OpenAiCompatibleChatCompletionRelay::new(endpoint);
+    let response = relay
+        .create_chat_completion(ChatCompletionRelayRequest {
+            api_key_id: 101,
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
+            group_id: 10,
+            group_code: "premium-group".to_owned(),
+            pricing_plan_code: "standard".to_owned(),
+            model: "gpt-4o-mini".to_owned(),
+            provider_code: "azure_openai".to_owned(),
+            provider_model: "openai/global/gpt-4o-mini".to_owned(),
+            provider_base_url: Some(format!("http://{addr}")),
+            provider_secret_ref: Some("vault://providers/azure/account/premium".to_owned()),
+            provider_auth_profile: auth_profile,
+            provider_timeout_ms: None,
+            provider_retry_policy: None,
+            request_body: json!({
+                "model": "gpt-4o-mini",
+                "messages": [{"role": "user", "content": "ping"}],
+                "stream": false
+            }),
+        })
+        .await
+        .unwrap();
+
+    assert_eq!(200, response.status_code);
+    let captured = captured.lock().unwrap();
+    assert_eq!(1, captured.len());
+    assert_eq!(None, captured[0].authorization);
+    assert_eq!(
+        Some("sk-upstream-provider-secret"),
+        captured[0].api_key.as_deref()
+    );
+    assert_eq!(Some("premium"), captured[0].account_tier.as_deref());
+    assert_eq!("openai/global/gpt-4o-mini", captured[0].body["model"]);
+}
+
+#[tokio::test]
 async fn openai_compatible_relay_does_not_duplicate_openai_v1_base_path() {
     let captured = Arc::new(Mutex::new(Vec::new()));
     let provider = Router::new()
@@ -114,6 +180,9 @@ async fn openai_compatible_relay_does_not_duplicate_openai_v1_base_path() {
     let response = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
             pricing_plan_code: "standard".to_owned(),
@@ -122,6 +191,7 @@ async fn openai_compatible_relay_does_not_duplicate_openai_v1_base_path() {
             provider_model: "openai/global/gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}/openai/v1")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+            provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
             request_body: json!({
@@ -164,6 +234,9 @@ async fn openai_compatible_relay_times_out_slow_upstream_responses_without_leaki
     let error = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
             pricing_plan_code: "standard".to_owned(),
@@ -172,6 +245,7 @@ async fn openai_compatible_relay_times_out_slow_upstream_responses_without_leaki
             provider_model: "openai/global/gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+            provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
             request_body: json!({
@@ -208,6 +282,9 @@ async fn openai_compatible_relay_retries_retryable_upstream_status_once_without_
     let response = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
             pricing_plan_code: "standard".to_owned(),
@@ -216,6 +293,7 @@ async fn openai_compatible_relay_retries_retryable_upstream_status_once_without_
             provider_model: "openai/global/gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+            provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
             request_body: json!({
@@ -269,6 +347,9 @@ async fn openai_compatible_relay_uses_request_retry_policy_for_non_stream_json_a
     let response = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
             pricing_plan_code: "standard".to_owned(),
@@ -277,6 +358,7 @@ async fn openai_compatible_relay_uses_request_retry_policy_for_non_stream_json_a
             provider_model: "openai/global/gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+            provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: Some(ProviderRetryPolicy::new(3, vec![503], 0).unwrap()),
             request_body: json!({
@@ -317,6 +399,9 @@ async fn openai_compatible_relay_uses_configured_retryable_statuses_without_defa
     let response = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
             pricing_plan_code: "standard".to_owned(),
@@ -325,6 +410,7 @@ async fn openai_compatible_relay_uses_configured_retryable_statuses_without_defa
             provider_model: "openai/global/gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+            provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: Some(ProviderRetryPolicy::new(3, vec![503], 0).unwrap()),
             request_body: json!({
@@ -365,6 +451,9 @@ async fn openai_compatible_relay_does_not_retry_non_retryable_upstream_status() 
     let response = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
             pricing_plan_code: "standard".to_owned(),
@@ -373,6 +462,7 @@ async fn openai_compatible_relay_does_not_retry_non_retryable_upstream_status() 
             provider_model: "openai/global/gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+            provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
             request_body: json!({
@@ -416,6 +506,9 @@ async fn openai_compatible_relay_uses_request_provider_timeout_over_runtime_defa
     let error = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
             pricing_plan_code: "standard".to_owned(),
@@ -424,6 +517,7 @@ async fn openai_compatible_relay_uses_request_provider_timeout_over_runtime_defa
             provider_model: "openai/global/gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+            provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: Some(20),
             provider_retry_policy: None,
             request_body: json!({
@@ -475,6 +569,9 @@ async fn openai_compatible_relay_times_out_slow_upstream_bodies_without_leaking_
     let error = relay
         .create_chat_completion(ChatCompletionRelayRequest {
             api_key_id: 101,
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
             pricing_plan_code: "standard".to_owned(),
@@ -483,6 +580,7 @@ async fn openai_compatible_relay_times_out_slow_upstream_bodies_without_leaking_
             provider_model: "openai/global/gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+            provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
             request_body: json!({
@@ -550,6 +648,14 @@ async fn capture_chat_completion(
             .get("authorization")
             .and_then(|value| value.to_str().ok())
             .map(str::to_owned),
+        api_key: headers
+            .get("x-api-key")
+            .and_then(|value| value.to_str().ok())
+            .map(str::to_owned),
+        account_tier: headers
+            .get("x-account-tier")
+            .and_then(|value| value.to_str().ok())
+            .map(str::to_owned),
         body,
     });
     (
@@ -578,6 +684,14 @@ async fn capture_flaky_chat_completion(
     state.requests.push(CapturedUpstreamRequest {
         authorization: headers
             .get("authorization")
+            .and_then(|value| value.to_str().ok())
+            .map(str::to_owned),
+        api_key: headers
+            .get("x-api-key")
+            .and_then(|value| value.to_str().ok())
+            .map(str::to_owned),
+        account_tier: headers
+            .get("x-account-tier")
             .and_then(|value| value.to_str().ok())
             .map(str::to_owned),
         body,
@@ -620,6 +734,14 @@ async fn capture_twice_flaky_chat_completion(
     state.requests.push(CapturedUpstreamRequest {
         authorization: headers
             .get("authorization")
+            .and_then(|value| value.to_str().ok())
+            .map(str::to_owned),
+        api_key: headers
+            .get("x-api-key")
+            .and_then(|value| value.to_str().ok())
+            .map(str::to_owned),
+        account_tier: headers
+            .get("x-account-tier")
             .and_then(|value| value.to_str().ok())
             .map(str::to_owned),
         body,
@@ -667,6 +789,14 @@ async fn capture_unauthorized_chat_completion(
                 .get("authorization")
                 .and_then(|value| value.to_str().ok())
                 .map(str::to_owned),
+            api_key: headers
+                .get("x-api-key")
+                .and_then(|value| value.to_str().ok())
+                .map(str::to_owned),
+            account_tier: headers
+                .get("x-account-tier")
+                .and_then(|value| value.to_str().ok())
+                .map(str::to_owned),
             body,
         });
     (
@@ -692,6 +822,14 @@ async fn capture_server_error_chat_completion(
         .push(CapturedUpstreamRequest {
             authorization: headers
                 .get("authorization")
+                .and_then(|value| value.to_str().ok())
+                .map(str::to_owned),
+            api_key: headers
+                .get("x-api-key")
+                .and_then(|value| value.to_str().ok())
+                .map(str::to_owned),
+            account_tier: headers
+                .get("x-account-tier")
                 .and_then(|value| value.to_str().ok())
                 .map(str::to_owned),
             body,

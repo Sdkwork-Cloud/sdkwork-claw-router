@@ -1,7 +1,7 @@
 use axum::body::Body;
 use bytes::Bytes;
 use http_body_util::{BodyExt, Full};
-use hyper::header::{AUTHORIZATION, CONTENT_TYPE};
+use hyper::header::{HeaderName, HeaderValue, AUTHORIZATION, CONTENT_TYPE};
 use hyper::{Method, Request, Uri};
 use hyper_rustls::HttpsConnector;
 use hyper_util::client::legacy::connect::HttpConnector;
@@ -11,7 +11,9 @@ use serde_json::{Map, Value};
 use std::sync::Arc;
 use std::time::{Duration, Instant};
 
-use crate::domain::{DomainError, DomainResult, ProviderRetryPolicy};
+use crate::domain::{
+    DomainError, DomainResult, ProviderAuthProfile, ProviderAuthType, ProviderRetryPolicy,
+};
 use crate::ports::{
     ChatCompletionRelay, ChatCompletionRelayFuture, ChatCompletionRelayRequest,
     ChatCompletionRelayResponse, ChatCompletionStreamRelay, ChatCompletionStreamRelayFuture,
@@ -80,6 +82,7 @@ pub struct UpstreamProviderEndpoint {
     base_url: String,
     includes_openai_v1_prefix: bool,
     bearer_token: String,
+    auth_profile: ProviderAuthProfile,
 }
 
 impl UpstreamProviderEndpoint {
@@ -111,7 +114,13 @@ impl UpstreamProviderEndpoint {
             base_url,
             includes_openai_v1_prefix,
             bearer_token,
+            auth_profile: ProviderAuthProfile::bearer(),
         })
+    }
+
+    pub fn with_auth_profile(mut self, auth_profile: ProviderAuthProfile) -> Self {
+        self.auth_profile = auth_profile;
+        self
     }
 
     fn chat_completions_uri(&self) -> DomainResult<Uri> {
@@ -140,6 +149,46 @@ impl UpstreamProviderEndpoint {
     fn authorization_value(&self) -> String {
         format!("Bearer {}", self.bearer_token)
     }
+
+    fn apply_auth_headers(
+        &self,
+        builder: hyper::http::request::Builder,
+    ) -> DomainResult<hyper::http::request::Builder> {
+        let mut builder = builder;
+        for header in &self.auth_profile.default_headers {
+            builder = builder.header(
+                parse_provider_header_name(&header.name)?,
+                parse_provider_header_value(&header.name, &header.value)?,
+            );
+        }
+        match self.auth_profile.auth_type {
+            ProviderAuthType::Bearer => {
+                Ok(builder.header(AUTHORIZATION, self.authorization_value()))
+            }
+            ProviderAuthType::Header => {
+                let name = self.auth_profile.name.as_deref().ok_or_else(|| {
+                    DomainError::new("provider account header auth name is required")
+                })?;
+                Ok(builder.header(
+                    parse_provider_header_name(name)?,
+                    parse_provider_header_value(name, &self.bearer_token)?,
+                ))
+            }
+            ProviderAuthType::Query => Ok(builder),
+        }
+    }
+
+    fn authenticated_uri(&self, uri: Uri) -> DomainResult<Uri> {
+        if self.auth_profile.auth_type != ProviderAuthType::Query {
+            return Ok(uri);
+        }
+        let name = self
+            .auth_profile
+            .name
+            .as_deref()
+            .ok_or_else(|| DomainError::new("provider account query auth name is required"))?;
+        append_query_pair(uri, name, &self.bearer_token)
+    }
 }
 
 impl std::fmt::Debug for UpstreamProviderEndpoint {
@@ -148,6 +197,73 @@ impl std::fmt::Debug for UpstreamProviderEndpoint {
             .field("base_url", &self.base_url)
             .field("bearer_token", &"[REDACTED]")
             .finish()
+    }
+}
+
+fn parse_provider_header_name(name: &str) -> DomainResult<HeaderName> {
+    HeaderName::from_bytes(name.trim().as_bytes()).map_err(|error| {
+        DomainError::new(format!(
+            "provider account auth header name is invalid: {error}"
+        ))
+    })
+}
+
+fn parse_provider_header_value(name: &str, value: &str) -> DomainResult<HeaderValue> {
+    HeaderValue::from_str(value).map_err(|error| {
+        DomainError::new(format!(
+            "provider account auth header {name} value is invalid: {error}"
+        ))
+    })
+}
+
+fn append_query_pair(uri: Uri, name: &str, value: &str) -> DomainResult<Uri> {
+    let mut parts = uri.into_parts();
+    let path_and_query = parts
+        .path_and_query
+        .as_ref()
+        .map(|value| value.as_str())
+        .unwrap_or("/");
+    let separator = if path_and_query.contains('?') {
+        "&"
+    } else {
+        "?"
+    };
+    let path_and_query = format!(
+        "{path_and_query}{separator}{}={}",
+        percent_encode_query_component(name),
+        percent_encode_query_component(value)
+    );
+    parts.path_and_query = Some(path_and_query.parse().map_err(|error| {
+        DomainError::new(format!(
+            "provider account query auth URI is invalid: {error}"
+        ))
+    })?);
+    Uri::from_parts(parts).map_err(|error| {
+        DomainError::new(format!(
+            "provider account query auth URI is invalid: {error}"
+        ))
+    })
+}
+
+fn percent_encode_query_component(value: &str) -> String {
+    let mut encoded = String::with_capacity(value.len());
+    for byte in value.bytes() {
+        if byte.is_ascii_alphanumeric() || matches!(byte, b'-' | b'.' | b'_' | b'~') {
+            encoded.push(byte as char);
+        } else {
+            encoded.push('%');
+            encoded.push(hex_digit(byte >> 4));
+            encoded.push(hex_digit(byte & 0x0f));
+        }
+    }
+    encoded
+}
+
+fn hex_digit(value: u8) -> char {
+    match value {
+        0..=9 => (b'0' + value) as char,
+        10..=15 => (b'A' + value - 10) as char,
+        _ => unreachable!("query percent encoding nibble must be in 0..=15"),
     }
 }
 
@@ -318,7 +434,8 @@ impl ChatCompletionRelay for SecretRefOpenAiCompatibleChatCompletionRelay {
                 .clone()
                 .ok_or_else(|| DomainError::new("provider secret_ref is required for relay"))?;
             let bearer_token = self.secret_resolver.resolve_secret_value(&secret_ref)?;
-            let endpoint = UpstreamProviderEndpoint::new(base_url, bearer_token)?;
+            let endpoint = UpstreamProviderEndpoint::new(base_url, bearer_token)?
+                .with_auth_profile(request.provider_auth_profile.clone());
             let runtime = self.runtime.for_request(request.provider_timeout_ms);
             send_chat_completion_with_runtime(&runtime, &endpoint, request).await
         })
@@ -340,7 +457,8 @@ impl ChatCompletionStreamRelay for SecretRefOpenAiCompatibleChatCompletionStream
                 .clone()
                 .ok_or_else(|| DomainError::new("provider secret_ref is required for relay"))?;
             let bearer_token = self.secret_resolver.resolve_secret_value(&secret_ref)?;
-            let endpoint = UpstreamProviderEndpoint::new(base_url, bearer_token)?;
+            let endpoint = UpstreamProviderEndpoint::new(base_url, bearer_token)?
+                .with_auth_profile(request.provider_auth_profile.clone());
             let runtime = self.runtime.for_request(request.provider_timeout_ms);
             send_chat_completion_stream_with_runtime(&runtime, &endpoint, request).await
         })
@@ -531,9 +649,14 @@ impl ProviderHealthProbe for SecretRefOpenAiCompatibleProviderHealthProbe {
     ) -> ProviderHealthProbeFuture<'a> {
         Box::pin(async move {
             let started_at = Instant::now();
-            let endpoint = match self
-                .secret_resolver
-                .resolve_secret_value(&request.provider_secret_ref)
+            let endpoint = match request
+                .provider_secret_value
+                .clone()
+                .map(Ok)
+                .unwrap_or_else(|| {
+                    self.secret_resolver
+                        .resolve_secret_value(&request.provider_secret_ref)
+                })
                 .and_then(|bearer_token| {
                     UpstreamProviderEndpoint::new(&request.provider_base_url, bearer_token)
                 }) {
@@ -660,7 +783,8 @@ impl ResponsesRelay for SecretRefOpenAiCompatibleResponsesRelay {
                 .clone()
                 .ok_or_else(|| DomainError::new("provider secret_ref is required for relay"))?;
             let bearer_token = self.secret_resolver.resolve_secret_value(&secret_ref)?;
-            let endpoint = UpstreamProviderEndpoint::new(base_url, bearer_token)?;
+            let endpoint = UpstreamProviderEndpoint::new(base_url, bearer_token)?
+                .with_auth_profile(request.provider_auth_profile.clone());
             let runtime = self.runtime.for_request(request.provider_timeout_ms);
             send_response_with_runtime(&runtime, &endpoint, request).await
         })
@@ -682,7 +806,8 @@ impl EmbeddingsRelay for SecretRefOpenAiCompatibleEmbeddingsRelay {
                 .clone()
                 .ok_or_else(|| DomainError::new("provider secret_ref is required for relay"))?;
             let bearer_token = self.secret_resolver.resolve_secret_value(&secret_ref)?;
-            let endpoint = UpstreamProviderEndpoint::new(base_url, bearer_token)?;
+            let endpoint = UpstreamProviderEndpoint::new(base_url, bearer_token)?
+                .with_auth_profile(request.provider_auth_profile.clone());
             let runtime = self.runtime.for_request(request.provider_timeout_ms);
             send_embedding_with_runtime(&runtime, &endpoint, request).await
         })
@@ -787,11 +912,12 @@ async fn send_chat_completion_stream_with_runtime(
     request: ChatCompletionRelayRequest,
 ) -> DomainResult<ChatCompletionStreamRelayResponse> {
     let body = upstream_chat_stream_request_body(request.request_body, request.provider_model)?;
-    let http_request = Request::builder()
+    let builder = Request::builder()
         .method(Method::POST)
-        .uri(endpoint.chat_completions_uri()?)
-        .header(CONTENT_TYPE, "application/json")
-        .header(AUTHORIZATION, endpoint.authorization_value())
+        .uri(endpoint.authenticated_uri(endpoint.chat_completions_uri()?)?)
+        .header(CONTENT_TYPE, "application/json");
+    let http_request = endpoint
+        .apply_auth_headers(builder)?
         .body(Full::new(Bytes::from(body.to_string())))
         .map_err(|error| {
             DomainError::new(format!(
@@ -865,11 +991,12 @@ async fn send_openai_json_with_runtime(
     let retry_policy = retry_policy.unwrap_or_else(|| runtime.default_retry_policy.clone());
 
     for attempt in 1..=retry_policy.max_attempts {
-        let http_request = Request::builder()
+        let builder = Request::builder()
             .method(Method::POST)
-            .uri(uri.clone())
-            .header(CONTENT_TYPE, "application/json")
-            .header(AUTHORIZATION, endpoint.authorization_value())
+            .uri(endpoint.authenticated_uri(uri.clone())?)
+            .header(CONTENT_TYPE, "application/json");
+        let http_request = endpoint
+            .apply_auth_headers(builder)?
             .body(Full::new(body_bytes.clone()))
             .map_err(|error| {
                 DomainError::new(format!(

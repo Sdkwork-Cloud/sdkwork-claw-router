@@ -25,8 +25,10 @@ async fn dashboard_overview_route_returns_standard_empty_read_model_without_data
     assert_eq!("2000", payload["code"]);
     assert_eq!("SUCCESS", payload["msg"]);
     assert_eq!(0, payload["data"]["summary"]["requestCount"]);
+    assert_eq!(0, payload["data"]["summary"]["totalRequestCount"]);
     assert_eq!(0.0, payload["data"]["summary"]["availableCredits"]);
     assert_eq!(0.0, payload["data"]["summary"]["usedCredits"]);
+    assert_eq!(0.0, payload["data"]["summary"]["totalUsedCredits"]);
     assert_eq!(0, payload["data"]["summary"]["errorCount"]);
     assert_eq!(
         Some(0),
@@ -39,6 +41,12 @@ async fn dashboard_overview_route_returns_standard_empty_read_model_without_data
     assert_eq!(
         Some(0),
         payload["data"]["announcements"].as_array().map(Vec::len)
+    );
+    assert_eq!(
+        Some(0),
+        payload["data"]["configurationDomains"]
+            .as_array()
+            .map(Vec::len)
     );
     assert_eq!(
         Some(0),

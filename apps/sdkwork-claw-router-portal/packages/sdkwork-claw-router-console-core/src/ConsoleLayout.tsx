@@ -2,22 +2,26 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard, Activity, Key, CreditCard,
-  FileText, Settings, LogOut, ChevronLeft, ChevronRight, Bell, ShieldCheck, User, Box, Network
+  FileText, Settings, LogOut, ChevronLeft, ChevronRight, Bell, ShieldCheck, User, Box, Network, Bot
 } from 'lucide-react';
 
 import { Navbar } from 'sdkwork-claw-router-commons';
 import { revokeAppSession } from 'sdkwork-claw-router-commons/runtime';
 
+import { useTranslation } from 'react-i18next';
+type TranslationFunction = ReturnType<typeof useTranslation>['t'];
+
 const mainNavigation = [
-  { name: '仪表盘', path: '/console/dashboard', icon: LayoutDashboard },
-  { name: '令牌管理', path: '/console/api-keys', icon: Key },
-  { name: '调用统计', path: '/console/usage', icon: Activity },
-  { name: '钱包与充值', path: '/console/billing', icon: CreditCard },
-  { name: '账单与报表', path: '/console/settlements', icon: FileText },
-  { name: '消息中心', path: '/console/messages', icon: Bell },
-  { name: '工具配置', path: '/console/providers', icon: Box },
-  { name: '本地路由', path: '/console/routing', icon: Network },
-  { name: '账户详情', path: '/console/account', icon: User },
+  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.1hgvoqd", "仪表盘"), path: '/console/dashboard', icon: LayoutDashboard },
+  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.1wrh7eu", "令牌管理"), path: '/console/api-keys', icon: Key },
+  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.p2qyw6", "调用统计"), path: '/console/usage', icon: Activity },
+  { name: (t: TranslationFunction) => t("console.billing.billingview.text.gd62li", "钱包与充值"), path: '/console/billing', icon: CreditCard },
+  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.11nott7", "账单与报表"), path: '/console/settlements', icon: FileText },
+  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.3n18hg", "消息中心"), path: '/console/notifications', icon: Bell },
+  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.d29cz6", "工具配置"), path: '/console/providers', icon: Box },
+  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.1x2j5b5", "本地路由"), path: '/console/routing', icon: Network },
+  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.agents", "Agent 管理"), path: '/console/agents', icon: Bot },
+  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.tc07jn", "账户详情"), path: '/console/account', icon: User },
 ];
 
 export interface ConsoleContextProps {
@@ -33,6 +37,7 @@ interface ConsoleLayoutProps {
 }
 
 export function ConsoleLayout({ isDark, toggleTheme, setTheme }: ConsoleLayoutProps) {
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -117,6 +122,7 @@ export function ConsoleLayout({ isDark, toggleTheme, setTheme }: ConsoleLayoutPr
             {mainNavigation.map((item) => {
               const isActive = location.pathname.startsWith(item.path);
               const Icon = item.icon;
+              const itemName = item.name(t);
               return (
                 <Link
                   key={item.path}
@@ -126,11 +132,11 @@ export function ConsoleLayout({ isDark, toggleTheme, setTheme }: ConsoleLayoutPr
                     ? 'bg-blue-50 dark:bg-white/10 text-lobster-600 dark:text-white font-medium'
                     : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-slate-200'
                   }`}
-                  title={!sidebarOpen ? item.name : undefined}
+                  title={!sidebarOpen ? itemName : undefined}
                 >
                   <Icon className={`w-5 h-5 shrink-0 ${isActive ? 'text-lobster-600 dark:text-white' : ''}`} />
                   <div className="overflow-hidden whitespace-nowrap">
-                    {sidebarOpen && <span>{item.name}</span>}
+                    {sidebarOpen && <span>{itemName}</span>}
                   </div>
                 </Link>
               )
@@ -142,21 +148,21 @@ export function ConsoleLayout({ isDark, toggleTheme, setTheme }: ConsoleLayoutPr
              <Link
                 to="/console/settings"
                 className="flex w-full items-center gap-3 px-3 py-2.5 rounded-lg transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5"
-                title={!sidebarOpen ? "配置中心" : undefined}
+                title={!sidebarOpen ? t("console.core.consolelayout.text.1uk3ysa", "配置中心") : undefined}
               >
                 <Settings className="w-5 h-5 shrink-0" />
                 <div className="overflow-hidden whitespace-nowrap">
-                  {sidebarOpen && <span>配置中心</span>}
+                  {sidebarOpen && <span>{t("console.core.consolelayout.text.1uk3ysa", "配置中心")}</span>}
                 </div>
              </Link>
              <button
                 onClick={handleLogout}
                 className="flex w-full items-center gap-3 px-3 py-2.5 rounded-lg transition-all text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10"
-                title={!sidebarOpen ? "退出登录" : undefined}
+                title={!sidebarOpen ? t("console.core.consolelayout.text.12hokt7", "退出登录") : undefined}
               >
                 <LogOut className="w-5 h-5 shrink-0" />
                 <div className="overflow-hidden whitespace-nowrap">
-                  {sidebarOpen && <span>退出登录</span>}
+                  {sidebarOpen && <span>{t("console.core.consolelayout.text.12hokt7", "退出登录")}</span>}
                 </div>
              </button>
           </div>

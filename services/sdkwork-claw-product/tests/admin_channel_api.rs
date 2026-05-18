@@ -31,7 +31,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"],"timeoutMs":60000,"retryPolicy":{"maxAttempts":3,"retryableStatusCodes":[429,503],"backoffMs":25},"weight":80,"status":"active"}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"],"timeoutMs":60000,"retryPolicy":{"maxAttempts":3,"retryableStatusCodes":[429,503],"backoffMs":25},"circuitBreakerPolicy":{"failureThreshold":2},"weight":80,"status":"active"}"#,
                 ))
                 .unwrap(),
         )
@@ -61,6 +61,10 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
         25,
         create_payload["data"]["item"]["retryPolicy"]["backoffMs"]
     );
+    assert_eq!(
+        2,
+        create_payload["data"]["item"]["circuitBreakerPolicy"]["failureThreshold"]
+    );
     assert_eq!(60_000, create_payload["data"]["item"]["timeoutMs"]);
     assert!(create_payload["data"]["item"].get("authKey").is_none());
 
@@ -75,7 +79,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
                 .body(Body::from(
-                    r#"{"id":"1","status":"disabled","weight":15,"models":["openai/global/gpt-4o-mini"],"capabilities":["llm","image"],"timeoutMs":120000,"retryPolicy":null}"#,
+                    r#"{"id":"1","status":"disabled","weight":15,"models":["openai/global/gpt-4o-mini"],"capabilities":["llm","image"],"timeoutMs":120000,"retryPolicy":null,"circuitBreakerPolicy":{"failureThreshold":3}}"#,
                 ))
                 .unwrap(),
         )
@@ -89,6 +93,10 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
     assert_eq!("image", update_payload["data"]["item"]["capabilities"][1]);
     assert_eq!(120_000, update_payload["data"]["item"]["timeoutMs"]);
     assert!(update_payload["data"]["item"].get("retryPolicy").is_none());
+    assert_eq!(
+        3,
+        update_payload["data"]["item"]["circuitBreakerPolicy"]["failureThreshold"]
+    );
     assert_eq!(
         1,
         update_payload["data"]["item"]["models"]
@@ -123,6 +131,10 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
     assert!(list_payload["data"]["items"][0]
         .get("retryPolicy")
         .is_none());
+    assert_eq!(
+        3,
+        list_payload["data"]["items"][0]["circuitBreakerPolicy"]["failureThreshold"]
+    );
 
     let test_response = router
         .clone()
@@ -189,6 +201,49 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
 
     let commands = store.commands.lock().unwrap();
     assert_eq!(vec!["create", "update", "test", "delete"], *commands);
+}
+
+#[tokio::test]
+async fn admin_channel_route_accepts_api_key_input_without_leaking_plaintext_secret() {
+    let store = Arc::new(TestChannelStore::default());
+    let router = sdkwork_claw_product::api::admin_channel_router_with_store(
+        store.clone(),
+        Arc::new(TestUuidGenerator),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/channel")
+                .header("content-type", "application/json")
+                .header("x-sdkwork-tenant-id", "10")
+                .header("x-sdkwork-organization-id", "20")
+                .header("x-sdkwork-user-id", "30")
+                .body(Body::from(
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","baseUrl":"https://api.openai.com/v1","apiKey":"sk-live-secret","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"],"weight":80,"status":"active"}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = json_payload(response).await;
+    assert_eq!("2000", payload["code"]);
+    assert_eq!("OpenAI primary", payload["data"]["item"]["name"]);
+    assert!(payload["data"]["item"].get("apiKey").is_none());
+    assert!(payload["data"]["item"].get("authKey").is_none());
+    assert!(!payload.to_string().contains("sk-live-secret"));
+
+    let items = store.items.lock().unwrap();
+    let created = items.first().expect("created channel should be stored");
+    let secret_ref = created
+        .secret_ref
+        .as_deref()
+        .expect("apiKey input should be converted into an internal secret reference");
+    assert!(secret_ref.starts_with("secret://provider-accounts/openai/"));
+    assert!(!secret_ref.contains("sk-live-secret"));
 }
 
 #[tokio::test]
@@ -284,7 +339,7 @@ async fn admin_channel_route_rejects_plaintext_auth_key_without_calling_store() 
     assert!(payload["msg"]
         .as_str()
         .unwrap()
-        .contains("secretRef is required"));
+        .contains("apiKey is the supported plaintext credential input"));
     assert!(store.commands.lock().unwrap().is_empty());
 }
 
@@ -380,7 +435,7 @@ async fn admin_channel_route_rejects_unsafe_secret_ref_without_calling_store() {
     assert!(plaintext_alias_payload["msg"]
         .as_str()
         .unwrap()
-        .contains("plaintext credential fields are not accepted"));
+        .contains("apiKey is the supported plaintext credential input"));
     assert!(store.commands.lock().unwrap().is_empty());
 }
 
@@ -420,6 +475,41 @@ async fn admin_channel_route_rejects_invalid_retry_policy_without_calling_store(
 }
 
 #[tokio::test]
+async fn admin_channel_route_rejects_invalid_circuit_breaker_policy_without_calling_store() {
+    let store = Arc::new(TestChannelStore::default());
+    let router = sdkwork_claw_product::api::admin_channel_router_with_store(
+        store.clone(),
+        Arc::new(TestUuidGenerator),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/channel")
+                .header("content-type", "application/json")
+                .header("x-sdkwork-tenant-id", "10")
+                .header("x-sdkwork-organization-id", "20")
+                .header("x-sdkwork-user-id", "30")
+                .body(Body::from(
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"circuitBreakerPolicy":{"failureThreshold":0}}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::BAD_REQUEST, response.status());
+    let payload = json_payload(response).await;
+    assert_eq!("4001", payload["code"]);
+    assert!(payload["msg"]
+        .as_str()
+        .unwrap()
+        .contains("circuitBreakerPolicy.failureThreshold must be between 1 and 100"));
+    assert!(store.commands.lock().unwrap().is_empty());
+}
+
+#[tokio::test]
 async fn admin_channel_route_rejects_null_create_runtime_policy_fields_without_calling_store() {
     let store = Arc::new(TestChannelStore::default());
     let router = sdkwork_claw_product::api::admin_channel_router_with_store(
@@ -454,6 +544,7 @@ async fn admin_channel_route_rejects_null_create_runtime_policy_fields_without_c
         .contains("timeoutMs must be an integer"));
 
     let null_retry_policy_response = router
+        .clone()
         .oneshot(
             Request::builder()
                 .method("POST")
@@ -477,6 +568,35 @@ async fn admin_channel_route_rejects_null_create_runtime_policy_fields_without_c
         .as_str()
         .unwrap()
         .contains("retryPolicy must be a JSON object"));
+
+    let null_circuit_breaker_policy_response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/channel")
+                .header("content-type", "application/json")
+                .header("x-sdkwork-tenant-id", "10")
+                .header("x-sdkwork-organization-id", "20")
+                .header("x-sdkwork-user-id", "30")
+                .body(Body::from(
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"circuitBreakerPolicy":null}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(
+        StatusCode::BAD_REQUEST,
+        null_circuit_breaker_policy_response.status()
+    );
+    let null_circuit_breaker_policy_payload =
+        json_payload(null_circuit_breaker_policy_response).await;
+    assert_eq!("4001", null_circuit_breaker_policy_payload["code"]);
+    assert!(null_circuit_breaker_policy_payload["msg"]
+        .as_str()
+        .unwrap()
+        .contains("circuitBreakerPolicy must be a JSON object"));
     assert!(store.commands.lock().unwrap().is_empty());
 }
 
@@ -537,6 +657,7 @@ impl AdminChannelStore for TestChannelStore {
                 is_multimodal: command.is_multimodal,
                 timeout_ms: command.timeout_ms,
                 retry_policy_json: command.retry_policy_json,
+                circuit_breaker_policy_json: command.circuit_breaker_policy_json,
                 weight: command.weight,
                 status: command.status,
                 balance: "N/A".to_owned(),
@@ -593,6 +714,9 @@ impl AdminChannelStore for TestChannelStore {
             }
             if let Some(retry_policy_json) = command.retry_policy_json {
                 item.retry_policy_json = retry_policy_json;
+            }
+            if let Some(circuit_breaker_policy_json) = command.circuit_breaker_policy_json {
+                item.circuit_breaker_policy_json = circuit_breaker_policy_json;
             }
             if let Some(timeout_ms) = command.timeout_ms {
                 item.timeout_ms = timeout_ms;

@@ -7,8 +7,6 @@ use crate::domain::DomainError;
 use crate::ports::{GatewayUsageRecordCommand, GatewayUsageRecordFuture, GatewayUsageRecorder};
 
 const OWNER_TYPE_USER: i64 = 1;
-const MODALITY_TEXT: i64 = 1;
-const USAGE_TYPE_CHAT_COMPLETION: i64 = 1;
 const SETTLEMENT_PENDING: i64 = 0;
 
 #[derive(Debug, Clone)]
@@ -176,9 +174,9 @@ async fn upsert_usage_fact(
     .bind(&command.catalog_key)
     .bind(&command.requested_model)
     .bind(command.channel_id)
-    .bind(MODALITY_TEXT)
-    .bind(USAGE_TYPE_CHAT_COMPLETION)
-    .bind("llm_input_token")
+    .bind(command.modality)
+    .bind(command.usage_type)
+    .bind(&command.billing_meter_code)
     .bind(command.total_tokens.to_string())
     .bind(command.prompt_tokens)
     .bind(command.cached_tokens)

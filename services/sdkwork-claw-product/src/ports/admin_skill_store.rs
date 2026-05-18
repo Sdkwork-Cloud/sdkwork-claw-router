@@ -197,6 +197,34 @@ pub struct CreateAdminSkillCategoryCommand {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
+pub struct UpdateAdminSkillCategoryCommand {
+    pub subject: AdminSkillSubject,
+    pub category_id: i64,
+    pub audit_log_uuid: String,
+    pub name: Option<String>,
+    pub description: Option<Option<String>>,
+    pub code: Option<Option<String>>,
+    pub icon: Option<Option<String>>,
+    pub sort_weight: Option<i32>,
+    pub parent_id: Option<Option<i64>>,
+    pub path: Option<Option<String>>,
+    pub visible: Option<bool>,
+    pub status: Option<i32>,
+    pub category_type: Option<i32>,
+    pub request_id: String,
+    pub requested_at: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct DeleteAdminSkillCategoryCommand {
+    pub subject: AdminSkillSubject,
+    pub category_id: i64,
+    pub audit_log_uuid: String,
+    pub request_id: String,
+    pub requested_at: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct CreateAdminSkillPackageCommand {
     pub subject: AdminSkillSubject,
     pub package_uuid: String,
@@ -530,6 +558,16 @@ pub trait AdminSkillStore {
         &'a self,
         command: CreateAdminSkillCategoryCommand,
     ) -> AdminSkillCommandFuture<'a, AdminSkillCategoryItem>;
+
+    fn update_category<'a>(
+        &'a self,
+        command: UpdateAdminSkillCategoryCommand,
+    ) -> AdminSkillCommandFuture<'a, Option<AdminSkillCategoryItem>>;
+
+    fn delete_category<'a>(
+        &'a self,
+        command: DeleteAdminSkillCategoryCommand,
+    ) -> AdminSkillCommandFuture<'a, bool>;
 
     fn list_packages<'a>(
         &'a self,

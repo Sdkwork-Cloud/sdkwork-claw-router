@@ -75,6 +75,30 @@ class IamApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<UsersListResult>() {})
     }
 
+    /** Create user */
+    suspend fun usersCreate(body: AdminUserCreateRequest, xRequestId: String? = null): UsersCreateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.post(ApiPaths.backendPath("/iam/users"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<UsersCreateResult>() {})
+    }
+
+    /** Update user */
+    suspend fun usersUpdate(body: AdminUserUpdateRequest, xRequestId: String? = null): UsersUpdateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.put(ApiPaths.backendPath("/iam/users"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<UsersUpdateResult>() {})
+    }
+
     private data class PathParameterSpec(val name: String, val style: String, val explode: Boolean)
 
     private fun serializePathParameter(value: Any?, spec: PathParameterSpec): String {

@@ -7,6 +7,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class AdminAnnouncementCreateRequest
     {
         public string? Content { get; set; }
+        public bool? ShowAsPopup { get; set; }
         public string? Status { get; set; }
         public string? Target { get; set; }
         public string? Title { get; set; }

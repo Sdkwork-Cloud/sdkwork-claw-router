@@ -141,13 +141,18 @@ async fn find_access_group(
         r#"
         SELECT id, COALESCE(code, '') AS code, COALESCE(name, '') AS name
         FROM iam_gateway_api_key_group
-        WHERE (tenant_id IS NULL OR tenant_id = $1)
-          AND (organization_id IS NULL OR organization_id = $2)
+        WHERE (tenant_id = $1 OR tenant_id = 0 OR tenant_id IS NULL)
+          AND (organization_id = $2 OR organization_id = 0 OR organization_id IS NULL)
           AND (code = $3 OR name = $4)
           AND status = 1
           AND deleted_at IS NULL
         ORDER BY
-          CASE WHEN tenant_id = $5 AND organization_id = $6 THEN 0 ELSE 1 END,
+          CASE
+            WHEN tenant_id = $5 AND organization_id = $6 THEN 0
+            WHEN tenant_id = $5 AND organization_id = 0 THEN 1
+            WHEN tenant_id = 0 AND organization_id = 0 THEN 2
+            ELSE 3
+          END,
           CASE WHEN code = $7 THEN 0 ELSE 1 END,
           updated_at DESC NULLS LAST,
           id DESC

@@ -11,6 +11,7 @@ pub struct GatewayApiKey {
     pub key_prefix: String,
     pub key_display_masked: String,
     pub key_hash: String,
+    pub copyable_key: Option<String>,
     pub policy_id: Option<i64>,
     pub quota_policy_id: Option<i64>,
     pub created_at: String,
@@ -31,6 +32,7 @@ impl GatewayApiKey {
             key_display_masked: mask_key_prefix(&key_prefix),
             key_prefix,
             key_hash: key_hash.to_owned(),
+            copyable_key: None,
             policy_id: None,
             quota_policy_id: None,
             created_at: String::new(),
@@ -64,13 +66,16 @@ impl GatewayApiKey {
         self
     }
 
+    pub fn with_copyable_key(mut self, copyable_key: impl Into<String>) -> Self {
+        self.copyable_key = Some(copyable_key.into());
+        self
+    }
+
     pub fn display_name(&self) -> String {
         if !self.name.trim().is_empty() {
             self.name.clone()
-        } else if !self.key_prefix.trim().is_empty() {
-            self.key_prefix.clone()
         } else {
-            format!("api-key-{}", self.id)
+            format!("API Key #{}", self.id)
         }
     }
 
@@ -93,6 +98,9 @@ impl GatewayApiKey {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ApiKeyGroup {
     pub id: i64,
+    pub tenant_id: i64,
+    pub organization_id: i64,
+    pub name: String,
     pub code: String,
     pub pricing_plan_code: String,
     pub rate_multiplier: DecimalValue,
@@ -172,12 +180,52 @@ impl ApiKeyGroup {
         rate_multiplier: DecimalValue,
         official_price_multiplier: DecimalValue,
     ) -> Self {
+        Self::new_scoped(
+            id,
+            0,
+            0,
+            code,
+            pricing_plan_code,
+            rate_multiplier,
+            official_price_multiplier,
+        )
+    }
+
+    pub fn new_scoped(
+        id: i64,
+        tenant_id: i64,
+        organization_id: i64,
+        code: &str,
+        pricing_plan_code: &str,
+        rate_multiplier: DecimalValue,
+        official_price_multiplier: DecimalValue,
+    ) -> Self {
         Self {
             id,
+            tenant_id,
+            organization_id,
+            name: code.to_owned(),
             code: code.to_owned(),
             pricing_plan_code: pricing_plan_code.to_owned(),
             rate_multiplier,
             official_price_multiplier,
+        }
+    }
+
+    pub fn with_name(mut self, name: &str) -> Self {
+        let normalized = name.trim();
+        if !normalized.is_empty() {
+            self.name = normalized.to_owned();
+        }
+        self
+    }
+
+    pub fn display_name(&self) -> String {
+        let normalized = self.name.trim();
+        if normalized.is_empty() {
+            self.code.clone()
+        } else {
+            normalized.to_owned()
         }
     }
 }

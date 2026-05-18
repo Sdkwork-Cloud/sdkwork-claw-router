@@ -1,5 +1,7 @@
 pub mod base;
 pub mod paths;
+pub mod agents;
+pub use agents::AgentsApi;
 pub mod ai;
 pub use ai::AiApi;
 pub mod billing;

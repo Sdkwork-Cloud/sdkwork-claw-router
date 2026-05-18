@@ -1,5 +1,6 @@
 import { ForbiddenError } from '@sdkwork/sdk-common';
 import type { IamSessionResponse } from '@sdkwork/clawrouter-app-sdk';
+import { readApiRecord } from './api-result.ts';
 import { clearStoredAppSessionToken, storeAppSessionFromResult } from './app-session-token.ts';
 import { resetClawRouterIamRuntime } from './iam-runtime.ts';
 import { getClawRouterAppSdkClient, getClawRouterBackendSdkClient, resetClawRouterSdkClients } from './sdk-clients.ts';
@@ -12,12 +13,13 @@ export async function fetchCurrentPortalSession(): Promise<IamSessionResponse | 
   if (!currentSessionPromise) {
     currentSessionPromise = getClawRouterAppSdkClient()
       .auth.sessions.current.retrieve()
-      .then((session) => {
-        if (session && typeof session === 'object') {
-          storeAppSessionFromResult(session);
+      .then((result) => {
+        const session = readCurrentPortalSession(result);
+        if (session) {
+          storeAppSessionFromResult(result);
           resetClawRouterSdkClients();
         }
-        return session ?? null;
+        return session;
       })
       .catch((error) => {
         if (isPortalSessionAuthError(error)) {
@@ -96,4 +98,23 @@ function readErrorCode(error: unknown): string | undefined {
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+function readCurrentPortalSession(result: unknown): IamSessionResponse | null {
+  const session = readApiRecord(result);
+  return isPortalSessionResponse(session) ? session : null;
+}
+
+function isPortalSessionResponse(value: unknown): value is IamSessionResponse {
+  if (!isRecord(value)) {
+    return false;
+  }
+  return (
+    typeof value.accessToken === 'string'
+    && value.accessToken.trim().length > 0
+    && typeof value.authToken === 'string'
+    && value.authToken.trim().length > 0
+    && isRecord(value.context)
+    && isRecord(value.user)
+  );
 }

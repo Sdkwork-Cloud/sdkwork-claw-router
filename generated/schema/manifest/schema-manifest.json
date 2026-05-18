@@ -3,7 +3,6 @@
     "plus_account",
     "plus_account_exchange_config",
     "plus_account_history",
-    "plus_api_key",
     "plus_card",
     "plus_card_template",
     "plus_channel",
@@ -22,33 +21,24 @@
     "plus_ledger_bridge",
     "plus_member_card",
     "plus_member_level",
-    "plus_oauth_account",
     "plus_order",
     "plus_order_dispatch_rule",
     "plus_order_item",
     "plus_order_worker_dispatch_profile",
-    "plus_organization",
-    "plus_organization_member",
     "plus_partner",
     "plus_payment",
     "plus_payment_webhook_event",
-    "plus_permission",
     "plus_position",
     "plus_product",
     "plus_refund",
-    "plus_role",
-    "plus_role_permission",
     "plus_shop",
     "plus_shopping_cart",
     "plus_shopping_cart_item",
     "plus_sku",
-    "plus_tenant",
     "plus_usage_record",
-    "plus_user",
     "plus_user_address",
     "plus_user_card",
     "plus_user_coupon",
-    "plus_user_role",
     "plus_vip_benefit",
     "plus_vip_benefit_usage",
     "plus_vip_level",
@@ -62,6 +52,13 @@
     "plus_vip_user"
   ],
   "generated_tables": [
+    "ai_agent",
+    "ai_agent_mcp_server",
+    "ai_agent_memory",
+    "ai_agent_run",
+    "ai_agent_run_step",
+    "ai_agent_tool_binding",
+    "ai_agent_version",
     "ai_billing_meter",
     "ai_generation_asset",
     "ai_generation_asset_action",
@@ -104,15 +101,22 @@
     "content_openapi_snapshot",
     "content_reaction",
     "content_sdk_release",
+    "iam_api_key",
     "iam_audit_event",
     "iam_credential",
+    "iam_device",
     "iam_gateway_access_policy",
     "iam_gateway_api_key",
     "iam_gateway_api_key_group",
     "iam_gateway_api_key_group_metric_snapshot",
     "iam_gateway_risk_rule",
+    "iam_mfa_factor",
     "iam_organization",
     "iam_organization_member",
+    "iam_permission",
+    "iam_policy",
+    "iam_role",
+    "iam_role_permission",
     "iam_security_event",
     "iam_session",
     "iam_tenant",
@@ -120,6 +124,7 @@
     "iam_user_identity",
     "iam_user_login_event",
     "iam_user_preference",
+    "iam_user_role",
     "iam_user_security_setting",
     "integration_channel",
     "integration_channel_model",
@@ -167,6 +172,24 @@
       "tables": [
         "content_doc_page",
         "plus_app"
+      ]
+    },
+    "/admin/agents": {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "ai_agent",
+        "ai_agent_mcp_server",
+        "ai_agent_memory",
+        "ai_agent_run",
+        "ai_agent_run_step",
+        "ai_agent_tool_binding",
+        "ai_agent_version"
       ]
     },
     "/admin/announcement": {
@@ -267,6 +290,7 @@
         "commerce_usage_settlement",
         "commerce_usage_statement",
         "commerce_usage_statement_item",
+        "iam_user",
         "ops_audit_log",
         "plus_account",
         "plus_account_exchange_config",
@@ -287,7 +311,6 @@
         "plus_refund",
         "plus_shop",
         "plus_sku",
-        "plus_user",
         "plus_vip_point_change"
       ]
     },
@@ -310,8 +333,7 @@
         "iam_gateway_api_key_group",
         "iam_gateway_api_key_group_metric_snapshot",
         "ops_audit_log",
-        "ops_metric_snapshot",
-        "plus_tenant"
+        "ops_metric_snapshot"
       ]
     },
     "/admin/marketing": {
@@ -323,6 +345,7 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
+        "iam_user",
         "ops_audit_log",
         "ops_coupon_issue_batch",
         "ops_referral_stat_snapshot",
@@ -341,7 +364,6 @@
         "plus_payment",
         "plus_product",
         "plus_sku",
-        "plus_user",
         "plus_user_card",
         "plus_user_coupon",
         "plus_vip_recharge",
@@ -414,9 +436,7 @@
         "iam_gateway_api_key",
         "iam_gateway_api_key_group",
         "iam_gateway_risk_rule",
-        "ops_audit_log",
-        "plus_api_key",
-        "plus_user"
+        "ops_audit_log"
       ]
     },
     "/admin/record": {
@@ -429,6 +449,8 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
+        "ai_agent_run",
+        "ai_agent_run_step",
         "ai_billing_meter",
         "ai_request_trace",
         "ai_routing_decision_log",
@@ -477,28 +499,26 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
+        "iam_api_key",
         "iam_gateway_api_key",
         "iam_organization",
         "iam_organization_member",
+        "iam_permission",
+        "iam_policy",
+        "iam_role",
+        "iam_role_permission",
         "iam_tenant",
+        "iam_user",
         "iam_user_login_event",
+        "iam_user_role",
         "ops_audit_log",
         "plus_account",
         "plus_account_history",
-        "plus_api_key",
         "plus_currency",
         "plus_department",
-        "plus_organization",
-        "plus_organization_member",
-        "plus_permission",
         "plus_position",
         "plus_refund",
-        "plus_role",
-        "plus_role_permission",
-        "plus_tenant",
-        "plus_user",
         "plus_user_address",
-        "plus_user_role",
         "plus_vip_benefit",
         "plus_vip_benefit_usage",
         "plus_vip_level",
@@ -562,10 +582,10 @@
       "tables": [
         "iam_audit_event",
         "iam_credential",
+        "iam_mfa_factor",
         "iam_security_event",
         "iam_user",
-        "iam_user_identity",
-        "plus_user"
+        "iam_user_identity"
       ]
     },
     "/auth/login": {
@@ -579,6 +599,8 @@
       "tables": [
         "iam_audit_event",
         "iam_credential",
+        "iam_device",
+        "iam_mfa_factor",
         "iam_organization",
         "iam_organization_member",
         "iam_security_event",
@@ -589,9 +611,7 @@
         "iam_user_login_event",
         "iam_user_preference",
         "iam_user_security_setting",
-        "ops_config_snapshot",
-        "plus_oauth_account",
-        "plus_user"
+        "ops_config_snapshot"
       ]
     },
     "/auth/oauth/callback/:provider": {
@@ -604,15 +624,14 @@
       "route_scope": "public",
       "tables": [
         "iam_audit_event",
+        "iam_device",
         "iam_security_event",
         "iam_session",
         "iam_user",
         "iam_user_identity",
         "iam_user_login_event",
         "iam_user_preference",
-        "iam_user_security_setting",
-        "plus_oauth_account",
-        "plus_user"
+        "iam_user_security_setting"
       ]
     },
     "/auth/register": {
@@ -625,14 +644,15 @@
       "tables": [
         "iam_audit_event",
         "iam_credential",
+        "iam_device",
+        "iam_mfa_factor",
         "iam_organization",
         "iam_organization_member",
         "iam_security_event",
         "iam_session",
         "iam_tenant",
         "iam_user",
-        "iam_user_identity",
-        "plus_user"
+        "iam_user_identity"
       ]
     },
     "/console/account": {
@@ -646,6 +666,9 @@
       "route_scope": "console",
       "tables": [
         "ai_usage_fact",
+        "iam_organization",
+        "iam_tenant",
+        "iam_user",
         "iam_user_login_event",
         "iam_user_security_setting",
         "ops_audit_log",
@@ -655,15 +678,30 @@
         "plus_invoice_record",
         "plus_member_card",
         "plus_member_level",
-        "plus_organization",
-        "plus_organization_member",
-        "plus_user",
         "plus_user_address",
         "plus_vip_benefit",
         "plus_vip_benefit_usage",
         "plus_vip_level",
         "plus_vip_level_benefit",
         "plus_vip_user"
+      ]
+    },
+    "/console/agents": {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "app",
+      "route_scope": "console",
+      "tables": [
+        "ai_agent",
+        "ai_agent_mcp_server",
+        "ai_agent_memory",
+        "ai_agent_run",
+        "ai_agent_run_step",
+        "ai_agent_tool_binding",
+        "ai_agent_version"
       ]
     },
     "/console/api-keys": {
@@ -684,8 +722,7 @@
         "iam_gateway_api_key",
         "iam_gateway_api_key_group",
         "iam_gateway_api_key_group_metric_snapshot",
-        "ops_audit_log",
-        "plus_api_key"
+        "ops_audit_log"
       ]
     },
     "/console/app": {
@@ -800,6 +837,19 @@
         "ops_notification_message"
       ]
     },
+    "/console/notifications": {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "app",
+      "route_scope": "console",
+      "tables": [
+        "ops_notification_delivery",
+        "ops_notification_message"
+      ]
+    },
     "/console/providers": {
       "api_surfaces": [
         "app",
@@ -861,7 +911,6 @@
         "integration_provider_account",
         "ops_audit_log",
         "ops_config_snapshot",
-        "plus_api_key",
         "plus_channel",
         "plus_channel_account",
         "plus_channel_proxy"
@@ -912,6 +961,8 @@
       "required_api_surface": "app",
       "route_scope": "console",
       "tables": [
+        "ai_agent_run",
+        "ai_agent_run_step",
         "ai_billing_meter",
         "ai_request_trace",
         "ai_routing_decision_log",
@@ -928,6 +979,8 @@
       "required_api_surface": "app",
       "route_scope": "console",
       "tables": [
+        "iam_device",
+        "iam_mfa_factor",
         "iam_organization",
         "iam_organization_member",
         "iam_session",
@@ -936,9 +989,7 @@
         "iam_user_identity",
         "iam_user_login_event",
         "iam_user_preference",
-        "iam_user_security_setting",
-        "plus_oauth_account",
-        "plus_user"
+        "iam_user_security_setting"
       ]
     },
     "/courses": {
@@ -1106,6 +1157,13 @@
       "required_api_surface": "app",
       "route_scope": "public",
       "tables": [
+        "ai_agent",
+        "ai_agent_mcp_server",
+        "ai_agent_memory",
+        "ai_agent_run",
+        "ai_agent_run_step",
+        "ai_agent_tool_binding",
+        "ai_agent_version",
         "ai_billing_meter",
         "ai_generation_asset",
         "ai_generation_asset_action",
@@ -1117,6 +1175,7 @@
         "ai_model_pricing",
         "ai_model_vendor",
         "ai_pricing_plan",
+        "ai_request_trace",
         "ai_usage_fact",
         "integration_provider"
       ]
@@ -1213,19 +1272,2180 @@
   },
   "summary": {
     "api_surface_counts": {
-      "app": 122,
-      "backend": 142,
-      "openai_v1": 9,
+      "app": 125,
+      "backend": 147,
+      "openai_v1": 8,
       "system": 2,
-      "worker": 53
+      "worker": 60
     },
-    "external_legacy_table_count": 60,
-    "frontend_route_count": 53,
-    "generated_table_count": 93,
-    "legacy_table_count": 69,
-    "table_count": 155
+    "external_legacy_table_count": 50,
+    "frontend_route_count": 56,
+    "generated_table_count": 108,
+    "legacy_table_count": 59,
+    "table_count": 160
   },
   "tables": [
+    {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "owner_user_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "agent_code",
+          "source": "explicit",
+          "type": "string(96)"
+        },
+        {
+          "name": "name",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "description",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "visibility",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "default_version_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "avatar_url",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "template_source",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "governance_status",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "published_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "published_by",
+          "source": "explicit",
+          "type": "int64"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L3",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/console/agents",
+        "/playground",
+        "/admin/agents"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "agent_code"
+          ],
+          "name": "uk_ai_agent_tenant_code",
+          "unique": true
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "owner_user_id",
+            "status",
+            "updated_at",
+            "id"
+          ],
+          "name": "idx_ai_agent_owner_status_updated",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "governance_status",
+            "updated_at",
+            "id"
+          ],
+          "name": "idx_ai_agent_governance_status",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": {
+        "audit_required": true,
+        "sensitivity": "AGENT_DEFINITION",
+        "stores_secret_plaintext": false
+      },
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "ai_agent",
+      "unique_constraints": [],
+      "write_owner": "agent-service"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "server_code",
+          "source": "explicit",
+          "type": "string(96)"
+        },
+        {
+          "name": "name",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "description",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "transport_type",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "connection_config",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "credential_ref",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "tool_catalog",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "prompt_catalog",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "resource_catalog",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "permission_policy",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "health_status",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "last_checked_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "last_error_masked",
+          "source": "explicit",
+          "type": "string(1024)"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L3",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/console/agents",
+        "/playground",
+        "/admin/agents"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "server_code"
+          ],
+          "name": "uk_ai_agent_mcp_server_code",
+          "unique": true
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "status",
+            "health_status",
+            "updated_at",
+            "id"
+          ],
+          "name": "idx_ai_agent_mcp_server_status_health",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": {
+        "audit_required": true,
+        "secret_reference_only": true,
+        "sensitivity": "AGENT_MCP",
+        "stores_secret_plaintext": false
+      },
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "ai_agent_mcp_server",
+      "unique_constraints": [],
+      "write_owner": "agent-service"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "user_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "owner_type",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "owner_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "owner_user_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "agent_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "memory_scope",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "memory_type",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "content_ref",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "embedding_ref",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "memory_hash",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "retention_policy",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "expires_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "last_used_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "user_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "owner_type",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "owner_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L3",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/console/agents",
+        "/playground",
+        "/admin/agents"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "owner_user_id",
+            "agent_id",
+            "memory_hash"
+          ],
+          "name": "uk_ai_agent_memory_hash",
+          "unique": true
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "agent_id",
+            "owner_user_id",
+            "memory_scope",
+            "updated_at",
+            "id"
+          ],
+          "name": "idx_ai_agent_memory_agent_scope",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "status",
+            "expires_at",
+            "id"
+          ],
+          "name": "idx_ai_agent_memory_retention",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "user_entity",
+      "projection_policy": null,
+      "security": {
+        "audit_required": true,
+        "pii": true,
+        "sensitivity": "AGENT_MEMORY",
+        "stores_secret_plaintext": false
+      },
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "ai_agent_memory",
+      "unique_constraints": [],
+      "write_owner": "agent-memory-service"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "event_log",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "request_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "trace_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "payload_hash",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "retention_until",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "legal_hold",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "agent_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "agent_version_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "run_uuid",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "run_status",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "source_surface",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "input_message",
+          "source": "explicit",
+          "type": "text"
+        },
+        {
+          "name": "output_message",
+          "source": "explicit",
+          "type": "text"
+        },
+        {
+          "name": "target_modality",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "planner_model",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "execution_mode",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "started_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "completed_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "cancelled_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "failed_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "error_message_masked",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "metering_status",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "usage_fact_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "total_steps",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "prompt_tokens",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "completion_tokens",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "cached_tokens",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "total_tokens",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "image_count",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "audio_seconds",
+          "source": "explicit",
+          "type": "decimal"
+        },
+        {
+          "name": "video_seconds",
+          "source": "explicit",
+          "type": "decimal"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "event_log",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "request_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "trace_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "payload_hash",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "retention_until",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "legal_hold",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L3",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/console/agents",
+        "/playground",
+        "/console/usage",
+        "/admin/agents",
+        "/admin/record"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "request_id"
+          ],
+          "name": "uk_ai_agent_run_request",
+          "unique": true
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "agent_id",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_ai_agent_run_agent_created",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "user_id",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_ai_agent_run_user_created",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "run_status",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_ai_agent_run_status_created",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "usage_fact_id"
+          ],
+          "name": "idx_ai_agent_run_usage_fact",
+          "unique": false
+        }
+      ],
+      "lifecycle": {
+        "archive_retention": "5y",
+        "online_retention": "180d",
+        "partition_by": "created_at_month"
+      },
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "event_log",
+      "projection_policy": null,
+      "security": {
+        "audit_required": true,
+        "payload_redaction_required": true,
+        "sensitivity": "AGENT_RUN",
+        "stores_secret_plaintext": false
+      },
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "ai_agent_run",
+      "unique_constraints": [],
+      "write_owner": "agent-runtime"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "event_log",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "request_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "trace_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "payload_hash",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "retention_until",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "legal_hold",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "run_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "agent_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "agent_version_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "step_index",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "step_type",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "step_status",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "title",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tool_binding_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "skill_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "mcp_server_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "model",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "input_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "output_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "error_message_masked",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "started_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "completed_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "latency_ms",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "prompt_tokens",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "completion_tokens",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "cached_tokens",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "total_tokens",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "image_count",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "audio_seconds",
+          "source": "explicit",
+          "type": "decimal"
+        },
+        {
+          "name": "video_seconds",
+          "source": "explicit",
+          "type": "decimal"
+        },
+        {
+          "name": "usage_fact_id",
+          "source": "explicit",
+          "type": "int64"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "event_log",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "request_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "trace_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "payload_hash",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "retention_until",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "legal_hold",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L3",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/console/agents",
+        "/playground",
+        "/console/usage",
+        "/admin/agents",
+        "/admin/record"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "run_id",
+            "step_index"
+          ],
+          "name": "uk_ai_agent_run_step_index",
+          "unique": true
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "run_id",
+            "step_type",
+            "step_index"
+          ],
+          "name": "idx_ai_agent_run_step_run_type",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "tool_binding_id",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_ai_agent_run_step_tool",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "usage_fact_id"
+          ],
+          "name": "idx_ai_agent_run_step_usage_fact",
+          "unique": false
+        }
+      ],
+      "lifecycle": {
+        "archive_retention": "5y",
+        "online_retention": "180d",
+        "partition_by": "created_at_month"
+      },
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "event_log",
+      "projection_policy": null,
+      "security": {
+        "audit_required": true,
+        "payload_redaction_required": true,
+        "sensitivity": "AGENT_STEP",
+        "stores_secret_plaintext": false
+      },
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "ai_agent_run_step",
+      "unique_constraints": [],
+      "write_owner": "agent-runtime"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "agent_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "agent_version_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "binding_key",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "binding_type",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "skill_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "mcp_server_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "tool_name",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "permission_policy",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "runtime_config",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "credential_ref",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "enabled",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "health_status",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "last_checked_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L3",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/console/agents",
+        "/playground",
+        "/admin/agents"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "agent_id",
+            "agent_version_id",
+            "binding_key"
+          ],
+          "name": "uk_ai_agent_tool_binding_key",
+          "unique": true
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "binding_type",
+            "status",
+            "enabled"
+          ],
+          "name": "idx_ai_agent_tool_binding_type",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "skill_id",
+            "status"
+          ],
+          "name": "idx_ai_agent_tool_binding_skill",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "mcp_server_id",
+            "status"
+          ],
+          "name": "idx_ai_agent_tool_binding_mcp",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": {
+        "audit_required": true,
+        "secret_reference_only": true,
+        "sensitivity": "AGENT_TOOL_BINDING",
+        "stores_secret_plaintext": false
+      },
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "ai_agent_tool_binding",
+      "unique_constraints": [],
+      "write_owner": "agent-service"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "agent_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "version_no",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "release_status",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "system_prompt",
+          "source": "explicit",
+          "type": "text"
+        },
+        {
+          "name": "model_policy",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "tool_policy",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "memory_policy",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "mcp_policy",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "skill_policy",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "runtime_policy",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "config_hash",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "published_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "published_by",
+          "source": "explicit",
+          "type": "int64"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L3",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/console/agents",
+        "/playground",
+        "/admin/agents"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "agent_id",
+            "version_no"
+          ],
+          "name": "uk_ai_agent_version_agent_no",
+          "unique": true
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "agent_id",
+            "release_status",
+            "version_no"
+          ],
+          "name": "idx_ai_agent_version_release_status",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "config_hash"
+          ],
+          "name": "idx_ai_agent_version_config_hash",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": {
+        "audit_required": true,
+        "payload_redaction_required": true,
+        "sensitivity": "AGENT_DEFINITION",
+        "stores_secret_plaintext": false
+      },
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "ai_agent_version",
+      "unique_constraints": [],
+      "write_owner": "agent-service"
+    },
     {
       "api_surfaces": [
         "app",
@@ -9048,6 +11268,7 @@
         "/console/dashboard",
         "/console/gateway",
         "/console/routing",
+        "/playground",
         "/admin/record",
         "/admin/dashboard"
       ],
@@ -15223,6 +17444,95 @@
     },
     {
       "api_surfaces": [
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "name",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "key_hash",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "permission_scope_json",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "expires_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/user"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "user_id",
+            "status"
+          ],
+          "name": "idx_iam_api_key_tenant_user_status",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_api_key",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
         "app",
         "backend"
       ],
@@ -15421,6 +17731,89 @@
       "system_of_record": true,
       "table": "iam_credential",
       "unique_constraints": [],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "device_fingerprint",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "name",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "trusted",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "last_seen_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/auth/login",
+        "/auth/register",
+        "/auth/oauth/callback/:provider",
+        "/console/user"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_device",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "user_id",
+            "device_fingerprint"
+          ],
+          "name": "uk_iam_device_tenant_user_fingerprint",
+          "source": "appbase_iam_foundation"
+        }
+      ],
       "write_owner": "sdkwork-appbase-iam"
     },
     {
@@ -17028,6 +19421,79 @@
           "type": "string(128)"
         },
         {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "factor_type",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "secret_ref",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/auth/login",
+        "/auth/register",
+        "/auth/forgot-password",
+        "/console/user"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_mfa_factor",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
           "name": "parent_id",
           "source": "explicit",
           "type": "string(128)"
@@ -17070,6 +19536,7 @@
       "frontend_routes": [
         "/auth/login",
         "/auth/register",
+        "/console/account",
         "/console/user",
         "/admin/user"
       ],
@@ -17157,6 +19624,16 @@
           "name": "joined_at",
           "source": "explicit",
           "type": "instant"
+        },
+        {
+          "name": "left_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "remark",
+          "source": "explicit",
+          "type": "string(500)"
         }
       ],
       "common_columns": [],
@@ -17208,6 +19685,308 @@
             "user_id"
           ],
           "name": "uk_iam_organization_member_tenant_org_user",
+          "source": "appbase_iam_foundation"
+        }
+      ],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "name",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "resource",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "action",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/user"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "global_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_permission",
+      "unique_constraints": [
+        {
+          "columns": [
+            "code"
+          ],
+          "name": "uk_iam_permission_code",
+          "source": "appbase_iam_foundation"
+        }
+      ],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "name",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "policy_json",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/user"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_policy",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "code"
+          ],
+          "name": "uk_iam_policy_tenant_code",
+          "source": "appbase_iam_foundation"
+        }
+      ],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "name",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/user"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "status",
+            "code"
+          ],
+          "name": "idx_iam_role_tenant_status",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_role",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "code"
+          ],
+          "name": "uk_iam_role_tenant_code",
+          "source": "appbase_iam_foundation"
+        }
+      ],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "role_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "permission_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/user"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "permission_id",
+            "role_id"
+          ],
+          "name": "idx_iam_role_permission_tenant_permission",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_role_permission",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "role_id",
+            "permission_id"
+          ],
+          "name": "uk_iam_role_permission_tenant_role_permission",
           "source": "appbase_iam_foundation"
         }
       ],
@@ -17501,6 +20280,7 @@
       "frontend_routes": [
         "/auth/login",
         "/auth/register",
+        "/console/account",
         "/console/user",
         "/admin/user"
       ],
@@ -17603,7 +20383,11 @@
         "/auth/register",
         "/auth/forgot-password",
         "/auth/oauth/callback/:provider",
-        "/console/user"
+        "/console/account",
+        "/console/user",
+        "/admin/user",
+        "/admin/marketing",
+        "/admin/finance"
       ],
       "generated_by_this_project": true,
       "indexes": [
@@ -18275,6 +21059,87 @@
       "table": "iam_user_preference",
       "unique_constraints": [],
       "write_owner": "user-preference-service"
+    },
+    {
+      "api_surfaces": [
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "role_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/user"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "user_id",
+            "organization_id",
+            "role_id"
+          ],
+          "name": "idx_iam_user_role_tenant_user",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_user_role",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "user_id",
+            "role_id",
+            "organization_id"
+          ],
+          "name": "uk_iam_user_role_tenant_user_role_org",
+          "source": "appbase_iam_foundation"
+        }
+      ],
+      "write_owner": "sdkwork-appbase-iam"
     },
     {
       "api_surfaces": [
@@ -23365,6 +26230,7 @@
       "domain": "ops",
       "foreign_keys": [],
       "frontend_routes": [
+        "/console/notifications",
         "/console/messages",
         "/console/settings"
       ],
@@ -23629,6 +26495,7 @@
       "domain": "ops",
       "foreign_keys": [],
       "frontend_routes": [
+        "/console/notifications",
         "/console/messages"
       ],
       "generated_by_this_project": true,
@@ -24239,7 +27106,7 @@
         "does_not_replace": [
           "plus_invitation_code",
           "plus_invitation_relation",
-          "plus_user",
+          "iam_user",
           "plus_order",
           "plus_payment",
           "plus_vip_recharge"
@@ -24251,7 +27118,7 @@
       "source_tables": [
         "plus_invitation_code",
         "plus_invitation_relation",
-        "plus_user",
+        "iam_user",
         "plus_order",
         "plus_payment",
         "plus_vip_recharge"
@@ -24970,39 +27837,6 @@
       "source_tables": [],
       "system_of_record": true,
       "table": "plus_agent_skill_package",
-      "unique_constraints": [],
-      "write_owner": "spring-ai-plus-business-entity"
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend",
-        "openai_v1"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/console/api-keys",
-        "/console/routing",
-        "/admin/user",
-        "/admin/ratelimit"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "credential",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_api_key",
       "unique_constraints": [],
       "write_owner": "spring-ai-plus-business-entity"
     },
@@ -26712,7 +29546,7 @@
           "references_columns": [
             "id"
           ],
-          "references_table": "plus_user"
+          "references_table": "iam_user"
         }
       ],
       "frontend_routes": [
@@ -27152,37 +29986,6 @@
       "common_columns": [],
       "compliance_level": "L0",
       "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/auth/login",
-        "/auth/oauth/callback/:provider",
-        "/console/user"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_oauth_account",
-      "unique_constraints": [],
-      "write_owner": "spring-ai-plus-business-entity"
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
       "foreign_keys": [
         {
           "columns": [
@@ -27192,7 +29995,7 @@
           "references_columns": [
             "id"
           ],
-          "references_table": "plus_user"
+          "references_table": "iam_user"
         },
         {
           "columns": [
@@ -27202,7 +30005,7 @@
           "references_columns": [
             "id"
           ],
-          "references_table": "plus_user"
+          "references_table": "iam_user"
         },
         {
           "columns": [
@@ -27212,7 +30015,7 @@
           "references_columns": [
             "id"
           ],
-          "references_table": "plus_user"
+          "references_table": "iam_user"
         }
       ],
       "frontend_routes": [
@@ -27587,7 +30390,7 @@
           "references_columns": [
             "id"
           ],
-          "references_table": "plus_user"
+          "references_table": "iam_user"
         }
       ],
       "frontend_routes": [
@@ -27649,66 +30452,6 @@
           "source": "column_unique"
         }
       ],
-      "write_owner": "spring-ai-plus-business-entity"
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/console/account",
-        "/admin/user"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_organization",
-      "unique_constraints": [],
-      "write_owner": "spring-ai-plus-business-entity"
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/console/account",
-        "/admin/user"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_organization_member",
-      "unique_constraints": [],
       "write_owner": "spring-ai-plus-business-entity"
     },
     {
@@ -27963,34 +30706,6 @@
       "source_refs": [],
       "source_tables": [],
       "system_of_record": true,
-      "table": "plus_permission",
-      "unique_constraints": [],
-      "write_owner": "spring-ai-plus-business-entity"
-    },
-    {
-      "api_surfaces": [
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/user"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
       "table": "plus_position",
       "unique_constraints": [],
       "write_owner": "spring-ai-plus-business-entity"
@@ -28014,7 +30729,7 @@
           "references_columns": [
             "id"
           ],
-          "references_table": "plus_user"
+          "references_table": "iam_user"
         }
       ],
       "frontend_routes": [
@@ -28263,70 +30978,6 @@
       "common_columns": [],
       "compliance_level": "L0",
       "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/user"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_role",
-      "unique_constraints": [
-        {
-          "columns": [
-            "uuid"
-          ],
-          "source": "column_unique"
-        }
-      ],
-      "write_owner": "spring-ai-plus-business-entity"
-    },
-    {
-      "api_surfaces": [
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/user"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_role_permission",
-      "unique_constraints": [],
-      "write_owner": "spring-ai-plus-business-entity"
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
       "foreign_keys": [
         {
           "columns": [
@@ -28336,7 +30987,7 @@
           "references_columns": [
             "id"
           ],
-          "references_table": "plus_user"
+          "references_table": "iam_user"
         }
       ],
       "frontend_routes": [
@@ -28443,7 +31094,7 @@
           "references_columns": [
             "id"
           ],
-          "references_table": "plus_user"
+          "references_table": "iam_user"
         }
       ],
       "frontend_routes": [
@@ -28719,35 +31370,6 @@
     },
     {
       "api_surfaces": [
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/user",
-        "/admin/group"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_tenant",
-      "unique_constraints": [],
-      "write_owner": "spring-ai-plus-business-entity"
-    },
-    {
-      "api_surfaces": [
         "app",
         "backend"
       ],
@@ -28774,51 +31396,6 @@
       "system_of_record": true,
       "table": "plus_usage_record",
       "unique_constraints": [],
-      "write_owner": "spring-ai-plus-business-entity"
-    },
-    {
-      "api_surfaces": [
-        "app",
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/auth/login",
-        "/auth/register",
-        "/auth/forgot-password",
-        "/auth/oauth/callback/:provider",
-        "/console/user",
-        "/console/account",
-        "/admin/user",
-        "/admin/marketing",
-        "/admin/ratelimit",
-        "/admin/finance"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_user",
-      "unique_constraints": [
-        {
-          "columns": [
-            "uuid"
-          ],
-          "source": "column_unique"
-        }
-      ],
       "write_owner": "spring-ai-plus-business-entity"
     },
     {
@@ -29065,7 +31642,7 @@
           "references_columns": [
             "id"
           ],
-          "references_table": "plus_user"
+          "references_table": "iam_user"
         },
         {
           "columns": [
@@ -29170,34 +31747,6 @@
     },
     {
       "api_surfaces": [
-        "backend"
-      ],
-      "column_types": {},
-      "columns": [],
-      "common_columns": [],
-      "compliance_level": "L0",
-      "domain": "legacy",
-      "foreign_keys": [],
-      "frontend_routes": [
-        "/admin/user"
-      ],
-      "generated_by_this_project": false,
-      "indexes": [],
-      "lifecycle": null,
-      "not_null_columns": [],
-      "physical_columns": null,
-      "profile": "legacy_compatible",
-      "projection_policy": null,
-      "security": null,
-      "source_refs": [],
-      "source_tables": [],
-      "system_of_record": true,
-      "table": "plus_user_role",
-      "unique_constraints": [],
-      "write_owner": "spring-ai-plus-business-entity"
-    },
-    {
-      "api_surfaces": [
         "app",
         "backend"
       ],
@@ -29295,7 +31844,7 @@
           "references_columns": [
             "id"
           ],
-          "references_table": "plus_user"
+          "references_table": "iam_user"
         }
       ],
       "frontend_routes": [
@@ -29812,7 +32361,7 @@
           "references_columns": [
             "id"
           ],
-          "references_table": "plus_user"
+          "references_table": "iam_user"
         }
       ],
       "frontend_routes": [
@@ -29901,7 +32450,7 @@
           "references_columns": [
             "id"
           ],
-          "references_table": "plus_user"
+          "references_table": "iam_user"
         },
         {
           "columns": [
@@ -30195,7 +32744,7 @@
           "references_columns": [
             "id"
           ],
-          "references_table": "plus_user"
+          "references_table": "iam_user"
         },
         {
           "columns": [

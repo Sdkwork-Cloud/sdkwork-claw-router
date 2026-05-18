@@ -294,8 +294,10 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
         gateway_operation_contract = contract[gateway_operation_start:next_operation_start]
 
         self.assertIn("GatewayService.fetchTraces()", gateway_view)
-        self.assertIn("readOnlyGatewayActions", gateway_view)
-        self.assertIn("Read-only", gateway_view)
+        self.assertNotIn("readOnlyGatewayActions", gateway_view)
+        self.assertNotIn("Read-only", gateway_view)
+        self.assertNotIn("read-only", gateway_view)
+        self.assertNotIn("command contract", gateway_view)
         self.assertIn("BusinessStatePanel", gateway_view)
         self.assertIn("onRetry={() => void loadTraces()}", gateway_view)
         self.assertNotIn("GatewayService.fetchTraces().then", gateway_view)
@@ -333,6 +335,77 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("operation: updateCompatibility", gateway_operation_contract)
         self.assertNotIn("operation: replayTrace", gateway_operation_contract)
         self.assertNotIn("operation: fetchPayload", gateway_operation_contract)
+
+    def test_console_gateway_product_states_are_localized(self) -> None:
+        gateway_view = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-gateway"
+            / "src"
+            / "GatewayView.tsx"
+        ).read_text(encoding="utf-8")
+        gateway_service = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-gateway"
+            / "src"
+            / "gatewayService.ts"
+        ).read_text(encoding="utf-8")
+        i18n = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-i18n"
+            / "src"
+            / "index.ts"
+        ).read_text(encoding="utf-8")
+
+        for marker in [
+            "console.gateway.title",
+            "console.gateway.subtitle",
+            "console.gateway.summary.traceRows",
+            "console.gateway.summary.successful",
+            "console.gateway.summary.failed",
+            "console.gateway.summary.channels",
+            "console.gateway.table.title",
+            "console.gateway.table.description",
+            "console.gateway.table.traceId",
+            "console.gateway.table.timestamp",
+            "console.gateway.table.clientIp",
+            "console.gateway.table.method",
+            "console.gateway.table.endpoint",
+            "console.gateway.table.status",
+            "console.gateway.table.duration",
+            "console.gateway.table.routedChannel",
+            "console.gateway.states.loading",
+            "console.gateway.states.loadErrorTitle",
+            "console.gateway.states.loadErrorFallback",
+            "console.gateway.states.emptyTitle",
+            "console.gateway.states.emptyDescription",
+        ]:
+            self.assertIn(marker, gateway_view + gateway_service + i18n)
+            self.assertGreaterEqual(i18n.count(f'"{marker}"'), 2)
+
+        for hardcoded_copy in [
+            "Gateway & Logs",
+            "Request trace observability for gateway traffic.",
+            "Trace Rows",
+            "Successful",
+            "Latest gateway request history.",
+            "Loading gateway traces...",
+            "Gateway traces could not be loaded",
+            "No gateway traces found",
+            "Gateway request traces will appear here after traffic reaches the router.",
+            "Failed to load gateway traces.",
+            "Failed to fetch gateway traces",
+        ]:
+            self.assertNotIn(hardcoded_copy, gateway_view)
+            self.assertNotIn(hardcoded_copy, gateway_service)
 
 
 if __name__ == "__main__":

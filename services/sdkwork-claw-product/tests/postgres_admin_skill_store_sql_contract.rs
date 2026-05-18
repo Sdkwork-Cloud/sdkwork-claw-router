@@ -60,6 +60,24 @@ fn postgres_admin_skill_scopes_every_mutation_to_trusted_tenant_and_organization
 }
 
 #[test]
+fn postgres_admin_skill_read_scope_matches_skill_store_visible_catalog_scope() {
+    for expected in [
+        "const PUBLIC_SKILLS_TENANT_ID: i64 = 0;",
+        "const PUBLIC_SKILLS_ORGANIZATION_ID: i64 = 0;",
+        "(tenant_id = $1 AND organization_id = $2) OR (tenant_id = $3 AND organization_id = $4)",
+        "WHEN tenant_id = $1 AND organization_id = $2 THEN 0",
+        "WHEN tenant_id = $3 AND organization_id = $4 THEN 1",
+        "AND ($5::text IS NULL OR name ILIKE $6 ESCAPE '\\' OR package_key ILIKE $7 ESCAPE '\\')",
+        "AND ($16::bigint IS NULL OR category_id = $17)",
+        "LIMIT $18 OFFSET $19",
+        "AND target_type = $5 AND target_id = $6",
+        "FROM plus_agent_skill WHERE id = $1 AND ( (tenant_id = $2 AND organization_id = $3) OR (tenant_id = $4 AND organization_id = $5) )",
+    ] {
+        assert_sql_contains(POSTGRES_ADMIN_SKILL_STORE, expected);
+    }
+}
+
+#[test]
 fn postgres_admin_skill_uses_jsonb_for_skill_metadata_and_audit_payloads() {
     for expected in [
         "$35::jsonb",

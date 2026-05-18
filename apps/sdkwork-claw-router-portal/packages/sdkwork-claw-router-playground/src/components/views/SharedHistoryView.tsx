@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ChatHistoryItem } from '../ChatHistoryItem';
 import type { PlaygroundHistoryItem, PlaygroundPreviewSetter } from '../../playgroundTypes';
 
 const tabs = [
-  { id: 'all', label: 'All' },
-  { id: 'image', label: 'Images' },
-  { id: 'video', label: 'Videos' },
-  { id: 'music', label: 'Music' },
-  { id: 'audio', label: 'Audio' },
-  { id: 'sfx', label: 'SFX' },
+  { id: 'all', labelKey: 'playground.history.filter.all' },
+  { id: 'image', labelKey: 'playground.history.filter.images' },
+  { id: 'video', labelKey: 'playground.history.filter.videos' },
+  { id: 'music', labelKey: 'common.modality.music' },
+  { id: 'audio', labelKey: 'common.modality.audio' },
+  { id: 'sfx', labelKey: 'common.modality.sfx' },
 ];
 
 export function SharedHistoryView({
@@ -20,6 +21,7 @@ export function SharedHistoryView({
   setPreviewItem: PlaygroundPreviewSetter;
   modality: string;
 }) {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('all');
 
   useEffect(() => {
@@ -42,7 +44,7 @@ export function SharedHistoryView({
               onClick={() => setActiveTab(tab.id)}
               className={`relative whitespace-nowrap pb-1 transition-colors ${activeTab === tab.id ? 'text-white drop-shadow-sm' : 'hover:text-white'}`}
             >
-              {tab.label}
+              {t(tab.labelKey)}
               {activeTab === tab.id && <span className="absolute bottom-0 left-0 h-[2px] w-full rounded-t-full bg-indigo-500" />}
             </button>
           ))}
@@ -52,7 +54,7 @@ export function SharedHistoryView({
       <div className="flex w-full flex-col gap-10 pb-20">
         {filteredHistory.length === 0 ? (
           <div className="flex min-h-[260px] items-center justify-center rounded-2xl border border-dashed border-white/10 bg-white/[0.02] text-sm text-slate-500">
-            No generated assets are available until the Playground API contract is closed.
+            {t('playground.history.empty')}
           </div>
         ) : (
           filteredHistory.map((item, index) => {

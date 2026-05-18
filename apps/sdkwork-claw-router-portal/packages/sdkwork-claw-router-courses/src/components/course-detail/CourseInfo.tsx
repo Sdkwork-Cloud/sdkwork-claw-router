@@ -64,7 +64,7 @@ export function CourseInfo({
             className="flex items-center gap-1.5 px-2 py-1.5 hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-colors text-slate-500"
           >
             <AlertTriangle className="w-4 h-4" />
-            <span className="hidden sm:inline">Report content</span>
+            <span className="hidden sm:inline">{t('common.actions.reportContent')}</span>
           </button>
         </div>
       </div>

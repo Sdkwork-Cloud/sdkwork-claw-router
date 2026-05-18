@@ -125,12 +125,9 @@ class BillingApi {
     })();
   }
 
-  /// List account points recharge packages
-  Future<AccountPointsRechargesPackagesListResult?> accountPointsRechargesPackagesList([String? status]) async {
-    final query = buildQueryString([
-      QueryParameterSpec('status', status, 'form', true, false, null)
-    ]);
-    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.appPath('/billing/account/points/recharges/packages'), query));
+  /// List packages
+  Future<AccountPointsRechargesPackagesListResult?> accountPointsRechargesPackagesList() async {
+    final response = await _client.get(ApiPaths.appPath('/billing/account/points/recharges/packages'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AccountPointsRechargesPackagesListResult.fromJson(map);
@@ -477,7 +474,7 @@ class BillingApi {
     })();
   }
 
-  /// List packages
+  /// List VIP packs
   Future<VipPacksListResult?> vipPacksList() async {
     final response = await _client.get(ApiPaths.appPath('/billing/vip/packs'));
     return (() {

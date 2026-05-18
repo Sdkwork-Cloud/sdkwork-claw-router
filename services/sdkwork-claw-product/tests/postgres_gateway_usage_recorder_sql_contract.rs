@@ -65,7 +65,7 @@ fn gateway_usage_recorder_scopes_rows_and_projects_meter_amounts() {
         "base_input_unit_price, base_output_unit_price",
         "customer_charge_amount, cost_amount",
         "pricing_plan_code",
-        "llm_input_token",
+        ".bind(&command.billing_meter_code)",
     ] {
         assert_sql_contains(POSTGRES_GATEWAY_USAGE_RECORDER, expected);
     }

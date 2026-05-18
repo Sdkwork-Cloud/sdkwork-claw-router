@@ -6,7 +6,8 @@ use axum::{Json, Router};
 use sdkwork_claw_config::{
     ApiKeySecurityConfig, DatabaseConfig, DeploymentMode, ProviderSecretMapConfig,
 };
-use sdkwork_claw_product::application::Pbkdf2Sha256PasswordHasher;
+use sdkwork_claw_product::application::{ApiKeySecretCodec, Pbkdf2Sha256PasswordHasher};
+use sdkwork_claw_product::infrastructure::crypto::RingAeadApiKeySecretCodec;
 use sdkwork_claw_test_support::{
     api_key_security_config as test_api_key_security_config,
     app_session_config as test_app_session_config, app_session_dual_token_headers,
@@ -81,9 +82,11 @@ async fn database_config_app_api_keys_require_app_session_and_scope_to_subject()
     assert_eq!(1, items.len());
     assert_eq!("Owner Key", items[0]["name"]);
     assert_eq!("sk-owner********ABCD", items[0]["maskedKey"]);
+    assert_eq!("sk-owner-secret", items[0]["copyableKey"]);
     assert!(items[0].get("keyVal").is_none());
     assert!(items[0].get("fullKey").is_none());
     assert!(!body_text.contains("Other User Key"));
+    assert!(!body_text.contains("sk-other-secret"));
     assert!(!body_text.contains("hash:owner"));
     assert!(!body_text.contains("hash:other"));
 }
@@ -1321,6 +1324,8 @@ async fn database_config_dashboard_scopes_metrics_to_app_session_subject() {
     assert_eq!("2000", payload["code"]);
     assert_eq!(7, payload["data"]["summary"]["requestCount"]);
     assert_eq!(1.25, payload["data"]["summary"]["usedCredits"]);
+    assert_eq!(10, payload["data"]["summary"]["totalRequestCount"]);
+    assert_eq!(3.0, payload["data"]["summary"]["totalUsedCredits"]);
     assert_eq!(1, payload["data"]["summary"]["errorCount"]);
     assert_eq!(2, payload["data"]["summary"]["imageRequests"]);
     assert_eq!("2026-04-29", payload["data"]["chartData"][0]["time"]);
@@ -1450,6 +1455,111 @@ async fn database_config_billing_redeem_persists_points_and_history_for_subject(
 }
 
 #[tokio::test]
+async fn database_config_billing_reads_return_empty_defaults_when_optional_read_models_are_absent()
+{
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog_with_two_user_api_keys(&pool).await;
+    seed_app_user_data(&pool).await;
+    for table in [
+        "plus_coupon",
+        "plus_user_coupon",
+        "plus_vip_point_change",
+        "plus_account",
+        "plus_account_history",
+        "plus_order",
+        "plus_payment",
+        "plus_vip_recharge",
+        "plus_vip_recharge_pack",
+        "plus_vip_recharge_method",
+        "plus_product",
+        "plus_sku",
+        "iam_user_security_setting",
+        "iam_user_login_event",
+        "ai_usage_fact",
+    ] {
+        sqlx::query(&format!("DROP TABLE {table}"))
+            .execute(&pool)
+            .await
+            .unwrap();
+    }
+    pool.close().await;
+
+    let router = configured_router(&database_url).await;
+
+    for uri in [
+        "/app/v3/api/billing/users/current/coupons",
+        "/app/v3/api/billing/payments/records",
+        "/app/v3/api/billing/account/points/history",
+        "/app/v3/api/billing/account/points/recharges/packages",
+    ] {
+        let (status, payload, body_text) = request_json(
+            router.clone(),
+            session_request("GET", uri, Body::empty(), 10, 20, 30),
+        )
+        .await;
+        assert_eq!(StatusCode::OK, status, "{uri}: {body_text}");
+        assert_eq!("2000", payload["code"], "{uri}: {body_text}");
+        assert_eq!(
+            0,
+            payload["data"].as_array().unwrap().len(),
+            "{uri}: {body_text}"
+        );
+    }
+
+    let (points_status, points_payload, points_body_text) = request_json(
+        router.clone(),
+        session_request(
+            "GET",
+            "/app/v3/api/billing/account/points",
+            Body::empty(),
+            10,
+            20,
+            30,
+        ),
+    )
+    .await;
+    assert_eq!(StatusCode::OK, points_status, "{points_body_text}");
+    assert_eq!("2000", points_payload["code"], "{points_body_text}");
+    assert_eq!(0, points_payload["data"]["availablePoints"]);
+    assert_eq!(0, points_payload["data"]["frozenPoints"]);
+
+    let (summary_status, summary_payload, summary_body_text) = request_json(
+        router,
+        session_request(
+            "GET",
+            "/app/v3/api/billing/account/summary",
+            Body::empty(),
+            10,
+            20,
+            30,
+        ),
+    )
+    .await;
+    assert_eq!(StatusCode::OK, summary_status, "{summary_body_text}");
+    assert_eq!("2000", summary_payload["code"], "{summary_body_text}");
+    assert_eq!("30", summary_payload["data"]["id"]);
+    assert_eq!(0.0, summary_payload["data"]["availableCredits"]);
+    assert_eq!(0.0, summary_payload["data"]["monthlyConsumption"]);
+    assert_eq!(
+        0,
+        summary_payload["data"]["consumptionByService"]
+            .as_array()
+            .unwrap()
+            .len()
+    );
+    assert_eq!(
+        0,
+        summary_payload["data"]["loginLogs"]
+            .as_array()
+            .unwrap()
+            .len()
+    );
+    assert_eq!(false, summary_payload["data"]["security"]["mfaEnabled"]);
+}
+
+#[tokio::test]
 async fn database_config_api_key_create_persists_and_scopes_created_key_to_subject() {
     let database_url = unique_sqlite_url();
     let pool = create_sqlite_pool(&database_url).await;
@@ -1485,6 +1595,7 @@ async fn database_config_api_key_create_persists_and_scopes_created_key_to_subje
     let raw_key = create_payload["data"]["rawKey"].as_str().unwrap();
     assert!(raw_key.starts_with("sk-claw-"));
     assert_eq!("CLI Runtime Key", create_payload["data"]["item"]["name"]);
+    assert_eq!(raw_key, create_payload["data"]["item"]["copyableKey"]);
     assert_eq!("125.000000", create_payload["data"]["item"]["quota"]);
     assert_eq!("0.000000", create_payload["data"]["item"]["usedQuota"]);
     assert_eq!("203.0.113.10", create_payload["data"]["item"]["ipLimit"]);
@@ -1503,8 +1614,11 @@ async fn database_config_api_key_create_persists_and_scopes_created_key_to_subje
     assert_eq!(2, items.len());
     assert!(items.iter().any(|item| item["name"] == "Owner Key"));
     assert!(items.iter().any(|item| item["name"] == "CLI Runtime Key"));
-    assert!(!list_body_text.contains(raw_key));
+    assert!(items
+        .iter()
+        .any(|item| item["name"] == "CLI Runtime Key" && item["copyableKey"] == raw_key));
     assert!(!list_body_text.contains("Other User Key"));
+    assert!(!list_body_text.contains("sk-other-secret"));
     assert!(!list_body_text.contains("hash:"));
 }
 
@@ -1576,7 +1690,11 @@ async fn database_config_app_routing_routes_require_session_scope_and_redact_sen
     assert_eq!("Owner Key", keys_payload["data"]["items"][0]["name"]);
     assert_eq!(
         "sk-owner********ABCD",
-        keys_payload["data"]["items"][0]["key"]
+        keys_payload["data"]["items"][0]["displayKey"]
+    );
+    assert_eq!(
+        "sk-owner-secret",
+        keys_payload["data"]["items"][0]["copyableKey"]
     );
     assert_eq!("5", keys_payload["data"]["items"][0]["totalUsage"]);
     assert!(!keys_body_text.contains("Other User Key"));
@@ -3277,6 +3395,7 @@ async fn create_schema(pool: &SqlitePool) {
             base_url_override TEXT,
             timeout_ms INTEGER,
             retry_policy TEXT,
+            circuit_breaker_policy TEXT,
             model_mode INTEGER,
             environment INTEGER,
             account_id INTEGER,
@@ -3368,6 +3487,8 @@ async fn create_schema(pool: &SqlitePool) {
         )"#,
         r#"CREATE TABLE iam_gateway_api_key_group (
             id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
             code TEXT NOT NULL,
             pricing_plan_code TEXT NOT NULL,
             rate_multiplier TEXT NOT NULL,
@@ -3398,7 +3519,8 @@ async fn create_schema(pool: &SqlitePool) {
             deleted_at TEXT,
             revoked_at TEXT,
             expire_at TEXT,
-            last_revealed_at TEXT
+            last_revealed_at TEXT,
+            metadata TEXT NOT NULL DEFAULT '{}'
         )"#,
         r#"CREATE TABLE iam_gateway_access_policy (
             id INTEGER PRIMARY KEY,
@@ -3476,22 +3598,6 @@ async fn create_schema(pool: &SqlitePool) {
             before_hash TEXT,
             after_hash TEXT,
             change_summary TEXT
-        )"#,
-        r#"CREATE TABLE plus_user (
-            id INTEGER PRIMARY KEY,
-            uuid TEXT,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            nickname TEXT,
-            username TEXT,
-            email TEXT,
-            phone TEXT,
-            avatar TEXT,
-            password TEXT,
-            salt TEXT,
-            status INTEGER NOT NULL,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL
         )"#,
         r#"CREATE TABLE iam_tenant (
             id TEXT PRIMARY KEY,
@@ -3648,14 +3754,6 @@ async fn create_schema(pool: &SqlitePool) {
             occurred_at TEXT,
             created_at TEXT,
             client_ip_masked TEXT
-        )"#,
-        r#"CREATE TABLE plus_oauth_account (
-            id INTEGER PRIMARY KEY,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            user_id INTEGER NOT NULL,
-            oauth_provider TEXT NOT NULL,
-            oauth_open_id TEXT
         )"#,
         r#"CREATE TABLE ai_usage_fact (
             id INTEGER PRIMARY KEY,
@@ -4198,6 +4296,8 @@ async fn create_schema(pool: &SqlitePool) {
 }
 
 async fn seed_catalog_with_two_user_api_keys(pool: &SqlitePool) {
+    let owner_key_metadata = api_key_metadata_json("sk-owner-secret");
+    let other_key_metadata = api_key_metadata_json("sk-other-secret");
     for statement in [
         "INSERT INTO ai_model_vendor (id, vendor_code, display_name, status, sort_order) VALUES (1, 'openai', 'OpenAI', 1, 1)",
         r#"INSERT INTO ai_model
@@ -4209,16 +4309,41 @@ async fn seed_catalog_with_two_user_api_keys(pool: &SqlitePool) {
         "INSERT INTO integration_channel_model (id, catalog_key, model, channel_id, vendor_code, provider_model, status) VALUES (1, 'openai/global/gpt-4o-mini', 'gpt-4o-mini', 3001, 'openai', 'openai/global/gpt-4o-mini', 1)",
         "INSERT INTO ai_pricing_plan (id, plan_code, base_price_side, default_multiplier, default_markup_amount, currency, status, priority) VALUES (1, 'standard', 1, '1.200000', '0.000000', 'USD', 1, 1)",
         "INSERT INTO iam_gateway_api_key_group (id, code, pricing_plan_code, rate_multiplier, official_price_multiplier, status, updated_at) VALUES (10, 'standard-group', 'standard', '1.000000', '1.100000', 1, '2026-04-29 09:00:00')",
-        r#"INSERT INTO iam_gateway_api_key
-            (id, tenant_id, organization_id, user_id, group_id, name, key_prefix, key_display_masked, key_hash, idempotency_key, status, created_at, updated_at)
-            VALUES (100, 10, 20, 30, 10, 'Owner Key', 'sk-owner', 'sk-owner********ABCD', 'hash:owner', 'seed-owner-key', 1, '2026-04-10 20:55:41', '2026-04-29 09:00:00')"#,
-        r#"INSERT INTO iam_gateway_api_key
-            (id, tenant_id, organization_id, user_id, group_id, name, key_prefix, key_display_masked, key_hash, idempotency_key, status, created_at, updated_at)
-            VALUES (101, 10, 20, 31, 10, 'Other User Key', 'sk-other', 'sk-other********WXYZ', 'hash:other', 'seed-other-key', 1, '2026-04-10 20:55:42', '2026-04-29 09:01:00')"#,
         "INSERT INTO ai_model_pricing (id, catalog_key, model, price_side, billing_meter_code, unit_price, currency, status, priority) VALUES (1, 'openai/global/gpt-4o-mini', 'gpt-4o-mini', 1, 'llm_input_token', '0.150000', 'USD', 1, 1)",
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
+    sqlx::query(
+        r#"
+        INSERT INTO iam_gateway_api_key
+            (id, tenant_id, organization_id, user_id, group_id, name, key_prefix, key_display_masked, key_hash, idempotency_key, status, created_at, updated_at, metadata)
+            VALUES (100, 10, 20, 30, 10, 'Owner Key', 'sk-owner', 'sk-owner********ABCD', 'hash:owner', 'seed-owner-key', 1, '2026-04-10 20:55:41', '2026-04-29 09:00:00', ?)
+        "#,
+    )
+    .bind(&owner_key_metadata)
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO iam_gateway_api_key
+            (id, tenant_id, organization_id, user_id, group_id, name, key_prefix, key_display_masked, key_hash, idempotency_key, status, created_at, updated_at, metadata)
+            VALUES (101, 10, 20, 31, 10, 'Other User Key', 'sk-other', 'sk-other********WXYZ', 'hash:other', 'seed-other-key', 1, '2026-04-10 20:55:42', '2026-04-29 09:01:00', ?)
+        "#,
+    )
+    .bind(&other_key_metadata)
+    .execute(pool)
+    .await
+    .unwrap();
+}
+
+fn api_key_metadata_json(secret: &str) -> String {
+    let codec = RingAeadApiKeySecretCodec::new(api_key_security_config().pepper_secret()).unwrap();
+    serde_json::json!({
+        "copyableKeyCiphertext": codec.encode_secret(secret).unwrap(),
+        "copyableKeyStorage": "encrypted-managed-console-read-model"
+    })
+    .to_string()
 }
 
 async fn seed_app_user_data(pool: &SqlitePool) {
@@ -4228,32 +4353,6 @@ async fn seed_app_user_data(pool: &SqlitePool) {
         1_000,
     )
     .unwrap();
-    sqlx::query(
-        r#"INSERT INTO plus_user
-            (id, uuid, tenant_id, organization_id, nickname, username, email, phone, avatar, password, salt, status, created_at, updated_at)
-            VALUES
-            (30, 'user-owner-uuid', 10, 20, 'Owner User', 'owner', 'owner@example.com', '+15550000030', 'O', ?, 'owner-salt', 1, '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
-    )
-    .bind(owner_password_hash)
-    .execute(pool)
-    .await
-    .unwrap();
-    let owner_password_hash = Pbkdf2Sha256PasswordHasher::hash_password_with_salt(
-        "correct-password",
-        b"database-config-owner-password-salt",
-        1_000,
-    )
-    .unwrap();
-    sqlx::query(
-        r#"INSERT INTO plus_user
-            (id, uuid, tenant_id, organization_id, nickname, username, email, phone, avatar, password, salt, status, created_at, updated_at)
-            VALUES
-            (31, 'user-other-uuid', 10, 20, 'Other User', 'other', 'other@example.com', '+15550000031', 'O', 'other-password-hash', 'other-salt', 1, '2026-04-02 08:00:00', '2026-04-29 08:00:00')"#,
-    )
-    .execute(pool)
-    .await
-    .unwrap();
-
     for statement in [
         r#"INSERT INTO iam_tenant
             (id, code, name, status, created_at, updated_at)
@@ -4280,12 +4379,6 @@ async fn seed_app_user_data(pool: &SqlitePool) {
         r#"INSERT INTO iam_user_login_event
             (id, tenant_id, organization_id, user_id, request_id, occurred_at, created_at, client_ip_masked)
             VALUES (1003, 10, 20, 30, 'owner-login-request', '2026-04-29 10:00:00', '2026-04-29 10:00:00', '203.0.113.***')"#,
-        r#"INSERT INTO plus_oauth_account
-            (id, tenant_id, organization_id, user_id, oauth_provider, oauth_open_id)
-            VALUES (1004, 10, 20, 30, 'github', 'github-owner-open-id')"#,
-        r#"INSERT INTO plus_oauth_account
-            (id, tenant_id, organization_id, user_id, oauth_provider, oauth_open_id)
-            VALUES (1005, 10, 20, 30, 'google', 'google-owner-open-id')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
@@ -4354,6 +4447,9 @@ async fn seed_dashboard_data(pool: &SqlitePool) {
         r#"INSERT INTO ai_usage_fact
             (id, tenant_id, organization_id, user_id, request_id, status, request_count, total_tokens, customer_charge_amount, cost_amount, modality, occurred_at)
             VALUES (2002, 10, 20, 30, 'owner-image-request', 1, 2, 0, '0.250000', '0.120000', 2, '2026-04-29 11:00:00')"#,
+        r#"INSERT INTO ai_usage_fact
+            (id, tenant_id, organization_id, user_id, request_id, status, request_count, total_tokens, customer_charge_amount, cost_amount, modality, occurred_at)
+            VALUES (2010, 10, 20, 30, 'owner-history-request', 1, 3, 300, '1.750000', '1.200000', 1, '2026-03-01 08:00:00')"#,
         r#"INSERT INTO ai_usage_fact
             (id, tenant_id, organization_id, user_id, request_id, status, request_count, total_tokens, customer_charge_amount, cost_amount, modality, occurred_at)
             VALUES (2003, 10, 20, 31, 'other-user-request', 1, 99, 9900, '99.000000', '50.000000', 1, '2026-04-29 10:00:00')"#,

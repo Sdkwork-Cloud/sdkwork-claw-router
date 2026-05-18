@@ -239,7 +239,7 @@ def serialize_header_primitive(value: Any) -> str:
 
 class BillingApi:
     """billing billing API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.account = BillingAccountApi(client)
@@ -254,7 +254,7 @@ class BillingApi:
 
 class BillingAccountApi:
     """billing billing.account API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.points = BillingAccountPointsApi(client)
@@ -264,7 +264,7 @@ class BillingAccountApi:
 
 class BillingAccountPointsApi:
     """billing billing.account.points API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.exchange_rate = BillingAccountPointsExchangeRateApi(client)
@@ -280,7 +280,7 @@ class BillingAccountPointsApi:
 
 class BillingAccountPointsExchangeRateApi:
     """billing billing.account.points.exchange_rate API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -291,7 +291,7 @@ class BillingAccountPointsExchangeRateApi:
 
 class BillingAccountPointsExchangesApi:
     """billing billing.account.points.exchanges API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.rules = BillingAccountPointsExchangesRulesApi(client)
@@ -314,7 +314,7 @@ class BillingAccountPointsExchangesApi:
 
 class BillingAccountPointsExchangesRulesApi:
     """billing billing.account.points.exchanges.rules API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -329,7 +329,7 @@ class BillingAccountPointsExchangesRulesApi:
 
 class BillingAccountPointsHistoryApi:
     """billing billing.account.points.history API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -345,7 +345,7 @@ class BillingAccountPointsHistoryApi:
 
 class BillingAccountPointsRechargesApi:
     """billing billing.account.points.recharges API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.orders = BillingAccountPointsRechargesOrdersApi(client)
@@ -366,7 +366,7 @@ class BillingAccountPointsRechargesApi:
 
 class BillingAccountPointsRechargesOrdersApi:
     """billing billing.account.points.recharges.orders API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -388,21 +388,18 @@ class BillingAccountPointsRechargesOrdersApi:
 
 class BillingAccountPointsRechargesPackagesApi:
     """billing billing.account.points.recharges.packages API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
 
-    def list(self, status: Optional[str] = None) -> AccountPointsRechargesPackagesListResult:
-        """List account points recharge packages"""
-        query = build_query_string([
-            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
-        ])
-        return self._client.get(_append_query_string(f"/app/v3/api/billing/account/points/recharges/packages", query))
+    def list(self) -> AccountPointsRechargesPackagesListResult:
+        """List packages"""
+        return self._client.get(f"/app/v3/api/billing/account/points/recharges/packages")
 
 class BillingAccountPointsRechargesRecordsApi:
     """billing billing.account.points.recharges.records API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -418,7 +415,7 @@ class BillingAccountPointsRechargesRecordsApi:
 
 class BillingAccountPointsTransfersApi:
     """billing billing.account.points.transfers API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -436,7 +433,7 @@ class BillingAccountPointsTransfersApi:
 
 class BillingAccountSummaryApi:
     """billing billing.account.summary API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -447,7 +444,7 @@ class BillingAccountSummaryApi:
 
 class BillingAccountTokensApi:
     """billing billing.account.tokens API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.deductions = BillingAccountTokensDeductionsApi(client)
@@ -459,7 +456,7 @@ class BillingAccountTokensApi:
 
 class BillingAccountTokensDeductionsApi:
     """billing billing.account.tokens.deductions API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -477,7 +474,7 @@ class BillingAccountTokensDeductionsApi:
 
 class BillingCouponsApi:
     """billing billing.coupons API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.catalog = BillingCouponsCatalogApi(client)
@@ -489,7 +486,7 @@ class BillingCouponsApi:
 
 class BillingCouponsCatalogApi:
     """billing billing.coupons.catalog API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -510,7 +507,7 @@ class BillingCouponsCatalogApi:
 
 class BillingCouponsClaimsApi:
     """billing billing.coupons.claims API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -528,7 +525,7 @@ class BillingCouponsClaimsApi:
 
 class BillingCouponsRedeemApi:
     """billing billing.coupons.redeem API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -546,7 +543,7 @@ class BillingCouponsRedeemApi:
 
 class BillingCouponsUsageApi:
     """billing billing.coupons.usage API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -564,7 +561,7 @@ class BillingCouponsUsageApi:
 
 class BillingCouponsUsageReversalsApi:
     """billing billing.coupons.usage_reversals API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -582,7 +579,7 @@ class BillingCouponsUsageReversalsApi:
 
 class BillingPaymentsApi:
     """billing billing.payments API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.checkout = BillingPaymentsCheckoutApi(client)
@@ -591,7 +588,7 @@ class BillingPaymentsApi:
 
 class BillingPaymentsCheckoutApi:
     """billing billing.payments.checkout API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -602,7 +599,7 @@ class BillingPaymentsCheckoutApi:
 
 class BillingPaymentsRecordsApi:
     """billing billing.payments.records API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -617,7 +614,7 @@ class BillingPaymentsRecordsApi:
 
 class BillingPreflightApi:
     """billing billing.preflight API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.estimates = BillingPreflightEstimatesApi(client)
@@ -629,7 +626,7 @@ class BillingPreflightApi:
 
 class BillingPreflightEstimatesApi:
     """billing billing.preflight.estimates API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -640,7 +637,7 @@ class BillingPreflightEstimatesApi:
 
 class BillingPreflightPrechecksApi:
     """billing billing.preflight.prechecks API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -651,7 +648,7 @@ class BillingPreflightPrechecksApi:
 
 class BillingPreflightPreholdsApi:
     """billing billing.preflight.preholds API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -669,7 +666,7 @@ class BillingPreflightPreholdsApi:
 
 class BillingPreflightReleasesApi:
     """billing billing.preflight.releases API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -687,7 +684,7 @@ class BillingPreflightReleasesApi:
 
 class BillingPreflightSettlementsApi:
     """billing billing.preflight.settlements API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -705,7 +702,7 @@ class BillingPreflightSettlementsApi:
 
 class BillingSettlementsApi:
     """billing billing.settlements API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.dashboard = BillingSettlementsDashboardApi(client)
@@ -713,7 +710,7 @@ class BillingSettlementsApi:
 
 class BillingSettlementsDashboardApi:
     """billing billing.settlements.dashboard API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -727,7 +724,7 @@ class BillingSettlementsDashboardApi:
 
 class BillingUsersApi:
     """billing billing.users API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.current = BillingUsersCurrentApi(client)
@@ -735,7 +732,7 @@ class BillingUsersApi:
 
 class BillingUsersCurrentApi:
     """billing billing.users.current API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.coupons = BillingUsersCurrentCouponsApi(client)
@@ -743,7 +740,7 @@ class BillingUsersCurrentApi:
 
 class BillingUsersCurrentCouponsApi:
     """billing billing.users.current.coupons API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -758,7 +755,7 @@ class BillingUsersCurrentCouponsApi:
 
 class BillingVipApi:
     """billing billing.vip API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.benefits = BillingVipBenefitsApi(client)
@@ -774,7 +771,7 @@ class BillingVipApi:
 
 class BillingVipBenefitsApi:
     """billing billing.vip.benefits API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -785,7 +782,7 @@ class BillingVipBenefitsApi:
 
 class BillingVipInfoApi:
     """billing billing.vip.info API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -796,7 +793,7 @@ class BillingVipInfoApi:
 
 class BillingVipLevelsApi:
     """billing billing.vip.levels API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -807,7 +804,7 @@ class BillingVipLevelsApi:
 
 class BillingVipPackGroupsApi:
     """billing billing.vip.pack_groups API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.packs = BillingVipPackGroupsPacksApi(client)
@@ -823,7 +820,7 @@ class BillingVipPackGroupsApi:
 
 class BillingVipPackGroupsPacksApi:
     """billing billing.vip.pack_groups.packs API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -834,13 +831,13 @@ class BillingVipPackGroupsPacksApi:
 
 class BillingVipPacksApi:
     """billing billing.vip.packs API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
 
     def list(self) -> VipPacksListResult:
-        """List packages"""
+        """List VIP packs"""
         return self._client.get(f"/app/v3/api/billing/vip/packs")
 
     def retrieve(self, pack_id: str) -> VipPacksRetrieveResult:
@@ -849,7 +846,7 @@ class BillingVipPacksApi:
 
 class BillingVipPointsApi:
     """billing billing.vip.points API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.balance = BillingVipPointsBalanceApi(client)
@@ -859,7 +856,7 @@ class BillingVipPointsApi:
 
 class BillingVipPointsBalanceApi:
     """billing billing.vip.points.balance API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -870,7 +867,7 @@ class BillingVipPointsBalanceApi:
 
 class BillingVipPointsDailyRewardsApi:
     """billing billing.vip.points.daily_rewards API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.status = BillingVipPointsDailyRewardsStatusApi(client)
@@ -889,7 +886,7 @@ class BillingVipPointsDailyRewardsApi:
 
 class BillingVipPointsDailyRewardsStatusApi:
     """billing billing.vip.points.daily_rewards.status API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -900,7 +897,7 @@ class BillingVipPointsDailyRewardsStatusApi:
 
 class BillingVipPointsHistoryApi:
     """billing billing.vip.points.history API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -916,7 +913,7 @@ class BillingVipPointsHistoryApi:
 
 class BillingVipPrivilegesApi:
     """billing billing.vip.privileges API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.speed_ups = BillingVipPrivilegesSpeedUpsApi(client)
@@ -925,7 +922,7 @@ class BillingVipPrivilegesApi:
 
 class BillingVipPrivilegesSpeedUpsApi:
     """billing billing.vip.privileges.speed_ups API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -943,7 +940,7 @@ class BillingVipPrivilegesSpeedUpsApi:
 
 class BillingVipPrivilegesUsageApi:
     """billing billing.vip.privileges.usage API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -954,7 +951,7 @@ class BillingVipPrivilegesUsageApi:
 
 class BillingVipPurchaseApi:
     """billing billing.vip.purchase API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -994,7 +991,7 @@ class BillingVipPurchaseApi:
 
 class BillingVipStatusApi:
     """billing billing.vip.status API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -1005,7 +1002,7 @@ class BillingVipStatusApi:
 
 class BillingWalletApi:
     """billing billing.wallet API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.accounts = BillingWalletAccountsApi(client)
@@ -1020,7 +1017,7 @@ class BillingWalletApi:
 
 class BillingWalletAccountsApi:
     """billing billing.wallet.accounts API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -1034,7 +1031,7 @@ class BillingWalletAccountsApi:
 
 class BillingWalletExchangesApi:
     """billing billing.wallet.exchanges API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -1052,7 +1049,7 @@ class BillingWalletExchangesApi:
 
 class BillingWalletOperationsApi:
     """billing billing.wallet.operations API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -1063,7 +1060,7 @@ class BillingWalletOperationsApi:
 
 class BillingWalletOverviewApi:
     """billing billing.wallet.overview API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -1074,7 +1071,7 @@ class BillingWalletOverviewApi:
 
 class BillingWalletTopupsApi:
     """billing billing.wallet.topups API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -1092,7 +1089,7 @@ class BillingWalletTopupsApi:
 
 class BillingWalletTransactionsApi:
     """billing billing.wallet.transactions API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -1112,7 +1109,7 @@ class BillingWalletTransactionsApi:
 
 class BillingWalletTransfersApi:
     """billing billing.wallet.transfers API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -1130,7 +1127,7 @@ class BillingWalletTransfersApi:
 
 class BillingWalletWithdrawalsApi:
     """billing billing.wallet.withdrawals API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 

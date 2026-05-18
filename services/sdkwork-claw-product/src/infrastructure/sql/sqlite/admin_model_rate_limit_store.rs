@@ -141,13 +141,18 @@ async fn find_access_group(
         r#"
         SELECT id, COALESCE(code, '') AS code, COALESCE(name, '') AS name
         FROM iam_gateway_api_key_group
-        WHERE (tenant_id IS NULL OR tenant_id = ?)
-          AND (organization_id IS NULL OR organization_id = ?)
+        WHERE (tenant_id = ? OR tenant_id = 0 OR tenant_id IS NULL)
+          AND (organization_id = ? OR organization_id = 0 OR organization_id IS NULL)
           AND (code = ? OR name = ?)
           AND status = 1
           AND deleted_at IS NULL
         ORDER BY
-          CASE WHEN tenant_id = ? AND organization_id = ? THEN 0 ELSE 1 END,
+          CASE
+            WHEN tenant_id = ? AND organization_id = ? THEN 0
+            WHEN tenant_id = ? AND organization_id = 0 THEN 1
+            WHEN tenant_id = 0 AND organization_id = 0 THEN 2
+            ELSE 3
+          END,
           CASE WHEN code = ? THEN 0 ELSE 1 END,
           updated_at DESC,
           id DESC
@@ -160,6 +165,7 @@ async fn find_access_group(
     .bind(&command.group)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
+    .bind(command.subject.tenant_id)
     .bind(&command.group)
     .fetch_optional(&mut **tx)
     .await

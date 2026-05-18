@@ -89,10 +89,12 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 """
                 import { SdkworkAppClient } from '@sdkwork/clawrouter-app-sdk';
                 import { SdkworkBackendClient } from '@sdkwork/clawrouter-backend-sdk';
+                import { SdkworkAiClient } from '@sdkwork/clawrouter-open-sdk';
                 import { normalizeGeneratedSdkBaseUrl } from './sdk-base-url';
 
                 const APP_API_PREFIX = '/app/v3/api';
                 const BACKEND_API_PREFIX = '/backend/v3/api';
+                const OPEN_API_PREFIX = '/v1';
 
                 export interface ClawRouterAppSdkClientOptions {
                   accessToken?: string;
@@ -105,6 +107,15 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 export interface ClawRouterBackendSdkClientOptions {
                   accessToken?: string;
                   backendBaseUrl?: string;
+                  authToken?: string;
+                  platform?: string;
+                  timeout?: number;
+                }
+
+                export interface ClawRouterAiSdkClientOptions {
+                  accessToken?: string;
+                  aiBaseUrl?: string;
+                  apiKey?: string;
                   authToken?: string;
                   platform?: string;
                   timeout?: number;
@@ -124,6 +135,17 @@ class FrontendContractGuardianTest(unittest.TestCase):
                   return new SdkworkBackendClient({
                     baseUrl: normalizeGeneratedSdkBaseUrl(options.backendBaseUrl ?? BACKEND_API_PREFIX, BACKEND_API_PREFIX),
                     accessToken: options.accessToken,
+                    authToken: options.authToken,
+                    platform: options.platform,
+                    timeout: options.timeout,
+                  });
+                }
+
+                export function getClawRouterAiSdkClient(options: ClawRouterAiSdkClientOptions = {}) {
+                  return new SdkworkAiClient({
+                    baseUrl: normalizeGeneratedSdkBaseUrl(options.aiBaseUrl ?? OPEN_API_PREFIX, OPEN_API_PREFIX),
+                    accessToken: options.accessToken,
+                    apiKey: options.apiKey,
                     authToken: options.authToken,
                     platform: options.platform,
                     timeout: options.timeout,
@@ -697,7 +719,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "sdkwork-claw-router-commons/src/sdk-clients.ts must construct generated app and backend SDK clients",
+                "sdkwork-claw-router-commons/src/sdk-clients.ts must construct generated app, backend, and AI SDK clients",
                 result.messages,
             )
 
@@ -747,7 +769,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "sdkwork-claw-router-commons/src/sdk-clients.ts must expose separate app/backend SDK option types without manual auth/header/baseUrl escape hatches",
+                "sdkwork-claw-router-commons/src/sdk-clients.ts must expose separate app/backend/AI SDK option types without manual header/baseUrl escape hatches",
                 result.messages,
             )
 

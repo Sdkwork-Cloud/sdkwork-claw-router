@@ -1,8 +1,16 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AccessGroupsCreateResult, AccessGroupsDeleteResult, AccessGroupsListResult, AccessGroupsUpdateResult, AdminAccessGroupCreateRequest, AdminAccessGroupUpdateRequest, AdminApiKeyCreateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersListResult } from '../types';
+import type { AccessGroupsCreateResult, AccessGroupsDeleteResult, AccessGroupsListResult, AccessGroupsUpdateResult, AdminAccessGroupCreateRequest, AdminAccessGroupUpdateRequest, AdminApiKeyCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersCreateResult, UsersListResult, UsersUpdateResult } from '../types';
 
+
+export interface IamUsersCreateParams {
+  xRequestId?: string;
+}
+
+export interface IamUsersUpdateParams {
+  xRequestId?: string;
+}
 
 export class IamUsersApi {
   private client: HttpClient;
@@ -15,6 +23,28 @@ export class IamUsersApi {
 /** List users */
   async list(): Promise<UsersListResult> {
     return this.client.get<UsersListResult>(backendApiPath(`/iam/users`));
+  }
+
+/** Create user */
+  async create(body: AdminUserCreateRequest, params?: IamUsersCreateParams): Promise<UsersCreateResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.post<UsersCreateResult>(backendApiPath(`/iam/users`), body, undefined, requestHeaders, 'application/json');
+  }
+
+/** Update user */
+  async update(body: AdminUserUpdateRequest, params?: IamUsersUpdateParams): Promise<UsersUpdateResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.put<UsersUpdateResult>(backendApiPath(`/iam/users`), body, undefined, requestHeaders, 'application/json');
   }
 }
 

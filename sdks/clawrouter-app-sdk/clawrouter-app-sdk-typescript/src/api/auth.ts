@@ -1,8 +1,22 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { IamCurrentSessionUpdateRequest, IamOauthSessionCreateRequest, IamPasswordResetCreateRequest, IamPasswordResetRequestCreateRequest, IamRegistrationCreateRequest, IamSessionCreateRequest, IamSessionRefreshRequest, IamVerificationCodeCreateRequest, IamVerificationCodeVerifyRequest, LoginQrCodesCreateResult, LoginQrCodesRetrieveResult, OauthAuthorizationUrlsRetrieveResult, OauthSessionsCreateResult, PasswordResetRequestsCreateResult, PasswordResetsCreateResult, RegistrationsCreateResult, RuntimeSettingsRetrieveResult, SessionsCreateResult, SessionsCurrentDeleteResult, SessionsCurrentRetrieveResult, SessionsCurrentUpdateResult, SessionsRefreshResult, VerificationCodesCreateResult, VerificationCodesVerifyResult } from '../types';
+import type { IamCurrentSessionUpdateRequest, IamLoginQrCodeConfirmRequest, IamOauthSessionCreateRequest, IamPasswordResetCreateRequest, IamPasswordResetRequestCreateRequest, IamRegistrationCreateRequest, IamSessionCreateRequest, IamSessionRefreshRequest, IamVerificationCodeCreateRequest, IamVerificationCodeVerifyRequest, LoginQrCodesConfirmResult, LoginQrCodesCreateResult, LoginQrCodesRetrieveResult, OauthAuthorizationUrlsRetrieveResult, OauthSessionsCreateResult, PasswordResetRequestsCreateResult, PasswordResetsCreateResult, RegistrationsCreateResult, RuntimeSettingsRetrieveResult, SessionsCreateResult, SessionsCurrentDeleteResult, SessionsCurrentRetrieveResult, SessionsCurrentUpdateResult, SessionsRefreshResult, VerificationCodesCreateResult, VerificationCodesVerifyResult, VerificationPolicyRetrieveResult } from '../types';
 
+
+export class AuthVerificationPolicyApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Retrieve public IAM verification policy */
+  async retrieve(): Promise<VerificationPolicyRetrieveResult> {
+    return this.client.get<VerificationPolicyRetrieveResult>(appApiPath(`/auth/verification_policy`));
+  }
+}
 
 export class AuthVerificationCodesApi {
   private client: HttpClient;
@@ -138,6 +152,11 @@ export class AuthLoginQrCodesApi {
     return this.client.post<LoginQrCodesCreateResult>(appApiPath(`/auth/qr_login_codes`));
   }
 
+/** Confirm QR login code */
+  async confirm(body: IamLoginQrCodeConfirmRequest): Promise<LoginQrCodesConfirmResult> {
+    return this.client.post<LoginQrCodesConfirmResult>(appApiPath(`/auth/qr_login_codes/confirm`), body, undefined, undefined, 'application/json');
+  }
+
 /** Retrieve QR login status */
   async retrieve(qrKey: string): Promise<LoginQrCodesRetrieveResult> {
     return this.client.get<LoginQrCodesRetrieveResult>(appApiPath(`/auth/qr_login_codes/${serializePathParameter(qrKey, { name: 'qrKey', style: 'simple', explode: false })}`));
@@ -224,6 +243,7 @@ export class AuthApi {
   public readonly runtimeSettings: AuthRuntimeSettingsApi;
   public readonly sessions: AuthSessionsApi;
   public readonly verificationCodes: AuthVerificationCodesApi;
+  public readonly verificationPolicy: AuthVerificationPolicyApi;
 
   constructor(client: HttpClient) {
     this.client = client;
@@ -236,6 +256,7 @@ export class AuthApi {
     this.runtimeSettings = new AuthRuntimeSettingsApi(client);
     this.sessions = new AuthSessionsApi(client);
     this.verificationCodes = new AuthVerificationCodesApi(client);
+    this.verificationPolicy = new AuthVerificationPolicyApi(client);
   }
 
 }

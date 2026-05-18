@@ -105,6 +105,7 @@ impl AppRoutingChannelCommandStore for PostgresAppRoutingChannelCommandStore {
                     "capabilities": &command.capabilities,
                     "timeoutMs": command.timeout_ms,
                     "retryPolicyConfigured": command.retry_policy_json.is_some(),
+                    "circuitBreakerPolicyConfigured": command.circuit_breaker_policy_json.is_some(),
                     "secretStoredAsRef": true
                 }),
             )
@@ -204,6 +205,7 @@ impl AppRoutingChannelCommandStore for PostgresAppRoutingChannelCommandStore {
                     "modelsChanged": command.models.is_some(),
                     "timeoutChanged": command.timeout_ms.is_some(),
                     "retryPolicyChanged": command.retry_policy_json.is_some(),
+                    "circuitBreakerPolicyChanged": command.circuit_breaker_policy_json.is_some(),
                     "secretRefChanged": command.secret_ref.is_some()
                 }),
                 &command.requested_at,
@@ -224,6 +226,7 @@ impl AppRoutingChannelCommandStore for PostgresAppRoutingChannelCommandStore {
                     "modelsChanged": command.models.is_some(),
                     "timeoutChanged": command.timeout_ms.is_some(),
                     "retryPolicyChanged": command.retry_policy_json.is_some(),
+                    "circuitBreakerPolicyChanged": command.circuit_breaker_policy_json.is_some(),
                     "secretRefChanged": command.secret_ref.is_some(),
                     "status": command.status
                 }),
@@ -383,6 +386,7 @@ impl AppRoutingChannelCommandStore for PostgresAppRoutingChannelCommandStore {
                 .probe_provider_health(ProviderHealthProbeRequest {
                     provider_base_url: probe_target.provider_base_url.clone(),
                     provider_secret_ref: probe_target.provider_secret_ref.clone(),
+                    provider_secret_value: None,
                     provider_model: probe_target.provider_model.clone(),
                     provider_timeout_ms: probe_target.provider_timeout_ms,
                 })
@@ -492,6 +496,7 @@ async fn insert_or_load_provider_for_code(
         WHERE provider_code = $1
           AND (
               (tenant_id = $2 AND organization_id = $3)
+              OR (tenant_id = 0 AND organization_id = 0)
               OR (tenant_id IS NULL AND organization_id IS NULL)
           )
           AND deleted_at IS NULL
@@ -583,9 +588,9 @@ async fn insert_channel(
     sqlx::query_scalar(
         r#"
         INSERT INTO integration_channel
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, provider_id, provider_code, channel_code, name, protocol, access_type, base_url_override, timeout_ms, retry_policy, model_mode, environment, capabilities, priority, weight, account_id, health_status, last_latency_ms, rpm_limit, consecutive_error_count)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, provider_id, provider_code, channel_code, name, protocol, access_type, base_url_override, timeout_ms, retry_policy, circuit_breaker_policy, model_mode, environment, capabilities, priority, weight, account_id, health_status, last_latency_ms, rpm_limit, consecutive_error_count)
         VALUES
-            ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, $7, $8, $9, $10, $11, $12, $13, $14, $15::jsonb, 1, 1, $16::jsonb, 100, $17, $18, $19, 0, 0, 0)
+            ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, $7, $8, $9, $10, $11, $12, $13, $14, $15::jsonb, $16::jsonb, 1, 1, $17::jsonb, 100, $18, $19, $20, 0, 0, 0)
         RETURNING id
         "#,
     )
@@ -604,6 +609,7 @@ async fn insert_channel(
     .bind(command.base_url.as_deref())
     .bind(command.timeout_ms)
     .bind(command.retry_policy_json.as_deref())
+    .bind(command.circuit_breaker_policy_json.as_deref())
     .bind(capabilities_json)
     .bind(command.weight)
     .bind(account_id)
@@ -627,6 +633,11 @@ async fn update_channel(
         .retry_policy_json
         .as_ref()
         .and_then(|value| value.as_deref());
+    let circuit_breaker_policy_touched = command.circuit_breaker_policy_json.is_some();
+    let circuit_breaker_policy_json = command
+        .circuit_breaker_policy_json
+        .as_ref()
+        .and_then(|value| value.as_deref());
     let capabilities_json = command
         .capabilities
         .as_ref()
@@ -643,15 +654,16 @@ async fn update_channel(
             base_url_override = CASE WHEN $6 THEN $7 ELSE base_url_override END,
             timeout_ms = CASE WHEN $8 THEN $9 ELSE timeout_ms END,
             retry_policy = CASE WHEN $10 THEN $11::jsonb ELSE retry_policy END,
-            capabilities = COALESCE($12::jsonb, capabilities),
-            weight = COALESCE($13, weight),
-            status = COALESCE($14, status),
-            health_status = COALESCE($15, health_status),
-            updated_at = $16::timestamptz,
+            circuit_breaker_policy = CASE WHEN $12 THEN $13::jsonb ELSE circuit_breaker_policy END,
+            capabilities = COALESCE($14::jsonb, capabilities),
+            weight = COALESCE($15, weight),
+            status = COALESCE($16, status),
+            health_status = COALESCE($17, health_status),
+            updated_at = $18::timestamptz,
             version = COALESCE(version, 0) + 1
-        WHERE id = $17
-          AND tenant_id = $18
-          AND organization_id = $19
+        WHERE id = $19
+          AND tenant_id = $20
+          AND organization_id = $21
           AND deleted_at IS NULL
         "#,
     )
@@ -671,6 +683,8 @@ async fn update_channel(
     .bind(timeout_ms)
     .bind(retry_policy_touched)
     .bind(retry_policy_json)
+    .bind(circuit_breaker_policy_touched)
+    .bind(circuit_breaker_policy_json)
     .bind(capabilities_json)
     .bind(command.weight)
     .bind(command.status.as_ref().map(|value| status_code(value)))
@@ -921,6 +935,7 @@ async fn load_channel_probe_target(
          AND p.deleted_at IS NULL
          AND (
              (p.tenant_id = c.tenant_id AND p.organization_id = c.organization_id)
+             OR (p.tenant_id = 0 AND p.organization_id = 0)
              OR (p.tenant_id IS NULL AND p.organization_id IS NULL)
          )
         JOIN integration_provider_account a
@@ -1109,6 +1124,7 @@ async fn load_channel_by_id(
             CAST(COALESCE(c.capabilities, '["llm"]'::jsonb) AS TEXT) AS capabilities_json,
             c.timeout_ms,
             c.retry_policy::text AS retry_policy_json,
+            c.circuit_breaker_policy::text AS circuit_breaker_policy_json,
             COALESCE(c.weight, 0) AS weight,
             c.status AS status,
             c.health_status AS health_status,
@@ -1210,6 +1226,7 @@ fn row_to_channel(
     let status = required_integer_cell(&row, "status")?;
     let health_status = required_integer_cell(&row, "health_status")?;
     let retry_policy_json = string_cell(&row, "retry_policy_json");
+    let circuit_breaker_policy_json = string_cell(&row, "circuit_breaker_policy_json");
     Ok(AppRoutingChannelItem {
         id: id.clone(),
         name: string_cell(&row, "name"),
@@ -1229,6 +1246,15 @@ fn row_to_channel(
             .is_empty()
             .then_some(None)
             .unwrap_or_else(|| AppRoutingRetryPolicyItem::from_json(&retry_policy_json)),
+        circuit_breaker_policy: circuit_breaker_policy_json
+            .trim()
+            .is_empty()
+            .then_some(None)
+            .unwrap_or_else(|| {
+                crate::ports::AppRoutingCircuitBreakerPolicyItem::from_json(
+                    &circuit_breaker_policy_json,
+                )
+            }),
         weight: integer_cell(&row, "weight"),
         status: status_label(status, health_status, errors)?,
         latency: duration_or_na(integer_cell(&row, "latency_ms")),

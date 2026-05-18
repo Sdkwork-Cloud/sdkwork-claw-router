@@ -25,6 +25,7 @@ import {
   Volume2,
   X,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import {
   ChannelService,
   ProviderSecretService,
@@ -37,49 +38,35 @@ import {
   createChannelInputFromForm,
   createChannelStatusUpdateInput,
   createChannelUpdateInputFromForm,
-  createProviderSecretInputFromForm,
-  createProviderSecretStatusUpdateInput,
-  createProviderSecretUpdateInputFromForm,
   resolveAuthTypeFormValue,
   resolveAuthTypeSubmitValue,
   resolveChannelSelectFormValue,
   resolveChannelSelectSubmitValue,
   type ChannelFormValues,
-  type ProviderSecretFormValues,
 } from './channelForm';
 import { BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
 
 type ToastState = { message: string; type: 'success' | 'info' | 'error' } | null;
 type ModalMode = 'create' | 'edit';
-type SecretModalMode = 'create' | 'edit';
 type PendingChannelAction = 'test' | 'update' | 'delete';
-type DeleteConfirmation =
-  | {
-      kind: 'channel';
-      id: string;
-      title: string;
-      description: string;
-      confirmLabel: string;
-    }
-  | {
-      kind: 'providerSecret';
-      id: string;
-      title: string;
-      description: string;
-      confirmLabel: string;
-    };
+type DeleteConfirmation = {
+  id: string;
+  title: string;
+  description: string;
+  confirmLabel: string;
+};
 
 const capabilityOptions = [
-  { id: 'llm', label: 'LLM', icon: <MessageSquare className="w-3.5 h-3.5" /> },
-  { id: 'image', label: 'Image', icon: <ImageIcon className="w-3.5 h-3.5" /> },
-  { id: 'audio', label: 'Audio', icon: <Mic className="w-3.5 h-3.5" /> },
-  { id: 'music', label: 'Music', icon: <Music className="w-3.5 h-3.5" /> },
-  { id: 'sfx', label: 'SFX', icon: <Volume2 className="w-3.5 h-3.5" /> },
-  { id: 'video', label: 'Video', icon: <Video className="w-3.5 h-3.5" /> },
+  { id: 'llm', labelKey: 'common.modality.llm', icon: <MessageSquare className="w-3.5 h-3.5" /> },
+  { id: 'image', labelKey: 'common.modality.image', icon: <ImageIcon className="w-3.5 h-3.5" /> },
+  { id: 'audio', labelKey: 'common.modality.audio', icon: <Mic className="w-3.5 h-3.5" /> },
+  { id: 'music', labelKey: 'common.modality.music', icon: <Music className="w-3.5 h-3.5" /> },
+  { id: 'sfx', labelKey: 'common.modality.sfx', icon: <Volume2 className="w-3.5 h-3.5" /> },
+  { id: 'video', labelKey: 'common.modality.video', icon: <Video className="w-3.5 h-3.5" /> },
 ];
 
 const channelTabs = [
-  { id: 'all', label: 'All channels' },
+  { id: 'all', labelKey: 'admin.channel.tabs.allChannels' },
   { id: 'OpenAI', label: 'OpenAI' },
   { id: 'Anthropic', label: 'Anthropic' },
   { id: 'Gemini', label: 'Gemini' },
@@ -104,31 +91,26 @@ function providerCodeForVendor(vendor: string): string {
   return (mapping[normalized] ?? normalized.replace(/\s+/g, '_')).replace(/[^a-z0-9_-]/g, '');
 }
 
-function isValidSecretRef(value: string): boolean {
-  const locator = value.startsWith('vault://')
-    ? value.slice('vault://'.length)
-    : value.startsWith('secret://')
-      ? value.slice('secret://'.length)
-      : '';
-  return locator.replace(/\//g, '').length > 0 && /^[\x21-\x7e]+$/.test(value);
-}
-
 function getLoadErrorMessage(error: unknown, fallback: string): string {
   return error instanceof Error && error.message ? error.message : fallback;
 }
 
-function readPositiveIntegerFormValue(formData: FormData, key: string): number {
+function readPositiveIntegerFormValue(
+  formData: FormData,
+  key: string,
+  messages: { required: string; positiveInteger: string },
+): number {
   const rawValue = formData.get(key);
   const normalized = typeof rawValue === 'string' ? rawValue.trim() : '';
   if (!normalized) {
-    throw new Error(`${key} is required.`);
+    throw new Error(messages.required);
   }
   if (!/^\d+$/.test(normalized)) {
-    throw new Error(`${key} must be a positive integer.`);
+    throw new Error(messages.positiveInteger);
   }
   const value = Number(normalized);
   if (!Number.isSafeInteger(value) || value < 1) {
-    throw new Error(`${key} must be a positive integer.`);
+    throw new Error(messages.positiveInteger);
   }
   return value;
 }
@@ -136,18 +118,17 @@ function readPositiveIntegerFormValue(formData: FormData, key: string): number {
 function AddAccountModal({
   mode,
   initialChannel,
-  providerSecrets,
   isSaving,
   onClose,
   onSubmit,
 }: {
   mode: ModalMode;
   initialChannel?: ChannelItem | null;
-  providerSecrets: ProviderSecretItem[];
   isSaving: boolean;
   onClose: () => void;
   onSubmit: (channel: ChannelFormValues) => Promise<void>;
 }) {
+  const { t } = useTranslation();
   const [selectedProtocol, setSelectedProtocol] = useState(resolveChannelSelectFormValue(initialChannel?.protocol, protocolsList, 'OpenAI'));
   const [activeAuthType, setActiveAuthType] = useState(resolveAuthTypeFormValue(initialChannel?.accessType, authTypesList));
   const [showMoreAuth, setShowMoreAuth] = useState(false);
@@ -156,29 +137,16 @@ function AddAccountModal({
   const [capabilities, setCapabilities] = useState<string[]>(
     initialChannel?.capabilities?.length ? initialChannel.capabilities : ['llm'],
   );
-  const [secretRef, setSecretRef] = useState(initialChannel?.secretRef ?? '');
   const [customModel, setCustomModel] = useState('');
   const [localError, setLocalError] = useState<string | null>(null);
 
   const isEdit = mode === 'edit';
-  const availableSecrets = useMemo(() => {
-    const providerCode = providerCodeForVendor(modelVendor);
-    return providerSecrets.filter(
-      (secret) => secret.status === 'active' && secret.providerCode === providerCode,
-    );
-  }, [modelVendor, providerSecrets]);
 
   useEffect(() => {
     if (!initialChannel && modelVendor) {
       setWhitelist((prefillModels[modelVendor] ?? []).slice(0, 5));
     }
   }, [initialChannel, modelVendor]);
-
-  useEffect(() => {
-    if (!initialChannel && !secretRef && availableSecrets.length > 0) {
-      setSecretRef(availableSecrets[0].secretRef);
-    }
-  }, [availableSecrets, initialChannel, secretRef]);
 
   const toggleCapability = (capability: string) => {
     setCapabilities((current) => {
@@ -211,42 +179,44 @@ function AddAccountModal({
     const formData = new FormData(event.currentTarget);
     const name = String(formData.get('name') ?? '').trim();
     const baseUrl = String(formData.get('baseUrl') ?? '').trim();
-    const submittedSecretRef = String(formData.get('secretRef') ?? '').trim();
+    const apiKey = String(formData.get('apiKey') ?? '').trim();
     const models = whitelist.map((item) => item.trim()).filter(Boolean);
 
     if (!name) {
-      setLocalError('Channel name is required.');
+      setLocalError(t('admin.channel.validation.channelNameRequired'));
       return;
     }
-    if (!isEdit && !submittedSecretRef) {
-      setLocalError('Secret reference is required for new channels.');
-      return;
-    }
-    if (submittedSecretRef && !isValidSecretRef(submittedSecretRef)) {
-      setLocalError('Secret reference must use vault:// or secret:// and include a visible ASCII locator.');
+    if (!isEdit && !apiKey) {
+      setLocalError(t('admin.channel.validation.apiKeyRequiredForCreate'));
       return;
     }
     if (models.length === 0) {
-      setLocalError('At least one model must be bound to the channel.');
+      setLocalError(t('admin.channel.validation.modelRequired'));
       return;
     }
 
     try {
-      const weight = readPositiveIntegerFormValue(formData, 'weight');
+      const weight = readPositiveIntegerFormValue(formData, 'weight', {
+        required: t('admin.channel.validation.weightRequired'),
+        positiveInteger: t('admin.channel.validation.weightPositiveInteger'),
+      });
+      const circuitBreakerEnabled = formData.get('circuitBreakerEnabled') === 'on';
       await onSubmit({
         name,
         vendor: modelVendor,
         protocol: resolveChannelSelectSubmitValue(selectedProtocol, protocolsList, 'protocol'),
         accessType: resolveAuthTypeSubmitValue(activeAuthType, authTypesList),
         baseUrl,
-        secretRef: submittedSecretRef,
+        apiKey,
         capabilities,
         models,
+        circuitBreakerEnabled,
+        circuitBreakerFailureThreshold: String(formData.get('circuitBreakerFailureThreshold') ?? '').trim(),
         weight,
         status: initialChannel?.status ?? 'active',
       });
     } catch (err) {
-      setLocalError(err instanceof Error ? err.message : 'Channel save failed.');
+      setLocalError(err instanceof Error ? err.message : t('admin.channel.errors.channelSaveFailed'));
     }
   };
 
@@ -257,7 +227,7 @@ function AddAccountModal({
         <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#121212] shrink-0">
           <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-wide flex items-center gap-2">
             <Server className="w-5 h-5 text-emerald-500" />
-            {isEdit ? 'Edit channel account' : 'Add channel account'}
+            {isEdit ? t('admin.channel.modals.editChannelTitle') : t('admin.channel.modals.addChannelTitle')}
           </h3>
           <button
             type="button"
@@ -281,18 +251,18 @@ function AddAccountModal({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">Channel name</label>
+                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.channelName')}</label>
                   <input
                     required
                     name="name"
                     type="text"
                     defaultValue={initialChannel?.name ?? ''}
-                    placeholder="OpenAI primary"
+                    placeholder={t('admin.channel.placeholders.channelName')}
                     className="w-full bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">Vendor</label>
+                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.vendor')}</label>
                   <div className="relative">
                     <select
                       value={modelVendor}
@@ -301,7 +271,7 @@ function AddAccountModal({
                     >
                       {knownModelVendors.map((vendor) => (
                         <option key={vendor.id} value={vendor.id}>
-                          {vendor.name}
+                          {'nameKey' in vendor ? t(vendor.nameKey) : vendor.name}
                         </option>
                       ))}
                       {!knownModelVendors.some((vendor) => vendor.id === modelVendor) && (
@@ -314,7 +284,7 @@ function AddAccountModal({
               </div>
 
               <div>
-                <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">Protocol</label>
+                <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.protocol')}</label>
                 <div className="flex flex-wrap gap-2 bg-slate-50 dark:bg-[#121212] border border-slate-200 dark:border-white/5 rounded-lg p-2">
                   {protocolsList.map((protocol) => {
                     const isSelected = selectedProtocol === protocol.id;
@@ -338,7 +308,7 @@ function AddAccountModal({
                         >
                           {isSelected && <Check className="w-2.5 h-2.5 text-white" />}
                         </span>
-                        {protocol.label}
+                        {t(protocol.labelKey)}
                       </button>
                     );
                   })}
@@ -360,13 +330,15 @@ function AddAccountModal({
 
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <label className="text-sm text-slate-700 dark:text-slate-300 font-medium">Credential mode</label>
+                  <label className="text-sm text-slate-700 dark:text-slate-300 font-medium">{t('admin.channel.fields.credentialMode')}</label>
                   <button
                     type="button"
                     onClick={() => setShowMoreAuth((current) => !current)}
                     className="text-xs text-emerald-600 dark:text-emerald-400 hover:underline"
                   >
-                    {showMoreAuth ? 'Hide advanced modes' : 'Show advanced modes'}
+                    {showMoreAuth
+                      ? t('admin.channel.actions.hideAdvancedModes')
+                      : t('admin.channel.actions.showAdvancedModes')}
                   </button>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -396,11 +368,11 @@ function AddAccountModal({
                               {type.icon}
                             </span>
                             <span className={`font-semibold text-[13px] ${isActive ? 'text-slate-900 dark:text-emerald-400' : 'text-slate-700 dark:text-slate-300'}`}>
-                              {type.title}
+                              {t(type.titleKey)}
                             </span>
                           </span>
                           <span className={`text-[10px] font-mono tracking-wide ${isActive ? 'text-emerald-700/70 dark:text-emerald-400/70' : 'text-slate-500'}`}>
-                            {type.desc}
+                            {t(type.descKey)}
                           </span>
                         </button>
                       );
@@ -415,7 +387,7 @@ function AddAccountModal({
                       <Key className="h-4 w-4" />
                       <span>
                         <span className="block font-semibold">{activeAuthType}</span>
-                        <span className="text-[10px] opacity-80">Custom backend auth type</span>
+                        <span className="text-[10px] opacity-80">{t('admin.channel.actions.customBackendAuthType')}</span>
                       </span>
                     </button>
                   )}
@@ -424,7 +396,7 @@ function AddAccountModal({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">Base URL</label>
+                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.baseUrl')}</label>
                   <input
                     type="url"
                     name="baseUrl"
@@ -434,26 +406,13 @@ function AddAccountModal({
                   />
                 </div>
                 <div>
-                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">Secret reference</label>
-                  <select
-                    value={availableSecrets.some((secret) => secret.secretRef === secretRef) ? secretRef : ''}
-                    onChange={(event) => setSecretRef(event.target.value)}
-                    className="mb-2 w-full bg-white dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500"
-                  >
-                    <option value="">Manual reference</option>
-                    {availableSecrets.map((secret) => (
-                      <option key={secret.id} value={secret.secretRef}>
-                        {secret.name} ({secret.maskedLabel})
-                      </option>
-                    ))}
-                  </select>
+                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.apiKey')}</label>
                   <input
                     required={!isEdit}
-                    type="text"
-                    name="secretRef"
-                    value={secretRef}
-                    onChange={(event) => setSecretRef(event.target.value)}
-                    placeholder="vault://providers/openai/account/main"
+                    type="password"
+                    name="apiKey"
+                    autoComplete="off"
+                    placeholder={t('admin.channel.placeholders.apiKey')}
                     className="w-full font-mono bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors"
                   />
                 </div>
@@ -461,7 +420,7 @@ function AddAccountModal({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">Traffic weight</label>
+                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.trafficWeight')}</label>
                   <input
                     required
                     name="weight"
@@ -474,8 +433,34 @@ function AddAccountModal({
                 </div>
               </div>
 
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#121212]">
+                <label className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+                  <input
+                    name="circuitBreakerEnabled"
+                    type="checkbox"
+                    defaultChecked={Boolean(initialChannel?.circuitBreakerPolicy)}
+                    className="h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
+                  />
+                  {t('admin.channel.fields.circuitBreaker')}
+                </label>
+                <p className="mb-3 text-xs text-slate-500 dark:text-slate-400">
+                  {t('admin.channel.help.circuitBreaker')}
+                </p>
+                <div className="max-w-xs">
+                  <label className="mb-1 block text-xs text-slate-500">{t('admin.channel.fields.failureThreshold')}</label>
+                  <input
+                    name="circuitBreakerFailureThreshold"
+                    type="number"
+                    min="1"
+                    max="100"
+                    defaultValue={initialChannel?.circuitBreakerPolicy?.failureThreshold ?? 3}
+                    className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                  />
+                </div>
+              </div>
+
               <div>
-                <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">Capabilities</label>
+                <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.capabilities')}</label>
                 <div className="grid grid-cols-3 sm:grid-cols-3 gap-2">
                   {capabilityOptions.map((capability) => {
                     const isChecked = capabilities.includes(capability.id);
@@ -491,7 +476,7 @@ function AddAccountModal({
                         }`}
                       >
                         {capability.icon}
-                        <span className="whitespace-nowrap">{capability.label}</span>
+                        <span className="whitespace-nowrap">{t(capability.labelKey)}</span>
                       </button>
                     );
                   })}
@@ -501,9 +486,9 @@ function AddAccountModal({
 
             <div className="flex-1 px-6 py-4 bg-slate-50 dark:bg-transparent overflow-y-auto custom-scrollbar flex flex-col h-[70vh] lg:h-auto">
               <div className="mb-4 shrink-0">
-                <h4 className="text-sm font-semibold text-slate-900 dark:text-white">Model allowlist</h4>
+                <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{t('admin.channel.fields.modelAllowlist')}</h4>
                 <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                  Bind the provider models supported by this channel. Global model mapping is managed by the routing strategy contract.
+                  {t('admin.channel.help.modelAllowlist')}
                 </p>
               </div>
 
@@ -524,13 +509,13 @@ function AddAccountModal({
                     </div>
                   ))}
                   {whitelist.length === 0 && (
-                    <div className="col-span-2 text-slate-500 text-sm text-center py-8">At least one model must be bound to the channel.</div>
+                    <div className="col-span-2 text-slate-500 text-sm text-center py-8">{t('admin.channel.validation.modelRequired')}</div>
                   )}
                 </div>
 
                 <div className="mt-auto space-y-4 shrink-0">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-slate-500 dark:text-slate-400">{whitelist.length} models</span>
+                    <span className="text-slate-500 dark:text-slate-400">{t('admin.channel.modelCount', { count: whitelist.length })}</span>
                   </div>
 
                   <div className="flex flex-wrap gap-3">
@@ -539,19 +524,19 @@ function AddAccountModal({
                       onClick={fillRelatedModels}
                       className="border border-indigo-500 text-indigo-500 dark:border-indigo-500/50 dark:text-indigo-400 px-4 py-2 rounded-lg text-sm hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-colors font-medium"
                     >
-                      Apply defaults
+                      {t('common.actions.applyDefaults')}
                     </button>
                     <button
                       type="button"
                       onClick={() => setWhitelist([])}
                       className="border border-red-500 text-red-500 dark:border-red-500/50 dark:text-red-400 px-4 py-2 rounded-lg text-sm hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors font-medium"
                     >
-                      Clear all
+                      {t('common.actions.clearAll')}
                     </button>
                   </div>
 
                   <div className="pt-4 border-t border-slate-200 dark:border-white/10">
-                    <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2">Add model</label>
+                    <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2">{t('admin.channel.fields.addModel')}</label>
                     <div className="flex gap-2">
                       <input
                         value={customModel}
@@ -570,7 +555,7 @@ function AddAccountModal({
                         onClick={addCustomModel}
                         className="bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-500 border border-emerald-200 dark:border-emerald-500/20 px-6 py-2 rounded-lg text-sm hover:bg-emerald-100 dark:hover:bg-emerald-500/20 font-medium transition-colors"
                       >
-                        Add
+                        {t('common.actions.add')}
                       </button>
                     </div>
                   </div>
@@ -586,7 +571,7 @@ function AddAccountModal({
               disabled={isSaving}
               className="px-5 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-300 dark:border-white/10 hover:bg-white dark:hover:bg-white/5 rounded-lg transition-colors disabled:opacity-50"
             >
-              Cancel
+              {t('common.actions.cancel')}
             </button>
             <button
               type="submit"
@@ -594,7 +579,7 @@ function AddAccountModal({
               className="px-8 py-2.5 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow-lg shadow-emerald-500/20 transition-all active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 flex items-center gap-2"
             >
               {isSaving && <Loader2 className="w-4 h-4 animate-spin" />}
-              {isEdit ? 'Save changes' : 'Create channel'}
+              {isEdit ? t('common.actions.saveChanges') : t('common.actions.createChannel')}
             </button>
           </div>
         </form>
@@ -603,330 +588,189 @@ function AddAccountModal({
   );
 }
 
-function ProviderSecretModal({
-  mode,
-  initialSecret,
-  isSaving,
+function findCredentialForChannel(channel: ChannelItem, providerSecrets: ProviderSecretItem[]): ProviderSecretItem | null {
+  const secretRef = channel.secretRef?.trim();
+  if (!secretRef) {
+    return null;
+  }
+  const providerCode = providerCodeForVendor(channel.vendor);
+  return (
+    providerSecrets.find((secret) => secret.secretRef === secretRef && secret.providerCode === providerCode) ??
+    providerSecrets.find((secret) => secret.secretRef === secretRef) ??
+    null
+  );
+}
+
+function CredentialDetailsModal({
+  channel,
+  credential,
+  isLoading,
+  loadError,
+  onRetry,
   onClose,
-  onSubmit,
 }: {
-  mode: SecretModalMode;
-  initialSecret?: ProviderSecretItem | null;
-  isSaving: boolean;
+  channel: ChannelItem;
+  credential: ProviderSecretItem | null;
+  isLoading: boolean;
+  loadError: string | null;
+  onRetry: () => void;
   onClose: () => void;
-  onSubmit: (secret: ProviderSecretFormValues) => Promise<void>;
 }) {
-  const [providerCode, setProviderCode] = useState(initialSecret?.providerCode ?? 'openai');
-  const [authType, setAuthType] = useState(resolveAuthTypeFormValue(initialSecret?.authType, authTypesList));
-  const [secretRef, setSecretRef] = useState(initialSecret?.secretRef ?? '');
-  const [status, setStatus] = useState<'active' | 'disabled'>(initialSecret?.status ?? 'active');
-  const [localError, setLocalError] = useState<string | null>(null);
-  const isEdit = mode === 'edit';
-
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setLocalError(null);
-    const formData = new FormData(event.currentTarget);
-    const name = String(formData.get('name') ?? '').trim();
-    const normalizedSecretRef = secretRef.trim();
-
-    if (!name) {
-      setLocalError('Credential name is required.');
-      return;
-    }
-    if (!normalizedSecretRef) {
-      setLocalError('Secret reference is required.');
-      return;
-    }
-    if (!isValidSecretRef(normalizedSecretRef)) {
-      setLocalError('Secret reference must use vault:// or secret:// and include a visible ASCII locator.');
-      return;
-    }
-
-    try {
-      await onSubmit({
-        providerCode,
-        name,
-        authType,
-        secretRef: normalizedSecretRef,
-        status,
-      });
-    } catch (err) {
-      setLocalError(err instanceof Error ? err.message : 'Credential save failed.');
-    }
-  };
+  const { t } = useTranslation();
+  const secretRef = channel.secretRef?.trim() ?? '';
+  const hasSecretRef = secretRef.length > 0;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
-      <div className="absolute inset-0" onClick={isSaving ? undefined : onClose} />
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm">
+      <div className="absolute inset-0" onClick={onClose} />
       <div className="relative z-10 w-full max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#1a1a1a]">
         <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#121212]">
           <h3 className="flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-white">
             <Key className="h-5 w-5 text-emerald-500" />
-            {isEdit ? 'Edit credential reference' : 'Add credential reference'}
+            {t('admin.channel.credentials.modalTitle')}
           </h3>
           <button
             type="button"
             onClick={onClose}
-            disabled={isSaving}
-            className="text-slate-400 transition-colors hover:text-slate-600 disabled:opacity-50 dark:hover:text-slate-200"
+            aria-label={t('common.actions.close')}
+            className="text-slate-400 transition-colors hover:text-slate-600 dark:hover:text-slate-200"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-5 p-5">
-          {localError && (
-            <div className="flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
-              <AlertCircle className="h-4 w-4" />
-              {localError}
-            </div>
-          )}
-
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Provider</label>
-              <select
-                value={providerCode}
-                onChange={(event) => setProviderCode(event.target.value)}
-                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-              >
-                {knownModelVendors.map((vendor) => {
-                  const code = providerCodeForVendor(vendor.id);
-                  return (
-                    <option key={vendor.id} value={code}>
-                      {vendor.name}
-                    </option>
-                  );
-                })}
-                {!knownModelVendors.some((vendor) => providerCodeForVendor(vendor.id) === providerCode) && (
-                  <option value={providerCode}>{providerCode}</option>
-                )}
-              </select>
-            </div>
-            <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Credential name</label>
-              <input
-                required
-                name="name"
-                type="text"
-                defaultValue={initialSecret?.name ?? ''}
-                placeholder="OpenAI production"
-                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+        <div className="space-y-5 p-5">
+          <section className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#121212]">
+            <h4 className="mb-3 flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
+              <Network className="h-4 w-4 text-slate-400" />
+              {t('admin.channel.credentials.channelTitle')}
+            </h4>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <CredentialDetailField label={t('admin.channel.fields.channelName')} value={channel.name} />
+              <CredentialDetailField label={t('admin.channel.fields.vendor')} value={channel.vendor} />
+              <CredentialDetailField label={t('admin.channel.fields.protocol')} value={channel.protocol} />
+              <CredentialDetailField label={t('admin.channel.fields.authType')} value={channel.accessType} />
+              <CredentialDetailField
+                label={t('admin.channel.fields.secretReference')}
+                value={secretRef || t('admin.channel.credentials.noReferenceValue')}
+                monospace={hasSecretRef}
+                wide
               />
             </div>
-          </div>
+          </section>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Auth type</label>
-              <select
-                value={authType}
-                onChange={(event) => setAuthType(event.target.value)}
-                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-              >
-                {authTypesList.map((type) => (
-                  <option key={type.id} value={type.id}>
-                    {type.title}
-                  </option>
-                ))}
-                {!authTypesList.some((type) => type.id === authType) && (
-                  <option value={authType}>{authType}</option>
-                )}
-              </select>
+          {isLoading ? (
+            <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 text-sm text-slate-600 dark:border-white/10 dark:bg-black dark:text-slate-300">
+              <Loader2 className="h-4 w-4 animate-spin text-emerald-500" />
+              {t('admin.channel.credentials.loadingDetails')}
             </div>
-            <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Status</label>
-              <select
-                value={status}
-                onChange={(event) => setStatus(event.target.value === 'disabled' ? 'disabled' : 'active')}
-                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+          ) : loadError ? (
+            <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
+              <div className="flex items-start gap-2">
+                <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+                <div className="min-w-0 flex-1">
+                  <div className="font-semibold">{t('admin.channel.credentials.loadErrorTitle')}</div>
+                  <div className="mt-1 break-words">{loadError}</div>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={onRetry}
+                className="mt-3 rounded-lg border border-red-200 bg-white px-3 py-1.5 text-xs font-medium text-red-700 transition-colors hover:bg-red-50 dark:border-red-500/20 dark:bg-transparent dark:text-red-300 dark:hover:bg-red-500/10"
               >
-                <option value="active">Active</option>
-                <option value="disabled">Disabled</option>
-              </select>
+                {t('common.actions.retry')}
+              </button>
             </div>
-          </div>
+          ) : credential ? (
+            <section className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-4 dark:border-emerald-500/20 dark:bg-emerald-500/10">
+              <h4 className="mb-3 flex items-center gap-2 text-sm font-bold text-emerald-800 dark:text-emerald-300">
+                <CheckCircle className="h-4 w-4" />
+                {t('admin.channel.credentials.linkedTitle')}
+              </h4>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <CredentialDetailField label={t('admin.channel.fields.credentialName')} value={credential.name} />
+                <CredentialDetailField label={t('admin.channel.fields.providerCode')} value={credential.providerCode} monospace />
+                <CredentialDetailField label={t('admin.channel.fields.accountCode')} value={credential.accountCode} monospace />
+                <CredentialDetailField label={t('admin.channel.fields.authType')} value={credential.authType} />
+                <CredentialDetailField label={t('admin.channel.fields.maskedLabel')} value={credential.maskedLabel} monospace />
+                <div>
+                  <div className="mb-1 text-xs font-medium text-slate-500 dark:text-slate-400">{t('admin.channel.fields.status')}</div>
+                  <ProviderSecretStatusBadge status={credential.status} />
+                </div>
+              </div>
+            </section>
+          ) : (
+            <section className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-200">
+              <h4 className="flex items-center gap-2 font-bold">
+                <AlertCircle className="h-4 w-4" />
+                {hasSecretRef
+                  ? t('admin.channel.credentials.unmatchedTitle')
+                  : t('admin.channel.credentials.noReferenceTitle')}
+              </h4>
+              <p className="mt-2 leading-6">
+                {hasSecretRef
+                  ? t('admin.channel.credentials.unmatchedDescription')
+                  : t('admin.channel.credentials.noReferenceDescription')}
+              </p>
+            </section>
+          )}
+        </div>
 
-          <div>
-            <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Secret reference</label>
-            <input
-              required
-              type="text"
-              value={secretRef}
-              onChange={(event) => setSecretRef(event.target.value)}
-              placeholder="vault://providers/openai/account/main"
-              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-            />
-          </div>
-
-          <div className="flex justify-end gap-3 border-t border-slate-200 pt-4 dark:border-white/10">
-            <button
-              type="button"
-              onClick={onClose}
-              disabled={isSaving}
-              className="rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-50 disabled:opacity-50 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              disabled={isSaving}
-              className="flex items-center gap-2 rounded-lg bg-emerald-600 px-6 py-2.5 text-sm font-bold text-white transition-colors hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60"
-            >
-              {isSaving && <Loader2 className="h-4 w-4 animate-spin" />}
-              {isEdit ? 'Save reference' : 'Create reference'}
-            </button>
-          </div>
-        </form>
+        <div className="flex justify-end border-t border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#121212]">
+          <button
+            type="button"
+            onClick={onClose}
+            className="rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-600 transition-colors hover:bg-white dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5"
+          >
+            {t('common.actions.close')}
+          </button>
+        </div>
       </div>
     </div>
   );
 }
 
-function CredentialReferencePanel({
-  secrets,
-  loading,
-  loadError,
-  pendingSecretId,
-  onAdd,
-  onRetry,
-  onEdit,
-  onToggle,
-  onDelete,
+function CredentialDetailField({
+  label,
+  value,
+  monospace = false,
+  wide = false,
 }: {
-  secrets: ProviderSecretItem[];
-  loading: boolean;
-  loadError: string | null;
-  pendingSecretId: string | null;
-  onAdd: () => void;
-  onRetry: () => void;
-  onEdit: (secret: ProviderSecretItem) => void;
-  onToggle: (secret: ProviderSecretItem) => void;
-  onDelete: (id: string) => void;
+  label: string;
+  value: string;
+  monospace?: boolean;
+  wide?: boolean;
 }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
-      <div className="flex flex-col gap-3 border-b border-slate-200 bg-slate-50 px-5 py-4 dark:border-white/10 dark:bg-[#121212] sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <h3 className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
-            <Key className="h-4 w-4 text-emerald-500" />
-            Credential references
-          </h3>
-          <p className="mt-1 text-xs text-slate-500">Vault/KMS handles used by provider channel accounts.</p>
-        </div>
-        <button
-          type="button"
-          onClick={onAdd}
-          className="inline-flex items-center justify-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700 transition-colors hover:bg-emerald-100 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300 dark:hover:bg-emerald-500/20"
-        >
-          <Plus className="h-4 w-4" />
-          Add credential
-        </button>
-      </div>
-      <div className="overflow-x-auto">
-        <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
-          <thead className="border-b border-slate-200 bg-white text-xs font-semibold uppercase text-slate-500 dark:border-white/10 dark:bg-[#1a1a1a] dark:text-slate-400">
-            <tr>
-              <th className="px-5 py-3">Name</th>
-              <th className="px-5 py-3">Provider</th>
-              <th className="px-5 py-3">Reference</th>
-              <th className="px-5 py-3">Status</th>
-              <th className="px-5 py-3 text-right">Actions</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate-200 dark:divide-white/5">
-            {loading ? (
-              <BusinessStateTableRow colSpan={5} kind="loading" title="Loading credential references..." />
-            ) : loadError ? (
-              <BusinessStateTableRow
-                colSpan={5}
-                kind="error"
-                title="Credential references could not be loaded"
-                description={loadError}
-                onRetry={onRetry}
-              />
-            ) : secrets.length === 0 ? (
-              <BusinessStateTableRow
-                colSpan={5}
-                kind="empty"
-                title="No credential references registered"
-                description="Add a vault or KMS reference before binding provider channels."
-                action={{ label: 'Add credential', onClick: onAdd }}
-              />
-            ) : (
-              secrets.slice(0, 6).map((secret) => (
-                <tr key={secret.id} className="group transition-colors hover:bg-slate-50 dark:hover:bg-white/5">
-                  <td className="px-5 py-3">
-                    <div className="font-medium text-slate-900 dark:text-white">{secret.name}</div>
-                    <div className="mt-0.5 text-xs text-slate-500">{secret.authType}</div>
-                  </td>
-                  <td className="px-5 py-3 font-mono text-xs">{secret.providerCode}</td>
-                  <td className="px-5 py-3">
-                    <span className="rounded bg-slate-100 px-2 py-1 font-mono text-xs text-slate-700 dark:bg-white/10 dark:text-slate-300">
-                      {secret.maskedLabel}
-                    </span>
-                  </td>
-                  <td className="px-5 py-3">
-                    <ProviderSecretStatusBadge status={secret.status} />
-                  </td>
-                  <td className="px-5 py-3 text-right">
-                    <div className="flex justify-end gap-1 opacity-100 transition-opacity sm:opacity-0 sm:group-hover:opacity-100">
-                      <IconButton title="Edit credential" onClick={() => onEdit(secret)} disabled={pendingSecretId === secret.id}>
-                        <Edit2 className="h-4 w-4" />
-                      </IconButton>
-                      <IconButton
-                        title={secret.status === 'active' ? 'Disable credential' : 'Enable credential'}
-                        onClick={() => onToggle(secret)}
-                        disabled={pendingSecretId === secret.id}
-                        tone="warning"
-                      >
-                        {pendingSecretId === secret.id ? (
-                          <Loader2 className="h-4 w-4 animate-spin" />
-                        ) : secret.status === 'active' ? (
-                          <Ban className="h-4 w-4" />
-                        ) : (
-                          <CheckCircle className="h-4 w-4" />
-                        )}
-                      </IconButton>
-                      <IconButton
-                        title="Delete credential"
-                        onClick={() => onDelete(secret.id)}
-                        disabled={pendingSecretId === secret.id}
-                        tone="danger"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </IconButton>
-                    </div>
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
+    <div className={wide ? 'sm:col-span-2' : undefined}>
+      <div className="mb-1 text-xs font-medium text-slate-500 dark:text-slate-400">{label}</div>
+      <div
+        className={`break-words rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 dark:border-white/10 dark:bg-black dark:text-slate-200 ${
+          monospace ? 'font-mono text-xs' : ''
+        }`}
+      >
+        {value}
       </div>
     </div>
   );
 }
 
 export function ChannelAdmin() {
+  const { t } = useTranslation();
   const [search, setSearch] = useState('');
   const [activeTab, setActiveTab] = useState<string>('all');
   const [currentPage, setCurrentPage] = useState(1);
   const [modalMode, setModalMode] = useState<ModalMode | null>(null);
-  const [secretModalMode, setSecretModalMode] = useState<SecretModalMode | null>(null);
   const [editingChannel, setEditingChannel] = useState<ChannelItem | null>(null);
-  const [editingSecret, setEditingSecret] = useState<ProviderSecretItem | null>(null);
+  const [viewingCredentialChannel, setViewingCredentialChannel] = useState<ChannelItem | null>(null);
   const [toast, setToast] = useState<ToastState>(null);
   const [loading, setLoading] = useState(true);
   const [providerSecretLoading, setProviderSecretLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  const [secretSaving, setSecretSaving] = useState(false);
   const [pendingChannelId, setPendingChannelId] = useState<string | null>(null);
   const [pendingChannelAction, setPendingChannelAction] = useState<PendingChannelAction | null>(null);
-  const [pendingSecretId, setPendingSecretId] = useState<string | null>(null);
   const [deleteConfirmation, setDeleteConfirmation] = useState<DeleteConfirmation | null>(null);
-  const [confirmDeleteBusy, setConfirmDeleteBusy] = useState<DeleteConfirmation['kind'] | null>(null);
+  const [confirmDeleteBusy, setConfirmDeleteBusy] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [providerSecretLoadError, setProviderSecretLoadError] = useState<string | null>(null);
   const [channels, setChannels] = useState<ChannelItem[]>([]);
@@ -948,14 +792,14 @@ export function ChannelAdmin() {
       }
     } catch (err) {
       if (isActive()) {
-        setLoadError(getLoadErrorMessage(err, 'Failed to fetch channel accounts.'));
+        setLoadError(getLoadErrorMessage(err, t('admin.channel.errors.channelsLoadFallback')));
       }
     } finally {
       if (isActive()) {
         setLoading(false);
       }
     }
-  }, []);
+  }, [t]);
 
   const loadProviderSecrets = useCallback(async (isActive: () => boolean = () => true) => {
     setProviderSecretLoading(true);
@@ -967,14 +811,14 @@ export function ChannelAdmin() {
       }
     } catch (err) {
       if (isActive()) {
-        setProviderSecretLoadError(getLoadErrorMessage(err, 'Failed to fetch credential references.'));
+        setProviderSecretLoadError(getLoadErrorMessage(err, t('admin.channel.errors.credentialsLoadFallback')));
       }
     } finally {
       if (isActive()) {
         setProviderSecretLoading(false);
       }
     }
-  }, []);
+  }, [t]);
 
   const loadData = useCallback(async (isActive: () => boolean = () => true) => {
     await Promise.all([loadChannels(isActive), loadProviderSecrets(isActive)]);
@@ -1004,6 +848,9 @@ export function ChannelAdmin() {
   const totalItems = filteredChannels.length;
   const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
   const paginatedChannels = filteredChannels.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  const viewingCredential = viewingCredentialChannel
+    ? findCredentialForChannel(viewingCredentialChannel, providerSecrets)
+    : null;
 
   const openCreateModal = () => {
     setEditingChannel(null);
@@ -1023,24 +870,6 @@ export function ChannelAdmin() {
     setEditingChannel(null);
   };
 
-  const openCreateSecretModal = () => {
-    setEditingSecret(null);
-    setSecretModalMode('create');
-  };
-
-  const openEditSecretModal = (secret: ProviderSecretItem) => {
-    setEditingSecret(secret);
-    setSecretModalMode('edit');
-  };
-
-  const closeSecretModal = () => {
-    if (secretSaving) {
-      return;
-    }
-    setSecretModalMode(null);
-    setEditingSecret(null);
-  };
-
   const closeDeleteConfirmation = () => {
     if (confirmDeleteBusy) {
       return;
@@ -1050,21 +879,10 @@ export function ChannelAdmin() {
 
   const openDeleteChannelConfirmation = (channel: ChannelItem) => {
     setDeleteConfirmation({
-      kind: 'channel',
       id: channel.id,
-      title: 'Delete channel account?',
-      description: `This permanently removes ${channel.name} from provider routing. Active traffic should be moved before confirming.`,
-      confirmLabel: 'Delete channel',
-    });
-  };
-
-  const openDeleteProviderSecretConfirmation = (secret: ProviderSecretItem) => {
-    setDeleteConfirmation({
-      kind: 'providerSecret',
-      id: secret.id,
-      title: 'Delete credential reference?',
-      description: `This removes ${secret.name} from the admin credential registry. Channels that depend on this reference must be updated before confirming.`,
-      confirmLabel: 'Delete credential',
+      title: t('admin.channel.confirm.deleteChannelTitle'),
+      description: t('admin.channel.confirm.deleteChannelDescription', { name: channel.name }),
+      confirmLabel: t('admin.channel.actions.deleteChannel'),
     });
   };
 
@@ -1077,17 +895,17 @@ export function ChannelAdmin() {
           setChannels((current) => current.map((item) => (item.id === editingChannel.id ? updated : item)));
         }
         setLoadError(null);
-        showToast('Channel updated.');
+        showToast(t('admin.channel.messages.channelUpdated'));
       } else {
         const added = await ChannelService.addChannel(createChannelInputFromForm(channel));
         setChannels((current) => [added, ...current]);
         setLoadError(null);
-        showToast('Channel created.');
+        showToast(t('admin.channel.messages.channelCreated'));
       }
       setModalMode(null);
       setEditingChannel(null);
     } catch (err) {
-      const message = err instanceof Error ? err.message : 'Channel save failed';
+      const message = err instanceof Error ? err.message : t('admin.channel.errors.channelSaveFailed');
       showToast(message, 'error');
       throw err;
     } finally {
@@ -1106,7 +924,7 @@ export function ChannelAdmin() {
       setLoadError(null);
       showToast(successMessage, 'info');
     } catch (err) {
-      showToast(err instanceof Error ? err.message : 'Channel update failed', 'error');
+      showToast(err instanceof Error ? err.message : t('admin.channel.errors.channelUpdateFailed'), 'error');
     } finally {
       setPendingChannelId(null);
       setPendingChannelAction(null);
@@ -1121,12 +939,12 @@ export function ChannelAdmin() {
       setChannels((current) => current.map((item) => (item.id === id ? result.item : item)));
       showToast(
         result.success
-          ? `Channel test passed${result.latency ? `, latency ${result.latency}` : ''}.`
-          : `Channel test failed${result.latency ? `, latency ${result.latency}` : ''}.`,
+          ? t('admin.channel.messages.channelTestPassed', { latency: result.latency })
+          : t('admin.channel.messages.channelTestFailed', { latency: result.latency }),
         result.success ? 'success' : 'error',
       );
     } catch (err) {
-      showToast(err instanceof Error ? err.message : 'Channel test failed', 'error');
+      showToast(err instanceof Error ? err.message : t('admin.channel.errors.channelTestFailed'), 'error');
     } finally {
       setPendingChannelId(null);
       setPendingChannelAction(null);
@@ -1142,72 +960,12 @@ export function ChannelAdmin() {
         setChannels((current) => current.filter((item) => item.id !== id));
       }
       setLoadError(null);
-      showToast('Channel deleted.', 'info');
+      showToast(t('admin.channel.messages.channelDeleted'), 'info');
     } catch (err) {
-      showToast(err instanceof Error ? err.message : 'Channel delete failed', 'error');
+      showToast(err instanceof Error ? err.message : t('admin.channel.errors.channelDeleteFailed'), 'error');
     } finally {
       setPendingChannelId(null);
       setPendingChannelAction(null);
-    }
-  };
-
-  const handleSubmitProviderSecret = async (secret: ProviderSecretFormValues) => {
-    setSecretSaving(true);
-    try {
-      if (secretModalMode === 'edit' && editingSecret) {
-        const updated = await ProviderSecretService.updateProviderSecret(editingSecret.id, createProviderSecretUpdateInputFromForm(secret));
-        if (updated) {
-          setProviderSecrets((current) => current.map((item) => (item.id === editingSecret.id ? updated : item)));
-        }
-        setProviderSecretLoadError(null);
-        showToast('Credential reference updated.');
-      } else {
-        const added = await ProviderSecretService.addProviderSecret(createProviderSecretInputFromForm(secret));
-        setProviderSecrets((current) => [added, ...current]);
-        setProviderSecretLoadError(null);
-        showToast('Credential reference created.');
-      }
-      setSecretModalMode(null);
-      setEditingSecret(null);
-    } catch (err) {
-      const message = err instanceof Error ? err.message : 'Credential save failed';
-      showToast(message, 'error');
-      throw err;
-    } finally {
-      setSecretSaving(false);
-    }
-  };
-
-  const handleToggleProviderSecret = async (secret: ProviderSecretItem) => {
-    setPendingSecretId(secret.id);
-    try {
-      const nextStatus = secret.status === 'active' ? 'disabled' : 'active';
-      const updated = await ProviderSecretService.updateProviderSecret(secret.id, createProviderSecretStatusUpdateInput(nextStatus));
-      if (updated) {
-        setProviderSecrets((current) => current.map((item) => (item.id === secret.id ? updated : item)));
-      }
-      setProviderSecretLoadError(null);
-      showToast(nextStatus === 'active' ? 'Credential reference enabled.' : 'Credential reference disabled.', 'info');
-    } catch (err) {
-      showToast(err instanceof Error ? err.message : 'Credential update failed', 'error');
-    } finally {
-      setPendingSecretId(null);
-    }
-  };
-
-  const deleteProviderSecretById = async (id: string) => {
-    setPendingSecretId(id);
-    try {
-      const success = await ProviderSecretService.deleteProviderSecret(id);
-      if (success) {
-        setProviderSecrets((current) => current.filter((item) => item.id !== id));
-      }
-      setProviderSecretLoadError(null);
-      showToast('Credential reference deleted.', 'info');
-    } catch (err) {
-      showToast(err instanceof Error ? err.message : 'Credential delete failed', 'error');
-    } finally {
-      setPendingSecretId(null);
     }
   };
 
@@ -1216,16 +974,12 @@ export function ChannelAdmin() {
       return;
     }
     const confirmation = deleteConfirmation;
-    setConfirmDeleteBusy(confirmation.kind);
+    setConfirmDeleteBusy(true);
     try {
-      if (confirmation.kind === 'channel') {
-        await deleteChannelById(confirmation.id);
-      } else {
-        await deleteProviderSecretById(confirmation.id);
-      }
+      await deleteChannelById(confirmation.id);
       setDeleteConfirmation(null);
     } finally {
-      setConfirmDeleteBusy(null);
+      setConfirmDeleteBusy(false);
     }
   };
 
@@ -1247,16 +1001,16 @@ export function ChannelAdmin() {
         <div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-2">
             <Network className="w-6 h-6 text-emerald-500" />
-            Channel accounts
+            {t('admin.channel.title')}
           </h2>
-          <p className="text-sm text-slate-500">Provider routing accounts, model bindings, weights, and credential references.</p>
+          <p className="text-sm text-slate-500">{t('admin.channel.subtitle')}</p>
         </div>
         <div className="flex gap-3 w-full sm:w-auto">
           <div className="relative flex-1 sm:flex-none">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
             <input
               type="text"
-              placeholder="Search channels"
+              placeholder={t('admin.channel.searchPlaceholder')}
               value={search}
               onChange={(event) => setSearch(event.target.value)}
               className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-emerald-500 w-full sm:w-64 text-slate-900 dark:text-white placeholder-slate-500 transition-colors shadow-sm"
@@ -1267,7 +1021,7 @@ export function ChannelAdmin() {
             className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 flex-shrink-0 shadow-lg shadow-emerald-500/20"
           >
             <Plus className="w-4 h-4" />
-            <span className="hidden sm:inline">Add channel</span>
+            <span className="hidden sm:inline">{t('common.actions.addChannel')}</span>
           </button>
         </div>
       </div>
@@ -1283,49 +1037,32 @@ export function ChannelAdmin() {
                 : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
-            {tab.label}
+            {'labelKey' in tab ? t(tab.labelKey) : tab.label}
           </button>
         ))}
       </div>
-
-      <CredentialReferencePanel
-        secrets={providerSecrets}
-        loading={providerSecretLoading}
-        loadError={providerSecretLoadError}
-        pendingSecretId={pendingSecretId}
-        onAdd={openCreateSecretModal}
-        onRetry={() => void loadProviderSecrets()}
-        onEdit={openEditSecretModal}
-        onToggle={(secret) => void handleToggleProviderSecret(secret)}
-        onDelete={(id) => {
-          const secret = providerSecrets.find((item) => item.id === id);
-          if (secret) {
-            openDeleteProviderSecretConfirmation(secret);
-          }
-        }}
-      />
 
       <div className="flex-1 bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl shadow-sm overflow-hidden flex flex-col">
         <div className="overflow-x-auto flex-1">
           <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
             <thead className="bg-slate-50 dark:bg-[#121212] sticky top-0 border-b border-slate-200 dark:border-white/10 text-xs uppercase font-semibold text-slate-500 dark:text-slate-400">
               <tr>
-                <th className="px-6 py-4">Channel</th>
-                <th className="px-6 py-4">Provider</th>
-                <th className="px-6 py-4 w-48">Models</th>
-                <th className="px-6 py-4">Weight</th>
-                <th className="px-6 py-4">Status</th>
-                <th className="px-6 py-4 text-right">Actions</th>
+                <th className="px-6 py-4">{t('admin.channel.table.channel')}</th>
+                <th className="px-6 py-4">{t('admin.channel.table.provider')}</th>
+                <th className="px-6 py-4 w-48">{t('admin.channel.table.models')}</th>
+                <th className="px-6 py-4">{t('admin.channel.table.weight')}</th>
+                <th className="px-6 py-4">{t('admin.channel.table.status')}</th>
+                <th className="px-6 py-4 text-right">{t('admin.channel.table.actions')}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 dark:divide-white/5">
               {loading ? (
-                <BusinessStateTableRow colSpan={6} kind="loading" title="Loading channel accounts..." />
+                <BusinessStateTableRow colSpan={6} kind="loading" title={t('admin.channel.states.loadingChannels')} />
               ) : loadError ? (
                 <BusinessStateTableRow
                   colSpan={6}
                   kind="error"
-                  title="Channel accounts could not be loaded"
+                  title={t('admin.channel.states.channelsLoadErrorTitle')}
                   description={loadError}
                   onRetry={() => void loadChannels()}
                 />
@@ -1333,13 +1070,13 @@ export function ChannelAdmin() {
                 <BusinessStateTableRow
                   colSpan={6}
                   kind="empty"
-                  title="No channels found"
+                  title={t('admin.channel.states.emptyChannelsTitle')}
                   description={
                     channels.length === 0
-                      ? 'Add a provider channel account to start routing model traffic.'
-                      : 'Adjust the search query or provider filter to find matching channel accounts.'
+                      ? t('admin.channel.states.emptyChannelsDescription')
+                      : t('admin.channel.states.emptySearchDescription')
                   }
-                  action={channels.length === 0 ? { label: 'Add channel', onClick: openCreateModal } : undefined}
+                  action={channels.length === 0 ? { label: t('common.actions.addChannel'), onClick: openCreateModal } : undefined}
                 />
               ) : (
                 paginatedChannels.map((channel) => (
@@ -1373,6 +1110,14 @@ export function ChannelAdmin() {
                           <Key className="w-3.5 h-3.5" />
                           {channel.accessType}
                         </span>
+                        {channel.circuitBreakerPolicy && (
+                          <span className="flex items-center gap-1.5 text-xs text-slate-500">
+                            <Network className="w-3.5 h-3.5" />
+                            {t('admin.channel.table.circuitBreakerCount', {
+                              count: channel.circuitBreakerPolicy.failureThreshold,
+                            })}
+                          </span>
+                        )}
                       </div>
                     </td>
                     <td className="px-6 py-4 align-top">
@@ -1398,11 +1143,18 @@ export function ChannelAdmin() {
                     </td>
                     <td className="px-6 py-4 text-right align-middle">
                       <div className="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <IconButton title="Edit channel" onClick={() => openEditModal(channel)} disabled={pendingChannelId === channel.id}>
+                        <IconButton
+                          title={t('admin.channel.actions.viewCredential')}
+                          onClick={() => setViewingCredentialChannel(channel)}
+                          disabled={pendingChannelId === channel.id}
+                        >
+                          <Key className="w-4 h-4" />
+                        </IconButton>
+                        <IconButton title={t('admin.channel.actions.editChannel')} onClick={() => openEditModal(channel)} disabled={pendingChannelId === channel.id}>
                           <Edit2 className="w-4 h-4" />
                         </IconButton>
                         <IconButton
-                          title="Test channel"
+                          title={t('admin.channel.actions.testChannel')}
                           onClick={() => void handleTestChannel(channel.id)}
                           disabled={pendingChannelId === channel.id}
                         >
@@ -1413,12 +1165,16 @@ export function ChannelAdmin() {
                           )}
                         </IconButton>
                         <IconButton
-                          title={channel.status === 'active' ? 'Disable channel' : 'Enable channel'}
+                          title={channel.status === 'active'
+                            ? t('admin.channel.actions.disableChannel')
+                            : t('admin.channel.actions.enableChannel')}
                           onClick={() =>
                             void handleUpdateChannel(
                               channel.id,
                               createChannelStatusUpdateInput(channel.status === 'active' ? 'disabled' : 'active'),
-                              channel.status === 'active' ? 'Channel disabled.' : 'Channel enabled.',
+                              channel.status === 'active'
+                                ? t('admin.channel.messages.channelDisabled')
+                                : t('admin.channel.messages.channelEnabled'),
                             )
                           }
                           disabled={pendingChannelId === channel.id}
@@ -1433,7 +1189,7 @@ export function ChannelAdmin() {
                           )}
                         </IconButton>
                         <IconButton
-                          title="Delete channel"
+                          title={t('admin.channel.actions.deleteChannel')}
                           onClick={() => openDeleteChannelConfirmation(channel)}
                           disabled={pendingChannelId === channel.id}
                           tone="danger"
@@ -1455,19 +1211,18 @@ export function ChannelAdmin() {
 
         <div className="p-4 border-t border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#121212] flex items-center justify-between">
           <div className="text-sm text-slate-500 dark:text-slate-400">
-            Total <span className="font-medium text-slate-900 dark:text-white">{totalItems}</span> channels
+            {t('admin.channel.pagination.total', { count: totalItems })}
           </div>
           <div className="flex items-center gap-4">
             <span className="text-sm text-slate-600 dark:text-slate-400 font-medium">
-              Page {currentPage}
-              <span className="text-slate-400 dark:text-slate-500 font-normal"> / {totalPages}</span>
+              {t('admin.channel.pagination.page', { page: currentPage, totalPages })}
             </span>
             <div className="flex items-center gap-1">
               <button
                 onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
                 disabled={currentPage === 1}
                 className="p-1 rounded-lg text-slate-500 hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 dark:text-slate-400 dark:hover:text-emerald-400 disabled:opacity-30 disabled:hover:bg-transparent disabled:cursor-not-allowed transition-colors"
-                title="Previous page"
+                title={t('common.actions.previousPage')}
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
@@ -1475,7 +1230,7 @@ export function ChannelAdmin() {
                 onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
                 disabled={currentPage === totalPages}
                 className="p-1 rounded-lg text-slate-500 hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 dark:text-slate-400 dark:hover:text-emerald-400 disabled:opacity-30 disabled:hover:bg-transparent disabled:cursor-not-allowed transition-colors"
-                title="Next page"
+                title={t('common.actions.nextPage')}
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
@@ -1488,19 +1243,19 @@ export function ChannelAdmin() {
         <AddAccountModal
           mode={modalMode}
           initialChannel={editingChannel}
-          providerSecrets={providerSecrets}
           isSaving={saving}
           onClose={closeModal}
           onSubmit={handleSubmitChannel}
         />
       )}
-      {secretModalMode && (
-        <ProviderSecretModal
-          mode={secretModalMode}
-          initialSecret={editingSecret}
-          isSaving={secretSaving}
-          onClose={closeSecretModal}
-          onSubmit={handleSubmitProviderSecret}
+      {viewingCredentialChannel && (
+        <CredentialDetailsModal
+          channel={viewingCredentialChannel}
+          credential={viewingCredential}
+          isLoading={providerSecretLoading}
+          loadError={providerSecretLoadError}
+          onRetry={() => void loadProviderSecrets()}
+          onClose={() => setViewingCredentialChannel(null)}
         />
       )}
       {deleteConfirmation && (
@@ -1520,13 +1275,14 @@ export function ChannelAdmin() {
 }
 
 function CapabilityBadges({ capabilities }: { capabilities: string[] }) {
-  const mapping: Record<string, { label: string; icon: React.ReactNode; color: string }> = {
-    llm: { label: 'LLM', icon: <MessageSquare className="w-3 h-3" />, color: 'bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400' },
-    image: { label: 'Image', icon: <ImageIcon className="w-3 h-3" />, color: 'bg-pink-50 text-pink-600 dark:bg-pink-500/10 dark:text-pink-400' },
-    audio: { label: 'Audio', icon: <Mic className="w-3 h-3" />, color: 'bg-amber-50 text-amber-600 dark:bg-amber-500/10 dark:text-amber-400' },
-    music: { label: 'Music', icon: <Music className="w-3 h-3" />, color: 'bg-rose-50 text-rose-600 dark:bg-rose-500/10 dark:text-rose-400' },
-    sfx: { label: 'SFX', icon: <Volume2 className="w-3 h-3" />, color: 'bg-cyan-50 text-cyan-600 dark:bg-cyan-500/10 dark:text-cyan-400' },
-    video: { label: 'Video', icon: <Video className="w-3 h-3" />, color: 'bg-indigo-50 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-400' },
+  const { t } = useTranslation();
+  const mapping: Record<string, { labelKey: string; icon: React.ReactNode; color: string }> = {
+    llm: { labelKey: 'common.modality.llm', icon: <MessageSquare className="w-3 h-3" />, color: 'bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400' },
+    image: { labelKey: 'common.modality.image', icon: <ImageIcon className="w-3 h-3" />, color: 'bg-pink-50 text-pink-600 dark:bg-pink-500/10 dark:text-pink-400' },
+    audio: { labelKey: 'common.modality.audio', icon: <Mic className="w-3 h-3" />, color: 'bg-amber-50 text-amber-600 dark:bg-amber-500/10 dark:text-amber-400' },
+    music: { labelKey: 'common.modality.music', icon: <Music className="w-3 h-3" />, color: 'bg-rose-50 text-rose-600 dark:bg-rose-500/10 dark:text-rose-400' },
+    sfx: { labelKey: 'common.modality.sfx', icon: <Volume2 className="w-3 h-3" />, color: 'bg-cyan-50 text-cyan-600 dark:bg-cyan-500/10 dark:text-cyan-400' },
+    video: { labelKey: 'common.modality.video', icon: <Video className="w-3 h-3" />, color: 'bg-indigo-50 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-400' },
   };
 
   return (
@@ -1539,7 +1295,7 @@ function CapabilityBadges({ capabilities }: { capabilities: string[] }) {
         return (
           <span key={capability} className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium whitespace-nowrap ${info.color}`}>
             {info.icon}
-            {info.label}
+            {t(info.labelKey)}
           </span>
         );
       })}
@@ -1548,11 +1304,12 @@ function CapabilityBadges({ capabilities }: { capabilities: string[] }) {
 }
 
 function StatusBadge({ channel }: { channel: ChannelItem }) {
+  const { t } = useTranslation();
   if (channel.status === 'active') {
     return (
       <span className="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 text-xs font-medium">
         <CheckCircle className="w-3.5 h-3.5" />
-        Active
+        {t('admin.channel.status.active')}
       </span>
     );
   }
@@ -1560,31 +1317,32 @@ function StatusBadge({ channel }: { channel: ChannelItem }) {
     return (
       <span className="inline-flex items-center gap-1.5 text-slate-500 dark:text-slate-400 text-xs font-medium">
         <Ban className="w-3.5 h-3.5" />
-        Disabled
+        {t('admin.channel.status.disabled')}
       </span>
     );
   }
   return (
     <span className="inline-flex items-center gap-1.5 text-red-600 dark:text-red-400 text-xs font-medium">
       <AlertCircle className="w-3.5 h-3.5" />
-      {channel.errors} errors
+      {t('admin.channel.status.errors', { count: channel.errors })}
     </span>
   );
 }
 
 function ProviderSecretStatusBadge({ status }: { status: ProviderSecretItem['status'] }) {
+  const { t } = useTranslation();
   if (status === 'active') {
     return (
       <span className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-600 dark:text-emerald-400">
         <CheckCircle className="h-3.5 w-3.5" />
-        Active
+        {t('admin.channel.status.active')}
       </span>
     );
   }
   return (
     <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
       <Ban className="h-3.5 w-3.5" />
-      Disabled
+      {t('admin.channel.status.disabled')}
     </span>
   );
 }

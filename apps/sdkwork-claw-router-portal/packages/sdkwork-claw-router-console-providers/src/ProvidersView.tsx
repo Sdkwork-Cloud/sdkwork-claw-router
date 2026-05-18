@@ -2,9 +2,8 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Box, Check, Cloud, Cpu, Search } from 'lucide-react';
 import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
 import { ProviderService, type ProviderConfig, type ProviderFamily } from './providerService';
-
-const readOnlyProviderActions =
-  'Read-only provider inventory. Create, edit, activate, and delete provider configurations from the backend provider administration console.';
+import { useTranslation } from 'react-i18next';
+type TranslationFunction = ReturnType<typeof useTranslation>['t'];
 
 type CategoryItemProps = {
   providerFamily: ProviderFamily;
@@ -15,11 +14,15 @@ type CategoryItemProps = {
   onSelect: (providerFamily: ProviderFamily) => void;
 };
 
-function getLoadErrorMessage(error: unknown, fallback: string): string {
-  return error instanceof Error && error.message ? error.message : fallback;
+function getLoadErrorMessage(error: unknown, fallback: string, t: TranslationFunction): string {
+  if (!(error instanceof Error) || !error.message) {
+    return fallback;
+  }
+  return error.message.startsWith('console.') ? t(error.message, fallback) : error.message;
 }
 
 export function ProvidersView() {
+  const { t } = useTranslation();
   const [selectedProviderFamily, setSelectedProviderFamily] = useState<ProviderFamily>('claude');
   const [search, setSearch] = useState('');
   const [providers, setProviders] = useState<ProviderConfig[]>([]);
@@ -36,14 +39,18 @@ export function ProvidersView() {
       }
     } catch (error) {
       if (isActive()) {
-        setLoadError(getLoadErrorMessage(error, 'Failed to load provider configurations.'));
+        setLoadError(getLoadErrorMessage(
+          error,
+          t('console.providers.states.loadErrorFallback', '工具配置加载失败。'),
+          t,
+        ));
       }
     } finally {
       if (isActive()) {
         setLoading(false);
       }
     }
-  }, []);
+  }, [t]);
 
   useEffect(() => {
     let active = true;
@@ -104,21 +111,15 @@ export function ProvidersView() {
       <div className="flex-1 flex flex-col pt-6 px-8 relative overflow-hidden">
         <div className="flex justify-between items-center mb-6 gap-6">
           <div className="text-sm">
-            <span className="text-white font-medium">{currentProviders.length} providers</span>
-            <p className="text-slate-500 text-xs mt-1">Search and inspect live provider routing inventory.</p>
+            <span className="text-white font-medium">{t('console.providers.summaryCount', '{{count}} 个提供方', { count: currentProviders.length })}</span>
+            <p className="text-slate-500 text-xs mt-1">{t('console.providers.summaryDescription', '查看当前可用的工具提供方和路由端点。')}</p>
           </div>
           <div className="flex items-center gap-3">
-            <div className="hidden xl:block max-w-[440px] text-right text-[11px] leading-relaxed text-slate-500">
-              {readOnlyProviderActions}
-            </div>
-            <span className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-300">
-              Read-only
-            </span>
             <div className="relative">
               <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
               <input
                 type="text"
-                placeholder="Search providers"
+                placeholder={t('console.providers.searchPlaceholder', '搜索提供方')}
                 value={search}
                 onChange={(event) => setSearch(event.target.value)}
                 className="bg-white/5 border border-white/10 rounded-full pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:border-white/20 transition-colors w-64"
@@ -131,13 +132,13 @@ export function ProvidersView() {
           {loading ? (
             <BusinessStatePanel
               kind="loading"
-              title="Loading providers..."
+              title={t('console.providers.states.loading', '正在加载工具配置...')}
               className="min-h-80 rounded-xl border border-white/10 bg-white/5"
             />
           ) : loadError ? (
             <BusinessStatePanel
               kind="error"
-              title="Provider configurations could not be loaded"
+              title={t('console.providers.states.loadErrorTitle', '工具配置加载失败')}
               description={loadError}
               onRetry={() => void loadProviders()}
               className="min-h-80 rounded-xl border border-white/10 bg-white/5"
@@ -145,11 +146,11 @@ export function ProvidersView() {
           ) : currentProviders.length === 0 ? (
             <BusinessStatePanel
               kind="empty"
-              title={`No ${selectedProviderFamily} providers found`}
+              title={t('console.providers.states.emptyTitle', '未找到 {{name}} 提供方', { name: selectedProviderFamily })}
               description={
                 providers.length === 0
-                  ? readOnlyProviderActions
-                  : 'Adjust the search query or provider category to find matching configurations.'
+                  ? t('console.providers.states.emptyNoDataDescription', '可用工具配置会在这里显示。')
+                  : t('console.providers.states.emptySearchDescription', '调整搜索关键词或提供方分类以查找匹配配置。')
               }
               className="min-h-80 rounded-xl border border-dashed border-white/10 bg-white/5"
             />
@@ -163,6 +164,7 @@ export function ProvidersView() {
 }
 
 function ProviderRow({ provider }: { provider: ProviderConfig }) {
+  const { t } = useTranslation();
   const isActive = provider.status === 'active';
 
   return (
@@ -184,7 +186,7 @@ function ProviderRow({ provider }: { provider: ProviderConfig }) {
             <span className="truncate">{provider.name}</span>
             {isActive && (
               <span className="shrink-0 text-[10px] bg-emerald-500/20 text-emerald-400 px-1.5 py-0.5 rounded uppercase font-bold tracking-wider border border-emerald-500/20">
-                active
+                {t('console.providers.status.active', '启用中')}
               </span>
             )}
           </h3>
@@ -209,7 +211,9 @@ function ProviderRow({ provider }: { provider: ProviderConfig }) {
       >
         {isActive && <Check className="w-3.5 h-3.5 text-emerald-400" />}
         <span className={`text-xs font-medium tracking-wide ${isActive ? 'text-emerald-400' : 'text-slate-400'}`}>
-          {isActive ? 'In use' : 'Inactive'}
+          {isActive
+            ? t('console.providers.status.inUse', '使用中')
+            : t('console.providers.status.inactive', '未启用')}
         </span>
       </div>
     </div>

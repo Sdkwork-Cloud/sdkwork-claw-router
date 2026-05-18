@@ -1,3 +1,4 @@
+import { formatDecimalAmount, sumDecimalStrings } from 'sdkwork-claw-router-commons/runtime';
 import type { BillingRecord, TransactionRecord } from './financeService';
 
 export type FinanceReportTab = 'transactions' | 'billing';
@@ -9,9 +10,12 @@ export type FinanceOverviewCard = {
   tone: 'recharge' | 'consume' | 'refund' | 'billing';
 };
 
+export type FinanceTranslator = (key: string, fallback: string, options?: Record<string, unknown>) => string;
+
 export function buildFinanceOverviewCards(
   transactions: TransactionRecord[],
   billing: BillingRecord[],
+  t: FinanceTranslator,
   today = new Date().toISOString().slice(0, 10),
 ): FinanceOverviewCard[] {
   const currentMonth = today.slice(0, 7);
@@ -32,27 +36,29 @@ export function buildFinanceOverviewCards(
 
   return [
     {
-      title: '今日充值总计',
-      value: formatCurrencyFromCents(sumMoney(todayRecharges.map(transaction => transaction.amount))),
-      target: `${todayRecharges.length} 笔成功充值`,
+      title: t('admin.finance.overview.todayRecharge.title', '今日充值总计'),
+      value: formatCurrency(sumDecimalStrings(todayRecharges.map(transaction => transaction.amount), 6)),
+      target: t('admin.finance.overview.todayRecharge.target', '{{count}} 笔成功充值', { count: todayRecharges.length }),
       tone: 'recharge',
     },
     {
-      title: '本月消费总计',
-      value: formatCurrencyFromCents(absCents(sumMoney(monthlyConsumes.map(transaction => transaction.amount)))),
-      target: `${monthlyConsumes.length} 笔消费流水`,
+      title: t('admin.finance.overview.monthlyConsumption.title', '本月消费总计'),
+      value: formatCurrency(absDecimalString(sumDecimalStrings(monthlyConsumes.map(transaction => transaction.amount), 6))),
+      target: t('admin.finance.overview.monthlyConsumption.target', '{{count}} 笔消费流水', { count: monthlyConsumes.length }),
       tone: 'consume',
     },
     {
-      title: '今日退款',
-      value: formatCurrencyFromCents(absCents(sumMoney(todayRefunds.map(transaction => transaction.amount)))),
-      target: `${todayRefunds.length} 笔退款流水`,
+      title: t('admin.finance.overview.todayRefund.title', '今日退款'),
+      value: formatCurrency(absDecimalString(sumDecimalStrings(todayRefunds.map(transaction => transaction.amount), 6))),
+      target: t('admin.finance.overview.todayRefund.target', '{{count}} 笔退款流水', { count: todayRefunds.length }),
       tone: 'refund',
     },
     {
-      title: '待结算账单',
-      value: `${pendingBilling.length} 笔`,
-      target: `${formatCurrencyFromCents(sumMoney(pendingBilling.map(record => record.totalCost)))} 待处理`,
+      title: t('admin.finance.overview.pendingBilling.title', '待结算账单'),
+      value: t('admin.finance.overview.pendingBilling.value', '{{count}} 笔', { count: pendingBilling.length }),
+      target: t('admin.finance.overview.pendingBilling.target', '{{amount}} 待处理', {
+        amount: formatCurrency(sumDecimalStrings(pendingBilling.map(record => record.totalCost), 6)),
+      }),
       tone: 'billing',
     },
   ];
@@ -92,36 +98,20 @@ export function buildFinanceReportCsv(
   ].join('\n');
 }
 
-export function moneyCents(amount: string): number {
-  const value = amount.trim();
-  if (!/^-?\d+(?:\.\d{1,2})?$/.test(value)) {
-    return 0;
-  }
-  const sign = value.startsWith('-') ? -1 : 1;
-  const unsigned = sign < 0 ? value.slice(1) : value;
-  const [whole, fraction = ''] = unsigned.split('.');
-  const cents = Number.parseInt(whole, 10) * 100 + Number.parseInt(fraction.padEnd(2, '0'), 10);
-  return Number.isSafeInteger(cents) ? sign * cents : 0;
+export function moneyCents(amount: string): string {
+  return formatDecimalAmount(amount, 6);
 }
 
 export function formatCurrency(amount: string): string {
-  return formatCurrencyFromCents(moneyCents(amount));
+  const normalized = formatDecimalAmount(amount, 6);
+  const sign = normalized.startsWith('-') ? '-' : '';
+  const unsigned = sign ? normalized.slice(1) : normalized;
+  const [whole, fraction = ''] = unsigned.split('.');
+  return `${sign}$${groupThousands(whole)}.${fraction.padEnd(6, '0').slice(0, 6)}`;
 }
 
-function sumMoney(values: string[]): number {
-  return values.reduce((total, value) => total + moneyCents(value), 0);
-}
-
-function absCents(cents: number): number {
-  return Math.abs(cents);
-}
-
-function formatCurrencyFromCents(cents: number): string {
-  const sign = cents < 0 ? '-' : '';
-  const absolute = Math.abs(cents);
-  const whole = Math.floor(absolute / 100);
-  const fraction = String(absolute % 100).padStart(2, '0');
-  return `${sign}$${groupThousands(String(whole))}.${fraction}`;
+function absDecimalString(value: string): string {
+  return value.startsWith('-') ? value.slice(1) : value;
 }
 
 function groupThousands(value: string): string {

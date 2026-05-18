@@ -10,7 +10,8 @@ mod usage_settlement_worker;
 
 pub use crate::ports::ModelRankingRefreshRunStatus;
 pub use api_key_authenticator::{
-    ApiKeyAuthenticator, ApiKeySecretHasher, AuthenticateApiKeyQuery, AuthenticatedApiKeyContext,
+    ApiKeyAuthenticator, ApiKeySecretCodec, ApiKeySecretHasher, AuthenticateApiKeyQuery,
+    AuthenticatedApiKeyContext,
 };
 pub use api_key_secret_generator::{ApiKeySecretGenerator, EntityUuidGenerator};
 pub use model_catalog_query::{
@@ -29,6 +30,6 @@ pub use pricing_resolver::{
 pub use provider_route_selector::{
     ProviderRouteSelectionError, ProviderRouteSelectionErrorKind, ProviderRouteSelector,
     SelectProviderAccountPoolRouteQuery, SelectProviderRouteQuery,
-    SelectedProviderAccountPoolRoute, SelectedProviderRoute,
+    SelectedProviderAccountPoolRoute, SelectedProviderRoute, SelectedProviderRoutePlan,
 };
 pub use usage_settlement_worker::{UsageSettlementWorker, UsageSettlementWorkerConfig};

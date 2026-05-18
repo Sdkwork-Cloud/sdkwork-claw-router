@@ -12,6 +12,7 @@ export type ApiKeyFormValues = {
 };
 
 export const DEFAULT_API_KEY_MODALITIES = ['text', 'image', 'video', 'audio', 'music'] as const;
+export const DEFAULT_API_KEY_GROUP = 'default';
 
 type ApiKeyModality = (typeof DEFAULT_API_KEY_MODALITIES)[number];
 
@@ -23,7 +24,7 @@ const MAX_BATCH_CREATE_COUNT = 100;
 export function createApiKeyInputFromForm(values: ApiKeyFormValues, _index = 0): CreateApiKeyInput {
   return {
     name: requiredText(values.name, 'name'),
-    group: requiredText(values.group, 'group'),
+    group: normalizeOptionalText(values.group, DEFAULT_API_KEY_GROUP),
     quota: normalizeQuota(values.quota, values.isUnlimitedQuota),
     isUnlimitedQuota: values.isUnlimitedQuota,
     modalities: normalizeModalities(values.modalities),

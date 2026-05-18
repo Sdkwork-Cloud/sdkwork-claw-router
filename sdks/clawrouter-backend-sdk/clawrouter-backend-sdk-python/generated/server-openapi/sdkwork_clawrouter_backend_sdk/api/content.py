@@ -128,16 +128,25 @@ def serialize_header_primitive(value: Any) -> str:
 
 
 class ContentApi:
-    """content API client."""
-    
+    """content content API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.announcements = ContentAnnouncementsApi(client)
+
+
+class ContentAnnouncementsApi:
+    """content content.announcements API client."""
+
     def __init__(self, client: HttpClient):
         self._client = client
 
-    def announcements_list(self) -> AnnouncementsListResult:
+
+    def list(self) -> AnnouncementsListResult:
         """List announcements"""
         return self._client.get(f"/backend/v3/api/content/announcements")
 
-    def announcements_create(self, body: AdminAnnouncementCreateRequest, x_request_id: Optional[str] = None) -> AnnouncementsCreateResult:
+    def create(self, body: AdminAnnouncementCreateRequest, x_request_id: Optional[str] = None) -> AnnouncementsCreateResult:
         """Create announcement"""
         request_headers = build_request_headers(
             {
@@ -147,11 +156,11 @@ class ContentApi:
         )
         return self._client.post(f"/backend/v3/api/content/announcements", json=body, headers=request_headers)
 
-    def announcements_delete(self, announcement_id: str) -> AnnouncementsDeleteResult:
+    def delete(self, announcement_id: str) -> AnnouncementsDeleteResult:
         """Delete announcement"""
         return self._client.delete(f"/backend/v3/api/content/announcements/{serialize_path_parameter(announcement_id, {'name': 'announcementId', 'style': 'simple', 'explode': False})}")
 
-    def announcements_update(self, announcement_id: str, body: AdminAnnouncementUpdateRequest, x_request_id: Optional[str] = None) -> AnnouncementsUpdateResult:
+    def update(self, announcement_id: str, body: AdminAnnouncementUpdateRequest, x_request_id: Optional[str] = None) -> AnnouncementsUpdateResult:
         """Update announcement"""
         request_headers = build_request_headers(
             {

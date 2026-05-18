@@ -12,7 +12,7 @@
   "mode": "apply",
   "hasChanges": true,
   "hasDestructiveChanges": false,
-  "changeFingerprint": "802e0c79455e507eb032f61af3f7cb150c03a6e340074ed726338a310a55b501",
+  "changeFingerprint": "fecc638de9f44ae9febc543320477ec740b5cbfa8815233af89554902fd10ee5",
   "changeImpact": {
     "schemaVersion": 1,
     "areas": [
@@ -22,12 +22,7 @@
       {
         "area": "models",
         "paths": [
-          "src/types/create-routing-channel-request.ts",
-          "src/types/index.ts",
-          "src/types/provider-retry-policy.ts",
-          "src/types/routing-channel-item.ts",
-          "src/types/routing-channels-response.ts",
-          "src/types/update-routing-channel-request.ts"
+          "src/types/generation-agent-usage-fact-metadata.ts"
         ]
       }
     ],
@@ -143,10 +138,10 @@
     "localVersions": []
   },
   "stats": {
-    "totalFiles": 513,
-    "models": 482,
-    "apis": 8,
-    "types": 484
+    "totalFiles": 552,
+    "models": 520,
+    "apis": 9,
+    "types": 522
   },
   "warnings": [
     {
@@ -176,10 +171,6 @@
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
       "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-account-record.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-api-key-record.ts"
     },
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
@@ -259,10 +250,6 @@
     },
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-oauth-account-record.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
       "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-order-dispatch-rule-record.ts"
     },
     {
@@ -279,14 +266,6 @@
     },
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-organization-member-record.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-organization-record.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
       "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-partner-record.ts"
     },
     {
@@ -299,10 +278,6 @@
     },
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-permission-record.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
       "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-position-record.ts"
     },
     {
@@ -312,14 +287,6 @@
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
       "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-refund-record.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-role-permission-record.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-role-record.ts"
     },
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
@@ -339,10 +306,6 @@
     },
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-tenant-record.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
       "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-usage-record-record.ts"
     },
     {
@@ -356,14 +319,6 @@
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
       "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-user-coupon-record.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-user-record.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-user-role-record.ts"
     },
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
@@ -416,6 +371,10 @@
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
       "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/index.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/agents.ts"
     },
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
@@ -476,22 +435,16 @@
   ],
   "syncSummary": {
     "dryRun": false,
-    "writtenFiles": 6,
+    "writtenFiles": 1,
     "skippedScaffoldFiles": 2,
-    "skippedUnchangedGeneratedFiles": 504,
+    "skippedUnchangedGeneratedFiles": 548,
     "deletedGeneratedFiles": 0,
     "changeSummaryPath": ".sdkwork/sdkwork-generator-changes.json",
-    "changeFingerprint": "802e0c79455e507eb032f61af3f7cb150c03a6e340074ed726338a310a55b501",
+    "changeFingerprint": "fecc638de9f44ae9febc543320477ec740b5cbfa8815233af89554902fd10ee5",
     "changes": {
-      "createdGeneratedFiles": [
-        "src/types/provider-retry-policy.ts"
-      ],
+      "createdGeneratedFiles": [],
       "updatedGeneratedFiles": [
-        "src/types/create-routing-channel-request.ts",
-        "src/types/index.ts",
-        "src/types/routing-channel-item.ts",
-        "src/types/routing-channels-response.ts",
-        "src/types/update-routing-channel-request.ts"
+        "src/types/generation-agent-usage-fact-metadata.ts"
       ],
       "unchangedGeneratedFiles": [
         "bin/publish-core.mjs",
@@ -504,6 +457,7 @@
         "package.json",
         "README.md",
         "sdkwork-sdk.json",
+        "src/api/agents.ts",
         "src/api/ai.ts",
         "src/api/auth.ts",
         "src/api/base.ts",
@@ -540,6 +494,22 @@
         "src/types/account-summary-retrieve-result.ts",
         "src/types/account-tokens-deductions-create-result.ts",
         "src/types/account-tokens-retrieve-result.ts",
+        "src/types/agent-capabilities.ts",
+        "src/types/agent-create-request.ts",
+        "src/types/agent-definitions-create-result.ts",
+        "src/types/agent-definitions-list-result.ts",
+        "src/types/agent-definitions-retrieve-result.ts",
+        "src/types/agent-item-response.ts",
+        "src/types/agent-item.ts",
+        "src/types/agent-list-response.ts",
+        "src/types/agent-version-item.ts",
+        "src/types/ai-agent-mcp-server-record.ts",
+        "src/types/ai-agent-memory-record.ts",
+        "src/types/ai-agent-record.ts",
+        "src/types/ai-agent-run-record.ts",
+        "src/types/ai-agent-run-step-record.ts",
+        "src/types/ai-agent-tool-binding-record.ts",
+        "src/types/ai-agent-version-record.ts",
         "src/types/ai-billing-meter-record.ts",
         "src/types/ai-generation-asset-action-record.ts",
         "src/types/ai-generation-asset-record.ts",
@@ -567,8 +537,12 @@
         "src/types/ai-routing-profile-record.ts",
         "src/types/ai-routing-rule-record.ts",
         "src/types/ai-usage-fact-record.ts",
+        "src/types/api-key-groups-list-result.ts",
         "src/types/api-keys-create-result.ts",
+        "src/types/api-keys-delete-result.ts",
         "src/types/api-keys-list-result.ts",
+        "src/types/api-keys-update-result.ts",
+        "src/types/app-api-key-group-list-response.ts",
         "src/types/app-api-key-group.ts",
         "src/types/app-api-key-item.ts",
         "src/types/app-api-key-list-response.ts",
@@ -692,13 +666,16 @@
         "src/types/courses-retrieve-result.ts",
         "src/types/create-api-key-request.ts",
         "src/types/create-api-key-response.ts",
+        "src/types/create-routing-channel-request.ts",
         "src/types/dashboard-announcement.ts",
         "src/types/dashboard-chart-point.ts",
+        "src/types/dashboard-configuration-domain.ts",
         "src/types/dashboard-overview-response.ts",
         "src/types/dashboard-overview-retrieve-result.ts",
         "src/types/dashboard-overview-summary.ts",
         "src/types/dashboard-sparkline-point.ts",
         "src/types/dashboard-top-model.ts",
+        "src/types/delete-api-key-response.ts",
         "src/types/feeds-category-retrieve-result.ts",
         "src/types/feeds-collections-create-result.ts",
         "src/types/feeds-collections-current-delete-result.ts",
@@ -735,21 +712,35 @@
         "src/types/gateway-trace.ts",
         "src/types/gateway-traces-list-result.ts",
         "src/types/gateway-traces-response.ts",
+        "src/types/generation-agent-generation-config.ts",
+        "src/types/generation-agent-metering-event.ts",
+        "src/types/generation-agent-reference-image-input.ts",
+        "src/types/generation-agent-run-create-request.ts",
+        "src/types/generation-agent-run-create-response.ts",
+        "src/types/generation-agent-run-snapshot.ts",
+        "src/types/generation-agent-run-step-snapshot.ts",
+        "src/types/generation-agent-runs-create-result.ts",
+        "src/types/generation-agent-snapshot.ts",
+        "src/types/generation-agent-usage-summary.ts",
         "src/types/generation-history-item.ts",
         "src/types/generation-history-media-item.ts",
         "src/types/generation-history-response.ts",
-        "src/types/generations-list-result.ts",
+        "src/types/generation-list-result.ts",
+        "src/types/iam-api-key-record.ts",
         "src/types/iam-app-context.ts",
         "src/types/iam-audit-event-record.ts",
         "src/types/iam-credential-record.ts",
         "src/types/iam-current-session-update-request.ts",
+        "src/types/iam-device-record.ts",
         "src/types/iam-gateway-access-policy-record.ts",
         "src/types/iam-gateway-api-key-group-metric-snapshot-record.ts",
         "src/types/iam-gateway-api-key-group-record.ts",
         "src/types/iam-gateway-api-key-record.ts",
         "src/types/iam-gateway-risk-rule-record.ts",
+        "src/types/iam-login-qr-code-confirm-request.ts",
         "src/types/iam-login-qr-code-response.ts",
         "src/types/iam-login-qr-code-status-response.ts",
+        "src/types/iam-mfa-factor-record.ts",
         "src/types/iam-oauth-authorization-url-response.ts",
         "src/types/iam-oauth-session-create-request.ts",
         "src/types/iam-organization-member-record.ts",
@@ -757,7 +748,11 @@
         "src/types/iam-password-reset-create-request.ts",
         "src/types/iam-password-reset-request-create-request.ts",
         "src/types/iam-password-reset-request-response.ts",
+        "src/types/iam-permission-record.ts",
+        "src/types/iam-policy-record.ts",
         "src/types/iam-registration-create-request.ts",
+        "src/types/iam-role-permission-record.ts",
+        "src/types/iam-role-record.ts",
         "src/types/iam-security-event-record.ts",
         "src/types/iam-session-create-request.ts",
         "src/types/iam-session-record.ts",
@@ -769,11 +764,13 @@
         "src/types/iam-user-preference-record.ts",
         "src/types/iam-user-record.ts",
         "src/types/iam-user-response.ts",
+        "src/types/iam-user-role-record.ts",
         "src/types/iam-user-security-setting-record.ts",
         "src/types/iam-verification-code-create-request.ts",
         "src/types/iam-verification-code-response.ts",
         "src/types/iam-verification-code-verify-request.ts",
         "src/types/iam-verification-code-verify-response.ts",
+        "src/types/index.ts",
         "src/types/integration-channel-model-record.ts",
         "src/types/integration-channel-record.ts",
         "src/types/integration-provider-account-record.ts",
@@ -784,10 +781,9 @@
         "src/types/json-null.ts",
         "src/types/json-object.ts",
         "src/types/json-value.ts",
+        "src/types/login-qr-codes-confirm-result.ts",
         "src/types/login-qr-codes-create-result.ts",
         "src/types/login-qr-codes-retrieve-result.ts",
-        "src/types/message.ts",
-        "src/types/messages-response.ts",
         "src/types/model-ranking-history-entry.ts",
         "src/types/model-ranking-history-point.ts",
         "src/types/model-ranking-item.ts",
@@ -796,7 +792,9 @@
         "src/types/model-rankings-source.ts",
         "src/types/model-vendors-list-result.ts",
         "src/types/models-list-result.ts",
+        "src/types/notification-item.ts",
         "src/types/notifications-list-result.ts",
+        "src/types/notifications-response.ts",
         "src/types/oauth-authorization-urls-retrieve-result.ts",
         "src/types/oauth-sessions-create-result.ts",
         "src/types/ops-alert-event-record.ts",
@@ -822,7 +820,6 @@
         "src/types/plus-account-record.ts",
         "src/types/plus-agent-skill-package-record.ts",
         "src/types/plus-agent-skill-record.ts",
-        "src/types/plus-api-key-record.ts",
         "src/types/plus-api-result.ts",
         "src/types/plus-app-record.ts",
         "src/types/plus-card-record.ts",
@@ -848,34 +845,25 @@
         "src/types/plus-ledger-bridge-record.ts",
         "src/types/plus-member-card-record.ts",
         "src/types/plus-member-level-record.ts",
-        "src/types/plus-oauth-account-record.ts",
         "src/types/plus-order-dispatch-rule-record.ts",
         "src/types/plus-order-item-record.ts",
         "src/types/plus-order-record.ts",
         "src/types/plus-order-worker-dispatch-profile-record.ts",
-        "src/types/plus-organization-member-record.ts",
-        "src/types/plus-organization-record.ts",
         "src/types/plus-partner-record.ts",
         "src/types/plus-payment-record.ts",
         "src/types/plus-payment-webhook-event-record.ts",
-        "src/types/plus-permission-record.ts",
         "src/types/plus-position-record.ts",
         "src/types/plus-product-record.ts",
         "src/types/plus-refund-record.ts",
-        "src/types/plus-role-permission-record.ts",
-        "src/types/plus-role-record.ts",
         "src/types/plus-shop-record.ts",
         "src/types/plus-shopping-cart-item-record.ts",
         "src/types/plus-shopping-cart-record.ts",
         "src/types/plus-sku-record.ts",
-        "src/types/plus-tenant-record.ts",
         "src/types/plus-usage-record-record.ts",
         "src/types/plus-user-address-record.ts",
         "src/types/plus-user-agent-skill-record.ts",
         "src/types/plus-user-card-record.ts",
         "src/types/plus-user-coupon-record.ts",
-        "src/types/plus-user-record.ts",
-        "src/types/plus-user-role-record.ts",
         "src/types/plus-vip-benefit-record.ts",
         "src/types/plus-vip-benefit-usage-record.ts",
         "src/types/plus-vip-level-benefit-record.ts",
@@ -893,7 +881,9 @@
         "src/types/preflight-releases-create-result.ts",
         "src/types/preflight-settlements-create-result.ts",
         "src/types/problem-detail.ts",
+        "src/types/provider-circuit-breaker-policy.ts",
         "src/types/provider-config.ts",
+        "src/types/provider-retry-policy.ts",
         "src/types/providers-list-result.ts",
         "src/types/providers-response.ts",
         "src/types/ranking-vendor-option.ts",
@@ -903,14 +893,17 @@
         "src/types/redeem-code-request.ts",
         "src/types/redeem-code-response.ts",
         "src/types/registrations-create-result.ts",
+        "src/types/routing-api-key-item.ts",
         "src/types/routing-api-keys-list-result.ts",
         "src/types/routing-api-keys-response.ts",
         "src/types/routing-channel-delete-response.ts",
+        "src/types/routing-channel-item.ts",
         "src/types/routing-channel-mutation-response.ts",
         "src/types/routing-channel-test-response.ts",
         "src/types/routing-channels-create-result.ts",
         "src/types/routing-channels-delete-result.ts",
         "src/types/routing-channels-list-result.ts",
+        "src/types/routing-channels-response.ts",
         "src/types/routing-channels-status-update-result.ts",
         "src/types/routing-channels-update-result.ts",
         "src/types/routing-channels-verify-result.ts",
@@ -954,6 +947,9 @@
         "src/types/submit-recharge-response.ts",
         "src/types/system-installation-state-record.ts",
         "src/types/system-schema-migration-record.ts",
+        "src/types/update-api-key-request.ts",
+        "src/types/update-api-key-response.ts",
+        "src/types/update-routing-channel-request.ts",
         "src/types/update-routing-strategy-request.ts",
         "src/types/update-routing-strategy-response.ts",
         "src/types/update-settings-request.ts",
@@ -970,6 +966,7 @@
         "src/types/users-settings-update-result.ts",
         "src/types/verification-codes-create-result.ts",
         "src/types/verification-codes-verify-result.ts",
+        "src/types/verification-policy-retrieve-result.ts",
         "src/types/vip-benefits-list-result.ts",
         "src/types/vip-info-retrieve-result.ts",
         "src/types/vip-levels-list-result.ts",
@@ -1016,12 +1013,7 @@
         {
           "area": "models",
           "paths": [
-            "src/types/create-routing-channel-request.ts",
-            "src/types/index.ts",
-            "src/types/provider-retry-policy.ts",
-            "src/types/routing-channel-item.ts",
-            "src/types/routing-channels-response.ts",
-            "src/types/update-routing-channel-request.ts"
+            "src/types/generation-agent-usage-fact-metadata.ts"
           ]
         }
       ],

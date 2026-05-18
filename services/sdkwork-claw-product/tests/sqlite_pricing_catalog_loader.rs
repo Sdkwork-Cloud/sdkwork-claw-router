@@ -142,6 +142,116 @@ async fn sqlite_loader_treats_rfc3339_effective_from_as_active_timestamp() {
     assert_eq!("0.150000", price.unit_price.to_fixed_string(6));
 }
 
+#[tokio::test]
+async fn sqlite_loader_redacts_copyable_key_material_when_secret_codec_is_absent() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    create_schema(&pool).await;
+    seed_catalog(&pool).await;
+
+    sqlx::query(
+        r#"
+        UPDATE iam_gateway_api_key
+        SET metadata = json_set(COALESCE(metadata, '{}'), '$.copyableKeyCiphertext', 'encrypted-copyable-key')
+        WHERE id = 100
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    let snapshot = SqlitePricingCatalogLoader::new(pool)
+        .load_snapshot()
+        .await
+        .unwrap();
+    let api_key = snapshot.find_api_key(100).unwrap();
+
+    assert_eq!("sk-test********ABCD", api_key.key_display_masked);
+    assert_eq!(None, api_key.copyable_key);
+}
+
+#[tokio::test]
+async fn sqlite_loader_excludes_unhealthy_provider_channels_from_routing_snapshot() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    create_schema(&pool).await;
+    seed_catalog(&pool).await;
+
+    sqlx::query("UPDATE integration_channel SET health_status = 2, updated_at = CURRENT_TIMESTAMP WHERE id = 3001")
+        .execute(&pool)
+        .await
+        .unwrap();
+
+    let snapshot = SqlitePricingCatalogLoader::new(pool)
+        .load_snapshot()
+        .await
+        .unwrap();
+
+    assert!(
+        snapshot
+            .list_provider_routes("openai/global/gpt-4o-mini")
+            .iter()
+            .all(|route| route.provider_code != "openrouter"),
+        "unhealthy provider model routes must be excluded from the runtime catalog snapshot"
+    );
+    assert!(
+        snapshot
+            .list_provider_account_pool_routes()
+            .iter()
+            .all(|route| route.provider_code != "openrouter"),
+        "unhealthy account-pool routes must be excluded from the runtime catalog snapshot"
+    );
+}
+
+#[tokio::test]
+async fn sqlite_loader_reincludes_unhealthy_provider_channels_after_recovery_probe_window() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    create_schema(&pool).await;
+    seed_catalog(&pool).await;
+
+    sqlx::query(
+        r#"
+        UPDATE integration_channel
+        SET health_status = 2,
+            updated_at = datetime(CURRENT_TIMESTAMP, '-61 seconds')
+        WHERE id = 3001
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    let snapshot = SqlitePricingCatalogLoader::new(pool)
+        .load_snapshot()
+        .await
+        .unwrap();
+
+    assert!(
+        snapshot
+            .list_provider_routes("openai/global/gpt-4o-mini")
+            .iter()
+            .any(|route| route.provider_code == "openrouter"),
+        "unhealthy provider model routes must be re-included after the recovery probe window"
+    );
+    assert!(
+        snapshot
+            .list_provider_account_pool_routes()
+            .iter()
+            .any(|route| route.provider_code == "openrouter"),
+        "unhealthy account-pool routes must be re-included after the recovery probe window"
+    );
+}
+
 async fn create_schema(pool: &SqlitePool) {
     for statement in [
         r#"CREATE TABLE ai_model_vendor (
@@ -215,6 +325,8 @@ async fn create_schema(pool: &SqlitePool) {
             base_url_override TEXT,
             timeout_ms INTEGER,
             retry_policy TEXT,
+            health_status INTEGER,
+            updated_at TEXT,
             account_id INTEGER,
             status INTEGER NOT NULL,
             deleted_at TEXT,
@@ -288,6 +400,9 @@ async fn create_schema(pool: &SqlitePool) {
         )"#,
         r#"CREATE TABLE iam_gateway_api_key_group (
             id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            name TEXT,
             code TEXT NOT NULL,
             pricing_plan_code TEXT NOT NULL,
             rate_multiplier TEXT NOT NULL,
@@ -314,7 +429,8 @@ async fn create_schema(pool: &SqlitePool) {
             deleted_at TEXT,
             revoked_at TEXT,
             expire_at TEXT,
-            updated_at TEXT
+            updated_at TEXT,
+            metadata TEXT NOT NULL DEFAULT '{}'
         )"#,
         r#"CREATE TABLE iam_gateway_access_policy (
             id INTEGER PRIMARY KEY,
@@ -385,7 +501,7 @@ async fn seed_catalog(pool: &SqlitePool) {
         "INSERT INTO ai_routing_policy (id, tenant_id, organization_id, policy_code, policy_scope, subject_id, default_profile_id, fallback_mode, status) VALUES (9001, 10, 20, 'standard-group-policy', 5, 10, 9101, 1, 1)",
         "INSERT INTO ai_routing_rule (id, tenant_id, organization_id, profile_id, rule_code, priority, match_expression, target_model, candidate_channels, fallback_chain, constraints, status) VALUES (9102, 10, 20, 9101, 'standard-group-gpt-4o-mini', 1, '{\"catalogKey\":\"openai/global/gpt-4o-mini\"}', 'openai/global/gpt-4o-mini', '[{\"channel_id\":3001,\"weight\":100}]', '[]', '{}', 1)",
         "INSERT INTO ai_pricing_plan (id, plan_code, base_price_side, default_multiplier, default_markup_amount, currency, status, priority) VALUES (1, 'standard', 1, '1.200000', '0.000000', 'USD', 1, 1)",
-        "INSERT INTO iam_gateway_api_key_group (id, code, pricing_plan_code, rate_multiplier, official_price_multiplier, status) VALUES (10, 'standard-group', 'standard', '1.000000', '1.100000', 1)",
+        "INSERT INTO iam_gateway_api_key_group (id, name, code, pricing_plan_code, rate_multiplier, official_price_multiplier, status) VALUES (10, 'Standard Group', 'standard-group', 'standard', '1.000000', '1.100000', 1)",
         "INSERT INTO iam_gateway_access_policy (id, allowed_capabilities, ip_allowlist, status) VALUES (700, '[\"text\",\"image\"]', '[\"192.168.1.1\",\"10.0.0.0/24\"]', 1)",
         "INSERT INTO ai_quota_policy (id, quota_limit, status) VALUES (900, '1000.000000', 1)",
         "INSERT INTO iam_gateway_api_key_group_metric_snapshot (id, group_id, capacity_used, capacity_limit, usage_amount_total, snapshot_at, status) VALUES (800, 10, '37.500000', '1000.000000', '37.500000', '2026-04-29 00:00:00', 1)",

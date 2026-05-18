@@ -74,6 +74,56 @@ class SettingsRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("SettingsService.fetchSettings().then", settings_view)
         self.assertNotIn("SettingsService.updateSettings({ ...data, notifications: newNotif });", settings_view)
 
+    def test_console_settings_product_states_are_localized(self) -> None:
+        settings_view = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-settings"
+            / "src"
+            / "SettingsView.tsx"
+        ).read_text(encoding="utf-8")
+        settings_service = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-settings"
+            / "src"
+            / "settingsService.ts"
+        ).read_text(encoding="utf-8")
+        i18n = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-i18n"
+            / "src"
+            / "index.ts"
+        ).read_text(encoding="utf-8")
+
+        for marker in [
+            "console.settings.states.loading",
+            "console.settings.states.loadErrorTitle",
+            "console.settings.states.loadErrorFallback",
+            "console.settings.states.saveErrorFallback",
+            "console.settings.states.saved",
+        ]:
+            self.assertIn(marker, settings_view + settings_service + i18n)
+            self.assertGreaterEqual(i18n.count(f'"{marker}"'), 2)
+
+        for hardcoded_copy in [
+            "Loading settings...",
+            "Settings could not be loaded",
+            "Failed to load console settings.",
+            "Failed to save settings.",
+            "Settings saved.",
+            "Failed to fetch settings",
+        ]:
+            self.assertNotIn(hardcoded_copy, settings_view)
+            self.assertNotIn(hardcoded_copy, settings_service)
+
     def test_console_settings_has_real_app_backend_route_and_sql_stores(self) -> None:
         product_api_mod = (
             ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"

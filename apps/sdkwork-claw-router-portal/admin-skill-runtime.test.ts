@@ -10,6 +10,7 @@ import {
   createSkillArtifactInputFromForm,
   createSkillAssetInputFromForm,
   createSkillInputFromForm,
+  updateSkillCategoryInputFromForm,
   updateSkillArtifactInputFromForm,
   updateSkillAssetInputFromForm,
   updateSkillPackageInputFromForm,
@@ -34,7 +35,9 @@ async function withBackendSdkFetch<T>(
   Object.defineProperty(globalThis, "window", {
     configurable: true,
     enumerable: true,
-    value: {},
+    value: {
+      dispatchEvent: () => true,
+    },
   });
   globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url;
@@ -135,6 +138,23 @@ function samplePackage(overrides: Record<string, unknown> = {}) {
     latestPublishedAt: "",
     createdAt: "2026-05-09T00:00:00Z",
     updatedAt: "2026-05-09T00:00:00Z",
+    ...overrides,
+  };
+}
+
+function sampleCategory(overrides: Record<string, unknown> = {}) {
+  return {
+    id: "1901",
+    name: "Productivity",
+    description: "Agent productivity",
+    code: "productivity",
+    icon: "/icons/productivity.svg",
+    sortWeight: 1,
+    parentId: "",
+    path: "/skills/productivity",
+    visible: true,
+    status: 1,
+    type: 19,
     ...overrides,
   };
 }
@@ -274,6 +294,20 @@ test("admin skill form helpers create normalized backend DTOs", () => {
 });
 
 test("admin skill update helper omits empty editable fields", () => {
+  const categoryForm = new FormData();
+  categoryForm.set("name", " Productivity Pro ");
+  categoryForm.set("description", " ");
+  categoryForm.set("parentId", "1900");
+  categoryForm.set("sortWeight", "5");
+  categoryForm.set("visible", "false");
+
+  assert.deepEqual(updateSkillCategoryInputFromForm(categoryForm), {
+    name: "Productivity Pro",
+    parentId: "1900",
+    sortWeight: 5,
+    visible: false,
+  });
+
   const form = new FormData();
   form.set("name", " Research Brief Pro ");
   form.set("summary", " ");
@@ -423,9 +457,106 @@ test("admin skill page exposes SDK-backed asset and artifact management surface"
     "AdminSkillService.deleteSkillArtifact",
     "createSkillAssetInputFromForm",
     "createSkillArtifactInputFromForm",
-    "Manage assets and artifacts",
+    "admin.skill.actions.manageResources",
   ]) {
     assert.ok(source.includes(expected), `missing admin skill resource management source marker: ${expected}`);
+  }
+});
+
+test("admin skill page uses tabbed management sections and page-scoped i18n keys", async () => {
+  const fs = await import("node:fs/promises");
+  const source = await fs.readFile(
+    new URL("./packages/sdkwork-claw-router-admin-skill/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+  const i18nSource = await fs.readFile(
+    new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "type SkillAdminTab = 'skills' | 'packages';",
+    "const [activeTab, setActiveTab] = useState<SkillAdminTab>('skills');",
+    'role="tablist"',
+    'role="tab"',
+    "aria-selected={activeTab === 'skills'}",
+    "aria-selected={activeTab === 'packages'}",
+    "activeTab === 'packages' ? (",
+    "activeTab === 'skills' ? (",
+  ]) {
+    assert.ok(source.includes(expected), `missing tabbed admin skill source marker: ${expected}`);
+  }
+
+  for (const removed of [
+    ">Agent Skills<",
+    ">Skill Packages<",
+    ">Skills<",
+    "title=\"Loading packages\"",
+    "title=\"No packages found\"",
+    "title=\"Loading skills\"",
+    "title=\"No skills found\"",
+  ]) {
+    assert.ok(!source.includes(removed), `admin skill page still hardcodes user-facing text: ${removed}`);
+  }
+
+  for (const key of [
+    "admin.skill.tabs.skills",
+    "admin.skill.tabs.packages",
+    "admin.skill.actions.createSkill",
+    "admin.skill.actions.createPackage",
+    "admin.skill.filters.searchPlaceholder",
+    "admin.skill.empty.noPackages",
+    "admin.skill.empty.noSkills",
+    "admin.skill.modals.skill.createTitle",
+    "admin.skill.modals.package.createTitle",
+    "admin.skill.resources.title",
+  ]) {
+    assert.ok(source.includes(`t('${key}'`), `admin skill page should consume i18n key ${key}`);
+    assert.equal(
+      i18nSource.split(`"${key}":`).length - 1,
+      2,
+      `admin skill i18n key ${key} must exist once in English and once in Chinese resources`,
+    );
+  }
+});
+
+test("admin skill page uses a left category tree with CRUD and right-side tabs", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(new URL("./packages/sdkwork-claw-router-admin-skill/src/index.tsx", import.meta.url), "utf8"),
+  );
+
+  for (const expected of [
+    "data-admin-skill-layout",
+    "data-admin-skill-category-tree",
+    "data-admin-skill-table-card",
+    "data-admin-skill-table-header",
+    "data-admin-skill-table-filters",
+    "function SkillCategoryTree",
+    "function buildCategoryTree",
+    "function isCategoryInSelectedTree",
+    "selectedCategoryId",
+    "setSelectedCategoryId",
+    "onCreateChild",
+    "onEditCategory",
+    "onDeleteCategory",
+    "role=\"tablist\"",
+    "activeTab === 'packages' ? openCreatePackage : openCreateSkill",
+    "activeTab === 'packages' ? t('admin.skill.actions.createPackage') : t('admin.skill.actions.createSkill')",
+  ]) {
+    assert.ok(source.includes(expected), `missing admin skill category tree marker: ${expected}`);
+  }
+
+  for (const removed of [
+    "<Metric label=",
+    "admin.skill.metrics.total",
+    "admin.skill.metrics.pendingReview",
+    "admin.skill.subtitle",
+    "admin.skill.sections.packages.description",
+    "admin.skill.sections.skills.description",
+    "value={categoryId}",
+    "setCategoryId(event.target.value)",
+  ]) {
+    assert.ok(!source.includes(removed), `admin skill page still renders the old compact-only layout: ${removed}`);
   }
 });
 
@@ -567,23 +698,13 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
     (url, init) => {
       const method = init?.method ?? "GET";
       if (url === "/backend/v3/api/ecosystem/skills/categories" && method === "GET") {
-        return {
-          items: [
-            {
-              id: "1901",
-              name: "Productivity",
-              description: "Agent productivity",
-              code: "productivity",
-              icon: "/icons/productivity.svg",
-              sortWeight: 1,
-              parentId: "",
-              path: "/skills/productivity",
-              visible: true,
-              status: 1,
-              type: 19,
-            },
-          ],
-        };
+        return { items: [sampleCategory()] };
+      }
+      if (url === "/backend/v3/api/ecosystem/skills/categories/1901" && method === "PUT") {
+        return { item: sampleCategory({ name: "Productivity Pro", sortWeight: 5 }) };
+      }
+      if (url === "/backend/v3/api/ecosystem/skills/categories/1901" && method === "DELETE") {
+        return { deleted: true };
       }
       if (url === "/backend/v3/api/ecosystem/skills?q=research&page=1&page_size=20" && method === "GET") {
         return { items: [sampleSkill()] };
@@ -664,6 +785,11 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
     },
     async (captured) => {
       const categories = await AdminSkillService.fetchSkillCategories();
+      const updatedCategory = await AdminSkillService.updateSkillCategory("1901", {
+        name: "Productivity Pro",
+        sortWeight: 5,
+      });
+      const deletedCategory = await AdminSkillService.deleteSkillCategory("1901");
       const skills = await AdminSkillService.fetchSkills({ searchQuery: "research", page: 1, pageSize: 20 });
       const packages = await AdminSkillService.fetchSkillPackages({ searchQuery: "agent", enabled: true });
       const skillPackage = await AdminSkillService.getSkillPackage("7101");
@@ -727,6 +853,8 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
       const deleted = await AdminSkillService.deleteSkill("8101");
 
       assert.equal(categories[0].code, "productivity");
+      assert.equal(updatedCategory.name, "Productivity Pro");
+      assert.equal(deletedCategory, true);
       assert.equal(skills[0].skillKey, "research_brief");
       assert.equal(packages[0].packageKey, "agent_productivity");
       assert.equal(skillPackage.id, "7101");
@@ -755,6 +883,8 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
 
       assert.deepEqual(captured.map((request) => `${request.method} ${request.url}`), [
         "GET /backend/v3/api/ecosystem/skills/categories",
+        "PUT /backend/v3/api/ecosystem/skills/categories/1901",
+        "DELETE /backend/v3/api/ecosystem/skills/categories/1901",
         "GET /backend/v3/api/ecosystem/skills?q=research&page=1&page_size=20",
         "GET /backend/v3/api/ecosystem/skills/package?q=agent&enabled=true",
         "GET /backend/v3/api/ecosystem/skills/package/7101",
@@ -782,8 +912,17 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
         "DELETE /backend/v3/api/ecosystem/skills/8101",
       ]);
 
-      assert.equal(captured[1].body, "");
-      assert.equal(captured[2].body, "");
+      const updateCategoryRequest = captured.find((request) => request.method === "PUT" && request.url === "/backend/v3/api/ecosystem/skills/categories/1901");
+      assert.ok(updateCategoryRequest);
+      assert.deepEqual(JSON.parse(updateCategoryRequest.body), {
+        name: "Productivity Pro",
+        sortWeight: 5,
+      });
+      const deleteCategoryRequest = captured.find((request) => request.method === "DELETE" && request.url === "/backend/v3/api/ecosystem/skills/categories/1901");
+      assert.ok(deleteCategoryRequest);
+      assert.match(deleteCategoryRequest.headers["x-request-id"], /^admin-skill-category-delete-/);
+      assert.equal(captured[3].body, "");
+      assert.equal(captured[4].body, "");
       const createAssetRequest = captured.find((request) => request.method === "POST" && request.url === "/backend/v3/api/ecosystem/skills/8101/assets");
       assert.ok(createAssetRequest);
       assert.deepEqual(JSON.parse(createAssetRequest.body), {

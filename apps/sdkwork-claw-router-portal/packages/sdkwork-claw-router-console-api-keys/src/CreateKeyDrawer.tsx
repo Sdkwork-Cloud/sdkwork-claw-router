@@ -13,27 +13,32 @@ import {
   X,
   Zap,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { CopyButton } from 'sdkwork-claw-router-commons';
 import type { ApiKey, ApiKeyGroup } from './apiKeyService';
-import type { ApiKeyFormValues as ApiKeyFormValuesContract } from './apiKeyForm';
+import { DEFAULT_API_KEY_GROUP, type ApiKeyFormValues as ApiKeyFormValuesContract } from './apiKeyForm';
+import { formatApiKeyGroupOptionLabel, resolveApiKeyGroupCode } from './apiKeyGroups';
 
 export type ApiKeyFormValues = ApiKeyFormValuesContract;
 
 interface KeyFormDrawerProps {
   isOpen: boolean;
-  mode?: 'create' | 'view';
+  mode?: 'create' | 'view' | 'edit';
   initialData?: ApiKey | null;
   groups: ApiKeyGroup[];
+  groupsLoading?: boolean;
   submitting?: boolean;
   onClose: () => void;
+  onRequestGroups?: () => void;
   onSubmit?: (data: ApiKeyFormValues) => void | Promise<void>;
 }
 
 const MODALITIES = [
-  { id: 'text', label: 'Text', icon: MessageSquare, color: 'text-amber-500', bg: 'bg-amber-500/10', border: 'border-amber-500/30' },
-  { id: 'image', label: 'Image', icon: ImageIcon, color: 'text-pink-500', bg: 'bg-pink-500/10', border: 'border-pink-500/30' },
-  { id: 'video', label: 'Video', icon: Video, color: 'text-purple-500', bg: 'bg-purple-500/10', border: 'border-purple-500/30' },
-  { id: 'audio', label: 'Audio', icon: Mic, color: 'text-emerald-500', bg: 'bg-emerald-500/10', border: 'border-emerald-500/30' },
-  { id: 'music', label: 'Music', icon: Music, color: 'text-sky-500', bg: 'bg-sky-500/10', border: 'border-sky-500/30' },
+  { id: 'text', labelKey: 'common.modality.text', icon: MessageSquare, color: 'text-amber-500', bg: 'bg-amber-500/10', border: 'border-amber-500/30' },
+  { id: 'image', labelKey: 'common.modality.image', icon: ImageIcon, color: 'text-pink-500', bg: 'bg-pink-500/10', border: 'border-pink-500/30' },
+  { id: 'video', labelKey: 'common.modality.video', icon: Video, color: 'text-purple-500', bg: 'bg-purple-500/10', border: 'border-purple-500/30' },
+  { id: 'audio', labelKey: 'common.modality.audio', icon: Mic, color: 'text-emerald-500', bg: 'bg-emerald-500/10', border: 'border-emerald-500/30' },
+  { id: 'music', labelKey: 'common.modality.music', icon: Music, color: 'text-sky-500', bg: 'bg-sky-500/10', border: 'border-sky-500/30' },
 ];
 
 const DEFAULT_MODALITIES = MODALITIES.map((item) => item.id);
@@ -43,12 +48,16 @@ export function CreateKeyDrawer({
   mode = 'create',
   initialData = null,
   groups,
+  groupsLoading = false,
   submitting = false,
   onClose,
+  onRequestGroups,
   onSubmit,
 }: KeyFormDrawerProps) {
+  const { t } = useTranslation();
   const isView = mode === 'view';
-  const defaultGroup = useMemo(() => groups[0]?.code ?? '', [groups]);
+  const isEdit = mode === 'edit';
+  const defaultGroup = useMemo(() => groups[0]?.code ?? DEFAULT_API_KEY_GROUP, [groups]);
   const [name, setName] = useState('');
   const [group, setGroup] = useState(defaultGroup);
   const [expiryType, setExpiryType] = useState<'never' | 'custom' | '1h' | '1d' | '1m'>('never');
@@ -64,8 +73,8 @@ export function CreateKeyDrawer({
       return;
     }
     if (initialData) {
-      setName(initialData.name);
-      setGroup(initialData.group);
+      setName(initialData.displayName);
+      setGroup(resolveApiKeyGroupCode(initialData.group, groups));
       setIpLimit(initialData.ipLimit === 'unrestricted' ? '' : initialData.ipLimit);
       setExpiryType(initialData.expires === 'never' ? 'never' : 'custom');
       setExpiryDate(initialData.expires === 'never' ? '' : initialData.expires.replace(' ', 'T').slice(0, 16));
@@ -84,13 +93,17 @@ export function CreateKeyDrawer({
     setQuota('0.000000');
     setIpLimit('');
     setAllowedModalities(new Set(DEFAULT_MODALITIES));
-  }, [defaultGroup, initialData, isOpen]);
+  }, [defaultGroup, groups, initialData, isOpen]);
 
   if (!isOpen) {
     return null;
   }
 
-  const title = isView ? 'API Key Details' : 'Create API Key';
+  const title = isView
+    ? t('console.apiKeys.detailsTitle', 'API Key 详情')
+    : isEdit
+      ? t('console.apiKeys.editTitle', '编辑 API Key')
+      : t('console.apiKeys.createTitle', '创建 API Key');
   const canSubmit = !isView && !submitting && name.trim().length > 0 && group.length > 0 && allowedModalities.size > 0;
 
   const handleExpiryShortcut = (type: 'never' | '1h' | '1d' | '1m') => {
@@ -157,40 +170,52 @@ export function CreateKeyDrawer({
         <div className="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar">
           {isView && initialData && (
             <div className="bg-slate-50 dark:bg-[#252525] p-5 rounded-xl border border-slate-200 dark:border-white/5 space-y-4">
-              <ReadOnlyRow label="Masked token" value={initialData.maskedKey} monospace />
-              <ReadOnlyRow label="Status" value={initialData.status} />
-              <ReadOnlyRow label="Used quota" value={initialData.usedQuota} />
-              <ReadOnlyRow label="Created" value={initialData.created} monospace />
+              <ReadOnlyRow
+                label={t('console.apiKeys.maskedToken', 'Masked token')}
+                value={initialData.maskedKey}
+                monospace
+                copyText={initialData.copyableKey}
+                copyLabel={t('console.apiKeys.copyKey', '复制密钥')}
+                copiedLabel={t('console.apiKeys.keyCopied', '密钥已复制')}
+                copyDisabled={!initialData.copyableKey}
+              />
+              <ReadOnlyRow label={t('console.apiKeys.status', '状态')} value={initialData.status} />
+              <ReadOnlyRow label={t('console.apiKeys.usedQuota', '已用额度')} value={initialData.usedQuota} />
+              <ReadOnlyRow label={t('console.apiKeys.created', '创建时间')} value={initialData.created} monospace />
             </div>
           )}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Name</label>
+              <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">{t('console.apiKeys.name', 'Name')}</label>
               <input
                 type="text"
                 disabled={isView}
                 value={name}
                 onChange={(event) => setName(event.target.value)}
                 className="w-full bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/10 px-3 py-2 rounded-lg text-slate-900 dark:text-white text-sm focus:outline-none focus:border-blue-500 disabled:opacity-60"
-                placeholder="Production key"
+                placeholder={t('console.apiKeys.namePlaceholder', 'Production key')}
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Group</label>
+              <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">{t('console.apiKeys.group', 'Group')}</label>
               <select
                 disabled={isView}
                 value={group}
+                onFocus={onRequestGroups}
                 onChange={(event) => setGroup(event.target.value)}
                 className="w-full bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/10 px-3 py-2 rounded-lg text-slate-900 dark:text-white text-sm focus:outline-none focus:border-blue-500 disabled:opacity-60"
               >
+                {groupsLoading && <option value={group}>{t('console.apiKeys.loadingGroups', '正在加载分组...')}</option>}
                 {groups.map((item) => (
                   <option key={item.code} value={item.code}>
-                    {item.name}
-                    {item.rate ? ` (${item.rate})` : ''}
+                    {formatApiKeyGroupOptionLabel(item)}
                   </option>
                 ))}
-                {groups.length === 0 && <option value="">No groups available</option>}
+                {!groupsLoading && groups.length > 0 && !groups.some((item) => item.code === group) && (
+                  <option value={group}>{group}</option>
+                )}
+                {!groupsLoading && groups.length === 0 && <option value={DEFAULT_API_KEY_GROUP}>{t('console.apiKeys.defaultGroup', '默认分组')}</option>}
               </select>
             </div>
           </div>
@@ -199,7 +224,7 @@ export function CreateKeyDrawer({
             <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-3">
               <span className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-blue-400" />
-                Expiration
+                {t('console.apiKeys.expiration', 'Expiration')}
               </span>
               {!isView && (
                 <div className="flex items-center gap-2 text-xs">
@@ -211,7 +236,7 @@ export function CreateKeyDrawer({
                         expiryType === item ? 'bg-blue-600 text-white' : 'bg-white text-slate-700 hover:bg-slate-100 dark:bg-white/10 dark:text-white dark:hover:bg-white/20'
                       }`}
                     >
-                      {item === 'never' ? 'Never' : item.toUpperCase()}
+                      {item === 'never' ? t('common.actions.never') : item.toUpperCase()}
                     </button>
                   ))}
                 </div>
@@ -230,14 +255,14 @@ export function CreateKeyDrawer({
             {expiryType === 'never' && (
               <div className="text-xs text-emerald-500 flex items-center gap-1.5">
                 <Check className="w-3.5 h-3.5" />
-                Never expires
+                {t('console.apiKeys.neverExpires', 'Never expires')}
               </div>
             )}
           </section>
 
-          {!isView && (
+          {!isView && !isEdit && (
             <section className="bg-slate-50 dark:bg-[#252525] p-5 rounded-xl border border-slate-200 dark:border-white/5 space-y-3">
-              <span className="text-sm font-bold text-slate-900 dark:text-white block">Create count</span>
+              <span className="text-sm font-bold text-slate-900 dark:text-white block">{t('console.apiKeys.createCount', 'Create count')}</span>
               <input
                 type="number"
                 min="1"
@@ -254,7 +279,7 @@ export function CreateKeyDrawer({
               <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
                 <CreditCard className="w-4 h-4 text-white" />
               </div>
-              <span className="text-sm font-bold text-slate-900 dark:text-white">Quota</span>
+              <span className="text-sm font-bold text-slate-900 dark:text-white">{t('console.apiKeys.quota', 'Quota')}</span>
             </div>
             <div className="flex items-center bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2">
               <Zap className={`w-4 h-4 mr-2 ${isUnlimitedQuota ? 'text-slate-500' : 'text-amber-500'}`} />
@@ -267,7 +292,7 @@ export function CreateKeyDrawer({
               />
             </div>
             <div className="flex items-center justify-between border-t border-slate-200 dark:border-white/5 pt-4">
-              <span className="text-sm font-bold text-slate-900 dark:text-white">Unlimited</span>
+              <span className="text-sm font-bold text-slate-900 dark:text-white">{t('console.apiKeys.unlimited', 'Unlimited')}</span>
               <button
                 disabled={isView}
                 onClick={() => setIsUnlimitedQuota((value) => !value)}
@@ -281,7 +306,7 @@ export function CreateKeyDrawer({
           </section>
 
           <section className="space-y-3">
-            <label className="block text-sm font-bold text-slate-700 dark:text-slate-300">Modalities</label>
+            <label className="block text-sm font-bold text-slate-700 dark:text-slate-300">{t('console.apiKeys.modalities', 'Modalities')}</label>
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
               {MODALITIES.map((item) => {
                 const Icon = item.icon;
@@ -297,7 +322,7 @@ export function CreateKeyDrawer({
                     } disabled:cursor-default`}
                   >
                     <Icon className={`w-5 h-5 ${checked ? item.color : 'text-slate-400'}`} />
-                    <span className={`text-xs font-bold leading-tight ${checked ? item.color : 'text-slate-500'}`}>{item.label}</span>
+                    <span className={`text-xs font-bold leading-tight ${checked ? item.color : 'text-slate-500'}`}>{t(item.labelKey)}</span>
                   </button>
                 );
               })}
@@ -305,7 +330,7 @@ export function CreateKeyDrawer({
           </section>
 
           <div>
-            <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">IP allowlist</label>
+            <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">{t('console.apiKeys.ipAllowlist', 'IP allowlist')}</label>
             <div className="relative">
               <MapPin className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
               <input
@@ -314,7 +339,7 @@ export function CreateKeyDrawer({
                 value={ipLimit}
                 onChange={(event) => setIpLimit(event.target.value)}
                 className="w-full bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/10 pl-9 pr-3 py-2 rounded-lg text-slate-900 dark:text-white text-sm focus:outline-none focus:border-blue-500 disabled:opacity-50"
-                placeholder="192.168.1.1, 10.0.0.0/24"
+                placeholder={t('console.apiKeys.ipAllowlistPlaceholder', '192.168.1.1, 10.0.0.0/24')}
               />
             </div>
           </div>
@@ -322,7 +347,7 @@ export function CreateKeyDrawer({
 
         <div className="p-4 border-t border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#1a1a1a] flex justify-end gap-3 shrink-0">
           <button onClick={onClose} className="px-4 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 border border-slate-200 dark:border-white/10 transition-colors">
-            {isView ? 'Close' : 'Cancel'}
+            {isView ? t('common.actions.close') : t('common.actions.cancel')}
           </button>
           {!isView && (
             <button
@@ -330,7 +355,7 @@ export function CreateKeyDrawer({
               onClick={submit}
               className="px-5 py-2 rounded-lg text-sm font-medium bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white transition-colors shadow-sm"
             >
-              {submitting ? 'Creating...' : 'Create key'}
+            {submitting ? t('common.actions.saving', '保存中...') : isEdit ? t('common.actions.save', '保存') : t('common.actions.createKey')}
             </button>
           )}
         </div>
@@ -339,11 +364,40 @@ export function CreateKeyDrawer({
   );
 }
 
-function ReadOnlyRow({ label, value, monospace = false }: { label: string; value: string; monospace?: boolean }) {
+function ReadOnlyRow({
+  label,
+  value,
+  monospace = false,
+  copyText,
+  copyLabel,
+  copiedLabel,
+  copyDisabled = false,
+}: {
+  label: string;
+  value: string;
+  monospace?: boolean;
+  copyText?: string | null;
+  copyLabel?: string;
+  copiedLabel?: string;
+  copyDisabled?: boolean;
+}) {
   return (
-    <div className="flex justify-between items-center text-sm border-t first:border-t-0 border-slate-200 dark:border-white/10 pt-3 first:pt-0">
+    <div className="flex justify-between gap-3 items-center text-sm border-t first:border-t-0 border-slate-200 dark:border-white/10 pt-3 first:pt-0">
       <span className="text-slate-500 dark:text-slate-400">{label}</span>
-      <span className={`font-medium text-slate-800 dark:text-slate-200 ${monospace ? 'font-mono' : ''}`}>{value}</span>
+      <span className="flex min-w-0 items-center gap-2">
+        <span className={`truncate font-medium text-slate-800 dark:text-slate-200 ${monospace ? 'font-mono' : ''}`}>{value}</span>
+        {copyLabel ? (
+          <CopyButton
+            text={copyText ?? ''}
+            label={copyLabel}
+            copiedLabel={copiedLabel}
+            title={copyLabel}
+            disabled={copyDisabled}
+            className="h-7 w-7 shrink-0 border border-slate-200 bg-white dark:border-white/10 dark:bg-[#1e1e1e]"
+            iconClassName="h-3.5 w-3.5"
+          />
+        ) : null}
+      </span>
     </div>
   );
 }

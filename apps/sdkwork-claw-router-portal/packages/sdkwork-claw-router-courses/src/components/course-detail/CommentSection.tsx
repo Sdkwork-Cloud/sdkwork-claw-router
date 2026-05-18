@@ -1,8 +1,10 @@
 import React from 'react';
 import { ThumbsDown, ThumbsUp, Users } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import type { CourseCommentsView } from '../../data';
 
 export function CommentSection({ comments }: { comments: CourseCommentsView }) {
+  const { t } = useTranslation();
   return (
     <div className="bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-white/10 rounded-none sm:rounded-xl p-5 md:p-6 shadow-sm w-full">
       <div className="flex items-center gap-2 mb-6">
@@ -20,7 +22,7 @@ export function CommentSection({ comments }: { comments: CourseCommentsView }) {
               placeholder="Add a constructive course comment"
               className="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-lg px-4 py-2.5 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00aeec] resize-none h-20"
             />
-            <button className="absolute right-2 bottom-2 bg-[#00aeec] text-white px-5 py-1.5 rounded-md text-sm font-medium hover:bg-[#00a1d6] transition-colors">Post</button>
+            <button className="absolute right-2 bottom-2 bg-[#00aeec] text-white px-5 py-1.5 rounded-md text-sm font-medium hover:bg-[#00a1d6] transition-colors">{t('common.actions.post')}</button>
           </div>
         </div>
       </div>
@@ -41,7 +43,7 @@ export function CommentSection({ comments }: { comments: CourseCommentsView }) {
                 <span>{comment.createdAt}</span>
                 <button className="flex items-center gap-1 hover:text-[#00aeec] transition-colors"><ThumbsUp className="w-3.5 h-3.5" /> {comment.likes}</button>
                 <button className="flex items-center gap-1 hover:text-[#00aeec] transition-colors"><ThumbsDown className="w-3.5 h-3.5" /></button>
-                <button className="hover:text-[#00aeec] transition-colors">Reply</button>
+                <button className="hover:text-[#00aeec] transition-colors">{t('common.actions.reply')}</button>
               </div>
             </div>
           </div>

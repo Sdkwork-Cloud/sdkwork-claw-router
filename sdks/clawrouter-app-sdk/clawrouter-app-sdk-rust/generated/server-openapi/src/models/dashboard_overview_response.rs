@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{DashboardAnnouncement, DashboardChartPoint, DashboardOverviewSummary, DashboardSparklinePoint, DashboardTopModel};
+use crate::models::{DashboardAnnouncement, DashboardChartPoint, DashboardConfigurationDomain, DashboardOverviewSummary, DashboardSparklinePoint, DashboardTopModel};
 
 /// Dashboard overview response schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -11,6 +11,11 @@ pub struct DashboardOverviewResponse {
     /// Chart data field on dashboard overview response.
     #[serde(rename = "chartData")]
     pub chart_data: Vec<DashboardChartPoint>,
+
+    /// Configuration domains field on dashboard overview response.
+    #[serde(rename = "configurationDomains")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub configuration_domains: Option<Vec<DashboardConfigurationDomain>>,
 
     /// Multimodal sparkline field on dashboard overview response.
     #[serde(rename = "multimodalSparkline")]

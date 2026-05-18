@@ -4,6 +4,12 @@ use std::fmt::{Display, Formatter};
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::time::{SystemTime, UNIX_EPOCH};
 
+use sdkwork_iam_storage_sqlx::{
+    DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME, DEFAULT_BOOTSTRAP_ADMIN_EMAIL,
+    DEFAULT_BOOTSTRAP_ADMIN_USERNAME, DEFAULT_IAM_ORGANIZATION_CODE, DEFAULT_IAM_ORGANIZATION_ID,
+    DEFAULT_IAM_ORGANIZATION_NAME, DEFAULT_IAM_ORGANIZATION_PATH, DEFAULT_IAM_TENANT_CODE,
+    DEFAULT_IAM_TENANT_ID, DEFAULT_IAM_TENANT_NAME,
+};
 use sdkwork_models::{catalog_key, ModelCatalog};
 use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Postgres, Row, Sqlite, SqlitePool, Transaction};
@@ -44,16 +50,6 @@ pub const ENV_BOOTSTRAP_ADMIN_USERNAME: &str = "SDKWORK_CLAW_BOOTSTRAP_ADMIN_USE
 pub const ENV_BOOTSTRAP_ADMIN_DISPLAY_NAME: &str = "SDKWORK_CLAW_BOOTSTRAP_ADMIN_DISPLAY_NAME";
 pub const ENV_BOOTSTRAP_ADMIN_EMAIL: &str = "SDKWORK_CLAW_BOOTSTRAP_ADMIN_EMAIL";
 pub const ENV_BOOTSTRAP_ADMIN_PASSWORD: &str = "SDKWORK_CLAW_BOOTSTRAP_ADMIN_PASSWORD";
-const DEFAULT_IAM_TENANT_ID: &str = "10";
-const DEFAULT_IAM_TENANT_CODE: &str = "default";
-const DEFAULT_IAM_TENANT_NAME: &str = "Default Tenant";
-const DEFAULT_IAM_ORGANIZATION_ID: &str = "20";
-const DEFAULT_IAM_ORGANIZATION_CODE: &str = "root";
-const DEFAULT_IAM_ORGANIZATION_NAME: &str = "Root Organization";
-const DEFAULT_IAM_ORGANIZATION_PATH: &str = "/20";
-const DEFAULT_BOOTSTRAP_ADMIN_USERNAME: &str = "admin";
-const DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME: &str = "Administrator";
-const DEFAULT_BOOTSTRAP_ADMIN_EMAIL: &str = "admin@sdkwork.local";
 const MIN_BOOTSTRAP_ADMIN_PASSWORD_LEN: usize = 12;
 const MAX_BOOTSTRAP_ADMIN_PASSWORD_LEN: usize = 128;
 const GENERATED_BOOTSTRAP_ADMIN_PASSWORD_LEN: usize = 32;
@@ -66,6 +62,7 @@ const MAX_REFRESH_VENDOR_CODE_LEN: usize = 64;
 const MAX_REFRESH_CATALOG_ROOT_LEN: usize = 512;
 const MAX_REFRESH_CATALOG_VERSION_LEN: usize = 128;
 static CATALOG_REFRESH_SEQUENCE: AtomicU64 = AtomicU64::new(1);
+static ADMIN_PASSWORD_RESET_SEQUENCE: AtomicU64 = AtomicU64::new(1);
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct DatabaseInstallOptions {
@@ -282,6 +279,19 @@ pub struct BootstrapAdminReport {
     pub generated_password: bool,
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ResetAdminPasswordReport {
+    pub status: String,
+    pub tenant_id: String,
+    pub organization_id: String,
+    pub user_id: String,
+    pub username: String,
+    pub display_name: String,
+    pub email: String,
+    pub initial_password: String,
+    pub generated_password: bool,
+}
+
 pub fn log_bootstrap_admin_report(service_name: &str, report: &InstallationReport) {
     if let Some(admin) = &report.bootstrap_admin {
         tracing::warn!(
@@ -468,6 +478,57 @@ impl DatabaseInstaller {
 
     pub async fn ensure_installed(&self) -> Result<InstallationReport, DatabaseInstallError> {
         self.ensure_installed_with_options(&self.options).await
+    }
+
+    pub async fn reset_admin_password(
+        &self,
+        username: impl Into<String>,
+        display_name: impl Into<String>,
+        email: impl Into<String>,
+        password: impl Into<String>,
+    ) -> Result<ResetAdminPasswordReport, DatabaseInstallError> {
+        let options = BootstrapAdminOptions {
+            enabled: true,
+            username: normalize_bootstrap_admin_username(
+                username.into(),
+                ENV_BOOTSTRAP_ADMIN_USERNAME,
+            )?,
+            display_name: normalize_bootstrap_admin_text(
+                display_name.into(),
+                ENV_BOOTSTRAP_ADMIN_DISPLAY_NAME,
+                128,
+                true,
+            )?,
+            email: normalize_bootstrap_admin_email(email.into(), ENV_BOOTSTRAP_ADMIN_EMAIL)?,
+            password: Some(normalize_bootstrap_admin_password(
+                password.into(),
+                ENV_BOOTSTRAP_ADMIN_PASSWORD,
+            )?),
+        };
+
+        if self.status_with_options(&self.options).await? != InstallationStatus::Installed {
+            match &self.backend {
+                InstallerBackend::Sqlite(pool) => {
+                    DatabaseInstaller::for_sqlite(pool.clone())
+                        .with_options(self.options.clone())?
+                        .with_bootstrap_admin_options(options.clone())
+                        .ensure_installed()
+                        .await?;
+                }
+                InstallerBackend::Postgres(pool) => {
+                    DatabaseInstaller::for_postgres(pool.clone())
+                        .with_options(self.options.clone())?
+                        .with_bootstrap_admin_options(options.clone())
+                        .ensure_installed()
+                        .await?;
+                }
+            }
+        }
+
+        match &self.backend {
+            InstallerBackend::Sqlite(pool) => reset_sqlite_admin_password(pool, &options).await,
+            InstallerBackend::Postgres(pool) => reset_postgres_admin_password(pool, &options).await,
+        }
     }
 
     pub async fn refresh_catalog(
@@ -1920,7 +1981,6 @@ async fn bootstrap_sqlite_admin_user_if_needed(
         &now,
     )
     .await?;
-    maybe_upsert_sqlite_legacy_admin(&mut tx, options, &user_id, &now).await?;
     tx.commit().await?;
     Ok(password_written.then(|| {
         let (password, _) = password_and_hash.expect("password must exist when written");
@@ -1964,12 +2024,150 @@ async fn bootstrap_postgres_admin_user_if_needed(
         &now,
     )
     .await?;
-    maybe_upsert_postgres_legacy_admin(&mut tx, options, &user_id, &now).await?;
     tx.commit().await?;
     Ok(password_written.then(|| {
         let (password, _) = password_and_hash.expect("password must exist when written");
         options.report(user_id, password)
     }))
+}
+
+async fn reset_sqlite_admin_password(
+    pool: &SqlitePool,
+    options: &BootstrapAdminOptions,
+) -> Result<ResetAdminPasswordReport, DatabaseInstallError> {
+    let mut tx = pool.begin().await?;
+    let now = current_utc_timestamp_string();
+    let user_id =
+        match sqlite_bootstrap_admin_user_id_in_transaction(&mut tx, options.username.as_str())
+            .await?
+        {
+            Some(user_id) => user_id,
+            None => sqlite_next_numeric_id(&mut tx, "iam_user").await?,
+        };
+    upsert_sqlite_bootstrap_admin(&mut tx, options, &user_id, None, &now).await?;
+    sqlx::query(
+        r#"
+        UPDATE iam_credential
+        SET status = 'rotated',
+            updated_at = ?
+        WHERE tenant_id = ?
+          AND user_id = ?
+          AND credential_type = 'password'
+          AND status = 'active'
+        "#,
+    )
+    .bind(&now)
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(&user_id)
+    .execute(&mut *tx)
+    .await?;
+
+    let password = options.password()?;
+    let password_hash = bootstrap_password_hash(&password, &user_id, now.as_str())?;
+    sqlx::query(
+        r#"
+        INSERT INTO iam_credential
+            (id, tenant_id, user_id, credential_type, credential_hash, status, expires_at, created_at, updated_at)
+        VALUES
+            (?, ?, ?, 'password', ?, 'active', NULL, ?, ?)
+        "#,
+    )
+    .bind(reset_admin_password_credential_id(&user_id, &now))
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(&user_id)
+    .bind(&password_hash)
+    .bind(&now)
+    .bind(&now)
+    .execute(&mut *tx)
+    .await?;
+
+    tx.commit().await?;
+    Ok(reset_admin_password_report(options, user_id, password))
+}
+
+async fn reset_postgres_admin_password(
+    pool: &PgPool,
+    options: &BootstrapAdminOptions,
+) -> Result<ResetAdminPasswordReport, DatabaseInstallError> {
+    let mut tx = pool.begin().await?;
+    let now = current_utc_timestamp_string();
+    let user_id =
+        match postgres_bootstrap_admin_user_id_in_transaction(&mut tx, options.username.as_str())
+            .await?
+        {
+            Some(user_id) => user_id,
+            None => postgres_next_numeric_id(&mut tx, "iam_user").await?,
+        };
+    upsert_postgres_bootstrap_admin(&mut tx, options, &user_id, None, &now).await?;
+    sqlx::query(
+        r#"
+        UPDATE iam_credential
+        SET status = 'rotated',
+            updated_at = $1::timestamptz
+        WHERE tenant_id = $2
+          AND user_id = $3
+          AND credential_type = 'password'
+          AND status = 'active'
+        "#,
+    )
+    .bind(&now)
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(&user_id)
+    .execute(&mut *tx)
+    .await?;
+
+    let password = options.password()?;
+    let password_hash = bootstrap_password_hash(&password, &user_id, now.as_str())?;
+    sqlx::query(
+        r#"
+        INSERT INTO iam_credential
+            (id, tenant_id, user_id, credential_type, credential_hash, status, expires_at, created_at, updated_at)
+        VALUES
+            ($1, $2, $3, 'password', $4, 'active', NULL, $5::timestamptz, $5::timestamptz)
+        "#,
+    )
+    .bind(reset_admin_password_credential_id(&user_id, &now))
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(&user_id)
+    .bind(&password_hash)
+    .bind(&now)
+    .execute(&mut *tx)
+    .await?;
+
+    tx.commit().await?;
+    Ok(reset_admin_password_report(options, user_id, password))
+}
+
+fn reset_admin_password_report(
+    options: &BootstrapAdminOptions,
+    user_id: String,
+    password: String,
+) -> ResetAdminPasswordReport {
+    ResetAdminPasswordReport {
+        status: "reset".to_owned(),
+        tenant_id: DEFAULT_IAM_TENANT_ID.to_owned(),
+        organization_id: DEFAULT_IAM_ORGANIZATION_ID.to_owned(),
+        user_id,
+        username: options.username.clone(),
+        display_name: options.display_name.clone(),
+        email: options.email.clone(),
+        initial_password: password,
+        generated_password: options.password.is_none(),
+    }
+}
+
+fn reset_admin_password_credential_id(user_id: &str, now: &str) -> String {
+    let sequence = ADMIN_PASSWORD_RESET_SEQUENCE.fetch_add(1, Ordering::Relaxed);
+    let nanos = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .map(|duration| duration.as_nanos())
+        .unwrap_or(0);
+    let suffix =
+        sha256_hex(format!("{user_id}:{now}:{nanos}:{sequence}:reset-admin-password").as_str())
+            .chars()
+            .take(16)
+            .collect::<String>();
+    format!("credential-{user_id}-reset-password-{suffix}")
 }
 
 async fn sqlite_default_iam_subject_seed_complete(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
@@ -2476,339 +2674,6 @@ async fn upsert_postgres_bootstrap_admin(
     Ok(password_written)
 }
 
-async fn maybe_upsert_sqlite_legacy_admin(
-    tx: &mut Transaction<'_, Sqlite>,
-    options: &BootstrapAdminOptions,
-    user_id: &str,
-    now: &str,
-) -> Result<(), sqlx::Error> {
-    if !sqlite_table_exists_in_transaction(tx, "plus_user").await? {
-        return Ok(());
-    }
-    upsert_sqlite_legacy_admin_user(tx, options, user_id, now).await?;
-
-    if sqlite_table_exists_in_transaction(tx, "plus_role").await? {
-        ensure_sqlite_legacy_admin_role(tx, now).await?;
-    }
-    let has_plus_user_role = sqlite_table_exists_in_transaction(tx, "plus_user_role").await?;
-    let has_plus_role = sqlite_table_exists_in_transaction(tx, "plus_role").await?;
-    if has_plus_user_role && has_plus_role {
-        let legacy_user_id = user_id.parse::<i64>().unwrap_or(0);
-        sqlx::query("DELETE FROM plus_user_role WHERE user_id = ?")
-            .bind(legacy_user_id)
-            .execute(&mut **tx)
-            .await?;
-        sqlx::query(
-            r#"
-            INSERT INTO plus_user_role
-                (user_id, role_id, created_at, updated_at, operator_id)
-            SELECT ?, r.id, ?, ?, 0
-            FROM plus_role r
-            WHERE r.code = 'admin'
-            LIMIT 1
-            "#,
-        )
-        .bind(legacy_user_id)
-        .bind(now)
-        .bind(now)
-        .execute(&mut **tx)
-        .await?;
-    }
-    Ok(())
-}
-
-async fn upsert_sqlite_legacy_admin_user(
-    tx: &mut Transaction<'_, Sqlite>,
-    options: &BootstrapAdminOptions,
-    user_id: &str,
-    now: &str,
-) -> Result<(), sqlx::Error> {
-    let table_columns = sqlite_table_columns_in_transaction(tx, "plus_user").await?;
-    if !table_columns.contains("id") {
-        return Ok(());
-    }
-    let candidate_columns = [
-        "id",
-        "uuid",
-        "tenant_id",
-        "organization_id",
-        "data_scope",
-        "created_at",
-        "updated_at",
-        "v",
-        "version",
-        "username",
-        "nickname",
-        "password",
-        "platform",
-        "type",
-        "email",
-        "status",
-    ];
-    let insert_columns = candidate_columns
-        .into_iter()
-        .filter(|column| table_columns.contains(*column))
-        .collect::<Vec<_>>();
-    if insert_columns.is_empty() {
-        return Ok(());
-    }
-    let placeholders = std::iter::repeat_n("?", insert_columns.len())
-        .collect::<Vec<_>>()
-        .join(", ");
-    let update_columns = insert_columns
-        .iter()
-        .copied()
-        .filter(|column| {
-            matches!(
-                *column,
-                "uuid"
-                    | "tenant_id"
-                    | "organization_id"
-                    | "username"
-                    | "nickname"
-                    | "email"
-                    | "status"
-                    | "updated_at"
-            )
-        })
-        .collect::<Vec<_>>();
-    let conflict_clause = if update_columns.is_empty() {
-        "DO NOTHING".to_owned()
-    } else {
-        format!(
-            "DO UPDATE SET {}",
-            update_columns
-                .iter()
-                .map(|column| format!("{column} = excluded.{column}"))
-                .collect::<Vec<_>>()
-                .join(", ")
-        )
-    };
-    let sql = format!(
-        "INSERT INTO plus_user ({}) VALUES ({}) ON CONFLICT(id) {}",
-        insert_columns.join(", "),
-        placeholders,
-        conflict_clause
-    );
-    let legacy_user_id = user_id.parse::<i64>().unwrap_or(1);
-    let tenant_id = DEFAULT_IAM_TENANT_ID.parse::<i64>().unwrap_or(10);
-    let organization_id = DEFAULT_IAM_ORGANIZATION_ID.parse::<i64>().unwrap_or(20);
-    let mut query = sqlx::query(sql.as_str());
-    for column in insert_columns {
-        query = match column {
-            "id" => query.bind(legacy_user_id),
-            "uuid" => query.bind(format!("bootstrap-admin-{user_id}")),
-            "tenant_id" => query.bind(tenant_id),
-            "organization_id" => query.bind(organization_id),
-            "data_scope" => query.bind(1_i64),
-            "created_at" | "updated_at" => query.bind(now),
-            "v" | "version" => query.bind(0_i64),
-            "username" => query.bind(&options.username),
-            "nickname" => query.bind(&options.display_name),
-            "password" => query.bind(""),
-            "platform" => query.bind(0_i64),
-            "type" => query.bind(1_i64),
-            "email" => query.bind(&options.email),
-            "status" => query.bind(1_i64),
-            _ => query,
-        };
-    }
-    query.execute(&mut **tx).await?;
-    Ok(())
-}
-
-async fn maybe_upsert_postgres_legacy_admin(
-    tx: &mut Transaction<'_, Postgres>,
-    options: &BootstrapAdminOptions,
-    user_id: &str,
-    now: &str,
-) -> Result<(), sqlx::Error> {
-    if !postgres_table_exists_in_transaction(tx, "plus_user").await? {
-        return Ok(());
-    }
-    upsert_postgres_legacy_admin_user(tx, options, user_id, now).await?;
-
-    if postgres_table_exists_in_transaction(tx, "plus_role").await? {
-        ensure_postgres_legacy_admin_role(tx, now).await?;
-    }
-    let has_plus_user_role = postgres_table_exists_in_transaction(tx, "plus_user_role").await?;
-    let has_plus_role = postgres_table_exists_in_transaction(tx, "plus_role").await?;
-    if has_plus_user_role && has_plus_role {
-        let legacy_user_id = user_id.parse::<i64>().unwrap_or(0);
-        sqlx::query("DELETE FROM plus_user_role WHERE user_id = $1")
-            .bind(legacy_user_id)
-            .execute(&mut **tx)
-            .await?;
-        sqlx::query(
-            r#"
-            INSERT INTO plus_user_role
-                (user_id, role_id, created_at, updated_at, operator_id)
-            SELECT $1, r.id, $2::timestamptz, $2::timestamptz, 0
-            FROM plus_role r
-            WHERE r.code = 'admin'
-            LIMIT 1
-            "#,
-        )
-        .bind(legacy_user_id)
-        .bind(now)
-        .execute(&mut **tx)
-        .await?;
-    }
-    Ok(())
-}
-
-async fn upsert_postgres_legacy_admin_user(
-    tx: &mut Transaction<'_, Postgres>,
-    options: &BootstrapAdminOptions,
-    user_id: &str,
-    now: &str,
-) -> Result<(), sqlx::Error> {
-    let table_columns = postgres_table_columns_in_transaction(tx, "plus_user").await?;
-    if !table_columns.contains("id") {
-        return Ok(());
-    }
-    let candidate_columns = [
-        "id",
-        "uuid",
-        "tenant_id",
-        "organization_id",
-        "data_scope",
-        "created_at",
-        "updated_at",
-        "v",
-        "version",
-        "username",
-        "nickname",
-        "password",
-        "platform",
-        "type",
-        "email",
-        "status",
-    ];
-    let insert_columns = candidate_columns
-        .into_iter()
-        .filter(|column| table_columns.contains(*column))
-        .collect::<Vec<_>>();
-    if insert_columns.is_empty() {
-        return Ok(());
-    }
-    let placeholders = (1..=insert_columns.len())
-        .map(|index| format!("${index}"))
-        .collect::<Vec<_>>()
-        .join(", ");
-    let update_columns = insert_columns
-        .iter()
-        .copied()
-        .filter(|column| {
-            matches!(
-                *column,
-                "uuid"
-                    | "tenant_id"
-                    | "organization_id"
-                    | "username"
-                    | "nickname"
-                    | "email"
-                    | "status"
-                    | "updated_at"
-            )
-        })
-        .collect::<Vec<_>>();
-    let conflict_clause = if update_columns.is_empty() {
-        "DO NOTHING".to_owned()
-    } else {
-        format!(
-            "DO UPDATE SET {}",
-            update_columns
-                .iter()
-                .map(|column| format!("{column} = excluded.{column}"))
-                .collect::<Vec<_>>()
-                .join(", ")
-        )
-    };
-    let sql = format!(
-        "INSERT INTO plus_user ({}) VALUES ({}) ON CONFLICT(id) {}",
-        insert_columns.join(", "),
-        placeholders,
-        conflict_clause
-    );
-    let legacy_user_id = user_id.parse::<i64>().unwrap_or(1);
-    let tenant_id = DEFAULT_IAM_TENANT_ID.parse::<i64>().unwrap_or(10);
-    let organization_id = DEFAULT_IAM_ORGANIZATION_ID.parse::<i64>().unwrap_or(20);
-    let mut query = sqlx::query(sql.as_str());
-    for column in insert_columns {
-        query = match column {
-            "id" => query.bind(legacy_user_id),
-            "uuid" => query.bind(format!("bootstrap-admin-{user_id}")),
-            "tenant_id" => query.bind(tenant_id),
-            "organization_id" => query.bind(organization_id),
-            "data_scope" => query.bind(1_i64),
-            "created_at" | "updated_at" => query.bind(now),
-            "v" | "version" => query.bind(0_i64),
-            "username" => query.bind(&options.username),
-            "nickname" => query.bind(&options.display_name),
-            "password" => query.bind(""),
-            "platform" => query.bind(0_i64),
-            "type" => query.bind(1_i64),
-            "email" => query.bind(&options.email),
-            "status" => query.bind(1_i64),
-            _ => query,
-        };
-    }
-    query.execute(&mut **tx).await?;
-    Ok(())
-}
-
-async fn ensure_sqlite_legacy_admin_role(
-    tx: &mut Transaction<'_, Sqlite>,
-    now: &str,
-) -> Result<(), sqlx::Error> {
-    let existing: Option<i64> =
-        sqlx::query_scalar("SELECT id FROM plus_role WHERE code = 'admin' LIMIT 1")
-            .fetch_optional(&mut **tx)
-            .await?;
-    if existing.is_some() {
-        return Ok(());
-    }
-    sqlx::query(
-        r#"
-        INSERT INTO plus_role
-            (uuid, created_at, updated_at, v, code, name, status)
-        VALUES
-            ('role-admin', ?, ?, 0, 'admin', 'admin', 1)
-        "#,
-    )
-    .bind(now)
-    .bind(now)
-    .execute(&mut **tx)
-    .await?;
-    Ok(())
-}
-
-async fn ensure_postgres_legacy_admin_role(
-    tx: &mut Transaction<'_, Postgres>,
-    now: &str,
-) -> Result<(), sqlx::Error> {
-    let existing: Option<i64> =
-        sqlx::query_scalar("SELECT id FROM plus_role WHERE code = 'admin' LIMIT 1 FOR UPDATE")
-            .fetch_optional(&mut **tx)
-            .await?;
-    if existing.is_some() {
-        return Ok(());
-    }
-    sqlx::query(
-        r#"
-        INSERT INTO plus_role
-            (uuid, created_at, updated_at, v, code, name, status)
-        VALUES
-            ('role-admin', $1::timestamptz, $1::timestamptz, 0, 'admin', 'admin', 1)
-        "#,
-    )
-    .bind(now)
-    .execute(&mut **tx)
-    .await?;
-    Ok(())
-}
-
 async fn sqlite_table_exists(pool: &SqlitePool, table_name: &str) -> Result<bool, sqlx::Error> {
     let count: i64 = sqlx::query_scalar(
         r#"
@@ -2824,37 +2689,6 @@ async fn sqlite_table_exists(pool: &SqlitePool, table_name: &str) -> Result<bool
     Ok(count == 1)
 }
 
-async fn sqlite_table_exists_in_transaction(
-    tx: &mut Transaction<'_, Sqlite>,
-    table_name: &str,
-) -> Result<bool, sqlx::Error> {
-    let count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM sqlite_master
-        WHERE type = 'table'
-          AND name = ?
-        "#,
-    )
-    .bind(table_name)
-    .fetch_one(&mut **tx)
-    .await?;
-    Ok(count == 1)
-}
-
-async fn sqlite_table_columns_in_transaction(
-    tx: &mut Transaction<'_, Sqlite>,
-    table_name: &str,
-) -> Result<BTreeSet<String>, sqlx::Error> {
-    let pragma = format!("PRAGMA table_info({})", quote_sqlite_identifier(table_name));
-    let rows = sqlx::query(pragma.as_str()).fetch_all(&mut **tx).await?;
-    Ok(rows
-        .into_iter()
-        .filter_map(|row| row.try_get::<String, _>("name").ok())
-        .map(|name| name.to_ascii_lowercase())
-        .collect())
-}
-
 async fn postgres_table_exists(pool: &PgPool, table_name: &str) -> Result<bool, sqlx::Error> {
     let count: i64 = sqlx::query_scalar(
         r#"
@@ -2868,46 +2702,6 @@ async fn postgres_table_exists(pool: &PgPool, table_name: &str) -> Result<bool, 
     .fetch_one(pool)
     .await?;
     Ok(count == 1)
-}
-
-async fn postgres_table_exists_in_transaction(
-    tx: &mut Transaction<'_, Postgres>,
-    table_name: &str,
-) -> Result<bool, sqlx::Error> {
-    let count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM information_schema.tables
-        WHERE table_schema = current_schema()
-          AND table_name = $1
-        "#,
-    )
-    .bind(table_name)
-    .fetch_one(&mut **tx)
-    .await?;
-    Ok(count == 1)
-}
-
-async fn postgres_table_columns_in_transaction(
-    tx: &mut Transaction<'_, Postgres>,
-    table_name: &str,
-) -> Result<BTreeSet<String>, sqlx::Error> {
-    let rows = sqlx::query(
-        r#"
-        SELECT column_name
-        FROM information_schema.columns
-        WHERE table_schema = current_schema()
-          AND table_name = $1
-        "#,
-    )
-    .bind(table_name)
-    .fetch_all(&mut **tx)
-    .await?;
-    Ok(rows
-        .into_iter()
-        .filter_map(|row| row.try_get::<String, _>("column_name").ok())
-        .map(|name| name.to_ascii_lowercase())
-        .collect())
 }
 
 async fn sqlite_generated_schema_tables_exist(pool: &SqlitePool) -> Result<bool, sqlx::Error> {

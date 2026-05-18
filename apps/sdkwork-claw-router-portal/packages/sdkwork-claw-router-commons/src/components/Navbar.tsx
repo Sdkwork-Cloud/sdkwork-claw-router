@@ -1,9 +1,17 @@
-import { useState, useEffect, useRef } from 'react';
+import { useCallback, useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ChevronRight, ChevronDown, Terminal, Sun, Moon, Globe, Check, Github, Bell } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { buildPortalAuthLoginRedirect } from '../portal-auth.ts';
+import {
+  buildPortalAuthLoginRedirect,
+  hasStoredPortalSession,
+  subscribePortalSessionChange,
+} from '../portal-auth.ts';
+import {
+  NotificationService,
+  type NotificationItem,
+} from '../notificationService.ts';
 
 interface NavbarProps {
   isDark: boolean;
@@ -16,17 +24,50 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const [isMessageMenuOpen, setIsMessageMenuOpen] = useState(false);
-  const [selectedNotification, setSelectedNotification] = useState<typeof notifications[0] | null>(null);
+  const [isPortalSessionStored, setIsPortalSessionStored] = useState(() => hasStoredPortalSession());
+  const [notifications, setNotifications] = useState<NotificationItem[]>([]);
+  const [notificationsLoading, setNotificationsLoading] = useState(false);
+  const [notificationsLoadError, setNotificationsLoadError] = useState<string | null>(null);
+  const [hasLoadedNotifications, setHasLoadedNotifications] = useState(false);
+  const [selectedNotification, setSelectedNotification] = useState<NotificationItem | null>(null);
+  const [popupNotificationQueue, setPopupNotificationQueue] = useState<NotificationItem[]>([]);
+  const [activePopupNotification, setActivePopupNotification] = useState<NotificationItem | null>(null);
   const langMenuRef = useRef<HTMLDivElement>(null);
   const messageMenuRef = useRef<HTMLDivElement>(null);
+  const dismissedPopupNotificationIdsRef = useRef<Set<string>>(new Set());
   const location = useLocation();
   const navigate = useNavigate();
+  const isConsolePath = location.pathname.startsWith('/console');
+  const shouldShowAuthenticatedActions = isPortalSessionStored || isConsolePath;
 
-  const notifications = [
-    { id: 1, title: '模型倍率更新', desc: 'gpt-4o-mini 的计算倍率已经更新，请查看详情。', time: '10分钟前', read: false },
-    { id: 2, title: '您的账单已生成', desc: '2026年4月份您的消费账单已经生成，共计 $450.00。', time: '2小时前', read: false },
-    { id: 3, title: '余额预警', desc: '您的账户余额不足 $50.00，为避免服务中断，请及时充值。', time: '1天前', read: true },
-  ];
+  const loadNotifications = useCallback(async (isActive: () => boolean = () => true) => {
+    if (!shouldShowAuthenticatedActions) {
+      return;
+    }
+
+    setNotificationsLoading(true);
+    setNotificationsLoadError(null);
+    try {
+      const data = await NotificationService.fetchNotifications();
+      if (isActive()) {
+        setNotifications(data);
+        setHasLoadedNotifications(true);
+        const popupCandidates = data.filter(
+          (item) => item.showAsPopup && !item.read && !dismissedPopupNotificationIdsRef.current.has(item.id),
+        );
+        setPopupNotificationQueue(popupCandidates);
+      }
+    } catch (error) {
+      if (isActive()) {
+        setNotificationsLoadError(getNotificationLoadErrorMessage(error));
+        setHasLoadedNotifications(true);
+      }
+    } finally {
+      if (isActive()) {
+        setNotificationsLoading(false);
+      }
+    }
+  }, [shouldShowAuthenticatedActions]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +76,42 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const syncPortalSessionState = () => {
+      setIsPortalSessionStored(hasStoredPortalSession());
+    };
+
+    syncPortalSessionState();
+    return subscribePortalSessionChange(syncPortalSessionState);
+  }, []);
+
+  useEffect(() => {
+    if (!shouldShowAuthenticatedActions) {
+      setNotifications([]);
+      setNotificationsLoadError(null);
+      setHasLoadedNotifications(false);
+      setSelectedNotification(null);
+      setPopupNotificationQueue([]);
+      setActivePopupNotification(null);
+      return;
+    }
+
+    let active = true;
+    void loadNotifications(() => active);
+    return () => {
+      active = false;
+    };
+  }, [loadNotifications, shouldShowAuthenticatedActions]);
+
+  useEffect(() => {
+    if (activePopupNotification || popupNotificationQueue.length === 0) {
+      return;
+    }
+    const [nextPopup, ...remainingPopups] = popupNotificationQueue;
+    setActivePopupNotification(nextPopup);
+    setPopupNotificationQueue(remainingPopups);
+  }, [activePopupNotification, popupNotificationQueue]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -60,15 +137,26 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
     navigate(buildPortalAuthLoginRedirect(location));
   };
 
+  const closeNotificationDetail = () => {
+    setSelectedNotification(null);
+  };
+
+  const closeActivePopupNotification = () => {
+    if (activePopupNotification) {
+      dismissedPopupNotificationIdsRef.current.add(activePopupNotification.id);
+    }
+    setActivePopupNotification(null);
+  };
+
   const languages = [
     { code: 'en', name: 'English' },
-    { code: 'zh', name: '中文' }
+    { code: 'zh', name: t('commons.navbar.language.zh', '中文') }
   ];
 
   const navLinks = [
     { name: t('nav.home'), href: '/' },
     { name: t('nav.models'), href: '/models' },
-    { name: t('nav.rankings', '模型排行'), href: '/rankings' },
+    { name: t('nav.rankings'), href: '/rankings' },
     { name: t('nav.apps'), href: '/apps' },
     { name: t('nav.skills'), href: '/skills-hub' },
     { name: t('nav.productDocs'), href: '/product-docs' },
@@ -174,7 +262,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
           <button onClick={toggleTheme} className="text-slate-600 hover:text-lobster-500 dark:text-slate-300 dark:hover:text-white transition-colors">
             {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
-          {!location.pathname.startsWith('/console') ? (
+          {!shouldShowAuthenticatedActions ? (
             <>
               <button
                 onClick={handleSignIn}
@@ -190,7 +278,13 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
             <div className="flex items-center gap-2">
               <div className="relative" ref={messageMenuRef}>
                 <button
-                  onClick={() => setIsMessageMenuOpen(!isMessageMenuOpen)}
+                  onClick={() => {
+                    const nextOpen = !isMessageMenuOpen;
+                    setIsMessageMenuOpen(nextOpen);
+                    if (nextOpen && !notificationsLoading) {
+                      void loadNotifications();
+                    }
+                  }}
                   className="relative text-slate-600 hover:text-lobster-500 dark:text-slate-300 dark:hover:text-white transition-colors p-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-white/5"
                 >
                   <Bell className="w-5 h-5" />
@@ -208,11 +302,28 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                       className="absolute right-0 mt-2 w-80 bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl shadow-xl z-50 overflow-hidden flex flex-col"
                     >
                       <div className="px-4 py-3 border-b border-slate-100 dark:border-white/5 flex justify-between items-center bg-slate-50 dark:bg-white/[0.02]">
-                        <span className="font-bold text-slate-800 dark:text-slate-200 text-sm">通知中心</span>
-                        <span className="text-xs text-lobster-500 hover:text-lobster-600 cursor-pointer font-medium">全部标为已读</span>
+                        <span className="font-bold text-slate-800 dark:text-slate-200 text-sm">{t('commons.navbar.notificationCenter', '通知中心')}</span>
                       </div>
                       <div className="max-h-80 overflow-y-auto custom-scrollbar flex flex-col">
-                        {notifications.map((note) => (
+                        {notificationsLoading && !hasLoadedNotifications ? (
+                          <div className="p-6 text-center text-sm text-slate-500 dark:text-slate-400">
+                            {t('commons.navbar.loadingNotifications', '正在加载通知...')}
+                          </div>
+                        ) : notificationsLoadError ? (
+                          <div className="p-4 text-sm text-slate-500 dark:text-slate-400">
+                            <p className="mb-3">{notificationsLoadError}</p>
+                            <button
+                              onClick={() => void loadNotifications()}
+                              className="text-xs font-semibold text-lobster-500 hover:text-lobster-600"
+                            >
+                              {t('commons.navbar.retryNotifications', '重试')}
+                            </button>
+                          </div>
+                        ) : notifications.length === 0 ? (
+                          <div className="p-6 text-center text-sm text-slate-500 dark:text-slate-400">
+                            {t('commons.navbar.emptyNotifications', '暂无通知')}
+                          </div>
+                        ) : notifications.map((note) => (
                           <div
                             key={note.id}
                             onClick={() => { setSelectedNotification(note); setIsMessageMenuOpen(false); }}
@@ -231,11 +342,11 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                       </div>
                       <div className="p-2 border-t border-slate-100 dark:border-white/5 text-center bg-slate-50 dark:bg-[#1a1a1a]">
                         <Link
-                          to="/console/messages"
+                          to="/console/notifications"
                           onClick={() => setIsMessageMenuOpen(false)}
                           className="text-xs font-semibold text-lobster-500 hover:text-lobster-600 p-2 block w-full hover:bg-blue-50 dark:hover:bg-lobster-500/10 rounded-lg transition-colors"
                         >
-                          前往消息中心查看全部
+                          {t('commons.navbar.viewAllNotifications', '前往通知中心查看全部')}
                         </Link>
                       </div>
                     </motion.div>
@@ -244,6 +355,11 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
               </div>
 
               {/* User Avatar Menu Dropdown Removed */}
+              {!isConsolePath && (
+                <Link to="/console" className="text-sm font-medium bg-slate-900 text-white dark:bg-white dark:text-slate-950 px-4 py-2 rounded-lg hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors flex items-center gap-1">
+                  {t('nav.console')} <ChevronRight className="w-4 h-4" />
+                </Link>
+              )}
             </div>
           )}
         </div>
@@ -305,7 +421,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
           >
             <Github className="w-5 h-5" /> GitHub Repository
           </a>
-          {!location.pathname.startsWith('/console') && (
+          {!shouldShowAuthenticatedActions ? (
             <>
               <button
                 onClick={() => {
@@ -320,14 +436,25 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 {t('nav.console')}
               </Link>
             </>
+          ) : (
+            <Link to="/console" onClick={() => setMobileMenuOpen(false)} className="block text-base font-medium bg-slate-900 text-white dark:bg-white dark:text-slate-950 px-4 py-2 rounded-lg text-center">
+              {t('nav.console')}
+            </Link>
           )}
         </motion.div>
       )}
 
       {/* Notification Detail Modal */}
       <AnimatePresence>
-        {selectedNotification && (
+        {(activePopupNotification || selectedNotification) && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+            {(() => {
+              const detailNotification = activePopupNotification || selectedNotification;
+              const closeDetail = activePopupNotification ? closeActivePopupNotification : closeNotificationDetail;
+              if (!detailNotification) {
+                return null;
+              }
+              return (
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -339,40 +466,44 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                   <div className="w-8 h-8 rounded-full bg-blue-50 dark:bg-blue-500/10 flex items-center justify-center">
                     <Bell className="w-4 h-4 text-blue-500" />
                   </div>
-                  <span className="font-bold text-slate-800 dark:text-slate-200">消息详情</span>
+                  <span className="font-bold text-slate-800 dark:text-slate-200">{t('commons.navbar.notificationDetails', '通知详情')}</span>
                 </div>
                 <button
-                  onClick={() => setSelectedNotification(null)}
+                  onClick={closeDetail}
                   className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-white rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
               <div className="p-6 md:p-8">
-                <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2">{selectedNotification.title}</h3>
+                <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2">{detailNotification.title}</h3>
                 <div className="text-xs text-slate-500 mb-6 flex items-center gap-2">
-                  <span>来自: 系统网关</span>
+                  <span>{t('commons.navbar.notificationSourceGateway', '来自: 系统网关')}</span>
                   <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600"></span>
-                  <span>{selectedNotification.time}</span>
+                  <span>{detailNotification.time}</span>
                 </div>
                 <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm whitespace-pre-wrap">
-                  {selectedNotification.desc}
-                  {'\n\n'}
-                  <span className="text-xs text-slate-400">目前可以在左侧菜单栏「消息中心」查阅结构化的系统通告以及自动触发产生的业务告警短信。</span>
+                  {detailNotification.content || detailNotification.desc}
                 </p>
               </div>
               <div className="p-4 border-t border-slate-100 dark:border-white/5 bg-slate-50 dark:bg-[#151515] flex justify-end">
                 <button
-                  onClick={() => setSelectedNotification(null)}
+                  onClick={closeDetail}
                   className="px-6 py-2 bg-slate-900 text-white dark:bg-white dark:text-slate-900 rounded-lg text-sm font-medium hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors"
                 >
-                  我知道了
+                  {t('commons.navbar.acknowledge', '我知道了')}
                 </button>
               </div>
             </motion.div>
+              );
+            })()}
           </div>
         )}
       </AnimatePresence>
     </header>
   );
+}
+
+function getNotificationLoadErrorMessage(error: unknown): string {
+  return error instanceof Error && error.message ? error.message : 'Failed to load notifications.';
 }

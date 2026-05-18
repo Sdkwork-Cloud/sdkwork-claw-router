@@ -87,7 +87,9 @@ class ConsoleRoutingRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn(": any", routing_view)
 
         self.assertIn("useState<RoutingApiKey[]>([])", api_keys)
-        self.assertIn("displayRoutingApiKeyStatus(k.status)", api_keys)
+        self.assertIn("displayRoutingApiKeyStatus(k.status, t)", api_keys)
+        self.assertIn("console.routing.status.active", api_keys)
+        self.assertIn("console.routing.status.disabled", api_keys)
         self.assertNotIn("k.status === 'Active'", api_keys)
         self.assertNotIn("useState<any", api_keys)
 
@@ -97,11 +99,11 @@ class ConsoleRoutingRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         self.assertIn(
-            "fields: [id, name, vendor, provider, providerCode, protocol, accessType, baseUrl, apiKey, models, capabilities, isMultimodal, weight, status, latency, rpm, balance, errors]",
+            "fields: [id, name, vendor, provider, providerCode, protocol, accessType, baseUrl, apiKey, models, capabilities, isMultimodal, timeoutMs, retryPolicy, retryPolicy.maxAttempts, retryPolicy.retryableStatusCodes, retryPolicy.backoffMs, weight, status, latency, rpm, balance, errors]",
             contract,
         )
         self.assertIn("interface: RoutingApiKey", contract)
-        self.assertIn("fields: [id, name, key, status, totalUsage, createdAt]", contract)
+        self.assertIn("fields: [id, name, displayKey, copyableKey, status, totalUsage, createdAt]", contract)
 
     def test_console_routing_strategy_uses_sdk_backed_strategy_snapshot(self) -> None:
         service = (
@@ -347,7 +349,21 @@ class ConsoleRoutingRuntimeStandardTest(unittest.TestCase):
         self.assertIn("createRoutingChannelInputFromForm", form_text)
         self.assertIn("createRoutingChannelUpdateInputFromForm", form_text)
         self.assertIn("normalizedTextArray", form_text)
+        self.assertIn("formValidationError", form_text)
+        self.assertIn("console.routing.validation.", form_text)
         self.assertNotIn("FormData", form_text)
+        for hardcoded_form_error in [
+            "protocol is required",
+            "authType is required",
+            "models must include at least one item",
+            "Unsupported routing channel capability:",
+            "retryPolicy.retryableStatusCodes is required when maxAttempts is greater than 1",
+            "retryPolicy.retryableStatusCodes must contain integer HTTP statuses",
+            "retryPolicy.retryableStatusCodes contains unsupported status:",
+            "Unsupported routing channel status:",
+            "Routing channel status is required",
+        ]:
+            self.assertNotIn(hardcoded_form_error, form_text)
 
         self.assertIn("createRoutingChannelInputFromForm", channels)
         self.assertIn("createRoutingChannelUpdateInputFromForm", channels)
@@ -425,8 +441,10 @@ class ConsoleRoutingRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("RoutingService.fetchApiKeys()", api_keys)
         self.assertIn("CopyButton", api_keys)
-        self.assertIn("readOnlyApiKeyActions", api_keys)
-        self.assertIn("Read-only", api_keys)
+        self.assertNotIn("readOnlyApiKeyActions", api_keys)
+        self.assertNotIn("Read-only", api_keys)
+        self.assertNotIn("read-only", api_keys)
+        self.assertNotIn("command contract", api_keys)
         self.assertNotIn("<Plus", api_keys)
         self.assertNotIn("<Edit3", api_keys)
         self.assertNotIn("<Power", api_keys)
@@ -442,6 +460,194 @@ class ConsoleRoutingRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("operation: createRoutingApiKey", contract)
         self.assertNotIn("operation: deleteRoutingApiKey", contract)
         self.assertNotIn("operation: setRoutingApiKeyStatus", contract)
+
+    def test_console_routing_product_states_are_localized(self) -> None:
+        source_paths = [
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-routing"
+            / "src"
+            / "components"
+            / "ApiKeysTab.tsx",
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-routing"
+            / "src"
+            / "components"
+            / "ChannelsTab.tsx",
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-routing"
+            / "src"
+            / "components"
+            / "StrategyTab.tsx",
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-routing"
+            / "src"
+            / "components"
+            / "RequestDataTab.tsx",
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-routing"
+            / "src"
+            / "components"
+            / "FallbackTab.tsx",
+        ]
+        combined = "\n".join(path.read_text(encoding="utf-8") for path in source_paths)
+        service = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-routing"
+            / "src"
+            / "routingService.ts"
+        ).read_text(encoding="utf-8")
+        i18n = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-i18n"
+            / "src"
+            / "index.ts"
+        ).read_text(encoding="utf-8")
+
+        for marker in [
+            "console.routing.states.apiKeys.loading",
+            "console.routing.states.apiKeys.loadErrorTitle",
+            "console.routing.states.apiKeys.loadErrorFallback",
+            "console.routing.states.apiKeys.emptyTitle",
+            "console.routing.states.apiKeys.emptyDescription",
+            "console.routing.states.channels.loading",
+            "console.routing.states.channels.loadErrorTitle",
+            "console.routing.states.channels.loadErrorFallback",
+            "console.routing.states.channels.emptyTitle",
+            "console.routing.states.channels.emptyNoDataDescription",
+            "console.routing.states.channels.emptySearchDescription",
+            "console.routing.states.strategy.loading",
+            "console.routing.states.strategy.loadErrorTitle",
+            "console.routing.states.strategy.loadErrorFallback",
+            "console.routing.states.strategy.saveErrorFallback",
+            "console.routing.states.strategy.saved",
+            "console.routing.status.active",
+            "console.routing.status.disabled",
+            "console.routing.messages.channelSaveFailed",
+            "console.routing.messages.channelTestPassed",
+            "console.routing.messages.channelTestFailed",
+            "console.routing.messages.channelDisabled",
+            "console.routing.messages.channelEnabled",
+            "console.routing.messages.channelStatusUpdateFailed",
+            "console.routing.messages.channelDeleted",
+            "console.routing.messages.channelDeleteFailed",
+            "console.routing.table.timeoutDefault",
+            "console.routing.table.retryCount",
+            "console.routing.components.channelstab.baseUrl",
+            "console.routing.components.channelstab.timeoutMs",
+            "console.routing.components.channelstab.retryPolicy",
+            "console.routing.components.channelstab.retryMaxAttempts",
+            "console.routing.components.channelstab.retryHttpStatuses",
+            "console.routing.components.channelstab.retryBackoffMs",
+            "console.routing.components.requestdatatab.title",
+            "console.routing.components.requestdatatab.description",
+            "console.routing.components.requestdatatab.searchPlaceholder",
+            "console.routing.components.requestdatatab.headers.request",
+            "console.routing.components.requestdatatab.headers.model",
+            "console.routing.components.requestdatatab.headers.channel",
+            "console.routing.components.requestdatatab.headers.status",
+            "console.routing.components.requestdatatab.headers.latency",
+            "console.routing.components.requestdatatab.headers.tokens",
+            "console.routing.components.requestdatatab.headers.details",
+            "console.routing.components.requestdatatab.requestAudit",
+            "console.routing.components.requestdatatab.responseAudit",
+            "console.routing.components.fallbacktab.title",
+            "console.routing.components.fallbacktab.description",
+            "console.routing.components.fallbacktab.channelRetryTitle",
+            "console.routing.components.fallbacktab.channelRetryDescription",
+            "console.routing.components.fallbacktab.runtimeProtectionTitle",
+            "console.routing.components.fallbacktab.runtimeProtectionDescription",
+            "console.routing.components.fallbacktab.emptyPolicy",
+            "console.routing.fields.authType",
+            "console.routing.fields.protocol",
+            "console.routing.fields.retryBackoffMs",
+            "console.routing.fields.retryMaxAttempts",
+            "console.routing.validation.authTypeRequired",
+            "console.routing.validation.modelsRequired",
+            "console.routing.validation.protocolRequired",
+            "console.routing.validation.retryBackoffMsInteger",
+            "console.routing.validation.retryBackoffMsRange",
+            "console.routing.validation.retryMaxAttemptsInteger",
+            "console.routing.validation.retryMaxAttemptsPositiveInteger",
+            "console.routing.validation.retryMaxAttemptsRange",
+            "console.routing.validation.retryStatusesInteger",
+            "console.routing.validation.retryStatusesRequiredForRetries",
+            "console.routing.validation.retryStatusUnsupported",
+            "console.routing.validation.statusRequired",
+            "console.routing.validation.statusUnsupported",
+            "console.routing.validation.timeoutMsInteger",
+            "console.routing.validation.timeoutMsRange",
+            "console.routing.validation.unsupportedCapability",
+            "console.routing.validation.weightInteger",
+            "console.routing.validation.weightPositiveInteger",
+            "console.routing.validation.weightRange",
+        ]:
+            self.assertIn(marker, combined + service + i18n)
+            self.assertGreaterEqual(i18n.count(f'"{marker}"'), 2)
+
+        for hardcoded_copy in [
+            "Loading routing API keys...",
+            "Routing API keys could not be loaded",
+            "No routing API keys yet",
+            "No routing API keys are available yet.",
+            "Failed to load routing API keys",
+            "Loading routing channels...",
+            "Routing channels could not be loaded",
+            "No routing channels found",
+            "Create a routing channel to start sending model traffic through the gateway.",
+            "Failed to load routing channels",
+            "Channel save failed",
+            "Channel test passed",
+            "Channel test failed",
+            "Channel disabled",
+            "Channel enabled",
+            "Channel deleted",
+            "Loading routing strategy...",
+            "Routing strategy could not be loaded",
+            "Routing strategy saved.",
+            "Failed to load routing strategy.",
+            "Failed to save routing strategy.",
+            "Request data audit",
+            "Search request id or trace id...",
+            "Request Audit",
+            "Response Audit",
+            "Base URL <",
+            "Timeout ms",
+            "Retry policy",
+            "Max attempts",
+            "HTTP statuses",
+            "Backoff ms",
+            "Fallback & Circuit Breaker",
+            "Channel-level timeout and retry controls are configured on each routing channel.",
+            "Channel-level retry",
+            "Configure max attempts, retryable HTTP statuses, backoff, and provider timeout from the channel add/edit dialog.",
+            "Runtime protection",
+            "Health checks and channel status controls are active today. Global circuit-breaker controls will appear here when they are available.",
+            "No global fallback policy is available yet.",
+            "return status === 'enabled' ? 'Active' : 'Disabled';",
+        ]:
+            self.assertNotIn(hardcoded_copy, combined)
+            self.assertNotIn(hardcoded_copy, service)
 
     def test_console_routing_backend_read_models_reject_invalid_capabilities_json(self) -> None:
         store_paths = [

@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
@@ -35,7 +36,7 @@ async function withAppSdkFetch<T>(
   Object.defineProperty(globalThis, "window", {
     configurable: true,
     enumerable: true,
-    value: {},
+    value: { dispatchEvent: () => true },
   });
   globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url;
@@ -119,6 +120,13 @@ function dashboardOverviewFixture(overrides: Record<string, unknown> = {}): Reco
   };
 }
 
+function readConsoleDashboardSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-console-dashboard/src/DashboardView.tsx", import.meta.url),
+    "utf8",
+  );
+}
+
 test("console dashboard service reads overview data from generated app SDK", async () => {
   await withAppSdkFetch(
     (url) => {
@@ -140,6 +148,109 @@ test("console dashboard service reads overview data from generated app SDK", asy
   );
 });
 
+test("console dashboard service preserves configured domain rows from overview data", async () => {
+  await withAppSdkFetch(
+    (url) => {
+      const requestUrl = new URL(url, "http://localhost");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/dashboard/overview");
+      return dashboardOverviewFixture({
+        configurationDomains: [
+          {
+            id: "main-gateway",
+            name: "Main Gateway",
+            domain: "https://api-a.example.com",
+            remark: "Primary OpenAI-compatible endpoint",
+          },
+          {
+            key: "backup-gateway",
+            title: "Backup Gateway",
+            baseUrl: "https://api-b.example.com/v1",
+            description: "Secondary endpoint for failover",
+          },
+        ],
+      });
+    },
+    async () => {
+      const result = await DashboardService.fetchDashboardOverview("daily");
+
+      assert.deepEqual(result.configurationDomains, [
+        {
+          id: "main-gateway",
+          name: "Main Gateway",
+          domain: "https://api-a.example.com",
+          remark: "Primary OpenAI-compatible endpoint",
+        },
+        {
+          id: "backup-gateway",
+          name: "Backup Gateway",
+          domain: "https://api-b.example.com/v1",
+          remark: "Secondary endpoint for failover",
+        },
+      ]);
+    },
+  );
+});
+
+test("console dashboard service initializes display data when overview rows are empty", async () => {
+  await withAppSdkFetch(
+    (url) => {
+      const requestUrl = new URL(url, "http://localhost");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/dashboard/overview");
+      return dashboardOverviewFixture({
+        summary: {
+          availableCredits: 0,
+          usedCredits: 0,
+          requestCount: 0,
+          errorCount: 0,
+          imageRequests: 0,
+          videoRequests: 0,
+          audioRequests: 0,
+          musicRequests: 0,
+          rpm: 0,
+          tpm: 0,
+        },
+        requestSparkline: [],
+        multimodalSparkline: [],
+        performanceSparkline: [],
+        chartData: [],
+        topModels: [],
+        announcements: [],
+        configurationDomains: [],
+        warnings: [],
+      });
+    },
+    async () => {
+      const result = await DashboardService.fetchDashboardOverview("daily");
+
+      assert.equal(result.summary.requestCount, 0);
+      assert.equal(result.summary.usedCredits, 0);
+      assert.ok(result.chartData.length > 0);
+      assert.ok(result.topModels.length > 0);
+      assert.ok(result.announcements.length > 0);
+      assert.ok(result.requestSparkline.length > 0);
+      assert.ok(result.multimodalSparkline.length > 0);
+      assert.ok(result.performanceSparkline.length > 0);
+      assert.ok(result.configurationDomains.length > 0);
+      assert.equal(result.chartData.every((item) => item["llm (Text)"] === 0), true);
+      assert.equal(result.topModels.every((item) => item.requests === 0 && item.cost === 0), true);
+      assert.equal(result.configurationDomains.some((item) => item.domain.includes("sdkwork.com")), true);
+    },
+  );
+});
+
+test("console dashboard view shows configuration info above modality distribution with actions", () => {
+  const source = readConsoleDashboardSource();
+
+  assert.ok(source.indexOf("配置信息") > 0);
+  assert.ok(source.indexOf("配置信息") < source.indexOf("模态分布"));
+  assert.match(source, /configurationDomains/);
+  assert.match(source, /ExternalLink/);
+  assert.match(source, /Gauge/);
+  assert.match(source, /measureConfigurationDomain/);
+  assert.match(source, /grid-cols-\[minmax\(72px,0\.8fr\)_minmax\(120px,1\.25fr\)_minmax\(72px,0\.85fr\)_auto_auto\]/);
+  assert.doesNotMatch(source, /<div key=\{item\.id\} className="p-4">/);
+});
+
 test("console dashboard service fails closed when app SDK returns malformed overview rows", async () => {
   for (const [field, row, message] of [
     ["chartData", "not-a-chart-record", /Dashboard overview chart record is required/],
@@ -148,6 +259,7 @@ test("console dashboard service fails closed when app SDK returns malformed over
     ["requestSparkline", "not-a-sparkline-record", /Dashboard request sparkline record is required/],
     ["multimodalSparkline", "not-a-sparkline-record", /Dashboard multimodal sparkline record is required/],
     ["performanceSparkline", "not-a-sparkline-record", /Dashboard performance sparkline record is required/],
+    ["configurationDomains", "not-a-domain-record", /Dashboard configuration domain record is required/],
   ] as const) {
     await withAppSdkFetch(
       (url) => {
@@ -1359,7 +1471,7 @@ test("console provider service reads provider configs through generated app SDK"
   );
 });
 
-test("console API key form rejects missing or invalid command fields instead of defaulting permissions", () => {
+test("console API key form rejects invalid command fields while defaulting blank groups", () => {
   const validForm = {
     name: "Production key",
     group: "default",
@@ -1384,10 +1496,7 @@ test("console API key form rejects missing or invalid command fields instead of 
     () => createApiKeyInputFromForm({ ...validForm, name: "" }),
     /name is required/,
   );
-  assert.throws(
-    () => createApiKeyInputFromForm({ ...validForm, group: "" }),
-    /group is required/,
-  );
+  assert.equal(createApiKeyInputFromForm({ ...validForm, group: "" }).group, "default");
   assert.throws(
     () => createApiKeyInputFromForm({ ...validForm, quota: "bad-decimal" }),
     /quota must be a non-negative decimal/,

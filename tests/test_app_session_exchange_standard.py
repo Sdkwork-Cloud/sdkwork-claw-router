@@ -139,10 +139,34 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         self.assertNotIn("localStorage", session_token)
         self.assertNotIn("Authorization", session_service)
         self.assertNotIn("Authorization", sdk_clients)
-        self.assertNotIn("apiKey?:", sdk_clients)
+        self.assertIn("apiKey?: string;", sdk_clients)
         self.assertNotIn("headers?:", sdk_clients)
         self.assertIn("const DEFAULT_API_BASE_URL = '/v1';", env_source)
         self.assertNotIn("api.sdkwork.com", env_source)
+
+    def test_portal_session_current_retrieve_returns_unwrapped_session_data(self):
+        portal_session = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-commons"
+            / "src"
+            / "portal-session.ts"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("import { readApiRecord } from './api-result.ts';", portal_session)
+        self.assertIn("let currentSessionPromise: Promise<IamSessionResponse | null> | null = null;", portal_session)
+        self.assertIn("const session = readCurrentPortalSession(result);", portal_session)
+        self.assertIn("if (session) {", portal_session)
+        self.assertIn("storeAppSessionFromResult(result);", portal_session)
+        self.assertIn("resetClawRouterSdkClients();", portal_session)
+        self.assertIn("return session;", portal_session)
+        self.assertIn("function readCurrentPortalSession(result: unknown): IamSessionResponse | null", portal_session)
+        self.assertIn(
+            "function isPortalSessionResponse(value: unknown): value is IamSessionResponse",
+            portal_session,
+        )
 
     def test_api_result_readers_do_not_treat_sdk_data_field_as_raw_envelope(self):
         api_result = (
@@ -266,7 +290,8 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         self.assertIn("SdkworkIamAuthRoutes", auth_routes)
         self.assertIn("getRuntime={getClawRouterIamRuntime}", auth_routes)
         self.assertIn("methodUnavailableMessage={AUTH_METHOD_UNAVAILABLE_MESSAGE}", auth_routes)
-        self.assertIn("loginMethods: ['password', 'emailCode', 'phoneCode', 'sessionBridge']", auth_routes)
+        self.assertIn("useClawRouterAuthRuntimeConfig", auth_routes)
+        self.assertIn("runtimeConfig={runtimeConfig}", auth_routes)
         self.assertNotIn("getClawRouterIamRuntime().service.auth.sessions.create", auth_controller)
         self.assertNotIn("signInWithSessionBridge: createSessionBridgeSession", auth_controller)
         self.assertNotIn("controller={clawRouterAuthController}", auth_routes)
@@ -276,7 +301,7 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         self.assertIn("buildPortalAuthLoginRedirect(location)", navbar)
         self.assertIn("encodeURIComponent(returnPath)", portal_auth)
         self.assertIn("onClick={handleSignIn}", navbar)
-        self.assertIn("clearAppSession", console_layout)
+        self.assertIn("revokeAppSession", console_layout)
         self.assertIn("handleLogout", console_layout)
         self.assertIn("navigate('/', { replace: true })", console_layout)
         self.assertIn("onClick={handleLogout}", console_layout)
@@ -320,12 +345,13 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         self.assertNotIn("throw new Error('Claw Router app session is not available.')", auth_controller)
         self.assertIn("homePath=\"/console\"", auth_routes)
         self.assertIn("getRuntime={getClawRouterIamRuntime}", auth_routes)
-        self.assertIn("loginMethods: ['password', 'emailCode', 'phoneCode', 'sessionBridge']", auth_routes)
+        self.assertIn("useClawRouterAuthRuntimeConfig", auth_routes)
+        self.assertIn("runtimeConfig={runtimeConfig}", auth_routes)
         self.assertIn("onClick={handleSignIn}", navbar)
         self.assertIn("buildPortalAuthLoginRedirect(location)", navbar)
         self.assertNotIn("sessionBootstrapLoading", navbar)
         self.assertNotIn("SESSION_BOOTSTRAP_ERROR_MESSAGE", navbar)
-        self.assertNotIn("error.message", navbar)
+        self.assertIn("getNotificationLoadErrorMessage(error)", navbar)
         self.assertNotIn("result.message", navbar)
         self.assertNotIn("console.error", navbar)
         self.assertNotIn("Authorization", navbar)

@@ -469,7 +469,7 @@ tables:
     system_of_record: true
     write_owner: sdkwork-appbase-iam
     generated_by_this_project: true
-    frontend_routes: [/auth/login, /auth/register, /console/user, /admin/user]
+    frontend_routes: [/auth/login, /auth/register, /console/account, /console/user, /admin/user]
     api_surfaces: [app, backend]
     primary_key: id
     columns:
@@ -492,7 +492,7 @@ tables:
     system_of_record: true
     write_owner: sdkwork-appbase-iam
     generated_by_this_project: true
-    frontend_routes: [/auth/login, /auth/register, /console/user, /admin/user]
+    frontend_routes: [/auth/login, /auth/register, /console/account, /console/user, /admin/user]
     api_surfaces: [app, backend]
     primary_key: id
     columns:
@@ -530,6 +530,8 @@ tables:
       role_code: string(128)
       status: string(32)
       joined_at: instant
+      left_at: instant
+      remark: string(500)
     required_columns: [id, tenant_id, organization_id, user_id, status, joined_at]
     unique_constraints:
       - { name: uk_iam_organization_member_tenant_org_user, columns: [tenant_id, organization_id, user_id], source: appbase_iam_foundation }
@@ -544,7 +546,7 @@ tables:
     system_of_record: true
     write_owner: sdkwork-appbase-iam
     generated_by_this_project: true
-    frontend_routes: [/auth/login, /auth/register, /auth/forgot-password, /auth/oauth/callback/:provider, /console/user]
+    frontend_routes: [/auth/login, /auth/register, /auth/forgot-password, /auth/oauth/callback/:provider, /console/account, /console/user, /admin/user, /admin/marketing, /admin/finance]
     api_surfaces: [app, backend]
     primary_key: id
     columns:
@@ -649,6 +651,188 @@ tables:
       - { name: idx_iam_session_access_token_hash, columns: [access_token_hash] }
       - { name: idx_iam_session_refresh_token_hash, columns: [refresh_token_hash] }
 
+  - table: iam_mfa_factor
+    domain: iam
+    profile: tenant_entity
+    compliance_level: L3
+    system_of_record: true
+    write_owner: sdkwork-appbase-iam
+    generated_by_this_project: true
+    frontend_routes: [/auth/login, /auth/register, /auth/forgot-password, /console/user]
+    api_surfaces: [app, backend]
+    primary_key: id
+    columns:
+      id: string(128)
+      tenant_id: string(128)
+      user_id: string(128)
+      factor_type: string(32)
+      secret_ref: string(512)
+      status: string(32)
+      created_at: instant
+      updated_at: instant
+    required_columns: [id, tenant_id, user_id, factor_type, secret_ref, status, created_at, updated_at]
+
+  - table: iam_device
+    domain: iam
+    profile: tenant_entity
+    compliance_level: L3
+    system_of_record: true
+    write_owner: sdkwork-appbase-iam
+    generated_by_this_project: true
+    frontend_routes: [/auth/login, /auth/register, /auth/oauth/callback/:provider, /console/user]
+    api_surfaces: [app, backend]
+    primary_key: id
+    columns:
+      id: string(128)
+      tenant_id: string(128)
+      user_id: string(128)
+      device_fingerprint: string(256)
+      name: string(256)
+      trusted: bool
+      last_seen_at: instant
+      created_at: instant
+    required_columns: [id, tenant_id, user_id, device_fingerprint, trusted, created_at]
+    unique_constraints:
+      - { name: uk_iam_device_tenant_user_fingerprint, columns: [tenant_id, user_id, device_fingerprint], source: appbase_iam_foundation }
+
+  - table: iam_role
+    domain: iam
+    profile: tenant_entity
+    compliance_level: L3
+    system_of_record: true
+    write_owner: sdkwork-appbase-iam
+    generated_by_this_project: true
+    frontend_routes: [/admin/user]
+    api_surfaces: [backend]
+    primary_key: id
+    columns:
+      id: string(128)
+      tenant_id: string(128)
+      code: string(128)
+      name: string(256)
+      status: string(32)
+      created_at: instant
+      updated_at: instant
+    required_columns: [id, tenant_id, code, name, status, created_at, updated_at]
+    unique_constraints:
+      - { name: uk_iam_role_tenant_code, columns: [tenant_id, code], source: appbase_iam_foundation }
+    indexes:
+      - { name: idx_iam_role_tenant_status, columns: [tenant_id, status, code] }
+
+  - table: iam_permission
+    domain: iam
+    profile: global_entity
+    compliance_level: L3
+    system_of_record: true
+    write_owner: sdkwork-appbase-iam
+    generated_by_this_project: true
+    frontend_routes: [/admin/user]
+    api_surfaces: [backend]
+    primary_key: id
+    columns:
+      id: string(128)
+      code: string(128)
+      name: string(256)
+      resource: string(128)
+      action: string(128)
+      created_at: instant
+    required_columns: [id, code, name, resource, action, created_at]
+    unique_constraints:
+      - { name: uk_iam_permission_code, columns: [code], source: appbase_iam_foundation }
+
+  - table: iam_policy
+    domain: iam
+    profile: tenant_entity
+    compliance_level: L3
+    system_of_record: true
+    write_owner: sdkwork-appbase-iam
+    generated_by_this_project: true
+    frontend_routes: [/admin/user]
+    api_surfaces: [backend]
+    primary_key: id
+    columns:
+      id: string(128)
+      tenant_id: string(128)
+      code: string(128)
+      name: string(256)
+      policy_json: json
+      status: string(32)
+      created_at: instant
+      updated_at: instant
+    required_columns: [id, tenant_id, code, name, policy_json, status, created_at, updated_at]
+    unique_constraints:
+      - { name: uk_iam_policy_tenant_code, columns: [tenant_id, code], source: appbase_iam_foundation }
+
+  - table: iam_role_permission
+    domain: iam
+    profile: tenant_entity
+    compliance_level: L3
+    system_of_record: true
+    write_owner: sdkwork-appbase-iam
+    generated_by_this_project: true
+    frontend_routes: [/admin/user]
+    api_surfaces: [backend]
+    primary_key: id
+    columns:
+      id: string(128)
+      tenant_id: string(128)
+      role_id: string(128)
+      permission_id: string(128)
+      created_at: instant
+    required_columns: [id, tenant_id, role_id, permission_id, created_at]
+    unique_constraints:
+      - { name: uk_iam_role_permission_tenant_role_permission, columns: [tenant_id, role_id, permission_id], source: appbase_iam_foundation }
+    indexes:
+      - { name: idx_iam_role_permission_tenant_permission, columns: [tenant_id, permission_id, role_id] }
+
+  - table: iam_user_role
+    domain: iam
+    profile: tenant_entity
+    compliance_level: L3
+    system_of_record: true
+    write_owner: sdkwork-appbase-iam
+    generated_by_this_project: true
+    frontend_routes: [/admin/user]
+    api_surfaces: [backend]
+    primary_key: id
+    columns:
+      id: string(128)
+      tenant_id: string(128)
+      user_id: string(128)
+      role_id: string(128)
+      organization_id: string(128)
+      created_at: instant
+    required_columns: [id, tenant_id, user_id, role_id, created_at]
+    unique_constraints:
+      - { name: uk_iam_user_role_tenant_user_role_org, columns: [tenant_id, user_id, role_id, organization_id], source: appbase_iam_foundation }
+    indexes:
+      - { name: idx_iam_user_role_tenant_user, columns: [tenant_id, user_id, organization_id, role_id] }
+
+  - table: iam_api_key
+    domain: iam
+    profile: tenant_entity
+    compliance_level: L3
+    system_of_record: true
+    write_owner: sdkwork-appbase-iam
+    generated_by_this_project: true
+    frontend_routes: [/admin/user]
+    api_surfaces: [backend]
+    primary_key: id
+    columns:
+      id: string(128)
+      tenant_id: string(128)
+      user_id: string(128)
+      name: string(128)
+      key_hash: string(128)
+      permission_scope_json: json
+      status: string(32)
+      expires_at: instant
+      created_at: instant
+      updated_at: instant
+    required_columns: [id, tenant_id, user_id, name, key_hash, permission_scope_json, status, created_at, updated_at]
+    indexes:
+      - { name: idx_iam_api_key_tenant_user_status, columns: [tenant_id, user_id, status] }
+
   - table: iam_security_event
     domain: iam
     profile: event_log
@@ -701,88 +885,7 @@ tables:
       - { name: idx_iam_audit_event_tenant_created_at, columns: [tenant_id, created_at, action] }
       - { name: idx_iam_audit_event_request_id, columns: [request_id] }
 
-  - table: plus_user
-    domain: legacy
-    profile: legacy_compatible
-    compliance_level: L0
-    system_of_record: true
-    write_owner: spring-ai-plus-business-entity
-    generated_by_this_project: false
-    frontend_routes: [/auth/login, /auth/register, /auth/forgot-password, /auth/oauth/callback/:provider, /console/user, /console/account, /admin/user, /admin/marketing, /admin/ratelimit, /admin/finance]
-    api_surfaces: [app, backend]
-    compatibility_rule: keep_physical_structure_identical
-    unique_constraints:
-      - { columns: [uuid], source: column_unique }
-
-  - table: plus_oauth_account
-    domain: legacy
-    profile: legacy_compatible
-    compliance_level: L0
-    system_of_record: true
-    write_owner: spring-ai-plus-business-entity
-    generated_by_this_project: false
-    frontend_routes: [/auth/login, /auth/oauth/callback/:provider, /console/user]
-    api_surfaces: [app, backend]
-    compatibility_rule: keep_physical_structure_identical
-
   - table: plus_user_address
-    domain: legacy
-    profile: legacy_compatible
-    compliance_level: L0
-    system_of_record: true
-    write_owner: spring-ai-plus-business-entity
-    generated_by_this_project: false
-    frontend_routes: [/console/account, /admin/user]
-    api_surfaces: [app, backend]
-    compatibility_rule: keep_physical_structure_identical
-
-  - table: plus_role
-    domain: legacy
-    profile: legacy_compatible
-    compliance_level: L0
-    system_of_record: true
-    write_owner: spring-ai-plus-business-entity
-    generated_by_this_project: false
-    frontend_routes: [/admin/user]
-    api_surfaces: [app, backend]
-    compatibility_rule: keep_physical_structure_identical
-    unique_constraints:
-      - { columns: [uuid], source: column_unique }
-
-  - table: plus_user_role
-    domain: legacy
-    profile: legacy_compatible
-    compliance_level: L0
-    system_of_record: true
-    write_owner: spring-ai-plus-business-entity
-    generated_by_this_project: false
-    frontend_routes: [/admin/user]
-    api_surfaces: [backend]
-    compatibility_rule: keep_physical_structure_identical
-
-  - table: plus_tenant
-    domain: legacy
-    profile: legacy_compatible
-    compliance_level: L0
-    system_of_record: true
-    write_owner: spring-ai-plus-business-entity
-    generated_by_this_project: false
-    frontend_routes: [/admin/user, /admin/group]
-    api_surfaces: [backend]
-    compatibility_rule: keep_physical_structure_identical
-
-  - table: plus_organization
-    domain: legacy
-    profile: legacy_compatible
-    compliance_level: L0
-    system_of_record: true
-    write_owner: spring-ai-plus-business-entity
-    generated_by_this_project: false
-    frontend_routes: [/console/account, /admin/user]
-    api_surfaces: [app, backend]
-    compatibility_rule: keep_physical_structure_identical
-
-  - table: plus_organization_member
     domain: legacy
     profile: legacy_compatible
     compliance_level: L0
@@ -826,7 +929,7 @@ tables:
       field_mapping:
         id: id/appId
         name: name
-        developer: AppVO.developer resolved from plus_user nickname/username or installSkill.name
+        developer: AppVO.developer resolved from iam_user display_name/username or installSkill.name
         category: appType-derived store category
         image: iconUrl or icon.url or resourceList cover asset
         rating: studio_catalog_action aggregate projection
@@ -1120,7 +1223,7 @@ tables:
       field_mapping:
         id: skillId/id
         name: name
-        developer: authorName/provider resolved from plus_user or provider
+        developer: authorName/provider resolved from iam_user or provider
         description: description
         category: categoryName from plus_category
         image: coverImage or icon
@@ -1662,28 +1765,6 @@ tables:
     api_surfaces: [backend]
     compatibility_rule: keep_physical_structure_identical
 
-  - table: plus_permission
-    domain: legacy
-    profile: legacy_compatible
-    compliance_level: L0
-    system_of_record: true
-    write_owner: spring-ai-plus-business-entity
-    generated_by_this_project: false
-    frontend_routes: [/admin/user]
-    api_surfaces: [backend]
-    compatibility_rule: keep_physical_structure_identical
-
-  - table: plus_role_permission
-    domain: legacy
-    profile: legacy_compatible
-    compliance_level: L0
-    system_of_record: true
-    write_owner: spring-ai-plus-business-entity
-    generated_by_this_project: false
-    frontend_routes: [/admin/user]
-    api_surfaces: [backend]
-    compatibility_rule: keep_physical_structure_identical
-
   - table: plus_account
     domain: legacy
     profile: ledger_account
@@ -1779,7 +1860,7 @@ tables:
       inherited: PlusBaseEntity columns
       own: [user_id, vip_level_id, amount, point_amount, recharge_type, recharge_time, transaction_no, status, remark, recharge_method_id, recharge_pack_id]
     foreign_keys:
-      - { name: fk_plus_vip_recharge_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
+      - { name: fk_plus_vip_recharge_user, columns: [user_id], references_table: iam_user, references_columns: [id] }
       - { name: fk_plus_vip_recharge_level, columns: [vip_level_id], references_table: plus_vip_level, references_columns: [id] }
       - { name: fk_plus_vip_recharge_method, columns: [recharge_method_id], references_table: plus_vip_recharge_method, references_columns: [id] }
       - { name: fk_plus_vip_recharge_pack, columns: [recharge_pack_id], references_table: plus_vip_recharge_pack, references_columns: [id] }
@@ -1807,7 +1888,7 @@ tables:
       inherited: PlusBaseEntity columns
       own: [user_id, vip_level_id, status, point_balance, total_recharged_points, valid_from, valid_to, last_active_time, remark]
     foreign_keys:
-      - { name: fk_plus_vip_user_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
+      - { name: fk_plus_vip_user_user, columns: [user_id], references_table: iam_user, references_columns: [id] }
       - { name: fk_plus_vip_user_level, columns: [vip_level_id], references_table: plus_vip_level, references_columns: [id] }
     indexes:
       - { name: uk_plus_vip_user_user_id, unique: true, columns: [user_id] }
@@ -1899,7 +1980,7 @@ tables:
       inherited: PlusBaseEntity columns
       own: [user_id, benefit_type, usage_time, usage_count, status, source_id, source_type, remark]
     foreign_keys:
-      - { name: fk_plus_vip_benefit_usage_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
+      - { name: fk_plus_vip_benefit_usage_user, columns: [user_id], references_table: iam_user, references_columns: [id] }
     indexes:
       - { name: idx_plus_vip_benefit_usage_user, columns: [user_id] }
       - { name: idx_plus_vip_benefit_usage_type, columns: [benefit_type] }
@@ -2017,7 +2098,7 @@ tables:
       inherited: PlusBaseEntity columns
       own: [user_id, change_type, change_amount, before_balance, after_balance, source_id, source_type, remark]
     foreign_keys:
-      - { name: fk_plus_vip_point_change_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
+      - { name: fk_plus_vip_point_change_user, columns: [user_id], references_table: iam_user, references_columns: [id] }
     indexes:
       - { name: idx_plus_vip_point_change_user, columns: [user_id] }
       - { name: idx_plus_vip_point_change_type, columns: [change_type] }
@@ -2141,7 +2222,7 @@ tables:
       own: [user_id, coupon_id, coupon_code, acquire_at, acquire_request_no, acquire_type, point_cost, points_refunded, points_refund_at, use_at, expire_at, status, order_id, can_shared]
     foreign_keys:
       - { name: fk_plus_user_coupon_coupon, columns: [coupon_id], references_table: plus_coupon, references_columns: [id] }
-      - { name: fk_plus_user_coupon_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
+      - { name: fk_plus_user_coupon_user, columns: [user_id], references_table: iam_user, references_columns: [id] }
       - { name: fk_plus_user_coupon_order, columns: [order_id], references_table: plus_order, references_columns: [id] }
     indexes:
       - { name: uk_plus_user_coupon_code, unique: true, columns: [coupon_code] }
@@ -2223,9 +2304,9 @@ tables:
     system_of_record: false
     write_owner: marketing-analytics-worker
     common_columns: projection
-    source_tables: [plus_invitation_code, plus_invitation_relation, plus_user, plus_order, plus_payment, plus_vip_recharge]
+    source_tables: [plus_invitation_code, plus_invitation_relation, iam_user, plus_order, plus_payment, plus_vip_recharge]
     projection_policy:
-      does_not_replace: [plus_invitation_code, plus_invitation_relation, plus_user, plus_order, plus_payment, plus_vip_recharge]
+      does_not_replace: [plus_invitation_code, plus_invitation_relation, iam_user, plus_order, plus_payment, plus_vip_recharge]
       purpose: admin_marketing_referral_analytics_only
     frontend_routes: [/admin/marketing]
     api_surfaces: [backend, worker]
@@ -2270,9 +2351,9 @@ tables:
       inherited: PlusBaseEntity columns
       own: [subject, order_type, owner, owner_id, user_id, order_sn, transaction_id, out_trade_no, total_amount, paid_amount, paid_points_amount, status, pay_success_time, expire_time, task_code, dispatch_mode, dispatch_status, worker_user_id, dispatcher_user_id, accepted_time, service_start_time, dispatch_expire_time, task_payload, content_type, content_id, category_id, pay_objects, deliver_info, coupon_info, buyer_info, seller_info, complete_time, cancel_time, remark, product_amount, shipping_amount, discount_amount, tax_amount, refunded_amount, currency, client_info, payment_method, source_channel, merchant_remark, payment_expire_time, refund_status, product_image, payment_provider, payment_product_type]
     foreign_keys:
-      - { name: fk_plus_order_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
-      - { name: fk_plus_order_worker_user, columns: [worker_user_id], references_table: plus_user, references_columns: [id] }
-      - { name: fk_plus_order_dispatcher_user, columns: [dispatcher_user_id], references_table: plus_user, references_columns: [id] }
+      - { name: fk_plus_order_user, columns: [user_id], references_table: iam_user, references_columns: [id] }
+      - { name: fk_plus_order_worker_user, columns: [worker_user_id], references_table: iam_user, references_columns: [id] }
+      - { name: fk_plus_order_dispatcher_user, columns: [dispatcher_user_id], references_table: iam_user, references_columns: [id] }
     indexes:
       - { name: uk_plus_order_order_sn, unique: true, columns: [order_sn] }
       - { name: uk_plus_order_out_trade_no, unique: true, columns: [out_trade_no] }
@@ -2355,7 +2436,7 @@ tables:
       inherited: PlusBaseEntity columns
       own: [user_id, rating_level, enabled, global_max_in_progress, metadata]
     foreign_keys:
-      - { name: fk_order_worker_dispatch_profile_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
+      - { name: fk_order_worker_dispatch_profile_user, columns: [user_id], references_table: iam_user, references_columns: [id] }
     indexes:
       - { name: uk_order_worker_dispatch_profile_user_id, unique: true, columns: [user_id] }
       - { name: idx_order_worker_dispatch_profile_enabled, columns: [enabled] }
@@ -2378,7 +2459,7 @@ tables:
       inherited: PlusBaseEntity columns
       own: [user_id, name, description, logo, cover, contact_phone, contact_email, location, address, license_number, tags, status, business_hours]
     foreign_keys:
-      - { name: fk_plus_shop_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
+      - { name: fk_plus_shop_user, columns: [user_id], references_table: iam_user, references_columns: [id] }
     indexes:
       - { name: idx_plus_shop_user_id, columns: [user_id] }
       - { name: idx_plus_shop_status, columns: [status] }
@@ -2403,7 +2484,7 @@ tables:
       inherited: PlusBaseEntity columns
       own: [user_id, title, code, subtitle, resources, price, original_price, stock, sales_count, status, on_sale_at, description, tags, category_id, base_attributes, spec_attributes]
     foreign_keys:
-      - { name: fk_plus_product_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
+      - { name: fk_plus_product_user, columns: [user_id], references_table: iam_user, references_columns: [id] }
     indexes:
       - { name: uk_plus_product_code, unique: true, columns: [code] }
       - { name: idx_plus_product_user_id, columns: [user_id] }
@@ -2525,7 +2606,7 @@ tables:
       inherited: PlusBaseEntity columns
       own: [user_id, order_count, order_infos, type, status, invoice_code, invoice_no, title, title_type, tax_no, bank_name, bank_account, register_address, register_phone, payee, reviewer, drawer, amount_excluding_tax, tax_amount, total_amount, tax_rate, content, remark, electronic_url, mailing_address, contact_person, contact_phone, mailing_status, mailing_time, express_company, express_no, invoice_time, cancel_time, cancel_reason, fail_reason, currency, exchange_rate, third_party_invoice_id, third_party_data, extra_data]
     foreign_keys:
-      - { name: fk_plus_invoice_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
+      - { name: fk_plus_invoice_user, columns: [user_id], references_table: iam_user, references_columns: [id] }
     indexes:
       - { name: idx_invoice_user, columns: [user_id] }
       - { name: idx_invoice_status, columns: [status] }
@@ -2597,7 +2678,7 @@ tables:
       inherited: PlusBaseEntity columns
       own: [user_id, owner, owner_id, name, description, group_list, status]
     foreign_keys:
-      - { name: fk_plus_shopping_cart_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
+      - { name: fk_plus_shopping_cart_user, columns: [user_id], references_table: iam_user, references_columns: [id] }
     indexes:
       - { name: idx_plus_shopping_cart_user_id, columns: [user_id] }
       - { name: idx_plus_shopping_cart_owner, columns: [owner, owner_id] }
@@ -2628,17 +2709,6 @@ tables:
       - { name: idx_plus_shopping_cart_item_cart_id, columns: [cart_id] }
       - { name: idx_plus_shopping_cart_item_product_id, columns: [product_id] }
       - { name: idx_plus_shopping_cart_item_sku_id, columns: [sku_id] }
-
-  - table: plus_api_key
-    domain: legacy
-    profile: credential
-    compliance_level: L0
-    system_of_record: true
-    write_owner: spring-ai-plus-business-entity
-    generated_by_this_project: false
-    frontend_routes: [/console/api-keys, /console/routing, /admin/user, /admin/ratelimit]
-    api_surfaces: [app, backend, openai_v1]
-    compatibility_rule: optional_source_for_iam_gateway_api_key
 
   - table: plus_usage_record
     domain: legacy
@@ -3994,7 +4064,7 @@ tables:
     system_of_record: true
     write_owner: gateway-runtime
     common_columns: event_log
-    frontend_routes: [/console/usage, /console/dashboard, /console/gateway, /console/routing, /admin/record, /admin/dashboard]
+    frontend_routes: [/console/usage, /console/dashboard, /console/gateway, /console/routing, /playground, /admin/record, /admin/dashboard]
     api_surfaces: [app, backend, openai_v1, worker]
     columns:
       attempt_no: int32
@@ -4187,6 +4257,273 @@ tables:
       sensitivity: RATE_LIMIT_POLICY
       pii: true
       stores_secret_plaintext: false
+      audit_required: true
+
+  - table: ai_agent
+    domain: ai
+    profile: tenant_entity
+    compliance_level: L3
+    system_of_record: true
+    write_owner: agent-service
+    common_columns: tenant_entity
+    frontend_routes: [/console/agents, /playground, /admin/agents]
+    api_surfaces: [app, backend, worker]
+    required_columns: [uuid, tenant_id, organization_id, owner_user_id, agent_code, name, visibility, status]
+    columns:
+      owner_user_id: int64
+      agent_code: string(96)
+      name: string(128)
+      description: string(1024)
+      visibility: enum_int32
+      default_version_id: int64
+      avatar_url: string(512)
+      template_source: string(128)
+      governance_status: enum_int32
+      published_at: instant
+      published_by: int64
+    indexes:
+      - { name: uk_ai_agent_tenant_code, unique: true, columns: [tenant_id, organization_id, agent_code] }
+      - { name: idx_ai_agent_owner_status_updated, columns: [tenant_id, organization_id, owner_user_id, status, updated_at, id] }
+      - { name: idx_ai_agent_governance_status, columns: [tenant_id, organization_id, governance_status, updated_at, id] }
+    security:
+      sensitivity: AGENT_DEFINITION
+      stores_secret_plaintext: false
+      audit_required: true
+
+  - table: ai_agent_version
+    domain: ai
+    profile: tenant_entity
+    compliance_level: L3
+    system_of_record: true
+    write_owner: agent-service
+    common_columns: tenant_entity
+    frontend_routes: [/console/agents, /playground, /admin/agents]
+    api_surfaces: [app, backend, worker]
+    required_columns: [uuid, tenant_id, organization_id, agent_id, version_no, release_status, status]
+    columns:
+      agent_id: int64
+      version_no: int64
+      release_status: enum_int32
+      system_prompt: text
+      model_policy: json
+      tool_policy: json
+      memory_policy: json
+      mcp_policy: json
+      skill_policy: json
+      runtime_policy: json
+      config_hash: string(128)
+      published_at: instant
+      published_by: int64
+    indexes:
+      - { name: uk_ai_agent_version_agent_no, unique: true, columns: [tenant_id, organization_id, agent_id, version_no] }
+      - { name: idx_ai_agent_version_release_status, columns: [tenant_id, organization_id, agent_id, release_status, version_no] }
+      - { name: idx_ai_agent_version_config_hash, columns: [tenant_id, organization_id, config_hash] }
+    security:
+      sensitivity: AGENT_DEFINITION
+      payload_redaction_required: true
+      stores_secret_plaintext: false
+      audit_required: true
+
+  - table: ai_agent_run
+    domain: ai
+    profile: event_log
+    compliance_level: L3
+    system_of_record: true
+    write_owner: agent-runtime
+    common_columns: event_log
+    frontend_routes: [/console/agents, /playground, /console/usage, /admin/agents, /admin/record]
+    api_surfaces: [app, backend, worker]
+    required_columns: [uuid, tenant_id, organization_id, user_id, request_id, agent_id, agent_version_id, run_uuid, run_status]
+    columns:
+      agent_id: int64
+      agent_version_id: int64
+      run_uuid: string(128)
+      run_status: enum_int32
+      source_surface: string(64)
+      input_message: text
+      output_message: text
+      target_modality: enum_int32
+      planner_model: string(128)
+      execution_mode: string(64)
+      started_at: instant
+      completed_at: instant
+      cancelled_at: instant
+      failed_at: instant
+      error_message_masked: string(1024)
+      metering_status: enum_int32
+      usage_fact_id: int64
+      total_steps: int32
+      prompt_tokens: int64
+      completion_tokens: int64
+      cached_tokens: int64
+      total_tokens: int64
+      image_count: int64
+      audio_seconds: decimal
+      video_seconds: decimal
+    indexes:
+      - { name: uk_ai_agent_run_request, unique: true, columns: [tenant_id, organization_id, request_id] }
+      - { name: idx_ai_agent_run_agent_created, columns: [tenant_id, organization_id, agent_id, created_at, id] }
+      - { name: idx_ai_agent_run_user_created, columns: [tenant_id, organization_id, user_id, created_at, id] }
+      - { name: idx_ai_agent_run_status_created, columns: [tenant_id, organization_id, run_status, created_at, id] }
+      - { name: idx_ai_agent_run_usage_fact, columns: [tenant_id, organization_id, usage_fact_id] }
+    lifecycle:
+      partition_by: created_at_month
+      online_retention: 180d
+      archive_retention: 5y
+    security:
+      sensitivity: AGENT_RUN
+      payload_redaction_required: true
+      stores_secret_plaintext: false
+      audit_required: true
+
+  - table: ai_agent_run_step
+    domain: ai
+    profile: event_log
+    compliance_level: L3
+    system_of_record: true
+    write_owner: agent-runtime
+    common_columns: event_log
+    frontend_routes: [/console/agents, /playground, /console/usage, /admin/agents, /admin/record]
+    api_surfaces: [app, backend, worker]
+    required_columns: [uuid, tenant_id, organization_id, run_id, step_index, step_type, step_status]
+    columns:
+      run_id: int64
+      agent_id: int64
+      agent_version_id: int64
+      step_index: int32
+      step_type: enum_int32
+      step_status: enum_int32
+      title: string(128)
+      tool_binding_id: int64
+      skill_id: int64
+      mcp_server_id: int64
+      model: string(128)
+      input_snapshot: json
+      output_snapshot: json
+      error_message_masked: string(1024)
+      started_at: instant
+      completed_at: instant
+      latency_ms: int32
+      prompt_tokens: int64
+      completion_tokens: int64
+      cached_tokens: int64
+      total_tokens: int64
+      image_count: int64
+      audio_seconds: decimal
+      video_seconds: decimal
+      usage_fact_id: int64
+    indexes:
+      - { name: uk_ai_agent_run_step_index, unique: true, columns: [tenant_id, organization_id, run_id, step_index] }
+      - { name: idx_ai_agent_run_step_run_type, columns: [tenant_id, organization_id, run_id, step_type, step_index] }
+      - { name: idx_ai_agent_run_step_tool, columns: [tenant_id, organization_id, tool_binding_id, created_at, id] }
+      - { name: idx_ai_agent_run_step_usage_fact, columns: [tenant_id, organization_id, usage_fact_id] }
+    lifecycle:
+      partition_by: created_at_month
+      online_retention: 180d
+      archive_retention: 5y
+    security:
+      sensitivity: AGENT_STEP
+      payload_redaction_required: true
+      stores_secret_plaintext: false
+      audit_required: true
+
+  - table: ai_agent_memory
+    domain: ai
+    profile: user_entity
+    compliance_level: L3
+    system_of_record: true
+    write_owner: agent-memory-service
+    common_columns: user_entity
+    frontend_routes: [/console/agents, /playground, /admin/agents]
+    api_surfaces: [app, backend, worker]
+    required_columns: [uuid, tenant_id, organization_id, owner_user_id, agent_id, memory_scope, memory_type, status]
+    columns:
+      owner_user_id: int64
+      agent_id: int64
+      memory_scope: enum_int32
+      memory_type: enum_int32
+      content_ref: string(512)
+      embedding_ref: string(512)
+      memory_hash: string(128)
+      retention_policy: json
+      expires_at: instant
+      last_used_at: instant
+    indexes:
+      - { name: uk_ai_agent_memory_hash, unique: true, columns: [tenant_id, organization_id, owner_user_id, agent_id, memory_hash] }
+      - { name: idx_ai_agent_memory_agent_scope, columns: [tenant_id, organization_id, agent_id, owner_user_id, memory_scope, updated_at, id] }
+      - { name: idx_ai_agent_memory_retention, columns: [tenant_id, organization_id, status, expires_at, id] }
+    security:
+      sensitivity: AGENT_MEMORY
+      pii: true
+      stores_secret_plaintext: false
+      audit_required: true
+
+  - table: ai_agent_tool_binding
+    domain: ai
+    profile: tenant_entity
+    compliance_level: L3
+    system_of_record: true
+    write_owner: agent-service
+    common_columns: tenant_entity
+    frontend_routes: [/console/agents, /playground, /admin/agents]
+    api_surfaces: [app, backend, worker]
+    required_columns: [uuid, tenant_id, organization_id, agent_id, binding_key, binding_type, status]
+    columns:
+      agent_id: int64
+      agent_version_id: int64
+      binding_key: string(128)
+      binding_type: enum_int32
+      skill_id: int64
+      mcp_server_id: int64
+      tool_name: string(128)
+      permission_policy: json
+      runtime_config: json
+      credential_ref: string(256)
+      enabled: bool
+      health_status: enum_int32
+      last_checked_at: instant
+    indexes:
+      - { name: uk_ai_agent_tool_binding_key, unique: true, columns: [tenant_id, organization_id, agent_id, agent_version_id, binding_key] }
+      - { name: idx_ai_agent_tool_binding_type, columns: [tenant_id, organization_id, binding_type, status, enabled] }
+      - { name: idx_ai_agent_tool_binding_skill, columns: [tenant_id, organization_id, skill_id, status] }
+      - { name: idx_ai_agent_tool_binding_mcp, columns: [tenant_id, organization_id, mcp_server_id, status] }
+    security:
+      sensitivity: AGENT_TOOL_BINDING
+      stores_secret_plaintext: false
+      secret_reference_only: true
+      audit_required: true
+
+  - table: ai_agent_mcp_server
+    domain: ai
+    profile: tenant_entity
+    compliance_level: L3
+    system_of_record: true
+    write_owner: agent-service
+    common_columns: tenant_entity
+    frontend_routes: [/console/agents, /playground, /admin/agents]
+    api_surfaces: [app, backend, worker]
+    required_columns: [uuid, tenant_id, organization_id, server_code, name, transport_type, status]
+    columns:
+      server_code: string(96)
+      name: string(128)
+      description: string(1024)
+      transport_type: enum_int32
+      connection_config: json
+      credential_ref: string(256)
+      tool_catalog: json
+      prompt_catalog: json
+      resource_catalog: json
+      permission_policy: json
+      health_status: enum_int32
+      last_checked_at: instant
+      last_error_masked: string(1024)
+    indexes:
+      - { name: uk_ai_agent_mcp_server_code, unique: true, columns: [tenant_id, organization_id, server_code] }
+      - { name: idx_ai_agent_mcp_server_status_health, columns: [tenant_id, organization_id, status, health_status, updated_at, id] }
+    security:
+      sensitivity: AGENT_MCP
+      stores_secret_plaintext: false
+      secret_reference_only: true
       audit_required: true
 
   - table: ai_rate_limit_bucket
@@ -5202,7 +5539,7 @@ tables:
     system_of_record: true
     write_owner: notification-service
     common_columns: tenant_entity
-    frontend_routes: [/console/messages]
+    frontend_routes: [/console/notifications, /console/messages]
     api_surfaces: [app, backend, worker]
     columns:
       message_code: string(128)
@@ -5228,7 +5565,7 @@ tables:
     system_of_record: true
     write_owner: notification-service
     common_columns: user_entity
-    frontend_routes: [/console/messages, /console/settings]
+    frontend_routes: [/console/notifications, /console/messages, /console/settings]
     api_surfaces: [app, backend, worker]
     columns:
       message_id: int64

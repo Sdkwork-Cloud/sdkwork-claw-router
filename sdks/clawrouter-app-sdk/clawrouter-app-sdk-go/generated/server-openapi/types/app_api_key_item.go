@@ -1,7 +1,8 @@
 package types
 
-// Created API key metadata with masked key material.
+// Updated API key metadata. Authenticated owner management responses include copyableKey for console copy actions.
 type AppApiKeyItem struct {
+	CopyableKey string `json:"copyableKey"`
 	Created string `json:"created"`
 	Expires string `json:"expires"`
 	Group string `json:"group"`

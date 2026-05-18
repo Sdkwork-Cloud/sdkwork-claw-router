@@ -11,13 +11,34 @@ import {
   createUserStatusUpdateInput,
 } from './userForm';
 
-const DEFAULT_USER_GROUP_OPTIONS = [
-  { value: 'default', label: 'default (Default group)' },
-  { value: 'vip', label: 'VIP (Advanced users)' },
-  { value: 'svip', label: 'SVIP (Premium users)' },
-] as const;
+import { useTranslation } from 'react-i18next';
+
+type TranslationFunction = ReturnType<typeof useTranslation>['t'];
+
+function getAdminUserErrorMessage(error: unknown, fallbackKey: string, fallback: string, t: TranslationFunction): string {
+  if (error instanceof Error) {
+    const message = error.message.trim();
+    if (message.startsWith('admin.user.')) {
+      return t(message, fallback);
+    }
+    if (message) {
+      return message;
+    }
+  }
+  return t(fallbackKey, fallback);
+}
+
+function createDefaultUserGroupOptions(t: TranslationFunction) {
+  return [
+    { value: 'default', label: t('admin.user.groups.default', 'default (Default group)') },
+    { value: 'vip', label: t('admin.user.groups.vip', 'VIP (Advanced users)') },
+    { value: 'svip', label: t('admin.user.groups.svip', 'SVIP (Premium users)') },
+  ] as const;
+}
 
 export function UserAdmin() {
+  const { t } = useTranslation();
+  const defaultUserGroupOptions = createDefaultUserGroupOptions(t);
   const [search, setSearch] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [rechargeTarget, setRechargeTarget] = useState<UserListItem | null>(null);
@@ -49,7 +70,7 @@ export function UserAdmin() {
       setUsers(fetchedUsers);
       setApiKeysMap(fetchedApiKeys);
     } catch (error) {
-      setLoadError(error instanceof Error ? error.message : 'Failed to load users');
+      setLoadError(getAdminUserErrorMessage(error, 'admin.user.errors.loadUsersFallback', 'Users could not be loaded', t));
     } finally {
       setLoading(false);
     }
@@ -185,16 +206,15 @@ export function UserAdmin() {
         <div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-2">
             <User className="w-6 h-6 text-blue-500" />
-            用户管理
-          </h2>
-          <p className="text-sm text-slate-500">管理平台注册用户生命周期，调配额度，分配权限架构。</p>
+            {t("admin.user.index.text.1oim33", "用户管理")}</h2>
+          <p className="text-sm text-slate-500">{t("admin.user.index.text.zyzw4a", "管理平台注册用户生命周期，调配额度，分配权限架构。")}</p>
         </div>
         <div className="flex gap-3 w-full sm:w-auto">
           <div className="relative">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
             <input
               type="text"
-              placeholder="搜索邮箱或昵称..."
+              placeholder={t("admin.user.index.text.1hdxc8d", "搜索邮箱或昵称...")}
               value={search}
               onChange={e => setSearch(e.target.value)}
               className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-blue-500 w-full sm:w-64 text-slate-900 dark:text-white placeholder-slate-500 transition-colors shadow-sm"
@@ -202,7 +222,7 @@ export function UserAdmin() {
           </div>
           <button onClick={() => setIsModalOpen(true)} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 flex-shrink-0">
             <Plus className="w-4 h-4" />
-            <span className="hidden sm:inline">创建用户</span>
+            <span className="hidden sm:inline">{t("admin.user.index.text.1x89nbx", "创建用户")}</span>
           </button>
         </div>
       </div>
@@ -212,37 +232,37 @@ export function UserAdmin() {
           <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 pb-32">
             <thead className="bg-slate-50 dark:bg-[#121212] sticky top-0 border-b border-slate-200 dark:border-white/10 text-xs font-semibold text-slate-500 dark:text-slate-400 select-none z-10">
               <tr>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">用户</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">ID</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">用户名</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">角色</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">分组</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">余额</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">状态</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">最后活跃时间</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">最后使用时间</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">创建时间</div></th>
-                <th className="px-6 py-4 whitespace-nowrap text-right">操作</th>
+                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.record.index.text.1in002o", "用户")}</div></th>
+                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t('common.labels.id', 'ID')}</div></th>
+                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.user.index.text.u9jq8n", "用户名")}</div></th>
+                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.user.index.text.1x858ed", "角色")}</div></th>
+                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.user.index.text.115zp53", "分组")}</div></th>
+                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.finance.index.text.1vbxvzf", "余额")}</div></th>
+                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.finance.index.text.1ccx4t4", "状态")}</div></th>
+                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.user.index.text.mo6aw3", "最后活跃时间")}</div></th>
+                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.user.index.text.1dlip6e", "最后使用时间")}</div></th>
+                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.user.index.text.miy8ea", "创建时间")}</div></th>
+                <th className="px-6 py-4 whitespace-nowrap text-right">{t("admin.group.index.text.501w24", "操作")}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 dark:divide-white/5">
               {loading ? (
-                <BusinessStateTableRow colSpan={11} kind="loading" title="Loading users..." />
+                <BusinessStateTableRow colSpan={11} kind="loading" title={t('admin.user.index.text.loadingUsers', 'Loading users...')} />
               ) : loadError ? (
                 <BusinessStateTableRow
                   colSpan={11}
                   kind="error"
-                  title="Users could not be loaded"
+                  title={t('admin.user.index.text.usersLoadError', 'Users could not be loaded')}
                   description={loadError}
                   onRetry={() => { void loadUsers(); }}
-                  retryLabel="Retry"
+                  retryLabel={t('admin.user.index.text.usersRetry', 'Retry')}
                 />
               ) : users.length === 0 ? (
                 <BusinessStateTableRow
                   colSpan={11}
                   kind="empty"
-                  title="No users found"
-                  description="Create a user before assigning groups, balances, or API keys."
+                  title={t('admin.user.index.text.usersEmpty', 'No users found')}
+                  description={t('admin.user.index.text.usersEmptyDescription', 'Create a user before assigning groups, balances, or API keys.')}
                 />
               ) : users.map(u => (
                 <tr key={u.id} className="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group">
@@ -258,7 +278,7 @@ export function UserAdmin() {
                   <td className="px-6 py-4 text-slate-700 dark:text-slate-300">{u.username}</td>
                   <td className="px-6 py-4">
                     <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium ${u.role === 'admin' ? 'bg-purple-100 text-purple-700 dark:bg-purple-500/10 dark:text-purple-400' : 'bg-slate-100 text-slate-700 dark:bg-white/10 dark:text-slate-300'}`}>
-                      {u.role === 'admin' ? '管理员' : '普通用户'}
+                      {u.role === 'admin' ? t("admin.user.index.text.1yxtyq", "管理员") : t("admin.user.index.text.1cfg610", "普通用户")}
                     </span>
                   </td>
                   <td className="px-6 py-4">
@@ -273,9 +293,9 @@ export function UserAdmin() {
                   </td>
                   <td className="px-6 py-4">
                     {u.status === 'active' ? (
-                       <span className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 text-sm whitespace-nowrap"><div className="w-2 h-2 rounded-full bg-emerald-500"></div> 启用</span>
+                       <span className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 text-sm whitespace-nowrap"><div className="w-2 h-2 rounded-full bg-emerald-500"></div> {t("admin.marketing.index.text.5pm2ma", "启用")}</span>
                     ) : (
-                       <span className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 text-sm whitespace-nowrap"><div className="w-2 h-2 rounded-full bg-red-500"></div> 禁用</span>
+                       <span className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 text-sm whitespace-nowrap"><div className="w-2 h-2 rounded-full bg-red-500"></div> {t("admin.user.index.text.1dcdrxo", "禁用")}</span>
                     )}
                   </td>
                   <td className="px-6 py-4 text-slate-500 dark:text-slate-400 whitespace-nowrap font-mono text-xs">{u.lastActive}</td>
@@ -288,7 +308,7 @@ export function UserAdmin() {
                           e.stopPropagation();
                           setEditTarget(u);
                         }}
-                        className="p-1.5 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded transition-colors" title="编辑">
+                        className="p-1.5 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded transition-colors" title={t("admin.group.index.text.qreyeg", "编辑")}>
                          <Edit className="w-4 h-4" />
                       </button>
                       <button
@@ -297,7 +317,7 @@ export function UserAdmin() {
                           setActiveDropdown(activeDropdown === u.id ? null : u.id);
                         }}
                         className={`p-1.5 rounded transition-colors flex items-center gap-1 ${activeDropdown === u.id ? 'text-slate-900 bg-slate-100 dark:text-white dark:bg-white/10' : 'hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10'}`}
-                        title="更多"
+                        title={t("admin.user.index.text.6a5c57", "更多")}
                       >
                          <MoreHorizontal className="w-4 h-4" />
                       </button>
@@ -315,15 +335,13 @@ export function UserAdmin() {
                               className="w-full px-4 py-2.5 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 flex items-center gap-3 transition-colors"
                             >
                               <Key className="w-4 h-4 text-slate-400" />
-                              API密钥
-                            </button>
+                              {t("admin.user.index.text.pj8yg2", "API密钥")}</button>
                             <button
                               onClick={() => { setGroupsTarget(u); setActiveDropdown(null); }}
                               className="w-full px-4 py-2.5 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 flex items-center gap-3 transition-colors"
                             >
                               <Users className="w-4 h-4 text-slate-400" />
-                              分组
-                            </button>
+                              {t("admin.user.index.text.115zp53", "分组")}</button>
                           </div>
                           <div className="py-1">
                             <button
@@ -331,29 +349,26 @@ export function UserAdmin() {
                               className="w-full px-4 py-2.5 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 flex items-center gap-3 transition-colors"
                             >
                               <Shield className="w-4 h-4 text-slate-400" />
-                              {u.status === 'active' ? '禁用' : '启用'}
+                              {u.status === 'active' ? t("admin.user.index.text.1dcdrxo", "禁用") : t("admin.marketing.index.text.5pm2ma", "启用")}
                             </button>
                             <button
                               onClick={() => { setRechargeTarget(u); setActiveDropdown(null); }}
                               className="w-full px-4 py-2.5 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 flex items-center gap-3 transition-colors"
                             >
                               <Plus className="w-4 h-4 text-emerald-500" />
-                              充值
-                            </button>
+                              {t("admin.finance.index.text.10c9xpw", "充值")}</button>
                             <button
                               onClick={() => { setRefundTarget(u); setActiveDropdown(null); }}
                               className="w-full px-4 py-2.5 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 flex items-center gap-3 transition-colors"
                             >
                               <MinusCircle className="w-4 h-4 text-orange-500" />
-                              退款
-                            </button>
+                              {t("admin.finance.index.text.1chn46r", "退款")}</button>
                             <button
                               onClick={() => { setRecordsTarget(u); setActiveDropdown(null); }}
                               className="w-full px-4 py-2.5 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 flex items-center gap-3 transition-colors"
                             >
                               <DollarSign className="w-4 h-4 text-slate-400" />
-                              充值记录
-                            </button>
+                              {t("admin.user.index.text.9z0mxn", "充值记录")}</button>
                           </div>
                         </div>
                       )}
@@ -371,7 +386,7 @@ export function UserAdmin() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
           <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col">
             <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">创建用户</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t("admin.user.index.text.1x89nbx", "创建用户")}</h3>
               <button onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
                 <X className="w-5 h-5" />
               </button>
@@ -380,28 +395,26 @@ export function UserAdmin() {
             <form onSubmit={handleAddUser} className="flex flex-col flex-1">
               <div className="p-5 space-y-5 flex-1">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">邮箱</label>
-                  <input required name="email" type="email" placeholder="请输入邮箱" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t("admin.user.index.text.185tvls", "邮箱")}</label>
+                  <input required name="email" type="email" placeholder={t("admin.user.index.text.u69mlf", "请输入邮箱")} className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
                 </div>
-                <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2.5 text-sm text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300">
-                  Password setup is managed by IAM registration and reset flows. This admin user command only creates the account profile fields exposed by the backend contract.
+                  <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2.5 text-sm text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300">
+                    {t('admin.user.index.text.passwordSetupCreate', 'Password setup is handled through registration and reset flows. This form creates the account profile.')}
+                  </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t("admin.user.index.text.u9jq8n", "用户名")}</label>
+                  <input name="username" type="text" placeholder={t("admin.user.index.text.198gacp", "请输入用户名 (选填)")} className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">用户名</label>
-                  <input name="username" type="text" placeholder="请输入用户名 (选填)" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">余额</label>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t("admin.finance.index.text.1vbxvzf", "余额")}</label>
                   <input required name="balance" type="number" step="0.01" defaultValue="0" min="0" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
                 </div>
               </div>
               <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212] rounded-b-2xl">
                 <button type="button" onClick={() => setIsModalOpen(false)} className="px-5 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-[#1a1a1a] border border-slate-300 dark:border-zinc-700 hover:bg-slate-50 dark:hover:bg-zinc-800 rounded-xl transition-colors">
-                  取消
-                </button>
+                  {t("admin.group.index.text.1589w37", "取消")}</button>
                 <button type="submit" className="px-5 py-2.5 text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 rounded-xl shadow-sm transition-colors">
-                  创建
-                </button>
+                  {t("admin.group.index.text.khvw5c", "创建")}</button>
               </div>
             </form>
           </div>
@@ -413,7 +426,7 @@ export function UserAdmin() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
           <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-[420px] overflow-hidden flex flex-col">
             <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">充值</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t("admin.finance.index.text.10c9xpw", "充值")}</h3>
               <button onClick={() => setRechargeTarget(null)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
                 <X className="w-5 h-5" />
               </button>
@@ -427,12 +440,12 @@ export function UserAdmin() {
                    </div>
                    <div>
                      <div className="font-semibold text-slate-900 dark:text-white">{rechargeTarget.email}</div>
-                     <div className="text-sm text-slate-500 mt-0.5">当前余额: <span className="font-mono">{rechargeTarget.balance}</span></div>
+                     <div className="text-sm text-slate-500 mt-0.5">{t("admin.user.index.text.1y5eljv", "当前余额:")}<span className="font-mono">{rechargeTarget.balance}</span></div>
                    </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">充值金额</label>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t("admin.user.index.text.1qayakm", "充值金额")}</label>
                   <div className="relative">
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 font-medium">$</span>
                     <input required name="amount" type="number" step="0.01" min="0.01" placeholder="0.00" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl pl-8 pr-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
@@ -442,11 +455,9 @@ export function UserAdmin() {
 
               <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212] rounded-b-2xl">
                 <button type="button" onClick={() => setRechargeTarget(null)} className="px-5 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-[#1a1a1a] border border-slate-300 dark:border-zinc-700 hover:bg-slate-50 dark:hover:bg-zinc-800 rounded-xl transition-colors">
-                  取消
-                </button>
+                  {t("admin.group.index.text.1589w37", "取消")}</button>
                 <button type="submit" className="px-5 py-2.5 text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 rounded-xl shadow-sm transition-colors">
-                  确认
-                </button>
+                  {t("admin.user.index.text.kre8wf", "确认")}</button>
               </div>
             </form>
           </div>
@@ -458,7 +469,7 @@ export function UserAdmin() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
           <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-[420px] overflow-hidden flex flex-col">
             <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">退款</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t("admin.finance.index.text.1chn46r", "退款")}</h3>
               <button onClick={() => setRefundTarget(null)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
                 <X className="w-5 h-5" />
               </button>
@@ -472,29 +483,26 @@ export function UserAdmin() {
                    </div>
                    <div>
                      <div className="font-semibold text-slate-900 dark:text-white">{refundTarget.email}</div>
-                     <div className="text-sm text-slate-500 mt-0.5">当前余额: <span className="font-mono">{refundTarget.balance}</span></div>
+                     <div className="text-sm text-slate-500 mt-0.5">{t("admin.user.index.text.1y5eljv", "当前余额:")}<span className="font-mono">{refundTarget.balance}</span></div>
                    </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">退款金额</label>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t("admin.user.index.text.1qkqe0x", "退款金额")}</label>
                   <div className="relative flex items-center">
                     <span className="absolute left-3 text-slate-500 font-medium z-10">$</span>
                     <input id="refund_amount" required name="amount" type="number" step="0.01" min="0.01" placeholder="0.00" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl pl-8 pr-16 py-2.5 text-sm focus:outline-none focus:border-red-500 dark:focus:border-red-500 focus:ring-1 focus:ring-red-500 text-slate-900 dark:text-white shadow-sm transition-all" />
                     <button type="button" onClick={() => setRefundAll(refundTarget)} className="absolute right-2 px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 rounded-md transition-colors">
-                      全部
-                    </button>
+                      {t("admin.user.index.text.q6w6ul", "全部")}</button>
                   </div>
                 </div>
               </div>
 
               <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212] rounded-b-2xl">
                 <button type="button" onClick={() => setRefundTarget(null)} className="px-5 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-[#1a1a1a] border border-slate-300 dark:border-zinc-700 hover:bg-slate-50 dark:hover:bg-zinc-800 rounded-xl transition-colors">
-                  取消
-                </button>
+                  {t("admin.group.index.text.1589w37", "取消")}</button>
                 <button type="submit" className="px-5 py-2.5 text-sm font-medium text-white bg-red-600 hover:bg-red-700 dark:bg-[rgba(164,54,54,1)] dark:hover:bg-red-800 rounded-xl shadow-sm transition-colors border border-transparent dark:border-[rgba(255,255,255,0.1)]">
-                  确认
-                </button>
+                  {t("admin.user.index.text.kre8wf", "确认")}</button>
               </div>
             </form>
           </div>
@@ -508,7 +516,7 @@ export function UserAdmin() {
             <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10 shrink-0">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <Wallet className="w-5 h-5 text-blue-500" />
-                交易记录 - {recordsTarget.email}
+                {t("admin.user.index.text.uubfvk", "交易记录 -")}{recordsTarget.email}
               </h3>
               <button onClick={() => setRecordsTarget(null)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
                 <X className="w-5 h-5" />
@@ -521,22 +529,25 @@ export function UserAdmin() {
                   onClick={() => setRecordsTab('recharge')}
                   className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors ${recordsTab === 'recharge' ? 'border-blue-500 text-blue-600 dark:text-blue-400' : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'}`}
                 >
-                  充值记录
-                </button>
+                  {t("admin.user.index.text.9z0mxn", "充值记录")}</button>
                 <button
                   onClick={() => setRecordsTab('exchange')}
                   className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors ${recordsTab === 'exchange' ? 'border-blue-500 text-blue-600 dark:text-blue-400' : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'}`}
                 >
-                  兑换记录
-                </button>
+                  {t("admin.user.index.text.65nh81", "兑换记录")}</button>
             </div>
 
             {/* Content Area */}
             <div className="flex-1 overflow-y-auto p-5">
               <BusinessStatePanel
                 kind="empty"
-                title={recordsTab === 'recharge' ? 'No recharge records loaded' : 'No exchange records loaded'}
-                description="Records are available from the billing history and recharge records modules; this user dialog does not synthesize transaction rows."
+                title={recordsTab === 'recharge'
+                  ? t('admin.user.index.text.recordsEmptyRecharge', 'No recharge records loaded')
+                  : t('admin.user.index.text.recordsEmptyExchange', 'No exchange records loaded')}
+                description={t(
+                  'admin.user.index.text.recordsEmptyDescription',
+                  'Records are available from the billing history and recharge records modules; this user dialog does not synthesize transaction rows.',
+                )}
                 className="rounded-xl border border-dashed border-slate-200 bg-slate-50/70 dark:border-white/10 dark:bg-white/[0.02]"
               />
             </div>
@@ -549,7 +560,7 @@ export function UserAdmin() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
           <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col">
             <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">编辑用户 - {editTarget.email}</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t("admin.user.index.text.rndgbq", "编辑用户 -")}{editTarget.email}</h3>
               <button onClick={() => setEditTarget(null)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
                 <X className="w-5 h-5" />
               </button>
@@ -558,20 +569,18 @@ export function UserAdmin() {
             <form onSubmit={handleEditUserSubmit} className="flex flex-col flex-1">
               <div className="p-5 space-y-5 flex-1">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">用户名</label>
-                  <input name="username" type="text" defaultValue={editTarget.username !== '-' ? editTarget.username : ''} placeholder="请输入新的用户名" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-slate-900 dark:text-white shadow-sm transition-all" />
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t("admin.user.index.text.u9jq8n", "用户名")}</label>
+                  <input name="username" type="text" defaultValue={editTarget.username !== '-' ? editTarget.username : ''} placeholder={t("admin.user.index.text.1j2tq2i", "请输入新的用户名")} className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-slate-900 dark:text-white shadow-sm transition-all" />
                 </div>
-                <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2.5 text-sm text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300">
-                  Password setup is managed by IAM registration and reset flows. No password update is sent from this profile dialog.
-                </div>
+                  <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2.5 text-sm text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300">
+                    {t('admin.user.index.text.passwordSetupEdit', 'Password setup is managed by IAM registration and reset flows. No password update is sent from this profile dialog.')}
+                  </div>
               </div>
               <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212] rounded-b-2xl">
                 <button type="button" onClick={() => setEditTarget(null)} className="px-5 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-[#1a1a1a] border border-slate-300 dark:border-zinc-700 hover:bg-slate-50 dark:hover:bg-zinc-800 rounded-xl transition-colors">
-                  取消
-                </button>
+                  {t("admin.group.index.text.1589w37", "取消")}</button>
                 <button type="submit" className="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 rounded-xl shadow-sm transition-colors">
-                  保存修改
-                </button>
+                  {t("admin.user.index.text.dwc9o9", "保存修改")}</button>
               </div>
             </form>
           </div>
@@ -584,7 +593,7 @@ export function UserAdmin() {
           <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-2xl overflow-hidden flex flex-col">
             <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <Key className="w-5 h-5 text-blue-500" /> API密钥管理 - {apiKeysTarget.email}
+                <Key className="w-5 h-5 text-blue-500" /> {t("admin.user.index.text.15axwxa", "API密钥管理 -")}{apiKeysTarget.email}
               </h3>
               <button onClick={() => setApiKeysTarget(null)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
                 <X className="w-5 h-5" />
@@ -592,25 +601,23 @@ export function UserAdmin() {
             </div>
             <div className="p-5 space-y-4">
               <button type="button" onClick={() => setIsCreateApiKeyModalOpen(true)} className="flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 dark:bg-white/5 dark:border-white/10 dark:text-white rounded-lg hover:bg-slate-100 dark:hover:bg-white/10 transition-colors text-sm font-medium">
-                <Plus className="w-4 h-4" /> 添加新的 API 密钥
-              </button>
+                <Plus className="w-4 h-4" /> {t("admin.user.index.text.jegmxz", "添加新的 API 密钥")}</button>
               <div className="border border-slate-200 dark:border-white/10 rounded-xl overflow-hidden">
                 <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
                   <thead className="bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
                     <tr>
-                      <th className="px-4 py-3 font-medium">名称</th>
-                      <th className="px-4 py-3 font-medium">密钥值</th>
-                      <th className="px-4 py-3 font-medium">已用额度</th>
-                      <th className="px-4 py-3 font-medium">状态</th>
-                      <th className="px-4 py-3 font-medium text-right">操作</th>
+                      <th className="px-4 py-3 font-medium">{t("admin.group.index.text.hzx914", "名称")}</th>
+                      <th className="px-4 py-3 font-medium">{t("admin.user.index.text.1sj8iyg", "密钥值")}</th>
+                      <th className="px-4 py-3 font-medium">{t("admin.user.index.text.i2uwd4", "已用额度")}</th>
+                      <th className="px-4 py-3 font-medium">{t("admin.finance.index.text.1ccx4t4", "状态")}</th>
+                      <th className="px-4 py-3 font-medium text-right">{t("admin.group.index.text.501w24", "操作")}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-200 dark:divide-white/5">
                     {(apiKeysMap[apiKeysTarget.id] || []).length === 0 ? (
                       <tr>
                         <td colSpan={5} className="px-4 py-6 text-center text-slate-500">
-                          暂无 API 密钥
-                        </td>
+                          {t("admin.user.index.text.1yo705o", "暂无 API 密钥")}</td>
                       </tr>
                     ) : (
                       (apiKeysMap[apiKeysTarget.id] || []).map((key) => (
@@ -618,11 +625,10 @@ export function UserAdmin() {
                           <td className="px-4 py-3 text-slate-900 dark:text-white">{key.name}</td>
                           <td className="px-4 py-3 font-mono text-xs text-slate-500">{key.key}</td>
                           <td className="px-4 py-3">{key.used}</td>
-                          <td className="px-4 py-3"><span className="text-emerald-600 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded text-xs">启用</span></td>
+                          <td className="px-4 py-3"><span className="text-emerald-600 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded text-xs">{t("admin.marketing.index.text.5pm2ma", "启用")}</span></td>
                           <td className="px-4 py-3 text-right">
                             <button type="button" onClick={() => deleteApiKey(key.id)} className="text-slate-400 hover:text-red-500 transition-colors text-xs font-medium">
-                              删除
-                            </button>
+                              {t("admin.group.index.text.1t2vi4h", "删除")}</button>
                           </td>
                         </tr>
                       ))
@@ -641,31 +647,28 @@ export function UserAdmin() {
           <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-sm overflow-hidden flex flex-col">
             <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <Users className="w-5 h-5 text-blue-500" /> 分配分组
-              </h3>
+                <Users className="w-5 h-5 text-blue-500" /> {t("admin.user.index.text.1sl0na6", "分配分组")}</h3>
               <button onClick={() => setGroupsTarget(null)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
                 <X className="w-5 h-5" />
               </button>
             </div>
             <form onSubmit={handleGroupSubmit} className="flex flex-col">
               <div className="p-5">
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">为用户 {groupsTarget.email} 选择分组</label>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t("admin.user.index.text.zv14s8", "为用户")}{groupsTarget.email} {t("admin.user.index.text.1qui0bp", "选择分组")}</label>
                 <select name="group" defaultValue={groupsTarget.group} className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-slate-900 dark:text-white shadow-sm transition-all appearance-none cursor-pointer">
-                  {DEFAULT_USER_GROUP_OPTIONS.map((group) => (
+                  {defaultUserGroupOptions.map((group) => (
                     <option key={group.value} value={group.value}>{group.label}</option>
                   ))}
-                  {!DEFAULT_USER_GROUP_OPTIONS.some((group) => group.value === groupsTarget.group) && (
-                    <option value={groupsTarget.group}>{groupsTarget.group} (current)</option>
+                  {!defaultUserGroupOptions.some((group) => group.value === groupsTarget.group) && (
+                    <option value={groupsTarget.group}>{t('admin.user.groups.current', '{{group}} (current)', { group: groupsTarget.group })}</option>
                   )}
                 </select>
               </div>
               <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212]">
                   <button type="button" onClick={() => setGroupsTarget(null)} className="px-5 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-[#1a1a1a] border border-slate-300 dark:border-zinc-700 hover:bg-slate-50 dark:hover:bg-zinc-800 rounded-xl transition-colors">
-                    取消
-                  </button>
+                    {t("admin.group.index.text.1589w37", "取消")}</button>
                   <button type="submit" className="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 rounded-xl shadow-sm transition-colors">
-                    保存
-                  </button>
+                    {t("admin.group.index.text.1c3mapc", "保存")}</button>
               </div>
             </form>
           </div>
@@ -676,7 +679,7 @@ export function UserAdmin() {
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
           <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-sm overflow-hidden flex flex-col">
             <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">创建新 API 密钥</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t("admin.user.index.text.12kqc6t", "创建新 API 密钥")}</h3>
               <button onClick={() => setIsCreateApiKeyModalOpen(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
                 <X className="w-5 h-5" />
               </button>
@@ -684,16 +687,14 @@ export function UserAdmin() {
 
             <form onSubmit={handleCreateApiKeySubmit} className="flex flex-col">
               <div className="p-5">
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">名称</label>
-                <input name="keyName" type="text" placeholder="如：开发环境密钥" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 text-slate-900 dark:text-white shadow-sm transition-all" />
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t("admin.group.index.text.hzx914", "名称")}</label>
+                <input name="keyName" type="text" placeholder={t("admin.user.index.text.1tgxww1", "如：开发环境密钥")} className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 text-slate-900 dark:text-white shadow-sm transition-all" />
               </div>
               <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212] rounded-b-2xl">
                 <button type="button" onClick={() => setIsCreateApiKeyModalOpen(false)} className="px-5 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-[#1a1a1a] border border-slate-300 dark:border-zinc-700 hover:bg-slate-50 dark:hover:bg-zinc-800 rounded-xl transition-colors">
-                  取消
-                </button>
+                  {t("admin.group.index.text.1589w37", "取消")}</button>
                 <button type="submit" className="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 rounded-xl shadow-sm transition-colors">
-                  生成密钥
-                </button>
+                  {t("admin.user.index.text.4665sz", "生成密钥")}</button>
               </div>
             </form>
           </div>
@@ -707,8 +708,7 @@ export function UserAdmin() {
             <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
                  <CheckCircle2 className="w-5 h-5 text-emerald-500" />
-                 API 密钥创建成功
-              </h3>
+                 {t("admin.user.index.text.zarxao", "API 密钥创建成功")}</h3>
               <button onClick={() => setNewlyCreatedKey(null)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
                 <X className="w-5 h-5" />
               </button>
@@ -717,24 +717,23 @@ export function UserAdmin() {
             <div className="p-6 space-y-6">
               <div className="bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 text-amber-800 dark:text-amber-400 rounded-xl p-4 text-sm flex items-start gap-3">
                  <Shield className="w-5 h-5 shrink-0" />
-                 <div className="leading-relaxed">请立即复制您的 API 密钥。由于安全原因，您将无法再次查看此密钥的完整内容。如果丢失，请删除此密钥并重新创建。</div>
+                 <div className="leading-relaxed">{t("admin.user.index.text.odzkx6", "请立即复制您的 API 密钥。由于安全原因，您将无法再次查看此密钥的完整内容。如果丢失，请删除此密钥并重新创建。")}</div>
               </div>
               <div className="relative">
                  <input type="text" readOnly value={newlyCreatedKey} className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-200 dark:border-white/10 rounded-xl pl-4 pr-32 py-3 text-sm font-mono text-slate-900 dark:text-white" />
                   <CopyButton
                     text={newlyCreatedKey}
-                    label="复制"
-                    copiedLabel="已复制"
+                    label={t("admin.user.index.text.1xbipwq", "复制")}
+                    copiedLabel={t("admin.marketing.index.text.alyyje", "已复制")}
                     variant="inline"
                     className="absolute right-2 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 shadow-sm transition-colors"
-                    title="复制 API 密钥"
+                    title={t("admin.user.index.text.13wk0bb", "复制 API 密钥")}
                   />
               </div>
             </div>
             <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end bg-slate-50 dark:bg-[#121212]">
                 <button onClick={() => setNewlyCreatedKey(null)} className="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 rounded-xl shadow-sm transition-colors w-full sm:w-auto">
-                  我已经保存了此密钥
-                </button>
+                  {t("admin.user.index.text.m620qt", "我已经保存了此密钥")}</button>
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@ use std::time::{SystemTime, UNIX_EPOCH};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DecimalValue, DomainError};
+use crate::infrastructure::sql::read_model::is_missing_sqlite_read_model;
 use crate::ports::{
     RechargeCommandFuture, RechargePackage, RechargeReadFuture, RechargeStore, RechargeSubject,
     SubmitRechargeCommand, SubmitRechargeOutcome,
@@ -125,7 +126,7 @@ async fn load_recharge_packages(
         .bind(current_query_timestamp())
         .fetch_all(pool)
         .await
-        .map_err(sql_error)?;
+        .or_else(empty_rows_when_read_model_is_missing)?;
 
     rows.iter()
         .map(|row| {
@@ -664,6 +665,16 @@ fn money_cents(amount: &str) -> Result<i64, DomainError> {
 
 fn sql_error(error: sqlx::Error) -> DomainError {
     DomainError::new(error.to_string())
+}
+
+fn empty_rows_when_read_model_is_missing(
+    error: sqlx::Error,
+) -> Result<Vec<sqlx::sqlite::SqliteRow>, DomainError> {
+    if is_missing_sqlite_read_model(&error) {
+        Ok(Vec::new())
+    } else {
+        Err(sql_error(error))
+    }
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {

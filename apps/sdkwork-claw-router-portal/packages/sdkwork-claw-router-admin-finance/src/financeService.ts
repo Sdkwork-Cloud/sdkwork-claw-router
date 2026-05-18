@@ -5,6 +5,7 @@ import {
   readRequiredApiItems,
   readRequiredNonNegativeNumber,
   readRequiredString,
+  readDecimalString,
   readString,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
@@ -121,15 +122,8 @@ function readBillingStatus(item: ApiRecord): 'paid' | 'unpaid' | 'overdue' {
 
 function readMoneyString(item: ApiRecord, key: string, missingMessage: string, invalidMessage: string): string {
   const value = readRequiredString(item, key, missingMessage);
-  if (!/^-?\d+(?:\.\d{1,2})?$/.test(value)) {
+  if (!/^-?\d+(?:\.\d{1,6})?$/.test(value)) {
     throw new Error(invalidMessage);
   }
-  return formatMoneyString(value);
-}
-
-function formatMoneyString(value: string): string {
-  const sign = value.startsWith('-') ? '-' : '';
-  const unsigned = sign ? value.slice(1) : value;
-  const [whole, fraction = ''] = unsigned.split('.');
-  return `${sign}${whole}.${fraction.padEnd(2, '0').slice(0, 2)}`;
+  return readDecimalString(item, key, 6);
 }

@@ -73,6 +73,7 @@ client.SetHeader("X-Custom-Header", "value")
 
 ## API Modules
 
+- `client.Agents` - agents API
 - `client.Ai` - ai API
 - `client.Billing` - billing API
 - `client.Content` - content API
@@ -83,6 +84,25 @@ client.SetHeader("X-Custom-Header", "value")
 - `client.System` - system API
 
 ## Usage Examples
+
+### agents
+
+```go
+// List managed agents
+params := map[string]interface{}{
+    "q": "q",
+    "owner_user_id": 2,
+    "status": "active",
+    "visibility": "private",
+    "page": 5,
+    "page_size": 6,
+}
+result, err := client.Agents.List(params)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
 
 ### ai
 
@@ -98,8 +118,8 @@ fmt.Println(result)
 ### billing
 
 ```go
-// List batches
-result, err := client.Billing.CouponBatchesList()
+// List referral stats
+result, err := client.Billing.ReferralsStatsList()
 if err != nil {
     panic(err)
 }
@@ -173,8 +193,8 @@ fmt.Println(result)
 ### system
 
 ```go
-// List dashboard data
-result, err := client.System.DashboardAdminOverviewRetrieve()
+// Retrieve IAM auth runtime settings
+result, err := client.System.AuthSettingsRetrieve()
 if err != nil {
     panic(err)
 }

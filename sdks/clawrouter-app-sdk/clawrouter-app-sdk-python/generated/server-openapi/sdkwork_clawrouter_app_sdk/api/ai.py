@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import CreateRoutingChannelRequest, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationsListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, ProvidersListResult, RoutingApiKeysListResult, RoutingChannelsCreateResult, RoutingChannelsDeleteResult, RoutingChannelsListResult, RoutingChannelsStatusUpdateResult, RoutingChannelsUpdateResult, RoutingChannelsVerifyResult, RoutingRequestTracesListResult, RoutingStrategyListResult, RoutingStrategyUpdateResult, RoutingUsageListResult, SetRoutingChannelStatusRequest, UpdateRoutingChannelRequest, UpdateRoutingStrategyRequest, UsageLogsListResult
+from ..models import CreateRoutingChannelRequest, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationAgentRunCreateRequest, GenerationAgentRunsCreateResult, GenerationsListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, ProvidersListResult, RoutingApiKeysListResult, RoutingChannelsCreateResult, RoutingChannelsDeleteResult, RoutingChannelsListResult, RoutingChannelsStatusUpdateResult, RoutingChannelsUpdateResult, RoutingChannelsVerifyResult, RoutingRequestTracesListResult, RoutingStrategyListResult, RoutingStrategyUpdateResult, RoutingUsageListResult, SetRoutingChannelStatusRequest, UpdateRoutingChannelRequest, UpdateRoutingStrategyRequest, UsageLogsListResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -239,11 +239,12 @@ def serialize_header_primitive(value: Any) -> str:
 
 class AiApi:
     """ai ai API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.dashboard = AiDashboardApi(client)
         self.gateway = AiGatewayApi(client)
+        self.generation_agent = AiGenerationAgentApi(client)
         self.generations = AiGenerationsApi(client)
         self.model_rankings = AiModelRankingsApi(client)
         self.model_vendors = AiModelVendorsApi(client)
@@ -255,7 +256,7 @@ class AiApi:
 
 class AiDashboardApi:
     """ai ai.dashboard API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.overview = AiDashboardOverviewApi(client)
@@ -263,7 +264,7 @@ class AiDashboardApi:
 
 class AiDashboardOverviewApi:
     """ai ai.dashboard.overview API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -279,7 +280,7 @@ class AiDashboardOverviewApi:
 
 class AiGatewayApi:
     """ai ai.gateway API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.traces = AiGatewayTracesApi(client)
@@ -287,7 +288,7 @@ class AiGatewayApi:
 
 class AiGatewayTracesApi:
     """ai ai.gateway.traces API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -296,9 +297,28 @@ class AiGatewayTracesApi:
         """List traces"""
         return self._client.get(f"/app/v3/api/ai/gateway/traces")
 
+class AiGenerationAgentApi:
+    """ai ai.generation_agent API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.runs = AiGenerationAgentRunsApi(client)
+
+
+class AiGenerationAgentRunsApi:
+    """ai ai.generation_agent.runs API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def create(self, body: GenerationAgentRunCreateRequest) -> GenerationAgentRunsCreateResult:
+        """Create Playground generation agent run"""
+        return self._client.post(f"/app/v3/api/ai/generation_agent/runs", json=body)
+
 class AiGenerationsApi:
     """ai ai.generations API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -309,7 +329,7 @@ class AiGenerationsApi:
 
 class AiModelRankingsApi:
     """ai ai.model_rankings API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -327,7 +347,7 @@ class AiModelRankingsApi:
 
 class AiModelVendorsApi:
     """ai ai.model_vendors API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -338,7 +358,7 @@ class AiModelVendorsApi:
 
 class AiModelsApi:
     """ai ai.models API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -360,7 +380,7 @@ class AiModelsApi:
 
 class AiProvidersApi:
     """ai ai.providers API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -371,7 +391,7 @@ class AiProvidersApi:
 
 class AiRoutingApi:
     """ai ai.routing API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.api_keys = AiRoutingApiKeysApi(client)
@@ -383,7 +403,7 @@ class AiRoutingApi:
 
 class AiRoutingApiKeysApi:
     """ai ai.routing.api_keys API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -394,7 +414,7 @@ class AiRoutingApiKeysApi:
 
 class AiRoutingChannelsApi:
     """ai ai.routing.channels API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.status = AiRoutingChannelsStatusApi(client)
@@ -440,7 +460,7 @@ class AiRoutingChannelsApi:
 
 class AiRoutingChannelsStatusApi:
     """ai ai.routing.channels.status API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -457,7 +477,7 @@ class AiRoutingChannelsStatusApi:
 
 class AiRoutingRequestTracesApi:
     """ai ai.routing.request_traces API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -468,7 +488,7 @@ class AiRoutingRequestTracesApi:
 
 class AiRoutingStrategyApi:
     """ai ai.routing.strategy API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -483,7 +503,7 @@ class AiRoutingStrategyApi:
 
 class AiRoutingUsageApi:
     """ai ai.routing.usage API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -494,7 +514,7 @@ class AiRoutingUsageApi:
 
 class AiUsageApi:
     """ai ai.usage API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.logs = AiUsageLogsApi(client)
@@ -502,7 +522,7 @@ class AiUsageApi:
 
 class AiUsageLogsApi:
     """ai ai.usage.logs API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 

@@ -598,6 +598,80 @@ async fn app_auth_qr_login_codes_create_and_retrieve_use_standard_iam_resource_p
 }
 
 #[tokio::test]
+async fn app_auth_qr_login_codes_confirm_and_verification_policy_use_standard_iam_paths() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
+    let router = app_auth_router_with_settings(pool, qr_login_settings());
+
+    let login_response = router
+        .clone()
+        .oneshot(login_request("alice@example.com", "correct-password"))
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, login_response.status());
+    let login_payload = response_json(login_response).await;
+    let auth_token = login_payload["data"]["authToken"].as_str().unwrap();
+    let access_token = login_payload["data"]["accessToken"].as_str().unwrap();
+
+    let policy_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/auth/verification_policy")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, policy_response.status());
+    let policy_payload = response_json(policy_response).await;
+    assert_eq!("2000", policy_payload["code"]);
+    assert_eq!(false, policy_payload["data"]["emailCodeLoginEnabled"]);
+    assert_eq!(false, policy_payload["data"]["phoneCodeLoginEnabled"]);
+    assert_eq!(
+        false,
+        policy_payload["data"]["emailRegistrationVerificationRequired"]
+    );
+    assert_eq!(
+        false,
+        policy_payload["data"]["phoneRegistrationVerificationRequired"]
+    );
+
+    let confirm_response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/auth/qr_login_codes/confirm")
+                .header("content-type", "application/json")
+                .header("authorization", format!("Bearer {auth_token}"))
+                .header("Sdkwork-Access-Token", access_token)
+                .body(Body::from(
+                    json!({
+                        "qrKey": "qr-key-standard-1"
+                    })
+                    .to_string(),
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, confirm_response.status());
+    let confirm_payload = response_json(confirm_response).await;
+    assert_eq!("2000", confirm_payload["code"]);
+    assert_eq!("confirmed", confirm_payload["data"]["status"]);
+    assert_eq!(
+        login_payload["data"]["sessionId"],
+        confirm_payload["data"]["session"]["sessionId"]
+    );
+    assert_eq!(
+        login_payload["data"]["user"]["id"],
+        confirm_payload["data"]["userInfo"]["id"]
+    );
+}
+
+#[tokio::test]
 async fn app_auth_verification_codes_create_allows_immediate_resend_for_same_target() {
     let pool = create_pool().await;
     create_minimal_auth_schema(&pool).await;

@@ -92,11 +92,11 @@ class FrontendContractGuardian:
         "portal packages must construct generated SDK clients only in sdkwork-claw-router-commons/src/sdk-clients.ts"
     )
     GENERATED_SDK_CLIENT_BOUNDARY_MESSAGE = (
-        "sdkwork-claw-router-commons/src/sdk-clients.ts must construct generated app and backend SDK clients"
+        "sdkwork-claw-router-commons/src/sdk-clients.ts must construct generated app, backend, and AI SDK clients"
     )
     GENERATED_SDK_CLIENT_OPTIONS_BOUNDARY_MESSAGE = (
-        "sdkwork-claw-router-commons/src/sdk-clients.ts must expose separate app/backend SDK option types "
-        "without manual auth/header/baseUrl escape hatches"
+        "sdkwork-claw-router-commons/src/sdk-clients.ts must expose separate app/backend/AI SDK option types "
+        "without manual header/baseUrl escape hatches"
     )
     COMMONS_RUNTIME_IMPORT_BOUNDARY_MESSAGE = (
         "portal business service files must import runtime helpers from "
@@ -133,10 +133,10 @@ class FrontendContractGuardian:
     BUSINESS_RANDOM_PATTERN = re.compile(r"\bMath\s*\.\s*random\s*\(")
     GENERATED_SDK_VALUE_IMPORT_PATTERN = re.compile(
         r"^\s*import\s+(?!type\b)(?P<imports>[\s\S]*?)\s+from\s+['\"]"
-        r"(?P<module>@sdkwork/clawrouter-(?:app|backend)-sdk)['\"]",
+        r"(?P<module>@sdkwork/clawrouter-(?:app|backend|open)-sdk)['\"]",
         re.MULTILINE,
     )
-    GENERATED_SDK_CLIENT_CONSTRUCTION_PATTERN = re.compile(r"\bnew\s+Sdkwork(?:App|Backend)Client\s*\(")
+    GENERATED_SDK_CLIENT_CONSTRUCTION_PATTERN = re.compile(r"\bnew\s+Sdkwork(?:App|Backend|Ai)Client\s*\(")
     GENERATED_SDK_RESULT_DATA_PATTERN = re.compile(
         r"\b(?:result|response|data)\s*\.\s*data\b"
     )
@@ -150,10 +150,13 @@ class FrontendContractGuardian:
             "API_BASE_URL",
             "APP_API_PREFIX",
             "BACKEND_API_PREFIX",
+            "OPEN_API_PREFIX",
             "CLAWROUTER_APP_SDK_REFERENCE_METADATA",
             "CLAWROUTER_BACKEND_SDK_REFERENCE_METADATA",
+            "CLAWROUTER_AI_SDK_REFERENCE_METADATA",
             "ClawRouterAppSdkClientOptions",
             "ClawRouterBackendSdkClientOptions",
+            "ClawRouterAiSdkClientOptions",
             "ClawRouterGeneratedSdkMetadata",
             "ClawRouterGeneratedSdkType",
             "ApiRecord",
@@ -162,12 +165,14 @@ class FrontendContractGuardian:
             "createClawRouterAppSdkClient",
             "createClawRouterAppSdkModelExample",
             "createClawRouterBackendSdkClient",
+            "createClawRouterAiSdkClient",
             "createRequestToken",
             "decimalNumber",
             "ensurePlusApiSuccess",
             "formatDecimalAmount",
             "getClawRouterAppSdkClient",
             "getClawRouterBackendSdkClient",
+            "getClawRouterAiSdkClient",
             "getLoadErrorMessage",
             "getStoredAppSessionToken",
             "isRecord",
@@ -701,28 +706,29 @@ class FrontendContractGuardian:
         required_terms = (
             "@sdkwork/clawrouter-app-sdk",
             "@sdkwork/clawrouter-backend-sdk",
+            "@sdkwork/clawrouter-open-sdk",
             "new SdkworkAppClient",
             "new SdkworkBackendClient",
+            "new SdkworkAiClient",
             "normalizeGeneratedSdkBaseUrl",
             "/app/v3/api",
             "/backend/v3/api",
+            "/v1",
         )
         if not all(term in source for term in required_terms):
             messages.append(self.GENERATED_SDK_CLIENT_BOUNDARY_MESSAGE)
         required_option_terms = (
             "export interface ClawRouterAppSdkClientOptions",
             "export interface ClawRouterBackendSdkClientOptions",
+            "export interface ClawRouterAiSdkClientOptions",
         )
         forbidden_option_terms = (
             "interface ClawRouterSdkClientOptions",
             "type ClawRouterSdkClientOptions",
             "baseUrl?:",
-            "apiKey?:",
             "headers?:",
             "options.baseUrl",
-            "options.apiKey",
             "options.headers",
-            "apiKey:",
             "headers:",
         )
         if not all(term in source for term in required_option_terms) or any(
@@ -833,7 +839,11 @@ class FrontendContractGuardian:
             if self._contains_manual_admin_session_token_usage(relative, source):
                 messages.append(f"{self.ADMIN_SESSION_TOKEN_BOUNDARY_MESSAGE}: {relative}")
 
-            if service_name_pattern.search(relative) and self.GENERATED_SDK_RESULT_DATA_PATTERN.search(source):
+            if (
+                service_name_pattern.search(relative)
+                and self.GENERATED_SDK_RESULT_DATA_PATTERN.search(source)
+                and "getClawRouterAiSdkClient" not in source
+            ):
                 messages.append(f"{self.GENERATED_SDK_RESULT_DATA_BOUNDARY_MESSAGE}: {relative}")
 
             if relative in self.RAW_BROWSER_NETWORK_ALLOWLIST:

@@ -11,16 +11,15 @@ import {
   X,
 } from 'lucide-react';
 import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
+import { useTranslation } from 'react-i18next';
 import { MessagesService, type Message } from './messagesService';
-
-const readOnlyMessageActions =
-  'Read-only notification center. Message read status, deletion, and receipt downloads require explicit notification command contracts before they can be enabled.';
 
 function getLoadErrorMessage(error: unknown, fallback: string): string {
   return error instanceof Error && error.message ? error.message : fallback;
 }
 
 export function MessagesView() {
+  const { t } = useTranslation();
   const [messages, setMessages] = useState<Message[]>([]);
   const [filter, setFilter] = useState<'all' | 'unread'>('all');
   const [search, setSearch] = useState('');
@@ -38,14 +37,14 @@ export function MessagesView() {
       }
     } catch (error) {
       if (isActive()) {
-        setLoadError(getLoadErrorMessage(error, 'Failed to load notifications.'));
+        setLoadError(getLoadErrorMessage(error, t('console.messages.loadError', '通知加载失败')));
       }
     } finally {
       if (isActive()) {
         setLoading(false);
       }
     }
-  }, []);
+  }, [t]);
 
   useEffect(() => {
     let active = true;
@@ -76,16 +75,8 @@ export function MessagesView() {
     <div className="p-4 lg:p-6 w-full mx-auto animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#1e1e1e]">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-2 border-b border-slate-200 dark:border-white/5 pb-4 mb-6">
         <h1 className="text-xl lg:text-2xl font-bold text-slate-800 dark:text-white flex items-center gap-2">
-          <Bell className="w-6 h-6 text-lobster-500" /> Message Center
+          <Bell className="w-6 h-6 text-lobster-500" /> {t('console.messages.title', '消息中心')}
         </h1>
-        <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-left sm:text-right">
-          <p className="max-w-xl text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-            {readOnlyMessageActions}
-          </p>
-          <span className="shrink-0 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-300">
-            Read-only
-          </span>
-        </div>
       </div>
 
       <div className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-2xl shadow-sm flex flex-col md:flex-row overflow-hidden min-h-[650px] relative">
@@ -100,7 +91,7 @@ export function MessagesView() {
               }`}
             >
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4" /> All Messages
+                <Mail className="w-4 h-4" /> {t('common.actions.allNotifications')}
               </div>
               <span className="bg-slate-200 dark:bg-white/5 px-2 py-0.5 rounded-full text-xs border border-slate-300 dark:border-white/5 text-slate-700 dark:text-slate-300">
                 {messages.length}
@@ -115,7 +106,7 @@ export function MessagesView() {
               }`}
             >
               <div className="flex items-center gap-2">
-                <MailOpen className="w-4 h-4" /> Unread
+                <MailOpen className="w-4 h-4" /> {t('common.actions.unread')}
               </div>
               <span className="bg-blue-100 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded-full text-xs font-bold border border-blue-200 dark:border-blue-500/30">
                 {unreadCount}
@@ -134,7 +125,7 @@ export function MessagesView() {
               <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500" />
               <input
                 type="text"
-                placeholder="Search messages..."
+                placeholder={t('console.messages.searchPlaceholder', '搜索通知...')}
                 value={search}
                 onChange={(event) => setSearch(event.target.value)}
                 className="w-full pl-9 pr-4 py-2 text-sm bg-white dark:bg-[#151515] border border-slate-200 dark:border-white/10 rounded-lg text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-shadow"
@@ -146,13 +137,13 @@ export function MessagesView() {
             {loading ? (
               <BusinessStatePanel
                 kind="loading"
-                title="Loading messages..."
+                title={t('console.messages.loading', '正在加载通知...')}
                 className="min-h-[520px] border-0 bg-transparent"
               />
             ) : loadError ? (
               <BusinessStatePanel
                 kind="error"
-                title="Messages could not be loaded"
+                title={t('console.messages.loadFailed', '通知加载失败')}
                 description={loadError}
                 onRetry={() => void loadMessages()}
                 className="min-h-[520px] border-0 bg-transparent"
@@ -171,11 +162,11 @@ export function MessagesView() {
             ) : (
               <BusinessStatePanel
                 kind="empty"
-                title="No messages found"
+                title={t('console.messages.emptyTitle', '暂无通知')}
                 description={
                   messages.length === 0
-                    ? readOnlyMessageActions
-                    : 'Adjust the search query or message filter to find matching notifications.'
+                    ? t('console.messages.emptyDescription', '账户、网关或结算事件产生后会显示在这里。')
+                    : t('console.messages.noResultsDescription', '请调整搜索关键词或通知筛选条件。')
                 }
                 className="min-h-[520px] border-0 bg-transparent"
               />
@@ -190,7 +181,7 @@ export function MessagesView() {
             <div className="w-20 h-20 bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-transparent rounded-full flex items-center justify-center mb-4 shadow-sm dark:shadow-none">
               <Mail className="w-8 h-8 text-slate-400 dark:text-slate-600" />
             </div>
-            <p>Select a message to inspect its details.</p>
+            <p>{t('console.messages.selectPrompt', '选择一条通知查看详情')}</p>
           </div>
         )}
       </div>
@@ -231,6 +222,7 @@ function MessageListItem({
 }
 
 function MessageDetail({ message, onClose }: { message: Message; onClose: () => void }) {
+  const { t } = useTranslation();
   return (
     <div className="flex-1 flex flex-col bg-white dark:bg-[#1e1e1e]/30 absolute inset-0 md:static md:w-auto z-20 w-full h-full md:h-auto">
       <div className="p-4 sm:px-6 border-b border-slate-200 dark:border-white/5 flex items-center justify-between bg-slate-50 dark:bg-[#1e1e1e]/80">
@@ -258,7 +250,8 @@ function MessageDetail({ message, onClose }: { message: Message; onClose: () => 
           </h1>
           <div className="flex items-center gap-2 text-sm text-slate-500 mb-8 border-b border-slate-200 dark:border-white/5 pb-6">
             <span>
-              Sender: <strong className="text-slate-700 dark:text-slate-300">System (Claw Router)</strong>
+              {t('console.messages.sender', '发送方')}:{' '}
+              <strong className="text-slate-700 dark:text-slate-300">{t('console.messages.systemSender', '系统通知')}</strong>
             </span>
             <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600 mx-1" />
             <span>{message.time}</span>
@@ -271,9 +264,9 @@ function MessageDetail({ message, onClose }: { message: Message; onClose: () => 
           {message.type === 'billing' && (
             <div className="mt-10 p-5 bg-slate-50 dark:bg-[#151515] border border-slate-200 dark:border-white/5 rounded-xl">
               <div className="flex items-center justify-between">
-                <span className="text-slate-500 dark:text-slate-400 text-sm">Settlement status</span>
+                <span className="text-slate-500 dark:text-slate-400 text-sm">{t('console.messages.settlementStatus', '结算状态')}</span>
                 <span className="text-emerald-500 dark:text-emerald-400 text-sm flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4" /> Recorded by system notification
+                  <CheckCircle2 className="w-4 h-4" /> {t('console.messages.recordedBySystem', '已由系统通知记录')}
                 </span>
               </div>
             </div>
@@ -299,6 +292,7 @@ function MessageTypeIcon({ message }: { message: Message }) {
 }
 
 function MessageTypeBadge({ message }: { message: Message }) {
+  const { t } = useTranslation();
   if (message.type === 'alert' || message.type === 'warning') {
     return (
       <span
@@ -308,7 +302,9 @@ function MessageTypeBadge({ message }: { message: Message }) {
             : 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-500/20'
         }`}
       >
-        {message.type === 'alert' ? 'Urgent Alert' : 'Account Warning'}
+        {message.type === 'alert'
+          ? t('console.messages.badge.alert', '紧急告警')
+          : t('console.messages.badge.warning', '账户提醒')}
       </span>
     );
   }
@@ -316,14 +312,14 @@ function MessageTypeBadge({ message }: { message: Message }) {
   if (message.type === 'billing') {
     return (
       <span className="bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">
-        Billing Notice
+        {t('console.messages.badge.billing', '账单通知')}
       </span>
     );
   }
 
   return (
     <span className="bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-500/20 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">
-      Service Notice
+      {t('console.messages.badge.service', '服务通知')}
     </span>
   );
 }

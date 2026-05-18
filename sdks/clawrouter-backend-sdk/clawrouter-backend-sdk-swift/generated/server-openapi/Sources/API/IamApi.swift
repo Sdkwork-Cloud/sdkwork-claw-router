@@ -66,6 +66,28 @@ public class IamApi {
         return try await client.get(ApiPaths.backendPath("/iam/users"), responseType: UsersListResult.self)
     }
 
+    /// Create user
+    public func usersCreate(body: AdminUserCreateRequest, xRequestId: String? = nil) async throws -> UsersCreateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.post(ApiPaths.backendPath("/iam/users"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: UsersCreateResult.self)
+    }
+
+    /// Update user
+    public func usersUpdate(body: AdminUserUpdateRequest, xRequestId: String? = nil) async throws -> UsersUpdateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.put(ApiPaths.backendPath("/iam/users"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: UsersUpdateResult.self)
+    }
+
     private struct PathParameterSpec {
         let name: String
         let style: String

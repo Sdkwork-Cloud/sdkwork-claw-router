@@ -39,8 +39,12 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         source = service.read_text(encoding="utf-8")
 
         self.assertIn("router_with_api_key_management_store_and_database_status", source)
-        self.assertIn("SqlitePricingCatalogLoader::new(pool.clone())", source)
-        self.assertIn("PostgresPricingCatalogLoader::new(pool.clone())", source)
+        self.assertIn("api_key_secret_codec_from_config(&api_key_security_config)", source)
+        self.assertIn("SqlitePricingCatalogLoader::with_api_key_secret_codec", source)
+        self.assertIn("PostgresPricingCatalogLoader::with_api_key_secret_codec", source)
+        self.assertIn("SqliteGatewayApiKeyCommandStore::new(", source)
+        self.assertIn("PostgresGatewayApiKeyCommandStore::new(", source)
+        self.assertIn("api_key_secret_codec.clone()", source)
         self.assertNotIn("router_with_product_catalog_api_key_command_store_and_database_status", source)
 
     def test_sql_api_key_command_store_persists_application_created_at(self) -> None:
@@ -119,7 +123,8 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         create_key_body = frontend.split("static async createKey", 1)[1]
 
-        self.assertIn("import type { CreateApiKeyRequest } from '@sdkwork/clawrouter-app-sdk'", frontend)
+        self.assertIn("CreateApiKeyRequest", frontend)
+        self.assertIn("from '@sdkwork/clawrouter-app-sdk'", frontend)
         self.assertIn("type ApiKeyModality = NonNullable<CreateApiKeyRequest['modalities']>[number]", frontend)
         self.assertIn("toApiKeyModalities(input.modalities)", frontend)
         self.assertIn("const data = readApiRecord(result)", create_key_body)
@@ -143,11 +148,106 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         fetch_body = frontend.split("static async fetchKeys", 1)[1].split("static async createKey", 1)[0]
 
-        self.assertIn("ensurePlusApiSuccess(result, 'Failed to fetch API keys')", fetch_body)
-        self.assertIn("readRequiredApiItems(result, 'Failed to fetch API keys')", fetch_body)
-        self.assertIn("readRequiredApiItems(result, 'Failed to fetch API key groups', ['groups'])", fetch_body)
+        self.assertIn("ensurePlusApiSuccess(result, 'console.apiKeys.errors.loadFallback')", fetch_body)
+        self.assertIn("readRequiredApiItems(result, 'console.apiKeys.errors.loadFallback')", fetch_body)
+        self.assertIn("getClawRouterAppSdkClient().iam.apiKeyGroups.list()", fetch_body)
+        self.assertIn("readRequiredApiItems(result, 'console.apiKeys.errors.loadGroupsFallback')", fetch_body)
         self.assertNotIn("Array.isArray(data.items)", fetch_body)
         self.assertNotIn("Array.isArray(data.groups)", fetch_body)
+
+    def test_console_api_key_product_states_are_localized(self) -> None:
+        view = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-api-keys"
+            / "src"
+            / "ApiKeysView.tsx"
+        ).read_text(encoding="utf-8")
+        drawer = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-api-keys"
+            / "src"
+            / "CreateKeyDrawer.tsx"
+        ).read_text(encoding="utf-8")
+        usage_drawer = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-api-keys"
+            / "src"
+            / "usage-details"
+            / "ApiKeyUsageDetailsDrawer.tsx"
+        ).read_text(encoding="utf-8")
+        service = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-api-keys"
+            / "src"
+            / "apiKeyService.ts"
+        ).read_text(encoding="utf-8")
+        i18n = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-i18n"
+            / "src"
+            / "index.ts"
+        ).read_text(encoding="utf-8")
+        combined = view + drawer + usage_drawer + service
+
+        for marker in [
+            "console.apiKeys.title",
+            "console.apiKeys.searchPlaceholder",
+            "console.apiKeys.loading",
+            "console.apiKeys.empty",
+            "console.apiKeys.created",
+            "console.apiKeys.copyKey",
+            "console.apiKeys.usageDetails",
+            "console.apiKeys.usageDetailsTitle",
+            "console.apiKeys.detailsTitle",
+            "console.apiKeys.editTitle",
+            "console.apiKeys.createTitle",
+            "console.apiKeys.deleteTitle",
+            "console.apiKeys.status.enabled",
+            "console.apiKeys.status.disabled",
+            "console.apiKeys.errors.loadFallback",
+            "console.apiKeys.errors.createFallback",
+            "console.apiKeys.errors.updateFallback",
+            "console.apiKeys.errors.groupUpdateFallback",
+            "console.apiKeys.errors.deleteFallback",
+        ]:
+            self.assertIn(marker, combined + i18n)
+            self.assertGreaterEqual(i18n.count(f'"{marker}"'), 2)
+
+        self.assertIn("displayApiKeyStatus(key.status, t)", view)
+        self.assertNotIn("{key.status}", view)
+
+        for hardcoded_copy in [
+            "Failed to load API keys",
+            "Failed to create API key",
+            "Failed to update API key",
+            "Failed to update API key group",
+            "Failed to delete API key",
+            "Loading API keys",
+            "No API keys found",
+            "Search keys or groups",
+            "Copy key",
+            "Usage details",
+            "API Key Details",
+            "Edit API Key",
+            "Create API Key",
+            "Delete API key?",
+        ]:
+            self.assertNotIn(hardcoded_copy, combined)
 
     def test_app_api_key_fetch_uses_precise_sdk_response_contract(self) -> None:
         contract = (
@@ -189,7 +289,8 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("AppApiKeyListResponse as SdkAppApiKeyListResponse", frontend)
         self.assertIn("id: SdkAppApiKeyListResponse['items'][number]['id'];", frontend)
-        self.assertIn("groups: SdkAppApiKeyListResponse['groups'];", frontend)
+        self.assertIn("AppApiKeyGroupListResponse as SdkAppApiKeyGroupListResponse", frontend)
+        self.assertIn("id: SdkAppApiKeyGroupListResponse['items'][number]['id'];", frontend)
 
     def test_console_api_key_frontend_uses_pure_create_command_form_adapter(self) -> None:
         package = (
@@ -243,13 +344,14 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertIn("createApiKeyInputsFromForm", view)
         self.assertIn("type ApiKeyFormValues", view)
         self.assertIn("CreateKeyDrawer, type ApiKeyFormValues", view)
-        self.assertIn("for (const input of createApiKeyInputsFromForm(data))", view)
-        self.assertIn("ApiKeyService.createKey(input)", view)
-        self.assertNotIn("data.createCount > 1 ? `${data.name} ${index + 1}` : data.name", view)
-        self.assertNotIn("modalities: data.modalities", view)
-        self.assertNotIn("quota: data.quota", view)
-        self.assertNotIn("ipLimit: data.ipLimit", view)
-        self.assertNotIn("expires: data.expires", view)
+        create_submit_body = view.split("const handleCreateSubmit", 1)[1].split("const handleEditSubmit", 1)[0]
+        self.assertIn("for (const input of createApiKeyInputsFromForm(data))", create_submit_body)
+        self.assertIn("ApiKeyService.createKey(input)", create_submit_body)
+        self.assertNotIn("data.createCount > 1 ? `${data.name} ${index + 1}` : data.name", create_submit_body)
+        self.assertNotIn("modalities: data.modalities", create_submit_body)
+        self.assertNotIn("quota: data.quota", create_submit_body)
+        self.assertNotIn("ipLimit: data.ipLimit", create_submit_body)
+        self.assertNotIn("expires: data.expires", create_submit_body)
 
         self.assertIn("export type ApiKeyFormValues", drawer)
         self.assertNotIn("export interface CreateKeyFormData", drawer)
@@ -259,7 +361,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertIn("api-key-runtime.test.ts", verifier)
         self.assertIn("verification plan includes portal api key runtime tests before broad suites", product_tests)
 
-    def test_app_api_key_list_exposes_only_masked_key_material(self) -> None:
+    def test_app_api_key_management_exposes_copyable_owner_key_without_legacy_fields(self) -> None:
         contract = (
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")
@@ -299,16 +401,31 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "CreateKeyDrawer.tsx"
         ).read_text(encoding="utf-8")
+        access_domain = (
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "domain"
+            / "access.rs"
+        ).read_text(encoding="utf-8")
 
+        self.assertIn("copyableKey:", contract)
         self.assertIn(
-            "fields: [id, name, maskedKey, group, rate, quota, usedQuota, modalities, ipLimit, created, expires, status]",
+            "fields: [id, name, maskedKey, copyableKey, group, rate, quota, usedQuota, modalities, ipLimit, created, expires, status]",
             contract,
         )
         self.assertNotIn("fields: [id, name, keyVal, fullKey", contract)
-        self.assertIn("description: One-time raw API key secret. It is never returned by list/read APIs.", contract)
+        self.assertIn(
+            "description: Full raw API key secret returned by create responses. Authenticated owner management list and update responses also expose this value as item.copyableKey for console copy actions.",
+            contract,
+        )
 
         self.assertIn("masked_key: String", api_key_route)
         self.assertIn("let masked_key = api_key.masked_key();", api_key_route)
+        self.assertIn("copyable_key: Option<String>", api_key_route)
+        self.assertIn("public_catalog_list_response", api_key_route)
+        self.assertIn("item.copyable_key = None", api_key_route)
         self.assertNotIn("key_val: String", api_key_route)
         self.assertNotIn("full_key: String", api_key_route)
         self.assertNotIn("key_val: masked_key", api_key_route)
@@ -321,22 +438,39 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertIn('payload["data"]["item"].get("keyVal").is_none()', route_test)
         self.assertIn('payload["data"]["item"].get("fullKey").is_none()', route_test)
         self.assertIn('items[0]["maskedKey"]', database_route_test)
+        self.assertIn('items[0]["copyableKey"]', database_route_test)
         self.assertIn('items[0].get("keyVal").is_none()', database_route_test)
         self.assertIn('items[0].get("fullKey").is_none()', database_route_test)
 
         self.assertIn("maskedKey: string", service)
+        self.assertIn("copyableKey: string | null", service)
+        self.assertIn("displayName: string;", service)
+        self.assertIn("displayName: readApiKeyDisplayName(id, name)", service)
+        self.assertIn("function readApiKeyDisplayName(id: string, name: string): string", service)
+        self.assertNotIn("isSecretLikeApiKeyName", service)
+        self.assertNotIn("maskedKey", service.split("function readApiKeyDisplayName", 1)[1].split("function", 1)[0])
         self.assertIn("readRequiredString(value, 'id', 'API key id is required')", service)
         self.assertIn(
             "readRequiredString(value, 'maskedKey', 'API key masked value is required')",
             service,
         )
+        self.assertIn(
+            "copyableKey: readNullableString(value, 'copyableKey')",
+            service,
+        )
+        self.assertNotIn("API key copyable value is required", service)
         self.assertNotIn("keyVal: string", service)
         self.assertNotIn("fullKey: string", service)
         self.assertNotIn("readString(value, 'keyVal')", service)
         self.assertNotIn("fullKey: keyVal", service)
 
         self.assertIn("key.maskedKey", view)
-        self.assertIn("Copy key", view)
+        self.assertIn("key.displayName.toLowerCase().includes(query)", view)
+        self.assertIn("{key.displayName}", view)
+        self.assertNotIn("{key.name}</span>", view)
+        self.assertIn("text={key.copyableKey ?? ''}", view)
+        self.assertIn("disabled={!key.copyableKey}", view)
+        self.assertIn("console.apiKeys.copyKey", view)
         self.assertNotIn("visibleKeys", view)
         self.assertNotIn("toggleVisibility", view)
         self.assertNotIn("Eye,", view)
@@ -344,11 +478,17 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("Copy token", view)
         self.assertNotIn("Show token", view)
         self.assertNotIn("Hide token", view)
-        self.assertNotIn("text={key.", view)
+        self.assertNotIn("text={key.maskedKey}", view)
 
-        self.assertIn('ReadOnlyRow label="Masked token" value={initialData.maskedKey}', drawer)
+        self.assertIn("value={initialData.maskedKey}", drawer)
+        self.assertIn("setName(initialData.displayName)", drawer)
+        self.assertIn("copyText={initialData.copyableKey}", drawer)
+        self.assertIn("copyLabel={t('console.apiKeys.copyKey', '复制密钥')}", drawer)
+        self.assertIn("copyDisabled={!initialData.copyableKey}", drawer)
         self.assertNotIn("initialData.fullKey", drawer)
         self.assertNotIn("initialData.keyVal", drawer)
+        self.assertIn('format!("API Key #{}", self.id)', access_domain)
+        self.assertNotIn("self.key_prefix.clone()", access_domain.split("pub fn display_name(&self)", 1)[1].split("pub fn masked_key(&self)", 1)[0])
 
     def test_app_api_key_creation_persists_idempotency_and_audit_request_id(self) -> None:
         schema = (

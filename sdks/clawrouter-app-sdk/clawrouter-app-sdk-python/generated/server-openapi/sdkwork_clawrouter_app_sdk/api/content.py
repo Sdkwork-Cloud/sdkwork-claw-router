@@ -239,7 +239,7 @@ def serialize_header_primitive(value: Any) -> str:
 
 class ContentApi:
     """content content API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.comments = ContentCommentsApi(client)
@@ -251,7 +251,7 @@ class ContentApi:
 
 class ContentCommentsApi:
     """content content.comments API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.statistics = ContentCommentsStatisticsApi(client)
@@ -290,7 +290,7 @@ class ContentCommentsApi:
 
 class ContentCommentsStatisticsApi:
     """content content.comments.statistics API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -305,7 +305,7 @@ class ContentCommentsStatisticsApi:
 
 class ContentCommentsLikesApi:
     """content content.comments.likes API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.current = ContentCommentsLikesCurrentApi(client)
@@ -323,7 +323,7 @@ class ContentCommentsLikesApi:
 
 class ContentCommentsLikesCurrentApi:
     """content content.comments.likes.current API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -334,7 +334,7 @@ class ContentCommentsLikesCurrentApi:
 
 class ContentCommentsPinsApi:
     """content content.comments.pins API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.current = ContentCommentsPinsCurrentApi(client)
@@ -352,7 +352,7 @@ class ContentCommentsPinsApi:
 
 class ContentCommentsPinsCurrentApi:
     """content content.comments.pins.current API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -363,7 +363,7 @@ class ContentCommentsPinsCurrentApi:
 
 class ContentCommentsRepliesApi:
     """content content.comments.replies API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -388,7 +388,7 @@ class ContentCommentsRepliesApi:
 
 class ContentFeedsApi:
     """content content.feeds API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.category = ContentFeedsCategoryApi(client)
@@ -435,7 +435,7 @@ class ContentFeedsApi:
 
 class ContentFeedsCategoryApi:
     """content content.feeds.category API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -450,7 +450,7 @@ class ContentFeedsCategoryApi:
 
 class ContentFeedsHotApi:
     """content content.feeds.hot API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -464,7 +464,7 @@ class ContentFeedsHotApi:
 
 class ContentFeedsMostLikedApi:
     """content content.feeds.most_liked API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -478,7 +478,7 @@ class ContentFeedsMostLikedApi:
 
 class ContentFeedsMostViewedApi:
     """content content.feeds.most_viewed API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -492,7 +492,7 @@ class ContentFeedsMostViewedApi:
 
 class ContentFeedsOverviewApi:
     """content content.feeds.overview API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -503,7 +503,7 @@ class ContentFeedsOverviewApi:
 
 class ContentFeedsRecommendApi:
     """content content.feeds.recommend API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -517,7 +517,7 @@ class ContentFeedsRecommendApi:
 
 class ContentFeedsTopApi:
     """content content.feeds.top API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -531,7 +531,7 @@ class ContentFeedsTopApi:
 
 class ContentFeedsCollectionsApi:
     """content content.feeds.collections API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.current = ContentFeedsCollectionsCurrentApi(client)
@@ -552,7 +552,7 @@ class ContentFeedsCollectionsApi:
 
 class ContentFeedsCollectionsCurrentApi:
     """content content.feeds.collections.current API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -573,7 +573,7 @@ class ContentFeedsCollectionsCurrentApi:
 
 class ContentFeedsLikesApi:
     """content content.feeds.likes API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.current = ContentFeedsLikesCurrentApi(client)
@@ -591,7 +591,7 @@ class ContentFeedsLikesApi:
 
 class ContentFeedsLikesCurrentApi:
     """content content.feeds.likes.current API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -608,7 +608,7 @@ class ContentFeedsLikesCurrentApi:
 
 class ContentFeedsSharesApi:
     """content content.feeds.shares API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -625,7 +625,7 @@ class ContentFeedsSharesApi:
 
 class ContentUsersApi:
     """content content.users API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.current = ContentUsersCurrentApi(client)
@@ -633,7 +633,7 @@ class ContentUsersApi:
 
 class ContentUsersCurrentApi:
     """content content.users.current API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.comments = ContentUsersCurrentCommentsApi(client)
@@ -641,7 +641,7 @@ class ContentUsersCurrentApi:
 
 class ContentUsersCurrentCommentsApi:
     """content content.users.current.comments API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -656,7 +656,7 @@ class ContentUsersCurrentCommentsApi:
 
 class ContentCoursesApi:
     """content content.courses API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.categories = ContentCoursesCategoriesApi(client)
@@ -680,7 +680,7 @@ class ContentCoursesApi:
 
 class ContentCoursesCategoriesApi:
     """content content.courses.categories API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -691,7 +691,7 @@ class ContentCoursesCategoriesApi:
 
 class ContentCoursesOverviewApi:
     """content content.courses.overview API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -702,7 +702,7 @@ class ContentCoursesOverviewApi:
 
 class ContentApplicationsApi:
     """content content.applications API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.videos = ContentApplicationsVideosApi(client)
@@ -714,7 +714,7 @@ class ContentApplicationsApi:
 
 class ContentApplicationsVideosApi:
     """content content.applications.videos API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 

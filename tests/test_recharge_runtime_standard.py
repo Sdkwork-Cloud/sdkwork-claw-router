@@ -348,7 +348,10 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("download", recharge_contract.lower())
         self.assertNotIn("export", recharge_contract.lower())
 
-        self.assertIn("readOnlyRechargeHistory", recharge_view)
+        self.assertNotIn("readOnlyRechargeHistory", recharge_view)
+        self.assertNotIn("Read-only", recharge_view)
+        self.assertNotIn("read-only", recharge_view)
+        self.assertNotIn("command contract", recharge_view)
         self.assertIn("RechargeService.submitRecharge", recharge_view)
         self.assertIn("navigate(`/console/checkout?orderNo=${encodeURIComponent(res.orderNo)}`)", recharge_view)
         self.assertNotIn("<History", recharge_view)
@@ -410,6 +413,39 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
         self.assertIn("export type { SubmitRechargeRequest }", type_exports)
         self.assertIn("export type { SubmitRechargeResponse }", type_exports)
         self.assertIn("export type { AccountPointsRechargesCreateResult }", type_exports)
+
+    def test_console_recharge_product_error_states_are_localized(self) -> None:
+        recharge_service = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-recharge"
+            / "src"
+            / "rechargeService.ts"
+        ).read_text(encoding="utf-8")
+        i18n = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-i18n"
+            / "src"
+            / "index.ts"
+        ).read_text(encoding="utf-8")
+
+        for marker in [
+            "console.recharge.errors.packagesFallback",
+            "console.recharge.errors.submitFallback",
+        ]:
+            self.assertIn(marker, recharge_service + i18n)
+            self.assertGreaterEqual(i18n.count(f'"{marker}"'), 2)
+
+        for hardcoded_copy in [
+            "Failed to fetch recharge packages",
+            "Failed to submit recharge",
+        ]:
+            self.assertNotIn(hardcoded_copy, recharge_service)
 
     def test_console_recharge_fetch_packages_uses_precise_app_sdk_response_contract(self) -> None:
         contract = (ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml").read_text(

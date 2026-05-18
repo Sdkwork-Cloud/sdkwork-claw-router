@@ -21,7 +21,7 @@ client = SdkworkBackendClient(config)
 client.set_api_key("your-api-key")
 
 # Use the SDK
-result = client.ai.model_vendors_list()
+result = client.ai.model_vendors.list()
 ```
 
 ## Authentication Modes (Mutually Exclusive)
@@ -66,6 +66,7 @@ client.set_header('X-Custom-Header', 'value')
 
 ## API Modules
 
+- `client.agents` - agents API
 - `client.ai` - ai API
 - `client.billing` - billing API
 - `client.content` - content API
@@ -77,19 +78,35 @@ client.set_header('X-Custom-Header', 'value')
 
 ## Usage Examples
 
+### agents
+
+```python
+# List managed agents
+params = {
+    'q': 'q',
+    'owner_user_id': 2,
+    'status': 'active',
+    'visibility': 'private',
+    'page': 5,
+    'page_size': 6,
+}
+result = client.agents.list(params)
+print(result)
+```
+
 ### ai
 
 ```python
 # List vendors
-result = client.ai.model_vendors_list()
+result = client.ai.model_vendors.list()
 print(result)
 ```
 
 ### billing
 
 ```python
-# List batches
-result = client.billing.coupon_batches_list()
+# List referral stats
+result = client.billing.referrals.stats.list()
 print(result)
 ```
 
@@ -97,7 +114,7 @@ print(result)
 
 ```python
 # List announcements
-result = client.content.announcements_list()
+result = client.content.announcements.list()
 print(result)
 ```
 
@@ -105,7 +122,7 @@ print(result)
 
 ```python
 # List skill categories
-result = client.ecosystem.skills_categories_list()
+result = client.ecosystem.skills.categories.list()
 print(result)
 ```
 
@@ -113,7 +130,7 @@ print(result)
 
 ```python
 # List groups
-result = client.iam.access_groups_list()
+result = client.iam.access_groups.list()
 print(result)
 ```
 
@@ -121,7 +138,7 @@ print(result)
 
 ```python
 # List channels
-result = client.integration.channels_list()
+result = client.integration.channels.list()
 print(result)
 ```
 
@@ -138,15 +155,15 @@ params = {
     'page_size': 6,
 }
 x_request_id = 'X-Request-Id'
-result = client.platform.apps_list(params, x_request_id)
+result = client.platform.apps.list(params, x_request_id)
 print(result)
 ```
 
 ### system
 
 ```python
-# List dashboard data
-result = client.system.dashboard_admin_overview_retrieve()
+# Retrieve IAM auth runtime settings
+result = client.system.auth.settings.retrieve()
 print(result)
 ```
 
@@ -154,7 +171,7 @@ print(result)
 
 ```python
 try:
-    client.ai.model_vendors_list()
+    client.ai.model_vendors.list()
 except Exception as error:
     print(f"Error: {error}")
 ```

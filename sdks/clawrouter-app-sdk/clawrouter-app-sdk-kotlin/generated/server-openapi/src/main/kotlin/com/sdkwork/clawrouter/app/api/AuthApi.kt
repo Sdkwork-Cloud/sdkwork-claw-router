@@ -44,6 +44,12 @@ class AuthApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<LoginQrCodesCreateResult>() {})
     }
 
+    /** Confirm QR login code */
+    suspend fun loginQrCodesConfirm(body: IamLoginQrCodeConfirmRequest): LoginQrCodesConfirmResult? {
+        val raw = client.post(ApiPaths.appPath("/auth/qr_login_codes/confirm"), body, null, null, "application/json")
+        return client.convertValue(raw, object : TypeReference<LoginQrCodesConfirmResult>() {})
+    }
+
     /** Retrieve QR login status */
     suspend fun loginQrCodesRetrieve(qrKey: String): LoginQrCodesRetrieveResult? {
         val raw = client.get(ApiPaths.appPath("/auth/qr_login_codes/${serializePathParameter(qrKey, PathParameterSpec("qrKey", "simple", false))}"))
@@ -60,6 +66,16 @@ class AuthApi(private val client: HttpClient) {
         )
         val raw = client.post(ApiPaths.appPath("/auth/registrations"), body, null, requestHeaders, "application/json")
         return client.convertValue(raw, object : TypeReference<RegistrationsCreateResult>() {})
+    }
+
+    /** Retrieve public IAM auth runtime settings */
+    suspend fun runtimeSettingsRetrieve(tenantCode: String? = null, organizationCode: String? = null): RuntimeSettingsRetrieveResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("tenant_code", tenantCode, "form", true, false, null),
+            QueryParameterSpec("organization_code", organizationCode, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/auth/runtime_settings"), query))
+        return client.convertValue(raw, object : TypeReference<RuntimeSettingsRetrieveResult>() {})
     }
 
     /** Create IAM session */
@@ -108,6 +124,12 @@ class AuthApi(private val client: HttpClient) {
     suspend fun verificationCodesVerify(body: IamVerificationCodeVerifyRequest): VerificationCodesVerifyResult? {
         val raw = client.post(ApiPaths.appPath("/auth/verification_codes/verify"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<VerificationCodesVerifyResult>() {})
+    }
+
+    /** Retrieve public IAM verification policy */
+    suspend fun verificationPolicyRetrieve(): VerificationPolicyRetrieveResult? {
+        val raw = client.get(ApiPaths.appPath("/auth/verification_policy"))
+        return client.convertValue(raw, object : TypeReference<VerificationPolicyRetrieveResult>() {})
     }
 
     private data class PathParameterSpec(val name: String, val style: String, val explode: Boolean)

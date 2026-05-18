@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export interface ConfirmDialogProps {
   title: string;
@@ -23,6 +24,7 @@ export function ConfirmDialog({
   onConfirm,
   onCancel,
 }: ConfirmDialogProps) {
+  const { t } = useTranslation();
   const confirmClass =
     tone === 'danger'
       ? 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500'
@@ -68,7 +70,7 @@ export function ConfirmDialog({
             aria-busy={isBusy}
             className={`rounded-lg px-4 py-2 text-sm font-bold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 dark:focus:ring-offset-[#1a1a1a] ${confirmClass}`}
           >
-            {isBusy ? 'Deleting...' : confirmLabel}
+            {isBusy ? t('common.actions.deleting') : confirmLabel}
           </button>
         </div>
       </div>

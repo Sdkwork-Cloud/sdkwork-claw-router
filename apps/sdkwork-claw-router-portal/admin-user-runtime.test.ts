@@ -20,6 +20,8 @@ const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "wi
 type CapturedBackendRequest = {
   url: string;
   method: string;
+  body: string;
+  headers: Record<string, string>;
 };
 
 async function withBackendSdkResponse<T>(
@@ -30,13 +32,15 @@ async function withBackendSdkResponse<T>(
   Object.defineProperty(globalThis, "window", {
     configurable: true,
     enumerable: true,
-    value: {},
+    value: { dispatchEvent: () => true },
   });
   globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url;
     captured.push({
       url,
       method: init?.method ?? "GET",
+      body: typeof init?.body === "string" ? init.body : "",
+      headers: Object.fromEntries(new Headers(init?.headers).entries()),
     });
     return new Response(JSON.stringify(responseBody), {
       status: 200,
@@ -58,6 +62,10 @@ async function withBackendSdkResponse<T>(
       delete (globalThis as { window?: Window }).window;
     }
   }
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 test("admin user create input does not reuse the returned user view model", () => {
@@ -236,7 +244,7 @@ test("admin user table exposes backend-backed status toggle actions", () => {
 
   assert.match(source, /handleStatusToggle/);
   assert.match(source, /createUserStatusUpdateInput\(nextStatus\)/);
-  assert.match(source, /u\.status === 'active' \? '禁用' : '启用'/);
+  assert.match(source, /u\.status === 'active' \? t\("admin\.user\.index\.text\.1dcdrxo", "禁用"\) : t\("admin\.marketing\.index\.text\.5pm2ma", "启用"\)/);
 });
 
 test("admin user group selector preserves backend custom groups", () => {
@@ -245,9 +253,56 @@ test("admin user group selector preserves backend custom groups", () => {
     "utf8",
   );
 
-  assert.match(source, /DEFAULT_USER_GROUP_OPTIONS/);
-  assert.match(source, /DEFAULT_USER_GROUP_OPTIONS\.some\(\(group\) => group\.value === groupsTarget\.group\)/);
-  assert.match(source, /<option value=\{groupsTarget\.group\}>\{groupsTarget\.group\} \(current\)<\/option>/);
+  assert.match(source, /createDefaultUserGroupOptions\(t\)/);
+  assert.match(source, /defaultUserGroupOptions\.some\(\(group\) => group\.value === groupsTarget\.group\)/);
+  assert.match(
+    source,
+    /t\('admin\.user\.groups\.current', '\{\{group\}\} \(current\)', \{ group: groupsTarget\.group \}\)/,
+  );
+});
+
+test("admin user static copy is translated through i18n keys", () => {
+  const service = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-user/src/userService.ts", import.meta.url),
+    "utf8",
+  );
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-user/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const token of [
+    "admin.user.errors.fetchUsersFallback",
+    "admin.user.errors.fetchApiKeysFallback",
+    "admin.user.errors.addUserFallback",
+    "admin.user.errors.updateBalanceFallback",
+    "admin.user.errors.updateUserFallback",
+    "admin.user.errors.createApiKeyFallback",
+  ]) {
+    assert.match(service, new RegExp(escapeRegExp(token)));
+  }
+
+  for (const token of [
+    "t('admin.user.groups.default', 'default (Default group)')",
+    "t('admin.user.groups.vip', 'VIP (Advanced users)')",
+    "t('admin.user.groups.svip', 'SVIP (Premium users)')",
+    "t('admin.user.index.text.passwordSetupCreate', 'Password setup is handled through registration and reset flows. This form creates the account profile.')",
+    "t('admin.user.index.text.passwordSetupEdit', 'Password setup is managed by IAM registration and reset flows. No password update is sent from this profile dialog.')",
+    "t('admin.user.index.text.recordsEmptyRecharge', 'No recharge records loaded')",
+    "t('admin.user.index.text.recordsEmptyExchange', 'No exchange records loaded')",
+    "t('admin.user.index.text.loadingUsers', 'Loading users...')",
+    "t('admin.user.index.text.usersLoadError', 'Users could not be loaded')",
+    "t('admin.user.index.text.usersEmpty', 'No users found')",
+    "t('admin.user.index.text.usersEmptyDescription', 'Create a user before assigning groups, balances, or API keys.')",
+    "t('admin.user.index.text.usersRetry', 'Retry')",
+  ]) {
+    assert.match(source, new RegExp(escapeRegExp(token)));
+  }
+
+  assert.match(
+    source,
+    /t\(\s*'admin\.user\.index\.text\.recordsEmptyDescription',\s*'Records are available from the billing history and recharge records modules; this user dialog does not synthesize transaction rows\.'\s*,?\s*\)/s,
+  );
 });
 
 test("admin user service reads created API key data returned by the generated backend SDK", async () => {
@@ -272,6 +327,48 @@ test("admin user service reads created API key data returned by the generated ba
       assert.equal(captured[0].method, "POST");
       assert.equal(result.key.id, "admin-key-1");
       assert.equal(result.rawKey, "sk-admin-secret");
+    },
+  );
+});
+
+test("admin user create and update use generated IAM users SDK commands", async () => {
+  await withBackendSdkResponse(
+    {
+      code: "2000",
+      data: {
+        item: {
+          id: 42,
+          email: "admin@example.com",
+          username: "Admin",
+          role: "admin",
+          group: "default",
+          balance: "0.00",
+          status: "active",
+          lastActive: "2026-05-05T09:00:00Z",
+          lastUsed: "2026-05-05T09:00:00Z",
+          createdAt: "2026-05-05T08:00:00Z",
+        },
+      },
+    },
+    async (captured) => {
+      await UserService.addUser({ email: " admin@example.com ", username: " Admin " });
+      await UserService.updateUser(42, { username: " Owner ", group: " vip " });
+
+      assert.equal(captured[0].url, "/backend/v3/api/iam/users");
+      assert.equal(captured[0].method, "POST");
+      assert.deepEqual(JSON.parse(captured[0].body), {
+        email: "admin@example.com",
+        username: "Admin",
+      });
+      assert.equal(captured[1].url, "/backend/v3/api/iam/users");
+      assert.equal(captured[1].method, "PUT");
+      assert.deepEqual(JSON.parse(captured[1].body), {
+        id: 42,
+        username: "Owner",
+        group: "vip",
+      });
+      assert.ok(captured[0].headers["x-request-id"]);
+      assert.ok(captured[1].headers["x-request-id"]);
     },
   );
 });
@@ -302,7 +399,7 @@ test("admin API key delete fails closed unless backend confirms deletion", async
       async () => {
         await assert.rejects(
           () => UserService.deleteApiKey(42, "admin-key-1"),
-          /API key delete confirmation is required/,
+          /admin\.user\.errors\.deleteApiKeyFallback/,
         );
       },
     );

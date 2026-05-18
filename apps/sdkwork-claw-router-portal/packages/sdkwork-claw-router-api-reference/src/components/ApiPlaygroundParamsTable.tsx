@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Trash2, AlertCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import type { ParamRow } from '../apiPlaygroundRows';
 
 export type { ParamRow } from '../apiPlaygroundRows';
@@ -25,6 +26,7 @@ export function ApiPlaygroundParamsTable({
   hideDescription = false,
   onBulkEdit,
 }: ApiPlaygroundParamsTableProps) {
+  const { t } = useTranslation();
   const [isBulkEdit, setIsBulkEdit] = useState(false);
   const [bulkText, setBulkText] = useState('');
 
@@ -56,7 +58,7 @@ export function ApiPlaygroundParamsTable({
             onClick={handleToggleBulkEdit}
             className="text-[12px] font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
           >
-            {isBulkEdit ? 'Key-Value Edit' : 'Bulk Edit'}
+            {isBulkEdit ? t('common.actions.keyValueEdit') : t('common.actions.bulkEdit')}
           </button>
         )}
       </div>
@@ -143,7 +145,7 @@ export function ApiPlaygroundParamsTable({
                       <button
                         onClick={() => onRemove(p.id)}
                         className="text-slate-400 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded hover:bg-slate-200 dark:hover:bg-white/10"
-                        title="Remove parameter"
+                        title={t('common.actions.removeParameter')}
                       >
                         <Trash2 className="w-3.5 h-3.5" />
                       </button>

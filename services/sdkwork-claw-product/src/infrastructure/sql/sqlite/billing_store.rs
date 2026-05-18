@@ -1,6 +1,7 @@
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DecimalValue, DomainError};
+use crate::infrastructure::sql::read_model::is_missing_sqlite_read_model;
 use crate::ports::{
     BillingCommandFuture, BillingPointsBalance, BillingPointsHistoryItem, BillingReadFuture,
     BillingRechargeHistoryItem, BillingRedeemHistoryItem, BillingStore, BillingSubject,
@@ -189,7 +190,7 @@ async fn load_redeem_history(
         .bind(subject.user_id)
         .fetch_all(pool)
         .await
-        .map_err(sql_error)?;
+        .or_else(empty_rows_when_read_model_is_missing)?;
 
     rows.iter()
         .map(|row| {
@@ -216,7 +217,7 @@ async fn load_recharge_history(
         .bind(subject.user_id)
         .fetch_all(pool)
         .await
-        .map_err(sql_error)?;
+        .or_else(empty_rows_when_read_model_is_missing)?;
 
     rows.iter()
         .map(|row| {
@@ -237,13 +238,17 @@ async fn load_points_balance(
     pool: &SqlitePool,
     subject: BillingSubject,
 ) -> Result<BillingPointsBalance, DomainError> {
-    let row = sqlx::query(LOAD_POINTS_BALANCE)
+    let Some(row) = sqlx::query(LOAD_POINTS_BALANCE)
         .bind(subject.tenant_id)
         .bind(subject.organization_id)
         .bind(subject.user_id)
         .fetch_one(pool)
         .await
-        .map_err(sql_error)?;
+        .map(Some)
+        .or_else(optional_row_when_read_model_is_missing)?
+    else {
+        return Ok(BillingPointsBalance::default());
+    };
     Ok(BillingPointsBalance {
         available_points: integer_cell(&row, "available_points").max(0),
         frozen_points: integer_cell(&row, "frozen_points").max(0),
@@ -260,7 +265,7 @@ async fn load_points_history(
         .bind(subject.user_id)
         .fetch_all(pool)
         .await
-        .map_err(sql_error)?;
+        .or_else(empty_rows_when_read_model_is_missing)?;
 
     Ok(rows
         .iter()
@@ -810,6 +815,26 @@ fn bool_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> bool {
 
 fn sql_error(error: sqlx::Error) -> DomainError {
     DomainError::new(error.to_string())
+}
+
+fn empty_rows_when_read_model_is_missing(
+    error: sqlx::Error,
+) -> Result<Vec<sqlx::sqlite::SqliteRow>, DomainError> {
+    if is_missing_sqlite_read_model(&error) {
+        Ok(Vec::new())
+    } else {
+        Err(sql_error(error))
+    }
+}
+
+fn optional_row_when_read_model_is_missing(
+    error: sqlx::Error,
+) -> Result<Option<sqlx::sqlite::SqliteRow>, DomainError> {
+    if is_missing_sqlite_read_model(&error) {
+        Ok(None)
+    } else {
+        Err(sql_error(error))
+    }
 }
 
 fn store_error(context: &str, error: sqlx::Error) -> DomainError {

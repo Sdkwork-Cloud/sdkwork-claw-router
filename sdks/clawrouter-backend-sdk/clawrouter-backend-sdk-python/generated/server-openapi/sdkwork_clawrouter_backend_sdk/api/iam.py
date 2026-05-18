@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AccessGroupsCreateResult, AccessGroupsDeleteResult, AccessGroupsListResult, AccessGroupsUpdateResult, AdminAccessGroupCreateRequest, AdminAccessGroupUpdateRequest, AdminApiKeyCreateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersListResult
+from ..models import AccessGroupsCreateResult, AccessGroupsDeleteResult, AccessGroupsListResult, AccessGroupsUpdateResult, AdminAccessGroupCreateRequest, AdminAccessGroupUpdateRequest, AdminApiKeyCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersCreateResult, UsersListResult, UsersUpdateResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -128,16 +128,27 @@ def serialize_header_primitive(value: Any) -> str:
 
 
 class IamApi:
-    """iam API client."""
-    
+    """iam iam API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.access_groups = IamAccessGroupsApi(client)
+        self.api_keys = IamApiKeysApi(client)
+        self.users = IamUsersApi(client)
+
+
+class IamAccessGroupsApi:
+    """iam iam.access_groups API client."""
+
     def __init__(self, client: HttpClient):
         self._client = client
 
-    def access_groups_list(self) -> AccessGroupsListResult:
+
+    def list(self) -> AccessGroupsListResult:
         """List groups"""
         return self._client.get(f"/backend/v3/api/iam/access_groups")
 
-    def access_groups_create(self, body: AdminAccessGroupCreateRequest, x_request_id: Optional[str] = None) -> AccessGroupsCreateResult:
+    def create(self, body: AdminAccessGroupCreateRequest, x_request_id: Optional[str] = None) -> AccessGroupsCreateResult:
         """Create group"""
         request_headers = build_request_headers(
             {
@@ -147,11 +158,11 @@ class IamApi:
         )
         return self._client.post(f"/backend/v3/api/iam/access_groups", json=body, headers=request_headers)
 
-    def access_groups_delete(self, group_id: str) -> AccessGroupsDeleteResult:
+    def delete(self, group_id: str) -> AccessGroupsDeleteResult:
         """Delete group"""
         return self._client.delete(f"/backend/v3/api/iam/access_groups/{serialize_path_parameter(group_id, {'name': 'groupId', 'style': 'simple', 'explode': False})}")
 
-    def access_groups_update(self, group_id: str, body: AdminAccessGroupUpdateRequest, x_request_id: Optional[str] = None) -> AccessGroupsUpdateResult:
+    def update(self, group_id: str, body: AdminAccessGroupUpdateRequest, x_request_id: Optional[str] = None) -> AccessGroupsUpdateResult:
         """Update group"""
         request_headers = build_request_headers(
             {
@@ -161,11 +172,18 @@ class IamApi:
         )
         return self._client.patch(f"/backend/v3/api/iam/access_groups/{serialize_path_parameter(group_id, {'name': 'groupId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
 
-    def api_keys_list(self) -> ApiKeysListResult:
+class IamApiKeysApi:
+    """iam iam.api_keys API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> ApiKeysListResult:
         """List API key map"""
         return self._client.get(f"/backend/v3/api/iam/api_keys")
 
-    def api_keys_create(self, body: AdminApiKeyCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> ApiKeysCreateResult:
+    def create(self, body: AdminApiKeyCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> ApiKeysCreateResult:
         """Create API key"""
         request_headers = build_request_headers(
             {
@@ -176,10 +194,37 @@ class IamApi:
         )
         return self._client.post(f"/backend/v3/api/iam/api_keys", json=body, headers=request_headers)
 
-    def api_keys_delete(self, api_key_id: str) -> ApiKeysDeleteResult:
+    def delete(self, api_key_id: str) -> ApiKeysDeleteResult:
         """Delete API key"""
         return self._client.delete(f"/backend/v3/api/iam/api_keys/{serialize_path_parameter(api_key_id, {'name': 'apiKeyId', 'style': 'simple', 'explode': False})}")
 
-    def users_list(self) -> UsersListResult:
+class IamUsersApi:
+    """iam iam.users API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> UsersListResult:
         """List users"""
         return self._client.get(f"/backend/v3/api/iam/users")
+
+    def create(self, body: AdminUserCreateRequest, x_request_id: Optional[str] = None) -> UsersCreateResult:
+        """Create user"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/backend/v3/api/iam/users", json=body, headers=request_headers)
+
+    def update(self, body: AdminUserUpdateRequest, x_request_id: Optional[str] = None) -> UsersUpdateResult:
+        """Update user"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.put(f"/backend/v3/api/iam/users", json=body, headers=request_headers)

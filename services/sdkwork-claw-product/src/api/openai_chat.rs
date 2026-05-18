@@ -1,7 +1,8 @@
+use std::future::Future;
 use std::pin::Pin;
 use std::sync::Arc;
 use std::task::{Context, Poll};
-use std::time::{SystemTime, UNIX_EPOCH};
+use std::time::Instant;
 
 use axum::body::{Body, Bytes, HttpBody};
 use axum::extract::State;
@@ -16,21 +17,28 @@ use serde_json::Value;
 
 use crate::api::openai_contract::OpenAiChatCompletionRequest;
 use crate::api::openai_error::openai_error;
-use crate::api::openai_runtime::{authenticate_api_key, first_priced_provider_route};
-use crate::application::{
-    ApiKeySecretHasher, AuthenticatedApiKeyContext, PricingResolver, ResolveModelPriceQuery,
+use crate::api::openai_invocation::{
+    notify_after_relay_observers, notify_after_route_selection, notify_before_relay,
+    notify_before_route_selection, notify_error, notify_route_fault, notify_route_success,
+    with_builtin_invocation_plugins, OpenAiInvocationContext, OpenAiInvocationEndpoint, OpenAiInvocationFault,
+    OpenAiInvocationPluginError, OpenAiInvocationPluginRef, OpenAiInvocationRelayOutcome,
 };
-use crate::domain::{
-    BillingMeter, DecimalValue, DomainError, DomainResult, ModelProviderRoute, RoutingCapability,
+use crate::api::openai_runtime::{
+    authenticate_api_key, resolve_openai_provider_route_plan, route_http_status_is_retryable,
+    OpenAiRuntimeFailureStrategy, OpenAiRuntimeRouteConfig, ResolvedOpenAiProviderRoute,
+    ResolvedOpenAiProviderRoutePlan,
 };
+use crate::api::openai_usage::{
+    build_usage_record_command_builder, chat_usage_billing_profile, chat_usage_from_stream_event,
+    GatewayUsageRecordCommandBuilder, OpenAiTokenUsage, OpenAiUsageRecorder,
+};
+use crate::application::{ApiKeySecretHasher, AuthenticatedApiKeyContext};
+use crate::domain::{BillingMeter, ProviderRetryPolicy, RoutingCapability};
 use crate::ports::GatewayUsageRecordFuture;
 use crate::ports::{
     ChatCompletionRelay, ChatCompletionRelayRequest, ChatCompletionStreamRelay,
-    GatewayUsageRecordCommand, GatewayUsageRecorder, PricingCatalog,
+    GatewayUsageRecorder, PricingCatalog,
 };
-
-const X_REQUEST_ID: &str = "x-request-id";
-const X_TRACE_ID: &str = "x-trace-id";
 
 struct OpenAiChatState<C> {
     catalog: Arc<C>,
@@ -38,6 +46,10 @@ struct OpenAiChatState<C> {
     relay: Option<Arc<dyn ChatCompletionRelay + Send + Sync>>,
     stream_relay: Option<Arc<dyn ChatCompletionStreamRelay + Send + Sync>>,
     usage_recorder: Option<Arc<dyn GatewayUsageRecorder + Send + Sync>>,
+    usage_recording: Option<Arc<OpenAiUsageRecorder<C>>>,
+    plugins: Vec<OpenAiInvocationPluginRef>,
+    failure_strategy: OpenAiRuntimeFailureStrategy,
+    default_retry_policy: ProviderRetryPolicy,
 }
 
 impl<C> Clone for OpenAiChatState<C> {
@@ -48,6 +60,10 @@ impl<C> Clone for OpenAiChatState<C> {
             relay: self.relay.clone(),
             stream_relay: self.stream_relay.clone(),
             usage_recorder: self.usage_recorder.clone(),
+            usage_recording: self.usage_recording.clone(),
+            plugins: self.plugins.clone(),
+            failure_strategy: self.failure_strategy,
+            default_retry_policy: self.default_retry_policy.clone(),
         }
     }
 }
@@ -65,7 +81,15 @@ pub fn openai_chat_completions_router<C>(
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    openai_chat_completions_router_with_optional_relays(catalog, api_key_hasher, None, None, None)
+    openai_chat_completions_router_with_optional_relays(
+        catalog,
+        api_key_hasher,
+        None,
+        None,
+        None,
+        Vec::new(),
+        OpenAiRuntimeFailureStrategy::default(),
+    )
 }
 
 pub fn openai_chat_completions_router_with_relay<C>(
@@ -82,6 +106,49 @@ where
         Some(relay),
         None,
         None,
+        Vec::new(),
+        OpenAiRuntimeFailureStrategy::default(),
+    )
+}
+
+pub fn openai_chat_completions_router_with_relay_and_plugins<C>(
+    catalog: Arc<C>,
+    api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
+    relay: Arc<dyn ChatCompletionRelay + Send + Sync>,
+    plugins: Vec<OpenAiInvocationPluginRef>,
+) -> Router
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    openai_chat_completions_router_with_optional_relays(
+        catalog,
+        api_key_hasher,
+        Some(relay),
+        None,
+        None,
+        plugins,
+        OpenAiRuntimeFailureStrategy::default(),
+    )
+}
+
+pub fn openai_chat_completions_router_with_relay_plugins_and_failure_strategy<C>(
+    catalog: Arc<C>,
+    api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
+    relay: Arc<dyn ChatCompletionRelay + Send + Sync>,
+    plugins: Vec<OpenAiInvocationPluginRef>,
+    failure_strategy: OpenAiRuntimeFailureStrategy,
+) -> Router
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    openai_chat_completions_router_with_optional_relays(
+        catalog,
+        api_key_hasher,
+        Some(relay),
+        None,
+        None,
+        plugins,
+        failure_strategy,
     )
 }
 
@@ -100,6 +167,72 @@ where
         Some(relay),
         None,
         Some(usage_recorder),
+        Vec::new(),
+        OpenAiRuntimeFailureStrategy::default(),
+    )
+}
+
+pub fn openai_chat_completions_router_with_relay_and_usage_recorder_and_plugins<C>(
+    catalog: Arc<C>,
+    api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
+    relay: Arc<dyn ChatCompletionRelay + Send + Sync>,
+    usage_recorder: Arc<dyn GatewayUsageRecorder + Send + Sync>,
+    plugins: Vec<OpenAiInvocationPluginRef>,
+) -> Router
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    openai_chat_completions_router_with_relay_usage_recorder_plugins_and_failure_strategy(
+        catalog,
+        api_key_hasher,
+        relay,
+        usage_recorder,
+        plugins,
+        OpenAiRuntimeFailureStrategy::default(),
+    )
+}
+
+pub fn openai_chat_completions_router_with_relay_usage_recorder_plugins_and_failure_strategy<C>(
+    catalog: Arc<C>,
+    api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
+    relay: Arc<dyn ChatCompletionRelay + Send + Sync>,
+    usage_recorder: Arc<dyn GatewayUsageRecorder + Send + Sync>,
+    plugins: Vec<OpenAiInvocationPluginRef>,
+    failure_strategy: OpenAiRuntimeFailureStrategy,
+) -> Router
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    openai_chat_completions_router_with_optional_relays(
+        catalog,
+        api_key_hasher,
+        Some(relay),
+        None,
+        Some(usage_recorder),
+        plugins,
+        failure_strategy,
+    )
+}
+
+pub fn openai_chat_completions_router_with_relay_usage_recorder_plugins_and_runtime_config<C>(
+    catalog: Arc<C>,
+    api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
+    relay: Arc<dyn ChatCompletionRelay + Send + Sync>,
+    usage_recorder: Arc<dyn GatewayUsageRecorder + Send + Sync>,
+    plugins: Vec<OpenAiInvocationPluginRef>,
+    runtime_config: OpenAiRuntimeRouteConfig,
+) -> Router
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    openai_chat_completions_router_with_optional_relays_and_runtime_config(
+        catalog,
+        api_key_hasher,
+        Some(relay),
+        None,
+        Some(usage_recorder),
+        plugins,
+        runtime_config,
     )
 }
 
@@ -117,6 +250,28 @@ where
         None,
         Some(stream_relay),
         None,
+        Vec::new(),
+        OpenAiRuntimeFailureStrategy::default(),
+    )
+}
+
+pub fn openai_chat_completions_router_with_streaming_relay_and_failure_strategy<C>(
+    catalog: Arc<C>,
+    api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
+    stream_relay: Arc<dyn ChatCompletionStreamRelay + Send + Sync>,
+    failure_strategy: OpenAiRuntimeFailureStrategy,
+) -> Router
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    openai_chat_completions_router_with_optional_relays(
+        catalog,
+        api_key_hasher,
+        None,
+        Some(stream_relay),
+        None,
+        Vec::new(),
+        failure_strategy,
     )
 }
 
@@ -135,6 +290,29 @@ where
         Some(relay),
         Some(stream_relay),
         None,
+        Vec::new(),
+        OpenAiRuntimeFailureStrategy::default(),
+    )
+}
+
+pub fn openai_chat_completions_router_with_relays_and_failure_strategy<C>(
+    catalog: Arc<C>,
+    api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
+    relay: Arc<dyn ChatCompletionRelay + Send + Sync>,
+    stream_relay: Arc<dyn ChatCompletionStreamRelay + Send + Sync>,
+    failure_strategy: OpenAiRuntimeFailureStrategy,
+) -> Router
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    openai_chat_completions_router_with_optional_relays(
+        catalog,
+        api_key_hasher,
+        Some(relay),
+        Some(stream_relay),
+        None,
+        Vec::new(),
+        failure_strategy,
     )
 }
 
@@ -154,6 +332,76 @@ where
         Some(relay),
         Some(stream_relay),
         Some(usage_recorder),
+        Vec::new(),
+        OpenAiRuntimeFailureStrategy::default(),
+    )
+}
+
+pub fn openai_chat_completions_router_with_relays_and_usage_recorder_and_plugins<C>(
+    catalog: Arc<C>,
+    api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
+    relay: Arc<dyn ChatCompletionRelay + Send + Sync>,
+    stream_relay: Arc<dyn ChatCompletionStreamRelay + Send + Sync>,
+    usage_recorder: Arc<dyn GatewayUsageRecorder + Send + Sync>,
+    plugins: Vec<OpenAiInvocationPluginRef>,
+) -> Router
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    openai_chat_completions_router_with_relays_usage_recorder_plugins_and_failure_strategy(
+        catalog,
+        api_key_hasher,
+        relay,
+        stream_relay,
+        usage_recorder,
+        plugins,
+        OpenAiRuntimeFailureStrategy::default(),
+    )
+}
+
+pub fn openai_chat_completions_router_with_relays_usage_recorder_plugins_and_failure_strategy<C>(
+    catalog: Arc<C>,
+    api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
+    relay: Arc<dyn ChatCompletionRelay + Send + Sync>,
+    stream_relay: Arc<dyn ChatCompletionStreamRelay + Send + Sync>,
+    usage_recorder: Arc<dyn GatewayUsageRecorder + Send + Sync>,
+    plugins: Vec<OpenAiInvocationPluginRef>,
+    failure_strategy: OpenAiRuntimeFailureStrategy,
+) -> Router
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    openai_chat_completions_router_with_optional_relays(
+        catalog,
+        api_key_hasher,
+        Some(relay),
+        Some(stream_relay),
+        Some(usage_recorder),
+        plugins,
+        failure_strategy,
+    )
+}
+
+pub fn openai_chat_completions_router_with_relays_usage_recorder_plugins_and_runtime_config<C>(
+    catalog: Arc<C>,
+    api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
+    relay: Arc<dyn ChatCompletionRelay + Send + Sync>,
+    stream_relay: Arc<dyn ChatCompletionStreamRelay + Send + Sync>,
+    usage_recorder: Arc<dyn GatewayUsageRecorder + Send + Sync>,
+    plugins: Vec<OpenAiInvocationPluginRef>,
+    runtime_config: OpenAiRuntimeRouteConfig,
+) -> Router
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    openai_chat_completions_router_with_optional_relays_and_runtime_config(
+        catalog,
+        api_key_hasher,
+        Some(relay),
+        Some(stream_relay),
+        Some(usage_recorder),
+        plugins,
+        runtime_config,
     )
 }
 
@@ -163,10 +411,42 @@ fn openai_chat_completions_router_with_optional_relays<C>(
     relay: Option<Arc<dyn ChatCompletionRelay + Send + Sync>>,
     stream_relay: Option<Arc<dyn ChatCompletionStreamRelay + Send + Sync>>,
     usage_recorder: Option<Arc<dyn GatewayUsageRecorder + Send + Sync>>,
+    plugins: Vec<OpenAiInvocationPluginRef>,
+    failure_strategy: OpenAiRuntimeFailureStrategy,
 ) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
+    openai_chat_completions_router_with_optional_relays_and_runtime_config(
+        catalog,
+        api_key_hasher,
+        relay,
+        stream_relay,
+        usage_recorder,
+        plugins,
+        OpenAiRuntimeRouteConfig::new(ProviderRetryPolicy::default(), failure_strategy),
+    )
+}
+
+fn openai_chat_completions_router_with_optional_relays_and_runtime_config<C>(
+    catalog: Arc<C>,
+    api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
+    relay: Option<Arc<dyn ChatCompletionRelay + Send + Sync>>,
+    stream_relay: Option<Arc<dyn ChatCompletionStreamRelay + Send + Sync>>,
+    usage_recorder: Option<Arc<dyn GatewayUsageRecorder + Send + Sync>>,
+    plugins: Vec<OpenAiInvocationPluginRef>,
+    runtime_config: OpenAiRuntimeRouteConfig,
+) -> Router
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    let usage_recording = usage_recorder.as_ref().map(|usage_recorder| {
+        Arc::new(OpenAiUsageRecorder::new(
+            Arc::clone(&catalog),
+            Arc::clone(usage_recorder),
+        ))
+    });
+
     Router::new()
         .route("/v1/chat/completions", post(create_chat_completion::<C>))
         .with_state(OpenAiChatState {
@@ -175,6 +455,10 @@ where
             relay,
             stream_relay,
             usage_recorder,
+            usage_recording,
+            plugins: with_builtin_invocation_plugins(plugins),
+            failure_strategy: runtime_config.failure_strategy,
+            default_retry_policy: runtime_config.default_retry_policy,
         })
 }
 
@@ -217,16 +501,41 @@ where
         Ok(context) => context,
         Err(response) => return *response,
     };
-    let route = match first_priced_provider_route(
+    let invocation_context = OpenAiInvocationContext::new(
+        OpenAiInvocationEndpoint::ChatCompletions,
+        context.clone(),
+        request.model.clone(),
+        request.stream,
+        request.request_body.clone(),
+        &headers,
+        &uri,
+    );
+    if let Err(error) = notify_before_route_selection(&state.plugins, &invocation_context).await {
+        notify_error(&state.plugins, &invocation_context, None, &error).await;
+        return error.into_openai_response();
+    }
+    let mut route_plan = match resolve_openai_provider_route_plan(
         state.catalog.as_ref(),
         &context,
         &request.model,
+        &["chat"],
+        "chat",
         RoutingCapability::Chat,
         BillingMeter::LlmInputToken,
     ) {
-        Ok(route) => route,
+        Ok(route_plan) => route_plan,
         Err(response) => return *response,
     };
+    let mut route = route_plan.first_route();
+    if let Err(error) =
+        notify_after_route_selection(&state.plugins, &invocation_context, &mut route).await
+    {
+        notify_error(&state.plugins, &invocation_context, Some(&route), &error).await;
+        return error.into_openai_response();
+    }
+    if let Some(first_route) = route_plan.routes.first_mut() {
+        *first_route = route.clone();
+    }
 
     if request.stream {
         let Some(stream_relay) = state.stream_relay.as_ref() else {
@@ -241,11 +550,14 @@ where
             stream_relay.as_ref(),
             state.catalog.as_ref(),
             state.usage_recorder.clone(),
-            &headers,
-            &uri,
+            state.usage_recording.clone(),
+            &state.plugins,
+            &invocation_context,
             context,
-            route,
+            route_plan,
             request,
+            state.failure_strategy,
+            &state.default_retry_policy,
         )
         .await
         {
@@ -264,14 +576,15 @@ where
     };
 
     match relay_chat_completion(
-        state.catalog.as_ref(),
         relay.as_ref(),
-        state.usage_recorder.as_deref(),
-        &headers,
-        &uri,
+        state.usage_recording.clone(),
+        &state.plugins,
+        &invocation_context,
         context,
-        route,
+        route_plan,
         request,
+        state.failure_strategy,
+        &state.default_retry_policy,
     )
     .await
     {
@@ -310,451 +623,411 @@ async fn relay_chat_completion_stream(
     relay: &(dyn ChatCompletionStreamRelay + Send + Sync),
     catalog: &(impl PricingCatalog + Send + Sync),
     usage_recorder: Option<Arc<dyn GatewayUsageRecorder + Send + Sync>>,
-    headers: &HeaderMap,
-    uri: &Uri,
+    usage_recording: Option<Arc<OpenAiUsageRecorder<impl PricingCatalog + Send + Sync + 'static>>>,
+    plugins: &[OpenAiInvocationPluginRef],
+    invocation_context: &OpenAiInvocationContext,
     context: AuthenticatedApiKeyContext,
-    route: ModelProviderRoute,
+    route_plan: ResolvedOpenAiProviderRoutePlan,
     request: ParsedOpenAiChatCompletionRequest,
+    failure_strategy: OpenAiRuntimeFailureStrategy,
+    default_retry_policy: &ProviderRetryPolicy,
 ) -> Result<Response, Response> {
-    let requested_model = request.model.clone();
-    let response = relay
+    let requested_model = request.model;
+    let request_body = request.request_body;
+    let mut last_error = None;
+    let route_count = route_plan.routes.len();
+    for (index, mut route) in route_plan.routes.into_iter().enumerate() {
+        let is_last_route = index + 1 == route_count;
+        if let Err(error) = notify_before_relay(plugins, invocation_context, &mut route).await {
+            notify_error(plugins, invocation_context, Some(&route), &error).await;
+            return Err(error.into_openai_response());
+        }
+        match relay_chat_completion_stream_route(
+            relay,
+            catalog,
+            usage_recorder.clone(),
+            usage_recording.as_ref(),
+            plugins,
+            invocation_context,
+            &context,
+            &route,
+            &requested_model,
+            request_body.clone(),
+            default_retry_policy,
+        )
+        .await
+        {
+            Ok(response) => return Ok(response),
+            Err(RouteRelayFailure::Retryable(response))
+                if failure_strategy.should_try_next_route(is_last_route) =>
+            {
+                last_error = Some(response);
+                continue;
+            }
+            Err(RouteRelayFailure::Retryable(response))
+            | Err(RouteRelayFailure::Terminal(response)) => return Err(response),
+        }
+    }
+    Err(last_error.unwrap_or_else(|| {
+        openai_error(
+            StatusCode::BAD_GATEWAY,
+            "provider_stream_relay_failed",
+            "server_error",
+            "streaming provider relay failed for all configured route candidates",
+        )
+    }))
+}
+
+async fn relay_chat_completion_stream_route(
+    relay: &(dyn ChatCompletionStreamRelay + Send + Sync),
+    catalog: &(impl PricingCatalog + Send + Sync),
+    usage_recorder: Option<Arc<dyn GatewayUsageRecorder + Send + Sync>>,
+    usage_recording: Option<&Arc<OpenAiUsageRecorder<impl PricingCatalog + Send + Sync + 'static>>>,
+    plugins: &[OpenAiInvocationPluginRef],
+    invocation_context: &OpenAiInvocationContext,
+    context: &AuthenticatedApiKeyContext,
+    route: &ResolvedOpenAiProviderRoute,
+    requested_model: &str,
+    request_body: serde_json::Value,
+    default_retry_policy: &ProviderRetryPolicy,
+) -> Result<Response, RouteRelayFailure> {
+    let started_at = Instant::now();
+    let response = match relay
         .create_chat_completion_stream(ChatCompletionRelayRequest {
             api_key_id: context.api_key_id,
+            tenant_id: context.tenant_id,
+            organization_id: context.organization_id,
+            user_id: context.user_id,
             group_id: context.group_id,
             group_code: context.group_code.clone(),
             pricing_plan_code: context.pricing_plan_code.clone(),
-            model: request.model.clone(),
+            model: requested_model.to_owned(),
             provider_code: route.provider_code.clone(),
             provider_model: route.provider_model.clone(),
-            provider_base_url: route.base_url.clone(),
-            provider_secret_ref: route.secret_ref.clone(),
-            provider_timeout_ms: route.timeout_ms,
-            provider_retry_policy: route.retry_policy.clone(),
-            request_body: request.request_body,
+            provider_base_url: route.provider_base_url.clone(),
+            provider_secret_ref: route.provider_secret_ref.clone(),
+            provider_auth_profile: route.provider_auth_profile.clone(),
+            provider_timeout_ms: route.provider_timeout_ms,
+            provider_retry_policy: route.provider_retry_policy.clone(),
+            request_body,
         })
         .await
-        .map_err(|error| {
-            openai_error(
+    {
+        Ok(response) => response,
+        Err(error) => {
+            let fault = OpenAiInvocationFault::relay_transport(error.to_string())
+                .with_latency_ms(elapsed_millis(started_at));
+            let plugin_error = OpenAiInvocationPluginError::new(
                 StatusCode::BAD_GATEWAY,
                 "provider_stream_relay_failed",
                 "server_error",
-                error,
-            )
-        })?;
+                fault.message.clone(),
+            );
+            notify_route_fault(plugins, invocation_context, route, &fault).await;
+            notify_error(plugins, invocation_context, Some(&route), &plugin_error).await;
+            return Err(RouteRelayFailure::Retryable(
+                plugin_error.into_openai_response(),
+            ));
+        }
+    };
 
-    let status = StatusCode::from_u16(response.status_code).map_err(|_| {
-        openai_error(
-            StatusCode::BAD_GATEWAY,
-            "provider_relay_invalid_status",
-            "server_error",
-            "provider relay returned an invalid HTTP status",
-        )
-    })?;
+    let status = match StatusCode::from_u16(response.status_code) {
+        Ok(status) => status,
+        Err(_) => {
+            let fault = OpenAiInvocationFault::relay_invalid_status(
+                "provider relay returned an invalid HTTP status",
+            )
+            .with_latency_ms(elapsed_millis(started_at));
+            notify_route_fault(plugins, invocation_context, route, &fault).await;
+            return Err(RouteRelayFailure::Retryable(openai_error(
+                StatusCode::BAD_GATEWAY,
+                "provider_relay_invalid_status",
+                "server_error",
+                "provider relay returned an invalid HTTP status",
+            )));
+        }
+    };
     let mut builder = Response::builder().status(status);
     let content_type = response
         .content_type
         .unwrap_or_else(|| "text/event-stream".to_owned());
+    let relay_outcome =
+        OpenAiInvocationRelayOutcome::stream(response.status_code, Some(content_type.clone()))
+            .with_latency_ms(elapsed_millis(started_at));
+    if !status.is_success() {
+        let retryable =
+            route_http_status_is_retryable(route, default_retry_policy, response.status_code);
+        let fault = OpenAiInvocationFault::relay_http_status(
+            response.status_code,
+            retryable,
+            format!(
+                "provider stream relay returned HTTP {}",
+                response.status_code
+            ),
+        )
+        .with_latency_ms(elapsed_millis(started_at));
+        notify_route_fault(plugins, invocation_context, route, &fault).await;
+        notify_after_relay_observers(plugins, invocation_context, route, &relay_outcome).await;
+        builder = builder.header(CONTENT_TYPE, content_type);
+        let response = builder.body(response.body).map_err(|_| {
+            RouteRelayFailure::Terminal(openai_error(
+                StatusCode::BAD_GATEWAY,
+                "provider_stream_relay_failed",
+                "server_error",
+                "provider stream relay returned an invalid response",
+            ))
+        })?;
+        return if retryable {
+            Err(RouteRelayFailure::Retryable(response))
+        } else {
+            Err(RouteRelayFailure::Terminal(response))
+        };
+    }
+    if let Some(usage_recording) = usage_recording.as_ref() {
+        if let Err(fault) = usage_recording
+            .record_after_success(invocation_context, &route, &relay_outcome)
+            .await
+        {
+            notify_route_fault(plugins, invocation_context, &route, &fault).await;
+            let error = OpenAiInvocationPluginError::new(
+                StatusCode::BAD_GATEWAY,
+                "provider_usage_record_failed",
+                "server_error",
+                fault.message,
+            );
+            notify_error(plugins, invocation_context, Some(&route), &error).await;
+            return Err(RouteRelayFailure::Terminal(error.into_openai_response()));
+        }
+    }
+    notify_route_success(plugins, invocation_context, route, &relay_outcome).await;
+    notify_after_relay_observers(plugins, invocation_context, route, &relay_outcome).await;
     builder = builder.header(CONTENT_TYPE, content_type);
     let body = match usage_recorder {
         Some(usage_recorder) if status.is_success() => {
             let command_builder = build_usage_record_command_builder(
                 catalog,
-                headers,
-                uri,
+                invocation_context,
                 &context,
                 &route,
-                &requested_model,
                 response.status_code,
                 true,
+                chat_usage_billing_profile(),
             )
             .map_err(|error| {
-                openai_error(
+                RouteRelayFailure::Terminal(openai_error(
                     StatusCode::BAD_GATEWAY,
                     "provider_usage_record_failed",
                     "server_error",
                     error,
-                )
+                ))
             })?;
             Body::new(StreamingUsageRecordingBody::new(
                 response.body,
                 usage_recorder,
                 command_builder,
+                plugins.to_vec(),
+                invocation_context.clone(),
+                route.clone(),
             ))
         }
         _ => response.body,
     };
     builder.body(body).map_err(|_| {
-        openai_error(
+        RouteRelayFailure::Terminal(openai_error(
             StatusCode::BAD_GATEWAY,
             "provider_stream_relay_failed",
             "server_error",
             "provider stream relay returned an invalid response",
-        )
+        ))
     })
 }
 
 async fn relay_chat_completion(
-    catalog: &(impl PricingCatalog + Send + Sync),
     relay: &(dyn ChatCompletionRelay + Send + Sync),
-    usage_recorder: Option<&(dyn GatewayUsageRecorder + Send + Sync)>,
-    headers: &HeaderMap,
-    uri: &Uri,
+    usage_recording: Option<Arc<OpenAiUsageRecorder<impl PricingCatalog + Send + Sync + 'static>>>,
+    plugins: &[OpenAiInvocationPluginRef],
+    invocation_context: &OpenAiInvocationContext,
     context: AuthenticatedApiKeyContext,
-    route: ModelProviderRoute,
+    route_plan: ResolvedOpenAiProviderRoutePlan,
     request: ParsedOpenAiChatCompletionRequest,
+    failure_strategy: OpenAiRuntimeFailureStrategy,
+    default_retry_policy: &ProviderRetryPolicy,
 ) -> Result<Response, Response> {
-    let requested_model = request.model.clone();
+    let requested_model = request.model;
     let request_body = request.request_body;
-    let response = relay
-        .create_chat_completion(ChatCompletionRelayRequest {
-            api_key_id: context.api_key_id,
-            group_id: context.group_id,
-            group_code: context.group_code.clone(),
-            pricing_plan_code: context.pricing_plan_code.clone(),
-            model: requested_model.clone(),
-            provider_code: route.provider_code.clone(),
-            provider_model: route.provider_model.clone(),
-            provider_base_url: route.base_url.clone(),
-            provider_secret_ref: route.secret_ref.clone(),
-            provider_timeout_ms: route.timeout_ms,
-            provider_retry_policy: route.retry_policy.clone(),
-            request_body,
-        })
-        .await
-        .map_err(|error| {
-            openai_error(
-                StatusCode::BAD_GATEWAY,
-                "provider_relay_failed",
-                "server_error",
-                error,
-            )
-        })?;
-
-    let status = StatusCode::from_u16(response.status_code).map_err(|_| {
-        openai_error(
-            StatusCode::BAD_GATEWAY,
-            "provider_relay_invalid_status",
-            "server_error",
-            "provider relay returned an invalid HTTP status",
-        )
-    })?;
-    if status.is_success() {
-        let Some(usage_recorder) = usage_recorder else {
-            return Ok((status, Json(response.body)).into_response());
-        };
-        let usage = chat_usage_from_response(&response.body).map_err(|error| {
-            openai_error(
-                StatusCode::BAD_GATEWAY,
-                "provider_usage_record_failed",
-                "server_error",
-                error,
-            )
-        })?;
-        let command = build_usage_record_command(
-            catalog,
-            headers,
-            uri,
+    let mut last_error = None;
+    let route_count = route_plan.routes.len();
+    for (index, mut route) in route_plan.routes.into_iter().enumerate() {
+        let is_last_route = index + 1 == route_count;
+        if let Err(error) = notify_before_relay(plugins, invocation_context, &mut route).await {
+            notify_error(plugins, invocation_context, Some(&route), &error).await;
+            return Err(error.into_openai_response());
+        }
+        match relay_chat_completion_route(
+            relay,
+            usage_recording.as_ref(),
+            plugins,
+            invocation_context,
             &context,
             &route,
             &requested_model,
-            response.status_code,
-            false,
-            usage,
+            request_body.clone(),
+            default_retry_policy,
         )
-        .map_err(|error| {
-            openai_error(
-                StatusCode::BAD_GATEWAY,
-                "provider_usage_record_failed",
-                "server_error",
-                error,
-            )
-        })?;
-        usage_recorder
-            .record_gateway_usage(command)
-            .await
-            .map_err(|error| {
-                openai_error(
-                    StatusCode::BAD_GATEWAY,
-                    "provider_usage_record_failed",
-                    "server_error",
-                    error,
-                )
-            })?;
+        .await
+        {
+            Ok(response) => return Ok(response),
+            Err(RouteRelayFailure::Retryable(response))
+                if failure_strategy.should_try_next_route(is_last_route) =>
+            {
+                last_error = Some(response);
+                continue;
+            }
+            Err(RouteRelayFailure::Retryable(response))
+            | Err(RouteRelayFailure::Terminal(response)) => {
+                return Err(response);
+            }
+        }
     }
-    Ok((status, Json(response.body)).into_response())
-}
-
-#[derive(Debug, Clone)]
-struct GatewayUsageRecordCommandBuilder {
-    request_id: String,
-    trace_id: Option<String>,
-    tenant_id: i64,
-    organization_id: i64,
-    user_id: i64,
-    api_key_id: i64,
-    api_key_name_snapshot: String,
-    api_key_group_id: i64,
-    api_key_group_snapshot: String,
-    catalog_key: String,
-    requested_model: String,
-    provider_code: String,
-    channel_id: i64,
-    provider_model: String,
-    request_path: String,
-    http_method: String,
-    http_status: u16,
-    streaming: bool,
-    base_input_unit_price: String,
-    base_output_unit_price: String,
-    input_unit_price: DecimalValue,
-    output_unit_price: DecimalValue,
-    upstream_input_unit_price: DecimalValue,
-    upstream_output_unit_price: DecimalValue,
-    currency: String,
-    pricing_plan_code: String,
-}
-
-impl GatewayUsageRecordCommandBuilder {
-    fn build(self, usage: ChatUsage) -> DomainResult<GatewayUsageRecordCommand> {
-        let input_amount = self.input_unit_price.multiply_i64(usage.prompt_tokens)?;
-        let output_amount = self
-            .output_unit_price
-            .multiply_i64(usage.completion_tokens)?;
-        let upstream_input_amount = self
-            .upstream_input_unit_price
-            .multiply_i64(usage.prompt_tokens)?;
-        let upstream_output_amount = self
-            .upstream_output_unit_price
-            .multiply_i64(usage.completion_tokens)?;
-        Ok(GatewayUsageRecordCommand {
-            request_id: self.request_id,
-            trace_id: self.trace_id,
-            tenant_id: self.tenant_id,
-            organization_id: self.organization_id,
-            user_id: self.user_id,
-            api_key_id: self.api_key_id,
-            api_key_name_snapshot: self.api_key_name_snapshot,
-            api_key_group_id: self.api_key_group_id,
-            api_key_group_snapshot: self.api_key_group_snapshot,
-            catalog_key: self.catalog_key,
-            requested_model: self.requested_model,
-            provider_code: self.provider_code,
-            channel_id: self.channel_id,
-            provider_model: self.provider_model,
-            request_path: self.request_path,
-            http_method: self.http_method,
-            http_status: self.http_status,
-            streaming: self.streaming,
-            prompt_tokens: usage.prompt_tokens,
-            completion_tokens: usage.completion_tokens,
-            cached_tokens: usage.cached_tokens,
-            total_tokens: usage.total_tokens,
-            base_input_unit_price: self.base_input_unit_price,
-            base_output_unit_price: self.base_output_unit_price,
-            customer_charge_amount: (input_amount + output_amount).to_fixed_string(6),
-            upstream_cost_amount: (upstream_input_amount + upstream_output_amount)
-                .to_fixed_string(6),
-            currency: self.currency,
-            pricing_plan_code: self.pricing_plan_code,
-        })
-    }
-}
-
-#[derive(Debug, Clone, Copy, Default, PartialEq, Eq)]
-struct ChatUsage {
-    prompt_tokens: i64,
-    completion_tokens: i64,
-    cached_tokens: i64,
-    total_tokens: i64,
-}
-
-fn chat_usage_from_response(body: &Value) -> DomainResult<ChatUsage> {
-    let usage = body
-        .get("usage")
-        .ok_or_else(|| DomainError::new("provider chat completion response is missing usage"))?;
-    let prompt_tokens = required_integer_field(usage, "prompt_tokens")?;
-    let completion_tokens = required_integer_field(usage, "completion_tokens")?;
-    let cached_tokens = usage
-        .get("prompt_tokens_details")
-        .map(|details| optional_integer_field(details, "cached_tokens"))
-        .transpose()?
-        .unwrap_or(0);
-    let total_tokens = required_integer_field(usage, "total_tokens")?;
-    Ok(ChatUsage {
-        prompt_tokens,
-        completion_tokens,
-        cached_tokens,
-        total_tokens,
-    })
-}
-
-fn chat_usage_from_stream_event(body: &Value) -> DomainResult<Option<ChatUsage>> {
-    let Some(usage) = body.get("usage") else {
-        return Ok(None);
-    };
-    if usage.is_null() {
-        return Ok(None);
-    }
-    let prompt_tokens = required_integer_field(usage, "prompt_tokens")?;
-    let completion_tokens = required_integer_field(usage, "completion_tokens")?;
-    let cached_tokens = usage
-        .get("prompt_tokens_details")
-        .map(|details| optional_integer_field(details, "cached_tokens"))
-        .transpose()?
-        .unwrap_or(0);
-    let total_tokens = required_integer_field(usage, "total_tokens")?;
-    Ok(Some(ChatUsage {
-        prompt_tokens,
-        completion_tokens,
-        cached_tokens,
-        total_tokens,
+    Err(last_error.unwrap_or_else(|| {
+        openai_error(
+            StatusCode::BAD_GATEWAY,
+            "provider_relay_failed",
+            "server_error",
+            "provider relay failed for all configured route candidates",
+        )
     }))
 }
 
-fn required_integer_field(value: &Value, field: &str) -> DomainResult<i64> {
-    let integer = value
-        .get(field)
-        .and_then(Value::as_i64)
-        .ok_or_else(|| DomainError::new(format!("provider usage.{field} is required")))?;
-    non_negative_integer(field, integer)
+enum RouteRelayFailure {
+    Retryable(Response),
+    Terminal(Response),
 }
 
-fn optional_integer_field(value: &Value, field: &str) -> DomainResult<i64> {
-    let Some(integer) = value.get(field).and_then(Value::as_i64) else {
-        return Ok(0);
+fn elapsed_millis(started_at: Instant) -> i64 {
+    started_at.elapsed().as_millis().clamp(1, i64::MAX as u128) as i64
+}
+
+async fn relay_chat_completion_route(
+    relay: &(dyn ChatCompletionRelay + Send + Sync),
+    usage_recording: Option<&Arc<OpenAiUsageRecorder<impl PricingCatalog + Send + Sync + 'static>>>,
+    plugins: &[OpenAiInvocationPluginRef],
+    invocation_context: &OpenAiInvocationContext,
+    context: &AuthenticatedApiKeyContext,
+    route: &ResolvedOpenAiProviderRoute,
+    requested_model: &str,
+    request_body: serde_json::Value,
+    default_retry_policy: &ProviderRetryPolicy,
+) -> Result<Response, RouteRelayFailure> {
+    let started_at = Instant::now();
+    let response = match relay
+        .create_chat_completion(ChatCompletionRelayRequest {
+            api_key_id: context.api_key_id,
+            tenant_id: context.tenant_id,
+            organization_id: context.organization_id,
+            user_id: context.user_id,
+            group_id: context.group_id,
+            group_code: context.group_code.clone(),
+            pricing_plan_code: context.pricing_plan_code.clone(),
+            model: requested_model.to_owned(),
+            provider_code: route.provider_code.clone(),
+            provider_model: route.provider_model.clone(),
+            provider_base_url: route.provider_base_url.clone(),
+            provider_secret_ref: route.provider_secret_ref.clone(),
+            provider_auth_profile: route.provider_auth_profile.clone(),
+            provider_timeout_ms: route.provider_timeout_ms,
+            provider_retry_policy: route.provider_retry_policy.clone(),
+            request_body,
+        })
+        .await
+    {
+        Ok(response) => response,
+        Err(error) => {
+            let fault = OpenAiInvocationFault::relay_transport(error.to_string())
+                .with_latency_ms(elapsed_millis(started_at));
+            let plugin_error = OpenAiInvocationPluginError::new(
+                StatusCode::BAD_GATEWAY,
+                "provider_relay_failed",
+                "server_error",
+                fault.message.clone(),
+            );
+            notify_route_fault(plugins, invocation_context, route, &fault).await;
+            notify_error(plugins, invocation_context, Some(route), &plugin_error).await;
+            return Err(RouteRelayFailure::Retryable(
+                plugin_error.into_openai_response(),
+            ));
+        }
     };
-    non_negative_integer(field, integer)
-}
 
-fn non_negative_integer(field: &str, integer: i64) -> DomainResult<i64> {
-    if integer < 0 {
-        return Err(DomainError::new(format!(
-            "provider usage.{field} must be non-negative"
-        )));
+    let status = match StatusCode::from_u16(response.status_code) {
+        Ok(status) => status,
+        Err(_) => {
+            let fault = OpenAiInvocationFault::relay_invalid_status(
+                "provider relay returned an invalid HTTP status",
+            )
+            .with_latency_ms(elapsed_millis(started_at));
+            notify_route_fault(plugins, invocation_context, route, &fault).await;
+            return Err(RouteRelayFailure::Retryable(openai_error(
+                StatusCode::BAD_GATEWAY,
+                "provider_relay_invalid_status",
+                "server_error",
+                "provider relay returned an invalid HTTP status",
+            )));
+        }
+    };
+    let relay_outcome =
+        OpenAiInvocationRelayOutcome::json(response.status_code, response.body.clone())
+            .with_latency_ms(elapsed_millis(started_at));
+    if !status.is_success() {
+        let retryable =
+            route_http_status_is_retryable(route, default_retry_policy, response.status_code);
+        let fault = OpenAiInvocationFault::relay_http_status(
+            response.status_code,
+            retryable,
+            format!("provider relay returned HTTP {}", response.status_code),
+        )
+        .with_latency_ms(elapsed_millis(started_at));
+        notify_route_fault(plugins, invocation_context, route, &fault).await;
+        notify_after_relay_observers(plugins, invocation_context, route, &relay_outcome).await;
+        let response = (status, Json(response.body)).into_response();
+        return if retryable {
+            Err(RouteRelayFailure::Retryable(response))
+        } else {
+            Err(RouteRelayFailure::Terminal(response))
+        };
     }
-    Ok(integer)
-}
-
-fn build_usage_record_command<C>(
-    catalog: &C,
-    headers: &HeaderMap,
-    uri: &Uri,
-    context: &AuthenticatedApiKeyContext,
-    route: &ModelProviderRoute,
-    requested_model: &str,
-    http_status: u16,
-    streaming: bool,
-    usage: ChatUsage,
-) -> DomainResult<GatewayUsageRecordCommand>
-where
-    C: PricingCatalog + Send + Sync,
-{
-    build_usage_record_command_builder(
-        catalog,
-        headers,
-        uri,
-        context,
-        route,
-        requested_model,
-        http_status,
-        streaming,
-    )?
-    .build(usage)
-}
-
-fn build_usage_record_command_builder<C>(
-    catalog: &C,
-    headers: &HeaderMap,
-    uri: &Uri,
-    context: &AuthenticatedApiKeyContext,
-    route: &ModelProviderRoute,
-    requested_model: &str,
-    http_status: u16,
-    streaming: bool,
-) -> DomainResult<GatewayUsageRecordCommandBuilder>
-where
-    C: PricingCatalog + Send + Sync,
-{
-    let input_price = PricingResolver::new(catalog).resolve(ResolveModelPriceQuery {
-        api_key_id: context.api_key_id,
-        model: route.catalog_key.clone(),
-        billing_meter: BillingMeter::LlmInputToken,
-        provider_code: Some(route.provider_code.clone()),
-        channel_id: Some(route.channel_id),
-    })?;
-    let output_price = PricingResolver::new(catalog).resolve(ResolveModelPriceQuery {
-        api_key_id: context.api_key_id,
-        model: route.catalog_key.clone(),
-        billing_meter: BillingMeter::LlmOutputToken,
-        provider_code: Some(route.provider_code.clone()),
-        channel_id: Some(route.channel_id),
-    })?;
-    let upstream_input_unit_price = input_price
-        .upstream_cost
-        .as_ref()
-        .map(|price| price.unit_price.unit_price)
-        .unwrap_or(DecimalValue::ZERO);
-    let upstream_output_unit_price = output_price
-        .upstream_cost
-        .as_ref()
-        .map(|price| price.unit_price.unit_price)
-        .unwrap_or(DecimalValue::ZERO);
-
-    Ok(GatewayUsageRecordCommandBuilder {
-        request_id: header_value(headers, X_REQUEST_ID)
-            .unwrap_or_else(|| generated_request_id(context.api_key_id)),
-        trace_id: header_value(headers, X_TRACE_ID),
-        tenant_id: context.tenant_id,
-        organization_id: context.organization_id,
-        user_id: context.user_id,
-        api_key_id: context.api_key_id,
-        api_key_name_snapshot: context.api_key_name_snapshot.clone(),
-        api_key_group_id: context.group_id,
-        api_key_group_snapshot: context.group_code.clone(),
-        catalog_key: route.catalog_key.clone(),
-        requested_model: requested_model.to_owned(),
-        provider_code: route.provider_code.clone(),
-        channel_id: route.channel_id,
-        provider_model: route.provider_model.clone(),
-        request_path: uri.path().to_owned(),
-        http_method: "POST".to_owned(),
-        http_status,
-        streaming,
-        base_input_unit_price: input_price.customer_charge.to_fixed_string(6),
-        base_output_unit_price: output_price.customer_charge.to_fixed_string(6),
-        input_unit_price: input_price.customer_charge.unit_price,
-        output_unit_price: output_price.customer_charge.unit_price,
-        upstream_input_unit_price,
-        upstream_output_unit_price,
-        currency: input_price.customer_charge.currency,
-        pricing_plan_code: context.pricing_plan_code.clone(),
-    })
-}
-
-fn header_value(headers: &HeaderMap, name: &str) -> Option<String> {
-    headers
-        .get(name)
-        .and_then(|value| value.to_str().ok())
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
-        .map(str::to_owned)
-}
-
-fn generated_request_id(api_key_id: i64) -> String {
-    let nanos = SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .map(|duration| duration.as_nanos())
-        .unwrap_or_default();
-    format!("openai-chat-{api_key_id}-{nanos}")
+    notify_route_success(plugins, invocation_context, route, &relay_outcome).await;
+    if let Some(usage_recording) = usage_recording {
+        if let Err(fault) = usage_recording
+            .record_after_success(invocation_context, route, &relay_outcome)
+            .await
+        {
+            notify_route_fault(plugins, invocation_context, route, &fault).await;
+            let error = OpenAiInvocationPluginError::new(
+                StatusCode::BAD_GATEWAY,
+                "provider_usage_record_failed",
+                "server_error",
+                fault.message,
+            );
+            notify_error(plugins, invocation_context, Some(route), &error).await;
+            return Err(RouteRelayFailure::Terminal(error.into_openai_response()));
+        }
+    }
+    notify_after_relay_observers(plugins, invocation_context, route, &relay_outcome).await;
+    Ok((status, Json(response.body)).into_response())
 }
 
 struct StreamingUsageRecordingBody {
     inner: Body,
     usage_recorder: Option<Arc<dyn GatewayUsageRecorder + Send + Sync>>,
     command_builder: Option<GatewayUsageRecordCommandBuilder>,
+    plugins: Vec<OpenAiInvocationPluginRef>,
+    invocation_context: OpenAiInvocationContext,
+    route: ResolvedOpenAiProviderRoute,
     event_buffer: String,
-    usage: Option<ChatUsage>,
+    usage: Option<OpenAiTokenUsage>,
     recording: Option<GatewayUsageRecordFuture<'static>>,
+    fault_notification: Option<Pin<Box<dyn Future<Output = ()> + Send>>>,
     terminal_error: Option<String>,
 }
 
@@ -763,14 +1036,21 @@ impl StreamingUsageRecordingBody {
         inner: Body,
         usage_recorder: Arc<dyn GatewayUsageRecorder + Send + Sync>,
         command_builder: GatewayUsageRecordCommandBuilder,
+        plugins: Vec<OpenAiInvocationPluginRef>,
+        invocation_context: OpenAiInvocationContext,
+        route: ResolvedOpenAiProviderRoute,
     ) -> Self {
         Self {
             inner,
             usage_recorder: Some(usage_recorder),
             command_builder: Some(command_builder),
+            plugins,
+            invocation_context,
+            route,
             event_buffer: String::new(),
             usage: None,
             recording: None,
+            fault_notification: None,
             terminal_error: None,
         }
     }
@@ -839,11 +1119,8 @@ impl StreamingUsageRecordingBody {
 
     fn poll_recording(&mut self, cx: &mut Context<'_>) -> Poll<Result<(), axum::Error>> {
         self.prepare_recording();
-        if let Some(error) = self.terminal_error.take() {
-            return Poll::Ready(Err(axum::Error::new(std::io::Error::new(
-                std::io::ErrorKind::Other,
-                error,
-            ))));
+        if self.terminal_error.is_some() {
+            return self.poll_terminal_error(cx);
         }
         let Some(recording) = self.recording.as_mut() else {
             return Poll::Ready(Ok(()));
@@ -856,9 +1133,43 @@ impl StreamingUsageRecordingBody {
             Poll::Ready(Err(error)) => {
                 tracing::warn!(error = %error, "failed to record streaming chat usage");
                 self.recording = None;
+                self.terminal_error = Some(error.to_string());
+                self.poll_terminal_error(cx)
+            }
+            Poll::Pending => Poll::Pending,
+        }
+    }
+
+    fn poll_terminal_error(&mut self, cx: &mut Context<'_>) -> Poll<Result<(), axum::Error>> {
+        let Some(error) = self.terminal_error.clone() else {
+            return Poll::Ready(Ok(()));
+        };
+        if self.fault_notification.is_none() {
+            let plugins = self.plugins.clone();
+            let invocation_context = self.invocation_context.clone();
+            let route = self.route.clone();
+            let fault = OpenAiInvocationFault::usage_recording(error.clone());
+            self.fault_notification = Some(Box::pin(async move {
+                notify_route_fault(&plugins, &invocation_context, &route, &fault).await;
+                let plugin_error = OpenAiInvocationPluginError::new(
+                    StatusCode::BAD_GATEWAY,
+                    "provider_usage_record_failed",
+                    "server_error",
+                    fault.message.clone(),
+                );
+                notify_error(&plugins, &invocation_context, Some(&route), &plugin_error).await;
+            }));
+        }
+        let Some(notification) = self.fault_notification.as_mut() else {
+            return Poll::Ready(Ok(()));
+        };
+        match notification.as_mut().poll(cx) {
+            Poll::Ready(()) => {
+                self.fault_notification = None;
+                self.terminal_error = None;
                 Poll::Ready(Err(axum::Error::new(std::io::Error::new(
                     std::io::ErrorKind::Other,
-                    error.to_string(),
+                    error,
                 ))))
             }
             Poll::Pending => Poll::Pending,

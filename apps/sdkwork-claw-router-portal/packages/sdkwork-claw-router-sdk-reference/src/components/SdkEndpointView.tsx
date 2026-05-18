@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Play, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { CopyButton } from 'sdkwork-claw-router-commons';
 import { ApiPlayground } from 'sdkwork-claw-router-api-reference';
 import type { ApiParameter } from 'sdkwork-claw-router-api-reference/openapiTypes';
@@ -39,6 +40,7 @@ function flattenSdkParameters(parameters: ApiParameter[] = [], parentPath = ''):
 }
 
 export function SdkEndpointView({ endpoint, sdkData, language }: SdkEndpointViewProps) {
+  const { t } = useTranslation();
   const [showPlayground, setShowPlayground] = useState(false);
   const documentation = buildSdkEndpointDocumentation(endpoint, sdkData, language);
   const methodName = documentation.methodName;
@@ -67,7 +69,7 @@ export function SdkEndpointView({ endpoint, sdkData, language }: SdkEndpointView
             className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors font-medium text-sm shadow-sm"
           >
             <Play className="w-4 h-4 fill-current" />
-            Try it out
+            {t('common.actions.tryItOut')}
           </button>
         </div>
       </div>
@@ -138,8 +140,8 @@ export function SdkEndpointView({ endpoint, sdkData, language }: SdkEndpointView
           </h3>
           <CopyButton
             text={codeDefinition}
-            label="Copy"
-            copiedLabel="Copied"
+            label={t('common.actions.copy')}
+            copiedLabel={t('common.actions.copied')}
             variant="inline"
             className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors border border-slate-200 dark:border-white/10 rounded-md px-2 py-1 bg-slate-50 dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10"
             iconClassName="w-3.5 h-3.5"
@@ -164,8 +166,8 @@ export function SdkEndpointView({ endpoint, sdkData, language }: SdkEndpointView
           </h3>
           <CopyButton
             text={exampleUsage}
-            label="Copy"
-            copiedLabel="Copied"
+            label={t('common.actions.copy')}
+            copiedLabel={t('common.actions.copied')}
             variant="inline"
             className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors border border-slate-200 dark:border-white/10 rounded-md px-2 py-1 bg-slate-50 dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10"
             iconClassName="w-3.5 h-3.5"

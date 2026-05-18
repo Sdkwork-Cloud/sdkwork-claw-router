@@ -12,8 +12,15 @@ class BillingApi {
   BillingApi(this._client);
 
   /// List batches
-  Future<CouponBatchesListResult?> couponBatchesList() async {
-    final response = await _client.get(ApiPaths.backendPath('/billing/coupon_batches'));
+  Future<CouponBatchesListResult?> couponBatchesList([String? couponId, String? status, int? page, int? pageSize, String? cursor]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('coupon_id', couponId, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null),
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
+      QueryParameterSpec('cursor', cursor, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/billing/coupon_batches'), query));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CouponBatchesListResult.fromJson(map);
@@ -37,8 +44,16 @@ class BillingApi {
   }
 
   /// List promo codes
-  Future<CouponCodesListResult?> couponCodesList() async {
-    final response = await _client.get(ApiPaths.backendPath('/billing/coupon_codes'));
+  Future<CouponCodesListResult?> couponCodesList([String? couponId, String? batchId, String? status, int? page, int? pageSize, String? cursor]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('coupon_id', couponId, 'form', true, false, null),
+      QueryParameterSpec('batch_id', batchId, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null),
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
+      QueryParameterSpec('cursor', cursor, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/billing/coupon_codes'), query));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CouponCodesListResult.fromJson(map);
@@ -46,7 +61,7 @@ class BillingApi {
   }
 
   /// Update promo code status
-  Future<CouponCodesStatusUpdateResult?> couponCodesStatusUpdate(String promoCodeId, AdminPromoCodeStatusUpdateRequest body, [String? xRequestId]) async {
+  Future<CouponCodesStatusUpdateResult?> couponCodesStatusUpdate(String codeId, AdminPromoCodeStatusUpdateRequest body, [String? xRequestId]) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
@@ -54,7 +69,7 @@ class BillingApi {
       <String, HeaderParameterSpec>{},
     );
     final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.backendPath('/billing/coupon_codes/${serializePathParameter(promoCodeId, const PathParameterSpec('promoCodeId', 'simple', false))}/status'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.patch(ApiPaths.backendPath('/billing/coupon_codes/${serializePathParameter(codeId, const PathParameterSpec('codeId', 'simple', false))}/status'), body: payload, headers: requestHeaders, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CouponCodesStatusUpdateResult.fromJson(map);
@@ -62,8 +77,14 @@ class BillingApi {
   }
 
   /// List coupons
-  Future<CouponsListResult?> couponsList() async {
-    final response = await _client.get(ApiPaths.backendPath('/billing/coupons'));
+  Future<CouponsListResult?> couponsList([String? status, int? page, int? pageSize, String? cursor]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('status', status, 'form', true, false, null),
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
+      QueryParameterSpec('cursor', cursor, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/billing/coupons'), query));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CouponsListResult.fromJson(map);
@@ -95,8 +116,54 @@ class BillingApi {
     })();
   }
 
+  /// Update coupon
+  Future<CouponsUpdateResult?> couponsUpdate(String couponId, AdminCouponCreateRequest body, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.put(ApiPaths.backendPath('/billing/coupons/${serializePathParameter(couponId, const PathParameterSpec('couponId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : CouponsUpdateResult.fromJson(map);
+    })();
+  }
+
+  /// List exchange rules
+  Future<ExchangeRulesListResult?> exchangeRulesList([String? sourceAssetType, String? targetAssetType, String? status]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('source_asset_type', sourceAssetType, 'form', true, false, null),
+      QueryParameterSpec('target_asset_type', targetAssetType, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/billing/exchange_rules'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ExchangeRulesListResult.fromJson(map);
+    })();
+  }
+
+  /// Upsert exchange rule
+  Future<ExchangeRulesUpdateResult?> exchangeRulesUpdate(CommerceExchangeRuleUpsertRequest body, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.put(ApiPaths.backendPath('/billing/exchange_rules'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ExchangeRulesUpdateResult.fromJson(map);
+    })();
+  }
+
   /// List transactions
-  Future<FinanceAdminLedgerListResult?> financeAdminLedgerList([int? page, int? pageSize, String? q, String? status, String? startTime, String? endTime]) async {
+  Future<FinanceLedgerListResult?> financeLedgerList([int? page, int? pageSize, String? q, String? status, String? startTime, String? endTime]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -105,10 +172,10 @@ class BillingApi {
       QueryParameterSpec('start_time', startTime, 'form', true, false, null),
       QueryParameterSpec('end_time', endTime, 'form', true, false, null)
     ]);
-    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/billing/finance/admin/ledger'), query));
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/billing/finance/ledger'), query));
     return (() {
       final map = sdkworkResponseAsMap(response);
-      return map == null ? null : FinanceAdminLedgerListResult.fromJson(map);
+      return map == null ? null : FinanceLedgerListResult.fromJson(map);
     })();
   }
 
@@ -129,6 +196,100 @@ class BillingApi {
     })();
   }
 
+  /// List payment attempts
+  Future<PaymentsAttemptsListResult?> paymentsAttemptsList([String? provider, String? status, int? page, int? pageSize, String? cursor]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('provider', provider, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null),
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
+      QueryParameterSpec('cursor', cursor, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/billing/payments/attempts'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PaymentsAttemptsListResult.fromJson(map);
+    })();
+  }
+
+  /// List recharge packages
+  Future<RechargesPackagesListResult?> rechargesPackagesList([String? status]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('status', status, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/billing/recharges/packages'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : RechargesPackagesListResult.fromJson(map);
+    })();
+  }
+
+  /// Create recharge package
+  Future<RechargesPackagesCreateResult?> rechargesPackagesCreate(CommerceRechargePackageMutationRequest body, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.backendPath('/billing/recharges/packages'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : RechargesPackagesCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Delete recharge package
+  Future<RechargesPackagesDeleteResult?> rechargesPackagesDelete(String packageId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/billing/recharges/packages/${serializePathParameter(packageId, const PathParameterSpec('packageId', 'simple', false))}'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : RechargesPackagesDeleteResult.fromJson(map);
+    })();
+  }
+
+  /// Update recharge package
+  Future<RechargesPackagesUpdateResult?> rechargesPackagesUpdate(String packageId, CommerceRechargePackageMutationRequest body, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.put(ApiPaths.backendPath('/billing/recharges/packages/${serializePathParameter(packageId, const PathParameterSpec('packageId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : RechargesPackagesUpdateResult.fromJson(map);
+    })();
+  }
+
+  /// List recharge records
+  Future<RechargesRecordsListResult?> rechargesRecordsList([String? userId, String? status, int? page, int? pageSize, String? cursor]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('user_id', userId, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null),
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
+      QueryParameterSpec('cursor', cursor, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/billing/recharges/records'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : RechargesRecordsListResult.fromJson(map);
+    })();
+  }
+
+  /// Retrieve recharge record
+  Future<RechargesRecordsRetrieveResult?> rechargesRecordsRetrieve(String orderNo) async {
+    final response = await _client.get(ApiPaths.backendPath('/billing/recharges/records/${serializePathParameter(orderNo, const PathParameterSpec('orderNo', 'simple', false))}'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : RechargesRecordsRetrieveResult.fromJson(map);
+    })();
+  }
+
   /// List referral stats
   Future<ReferralsStatsListResult?> referralsStatsList() async {
     final response = await _client.get(ApiPaths.backendPath('/billing/referrals/stats'));
@@ -139,8 +300,15 @@ class BillingApi {
   }
 
   /// List redemption records
-  Future<UsersCouponsListResult?> usersCouponsList() async {
-    final response = await _client.get(ApiPaths.backendPath('/billing/users/coupons'));
+  Future<UsersCouponsListResult?> usersCouponsList([String? userId, String? status, int? page, int? pageSize, String? cursor]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('user_id', userId, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null),
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
+      QueryParameterSpec('cursor', cursor, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/billing/users/coupons'), query));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : UsersCouponsListResult.fromJson(map);
@@ -160,15 +328,6 @@ class BillingApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : UsersBalanceAdjustmentsCreateResult.fromJson(map);
-    })();
-  }
-
-  /// List recharge records
-  Future<VipRechargeListResult?> vipRechargeList() async {
-    final response = await _client.get(ApiPaths.backendPath('/billing/vip/recharge'));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : VipRechargeListResult.fromJson(map);
     })();
   }
 }

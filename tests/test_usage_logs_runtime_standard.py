@@ -185,6 +185,61 @@ class UsageLogsRuntimeStandardTest(unittest.TestCase):
         self.assertIn("await UsageService.fetchLogs", usage_view)
         self.assertNotIn("UsageService.fetchLogs().then", usage_view)
 
+    def test_console_usage_product_states_are_localized(self) -> None:
+        usage_view = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-usage"
+            / "src"
+            / "UsageView.tsx"
+        ).read_text(encoding="utf-8")
+        usage_service = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-usage"
+            / "src"
+            / "usageService.ts"
+        ).read_text(encoding="utf-8")
+        i18n = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-i18n"
+            / "src"
+            / "index.ts"
+        ).read_text(encoding="utf-8")
+
+        for marker in [
+            "console.usage.title",
+            "console.usage.searchPlaceholder",
+            "console.usage.loading",
+            "console.usage.loadErrorTitle",
+            "console.usage.loadErrorFallback",
+            "console.usage.emptyTitle",
+            "console.usage.emptyDescription",
+            "console.usage.table.details",
+            "console.usage.errors.fetchFallback",
+        ]:
+            self.assertIn(marker, usage_view + usage_service + i18n)
+            self.assertGreaterEqual(i18n.count(f'"{marker}"'), 2)
+
+        for hardcoded_copy in [
+            "Failed to load usage logs.",
+            "Failed to fetch usage logs",
+            "Loading usage logs...",
+            "Usage logs could not be loaded",
+            "No usage logs found",
+            "Search key, model, request, path...",
+            "Details",
+        ]:
+            self.assertNotIn(hardcoded_copy, usage_view)
+            self.assertNotIn(hardcoded_copy, usage_service)
+
     def test_console_usage_view_uses_real_query_contract_and_hides_unsupported_actions(self) -> None:
         usage_view = (
             ROOT
@@ -217,8 +272,10 @@ class UsageLogsRuntimeStandardTest(unittest.TestCase):
         next_operation_start = contract.index("\n  - route:", usage_operation_start + 1)
         usage_operation_contract = contract[usage_operation_start:next_operation_start]
 
-        self.assertIn("readOnlyUsageActions", usage_view)
-        self.assertIn("Read-only", usage_view)
+        self.assertNotIn("readOnlyUsageActions", usage_view)
+        self.assertNotIn("Read-only", usage_view)
+        self.assertNotIn("read-only", usage_view)
+        self.assertNotIn("command contract", usage_view)
         self.assertIn("buildUsageLogQuery", usage_view)
         self.assertIn("page: number", usage_view)
         self.assertNotIn("pageNo", usage_view)

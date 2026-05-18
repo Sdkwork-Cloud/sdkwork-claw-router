@@ -14,6 +14,7 @@ const TENANT_ID: i64 = 42;
 const ORGANIZATION_ID: i64 = 84;
 const OPERATOR_ID: i64 = 9001;
 const ASSIGNED_ID_FLOOR: i64 = 1_000_000_000_000;
+const PUBLIC_APP_STORE_TENANT_ID: i64 = 20_001;
 
 #[tokio::test]
 async fn sqlite_admin_app_store_manages_plus_app_lifecycle_with_market_state_and_audit() {
@@ -560,6 +561,106 @@ async fn sqlite_admin_app_store_publishes_without_changing_runtime_status() {
     assert_eq!(0, status_code);
 }
 
+#[tokio::test]
+async fn sqlite_admin_app_store_lists_app_center_visible_catalog_scopes() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    DatabaseInstaller::for_sqlite(pool.clone())
+        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
+        .unwrap()
+        .ensure_installed()
+        .await
+        .unwrap();
+
+    insert_admin_visible_app(
+        &pool,
+        30_001_001,
+        TENANT_ID,
+        0,
+        "Tenant Public Console App",
+        "tenant-public-console-app",
+    )
+    .await;
+    insert_admin_visible_app(
+        &pool,
+        30_001_002,
+        PUBLIC_APP_STORE_TENANT_ID,
+        0,
+        "Product Public Console App",
+        "product-public-console-app",
+    )
+    .await;
+    insert_admin_visible_app(
+        &pool,
+        30_001_003,
+        TENANT_ID + 1,
+        0,
+        "Other Tenant Public Console App",
+        "other-tenant-public-console-app",
+    )
+    .await;
+
+    let store = SqliteAdminAppStore::new(pool);
+    let subject = admin_subject();
+    let listed = store
+        .list_apps(ListAdminAppsQuery {
+            subject,
+            keyword: Some("Public Console".to_owned()),
+            status: Some("ACTIVE".to_owned()),
+            market_status: Some("PUBLISHED".to_owned()),
+            app_type: Some("web".to_owned()),
+            page_no: Some(1),
+            page_size: Some(20),
+        })
+        .await
+        .unwrap();
+    let listed_names = listed
+        .iter()
+        .map(|item| item.name.as_str())
+        .collect::<Vec<_>>();
+
+    assert!(
+        listed_names.contains(&"Tenant Public Console App"),
+        "admin app management must see tenant-level apps that the App Center exposes to the current organization"
+    );
+    assert!(
+        listed_names.contains(&"Product Public Console App"),
+        "admin app management must see product-level public App Center entries"
+    );
+    assert!(
+        !listed_names.contains(&"Other Tenant Public Console App"),
+        "admin app management must not cross into unrelated tenant public apps"
+    );
+
+    let public_detail = store
+        .get_app(GetAdminAppQuery {
+            subject,
+            app_id: 30_001_002,
+        })
+        .await
+        .unwrap()
+        .expect("product public App Center entry must be readable from admin details");
+    assert_eq!(
+        "product-public-console-app",
+        public_detail.app_key.as_deref().unwrap()
+    );
+
+    assert!(
+        store
+            .get_app(GetAdminAppQuery {
+                subject,
+                app_id: 30_001_003,
+            })
+            .await
+            .unwrap()
+            .is_none(),
+        "unrelated tenant public apps must stay outside the admin app read scope"
+    );
+}
+
 fn admin_subject() -> AdminAppSubject {
     AdminAppSubject {
         tenant_id: TENANT_ID,
@@ -567,4 +668,43 @@ fn admin_subject() -> AdminAppSubject {
         operator_id: OPERATOR_ID,
         operator_type: 1,
     }
+}
+
+async fn insert_admin_visible_app(
+    pool: &sqlx::SqlitePool,
+    id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+    name: &str,
+    app_key: &str,
+) {
+    sqlx::query(
+        r#"
+        INSERT INTO plus_app
+            (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, description, version, icon_url, access_url, config, status, app_type, platforms, install_platforms, install_skill, install_config, release_notes, package_name, bundle_id, store_url, download_url, created_at, updated_at)
+        VALUES
+            (?, ?, ?, ?, 0, 0, ?, '{}', '{}', 0, ?, '1.0.0', NULL, ?, ?, 1, 'web', '{"platforms":["web"]}', '{"platforms":["web"]}', '{}', '{"packages":[]}', '[]', NULL, NULL, NULL, ?, '2026-05-09 11:00:00', '2026-05-09 11:00:00')
+        "#,
+    )
+    .bind(id)
+    .bind(format!("admin-visible-app-{id}"))
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(name)
+    .bind(format!("{name} description"))
+    .bind(format!("https://apps.example.test/{app_key}"))
+    .bind(json!({
+        "standard": {
+            "appKey": app_key
+        },
+        "portal": {
+            "developer": "SDKWork",
+            "marketStatus": "PUBLISHED"
+        }
+    })
+    .to_string())
+    .bind(format!("https://cdn.example.test/apps/{app_key}.zip"))
+    .execute(pool)
+    .await
+    .unwrap();
 }

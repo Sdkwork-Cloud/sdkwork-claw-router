@@ -238,12 +238,21 @@ def serialize_header_primitive(value: Any) -> str:
 
 
 class PlatformApi:
-    """platform API client."""
-    
+    """platform platform API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.apps = PlatformAppsApi(client)
+
+
+class PlatformAppsApi:
+    """platform platform.apps API client."""
+
     def __init__(self, client: HttpClient):
         self._client = client
 
-    def apps_list(self, q: Optional[str] = None, status: Optional[str] = None, market_status: Optional[str] = None, app_type: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None, x_request_id: Optional[str] = None) -> AppsListResult:
+
+    def list(self, q: Optional[str] = None, status: Optional[str] = None, market_status: Optional[str] = None, app_type: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None, x_request_id: Optional[str] = None) -> AppsListResult:
         """List apps"""
         query = build_query_string([
             {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -261,7 +270,7 @@ class PlatformApi:
         )
         return self._client.get(_append_query_string(f"/backend/v3/api/platform/apps", query), headers=request_headers)
 
-    def apps_create(self, body: AdminAppCreateRequest, x_request_id: Optional[str] = None) -> AppsCreateResult:
+    def create(self, body: AdminAppCreateRequest, x_request_id: Optional[str] = None) -> AppsCreateResult:
         """Create app"""
         request_headers = build_request_headers(
             {
@@ -271,7 +280,7 @@ class PlatformApi:
         )
         return self._client.post(f"/backend/v3/api/platform/apps", json=body, headers=request_headers)
 
-    def apps_delete(self, app_id: str, x_request_id: Optional[str] = None) -> AppsDeleteResult:
+    def delete(self, app_id: str, x_request_id: Optional[str] = None) -> AppsDeleteResult:
         """Delete app"""
         request_headers = build_request_headers(
             {
@@ -281,7 +290,7 @@ class PlatformApi:
         )
         return self._client.delete(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}", headers=request_headers)
 
-    def apps_retrieve(self, app_id: str, x_request_id: Optional[str] = None) -> AppsRetrieveResult:
+    def retrieve(self, app_id: str, x_request_id: Optional[str] = None) -> AppsRetrieveResult:
         """List app"""
         request_headers = build_request_headers(
             {
@@ -291,7 +300,7 @@ class PlatformApi:
         )
         return self._client.get(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}", headers=request_headers)
 
-    def apps_update(self, app_id: str, body: AdminAppUpdateRequest, x_request_id: Optional[str] = None) -> AppsUpdateResult:
+    def update(self, app_id: str, body: AdminAppUpdateRequest, x_request_id: Optional[str] = None) -> AppsUpdateResult:
         """Update app"""
         request_headers = build_request_headers(
             {
@@ -301,7 +310,7 @@ class PlatformApi:
         )
         return self._client.put(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
 
-    def apps_disable(self, app_id: str, x_request_id: Optional[str] = None) -> AppsDisableResult:
+    def disable(self, app_id: str, x_request_id: Optional[str] = None) -> AppsDisableResult:
         """Disable app"""
         request_headers = build_request_headers(
             {
@@ -311,7 +320,7 @@ class PlatformApi:
         )
         return self._client.post(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}/disable", headers=request_headers)
 
-    def apps_enable(self, app_id: str, x_request_id: Optional[str] = None) -> AppsEnableResult:
+    def enable(self, app_id: str, x_request_id: Optional[str] = None) -> AppsEnableResult:
         """Enable app"""
         request_headers = build_request_headers(
             {
@@ -321,7 +330,7 @@ class PlatformApi:
         )
         return self._client.post(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}/enable", headers=request_headers)
 
-    def apps_publish(self, app_id: str, x_request_id: Optional[str] = None) -> AppsPublishResult:
+    def publish(self, app_id: str, x_request_id: Optional[str] = None) -> AppsPublishResult:
         """Publish app"""
         request_headers = build_request_headers(
             {
@@ -331,7 +340,7 @@ class PlatformApi:
         )
         return self._client.post(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}/publish", headers=request_headers)
 
-    def apps_unpublish(self, app_id: str, x_request_id: Optional[str] = None) -> AppsUnpublishResult:
+    def unpublish(self, app_id: str, x_request_id: Optional[str] = None) -> AppsUnpublishResult:
         """Offline app"""
         request_headers = build_request_headers(
             {

@@ -315,14 +315,24 @@ async fn find_default_pricing_plan(
         FROM ai_pricing_plan
         WHERE status = 1
           AND deleted_at IS NULL
-          AND (tenant_id IS NULL OR tenant_id = ?)
-          AND (organization_id IS NULL OR organization_id = ?)
-        ORDER BY priority ASC, id ASC
+          AND (tenant_id = ? OR tenant_id = 0 OR tenant_id IS NULL)
+          AND (organization_id = ? OR organization_id = 0 OR organization_id IS NULL)
+        ORDER BY CASE
+            WHEN tenant_id = ? AND organization_id = ? THEN 0
+            WHEN tenant_id = ? AND organization_id = 0 THEN 1
+            WHEN tenant_id = 0 AND organization_id = 0 THEN 2
+            ELSE 3
+          END,
+          priority ASC,
+          id ASC
         LIMIT 1
         "#,
     )
     .bind(tenant_id)
     .bind(organization_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(tenant_id)
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to load default pricing plan", error))?;

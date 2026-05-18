@@ -8,7 +8,7 @@ pub struct AdminApiKeyCreateResponse {
     /// Key field on admin api key create response.
     pub key: AdminApiKeyItem,
 
-    /// One-time plaintext API key material returned immediately after creation.
+    /// Full plaintext API key material returned immediately after creation.
     #[serde(rename = "rawKey")]
     pub raw_key: String,
 }

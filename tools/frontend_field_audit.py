@@ -176,6 +176,7 @@ class FrontendFieldAudit:
             interface = entry.get("interface")
             route = entry.get("route")
             fields = entry.get("fields")
+            derived_fields = entry.get("derived_fields", [])
             if not isinstance(source, str) or not isinstance(interface, str):
                 messages.append("frontend_models entries must include source and interface")
                 continue
@@ -186,6 +187,9 @@ class FrontendFieldAudit:
                 messages.append(f"frontend model {key} references route without route contract: {route}")
             if not isinstance(fields, list) or not all(isinstance(field, str) for field in fields):
                 messages.append(f"frontend model {key} fields must be a string list")
+                continue
+            if not isinstance(derived_fields, list) or not all(isinstance(field, str) for field in derived_fields):
+                messages.append(f"frontend model {key} derived_fields must be a string list")
                 continue
             raw_data_sources = entry.get("data_sources")
             raw_file_targets = entry.get("file_targets")
@@ -208,7 +212,7 @@ class FrontendFieldAudit:
                         messages.append(
                             f"frontend model {key} data_source {data_source} is not declared in route {route} required_tables"
                         )
-            expected[key] = fields
+            expected[key] = [*fields, *derived_fields]
 
         for key in sorted(actual):
             if key not in expected:

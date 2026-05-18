@@ -60,6 +60,7 @@ client.setHeader('X-Custom-Header', 'value');
 
 ## API Modules
 
+- `client.agents` - agents API
 - `client.ai` - ai API
 - `client.auth` - auth API
 - `client.billing` - billing API
@@ -70,6 +71,18 @@ client.setHeader('X-Custom-Header', 'value');
 - `client.platform` - platform API
 
 ## Usage Examples
+
+### agents
+```dart
+// List user agents
+final params = <String, dynamic>{
+  'page': 1,
+  'page_size': 2,
+  'q': 'q',
+};
+final result = await client.agents.list(params);
+print(result);
+```
 
 ### ai
 ```dart

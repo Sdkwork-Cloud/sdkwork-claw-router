@@ -1,7 +1,7 @@
 use sdkwork_claw_config::{DatabaseConfig, DatabaseEngine, DeploymentMode, RuntimeConfigProfile};
 use sdkwork_claw_product::infrastructure::sql::installer::{
     BootstrapAdminReport, CatalogRefreshOptions, CatalogRefreshReport, DatabaseInstallError,
-    DatabaseInstaller, InstallationReport, InstallationStatus,
+    DatabaseInstaller, InstallationReport, InstallationStatus, ResetAdminPasswordReport,
 };
 use serde::Serialize;
 use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
@@ -96,6 +96,17 @@ async fn run_command(
                 .await?;
             print_json(&CatalogRefreshOutput::from_reports(report, status_report))?;
         }
+        InstallerCommand::ResetAdmin(options) => {
+            let report = installer
+                .reset_admin_password(
+                    options.username,
+                    options.display_name,
+                    options.email,
+                    options.password,
+                )
+                .await?;
+            print_json(&ResetAdminOutput::from(report))?;
+        }
     }
     Ok(())
 }
@@ -107,6 +118,15 @@ enum InstallerCommand {
     Upgrade,
     Ensure,
     RefreshCatalog(CatalogRefreshOptions),
+    ResetAdmin(ResetAdminOptions),
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+struct ResetAdminOptions {
+    username: String,
+    display_name: String,
+    email: String,
+    password: String,
 }
 
 fn parse_cli_command<I>(args: I) -> anyhow::Result<InstallerCommand>
@@ -133,9 +153,10 @@ where
             InstallerCommand::Ensure
         }
         "refresh-catalog" => InstallerCommand::RefreshCatalog(parse_refresh_options(args)?),
+        "reset-admin" => InstallerCommand::ResetAdmin(parse_reset_admin_options(args)?),
         other => {
             return Err(InstallerCliError::InvalidArgument(format!(
-                "unsupported installer command: {other}. Use status, install, upgrade, ensure, or refresh-catalog"
+                "unsupported installer command: {other}. Use status, install, upgrade, ensure, refresh-catalog, or reset-admin"
             ))
             .into());
         }
@@ -211,6 +232,48 @@ where
     Ok(options)
 }
 
+fn parse_reset_admin_options<I>(args: I) -> anyhow::Result<ResetAdminOptions>
+where
+    I: IntoIterator<Item = String>,
+{
+    let mut username = "admin".to_owned();
+    let mut display_name = "Administrator".to_owned();
+    let mut email = "admin@sdkwork.com".to_owned();
+    let mut password = std::env::var("SDKWORK_CLAW_ADMIN_RESET_PASSWORD")
+        .ok()
+        .map(|value| value.trim().to_owned())
+        .filter(|value| !value.is_empty());
+
+    let mut args = args.into_iter().peekable();
+    while let Some(arg) = args.next() {
+        match arg.as_str() {
+            "--username" => username = next_arg(&mut args, "--username")?,
+            "--display-name" => display_name = next_arg(&mut args, "--display-name")?,
+            "--email" => email = next_arg(&mut args, "--email")?,
+            "--password" => password = Some(next_arg(&mut args, "--password")?),
+            other => {
+                return Err(InstallerCliError::InvalidArgument(format!(
+                    "unsupported reset-admin option: {other}"
+                ))
+                .into());
+            }
+        }
+    }
+
+    let password = password.ok_or_else(|| {
+        InstallerCliError::InvalidArgument(
+            "reset-admin requires --password or SDKWORK_CLAW_ADMIN_RESET_PASSWORD".to_owned(),
+        )
+    })?;
+
+    Ok(ResetAdminOptions {
+        username,
+        display_name,
+        email,
+        password,
+    })
+}
+
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
 struct InstallationStatusOutput {
@@ -270,6 +333,34 @@ impl From<BootstrapAdminReport> for BootstrapAdminOutput {
             email: report.email,
             initial_password: report.initial_password,
             generated_password: report.generated_password,
+        }
+    }
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct ResetAdminOutput {
+    status: &'static str,
+    tenant_id: String,
+    organization_id: String,
+    user_id: String,
+    username: String,
+    display_name: String,
+    email: String,
+    password_changed: bool,
+}
+
+impl From<ResetAdminPasswordReport> for ResetAdminOutput {
+    fn from(report: ResetAdminPasswordReport) -> Self {
+        Self {
+            status: "reset_admin",
+            tenant_id: report.tenant_id,
+            organization_id: report.organization_id,
+            user_id: report.user_id,
+            username: report.username,
+            display_name: report.display_name,
+            email: report.email,
+            password_changed: report.status == "reset",
         }
     }
 }
@@ -340,6 +431,7 @@ fn installer_error_code(error: &(dyn std::error::Error + 'static), message: &str
     } else if message.contains("unsupported installer command")
         || message.contains("unsupported refresh-catalog option")
         || message.contains("requires a value")
+        || message.contains("requires --password")
         || message.contains("must contain only")
         || message.contains("mode must be")
         || message.contains("unsupported seed profile")

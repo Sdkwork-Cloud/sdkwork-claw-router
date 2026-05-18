@@ -5,6 +5,7 @@ namespace Sdkwork.ClawRouter.App.Api
     /// </summary>
     public static class Api
     {
+        public static AgentsApi? Agents { get; set; }
         public static AiApi? Ai { get; set; }
         public static AuthApi? Auth { get; set; }
         public static BillingApi? Billing { get; set; }

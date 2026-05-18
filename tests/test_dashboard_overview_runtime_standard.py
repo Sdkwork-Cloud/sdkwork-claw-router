@@ -67,6 +67,9 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
             "name: DashboardTopModel",
             "name: DashboardAnnouncement",
             "required: [summary, requestSparkline, multimodalSparkline, performanceSparkline, chartData, topModels, announcements, warnings]",
+            "required: [availableCredits, usedCredits, requestCount, totalUsedCredits, totalRequestCount, errorCount, imageRequests, videoRequests, audioRequests, musicRequests, rpm, tpm]",
+            "totalUsedCredits: { type: number }",
+            "totalRequestCount: { type: integer, format: int64 }",
             "type: { type: string, enum: [success, info, warning, error, unknown] }",
             "modality: { type: string, enum: [text, image, video, audio, music, unknown] }",
         ]:
@@ -115,6 +118,15 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
             / "types"
             / "dashboard-announcement.ts"
         )
+        summary_path = (
+            ROOT
+            / "sdks"
+            / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
+            / "src"
+            / "types"
+            / "dashboard-overview-summary.ts"
+        )
         frontend = (
             ROOT
             / "apps"
@@ -136,8 +148,11 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         fetch_result = fetch_result_path.read_text(encoding="utf-8")
         top_model = top_model_path.read_text(encoding="utf-8")
         announcement = announcement_path.read_text(encoding="utf-8")
+        summary = summary_path.read_text(encoding="utf-8")
         self.assertIn("export interface DashboardOverviewResponse", overview_response)
         self.assertIn("data?: DashboardOverviewResponse;", fetch_result)
+        self.assertIn("totalUsedCredits: number;", summary)
+        self.assertIn("totalRequestCount: number;", summary)
         self.assertIn("modality: 'text' | 'image' | 'video' | 'audio' | 'music' | 'unknown';", top_model)
         self.assertIn("type: 'success' | 'info' | 'warning' | 'error' | 'unknown';", announcement)
         sdk_ai = (
@@ -168,7 +183,120 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         self.assertIn("await DashboardService.fetchDashboardOverview", view)
         self.assertNotIn("DashboardService.fetchDashboardOverview(timeRange).then", view)
 
-    def test_console_dashboard_ui_is_read_only_until_command_contract_exists(self) -> None:
+    def test_console_dashboard_product_states_are_localized_not_hardcoded_english(self) -> None:
+        view = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-dashboard"
+            / "src"
+            / "DashboardView.tsx"
+        ).read_text(encoding="utf-8")
+        service = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-dashboard"
+            / "src"
+            / "dashboardService.ts"
+        ).read_text(encoding="utf-8")
+        i18n = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-i18n"
+            / "src"
+            / "index.ts"
+        ).read_text(encoding="utf-8")
+
+        for marker in [
+            "console.dashboard.dashboardview.text.loadingTitle",
+            "console.dashboard.dashboardview.text.loadingDescription",
+            "console.dashboard.dashboardview.text.loadErrorTitle",
+            "console.dashboard.dashboardview.text.loadErrorFallback",
+            "console.dashboard.dashboardview.text.initialAnnouncement",
+            "console.dashboard.dashboardview.text.measurementUnavailable",
+            "console.dashboard.dashboardview.text.speedTimeout",
+            "console.dashboard.dashboardview.text.domainProtocolError",
+        ]:
+            self.assertIn(marker, view + service + i18n)
+
+        for hardcoded_copy in [
+            "Loading dashboard overview...",
+            "Fetching usage, model ranking, and announcement data.",
+            "Dashboard overview could not be loaded",
+            "Failed to load dashboard overview.",
+            "Dashboard overview is ready. Usage data will appear after routed requests are recorded.",
+            "Browser image measurement is unavailable.",
+            "Configuration domain speed test timed out.",
+            "Configuration domain must use http or https.",
+        ]:
+            self.assertNotIn(hardcoded_copy, view)
+            self.assertNotIn(hardcoded_copy, service)
+
+    def test_console_dashboard_ui_renders_initialized_success_state_without_empty_gate(self) -> None:
+        view = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-dashboard"
+            / "src"
+            / "DashboardView.tsx"
+        ).read_text(encoding="utf-8")
+        service = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-dashboard"
+            / "src"
+            / "dashboardService.ts"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("createInitialDashboardSnapshot", service)
+        self.assertIn("createInitialChartData", service)
+        self.assertIn("INITIAL_TOP_MODELS", service)
+        self.assertIn("INITIAL_ANNOUNCEMENTS", service)
+        self.assertIn("DashboardService.emptyDashboardSnapshot(timeRange)", view)
+        self.assertIn("totalRequests > 0 ? Math.round", view)
+        self.assertNotIn(".filter((item) => item.value > 0)", view)
+        self.assertNotIn("const hasDashboardData", view)
+        self.assertNotIn("!hasDashboardData", view)
+        self.assertNotIn('kind="empty"', view)
+        self.assertNotIn("No dashboard data found", view)
+
+    def test_console_dashboard_starts_with_metric_cards_without_overview_header(self) -> None:
+        view = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-dashboard"
+            / "src"
+            / "DashboardView.tsx"
+        ).read_text(encoding="utf-8")
+
+        metric_grid_index = view.index("grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4")
+        loading_state_index = view.index("{isLoading ?")
+
+        self.assertLess(metric_grid_index, loading_state_index)
+        self.assertIn("pt-2", view)
+        self.assertIn("lg:pt-3", view)
+        self.assertNotIn("bg-slate-50 p-4", view)
+        self.assertNotIn("lg:p-6", view)
+        self.assertNotIn("<h1", view)
+        self.assertNotIn("console.dashboard.dashboardview.text.gga6x6", view)
+        self.assertNotIn("控制台概览", view)
+        self.assertIn("snapshot.summary.totalUsedCredits", view)
+        self.assertIn("snapshot.summary.totalRequestCount", view)
+        self.assertIn("console.dashboard.dashboardview.text.totalUsedCredits", view)
+        self.assertIn("console.dashboard.dashboardview.text.totalRequestCount", view)
+
+    def test_console_dashboard_ui_keeps_only_read_overview_contract_without_product_caveats(self) -> None:
         view = (
             ROOT
             / "apps"
@@ -201,9 +329,11 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         dashboard_operation_contract = contract[dashboard_operation_start:next_operation_start]
 
         self.assertIn("DashboardService.fetchDashboardOverview(timeRange)", view)
-        self.assertIn("readOnlyDashboardActions", view)
-        self.assertIn("Read-only", view)
         self.assertIn("BusinessStatePanel", view)
+        self.assertNotIn("readOnlyDashboardActions", view)
+        self.assertNotIn("Read-only", view)
+        self.assertNotIn("read-only", view)
+        self.assertNotIn("command contract", view)
         self.assertNotIn("<Search", view)
         self.assertNotIn("actionLabel=\"", view)
         self.assertNotIn("onAction={() => navigate('/console/billing?tab=recharge')}", view)
@@ -224,6 +354,47 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("operation: export", dashboard_operation_contract)
         self.assertNotIn("operation: downloadDashboard", dashboard_operation_contract)
         self.assertNotIn("operation: searchResources", dashboard_operation_contract)
+
+    def test_dashboard_overview_summary_exposes_window_and_historical_totals(self) -> None:
+        ports = (
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "ports"
+            / "dashboard_overview_read_store.rs"
+        ).read_text(encoding="utf-8")
+        postgres_store = (
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "postgres"
+            / "dashboard_overview_read_store.rs"
+        ).read_text(encoding="utf-8")
+        sqlite_store = (
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "sqlite"
+            / "dashboard_overview_read_store.rs"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("pub total_used_credits: f64", ports)
+        self.assertIn("pub total_request_count: i64", ports)
+        for store in (postgres_store, sqlite_store):
+            self.assertIn("LOAD_USAGE_TOTALS", store)
+            self.assertIn("load_usage_totals", store)
+            self.assertIn("total_used_credits", store)
+            self.assertIn("total_request_count", store)
+            self.assertIn("let (total_request_count, total_used_credits) = load_usage_totals", store)
+            self.assertIn("total_used_credits,", store)
+            self.assertIn("total_request_count,", store)
 
     def test_backend_app_router_exposes_real_dashboard_overview_route(self) -> None:
         product_api = (ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs").read_text(

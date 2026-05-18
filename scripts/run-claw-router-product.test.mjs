@@ -57,6 +57,14 @@ test('root package exposes pnpm product entrypoints', () => {
     'pnpm release:env:write -- --check && pnpm release:env:write -- --force && pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean && pnpm verify',
   );
   assert.equal(
+    rootPackage.scripts['admin:reset:dev'],
+    'node scripts/reset-admin-account.mjs --mode dev',
+  );
+  assert.equal(
+    rootPackage.scripts['admin:reset:release'],
+    'node scripts/reset-admin-account.mjs --mode release',
+  );
+  assert.equal(
     rootPackage.scripts['desktop:dev'],
     'node scripts/run-claw-router-product.mjs desktop',
   );
@@ -707,6 +715,117 @@ test('claw router workspace constrains default SQLite dev database without overr
       process.env.SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP = previousRankingStartup;
     }
   }
+});
+
+test('admin reset wrapper maps dev mode to the local SQLite database without exposing password args', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'reset-admin-account.mjs')).href
+  );
+
+  const settings = module.parseResetAdminArgs([
+    '--mode',
+    'dev',
+    '--password',
+    'Admin-Dev-Reset-Password-2026!',
+  ]);
+  const plan = module.createResetAdminPlan({
+    settings,
+    workspaceRoot,
+    platform: 'linux',
+    env: {},
+  });
+
+  assert.equal(plan.mode, 'dev');
+  assert.equal(plan.steps.length, 1);
+  const [step] = plan.steps;
+  assert.equal(step.name, 'reset-admin');
+  assert.equal(step.command, 'cargo');
+  assert.deepEqual(step.args, [
+    'run',
+    '-p',
+    'sdkwork-claw-installer',
+    '--',
+    'reset-admin',
+    '--username',
+    'admin',
+    '--display-name',
+    'Administrator',
+    '--email',
+    'admin@sdkwork.com',
+  ]);
+  assert.equal(step.args.includes('Admin-Dev-Reset-Password-2026!'), false);
+  assert.equal(step.env.SDKWORK_CLAW_ADMIN_RESET_PASSWORD, 'Admin-Dev-Reset-Password-2026!');
+  assert.equal(step.env.SDKWORK_CLAW_DATABASE_URL, 'sqlite://target/dev/clawrouter.sqlite');
+  assert.equal(step.env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '1');
+  assert.equal(step.env.SDKWORK_CLAW_DEPLOYMENT_MODE, 'server');
+  assert.equal(step.env.SDKWORK_CLAW_INSTALL_ENVIRONMENT, 'development');
+  assert.equal(step.env.SDKWORK_CLAW_INSTALL_SEED_PROFILE, 'commercial');
+});
+
+test('admin reset wrapper maps release mode through production runtime config and requires a password', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'reset-admin-account.mjs')).href
+  );
+  const fixtureRoot = path.join(workspaceRoot, 'target', 'admin-reset-config-tests', `release-${Date.now()}`);
+  const configFile = path.join(fixtureRoot, 'clawrouter.toml');
+  rmSync(fixtureRoot, { recursive: true, force: true });
+  mkdirSync(fixtureRoot, { recursive: true });
+
+  assert.throws(
+    () =>
+      module.createResetAdminPlan({
+        settings: module.parseResetAdminArgs(['--mode', 'release']),
+        workspaceRoot,
+        platform: 'linux',
+        env: {},
+        writeRuntimeConfig: false,
+      }),
+    /admin reset password is required/,
+  );
+
+  const settings = module.parseResetAdminArgs([
+    '--mode',
+    'release',
+    '--config-file',
+    configFile,
+    '--database-url',
+    `sqlite://${slashPath(path.join(fixtureRoot, 'release.sqlite'))}`,
+    '--password',
+    'Admin-Release-Reset-Password-2026!',
+  ]);
+  const plan = module.createResetAdminPlan({
+    settings,
+    workspaceRoot,
+    platform: 'linux',
+    env: { HOME: path.join(fixtureRoot, 'home') },
+    writeRuntimeConfig: false,
+  });
+
+  assert.equal(plan.mode, 'release');
+  assert.equal(plan.runtimeConfig.deploymentMode, 'server');
+  assert.equal(plan.runtimeConfig.configFile, configFile);
+  assert.equal(plan.runtimeConfig.blockingIssue, null);
+  const [step] = plan.steps;
+  assert.deepEqual(step.args, [
+    'run',
+    '-p',
+    'sdkwork-claw-installer',
+    '--',
+    'reset-admin',
+    '--username',
+    'admin',
+    '--display-name',
+    'Administrator',
+    '--email',
+    'admin@sdkwork.com',
+  ]);
+  assert.equal(step.args.includes('Admin-Release-Reset-Password-2026!'), false);
+  assert.equal(step.env.SDKWORK_CLAW_ADMIN_RESET_PASSWORD, 'Admin-Release-Reset-Password-2026!');
+  assert.equal(step.env.SDKWORK_CLAW_CONFIG_FILE, configFile);
+  assert.equal(step.env.SDKWORK_CLAW_DEPLOYMENT_MODE, 'server');
+  assert.equal(step.env.SDKWORK_CLAW_DATABASE_URL, `sqlite://${slashPath(path.join(fixtureRoot, 'release.sqlite'))}`);
+  assert.equal(existsSync(configFile), false);
+  rmSync(fixtureRoot, { recursive: true, force: true });
 });
 
 test('claw router workspace rejects obsolete portal dev bind option', async () => {
@@ -2079,6 +2198,9 @@ test('install package builder emits service and container deployment packages fr
     assert.ok(serviceConfigTemplate.includes('[provider_relay.runtime]'));
     assert.ok(serviceConfigTemplate.includes('response_timeout_millis = 120000'));
     assert.ok(serviceConfigTemplate.includes('health_probe_timeout_millis = 10000'));
+    assert.ok(serviceConfigTemplate.includes('catalog_refresh_interval_millis = 5000'));
+    assert.ok(serviceConfigTemplate.includes('circuit_breaker_recovery_window_millis = 60000'));
+    assert.ok(serviceConfigTemplate.includes('failure_strategy = "failover"'));
     assert.ok(serviceConfigTemplate.includes('[provider_relay.retry]'));
     assert.ok(serviceConfigTemplate.includes('max_attempts = 2'));
     assert.ok(serviceConfigTemplate.includes('retryable_status_codes = [429, 500, 502, 503, 504]'));
@@ -2098,7 +2220,7 @@ test('install package builder emits service and container deployment packages fr
     assert.ok(serviceConfigTemplate.includes('startup_mode = "ensure"'));
     assert.ok(serviceConfigTemplate.includes('[bootstrap_admin]'));
     assert.ok(serviceConfigTemplate.includes('username = "admin"'));
-    assert.ok(serviceConfigTemplate.includes('email = "admin@sdkwork.local"'));
+    assert.ok(serviceConfigTemplate.includes('email = "admin@sdkwork.com"'));
     assert.ok(serviceConfigTemplate.includes('/etc/clawrouter/clawrouter.toml'));
     const serviceInstallGuide = readTarEntryText(
       gunzipSync(readFileSync(serviceResult.archivePath)),
@@ -6506,6 +6628,30 @@ test('verification plan includes portal console app runtime tests before broad s
   assert.ok(consoleAppRuntimeIndex < pythonTestsIndex, 'console app runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
     'node --experimental-strip-types apps/sdkwork-claw-router-portal/console-app-runtime.test.ts',
+  ));
+});
+
+test('verification plan includes portal console agents runtime tests before broad suites', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
+  );
+  const plan = module.buildVerificationPlan(
+    { skipRustTests: false, skipPythonTests: false, skipSchemaGate: true },
+    {},
+  );
+  const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
+  const consoleAppRuntimeIndex = plan.findIndex((step) => step.label === 'portal console app runtime tests');
+  const consoleAgentsRuntimeIndex = plan.findIndex((step) => step.label === 'portal console agents runtime tests');
+  const consoleRoutingRuntimeIndex = plan.findIndex((step) => step.label === 'portal console routing runtime tests');
+  const rustTestsIndex = plan.findIndex((step) => step.label === 'rust workspace tests');
+  const pythonTestsIndex = plan.findIndex((step) => step.label === 'python standard tests');
+
+  assert.ok(consoleAgentsRuntimeIndex > consoleAppRuntimeIndex, 'console agents runtime tests must run after console app runtime tests');
+  assert.ok(consoleAgentsRuntimeIndex < consoleRoutingRuntimeIndex, 'console agents runtime tests must run before console routing runtime tests');
+  assert.ok(consoleAgentsRuntimeIndex < rustTestsIndex, 'console agents runtime tests must run before broad Rust tests');
+  assert.ok(consoleAgentsRuntimeIndex < pythonTestsIndex, 'console agents runtime tests must run before broad Python tests');
+  assert.ok(commandLines.includes(
+    'node --experimental-strip-types apps/sdkwork-claw-router-portal/console-agents-runtime.test.ts',
   ));
 });
 

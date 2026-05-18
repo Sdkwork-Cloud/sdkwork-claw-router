@@ -10,6 +10,7 @@ import {
 import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
 import { MonitorService, SysNode, Alert, PerformanceDatum } from './monitorService';
 
+import { useTranslation } from 'react-i18next';
 function NodesTab() {
   const [nodes, setNodes] = useState<SysNode[]>([]);
   const [perfData, setPerfData] = useState<PerformanceDatum[]>([]);
@@ -383,6 +384,7 @@ function AlertsTab() {
 }
 
 export function MonitorAdmin() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('nodes');
 
   return (
@@ -390,9 +392,8 @@ export function MonitorAdmin() {
       <div className="flex flex-col mb-4">
         <h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-2">
           <Activity className="w-6 h-6 text-red-500" />
-          运维与监控
-        </h2>
-        <p className="text-sm text-slate-500">监控计算节点，查看异常告警及API健康检测大盘。</p>
+          {t("admin.monitor.index.text.kga9uh", "运维与监控")}</h2>
+        <p className="text-sm text-slate-500">{t("admin.monitor.index.text.akk4xs", "监控计算节点，查看异常告警及API健康检测大盘。")}</p>
       </div>
 
       <div className="flex gap-4 border-b border-slate-200 dark:border-white/10 mb-6">
@@ -400,14 +401,12 @@ export function MonitorAdmin() {
           className={`px-4 py-2 font-medium text-sm transition-colors border-b-2 ${activeTab === 'nodes' ? 'border-red-500 text-slate-900 dark:text-white' : 'border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}
           onClick={() => setActiveTab('nodes')}
         >
-          节点状态监控
-        </button>
+          {t("admin.monitor.index.text.xexwv5", "节点状态监控")}</button>
         <button
           className={`px-4 py-2 font-medium text-sm transition-colors border-b-2 ${activeTab === 'alerts' ? 'border-red-500 text-slate-900 dark:text-white' : 'border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}
           onClick={() => setActiveTab('alerts')}
         >
-          系统告警日志
-        </button>
+          {t("admin.monitor.index.text.14p0m6f", "系统告警日志")}</button>
       </div>
 
       <div className="flex-1">

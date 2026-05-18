@@ -79,6 +79,7 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 
 ## API Modules
 
+- `client.getAgents()` - agents API
 - `client.getAi()` - ai API
 - `client.getBilling()` - billing API
 - `client.getContent()` - content API
@@ -89,6 +90,21 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 - `client.getSystem()` - system API
 
 ## Usage Examples
+
+### agents
+
+```java
+// List managed agents
+Map<String, Object> params = new LinkedHashMap<>();
+params.put("q", "q");
+params.put("owner_user_id", 2);
+params.put("status", "active");
+params.put("visibility", "private");
+params.put("page", 5);
+params.put("page_size", 6);
+AgentsListResult result = client.getAgents().list(params);
+System.out.println(result);
+```
 
 ### ai
 
@@ -101,8 +117,8 @@ System.out.println(result);
 ### billing
 
 ```java
-// List batches
-CouponBatchesListResult result = client.getBilling().couponBatchesList();
+// List referral stats
+ReferralsStatsListResult result = client.getBilling().referralsStatsList();
 System.out.println(result);
 ```
 
@@ -157,8 +173,8 @@ System.out.println(result);
 ### system
 
 ```java
-// List dashboard data
-DashboardAdminOverviewRetrieveResult result = client.getSystem().dashboardAdminOverviewRetrieve();
+// Retrieve IAM auth runtime settings
+AuthSettingsRetrieveResult result = client.getSystem().authSettingsRetrieve();
 System.out.println(result);
 ```
 

@@ -1,3 +1,4 @@
+import type { ProviderCircuitBreakerPolicy } from './provider-circuit-breaker-policy';
 import type { ProviderRetryPolicy } from './provider-retry-policy';
 
 /** Routing channel item schema exposed by Claw Router. */
@@ -12,6 +13,8 @@ export interface RoutingChannelItem {
   baseUrl: string;
   /** Capabilities field on routing channel item. */
   capabilities: string[];
+  /** Circuit breaker policy field on routing channel item. */
+  circuitBreakerPolicy?: ProviderCircuitBreakerPolicy;
   /** Errors field on routing channel item. */
   errors: number;
   /** Id field on routing channel item. */

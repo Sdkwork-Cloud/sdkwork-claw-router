@@ -18,8 +18,15 @@ func NewBillingApi(client *sdkhttp.Client) *BillingApi {
 }
 
 // List batches
-func (a *BillingApi) CouponBatchesList() (sdktypes.CouponBatchesListResult, error) {
-    raw, err := a.client.Get(BackendApiPath("/billing/coupon_batches"), nil, nil)
+func (a *BillingApi) CouponBatchesList(couponId *string, status *string, page *int, pageSize *int, cursor *string) (sdktypes.CouponBatchesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "coupon_id", Value: func() interface{} { if couponId == nil { return nil }; return *couponId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "cursor", Value: func() interface{} { if cursor == nil { return nil }; return *cursor }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/billing/coupon_batches"), query), nil, nil)
     if err != nil {
         var zero sdktypes.CouponBatchesListResult
         return zero, err
@@ -42,8 +49,16 @@ func (a *BillingApi) CouponBatchesCreate(body sdktypes.AdminCouponBatchGenerateR
 }
 
 // List promo codes
-func (a *BillingApi) CouponCodesList() (sdktypes.CouponCodesListResult, error) {
-    raw, err := a.client.Get(BackendApiPath("/billing/coupon_codes"), nil, nil)
+func (a *BillingApi) CouponCodesList(couponId *string, batchId *string, status *string, page *int, pageSize *int, cursor *string) (sdktypes.CouponCodesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "coupon_id", Value: func() interface{} { if couponId == nil { return nil }; return *couponId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "batch_id", Value: func() interface{} { if batchId == nil { return nil }; return *batchId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "cursor", Value: func() interface{} { if cursor == nil { return nil }; return *cursor }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/billing/coupon_codes"), query), nil, nil)
     if err != nil {
         var zero sdktypes.CouponCodesListResult
         return zero, err
@@ -52,12 +67,12 @@ func (a *BillingApi) CouponCodesList() (sdktypes.CouponCodesListResult, error) {
 }
 
 // Update promo code status
-func (a *BillingApi) CouponCodesStatusUpdate(promoCodeId string, body sdktypes.AdminPromoCodeStatusUpdateRequest, xRequestId *string) (sdktypes.CouponCodesStatusUpdateResult, error) {
+func (a *BillingApi) CouponCodesStatusUpdate(codeId string, body sdktypes.AdminPromoCodeStatusUpdateRequest, xRequestId *string) (sdktypes.CouponCodesStatusUpdateResult, error) {
     headers := BuildRequestHeaders(
         map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
-    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/billing/coupon_codes/%s/status", SerializePathParameter(promoCodeId, PathParameterSpec{Name: "promoCodeId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/billing/coupon_codes/%s/status", SerializePathParameter(codeId, PathParameterSpec{Name: "codeId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
     if err != nil {
         var zero sdktypes.CouponCodesStatusUpdateResult
         return zero, err
@@ -66,8 +81,14 @@ func (a *BillingApi) CouponCodesStatusUpdate(promoCodeId string, body sdktypes.A
 }
 
 // List coupons
-func (a *BillingApi) CouponsList() (sdktypes.CouponsListResult, error) {
-    raw, err := a.client.Get(BackendApiPath("/billing/coupons"), nil, nil)
+func (a *BillingApi) CouponsList(status *string, page *int, pageSize *int, cursor *string) (sdktypes.CouponsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "cursor", Value: func() interface{} { if cursor == nil { return nil }; return *cursor }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/billing/coupons"), query), nil, nil)
     if err != nil {
         var zero sdktypes.CouponsListResult
         return zero, err
@@ -99,8 +120,51 @@ func (a *BillingApi) CouponsDelete(couponId string) (sdktypes.CouponsDeleteResul
     return decodeResult[sdktypes.CouponsDeleteResult](raw)
 }
 
+// Update coupon
+func (a *BillingApi) CouponsUpdate(couponId string, body sdktypes.AdminCouponCreateRequest, xRequestId *string) (sdktypes.CouponsUpdateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/billing/coupons/%s", SerializePathParameter(couponId, PathParameterSpec{Name: "couponId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.CouponsUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CouponsUpdateResult](raw)
+}
+
+// List exchange rules
+func (a *BillingApi) ExchangeRulesList(sourceAssetType *string, targetAssetType *string, status *string) (sdktypes.ExchangeRulesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "source_asset_type", Value: func() interface{} { if sourceAssetType == nil { return nil }; return *sourceAssetType }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "target_asset_type", Value: func() interface{} { if targetAssetType == nil { return nil }; return *targetAssetType }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/billing/exchange_rules"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.ExchangeRulesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ExchangeRulesListResult](raw)
+}
+
+// Upsert exchange rule
+func (a *BillingApi) ExchangeRulesUpdate(body sdktypes.CommerceExchangeRuleUpsertRequest, xRequestId *string) (sdktypes.ExchangeRulesUpdateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Put(BackendApiPath("/billing/exchange_rules"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.ExchangeRulesUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ExchangeRulesUpdateResult](raw)
+}
+
 // List transactions
-func (a *BillingApi) FinanceAdminLedgerList(page *int, pageSize *int, q *string, status *string, startTime *string, endTime *string) (sdktypes.FinanceAdminLedgerListResult, error) {
+func (a *BillingApi) FinanceLedgerList(page *int, pageSize *int, q *string, status *string, startTime *string, endTime *string) (sdktypes.FinanceLedgerListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -109,12 +173,12 @@ func (a *BillingApi) FinanceAdminLedgerList(page *int, pageSize *int, q *string,
         {Name: "start_time", Value: func() interface{} { if startTime == nil { return nil }; return *startTime }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "end_time", Value: func() interface{} { if endTime == nil { return nil }; return *endTime }(), Style: "form", Explode: true, AllowReserved: false},
     })
-    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/billing/finance/admin/ledger"), query), nil, nil)
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/billing/finance/ledger"), query), nil, nil)
     if err != nil {
-        var zero sdktypes.FinanceAdminLedgerListResult
+        var zero sdktypes.FinanceLedgerListResult
         return zero, err
     }
-    return decodeResult[sdktypes.FinanceAdminLedgerListResult](raw)
+    return decodeResult[sdktypes.FinanceLedgerListResult](raw)
 }
 
 // List billing
@@ -135,6 +199,101 @@ func (a *BillingApi) FinanceUsageStatementsList(page *int, pageSize *int, q *str
     return decodeResult[sdktypes.FinanceUsageStatementsListResult](raw)
 }
 
+// List payment attempts
+func (a *BillingApi) PaymentsAttemptsList(provider *string, status *string, page *int, pageSize *int, cursor *string) (sdktypes.PaymentsAttemptsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "provider", Value: func() interface{} { if provider == nil { return nil }; return *provider }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "cursor", Value: func() interface{} { if cursor == nil { return nil }; return *cursor }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/billing/payments/attempts"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PaymentsAttemptsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PaymentsAttemptsListResult](raw)
+}
+
+// List recharge packages
+func (a *BillingApi) RechargesPackagesList(status *string) (sdktypes.RechargesPackagesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/billing/recharges/packages"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.RechargesPackagesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RechargesPackagesListResult](raw)
+}
+
+// Create recharge package
+func (a *BillingApi) RechargesPackagesCreate(body sdktypes.CommerceRechargePackageMutationRequest, xRequestId *string) (sdktypes.RechargesPackagesCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(BackendApiPath("/billing/recharges/packages"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.RechargesPackagesCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RechargesPackagesCreateResult](raw)
+}
+
+// Delete recharge package
+func (a *BillingApi) RechargesPackagesDelete(packageId string) (sdktypes.RechargesPackagesDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/billing/recharges/packages/%s", SerializePathParameter(packageId, PathParameterSpec{Name: "packageId", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.RechargesPackagesDeleteResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RechargesPackagesDeleteResult](raw)
+}
+
+// Update recharge package
+func (a *BillingApi) RechargesPackagesUpdate(packageId string, body sdktypes.CommerceRechargePackageMutationRequest, xRequestId *string) (sdktypes.RechargesPackagesUpdateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/billing/recharges/packages/%s", SerializePathParameter(packageId, PathParameterSpec{Name: "packageId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.RechargesPackagesUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RechargesPackagesUpdateResult](raw)
+}
+
+// List recharge records
+func (a *BillingApi) RechargesRecordsList(userId *string, status *string, page *int, pageSize *int, cursor *string) (sdktypes.RechargesRecordsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "user_id", Value: func() interface{} { if userId == nil { return nil }; return *userId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "cursor", Value: func() interface{} { if cursor == nil { return nil }; return *cursor }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/billing/recharges/records"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.RechargesRecordsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RechargesRecordsListResult](raw)
+}
+
+// Retrieve recharge record
+func (a *BillingApi) RechargesRecordsRetrieve(orderNo string) (sdktypes.RechargesRecordsRetrieveResult, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/billing/recharges/records/%s", SerializePathParameter(orderNo, PathParameterSpec{Name: "orderNo", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.RechargesRecordsRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RechargesRecordsRetrieveResult](raw)
+}
+
 // List referral stats
 func (a *BillingApi) ReferralsStatsList() (sdktypes.ReferralsStatsListResult, error) {
     raw, err := a.client.Get(BackendApiPath("/billing/referrals/stats"), nil, nil)
@@ -146,8 +305,15 @@ func (a *BillingApi) ReferralsStatsList() (sdktypes.ReferralsStatsListResult, er
 }
 
 // List redemption records
-func (a *BillingApi) UsersCouponsList() (sdktypes.UsersCouponsListResult, error) {
-    raw, err := a.client.Get(BackendApiPath("/billing/users/coupons"), nil, nil)
+func (a *BillingApi) UsersCouponsList(userId *string, status *string, page *int, pageSize *int, cursor *string) (sdktypes.UsersCouponsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "user_id", Value: func() interface{} { if userId == nil { return nil }; return *userId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "cursor", Value: func() interface{} { if cursor == nil { return nil }; return *cursor }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/billing/users/coupons"), query), nil, nil)
     if err != nil {
         var zero sdktypes.UsersCouponsListResult
         return zero, err
@@ -167,16 +333,6 @@ func (a *BillingApi) UsersBalanceAdjustmentsCreate(userId string, body sdktypes.
         return zero, err
     }
     return decodeResult[sdktypes.UsersBalanceAdjustmentsCreateResult](raw)
-}
-
-// List recharge records
-func (a *BillingApi) VipRechargeList() (sdktypes.VipRechargeListResult, error) {
-    raw, err := a.client.Get(BackendApiPath("/billing/vip/recharge"), nil, nil)
-    if err != nil {
-        var zero sdktypes.VipRechargeListResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.VipRechargeListResult](raw)
 }
 
 type PathParameterSpec struct {

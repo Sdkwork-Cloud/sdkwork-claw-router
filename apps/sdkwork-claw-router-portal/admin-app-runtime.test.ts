@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
@@ -12,6 +13,10 @@ import {
 
 const originalFetch = globalThis.fetch;
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
+
+function readPortalFile(relativePath: string): string {
+  return readFileSync(new URL(relativePath, import.meta.url), "utf8");
+}
 
 type CapturedBackendRequest = {
   url: string;
@@ -28,7 +33,7 @@ async function withBackendSdkFetch<T>(
   Object.defineProperty(globalThis, "window", {
     configurable: true,
     enumerable: true,
-    value: {},
+    value: { dispatchEvent: () => true },
   });
   globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url;
@@ -161,6 +166,141 @@ test("admin app form helpers create normalized backend DTOs", () => {
     installSkill: { skillKey: "browser_smoke_admin_skill_pro" },
     releaseNotes: [],
   });
+});
+
+test("admin app management page localizes visible copy", () => {
+  const pageSource = readPortalFile("./packages/sdkwork-claw-router-app-center/src/pages/AppAdmin.tsx");
+  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+
+  for (const key of [
+    "admin.app.title",
+    "admin.app.subtitle",
+    "admin.app.filters.searchPlaceholder",
+    "admin.app.filters.allRuntime",
+    "admin.app.filters.allMarketplace",
+    "admin.app.metrics.total",
+    "admin.app.metrics.active",
+    "admin.app.metrics.published",
+    "admin.app.metrics.draft",
+    "admin.app.table.app",
+    "admin.app.table.delivery",
+    "admin.app.table.lifecycle",
+    "admin.app.table.endpoints",
+    "admin.app.table.actions",
+    "admin.app.state.loading",
+    "admin.app.state.empty",
+    "admin.app.empty.noDescription",
+    "admin.app.modals.createTitle",
+    "admin.app.modals.editTitle",
+    "admin.app.modals.description",
+    "admin.app.fields.name",
+    "admin.app.fields.appKey",
+    "admin.app.fields.version",
+    "admin.app.fields.appType",
+    "admin.app.fields.packageName",
+    "admin.app.fields.bundleId",
+    "admin.app.fields.accessUrl",
+    "admin.app.fields.storeUrl",
+    "admin.app.fields.downloadUrl",
+    "admin.app.fields.iconUrl",
+    "admin.app.fields.projectId",
+    "admin.app.fields.runtimeStatus",
+    "admin.app.fields.marketStatus",
+    "admin.app.fields.description",
+    "admin.app.fields.icon",
+    "admin.app.fields.resourceList",
+    "admin.app.fields.config",
+    "admin.app.fields.platforms",
+    "admin.app.fields.installPlatforms",
+    "admin.app.fields.installSkill",
+    "admin.app.fields.installConfig",
+    "admin.app.fields.releaseNotes",
+    "admin.app.confirm.deleteTitle",
+    "admin.app.confirm.deleteDescription",
+    "admin.app.confirm.deleteConfirm",
+    "admin.app.errors.loadFallback",
+    "admin.app.errors.saveFallback",
+    "admin.app.errors.deleteFallback",
+    "admin.app.errors.actionFallback",
+  ]) {
+    const escaped = key.replaceAll(".", "\\.");
+    assert.match(pageSource, new RegExp(escaped), `${key} must be consumed by AppAdmin`);
+    assert.match(i18nSource, new RegExp(`"${escaped}"`), `${key} must exist in i18n resources`);
+  }
+
+  for (const hardcodedText of [
+    "App Store",
+    "Manage app marketplace publishing, runtime status, delivery metadata, and install endpoints.",
+    "Search apps, keys, packages",
+    "All runtime",
+    "All marketplace",
+    "Total",
+    "Active",
+    "Published",
+    "Draft",
+    "Delivery",
+    "Lifecycle",
+    "Endpoints",
+    "Actions",
+    "Loading apps",
+    "No apps found",
+    "No description",
+    "Delete app",
+    "Create App",
+    "Edit App",
+    "Define store metadata, delivery endpoints, and install configuration.",
+    "Name",
+    "App Key",
+    "Version",
+    "Runtime Status",
+    "Market Status",
+    "Release Notes",
+  ]) {
+    const escaped = hardcodedText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    assert.doesNotMatch(pageSource, new RegExp(`['"\`]${escaped}['"\`]`));
+    assert.doesNotMatch(pageSource, new RegExp(`>\\s*${escaped}\\s*<`));
+  }
+});
+
+test("public app center empty state is localized", () => {
+  const pageSource = readPortalFile("./packages/sdkwork-claw-router-app-center/src/pages/AppCenter.tsx");
+  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+
+  for (const key of [
+    "apps.category",
+    "apps.category.all",
+    "apps.platform",
+    "apps.noResults",
+    "apps.noResultsDesc",
+    "apps.state.loadError",
+    "apps.state.categoriesLoadError",
+    "apps.errors.loadFallback",
+    "apps.errors.categoriesLoadFallback",
+    "apps.sort.popular",
+    "apps.sort.rated",
+    "apps.sort.newest",
+  ]) {
+    const escaped = key.replaceAll(".", "\\.");
+    assert.match(pageSource, new RegExp(escaped), `${key} must be consumed by AppCenter`);
+    assert.match(i18nSource, new RegExp(`"${escaped}"`), `${key} must exist in i18n resources`);
+  }
+
+  for (const hardcodedText of [
+    "No apps found",
+    "Try adjusting your search or filters.",
+    "App categories could not be loaded",
+    "Apps could not be loaded",
+    "Failed to load app categories.",
+    "Failed to load apps.",
+  ]) {
+    const escaped = hardcodedText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    assert.doesNotMatch(pageSource, new RegExp(`['"\`]${escaped}['"\`]`));
+    assert.doesNotMatch(pageSource, new RegExp(`>\\s*${escaped}\\s*<`));
+  }
+
+  assert.doesNotMatch(pageSource, /title="Categories"/);
+  assert.doesNotMatch(pageSource, /title="Platforms"/);
+  assert.doesNotMatch(pageSource, /<option key=\{option\} value=\{option\}>\{option\}<\/option>/);
 });
 
 test("admin app form helpers clear nullable update fields when submitted blank", () => {

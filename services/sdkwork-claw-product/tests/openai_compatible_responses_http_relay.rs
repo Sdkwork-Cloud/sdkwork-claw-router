@@ -4,6 +4,7 @@ use axum::extract::State;
 use axum::http::{HeaderMap, StatusCode};
 use axum::routing::post;
 use axum::{Json, Router};
+use sdkwork_claw_product::domain::ProviderAuthProfile;
 use sdkwork_claw_product::infrastructure::provider::{
     OpenAiCompatibleResponsesRelay, UpstreamProviderEndpoint,
 };
@@ -35,6 +36,9 @@ async fn openai_compatible_responses_relay_posts_provider_model_and_upstream_sec
     let response = relay
         .create_response(ResponsesRelayRequest {
             api_key_id: 101,
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
             pricing_plan_code: "standard".to_owned(),
@@ -43,6 +47,7 @@ async fn openai_compatible_responses_relay_posts_provider_model_and_upstream_sec
             provider_model: "openai/global/gpt-4.1-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+            provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
             request_body: json!({

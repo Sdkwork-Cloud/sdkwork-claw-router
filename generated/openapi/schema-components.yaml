@@ -1,5 +1,638 @@
 components:
   schemas:
+    AiAgentMcpServerRecord:
+      type: object
+      x-table: ai_agent_mcp_server
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        server_code:
+          type: string
+          maxLength: 96
+        name:
+          type: string
+          maxLength: 128
+        description:
+          type: string
+          maxLength: 1024
+        transport_type:
+          type: string
+          x-db-type: enum_int32
+        connection_config:
+          type: object
+          additionalProperties: true
+        credential_ref:
+          type: string
+          maxLength: 256
+        tool_catalog:
+          type: object
+          additionalProperties: true
+        prompt_catalog:
+          type: object
+          additionalProperties: true
+        resource_catalog:
+          type: object
+          additionalProperties: true
+        permission_policy:
+          type: object
+          additionalProperties: true
+        health_status:
+          type: string
+          x-db-type: enum_int32
+        last_checked_at:
+          type: string
+          format: date-time
+        last_error_masked:
+          type: string
+          maxLength: 1024
+    AiAgentMemoryRecord:
+      type: object
+      x-table: ai_agent_memory
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        owner_type:
+          type: string
+          x-db-type: enum_int32
+        owner_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        owner_user_id:
+          type: string
+          format: int64
+        agent_id:
+          type: string
+          format: int64
+        memory_scope:
+          type: string
+          x-db-type: enum_int32
+        memory_type:
+          type: string
+          x-db-type: enum_int32
+        content_ref:
+          type: string
+          maxLength: 512
+        embedding_ref:
+          type: string
+          maxLength: 512
+        memory_hash:
+          type: string
+          maxLength: 128
+        retention_policy:
+          type: object
+          additionalProperties: true
+        expires_at:
+          type: string
+          format: date-time
+        last_used_at:
+          type: string
+          format: date-time
+    AiAgentRecord:
+      type: object
+      x-table: ai_agent
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        owner_user_id:
+          type: string
+          format: int64
+        agent_code:
+          type: string
+          maxLength: 96
+        name:
+          type: string
+          maxLength: 128
+        description:
+          type: string
+          maxLength: 1024
+        visibility:
+          type: string
+          x-db-type: enum_int32
+        default_version_id:
+          type: string
+          format: int64
+        avatar_url:
+          type: string
+          maxLength: 512
+        template_source:
+          type: string
+          maxLength: 128
+        governance_status:
+          type: string
+          x-db-type: enum_int32
+        published_at:
+          type: string
+          format: date-time
+        published_by:
+          type: string
+          format: int64
+    AiAgentRunRecord:
+      type: object
+      x-table: ai_agent_run
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        agent_id:
+          type: string
+          format: int64
+        agent_version_id:
+          type: string
+          format: int64
+        run_uuid:
+          type: string
+          maxLength: 128
+        run_status:
+          type: string
+          x-db-type: enum_int32
+        source_surface:
+          type: string
+          maxLength: 64
+        input_message:
+          type: string
+        output_message:
+          type: string
+        target_modality:
+          type: string
+          x-db-type: enum_int32
+        planner_model:
+          type: string
+          maxLength: 128
+        execution_mode:
+          type: string
+          maxLength: 64
+        started_at:
+          type: string
+          format: date-time
+        completed_at:
+          type: string
+          format: date-time
+        cancelled_at:
+          type: string
+          format: date-time
+        failed_at:
+          type: string
+          format: date-time
+        error_message_masked:
+          type: string
+          maxLength: 1024
+        metering_status:
+          type: string
+          x-db-type: enum_int32
+        usage_fact_id:
+          type: string
+          format: int64
+        total_steps:
+          type: integer
+          format: int32
+        prompt_tokens:
+          type: string
+          format: int64
+        completion_tokens:
+          type: string
+          format: int64
+        cached_tokens:
+          type: string
+          format: int64
+        total_tokens:
+          type: string
+          format: int64
+        image_count:
+          type: string
+          format: int64
+        audio_seconds:
+          type: string
+          format: decimal
+        video_seconds:
+          type: string
+          format: decimal
+    AiAgentRunStepRecord:
+      type: object
+      x-table: ai_agent_run_step
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        run_id:
+          type: string
+          format: int64
+        agent_id:
+          type: string
+          format: int64
+        agent_version_id:
+          type: string
+          format: int64
+        step_index:
+          type: integer
+          format: int32
+        step_type:
+          type: string
+          x-db-type: enum_int32
+        step_status:
+          type: string
+          x-db-type: enum_int32
+        title:
+          type: string
+          maxLength: 128
+        tool_binding_id:
+          type: string
+          format: int64
+        skill_id:
+          type: string
+          format: int64
+        mcp_server_id:
+          type: string
+          format: int64
+        model:
+          type: string
+          maxLength: 128
+        input_snapshot:
+          type: object
+          additionalProperties: true
+        output_snapshot:
+          type: object
+          additionalProperties: true
+        error_message_masked:
+          type: string
+          maxLength: 1024
+        started_at:
+          type: string
+          format: date-time
+        completed_at:
+          type: string
+          format: date-time
+        latency_ms:
+          type: integer
+          format: int32
+        prompt_tokens:
+          type: string
+          format: int64
+        completion_tokens:
+          type: string
+          format: int64
+        cached_tokens:
+          type: string
+          format: int64
+        total_tokens:
+          type: string
+          format: int64
+        image_count:
+          type: string
+          format: int64
+        audio_seconds:
+          type: string
+          format: decimal
+        video_seconds:
+          type: string
+          format: decimal
+        usage_fact_id:
+          type: string
+          format: int64
+    AiAgentToolBindingRecord:
+      type: object
+      x-table: ai_agent_tool_binding
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        agent_id:
+          type: string
+          format: int64
+        agent_version_id:
+          type: string
+          format: int64
+        binding_key:
+          type: string
+          maxLength: 128
+        binding_type:
+          type: string
+          x-db-type: enum_int32
+        skill_id:
+          type: string
+          format: int64
+        mcp_server_id:
+          type: string
+          format: int64
+        tool_name:
+          type: string
+          maxLength: 128
+        permission_policy:
+          type: object
+          additionalProperties: true
+        runtime_config:
+          type: object
+          additionalProperties: true
+        credential_ref:
+          type: string
+          maxLength: 256
+        enabled:
+          type: boolean
+        health_status:
+          type: string
+          x-db-type: enum_int32
+        last_checked_at:
+          type: string
+          format: date-time
+    AiAgentVersionRecord:
+      type: object
+      x-table: ai_agent_version
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        agent_id:
+          type: string
+          format: int64
+        version_no:
+          type: string
+          format: int64
+        release_status:
+          type: string
+          x-db-type: enum_int32
+        system_prompt:
+          type: string
+        model_policy:
+          type: object
+          additionalProperties: true
+        tool_policy:
+          type: object
+          additionalProperties: true
+        memory_policy:
+          type: object
+          additionalProperties: true
+        mcp_policy:
+          type: object
+          additionalProperties: true
+        skill_policy:
+          type: object
+          additionalProperties: true
+        runtime_policy:
+          type: object
+          additionalProperties: true
+        config_hash:
+          type: string
+          maxLength: 128
+        published_at:
+          type: string
+          format: date-time
+        published_by:
+          type: string
+          format: int64
     AiBillingMeterRecord:
       type: object
       x-table: ai_billing_meter
@@ -4446,6 +5079,42 @@ components:
         published_at:
           type: string
           format: date-time
+    IamApiKeyRecord:
+      type: object
+      x-table: iam_api_key
+      x-domain: iam
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          maxLength: 128
+        tenant_id:
+          type: string
+          maxLength: 128
+        user_id:
+          type: string
+          maxLength: 128
+        name:
+          type: string
+          maxLength: 128
+        key_hash:
+          type: string
+          maxLength: 128
+        permission_scope_json:
+          type: object
+          additionalProperties: true
+        status:
+          type: string
+          maxLength: 32
+        expires_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
     IamAuditEventRecord:
       type: object
       x-table: iam_audit_event
@@ -4522,6 +5191,35 @@ components:
           type: string
           format: date-time
         updated_at:
+          type: string
+          format: date-time
+    IamDeviceRecord:
+      type: object
+      x-table: iam_device
+      x-domain: iam
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          maxLength: 128
+        tenant_id:
+          type: string
+          maxLength: 128
+        user_id:
+          type: string
+          maxLength: 128
+        device_fingerprint:
+          type: string
+          maxLength: 256
+        name:
+          type: string
+          maxLength: 256
+        trusted:
+          type: boolean
+        last_seen_at:
+          type: string
+          format: date-time
+        created_at:
           type: string
           format: date-time
     IamGatewayAccessPolicyRecord:
@@ -5025,6 +5723,36 @@ components:
         last_hit_at:
           type: string
           format: date-time
+    IamMfaFactorRecord:
+      type: object
+      x-table: iam_mfa_factor
+      x-domain: iam
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          maxLength: 128
+        tenant_id:
+          type: string
+          maxLength: 128
+        user_id:
+          type: string
+          maxLength: 128
+        factor_type:
+          type: string
+          maxLength: 32
+        secret_ref:
+          type: string
+          maxLength: 512
+        status:
+          type: string
+          maxLength: 32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
     IamOrganizationMemberRecord:
       type: object
       x-table: iam_organization_member
@@ -5052,6 +5780,12 @@ components:
         joined_at:
           type: string
           format: date-time
+        left_at:
+          type: string
+          format: date-time
+        remark:
+          type: string
+          maxLength: 500
     IamOrganizationRecord:
       type: object
       x-table: iam_organization
@@ -5076,6 +5810,108 @@ components:
         path:
           type: string
           maxLength: 1024
+        status:
+          type: string
+          maxLength: 32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+    IamPermissionRecord:
+      type: object
+      x-table: iam_permission
+      x-domain: iam
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          maxLength: 128
+        code:
+          type: string
+          maxLength: 128
+        name:
+          type: string
+          maxLength: 256
+        resource:
+          type: string
+          maxLength: 128
+        action:
+          type: string
+          maxLength: 128
+        created_at:
+          type: string
+          format: date-time
+    IamPolicyRecord:
+      type: object
+      x-table: iam_policy
+      x-domain: iam
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          maxLength: 128
+        tenant_id:
+          type: string
+          maxLength: 128
+        code:
+          type: string
+          maxLength: 128
+        name:
+          type: string
+          maxLength: 256
+        policy_json:
+          type: object
+          additionalProperties: true
+        status:
+          type: string
+          maxLength: 32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+    IamRolePermissionRecord:
+      type: object
+      x-table: iam_role_permission
+      x-domain: iam
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          maxLength: 128
+        tenant_id:
+          type: string
+          maxLength: 128
+        role_id:
+          type: string
+          maxLength: 128
+        permission_id:
+          type: string
+          maxLength: 128
+        created_at:
+          type: string
+          format: date-time
+    IamRoleRecord:
+      type: object
+      x-table: iam_role
+      x-domain: iam
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          maxLength: 128
+        tenant_id:
+          type: string
+          maxLength: 128
+        code:
+          type: string
+          maxLength: 128
+        name:
+          type: string
+          maxLength: 256
         status:
           type: string
           maxLength: 32
@@ -5417,6 +6253,30 @@ components:
           type: string
           format: date-time
         updated_at:
+          type: string
+          format: date-time
+    IamUserRoleRecord:
+      type: object
+      x-table: iam_user_role
+      x-domain: iam
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          maxLength: 128
+        tenant_id:
+          type: string
+          maxLength: 128
+        user_id:
+          type: string
+          maxLength: 128
+        role_id:
+          type: string
+          maxLength: 128
+        organization_id:
+          type: string
+          maxLength: 128
+        created_at:
           type: string
           format: date-time
     IamUserSecuritySettingRecord:
@@ -7294,12 +8154,6 @@ components:
         latest_published_at:
           type: string
           format: date-time
-    PlusApiKeyRecord:
-      type: object
-      x-table: plus_api_key
-      x-domain: legacy
-      x-generated-by-this-project: false
-      properties: {}
     PlusAppRecord:
       type: object
       x-table: plus_app
@@ -7594,12 +8448,6 @@ components:
       x-domain: legacy
       x-generated-by-this-project: false
       properties: {}
-    PlusOauthAccountRecord:
-      type: object
-      x-table: plus_oauth_account
-      x-domain: legacy
-      x-generated-by-this-project: false
-      properties: {}
     PlusOrderDispatchRuleRecord:
       type: object
       x-table: plus_order_dispatch_rule
@@ -7624,18 +8472,6 @@ components:
       x-domain: legacy
       x-generated-by-this-project: false
       properties: {}
-    PlusOrganizationMemberRecord:
-      type: object
-      x-table: plus_organization_member
-      x-domain: legacy
-      x-generated-by-this-project: false
-      properties: {}
-    PlusOrganizationRecord:
-      type: object
-      x-table: plus_organization
-      x-domain: legacy
-      x-generated-by-this-project: false
-      properties: {}
     PlusPartnerRecord:
       type: object
       x-table: plus_partner
@@ -7654,12 +8490,6 @@ components:
       x-domain: legacy
       x-generated-by-this-project: false
       properties: {}
-    PlusPermissionRecord:
-      type: object
-      x-table: plus_permission
-      x-domain: legacy
-      x-generated-by-this-project: false
-      properties: {}
     PlusPositionRecord:
       type: object
       x-table: plus_position
@@ -7675,18 +8505,6 @@ components:
     PlusRefundRecord:
       type: object
       x-table: plus_refund
-      x-domain: legacy
-      x-generated-by-this-project: false
-      properties: {}
-    PlusRolePermissionRecord:
-      type: object
-      x-table: plus_role_permission
-      x-domain: legacy
-      x-generated-by-this-project: false
-      properties: {}
-    PlusRoleRecord:
-      type: object
-      x-table: plus_role
       x-domain: legacy
       x-generated-by-this-project: false
       properties: {}
@@ -7711,12 +8529,6 @@ components:
     PlusSkuRecord:
       type: object
       x-table: plus_sku
-      x-domain: legacy
-      x-generated-by-this-project: false
-      properties: {}
-    PlusTenantRecord:
-      type: object
-      x-table: plus_tenant
       x-domain: legacy
       x-generated-by-this-project: false
       properties: {}
@@ -7756,18 +8568,6 @@ components:
     PlusUserCouponRecord:
       type: object
       x-table: plus_user_coupon
-      x-domain: legacy
-      x-generated-by-this-project: false
-      properties: {}
-    PlusUserRecord:
-      type: object
-      x-table: plus_user
-      x-domain: legacy
-      x-generated-by-this-project: false
-      properties: {}
-    PlusUserRoleRecord:
-      type: object
-      x-table: plus_user_role
       x-domain: legacy
       x-generated-by-this-project: false
       properties: {}

@@ -15,7 +15,7 @@ def _append_query_string(path: str, raw_query_string: str) -> str:
 
 class CommunicationApi:
     """communication communication API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.notifications = CommunicationNotificationsApi(client)
@@ -23,7 +23,7 @@ class CommunicationApi:
 
 class CommunicationNotificationsApi:
     """communication communication.notifications API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 

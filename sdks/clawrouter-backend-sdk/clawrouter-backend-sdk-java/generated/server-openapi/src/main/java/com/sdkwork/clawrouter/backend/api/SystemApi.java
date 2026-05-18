@@ -13,6 +13,22 @@ public class SystemApi {
         this.client = client;
     }
 
+    /** Retrieve IAM auth runtime settings */
+    public AuthSettingsRetrieveResult authSettingsRetrieve() throws Exception {
+        Object raw = client.get(ApiPaths.backendPath("/system/auth/settings"));
+        return client.convertValue(raw, new TypeReference<AuthSettingsRetrieveResult>() {});
+    }
+
+    /** Update IAM auth runtime settings */
+    public AuthSettingsUpdateResult authSettingsUpdate(AdminAuthSettingsUpdateRequest body, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.patch(ApiPaths.backendPath("/system/auth/settings"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<AuthSettingsUpdateResult>() {});
+    }
+
     /** List dashboard data */
     public DashboardAdminOverviewRetrieveResult dashboardAdminOverviewRetrieve() throws Exception {
         Object raw = client.get(ApiPaths.backendPath("/system/dashboard/admin/overview"));
@@ -124,26 +140,6 @@ public class SystemApi {
         ));
         Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/system/records"), query));
         return client.convertValue(raw, new TypeReference<RecordsListResult>() {});
-    }
-
-    /** Create user */
-    public UsersCreateResult usersCreate(AdminUserCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/system/users"), body, null, requestHeaders, "application/json");
-        return client.convertValue(raw, new TypeReference<UsersCreateResult>() {});
-    }
-
-    /** Update user */
-    public UsersUpdateResult usersUpdate(AdminUserUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/system/users"), body, null, requestHeaders, "application/json");
-        return client.convertValue(raw, new TypeReference<UsersUpdateResult>() {});
     }
 
     private record PathParameterSpec(String name, String style, boolean explode) {}

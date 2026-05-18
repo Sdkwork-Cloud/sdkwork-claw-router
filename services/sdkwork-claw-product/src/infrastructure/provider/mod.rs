@@ -10,4 +10,6 @@ pub use openai_compatible_relay::{
     UpstreamProviderEndpoint, DEFAULT_HEALTH_PROBE_TIMEOUT_MILLIS,
     DEFAULT_PROVIDER_RESPONSE_TIMEOUT_MILLIS,
 };
-pub use provider_secret_map_resolver::ProviderSecretMapResolver;
+pub use provider_secret_map_resolver::{
+    ProviderSecretMapResolver, RefreshableProviderSecretMapResolver,
+};

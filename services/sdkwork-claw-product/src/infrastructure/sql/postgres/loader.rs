@@ -1,9 +1,15 @@
+use std::collections::BTreeMap;
+
 use sqlx::PgPool;
 
-use crate::domain::DomainError;
+use crate::application::ApiKeySecretCodec;
+use crate::domain::{
+    DomainError, DomainResult, DEFAULT_PROVIDER_CIRCUIT_BREAKER_RECOVERY_WINDOW_SECONDS,
+};
 use crate::infrastructure::sql::catalog::{PricingCatalogRows, SqlPricingCatalogSnapshot};
 use crate::infrastructure::sql::postgres::error::PostgresCatalogLoadError;
 use crate::infrastructure::sql::postgres::row_mapping;
+use crate::infrastructure::sql::rows::GatewayApiKeyRow;
 use crate::infrastructure::sql::PricingCatalogSql;
 use crate::ports::{
     ApiKeyManagementReadFuture, GatewayApiKeyManagementReadStore, GatewayApiKeyManagementSnapshot,
@@ -11,11 +17,35 @@ use crate::ports::{
 
 pub struct PostgresPricingCatalogLoader {
     pool: PgPool,
+    api_key_secret_codec: Option<std::sync::Arc<dyn ApiKeySecretCodec + Send + Sync>>,
+    circuit_breaker_recovery_window_seconds: i64,
 }
 
 impl PostgresPricingCatalogLoader {
     pub fn new(pool: PgPool) -> Self {
-        Self { pool }
+        Self {
+            pool,
+            api_key_secret_codec: None,
+            circuit_breaker_recovery_window_seconds:
+                default_circuit_breaker_recovery_window_seconds(),
+        }
+    }
+
+    pub fn with_api_key_secret_codec(
+        pool: PgPool,
+        api_key_secret_codec: std::sync::Arc<dyn ApiKeySecretCodec + Send + Sync>,
+    ) -> Self {
+        Self {
+            pool,
+            api_key_secret_codec: Some(api_key_secret_codec),
+            circuit_breaker_recovery_window_seconds:
+                default_circuit_breaker_recovery_window_seconds(),
+        }
+    }
+
+    pub fn with_circuit_breaker_recovery_window_seconds(mut self, seconds: u64) -> Self {
+        self.circuit_breaker_recovery_window_seconds = i64::try_from(seconds).unwrap_or(i64::MAX);
+        self
     }
 
     pub async fn load_snapshot(
@@ -28,11 +58,13 @@ impl PostgresPricingCatalogLoader {
             provider_routes: row_mapping::load_provider_routes(
                 &self.pool,
                 PricingCatalogSql::load_provider_routes(),
+                self.circuit_breaker_recovery_window_seconds,
             )
             .await?,
             provider_account_pool_routes: row_mapping::load_provider_account_pool_routes(
                 &self.pool,
                 PricingCatalogSql::load_provider_account_pool_routes(),
+                self.circuit_breaker_recovery_window_seconds,
             )
             .await?,
             routing_policies: row_mapping::load_routing_policies(
@@ -55,8 +87,7 @@ impl PostgresPricingCatalogLoader {
                 PricingCatalogSql::load_api_key_groups(),
             )
             .await?,
-            api_keys: row_mapping::load_api_keys(&self.pool, PricingCatalogSql::load_api_keys())
-                .await?,
+            api_keys: self.load_api_key_rows().await?,
             access_policies: row_mapping::load_access_policies(
                 &self.pool,
                 PricingCatalogSql::load_access_policies(),
@@ -74,8 +105,100 @@ impl PostgresPricingCatalogLoader {
             .await?,
             prices: row_mapping::load_prices(&self.pool, PricingCatalogSql::load_prices()).await?,
         };
-        Ok(SqlPricingCatalogSnapshot::from_rows(rows)?)
+        let managed_provider_secrets = managed_provider_secrets_from_rows(
+            &rows.provider_routes,
+            &rows.provider_account_pool_routes,
+            self.api_key_secret_codec.as_deref(),
+        )?;
+        Ok(
+            SqlPricingCatalogSnapshot::from_rows_and_managed_provider_secrets(
+                rows,
+                managed_provider_secrets,
+            )?,
+        )
     }
+
+    async fn load_api_key_rows(&self) -> Result<Vec<GatewayApiKeyRow>, PostgresCatalogLoadError> {
+        let rows =
+            row_mapping::load_api_keys(&self.pool, PricingCatalogSql::load_api_keys()).await?;
+        rows.into_iter()
+            .map(|row| decode_api_key_row_copyable_key(row, self.api_key_secret_codec.as_deref()))
+            .collect::<DomainResult<Vec<_>>>()
+            .map_err(PostgresCatalogLoadError::from)
+    }
+}
+
+fn default_circuit_breaker_recovery_window_seconds() -> i64 {
+    i64::try_from(DEFAULT_PROVIDER_CIRCUIT_BREAKER_RECOVERY_WINDOW_SECONDS).unwrap_or(i64::MAX)
+}
+
+fn managed_provider_secrets_from_rows(
+    provider_routes: &[crate::infrastructure::sql::rows::ModelProviderRouteRow],
+    provider_account_pool_routes: &[crate::infrastructure::sql::rows::ProviderAccountPoolRouteRow],
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+) -> DomainResult<BTreeMap<String, String>> {
+    let mut secrets = BTreeMap::new();
+    for (secret_ref, auth_config_json) in provider_routes
+        .iter()
+        .filter_map(|row| {
+            row.secret_ref
+                .as_deref()
+                .zip(row.auth_config_json.as_deref())
+        })
+        .chain(provider_account_pool_routes.iter().filter_map(|row| {
+            row.secret_ref
+                .as_deref()
+                .zip(row.auth_config_json.as_deref())
+        }))
+    {
+        collect_managed_provider_secret(
+            &mut secrets,
+            secret_ref,
+            auth_config_json,
+            api_key_secret_codec,
+        )?;
+    }
+    Ok(secrets)
+}
+
+fn collect_managed_provider_secret(
+    secrets: &mut BTreeMap<String, String>,
+    secret_ref: &str,
+    auth_config_json: &str,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+) -> DomainResult<()> {
+    let Some(ciphertext) = managed_provider_secret_ciphertext(auth_config_json)? else {
+        return Ok(());
+    };
+    let Some(api_key_secret_codec) = api_key_secret_codec else {
+        return Err(DomainError::new(
+            "managed provider account secret requires an encrypted secret codec",
+        ));
+    };
+    secrets.insert(
+        secret_ref.trim().to_owned(),
+        api_key_secret_codec.decode_secret(&ciphertext)?,
+    );
+    Ok(())
+}
+
+fn managed_provider_secret_ciphertext(auth_config_json: &str) -> DomainResult<Option<String>> {
+    let auth_config_json = auth_config_json.trim();
+    if auth_config_json.is_empty() {
+        return Ok(None);
+    }
+    let value: serde_json::Value = serde_json::from_str(auth_config_json).map_err(|error| {
+        DomainError::new(format!(
+            "integration_provider_account.auth_config must be valid JSON: {error}"
+        ))
+    })?;
+    Ok(value
+        .get("secretMaterialCiphertext")
+        .or_else(|| value.get("providerSecretCiphertext"))
+        .and_then(serde_json::Value::as_str)
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned))
 }
 
 impl GatewayApiKeyManagementReadStore for PostgresPricingCatalogLoader {
@@ -93,4 +216,18 @@ impl GatewayApiKeyManagementReadStore for PostgresPricingCatalogLoader {
 
 fn postgres_load_error(error: PostgresCatalogLoadError) -> DomainError {
     DomainError::new(error.to_string())
+}
+
+fn decode_api_key_row_copyable_key(
+    row: GatewayApiKeyRow,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+) -> DomainResult<GatewayApiKeyRow> {
+    let Some(copyable_key_ciphertext) = row.copyable_key.as_deref() else {
+        return Ok(row);
+    };
+    let Some(api_key_secret_codec) = api_key_secret_codec else {
+        return Ok(row.with_copyable_key(None));
+    };
+    let copyable_key = api_key_secret_codec.decode_secret(copyable_key_ciphertext)?;
+    Ok(row.with_copyable_key(Some(copyable_key)))
 }

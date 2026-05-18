@@ -9,28 +9,17 @@ import {
   ChevronLeft,
   ChevronRight,
   Clock,
-  Crop,
   Download,
-  Edit3,
-  Eraser,
   FileAudio,
-  Frame,
   Headphones,
   Image as ImageIcon,
-  Maximize,
-  Mic,
+  MessageSquare,
   MoreHorizontal,
   Music,
-  PlaySquare,
-  RefreshCw,
   Search,
   Share2,
-  Sparkles,
-  Star,
   Video,
-  Wand2,
   X,
-  Zap,
 } from 'lucide-react';
 import { AgentView } from '../components/views/AgentView';
 import { ImageView } from '../components/views/ImageView';
@@ -38,53 +27,35 @@ import { VideoView } from '../components/views/VideoView';
 import { MusicView } from '../components/views/MusicView';
 import { AudioView } from '../components/views/AudioView';
 import { SfxView } from '../components/views/SfxView';
+import { ChatPage } from '../components/chat/ChatPage';
 import { IconSidebarItem } from '../components/IconSidebarItem';
-import { PLAYGROUND_READ_ONLY_REASON, ReadOnlyPlaygroundButton } from '../components/ReadOnlyPlaygroundControl';
 import { getDeterministicWaveBarStyle } from '../components/waveform';
 import { PlaygroundService } from '../playgroundService';
 import type { PlaygroundHistoryItem, PlaygroundMedia, PlaygroundModelBucket, PlaygroundModelGroup } from '../playgroundTypes';
+import type {
+  PlaygroundGenerationSubmitInput,
+  PlaygroundGenerationTargetType,
+} from '../playgroundTypes';
 
-export type Modality = 'agent' | 'image' | 'video' | 'music' | 'audio' | 'sfx' | 'package';
+export type Modality = 'agent' | 'chat' | 'image' | 'video' | 'music' | 'audio' | 'sfx' | 'package';
+export type GenerationModality = Exclude<Modality, 'chat'>;
 
 const DEFAULT_FILTER = 'all';
 
-const READ_ONLY_VIDEO_ACTIONS = [
-  { key: 'lipsync', labelKey: 'playground.preview.action.lipsync', icon: Mic },
-  { key: 'bgm', labelKey: 'playground.preview.action.bgm', icon: Music },
-  { key: 'upscale', labelKey: 'playground.preview.action.upscale', icon: Zap },
-  { key: 'sfx', labelKey: 'playground.preview.action.sfx', icon: Activity },
-  { key: 'interpolate', labelKey: 'playground.preview.action.interpolate', icon: RefreshCw },
-] as const;
-
-const READ_ONLY_IMAGE_ACTIONS = [
-  { key: 'generate-video', labelKey: 'playground.preview.action.generateVideo', icon: PlaySquare },
-  { key: 'canvas', labelKey: 'playground.preview.action.canvas', icon: Frame },
-  { key: 'outpaint', labelKey: 'playground.preview.action.outpaint', icon: Wand2, className: 'col-span-2' },
-  { key: 'hd', labelKey: 'playground.preview.action.hd', icon: Maximize },
-  { key: 'fix-details', labelKey: 'playground.preview.action.fixDetails', icon: Sparkles },
-  { key: 'inpaint', labelKey: 'playground.preview.action.inpaint', icon: Crop },
-  { key: 'erase', labelKey: 'playground.preview.action.erase', icon: Eraser },
-] as const;
-
-const READ_ONLY_SECONDARY_ACTIONS = [
-  { key: 'reedit', labelKey: 'playground.preview.action.reedit', icon: Edit3 },
-  { key: 'regenerate', labelKey: 'playground.preview.action.regenerate', icon: RefreshCw },
-] as const;
-
 const typeOptions = [
-  { id: DEFAULT_FILTER, label: 'All' },
-  { id: 'image', label: 'Image' },
-  { id: 'video', label: 'Video' },
-  { id: 'music', label: 'Music' },
-  { id: 'audio', label: 'Audio' },
-  { id: 'sfx', label: 'SFX' },
+  { id: DEFAULT_FILTER, labelKey: 'playground.history.filter.all' },
+  { id: 'image', labelKey: 'common.modality.image' },
+  { id: 'video', labelKey: 'common.modality.video' },
+  { id: 'music', labelKey: 'common.modality.music' },
+  { id: 'audio', labelKey: 'common.modality.audio' },
+  { id: 'sfx', labelKey: 'common.modality.sfx' },
 ] as const;
 
 const timeOptions = [
-  { id: DEFAULT_FILTER, label: 'All' },
-  { id: '7d', label: 'Last 7 days' },
-  { id: '30d', label: 'Last 30 days' },
-  { id: '90d', label: 'Last 90 days' },
+  { id: DEFAULT_FILTER, labelKey: 'playground.history.filter.all' },
+  { id: '7d', labelKey: 'playground.filter.last7Days' },
+  { id: '30d', labelKey: 'playground.filter.last30Days' },
+  { id: '90d', labelKey: 'playground.filter.last90Days' },
 ] as const;
 
 function readMediaUrl(media: PlaygroundMedia | undefined) {
@@ -118,6 +89,7 @@ function getPreviewKind(item: PlaygroundHistoryItem) {
 function toModelBucket(value: Modality): PlaygroundModelBucket | null {
   switch (value) {
     case 'agent':
+    case 'chat':
       return 'llms';
     case 'image':
       return 'images';
@@ -148,17 +120,80 @@ function hasSelectedModel(groups: PlaygroundModelGroup[], bucket: PlaygroundMode
   return groups.some((group) => group[bucket].some((model) => model.id === selectedModelId));
 }
 
+function isWithinTimeFilter(item: PlaygroundHistoryItem, timeFilter: string): boolean {
+  if (timeFilter === DEFAULT_FILTER) {
+    return true;
+  }
+
+  const days = timeFilter === '7d' ? 7 : timeFilter === '30d' ? 30 : timeFilter === '90d' ? 90 : null;
+  if (days === null) {
+    return true;
+  }
+
+  const timestamp = Date.parse(item.updatedAt || item.createdAt || item.date);
+  if (!Number.isFinite(timestamp)) {
+    return false;
+  }
+
+  return timestamp >= Date.now() - days * 24 * 60 * 60 * 1000;
+}
+
+function generationTargetFromHistoryType(type: PlaygroundHistoryItem['type']): PlaygroundGenerationTargetType {
+  if (type === 'images') {
+    return 'image';
+  }
+  return type;
+}
+
+function resolveRegenerationModelId(
+  item: PlaygroundHistoryItem,
+  groups: PlaygroundModelGroup[],
+  selectedModels: Record<Modality, string>,
+): string | undefined {
+  const targetType = generationTargetFromHistoryType(item.type);
+  const bucket = toModelBucket(targetType);
+  if (!bucket) {
+    return selectedModels[targetType] || undefined;
+  }
+  const candidates = [
+    item.modelCatalogKey,
+    item.modelInfo,
+    selectedModels[targetType],
+    readFirstModelId(groups, bucket),
+  ].filter((value): value is string => Boolean(value));
+  return candidates.find((candidate) => hasSelectedModel(groups, bucket, candidate)) || candidates[0];
+}
+
+function previewPromptLabelKey(kind: 'image' | 'video' | 'audio' | null, item: PlaygroundHistoryItem | null): string {
+  if (kind === 'video') {
+    return 'playground.preview.videoPrompt';
+  }
+  if (kind === 'image') {
+    return 'playground.preview.imagePrompt';
+  }
+  if (item?.type === 'music') {
+    return 'playground.preview.musicPrompt';
+  }
+  if (item?.type === 'sfx') {
+    return 'playground.preview.sfxPrompt';
+  }
+  return 'playground.preview.audioPrompt';
+}
+
 export function Playground() {
   const { t } = useTranslation();
   const [modality, setModality] = useState<Modality>('image');
-  const [selectedModality, setSelectedModality] = useState<Modality>('image');
+  const [selectedModality, setSelectedModality] = useState<GenerationModality>('image');
   const [previewItem, setPreviewItem] = useState<PlaygroundHistoryItem | null>(null);
   const [agentHistory, setAgentHistory] = useState<PlaygroundHistoryItem[]>([]);
   const [modelGroups, setModelGroups] = useState<PlaygroundModelGroup[]>([]);
+  const [isAgentSubmitting, setIsAgentSubmitting] = useState(false);
+  const [agentSubmitError, setAgentSubmitError] = useState<string | null>(null);
   const activeIndex = previewItem?.activeIndex || 0;
 
   const [selectedModels, setSelectedModels] = useState<Record<Modality, string>>({
     agent: '',
+    chat: '',
     image: '',
     video: '',
     music: '',
@@ -232,7 +267,7 @@ export function Playground() {
 
     setSelectedModels((current) => {
       let next = current;
-      (['agent', 'image', 'video', 'music', 'audio', 'sfx'] as Modality[]).forEach((targetModality) => {
+      (['agent', 'image', 'video', 'music', 'audio', 'sfx'] as GenerationModality[]).forEach((targetModality) => {
         const bucket = toModelBucket(targetModality);
         if (!bucket || hasSelectedModel(modelGroups, bucket, current[targetModality])) {
           return;
@@ -248,6 +283,10 @@ export function Playground() {
       return next;
     });
   }, [modelGroups]);
+
+  useEffect(() => {
+    setShowModelMenu(false);
+  }, [modality]);
 
   const filteredAgentHistory = useMemo(() => {
     let result = agentHistory;
@@ -266,15 +305,49 @@ export function Playground() {
       });
     }
 
+    result = result.filter((item) => isWithinTimeFilter(item, timeFilter));
+
     return result;
-  }, [searchQuery, typeFilter]);
+  }, [agentHistory, searchQuery, timeFilter, typeFilter]);
 
   const updateSelectedModel = (targetModality: Modality) => (model: string) => {
     setSelectedModels((current) => ({ ...current, [targetModality]: model }));
   };
 
+  const openAgentView = () => {
+    setModality('agent');
+    setSelectedModality('agent');
+  };
+
+  const submitAgentGeneration = async ({
+    prompt,
+    selectedModality: inputModality,
+    selectedModel,
+    generationConfig,
+    referenceImages,
+  }: PlaygroundGenerationSubmitInput) => {
+    setAgentSubmitError(null);
+    setIsAgentSubmitting(true);
+    try {
+      const modelId = selectedModel || selectedModels[inputModality] || selectedModels.agent || undefined;
+      const result = await PlaygroundService.runAgentGeneration({
+        prompt,
+        targetType: inputModality === 'agent' ? undefined : inputModality,
+        selectedModel: modelId,
+        generationConfig,
+        referenceImages,
+      });
+      setAgentHistory((current) => [result.item, ...current.filter((item) => item.id !== result.item.id)]);
+    } catch (error) {
+      setAgentSubmitError(error instanceof Error ? error.message : t('playground.agent.submitError'));
+      throw error;
+    } finally {
+      setIsAgentSubmitting(false);
+    }
+  };
+
   const renderFilterOptions = (
-    options: readonly { id: string; label: string }[],
+    options: readonly { id: string; labelKey: string }[],
     activeValue: string,
     onSelect: (value: string) => void,
   ) => (
@@ -288,7 +361,7 @@ export function Playground() {
           }}
           className="flex items-center justify-between rounded-lg px-3 py-2.5 text-left text-[15px] text-slate-200 transition-colors hover:bg-[#2a2a2a]"
         >
-          {option.label}
+          {t(option.labelKey)}
           {activeValue === option.id && <Check className="h-4 w-4 text-white" />}
         </button>
       ))}
@@ -300,11 +373,51 @@ export function Playground() {
   const previewImageUrl = previewKind === 'image' ? previewItem?.images?.[activeIndex] : undefined;
   const previewAudioUrl = previewKind === 'audio' ? previewItem?.url : undefined;
   const previewThumbnails = previewKind === 'video' ? previewItem?.videos : previewItem?.images;
+  const previewAssetUrl = previewVideoUrl || previewImageUrl || previewAudioUrl || '';
+
+  const downloadPreviewAsset = async () => {
+    if (!previewAssetUrl) {
+      return;
+    }
+    const anchor = document.createElement('a');
+    anchor.href = previewAssetUrl;
+    anchor.download = `${previewItem?.id || 'playground-asset'}`;
+    anchor.rel = 'noopener noreferrer';
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+  };
+
+  const sharePreviewAsset = async () => {
+    if (!previewAssetUrl) {
+      return;
+    }
+    if (navigator.share) {
+      await navigator.share({
+        text: previewItem?.prompt || t('playground.preview.details'),
+        url: previewAssetUrl,
+      });
+      return;
+    }
+    await navigator.clipboard.writeText(previewAssetUrl);
+  };
+
+  const regeneratePreviewAsset = async () => {
+    if (!previewItem?.prompt) {
+      return;
+    }
+    await submitAgentGeneration({
+      prompt: previewItem.prompt,
+      selectedModality: generationTargetFromHistoryType(previewItem.type),
+      selectedModel: resolveRegenerationModelId(previewItem, modelGroups, selectedModels),
+    });
+  };
 
   return (
     <div className="theme-aware-dark-surface flex h-[100dvh] w-full overflow-hidden bg-slate-50 dark:bg-[#0a0a0a] pt-[58px]">
       <div className="z-20 flex w-[80px] shrink-0 flex-col items-center gap-4 border-r border-white/5 bg-[#111111] py-4">
-        <IconSidebarItem active={modality === 'agent'} icon={<Bot className="h-5 w-5" />} label={t('playground.modality.agent')} onClick={() => setModality('agent')} isPrimary />
+        <IconSidebarItem active={modality === 'agent'} icon={<Bot className="h-5 w-5" />} label={t('playground.modality.agent')} onClick={openAgentView} isPrimary />
+        <IconSidebarItem active={modality === 'chat'} icon={<MessageSquare className="h-5 w-5" />} label={t('playground.modality.chat')} onClick={() => setModality('chat')} />
         <div className="my-1 h-px w-8 bg-white/10" />
         <IconSidebarItem active={modality === 'image'} icon={<ImageIcon className="h-5 w-5" />} label={t('playground.modality.image')} onClick={() => setModality('image')} />
         <IconSidebarItem active={modality === 'video'} icon={<Video className="h-5 w-5" />} label={t('playground.modality.video')} onClick={() => setModality('video')} />
@@ -329,7 +442,7 @@ export function Playground() {
                   type="text"
                   value={searchQuery}
                   onChange={(event) => setSearchQuery(event.target.value)}
-                  placeholder="Search history..."
+                  placeholder={t('playground.history.searchPlaceholder')}
                   className="w-48 border-none bg-transparent px-2 text-sm text-white outline-none placeholder:text-slate-500"
                 />
               )}
@@ -341,18 +454,18 @@ export function Playground() {
                   onClick={() => setOpenFilter(openFilter === 'time' ? null : 'time')}
                   className={`flex items-center gap-1 rounded-md px-3 py-1.5 text-sm transition-colors ${openFilter === 'time' ? 'bg-[#2a2a2a] text-white' : 'text-slate-300 hover:text-white'}`}
                 >
-                  Time <ChevronDown className={`h-4 w-4 transition-transform ${openFilter === 'time' ? 'rotate-180' : ''}`} />
+                  {t('playground.filter.time')} <ChevronDown className={`h-4 w-4 transition-transform ${openFilter === 'time' ? 'rotate-180' : ''}`} />
                 </button>
                 {openFilter === 'time' && (
                   <div className="absolute right-0 top-full z-50 mt-2 w-64 rounded-xl border border-white/5 bg-[#1a1a1a] p-3 shadow-2xl">
                     <div className="mb-3 flex items-center gap-2">
                       <div className="flex flex-1 items-center rounded-md bg-[#242424] px-3 py-2">
-                        <span className="w-full text-sm text-slate-500">Start date</span>
+                        <span className="w-full text-sm text-slate-500">{t('playground.filter.startDate')}</span>
                         <Calendar className="h-4 w-4 text-slate-500" />
                       </div>
                       <span className="text-slate-600">-</span>
                       <div className="flex flex-1 items-center rounded-md bg-[#242424] px-3 py-2">
-                        <span className="w-full text-sm text-slate-500">End date</span>
+                        <span className="w-full text-sm text-slate-500">{t('playground.filter.endDate')}</span>
                         <Calendar className="h-4 w-4 text-slate-500" />
                       </div>
                     </div>
@@ -368,7 +481,7 @@ export function Playground() {
                   onClick={() => setOpenFilter(openFilter === 'type' ? null : 'type')}
                   className={`flex items-center gap-1 rounded-md px-3 py-1.5 text-sm transition-colors ${openFilter === 'type' ? 'bg-[#2a2a2a] text-white' : 'text-slate-300 hover:text-white'}`}
                 >
-                  Type <ChevronDown className={`h-4 w-4 transition-transform ${openFilter === 'type' ? 'rotate-180' : ''}`} />
+                  {t('playground.filter.type')} <ChevronDown className={`h-4 w-4 transition-transform ${openFilter === 'type' ? 'rotate-180' : ''}`} />
                 </button>
                 {openFilter === 'type' && (
                   <div className="absolute right-0 top-full z-50 mt-2 w-56 rounded-xl border border-white/5 bg-[#1a1a1a] p-2 shadow-2xl lg:left-0 lg:right-auto">
@@ -390,10 +503,15 @@ export function Playground() {
               modelGroups={modelGroups}
               selectedModels={selectedModels}
               setSelectedModel={updateSelectedModel}
+              onSubmitGeneration={submitAgentGeneration}
+              submitting={isAgentSubmitting}
+              submitError={agentSubmitError}
             />
           )}
 
-          {modality !== 'agent' && (
+          {modality === 'chat' && <ChatPage />}
+
+          {modality !== 'agent' && modality !== 'chat' && (
             <div className="flex h-full w-full flex-col">
               <div className="relative min-h-0 flex-1 overflow-hidden">
                 {modality === 'image' && (
@@ -405,6 +523,9 @@ export function Playground() {
                     setSelectedModelId={updateSelectedModel('image')}
                     showModelMenu={showModelMenu}
                     setShowModelMenu={setShowModelMenu}
+                    onSubmitGeneration={submitAgentGeneration}
+                    submitting={isAgentSubmitting}
+                    submitError={agentSubmitError}
                   />
                 )}
                 {modality === 'video' && (
@@ -416,6 +537,9 @@ export function Playground() {
                     setSelectedModelId={updateSelectedModel('video')}
                     showModelMenu={showModelMenu}
                     setShowModelMenu={setShowModelMenu}
+                    onSubmitGeneration={submitAgentGeneration}
+                    submitting={isAgentSubmitting}
+                    submitError={agentSubmitError}
                   />
                 )}
                 {modality === 'music' && (
@@ -427,6 +551,9 @@ export function Playground() {
                     setSelectedModelId={updateSelectedModel('music')}
                     showModelMenu={showModelMenu}
                     setShowModelMenu={setShowModelMenu}
+                    onSubmitGeneration={submitAgentGeneration}
+                    submitting={isAgentSubmitting}
+                    submitError={agentSubmitError}
                   />
                 )}
                 {modality === 'audio' && (
@@ -438,6 +565,9 @@ export function Playground() {
                     setSelectedModelId={updateSelectedModel('audio')}
                     showModelMenu={showModelMenu}
                     setShowModelMenu={setShowModelMenu}
+                    onSubmitGeneration={submitAgentGeneration}
+                    submitting={isAgentSubmitting}
+                    submitError={agentSubmitError}
                   />
                 )}
                 {modality === 'sfx' && (
@@ -449,6 +579,9 @@ export function Playground() {
                     setSelectedModelId={updateSelectedModel('sfx')}
                     showModelMenu={showModelMenu}
                     setShowModelMenu={setShowModelMenu}
+                    onSubmitGeneration={submitAgentGeneration}
+                    submitting={isAgentSubmitting}
+                    submitError={agentSubmitError}
                   />
                 )}
               </div>
@@ -458,11 +591,6 @@ export function Playground() {
 
         {previewItem && (
           <div className="fixed inset-0 z-[100] flex bg-[#0a0a0a]">
-            <div className="z-20 flex w-[80px] shrink-0 flex-col items-center border-r border-white/5 bg-[#111111] py-4">
-              <div className="mb-8 h-8 w-8 rounded bg-gradient-to-tr from-indigo-500 to-cyan-400" />
-              <IconSidebarItem active={false} icon={<Bot className="h-5 w-5" />} label="Chat" onClick={() => undefined} />
-            </div>
-
             <div className="relative flex flex-1">
               <button
                 onClick={() => setPreviewItem(null)}
@@ -494,7 +622,7 @@ export function Playground() {
                     )}
                     {((previewKind === 'video' && !previewVideoUrl) || (previewKind === 'image' && !previewImageUrl)) && (
                       <div className="flex h-full w-full items-center justify-center rounded-2xl border border-white/5 bg-[#111] text-sm text-slate-500">
-                        Preview asset is unavailable.
+                        {t('playground.preview.assetUnavailable')}
                       </div>
                     )}
 
@@ -554,61 +682,79 @@ export function Playground() {
 
               <div className="custom-scrollbar flex w-[380px] shrink-0 flex-col items-stretch overflow-y-auto border-l border-white/5 bg-[#111111] p-6 pt-20">
                 <div className="mb-8 flex items-center justify-between">
-                  <ReadOnlyPlaygroundButton className="flex items-center gap-2 rounded-lg bg-white/10 px-4 py-2 text-sm font-medium text-white">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      void downloadPreviewAsset();
+                    }}
+                    disabled={!previewAssetUrl}
+                    className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
+                      previewAssetUrl ? 'bg-white/10 text-white hover:bg-white/15' : 'cursor-not-allowed bg-white/5 text-slate-600'
+                    }`}
+                  >
                     <Download className="h-4 w-4" /> {t('playground.preview.download')}
-                  </ReadOnlyPlaygroundButton>
+                  </button>
                   <div className="flex gap-2">
-                    <ReadOnlyPlaygroundButton className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-400">
-                      <Star className="h-4 w-4" />
-                    </ReadOnlyPlaygroundButton>
-                    <ReadOnlyPlaygroundButton className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-400">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        void sharePreviewAsset();
+                      }}
+                      disabled={!previewAssetUrl}
+                      className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors ${
+                        previewAssetUrl ? 'text-slate-400 hover:bg-white/10 hover:text-white' : 'cursor-not-allowed text-slate-700'
+                      }`}
+                      title={t('playground.preview.share')}
+                      aria-label={t('playground.preview.share')}
+                    >
                       <Share2 className="h-4 w-4" />
-                    </ReadOnlyPlaygroundButton>
-                    <ReadOnlyPlaygroundButton className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-400">
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        void regeneratePreviewAsset();
+                      }}
+                      disabled={!previewItem.prompt}
+                      className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors ${
+                        previewItem.prompt ? 'text-slate-400 hover:bg-white/10 hover:text-white' : 'cursor-not-allowed text-slate-700'
+                      }`}
+                      title={t('playground.preview.action.regenerate')}
+                      aria-label={t('playground.preview.action.regenerate')}
+                    >
                       <MoreHorizontal className="h-4 w-4" />
-                    </ReadOnlyPlaygroundButton>
+                    </button>
                   </div>
                 </div>
 
                 <div className="mb-8 flex flex-col gap-3">
                   <h3 className="text-xs font-bold text-slate-500">
-                    {previewKind === 'video' ? t('playground.preview.videoPrompt') : t('playground.preview.imagePrompt')}
+                    {t(previewPromptLabelKey(previewKind, previewItem))}
                   </h3>
-                  <p className="text-[14px] leading-relaxed text-slate-200">{previewItem.prompt || 'No prompt metadata available.'}</p>
+                  <p className="text-[14px] leading-relaxed text-slate-200">{previewItem.prompt || t('playground.preview.noPromptMetadata')}</p>
                   <div className="mt-1 flex items-center gap-2 text-xs font-mono text-slate-500">
-                    <span>{previewItem.modelInfo || 'Contract pending'}</span>
+                    <span>{previewItem.modelInfo || t('common.status.pending')}</span>
                     <span>|</span>
-                    <span className="flex items-center gap-1" title={PLAYGROUND_READ_ONLY_REASON}>
+                    <span className="flex items-center gap-1">
                       {t('playground.preview.details')} <Clock className="h-3 w-3" />
                     </span>
                   </div>
                 </div>
 
                 <div className="mt-auto flex flex-col gap-3 border-t border-white/5 pt-6">
-                  <div className="mb-2 grid grid-cols-2 gap-2">
-                    {(previewKind === 'video' ? READ_ONLY_VIDEO_ACTIONS : READ_ONLY_IMAGE_ACTIONS).map((action) => {
-                      const Icon = action.icon;
-                      return (
-                        <ReadOnlyPlaygroundButton
-                          key={action.key}
-                          className={`flex items-center justify-center gap-2 rounded-xl border border-white/5 bg-[#1a1a1a] py-2.5 text-xs font-medium text-slate-300 ${'className' in action ? action.className : ''}`}
-                        >
-                          <Icon className="h-3.5 w-3.5" /> {t(action.labelKey)}
-                        </ReadOnlyPlaygroundButton>
-                      );
-                    })}
-                  </div>
-
-                  <div className="mt-2 grid grid-cols-2 gap-2 border-t border-white/5 pt-4">
-                    {READ_ONLY_SECONDARY_ACTIONS.map((action) => {
-                      const Icon = action.icon;
-                      return (
-                        <ReadOnlyPlaygroundButton key={action.key} className="flex items-center justify-center gap-2 rounded-xl bg-transparent py-2.5 text-xs font-medium text-slate-300">
-                          <Icon className="h-3.5 w-3.5" /> {t(action.labelKey)}
-                        </ReadOnlyPlaygroundButton>
-                      );
-                    })}
-                  </div>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      void regeneratePreviewAsset();
+                    }}
+                    disabled={!previewItem.prompt || isAgentSubmitting}
+                    className={`flex items-center justify-center rounded-xl py-2.5 text-xs font-medium transition-colors ${
+                      previewItem.prompt && !isAgentSubmitting
+                        ? 'border border-white/5 bg-[#1a1a1a] text-slate-300 hover:bg-white/10 hover:text-white'
+                        : 'cursor-not-allowed border border-white/5 bg-[#151515] text-slate-700'
+                    }`}
+                  >
+                    {t('playground.preview.action.regenerate')}
+                  </button>
                 </div>
               </div>
             </div>

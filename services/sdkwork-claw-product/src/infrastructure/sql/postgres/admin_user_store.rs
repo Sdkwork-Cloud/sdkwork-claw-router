@@ -20,6 +20,9 @@ const TRANSACTION_STATUS_SUCCESS: i32 = 2;
 const TARGET_TYPE_USER: i32 = 61;
 const TARGET_TYPE_API_KEY: i32 = 62;
 const TARGET_TYPE_ACCOUNT: i32 = 63;
+const DEFAULT_API_KEY_GROUP_CODE: &str = "default";
+const DEFAULT_API_KEY_GROUP_NAME: &str = "Default";
+const DEFAULT_PRICING_PLAN_CODE: &str = "standard";
 
 #[derive(Debug, Clone)]
 pub struct PostgresAdminUserStore {
@@ -56,9 +59,21 @@ impl AdminUserStore for PostgresAdminUserStore {
                 self.pool.begin().await.map_err(|error| {
                     store_error("failed to begin admin user transaction", error)
                 })?;
-            ensure_user_identity_available(&mut tx, &command.email, &command.username).await?;
+            ensure_user_identity_available(
+                &mut tx,
+                command.subject.tenant_id,
+                &command.email,
+                &command.username,
+            )
+            .await?;
             let user_id = insert_user(&mut tx, &command).await?;
-            insert_cash_account(&mut tx, &command, user_id).await?;
+            if postgres_table_exists_in_transaction(&mut tx, "plus_account").await? {
+                insert_cash_account(&mut tx, &command, user_id).await?;
+            } else if command.initial_balance != DecimalValue::ZERO {
+                return Err(DomainError::new(
+                    "user balance account store is unavailable",
+                ));
+            }
             insert_audit_log(
                 &mut tx,
                 &command.audit_log_uuid,
@@ -111,8 +126,7 @@ impl AdminUserStore for PostgresAdminUserStore {
                 return Ok(None);
             }
             if let Some(group) = command.group.as_deref() {
-                let role_id = ensure_role(&mut tx, group, &command.requested_at).await?;
-                replace_user_role(&mut tx, &command, role_id).await?;
+                upsert_user_membership_role(&mut tx, &command, group).await?;
             }
             insert_audit_log(
                 &mut tx,
@@ -168,6 +182,11 @@ impl AdminUserStore for PostgresAdminUserStore {
                     store_error("failed to commit balance adjustment transaction", error)
                 })?;
                 return Ok(None);
+            }
+            if !postgres_table_exists_in_transaction(&mut tx, "plus_account").await? {
+                return Err(DomainError::new(
+                    "user balance account store is unavailable",
+                ));
             }
             let account = ensure_cash_account(&mut tx, &command).await?;
             let balance_before = DecimalValue::parse(&account.available_balance)?;
@@ -240,10 +259,12 @@ impl AdminUserStore for PostgresAdminUserStore {
                 return Err(DomainError::not_found("user was not found"));
             }
             ensure_api_key_idempotency_available(&mut tx, &command).await?;
-            let group_id = find_default_api_key_group(
+            let group_id = ensure_default_api_key_group(
                 &mut tx,
                 command.subject.tenant_id,
                 command.subject.organization_id,
+                &command.api_key_uuid,
+                &command.requested_at,
             )
             .await?;
             let api_key_id = insert_api_key(&mut tx, &command, group_id).await?;
@@ -321,66 +342,127 @@ impl AdminUserStore for PostgresAdminUserStore {
 }
 
 async fn list_users(pool: &PgPool, query: ListAdminUsersQuery) -> DomainResult<Vec<AdminUserItem>> {
-    let rows = sqlx::query(
+    let has_legacy_account = postgres_table_exists(pool, "plus_account").await?;
+    let sql = if has_legacy_account {
         r#"
         SELECT
-            u.id,
+            u.id::bigint AS id,
             COALESCE(u.email, '') AS email,
             COALESCE(NULLIF(u.username, ''), u.email, 'user-' || u.id::text) AS username,
-            COALESCE(r.code, 'user') AS role_code,
-            COALESCE(r.code, 'standard') AS group_code,
+            COALESCE(NULLIF(m.role_code, ''), 'user') AS role_code,
+            COALESCE(NULLIF(m.role_code, ''), 'standard') AS group_code,
             COALESCE(a.available_balance, 0)::text AS balance,
-            u.status AS user_status,
+            CASE LOWER(COALESCE(u.status, ''))
+                WHEN 'active' THEN 1
+                ELSE 0
+            END AS user_status,
             COALESCE(le.last_active, u.updated_at, u.created_at)::text AS last_active,
             COALESCE(k.last_used_at::text, '') AS last_used,
             COALESCE(u.created_at::text, '') AS created_at
-        FROM plus_user u
+        FROM iam_user u
+        JOIN iam_organization_member m
+          ON m.tenant_id = u.tenant_id
+         AND m.user_id = u.id
+         AND m.organization_id = $1
+         AND m.status = 'active'
         LEFT JOIN LATERAL (
             SELECT account.id, account.available_balance
             FROM plus_account account
-            WHERE account.user_id = u.id
-              AND account.tenant_id = u.tenant_id
-              AND account.organization_id = u.organization_id
+            WHERE account.user_id = u.id::bigint
+              AND account.tenant_id = $2
+              AND account.organization_id = $3
               AND account.account_type = 1
               AND account.status = 1
             ORDER BY account.updated_at DESC NULLS LAST, account.id DESC
             LIMIT 1
         ) a ON true
-        LEFT JOIN LATERAL (
-            SELECT rr.code
-            FROM plus_user_role ur
-            JOIN plus_role rr ON rr.id = ur.role_id
-            WHERE ur.user_id = u.id
-            ORDER BY CASE WHEN LOWER(rr.code) = 'admin' THEN 0 ELSE 1 END, rr.code ASC, rr.id ASC
-            LIMIT 1
-        ) r ON true
         LEFT JOIN (
             SELECT user_id, MAX(COALESCE(occurred_at, created_at)) AS last_active
             FROM iam_user_login_event
+            WHERE tenant_id = $4
+              AND organization_id = $5
             GROUP BY user_id
-        ) le ON le.user_id = u.id
+        ) le ON le.user_id = u.id::bigint
         LEFT JOIN (
             SELECT user_id, MAX(last_used_at) AS last_used_at
             FROM iam_gateway_api_key
-            WHERE tenant_id = $1
-              AND organization_id = $2
+            WHERE tenant_id = $6
+              AND organization_id = $7
               AND deleted_at IS NULL
             GROUP BY user_id
-        ) k ON k.user_id = u.id
-        WHERE u.tenant_id = $3
-          AND u.organization_id = $4
-          AND u.status IN (0, 1)
-        ORDER BY u.created_at DESC NULLS LAST, u.id DESC
+        ) k ON k.user_id = u.id::bigint
+        WHERE u.tenant_id = $8
+          AND LOWER(COALESCE(u.status, '')) IN ('active', 'banned', 'disabled', 'inactive')
+        ORDER BY u.created_at DESC NULLS LAST, u.id::bigint DESC
         LIMIT 500
-        "#,
-    )
-    .bind(query.subject.tenant_id)
-    .bind(query.subject.organization_id)
-    .bind(query.subject.tenant_id)
-    .bind(query.subject.organization_id)
-    .fetch_all(pool)
-    .await
-    .map_err(|error| store_error("failed to list admin users", error))?;
+        "#
+    } else {
+        r#"
+        SELECT
+            u.id::bigint AS id,
+            COALESCE(u.email, '') AS email,
+            COALESCE(NULLIF(u.username, ''), u.email, 'user-' || u.id::text) AS username,
+            COALESCE(NULLIF(m.role_code, ''), 'user') AS role_code,
+            COALESCE(NULLIF(m.role_code, ''), 'standard') AS group_code,
+            '0' AS balance,
+            CASE LOWER(COALESCE(u.status, ''))
+                WHEN 'active' THEN 1
+                ELSE 0
+            END AS user_status,
+            COALESCE(le.last_active, u.updated_at, u.created_at)::text AS last_active,
+            COALESCE(k.last_used_at::text, '') AS last_used,
+            COALESCE(u.created_at::text, '') AS created_at
+        FROM iam_user u
+        JOIN iam_organization_member m
+          ON m.tenant_id = u.tenant_id
+         AND m.user_id = u.id
+         AND m.organization_id = $1
+         AND m.status = 'active'
+        LEFT JOIN (
+            SELECT user_id, MAX(COALESCE(occurred_at, created_at)) AS last_active
+            FROM iam_user_login_event
+            WHERE tenant_id = $2
+              AND organization_id = $3
+            GROUP BY user_id
+        ) le ON le.user_id = u.id::bigint
+        LEFT JOIN (
+            SELECT user_id, MAX(last_used_at) AS last_used_at
+            FROM iam_gateway_api_key
+            WHERE tenant_id = $4
+              AND organization_id = $5
+              AND deleted_at IS NULL
+            GROUP BY user_id
+        ) k ON k.user_id = u.id::bigint
+        WHERE u.tenant_id = $6
+          AND LOWER(COALESCE(u.status, '')) IN ('active', 'banned', 'disabled', 'inactive')
+        ORDER BY u.created_at DESC NULLS LAST, u.id::bigint DESC
+        LIMIT 500
+        "#
+    };
+    let mut query_builder = sqlx::query(sql);
+    if has_legacy_account {
+        query_builder = query_builder
+            .bind(query.subject.organization_id.to_string())
+            .bind(query.subject.tenant_id)
+            .bind(query.subject.organization_id)
+            .bind(query.subject.tenant_id)
+            .bind(query.subject.organization_id)
+            .bind(query.subject.tenant_id)
+            .bind(query.subject.organization_id)
+            .bind(query.subject.tenant_id.to_string());
+    } else {
+        query_builder = query_builder
+            .bind(query.subject.organization_id.to_string())
+            .bind(query.subject.tenant_id)
+            .bind(query.subject.organization_id)
+            .bind(query.subject.tenant_id)
+            .bind(query.subject.organization_id)
+            .bind(query.subject.tenant_id.to_string());
+    }
+    let rows = query_builder
+        .fetch_all(pool)
+        .await
+        .map_err(|error| store_error("failed to list admin users", error))?;
 
     rows.into_iter().map(user_from_row).collect()
 }
@@ -418,19 +500,22 @@ async fn list_api_keys(
 
 async fn ensure_user_identity_available(
     tx: &mut Transaction<'_, Postgres>,
+    tenant_id: i64,
     email: &str,
     username: &str,
 ) -> DomainResult<()> {
-    let existing_id: Option<i64> = sqlx::query_scalar(
+    let existing_id: Option<String> = sqlx::query_scalar(
         r#"
         SELECT id
-        FROM plus_user
-        WHERE status IN (0, 1)
-          AND (LOWER(email) = LOWER($1) OR LOWER(username) = LOWER($2))
+        FROM iam_user
+        WHERE tenant_id = $1
+          AND LOWER(COALESCE(status, '')) IN ('active', 'banned', 'disabled', 'inactive')
+          AND (LOWER(email) = LOWER($2) OR LOWER(username) = LOWER($3))
         LIMIT 1
         FOR UPDATE
         "#,
     )
+    .bind(tenant_id.to_string())
     .bind(email)
     .bind(username)
     .fetch_optional(&mut **tx)
@@ -447,25 +532,64 @@ async fn insert_user(
     tx: &mut Transaction<'_, Postgres>,
     command: &CreateAdminUserCommand,
 ) -> DomainResult<i64> {
-    sqlx::query_scalar(
+    let user_id = next_numeric_id(tx, "iam_user").await?;
+    let user_id_text = user_id.to_string();
+    let tenant_id = command.subject.tenant_id.to_string();
+    let organization_id = command.subject.organization_id.to_string();
+    sqlx::query(
         r#"
-        INSERT INTO plus_user
-            (uuid, tenant_id, organization_id, created_at, updated_at, v, username, nickname, password, platform, type, email, status)
+        INSERT INTO iam_user
+            (id, tenant_id, username, display_name, email, phone, avatar_url, status, created_at, updated_at)
         VALUES
-            ($1, $2, $3, $4::timestamp AT TIME ZONE 'UTC', $4::timestamp AT TIME ZONE 'UTC', 0, $5, $6, '', 0, 1, $7, 1)
-        RETURNING id
+            ($1, $2, $3, $4, $5, '', '', 'active', $6::timestamp AT TIME ZONE 'UTC', $6::timestamp AT TIME ZONE 'UTC')
         "#,
     )
-    .bind(&command.user_uuid)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
-    .bind(&command.requested_at)
+    .bind(&user_id_text)
+    .bind(&tenant_id)
     .bind(&command.username)
     .bind(&command.username)
     .bind(&command.email)
-    .fetch_one(&mut **tx)
+    .bind(&command.requested_at)
+    .execute(&mut **tx)
     .await
-    .map_err(store_create_error)
+    .map_err(store_create_error)?;
+
+    sqlx::query(
+        r#"
+        INSERT INTO iam_organization_member
+            (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
+        VALUES
+            ($1, $2, $3, $4, 'standard', 'active', $5::timestamp AT TIME ZONE 'UTC')
+        "#,
+    )
+    .bind(format!("member-{user_id_text}-admin-user"))
+    .bind(&tenant_id)
+    .bind(&organization_id)
+    .bind(&user_id_text)
+    .bind(&command.requested_at)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to create IAM organization member", error))?;
+
+    sqlx::query(
+        r#"
+        INSERT INTO iam_user_identity
+            (id, tenant_id, user_id, provider, subject, email, created_at)
+        VALUES
+            ($1, $2, $3, 'email', $4, $5, $6::timestamp AT TIME ZONE 'UTC')
+        "#,
+    )
+    .bind(format!("identity-{user_id_text}-admin-email"))
+    .bind(&tenant_id)
+    .bind(&user_id_text)
+    .bind(&command.email)
+    .bind(&command.email)
+    .bind(&command.requested_at)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to create IAM user email identity", error))?;
+
+    Ok(user_id)
 }
 
 async fn insert_cash_account(
@@ -498,88 +622,65 @@ async fn update_user_row(
     command: &UpdateAdminUserCommand,
 ) -> DomainResult<bool> {
     let status_code = command.status.as_deref().map(user_status_code);
+    let user_id = command.user_id.to_string();
+    let tenant_id = command.subject.tenant_id.to_string();
+    let organization_id = command.subject.organization_id.to_string();
     let result = sqlx::query(
         r#"
-        UPDATE plus_user
+        UPDATE iam_user
         SET username = COALESCE($1, username),
             status = COALESCE($2, status),
-            updated_at = $3::timestamp AT TIME ZONE 'UTC',
-            v = COALESCE(v, 0) + 1
+            updated_at = $3::timestamp AT TIME ZONE 'UTC'
         WHERE id = $4
           AND tenant_id = $5
-          AND organization_id = $6
-          AND status IN (0, 1)
+          AND LOWER(COALESCE(status, '')) IN ('active', 'banned', 'disabled', 'inactive')
+          AND EXISTS (
+              SELECT 1
+              FROM iam_organization_member m
+              WHERE m.tenant_id = iam_user.tenant_id
+                AND m.organization_id = $6
+                AND m.user_id = iam_user.id
+                AND m.status = 'active'
+          )
         "#,
     )
     .bind(command.username.as_deref())
     .bind(status_code)
     .bind(&command.requested_at)
-    .bind(command.user_id)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
+    .bind(&user_id)
+    .bind(&tenant_id)
+    .bind(&organization_id)
     .execute(&mut **tx)
     .await
     .map_err(store_create_error)?;
     Ok(result.rows_affected() > 0)
 }
 
-async fn ensure_role(
-    tx: &mut Transaction<'_, Postgres>,
-    code: &str,
-    requested_at: &str,
-) -> DomainResult<i64> {
-    if let Some(id) =
-        sqlx::query_scalar::<_, i64>("SELECT id FROM plus_role WHERE code = $1 LIMIT 1 FOR UPDATE")
-            .bind(code)
-            .fetch_optional(&mut **tx)
-            .await
-            .map_err(|error| store_error("failed to load user role", error))?
-    {
-        return Ok(id);
-    }
-    sqlx::query_scalar(
-        r#"
-        INSERT INTO plus_role
-            (uuid, created_at, updated_at, v, code, name, status)
-        VALUES
-            ($1, $2::timestamp AT TIME ZONE 'UTC', $2::timestamp AT TIME ZONE 'UTC', 0, $3, $4, 1)
-        RETURNING id
-        "#,
-    )
-    .bind(format!("role-{code}"))
-    .bind(requested_at)
-    .bind(code)
-    .bind(code)
-    .fetch_one(&mut **tx)
-    .await
-    .map_err(store_create_error)
-}
-
-async fn replace_user_role(
+async fn upsert_user_membership_role(
     tx: &mut Transaction<'_, Postgres>,
     command: &UpdateAdminUserCommand,
-    role_id: i64,
+    role_code: &str,
 ) -> DomainResult<()> {
-    sqlx::query("DELETE FROM plus_user_role WHERE user_id = $1")
-        .bind(command.user_id)
-        .execute(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to clear user roles", error))?;
     sqlx::query(
         r#"
-        INSERT INTO plus_user_role
-            (user_id, role_id, created_at, updated_at, operator_id)
+        INSERT INTO iam_organization_member
+            (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
         VALUES
-            ($1, $2, $3::timestamp AT TIME ZONE 'UTC', $3::timestamp AT TIME ZONE 'UTC', $4)
+            ($1, $2, $3, $4, $5, 'active', $6::timestamp AT TIME ZONE 'UTC')
+        ON CONFLICT(tenant_id, organization_id, user_id) DO UPDATE SET
+            role_code = excluded.role_code,
+            status = 'active'
         "#,
     )
-    .bind(command.user_id)
-    .bind(role_id)
+    .bind(format!("member-{}-admin-user", command.user_id))
+    .bind(command.subject.tenant_id.to_string())
+    .bind(command.subject.organization_id.to_string())
+    .bind(command.user_id.to_string())
+    .bind(role_code)
     .bind(&command.requested_at)
-    .bind(command.subject.operator_id)
     .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to assign user role", error))?;
+    .map_err(|error| store_error("failed to assign IAM user membership role", error))?;
     Ok(())
 }
 
@@ -741,27 +842,106 @@ async fn find_default_api_key_group(
     tx: &mut Transaction<'_, Postgres>,
     tenant_id: i64,
     organization_id: i64,
-) -> DomainResult<i64> {
+) -> DomainResult<Option<i64>> {
     sqlx::query_scalar(
         r#"
         SELECT id
         FROM iam_gateway_api_key_group
         WHERE (tenant_id IS NULL OR tenant_id = $1)
           AND (organization_id IS NULL OR organization_id = $2)
+          AND code = $3
           AND status = 1
           AND deleted_at IS NULL
-        ORDER BY CASE WHEN code IN ('standard', 'standard-group', 'default') THEN 0 ELSE 1 END,
-                 updated_at DESC NULLS LAST,
+        ORDER BY updated_at DESC NULLS LAST,
                  id ASC
         LIMIT 1
         "#,
     )
     .bind(tenant_id)
     .bind(organization_id)
+    .bind(DEFAULT_API_KEY_GROUP_CODE)
     .fetch_optional(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to load default api key group", error))?
-    .ok_or_else(|| DomainError::new("api key group is required before creating user api keys"))
+    .map_err(|error| store_error("failed to load default api key group", error))
+}
+
+async fn ensure_default_api_key_group(
+    tx: &mut Transaction<'_, Postgres>,
+    tenant_id: i64,
+    organization_id: i64,
+    _source_uuid: &str,
+    requested_at: &str,
+) -> DomainResult<i64> {
+    if let Some(group_id) = find_default_api_key_group(tx, tenant_id, organization_id).await? {
+        return Ok(group_id);
+    }
+
+    let group_uuid = format!("default-api-key-group-{tenant_id}-{organization_id}");
+    let pricing_plan_id = find_default_pricing_plan_id(tx, tenant_id, organization_id).await?;
+    let row = sqlx::query_scalar(
+        r#"
+        INSERT INTO iam_gateway_api_key_group
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, name, code, description, group_type, environment, pricing_plan_id, pricing_plan_code, rate_multiplier, official_price_multiplier, billing_type, capacity_limit, allowed_origin, metadata)
+        VALUES
+            ($1, $2, $3, 1, 1, $4::timestamptz, $4::timestamptz, 0, $5, $6, '', 1, 1, $7, $8, '1.000000'::numeric, '1.000000'::numeric, 1, 0, '{}'::jsonb, '{}'::jsonb)
+        ON CONFLICT (tenant_id, organization_id, code)
+        DO UPDATE SET
+            status = 1,
+            deleted_at = NULL,
+            name = COALESCE(NULLIF(iam_gateway_api_key_group.name, ''), EXCLUDED.name),
+            pricing_plan_id = COALESCE(iam_gateway_api_key_group.pricing_plan_id, EXCLUDED.pricing_plan_id),
+            pricing_plan_code = COALESCE(NULLIF(iam_gateway_api_key_group.pricing_plan_code, ''), EXCLUDED.pricing_plan_code),
+            rate_multiplier = COALESCE(iam_gateway_api_key_group.rate_multiplier, EXCLUDED.rate_multiplier),
+            official_price_multiplier = COALESCE(iam_gateway_api_key_group.official_price_multiplier, EXCLUDED.official_price_multiplier),
+            updated_at = EXCLUDED.updated_at
+        RETURNING id
+        "#,
+    )
+    .bind(&group_uuid)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(requested_at)
+    .bind(DEFAULT_API_KEY_GROUP_NAME)
+    .bind(DEFAULT_API_KEY_GROUP_CODE)
+    .bind(pricing_plan_id)
+    .bind(DEFAULT_PRICING_PLAN_CODE)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to ensure default api key group", error))?;
+
+    Ok(row)
+}
+
+async fn find_default_pricing_plan_id(
+    tx: &mut Transaction<'_, Postgres>,
+    tenant_id: i64,
+    organization_id: i64,
+) -> DomainResult<Option<i64>> {
+    sqlx::query_scalar(
+        r#"
+        SELECT id
+        FROM ai_pricing_plan
+        WHERE status = 1
+          AND deleted_at IS NULL
+          AND plan_code = $1
+          AND (tenant_id = $2 OR tenant_id = 0)
+          AND (organization_id = $3 OR organization_id = 0)
+        ORDER BY CASE
+            WHEN tenant_id = $2 AND organization_id = $3 THEN 0
+            WHEN tenant_id = $2 AND organization_id = 0 THEN 1
+            ELSE 2
+          END,
+          priority ASC,
+          id ASC
+        LIMIT 1
+        "#,
+    )
+    .bind(DEFAULT_PRICING_PLAN_CODE)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load default api key group pricing plan", error))
 }
 
 async fn insert_api_key(
@@ -832,20 +1012,24 @@ async fn user_exists(
     tenant_id: i64,
     organization_id: i64,
 ) -> DomainResult<bool> {
-    let existing_id: Option<i64> = sqlx::query_scalar(
+    let existing_id: Option<String> = sqlx::query_scalar(
         r#"
-        SELECT id
-        FROM plus_user
-        WHERE id = $1
-          AND tenant_id = $2
-          AND organization_id = $3
-          AND status IN (0, 1)
+        SELECT u.id
+        FROM iam_user u
+        JOIN iam_organization_member m
+          ON m.tenant_id = u.tenant_id
+         AND m.user_id = u.id
+         AND m.organization_id = $1
+         AND m.status = 'active'
+        WHERE u.id = $2
+          AND u.tenant_id = $3
+          AND LOWER(COALESCE(u.status, '')) IN ('active', 'banned', 'disabled', 'inactive')
         LIMIT 1
         "#,
     )
-    .bind(user_id)
-    .bind(tenant_id)
-    .bind(organization_id)
+    .bind(organization_id.to_string())
+    .bind(user_id.to_string())
+    .bind(tenant_id.to_string())
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to check user existence", error))?;
@@ -858,66 +1042,129 @@ async fn load_user_by_id(
     tenant_id: i64,
     organization_id: i64,
 ) -> DomainResult<Option<AdminUserItem>> {
-    let row = sqlx::query(
+    let has_legacy_account = postgres_table_exists_in_transaction(tx, "plus_account").await?;
+    let sql = if has_legacy_account {
         r#"
         SELECT
-            u.id,
+            u.id::bigint AS id,
             COALESCE(u.email, '') AS email,
             COALESCE(NULLIF(u.username, ''), u.email, 'user-' || u.id::text) AS username,
-            COALESCE(r.code, 'user') AS role_code,
-            COALESCE(r.code, 'standard') AS group_code,
+            COALESCE(NULLIF(m.role_code, ''), 'user') AS role_code,
+            COALESCE(NULLIF(m.role_code, ''), 'standard') AS group_code,
             COALESCE(a.available_balance, 0)::text AS balance,
-            u.status AS user_status,
+            CASE LOWER(COALESCE(u.status, ''))
+                WHEN 'active' THEN 1
+                ELSE 0
+            END AS user_status,
             COALESCE(le.last_active, u.updated_at, u.created_at)::text AS last_active,
             COALESCE(k.last_used_at::text, '') AS last_used,
             COALESCE(u.created_at::text, '') AS created_at
-        FROM plus_user u
+        FROM iam_user u
+        JOIN iam_organization_member m
+          ON m.tenant_id = u.tenant_id
+         AND m.user_id = u.id
+         AND m.organization_id = $1
+         AND m.status = 'active'
         LEFT JOIN LATERAL (
             SELECT account.id, account.available_balance
             FROM plus_account account
-            WHERE account.user_id = u.id
-              AND account.tenant_id = u.tenant_id
-              AND account.organization_id = u.organization_id
+            WHERE account.user_id = u.id::bigint
+              AND account.tenant_id = $2
+              AND account.organization_id = $3
               AND account.account_type = 1
               AND account.status = 1
             ORDER BY account.updated_at DESC NULLS LAST, account.id DESC
             LIMIT 1
         ) a ON true
-        LEFT JOIN LATERAL (
-            SELECT rr.code
-            FROM plus_user_role ur
-            JOIN plus_role rr ON rr.id = ur.role_id
-            WHERE ur.user_id = u.id
-            ORDER BY CASE WHEN LOWER(rr.code) = 'admin' THEN 0 ELSE 1 END, rr.code ASC, rr.id ASC
-            LIMIT 1
-        ) r ON true
         LEFT JOIN (
             SELECT user_id, MAX(COALESCE(occurred_at, created_at)) AS last_active
             FROM iam_user_login_event
+            WHERE tenant_id = $4
+              AND organization_id = $5
             GROUP BY user_id
-        ) le ON le.user_id = u.id
+        ) le ON le.user_id = u.id::bigint
         LEFT JOIN (
             SELECT user_id, MAX(last_used_at) AS last_used_at
             FROM iam_gateway_api_key
-            WHERE tenant_id = $1
-              AND organization_id = $2
+            WHERE tenant_id = $6
+              AND organization_id = $7
               AND deleted_at IS NULL
             GROUP BY user_id
-        ) k ON k.user_id = u.id
-        WHERE u.id = $3
-          AND u.tenant_id = $4
-          AND u.organization_id = $5
+        ) k ON k.user_id = u.id::bigint
+        WHERE u.id = $8
+          AND u.tenant_id = $9
+          AND LOWER(COALESCE(u.status, '')) IN ('active', 'banned', 'disabled', 'inactive')
         LIMIT 1
-        "#,
-    )
-    .bind(tenant_id)
-    .bind(organization_id)
-    .bind(user_id)
-    .bind(tenant_id)
-    .bind(organization_id)
-    .fetch_optional(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to load admin user", error))?;
+        "#
+    } else {
+        r#"
+        SELECT
+            u.id::bigint AS id,
+            COALESCE(u.email, '') AS email,
+            COALESCE(NULLIF(u.username, ''), u.email, 'user-' || u.id::text) AS username,
+            COALESCE(NULLIF(m.role_code, ''), 'user') AS role_code,
+            COALESCE(NULLIF(m.role_code, ''), 'standard') AS group_code,
+            '0' AS balance,
+            CASE LOWER(COALESCE(u.status, ''))
+                WHEN 'active' THEN 1
+                ELSE 0
+            END AS user_status,
+            COALESCE(le.last_active, u.updated_at, u.created_at)::text AS last_active,
+            COALESCE(k.last_used_at::text, '') AS last_used,
+            COALESCE(u.created_at::text, '') AS created_at
+        FROM iam_user u
+        JOIN iam_organization_member m
+          ON m.tenant_id = u.tenant_id
+         AND m.user_id = u.id
+         AND m.organization_id = $1
+         AND m.status = 'active'
+        LEFT JOIN (
+            SELECT user_id, MAX(COALESCE(occurred_at, created_at)) AS last_active
+            FROM iam_user_login_event
+            WHERE tenant_id = $2
+              AND organization_id = $3
+            GROUP BY user_id
+        ) le ON le.user_id = u.id::bigint
+        LEFT JOIN (
+            SELECT user_id, MAX(last_used_at) AS last_used_at
+            FROM iam_gateway_api_key
+            WHERE tenant_id = $4
+              AND organization_id = $5
+              AND deleted_at IS NULL
+            GROUP BY user_id
+        ) k ON k.user_id = u.id::bigint
+        WHERE u.id = $6
+          AND u.tenant_id = $7
+          AND LOWER(COALESCE(u.status, '')) IN ('active', 'banned', 'disabled', 'inactive')
+        LIMIT 1
+        "#
+    };
+    let mut query_builder = sqlx::query(sql);
+    if has_legacy_account {
+        query_builder = query_builder
+            .bind(organization_id.to_string())
+            .bind(tenant_id)
+            .bind(organization_id)
+            .bind(tenant_id)
+            .bind(organization_id)
+            .bind(tenant_id)
+            .bind(organization_id)
+            .bind(user_id.to_string())
+            .bind(tenant_id.to_string());
+    } else {
+        query_builder = query_builder
+            .bind(organization_id.to_string())
+            .bind(tenant_id)
+            .bind(organization_id)
+            .bind(tenant_id)
+            .bind(organization_id)
+            .bind(user_id.to_string())
+            .bind(tenant_id.to_string());
+    }
+    let row = query_builder
+        .fetch_optional(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to load admin user", error))?;
     row.map(user_from_row).transpose()
 }
 
@@ -1023,10 +1270,44 @@ struct CashAccountRow {
     available_balance: String,
 }
 
-fn user_status_code(status: &str) -> i32 {
+async fn next_numeric_id(
+    tx: &mut Transaction<'_, Postgres>,
+    table_name: &str,
+) -> DomainResult<i64> {
+    let sql = format!(
+        "SELECT COALESCE(MAX(NULLIF(regexp_replace(id, '[^0-9]', '', 'g'), '')::BIGINT), 0) + 1 AS next_id FROM {table_name}"
+    );
+    sqlx::query_scalar(&sql)
+        .fetch_one(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to allocate IAM numeric id", error))
+}
+
+async fn postgres_table_exists(pool: &PgPool, table: &str) -> DomainResult<bool> {
+    let exists: bool = sqlx::query_scalar("SELECT to_regclass($1) IS NOT NULL")
+        .bind(table)
+        .fetch_one(pool)
+        .await
+        .map_err(|error| store_error("failed to inspect postgres schema", error))?;
+    Ok(exists)
+}
+
+async fn postgres_table_exists_in_transaction(
+    tx: &mut Transaction<'_, Postgres>,
+    table: &str,
+) -> DomainResult<bool> {
+    let exists: bool = sqlx::query_scalar("SELECT to_regclass($1) IS NOT NULL")
+        .bind(table)
+        .fetch_one(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to inspect postgres schema", error))?;
+    Ok(exists)
+}
+
+fn user_status_code(status: &str) -> &'static str {
     match status {
-        "banned" => USER_STATUS_BANNED,
-        _ => USER_STATUS_ACTIVE,
+        "banned" => "banned",
+        _ => "active",
     }
 }
 

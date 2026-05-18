@@ -238,16 +238,26 @@ def serialize_header_primitive(value: Any) -> str:
 
 
 class IntegrationApi:
-    """integration API client."""
-    
+    """integration integration API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.channels = IntegrationChannelsApi(client)
+        self.provider_secrets = IntegrationProviderSecretsApi(client)
+
+
+class IntegrationChannelsApi:
+    """integration integration.channels API client."""
+
     def __init__(self, client: HttpClient):
         self._client = client
 
-    def channels_list(self) -> ChannelsListResult:
+
+    def list(self) -> ChannelsListResult:
         """List channels"""
         return self._client.get(f"/backend/v3/api/integration/channels")
 
-    def channels_create(self, body: AdminChannelCreateRequest, x_request_id: Optional[str] = None) -> ChannelsCreateResult:
+    def create(self, body: AdminChannelCreateRequest, x_request_id: Optional[str] = None) -> ChannelsCreateResult:
         """Create channel"""
         request_headers = build_request_headers(
             {
@@ -257,7 +267,7 @@ class IntegrationApi:
         )
         return self._client.post(f"/backend/v3/api/integration/channels", json=body, headers=request_headers)
 
-    def channels_update(self, body: AdminChannelUpdateRequest, x_request_id: Optional[str] = None) -> ChannelsUpdateResult:
+    def update(self, body: AdminChannelUpdateRequest, x_request_id: Optional[str] = None) -> ChannelsUpdateResult:
         """Update channel"""
         request_headers = build_request_headers(
             {
@@ -267,11 +277,11 @@ class IntegrationApi:
         )
         return self._client.put(f"/backend/v3/api/integration/channels", json=body, headers=request_headers)
 
-    def channels_delete(self, channel_id: str) -> ChannelsDeleteResult:
+    def delete(self, channel_id: str) -> ChannelsDeleteResult:
         """Delete channel"""
         return self._client.delete(f"/backend/v3/api/integration/channels/{serialize_path_parameter(channel_id, {'name': 'channelId', 'style': 'simple', 'explode': False})}")
 
-    def channels_verify(self, channel_id: str, x_request_id: Optional[str] = None) -> ChannelsVerifyResult:
+    def verify(self, channel_id: str, x_request_id: Optional[str] = None) -> ChannelsVerifyResult:
         """Test channel"""
         request_headers = build_request_headers(
             {
@@ -281,7 +291,14 @@ class IntegrationApi:
         )
         return self._client.post(f"/backend/v3/api/integration/channels/{serialize_path_parameter(channel_id, {'name': 'channelId', 'style': 'simple', 'explode': False})}/verify", headers=request_headers)
 
-    def provider_secrets_list(self, provider_code: Optional[str] = None, status: Optional[str] = None) -> ProviderSecretsListResult:
+class IntegrationProviderSecretsApi:
+    """integration integration.provider_secrets API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, provider_code: Optional[str] = None, status: Optional[str] = None) -> ProviderSecretsListResult:
         """List provider secrets"""
         query = build_query_string([
             {'name': 'provider_code', 'value': provider_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -289,7 +306,7 @@ class IntegrationApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/integration/provider_secrets", query))
 
-    def provider_secrets_create(self, body: AdminProviderSecretCreateRequest, x_request_id: Optional[str] = None) -> ProviderSecretsCreateResult:
+    def create(self, body: AdminProviderSecretCreateRequest, x_request_id: Optional[str] = None) -> ProviderSecretsCreateResult:
         """Create provider secret"""
         request_headers = build_request_headers(
             {
@@ -299,7 +316,7 @@ class IntegrationApi:
         )
         return self._client.post(f"/backend/v3/api/integration/provider_secrets", json=body, headers=request_headers)
 
-    def provider_secrets_update(self, body: AdminProviderSecretUpdateRequest, x_request_id: Optional[str] = None) -> ProviderSecretsUpdateResult:
+    def update(self, body: AdminProviderSecretUpdateRequest, x_request_id: Optional[str] = None) -> ProviderSecretsUpdateResult:
         """Update provider secret"""
         request_headers = build_request_headers(
             {
@@ -309,6 +326,6 @@ class IntegrationApi:
         )
         return self._client.put(f"/backend/v3/api/integration/provider_secrets", json=body, headers=request_headers)
 
-    def provider_secrets_delete(self, secret_id: str) -> ProviderSecretsDeleteResult:
+    def delete(self, secret_id: str) -> ProviderSecretsDeleteResult:
         """Delete provider secret"""
         return self._client.delete(f"/backend/v3/api/integration/provider_secrets/{serialize_path_parameter(secret_id, {'name': 'secretId', 'style': 'simple', 'explode': False})}")

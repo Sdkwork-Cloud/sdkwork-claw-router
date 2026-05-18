@@ -70,6 +70,7 @@ const client = new SdkworkBackendClient({
 
 ## API Modules
 
+- `client.agents` - agents API
 - `client.ai` - ai API
 - `client.billing` - billing API
 - `client.content` - content API
@@ -80,6 +81,21 @@ const client = new SdkworkBackendClient({
 - `client.system` - system API
 
 ## Usage Examples
+
+### agents
+
+```typescript
+// List managed agents
+const params = {
+  q: 'q',
+  owner_user_id: 2,
+  status: 'active',
+  visibility: 'private',
+  page: 5,
+  page_size: 6,
+};
+const result = await client.agents.agentDefinitions.list(params);
+```
 
 ### ai
 

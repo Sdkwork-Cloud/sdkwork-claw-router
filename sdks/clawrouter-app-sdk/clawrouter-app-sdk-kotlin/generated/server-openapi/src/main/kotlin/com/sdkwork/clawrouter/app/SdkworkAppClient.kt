@@ -2,6 +2,7 @@ package com.sdkwork.clawrouter.app
 
 import com.sdkwork.common.core.SdkConfig
 import com.sdkwork.clawrouter.app.http.HttpClient
+import com.sdkwork.clawrouter.app.api.AgentsApi
 import com.sdkwork.clawrouter.app.api.AiApi
 import com.sdkwork.clawrouter.app.api.AuthApi
 import com.sdkwork.clawrouter.app.api.BillingApi
@@ -14,6 +15,7 @@ import com.sdkwork.clawrouter.app.api.PlatformApi
 class SdkworkAppClient {
     private val httpClient: HttpClient
 
+    lateinit var agents: AgentsApi
     lateinit var ai: AiApi
     lateinit var auth: AuthApi
     lateinit var billing: BillingApi
@@ -25,6 +27,7 @@ class SdkworkAppClient {
 
     constructor(baseUrl: String) {
         this.httpClient = HttpClient(baseUrl)
+        agents = AgentsApi(httpClient)
         ai = AiApi(httpClient)
         auth = AuthApi(httpClient)
         billing = BillingApi(httpClient)
@@ -37,6 +40,7 @@ class SdkworkAppClient {
 
     constructor(config: SdkConfig) {
         this.httpClient = HttpClient(config)
+        agents = AgentsApi(httpClient)
         ai = AiApi(httpClient)
         auth = AuthApi(httpClient)
         billing = BillingApi(httpClient)

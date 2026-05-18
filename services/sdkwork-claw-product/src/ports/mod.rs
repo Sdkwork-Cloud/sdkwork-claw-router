@@ -1,5 +1,6 @@
 mod account_summary_read_store;
 mod admin_access_group_store;
+mod admin_agent_store;
 mod admin_announcement_store;
 mod admin_api_key_rate_limit_store;
 mod admin_app_store;
@@ -19,9 +20,11 @@ mod admin_skill_store;
 mod admin_user_store;
 mod api_key_command_store;
 mod api_key_management_read_store;
+mod app_agent_registry_store;
 mod app_auth_store;
 mod app_commerce_exchange_store;
 mod app_gateway_traces_read_store;
+mod app_generation_agent_run_store;
 mod app_generation_history_read_store;
 mod app_messages_read_store;
 mod app_providers_read_store;
@@ -65,6 +68,10 @@ pub use admin_access_group_store::{
     AdminAccessGroupCommandFuture, AdminAccessGroupItem, AdminAccessGroupStore,
     AdminAccessGroupSubject, CreateAdminAccessGroupCommand, DeleteAdminAccessGroupCommand,
     ListAdminAccessGroupsQuery, UpdateAdminAccessGroupCommand,
+};
+pub use admin_agent_store::{
+    AdminAgentReadFuture, AdminAgentStore, AdminAgentSubject, GetAdminAgentQuery,
+    ListAdminAgentsQuery,
 };
 pub use admin_announcement_store::{
     AdminAnnouncementCommandFuture, AdminAnnouncementItem, AdminAnnouncementStore,
@@ -149,12 +156,13 @@ pub use admin_skill_store::{
     AdminSkillItem, AdminSkillPackageItem, AdminSkillStore, AdminSkillSubject,
     CreateAdminSkillArtifactCommand, CreateAdminSkillAssetCommand, CreateAdminSkillCategoryCommand,
     CreateAdminSkillCommand, CreateAdminSkillPackageCommand, DeleteAdminSkillArtifactCommand,
-    DeleteAdminSkillAssetCommand, DeleteAdminSkillCommand, DeleteAdminSkillPackageCommand,
-    ListAdminSkillArtifactsQuery, ListAdminSkillAssetsQuery, ListAdminSkillCategoriesQuery,
-    ListAdminSkillPackagesQuery, ListAdminSkillsQuery, ReviewAdminSkillCommand,
-    SetAdminSkillEnabledCommand, SetAdminSkillMarketStatusCommand,
+    DeleteAdminSkillAssetCommand, DeleteAdminSkillCategoryCommand, DeleteAdminSkillCommand,
+    DeleteAdminSkillPackageCommand, ListAdminSkillArtifactsQuery, ListAdminSkillAssetsQuery,
+    ListAdminSkillCategoriesQuery, ListAdminSkillPackagesQuery, ListAdminSkillsQuery,
+    ReviewAdminSkillCommand, SetAdminSkillEnabledCommand, SetAdminSkillMarketStatusCommand,
     SetAdminSkillPackageEnabledCommand, UpdateAdminSkillArtifactCommand,
-    UpdateAdminSkillAssetCommand, UpdateAdminSkillCommand, UpdateAdminSkillPackageCommand,
+    UpdateAdminSkillAssetCommand, UpdateAdminSkillCategoryCommand, UpdateAdminSkillCommand,
+    UpdateAdminSkillPackageCommand,
 };
 pub use admin_user_store::{
     AdjustAdminUserBalanceCommand, AdminUserApiKeyItem, AdminUserCommandFuture, AdminUserItem,
@@ -164,10 +172,16 @@ pub use admin_user_store::{
 };
 pub use api_key_command_store::{
     ApiKeyCommandStoreFuture, CreateGatewayApiKeyCommand, CreatedGatewayApiKey,
-    GatewayApiKeyCommandStore,
+    DeleteGatewayApiKeyCommand, EnsureDefaultApiKeyGroupCommand, GatewayApiKeyCommandStore,
+    UpdateGatewayApiKeyCommand, UpdatedGatewayApiKey,
 };
 pub use api_key_management_read_store::{
     ApiKeyManagementReadFuture, GatewayApiKeyManagementReadStore, GatewayApiKeyManagementSnapshot,
+};
+pub use app_agent_registry_store::{
+    AppAgentCapabilities, AppAgentItem, AppAgentItems, AppAgentRegistryFuture,
+    AppAgentRegistryQuery, AppAgentRegistryStore, AppAgentRegistrySubject, AppAgentVersionItem,
+    CreateAppAgentCommand,
 };
 pub use app_auth_store::{
     AppAuthFuture, AppAuthPasswordResetCodeCommand, AppAuthPasswordResetCommand,
@@ -181,6 +195,12 @@ pub use app_commerce_exchange_store::{
 pub use app_gateway_traces_read_store::{
     AppGatewayTraceItem, AppGatewayTraceItems, AppGatewayTracesReadFuture,
     AppGatewayTracesReadStore, AppGatewayTracesSubject,
+};
+pub use app_generation_agent_run_store::{
+    AppAgentMeteringEvent, AppAgentRunSnapshot, AppAgentRunStepSnapshot, AppAgentSnapshot,
+    AppAgentUsageFactMetadata, AppAgentUsageSummary, AppGenerationAgentRunCommand,
+    AppGenerationAgentRunFuture, AppGenerationAgentRunOutcome, AppGenerationAgentRunStore,
+    AppGenerationReferenceImage,
 };
 pub use app_generation_history_read_store::{
     AppGenerationHistoryItem, AppGenerationHistoryItems, AppGenerationHistoryReadFuture,
@@ -201,9 +221,10 @@ pub use app_routing_channel_command_store::{
     TestAppRoutingChannelCommand, UpdateAppRoutingChannelCommand,
 };
 pub use app_routing_read_store::{
-    AppRoutingApiKeyItem, AppRoutingChannelItem, AppRoutingItems, AppRoutingModelStats,
-    AppRoutingReadFuture, AppRoutingReadStore, AppRoutingRequestTraceItem,
-    AppRoutingRetryPolicyItem, AppRoutingSubject, AppRoutingUsageData, AppRoutingUsageSnapshot,
+    AppRoutingApiKeyItem, AppRoutingChannelItem, AppRoutingCircuitBreakerPolicyItem,
+    AppRoutingItems, AppRoutingModelStats, AppRoutingReadFuture, AppRoutingReadStore,
+    AppRoutingRequestTraceItem, AppRoutingRetryPolicyItem, AppRoutingSubject, AppRoutingUsageData,
+    AppRoutingUsageSnapshot,
 };
 pub use app_routing_strategy_store::{
     AppRoutingMappingRule, AppRoutingStrategyFuture, AppRoutingStrategySnapshot,
@@ -252,9 +273,10 @@ pub use course_store::{
     CourseSectionItem, CourseSubject, CreateCourseApplicationCommand,
 };
 pub use dashboard_overview_read_store::{
-    DashboardAnnouncement, DashboardChartPoint, DashboardOverviewQuery,
-    DashboardOverviewReadFuture, DashboardOverviewReadStore, DashboardOverviewSnapshot,
-    DashboardOverviewSubject, DashboardOverviewSummary, DashboardSparklinePoint, DashboardTopModel,
+    DashboardAnnouncement, DashboardChartPoint, DashboardConfigurationDomain,
+    DashboardOverviewQuery, DashboardOverviewReadFuture, DashboardOverviewReadStore,
+    DashboardOverviewSnapshot, DashboardOverviewSubject, DashboardOverviewSummary,
+    DashboardSparklinePoint, DashboardTopModel,
 };
 pub use embeddings_relay::{
     EmbeddingsRelay, EmbeddingsRelayFuture, EmbeddingsRelayRequest, EmbeddingsRelayResponse,

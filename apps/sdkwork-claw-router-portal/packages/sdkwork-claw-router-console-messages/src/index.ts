@@ -1,1 +1,1 @@
-export * from './MessagesView';
+export { MessagesView, MessagesView as NotificationsView } from './MessagesView';

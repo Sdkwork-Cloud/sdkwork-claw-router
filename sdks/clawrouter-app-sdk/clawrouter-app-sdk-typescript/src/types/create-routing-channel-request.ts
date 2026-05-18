@@ -1,3 +1,4 @@
+import type { ProviderCircuitBreakerPolicy } from './provider-circuit-breaker-policy';
 import type { ProviderRetryPolicy } from './provider-retry-policy';
 
 /** Create routing channel request schema exposed by Claw Router. */
@@ -8,6 +9,8 @@ export interface CreateRoutingChannelRequest {
   baseUrl?: string;
   /** Capabilities field on create routing channel request. */
   capabilities?: ('llm' | 'image' | 'audio' | 'music' | 'sfx' | 'video')[];
+  /** Circuit breaker policy field on create routing channel request. */
+  circuitBreakerPolicy?: ProviderCircuitBreakerPolicy;
   /** Models field on create routing channel request. */
   models: string[];
   /** Name field on create routing channel request. */

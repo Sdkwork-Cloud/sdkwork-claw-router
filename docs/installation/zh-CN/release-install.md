@@ -163,6 +163,9 @@ sdk_archive_root = "/usr/lib/clawrouter/portal/dist/sdk-archives"
 [provider_relay.runtime]
 response_timeout_millis = 120000
 health_probe_timeout_millis = 10000
+catalog_refresh_interval_millis = 5000
+circuit_breaker_recovery_window_millis = 60000
+failure_strategy = "failover"
 
 [provider_relay.retry]
 max_attempts = 2

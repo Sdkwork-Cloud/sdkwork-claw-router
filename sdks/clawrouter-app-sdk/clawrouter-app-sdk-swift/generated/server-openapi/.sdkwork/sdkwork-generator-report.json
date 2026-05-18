@@ -12,18 +12,34 @@
   "mode": "apply",
   "hasChanges": true,
   "hasDestructiveChanges": false,
-  "changeFingerprint": "02615da81a1926eb67b8fcfe0b5d806ddb5fda925e1ca888a4b41f7fcc4cd4fa",
+  "changeFingerprint": "973d3ed9910d333a3579585fcf54cd8cc2553f0317f5c5bd304d1a6431325485",
   "changeImpact": {
     "schemaVersion": 1,
     "areas": [
       "api-surface",
-      "models"
+      "models",
+      "runtime",
+      "build-metadata",
+      "publish-workflow",
+      "documentation",
+      "custom-scaffold",
+      "unknown"
     ],
     "details": [
       {
         "area": "api-surface",
         "paths": [
-          "Sources/API/AiApi.swift"
+          "Sources/API/AgentsApi.swift",
+          "Sources/API/AiApi.swift",
+          "Sources/API/API.swift",
+          "Sources/API/ApiPaths.swift",
+          "Sources/API/AuthApi.swift",
+          "Sources/API/BillingApi.swift",
+          "Sources/API/CommunicationApi.swift",
+          "Sources/API/ContentApi.swift",
+          "Sources/API/EcosystemApi.swift",
+          "Sources/API/IamApi.swift",
+          "Sources/API/PlatformApi.swift"
         ]
       },
       {
@@ -31,19 +47,64 @@
         "paths": [
           "Sources/Models.swift"
         ]
+      },
+      {
+        "area": "runtime",
+        "paths": [
+          "Sources/HTTP/HttpClient.swift"
+        ]
+      },
+      {
+        "area": "build-metadata",
+        "paths": [
+          "Package.swift",
+          "sdkwork-sdk.json"
+        ]
+      },
+      {
+        "area": "publish-workflow",
+        "paths": [
+          "bin/publish-core.mjs",
+          "bin/publish.ps1",
+          "bin/publish.sh"
+        ]
+      },
+      {
+        "area": "documentation",
+        "paths": [
+          "CHANGELOG.md",
+          "custom/README.md",
+          "README.md"
+        ]
+      },
+      {
+        "area": "custom-scaffold",
+        "paths": [
+          "custom/README.md"
+        ]
+      },
+      {
+        "area": "unknown",
+        "paths": [
+          "LICENSE",
+          "Sources/SdkworkAppClient.swift"
+        ]
       }
     ],
     "requiresVerification": true,
-    "summary": "Detected impact areas: api-surface, models. Verification is required."
+    "summary": "Detected impact areas: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown. Verification is required."
   },
   "executionDecision": {
     "schemaVersion": 1,
-    "riskLevel": "medium",
+    "riskLevel": "high",
     "nextAction": "verify",
     "requiresManualReview": false,
     "applyRequiresExpectedFingerprint": false,
     "summary": "Changes have been applied. Run the required verification plan now.",
     "reasons": [
+      "manual-review-required",
+      "preserved-legacy-files",
+      "unknown-impact",
       "verification-required"
     ]
   },
@@ -55,7 +116,7 @@
         "id": "verify-check",
         "title": "Unified package check",
         "required": true,
-        "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models.",
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown.",
         "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-swift\\generated\\server-openapi",
         "command": "node",
         "args": [
@@ -74,13 +135,13 @@
   "verificationPlan": {
     "shouldRun": true,
     "runPhase": "now",
-    "summary": "Detected impact areas: api-surface, models. Verification is required. Run the required verification commands now against the generated SDK output.",
+    "summary": "Detected impact areas: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown. Verification is required. Run the required verification commands now against the generated SDK output.",
     "steps": [
       {
         "id": "check",
         "title": "Unified package check",
         "required": true,
-        "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models.",
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown.",
         "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-swift\\generated\\server-openapi",
         "command": "node",
         "args": [
@@ -109,27 +170,22 @@
     "localVersions": []
   },
   "stats": {
-    "totalFiles": 22,
-    "models": 457,
-    "apis": 8,
+    "totalFiles": 23,
+    "models": 493,
+    "apis": 9,
     "types": 0
   },
   "warnings": [],
   "syncSummary": {
     "dryRun": false,
-    "writtenFiles": 2,
-    "skippedScaffoldFiles": 1,
-    "skippedUnchangedGeneratedFiles": 19,
+    "writtenFiles": 23,
+    "skippedScaffoldFiles": 0,
+    "skippedUnchangedGeneratedFiles": 0,
     "deletedGeneratedFiles": 0,
     "changeSummaryPath": ".sdkwork/sdkwork-generator-changes.json",
-    "changeFingerprint": "02615da81a1926eb67b8fcfe0b5d806ddb5fda925e1ca888a4b41f7fcc4cd4fa",
+    "changeFingerprint": "973d3ed9910d333a3579585fcf54cd8cc2553f0317f5c5bd304d1a6431325485",
     "changes": {
-      "createdGeneratedFiles": [],
-      "updatedGeneratedFiles": [
-        "Sources/API/AiApi.swift",
-        "Sources/Models.swift"
-      ],
-      "unchangedGeneratedFiles": [
+      "createdGeneratedFiles": [
         "bin/publish-core.mjs",
         "bin/publish.ps1",
         "bin/publish.sh",
@@ -138,6 +194,8 @@
         "Package.swift",
         "README.md",
         "sdkwork-sdk.json",
+        "Sources/API/AgentsApi.swift",
+        "Sources/API/AiApi.swift",
         "Sources/API/API.swift",
         "Sources/API/ApiPaths.swift",
         "Sources/API/AuthApi.swift",
@@ -148,26 +206,45 @@
         "Sources/API/IamApi.swift",
         "Sources/API/PlatformApi.swift",
         "Sources/HTTP/HttpClient.swift",
+        "Sources/Models.swift",
         "Sources/SdkworkAppClient.swift"
       ],
+      "updatedGeneratedFiles": [],
+      "unchangedGeneratedFiles": [],
       "deletedGeneratedFiles": [],
-      "scaffoldedFiles": [],
-      "preservedScaffoldFiles": [
+      "scaffoldedFiles": [
         "custom/README.md"
       ],
+      "preservedScaffoldFiles": [],
       "backedUpFiles": []
     },
     "impact": {
       "schemaVersion": 1,
       "areas": [
         "api-surface",
-        "models"
+        "models",
+        "runtime",
+        "build-metadata",
+        "publish-workflow",
+        "documentation",
+        "custom-scaffold",
+        "unknown"
       ],
       "details": [
         {
           "area": "api-surface",
           "paths": [
-            "Sources/API/AiApi.swift"
+            "Sources/API/AgentsApi.swift",
+            "Sources/API/AiApi.swift",
+            "Sources/API/API.swift",
+            "Sources/API/ApiPaths.swift",
+            "Sources/API/AuthApi.swift",
+            "Sources/API/BillingApi.swift",
+            "Sources/API/CommunicationApi.swift",
+            "Sources/API/ContentApi.swift",
+            "Sources/API/EcosystemApi.swift",
+            "Sources/API/IamApi.swift",
+            "Sources/API/PlatformApi.swift"
           ]
         },
         {
@@ -175,21 +252,63 @@
           "paths": [
             "Sources/Models.swift"
           ]
+        },
+        {
+          "area": "runtime",
+          "paths": [
+            "Sources/HTTP/HttpClient.swift"
+          ]
+        },
+        {
+          "area": "build-metadata",
+          "paths": [
+            "Package.swift",
+            "sdkwork-sdk.json"
+          ]
+        },
+        {
+          "area": "publish-workflow",
+          "paths": [
+            "bin/publish-core.mjs",
+            "bin/publish.ps1",
+            "bin/publish.sh"
+          ]
+        },
+        {
+          "area": "documentation",
+          "paths": [
+            "CHANGELOG.md",
+            "custom/README.md",
+            "README.md"
+          ]
+        },
+        {
+          "area": "custom-scaffold",
+          "paths": [
+            "custom/README.md"
+          ]
+        },
+        {
+          "area": "unknown",
+          "paths": [
+            "LICENSE",
+            "Sources/SdkworkAppClient.swift"
+          ]
         }
       ],
       "requiresVerification": true,
-      "summary": "Detected impact areas: api-surface, models. Verification is required."
+      "summary": "Detected impact areas: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown. Verification is required."
     },
     "verificationPlan": {
       "shouldRun": true,
       "runPhase": "now",
-      "summary": "Detected impact areas: api-surface, models. Verification is required. Run the required verification commands now against the generated SDK output.",
+      "summary": "Detected impact areas: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown. Verification is required. Run the required verification commands now against the generated SDK output.",
       "steps": [
         {
           "id": "check",
           "title": "Unified package check",
           "required": true,
-          "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models.",
+          "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, custom-scaffold, unknown.",
           "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-swift\\generated\\server-openapi",
           "command": "node",
           "args": [
@@ -207,16 +326,19 @@
     },
     "executionDecision": {
       "schemaVersion": 1,
-      "riskLevel": "medium",
+      "riskLevel": "high",
       "nextAction": "verify",
       "requiresManualReview": false,
       "applyRequiresExpectedFingerprint": false,
       "summary": "Changes have been applied. Run the required verification plan now.",
       "reasons": [
+        "manual-review-required",
+        "preserved-legacy-files",
+        "unknown-impact",
         "verification-required"
       ]
     },
     "backedUpFiles": [],
-    "preservedLegacyFiles": false
+    "preservedLegacyFiles": true
   }
 }

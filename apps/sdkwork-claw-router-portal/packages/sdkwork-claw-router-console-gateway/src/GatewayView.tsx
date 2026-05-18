@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { AlignLeft, Activity, Server, Timer } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
 import { GatewayService, type GatewayTrace } from './gatewayService';
 
-const readOnlyGatewayActions =
-  'Read-only gateway trace inventory. Security limits, compatibility switches, payload inspection, and request replay require explicit gateway command contracts before they can be enabled.';
+type TranslationFunction = ReturnType<typeof useTranslation>['t'];
 
 type GatewaySummary = {
   total: number;
@@ -13,8 +13,17 @@ type GatewaySummary = {
   uniqueChannels: number;
 };
 
-function getLoadErrorMessage(error: unknown, fallback: string): string {
-  return error instanceof Error && error.message ? error.message : fallback;
+function getLoadErrorMessage(error: unknown, fallback: string, t: TranslationFunction): string {
+  if (error instanceof Error) {
+    const message = error.message.trim();
+    if (message.startsWith('console.')) {
+      return t(message, fallback);
+    }
+    if (message) {
+      return message;
+    }
+  }
+  return fallback;
 }
 
 function summarizeTraces(traces: GatewayTrace[]): GatewaySummary {
@@ -38,6 +47,7 @@ function summarizeTraces(traces: GatewayTrace[]): GatewaySummary {
 }
 
 export function GatewayView() {
+  const { t } = useTranslation();
   const [traces, setTraces] = useState<GatewayTrace[]>([]);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -52,14 +62,14 @@ export function GatewayView() {
       }
     } catch (error) {
       if (isActive()) {
-        setLoadError(getLoadErrorMessage(error, 'Failed to load gateway traces.'));
+        setLoadError(getLoadErrorMessage(error, t('console.gateway.states.loadErrorFallback', '网关追踪加载失败。'), t));
       }
     } finally {
       if (isActive()) {
         setLoading(false);
       }
     }
-  }, []);
+  }, [t]);
 
   useEffect(() => {
     let active = true;
@@ -76,46 +86,38 @@ export function GatewayView() {
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            Gateway & Logs
+            {t('console.gateway.title', '网关日志')}
           </h1>
           <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-            Request trace observability backed by the app gateway trace API.
+            {t('console.gateway.subtitle', '查看网关流量的请求追踪和路由可观测性。')}
           </p>
-        </div>
-        <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-left lg:text-right">
-          <p className="max-w-2xl text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-            {readOnlyGatewayActions}
-          </p>
-          <span className="shrink-0 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-300">
-            Read-only
-          </span>
         </div>
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-white/10 p-2 rounded-xl shadow-sm">
-        <SummaryItem icon={<AlignLeft className="w-4 h-4 text-blue-500" />} label="Trace Rows" value={summary.total.toString()} />
-        <SummaryItem icon={<Activity className="w-4 h-4 text-emerald-500" />} label="Successful" value={summary.success.toString()} />
-        <SummaryItem icon={<Timer className="w-4 h-4 text-rose-500" />} label="Failed" value={summary.failed.toString()} />
-        <SummaryItem icon={<Server className="w-4 h-4 text-indigo-500" />} label="Channels" value={summary.uniqueChannels.toString()} />
+        <SummaryItem icon={<AlignLeft className="w-4 h-4 text-blue-500" />} label={t('console.gateway.summary.traceRows', '追踪行数')} value={summary.total.toString()} />
+        <SummaryItem icon={<Activity className="w-4 h-4 text-emerald-500" />} label={t('console.gateway.summary.successful', '成功请求')} value={summary.success.toString()} />
+        <SummaryItem icon={<Timer className="w-4 h-4 text-rose-500" />} label={t('console.gateway.summary.failed', '失败请求')} value={summary.failed.toString()} />
+        <SummaryItem icon={<Server className="w-4 h-4 text-indigo-500" />} label={t('console.gateway.summary.channels', '渠道数')} value={summary.uniqueChannels.toString()} />
       </div>
 
       <div className="space-y-4 flex flex-col items-start w-full">
         <div className="flex items-center justify-between w-full mb-2">
-          <h3 className="font-semibold text-slate-900 dark:text-white">Request Traces</h3>
-          <span className="text-xs text-slate-500 dark:text-slate-400">Fetched from the gateway trace read model.</span>
+          <h3 className="font-semibold text-slate-900 dark:text-white">{t('console.gateway.table.title', '请求追踪')}</h3>
+          <span className="text-xs text-slate-500 dark:text-slate-400">{t('console.gateway.table.description', '最近的网关请求历史。')}</span>
         </div>
 
         <div className="bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-white/10 rounded-xl shadow-sm overflow-hidden flex flex-col w-full min-h-[420px]">
           {loading ? (
             <BusinessStatePanel
               kind="loading"
-              title="Loading gateway traces..."
+              title={t('console.gateway.states.loading', '正在加载网关追踪...')}
               className="min-h-[420px] border-0 bg-transparent"
             />
           ) : loadError ? (
             <BusinessStatePanel
               kind="error"
-              title="Gateway traces could not be loaded"
+              title={t('console.gateway.states.loadErrorTitle', '网关追踪加载失败')}
               description={loadError}
               onRetry={() => void loadTraces()}
               className="min-h-[420px] border-0 bg-transparent"
@@ -123,8 +125,8 @@ export function GatewayView() {
           ) : traces.length === 0 ? (
             <BusinessStatePanel
               kind="empty"
-              title="No gateway traces found"
-              description={readOnlyGatewayActions}
+              title={t('console.gateway.states.emptyTitle', '暂无网关追踪')}
+              description={t('console.gateway.states.emptyDescription', '当流量到达路由器后，网关请求追踪会显示在这里。')}
               className="min-h-[420px] border-0 bg-transparent"
             />
           ) : (
@@ -149,19 +151,20 @@ function SummaryItem({ icon, label, value }: { icon: React.ReactNode; label: str
 }
 
 function GatewayTraceTable({ traces }: { traces: GatewayTrace[] }) {
+  const { t } = useTranslation();
   return (
     <div className="overflow-x-auto">
       <table className="w-full text-left text-sm whitespace-nowrap">
         <thead className="bg-slate-50 dark:bg-white/5 text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-white/10">
           <tr>
-            <th className="px-5 py-3 font-medium">Trace ID</th>
-            <th className="px-5 py-3 font-medium">Timestamp</th>
-            <th className="px-5 py-3 font-medium">Client IP</th>
-            <th className="px-5 py-3 font-medium">Method</th>
-            <th className="px-5 py-3 font-medium">Endpoint</th>
-            <th className="px-5 py-3 font-medium text-center">Status</th>
-            <th className="px-5 py-3 font-medium text-right">Duration</th>
-            <th className="px-5 py-3 font-medium">Routed Channel</th>
+            <th className="px-5 py-3 font-medium">{t('console.gateway.table.traceId', '追踪 ID')}</th>
+            <th className="px-5 py-3 font-medium">{t('console.gateway.table.timestamp', '时间')}</th>
+            <th className="px-5 py-3 font-medium">{t('console.gateway.table.clientIp', '客户端 IP')}</th>
+            <th className="px-5 py-3 font-medium">{t('console.gateway.table.method', '方法')}</th>
+            <th className="px-5 py-3 font-medium">{t('console.gateway.table.endpoint', '端点')}</th>
+            <th className="px-5 py-3 font-medium text-center">{t('console.gateway.table.status', '状态')}</th>
+            <th className="px-5 py-3 font-medium text-right">{t('console.gateway.table.duration', '耗时')}</th>
+            <th className="px-5 py-3 font-medium">{t('console.gateway.table.routedChannel', '路由渠道')}</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-slate-200 dark:divide-white/5 text-slate-700 dark:text-slate-300">

@@ -38,6 +38,11 @@ public class AuthApi {
         return try await client.post(ApiPaths.appPath("/auth/qr_login_codes"), body: nil, responseType: LoginQrCodesCreateResult.self)
     }
 
+    /// Confirm QR login code
+    public func loginQrCodesConfirm(body: IamLoginQrCodeConfirmRequest) async throws -> LoginQrCodesConfirmResult? {
+        return try await client.post(ApiPaths.appPath("/auth/qr_login_codes/confirm"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: LoginQrCodesConfirmResult.self)
+    }
+
     /// Retrieve QR login status
     public func loginQrCodesRetrieve(qrKey: String) async throws -> LoginQrCodesRetrieveResult? {
         return try await client.get(ApiPaths.appPath("/auth/qr_login_codes/\(serializePathParameter(qrKey, PathParameterSpec(name: "qrKey", style: "simple", explode: false)))"), responseType: LoginQrCodesRetrieveResult.self)
@@ -52,6 +57,15 @@ public class AuthApi {
             [:]
         )
         return try await client.post(ApiPaths.appPath("/auth/registrations"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: RegistrationsCreateResult.self)
+    }
+
+    /// Retrieve public IAM auth runtime settings
+    public func runtimeSettingsRetrieve(tenantCode: String? = nil, organizationCode: String? = nil) async throws -> RuntimeSettingsRetrieveResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "tenant_code", value: tenantCode, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "organization_code", value: organizationCode, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/auth/runtime_settings"), query), responseType: RuntimeSettingsRetrieveResult.self)
     }
 
     /// Create IAM session
@@ -93,6 +107,11 @@ public class AuthApi {
     /// Verify verification code
     public func verificationCodesVerify(body: IamVerificationCodeVerifyRequest) async throws -> VerificationCodesVerifyResult? {
         return try await client.post(ApiPaths.appPath("/auth/verification_codes/verify"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: VerificationCodesVerifyResult.self)
+    }
+
+    /// Retrieve public IAM verification policy
+    public func verificationPolicyRetrieve() async throws -> VerificationPolicyRetrieveResult? {
+        return try await client.get(ApiPaths.appPath("/auth/verification_policy"), responseType: VerificationPolicyRetrieveResult.self)
     }
 
     private struct PathParameterSpec {

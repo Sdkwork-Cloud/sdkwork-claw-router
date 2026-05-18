@@ -21,8 +21,8 @@ export interface RechargePackage {
 export class RechargeService {
   static async fetchPackages(): Promise<RechargePackage[]> {
     const result = await getClawRouterAppSdkClient().billing.account.points.recharges.packages.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch recharge packages');
-    return readRequiredApiItems(result, 'Failed to fetch recharge packages')
+    ensurePlusApiSuccess(result, 'console.recharge.errors.packagesFallback');
+    return readRequiredApiItems(result, 'console.recharge.errors.packagesFallback')
       .map(normalizeRechargePackage);
   }
 
@@ -31,7 +31,7 @@ export class RechargeService {
       amount: moneyAmount(amount, 'amount'),
       method: requiredText(method, 'method'),
     }, createRequestParams('commerce-points-recharge'));
-    ensurePlusApiSuccess(result, 'Failed to submit recharge');
+    ensurePlusApiSuccess(result, 'console.recharge.errors.submitFallback');
     const data = readApiRecord(result);
     const success = readRequiredBoolean(data, 'success', 'Recharge success flag is required');
     if (!success) {

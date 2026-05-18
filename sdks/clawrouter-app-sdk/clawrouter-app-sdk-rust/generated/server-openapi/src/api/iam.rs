@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::base::{RequestHeaders};
 use crate::api::paths::app_path;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{ApiKeysCreateResult, ApiKeysListResult, CreateApiKeyRequest, UpdateSettingsRequest, UsersCurrentRetrieveResult, UsersSettingsRetrieveResult, UsersSettingsUpdateResult};
+use crate::models::{ApiKeyGroupsListResult, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, ApiKeysUpdateResult, CreateApiKeyRequest, UpdateApiKeyRequest, UpdateSettingsRequest, UsersCurrentRetrieveResult, UsersSettingsRetrieveResult, UsersSettingsUpdateResult};
 
 #[derive(Clone)]
 pub struct IamApi {
@@ -13,6 +13,12 @@ pub struct IamApi {
 impl IamApi {
     pub fn new(client: Arc<SdkworkHttpClient>) -> Self {
         Self { client }
+    }
+
+    /// List groups
+    pub async fn api_key_groups_list(&self) -> Result<ApiKeyGroupsListResult, SdkworkError> {
+        let path = app_path(&"/iam/api_key_groups".to_string());
+        self.client.get(&path, None, None).await
     }
 
     /// List keys
@@ -32,6 +38,24 @@ impl IamApi {
             &[],
         );
         self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// Delete key
+    pub async fn api_keys_delete(&self, api_key_id: &str) -> Result<ApiKeysDeleteResult, SdkworkError> {
+        let path = app_path(&format!("/iam/api_keys/{}", serialize_path_parameter(api_key_id, PathParameterSpec::new("apiKeyId", "simple", false))));
+        self.client.delete(&path, None, None).await
+    }
+
+    /// Update key
+    pub async fn api_keys_update(&self, api_key_id: &str, body: &UpdateApiKeyRequest, x_request_id: Option<&str>) -> Result<ApiKeysUpdateResult, SdkworkError> {
+        let path = app_path(&format!("/iam/api_keys/{}", serialize_path_parameter(api_key_id, PathParameterSpec::new("apiKeyId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
     /// Retrieve current IAM user
@@ -54,6 +78,103 @@ impl IamApi {
 
 }
 
+struct PathParameterSpec<'a> {
+    name: &'a str,
+    style: &'a str,
+    explode: bool,
+}
+
+impl<'a> PathParameterSpec<'a> {
+    fn new(name: &'a str, style: &'a str, explode: bool) -> Self {
+        Self { name, style, explode }
+    }
+}
+
+fn serialize_path_parameter<T: serde::Serialize>(value: T, spec: PathParameterSpec<'_>) -> String {
+    let value = serde_json::to_value(value).unwrap_or(serde_json::Value::Null);
+    if value.is_null() {
+        return String::new();
+    }
+    let style = if spec.style.is_empty() { "simple" } else { spec.style };
+    match value {
+        serde_json::Value::Array(values) => serialize_path_array(spec.name, &values, style, spec.explode),
+        serde_json::Value::Object(values) => serialize_path_object(spec.name, &values, style, spec.explode),
+        value => format!("{}{}", path_primitive_prefix(spec.name, style), percent_encode(&primitive_to_string(&value))),
+    }
+}
+
+fn serialize_path_array(name: &str, values: &[serde_json::Value], style: &str, explode: bool) -> String {
+    let serialized = values
+        .iter()
+        .filter(|value| !value.is_null())
+        .map(|value| percent_encode(&primitive_to_string(value)))
+        .collect::<Vec<_>>();
+    if serialized.is_empty() {
+        return path_prefix(name, style);
+    }
+    if style == "matrix" {
+        if explode {
+            return serialized.iter().map(|item| format!(";{}={}", name, item)).collect::<Vec<_>>().join("");
+        }
+        return format!(";{}={}", name, serialized.join(","));
+    }
+    let separator = if explode { "." } else { "," };
+    format!("{}{}", path_prefix(name, style), serialized.join(separator))
+}
+
+fn serialize_path_object(
+    name: &str,
+    values: &serde_json::Map<String, serde_json::Value>,
+    style: &str,
+    explode: bool,
+) -> String {
+    let mut entries = Vec::new();
+    let mut exploded = Vec::new();
+    for (key, value) in values {
+        if value.is_null() {
+            continue;
+        }
+        let escaped_key = percent_encode(key);
+        let escaped_value = percent_encode(&primitive_to_string(value));
+        if explode {
+            if style == "matrix" {
+                exploded.push(format!(";{}={}", escaped_key, escaped_value));
+            } else {
+                exploded.push(format!("{}={}", escaped_key, escaped_value));
+            }
+        } else {
+            entries.push(escaped_key);
+            entries.push(escaped_value);
+        }
+    }
+    if style == "matrix" {
+        if explode {
+            return exploded.join("");
+        }
+        return format!(";{}={}", name, entries.join(","));
+    }
+    if explode {
+        let separator = if style == "label" { "." } else { "," };
+        return format!("{}{}", path_prefix(name, style), exploded.join(separator));
+    }
+    format!("{}{}", path_prefix(name, style), entries.join(","))
+}
+
+fn path_prefix(name: &str, style: &str) -> String {
+    match style {
+        "label" => ".".to_string(),
+        "matrix" => format!(";{}", name),
+        _ => String::new(),
+    }
+}
+
+fn path_primitive_prefix(name: &str, style: &str) -> String {
+    if style == "matrix" {
+        format!(";{}=", name)
+    } else {
+        path_prefix(name, style)
+    }
+}
 
 struct HeaderParameterSpec {
     value: serde_json::Value,
@@ -169,6 +290,14 @@ fn serialize_json_value(value: &serde_json::Value) -> Option<String> {
 }
 
 
+fn primitive_to_string(value: &serde_json::Value) -> String {
+    match value {
+        serde_json::Value::String(value) => value.clone(),
+        serde_json::Value::Number(value) => value.to_string(),
+        serde_json::Value::Bool(value) => value.to_string(),
+        other => other.to_string(),
+    }
+}
 
 fn percent_encode(value: &str) -> String {
     value

@@ -1,5 +1,6 @@
 import type { DashboardAnnouncement } from './dashboard-announcement';
 import type { DashboardChartPoint } from './dashboard-chart-point';
+import type { DashboardConfigurationDomain } from './dashboard-configuration-domain';
 import type { DashboardOverviewSummary } from './dashboard-overview-summary';
 import type { DashboardSparklinePoint } from './dashboard-sparkline-point';
 import type { DashboardTopModel } from './dashboard-top-model';
@@ -10,6 +11,8 @@ export interface DashboardOverviewResponse {
   announcements: DashboardAnnouncement[];
   /** Chart data field on dashboard overview response. */
   chartData: DashboardChartPoint[];
+  /** Configuration domains field on dashboard overview response. */
+  configurationDomains?: DashboardConfigurationDomain[];
   /** Multimodal sparkline field on dashboard overview response. */
   multimodalSparkline: DashboardSparklinePoint[];
   /** Performance sparkline field on dashboard overview response. */

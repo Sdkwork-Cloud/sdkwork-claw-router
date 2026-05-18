@@ -12,6 +12,10 @@ pub struct AdminAnnouncementItem {
     /// Id field on admin announcement item.
     pub id: String,
 
+    /// Show as popup field on admin announcement item.
+    #[serde(rename = "showAsPopup")]
+    pub show_as_popup: bool,
+
     /// Status field on admin announcement item.
     pub status: String,
 

@@ -321,6 +321,39 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 result.messages,
             )
 
+    def test_derived_fields_satisfy_frontend_only_view_model_fields(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                """
+                export interface DemoModel {
+                  id: string;
+                  displayName: string;
+                }
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                frontend_models:
+                  - route: /demo
+                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    interface: DemoModel
+                    fields: [id]
+                    derived_fields: [displayName]
+                    data_sources: [demo_table]
+                routes:
+                  - route: /demo
+                    required_tables: [demo_table]
+                """,
+            )
+
+            result = FrontendFieldAudit(root=root).validate()
+
+            self.assertTrue(result.ok, result.messages)
+
     def test_reports_frontend_model_without_data_sources(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

@@ -152,6 +152,8 @@ LIMIT 1
         r#"
 SELECT
     id,
+    COALESCE(tenant_id, 0) AS tenant_id,
+    COALESCE(organization_id, 0) AS organization_id,
     code,
     pricing_plan_code,
     rate_multiplier::text AS rate_multiplier,

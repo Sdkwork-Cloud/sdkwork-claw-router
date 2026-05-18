@@ -4,11 +4,24 @@ import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
 import { RoutingService, type MappingRule, type StrategyType } from '../routingService';
 import { createMappingRuleDraft, hasDuplicateSourceModel, isValidMappingModelName } from '../strategyRules';
 
-function getStrategyErrorMessage(error: unknown, fallback: string): string {
-  return error instanceof Error && error.message ? error.message : fallback;
+import { useTranslation } from 'react-i18next';
+type TranslationFunction = ReturnType<typeof useTranslation>['t'];
+
+function getStrategyErrorMessage(error: unknown, fallback: string, t: TranslationFunction): string {
+  if (error instanceof Error) {
+    const message = error.message.trim();
+    if (message.startsWith('console.')) {
+      return t(message, fallback);
+    }
+    if (message) {
+      return message;
+    }
+  }
+  return fallback;
 }
 
 export function StrategyTab() {
+  const { t } = useTranslation();
   const [activeStrategy, setActiveStrategy] = useState<StrategyType>('latency');
   const [showMappingModal, setShowMappingModal] = useState(false);
   const [mappingRules, setMappingRules] = useState<MappingRule[]>([]);
@@ -31,14 +44,14 @@ export function StrategyTab() {
       }
     } catch (error) {
       if (isActive()) {
-        setLoadError(getStrategyErrorMessage(error, 'Failed to load routing strategy.'));
+        setLoadError(getStrategyErrorMessage(error, t('console.routing.states.strategy.loadErrorFallback', '路由策略加载失败。'), t));
       }
     } finally {
       if (isActive()) {
         setLoadingStrategy(false);
       }
     }
-  }, []);
+  }, [t]);
 
   useEffect(() => {
     let active = true;
@@ -54,14 +67,14 @@ export function StrategyTab() {
     setSaveSuccess(null);
     try {
       await RoutingService.updateStrategy({ strategy, mappingRules: rules });
-      setSaveSuccess('Routing strategy saved.');
+      setSaveSuccess(t('console.routing.states.strategy.saved', '路由策略已保存。'));
     } catch (error) {
-      setSaveError(getStrategyErrorMessage(error, 'Failed to save routing strategy.'));
+      setSaveError(getStrategyErrorMessage(error, t('console.routing.states.strategy.saveErrorFallback', '路由策略保存失败。'), t));
       await loadStrategy();
     } finally {
       setSavingStrategy(false);
     }
-  }, [loadStrategy]);
+  }, [loadStrategy, t]);
 
   const handleStrategyChange = (strategy: StrategyType) => {
     setActiveStrategy(strategy);
@@ -90,20 +103,20 @@ export function StrategyTab() {
   return (
     <div data-business-state={loadError ? 'error' : undefined} className="animate-in fade-in duration-300">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-slate-900 dark:text-white">负载均衡与分发策略</h3>
-        <p className="text-sm text-slate-500 mt-1">全局定义如何将模型请求调度分发给后端的多个渠道端点。</p>
+        <h3 className="text-xl font-bold text-slate-900 dark:text-white">{t("console.routing.components.strategytab.text.uuzjnp", "负载均衡与分发策略")}</h3>
+        <p className="text-sm text-slate-500 mt-1">{t("console.routing.components.strategytab.text.twpg4h", "全局定义如何将模型请求调度分发给后端的多个渠道端点。")}</p>
       </div>
 
       {loadingStrategy ? (
         <BusinessStatePanel
           kind="loading"
-          title="Loading routing strategy..."
+          title={t('console.routing.states.strategy.loading', '正在加载路由策略...')}
           className="min-h-64 rounded-xl border border-slate-200 bg-white dark:border-white/5 dark:bg-[#252525]"
         />
       ) : loadError ? (
         <BusinessStatePanel
           kind="error"
-          title="Routing strategy could not be loaded"
+          title={t('console.routing.states.strategy.loadErrorTitle', '路由策略加载失败')}
           description={loadError}
           onRetry={() => { void loadStrategy(); }}
           className="min-h-64 rounded-xl border border-red-200 bg-red-50 dark:border-red-500/20 dark:bg-red-500/10"
@@ -124,24 +137,24 @@ export function StrategyTab() {
         {/* Strategy Options */}
         <div className="lg:col-span-2 space-y-4">
           <StrategyOption
-            title="动态延迟最低 (Lowest Latency)"
-            desc="系统后台持续测速，优先将请求分配给最近 1 分钟内响应最快的节点。"
+            title={t("console.routing.components.strategytab.text.xuhjce", "动态延迟最低 (Lowest Latency)")}
+            desc={t("console.routing.components.strategytab.text.x4iuwl", "系统后台持续测速，优先将请求分配给最近 1 分钟内响应最快的节点。")}
             active={activeStrategy === 'latency'}
             onClick={() => handleStrategyChange('latency')}
             icon={<Zap className="w-5 h-5 text-amber-400" />}
             disabled={savingStrategy}
           />
           <StrategyOption
-            title="加权轮询 (Weighted Round Robin)"
-            desc="根据渠道配置中的 Weight 参数，按比例轮询分配流量。适合混合昂贵与低价接口。"
+            title={t("console.routing.components.strategytab.text.mmkke0", "加权轮询 (Weighted Round Robin)")}
+            desc={t("console.routing.components.strategytab.text.1wmtpij", "根据渠道配置中的 Weight 参数，按比例轮询分配流量。适合混合昂贵与低价接口。")}
             active={activeStrategy === 'weighted'}
             onClick={() => handleStrategyChange('weighted')}
             icon={<RotateCcw className="w-5 h-5 text-blue-400" />}
             disabled={savingStrategy}
           />
           <StrategyOption
-            title="按使用成本 (Cost Optimised)"
-            desc="尝试使用成本最低的可用渠道，仅在故障时切换到昂贵渠道。"
+            title={t("console.routing.components.strategytab.text.9rxhn7", "按使用成本 (Cost Optimised)")}
+            desc={t("console.routing.components.strategytab.text.ca0sc9", "尝试使用成本最低的可用渠道，仅在故障时切换到昂贵渠道。")}
             active={activeStrategy === 'cost'}
             onClick={() => handleStrategyChange('cost')}
             icon={<Box className="w-5 h-5 text-emerald-400" />}
@@ -152,10 +165,9 @@ export function StrategyTab() {
         {/* Info Box */}
         <div className="bg-blue-500/5 border border-blue-500/20 rounded-xl p-5 self-start">
           <Settings className="w-6 h-6 text-blue-400 mb-3" />
-          <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-2">模型重写 (Model Remap)</h4>
+          <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-2">{t("console.routing.components.strategytab.text.swyut0", "模型重写 (Model Remap)")}</h4>
           <p className="text-xs text-slate-400 leading-relaxed mb-4">
-            启用负载均衡后，建议开启<b>统一模型映射</b>功能。
-            例如客户端统一请求 <code>gpt-4</code>，网关可自动映射路由至 <code>azure-gpt4-32k</code> 或 <code>claude-3-opus</code>。
+            {t("console.routing.components.strategytab.text.ueniy9", "启用负载均衡后，建议开启")}<b>{t("console.routing.components.strategytab.text.1qvfyx6", "统一模型映射")}</b>{t("console.routing.components.strategytab.text.12efdt8", "功能。 例如客户端统一请求")}<code>gpt-4</code>{t("console.routing.components.strategytab.text.17nkrtr", "，网关可自动映射路由至")}<code>azure-gpt4-32k</code> {t("console.routing.components.strategytab.text.5gah49", "或")}<code>claude-3-opus</code>。
           </p>
 
           <div className="space-y-2 mb-4">
@@ -168,13 +180,11 @@ export function StrategyTab() {
             ))}
             {mappingRules.length > 3 && (
               <div className="text-xs text-slate-500 text-center py-1">
-                + {mappingRules.length - 3} 更多规则
-              </div>
+                + {mappingRules.length - 3} {t("console.routing.components.strategytab.text.1ny3eho", "更多规则")}</div>
             )}
             {mappingRules.length === 0 && (
               <div className="text-xs text-slate-500 text-center py-2">
-                暂无映射规则
-              </div>
+                {t("console.routing.components.strategytab.text.1h2xlrg", "暂无映射规则")}</div>
             )}
           </div>
 
@@ -182,8 +192,7 @@ export function StrategyTab() {
             onClick={() => setShowMappingModal(true)}
             className="w-full bg-blue-500 hover:bg-blue-600 text-white text-xs font-semibold py-2 rounded transition-colors"
           >
-            管理映射规则
-          </button>
+            {t("console.routing.components.strategytab.text.1extewp", "管理映射规则")}</button>
         </div>
       </div>
 
@@ -194,8 +203,7 @@ export function StrategyTab() {
             <div className="p-4 border-b border-slate-200 dark:border-white/5 flex justify-between items-center">
               <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <Settings className="w-5 h-5 text-blue-500" />
-                模型映射规则 (Model Remap)
-              </h3>
+                {t("console.routing.components.strategytab.text.pybm3x", "模型映射规则 (Model Remap)")}</h3>
               <button
                 onClick={() => setShowMappingModal(false)}
                 className="text-slate-400 hover:text-slate-600 dark:hover:text-white transition-colors"
@@ -206,21 +214,20 @@ export function StrategyTab() {
 
             <div className="p-4 overflow-y-auto flex-1">
               <div className="mb-4 text-sm text-slate-500 dark:text-slate-400">
-                定义客户端请求的模型名称如何映射到真实的后端渠道模型名称。
-              </div>
+                {t("console.routing.components.strategytab.text.1rpxs5v", "定义客户端请求的模型名称如何映射到真实的后端渠道模型名称。")}</div>
 
               {/* Add new rule */}
               <div className="flex gap-2 mb-6">
                 <input
                   type="text"
-                  placeholder="请求模型 (如: gpt-4)"
+                  placeholder={t("console.routing.components.strategytab.text.1spnq5n", "请求模型 (如: gpt-4)")}
                   value={newSource}
                   onChange={e => setNewSource(e.target.value)}
                   className="flex-1 bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-blue-500 text-slate-900 dark:text-white"
                 />
                 <input
                   type="text"
-                  placeholder="目标模型 (如: azure-gpt4-32k)"
+                  placeholder={t("console.routing.components.strategytab.text.1li4a8b", "目标模型 (如: azure-gpt4-32k)")}
                   value={newTarget}
                   onChange={e => setNewTarget(e.target.value)}
                   className="flex-1 bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-blue-500 text-slate-900 dark:text-white"
@@ -238,8 +245,7 @@ export function StrategyTab() {
               <div className="space-y-2">
                 {mappingRules.length === 0 ? (
                   <div className="text-center py-8 text-slate-500 text-sm">
-                    暂无映射规则
-                  </div>
+                    {t("console.routing.components.strategytab.text.1h2xlrg", "暂无映射规则")}</div>
                 ) : (
                   mappingRules.map(rule => (
                     <div key={rule.id} className="flex items-center justify-between bg-slate-50 dark:bg-[#121212] border border-slate-200 dark:border-white/5 p-3 rounded-lg group">
@@ -266,8 +272,7 @@ export function StrategyTab() {
                 onClick={() => setShowMappingModal(false)}
                 className="px-4 py-2 bg-slate-200 hover:bg-slate-300 dark:bg-white/10 dark:hover:bg-white/20 text-slate-800 dark:text-white text-sm font-medium rounded-md transition-colors"
               >
-                关闭
-              </button>
+                {t("console.routing.components.strategytab.text.g0fanx", "关闭")}</button>
             </div>
           </div>
         </div>

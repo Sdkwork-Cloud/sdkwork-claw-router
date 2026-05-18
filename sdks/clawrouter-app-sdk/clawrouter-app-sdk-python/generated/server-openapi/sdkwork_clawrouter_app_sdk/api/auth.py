@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import IamCurrentSessionUpdateRequest, IamOauthSessionCreateRequest, IamPasswordResetCreateRequest, IamPasswordResetRequestCreateRequest, IamRegistrationCreateRequest, IamSessionCreateRequest, IamSessionRefreshRequest, IamVerificationCodeCreateRequest, IamVerificationCodeVerifyRequest, LoginQrCodesCreateResult, LoginQrCodesRetrieveResult, OauthAuthorizationUrlsRetrieveResult, OauthSessionsCreateResult, PasswordResetRequestsCreateResult, PasswordResetsCreateResult, RegistrationsCreateResult, SessionsCreateResult, SessionsCurrentDeleteResult, SessionsCurrentRetrieveResult, SessionsCurrentUpdateResult, SessionsRefreshResult, VerificationCodesCreateResult, VerificationCodesVerifyResult
+from ..models import IamCurrentSessionUpdateRequest, IamLoginQrCodeConfirmRequest, IamOauthSessionCreateRequest, IamPasswordResetCreateRequest, IamPasswordResetRequestCreateRequest, IamRegistrationCreateRequest, IamSessionCreateRequest, IamSessionRefreshRequest, IamVerificationCodeCreateRequest, IamVerificationCodeVerifyRequest, LoginQrCodesConfirmResult, LoginQrCodesCreateResult, LoginQrCodesRetrieveResult, OauthAuthorizationUrlsRetrieveResult, OauthSessionsCreateResult, PasswordResetRequestsCreateResult, PasswordResetsCreateResult, RegistrationsCreateResult, RuntimeSettingsRetrieveResult, SessionsCreateResult, SessionsCurrentDeleteResult, SessionsCurrentRetrieveResult, SessionsCurrentUpdateResult, SessionsRefreshResult, VerificationCodesCreateResult, VerificationCodesVerifyResult, VerificationPolicyRetrieveResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -239,7 +239,7 @@ def serialize_header_primitive(value: Any) -> str:
 
 class AuthApi:
     """auth auth API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.oauth_authorization_urls = AuthOauthAuthorizationUrlsApi(client)
@@ -248,13 +248,15 @@ class AuthApi:
         self.password_resets = AuthPasswordResetsApi(client)
         self.login_qr_codes = AuthLoginQrCodesApi(client)
         self.registrations = AuthRegistrationsApi(client)
+        self.runtime_settings = AuthRuntimeSettingsApi(client)
         self.sessions = AuthSessionsApi(client)
         self.verification_codes = AuthVerificationCodesApi(client)
+        self.verification_policy = AuthVerificationPolicyApi(client)
 
 
 class AuthOauthAuthorizationUrlsApi:
     """auth auth.oauth_authorization_urls API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -271,7 +273,7 @@ class AuthOauthAuthorizationUrlsApi:
 
 class AuthOauthSessionsApi:
     """auth auth.oauth_sessions API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -282,7 +284,7 @@ class AuthOauthSessionsApi:
 
 class AuthPasswordResetRequestsApi:
     """auth auth.password_reset_requests API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -293,7 +295,7 @@ class AuthPasswordResetRequestsApi:
 
 class AuthPasswordResetsApi:
     """auth auth.password_resets API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -304,7 +306,7 @@ class AuthPasswordResetsApi:
 
 class AuthLoginQrCodesApi:
     """auth auth.login_qr_codes API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -313,13 +315,17 @@ class AuthLoginQrCodesApi:
         """Create QR login code"""
         return self._client.post(f"/app/v3/api/auth/qr_login_codes")
 
+    def confirm(self, body: IamLoginQrCodeConfirmRequest) -> LoginQrCodesConfirmResult:
+        """Confirm QR login code"""
+        return self._client.post(f"/app/v3/api/auth/qr_login_codes/confirm", json=body)
+
     def retrieve(self, qr_key: str) -> LoginQrCodesRetrieveResult:
         """Retrieve QR login status"""
         return self._client.get(f"/app/v3/api/auth/qr_login_codes/{serialize_path_parameter(qr_key, {'name': 'qrKey', 'style': 'simple', 'explode': False})}")
 
 class AuthRegistrationsApi:
     """auth auth.registrations API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -334,9 +340,24 @@ class AuthRegistrationsApi:
         )
         return self._client.post(f"/app/v3/api/auth/registrations", json=body, headers=request_headers)
 
+class AuthRuntimeSettingsApi:
+    """auth auth.runtime_settings API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self, tenant_code: Optional[str] = None, organization_code: Optional[str] = None) -> RuntimeSettingsRetrieveResult:
+        """Retrieve public IAM auth runtime settings"""
+        query = build_query_string([
+            {'name': 'tenant_code', 'value': tenant_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'organization_code', 'value': organization_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/app/v3/api/auth/runtime_settings", query))
+
 class AuthSessionsApi:
     """auth auth.sessions API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.current = AuthSessionsCurrentApi(client)
@@ -358,7 +379,7 @@ class AuthSessionsApi:
 
 class AuthSessionsCurrentApi:
     """auth auth.sessions.current API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -377,7 +398,7 @@ class AuthSessionsCurrentApi:
 
 class AuthVerificationCodesApi:
     """auth auth.verification_codes API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 
@@ -389,3 +410,14 @@ class AuthVerificationCodesApi:
     def verify(self, body: IamVerificationCodeVerifyRequest) -> VerificationCodesVerifyResult:
         """Verify verification code"""
         return self._client.post(f"/app/v3/api/auth/verification_codes/verify", json=body)
+
+class AuthVerificationPolicyApi:
+    """auth auth.verification_policy API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self) -> VerificationPolicyRetrieveResult:
+        """Retrieve public IAM verification policy"""
+        return self._client.get(f"/app/v3/api/auth/verification_policy")

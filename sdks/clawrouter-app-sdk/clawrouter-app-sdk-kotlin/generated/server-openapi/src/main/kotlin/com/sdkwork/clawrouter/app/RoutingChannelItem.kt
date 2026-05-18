@@ -15,8 +15,10 @@ data class RoutingChannelItem(
     val protocol: String? = null,
     val provider: String? = null,
     val providerCode: String? = null,
+    val retryPolicy: ProviderRetryPolicy? = null,
     val rpm: Int? = null,
     val status: String? = null,
+    val timeoutMs: Int? = null,
     val vendor: String? = null,
     val weight: Int? = null
 )

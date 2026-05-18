@@ -263,7 +263,10 @@ class BillingRuntimeStandardTest(unittest.TestCase):
         billing_redeem_contract = contract[redeem_code_start:next_operation_start]
         billing_contract = billing_read_contract + billing_redeem_contract
 
-        self.assertIn("readOnlyBillingDownloads", billing_view)
+        self.assertNotIn("readOnlyBillingDownloads", billing_view)
+        self.assertNotIn("Read-only", billing_view)
+        self.assertNotIn("read-only", billing_view)
+        self.assertNotIn("command contract", billing_view)
         self.assertNotIn("<Download", billing_view)
         self.assertNotIn("download poster", billing_view.lower())
         for unsupported_action in [
@@ -282,6 +285,62 @@ class BillingRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("operation: download", billing_contract)
         self.assertNotIn("operation: downloadPromotionPoster", billing_contract)
         self.assertNotIn("operation: exportBilling", billing_contract)
+
+    def test_console_billing_product_error_states_are_localized(self) -> None:
+        service_paths = [
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-billing"
+            / "src"
+            / "billingService.ts",
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-billing"
+            / "src"
+            / "checkoutService.ts",
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-billing"
+            / "src"
+            / "commerceFoundationService.ts",
+        ]
+        services = "\n".join(path.read_text(encoding="utf-8") for path in service_paths)
+        i18n = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-i18n"
+            / "src"
+            / "index.ts"
+        ).read_text(encoding="utf-8")
+
+        for marker in [
+            "console.billing.errors.redeemHistoryFallback",
+            "console.billing.errors.rechargeHistoryFallback",
+            "console.billing.errors.redeemFallback",
+            "console.billing.errors.checkoutStatusFallback",
+            "console.billing.errors.exchangeRateFallback",
+            "console.billing.errors.exchangeRulesFallback",
+        ]:
+            self.assertIn(marker, services + i18n)
+            self.assertGreaterEqual(i18n.count(f'"{marker}"'), 2)
+
+        for hardcoded_copy in [
+            "Failed to fetch redeem history",
+            "Failed to fetch recharge history",
+            "Failed to redeem code",
+            "Failed to fetch checkout status",
+            "Failed to fetch account points exchange rate",
+            "Failed to fetch account points exchange rules",
+        ]:
+            self.assertNotIn(hardcoded_copy, services)
 
     def test_console_redeem_standalone_fake_entry_is_removed_in_favor_of_billing_contract(self) -> None:
         portal_package = (

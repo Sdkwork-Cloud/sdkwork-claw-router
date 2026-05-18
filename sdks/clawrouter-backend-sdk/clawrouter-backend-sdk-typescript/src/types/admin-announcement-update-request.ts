@@ -2,6 +2,8 @@
 export interface AdminAnnouncementUpdateRequest {
   /** Optional announcement body content update. */
   content?: string;
+  /** Optional popup-display toggle update. */
+  showAsPopup?: boolean;
   /** Optional announcement publication state update. */
   status?: 'published' | 'draft';
   /** Optional announcement audience segment update. */

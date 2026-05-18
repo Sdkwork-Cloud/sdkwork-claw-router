@@ -34,6 +34,16 @@ class AiApi {
     })();
   }
 
+  /// Create Playground generation agent run
+  Future<GenerationAgentRunsCreateResult?> generationAgentRunsCreate(GenerationAgentRunCreateRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.appPath('/ai/generation_agent/runs'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : GenerationAgentRunsCreateResult.fromJson(map);
+    })();
+  }
+
   /// List generation history
   Future<GenerationsListResult?> generationsList() async {
     final response = await _client.get(ApiPaths.appPath('/ai/generations'));

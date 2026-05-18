@@ -88,12 +88,9 @@ public class BillingApi {
         return client.convertValue(raw, new TypeReference<AccountPointsRechargesOrdersCancelResult>() {});
     }
 
-    /** List account points recharge packages */
-    public AccountPointsRechargesPackagesListResult accountPointsRechargesPackagesList(String status) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("status", status, "form", true, false, null)
-        ));
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/billing/account/points/recharges/packages"), query));
+    /** List packages */
+    public AccountPointsRechargesPackagesListResult accountPointsRechargesPackagesList() throws Exception {
+        Object raw = client.get(ApiPaths.appPath("/billing/account/points/recharges/packages"));
         return client.convertValue(raw, new TypeReference<AccountPointsRechargesPackagesListResult>() {});
     }
 
@@ -315,7 +312,7 @@ public class BillingApi {
         return client.convertValue(raw, new TypeReference<VipPackGroupsPacksListResult>() {});
     }
 
-    /** List packages */
+    /** List VIP packs */
     public VipPacksListResult vipPacksList() throws Exception {
         Object raw = client.get(ApiPaths.appPath("/billing/vip/packs"));
         return client.convertValue(raw, new TypeReference<VipPacksListResult>() {});

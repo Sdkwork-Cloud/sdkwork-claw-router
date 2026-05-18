@@ -5,12 +5,13 @@ use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminSkillStore;
 use sdkwork_claw_product::ports::{
     AdminSkillStore, AdminSkillSubject, CreateAdminSkillArtifactCommand,
     CreateAdminSkillAssetCommand, CreateAdminSkillCategoryCommand, CreateAdminSkillCommand,
-    CreateAdminSkillPackageCommand, DeleteAdminSkillCommand, DeleteAdminSkillPackageCommand,
-    ListAdminSkillArtifactsQuery, ListAdminSkillAssetsQuery, ListAdminSkillCategoriesQuery,
-    ListAdminSkillPackagesQuery, ListAdminSkillsQuery, ReviewAdminSkillCommand,
-    SetAdminSkillEnabledCommand, SetAdminSkillMarketStatusCommand,
+    CreateAdminSkillPackageCommand, DeleteAdminSkillCategoryCommand, DeleteAdminSkillCommand,
+    DeleteAdminSkillPackageCommand, ListAdminSkillArtifactsQuery, ListAdminSkillAssetsQuery,
+    ListAdminSkillCategoriesQuery, ListAdminSkillPackagesQuery, ListAdminSkillsQuery,
+    ReviewAdminSkillCommand, SetAdminSkillEnabledCommand, SetAdminSkillMarketStatusCommand,
     SetAdminSkillPackageEnabledCommand, UpdateAdminSkillArtifactCommand,
-    UpdateAdminSkillAssetCommand, UpdateAdminSkillCommand, UpdateAdminSkillPackageCommand,
+    UpdateAdminSkillAssetCommand, UpdateAdminSkillCategoryCommand, UpdateAdminSkillCommand,
+    UpdateAdminSkillPackageCommand,
 };
 use serde_json::json;
 use sqlx::sqlite::SqlitePoolOptions;
@@ -656,6 +657,66 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
         0, linked_skill_rows,
         "deleting a skill package must clear package links instead of deleting skills"
     );
+
+    let updated_category = store
+        .update_category(UpdateAdminSkillCategoryCommand {
+            subject,
+            category_id: category.id,
+            audit_log_uuid: "audit-update-skill-category-workflow".to_owned(),
+            name: Some("Workflow Orchestration".to_owned()),
+            description: Some(None),
+            code: Some(Some("workflow-orchestration".to_owned())),
+            icon: Some(None),
+            sort_weight: Some(66),
+            parent_id: Some(None),
+            path: Some(Some("/skills/workflow-orchestration".to_owned())),
+            visible: Some(false),
+            status: Some(1),
+            category_type: Some(20),
+            request_id: "req-update-skill-category".to_owned(),
+            requested_at: "2026-05-09T09:12:00Z".to_owned(),
+        })
+        .await
+        .unwrap()
+        .unwrap();
+    assert_eq!("Workflow Orchestration", updated_category.name);
+    assert_eq!(None, updated_category.description);
+    assert_eq!(
+        Some("workflow-orchestration"),
+        updated_category.code.as_deref()
+    );
+    assert_eq!(None, updated_category.icon);
+    assert_eq!(66, updated_category.sort_weight);
+    assert!(!updated_category.visible);
+    assert_eq!(20, updated_category.category_type);
+
+    let deleted_category = store
+        .delete_category(DeleteAdminSkillCategoryCommand {
+            subject,
+            category_id: category.id,
+            audit_log_uuid: "audit-delete-skill-category-workflow".to_owned(),
+            request_id: "req-delete-skill-category".to_owned(),
+            requested_at: "2026-05-09T09:13:00Z".to_owned(),
+        })
+        .await
+        .unwrap();
+    assert!(deleted_category);
+
+    let category_status: i64 = sqlx::query_scalar("SELECT status FROM plus_category WHERE id = ?")
+        .bind(category.id)
+        .fetch_one(&pool)
+        .await
+        .unwrap();
+    assert_eq!(-1, category_status);
+
+    let categories = store
+        .list_categories(ListAdminSkillCategoriesQuery { subject })
+        .await
+        .unwrap();
+    assert!(
+        categories.iter().all(|item| item.id != category.id),
+        "deleted skill categories must be hidden from active category lists"
+    );
 }
 
 #[tokio::test]
@@ -1043,6 +1104,174 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
     assert_eq!(0, remaining_artifacts);
 }
 
+#[tokio::test]
+async fn sqlite_admin_skill_store_lists_skill_store_visible_catalog_scopes() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    DatabaseInstaller::for_sqlite(pool.clone())
+        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
+        .unwrap()
+        .ensure_installed()
+        .await
+        .unwrap();
+
+    insert_admin_visible_skill_catalog(
+        &pool,
+        40_001_001,
+        40_001_101,
+        40_001_201,
+        TENANT_ID,
+        ORGANIZATION_ID,
+        "Tenant Skill Catalog",
+        "tenant-catalog-skill",
+    )
+    .await;
+    insert_admin_visible_skill_catalog(
+        &pool,
+        40_002_001,
+        40_002_101,
+        40_002_201,
+        0,
+        0,
+        "Product Skill Catalog",
+        "product-catalog-skill",
+    )
+    .await;
+    insert_admin_visible_skill_catalog(
+        &pool,
+        40_003_001,
+        40_003_101,
+        40_003_201,
+        TENANT_ID + 1,
+        0,
+        "Other Tenant Skill Catalog",
+        "other-tenant-catalog-skill",
+    )
+    .await;
+    insert_admin_visible_skill_asset(&pool, 40_002_301, 0, 0, 40_002_201, "product").await;
+    insert_admin_visible_skill_artifact(&pool, 40_002_401, 0, 0, 40_002_201, "product").await;
+
+    let store = SqliteAdminSkillStore::new(pool.clone());
+    let subject = admin_subject();
+
+    let categories = store
+        .list_categories(ListAdminSkillCategoriesQuery { subject })
+        .await
+        .unwrap();
+    let category_names = categories
+        .iter()
+        .map(|item| item.name.as_str())
+        .collect::<Vec<_>>();
+    assert!(category_names.contains(&"Tenant Skill Catalog"));
+    assert!(
+        category_names.contains(&"Product Skill Catalog"),
+        "admin skill management must see public skill-store categories"
+    );
+    assert!(
+        !category_names.contains(&"Other Tenant Skill Catalog"),
+        "admin skill management must not cross into unrelated tenant skill catalogs"
+    );
+
+    let packages = store
+        .list_packages(ListAdminSkillPackagesQuery {
+            subject,
+            keyword: Some("Catalog".to_owned()),
+            enabled: Some(true),
+            category_id: None,
+            page_no: Some(1),
+            page_size: Some(20),
+        })
+        .await
+        .unwrap();
+    let package_keys = packages
+        .iter()
+        .map(|item| item.package_key.as_str())
+        .collect::<Vec<_>>();
+    assert!(package_keys.contains(&"tenant-catalog-skill-package"));
+    assert!(
+        package_keys.contains(&"product-catalog-skill-package"),
+        "admin skill management must see public skill-store packages"
+    );
+    assert!(!package_keys.contains(&"other-tenant-catalog-skill-package"));
+
+    let skills = store
+        .list_skills(ListAdminSkillsQuery {
+            subject,
+            keyword: Some("Catalog".to_owned()),
+            market_status: Some("PUBLISHED".to_owned()),
+            review_status: Some("APPROVED".to_owned()),
+            visibility: Some("PUBLIC".to_owned()),
+            enabled: Some(true),
+            category_id: None,
+            page_no: Some(1),
+            page_size: Some(20),
+        })
+        .await
+        .unwrap();
+    let skill_keys = skills
+        .iter()
+        .map(|item| item.skill_key.as_str())
+        .collect::<Vec<_>>();
+    assert!(skill_keys.contains(&"tenant-catalog-skill"));
+    assert!(
+        skill_keys.contains(&"product-catalog-skill"),
+        "admin skill management must see public skill-store skills"
+    );
+    assert!(!skill_keys.contains(&"other-tenant-catalog-skill"));
+
+    let assets = store
+        .list_assets(ListAdminSkillAssetsQuery {
+            subject,
+            skill_id: 40_002_201,
+        })
+        .await
+        .unwrap();
+    assert_eq!(
+        vec![40_002_301],
+        assets.iter().map(|item| item.id).collect::<Vec<_>>(),
+        "admin skill management must read public skill-store assets"
+    );
+
+    let artifacts = store
+        .list_artifacts(ListAdminSkillArtifactsQuery {
+            subject,
+            skill_id: 40_002_201,
+        })
+        .await
+        .unwrap();
+    assert_eq!(
+        vec![40_002_401],
+        artifacts.iter().map(|item| item.id).collect::<Vec<_>>(),
+        "admin skill management must read public skill-store artifacts"
+    );
+
+    let public_update = store
+        .set_skill_enabled(SetAdminSkillEnabledCommand {
+            subject,
+            skill_id: 40_002_201,
+            enabled: false,
+            audit_log_uuid: "audit-disable-public-skill-catalog".to_owned(),
+            request_id: "req-disable-public-skill-catalog".to_owned(),
+            requested_at: "2026-05-09T11:00:00Z".to_owned(),
+        })
+        .await
+        .unwrap();
+    assert!(
+        public_update.is_none(),
+        "public skill-store rows must be readable from admin but not mutable through tenant admin writes"
+    );
+    let public_enabled: i64 =
+        sqlx::query_scalar("SELECT enabled FROM plus_agent_skill WHERE id = ?")
+            .bind(40_002_201)
+            .fetch_one(&pool)
+            .await
+            .unwrap();
+    assert_eq!(1, public_enabled);
+}
+
 fn admin_subject() -> AdminSkillSubject {
     AdminSkillSubject {
         tenant_id: TENANT_ID,
@@ -1050,4 +1279,162 @@ fn admin_subject() -> AdminSkillSubject {
         operator_id: OPERATOR_ID,
         operator_type: 1,
     }
+}
+
+async fn insert_admin_visible_skill_catalog(
+    pool: &sqlx::SqlitePool,
+    category_id: i64,
+    package_id: i64,
+    skill_id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+    name: &str,
+    skill_key: &str,
+) {
+    sqlx::query(
+        r#"
+        INSERT INTO plus_category
+            (id, uuid, tenant_id, organization_id, data_scope, name, description, type, code, icon, sort_weight, parent_id, path, visible, status, created_at, updated_at)
+        VALUES
+            (?, ?, ?, ?, 0, ?, ?, 19, ?, 'boxes', 10, NULL, ?, 1, 1, '2026-05-09 11:00:00', '2026-05-09 11:00:00')
+        "#,
+    )
+    .bind(category_id)
+    .bind(format!("admin-visible-skill-category-{category_id}"))
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(name)
+    .bind(format!("{name} category"))
+    .bind(format!("{skill_key}-category"))
+    .bind(format!("/skills/{skill_key}"))
+    .execute(pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO plus_agent_skill_package
+            (id, uuid, tenant_id, organization_id, data_scope, user_id, package_key, name, summary, description, icon, cover_image, category_id, enabled, featured, sort_weight, tags, latest_published_at, created_at, updated_at)
+        VALUES
+            (?, ?, ?, ?, 0, 0, ?, ?, ?, ?, ?, ?, ?, 1, 1, 20, ?, '2026-05-09 11:01:00', '2026-05-09 11:00:00', '2026-05-09 11:01:00')
+        "#,
+    )
+    .bind(package_id)
+    .bind(format!("admin-visible-skill-package-{package_id}"))
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(format!("{skill_key}-package"))
+    .bind(format!("{name} Package"))
+    .bind(format!("{name} package summary"))
+    .bind(format!("{name} package description"))
+    .bind(format!("https://cdn.example.test/skills/{skill_key}/package-icon.png"))
+    .bind(format!("https://cdn.example.test/skills/{skill_key}/package-cover.png"))
+    .bind(category_id)
+    .bind(json!(["catalog", "skill"]).to_string())
+    .execute(pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO plus_agent_skill
+            (id, uuid, tenant_id, organization_id, data_scope, user_id, skill_key, name, summary,
+             description, icon, cover_image, category_id, package_id, provider, version,
+             version_name, runtime, entrypoint, manifest_url, repository_url, homepage_url,
+             documentation_url, license_name, source_type, market_status, visibility,
+             review_status, review_comment, reviewed_by, reviewed_at, builtin, is_builtin,
+             enabled, featured, recommend_weight, price, currency, install_count, rating_avg,
+             rating_count, tags, capabilities, config_schema, default_config,
+             latest_published_at, created_at, updated_at)
+        VALUES
+            (?, ?, ?, ?, 0, 0, ?, ?, ?, ?, ?, ?, ?, ?, 'SDKWork', '1.0.0',
+             '1.0.0', 'builtin', 'skill.json', ?, NULL, NULL, NULL,
+             'SDKWork Commercial', 'OFFICIAL', 'PUBLISHED', 'PUBLIC', 'APPROVED',
+             NULL, NULL, NULL, 1, 1, 1, 1, 30, '0', 'CNY', 10, '5.0', 1,
+             ?, ?, '{}', '{}', '2026-05-09 11:02:00', '2026-05-09 11:00:00',
+             '2026-05-09 11:02:00')
+        "#,
+    )
+    .bind(skill_id)
+    .bind(format!("admin-visible-skill-{skill_id}"))
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(skill_key)
+    .bind(name)
+    .bind(format!("{name} summary"))
+    .bind(format!("{name} description"))
+    .bind(format!(
+        "https://cdn.example.test/skills/{skill_key}/icon.png"
+    ))
+    .bind(format!(
+        "https://cdn.example.test/skills/{skill_key}/cover.png"
+    ))
+    .bind(category_id)
+    .bind(package_id)
+    .bind(format!(
+        "https://cdn.example.test/skills/{skill_key}/manifest.json"
+    ))
+    .bind(json!(["catalog", "skill"]).to_string())
+    .bind(json!(["catalog.skill"]).to_string())
+    .execute(pool)
+    .await
+    .unwrap();
+}
+
+async fn insert_admin_visible_skill_asset(
+    pool: &sqlx::SqlitePool,
+    asset_id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+    skill_id: i64,
+    name: &str,
+) {
+    sqlx::query(
+        r#"
+        INSERT INTO studio_catalog_asset
+            (id, uuid, tenant_id, organization_id, data_scope, status, target_type, target_id, artifact_id, asset_type, asset_url, thumbnail_url, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at, created_at, updated_at)
+        VALUES
+            (?, ?, ?, ?, 0, 1, 35, ?, NULL, 1, ?, NULL, ?, ?, 'image/png', 1200, 720, NULL, 128000, 1, '2026-05-09 11:03:00', '2026-05-09 11:03:00', '2026-05-09 11:03:00')
+        "#,
+    )
+    .bind(asset_id)
+    .bind(format!("admin-visible-skill-asset-{asset_id}"))
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(skill_id)
+    .bind(format!("https://cdn.example.test/skills/{name}/cover.png"))
+    .bind(format!("{name} cover"))
+    .bind(format!("{name} skill cover"))
+    .execute(pool)
+    .await
+    .unwrap();
+}
+
+async fn insert_admin_visible_skill_artifact(
+    pool: &sqlx::SqlitePool,
+    artifact_id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+    skill_id: i64,
+    name: &str,
+) {
+    sqlx::query(
+        r#"
+        INSERT INTO studio_catalog_artifact
+            (id, uuid, tenant_id, organization_id, data_scope, status, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_url, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at, created_at, updated_at)
+        VALUES
+            (?, ?, ?, ?, 0, 1, 35, ?, 1, '1.0.0', 'agent', 'runtime', ?, ?, 4096, 'builtin', ?, 'SDKWork Commercial', NULL, 'Initial release', '2026-05-09 11:04:00', NULL, '2026-05-09 11:04:00', '2026-05-09 11:04:00')
+        "#,
+    )
+    .bind(artifact_id)
+    .bind(format!("admin-visible-skill-artifact-{artifact_id}"))
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(skill_id)
+    .bind(format!("builtin://sdkwork.skills.{name}@1.0.0"))
+    .bind(format!("data/skills/{name}/artifact.json"))
+    .bind(json!(["builtin"]).to_string())
+    .execute(pool)
+    .await
+    .unwrap();
 }

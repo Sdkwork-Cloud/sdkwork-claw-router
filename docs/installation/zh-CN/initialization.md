@@ -205,6 +205,9 @@ sdk_archive_root = "/usr/lib/clawrouter/portal/dist/sdk-archives"
 [provider_relay.runtime]
 response_timeout_millis = 120000
 health_probe_timeout_millis = 10000
+catalog_refresh_interval_millis = 5000
+circuit_breaker_recovery_window_millis = 60000
+failure_strategy = "failover"
 
 [provider_relay.retry]
 max_attempts = 2
@@ -424,7 +427,7 @@ bootstrap admin 环境变量：
 | `SDKWORK_CLAW_BOOTSTRAP_ADMIN_ENABLED` | `true` | 设置为 `false` 可关闭自动创建和修复 bootstrap admin。 |
 | `SDKWORK_CLAW_BOOTSTRAP_ADMIN_USERNAME` | `admin` | 初始化用户名。允许字母、数字、`.`、`-`、`_`。 |
 | `SDKWORK_CLAW_BOOTSTRAP_ADMIN_DISPLAY_NAME` | `Administrator` | 初始化用户显示名。 |
-| `SDKWORK_CLAW_BOOTSTRAP_ADMIN_EMAIL` | `admin@sdkwork.local` | 初始化用户邮箱身份。 |
+| `SDKWORK_CLAW_BOOTSTRAP_ADMIN_EMAIL` | `admin@sdkwork.com` | 初始化用户邮箱身份。 |
 | `SDKWORK_CLAW_BOOTSTRAP_ADMIN_PASSWORD` | 随机生成 | 可选显式初始密码，长度 12 到 128 个字符。 |
 
 installer 输出示例：
@@ -440,11 +443,34 @@ installer 输出示例：
     "userId": "1",
     "username": "admin",
     "displayName": "Administrator",
-    "email": "admin@sdkwork.local",
+    "email": "admin@sdkwork.com",
     "initialPassword": "generated-or-configured-password",
     "generatedPassword": true
   }
 }
+```
+
+需要快速恢复管理员登录时，可以通过根目录 `pnpm` 命令重置 `admin` 密码。开发模式默认使用 `target/dev/clawrouter.sqlite`，release 模式使用运行时 `clawrouter.toml` 中的数据库配置。脚本不会把密码继续传给 installer/cargo 子进程命令行；如果需要避免密码出现在 shell history 或 Node 进程参数中，请使用 `SDKWORK_CLAW_ADMIN_RESET_PASSWORD` 环境变量。
+
+```bash
+pnpm admin:reset:dev -- --password "Admin-Dev-Password-2026!"
+pnpm admin:reset:release -- --password "Admin-Release-Password-2026!"
+```
+
+更适合 release 运维的写法：
+
+```bash
+SDKWORK_CLAW_ADMIN_RESET_PASSWORD="Admin-Release-Password-2026!" pnpm admin:reset:release
+```
+
+默认重置账号为 `admin`，显示名为 `Administrator`，邮箱身份为 `admin@sdkwork.com`。如需覆盖：
+
+```bash
+pnpm admin:reset:release -- \
+  --username admin \
+  --display-name "Administrator" \
+  --email "admin@sdkwork.com" \
+  --password "Admin-Release-Password-2026!"
 ```
 
 Claw Router 的登录、注册、二维码登录、验证码策略和恢复方式由 IAM 运行时配置控制。`v0.3.0` 默认保持严格姿态：密码登录默认可用，二维码、验证码登录、OAuth、session bridge 等能力需要显式开启。

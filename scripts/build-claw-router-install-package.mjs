@@ -32,6 +32,9 @@ const COURSE_VIDEO_UPLOAD_MAX_BYTES = 1024 * 1024 * 1024;
 const COURSE_VIDEO_UPLOAD_BODY_LIMIT_BYTES = COURSE_VIDEO_UPLOAD_MAX_BYTES + 1024 * 1024;
 const PROVIDER_RESPONSE_TIMEOUT_MILLIS = 120_000;
 const PROVIDER_HEALTH_PROBE_TIMEOUT_MILLIS = 10_000;
+const PROVIDER_CATALOG_REFRESH_INTERVAL_MILLIS = 5_000;
+const PROVIDER_CIRCUIT_BREAKER_RECOVERY_WINDOW_MILLIS = 60_000;
+const PROVIDER_FAILURE_STRATEGY = 'failover';
 const PROVIDER_RETRY_MAX_ATTEMPTS = 2;
 const PROVIDER_RETRYABLE_STATUS_CODES = [429, 500, 502, 503, 504];
 const PROVIDER_RETRY_BACKOFF_MILLIS = 0;
@@ -715,6 +718,9 @@ function createInstallConfiguration(packageItem) {
         configSection: 'provider_relay.runtime',
         responseTimeoutMillis: PROVIDER_RESPONSE_TIMEOUT_MILLIS,
         healthProbeTimeoutMillis: PROVIDER_HEALTH_PROBE_TIMEOUT_MILLIS,
+        catalogRefreshIntervalMillis: PROVIDER_CATALOG_REFRESH_INTERVAL_MILLIS,
+        circuitBreakerRecoveryWindowMillis: PROVIDER_CIRCUIT_BREAKER_RECOVERY_WINDOW_MILLIS,
+        failureStrategy: PROVIDER_FAILURE_STRATEGY,
       },
       retry: {
         configSection: 'provider_relay.retry',
@@ -1293,6 +1299,9 @@ function createRuntimeConfigTemplate(packageItem) {
     '# Global defaults for OpenAI-compatible upstream requests and admin/app channel health checks.',
     `response_timeout_millis = ${PROVIDER_RESPONSE_TIMEOUT_MILLIS}`,
     `health_probe_timeout_millis = ${PROVIDER_HEALTH_PROBE_TIMEOUT_MILLIS}`,
+    `catalog_refresh_interval_millis = ${PROVIDER_CATALOG_REFRESH_INTERVAL_MILLIS}`,
+    `circuit_breaker_recovery_window_millis = ${PROVIDER_CIRCUIT_BREAKER_RECOVERY_WINDOW_MILLIS}`,
+    `failure_strategy = "${PROVIDER_FAILURE_STRATEGY}"`,
     '',
     '[provider_relay.retry]',
     '# Default retry policy used when a database routing channel does not define retry_policy.',
@@ -1350,7 +1359,7 @@ function createRuntimeConfigTemplate(packageItem) {
     'enabled = true',
     'username = "admin"',
     'display_name = "Administrator"',
-    'email = "admin@sdkwork.local"',
+    'email = "admin@sdkwork.com"',
     `# password_file = "${secretRoot}/bootstrap-admin.secret"`,
     '',
     '[paths]',

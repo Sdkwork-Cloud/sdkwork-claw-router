@@ -161,6 +161,12 @@ struct IamRuntimeSettingsQuery {
     organization_code: Option<String>,
 }
 
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct IamLoginQrCodeConfirmRequest {
+    qr_key: String,
+}
+
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
 struct IamLoginQrCodeResponse {
@@ -176,6 +182,12 @@ struct IamLoginQrCodeResponse {
 #[serde(rename_all = "camelCase")]
 struct IamLoginQrCodeStatusResponse {
     status: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    session: Option<IamSessionResponse>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    token: Option<IamSessionResponse>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    user_info: Option<IamUserResponse>,
 }
 
 #[derive(Debug, Serialize)]
@@ -388,6 +400,10 @@ pub fn app_auth_router_with_store_auth_settings_store_and_verification_sender(
             "/app/v3/api/auth/qr_login_codes/{qr_key}",
             get(retrieve_login_qr_code),
         )
+        .route(
+            "/app/v3/api/auth/qr_login_codes/confirm",
+            post(confirm_login_qr_code),
+        )
         .route("/app/v3/api/auth/registrations", post(create_registration))
         .route(
             "/app/v3/api/auth/verification_codes",
@@ -416,6 +432,10 @@ pub fn app_auth_router_with_store_auth_settings_store_and_verification_sender(
         .route(
             "/app/v3/api/auth/runtime_settings",
             get(retrieve_runtime_settings),
+        )
+        .route(
+            "/app/v3/api/auth/verification_policy",
+            get(retrieve_verification_policy),
         )
         .with_state(AppAuthState {
             auth_store,
@@ -455,6 +475,10 @@ pub fn app_sessions_router_with_store(
             "/app/v3/api/auth/qr_login_codes/{qr_key}",
             get(retrieve_login_qr_code),
         )
+        .route(
+            "/app/v3/api/auth/qr_login_codes/confirm",
+            post(confirm_login_qr_code),
+        )
         .route("/app/v3/api/auth/registrations", post(create_registration))
         .route(
             "/app/v3/api/auth/verification_codes",
@@ -483,6 +507,10 @@ pub fn app_sessions_router_with_store(
         .route(
             "/app/v3/api/auth/runtime_settings",
             get(retrieve_runtime_settings),
+        )
+        .route(
+            "/app/v3/api/auth/verification_policy",
+            get(retrieve_verification_policy),
         )
         .with_state(AppAuthState {
             auth_store: auth_store.unwrap_or_else(|| Arc::new(UnconfiguredAppAuthStore)),
@@ -528,6 +556,10 @@ pub fn app_sessions_router_with_store_and_verification_sender(
             "/app/v3/api/auth/qr_login_codes/{qr_key}",
             get(retrieve_login_qr_code),
         )
+        .route(
+            "/app/v3/api/auth/qr_login_codes/confirm",
+            post(confirm_login_qr_code),
+        )
         .route("/app/v3/api/auth/registrations", post(create_registration))
         .route(
             "/app/v3/api/auth/verification_codes",
@@ -556,6 +588,10 @@ pub fn app_sessions_router_with_store_and_verification_sender(
         .route(
             "/app/v3/api/auth/runtime_settings",
             get(retrieve_runtime_settings),
+        )
+        .route(
+            "/app/v3/api/auth/verification_policy",
+            get(retrieve_verification_policy),
         )
         .with_state(AppAuthState {
             auth_store: auth_store.unwrap_or_else(|| Arc::new(UnconfiguredAppAuthStore)),
@@ -650,6 +686,36 @@ async fn retrieve_login_qr_code_inner(
     let _qr_key = normalize_required_field("qrKey", &qr_key, 128)?;
     Ok(IamLoginQrCodeStatusResponse {
         status: "pending".to_owned(),
+        session: None,
+        token: None,
+        user_info: None,
+    })
+}
+
+async fn confirm_login_qr_code(
+    State(state): State<AppAuthState>,
+    headers: HeaderMap,
+    Json(request): Json<IamLoginQrCodeConfirmRequest>,
+) -> Response {
+    match confirm_login_qr_code_inner(state, headers, request).await {
+        Ok(response) => Json(PlusApiResult::success(response)).into_response(),
+        Err(error) => auth_error_response(error),
+    }
+}
+
+async fn confirm_login_qr_code_inner(
+    state: AppAuthState,
+    headers: HeaderMap,
+    request: IamLoginQrCodeConfirmRequest,
+) -> Result<IamLoginQrCodeStatusResponse, AppSessionCreateError> {
+    ensure_qr_login_enabled(&state).await?;
+    let _qr_key = normalize_required_field("qrKey", &request.qr_key, 128)?;
+    let session = load_current_session_response(&state, &headers, false).await?;
+    Ok(IamLoginQrCodeStatusResponse {
+        status: "confirmed".to_owned(),
+        user_info: Some(session.user.clone()),
+        session: Some(session),
+        token: None,
     })
 }
 
@@ -2002,6 +2068,24 @@ async fn retrieve_runtime_settings(
     }
 }
 
+async fn retrieve_verification_policy(State(state): State<AppAuthState>) -> Response {
+    match retrieve_runtime_settings_inner(
+        state,
+        IamRuntimeSettingsQuery {
+            tenant_code: None,
+            organization_code: None,
+        },
+    )
+    .await
+    {
+        Ok(settings) => Json(PlusApiResult::success(to_verification_policy_response(
+            settings.verification_policy,
+        )))
+        .into_response(),
+        Err(error) => auth_error_response(error),
+    }
+}
+
 async fn retrieve_runtime_settings_inner(
     state: AppAuthState,
     query: IamRuntimeSettingsQuery,
@@ -2202,6 +2286,17 @@ fn to_auth_settings_response(
                 .verification_policy
                 .phone_registration_verification_required,
         },
+    }
+}
+
+fn to_verification_policy_response(
+    policy: crate::ports::AdminAuthVerificationPolicy,
+) -> IamRuntimeAuthVerificationPolicyResponse {
+    IamRuntimeAuthVerificationPolicyResponse {
+        email_code_login_enabled: policy.email_code_login_enabled,
+        email_registration_verification_required: policy.email_registration_verification_required,
+        phone_code_login_enabled: policy.phone_code_login_enabled,
+        phone_registration_verification_required: policy.phone_registration_verification_required,
     }
 }
 

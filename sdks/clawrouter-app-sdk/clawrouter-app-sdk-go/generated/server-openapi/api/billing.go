@@ -137,12 +137,9 @@ func (a *BillingApi) AccountPointsRechargesOrdersCancel(orderNo string, body sdk
     return decodeResult[sdktypes.AccountPointsRechargesOrdersCancelResult](raw)
 }
 
-// List account points recharge packages
-func (a *BillingApi) AccountPointsRechargesPackagesList(status *string) (sdktypes.AccountPointsRechargesPackagesListResult, error) {
-    query := BuildQueryString([]QueryParameterSpec{
-        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
-    })
-    raw, err := a.client.Get(AppendQueryString(AppApiPath("/billing/account/points/recharges/packages"), query), nil, nil)
+// List packages
+func (a *BillingApi) AccountPointsRechargesPackagesList() (sdktypes.AccountPointsRechargesPackagesListResult, error) {
+    raw, err := a.client.Get(AppApiPath("/billing/account/points/recharges/packages"), nil, nil)
     if err != nil {
         var zero sdktypes.AccountPointsRechargesPackagesListResult
         return zero, err
@@ -507,7 +504,7 @@ func (a *BillingApi) GetVipPackGroupsListPackGroups(packGroupId string) (sdktype
     return decodeResult[sdktypes.VipPackGroupsPacksListResult](raw)
 }
 
-// List packages
+// List VIP packs
 func (a *BillingApi) VipPacksList() (sdktypes.VipPacksListResult, error) {
     raw, err := a.client.Get(AppApiPath("/billing/vip/packs"), nil, nil)
     if err != nil {

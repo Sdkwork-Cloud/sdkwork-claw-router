@@ -1,4 +1,5 @@
 from .http_client import HttpClient, SdkConfig
+from .api.agents import AgentsApi
 from .api.ai import AiApi
 from .api.billing import BillingApi
 from .api.content import ContentApi
@@ -14,6 +15,7 @@ class SdkworkBackendClient:
 
     def __init__(self, config: SdkConfig):
         self._client = HttpClient(config)
+        self.agents: AgentsApi
         self.ai: AiApi
         self.billing: BillingApi
         self.content: ContentApi
@@ -24,6 +26,7 @@ class SdkworkBackendClient:
         self.system: SystemApi
 
         # Initialize API modules
+        self.agents = AgentsApi(self._client)
         self.ai = AiApi(self._client)
         self.billing = BillingApi(self._client)
         self.content = ContentApi(self._client)

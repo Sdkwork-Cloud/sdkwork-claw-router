@@ -19,11 +19,12 @@ use crate::ports::{
     AdminSkillPackageItem, AdminSkillStore, AdminSkillSubject, CreateAdminSkillArtifactCommand,
     CreateAdminSkillAssetCommand, CreateAdminSkillCategoryCommand, CreateAdminSkillCommand,
     CreateAdminSkillPackageCommand, DeleteAdminSkillArtifactCommand, DeleteAdminSkillAssetCommand,
-    DeleteAdminSkillCommand, DeleteAdminSkillPackageCommand, ListAdminSkillArtifactsQuery,
-    ListAdminSkillAssetsQuery, ListAdminSkillCategoriesQuery, ListAdminSkillPackagesQuery,
-    ListAdminSkillsQuery, ReviewAdminSkillCommand, SetAdminSkillEnabledCommand,
-    SetAdminSkillMarketStatusCommand, SetAdminSkillPackageEnabledCommand,
-    UpdateAdminSkillArtifactCommand, UpdateAdminSkillAssetCommand, UpdateAdminSkillCommand,
+    DeleteAdminSkillCategoryCommand, DeleteAdminSkillCommand, DeleteAdminSkillPackageCommand,
+    ListAdminSkillArtifactsQuery, ListAdminSkillAssetsQuery, ListAdminSkillCategoriesQuery,
+    ListAdminSkillPackagesQuery, ListAdminSkillsQuery, ReviewAdminSkillCommand,
+    SetAdminSkillEnabledCommand, SetAdminSkillMarketStatusCommand,
+    SetAdminSkillPackageEnabledCommand, UpdateAdminSkillArtifactCommand,
+    UpdateAdminSkillAssetCommand, UpdateAdminSkillCategoryCommand, UpdateAdminSkillCommand,
     UpdateAdminSkillPackageCommand,
 };
 
@@ -69,6 +70,27 @@ struct CreateCategoryRequest {
     sort_weight: Option<i32>,
     parent_id: Option<Value>,
     path: Option<String>,
+    visible: Option<bool>,
+    status: Option<i32>,
+    #[serde(rename = "type")]
+    category_type: Option<i32>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct UpdateCategoryRequest {
+    name: Option<String>,
+    #[serde(default, deserialize_with = "deserialize_optional_json_value")]
+    description: Option<Value>,
+    #[serde(default, deserialize_with = "deserialize_optional_json_value")]
+    code: Option<Value>,
+    #[serde(default, deserialize_with = "deserialize_optional_json_value")]
+    icon: Option<Value>,
+    sort_weight: Option<i32>,
+    #[serde(default, deserialize_with = "deserialize_optional_json_value")]
+    parent_id: Option<Value>,
+    #[serde(default, deserialize_with = "deserialize_optional_json_value")]
+    path: Option<Value>,
     visible: Option<bool>,
     status: Option<i32>,
     #[serde(rename = "type")]
@@ -557,6 +579,12 @@ pub fn admin_skill_router_with_store_and_json_body_limit(
             "/backend/v3/api/skill/categories",
             get(fetch_categories).post(create_category),
         )
+        .route(
+            "/backend/v3/api/skill/categories/{category_id}",
+            get(fetch_categories)
+                .put(update_category)
+                .delete(delete_category),
+        )
         .route("/backend/v3/api/skill/package/list", post(fetch_packages))
         .route("/backend/v3/api/skill/package", post(create_package))
         .route(
@@ -626,6 +654,12 @@ pub fn admin_skill_router_with_store_and_json_body_limit(
         .route(
             "/backend/v3/api/ecosystem/skills/categories",
             get(fetch_categories).post(create_category),
+        )
+        .route(
+            "/backend/v3/api/ecosystem/skills/categories/{category_id}",
+            get(fetch_categories)
+                .put(update_category)
+                .delete(delete_category),
         )
         .route(
             "/backend/v3/api/ecosystem/skills/package",
@@ -753,6 +787,72 @@ async fn create_category(
         Err(error) if error.is_conflict() => conflict_response(error),
         Err(error) => {
             admin_skill_system_response("skill category command store is unavailable", error)
+        }
+    }
+}
+
+async fn update_category(
+    State(state): State<AdminSkillState>,
+    Path(category_id): Path<String>,
+    headers: HeaderMap,
+    body: Bytes,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let category_id = match parse_positive_id(&category_id, "skill category id") {
+        Ok(category_id) => category_id,
+        Err(message) => return bad_request(message),
+    };
+    let request = match parse_json_body::<UpdateCategoryRequest>(
+        &body,
+        "skill category update",
+        state.json_body_max_bytes,
+    ) {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
+    let command =
+        match build_update_category_command(state.clone(), &headers, subject, category_id, request)
+        {
+            Ok(command) => command,
+            Err(error) => return command_build_error_response(error),
+        };
+    category_item_command_response(
+        state.store.update_category(command).await,
+        "skill category was not found",
+    )
+}
+
+async fn delete_category(
+    State(state): State<AdminSkillState>,
+    Path(category_id): Path<String>,
+    headers: HeaderMap,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let category_id = match parse_positive_id(&category_id, "skill category id") {
+        Ok(category_id) => category_id,
+        Err(message) => return bad_request(message),
+    };
+    let command = match build_delete_category_command(state.clone(), &headers, subject, category_id)
+    {
+        Ok(command) => command,
+        Err(error) => return command_build_error_response(error),
+    };
+    match state.store.delete_category(command).await {
+        Ok(true) => Json(PlusApiResult::success(AdminSkillDeleteResponse {
+            deleted: true,
+        }))
+        .into_response(),
+        Ok(false) => not_found_response("skill category was not found"),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) if error.is_not_found() => not_found_response(&error.to_string()),
+        Err(error) => {
+            admin_skill_system_response("skill category delete store is unavailable", error)
         }
     }
 }
@@ -1819,6 +1919,110 @@ fn build_create_category_command(
         visible: request.visible.unwrap_or(true),
         status: request.status.unwrap_or(1),
         category_type: request.category_type.unwrap_or(CATEGORY_TYPE_SKILLS),
+        request_id: normalize_request_id(headers, &state)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn build_update_category_command(
+    state: AdminSkillState,
+    headers: &HeaderMap,
+    subject: AdminSkillSubject,
+    category_id: i64,
+    request: UpdateCategoryRequest,
+) -> Result<UpdateAdminSkillCategoryCommand, AdminSkillCommandBuildError> {
+    let code = match request.code.as_ref() {
+        None => None,
+        Some(Value::Null) => Some(None),
+        Some(Value::String(value)) => Some(normalize_optional_code(
+            Some(value),
+            "category code",
+            MAX_CODE_LEN,
+        )?),
+        Some(_) => {
+            return Err(AdminSkillCommandBuildError::BadRequest(
+                "category code must be a string or null".to_owned(),
+            ))
+        }
+    };
+    let path = match request.path.as_ref() {
+        None => None,
+        Some(Value::Null) => Some(None),
+        Some(Value::String(value)) => Some(
+            optional_text(Some(value), "category path", 1024)?
+                .map(|value| normalize_path(&value, "category path"))
+                .transpose()?,
+        ),
+        Some(_) => {
+            return Err(AdminSkillCommandBuildError::BadRequest(
+                "category path must be a string or null".to_owned(),
+            ))
+        }
+    };
+    let parent_id = normalize_nullable_id_value(request.parent_id.as_ref(), "parentId")?;
+    if matches!(parent_id, Some(Some(parent_id)) if parent_id == category_id) {
+        return Err(AdminSkillCommandBuildError::BadRequest(
+            "skill category parent cannot be itself".to_owned(),
+        ));
+    }
+    let category_type = request
+        .category_type
+        .map(normalize_category_type)
+        .transpose()?;
+    let command = UpdateAdminSkillCategoryCommand {
+        subject,
+        category_id,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        name: request
+            .name
+            .as_deref()
+            .map(|value| required_text(Some(value), "category name", MAX_NAME_LEN))
+            .transpose()?,
+        description: normalize_nullable_text(
+            request.description.as_ref(),
+            "category description",
+            MAX_SUMMARY_LEN,
+        )?,
+        code,
+        icon: normalize_nullable_url_or_path(request.icon.as_ref(), "category icon", MAX_ICON_LEN)?,
+        sort_weight: request.sort_weight,
+        parent_id,
+        path,
+        visible: request.visible,
+        status: request.status,
+        category_type,
+        request_id: normalize_request_id(headers, &state)?,
+        requested_at: current_timestamp_string(),
+    };
+
+    if command.name.is_none()
+        && command.description.is_none()
+        && command.code.is_none()
+        && command.icon.is_none()
+        && command.sort_weight.is_none()
+        && command.parent_id.is_none()
+        && command.path.is_none()
+        && command.visible.is_none()
+        && command.status.is_none()
+        && command.category_type.is_none()
+    {
+        return Err(AdminSkillCommandBuildError::BadRequest(
+            "skill category update must include at least one editable field".to_owned(),
+        ));
+    }
+    Ok(command)
+}
+
+fn build_delete_category_command(
+    state: AdminSkillState,
+    headers: &HeaderMap,
+    subject: AdminSkillSubject,
+    category_id: i64,
+) -> Result<DeleteAdminSkillCategoryCommand, AdminSkillCommandBuildError> {
+    Ok(DeleteAdminSkillCategoryCommand {
+        subject,
+        category_id,
+        audit_log_uuid: generate_entity_uuid(&state)?,
         request_id: normalize_request_id(headers, &state)?,
         requested_at: current_timestamp_string(),
     })
@@ -3085,6 +3289,15 @@ fn normalize_review_status(value: &str) -> Result<String, String> {
     normalize_enum(value, "reviewStatus", &["PENDING", "APPROVED", "REJECTED"])
 }
 
+fn normalize_category_type(value: i32) -> Result<i32, AdminSkillCommandBuildError> {
+    match value {
+        CATEGORY_TYPE_SKILLS | 20 => Ok(value),
+        _ => Err(AdminSkillCommandBuildError::BadRequest(
+            "category type must be 19 or 20".to_owned(),
+        )),
+    }
+}
+
 fn normalize_enum(value: &str, field: &str, allowed: &[&str]) -> Result<String, String> {
     let value = value.trim().to_ascii_uppercase();
     if allowed.iter().any(|allowed| *allowed == value) {
@@ -3451,6 +3664,24 @@ fn to_artifact_response(item: AdminSkillArtifactItem) -> AdminSkillArtifactItemR
         deprecated_at: item.deprecated_at,
         created_at: item.created_at,
         updated_at: item.updated_at,
+    }
+}
+
+fn category_item_command_response(
+    result: Result<Option<AdminSkillCategoryItem>, DomainError>,
+    not_found_message: &'static str,
+) -> Response {
+    match result {
+        Ok(Some(item)) => Json(PlusApiResult::success(AdminSkillItemEnvelope {
+            item: to_category_response(item),
+        }))
+        .into_response(),
+        Ok(None) => not_found_response(not_found_message),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) if error.is_not_found() => not_found_response(&error.to_string()),
+        Err(error) => {
+            admin_skill_system_response("skill category command store is unavailable", error)
+        }
     }
 }
 

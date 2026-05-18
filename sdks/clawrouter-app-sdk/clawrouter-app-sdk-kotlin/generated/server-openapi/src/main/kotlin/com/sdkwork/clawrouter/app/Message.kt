@@ -5,6 +5,7 @@ data class Message(
     val desc: String? = null,
     val id: String? = null,
     val read: Boolean? = null,
+    val showAsPopup: Boolean? = null,
     val time: String? = null,
     val title: String? = null,
     val type: String? = null

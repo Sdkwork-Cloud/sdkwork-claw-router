@@ -4,6 +4,7 @@ package com.sdkwork.clawrouter.app.model;
 public class RechargePackage {
     private Integer bonus;
     private String id;
+    private Integer points;
     private String rmb;
 
     public Integer getBonus() {
@@ -20,6 +21,14 @@ public class RechargePackage {
     
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Integer getPoints() {
+        return this.points;
+    }
+    
+    public void setPoints(Integer points) {
+        this.points = points;
     }
 
     public String getRmb() {

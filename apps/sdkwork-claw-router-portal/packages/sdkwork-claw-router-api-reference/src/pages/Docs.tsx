@@ -239,7 +239,7 @@ main();`}</code>
               onClick={() => scrollTo('introduction')}
               className={`text-left transition-colors ${activeSection === 'introduction' ? 'text-blue-600 dark:text-blue-400 font-medium' : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'}`}
             >
-              Introduction
+              {t('common.actions.introduction')}
             </button>
           </li>
           <li>
@@ -247,7 +247,7 @@ main();`}</code>
               onClick={() => scrollTo('quickstart')}
               className={`text-left transition-colors ${activeSection === 'quickstart' ? 'text-blue-600 dark:text-blue-400 font-medium' : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'}`}
             >
-              Quickstart
+              {t('common.actions.quickstart')}
             </button>
           </li>
           <li>
@@ -255,7 +255,7 @@ main();`}</code>
               onClick={() => scrollTo('authentication')}
               className={`text-left transition-colors ${activeSection === 'authentication' ? 'text-blue-600 dark:text-blue-400 font-medium' : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'}`}
             >
-              Authentication
+              {t('common.actions.authorization')}
             </button>
           </li>
           <li>
@@ -263,7 +263,7 @@ main();`}</code>
               onClick={() => scrollTo('models')}
               className={`text-left transition-colors ${activeSection === 'models' ? 'text-blue-600 dark:text-blue-400 font-medium' : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'}`}
             >
-              Models
+              {t('common.actions.models')}
             </button>
           </li>
         </ul>

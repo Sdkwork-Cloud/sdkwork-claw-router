@@ -484,6 +484,104 @@ fn selector_uses_configured_fallback_chain_without_legacy_cross_pool_fallback() 
 }
 
 #[test]
+fn selector_plan_includes_primary_and_enabled_fallback_candidates() {
+    let mut catalog = base_catalog();
+    add_callable_route(
+        &mut catalog,
+        3001,
+        "openrouter-main",
+        "gpt-4o-mini-main",
+        "0.110000",
+    );
+    add_callable_route(
+        &mut catalog,
+        3002,
+        "openrouter-fallback",
+        "gpt-4o-mini-fallback",
+        "0.130000",
+    );
+    add_group_policy_rule(
+        &mut catalog,
+        2,
+        201,
+        202,
+        r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
+        "openai/global/gpt-4o-mini",
+        vec![RouteCandidate::new(3001, 100)],
+        vec![RouteCandidate::new(3002, 50)],
+    );
+
+    let plan = ProviderRouteSelector::new(&catalog)
+        .select_plan(select_query())
+        .unwrap();
+
+    let channel_ids = plan
+        .routes
+        .iter()
+        .map(|selection| selection.route.channel_id)
+        .collect::<Vec<_>>();
+    assert_eq!(vec![3001, 3002], channel_ids);
+    assert_eq!(Some(2), plan.policy_id);
+    assert_eq!(Some(202), plan.rule_id);
+}
+
+#[test]
+fn selector_plan_respects_policy_fallback_mode_none() {
+    let mut catalog = base_catalog();
+    add_callable_route(
+        &mut catalog,
+        3001,
+        "openrouter-main",
+        "gpt-4o-mini-main",
+        "0.110000",
+    );
+    add_callable_route(
+        &mut catalog,
+        3002,
+        "openrouter-fallback",
+        "gpt-4o-mini-fallback",
+        "0.130000",
+    );
+    catalog.add_routing_policy(
+        RoutingPolicy::new(
+            2,
+            10,
+            20,
+            "group-policy-no-fallback",
+            RoutingPolicyScope::ApiKeyGroup,
+            Some(10),
+            Some(201),
+        )
+        .with_fallback_mode(RoutingFallbackMode::None),
+    );
+    catalog.add_routing_rule(
+        RoutingRule::new(
+            202,
+            10,
+            20,
+            201,
+            "rule-with-disabled-fallback",
+            1,
+            r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
+            "openai/global/gpt-4o-mini",
+        )
+        .with_candidate_channels(vec![RouteCandidate::new(3001, 100)])
+        .with_fallback_chain(vec![RouteCandidate::new(3002, 50)]),
+    );
+
+    let plan = ProviderRouteSelector::new(&catalog)
+        .select_plan(select_query())
+        .unwrap();
+
+    let channel_ids = plan
+        .routes
+        .iter()
+        .map(|selection| selection.route.channel_id)
+        .collect::<Vec<_>>();
+    assert_eq!(vec![3001], channel_ids);
+}
+
+#[test]
 fn selector_rejects_rule_fallback_chain_when_policy_fallback_mode_is_none() {
     let mut catalog = base_catalog();
     add_callable_route(

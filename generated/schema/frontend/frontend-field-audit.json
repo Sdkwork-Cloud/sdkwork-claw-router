@@ -2,6 +2,116 @@
   "interfaces": [
     {
       "data_sources": [
+        "ai_agent",
+        "ai_agent_tool_binding",
+        "ai_agent_mcp_server",
+        "ai_agent_memory"
+      ],
+      "fields": [
+        "memoryEnabled",
+        "mcpServerCount",
+        "skillBindingCount"
+      ],
+      "file_targets": [],
+      "interface": "AdminAgentCapabilities",
+      "route": "/admin/agents",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_agent",
+        "ai_agent_version",
+        "ai_agent_tool_binding",
+        "ai_agent_mcp_server",
+        "ai_agent_memory"
+      ],
+      "fields": [
+        "id",
+        "ownerUserId",
+        "code",
+        "name",
+        "description",
+        "visibility",
+        "status",
+        "avatarUrl",
+        "templateSource",
+        "createdAt",
+        "updatedAt",
+        "defaultVersion",
+        "defaultVersion.id",
+        "defaultVersion.versionNo",
+        "defaultVersion.releaseStatus",
+        "defaultVersion.model",
+        "defaultVersion.systemPrompt",
+        "defaultVersion.toolPolicy",
+        "defaultVersion.memoryPolicy",
+        "defaultVersion.mcpPolicy",
+        "defaultVersion.skillPolicy",
+        "defaultVersion.runtimePolicy",
+        "defaultVersion.createdAt",
+        "defaultVersion.updatedAt",
+        "capabilities",
+        "capabilities.memoryEnabled",
+        "capabilities.mcpServerCount",
+        "capabilities.skillBindingCount"
+      ],
+      "file_targets": [],
+      "interface": "AdminAgentItem",
+      "route": "/admin/agents",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_agent"
+      ],
+      "fields": [
+        "q",
+        "ownerUserId",
+        "status",
+        "visibility",
+        "page",
+        "pageSize"
+      ],
+      "file_targets": [],
+      "interface": "AdminAgentListQuery",
+      "route": "/admin/agents",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_agent_version"
+      ],
+      "fields": [],
+      "file_targets": [],
+      "interface": "AdminAgentPolicyDocument",
+      "route": "/admin/agents",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_agent_version"
+      ],
+      "fields": [
+        "id",
+        "versionNo",
+        "releaseStatus",
+        "model",
+        "systemPrompt",
+        "toolPolicy",
+        "memoryPolicy",
+        "mcpPolicy",
+        "skillPolicy",
+        "runtimePolicy",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "AdminAgentVersion",
+      "route": "/admin/agents",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts"
+    },
+    {
+      "data_sources": [
         "content_announcement"
       ],
       "fields": [
@@ -9,6 +119,7 @@
         "title",
         "target",
         "status",
+        "showAsPopup",
         "date",
         "content"
       ],
@@ -25,6 +136,7 @@
         "title",
         "target",
         "status",
+        "showAsPopup",
         "content"
       ],
       "file_targets": [],
@@ -40,6 +152,7 @@
         "title",
         "target",
         "status",
+        "showAsPopup",
         "content"
       ],
       "file_targets": [],
@@ -60,11 +173,13 @@
         "protocol",
         "accessType",
         "baseUrl",
+        "apiKey",
         "secretRef",
         "models",
         "capabilities",
         "timeoutMs",
         "retryPolicy",
+        "circuitBreakerPolicy",
         "weight",
         "status"
       ],
@@ -94,6 +209,7 @@
         "isMultimodal",
         "timeoutMs",
         "retryPolicy",
+        "circuitBreakerPolicy",
         "weight",
         "status",
         "balance",
@@ -130,6 +246,7 @@
         "item.isMultimodal",
         "item.timeoutMs",
         "item.retryPolicy",
+        "item.circuitBreakerPolicy",
         "item.weight",
         "item.status",
         "item.balance",
@@ -153,11 +270,13 @@
         "protocol",
         "accessType",
         "baseUrl",
+        "apiKey",
         "secretRef",
         "models",
         "capabilities",
         "timeoutMs",
         "retryPolicy",
+        "circuitBreakerPolicy",
         "weight",
         "status"
       ],
@@ -583,6 +702,60 @@
       "interface": "ReferralStat",
       "route": "/admin/marketing",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_vendor",
+        "ai_model",
+        "ai_model_capability",
+        "ai_model_pricing",
+        "ai_model_rank_snapshot",
+        "ai_pricing_import_snapshot",
+        "ops_audit_log"
+      ],
+      "fields": [
+        "initialized",
+        "vendors",
+        "vendors.id",
+        "vendors.vendorCode",
+        "vendors.name",
+        "vendors.status",
+        "vendors.color",
+        "vendors.description",
+        "models",
+        "models.id",
+        "models.vendorId",
+        "models.vendorCode",
+        "models.name",
+        "models.type",
+        "models.priceIn",
+        "models.priceOut",
+        "models.status",
+        "models.calls",
+        "models.description",
+        "models.modalities",
+        "models.inputModalities",
+        "models.outputModalities",
+        "models.apiFormat",
+        "models.capabilityIntro",
+        "models.limitations",
+        "models.supportedLanguages",
+        "models.useCases",
+        "models.trainingDataCutoff",
+        "models.contextTokens",
+        "models.maxOutputTokens",
+        "models.supportsStreaming",
+        "models.supportsTools",
+        "models.supportsJsonSchema",
+        "models.releaseStage",
+        "models.shelfState",
+        "models.routingState",
+        "models.replacementModel"
+      ],
+      "file_targets": [],
+      "interface": "InitializedModelCatalog",
+      "route": "/admin/model",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts"
     },
     {
       "data_sources": [
@@ -1286,6 +1459,27 @@
     },
     {
       "data_sources": [
+        "plus_category"
+      ],
+      "fields": [
+        "name",
+        "code",
+        "description",
+        "icon",
+        "sortWeight",
+        "parentId",
+        "path",
+        "visible",
+        "status",
+        "type"
+      ],
+      "file_targets": [],
+      "interface": "AdminSkillCategoryUpdateInput",
+      "route": "/admin/skill",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts"
+    },
+    {
+      "data_sources": [
         "plus_agent_skill",
         "plus_agent_skill_package",
         "plus_category"
@@ -1486,7 +1680,7 @@
     },
     {
       "data_sources": [
-        "plus_user",
+        "iam_user",
         "iam_gateway_api_key"
       ],
       "fields": [
@@ -1532,7 +1726,7 @@
     },
     {
       "data_sources": [
-        "plus_user",
+        "iam_user",
         "plus_account"
       ],
       "fields": [
@@ -1547,10 +1741,10 @@
     },
     {
       "data_sources": [
-        "plus_user",
+        "iam_user",
         "plus_account",
-        "plus_role",
-        "plus_user_role",
+        "iam_role",
+        "iam_user_role",
         "iam_user_login_event"
       ],
       "fields": [
@@ -1572,8 +1766,8 @@
     },
     {
       "data_sources": [
-        "plus_user",
-        "plus_user_role"
+        "iam_user",
+        "iam_user_role"
       ],
       "fields": [
         "username",
@@ -1786,9 +1980,29 @@
     },
     {
       "data_sources": [
-        "plus_user",
+        "ops_notification_message",
+        "ops_notification_delivery"
+      ],
+      "fields": [
+        "id",
+        "title",
+        "desc",
+        "content",
+        "time",
+        "type",
+        "read",
+        "showAsPopup"
+      ],
+      "file_targets": [],
+      "interface": "NotificationItem",
+      "route": "/console/notifications",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_user",
         "plus_account",
-        "plus_organization",
+        "iam_organization",
         "plus_invoice",
         "iam_user_security_setting",
         "iam_user_login_event",
@@ -1832,6 +2046,137 @@
     },
     {
       "data_sources": [
+        "ai_agent",
+        "ai_agent_tool_binding",
+        "ai_agent_mcp_server",
+        "ai_agent_memory"
+      ],
+      "fields": [
+        "memoryEnabled",
+        "mcpServerCount",
+        "skillBindingCount"
+      ],
+      "file_targets": [],
+      "interface": "AgentCapabilities",
+      "route": "/console/agents",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_agent",
+        "ai_agent_version",
+        "ai_agent_tool_binding",
+        "ai_agent_mcp_server",
+        "ai_agent_memory"
+      ],
+      "fields": [
+        "id",
+        "ownerUserId",
+        "code",
+        "name",
+        "description",
+        "visibility",
+        "status",
+        "avatarUrl",
+        "templateSource",
+        "createdAt",
+        "updatedAt",
+        "defaultVersion",
+        "defaultVersion.id",
+        "defaultVersion.versionNo",
+        "defaultVersion.releaseStatus",
+        "defaultVersion.model",
+        "defaultVersion.systemPrompt",
+        "defaultVersion.toolPolicy",
+        "defaultVersion.memoryPolicy",
+        "defaultVersion.mcpPolicy",
+        "defaultVersion.skillPolicy",
+        "defaultVersion.runtimePolicy",
+        "defaultVersion.createdAt",
+        "defaultVersion.updatedAt",
+        "capabilities",
+        "capabilities.memoryEnabled",
+        "capabilities.mcpServerCount",
+        "capabilities.skillBindingCount"
+      ],
+      "file_targets": [],
+      "interface": "AgentDefinition",
+      "route": "/console/agents",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_agent"
+      ],
+      "fields": [
+        "page",
+        "pageSize",
+        "q"
+      ],
+      "file_targets": [],
+      "interface": "AgentListQuery",
+      "route": "/console/agents",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_agent_version"
+      ],
+      "fields": [],
+      "file_targets": [],
+      "interface": "AgentPolicyDocument",
+      "route": "/console/agents",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_agent_version"
+      ],
+      "fields": [
+        "id",
+        "versionNo",
+        "releaseStatus",
+        "model",
+        "systemPrompt",
+        "toolPolicy",
+        "memoryPolicy",
+        "mcpPolicy",
+        "skillPolicy",
+        "runtimePolicy",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "AgentVersion",
+      "route": "/console/agents",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_agent",
+        "ai_agent_version",
+        "ai_agent_tool_binding",
+        "ai_agent_mcp_server",
+        "ai_agent_memory"
+      ],
+      "fields": [
+        "name",
+        "code",
+        "description",
+        "model",
+        "systemPrompt",
+        "memoryEnabled",
+        "mcpServers",
+        "skills",
+        "executionMode"
+      ],
+      "file_targets": [],
+      "interface": "CreateAgentInput",
+      "route": "/console/agents",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts"
+    },
+    {
+      "data_sources": [
         "iam_gateway_api_key",
         "iam_gateway_api_key_group",
         "iam_gateway_api_key_group_metric_snapshot",
@@ -1843,8 +2188,11 @@
       "fields": [
         "id",
         "name",
+        "displayName",
         "maskedKey",
+        "copyableKey",
         "group",
+        "groupName",
         "rate",
         "quota",
         "usedQuota",
@@ -1878,32 +2226,6 @@
     },
     {
       "data_sources": [
-        "iam_gateway_api_key",
-        "iam_gateway_api_key_group"
-      ],
-      "fields": [
-        "keys",
-        "keys.id",
-        "keys.name",
-        "keys.maskedKey",
-        "keys.group",
-        "keys.rate",
-        "keys.quota",
-        "keys.usedQuota",
-        "keys.modalities",
-        "keys.ipLimit",
-        "keys.created",
-        "keys.expires",
-        "keys.status",
-        "groups"
-      ],
-      "file_targets": [],
-      "interface": "ApiKeyPageData",
-      "route": "/console/api-keys",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts"
-    },
-    {
-      "data_sources": [
         "iam_gateway_api_key_group",
         "iam_gateway_access_policy",
         "ai_quota_policy"
@@ -1930,8 +2252,11 @@
         "key",
         "key.id",
         "key.name",
+        "key.displayName",
         "key.maskedKey",
+        "key.copyableKey",
         "key.group",
+        "key.groupName",
         "key.rate",
         "key.quota",
         "key.usedQuota",
@@ -2064,7 +2389,9 @@
       "fields": [
         "id",
         "text",
+        "textI18nKey",
         "time",
+        "timeI18nKey",
         "type"
       ],
       "file_targets": [],
@@ -2128,25 +2455,6 @@
       "interface": "GatewayTrace",
       "route": "/console/gateway",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-gateway/src/gatewayService.ts"
-    },
-    {
-      "data_sources": [
-        "ops_notification_message",
-        "ops_notification_delivery"
-      ],
-      "fields": [
-        "id",
-        "title",
-        "desc",
-        "content",
-        "time",
-        "type",
-        "read"
-      ],
-      "file_targets": [],
-      "interface": "Message",
-      "route": "/console/messages",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-messages/src/messagesService.ts"
     },
     {
       "data_sources": [
@@ -2244,7 +2552,8 @@
       "fields": [
         "id",
         "name",
-        "key",
+        "displayKey",
+        "copyableKey",
         "status",
         "totalUsage",
         "createdAt"
@@ -2274,6 +2583,7 @@
         "capabilities",
         "timeoutMs",
         "retryPolicy",
+        "circuitBreakerPolicy",
         "weight",
         "status"
       ],
@@ -2321,6 +2631,7 @@
         "capabilities",
         "timeoutMs",
         "retryPolicy",
+        "circuitBreakerPolicy",
         "weight",
         "status"
       ],
@@ -2404,6 +2715,8 @@
         "retryPolicy.maxAttempts",
         "retryPolicy.retryableStatusCodes",
         "retryPolicy.backoffMs",
+        "circuitBreakerPolicy",
+        "circuitBreakerPolicy.failureThreshold",
         "weight",
         "status",
         "latency",
@@ -2413,6 +2726,21 @@
       ],
       "file_targets": [],
       "interface": "Channel",
+      "route": "/console/routing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/types.ts"
+    },
+    {
+      "data_sources": [
+        "integration_provider",
+        "integration_channel",
+        "integration_channel_model",
+        "integration_provider_account"
+      ],
+      "fields": [
+        "failureThreshold"
+      ],
+      "file_targets": [],
+      "interface": "RoutingCircuitBreakerPolicy",
       "route": "/console/routing",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/types.ts"
     },
@@ -3168,9 +3496,12 @@
         "prompt",
         "type",
         "modelInfo",
+        "modelCatalogKey",
         "url",
         "images",
         "videos",
+        "aspectRatio",
+        "durationSeconds",
         "activeIndex",
         "status",
         "createdAt",
@@ -3288,7 +3619,7 @@
     }
   ],
   "summary": {
-    "interface_count": 145,
-    "source_file_count": 42
+    "interface_count": 158,
+    "source_file_count": 44
   }
 }

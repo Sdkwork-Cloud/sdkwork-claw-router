@@ -385,6 +385,289 @@
         ],
         "type": "object"
       },
+      "AdminAgentCapabilities": {
+        "additionalProperties": false,
+        "description": "Admin agent capabilities schema exposed by Claw Router.",
+        "properties": {
+          "mcpServerCount": {
+            "description": "Mcp server count field on admin agent capabilities.",
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "memoryEnabled": {
+            "description": "Memory enabled field on admin agent capabilities.",
+            "type": "boolean"
+          },
+          "skillBindingCount": {
+            "description": "Skill binding count field on admin agent capabilities.",
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "memoryEnabled",
+          "mcpServerCount",
+          "skillBindingCount"
+        ],
+        "type": "object"
+      },
+      "AdminAgentItem": {
+        "additionalProperties": false,
+        "description": "Admin agent item schema exposed by Claw Router.",
+        "properties": {
+          "avatarUrl": {
+            "description": "Avatar url field on admin agent item.",
+            "maxLength": 2048,
+            "nullable": true,
+            "type": "string"
+          },
+          "capabilities": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AdminAgentCapabilities"
+              }
+            ],
+            "description": "Capabilities field on admin agent item."
+          },
+          "code": {
+            "description": "Code field on admin agent item.",
+            "maxLength": 96,
+            "minLength": 1,
+            "pattern": "^[a-z0-9][a-z0-9-]{0,95}$",
+            "type": "string"
+          },
+          "createdAt": {
+            "description": "Created at field on admin agent item.",
+            "maxLength": 64,
+            "minLength": 1,
+            "type": "string"
+          },
+          "defaultVersion": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AdminAgentVersionItem"
+              }
+            ],
+            "description": "Default version field on admin agent item."
+          },
+          "description": {
+            "description": "Description field on admin agent item.",
+            "maxLength": 1024,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on admin agent item.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "name": {
+            "description": "Name field on admin agent item.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "ownerUserId": {
+            "description": "Owner user id field on admin agent item.",
+            "format": "int64",
+            "minimum": 1,
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on admin agent item.",
+            "enum": [
+              "active",
+              "disabled"
+            ],
+            "type": "string"
+          },
+          "templateSource": {
+            "description": "Template source field on admin agent item.",
+            "maxLength": 128,
+            "nullable": true,
+            "type": "string"
+          },
+          "updatedAt": {
+            "description": "Updated at field on admin agent item.",
+            "maxLength": 64,
+            "minLength": 1,
+            "type": "string"
+          },
+          "visibility": {
+            "description": "Visibility field on admin agent item.",
+            "enum": [
+              "private",
+              "organization",
+              "public"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "ownerUserId",
+          "code",
+          "name",
+          "description",
+          "visibility",
+          "status",
+          "createdAt",
+          "updatedAt",
+          "defaultVersion",
+          "capabilities"
+        ],
+        "type": "object"
+      },
+      "AdminAgentListResponse": {
+        "additionalProperties": false,
+        "description": "Admin agent list response schema exposed by Claw Router.",
+        "name": "AdminAgentListResponse",
+        "properties": {
+          "items": {
+            "description": "Items field on admin agent list response.",
+            "items": {
+              "$ref": "#/components/schemas/AdminAgentItem"
+            },
+            "maxItems": 100,
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "type": "object"
+      },
+      "AdminAgentVersionItem": {
+        "additionalProperties": false,
+        "description": "Admin agent version item schema exposed by Claw Router.",
+        "properties": {
+          "createdAt": {
+            "description": "Created at field on admin agent version item.",
+            "maxLength": 64,
+            "minLength": 1,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on admin agent version item.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "mcpPolicy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Mcp policy field on admin agent version item."
+            },
+            "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+            "name": "AgentPolicy",
+            "type": "object"
+          },
+          "memoryPolicy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Memory policy field on admin agent version item."
+            },
+            "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+            "name": "AgentPolicy",
+            "type": "object"
+          },
+          "model": {
+            "description": "Model field on admin agent version item.",
+            "maxLength": 128,
+            "nullable": true,
+            "type": "string"
+          },
+          "releaseStatus": {
+            "description": "Release status field on admin agent version item.",
+            "enum": [
+              "draft",
+              "published",
+              "archived"
+            ],
+            "type": "string"
+          },
+          "runtimePolicy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Runtime policy field on admin agent version item."
+            },
+            "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+            "name": "AgentPolicy",
+            "type": "object"
+          },
+          "skillPolicy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Skill policy field on admin agent version item."
+            },
+            "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+            "name": "AgentPolicy",
+            "type": "object"
+          },
+          "systemPrompt": {
+            "description": "System prompt field on admin agent version item.",
+            "maxLength": 32768,
+            "type": "string"
+          },
+          "toolPolicy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Tool policy field on admin agent version item."
+            },
+            "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+            "name": "AgentPolicy",
+            "type": "object"
+          },
+          "updatedAt": {
+            "description": "Updated at field on admin agent version item.",
+            "maxLength": 64,
+            "minLength": 1,
+            "type": "string"
+          },
+          "versionNo": {
+            "description": "Version no field on admin agent version item.",
+            "format": "int64",
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "versionNo",
+          "releaseStatus",
+          "systemPrompt",
+          "toolPolicy",
+          "memoryPolicy",
+          "mcpPolicy",
+          "skillPolicy",
+          "runtimePolicy",
+          "createdAt",
+          "updatedAt"
+        ],
+        "type": "object"
+      },
       "AdminAiModelCreateRequest": {
         "additionalProperties": false,
         "description": "Admin ai model create request schema exposed by Claw Router.",
@@ -1054,6 +1337,10 @@
             "minLength": 1,
             "type": "string"
           },
+          "showAsPopup": {
+            "description": "Whether eligible users should see this announcement as a popup when the frontend loads.",
+            "type": "boolean"
+          },
           "status": {
             "description": "Publication state for the announcement.",
             "enum": [
@@ -1083,6 +1370,7 @@
           "title",
           "target",
           "status",
+          "showAsPopup",
           "content"
         ],
         "type": "object"
@@ -1108,6 +1396,10 @@
             "maxLength": 128,
             "minLength": 1,
             "type": "string"
+          },
+          "showAsPopup": {
+            "description": "Show as popup field on admin announcement item.",
+            "type": "boolean"
           },
           "status": {
             "description": "Status field on admin announcement item.",
@@ -1139,6 +1431,7 @@
           "title",
           "target",
           "status",
+          "showAsPopup",
           "date",
           "content"
         ],
@@ -1173,6 +1466,10 @@
             "maxLength": 20000,
             "minLength": 1,
             "type": "string"
+          },
+          "showAsPopup": {
+            "description": "Optional popup-display toggle update.",
+            "type": "boolean"
           },
           "status": {
             "description": "Optional announcement publication state update.",
@@ -1256,7 +1553,7 @@
             "description": "Key field on admin api key create response."
           },
           "rawKey": {
-            "description": "One-time plaintext API key material returned immediately after creation.",
+            "description": "Full plaintext API key material returned immediately after creation.",
             "maxLength": 256,
             "minLength": 1,
             "type": "string"
@@ -2420,6 +2717,12 @@
             "minLength": 1,
             "type": "string"
           },
+          "apiKey": {
+            "description": "Plaintext provider API key accepted only on create/update input. Backend encrypts it into integration_provider_account.auth_config and never returns it.",
+            "maxLength": 4096,
+            "minLength": 1,
+            "type": "string"
+          },
           "baseUrl": {
             "description": "Base url field on admin channel create request.",
             "maxLength": 512,
@@ -2442,6 +2745,14 @@
             "maxItems": 16,
             "type": "array",
             "uniqueItems": true
+          },
+          "circuitBreakerPolicy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderCircuitBreakerPolicy"
+              }
+            ],
+            "description": "Circuit breaker policy field on admin channel create request."
           },
           "models": {
             "description": "Models field on admin channel create request.",
@@ -2478,7 +2789,7 @@
             "description": "Retry policy field on admin channel create request."
           },
           "secretRef": {
-            "description": "Vault/KMS secret reference. Plaintext credential fields are forbidden.",
+            "description": "Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead.",
             "maxLength": 256,
             "minLength": 1,
             "pattern": "^(vault|secret)://[^\\\\s]+$",
@@ -2518,14 +2829,14 @@
         "required": [
           "name",
           "vendor",
-          "secretRef",
+          "apiKey",
           "models"
         ],
         "type": "object"
       },
       "AdminChannelItem": {
         "additionalProperties": false,
-        "description": "Persisted channel snapshot returned after the provider health probe. Secret refs and tokens are not returned.",
+        "description": "Persisted channel snapshot returned after the provider health probe. Secret references may be returned for credential lookup; plaintext tokens are never returned.",
         "properties": {
           "accessType": {
             "description": "Access type field on admin channel item.",
@@ -2559,6 +2870,14 @@
             },
             "maxItems": 16,
             "type": "array"
+          },
+          "circuitBreakerPolicy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderCircuitBreakerPolicy"
+              }
+            ],
+            "description": "Circuit breaker policy field on admin channel item."
           },
           "errors": {
             "description": "Errors field on admin channel item.",
@@ -2733,6 +3052,12 @@
             "minLength": 1,
             "type": "string"
           },
+          "apiKey": {
+            "description": "Plaintext provider API key accepted only on create/update input. Backend encrypts it into integration_provider_account.auth_config and never returns it.",
+            "maxLength": 4096,
+            "minLength": 1,
+            "type": "string"
+          },
           "baseUrl": {
             "description": "Base url field on admin channel update request.",
             "maxLength": 512,
@@ -2756,6 +3081,27 @@
             "maxItems": 16,
             "type": "array",
             "uniqueItems": true
+          },
+          "circuitBreakerPolicy": {
+            "description": "Circuit breaker policy field on admin channel update request.",
+            "oneOf": [
+              {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/ProviderCircuitBreakerPolicy"
+                  }
+                ],
+                "description": "Circuit breaker policy field on admin channel update request."
+              },
+              {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/JsonNull"
+                  }
+                ],
+                "description": "Null variant accepted by circuit breaker policy."
+              }
+            ]
           },
           "id": {
             "description": "Id field on admin channel update request.",
@@ -2810,7 +3156,7 @@
             ]
           },
           "secretRef": {
-            "description": "Vault/KMS secret reference. Plaintext credential fields are forbidden.",
+            "description": "Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead.",
             "maxLength": 256,
             "minLength": 1,
             "pattern": "^(vault|secret)://[^\\\\s]+$",
@@ -6011,9 +6357,24 @@
         ],
         "type": "object"
       },
+      "AdminSkillCategoryDeleteResponse": {
+        "additionalProperties": false,
+        "description": "Admin skill category delete response schema exposed by Claw Router.",
+        "name": "AdminSkillCategoryDeleteResponse",
+        "properties": {
+          "deleted": {
+            "description": "Whether the skill category was deleted.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "deleted"
+        ],
+        "type": "object"
+      },
       "AdminSkillCategoryItem": {
         "additionalProperties": false,
-        "description": "Persisted skill category snapshot returned by the backend.",
+        "description": "Updated skill category snapshot returned by the backend.",
         "properties": {
           "code": {
             "description": "Code field on admin skill category item.",
@@ -6126,6 +6487,79 @@
         "required": [
           "item"
         ],
+        "type": "object"
+      },
+      "AdminSkillCategoryUpdateRequest": {
+        "additionalProperties": false,
+        "description": "Admin skill category update request schema exposed by Claw Router.",
+        "name": "AdminSkillCategoryUpdateRequest",
+        "properties": {
+          "code": {
+            "description": "Code field on admin skill category update request.",
+            "maxLength": 128,
+            "minLength": 1,
+            "nullable": true,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description field on admin skill category update request.",
+            "maxLength": 512,
+            "nullable": true,
+            "type": "string"
+          },
+          "icon": {
+            "description": "Icon field on admin skill category update request.",
+            "maxLength": 255,
+            "nullable": true,
+            "type": "string"
+          },
+          "name": {
+            "description": "Skill category display name.",
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string"
+          },
+          "parentId": {
+            "description": "Parent id field on admin skill category update request.",
+            "maxLength": 128,
+            "nullable": true,
+            "type": "string"
+          },
+          "path": {
+            "description": "Path field on admin skill category update request.",
+            "maxLength": 1024,
+            "nullable": true,
+            "pattern": "^/",
+            "type": "string"
+          },
+          "sortWeight": {
+            "description": "Sort weight field on admin skill category update request.",
+            "format": "int32",
+            "maximum": 1000000,
+            "minimum": -1000000,
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on admin skill category update request.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "type": {
+            "description": "Type field on admin skill category update request.",
+            "enum": [
+              19,
+              20
+            ],
+            "format": "int32",
+            "type": "integer"
+          },
+          "visible": {
+            "description": "Visible field on admin skill category update request.",
+            "type": "boolean"
+          }
+        },
+        "required": [],
         "type": "object"
       },
       "AdminSkillCreateRequest": {
@@ -7652,6 +8086,1288 @@
           "items"
         ],
         "type": "object"
+      },
+      "AgentDefinitionsListResult": {
+        "additionalProperties": false,
+        "description": "Agent definitions list result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AdminAgentListResponse"
+              }
+            ],
+            "description": "Data field on agent definitions list result."
+          },
+          "message": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          },
+          "msg": {
+            "description": "Java-compatible response message field.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "agentDefinitions.list"
+      },
+      "AgentDefinitionsRetrieveResult": {
+        "additionalProperties": false,
+        "description": "Agent definitions retrieve result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AdminAgentItem"
+              }
+            ],
+            "description": "Data field on agent definitions retrieve result."
+          },
+          "message": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          },
+          "msg": {
+            "description": "Java-compatible response message field.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "agentDefinitions.retrieve"
+      },
+      "AiAgentMcpServerRecord": {
+        "additionalProperties": false,
+        "description": "Ai agent mcp server record schema exposed by Claw Router.",
+        "properties": {
+          "connection_config": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Connection config field on ai agent mcp server record."
+            },
+            "description": "Connection config field on ai agent mcp server record.",
+            "type": "object"
+          },
+          "created_at": {
+            "description": "Created at field on ai agent mcp server record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "credential_ref": {
+            "description": "Credential ref field on ai agent mcp server record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai agent mcp server record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai agent mcp server record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai agent mcp server record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description field on ai agent mcp server record.",
+            "maxLength": 1024,
+            "type": "string"
+          },
+          "health_status": {
+            "description": "Health status field on ai agent mcp server record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "id": {
+            "description": "Id field on ai agent mcp server record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "last_checked_at": {
+            "description": "Last checked at field on ai agent mcp server record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "last_error_masked": {
+            "description": "Last error masked field on ai agent mcp server record.",
+            "maxLength": 1024,
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai agent mcp server record."
+            },
+            "description": "Metadata field on ai agent mcp server record.",
+            "type": "object"
+          },
+          "name": {
+            "description": "Name field on ai agent mcp server record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai agent mcp server record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "permission_policy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Permission policy field on ai agent mcp server record."
+            },
+            "description": "Permission policy field on ai agent mcp server record.",
+            "type": "object"
+          },
+          "prompt_catalog": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Prompt catalog field on ai agent mcp server record."
+            },
+            "description": "Prompt catalog field on ai agent mcp server record.",
+            "type": "object"
+          },
+          "resource_catalog": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Resource catalog field on ai agent mcp server record."
+            },
+            "description": "Resource catalog field on ai agent mcp server record.",
+            "type": "object"
+          },
+          "server_code": {
+            "description": "Server code field on ai agent mcp server record.",
+            "maxLength": 96,
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai agent mcp server record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai agent mcp server record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "tool_catalog": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Tool catalog field on ai agent mcp server record."
+            },
+            "description": "Tool catalog field on ai agent mcp server record.",
+            "type": "object"
+          },
+          "transport_type": {
+            "description": "Transport type field on ai agent mcp server record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai agent mcp server record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai agent mcp server record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai agent mcp server record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_agent_mcp_server"
+      },
+      "AiAgentMemoryRecord": {
+        "additionalProperties": false,
+        "description": "Ai agent memory record schema exposed by Claw Router.",
+        "properties": {
+          "agent_id": {
+            "description": "Agent id field on ai agent memory record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "content_ref": {
+            "description": "Content ref field on ai agent memory record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai agent memory record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai agent memory record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai agent memory record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai agent memory record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "embedding_ref": {
+            "description": "Embedding ref field on ai agent memory record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "expires_at": {
+            "description": "Expires at field on ai agent memory record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai agent memory record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "last_used_at": {
+            "description": "Last used at field on ai agent memory record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "memory_hash": {
+            "description": "Memory hash field on ai agent memory record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "memory_scope": {
+            "description": "Memory scope field on ai agent memory record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "memory_type": {
+            "description": "Memory type field on ai agent memory record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai agent memory record."
+            },
+            "description": "Metadata field on ai agent memory record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai agent memory record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "owner_id": {
+            "description": "Owner id field on ai agent memory record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "owner_type": {
+            "description": "Owner type field on ai agent memory record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "owner_user_id": {
+            "description": "Owner user id field on ai agent memory record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "retention_policy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Retention policy field on ai agent memory record."
+            },
+            "description": "Retention policy field on ai agent memory record.",
+            "type": "object"
+          },
+          "status": {
+            "description": "Status field on ai agent memory record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai agent memory record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai agent memory record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "user_id": {
+            "description": "User id field on ai agent memory record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai agent memory record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai agent memory record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_agent_memory"
+      },
+      "AiAgentRecord": {
+        "additionalProperties": false,
+        "description": "Ai agent record schema exposed by Claw Router.",
+        "properties": {
+          "agent_code": {
+            "description": "Agent code field on ai agent record.",
+            "maxLength": 96,
+            "type": "string"
+          },
+          "avatar_url": {
+            "description": "Avatar url field on ai agent record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai agent record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai agent record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "default_version_id": {
+            "description": "Default version id field on ai agent record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai agent record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai agent record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description field on ai agent record.",
+            "maxLength": 1024,
+            "type": "string"
+          },
+          "governance_status": {
+            "description": "Governance status field on ai agent record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "id": {
+            "description": "Id field on ai agent record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai agent record."
+            },
+            "description": "Metadata field on ai agent record.",
+            "type": "object"
+          },
+          "name": {
+            "description": "Name field on ai agent record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai agent record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "owner_user_id": {
+            "description": "Owner user id field on ai agent record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "published_at": {
+            "description": "Published at field on ai agent record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "published_by": {
+            "description": "Published by field on ai agent record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai agent record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "template_source": {
+            "description": "Template source field on ai agent record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai agent record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai agent record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai agent record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai agent record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "visibility": {
+            "description": "Visibility field on ai agent record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          }
+        },
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_agent"
+      },
+      "AiAgentRunRecord": {
+        "additionalProperties": false,
+        "description": "Ai agent run record schema exposed by Claw Router.",
+        "properties": {
+          "agent_id": {
+            "description": "Agent id field on ai agent run record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "agent_version_id": {
+            "description": "Agent version id field on ai agent run record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "audio_seconds": {
+            "description": "Audio seconds field on ai agent run record.",
+            "format": "decimal",
+            "type": "string"
+          },
+          "cached_tokens": {
+            "description": "Cached tokens field on ai agent run record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "cancelled_at": {
+            "description": "Cancelled at field on ai agent run record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "completed_at": {
+            "description": "Completed at field on ai agent run record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "completion_tokens": {
+            "description": "Completion tokens field on ai agent run record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai agent run record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "error_message_masked": {
+            "description": "Error message masked field on ai agent run record.",
+            "maxLength": 1024,
+            "type": "string"
+          },
+          "execution_mode": {
+            "description": "Execution mode field on ai agent run record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "failed_at": {
+            "description": "Failed at field on ai agent run record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai agent run record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "image_count": {
+            "description": "Image count field on ai agent run record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "input_message": {
+            "description": "Input message field on ai agent run record.",
+            "type": "string"
+          },
+          "legal_hold": {
+            "description": "Legal hold field on ai agent run record.",
+            "type": "boolean"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai agent run record."
+            },
+            "description": "Metadata field on ai agent run record.",
+            "type": "object"
+          },
+          "metering_status": {
+            "description": "Metering status field on ai agent run record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai agent run record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "output_message": {
+            "description": "Output message field on ai agent run record.",
+            "type": "string"
+          },
+          "payload_hash": {
+            "description": "Payload hash field on ai agent run record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "planner_model": {
+            "description": "Planner model field on ai agent run record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "prompt_tokens": {
+            "description": "Prompt tokens field on ai agent run record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "request_id": {
+            "description": "Request id field on ai agent run record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "retention_until": {
+            "description": "Retention until field on ai agent run record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "run_status": {
+            "description": "Run status field on ai agent run record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "run_uuid": {
+            "description": "Run uuid field on ai agent run record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "source_surface": {
+            "description": "Source surface field on ai agent run record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "started_at": {
+            "description": "Started at field on ai agent run record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai agent run record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "target_modality": {
+            "description": "Target modality field on ai agent run record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai agent run record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "total_steps": {
+            "description": "Total steps field on ai agent run record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "total_tokens": {
+            "description": "Total tokens field on ai agent run record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "trace_id": {
+            "description": "Trace id field on ai agent run record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "usage_fact_id": {
+            "description": "Usage fact id field on ai agent run record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "user_id": {
+            "description": "User id field on ai agent run record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai agent run record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "video_seconds": {
+            "description": "Video seconds field on ai agent run record.",
+            "format": "decimal",
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_agent_run"
+      },
+      "AiAgentRunStepRecord": {
+        "additionalProperties": false,
+        "description": "Ai agent run step record schema exposed by Claw Router.",
+        "properties": {
+          "agent_id": {
+            "description": "Agent id field on ai agent run step record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "agent_version_id": {
+            "description": "Agent version id field on ai agent run step record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "audio_seconds": {
+            "description": "Audio seconds field on ai agent run step record.",
+            "format": "decimal",
+            "type": "string"
+          },
+          "cached_tokens": {
+            "description": "Cached tokens field on ai agent run step record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "completed_at": {
+            "description": "Completed at field on ai agent run step record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "completion_tokens": {
+            "description": "Completion tokens field on ai agent run step record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai agent run step record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "error_message_masked": {
+            "description": "Error message masked field on ai agent run step record.",
+            "maxLength": 1024,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai agent run step record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "image_count": {
+            "description": "Image count field on ai agent run step record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "input_snapshot": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Input snapshot field on ai agent run step record."
+            },
+            "description": "Input snapshot field on ai agent run step record.",
+            "type": "object"
+          },
+          "latency_ms": {
+            "description": "Latency ms field on ai agent run step record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "legal_hold": {
+            "description": "Legal hold field on ai agent run step record.",
+            "type": "boolean"
+          },
+          "mcp_server_id": {
+            "description": "Mcp server id field on ai agent run step record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai agent run step record."
+            },
+            "description": "Metadata field on ai agent run step record.",
+            "type": "object"
+          },
+          "model": {
+            "description": "Model field on ai agent run step record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai agent run step record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "output_snapshot": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Output snapshot field on ai agent run step record."
+            },
+            "description": "Output snapshot field on ai agent run step record.",
+            "type": "object"
+          },
+          "payload_hash": {
+            "description": "Payload hash field on ai agent run step record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "prompt_tokens": {
+            "description": "Prompt tokens field on ai agent run step record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "request_id": {
+            "description": "Request id field on ai agent run step record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "retention_until": {
+            "description": "Retention until field on ai agent run step record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "run_id": {
+            "description": "Run id field on ai agent run step record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "skill_id": {
+            "description": "Skill id field on ai agent run step record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "started_at": {
+            "description": "Started at field on ai agent run step record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai agent run step record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "step_index": {
+            "description": "Step index field on ai agent run step record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "step_status": {
+            "description": "Step status field on ai agent run step record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "step_type": {
+            "description": "Step type field on ai agent run step record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai agent run step record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "title": {
+            "description": "Title field on ai agent run step record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "tool_binding_id": {
+            "description": "Tool binding id field on ai agent run step record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "total_tokens": {
+            "description": "Total tokens field on ai agent run step record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "trace_id": {
+            "description": "Trace id field on ai agent run step record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "usage_fact_id": {
+            "description": "Usage fact id field on ai agent run step record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "user_id": {
+            "description": "User id field on ai agent run step record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai agent run step record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "video_seconds": {
+            "description": "Video seconds field on ai agent run step record.",
+            "format": "decimal",
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_agent_run_step"
+      },
+      "AiAgentToolBindingRecord": {
+        "additionalProperties": false,
+        "description": "Ai agent tool binding record schema exposed by Claw Router.",
+        "properties": {
+          "agent_id": {
+            "description": "Agent id field on ai agent tool binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "agent_version_id": {
+            "description": "Agent version id field on ai agent tool binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "binding_key": {
+            "description": "Binding key field on ai agent tool binding record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "binding_type": {
+            "description": "Binding type field on ai agent tool binding record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "created_at": {
+            "description": "Created at field on ai agent tool binding record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "credential_ref": {
+            "description": "Credential ref field on ai agent tool binding record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai agent tool binding record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai agent tool binding record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai agent tool binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "enabled": {
+            "description": "Enabled field on ai agent tool binding record.",
+            "type": "boolean"
+          },
+          "health_status": {
+            "description": "Health status field on ai agent tool binding record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "id": {
+            "description": "Id field on ai agent tool binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "last_checked_at": {
+            "description": "Last checked at field on ai agent tool binding record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "mcp_server_id": {
+            "description": "Mcp server id field on ai agent tool binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai agent tool binding record."
+            },
+            "description": "Metadata field on ai agent tool binding record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai agent tool binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "permission_policy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Permission policy field on ai agent tool binding record."
+            },
+            "description": "Permission policy field on ai agent tool binding record.",
+            "type": "object"
+          },
+          "runtime_config": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Runtime config field on ai agent tool binding record."
+            },
+            "description": "Runtime config field on ai agent tool binding record.",
+            "type": "object"
+          },
+          "skill_id": {
+            "description": "Skill id field on ai agent tool binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai agent tool binding record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai agent tool binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "tool_name": {
+            "description": "Tool name field on ai agent tool binding record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai agent tool binding record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai agent tool binding record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai agent tool binding record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_agent_tool_binding"
+      },
+      "AiAgentVersionRecord": {
+        "additionalProperties": false,
+        "description": "Ai agent version record schema exposed by Claw Router.",
+        "properties": {
+          "agent_id": {
+            "description": "Agent id field on ai agent version record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "config_hash": {
+            "description": "Config hash field on ai agent version record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai agent version record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai agent version record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai agent version record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai agent version record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai agent version record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "mcp_policy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Mcp policy field on ai agent version record."
+            },
+            "description": "Mcp policy field on ai agent version record.",
+            "type": "object"
+          },
+          "memory_policy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Memory policy field on ai agent version record."
+            },
+            "description": "Memory policy field on ai agent version record.",
+            "type": "object"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai agent version record."
+            },
+            "description": "Metadata field on ai agent version record.",
+            "type": "object"
+          },
+          "model_policy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Model policy field on ai agent version record."
+            },
+            "description": "Model policy field on ai agent version record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai agent version record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "published_at": {
+            "description": "Published at field on ai agent version record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "published_by": {
+            "description": "Published by field on ai agent version record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "release_status": {
+            "description": "Release status field on ai agent version record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "runtime_policy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Runtime policy field on ai agent version record."
+            },
+            "description": "Runtime policy field on ai agent version record.",
+            "type": "object"
+          },
+          "skill_policy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Skill policy field on ai agent version record."
+            },
+            "description": "Skill policy field on ai agent version record.",
+            "type": "object"
+          },
+          "status": {
+            "description": "Status field on ai agent version record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "system_prompt": {
+            "description": "System prompt field on ai agent version record.",
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai agent version record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "tool_policy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Tool policy field on ai agent version record."
+            },
+            "description": "Tool policy field on ai agent version record.",
+            "type": "object"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai agent version record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai agent version record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai agent version record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "version_no": {
+            "description": "Version no field on ai agent version record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_agent_version"
       },
       "AiBillingMeterRecord": {
         "additionalProperties": false,
@@ -17010,6 +18726,73 @@
         "type": "object",
         "x-operation-id": "firewalls.rules.list"
       },
+      "IamApiKeyRecord": {
+        "additionalProperties": false,
+        "description": "Iam api key record schema exposed by Claw Router.",
+        "properties": {
+          "created_at": {
+            "description": "Created at field on iam api key record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "expires_at": {
+            "description": "Expires at field on iam api key record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on iam api key record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "key_hash": {
+            "description": "Key hash field on iam api key record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "name": {
+            "description": "Name field on iam api key record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "permission_scope_json": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Permission scope json field on iam api key record."
+            },
+            "description": "Permission scope json field on iam api key record.",
+            "type": "object"
+          },
+          "status": {
+            "description": "Status field on iam api key record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on iam api key record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on iam api key record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "user_id": {
+            "description": "User id field on iam api key record.",
+            "maxLength": 128,
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-domain": "iam",
+        "x-generated-by-this-project": true,
+        "x-table": "iam_api_key"
+      },
       "IamAuditEventRecord": {
         "additionalProperties": false,
         "description": "Iam audit event record schema exposed by Claw Router.",
@@ -17146,6 +18929,55 @@
         "x-domain": "iam",
         "x-generated-by-this-project": true,
         "x-table": "iam_credential"
+      },
+      "IamDeviceRecord": {
+        "additionalProperties": false,
+        "description": "Iam device record schema exposed by Claw Router.",
+        "properties": {
+          "created_at": {
+            "description": "Created at field on iam device record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "device_fingerprint": {
+            "description": "Device fingerprint field on iam device record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on iam device record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "last_seen_at": {
+            "description": "Last seen at field on iam device record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name field on iam device record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on iam device record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "trusted": {
+            "description": "Trusted field on iam device record.",
+            "type": "boolean"
+          },
+          "user_id": {
+            "description": "User id field on iam device record.",
+            "maxLength": 128,
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-domain": "iam",
+        "x-generated-by-this-project": true,
+        "x-table": "iam_device"
       },
       "IamGatewayAccessPolicyRecord": {
         "additionalProperties": false,
@@ -18073,6 +19905,56 @@
         "x-generated-by-this-project": true,
         "x-table": "iam_gateway_risk_rule"
       },
+      "IamMfaFactorRecord": {
+        "additionalProperties": false,
+        "description": "Iam mfa factor record schema exposed by Claw Router.",
+        "properties": {
+          "created_at": {
+            "description": "Created at field on iam mfa factor record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "factor_type": {
+            "description": "Factor type field on iam mfa factor record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on iam mfa factor record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "secret_ref": {
+            "description": "Secret ref field on iam mfa factor record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on iam mfa factor record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on iam mfa factor record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on iam mfa factor record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "user_id": {
+            "description": "User id field on iam mfa factor record.",
+            "maxLength": 128,
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-domain": "iam",
+        "x-generated-by-this-project": true,
+        "x-table": "iam_mfa_factor"
+      },
       "IamOrganizationMemberRecord": {
         "additionalProperties": false,
         "description": "Iam organization member record schema exposed by Claw Router.",
@@ -18087,9 +19969,19 @@
             "format": "date-time",
             "type": "string"
           },
+          "left_at": {
+            "description": "Left at field on iam organization member record.",
+            "format": "date-time",
+            "type": "string"
+          },
           "organization_id": {
             "description": "Organization id field on iam organization member record.",
             "maxLength": 128,
+            "type": "string"
+          },
+          "remark": {
+            "description": "Remark field on iam organization member record.",
+            "maxLength": 500,
             "type": "string"
           },
           "role_code": {
@@ -18172,6 +20064,183 @@
         "x-domain": "iam",
         "x-generated-by-this-project": true,
         "x-table": "iam_organization"
+      },
+      "IamPermissionRecord": {
+        "additionalProperties": false,
+        "description": "Iam permission record schema exposed by Claw Router.",
+        "properties": {
+          "action": {
+            "description": "Action field on iam permission record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "code": {
+            "description": "Code field on iam permission record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on iam permission record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on iam permission record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "name": {
+            "description": "Name field on iam permission record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "resource": {
+            "description": "Resource field on iam permission record.",
+            "maxLength": 128,
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-domain": "iam",
+        "x-generated-by-this-project": true,
+        "x-table": "iam_permission"
+      },
+      "IamPolicyRecord": {
+        "additionalProperties": false,
+        "description": "Iam policy record schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Code field on iam policy record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on iam policy record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on iam policy record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "name": {
+            "description": "Name field on iam policy record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "policy_json": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Policy json field on iam policy record."
+            },
+            "description": "Policy json field on iam policy record.",
+            "type": "object"
+          },
+          "status": {
+            "description": "Status field on iam policy record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on iam policy record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on iam policy record.",
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-domain": "iam",
+        "x-generated-by-this-project": true,
+        "x-table": "iam_policy"
+      },
+      "IamRolePermissionRecord": {
+        "additionalProperties": false,
+        "description": "Iam role permission record schema exposed by Claw Router.",
+        "properties": {
+          "created_at": {
+            "description": "Created at field on iam role permission record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on iam role permission record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "permission_id": {
+            "description": "Permission id field on iam role permission record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "role_id": {
+            "description": "Role id field on iam role permission record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on iam role permission record.",
+            "maxLength": 128,
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-domain": "iam",
+        "x-generated-by-this-project": true,
+        "x-table": "iam_role_permission"
+      },
+      "IamRoleRecord": {
+        "additionalProperties": false,
+        "description": "Iam role record schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Code field on iam role record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on iam role record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on iam role record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "name": {
+            "description": "Name field on iam role record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on iam role record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on iam role record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on iam role record.",
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-domain": "iam",
+        "x-generated-by-this-project": true,
+        "x-table": "iam_role"
       },
       "IamSecurityEventRecord": {
         "additionalProperties": false,
@@ -18779,6 +20848,46 @@
         "x-domain": "iam",
         "x-generated-by-this-project": true,
         "x-table": "iam_user"
+      },
+      "IamUserRoleRecord": {
+        "additionalProperties": false,
+        "description": "Iam user role record schema exposed by Claw Router.",
+        "properties": {
+          "created_at": {
+            "description": "Created at field on iam user role record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on iam user role record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on iam user role record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "role_id": {
+            "description": "Role id field on iam user role record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on iam user role record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "user_id": {
+            "description": "User id field on iam user role record.",
+            "maxLength": 128,
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-domain": "iam",
+        "x-generated-by-this-project": true,
+        "x-table": "iam_user_role"
       },
       "IamUserSecuritySettingRecord": {
         "additionalProperties": false,
@@ -23836,15 +25945,6 @@
         "x-generated-by-this-project": true,
         "x-table": "plus_agent_skill"
       },
-      "PlusApiKeyRecord": {
-        "additionalProperties": false,
-        "description": "Plus api key record schema exposed by Claw Router.",
-        "properties": {},
-        "type": "object",
-        "x-domain": "legacy",
-        "x-generated-by-this-project": false,
-        "x-table": "plus_api_key"
-      },
       "PlusApiResult": {
         "additionalProperties": false,
         "description": "Base Claw Router response envelope. Operation-specific Result schemas carry concrete business data.",
@@ -24440,15 +26540,6 @@
         "x-generated-by-this-project": false,
         "x-table": "plus_member_level"
       },
-      "PlusOauthAccountRecord": {
-        "additionalProperties": false,
-        "description": "Plus oauth account record schema exposed by Claw Router.",
-        "properties": {},
-        "type": "object",
-        "x-domain": "legacy",
-        "x-generated-by-this-project": false,
-        "x-table": "plus_oauth_account"
-      },
       "PlusOrderDispatchRuleRecord": {
         "additionalProperties": false,
         "description": "Plus order dispatch rule record schema exposed by Claw Router.",
@@ -24485,24 +26576,6 @@
         "x-generated-by-this-project": false,
         "x-table": "plus_order_worker_dispatch_profile"
       },
-      "PlusOrganizationMemberRecord": {
-        "additionalProperties": false,
-        "description": "Plus organization member record schema exposed by Claw Router.",
-        "properties": {},
-        "type": "object",
-        "x-domain": "legacy",
-        "x-generated-by-this-project": false,
-        "x-table": "plus_organization_member"
-      },
-      "PlusOrganizationRecord": {
-        "additionalProperties": false,
-        "description": "Plus organization record schema exposed by Claw Router.",
-        "properties": {},
-        "type": "object",
-        "x-domain": "legacy",
-        "x-generated-by-this-project": false,
-        "x-table": "plus_organization"
-      },
       "PlusPartnerRecord": {
         "additionalProperties": false,
         "description": "Plus partner record schema exposed by Claw Router.",
@@ -24530,15 +26603,6 @@
         "x-generated-by-this-project": false,
         "x-table": "plus_payment_webhook_event"
       },
-      "PlusPermissionRecord": {
-        "additionalProperties": false,
-        "description": "Plus permission record schema exposed by Claw Router.",
-        "properties": {},
-        "type": "object",
-        "x-domain": "legacy",
-        "x-generated-by-this-project": false,
-        "x-table": "plus_permission"
-      },
       "PlusPositionRecord": {
         "additionalProperties": false,
         "description": "Plus position record schema exposed by Claw Router.",
@@ -24565,24 +26629,6 @@
         "x-domain": "legacy",
         "x-generated-by-this-project": false,
         "x-table": "plus_refund"
-      },
-      "PlusRolePermissionRecord": {
-        "additionalProperties": false,
-        "description": "Plus role permission record schema exposed by Claw Router.",
-        "properties": {},
-        "type": "object",
-        "x-domain": "legacy",
-        "x-generated-by-this-project": false,
-        "x-table": "plus_role_permission"
-      },
-      "PlusRoleRecord": {
-        "additionalProperties": false,
-        "description": "Plus role record schema exposed by Claw Router.",
-        "properties": {},
-        "type": "object",
-        "x-domain": "legacy",
-        "x-generated-by-this-project": false,
-        "x-table": "plus_role"
       },
       "PlusShopRecord": {
         "additionalProperties": false,
@@ -24619,15 +26665,6 @@
         "x-domain": "legacy",
         "x-generated-by-this-project": false,
         "x-table": "plus_sku"
-      },
-      "PlusTenantRecord": {
-        "additionalProperties": false,
-        "description": "Plus tenant record schema exposed by Claw Router.",
-        "properties": {},
-        "type": "object",
-        "x-domain": "legacy",
-        "x-generated-by-this-project": false,
-        "x-table": "plus_tenant"
       },
       "PlusUsageRecordRecord": {
         "additionalProperties": false,
@@ -24689,24 +26726,6 @@
         "x-domain": "legacy",
         "x-generated-by-this-project": false,
         "x-table": "plus_user_coupon"
-      },
-      "PlusUserRecord": {
-        "additionalProperties": false,
-        "description": "Plus user record schema exposed by Claw Router.",
-        "properties": {},
-        "type": "object",
-        "x-domain": "legacy",
-        "x-generated-by-this-project": false,
-        "x-table": "plus_user"
-      },
-      "PlusUserRoleRecord": {
-        "additionalProperties": false,
-        "description": "Plus user role record schema exposed by Claw Router.",
-        "properties": {},
-        "type": "object",
-        "x-domain": "legacy",
-        "x-generated-by-this-project": false,
-        "x-table": "plus_user_role"
       },
       "PlusVipBenefitRecord": {
         "additionalProperties": false,
@@ -24861,6 +26880,22 @@
           "type",
           "title",
           "status"
+        ],
+        "type": "object"
+      },
+      "ProviderCircuitBreakerPolicy": {
+        "additionalProperties": false,
+        "description": "Provider circuit breaker policy schema exposed by Claw Router.",
+        "properties": {
+          "failureThreshold": {
+            "description": "Failure threshold field on provider circuit breaker policy.",
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "failureThreshold"
         ],
         "type": "object"
       },
@@ -25842,6 +27877,37 @@
         "type": "object",
         "x-operation-id": "skills.categories.create"
       },
+      "SkillsCategoriesDeleteResult": {
+        "additionalProperties": false,
+        "description": "Skills categories delete result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AdminSkillCategoryDeleteResponse"
+              }
+            ],
+            "description": "Data field on skills categories delete result."
+          },
+          "message": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          },
+          "msg": {
+            "description": "Java-compatible response message field.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "skills.categories.delete"
+      },
       "SkillsCategoriesListResult": {
         "additionalProperties": false,
         "description": "Skills categories list result schema exposed by Claw Router.",
@@ -25872,6 +27938,37 @@
         ],
         "type": "object",
         "x-operation-id": "skills.categories.list"
+      },
+      "SkillsCategoriesUpdateResult": {
+        "additionalProperties": false,
+        "description": "Skills categories update result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AdminSkillCategoryMutationResponse"
+              }
+            ],
+            "description": "Data field on skills categories update result."
+          },
+          "message": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          },
+          "msg": {
+            "description": "Java-compatible response message field.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "skills.categories.update"
       },
       "SkillsCreateResult": {
         "additionalProperties": false,
@@ -27169,6 +29266,236 @@
   "jsonSchemaDialect": "https://json-schema.org/draft/2020-12/schema",
   "openapi": "3.1.2",
   "paths": {
+    "/backend/v3/api/agents": {
+      "get": {
+        "description": "Returns organization-scoped agent definitions for admin governance, including active default version and derived capability summary. Reads ai_agent, ai_agent_version, ai_agent_tool_binding, ai_agent_mcp_server, ai_agent_memory. Writes none. File targets none.",
+        "operationId": "agentDefinitions.list",
+        "parameters": [
+          {
+            "description": "Q query parameter.",
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "schema": {
+              "maxLength": 128,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Owner user id query parameter.",
+            "in": "query",
+            "name": "owner_user_id",
+            "required": false,
+            "schema": {
+              "format": "int64",
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Status query parameter.",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "enum": [
+                "active",
+                "disabled"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Visibility query parameter.",
+            "in": "query",
+            "name": "visibility",
+            "required": false,
+            "schema": {
+              "enum": [
+                "private",
+                "organization",
+                "public"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Page query parameter.",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "format": "int64",
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Page size query parameter.",
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "schema": {
+              "format": "int64",
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentDefinitionsListResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          }
+        },
+        "security": [
+          {
+            "AuthToken": [],
+            "SdkworkAccessToken": []
+          }
+        ],
+        "summary": "List managed agents",
+        "tags": [
+          "agents"
+        ],
+        "x-contract-kind": "read",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "ai_agent",
+          "ai_agent_version",
+          "ai_agent_tool_binding",
+          "ai_agent_mcp_server",
+          "ai_agent_memory"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "agents",
+        "x-sdkwork-domain": "agents",
+        "x-sdkwork-resource": "agentDefinitions",
+        "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts",
+        "x-write-tables": []
+      }
+    },
+    "/backend/v3/api/agents/{agentId}": {
+      "get": {
+        "description": "Returns one organization-scoped agent by numeric id, uuid, or normalized code for admin governance. Reads ai_agent, ai_agent_version, ai_agent_tool_binding, ai_agent_mcp_server, ai_agent_memory. Writes none. File targets none.",
+        "operationId": "agentDefinitions.retrieve",
+        "parameters": [
+          {
+            "description": "Agent id path parameter.",
+            "in": "path",
+            "name": "agentId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentDefinitionsRetrieveResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          }
+        },
+        "security": [
+          {
+            "AuthToken": [],
+            "SdkworkAccessToken": []
+          }
+        ],
+        "summary": "Retrieve managed agent",
+        "tags": [
+          "agents"
+        ],
+        "x-contract-kind": "read",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "ai_agent",
+          "ai_agent_version",
+          "ai_agent_tool_binding",
+          "ai_agent_mcp_server",
+          "ai_agent_memory"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "agents",
+        "x-sdkwork-domain": "agents",
+        "x-sdkwork-resource": "agentDefinitions",
+        "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts",
+        "x-write-tables": []
+      }
+    },
     "/backend/v3/api/ai/model_rankings": {
       "get": {
         "description": "List model rankings. Reads ai_model_rank_snapshot. Writes none. File targets none.",
@@ -30422,7 +32749,7 @@
     },
     "/backend/v3/api/billing/users/{userId}/balance_adjustments": {
       "post": {
-        "description": "Update balance. Reads plus_user, plus_account, plus_account_history, plus_vip_point_change, plus_refund. Writes plus_account, plus_account_history, plus_vip_point_change, plus_refund, ops_audit_log. File targets none.",
+        "description": "Update balance. Reads iam_user, plus_account, plus_account_history, plus_vip_point_change, plus_refund. Writes plus_account, plus_account_history, plus_vip_point_change, plus_refund, ops_audit_log. File targets none.",
         "operationId": "users.balanceAdjustments.create",
         "parameters": [
           {
@@ -30511,7 +32838,7 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_user",
+          "iam_user",
           "plus_account",
           "plus_account_history",
           "plus_vip_point_change",
@@ -31290,6 +33617,203 @@
           "ecosystem"
         ],
         "x-contract-kind": "create",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "plus_category"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "ecosystem",
+        "x-sdkwork-domain": "ecosystem",
+        "x-sdkwork-resource": "skills.categories",
+        "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts",
+        "x-write-tables": [
+          "plus_category",
+          "ops_audit_log"
+        ]
+      }
+    },
+    "/backend/v3/api/ecosystem/skills/categories/{categoryId}": {
+      "delete": {
+        "description": "Delete skill category. Reads plus_category, plus_agent_skill_package, plus_agent_skill. Writes plus_category, ops_audit_log. File targets none.",
+        "operationId": "skills.categories.delete",
+        "parameters": [
+          {
+            "description": "Category id path parameter.",
+            "in": "path",
+            "name": "categoryId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Optional caller-provided request identifier for audit correlation.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "schema": {
+              "maxLength": 128,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SkillsCategoriesDeleteResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          }
+        },
+        "security": [
+          {
+            "AuthToken": [],
+            "SdkworkAccessToken": []
+          }
+        ],
+        "summary": "Delete skill category",
+        "tags": [
+          "ecosystem"
+        ],
+        "x-contract-kind": "delete",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "plus_category",
+          "plus_agent_skill_package",
+          "plus_agent_skill"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "ecosystem",
+        "x-sdkwork-domain": "ecosystem",
+        "x-sdkwork-resource": "skills.categories",
+        "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts",
+        "x-write-tables": [
+          "plus_category",
+          "ops_audit_log"
+        ]
+      },
+      "put": {
+        "description": "Update skill category. Reads plus_category. Writes plus_category, ops_audit_log. File targets none.",
+        "operationId": "skills.categories.update",
+        "parameters": [
+          {
+            "description": "Category id path parameter.",
+            "in": "path",
+            "name": "categoryId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Optional caller-provided request identifier for audit correlation.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "schema": {
+              "maxLength": 128,
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminSkillCategoryUpdateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for update skill category.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SkillsCategoriesUpdateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          }
+        },
+        "security": [
+          {
+            "AuthToken": [],
+            "SdkworkAccessToken": []
+          }
+        ],
+        "summary": "Update skill category",
+        "tags": [
+          "ecosystem"
+        ],
+        "x-contract-kind": "update",
         "x-file-targets": [],
         "x-read-sources": [
           "plus_category"
@@ -34168,7 +36692,7 @@
     },
     "/backend/v3/api/iam/api_keys": {
       "get": {
-        "description": "List API key map. Reads iam_gateway_api_key, plus_api_key. Writes none. File targets none.",
+        "description": "List API key map. Reads iam_gateway_api_key. Writes none. File targets none.",
         "operationId": "apiKeys.list",
         "parameters": [],
         "responses": {
@@ -34226,8 +36750,7 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "iam_gateway_api_key",
-          "plus_api_key"
+          "iam_gateway_api_key"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "iam",
@@ -34237,7 +36760,7 @@
         "x-write-tables": []
       },
       "post": {
-        "description": "Create API key. Reads plus_user, iam_gateway_api_key, plus_api_key. Writes iam_gateway_api_key, plus_api_key, ops_audit_log. File targets none.",
+        "description": "Create API key. Reads iam_user, iam_gateway_api_key. Writes iam_gateway_api_key, ops_audit_log. File targets none.",
         "operationId": "apiKeys.create",
         "parameters": [
           {
@@ -34327,9 +36850,8 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_user",
-          "iam_gateway_api_key",
-          "plus_api_key"
+          "iam_user",
+          "iam_gateway_api_key"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "iam",
@@ -34338,14 +36860,13 @@
         "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts",
         "x-write-tables": [
           "iam_gateway_api_key",
-          "plus_api_key",
           "ops_audit_log"
         ]
       }
     },
     "/backend/v3/api/iam/api_keys/{apiKeyId}": {
       "delete": {
-        "description": "Delete API key. Reads plus_user, iam_gateway_api_key, plus_api_key. Writes iam_gateway_api_key, plus_api_key, ops_audit_log. File targets none.",
+        "description": "Delete API key. Reads iam_user, iam_gateway_api_key. Writes iam_gateway_api_key, ops_audit_log. File targets none.",
         "operationId": "apiKeys.delete",
         "parameters": [
           {
@@ -34413,9 +36934,8 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_user",
-          "iam_gateway_api_key",
-          "plus_api_key"
+          "iam_user",
+          "iam_gateway_api_key"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "iam",
@@ -34424,14 +36944,13 @@
         "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts",
         "x-write-tables": [
           "iam_gateway_api_key",
-          "plus_api_key",
           "ops_audit_log"
         ]
       }
     },
     "/backend/v3/api/iam/users": {
       "get": {
-        "description": "List users. Reads plus_user, plus_account, plus_role, plus_user_role, iam_user_login_event. Writes none. File targets none.",
+        "description": "List users. Reads iam_user, plus_account, iam_role, iam_user_role, iam_user_login_event. Writes none. File targets none.",
         "operationId": "users.list",
         "parameters": [],
         "responses": {
@@ -34489,10 +37008,10 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "plus_user",
+          "iam_user",
           "plus_account",
-          "plus_role",
-          "plus_user_role",
+          "iam_role",
+          "iam_user_role",
           "iam_user_login_event"
         ],
         "x-route-scope": "admin",
@@ -34501,6 +37020,199 @@
         "x-sdkwork-resource": "users",
         "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts",
         "x-write-tables": []
+      },
+      "post": {
+        "description": "Create user. Reads iam_user, iam_role, iam_user_role. Writes iam_user, plus_account, iam_user_role, ops_audit_log. File targets none.",
+        "operationId": "users.create",
+        "parameters": [
+          {
+            "description": "Optional caller-provided request identifier for audit correlation.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "schema": {
+              "maxLength": 128,
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminUserCreateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for create user.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsersCreateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          }
+        },
+        "security": [
+          {
+            "AuthToken": [],
+            "SdkworkAccessToken": []
+          }
+        ],
+        "summary": "Create user",
+        "tags": [
+          "iam"
+        ],
+        "x-contract-kind": "create",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "iam_user",
+          "iam_role",
+          "iam_user_role"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "iam",
+        "x-sdkwork-domain": "iam",
+        "x-sdkwork-resource": "users",
+        "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts",
+        "x-write-tables": [
+          "iam_user",
+          "plus_account",
+          "iam_user_role",
+          "ops_audit_log"
+        ]
+      },
+      "put": {
+        "description": "Update user. Reads iam_user, iam_role, iam_user_role. Writes iam_user, iam_user_role, ops_audit_log. File targets none.",
+        "operationId": "users.update",
+        "parameters": [
+          {
+            "description": "Optional caller-provided request identifier for audit correlation.",
+            "in": "header",
+            "name": "X-Request-Id",
+            "required": false,
+            "schema": {
+              "maxLength": 128,
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminUserUpdateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for update user.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsersUpdateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          }
+        },
+        "security": [
+          {
+            "AuthToken": [],
+            "SdkworkAccessToken": []
+          }
+        ],
+        "summary": "Update user",
+        "tags": [
+          "iam"
+        ],
+        "x-contract-kind": "update",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "iam_user",
+          "iam_role",
+          "iam_user_role"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "iam",
+        "x-sdkwork-domain": "iam",
+        "x-sdkwork-resource": "users",
+        "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts",
+        "x-write-tables": [
+          "iam_user",
+          "iam_user_role",
+          "ops_audit_log"
+        ]
       }
     },
     "/backend/v3/api/integration/channels": {
@@ -37625,201 +40337,6 @@
         "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-record/src/recordService.ts",
         "x-write-tables": []
       }
-    },
-    "/backend/v3/api/system/users": {
-      "post": {
-        "description": "Create user. Reads plus_user, plus_role, plus_user_role. Writes plus_user, plus_account, plus_user_role, ops_audit_log. File targets none.",
-        "operationId": "users.create",
-        "parameters": [
-          {
-            "description": "Optional caller-provided request identifier for audit correlation.",
-            "in": "header",
-            "name": "X-Request-Id",
-            "required": false,
-            "schema": {
-              "maxLength": 128,
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AdminUserCreateRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for create user.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UsersCreateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          }
-        },
-        "security": [
-          {
-            "AuthToken": [],
-            "SdkworkAccessToken": []
-          }
-        ],
-        "summary": "Create user",
-        "tags": [
-          "system"
-        ],
-        "x-contract-kind": "create",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "plus_user",
-          "plus_role",
-          "plus_user_role"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "system",
-        "x-sdkwork-domain": "system",
-        "x-sdkwork-resource": "users",
-        "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts",
-        "x-write-tables": [
-          "plus_user",
-          "plus_account",
-          "plus_user_role",
-          "ops_audit_log"
-        ]
-      },
-      "put": {
-        "description": "Update user. Reads plus_user, plus_role, plus_user_role. Writes plus_user, plus_user_role, ops_audit_log. File targets none.",
-        "operationId": "users.update",
-        "parameters": [
-          {
-            "description": "Optional caller-provided request identifier for audit correlation.",
-            "in": "header",
-            "name": "X-Request-Id",
-            "required": false,
-            "schema": {
-              "maxLength": 128,
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AdminUserUpdateRequest"
-              }
-            }
-          },
-          "description": "Typed request payload for update user.",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UsersUpdateResult"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "400": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Bad Request"
-          },
-          "401": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Unauthorized"
-          },
-          "500": {
-            "content": {
-              "application/problem+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetail"
-                }
-              }
-            },
-            "description": "Server Error"
-          }
-        },
-        "security": [
-          {
-            "AuthToken": [],
-            "SdkworkAccessToken": []
-          }
-        ],
-        "summary": "Update user",
-        "tags": [
-          "system"
-        ],
-        "x-contract-kind": "update",
-        "x-file-targets": [],
-        "x-read-sources": [
-          "plus_user",
-          "plus_role",
-          "plus_user_role"
-        ],
-        "x-route-scope": "admin",
-        "x-sdk-domain": "system",
-        "x-sdkwork-domain": "system",
-        "x-sdkwork-resource": "users",
-        "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts",
-        "x-write-tables": [
-          "plus_user",
-          "plus_user_role",
-          "ops_audit_log"
-        ]
-      }
     }
   },
   "security": [
@@ -37835,6 +40352,10 @@
     }
   ],
   "tags": [
+    {
+      "description": "agents operations exposed by Claw Router.",
+      "name": "agents"
+    },
     {
       "description": "ai operations exposed by Claw Router.",
       "name": "ai"

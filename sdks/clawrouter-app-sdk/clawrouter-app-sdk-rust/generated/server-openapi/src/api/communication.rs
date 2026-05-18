@@ -14,7 +14,7 @@ impl CommunicationApi {
         Self { client }
     }
 
-    /// List messages
+    /// List notifications
     pub async fn notifications_list(&self) -> Result<NotificationsListResult, SdkworkError> {
         let path = app_path(&"/communication/notifications".to_string());
         self.client.get(&path, None, None).await

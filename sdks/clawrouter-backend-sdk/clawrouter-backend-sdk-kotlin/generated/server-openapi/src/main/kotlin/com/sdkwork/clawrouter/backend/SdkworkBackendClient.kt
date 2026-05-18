@@ -2,6 +2,7 @@ package com.sdkwork.clawrouter.backend
 
 import com.sdkwork.common.core.SdkConfig
 import com.sdkwork.clawrouter.backend.http.HttpClient
+import com.sdkwork.clawrouter.backend.api.AgentsApi
 import com.sdkwork.clawrouter.backend.api.AiApi
 import com.sdkwork.clawrouter.backend.api.BillingApi
 import com.sdkwork.clawrouter.backend.api.ContentApi
@@ -14,6 +15,7 @@ import com.sdkwork.clawrouter.backend.api.SystemApi
 class SdkworkBackendClient {
     private val httpClient: HttpClient
 
+    lateinit var agents: AgentsApi
     lateinit var ai: AiApi
     lateinit var billing: BillingApi
     lateinit var content: ContentApi
@@ -25,6 +27,7 @@ class SdkworkBackendClient {
 
     constructor(baseUrl: String) {
         this.httpClient = HttpClient(baseUrl)
+        agents = AgentsApi(httpClient)
         ai = AiApi(httpClient)
         billing = BillingApi(httpClient)
         content = ContentApi(httpClient)
@@ -37,6 +40,7 @@ class SdkworkBackendClient {
 
     constructor(config: SdkConfig) {
         this.httpClient = HttpClient(config)
+        agents = AgentsApi(httpClient)
         ai = AiApi(httpClient)
         billing = BillingApi(httpClient)
         content = ContentApi(httpClient)

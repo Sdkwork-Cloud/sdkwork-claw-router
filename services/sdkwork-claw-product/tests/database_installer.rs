@@ -1,13 +1,15 @@
 use sdkwork_claw_product::application::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
+use sdkwork_claw_product::domain::DecimalValue;
 use sdkwork_claw_product::infrastructure::sql::installer::{
     CatalogRefreshOptions, DatabaseInstallOptions, DatabaseInstaller, InstallationStatus,
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
-    SqliteAppSkillsReadStore, SqliteForumStore, SqlitePricingCatalogLoader,
+    SqliteAdminUserStore, SqliteAppSkillsReadStore, SqliteForumStore, SqlitePricingCatalogLoader,
 };
 use sdkwork_claw_product::ports::{
-    AppSkillsQuery, AppSkillsReadStore, AppSkillsSubject, ForumFeedQuery, ForumFeedReadStore,
-    PricingCatalog,
+    AdminUserStore, AdminUserSubject, AppSkillsQuery, AppSkillsReadStore, AppSkillsSubject,
+    CreateAdminUserApiKeyCommand, CreateAdminUserCommand, ForumFeedQuery, ForumFeedReadStore,
+    ListAdminUsersQuery, PricingCatalog, UpdateAdminUserCommand,
 };
 use sqlx::sqlite::SqlitePoolOptions;
 use sqlx::{Row, SqlitePool};
@@ -124,6 +126,20 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
             "started_at",
             "ended_at",
             "payload",
+        ],
+    )
+    .await;
+    assert_sqlite_columns_exist(
+        &pool,
+        "iam_organization_member",
+        &[
+            "organization_id",
+            "user_id",
+            "role_code",
+            "status",
+            "joined_at",
+            "left_at",
+            "remark",
         ],
     )
     .await;
@@ -312,7 +328,7 @@ async fn sqlite_installer_bootstraps_initial_admin_login_once() {
     assert_eq!("10", admin.get::<String, _>("tenant_id"));
     assert_eq!("admin", admin.get::<String, _>("username"));
     assert_eq!("Administrator", admin.get::<String, _>("display_name"));
-    assert_eq!("admin@sdkwork.local", admin.get::<String, _>("email"));
+    assert_eq!("admin@sdkwork.com", admin.get::<String, _>("email"));
     assert_eq!("active", admin.get::<String, _>("status"));
     assert_eq!("20", admin.get::<String, _>("organization_id"));
     assert_eq!("admin", admin.get::<String, _>("role_code"));
@@ -334,6 +350,228 @@ async fn sqlite_installer_bootstraps_initial_admin_login_once() {
 }
 
 #[tokio::test]
+async fn sqlite_installed_admin_user_store_lists_iam_bootstrap_admin_without_plus_user() {
+    let pool = sqlite_pool().await;
+    let installer =
+        installer(pool.clone()).with_bootstrap_admin_password("Admin-User-List-Test-2026!");
+
+    installer.ensure_installed().await.unwrap();
+
+    let legacy_plus_user_exists: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM sqlite_master
+        WHERE type = 'table'
+          AND name = 'plus_user'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        0, legacy_plus_user_exists,
+        "fresh appbase installs should not require the legacy plus_user table"
+    );
+
+    let store = SqliteAdminUserStore::new(pool.clone());
+    let users = store
+        .list_users(ListAdminUsersQuery {
+            subject: AdminUserSubject {
+                tenant_id: 10,
+                organization_id: 20,
+                operator_id: 1,
+                operator_type: 1,
+            },
+        })
+        .await
+        .unwrap();
+
+    let admin = users
+        .iter()
+        .find(|user| user.id == 1)
+        .expect("bootstrap admin must be visible through admin user read store");
+    assert_eq!("admin", admin.username);
+    assert_eq!("admin@sdkwork.com", admin.email);
+    assert_eq!("admin", admin.role);
+    assert_eq!("admin", admin.group);
+    assert_eq!("active", admin.status);
+}
+
+#[tokio::test]
+async fn sqlite_admin_user_store_creates_and_updates_iam_users_without_plus_user() {
+    let pool = sqlite_pool().await;
+    installer(pool.clone()).ensure_installed().await.unwrap();
+    let store = SqliteAdminUserStore::new(pool.clone());
+    let subject = AdminUserSubject {
+        tenant_id: 10,
+        organization_id: 20,
+        operator_id: 1,
+        operator_type: 1,
+    };
+
+    let created = store
+        .create_user(CreateAdminUserCommand {
+            user_uuid: "user-admin-create-iam".to_owned(),
+            account_uuid: "account-admin-create-iam".to_owned(),
+            audit_log_uuid: "audit-admin-create-iam".to_owned(),
+            subject,
+            email: "created-admin-user@example.com".to_owned(),
+            username: "created-admin-user".to_owned(),
+            initial_balance: DecimalValue::ZERO,
+            requested_at: "2026-05-17T10:00:00Z".to_owned(),
+            request_id: "request-admin-create-iam".to_owned(),
+        })
+        .await
+        .unwrap();
+
+    assert_eq!("created-admin-user", created.username);
+    assert_eq!("created-admin-user@example.com", created.email);
+    assert_eq!("user", created.role);
+    assert_eq!("standard", created.group);
+    assert_eq!(
+        "$0.00", created.balance,
+        "fresh appbase installs do not include the external legacy ledger tables"
+    );
+
+    let iam_user_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM iam_user u
+        JOIN iam_organization_member m
+          ON m.tenant_id = u.tenant_id
+         AND m.user_id = u.id
+        WHERE u.id = ?
+          AND u.tenant_id = '10'
+          AND m.organization_id = '20'
+          AND m.role_code = 'standard'
+        "#,
+    )
+    .bind(created.id.to_string())
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(1, iam_user_count);
+
+    let updated = store
+        .update_user(UpdateAdminUserCommand {
+            audit_log_uuid: "audit-admin-update-iam".to_owned(),
+            subject,
+            user_id: created.id,
+            username: Some("renamed-admin-user".to_owned()),
+            group: Some("vip".to_owned()),
+            status: Some("banned".to_owned()),
+            requested_at: "2026-05-17T10:05:00Z".to_owned(),
+            request_id: "request-admin-update-iam".to_owned(),
+        })
+        .await
+        .unwrap()
+        .expect("created IAM user must be updateable through admin user store");
+
+    assert_eq!("renamed-admin-user", updated.username);
+    assert_eq!("vip", updated.group);
+    assert_eq!("user", updated.role);
+    assert_eq!("banned", updated.status);
+
+    let membership_role: String = sqlx::query_scalar(
+        r#"
+        SELECT role_code
+        FROM iam_organization_member
+        WHERE tenant_id = '10'
+          AND organization_id = '20'
+          AND user_id = ?
+        "#,
+    )
+    .bind(created.id.to_string())
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!("vip", membership_role);
+}
+
+#[tokio::test]
+async fn sqlite_admin_user_store_creates_default_api_key_group_when_missing() {
+    let pool = sqlite_pool().await;
+    installer(pool.clone()).ensure_installed().await.unwrap();
+    let store = SqliteAdminUserStore::new(pool.clone());
+    let subject = AdminUserSubject {
+        tenant_id: 10,
+        organization_id: 20,
+        operator_id: 1,
+        operator_type: 1,
+    };
+
+    sqlx::query("DELETE FROM iam_gateway_api_key_group")
+        .execute(&pool)
+        .await
+        .unwrap();
+
+    let created = store
+        .create_api_key(CreateAdminUserApiKeyCommand {
+            api_key_uuid: "api-key-admin-default-group".to_owned(),
+            audit_log_uuid: "audit-admin-default-group".to_owned(),
+            subject,
+            user_id: 1,
+            name: "Admin Console Key".to_owned(),
+            key_prefix: "sk-test".to_owned(),
+            key_display_masked: "sk-test********".to_owned(),
+            key_hash: "hash-admin-default-group".to_owned(),
+            hash_alg: "sha256".to_owned(),
+            secret_version: 1,
+            idempotency_key: "idem-admin-default-group".to_owned(),
+            requested_at: "2026-05-17T10:10:00Z".to_owned(),
+            request_id: "request-admin-default-group".to_owned(),
+        })
+        .await
+        .unwrap();
+
+    assert_eq!("Admin Console Key", created.name);
+    assert_eq!(1, created.user_id);
+    assert_eq!("sk-test********", created.key);
+
+    let group = sqlx::query(
+        r#"
+        SELECT
+            id,
+            code,
+            name,
+            pricing_plan_code,
+            printf('%.6f', rate_multiplier) AS rate_multiplier,
+            printf('%.6f', official_price_multiplier) AS official_price_multiplier
+        FROM iam_gateway_api_key_group
+        WHERE tenant_id = 10
+          AND organization_id = 20
+          AND code = 'default'
+          AND status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!("default", group.get::<String, _>("code"));
+    assert_eq!("Default", group.get::<String, _>("name"));
+    assert_eq!("standard", group.get::<String, _>("pricing_plan_code"));
+    assert_eq!("1.000000", group.get::<String, _>("rate_multiplier"));
+    assert_eq!(
+        "1.000000",
+        group.get::<String, _>("official_price_multiplier")
+    );
+
+    let api_key_group_id: i64 = sqlx::query_scalar(
+        r#"
+        SELECT group_id
+        FROM iam_gateway_api_key
+        WHERE id = ?
+        "#,
+    )
+    .bind(created.id)
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(group.get::<i64, _>("id"), api_key_group_id);
+}
+
+#[tokio::test]
 async fn sqlite_installer_repairs_incomplete_bootstrap_admin_login() {
     let pool = sqlite_pool().await;
     let installer =
@@ -347,7 +585,7 @@ async fn sqlite_installer_repairs_incomplete_bootstrap_admin_login() {
         WHERE tenant_id = '10'
           AND user_id = '1'
           AND provider = 'email'
-          AND subject = 'admin@sdkwork.local'
+          AND subject = 'admin@sdkwork.com'
         "#,
     )
     .execute(&pool)
@@ -531,7 +769,130 @@ async fn sqlite_installer_repairs_bootstrap_admin_membership_without_resetting_p
 }
 
 #[tokio::test]
-async fn sqlite_installer_bootstraps_admin_when_legacy_plus_user_has_no_v_column() {
+async fn sqlite_installer_reset_admin_password_rotates_existing_password() {
+    let pool = sqlite_pool().await;
+    let installer =
+        installer(pool.clone()).with_bootstrap_admin_password("Admin-Original-Password-2026!");
+
+    installer.ensure_installed().await.unwrap();
+    let original_hash: String = active_admin_password_hash(&pool).await;
+    assert!(
+        Pbkdf2Sha256PasswordHasher
+            .verify_password("Admin-Original-Password-2026!", &original_hash)
+            .unwrap(),
+        "setup must create an admin password credential"
+    );
+
+    let report = installer
+        .reset_admin_password(
+            "admin",
+            "Administrator",
+            "admin@sdkwork.com",
+            "Admin-Rotated-Password-2026!",
+        )
+        .await
+        .unwrap();
+
+    assert_eq!("reset", report.status);
+    assert_eq!("admin", report.username);
+    assert_eq!("admin@sdkwork.com", report.email);
+    assert_eq!("1", report.user_id);
+    assert_eq!("10", report.tenant_id);
+    assert_eq!("20", report.organization_id);
+    assert_eq!("Admin-Rotated-Password-2026!", report.initial_password);
+    assert_eq!(false, report.generated_password);
+
+    let rotated_hash: String = active_admin_password_hash(&pool).await;
+    assert_ne!(
+        original_hash, rotated_hash,
+        "reset-admin must write a new password hash"
+    );
+    assert!(
+        !Pbkdf2Sha256PasswordHasher
+            .verify_password("Admin-Original-Password-2026!", &rotated_hash)
+            .unwrap(),
+        "old admin password must no longer verify after reset"
+    );
+    assert!(
+        Pbkdf2Sha256PasswordHasher
+            .verify_password("Admin-Rotated-Password-2026!", &rotated_hash)
+            .unwrap(),
+        "new admin password must use the normal IAM password hash format"
+    );
+
+    let active_password_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM iam_credential
+        WHERE tenant_id = '10'
+          AND user_id = '1'
+          AND credential_type = 'password'
+          AND status = 'active'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        1, active_password_count,
+        "reset-admin must leave exactly one active password credential"
+    );
+
+    let rotated_password_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM iam_credential
+        WHERE tenant_id = '10'
+          AND user_id = '1'
+          AND credential_type = 'password'
+          AND status = 'rotated'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert!(
+        rotated_password_count >= 1,
+        "reset-admin must retain old password credentials as rotated audit history"
+    );
+}
+
+#[tokio::test]
+async fn sqlite_installer_reset_admin_password_bootstraps_empty_database() {
+    let pool = sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    let report = installer
+        .reset_admin_password(
+            "admin",
+            "Administrator",
+            "admin@sdkwork.com",
+            "Admin-Reset-Empty-Db-2026!",
+        )
+        .await
+        .unwrap();
+
+    assert_eq!("reset", report.status);
+    assert_eq!("admin", report.username);
+    assert_eq!("admin@sdkwork.com", report.email);
+    assert_eq!("10", report.tenant_id);
+    assert_eq!("20", report.organization_id);
+    assert_eq!(
+        InstallationStatus::Installed,
+        installer.status().await.unwrap()
+    );
+
+    let password_hash = active_admin_password_hash(&pool).await;
+    assert!(
+        Pbkdf2Sha256PasswordHasher
+            .verify_password("Admin-Reset-Empty-Db-2026!", &password_hash)
+            .unwrap(),
+        "reset-admin on an empty database must create a login-ready admin password"
+    );
+}
+
+#[tokio::test]
+async fn sqlite_installer_bootstraps_admin_without_touching_existing_plus_user_table() {
     let pool = sqlite_pool().await;
     sqlx::query(
         r#"
@@ -556,36 +917,69 @@ async fn sqlite_installer_bootstraps_admin_when_legacy_plus_user_has_no_v_column
     .execute(&pool)
     .await
     .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO plus_user
+            (id, uuid, tenant_id, organization_id, nickname, username, email, phone, avatar, password, salt, status, created_at, updated_at)
+        VALUES
+            (99, 'legacy-user-99', 10, 20, 'Legacy User', 'legacy-user', 'legacy@example.com', '', '', '', '', 1, '2026-05-17T00:00:00Z', '2026-05-17T00:00:00Z')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
 
     let installer =
-        installer(pool.clone()).with_bootstrap_admin_password("Admin-Legacy-Test-Password-2026!");
+        installer(pool.clone()).with_bootstrap_admin_password("Admin-No-Compat-Test-2026!");
 
     let installed = installer.ensure_installed().await.unwrap();
 
     assert_eq!(InstallationStatus::Installed, installed.status);
     let bootstrap = installed
         .bootstrap_admin
-        .expect("legacy plus_user compatibility must not skip bootstrap admin creation");
+        .expect("existing plus_user table must not skip IAM bootstrap admin creation");
     assert_eq!("created", bootstrap.status);
     assert_eq!("1", bootstrap.user_id);
 
-    let legacy_admin = sqlx::query(
+    let iam_admin = sqlx::query(
         r#"
-        SELECT username, nickname, email, status
-        FROM plus_user
-        WHERE id = 1
+        SELECT u.username, u.display_name, u.email, u.status, m.role_code
+        FROM iam_user u
+        JOIN iam_organization_member m
+          ON m.tenant_id = u.tenant_id
+         AND m.user_id = u.id
+        WHERE u.id = '1'
+          AND u.tenant_id = '10'
+          AND m.organization_id = '20'
         "#,
     )
     .fetch_one(&pool)
     .await
     .unwrap();
-    assert_eq!("admin", legacy_admin.get::<String, _>("username"));
-    assert_eq!("Administrator", legacy_admin.get::<String, _>("nickname"));
+    assert_eq!("admin", iam_admin.get::<String, _>("username"));
+    assert_eq!("Administrator", iam_admin.get::<String, _>("display_name"));
+    assert_eq!("admin@sdkwork.com", iam_admin.get::<String, _>("email"));
+    assert_eq!("active", iam_admin.get::<String, _>("status"));
+    assert_eq!("admin", iam_admin.get::<String, _>("role_code"));
+
+    let legacy_rows: i64 = sqlx::query_scalar("SELECT COUNT(1) FROM plus_user")
+        .fetch_one(&pool)
+        .await
+        .unwrap();
     assert_eq!(
-        "admin@sdkwork.local",
-        legacy_admin.get::<String, _>("email")
+        1, legacy_rows,
+        "IAM bootstrap must not mirror users into legacy plus_user"
     );
-    assert_eq!(1, legacy_admin.get::<i64, _>("status"));
+
+    let mirrored_admin_count: i64 =
+        sqlx::query_scalar("SELECT COUNT(1) FROM plus_user WHERE username = 'admin'")
+            .fetch_one(&pool)
+            .await
+            .unwrap();
+    assert_eq!(
+        0, mirrored_admin_count,
+        "plus_user is not an identity source and must not receive bootstrap admin rows"
+    );
 }
 
 #[tokio::test]
@@ -2738,6 +3132,27 @@ fn installer(pool: SqlitePool) -> DatabaseInstaller {
     DatabaseInstaller::for_sqlite(pool)
         .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
         .unwrap()
+}
+
+async fn active_admin_password_hash(pool: &SqlitePool) -> String {
+    sqlx::query_scalar(
+        r#"
+        SELECT c.credential_hash
+        FROM iam_user u
+        JOIN iam_credential c
+          ON c.tenant_id = u.tenant_id
+         AND c.user_id = u.id
+         AND c.credential_type = 'password'
+         AND c.status = 'active'
+        WHERE u.tenant_id = '10'
+          AND u.username = 'admin'
+        ORDER BY c.updated_at DESC, c.id DESC
+        LIMIT 1
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    .unwrap()
 }
 
 async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelCatalog) {

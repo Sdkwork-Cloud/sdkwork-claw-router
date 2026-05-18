@@ -7,17 +7,20 @@ use crate::ports::{
     AdminSkillItem, AdminSkillPackageItem, AdminSkillStore, CreateAdminSkillArtifactCommand,
     CreateAdminSkillAssetCommand, CreateAdminSkillCategoryCommand, CreateAdminSkillCommand,
     CreateAdminSkillPackageCommand, DeleteAdminSkillArtifactCommand, DeleteAdminSkillAssetCommand,
-    DeleteAdminSkillCommand, DeleteAdminSkillPackageCommand, ListAdminSkillArtifactsQuery,
-    ListAdminSkillAssetsQuery, ListAdminSkillCategoriesQuery, ListAdminSkillPackagesQuery,
-    ListAdminSkillsQuery, ReviewAdminSkillCommand, SetAdminSkillEnabledCommand,
-    SetAdminSkillMarketStatusCommand, SetAdminSkillPackageEnabledCommand,
-    UpdateAdminSkillArtifactCommand, UpdateAdminSkillAssetCommand, UpdateAdminSkillCommand,
+    DeleteAdminSkillCategoryCommand, DeleteAdminSkillCommand, DeleteAdminSkillPackageCommand,
+    ListAdminSkillArtifactsQuery, ListAdminSkillAssetsQuery, ListAdminSkillCategoriesQuery,
+    ListAdminSkillPackagesQuery, ListAdminSkillsQuery, ReviewAdminSkillCommand,
+    SetAdminSkillEnabledCommand, SetAdminSkillMarketStatusCommand,
+    SetAdminSkillPackageEnabledCommand, UpdateAdminSkillArtifactCommand,
+    UpdateAdminSkillAssetCommand, UpdateAdminSkillCategoryCommand, UpdateAdminSkillCommand,
     UpdateAdminSkillPackageCommand,
 };
 
 const SKILL_TARGET_TYPE: i32 = 35;
 const CATEGORY_TYPE_SKILLS: i32 = 19;
 const CATEGORY_TYPE_SKILLS_COLLECTION: i32 = 20;
+const PUBLIC_SKILLS_TENANT_ID: i64 = 0;
+const PUBLIC_SKILLS_ORGANIZATION_ID: i64 = 0;
 const ASSIGNED_ID_FLOOR: i64 = 1_000_000_000_000;
 const ASSIGNED_ID_RANGE: u64 = 8_000_000_000_000;
 const MAX_ASSIGNED_ID_ATTEMPTS: u8 = 16;
@@ -81,6 +84,95 @@ impl AdminSkillStore for SqliteAdminSkillStore {
                 store_error("failed to commit skill category transaction", error)
             })?;
             Ok(item)
+        })
+    }
+
+    fn update_category<'a>(
+        &'a self,
+        command: UpdateAdminSkillCategoryCommand,
+    ) -> AdminSkillCommandFuture<'a, Option<AdminSkillCategoryItem>> {
+        Box::pin(async move {
+            let mut tx = self.pool.begin().await.map_err(|error| {
+                store_error("failed to begin skill category transaction", error)
+            })?;
+            ensure_category_exists(
+                &mut tx,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.parent_id.flatten(),
+            )
+            .await?;
+            let updated = update_category(&mut tx, &command).await?;
+            if !updated {
+                tx.commit().await.map_err(|error| {
+                    store_error("failed to commit skill category transaction", error)
+                })?;
+                return Ok(None);
+            }
+            insert_audit_log(
+                &mut tx,
+                &command.audit_log_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.operator_id,
+                command.subject.operator_type,
+                "update_skill_category",
+                command.category_id,
+                serde_json::json!({
+                    "action": "update_skill_category",
+                    "categoryId": command.category_id,
+                    "nameChanged": command.name.is_some(),
+                    "codeChanged": command.code.is_some(),
+                    "typeChanged": command.category_type.is_some()
+                }),
+            )
+            .await?;
+            let item = load_category_by_id(
+                &mut tx,
+                command.category_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+            )
+            .await?;
+            tx.commit().await.map_err(|error| {
+                store_error("failed to commit skill category transaction", error)
+            })?;
+            Ok(item)
+        })
+    }
+
+    fn delete_category<'a>(
+        &'a self,
+        command: DeleteAdminSkillCategoryCommand,
+    ) -> AdminSkillCommandFuture<'a, bool> {
+        Box::pin(async move {
+            let mut tx = self.pool.begin().await.map_err(|error| {
+                store_error("failed to begin skill category transaction", error)
+            })?;
+            let deleted = delete_category(&mut tx, &command).await?;
+            if deleted {
+                insert_audit_log(
+                    &mut tx,
+                    &command.audit_log_uuid,
+                    &command.request_id,
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    command.subject.operator_type,
+                    "delete_skill_category",
+                    command.category_id,
+                    serde_json::json!({
+                        "action": "delete_skill_category",
+                        "categoryId": command.category_id
+                    }),
+                )
+                .await?;
+            }
+            tx.commit().await.map_err(|error| {
+                store_error("failed to commit skill category transaction", error)
+            })?;
+            Ok(deleted)
         })
     }
 
@@ -612,7 +704,7 @@ impl AdminSkillStore for SqliteAdminSkillStore {
                 self.pool.begin().await.map_err(|error| {
                     store_error("failed to begin skill asset transaction", error)
                 })?;
-            ensure_skill_exists(
+            ensure_visible_skill_exists(
                 &mut tx,
                 query.subject.tenant_id,
                 query.subject.organization_id,
@@ -801,7 +893,7 @@ impl AdminSkillStore for SqliteAdminSkillStore {
             let mut tx = self.pool.begin().await.map_err(|error| {
                 store_error("failed to begin skill artifact transaction", error)
             })?;
-            ensure_skill_exists(
+            ensure_visible_skill_exists(
                 &mut tx,
                 query.subject.tenant_id,
                 query.subject.organization_id,
@@ -975,18 +1067,33 @@ async fn list_categories(
                parent_id, path, COALESCE(visible, 1) AS visible,
                COALESCE(status, 1) AS status, type AS category_type
         FROM plus_category
-        WHERE tenant_id = ?
-          AND organization_id = ?
+        WHERE (
+              (tenant_id = ? AND organization_id = ?)
+              OR (tenant_id = ? AND organization_id = ?)
+          )
           AND type IN (?, ?)
           AND COALESCE(status, 1) >= 0
-        ORDER BY COALESCE(sort_weight, 0) DESC, id ASC
+        ORDER BY
+            CASE
+                WHEN tenant_id = ? AND organization_id = ? THEN 0
+                WHEN tenant_id = ? AND organization_id = ? THEN 1
+                ELSE 2
+            END,
+            COALESCE(sort_weight, 0) DESC,
+            id ASC
         LIMIT 500
         "#,
     )
     .bind(query.subject.tenant_id)
     .bind(query.subject.organization_id)
+    .bind(PUBLIC_SKILLS_TENANT_ID)
+    .bind(PUBLIC_SKILLS_ORGANIZATION_ID)
     .bind(CATEGORY_TYPE_SKILLS)
     .bind(CATEGORY_TYPE_SKILLS_COLLECTION)
+    .bind(query.subject.tenant_id)
+    .bind(query.subject.organization_id)
+    .bind(PUBLIC_SKILLS_TENANT_ID)
+    .bind(PUBLIC_SKILLS_ORGANIZATION_ID)
     .fetch_all(pool)
     .await
     .map_err(|error| store_error("failed to list skill categories", error))?;
@@ -1065,6 +1172,113 @@ async fn load_category_by_id(
     row.map(category_from_row).transpose()
 }
 
+async fn update_category(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &UpdateAdminSkillCategoryCommand,
+) -> DomainResult<bool> {
+    if command.parent_id.flatten() == Some(command.category_id) {
+        return Err(DomainError::conflict(
+            "skill category parent cannot reference itself",
+        ));
+    }
+    let result = sqlx::query(
+        r#"
+        UPDATE plus_category
+        SET name = COALESCE(?, name),
+            description = CASE WHEN ? THEN ? ELSE description END,
+            code = CASE WHEN ? THEN ? ELSE code END,
+            icon = CASE WHEN ? THEN ? ELSE icon END,
+            sort_weight = COALESCE(?, sort_weight),
+            parent_id = CASE WHEN ? THEN ? ELSE parent_id END,
+            path = CASE WHEN ? THEN ? ELSE path END,
+            visible = COALESCE(?, visible),
+            status = COALESCE(?, status),
+            type = COALESCE(?, type),
+            updated_at = ?,
+            v = COALESCE(v, 0) + 1
+        WHERE id = ?
+          AND tenant_id = ?
+          AND organization_id = ?
+          AND type IN (?, ?)
+        "#,
+    )
+    .bind(command.name.as_deref())
+    .bind(command.description.is_some())
+    .bind(
+        command
+            .description
+            .as_ref()
+            .and_then(|value: &Option<String>| value.as_deref()),
+    )
+    .bind(command.code.is_some())
+    .bind(
+        command
+            .code
+            .as_ref()
+            .and_then(|value: &Option<String>| value.as_deref()),
+    )
+    .bind(command.icon.is_some())
+    .bind(
+        command
+            .icon
+            .as_ref()
+            .and_then(|value: &Option<String>| value.as_deref()),
+    )
+    .bind(command.sort_weight)
+    .bind(command.parent_id.is_some())
+    .bind(command.parent_id.flatten())
+    .bind(command.path.is_some())
+    .bind(
+        command
+            .path
+            .as_ref()
+            .and_then(|value: &Option<String>| value.as_deref()),
+    )
+    .bind(command.visible)
+    .bind(command.status)
+    .bind(command.category_type)
+    .bind(&command.requested_at)
+    .bind(command.category_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(CATEGORY_TYPE_SKILLS)
+    .bind(CATEGORY_TYPE_SKILLS_COLLECTION)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update skill category", error))?;
+    Ok(result.rows_affected() > 0)
+}
+
+async fn delete_category(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &DeleteAdminSkillCategoryCommand,
+) -> DomainResult<bool> {
+    ensure_category_delete_allowed(tx, command).await?;
+    let result = sqlx::query(
+        r#"
+        UPDATE plus_category
+        SET status = -1,
+            updated_at = ?,
+            v = COALESCE(v, 0) + 1
+        WHERE id = ?
+          AND tenant_id = ?
+          AND organization_id = ?
+          AND type IN (?, ?)
+          AND COALESCE(status, 1) >= 0
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(command.category_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(CATEGORY_TYPE_SKILLS)
+    .bind(CATEGORY_TYPE_SKILLS_COLLECTION)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to delete skill category", error))?;
+    Ok(result.rows_affected() > 0)
+}
+
 async fn list_packages(
     pool: &SqlitePool,
     query: ListAdminSkillPackagesQuery,
@@ -1088,17 +1302,29 @@ async fn list_packages(
                CAST(created_at AS TEXT) AS created_at,
                CAST(updated_at AS TEXT) AS updated_at
         FROM plus_agent_skill_package
-        WHERE tenant_id = ?
-          AND organization_id = ?
+        WHERE (
+              (tenant_id = ? AND organization_id = ?)
+              OR (tenant_id = ? AND organization_id = ?)
+          )
           AND (? IS NULL OR name LIKE ? ESCAPE '\' OR package_key LIKE ? ESCAPE '\')
           AND (? IS NULL OR enabled = ?)
           AND (? IS NULL OR category_id = ?)
-        ORDER BY COALESCE(featured, 0) DESC, COALESCE(sort_weight, 0) DESC, id DESC
+        ORDER BY
+            CASE
+                WHEN tenant_id = ? AND organization_id = ? THEN 0
+                WHEN tenant_id = ? AND organization_id = ? THEN 1
+                ELSE 2
+            END,
+            COALESCE(featured, 0) DESC,
+            COALESCE(sort_weight, 0) DESC,
+            id DESC
         LIMIT ? OFFSET ?
         "#,
     )
     .bind(query.subject.tenant_id)
     .bind(query.subject.organization_id)
+    .bind(PUBLIC_SKILLS_TENANT_ID)
+    .bind(PUBLIC_SKILLS_ORGANIZATION_ID)
     .bind(keyword.as_deref())
     .bind(keyword.as_deref())
     .bind(keyword.as_deref())
@@ -1106,6 +1332,10 @@ async fn list_packages(
     .bind(query.enabled)
     .bind(query.category_id)
     .bind(query.category_id)
+    .bind(query.subject.tenant_id)
+    .bind(query.subject.organization_id)
+    .bind(PUBLIC_SKILLS_TENANT_ID)
+    .bind(PUBLIC_SKILLS_ORGANIZATION_ID)
     .bind(page_size)
     .bind(offset)
     .fetch_all(pool)
@@ -1362,20 +1592,32 @@ async fn list_skills(
             CAST(created_at AS TEXT) AS created_at,
             CAST(updated_at AS TEXT) AS updated_at
         FROM plus_agent_skill
-        WHERE tenant_id = ?
-          AND organization_id = ?
+        WHERE (
+              (tenant_id = ? AND organization_id = ?)
+              OR (tenant_id = ? AND organization_id = ?)
+          )
           AND (? IS NULL OR name LIKE ? ESCAPE '\' OR skill_key LIKE ? ESCAPE '\')
           AND (? IS NULL OR market_status = ?)
           AND (? IS NULL OR review_status = ?)
           AND (? IS NULL OR visibility = ?)
           AND (? IS NULL OR enabled = ?)
           AND (? IS NULL OR category_id = ?)
-        ORDER BY COALESCE(featured, 0) DESC, COALESCE(recommend_weight, 0) DESC, id DESC
+        ORDER BY
+            CASE
+                WHEN tenant_id = ? AND organization_id = ? THEN 0
+                WHEN tenant_id = ? AND organization_id = ? THEN 1
+                ELSE 2
+            END,
+            COALESCE(featured, 0) DESC,
+            COALESCE(recommend_weight, 0) DESC,
+            id DESC
         LIMIT ? OFFSET ?
         "#,
     )
     .bind(query.subject.tenant_id)
     .bind(query.subject.organization_id)
+    .bind(PUBLIC_SKILLS_TENANT_ID)
+    .bind(PUBLIC_SKILLS_ORGANIZATION_ID)
     .bind(keyword.as_deref())
     .bind(keyword.as_deref())
     .bind(keyword.as_deref())
@@ -1389,6 +1631,10 @@ async fn list_skills(
     .bind(query.enabled)
     .bind(query.category_id)
     .bind(query.category_id)
+    .bind(query.subject.tenant_id)
+    .bind(query.subject.organization_id)
+    .bind(PUBLIC_SKILLS_TENANT_ID)
+    .bind(PUBLIC_SKILLS_ORGANIZATION_ID)
     .bind(page_size)
     .bind(offset)
     .fetch_all(pool)
@@ -1772,19 +2018,34 @@ async fn list_assets(
 ) -> DomainResult<Vec<AdminSkillAssetItem>> {
     let sql = asset_select_sql(
         r#"
-        WHERE tenant_id = ?
-          AND organization_id = ?
+        WHERE (
+              (tenant_id = ? AND organization_id = ?)
+              OR (tenant_id = ? AND organization_id = ?)
+          )
           AND target_type = ?
           AND target_id = ?
           AND deleted_at IS NULL
-        ORDER BY COALESCE(sort_order, 0) ASC, id ASC
+        ORDER BY
+            CASE
+                WHEN tenant_id = ? AND organization_id = ? THEN 0
+                WHEN tenant_id = ? AND organization_id = ? THEN 1
+                ELSE 2
+            END,
+            COALESCE(sort_order, 0) ASC,
+            id ASC
         "#,
     );
     let rows = sqlx::query(&sql)
         .bind(query.subject.tenant_id)
         .bind(query.subject.organization_id)
+        .bind(PUBLIC_SKILLS_TENANT_ID)
+        .bind(PUBLIC_SKILLS_ORGANIZATION_ID)
         .bind(SKILL_TARGET_TYPE)
         .bind(query.skill_id)
+        .bind(query.subject.tenant_id)
+        .bind(query.subject.organization_id)
+        .bind(PUBLIC_SKILLS_TENANT_ID)
+        .bind(PUBLIC_SKILLS_ORGANIZATION_ID)
         .fetch_all(&mut **tx)
         .await
         .map_err(|error| store_error("failed to list skill assets", error))?;
@@ -1989,19 +2250,34 @@ async fn list_artifacts(
 ) -> DomainResult<Vec<AdminSkillArtifactItem>> {
     let sql = artifact_select_sql(
         r#"
-        WHERE tenant_id = ?
-          AND organization_id = ?
+        WHERE (
+              (tenant_id = ? AND organization_id = ?)
+              OR (tenant_id = ? AND organization_id = ?)
+          )
           AND target_type = ?
           AND target_id = ?
           AND deleted_at IS NULL
-        ORDER BY published_at DESC, id DESC
+        ORDER BY
+            CASE
+                WHEN tenant_id = ? AND organization_id = ? THEN 0
+                WHEN tenant_id = ? AND organization_id = ? THEN 1
+                ELSE 2
+            END,
+            published_at DESC,
+            id DESC
         "#,
     );
     let rows = sqlx::query(&sql)
         .bind(query.subject.tenant_id)
         .bind(query.subject.organization_id)
+        .bind(PUBLIC_SKILLS_TENANT_ID)
+        .bind(PUBLIC_SKILLS_ORGANIZATION_ID)
         .bind(SKILL_TARGET_TYPE)
         .bind(query.skill_id)
+        .bind(query.subject.tenant_id)
+        .bind(query.subject.organization_id)
+        .bind(PUBLIC_SKILLS_TENANT_ID)
+        .bind(PUBLIC_SKILLS_ORGANIZATION_ID)
         .fetch_all(&mut **tx)
         .await
         .map_err(|error| store_error("failed to list skill artifacts", error))?;
@@ -2343,6 +2619,7 @@ async fn ensure_category_exists(
           AND tenant_id = ?
           AND organization_id = ?
           AND type IN (?, ?)
+          AND COALESCE(status, 1) >= 0
         "#,
     )
     .bind(category_id)
@@ -2358,6 +2635,73 @@ async fn ensure_category_exists(
     } else {
         Ok(())
     }
+}
+
+async fn ensure_category_delete_allowed(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &DeleteAdminSkillCategoryCommand,
+) -> DomainResult<()> {
+    let child_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM plus_category
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND parent_id = ?
+          AND type IN (?, ?)
+          AND COALESCE(status, 1) >= 0
+        "#,
+    )
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(command.category_id)
+    .bind(CATEGORY_TYPE_SKILLS)
+    .bind(CATEGORY_TYPE_SKILLS_COLLECTION)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to validate child skill categories", error))?;
+    if child_count > 0 {
+        return Err(DomainError::conflict("skill category has child categories"));
+    }
+
+    let package_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM plus_agent_skill_package
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND category_id = ?
+        "#,
+    )
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(command.category_id)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to validate skill package category links", error))?;
+    if package_count > 0 {
+        return Err(DomainError::conflict("skill category is still referenced"));
+    }
+
+    let skill_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM plus_agent_skill
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND category_id = ?
+        "#,
+    )
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(command.category_id)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to validate skill category links", error))?;
+    if skill_count > 0 {
+        return Err(DomainError::conflict("skill category is still referenced"));
+    }
+    Ok(())
 }
 
 async fn ensure_package_exists(
@@ -2412,6 +2756,38 @@ async fn ensure_skill_exists(
     .fetch_one(&mut **tx)
     .await
     .map_err(|error| store_error("failed to validate skill", error))?;
+    if exists == 0 {
+        Err(DomainError::not_found("skill was not found"))
+    } else {
+        Ok(())
+    }
+}
+
+async fn ensure_visible_skill_exists(
+    tx: &mut Transaction<'_, Sqlite>,
+    tenant_id: i64,
+    organization_id: i64,
+    skill_id: i64,
+) -> DomainResult<()> {
+    let exists: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM plus_agent_skill
+        WHERE id = ?
+          AND (
+              (tenant_id = ? AND organization_id = ?)
+              OR (tenant_id = ? AND organization_id = ?)
+          )
+        "#,
+    )
+    .bind(skill_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(PUBLIC_SKILLS_TENANT_ID)
+    .bind(PUBLIC_SKILLS_ORGANIZATION_ID)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to validate visible skill", error))?;
     if exists == 0 {
         Err(DomainError::not_found("skill was not found"))
     } else {

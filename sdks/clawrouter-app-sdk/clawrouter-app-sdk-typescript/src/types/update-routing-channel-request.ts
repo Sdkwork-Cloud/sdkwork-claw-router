@@ -1,4 +1,5 @@
 import type { JsonNull } from './json-null';
+import type { ProviderCircuitBreakerPolicy } from './provider-circuit-breaker-policy';
 import type { ProviderRetryPolicy } from './provider-retry-policy';
 
 /** Update routing channel request schema exposed by Claw Router. */
@@ -9,6 +10,8 @@ export interface UpdateRoutingChannelRequest {
   baseUrl?: string | null;
   /** Capabilities field on update routing channel request. */
   capabilities?: ('llm' | 'image' | 'audio' | 'music' | 'sfx' | 'video')[];
+  /** Circuit breaker policy field on update routing channel request. */
+  circuitBreakerPolicy?: ProviderCircuitBreakerPolicy | JsonNull;
   /** Models field on update routing channel request. */
   models?: string[];
   /** Name field on update routing channel request. */

@@ -4,6 +4,7 @@ package types
 type DashboardOverviewResponse struct {
 	Announcements []DashboardAnnouncement `json:"announcements"`
 	ChartData []DashboardChartPoint `json:"chartData"`
+	ConfigurationDomains []DashboardConfigurationDomain `json:"configurationDomains"`
 	MultimodalSparkline []DashboardSparklinePoint `json:"multimodalSparkline"`
 	PerformanceSparkline []DashboardSparklinePoint `json:"performanceSparkline"`
 	RequestSparkline []DashboardSparklinePoint `json:"requestSparkline"`

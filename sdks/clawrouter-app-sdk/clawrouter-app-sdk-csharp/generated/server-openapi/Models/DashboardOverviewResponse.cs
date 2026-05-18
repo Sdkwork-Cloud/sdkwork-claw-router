@@ -8,6 +8,7 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public List<DashboardAnnouncement>? Announcements { get; set; }
         public List<DashboardChartPoint>? ChartData { get; set; }
+        public List<DashboardConfigurationDomain>? ConfigurationDomains { get; set; }
         public List<DashboardSparklinePoint>? MultimodalSparkline { get; set; }
         public List<DashboardSparklinePoint>? PerformanceSparkline { get; set; }
         public List<DashboardSparklinePoint>? RequestSparkline { get; set; }

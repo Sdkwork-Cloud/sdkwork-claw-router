@@ -63,6 +63,14 @@ namespace Sdkwork.ClawRouter.App.Api
         }
 
         /// <summary>
+        /// Confirm QR login code
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.LoginQrCodesConfirmResult?> LoginQrCodesConfirmAsync(Sdkwork.ClawRouter.App.Models.IamLoginQrCodeConfirmRequest body)
+        {
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.LoginQrCodesConfirmResult>(ApiPaths.AppPath("/auth/qr_login_codes/confirm"), body, null, null, "application/json");
+        }
+
+        /// <summary>
         /// Retrieve QR login status
         /// </summary>
         public async Task<Sdkwork.ClawRouter.App.Models.LoginQrCodesRetrieveResult?> LoginQrCodesRetrieveAsync(string qrKey)
@@ -83,6 +91,19 @@ namespace Sdkwork.ClawRouter.App.Api
                 new Dictionary<string, HeaderParameterSpec>()
             );
             return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.RegistrationsCreateResult>(ApiPaths.AppPath("/auth/registrations"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
+        /// Retrieve public IAM auth runtime settings
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.RuntimeSettingsRetrieveResult?> RuntimeSettingsRetrieveAsync(string? tenantCode = null, string? organizationCode = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("tenant_code", tenantCode, "form", true, false, null),
+                new QueryParameterSpec("organization_code", organizationCode, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.RuntimeSettingsRetrieveResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath("/auth/runtime_settings"), queryString));
         }
 
         /// <summary>
@@ -146,6 +167,14 @@ namespace Sdkwork.ClawRouter.App.Api
         public async Task<Sdkwork.ClawRouter.App.Models.VerificationCodesVerifyResult?> VerificationCodesVerifyAsync(Sdkwork.ClawRouter.App.Models.IamVerificationCodeVerifyRequest body)
         {
             return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.VerificationCodesVerifyResult>(ApiPaths.AppPath("/auth/verification_codes/verify"), body, null, null, "application/json");
+        }
+
+        /// <summary>
+        /// Retrieve public IAM verification policy
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.VerificationPolicyRetrieveResult?> VerificationPolicyRetrieveAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.VerificationPolicyRetrieveResult>(ApiPaths.AppPath("/auth/verification_policy"));
         }
 
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);

@@ -8,10 +8,10 @@ class IamRegistrationCreateRequest:
     """Iam registration create request schema exposed by Claw Router."""
     password: str
     username: str
-    verification_code: str
     channel: Optional[str] = None
     confirm_password: Optional[str] = None
     email: Optional[str] = None
     organization_code: Optional[str] = None
     phone: Optional[str] = None
     tenant_code: Optional[str] = None
+    verification_code: Optional[str] = None

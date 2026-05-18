@@ -14,13 +14,25 @@ import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
 import { RechargeService } from 'sdkwork-claw-router-console-recharge';
 import { CheckoutService, type CheckoutStatus } from './checkoutService';
 
+import { useTranslation } from 'react-i18next';
 type PaymentMethod = 'wechat' | 'alipay' | 'card';
+type TranslationFunction = ReturnType<typeof useTranslation>['t'];
 
-function getCheckoutErrorMessage(error: unknown, fallback: string): string {
-  return error instanceof Error && error.message ? error.message : fallback;
+function getCheckoutErrorMessage(error: unknown, fallback: string, t: TranslationFunction): string {
+  if (error instanceof Error) {
+    const message = error.message.trim();
+    if (message.startsWith('console.')) {
+      return t(message, fallback);
+    }
+    if (message) {
+      return message;
+    }
+  }
+  return fallback;
 }
 
 export function CheckoutView() {
+  const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const amount = parseAmount(searchParams.get('amount'));
@@ -38,7 +50,7 @@ export function CheckoutView() {
   const payableCents = moneyCents(payableAmount);
   const points = checkoutStatus?.points;
   const status = checkoutStatus?.status || 'pending';
-  const terminalNotice = checkoutStatus ? checkoutStatusNotice(status) : '';
+  const terminalNotice = checkoutStatus ? checkoutStatusNotice(status, t) : '';
   const activePaymentMethod = normalizePaymentMethod(checkoutStatus?.paymentMethod) || paymentMethod;
 
   const loadCheckoutStatus = useCallback(async (targetOrderNo = orderNo, isActive: () => boolean = () => true) => {
@@ -56,14 +68,14 @@ export function CheckoutView() {
       }
     } catch (error) {
       if (isActive()) {
-        setLoadError(getCheckoutErrorMessage(error, 'Failed to load checkout status.'));
+        setLoadError(getCheckoutErrorMessage(error, t('console.checkout.statusLoadError', '收银台状态加载失败'), t));
       }
     } finally {
       if (isActive()) {
         setIsLoading(false);
       }
     }
-  }, [orderNo]);
+  }, [orderNo, t]);
 
   useEffect(() => {
     let active = true;
@@ -85,18 +97,18 @@ export function CheckoutView() {
     try {
       const result = await RechargeService.submitRecharge(formatMoneyAmount(amount), paymentMethod);
       if (!result.orderNo) {
-        setCheckoutError('Payment order could not be created. Please start a new recharge.');
+        setCheckoutError(t('console.checkout.orderMissing', '支付订单创建失败，请重新发起充值。'));
         return;
       }
       setOrderNo(result.orderNo);
       navigate(`/console/checkout?orderNo=${encodeURIComponent(result.orderNo)}`, { replace: true });
       await loadCheckoutStatus(result.orderNo);
     } catch (error) {
-      setCheckoutError(getCheckoutErrorMessage(error, 'Failed to create checkout order.'));
+      setCheckoutError(getCheckoutErrorMessage(error, t('console.checkout.orderCreateError', '支付订单创建失败'), t));
     } finally {
       setIsProcessing(false);
     }
-  }, [amount, loadCheckoutStatus, navigate, paymentMethod]);
+  }, [amount, loadCheckoutStatus, navigate, paymentMethod, t]);
 
   if (status === 'success' && checkoutStatus) {
     return (
@@ -105,19 +117,16 @@ export function CheckoutView() {
           <div className="w-20 h-20 bg-emerald-100 dark:bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 className="w-10 h-10" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-2">支付成功</h2>
+          <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-2">{t("admin.marketing.index.text.hxhd0b", "支付成功")}</h2>
           <p className="text-slate-500 dark:text-slate-400 mb-2">
-            订单 {checkoutStatus.orderNo} 已完成支付。
-          </p>
+            {t("console.billing.checkoutview.text.6uzdjk", "订单")}{checkoutStatus.orderNo} {t("console.billing.checkoutview.text.no4p2k", "已完成支付。")}</p>
           <p className="text-slate-500 dark:text-slate-400 mb-8">
-            充值金额 ${formatMoneyAmount(checkoutStatus.amount)}，到账 {checkoutStatus.points.toLocaleString()} 积分。
-          </p>
+            {t("console.billing.checkoutview.text.19wghfm", "充值金额 $")}{formatMoneyAmount(checkoutStatus.amount)}{t("console.billing.checkoutview.text.18qonqd", "，到账")}{checkoutStatus.points.toLocaleString()} {t("console.billing.checkoutview.text.4gjjem", "积分。")}</p>
           <button
             onClick={() => navigate('/console/billing?tab=recharge')}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition-colors"
           >
-            返回钱包
-          </button>
+            {t("console.billing.checkoutview.text.ydr4yt", "返回钱包")}</button>
         </div>
       </div>
     );
@@ -132,20 +141,20 @@ export function CheckoutView() {
         <button
           onClick={() => navigate(-1)}
           className="p-2 hover:bg-slate-200 dark:hover:bg-white/10 rounded-full transition-colors text-slate-500 dark:text-slate-400"
-          title="返回"
+          title={t("console.billing.checkoutview.text.omytgn", "返回")}
         >
           <ArrowLeft className="w-5 h-5" />
         </button>
         <div>
-          <h1 className="text-xl lg:text-2xl font-bold text-slate-800 dark:text-white tracking-tight">收银台</h1>
-          {orderNo && <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">订单号 {orderNo}</p>}
+          <h1 className="text-xl lg:text-2xl font-bold text-slate-800 dark:text-white tracking-tight">{t("console.billing.checkoutview.text.cxkxif", "收银台")}</h1>
+          {orderNo && <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{t("admin.marketing.index.text.14vvhet", "订单号")}{orderNo}</p>}
         </div>
       </div>
 
       {loadError && (
         <BusinessStatePanel
           kind="error"
-          title="Checkout status could not be loaded"
+          title={t('console.checkout.statusLoadFailed', '收银台状态加载失败')}
           description={loadError}
           onRetry={() => { void loadCheckoutStatus(orderNo); }}
           className="rounded-xl border border-red-200 bg-red-50 dark:border-red-500/20 dark:bg-red-500/10"
@@ -155,7 +164,7 @@ export function CheckoutView() {
       {checkoutError && (
         <BusinessStatePanel
           kind="error"
-          title="Checkout order could not be created"
+          title={t('console.checkout.orderCreateFailed', '支付订单创建失败')}
           description={checkoutError}
           onRetry={() => { void handleCreateCheckoutOrder(); }}
           className="rounded-xl border border-red-200 bg-red-50 dark:border-red-500/20 dark:bg-red-500/10"
@@ -173,11 +182,10 @@ export function CheckoutView() {
         <div className="lg:col-span-2 space-y-6">
           <div className="bg-white dark:bg-[#252525] rounded-2xl border border-slate-200 dark:border-white/5 p-6 shadow-sm">
             <div className="flex items-center justify-between gap-4 mb-4">
-              <h2 className="text-lg font-bold text-slate-800 dark:text-white">选择支付方式</h2>
+              <h2 className="text-lg font-bold text-slate-800 dark:text-white">{t("console.billing.checkoutview.text.b7lk8c", "选择支付方式")}</h2>
               {orderNo && (
                 <span className="text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400">
-                  已锁定订单支付方式
-                </span>
+                  {t("console.billing.checkoutview.text.qe6xdg", "已锁定订单支付方式")}</span>
               )}
             </div>
             <div className="space-y-4">
@@ -185,18 +193,18 @@ export function CheckoutView() {
                 active={activePaymentMethod === 'wechat'}
                 disabled={Boolean(orderNo)}
                 tone="emerald"
-                badge="微"
-                title="微信支付 (WeChat Pay)"
-                description="支持扫码支付"
+                badge={t("console.billing.checkoutview.text.1bisz1t", "微")}
+                title={t("console.billing.checkoutview.text.hecndi", "微信支付 (WeChat Pay)")}
+                description={t("console.billing.checkoutview.text.m500ke", "支持扫码支付")}
                 onSelect={() => setPaymentMethod('wechat')}
               />
               <PaymentMethodOption
                 active={activePaymentMethod === 'alipay'}
                 disabled={Boolean(orderNo)}
                 tone="blue"
-                badge="支"
-                title="支付宝 (Alipay)"
-                description="支持扫码支付"
+                badge={t("console.billing.checkoutview.text.btluu6", "支")}
+                title={t("console.billing.checkoutview.text.1fn7bha", "支付宝 (Alipay)")}
+                description={t("console.billing.checkoutview.text.m500ke", "支持扫码支付")}
                 onSelect={() => setPaymentMethod('alipay')}
               />
               <PaymentMethodOption
@@ -204,8 +212,8 @@ export function CheckoutView() {
                 disabled={Boolean(orderNo)}
                 tone="slate"
                 icon={<CreditCard className="w-5 h-5" />}
-                title="国际信用卡 (Stripe)"
-                description="支持 Visa, Mastercard"
+                title={t("console.billing.checkoutview.text.kap9ev", "国际信用卡 (Stripe)")}
+                description={t("console.billing.checkoutview.text.1fihska", "支持 Visa, Mastercard")}
                 onSelect={() => setPaymentMethod('card')}
               />
             </div>
@@ -213,14 +221,14 @@ export function CheckoutView() {
 
           {checkoutStatus && (
             <div className="bg-white dark:bg-[#252525] rounded-2xl border border-slate-200 dark:border-white/5 p-6 shadow-sm">
-              <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-4">支付进度</h2>
+              <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-4">{t("console.billing.checkoutview.text.154eac7", "支付进度")}</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <StatusTile label="订单状态" value={checkoutStatus.orderStatus} />
-                <StatusTile label="支付状态" value={checkoutStatus.paymentStatus} />
-                <StatusTile label="充值状态" value={checkoutStatus.rechargeStatus} />
+                <StatusTile label={t("console.billing.checkoutview.text.1tgbppl", "订单状态")} value={checkoutStatus.orderStatus} t={t} />
+                <StatusTile label={t("console.billing.checkoutview.text.4n8jg7", "支付状态")} value={checkoutStatus.paymentStatus} t={t} />
+                <StatusTile label={t("console.billing.checkoutview.text.mioy3p", "充值状态")} value={checkoutStatus.rechargeStatus} t={t} />
               </div>
               <div className="mt-4 text-xs text-slate-500 dark:text-slate-400">
-                创建时间 {checkoutStatus.createdAt || '-'}，过期时间 {checkoutStatus.expiresAt || '-'}
+                {t("admin.user.index.text.miy8ea", "创建时间")}{checkoutStatus.createdAt || '-'}{t("console.billing.checkoutview.text.tv2isz", "，过期时间")}{checkoutStatus.expiresAt || '-'}
               </div>
             </div>
           )}
@@ -228,29 +236,31 @@ export function CheckoutView() {
 
         <div className="lg:col-span-1 space-y-6">
           <div className="bg-white dark:bg-[#252525] rounded-2xl border border-slate-200 dark:border-white/5 p-6 shadow-sm sticky top-6">
-            <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-6">订单信息</h2>
+            <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-6">{t("console.billing.checkoutview.text.rrnh2c", "订单信息")}</h2>
 
             <div className="space-y-4 text-sm mb-6">
               <div className="flex justify-between items-center text-slate-600 dark:text-slate-300">
-                <span>充值金额</span>
+                <span>{t("admin.user.index.text.1qayakm", "充值金额")}</span>
                 <span className="font-semibold text-slate-800 dark:text-white">${formatMoneyAmount(payableAmount)}</span>
               </div>
               <div className="flex justify-between items-center text-slate-600 dark:text-slate-300">
-                <span>获得积分</span>
+                <span>{t("console.billing.checkoutview.text.iw9ouu", "获得积分")}</span>
                 <span className="font-mono text-blue-600 dark:text-blue-400 font-semibold">
-                  {points === undefined ? '创建订单后确认' : `${points.toLocaleString()} 积分`}
+                  {points === undefined
+                    ? t("console.billing.billingview.text.1jktktr", "创建订单后确认")
+                    : t("console.billing.billingview.text.pointsAmount", "{{points}} 积分", { points: points.toLocaleString() })}
                 </span>
               </div>
               {checkoutStatus?.outTradeNo && (
                 <div className="flex justify-between items-center text-slate-600 dark:text-slate-300 gap-3">
-                  <span>支付单号</span>
+                  <span>{t("console.billing.checkoutview.text.i4uic6", "支付单号")}</span>
                   <span className="font-mono text-right break-all text-slate-800 dark:text-white">
                     {checkoutStatus.outTradeNo}
                   </span>
                 </div>
               )}
               <div className="pt-4 border-t border-slate-100 dark:border-white/5 flex justify-between items-center">
-                <span className="font-bold text-slate-800 dark:text-white">应付总额</span>
+                <span className="font-bold text-slate-800 dark:text-white">{t("console.billing.checkoutview.text.a9seax", "应付总额")}</span>
                 <span className="text-2xl font-bold text-slate-800 dark:text-white font-mono">
                   ${formatMoneyAmount(payableAmount)}
                 </span>
@@ -260,13 +270,13 @@ export function CheckoutView() {
             {(activePaymentMethod === 'wechat' || activePaymentMethod === 'alipay') && (
               <div className="mt-6 border border-slate-200 dark:border-white/10 rounded-xl p-5 bg-slate-50 dark:bg-[#1e1e1e] flex flex-col items-center justify-center gap-4 text-center">
                 <p className="text-xs text-slate-500 font-medium">
-                  {orderNo ? '请使用支付应用扫码完成付款' : '创建订单后生成支付凭证'}
+                  {orderNo ? t("console.billing.checkoutview.text.1g7ryxc", "请使用支付应用扫码完成付款") : t("console.billing.checkoutview.text.6816zv", "创建订单后生成支付凭证")}
                 </p>
                 <div className="w-40 h-40 bg-white rounded-xl p-3 shadow-sm flex items-center justify-center">
                   <QrCode className="w-full h-full text-slate-800" strokeWidth={1} />
                 </div>
                 <p className="text-[10px] text-slate-400 break-all">
-                  {checkoutStatus?.qrCodePayload || orderNo || '等待创建支付订单'}
+                  {checkoutStatus?.qrCodePayload || orderNo || t("console.billing.checkoutview.text.1pdtmng", "等待创建支付订单")}
                 </p>
               </div>
             )}
@@ -278,21 +288,18 @@ export function CheckoutView() {
             >
               {isProcessing || isLoading ? (
                 <>
-                  <Loader2 className="w-5 h-5 animate-spin" /> 处理中...
-                </>
+                  <Loader2 className="w-5 h-5 animate-spin" /> {t("console.billing.checkoutview.text.1j4vco4", "处理中...")}</>
               ) : orderNo ? (
                 <>
-                  <RefreshCw className="w-5 h-5" /> 刷新支付状态
-                </>
+                  <RefreshCw className="w-5 h-5" /> {t("console.billing.checkoutview.text.1r88on4", "刷新支付状态")}</>
               ) : activePaymentMethod === 'card' ? (
-                '创建卡支付订单'
+                t("console.billing.checkoutview.text.51u57p", "创建卡支付订单")
               ) : (
-                '创建扫码支付订单'
+                t("console.billing.checkoutview.text.1gby9mu", "创建扫码支付订单")
               )}
             </button>
             <div className="mt-4 flex items-center justify-center gap-2 text-[11px] text-slate-400 font-medium">
-              <ShieldCheck className="w-3.5 h-3.5" /> 加密传输，保障资产安全
-            </div>
+              <ShieldCheck className="w-3.5 h-3.5" /> {t("console.billing.checkoutview.text.rqwzi3", "加密传输，保障资产安全")}</div>
           </div>
         </div>
       </div>
@@ -357,9 +364,9 @@ function PaymentMethodOption({
   );
 }
 
-function StatusTile({ label, value }: { label: string; value: string }) {
+function StatusTile({ label, value, t }: { label: string; value: string; t: ReturnType<typeof useTranslation>['t'] }) {
   const tone = checkoutStatusTone(value);
-  const text = checkoutStatusText(value);
+  const text = checkoutStatusText(value, t);
 
   return (
     <div className="rounded-xl border border-slate-200 dark:border-white/10 p-4 bg-slate-50 dark:bg-[#1e1e1e]">
@@ -373,35 +380,35 @@ function isTerminalCheckoutStatus(status: CheckoutStatus['status']): boolean {
   return status === 'failed' || status === 'expired' || status === 'refunding' || status === 'refunded';
 }
 
-function checkoutStatusNotice(status: CheckoutStatus['status']): string {
+function checkoutStatusNotice(status: CheckoutStatus['status'], t: ReturnType<typeof useTranslation>['t']): string {
   switch (status) {
     case 'failed':
-      return '当前订单支付失败，请重新发起充值或联系支持处理。';
+      return t("console.billing.checkoutview.text.1jdnbih", "当前订单支付失败，请重新发起充值或联系支持处理。");
     case 'expired':
-      return '当前订单已过期，请重新发起充值。';
+      return t("console.billing.checkoutview.text.1t00wgt", "当前订单已过期，请重新发起充值。");
     case 'refunding':
-      return '当前订单正在退款处理中，请等待退款结果或联系支持。';
+      return t("console.billing.checkoutview.text.13pef3j", "当前订单正在退款处理中，请等待退款结果或联系支持。");
     case 'refunded':
-      return '当前订单已退款，如需充值请重新创建订单。';
+      return t("console.billing.checkoutview.text.1g1l3t9", "当前订单已退款，如需充值请重新创建订单。");
     default:
       return '';
   }
 }
 
-function checkoutStatusText(value: string): string {
+function checkoutStatusText(value: string, t: ReturnType<typeof useTranslation>['t']): string {
   switch (value) {
     case 'success':
-      return '成功';
+      return t("admin.finance.index.text.1rraohc", "成功");
     case 'failed':
-      return '失败';
+      return t("console.billing.billingview.text.12db3qz", "失败");
     case 'expired':
-      return '已过期';
+      return t("console.billing.checkoutview.text.1g217or", "已过期");
     case 'refunding':
-      return '退款中';
+      return t("console.billing.checkoutview.text.1xhq7p6", "退款中");
     case 'refunded':
-      return '已退款';
+      return t("console.billing.checkoutview.text.1cbl2n7", "已退款");
     default:
-      return '待支付';
+      return t("console.billing.checkoutview.text.nagiv3", "待支付");
   }
 }
 

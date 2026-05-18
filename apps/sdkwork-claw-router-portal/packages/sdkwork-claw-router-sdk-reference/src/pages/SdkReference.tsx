@@ -65,7 +65,7 @@ function readErrorMessage(value: unknown): string | null {
 }
 
 export function SdkReference() {
-  useTranslation();
+  const { t } = useTranslation();
   const [activeSystem, setActiveSystem] = useState<SdkReferenceSystem>('gateway');
   const [activeSdkId, setActiveSdkId] = useState<string>('typescript');
   const [activeEndpointId, setActiveEndpointId] = useState<string>('overview');
@@ -410,7 +410,7 @@ export function SdkReference() {
                   }`}
                 >
                   <BookOpen className="w-4 h-4" />
-                  <span className="truncate">SDK Overview</span>
+                  <span className="truncate">{t('common.actions.sdkOverview')}</span>
                 </button>
               </div>
             </div>
@@ -476,7 +476,7 @@ export function SdkReference() {
                     className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors shadow-sm"
                   >
                     <Download className="w-4 h-4" />
-                    Download
+                    {t('common.actions.download')}
                   </button>
                 )}
               </div>
@@ -527,11 +527,11 @@ export function SdkReference() {
                   <div className="absolute right-3 top-3">
                     <CopyButton
                       text={displayInstallCode}
-                      label="Copy installation"
-                      copiedLabel="Copied"
+                      label={t('common.actions.copyInstallation')}
+                      copiedLabel={t('common.actions.copied')}
                       className="p-2 rounded-lg bg-white hover:bg-slate-100 text-slate-500 hover:text-slate-900 dark:bg-slate-800/50 dark:hover:bg-slate-700 dark:text-slate-300 transition-colors"
                       disabled={loadingReadme}
-                      title="Copy installation"
+                      title={t('common.actions.copyInstallation')}
                     />
                   </div>
                   <pre className={`bg-slate-50 text-slate-700 dark:bg-[#0d1117] dark:text-slate-300 p-6 rounded-2xl overflow-x-auto text-sm font-mono border border-slate-200 dark:border-slate-800 transition-opacity duration-300 ${loadingReadme ? 'opacity-50' : 'opacity-100'}`}>
@@ -550,11 +550,11 @@ export function SdkReference() {
                   <div className="absolute right-3 top-3">
                     <CopyButton
                       text={displayInitCode}
-                      label="Copy initialization"
-                      copiedLabel="Copied"
+                      label={t('common.actions.copyInitialization')}
+                      copiedLabel={t('common.actions.copied')}
                       className="p-2 rounded-lg bg-white hover:bg-slate-100 text-slate-500 hover:text-slate-900 dark:bg-slate-800/50 dark:hover:bg-slate-700 dark:text-slate-300 transition-colors"
                       disabled={loadingReadme}
-                      title="Copy initialization"
+                      title={t('common.actions.copyInitialization')}
                     />
                   </div>
                   <pre className={`bg-slate-50 text-slate-700 dark:bg-[#0d1117] dark:text-slate-300 p-6 rounded-2xl overflow-x-auto text-sm font-mono border border-slate-200 dark:border-slate-800 transition-opacity duration-300 ${loadingReadme ? 'opacity-50' : 'opacity-100'}`}>
@@ -575,11 +575,11 @@ export function SdkReference() {
                   <div className="absolute right-3 top-3">
                     <CopyButton
                       text={displayExampleCode}
-                      label="Copy example"
-                      copiedLabel="Copied"
+                      label={t('common.actions.copyExample')}
+                      copiedLabel={t('common.actions.copied')}
                       className="p-2 rounded-lg bg-white hover:bg-slate-100 text-slate-500 hover:text-slate-900 dark:bg-slate-800/50 dark:hover:bg-slate-700 dark:text-slate-300 transition-colors"
                       disabled={loadingReadme}
-                      title="Copy example"
+                      title={t('common.actions.copyExample')}
                     />
                   </div>
                   <pre className={`bg-slate-50 text-slate-700 dark:bg-[#0d1117] dark:text-slate-300 p-6 rounded-2xl overflow-x-auto text-sm font-mono border border-slate-200 dark:border-slate-800 transition-opacity duration-300 ${loadingReadme ? 'opacity-50' : 'opacity-100'}`}>

@@ -9,8 +9,15 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 class BillingApi(private val client: HttpClient) {
 
     /** List batches */
-    suspend fun couponBatchesList(): CouponBatchesListResult? {
-        val raw = client.get(ApiPaths.backendPath("/billing/coupon_batches"))
+    suspend fun couponBatchesList(couponId: String? = null, status: String? = null, page: Int? = null, pageSize: Int? = null, cursor: String? = null): CouponBatchesListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("coupon_id", couponId, "form", true, false, null),
+            QueryParameterSpec("status", status, "form", true, false, null),
+            QueryParameterSpec("page", page, "form", true, false, null),
+            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            QueryParameterSpec("cursor", cursor, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/billing/coupon_batches"), query))
         return client.convertValue(raw, object : TypeReference<CouponBatchesListResult>() {})
     }
 
@@ -27,26 +34,40 @@ class BillingApi(private val client: HttpClient) {
     }
 
     /** List promo codes */
-    suspend fun couponCodesList(): CouponCodesListResult? {
-        val raw = client.get(ApiPaths.backendPath("/billing/coupon_codes"))
+    suspend fun couponCodesList(couponId: String? = null, batchId: String? = null, status: String? = null, page: Int? = null, pageSize: Int? = null, cursor: String? = null): CouponCodesListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("coupon_id", couponId, "form", true, false, null),
+            QueryParameterSpec("batch_id", batchId, "form", true, false, null),
+            QueryParameterSpec("status", status, "form", true, false, null),
+            QueryParameterSpec("page", page, "form", true, false, null),
+            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            QueryParameterSpec("cursor", cursor, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/billing/coupon_codes"), query))
         return client.convertValue(raw, object : TypeReference<CouponCodesListResult>() {})
     }
 
     /** Update promo code status */
-    suspend fun couponCodesStatusUpdate(promoCodeId: String, body: AdminPromoCodeStatusUpdateRequest, xRequestId: String? = null): CouponCodesStatusUpdateResult? {
+    suspend fun couponCodesStatusUpdate(codeId: String, body: AdminPromoCodeStatusUpdateRequest, xRequestId: String? = null): CouponCodesStatusUpdateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
-        val raw = client.patch(ApiPaths.backendPath("/billing/coupon_codes/${serializePathParameter(promoCodeId, PathParameterSpec("promoCodeId", "simple", false))}/status"), body, null, requestHeaders, "application/json")
+        val raw = client.patch(ApiPaths.backendPath("/billing/coupon_codes/${serializePathParameter(codeId, PathParameterSpec("codeId", "simple", false))}/status"), body, null, requestHeaders, "application/json")
         return client.convertValue(raw, object : TypeReference<CouponCodesStatusUpdateResult>() {})
     }
 
     /** List coupons */
-    suspend fun couponsList(): CouponsListResult? {
-        val raw = client.get(ApiPaths.backendPath("/billing/coupons"))
+    suspend fun couponsList(status: String? = null, page: Int? = null, pageSize: Int? = null, cursor: String? = null): CouponsListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("status", status, "form", true, false, null),
+            QueryParameterSpec("page", page, "form", true, false, null),
+            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            QueryParameterSpec("cursor", cursor, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/billing/coupons"), query))
         return client.convertValue(raw, object : TypeReference<CouponsListResult>() {})
     }
 
@@ -68,8 +89,43 @@ class BillingApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<CouponsDeleteResult>() {})
     }
 
+    /** Update coupon */
+    suspend fun couponsUpdate(couponId: String, body: AdminCouponCreateRequest, xRequestId: String? = null): CouponsUpdateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.put(ApiPaths.backendPath("/billing/coupons/${serializePathParameter(couponId, PathParameterSpec("couponId", "simple", false))}"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<CouponsUpdateResult>() {})
+    }
+
+    /** List exchange rules */
+    suspend fun exchangeRulesList(sourceAssetType: String? = null, targetAssetType: String? = null, status: String? = null): ExchangeRulesListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("source_asset_type", sourceAssetType, "form", true, false, null),
+            QueryParameterSpec("target_asset_type", targetAssetType, "form", true, false, null),
+            QueryParameterSpec("status", status, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/billing/exchange_rules"), query))
+        return client.convertValue(raw, object : TypeReference<ExchangeRulesListResult>() {})
+    }
+
+    /** Upsert exchange rule */
+    suspend fun exchangeRulesUpdate(body: CommerceExchangeRuleUpsertRequest, xRequestId: String? = null): ExchangeRulesUpdateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.put(ApiPaths.backendPath("/billing/exchange_rules"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<ExchangeRulesUpdateResult>() {})
+    }
+
     /** List transactions */
-    suspend fun financeAdminLedgerList(page: Int? = null, pageSize: Int? = null, q: String? = null, status: String? = null, startTime: String? = null, endTime: String? = null): FinanceAdminLedgerListResult? {
+    suspend fun financeLedgerList(page: Int? = null, pageSize: Int? = null, q: String? = null, status: String? = null, startTime: String? = null, endTime: String? = null): FinanceLedgerListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -78,8 +134,8 @@ class BillingApi(private val client: HttpClient) {
             QueryParameterSpec("start_time", startTime, "form", true, false, null),
             QueryParameterSpec("end_time", endTime, "form", true, false, null)
         ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/billing/finance/admin/ledger"), query))
-        return client.convertValue(raw, object : TypeReference<FinanceAdminLedgerListResult>() {})
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/billing/finance/ledger"), query))
+        return client.convertValue(raw, object : TypeReference<FinanceLedgerListResult>() {})
     }
 
     /** List billing */
@@ -96,6 +152,77 @@ class BillingApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<FinanceUsageStatementsListResult>() {})
     }
 
+    /** List payment attempts */
+    suspend fun paymentsAttemptsList(provider: String? = null, status: String? = null, page: Int? = null, pageSize: Int? = null, cursor: String? = null): PaymentsAttemptsListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("provider", provider, "form", true, false, null),
+            QueryParameterSpec("status", status, "form", true, false, null),
+            QueryParameterSpec("page", page, "form", true, false, null),
+            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            QueryParameterSpec("cursor", cursor, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/billing/payments/attempts"), query))
+        return client.convertValue(raw, object : TypeReference<PaymentsAttemptsListResult>() {})
+    }
+
+    /** List recharge packages */
+    suspend fun rechargesPackagesList(status: String? = null): RechargesPackagesListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("status", status, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/billing/recharges/packages"), query))
+        return client.convertValue(raw, object : TypeReference<RechargesPackagesListResult>() {})
+    }
+
+    /** Create recharge package */
+    suspend fun rechargesPackagesCreate(body: CommerceRechargePackageMutationRequest, xRequestId: String? = null): RechargesPackagesCreateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.post(ApiPaths.backendPath("/billing/recharges/packages"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<RechargesPackagesCreateResult>() {})
+    }
+
+    /** Delete recharge package */
+    suspend fun rechargesPackagesDelete(packageId: String): RechargesPackagesDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/billing/recharges/packages/${serializePathParameter(packageId, PathParameterSpec("packageId", "simple", false))}"))
+        return client.convertValue(raw, object : TypeReference<RechargesPackagesDeleteResult>() {})
+    }
+
+    /** Update recharge package */
+    suspend fun rechargesPackagesUpdate(packageId: String, body: CommerceRechargePackageMutationRequest, xRequestId: String? = null): RechargesPackagesUpdateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.put(ApiPaths.backendPath("/billing/recharges/packages/${serializePathParameter(packageId, PathParameterSpec("packageId", "simple", false))}"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<RechargesPackagesUpdateResult>() {})
+    }
+
+    /** List recharge records */
+    suspend fun rechargesRecordsList(userId: String? = null, status: String? = null, page: Int? = null, pageSize: Int? = null, cursor: String? = null): RechargesRecordsListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("user_id", userId, "form", true, false, null),
+            QueryParameterSpec("status", status, "form", true, false, null),
+            QueryParameterSpec("page", page, "form", true, false, null),
+            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            QueryParameterSpec("cursor", cursor, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/billing/recharges/records"), query))
+        return client.convertValue(raw, object : TypeReference<RechargesRecordsListResult>() {})
+    }
+
+    /** Retrieve recharge record */
+    suspend fun rechargesRecordsRetrieve(orderNo: String): RechargesRecordsRetrieveResult? {
+        val raw = client.get(ApiPaths.backendPath("/billing/recharges/records/${serializePathParameter(orderNo, PathParameterSpec("orderNo", "simple", false))}"))
+        return client.convertValue(raw, object : TypeReference<RechargesRecordsRetrieveResult>() {})
+    }
+
     /** List referral stats */
     suspend fun referralsStatsList(): ReferralsStatsListResult? {
         val raw = client.get(ApiPaths.backendPath("/billing/referrals/stats"))
@@ -103,8 +230,15 @@ class BillingApi(private val client: HttpClient) {
     }
 
     /** List redemption records */
-    suspend fun usersCouponsList(): UsersCouponsListResult? {
-        val raw = client.get(ApiPaths.backendPath("/billing/users/coupons"))
+    suspend fun usersCouponsList(userId: String? = null, status: String? = null, page: Int? = null, pageSize: Int? = null, cursor: String? = null): UsersCouponsListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("user_id", userId, "form", true, false, null),
+            QueryParameterSpec("status", status, "form", true, false, null),
+            QueryParameterSpec("page", page, "form", true, false, null),
+            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            QueryParameterSpec("cursor", cursor, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/billing/users/coupons"), query))
         return client.convertValue(raw, object : TypeReference<UsersCouponsListResult>() {})
     }
 
@@ -118,12 +252,6 @@ class BillingApi(private val client: HttpClient) {
         )
         val raw = client.post(ApiPaths.backendPath("/billing/users/${serializePathParameter(userId, PathParameterSpec("userId", "simple", false))}/balance_adjustments"), body, null, requestHeaders, "application/json")
         return client.convertValue(raw, object : TypeReference<UsersBalanceAdjustmentsCreateResult>() {})
-    }
-
-    /** List recharge records */
-    suspend fun vipRechargeList(): VipRechargeListResult? {
-        val raw = client.get(ApiPaths.backendPath("/billing/vip/recharge"))
-        return client.convertValue(raw, object : TypeReference<VipRechargeListResult>() {})
     }
 
     private data class PathParameterSpec(val name: String, val style: String, val explode: Boolean)

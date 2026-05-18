@@ -9,8 +9,10 @@ public class CreateRoutingChannelRequest {
     private List<String> models;
     private String name;
     private String protocol;
+    private ProviderRetryPolicy retryPolicy;
     private String secretRef;
     private String status;
+    private Integer timeoutMs;
     private String vendor;
     private Integer weight;
 
@@ -62,6 +64,14 @@ public class CreateRoutingChannelRequest {
         this.protocol = protocol;
     }
 
+    public ProviderRetryPolicy getRetryPolicy() {
+        return this.retryPolicy;
+    }
+    
+    public void setRetryPolicy(ProviderRetryPolicy retryPolicy) {
+        this.retryPolicy = retryPolicy;
+    }
+
     public String getSecretRef() {
         return this.secretRef;
     }
@@ -76,6 +86,14 @@ public class CreateRoutingChannelRequest {
     
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Integer getTimeoutMs() {
+        return this.timeoutMs;
+    }
+    
+    public void setTimeoutMs(Integer timeoutMs) {
+        this.timeoutMs = timeoutMs;
     }
 
     public String getVendor() {

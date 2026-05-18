@@ -9,6 +9,11 @@ import {
   type ApiKeyFormValues,
 } from "./packages/sdkwork-claw-router-console-api-keys/src/apiKeyForm.ts";
 import { ApiKeyService } from "./packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts";
+import {
+  formatApiKeyGroupOptionLabel,
+  resolveApiKeyGroupCode,
+  resolveApiKeyGroupName,
+} from "./packages/sdkwork-claw-router-console-api-keys/src/apiKeyGroups.ts";
 
 const originalFetch = globalThis.fetch;
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
@@ -20,15 +25,28 @@ type CapturedSdkRequest = {
   headers: Record<string, string>;
 };
 
+type ApiKeySdkResponder = (request: CapturedSdkRequest, index: number) => unknown;
+
+const DEFAULT_API_KEY_TEST_GROUPS = [
+  { id: "group-1", code: "default", name: "Default group", rate: null },
+];
+
 async function withApiKeySdkResponse<T>(
   responseBody: unknown,
+  fn: (captured: CapturedSdkRequest[]) => Promise<T>,
+): Promise<T> {
+  return withApiKeySdkResponder(() => responseBody, fn);
+}
+
+async function withApiKeySdkResponder<T>(
+  responder: ApiKeySdkResponder,
   fn: (captured: CapturedSdkRequest[]) => Promise<T>,
 ): Promise<T> {
   const captured: CapturedSdkRequest[] = [];
   Object.defineProperty(globalThis, "window", {
     configurable: true,
     enumerable: true,
-    value: {},
+    value: { dispatchEvent: () => true },
   });
   globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url;
@@ -38,6 +56,8 @@ async function withApiKeySdkResponse<T>(
       body: typeof init?.body === "string" ? init.body : "",
       headers: Object.fromEntries(new Headers(init?.headers).entries()),
     });
+    const request = captured[captured.length - 1];
+    const responseBody = normalizeApiKeyListTestResponse(responder(request, captured.length - 1), request);
     return new Response(JSON.stringify(responseBody), {
       status: 200,
       headers: { "content-type": "application/json" },
@@ -58,6 +78,27 @@ async function withApiKeySdkResponse<T>(
       delete (globalThis as { window?: Window }).window;
     }
   }
+}
+
+function normalizeApiKeyListTestResponse(responseBody: unknown, request: CapturedSdkRequest): unknown {
+  if (request.url !== "/app/v3/api/iam/api_keys" || request.method !== "GET" || !isTestRecord(responseBody)) {
+    return responseBody;
+  }
+  const data = responseBody.data;
+  if (!isTestRecord(data) || !Array.isArray(data.items) || Array.isArray(data.groups)) {
+    return responseBody;
+  }
+  return {
+    ...responseBody,
+    data: {
+      ...data,
+      groups: DEFAULT_API_KEY_TEST_GROUPS.map((group) => ({ ...group })),
+    },
+  };
+}
+
+function isTestRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
 test("console api key form values normalize into a single create command", () => {
@@ -121,6 +162,21 @@ test("console api key batch form values create deterministic names", () => {
   });
 });
 
+test("console api key form values default blank groups to the default group", () => {
+  const input = createApiKeyInputFromForm({
+    name: "Production Key",
+    group: "",
+    quota: "0.000000",
+    isUnlimitedQuota: true,
+    modalities: ["text"],
+    ipLimit: "",
+    expires: "",
+    createCount: 1,
+  });
+
+  assert.equal(input.group, "default");
+});
+
 test("console api key form values reject blank or invalid command fields", () => {
   const values: ApiKeyFormValues = {
     name: "Production",
@@ -134,11 +190,303 @@ test("console api key form values reject blank or invalid command fields", () =>
   };
 
   assert.throws(() => createApiKeyInputFromForm({ ...values, name: "" }), /name is required/);
-  assert.throws(() => createApiKeyInputFromForm({ ...values, group: "" }), /group is required/);
+  assert.equal(createApiKeyInputFromForm({ ...values, group: "" }).group, "default");
   assert.throws(() => createApiKeyInputFromForm({ ...values, quota: "not-a-number" }), /quota must be a non-negative decimal/);
   assert.throws(() => createApiKeyInputFromForm({ ...values, modalities: ["text", "unknown"] }), /Unsupported API key modality: unknown/);
   assert.throws(() => createApiKeyInputFromForm({ ...values, modalities: [] }), /modalities must include at least one item/);
   assert.throws(() => createApiKeyInputsFromForm({ ...values, createCount: 150 }), /createCount must be between 1 and 100/);
+});
+
+test("console api key drawer uses the default group when no groups are available", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(new URL("./packages/sdkwork-claw-router-console-api-keys/src/CreateKeyDrawer.tsx", import.meta.url), "utf8"),
+  );
+
+  assert.match(source, /groups\[0\]\?\.code\s*\?\?\s*DEFAULT_API_KEY_GROUP/);
+  assert.match(source, /<option value=\{DEFAULT_API_KEY_GROUP\}>\{t\('console\.apiKeys\.defaultGroup', '默认分组'\)\}<\/option>/);
+  assert.doesNotMatch(source, /<option value="">No groups available<\/option>/);
+});
+
+test("console api key group labels use group names while preserving submitted group codes", () => {
+  const groups = [
+    { id: "GRP-premium", code: "premium", name: "Premium accounts", rate: "0.80" },
+    { id: "group-default", code: "default", name: "Default routing", rate: null },
+  ];
+
+  assert.equal(resolveApiKeyGroupName("premium", groups), "Premium accounts");
+  assert.equal(resolveApiKeyGroupName("GRP-premium", groups), "Premium accounts");
+  assert.equal(resolveApiKeyGroupCode("GRP-premium", groups), "premium");
+  assert.equal(resolveApiKeyGroupName("legacy", groups), "legacy");
+  assert.equal(resolveApiKeyGroupCode("legacy", groups), "legacy");
+  assert.equal(formatApiKeyGroupOptionLabel(groups[0]), "Premium accounts (0.80)");
+  assert.equal(formatApiKeyGroupOptionLabel(groups[1]), "Default routing");
+});
+
+test("console api key group selectors render group names while submitting group codes", async () => {
+  const [drawerSource, listSource, usageSource] = await Promise.all([
+    import("node:fs/promises").then((fs) =>
+      fs.readFile(new URL("./packages/sdkwork-claw-router-console-api-keys/src/CreateKeyDrawer.tsx", import.meta.url), "utf8"),
+    ),
+    import("node:fs/promises").then((fs) =>
+      fs.readFile(new URL("./packages/sdkwork-claw-router-console-api-keys/src/ApiKeysView.tsx", import.meta.url), "utf8"),
+    ),
+    import("node:fs/promises").then((fs) =>
+      fs.readFile(new URL("./packages/sdkwork-claw-router-console-api-keys/src/usage-details/ApiKeyUsageDetailsDrawer.tsx", import.meta.url), "utf8"),
+    ),
+  ]);
+
+  assert.match(drawerSource, /value=\{item\.code\}/);
+  assert.match(drawerSource, /resolveApiKeyGroupCode\(initialData\.group, groups\)/);
+  assert.match(drawerSource, /formatApiKeyGroupOptionLabel\(item\)/);
+  assert.match(drawerSource, /!groups\.some\(\(item\) => item\.code === group\)/);
+  assert.match(listSource, /displayApiKeyGroupName\(key, groups\)/);
+  assert.match(listSource, /openGroupSelector\(key\)/);
+  assert.match(listSource, /formatApiKeyGroupOptionLabel\(group\)/);
+  assert.match(listSource, /value=\{group\.code\}/);
+  assert.doesNotMatch(listSource, />\s*\{group\.code\}\s*<\/option>/);
+  assert.match(usageSource, /apiKey\.groupName \?\? apiKey\.group/);
+});
+
+test("console api key page lazily loads groups only when group choices are opened", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(new URL("./packages/sdkwork-claw-router-console-api-keys/src/ApiKeysView.tsx", import.meta.url), "utf8"),
+  );
+
+  assert.match(source, /ensureGroupsLoaded/);
+  assert.match(source, /ApiKeyService\.fetchGroups\(\)/);
+  assert.match(source, /onClick=\{\(\) => \{\s*void openCreateDrawer\(\);\s*\}\}/);
+  assert.match(source, /const openCreateDrawer = async \(\) => \{\s*setShowCreateDrawer\(true\);\s*\};/);
+  assert.match(source, /onFocus=\{\(\) => \{\s*void ensureGroupsLoaded\(\);\s*\}\}/);
+  assert.match(source, /openGroupSelector\(key\)/);
+  assert.doesNotMatch(source, /setGroups\(data\.groups\)/);
+  assert.doesNotMatch(source, /ApiKeyService\.fetchKeys\(\)[\s\S]*\.then\(\(data\) =>[\s\S]*setGroups/);
+});
+
+test("console api key list never copies masked key material", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(new URL("./packages/sdkwork-claw-router-console-api-keys/src/ApiKeysView.tsx", import.meta.url), "utf8"),
+  );
+
+  assert.doesNotMatch(source, /CopyButton[\s\S]*text=\{key\.maskedKey\}/);
+  assert.match(source, /key\.copyableKey/);
+  assert.match(source, /text=\{key\.copyableKey \?\? ''\}/);
+  assert.match(source, /disabled=\{!key\.copyableKey\}/);
+});
+
+test("console api key service uses copyable keys returned by the backend on every fetch", async () => {
+  await withApiKeySdkResponder(
+    (request) => {
+      if (request.method === "POST") {
+        return {
+          code: "2000",
+          data: {
+            item: {
+              id: "key-2",
+              name: "Created",
+              maskedKey: "sk-****wxyz",
+              copyableKey: "sk-live-created-secret",
+              group: "default",
+              rate: null,
+              quota: "0.000000",
+              usedQuota: "0.000000",
+              modalities: ["text"],
+              ipLimit: "unrestricted",
+              created: "2026-05-05T09:00:00Z",
+              expires: "never",
+              status: "enabled",
+            },
+            rawKey: "sk-live-created-secret",
+          },
+        };
+      }
+
+      return {
+        code: "2000",
+        msg: "success",
+        data: {
+          items: [
+            {
+              id: "key-2",
+              name: "Created",
+              maskedKey: "sk-****wxyz",
+              copyableKey: "sk-live-created-secret",
+              group: "default",
+              rate: null,
+              quota: "0.000000",
+              usedQuota: "0.000000",
+              modalities: ["text"],
+              ipLimit: "unrestricted",
+              created: "2026-05-05T09:00:00Z",
+              expires: "never",
+              status: "enabled",
+            },
+          ],
+        },
+      };
+    },
+    async () => {
+      const created = await ApiKeyService.createKey({
+        name: "Created",
+        group: "default",
+        quota: "0.000000",
+        isUnlimitedQuota: true,
+        modalities: ["text"],
+        ipLimit: "unrestricted",
+        expires: "never",
+      });
+      const fetched = await ApiKeyService.fetchKeys();
+
+      assert.equal(created.key.copyableKey, "sk-live-created-secret");
+      assert.equal(fetched[0].copyableKey, "sk-live-created-secret");
+      assert.notEqual(fetched[0].copyableKey, fetched[0].maskedKey);
+    },
+  );
+});
+
+test("console api key list replaces rows with backend copyable keys across metadata updates", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(new URL("./packages/sdkwork-claw-router-console-api-keys/src/ApiKeysView.tsx", import.meta.url), "utf8"),
+  );
+
+  assert.match(source, /mergeUpdatedApiKey/);
+  assert.doesNotMatch(source, /copyableKey:\s*updated\.copyableKey\s*\?\?\s*current\.copyableKey/);
+  assert.match(source, /return updated;/);
+  assert.match(source, /previous\.map\(\(item\) => mergeUpdatedApiKey\(item, updated\)\)/);
+});
+
+test("console api key list exposes details, edit, delete, and quick group actions", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(new URL("./packages/sdkwork-claw-router-console-api-keys/src/ApiKeysView.tsx", import.meta.url), "utf8"),
+  );
+
+  assert.match(source, /setUsageDetailsKey\(key\)/);
+  assert.match(source, /<ApiKeyUsageDetailsDrawer/);
+  assert.match(source, /setDetailsKey\(key\)/);
+  assert.match(source, /setEditingKey\(key\)/);
+  assert.match(source, /setDeletingKey\(key\)/);
+  assert.match(source, /handleGroupChange\(key,\s*event\.target\.value\)/);
+});
+
+test("console api key creation success modal can open usage details for created keys", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(new URL("./packages/sdkwork-claw-router-console-api-keys/src/ApiKeysView.tsx", import.meta.url), "utf8"),
+  );
+
+  assert.match(source, /interface CreatedSecret[\s\S]*key: ApiKey;/);
+  assert.match(source, /created\.push\(\{ key: result\.key, rawKey: result\.rawKey \}\)/);
+  assert.match(source, /handleCreatedKeyUsageDetails\(item\.key\)/);
+  assert.match(source, /setUsageDetailsKey\(key\)/);
+  assert.match(source, /setShowSuccessModal\(false\)/);
+  assert.match(source, /setCreatedKeys\(\[\]\)/);
+  assert.match(source, /t\('console\.apiKeys\.usageDetails'/);
+  assert.match(source, /<ApiKeyUsageDetailsDrawer[\s\S]*apiKey=\{usageDetailsKey\}/);
+});
+
+test("console api key table separates status and created columns after IP ACL", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(new URL("./packages/sdkwork-claw-router-console-api-keys/src/ApiKeysView.tsx", import.meta.url), "utf8"),
+  );
+
+  const headerOrder = [
+    "console.apiKeys.nameToken",
+    "console.apiKeys.group",
+    "console.apiKeys.quota",
+    "console.apiKeys.modalities",
+    "console.apiKeys.ipAcl",
+    "console.apiKeys.status",
+    "console.apiKeys.created",
+    "console.apiKeys.expiration",
+    "common.actions.actions",
+  ].map((key) => source.indexOf(key));
+
+  assert.equal(headerOrder.every((index) => index >= 0), true);
+  assert.deepEqual([...headerOrder].sort((left, right) => left - right), headerOrder);
+  assert.doesNotMatch(source, /console\.apiKeys\.statusGroup/);
+  assert.doesNotMatch(source, /Status \/ Group/);
+  assert.match(source, /colSpan=\{9\}/);
+  assert.match(source, /{key\.ipLimit}[\s\S]*displayApiKeyStatus\(key\.status, t\)[\s\S]*{key\.created}[\s\S]*{key\.expires}/);
+});
+
+test("console api key usage details profiles cover supported tool setup tabs", async () => {
+  const {
+    API_KEY_USAGE_TOOL_PROFILES,
+    buildApiKeyUsageToolSnippets,
+    resolveGatewayEndpoint,
+  } = await import("./packages/sdkwork-claw-router-console-api-keys/src/usage-details/toolProfiles.ts");
+
+  assert.deepEqual(
+    API_KEY_USAGE_TOOL_PROFILES.map((profile) => profile.id),
+    ["codex", "claude-code", "gemini", "opencode", "openclaw", "hermes-agent"],
+  );
+  assert.equal(resolveGatewayEndpoint("https://console.example.test/v1", "openai"), "https://console.example.test/v1");
+  assert.equal(resolveGatewayEndpoint("https://console.example.test/v1", "anthropic"), "https://console.example.test/anthropic");
+  assert.equal(resolveGatewayEndpoint("https://console.example.test/proxy/v1", "gemini"), "https://console.example.test/proxy/google/v1beta");
+
+  const snippets = buildApiKeyUsageToolSnippets({
+    apiKeyPlaceholder: "<YOUR_CLAW_ROUTER_API_KEY>",
+    openAiBaseUrl: "https://console.example.test/v1",
+    anthropicBaseUrl: "https://console.example.test/anthropic",
+    geminiBaseUrl: "https://console.example.test/google/v1beta",
+  });
+
+  assert.match(snippets.codex, /model_provider = "clawrouter"/);
+  assert.match(snippets.codex, /env_key = "CLAW_ROUTER_API_KEY"/);
+  assert.match(snippets["claude-code"], /ANTHROPIC_BASE_URL="https:\/\/console\.example\.test\/anthropic"/);
+  assert.match(snippets.gemini, /GOOGLE_GEMINI_BASE_URL="https:\/\/console\.example\.test\/google\/v1beta"/);
+  assert.match(snippets.opencode, /"npm": "@ai-sdk\/openai-compatible"/);
+  assert.match(snippets.opencode, /"options": \{/);
+  assert.match(snippets.openclaw, /base_url: https:\/\/console\.example\.test\/v1/);
+  assert.match(snippets["hermes-agent"], /OPENAI_API_KEY="<YOUR_CLAW_ROUTER_API_KEY>"/);
+});
+
+test("console api key usage details drawer exposes full-key copy when available", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(new URL("./packages/sdkwork-claw-router-console-api-keys/src/usage-details/ApiKeyUsageDetailsDrawer.tsx", import.meta.url), "utf8"),
+  );
+
+  assert.match(source, /apiKey\.copyableKey/);
+  assert.match(source, /text=\{apiKey\.copyableKey \?\? ''\}/);
+  assert.match(source, /disabled=\{!apiKey\.copyableKey\}/);
+  assert.doesNotMatch(source, /text=\{apiKey\.maskedKey\}/);
+});
+
+test("console api key details drawer displays masked keys without copying masked material", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(new URL("./packages/sdkwork-claw-router-console-api-keys/src/CreateKeyDrawer.tsx", import.meta.url), "utf8"),
+  );
+
+  assert.match(source, /value=\{initialData\.maskedKey\}/);
+  assert.doesNotMatch(source, /CopyButton[\s\S]*text=\{value\}/);
+  assert.match(source, /copyText=\{initialData\.copyableKey\}/);
+  assert.match(source, /copyDisabled=\{!initialData\.copyableKey\}/);
+});
+
+test("console api key edit drawer hides batch create controls", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(new URL("./packages/sdkwork-claw-router-console-api-keys/src/CreateKeyDrawer.tsx", import.meta.url), "utf8"),
+  );
+
+  assert.match(source, /\{!isView && !isEdit && \(/);
+});
+
+test("console api key i18n keys are present in English and Chinese resources", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url), "utf8"),
+  );
+
+  for (const key of [
+    "console.apiKeys.changeGroup",
+    "console.apiKeys.copyKey",
+    "console.apiKeys.deleteTitle",
+    "console.apiKeys.editTitle",
+    "console.apiKeys.maskedToken",
+    "console.apiKeys.loadingGroups",
+    "console.apiKeys.usageDetails",
+    "console.apiKeys.usageDetailsTitle",
+    "console.apiKeys.usageDetails.copySnippet",
+  ]) {
+    assert.equal(source.match(new RegExp(`"${key}"`, "g"))?.length, 2, `${key} must be translated in both locales`);
+  }
 });
 
 test("console api key service fetches keys through the generated app SDK and normalizes envelope data", async () => {
@@ -152,7 +500,9 @@ test("console api key service fetches keys through the generated app SDK and nor
             id: "key-1",
             name: "Production",
             maskedKey: "sk-****abcd",
+            copyableKey: "sk-live-existing-secret",
             group: "default",
+            groupName: "Default group",
             rate: "0.25",
             quota: "100.000000",
             usedQuota: "3.500000",
@@ -163,7 +513,6 @@ test("console api key service fetches keys through the generated app SDK and nor
             status: "enabled",
           },
         ],
-        groups: [{ id: "group-1", code: "default", name: "Default", rate: null }],
       },
     },
     async (captured) => {
@@ -172,8 +521,156 @@ test("console api key service fetches keys through the generated app SDK and nor
       assert.equal(captured.length, 1);
       assert.equal(captured[0].url, "/app/v3/api/iam/api_keys");
       assert.equal(captured[0].method, "GET");
-      assert.deepEqual(result.keys.map((key) => key.id), ["key-1"]);
-      assert.deepEqual(result.groups.map((group) => group.code), ["default"]);
+      assert.deepEqual(result.map((key) => key.id), ["key-1"]);
+      assert.equal(result[0].copyableKey, "sk-live-existing-secret");
+      assert.equal(result[0].groupName, "Default group");
+    },
+  );
+});
+
+test("console api key service fetches selectable groups through the generated app SDK only when requested", async () => {
+  await withApiKeySdkResponder(
+    (request) => {
+      if (request.url === "/app/v3/api/iam/api_key_groups") {
+        return {
+          code: "2000",
+          msg: "success",
+          data: {
+            items: [{ id: "group-1", code: "default", name: "Default group", rate: null }],
+          },
+        };
+      }
+      return {
+        code: "2000",
+        msg: "success",
+        data: { items: [] },
+      };
+    },
+    async (captured) => {
+      const keys = await ApiKeyService.fetchKeys();
+      assert.deepEqual(keys, []);
+      assert.equal(captured.length, 1);
+      assert.equal(captured[0].url, "/app/v3/api/iam/api_keys");
+
+      const groups = await ApiKeyService.fetchGroups();
+      assert.equal(captured.length, 2);
+      assert.equal(captured[1].url, "/app/v3/api/iam/api_key_groups");
+      assert.deepEqual(groups.map((group) => group.name), ["Default group"]);
+    },
+  );
+});
+
+test("console api key service still lists keys when copyable key material is unavailable", async () => {
+  await withApiKeySdkResponse(
+    {
+      code: "2000",
+      msg: "success",
+      data: {
+        items: [
+          {
+            id: "key-1",
+            name: "Production",
+            maskedKey: "sk-****abcd",
+            group: "default",
+            groupName: "Default group",
+            rate: "0.25",
+            quota: "100.000000",
+            usedQuota: "3.500000",
+            modalities: ["text", "image"],
+            ipLimit: "unrestricted",
+            created: "2026-05-05T09:00:00Z",
+            expires: "never",
+            status: "enabled",
+          },
+        ],
+      },
+    },
+    async () => {
+      const result = await ApiKeyService.fetchKeys();
+
+      assert.deepEqual(result.map((key) => key.id), ["key-1"]);
+      assert.equal(result[0].maskedKey, "sk-****abcd");
+      assert.equal(result[0].copyableKey, null);
+      assert.notEqual(result[0].copyableKey, result[0].maskedKey);
+    },
+  );
+});
+
+test("console api key service creates keys in the default group when the input group is blank", async () => {
+  await withApiKeySdkResponse(
+    {
+      code: "2000",
+      data: {
+        item: {
+          id: "key-2",
+          name: "Created",
+          maskedKey: "sk-****wxyz",
+          copyableKey: "sk-live-created-secret",
+          group: "default",
+          rate: null,
+          quota: "0.000000",
+          usedQuota: "0.000000",
+          modalities: ["text"],
+          ipLimit: "unrestricted",
+          created: "2026-05-05T09:00:00Z",
+          expires: "never",
+          status: "enabled",
+        },
+        rawKey: "sk-live-created-secret",
+      },
+    },
+    async (captured) => {
+      await ApiKeyService.createKey({
+        name: "Created",
+        group: "",
+        quota: "0.000000",
+        isUnlimitedQuota: true,
+        modalities: ["text"],
+        ipLimit: "unrestricted",
+        expires: "never",
+      });
+
+      assert.equal(captured.length, 1);
+      assert.equal(JSON.parse(captured[0].body).group, "default");
+    },
+  );
+});
+
+test("console api key creation uses raw key material when the returned item omits copyable key material", async () => {
+  await withApiKeySdkResponse(
+    {
+      code: "2000",
+      data: {
+        item: {
+          id: "key-2",
+          name: "Created",
+          maskedKey: "sk-****wxyz",
+          group: "default",
+          rate: null,
+          quota: "0.000000",
+          usedQuota: "0.000000",
+          modalities: ["text"],
+          ipLimit: "unrestricted",
+          created: "2026-05-05T09:00:00Z",
+          expires: "never",
+          status: "enabled",
+        },
+        rawKey: "sk-live-created-secret",
+      },
+    },
+    async () => {
+      const result = await ApiKeyService.createKey({
+        name: "Created",
+        group: "default",
+        quota: "0.000000",
+        isUnlimitedQuota: true,
+        modalities: ["text"],
+        ipLimit: "unrestricted",
+        expires: "never",
+      });
+
+      assert.equal(result.rawKey, "sk-live-created-secret");
+      assert.equal(result.key.copyableKey, "sk-live-created-secret");
     },
   );
 });
@@ -187,6 +684,7 @@ test("console api key service creates keys through the generated app SDK with re
           id: "key-2",
           name: "Created",
           maskedKey: "sk-****wxyz",
+          copyableKey: "sk-live-created-secret",
           group: "default",
           rate: null,
           quota: "0.000000",
@@ -213,12 +711,71 @@ test("console api key service creates keys through the generated app SDK with re
 
       assert.equal(result.rawKey, "sk-live-created-secret");
       assert.equal(result.key.id, "key-2");
+      assert.equal(result.key.copyableKey, "sk-live-created-secret");
       assert.equal(captured.length, 1);
       assert.equal(captured[0].url, "/app/v3/api/iam/api_keys");
       assert.equal(captured[0].method, "POST");
       assert.match(captured[0].body, /"name":"Created"/);
       assert.match(captured[0].headers["idempotency-key"], /^create-api-key-/);
       assert.match(captured[0].headers["x-request-id"], /^request-/);
+    },
+  );
+});
+
+test("console api key service updates keys through the generated app SDK with request ids", async () => {
+  await withApiKeySdkResponse(
+    {
+      code: "2000",
+      data: {
+        item: {
+          id: "key-2",
+          name: "Updated",
+          maskedKey: "sk-****wxyz",
+          copyableKey: "sk-live-updated-secret",
+          group: "premium",
+          rate: null,
+          quota: "0.000000",
+          usedQuota: "0.000000",
+          modalities: ["text"],
+          ipLimit: "unrestricted",
+          created: "2026-05-05T09:00:00Z",
+          expires: "never",
+          status: "enabled",
+        },
+      },
+    },
+    async (captured) => {
+      const result = await ApiKeyService.updateKey("key-2", {
+        name: "Updated",
+        group: "premium",
+        quota: "0.000000",
+        isUnlimitedQuota: true,
+        modalities: ["text"],
+        ipLimit: "",
+        expires: "",
+      });
+
+      assert.equal(result.group, "premium");
+      assert.equal(result.copyableKey, "sk-live-updated-secret");
+      assert.equal(captured.length, 1);
+      assert.equal(captured[0].url, "/app/v3/api/iam/api_keys/key-2");
+      assert.equal(captured[0].method, "PATCH");
+      assert.match(captured[0].body, /"group":"premium"/);
+      assert.equal(JSON.parse(captured[0].body).ipLimit, "unrestricted");
+      assert.match(captured[0].headers["x-request-id"], /^request-/);
+    },
+  );
+});
+
+test("console api key service deletes keys through the generated app SDK", async () => {
+  await withApiKeySdkResponse(
+    { code: "2000", data: { id: "key-2", deleted: true } },
+    async (captured) => {
+      await ApiKeyService.deleteKey("key-2");
+
+      assert.equal(captured.length, 1);
+      assert.equal(captured[0].url, "/app/v3/api/iam/api_keys/key-2");
+      assert.equal(captured[0].method, "DELETE");
     },
   );
 });
@@ -232,10 +789,10 @@ test("console api key service fails closed when fetched key rows omit stable ids
           {
             name: "Missing Id",
             maskedKey: "sk-****abcd",
+            copyableKey: "sk-live-missing-id-secret",
             group: "default",
           },
         ],
-        groups: [{ id: "group-1", code: "default", name: "Default", rate: null }],
       },
     },
     async () => {
@@ -256,10 +813,10 @@ test("console api key service fails closed when fetched key rows omit masked key
           {
             id: "key-1",
             name: "Missing Mask",
+            copyableKey: "sk-live-missing-mask-secret",
             group: "default",
           },
         ],
-        groups: [{ id: "group-1", code: "default", name: "Default", rate: null }],
       },
     },
     async () => {
@@ -271,33 +828,17 @@ test("console api key service fails closed when fetched key rows omit masked key
   );
 });
 
-test("console api key service fails closed when fetched groups omit stable codes", async () => {
+test("console api key service fails closed when fetched selectable groups omit stable codes", async () => {
   await withApiKeySdkResponse(
     {
       code: "2000",
       data: {
-        items: [
-          {
-            id: "key-1",
-            name: "Production",
-            maskedKey: "sk-****abcd",
-            group: "default",
-            rate: null,
-            quota: "100.000000",
-            usedQuota: "3.500000",
-            modalities: ["text"],
-            ipLimit: "unrestricted",
-            created: "2026-05-05T09:00:00Z",
-            expires: "never",
-            status: "enabled",
-          },
-        ],
-        groups: [{ id: "group-1", name: "Missing Code" }],
+        items: [{ id: "group-1", name: "Missing Code" }],
       },
     },
     async () => {
       await assert.rejects(
-        () => ApiKeyService.fetchKeys(),
+        () => ApiKeyService.fetchGroups(),
         /API key group code is required/,
       );
     },
@@ -314,6 +855,7 @@ test("console api key service fails closed when fetched keys contain unsupported
             id: "key-1",
             name: "Production",
             maskedKey: "sk-****abcd",
+            copyableKey: "sk-live-existing-secret",
             group: "default",
             rate: null,
             quota: "100.000000",
@@ -325,7 +867,6 @@ test("console api key service fails closed when fetched keys contain unsupported
             status: "enabled",
           },
         ],
-        groups: [{ id: "group-1", code: "default", name: "Default", rate: null }],
       },
     },
     async () => {
@@ -342,6 +883,11 @@ test("console api key creation fails closed when response omits stable key entit
     {
       code: "2000",
       data: {
+        item: {
+          id: "key-2",
+          maskedKey: "sk-****wxyz",
+          copyableKey: "sk-live-created-secret",
+        },
         rawKey: "sk-live-created-secret",
       },
     },
@@ -372,6 +918,7 @@ test("console api key creation fails closed when response omits raw key material
           id: "key-2",
           name: "Created",
           maskedKey: "sk-****wxyz",
+          copyableKey: "sk-live-created-secret",
           group: "default",
           rate: null,
           quota: "0.000000",
@@ -410,6 +957,7 @@ test("console api key service rejects invalid create commands before calling gen
         item: {
           id: "unexpected",
           maskedKey: "sk-****unexpected",
+          copyableKey: "sk-live-unexpected",
         },
         rawKey: "sk-unexpected",
       },
@@ -439,7 +987,7 @@ test("console api key service rejects invalid create commands before calling gen
             ipLimit: "unrestricted",
             expires: "never",
           }),
-        /group is required/,
+        /modalities must include at least one item/,
       );
       await assert.rejects(
         () =>
@@ -499,11 +1047,11 @@ test("console api key service rejects API business failures with the backend mes
 
 test("console api key service fails closed for non-API envelope responses", async () => {
   await withApiKeySdkResponse(
-    { data: { items: [], groups: [] } },
+    { data: { items: [] } },
     async () => {
       await assert.rejects(
         () => ApiKeyService.fetchKeys(),
-        /Failed to fetch API keys/,
+        /console\.apiKeys\.errors\.loadFallback/,
       );
     },
   );

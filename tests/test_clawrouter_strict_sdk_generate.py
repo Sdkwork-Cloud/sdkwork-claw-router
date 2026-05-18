@@ -375,6 +375,138 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
             self.assertEqual(repeated.returncode, 0, repeated.stderr)
             self.assertIn("Written files: 0", repeated.stdout)
 
+    def test_generates_generation_agent_usage_fact_metadata_user_id(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            temp_root = Path(tmp)
+            output = temp_root / "sdk"
+            spec_path = self.write_openapi(temp_root)
+
+            spec = json.loads(spec_path.read_text(encoding="utf-8"))
+            spec["paths"]["/app/v3/api/ai/generation/agents/runs"] = {
+                "post": {
+                    "operationId": "generationAgentsRunsCreate",
+                    "tags": ["ai"],
+                    "requestBody": {
+                        "required": True,
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "additionalProperties": False,
+                                    "required": ["prompt"],
+                                    "properties": {"prompt": {"type": "string"}},
+                                }
+                            }
+                        },
+                    },
+                    "responses": {
+                        "200": {
+                            "description": "OK",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/GenerationAgentMeteringEvent"
+                                    }
+                                }
+                            },
+                        }
+                    },
+                }
+            }
+            spec["components"]["schemas"]["GenerationAgentUsageFactMetadata"] = {
+                "type": "object",
+                "additionalProperties": False,
+                "required": [
+                    "agentId",
+                    "agentVersionId",
+                    "runId",
+                    "stepId",
+                    "userId",
+                    "meteringSource",
+                ],
+                "properties": {
+                    "agentId": {"type": "string"},
+                    "agentVersionId": {"type": "string"},
+                    "runId": {"type": "string"},
+                    "stepId": {"type": "string"},
+                    "userId": {"type": "string"},
+                    "skillId": {"type": ["string", "null"]},
+                    "mcpServerId": {"type": ["string", "null"]},
+                    "toolId": {"type": ["string", "null"]},
+                    "meteringSource": {"type": "string", "enum": ["agent-runtime"]},
+                },
+            }
+            spec["components"]["schemas"]["GenerationAgentMeteringEvent"] = {
+                "type": "object",
+                "additionalProperties": False,
+                "required": ["type", "quantity", "usageFactMetadata"],
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "token",
+                            "image",
+                            "video",
+                            "audio",
+                            "tool",
+                            "mcp",
+                            "skill",
+                            "storage",
+                            "network",
+                        ],
+                    },
+                    "quantity": {"type": "string"},
+                    "usageFactMetadata": {
+                        "$ref": "#/components/schemas/GenerationAgentUsageFactMetadata"
+                    },
+                },
+            }
+            spec_path.write_text(json.dumps(spec, indent=2) + "\n", encoding="utf-8")
+
+            completed = subprocess.run(
+                [
+                    "node",
+                    "tools/clawrouter_strict_sdk_generate.mjs",
+                    "generate",
+                    "-i",
+                    str(spec_path),
+                    "-o",
+                    str(output),
+                    "-n",
+                    "clawrouter-app-sdk",
+                    "-t",
+                    "app",
+                    "-l",
+                    "typescript",
+                    "--base-url",
+                    "http://localhost:18082",
+                    "--api-prefix",
+                    "/app/v3/api",
+                    "--package-name",
+                    "@sdkwork/clawrouter-app-sdk",
+                    "--fixed-sdk-version",
+                    "0.1.0",
+                    "--no-sync-published-version",
+                    "--dry-run",
+                    "--json",
+                ],
+                cwd=ROOT,
+                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+            )
+
+            self.assertEqual(completed.returncode, 0, completed.stderr)
+            payload = json.loads(completed.stdout)
+            files = {file["path"]: file["content"] for file in payload["files"]}
+
+            self.assertIn("src/types/generation-agent-usage-fact-metadata.ts", files)
+            self.assertIn("userId: string;", files["src/types/generation-agent-usage-fact-metadata.ts"])
+            self.assertIn(
+                "usageFactMetadata: GenerationAgentUsageFactMetadata;",
+                files["src/types/generation-agent-metering-event.ts"],
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

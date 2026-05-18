@@ -60,6 +60,25 @@ fn postgres_admin_app_scopes_every_mutation_to_trusted_tenant_and_organization()
 }
 
 #[test]
+fn postgres_admin_app_read_scope_matches_app_center_visible_catalog_scope() {
+    for expected in [
+        "const PUBLIC_APP_STORE_TENANT_ID: i64 = 20_001;",
+        "OR ($2 > 0 AND organization_id = 0)",
+        "OR (tenant_id = $3 AND organization_id = 0)",
+        "WHEN tenant_id = $1 AND organization_id = $2 THEN 0",
+        "WHEN tenant_id = $1 AND organization_id = 0 THEN 1",
+        "WHEN tenant_id = $3 AND organization_id = 0 THEN 2",
+        "OR ($3 > 0 AND organization_id = 0)",
+        "OR (tenant_id = $4 AND organization_id = 0)",
+        "WHEN tenant_id = $2 AND organization_id = $3 THEN 0",
+        "WHEN tenant_id = $2 AND organization_id = 0 THEN 1",
+        "WHEN tenant_id = $4 AND organization_id = 0 THEN 2",
+    ] {
+        assert_sql_contains(POSTGRES_ADMIN_APP_STORE, expected);
+    }
+}
+
+#[test]
 fn postgres_admin_app_uses_jsonb_for_app_payloads_market_state_and_audit() {
     for expected in [
         "$7::jsonb",

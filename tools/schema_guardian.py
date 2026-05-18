@@ -99,6 +99,19 @@ DOMAIN_NAMES_REQUIRING_TYPE_BINDINGS = {"model_vendor", "billing_meter", "integr
 
 FORBIDDEN_PRICING_TABLES = {"ai_pricing_group"}
 
+FORBIDDEN_LEGACY_IDENTITY_TABLES = {
+    "plus_api_key",
+    "plus_oauth_account",
+    "plus_organization",
+    "plus_organization_member",
+    "plus_permission",
+    "plus_role",
+    "plus_role_permission",
+    "plus_tenant",
+    "plus_user",
+    "plus_user_role",
+}
+
 REQUIRED_TABLE_COLUMNS = {
     "ai_model_vendor": {"vendor_code", "display_name"},
     "ai_model": {
@@ -470,8 +483,6 @@ REQUIRED_LEGACY_INDEXES: dict[str, list[dict[str, Any]]] = {
 }
 
 REQUIRED_LEGACY_UNIQUE_CONSTRAINTS: dict[str, list[dict[str, Any]]] = {
-    "plus_user": [_legacy_uuid_constraint("plus_user")],
-    "plus_role": [_legacy_uuid_constraint("plus_role")],
     "plus_account": [_legacy_uuid_constraint("plus_account")],
     "plus_account_history": [_legacy_uuid_constraint("plus_account_history")],
     "plus_vip_recharge": [_legacy_uuid_constraint("plus_vip_recharge")],
@@ -506,24 +517,24 @@ REQUIRED_LEGACY_NOT_NULL_COLUMNS: dict[str, list[str]] = {
 
 REQUIRED_LEGACY_FOREIGN_KEYS: dict[str, list[dict[str, Any]]] = {
     "plus_order": [
-        _legacy_foreign_key("plus_order", "fk_plus_order_user", ["user_id"], "plus_user", ["id"]),
-        _legacy_foreign_key("plus_order", "fk_plus_order_worker_user", ["worker_user_id"], "plus_user", ["id"]),
-        _legacy_foreign_key("plus_order", "fk_plus_order_dispatcher_user", ["dispatcher_user_id"], "plus_user", ["id"]),
+        _legacy_foreign_key("plus_order", "fk_plus_order_user", ["user_id"], "iam_user", ["id"]),
+        _legacy_foreign_key("plus_order", "fk_plus_order_worker_user", ["worker_user_id"], "iam_user", ["id"]),
+        _legacy_foreign_key("plus_order", "fk_plus_order_dispatcher_user", ["dispatcher_user_id"], "iam_user", ["id"]),
     ],
     "plus_order_worker_dispatch_profile": [
         _legacy_foreign_key(
             "plus_order_worker_dispatch_profile",
             "fk_order_worker_dispatch_profile_user",
             ["user_id"],
-            "plus_user",
+            "iam_user",
             ["id"],
         ),
     ],
     "plus_shop": [
-        _legacy_foreign_key("plus_shop", "fk_plus_shop_user", ["user_id"], "plus_user", ["id"]),
+        _legacy_foreign_key("plus_shop", "fk_plus_shop_user", ["user_id"], "iam_user", ["id"]),
     ],
     "plus_product": [
-        _legacy_foreign_key("plus_product", "fk_plus_product_user", ["user_id"], "plus_user", ["id"]),
+        _legacy_foreign_key("plus_product", "fk_plus_product_user", ["user_id"], "iam_user", ["id"]),
     ],
     "plus_sku": [
         _legacy_foreign_key("plus_sku", "fk_plus_sku_product", ["product_id"], "plus_product", ["id"]),
@@ -541,7 +552,7 @@ REQUIRED_LEGACY_FOREIGN_KEYS: dict[str, list[dict[str, Any]]] = {
         _legacy_foreign_key("plus_refund", "fk_plus_refund_payment", ["payment_id"], "plus_payment", ["id"]),
     ],
     "plus_invoice": [
-        _legacy_foreign_key("plus_invoice", "fk_plus_invoice_user", ["user_id"], "plus_user", ["id"]),
+        _legacy_foreign_key("plus_invoice", "fk_plus_invoice_user", ["user_id"], "iam_user", ["id"]),
     ],
     "plus_invoice_item": [
         _legacy_foreign_key("plus_invoice_item", "fk_plus_invoice_item_invoice", ["invoice_id"], "plus_invoice", ["id"]),
@@ -557,7 +568,7 @@ REQUIRED_LEGACY_FOREIGN_KEYS: dict[str, list[dict[str, Any]]] = {
         _legacy_foreign_key("plus_invoice_record", "fk_plus_invoice_record_invoice", ["invoice_id"], "plus_invoice", ["id"]),
     ],
     "plus_shopping_cart": [
-        _legacy_foreign_key("plus_shopping_cart", "fk_plus_shopping_cart_user", ["user_id"], "plus_user", ["id"]),
+        _legacy_foreign_key("plus_shopping_cart", "fk_plus_shopping_cart_user", ["user_id"], "iam_user", ["id"]),
     ],
     "plus_shopping_cart_item": [
         _legacy_foreign_key(
@@ -578,7 +589,7 @@ REQUIRED_LEGACY_FOREIGN_KEYS: dict[str, list[dict[str, Any]]] = {
     ],
     "plus_user_coupon": [
         _legacy_foreign_key("plus_user_coupon", "fk_plus_user_coupon_coupon", ["coupon_id"], "plus_coupon", ["id"]),
-        _legacy_foreign_key("plus_user_coupon", "fk_plus_user_coupon_user", ["user_id"], "plus_user", ["id"]),
+        _legacy_foreign_key("plus_user_coupon", "fk_plus_user_coupon_user", ["user_id"], "iam_user", ["id"]),
         _legacy_foreign_key("plus_user_coupon", "fk_plus_user_coupon_order", ["order_id"], "plus_order", ["id"]),
     ],
     "plus_vip_level_benefit": [
@@ -609,7 +620,7 @@ REQUIRED_LEGACY_FOREIGN_KEYS: dict[str, list[dict[str, Any]]] = {
         ),
     ],
     "plus_vip_user": [
-        _legacy_foreign_key("plus_vip_user", "fk_plus_vip_user_user", ["user_id"], "plus_user", ["id"]),
+        _legacy_foreign_key("plus_vip_user", "fk_plus_vip_user_user", ["user_id"], "iam_user", ["id"]),
         _legacy_foreign_key("plus_vip_user", "fk_plus_vip_user_level", ["vip_level_id"], "plus_vip_level", ["id"]),
     ],
     "plus_vip_point_change": [
@@ -617,12 +628,12 @@ REQUIRED_LEGACY_FOREIGN_KEYS: dict[str, list[dict[str, Any]]] = {
             "plus_vip_point_change",
             "fk_plus_vip_point_change_user",
             ["user_id"],
-            "plus_user",
+            "iam_user",
             ["id"],
         ),
     ],
     "plus_vip_recharge": [
-        _legacy_foreign_key("plus_vip_recharge", "fk_plus_vip_recharge_user", ["user_id"], "plus_user", ["id"]),
+        _legacy_foreign_key("plus_vip_recharge", "fk_plus_vip_recharge_user", ["user_id"], "iam_user", ["id"]),
         _legacy_foreign_key("plus_vip_recharge", "fk_plus_vip_recharge_level", ["vip_level_id"], "plus_vip_level", ["id"]),
         _legacy_foreign_key(
             "plus_vip_recharge",
@@ -640,7 +651,7 @@ REQUIRED_LEGACY_FOREIGN_KEYS: dict[str, list[dict[str, Any]]] = {
         ),
     ],
     "plus_vip_benefit_usage": [
-        _legacy_foreign_key("plus_vip_benefit_usage", "fk_plus_vip_benefit_usage_user", ["user_id"], "plus_user", ["id"]),
+        _legacy_foreign_key("plus_vip_benefit_usage", "fk_plus_vip_benefit_usage_user", ["user_id"], "iam_user", ["id"]),
     ],
 }
 
@@ -686,6 +697,7 @@ class SchemaGuardian:
 
         messages: list[str] = []
         messages.extend(self._check_forbidden_synonyms(data, by_table))
+        messages.extend(self._check_legacy_identity_standard(data, by_table))
         messages.extend(self._check_finance_trade_contracts(data, by_table))
         messages.extend(self._check_skills_hub_tables(by_table))
         messages.extend(self._check_domain_names(data, by_table))
@@ -732,6 +744,78 @@ class SchemaGuardian:
             for table in forbidden_tables
             if isinstance(table, str) and table in by_table
         ]
+
+    def _check_legacy_identity_standard(
+        self,
+        data: dict[str, Any],
+        by_table: dict[str, dict[str, Any]],
+    ) -> list[str]:
+        messages: list[str] = []
+        for table in sorted(FORBIDDEN_LEGACY_IDENTITY_TABLES):
+            if table in by_table:
+                messages.append(f"legacy identity table must be removed: {table}")
+
+        for table, metadata in by_table.items():
+            foreign_keys = metadata.get("foreign_keys", [])
+            if isinstance(foreign_keys, list):
+                for foreign_key in foreign_keys:
+                    if not isinstance(foreign_key, dict):
+                        continue
+                    reference = foreign_key.get("references_table")
+                    if reference in FORBIDDEN_LEGACY_IDENTITY_TABLES:
+                        name = foreign_key.get("name", "<unnamed>")
+                        replacement = "iam_user" if reference == "plus_user" else self._iam_identity_table_for(str(reference))
+                        messages.append(
+                            f"{table} foreign key {name} must reference {replacement} instead of {reference}"
+                        )
+
+            messages.extend(self._check_legacy_identity_source_list(table, metadata, "source_tables"))
+            policy = metadata.get("projection_policy")
+            if isinstance(policy, dict):
+                messages.extend(
+                    self._check_legacy_identity_source_list(
+                        table,
+                        policy,
+                        "does_not_replace",
+                        label="projection_policy.does_not_replace",
+                    )
+                )
+
+        return messages
+
+    def _check_legacy_identity_source_list(
+        self,
+        table: str,
+        metadata: dict[str, Any],
+        key: str,
+        *,
+        label: str | None = None,
+    ) -> list[str]:
+        values = metadata.get(key)
+        if not isinstance(values, list):
+            return []
+
+        messages: list[str] = []
+        for value in values:
+            if not isinstance(value, str) or value not in FORBIDDEN_LEGACY_IDENTITY_TABLES:
+                continue
+            replacement = "iam_user" if value == "plus_user" else self._iam_identity_table_for(value)
+            messages.append(f"{table} {label or key} must use {replacement} instead of {value}")
+        return messages
+
+    def _iam_identity_table_for(self, legacy_table: str) -> str:
+        return {
+            "plus_api_key": "iam_gateway_api_key",
+            "plus_oauth_account": "iam_user_identity",
+            "plus_organization": "iam_organization",
+            "plus_organization_member": "iam_organization_member",
+            "plus_permission": "iam_permission",
+            "plus_role": "iam_role",
+            "plus_role_permission": "iam_role_permission",
+            "plus_tenant": "iam_tenant",
+            "plus_user": "iam_user",
+            "plus_user_role": "iam_user_role",
+        }.get(legacy_table, f"iam_{legacy_table.removeprefix('plus_')}")
 
     def _check_finance_trade_contracts(self, data: dict[str, Any], by_table: dict[str, dict[str, Any]]) -> list[str]:
         contracts = data.get("legacy_java_contracts", {}).get("finance_and_trade", {})

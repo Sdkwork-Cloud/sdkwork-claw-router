@@ -32,6 +32,7 @@ pub struct DashboardOverviewSnapshot {
     pub chart_data: Vec<DashboardChartPoint>,
     pub top_models: Vec<DashboardTopModel>,
     pub announcements: Vec<DashboardAnnouncement>,
+    pub configuration_domains: Vec<DashboardConfigurationDomain>,
     pub warnings: Vec<String>,
 }
 
@@ -45,6 +46,7 @@ impl Default for DashboardOverviewSnapshot {
             chart_data: Vec::new(),
             top_models: Vec::new(),
             announcements: Vec::new(),
+            configuration_domains: Vec::new(),
             warnings: Vec::new(),
         }
     }
@@ -56,6 +58,8 @@ pub struct DashboardOverviewSummary {
     pub available_credits: f64,
     pub used_credits: f64,
     pub request_count: i64,
+    pub total_used_credits: f64,
+    pub total_request_count: i64,
     pub error_count: i64,
     pub image_requests: i64,
     pub video_requests: i64,
@@ -122,6 +126,15 @@ pub struct DashboardAnnouncement {
     pub time: String,
     #[serde(rename = "type")]
     pub announcement_type: String,
+}
+
+#[derive(Debug, Clone, Serialize, PartialEq, Eq)]
+#[serde(rename_all = "camelCase")]
+pub struct DashboardConfigurationDomain {
+    pub id: String,
+    pub name: String,
+    pub domain: String,
+    pub remark: String,
 }
 
 pub trait DashboardOverviewReadStore {

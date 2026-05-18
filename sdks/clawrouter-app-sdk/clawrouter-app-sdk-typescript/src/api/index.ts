@@ -1,5 +1,6 @@
 export { BaseApi } from './base';
 export { appApiPath } from './paths';
+export * from './agents';
 export * from './ai';
 export * from './auth';
 export * from './billing';

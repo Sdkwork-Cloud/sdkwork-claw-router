@@ -28,13 +28,28 @@ function mapGenerationHistoryItem(value: unknown): PlaygroundHistoryItem {
     prompt: readRequiredString(item, 'prompt', 'Playground history prompt is required'),
     type: itemType,
     modelInfo: normalizeOptionalString(item.modelInfo),
+    modelCatalogKey: normalizeOptionalString(item.modelCatalogKey),
     url: normalizeOptionalString(item.url),
     images: normalizeStringArray(item.images),
     videos: normalizeVideoArray(item.videos),
+    aspectRatio: normalizeAspectRatio(item.aspectRatio),
+    durationSeconds: normalizeDurationSeconds(item.durationSeconds),
     status: normalizeOptionalString(item.status),
     createdAt,
     updatedAt,
   };
+}
+
+function normalizeAspectRatio(value: unknown): PlaygroundHistoryItem['aspectRatio'] | undefined {
+  return value === '1:1' || value === '16:9' || value === '9:16' ? value : undefined;
+}
+
+function normalizeDurationSeconds(value: unknown): number | undefined {
+  if (value === null || value === undefined || value === '') {
+    return undefined;
+  }
+  const duration = typeof value === 'number' ? value : Number(value);
+  return Number.isFinite(duration) && duration >= 0 ? duration : undefined;
 }
 
 function readHistoryType(

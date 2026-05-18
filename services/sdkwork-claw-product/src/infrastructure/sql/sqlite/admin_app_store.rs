@@ -9,6 +9,7 @@ use crate::ports::{
 };
 
 const APP_TARGET_TYPE: i32 = 15;
+const PUBLIC_APP_STORE_TENANT_ID: i64 = 20_001;
 const ASSIGNED_ID_FLOOR: i64 = 1_000_000_000_000;
 const ASSIGNED_ID_RANGE: u64 = 8_000_000_000_000;
 const MAX_ASSIGNED_ID_ATTEMPTS: u8 = 16;
@@ -261,18 +262,36 @@ async fn list_apps(
             CAST(created_at AS TEXT) AS created_at,
             CAST(updated_at AS TEXT) AS updated_at
         FROM plus_app
-        WHERE tenant_id = ?
-          AND organization_id = ?
+        WHERE (
+              (
+                  tenant_id = ?
+                  AND (
+                      organization_id = ?
+                      OR (? > 0 AND organization_id = 0)
+                  )
+              )
+              OR (tenant_id = ? AND organization_id = 0)
+          )
           AND (? IS NULL OR name LIKE ? ESCAPE '\' OR COALESCE(description, '') LIKE ? ESCAPE '\' OR COALESCE(json_extract(config, '$.standard.appKey'), '') LIKE ? ESCAPE '\')
           AND (? IS NULL OR COALESCE(status, 1) = ?)
           AND (? IS NULL OR COALESCE(NULLIF(json_extract(config, '$.portal.marketStatus'), ''), NULLIF(json_extract(config, '$.marketStatus'), ''), 'DRAFT') = ?)
           AND (? IS NULL OR app_type = ?)
-        ORDER BY COALESCE(updated_at, created_at) DESC, id DESC
+        ORDER BY
+            CASE
+                WHEN tenant_id = ? AND organization_id = ? THEN 0
+                WHEN tenant_id = ? AND organization_id = 0 THEN 1
+                WHEN tenant_id = ? AND organization_id = 0 THEN 2
+                ELSE 3
+            END,
+            COALESCE(updated_at, created_at) DESC,
+            id DESC
         LIMIT ? OFFSET ?
         "#,
     )
     .bind(query.subject.tenant_id)
     .bind(query.subject.organization_id)
+    .bind(query.subject.organization_id)
+    .bind(PUBLIC_APP_STORE_TENANT_ID)
     .bind(keyword.as_deref())
     .bind(keyword.as_deref())
     .bind(keyword.as_deref())
@@ -283,6 +302,10 @@ async fn list_apps(
     .bind(query.market_status.as_deref())
     .bind(query.app_type.as_deref())
     .bind(query.app_type.as_deref())
+    .bind(query.subject.tenant_id)
+    .bind(query.subject.organization_id)
+    .bind(query.subject.tenant_id)
+    .bind(PUBLIC_APP_STORE_TENANT_ID)
     .bind(page_size)
     .bind(offset)
     .fetch_all(pool)
@@ -301,6 +324,12 @@ async fn load_app_by_id(
         .bind(id)
         .bind(tenant_id)
         .bind(organization_id)
+        .bind(organization_id)
+        .bind(PUBLIC_APP_STORE_TENANT_ID)
+        .bind(tenant_id)
+        .bind(organization_id)
+        .bind(tenant_id)
+        .bind(PUBLIC_APP_STORE_TENANT_ID)
         .fetch_optional(pool)
         .await
         .map_err(|error| store_error("failed to load app", error))?;
@@ -313,7 +342,7 @@ async fn load_app_by_id_tx(
     tenant_id: i64,
     organization_id: i64,
 ) -> DomainResult<Option<AdminAppItem>> {
-    let row = app_by_id_query()
+    let row = app_by_id_owned_query()
         .bind(id)
         .bind(tenant_id)
         .bind(organization_id)
@@ -325,6 +354,54 @@ async fn load_app_by_id_tx(
 
 fn app_by_id_query() -> sqlx::query::Query<'static, Sqlite, sqlx::sqlite::SqliteArguments<'static>>
 {
+    sqlx::query(
+        r#"
+        SELECT
+            id, uuid, tenant_id, organization_id, user_id, name, description, version,
+            CAST(icon AS TEXT) AS icon, icon_url, CAST(resource_list AS TEXT) AS resource_list,
+            project_id, access_url, CAST(config AS TEXT) AS config,
+            json_extract(config, '$.standard.appKey') AS app_key,
+            COALESCE(status, 1) AS status,
+            COALESCE(
+                NULLIF(json_extract(config, '$.portal.marketStatus'), ''),
+                NULLIF(json_extract(config, '$.marketStatus'), ''),
+                'DRAFT'
+            ) AS market_status,
+            app_type, CAST(platforms AS TEXT) AS platforms,
+            CAST(install_platforms AS TEXT) AS install_platforms,
+            CAST(install_skill AS TEXT) AS install_skill,
+            CAST(install_config AS TEXT) AS install_config,
+            CAST(release_notes AS TEXT) AS release_notes,
+            package_name, bundle_id, store_url, download_url,
+            CAST(created_at AS TEXT) AS created_at,
+            CAST(updated_at AS TEXT) AS updated_at
+        FROM plus_app
+        WHERE id = ?
+          AND (
+              (
+                  tenant_id = ?
+                  AND (
+                      organization_id = ?
+                      OR (? > 0 AND organization_id = 0)
+                  )
+              )
+              OR (tenant_id = ? AND organization_id = 0)
+          )
+        ORDER BY
+            CASE
+                WHEN tenant_id = ? AND organization_id = ? THEN 0
+                WHEN tenant_id = ? AND organization_id = 0 THEN 1
+                WHEN tenant_id = ? AND organization_id = 0 THEN 2
+                ELSE 3
+            END,
+            id DESC
+        LIMIT 1
+        "#,
+    )
+}
+
+fn app_by_id_owned_query(
+) -> sqlx::query::Query<'static, Sqlite, sqlx::sqlite::SqliteArguments<'static>> {
     sqlx::query(
         r#"
         SELECT

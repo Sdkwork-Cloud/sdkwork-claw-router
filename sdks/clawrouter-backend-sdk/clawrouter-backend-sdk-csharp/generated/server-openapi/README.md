@@ -68,6 +68,7 @@ client.SetHeader("X-Custom-Header", "value");
 
 ## API Modules
 
+- `client.Agents` - agents API
 - `client.Ai` - ai API
 - `client.Billing` - billing API
 - `client.Content` - content API
@@ -78,6 +79,23 @@ client.SetHeader("X-Custom-Header", "value");
 - `client.System` - system API
 
 ## Usage Examples
+
+### agents
+
+```csharp
+// List managed agents
+var query = new Dictionary<string, object>
+{
+    ["q"] = "q",
+    ["owner_user_id"] = 2,
+    ["status"] = "active",
+    ["visibility"] = "private",
+    ["page"] = 5,
+    ["page_size"] = 6,
+};
+var result = await client.Agents.ListAsync(query);
+Console.WriteLine(result);
+```
 
 ### ai
 
@@ -90,8 +108,8 @@ Console.WriteLine(result);
 ### billing
 
 ```csharp
-// List batches
-var result = await client.Billing.CouponBatchesListAsync();
+// List referral stats
+var result = await client.Billing.ReferralsStatsListAsync();
 Console.WriteLine(result);
 ```
 
@@ -148,8 +166,8 @@ Console.WriteLine(result);
 ### system
 
 ```csharp
-// List dashboard data
-var result = await client.System.DashboardAdminOverviewRetrieveAsync();
+// Retrieve IAM auth runtime settings
+var result = await client.System.AuthSettingsRetrieveAsync();
 Console.WriteLine(result);
 ```
 

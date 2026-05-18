@@ -22,6 +22,7 @@ export interface Announcement {
   title: string;
   target: 'all' | 'vip' | 'free' | 'beta';
   status: 'published' | 'draft';
+  showAsPopup: boolean;
   date: string;
   content: string;
 }
@@ -30,6 +31,7 @@ export type AnnouncementCreateInput = {
   title: string;
   target: AdminAnnouncementCreateRequest['target'];
   status: AdminAnnouncementCreateRequest['status'];
+  showAsPopup: boolean;
   content: string;
 };
 
@@ -37,6 +39,7 @@ export type AnnouncementUpdateInput = {
   title?: string;
   target?: AdminAnnouncementUpdateRequest['target'];
   status?: AdminAnnouncementUpdateRequest['status'];
+  showAsPopup?: boolean;
   content?: string;
 };
 
@@ -85,6 +88,7 @@ function toCreateAnnouncementRequest(ann: AnnouncementCreateInput): AdminAnnounc
     title: requiredText(ann.title, 'title'),
     target: announcementTarget(ann.target),
     status: announcementStatus(ann.status),
+    showAsPopup: ann.showAsPopup,
     content: requiredText(ann.content, 'content'),
   };
 }
@@ -99,6 +103,9 @@ function toUpdateAnnouncementRequest(updates: AnnouncementUpdateInput): AdminAnn
   }
   if (updates.status !== undefined) {
     request.status = announcementStatus(updates.status);
+  }
+  if (updates.showAsPopup !== undefined) {
+    request.showAsPopup = updates.showAsPopup;
   }
   if (updates.content !== undefined) {
     request.content = requiredText(updates.content, 'content');
@@ -151,6 +158,7 @@ function normalizeAnnouncement(value: unknown): Announcement {
     title: readRequiredString(item, 'title', 'Announcement title is required'),
     target: readAnnouncementTarget(item),
     status: readAnnouncementStatus(item),
+    showAsPopup: readBoolean(item, 'showAsPopup', false),
     date: readRequiredString(item, 'date', 'Announcement date is required'),
     content: readRequiredString(item, 'content', 'Announcement content is required'),
   };

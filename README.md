@@ -752,6 +752,9 @@ sdk_archive_root = "/usr/lib/clawrouter/portal/dist/sdk-archives"
 [provider_relay.runtime]
 response_timeout_millis = 120000
 health_probe_timeout_millis = 10000
+catalog_refresh_interval_millis = 5000
+circuit_breaker_recovery_window_millis = 60000
+failure_strategy = "failover"
 
 [provider_relay.retry]
 max_attempts = 2
@@ -829,9 +832,12 @@ browser origins, such as an external CDN-hosted portal. Leave it empty for the
 packaged same-origin edge deployment; wildcard origins and origins with paths
 are rejected.
 `[provider_relay.runtime]` controls global OpenAI-compatible upstream response
-timeouts and channel health-check timeouts. `[provider_relay.retry]` is the
-default retry policy when a database routing channel does not define its own
-retry policy.
+timeouts, channel health-check timeouts, runtime catalog refresh cadence, and
+circuit-breaker recovery probing. `failure_strategy = "failover"` tries the next
+configured route candidate for retryable provider faults; `fail_closed` returns
+the first provider fault without trying later candidates. `[provider_relay.retry]`
+is the default retry policy when a database routing channel does not define its
+own retry policy.
 
 Protected TOML files may place the password directly in `clawrouter.toml`
 instead of using a separate password file:

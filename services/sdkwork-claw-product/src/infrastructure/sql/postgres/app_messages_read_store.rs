@@ -7,40 +7,106 @@ use crate::ports::{
 
 const LOAD_MESSAGES: &str = r#"
 SELECT
-    CAST(m.id AS TEXT) AS id,
-    COALESCE(NULLIF(m.title, ''), 'Untitled message') AS title,
-    COALESCE(NULLIF(m.summary, ''), '') AS desc,
-    COALESCE(NULLIF(m.content, ''), NULLIF(m.summary, ''), '') AS content,
-    CAST(COALESCE(m.published_at, m.created_at) AS TEXT) AS time,
-    m.message_type AS message_type,
-    m.severity AS severity,
-    d.id AS delivery_id,
-    d.delivery_status AS delivery_status,
-    CAST(d.read_at AS TEXT) AS read_at,
-    CAST(d.delivered_at AS TEXT) AS delivered_at
-FROM ops_notification_message m
-LEFT JOIN ops_notification_delivery d
-    ON d.message_id = m.id
-   AND d.tenant_id = m.tenant_id
-   AND d.organization_id = m.organization_id
-   AND d.user_id = $3
-   AND d.deleted_at IS NULL
-   AND d.status = 1
-WHERE m.status = 1
-  AND m.deleted_at IS NULL
-  AND m.tenant_id = $1
-  AND m.organization_id = $2
-  AND (m.published_at IS NULL OR m.published_at <= CURRENT_TIMESTAMP)
-  AND (m.expire_at IS NULL OR m.expire_at > CURRENT_TIMESTAMP)
-  AND (
-      d.user_id = $3
-      OR m.target_user_id = $3
-      OR COALESCE(m.target_scope, 1) = 1
-  )
+    id,
+    title,
+    description AS "desc",
+    content,
+    time,
+    message_type,
+    severity,
+    delivery_id,
+    delivery_status,
+    read_at,
+    delivered_at,
+    show_as_popup
+FROM (
+    SELECT
+        CAST(m.id AS TEXT) AS id,
+        COALESCE(NULLIF(m.title, ''), 'Untitled message') AS title,
+        COALESCE(NULLIF(m.summary, ''), '') AS description,
+        COALESCE(NULLIF(m.content, ''), NULLIF(m.summary, ''), '') AS content,
+        CAST(COALESCE(m.published_at, m.created_at) AS TEXT) AS time,
+        m.message_type AS message_type,
+        m.severity AS severity,
+        d.id AS delivery_id,
+        d.delivery_status AS delivery_status,
+        CAST(d.read_at AS TEXT) AS read_at,
+        CAST(d.delivered_at AS TEXT) AS delivered_at,
+        false AS show_as_popup,
+        CASE WHEN d.read_at IS NULL THEN 0 ELSE 1 END AS read_sort
+    FROM ops_notification_message m
+    LEFT JOIN ops_notification_delivery d
+        ON d.message_id = m.id
+       AND d.tenant_id = m.tenant_id
+       AND d.organization_id = m.organization_id
+       AND d.user_id = $3
+       AND d.deleted_at IS NULL
+       AND d.status = 1
+    WHERE m.status = 1
+      AND m.deleted_at IS NULL
+      AND m.tenant_id = $1
+      AND m.organization_id = $2
+      AND (m.published_at IS NULL OR m.published_at <= CURRENT_TIMESTAMP)
+      AND (m.expire_at IS NULL OR m.expire_at > CURRENT_TIMESTAMP)
+      AND (
+          d.user_id = $3
+          OR m.target_user_id = $3
+          OR COALESCE(m.target_scope, 1) = 1
+      )
+    UNION ALL
+    SELECT
+        'announcement-' || CAST(a.id AS TEXT) AS id,
+        COALESCE(NULLIF(a.title, ''), 'Untitled announcement') AS title,
+        COALESCE(NULLIF(a.content, ''), '') AS description,
+        COALESCE(NULLIF(a.content, ''), '') AS content,
+        CAST(COALESCE(a.published_at, a.created_at) AS TEXT) AS time,
+        1 AS message_type,
+        COALESCE(a.announcement_type, 1) AS severity,
+        NULL AS delivery_id,
+        NULL AS delivery_status,
+        '' AS read_at,
+        '' AS delivered_at,
+        true AS show_as_popup,
+        0 AS read_sort
+    FROM content_announcement a
+    WHERE a.status = 1
+      AND a.deleted_at IS NULL
+      AND a.tenant_id = $1
+      AND a.organization_id = $2
+      AND (a.published_at IS NULL OR a.published_at <= CURRENT_TIMESTAMP)
+      AND (a.effective_from IS NULL OR a.effective_from <= CURRENT_TIMESTAMP)
+      AND (a.effective_to IS NULL OR a.effective_to > CURRENT_TIMESTAMP)
+      AND COALESCE((a.audience_filter ->> 'showAsPopup')::boolean, false) = true
+      AND (
+          COALESCE(a.target_scope, 1) = 1
+          OR (
+              a.target_scope = 2
+              AND EXISTS (
+                  SELECT 1
+                  FROM plus_vip_user v
+                  WHERE v.user_id = $3
+                    AND v.status = 1
+                    AND (v.valid_from IS NULL OR v.valid_from <= CURRENT_TIMESTAMP)
+                    AND (v.valid_to IS NULL OR v.valid_to > CURRENT_TIMESTAMP)
+              )
+          )
+          OR (
+              a.target_scope = 3
+              AND NOT EXISTS (
+                  SELECT 1
+                  FROM plus_vip_user v
+                  WHERE v.user_id = $3
+                    AND v.status = 1
+                    AND (v.valid_from IS NULL OR v.valid_from <= CURRENT_TIMESTAMP)
+                    AND (v.valid_to IS NULL OR v.valid_to > CURRENT_TIMESTAMP)
+              )
+          )
+      )
+) messages
 ORDER BY
-    CASE WHEN d.read_at IS NULL THEN 0 ELSE 1 END,
-    COALESCE(m.published_at, m.created_at) DESC NULLS LAST,
-    m.id DESC
+    read_sort ASC,
+    time DESC NULLS LAST,
+    id DESC
 LIMIT 100
 "#;
 
@@ -101,6 +167,7 @@ fn row_to_message(row: sqlx::postgres::PgRow) -> DomainResult<AppMessageItem> {
         time: string_cell(&row, "time"),
         message_type,
         read: message_read_status(&read_at, &delivered_at, delivery_status),
+        show_as_popup: bool_cell(&row, "show_as_popup"),
     })
 }
 
@@ -117,6 +184,13 @@ fn string_cell(row: &sqlx::postgres::PgRow, column: &str) -> String {
         .ok()
         .flatten()
         .unwrap_or_default()
+}
+
+fn bool_cell(row: &sqlx::postgres::PgRow, column: &str) -> bool {
+    row.try_get::<Option<bool>, _>(column)
+        .ok()
+        .flatten()
+        .unwrap_or(false)
 }
 
 fn related_integer_cell(

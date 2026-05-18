@@ -9,6 +9,7 @@ namespace Sdkwork.ClawRouter.App
     {
         private readonly SdkHttpClient _httpClient;
 
+        public AgentsApi Agents { get; }
         public AiApi Ai { get; }
         public AuthApi Auth { get; }
         public BillingApi Billing { get; }
@@ -21,6 +22,7 @@ namespace Sdkwork.ClawRouter.App
         public SdkworkAppClient(string baseUrl)
         {
             _httpClient = new SdkHttpClient(baseUrl);
+            Agents = new AgentsApi(_httpClient);
             Ai = new AiApi(_httpClient);
             Auth = new AuthApi(_httpClient);
             Billing = new BillingApi(_httpClient);
@@ -34,6 +36,7 @@ namespace Sdkwork.ClawRouter.App
         public SdkworkAppClient(SdkConfig config)
         {
             _httpClient = new SdkHttpClient(config);
+            Agents = new AgentsApi(_httpClient);
             Ai = new AiApi(_httpClient);
             Auth = new AuthApi(_httpClient);
             Billing = new BillingApi(_httpClient);

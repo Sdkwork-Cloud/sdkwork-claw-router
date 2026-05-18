@@ -15,12 +15,23 @@ export type RoutingChannelFormValues = {
   retryMaxAttempts?: number | string | null;
   retryableStatusCodes?: string[] | string | null;
   retryBackoffMs?: number | string | null;
+  circuitBreakerEnabled?: boolean;
+  circuitBreakerFailureThreshold?: number | string | null;
   weight: number;
   status: string;
 };
 
 const ROUTING_CHANNEL_CAPABILITIES = ['llm', 'image', 'audio', 'music', 'sfx', 'video'] as const;
 const RETRYABLE_STATUS_CODES = [408, 409, 425, 429, 500, 502, 503, 504] as const;
+const ROUTING_FIELD_LABEL_KEYS: Record<string, string> = {
+  authType: 'console.routing.fields.authType',
+  protocol: 'console.routing.fields.protocol',
+  circuitBreakerPolicyFailureThreshold: 'console.routing.components.channelstab.failureThreshold',
+  retryPolicyBackoffMs: 'console.routing.fields.retryBackoffMs',
+  retryPolicyMaxAttempts: 'console.routing.fields.retryMaxAttempts',
+  timeoutMs: 'console.routing.components.channelstab.timeoutMs',
+  weight: 'console.routing.components.channelstab.text.pj195t',
+};
 
 type RoutingChannelCapability = (typeof ROUTING_CHANNEL_CAPABILITIES)[number];
 type RetryableStatusCode = (typeof RETRYABLE_STATUS_CODES)[number];
@@ -73,7 +84,7 @@ export function resolveRoutingMultiProtocolSubmitValue(
     }),
   );
   if (resolved.length === 0) {
-    throw new Error('protocol is required');
+    throw formValidationError('protocolRequired');
   }
   return resolved.join(', ');
 }
@@ -109,6 +120,7 @@ export function createRoutingChannelInputFromForm(values: RoutingChannelFormValu
     capabilities: normalizedCapabilities(values.capabilities),
     timeoutMs: optionalInteger(values.timeoutMs, 'timeoutMs', 1, 600_000),
     retryPolicy: normalizeRetryPolicy(values, false),
+    circuitBreakerPolicy: normalizeCircuitBreakerPolicy(values, false),
     weight: requiredInteger(values.weight, 'weight', 1, 10_000),
     status: routingChannelStatus(values.status),
   });
@@ -126,6 +138,9 @@ export function createRoutingChannelUpdateInputFromForm(values: RoutingChannelFo
     capabilities: normalizedCapabilities(values.capabilities),
     timeoutMs: 'timeoutMs' in values ? nullableInteger(values.timeoutMs, 'timeoutMs', 1, 600_000) : undefined,
     retryPolicy: 'retryEnabled' in values ? normalizeRetryPolicy(values, true) : undefined,
+    circuitBreakerPolicy: 'circuitBreakerEnabled' in values
+      ? normalizeCircuitBreakerPolicy(values, true)
+      : undefined,
     weight: requiredInteger(values.weight, 'weight', 1, 10_000),
     status: routingChannelStatus(values.status),
   });
@@ -134,7 +149,7 @@ export function createRoutingChannelUpdateInputFromForm(values: RoutingChannelFo
 function normalizedModels(values: string[]): string[] {
   const models = normalizedTextArray(values);
   if (models.length === 0) {
-    throw new Error('models must include at least one item');
+    throw formValidationError('modelsRequired');
   }
   return models;
 }
@@ -169,7 +184,7 @@ function normalizedCapabilities(values: string[]): RoutingChannelCapability[] | 
   for (const rawValue of normalizedTextArray(values)) {
     const value = rawValue.toLowerCase();
     if (!allowed.has(value)) {
-      throw new Error(`Unsupported routing channel capability: ${value}`);
+      throw formValidationError('unsupportedCapability', { value });
     }
     capabilities.push(value as RoutingChannelCapability);
   }
@@ -184,7 +199,9 @@ function optionalText(value: string): string | undefined {
 function requiredText(value: string, fieldName: string): string {
   const normalized = value.trim();
   if (!normalized) {
-    throw new Error(`${fieldName} is required`);
+    throw formValidationError(`${fieldName}Required`, {
+      field: routingFieldLabelKey(fieldName),
+    });
   }
   return normalized;
 }
@@ -192,10 +209,16 @@ function requiredText(value: string, fieldName: string): string {
 function requiredInteger(value: number | string | null | undefined, key: string, min: number, max: number): number {
   const parsed = parseInteger(value, key);
   if (parsed === undefined) {
-    throw new Error(`${key} must be a positive integer`);
+    throw formValidationError(`${routingValidationKey(key)}PositiveInteger`, {
+      field: routingFieldLabelKey(key),
+    });
   }
   if (parsed < min || parsed > max) {
-    throw new Error(`${key} must be between ${min} and ${max}`);
+    throw formValidationError(`${routingValidationKey(key)}Range`, {
+      field: routingFieldLabelKey(key),
+      min,
+      max,
+    });
   }
   return parsed;
 }
@@ -206,7 +229,11 @@ function optionalInteger(value: number | string | null | undefined, key: string,
     return undefined;
   }
   if (parsed < min || parsed > max) {
-    throw new Error(`${key} must be between ${min} and ${max}`);
+    throw formValidationError(`${routingValidationKey(key)}Range`, {
+      field: routingFieldLabelKey(key),
+      min,
+      max,
+    });
   }
   return parsed;
 }
@@ -227,7 +254,9 @@ function parseInteger(value: number | string | null | undefined, key: string): n
   }
   if (typeof value === 'number') {
     if (!Number.isFinite(value) || !Number.isInteger(value)) {
-      throw new Error(`${key} must be an integer`);
+      throw formValidationError(`${routingValidationKey(key)}Integer`, {
+        field: routingFieldLabelKey(key),
+      });
     }
     return value;
   }
@@ -236,7 +265,9 @@ function parseInteger(value: number | string | null | undefined, key: string): n
     return undefined;
   }
   if (!/^-?\d+$/.test(trimmed)) {
-    throw new Error(`${key} must be an integer`);
+    throw formValidationError(`${routingValidationKey(key)}Integer`, {
+      field: routingFieldLabelKey(key),
+    });
   }
   return Number.parseInt(trimmed, 10);
 }
@@ -248,7 +279,7 @@ function normalizeRetryPolicy(values: RoutingChannelFormValues, allowClear: bool
   const maxAttempts = requiredInteger(values.retryMaxAttempts ?? 3, 'retryPolicy.maxAttempts', 1, 5);
   const retryableStatusCodes = normalizeRetryableStatusCodes(values.retryableStatusCodes);
   if (maxAttempts > 1 && retryableStatusCodes.length === 0) {
-    throw new Error('retryPolicy.retryableStatusCodes is required when maxAttempts is greater than 1');
+    throw formValidationError('retryStatusesRequiredForRetries');
   }
   const backoffMs = optionalInteger(values.retryBackoffMs ?? 0, 'retryPolicy.backoffMs', 0, 2000) ?? 0;
   return {
@@ -268,11 +299,11 @@ function normalizeRetryableStatusCodes(value: string[] | string | null | undefin
       continue;
     }
     if (!/^\d+$/.test(text)) {
-      throw new Error('retryPolicy.retryableStatusCodes must contain integer HTTP statuses');
+      throw formValidationError('retryStatusesInteger');
     }
     const status = Number.parseInt(text, 10);
     if (!allowed.has(status)) {
-      throw new Error(`retryPolicy.retryableStatusCodes contains unsupported status: ${status}`);
+      throw formValidationError('retryStatusUnsupported', { status });
     }
     if (!normalized.includes(status as RetryableStatusCode)) {
       normalized.push(status as RetryableStatusCode);
@@ -281,14 +312,52 @@ function normalizeRetryableStatusCodes(value: string[] | string | null | undefin
   return normalized;
 }
 
+function normalizeCircuitBreakerPolicy(
+  values: RoutingChannelFormValues,
+  allowClear: boolean,
+): RoutingChannelMutationInput['circuitBreakerPolicy'] | RoutingChannelUpdateInput['circuitBreakerPolicy'] {
+  if (!values.circuitBreakerEnabled) {
+    return allowClear ? null : undefined;
+  }
+  return {
+    failureThreshold: requiredInteger(
+      values.circuitBreakerFailureThreshold ?? 3,
+      'circuitBreakerPolicy.failureThreshold',
+      1,
+      100,
+    ),
+  };
+}
+
 function routingChannelStatus(value: string): ChannelStatus {
   const status = value.trim().toLowerCase();
   if (status === 'active' || status === 'disabled' || status === 'error') {
     return status;
   }
-  throw new Error(status ? `Unsupported routing channel status: ${status}` : 'Routing channel status is required');
+  throw status
+    ? formValidationError('statusUnsupported', { status })
+    : formValidationError('statusRequired');
 }
 
 function omitUndefined<T extends Record<string, unknown>>(value: T): T {
   return Object.fromEntries(Object.entries(value).filter(([, item]) => item !== undefined)) as T;
+}
+
+function routingFieldLabelKey(key: string): string {
+  return ROUTING_FIELD_LABEL_KEYS[routingValidationKey(key)] ?? ROUTING_FIELD_LABEL_KEYS[key] ?? key;
+}
+
+function routingValidationKey(key: string): string {
+  return key
+    .split('.')
+    .map((segment, index) => index === 0 ? segment : segment.charAt(0).toUpperCase() + segment.slice(1))
+    .join('')
+    .replace(/^[A-Z]/, (value) => value.toLowerCase());
+}
+
+function formValidationError(key: string, params: Record<string, string | number> = {}): Error {
+  const suffix = Object.entries(params)
+    .map(([paramKey, value]) => `|${paramKey}=${String(value)}`)
+    .join('');
+  return new Error(`console.routing.validation.${key}${suffix}`);
 }

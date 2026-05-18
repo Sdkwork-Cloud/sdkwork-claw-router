@@ -4,14 +4,18 @@ import { Link } from 'react-router-dom';
 import { BusinessStatePanel, CopyButton } from 'sdkwork-claw-router-commons';
 import { AccountService, AccountStats } from './accountService';
 
-const readOnlyAccountActions =
-  'Read-only account summary. Invoice profile changes, security policy changes, and account mutations require explicit account command contracts before they can be enabled.';
+import { useTranslation } from 'react-i18next';
+type TranslationFunction = ReturnType<typeof useTranslation>['t'];
 
-function getAccountErrorMessage(error: unknown, fallback: string): string {
-  return error instanceof Error && error.message ? error.message : fallback;
+function getAccountErrorMessage(error: unknown, fallback: string, t: TranslationFunction): string {
+  if (!(error instanceof Error) || !error.message) {
+    return fallback;
+  }
+  return error.message.startsWith('console.') ? t(error.message, fallback) : error.message;
 }
 
 export function AccountView() {
+  const { t } = useTranslation();
   const [data, setData] = useState<AccountStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -27,14 +31,18 @@ export function AccountView() {
     } catch (error) {
       if (isActive()) {
         setData(null);
-        setLoadError(getAccountErrorMessage(error, 'Failed to load account details.'));
+        setLoadError(getAccountErrorMessage(
+          error,
+          t('console.account.states.loadErrorFallback', '账户详情加载失败。'),
+          t,
+        ));
       }
     } finally {
       if (isActive()) {
         setLoading(false);
       }
     }
-  }, []);
+  }, [t]);
 
   useEffect(() => {
     let active = true;
@@ -49,7 +57,7 @@ export function AccountView() {
       <div className="p-4 lg:p-6 w-full mx-auto animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#121212]">
         <BusinessStatePanel
           kind="loading"
-          title="Loading account details..."
+          title={t('console.account.states.loading', '正在加载账户详情...')}
           className="min-h-[400px] rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-white/5 dark:bg-[#252525]"
         />
       </div>
@@ -61,7 +69,7 @@ export function AccountView() {
       <div className="p-4 lg:p-6 w-full mx-auto animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#121212]">
         <BusinessStatePanel
           kind="error"
-          title="Account details could not be loaded"
+          title={t('console.account.states.loadErrorTitle', '账户详情加载失败')}
           description={loadError}
           onRetry={() => void loadAccountDetails()}
           className="min-h-[400px] rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-white/5 dark:bg-[#252525]"
@@ -75,8 +83,8 @@ export function AccountView() {
       <div className="p-4 lg:p-6 w-full mx-auto animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#121212]">
         <BusinessStatePanel
           kind="empty"
-          title="Account details are unavailable"
-          description="The account summary API returned no displayable account data."
+          title={t('console.account.states.emptyTitle', '账户详情不可用')}
+          description={t('console.account.states.emptyDescription', '账户摘要暂时没有可展示的数据。')}
           onRetry={() => void loadAccountDetails()}
           className="min-h-[400px] rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-white/5 dark:bg-[#252525]"
         />
@@ -91,15 +99,7 @@ export function AccountView() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-2 border-b border-slate-200 dark:border-white/5 pb-4">
         <div className="flex items-center gap-2">
           <User className="w-6 h-6 text-lobster-500" />
-          <h1 className="text-xl lg:text-2xl font-bold text-slate-800 dark:text-white tracking-tight">账户详情与财务总览</h1>
-        </div>
-        <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-left sm:text-right">
-          <p className="max-w-2xl text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-            {readOnlyAccountActions}
-          </p>
-          <span className="shrink-0 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
-            Read-only
-          </span>
+          <h1 className="text-xl lg:text-2xl font-bold text-slate-800 dark:text-white tracking-tight">{t("console.account.accountview.text.jkt39d", "账户详情与财务总览")}</h1>
         </div>
       </div>
 
@@ -122,8 +122,7 @@ export function AccountView() {
                   {data.name}
                   {data.isVerified && (
                     <span className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded text-[10px] font-medium tracking-wide flex items-center gap-1 uppercase">
-                      <ShieldCheck className="w-3 h-3" /> 已实名认证
-                    </span>
+                      <ShieldCheck className="w-3 h-3" /> {t("console.account.accountview.text.1nytjk3", "已实名认证")}</span>
                   )}
                 </h2>
                 <span className="text-xs bg-gradient-to-r from-lobster-500 to-amber-500 text-white px-3 py-1 rounded-full font-semibold shadow-sm w-fit inline-flex items-center gap-1">
@@ -137,21 +136,21 @@ export function AccountView() {
                    <span className="text-slate-700 dark:text-slate-300">{data.email}</span>
                 </div>
                 <div className="flex items-center gap-1.5 flex-1 min-w-[200px]">
-                   <span className="text-slate-500 font-medium">应用账户 ID:</span>
+                   <span className="text-slate-500 font-medium">{t("console.account.accountview.text.oygc4f", "应用账户 ID:")}</span>
                    <span className="font-mono text-slate-800 dark:text-slate-300">{data.id}</span>
                    <CopyButton
                      text={data.id}
-                     label="复制 ID"
-                     copiedLabel="已复制 ID"
+                     label={t("console.account.accountview.text.1wkrqgz", "复制 ID")}
+                     copiedLabel={t("console.account.accountview.text.qx0is3", "已复制 ID")}
                      className="text-slate-400 hover:text-slate-800 dark:hover:text-white transition-colors"
                      iconClassName="w-3.5 h-3.5"
-                     title="复制 ID"
+                     title={t("console.account.accountview.text.1wkrqgz", "复制 ID")}
                    />
                 </div>
               </div>
               <div className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400">
                 <Building className="w-4 h-4 text-slate-400 dark:text-slate-500" />
-                <span>归属组织结构: <strong className="text-slate-700 dark:text-slate-300">{data.organization}</strong></span>
+                <span>{t("console.account.accountview.text.1dvfj9r", "归属组织结构:")}<strong className="text-slate-700 dark:text-slate-300">{data.organization}</strong></span>
               </div>
             </div>
           </div>
@@ -164,16 +163,16 @@ export function AccountView() {
                 <div>
                   <div className="flex items-center gap-2 text-slate-600 dark:text-slate-300 mb-2">
                     <Wallet className="w-5 h-5 text-lobster-500 dark:text-lobster-400" />
-                    <span className="font-medium text-sm">主账户可用积分</span>
+                    <span className="font-medium text-sm">{t("console.account.accountview.text.cv3rj3", "主账户可用积分")}</span>
                   </div>
                   <div className="text-4xl font-bold text-slate-900 dark:text-white tracking-tight flex items-end gap-2">
-                   {data.availableCredits.toLocaleString()}<span className="text-xl font-medium text-slate-300 ml-1">积分</span>
+                   {data.availableCredits.toLocaleString()}<span className="text-xl font-medium text-slate-300 ml-1">{t("console.account.accountview.text.1f5u8y0", "积分")}</span>
                   </div>
                 </div>
                 <div className="mt-6 flex items-center justify-between">
-                  <div className="text-xs text-slate-400">预计可支撑并发调用约 <strong className="text-white">{data.estDaysRemaining} 天</strong></div>
+                  <div className="text-xs text-slate-400">{t("console.account.accountview.text.kp8u5l", "预计可支撑并发调用约")}<strong className="text-white">{data.estDaysRemaining} {t("console.account.accountview.text.cae2ro", "天")}</strong></div>
                   <Link to="/console/billing?tab=recharge" className="text-xs font-bold bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-lg transition-colors border border-white/5 flex items-center gap-1 shadow-sm">
-                    去充值 <ArrowRight className="w-3 h-3" />
+                    {t("console.account.accountview.text.1p5af6r", "去充值")}<ArrowRight className="w-3 h-3" />
                   </Link>
                 </div>
               </div>
@@ -183,11 +182,10 @@ export function AccountView() {
                <div>
                   <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 mb-2">
                     <CreditCard className="w-5 h-5 text-blue-500" />
-                    <span className="font-medium text-sm">本月实时消耗 (积分)</span>
+                    <span className="font-medium text-sm">{t("console.account.accountview.text.6viaxg", "本月实时消耗 (积分)")}</span>
                   </div>
                   <div className="text-3xl font-bold text-slate-800 dark:text-white tracking-tight">
-                    {data.monthlyConsumption} 积分
-                  </div>
+                    {data.monthlyConsumption} {t("console.account.accountview.text.1f5u8y0", "积分")}</div>
                </div>
                <div className="mt-6 space-y-3">
                  <div className="flex justify-between items-center text-sm">
@@ -198,8 +196,7 @@ export function AccountView() {
                    </div>
                  </div>
                  <Link to="/console/usage" className="block text-right text-xs text-blue-600 dark:text-blue-400 font-medium hover:underline pt-1">
-                   查看调用流水趋势
-                 </Link>
+                   {t("console.account.accountview.text.1f9vykp", "查看调用流水趋势")}</Link>
                </div>
             </div>
           </div>
@@ -208,27 +205,23 @@ export function AccountView() {
           <div className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-2xl shadow-sm overflow-hidden">
             <div className="p-5 border-b border-slate-200 dark:border-white/5 flex items-center justify-between bg-slate-50 dark:bg-[#1e1e1e]/50">
               <h3 className="font-bold text-slate-800 dark:text-white flex items-center gap-2">
-                <Briefcase className="w-4 h-4 text-lobster-500" /> 会计与发票资质 (Invoice Settings)
-              </h3>
-              <span className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-400">
-                Read-only
-              </span>
+                <Briefcase className="w-4 h-4 text-lobster-500" /> {t("console.account.accountview.text.1szp7hq", "会计与发票资质 (Invoice Settings)")}</h3>
             </div>
             <div className="p-6 grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8">
               <div>
-                <label className="block text-[11px] text-slate-500 font-medium mb-1 uppercase tracking-wider">组织全称 (Company Name)</label>
+                <label className="block text-[11px] text-slate-500 font-medium mb-1 uppercase tracking-wider">{t("console.account.accountview.text.1gtss35", "组织全称 (Company Name)")}</label>
                 <div className="font-medium text-slate-800 dark:text-slate-200">{data.invoiceSettings.orgFull}</div>
               </div>
               <div>
-                <label className="block text-[11px] text-slate-500 font-medium mb-1 uppercase tracking-wider">统一社会信用代码/税号 (Tax ID)</label>
+                <label className="block text-[11px] text-slate-500 font-medium mb-1 uppercase tracking-wider">{t("console.account.accountview.text.1aghgqg", "统一社会信用代码/税号 (Tax ID)")}</label>
                 <div className="font-medium text-slate-800 dark:text-slate-200 font-mono">{data.invoiceSettings.taxId}</div>
               </div>
               <div>
-                <label className="block text-[11px] text-slate-500 font-medium mb-1 uppercase tracking-wider">自动扣款授权账户 (Payment Method)</label>
+                <label className="block text-[11px] text-slate-500 font-medium mb-1 uppercase tracking-wider">{t("console.account.accountview.text.fvxx5m", "自动扣款授权账户 (Payment Method)")}</label>
                 <div className="font-medium text-slate-800 dark:text-slate-200">{data.invoiceSettings.paymentMethod}</div>
               </div>
               <div>
-                <label className="block text-[11px] text-slate-500 font-medium mb-1 uppercase tracking-wider">发票抬头类型 (Invoice Type)</label>
+                <label className="block text-[11px] text-slate-500 font-medium mb-1 uppercase tracking-wider">{t("console.account.accountview.text.13ln09y", "发票抬头类型 (Invoice Type)")}</label>
                 <div className="font-medium text-slate-800 dark:text-slate-200">{data.invoiceSettings.invoiceType}</div>
               </div>
             </div>
@@ -246,38 +239,35 @@ export function AccountView() {
                  <ShieldCheck className="w-6 h-6 text-emerald-600 dark:text-emerald-500" />
                </div>
                <div>
-                 <h3 className="text-lg font-bold text-slate-800 dark:text-white">API 网关安全矩阵</h3>
-                 <p className="text-[13px] text-emerald-600 dark:text-emerald-400 mt-0.5 font-medium">企业级防护已全面就绪</p>
+                 <h3 className="text-lg font-bold text-slate-800 dark:text-white">{t("console.account.accountview.text.1hhhkge", "API 网关安全矩阵")}</h3>
+                 <p className="text-[13px] text-emerald-600 dark:text-emerald-400 mt-0.5 font-medium">{t("console.account.accountview.text.1vv77gs", "企业级防护已全面就绪")}</p>
                </div>
              </div>
 
              <div className="space-y-4 relative z-10 mb-6 border-b border-slate-100 dark:border-white/5 pb-6">
                <div className="flex items-center justify-between text-sm">
                  <span className="text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                   <Smartphone className="w-4 h-4 text-slate-400 dark:text-slate-500" /> MFA 多因素认证
-                 </span>
+                   <Smartphone className="w-4 h-4 text-slate-400 dark:text-slate-500" /> {t("console.account.accountview.text.1a4jolo", "MFA 多因素认证")}</span>
                  {data.security.mfaEnabled ? (
-                   <span className="bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 px-2 py-0.5 rounded text-xs font-bold">已启用</span>
+                   <span className="bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 px-2 py-0.5 rounded text-xs font-bold">{t("console.account.accountview.text.1w2s4cy", "已启用")}</span>
                  ) : (
-                   <span className="bg-slate-100 dark:bg-white/5 px-2 py-0.5 rounded text-xs font-bold text-slate-500">未启用</span>
+                   <span className="bg-slate-100 dark:bg-white/5 px-2 py-0.5 rounded text-xs font-bold text-slate-500">{t("console.account.accountview.text.1tylsuy", "未启用")}</span>
                  )}
                </div>
                <div className="flex items-center justify-between text-sm">
                  <span className="text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                   <KeyRound className="w-4 h-4 text-slate-400 dark:text-slate-500" /> 网关单日并发峰值
-                 </span>
+                   <KeyRound className="w-4 h-4 text-slate-400 dark:text-slate-500" /> {t("console.account.accountview.text.1b49ze", "网关单日并发峰值")}</span>
                  <span className="text-slate-800 dark:text-slate-200 font-mono font-medium">{data.security.qpsLimit} QPS</span>
                </div>
                <div className="flex items-center justify-between text-sm">
                  <span className="text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                   <ShieldCheck className="w-4 h-4 text-slate-400 dark:text-slate-500" /> IP 跨域调用白名单
-                 </span>
-                 <span className="text-blue-600 dark:text-blue-400 font-medium">配置中 ({data.security.ipWhitelistCount})</span>
+                   <ShieldCheck className="w-4 h-4 text-slate-400 dark:text-slate-500" /> {t("console.account.accountview.text.3tw1jr", "IP 跨域调用白名单")}</span>
+                 <span className="text-blue-600 dark:text-blue-400 font-medium">{t("console.account.accountview.text.13tq7ml", "配置中 (")}{data.security.ipWhitelistCount})</span>
                </div>
              </div>
 
              <div className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-center text-sm font-medium text-slate-500 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-slate-400">
-               Read-only security summary
+               {t('console.account.securitySummary', '安全状态摘要')}
              </div>
           </div>
 
@@ -285,8 +275,7 @@ export function AccountView() {
           <div className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-2xl shadow-sm overflow-hidden">
              <div className="p-5 border-b border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-[#1e1e1e]/50 flex justify-between items-center">
                <h3 className="font-bold text-slate-800 dark:text-white flex items-center gap-2 text-sm">
-                 <LogIn className="w-4 h-4 text-slate-500 dark:text-slate-400" /> 管理员登录日志
-               </h3>
+                 <LogIn className="w-4 h-4 text-slate-500 dark:text-slate-400" /> {t("console.account.accountview.text.crsn0u", "管理员登录日志")}</h3>
              </div>
              <div className="p-2">
                {data.loginLogs.map((log, i) => (

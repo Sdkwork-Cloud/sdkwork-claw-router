@@ -27,6 +27,12 @@ async fn app_contract_routes_return_standard_not_implemented_envelope() {
     let cases = [
         (Method::GET, "/app/v3/api/iam/api_keys", "fetchKeys"),
         (Method::POST, "/app/v3/api/iam/api_keys", "createKey"),
+        (Method::PATCH, "/app/v3/api/iam/api_keys/key-1", "updateKey"),
+        (
+            Method::DELETE,
+            "/app/v3/api/iam/api_keys/key-1",
+            "deleteKey",
+        ),
     ];
 
     for (method, path, operation) in cases {

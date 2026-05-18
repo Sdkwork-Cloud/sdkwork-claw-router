@@ -1,3 +1,4 @@
+use sdkwork_claw_product::application::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
 use std::process::Command;
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::time::{SystemTime, UNIX_EPOCH};
@@ -11,7 +12,7 @@ static DB_COUNTER: AtomicU64 = AtomicU64::new(0);
 #[test]
 fn installer_cli_reports_status_and_ensures_sqlite_database_once() {
     let database_url = unique_sqlite_url();
-    let binary = env!("CARGO_BIN_EXE_sdkwork-claw-installer");
+    let binary = env!("CARGO_BIN_EXE_clawrouterctl");
 
     let status_before = run_installer(binary, &database_url, "status");
     assert!(status_before.status.success());
@@ -28,6 +29,10 @@ fn installer_cli_reports_status_and_ensures_sqlite_database_once() {
     assert_eq!("not_run", ensure_first_payload["lastCatalogRefreshStatus"]);
     assert_eq!("created", ensure_first_payload["bootstrapAdmin"]["status"]);
     assert_eq!("admin", ensure_first_payload["bootstrapAdmin"]["username"]);
+    assert_eq!(
+        "admin@sdkwork.com",
+        ensure_first_payload["bootstrapAdmin"]["email"]
+    );
     assert_eq!("10", ensure_first_payload["bootstrapAdmin"]["tenantId"]);
     assert_eq!(
         "20",
@@ -148,10 +153,99 @@ fn installer_cli_reports_status_and_ensures_sqlite_database_once() {
 }
 
 #[tokio::test]
+async fn installer_cli_resets_admin_password_without_printing_secret() {
+    let database_url = unique_sqlite_url();
+    let binary = env!("CARGO_BIN_EXE_clawrouterctl");
+
+    let ensure = Command::new(binary)
+        .arg("ensure")
+        .env("SDKWORK_CLAW_DATABASE_URL", &database_url)
+        .env("SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS", "1")
+        .env("SDKWORK_CLAW_DEPLOYMENT_MODE", "desktop")
+        .env("SDKWORK_CLAW_INSTALL_ENVIRONMENT", "test")
+        .env("SDKWORK_CLAW_INSTALL_SEED_PROFILE", "commercial")
+        .env(
+            "SDKWORK_CLAW_BOOTSTRAP_ADMIN_PASSWORD",
+            "Admin-Cli-Original-Password-2026!",
+        )
+        .output()
+        .unwrap();
+    assert!(
+        ensure.status.success(),
+        "ensure failed: {}",
+        stderr_trim(&ensure)
+    );
+
+    let reset = run_installer_with_args(
+        binary,
+        &database_url,
+        &[
+            "reset-admin",
+            "--password",
+            "Admin-Cli-Rotated-Password-2026!",
+        ],
+    );
+    assert!(
+        reset.status.success(),
+        "reset-admin failed: {}",
+        stderr_trim(&reset)
+    );
+    let reset_payload = stdout_json(&reset);
+    assert_eq!("reset_admin", reset_payload["status"]);
+    assert_eq!("admin", reset_payload["username"]);
+    assert_eq!("admin@sdkwork.com", reset_payload["email"]);
+    assert_eq!("10", reset_payload["tenantId"]);
+    assert_eq!("20", reset_payload["organizationId"]);
+    assert_eq!("1", reset_payload["userId"]);
+    assert_eq!(true, reset_payload["passwordChanged"]);
+    assert!(
+        reset_payload.get("initialPassword").is_none(),
+        "reset-admin output must not print the provided password"
+    );
+
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect(&database_url)
+        .await
+        .unwrap();
+    let password_hash: String = sqlx::query_scalar(
+        r#"
+        SELECT c.credential_hash
+        FROM iam_user u
+        JOIN iam_credential c
+          ON c.tenant_id = u.tenant_id
+         AND c.user_id = u.id
+         AND c.credential_type = 'password'
+         AND c.status = 'active'
+        WHERE u.tenant_id = '10'
+          AND u.username = 'admin'
+        ORDER BY c.updated_at DESC, c.id DESC
+        LIMIT 1
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert!(
+        !Pbkdf2Sha256PasswordHasher
+            .verify_password("Admin-Cli-Original-Password-2026!", &password_hash)
+            .unwrap(),
+        "reset-admin must make the old password invalid"
+    );
+    assert!(
+        Pbkdf2Sha256PasswordHasher
+            .verify_password("Admin-Cli-Rotated-Password-2026!", &password_hash)
+            .unwrap(),
+        "reset-admin must write the new password using the normal IAM hash format"
+    );
+    pool.close().await;
+}
+
+#[tokio::test]
 async fn installer_cli_refresh_catalog_auto_install_uses_requested_catalog_root() {
     let database_url = unique_sqlite_url();
     let catalog_root = single_vendor_catalog_root("openai");
-    let binary = env!("CARGO_BIN_EXE_sdkwork-claw-installer");
+    let binary = env!("CARGO_BIN_EXE_clawrouterctl");
 
     let refresh = run_installer_with_args(
         binary,
@@ -176,6 +270,10 @@ async fn installer_cli_refresh_catalog_auto_install_uses_requested_catalog_root(
     assert_eq!(true, refresh_payload["externalCatalog"]);
     assert_eq!("created", refresh_payload["bootstrapAdmin"]["status"]);
     assert_eq!("admin", refresh_payload["bootstrapAdmin"]["username"]);
+    assert_eq!(
+        "admin@sdkwork.com",
+        refresh_payload["bootstrapAdmin"]["email"]
+    );
     assert_eq!("10", refresh_payload["bootstrapAdmin"]["tenantId"]);
     assert_eq!("20", refresh_payload["bootstrapAdmin"]["organizationId"]);
     assert_eq!(true, refresh_payload["bootstrapAdmin"]["generatedPassword"]);
@@ -252,7 +350,7 @@ async fn installer_cli_refresh_catalog_auto_install_uses_requested_catalog_root(
 async fn installer_cli_dry_run_prepares_schema_without_importing_catalog_facts() {
     let database_url = unique_sqlite_url();
     let catalog_root = single_vendor_catalog_root("openai");
-    let binary = env!("CARGO_BIN_EXE_sdkwork-claw-installer");
+    let binary = env!("CARGO_BIN_EXE_clawrouterctl");
 
     let dry_run = run_installer_with_args(
         binary,
@@ -351,7 +449,7 @@ async fn installer_cli_dry_run_prepares_schema_without_importing_catalog_facts()
 #[tokio::test]
 async fn installer_cli_vendor_refresh_on_empty_database_imports_only_requested_vendor() {
     let database_url = unique_sqlite_url();
-    let binary = env!("CARGO_BIN_EXE_sdkwork-claw-installer");
+    let binary = env!("CARGO_BIN_EXE_clawrouterctl");
 
     let refresh = run_installer_with_args(
         binary,
@@ -397,7 +495,7 @@ async fn installer_cli_vendor_refresh_on_empty_database_imports_only_requested_v
 async fn installer_cli_recovers_from_failed_first_catalog_refresh() {
     let database_url = unique_sqlite_url();
     let catalog_root = single_vendor_catalog_root("openai");
-    let binary = env!("CARGO_BIN_EXE_sdkwork-claw-installer");
+    let binary = env!("CARGO_BIN_EXE_clawrouterctl");
     let mut missing_catalog_root = std::env::temp_dir();
     missing_catalog_root.push(format!(
         "sdkwork-installer-missing-catalog-{}",
@@ -460,7 +558,7 @@ async fn installer_cli_status_remains_machine_readable_when_persisted_external_c
 {
     let database_url = unique_sqlite_url();
     let catalog_root = single_vendor_catalog_root("openai");
-    let binary = env!("CARGO_BIN_EXE_sdkwork-claw-installer");
+    let binary = env!("CARGO_BIN_EXE_clawrouterctl");
 
     let refresh = run_installer_with_args(
         binary,
@@ -491,7 +589,7 @@ async fn installer_cli_status_remains_machine_readable_when_persisted_external_c
 
 #[test]
 fn installer_cli_auto_initializes_server_sqlite_runtime_config() {
-    let binary = env!("CARGO_BIN_EXE_sdkwork-claw-installer");
+    let binary = env!("CARGO_BIN_EXE_clawrouterctl");
     let config_path = unique_runtime_config_path("server-sqlite");
 
     let output = Command::new(binary)
@@ -520,7 +618,7 @@ fn installer_cli_auto_initializes_server_sqlite_runtime_config() {
 
 #[test]
 fn installer_cli_auto_initializes_desktop_sqlite_runtime_config() {
-    let binary = env!("CARGO_BIN_EXE_sdkwork-claw-installer");
+    let binary = env!("CARGO_BIN_EXE_clawrouterctl");
     let config_path = unique_runtime_config_path("desktop-sqlite");
     let output = Command::new(binary)
         .arg("status")
@@ -545,7 +643,7 @@ fn installer_cli_auto_initializes_desktop_sqlite_runtime_config() {
 #[test]
 fn installer_cli_reports_argument_errors_as_machine_readable_errors() {
     let database_url = unique_sqlite_url();
-    let binary = env!("CARGO_BIN_EXE_sdkwork-claw-installer");
+    let binary = env!("CARGO_BIN_EXE_clawrouterctl");
 
     let unsupported_command = run_installer(binary, &database_url, "unknown-command");
     assert!(!unsupported_command.status.success());
@@ -567,11 +665,21 @@ fn installer_cli_reports_argument_errors_as_machine_readable_errors() {
         .as_str()
         .unwrap()
         .contains("--vendor requires a value"));
+
+    let missing_reset_password = run_installer_with_args(binary, &database_url, &["reset-admin"]);
+    assert!(!missing_reset_password.status.success());
+    let missing_reset_payload = stderr_json(&missing_reset_password);
+    assert_eq!("error", missing_reset_payload["status"]);
+    assert_eq!("invalid_argument", missing_reset_payload["errorCode"]);
+    assert!(missing_reset_payload["message"]
+        .as_str()
+        .unwrap()
+        .contains("reset-admin requires --password or SDKWORK_CLAW_ADMIN_RESET_PASSWORD"));
 }
 
 #[test]
 fn installer_cli_reports_invalid_env_catalog_root_as_machine_readable_config_error() {
-    let binary = env!("CARGO_BIN_EXE_sdkwork-claw-installer");
+    let binary = env!("CARGO_BIN_EXE_clawrouterctl");
     let database_url = unique_sqlite_url();
 
     let output = Command::new(binary)
@@ -598,7 +706,7 @@ fn installer_cli_reports_invalid_env_catalog_root_as_machine_readable_config_err
 
 #[test]
 fn installer_cli_validates_arguments_before_database_environment() {
-    let binary = env!("CARGO_BIN_EXE_sdkwork-claw-installer");
+    let binary = env!("CARGO_BIN_EXE_clawrouterctl");
 
     let unsupported_command = Command::new(binary)
         .arg("unknown-command")

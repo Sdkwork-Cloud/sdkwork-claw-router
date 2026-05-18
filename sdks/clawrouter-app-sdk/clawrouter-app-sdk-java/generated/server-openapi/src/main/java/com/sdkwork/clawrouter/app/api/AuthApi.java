@@ -49,6 +49,12 @@ public class AuthApi {
         return client.convertValue(raw, new TypeReference<LoginQrCodesCreateResult>() {});
     }
 
+    /** Confirm QR login code */
+    public LoginQrCodesConfirmResult loginQrCodesConfirm(IamLoginQrCodeConfirmRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.appPath("/auth/qr_login_codes/confirm"), body, null, null, "application/json");
+        return client.convertValue(raw, new TypeReference<LoginQrCodesConfirmResult>() {});
+    }
+
     /** Retrieve QR login status */
     public LoginQrCodesRetrieveResult loginQrCodesRetrieve(String qrKey) throws Exception {
         Object raw = client.get(ApiPaths.appPath("/auth/qr_login_codes/" + serializePathParameter(qrKey, new PathParameterSpec("qrKey", "simple", false)) + ""));
@@ -63,6 +69,16 @@ public class AuthApi {
         );
         Object raw = client.post(ApiPaths.appPath("/auth/registrations"), body, null, requestHeaders, "application/json");
         return client.convertValue(raw, new TypeReference<RegistrationsCreateResult>() {});
+    }
+
+    /** Retrieve public IAM auth runtime settings */
+    public RuntimeSettingsRetrieveResult runtimeSettingsRetrieve(String tenantCode, String organizationCode) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("tenant_code", tenantCode, "form", true, false, null),
+            new QueryParameterSpec("organization_code", organizationCode, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/auth/runtime_settings"), query));
+        return client.convertValue(raw, new TypeReference<RuntimeSettingsRetrieveResult>() {});
     }
 
     /** Create IAM session */
@@ -109,6 +125,12 @@ public class AuthApi {
     public VerificationCodesVerifyResult verificationCodesVerify(IamVerificationCodeVerifyRequest body) throws Exception {
         Object raw = client.post(ApiPaths.appPath("/auth/verification_codes/verify"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<VerificationCodesVerifyResult>() {});
+    }
+
+    /** Retrieve public IAM verification policy */
+    public VerificationPolicyRetrieveResult verificationPolicyRetrieve() throws Exception {
+        Object raw = client.get(ApiPaths.appPath("/auth/verification_policy"));
+        return client.convertValue(raw, new TypeReference<VerificationPolicyRetrieveResult>() {});
     }
 
     private record PathParameterSpec(String name, String style, boolean explode) {}

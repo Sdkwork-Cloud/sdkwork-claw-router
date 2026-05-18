@@ -4,7 +4,7 @@ use crate::api::base::{RequestHeaders};
 use crate::api::paths::app_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{IamCurrentSessionUpdateRequest, IamOauthSessionCreateRequest, IamPasswordResetCreateRequest, IamPasswordResetRequestCreateRequest, IamRegistrationCreateRequest, IamSessionCreateRequest, IamSessionRefreshRequest, IamVerificationCodeCreateRequest, IamVerificationCodeVerifyRequest, LoginQrCodesCreateResult, LoginQrCodesRetrieveResult, OauthAuthorizationUrlsRetrieveResult, OauthSessionsCreateResult, PasswordResetRequestsCreateResult, PasswordResetsCreateResult, RegistrationsCreateResult, SessionsCreateResult, SessionsCurrentDeleteResult, SessionsCurrentRetrieveResult, SessionsCurrentUpdateResult, SessionsRefreshResult, VerificationCodesCreateResult, VerificationCodesVerifyResult};
+use crate::models::{IamCurrentSessionUpdateRequest, IamLoginQrCodeConfirmRequest, IamOauthSessionCreateRequest, IamPasswordResetCreateRequest, IamPasswordResetRequestCreateRequest, IamRegistrationCreateRequest, IamSessionCreateRequest, IamSessionRefreshRequest, IamVerificationCodeCreateRequest, IamVerificationCodeVerifyRequest, LoginQrCodesConfirmResult, LoginQrCodesCreateResult, LoginQrCodesRetrieveResult, OauthAuthorizationUrlsRetrieveResult, OauthSessionsCreateResult, PasswordResetRequestsCreateResult, PasswordResetsCreateResult, RegistrationsCreateResult, RuntimeSettingsRetrieveResult, SessionsCreateResult, SessionsCurrentDeleteResult, SessionsCurrentRetrieveResult, SessionsCurrentUpdateResult, SessionsRefreshResult, VerificationCodesCreateResult, VerificationCodesVerifyResult, VerificationPolicyRetrieveResult};
 
 #[derive(Clone)]
 pub struct AuthApi {
@@ -52,6 +52,12 @@ impl AuthApi {
         self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
+    /// Confirm QR login code
+    pub async fn login_qr_codes_confirm(&self, body: &IamLoginQrCodeConfirmRequest) -> Result<LoginQrCodesConfirmResult, SdkworkError> {
+        let path = app_path(&"/auth/qr_login_codes/confirm".to_string());
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
+    }
+
     /// Retrieve QR login status
     pub async fn login_qr_codes_retrieve(&self, qr_key: &str) -> Result<LoginQrCodesRetrieveResult, SdkworkError> {
         let path = app_path(&format!("/auth/qr_login_codes/{}", serialize_path_parameter(qr_key, PathParameterSpec::new("qrKey", "simple", false))));
@@ -68,6 +74,16 @@ impl AuthApi {
             &[],
         );
         self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// Retrieve public IAM auth runtime settings
+    pub async fn runtime_settings_retrieve(&self, tenant_code: Option<&str>, organization_code: Option<&str>) -> Result<RuntimeSettingsRetrieveResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("tenant_code", tenant_code, "form", true, false, None),
+            QueryParameterSpec::new("organization_code", organization_code, "form", true, false, None),
+        ]);
+        let path = append_query_string(app_path(&"/auth/runtime_settings".to_string()), &query);
+        self.client.get(&path, None, None).await
     }
 
     /// Create IAM session
@@ -116,6 +132,12 @@ impl AuthApi {
     pub async fn verification_codes_verify(&self, body: &IamVerificationCodeVerifyRequest) -> Result<VerificationCodesVerifyResult, SdkworkError> {
         let path = app_path(&"/auth/verification_codes/verify".to_string());
         self.client.post(&path, Some(body), None, None, Some("application/json")).await
+    }
+
+    /// Retrieve public IAM verification policy
+    pub async fn verification_policy_retrieve(&self) -> Result<VerificationPolicyRetrieveResult, SdkworkError> {
+        let path = app_path(&"/auth/verification_policy".to_string());
+        self.client.get(&path, None, None).await
     }
 
 }

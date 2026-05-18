@@ -12,7 +12,7 @@ export class CommunicationNotificationsApi {
   }
 
 
-/** List messages */
+/** List notifications */
   async list(): Promise<NotificationsListResult> {
     return this.client.get<NotificationsListResult>(appApiPath(`/communication/notifications`));
   }

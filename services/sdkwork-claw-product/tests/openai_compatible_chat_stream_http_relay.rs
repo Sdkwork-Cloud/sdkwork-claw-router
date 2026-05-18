@@ -6,6 +6,7 @@ use axum::http::header::CONTENT_TYPE;
 use axum::http::{HeaderMap, StatusCode};
 use axum::routing::post;
 use axum::{Json, Router};
+use sdkwork_claw_product::domain::ProviderAuthProfile;
 use sdkwork_claw_product::infrastructure::provider::{
     OpenAiCompatibleChatCompletionStreamRelay, UpstreamProviderEndpoint,
 };
@@ -37,6 +38,9 @@ async fn openai_compatible_chat_stream_relay_posts_provider_model_and_passes_thr
     let response = relay
         .create_chat_completion_stream(ChatCompletionRelayRequest {
             api_key_id: 101,
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
             pricing_plan_code: "standard".to_owned(),
@@ -45,6 +49,7 @@ async fn openai_compatible_chat_stream_relay_posts_provider_model_and_passes_thr
             provider_model: "openai/global/gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+            provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
             request_body: json!({
@@ -107,6 +112,9 @@ async fn openai_compatible_chat_stream_relay_does_not_retry_retryable_upstream_s
     let response = relay
         .create_chat_completion_stream(ChatCompletionRelayRequest {
             api_key_id: 101,
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
             pricing_plan_code: "standard".to_owned(),
@@ -115,6 +123,7 @@ async fn openai_compatible_chat_stream_relay_does_not_retry_retryable_upstream_s
             provider_model: "openai/global/gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+            provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
             request_body: json!({

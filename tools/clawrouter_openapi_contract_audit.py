@@ -42,6 +42,7 @@ class ClawRouterOpenApiContractAudit:
         "batchDelete",
         "batchUpdate",
         "cancel",
+        "confirm",
         "create",
         "deactivate",
         "delete",

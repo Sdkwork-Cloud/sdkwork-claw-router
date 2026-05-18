@@ -31,7 +31,7 @@ async fn admin_announcement_route_creates_lists_updates_and_soft_deletes_items()
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
                 .body(Body::from(
-                    r#"{"title":"Gateway maintenance","target":"all","status":"draft","content":"Maintenance window at 23:00 UTC"}"#,
+                    r#"{"title":"Gateway maintenance","target":"all","status":"draft","showAsPopup":true,"content":"Maintenance window at 23:00 UTC"}"#,
                 ))
                 .unwrap(),
         )
@@ -47,6 +47,7 @@ async fn admin_announcement_route_creates_lists_updates_and_soft_deletes_items()
     );
     assert_eq!("all", create_payload["data"]["item"]["target"]);
     assert_eq!("draft", create_payload["data"]["item"]["status"]);
+    assert_eq!(true, create_payload["data"]["item"]["showAsPopup"]);
     assert_eq!(
         "Maintenance window at 23:00 UTC",
         create_payload["data"]["item"]["content"]
@@ -62,7 +63,9 @@ async fn admin_announcement_route_creates_lists_updates_and_soft_deletes_items()
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
-                .body(Body::from(r#"{"status":"published","target":"vip"}"#))
+                .body(Body::from(
+                    r#"{"status":"published","target":"vip","showAsPopup":false}"#,
+                ))
                 .unwrap(),
         )
         .await
@@ -72,6 +75,7 @@ async fn admin_announcement_route_creates_lists_updates_and_soft_deletes_items()
     let update_payload = json_payload(update_response).await;
     assert_eq!("published", update_payload["data"]["item"]["status"]);
     assert_eq!("vip", update_payload["data"]["item"]["target"]);
+    assert_eq!(false, update_payload["data"]["item"]["showAsPopup"]);
     assert!(update_payload["data"]["item"]["date"]
         .as_str()
         .unwrap()
@@ -97,6 +101,7 @@ async fn admin_announcement_route_creates_lists_updates_and_soft_deletes_items()
     assert_eq!(1, list_payload["data"]["items"].as_array().unwrap().len());
     assert_eq!("1", list_payload["data"]["items"][0]["id"]);
     assert_eq!("published", list_payload["data"]["items"][0]["status"]);
+    assert_eq!(false, list_payload["data"]["items"][0]["showAsPopup"]);
 
     let delete_response = router
         .clone()
@@ -246,6 +251,7 @@ impl AdminAnnouncementStore for TestAnnouncementStore {
                 content: command.content,
                 target: command.target,
                 status: command.status,
+                show_as_popup: command.show_as_popup,
                 date: command.requested_at,
                 deleted_at: None,
             };
@@ -280,6 +286,9 @@ impl AdminAnnouncementStore for TestAnnouncementStore {
             }
             if let Some(status) = command.status {
                 item.status = status;
+            }
+            if let Some(show_as_popup) = command.show_as_popup {
+                item.show_as_popup = show_as_popup;
             }
             item.date = command.requested_at;
             Ok(Some(item.clone()))

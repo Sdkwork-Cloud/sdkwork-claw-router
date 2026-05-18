@@ -73,6 +73,16 @@ func (a *AuthApi) LoginQrCodesCreate() (sdktypes.LoginQrCodesCreateResult, error
     return decodeResult[sdktypes.LoginQrCodesCreateResult](raw)
 }
 
+// Confirm QR login code
+func (a *AuthApi) LoginQrCodesConfirm(body sdktypes.IamLoginQrCodeConfirmRequest) (sdktypes.LoginQrCodesConfirmResult, error) {
+    raw, err := a.client.Post(AppApiPath("/auth/qr_login_codes/confirm"), body, nil, nil, "application/json")
+    if err != nil {
+        var zero sdktypes.LoginQrCodesConfirmResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.LoginQrCodesConfirmResult](raw)
+}
+
 // Retrieve QR login status
 func (a *AuthApi) LoginQrCodesRetrieve(qrKey string) (sdktypes.LoginQrCodesRetrieveResult, error) {
     raw, err := a.client.Get(AppApiPath(fmt.Sprintf("/auth/qr_login_codes/%s", SerializePathParameter(qrKey, PathParameterSpec{Name: "qrKey", Style: "simple", Explode: false}))), nil, nil)
@@ -95,6 +105,20 @@ func (a *AuthApi) RegistrationsCreate(body sdktypes.IamRegistrationCreateRequest
         return zero, err
     }
     return decodeResult[sdktypes.RegistrationsCreateResult](raw)
+}
+
+// Retrieve public IAM auth runtime settings
+func (a *AuthApi) RuntimeSettingsRetrieve(tenantCode *string, organizationCode *string) (sdktypes.RuntimeSettingsRetrieveResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "tenant_code", Value: func() interface{} { if tenantCode == nil { return nil }; return *tenantCode }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "organization_code", Value: func() interface{} { if organizationCode == nil { return nil }; return *organizationCode }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(AppApiPath("/auth/runtime_settings"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.RuntimeSettingsRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RuntimeSettingsRetrieveResult](raw)
 }
 
 // Create IAM session
@@ -169,6 +193,16 @@ func (a *AuthApi) VerificationCodesVerify(body sdktypes.IamVerificationCodeVerif
         return zero, err
     }
     return decodeResult[sdktypes.VerificationCodesVerifyResult](raw)
+}
+
+// Retrieve public IAM verification policy
+func (a *AuthApi) VerificationPolicyRetrieve() (sdktypes.VerificationPolicyRetrieveResult, error) {
+    raw, err := a.client.Get(AppApiPath("/auth/verification_policy"), nil, nil)
+    if err != nil {
+        var zero sdktypes.VerificationPolicyRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.VerificationPolicyRetrieveResult](raw)
 }
 
 type PathParameterSpec struct {

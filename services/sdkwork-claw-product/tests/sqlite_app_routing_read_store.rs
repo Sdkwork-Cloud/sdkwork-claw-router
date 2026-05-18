@@ -1,3 +1,7 @@
+use std::sync::Arc;
+
+use sdkwork_claw_product::application::ApiKeySecretCodec;
+use sdkwork_claw_product::infrastructure::crypto::RingAeadApiKeySecretCodec;
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAppRoutingReadStore;
 use sdkwork_claw_product::ports::{AppRoutingReadStore, AppRoutingSubject};
 use sqlx::sqlite::SqlitePoolOptions;
@@ -64,6 +68,76 @@ async fn sqlite_routing_channels_include_rfc3339_effective_channel_models() {
     assert_eq!(3, retry_policy.max_attempts);
     assert_eq!(vec![429, 503], retry_policy.retryable_status_codes);
     assert_eq!(25, retry_policy.backoff_ms);
+    let circuit_breaker_policy = channels[0]
+        .circuit_breaker_policy
+        .as_ref()
+        .expect("circuit breaker policy should be projected from integration_channel");
+    assert_eq!(2, circuit_breaker_policy.failure_threshold);
+}
+
+#[tokio::test]
+async fn sqlite_routing_api_keys_return_display_and_copyable_owner_key_material() {
+    let pool = sqlite_pool().await;
+    create_routing_api_key_tables(&pool).await;
+    let codec = Arc::new(api_key_secret_codec());
+    let ciphertext = codec.encode_secret("sk-owner-secret").unwrap();
+    seed_routing_api_key(&pool, &ciphertext).await;
+
+    let store = SqliteAppRoutingReadStore::with_api_key_secret_codec(pool, codec);
+    let keys = store
+        .load_routing_api_keys(Some(owner_subject()))
+        .await
+        .unwrap();
+
+    assert_eq!(1, keys.len());
+    assert_eq!("Owner Key", keys[0].name);
+    assert_eq!("sk-owner********ABCD", keys[0].display_key);
+    assert_eq!(Some("sk-owner-secret".to_owned()), keys[0].copyable_key);
+    assert_eq!("5", keys[0].total_usage);
+}
+
+#[tokio::test]
+async fn sqlite_routing_api_keys_do_not_expose_prefix_as_missing_name() {
+    let pool = sqlite_pool().await;
+    create_routing_api_key_tables(&pool).await;
+    let codec = Arc::new(api_key_secret_codec());
+    let ciphertext = codec.encode_secret("sk-owner-secret").unwrap();
+    seed_routing_api_key(&pool, &ciphertext).await;
+    sqlx::query("UPDATE iam_gateway_api_key SET name = '' WHERE id = 100")
+        .execute(&pool)
+        .await
+        .unwrap();
+
+    let store = SqliteAppRoutingReadStore::with_api_key_secret_codec(pool, codec);
+    let keys = store
+        .load_routing_api_keys(Some(owner_subject()))
+        .await
+        .unwrap();
+
+    assert_eq!(1, keys.len());
+    assert_eq!("API Key #100", keys[0].name);
+    assert_eq!("sk-owner********ABCD", keys[0].display_key);
+}
+
+#[tokio::test]
+async fn sqlite_routing_api_keys_fail_closed_when_copyable_key_exists_without_codec() {
+    let pool = sqlite_pool().await;
+    create_routing_api_key_tables(&pool).await;
+    let ciphertext = api_key_secret_codec()
+        .encode_secret("sk-owner-secret")
+        .unwrap();
+    seed_routing_api_key(&pool, &ciphertext).await;
+
+    let store = SqliteAppRoutingReadStore::new(pool);
+    let error = store
+        .load_routing_api_keys(Some(owner_subject()))
+        .await
+        .unwrap_err();
+
+    assert_eq!(
+        "api key secret codec is required to load routing copyable key material",
+        error.to_string()
+    );
 }
 
 #[tokio::test]
@@ -126,6 +200,79 @@ fn owner_subject() -> AppRoutingSubject {
         organization_id: 20,
         user_id: 30,
     }
+}
+
+fn api_key_secret_codec() -> RingAeadApiKeySecretCodec {
+    RingAeadApiKeySecretCodec::new("0123456789abcdef0123456789abcdef").unwrap()
+}
+
+async fn create_routing_api_key_tables(pool: &SqlitePool) {
+    for statement in [
+        r#"
+        CREATE TABLE iam_gateway_api_key (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            user_id INTEGER NOT NULL,
+            name TEXT,
+            key_prefix TEXT,
+            key_display_masked TEXT,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            status INTEGER NOT NULL,
+            created_at TEXT,
+            updated_at TEXT,
+            deleted_at TEXT
+        )
+        "#,
+        r#"
+        CREATE TABLE ai_usage_fact (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            user_id INTEGER NOT NULL,
+            api_key_id INTEGER NOT NULL,
+            request_count INTEGER NOT NULL,
+            status INTEGER NOT NULL
+        )
+        "#,
+    ] {
+        sqlx::query(statement).execute(pool).await.unwrap();
+    }
+}
+
+async fn seed_routing_api_key(pool: &SqlitePool, copyable_key_ciphertext: &str) {
+    let metadata = serde_json::json!({
+        "copyableKeyCiphertext": copyable_key_ciphertext,
+        "copyableKeyStorage": "encrypted-managed-console-read-model"
+    })
+    .to_string();
+    sqlx::query(
+        r#"
+        INSERT INTO iam_gateway_api_key (
+            id, tenant_id, organization_id, user_id, name, key_prefix, key_display_masked,
+            metadata, status, created_at, updated_at
+        )
+        VALUES (
+            100, 10, 20, 30, 'Owner Key', 'sk-owner', 'sk-owner********ABCD',
+            ?, 1, '2026-04-29 12:00:00', '2026-04-29 12:05:00'
+        )
+        "#,
+    )
+    .bind(metadata)
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_usage_fact (
+            id, tenant_id, organization_id, user_id, api_key_id, request_count, status
+        )
+        VALUES (9001, 10, 20, 30, 100, 5, 1)
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
 }
 
 async fn create_routing_usage_tables(pool: &SqlitePool) {
@@ -205,6 +352,7 @@ async fn create_routing_channel_tables(pool: &SqlitePool) {
             capabilities TEXT,
             timeout_ms INTEGER,
             retry_policy TEXT,
+            circuit_breaker_policy TEXT,
             weight INTEGER,
             status INTEGER NOT NULL,
             health_status INTEGER NOT NULL,
@@ -266,13 +414,14 @@ async fn seed_routing_channel(pool: &SqlitePool) {
         r#"
         INSERT INTO integration_channel (
             id, tenant_id, organization_id, name, provider_code, protocol, access_type,
-            base_url_override, capabilities, timeout_ms, retry_policy, weight, status, health_status, last_latency_ms,
+            base_url_override, capabilities, timeout_ms, retry_policy, circuit_breaker_policy, weight, status, health_status, last_latency_ms,
             rpm_limit, consecutive_error_count, account_id, priority
         )
         VALUES (
             2001, 10, 20, 'OpenAI primary', 'openai', 1, 1,
             'https://api.openai.test/v1', '["llm"]', 60000,
             '{"max_attempts":3,"retryable_status_codes":[429,503],"backoff_ms":25}',
+            '{"failure_threshold":2}',
             100, 1, 1, 120,
             600, 0, 9001, 1
         )

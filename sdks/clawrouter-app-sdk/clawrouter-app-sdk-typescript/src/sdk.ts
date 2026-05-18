@@ -2,6 +2,7 @@ import { HttpClient, createHttpClient } from './http/client';
 import type { SdkworkAppConfig } from './types/common';
 import type { AuthTokenManager } from '@sdkwork/sdk-common';
 
+import { AgentsApi, createAgentsApi } from './api/agents';
 import { AiApi, createAiApi } from './api/ai';
 import { AuthApi, createAuthApi } from './api/auth';
 import { BillingApi, createBillingApi } from './api/billing';
@@ -14,6 +15,7 @@ import { PlatformApi, createPlatformApi } from './api/platform';
 export class SdkworkAppClient {
   private httpClient: HttpClient;
 
+  public readonly agents: AgentsApi;
   public readonly ai: AiApi;
   public readonly auth: AuthApi;
   public readonly billing: BillingApi;
@@ -25,6 +27,8 @@ export class SdkworkAppClient {
 
   constructor(config: SdkworkAppConfig) {
     this.httpClient = createHttpClient(config);
+    this.agents = createAgentsApi(this.httpClient);
+
     this.ai = createAiApi(this.httpClient);
 
     this.auth = createAuthApi(this.httpClient);

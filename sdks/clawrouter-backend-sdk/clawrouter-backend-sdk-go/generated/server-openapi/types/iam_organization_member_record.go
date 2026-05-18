@@ -4,7 +4,9 @@ package types
 type IamOrganizationMemberRecord struct {
 	Id string `json:"id"`
 	JoinedAt string `json:"joined_at"`
+	LeftAt string `json:"left_at"`
 	OrganizationId string `json:"organization_id"`
+	Remark string `json:"remark"`
 	RoleCode string `json:"role_code"`
 	Status string `json:"status"`
 	TenantId string `json:"tenant_id"`

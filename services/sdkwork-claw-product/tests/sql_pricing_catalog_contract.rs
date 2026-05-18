@@ -6,7 +6,7 @@ use sdkwork_claw_product::domain::{
     RouteCandidate, RoutingCapability, RoutingFallbackMode, RoutingPolicyScope,
 };
 use sdkwork_claw_product::infrastructure::sql::catalog::{
-    PricingCatalogRows, SqlPricingCatalogSnapshot,
+    PricingCatalogRows, RefreshableSqlPricingCatalog, SqlPricingCatalogSnapshot,
 };
 use sdkwork_claw_product::infrastructure::sql::rows::{
     AiModelRow, ApiKeyGroupMetricSnapshotRow, ApiKeyGroupRow, GatewayAccessPolicyRow,
@@ -138,8 +138,8 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     }
 
     assert!(
-        !sql.contains("$1"),
-        "snapshot load queries must be executable without request-time parameters"
+        !sql.contains("api_key_id") && !sql.contains("group_id = $"),
+        "snapshot load queries must not depend on request-time route selection parameters"
     );
     assert!(
         !sql.contains("gateway_model"),
@@ -201,6 +201,12 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "provider route snapshot query must project integration_channel.retry_policy for provider egress retry control"
     );
     assert!(
+        PricingCatalogSql::load_provider_routes().contains("COALESCE(c.health_status, 1) = 1")
+            && PricingCatalogSql::load_provider_routes()
+                .contains("$1 * INTERVAL '1 second'"),
+        "provider route snapshot query must filter circuit-broken channels until the recovery probe window opens"
+    );
+    assert!(
         PricingCatalogSql::load_provider_account_pool_routes().contains("base_url"),
         "account pool snapshot query must project resolved provider base_url for model-less route-scoped forwarding"
     );
@@ -234,6 +240,13 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         PricingCatalogSql::load_provider_account_pool_routes()
             .contains("NULLIF(COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template), '')"),
         "account pool snapshot query must filter channels without resolved base_url"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_account_pool_routes()
+            .contains("COALESCE(c.health_status, 1) = 1")
+            && PricingCatalogSql::load_provider_account_pool_routes()
+                .contains("$1 * INTERVAL '1 second'"),
+        "account pool snapshot query must filter circuit-broken channels until the recovery probe window opens"
     );
     assert!(
         PricingCatalogSql::load_routing_policies().contains("default_profile_id"),
@@ -357,6 +370,7 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
         key_prefix: "sk-test".to_owned(),
         key_display_masked: "sk-test********ABCD".to_owned(),
         key_hash: "hash:sk-test".to_owned(),
+        copyable_key: Some("sk-test-secret".to_owned()),
         policy_id: Some(700),
         quota_policy_id: Some(900),
         created_at: "2026-04-10 20:55:41".to_owned(),
@@ -408,6 +422,9 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
 
     let group = ApiKeyGroupRow {
         id: 10,
+        tenant_id: 10,
+        organization_id: 20,
+        name: "Standard Group".to_owned(),
         code: "standard-group".to_owned(),
         pricing_plan_code: "standard".to_owned(),
         rate_multiplier: "1.200000".to_owned(),
@@ -500,6 +517,9 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
 fn row_mappers_reject_invalid_decimal_and_unknown_price_side() {
     let invalid_group = ApiKeyGroupRow {
         id: 10,
+        tenant_id: 10,
+        organization_id: 20,
+        name: "Standard Group".to_owned(),
         code: "standard-group".to_owned(),
         pricing_plan_code: "standard".to_owned(),
         rate_multiplier: "not-a-decimal".to_owned(),
@@ -637,6 +657,36 @@ fn sql_catalog_snapshot_rejects_invalid_rows_before_serving_catalog() {
     let result = SqlPricingCatalogSnapshot::from_rows(rows);
 
     assert!(result.is_err());
+}
+
+#[test]
+fn refreshable_sql_catalog_serves_replaced_snapshot_without_rebuilding_runtime_routes() {
+    let initial_snapshot = SqlPricingCatalogSnapshot::from_rows(priced_catalog_rows()).unwrap();
+    let catalog = RefreshableSqlPricingCatalog::new(initial_snapshot);
+
+    let initial_routes = catalog.list_provider_routes("openai/global/gpt-4o-mini");
+    assert_eq!(2, initial_routes.len());
+    assert!(initial_routes
+        .iter()
+        .any(|route| route.provider_code == "openrouter"));
+
+    let mut refreshed_rows = priced_catalog_rows();
+    refreshed_rows
+        .provider_routes
+        .retain(|route| route.provider_code != "openrouter");
+    refreshed_rows
+        .provider_account_pool_routes
+        .retain(|route| route.provider_code != "openrouter");
+    let refreshed_snapshot = SqlPricingCatalogSnapshot::from_rows(refreshed_rows).unwrap();
+
+    catalog.replace_snapshot(refreshed_snapshot);
+
+    let refreshed_routes = catalog.list_provider_routes("openai/global/gpt-4o-mini");
+    assert_eq!(1, refreshed_routes.len());
+    assert_eq!("azure_openai", refreshed_routes[0].provider_code);
+    let account_pool_routes = catalog.list_provider_account_pool_routes();
+    assert_eq!(1, account_pool_routes.len());
+    assert_eq!("azure_openai", account_pool_routes[0].provider_code);
 }
 
 #[test]
@@ -813,6 +863,9 @@ fn priced_catalog_rows() -> PricingCatalogRows {
         }],
         api_key_groups: vec![ApiKeyGroupRow {
             id: 10,
+            tenant_id: 10,
+            organization_id: 20,
+            name: "Standard Group".to_owned(),
             code: "standard-group".to_owned(),
             pricing_plan_code: "standard".to_owned(),
             rate_multiplier: "1.000000".to_owned(),
@@ -828,6 +881,7 @@ fn priced_catalog_rows() -> PricingCatalogRows {
             key_prefix: "sk-test".to_owned(),
             key_display_masked: "sk-test********ABCD".to_owned(),
             key_hash: "hash:sk-test".to_owned(),
+            copyable_key: Some("sk-test-secret".to_owned()),
             policy_id: Some(700),
             quota_policy_id: Some(900),
             created_at: "2026-04-10 20:55:41".to_owned(),

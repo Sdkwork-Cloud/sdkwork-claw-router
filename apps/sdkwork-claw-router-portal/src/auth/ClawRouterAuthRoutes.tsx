@@ -6,7 +6,7 @@ import { getClawRouterIamRuntime } from 'sdkwork-claw-router-commons/runtime';
 import { useClawRouterAuthRuntimeConfig } from './clawRouterAuthConfig';
 import { clawRouterTauriAuthHostReadiness } from './clawRouterTauriAuthHost';
 
-const AUTH_METHOD_UNAVAILABLE_MESSAGE = 'This Claw Router auth method is not available in the current app contract.';
+const AUTH_METHOD_UNAVAILABLE_MESSAGE = 'This Claw Router sign-in method is temporarily unavailable.';
 
 void clawRouterTauriAuthHostReadiness;
 

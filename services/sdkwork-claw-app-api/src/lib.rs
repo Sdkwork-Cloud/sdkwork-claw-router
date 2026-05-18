@@ -10,11 +10,13 @@ use sdkwork_claw_config::{
 };
 use sdkwork_claw_http::AppSubjectBoundaryConfig;
 use sdkwork_claw_product::application::{
-    ApiKeySecretHasher, EntityUuidGenerator, ModelRankingRefreshWorker,
+    ApiKeySecretCodec, ApiKeySecretHasher, EntityUuidGenerator, ModelRankingRefreshWorker,
     ModelRankingRefreshWorkerConfig, ModelRankingsService, PasswordHasher,
     Pbkdf2Sha256PasswordHasher,
 };
-use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
+use sdkwork_claw_product::infrastructure::crypto::{
+    HmacSha256ApiKeySecretHasher, RingAeadApiKeySecretCodec,
+};
 use sdkwork_claw_product::infrastructure::provider::{
     ProviderSecretMapResolver, SecretRefOpenAiCompatibleProviderHealthProbe,
     DEFAULT_HEALTH_PROBE_TIMEOUT_MILLIS,
@@ -23,13 +25,14 @@ use sdkwork_claw_product::infrastructure::sql::installer::{
     log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
 };
 use sdkwork_claw_product::infrastructure::sql::postgres::{
-    PostgresAccountSummaryReadStore, PostgresAdminAuthSettingsStore, PostgresAppAuthStore,
-    PostgresAppCommerceExchangeStore, PostgresAppGatewayTracesReadStore,
-    PostgresAppGenerationHistoryReadStore, PostgresAppMessagesReadStore,
-    PostgresAppProvidersReadStore, PostgresAppRoutingChannelCommandStore,
-    PostgresAppRoutingReadStore, PostgresAppRoutingStrategyStore, PostgresAppSessionEventStore,
-    PostgresAppSkillsReadStore, PostgresAppStoreReadStore, PostgresAppUserProfileReadStore,
-    PostgresBillingStore, PostgresCatalogLoadError, PostgresCheckoutStore, PostgresCourseStore,
+    PostgresAccountSummaryReadStore, PostgresAdminAuthSettingsStore, PostgresAppAgentRegistryStore,
+    PostgresAppAuthStore, PostgresAppCommerceExchangeStore, PostgresAppGatewayTracesReadStore,
+    PostgresAppGenerationAgentRunStore, PostgresAppGenerationHistoryReadStore,
+    PostgresAppMessagesReadStore, PostgresAppProvidersReadStore,
+    PostgresAppRoutingChannelCommandStore, PostgresAppRoutingReadStore,
+    PostgresAppRoutingStrategyStore, PostgresAppSessionEventStore, PostgresAppSkillsReadStore,
+    PostgresAppStoreReadStore, PostgresAppUserProfileReadStore, PostgresBillingStore,
+    PostgresCatalogLoadError, PostgresCheckoutStore, PostgresCourseStore,
     PostgresDashboardOverviewReadStore, PostgresForumStore, PostgresGatewayApiKeyCommandStore,
     PostgresModelRankingRefreshStore, PostgresModelRankingsReadStore, PostgresPaymentCallbackStore,
     PostgresPricingCatalogLoader, PostgresRechargeStore, PostgresSettingsStore,
@@ -38,7 +41,8 @@ use sdkwork_claw_product::infrastructure::sql::postgres::{
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
     SqlCatalogLoadError, SqliteAccountSummaryReadStore, SqliteAdminAuthSettingsStore,
-    SqliteAppAuthStore, SqliteAppCommerceExchangeStore, SqliteAppGatewayTracesReadStore,
+    SqliteAppAgentRegistryStore, SqliteAppAuthStore, SqliteAppCommerceExchangeStore,
+    SqliteAppGatewayTracesReadStore, SqliteAppGenerationAgentRunStore,
     SqliteAppGenerationHistoryReadStore, SqliteAppMessagesReadStore, SqliteAppProvidersReadStore,
     SqliteAppRoutingChannelCommandStore, SqliteAppRoutingReadStore, SqliteAppRoutingStrategyStore,
     SqliteAppSessionEventStore, SqliteAppSkillsReadStore, SqliteAppStoreReadStore,
@@ -52,18 +56,19 @@ use sdkwork_claw_product::infrastructure::sql::sqlite::{
 use sdkwork_claw_product::infrastructure::OsApiKeySecretGenerator;
 use sdkwork_claw_product::ports::PricingCatalog;
 use sdkwork_claw_product::ports::{
-    AccountSummaryReadStore, AdminAuthSettingsStore, AppAuthStore, AppCommerceExchangeReadStore,
-    AppGatewayTracesReadStore, AppGenerationHistoryReadStore, AppMessagesReadStore,
-    AppProvidersReadStore, AppRoutingChannelCommandStore, AppRoutingReadStore,
-    AppRoutingStrategyStore, AppSessionEventStore, AppSkillsCommandStore, AppSkillsReadStore,
-    AppStoreReadStore, AppUserProfileReadStore, BillingStore, CheckoutStore,
-    CourseApplicationCommandStore, CourseReadStore, DashboardOverviewReadStore,
-    ForumCommentCommandStore, ForumCommentReadStore, ForumFeedCommandStore, ForumFeedReadStore,
-    GatewayApiKeyCommandStore, GatewayApiKeyManagementReadStore, ModelRankingRefreshOutcome,
-    ModelRankingRefreshRunStatus, ModelRankingRefreshStore, ModelRankingsCacheInvalidation,
-    ModelRankingsReadModelStore, PaymentCallbackStore, ProviderHealthProbe, RechargeStore,
-    SettingsStore, SettlementsDashboardReadStore, UnconfiguredProviderHealthProbe,
-    UsageLogsReadStore, VerificationCodeSender,
+    AccountSummaryReadStore, AdminAuthSettingsStore, AppAgentRegistryStore, AppAuthStore,
+    AppCommerceExchangeReadStore, AppGatewayTracesReadStore, AppGenerationAgentRunStore,
+    AppGenerationHistoryReadStore, AppMessagesReadStore, AppProvidersReadStore,
+    AppRoutingChannelCommandStore, AppRoutingReadStore, AppRoutingStrategyStore,
+    AppSessionEventStore, AppSkillsCommandStore, AppSkillsReadStore, AppStoreReadStore,
+    AppUserProfileReadStore, BillingStore, CheckoutStore, CourseApplicationCommandStore,
+    CourseReadStore, DashboardOverviewReadStore, ForumCommentCommandStore, ForumCommentReadStore,
+    ForumFeedCommandStore, ForumFeedReadStore, GatewayApiKeyCommandStore,
+    GatewayApiKeyManagementReadStore, ModelRankingRefreshOutcome, ModelRankingRefreshRunStatus,
+    ModelRankingRefreshStore, ModelRankingsCacheInvalidation, ModelRankingsReadModelStore,
+    PaymentCallbackStore, ProviderHealthProbe, RechargeStore, SettingsStore,
+    SettlementsDashboardReadStore, UnconfiguredProviderHealthProbe, UsageLogsReadStore,
+    VerificationCodeSender,
 };
 use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
 use sqlx::{PgPool, SqlitePool};
@@ -71,9 +76,12 @@ use std::str::FromStr;
 
 pub const SERVICE_NAME: &str = "sdkwork-claw-app-api";
 type ApiKeyHasher = Arc<dyn ApiKeySecretHasher + Send + Sync>;
+type ApiKeyCodec = Arc<dyn ApiKeySecretCodec + Send + Sync>;
 type ApiKeyManagementReadStore = Arc<dyn GatewayApiKeyManagementReadStore + Send + Sync>;
 type AccountSummaryStore = Arc<dyn AccountSummaryReadStore + Send + Sync>;
+type AppAgentRegistryRuntimeStore = Arc<dyn AppAgentRegistryStore + Send + Sync>;
 type AppGatewayTracesStore = Arc<dyn AppGatewayTracesReadStore + Send + Sync>;
+type AppGenerationAgentRunRuntimeStore = Arc<dyn AppGenerationAgentRunStore + Send + Sync>;
 type AppMessagesStore = Arc<dyn AppMessagesReadStore + Send + Sync>;
 type AppGenerationHistoryStore = Arc<dyn AppGenerationHistoryReadStore + Send + Sync>;
 type AppProvidersStore = Arc<dyn AppProvidersReadStore + Send + Sync>;
@@ -125,6 +133,8 @@ pub fn router() -> Router {
         .merge(sdkwork_claw_product::api::app_gateway_traces_router())
         .merge(sdkwork_claw_product::api::app_messages_router())
         .merge(sdkwork_claw_product::api::app_generation_history_router())
+        .merge(sdkwork_claw_product::api::app_generation_agent_router())
+        .merge(sdkwork_claw_product::api::app_agent_registry_router())
         .merge(sdkwork_claw_product::api::app_store_router())
         .merge(sdkwork_claw_product::api::app_skills_router())
         .merge(sdkwork_claw_product::api::app_course_router())
@@ -164,13 +174,16 @@ pub fn router_with_api_key_management_read_store_command_store_and_api_key_secur
         app_session_event_store,
         None,
         None,
-        api_key_hasher_from_config(api_key_security_config)?,
+        api_key_hasher_from_config(&api_key_security_config)?,
+        api_key_secret_codec_from_config(&api_key_security_config)?,
         Arc::new(OsApiKeySecretGenerator),
         trusted_subject_config,
         app_session_config,
         Arc::new(Pbkdf2Sha256PasswordHasher),
         Arc::new(sdkwork_claw_product::ports::DebugVerificationCodeSender),
         true,
+        None,
+        None,
         None,
         None,
         None,
@@ -253,6 +266,8 @@ fn router_with_app_session_event_store_auth_settings_store_and_config_inner(
         .merge(sdkwork_claw_product::api::app_gateway_traces_router())
         .merge(sdkwork_claw_product::api::app_messages_router())
         .merge(sdkwork_claw_product::api::app_generation_history_router())
+        .merge(sdkwork_claw_product::api::app_generation_agent_router())
+        .merge(sdkwork_claw_product::api::app_agent_registry_router())
         .merge(sdkwork_claw_product::api::app_store_router())
         .merge(sdkwork_claw_product::api::app_skills_router())
         .merge(sdkwork_claw_product::api::app_course_router())
@@ -296,6 +311,8 @@ where
         .merge(sdkwork_claw_product::api::app_gateway_traces_router())
         .merge(sdkwork_claw_product::api::app_messages_router())
         .merge(sdkwork_claw_product::api::app_generation_history_router())
+        .merge(sdkwork_claw_product::api::app_generation_agent_router())
+        .merge(sdkwork_claw_product::api::app_agent_registry_router())
         .merge(sdkwork_claw_product::api::app_store_router())
         .merge(sdkwork_claw_product::api::app_skills_router())
         .merge(sdkwork_claw_product::api::app_course_router())
@@ -317,6 +334,7 @@ fn router_with_api_key_management_store_and_database_status(
     app_auth_store: Option<AppAuthRuntimeStore>,
     app_auth_settings_store: Option<AppAuthSettingsRuntimeStore>,
     api_key_hasher: ApiKeyHasher,
+    _api_key_secret_codec: ApiKeyCodec,
     entity_uuid_generator: EntityUuidGen,
     trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
@@ -338,6 +356,8 @@ fn router_with_api_key_management_store_and_database_status(
     app_gateway_traces_read_store: Option<AppGatewayTracesStore>,
     app_messages_read_store: Option<AppMessagesStore>,
     app_generation_history_read_store: Option<AppGenerationHistoryStore>,
+    app_generation_agent_run_store: Option<AppGenerationAgentRunRuntimeStore>,
+    app_agent_registry_store: Option<AppAgentRegistryRuntimeStore>,
     app_store_read_store: Option<AppStoreRuntimeStore>,
     app_skills_read_store: Option<AppSkillsRuntimeStore>,
     app_skills_command_store: Option<AppSkillsCommandRuntimeStore>,
@@ -523,6 +543,32 @@ fn router_with_api_key_management_store_and_database_status(
                 )),
         ),
         None => router.merge(sdkwork_claw_product::api::app_generation_history_router()),
+    };
+    router = match app_generation_agent_run_store {
+        Some(store) => router.merge(
+            sdkwork_claw_product::api::app_generation_agent_router_with_store_and_uuid_generator(
+                store,
+                Arc::new(OsApiKeySecretGenerator),
+            )
+            .layer(from_fn_with_state(
+                subject_boundary_config.clone(),
+                sdkwork_claw_http::app_request_subject_boundary,
+            )),
+        ),
+        None => router.merge(sdkwork_claw_product::api::app_generation_agent_router()),
+    };
+    router = match app_agent_registry_store {
+        Some(store) => router.merge(
+            sdkwork_claw_product::api::app_agent_registry_router_with_store(
+                store,
+                Arc::new(OsApiKeySecretGenerator),
+            )
+            .layer(from_fn_with_state(
+                subject_boundary_config.clone(),
+                sdkwork_claw_http::app_request_subject_boundary,
+            )),
+        ),
+        None => router.merge(sdkwork_claw_product::api::app_agent_registry_router()),
     };
     router = match app_store_read_store {
         Some(read_store) => router.merge(
@@ -816,7 +862,12 @@ pub async fn router_with_sqlite_product_catalog(
     app_session_config: AppSessionConfig,
     payment_webhook_config: PaymentWebhookConfig,
 ) -> Result<Router, ProductCatalogRouterError> {
-    let read_store = SqlitePricingCatalogLoader::new(pool.clone());
+    let api_key_hasher = api_key_hasher_from_config(&api_key_security_config)?;
+    let api_key_secret_codec = api_key_secret_codec_from_config(&api_key_security_config)?;
+    let read_store = SqlitePricingCatalogLoader::with_api_key_secret_codec(
+        pool.clone(),
+        api_key_secret_codec.clone(),
+    );
     let model_catalog_snapshot = read_store.load_snapshot().await?;
     let model_rankings_store =
         model_rankings_service(Arc::new(SqliteModelRankingsReadStore::new(pool.clone())));
@@ -844,24 +895,33 @@ pub async fn router_with_sqlite_product_catalog(
     let app_messages_read_store = Arc::new(SqliteAppMessagesReadStore::new(pool.clone()));
     let app_generation_history_read_store =
         Arc::new(SqliteAppGenerationHistoryReadStore::new(pool.clone()));
+    let app_generation_agent_run_store =
+        Arc::new(SqliteAppGenerationAgentRunStore::new(pool.clone()));
+    let app_agent_registry_store = Arc::new(SqliteAppAgentRegistryStore::new(pool.clone()));
     let app_store_read_store = Arc::new(SqliteAppStoreReadStore::new(pool.clone()));
     let app_skills_store = Arc::new(SqliteAppSkillsReadStore::new(pool.clone()));
     let course_store = Arc::new(SqliteCourseStore::new(pool.clone()));
     let forum_store = Arc::new(SqliteForumStore::new(pool.clone()));
     let app_providers_read_store = Arc::new(SqliteAppProvidersReadStore::new(pool.clone()));
-    let app_routing_read_store = Arc::new(SqliteAppRoutingReadStore::new(pool.clone()));
+    let app_routing_read_store = Arc::new(SqliteAppRoutingReadStore::with_api_key_secret_codec(
+        pool.clone(),
+        api_key_secret_codec.clone(),
+    ));
     let app_routing_strategy_store = Arc::new(SqliteAppRoutingStrategyStore::new(pool.clone()));
     let app_routing_channel_command_store =
         Arc::new(SqliteAppRoutingChannelCommandStore::new(pool.clone()));
     let app_auth_settings_store = Arc::new(SqliteAdminAuthSettingsStore::new(pool.clone()));
-    let api_key_hasher = api_key_hasher_from_config(api_key_security_config)?;
     Ok(router_with_api_key_management_store_and_database_status(
         Arc::new(read_store),
-        Arc::new(SqliteGatewayApiKeyCommandStore::new(pool.clone())),
+        Arc::new(SqliteGatewayApiKeyCommandStore::new(
+            pool.clone(),
+            api_key_secret_codec.clone(),
+        )),
         Arc::new(SqliteAppSessionEventStore::new(pool.clone())),
         Some(Arc::new(SqliteAppAuthStore::new(pool))),
         Some(app_auth_settings_store),
         api_key_hasher,
+        api_key_secret_codec,
         Arc::new(OsApiKeySecretGenerator),
         trusted_subject_config,
         app_session_config,
@@ -883,6 +943,8 @@ pub async fn router_with_sqlite_product_catalog(
         Some(app_gateway_traces_read_store),
         Some(app_messages_read_store),
         Some(app_generation_history_read_store),
+        Some(app_generation_agent_run_store),
+        Some(app_agent_registry_store),
         Some(app_store_read_store),
         Some(app_skills_store.clone()),
         Some(app_skills_store),
@@ -909,7 +971,12 @@ pub async fn router_with_postgres_product_catalog(
     app_session_config: AppSessionConfig,
     payment_webhook_config: PaymentWebhookConfig,
 ) -> Result<Router, ProductCatalogRouterError> {
-    let read_store = PostgresPricingCatalogLoader::new(pool.clone());
+    let api_key_hasher = api_key_hasher_from_config(&api_key_security_config)?;
+    let api_key_secret_codec = api_key_secret_codec_from_config(&api_key_security_config)?;
+    let read_store = PostgresPricingCatalogLoader::with_api_key_secret_codec(
+        pool.clone(),
+        api_key_secret_codec.clone(),
+    );
     let model_catalog_snapshot = read_store.load_snapshot().await?;
     let model_rankings_store =
         model_rankings_service(Arc::new(PostgresModelRankingsReadStore::new(pool.clone())));
@@ -937,24 +1004,33 @@ pub async fn router_with_postgres_product_catalog(
     let app_messages_read_store = Arc::new(PostgresAppMessagesReadStore::new(pool.clone()));
     let app_generation_history_read_store =
         Arc::new(PostgresAppGenerationHistoryReadStore::new(pool.clone()));
+    let app_generation_agent_run_store =
+        Arc::new(PostgresAppGenerationAgentRunStore::new(pool.clone()));
+    let app_agent_registry_store = Arc::new(PostgresAppAgentRegistryStore::new(pool.clone()));
     let app_store_read_store = Arc::new(PostgresAppStoreReadStore::new(pool.clone()));
     let app_skills_store = Arc::new(PostgresAppSkillsReadStore::new(pool.clone()));
     let course_store = Arc::new(PostgresCourseStore::new(pool.clone()));
     let forum_store = Arc::new(PostgresForumStore::new(pool.clone()));
     let app_providers_read_store = Arc::new(PostgresAppProvidersReadStore::new(pool.clone()));
-    let app_routing_read_store = Arc::new(PostgresAppRoutingReadStore::new(pool.clone()));
+    let app_routing_read_store = Arc::new(PostgresAppRoutingReadStore::with_api_key_secret_codec(
+        pool.clone(),
+        api_key_secret_codec.clone(),
+    ));
     let app_routing_strategy_store = Arc::new(PostgresAppRoutingStrategyStore::new(pool.clone()));
     let app_routing_channel_command_store =
         Arc::new(PostgresAppRoutingChannelCommandStore::new(pool.clone()));
     let app_auth_settings_store = Arc::new(PostgresAdminAuthSettingsStore::new(pool.clone()));
-    let api_key_hasher = api_key_hasher_from_config(api_key_security_config)?;
     Ok(router_with_api_key_management_store_and_database_status(
         Arc::new(read_store),
-        Arc::new(PostgresGatewayApiKeyCommandStore::new(pool.clone())),
+        Arc::new(PostgresGatewayApiKeyCommandStore::new(
+            pool.clone(),
+            api_key_secret_codec.clone(),
+        )),
         Arc::new(PostgresAppSessionEventStore::new(pool.clone())),
         Some(Arc::new(PostgresAppAuthStore::new(pool))),
         Some(app_auth_settings_store),
         api_key_hasher,
+        api_key_secret_codec,
         Arc::new(OsApiKeySecretGenerator),
         trusted_subject_config,
         app_session_config,
@@ -976,6 +1052,8 @@ pub async fn router_with_postgres_product_catalog(
         Some(app_gateway_traces_read_store),
         Some(app_messages_read_store),
         Some(app_generation_history_read_store),
+        Some(app_generation_agent_run_store),
+        Some(app_agent_registry_store),
         Some(app_store_read_store),
         Some(app_skills_store.clone()),
         Some(app_skills_store),
@@ -1140,7 +1218,8 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
 ) -> Result<Router, ProductCatalogRouterError> {
     let request_limits_config = RequestLimitsConfig::from_env_or_runtime_toml(runtime_toml)
         .map_err(ProductCatalogRouterError::Config)?;
-    let api_key_hasher = api_key_hasher_from_config(api_key_security_config)?;
+    let api_key_hasher = api_key_hasher_from_config(&api_key_security_config)?;
+    let api_key_secret_codec = api_key_secret_codec_from_config(&api_key_security_config)?;
     let provider_health_probe =
         build_provider_health_probe(provider_secret_map_config, runtime_toml)?;
     match config.engine {
@@ -1164,7 +1243,10 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                     .await?;
                 log_bootstrap_admin_report(SERVICE_NAME, &install_report);
             }
-            let read_store = SqlitePricingCatalogLoader::new(pool.clone());
+            let read_store = SqlitePricingCatalogLoader::with_api_key_secret_codec(
+                pool.clone(),
+                api_key_secret_codec.clone(),
+            );
             let model_catalog_snapshot = read_store.load_snapshot().await?;
             let model_rankings_store =
                 model_rankings_service(Arc::new(SqliteModelRankingsReadStore::new(pool.clone())));
@@ -1204,12 +1286,19 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
             let app_messages_read_store = Arc::new(SqliteAppMessagesReadStore::new(pool.clone()));
             let app_generation_history_read_store =
                 Arc::new(SqliteAppGenerationHistoryReadStore::new(pool.clone()));
+            let app_generation_agent_run_store =
+                Arc::new(SqliteAppGenerationAgentRunStore::new(pool.clone()));
+            let app_agent_registry_store = Arc::new(SqliteAppAgentRegistryStore::new(pool.clone()));
             let app_store_read_store = Arc::new(SqliteAppStoreReadStore::new(pool.clone()));
             let app_skills_store = Arc::new(SqliteAppSkillsReadStore::new(pool.clone()));
             let course_store = Arc::new(SqliteCourseStore::new(pool.clone()));
             let forum_store = Arc::new(SqliteForumStore::new(pool.clone()));
             let app_providers_read_store = Arc::new(SqliteAppProvidersReadStore::new(pool.clone()));
-            let app_routing_read_store = Arc::new(SqliteAppRoutingReadStore::new(pool.clone()));
+            let app_routing_read_store =
+                Arc::new(SqliteAppRoutingReadStore::with_api_key_secret_codec(
+                    pool.clone(),
+                    api_key_secret_codec.clone(),
+                ));
             let app_routing_strategy_store =
                 Arc::new(SqliteAppRoutingStrategyStore::new(pool.clone()));
             let app_routing_channel_command_store = Arc::new(
@@ -1226,11 +1315,15 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                     })?;
             Ok(router_with_api_key_management_store_and_database_status(
                 Arc::new(read_store),
-                Arc::new(SqliteGatewayApiKeyCommandStore::new(pool.clone())),
+                Arc::new(SqliteGatewayApiKeyCommandStore::new(
+                    pool.clone(),
+                    api_key_secret_codec.clone(),
+                )),
                 Arc::new(SqliteAppSessionEventStore::new(pool.clone())),
                 Some(Arc::new(SqliteAppAuthStore::new(pool.clone()))),
                 Some(Arc::new(SqliteAdminAuthSettingsStore::new(pool.clone()))),
                 api_key_hasher,
+                api_key_secret_codec,
                 Arc::new(OsApiKeySecretGenerator),
                 trusted_subject_config,
                 app_session_config,
@@ -1252,6 +1345,8 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(app_gateway_traces_read_store),
                 Some(app_messages_read_store),
                 Some(app_generation_history_read_store),
+                Some(app_generation_agent_run_store),
+                Some(app_agent_registry_store),
                 Some(app_store_read_store),
                 Some(app_skills_store.clone()),
                 Some(app_skills_store),
@@ -1285,7 +1380,10 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                     .await?;
                 log_bootstrap_admin_report(SERVICE_NAME, &install_report);
             }
-            let read_store = PostgresPricingCatalogLoader::new(pool.clone());
+            let read_store = PostgresPricingCatalogLoader::with_api_key_secret_codec(
+                pool.clone(),
+                api_key_secret_codec.clone(),
+            );
             let model_catalog_snapshot = read_store.load_snapshot().await?;
             let model_rankings_store =
                 model_rankings_service(Arc::new(PostgresModelRankingsReadStore::new(pool.clone())));
@@ -1325,13 +1423,21 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
             let app_messages_read_store = Arc::new(PostgresAppMessagesReadStore::new(pool.clone()));
             let app_generation_history_read_store =
                 Arc::new(PostgresAppGenerationHistoryReadStore::new(pool.clone()));
+            let app_generation_agent_run_store =
+                Arc::new(PostgresAppGenerationAgentRunStore::new(pool.clone()));
+            let app_agent_registry_store =
+                Arc::new(PostgresAppAgentRegistryStore::new(pool.clone()));
             let app_store_read_store = Arc::new(PostgresAppStoreReadStore::new(pool.clone()));
             let app_skills_store = Arc::new(PostgresAppSkillsReadStore::new(pool.clone()));
             let course_store = Arc::new(PostgresCourseStore::new(pool.clone()));
             let forum_store = Arc::new(PostgresForumStore::new(pool.clone()));
             let app_providers_read_store =
                 Arc::new(PostgresAppProvidersReadStore::new(pool.clone()));
-            let app_routing_read_store = Arc::new(PostgresAppRoutingReadStore::new(pool.clone()));
+            let app_routing_read_store =
+                Arc::new(PostgresAppRoutingReadStore::with_api_key_secret_codec(
+                    pool.clone(),
+                    api_key_secret_codec.clone(),
+                ));
             let app_routing_strategy_store =
                 Arc::new(PostgresAppRoutingStrategyStore::new(pool.clone()));
             let app_routing_channel_command_store = Arc::new(
@@ -1350,11 +1456,15 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                     })?;
             Ok(router_with_api_key_management_store_and_database_status(
                 Arc::new(read_store),
-                Arc::new(PostgresGatewayApiKeyCommandStore::new(pool.clone())),
+                Arc::new(PostgresGatewayApiKeyCommandStore::new(
+                    pool.clone(),
+                    api_key_secret_codec.clone(),
+                )),
                 Arc::new(PostgresAppSessionEventStore::new(pool.clone())),
                 Some(Arc::new(PostgresAppAuthStore::new(pool.clone()))),
                 Some(Arc::new(PostgresAdminAuthSettingsStore::new(pool.clone()))),
                 api_key_hasher,
+                api_key_secret_codec,
                 Arc::new(OsApiKeySecretGenerator),
                 trusted_subject_config,
                 app_session_config,
@@ -1376,6 +1486,8 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(app_gateway_traces_read_store),
                 Some(app_messages_read_store),
                 Some(app_generation_history_read_store),
+                Some(app_generation_agent_run_store),
+                Some(app_agent_registry_store),
                 Some(app_store_read_store),
                 Some(app_skills_store.clone()),
                 Some(app_skills_store),
@@ -1446,10 +1558,19 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
 }
 
 fn api_key_hasher_from_config(
-    config: ApiKeySecurityConfig,
+    config: &ApiKeySecurityConfig,
 ) -> Result<ApiKeyHasher, ProductCatalogRouterError> {
     Ok(Arc::new(
         HmacSha256ApiKeySecretHasher::new(config.pepper_secret())
+            .map_err(|error| ProductCatalogRouterError::Config(error.to_string()))?,
+    ))
+}
+
+fn api_key_secret_codec_from_config(
+    config: &ApiKeySecurityConfig,
+) -> Result<ApiKeyCodec, ProductCatalogRouterError> {
+    Ok(Arc::new(
+        RingAeadApiKeySecretCodec::new(config.pepper_secret())
             .map_err(|error| ProductCatalogRouterError::Config(error.to_string()))?,
     ))
 }

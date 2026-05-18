@@ -68,6 +68,7 @@ client.SetHeader("X-Custom-Header", "value");
 
 ## API Modules
 
+- `client.Agents` - agents API
 - `client.Ai` - ai API
 - `client.Auth` - auth API
 - `client.Billing` - billing API
@@ -78,6 +79,20 @@ client.SetHeader("X-Custom-Header", "value");
 - `client.Platform` - platform API
 
 ## Usage Examples
+
+### agents
+
+```csharp
+// List user agents
+var query = new Dictionary<string, object>
+{
+    ["page"] = 1,
+    ["page_size"] = 2,
+    ["q"] = "q",
+};
+var result = await client.Agents.ListAsync(query);
+Console.WriteLine(result);
+```
 
 ### ai
 

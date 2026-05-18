@@ -217,6 +217,9 @@ pub struct ProviderRelayOpenAiSectionConfig {
 pub struct ProviderRelayRuntimeSectionConfig {
     pub response_timeout_millis: Option<u64>,
     pub health_probe_timeout_millis: Option<u64>,
+    pub catalog_refresh_interval_millis: Option<u64>,
+    pub circuit_breaker_recovery_window_millis: Option<u64>,
+    pub failure_strategy: Option<String>,
 }
 
 #[derive(Debug, Clone, Default, PartialEq, Eq, Deserialize)]

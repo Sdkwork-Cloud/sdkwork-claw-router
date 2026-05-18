@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{ProviderRetryPolicy};
+
 /// Update routing channel request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct UpdateRoutingChannelRequest {
@@ -29,6 +31,11 @@ pub struct UpdateRoutingChannelRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub protocol: Option<String>,
 
+    /// Retry policy field on update routing channel request.
+    #[serde(rename = "retryPolicy")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub retry_policy: Option<ProviderRetryPolicy>,
+
     /// Vault/KMS secret reference. Plaintext credential fields are forbidden.
     #[serde(rename = "secretRef")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -37,6 +44,11 @@ pub struct UpdateRoutingChannelRequest {
     /// Status field on update routing channel request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
+
+    /// Timeout ms field on update routing channel request.
+    #[serde(rename = "timeoutMs")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub timeout_ms: Option<i64>,
 
     /// Vendor field on update routing channel request.
     #[serde(default, skip_serializing_if = "Option::is_none")]

@@ -1,8 +1,13 @@
 use serde::{Deserialize, Serialize};
 
-/// Created API key metadata with masked key material.
+/// Updated API key metadata. Authenticated owner management responses include copyableKey for console copy actions.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AppApiKeyItem {
+    /// Full plaintext API key returned only by authenticated owner management responses; public catalog responses omit this field.
+    #[serde(rename = "copyableKey")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub copyable_key: Option<String>,
+
     /// Created field on app api key item.
     pub created: String,
 
@@ -11,6 +16,11 @@ pub struct AppApiKeyItem {
 
     /// Group field on app api key item.
     pub group: String,
+
+    /// Display name snapshot for the bound API key group so the list view does not need to preload selectable groups.
+    #[serde(rename = "groupName")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub group_name: Option<String>,
 
     /// Id field on app api key item.
     pub id: String,

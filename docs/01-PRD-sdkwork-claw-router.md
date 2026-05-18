@@ -62,7 +62,7 @@
 | `/console/account` | 账户详情 | 账户余额、流水、积分、VIP、权益 |
 | `/console/recharge` | 充值 | VIP/积分/余额充值包、充值方式 |
 | `/console/settings` | 配置中心 | 语言、主题、通知、默认路由偏好 |
-| `/console/messages` | 消息中心 | 系统通知、账务提醒、风控提醒 |
+| `/console/notifications` | 通知中心 | 系统通知、账务提醒、风控提醒 |
 | `/console/providers` | 工具配置 | 用户侧 Provider、代理、凭据引用、本地工具 |
 
 Console 的 API 统一走 Java app-api 标准路径 `/app/v3/api/{resource-path}`，通过 `spring-ai-plus-app-api` 生成 SDK 调用。不同部署环境只切换 SDK base URL，不改变资源路径。

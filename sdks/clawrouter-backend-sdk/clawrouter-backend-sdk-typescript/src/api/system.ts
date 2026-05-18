@@ -1,47 +1,8 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminTokenLimitCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, UsersCreateResult, UsersUpdateResult } from '../types';
+import type { AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminTokenLimitCreateRequest, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult } from '../types';
 
-
-export interface SystemUsersCreateParams {
-  xRequestId?: string;
-}
-
-export interface SystemUsersUpdateParams {
-  xRequestId?: string;
-}
-
-export class SystemUsersApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Create user */
-  async create(body: AdminUserCreateRequest, params?: SystemUsersCreateParams): Promise<UsersCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<UsersCreateResult>(backendApiPath(`/system/users`), body, undefined, requestHeaders, 'application/json');
-  }
-
-/** Update user */
-  async update(body: AdminUserUpdateRequest, params?: SystemUsersUpdateParams): Promise<UsersUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.put<UsersUpdateResult>(backendApiPath(`/system/users`), body, undefined, requestHeaders, 'application/json');
-  }
-}
 
 export interface SystemRecordsListParams {
   page?: number;
@@ -386,7 +347,6 @@ export class SystemApi {
   public readonly monitor: SystemMonitorApi;
   public readonly rateLimits: SystemRateLimitsApi;
   public readonly records: SystemRecordsApi;
-  public readonly users: SystemUsersApi;
 
   constructor(client: HttpClient) {
     this.client = client;
@@ -397,7 +357,6 @@ export class SystemApi {
     this.monitor = new SystemMonitorApi(client);
     this.rateLimits = new SystemRateLimitsApi(client);
     this.records = new SystemRecordsApi(client);
-    this.users = new SystemUsersApi(client);
   }
 
 }

@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AdminSkillArtifactCreateRequest, AdminSkillArtifactUpdateRequest, AdminSkillAssetCreateRequest, AdminSkillAssetUpdateRequest, AdminSkillCategoryCreateRequest, AdminSkillCreateRequest, AdminSkillPackageCreateRequest, AdminSkillPackageUpdateRequest, AdminSkillReviewRequest, AdminSkillUpdateRequest, SkillsArtifactsCreateResult, SkillsArtifactsDeleteResult, SkillsArtifactsListResult, SkillsArtifactsRetrieveResult, SkillsArtifactsUpdateResult, SkillsAssetsCreateResult, SkillsAssetsDeleteResult, SkillsAssetsListResult, SkillsAssetsRetrieveResult, SkillsAssetsUpdateResult, SkillsCategoriesCreateResult, SkillsCategoriesListResult, SkillsCreateResult, SkillsDeleteResult, SkillsDisableResult, SkillsEnableResult, SkillsListResult, SkillsPackageCreateResult, SkillsPackageDeleteResult, SkillsPackageDisableResult, SkillsPackageEnableResult, SkillsPackageListResult, SkillsPackageRetrieveResult, SkillsPackageUpdateResult, SkillsPublishResult, SkillsRetrieveResult, SkillsReviewApproveResult, SkillsReviewRejectResult, SkillsUnpublishResult, SkillsUpdateResult } from '../types';
+import type { AdminSkillArtifactCreateRequest, AdminSkillArtifactUpdateRequest, AdminSkillAssetCreateRequest, AdminSkillAssetUpdateRequest, AdminSkillCategoryCreateRequest, AdminSkillCategoryUpdateRequest, AdminSkillCreateRequest, AdminSkillPackageCreateRequest, AdminSkillPackageUpdateRequest, AdminSkillReviewRequest, AdminSkillUpdateRequest, SkillsArtifactsCreateResult, SkillsArtifactsDeleteResult, SkillsArtifactsListResult, SkillsArtifactsRetrieveResult, SkillsArtifactsUpdateResult, SkillsAssetsCreateResult, SkillsAssetsDeleteResult, SkillsAssetsListResult, SkillsAssetsRetrieveResult, SkillsAssetsUpdateResult, SkillsCategoriesCreateResult, SkillsCategoriesDeleteResult, SkillsCategoriesListResult, SkillsCategoriesUpdateResult, SkillsCreateResult, SkillsDeleteResult, SkillsDisableResult, SkillsEnableResult, SkillsListResult, SkillsPackageCreateResult, SkillsPackageDeleteResult, SkillsPackageDisableResult, SkillsPackageEnableResult, SkillsPackageListResult, SkillsPackageRetrieveResult, SkillsPackageUpdateResult, SkillsPublishResult, SkillsRetrieveResult, SkillsReviewApproveResult, SkillsReviewRejectResult, SkillsUnpublishResult, SkillsUpdateResult } from '../types';
 
 
 export interface EcosystemSkillsReviewApproveParams {
@@ -274,6 +274,14 @@ export interface EcosystemSkillsCategoriesCreateParams {
   xRequestId?: string;
 }
 
+export interface EcosystemSkillsCategoriesDeleteParams {
+  xRequestId?: string;
+}
+
+export interface EcosystemSkillsCategoriesUpdateParams {
+  xRequestId?: string;
+}
+
 export class EcosystemSkillsCategoriesApi {
   private client: HttpClient;
 
@@ -296,6 +304,28 @@ export class EcosystemSkillsCategoriesApi {
       {}
     );
     return this.client.post<SkillsCategoriesCreateResult>(backendApiPath(`/ecosystem/skills/categories`), body, undefined, requestHeaders, 'application/json');
+  }
+
+/** Delete skill category */
+  async delete(categoryId: string, params?: EcosystemSkillsCategoriesDeleteParams): Promise<SkillsCategoriesDeleteResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.delete<SkillsCategoriesDeleteResult>(backendApiPath(`/ecosystem/skills/categories/${serializePathParameter(categoryId, { name: 'categoryId', style: 'simple', explode: false })}`), undefined, requestHeaders);
+  }
+
+/** Update skill category */
+  async update(categoryId: string, body: AdminSkillCategoryUpdateRequest, params?: EcosystemSkillsCategoriesUpdateParams): Promise<SkillsCategoriesUpdateResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.put<SkillsCategoriesUpdateResult>(backendApiPath(`/ecosystem/skills/categories/${serializePathParameter(categoryId, { name: 'categoryId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
   }
 }
 

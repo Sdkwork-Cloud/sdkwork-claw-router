@@ -52,15 +52,15 @@ type RedeemCodeServiceResult = {
 export class BillingService {
   static async fetchRedeemHistory(): Promise<RedeemHistoryItem[]> {
     const result = await getClawRouterAppSdkClient().billing.users.current.coupons.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch redeem history');
-    return readRequiredApiItems(result, 'Failed to fetch redeem history')
+    ensurePlusApiSuccess(result, 'console.billing.errors.redeemHistoryFallback');
+    return readRequiredApiItems(result, 'console.billing.errors.redeemHistoryFallback')
       .map(normalizeRedeemHistoryItem);
   }
 
   static async fetchRechargeHistory(): Promise<RechargeHistoryItem[]> {
     const result = await getClawRouterAppSdkClient().billing.payments.records.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch recharge history');
-    return readRequiredApiItems(result, 'Failed to fetch recharge history')
+    ensurePlusApiSuccess(result, 'console.billing.errors.rechargeHistoryFallback');
+    return readRequiredApiItems(result, 'console.billing.errors.rechargeHistoryFallback')
       .map(normalizeRechargeHistoryItem);
   }
 
@@ -71,7 +71,7 @@ export class BillingService {
         request,
         createRequestParams('commerce-coupon-redeem'),
       );
-      ensurePlusApiSuccess(result, 'Failed to redeem code');
+      ensurePlusApiSuccess(result, 'console.billing.errors.redeemFallback');
       const response = isRecord(result) ? result : {};
       const data = readApiRecord(result);
       const message =
@@ -99,7 +99,7 @@ function getRedeemErrorMessage(error: unknown): string {
   if (error instanceof Error && error.message.trim()) {
     return error.message;
   }
-  return 'Failed to redeem code';
+  return 'console.billing.errors.redeemFallback';
 }
 
 function requiredText(value: string, fieldName: string): string {

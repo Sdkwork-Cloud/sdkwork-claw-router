@@ -9,6 +9,8 @@ public class DashboardOverviewSummary {
     private Integer musicRequests;
     private Integer requestCount;
     private Double rpm;
+    private Integer totalRequestCount;
+    private Double totalUsedCredits;
     private Double tpm;
     private Double usedCredits;
     private Integer videoRequests;
@@ -67,6 +69,22 @@ public class DashboardOverviewSummary {
     
     public void setRpm(Double rpm) {
         this.rpm = rpm;
+    }
+
+    public Integer getTotalRequestCount() {
+        return this.totalRequestCount;
+    }
+    
+    public void setTotalRequestCount(Integer totalRequestCount) {
+        this.totalRequestCount = totalRequestCount;
+    }
+
+    public Double getTotalUsedCredits() {
+        return this.totalUsedCredits;
+    }
+    
+    public void setTotalUsedCredits(Double totalUsedCredits) {
+        this.totalUsedCredits = totalUsedCredits;
     }
 
     public Double getTpm() {

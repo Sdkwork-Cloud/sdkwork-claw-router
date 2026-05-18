@@ -58,6 +58,7 @@ class FrontendOperationAudit:
     SDK_CLIENTS = {
         "app": "getClawRouterAppSdkClient",
         "backend": "getClawRouterBackendSdkClient",
+        "openai_v1": "getClawRouterAiSdkClient",
     }
     APPBASE_IAM_RUNTIME_PATTERN = re.compile(r"\bgetClawRouterIamRuntime\s*\(\s*\)\s*\.service\b")
     APPBASE_IAM_CONTROLLER_PATTERN = re.compile(
@@ -66,6 +67,7 @@ class FrontendOperationAudit:
     APPBASE_IAM_CONTROLLER_OPERATIONS = (
         "bootstrap",
         "checkLoginQrCodeStatus",
+        "confirmLoginQrCode",
         "generateLoginQrCode",
         "getOAuthAuthorizationUrl",
         "register",

@@ -7,6 +7,11 @@ pub struct AdminAnnouncementUpdateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub content: Option<String>,
 
+    /// Optional popup-display toggle update.
+    #[serde(rename = "showAsPopup")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub show_as_popup: Option<bool>,
+
     /// Optional announcement publication state update.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,

@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{ProviderRetryPolicy};
+
 /// Routing channel item schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct RoutingChannelItem {
@@ -50,11 +52,21 @@ pub struct RoutingChannelItem {
     #[serde(rename = "providerCode")]
     pub provider_code: String,
 
+    /// Retry policy field on routing channel item.
+    #[serde(rename = "retryPolicy")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub retry_policy: Option<ProviderRetryPolicy>,
+
     /// Rpm field on routing channel item.
     pub rpm: i64,
 
     /// Status field on routing channel item.
     pub status: String,
+
+    /// Timeout ms field on routing channel item.
+    #[serde(rename = "timeoutMs")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub timeout_ms: Option<i64>,
 
     /// Vendor field on routing channel item.
     pub vendor: String,

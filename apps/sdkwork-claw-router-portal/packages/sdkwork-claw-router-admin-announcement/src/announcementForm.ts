@@ -4,6 +4,7 @@ type AnnouncementFormValues = {
   title: string;
   target: string;
   status: string;
+  showAsPopup: boolean;
   content: string;
 };
 
@@ -12,6 +13,7 @@ export function createAnnouncementInputFromForm(values: AnnouncementFormValues):
     title: values.title.trim(),
     target: readAnnouncementTarget(values.target),
     status: readAnnouncementStatus(values.status),
+    showAsPopup: values.showAsPopup,
     content: values.content.trim(),
   };
 }
@@ -21,12 +23,17 @@ export function createAnnouncementUpdateInputFromForm(values: AnnouncementFormVa
     title: values.title.trim(),
     target: readAnnouncementTarget(values.target),
     status: readAnnouncementStatus(values.status),
+    showAsPopup: values.showAsPopup,
     content: values.content.trim(),
   };
 }
 
 export function createAnnouncementPublishInput(): AnnouncementUpdateInput {
-  return { status: 'published' };
+  return createAnnouncementStatusInput('published');
+}
+
+export function createAnnouncementStatusInput(status: AnnouncementCreateInput['status']): AnnouncementUpdateInput {
+  return { status };
 }
 
 function readAnnouncementTarget(value: string): AnnouncementCreateInput['target'] {

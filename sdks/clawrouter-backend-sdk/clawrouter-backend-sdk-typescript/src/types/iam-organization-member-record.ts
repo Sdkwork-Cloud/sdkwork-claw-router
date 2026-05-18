@@ -4,8 +4,12 @@ export interface IamOrganizationMemberRecord {
   id?: string;
   /** Joined at field on iam organization member record. */
   joined_at?: string;
+  /** Left at field on iam organization member record. */
+  left_at?: string;
   /** Organization id field on iam organization member record. */
   organization_id?: string;
+  /** Remark field on iam organization member record. */
+  remark?: string;
   /** Role code field on iam organization member record. */
   role_code?: string;
   /** Status field on iam organization member record. */

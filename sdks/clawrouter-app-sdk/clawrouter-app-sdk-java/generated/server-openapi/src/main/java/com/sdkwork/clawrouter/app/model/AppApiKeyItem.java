@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.app.model;
 import java.util.List;
 
 public class AppApiKeyItem {
+    private String copyableKey;
     private String created;
     private String expires;
     private String group;
@@ -15,6 +16,14 @@ public class AppApiKeyItem {
     private String rate;
     private String status;
     private String usedQuota;
+
+    public String getCopyableKey() {
+        return this.copyableKey;
+    }
+    
+    public void setCopyableKey(String copyableKey) {
+        this.copyableKey = copyableKey;
+    }
 
     public String getCreated() {
         return this.created;

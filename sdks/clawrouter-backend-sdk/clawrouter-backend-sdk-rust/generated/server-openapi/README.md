@@ -59,6 +59,7 @@ client.set_header("X-Custom-Header", "value");
 
 ## API Modules
 
+- `client.agents()` - agents API
 - `client.ai()` - ai API
 - `client.billing()` - billing API
 - `client.content()` - content API
@@ -69,6 +70,22 @@ client.set_header("X-Custom-Header", "value");
 - `client.system()` - system API
 
 ## Usage Examples
+
+### agents
+
+```rust
+use std::collections::HashMap;
+// List managed agents
+let mut query = HashMap::new();
+query.insert("q".to_string(), serde_json::json!("q"));
+query.insert("owner_user_id".to_string(), serde_json::json!(2));
+query.insert("status".to_string(), serde_json::json!("active"));
+query.insert("visibility".to_string(), serde_json::json!("private"));
+query.insert("page".to_string(), serde_json::json!(5));
+query.insert("page_size".to_string(), serde_json::json!(6));
+let result = client.agents().list(Some(&query)).await?;
+println!("{result:?}");
+```
 
 ### ai
 
@@ -81,8 +98,8 @@ println!("{result:?}");
 ### billing
 
 ```rust
-// List batches
-let result = client.billing().coupon_batches_list().await?;
+// List referral stats
+let result = client.billing().referrals_stats_list().await?;
 println!("{result:?}");
 ```
 
@@ -138,8 +155,8 @@ println!("{result:?}");
 ### system
 
 ```rust
-// List dashboard data
-let result = client.system().dashboard_admin_overview_retrieve().await?;
+// Retrieve IAM auth runtime settings
+let result = client.system().auth_settings_retrieve().await?;
 println!("{result:?}");
 ```
 

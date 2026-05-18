@@ -1,4 +1,5 @@
 import { readApiRecord } from './api-result.ts';
+import { dispatchPortalSessionChange } from './portal-session-events.ts';
 
 const APP_SESSION_STORAGE_KEY = 'sdkwork.clawRouter.appSession.v1';
 const EXPIRY_SKEW_SECONDS = 30;
@@ -45,6 +46,7 @@ export function storeAppSessionFromResult(result: unknown): StoredAppSessionToke
   memoryToken = stored;
   storageLoaded = true;
   writeSessionStorage(stored);
+  dispatchPortalSessionChange();
   return stored;
 }
 
@@ -105,6 +107,7 @@ export function clearStoredAppSessionToken(): void {
   memoryToken = null;
   storageLoaded = true;
   removeSessionStorage();
+  dispatchPortalSessionChange();
 }
 
 function readAppSessionPayload(result: unknown): Record<string, unknown> {

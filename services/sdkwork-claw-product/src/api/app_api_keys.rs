@@ -2,10 +2,10 @@ use std::net::IpAddr;
 use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
 
-use axum::extract::State;
+use axum::extract::{Path, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
-use axum::routing::get;
+use axum::routing::{get, patch};
 use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
@@ -17,10 +17,14 @@ use crate::domain::{
     GatewayApiKey, QuotaPolicy,
 };
 use crate::ports::{
-    CreateGatewayApiKeyCommand, GatewayApiKeyCommandStore, GatewayApiKeyManagementReadStore,
-    GatewayApiKeyManagementSnapshot, PricingCatalog,
+    CreateGatewayApiKeyCommand, DeleteGatewayApiKeyCommand, EnsureDefaultApiKeyGroupCommand,
+    GatewayApiKeyCommandStore, GatewayApiKeyManagementReadStore, GatewayApiKeyManagementSnapshot,
+    PricingCatalog, UpdateGatewayApiKeyCommand,
 };
 
+const DEFAULT_API_KEY_GROUP: &str = "default";
+const DEFAULT_API_KEY_GROUP_NAME: &str = "Default";
+const DEFAULT_PRICING_PLAN_CODE: &str = "standard";
 const UNRESTRICTED_MODALITIES: [&str; 5] = ["text", "image", "video", "audio", "music"];
 const HASH_ALG_HMAC_SHA256: &str = "HMAC_SHA256";
 const SECRET_VERSION: i64 = 1;
@@ -66,9 +70,28 @@ struct AppApiKeyListResponse {
 
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
+struct AppApiKeyGroupListResponse {
+    items: Vec<AppApiKeyGroupResponse>,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
 struct AppApiKeyCreateResponse {
     item: AppApiKeyItemResponse,
     raw_key: String,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AppApiKeyUpdateResponse {
+    item: AppApiKeyItemResponse,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AppApiKeyDeleteResponse {
+    id: String,
+    deleted: bool,
 }
 
 #[derive(Debug, Serialize)]
@@ -77,7 +100,10 @@ struct AppApiKeyItemResponse {
     id: String,
     name: String,
     masked_key: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    copyable_key: Option<String>,
     group: String,
+    group_name: String,
     rate: Option<String>,
     quota: String,
     used_quota: String,
@@ -110,12 +136,29 @@ struct AppApiKeyCreateRequest {
     expires: Option<String>,
 }
 
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct AppApiKeyUpdateRequest {
+    name: Option<String>,
+    group: Option<String>,
+    group_id: Option<i64>,
+    quota: Option<String>,
+    is_unlimited_quota: Option<bool>,
+    modalities: Option<Vec<String>>,
+    ip_limit: Option<String>,
+    expires: Option<String>,
+}
+
 pub fn app_api_key_router<C>(catalog: Arc<C>) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
     Router::new()
         .route("/app/v3/api/iam/api_keys", get(fetch_catalog_keys::<C>))
+        .route(
+            "/app/v3/api/iam/api_key_groups",
+            get(fetch_catalog_key_groups::<C>),
+        )
         .with_state(ReadOnlyAppApiKeyState { catalog })
 }
 
@@ -127,6 +170,11 @@ pub fn app_api_key_router_with_read_store_and_command_store(
 ) -> Router {
     Router::new()
         .route("/app/v3/api/iam/api_keys", get(fetch_keys).post(create_key))
+        .route("/app/v3/api/iam/api_key_groups", get(fetch_key_groups))
+        .route(
+            "/app/v3/api/iam/api_keys/{api_key_id}",
+            patch(update_key).delete(delete_key),
+        )
         .with_state(AppApiKeyState {
             read_store,
             command_store,
@@ -140,7 +188,19 @@ where
     C: PricingCatalog + Send + Sync + 'static,
 {
     let snapshot = GatewayApiKeyManagementSnapshot::from_pricing_catalog(state.catalog.as_ref());
-    Json(PlusApiResult::success(list_response(&snapshot)))
+    Json(PlusApiResult::success(public_catalog_list_response(
+        &snapshot,
+    )))
+}
+
+async fn fetch_catalog_key_groups<C>(
+    State(state): State<ReadOnlyAppApiKeyState<C>>,
+) -> impl IntoResponse
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    let snapshot = GatewayApiKeyManagementSnapshot::from_pricing_catalog(state.catalog.as_ref());
+    Json(PlusApiResult::success(group_list_response(&snapshot)))
 }
 
 async fn fetch_keys(State(state): State<AppApiKeyState>, headers: HeaderMap) -> Response {
@@ -170,6 +230,42 @@ async fn fetch_keys(State(state): State<AppApiKeyState>, headers: HeaderMap) -> 
             Json(PlusApiResult::error(
                 "5000",
                 format!("api key read model is unavailable: {error}"),
+            )),
+        )
+            .into_response(),
+    }
+}
+
+async fn fetch_key_groups(State(state): State<AppApiKeyState>, headers: HeaderMap) -> Response {
+    let subject = match TrustedRequestSubject::from_headers(&headers) {
+        Ok(subject) => subject,
+        Err(error) => {
+            return (
+                StatusCode::UNAUTHORIZED,
+                Json(PlusApiResult::error("4010", error.to_string())),
+            )
+                .into_response()
+        }
+    };
+
+    match state
+        .read_store
+        .load_gateway_api_key_management_snapshot()
+        .await
+    {
+        Ok(snapshot) => {
+            let scoped_snapshot =
+                snapshot.for_subject(subject.tenant_id, subject.organization_id, subject.user_id);
+            Json(PlusApiResult::success(group_list_response(
+                &scoped_snapshot,
+            )))
+            .into_response()
+        }
+        Err(error) => (
+            StatusCode::INTERNAL_SERVER_ERROR,
+            Json(PlusApiResult::error(
+                "5000",
+                format!("api key group read model is unavailable: {error}"),
             )),
         )
             .into_response(),
@@ -206,6 +302,67 @@ async fn create_key(
     }
 }
 
+async fn update_key(
+    State(state): State<AppApiKeyState>,
+    headers: HeaderMap,
+    Path(api_key_id): Path<i64>,
+    Json(request): Json<AppApiKeyUpdateRequest>,
+) -> Response {
+    match update_key_inner(state, headers, api_key_id, request).await {
+        Ok(response) => Json(PlusApiResult::success(response)).into_response(),
+        Err(AppApiKeyCreateError::Unauthorized(message)) => (
+            StatusCode::UNAUTHORIZED,
+            Json(PlusApiResult::error("4010", message)),
+        )
+            .into_response(),
+        Err(AppApiKeyCreateError::BadRequest(message)) => (
+            StatusCode::BAD_REQUEST,
+            Json(PlusApiResult::error("4001", message)),
+        )
+            .into_response(),
+        Err(AppApiKeyCreateError::System(message)) => (
+            StatusCode::INTERNAL_SERVER_ERROR,
+            Json(PlusApiResult::error("5000", message)),
+        )
+            .into_response(),
+        Err(AppApiKeyCreateError::Conflict(message)) => (
+            StatusCode::CONFLICT,
+            Json(PlusApiResult::error("4090", message)),
+        )
+            .into_response(),
+    }
+}
+
+async fn delete_key(
+    State(state): State<AppApiKeyState>,
+    headers: HeaderMap,
+    Path(api_key_id): Path<i64>,
+) -> Response {
+    match delete_key_inner(state, headers, api_key_id).await {
+        Ok(response) => Json(PlusApiResult::success(response)).into_response(),
+        Err(AppApiKeyCreateError::Unauthorized(message)) => (
+            StatusCode::UNAUTHORIZED,
+            Json(PlusApiResult::error("4010", message)),
+        )
+            .into_response(),
+        Err(AppApiKeyCreateError::BadRequest(message)) => (
+            StatusCode::BAD_REQUEST,
+            Json(PlusApiResult::error("4001", message)),
+        )
+            .into_response(),
+        Err(AppApiKeyCreateError::System(message)) => (
+            StatusCode::INTERNAL_SERVER_ERROR,
+            Json(PlusApiResult::error("5000", message)),
+        )
+            .into_response(),
+        Err(AppApiKeyCreateError::Conflict(message)) => (
+            StatusCode::CONFLICT,
+            Json(PlusApiResult::error("4090", message)),
+        )
+            .into_response(),
+    }
+}
+
 async fn create_key_inner(
     state: AppApiKeyState,
     headers: HeaderMap,
@@ -217,7 +374,11 @@ async fn create_key_inner(
         .load_gateway_api_key_management_snapshot()
         .await
         .map_err(system_error)?;
-    let group = resolve_group(&snapshot, &request)?;
+    let mut response_snapshot = snapshot.clone();
+    let group = resolve_group(&snapshot, &request, subject, &state).await?;
+    if snapshot.find_api_key_group(group.id).is_none() {
+        response_snapshot.api_key_groups.push(group.clone());
+    }
     let name = normalize_name(request.name.as_deref())?;
     let quota_limit = normalize_quota_limit(&request)?;
     let requested_modalities = normalize_modalities(request.modalities)?;
@@ -261,6 +422,7 @@ async fn create_key_inner(
         key_prefix: key_prefix(&raw_key),
         key_display_masked: mask_created_key(&raw_key),
         key_hash,
+        copyable_key: raw_key.clone(),
         hash_alg: HASH_ALG_HMAC_SHA256.to_owned(),
         secret_version: SECRET_VERSION,
         request_id,
@@ -278,7 +440,7 @@ async fn create_key_inner(
         .await
         .map_err(store_error)?;
 
-    let response_snapshot = snapshot.with_created_api_key(
+    let response_snapshot = response_snapshot.with_created_api_key(
         created.api_key.clone(),
         created.access_policy,
         created.quota_policy,
@@ -286,6 +448,148 @@ async fn create_key_inner(
     let item = to_created_item_response(&response_snapshot, created.api_key);
 
     Ok(AppApiKeyCreateResponse { item, raw_key })
+}
+
+async fn update_key_inner(
+    state: AppApiKeyState,
+    headers: HeaderMap,
+    api_key_id: i64,
+    request: AppApiKeyUpdateRequest,
+) -> Result<AppApiKeyUpdateResponse, AppApiKeyCreateError> {
+    let subject = TrustedRequestSubject::from_headers(&headers).map_err(unauthorized_error)?;
+    let api_key_id = positive_api_key_id(api_key_id)?;
+    let snapshot = state
+        .read_store
+        .load_gateway_api_key_management_snapshot()
+        .await
+        .map_err(system_error)?;
+    let existing = snapshot
+        .find_api_key_for_subject(
+            api_key_id,
+            subject.tenant_id,
+            subject.organization_id,
+            subject.user_id,
+        )
+        .ok_or_else(|| AppApiKeyCreateError::BadRequest("api key is not available".to_owned()))?;
+    let group_id = resolve_update_group(&snapshot, &request, subject)?.map(|group| group.id);
+    let requested_modalities = optional_modalities(request.modalities.clone())?;
+    let allowed_capabilities = requested_modalities
+        .as_ref()
+        .map(|modalities| restricted_modalities(modalities));
+    let ip_allowlist = optional_ip_allowlist(request.ip_limit.as_deref())?;
+    let quota_limit = optional_quota_limit(&request)?;
+    let expire_at = optional_expire_at(request.expires.as_deref())?;
+    let command = UpdateGatewayApiKeyCommand {
+        audit_log_uuid: state
+            .secret_generator
+            .generate_entity_uuid()
+            .map_err(system_error)?,
+        tenant_id: subject.tenant_id,
+        organization_id: subject.organization_id,
+        user_id: subject.user_id,
+        operator_id: subject.operator_id,
+        operator_type: subject.operator_type,
+        api_key_id,
+        name: optional_updated_name(request.name.as_deref())?,
+        group_id,
+        requested_at: current_timestamp_string(),
+        request_id: normalize_request_id(&headers, &state)?,
+        access_policy_uuid: state
+            .secret_generator
+            .generate_entity_uuid()
+            .map_err(system_error)?,
+        allowed_capabilities,
+        ip_allowlist,
+        quota_policy_uuid: state
+            .secret_generator
+            .generate_entity_uuid()
+            .map_err(system_error)?,
+        quota_limit,
+        expire_at,
+    };
+
+    let updated = state
+        .command_store
+        .update_gateway_api_key(command)
+        .await
+        .map_err(store_error)?
+        .ok_or_else(|| AppApiKeyCreateError::BadRequest("api key is not available".to_owned()))?;
+
+    let response_snapshot = snapshot.with_updated_api_key(
+        merge_updated_api_key_defaults(updated.api_key, existing),
+        updated.access_policy,
+        updated.quota_policy,
+    );
+    let item = response_snapshot
+        .find_api_key_for_subject(
+            api_key_id,
+            subject.tenant_id,
+            subject.organization_id,
+            subject.user_id,
+        )
+        .map(|api_key| to_item_response(&response_snapshot, api_key))
+        .ok_or_else(|| {
+            AppApiKeyCreateError::System("updated api key could not be reloaded".to_owned())
+        })?;
+
+    Ok(AppApiKeyUpdateResponse { item })
+}
+
+async fn delete_key_inner(
+    state: AppApiKeyState,
+    headers: HeaderMap,
+    api_key_id: i64,
+) -> Result<AppApiKeyDeleteResponse, AppApiKeyCreateError> {
+    let subject = TrustedRequestSubject::from_headers(&headers).map_err(unauthorized_error)?;
+    let api_key_id = positive_api_key_id(api_key_id)?;
+    let snapshot = state
+        .read_store
+        .load_gateway_api_key_management_snapshot()
+        .await
+        .map_err(system_error)?;
+    if snapshot
+        .find_api_key_for_subject(
+            api_key_id,
+            subject.tenant_id,
+            subject.organization_id,
+            subject.user_id,
+        )
+        .is_none()
+    {
+        return Err(AppApiKeyCreateError::BadRequest(
+            "api key is not available".to_owned(),
+        ));
+    }
+
+    let command = DeleteGatewayApiKeyCommand {
+        audit_log_uuid: state
+            .secret_generator
+            .generate_entity_uuid()
+            .map_err(system_error)?,
+        tenant_id: subject.tenant_id,
+        organization_id: subject.organization_id,
+        user_id: subject.user_id,
+        operator_id: subject.operator_id,
+        operator_type: subject.operator_type,
+        api_key_id,
+        requested_at: current_timestamp_string(),
+        request_id: normalize_request_id(&headers, &state)?,
+    };
+    let deleted = state
+        .command_store
+        .delete_gateway_api_key(command)
+        .await
+        .map_err(store_error)?;
+    if !deleted {
+        return Err(AppApiKeyCreateError::BadRequest(
+            "api key is not available".to_owned(),
+        ));
+    }
+
+    Ok(AppApiKeyDeleteResponse {
+        id: api_key_id.to_string(),
+        deleted,
+    })
 }
 
 fn list_response(snapshot: &GatewayApiKeyManagementSnapshot) -> AppApiKeyListResponse {
@@ -303,6 +607,27 @@ fn list_response(snapshot: &GatewayApiKeyManagementSnapshot) -> AppApiKeyListRes
         .collect();
 
     AppApiKeyListResponse { items, groups }
+}
+
+fn group_list_response(snapshot: &GatewayApiKeyManagementSnapshot) -> AppApiKeyGroupListResponse {
+    let items = snapshot
+        .api_key_groups
+        .clone()
+        .into_iter()
+        .map(to_group_response)
+        .collect();
+
+    AppApiKeyGroupListResponse { items }
+}
+
+fn public_catalog_list_response(
+    snapshot: &GatewayApiKeyManagementSnapshot,
+) -> AppApiKeyListResponse {
+    let mut response = list_response(snapshot);
+    for item in &mut response.items {
+        item.copyable_key = None;
+    }
+    response
 }
 
 fn to_item_response(
@@ -338,7 +663,9 @@ fn to_item_response_with_used_quota(
         id: api_key.id.to_string(),
         name: api_key.display_name(),
         masked_key,
+        copyable_key: api_key.copyable_key.clone(),
         group: group_code(group.as_ref()),
+        group_name: group_name(group.as_ref()),
         rate: group_rate(group.as_ref()),
         quota: quota_limit(quota_policy.as_ref(), metric_snapshot.as_ref()),
         used_quota: used_quota_override.unwrap_or_else(|| used_quota(metric_snapshot.as_ref())),
@@ -356,7 +683,7 @@ fn to_item_response_with_used_quota(
 fn to_group_response(group: ApiKeyGroup) -> AppApiKeyGroupResponse {
     AppApiKeyGroupResponse {
         id: group.id.to_string(),
-        name: group.code.clone(),
+        name: group.display_name(),
         code: group.code,
         rate: Some(format!("{}x", group.rate_multiplier.to_fixed_string(2))),
     }
@@ -366,6 +693,12 @@ fn group_code(group: Option<&ApiKeyGroup>) -> String {
     group
         .map(|group| group.code.clone())
         .unwrap_or_else(|| "unassigned".to_owned())
+}
+
+fn group_name(group: Option<&ApiKeyGroup>) -> String {
+    group
+        .map(ApiKeyGroup::display_name)
+        .unwrap_or_else(|| "Unassigned".to_owned())
 }
 
 fn group_rate(group: Option<&ApiKeyGroup>) -> Option<String> {
@@ -418,38 +751,133 @@ fn unrestricted_modalities() -> Vec<String> {
         .collect()
 }
 
-fn resolve_group(
+async fn resolve_group(
     snapshot: &GatewayApiKeyManagementSnapshot,
     request: &AppApiKeyCreateRequest,
+    subject: TrustedRequestSubject,
+    state: &AppApiKeyState,
 ) -> Result<ApiKeyGroup, AppApiKeyCreateError> {
     if let Some(group_id) = request.group_id {
-        return snapshot.find_api_key_group(group_id).ok_or_else(|| {
-            AppApiKeyCreateError::BadRequest("api key group is not available".to_owned())
-        });
+        return snapshot
+            .find_api_key_group_for_subject(group_id, subject.tenant_id, subject.organization_id)
+            .ok_or_else(|| {
+                AppApiKeyCreateError::BadRequest("api key group is not available".to_owned())
+            });
     }
 
-    let groups = snapshot.api_key_groups.clone();
     if let Some(group_code) = request
         .group
         .as_deref()
         .map(str::trim)
         .filter(|value| !value.is_empty())
     {
-        return groups
-            .into_iter()
-            .find(|group| group.code == group_code)
+        if let Some(group) = snapshot.find_api_key_group_by_code_for_subject(
+            group_code,
+            subject.tenant_id,
+            subject.organization_id,
+        ) {
+            return Ok(group);
+        }
+        if group_code == DEFAULT_API_KEY_GROUP {
+            return ensure_default_group(snapshot, subject, state).await;
+        }
+        return Err(AppApiKeyCreateError::BadRequest(
+            "api key group is not available".to_owned(),
+        ));
+    }
+
+    if let Some(group) =
+        snapshot.single_api_key_group_for_subject(subject.tenant_id, subject.organization_id)
+    {
+        return Ok(group);
+    }
+    ensure_default_group(snapshot, subject, state).await
+}
+
+fn resolve_update_group(
+    snapshot: &GatewayApiKeyManagementSnapshot,
+    request: &AppApiKeyUpdateRequest,
+    subject: TrustedRequestSubject,
+) -> Result<Option<ApiKeyGroup>, AppApiKeyCreateError> {
+    if let Some(group_id) = request.group_id {
+        return snapshot
+            .find_api_key_group_for_subject(group_id, subject.tenant_id, subject.organization_id)
+            .map(Some)
             .ok_or_else(|| {
                 AppApiKeyCreateError::BadRequest("api key group is not available".to_owned())
             });
     }
 
-    if groups.len() == 1 {
-        Ok(groups[0].clone())
-    } else {
-        Err(AppApiKeyCreateError::BadRequest(
-            "api key group is required".to_owned(),
-        ))
+    let Some(group_code) = request
+        .group
+        .as_deref()
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+    else {
+        return Ok(None);
+    };
+
+    snapshot
+        .find_api_key_group_by_code_for_subject(
+            group_code,
+            subject.tenant_id,
+            subject.organization_id,
+        )
+        .map(Some)
+        .ok_or_else(|| {
+            AppApiKeyCreateError::BadRequest("api key group is not available".to_owned())
+        })
+}
+
+async fn ensure_default_group(
+    snapshot: &GatewayApiKeyManagementSnapshot,
+    subject: TrustedRequestSubject,
+    state: &AppApiKeyState,
+) -> Result<ApiKeyGroup, AppApiKeyCreateError> {
+    let pricing_plan_code =
+        default_pricing_plan_code(snapshot, subject.tenant_id, subject.organization_id);
+    let group = state
+        .command_store
+        .ensure_default_api_key_group(EnsureDefaultApiKeyGroupCommand {
+            group_uuid: state
+                .secret_generator
+                .generate_entity_uuid()
+                .map_err(system_error)?,
+            tenant_id: subject.tenant_id,
+            organization_id: subject.organization_id,
+            code: DEFAULT_API_KEY_GROUP.to_owned(),
+            name: DEFAULT_API_KEY_GROUP_NAME.to_owned(),
+            pricing_plan_code,
+            rate_multiplier: DecimalValue::ONE,
+            official_price_multiplier: DecimalValue::ONE,
+            requested_at: current_timestamp_string(),
+        })
+        .await
+        .map_err(store_error)?;
+    if !group.code.eq(DEFAULT_API_KEY_GROUP) {
+        return Err(AppApiKeyCreateError::System(
+            "default api key group command returned unexpected group".to_owned(),
+        ));
     }
+    Ok(group)
+}
+
+fn default_pricing_plan_code(
+    snapshot: &GatewayApiKeyManagementSnapshot,
+    tenant_id: i64,
+    organization_id: i64,
+) -> String {
+    snapshot
+        .api_key_groups
+        .iter()
+        .filter(|group| {
+            (group.tenant_id == 0 || group.tenant_id == tenant_id)
+                && (group.organization_id == 0 || group.organization_id == organization_id)
+        })
+        .map(|group| group.pricing_plan_code.trim())
+        .find(|value| !value.is_empty())
+        .unwrap_or(DEFAULT_PRICING_PLAN_CODE)
+        .to_owned()
 }
 
 fn normalize_name(value: Option<&str>) -> Result<String, AppApiKeyCreateError> {
@@ -465,6 +893,13 @@ fn normalize_name(value: Option<&str>) -> Result<String, AppApiKeyCreateError> {
         ));
     }
     Ok(name.to_owned())
+}
+
+fn optional_updated_name(value: Option<&str>) -> Result<Option<String>, AppApiKeyCreateError> {
+    match value {
+        Some(value) => normalize_name(Some(value)).map(Some),
+        None => Ok(None),
+    }
 }
 
 fn normalize_idempotency_key(headers: &HeaderMap) -> Result<String, AppApiKeyCreateError> {
@@ -534,6 +969,15 @@ fn normalize_modalities(value: Option<Vec<String>>) -> Result<Vec<String>, AppAp
     Ok(modalities)
 }
 
+fn optional_modalities(
+    value: Option<Vec<String>>,
+) -> Result<Option<Vec<String>>, AppApiKeyCreateError> {
+    match value {
+        Some(value) => normalize_modalities(Some(value)).map(Some),
+        None => Ok(None),
+    }
+}
+
 fn restricted_modalities(modalities: &[String]) -> Vec<String> {
     let unrestricted = unrestricted_modalities();
     if modalities == unrestricted.as_slice() {
@@ -568,6 +1012,13 @@ fn normalize_ip_allowlist(value: Option<&str>) -> Result<Vec<String>, AppApiKeyC
         }
     }
     Ok(items)
+}
+
+fn optional_ip_allowlist(value: Option<&str>) -> Result<Option<Vec<String>>, AppApiKeyCreateError> {
+    match value {
+        Some(value) => normalize_ip_allowlist(Some(value)).map(Some),
+        None => Ok(None),
+    }
 }
 
 fn normalize_ip_allowlist_entry(value: &str) -> Result<String, AppApiKeyCreateError> {
@@ -641,6 +1092,33 @@ fn normalize_quota_limit(
     Ok(Some(quota))
 }
 
+fn optional_quota_limit(
+    request: &AppApiKeyUpdateRequest,
+) -> Result<Option<Option<DecimalValue>>, AppApiKeyCreateError> {
+    if request.is_unlimited_quota.unwrap_or(false) {
+        return Ok(Some(None));
+    }
+    if request.quota.is_none() {
+        return Ok(None);
+    }
+    let Some(quota) = request
+        .quota
+        .as_deref()
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+    else {
+        return Ok(Some(None));
+    };
+    let quota = DecimalValue::parse(quota)
+        .map_err(|error| AppApiKeyCreateError::BadRequest(error.to_string()))?;
+    if quota <= DecimalValue::ZERO {
+        return Err(AppApiKeyCreateError::BadRequest(
+            "api key quota must be greater than zero".to_owned(),
+        ));
+    }
+    Ok(Some(Some(quota)))
+}
+
 fn normalize_expire_at(value: Option<&str>) -> Result<Option<String>, AppApiKeyCreateError> {
     let Some(value) = value.map(str::trim).filter(|value| !value.is_empty()) else {
         return Ok(None);
@@ -660,6 +1138,13 @@ fn normalize_expire_at(value: Option<&str>) -> Result<Option<String>, AppApiKeyC
     };
     validate_timestamp(&normalized)?;
     Ok(Some(normalized))
+}
+
+fn optional_expire_at(value: Option<&str>) -> Result<Option<Option<String>>, AppApiKeyCreateError> {
+    match value {
+        Some(value) => normalize_expire_at(Some(value)).map(Some),
+        None => Ok(None),
+    }
 }
 
 fn validate_timestamp(value: &str) -> Result<(), AppApiKeyCreateError> {
@@ -727,6 +1212,38 @@ fn is_leap_year(year: i64) -> bool {
 
 fn key_prefix(raw_key: &str) -> String {
     raw_key.chars().take(16).collect()
+}
+
+fn positive_api_key_id(value: i64) -> Result<i64, AppApiKeyCreateError> {
+    if value > 0 {
+        Ok(value)
+    } else {
+        Err(AppApiKeyCreateError::BadRequest(
+            "api key id must be a positive integer".to_owned(),
+        ))
+    }
+}
+
+fn merge_updated_api_key_defaults(
+    mut updated: GatewayApiKey,
+    existing: GatewayApiKey,
+) -> GatewayApiKey {
+    if updated.key_prefix.is_empty() {
+        updated.key_prefix = existing.key_prefix;
+    }
+    if updated.key_display_masked.is_empty() {
+        updated.key_display_masked = existing.key_display_masked;
+    }
+    if updated.key_hash.is_empty() {
+        updated.key_hash = existing.key_hash;
+    }
+    if updated.copyable_key.is_none() {
+        updated.copyable_key = existing.copyable_key;
+    }
+    if updated.created_at.is_empty() {
+        updated.created_at = existing.created_at;
+    }
+    updated
 }
 
 fn mask_created_key(raw_key: &str) -> String {

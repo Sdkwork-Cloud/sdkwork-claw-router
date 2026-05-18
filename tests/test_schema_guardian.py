@@ -45,6 +45,48 @@ class SchemaGuardianTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn("forbidden synonym table present: commerce_order", result.messages)
 
+    def test_rejects_legacy_identity_tables_and_user_foreign_keys(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(
+                root,
+                """
+                schema_registry:
+                  legacy_compatibility_guardrails:
+                    forbidden_synonym_tables: []
+                tables:
+                  - table: plus_user
+                    domain: legacy
+                  - table: plus_order
+                    domain: legacy
+                    foreign_keys:
+                      - { name: fk_plus_order_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
+                  - table: ops_referral_stat_snapshot
+                    domain: ops
+                    profile: projection
+                    source_tables: [plus_user, plus_order]
+                    projection_policy:
+                      does_not_replace: [plus_user, plus_order]
+                """,
+            )
+
+            result = SchemaGuardian(root=root, registry_path=registry).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn("legacy identity table must be removed: plus_user", result.messages)
+            self.assertIn(
+                "plus_order foreign key fk_plus_order_user must reference iam_user instead of plus_user",
+                result.messages,
+            )
+            self.assertIn(
+                "ops_referral_stat_snapshot source_tables must use iam_user instead of plus_user",
+                result.messages,
+            )
+            self.assertIn(
+                "ops_referral_stat_snapshot projection_policy.does_not_replace must use iam_user instead of plus_user",
+                result.messages,
+            )
+
     def test_requires_java_first_contract_tables_to_be_registered_as_l0_legacy(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -320,9 +362,9 @@ class SchemaGuardianTest(unittest.TestCase):
                       - { columns: [uuid] }
                     not_null_columns: [subject, order_type, owner_id, user_id, order_sn, out_trade_no, total_amount, paid_amount, status, category_id]
                     foreign_keys:
-                      - { name: fk_plus_order_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
-                      - { name: fk_plus_order_worker_user, columns: [worker_user_id], references_table: plus_user, references_columns: [id] }
-                      - { name: fk_plus_order_dispatcher_user, columns: [dispatcher_user_id], references_table: plus_user, references_columns: [id] }
+                      - { name: fk_plus_order_user, columns: [user_id], references_table: iam_user, references_columns: [id] }
+                      - { name: fk_plus_order_worker_user, columns: [worker_user_id], references_table: iam_user, references_columns: [id] }
+                      - { name: fk_plus_order_dispatcher_user, columns: [dispatcher_user_id], references_table: iam_user, references_columns: [id] }
                     indexes:
                       - { name: uk_plus_order_order_sn, unique: true, columns: [order_sn] }
                       - { name: uk_plus_order_out_trade_no, unique: true, columns: [out_trade_no] }
@@ -683,12 +725,12 @@ class SchemaGuardianTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn(
                 "plus_invoice must declare foreign key "
-                "fk_plus_invoice_user on user_id references plus_user(id)",
+                "fk_plus_invoice_user on user_id references iam_user(id)",
                 result.messages,
             )
             self.assertIn(
                 "plus_vip_point_change must declare foreign key "
-                "fk_plus_vip_point_change_user on user_id references plus_user(id)",
+                "fk_plus_vip_point_change_user on user_id references iam_user(id)",
                 result.messages,
             )
 
@@ -711,7 +753,7 @@ class SchemaGuardianTest(unittest.TestCase):
                     unique_constraints:
                       - { columns: [uuid] }
                     foreign_keys:
-                      - { name: fk_plus_invoice_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
+                      - { name: fk_plus_invoice_user, columns: [user_id], references_table: iam_user, references_columns: [id] }
                   - table: plus_vip_point_change
                     domain: legacy
                     compliance_level: L0
@@ -721,7 +763,7 @@ class SchemaGuardianTest(unittest.TestCase):
                     unique_constraints:
                       - { columns: [uuid] }
                     foreign_keys:
-                      - { name: fk_plus_vip_point_change_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
+                      - { name: fk_plus_vip_point_change_user, columns: [user_id], references_table: iam_user, references_columns: [id] }
                     indexes:
                       - { name: idx_plus_vip_point_change_user, columns: [user_id] }
                       - { name: idx_plus_vip_point_change_type, columns: [change_type] }
@@ -762,12 +804,12 @@ class SchemaGuardianTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn(
                 "database_config_router.rs test schema must create foreign key "
-                "fk_plus_invoice_user on plus_invoice(user_id) references plus_user(id)",
+                "fk_plus_invoice_user on plus_invoice(user_id) references iam_user(id)",
                 result.messages,
             )
             self.assertIn(
                 "database_config_router.rs test schema must create foreign key "
-                "fk_plus_vip_point_change_user on plus_vip_point_change(user_id) references plus_user(id)",
+                "fk_plus_vip_point_change_user on plus_vip_point_change(user_id) references iam_user(id)",
                 result.messages,
             )
 
@@ -881,7 +923,7 @@ class SchemaGuardianTest(unittest.TestCase):
                     unique_constraints:
                       - { columns: [uuid] }
                     foreign_keys:
-                      - { name: fk_plus_vip_recharge_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
+                      - { name: fk_plus_vip_recharge_user, columns: [user_id], references_table: iam_user, references_columns: [id] }
                       - { name: fk_plus_vip_recharge_method, columns: [recharge_method_id], references_table: plus_vip_recharge_method, references_columns: [id] }
                     indexes:
                       - { name: idx_plus_vip_recharge_user, columns: [user_id] }
@@ -1252,9 +1294,9 @@ class SchemaGuardianTest(unittest.TestCase):
                       - { columns: [uuid] }
                     not_null_columns: [subject, order_type, owner_id, user_id, order_sn, out_trade_no, total_amount, paid_amount, status, category_id]
                     foreign_keys:
-                      - { name: fk_plus_order_user, columns: [user_id], references_table: plus_user, references_columns: [id] }
-                      - { name: fk_plus_order_worker_user, columns: [worker_user_id], references_table: plus_user, references_columns: [id] }
-                      - { name: fk_plus_order_dispatcher_user, columns: [dispatcher_user_id], references_table: plus_user, references_columns: [id] }
+                      - { name: fk_plus_order_user, columns: [user_id], references_table: iam_user, references_columns: [id] }
+                      - { name: fk_plus_order_worker_user, columns: [worker_user_id], references_table: iam_user, references_columns: [id] }
+                      - { name: fk_plus_order_dispatcher_user, columns: [dispatcher_user_id], references_table: iam_user, references_columns: [id] }
                     indexes:
                       - { name: uk_plus_order_order_sn, unique: true, columns: [order_sn] }
                       - { name: uk_plus_order_out_trade_no, unique: true, columns: [out_trade_no] }

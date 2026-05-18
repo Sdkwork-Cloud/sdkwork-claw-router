@@ -68,24 +68,24 @@ export type ApiKeyCreateInput = {
 export class UserService {
   static async fetchUsers(): Promise<UserListItem[]> {
     const result = await getClawRouterBackendSdkClient().iam.users.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch users');
-    return readRequiredApiItems(result, 'Failed to fetch users')
+    ensurePlusApiSuccess(result, 'admin.user.errors.fetchUsersFallback');
+    return readRequiredApiItems(result, 'admin.user.errors.fetchUsersFallback')
       .map(normalizeUser);
   }
 
   static async fetchApiKeysMap(): Promise<Record<number, ApiKeyItem[]>> {
     const result = await getClawRouterBackendSdkClient().iam.apiKeys.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch API keys');
+    ensurePlusApiSuccess(result, 'admin.user.errors.fetchApiKeysFallback');
     return normalizeApiKeysMap(readApiData(result));
   }
 
   static async addUser(user: UserCreateInput): Promise<UserListItem> {
-    const result = await getClawRouterBackendSdkClient().system.users.create(
+    const result = await getClawRouterBackendSdkClient().iam.users.create(
       toCreateUserRequest(user),
       createRequestParams('admin-user-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to add user');
-    return normalizeUser(readRequiredApiItem(result, 'Created user response is missing data'));
+    ensurePlusApiSuccess(result, 'admin.user.errors.addUserFallback');
+    return normalizeUser(readRequiredApiItem(result, 'admin.user.errors.addUserMissingData'));
   }
 
   static async updateBalance(id: number, input: UserBalanceAdjustmentInput): Promise<UserListItem> {
@@ -94,17 +94,17 @@ export class UserService {
       toBalanceAdjustmentRequest(input),
       createRequestParams('admin-user-balance-adjust'),
     );
-    ensurePlusApiSuccess(result, 'Failed to update user balance');
-    return normalizeUser(readRequiredApiItem(result, 'Updated user balance response is missing data'));
+    ensurePlusApiSuccess(result, 'admin.user.errors.updateBalanceFallback');
+    return normalizeUser(readRequiredApiItem(result, 'admin.user.errors.updateBalanceMissingData'));
   }
 
   static async updateUser(id: number, updates: UserUpdateInput): Promise<UserListItem> {
-    const result = await getClawRouterBackendSdkClient().system.users.update(
+    const result = await getClawRouterBackendSdkClient().iam.users.update(
       toUpdateUserRequest(id, updates),
       createRequestParams('admin-user-update'),
     );
-    ensurePlusApiSuccess(result, 'Failed to update user');
-    return normalizeUser(readRequiredApiItem(result, 'Updated user response is missing data'));
+    ensurePlusApiSuccess(result, 'admin.user.errors.updateUserFallback');
+    return normalizeUser(readRequiredApiItem(result, 'admin.user.errors.updateUserMissingData'));
   }
 
   static async createApiKey(input: ApiKeyCreateInput): Promise<{ key: ApiKeyItem; rawKey: string }> {
@@ -113,16 +113,16 @@ export class UserService {
       toCreateApiKeyRequest(input),
       { idempotencyKey: tokens.idempotencyKey, xRequestId: tokens.requestId },
     );
-    ensurePlusApiSuccess(result, 'Failed to create API key');
+    ensurePlusApiSuccess(result, 'admin.user.errors.createApiKeyFallback');
     const data = readApiRecord(result);
     const keyData = data.key;
     if (!isRecord(keyData)) {
-      throw new Error('API key creation response is missing data');
+      throw new Error('admin.user.errors.createApiKeyMissingData');
     }
     const key = normalizeApiKey(keyData);
     const rawKey = readString(data, 'rawKey');
     if (!rawKey) {
-      throw new Error('API key creation response is missing key material');
+      throw new Error('admin.user.errors.createApiKeyMissingRawKey');
     }
     return {
       key,
@@ -134,7 +134,7 @@ export class UserService {
     const result = await getClawRouterBackendSdkClient().iam.apiKeys.delete(
       requiredSafePathSegment(keyId, 'apiKeyId'),
     );
-    ensureDeleteResult(result, 'API key delete confirmation is required');
+    ensureDeleteResult(result, 'admin.user.errors.deleteApiKeyFallback');
     void userId;
   }
 }

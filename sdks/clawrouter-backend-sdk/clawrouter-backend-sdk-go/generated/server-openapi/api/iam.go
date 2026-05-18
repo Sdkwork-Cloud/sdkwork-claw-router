@@ -112,6 +112,34 @@ func (a *IamApi) UsersList() (sdktypes.UsersListResult, error) {
     return decodeResult[sdktypes.UsersListResult](raw)
 }
 
+// Create user
+func (a *IamApi) UsersCreate(body sdktypes.AdminUserCreateRequest, xRequestId *string) (sdktypes.UsersCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(BackendApiPath("/iam/users"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.UsersCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.UsersCreateResult](raw)
+}
+
+// Update user
+func (a *IamApi) UsersUpdate(body sdktypes.AdminUserUpdateRequest, xRequestId *string) (sdktypes.UsersUpdateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Put(BackendApiPath("/iam/users"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.UsersUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.UsersUpdateResult](raw)
+}
+
 type PathParameterSpec struct {
     Name    string
     Style   string

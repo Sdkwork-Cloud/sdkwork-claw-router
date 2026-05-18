@@ -110,6 +110,58 @@ async fn sqlite_gateway_usage_recorder_upserts_trace_and_usage_fact_without_dupl
 }
 
 #[tokio::test]
+async fn sqlite_gateway_usage_recorder_uses_command_modality_and_meter() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    create_usage_tables(&pool).await;
+    let recorder = SqliteGatewayUsageRecorder::new(pool.clone());
+    let mut command = usage_command("req-embedding-usage-sqlite", 200);
+    command.catalog_key = "openai/global/text-embedding-3-small".to_owned();
+    command.requested_model = "text-embedding-3-small".to_owned();
+    command.provider_model = "openai/global/text-embedding-3-small".to_owned();
+    command.request_path = "/v1/embeddings".to_owned();
+    command.modality = 6;
+    command.billing_meter_code = "embedding_input_token".to_owned();
+    command.prompt_tokens = 13;
+    command.completion_tokens = 0;
+    command.cached_tokens = 0;
+    command.total_tokens = 13;
+    command.base_input_unit_price = "0.026400".to_owned();
+    command.base_output_unit_price = "0.000000".to_owned();
+    command.customer_charge_amount = "0.343200".to_owned();
+    command.upstream_cost_amount = "0.130000".to_owned();
+
+    recorder.record_gateway_usage(command).await.unwrap();
+
+    let usage = sqlx::query(
+        r#"
+        SELECT request_id, modality, usage_type, billing_meter_code, billable_quantity,
+               prompt_tokens, completion_tokens, total_tokens, customer_charge_amount, cost_amount
+        FROM ai_usage_fact
+        WHERE request_id = 'req-embedding-usage-sqlite'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(6_i64, usage.get::<i64, _>("modality"));
+    assert_eq!(1_i64, usage.get::<i64, _>("usage_type"));
+    assert_eq!(
+        "embedding_input_token",
+        usage.get::<String, _>("billing_meter_code")
+    );
+    assert_eq!("13", usage.get::<String, _>("billable_quantity"));
+    assert_eq!(13_i64, usage.get::<i64, _>("prompt_tokens"));
+    assert_eq!(0_i64, usage.get::<i64, _>("completion_tokens"));
+    assert_eq!(13_i64, usage.get::<i64, _>("total_tokens"));
+    assert_eq!("0.343200", usage.get::<String, _>("customer_charge_amount"));
+    assert_eq!("0.130000", usage.get::<String, _>("cost_amount"));
+}
+
+#[tokio::test]
 async fn sqlite_gateway_usage_recorder_preserves_successfully_settled_usage_fact_on_duplicate_request_id(
 ) {
     let pool = SqlitePoolOptions::new()
@@ -355,6 +407,9 @@ fn usage_command(request_id: &str, http_status: u16) -> GatewayUsageRecordComman
         http_method: "POST".to_owned(),
         http_status,
         streaming: false,
+        modality: 1,
+        usage_type: 1,
+        billing_meter_code: "llm_input_token".to_owned(),
         prompt_tokens: 11,
         completion_tokens: 7,
         cached_tokens: 2,

@@ -60,6 +60,7 @@ client.setHeader('X-Custom-Header', 'value');
 
 ## API Modules
 
+- `client.agents` - agents API
 - `client.ai` - ai API
 - `client.billing` - billing API
 - `client.content` - content API
@@ -71,6 +72,21 @@ client.setHeader('X-Custom-Header', 'value');
 
 ## Usage Examples
 
+### agents
+```dart
+// List managed agents
+final params = <String, dynamic>{
+  'q': 'q',
+  'owner_user_id': 2,
+  'status': 'active',
+  'visibility': 'private',
+  'page': 5,
+  'page_size': 6,
+};
+final result = await client.agents.list(params);
+print(result);
+```
+
 ### ai
 ```dart
 // List vendors
@@ -80,8 +96,8 @@ print(result);
 
 ### billing
 ```dart
-// List batches
-final result = await client.billing.couponBatchesList();
+// List referral stats
+final result = await client.billing.referralsStatsList();
 print(result);
 ```
 
@@ -131,8 +147,8 @@ print(result);
 
 ### system
 ```dart
-// List dashboard data
-final result = await client.system.dashboardAdminOverviewRetrieve();
+// Retrieve IAM auth runtime settings
+final result = await client.system.authSettingsRetrieve();
 print(result);
 ```
 

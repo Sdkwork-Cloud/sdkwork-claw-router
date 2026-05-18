@@ -1,7 +1,9 @@
 use std::future::Future;
 use std::pin::Pin;
 
-use crate::domain::{DecimalValue, DomainResult, GatewayAccessPolicy, GatewayApiKey, QuotaPolicy};
+use crate::domain::{
+    ApiKeyGroup, DecimalValue, DomainResult, GatewayAccessPolicy, GatewayApiKey, QuotaPolicy,
+};
 
 pub type ApiKeyCommandStoreFuture<'a, T> =
     Pin<Box<dyn Future<Output = DomainResult<T>> + Send + 'a>>;
@@ -22,6 +24,7 @@ pub struct CreateGatewayApiKeyCommand {
     pub key_prefix: String,
     pub key_display_masked: String,
     pub key_hash: String,
+    pub copyable_key: String,
     pub hash_alg: String,
     pub secret_version: i64,
     pub request_id: String,
@@ -31,6 +34,40 @@ pub struct CreateGatewayApiKeyCommand {
     pub allowed_capabilities: Vec<String>,
     pub ip_allowlist: Vec<String>,
     pub quota_limit: Option<DecimalValue>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct UpdateGatewayApiKeyCommand {
+    pub audit_log_uuid: String,
+    pub tenant_id: i64,
+    pub organization_id: i64,
+    pub user_id: i64,
+    pub operator_id: i64,
+    pub operator_type: i32,
+    pub api_key_id: i64,
+    pub name: Option<String>,
+    pub group_id: Option<i64>,
+    pub requested_at: String,
+    pub request_id: String,
+    pub access_policy_uuid: String,
+    pub allowed_capabilities: Option<Vec<String>>,
+    pub ip_allowlist: Option<Vec<String>>,
+    pub quota_policy_uuid: String,
+    pub quota_limit: Option<Option<DecimalValue>>,
+    pub expire_at: Option<Option<String>>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct DeleteGatewayApiKeyCommand {
+    pub audit_log_uuid: String,
+    pub tenant_id: i64,
+    pub organization_id: i64,
+    pub user_id: i64,
+    pub operator_id: i64,
+    pub operator_type: i32,
+    pub api_key_id: i64,
+    pub requested_at: String,
+    pub request_id: String,
 }
 
 impl CreateGatewayApiKeyCommand {
@@ -50,9 +87,44 @@ pub struct CreatedGatewayApiKey {
     pub quota_policy: Option<QuotaPolicy>,
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct UpdatedGatewayApiKey {
+    pub api_key: GatewayApiKey,
+    pub access_policy: Option<GatewayAccessPolicy>,
+    pub quota_policy: Option<QuotaPolicy>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct EnsureDefaultApiKeyGroupCommand {
+    pub group_uuid: String,
+    pub tenant_id: i64,
+    pub organization_id: i64,
+    pub code: String,
+    pub name: String,
+    pub pricing_plan_code: String,
+    pub rate_multiplier: DecimalValue,
+    pub official_price_multiplier: DecimalValue,
+    pub requested_at: String,
+}
+
 pub trait GatewayApiKeyCommandStore {
+    fn ensure_default_api_key_group<'a>(
+        &'a self,
+        command: EnsureDefaultApiKeyGroupCommand,
+    ) -> ApiKeyCommandStoreFuture<'a, ApiKeyGroup>;
+
     fn create_gateway_api_key<'a>(
         &'a self,
         command: CreateGatewayApiKeyCommand,
     ) -> ApiKeyCommandStoreFuture<'a, CreatedGatewayApiKey>;
+
+    fn update_gateway_api_key<'a>(
+        &'a self,
+        command: UpdateGatewayApiKeyCommand,
+    ) -> ApiKeyCommandStoreFuture<'a, Option<UpdatedGatewayApiKey>>;
+
+    fn delete_gateway_api_key<'a>(
+        &'a self,
+        command: DeleteGatewayApiKeyCommand,
+    ) -> ApiKeyCommandStoreFuture<'a, bool>;
 }

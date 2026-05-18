@@ -17,8 +17,10 @@ public class RoutingChannelItem {
     private String protocol;
     private String provider;
     private String providerCode;
+    private ProviderRetryPolicy retryPolicy;
     private Integer rpm;
     private String status;
+    private Integer timeoutMs;
     private String vendor;
     private Integer weight;
 
@@ -134,6 +136,14 @@ public class RoutingChannelItem {
         this.providerCode = providerCode;
     }
 
+    public ProviderRetryPolicy getRetryPolicy() {
+        return this.retryPolicy;
+    }
+    
+    public void setRetryPolicy(ProviderRetryPolicy retryPolicy) {
+        this.retryPolicy = retryPolicy;
+    }
+
     public Integer getRpm() {
         return this.rpm;
     }
@@ -148,6 +158,14 @@ public class RoutingChannelItem {
     
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Integer getTimeoutMs() {
+        return this.timeoutMs;
+    }
+    
+    public void setTimeoutMs(Integer timeoutMs) {
+        this.timeoutMs = timeoutMs;
     }
 
     public String getVendor() {

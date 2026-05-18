@@ -89,6 +89,7 @@ const client = new SdkworkAppClient({
 
 ## API Modules
 
+- `client.agents` - agents API
 - `client.ai` - ai API
 - `client.auth` - auth API
 - `client.billing` - billing API
@@ -99,6 +100,18 @@ const client = new SdkworkAppClient({
 - `client.platform` - platform API
 
 ## Usage Examples
+
+### agents
+
+```typescript
+// List user agents
+const params = {
+  page: 1,
+  page_size: 2,
+  q: 'q',
+};
+const result = await client.agents.agentDefinitions.list(params);
+```
 
 ### ai
 
@@ -143,7 +156,7 @@ const result = await client.billing.account.points.retrieve();
 ### communication
 
 ```typescript
-// List messages
+// List notifications
 const result = await client.communication.notifications.list();
 ```
 
@@ -164,8 +177,8 @@ const result = await client.ecosystem.skills.categories.list();
 ### iam
 
 ```typescript
-// List keys
-const result = await client.iam.apiKeys.list();
+// List groups
+const result = await client.iam.apiKeyGroups.list();
 ```
 
 ### platform

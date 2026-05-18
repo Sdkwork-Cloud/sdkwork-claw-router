@@ -238,12 +238,25 @@ def serialize_header_primitive(value: Any) -> str:
 
 
 class AiApi:
-    """ai API client."""
-    
+    """ai ai API client."""
+
     def __init__(self, client: HttpClient):
         self._client = client
+        self.model_rankings = AiModelRankingsApi(client)
+        self.model_vendors = AiModelVendorsApi(client)
+        self.models = AiModelsApi(client)
 
-    def model_rankings_list(self, rank_scope: Optional[str] = None, vendor_code: Optional[str] = None, modality: Optional[str] = None, q: Optional[str] = None, limit: Optional[int] = None) -> ModelRankingsListResult:
+
+class AiModelRankingsApi:
+    """ai ai.model_rankings API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.jobs = AiModelRankingsJobsApi(client)
+        self.status = AiModelRankingsStatusApi(client)
+
+
+    def list(self, rank_scope: Optional[str] = None, vendor_code: Optional[str] = None, modality: Optional[str] = None, q: Optional[str] = None, limit: Optional[int] = None) -> ModelRankingsListResult:
         """List model rankings"""
         query = build_query_string([
             {'name': 'rank_scope', 'value': rank_scope, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -254,15 +267,7 @@ class AiApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/ai/model_rankings", query))
 
-    def model_rankings_jobs_list(self, rank_scope: Optional[str] = None, limit: Optional[int] = None) -> ModelRankingsJobsListResult:
-        """List model ranking refresh jobs"""
-        query = build_query_string([
-            {'name': 'rank_scope', 'value': rank_scope, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'limit', 'value': limit, 'style': 'form', 'explode': True, 'allow_reserved': False},
-        ])
-        return self._client.get(_append_query_string(f"/backend/v3/api/ai/model_rankings/jobs", query))
-
-    def model_rankings_refresh(self, body: ModelRankingRefreshTriggerRequest, x_request_id: Optional[str] = None) -> ModelRankingsRefreshResult:
+    def refresh(self, body: ModelRankingRefreshTriggerRequest, x_request_id: Optional[str] = None) -> ModelRankingsRefreshResult:
         """Trigger model ranking refresh"""
         request_headers = build_request_headers(
             {
@@ -272,18 +277,47 @@ class AiApi:
         )
         return self._client.post(f"/backend/v3/api/ai/model_rankings/refresh", json=body, headers=request_headers)
 
-    def model_rankings_status_retrieve(self, rank_scope: Optional[str] = None) -> ModelRankingsStatusRetrieveResult:
+class AiModelRankingsJobsApi:
+    """ai ai.model_rankings.jobs API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, rank_scope: Optional[str] = None, limit: Optional[int] = None) -> ModelRankingsJobsListResult:
+        """List model ranking refresh jobs"""
+        query = build_query_string([
+            {'name': 'rank_scope', 'value': rank_scope, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'limit', 'value': limit, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/ai/model_rankings/jobs", query))
+
+class AiModelRankingsStatusApi:
+    """ai ai.model_rankings.status API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self, rank_scope: Optional[str] = None) -> ModelRankingsStatusRetrieveResult:
         """List model ranking refresh status"""
         query = build_query_string([
             {'name': 'rank_scope', 'value': rank_scope, 'style': 'form', 'explode': True, 'allow_reserved': False},
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/ai/model_rankings/status", query))
 
-    def model_vendors_list(self) -> ModelVendorsListResult:
+class AiModelVendorsApi:
+    """ai ai.model_vendors API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> ModelVendorsListResult:
         """List vendors"""
         return self._client.get(f"/backend/v3/api/ai/model_vendors")
 
-    def model_vendors_create(self, body: AdminModelVendorCreateRequest, x_request_id: Optional[str] = None) -> ModelVendorsCreateResult:
+    def create(self, body: AdminModelVendorCreateRequest, x_request_id: Optional[str] = None) -> ModelVendorsCreateResult:
         """Create vendor"""
         request_headers = build_request_headers(
             {
@@ -293,11 +327,18 @@ class AiApi:
         )
         return self._client.post(f"/backend/v3/api/ai/model_vendors", json=body, headers=request_headers)
 
-    def models_list(self) -> ModelsListResult:
+class AiModelsApi:
+    """ai ai.models API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> ModelsListResult:
         """List models"""
         return self._client.get(f"/backend/v3/api/ai/models")
 
-    def models_create(self, body: AdminAiModelCreateRequest, x_request_id: Optional[str] = None) -> ModelsCreateResult:
+    def create(self, body: AdminAiModelCreateRequest, x_request_id: Optional[str] = None) -> ModelsCreateResult:
         """Create model"""
         request_headers = build_request_headers(
             {
@@ -307,7 +348,7 @@ class AiApi:
         )
         return self._client.post(f"/backend/v3/api/ai/models", json=body, headers=request_headers)
 
-    def models_refresh(self, body: AdminModelCatalogSyncRequest, x_request_id: Optional[str] = None) -> ModelsRefreshResult:
+    def refresh(self, body: AdminModelCatalogSyncRequest, x_request_id: Optional[str] = None) -> ModelsRefreshResult:
         """Sync vendors and models"""
         request_headers = build_request_headers(
             {
@@ -317,11 +358,11 @@ class AiApi:
         )
         return self._client.post(f"/backend/v3/api/ai/models/refresh", json=body, headers=request_headers)
 
-    def models_delete(self, model_id: str) -> ModelsDeleteResult:
+    def delete(self, model_id: str) -> ModelsDeleteResult:
         """Delete model"""
         return self._client.delete(f"/backend/v3/api/ai/models/{serialize_path_parameter(model_id, {'name': 'modelId', 'style': 'simple', 'explode': False})}")
 
-    def models_update(self, model_id: str, body: AdminAiModelUpdateRequest, x_request_id: Optional[str] = None) -> ModelsUpdateResult:
+    def update(self, model_id: str, body: AdminAiModelUpdateRequest, x_request_id: Optional[str] = None) -> ModelsUpdateResult:
         """Update model"""
         request_headers = build_request_headers(
             {

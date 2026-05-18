@@ -22,8 +22,8 @@ export interface GatewayTrace {
 export class GatewayService {
   static async fetchTraces(): Promise<GatewayTrace[]> {
     const result = await getClawRouterAppSdkClient().ai.gateway.traces.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch gateway traces');
-    return readRequiredApiItems(result, 'Failed to fetch gateway traces').map(readGatewayTrace);
+    ensurePlusApiSuccess(result, 'console.gateway.states.loadErrorFallback');
+    return readRequiredApiItems(result, 'console.gateway.states.loadErrorFallback').map(readGatewayTrace);
   }
 }
 

@@ -3,6 +3,7 @@ import SDKworkCommon
 
 public class SdkworkAppClient {
     private let httpClient: HttpClient
+    public let agents: AgentsApi
     public let ai: AiApi
     public let auth: AuthApi
     public let billing: BillingApi
@@ -14,6 +15,7 @@ public class SdkworkAppClient {
 
     public init(baseURL: String) {
         self.httpClient = HttpClient(baseURL: baseURL)
+        self.agents = AgentsApi(client: httpClient)
         self.ai = AiApi(client: httpClient)
         self.auth = AuthApi(client: httpClient)
         self.billing = BillingApi(client: httpClient)
@@ -26,6 +28,7 @@ public class SdkworkAppClient {
 
     public init(config: SdkConfig) {
         self.httpClient = HttpClient(config: config)
+        self.agents = AgentsApi(client: httpClient)
         self.ai = AiApi(client: httpClient)
         self.auth = AuthApi(client: httpClient)
         self.billing = BillingApi(client: httpClient)

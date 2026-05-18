@@ -7,6 +7,7 @@ import (
 
 type SdkworkBackendClient struct {
     http *sdkhttp.Client
+    Agents *api.AgentsApi
     Ai *api.AiApi
     Billing *api.BillingApi
     Content *api.ContentApi
@@ -26,6 +27,7 @@ func NewSdkworkBackendClientWithConfig(config sdkhttp.Config) *SdkworkBackendCli
     client := sdkhttp.NewClient(config)
     return &SdkworkBackendClient{
         http: client,
+        Agents: api.NewAgentsApi(client),
         Ai: api.NewAiApi(client),
         Billing: api.NewBillingApi(client),
         Content: api.NewContentApi(client),

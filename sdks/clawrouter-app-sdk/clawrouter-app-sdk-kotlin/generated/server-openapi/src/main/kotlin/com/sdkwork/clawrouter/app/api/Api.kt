@@ -6,6 +6,7 @@ import com.sdkwork.clawrouter.app.http.HttpClient
  * API modules for clawrouter-app-sdk
  */
 class Api(private val client: HttpClient) {
+    val agents: AgentsApi = AgentsApi(client)
     val ai: AiApi = AiApi(client)
     val auth: AuthApi = AuthApi(client)
     val billing: BillingApi = BillingApi(client)

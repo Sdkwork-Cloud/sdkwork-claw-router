@@ -8,6 +8,8 @@ data class DashboardOverviewSummary(
     val musicRequests: Int? = null,
     val requestCount: Int? = null,
     val rpm: Double? = null,
+    val totalRequestCount: Int? = null,
+    val totalUsedCredits: Double? = null,
     val tpm: Double? = null,
     val usedCredits: Double? = null,
     val videoRequests: Int? = null

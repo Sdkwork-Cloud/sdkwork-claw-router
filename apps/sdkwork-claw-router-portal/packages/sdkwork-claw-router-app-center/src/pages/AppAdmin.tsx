@@ -12,6 +12,7 @@ import {
   Trash2,
   X,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
 import {
   AdminAppService,
@@ -27,19 +28,20 @@ type AppStatusFilter = '' | AdminAppStatus;
 type AppMarketStatusFilter = '' | AdminAppMarketStatus;
 
 const statusOptions = [
-  { value: '', label: 'All runtime' },
-  { value: 'ACTIVE', label: 'Active' },
-  { value: 'INACTIVE', label: 'Inactive' },
+  { value: '', labelKey: 'admin.app.filters.allRuntime' },
+  { value: 'ACTIVE', labelKey: 'admin.app.status.active' },
+  { value: 'INACTIVE', labelKey: 'admin.app.status.inactive' },
 ];
 
 const marketStatusOptions = [
-  { value: '', label: 'All marketplace' },
-  { value: 'DRAFT', label: 'Draft' },
-  { value: 'PUBLISHED', label: 'Published' },
-  { value: 'OFFLINE', label: 'Offline' },
+  { value: '', labelKey: 'admin.app.filters.allMarketplace' },
+  { value: 'DRAFT', labelKey: 'admin.app.status.draft' },
+  { value: 'PUBLISHED', labelKey: 'admin.app.status.published' },
+  { value: 'OFFLINE', labelKey: 'admin.app.status.offline' },
 ];
 
 export function AppAdmin() {
+  const { t } = useTranslation();
   const [apps, setApps] = useState<AdminApp[]>([]);
   const [keyword, setKeyword] = useState('');
   const [status, setStatus] = useState<AppStatusFilter>('');
@@ -71,11 +73,11 @@ export function AppAdmin() {
     try {
       setApps(await AdminAppService.fetchApps(adminAppQuery));
     } catch (error) {
-      setLoadError(errorMessage(error, 'Failed to load apps.'));
+      setLoadError(errorMessage(error, t('admin.app.errors.loadFallback')));
     } finally {
       setLoading(false);
     }
-  }, [adminAppQuery]);
+  }, [adminAppQuery, t]);
 
   useEffect(() => {
     void loadApps();
@@ -120,7 +122,7 @@ export function AppAdmin() {
       setModalOpen(false);
       setEditingApp(null);
     } catch (error) {
-      setActionError(errorMessage(error, 'Failed to save app.'));
+      setActionError(errorMessage(error, t('admin.app.errors.saveFallback')));
     } finally {
       setSaving(false);
     }
@@ -138,7 +140,7 @@ export function AppAdmin() {
       }[action]();
       await loadApps();
     } catch (error) {
-      setActionError(errorMessage(error, `Failed to ${action} app.`));
+      setActionError(errorMessage(error, t('admin.app.errors.actionFallback', { action: t(`admin.app.actions.${action}`) })));
     } finally {
       setPendingActionId(null);
     }
@@ -158,7 +160,7 @@ export function AppAdmin() {
       }
       setDeleteTarget(null);
     } catch (error) {
-      setActionError(errorMessage(error, 'Failed to delete app.'));
+      setActionError(errorMessage(error, t('admin.app.errors.deleteFallback')));
     } finally {
       setPendingActionId(null);
     }
@@ -170,10 +172,10 @@ export function AppAdmin() {
         <div>
           <h2 className="mb-2 flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
             <Package className="h-6 w-6 text-sky-500" />
-            App Store
+            {t('admin.app.title')}
           </h2>
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            Manage app marketplace publishing, runtime status, delivery metadata, and install endpoints.
+            {t('admin.app.subtitle')}
           </p>
         </div>
         <button
@@ -182,15 +184,15 @@ export function AppAdmin() {
           className="inline-flex w-fit items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
         >
           <Plus className="h-4 w-4" />
-          App
+          {t('admin.app.actions.create')}
         </button>
       </div>
 
       <div className="grid gap-4 md:grid-cols-4">
-        <Metric label="Total" value={summary.total} />
-        <Metric label="Active" value={summary.active} />
-        <Metric label="Published" value={summary.published} />
-        <Metric label="Draft" value={summary.draft} />
+        <Metric label={t('admin.app.metrics.total')} value={summary.total} />
+        <Metric label={t('admin.app.metrics.active')} value={summary.active} />
+        <Metric label={t('admin.app.metrics.published')} value={summary.published} />
+        <Metric label={t('admin.app.metrics.draft')} value={summary.draft} />
       </div>
 
       <div className="rounded-lg border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#171717]">
@@ -201,7 +203,7 @@ export function AppAdmin() {
               value={keyword}
               onChange={(event) => setKeyword(event.target.value)}
               className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-sky-400 dark:border-white/10 dark:bg-white/5 dark:text-white"
-              placeholder="Search apps, keys, packages"
+              placeholder={t('admin.app.filters.searchPlaceholder')}
             />
           </div>
           <select
@@ -209,14 +211,14 @@ export function AppAdmin() {
             onChange={(event) => setStatus(event.target.value as AppStatusFilter)}
             className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-sky-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
           >
-            {statusOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+            {statusOptions.map((option) => <option key={option.value} value={option.value}>{t(option.labelKey)}</option>)}
           </select>
           <select
             value={marketStatus}
             onChange={(event) => setMarketStatus(event.target.value as AppMarketStatusFilter)}
             className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-sky-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
           >
-            {marketStatusOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+            {marketStatusOptions.map((option) => <option key={option.value} value={option.value}>{t(option.labelKey)}</option>)}
           </select>
         </div>
         {actionError ? (
@@ -228,20 +230,20 @@ export function AppAdmin() {
           <table className="w-full min-w-[1100px] text-left text-sm">
             <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500 dark:bg-white/[0.03] dark:text-slate-400">
               <tr>
-                <th className="px-4 py-3 font-semibold">App</th>
-                <th className="px-4 py-3 font-semibold">Delivery</th>
-                <th className="px-4 py-3 font-semibold">Lifecycle</th>
-                <th className="px-4 py-3 font-semibold">Endpoints</th>
-                <th className="px-4 py-3 text-right font-semibold">Actions</th>
+                <th className="px-4 py-3 font-semibold">{t('admin.app.table.app')}</th>
+                <th className="px-4 py-3 font-semibold">{t('admin.app.table.delivery')}</th>
+                <th className="px-4 py-3 font-semibold">{t('admin.app.table.lifecycle')}</th>
+                <th className="px-4 py-3 font-semibold">{t('admin.app.table.endpoints')}</th>
+                <th className="px-4 py-3 text-right font-semibold">{t('admin.app.table.actions')}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 dark:divide-white/10">
               {loading ? (
-                <BusinessStateTableRow colSpan={5} kind="loading" title="Loading apps" />
+                <BusinessStateTableRow colSpan={5} kind="loading" title={t('admin.app.state.loading')} />
               ) : loadError ? (
                 <BusinessStateTableRow colSpan={5} kind="error" title={loadError} onRetry={() => void loadApps()} />
               ) : apps.length === 0 ? (
-                <BusinessStateTableRow colSpan={5} kind="empty" title="No apps found" />
+                <BusinessStateTableRow colSpan={5} kind="empty" title={t('admin.app.state.empty')} />
               ) : (
                 apps.map((app) => (
                   <tr key={app.id} className="align-top transition-colors hover:bg-slate-50/80 dark:hover:bg-white/[0.03]">
@@ -257,7 +259,7 @@ export function AppAdmin() {
                           </div>
                           <div className="mt-1 font-mono text-xs text-slate-600 dark:text-slate-300">{app.appKey || '-'}</div>
                           <div className="mt-1 font-mono text-xs text-slate-500">{app.uuid}</div>
-                          <div className="mt-2 max-w-lg text-xs leading-5 text-slate-500 dark:text-slate-400">{app.description || 'No description'}</div>
+                          <div className="mt-2 max-w-lg text-xs leading-5 text-slate-500 dark:text-slate-400">{app.description || t('admin.app.empty.noDescription')}</div>
                         </div>
                       </div>
                     </td>
@@ -267,8 +269,8 @@ export function AppAdmin() {
                     </td>
                     <td className="px-4 py-4">
                       <div className="flex flex-col gap-1.5">
-                        <StatusBadge value={app.status} />
-                        <StatusBadge value={app.marketStatus} />
+                        <StatusBadge value={app.status} label={appStatusLabel(app.status, t)} />
+                        <StatusBadge value={app.marketStatus} label={appStatusLabel(app.marketStatus, t)} />
                       </div>
                     </td>
                     <td className="px-4 py-4 text-slate-600 dark:text-slate-300">
@@ -277,21 +279,21 @@ export function AppAdmin() {
                     </td>
                     <td className="px-4 py-4">
                       <div className="flex justify-end gap-2">
-                        <IconButton title="Edit" onClick={() => openEdit(app)} icon={<Edit2 className="h-4 w-4" />} />
+                        <IconButton title={t('common.actions.edit')} onClick={() => openEdit(app)} icon={<Edit2 className="h-4 w-4" />} />
                         <IconButton
-                          title={app.marketStatus === 'PUBLISHED' ? 'Offline' : 'Publish'}
+                          title={app.marketStatus === 'PUBLISHED' ? t('common.actions.offline') : t('common.actions.publish')}
                           onClick={() => void runAppAction(app, app.marketStatus === 'PUBLISHED' ? 'offline' : 'publish')}
                           icon={app.marketStatus === 'PUBLISHED' ? <CircleOff className="h-4 w-4" /> : <CheckCircle2 className="h-4 w-4" />}
                           disabled={pendingActionId === app.id}
                         />
                         <IconButton
-                          title={app.status === 'ACTIVE' ? 'Disable' : 'Enable'}
+                          title={app.status === 'ACTIVE' ? t('common.actions.disable') : t('common.actions.enable')}
                           onClick={() => void runAppAction(app, app.status === 'ACTIVE' ? 'disable' : 'enable')}
                           icon={app.status === 'ACTIVE' ? <Ban className="h-4 w-4" /> : <CheckCircle2 className="h-4 w-4" />}
                           disabled={pendingActionId === app.id}
                         />
                         <IconButton
-                          title="Delete"
+                          title={t('common.actions.delete')}
                           onClick={() => setDeleteTarget(app)}
                           icon={<Trash2 className="h-4 w-4" />}
                           disabled={pendingActionId === app.id}
@@ -325,9 +327,9 @@ export function AppAdmin() {
 
       {deleteTarget ? (
         <ConfirmDialog
-          title="Delete app"
-          description={`Delete ${deleteTarget.name}. Attached catalog assets and artifacts will be removed by the backend command.`}
-          confirmLabel="Delete"
+          title={t('admin.app.confirm.deleteTitle')}
+          description={t('admin.app.confirm.deleteDescription', { name: deleteTarget.name })}
+          confirmLabel={t('admin.app.confirm.deleteConfirm')}
           tone="danger"
           isBusy={pendingActionId === deleteTarget.id}
           icon={<Trash2 className="h-4 w-4" />}
@@ -358,14 +360,15 @@ function AppModal({
   onClose: () => void;
   onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }) {
+  const { t } = useTranslation();
   const isEdit = mode === 'edit';
   return (
     <div className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/50 px-4 py-6 backdrop-blur-sm">
       <div className="max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171717]">
         <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4 dark:border-white/10">
           <div>
-            <h3 className="text-base font-bold text-slate-900 dark:text-white">{isEdit ? 'Edit App' : 'Create App'}</h3>
-            <p className="mt-1 text-xs text-slate-500">Define store metadata, delivery endpoints, and install configuration.</p>
+            <h3 className="text-base font-bold text-slate-900 dark:text-white">{isEdit ? t('admin.app.modals.editTitle') : t('admin.app.modals.createTitle')}</h3>
+            <p className="mt-1 text-xs text-slate-500">{t('admin.app.modals.description')}</p>
           </div>
           <button type="button" onClick={onClose} className="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-white/10 dark:hover:text-white">
             <X className="h-4 w-4" />
@@ -374,51 +377,51 @@ function AppModal({
         <form onSubmit={onSubmit} className="max-h-[calc(90vh-73px)] overflow-y-auto p-5">
           {error ? <div className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-500/10 dark:text-red-300">{error}</div> : null}
           <div className="grid gap-4 md:grid-cols-2">
-            <Field label="Name" name="name" defaultValue={app?.name} required />
-            <Field label="App Key" name="appKey" defaultValue={standardAppKey(app)} required />
-            <Field label="Version" name="version" defaultValue={isEdit ? app?.version ?? '' : app?.version ?? '1.0.0'} />
-            <Field label="App Type" name="appType" defaultValue={isEdit ? app?.appType ?? '' : app?.appType ?? 'web'} />
-            <Field label="Package Name" name="packageName" defaultValue={app?.packageName ?? ''} />
-            <Field label="Bundle ID" name="bundleId" defaultValue={app?.bundleId ?? ''} />
-            <Field label="Access URL" name="accessUrl" defaultValue={app?.accessUrl ?? ''} />
-            <Field label="Store URL" name="storeUrl" defaultValue={app?.storeUrl ?? ''} />
-            <Field label="Download URL" name="downloadUrl" defaultValue={app?.downloadUrl ?? ''} />
-            <Field label="Icon URL" name="iconUrl" defaultValue={app?.iconUrl ?? ''} />
-            <Field label="Project ID" name="projectId" defaultValue={app?.projectId ?? ''} />
+            <Field label={t('admin.app.fields.name')} name="name" defaultValue={app?.name} required />
+            <Field label={t('admin.app.fields.appKey')} name="appKey" defaultValue={standardAppKey(app)} required />
+            <Field label={t('admin.app.fields.version')} name="version" defaultValue={isEdit ? app?.version ?? '' : app?.version ?? '1.0.0'} />
+            <Field label={t('admin.app.fields.appType')} name="appType" defaultValue={isEdit ? app?.appType ?? '' : app?.appType ?? 'web'} />
+            <Field label={t('admin.app.fields.packageName')} name="packageName" defaultValue={app?.packageName ?? ''} />
+            <Field label={t('admin.app.fields.bundleId')} name="bundleId" defaultValue={app?.bundleId ?? ''} />
+            <Field label={t('admin.app.fields.accessUrl')} name="accessUrl" defaultValue={app?.accessUrl ?? ''} />
+            <Field label={t('admin.app.fields.storeUrl')} name="storeUrl" defaultValue={app?.storeUrl ?? ''} />
+            <Field label={t('admin.app.fields.downloadUrl')} name="downloadUrl" defaultValue={app?.downloadUrl ?? ''} />
+            <Field label={t('admin.app.fields.iconUrl')} name="iconUrl" defaultValue={app?.iconUrl ?? ''} />
+            <Field label={t('admin.app.fields.projectId')} name="projectId" defaultValue={app?.projectId ?? ''} />
             {!isEdit ? (
               <>
-                <SelectField label="Runtime Status" name="status" defaultValue={app?.status ?? 'ACTIVE'}>
-                  <option value="ACTIVE">Active</option>
-                  <option value="INACTIVE">Inactive</option>
+                <SelectField label={t('admin.app.fields.runtimeStatus')} name="status" defaultValue={app?.status ?? 'ACTIVE'}>
+                  <option value="ACTIVE">{t('admin.app.status.active')}</option>
+                  <option value="INACTIVE">{t('admin.app.status.inactive')}</option>
                 </SelectField>
-                <SelectField label="Market Status" name="marketStatus" defaultValue={app?.marketStatus ?? 'DRAFT'}>
-                  <option value="DRAFT">Draft</option>
-                  <option value="PUBLISHED">Published</option>
-                  <option value="OFFLINE">Offline</option>
+                <SelectField label={t('admin.app.fields.marketStatus')} name="marketStatus" defaultValue={app?.marketStatus ?? 'DRAFT'}>
+                  <option value="DRAFT">{t('admin.app.status.draft')}</option>
+                  <option value="PUBLISHED">{t('admin.app.status.published')}</option>
+                  <option value="OFFLINE">{t('admin.app.status.offline')}</option>
                 </SelectField>
               </>
             ) : null}
           </div>
           <div className="mt-4">
-            <TextArea label="Description" name="description" rows={4} defaultValue={app?.description ?? ''} plain />
+            <TextArea label={t('admin.app.fields.description')} name="description" rows={4} defaultValue={app?.description ?? ''} plain />
           </div>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
-            <TextArea label="Icon" name="icon" defaultValue={formatJson(app?.icon ?? {})} />
-            <TextArea label="Resource List" name="resourceList" defaultValue={formatJson(app?.resourceList ?? {})} />
-            <TextArea label="Config" name="config" defaultValue={formatJson(app?.config ?? {})} />
-            <TextArea label="Platforms" name="platforms" defaultValue={formatJson(app?.platforms ?? {})} />
-            <TextArea label="Install Platforms" name="installPlatforms" defaultValue={formatJson(app?.installPlatforms ?? {})} />
-            <TextArea label="Install Skill" name="installSkill" defaultValue={formatJson(app?.installSkill ?? {})} />
-            <TextArea label="Install Config" name="installConfig" defaultValue={formatJson(app?.installConfig ?? {})} />
-            <TextArea label="Release Notes" name="releaseNotes" defaultValue={formatJson(app?.releaseNotes ?? [])} />
+            <TextArea label={t('admin.app.fields.icon')} name="icon" defaultValue={formatJson(app?.icon ?? {})} />
+            <TextArea label={t('admin.app.fields.resourceList')} name="resourceList" defaultValue={formatJson(app?.resourceList ?? {})} />
+            <TextArea label={t('admin.app.fields.config')} name="config" defaultValue={formatJson(app?.config ?? {})} />
+            <TextArea label={t('admin.app.fields.platforms')} name="platforms" defaultValue={formatJson(app?.platforms ?? {})} />
+            <TextArea label={t('admin.app.fields.installPlatforms')} name="installPlatforms" defaultValue={formatJson(app?.installPlatforms ?? {})} />
+            <TextArea label={t('admin.app.fields.installSkill')} name="installSkill" defaultValue={formatJson(app?.installSkill ?? {})} />
+            <TextArea label={t('admin.app.fields.installConfig')} name="installConfig" defaultValue={formatJson(app?.installConfig ?? {})} />
+            <TextArea label={t('admin.app.fields.releaseNotes')} name="releaseNotes" defaultValue={formatJson(app?.releaseNotes ?? [])} />
           </div>
           <div className="mt-5 flex justify-end gap-3">
             <button type="button" onClick={onClose} disabled={isSaving} className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60 dark:border-white/10 dark:text-slate-200 dark:hover:bg-white/5">
-              Cancel
+              {t('common.actions.cancel')}
             </button>
             <button type="submit" disabled={isSaving} className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-bold text-white hover:bg-slate-800 disabled:opacity-60 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200">
               {isSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
-              Save
+              {t('common.actions.save')}
             </button>
           </div>
         </form>
@@ -503,13 +506,22 @@ function Badge({ value }: { value: string }) {
   return <span className="rounded-md bg-sky-50 px-2 py-0.5 text-xs font-medium text-sky-700 dark:bg-sky-500/10 dark:text-sky-300">{value}</span>;
 }
 
-function StatusBadge({ value }: { value: string }) {
+function StatusBadge({ label, value }: { label: string; value: string }) {
   const tone = value === 'PUBLISHED' || value === 'ACTIVE'
     ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300'
     : value === 'OFFLINE' || value === 'INACTIVE'
       ? 'bg-red-50 text-red-700 dark:bg-red-500/10 dark:text-red-300'
       : 'bg-amber-50 text-amber-700 dark:bg-amber-500/10 dark:text-amber-300';
-  return <span className={`inline-flex w-fit rounded-md px-2 py-0.5 text-xs font-semibold ${tone}`}>{value}</span>;
+  return <span className={`inline-flex w-fit rounded-md px-2 py-0.5 text-xs font-semibold ${tone}`}>{label}</span>;
+}
+
+function appStatusLabel(value: AdminAppStatus | AdminAppMarketStatus, t: ReturnType<typeof useTranslation>['t']): string {
+  if (value === 'ACTIVE') return t('admin.app.status.active');
+  if (value === 'INACTIVE') return t('admin.app.status.inactive');
+  if (value === 'DRAFT') return t('admin.app.status.draft');
+  if (value === 'PUBLISHED') return t('admin.app.status.published');
+  if (value === 'OFFLINE') return t('admin.app.status.offline');
+  return value;
 }
 
 function formatJson(value: unknown): string {

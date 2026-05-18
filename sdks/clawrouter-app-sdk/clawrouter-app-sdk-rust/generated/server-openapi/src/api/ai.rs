@@ -4,7 +4,7 @@ use crate::api::base::{RequestHeaders};
 use crate::api::paths::app_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{CreateRoutingChannelRequest, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationsListResult, ModelRankingsListResult, ModelVendorsListResult, ModelsListResult, ProvidersListResult, RoutingApiKeysListResult, RoutingChannelsCreateResult, RoutingChannelsDeleteResult, RoutingChannelsListResult, RoutingChannelsStatusUpdateResult, RoutingChannelsUpdateResult, RoutingChannelsVerifyResult, RoutingRequestTracesListResult, RoutingStrategyListResult, RoutingStrategyUpdateResult, RoutingUsageListResult, SetRoutingChannelStatusRequest, UpdateRoutingChannelRequest, UpdateRoutingStrategyRequest, UsageLogsListResult};
+use crate::models::{CreateRoutingChannelRequest, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationAgentRunCreateRequest, GenerationAgentRunsCreateResult, GenerationListResult, ModelRankingsListResult, ModelVendorsListResult, ModelsListResult, ProvidersListResult, RoutingApiKeysListResult, RoutingChannelsCreateResult, RoutingChannelsDeleteResult, RoutingChannelsListResult, RoutingChannelsStatusUpdateResult, RoutingChannelsUpdateResult, RoutingChannelsVerifyResult, RoutingRequestTracesListResult, RoutingStrategyListResult, RoutingStrategyUpdateResult, RoutingUsageListResult, SetRoutingChannelStatusRequest, UpdateRoutingChannelRequest, UpdateRoutingStrategyRequest, UsageLogsListResult};
 
 #[derive(Clone)]
 pub struct AiApi {
@@ -33,8 +33,14 @@ impl AiApi {
         self.client.get(&path, None, None).await
     }
 
+    /// Create generation agent run
+    pub async fn generation_agent_runs_create(&self, body: &GenerationAgentRunCreateRequest) -> Result<GenerationAgentRunsCreateResult, SdkworkError> {
+        let path = app_path(&"/ai/generation/agents/runs".to_string());
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
+    }
+
     /// List generation history
-    pub async fn generations_list(&self) -> Result<GenerationsListResult, SdkworkError> {
+    pub async fn generation_list(&self) -> Result<GenerationListResult, SdkworkError> {
         let path = app_path(&"/ai/generations".to_string());
         self.client.get(&path, None, None).await
     }

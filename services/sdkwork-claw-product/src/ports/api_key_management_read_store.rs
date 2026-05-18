@@ -47,6 +47,69 @@ impl GatewayApiKeyManagementSnapshot {
             .cloned()
     }
 
+    pub fn find_api_key_for_subject(
+        &self,
+        api_key_id: i64,
+        tenant_id: i64,
+        organization_id: i64,
+        user_id: i64,
+    ) -> Option<GatewayApiKey> {
+        self.api_keys
+            .iter()
+            .find(|api_key| {
+                api_key.id == api_key_id
+                    && api_key.tenant_id == tenant_id
+                    && api_key.organization_id == organization_id
+                    && api_key.user_id == user_id
+            })
+            .cloned()
+    }
+
+    pub fn find_api_key_group_for_subject(
+        &self,
+        group_id: i64,
+        tenant_id: i64,
+        organization_id: i64,
+    ) -> Option<ApiKeyGroup> {
+        self.api_key_groups
+            .iter()
+            .find(|group| {
+                group.id == group_id && group_matches_subject(group, tenant_id, organization_id)
+            })
+            .cloned()
+    }
+
+    pub fn find_api_key_group_by_code_for_subject(
+        &self,
+        code: &str,
+        tenant_id: i64,
+        organization_id: i64,
+    ) -> Option<ApiKeyGroup> {
+        self.api_key_groups
+            .iter()
+            .find(|group| {
+                group.code == code && group_matches_subject(group, tenant_id, organization_id)
+            })
+            .cloned()
+    }
+
+    pub fn single_api_key_group_for_subject(
+        &self,
+        tenant_id: i64,
+        organization_id: i64,
+    ) -> Option<ApiKeyGroup> {
+        let mut groups = self
+            .api_key_groups
+            .iter()
+            .filter(|group| group_matches_subject(group, tenant_id, organization_id));
+        let group = groups.next()?.clone();
+        if groups.next().is_none() {
+            Some(group)
+        } else {
+            None
+        }
+    }
+
     pub fn find_access_policy(&self, policy_id: i64) -> Option<GatewayAccessPolicy> {
         self.access_policies
             .iter()
@@ -75,6 +138,7 @@ impl GatewayApiKeyManagementSnapshot {
         let api_keys: Vec<GatewayApiKey> = self
             .api_keys
             .iter()
+            .rev()
             .filter(|api_key| {
                 api_key.tenant_id == tenant_id
                     && api_key.organization_id == organization_id
@@ -84,13 +148,29 @@ impl GatewayApiKeyManagementSnapshot {
             .collect();
         let access_policies = collect_snapshot_access_policies(self, &api_keys);
         let quota_policies = collect_snapshot_quota_policies(self, &api_keys);
+        let api_key_groups: Vec<ApiKeyGroup> = self
+            .api_key_groups
+            .iter()
+            .filter(|group| group_matches_subject(group, tenant_id, organization_id))
+            .cloned()
+            .collect();
+        let api_key_group_metric_snapshots = self
+            .api_key_group_metric_snapshots
+            .iter()
+            .filter(|snapshot| {
+                api_key_groups
+                    .iter()
+                    .any(|group| group.id == snapshot.group_id)
+            })
+            .cloned()
+            .collect();
 
         Self {
             api_keys,
-            api_key_groups: self.api_key_groups.clone(),
+            api_key_groups,
             access_policies,
             quota_policies,
-            api_key_group_metric_snapshots: self.api_key_group_metric_snapshots.clone(),
+            api_key_group_metric_snapshots,
         }
     }
 
@@ -110,6 +190,35 @@ impl GatewayApiKeyManagementSnapshot {
         }
         snapshot
     }
+
+    pub fn with_updated_api_key(
+        &self,
+        api_key: GatewayApiKey,
+        access_policy: Option<GatewayAccessPolicy>,
+        quota_policy: Option<QuotaPolicy>,
+    ) -> Self {
+        let mut snapshot = self.clone();
+        snapshot.api_keys.retain(|item| item.id != api_key.id);
+        snapshot.api_keys.push(api_key);
+        if let Some(access_policy) = access_policy {
+            snapshot
+                .access_policies
+                .retain(|item| item.id != access_policy.id);
+            snapshot.access_policies.push(access_policy);
+        }
+        if let Some(quota_policy) = quota_policy {
+            snapshot
+                .quota_policies
+                .retain(|item| item.id != quota_policy.id);
+            snapshot.quota_policies.push(quota_policy);
+        }
+        snapshot
+    }
+}
+
+fn group_matches_subject(group: &ApiKeyGroup, tenant_id: i64, organization_id: i64) -> bool {
+    (group.tenant_id == 0 || group.tenant_id == tenant_id)
+        && (group.organization_id == 0 || group.organization_id == organization_id)
 }
 
 pub trait GatewayApiKeyManagementReadStore {

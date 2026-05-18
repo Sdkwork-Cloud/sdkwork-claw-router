@@ -36,6 +36,8 @@ impl InMemoryPricingCatalog {
     }
 
     pub fn add_provider_account_pool_route(&mut self, route: ProviderAccountPoolRoute) {
+        self.provider_account_pool_routes
+            .retain(|item| item.channel_id != route.channel_id);
         self.provider_account_pool_routes.push(route);
     }
 
@@ -70,6 +72,7 @@ impl InMemoryPricingCatalog {
     }
 
     pub fn add_api_key(&mut self, api_key: GatewayApiKey) {
+        self.api_keys.retain(|item| item.id != api_key.id);
         self.api_keys.push(api_key);
     }
 

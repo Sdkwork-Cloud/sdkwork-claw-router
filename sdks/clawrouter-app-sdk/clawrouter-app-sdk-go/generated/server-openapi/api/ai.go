@@ -42,6 +42,16 @@ func (a *AiApi) GatewayTracesList() (sdktypes.GatewayTracesListResult, error) {
     return decodeResult[sdktypes.GatewayTracesListResult](raw)
 }
 
+// Create Playground generation agent run
+func (a *AiApi) GenerationAgentRunsCreate(body sdktypes.GenerationAgentRunCreateRequest) (sdktypes.GenerationAgentRunsCreateResult, error) {
+    raw, err := a.client.Post(AppApiPath("/ai/generation_agent/runs"), body, nil, nil, "application/json")
+    if err != nil {
+        var zero sdktypes.GenerationAgentRunsCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.GenerationAgentRunsCreateResult](raw)
+}
+
 // List generation history
 func (a *AiApi) GenerationsList() (sdktypes.GenerationsListResult, error) {
     raw, err := a.client.Get(AppApiPath("/ai/generations"), nil, nil)

@@ -570,8 +570,11 @@ async fn create_schema(pool: &SqlitePool) -> anyhow::Result<()> {
             base_url_override TEXT,
             timeout_ms INTEGER,
             retry_policy TEXT,
+            circuit_breaker_policy TEXT,
             account_id INTEGER,
             status INTEGER NOT NULL,
+            health_status INTEGER,
+            updated_at TEXT,
             deleted_at TEXT,
             priority INTEGER NOT NULL,
             weight INTEGER NOT NULL
@@ -770,6 +773,8 @@ async fn create_schema(pool: &SqlitePool) -> anyhow::Result<()> {
         )"#,
         r#"CREATE TABLE iam_gateway_api_key_group (
             id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
             code TEXT NOT NULL,
             pricing_plan_code TEXT NOT NULL,
             rate_multiplier TEXT NOT NULL,
@@ -796,7 +801,8 @@ async fn create_schema(pool: &SqlitePool) -> anyhow::Result<()> {
             deleted_at TEXT,
             revoked_at TEXT,
             expire_at TEXT,
-            updated_at TEXT
+            updated_at TEXT,
+            metadata TEXT NOT NULL DEFAULT '{}'
         )"#,
         r#"CREATE TABLE iam_gateway_access_policy (
             id INTEGER PRIMARY KEY,

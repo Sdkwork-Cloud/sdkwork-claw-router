@@ -5,31 +5,39 @@ use sdkwork_claw_config::{
     ApiKeySecurityConfig, DatabaseConfig, DatabaseEngine, ProviderRelayConfig,
     ProviderSecretMapConfig, RuntimeConfigProfile, RuntimeTomlConfig, StartupInstallMode,
 };
+use sdkwork_claw_product::api::{
+    OpenAiInvocationPluginRef, OpenAiRuntimeFailureStrategy, OpenAiRuntimeRouteConfig,
+};
 use sdkwork_claw_product::application::{
-    ApiKeySecretHasher, UsageSettlementWorker, UsageSettlementWorkerConfig,
+    ApiKeySecretCodec, ApiKeySecretHasher, UsageSettlementWorker, UsageSettlementWorkerConfig,
 };
 use sdkwork_claw_product::domain::{
-    ProviderRetryPolicy, DEFAULT_PROVIDER_RETRY_ATTEMPTS, DEFAULT_RETRYABLE_PROVIDER_STATUS_CODES,
+    ProviderRetryPolicy, DEFAULT_PROVIDER_CIRCUIT_BREAKER_RECOVERY_WINDOW_SECONDS,
+    DEFAULT_PROVIDER_RETRY_ATTEMPTS, DEFAULT_RETRYABLE_PROVIDER_STATUS_CODES,
 };
-use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
+use sdkwork_claw_product::infrastructure::crypto::{
+    HmacSha256ApiKeySecretHasher, RingAeadApiKeySecretCodec,
+};
 use sdkwork_claw_product::infrastructure::provider::{
     OpenAiCompatibleChatCompletionRelay, OpenAiCompatibleChatCompletionStreamRelay,
-    OpenAiCompatibleEmbeddingsRelay, OpenAiCompatibleResponsesRelay, ProviderSecretMapResolver,
-    SecretRefOpenAiCompatibleChatCompletionRelay,
+    OpenAiCompatibleEmbeddingsRelay, OpenAiCompatibleResponsesRelay,
+    RefreshableProviderSecretMapResolver, SecretRefOpenAiCompatibleChatCompletionRelay,
     SecretRefOpenAiCompatibleChatCompletionStreamRelay, SecretRefOpenAiCompatibleEmbeddingsRelay,
     SecretRefOpenAiCompatibleResponsesRelay, UpstreamProviderEndpoint,
     DEFAULT_PROVIDER_RESPONSE_TIMEOUT_MILLIS,
 };
+use sdkwork_claw_product::infrastructure::sql::catalog::RefreshableSqlPricingCatalog;
 use sdkwork_claw_product::infrastructure::sql::installer::{
     log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
 };
 use sdkwork_claw_product::infrastructure::sql::postgres::{
-    PostgresCatalogLoadError, PostgresGatewayUsageRecorder, PostgresPricingCatalogLoader,
+    PostgresCatalogLoadError, PostgresGatewayUsageRecorder,
+    PostgresOpenAiInvocationTelemetryPlugin, PostgresPricingCatalogLoader,
     PostgresUsageSettlementStore,
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
-    SqlCatalogLoadError, SqliteGatewayUsageRecorder, SqlitePricingCatalogLoader,
-    SqliteUsageSettlementStore,
+    SqlCatalogLoadError, SqliteGatewayUsageRecorder, SqliteOpenAiInvocationTelemetryPlugin,
+    SqlitePricingCatalogLoader, SqliteUsageSettlementStore,
 };
 use sdkwork_claw_product::ports::{
     ChatCompletionRelay, ChatCompletionStreamRelay, EmbeddingsRelay, GatewayUsageRecorder,
@@ -44,12 +52,15 @@ use crate::router;
 use crate::router_with_database_status_and_passthrough_placeholder;
 
 type ApiKeyHasher = Arc<dyn ApiKeySecretHasher + Send + Sync>;
+type ApiKeyCodec = Arc<dyn ApiKeySecretCodec + Send + Sync>;
 type ChatRelay = Arc<dyn ChatCompletionRelay + Send + Sync>;
 type ChatStreamRelay = Arc<dyn ChatCompletionStreamRelay + Send + Sync>;
 type EmbeddingRelay = Arc<dyn EmbeddingsRelay + Send + Sync>;
 type ResponseRelay = Arc<dyn ResponsesRelay + Send + Sync>;
 type UsageRecorder = Arc<dyn GatewayUsageRecorder + Send + Sync>;
 type SettlementStore = Arc<dyn UsageSettlementStore + Send + Sync>;
+
+const DEFAULT_OPENAI_RUNTIME_CATALOG_REFRESH_INTERVAL_MILLIS: u64 = 5_000;
 
 #[derive(Default)]
 struct OpenAiRuntimeRelays {
@@ -72,6 +83,9 @@ where
         api_key_hasher,
         OpenAiRuntimeRelays::default(),
         None,
+        Vec::new(),
+        OpenAiRuntimeFailureStrategy::default(),
+        ProviderRetryPolicy::default(),
         None,
         None,
     )
@@ -96,6 +110,9 @@ where
             responses: None,
         },
         None,
+        Vec::new(),
+        OpenAiRuntimeFailureStrategy::default(),
+        ProviderRetryPolicy::default(),
         None,
         None,
     )
@@ -120,6 +137,9 @@ where
             responses: None,
         },
         None,
+        Vec::new(),
+        OpenAiRuntimeFailureStrategy::default(),
+        ProviderRetryPolicy::default(),
         None,
         None,
     )
@@ -144,6 +164,9 @@ where
             responses: None,
         },
         None,
+        Vec::new(),
+        OpenAiRuntimeFailureStrategy::default(),
+        ProviderRetryPolicy::default(),
         None,
         None,
     )
@@ -168,6 +191,9 @@ where
             responses: Some(responses_relay),
         },
         None,
+        Vec::new(),
+        OpenAiRuntimeFailureStrategy::default(),
+        ProviderRetryPolicy::default(),
         None,
         None,
     )
@@ -179,8 +205,11 @@ fn router_with_openai_runtime_routes<C>(
     api_key_hasher: ApiKeyHasher,
     relays: OpenAiRuntimeRelays,
     usage_recorder: Option<UsageRecorder>,
+    invocation_plugins: Vec<OpenAiInvocationPluginRef>,
+    failure_strategy: OpenAiRuntimeFailureStrategy,
+    default_retry_policy: ProviderRetryPolicy,
     provider_passthrough_config: Option<ProviderRelayConfig>,
-    provider_secret_resolver: Option<Arc<ProviderSecretMapResolver>>,
+    provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
 ) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
@@ -203,43 +232,51 @@ where
     let chat_router = match (relays.chat, relays.chat_stream) {
         (Some(relay), Some(stream_relay)) => {
             if let Some(usage_recorder) = usage_recorder.clone() {
-                sdkwork_claw_product::api::openai_chat_completions_router_with_relays_and_usage_recorder(
+                sdkwork_claw_product::api::openai_chat_completions_router_with_relays_usage_recorder_plugins_and_runtime_config(
                     Arc::clone(&catalog),
                     Arc::clone(&api_key_hasher),
                     relay,
                     stream_relay,
                     usage_recorder,
+                    invocation_plugins.clone(),
+                    OpenAiRuntimeRouteConfig::new(default_retry_policy.clone(), failure_strategy),
                 )
             } else {
-                sdkwork_claw_product::api::openai_chat_completions_router_with_relays(
+                sdkwork_claw_product::api::openai_chat_completions_router_with_relays_and_failure_strategy(
                     Arc::clone(&catalog),
                     Arc::clone(&api_key_hasher),
                     relay,
                     stream_relay,
+                    failure_strategy,
                 )
             }
         }
         (Some(relay), None) => {
             if let Some(usage_recorder) = usage_recorder.clone() {
-                sdkwork_claw_product::api::openai_chat_completions_router_with_relay_and_usage_recorder(
+                sdkwork_claw_product::api::openai_chat_completions_router_with_relay_usage_recorder_plugins_and_runtime_config(
                     Arc::clone(&catalog),
                     Arc::clone(&api_key_hasher),
                     relay,
                     usage_recorder,
+                    invocation_plugins.clone(),
+                    OpenAiRuntimeRouteConfig::new(default_retry_policy.clone(), failure_strategy),
                 )
             } else {
-                sdkwork_claw_product::api::openai_chat_completions_router_with_relay(
+                sdkwork_claw_product::api::openai_chat_completions_router_with_relay_plugins_and_failure_strategy(
                     Arc::clone(&catalog),
                     Arc::clone(&api_key_hasher),
                     relay,
+                    invocation_plugins.clone(),
+                    failure_strategy,
                 )
             }
         }
         (None, Some(stream_relay)) => {
-            sdkwork_claw_product::api::openai_chat_completions_router_with_streaming_relay(
+            sdkwork_claw_product::api::openai_chat_completions_router_with_streaming_relay_and_failure_strategy(
                 Arc::clone(&catalog),
                 Arc::clone(&api_key_hasher),
                 stream_relay,
+                failure_strategy,
             )
         }
         (None, None) => sdkwork_claw_product::api::openai_chat_completions_router(
@@ -248,22 +285,52 @@ where
         ),
     };
     let responses_router = match relays.responses {
-        Some(relay) => sdkwork_claw_product::api::openai_responses_router_with_relay(
-            Arc::clone(&catalog),
-            Arc::clone(&api_key_hasher),
-            relay,
-        ),
+        Some(relay) => {
+            if let Some(usage_recorder) = usage_recorder.clone() {
+                sdkwork_claw_product::api::openai_responses_router_with_relay_usage_recorder_plugins_and_runtime_config(
+                    Arc::clone(&catalog),
+                    Arc::clone(&api_key_hasher),
+                    relay,
+                    usage_recorder,
+                    invocation_plugins.clone(),
+                    OpenAiRuntimeRouteConfig::new(default_retry_policy.clone(), failure_strategy),
+                )
+            } else {
+                sdkwork_claw_product::api::openai_responses_router_with_relay_plugins_and_failure_strategy(
+                    Arc::clone(&catalog),
+                    Arc::clone(&api_key_hasher),
+                    relay,
+                    invocation_plugins.clone(),
+                    failure_strategy,
+                )
+            }
+        }
         None => sdkwork_claw_product::api::openai_responses_router(
             Arc::clone(&catalog),
             Arc::clone(&api_key_hasher),
         ),
     };
     let embeddings_router = match relays.embeddings {
-        Some(relay) => sdkwork_claw_product::api::openai_embeddings_router_with_relay(
-            Arc::clone(&catalog),
-            Arc::clone(&api_key_hasher),
-            relay,
-        ),
+        Some(relay) => {
+            if let Some(usage_recorder) = usage_recorder.clone() {
+                sdkwork_claw_product::api::openai_embeddings_router_with_relay_usage_recorder_plugins_and_runtime_config(
+                    Arc::clone(&catalog),
+                    Arc::clone(&api_key_hasher),
+                    relay,
+                    usage_recorder,
+                    invocation_plugins.clone(),
+                    OpenAiRuntimeRouteConfig::new(default_retry_policy.clone(), failure_strategy),
+                )
+            } else {
+                sdkwork_claw_product::api::openai_embeddings_router_with_relay_plugins_and_failure_strategy(
+                    Arc::clone(&catalog),
+                    Arc::clone(&api_key_hasher),
+                    relay,
+                    invocation_plugins.clone(),
+                    failure_strategy,
+                )
+            }
+        }
         None => sdkwork_claw_product::api::openai_embeddings_router(
             Arc::clone(&catalog),
             Arc::clone(&api_key_hasher),
@@ -396,15 +463,12 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
     startup_install_mode: StartupInstallMode,
     runtime_toml: Option<&RuntimeTomlConfig>,
 ) -> Result<Router, GatewayRouterError> {
-    let api_key_hasher = build_api_key_hasher(api_key_config)?;
+    let api_key_security_config = require_api_key_security_config(api_key_config)?;
+    let api_key_hasher = build_api_key_hasher(&api_key_security_config)?;
+    let api_key_secret_codec = api_key_secret_codec_from_config(&api_key_security_config)?;
     let provider_passthrough_config = provider_relay_config.clone();
-    let provider_secret_resolver = provider_secret_map_config
-        .map(|config| Arc::new(ProviderSecretMapResolver::from_config(config)));
-    let relays = build_openai_runtime_relays(
-        provider_relay_config,
-        provider_secret_resolver.clone(),
-        runtime_toml,
-    )?;
+    let provider_runtime = provider_relay_runtime_config_from_env_or_toml(runtime_toml)
+        .map_err(GatewayRouterError::Config)?;
     match config.engine {
         DatabaseEngine::Sqlite => {
             let sqlite_options = SqliteConnectOptions::from_str(config.url.as_str())
@@ -424,22 +488,54 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                     .await?;
                 log_bootstrap_admin_report("sdkwork-claw-gateway", &install_report);
             }
-            let snapshot = SqlitePricingCatalogLoader::new(pool.clone())
-                .load_snapshot()
-                .await?;
+            let snapshot = SqlitePricingCatalogLoader::with_api_key_secret_codec(
+                pool.clone(),
+                api_key_secret_codec.clone(),
+            )
+            .with_circuit_breaker_recovery_window_seconds(
+                provider_runtime.circuit_breaker_recovery_window_seconds,
+            )
+            .load_snapshot()
+            .await?;
+            let provider_secret_resolver = provider_secret_resolver_from_config_and_managed_secrets(
+                provider_secret_map_config.clone(),
+                snapshot.managed_provider_secrets(),
+            );
+            let relays = build_openai_runtime_relays(
+                provider_relay_config.clone(),
+                provider_secret_resolver.clone(),
+                provider_runtime.clone(),
+            )?;
+            let catalog = Arc::new(RefreshableSqlPricingCatalog::new(snapshot));
             let usage_recorder: UsageRecorder =
                 Arc::new(SqliteGatewayUsageRecorder::new(pool.clone()));
+            let invocation_plugins =
+                vec![
+                    Arc::new(SqliteOpenAiInvocationTelemetryPlugin::new(pool.clone()))
+                        as OpenAiInvocationPluginRef,
+                ];
             maybe_spawn_sqlite_usage_settlement_worker(&pool, usage_settlement_worker_config)
                 .await?;
+            spawn_sqlite_catalog_refresh_worker(
+                &pool,
+                Arc::clone(&catalog),
+                provider_secret_resolver.clone(),
+                api_key_secret_codec.clone(),
+                provider_runtime.catalog_refresh_interval,
+                provider_runtime.circuit_breaker_recovery_window_seconds,
+            );
             Ok(router_with_openai_runtime_routes(
                 router_with_database_status_and_passthrough_placeholder(
                     Some(&config),
                     provider_passthrough_config.is_none() && provider_secret_resolver.is_none(),
                 ),
-                Arc::new(snapshot),
+                catalog,
                 api_key_hasher,
                 relays,
                 Some(usage_recorder),
+                invocation_plugins,
+                provider_runtime.failure_strategy,
+                provider_runtime.default_retry_policy.clone(),
                 provider_passthrough_config,
                 provider_secret_resolver.clone(),
             ))
@@ -459,22 +555,54 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                     .await?;
                 log_bootstrap_admin_report("sdkwork-claw-gateway", &install_report);
             }
-            let snapshot = PostgresPricingCatalogLoader::new(pool.clone())
-                .load_snapshot()
-                .await?;
+            let snapshot = PostgresPricingCatalogLoader::with_api_key_secret_codec(
+                pool.clone(),
+                api_key_secret_codec.clone(),
+            )
+            .with_circuit_breaker_recovery_window_seconds(
+                provider_runtime.circuit_breaker_recovery_window_seconds,
+            )
+            .load_snapshot()
+            .await?;
+            let provider_secret_resolver = provider_secret_resolver_from_config_and_managed_secrets(
+                provider_secret_map_config.clone(),
+                snapshot.managed_provider_secrets(),
+            );
+            let relays = build_openai_runtime_relays(
+                provider_relay_config.clone(),
+                provider_secret_resolver.clone(),
+                provider_runtime.clone(),
+            )?;
+            let catalog = Arc::new(RefreshableSqlPricingCatalog::new(snapshot));
             let usage_recorder: UsageRecorder =
                 Arc::new(PostgresGatewayUsageRecorder::new(pool.clone()));
+            let invocation_plugins =
+                vec![
+                    Arc::new(PostgresOpenAiInvocationTelemetryPlugin::new(pool.clone()))
+                        as OpenAiInvocationPluginRef,
+                ];
             maybe_spawn_postgres_usage_settlement_worker(&pool, usage_settlement_worker_config)
                 .await?;
+            spawn_postgres_catalog_refresh_worker(
+                &pool,
+                Arc::clone(&catalog),
+                provider_secret_resolver.clone(),
+                api_key_secret_codec.clone(),
+                provider_runtime.catalog_refresh_interval,
+                provider_runtime.circuit_breaker_recovery_window_seconds,
+            );
             Ok(router_with_openai_runtime_routes(
                 router_with_database_status_and_passthrough_placeholder(
                     Some(&config),
                     provider_passthrough_config.is_none() && provider_secret_resolver.is_none(),
                 ),
-                Arc::new(snapshot),
+                catalog,
                 api_key_hasher,
                 relays,
                 Some(usage_recorder),
+                invocation_plugins,
+                provider_runtime.failure_strategy,
+                provider_runtime.default_retry_policy.clone(),
                 provider_passthrough_config,
                 provider_secret_resolver.clone(),
             ))
@@ -635,6 +763,80 @@ fn spawn_usage_settlement_worker(
                 tracing::warn!(error = %error, "usage settlement worker run failed");
             }
             sleep(interval).await;
+        }
+    })
+}
+
+fn spawn_sqlite_catalog_refresh_worker(
+    pool: &SqlitePool,
+    catalog: Arc<RefreshableSqlPricingCatalog>,
+    provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
+    api_key_secret_codec: Arc<dyn ApiKeySecretCodec + Send + Sync>,
+    interval: Duration,
+    circuit_breaker_recovery_window_seconds: u64,
+) -> tokio::task::JoinHandle<()> {
+    let pool = pool.clone();
+    tokio::spawn(async move {
+        loop {
+            sleep(interval).await;
+            match SqlitePricingCatalogLoader::with_api_key_secret_codec(
+                pool.clone(),
+                api_key_secret_codec.clone(),
+            )
+            .with_circuit_breaker_recovery_window_seconds(circuit_breaker_recovery_window_seconds)
+            .load_snapshot()
+            .await
+            {
+                Ok(snapshot) => {
+                    if let Some(resolver) = provider_secret_resolver.as_ref() {
+                        resolver.replace_managed_secrets(snapshot.managed_provider_secrets());
+                    }
+                    catalog.replace_snapshot(snapshot)
+                }
+                Err(error) => {
+                    tracing::warn!(
+                        error = %error,
+                        "SQLite OpenAI runtime catalog refresh failed; keeping previous snapshot"
+                    );
+                }
+            }
+        }
+    })
+}
+
+fn spawn_postgres_catalog_refresh_worker(
+    pool: &PgPool,
+    catalog: Arc<RefreshableSqlPricingCatalog>,
+    provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
+    api_key_secret_codec: Arc<dyn ApiKeySecretCodec + Send + Sync>,
+    interval: Duration,
+    circuit_breaker_recovery_window_seconds: u64,
+) -> tokio::task::JoinHandle<()> {
+    let pool = pool.clone();
+    tokio::spawn(async move {
+        loop {
+            sleep(interval).await;
+            match PostgresPricingCatalogLoader::with_api_key_secret_codec(
+                pool.clone(),
+                api_key_secret_codec.clone(),
+            )
+            .with_circuit_breaker_recovery_window_seconds(circuit_breaker_recovery_window_seconds)
+            .load_snapshot()
+            .await
+            {
+                Ok(snapshot) => {
+                    if let Some(resolver) = provider_secret_resolver.as_ref() {
+                        resolver.replace_managed_secrets(snapshot.managed_provider_secrets());
+                    }
+                    catalog.replace_snapshot(snapshot)
+                }
+                Err(error) => {
+                    tracing::warn!(
+                        error = %error,
+                        "Postgres OpenAI runtime catalog refresh failed; keeping previous snapshot"
+                    );
+                }
+            }
         }
     })
 }
@@ -831,26 +1033,56 @@ fn parse_retryable_status_codes_config(
     Ok(status_codes)
 }
 
-fn build_api_key_hasher(
-    config: Option<ApiKeySecurityConfig>,
-) -> Result<ApiKeyHasher, GatewayRouterError> {
-    let Some(config) = config else {
-        return Err(GatewayRouterError::Config(
-            "SDKWORK_CLAW_API_KEY_PEPPER is required for OpenAI runtime routes".to_owned(),
-        ));
-    };
+fn build_api_key_hasher(config: &ApiKeySecurityConfig) -> Result<ApiKeyHasher, GatewayRouterError> {
     let hasher = HmacSha256ApiKeySecretHasher::new(config.pepper_secret())
         .map_err(|error| GatewayRouterError::Config(error.to_string()))?;
     Ok(Arc::new(hasher))
 }
 
+fn api_key_secret_codec_from_config(
+    config: &ApiKeySecurityConfig,
+) -> Result<ApiKeyCodec, GatewayRouterError> {
+    Ok(Arc::new(
+        RingAeadApiKeySecretCodec::new(config.pepper_secret())
+            .map_err(|error| GatewayRouterError::Config(error.to_string()))?,
+    ))
+}
+
+fn require_api_key_security_config(
+    config: Option<ApiKeySecurityConfig>,
+) -> Result<ApiKeySecurityConfig, GatewayRouterError> {
+    config.ok_or_else(|| {
+        GatewayRouterError::Config(
+            "SDKWORK_CLAW_API_KEY_PEPPER is required for OpenAI runtime routes".to_owned(),
+        )
+    })
+}
+
+fn provider_secret_resolver_from_config_and_managed_secrets(
+    provider_secret_map_config: Option<ProviderSecretMapConfig>,
+    managed_provider_secrets: std::collections::BTreeMap<String, String>,
+) -> Option<Arc<RefreshableProviderSecretMapResolver>> {
+    match (
+        provider_secret_map_config,
+        managed_provider_secrets.is_empty(),
+    ) {
+        (Some(config), _) => Some(Arc::new(RefreshableProviderSecretMapResolver::from_maps(
+            config.into_secret_map(),
+            managed_provider_secrets,
+        ))),
+        (None, false) => Some(Arc::new(RefreshableProviderSecretMapResolver::from_maps(
+            std::collections::BTreeMap::new(),
+            managed_provider_secrets,
+        ))),
+        (None, true) => None,
+    }
+}
+
 fn build_openai_runtime_relays(
     config: Option<ProviderRelayConfig>,
-    provider_secret_resolver: Option<Arc<ProviderSecretMapResolver>>,
-    runtime_toml: Option<&RuntimeTomlConfig>,
+    provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
+    provider_runtime: ProviderRelayRuntimeConfig,
 ) -> Result<OpenAiRuntimeRelays, GatewayRouterError> {
-    let provider_runtime = provider_relay_runtime_config_from_env_or_toml(runtime_toml)
-        .map_err(GatewayRouterError::Config)?;
     if let Some(resolver) = provider_secret_resolver {
         return Ok(OpenAiRuntimeRelays {
             chat: Some(Arc::new(
@@ -925,6 +1157,9 @@ fn build_openai_runtime_relays(
 struct ProviderRelayRuntimeConfig {
     response_timeout: Duration,
     default_retry_policy: ProviderRetryPolicy,
+    catalog_refresh_interval: Duration,
+    circuit_breaker_recovery_window_seconds: u64,
+    failure_strategy: OpenAiRuntimeFailureStrategy,
 }
 
 fn provider_relay_runtime_config_from_env_or_toml(
@@ -934,6 +1169,10 @@ fn provider_relay_runtime_config_from_env_or_toml(
     const RETRY_MAX_ATTEMPTS: &str = "SDKWORK_CLAW_PROVIDER_RETRY_MAX_ATTEMPTS";
     const RETRY_STATUS_CODES: &str = "SDKWORK_CLAW_PROVIDER_RETRYABLE_STATUS_CODES";
     const RETRY_BACKOFF: &str = "SDKWORK_CLAW_PROVIDER_RETRY_BACKOFF_MILLIS";
+    const CATALOG_REFRESH_INTERVAL: &str = "SDKWORK_CLAW_PROVIDER_CATALOG_REFRESH_INTERVAL_MILLIS";
+    const CIRCUIT_BREAKER_RECOVERY_WINDOW: &str =
+        "SDKWORK_CLAW_PROVIDER_CIRCUIT_BREAKER_RECOVERY_WINDOW_MILLIS";
+    const FAILURE_STRATEGY: &str = "SDKWORK_CLAW_PROVIDER_FAILURE_STRATEGY";
 
     let response_timeout_millis = parse_positive_u64_config(
         RESPONSE_TIMEOUT,
@@ -967,11 +1206,70 @@ fn provider_relay_runtime_config_from_env_or_toml(
         retry_backoff_millis,
     )
     .map_err(|error| error.to_string())?;
+    let catalog_refresh_interval_millis = parse_positive_u64_config(
+        CATALOG_REFRESH_INTERVAL,
+        runtime_toml.and_then(|config| {
+            config
+                .provider_relay
+                .runtime
+                .catalog_refresh_interval_millis
+        }),
+        DEFAULT_OPENAI_RUNTIME_CATALOG_REFRESH_INTERVAL_MILLIS,
+    )?;
+    let circuit_breaker_recovery_window_millis = parse_positive_u64_config(
+        CIRCUIT_BREAKER_RECOVERY_WINDOW,
+        runtime_toml.and_then(|config| {
+            config
+                .provider_relay
+                .runtime
+                .circuit_breaker_recovery_window_millis
+        }),
+        DEFAULT_PROVIDER_CIRCUIT_BREAKER_RECOVERY_WINDOW_SECONDS * 1_000,
+    )?;
+    let failure_strategy = parse_openai_runtime_failure_strategy(
+        sdkwork_claw_config::runtime::env_optional(FAILURE_STRATEGY)
+            .or_else(|| {
+                runtime_toml
+                    .and_then(|config| config.provider_relay.runtime.failure_strategy.as_deref())
+                    .map(str::to_owned)
+            })
+            .as_deref(),
+    )?;
 
     Ok(ProviderRelayRuntimeConfig {
         response_timeout: Duration::from_millis(response_timeout_millis),
         default_retry_policy,
+        catalog_refresh_interval: Duration::from_millis(catalog_refresh_interval_millis),
+        circuit_breaker_recovery_window_seconds: seconds_ceil_from_millis(
+            circuit_breaker_recovery_window_millis,
+        ),
+        failure_strategy,
     })
+}
+
+fn parse_openai_runtime_failure_strategy(
+    value: Option<&str>,
+) -> Result<OpenAiRuntimeFailureStrategy, String> {
+    match value
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .unwrap_or("failover")
+        .to_ascii_lowercase()
+        .as_str()
+    {
+        "failover" | "fail_over" | "fail-over" => Ok(OpenAiRuntimeFailureStrategy::Failover),
+        "fail_closed" | "fail-closed" | "failclosed" => {
+            Ok(OpenAiRuntimeFailureStrategy::FailClosed)
+        }
+        _ => Err(
+            "SDKWORK_CLAW_PROVIDER_FAILURE_STRATEGY must be one of failover or fail_closed"
+                .to_owned(),
+        ),
+    }
+}
+
+fn seconds_ceil_from_millis(millis: u64) -> u64 {
+    millis.saturating_add(999) / 1_000
 }
 
 #[derive(Debug)]
@@ -1010,5 +1308,39 @@ impl From<DatabaseInstallError> for GatewayRouterError {
 impl From<PostgresCatalogLoadError> for GatewayRouterError {
     fn from(value: PostgresCatalogLoadError) -> Self {
         Self::Postgres(value)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn provider_runtime_failure_strategy_accepts_supported_values() {
+        assert_eq!(
+            OpenAiRuntimeFailureStrategy::Failover,
+            parse_openai_runtime_failure_strategy(None).unwrap()
+        );
+        assert_eq!(
+            OpenAiRuntimeFailureStrategy::Failover,
+            parse_openai_runtime_failure_strategy(Some("failover")).unwrap()
+        );
+        assert_eq!(
+            OpenAiRuntimeFailureStrategy::FailClosed,
+            parse_openai_runtime_failure_strategy(Some("fail_closed")).unwrap()
+        );
+        assert_eq!(
+            OpenAiRuntimeFailureStrategy::FailClosed,
+            parse_openai_runtime_failure_strategy(Some("fail-closed")).unwrap()
+        );
+    }
+
+    #[test]
+    fn provider_runtime_failure_strategy_rejects_unknown_values() {
+        let error = parse_openai_runtime_failure_strategy(Some("retry_forever")).unwrap_err();
+
+        assert!(error.contains("SDKWORK_CLAW_PROVIDER_FAILURE_STRATEGY"));
+        assert!(error.contains("failover"));
+        assert!(error.contains("fail_closed"));
     }
 }

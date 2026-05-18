@@ -1,7 +1,7 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { CreateRoutingChannelRequest, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationsListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, ProvidersListResult, RoutingApiKeysListResult, RoutingChannelsCreateResult, RoutingChannelsDeleteResult, RoutingChannelsListResult, RoutingChannelsStatusUpdateResult, RoutingChannelsUpdateResult, RoutingChannelsVerifyResult, RoutingRequestTracesListResult, RoutingStrategyListResult, RoutingStrategyUpdateResult, RoutingUsageListResult, SetRoutingChannelStatusRequest, UpdateRoutingChannelRequest, UpdateRoutingStrategyRequest, UsageLogsListResult } from '../types';
+import type { CreateRoutingChannelRequest, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationAgentRunCreateRequest, GenerationAgentRunsCreateResult, GenerationListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, ProvidersListResult, RoutingApiKeysListResult, RoutingChannelsCreateResult, RoutingChannelsDeleteResult, RoutingChannelsListResult, RoutingChannelsStatusUpdateResult, RoutingChannelsUpdateResult, RoutingChannelsVerifyResult, RoutingRequestTracesListResult, RoutingStrategyListResult, RoutingStrategyUpdateResult, RoutingUsageListResult, SetRoutingChannelStatusRequest, UpdateRoutingChannelRequest, UpdateRoutingStrategyRequest, UsageLogsListResult } from '../types';
 
 
 export interface AiUsageLogsListParams {
@@ -310,7 +310,7 @@ export class AiModelRankingsApi {
   }
 }
 
-export class AiGenerationsApi {
+export class AiGenerationAgentRunsApi {
   private client: HttpClient;
 
   constructor(client: HttpClient) {
@@ -318,9 +318,36 @@ export class AiGenerationsApi {
   }
 
 
+/** Create generation agent run */
+  async create(body: GenerationAgentRunCreateRequest): Promise<GenerationAgentRunsCreateResult> {
+    return this.client.post<GenerationAgentRunsCreateResult>(appApiPath(`/ai/generation/agents/runs`), body, undefined, undefined, 'application/json');
+  }
+}
+
+export class AiGenerationAgentApi {
+  private client: HttpClient;
+  public readonly runs: AiGenerationAgentRunsApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.runs = new AiGenerationAgentRunsApi(client);
+  }
+
+}
+
+export class AiGenerationApi {
+  private client: HttpClient;
+  public readonly agent: AiGenerationAgentApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.agent = new AiGenerationAgentApi(client);
+  }
+
+
 /** List generation history */
-  async list(): Promise<GenerationsListResult> {
-    return this.client.get<GenerationsListResult>(appApiPath(`/ai/generations`));
+  async list(): Promise<GenerationListResult> {
+    return this.client.get<GenerationListResult>(appApiPath(`/ai/generations`));
   }
 }
 
@@ -389,7 +416,7 @@ export class AiApi {
   private client: HttpClient;
   public readonly dashboard: AiDashboardApi;
   public readonly gateway: AiGatewayApi;
-  public readonly generations: AiGenerationsApi;
+  public readonly generation: AiGenerationApi;
   public readonly modelRankings: AiModelRankingsApi;
   public readonly modelVendors: AiModelVendorsApi;
   public readonly models: AiModelsApi;
@@ -401,7 +428,7 @@ export class AiApi {
     this.client = client;
     this.dashboard = new AiDashboardApi(client);
     this.gateway = new AiGatewayApi(client);
-    this.generations = new AiGenerationsApi(client);
+    this.generation = new AiGenerationApi(client);
     this.modelRankings = new AiModelRankingsApi(client);
     this.modelVendors = new AiModelVendorsApi(client);
     this.models = new AiModelsApi(client);

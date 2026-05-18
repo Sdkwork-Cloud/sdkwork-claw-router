@@ -37,6 +37,7 @@ pub struct AppMessageItem {
     #[serde(rename = "type")]
     pub message_type: String,
     pub read: bool,
+    pub show_as_popup: bool,
 }
 
 pub trait AppMessagesReadStore {

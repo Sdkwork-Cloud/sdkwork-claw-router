@@ -4,6 +4,6 @@ import type { AdminApiKeyItem } from './admin-api-key-item';
 export interface AdminApiKeyCreateResponse {
   /** Key field on admin api key create response. */
   key: AdminApiKeyItem;
-  /** One-time plaintext API key material returned immediately after creation. */
+  /** Full plaintext API key material returned immediately after creation. */
   rawKey: string;
 }

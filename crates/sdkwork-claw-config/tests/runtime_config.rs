@@ -180,6 +180,9 @@ bearer_token_file = "/etc/clawrouter/openai-relay.secret"
 [provider_relay.runtime]
 response_timeout_millis = 120000
 health_probe_timeout_millis = 10000
+catalog_refresh_interval_millis = 5000
+circuit_breaker_recovery_window_millis = 60000
+failure_strategy = "fail_closed"
 
 [provider_relay.retry]
 max_attempts = 2
@@ -234,7 +237,7 @@ startup_mode = "ensure"
 enabled = true
 username = "admin"
 display_name = "Administrator"
-email = "admin@sdkwork.local"
+email = "admin@sdkwork.com"
 password_file = "/etc/clawrouter/bootstrap-admin.secret"
 "#,
     )
@@ -425,6 +428,24 @@ password_file = "/etc/clawrouter/bootstrap-admin.secret"
         Some(10000),
         config.provider_relay.runtime.health_probe_timeout_millis
     );
+    assert_eq!(
+        Some(5000),
+        config
+            .provider_relay
+            .runtime
+            .catalog_refresh_interval_millis
+    );
+    assert_eq!(
+        Some(60000),
+        config
+            .provider_relay
+            .runtime
+            .circuit_breaker_recovery_window_millis
+    );
+    assert_eq!(
+        Some("fail_closed"),
+        config.provider_relay.runtime.failure_strategy.as_deref()
+    );
     assert_eq!(Some(2), config.provider_relay.retry.max_attempts);
     assert_eq!(
         vec![429, 500, 502, 503, 504],
@@ -494,7 +515,7 @@ password_file = "/etc/clawrouter/bootstrap-admin.secret"
     assert_eq!(Some(true), config.bootstrap_admin.enabled);
     assert_eq!(Some("admin"), config.bootstrap_admin.username.as_deref());
     assert_eq!(
-        Some("admin@sdkwork.local"),
+        Some("admin@sdkwork.com"),
         config.bootstrap_admin.email.as_deref()
     );
     assert_eq!(

@@ -28,6 +28,13 @@ pub struct SelectedProviderRoute {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
+pub struct SelectedProviderRoutePlan {
+    pub routes: Vec<SelectedProviderRoute>,
+    pub policy_id: Option<i64>,
+    pub rule_id: Option<i64>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct SelectProviderAccountPoolRouteQuery {
     pub context: AuthenticatedApiKeyContext,
     pub route_key: String,
@@ -89,7 +96,7 @@ struct SelectedPolicyScope {
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 enum PolicyScopeRouteSelection {
-    Selected(SelectedProviderRoute),
+    Planned(SelectedProviderRoutePlan),
     SoftUnavailable(ProviderRouteSelectionError),
     HardError(ProviderRouteSelectionError),
 }
@@ -103,7 +110,7 @@ enum PolicyScopeAccountPoolSelection {
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 enum CandidateRouteEvaluation {
-    Selected(ModelProviderRoute),
+    Planned(Vec<ModelProviderRoute>),
     PricingUnavailable(DomainError),
     NoCallableCandidate,
 }
@@ -123,6 +130,13 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         &self,
         query: SelectProviderRouteQuery,
     ) -> Result<SelectedProviderRoute, ProviderRouteSelectionError> {
+        Ok(self.select_plan(query)?.first_route())
+    }
+
+    pub fn select_plan(
+        &self,
+        query: SelectProviderRouteQuery,
+    ) -> Result<SelectedProviderRoutePlan, ProviderRouteSelectionError> {
         let routes = self.catalog.list_provider_routes(&query.catalog_key);
         if routes.is_empty() {
             return Err(ProviderRouteSelectionError::provider_route_unavailable(
@@ -136,8 +150,8 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         let policy_scopes = self.select_policy_scopes(&query.context);
         let mut last_unavailable = None;
         for policy_scope in policy_scopes {
-            match self.select_from_policy_scope(&query, &routes, policy_scope) {
-                PolicyScopeRouteSelection::Selected(selection) => return Ok(selection),
+            match self.select_plan_from_policy_scope(&query, &routes, policy_scope) {
+                PolicyScopeRouteSelection::Planned(selection) => return Ok(selection),
                 PolicyScopeRouteSelection::SoftUnavailable(error) => {
                     last_unavailable = Some(error);
                 }
@@ -218,7 +232,7 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         scopes
     }
 
-    fn select_from_policy_scope(
+    fn select_plan_from_policy_scope(
         &self,
         query: &SelectProviderRouteQuery,
         routes: &[ModelProviderRoute],
@@ -255,10 +269,17 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         {
             let candidate_chain = candidate_chain(&rule, &policy);
             let used_rule_fallback_chain = candidate_chain.len() > rule.candidate_channels.len();
-            match self.evaluate_candidate_routes(query, routes, candidate_chain) {
-                CandidateRouteEvaluation::Selected(route) => {
-                    return PolicyScopeRouteSelection::Selected(SelectedProviderRoute {
-                        route,
+            match self.evaluate_candidate_route_plan(query, routes, candidate_chain) {
+                CandidateRouteEvaluation::Planned(routes) => {
+                    return PolicyScopeRouteSelection::Planned(SelectedProviderRoutePlan {
+                        routes: routes
+                            .into_iter()
+                            .map(|route| SelectedProviderRoute {
+                                route,
+                                policy_id: Some(policy.id),
+                                rule_id: Some(rule.id),
+                            })
+                            .collect(),
                         policy_id: Some(policy.id),
                         rule_id: Some(rule.id),
                     });
@@ -436,13 +457,14 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
             && (rule.organization_id == 0 || rule.organization_id == context.organization_id)
     }
 
-    fn evaluate_candidate_routes(
+    fn evaluate_candidate_route_plan(
         &self,
         query: &SelectProviderRouteQuery,
         routes: &[ModelProviderRoute],
         candidates: Vec<RouteCandidate>,
     ) -> CandidateRouteEvaluation {
         let mut pricing_error = None;
+        let mut selected_routes = Vec::new();
         for candidate in candidates {
             let Some(route) = routes
                 .iter()
@@ -455,15 +477,19 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
                 continue;
             }
             match self.ensure_route_is_priced(query, &route) {
-                Ok(()) => return CandidateRouteEvaluation::Selected(route),
+                Ok(()) => selected_routes.push(route),
                 Err(error) => {
                     pricing_error.get_or_insert(error);
                 }
             }
         }
-        pricing_error
-            .map(CandidateRouteEvaluation::PricingUnavailable)
-            .unwrap_or(CandidateRouteEvaluation::NoCallableCandidate)
+        if selected_routes.is_empty() {
+            pricing_error
+                .map(CandidateRouteEvaluation::PricingUnavailable)
+                .unwrap_or(CandidateRouteEvaluation::NoCallableCandidate)
+        } else {
+            CandidateRouteEvaluation::Planned(selected_routes)
+        }
     }
 
     fn route_is_callable(&self, route: &ModelProviderRoute) -> bool {
@@ -508,6 +534,15 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
                 channel_id: Some(route.channel_id),
             })
             .map(|_| ())
+    }
+}
+
+impl SelectedProviderRoutePlan {
+    pub fn first_route(&self) -> SelectedProviderRoute {
+        self.routes
+            .first()
+            .cloned()
+            .expect("selected provider route plan must contain at least one route")
     }
 }
 

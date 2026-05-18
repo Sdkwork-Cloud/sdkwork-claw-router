@@ -10,6 +10,7 @@ import { UsageTab } from './components/UsageTab';
 import { RequestDataTab } from './components/RequestDataTab';
 import { ApiKeysTab } from './components/ApiKeysTab';
 
+import { useTranslation } from 'react-i18next';
 type TabType = 'channels' | 'strategy' | 'fallback' | 'logs' | 'usage' | 'data' | 'apikeys';
 
 type NavItemProps = {
@@ -28,6 +29,7 @@ type MetricCardProps = {
 };
 
 export function RoutingView() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<TabType>('channels');
 
   return (
@@ -37,21 +39,20 @@ export function RoutingView() {
       <div className="w-[220px] bg-white dark:bg-[#1e1e1e] border-r border-slate-200 dark:border-white/5 flex flex-col pt-6 shrink-0 z-10 hidden md:flex">
         <div className="px-5 mb-6">
           <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <Network className="w-5 h-5 text-blue-500" /> 本地路由
-          </h2>
-          <p className="text-xs text-slate-500 mt-2">API 路由网关控制平面</p>
+            <Network className="w-5 h-5 text-blue-500" /> {t("console.core.consolelayout.text.1x2j5b5", "本地路由")}</h2>
+          <p className="text-xs text-slate-500 mt-2">{t("console.routing.routingview.text.7xsw6p", "API 路由网关控制平面")}</p>
         </div>
 
         <div className="flex flex-col px-3 space-y-1">
-          <NavItem active={activeTab === 'channels'} onClick={() => setActiveTab('channels')} icon={<Server className="w-4 h-4" />} text="渠道账号管理 (Channel Accounts)" />
-          <NavItem active={activeTab === 'strategy'} onClick={() => setActiveTab('strategy')} icon={<Zap className="w-4 h-4" />} text="路由与负载均衡" />
-          <NavItem active={activeTab === 'fallback'} onClick={() => setActiveTab('fallback')} icon={<ShieldCheck className="w-4 h-4" />} text="高可用与降级 (HA)" />
+          <NavItem active={activeTab === 'channels'} onClick={() => setActiveTab('channels')} icon={<Server className="w-4 h-4" />} text={t("console.routing.routingview.text.184dsbn", "渠道账号")} />
+          <NavItem active={activeTab === 'strategy'} onClick={() => setActiveTab('strategy')} icon={<Zap className="w-4 h-4" />} text={t("console.routing.routingview.text.jbae6l", "路由与负载均衡")} />
+          <NavItem active={activeTab === 'fallback'} onClick={() => setActiveTab('fallback')} icon={<ShieldCheck className="w-4 h-4" />} text={t("console.routing.routingview.text.t90s34", "高可用与降级 (HA)")} />
           <div className="h-px bg-slate-200 dark:bg-white/5 my-2 mx-2"></div>
-          <NavItem active={activeTab === 'apikeys'} onClick={() => setActiveTab('apikeys')} icon={<Key className="w-4 h-4" />} text="API Key 令牌管理" />
+          <NavItem active={activeTab === 'apikeys'} onClick={() => setActiveTab('apikeys')} icon={<Key className="w-4 h-4" />} text={t("console.routing.components.apikeystab.text.i4nq0r", "API Key 令牌管理")} />
           <div className="h-px bg-slate-200 dark:bg-white/5 my-2 mx-2"></div>
-          <NavItem active={activeTab === 'usage'} onClick={() => setActiveTab('usage')} icon={<LineChart className="w-4 h-4" />} text="调用记录统计" />
-          <NavItem active={activeTab === 'data'} onClick={() => setActiveTab('data')} icon={<FileJson className="w-4 h-4" />} text="请求数据审计" />
-          <NavItem active={activeTab === 'logs'} onClick={() => setActiveTab('logs')} icon={<AlertTriangle className="w-4 h-4" />} text="失败拦截分析" />
+          <NavItem active={activeTab === 'usage'} onClick={() => setActiveTab('usage')} icon={<LineChart className="w-4 h-4" />} text={t("console.routing.components.usagetab.text.nfli79", "调用记录统计")} />
+          <NavItem active={activeTab === 'data'} onClick={() => setActiveTab('data')} icon={<FileJson className="w-4 h-4" />} text={t("console.routing.routingview.text.1dbc1b8", "请求数据审计")} />
+          <NavItem active={activeTab === 'logs'} onClick={() => setActiveTab('logs')} icon={<AlertTriangle className="w-4 h-4" />} text={t("console.routing.routingview.text.z67mbt", "失败拦截分析")} />
         </div>
       </div>
 
@@ -61,10 +62,10 @@ export function RoutingView() {
 
           {/* Top Global Metrics Dashboard */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <MetricCard title="活跃路由通道" value="12" subtext=" 个可用 endpoint" trend="+2 本周" icon={<Link2 className="w-5 h-5 text-blue-400" />} />
-            <MetricCard title="全局负载策略" value="动态延迟" subtext="基于最近1分钟 P90" icon={<Activity className="w-5 h-5 text-emerald-400" />} />
-            <MetricCard title="熔断干预次数" value="34" subtext=" 次 (过去 24h)" trend="-12% 环比" icon={<ShieldCheck className="w-5 h-5 text-amber-400" />} />
-            <MetricCard title="近期失败率" value="0.08%" subtext="1.2k reqs/min" trend="健康" icon={<HeartbeatIcon />} />
+            <MetricCard title={t("console.routing.routingview.text.1akxezw", "活跃路由通道")} value="12" subtext={t("console.routing.routingview.text.1ar6ucz", "个可用 endpoint")} trend={t("console.routing.routingview.text.10y9ibg", "+2 本周")} icon={<Link2 className="w-5 h-5 text-blue-400" />} />
+            <MetricCard title={t("console.routing.routingview.text.1amhl2g", "全局负载策略")} value={t("console.routing.routingview.text.13uiy8p", "动态延迟")} subtext={t("console.routing.routingview.text.z0up3f", "基于最近1分钟 P90")} icon={<Activity className="w-5 h-5 text-emerald-400" />} />
+            <MetricCard title={t("console.routing.routingview.text.mbajnh", "熔断干预次数")} value="34" subtext={t("console.routing.routingview.text.1xbv77z", "次 (过去 24h)")} trend={t("console.routing.routingview.text.yzbqat", "-12% 环比")} icon={<ShieldCheck className="w-5 h-5 text-amber-400" />} />
+            <MetricCard title={t("console.routing.routingview.text.16wa928", "近期失败率")} value="0.08%" subtext="1.2k reqs/min" trend={t("console.routing.components.channelstab.text.zwn6k5", "健康")} icon={<HeartbeatIcon />} />
           </div>
 
           <div className="mt-8 border-t border-slate-200 dark:border-white/5 pt-8">
@@ -88,13 +89,14 @@ function NavItem({ active, icon, text, onClick }: NavItemProps) {
   return (
     <button
       onClick={onClick}
-      className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+      className={`w-full min-w-0 flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
         active
           ? 'bg-blue-500/10 text-blue-400'
           : 'text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-700 dark:text-slate-300'
       }`}
     >
-      {icon} {text}
+      <span className="shrink-0">{icon}</span>
+      <span className="min-w-0 flex-1 truncate whitespace-nowrap text-left">{text}</span>
     </button>
   );
 }

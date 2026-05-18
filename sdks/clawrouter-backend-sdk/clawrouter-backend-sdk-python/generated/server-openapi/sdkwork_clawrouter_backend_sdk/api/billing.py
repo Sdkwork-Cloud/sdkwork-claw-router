@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AdminCouponBatchGenerateRequest, AdminCouponCreateRequest, AdminPromoCodeStatusUpdateRequest, AdminUserBalanceAdjustmentRequest, CouponBatchesCreateResult, CouponBatchesListResult, CouponCodesListResult, CouponCodesStatusUpdateResult, CouponsCreateResult, CouponsDeleteResult, CouponsListResult, FinanceAdminLedgerListResult, FinanceUsageStatementsListResult, ReferralsStatsListResult, UsersBalanceAdjustmentsCreateResult, UsersCouponsListResult, VipRechargeListResult
+from ..models import AdminCouponBatchGenerateRequest, AdminCouponCreateRequest, AdminPromoCodeStatusUpdateRequest, AdminUserBalanceAdjustmentRequest, CommerceExchangeRuleUpsertRequest, CommerceRechargePackageMutationRequest, CouponBatchesCreateResult, CouponBatchesListResult, CouponCodesListResult, CouponCodesStatusUpdateResult, CouponsCreateResult, CouponsDeleteResult, CouponsListResult, CouponsUpdateResult, ExchangeRulesListResult, ExchangeRulesUpdateResult, FinanceLedgerListResult, FinanceUsageStatementsListResult, PaymentsAttemptsListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RechargesRecordsListResult, RechargesRecordsRetrieveResult, ReferralsStatsListResult, UsersBalanceAdjustmentsCreateResult, UsersCouponsListResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -238,16 +238,40 @@ def serialize_header_primitive(value: Any) -> str:
 
 
 class BillingApi:
-    """billing API client."""
-    
+    """billing billing API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.coupon_batches = BillingCouponBatchesApi(client)
+        self.coupon_codes = BillingCouponCodesApi(client)
+        self.coupons = BillingCouponsApi(client)
+        self.exchange_rules = BillingExchangeRulesApi(client)
+        self.finance = BillingFinanceApi(client)
+        self.payments = BillingPaymentsApi(client)
+        self.recharges = BillingRechargesApi(client)
+        self.referrals = BillingReferralsApi(client)
+        self.users = BillingUsersApi(client)
+
+
+class BillingCouponBatchesApi:
+    """billing billing.coupon_batches API client."""
+
     def __init__(self, client: HttpClient):
         self._client = client
 
-    def coupon_batches_list(self) -> CouponBatchesListResult:
-        """List batches"""
-        return self._client.get(f"/backend/v3/api/billing/coupon_batches")
 
-    def coupon_batches_create(self, body: AdminCouponBatchGenerateRequest, x_request_id: Optional[str] = None) -> CouponBatchesCreateResult:
+    def list(self, coupon_id: Optional[str] = None, status: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None, cursor: Optional[str] = None) -> CouponBatchesListResult:
+        """List batches"""
+        query = build_query_string([
+            {'name': 'coupon_id', 'value': coupon_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'cursor', 'value': cursor, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/billing/coupon_batches", query))
+
+    def create(self, body: AdminCouponBatchGenerateRequest, x_request_id: Optional[str] = None) -> CouponBatchesCreateResult:
         """Generate batch"""
         request_headers = build_request_headers(
             {
@@ -257,11 +281,34 @@ class BillingApi:
         )
         return self._client.post(f"/backend/v3/api/billing/coupon_batches", json=body, headers=request_headers)
 
-    def coupon_codes_list(self) -> CouponCodesListResult:
-        """List promo codes"""
-        return self._client.get(f"/backend/v3/api/billing/coupon_codes")
+class BillingCouponCodesApi:
+    """billing billing.coupon_codes API client."""
 
-    def coupon_codes_status_update(self, promo_code_id: str, body: AdminPromoCodeStatusUpdateRequest, x_request_id: Optional[str] = None) -> CouponCodesStatusUpdateResult:
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.status = BillingCouponCodesStatusApi(client)
+
+
+    def list(self, coupon_id: Optional[str] = None, batch_id: Optional[str] = None, status: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None, cursor: Optional[str] = None) -> CouponCodesListResult:
+        """List promo codes"""
+        query = build_query_string([
+            {'name': 'coupon_id', 'value': coupon_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'batch_id', 'value': batch_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'cursor', 'value': cursor, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/billing/coupon_codes", query))
+
+class BillingCouponCodesStatusApi:
+    """billing billing.coupon_codes.status API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def update(self, code_id: str, body: AdminPromoCodeStatusUpdateRequest, x_request_id: Optional[str] = None) -> CouponCodesStatusUpdateResult:
         """Update promo code status"""
         request_headers = build_request_headers(
             {
@@ -269,13 +316,26 @@ class BillingApi:
             },
             {}
         )
-        return self._client.patch(f"/backend/v3/api/billing/coupon_codes/{serialize_path_parameter(promo_code_id, {'name': 'promoCodeId', 'style': 'simple', 'explode': False})}/status", json=body, headers=request_headers)
+        return self._client.patch(f"/backend/v3/api/billing/coupon_codes/{serialize_path_parameter(code_id, {'name': 'codeId', 'style': 'simple', 'explode': False})}/status", json=body, headers=request_headers)
 
-    def coupons_list(self) -> CouponsListResult:
+class BillingCouponsApi:
+    """billing billing.coupons API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, status: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None, cursor: Optional[str] = None) -> CouponsListResult:
         """List coupons"""
-        return self._client.get(f"/backend/v3/api/billing/coupons")
+        query = build_query_string([
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'cursor', 'value': cursor, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/billing/coupons", query))
 
-    def coupons_create(self, body: AdminCouponCreateRequest, x_request_id: Optional[str] = None) -> CouponsCreateResult:
+    def create(self, body: AdminCouponCreateRequest, x_request_id: Optional[str] = None) -> CouponsCreateResult:
         """Create coupon"""
         request_headers = build_request_headers(
             {
@@ -285,11 +345,63 @@ class BillingApi:
         )
         return self._client.post(f"/backend/v3/api/billing/coupons", json=body, headers=request_headers)
 
-    def coupons_delete(self, coupon_id: str) -> CouponsDeleteResult:
+    def delete(self, coupon_id: str) -> CouponsDeleteResult:
         """Delete coupon"""
         return self._client.delete(f"/backend/v3/api/billing/coupons/{serialize_path_parameter(coupon_id, {'name': 'couponId', 'style': 'simple', 'explode': False})}")
 
-    def finance_admin_ledger_list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None, start_time: Optional[str] = None, end_time: Optional[str] = None) -> FinanceAdminLedgerListResult:
+    def update(self, coupon_id: str, body: AdminCouponCreateRequest, x_request_id: Optional[str] = None) -> CouponsUpdateResult:
+        """Update coupon"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.put(f"/backend/v3/api/billing/coupons/{serialize_path_parameter(coupon_id, {'name': 'couponId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+
+class BillingExchangeRulesApi:
+    """billing billing.exchange_rules API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, source_asset_type: Optional[str] = None, target_asset_type: Optional[str] = None, status: Optional[str] = None) -> ExchangeRulesListResult:
+        """List exchange rules"""
+        query = build_query_string([
+            {'name': 'source_asset_type', 'value': source_asset_type, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'target_asset_type', 'value': target_asset_type, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/billing/exchange_rules", query))
+
+    def update(self, body: CommerceExchangeRuleUpsertRequest, x_request_id: Optional[str] = None) -> ExchangeRulesUpdateResult:
+        """Upsert exchange rule"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.put(f"/backend/v3/api/billing/exchange_rules", json=body, headers=request_headers)
+
+class BillingFinanceApi:
+    """billing billing.finance API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.ledger = BillingFinanceLedgerApi(client)
+        self.usage_statements = BillingFinanceUsageStatementsApi(client)
+
+
+class BillingFinanceLedgerApi:
+    """billing billing.finance.ledger API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None, start_time: Optional[str] = None, end_time: Optional[str] = None) -> FinanceLedgerListResult:
         """List transactions"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -299,9 +411,16 @@ class BillingApi:
             {'name': 'start_time', 'value': start_time, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'end_time', 'value': end_time, 'style': 'form', 'explode': True, 'allow_reserved': False},
         ])
-        return self._client.get(_append_query_string(f"/backend/v3/api/billing/finance/admin/ledger", query))
+        return self._client.get(_append_query_string(f"/backend/v3/api/billing/finance/ledger", query))
 
-    def finance_usage_statements_list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None, start_time: Optional[str] = None, end_time: Optional[str] = None) -> FinanceUsageStatementsListResult:
+class BillingFinanceUsageStatementsApi:
+    """billing billing.finance.usage_statements API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None, start_time: Optional[str] = None, end_time: Optional[str] = None) -> FinanceUsageStatementsListResult:
         """List billing"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -313,15 +432,155 @@ class BillingApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/billing/finance/usage_statements", query))
 
-    def referrals_stats_list(self) -> ReferralsStatsListResult:
+class BillingPaymentsApi:
+    """billing billing.payments API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.attempts = BillingPaymentsAttemptsApi(client)
+
+
+class BillingPaymentsAttemptsApi:
+    """billing billing.payments.attempts API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, provider: Optional[str] = None, status: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None, cursor: Optional[str] = None) -> PaymentsAttemptsListResult:
+        """List payment attempts"""
+        query = build_query_string([
+            {'name': 'provider', 'value': provider, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'cursor', 'value': cursor, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/billing/payments/attempts", query))
+
+class BillingRechargesApi:
+    """billing billing.recharges API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.packages = BillingRechargesPackagesApi(client)
+        self.records = BillingRechargesRecordsApi(client)
+
+
+class BillingRechargesPackagesApi:
+    """billing billing.recharges.packages API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, status: Optional[str] = None) -> RechargesPackagesListResult:
+        """List recharge packages"""
+        query = build_query_string([
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/billing/recharges/packages", query))
+
+    def create(self, body: CommerceRechargePackageMutationRequest, x_request_id: Optional[str] = None) -> RechargesPackagesCreateResult:
+        """Create recharge package"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/backend/v3/api/billing/recharges/packages", json=body, headers=request_headers)
+
+    def delete(self, package_id: str) -> RechargesPackagesDeleteResult:
+        """Delete recharge package"""
+        return self._client.delete(f"/backend/v3/api/billing/recharges/packages/{serialize_path_parameter(package_id, {'name': 'packageId', 'style': 'simple', 'explode': False})}")
+
+    def update(self, package_id: str, body: CommerceRechargePackageMutationRequest, x_request_id: Optional[str] = None) -> RechargesPackagesUpdateResult:
+        """Update recharge package"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.put(f"/backend/v3/api/billing/recharges/packages/{serialize_path_parameter(package_id, {'name': 'packageId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+
+class BillingRechargesRecordsApi:
+    """billing billing.recharges.records API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, user_id: Optional[str] = None, status: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None, cursor: Optional[str] = None) -> RechargesRecordsListResult:
+        """List recharge records"""
+        query = build_query_string([
+            {'name': 'user_id', 'value': user_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'cursor', 'value': cursor, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/billing/recharges/records", query))
+
+    def retrieve(self, order_no: str) -> RechargesRecordsRetrieveResult:
+        """Retrieve recharge record"""
+        return self._client.get(f"/backend/v3/api/billing/recharges/records/{serialize_path_parameter(order_no, {'name': 'orderNo', 'style': 'simple', 'explode': False})}")
+
+class BillingReferralsApi:
+    """billing billing.referrals API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.stats = BillingReferralsStatsApi(client)
+
+
+class BillingReferralsStatsApi:
+    """billing billing.referrals.stats API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> ReferralsStatsListResult:
         """List referral stats"""
         return self._client.get(f"/backend/v3/api/billing/referrals/stats")
 
-    def users_coupons_list(self) -> UsersCouponsListResult:
-        """List redemption records"""
-        return self._client.get(f"/backend/v3/api/billing/users/coupons")
+class BillingUsersApi:
+    """billing billing.users API client."""
 
-    def users_balance_adjustments_create(self, user_id: str, body: AdminUserBalanceAdjustmentRequest, x_request_id: Optional[str] = None) -> UsersBalanceAdjustmentsCreateResult:
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.coupons = BillingUsersCouponsApi(client)
+        self.balance_adjustments = BillingUsersBalanceAdjustmentsApi(client)
+
+
+class BillingUsersCouponsApi:
+    """billing billing.users.coupons API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, user_id: Optional[str] = None, status: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None, cursor: Optional[str] = None) -> UsersCouponsListResult:
+        """List redemption records"""
+        query = build_query_string([
+            {'name': 'user_id', 'value': user_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'cursor', 'value': cursor, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/billing/users/coupons", query))
+
+class BillingUsersBalanceAdjustmentsApi:
+    """billing billing.users.balance_adjustments API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def create(self, user_id: str, body: AdminUserBalanceAdjustmentRequest, x_request_id: Optional[str] = None) -> UsersBalanceAdjustmentsCreateResult:
         """Update balance"""
         request_headers = build_request_headers(
             {
@@ -330,7 +589,3 @@ class BillingApi:
             {}
         )
         return self._client.post(f"/backend/v3/api/billing/users/{serialize_path_parameter(user_id, {'name': 'userId', 'style': 'simple', 'explode': False})}/balance_adjustments", json=body, headers=request_headers)
-
-    def vip_recharge_list(self) -> VipRechargeListResult:
-        """List recharge records"""
-        return self._client.get(f"/backend/v3/api/billing/vip/recharge")

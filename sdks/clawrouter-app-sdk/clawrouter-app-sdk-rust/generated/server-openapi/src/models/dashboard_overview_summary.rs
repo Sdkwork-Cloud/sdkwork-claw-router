@@ -30,6 +30,14 @@ pub struct DashboardOverviewSummary {
     /// Rpm field on dashboard overview summary.
     pub rpm: f64,
 
+    /// Total request count field on dashboard overview summary.
+    #[serde(rename = "totalRequestCount")]
+    pub total_request_count: i64,
+
+    /// Total used credits field on dashboard overview summary.
+    #[serde(rename = "totalUsedCredits")]
+    pub total_used_credits: f64,
+
     /// Tpm field on dashboard overview summary.
     pub tpm: f64,
 

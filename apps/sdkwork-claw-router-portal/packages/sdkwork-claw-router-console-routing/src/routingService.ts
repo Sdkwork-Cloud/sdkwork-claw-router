@@ -15,8 +15,18 @@ import {
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
 import type { Channel } from './types';
-import type { ChannelStatus, RetryableStatusCode, RoutingRetryPolicy } from './types';
-import type { CreateRoutingChannelRequest, ProviderRetryPolicy, UpdateRoutingChannelRequest } from '@sdkwork/clawrouter-app-sdk';
+import type {
+  ChannelStatus,
+  RetryableStatusCode,
+  RoutingCircuitBreakerPolicy,
+  RoutingRetryPolicy,
+} from './types';
+import type {
+  CreateRoutingChannelRequest,
+  ProviderCircuitBreakerPolicy,
+  ProviderRetryPolicy,
+  UpdateRoutingChannelRequest,
+} from '@sdkwork/clawrouter-app-sdk';
 
 export interface RequestTrace {
   id: string;
@@ -74,7 +84,8 @@ export type RoutingApiKeyStatus = 'enabled' | 'disabled';
 export interface RoutingApiKey {
   id: string;
   name: string;
-  key: string;
+  displayKey: string;
+  copyableKey: string | null;
   status: RoutingApiKeyStatus;
   totalUsage: string;
   createdAt: string;
@@ -94,6 +105,7 @@ export type RoutingChannelMutationInput = {
   capabilities?: string[];
   timeoutMs?: number;
   retryPolicy?: RoutingRetryPolicy;
+  circuitBreakerPolicy?: RoutingCircuitBreakerPolicy;
   weight?: number;
   status?: ChannelStatus;
 };
@@ -109,6 +121,7 @@ export type RoutingChannelUpdateInput = {
   capabilities?: string[];
   timeoutMs?: number | null;
   retryPolicy?: RoutingRetryPolicy | null;
+  circuitBreakerPolicy?: RoutingCircuitBreakerPolicy | null;
   weight?: number;
   status?: ChannelStatus;
 };
@@ -145,10 +158,10 @@ export const knownModelVendors = [
   { id: 'Ollama', name: 'Ollama' },
   { id: 'OpenRouter', name: 'OpenRouter' },
   { id: 'DeepSeek', name: 'DeepSeek' },
-  { id: 'Zhipu', name: '鏅鸿氨 (Zhipu)' },
+  { id: 'Zhipu', name: 'Zhipu AI' },
   { id: 'Mistral', name: 'Mistral AI' },
   { id: 'Cohere', name: 'Cohere' },
-  { id: 'Custom', name: '鏈煡 / 鍏朵粬' },
+  { id: 'Custom', name: 'Unknown / Other' },
 ];
 
 export const prefillModels: Record<string, string[]> = {
@@ -167,33 +180,33 @@ export const prefillModels: Record<string, string[]> = {
 export class RoutingService {
   static async fetchRequestTraces(): Promise<RequestTrace[]> {
     const result = await getClawRouterAppSdkClient().ai.routing.requestTraces.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch request traces');
-    return readRequiredApiItems(result, 'Failed to fetch request traces')
+    ensurePlusApiSuccess(result, 'console.routing.states.requestTraces.loadErrorFallback');
+    return readRequiredApiItems(result, 'console.routing.states.requestTraces.loadErrorFallback')
       .map(normalizeRequestTrace);
   }
 
   static async fetchUsageData(): Promise<{ chartData: RoutingUsageData[]; modelStats: RoutingModelStats[] }> {
     const result = await getClawRouterAppSdkClient().ai.routing.usage.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch routing usage data');
+    ensurePlusApiSuccess(result, 'console.routing.states.usage.loadErrorFallback');
     const data = readApiRecord(result);
     return {
-      chartData: readRequiredApiItems(data, 'Failed to fetch routing usage data', ['chartData'])
+      chartData: readRequiredApiItems(data, 'console.routing.states.usage.loadErrorFallback', ['chartData'])
         .map(normalizeRoutingUsageData),
-      modelStats: readRequiredApiItems(data, 'Failed to fetch routing usage data', ['modelStats'])
+      modelStats: readRequiredApiItems(data, 'console.routing.states.usage.loadErrorFallback', ['modelStats'])
         .map(normalizeRoutingModelStats),
     };
   }
 
   static async fetchChannels(): Promise<Channel[]> {
     const result = await getClawRouterAppSdkClient().ai.routing.channels.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch routing channels');
-    return readRequiredApiItems(result, 'Failed to fetch routing channels')
+    ensurePlusApiSuccess(result, 'console.routing.states.channels.loadErrorFallback');
+    return readRequiredApiItems(result, 'console.routing.states.channels.loadErrorFallback')
       .map(normalizeRoutingChannel);
   }
 
   static async createChannel(input: RoutingChannelMutationInput): Promise<Channel> {
     const result = await getClawRouterAppSdkClient().ai.routing.channels.create(toCreateRoutingChannelRequest(input));
-    ensurePlusApiSuccess(result, 'Failed to create routing channel');
+    ensurePlusApiSuccess(result, 'console.routing.messages.channelSaveFailed');
     return normalizeRoutingChannel(readRequiredApiItem(result, 'Created routing channel is missing'));
   }
 
@@ -202,7 +215,7 @@ export class RoutingService {
       requiredSafePathSegment(channelId, 'channelId'),
       toUpdateRoutingChannelRequest(input),
     );
-    ensurePlusApiSuccess(result, 'Failed to update routing channel');
+    ensurePlusApiSuccess(result, 'console.routing.messages.channelSaveFailed');
     return normalizeRoutingChannel(readRequiredApiItem(result, 'Updated routing channel is missing'));
   }
 
@@ -212,20 +225,20 @@ export class RoutingService {
     return true;
   }
 
-  static async setChannelStatus(channelId: string, status: RoutingChannelCommandStatus): Promise<Channel> {
+  static async setChannelStatus(channelId: string, status: ChannelStatus): Promise<Channel> {
     const normalizedStatus = normalizeChannelCommandStatus(status);
     const result = await getClawRouterAppSdkClient().ai.routing.channels.status.update(
       requiredSafePathSegment(channelId, 'channelId'),
       { status: normalizedStatus },
     );
-    ensurePlusApiSuccess(result, 'Failed to update routing channel status');
+    ensurePlusApiSuccess(result, 'console.routing.messages.channelStatusUpdateFailed');
     return normalizeRoutingChannel(readRequiredApiItem(result, 'Updated routing channel is missing'));
   }
 
   static async testChannel(channelId: string): Promise<RoutingChannelTestResult> {
     const normalizedChannelId = requiredSafePathSegment(channelId, 'channelId');
     const result = await getClawRouterAppSdkClient().ai.routing.channels.verify(normalizedChannelId);
-    ensurePlusApiSuccess(result, 'Failed to test routing channel');
+    ensurePlusApiSuccess(result, 'console.routing.messages.channelTestFailed');
     const data = readApiRecord(result);
     return {
       channelId: readRequiredString(data, 'channelId', 'Routing channel test channel id is required'),
@@ -238,14 +251,14 @@ export class RoutingService {
 
   static async fetchApiKeys(): Promise<RoutingApiKey[]> {
     const result = await getClawRouterAppSdkClient().ai.routing.apiKeys.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch routing API keys');
-    return readRequiredApiItems(result, 'Failed to fetch routing API keys')
+    ensurePlusApiSuccess(result, 'console.routing.states.apiKeys.loadErrorFallback');
+    return readRequiredApiItems(result, 'console.routing.states.apiKeys.loadErrorFallback')
       .map(normalizeRoutingApiKey);
   }
 
   static async fetchStrategy(): Promise<RoutingStrategySnapshot> {
     const result = await getClawRouterAppSdkClient().ai.routing.strategy.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch routing strategy');
+    ensurePlusApiSuccess(result, 'console.routing.states.strategy.loadErrorFallback');
     return normalizeRoutingStrategySnapshot(readApiRecord(result));
   }
 
@@ -255,7 +268,7 @@ export class RoutingService {
       mappingRules: snapshot.mappingRules.map(toUpdateMappingRuleRequest),
     };
     const result = await getClawRouterAppSdkClient().ai.routing.strategy.update(request);
-    ensurePlusApiSuccess(result, 'Failed to update routing strategy');
+    ensurePlusApiSuccess(result, 'console.routing.states.strategy.saveErrorFallback');
   }
 }
 
@@ -275,6 +288,7 @@ function toCreateRoutingChannelRequest(input: RoutingChannelMutationInput): Crea
     capabilities: normalizeCapabilities(input.capabilities),
     timeoutMs: optionalBoundedInteger(input.timeoutMs, 'timeoutMs', 1, 600_000),
     retryPolicy: normalizeRetryPolicy(input.retryPolicy),
+    circuitBreakerPolicy: normalizeCircuitBreakerPolicy(input.circuitBreakerPolicy),
     weight: optionalPositiveInteger(input.weight, 'weight'),
     status: input.status === undefined ? undefined : normalizeChannelStatus(input.status),
   };
@@ -312,6 +326,11 @@ function toUpdateRoutingChannelRequest(input: RoutingChannelUpdateInput): Update
   }
   if (input.retryPolicy !== undefined) {
     request.retryPolicy = input.retryPolicy === null ? null : normalizeRetryPolicy(input.retryPolicy);
+  }
+  if (input.circuitBreakerPolicy !== undefined) {
+    request.circuitBreakerPolicy = input.circuitBreakerPolicy === null
+      ? null
+      : normalizeCircuitBreakerPolicy(input.circuitBreakerPolicy);
   }
   if (input.weight !== undefined) request.weight = optionalPositiveInteger(input.weight, 'weight');
   if (input.status !== undefined) request.status = normalizeChannelStatus(input.status);
@@ -411,6 +430,22 @@ function normalizeRetryPolicy(value: RoutingRetryPolicy | undefined): ProviderRe
   };
 }
 
+function normalizeCircuitBreakerPolicy(value: RoutingCircuitBreakerPolicy | undefined): ProviderCircuitBreakerPolicy | undefined {
+  if (value === undefined) {
+    return undefined;
+  }
+  const failureThreshold = optionalBoundedInteger(
+    value.failureThreshold,
+    'circuitBreakerPolicy.failureThreshold',
+    1,
+    100,
+  );
+  if (failureThreshold === undefined) {
+    throw new Error('circuitBreakerPolicy.failureThreshold is required');
+  }
+  return { failureThreshold };
+}
+
 function normalizeRetryableStatusCodes(values: number[]): RetryableStatusCode[] {
   const allowed = new Set<number>([408, 409, 425, 429, 500, 502, 503, 504]);
   const normalized: RetryableStatusCode[] = [];
@@ -493,6 +528,7 @@ function normalizeRoutingChannel(value: unknown): Channel {
   const capabilities = readRequiredFirstStringArray(item, ['capabilities', 'modalities'], 'Routing channel capabilities are required');
   const errors = readRequiredNonNegativeMetric(item, 'errors', 'Routing channel errors are required');
   const retryPolicy = readRoutingRetryPolicy(item, 'retryPolicy');
+  const circuitBreakerPolicy = readRoutingCircuitBreakerPolicy(item, 'circuitBreakerPolicy');
 
   return {
     id,
@@ -509,6 +545,7 @@ function normalizeRoutingChannel(value: unknown): Channel {
     isMultimodal: readRequiredFirstBoolean(item, ['isMultimodal', 'is_multimodal'], 'Routing channel multimodal flag is required'),
     timeoutMs: readOptionalBoundedMetric(item, 'timeoutMs', 1, 600_000),
     retryPolicy,
+    circuitBreakerPolicy,
     weight: readRequiredPositiveInteger(item, 'weight', 'Routing channel weight is required'),
     status: readRoutingChannelStatus(item, errors),
     latency: readRequiredFirstString(item, ['latency', 'latencyP95', 'latency_p95'], 'Routing channel latency is required'),
@@ -542,23 +579,49 @@ function readRoutingRetryPolicy(item: ApiRecord, key: string): RoutingRetryPolic
   };
 }
 
+function readRoutingCircuitBreakerPolicy(item: ApiRecord, key: string): RoutingCircuitBreakerPolicy | undefined {
+  const value = item[key];
+  if (value === undefined || value === null) {
+    return undefined;
+  }
+  if (!isRecord(value)) {
+    throw new Error('Routing channel circuitBreakerPolicy must be an object');
+  }
+  return {
+    failureThreshold: readRequiredBoundedMetric(
+      value,
+      'failureThreshold',
+      'Routing channel circuitBreakerPolicy.failureThreshold must be between 1 and 100',
+      1,
+      100,
+    ),
+  };
+}
+
 function normalizeRoutingApiKey(value: unknown): RoutingApiKey {
   const item = readRequiredRecord(value, 'Routing API key record is required');
   const id = readRequiredFirstString(item, ['id', 'uuid', 'keyPrefix', 'key_prefix'], 'Routing API key id is required');
-  const key = readRequiredFirstString(
+  const displayKey = readRequiredFirstString(
     item,
-    ['key', 'keyVal', 'key_display_masked', 'keyDisplayMasked', 'key_prefix', 'keyPrefix'],
+    ['displayKey', 'key', 'keyVal', 'key_display_masked', 'keyDisplayMasked', 'key_prefix', 'keyPrefix'],
     'Routing API key value is required',
   );
+  const copyableKey = readFirstString(item, ['copyableKey', 'rawKey', 'raw_key', 'secret', 'apiKeySecret']).trim() || null;
 
   return {
     id,
-    name: readFirstString(item, ['name'], id || key),
-    key,
+    name: readRoutingApiKeyDisplayName(item, id),
+    displayKey,
+    copyableKey,
     status: readRoutingApiKeyStatus(item),
     totalUsage: readFirstString(item, ['totalUsage', 'usedQuota', 'usage_amount_total', 'capacity_used'], '0'),
     createdAt: readFirstString(item, ['createdAt', 'created', 'created_at']),
   };
+}
+
+function readRoutingApiKeyDisplayName(item: ApiRecord, id: string): string {
+  const name = readFirstString(item, ['name']).trim();
+  return name || `API Key #${id}`;
 }
 
 function normalizeRoutingStrategySnapshot(item: ApiRecord): RoutingStrategySnapshot {
@@ -653,7 +716,7 @@ function readRequiredAnyString(item: ApiRecord, keys: string[], message: string)
     try {
       return readRequiredString(item, key, message);
     } catch {
-      // Continue through accepted wire aliases before failing on the canonical contract message.
+      // Continue through accepted wire aliases before failing on the canonical validation message.
     }
   }
   throw new Error(message);
@@ -691,6 +754,14 @@ function readRequiredNonNegativeMetric(item: ApiRecord, key: string, message: st
 function readRequiredPositiveInteger(item: ApiRecord, key: string, message: string): number {
   const value = readNumber(item, key, Number.NaN);
   if (!Number.isFinite(value) || !Number.isInteger(value) || value < 1) {
+    throw new Error(message);
+  }
+  return value;
+}
+
+function readRequiredBoundedMetric(item: ApiRecord, key: string, message: string, min: number, max: number): number {
+  const value = readNumber(item, key, Number.NaN);
+  if (!Number.isFinite(value) || !Number.isInteger(value) || value < min || value > max) {
     throw new Error(message);
   }
   return value;

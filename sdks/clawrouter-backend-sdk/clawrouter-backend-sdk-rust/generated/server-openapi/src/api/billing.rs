@@ -4,7 +4,7 @@ use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AdminCouponBatchGenerateRequest, AdminCouponCreateRequest, AdminPromoCodeStatusUpdateRequest, AdminUserBalanceAdjustmentRequest, CouponBatchesCreateResult, CouponBatchesListResult, CouponCodesListResult, CouponCodesStatusUpdateResult, CouponsCreateResult, CouponsDeleteResult, CouponsListResult, FinanceAdminLedgerListResult, FinanceUsageStatementsListResult, ReferralsStatsListResult, UsersBalanceAdjustmentsCreateResult, UsersCouponsListResult, VipRechargeListResult};
+use crate::models::{AdminCouponBatchGenerateRequest, AdminCouponCreateRequest, AdminPromoCodeStatusUpdateRequest, AdminUserBalanceAdjustmentRequest, CommerceExchangeRuleUpsertRequest, CommerceRechargePackageMutationRequest, CouponBatchesCreateResult, CouponBatchesListResult, CouponCodesListResult, CouponCodesStatusUpdateResult, CouponsCreateResult, CouponsDeleteResult, CouponsListResult, CouponsUpdateResult, ExchangeRulesListResult, ExchangeRulesUpdateResult, FinanceLedgerListResult, FinanceUsageStatementsListResult, PaymentsAttemptsListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RechargesRecordsListResult, RechargesRecordsRetrieveResult, ReferralsStatsListResult, UsersBalanceAdjustmentsCreateResult, UsersCouponsListResult};
 
 #[derive(Clone)]
 pub struct BillingApi {
@@ -17,8 +17,15 @@ impl BillingApi {
     }
 
     /// List batches
-    pub async fn coupon_batches_list(&self) -> Result<CouponBatchesListResult, SdkworkError> {
-        let path = backend_path(&"/billing/coupon_batches".to_string());
+    pub async fn coupon_batches_list(&self, coupon_id: Option<&str>, status: Option<&str>, page: Option<i64>, page_size: Option<i64>, cursor: Option<&str>) -> Result<CouponBatchesListResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("coupon_id", coupon_id, "form", true, false, None),
+            QueryParameterSpec::new("status", status, "form", true, false, None),
+            QueryParameterSpec::new("page", page, "form", true, false, None),
+            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
+            QueryParameterSpec::new("cursor", cursor, "form", true, false, None),
+        ]);
+        let path = append_query_string(backend_path(&"/billing/coupon_batches".to_string()), &query);
         self.client.get(&path, None, None).await
     }
 
@@ -35,14 +42,22 @@ impl BillingApi {
     }
 
     /// List promo codes
-    pub async fn coupon_codes_list(&self) -> Result<CouponCodesListResult, SdkworkError> {
-        let path = backend_path(&"/billing/coupon_codes".to_string());
+    pub async fn coupon_codes_list(&self, coupon_id: Option<&str>, batch_id: Option<&str>, status: Option<&str>, page: Option<i64>, page_size: Option<i64>, cursor: Option<&str>) -> Result<CouponCodesListResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("coupon_id", coupon_id, "form", true, false, None),
+            QueryParameterSpec::new("batch_id", batch_id, "form", true, false, None),
+            QueryParameterSpec::new("status", status, "form", true, false, None),
+            QueryParameterSpec::new("page", page, "form", true, false, None),
+            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
+            QueryParameterSpec::new("cursor", cursor, "form", true, false, None),
+        ]);
+        let path = append_query_string(backend_path(&"/billing/coupon_codes".to_string()), &query);
         self.client.get(&path, None, None).await
     }
 
     /// Update promo code status
-    pub async fn coupon_codes_status_update(&self, promo_code_id: &str, body: &AdminPromoCodeStatusUpdateRequest, x_request_id: Option<&str>) -> Result<CouponCodesStatusUpdateResult, SdkworkError> {
-        let path = backend_path(&format!("/billing/coupon_codes/{}/status", serialize_path_parameter(promo_code_id, PathParameterSpec::new("promoCodeId", "simple", false))));
+    pub async fn coupon_codes_status_update(&self, code_id: &str, body: &AdminPromoCodeStatusUpdateRequest, x_request_id: Option<&str>) -> Result<CouponCodesStatusUpdateResult, SdkworkError> {
+        let path = backend_path(&format!("/billing/coupon_codes/{}/status", serialize_path_parameter(code_id, PathParameterSpec::new("codeId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
@@ -53,8 +68,14 @@ impl BillingApi {
     }
 
     /// List coupons
-    pub async fn coupons_list(&self) -> Result<CouponsListResult, SdkworkError> {
-        let path = backend_path(&"/billing/coupons".to_string());
+    pub async fn coupons_list(&self, status: Option<&str>, page: Option<i64>, page_size: Option<i64>, cursor: Option<&str>) -> Result<CouponsListResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("status", status, "form", true, false, None),
+            QueryParameterSpec::new("page", page, "form", true, false, None),
+            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
+            QueryParameterSpec::new("cursor", cursor, "form", true, false, None),
+        ]);
+        let path = append_query_string(backend_path(&"/billing/coupons".to_string()), &query);
         self.client.get(&path, None, None).await
     }
 
@@ -76,8 +97,43 @@ impl BillingApi {
         self.client.delete(&path, None, None).await
     }
 
+    /// Update coupon
+    pub async fn coupons_update(&self, coupon_id: &str, body: &AdminCouponCreateRequest, x_request_id: Option<&str>) -> Result<CouponsUpdateResult, SdkworkError> {
+        let path = backend_path(&format!("/billing/coupons/{}", serialize_path_parameter(coupon_id, PathParameterSpec::new("couponId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// List exchange rules
+    pub async fn exchange_rules_list(&self, source_asset_type: Option<&str>, target_asset_type: Option<&str>, status: Option<&str>) -> Result<ExchangeRulesListResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("source_asset_type", source_asset_type, "form", true, false, None),
+            QueryParameterSpec::new("target_asset_type", target_asset_type, "form", true, false, None),
+            QueryParameterSpec::new("status", status, "form", true, false, None),
+        ]);
+        let path = append_query_string(backend_path(&"/billing/exchange_rules".to_string()), &query);
+        self.client.get(&path, None, None).await
+    }
+
+    /// Upsert exchange rule
+    pub async fn exchange_rules_update(&self, body: &CommerceExchangeRuleUpsertRequest, x_request_id: Option<&str>) -> Result<ExchangeRulesUpdateResult, SdkworkError> {
+        let path = backend_path(&"/billing/exchange_rules".to_string());
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
     /// List transactions
-    pub async fn finance_admin_ledger_list(&self, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, status: Option<&str>, start_time: Option<&str>, end_time: Option<&str>) -> Result<FinanceAdminLedgerListResult, SdkworkError> {
+    pub async fn finance_ledger_list(&self, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, status: Option<&str>, start_time: Option<&str>, end_time: Option<&str>) -> Result<FinanceLedgerListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -86,7 +142,7 @@ impl BillingApi {
             QueryParameterSpec::new("start_time", start_time, "form", true, false, None),
             QueryParameterSpec::new("end_time", end_time, "form", true, false, None),
         ]);
-        let path = append_query_string(backend_path(&"/billing/finance/admin/ledger".to_string()), &query);
+        let path = append_query_string(backend_path(&"/billing/finance/ledger".to_string()), &query);
         self.client.get(&path, None, None).await
     }
 
@@ -104,6 +160,77 @@ impl BillingApi {
         self.client.get(&path, None, None).await
     }
 
+    /// List payment attempts
+    pub async fn payments_attempts_list(&self, provider: Option<&str>, status: Option<&str>, page: Option<i64>, page_size: Option<i64>, cursor: Option<&str>) -> Result<PaymentsAttemptsListResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("provider", provider, "form", true, false, None),
+            QueryParameterSpec::new("status", status, "form", true, false, None),
+            QueryParameterSpec::new("page", page, "form", true, false, None),
+            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
+            QueryParameterSpec::new("cursor", cursor, "form", true, false, None),
+        ]);
+        let path = append_query_string(backend_path(&"/billing/payments/attempts".to_string()), &query);
+        self.client.get(&path, None, None).await
+    }
+
+    /// List recharge packages
+    pub async fn recharges_packages_list(&self, status: Option<&str>) -> Result<RechargesPackagesListResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("status", status, "form", true, false, None),
+        ]);
+        let path = append_query_string(backend_path(&"/billing/recharges/packages".to_string()), &query);
+        self.client.get(&path, None, None).await
+    }
+
+    /// Create recharge package
+    pub async fn recharges_packages_create(&self, body: &CommerceRechargePackageMutationRequest, x_request_id: Option<&str>) -> Result<RechargesPackagesCreateResult, SdkworkError> {
+        let path = backend_path(&"/billing/recharges/packages".to_string());
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// Delete recharge package
+    pub async fn recharges_packages_delete(&self, package_id: &str) -> Result<RechargesPackagesDeleteResult, SdkworkError> {
+        let path = backend_path(&format!("/billing/recharges/packages/{}", serialize_path_parameter(package_id, PathParameterSpec::new("packageId", "simple", false))));
+        self.client.delete(&path, None, None).await
+    }
+
+    /// Update recharge package
+    pub async fn recharges_packages_update(&self, package_id: &str, body: &CommerceRechargePackageMutationRequest, x_request_id: Option<&str>) -> Result<RechargesPackagesUpdateResult, SdkworkError> {
+        let path = backend_path(&format!("/billing/recharges/packages/{}", serialize_path_parameter(package_id, PathParameterSpec::new("packageId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// List recharge records
+    pub async fn recharges_records_list(&self, user_id: Option<&str>, status: Option<&str>, page: Option<i64>, page_size: Option<i64>, cursor: Option<&str>) -> Result<RechargesRecordsListResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("user_id", user_id, "form", true, false, None),
+            QueryParameterSpec::new("status", status, "form", true, false, None),
+            QueryParameterSpec::new("page", page, "form", true, false, None),
+            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
+            QueryParameterSpec::new("cursor", cursor, "form", true, false, None),
+        ]);
+        let path = append_query_string(backend_path(&"/billing/recharges/records".to_string()), &query);
+        self.client.get(&path, None, None).await
+    }
+
+    /// Retrieve recharge record
+    pub async fn recharges_records_retrieve(&self, order_no: &str) -> Result<RechargesRecordsRetrieveResult, SdkworkError> {
+        let path = backend_path(&format!("/billing/recharges/records/{}", serialize_path_parameter(order_no, PathParameterSpec::new("orderNo", "simple", false))));
+        self.client.get(&path, None, None).await
+    }
+
     /// List referral stats
     pub async fn referrals_stats_list(&self) -> Result<ReferralsStatsListResult, SdkworkError> {
         let path = backend_path(&"/billing/referrals/stats".to_string());
@@ -111,8 +238,15 @@ impl BillingApi {
     }
 
     /// List redemption records
-    pub async fn users_coupons_list(&self) -> Result<UsersCouponsListResult, SdkworkError> {
-        let path = backend_path(&"/billing/users/coupons".to_string());
+    pub async fn users_coupons_list(&self, user_id: Option<&str>, status: Option<&str>, page: Option<i64>, page_size: Option<i64>, cursor: Option<&str>) -> Result<UsersCouponsListResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("user_id", user_id, "form", true, false, None),
+            QueryParameterSpec::new("status", status, "form", true, false, None),
+            QueryParameterSpec::new("page", page, "form", true, false, None),
+            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
+            QueryParameterSpec::new("cursor", cursor, "form", true, false, None),
+        ]);
+        let path = append_query_string(backend_path(&"/billing/users/coupons".to_string()), &query);
         self.client.get(&path, None, None).await
     }
 
@@ -126,12 +260,6 @@ impl BillingApi {
             &[],
         );
         self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
-    /// List recharge records
-    pub async fn vip_recharge_list(&self) -> Result<VipRechargeListResult, SdkworkError> {
-        let path = backend_path(&"/billing/vip/recharge".to_string());
-        self.client.get(&path, None, None).await
     }
 
 }

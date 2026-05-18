@@ -7,6 +7,10 @@ export interface RoutingRetryPolicy {
   backoffMs?: number;
 }
 
+export interface RoutingCircuitBreakerPolicy {
+  failureThreshold: number;
+}
+
 export interface Channel {
   id: string;
   name: string;
@@ -22,6 +26,7 @@ export interface Channel {
   isMultimodal: boolean;
   timeoutMs?: number;
   retryPolicy?: RoutingRetryPolicy;
+  circuitBreakerPolicy?: RoutingCircuitBreakerPolicy;
   weight: number;
   status: ChannelStatus;
   latency: string;

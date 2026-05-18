@@ -66,6 +66,7 @@ client.setHeader("X-Custom-Header", value: "value")
 
 ## API Modules
 
+- `client.agents` - agents API
 - `client.ai` - ai API
 - `client.billing` - billing API
 - `client.content` - content API
@@ -76,6 +77,22 @@ client.setHeader("X-Custom-Header", value: "value")
 - `client.system` - system API
 
 ## Usage Examples
+
+### agents
+
+```swift
+// List managed agents
+let params: [String: Any] = [
+    "q": "q",
+    "owner_user_id": 2,
+    "status": "active",
+    "visibility": "private",
+    "page": 5,
+    "page_size": 6
+]
+let result = try await client.agents.list(params: params)
+print(result)
+```
 
 ### ai
 
@@ -88,8 +105,8 @@ print(result)
 ### billing
 
 ```swift
-// List batches
-let result = try await client.billing.couponBatchesList()
+// List referral stats
+let result = try await client.billing.referralsStatsList()
 print(result)
 ```
 
@@ -145,8 +162,8 @@ print(result)
 ### system
 
 ```swift
-// List dashboard data
-let result = try await client.system.dashboardAdminOverviewRetrieve()
+// Retrieve IAM auth runtime settings
+let result = try await client.system.authSettingsRetrieve()
 print(result)
 ```
 

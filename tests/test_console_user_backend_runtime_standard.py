@@ -297,8 +297,10 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")
 
-        self.assertIn("readOnlyUserActions", user_view)
-        self.assertIn("Read-only", user_view)
+        self.assertNotIn("readOnlyUserActions", user_view)
+        self.assertNotIn("Read-only", user_view)
+        self.assertNotIn("read-only", user_view)
+        self.assertNotIn("command contract", user_view)
         self.assertIn("UserService.fetchCurrentUser()", user_view)
         self.assertIn("getClawRouterAppSdkClient().iam.users.current.retrieve()", user_service)
         self.assertIn("operation: fetchCurrentUser", contract)
@@ -324,12 +326,12 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         ]:
             self.assertNotIn(unsupported_action, user_view)
 
-        for supported_local_state in [
+        for removed_explanatory_copy in [
             "Profile updates require an explicit generated App SDK contract before they can be enabled.",
             "Password, 2FA, and third-party binding controls are read-only until dedicated security command contracts exist.",
             "Avatar upload is read-only until a signed upload contract exists.",
         ]:
-            self.assertIn(supported_local_state, user_view)
+            self.assertNotIn(removed_explanatory_copy, user_view)
 
     def test_console_user_uses_retryable_business_state_for_remote_profile_loading(
         self,
@@ -350,11 +352,61 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
             "loadError",
             "setLoadError",
             "onRetry={() => void loadUserProfile()}",
-            "User profile could not be loaded",
+            "console.user.states.loadErrorTitle",
         ]:
             self.assertIn(marker, user_view)
 
         self.assertNotIn('<Loader2 className="w-8 h-8', user_view)
+
+    def test_console_user_product_states_are_localized(self) -> None:
+        user_view = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-user"
+            / "src"
+            / "UserView.tsx"
+        ).read_text(encoding="utf-8")
+        user_service = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-user"
+            / "src"
+            / "userService.ts"
+        ).read_text(encoding="utf-8")
+        i18n = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-i18n"
+            / "src"
+            / "index.ts"
+        ).read_text(encoding="utf-8")
+
+        for marker in [
+            "console.user.states.loading",
+            "console.user.states.loadErrorTitle",
+            "console.user.states.loadErrorFallback",
+            "console.user.states.emptyTitle",
+            "console.user.states.emptyDescription",
+        ]:
+            self.assertIn(marker, user_view + user_service + i18n)
+            self.assertGreaterEqual(i18n.count(f'"{marker}"'), 2)
+
+        for hardcoded_copy in [
+            "Loading user profile...",
+            "User profile could not be loaded",
+            "Failed to load user profile.",
+            "No user profile found",
+            "The user profile API returned no profile data for the active session.",
+            "Failed to fetch current user",
+        ]:
+            self.assertNotIn(hardcoded_copy, user_view)
+            self.assertNotIn(hardcoded_copy, user_service)
 
 
 if __name__ == "__main__":

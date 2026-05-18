@@ -1,4 +1,5 @@
 pub(crate) mod app_catalog_mapping;
+pub(crate) mod app_generation_agent_runtime;
 pub(crate) mod app_seed;
 pub mod catalog;
 pub(crate) mod course_seed;
@@ -10,6 +11,7 @@ pub(crate) mod model_modality;
 pub mod postgres;
 pub(crate) mod provider_classification;
 mod queries;
+pub(crate) mod read_model;
 pub mod rows;
 pub(crate) mod skills_seed;
 pub(crate) mod sql_admin_auth_settings;

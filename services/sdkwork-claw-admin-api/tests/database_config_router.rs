@@ -3022,6 +3022,7 @@ async fn create_schema(pool: &SqlitePool) {
             base_url_override TEXT,
             timeout_ms INTEGER,
             retry_policy TEXT,
+            circuit_breaker_policy TEXT,
             model_mode INTEGER,
             environment INTEGER,
             capabilities TEXT,
@@ -3168,23 +3169,30 @@ async fn create_schema(pool: &SqlitePool) {
             cache_read_unit_price TEXT,
             occurred_at TEXT
         )"#,
-        r#"CREATE TABLE plus_user (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            data_scope INTEGER,
-            created_at TEXT NOT NULL,
-            updated_at TEXT,
-            v INTEGER NOT NULL DEFAULT 0,
-            username TEXT,
-            nickname TEXT,
-            password TEXT,
-            platform INTEGER,
-            type INTEGER,
+        r#"CREATE TABLE iam_user (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            username TEXT NOT NULL,
+            display_name TEXT NOT NULL,
             email TEXT,
-            status INTEGER NOT NULL DEFAULT 1,
-            deleted_at TEXT
+            phone TEXT,
+            avatar_url TEXT,
+            status TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, username)
+        )"#,
+        r#"CREATE TABLE iam_organization_member (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT NOT NULL,
+            user_id TEXT NOT NULL,
+            role_code TEXT,
+            status TEXT NOT NULL,
+            joined_at TEXT NOT NULL,
+            left_at TEXT,
+            remark TEXT,
+            UNIQUE (tenant_id, organization_id, user_id)
         )"#,
         r#"CREATE TABLE plus_account (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -3418,7 +3426,7 @@ async fn create_schema(pool: &SqlitePool) {
             valid_to TEXT,
             last_active_time TEXT,
             remark TEXT,
-            CONSTRAINT fk_plus_vip_user_user FOREIGN KEY (user_id) REFERENCES plus_user (id),
+            CONSTRAINT fk_plus_vip_user_user FOREIGN KEY (user_id) REFERENCES iam_user (id),
             CONSTRAINT fk_plus_vip_user_level FOREIGN KEY (vip_level_id) REFERENCES plus_vip_level (id)
         )"#,
         "CREATE UNIQUE INDEX uk_plus_vip_user_user_id ON plus_vip_user (user_id)",
@@ -3441,7 +3449,7 @@ async fn create_schema(pool: &SqlitePool) {
             source_id INTEGER,
             source_type TEXT,
             remark TEXT,
-            CONSTRAINT fk_plus_vip_point_change_user FOREIGN KEY (user_id) REFERENCES plus_user (id)
+            CONSTRAINT fk_plus_vip_point_change_user FOREIGN KEY (user_id) REFERENCES iam_user (id)
         )"#,
         "CREATE INDEX idx_plus_vip_point_change_user ON plus_vip_point_change (user_id)",
         "CREATE INDEX idx_plus_vip_point_change_type ON plus_vip_point_change (change_type)",
@@ -3463,7 +3471,7 @@ async fn create_schema(pool: &SqlitePool) {
             source_id INTEGER,
             source_type TEXT,
             remark TEXT,
-            CONSTRAINT fk_plus_vip_benefit_usage_user FOREIGN KEY (user_id) REFERENCES plus_user (id)
+            CONSTRAINT fk_plus_vip_benefit_usage_user FOREIGN KEY (user_id) REFERENCES iam_user (id)
         )"#,
         "CREATE INDEX idx_plus_vip_benefit_usage_user ON plus_vip_benefit_usage (user_id)",
         "CREATE INDEX idx_plus_vip_benefit_usage_type ON plus_vip_benefit_usage (benefit_type)",
@@ -3491,7 +3499,7 @@ async fn create_schema(pool: &SqlitePool) {
             tags TEXT,
             status INTEGER NOT NULL,
             business_hours TEXT,
-            CONSTRAINT fk_plus_shop_user FOREIGN KEY (user_id) REFERENCES plus_user (id)
+            CONSTRAINT fk_plus_shop_user FOREIGN KEY (user_id) REFERENCES iam_user (id)
         )"#,
         "CREATE INDEX idx_plus_shop_user_id ON plus_shop (user_id)",
         "CREATE INDEX idx_plus_shop_status ON plus_shop (status)",
@@ -3521,7 +3529,7 @@ async fn create_schema(pool: &SqlitePool) {
             category_id INTEGER NOT NULL,
             base_attributes TEXT NOT NULL DEFAULT '{}',
             spec_attributes TEXT NOT NULL DEFAULT '{}',
-            CONSTRAINT fk_plus_product_user FOREIGN KEY (user_id) REFERENCES plus_user (id)
+            CONSTRAINT fk_plus_product_user FOREIGN KEY (user_id) REFERENCES iam_user (id)
         )"#,
         "CREATE UNIQUE INDEX uk_plus_product_code ON plus_product (code)",
         "CREATE INDEX idx_plus_product_user_id ON plus_product (user_id)",
@@ -3570,7 +3578,7 @@ async fn create_schema(pool: &SqlitePool) {
             description TEXT,
             group_list TEXT,
             status INTEGER,
-            CONSTRAINT fk_plus_shopping_cart_user FOREIGN KEY (user_id) REFERENCES plus_user (id)
+            CONSTRAINT fk_plus_shopping_cart_user FOREIGN KEY (user_id) REFERENCES iam_user (id)
         )"#,
         "CREATE INDEX idx_plus_shopping_cart_user_id ON plus_shopping_cart (user_id)",
         "CREATE INDEX idx_plus_shopping_cart_owner ON plus_shopping_cart (owner, owner_id)",
@@ -3630,9 +3638,9 @@ async fn create_schema(pool: &SqlitePool) {
             refunded_amount TEXT,
             currency TEXT,
             payment_method TEXT,
-            CONSTRAINT fk_plus_order_user FOREIGN KEY (user_id) REFERENCES plus_user (id),
-            CONSTRAINT fk_plus_order_worker_user FOREIGN KEY (worker_user_id) REFERENCES plus_user (id),
-            CONSTRAINT fk_plus_order_dispatcher_user FOREIGN KEY (dispatcher_user_id) REFERENCES plus_user (id)
+            CONSTRAINT fk_plus_order_user FOREIGN KEY (user_id) REFERENCES iam_user (id),
+            CONSTRAINT fk_plus_order_worker_user FOREIGN KEY (worker_user_id) REFERENCES iam_user (id),
+            CONSTRAINT fk_plus_order_dispatcher_user FOREIGN KEY (dispatcher_user_id) REFERENCES iam_user (id)
         )"#,
         "CREATE UNIQUE INDEX uk_plus_order_order_sn ON plus_order (order_sn)",
         "CREATE UNIQUE INDEX uk_plus_order_out_trade_no ON plus_order (out_trade_no)",
@@ -3762,7 +3770,7 @@ async fn create_schema(pool: &SqlitePool) {
             invoice_time TEXT,
             cancel_time TEXT,
             fail_reason TEXT,
-            CONSTRAINT fk_plus_invoice_user FOREIGN KEY (user_id) REFERENCES plus_user (id)
+            CONSTRAINT fk_plus_invoice_user FOREIGN KEY (user_id) REFERENCES iam_user (id)
         )"#,
         "CREATE INDEX idx_invoice_user ON plus_invoice (user_id)",
         "CREATE INDEX idx_invoice_status ON plus_invoice (status)",
@@ -3899,23 +3907,24 @@ async fn create_schema(pool: &SqlitePool) {
             invoice_id INTEGER,
             export_id INTEGER
         )"#,
-        r#"CREATE TABLE plus_role (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            created_at TEXT NOT NULL,
-            updated_at TEXT,
-            v INTEGER NOT NULL DEFAULT 0,
+        r#"CREATE TABLE iam_role (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
             code TEXT NOT NULL,
-            name TEXT,
-            status INTEGER NOT NULL DEFAULT 1
-        )"#,
-        r#"CREATE TABLE plus_user_role (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            user_id INTEGER NOT NULL,
-            role_id INTEGER NOT NULL,
+            name TEXT NOT NULL,
+            status TEXT NOT NULL,
             created_at TEXT NOT NULL,
-            updated_at TEXT,
-            operator_id INTEGER
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, code)
+        )"#,
+        r#"CREATE TABLE iam_user_role (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            user_id TEXT NOT NULL,
+            role_id TEXT NOT NULL,
+            organization_id TEXT,
+            created_at TEXT NOT NULL,
+            UNIQUE (tenant_id, user_id, role_id, organization_id)
         )"#,
         r#"CREATE TABLE plus_order_worker_dispatch_profile (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -3931,7 +3940,7 @@ async fn create_schema(pool: &SqlitePool) {
             enabled INTEGER NOT NULL DEFAULT 1,
             global_max_in_progress INTEGER NOT NULL DEFAULT 1,
             metadata TEXT NOT NULL DEFAULT '{}',
-            CONSTRAINT fk_order_worker_dispatch_profile_user FOREIGN KEY (user_id) REFERENCES plus_user (id)
+            CONSTRAINT fk_order_worker_dispatch_profile_user FOREIGN KEY (user_id) REFERENCES iam_user (id)
         )"#,
         "CREATE UNIQUE INDEX uk_order_worker_dispatch_profile_user_id ON plus_order_worker_dispatch_profile (user_id)",
         "CREATE INDEX idx_order_worker_dispatch_profile_enabled ON plus_order_worker_dispatch_profile (enabled)",
@@ -4050,7 +4059,7 @@ async fn create_schema(pool: &SqlitePool) {
             order_id INTEGER,
             can_shared INTEGER NOT NULL DEFAULT 0,
             CONSTRAINT fk_plus_user_coupon_coupon FOREIGN KEY (coupon_id) REFERENCES plus_coupon (id),
-            CONSTRAINT fk_plus_user_coupon_user FOREIGN KEY (user_id) REFERENCES plus_user (id),
+            CONSTRAINT fk_plus_user_coupon_user FOREIGN KEY (user_id) REFERENCES iam_user (id),
             CONSTRAINT fk_plus_user_coupon_order FOREIGN KEY (order_id) REFERENCES plus_order (id)
         )"#,
         "CREATE UNIQUE INDEX uk_plus_user_coupon_code ON plus_user_coupon (coupon_code)",
@@ -4097,7 +4106,7 @@ async fn create_schema(pool: &SqlitePool) {
             remark TEXT,
             recharge_method_id INTEGER,
             recharge_pack_id INTEGER,
-            CONSTRAINT fk_plus_vip_recharge_user FOREIGN KEY (user_id) REFERENCES plus_user (id),
+            CONSTRAINT fk_plus_vip_recharge_user FOREIGN KEY (user_id) REFERENCES iam_user (id),
             CONSTRAINT fk_plus_vip_recharge_level FOREIGN KEY (vip_level_id) REFERENCES plus_vip_level (id),
             CONSTRAINT fk_plus_vip_recharge_method FOREIGN KEY (recharge_method_id) REFERENCES plus_vip_recharge_method (id),
             CONSTRAINT fk_plus_vip_recharge_pack FOREIGN KEY (recharge_pack_id) REFERENCES plus_vip_recharge_pack (id)
@@ -4160,7 +4169,8 @@ async fn create_schema(pool: &SqlitePool) {
             expire_at TEXT,
             last_used_at TEXT,
             last_revealed_at TEXT,
-            updated_at TEXT
+            updated_at TEXT,
+            metadata TEXT NOT NULL DEFAULT '{}'
         )"#,
         r#"CREATE TABLE iam_gateway_access_policy (
             id INTEGER PRIMARY KEY,
@@ -4633,18 +4643,21 @@ async fn seed_catalog(pool: &SqlitePool) {
 
 async fn seed_admin_users(pool: &SqlitePool) {
     for statement in [
-        r#"INSERT INTO plus_user
-            (id, uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, username, nickname, password, platform, type, email, status)
-            VALUES (30, 'user-30', 10, 20, 1, '2026-04-01 08:00:00', '2026-04-29 08:30:00', 0, 'owner', 'Owner', '', 0, 1, 'owner@example.com', 1)"#,
+        r#"INSERT INTO iam_user
+            (id, tenant_id, username, display_name, email, phone, avatar_url, status, created_at, updated_at)
+            VALUES ('30', '10', 'owner', 'Owner', 'owner@example.com', '', '', 'active', '2026-04-01 08:00:00', '2026-04-29 08:30:00')"#,
+        r#"INSERT INTO iam_organization_member
+            (id, tenant_id, organization_id, user_id, role_code, status, joined_at, left_at, remark)
+            VALUES ('member-30-admin', '10', '20', '30', 'admin', 'active', '2026-04-01 08:00:00', NULL, 'seed admin membership')"#,
         r#"INSERT INTO plus_account
             (id, uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, user_id, account_type, owner, owner_id, available_balance, frozen_balance, available_points, frozen_points, token_balance, frozen_token, status)
             VALUES (400, 'account-400', 10, 20, 1, '2026-04-01 08:00:00', '2026-04-29 08:30:00', 0, 30, 1, 1, 30, '25.5000', '0', 0, 0, 0, 0, 1)"#,
-        r#"INSERT INTO plus_role
-            (id, uuid, created_at, updated_at, v, code, name, status)
-            VALUES (1, 'role-admin', '2026-04-01 08:00:00', '2026-04-01 08:00:00', 0, 'admin', 'Admin', 1)"#,
-        r#"INSERT INTO plus_user_role
-            (id, user_id, role_id, created_at, updated_at, operator_id)
-            VALUES (1, 30, 1, '2026-04-01 08:00:00', '2026-04-01 08:00:00', 30)"#,
+        r#"INSERT INTO iam_role
+            (id, tenant_id, code, name, status, created_at, updated_at)
+            VALUES ('role-admin', '10', 'admin', 'Admin', 'active', '2026-04-01 08:00:00', '2026-04-01 08:00:00')"#,
+        r#"INSERT INTO iam_user_role
+            (id, tenant_id, user_id, role_id, organization_id, created_at)
+            VALUES ('user-role-30-admin', '10', '30', 'role-admin', '20', '2026-04-01 08:00:00')"#,
         r#"INSERT INTO iam_user_login_event
             (id, uuid, tenant_id, organization_id, user_id, request_id, auth_method, auth_provider, login_result, risk_level, mfa_verified, session_id_hash, occurred_at, created_at)
             VALUES (1, 'login-30', 10, 20, 30, 'request-login-30', 2, 'trusted-subject-exchange', 1, 0, 1, 'session-hash-30', '2026-04-29 09:00:00', '2026-04-29 08:59:00')"#,

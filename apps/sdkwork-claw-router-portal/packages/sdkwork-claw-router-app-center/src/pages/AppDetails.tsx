@@ -194,7 +194,7 @@ export function AppDetails() {
                     >
                       <span className="relative z-10 flex items-center gap-2 whitespace-nowrap">
                         <PlatformIcon type={activeRelease.platformType} os={activeRelease.os} className="w-4 h-4" />
-                        Download unavailable
+                        {t('common.actions.downloadUnavailable')}
                       </span>
                     </button>
                   )}
@@ -246,10 +246,10 @@ export function AppDetails() {
 
               <CopyButton
                 text={buildPortalShareUrl(`/apps/${detailApp.id}`)}
-                label="Share"
-                copiedLabel="Link copied"
-                errorLabel="Copy failed"
-                title="Copy app link"
+                label={t('common.actions.share')}
+                copiedLabel={t('common.actions.linkCopied')}
+                errorLabel={t('common.actions.copyFailed')}
+                title={t('common.actions.copyAppLink')}
                 className="p-3 rounded-xl bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-white/10 transition-colors border border-slate-200 dark:border-white/10"
                 iconClassName="w-5 h-5"
               />

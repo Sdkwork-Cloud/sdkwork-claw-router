@@ -8,6 +8,24 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 
 class SystemApi(private val client: HttpClient) {
 
+    /** Retrieve IAM auth runtime settings */
+    suspend fun authSettingsRetrieve(): AuthSettingsRetrieveResult? {
+        val raw = client.get(ApiPaths.backendPath("/system/auth/settings"))
+        return client.convertValue(raw, object : TypeReference<AuthSettingsRetrieveResult>() {})
+    }
+
+    /** Update IAM auth runtime settings */
+    suspend fun authSettingsUpdate(body: AdminAuthSettingsUpdateRequest, xRequestId: String? = null): AuthSettingsUpdateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.patch(ApiPaths.backendPath("/system/auth/settings"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<AuthSettingsUpdateResult>() {})
+    }
+
     /** List dashboard data */
     suspend fun dashboardAdminOverviewRetrieve(): DashboardAdminOverviewRetrieveResult? {
         val raw = client.get(ApiPaths.backendPath("/system/dashboard/admin/overview"))
@@ -127,30 +145,6 @@ class SystemApi(private val client: HttpClient) {
         ))
         val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/system/records"), query))
         return client.convertValue(raw, object : TypeReference<RecordsListResult>() {})
-    }
-
-    /** Create user */
-    suspend fun usersCreate(body: AdminUserCreateRequest, xRequestId: String? = null): UsersCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/system/users"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<UsersCreateResult>() {})
-    }
-
-    /** Update user */
-    suspend fun usersUpdate(body: AdminUserUpdateRequest, xRequestId: String? = null): UsersUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.put(ApiPaths.backendPath("/system/users"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<UsersUpdateResult>() {})
     }
 
     private data class PathParameterSpec(val name: String, val style: String, val explode: Boolean)

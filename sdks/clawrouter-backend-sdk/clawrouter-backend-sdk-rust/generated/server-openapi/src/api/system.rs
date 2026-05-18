@@ -4,7 +4,7 @@ use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminTokenLimitCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, UsersCreateResult, UsersUpdateResult};
+use crate::models::{AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminTokenLimitCreateRequest, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult};
 
 #[derive(Clone)]
 pub struct SystemApi {
@@ -14,6 +14,24 @@ pub struct SystemApi {
 impl SystemApi {
     pub fn new(client: Arc<SdkworkHttpClient>) -> Self {
         Self { client }
+    }
+
+    /// Retrieve IAM auth runtime settings
+    pub async fn auth_settings_retrieve(&self) -> Result<AuthSettingsRetrieveResult, SdkworkError> {
+        let path = backend_path(&"/system/auth/settings".to_string());
+        self.client.get(&path, None, None).await
+    }
+
+    /// Update IAM auth runtime settings
+    pub async fn auth_settings_update(&self, body: &AdminAuthSettingsUpdateRequest, x_request_id: Option<&str>) -> Result<AuthSettingsUpdateResult, SdkworkError> {
+        let path = backend_path(&"/system/auth/settings".to_string());
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
     /// List dashboard data
@@ -135,30 +153,6 @@ impl SystemApi {
         ]);
         let path = append_query_string(backend_path(&"/system/records".to_string()), &query);
         self.client.get(&path, None, None).await
-    }
-
-    /// Create user
-    pub async fn users_create(&self, body: &AdminUserCreateRequest, x_request_id: Option<&str>) -> Result<UsersCreateResult, SdkworkError> {
-        let path = backend_path(&"/system/users".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
-    /// Update user
-    pub async fn users_update(&self, body: &AdminUserUpdateRequest, x_request_id: Option<&str>) -> Result<UsersUpdateResult, SdkworkError> {
-        let path = backend_path(&"/system/users".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
 }

@@ -7,6 +7,22 @@ public class SystemApi {
         self.client = client
     }
 
+    /// Retrieve IAM auth runtime settings
+    public func authSettingsRetrieve() async throws -> AuthSettingsRetrieveResult? {
+        return try await client.get(ApiPaths.backendPath("/system/auth/settings"), responseType: AuthSettingsRetrieveResult.self)
+    }
+
+    /// Update IAM auth runtime settings
+    public func authSettingsUpdate(body: AdminAuthSettingsUpdateRequest, xRequestId: String? = nil) async throws -> AuthSettingsUpdateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.patch(ApiPaths.backendPath("/system/auth/settings"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AuthSettingsUpdateResult.self)
+    }
+
     /// List dashboard data
     public func dashboardAdminOverviewRetrieve() async throws -> DashboardAdminOverviewRetrieveResult? {
         return try await client.get(ApiPaths.backendPath("/system/dashboard/admin/overview"), responseType: DashboardAdminOverviewRetrieveResult.self)
@@ -111,28 +127,6 @@ public class SystemApi {
             QueryParameterSpec(name: "model", value: model, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/system/records"), query), responseType: RecordsListResult.self)
-    }
-
-    /// Create user
-    public func usersCreate(body: AdminUserCreateRequest, xRequestId: String? = nil) async throws -> UsersCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/system/users"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: UsersCreateResult.self)
-    }
-
-    /// Update user
-    public func usersUpdate(body: AdminUserUpdateRequest, xRequestId: String? = nil) async throws -> UsersUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/system/users"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: UsersUpdateResult.self)
     }
 
     private struct PathParameterSpec {

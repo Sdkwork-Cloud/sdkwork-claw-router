@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 ﻿import React, { useCallback, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CreditCard, Zap, CheckCircle2, ChevronRight, ShieldCheck, AlertCircle, Loader2 } from 'lucide-react';
@@ -5,14 +6,23 @@ import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
 import { AccountService, AccountStats } from 'sdkwork-claw-router-console-account';
 import { RechargeService, RechargePackage } from './rechargeService';
 
-const readOnlyRechargeHistory =
-  'Recharge records are available from the billing history contract; this page only creates recharge orders.';
+type TranslationFunction = ReturnType<typeof useTranslation>['t'];
 
-function getRechargeErrorMessage(error: unknown, fallback: string): string {
-  return error instanceof Error && error.message ? error.message : fallback;
+function getRechargeErrorMessage(error: unknown, fallback: string, t: TranslationFunction): string {
+  if (error instanceof Error) {
+    const message = error.message.trim();
+    if (message.startsWith('console.')) {
+      return t(message, fallback);
+    }
+    if (message) {
+      return message;
+    }
+  }
+  return fallback;
 }
 
 export function RechargeView() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [packages, setPackages] = useState<RechargePackage[]>([]);
   const [selectedPkg, setSelectedPkg] = useState<string>('');
@@ -40,14 +50,14 @@ export function RechargeView() {
       if (isActive()) {
         setPackages([]);
         setSelectedPkg('');
-        setPackagesLoadError(getRechargeErrorMessage(error, 'Failed to load recharge packages.'));
+        setPackagesLoadError(getRechargeErrorMessage(error, t('console.recharge.packagesLoadError', '充值套餐加载失败'), t));
       }
     } finally {
       if (isActive()) {
         setPackagesLoading(false);
       }
     }
-  }, []);
+  }, [t]);
 
   const loadAccountSummary = useCallback(async (isActive: () => boolean = () => true) => {
     setAccountLoading(true);
@@ -60,14 +70,14 @@ export function RechargeView() {
     } catch (error) {
       if (isActive()) {
         setAccountSummary(null);
-        setAccountLoadError(getRechargeErrorMessage(error, 'Failed to load account balance.'));
+        setAccountLoadError(getRechargeErrorMessage(error, t('console.recharge.accountLoadError', '账户余额加载失败'), t));
       }
     } finally {
       if (isActive()) {
         setAccountLoading(false);
       }
     }
-  }, []);
+  }, [t]);
 
   useEffect(() => {
     let active = true;
@@ -98,13 +108,13 @@ export function RechargeView() {
     try {
       const res = await RechargeService.submitRecharge(formatMoneyAmount(currentSelectionAmount), paymentMethod);
       if (res.success && res.orderNo) {
-        setSuccessMsg(`充值订单已提交，订单号：${res.orderNo}`);
+        setSuccessMsg(t("console.recharge.rechargeview.text.orderSubmitted", "充值订单已提交，订单号：{{orderNo}}", { orderNo: res.orderNo }));
         navigate(`/console/checkout?orderNo=${encodeURIComponent(res.orderNo)}`);
       } else {
-        setSubmitError('Recharge order could not be created. Please try again.');
+        setSubmitError(t('console.recharge.orderCreateFailed', '充值订单创建失败，请重试。'));
       }
     } catch (error) {
-      setSubmitError(getRechargeErrorMessage(error, 'Failed to submit recharge order.'));
+      setSubmitError(getRechargeErrorMessage(error, t('console.recharge.submitFailed', '充值订单提交失败'), t));
     } finally {
       setIsSubmitting(false);
     }
@@ -118,13 +128,9 @@ export function RechargeView() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-white/5">
         <div>
           <h1 className="text-xl lg:text-2xl font-bold text-slate-800 dark:text-white flex items-center gap-2">
-            余额充值
-          </h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">按需购买，灵活充值，用于在此平台调用所有提供商的 API。</p>
+            {t("console.recharge.rechargeview.text.srknmq", "余额充值")}</h1>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{t("console.recharge.rechargeview.text.17i5o76", "按需购买，灵活充值，用于在此平台调用所有提供商的 API。")}</p>
         </div>
-        <span className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 text-slate-500 dark:text-slate-400 px-4 py-2 rounded-lg text-xs font-medium flex items-center gap-2 shadow-sm max-w-sm">
-          {readOnlyRechargeHistory}
-        </span>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -134,13 +140,13 @@ export function RechargeView() {
             {accountLoading ? (
               <BusinessStatePanel
                 kind="loading"
-                title="Loading account balance..."
+                title={t('console.recharge.loadingBalance', '正在加载账户余额...')}
                 className="relative z-10 min-h-24 text-white"
               />
             ) : accountLoadError ? (
               <BusinessStatePanel
                 kind="error"
-                title="Account balance could not be loaded"
+                title={t('console.recharge.balanceLoadFailed', '账户余额加载失败')}
                 description={accountLoadError}
                 onRetry={() => { void loadAccountSummary(); }}
                 className="relative z-10 min-h-24 text-white"
@@ -148,41 +154,41 @@ export function RechargeView() {
             ) : !accountSummary ? (
               <BusinessStatePanel
                 kind="empty"
-                title="Account balance is unavailable"
-                description="The account API returned no displayable balance data."
+                title={t('console.recharge.balanceUnavailable', '账户余额暂不可用')}
+                description={t('console.recharge.balanceUnavailableDescription', '账户接口未返回可展示的余额数据。')}
                 onRetry={() => { void loadAccountSummary(); }}
                 className="relative z-10 min-h-24 text-white"
               />
             ) : (
             <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
-                <p className="text-white/80 text-sm font-medium mb-1">当前可用虚拟余额</p>
+                <p className="text-white/80 text-sm font-medium mb-1">{t("console.recharge.rechargeview.text.jmaalv", "当前可用虚拟余额")}</p>
                 <div className="text-3xl lg:text-4xl font-bold flex items-center gap-2">
                   <Zap className="w-7 h-7 text-amber-300 fill-amber-300" />
                   {accountSummary.availableCredits.toLocaleString('en-US')}
                 </div>
               </div>
               <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex flex-col items-end">
-                 <p className="text-xs text-white/70 mb-1">充值到账规则</p>
-                 <div className="text-lg font-bold">以订单确认为准</div>
+                 <p className="text-xs text-white/70 mb-1">{t("console.recharge.rechargeview.text.o1qu51", "充值到账规则")}</p>
+                 <div className="text-lg font-bold">{t("console.recharge.rechargeview.text.iozwqf", "以订单确认为准")}</div>
               </div>
             </div>
             )}
           </div>
 
           <div className="bg-white dark:bg-[#252525] rounded-2xl border border-slate-200 dark:border-white/5 p-6 shadow-sm">
-            <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-4">选择充值金额</h2>
+            <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-4">{t("console.recharge.rechargeview.text.1er6dk0", "选择充值金额")}</h2>
 
             {packagesLoading ? (
               <BusinessStatePanel
                 kind="loading"
-                title="Loading recharge packages..."
+                title={t('console.recharge.loadingPackages', '正在加载充值套餐...')}
                 className="mb-6 min-h-32 rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-[#1e1e1e]"
               />
             ) : packagesLoadError ? (
               <BusinessStatePanel
                 kind="error"
-                title="Recharge packages could not be loaded"
+                title={t('console.recharge.packagesLoadFailed', '充值套餐加载失败')}
                 description={packagesLoadError}
                 onRetry={() => { void loadRechargePackages(); }}
                 className="mb-6 min-h-32 rounded-xl border border-red-200 bg-red-50 dark:border-red-500/20 dark:bg-red-500/10"
@@ -190,8 +196,8 @@ export function RechargeView() {
             ) : packages.length === 0 ? (
               <BusinessStatePanel
                 kind="empty"
-                title="No recharge packages"
-                description="Use a custom amount to create a recharge order."
+                title={t('console.recharge.noPackages', '暂无充值套餐')}
+                description={t('console.recharge.customAmountHint', '可以使用自定义金额创建充值订单。')}
                 className="mb-6 min-h-32 rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-[#1e1e1e]"
               />
             ) : (
@@ -213,12 +219,12 @@ export function RechargeView() {
                   )}
                   {pkg.bonus > 0 && (
                     <div className="absolute -top-2.5 bg-rose-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm">
-                      赠送 {pkg.bonus}
+                      {t("console.recharge.rechargeview.text.1vjgpi2", "赠送")}{pkg.bonus}
                     </div>
                   )}
                   <span className="text-xl font-bold text-slate-800 dark:text-white">¥{pkg.rmb}</span>
                   <span className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                    得 {pkg.points.toLocaleString()} Credits
+                    {t("console.billing.billingview.text.14l2wpi", "得")}{pkg.points.toLocaleString()} Credits
                   </span>
                 </div>
               ))}
@@ -232,7 +238,7 @@ export function RechargeView() {
                   type="text"
                   value={customAmount}
                   onChange={handleCustomChange}
-                  placeholder="其他金额"
+                  placeholder={t("console.recharge.rechargeview.text.1tlbv6z", "其他金额")}
                   className={`w-full pl-8 pr-4 py-3 rounded-xl border-2 outline-none transition-all bg-transparent ${
                     customAmount && !selectedPkg
                       ? 'border-blue-500 bg-blue-50/50 dark:bg-blue-500/5 text-slate-800 dark:text-white'
@@ -240,23 +246,22 @@ export function RechargeView() {
                   }`}
                 />
               </div>
-              <span className="text-sm text-slate-500 border border-slate-200 dark:border-white/10 px-3 py-1 rounded-full whitespace-nowrap">最高 ¥10,000</span>
+              <span className="text-sm text-slate-500 border border-slate-200 dark:border-white/10 px-3 py-1 rounded-full whitespace-nowrap">{t("console.recharge.rechargeview.text.1gpnz2j", "最高 ¥10,000")}</span>
             </div>
           </div>
 
           <div className="bg-white dark:bg-[#252525] rounded-2xl border border-slate-200 dark:border-white/5 p-6 shadow-sm">
-             <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-4">支付方式</h2>
+             <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-4">{t("admin.marketing.index.text.igot2y", "支付方式")}</h2>
              <div className="space-y-3">
                 <label className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all ${
                   paymentMethod === 'alipay' ? 'border-blue-500 bg-blue-50/30 dark:bg-blue-500/10' : 'border-slate-200 dark:border-white/10 hover:border-blue-300'
                 }`}>
                   <div className="flex items-center gap-4">
                      <div className="w-10 h-10 bg-[#1677FF]/10 rounded-lg flex items-center justify-center text-[#1677FF] font-bold text-sm">
-                       支
-                     </div>
+                       {t("console.billing.checkoutview.text.btluu6", "支")}</div>
                      <div>
-                       <div className="font-semibold text-slate-800 dark:text-white">支付宝 (Alipay)</div>
-                       <div className="text-xs text-slate-500">支持大陆及部分海外地区</div>
+                       <div className="font-semibold text-slate-800 dark:text-white">{t("console.billing.checkoutview.text.1fn7bha", "支付宝 (Alipay)")}</div>
+                       <div className="text-xs text-slate-500">{t("console.recharge.rechargeview.text.15mrk9z", "支持大陆及部分海外地区")}</div>
                      </div>
                   </div>
                   <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${paymentMethod === 'alipay' ? 'border-blue-500' : 'border-slate-300'}`}>
@@ -269,11 +274,10 @@ export function RechargeView() {
                 }`}>
                   <div className="flex items-center gap-4">
                      <div className="w-10 h-10 bg-[#09B83E]/10 rounded-lg flex items-center justify-center text-[#09B83E] font-bold text-sm">
-                       微
-                     </div>
+                       {t("console.billing.checkoutview.text.1bisz1t", "微")}</div>
                      <div>
-                       <div className="font-semibold text-slate-800 dark:text-white">微信支付 (WeChat Pay)</div>
-                       <div className="text-xs text-slate-500">仅支持大陆地区微信账号</div>
+                       <div className="font-semibold text-slate-800 dark:text-white">{t("console.billing.checkoutview.text.hecndi", "微信支付 (WeChat Pay)")}</div>
+                       <div className="text-xs text-slate-500">{t("console.recharge.rechargeview.text.ri83z1", "仅支持大陆地区微信账号")}</div>
                      </div>
                   </div>
                   <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${paymentMethod === 'wechat' ? 'border-emerald-500' : 'border-slate-300'}`}>
@@ -289,8 +293,8 @@ export function RechargeView() {
                        <CreditCard className="w-5 h-5" />
                      </div>
                      <div>
-                       <div className="font-semibold text-slate-800 dark:text-white">国际信用卡 (Stripe)</div>
-                       <div className="text-xs text-slate-500">支持 Visa, Mastercard 等</div>
+                       <div className="font-semibold text-slate-800 dark:text-white">{t("console.billing.checkoutview.text.kap9ev", "国际信用卡 (Stripe)")}</div>
+                       <div className="text-xs text-slate-500">{t("console.recharge.rechargeview.text.cvie6d", "支持 Visa, Mastercard 等")}</div>
                      </div>
                   </div>
                   <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${paymentMethod === 'card' ? 'border-blue-500' : 'border-slate-300'}`}>
@@ -304,26 +308,26 @@ export function RechargeView() {
 
         <div className="col-span-1">
           <div className="bg-white dark:bg-[#252525] rounded-2xl border border-slate-200 dark:border-white/5 p-6 shadow-sm sticky top-6">
-            <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-6">充值确认</h2>
+            <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-6">{t("console.recharge.rechargeview.text.1c2cc8u", "充值确认")}</h2>
             <div className="space-y-4 text-sm mb-6">
               <div className="flex justify-between items-center text-slate-600 dark:text-slate-300">
-                <span>充值金额</span>
+                <span>{t("admin.user.index.text.1qayakm", "充值金额")}</span>
                 <span className="font-semibold text-slate-800 dark:text-white">¥{formatMoneyAmount(currentSelectionAmount)}</span>
               </div>
               <div className="flex justify-between items-center text-slate-600 dark:text-slate-300">
-                <span>到账积分</span>
+                <span>{t("admin.marketing.index.text.1upsofy", "到账积分")}</span>
                 <span className="font-mono">
-                  {creditsReceived === undefined ? '创建订单后确认' : `${creditsReceived.toLocaleString()} Credits`}
+                  {creditsReceived === undefined ? t("console.billing.billingview.text.1jktktr", "创建订单后确认") : `${creditsReceived.toLocaleString()} Credits`}
                 </span>
               </div>
               {bonus > 0 && (
                 <div className="flex justify-between items-center text-rose-500">
-                  <span>活动赠送</span>
+                  <span>{t("console.recharge.rechargeview.text.ekxp5", "活动赠送")}</span>
                   <span className="font-mono">+{bonus} Credits</span>
                 </div>
               )}
               <div className="pt-4 border-t border-slate-100 dark:border-white/5 flex justify-between items-center">
-                <span className="font-bold text-slate-800 dark:text-white">实际到账余额</span>
+                <span className="font-bold text-slate-800 dark:text-white">{t("console.recharge.rechargeview.text.tn4pvk", "实际到账余额")}</span>
                 <span className="text-xl font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1 font-mono">
                   <Zap className="w-4 h-4" />
                   {creditsReceived === undefined ? '-' : creditsReceived.toLocaleString()}
@@ -332,7 +336,7 @@ export function RechargeView() {
             </div>
             <div className="bg-slate-50 dark:bg-[#1e1e1e] rounded-xl p-4 mb-6 text-xs text-slate-500 flex gap-2">
               <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-blue-500" />
-              <p>充值后不支持退款，虚拟余额不设过期时间。发票将在消费后自动生成。</p>
+              <p>{t("console.recharge.rechargeview.text.16njpko", "充值后不支持退款，虚拟余额不设过期时间。发票将在消费后自动生成。")}</p>
             </div>
 
             {successMsg && (
@@ -359,12 +363,13 @@ export function RechargeView() {
               }`}
             >
               {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : null}
-              {isSubmitting ? '支付中...' : `立刻支付 ¥${formatMoneyAmount(currentSelectionAmount)}`}
+              {isSubmitting
+                ? t("console.recharge.rechargeview.text.xmtx0h", "支付中...")
+                : t("console.recharge.rechargeview.text.payNowAmount", "立刻支付 ¥{{amount}}", { amount: formatMoneyAmount(currentSelectionAmount) })}
               {!isSubmitting && <ChevronRight className="w-5 h-5" />}
             </button>
             <div className="mt-4 flex items-center justify-center gap-2 text-xs text-slate-400 font-medium">
-              <ShieldCheck className="w-4 h-4" /> 支付环境安全加密
-            </div>
+              <ShieldCheck className="w-4 h-4" /> {t("console.recharge.rechargeview.text.17ojsdn", "支付环境安全加密")}</div>
           </div>
         </div>
       </div>

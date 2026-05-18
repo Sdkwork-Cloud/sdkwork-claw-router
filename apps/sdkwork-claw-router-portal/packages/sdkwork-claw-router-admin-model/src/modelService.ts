@@ -93,6 +93,12 @@ export type ModelCatalogSyncReport = {
   models: Model[];
 };
 
+export type InitializedModelCatalog = {
+  initialized: boolean;
+  vendors: Vendor[];
+  models: Model[];
+};
+
 export type ModelRankingRefreshStatusView = {
   cacheMaxAgeSeconds: number;
   generatedAt: string;
@@ -187,6 +193,26 @@ export class ModelService {
       ...model,
       calls: rankingCalls.get(model.name) ?? model.calls,
     }));
+  }
+
+  static async fetchInitializedCatalog(): Promise<InitializedModelCatalog> {
+    const [vendors, models] = await Promise.all([
+      ModelService.fetchVendors(),
+      ModelService.fetchModels(),
+    ]);
+    if (vendors.length > 0 && models.length > 0) {
+      return {
+        initialized: false,
+        vendors,
+        models,
+      };
+    }
+    const synced = await ModelService.syncVendorsAndModels();
+    return {
+      initialized: true,
+      vendors: synced.vendors,
+      models: synced.models,
+    };
   }
 
   static async fetchModelRankings(): Promise<Pick<ModelRankingItem, 'name' | 'requests' | 'baseVolume'>[]> {

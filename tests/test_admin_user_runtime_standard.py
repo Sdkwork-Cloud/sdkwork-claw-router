@@ -82,17 +82,23 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn(".user.updateUser({ id, ...updates })", service)
         self.assertNotIn(".apikey.createApiKey({ userId, name })", service)
         self.assertNotIn("as unknown as Record<string, unknown>", service)
+        self.assertIn("getClawRouterBackendSdkClient().iam.users.create", service)
+        self.assertIn("getClawRouterBackendSdkClient().iam.users.update", service)
+        self.assertNotIn("getClawRouterBackendSdkClient().system.users.create", service)
+        self.assertNotIn("getClawRouterBackendSdkClient().system.users.update", service)
 
         self.assertIn(
-            "async create(body: AdminUserCreateRequest, params?: SystemUsersCreateParams): Promise<UsersCreateResult>",
-            system_api,
+            "async create(body: AdminUserCreateRequest, params?: IamUsersCreateParams): Promise<UsersCreateResult>",
+            iam_api,
         )
         self.assertIn(
-            "async update(body: AdminUserUpdateRequest, params?: SystemUsersUpdateParams): Promise<UsersUpdateResult>",
-            system_api,
+            "async update(body: AdminUserUpdateRequest, params?: IamUsersUpdateParams): Promise<UsersUpdateResult>",
+            iam_api,
         )
         self.assertNotIn("async create(body?: OperationRequest): Promise<PlusApiResult>", system_api)
         self.assertNotIn("async update(body?: OperationRequest): Promise<PlusApiResult>", system_api)
+        self.assertNotIn("async create(body?: OperationRequest): Promise<PlusApiResult>", iam_api)
+        self.assertNotIn("async update(body?: OperationRequest): Promise<PlusApiResult>", iam_api)
 
         self.assertIn(
             "async create(userId: string, body: AdminUserBalanceAdjustmentRequest, params?: BillingUsersBalanceAdjustmentsCreateParams): Promise<UsersBalanceAdjustmentsCreateResult>",
@@ -263,11 +269,19 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
             store = (ROOT / relative_path).read_text(encoding="utf-8")
             compact_store = " ".join(store.split())
             with self.subTest(store=relative_path):
-                self.assertIn("u.status AS user_status", store)
+                self.assertIn("CASE LOWER(COALESCE(u.status, ''))", store)
+                self.assertIn("WHEN 'active' THEN 1", store)
+                self.assertIn("END AS user_status", store)
                 self.assertIn("status AS status", store)
-                self.assertIn("AND u.status IN (0, 1)", store)
+                self.assertIn(
+                    "AND LOWER(COALESCE(u.status, '')) IN ('active', 'banned', 'disabled', 'inactive')",
+                    store,
+                )
+                self.assertIn(
+                    "AND LOWER(COALESCE(status, '')) IN ('active', 'banned', 'disabled', 'inactive')",
+                    store,
+                )
                 self.assertIn("AND status = 1", store)
-                self.assertIn("AND status IN (0, 1)", store)
                 self.assertIn(
                     'status: user_status_label(required_integer_cell(&row, "user_status", "user")?)?',
                     compact_store,
@@ -287,6 +301,9 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
                     "AND COALESCE(u.status, 1) IN (0, 1)",
                     "AND COALESCE(status, 1) = 1",
                     "AND COALESCE(status, 1) IN (0, 1)",
+                    "u.status AS user_status",
+                    "AND u.status IN (0, 1)",
+                    "AND status IN (0, 1)",
                     "match status.unwrap_or(i64::from(USER_STATUS_ACTIVE))",
                     "match status.unwrap_or(i64::from(API_KEY_STATUS_ACTIVE))",
                     'user_status_label(optional_integer_cell(&row, "user_status"))',

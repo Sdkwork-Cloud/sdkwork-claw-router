@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
 @dataclass
 class AppApiKeyItem:
-    """Created API key metadata with masked key material."""
+    """Updated API key metadata. Authenticated owner management responses include copyableKey for console copy actions."""
     created: str
     expires: str
     group: str
@@ -17,4 +17,5 @@ class AppApiKeyItem:
     quota: str
     status: str
     used_quota: str
+    copyable_key: Optional[str] = None
     rate: Optional[str] = None

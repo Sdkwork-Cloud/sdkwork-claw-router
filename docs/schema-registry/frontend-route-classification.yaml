@@ -31,6 +31,16 @@ routes:
       - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-announcement/src/announcementService.ts
       - docs/schema-registry/frontend-field-contracts.yaml
 
+  - route: /admin/agents
+    package: sdkwork-claw-router-admin-agents
+    owner: admin-control-plane
+    route_scope: admin
+    delivery_kind: sdk_backed_business_runtime
+    api_surface: backend
+    evidence:
+      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
+      - docs/schema-registry/frontend-field-contracts.yaml
+
   - route: /admin/channel
     package: sdkwork-claw-router-admin-channel
     owner: admin-control-plane
@@ -275,6 +285,16 @@ routes:
       - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src/accountService.ts
       - docs/schema-registry/frontend-field-contracts.yaml
 
+  - route: /console/agents
+    package: sdkwork-claw-router-console-agents
+    owner: customer-console
+    route_scope: console
+    delivery_kind: sdk_backed_business_runtime
+    api_surface: app
+    evidence:
+      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
+      - docs/schema-registry/frontend-field-contracts.yaml
+
   - route: /console/api-keys
     package: sdkwork-claw-router-console-api-keys
     owner: customer-console
@@ -325,13 +345,28 @@ routes:
       - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-gateway/src/gatewayService.ts
       - docs/schema-registry/frontend-field-contracts.yaml
 
-  - route: /console/messages
+  - route: /console/notifications
     package: sdkwork-claw-router-console-messages
     owner: customer-console
     route_scope: console
     delivery_kind: sdk_backed_business_runtime
     api_surface: app
+    operation_routes: [/console/notifications]
     evidence:
+      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
+      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-messages/src/messagesService.ts
+      - docs/schema-registry/frontend-field-contracts.yaml
+
+  - route: /console/messages
+    package: portal-root
+    owner: customer-console
+    route_scope: console
+    delivery_kind: sdk_backed_business_runtime
+    api_surface: app
+    operation_routes: [/console/notifications]
+    evidence:
+      - apps/sdkwork-claw-router-portal/src/App.tsx
+      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
       - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-messages/src/messagesService.ts
       - docs/schema-registry/frontend-field-contracts.yaml
 

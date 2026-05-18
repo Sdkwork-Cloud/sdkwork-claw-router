@@ -19,8 +19,9 @@ use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 use sdkwork_claw_product::ports::{
     ApiKeyCommandStoreFuture, ApiKeyManagementReadFuture, AppSessionEventStore,
     AppSessionEventStoreFuture, CreateGatewayApiKeyCommand, CreatedGatewayApiKey,
-    GatewayApiKeyCommandStore, GatewayApiKeyManagementReadStore, GatewayApiKeyManagementSnapshot,
-    RecordAppSessionIssuedEventCommand,
+    DeleteGatewayApiKeyCommand, EnsureDefaultApiKeyGroupCommand, GatewayApiKeyCommandStore,
+    GatewayApiKeyManagementReadStore, GatewayApiKeyManagementSnapshot, PricingCatalog,
+    RecordAppSessionIssuedEventCommand, UpdateGatewayApiKeyCommand, UpdatedGatewayApiKey,
 };
 use tower::ServiceExt;
 
@@ -38,14 +39,17 @@ fn catalog() -> InMemoryPricingCatalog {
         DecimalValue::parse("1.100000").unwrap(),
     ));
     catalog.add_api_key(
-        GatewayApiKey::new(100, 10, "sk-test", "hash:sk-live-secret").with_management_metadata(
-            "Production Key",
-            "sk-test********ABCD",
-            Some(700),
-            Some(900),
-            "2026-04-10 20:55:41",
-            Some("2027-01-01 00:00:00"),
-        ),
+        GatewayApiKey::new(100, 10, "sk-test", "hash:sk-live-secret")
+            .with_owner(10, 20, 30)
+            .with_management_metadata(
+                "Production Key",
+                "sk-test********ABCD",
+                Some(700),
+                Some(900),
+                "2026-04-10 20:55:41",
+                Some("2027-01-01 00:00:00"),
+            )
+            .with_copyable_key("sk-live-secret"),
     );
     catalog.add_access_policy(GatewayAccessPolicy::new(
         700,
@@ -244,6 +248,37 @@ impl GatewayApiKeyManagementReadStore for TestGatewayApiKeyStore {
 }
 
 impl GatewayApiKeyCommandStore for TestGatewayApiKeyStore {
+    fn ensure_default_api_key_group<'a>(
+        &'a self,
+        command: EnsureDefaultApiKeyGroupCommand,
+    ) -> ApiKeyCommandStoreFuture<'a, ApiKeyGroup> {
+        Box::pin(async move {
+            let mut catalog = self
+                .catalog
+                .lock()
+                .map_err(|_| DomainError::new("test api key catalog lock poisoned"))?;
+            if let Some(group) = catalog.list_api_key_groups().into_iter().find(|group| {
+                group.code == command.code
+                    && (group.tenant_id == 0 || group.tenant_id == command.tenant_id)
+                    && (group.organization_id == 0
+                        || group.organization_id == command.organization_id)
+            }) {
+                return Ok(group);
+            }
+            let group = ApiKeyGroup::new_scoped(
+                500,
+                command.tenant_id,
+                command.organization_id,
+                &command.code,
+                &command.pricing_plan_code,
+                command.rate_multiplier,
+                command.official_price_multiplier,
+            );
+            catalog.add_api_key_group(group.clone());
+            Ok(group)
+        })
+    }
+
     fn create_gateway_api_key<'a>(
         &'a self,
         command: CreateGatewayApiKeyCommand,
@@ -283,6 +318,7 @@ impl GatewayApiKeyCommandStore for TestGatewayApiKeyStore {
                 key_prefix: command.key_prefix,
                 key_display_masked: command.key_display_masked,
                 key_hash: command.key_hash,
+                copyable_key: Some(command.copyable_key),
                 policy_id: access_policy.as_ref().map(|policy| policy.id),
                 quota_policy_id: quota_policy.as_ref().map(|policy| policy.id),
                 created_at: command.created_at,
@@ -307,6 +343,60 @@ impl GatewayApiKeyCommandStore for TestGatewayApiKeyStore {
                 access_policy,
                 quota_policy,
             })
+        })
+    }
+
+    fn update_gateway_api_key<'a>(
+        &'a self,
+        command: UpdateGatewayApiKeyCommand,
+    ) -> ApiKeyCommandStoreFuture<'a, Option<UpdatedGatewayApiKey>> {
+        Box::pin(async move {
+            let mut catalog = self
+                .catalog
+                .lock()
+                .map_err(|_| DomainError::new("test api key catalog lock poisoned"))?;
+            let existing = catalog.list_api_keys().into_iter().find(|api_key| {
+                api_key.id == command.api_key_id
+                    && api_key.tenant_id == command.tenant_id
+                    && api_key.organization_id == command.organization_id
+                    && api_key.user_id == command.user_id
+            });
+            let Some(mut api_key) = existing else {
+                return Ok(None);
+            };
+            if let Some(name) = command.name {
+                api_key.name = name;
+            }
+            if let Some(group_id) = command.group_id {
+                api_key.group_id = group_id;
+            }
+            if let Some(expire_at) = command.expire_at {
+                api_key.expire_at = expire_at;
+            }
+            catalog.add_api_key(api_key.clone());
+            Ok(Some(UpdatedGatewayApiKey {
+                api_key,
+                access_policy: None,
+                quota_policy: None,
+            }))
+        })
+    }
+
+    fn delete_gateway_api_key<'a>(
+        &'a self,
+        command: DeleteGatewayApiKeyCommand,
+    ) -> ApiKeyCommandStoreFuture<'a, bool> {
+        Box::pin(async move {
+            let catalog = self
+                .catalog
+                .lock()
+                .map_err(|_| DomainError::new("test api key catalog lock poisoned"))?;
+            Ok(catalog.list_api_keys().into_iter().any(|api_key| {
+                api_key.id == command.api_key_id
+                    && api_key.tenant_id == command.tenant_id
+                    && api_key.organization_id == command.organization_id
+                    && api_key.user_id == command.user_id
+            }))
         })
     }
 }
@@ -337,6 +427,7 @@ async fn injected_product_catalog_serves_app_api_keys_without_secret_material() 
     assert_eq!("100", item["id"]);
     assert_eq!("Production Key", item["name"]);
     assert_eq!("sk-test********ABCD", item["maskedKey"]);
+    assert!(item.get("copyableKey").is_none());
     assert!(item.get("keyVal").is_none());
     assert!(item.get("fullKey").is_none());
     assert_eq!("standard-group", item["group"]);
@@ -437,6 +528,7 @@ async fn app_api_key_create_accepts_app_session_token_subject() {
     assert_eq!("2000", payload["code"]);
     let raw_key = payload["data"]["rawKey"].as_str().unwrap();
     assert!(raw_key.starts_with("sk-claw-"));
+    assert_eq!(raw_key, payload["data"]["item"]["copyableKey"]);
     assert_eq!("Search Service", payload["data"]["item"]["name"]);
     assert_eq!("standard-group", payload["data"]["item"]["group"]);
     assert_eq!("250.000000", payload["data"]["item"]["quota"]);
@@ -471,8 +563,13 @@ async fn app_api_key_create_accepts_app_session_token_subject() {
         .await
         .unwrap();
     let list_text = String::from_utf8(list_body.to_vec()).unwrap();
-    assert!(list_text.contains("Search Service"));
-    assert!(!list_text.contains(raw_key));
+    let list_payload: serde_json::Value = serde_json::from_str(&list_text).unwrap();
+    assert_eq!("Search Service", list_payload["data"]["items"][0]["name"]);
+    assert_eq!(raw_key, list_payload["data"]["items"][0]["copyableKey"]);
+    assert_ne!(
+        list_payload["data"]["items"][0]["maskedKey"],
+        list_payload["data"]["items"][0]["copyableKey"]
+    );
 }
 
 #[tokio::test]
@@ -520,6 +617,85 @@ async fn app_api_key_create_accepts_signed_trusted_subject_boundary() {
         .as_str()
         .unwrap()
         .starts_with("sk-claw-"));
+    assert_eq!(
+        payload["data"]["rawKey"],
+        payload["data"]["item"]["copyableKey"]
+    );
+}
+
+#[tokio::test]
+async fn app_api_key_update_rebinds_owner_key_group_through_app_router() {
+    let response = secured_router()
+        .oneshot(
+            session_authorization_header(
+                Request::builder()
+                    .method("PATCH")
+                    .uri(format!("{API_KEYS_PATH}/100"))
+                    .header("content-type", "application/json"),
+                10,
+                20,
+                30,
+            )
+            .header("X-Request-Id", "request-update-key-group-1")
+            .body(Body::from(
+                serde_json::json!({
+                    "group": "standard-group",
+                    "name": "Updated Production Key"
+                })
+                .to_string(),
+            ))
+            .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let body_text = String::from_utf8(body.to_vec()).unwrap();
+    let payload: serde_json::Value = serde_json::from_str(&body_text).unwrap();
+
+    assert_eq!("2000", payload["code"]);
+    assert_eq!("100", payload["data"]["item"]["id"]);
+    assert_eq!("Updated Production Key", payload["data"]["item"]["name"]);
+    assert_eq!("standard-group", payload["data"]["item"]["group"]);
+    assert_eq!("sk-test********ABCD", payload["data"]["item"]["maskedKey"]);
+    assert_eq!("sk-live-secret", payload["data"]["item"]["copyableKey"]);
+    assert!(!body_text.contains("hash:sk-live-secret"));
+}
+
+#[tokio::test]
+async fn app_api_key_delete_revokes_owner_key_through_app_router() {
+    let response = secured_router()
+        .oneshot(
+            session_authorization_header(
+                Request::builder()
+                    .method("DELETE")
+                    .uri(format!("{API_KEYS_PATH}/100")),
+                10,
+                20,
+                30,
+            )
+            .header("X-Request-Id", "request-delete-key-1")
+            .body(Body::empty())
+            .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let body_text = String::from_utf8(body.to_vec()).unwrap();
+    let payload: serde_json::Value = serde_json::from_str(&body_text).unwrap();
+
+    assert_eq!("2000", payload["code"]);
+    assert_eq!("100", payload["data"]["id"]);
+    assert_eq!(true, payload["data"]["deleted"]);
+    assert!(!body_text.contains("hash:sk-live-secret"));
+    assert!(!body_text.contains("sk-live-secret"));
 }
 
 #[tokio::test]

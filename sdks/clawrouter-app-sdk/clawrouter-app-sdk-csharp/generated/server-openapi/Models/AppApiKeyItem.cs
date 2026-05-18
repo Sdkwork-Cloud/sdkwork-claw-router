@@ -6,6 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class AppApiKeyItem
     {
+        public string? CopyableKey { get; set; }
         public string? Created { get; set; }
         public string? Expires { get; set; }
         public string? Group { get; set; }

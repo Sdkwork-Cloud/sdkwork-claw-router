@@ -8,6 +8,7 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public int? Bonus { get; set; }
         public string? Id { get; set; }
+        public int? Points { get; set; }
         public string? Rmb { get; set; }
     }
 }

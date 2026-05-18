@@ -1,4 +1,5 @@
 from .http_client import HttpClient, SdkConfig
+from .api.agents import AgentsApi
 from .api.ai import AiApi
 from .api.auth import AuthApi
 from .api.billing import BillingApi
@@ -14,6 +15,7 @@ class SdkworkAppClient:
 
     def __init__(self, config: SdkConfig):
         self._client = HttpClient(config)
+        self.agents: AgentsApi
         self.ai: AiApi
         self.auth: AuthApi
         self.billing: BillingApi
@@ -24,6 +26,7 @@ class SdkworkAppClient:
         self.platform: PlatformApi
 
         # Initialize API modules
+        self.agents = AgentsApi(self._client)
         self.ai = AiApi(self._client)
         self.auth = AuthApi(self._client)
         self.billing = BillingApi(self._client)

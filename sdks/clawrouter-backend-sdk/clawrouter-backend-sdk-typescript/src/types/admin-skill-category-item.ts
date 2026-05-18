@@ -1,4 +1,4 @@
-/** Persisted skill category snapshot returned by the backend. */
+/** Updated skill category snapshot returned by the backend. */
 export interface AdminSkillCategoryItem {
   /** Code field on admin skill category item. */
   code?: string;

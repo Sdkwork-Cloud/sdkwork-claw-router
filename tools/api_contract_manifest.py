@@ -94,6 +94,7 @@ class ApiContractManifestGenerator:
         "content": "content",
         "communication": "communication",
         "ai": "intelligence",
+        "agents": "agents",
         "system": "system",
         "platform": "platform",
         "integration": "integration",
@@ -118,6 +119,8 @@ class ApiContractManifestGenerator:
         "models": "intelligence",
         "router": "intelligence",
         "ai": "intelligence",
+        "agent": "agents",
+        "agents": "agents",
         "intelligence": "intelligence",
         "provider": "integration",
         "providers": "integration",
@@ -184,6 +187,7 @@ class ApiContractManifestGenerator:
         "access-groups": "access_groups",
         "announcement": "announcements",
         "app": "apps",
+        "agent": "agents",
         "channel": "channels",
         "comment": "comments",
         "coupon": "coupons",
@@ -602,7 +606,7 @@ class ApiContractManifestGenerator:
         segments = self._relative_path_segments(api_surface, api_path)
         if not segments:
             return api_path
-        if api_surface == "app" and self._is_course_path(segments):
+        if api_surface == "app" and self._is_standard_appbase_resource_path(segments):
             return api_path
         tag = self._tag_from_segments(segments, read_sources, write_tables)
         canonical_segments = self._canonical_resource_segments(
@@ -618,8 +622,8 @@ class ApiContractManifestGenerator:
             relative_segments = [self._path_segment_from_tag(tag), *canonical_segments]
         return prefix + "/" + "/".join(relative_segments)
 
-    def _is_course_path(self, segments: list[str]) -> bool:
-        return bool(segments) and self._normalize_static_segment(segments[0]) in {"course", "courses"}
+    def _is_standard_appbase_resource_path(self, segments: list[str]) -> bool:
+        return bool(segments) and self._normalize_static_segment(segments[0]) in {"agent", "agents", "course", "courses"}
 
     def _standard_tag(
         self,
@@ -724,6 +728,8 @@ class ApiContractManifestGenerator:
             return "communication"
         if first in {"channel", "channels", "provider", "providers", "provider_secrets", "integration"}:
             return "integration"
+        if first in {"agent", "agents"}:
+            return "agents"
         if first in {"ai", "model", "models", "model_vendors", "model_rankings", "routing", "playground"}:
             return "ai"
         if first in {"dashboard", "monitor", "firewall", "rate_limits", "record", "records"}:

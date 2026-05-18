@@ -46,13 +46,14 @@ const UsageView = lazyRoute(() => import('sdkwork-claw-router-console-usage'), '
 const GatewayView = lazyRoute(() => import('sdkwork-claw-router-console-gateway'), 'GatewayView');
 const RoutingView = lazyRoute(() => import('sdkwork-claw-router-console-routing'), 'RoutingView');
 const ApiKeysView = lazyRoute(() => import('sdkwork-claw-router-console-api-keys'), 'ApiKeysView');
+const AgentsView = lazyRoute(() => import('sdkwork-claw-router-console-agents'), 'AgentsView');
 const UserView = lazyRoute(() => import('sdkwork-claw-router-console-user'), 'UserView');
 const BillingView = lazyRoute(() => import('sdkwork-claw-router-console-billing'), 'BillingView');
 const CheckoutView = lazyRoute(() => import('sdkwork-claw-router-console-billing'), 'CheckoutView');
 const SettlementsView = lazyRoute(() => import('sdkwork-claw-router-console-settlements'), 'SettlementsView');
 const AccountView = lazyRoute(() => import('sdkwork-claw-router-console-account'), 'AccountView');
 const SettingsView = lazyRoute(() => import('sdkwork-claw-router-console-settings'), 'SettingsView');
-const MessagesView = lazyRoute(() => import('sdkwork-claw-router-console-messages'), 'MessagesView');
+const NotificationsView = lazyRoute(() => import('sdkwork-claw-router-console-messages'), 'NotificationsView');
 const ProvidersView = lazyRoute(() => import('sdkwork-claw-router-console-providers'), 'ProvidersView');
 const RechargeView = lazyRoute(() => import('sdkwork-claw-router-console-recharge'), 'RechargeView');
 
@@ -61,6 +62,7 @@ const DashboardAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-dashboa
 const UserAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-user'), 'UserAdmin');
 const GroupAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-group'), 'GroupAdmin');
 const ModelAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-model'), 'ModelAdmin');
+const AgentsAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-agents'), 'AdminAgentsView');
 const SkillAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-skill'), 'SkillAdmin');
 const ChannelAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-channel'), 'ChannelAdmin');
 const AnnouncementAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-announcement'), 'AnnouncementAdmin');
@@ -172,6 +174,7 @@ export default function App() {
               <Route path="gateway" element={<GatewayView />} />
               <Route path="routing" element={<RoutingView />} />
               <Route path="api-keys" element={<ApiKeysView />} />
+              <Route path="agents" element={<AgentsView />} />
               <Route path="user" element={<UserView />} />
               <Route path="billing" element={<BillingView />} />
               <Route path="checkout" element={<CheckoutView />} />
@@ -179,7 +182,8 @@ export default function App() {
               <Route path="account" element={<AccountView />} />
               <Route path="recharge" element={<RechargeView />} />
               <Route path="settings" element={<SettingsView />} />
-              <Route path="messages" element={<MessagesView />} />
+              <Route path="notifications" element={<NotificationsView />} />
+              <Route path="messages" element={<Navigate to="/console/notifications" replace />} />
               <Route path="providers" element={<ProvidersView />} />
               <Route path="*" element={<Navigate to="/console/dashboard" replace />} />
             </Route>
@@ -191,6 +195,7 @@ export default function App() {
               <Route path="user" element={<UserAdmin />} />
               <Route path="group" element={<GroupAdmin />} />
               <Route path="model" element={<ModelAdmin />} />
+              <Route path="agents" element={<AgentsAdmin />} />
               <Route path="app" element={<AppAdmin />} />
               <Route path="skill" element={<SkillAdmin />} />
               <Route path="channel" element={<ChannelAdmin />} />

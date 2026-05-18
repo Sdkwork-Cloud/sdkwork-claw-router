@@ -13,6 +13,7 @@ import {
   buildPortalAuthLoginRedirect,
   hasStoredPortalSession,
 } from 'sdkwork-claw-router-commons/runtime';
+import { useTranslation } from 'react-i18next';
 
 import {
   deriveForumPostDetailView,
@@ -35,6 +36,7 @@ function CommentThread({
   onStartReply: () => boolean;
   onLike: (commentId: string) => Promise<void>;
 }) {
+  const { t } = useTranslation();
   const [isReplying, setIsReplying] = useState(false);
   const [replyText, setReplyText] = useState('');
   const [isSubmittingReply, setIsSubmittingReply] = useState(false);
@@ -119,7 +121,7 @@ function CommentThread({
             }}
             className="flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
           >
-            Reply
+            {t('common.actions.reply')}
           </button>
         </div>
         {actionError && (
@@ -144,7 +146,7 @@ function CommentThread({
                   onClick={() => setIsReplying(false)}
                   className="px-3 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 rounded-lg transition-colors"
                 >
-                  Cancel
+                  {t('common.actions.cancel')}
                 </button>
                 <button
                   type="button"
@@ -152,7 +154,7 @@ function CommentThread({
                   disabled={isSubmittingReply}
                   className="px-3 py-1.5 text-xs font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {isSubmittingReply ? 'Posting...' : 'Post Reply'}
+                  {isSubmittingReply ? t('common.actions.posting') : t('common.actions.postReply')}
                 </button>
               </div>
             </div>
@@ -179,6 +181,7 @@ function CommentThread({
 }
 
 export function ForumPostView() {
+  const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const location = useLocation();
   const navigate = useNavigate();
@@ -436,7 +439,7 @@ export function ForumPostView() {
                 }`}
               >
                 <Bookmark className="w-4 h-4" />
-                {detail.isCollected ? 'Saved' : 'Save'}
+                {detail.isCollected ? t('common.actions.saved') : t('common.actions.save')}
               </button>
               <button
                 type="button"
@@ -481,7 +484,7 @@ export function ForumPostView() {
                   disabled={isSubmittingComment}
                   className="px-6 py-2.5 font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-colors shadow-sm shadow-blue-500/20 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {isSubmittingComment ? 'Posting...' : 'Post Comment'}
+                  {isSubmittingComment ? t('common.actions.posting') : t('common.actions.postComment')}
                 </button>
               </div>
             </div>

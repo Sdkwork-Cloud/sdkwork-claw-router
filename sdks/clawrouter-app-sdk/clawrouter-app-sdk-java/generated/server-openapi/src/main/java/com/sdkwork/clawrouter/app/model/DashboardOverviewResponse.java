@@ -5,6 +5,7 @@ import java.util.List;
 public class DashboardOverviewResponse {
     private List<DashboardAnnouncement> announcements;
     private List<DashboardChartPoint> chartData;
+    private List<DashboardConfigurationDomain> configurationDomains;
     private List<DashboardSparklinePoint> multimodalSparkline;
     private List<DashboardSparklinePoint> performanceSparkline;
     private List<DashboardSparklinePoint> requestSparkline;
@@ -26,6 +27,14 @@ public class DashboardOverviewResponse {
     
     public void setChartData(List<DashboardChartPoint> chartData) {
         this.chartData = chartData;
+    }
+
+    public List<DashboardConfigurationDomain> getConfigurationDomains() {
+        return this.configurationDomains;
+    }
+    
+    public void setConfigurationDomains(List<DashboardConfigurationDomain> configurationDomains) {
+        this.configurationDomains = configurationDomains;
     }
 
     public List<DashboardSparklinePoint> getMultimodalSparkline() {

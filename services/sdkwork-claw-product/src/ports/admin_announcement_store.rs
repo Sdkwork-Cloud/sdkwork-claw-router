@@ -24,6 +24,7 @@ pub struct AdminAnnouncementItem {
     pub content: String,
     pub target: String,
     pub status: String,
+    pub show_as_popup: bool,
     pub date: String,
     pub deleted_at: Option<String>,
 }
@@ -42,6 +43,7 @@ pub struct CreateAdminAnnouncementCommand {
     pub content: String,
     pub target: String,
     pub status: String,
+    pub show_as_popup: bool,
     pub request_id: String,
     pub requested_at: String,
 }
@@ -55,6 +57,7 @@ pub struct UpdateAdminAnnouncementCommand {
     pub content: Option<String>,
     pub target: Option<String>,
     pub status: Option<String>,
+    pub show_as_popup: Option<bool>,
     pub request_id: String,
     pub requested_at: String,
 }

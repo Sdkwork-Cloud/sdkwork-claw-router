@@ -123,15 +123,11 @@ namespace Sdkwork.ClawRouter.App.Api
         }
 
         /// <summary>
-        /// List account points recharge packages
+        /// List packages
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AccountPointsRechargesPackagesListResult?> AccountPointsRechargesPackagesListAsync(string? status = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AccountPointsRechargesPackagesListResult?> AccountPointsRechargesPackagesListAsync()
         {
-            var queryString = BuildQueryString(new[]
-            {
-                new QueryParameterSpec("status", status, "form", true, false, null),
-            });
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.AccountPointsRechargesPackagesListResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath("/billing/account/points/recharges/packages"), queryString));
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.AccountPointsRechargesPackagesListResult>(ApiPaths.AppPath("/billing/account/points/recharges/packages"));
         }
 
         /// <summary>
@@ -448,7 +444,7 @@ namespace Sdkwork.ClawRouter.App.Api
         }
 
         /// <summary>
-        /// List packages
+        /// List VIP packs
         /// </summary>
         public async Task<Sdkwork.ClawRouter.App.Models.VipPacksListResult?> VipPacksListAsync()
         {

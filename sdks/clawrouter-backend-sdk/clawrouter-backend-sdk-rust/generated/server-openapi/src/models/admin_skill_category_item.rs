@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-/// Persisted skill category snapshot returned by the backend.
+/// Updated skill category snapshot returned by the backend.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminSkillCategoryItem {
     /// Code field on admin skill category item.

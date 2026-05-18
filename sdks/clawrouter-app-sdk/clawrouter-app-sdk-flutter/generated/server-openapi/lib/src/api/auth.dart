@@ -65,6 +65,16 @@ class AuthApi {
     })();
   }
 
+  /// Confirm QR login code
+  Future<LoginQrCodesConfirmResult?> loginQrCodesConfirm(IamLoginQrCodeConfirmRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.appPath('/auth/qr_login_codes/confirm'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : LoginQrCodesConfirmResult.fromJson(map);
+    })();
+  }
+
   /// Retrieve QR login status
   Future<LoginQrCodesRetrieveResult?> loginQrCodesRetrieve(String qrKey) async {
     final response = await _client.get(ApiPaths.appPath('/auth/qr_login_codes/${serializePathParameter(qrKey, const PathParameterSpec('qrKey', 'simple', false))}'));
@@ -87,6 +97,19 @@ class AuthApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : RegistrationsCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Retrieve public IAM auth runtime settings
+  Future<RuntimeSettingsRetrieveResult?> runtimeSettingsRetrieve([String? tenantCode, String? organizationCode]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('tenant_code', tenantCode, 'form', true, false, null),
+      QueryParameterSpec('organization_code', organizationCode, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.appPath('/auth/runtime_settings'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : RuntimeSettingsRetrieveResult.fromJson(map);
     })();
   }
 
@@ -161,6 +184,15 @@ class AuthApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : VerificationCodesVerifyResult.fromJson(map);
+    })();
+  }
+
+  /// Retrieve public IAM verification policy
+  Future<VerificationPolicyRetrieveResult?> verificationPolicyRetrieve() async {
+    final response = await _client.get(ApiPaths.appPath('/auth/verification_policy'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : VerificationPolicyRetrieveResult.fromJson(map);
     })();
   }
 }

@@ -11,9 +11,12 @@ export type ChannelFormValues = {
   protocol: string;
   accessType: string;
   baseUrl: string;
-  secretRef: string;
+  apiKey?: string;
+  secretRef?: string;
   capabilities: string[];
   models: string[];
+  circuitBreakerEnabled?: boolean;
+  circuitBreakerFailureThreshold?: number | string | null;
   weight: number;
   status: string;
 };
@@ -39,6 +42,8 @@ type SelectOption = {
 type AuthTypeOption = {
   id: string;
   title: string;
+  wireValue?: string;
+  aliases?: readonly string[];
 };
 
 export function resolveChannelSelectFormValue(
@@ -68,40 +73,55 @@ export function resolveAuthTypeFormValue(value: string | undefined, authTypes: r
     return 'api-key';
   }
   const lowerValue = normalized.toLowerCase();
-  return authTypes.find((type) => type.id === lowerValue || type.title.toLowerCase() === lowerValue)?.id ?? normalized;
+  return authTypes.find((type) => {
+    const aliases = type.aliases ?? [];
+    return type.id === lowerValue
+      || type.title.toLowerCase() === lowerValue
+      || type.wireValue?.toLowerCase() === lowerValue
+      || aliases.some((alias) => alias.toLowerCase() === lowerValue);
+  })?.id ?? normalized;
 }
 
 export function resolveAuthTypeSubmitValue(value: string, authTypes: readonly AuthTypeOption[]): string {
   const normalized = requiredText(value, 'authType');
-  return authTypes.find((type) => type.id === normalized)?.title ?? normalized;
+  const option = authTypes.find((type) => type.id === normalized);
+  return option?.wireValue ?? option?.title ?? normalized;
 }
 
 export function createChannelInputFromForm(values: ChannelFormValues): ChannelCreateInput {
+  const weight = positiveInteger(values.weight, 'weight');
   return omitUndefined({
     name: values.name.trim(),
     vendor: values.vendor.trim(),
     protocol: optionalText(values.protocol),
     accessType: optionalText(values.accessType),
     baseUrl: optionalText(values.baseUrl),
-    secretRef: values.secretRef.trim(),
+    apiKey: optionalText(values.apiKey),
+    secretRef: optionalText(values.secretRef),
     capabilities: normalizedCapabilities(values.capabilities),
     models: normalizedTextArray(values.models),
-    weight: positiveInteger(values.weight, 'weight'),
+    circuitBreakerPolicy: normalizeCircuitBreakerPolicy(values, false),
+    weight,
     status: channelStatus(values.status),
   });
 }
 
 export function createChannelUpdateInputFromForm(values: ChannelFormValues): ChannelUpdateInput {
+  const weight = positiveInteger(values.weight, 'weight');
   return omitUndefined({
     name: optionalText(values.name),
     vendor: optionalText(values.vendor),
     protocol: optionalText(values.protocol),
     accessType: optionalText(values.accessType),
     baseUrl: optionalText(values.baseUrl),
+    apiKey: optionalText(values.apiKey),
     secretRef: optionalText(values.secretRef),
     capabilities: normalizedCapabilities(values.capabilities),
     models: normalizedTextArray(values.models),
-    weight: positiveInteger(values.weight, 'weight'),
+    circuitBreakerPolicy: 'circuitBreakerEnabled' in values
+      ? normalizeCircuitBreakerPolicy(values, true)
+      : undefined,
+    weight,
     status: channelStatus(values.status),
   });
 }
@@ -163,8 +183,8 @@ function normalizedCapabilities(values: string[]): ChannelCapability[] | undefin
   return normalized.length > 0 ? normalized : undefined;
 }
 
-function optionalText(value: string): string | undefined {
-  const normalized = value.trim();
+function optionalText(value: string | undefined): string | undefined {
+  const normalized = value?.trim();
   return normalized ? normalized : undefined;
 }
 
@@ -181,6 +201,45 @@ function positiveInteger(value: number, fieldName: string): number {
     throw new Error(`${fieldName} must be a positive integer`);
   }
   return value;
+}
+
+function optionalBoundedInteger(
+  value: number | string | null | undefined,
+  fieldName: string,
+  min: number,
+  max: number,
+): number | undefined {
+  if (value === null || value === undefined || value === '') {
+    return undefined;
+  }
+  const parsed = typeof value === 'number'
+    ? value
+    : typeof value === 'string' && value.trim()
+      ? Number(value.trim())
+      : Number.NaN;
+  if (!Number.isSafeInteger(parsed) || parsed < min || parsed > max) {
+    throw new Error(`${fieldName} must be between ${min} and ${max}`);
+  }
+  return parsed;
+}
+
+function normalizeCircuitBreakerPolicy(
+  values: ChannelFormValues,
+  allowClear: boolean,
+): ChannelCreateInput['circuitBreakerPolicy'] | ChannelUpdateInput['circuitBreakerPolicy'] {
+  if (!values.circuitBreakerEnabled) {
+    return allowClear ? null : undefined;
+  }
+  const failureThreshold = optionalBoundedInteger(
+    values.circuitBreakerFailureThreshold ?? 3,
+    'circuitBreakerPolicy.failureThreshold',
+    1,
+    100,
+  );
+  if (failureThreshold === undefined) {
+    throw new Error('circuitBreakerPolicy.failureThreshold must be between 1 and 100');
+  }
+  return { failureThreshold };
 }
 
 function channelStatus(value: string): NonNullable<ChannelCreateInput['status']> {

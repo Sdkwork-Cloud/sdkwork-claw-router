@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminTokenLimitCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, UsersCreateResult, UsersUpdateResult
+from ..models import AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminTokenLimitCreateRequest, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -238,20 +238,95 @@ def serialize_header_primitive(value: Any) -> str:
 
 
 class SystemApi:
-    """system API client."""
-    
+    """system system API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.auth = SystemAuthApi(client)
+        self.dashboard = SystemDashboardApi(client)
+        self.firewalls = SystemFirewallsApi(client)
+        self.installation = SystemInstallationApi(client)
+        self.monitor = SystemMonitorApi(client)
+        self.rate_limits = SystemRateLimitsApi(client)
+        self.records = SystemRecordsApi(client)
+
+
+class SystemAuthApi:
+    """system system.auth API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.settings = SystemAuthSettingsApi(client)
+
+
+class SystemAuthSettingsApi:
+    """system system.auth.settings API client."""
+
     def __init__(self, client: HttpClient):
         self._client = client
 
-    def dashboard_admin_overview_retrieve(self) -> DashboardAdminOverviewRetrieveResult:
+
+    def retrieve(self) -> AuthSettingsRetrieveResult:
+        """Retrieve IAM auth runtime settings"""
+        return self._client.get(f"/backend/v3/api/system/auth/settings")
+
+    def update(self, body: AdminAuthSettingsUpdateRequest, x_request_id: Optional[str] = None) -> AuthSettingsUpdateResult:
+        """Update IAM auth runtime settings"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.patch(f"/backend/v3/api/system/auth/settings", json=body, headers=request_headers)
+
+class SystemDashboardApi:
+    """system system.dashboard API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.admin = SystemDashboardAdminApi(client)
+
+
+class SystemDashboardAdminApi:
+    """system system.dashboard.admin API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.overview = SystemDashboardAdminOverviewApi(client)
+
+
+class SystemDashboardAdminOverviewApi:
+    """system system.dashboard.admin.overview API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self) -> DashboardAdminOverviewRetrieveResult:
         """List dashboard data"""
         return self._client.get(f"/backend/v3/api/system/dashboard/admin/overview")
 
-    def firewalls_rules_list(self) -> FirewallsRulesListResult:
+class SystemFirewallsApi:
+    """system system.firewalls API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.rules = SystemFirewallsRulesApi(client)
+
+
+class SystemFirewallsRulesApi:
+    """system system.firewalls.rules API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> FirewallsRulesListResult:
         """List firewalls"""
         return self._client.get(f"/backend/v3/api/system/firewalls/rules")
 
-    def firewalls_rules_create(self, body: AdminFirewallRuleCreateRequest, x_request_id: Optional[str] = None) -> FirewallsRulesCreateResult:
+    def create(self, body: AdminFirewallRuleCreateRequest, x_request_id: Optional[str] = None) -> FirewallsRulesCreateResult:
         """Create firewall"""
         request_headers = build_request_headers(
             {
@@ -261,31 +336,94 @@ class SystemApi:
         )
         return self._client.post(f"/backend/v3/api/system/firewalls/rules", json=body, headers=request_headers)
 
-    def firewalls_rules_delete(self, rule_id: str) -> FirewallsRulesDeleteResult:
+    def delete(self, rule_id: str) -> FirewallsRulesDeleteResult:
         """Delete firewall"""
         return self._client.delete(f"/backend/v3/api/system/firewalls/rules/{serialize_path_parameter(rule_id, {'name': 'ruleId', 'style': 'simple', 'explode': False})}")
 
-    def installation_status_retrieve(self) -> InstallationStatusRetrieveResult:
+class SystemInstallationApi:
+    """system system.installation API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.status = SystemInstallationStatusApi(client)
+
+
+class SystemInstallationStatusApi:
+    """system system.installation.status API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self) -> InstallationStatusRetrieveResult:
         """List installation status"""
         return self._client.get(f"/backend/v3/api/system/installation/status")
 
-    def monitor_alerts_list(self) -> MonitorAlertsListResult:
+class SystemMonitorApi:
+    """system system.monitor API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.alerts = SystemMonitorAlertsApi(client)
+        self.nodes = SystemMonitorNodesApi(client)
+        self.performance = SystemMonitorPerformanceApi(client)
+
+
+class SystemMonitorAlertsApi:
+    """system system.monitor.alerts API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> MonitorAlertsListResult:
         """List alerts"""
         return self._client.get(f"/backend/v3/api/system/monitor/alerts")
 
-    def monitor_nodes_list(self) -> MonitorNodesListResult:
+class SystemMonitorNodesApi:
+    """system system.monitor.nodes API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> MonitorNodesListResult:
         """List nodes"""
         return self._client.get(f"/backend/v3/api/system/monitor/nodes")
 
-    def monitor_performance_list(self) -> MonitorPerformanceListResult:
+class SystemMonitorPerformanceApi:
+    """system system.monitor.performance API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> MonitorPerformanceListResult:
         """List performance data"""
         return self._client.get(f"/backend/v3/api/system/monitor/performance")
 
-    def rate_limits_api_keys_list(self) -> RateLimitsApiKeysListResult:
+class SystemRateLimitsApi:
+    """system system.rate_limits API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.api_keys = SystemRateLimitsApiKeysApi(client)
+        self.ip = SystemRateLimitsIpApi(client)
+        self.models = SystemRateLimitsModelsApi(client)
+
+
+class SystemRateLimitsApiKeysApi:
+    """system system.rate_limits.api_keys API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> RateLimitsApiKeysListResult:
         """List token limits"""
         return self._client.get(f"/backend/v3/api/system/rate_limits/api_keys")
 
-    def rate_limits_api_keys_create(self, body: AdminTokenLimitCreateRequest, x_request_id: Optional[str] = None) -> RateLimitsApiKeysCreateResult:
+    def create(self, body: AdminTokenLimitCreateRequest, x_request_id: Optional[str] = None) -> RateLimitsApiKeysCreateResult:
         """Create token limit"""
         request_headers = build_request_headers(
             {
@@ -295,11 +433,18 @@ class SystemApi:
         )
         return self._client.post(f"/backend/v3/api/system/rate_limits/api_keys", json=body, headers=request_headers)
 
-    def rate_limits_ip_list(self) -> RateLimitsIpListResult:
+class SystemRateLimitsIpApi:
+    """system system.rate_limits.ip API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> RateLimitsIpListResult:
         """List IP limits"""
         return self._client.get(f"/backend/v3/api/system/rate_limits/ip")
 
-    def rate_limits_ip_create(self, body: AdminIpLimitCreateRequest, x_request_id: Optional[str] = None) -> RateLimitsIpCreateResult:
+    def create(self, body: AdminIpLimitCreateRequest, x_request_id: Optional[str] = None) -> RateLimitsIpCreateResult:
         """Create IP limit"""
         request_headers = build_request_headers(
             {
@@ -309,11 +454,18 @@ class SystemApi:
         )
         return self._client.post(f"/backend/v3/api/system/rate_limits/ip", json=body, headers=request_headers)
 
-    def rate_limits_models_list(self) -> RateLimitsModelsListResult:
+class SystemRateLimitsModelsApi:
+    """system system.rate_limits.models API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> RateLimitsModelsListResult:
         """List model limits"""
         return self._client.get(f"/backend/v3/api/system/rate_limits/models")
 
-    def rate_limits_models_create(self, body: AdminModelLimitCreateRequest, x_request_id: Optional[str] = None) -> RateLimitsModelsCreateResult:
+    def create(self, body: AdminModelLimitCreateRequest, x_request_id: Optional[str] = None) -> RateLimitsModelsCreateResult:
         """Create model limit"""
         request_headers = build_request_headers(
             {
@@ -323,7 +475,14 @@ class SystemApi:
         )
         return self._client.post(f"/backend/v3/api/system/rate_limits/models", json=body, headers=request_headers)
 
-    def records_list(self, page: Optional[int] = None, page_size: Optional[int] = None, user: Optional[str] = None, token: Optional[str] = None, model: Optional[str] = None) -> RecordsListResult:
+class SystemRecordsApi:
+    """system system.records API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, user: Optional[str] = None, token: Optional[str] = None, model: Optional[str] = None) -> RecordsListResult:
         """List logs"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -333,23 +492,3 @@ class SystemApi:
             {'name': 'model', 'value': model, 'style': 'form', 'explode': True, 'allow_reserved': False},
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/system/records", query))
-
-    def users_create(self, body: AdminUserCreateRequest, x_request_id: Optional[str] = None) -> UsersCreateResult:
-        """Create user"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/system/users", json=body, headers=request_headers)
-
-    def users_update(self, body: AdminUserUpdateRequest, x_request_id: Optional[str] = None) -> UsersUpdateResult:
-        """Update user"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/system/users", json=body, headers=request_headers)

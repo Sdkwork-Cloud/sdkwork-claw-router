@@ -20,8 +20,10 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? Protocol { get; set; }
         public string? Provider { get; set; }
         public string? ProviderCode { get; set; }
+        public ProviderRetryPolicy? RetryPolicy { get; set; }
         public int? Rpm { get; set; }
         public string? Status { get; set; }
+        public int? TimeoutMs { get; set; }
         public string? Vendor { get; set; }
         public int? Weight { get; set; }
     }

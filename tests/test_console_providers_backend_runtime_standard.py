@@ -339,8 +339,10 @@ class ConsoleProvidersBackendRuntimeStandardTest(unittest.TestCase):
         provider_operation_contract = contract[provider_operation_start:next_operation_start]
 
         self.assertIn("ProviderService.fetchProviders()", providers_view)
-        self.assertIn("readOnlyProviderActions", providers_view)
-        self.assertIn("Read-only", providers_view)
+        self.assertNotIn("readOnlyProviderActions", providers_view)
+        self.assertNotIn("Read-only", providers_view)
+        self.assertNotIn("read-only", providers_view)
+        self.assertNotIn("command contract", providers_view)
         self.assertIn("BusinessStatePanel", providers_view)
         self.assertNotIn("ProviderDrawer", providers_view)
         self.assertNotIn("handleOpenAdd", providers_view)
@@ -364,6 +366,67 @@ class ConsoleProvidersBackendRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("operation: updateProvider", provider_operation_contract)
         self.assertNotIn("operation: deleteProvider", provider_operation_contract)
         self.assertNotIn("operation: setProviderStatus", provider_operation_contract)
+
+    def test_console_providers_product_states_are_localized(self) -> None:
+        providers_view = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-providers"
+            / "src"
+            / "ProvidersView.tsx"
+        ).read_text(encoding="utf-8")
+        provider_service = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-providers"
+            / "src"
+            / "providerService.ts"
+        ).read_text(encoding="utf-8")
+        i18n = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-i18n"
+            / "src"
+            / "index.ts"
+        ).read_text(encoding="utf-8")
+
+        for marker in [
+            "console.providers.summaryCount",
+            "console.providers.summaryDescription",
+            "console.providers.searchPlaceholder",
+            "console.providers.states.loading",
+            "console.providers.states.loadErrorTitle",
+            "console.providers.states.loadErrorFallback",
+            "console.providers.states.emptyTitle",
+            "console.providers.states.emptyNoDataDescription",
+            "console.providers.states.emptySearchDescription",
+            "console.providers.status.active",
+            "console.providers.status.inactive",
+            "console.providers.status.inUse",
+        ]:
+            self.assertIn(marker, providers_view + provider_service + i18n)
+            self.assertGreaterEqual(i18n.count(f'"{marker}"'), 2)
+
+        for hardcoded_copy in [
+            "Search and inspect live provider routing inventory.",
+            "Search providers",
+            "Loading providers...",
+            "Provider configurations could not be loaded",
+            "Provider configurations will appear here when they are available.",
+            "Adjust the search query or provider category to find matching configurations.",
+            "Failed to load provider configurations.",
+            "Failed to fetch providers",
+            "In use",
+            "Inactive",
+        ]:
+            self.assertNotIn(hardcoded_copy, providers_view)
+            self.assertNotIn(hardcoded_copy, provider_service)
 
 
 if __name__ == "__main__":

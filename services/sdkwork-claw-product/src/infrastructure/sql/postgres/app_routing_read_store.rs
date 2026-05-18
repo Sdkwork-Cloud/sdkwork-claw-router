@@ -1,7 +1,9 @@
 use std::collections::HashMap;
+use std::sync::Arc;
 
 use sqlx::{PgPool, Row};
 
+use crate::application::ApiKeySecretCodec;
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::{
     AppRoutingApiKeyItem, AppRoutingChannelItem, AppRoutingModelStats, AppRoutingReadFuture,
@@ -23,6 +25,7 @@ SELECT
     CAST(COALESCE(c.capabilities, '["llm"]'::jsonb) AS TEXT) AS capabilities_json,
     c.timeout_ms,
     c.retry_policy::text AS retry_policy_json,
+    c.circuit_breaker_policy::text AS circuit_breaker_policy_json,
     COALESCE(c.weight, 0) AS weight,
     c.status AS status,
     c.health_status AS health_status,
@@ -61,8 +64,9 @@ ORDER BY id ASC
 const LOAD_ROUTING_API_KEYS: &str = r#"
 SELECT
     CAST(k.id AS TEXT) AS id,
-    COALESCE(NULLIF(k.name, ''), NULLIF(k.key_prefix, ''), 'API Key') AS name,
+    COALESCE(NULLIF(k.name, ''), 'API Key #' || CAST(k.id AS TEXT)) AS name,
     COALESCE(NULLIF(k.key_display_masked, ''), NULLIF(k.key_prefix, ''), '') AS key_display_masked,
+    k.metadata ->> 'copyableKeyCiphertext' AS copyable_key_ciphertext,
     k.status AS api_key_status,
     CAST(k.created_at AS TEXT) AS created_at,
     CAST(COALESCE(SUM(COALESCE(u.request_count, 0)), 0) AS TEXT) AS total_usage
@@ -77,7 +81,7 @@ WHERE k.tenant_id = $1
   AND k.organization_id = $2
   AND k.user_id = $3
   AND k.deleted_at IS NULL
-GROUP BY k.id, k.name, k.key_prefix, k.key_display_masked, k.status, k.created_at
+GROUP BY k.id, k.name, k.key_prefix, k.key_display_masked, k.metadata, k.status, k.created_at
 ORDER BY k.updated_at DESC NULLS LAST, k.id DESC
 LIMIT 500
 "#;
@@ -289,14 +293,28 @@ ORDER BY t.request_count DESC, t.model ASC
 LIMIT 10
 "#;
 
-#[derive(Debug, Clone)]
+#[derive(Clone)]
 pub struct PostgresAppRoutingReadStore {
     pool: PgPool,
+    api_key_secret_codec: Option<Arc<dyn ApiKeySecretCodec + Send + Sync>>,
 }
 
 impl PostgresAppRoutingReadStore {
     pub fn new(pool: PgPool) -> Self {
-        Self { pool }
+        Self {
+            pool,
+            api_key_secret_codec: None,
+        }
+    }
+
+    pub fn with_api_key_secret_codec(
+        pool: PgPool,
+        api_key_secret_codec: Arc<dyn ApiKeySecretCodec + Send + Sync>,
+    ) -> Self {
+        Self {
+            pool,
+            api_key_secret_codec: Some(api_key_secret_codec),
+        }
     }
 }
 
@@ -333,6 +351,7 @@ impl AppRoutingReadStore for PostgresAppRoutingReadStore {
                 .fetch_all(&self.pool)
                 .await
                 .map_err(sql_error)?;
+            let row_to_api_key = |row| row_to_api_key(row, self.api_key_secret_codec.as_deref());
             rows.into_iter().map(row_to_api_key).collect()
         })
     }
@@ -413,6 +432,7 @@ fn row_to_channel(
     let status = required_integer_cell(&row, "status")?;
     let health_status = required_integer_cell(&row, "health_status")?;
     let retry_policy_json = string_cell(&row, "retry_policy_json");
+    let circuit_breaker_policy_json = string_cell(&row, "circuit_breaker_policy_json");
     Ok(AppRoutingChannelItem {
         id: id.clone(),
         name: string_cell(&row, "name"),
@@ -432,6 +452,15 @@ fn row_to_channel(
             .is_empty()
             .then_some(None)
             .unwrap_or_else(|| AppRoutingRetryPolicyItem::from_json(&retry_policy_json)),
+        circuit_breaker_policy: circuit_breaker_policy_json
+            .trim()
+            .is_empty()
+            .then_some(None)
+            .unwrap_or_else(|| {
+                crate::ports::AppRoutingCircuitBreakerPolicyItem::from_json(
+                    &circuit_breaker_policy_json,
+                )
+            }),
         weight: integer_cell(&row, "weight"),
         status: status_label(status, health_status, errors)?,
         latency: duration_or_na(integer_cell(&row, "latency_ms")),
@@ -444,11 +473,19 @@ fn row_to_channel(
     })
 }
 
-fn row_to_api_key(row: sqlx::postgres::PgRow) -> DomainResult<AppRoutingApiKeyItem> {
+fn row_to_api_key(
+    row: sqlx::postgres::PgRow,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+) -> DomainResult<AppRoutingApiKeyItem> {
+    let copyable_key = decode_api_key_copyable_key(
+        string_cell(&row, "copyable_key_ciphertext"),
+        api_key_secret_codec,
+    )?;
     Ok(AppRoutingApiKeyItem {
         id: string_cell(&row, "id"),
         name: string_cell(&row, "name"),
-        key: string_cell(&row, "key_display_masked"),
+        display_key: string_cell(&row, "key_display_masked"),
+        copyable_key,
         status: api_key_status_label(required_integer_cell(&row, "api_key_status")?)?,
         total_usage: string_cell(&row, "total_usage"),
         created_at: string_cell(&row, "created_at"),
@@ -643,6 +680,24 @@ fn routing_trace_latency_ms(value: i64) -> DomainResult<i64> {
     Err(DomainError::new(format!(
         "invalid routing trace latency_ms from database row: {value}"
     )))
+}
+
+fn decode_api_key_copyable_key(
+    copyable_key_ciphertext: String,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+) -> DomainResult<Option<String>> {
+    let copyable_key_ciphertext = copyable_key_ciphertext.trim();
+    if copyable_key_ciphertext.is_empty() {
+        return Ok(None);
+    }
+    let Some(api_key_secret_codec) = api_key_secret_codec else {
+        return Err(DomainError::new(
+            "api key secret codec is required to load routing copyable key material",
+        ));
+    };
+    Ok(Some(
+        api_key_secret_codec.decode_secret(copyable_key_ciphertext)?,
+    ))
 }
 
 fn missing_integer_cell_error(column: &str) -> DomainError {

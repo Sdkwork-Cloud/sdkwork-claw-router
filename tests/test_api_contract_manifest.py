@@ -289,6 +289,41 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
             self.assertEqual("/app/v3/api/content/forum/feeds", operations["fetchForumFeeds"]["api_path"])
             self.assertEqual("forum.feeds.list", operations["fetchForumFeeds"]["operation_id"])
 
+    def test_appbase_agent_registry_preserves_standard_top_level_agents_path(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            contract = self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /console/agents
+                    source: apps/sdkwork-claw-router-portal/packages/demo/src/agentService.ts
+                    operation: listAgents
+                    operation_id: agentDefinitions.list
+                    kind: read
+                    api_surface: app
+                    api_method: GET
+                    api_path: /app/v3/api/agents
+                    sdk_domain: agents
+                    read_sources: [ai_agent, ai_agent_version]
+                    query_parameters: []
+                    response_schema:
+                      name: AgentListResponse
+                      type: object
+                      required: [items]
+                      properties:
+                        items: { type: array, items: { type: object, additionalProperties: true } }
+                """,
+            )
+
+            manifest = ApiContractManifestGenerator(root=root, contract_path=contract).generate()
+            operation = manifest["operations"][0]
+
+            self.assertEqual("/app/v3/api/agents", operation["api_path"])
+            self.assertEqual("agents", operation["tag"])
+            self.assertEqual("agents", operation["sdk_domain"])
+            self.assertEqual("agentDefinitions.list", operation["operation_id"])
+
     def test_read_collection_action_uses_list_for_standard_collection_reads(self) -> None:
         generator = ApiContractManifestGenerator(root=Path(__file__).resolve().parents[1])
 

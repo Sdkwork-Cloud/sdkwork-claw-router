@@ -14,6 +14,10 @@ export interface DashboardOverviewSummary {
   requestCount: number;
   /** Rpm field on dashboard overview summary. */
   rpm: number;
+  /** Total request count field on dashboard overview summary. */
+  totalRequestCount: number;
+  /** Total used credits field on dashboard overview summary. */
+  totalUsedCredits: number;
   /** Tpm field on dashboard overview summary. */
   tpm: number;
   /** Used credits field on dashboard overview summary. */

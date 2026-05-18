@@ -1,31 +1,33 @@
-import React, { useState } from 'react';
-import { Outlet, NavLink, useNavigate, useLocation } from 'react-router-dom';
+import React from 'react';
+import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard, Users, UserCog, Network, Megaphone,
-  TrendingUp, Activity, Database, LogOut, Search, Settings, Link, ShieldAlert, Store, Package, ShieldCheck
+  TrendingUp, Activity, Database, LogOut, Settings, ShieldAlert, Store, Package, ShieldCheck, Bot
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Navbar } from 'sdkwork-claw-router-commons';
 import { revokeAppSession } from 'sdkwork-claw-router-commons/runtime';
 
 const ADMIN_LINKS = [
-  { path: '/admin/dashboard', icon: <LayoutDashboard className="w-4 h-4" />, label: '仪表盘' },
-  { path: '/admin/user', icon: <Users className="w-4 h-4" />, label: '用户管理' },
-  { path: '/admin/group', icon: <UserCog className="w-4 h-4" />, label: '分组管理' },
-  { path: '/admin/model', icon: <Database className="w-4 h-4" />, label: '模型平台管理' },
-  { path: '/admin/channel', icon: <Network className="w-4 h-4" />, label: '渠道供应商账号' },
-  { path: '/admin/announcement', icon: <Megaphone className="w-4 h-4" />, label: '公告管理' },
-  { path: '/admin/marketing', icon: <TrendingUp className="w-4 h-4" />, label: '营销管理' },
-  { path: '/admin/finance', icon: <TrendingUp className="w-4 h-4 text-emerald-500" />, label: '财务管理' },
-  { path: '/admin/record', icon: <Activity className="w-4 h-4" />, label: '使用记录' },
-  { path: '/admin/ratelimit', icon: <ShieldAlert className="w-4 h-4 text-red-500" />, label: '限流与风控' },
-  { path: '/admin/settings', icon: <ShieldCheck className="w-4 h-4 text-blue-500" />, label: 'Auth Settings' },
-  { path: '/admin/monitor', icon: <Settings className="w-4 h-4" />, label: '运维监控' },
+  { path: '/admin/dashboard', icon: <LayoutDashboard className="w-4 h-4" />, labelKey: 'admin.layout.links.dashboard' },
+  { path: '/admin/user', icon: <Users className="w-4 h-4" />, labelKey: 'admin.layout.links.users' },
+  { path: '/admin/group', icon: <UserCog className="w-4 h-4" />, labelKey: 'admin.layout.links.groups' },
+  { path: '/admin/model', icon: <Database className="w-4 h-4" />, labelKey: 'admin.layout.links.models' },
+  { path: '/admin/agents', icon: <Bot className="w-4 h-4" />, labelKey: 'admin.layout.links.agents' },
+  { path: '/admin/app', icon: <Package className="w-4 h-4" />, labelKey: 'admin.layout.links.appStore' },
+  { path: '/admin/skill', icon: <Store className="w-4 h-4" />, labelKey: 'admin.layout.links.agentSkills' },
+  { path: '/admin/channel', icon: <Network className="w-4 h-4" />, labelKey: 'admin.layout.links.channels' },
+  { path: '/admin/announcement', icon: <Megaphone className="w-4 h-4" />, labelKey: 'admin.layout.links.announcements' },
+  { path: '/admin/marketing', icon: <TrendingUp className="w-4 h-4" />, labelKey: 'admin.layout.links.marketing' },
+  { path: '/admin/finance', icon: <TrendingUp className="w-4 h-4 text-emerald-500" />, labelKey: 'admin.layout.links.finance' },
+  { path: '/admin/record', icon: <Activity className="w-4 h-4" />, labelKey: 'admin.layout.links.records' },
+  { path: '/admin/ratelimit', icon: <ShieldAlert className="w-4 h-4 text-red-500" />, labelKey: 'admin.layout.links.rateLimit' },
+  { path: '/admin/settings', icon: <ShieldCheck className="w-4 h-4 text-blue-500" />, labelKey: 'admin.layout.links.authSettings' },
+  { path: '/admin/monitor', icon: <Settings className="w-4 h-4" />, labelKey: 'admin.layout.links.monitor' },
 ];
 
-ADMIN_LINKS.splice(4, 0, { path: '/admin/skill', icon: <Store className="w-4 h-4" />, label: 'Agent Skills' });
-ADMIN_LINKS.splice(4, 0, { path: '/admin/app', icon: <Package className="w-4 h-4" />, label: 'App Store' });
-
 export function AdminLayout({ isDark, toggleTheme }: { isDark: boolean, toggleTheme: () => void }) {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   return (
@@ -41,7 +43,7 @@ export function AdminLayout({ isDark, toggleTheme }: { isDark: boolean, toggleTh
           <div className="p-4 border-b border-slate-200 dark:border-white/10 flex items-center justify-between">
             <h2 className="text-sm font-bold text-slate-800 dark:text-slate-200 uppercase tracking-widest shrink-0 gap-2 flex items-center">
               <span className="bg-red-500 w-2 h-2 rounded-full inline-block"></span>
-              Admin Backend
+              {t('admin.layout.title')}
             </h2>
           </div>
           <div className="flex-1 py-4 flex flex-col gap-1 px-3">
@@ -58,7 +60,7 @@ export function AdminLayout({ isDark, toggleTheme }: { isDark: boolean, toggleTh
                 }
               >
                 {link.icon}
-                {link.label}
+                {t(link.labelKey)}
               </NavLink>
             ))}
           </div>
@@ -71,7 +73,7 @@ export function AdminLayout({ isDark, toggleTheme }: { isDark: boolean, toggleTh
               }}
             >
               <LogOut className="w-4 h-4" />
-              退出登录
+              {t('admin.layout.logout')}
             </button>
           </div>
         </div>

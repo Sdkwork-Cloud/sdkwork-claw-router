@@ -225,7 +225,7 @@ test("console layout keeps readable navigation labels and valid logout markup", 
   }
 
   assert.doesNotMatch(source, /浠|璋|閽|璐|娑|宸|鏈|閰|閫/);
-  assert.match(source, /<span>退出登录<\/span>/);
+  assert.match(source, /<span>\{t\("console\.core\.consolelayout\.text\.12hokt7", "退出登录"\)\}<\/span>/);
   assert.doesNotMatch(source, /<span>[^<]*\/span>/);
 });
 

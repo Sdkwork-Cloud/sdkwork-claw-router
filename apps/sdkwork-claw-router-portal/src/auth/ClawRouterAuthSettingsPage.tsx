@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Loader2, QrCode, RefreshCw, Save, Settings2, ShieldCheck } from 'lucide-react';
 import type { AdminAuthSettingsUpdateRequest } from '@sdkwork/clawrouter-backend-sdk';
+import { useTranslation } from 'react-i18next';
 import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
 import {
   DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG,
@@ -31,21 +32,21 @@ type AuthSettingsForm = Required<Pick<
   oauthRegion: OAuthRegion;
 };
 
-const LOGIN_METHOD_OPTIONS: Array<{ label: string, value: LoginMethod }> = [
-  { label: 'Password', value: 'password' },
-  { label: 'Email code', value: 'emailCode' },
-  { label: 'Phone code', value: 'phoneCode' },
-  { label: 'Session bridge', value: 'sessionBridge' },
+const LOGIN_METHOD_OPTIONS: Array<{ labelKey: string, value: LoginMethod }> = [
+  { labelKey: 'admin.authSettings.options.login.password', value: 'password' },
+  { labelKey: 'admin.authSettings.options.login.emailCode', value: 'emailCode' },
+  { labelKey: 'admin.authSettings.options.login.phoneCode', value: 'phoneCode' },
+  { labelKey: 'admin.authSettings.options.login.sessionBridge', value: 'sessionBridge' },
 ];
 
-const REGISTER_METHOD_OPTIONS: Array<{ label: string, value: RegisterMethod }> = [
-  { label: 'Email', value: 'email' },
-  { label: 'Phone', value: 'phone' },
+const REGISTER_METHOD_OPTIONS: Array<{ labelKey: string, value: RegisterMethod }> = [
+  { labelKey: 'admin.authSettings.options.contact.email', value: 'email' },
+  { labelKey: 'admin.authSettings.options.contact.phone', value: 'phone' },
 ];
 
-const RECOVERY_METHOD_OPTIONS: Array<{ label: string, value: RecoveryMethod }> = [
-  { label: 'Email', value: 'email' },
-  { label: 'Phone', value: 'phone' },
+const RECOVERY_METHOD_OPTIONS: Array<{ labelKey: string, value: RecoveryMethod }> = [
+  { labelKey: 'admin.authSettings.options.contact.email', value: 'email' },
+  { labelKey: 'admin.authSettings.options.contact.phone', value: 'phone' },
 ];
 
 const OAUTH_PROVIDER_OPTIONS = ['wechat', 'alipay', 'douyin', 'google', 'github'] as const;
@@ -68,6 +69,7 @@ const DEFAULT_AUTH_SETTINGS_FORM: AuthSettingsForm = {
 };
 
 export function ClawRouterAuthSettingsPage() {
+  const { t } = useTranslation();
   const [form, setForm] = useState<AuthSettingsForm>(DEFAULT_AUTH_SETTINGS_FORM);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -85,7 +87,7 @@ export function ClawRouterAuthSettingsPage() {
       }
     } catch (error) {
       if (isActive()) {
-        setLoadError(errorMessage(error, 'Failed to load auth settings.'));
+        setLoadError(errorMessage(error, t('admin.authSettings.errors.loadFallback')));
       }
     } finally {
       if (isActive()) {
@@ -109,9 +111,9 @@ export function ClawRouterAuthSettingsPage() {
     try {
       const saved = await updateClawRouterAuthSettings(toAuthSettingsRequest(form));
       setForm(toAuthSettingsForm(saved));
-      setSaveSuccess('Auth settings saved.');
+      setSaveSuccess(t('admin.authSettings.messages.saved'));
     } catch (error) {
-      setSaveError(errorMessage(error, 'Failed to save auth settings.'));
+      setSaveError(errorMessage(error, t('admin.authSettings.errors.saveFallback')));
     } finally {
       setSaving(false);
     }
@@ -121,7 +123,7 @@ export function ClawRouterAuthSettingsPage() {
     return (
       <BusinessStatePanel
         kind="loading"
-        title="Loading auth settings..."
+        title={t('admin.authSettings.loading')}
         className="min-h-[480px]"
       />
     );
@@ -131,7 +133,7 @@ export function ClawRouterAuthSettingsPage() {
     return (
       <BusinessStatePanel
         kind="error"
-        title="Auth settings could not be loaded"
+        title={t('admin.authSettings.errors.loadTitle')}
         description={loadError}
         onRetry={() => void loadSettings()}
         className="min-h-[480px]"
@@ -140,15 +142,15 @@ export function ClawRouterAuthSettingsPage() {
   }
 
   return (
-    <div className="w-full max-w-6xl space-y-6">
+    <div className="w-full min-w-0 space-y-6">
       <div className="flex flex-col gap-4 border-b border-slate-200 pb-5 dark:border-white/10 md:flex-row md:items-end md:justify-between">
         <div>
           <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
             <ShieldCheck className="h-6 w-6 text-blue-500" />
-            Auth settings
+            {t('admin.authSettings.title')}
           </h2>
-          <p className="mt-2 max-w-2xl text-sm text-slate-500 dark:text-slate-400">
-            Manage SDKWork IAM login, registration, recovery, OAuth, QR login, and verification policy options.
+          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+            {t('admin.authSettings.description')}
           </p>
         </div>
         <div className="flex gap-3">
@@ -158,7 +160,7 @@ export function ClawRouterAuthSettingsPage() {
             className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10"
           >
             <RefreshCw className="h-4 w-4" />
-            Reload
+            {t('common.actions.reload')}
           </button>
           <button
             type="button"
@@ -167,7 +169,7 @@ export function ClawRouterAuthSettingsPage() {
             className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
-            Save
+            {t('common.actions.save')}
           </button>
         </div>
       </div>
@@ -183,17 +185,17 @@ export function ClawRouterAuthSettingsPage() {
         </div>
       ) : null}
 
-      <div className="grid grid-cols-1 gap-5 xl:grid-cols-[minmax(0,1.15fr)_minmax(340px,0.85fr)]">
+      <div className="grid grid-cols-1 gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] min-[1800px]:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(380px,0.72fr)]">
         <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
-          <SectionHeader icon={<Settings2 className="h-5 w-5 text-blue-500" />} title="Runtime options" />
+          <SectionHeader icon={<Settings2 className="h-5 w-5 text-blue-500" />} title={t('admin.authSettings.sections.runtime')} />
           <div className="mt-5 space-y-6">
             <SegmentedControl
-              label="Left rail"
+              label={t('admin.authSettings.fields.leftRail')}
               value={form.leftRailMode}
               options={[
-                { label: 'Auto', value: 'auto' },
-                { label: 'Highlights', value: 'highlights-only' },
-                { label: 'QR only', value: 'qr-only' },
+                { label: t('admin.authSettings.options.leftRail.auto'), value: 'auto' },
+                { label: t('admin.authSettings.options.leftRail.highlights'), value: 'highlights-only' },
+                { label: t('admin.authSettings.options.leftRail.qrOnly'), value: 'qr-only' },
               ]}
               onChange={(leftRailMode) => setForm((current) => ({
                 ...current,
@@ -202,14 +204,14 @@ export function ClawRouterAuthSettingsPage() {
               }))}
             />
             <CheckboxGroup
-              label="Login methods"
-              options={LOGIN_METHOD_OPTIONS}
+              label={t('admin.authSettings.fields.loginMethods')}
+              options={LOGIN_METHOD_OPTIONS.map((option) => ({ ...option, label: t(option.labelKey) }))}
               values={form.loginMethods}
               onChange={(loginMethods) => setForm((current) => withLoginMethods(current, loginMethods))}
             />
             <CheckboxGroup
-              label="Registration methods"
-              options={REGISTER_METHOD_OPTIONS}
+              label={t('admin.authSettings.fields.registrationMethods')}
+              options={REGISTER_METHOD_OPTIONS.map((option) => ({ ...option, label: t(option.labelKey) }))}
               values={form.registerMethods}
               onChange={(registerMethods) => setForm((current) => ({
                 ...current,
@@ -217,8 +219,8 @@ export function ClawRouterAuthSettingsPage() {
               }))}
             />
             <CheckboxGroup
-              label="Recovery methods"
-              options={RECOVERY_METHOD_OPTIONS}
+              label={t('admin.authSettings.fields.recoveryMethods')}
+              options={RECOVERY_METHOD_OPTIONS.map((option) => ({ ...option, label: t(option.labelKey) }))}
               values={form.recoveryMethods}
               onChange={(recoveryMethods) => setForm((current) => ({
                 ...current,
@@ -229,10 +231,10 @@ export function ClawRouterAuthSettingsPage() {
         </section>
 
         <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
-          <SectionHeader icon={<QrCode className="h-5 w-5 text-emerald-500" />} title="OAuth and QR" />
+          <SectionHeader icon={<QrCode className="h-5 w-5 text-emerald-500" />} title={t('admin.authSettings.sections.oauthQr')} />
           <div className="mt-5 space-y-5">
             <ToggleRow
-              label="QR login"
+              label={t('admin.authSettings.fields.qrLogin')}
               checked={form.qrLoginEnabled}
               onChange={() => setForm((current) => ({
                 ...current,
@@ -243,60 +245,60 @@ export function ClawRouterAuthSettingsPage() {
               }))}
             />
             <ToggleRow
-              label="OAuth login"
+              label={t('admin.authSettings.fields.oauthLogin')}
               checked={form.oauthLoginEnabled}
               onChange={() => setForm((current) => ({ ...current, oauthLoginEnabled: !current.oauthLoginEnabled }))}
             />
             <SegmentedControl
-              label="OAuth region"
+              label={t('admin.authSettings.fields.oauthRegion')}
               value={form.oauthRegion}
               options={[
-                { label: 'Mainland', value: 'mainland' },
-                { label: 'Overseas', value: 'overseas' },
+                { label: t('admin.authSettings.options.oauthRegion.mainland'), value: 'mainland' },
+                { label: t('admin.authSettings.options.oauthRegion.overseas'), value: 'overseas' },
               ]}
               onChange={(oauthRegion) => setForm((current) => ({ ...current, oauthRegion }))}
             />
             <OAuthProviderEditor
+              label={t('admin.authSettings.fields.oauthProviderCodes')}
               values={form.oauthProviders}
               onChange={(oauthProviders) => setForm((current) => ({ ...current, oauthProviders }))}
             />
           </div>
         </section>
+        <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a] xl:col-span-2 min-[1800px]:col-span-1">
+          <SectionHeader icon={<ShieldCheck className="h-5 w-5 text-amber-500" />} title={t('admin.authSettings.sections.verificationPolicy')} />
+          <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 min-[1800px]:grid-cols-1">
+            <ToggleRow
+              label={t('admin.authSettings.fields.emailCodeLogin')}
+              checked={form.verificationPolicy.emailCodeLoginEnabled}
+              onChange={() => updateVerificationPolicy('emailCodeLoginEnabled', !form.verificationPolicy.emailCodeLoginEnabled, setForm)}
+            />
+            <ToggleRow
+              label={t('admin.authSettings.fields.phoneCodeLogin')}
+              checked={form.verificationPolicy.phoneCodeLoginEnabled}
+              onChange={() => updateVerificationPolicy('phoneCodeLoginEnabled', !form.verificationPolicy.phoneCodeLoginEnabled, setForm)}
+            />
+            <ToggleRow
+              label={t('admin.authSettings.fields.emailRegistrationVerification')}
+              checked={form.verificationPolicy.emailRegistrationVerificationRequired}
+              onChange={() => updateVerificationPolicy(
+                'emailRegistrationVerificationRequired',
+                !form.verificationPolicy.emailRegistrationVerificationRequired,
+                setForm,
+              )}
+            />
+            <ToggleRow
+              label={t('admin.authSettings.fields.phoneRegistrationVerification')}
+              checked={form.verificationPolicy.phoneRegistrationVerificationRequired}
+              onChange={() => updateVerificationPolicy(
+                'phoneRegistrationVerificationRequired',
+                !form.verificationPolicy.phoneRegistrationVerificationRequired,
+                setForm,
+              )}
+            />
+          </div>
+        </section>
       </div>
-
-      <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
-        <SectionHeader icon={<ShieldCheck className="h-5 w-5 text-amber-500" />} title="Verification policy" />
-        <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
-          <ToggleRow
-            label="Email code login"
-            checked={form.verificationPolicy.emailCodeLoginEnabled}
-            onChange={() => updateVerificationPolicy('emailCodeLoginEnabled', !form.verificationPolicy.emailCodeLoginEnabled, setForm)}
-          />
-          <ToggleRow
-            label="Phone code login"
-            checked={form.verificationPolicy.phoneCodeLoginEnabled}
-            onChange={() => updateVerificationPolicy('phoneCodeLoginEnabled', !form.verificationPolicy.phoneCodeLoginEnabled, setForm)}
-          />
-          <ToggleRow
-            label="Email registration verification"
-            checked={form.verificationPolicy.emailRegistrationVerificationRequired}
-            onChange={() => updateVerificationPolicy(
-              'emailRegistrationVerificationRequired',
-              !form.verificationPolicy.emailRegistrationVerificationRequired,
-              setForm,
-            )}
-          />
-          <ToggleRow
-            label="Phone registration verification"
-            checked={form.verificationPolicy.phoneRegistrationVerificationRequired}
-            onChange={() => updateVerificationPolicy(
-              'phoneRegistrationVerificationRequired',
-              !form.verificationPolicy.phoneRegistrationVerificationRequired,
-              setForm,
-            )}
-          />
-        </div>
-      </section>
     </div>
   );
 }
@@ -402,24 +404,27 @@ function CheckboxGroup<T extends string>({
 }
 
 function OAuthProviderEditor({
+  label,
   onChange,
   values,
 }: {
+  label: string,
   onChange: (values: string[]) => void,
   values: readonly string[],
 }) {
+  const { t } = useTranslation();
   const selected = new Set(values);
   return (
     <div>
       <label htmlFor="oauth-provider-codes" className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">
-        OAuth provider codes
+        {label}
       </label>
       <textarea
         id="oauth-provider-codes"
         value={formatOAuthProviders(values)}
         onChange={(event) => onChange(parseOAuthProviderText(event.target.value))}
         rows={3}
-        placeholder="github, google, enterprise_iam"
+            placeholder={t('admin.authSettings.placeholders.oauthProviderCodes')}
         className="w-full resize-none rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-sm text-slate-700 outline-none transition-colors placeholder:text-slate-400 focus:border-blue-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-100 dark:placeholder:text-slate-500"
       />
       <div className="mt-3 flex flex-wrap gap-2">

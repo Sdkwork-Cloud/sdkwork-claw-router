@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Cell, PieChart, Pie, Legend } from 'recharts';
 import { AdminDashboardService, DashboardSummaryCard, PieChartData, RecentUsageTrace, TrafficData } from './dashboardService';
 
+import { useTranslation } from 'react-i18next';
 type ChartPayloadEntry = {
   color?: string;
   name?: string | number;
@@ -36,8 +37,11 @@ const SUMMARY_CARD_COLORS = [
   'text-pink-600 dark:text-pink-400 bg-pink-50 dark:bg-pink-500/10',
 ] as const;
 
+type DashboardChartTab = 'modelDistribution' | 'userConsumption';
+
 export function DashboardAdmin() {
-  const [chartTab, setChartTab] = useState<'模型分布' | '用户消费榜'>('模型分布');
+  const { t } = useTranslation();
+  const [chartTab, setChartTab] = useState<DashboardChartTab>('modelDistribution');
   const [trendMetric, setTrendMetric] = useState<'tokens' | 'cost' | 'requests'>('tokens');
   const [chartType, setChartType] = useState<'area' | 'bar'>('area');
 
@@ -53,7 +57,7 @@ export function DashboardAdmin() {
     let disposed = false;
     setLoading(true);
     setErrorMessage('');
-    AdminDashboardService.fetchDashboardData()
+    AdminDashboardService.fetchDashboardData(t)
       .then(data => {
         if (disposed) {
           return;
@@ -75,7 +79,7 @@ export function DashboardAdmin() {
         setTrafficData([]);
         setModelDistribution([]);
         setRecentUsage([]);
-        setErrorMessage(error instanceof Error ? error.message : '加载大盘数据失败');
+        setErrorMessage(error instanceof Error ? error.message : t("admin.dashboard.index.text.1s2i7d1", "加载大盘数据失败"));
       })
       .finally(() => {
         if (!disposed) {
@@ -85,7 +89,7 @@ export function DashboardAdmin() {
     return () => {
       disposed = true;
     };
-  }, []);
+  }, [t]);
 
   const CustomTooltip = ({ active, payload = [], label }: CustomTooltipProps) => {
     if (active && payload.length) {
@@ -97,7 +101,7 @@ export function DashboardAdmin() {
               <div key={index} className="flex items-center gap-2 text-xs">
                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: entry.color ?? '#64748b' }} />
                 <span className="text-slate-600 dark:text-slate-400">
-                  {entry.name === 'tokens' ? 'Token 消耗' : entry.name === 'cost' ? '金额消耗' : entry.name === 'requests' ? 'API 请求' : String(entry.name ?? '')}
+                  {entry.name === 'tokens' ? t("admin.dashboard.index.text.1rty913", "Token 消耗") : entry.name === 'cost' ? t("admin.dashboard.index.text.3nwvcy", "金额消耗") : entry.name === 'requests' ? t("admin.dashboard.index.text.1j8nxcs", "API 请求") : String(entry.name ?? '')}
                 </span>
                 <span className="font-semibold text-slate-900 dark:text-white ml-auto pl-4">
                   {entry.name === 'cost' ? `$${Number(entry.value ?? 0).toFixed(2)}` : Number(entry.value ?? 0).toLocaleString()}
@@ -133,7 +137,7 @@ export function DashboardAdmin() {
     return (
       <div className="w-full h-full flex flex-col items-center justify-center space-y-4">
         <Loader2 className="w-8 h-8 animate-spin text-blue-500" />
-        <span className="text-slate-500 dark:text-slate-400">加载大盘数据中...</span>
+        <span className="text-slate-500 dark:text-slate-400">{t("admin.dashboard.index.text.1chgta4", "加载大盘数据中...")}</span>
       </div>
     );
   }
@@ -142,7 +146,7 @@ export function DashboardAdmin() {
     return (
       <div className="w-full h-full flex flex-col items-center justify-center space-y-3 px-6 text-center">
         <Activity className="w-8 h-8 text-red-500" />
-        <span className="text-sm font-medium text-slate-900 dark:text-white">大盘数据加载失败</span>
+        <span className="text-sm font-medium text-slate-900 dark:text-white">{t("admin.dashboard.index.text.1colgfp", "大盘数据加载失败")}</span>
         <span className="max-w-xl text-xs text-slate-500 dark:text-slate-400">{errorMessage}</span>
       </div>
     );
@@ -175,10 +179,10 @@ export function DashboardAdmin() {
       <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 flex flex-col shadow-sm shrink-0 min-h-[450px]">
         <div className="mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
           <div className="flex items-center gap-4">
-            <h3 className="text-base font-bold text-slate-900 dark:text-white whitespace-nowrap">聚合指标大盘</h3>
+            <h3 className="text-base font-bold text-slate-900 dark:text-white whitespace-nowrap">{t("admin.dashboard.index.text.yomhnm", "聚合指标大盘")}</h3>
             <div className="h-6 w-px bg-slate-200 dark:bg-white/10 hidden lg:block"></div>
 
-            <span className="text-xs text-slate-500 dark:text-slate-400">后端 usage_fact 聚合快照</span>
+            <span className="text-xs text-slate-500 dark:text-slate-400">{t("admin.dashboard.index.text.103joek", "后端 usage_fact 聚合快照")}</span>
           </div>
 
           <div className="flex items-center gap-3">
@@ -188,14 +192,12 @@ export function DashboardAdmin() {
                 onClick={() => setChartType('area')}
                 className={`px-2 py-1 rounded text-xs font-medium transition-colors ${chartType === 'area' ? 'bg-white dark:bg-[#222] text-slate-900 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'}`}
               >
-                折线图
-              </button>
+                {t("admin.dashboard.index.text.12bof9e", "折线图")}</button>
               <button
                 onClick={() => setChartType('bar')}
                 className={`px-2 py-1 rounded text-xs font-medium transition-colors ${chartType === 'bar' ? 'bg-white dark:bg-[#222] text-slate-900 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'}`}
               >
-                柱状图
-              </button>
+                {t("admin.dashboard.index.text.mnf7mo", "柱状图")}</button>
             </div>
 
             <div className="h-6 w-px bg-slate-200 dark:bg-white/10 hidden sm:block"></div>
@@ -206,20 +208,17 @@ export function DashboardAdmin() {
                 onClick={() => setTrendMetric('tokens')}
                 className={`px-3 py-1 rounded text-xs font-medium transition-colors ${trendMetric === 'tokens' ? 'bg-white dark:bg-[#222] text-slate-900 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'}`}
               >
-                Token 消耗
-              </button>
+                {t("admin.dashboard.index.text.1rty913", "Token 消耗")}</button>
               <button
                 onClick={() => setTrendMetric('cost')}
                 className={`px-3 py-1 rounded text-xs font-medium transition-colors ${trendMetric === 'cost' ? 'bg-white dark:bg-[#222] text-slate-900 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'}`}
               >
-                金额消耗
-              </button>
+                {t("admin.dashboard.index.text.3nwvcy", "金额消耗")}</button>
               <button
                 onClick={() => setTrendMetric('requests')}
                 className={`px-3 py-1 rounded text-xs font-medium transition-colors ${trendMetric === 'requests' ? 'bg-white dark:bg-[#222] text-slate-900 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'}`}
               >
-                API 请求
-              </button>
+                {t("admin.dashboard.index.text.1j8nxcs", "API 请求")}</button>
             </div>
           </div>
         </div>
@@ -271,24 +270,26 @@ export function DashboardAdmin() {
         {/* Left Chart Card: Model Distribution */}
         <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 flex flex-col shadow-sm">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="text-base font-bold text-slate-900 dark:text-white">{chartTab}</h3>
+            <h3 className="text-base font-bold text-slate-900 dark:text-white">
+              {chartTab === 'modelDistribution'
+                ? t("admin.dashboard.index.text.zct0j2", "模型分布")
+                : t("admin.dashboard.index.text.f8emjh", "用户消费榜")}
+            </h3>
             <div className="flex bg-slate-100 dark:bg-[#121212] rounded-lg p-1 border border-slate-200 dark:border-white/5">
               <button
-                onClick={() => setChartTab('模型分布')}
-                className={`px-3 py-1 rounded text-xs font-medium transition-colors ${chartTab === '模型分布' ? 'bg-white dark:bg-[#222] text-slate-900 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'}`}
+                onClick={() => setChartTab('modelDistribution')}
+                className={`px-3 py-1 rounded text-xs font-medium transition-colors ${chartTab === 'modelDistribution' ? 'bg-white dark:bg-[#222] text-slate-900 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'}`}
               >
-                模型分布
-              </button>
+                {t("admin.dashboard.index.text.zct0j2", "模型分布")}</button>
               <button
-                onClick={() => setChartTab('用户消费榜')}
-                className={`px-3 py-1 rounded text-xs font-medium transition-colors ${chartTab === '用户消费榜' ? 'bg-white dark:bg-[#222] text-slate-900 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'}`}
+                onClick={() => setChartTab('userConsumption')}
+                className={`px-3 py-1 rounded text-xs font-medium transition-colors ${chartTab === 'userConsumption' ? 'bg-white dark:bg-[#222] text-slate-900 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'}`}
               >
-                用户消费榜
-              </button>
+                {t("admin.dashboard.index.text.f8emjh", "用户消费榜")}</button>
             </div>
           </div>
           <div className="flex-1 min-h-0 relative">
-            {chartTab === '模型分布' ? (
+            {chartTab === 'modelDistribution' ? (
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={modelDistribution} layout="vertical" margin={{ top: 10, right: 20, left: 0, bottom: 10 }}>
                   <XAxis type="number" hide />
@@ -339,10 +340,10 @@ export function DashboardAdmin() {
         {/* Right Chart Card: Multimodal Capabilities */}
         <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 flex flex-col shadow-sm">
           <div className="mb-6 flex justify-between items-center">
-            <h3 className="text-base font-bold text-slate-900 dark:text-white">多模态能力调用占比</h3>
+            <h3 className="text-base font-bold text-slate-900 dark:text-white">{t("admin.dashboard.index.text.d43g8g", "多模态能力调用占比")}</h3>
             <div className="flex items-center gap-3">
-              <span className="flex items-center gap-1 text-xs text-slate-500"><Image className="w-3.5 h-3.5" /> 视觉</span>
-              <span className="flex items-center gap-1 text-xs text-slate-500"><Mic className="w-3.5 h-3.5" /> 语音</span>
+              <span className="flex items-center gap-1 text-xs text-slate-500"><Image className="w-3.5 h-3.5" /> {t("admin.dashboard.index.text.1a5k09c", "视觉")}</span>
+              <span className="flex items-center gap-1 text-xs text-slate-500"><Mic className="w-3.5 h-3.5" /> {t("admin.dashboard.index.text.113w1g1", "语音")}</span>
             </div>
           </div>
           <div className="flex-1 min-h-0 relative flex items-center">
@@ -384,22 +385,22 @@ export function DashboardAdmin() {
       {/* Bottom Table */}
       <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm shrink-0 flex-1 mt-2">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="text-base font-bold text-slate-900 dark:text-white">平台实时调用流水 (Live Traces)</h3>
+            <h3 className="text-base font-bold text-slate-900 dark:text-white">{t("admin.dashboard.index.text.13upnw7", "平台实时调用流水 (Live Traces)")}</h3>
           <Link to="/admin/record" className="text-xs text-blue-500 hover:text-blue-600 font-medium flex items-center px-2 py-1 rounded hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-colors gap-1">
-            查看完整日志 <ExternalLink className="w-3 h-3" />
+            {t("admin.dashboard.index.text.19174dl", "查看完整日志")}<ExternalLink className="w-3 h-3" />
           </Link>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 whitespace-nowrap">
             <thead className="bg-slate-50 dark:bg-white/[0.02] border-y border-slate-200 dark:border-white/5 text-xs font-semibold text-slate-500 dark:text-slate-400">
               <tr>
-                <th className="px-4 py-3">调用方 (用户/API Key)</th>
-                <th className="px-4 py-3">请求目标 (模型)</th>
-                <th className="px-4 py-3">计费模式</th>
-                <th className="px-4 py-3">消耗计费量 (In / Out | Count)</th>
-                <th className="px-4 py-3">计算成本</th>
-                <th className="px-4 py-3">请求时间</th>
-                <th className="px-4 py-3">路由状态</th>
+                <th className="px-4 py-3">{t("admin.dashboard.index.text.1i45bsn", "调用方 (用户/API Key)")}</th>
+                <th className="px-4 py-3">{t("admin.dashboard.index.text.1uqn9fe", "请求目标 (模型)")}</th>
+                <th className="px-4 py-3">{t("admin.dashboard.index.text.pptmtb", "计费模式")}</th>
+                <th className="px-4 py-3">{t("admin.dashboard.index.text.1i0melp", "消耗计费量 (In / Out | Count)")}</th>
+                <th className="px-4 py-3">{t("admin.dashboard.index.text.un4skd", "计算成本")}</th>
+                <th className="px-4 py-3">{t("admin.dashboard.index.text.hin7vi", "请求时间")}</th>
+                <th className="px-4 py-3">{t("admin.dashboard.index.text.11bow1c", "路由状态")}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 dark:divide-white/5">
@@ -422,12 +423,10 @@ export function DashboardAdmin() {
                   <td className="px-4 py-3">
                     {item.billingMode === 'token' ? (
                       <span className="inline-flex px-2 py-0.5 rounded text-[10px] font-medium bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400 border border-blue-200 dark:border-blue-500/20 tracking-wide">
-                        按 Token
-                      </span>
+                        {t("admin.dashboard.index.text.11f9jft", "按 Token")}</span>
                     ) : (
                       <span className="inline-flex px-2 py-0.5 rounded text-[10px] font-medium bg-amber-50 text-amber-600 dark:bg-amber-500/10 dark:text-amber-400 border border-amber-200 dark:border-amber-500/20 tracking-wide">
-                        按 次数
-                      </span>
+                        {t("admin.dashboard.index.text.158oqsl", "按 次数")}</span>
                     )}
                   </td>
                   <td className="px-4 py-3 font-mono text-xs">

@@ -8,14 +8,146 @@ x_response_entities:
     name: AdminAnnouncementItem
     type: object
     additionalProperties: false
-    required: [id, title, target, status, date, content]
+    required: [id, title, target, status, showAsPopup, date, content]
     properties:
       id: { type: string, minLength: 1, maxLength: 128 }
       title: { type: string, minLength: 1, maxLength: 200 }
       target: { type: string, enum: [all, vip, free, beta] }
       status: { type: string, enum: [published, draft] }
+      showAsPopup: { type: boolean }
       date: { type: string, minLength: 1, maxLength: 64 }
       content: { type: string, minLength: 1, maxLength: 20000 }
+  generation_history_media_item: &generation_history_media_item
+    name: GenerationHistoryMediaItem
+    type: object
+    additionalProperties: false
+    required: [url]
+    properties:
+      url: { type: string, minLength: 1, maxLength: 2048 }
+      thumb: { type: string, maxLength: 2048 }
+  generation_history_item: &generation_history_item
+    name: GenerationHistoryItem
+    type: object
+    additionalProperties: false
+    required: [id, date, prompt, type, images, videos]
+    properties:
+      id: { type: string, minLength: 1, maxLength: 128 }
+      date: { type: string, minLength: 1, maxLength: 32 }
+      prompt: { type: string, maxLength: 4096 }
+      type: { type: string, enum: [image, images, video, music, audio, sfx] }
+      modelInfo: { type: string, maxLength: 256 }
+      modelCatalogKey: { type: string, maxLength: 256 }
+      url: { type: string, maxLength: 2048 }
+      images:
+        type: array
+        maxItems: 20
+        items: { type: string, maxLength: 2048 }
+      videos:
+        type: array
+        maxItems: 20
+        items: *generation_history_media_item
+      aspectRatio: { type: string, enum: ["1:1", "16:9", "9:16"] }
+      durationSeconds: { type: integer, minimum: 0, maximum: 86400 }
+      status: { type: string, enum: [pending, processing, completed, failed, cancelled] }
+      createdAt: { type: string, maxLength: 64 }
+      updatedAt: { type: string, maxLength: 64 }
+  agent_policy: &agent_policy_schema
+    name: AgentPolicy
+    type: object
+    additionalProperties: true
+    description: Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.
+  agent_capabilities: &agent_capabilities_schema
+    name: AgentCapabilities
+    type: object
+    additionalProperties: false
+    required: [memoryEnabled, mcpServerCount, skillBindingCount]
+    properties:
+      memoryEnabled: { type: boolean }
+      mcpServerCount: { type: integer, format: int64, minimum: 0 }
+      skillBindingCount: { type: integer, format: int64, minimum: 0 }
+  agent_version_item: &agent_version_item
+    name: AgentVersionItem
+    type: object
+    additionalProperties: false
+    required: [id, versionNo, releaseStatus, systemPrompt, toolPolicy, memoryPolicy, mcpPolicy, skillPolicy, runtimePolicy, createdAt, updatedAt]
+    properties:
+      id: { type: string, minLength: 1, maxLength: 128 }
+      versionNo: { type: integer, format: int64, minimum: 1 }
+      releaseStatus: { type: string, enum: [draft, published, archived] }
+      model: { type: string, nullable: true, maxLength: 128 }
+      systemPrompt: { type: string, maxLength: 32768 }
+      toolPolicy: *agent_policy_schema
+      memoryPolicy: *agent_policy_schema
+      mcpPolicy: *agent_policy_schema
+      skillPolicy: *agent_policy_schema
+      runtimePolicy: *agent_policy_schema
+      createdAt: { type: string, minLength: 1, maxLength: 64 }
+      updatedAt: { type: string, minLength: 1, maxLength: 64 }
+  agent_item: &agent_item
+    name: AgentItem
+    type: object
+    additionalProperties: false
+    required: [id, ownerUserId, code, name, description, visibility, status, createdAt, updatedAt, defaultVersion, capabilities]
+    properties:
+      id: { type: string, minLength: 1, maxLength: 128 }
+      ownerUserId: { type: integer, format: int64, minimum: 1 }
+      code: { type: string, minLength: 1, maxLength: 96, pattern: '^[a-z0-9][a-z0-9-]{0,95}$' }
+      name: { type: string, minLength: 1, maxLength: 128 }
+      description: { type: string, maxLength: 1024 }
+      visibility: { type: string, enum: [private, organization, public] }
+      status: { type: string, enum: [active, disabled] }
+      avatarUrl: { type: string, nullable: true, maxLength: 2048 }
+      templateSource: { type: string, nullable: true, maxLength: 128 }
+      createdAt: { type: string, minLength: 1, maxLength: 64 }
+      updatedAt: { type: string, minLength: 1, maxLength: 64 }
+      defaultVersion: *agent_version_item
+      capabilities: *agent_capabilities_schema
+  agent_create_request: &agent_create_request
+    name: AgentCreateRequest
+    type: object
+    additionalProperties: false
+    required: [name]
+    properties:
+      name: { type: string, minLength: 1, maxLength: 128 }
+      code: { type: string, minLength: 1, maxLength: 96, pattern: '^[A-Za-z0-9._:-]+$' }
+      description: { type: string, maxLength: 1024 }
+      model: { type: string, maxLength: 128 }
+      systemPrompt: { type: string, maxLength: 32768 }
+      toolPolicy: *agent_policy_schema
+      memoryPolicy: *agent_policy_schema
+      mcpPolicy: *agent_policy_schema
+      skillPolicy: *agent_policy_schema
+      runtimePolicy: *agent_policy_schema
+  agent_item_response: &agent_item_response
+    name: AgentItemResponse
+    type: object
+    additionalProperties: false
+    required: [item]
+    properties:
+      item: *agent_item
+  admin_agent_version_item: &admin_agent_version_item
+    <<: *agent_version_item
+    name: AdminAgentVersionItem
+  admin_agent_capabilities: &admin_agent_capabilities_schema
+    <<: *agent_capabilities_schema
+    name: AdminAgentCapabilities
+  admin_agent_item: &admin_agent_item
+    <<: *agent_item
+    name: AdminAgentItem
+    properties:
+      id: { type: string, minLength: 1, maxLength: 128 }
+      ownerUserId: { type: integer, format: int64, minimum: 1 }
+      code: { type: string, minLength: 1, maxLength: 96, pattern: '^[a-z0-9][a-z0-9-]{0,95}$' }
+      name: { type: string, minLength: 1, maxLength: 128 }
+      description: { type: string, maxLength: 1024 }
+      visibility: { type: string, enum: [private, organization, public] }
+      status: { type: string, enum: [active, disabled] }
+      avatarUrl: { type: string, nullable: true, maxLength: 2048 }
+      templateSource: { type: string, nullable: true, maxLength: 128 }
+      createdAt: { type: string, minLength: 1, maxLength: 64 }
+      updatedAt: { type: string, minLength: 1, maxLength: 64 }
+      defaultVersion: *admin_agent_version_item
+      capabilities: *admin_agent_capabilities_schema
   provider_retry_policy: &provider_retry_policy_schema
     name: ProviderRetryPolicy
     type: object
@@ -29,6 +161,13 @@ x_response_entities:
         uniqueItems: true
         items: { type: integer, enum: [408, 409, 425, 429, 500, 502, 503, 504] }
       backoffMs: { type: integer, minimum: 0, maximum: 2000 }
+  provider_circuit_breaker_policy: &provider_circuit_breaker_policy_schema
+    name: ProviderCircuitBreakerPolicy
+    type: object
+    additionalProperties: false
+    required: [failureThreshold]
+    properties:
+      failureThreshold: { type: integer, minimum: 1, maximum: 100 }
   admin_channel_item: &admin_channel_item
     name: AdminChannelItem
     type: object
@@ -56,6 +195,7 @@ x_response_entities:
       isMultimodal: { type: boolean }
       timeoutMs: { type: integer, format: int64, minimum: 1, maximum: 600000 }
       retryPolicy: *provider_retry_policy_schema
+      circuitBreakerPolicy: *provider_circuit_breaker_policy_schema
       weight: { type: integer, format: int64, minimum: 1, maximum: 10000 }
       status: { type: string, enum: [active, disabled, error] }
       balance: { type: string, maxLength: 64 }
@@ -444,7 +584,17 @@ x_response_entities:
       id: { type: string, minLength: 1, maxLength: 128 }
       name: { type: string, minLength: 1, maxLength: 128 }
       maskedKey: { type: string, minLength: 1, maxLength: 256 }
+      copyableKey:
+        type: string
+        minLength: 1
+        maxLength: 256
+        description: Full plaintext API key returned only by authenticated owner management responses; public catalog responses omit this field.
       group: { type: string, minLength: 1, maxLength: 128 }
+      groupName:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: Display name snapshot for the bound API key group so the list view does not need to preload selectable groups.
       rate: { type: string, nullable: true, maxLength: 64 }
       quota: { type: string, minLength: 1, maxLength: 64 }
       usedQuota: { type: string, minLength: 1, maxLength: 64 }
@@ -465,6 +615,42 @@ x_response_entities:
       code: { type: string, minLength: 1, maxLength: 128 }
       name: { type: string, minLength: 1, maxLength: 128 }
       rate: { type: string, nullable: true, maxLength: 64 }
+  app_api_key_update_request: &app_api_key_update_request
+    name: UpdateApiKeyRequest
+    type: object
+    additionalProperties: false
+    required: []
+    properties:
+      name:
+        type: string
+        maxLength: 128
+        description: API key display name.
+      group:
+        type: string
+        maxLength: 64
+        description: API key group code to bind to this key.
+      quota:
+        type: string
+        format: decimal
+        description: Optional quota limit as a canonical decimal string.
+      isUnlimitedQuota:
+        type: boolean
+        description: Whether the quota is unlimited.
+      modalities:
+        type: array
+        minItems: 1
+        uniqueItems: true
+        items:
+          type: string
+          enum: [text, image, video, audio, music]
+      ipLimit:
+        type: string
+        maxLength: 1024
+        description: Comma-separated IP or CIDR allowlist, or unrestricted.
+      expires:
+        type: string
+        maxLength: 32
+        description: Expiration timestamp in YYYY-MM-DDTHH:mm format, or never.
   billing_redeem_history_item: &billing_redeem_history_item
     name: BillingRedeemHistoryItem
     type: object
@@ -1505,37 +1691,37 @@ frontend_models:
   - route: /admin/announcement
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-announcement/src/announcementService.ts
     interface: Announcement
-    fields: [id, title, target, status, date, content]
+    fields: [id, title, target, status, showAsPopup, date, content]
     data_sources: [content_announcement]
   - route: /admin/announcement
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-announcement/src/announcementService.ts
     interface: AnnouncementCreateInput
-    fields: [title, target, status, content]
+    fields: [title, target, status, showAsPopup, content]
     data_sources: [content_announcement]
   - route: /admin/announcement
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-announcement/src/announcementService.ts
     interface: AnnouncementUpdateInput
-    fields: [title, target, status, content]
+    fields: [title, target, status, showAsPopup, content]
     data_sources: [content_announcement]
   - route: /admin/channel
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
     interface: ChannelItem
-    fields: [id, name, vendor, protocol, accessType, baseUrl, secretRef, models, capabilities, isMultimodal, timeoutMs, retryPolicy, weight, status, balance, errors]
+    fields: [id, name, vendor, protocol, accessType, baseUrl, secretRef, models, capabilities, isMultimodal, timeoutMs, retryPolicy, circuitBreakerPolicy, weight, status, balance, errors]
     data_sources: [integration_channel, integration_channel_model, integration_provider, integration_provider_account, integration_provider_health_snapshot]
   - route: /admin/channel
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
     interface: ChannelCreateInput
-    fields: [name, vendor, protocol, accessType, baseUrl, secretRef, models, capabilities, timeoutMs, retryPolicy, weight, status]
+    fields: [name, vendor, protocol, accessType, baseUrl, apiKey, secretRef, models, capabilities, timeoutMs, retryPolicy, circuitBreakerPolicy, weight, status]
     data_sources: [integration_channel, integration_channel_model, integration_provider, integration_provider_account]
   - route: /admin/channel
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
     interface: ChannelUpdateInput
-    fields: [name, vendor, protocol, accessType, baseUrl, secretRef, models, capabilities, timeoutMs, retryPolicy, weight, status]
+    fields: [name, vendor, protocol, accessType, baseUrl, apiKey, secretRef, models, capabilities, timeoutMs, retryPolicy, circuitBreakerPolicy, weight, status]
     data_sources: [integration_channel, integration_channel_model, integration_provider, integration_provider_account]
   - route: /admin/channel
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
     interface: ChannelTestResult
-    fields: [channelId, success, status, latency, item, item.id, item.name, item.vendor, item.protocol, item.accessType, item.baseUrl, item.secretRef, item.models, item.capabilities, item.isMultimodal, item.timeoutMs, item.retryPolicy, item.weight, item.status, item.balance, item.errors]
+    fields: [channelId, success, status, latency, item, item.id, item.name, item.vendor, item.protocol, item.accessType, item.baseUrl, item.secretRef, item.models, item.capabilities, item.isMultimodal, item.timeoutMs, item.retryPolicy, item.circuitBreakerPolicy, item.weight, item.status, item.balance, item.errors]
     data_sources: [integration_channel, integration_provider_account, integration_provider_health_snapshot, ops_config_snapshot, ops_audit_log]
   - route: /admin/channel
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
@@ -1709,6 +1895,11 @@ frontend_models:
     data_sources: [ai_model_vendor, ai_model, ai_model_capability, ai_model_pricing, ai_pricing_import_snapshot, ops_audit_log]
   - route: /admin/model
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+    interface: InitializedModelCatalog
+    fields: [initialized, vendors, vendors.id, vendors.vendorCode, vendors.name, vendors.status, vendors.color, vendors.description, models, models.id, models.vendorId, models.vendorCode, models.name, models.type, models.priceIn, models.priceOut, models.status, models.calls, models.description, models.modalities, models.inputModalities, models.outputModalities, models.apiFormat, models.capabilityIntro, models.limitations, models.supportedLanguages, models.useCases, models.trainingDataCutoff, models.contextTokens, models.maxOutputTokens, models.supportsStreaming, models.supportsTools, models.supportsJsonSchema, models.releaseStage, models.shelfState, models.routingState, models.replacementModel]
+    data_sources: [ai_model_vendor, ai_model, ai_model_capability, ai_model_pricing, ai_model_rank_snapshot, ai_pricing_import_snapshot, ops_audit_log]
+  - route: /admin/model
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
     interface: ModelRankingRefreshStatusView
     fields: [cacheMaxAgeSeconds, generatedAt, generatedCount, latestJob, nextRefreshAt, organizationId, rankScope, refreshIntervalSeconds, snapshotDate, snapshotPeriod, sourceCount, sourceTables, status, tenantId, windowEnd, windowStart]
     data_sources: [ai_model_rank_snapshot, ops_job_execution]
@@ -1735,6 +1926,11 @@ frontend_models:
   - route: /admin/skill
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
     interface: AdminSkillCategoryCreateInput
+    fields: [name, description, code, icon, sortWeight, parentId, path, visible, status, type]
+    data_sources: [plus_category]
+  - route: /admin/skill
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+    interface: AdminSkillCategoryUpdateInput
     fields: [name, description, code, icon, sortWeight, parentId, path, visible, status, type]
     data_sources: [plus_category]
   - route: /admin/skill
@@ -1896,12 +2092,12 @@ frontend_models:
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
     interface: ApiKeyCreateInput
     fields: [userId, name]
-    data_sources: [plus_user, iam_gateway_api_key]
+    data_sources: [iam_user, iam_gateway_api_key]
   - route: /admin/user
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
     interface: UserCreateInput
     fields: [email, username, balance]
-    data_sources: [plus_user, plus_account]
+    data_sources: [iam_user, plus_account]
   - route: /admin/user
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
     interface: UserBalanceAdjustmentInput
@@ -1911,12 +2107,12 @@ frontend_models:
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
     interface: UserListItem
     fields: [id, email, username, role, group, balance, status, lastActive, lastUsed, createdAt]
-    data_sources: [plus_user, plus_account, plus_role, plus_user_role, iam_user_login_event]
+    data_sources: [iam_user, plus_account, iam_role, iam_user_role, iam_user_login_event]
   - route: /admin/user
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
     interface: UserUpdateInput
     fields: [username, group, status]
-    data_sources: [plus_user, plus_user_role]
+    data_sources: [iam_user, iam_user_role]
   - route: /apps
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/appRuntime.ts
     interface: App
@@ -1936,11 +2132,12 @@ frontend_models:
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src/accountService.ts
     interface: AccountStats
     fields: [id, name, email, isVerified, tier, organization, availableCredits, estDaysRemaining, monthlyConsumption, consumptionByService, consumptionByService.name, consumptionByService.value, consumptionByService.color, consumptionByService.percentage, invoiceSettings, invoiceSettings.orgFull, invoiceSettings.taxId, invoiceSettings.paymentMethod, invoiceSettings.invoiceType, security, security.mfaEnabled, security.qpsLimit, security.ipWhitelistCount, loginLogs, loginLogs.ip, loginLogs.location, loginLogs.device, loginLogs.time, loginLogs.status]
-    data_sources: [plus_user, plus_account, plus_organization, plus_invoice, iam_user_security_setting, iam_user_login_event, ai_usage_fact]
+    data_sources: [iam_user, plus_account, iam_organization, plus_invoice, iam_user_security_setting, iam_user_login_event, ai_usage_fact]
   - route: /console/api-keys
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
     interface: ApiKey
-    fields: [id, name, maskedKey, group, rate, quota, usedQuota, modalities, ipLimit, created, expires, status]
+    fields: [id, name, maskedKey, copyableKey, group, rate, quota, usedQuota, modalities, ipLimit, created, expires, status]
+    derived_fields: [displayName, groupName]
     data_sources: [iam_gateway_api_key, iam_gateway_api_key_group, iam_gateway_api_key_group_metric_snapshot, iam_gateway_access_policy, ai_quota_policy, ai_model_pricing, ai_pricing_plan]
   - route: /console/api-keys
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
@@ -1949,19 +2146,15 @@ frontend_models:
     data_sources: [iam_gateway_api_key_group, iam_gateway_api_key_group_metric_snapshot, ai_pricing_plan]
   - route: /console/api-keys
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
-    interface: ApiKeyPageData
-    fields: [keys, keys.id, keys.name, keys.maskedKey, keys.group, keys.rate, keys.quota, keys.usedQuota, keys.modalities, keys.ipLimit, keys.created, keys.expires, keys.status, groups]
-    data_sources: [iam_gateway_api_key, iam_gateway_api_key_group]
+    interface: CreatedApiKey
+    fields: [key, key.id, key.name, key.displayName, key.maskedKey, key.copyableKey, key.group, key.rate, key.quota, key.usedQuota, key.modalities, key.ipLimit, key.created, key.expires, key.status, rawKey]
+    derived_fields: [key.groupName]
+    data_sources: [iam_gateway_api_key]
   - route: /console/api-keys
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
     interface: CreateApiKeyInput
     fields: [name, group, quota, isUnlimitedQuota, modalities, ipLimit, expires]
     data_sources: [iam_gateway_api_key_group, iam_gateway_access_policy, ai_quota_policy]
-  - route: /console/api-keys
-    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
-    interface: CreatedApiKey
-    fields: [key, key.id, key.name, key.maskedKey, key.group, key.rate, key.quota, key.usedQuota, key.modalities, key.ipLimit, key.created, key.expires, key.status, rawKey]
-    data_sources: [iam_gateway_api_key]
   - route: /console/billing
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/billingService.ts
     interface: BillingHistoryItem
@@ -1985,7 +2178,7 @@ frontend_models:
   - route: /console/dashboard
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts
     interface: Announcement
-    fields: [id, text, time, type]
+    fields: [id, text, textI18nKey, time, timeI18nKey, type]
     data_sources: [content_announcement]
   - route: /console/dashboard
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts
@@ -2002,11 +2195,66 @@ frontend_models:
     interface: GatewayTrace
     fields: [id, time, ip, endpoint, method, status, duration, channel]
     data_sources: [ai_request_trace, ops_gateway_instance]
-  - route: /console/messages
-    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-messages/src/messagesService.ts
-    interface: Message
-    fields: [id, title, desc, content, time, type, read]
+  - route: /console/notifications
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
+    interface: NotificationItem
+    fields: [id, title, desc, content, time, type, read, showAsPopup]
     data_sources: [ops_notification_message, ops_notification_delivery]
+  - route: /console/agents
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
+    interface: AgentPolicyDocument
+    fields: []
+    data_sources: [ai_agent_version]
+  - route: /console/agents
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
+    interface: AgentCapabilities
+    fields: [memoryEnabled, mcpServerCount, skillBindingCount]
+    data_sources: [ai_agent, ai_agent_tool_binding, ai_agent_mcp_server, ai_agent_memory]
+  - route: /console/agents
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
+    interface: AgentVersion
+    fields: [id, versionNo, releaseStatus, model, systemPrompt, toolPolicy, memoryPolicy, mcpPolicy, skillPolicy, runtimePolicy, createdAt, updatedAt]
+    data_sources: [ai_agent_version]
+  - route: /console/agents
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
+    interface: AgentDefinition
+    fields: [id, ownerUserId, code, name, description, visibility, status, avatarUrl, templateSource, createdAt, updatedAt, defaultVersion, defaultVersion.id, defaultVersion.versionNo, defaultVersion.releaseStatus, defaultVersion.model, defaultVersion.systemPrompt, defaultVersion.toolPolicy, defaultVersion.memoryPolicy, defaultVersion.mcpPolicy, defaultVersion.skillPolicy, defaultVersion.runtimePolicy, defaultVersion.createdAt, defaultVersion.updatedAt, capabilities, capabilities.memoryEnabled, capabilities.mcpServerCount, capabilities.skillBindingCount]
+    data_sources: [ai_agent, ai_agent_version, ai_agent_tool_binding, ai_agent_mcp_server, ai_agent_memory]
+  - route: /console/agents
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
+    interface: AgentListQuery
+    fields: [page, pageSize, q]
+    data_sources: [ai_agent]
+  - route: /console/agents
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
+    interface: CreateAgentInput
+    fields: [name, code, description, model, systemPrompt, memoryEnabled, mcpServers, skills, executionMode]
+    data_sources: [ai_agent, ai_agent_version, ai_agent_tool_binding, ai_agent_mcp_server, ai_agent_memory]
+  - route: /admin/agents
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
+    interface: AdminAgentPolicyDocument
+    fields: []
+    data_sources: [ai_agent_version]
+  - route: /admin/agents
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
+    interface: AdminAgentCapabilities
+    fields: [memoryEnabled, mcpServerCount, skillBindingCount]
+    data_sources: [ai_agent, ai_agent_tool_binding, ai_agent_mcp_server, ai_agent_memory]
+  - route: /admin/agents
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
+    interface: AdminAgentVersion
+    fields: [id, versionNo, releaseStatus, model, systemPrompt, toolPolicy, memoryPolicy, mcpPolicy, skillPolicy, runtimePolicy, createdAt, updatedAt]
+    data_sources: [ai_agent_version]
+  - route: /admin/agents
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
+    interface: AdminAgentItem
+    fields: [id, ownerUserId, code, name, description, visibility, status, avatarUrl, templateSource, createdAt, updatedAt, defaultVersion, defaultVersion.id, defaultVersion.versionNo, defaultVersion.releaseStatus, defaultVersion.model, defaultVersion.systemPrompt, defaultVersion.toolPolicy, defaultVersion.memoryPolicy, defaultVersion.mcpPolicy, defaultVersion.skillPolicy, defaultVersion.runtimePolicy, defaultVersion.createdAt, defaultVersion.updatedAt, capabilities, capabilities.memoryEnabled, capabilities.mcpServerCount, capabilities.skillBindingCount]
+    data_sources: [ai_agent, ai_agent_version, ai_agent_tool_binding, ai_agent_mcp_server, ai_agent_memory]
+  - route: /admin/agents
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
+    interface: AdminAgentListQuery
+    fields: [q, ownerUserId, status, visibility, page, pageSize]
+    data_sources: [ai_agent]
   - route: /console/providers
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-providers/src/providerService.ts
     interface: ProviderConfig
@@ -2050,7 +2298,8 @@ frontend_models:
   - route: /console/routing
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/types.ts
     interface: Channel
-    fields: [id, name, vendor, provider, providerCode, protocol, accessType, baseUrl, apiKey, models, capabilities, isMultimodal, timeoutMs, retryPolicy, retryPolicy.maxAttempts, retryPolicy.retryableStatusCodes, retryPolicy.backoffMs, weight, status, latency, rpm, balance, errors]
+    fields: [id, name, vendor, provider, providerCode, protocol, accessType, baseUrl, apiKey, models, capabilities, isMultimodal, timeoutMs, retryPolicy, retryPolicy.maxAttempts, retryPolicy.retryableStatusCodes, retryPolicy.backoffMs, circuitBreakerPolicy, circuitBreakerPolicy.failureThreshold, weight, status, latency, rpm, balance, errors]
+    core_fields: [id, name, vendor, provider, providerCode, protocol, accessType, baseUrl, apiKey, models, capabilities, isMultimodal, weight, status, latency, rpm, balance, errors]
     data_sources: [integration_provider, integration_channel, integration_channel_model, integration_provider_account]
   - route: /console/routing
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/types.ts
@@ -2058,14 +2307,20 @@ frontend_models:
     fields: [maxAttempts, retryableStatusCodes, backoffMs]
     data_sources: [integration_provider, integration_channel, integration_channel_model, integration_provider_account]
   - route: /console/routing
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/types.ts
+    interface: RoutingCircuitBreakerPolicy
+    fields: [failureThreshold]
+    data_sources: [integration_provider, integration_channel, integration_channel_model, integration_provider_account]
+  - route: /console/routing
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts
     interface: RoutingChannelMutationInput
-    fields: [name, vendor, protocol, accessType, baseUrl, secretRef, models, capabilities, timeoutMs, retryPolicy, weight, status]
+    fields: [name, vendor, protocol, accessType, baseUrl, secretRef, models, capabilities, timeoutMs, retryPolicy, circuitBreakerPolicy, weight, status]
     data_sources: [integration_provider, integration_channel, integration_channel_model, integration_provider_account, ops_config_snapshot, ops_audit_log]
   - route: /console/routing
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts
     interface: RoutingChannelUpdateInput
-    fields: [name, vendor, protocol, accessType, baseUrl, secretRef, models, capabilities, timeoutMs, retryPolicy, weight, status]
+    fields: [name, vendor, protocol, accessType, baseUrl, secretRef, models, capabilities, timeoutMs, retryPolicy, circuitBreakerPolicy, weight, status]
+    core_fields: [name, vendor, protocol, accessType, baseUrl, secretRef, models, capabilities, weight, status]
     data_sources: [integration_provider, integration_channel, integration_channel_model, integration_provider_account, ops_config_snapshot, ops_audit_log]
   - route: /console/routing
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts
@@ -2075,7 +2330,7 @@ frontend_models:
   - route: /console/routing
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts
     interface: RoutingApiKey
-    fields: [id, name, key, status, totalUsage, createdAt]
+    fields: [id, name, displayKey, copyableKey, status, totalUsage, createdAt]
     data_sources: [iam_gateway_api_key, ai_usage_fact]
   - route: /console/routing
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts
@@ -2217,7 +2472,7 @@ frontend_models:
   - route: /playground
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundTypes.ts
     interface: PlaygroundHistoryItem
-    fields: [id, date, prompt, type, modelInfo, url, images, videos, activeIndex, status, createdAt, updatedAt]
+    fields: [id, date, prompt, type, modelInfo, modelCatalogKey, url, images, videos, aspectRatio, durationSeconds, activeIndex, status, createdAt, updatedAt]
     data_sources: [ai_generation_session, ai_generation_job, ai_generation_asset, ai_generation_asset_action]
   - route: /sdk-reference
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/data/sdkData.ts
@@ -2389,7 +2644,7 @@ frontend_operations:
     request_id_header: true
     request_schema:
       name: AdminAnnouncementCreateRequest
-      required: [title, target, status, content]
+      required: [title, target, status, showAsPopup, content]
       properties:
         title:
           type: string
@@ -2404,6 +2659,9 @@ frontend_operations:
           type: string
           enum: [published, draft]
           description: Publication state for the announcement.
+        showAsPopup:
+          type: boolean
+          description: Whether eligible users should see this announcement as a popup when the frontend loads.
         content:
           type: string
           minLength: 1
@@ -2442,6 +2700,9 @@ frontend_operations:
           type: string
           enum: [published, draft]
           description: Optional announcement publication state update.
+        showAsPopup:
+          type: boolean
+          description: Optional popup-display toggle update.
         content:
           type: string
           minLength: 1
@@ -2492,7 +2753,7 @@ frontend_operations:
     request_id_header: true
     request_schema:
       name: AdminChannelCreateRequest
-      required: [name, vendor, secretRef, models]
+      required: [name, vendor, apiKey, models]
       properties:
         name:
           type: string
@@ -2514,12 +2775,17 @@ frontend_operations:
         baseUrl:
           type: string
           maxLength: 512
+        apiKey:
+          type: string
+          minLength: 1
+          maxLength: 4096
+          description: Plaintext provider API key accepted only on create/update input. Backend encrypts it into integration_provider_account.auth_config and never returns it.
         secretRef:
           type: string
           minLength: 1
           maxLength: 256
           pattern: '^(vault|secret)://[^\\s]+$'
-          description: Vault/KMS secret reference. Plaintext credential fields are forbidden.
+          description: Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead.
         models:
           type: array
           minItems: 1
@@ -2565,6 +2831,7 @@ frontend_operations:
               type: integer
               minimum: 0
               maximum: 2000
+        circuitBreakerPolicy: *provider_circuit_breaker_policy_schema
         weight:
           type: integer
           format: int64
@@ -2619,12 +2886,17 @@ frontend_operations:
           type: string
           maxLength: 512
           nullable: true
+        apiKey:
+          type: string
+          minLength: 1
+          maxLength: 4096
+          description: Plaintext provider API key accepted only on create/update input. Backend encrypts it into integration_provider_account.auth_config and never returns it.
         secretRef:
           type: string
           minLength: 1
           maxLength: 256
           pattern: '^(vault|secret)://[^\\s]+$'
-          description: Vault/KMS secret reference. Plaintext credential fields are forbidden.
+          description: Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead.
         models:
           type: array
           maxItems: 200
@@ -2671,6 +2943,9 @@ frontend_operations:
               type: integer
               minimum: 0
               maximum: 2000
+        circuitBreakerPolicy:
+          <<: *provider_circuit_breaker_policy_schema
+          nullable: true
         weight:
           type: integer
           format: int64
@@ -2717,7 +2992,7 @@ frontend_operations:
         latency: { type: string }
         item:
           <<: *admin_channel_item
-          description: Persisted channel snapshot returned after the provider health probe. Secret refs and tokens are not returned.
+          description: Persisted channel snapshot returned after the provider health probe. Secret references may be returned for credential lookup; plaintext tokens are never returned.
   - route: /admin/channel
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
     operation: fetchProviderSecrets
@@ -3574,6 +3849,49 @@ frontend_operations:
           items:
             <<: *admin_ai_model_item
           description: AI model catalog snapshots returned by the backend.
+  - route: /admin/model
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+    operation: fetchInitializedCatalog
+    kind: action
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/ai/models/refresh
+    openapi_exposed: false
+    read_sources: [ai_model_vendor, ai_model, ai_model_capability, ai_model_pricing, ai_model_rank_snapshot, ai_pricing_import_snapshot]
+    write_tables: [ai_model_vendor, ai_model, ai_model_capability, ai_model_pricing, ai_pricing_import_snapshot, ops_audit_log]
+    request_id_header: true
+    request_schema:
+      name: AdminModelCatalogInitializationRequest
+      required: []
+      properties:
+        source:
+          type: string
+          enum: [sdkwork_models]
+          description: Frontend initialization uses the bundled sdkwork-models catalog source when persisted lists are empty.
+        mode:
+          type: string
+          enum: [official_refresh]
+          description: Empty catalog initialization performs the same official refresh used by the manual sync action.
+        force:
+          type: boolean
+          description: Refresh is forced so an empty persisted catalog is populated immediately.
+    response_schema:
+      name: InitializedModelCatalog
+      required: [initialized, vendors, models]
+      properties:
+        initialized:
+          type: boolean
+          description: True when the service had to refresh an empty persisted model catalog before returning data.
+        vendors:
+          type: array
+          items:
+            <<: *admin_model_vendor_item
+          description: Model vendor snapshots after optional initialization.
+        models:
+          type: array
+          items:
+            <<: *admin_ai_model_item
+          description: AI model snapshots after optional initialization.
   - route: /admin/model
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
     operation: fetchModelRankings
@@ -4864,6 +5182,90 @@ frontend_operations:
           description: Persisted skill category snapshot returned by the backend.
   - route: /admin/skill
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+    operation: updateSkillCategory
+    kind: update
+    api_surface: backend
+    api_method: PUT
+    api_path: /backend/v3/api/ecosystem/skills/categories/{categoryId}
+    read_sources: [plus_category]
+    write_tables: [plus_category, ops_audit_log]
+    request_id_header: true
+    request_schema:
+      name: AdminSkillCategoryUpdateRequest
+      required: []
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 255
+          description: Skill category display name.
+        description:
+          type: string
+          nullable: true
+          maxLength: 512
+          description: Optional category description.
+        code:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 128
+          pattern: "^[A-Za-z0-9_-]+$"
+          description: Optional stable category code.
+        icon:
+          type: string
+          nullable: true
+          maxLength: 255
+          description: Optional icon URL or asset path.
+        sortWeight:
+          type: integer
+          format: int32
+          minimum: -1000000
+          maximum: 1000000
+        parentId:
+          type: string
+          nullable: true
+          maxLength: 128
+        path:
+          type: string
+          nullable: true
+          maxLength: 1024
+          pattern: "^/"
+        visible:
+          type: boolean
+        status:
+          type: integer
+          format: int32
+        type:
+          type: integer
+          format: int32
+          enum: [19, 20]
+    response_schema:
+      name: AdminSkillCategoryMutationResponse
+      required: [item]
+      properties:
+        item:
+          <<: *admin_skill_category_item
+          description: Updated skill category snapshot returned by the backend.
+  - route: /admin/skill
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+    operation: deleteSkillCategory
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/ecosystem/skills/categories/{categoryId}
+    read_sources: [plus_category, plus_agent_skill_package, plus_agent_skill]
+    write_tables: [plus_category, ops_audit_log]
+    request_id_header: true
+    request_body_required: false
+    response_schema:
+      name: AdminSkillCategoryDeleteResponse
+      required: [deleted]
+      properties:
+        deleted:
+          type: boolean
+          description: Whether the skill category was deleted.
+  - route: /admin/skill
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
     operation: fetchSkillPackages
     kind: read
     api_surface: backend
@@ -5971,7 +6373,7 @@ frontend_operations:
     api_surface: backend
     api_method: GET
     api_path: /backend/v3/api/iam/users
-    read_sources: [plus_user, plus_account, plus_role, plus_user_role, iam_user_login_event]
+    read_sources: [iam_user, plus_account, iam_role, iam_user_role, iam_user_login_event]
     query_parameters: []
     response_schema:
       name: AdminUsersResponse
@@ -5987,7 +6389,7 @@ frontend_operations:
     api_surface: backend
     api_method: GET
     api_path: /backend/v3/api/iam/api_keys
-    read_sources: [iam_gateway_api_key, plus_api_key]
+    read_sources: [iam_gateway_api_key]
     query_parameters: []
     response_schema: *admin_api_keys_map_response
   - route: /admin/user
@@ -5997,8 +6399,8 @@ frontend_operations:
     api_surface: backend
     api_method: POST
     api_path: /backend/v3/api/user
-    read_sources: [plus_user, plus_role, plus_user_role]
-    write_tables: [plus_user, plus_account, plus_user_role, ops_audit_log]
+    read_sources: [iam_user, iam_role, iam_user_role]
+    write_tables: [iam_user, plus_account, iam_user_role, ops_audit_log]
     request_id_header: true
     request_schema:
       name: AdminUserCreateRequest
@@ -6035,7 +6437,7 @@ frontend_operations:
     api_method: POST
     api_path: /backend/v3/api/billing/users/{userId}/balance_adjustments
     operation_id: users.balanceAdjustments.create
-    read_sources: [plus_user, plus_account, plus_account_history, plus_vip_point_change, plus_refund]
+    read_sources: [iam_user, plus_account, plus_account_history, plus_vip_point_change, plus_refund]
     write_tables: [plus_account, plus_account_history, plus_vip_point_change, plus_refund, ops_audit_log]
     request_id_header: true
     request_schema:
@@ -6065,8 +6467,8 @@ frontend_operations:
     api_surface: backend
     api_method: PUT
     api_path: /backend/v3/api/user
-    read_sources: [plus_user, plus_role, plus_user_role]
-    write_tables: [plus_user, plus_user_role, ops_audit_log]
+    read_sources: [iam_user, iam_role, iam_user_role]
+    write_tables: [iam_user, iam_user_role, ops_audit_log]
     request_id_header: true
     request_schema:
       name: AdminUserUpdateRequest
@@ -6103,8 +6505,8 @@ frontend_operations:
     api_surface: backend
     api_method: POST
     api_path: /backend/v3/api/apikey
-    read_sources: [plus_user, iam_gateway_api_key, plus_api_key]
-    write_tables: [iam_gateway_api_key, plus_api_key, ops_audit_log]
+    read_sources: [iam_user, iam_gateway_api_key]
+    write_tables: [iam_gateway_api_key, ops_audit_log]
     idempotency_required: true
     request_schema:
       name: AdminApiKeyCreateRequest
@@ -6130,7 +6532,7 @@ frontend_operations:
           type: string
           minLength: 1
           maxLength: 256
-          description: One-time plaintext API key material returned immediately after creation.
+          description: Full plaintext API key material returned immediately after creation.
   - route: /admin/user
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
     operation: deleteApiKey
@@ -6138,8 +6540,8 @@ frontend_operations:
     api_surface: backend
     api_method: DELETE
     api_path: /backend/v3/api/apikey/{apiKeyId}
-    read_sources: [plus_user, iam_gateway_api_key, plus_api_key]
-    write_tables: [iam_gateway_api_key, plus_api_key, ops_audit_log]
+    read_sources: [iam_user, iam_gateway_api_key]
+    write_tables: [iam_gateway_api_key, ops_audit_log]
     response_schema: *admin_delete_response
   - route: /apps
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/appService.ts
@@ -6597,7 +6999,7 @@ frontend_operations:
     api_method: GET
     api_path: /app/v3/api/billing/account/summary
     operation_id: account.summary.retrieve
-    read_sources: [plus_user, plus_account, plus_organization, plus_invoice, iam_user_security_setting, iam_user_login_event, ai_usage_fact]
+    read_sources: [iam_user, plus_account, iam_organization, plus_invoice, iam_user_security_setting, iam_user_login_event, ai_usage_fact]
     query_parameters: []
     response_schema:
       name: AccountSummaryResponse
@@ -6681,8 +7083,25 @@ frontend_operations:
           type: array
           items:
             <<: *app_api_key_item
-            description: API key metadata with masked key material.
+            description: API key metadata with masked key material and authenticated owner copyable key material.
         groups:
+          type: array
+          items: *app_api_key_group
+  - route: /console/api-keys
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+    operation: fetchGroups
+    operation_id: apiKeyGroups.list
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/iam/api_key_groups
+    read_sources: [iam_gateway_api_key_group, iam_gateway_api_key_group_metric_snapshot, ai_pricing_plan]
+    query_parameters: []
+    response_schema:
+      name: AppApiKeyGroupListResponse
+      required: [items]
+      properties:
+        items:
           type: array
           items: *app_api_key_group
   - route: /console/api-keys
@@ -6694,7 +7113,7 @@ frontend_operations:
     api_path: /app/v3/api/iam/api_keys
     idempotency_required: true
     read_sources: [iam_gateway_api_key_group]
-    write_tables: [iam_gateway_api_key, iam_gateway_access_policy, ai_quota_policy, ops_audit_log]
+    write_tables: [iam_gateway_api_key_group, iam_gateway_api_key, iam_gateway_access_policy, ai_quota_policy, ops_audit_log]
     request_schema:
       name: CreateApiKeyRequest
       required: [name, group]
@@ -6735,11 +7154,46 @@ frontend_operations:
       properties:
         item:
           <<: *app_api_key_item
-          description: Created API key metadata with masked key material.
+          description: Created API key metadata. Authenticated owner management responses include copyableKey matching rawKey.
         rawKey:
           type: string
           minLength: 1
-          description: One-time raw API key secret. It is never returned by list/read APIs.
+          description: Full raw API key secret returned by create responses. Authenticated owner management list and update responses also expose this value as item.copyableKey for console copy actions.
+  - route: /console/api-keys
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+    operation: updateKey
+    operation_id: apiKeys.update
+    kind: update
+    api_surface: app
+    api_method: PATCH
+    api_path: /app/v3/api/iam/api_keys/{apiKeyId}
+    read_sources: [iam_gateway_api_key, iam_gateway_api_key_group, iam_gateway_access_policy, ai_quota_policy]
+    write_tables: [iam_gateway_api_key, iam_gateway_access_policy, ai_quota_policy, ops_audit_log]
+    request_id_header: true
+    request_schema: *app_api_key_update_request
+    response_schema:
+      name: UpdateApiKeyResponse
+      required: [item]
+      properties:
+        item:
+          <<: *app_api_key_item
+          description: Updated API key metadata. Authenticated owner management responses include copyableKey for console copy actions.
+  - route: /console/api-keys
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+    operation: deleteKey
+    operation_id: apiKeys.delete
+    kind: delete
+    api_surface: app
+    api_method: DELETE
+    api_path: /app/v3/api/iam/api_keys/{apiKeyId}
+    read_sources: [iam_gateway_api_key]
+    write_tables: [iam_gateway_api_key, ops_audit_log]
+    response_schema:
+      name: DeleteApiKeyResponse
+      required: [id, deleted]
+      properties:
+        id: { type: string, minLength: 1, maxLength: 128 }
+        deleted: { type: boolean }
   - route: /console/billing
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/billingService.ts
     operation: fetchRedeemHistory
@@ -6832,11 +7286,13 @@ frontend_operations:
           type: object
           additionalProperties: false
           name: DashboardOverviewSummary
-          required: [availableCredits, usedCredits, requestCount, errorCount, imageRequests, videoRequests, audioRequests, musicRequests, rpm, tpm]
+          required: [availableCredits, usedCredits, requestCount, totalUsedCredits, totalRequestCount, errorCount, imageRequests, videoRequests, audioRequests, musicRequests, rpm, tpm]
           properties:
             availableCredits: { type: number }
             usedCredits: { type: number }
             requestCount: { type: integer, format: int64 }
+            totalUsedCredits: { type: number }
+            totalRequestCount: { type: integer, format: int64 }
             errorCount: { type: integer, format: int64 }
             imageRequests: { type: integer, format: int64 }
             videoRequests: { type: integer, format: int64 }
@@ -6913,6 +7369,18 @@ frontend_operations:
               text: { type: string }
               time: { type: string }
               type: { type: string, enum: [success, info, warning, error, unknown] }
+        configurationDomains:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            name: DashboardConfigurationDomain
+            required: [id, name, domain, remark]
+            properties:
+              id: { type: string }
+              name: { type: string }
+              domain: { type: string }
+              remark: { type: string }
         warnings:
           type: array
           items: { type: string }
@@ -6949,9 +7417,9 @@ frontend_operations:
                 type: string
                 description: HTTP latency display value, for example 128ms.
               channel: { type: string }
-  - route: /console/messages
-    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-messages/src/messagesService.ts
-    operation: fetchMessages
+  - route: /console/notifications
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
+    operation: fetchNotifications
     kind: read
     api_surface: app
     api_method: GET
@@ -6959,7 +7427,7 @@ frontend_operations:
     read_sources: [ops_notification_message, ops_notification_delivery]
     query_parameters: []
     response_schema:
-      name: MessagesResponse
+      name: NotificationsResponse
       required: [items]
       properties:
         items:
@@ -6967,7 +7435,7 @@ frontend_operations:
           items:
             type: object
             additionalProperties: false
-            name: Message
+            name: NotificationItem
             required: [id, title, desc, content, time, type, read]
             properties:
               id: { type: string }
@@ -6979,6 +7447,9 @@ frontend_operations:
               time: { type: string }
               type: { type: string, enum: [info, billing, warning, alert] }
               read: { type: boolean }
+              showAsPopup:
+                type: boolean
+                description: Whether this notification should be displayed as a modal popup when the frontend loads.
   - route: /console/providers
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-providers/src/providerService.ts
     operation: fetchProviders
@@ -8081,6 +8552,7 @@ frontend_operations:
               isMultimodal: { type: boolean }
               timeoutMs: { type: integer, format: int64, minimum: 1, maximum: 600000 }
               retryPolicy: *provider_retry_policy_schema
+              circuitBreakerPolicy: *provider_circuit_breaker_policy_schema
               weight: { type: integer, format: int64 }
               status: { type: string, enum: [active, disabled, error] }
               latency: { type: string }
@@ -8103,13 +8575,19 @@ frontend_operations:
         items:
           type: array
           items:
+            name: RoutingApiKeyItem
             type: object
             additionalProperties: false
-            required: [id, name, key, status, totalUsage, createdAt]
+            required: [id, name, displayKey, status, totalUsage, createdAt]
             properties:
               id: { type: string }
               name: { type: string }
-              key: { type: string }
+              displayKey:
+                type: string
+                description: Masked API key display value. UI must never copy this field as secret material.
+              copyableKey:
+                type: string
+                description: Full plaintext owner API key returned only for authenticated console owner management reads.
               status: { type: string, enum: [enabled, disabled] }
               totalUsage: { type: string }
               createdAt: { type: string }
@@ -8177,6 +8655,7 @@ frontend_operations:
           maximum: 600000
           description: Per-channel upstream response timeout in milliseconds.
         retryPolicy: *provider_retry_policy_schema
+        circuitBreakerPolicy: *provider_circuit_breaker_policy_schema
         weight:
           type: integer
           format: int64
@@ -8213,6 +8692,7 @@ frontend_operations:
             isMultimodal: { type: boolean }
             timeoutMs: { type: integer, format: int64, minimum: 1, maximum: 600000 }
             retryPolicy: *provider_retry_policy_schema
+            circuitBreakerPolicy: *provider_circuit_breaker_policy_schema
             weight: { type: integer, format: int64 }
             status: { type: string, enum: [active, disabled, error] }
             latency: { type: string }
@@ -8297,6 +8777,9 @@ frontend_operations:
               uniqueItems: true
               items: { type: integer, enum: [408, 409, 425, 429, 500, 502, 503, 504] }
             backoffMs: { type: integer, minimum: 0, maximum: 2000 }
+        circuitBreakerPolicy:
+          <<: *provider_circuit_breaker_policy_schema
+          nullable: true
         weight:
           type: integer
           format: int64
@@ -8333,6 +8816,7 @@ frontend_operations:
             isMultimodal: { type: boolean }
             timeoutMs: { type: integer, format: int64, minimum: 1, maximum: 600000 }
             retryPolicy: *provider_retry_policy_schema
+            circuitBreakerPolicy: *provider_circuit_breaker_policy_schema
             weight: { type: integer, format: int64 }
             status: { type: string, enum: [active, disabled, error] }
             latency: { type: string }
@@ -8396,6 +8880,7 @@ frontend_operations:
             isMultimodal: { type: boolean }
             timeoutMs: { type: integer, format: int64, minimum: 1, maximum: 600000 }
             retryPolicy: *provider_retry_policy_schema
+            circuitBreakerPolicy: *provider_circuit_breaker_policy_schema
             weight: { type: integer, format: int64 }
             status: { type: string, enum: [active, disabled, error] }
             latency: { type: string }
@@ -8445,6 +8930,7 @@ frontend_operations:
             isMultimodal: { type: boolean }
             timeoutMs: { type: integer, format: int64, minimum: 1, maximum: 600000 }
             retryPolicy: *provider_retry_policy_schema
+            circuitBreakerPolicy: *provider_circuit_breaker_policy_schema
             weight: { type: integer, format: int64 }
             status: { type: string, enum: [active, disabled, error] }
             latency: { type: string }
@@ -8963,6 +9449,52 @@ frontend_operations:
             $ref: '#/components/schemas/IamUserResponse'
   - route: /auth/login
     source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+    operation: confirmLoginQrCode
+    operation_id: loginQrCodes.confirm
+    kind: create
+    api_surface: app
+    api_method: POST
+    api_path: /app/v3/api/auth/qr_login_codes/confirm
+    sdk_domain: auth
+    summary: Confirm QR login code
+    description: Confirms a QR login challenge from an already authenticated SDKWork session.
+    read_sources: [iam_session, iam_user, iam_security_event]
+    write_tables: [iam_security_event]
+    request_schema:
+      name: IamLoginQrCodeConfirmRequest
+      required: [qrKey]
+      properties:
+        qrKey: { type: string, minLength: 1, maxLength: 128 }
+    response_schema:
+      name: IamLoginQrCodeStatusResponse
+      schema:
+        type: object
+        additionalProperties: false
+        required: [status]
+        properties:
+          status: { type: string, enum: [pending, scanned, confirmed, expired] }
+          session:
+            $ref: '#/components/schemas/IamSessionResponse'
+          token:
+            $ref: '#/components/schemas/IamSessionResponse'
+          userInfo:
+            $ref: '#/components/schemas/IamUserResponse'
+  - route: /auth/login
+    source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
+    operation: fetchClawRouterAuthVerificationPolicy
+    operation_id: verificationPolicy.retrieve
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/auth/verification_policy
+    sdk_domain: auth
+    summary: Retrieve public IAM verification policy
+    description: Returns the public email and phone verification policy flags consumed by appbase IAM.
+    read_sources: [ops_config_snapshot]
+    query_parameters: []
+    response_schema: *auth_verification_policy
+  - route: /auth/login
+    source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
     operation: bootstrap
     operation_id: sessions.current.retrieve
     kind: read
@@ -9239,7 +9771,7 @@ frontend_operations:
   - route: /playground
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts
     operation: fetchGenerationHistory
-    operation_id: generations.list
+    operation_id: generation.list
     kind: read
     api_surface: app
     api_method: GET
@@ -9253,36 +9785,331 @@ frontend_operations:
         items:
           type: array
           maxItems: 100
+          items: *generation_history_item
+  - route: /playground
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts
+    operation: fetchSessions
+    operation_id: chat.completions.list
+    kind: read
+    api_surface: openai_v1
+    api_method: GET
+    api_path: /v1/chat/completions
+    sdk_domain: chat
+    summary: Fetch stored Playground chat sessions
+    description: Lists stored OpenAI-compatible chat completions for the selected user API key and maps them into Playground session summaries.
+    read_sources: [ai_request_trace, ai_usage_fact]
+    query_parameters:
+      - name: limit
+        schema: { type: integer, minimum: 1, maximum: 100 }
+      - name: order
+        schema: { type: string, enum: [asc, desc] }
+  - route: /playground
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts
+    operation: fetchMessages
+    operation_id: chat.completions.messages.list
+    kind: read
+    api_surface: openai_v1
+    api_method: GET
+    api_path: /v1/chat/completions/{completionId}/messages
+    sdk_domain: chat
+    summary: Fetch stored Playground chat messages
+    description: Lists messages for one stored OpenAI-compatible chat completion using the selected user API key.
+    read_sources: [ai_request_trace, ai_usage_fact]
+    path_params: [completionId]
+    query_parameters:
+      - name: limit
+        schema: { type: integer, minimum: 1, maximum: 100 }
+      - name: order
+        schema: { type: string, enum: [asc, desc] }
+  - route: /playground
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts
+    operation: sendMessage
+    operation_id: chat.completions.create
+    kind: create
+    api_surface: openai_v1
+    api_method: POST
+    api_path: /v1/chat/completions
+    sdk_domain: chat
+    summary: Send Playground chat message
+    description: Creates a stored OpenAI-compatible chat completion through the generated AI SDK and returns a Playground assistant message plus session summary.
+    read_sources: [ai_request_trace, ai_usage_fact]
+    write_tables: [ai_request_trace, ai_usage_fact]
+    request_schema:
+      name: PlaygroundChatCompletionCreateRequest
+      required: [model, messages, store]
+      properties:
+        model: { type: string, minLength: 1, maxLength: 256 }
+        messages:
+          type: array
+          maxItems: 256
           items:
-            name: GenerationHistoryItem
+            name: PlaygroundChatCompletionMessageInput
             type: object
             additionalProperties: false
-            required: [id, date, prompt, type, images, videos]
+            required: [role, content]
+            properties:
+              role: { type: string, enum: [user, assistant] }
+              content: { type: string, minLength: 1, maxLength: 32768 }
+        store: { type: boolean }
+        metadata:
+          type: object
+          additionalProperties: true
+  - route: /console/agents
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
+    operation: listAgents
+    operation_id: agentDefinitions.list
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/agents
+    sdk_domain: agents
+    summary: List user agents
+    description: Returns agent definitions owned by the current app user, including the active default version and derived capability summary.
+    read_sources: [ai_agent, ai_agent_version, ai_agent_tool_binding, ai_agent_mcp_server, ai_agent_memory]
+    query_parameters:
+      - name: page
+        schema: { type: integer, format: int64, minimum: 1 }
+      - name: page_size
+        schema: { type: integer, format: int64, minimum: 1, maximum: 100 }
+      - name: q
+        schema: { type: string, maxLength: 128 }
+    response_schema:
+      name: AgentListResponse
+      required: [items]
+      properties:
+        items:
+          type: array
+          maxItems: 100
+          items: *agent_item
+  - route: /console/agents
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
+    operation: createAgent
+    operation_id: agentDefinitions.create
+    kind: create
+    api_surface: app
+    api_method: POST
+    api_path: /app/v3/api/agents
+    sdk_domain: agents
+    summary: Create user agent
+    description: Creates a private user-owned agent with a default draft version and policy documents for model, tools, memory, MCP, skills, and runtime execution.
+    read_sources: [ai_agent, ai_agent_version]
+    write_tables: [ai_agent, ai_agent_version]
+    idempotency_required: true
+    request_schema: *agent_create_request
+    response_schema: *agent_item_response
+  - route: /console/agents
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
+    operation: retrieveAgent
+    operation_id: agentDefinitions.retrieve
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/agents/{agentId}
+    sdk_domain: agents
+    summary: Retrieve user agent
+    description: Returns one user-owned agent by numeric id, uuid, or normalized code, including its active default version.
+    read_sources: [ai_agent, ai_agent_version, ai_agent_tool_binding, ai_agent_mcp_server, ai_agent_memory]
+    query_parameters: []
+    response_schema: *agent_item
+  - route: /admin/agents
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
+    operation: listAgents
+    operation_id: agentDefinitions.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/agents
+    sdk_domain: agents
+    tag: agents
+    summary: List managed agents
+    description: Returns organization-scoped agent definitions for admin governance, including active default version and derived capability summary.
+    read_sources: [ai_agent, ai_agent_version, ai_agent_tool_binding, ai_agent_mcp_server, ai_agent_memory]
+    query_parameters:
+      - name: q
+        schema: { type: string, maxLength: 128 }
+      - name: owner_user_id
+        schema: { type: integer, format: int64, minimum: 1 }
+      - name: status
+        schema: { type: string, enum: [active, disabled] }
+      - name: visibility
+        schema: { type: string, enum: [private, organization, public] }
+      - name: page
+        schema: { type: integer, format: int64, minimum: 1 }
+      - name: page_size
+        schema: { type: integer, format: int64, minimum: 1, maximum: 100 }
+    response_schema:
+      name: AdminAgentListResponse
+      required: [items]
+      properties:
+        items:
+          type: array
+          maxItems: 100
+          items: *admin_agent_item
+  - route: /admin/agents
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
+    operation: retrieveAgent
+    operation_id: agentDefinitions.retrieve
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/agents/{agentId}
+    sdk_domain: agents
+    tag: agents
+    summary: Retrieve managed agent
+    description: Returns one organization-scoped agent by numeric id, uuid, or normalized code for admin governance.
+    read_sources: [ai_agent, ai_agent_version, ai_agent_tool_binding, ai_agent_mcp_server, ai_agent_memory]
+    path_params: [agentId]
+    query_parameters: []
+    response_schema: *admin_agent_item
+  - route: /playground
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts
+    operation: runAgentGeneration
+    operation_id: generation.agent.runs.create
+    kind: create
+    api_surface: app
+    api_method: POST
+    api_path: /app/v3/api/ai/generation/agents/runs
+    sdk_domain: ai
+    summary: Create generation agent run
+    description: Classifies a free-form generation prompt into a target modality and creates an auditable generation agent run with step and metering metadata for the active app user.
+    read_sources: [ai_agent, ai_agent_version, ai_agent_tool_binding, ai_agent_mcp_server, ai_model_vendor, ai_model, ai_model_capability]
+    write_tables: [ai_agent_run, ai_agent_run_step, ai_generation_job, ai_usage_fact]
+    request_schema:
+      name: GenerationAgentRunCreateRequest
+      required: [prompt]
+      properties:
+        prompt: { type: string, minLength: 1, maxLength: 4096 }
+        targetType: { type: string, enum: [image, video, music, audio, sfx] }
+        selectedModel: { type: string, maxLength: 128 }
+        generationConfig:
+          name: GenerationAgentGenerationConfig
+          type: object
+          additionalProperties: false
+          properties:
+            imageCount: { type: integer, minimum: 1, maximum: 8 }
+            aspectRatio: { type: string, enum: ["1:1", "16:9", "9:16"] }
+            durationSeconds: { type: integer, minimum: 1, maximum: 600 }
+            quality: { type: string, enum: [standard, high] }
+        referenceImages:
+          type: array
+          maxItems: 4
+          items:
+            name: GenerationAgentReferenceImageInput
+            type: object
+            additionalProperties: false
+            required: [name]
+            properties:
+              name: { type: string, minLength: 1, maxLength: 256 }
+              mimeType: { type: string, maxLength: 128 }
+              sizeBytes: { type: integer, minimum: 0 }
+              dataUrl: { type: string, maxLength: 10485760 }
+              url: { type: string, maxLength: 2048 }
+              assetId: { type: string, maxLength: 128 }
+    response_schema:
+      name: GenerationAgentRunCreateResponse
+      required: [agent, item, meteringEvents, run, steps, targetType, status, usage]
+      properties:
+        agent:
+          name: GenerationAgentSnapshot
+          type: object
+          additionalProperties: false
+          required: [id, versionId, name]
+          properties:
+            id: { type: string, minLength: 1, maxLength: 128 }
+            versionId: { type: string, minLength: 1, maxLength: 128 }
+            name: { type: string, minLength: 1, maxLength: 128 }
+            model: { type: [string, "null"], maxLength: 128 }
+        item: *generation_history_item
+        meteringEvents:
+          type: array
+          maxItems: 64
+          items:
+            name: GenerationAgentMeteringEvent
+            type: object
+            additionalProperties: false
+            required: [type, quantity, usageFactMetadata]
+            properties:
+              type: { type: string, enum: [token, image, video, audio, tool, mcp, skill, storage, network] }
+              quantity: { type: string, minLength: 1, maxLength: 64 }
+              usageFactMetadata:
+                name: GenerationAgentUsageFactMetadata
+                type: object
+                additionalProperties: false
+                required: [agentId, agentVersionId, runId, stepId, userId, meteringSource]
+                properties:
+                  agentId: { type: string, minLength: 1, maxLength: 128 }
+                  agentVersionId: { type: string, minLength: 1, maxLength: 128 }
+                  runId: { type: string, minLength: 1, maxLength: 128 }
+                  stepId: { type: string, minLength: 1, maxLength: 128 }
+                  userId: { type: string, minLength: 1, maxLength: 128 }
+                  skillId: { type: [string, "null"], maxLength: 128 }
+                  mcpServerId: { type: [string, "null"], maxLength: 128 }
+                  toolId: { type: [string, "null"], maxLength: 128 }
+                  meteringSource: { type: string, enum: [agent-runtime] }
+        run:
+          name: GenerationAgentRunSnapshot
+          type: object
+          additionalProperties: false
+          required: [id, requestId, source, status]
+          properties:
+            id: { type: string, minLength: 1, maxLength: 128 }
+            requestId: { type: string, minLength: 1, maxLength: 128 }
+            source: { type: string, enum: [generation-agent] }
+            status: { type: string, enum: [queued, planning, running, waiting_for_tool, succeeded, failed, cancelled] }
+        steps:
+          type: array
+          maxItems: 128
+          items:
+            name: GenerationAgentRunStepSnapshot
+            type: object
+            additionalProperties: false
+            required: [id, index, type, status, title]
             properties:
               id: { type: string, minLength: 1, maxLength: 128 }
-              date: { type: string, minLength: 1, maxLength: 32 }
-              prompt: { type: string, maxLength: 4096 }
-              type: { type: string, enum: [image, images, video, music, audio, sfx] }
-              modelInfo: { type: string, maxLength: 256 }
-              url: { type: string, maxLength: 2048 }
-              images:
-                type: array
-                maxItems: 20
-                items: { type: string, maxLength: 2048 }
-              videos:
-                type: array
-                maxItems: 20
-                items:
-                  name: GenerationHistoryMediaItem
-                  type: object
-                  additionalProperties: false
-                  required: [url]
-                  properties:
-                    url: { type: string, minLength: 1, maxLength: 2048 }
-                    thumb: { type: string, maxLength: 2048 }
-              status: { type: string, enum: [pending, processing, completed, failed, cancelled] }
-              createdAt: { type: string, maxLength: 64 }
-              updatedAt: { type: string, maxLength: 64 }
+              index: { type: integer, minimum: 0 }
+              type: { type: string, enum: [input, memory_retrieval, model_call, skill_call, mcp_tool_call, media_generation, metering, output] }
+              status: { type: string, enum: [queued, running, succeeded, failed, skipped] }
+              title: { type: string, minLength: 1, maxLength: 128 }
+        targetType: { type: string, enum: [image, video, music, audio, sfx] }
+        status: { type: string, enum: [pending, processing, completed, failed, cancelled] }
+        usage:
+          name: GenerationAgentUsageSummary
+          type: object
+          additionalProperties: false
+          required: [promptTokens, cachedTokens, completionTokens, totalTokens, imageCount, videoSeconds, events]
+          properties:
+            promptTokens: { type: integer, minimum: 0 }
+            cachedTokens: { type: integer, minimum: 0 }
+            completionTokens: { type: integer, minimum: 0 }
+            totalTokens: { type: integer, minimum: 0 }
+            imageCount: { type: integer, minimum: 0 }
+            videoSeconds: { type: string, minLength: 1, maxLength: 64 }
+            events:
+              type: array
+              maxItems: 64
+              items:
+                name: GenerationAgentMeteringEvent
+                type: object
+                additionalProperties: false
+                required: [type, quantity, usageFactMetadata]
+                properties:
+                  type: { type: string, enum: [token, image, video, audio, tool, mcp, skill, storage, network] }
+                  quantity: { type: string, minLength: 1, maxLength: 64 }
+                  usageFactMetadata:
+                    name: GenerationAgentUsageFactMetadata
+                    type: object
+                    additionalProperties: false
+                    required: [agentId, agentVersionId, runId, stepId, userId, meteringSource]
+                    properties:
+                      agentId: { type: string, minLength: 1, maxLength: 128 }
+                      agentVersionId: { type: string, minLength: 1, maxLength: 128 }
+                      runId: { type: string, minLength: 1, maxLength: 128 }
+                      stepId: { type: string, minLength: 1, maxLength: 128 }
+                      userId: { type: string, minLength: 1, maxLength: 128 }
+                      skillId: { type: [string, "null"], maxLength: 128 }
+                      mcpServerId: { type: [string, "null"], maxLength: 128 }
+                      toolId: { type: [string, "null"], maxLength: 128 }
+                      meteringSource: { type: string, enum: [agent-runtime] }
   - route: /playground
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts
     operation: fetchModelGroups
@@ -10039,7 +10866,7 @@ routes:
       content_sdk_release: [api_system, language, install_command, import_code, init_code, example_code, github_url]
 
   - route: /playground
-    required_tables: [ai_model_vendor, ai_model, ai_model_capability, ai_model_pricing, ai_generation_session, ai_generation_job, ai_generation_asset, ai_generation_asset_action, ai_usage_fact, integration_provider]
+    required_tables: [ai_model_vendor, ai_model, ai_model_capability, ai_model_pricing, ai_generation_session, ai_generation_job, ai_generation_asset, ai_generation_asset_action, ai_request_trace, ai_usage_fact, integration_provider, ai_agent, ai_agent_version, ai_agent_tool_binding, ai_agent_mcp_server, ai_agent_run, ai_agent_run_step]
 
   - route: /forum
     required_tables: [plus_feeds, plus_comments, plus_content_vote, plus_favorite]
@@ -10127,7 +10954,7 @@ routes:
       commerce_usage_statement_item: [statement_id, modality, model_list, usage_text, request_count, token_count, asset_count, duration_seconds, cost_amount]
 
   - route: /console/account
-    required_tables: [plus_user, plus_account, plus_organization, plus_invoice, iam_user_security_setting, iam_user_login_event, ai_usage_fact]
+    required_tables: [iam_user, plus_account, iam_organization, plus_invoice, iam_user_security_setting, iam_user_login_event, ai_usage_fact]
     required_columns:
       iam_user_security_setting: [mfa_enabled, password_last_changed_at, last_login_at, last_login_ip_hash, third_party_bound_snapshot]
       iam_user_login_event: [login_result, client_ip_masked, client_ip_region, device_label, occurred_at]
@@ -10142,11 +10969,26 @@ routes:
       iam_user_preference: [language, timezone, notification_preferences]
       integration_webhook_endpoint: [target_url, event_types, retry_policy]
 
+  - route: /console/notifications
+    required_tables: [ops_notification_message, ops_notification_delivery]
+    required_columns:
+      ops_notification_message: [title, summary, content, message_type, severity, published_at]
+      ops_notification_delivery: [message_id, delivery_status, read_at, delivered_at]
+
   - route: /console/messages
     required_tables: [ops_notification_message, ops_notification_delivery]
     required_columns:
       ops_notification_message: [title, summary, content, message_type, severity, published_at]
       ops_notification_delivery: [message_id, delivery_status, read_at, delivered_at]
+
+  - route: /console/agents
+    required_tables: [ai_agent, ai_agent_version, ai_agent_tool_binding, ai_agent_mcp_server, ai_agent_memory, ai_agent_run, ai_agent_run_step]
+    required_columns:
+      ai_agent: [uuid, tenant_id, organization_id, owner_user_id, agent_code, name, visibility, status]
+      ai_agent_version: [uuid, tenant_id, organization_id, agent_id, version_no, release_status, status]
+      ai_agent_tool_binding: [uuid, tenant_id, organization_id, agent_id, binding_key, binding_type, status]
+      ai_agent_mcp_server: [uuid, tenant_id, organization_id, server_code, name, transport_type, status]
+      ai_agent_memory: [uuid, tenant_id, organization_id, owner_user_id, agent_id, memory_scope, memory_type, status]
 
   - route: /console/providers
     required_tables: [integration_provider, integration_channel, integration_channel_model, integration_provider_account, integration_proxy, ops_config_snapshot]
@@ -10155,7 +10997,16 @@ routes:
     required_tables: [ai_usage_fact, ai_request_trace, ops_metric_snapshot, system_installation_state, system_schema_migration]
 
   - route: /admin/user
-    required_tables: [plus_user, plus_account, plus_account_history, plus_vip_point_change, plus_refund, plus_role, plus_user_role, iam_gateway_api_key, plus_api_key, iam_user_login_event, ops_audit_log]
+    required_tables: [iam_user, plus_account, plus_account_history, plus_vip_point_change, plus_refund, iam_role, iam_user_role, iam_gateway_api_key, iam_user_login_event, ops_audit_log]
+
+  - route: /admin/agents
+    required_tables: [ai_agent, ai_agent_version, ai_agent_tool_binding, ai_agent_mcp_server, ai_agent_memory, ai_agent_run, ai_agent_run_step]
+    required_columns:
+      ai_agent: [uuid, tenant_id, organization_id, owner_user_id, agent_code, name, visibility, status]
+      ai_agent_version: [uuid, tenant_id, organization_id, agent_id, version_no, release_status, status]
+      ai_agent_tool_binding: [uuid, tenant_id, organization_id, agent_id, binding_key, binding_type, status]
+      ai_agent_mcp_server: [uuid, tenant_id, organization_id, server_code, name, transport_type, status]
+      ai_agent_memory: [uuid, tenant_id, organization_id, owner_user_id, agent_id, memory_scope, memory_type, status]
 
   - route: /admin/settings
     required_tables: [ops_config_snapshot, ops_audit_log]
@@ -10192,7 +11043,7 @@ routes:
     required_tables: [content_announcement, ops_audit_log]
 
   - route: /admin/marketing
-    required_tables: [plus_user, plus_coupon, plus_coupon_template, plus_user_coupon, ops_coupon_issue_batch, plus_vip_recharge, plus_vip_recharge_method, plus_vip_recharge_pack, plus_account_exchange_config, plus_invitation_code, plus_invitation_relation, ops_referral_stat_snapshot, plus_order, plus_payment, plus_product, plus_sku, ops_audit_log]
+    required_tables: [iam_user, plus_coupon, plus_coupon_template, plus_user_coupon, ops_coupon_issue_batch, plus_vip_recharge, plus_vip_recharge_method, plus_vip_recharge_pack, plus_account_exchange_config, plus_invitation_code, plus_invitation_relation, ops_referral_stat_snapshot, plus_order, plus_payment, plus_product, plus_sku, ops_audit_log]
     required_columns:
       ops_coupon_issue_batch: [coupon_id, batch_no, name, code_prefix, requested_count, generated_count, available_count, claimed_count, used_count, voided_count]
       ops_referral_stat_snapshot: [inviter_user_id, inviter_email_snapshot, invitation_code, invite_link, total_invited_count, total_revenue_amount, reward_awarded_amount]
@@ -10212,4 +11063,4 @@ routes:
       iam_gateway_risk_rule: [rule_name, target_type, target_value_masked, reason, requests_per_second, requests_per_minute, block_duration_seconds]
 
   - route: /admin/finance
-    required_tables: [plus_user, plus_account, plus_account_history, plus_vip_point_change, commerce_usage_statement, commerce_usage_settlement, plus_invoice, plus_order, plus_payment, plus_refund]
+    required_tables: [iam_user, plus_account, plus_account_history, plus_vip_point_change, commerce_usage_statement, commerce_usage_settlement, plus_invoice, plus_order, plus_payment, plus_refund]

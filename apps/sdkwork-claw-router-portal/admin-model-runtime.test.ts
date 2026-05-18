@@ -99,7 +99,9 @@ async function withBackendSdkFetch<T>(
   Object.defineProperty(globalThis, "window", {
     configurable: true,
     enumerable: true,
-    value: {},
+    value: {
+      dispatchEvent: () => true,
+    },
   });
   globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url;
@@ -593,6 +595,88 @@ test("admin model service calls generated backend SDK paths and normalizes model
       assert.equal(captured[4].headers["x-request-id"]?.startsWith("admin-model-vendor-create-"), true);
       assert.equal(captured[5].headers["x-request-id"]?.startsWith("admin-ai-model-create-"), true);
       assert.equal(captured[6].headers["x-request-id"]?.startsWith("admin-ai-model-update-"), true);
+    },
+  );
+});
+
+test("admin model service initializes empty catalog through generated backend SDK refresh", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ai/model_vendors" && method === "GET") {
+        return { items: [] };
+      }
+      if (url === "/backend/v3/api/ai/models" && method === "GET") {
+        return { items: [] };
+      }
+      if (url === "/backend/v3/api/ai/model_rankings?limit=200" && method === "GET") {
+        return { items: [] };
+      }
+      if (url === "/backend/v3/api/ai/models/refresh" && method === "POST") {
+        return {
+          synced: true,
+          source: "sdkwork_models",
+          mode: "official_refresh",
+          dryRun: false,
+          catalogVersion: "2026.05.08.1",
+          requestedCatalogVersion: null,
+          catalogRoot: null,
+          vendorCodes: ["openai"],
+          sourceHash: "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+          meterCount: 20,
+          vendorCount: 1,
+          familyCount: 1,
+          modelCount: 1,
+          capabilityCount: 1,
+          priceCount: 2,
+          rankingCount: 1,
+          acceptedCount: 27,
+          snapshotId: "snapshot-empty-init",
+          syncRunId: "sync-empty-init",
+          vendors: [
+            adminVendor({
+              id: "vendor-openai",
+              vendorCode: "openai",
+              name: "OpenAI",
+              color: "bg-indigo-500",
+              description: "Official OpenAI model vendor",
+            }),
+          ],
+          models: [
+            adminModel({
+              id: "model-openai-gpt-4o-mini",
+              vendorId: "vendor-openai",
+              vendorCode: "openai",
+              name: "gpt-4o-mini",
+            }),
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${method} ${url}`);
+    },
+    async (captured) => {
+      const catalog = await ModelService.fetchInitializedCatalog();
+
+      assert.equal(catalog.initialized, true);
+      assert.equal(catalog.vendors[0].id, "vendor-openai");
+      assert.equal(catalog.vendors[0].name, "OpenAI");
+      assert.equal(catalog.models[0].vendorId, "vendor-openai");
+      assert.equal(catalog.models[0].name, "gpt-4o-mini");
+      assert.deepEqual(
+        captured.map((request) => `${request.method} ${request.url}`),
+        [
+          "GET /backend/v3/api/ai/model_vendors",
+          "GET /backend/v3/api/ai/models",
+          "GET /backend/v3/api/ai/model_rankings?limit=200",
+          "POST /backend/v3/api/ai/models/refresh",
+        ],
+      );
+      assert.deepEqual(JSON.parse(captured[3].body), {
+        source: "sdkwork_models",
+        mode: "official_refresh",
+        force: true,
+      });
+      assert.equal(captured[3].headers["x-request-id"]?.startsWith("admin-model-catalog-sync-"), true);
     },
   );
 });

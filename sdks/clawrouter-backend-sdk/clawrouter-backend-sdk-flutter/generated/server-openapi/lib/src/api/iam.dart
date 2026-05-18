@@ -104,6 +104,38 @@ class IamApi {
       return map == null ? null : UsersListResult.fromJson(map);
     })();
   }
+
+  /// Create user
+  Future<UsersCreateResult?> usersCreate(AdminUserCreateRequest body, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.backendPath('/iam/users'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : UsersCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Update user
+  Future<UsersUpdateResult?> usersUpdate(AdminUserUpdateRequest body, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.put(ApiPaths.backendPath('/iam/users'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : UsersUpdateResult.fromJson(map);
+    })();
+  }
 }
 
 class PathParameterSpec {

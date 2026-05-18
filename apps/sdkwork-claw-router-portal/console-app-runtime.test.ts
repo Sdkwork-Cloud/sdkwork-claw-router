@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import {
@@ -8,6 +9,7 @@ import {
 import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
 import { AccountService } from "./packages/sdkwork-claw-router-console-account/src/accountService.ts";
 import { GatewayService } from "./packages/sdkwork-claw-router-console-gateway/src/gatewayService.ts";
+import { NotificationService } from "./packages/sdkwork-claw-router-commons/src/notificationService.ts";
 import { MessagesService } from "./packages/sdkwork-claw-router-console-messages/src/messagesService.ts";
 import { UserService } from "./packages/sdkwork-claw-router-console-user/src/userService.ts";
 import { PlaygroundService } from "./packages/sdkwork-claw-router-playground/src/playgroundService.ts";
@@ -15,9 +17,14 @@ import { PlaygroundService } from "./packages/sdkwork-claw-router-playground/src
 const originalFetch = globalThis.fetch;
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
 
+function readPortalFile(relativePath: string): string {
+  return readFileSync(new URL(relativePath, import.meta.url), "utf8");
+}
+
 type CapturedSdkRequest = {
   url: string;
   method: string;
+  body?: unknown;
 };
 
 async function withAppSdkResponse<T>(
@@ -29,13 +36,14 @@ async function withAppSdkResponse<T>(
   Object.defineProperty(globalThis, "window", {
     configurable: true,
     enumerable: true,
-    value: {},
+    value: { dispatchEvent: () => true },
   });
   globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url;
     captured.push({
       url,
       method: init?.method ?? "GET",
+      body: typeof init?.body === "string" ? JSON.parse(init.body) : undefined,
     });
     return new Response(JSON.stringify(responseBody), {
       status: 200,
@@ -301,6 +309,65 @@ test("console messages service reads message items returned by the generated app
   );
 });
 
+test("shared notification service reads notification items returned by the generated app SDK", async () => {
+  await withAppSdkResponse(
+    {
+      code: "2000",
+      data: {
+        items: [
+          {
+            id: "notif-1",
+            title: "Quota warning",
+            desc: "Daily quota is almost exhausted",
+            content: "The default API key has used 90% of its daily quota.",
+            time: "2026-05-05T08:00:00Z",
+            type: "warning",
+            read: false,
+            showAsPopup: true,
+          },
+          {
+            id: "notif-2",
+            title: "Routine update",
+            desc: "No popup requested",
+            content: "This should stay in the notification center.",
+            time: "2026-05-05T09:00:00Z",
+            type: "info",
+            read: true,
+          },
+        ],
+      },
+    },
+    async (captured) => {
+      const result = await NotificationService.fetchNotifications();
+
+      assert.equal(captured[0].url, "/app/v3/api/communication/notifications");
+      assert.deepEqual(result.map((item) => item.id), ["notif-1", "notif-2"]);
+      assert.equal(result[0].type, "warning");
+      assert.equal(result[0].read, false);
+      assert.equal(result[0].showAsPopup, true);
+      assert.equal(result[1].showAsPopup, false);
+    },
+  );
+});
+
+test("navbar queues popup notifications and renders only one popup modal at a time", () => {
+  const navbarSource = readPortalFile("./packages/sdkwork-claw-router-commons/src/components/Navbar.tsx");
+
+  assert.match(navbarSource, /popupNotificationQueue/, "Navbar must maintain an explicit popup queue");
+  assert.match(navbarSource, /activePopupNotification/, "Navbar must track a single active popup notification");
+  assert.match(navbarSource, /showAsPopup/, "Navbar must filter notifications marked for popup display");
+  assert.match(navbarSource, /dismissedPopupNotificationIdsRef/, "Navbar must avoid reopening dismissed popups during the same page session");
+  assert.match(navbarSource, /setPopupNotificationQueue\(popupCandidates\)/, "Navbar must enqueue popup candidates after notifications load");
+  assert.match(navbarSource, /setActivePopupNotification\(nextPopup\)/, "Navbar must advance one popup at a time");
+  assert.doesNotMatch(navbarSource, /notifications\.filter\([^)]*showAsPopup[^)]*\)\.map/s, "Navbar must not render multiple popup modals directly from the notification list");
+});
+
+test("app SDK message contract exposes popup display flag", () => {
+  const messageTypeSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/notification-item.ts");
+
+  assert.match(messageTypeSource, /showAsPopup\??: boolean;/);
+});
+
 test("console messages service fails closed when SDK message items omit required fields", async () => {
   await withAppSdkResponse(
     {
@@ -327,7 +394,7 @@ test("console messages service fails closed when SDK message items omit required
     async () => {
       await assert.rejects(
         () => MessagesService.fetchMessages(),
-        /Message description is required/,
+        /Notification description is required/,
       );
     },
   );
@@ -453,6 +520,305 @@ test("playground service reads generation history returned by the generated app 
       assert.deepEqual(result.map((item) => item.id), ["gen-1"]);
       assert.equal(result[0].type, "images");
       assert.deepEqual(result[0].images, ["https://example.com/result.png"]);
+    },
+    { authenticated: true },
+  );
+});
+
+test("playground service creates agent generation runs through the generated app SDK", async () => {
+  await withAppSdkResponse(
+    {
+      code: "2000",
+      data: {
+        agent: {
+          id: "default-generation-agent",
+          versionId: "default-generation-agent-v1",
+          name: "Generation Agent",
+          model: "kling-v2",
+        },
+        item: {
+          id: "run-1",
+          date: "2026-05-17",
+          prompt: "Create a 10 second product launch video",
+          type: "video",
+          modelInfo: "kling-v2",
+          images: [],
+          videos: [],
+          status: "pending",
+          createdAt: "2026-05-17T08:00:00Z",
+          updatedAt: "2026-05-17T08:00:00Z",
+        },
+        meteringEvents: [
+          {
+            type: "token",
+            quantity: "0",
+            usageFactMetadata: {
+              agentId: "default-generation-agent",
+              agentVersionId: "default-generation-agent-v1",
+              runId: "run-1",
+              stepId: "run-1-step-input",
+              userId: "30",
+              meteringSource: "agent-runtime",
+            },
+          },
+        ],
+        run: {
+          id: "run-1",
+          requestId: "generation-agent-run-1",
+          source: "generation-agent",
+          status: "queued",
+        },
+        steps: [
+          {
+            id: "run-1-step-input",
+            index: 0,
+            type: "input",
+            status: "succeeded",
+            title: "User input accepted",
+          },
+        ],
+        targetType: "video",
+        status: "pending",
+        usage: {
+          promptTokens: 0,
+          cachedTokens: 0,
+          completionTokens: 0,
+          totalTokens: 0,
+          imageCount: 0,
+          videoSeconds: "0",
+          events: [
+            {
+              type: "token",
+              quantity: "0",
+              usageFactMetadata: {
+                agentId: "default-generation-agent",
+                agentVersionId: "default-generation-agent-v1",
+                runId: "run-1",
+                stepId: "run-1-step-input",
+                userId: "30",
+                meteringSource: "agent-runtime",
+              },
+            },
+          ],
+        },
+      },
+    },
+    async (captured) => {
+      const result = await PlaygroundService.runAgentGeneration({
+        prompt: "  Create a 10 second product launch video  ",
+        targetType: "video",
+        selectedModel: "kling-v2",
+        generationConfig: {
+          durationSeconds: 10,
+          quality: "high",
+        },
+        referenceImages: [
+          {
+            name: "storyboard.png",
+            mimeType: "image/png",
+            sizeBytes: 128,
+            dataUrl: "data:image/png;base64,cmVmZXJlbmNl",
+          },
+        ],
+      });
+
+      assert.equal(captured[0].url, "/app/v3/api/ai/generation/agents/runs");
+      assert.equal(captured[0].method, "POST");
+      assert.deepEqual(captured[0].body, {
+        prompt: "Create a 10 second product launch video",
+        targetType: "video",
+        selectedModel: "kling-v2",
+        generationConfig: {
+          durationSeconds: 10,
+          quality: "high",
+        },
+        referenceImages: [
+          {
+            name: "storyboard.png",
+            mimeType: "image/png",
+            sizeBytes: 128,
+            dataUrl: "data:image/png;base64,cmVmZXJlbmNl",
+          },
+        ],
+      });
+      assert.equal(result.targetType, "video");
+      assert.equal(result.status, "pending");
+      assert.equal(result.agent.id, "default-generation-agent");
+      assert.equal(result.run.status, "queued");
+      assert.equal(result.steps[0].type, "input");
+      assert.equal(result.usage.events[0].usageFactMetadata.meteringSource, "agent-runtime");
+      assert.equal(result.item.id, "run-1");
+      assert.equal(result.item.type, "video");
+      assert.equal(result.item.status, "pending");
+    },
+    { authenticated: true },
+  );
+});
+
+test("playground service does not create agent generation runs without a portal session", async () => {
+  await withAppSdkResponse(
+    {
+      code: "2000",
+      data: {
+        agent: {
+          id: "default-generation-agent",
+          versionId: "default-generation-agent-v1",
+          name: "Generation Agent",
+          model: null,
+        },
+        item: {
+          id: "run-1",
+          date: "2026-05-17",
+          prompt: "Create an image",
+          type: "image",
+          images: [],
+          videos: [],
+        },
+        meteringEvents: [
+          {
+            type: "token",
+            quantity: "0",
+            usageFactMetadata: {
+              agentId: "default-generation-agent",
+              agentVersionId: "default-generation-agent-v1",
+              runId: "run-1",
+              stepId: "run-1-step-input",
+              userId: "30",
+              meteringSource: "agent-runtime",
+            },
+          },
+        ],
+        run: {
+          id: "run-1",
+          requestId: "generation-agent-run-1",
+          source: "generation-agent",
+          status: "queued",
+        },
+        steps: [
+          {
+            id: "run-1-step-input",
+            index: 0,
+            type: "input",
+            status: "succeeded",
+            title: "User input accepted",
+          },
+        ],
+        targetType: "image",
+        status: "pending",
+        usage: {
+          promptTokens: 0,
+          cachedTokens: 0,
+          completionTokens: 0,
+          totalTokens: 0,
+          imageCount: 0,
+          videoSeconds: "0",
+          events: [
+            {
+              type: "token",
+              quantity: "0",
+              usageFactMetadata: {
+                agentId: "default-generation-agent",
+                agentVersionId: "default-generation-agent-v1",
+                runId: "run-1",
+                stepId: "run-1-step-input",
+                userId: "30",
+                meteringSource: "agent-runtime",
+              },
+            },
+          ],
+        },
+      },
+    },
+    async (captured) => {
+      await assert.rejects(
+        () => PlaygroundService.runAgentGeneration({ prompt: "Create an image" }),
+        /Portal session is required to run generation agent/,
+      );
+      assert.deepEqual(captured, []);
+    },
+  );
+});
+
+test("playground service rejects blank agent generation prompts before calling the SDK", async () => {
+  await withAppSdkResponse(
+    {
+      code: "2000",
+      data: {
+        agent: {
+          id: "default-generation-agent",
+          versionId: "default-generation-agent-v1",
+          name: "Generation Agent",
+          model: null,
+        },
+        item: {
+          id: "run-1",
+          date: "2026-05-17",
+          prompt: "Create an image",
+          type: "image",
+          images: [],
+          videos: [],
+        },
+        meteringEvents: [
+          {
+            type: "token",
+            quantity: "0",
+            usageFactMetadata: {
+              agentId: "default-generation-agent",
+              agentVersionId: "default-generation-agent-v1",
+              runId: "run-1",
+              stepId: "run-1-step-input",
+              userId: "30",
+              meteringSource: "agent-runtime",
+            },
+          },
+        ],
+        run: {
+          id: "run-1",
+          requestId: "generation-agent-run-1",
+          source: "generation-agent",
+          status: "queued",
+        },
+        steps: [
+          {
+            id: "run-1-step-input",
+            index: 0,
+            type: "input",
+            status: "succeeded",
+            title: "User input accepted",
+          },
+        ],
+        targetType: "image",
+        status: "pending",
+        usage: {
+          promptTokens: 0,
+          cachedTokens: 0,
+          completionTokens: 0,
+          totalTokens: 0,
+          imageCount: 0,
+          videoSeconds: "0",
+          events: [
+            {
+              type: "token",
+              quantity: "0",
+              usageFactMetadata: {
+                agentId: "default-generation-agent",
+                agentVersionId: "default-generation-agent-v1",
+                runId: "run-1",
+                stepId: "run-1-step-input",
+                userId: "30",
+                meteringSource: "agent-runtime",
+              },
+            },
+          ],
+        },
+      },
+    },
+    async (captured) => {
+      await assert.rejects(
+        () => PlaygroundService.runAgentGeneration({ prompt: "  " }),
+        /Generation agent prompt is required/,
+      );
+      assert.deepEqual(captured, []);
     },
     { authenticated: true },
   );

@@ -59,6 +59,7 @@ client.set_header("X-Custom-Header", "value");
 
 ## API Modules
 
+- `client.agents()` - agents API
 - `client.ai()` - ai API
 - `client.auth()` - auth API
 - `client.billing()` - billing API
@@ -69,6 +70,19 @@ client.set_header("X-Custom-Header", "value");
 - `client.platform()` - platform API
 
 ## Usage Examples
+
+### agents
+
+```rust
+use std::collections::HashMap;
+// List user agents
+let mut query = HashMap::new();
+query.insert("page".to_string(), serde_json::json!(1));
+query.insert("page_size".to_string(), serde_json::json!(2));
+query.insert("q".to_string(), serde_json::json!("q"));
+let result = client.agents().agent_definitions_list(Some(&query)).await?;
+println!("{result:?}");
+```
 
 ### ai
 
@@ -97,7 +111,7 @@ println!("{result:?}");
 ### communication
 
 ```rust
-// List messages
+// List notifications
 let result = client.communication().notifications_list().await?;
 println!("{result:?}");
 ```
@@ -121,8 +135,8 @@ println!("{result:?}");
 ### iam
 
 ```rust
-// List keys
-let result = client.iam().api_keys_list().await?;
+// List groups
+let result = client.iam().api_key_groups_list().await?;
 println!("{result:?}");
 ```
 

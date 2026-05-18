@@ -9,6 +9,7 @@ use crate::ports::{
 };
 
 const APP_TARGET_TYPE: i32 = 15;
+const PUBLIC_APP_STORE_TENANT_ID: i64 = 20_001;
 const ASSIGNED_ID_FLOOR: i64 = 1_000_000_000_000;
 const ASSIGNED_ID_RANGE: u64 = 8_000_000_000_000;
 const MAX_ASSIGNED_ID_ATTEMPTS: u8 = 16;
@@ -259,18 +260,35 @@ async fn list_apps(pool: &PgPool, query: ListAdminAppsQuery) -> DomainResult<Vec
             CAST(created_at AS TEXT) AS created_at,
             CAST(updated_at AS TEXT) AS updated_at
         FROM plus_app
-        WHERE tenant_id = $1
-          AND organization_id = $2
-          AND ($3::text IS NULL OR name ILIKE $4 ESCAPE '\' OR COALESCE(description, '') ILIKE $5 ESCAPE '\' OR COALESCE(config -> 'standard' ->> 'appKey', '') ILIKE $6 ESCAPE '\')
-          AND ($7::integer IS NULL OR COALESCE(status, 1) = $8)
-          AND ($9::text IS NULL OR COALESCE(NULLIF(config -> 'portal' ->> 'marketStatus', ''), NULLIF(config ->> 'marketStatus', ''), 'DRAFT') = $10)
-          AND ($11::text IS NULL OR app_type = $12)
-        ORDER BY COALESCE(updated_at, created_at) DESC NULLS LAST, id DESC
-        LIMIT $13 OFFSET $14
+        WHERE (
+              (
+                  tenant_id = $1
+                  AND (
+                      organization_id = $2
+                      OR ($2 > 0 AND organization_id = 0)
+                  )
+              )
+              OR (tenant_id = $3 AND organization_id = 0)
+          )
+          AND ($4::text IS NULL OR name ILIKE $5 ESCAPE '\' OR COALESCE(description, '') ILIKE $6 ESCAPE '\' OR COALESCE(config -> 'standard' ->> 'appKey', '') ILIKE $7 ESCAPE '\')
+          AND ($8::integer IS NULL OR COALESCE(status, 1) = $9)
+          AND ($10::text IS NULL OR COALESCE(NULLIF(config -> 'portal' ->> 'marketStatus', ''), NULLIF(config ->> 'marketStatus', ''), 'DRAFT') = $11)
+          AND ($12::text IS NULL OR app_type = $13)
+        ORDER BY
+            CASE
+                WHEN tenant_id = $1 AND organization_id = $2 THEN 0
+                WHEN tenant_id = $1 AND organization_id = 0 THEN 1
+                WHEN tenant_id = $3 AND organization_id = 0 THEN 2
+                ELSE 3
+            END,
+            COALESCE(updated_at, created_at) DESC NULLS LAST,
+            id DESC
+        LIMIT $14 OFFSET $15
         "#,
     )
     .bind(query.subject.tenant_id)
     .bind(query.subject.organization_id)
+    .bind(PUBLIC_APP_STORE_TENANT_ID)
     .bind(keyword.as_deref())
     .bind(keyword.as_deref())
     .bind(keyword.as_deref())
@@ -299,6 +317,7 @@ async fn load_app_by_id(
         .bind(id)
         .bind(tenant_id)
         .bind(organization_id)
+        .bind(PUBLIC_APP_STORE_TENANT_ID)
         .fetch_optional(pool)
         .await
         .map_err(|error| store_error("failed to load app", error))?;
@@ -311,7 +330,7 @@ async fn load_app_by_id_tx(
     tenant_id: i64,
     organization_id: i64,
 ) -> DomainResult<Option<AdminAppItem>> {
-    let row = app_by_id_query()
+    let row = app_by_id_owned_query()
         .bind(id)
         .bind(tenant_id)
         .bind(organization_id)
@@ -322,6 +341,54 @@ async fn load_app_by_id_tx(
 }
 
 fn app_by_id_query() -> sqlx::query::Query<'static, Postgres, sqlx::postgres::PgArguments> {
+    sqlx::query(
+        r#"
+        SELECT
+            id, uuid, tenant_id, organization_id, user_id, name, description, version,
+            COALESCE(icon::text, '{}') AS icon, icon_url,
+            COALESCE(resource_list::text, '{}') AS resource_list,
+            project_id, access_url, COALESCE(config::text, '{}') AS config,
+            config -> 'standard' ->> 'appKey' AS app_key,
+            COALESCE(status, 1) AS status,
+            COALESCE(
+                NULLIF(config -> 'portal' ->> 'marketStatus', ''),
+                NULLIF(config ->> 'marketStatus', ''),
+                'DRAFT'
+            ) AS market_status,
+            app_type, COALESCE(platforms::text, '{}') AS platforms,
+            COALESCE(install_platforms::text, '{}') AS install_platforms,
+            COALESCE(install_skill::text, '{}') AS install_skill,
+            COALESCE(install_config::text, '{}') AS install_config,
+            COALESCE(release_notes::text, '[]') AS release_notes,
+            package_name, bundle_id, store_url, download_url,
+            CAST(created_at AS TEXT) AS created_at,
+            CAST(updated_at AS TEXT) AS updated_at
+        FROM plus_app
+        WHERE id = $1
+          AND (
+              (
+                  tenant_id = $2
+                  AND (
+                      organization_id = $3
+                      OR ($3 > 0 AND organization_id = 0)
+                  )
+              )
+              OR (tenant_id = $4 AND organization_id = 0)
+          )
+        ORDER BY
+            CASE
+                WHEN tenant_id = $2 AND organization_id = $3 THEN 0
+                WHEN tenant_id = $2 AND organization_id = 0 THEN 1
+                WHEN tenant_id = $4 AND organization_id = 0 THEN 2
+                ELSE 3
+            END,
+            id DESC
+        LIMIT 1
+        "#,
+    )
+}
+
+fn app_by_id_owned_query() -> sqlx::query::Query<'static, Postgres, sqlx::postgres::PgArguments> {
     sqlx::query(
         r#"
         SELECT

@@ -10,6 +10,7 @@ class Message:
     desc: str
     id: str
     read: bool
+    show_as_popup: bool
     time: str
     title: str
     type: str

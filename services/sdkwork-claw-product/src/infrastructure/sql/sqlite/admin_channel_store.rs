@@ -4,6 +4,7 @@ use std::sync::Arc;
 use sha2::{Digest, Sha256};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
+use crate::application::ApiKeySecretCodec;
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::{
     AdminChannelCommandFuture, AdminChannelItem, AdminChannelStore, AdminChannelTestOutcome,
@@ -20,6 +21,7 @@ const CONFIG_TYPE_CHANNEL: i32 = 20;
 pub struct SqliteAdminChannelStore {
     pool: SqlitePool,
     provider_health_probe: Arc<dyn ProviderHealthProbe + Send + Sync>,
+    api_key_secret_codec: Option<Arc<dyn ApiKeySecretCodec + Send + Sync>>,
 }
 
 impl std::fmt::Debug for SqliteAdminChannelStore {
@@ -28,6 +30,7 @@ impl std::fmt::Debug for SqliteAdminChannelStore {
             .debug_struct("SqliteAdminChannelStore")
             .field("pool", &self.pool)
             .field("provider_health_probe", &"[configured]")
+            .field("api_key_secret_codec", &self.api_key_secret_codec.is_some())
             .finish()
     }
 }
@@ -44,6 +47,30 @@ impl SqliteAdminChannelStore {
         Self {
             pool,
             provider_health_probe,
+            api_key_secret_codec: None,
+        }
+    }
+
+    pub fn with_api_key_secret_codec(
+        pool: SqlitePool,
+        api_key_secret_codec: Arc<dyn ApiKeySecretCodec + Send + Sync>,
+    ) -> Self {
+        Self::with_provider_health_probe_and_api_key_secret_codec(
+            pool,
+            Arc::new(UnconfiguredProviderHealthProbe),
+            api_key_secret_codec,
+        )
+    }
+
+    pub fn with_provider_health_probe_and_api_key_secret_codec(
+        pool: SqlitePool,
+        provider_health_probe: Arc<dyn ProviderHealthProbe + Send + Sync>,
+        api_key_secret_codec: Arc<dyn ApiKeySecretCodec + Send + Sync>,
+    ) -> Self {
+        Self {
+            pool,
+            provider_health_probe,
+            api_key_secret_codec: Some(api_key_secret_codec),
         }
     }
 }
@@ -66,7 +93,9 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                 .begin()
                 .await
                 .map_err(|error| store_error("failed to begin channel transaction", error))?;
-            let account_id = insert_provider_account(&mut tx, &command).await?;
+            let account_id =
+                insert_provider_account(&mut tx, &command, self.api_key_secret_codec.as_deref())
+                    .await?;
             let channel_id = insert_channel(&mut tx, &command, account_id).await?;
             replace_channel_models(
                 &mut tx,
@@ -147,7 +176,8 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                     .map_err(|error| store_error("failed to commit channel transaction", error))?;
                 return Ok(None);
             }
-            update_provider_account(&mut tx, &command).await?;
+            update_provider_account(&mut tx, &command, self.api_key_secret_codec.as_deref())
+                .await?;
             if let Some(models) = command.models.as_ref() {
                 let scope = DeleteAdminChannelModelScope::from(&command);
                 soft_delete_channel_models(&mut tx, &scope).await?;
@@ -200,6 +230,7 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                     "capabilitiesChanged": command.capabilities.is_some(),
                     "timeoutChanged": command.timeout_ms.is_some(),
                     "retryPolicyChanged": command.retry_policy_json.is_some(),
+                    "circuitBreakerPolicyChanged": command.circuit_breaker_policy_json.is_some(),
                     "status": command.status,
                     "weight": command.weight
                 }),
@@ -227,6 +258,7 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                     "capabilitiesChanged": command.capabilities.is_some(),
                     "timeoutChanged": command.timeout_ms.is_some(),
                     "retryPolicyChanged": command.retry_policy_json.is_some(),
+                    "circuitBreakerPolicyChanged": command.circuit_breaker_policy_json.is_some(),
                     "secretRefChanged": command.secret_ref.is_some(),
                     "status": command.status,
                     "weight": command.weight
@@ -308,7 +340,12 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                     self.pool.begin().await.map_err(|error| {
                         store_error("failed to begin channel transaction", error)
                     })?;
-                let probe_target = load_channel_probe_target(&mut tx, &command).await?;
+                let probe_target = load_channel_probe_target(
+                    &mut tx,
+                    &command,
+                    self.api_key_secret_codec.as_deref(),
+                )
+                .await?;
                 tx.commit().await.map_err(|error| {
                     store_error("failed to commit channel probe target transaction", error)
                 })?;
@@ -322,6 +359,7 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                 .probe_provider_health(ProviderHealthProbeRequest {
                     provider_base_url: probe_target.provider_base_url.clone(),
                     provider_secret_ref: probe_target.provider_secret_ref.clone(),
+                    provider_secret_value: probe_target.provider_secret_value.clone(),
                     provider_model: probe_target.provider_model.clone(),
                     provider_timeout_ms: probe_target.provider_timeout_ms,
                 })
@@ -419,6 +457,7 @@ async fn list_channels(
             COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) AS base_url,
             c.timeout_ms,
             c.retry_policy AS retry_policy_json,
+            c.circuit_breaker_policy AS circuit_breaker_policy_json,
             COALESCE(c.capabilities, '["llm"]') AS capabilities_json,
             COALESCE(c.weight, 0) AS weight,
             c.status,
@@ -472,15 +511,16 @@ async fn list_channels(
 async fn insert_provider_account(
     tx: &mut Transaction<'_, Sqlite>,
     command: &CreateAdminChannelCommand,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
 ) -> DomainResult<i64> {
     let account_code = entity_code("acct", &command.account_uuid);
     let auth_type = access_type_code(&command.access_type);
-    let auth_config = serde_json::json!({
-        "accessType": &command.access_type,
-        "protocol": &command.protocol
-    })
+    let auth_config = provider_account_auth_config(
+        command,
+        command.credential_material.as_deref(),
+        api_key_secret_codec,
+    )?
     .to_string();
-    let secret_hash = digest_hex(&command.secret_ref);
     sqlx::query(
         r#"
         INSERT INTO integration_provider_account
@@ -500,8 +540,8 @@ async fn insert_provider_account(
     .bind(auth_type)
     .bind(auth_config)
     .bind(&command.secret_ref)
-    .bind(secret_hash)
-    .bind(mask_secret_ref(&command.secret_ref))
+    .bind(&command.secret_hash)
+    .bind(&command.masked_label)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create provider account", error))?;
@@ -521,9 +561,9 @@ async fn insert_channel(
     sqlx::query(
         r#"
         INSERT INTO integration_channel
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, provider_code, channel_code, name, protocol, access_type, base_url_override, timeout_ms, retry_policy, model_mode, environment, capabilities, priority, weight, account_id, health_status, consecutive_error_count)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, provider_code, channel_code, name, protocol, access_type, base_url_override, timeout_ms, retry_policy, circuit_breaker_policy, model_mode, environment, capabilities, priority, weight, account_id, health_status, consecutive_error_count)
         VALUES
-            (?, ?, ?, 1, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, 1, 1, ?, 100, ?, ?, ?, 0)
+            (?, ?, ?, 1, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 1, ?, 100, ?, ?, ?, 0)
         "#,
     )
     .bind(&command.channel_uuid)
@@ -540,6 +580,7 @@ async fn insert_channel(
     .bind(command.base_url.as_deref())
     .bind(command.timeout_ms)
     .bind(command.retry_policy_json.as_deref())
+    .bind(command.circuit_breaker_policy_json.as_deref())
     .bind(capabilities_json)
     .bind(command.weight)
     .bind(account_id)
@@ -567,6 +608,11 @@ async fn update_channel(
         .retry_policy_json
         .as_ref()
         .and_then(|value| value.as_deref());
+    let circuit_breaker_policy_touched = command.circuit_breaker_policy_json.is_some();
+    let circuit_breaker_policy_json = command
+        .circuit_breaker_policy_json
+        .as_ref()
+        .and_then(|value| value.as_deref());
     let capabilities_json = command
         .capabilities
         .as_ref()
@@ -582,6 +628,7 @@ async fn update_channel(
             base_url_override = CASE WHEN ? THEN ? ELSE base_url_override END,
             timeout_ms = CASE WHEN ? THEN ? ELSE timeout_ms END,
             retry_policy = CASE WHEN ? THEN ? ELSE retry_policy END,
+            circuit_breaker_policy = CASE WHEN ? THEN ? ELSE circuit_breaker_policy END,
             capabilities = COALESCE(?, capabilities),
             weight = COALESCE(?, weight),
             status = COALESCE(?, status),
@@ -609,6 +656,8 @@ async fn update_channel(
     .bind(timeout_ms)
     .bind(retry_policy_touched)
     .bind(retry_policy_json)
+    .bind(circuit_breaker_policy_touched)
+    .bind(circuit_breaker_policy_json)
     .bind(capabilities_json)
     .bind(command.weight)
     .bind(command.status.as_ref().map(|value| status_code(value)))
@@ -631,23 +680,28 @@ async fn update_channel(
 async fn update_provider_account(
     tx: &mut Transaction<'_, Sqlite>,
     command: &UpdateAdminChannelCommand,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
 ) -> DomainResult<()> {
     if command.secret_ref.is_none() && command.provider_code.is_none() && command.name.is_none() {
         return Ok(());
     }
-    let secret_hash = command
+    let auth_config = command
         .secret_ref
         .as_ref()
-        .map(|secret_ref| digest_hex(secret_ref));
-    let masked_label = command
-        .secret_ref
-        .as_ref()
-        .map(|secret_ref| mask_secret_ref(secret_ref));
+        .map(|_| {
+            provider_account_update_auth_config(
+                command.credential_material.as_deref(),
+                api_key_secret_codec,
+            )
+            .map(|value| value.to_string())
+        })
+        .transpose()?;
     sqlx::query(
         r#"
         UPDATE integration_provider_account
         SET provider_code = COALESCE(?, provider_code),
             account_name = COALESCE(?, account_name),
+            auth_config = COALESCE(?, auth_config),
             secret_ref = COALESCE(?, secret_ref),
             secret_hash = COALESCE(?, secret_hash),
             masked_label = COALESCE(?, masked_label),
@@ -668,9 +722,10 @@ async fn update_provider_account(
     )
     .bind(command.provider_code.as_deref())
     .bind(command.name.as_deref())
+    .bind(auth_config)
     .bind(command.secret_ref.as_deref())
-    .bind(secret_hash)
-    .bind(masked_label)
+    .bind(command.secret_hash.as_deref())
+    .bind(command.masked_label.as_deref())
     .bind(&command.requested_at)
     .bind(command.channel_id)
     .bind(command.subject.tenant_id)
@@ -681,6 +736,91 @@ async fn update_provider_account(
     .await
     .map_err(|error| store_error("failed to update provider account", error))?;
     Ok(())
+}
+
+fn provider_account_auth_config(
+    command: &CreateAdminChannelCommand,
+    credential_material: Option<&str>,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+) -> DomainResult<serde_json::Value> {
+    let mut auth_config =
+        provider_account_update_auth_config(credential_material, api_key_secret_codec)?;
+    if let Some(object) = auth_config.as_object_mut() {
+        object.insert(
+            "accessType".to_owned(),
+            serde_json::Value::String(command.access_type.clone()),
+        );
+        object.insert(
+            "protocol".to_owned(),
+            serde_json::Value::String(command.protocol.clone()),
+        );
+    }
+    Ok(auth_config)
+}
+
+fn provider_account_update_auth_config(
+    credential_material: Option<&str>,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+) -> DomainResult<serde_json::Value> {
+    let mut auth_config = serde_json::json!({
+        "credentialSource": if credential_material.is_some() { "providerAccountInput" } else { "externalSecretRef" },
+        "secretMaterialPresent": credential_material.is_some()
+    });
+    if let Some(credential_material) = credential_material {
+        let Some(api_key_secret_codec) = api_key_secret_codec else {
+            return Err(DomainError::new(
+                "provider account api key material requires an encrypted secret codec",
+            ));
+        };
+        let ciphertext = api_key_secret_codec.encode_secret(credential_material)?;
+        if let Some(object) = auth_config.as_object_mut() {
+            object.insert(
+                "secretMaterialStorage".to_owned(),
+                serde_json::Value::String("encrypted-provider-account-auth-config".to_owned()),
+            );
+            object.insert(
+                "secretMaterialCiphertext".to_owned(),
+                serde_json::Value::String(ciphertext),
+            );
+        }
+    }
+    Ok(auth_config)
+}
+
+fn decode_provider_secret_value(
+    auth_config_json: Option<&str>,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+) -> DomainResult<Option<String>> {
+    let Some(ciphertext) = provider_secret_ciphertext(auth_config_json)? else {
+        return Ok(None);
+    };
+    let Some(api_key_secret_codec) = api_key_secret_codec else {
+        return Err(DomainError::new(
+            "managed provider account secret requires an encrypted secret codec",
+        ));
+    };
+    api_key_secret_codec.decode_secret(&ciphertext).map(Some)
+}
+
+fn provider_secret_ciphertext(auth_config_json: Option<&str>) -> DomainResult<Option<String>> {
+    let Some(auth_config_json) = auth_config_json
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+    else {
+        return Ok(None);
+    };
+    let value: serde_json::Value = serde_json::from_str(auth_config_json).map_err(|error| {
+        DomainError::new(format!(
+            "integration_provider_account.auth_config must be valid JSON: {error}"
+        ))
+    })?;
+    Ok(value
+        .get("secretMaterialCiphertext")
+        .or_else(|| value.get("providerSecretCiphertext"))
+        .and_then(serde_json::Value::as_str)
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned))
 }
 
 async fn replace_channel_models(
@@ -798,6 +938,7 @@ struct ChannelHealthProbeTarget {
     provider_account_id: i64,
     provider_base_url: String,
     provider_secret_ref: String,
+    provider_secret_value: Option<String>,
     provider_model: String,
     provider_timeout_ms: Option<u64>,
 }
@@ -805,6 +946,7 @@ struct ChannelHealthProbeTarget {
 async fn load_channel_probe_target(
     tx: &mut Transaction<'_, Sqlite>,
     command: &TestAdminChannelCommand,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
 ) -> DomainResult<Option<ChannelHealthProbeTarget>> {
     let row = sqlx::query(
         r#"
@@ -814,6 +956,7 @@ async fn load_channel_probe_target(
             c.account_id AS provider_account_id,
             COALESCE(NULLIF(c.base_url_override, ''), NULLIF(p.base_url_template, ''), '') AS provider_base_url,
             COALESCE(NULLIF(a.secret_ref, ''), '') AS provider_secret_ref,
+            CAST(a.auth_config AS TEXT) AS provider_auth_config,
             COALESCE(NULLIF(cm.provider_model, ''), '') AS provider_model,
             c.timeout_ms
         FROM integration_channel c
@@ -822,6 +965,7 @@ async fn load_channel_probe_target(
          AND p.deleted_at IS NULL
          AND (
              (p.tenant_id = c.tenant_id AND p.organization_id = c.organization_id)
+             OR (p.tenant_id = 0 AND p.organization_id = 0)
              OR (p.tenant_id IS NULL AND p.organization_id IS NULL)
          )
         JOIN integration_provider_account a
@@ -855,6 +999,7 @@ async fn load_channel_probe_target(
     };
     let provider_base_url = string_cell(&row, "provider_base_url");
     let provider_secret_ref = string_cell(&row, "provider_secret_ref");
+    let provider_auth_config = optional_string_cell(&row, "provider_auth_config");
     let provider_model = string_cell(&row, "provider_model");
     if provider_base_url.trim().is_empty()
         || provider_secret_ref.trim().is_empty()
@@ -870,6 +1015,10 @@ async fn load_channel_probe_target(
         provider_account_id: integer_cell(&row, "provider_account_id"),
         provider_base_url,
         provider_secret_ref,
+        provider_secret_value: decode_provider_secret_value(
+            provider_auth_config.as_deref(),
+            api_key_secret_codec,
+        )?,
         provider_model,
         provider_timeout_ms: optional_u64_cell(&row, "timeout_ms"),
     }))
@@ -1002,6 +1151,7 @@ async fn load_channel_by_id(
             COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) AS base_url,
             c.timeout_ms,
             c.retry_policy AS retry_policy_json,
+            c.circuit_breaker_policy AS circuit_breaker_policy_json,
             COALESCE(c.capabilities, '["llm"]') AS capabilities_json,
             COALESCE(c.weight, 0) AS weight,
             c.status,
@@ -1281,6 +1431,7 @@ fn item_from_sqlite_row(
         capabilities,
         timeout_ms: row.try_get("timeout_ms").ok().flatten(),
         retry_policy_json: row.try_get("retry_policy_json").ok().flatten(),
+        circuit_breaker_policy_json: row.try_get("circuit_breaker_policy_json").ok().flatten(),
         weight: row.try_get("weight").map_err(row_error)?,
         status: status_label(status, health_status, snapshot_health_status, errors)?,
         balance,
@@ -1356,15 +1507,6 @@ fn digest_hex(value: &str) -> String {
     let mut hasher = Sha256::new();
     hasher.update(value.as_bytes());
     hex::encode(hasher.finalize())
-}
-
-fn mask_secret_ref(value: &str) -> String {
-    value
-        .rsplit('/')
-        .next()
-        .filter(|part| !part.is_empty())
-        .map(|part| format!("ref:***{part}"))
-        .unwrap_or_else(|| "ref:***".to_owned())
 }
 
 fn protocol_code(value: &str) -> i32 {
@@ -1564,6 +1706,13 @@ fn string_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> String {
         .flatten()
         .or_else(|| row.try_get::<String, _>(column).ok())
         .unwrap_or_default()
+}
+
+fn optional_string_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Option<String> {
+    row.try_get::<Option<String>, _>(column)
+        .ok()
+        .flatten()
+        .or_else(|| row.try_get::<String, _>(column).ok())
 }
 
 fn optional_u64_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Option<u64> {

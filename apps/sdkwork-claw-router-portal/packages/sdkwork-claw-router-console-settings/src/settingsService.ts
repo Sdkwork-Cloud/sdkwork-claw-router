@@ -29,7 +29,7 @@ export interface SettingsData {
 export class SettingsService {
   static async fetchSettings(): Promise<SettingsData> {
     const result = await getClawRouterAppSdkClient().iam.users.settings.retrieve();
-    ensurePlusApiSuccess(result, 'Failed to fetch settings');
+    ensurePlusApiSuccess(result, 'console.settings.states.loadErrorFallback');
     return normalizeSettings(readApiRecord(result));
   }
 

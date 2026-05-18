@@ -6,6 +6,8 @@ export interface AdminAnnouncementItem {
   date: string;
   /** Id field on admin announcement item. */
   id: string;
+  /** Show as popup field on admin announcement item. */
+  showAsPopup: boolean;
   /** Status field on admin announcement item. */
   status: 'published' | 'draft';
   /** Target field on admin announcement item. */

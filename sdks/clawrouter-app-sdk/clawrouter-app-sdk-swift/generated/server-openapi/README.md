@@ -66,6 +66,7 @@ client.setHeader("X-Custom-Header", value: "value")
 
 ## API Modules
 
+- `client.agents` - agents API
 - `client.ai` - ai API
 - `client.auth` - auth API
 - `client.billing` - billing API
@@ -76,6 +77,19 @@ client.setHeader("X-Custom-Header", value: "value")
 - `client.platform` - platform API
 
 ## Usage Examples
+
+### agents
+
+```swift
+// List user agents
+let params: [String: Any] = [
+    "page": 1,
+    "page_size": 2,
+    "q": "q"
+]
+let result = try await client.agents.list(params: params)
+print(result)
+```
 
 ### ai
 

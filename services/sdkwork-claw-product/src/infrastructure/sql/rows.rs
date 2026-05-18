@@ -289,6 +289,7 @@ pub struct GatewayApiKeyRow {
     pub key_prefix: String,
     pub key_display_masked: String,
     pub key_hash: String,
+    pub copyable_key: Option<String>,
     pub policy_id: Option<i64>,
     pub quota_policy_id: Option<i64>,
     pub created_at: String,
@@ -308,6 +309,7 @@ impl GatewayApiKeyRow {
             key_prefix: self.key_prefix,
             key_display_masked: self.key_display_masked,
             key_hash: self.key_hash,
+            copyable_key: self.copyable_key,
             policy_id: self.policy_id,
             quota_policy_id: self.quota_policy_id,
             created_at: self.created_at,
@@ -315,10 +317,18 @@ impl GatewayApiKeyRow {
             status_code: self.status_code,
         }
     }
+
+    pub fn with_copyable_key(mut self, copyable_key: Option<String>) -> Self {
+        self.copyable_key = copyable_key;
+        self
+    }
 }
 
 pub struct ApiKeyGroupRow {
     pub id: i64,
+    pub tenant_id: i64,
+    pub organization_id: i64,
+    pub name: String,
     pub code: String,
     pub pricing_plan_code: String,
     pub rate_multiplier: String,
@@ -382,6 +392,13 @@ impl ApiKeyGroupRow {
     pub fn try_into_domain(self) -> DomainResult<ApiKeyGroup> {
         Ok(ApiKeyGroup {
             id: self.id,
+            tenant_id: self.tenant_id,
+            organization_id: self.organization_id,
+            name: if self.name.trim().is_empty() {
+                self.code.clone()
+            } else {
+                self.name
+            },
             code: self.code,
             pricing_plan_code: self.pricing_plan_code,
             rate_multiplier: DecimalValue::parse(&self.rate_multiplier)?,

@@ -101,6 +101,36 @@ namespace Sdkwork.ClawRouter.Backend.Api
             return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.UsersListResult>(ApiPaths.BackendPath("/iam/users"));
         }
 
+        /// <summary>
+        /// Create user
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.UsersCreateResult?> UsersCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminUserCreateRequest body, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.UsersCreateResult>(ApiPaths.BackendPath("/iam/users"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
+        /// Update user
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.UsersUpdateResult?> UsersUpdateAsync(Sdkwork.ClawRouter.Backend.Models.AdminUserUpdateRequest body, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.UsersUpdateResult>(ApiPaths.BackendPath("/iam/users"), body, null, requestHeaders, "application/json");
+        }
+
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);
 
         private static string SerializePathParameter(object? value, PathParameterSpec spec)

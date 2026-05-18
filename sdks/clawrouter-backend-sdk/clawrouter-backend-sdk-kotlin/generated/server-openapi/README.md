@@ -71,6 +71,7 @@ val client = SdkworkBackendClient(config)
 
 ## API Modules
 
+- `client.agents` - agents API
 - `client.ai` - ai API
 - `client.billing` - billing API
 - `client.content` - content API
@@ -81,6 +82,22 @@ val client = SdkworkBackendClient(config)
 - `client.system` - system API
 
 ## Usage Examples
+
+### agents
+
+```kotlin
+// List managed agents
+val params = linkedMapOf<String, Any>(
+    "q" to "q",
+    "owner_user_id" to 2,
+    "status" to "active",
+    "visibility" to "private",
+    "page" to 5,
+    "page_size" to 6
+)
+val result = client.agents.list(params)
+println(result)
+```
 
 ### ai
 
@@ -93,8 +110,8 @@ println(result)
 ### billing
 
 ```kotlin
-// List batches
-val result = client.billing.couponBatchesList()
+// List referral stats
+val result = client.billing.referralsStatsList()
 println(result)
 ```
 
@@ -150,8 +167,8 @@ println(result)
 ### system
 
 ```kotlin
-// List dashboard data
-val result = client.system.dashboardAdminOverviewRetrieve()
+// Retrieve IAM auth runtime settings
+val result = client.system.authSettingsRetrieve()
 println(result)
 ```
 

@@ -10,10 +10,11 @@ use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Serialize;
 use serde_json::{Map, Value};
+use sha2::{Digest, Sha256};
 
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
-use crate::domain::{DomainError, ProviderRetryPolicy};
+use crate::domain::{DomainError, ProviderCircuitBreakerPolicy, ProviderRetryPolicy};
 use crate::ports::{
     AdminChannelItem, AdminChannelStore, AdminChannelSubject, CreateAdminChannelCommand,
     DeleteAdminChannelCommand, ListAdminChannelsQuery, TestAdminChannelCommand,
@@ -26,6 +27,7 @@ const MAX_PROTOCOL_LEN: usize = 64;
 const MAX_ACCESS_TYPE_LEN: usize = 64;
 const MAX_BASE_URL_LEN: usize = 512;
 const MAX_SECRET_REF_LEN: usize = 256;
+const MAX_API_KEY_LEN: usize = 4096;
 const MAX_MODEL_LEN: usize = 128;
 const MAX_MODELS: usize = 200;
 const MAX_CAPABILITIES: usize = 16;
@@ -51,11 +53,15 @@ struct NormalizedCreateRequest {
     access_type: String,
     base_url: Option<String>,
     secret_ref: String,
+    secret_hash: String,
+    masked_label: String,
+    credential_material: Option<String>,
     models: Vec<String>,
     capabilities: Vec<String>,
     is_multimodal: bool,
     timeout_ms: Option<i64>,
     retry_policy_json: Option<String>,
+    circuit_breaker_policy_json: Option<String>,
     weight: i64,
     status: String,
 }
@@ -70,10 +76,14 @@ struct NormalizedUpdateRequest {
     access_type: Option<String>,
     base_url: Option<Option<String>>,
     secret_ref: Option<String>,
+    secret_hash: Option<String>,
+    masked_label: Option<String>,
+    credential_material: Option<String>,
     models: Option<Vec<String>>,
     capabilities: Option<Vec<String>>,
     timeout_ms: Option<Option<i64>>,
     retry_policy_json: Option<Option<String>>,
+    circuit_breaker_policy_json: Option<Option<String>>,
     weight: Option<i64>,
     status: Option<String>,
 }
@@ -121,6 +131,8 @@ struct AdminChannelItemResponse {
     access_type: String,
     #[serde(skip_serializing_if = "Option::is_none")]
     base_url: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    secret_ref: Option<String>,
     models: Vec<String>,
     capabilities: Vec<String>,
     is_multimodal: bool,
@@ -128,6 +140,8 @@ struct AdminChannelItemResponse {
     timeout_ms: Option<i64>,
     #[serde(skip_serializing_if = "Option::is_none")]
     retry_policy: Option<AdminChannelRetryPolicyResponse>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    circuit_breaker_policy: Option<AdminChannelCircuitBreakerPolicyResponse>,
     weight: i64,
     status: String,
     balance: String,
@@ -140,6 +154,12 @@ struct AdminChannelRetryPolicyResponse {
     max_attempts: usize,
     retryable_status_codes: Vec<u16>,
     backoff_ms: u64,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminChannelCircuitBreakerPolicyResponse {
+    failure_threshold: usize,
 }
 
 pub fn admin_channel_router_with_store(
@@ -363,7 +383,7 @@ fn parse_json_object(
 fn normalize_create_request(
     request: Map<String, Value>,
 ) -> Result<NormalizedCreateRequest, String> {
-    reject_plaintext_auth_key(&request)?;
+    reject_unsupported_plaintext_auth_key(&request)?;
     let name = required_text(&request, "name", "channel name", MAX_NAME_LEN)?;
     let vendor = required_text(&request, "vendor", "channel vendor", MAX_VENDOR_LEN)?;
     let provider_code = normalize_provider_code(&vendor)?;
@@ -381,8 +401,7 @@ fn normalize_create_request(
     let base_url = optional_text(&request, "baseUrl", "channel baseUrl", MAX_BASE_URL_LEN)?
         .map(validate_base_url)
         .transpose()?;
-    let secret_ref = required_text(&request, "secretRef", "secretRef", MAX_SECRET_REF_LEN)?;
-    validate_secret_ref(&secret_ref)?;
+    let credential = normalize_create_credential(&request, &provider_code)?;
     let models = required_string_array(&request, "models", "models", MAX_MODELS, MAX_MODEL_LEN)?;
     let capabilities = optional_string_array(
         &request,
@@ -397,6 +416,8 @@ fn normalize_create_request(
         .map(normalize_timeout_ms)
         .transpose()?;
     let retry_policy_json = optional_non_null_retry_policy_json(&request, "retryPolicy")?;
+    let circuit_breaker_policy_json =
+        optional_non_null_circuit_breaker_policy_json(&request, "circuitBreakerPolicy")?;
     let weight = optional_integer(&request, "weight")?.unwrap_or(100);
     let weight = normalize_weight(weight)?;
     let status = optional_text(&request, "status", "channel status", 32)?
@@ -411,12 +432,16 @@ fn normalize_create_request(
         protocol,
         access_type,
         base_url,
-        secret_ref,
+        secret_ref: credential.secret_ref,
+        secret_hash: credential.secret_hash,
+        masked_label: credential.masked_label,
+        credential_material: credential.credential_material,
         models,
         capabilities,
         is_multimodal,
         timeout_ms,
         retry_policy_json,
+        circuit_breaker_policy_json,
         weight,
         status,
     })
@@ -425,7 +450,7 @@ fn normalize_create_request(
 fn normalize_update_request(
     request: Map<String, Value>,
 ) -> Result<NormalizedUpdateRequest, String> {
-    reject_plaintext_auth_key(&request)?;
+    reject_unsupported_plaintext_auth_key(&request)?;
     let channel_id = parse_positive_id(
         &required_text(&request, "id", "channel id", 64)?,
         "channel id",
@@ -450,10 +475,7 @@ fn normalize_update_request(
         optional_nullable_text(&request, "baseUrl", "channel baseUrl", MAX_BASE_URL_LEN)?
             .map(|value| value.map(validate_base_url).transpose())
             .transpose()?;
-    let secret_ref = optional_text(&request, "secretRef", "secretRef", MAX_SECRET_REF_LEN)?;
-    if let Some(secret_ref) = secret_ref.as_deref() {
-        validate_secret_ref(secret_ref)?;
-    }
+    let credential = normalize_update_credential(&request, provider_code.as_deref())?;
     let models = optional_string_array(&request, "models", "models", MAX_MODELS, MAX_MODEL_LEN)?;
     let capabilities = optional_string_array(
         &request,
@@ -468,6 +490,8 @@ fn normalize_update_request(
         .map(|value| value.map(normalize_timeout_ms).transpose())
         .transpose()?;
     let retry_policy_json = optional_retry_policy_json(&request, "retryPolicy")?;
+    let circuit_breaker_policy_json =
+        optional_circuit_breaker_policy_json(&request, "circuitBreakerPolicy")?;
     let weight = optional_integer(&request, "weight")?
         .map(normalize_weight)
         .transpose()?;
@@ -480,11 +504,12 @@ fn normalize_update_request(
         && protocol.is_none()
         && access_type.is_none()
         && base_url.is_none()
-        && secret_ref.is_none()
+        && credential.secret_ref.is_none()
         && models.is_none()
         && capabilities.is_none()
         && timeout_ms.is_none()
         && retry_policy_json.is_none()
+        && circuit_breaker_policy_json.is_none()
         && weight.is_none()
         && status.is_none()
     {
@@ -499,19 +524,119 @@ fn normalize_update_request(
         protocol,
         access_type,
         base_url,
-        secret_ref,
+        secret_ref: credential.secret_ref,
+        secret_hash: credential.secret_hash,
+        masked_label: credential.masked_label,
+        credential_material: credential.credential_material,
         models,
         capabilities,
         timeout_ms,
         retry_policy_json,
+        circuit_breaker_policy_json,
         weight,
         status,
     })
 }
 
-fn reject_plaintext_auth_key(request: &Map<String, Value>) -> Result<(), String> {
+#[derive(Debug, Clone, PartialEq, Eq)]
+struct NormalizedCredentialInput {
+    secret_ref: String,
+    secret_hash: String,
+    masked_label: String,
+    credential_material: Option<String>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+struct NormalizedCredentialUpdate {
+    secret_ref: Option<String>,
+    secret_hash: Option<String>,
+    masked_label: Option<String>,
+    credential_material: Option<String>,
+}
+
+fn normalize_create_credential(
+    request: &Map<String, Value>,
+    provider_code: &str,
+) -> Result<NormalizedCredentialInput, String> {
+    let api_key = optional_text(request, "apiKey", "apiKey", MAX_API_KEY_LEN)?;
+    let secret_ref = optional_text(request, "secretRef", "secretRef", MAX_SECRET_REF_LEN)?;
+    match (api_key, secret_ref) {
+        (Some(_), Some(_)) => {
+            Err("channel credential must provide either apiKey or secretRef, not both".to_owned())
+        }
+        (Some(api_key), None) => credential_from_api_key(provider_code, &api_key),
+        (None, Some(secret_ref)) => {
+            validate_secret_ref(&secret_ref)?;
+            Ok(NormalizedCredentialInput {
+                secret_hash: digest_hex(&secret_ref),
+                masked_label: mask_secret_ref(&secret_ref),
+                secret_ref,
+                credential_material: None,
+            })
+        }
+        (None, None) => Err("apiKey is required for new channel accounts".to_owned()),
+    }
+}
+
+fn normalize_update_credential(
+    request: &Map<String, Value>,
+    provider_code: Option<&str>,
+) -> Result<NormalizedCredentialUpdate, String> {
+    let api_key = optional_text(request, "apiKey", "apiKey", MAX_API_KEY_LEN)?;
+    let secret_ref = optional_text(request, "secretRef", "secretRef", MAX_SECRET_REF_LEN)?;
+    match (api_key, secret_ref) {
+        (Some(_), Some(_)) => {
+            Err("channel credential must provide either apiKey or secretRef, not both".to_owned())
+        }
+        (Some(api_key), None) => {
+            let credential = credential_from_api_key(provider_code.unwrap_or("custom"), &api_key)?;
+            Ok(NormalizedCredentialUpdate {
+                secret_ref: Some(credential.secret_ref),
+                secret_hash: Some(credential.secret_hash),
+                masked_label: Some(credential.masked_label),
+                credential_material: credential.credential_material,
+            })
+        }
+        (None, Some(secret_ref)) => {
+            validate_secret_ref(&secret_ref)?;
+            Ok(NormalizedCredentialUpdate {
+                secret_hash: Some(digest_hex(&secret_ref)),
+                masked_label: Some(mask_secret_ref(&secret_ref)),
+                secret_ref: Some(secret_ref),
+                credential_material: None,
+            })
+        }
+        (None, None) => Ok(NormalizedCredentialUpdate {
+            secret_ref: None,
+            secret_hash: None,
+            masked_label: None,
+            credential_material: None,
+        }),
+    }
+}
+
+fn credential_from_api_key(
+    provider_code: &str,
+    api_key: &str,
+) -> Result<NormalizedCredentialInput, String> {
+    validate_api_key(api_key)?;
+    let secret_hash = digest_hex(api_key);
+    let suffix = secret_hash.chars().take(16).collect::<String>();
+    let provider_code = normalize_secret_provider_code(provider_code);
+    Ok(NormalizedCredentialInput {
+        secret_ref: format!("secret://provider-accounts/{provider_code}/{suffix}"),
+        secret_hash,
+        masked_label: mask_api_key(api_key),
+        credential_material: Some(api_key.to_owned()),
+    })
+}
+
+fn reject_unsupported_plaintext_auth_key(request: &Map<String, Value>) -> Result<(), String> {
     for (key, value) in request {
-        if !is_plaintext_secret_key(key) {
+        if key == "apiKey" {
+            continue;
+        }
+        if !is_unsupported_plaintext_secret_key(key) {
             continue;
         }
         let has_plaintext = match value {
@@ -521,7 +646,7 @@ fn reject_plaintext_auth_key(request: &Map<String, Value>) -> Result<(), String>
         };
         if has_plaintext {
             return Err(
-                "secretRef is required; plaintext credential fields are not accepted for channel credentials"
+                "apiKey is the supported plaintext credential input for channel credentials"
                     .to_owned(),
             );
         }
@@ -529,7 +654,7 @@ fn reject_plaintext_auth_key(request: &Map<String, Value>) -> Result<(), String>
     Ok(())
 }
 
-fn is_plaintext_secret_key(key: &str) -> bool {
+fn is_unsupported_plaintext_secret_key(key: &str) -> bool {
     let normalized = key
         .chars()
         .filter(|character| *character != '_' && *character != '-')
@@ -546,6 +671,16 @@ fn is_plaintext_secret_key(key: &str) -> bool {
             | "privatekey"
             | "clientsecret"
     )
+}
+
+fn validate_api_key(value: &str) -> Result<(), String> {
+    if value.trim().is_empty() {
+        return Err("apiKey is required".to_owned());
+    }
+    if !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte)) {
+        return Err("apiKey must contain only visible ASCII characters without spaces".to_owned());
+    }
+    Ok(())
 }
 
 fn required_text(
@@ -809,6 +944,56 @@ fn optional_non_null_retry_policy_json(
     }
 }
 
+fn optional_circuit_breaker_policy_json(
+    request: &Map<String, Value>,
+    key: &str,
+) -> Result<Option<Option<String>>, String> {
+    let Some(value) = request.get(key) else {
+        return Ok(None);
+    };
+    if value.is_null() {
+        return Ok(Some(None));
+    }
+    let Value::Object(object) = value else {
+        return Err("circuitBreakerPolicy must be a JSON object or null".to_owned());
+    };
+    for key in object.keys() {
+        if key != "failureThreshold" {
+            return Err(format!(
+                "circuitBreakerPolicy contains unsupported field: {key}"
+            ));
+        }
+    }
+    let failure_threshold = object
+        .get("failureThreshold")
+        .and_then(Value::as_u64)
+        .ok_or_else(|| {
+            "circuitBreakerPolicy.failureThreshold must be a positive integer".to_owned()
+        })?;
+    let canonical =
+        ProviderCircuitBreakerPolicy::new(usize::try_from(failure_threshold).map_err(|_| {
+            "circuitBreakerPolicy.failureThreshold must be a positive integer".to_owned()
+        })?)
+        .map_err(|error| circuit_breaker_policy_error_message(&error.to_string()))?;
+    serde_json::to_string(&serde_json::json!({
+        "failure_threshold": canonical.failure_threshold
+    }))
+    .map(Some)
+    .map(Some)
+    .map_err(|error| format!("circuitBreakerPolicy could not be serialized: {error}"))
+}
+
+fn optional_non_null_circuit_breaker_policy_json(
+    request: &Map<String, Value>,
+    key: &str,
+) -> Result<Option<String>, String> {
+    match optional_circuit_breaker_policy_json(request, key)? {
+        Some(Some(value)) => Ok(Some(value)),
+        Some(None) => Err("circuitBreakerPolicy must be a JSON object".to_owned()),
+        None => Ok(None),
+    }
+}
+
 fn normalize_provider_code(vendor: &str) -> Result<String, String> {
     let normalized = vendor.trim().to_ascii_lowercase();
     let code = match normalized.as_str() {
@@ -952,6 +1137,63 @@ fn validate_secret_ref(value: &str) -> Result<(), String> {
     Ok(())
 }
 
+fn normalize_secret_provider_code(value: &str) -> String {
+    let normalized = value
+        .trim()
+        .to_ascii_lowercase()
+        .chars()
+        .map(|character| {
+            if character.is_ascii_alphanumeric() || character == '_' || character == '-' {
+                character
+            } else {
+                '-'
+            }
+        })
+        .collect::<String>()
+        .trim_matches('-')
+        .to_owned()
+        .chars()
+        .take(64)
+        .collect::<String>();
+    if normalized.is_empty() {
+        "custom".to_owned()
+    } else {
+        normalized
+    }
+}
+
+fn digest_hex(value: &str) -> String {
+    let mut hasher = Sha256::new();
+    hasher.update(value.as_bytes());
+    hex::encode(hasher.finalize())
+}
+
+fn mask_secret_ref(value: &str) -> String {
+    value
+        .rsplit('/')
+        .next()
+        .filter(|part| !part.is_empty())
+        .map(|part| format!("ref:***{part}"))
+        .unwrap_or_else(|| "ref:***".to_owned())
+}
+
+fn mask_api_key(value: &str) -> String {
+    let prefix: String = value.chars().take(4).collect();
+    let suffix: String = value
+        .chars()
+        .rev()
+        .take(4)
+        .collect::<Vec<_>>()
+        .into_iter()
+        .rev()
+        .collect();
+    if value.chars().count() <= 8 {
+        "key:***".to_owned()
+    } else {
+        format!("{prefix}***{suffix}")
+    }
+}
+
 fn validate_base_url(value: String) -> Result<String, String> {
     if !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte)) {
         return Err("channel baseUrl must contain only visible ASCII characters".to_owned());
@@ -1006,11 +1248,15 @@ fn build_create_command(
         access_type: request.access_type,
         base_url: request.base_url,
         secret_ref: request.secret_ref,
+        secret_hash: request.secret_hash,
+        masked_label: request.masked_label,
+        credential_material: request.credential_material,
         models: request.models,
         capabilities: request.capabilities,
         is_multimodal: request.is_multimodal,
         timeout_ms: request.timeout_ms,
         retry_policy_json: request.retry_policy_json,
+        circuit_breaker_policy_json: request.circuit_breaker_policy_json,
         weight: request.weight,
         status: request.status,
         request_id: normalize_request_id(headers, &state)?,
@@ -1045,10 +1291,14 @@ fn build_update_command(
         access_type: request.access_type,
         base_url: request.base_url,
         secret_ref: request.secret_ref,
+        secret_hash: request.secret_hash,
+        masked_label: request.masked_label,
+        credential_material: request.credential_material,
         models: request.models,
         capabilities: request.capabilities,
         timeout_ms: request.timeout_ms,
         retry_policy_json: request.retry_policy_json,
+        circuit_breaker_policy_json: request.circuit_breaker_policy_json,
         weight: request.weight,
         status: request.status,
         request_id: normalize_request_id(headers, &state)?,
@@ -1135,6 +1385,7 @@ fn to_item_response(item: AdminChannelItem) -> AdminChannelItemResponse {
         protocol: item.protocol,
         access_type: item.access_type,
         base_url: item.base_url,
+        secret_ref: item.secret_ref,
         models: item.models,
         capabilities: item.capabilities,
         is_multimodal: item.is_multimodal,
@@ -1143,6 +1394,10 @@ fn to_item_response(item: AdminChannelItem) -> AdminChannelItemResponse {
             .retry_policy_json
             .as_deref()
             .and_then(retry_policy_response_from_json),
+        circuit_breaker_policy: item
+            .circuit_breaker_policy_json
+            .as_deref()
+            .and_then(circuit_breaker_policy_response_from_json),
         weight: item.weight,
         status: item.status,
         balance: item.balance,
@@ -1160,6 +1415,16 @@ fn retry_policy_response_from_json(value: &str) -> Option<AdminChannelRetryPolic
         })
 }
 
+fn circuit_breaker_policy_response_from_json(
+    value: &str,
+) -> Option<AdminChannelCircuitBreakerPolicyResponse> {
+    ProviderCircuitBreakerPolicy::from_json_str(value)
+        .ok()
+        .map(|policy| AdminChannelCircuitBreakerPolicyResponse {
+            failure_threshold: policy.failure_threshold,
+        })
+}
+
 fn retry_policy_error_message(message: &str) -> String {
     message
         .replace("integration_channel.retry_policy", "retryPolicy")
@@ -1169,6 +1434,18 @@ fn retry_policy_error_message(message: &str) -> String {
             "retryPolicy.retryableStatusCodes",
         )
         .replace("retryPolicy backoff_ms", "retryPolicy.backoffMs")
+}
+
+fn circuit_breaker_policy_error_message(message: &str) -> String {
+    message
+        .replace(
+            "integration_channel.circuit_breaker_policy",
+            "circuitBreakerPolicy",
+        )
+        .replace(
+            "circuitBreakerPolicy failure_threshold",
+            "circuitBreakerPolicy.failureThreshold",
+        )
 }
 
 fn bad_request(message: String) -> Response {

@@ -1,12 +1,18 @@
 import {
+  APP_API_PREFIX,
+  BACKEND_API_PREFIX,
   ensurePlusApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
   readApiRecord,
+  readClawRouterRuntimeEnv,
   readRequiredNonNegativeNumber,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
-import type { DashboardOverviewResponse as SdkDashboardOverviewResponse } from '@sdkwork/clawrouter-app-sdk';
+import type {
+  DashboardConfigurationDomain as SdkDashboardConfigurationDomain,
+  DashboardOverviewResponse as SdkDashboardOverviewResponse,
+} from '@sdkwork/clawrouter-app-sdk';
 
 export type DashboardTimeRange = 'hourly' | 'daily' | 'monthly' | 'yearly';
 
@@ -39,9 +45,13 @@ type DashboardAnnouncementType = DashboardAnnouncementContract['type'] & Dashboa
 export interface Announcement {
   id: DashboardAnnouncementContract['id'];
   text: DashboardAnnouncementContract['text'];
+  textI18nKey?: string;
   time: DashboardAnnouncementContract['time'];
+  timeI18nKey?: string;
   type: DashboardAnnouncementType;
 }
+
+export type ConfigurationDomain = SdkDashboardConfigurationDomain;
 
 interface DashboardSnapshot {
   summary: SdkDashboardOverviewResponse['summary'];
@@ -51,6 +61,7 @@ interface DashboardSnapshot {
   chartData: DashboardData[];
   topModels: SdkDashboardOverviewResponse['topModels'];
   announcements: Announcement[];
+  configurationDomains: ConfigurationDomain[];
   warnings: SdkDashboardOverviewResponse['warnings'];
 }
 
@@ -62,10 +73,22 @@ const MODALITY_KEYS = {
   music: 'music (Suno)',
 } as const;
 
+const CONFIGURATION_DOMAIN_KEYS = [
+  'configurationDomains',
+  'domainConfigs',
+  'supportedDomains',
+  'gatewayDomains',
+  'domains',
+] as const;
+
+const DEFAULT_GATEWAY_DOMAIN = 'https://api.sdkwork.com/v1';
+
 const EMPTY_SUMMARY: SdkDashboardOverviewResponse['summary'] = {
   availableCredits: 0,
   usedCredits: 0,
   requestCount: 0,
+  totalUsedCredits: 0,
+  totalRequestCount: 0,
   errorCount: 0,
   imageRequests: 0,
   videoRequests: 0,
@@ -75,18 +98,28 @@ const EMPTY_SUMMARY: SdkDashboardOverviewResponse['summary'] = {
   tpm: 0,
 };
 
+const INITIAL_TOP_MODELS: ModelUsage[] = [
+  { rank: 1, name: 'gpt-4o-mini', supplier: 'OpenAI', modality: 'text', requests: 0, cost: 0, trend: '0%', isUp: true },
+  { rank: 2, name: 'claude-3-5-sonnet', supplier: 'Anthropic', modality: 'text', requests: 0, cost: 0, trend: '0%', isUp: true },
+  { rank: 3, name: 'gemini-1.5-pro', supplier: 'Google', modality: 'text', requests: 0, cost: 0, trend: '0%', isUp: true },
+  { rank: 4, name: 'dall-e-3', supplier: 'OpenAI', modality: 'image', requests: 0, cost: 0, trend: '0%', isUp: true },
+  { rank: 5, name: 'whisper-large-v3', supplier: 'OpenAI', modality: 'audio', requests: 0, cost: 0, trend: '0%', isUp: true },
+];
+
+const INITIAL_ANNOUNCEMENTS: Announcement[] = [
+  {
+    id: 1,
+    text: 'console.dashboard.dashboardview.text.initialAnnouncement',
+    textI18nKey: 'console.dashboard.dashboardview.text.initialAnnouncement',
+    time: 'console.dashboard.dashboardview.text.initialized',
+    timeI18nKey: 'console.dashboard.dashboardview.text.initialized',
+    type: 'info',
+  },
+];
+
 export class DashboardService {
-  static emptyDashboardSnapshot(): DashboardSnapshot {
-    return {
-      summary: { ...EMPTY_SUMMARY },
-      requestSparkline: [],
-      multimodalSparkline: [],
-      performanceSparkline: [],
-      chartData: [],
-      topModels: [],
-      announcements: [],
-      warnings: [],
-    };
+  static emptyDashboardSnapshot(timeRange: DashboardTimeRange = 'daily'): DashboardSnapshot {
+    return createInitialDashboardSnapshot(timeRange);
   }
 
   static async fetchDashboardOverview(timeRange: DashboardTimeRange): Promise<DashboardSnapshot> {
@@ -94,8 +127,8 @@ export class DashboardService {
     const params = buildTimeRangeParams(timeRange);
     const result = await client.ai.dashboard.overview.retrieve(params);
 
-    ensurePlusApiSuccess(result, 'Failed to fetch dashboard overview');
-    return normalizeDashboardSnapshot(readApiRecord(result));
+    ensurePlusApiSuccess(result, 'console.dashboard.dashboardview.text.loadErrorFallback');
+    return normalizeDashboardSnapshot(readApiRecord(result), timeRange);
   }
 }
 
@@ -118,23 +151,132 @@ function buildTimeRangeParams(timeRange: DashboardTimeRange): Record<string, str
   };
 }
 
-function normalizeDashboardSnapshot(record: ApiRecord): DashboardSnapshot {
-  const chartData = normalizeChartData(record);
-  const topModels = normalizeTopModels(record);
-  const announcements = normalizeAnnouncements(record);
+function createInitialDashboardSnapshot(timeRange: DashboardTimeRange): DashboardSnapshot {
+  const chartData = createInitialChartData(timeRange);
+  const sparkline = createZeroSparkline(chartData.length);
+
+  return {
+    summary: { ...EMPTY_SUMMARY },
+    requestSparkline: sparkline,
+    multimodalSparkline: sparkline,
+    performanceSparkline: sparkline,
+    chartData,
+    topModels: createInitialTopModels(),
+    announcements: createInitialAnnouncements(),
+    configurationDomains: createInitialConfigurationDomains(),
+    warnings: [],
+  };
+}
+
+function normalizeDashboardSnapshot(record: ApiRecord, timeRange: DashboardTimeRange): DashboardSnapshot {
+  const initialSnapshot = createInitialDashboardSnapshot(timeRange);
+  const normalizedChartData = normalizeChartData(record);
+  const chartData = normalizedChartData.length > 0 ? normalizedChartData : initialSnapshot.chartData;
+  const normalizedTopModels = normalizeTopModels(record);
+  const normalizedAnnouncements = normalizeAnnouncements(record);
+  const normalizedConfigurationDomains = normalizeConfigurationDomains(record);
+  const requestSparkline = normalizeSparkline(record, 'requestSparkline', 'request', chartData, (item) => totalModalityValue(item));
+  const multimodalSparkline = normalizeSparkline(record, 'multimodalSparkline', 'multimodal', chartData, (item) => {
+    return item[MODALITY_KEYS.image] + item[MODALITY_KEYS.video] + item[MODALITY_KEYS.audio] + item[MODALITY_KEYS.music];
+  });
+  const performanceSparkline = normalizeSparkline(record, 'performanceSparkline', 'performance', [], () => 0);
 
   return {
     summary: normalizeSummary(readRequiredRecordProperty(record, 'summary', 'Dashboard overview summary is required')),
-    requestSparkline: normalizeSparkline(record, 'requestSparkline', 'request', chartData, (item) => totalModalityValue(item)),
-    multimodalSparkline: normalizeSparkline(record, 'multimodalSparkline', 'multimodal', chartData, (item) => {
-      return item[MODALITY_KEYS.image] + item[MODALITY_KEYS.video] + item[MODALITY_KEYS.audio] + item[MODALITY_KEYS.music];
-    }),
-    performanceSparkline: normalizeSparkline(record, 'performanceSparkline', 'performance', [], () => 0),
+    requestSparkline: requestSparkline.length > 0 ? requestSparkline : initialSnapshot.requestSparkline,
+    multimodalSparkline: multimodalSparkline.length > 0 ? multimodalSparkline : initialSnapshot.multimodalSparkline,
+    performanceSparkline: performanceSparkline.length > 0 ? performanceSparkline : initialSnapshot.performanceSparkline,
     chartData,
-    topModels,
-    announcements,
+    topModels: normalizedTopModels.length > 0 ? normalizedTopModels : initialSnapshot.topModels,
+    announcements: normalizedAnnouncements.length > 0 ? normalizedAnnouncements : initialSnapshot.announcements,
+    configurationDomains: normalizedConfigurationDomains.length > 0
+      ? normalizedConfigurationDomains
+      : initialSnapshot.configurationDomains,
     warnings: normalizeWarnings(record),
   };
+}
+
+function createInitialChartData(timeRange: DashboardTimeRange): DashboardData[] {
+  return createInitialChartLabels(timeRange).map((time) => ({
+    time,
+    [MODALITY_KEYS.text]: 0,
+    [MODALITY_KEYS.image]: 0,
+    [MODALITY_KEYS.video]: 0,
+    [MODALITY_KEYS.audio]: 0,
+    [MODALITY_KEYS.music]: 0,
+  }));
+}
+
+function createInitialChartLabels(timeRange: DashboardTimeRange): string[] {
+  const now = new Date();
+  if (timeRange === 'hourly') {
+    return Array.from({ length: 7 }, (_, index) => {
+      const date = new Date(now);
+      date.setHours(now.getHours() - (6 - index) * 4, 0, 0, 0);
+      return `${pad2(date.getHours())}:00`;
+    });
+  }
+
+  if (timeRange === 'daily') {
+    return Array.from({ length: 7 }, (_, index) => {
+      const date = new Date(now);
+      date.setDate(now.getDate() - (6 - index));
+      return `${pad2(date.getMonth() + 1)}-${pad2(date.getDate())}`;
+    });
+  }
+
+  if (timeRange === 'monthly') {
+    return Array.from({ length: 6 }, (_, index) => {
+      const date = new Date(now);
+      date.setMonth(now.getMonth() - (5 - index), 1);
+      return `${date.getFullYear()}-${pad2(date.getMonth() + 1)}`;
+    });
+  }
+
+  return Array.from({ length: 4 }, (_, index) => String(now.getFullYear() - (3 - index)));
+}
+
+function createZeroSparkline(length: number): SdkDashboardOverviewResponse['requestSparkline'] {
+  return Array.from({ length: Math.max(1, length) }, () => ({ value: 0 }));
+}
+
+function createInitialTopModels(): ModelUsage[] {
+  return INITIAL_TOP_MODELS.map((item) => ({ ...item }));
+}
+
+function createInitialAnnouncements(): Announcement[] {
+  return INITIAL_ANNOUNCEMENTS.map((item) => ({ ...item }));
+}
+
+function createInitialConfigurationDomains(): ConfigurationDomain[] {
+  return dedupeConfigurationDomains([
+    {
+      id: 'gateway-openai-compatible',
+      name: 'OpenAI-compatible Gateway',
+      domain: normalizeConfigurationDomainUrl(
+        readClawRouterRuntimeEnv('VITE_CLAWROUTER_OPEN_API_BASE_URL')
+          ?? readClawRouterRuntimeEnv('VITE_API_BASE_URL')
+          ?? DEFAULT_GATEWAY_DOMAIN,
+      ),
+      remark: 'Primary OpenAI-compatible API base for model requests.',
+    },
+    {
+      id: 'app-product-api',
+      name: 'App Product API',
+      domain: normalizeConfigurationDomainUrl(readClawRouterRuntimeEnv('VITE_CLAWROUTER_APP_API_BASE_URL') ?? APP_API_PREFIX),
+      remark: 'Product console API base for user-facing operations.',
+    },
+    {
+      id: 'backend-admin-api',
+      name: 'Backend Admin API',
+      domain: normalizeConfigurationDomainUrl(readClawRouterRuntimeEnv('VITE_CLAWROUTER_BACKEND_API_BASE_URL') ?? BACKEND_API_PREFIX),
+      remark: 'Admin console API base for management operations.',
+    },
+  ]);
+}
+
+function pad2(value: number): string {
+  return String(value).padStart(2, '0');
 }
 
 function normalizeChartData(record: ApiRecord): DashboardData[] {
@@ -175,9 +317,29 @@ function normalizeAnnouncements(record: ApiRecord): Announcement[] {
     .map((item) => ({
       id: readRequiredFirstNumber(item, ['id', 'messageId', 'message_id'], 'Dashboard announcement id is required'),
       text: readRequiredFirstString(item, ['text', 'title', 'summary', 'content'], 'Dashboard announcement text is required'),
+      textI18nKey: readOptionalFirstString(item, ['textI18nKey', 'text_i18n_key']),
       time: readRequiredFirstString(item, ['time', 'publishedAt', 'published_at', 'createdAt', 'created_at'], 'Dashboard announcement time is required'),
+      timeI18nKey: readOptionalFirstString(item, ['timeI18nKey', 'time_i18n_key']),
       type: normalizeAnnouncementType(readRequiredFirstString(item, ['type', 'announcementType', 'messageType', 'message_type'], 'Dashboard announcement type is required')),
     }));
+}
+
+function normalizeConfigurationDomains(record: ApiRecord): ConfigurationDomain[] {
+  return readOptionalFirstRecordArray(record, CONFIGURATION_DOMAIN_KEYS, 'Dashboard configuration domain record is required')
+    .map((item, index) => {
+      const name = readRequiredFirstString(item, ['name', 'title', 'label', 'displayName', 'display_name'], 'Dashboard configuration domain name is required');
+      const domain = normalizeConfigurationDomainUrl(
+        readRequiredFirstString(item, ['domain', 'url', 'baseUrl', 'base_url', 'endpoint', 'origin'], 'Dashboard configuration domain URL is required'),
+      );
+      const remark = readOptionalFirstString(item, ['remark', 'remarks', 'description', 'note', 'notes', 'memo']) ?? '';
+      const explicitId = readOptionalFirstString(item, ['id', 'key', 'code']);
+      return {
+        id: explicitId ?? createConfigurationDomainId(name, domain, index),
+        name,
+        domain,
+        remark,
+      };
+    });
 }
 
 function normalizeSummary(summaryRecord: ApiRecord): SdkDashboardOverviewResponse['summary'] {
@@ -185,6 +347,8 @@ function normalizeSummary(summaryRecord: ApiRecord): SdkDashboardOverviewRespons
     availableCredits: readRequiredFirstNumber(summaryRecord, ['availableCredits', 'balance', 'credits'], 'Dashboard overview available credits are required'),
     usedCredits: readRequiredFirstNumber(summaryRecord, ['usedCredits', 'cost', 'costAmount'], 'Dashboard overview used credits are required'),
     requestCount: readRequiredFirstNumber(summaryRecord, ['requestCount', 'requests', 'totalRequests'], 'Dashboard overview request count is required'),
+    totalUsedCredits: readRequiredFirstNumber(summaryRecord, ['totalUsedCredits', 'totalCostAmount', 'totalCost', 'historyUsedCredits'], 'Dashboard overview total used credits are required'),
+    totalRequestCount: readRequiredFirstNumber(summaryRecord, ['totalRequestCount', 'historyRequestCount', 'lifetimeRequestCount'], 'Dashboard overview total request count is required'),
     errorCount: readRequiredFirstNumber(summaryRecord, ['errorCount', 'errors', 'failedRequests'], 'Dashboard overview error count is required'),
     imageRequests: readRequiredFirstNumber(summaryRecord, ['imageRequests'], 'Dashboard overview image requests are required'),
     videoRequests: readRequiredFirstNumber(summaryRecord, ['videoRequests'], 'Dashboard overview video requests are required'),
@@ -237,6 +401,23 @@ function readRequiredRecordProperty(record: ApiRecord, key: string, message: str
   return value;
 }
 
+function readOptionalFirstRecordArray(record: ApiRecord, keys: readonly string[], itemMessage: string): ApiRecord[] {
+  for (const key of keys) {
+    if (!Object.prototype.hasOwnProperty.call(record, key)) {
+      continue;
+    }
+    const value = record[key];
+    if (value === undefined) {
+      continue;
+    }
+    if (!Array.isArray(value)) {
+      throw new Error(`${key} must be an array`);
+    }
+    return value.map((item) => readRequiredRecord(item, itemMessage));
+  }
+  return [];
+}
+
 function readOptionalFirstNumber(record: ApiRecord, keys: string[], fallback: number): number {
   for (const key of keys) {
     if (record[key] !== undefined && record[key] !== null && record[key] !== '') {
@@ -244,6 +425,19 @@ function readOptionalFirstNumber(record: ApiRecord, keys: string[], fallback: nu
     }
   }
   return fallback;
+}
+
+function readOptionalFirstString(record: ApiRecord, keys: readonly string[]): string | undefined {
+  for (const key of keys) {
+    const value = record[key];
+    if (typeof value === 'string' && value.trim()) {
+      return value.trim();
+    }
+    if (typeof value === 'number' || typeof value === 'boolean') {
+      return String(value);
+    }
+  }
+  return undefined;
 }
 
 function readRequiredFirstString(record: ApiRecord, keys: string[], message: string): string {
@@ -361,4 +555,38 @@ function normalizeAnnouncementType(value: string): Announcement['type'] {
     return 'info';
   }
   return 'unknown';
+}
+
+function normalizeConfigurationDomainUrl(value: string): string {
+  const trimmed = value.trim().replace(/\/+$/g, '');
+  if (!trimmed) {
+    throw new Error('Dashboard configuration domain URL is required');
+  }
+  if (/^https?:\/\//i.test(trimmed) || trimmed.startsWith('/')) {
+    return trimmed;
+  }
+  if (/^[a-z][a-z0-9+.-]*:/i.test(trimmed)) {
+    throw new Error('Dashboard configuration domain URL must use http, https, or a relative path');
+  }
+  return `https://${trimmed}`;
+}
+
+function createConfigurationDomainId(name: string, domain: string, index: number): string {
+  const base = `${name}-${domain}`
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+  return base || `configuration-domain-${index + 1}`;
+}
+
+function dedupeConfigurationDomains(items: ConfigurationDomain[]): ConfigurationDomain[] {
+  const seen = new Set<string>();
+  return items.filter((item) => {
+    const key = item.domain.toLowerCase();
+    if (seen.has(key)) {
+      return false;
+    }
+    seen.add(key);
+    return true;
+  });
 }

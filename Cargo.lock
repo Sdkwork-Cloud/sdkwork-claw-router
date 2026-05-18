@@ -1492,11 +1492,13 @@ dependencies = [
  "hyper",
  "hyper-rustls",
  "hyper-util",
+ "ring",
  "sdkwork-claw-config",
  "sdkwork-claw-contract",
  "sdkwork-claw-core",
  "sdkwork-claw-http",
  "sdkwork-models",
+ "sdkwork_iam_storage_sqlx",
  "serde",
  "serde_json",
  "sha2",
@@ -1542,6 +1544,17 @@ dependencies = [
  "serde_json",
  "thiserror 1.0.69",
  "tokio",
+]
+
+[[package]]
+name = "sdkwork_iam_core"
+version = "0.1.0"
+
+[[package]]
+name = "sdkwork_iam_storage_sqlx"
+version = "0.1.0"
+dependencies = [
+ "sdkwork_iam_core",
 ]
 
 [[package]]

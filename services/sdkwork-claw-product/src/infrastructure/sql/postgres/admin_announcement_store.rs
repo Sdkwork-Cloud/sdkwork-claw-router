@@ -53,7 +53,8 @@ impl AdminAnnouncementStore for PostgresAdminAnnouncementStore {
                     "announcementId": id,
                     "title": &command.title,
                     "target": &command.target,
-                    "status": &command.status
+                    "status": &command.status,
+                    "showAsPopup": command.show_as_popup
                 }),
             )
             .await?;
@@ -104,7 +105,8 @@ impl AdminAnnouncementStore for PostgresAdminAnnouncementStore {
                     "titleChanged": command.title.is_some(),
                     "contentChanged": command.content.is_some(),
                     "target": command.target,
-                    "status": command.status
+                    "status": command.status,
+                    "showAsPopup": command.show_as_popup
                 }),
             )
             .await?;
@@ -172,6 +174,7 @@ async fn list_announcements(
             COALESCE(title, '') AS title,
             COALESCE(content, '') AS content,
             target_scope,
+            CAST(COALESCE(audience_filter, '{}'::jsonb) AS TEXT) AS audience_filter_json,
             status,
             CAST(COALESCE(published_at, updated_at, created_at) AS TEXT) AS display_date,
             CAST(deleted_at AS TEXT) AS deleted_at
@@ -198,7 +201,7 @@ async fn insert_announcement(
 ) -> DomainResult<i64> {
     let target_scope = target_code(&command.target);
     let status = status_code(&command.status);
-    let audience_filter = audience_filter_json(&command.target)?;
+    let audience_filter = audience_filter_json(&command.target, command.show_as_popup)?;
     let published_at = published_at_for_status(&command.status, &command.requested_at);
     sqlx::query_scalar(
         r#"
@@ -229,11 +232,21 @@ async fn update_announcement(
     tx: &mut Transaction<'_, Postgres>,
     command: &UpdateAdminAnnouncementCommand,
 ) -> DomainResult<bool> {
+    let current = load_announcement_by_id(
+        tx,
+        command.announcement_id,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+    )
+    .await?;
+    let Some(current) = current else {
+        return Ok(false);
+    };
+    let next_target = command.target.as_deref().unwrap_or(&current.target);
+    let next_show_as_popup = command.show_as_popup.unwrap_or(current.show_as_popup);
     let target_scope = command.target.as_ref().map(|target| target_code(target));
-    let audience_filter = command
-        .target
-        .as_ref()
-        .map(|target| audience_filter_json(target))
+    let audience_filter = (command.target.is_some() || command.show_as_popup.is_some())
+        .then(|| audience_filter_json(next_target, next_show_as_popup))
         .transpose()?;
     let status = command.status.as_ref().map(|status| status_code(status));
     let result = sqlx::query(
@@ -321,6 +334,7 @@ async fn load_announcement_by_id(
             COALESCE(title, '') AS title,
             COALESCE(content, '') AS content,
             target_scope,
+            CAST(COALESCE(audience_filter, '{}'::jsonb) AS TEXT) AS audience_filter_json,
             status,
             CAST(COALESCE(published_at, updated_at, created_at) AS TEXT) AS display_date,
             CAST(deleted_at AS TEXT) AS deleted_at
@@ -388,6 +402,10 @@ fn item_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminAnnouncementIt
         content: row.try_get("content").map_err(row_error)?,
         target: target_label(required_integer_cell(&row, "target_scope", "target")?)?,
         status: status_label(required_integer_cell(&row, "status", "status")?)?,
+        show_as_popup: show_as_popup_from_audience_filter(&string_cell(
+            &row,
+            "audience_filter_json",
+        )),
         date: row.try_get("display_date").map_err(row_error)?,
         deleted_at: row.try_get("deleted_at").ok().flatten(),
     })
@@ -438,9 +456,30 @@ fn published_at_for_status<'a>(status: &str, requested_at: &'a str) -> Option<&'
     (status == "published").then_some(requested_at)
 }
 
-fn audience_filter_json(target: &str) -> DomainResult<String> {
-    serde_json::to_string(&serde_json::json!({ "target": target }))
-        .map_err(|error| DomainError::new(error.to_string()))
+fn audience_filter_json(target: &str, show_as_popup: bool) -> DomainResult<String> {
+    serde_json::to_string(&serde_json::json!({
+        "target": target,
+        "showAsPopup": show_as_popup
+    }))
+    .map_err(|error| DomainError::new(error.to_string()))
+}
+
+fn show_as_popup_from_audience_filter(raw: &str) -> bool {
+    serde_json::from_str::<serde_json::Value>(raw)
+        .ok()
+        .and_then(|value| {
+            value
+                .get("showAsPopup")
+                .and_then(serde_json::Value::as_bool)
+        })
+        .unwrap_or(false)
+}
+
+fn string_cell(row: &sqlx::postgres::PgRow, column: &str) -> String {
+    row.try_get::<Option<String>, _>(column)
+        .ok()
+        .flatten()
+        .unwrap_or_default()
 }
 
 fn optional_integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> Option<i64> {

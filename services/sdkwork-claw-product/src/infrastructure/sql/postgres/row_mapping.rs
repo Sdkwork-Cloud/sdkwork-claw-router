@@ -58,8 +58,9 @@ pub async fn load_models(pool: &PgPool, sql: &'static str) -> Result<Vec<AiModel
 pub async fn load_provider_routes(
     pool: &PgPool,
     sql: &'static str,
+    circuit_breaker_recovery_window_seconds: i64,
 ) -> Result<Vec<ModelProviderRouteRow>, sqlx::Error> {
-    map_query(sql, |row| {
+    let mapper = map_query(sql, |row| {
         Ok(ModelProviderRouteRow {
             catalog_key: row.try_get("catalog_key")?,
             model: row.try_get("model")?,
@@ -73,16 +74,22 @@ pub async fn load_provider_routes(
             timeout_ms: row.try_get("timeout_ms")?,
             retry_policy_json: row.try_get("retry_policy_json")?,
         })
-    })
-    .fetch(pool)
-    .await
+    });
+    sqlx::query(mapper.sql)
+        .bind(circuit_breaker_recovery_window_seconds)
+        .fetch_all(pool)
+        .await?
+        .into_iter()
+        .map(mapper.mapper)
+        .collect()
 }
 
 pub async fn load_provider_account_pool_routes(
     pool: &PgPool,
     sql: &'static str,
+    circuit_breaker_recovery_window_seconds: i64,
 ) -> Result<Vec<ProviderAccountPoolRouteRow>, sqlx::Error> {
-    map_query(sql, |row| {
+    let mapper = map_query(sql, |row| {
         Ok(ProviderAccountPoolRouteRow {
             provider_code: row.try_get("provider_code")?,
             channel_id: row.try_get("channel_id")?,
@@ -93,9 +100,14 @@ pub async fn load_provider_account_pool_routes(
             timeout_ms: row.try_get("timeout_ms")?,
             retry_policy_json: row.try_get("retry_policy_json")?,
         })
-    })
-    .fetch(pool)
-    .await
+    });
+    sqlx::query(mapper.sql)
+        .bind(circuit_breaker_recovery_window_seconds)
+        .fetch_all(pool)
+        .await?
+        .into_iter()
+        .map(mapper.mapper)
+        .collect()
 }
 
 pub async fn load_routing_policies(
@@ -166,6 +178,9 @@ pub async fn load_api_key_groups(
     map_query(sql, |row| {
         Ok(ApiKeyGroupRow {
             id: row.try_get("id")?,
+            tenant_id: row.try_get("tenant_id")?,
+            organization_id: row.try_get("organization_id")?,
+            name: row.try_get("name")?,
             code: row.try_get("code")?,
             pricing_plan_code: row.try_get("pricing_plan_code")?,
             rate_multiplier: row.try_get("rate_multiplier")?,
@@ -191,6 +206,7 @@ pub async fn load_api_keys(
             key_prefix: row.try_get("key_prefix")?,
             key_display_masked: row.try_get("key_display_masked")?,
             key_hash: row.try_get("key_hash")?,
+            copyable_key: row.try_get("copyable_key")?,
             policy_id: row.try_get("policy_id")?,
             quota_policy_id: row.try_get("quota_policy_id")?,
             created_at: row.try_get("created_at")?,

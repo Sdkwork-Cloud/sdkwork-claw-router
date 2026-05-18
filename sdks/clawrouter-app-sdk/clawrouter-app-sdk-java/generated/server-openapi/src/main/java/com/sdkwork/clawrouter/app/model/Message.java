@@ -6,6 +6,7 @@ public class Message {
     private String desc;
     private String id;
     private Boolean read;
+    private Boolean showAsPopup;
     private String time;
     private String title;
     private String type;
@@ -40,6 +41,14 @@ public class Message {
     
     public void setRead(Boolean read) {
         this.read = read;
+    }
+
+    public Boolean getShowAsPopup() {
+        return this.showAsPopup;
+    }
+    
+    public void setShowAsPopup(Boolean showAsPopup) {
+        this.showAsPopup = showAsPopup;
     }
 
     public String getTime() {

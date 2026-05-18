@@ -10,6 +10,7 @@ pub type ProviderHealthProbeFuture<'a> =
 pub struct ProviderHealthProbeRequest {
     pub provider_base_url: String,
     pub provider_secret_ref: String,
+    pub provider_secret_value: Option<String>,
     pub provider_model: String,
     pub provider_timeout_ms: Option<u64>,
 }

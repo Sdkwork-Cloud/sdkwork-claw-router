@@ -9,15 +9,19 @@ import {
   createTokenLimitInputFromForm,
 } from './ratelimitForm';
 
+import { useTranslation } from 'react-i18next';
+type TranslationFunction = ReturnType<typeof useTranslation>['t'];
+
 const RATELIMIT_TABS = [
-  { id: 'dashboard', label: '风控拦截总览', icon: <Gauge className="w-4 h-4" /> },
-  { id: 'ip', label: 'IP访问限流', icon: <Globe className="w-4 h-4" /> },
-  { id: 'token', label: '令牌限额', icon: <Key className="w-4 h-4" /> },
-  { id: 'model', label: '模型频控策略', icon: <Database className="w-4 h-4" /> },
-  { id: 'firewall', label: '黑白名单(WAF)', icon: <Lock className="w-4 h-4" /> },
+  { id: 'dashboard', label: (t: TranslationFunction) => t("admin.ratelimit.index.text.1gxbx21", "风控拦截总览"), icon: <Gauge className="w-4 h-4" /> },
+  { id: 'ip', label: (t: TranslationFunction) => t("admin.ratelimit.index.text.1dpgvei", "IP访问限流"), icon: <Globe className="w-4 h-4" /> },
+  { id: 'token', label: (t: TranslationFunction) => t("admin.ratelimit.index.text.2fpnam", "令牌限额"), icon: <Key className="w-4 h-4" /> },
+  { id: 'model', label: (t: TranslationFunction) => t("admin.ratelimit.index.text.1xzz6og", "模型频控策略"), icon: <Database className="w-4 h-4" /> },
+  { id: 'firewall', label: (t: TranslationFunction) => t("admin.ratelimit.index.text.1tmo5ay", "黑白名单(WAF)"), icon: <Lock className="w-4 h-4" /> },
 ];
 
 export function RateLimitAdmin() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('ip');
   const [search, setSearch] = useState('');
 
@@ -45,9 +49,8 @@ export function RateLimitAdmin() {
         <div className="p-5 border-b border-slate-200 dark:border-white/10">
           <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
             <ShieldAlert className="w-5 h-5 text-red-500" />
-            限流与安全风控
-          </h2>
-          <p className="text-xs text-slate-500 mt-1">全局流量控制及访问频率防护规则</p>
+            {t("admin.ratelimit.index.text.1q9or2q", "限流与安全风控")}</h2>
+          <p className="text-xs text-slate-500 mt-1">{t("admin.ratelimit.index.text.1s2axdq", "全局流量控制及访问频率防护规则")}</p>
         </div>
         <div className="flex-1 py-4 flex flex-col gap-1 px-3 overflow-y-auto">
           {RATELIMIT_TABS.map(tab => (
@@ -64,7 +67,7 @@ export function RateLimitAdmin() {
               }`}
             >
               {tab.icon}
-              {tab.label}
+              {tab.label(t)}
             </button>
           ))}
         </div>
@@ -80,6 +83,7 @@ export function RateLimitAdmin() {
 
 // 1. 全局风控大盘
 function RiskDashboardView() {
+  const { t } = useTranslation();
   const [snapshot, setSnapshot] = useState<{
     ipLimits: IpLimitRule[];
     tokenLimits: TokenLimitRule[];
@@ -135,14 +139,14 @@ function RiskDashboardView() {
     return (
       <div className="flex-1 flex flex-col items-center justify-center text-center px-6 text-slate-500">
         <AlertTriangle className="w-10 h-10 mb-3 text-amber-500" />
-        <h3 className="text-lg font-medium text-slate-900 dark:text-white mb-2">风控规则概览加载失败</h3>
+        <h3 className="text-lg font-medium text-slate-900 dark:text-white mb-2">{t("admin.ratelimit.index.text.p7avzq", "风控规则概览加载失败")}</h3>
         <p className="text-sm max-w-lg mb-4">{loadError}</p>
         <button
           type="button"
           onClick={() => void loadDashboard()}
           className="px-4 py-2 rounded-lg bg-red-600 text-sm font-medium text-white hover:bg-red-700 transition-colors"
         >
-          Retry
+          {t('common.actions.retry')}
         </button>
       </div>
     );
@@ -163,17 +167,16 @@ function RiskDashboardView() {
       <div>
         <h3 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
           <Gauge className="w-5 h-5 text-red-500" />
-          安全防护规则概览
-        </h3>
-        <p className="text-sm text-slate-500 mt-1">基于当前后端已配置的限流、限额和 WAF 规则汇总。</p>
+          {t("admin.ratelimit.index.text.nn87s3", "安全防护规则概览")}</h3>
+        <p className="text-sm text-slate-500 mt-1">{t("admin.ratelimit.index.text.hxs399", "基于当前后端已配置的限流、限额和 WAF 规则汇总。")}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {[
-          { title: '生效 IP 限流', value: activeIpLimits, detail: `${ipLimits.length} 条 IP 规则`, icon: Globe, color: 'text-blue-500', bg: 'bg-blue-50 dark:bg-blue-500/10' },
-          { title: '耗尽令牌限额', value: exhaustedTokenLimits, detail: `${tokenLimits.length} 条 API Key 规则`, icon: Key, color: 'text-amber-500', bg: 'bg-amber-50 dark:bg-amber-500/10' },
-          { title: '强制模型频控', value: activeModelLimits, detail: `${modelLimits.length} 条模型规则`, icon: Database, color: 'text-purple-500', bg: 'bg-purple-50 dark:bg-purple-500/10' },
-          { title: 'WAF 名单规则', value: totalFirewallRules, detail: `${totalConfiguredRules} 条总规则`, icon: Lock, color: 'text-red-500', bg: 'bg-red-50 dark:bg-red-500/10' },
+          { title: t("admin.ratelimit.index.text.1hlr3sa", "生效 IP 限流"), value: activeIpLimits, detail: t("admin.ratelimit.index.text.ipRuleCount", "{{count}} 条 IP 规则", { count: ipLimits.length }), icon: Globe, color: 'text-blue-500', bg: 'bg-blue-50 dark:bg-blue-500/10' },
+          { title: t("admin.ratelimit.index.text.s7fzhe", "耗尽令牌限额"), value: exhaustedTokenLimits, detail: t("admin.ratelimit.index.text.apiKeyRuleCount", "{{count}} 条 API Key 规则", { count: tokenLimits.length }), icon: Key, color: 'text-amber-500', bg: 'bg-amber-50 dark:bg-amber-500/10' },
+          { title: t("admin.ratelimit.index.text.10f9m11", "强制模型频控"), value: activeModelLimits, detail: t("admin.ratelimit.index.text.modelRuleCount", "{{count}} 条模型规则", { count: modelLimits.length }), icon: Database, color: 'text-purple-500', bg: 'bg-purple-50 dark:bg-purple-500/10' },
+          { title: t("admin.ratelimit.index.text.z0wwym", "WAF 名单规则"), value: totalFirewallRules, detail: t("admin.ratelimit.index.text.totalRuleCount", "{{count}} 条总规则", { count: totalConfiguredRules }), icon: Lock, color: 'text-red-500', bg: 'bg-red-50 dark:bg-red-500/10' },
         ].map(item => (
           <div key={item.title} className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm flex items-center justify-between">
             <div>
@@ -190,7 +193,7 @@ function RiskDashboardView() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm">
-          <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-4">最高 IP RPS 限制</h4>
+          <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-4">{t("admin.ratelimit.index.text.1cfu979", "最高 IP RPS 限制")}</h4>
           <div className="space-y-3">
             {[...ipLimits].sort((a, b) => b.rps - a.rps).slice(0, 5).map(rule => (
               <div key={rule.id} className="flex items-center justify-between gap-4 text-sm">
@@ -206,7 +209,7 @@ function RiskDashboardView() {
         </div>
 
         <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm">
-          <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-4">模型频控覆盖</h4>
+          <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-4">{t("admin.ratelimit.index.text.13dckll", "模型频控覆盖")}</h4>
           <div className="space-y-3">
             {[...modelLimits].sort((a, b) => b.tpm - a.tpm).slice(0, 5).map(rule => (
               <div key={rule.id} className="flex items-center justify-between gap-4 text-sm">
@@ -231,6 +234,7 @@ function getLoadErrorMessage(error: unknown, fallback: string): string {
 
 // 2. IP访问限流
 function IpRateLimitView({ search, setSearch }: { search: string, setSearch: (s: string) => void }) {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [limits, setLimits] = useState<IpLimitRule[]>([]);
   const [loading, setLoading] = useState(true);
@@ -279,28 +283,26 @@ function IpRateLimitView({ search, setSearch }: { search: string, setSearch: (s:
       <div className="p-5 border-b border-slate-200 dark:border-white/10 flex justify-between items-center bg-slate-50/50 dark:bg-[#121212]/50">
         <h3 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
           <Globe className="w-5 h-5 text-slate-400" />
-          IP 层面限流配置
-        </h3>
+          {t("admin.ratelimit.index.text.3oxyjw", "IP 层面限流配置")}</h3>
         <div className="flex gap-3">
           <div className="relative">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-            <input type="text" placeholder="搜索规则或IP网段..." value={search} onChange={e => setSearch(e.target.value)} className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:border-red-500 w-64 text-slate-900 dark:text-white" />
+            <input type="text" placeholder={t("admin.ratelimit.index.text.16hm29t", "搜索规则或IP网段...")} value={search} onChange={e => setSearch(e.target.value)} className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:border-red-500 w-64 text-slate-900 dark:text-white" />
           </div>
           <button onClick={() => setIsModalOpen(true)} className="bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2">
-            <Plus className="w-4 h-4" /> 新增IP限流规则
-          </button>
+            <Plus className="w-4 h-4" /> {t("admin.ratelimit.index.text.50zgee", "新增IP限流规则")}</button>
         </div>
       </div>
       <div className="flex-1 overflow-auto p-5 relative">
         <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-white/10 rounded-lg overflow-hidden">
           <thead className="bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
             <tr>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">规则名</th>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">目标 IP/网段</th>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">每秒请求限制 (RPS)</th>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">每分钟请求限制 (RPM)</th>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">惩罚封禁时长</th>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">状态</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.122k66h", "规则名")}</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.10tgl7u", "目标 IP/网段")}</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.1rgib0x", "每秒请求限制 (RPS)")}</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.guf972", "每分钟请求限制 (RPM)")}</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.oxt1rb", "惩罚封禁时长")}</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.finance.index.text.1ccx4t4", "状态")}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-white/5 bg-white dark:bg-transparent">
@@ -330,7 +332,7 @@ function IpRateLimitView({ search, setSearch }: { search: string, setSearch: (s:
                 <td className="px-4 py-3 font-mono">{rule.rpm} req/m</td>
                 <td className="px-4 py-3 text-red-600 dark:text-red-400 text-xs font-semibold">{rule.blockDuration}</td>
                 <td className="px-4 py-3">
-                  <span className={`px-2 py-1 rounded text-xs ${rule.status === 'active' ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400' : 'bg-slate-100 text-slate-500 dark:bg-white/10 dark:text-slate-400'}`}>{rule.status === 'active' ? '生效中' : '已停用'}</span>
+                  <span className={`px-2 py-1 rounded text-xs ${rule.status === 'active' ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400' : 'bg-slate-100 text-slate-500 dark:bg-white/10 dark:text-slate-400'}`}>{rule.status === 'active' ? t("admin.ratelimit.index.text.t20ka5", "生效中") : t("admin.ratelimit.index.text.1wv0i2h", "已停用")}</span>
                 </td>
               </tr>
             ))}
@@ -342,7 +344,7 @@ function IpRateLimitView({ search, setSearch }: { search: string, setSearch: (s:
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
           <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col">
             <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">配置IP限流规则</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.6cu0iv", "配置IP限流规则")}</h3>
               <button onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
                 <X className="w-5 h-5" />
               </button>
@@ -351,35 +353,33 @@ function IpRateLimitView({ search, setSearch }: { search: string, setSearch: (s:
             <form onSubmit={handleAddRule} className="flex flex-col flex-1">
               <div className="p-5 space-y-4 flex-1">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">规则名称</label>
-                  <input required name="ruleName" type="text" placeholder="例如: 恶意爬虫防护" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white" />
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{t("admin.ratelimit.index.text.1f53f3v", "规则名称")}</label>
+                  <input required name="ruleName" type="text" placeholder={t("admin.ratelimit.index.text.1qd1fve", "例如: 恶意爬虫防护")} className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">目标IP网段</label>
-                  <input required name="targetIp" type="text" placeholder="0.0.0.0/0 (代表全部)" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{t("admin.ratelimit.index.text.8469k9", "目标IP网段")}</label>
+                  <input required name="targetIp" type="text" placeholder={t("admin.ratelimit.index.text.1d3rjn8", "0.0.0.0/0 (代表全部)")} className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">每秒限制 (RPS)</label>
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{t("admin.ratelimit.index.text.1ssndok", "每秒限制 (RPS)")}</label>
                     <input required name="rps" type="number" min="1" step="1" placeholder="10" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">每分钟限制 (RPM)</label>
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{t("admin.ratelimit.index.text.e77907", "每分钟限制 (RPM)")}</label>
                     <input required name="rpm" type="number" min="1" step="1" placeholder="300" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">惩罚封禁时长</label>
-                  <input required name="blockDuration" type="text" placeholder="例如: 10m, 1h, 24h" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{t("admin.ratelimit.index.text.oxt1rb", "惩罚封禁时长")}</label>
+                  <input required name="blockDuration" type="text" placeholder={t("admin.ratelimit.index.text.1ogoxpr", "例如: 10m, 1h, 24h")} className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
                 </div>
               </div>
               <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212] rounded-b-2xl">
                 <button type="button" onClick={() => setIsModalOpen(false)} className="px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-white/10 rounded-lg transition-colors">
-                  取消
-                </button>
+                  {t("admin.group.index.text.1589w37", "取消")}</button>
                 <button type="submit" className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg shadow-sm transition-colors">
-                  确认添加
-                </button>
+                  {t("admin.ratelimit.index.text.1puu5bo", "确认添加")}</button>
               </div>
             </form>
           </div>
@@ -391,6 +391,7 @@ function IpRateLimitView({ search, setSearch }: { search: string, setSearch: (s:
 
 // 3. 令牌与API Key限流
 function TokenRateLimitView({ search, setSearch }: { search: string, setSearch: (s: string) => void }) {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [limits, setLimits] = useState<TokenLimitRule[]>([]);
   const [loading, setLoading] = useState(true);
@@ -439,28 +440,26 @@ function TokenRateLimitView({ search, setSearch }: { search: string, setSearch: 
       <div className="p-5 border-b border-slate-200 dark:border-white/10 flex justify-between items-center bg-slate-50/50 dark:bg-[#121212]/50">
         <h3 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
           <Key className="w-5 h-5 text-slate-400" />
-          API 密钥限速配置
-        </h3>
+          {t("admin.ratelimit.index.text.w3ra7a", "API 密钥限速配置")}</h3>
         <div className="flex gap-3">
           <div className="relative">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-            <input type="text" placeholder="搜索 API 密钥或账户..." value={search} onChange={e => setSearch(e.target.value)} className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:border-red-500 w-64 text-slate-900 dark:text-white" />
+            <input type="text" placeholder={t("admin.ratelimit.index.text.wh25hh", "搜索 API 密钥或账户...")} value={search} onChange={e => setSearch(e.target.value)} className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:border-red-500 w-64 text-slate-900 dark:text-white" />
           </div>
           <button onClick={() => setIsModalOpen(true)} className="bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2">
-            <Plus className="w-4 h-4" /> 自定义限速
-          </button>
+            <Plus className="w-4 h-4" /> {t("admin.ratelimit.index.text.1lq4o49", "自定义限速")}</button>
         </div>
       </div>
       <div className="flex-1 overflow-auto p-5 relative">
         <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-white/10 rounded-lg overflow-hidden">
           <thead className="bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
             <tr>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">API Key (前缀)</th>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">关联用户</th>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">每秒限速 (RPS)</th>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">并发缓冲 (Burst)</th>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">每日调用上限 (RPD)</th>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">额度状态</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.1pwu3yg", "API Key (前缀)")}</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.4qn97v", "关联用户")}</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.16yndh7", "每秒限速 (RPS)")}</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.qple4c", "并发缓冲 (Burst)")}</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.1b5gy7d", "每日调用上限 (RPD)")}</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.e6b1lb", "额度状态")}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-white/5 bg-white dark:bg-transparent">
@@ -490,7 +489,7 @@ function TokenRateLimitView({ search, setSearch }: { search: string, setSearch: 
                 <td className="px-4 py-3 font-mono">{token.burst}</td>
                 <td className="px-4 py-3 font-mono">{token.rpd} rq/d</td>
                 <td className="px-4 py-3">
-                  <span className={`px-2 py-1 rounded text-xs ${token.status === 'active' ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400' : 'bg-red-50 text-red-600 dark:bg-red-500/10 dark:text-red-400'}`}>{token.status === 'active' ? '健康可用' : '触发熔断'}</span>
+                  <span className={`px-2 py-1 rounded text-xs ${token.status === 'active' ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400' : 'bg-red-50 text-red-600 dark:bg-red-500/10 dark:text-red-400'}`}>{token.status === 'active' ? t("admin.ratelimit.index.text.1gnyoj6", "健康可用") : t("admin.ratelimit.index.text.15qtpnv", "触发熔断")}</span>
                 </td>
               </tr>
             ))}
@@ -503,8 +502,7 @@ function TokenRateLimitView({ search, setSearch }: { search: string, setSearch: 
           <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col">
             <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                 <Key className="w-5 h-5 text-red-500" /> 添加自定义令牌限速
-              </h3>
+                 <Key className="w-5 h-5 text-red-500" /> {t("admin.ratelimit.index.text.fkvknw", "添加自定义令牌限速")}</h3>
               <button onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
                 <X className="w-5 h-5" />
               </button>
@@ -513,11 +511,11 @@ function TokenRateLimitView({ search, setSearch }: { search: string, setSearch: 
             <form onSubmit={handleAddTokenLimit} className="flex flex-col flex-1">
               <div className="p-5 space-y-4 flex-1">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">目标用户或邮箱</label>
-                  <input required name="user" type="text" placeholder="例如: bob@corp.com" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white" />
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{t("admin.ratelimit.index.text.wsgqjy", "目标用户或邮箱")}</label>
+                  <input required name="user" type="text" placeholder={t("admin.ratelimit.index.text.bziph8", "例如: bob@corp.com")} className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">API Key (留空影响所有此用户的Key)</label>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{t("admin.ratelimit.index.text.q55c8v", "API Key (留空影响所有此用户的Key)")}</label>
                   <input required name="keyPrefix" type="text" placeholder="sk-proj-..." className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -536,8 +534,8 @@ function TokenRateLimitView({ search, setSearch }: { search: string, setSearch: 
                 </div>
               </div>
               <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212]">
-                <button type="button" onClick={() => setIsModalOpen(false)} className="px-4 py-2 text-sm font-medium bg-white dark:bg-[#1a1a1a] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 rounded-lg">取消</button>
-                <button type="submit" className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg">确定</button>
+                <button type="button" onClick={() => setIsModalOpen(false)} className="px-4 py-2 text-sm font-medium bg-white dark:bg-[#1a1a1a] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 rounded-lg">{t("admin.group.index.text.1589w37", "取消")}</button>
+                <button type="submit" className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg">{t("admin.ratelimit.index.text.r7xfzl", "确定")}</button>
               </div>
             </form>
           </div>
@@ -549,6 +547,7 @@ function TokenRateLimitView({ search, setSearch }: { search: string, setSearch: 
 
 // 4. 特定模型频控 (TPM/RPM)
 function ModelRateLimitView({ search, setSearch }: { search: string, setSearch: (s: string) => void }) {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [limits, setLimits] = useState<ModelLimitRule[]>([]);
   const [loading, setLoading] = useState(true);
@@ -597,27 +596,25 @@ function ModelRateLimitView({ search, setSearch }: { search: string, setSearch: 
       <div className="p-5 border-b border-slate-200 dark:border-white/10 flex justify-between items-center bg-slate-50/50 dark:bg-[#121212]/50">
         <h3 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
           <Database className="w-5 h-5 text-slate-400" />
-          模型级频控与令牌速率限制
-        </h3>
+          {t("admin.ratelimit.index.text.feonss", "模型级频控与令牌速率限制")}</h3>
         <div className="flex gap-3">
           <div className="relative">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-            <input type="text" placeholder="搜索模型名称..." value={search} onChange={e => setSearch(e.target.value)} className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:border-red-500 w-64 text-slate-900 dark:text-white" />
+            <input type="text" placeholder={t("admin.ratelimit.index.text.ikz3s0", "搜索模型名称...")} value={search} onChange={e => setSearch(e.target.value)} className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:border-red-500 w-64 text-slate-900 dark:text-white" />
           </div>
           <button onClick={() => setIsModalOpen(true)} className="bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2">
-            <Plus className="w-4 h-4" /> 覆盖默认限速
-          </button>
+            <Plus className="w-4 h-4" /> {t("admin.ratelimit.index.text.1yr25uc", "覆盖默认限速")}</button>
         </div>
       </div>
       <div className="flex-1 overflow-auto p-5 relative">
         <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-white/10 rounded-lg overflow-hidden">
           <thead className="bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
             <tr>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">高净值模型</th>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">作用范围 (用户分组)</th>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">分钟级请求限度 (RPM)</th>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">分钟级Token吞吐 (TPM)</th>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">控制状态</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.1iny067", "高净值模型")}</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.ev2ft0", "作用范围 (用户分组)")}</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.1fzvx0g", "分钟级请求限度 (RPM)")}</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.1k8oi88", "分钟级Token吞吐 (TPM)")}</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.u75v55", "控制状态")}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-white/5 bg-white dark:bg-transparent">
@@ -646,7 +643,7 @@ function ModelRateLimitView({ search, setSearch }: { search: string, setSearch: 
                  <td className="px-4 py-3 font-mono text-red-600 dark:text-red-400">{m.rpm} <span className="text-slate-400 text-xs font-sans">RPM</span></td>
                  <td className="px-4 py-3 font-mono text-red-600 dark:text-red-400">{m.tpm} <span className="text-slate-400 text-xs font-sans">TPM</span></td>
                  <td className="px-4 py-3">
-                  <span className={`px-2 py-1 rounded text-xs ${m.status === 'active' ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400' : 'bg-slate-100 text-slate-500 dark:bg-white/10 dark:text-slate-400'}`}>{m.status === 'active' ? '强制控制中' : '静默监控'}</span>
+                  <span className={`px-2 py-1 rounded text-xs ${m.status === 'active' ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400' : 'bg-slate-100 text-slate-500 dark:bg-white/10 dark:text-slate-400'}`}>{m.status === 'active' ? t("admin.ratelimit.index.text.lzqs5v", "强制控制中") : t("admin.ratelimit.index.text.1hjwizc", "静默监控")}</span>
                  </td>
                </tr>
              ))}
@@ -659,8 +656,7 @@ function ModelRateLimitView({ search, setSearch }: { search: string, setSearch: 
           <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col">
             <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                 <Database className="w-5 h-5 text-red-500" /> 新建模型限速规则
-              </h3>
+                 <Database className="w-5 h-5 text-red-500" /> {t("admin.ratelimit.index.text.196m7ep", "新建模型限速规则")}</h3>
               <button onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
                 <X className="w-5 h-5" />
               </button>
@@ -669,27 +665,27 @@ function ModelRateLimitView({ search, setSearch }: { search: string, setSearch: 
             <form onSubmit={handleAddModelLimit} className="flex flex-col flex-1">
               <div className="p-5 space-y-4 flex-1">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">目标模型</label>
-                  <input required name="model" type="text" placeholder="例如: gpt-4" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{t("admin.ratelimit.index.text.myeno6", "目标模型")}</label>
+                  <input required name="model" type="text" placeholder={t("admin.ratelimit.index.text.14qa7he", "例如: gpt-4")} className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">作用范围 (用户分组)</label>
-                  <input required name="group" type="text" placeholder="例如: 默认分组" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white" defaultValue="默认分组" />
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{t("admin.ratelimit.index.text.ev2ft0", "作用范围 (用户分组)")}</label>
+                  <input required name="group" type="text" placeholder={t("admin.ratelimit.index.text.144ztkk", "例如: 默认分组")} className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white" defaultValue={t("admin.ratelimit.index.text.1krzxor", "默认分组")} />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">分钟级请求限度 (RPM)</label>
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{t("admin.ratelimit.index.text.1fzvx0g", "分钟级请求限度 (RPM)")}</label>
                     <input required name="rpm" type="number" min="1" step="1" placeholder="5" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">分钟级Token吞吐 (TPM)</label>
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{t("admin.ratelimit.index.text.1k8oi88", "分钟级Token吞吐 (TPM)")}</label>
                     <input required name="tpm" type="number" min="1" step="1" placeholder="20000" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
                   </div>
                 </div>
               </div>
               <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212]">
-                <button type="button" onClick={() => setIsModalOpen(false)} className="px-4 py-2 text-sm font-medium bg-white dark:bg-[#1a1a1a] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 rounded-lg">取消</button>
-                <button type="submit" className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg">确定</button>
+                <button type="button" onClick={() => setIsModalOpen(false)} className="px-4 py-2 text-sm font-medium bg-white dark:bg-[#1a1a1a] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 rounded-lg">{t("admin.group.index.text.1589w37", "取消")}</button>
+                <button type="submit" className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg">{t("admin.ratelimit.index.text.r7xfzl", "确定")}</button>
               </div>
             </form>
           </div>
@@ -701,6 +697,7 @@ function ModelRateLimitView({ search, setSearch }: { search: string, setSearch: 
 
 // 5. WAF
 function FirewallView({ search, setSearch }: { search: string, setSearch: (s: string) => void }) {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [rules, setRules] = useState<FirewallRule[]>([]);
   const [loading, setLoading] = useState(true);
@@ -775,27 +772,25 @@ function FirewallView({ search, setSearch }: { search: string, setSearch: (s: st
       <div className="p-5 border-b border-slate-200 dark:border-white/10 flex justify-between items-center bg-slate-50/50 dark:bg-[#121212]/50">
         <h3 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
           <Lock className="w-5 h-5 text-slate-400" />
-          系统防火墙黑白名单规则
-        </h3>
+          {t("admin.ratelimit.index.text.128gxt4", "系统防火墙黑白名单规则")}</h3>
         <div className="flex gap-3">
           <div className="relative">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-            <input type="text" placeholder="搜索拦截对象..." value={search} onChange={e => setSearch(e.target.value)} className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:border-red-500 w-64 text-slate-900 dark:text-white" />
+            <input type="text" placeholder={t("admin.ratelimit.index.text.r2w8k5", "搜索拦截对象...")} value={search} onChange={e => setSearch(e.target.value)} className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:border-red-500 w-64 text-slate-900 dark:text-white" />
           </div>
           <button onClick={() => setIsModalOpen(true)} className="bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2">
-            <Plus className="w-4 h-4" /> 封禁新对象
-          </button>
+            <Plus className="w-4 h-4" /> {t("admin.ratelimit.index.text.12fbvrj", "封禁新对象")}</button>
         </div>
       </div>
       <div className="flex-1 overflow-auto p-5 relative">
         <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-white/10 rounded-lg overflow-hidden">
           <thead className="bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
             <tr>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">名单类型</th>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">拦截/放行对象</th>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">拦截原因 / 备注</th>
-              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">处置时间</th>
-              <th className="px-4 py-3 text-right font-semibold text-slate-900 dark:text-white">操作</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.1fad1dp", "名单类型")}</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.nump7a", "拦截/放行对象")}</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.m8ph8q", "拦截原因 / 备注")}</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.1czrq5x", "处置时间")}</th>
+              <th className="px-4 py-3 text-right font-semibold text-slate-900 dark:text-white">{t("admin.group.index.text.501w24", "操作")}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-white/5 bg-white dark:bg-transparent">
@@ -829,8 +824,7 @@ function FirewallView({ search, setSearch }: { search: string, setSearch: (s: st
                     disabled={removingFirewallId === f.id}
                     className="text-slate-400 hover:text-emerald-500 disabled:opacity-60 disabled:cursor-not-allowed transition-colors text-xs border border-slate-200 dark:border-white/10 px-2 py-1 rounded"
                   >
-                    解除
-                  </button>
+                    {t("admin.ratelimit.index.text.1iv1xe", "解除")}</button>
                  </td>
                </tr>
              ))}
@@ -843,8 +837,7 @@ function FirewallView({ search, setSearch }: { search: string, setSearch: (s: st
           <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col">
             <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                 <Lock className="w-5 h-5 text-red-500" /> 添加系统防火墙拦截规则
-              </h3>
+                 <Lock className="w-5 h-5 text-red-500" /> {t("admin.ratelimit.index.text.1803rpl", "添加系统防火墙拦截规则")}</h3>
               <button onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
                 <X className="w-5 h-5" />
               </button>
@@ -853,26 +846,26 @@ function FirewallView({ search, setSearch }: { search: string, setSearch: (s: st
             <form onSubmit={handleAddFirewall} className="flex flex-col flex-1">
               <div className="p-5 space-y-4 flex-1">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">拦截/放行对象</label>
-                  <input required name="value" type="text" placeholder="IP, IP段 或 邮箱后缀" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{t("admin.ratelimit.index.text.nump7a", "拦截/放行对象")}</label>
+                  <input required name="value" type="text" placeholder={t("admin.ratelimit.index.text.17jvju1", "IP, IP段 或 邮箱后缀")} className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white font-mono" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">名单类型</label>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{t("admin.ratelimit.index.text.1fad1dp", "名单类型")}</label>
                   <select required name="type" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white">
-                    <option value="IP 黑名单屏蔽">IP 黑名单屏蔽 (拒绝所有请求)</option>
-                    <option value="邮箱黑名单">邮箱黑名单 (禁止注册/使用)</option>
-                    <option value="IP 白名单">IP 白名单 (豁免限流)</option>
-                    <option value="邮箱白名单">邮箱白名单 (豁免限流)</option>
+                    <option value={t("admin.ratelimit.index.text.1xfvv9p", "IP 黑名单屏蔽")}>{t("admin.ratelimit.index.text.869p7l", "IP 黑名单屏蔽 (拒绝所有请求)")}</option>
+                    <option value={t("admin.ratelimit.index.text.za339p", "邮箱黑名单")}>{t("admin.ratelimit.index.text.van4i7", "邮箱黑名单 (禁止注册/使用)")}</option>
+                    <option value={t("admin.ratelimit.index.text.16pndqd", "IP 白名单")}>{t("admin.ratelimit.index.text.1q4bo8z", "IP 白名单 (豁免限流)")}</option>
+                    <option value={t("admin.ratelimit.index.text.5qvnch", "邮箱白名单")}>{t("admin.ratelimit.index.text.150764v", "邮箱白名单 (豁免限流)")}</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">处置原因</label>
-                  <input required name="reason" type="text" placeholder="例如: 恶意撞库" className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white" />
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">{t("admin.ratelimit.index.text.1oxf3so", "处置原因")}</label>
+                  <input required name="reason" type="text" placeholder={t("admin.ratelimit.index.text.1i9mrj6", "例如: 恶意撞库")} className="w-full bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500 text-slate-900 dark:text-white" />
                 </div>
               </div>
               <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212]">
-                <button type="button" onClick={() => setIsModalOpen(false)} className="px-4 py-2 text-sm font-medium bg-white dark:bg-[#1a1a1a] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 rounded-lg">取消</button>
-                <button type="submit" className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg">确定封禁</button>
+                <button type="button" onClick={() => setIsModalOpen(false)} className="px-4 py-2 text-sm font-medium bg-white dark:bg-[#1a1a1a] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 rounded-lg">{t("admin.group.index.text.1589w37", "取消")}</button>
+                <button type="submit" className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg">{t("admin.ratelimit.index.text.sx1x37", "确定封禁")}</button>
               </div>
             </form>
           </div>

@@ -64,8 +64,8 @@ async fn list_monitor_nodes(
             ORDER BY latest.heartbeat_at DESC NULLS LAST, latest.id DESC
             LIMIT 1
         ) h ON true
-        WHERE (i.tenant_id IS NULL OR i.tenant_id = $1)
-          AND (i.organization_id IS NULL OR i.organization_id = $2)
+        WHERE (i.tenant_id = $1 OR i.tenant_id = 0 OR i.tenant_id IS NULL)
+          AND (i.organization_id = $2 OR i.organization_id = 0 OR i.organization_id IS NULL)
           AND i.status = 1
           AND i.deleted_at IS NULL
         ORDER BY i.last_heartbeat_at DESC NULLS LAST, i.updated_at DESC NULLS LAST, i.id DESC
@@ -97,8 +97,8 @@ async fn list_monitor_alerts(
             resolved_at::text AS resolved_at,
             COALESCE(source, '') AS source
         FROM ops_alert_event
-        WHERE (tenant_id IS NULL OR tenant_id = $1)
-          AND (organization_id IS NULL OR organization_id = $2)
+        WHERE (tenant_id = $1 OR tenant_id = 0 OR tenant_id IS NULL)
+          AND (organization_id = $2 OR organization_id = 0 OR organization_id IS NULL)
           AND status = 1
         ORDER BY COALESCE(last_seen_at, first_seen_at, created_at) DESC NULLS LAST, id DESC
         LIMIT 100
@@ -125,8 +125,8 @@ async fn list_monitor_performance(
             MAX(CASE WHEN metric_name IN ('memory', 'memory_percent', 'system.memory') THEN metric_value END)::text AS memory,
             MAX(CASE WHEN metric_name IN ('network', 'network_mbps', 'network_traffic', 'system.network') THEN metric_value END)::text AS network
         FROM ops_metric_snapshot
-        WHERE (tenant_id IS NULL OR tenant_id = $1)
-          AND (organization_id IS NULL OR organization_id = $2)
+        WHERE (tenant_id = $1 OR tenant_id = 0 OR tenant_id IS NULL)
+          AND (organization_id = $2 OR organization_id = 0 OR organization_id IS NULL)
           AND status = 1
           AND metric_name IN ('cpu', 'cpu_percent', 'system.cpu', 'memory', 'memory_percent', 'system.memory', 'network', 'network_mbps', 'network_traffic', 'system.network')
           AND period_start IS NOT NULL

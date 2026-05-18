@@ -79,6 +79,7 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 
 ## API Modules
 
+- `client.getAgents()` - agents API
 - `client.getAi()` - ai API
 - `client.getAuth()` - auth API
 - `client.getBilling()` - billing API
@@ -89,6 +90,18 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 - `client.getPlatform()` - platform API
 
 ## Usage Examples
+
+### agents
+
+```java
+// List user agents
+Map<String, Object> params = new LinkedHashMap<>();
+params.put("page", 1);
+params.put("page_size", 2);
+params.put("q", "q");
+AgentsListResult result = client.getAgents().list(params);
+System.out.println(result);
+```
 
 ### ai
 

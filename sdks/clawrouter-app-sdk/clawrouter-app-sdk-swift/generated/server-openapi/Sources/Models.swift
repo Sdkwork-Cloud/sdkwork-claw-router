@@ -318,6 +318,620 @@ public struct AccountTokensRetrieveResult: Codable {
     }
 }
 
+public struct AgentCapabilities: Codable {
+    public let mcpServerCount: Int?
+    public let memoryEnabled: Bool?
+    public let skillBindingCount: Int?
+
+
+    public init(mcpServerCount: Int? = nil, memoryEnabled: Bool? = nil, skillBindingCount: Int? = nil) {
+        self.mcpServerCount = mcpServerCount
+        self.memoryEnabled = memoryEnabled
+        self.skillBindingCount = skillBindingCount
+    }
+}
+
+public struct AgentCreateRequest: Codable {
+    public let code: String?
+    public let description: String?
+    public let mcpPolicy: [String: String]?
+    public let memoryPolicy: [String: String]?
+    public let model: String?
+    public let name: String?
+    public let runtimePolicy: [String: String]?
+    public let skillPolicy: [String: String]?
+    public let systemPrompt: String?
+    public let toolPolicy: [String: String]?
+
+
+    public init(code: String? = nil, description: String? = nil, mcpPolicy: [String: String]? = nil, memoryPolicy: [String: String]? = nil, model: String? = nil, name: String? = nil, runtimePolicy: [String: String]? = nil, skillPolicy: [String: String]? = nil, systemPrompt: String? = nil, toolPolicy: [String: String]? = nil) {
+        self.code = code
+        self.description = description
+        self.mcpPolicy = mcpPolicy
+        self.memoryPolicy = memoryPolicy
+        self.model = model
+        self.name = name
+        self.runtimePolicy = runtimePolicy
+        self.skillPolicy = skillPolicy
+        self.systemPrompt = systemPrompt
+        self.toolPolicy = toolPolicy
+    }
+}
+
+public struct AgentItem: Codable {
+    public let avatarUrl: String?
+    public let capabilities: AgentCapabilities?
+    public let code: String?
+    public let createdAt: String?
+    public let defaultVersion: AgentVersionItem?
+    public let description: String?
+    public let id: String?
+    public let name: String?
+    public let ownerUserId: Int?
+    public let status: String?
+    public let templateSource: String?
+    public let updatedAt: String?
+    public let visibility: String?
+
+
+    public init(avatarUrl: String? = nil, capabilities: AgentCapabilities? = nil, code: String? = nil, createdAt: String? = nil, defaultVersion: AgentVersionItem? = nil, description: String? = nil, id: String? = nil, name: String? = nil, ownerUserId: Int? = nil, status: String? = nil, templateSource: String? = nil, updatedAt: String? = nil, visibility: String? = nil) {
+        self.avatarUrl = avatarUrl
+        self.capabilities = capabilities
+        self.code = code
+        self.createdAt = createdAt
+        self.defaultVersion = defaultVersion
+        self.description = description
+        self.id = id
+        self.name = name
+        self.ownerUserId = ownerUserId
+        self.status = status
+        self.templateSource = templateSource
+        self.updatedAt = updatedAt
+        self.visibility = visibility
+    }
+}
+
+public struct AgentItemResponse: Codable {
+    public let item: AgentItem?
+
+
+    public init(item: AgentItem? = nil) {
+        self.item = item
+    }
+}
+
+public struct AgentListResponse: Codable {
+    public let items: [AgentItem]?
+
+
+    public init(items: [AgentItem]? = nil) {
+        self.items = items
+    }
+}
+
+public struct AgentVersionItem: Codable {
+    public let createdAt: String?
+    public let id: String?
+    public let mcpPolicy: [String: String]?
+    public let memoryPolicy: [String: String]?
+    public let model: String?
+    public let releaseStatus: String?
+    public let runtimePolicy: [String: String]?
+    public let skillPolicy: [String: String]?
+    public let systemPrompt: String?
+    public let toolPolicy: [String: String]?
+    public let updatedAt: String?
+    public let versionNo: Int?
+
+
+    public init(createdAt: String? = nil, id: String? = nil, mcpPolicy: [String: String]? = nil, memoryPolicy: [String: String]? = nil, model: String? = nil, releaseStatus: String? = nil, runtimePolicy: [String: String]? = nil, skillPolicy: [String: String]? = nil, systemPrompt: String? = nil, toolPolicy: [String: String]? = nil, updatedAt: String? = nil, versionNo: Int? = nil) {
+        self.createdAt = createdAt
+        self.id = id
+        self.mcpPolicy = mcpPolicy
+        self.memoryPolicy = memoryPolicy
+        self.model = model
+        self.releaseStatus = releaseStatus
+        self.runtimePolicy = runtimePolicy
+        self.skillPolicy = skillPolicy
+        self.systemPrompt = systemPrompt
+        self.toolPolicy = toolPolicy
+        self.updatedAt = updatedAt
+        self.versionNo = versionNo
+    }
+}
+
+public struct AgentsCreateResult: Codable {
+    public let code: String?
+    public let data: AgentItemResponse?
+    public let message: String?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AgentItemResponse? = nil, message: String? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.message = message
+        self.msg = msg
+    }
+}
+
+public struct AgentsListResult: Codable {
+    public let code: String?
+    public let data: AgentListResponse?
+    public let message: String?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AgentListResponse? = nil, message: String? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.message = message
+        self.msg = msg
+    }
+}
+
+public struct AgentsRetrieveResult: Codable {
+    public let code: String?
+    public let data: AgentItem?
+    public let message: String?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AgentItem? = nil, message: String? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.message = message
+        self.msg = msg
+    }
+}
+
+public struct AiAgentMcpServerRecord: Codable {
+    public let connectionConfig: [String: String]?
+    public let createdAt: String?
+    public let credentialRef: String?
+    public let dataScope: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let description: String?
+    public let healthStatus: String?
+    public let id: String?
+    public let lastCheckedAt: String?
+    public let lastErrorMasked: String?
+    public let metadata: [String: String]?
+    public let name: String?
+    public let organizationId: String?
+    public let permissionPolicy: [String: String]?
+    public let promptCatalog: [String: String]?
+    public let resourceCatalog: [String: String]?
+    public let serverCode: String?
+    public let status: String?
+    public let tenantId: String?
+    public let toolCatalog: [String: String]?
+    public let transportType: String?
+    public let updatedAt: String?
+    public let uuid: String?
+    public let version: String?
+
+
+    public init(connectionConfig: [String: String]? = nil, createdAt: String? = nil, credentialRef: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, description: String? = nil, healthStatus: String? = nil, id: String? = nil, lastCheckedAt: String? = nil, lastErrorMasked: String? = nil, metadata: [String: String]? = nil, name: String? = nil, organizationId: String? = nil, permissionPolicy: [String: String]? = nil, promptCatalog: [String: String]? = nil, resourceCatalog: [String: String]? = nil, serverCode: String? = nil, status: String? = nil, tenantId: String? = nil, toolCatalog: [String: String]? = nil, transportType: String? = nil, updatedAt: String? = nil, uuid: String? = nil, version: String? = nil) {
+        self.connectionConfig = connectionConfig
+        self.createdAt = createdAt
+        self.credentialRef = credentialRef
+        self.dataScope = dataScope
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.description = description
+        self.healthStatus = healthStatus
+        self.id = id
+        self.lastCheckedAt = lastCheckedAt
+        self.lastErrorMasked = lastErrorMasked
+        self.metadata = metadata
+        self.name = name
+        self.organizationId = organizationId
+        self.permissionPolicy = permissionPolicy
+        self.promptCatalog = promptCatalog
+        self.resourceCatalog = resourceCatalog
+        self.serverCode = serverCode
+        self.status = status
+        self.tenantId = tenantId
+        self.toolCatalog = toolCatalog
+        self.transportType = transportType
+        self.updatedAt = updatedAt
+        self.uuid = uuid
+        self.version = version
+    }
+}
+
+public struct AiAgentMemoryRecord: Codable {
+    public let agentId: String?
+    public let contentRef: String?
+    public let createdAt: String?
+    public let dataScope: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let embeddingRef: String?
+    public let expiresAt: String?
+    public let id: String?
+    public let lastUsedAt: String?
+    public let memoryHash: String?
+    public let memoryScope: String?
+    public let memoryType: String?
+    public let metadata: [String: String]?
+    public let organizationId: String?
+    public let ownerId: String?
+    public let ownerType: String?
+    public let ownerUserId: String?
+    public let retentionPolicy: [String: String]?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let userId: String?
+    public let uuid: String?
+    public let version: String?
+
+
+    public init(agentId: String? = nil, contentRef: String? = nil, createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, embeddingRef: String? = nil, expiresAt: String? = nil, id: String? = nil, lastUsedAt: String? = nil, memoryHash: String? = nil, memoryScope: String? = nil, memoryType: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, ownerId: String? = nil, ownerType: String? = nil, ownerUserId: String? = nil, retentionPolicy: [String: String]? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, userId: String? = nil, uuid: String? = nil, version: String? = nil) {
+        self.agentId = agentId
+        self.contentRef = contentRef
+        self.createdAt = createdAt
+        self.dataScope = dataScope
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.embeddingRef = embeddingRef
+        self.expiresAt = expiresAt
+        self.id = id
+        self.lastUsedAt = lastUsedAt
+        self.memoryHash = memoryHash
+        self.memoryScope = memoryScope
+        self.memoryType = memoryType
+        self.metadata = metadata
+        self.organizationId = organizationId
+        self.ownerId = ownerId
+        self.ownerType = ownerType
+        self.ownerUserId = ownerUserId
+        self.retentionPolicy = retentionPolicy
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.userId = userId
+        self.uuid = uuid
+        self.version = version
+    }
+}
+
+public struct AiAgentRecord: Codable {
+    public let agentCode: String?
+    public let avatarUrl: String?
+    public let createdAt: String?
+    public let dataScope: String?
+    public let defaultVersionId: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let description: String?
+    public let governanceStatus: String?
+    public let id: String?
+    public let metadata: [String: String]?
+    public let name: String?
+    public let organizationId: String?
+    public let ownerUserId: String?
+    public let publishedAt: String?
+    public let publishedBy: String?
+    public let status: String?
+    public let templateSource: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let uuid: String?
+    public let version: String?
+    public let visibility: String?
+
+
+    public init(agentCode: String? = nil, avatarUrl: String? = nil, createdAt: String? = nil, dataScope: String? = nil, defaultVersionId: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, description: String? = nil, governanceStatus: String? = nil, id: String? = nil, metadata: [String: String]? = nil, name: String? = nil, organizationId: String? = nil, ownerUserId: String? = nil, publishedAt: String? = nil, publishedBy: String? = nil, status: String? = nil, templateSource: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, uuid: String? = nil, version: String? = nil, visibility: String? = nil) {
+        self.agentCode = agentCode
+        self.avatarUrl = avatarUrl
+        self.createdAt = createdAt
+        self.dataScope = dataScope
+        self.defaultVersionId = defaultVersionId
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.description = description
+        self.governanceStatus = governanceStatus
+        self.id = id
+        self.metadata = metadata
+        self.name = name
+        self.organizationId = organizationId
+        self.ownerUserId = ownerUserId
+        self.publishedAt = publishedAt
+        self.publishedBy = publishedBy
+        self.status = status
+        self.templateSource = templateSource
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.uuid = uuid
+        self.version = version
+        self.visibility = visibility
+    }
+}
+
+public struct AiAgentRunRecord: Codable {
+    public let agentId: String?
+    public let agentVersionId: String?
+    public let audioSeconds: String?
+    public let cachedTokens: String?
+    public let cancelledAt: String?
+    public let completedAt: String?
+    public let completionTokens: String?
+    public let createdAt: String?
+    public let errorMessageMasked: String?
+    public let executionMode: String?
+    public let failedAt: String?
+    public let id: String?
+    public let imageCount: String?
+    public let inputMessage: String?
+    public let legalHold: Bool?
+    public let metadata: [String: String]?
+    public let meteringStatus: String?
+    public let organizationId: String?
+    public let outputMessage: String?
+    public let payloadHash: String?
+    public let plannerModel: String?
+    public let promptTokens: String?
+    public let requestId: String?
+    public let retentionUntil: String?
+    public let runStatus: String?
+    public let runUuid: String?
+    public let sourceSurface: String?
+    public let startedAt: String?
+    public let status: String?
+    public let targetModality: String?
+    public let tenantId: String?
+    public let totalSteps: Int?
+    public let totalTokens: String?
+    public let traceId: String?
+    public let usageFactId: String?
+    public let userId: String?
+    public let uuid: String?
+    public let videoSeconds: String?
+
+
+    public init(agentId: String? = nil, agentVersionId: String? = nil, audioSeconds: String? = nil, cachedTokens: String? = nil, cancelledAt: String? = nil, completedAt: String? = nil, completionTokens: String? = nil, createdAt: String? = nil, errorMessageMasked: String? = nil, executionMode: String? = nil, failedAt: String? = nil, id: String? = nil, imageCount: String? = nil, inputMessage: String? = nil, legalHold: Bool? = nil, metadata: [String: String]? = nil, meteringStatus: String? = nil, organizationId: String? = nil, outputMessage: String? = nil, payloadHash: String? = nil, plannerModel: String? = nil, promptTokens: String? = nil, requestId: String? = nil, retentionUntil: String? = nil, runStatus: String? = nil, runUuid: String? = nil, sourceSurface: String? = nil, startedAt: String? = nil, status: String? = nil, targetModality: String? = nil, tenantId: String? = nil, totalSteps: Int? = nil, totalTokens: String? = nil, traceId: String? = nil, usageFactId: String? = nil, userId: String? = nil, uuid: String? = nil, videoSeconds: String? = nil) {
+        self.agentId = agentId
+        self.agentVersionId = agentVersionId
+        self.audioSeconds = audioSeconds
+        self.cachedTokens = cachedTokens
+        self.cancelledAt = cancelledAt
+        self.completedAt = completedAt
+        self.completionTokens = completionTokens
+        self.createdAt = createdAt
+        self.errorMessageMasked = errorMessageMasked
+        self.executionMode = executionMode
+        self.failedAt = failedAt
+        self.id = id
+        self.imageCount = imageCount
+        self.inputMessage = inputMessage
+        self.legalHold = legalHold
+        self.metadata = metadata
+        self.meteringStatus = meteringStatus
+        self.organizationId = organizationId
+        self.outputMessage = outputMessage
+        self.payloadHash = payloadHash
+        self.plannerModel = plannerModel
+        self.promptTokens = promptTokens
+        self.requestId = requestId
+        self.retentionUntil = retentionUntil
+        self.runStatus = runStatus
+        self.runUuid = runUuid
+        self.sourceSurface = sourceSurface
+        self.startedAt = startedAt
+        self.status = status
+        self.targetModality = targetModality
+        self.tenantId = tenantId
+        self.totalSteps = totalSteps
+        self.totalTokens = totalTokens
+        self.traceId = traceId
+        self.usageFactId = usageFactId
+        self.userId = userId
+        self.uuid = uuid
+        self.videoSeconds = videoSeconds
+    }
+}
+
+public struct AiAgentRunStepRecord: Codable {
+    public let agentId: String?
+    public let agentVersionId: String?
+    public let audioSeconds: String?
+    public let cachedTokens: String?
+    public let completedAt: String?
+    public let completionTokens: String?
+    public let createdAt: String?
+    public let errorMessageMasked: String?
+    public let id: String?
+    public let imageCount: String?
+    public let inputSnapshot: [String: String]?
+    public let latencyMs: Int?
+    public let legalHold: Bool?
+    public let mcpServerId: String?
+    public let metadata: [String: String]?
+    public let model: String?
+    public let organizationId: String?
+    public let outputSnapshot: [String: String]?
+    public let payloadHash: String?
+    public let promptTokens: String?
+    public let requestId: String?
+    public let retentionUntil: String?
+    public let runId: String?
+    public let skillId: String?
+    public let startedAt: String?
+    public let status: String?
+    public let stepIndex: Int?
+    public let stepStatus: String?
+    public let stepType: String?
+    public let tenantId: String?
+    public let title: String?
+    public let toolBindingId: String?
+    public let totalTokens: String?
+    public let traceId: String?
+    public let usageFactId: String?
+    public let userId: String?
+    public let uuid: String?
+    public let videoSeconds: String?
+
+
+    public init(agentId: String? = nil, agentVersionId: String? = nil, audioSeconds: String? = nil, cachedTokens: String? = nil, completedAt: String? = nil, completionTokens: String? = nil, createdAt: String? = nil, errorMessageMasked: String? = nil, id: String? = nil, imageCount: String? = nil, inputSnapshot: [String: String]? = nil, latencyMs: Int? = nil, legalHold: Bool? = nil, mcpServerId: String? = nil, metadata: [String: String]? = nil, model: String? = nil, organizationId: String? = nil, outputSnapshot: [String: String]? = nil, payloadHash: String? = nil, promptTokens: String? = nil, requestId: String? = nil, retentionUntil: String? = nil, runId: String? = nil, skillId: String? = nil, startedAt: String? = nil, status: String? = nil, stepIndex: Int? = nil, stepStatus: String? = nil, stepType: String? = nil, tenantId: String? = nil, title: String? = nil, toolBindingId: String? = nil, totalTokens: String? = nil, traceId: String? = nil, usageFactId: String? = nil, userId: String? = nil, uuid: String? = nil, videoSeconds: String? = nil) {
+        self.agentId = agentId
+        self.agentVersionId = agentVersionId
+        self.audioSeconds = audioSeconds
+        self.cachedTokens = cachedTokens
+        self.completedAt = completedAt
+        self.completionTokens = completionTokens
+        self.createdAt = createdAt
+        self.errorMessageMasked = errorMessageMasked
+        self.id = id
+        self.imageCount = imageCount
+        self.inputSnapshot = inputSnapshot
+        self.latencyMs = latencyMs
+        self.legalHold = legalHold
+        self.mcpServerId = mcpServerId
+        self.metadata = metadata
+        self.model = model
+        self.organizationId = organizationId
+        self.outputSnapshot = outputSnapshot
+        self.payloadHash = payloadHash
+        self.promptTokens = promptTokens
+        self.requestId = requestId
+        self.retentionUntil = retentionUntil
+        self.runId = runId
+        self.skillId = skillId
+        self.startedAt = startedAt
+        self.status = status
+        self.stepIndex = stepIndex
+        self.stepStatus = stepStatus
+        self.stepType = stepType
+        self.tenantId = tenantId
+        self.title = title
+        self.toolBindingId = toolBindingId
+        self.totalTokens = totalTokens
+        self.traceId = traceId
+        self.usageFactId = usageFactId
+        self.userId = userId
+        self.uuid = uuid
+        self.videoSeconds = videoSeconds
+    }
+}
+
+public struct AiAgentToolBindingRecord: Codable {
+    public let agentId: String?
+    public let agentVersionId: String?
+    public let bindingKey: String?
+    public let bindingType: String?
+    public let createdAt: String?
+    public let credentialRef: String?
+    public let dataScope: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let enabled: Bool?
+    public let healthStatus: String?
+    public let id: String?
+    public let lastCheckedAt: String?
+    public let mcpServerId: String?
+    public let metadata: [String: String]?
+    public let organizationId: String?
+    public let permissionPolicy: [String: String]?
+    public let runtimeConfig: [String: String]?
+    public let skillId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let toolName: String?
+    public let updatedAt: String?
+    public let uuid: String?
+    public let version: String?
+
+
+    public init(agentId: String? = nil, agentVersionId: String? = nil, bindingKey: String? = nil, bindingType: String? = nil, createdAt: String? = nil, credentialRef: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, enabled: Bool? = nil, healthStatus: String? = nil, id: String? = nil, lastCheckedAt: String? = nil, mcpServerId: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, permissionPolicy: [String: String]? = nil, runtimeConfig: [String: String]? = nil, skillId: String? = nil, status: String? = nil, tenantId: String? = nil, toolName: String? = nil, updatedAt: String? = nil, uuid: String? = nil, version: String? = nil) {
+        self.agentId = agentId
+        self.agentVersionId = agentVersionId
+        self.bindingKey = bindingKey
+        self.bindingType = bindingType
+        self.createdAt = createdAt
+        self.credentialRef = credentialRef
+        self.dataScope = dataScope
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.enabled = enabled
+        self.healthStatus = healthStatus
+        self.id = id
+        self.lastCheckedAt = lastCheckedAt
+        self.mcpServerId = mcpServerId
+        self.metadata = metadata
+        self.organizationId = organizationId
+        self.permissionPolicy = permissionPolicy
+        self.runtimeConfig = runtimeConfig
+        self.skillId = skillId
+        self.status = status
+        self.tenantId = tenantId
+        self.toolName = toolName
+        self.updatedAt = updatedAt
+        self.uuid = uuid
+        self.version = version
+    }
+}
+
+public struct AiAgentVersionRecord: Codable {
+    public let agentId: String?
+    public let configHash: String?
+    public let createdAt: String?
+    public let dataScope: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let id: String?
+    public let mcpPolicy: [String: String]?
+    public let memoryPolicy: [String: String]?
+    public let metadata: [String: String]?
+    public let modelPolicy: [String: String]?
+    public let organizationId: String?
+    public let publishedAt: String?
+    public let publishedBy: String?
+    public let releaseStatus: String?
+    public let runtimePolicy: [String: String]?
+    public let skillPolicy: [String: String]?
+    public let status: String?
+    public let systemPrompt: String?
+    public let tenantId: String?
+    public let toolPolicy: [String: String]?
+    public let updatedAt: String?
+    public let uuid: String?
+    public let version: String?
+    public let versionNo: String?
+
+
+    public init(agentId: String? = nil, configHash: String? = nil, createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, id: String? = nil, mcpPolicy: [String: String]? = nil, memoryPolicy: [String: String]? = nil, metadata: [String: String]? = nil, modelPolicy: [String: String]? = nil, organizationId: String? = nil, publishedAt: String? = nil, publishedBy: String? = nil, releaseStatus: String? = nil, runtimePolicy: [String: String]? = nil, skillPolicy: [String: String]? = nil, status: String? = nil, systemPrompt: String? = nil, tenantId: String? = nil, toolPolicy: [String: String]? = nil, updatedAt: String? = nil, uuid: String? = nil, version: String? = nil, versionNo: String? = nil) {
+        self.agentId = agentId
+        self.configHash = configHash
+        self.createdAt = createdAt
+        self.dataScope = dataScope
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.id = id
+        self.mcpPolicy = mcpPolicy
+        self.memoryPolicy = memoryPolicy
+        self.metadata = metadata
+        self.modelPolicy = modelPolicy
+        self.organizationId = organizationId
+        self.publishedAt = publishedAt
+        self.publishedBy = publishedBy
+        self.releaseStatus = releaseStatus
+        self.runtimePolicy = runtimePolicy
+        self.skillPolicy = skillPolicy
+        self.status = status
+        self.systemPrompt = systemPrompt
+        self.tenantId = tenantId
+        self.toolPolicy = toolPolicy
+        self.updatedAt = updatedAt
+        self.uuid = uuid
+        self.version = version
+        self.versionNo = versionNo
+    }
+}
+
 public struct AiBillingMeterRecord: Codable {
     public let aggregationMode: String?
     public let allowNegativeQuantity: Bool?
@@ -2396,6 +3010,21 @@ public struct ApiKeysCreateResult: Codable {
     }
 }
 
+public struct ApiKeysDeleteResult: Codable {
+    public let code: String?
+    public let data: DeleteApiKeyResponse?
+    public let message: String?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: DeleteApiKeyResponse? = nil, message: String? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.message = message
+        self.msg = msg
+    }
+}
+
 public struct ApiKeysListResult: Codable {
     public let code: String?
     public let data: AppApiKeyListResponse?
@@ -2404,6 +3033,21 @@ public struct ApiKeysListResult: Codable {
 
 
     public init(code: String? = nil, data: AppApiKeyListResponse? = nil, message: String? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.message = message
+        self.msg = msg
+    }
+}
+
+public struct ApiKeysUpdateResult: Codable {
+    public let code: String?
+    public let data: UpdateApiKeyResponse?
+    public let message: String?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: UpdateApiKeyResponse? = nil, message: String? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
         self.message = message
@@ -2427,6 +3071,7 @@ public struct AppApiKeyGroup: Codable {
 }
 
 public struct AppApiKeyItem: Codable {
+    public let copyableKey: String?
     public let created: String?
     public let expires: String?
     public let group: String?
@@ -2441,7 +3086,8 @@ public struct AppApiKeyItem: Codable {
     public let usedQuota: String?
 
 
-    public init(created: String? = nil, expires: String? = nil, group: String? = nil, id: String? = nil, ipLimit: String? = nil, maskedKey: String? = nil, modalities: [String]? = nil, name: String? = nil, quota: String? = nil, rate: String? = nil, status: String? = nil, usedQuota: String? = nil) {
+    public init(copyableKey: String? = nil, created: String? = nil, expires: String? = nil, group: String? = nil, id: String? = nil, ipLimit: String? = nil, maskedKey: String? = nil, modalities: [String]? = nil, name: String? = nil, quota: String? = nil, rate: String? = nil, status: String? = nil, usedQuota: String? = nil) {
+        self.copyableKey = copyableKey
         self.created = created
         self.expires = expires
         self.group = group
@@ -2793,6 +3439,46 @@ public struct AppsStoreRetrieveResult: Codable {
         self.data = data
         self.message = message
         self.msg = msg
+    }
+}
+
+public struct AuthRuntimeSettingsResponse: Codable {
+    public let leftRailMode: String?
+    public let loginMethods: [String]?
+    public let oauthLoginEnabled: Bool?
+    public let oauthProviders: [String]?
+    public let oauthRegion: String?
+    public let qrLoginEnabled: Bool?
+    public let recoveryMethods: [String]?
+    public let registerMethods: [String]?
+    public let verificationPolicy: AuthVerificationPolicy?
+
+
+    public init(leftRailMode: String? = nil, loginMethods: [String]? = nil, oauthLoginEnabled: Bool? = nil, oauthProviders: [String]? = nil, oauthRegion: String? = nil, qrLoginEnabled: Bool? = nil, recoveryMethods: [String]? = nil, registerMethods: [String]? = nil, verificationPolicy: AuthVerificationPolicy? = nil) {
+        self.leftRailMode = leftRailMode
+        self.loginMethods = loginMethods
+        self.oauthLoginEnabled = oauthLoginEnabled
+        self.oauthProviders = oauthProviders
+        self.oauthRegion = oauthRegion
+        self.qrLoginEnabled = qrLoginEnabled
+        self.recoveryMethods = recoveryMethods
+        self.registerMethods = registerMethods
+        self.verificationPolicy = verificationPolicy
+    }
+}
+
+public struct AuthVerificationPolicy: Codable {
+    public let emailCodeLoginEnabled: Bool?
+    public let emailRegistrationVerificationRequired: Bool?
+    public let phoneCodeLoginEnabled: Bool?
+    public let phoneRegistrationVerificationRequired: Bool?
+
+
+    public init(emailCodeLoginEnabled: Bool? = nil, emailRegistrationVerificationRequired: Bool? = nil, phoneCodeLoginEnabled: Bool? = nil, phoneRegistrationVerificationRequired: Bool? = nil) {
+        self.emailCodeLoginEnabled = emailCodeLoginEnabled
+        self.emailRegistrationVerificationRequired = emailRegistrationVerificationRequired
+        self.phoneCodeLoginEnabled = phoneCodeLoginEnabled
+        self.phoneRegistrationVerificationRequired = phoneRegistrationVerificationRequired
     }
 }
 
@@ -4927,21 +5613,25 @@ public struct CreateRoutingChannelRequest: Codable {
     public let models: [String]?
     public let name: String?
     public let protocol_: String?
+    public let retryPolicy: ProviderRetryPolicy?
     public let secretRef: String?
     public let status: String?
+    public let timeoutMs: Int?
     public let vendor: String?
     public let weight: Int?
 
 
-    public init(accessType: String? = nil, baseUrl: String? = nil, capabilities: [String]? = nil, models: [String]? = nil, name: String? = nil, protocol_: String? = nil, secretRef: String? = nil, status: String? = nil, vendor: String? = nil, weight: Int? = nil) {
+    public init(accessType: String? = nil, baseUrl: String? = nil, capabilities: [String]? = nil, models: [String]? = nil, name: String? = nil, protocol_: String? = nil, retryPolicy: ProviderRetryPolicy? = nil, secretRef: String? = nil, status: String? = nil, timeoutMs: Int? = nil, vendor: String? = nil, weight: Int? = nil) {
         self.accessType = accessType
         self.baseUrl = baseUrl
         self.capabilities = capabilities
         self.models = models
         self.name = name
         self.protocol_ = protocol_
+        self.retryPolicy = retryPolicy
         self.secretRef = secretRef
         self.status = status
+        self.timeoutMs = timeoutMs
         self.vendor = vendor
         self.weight = weight
     }
@@ -4981,9 +5671,25 @@ public struct DashboardChartPoint: Codable {
     }
 }
 
+public struct DashboardConfigurationDomain: Codable {
+    public let domain: String?
+    public let id: String?
+    public let name: String?
+    public let remark: String?
+
+
+    public init(domain: String? = nil, id: String? = nil, name: String? = nil, remark: String? = nil) {
+        self.domain = domain
+        self.id = id
+        self.name = name
+        self.remark = remark
+    }
+}
+
 public struct DashboardOverviewResponse: Codable {
     public let announcements: [DashboardAnnouncement]?
     public let chartData: [DashboardChartPoint]?
+    public let configurationDomains: [DashboardConfigurationDomain]?
     public let multimodalSparkline: [DashboardSparklinePoint]?
     public let performanceSparkline: [DashboardSparklinePoint]?
     public let requestSparkline: [DashboardSparklinePoint]?
@@ -4992,9 +5698,10 @@ public struct DashboardOverviewResponse: Codable {
     public let warnings: [String]?
 
 
-    public init(announcements: [DashboardAnnouncement]? = nil, chartData: [DashboardChartPoint]? = nil, multimodalSparkline: [DashboardSparklinePoint]? = nil, performanceSparkline: [DashboardSparklinePoint]? = nil, requestSparkline: [DashboardSparklinePoint]? = nil, summary: DashboardOverviewSummary? = nil, topModels: [DashboardTopModel]? = nil, warnings: [String]? = nil) {
+    public init(announcements: [DashboardAnnouncement]? = nil, chartData: [DashboardChartPoint]? = nil, configurationDomains: [DashboardConfigurationDomain]? = nil, multimodalSparkline: [DashboardSparklinePoint]? = nil, performanceSparkline: [DashboardSparklinePoint]? = nil, requestSparkline: [DashboardSparklinePoint]? = nil, summary: DashboardOverviewSummary? = nil, topModels: [DashboardTopModel]? = nil, warnings: [String]? = nil) {
         self.announcements = announcements
         self.chartData = chartData
+        self.configurationDomains = configurationDomains
         self.multimodalSparkline = multimodalSparkline
         self.performanceSparkline = performanceSparkline
         self.requestSparkline = requestSparkline
@@ -5027,12 +5734,14 @@ public struct DashboardOverviewSummary: Codable {
     public let musicRequests: Int?
     public let requestCount: Int?
     public let rpm: Double?
+    public let totalRequestCount: Int?
+    public let totalUsedCredits: Double?
     public let tpm: Double?
     public let usedCredits: Double?
     public let videoRequests: Int?
 
 
-    public init(audioRequests: Int? = nil, availableCredits: Double? = nil, errorCount: Int? = nil, imageRequests: Int? = nil, musicRequests: Int? = nil, requestCount: Int? = nil, rpm: Double? = nil, tpm: Double? = nil, usedCredits: Double? = nil, videoRequests: Int? = nil) {
+    public init(audioRequests: Int? = nil, availableCredits: Double? = nil, errorCount: Int? = nil, imageRequests: Int? = nil, musicRequests: Int? = nil, requestCount: Int? = nil, rpm: Double? = nil, totalRequestCount: Int? = nil, totalUsedCredits: Double? = nil, tpm: Double? = nil, usedCredits: Double? = nil, videoRequests: Int? = nil) {
         self.audioRequests = audioRequests
         self.availableCredits = availableCredits
         self.errorCount = errorCount
@@ -5040,6 +5749,8 @@ public struct DashboardOverviewSummary: Codable {
         self.musicRequests = musicRequests
         self.requestCount = requestCount
         self.rpm = rpm
+        self.totalRequestCount = totalRequestCount
+        self.totalUsedCredits = totalUsedCredits
         self.tpm = tpm
         self.usedCredits = usedCredits
         self.videoRequests = videoRequests
@@ -5075,6 +5786,17 @@ public struct DashboardTopModel: Codable {
         self.requests = requests
         self.supplier = supplier
         self.trend = trend
+    }
+}
+
+public struct DeleteApiKeyResponse: Codable {
+    public let deleted: Bool?
+    public let id: String?
+
+
+    public init(deleted: Bool? = nil, id: String? = nil) {
+        self.deleted = deleted
+        self.id = id
     }
 }
 
@@ -5660,6 +6382,159 @@ public struct GatewayTracesResponse: Codable {
     }
 }
 
+public struct GenerationAgentMeteringEvent: Codable {
+    public let quantity: String?
+    public let type: String?
+    public let usageFactMetadata: GenerationAgentUsageFactMetadata?
+
+
+    public init(quantity: String? = nil, type: String? = nil, usageFactMetadata: GenerationAgentUsageFactMetadata? = nil) {
+        self.quantity = quantity
+        self.type = type
+        self.usageFactMetadata = usageFactMetadata
+    }
+}
+
+public struct GenerationAgentRunCreateRequest: Codable {
+    public let prompt: String?
+    public let selectedModel: String?
+
+
+    public init(prompt: String? = nil, selectedModel: String? = nil) {
+        self.prompt = prompt
+        self.selectedModel = selectedModel
+    }
+}
+
+public struct GenerationAgentRunCreateResponse: Codable {
+    public let agent: GenerationAgentSnapshot?
+    public let item: GenerationHistoryItem?
+    public let meteringEvents: [GenerationAgentMeteringEvent]?
+    public let run: GenerationAgentRunSnapshot?
+    public let status: String?
+    public let steps: [GenerationAgentRunStepSnapshot]?
+    public let targetType: String?
+    public let usage: GenerationAgentUsageSummary?
+
+
+    public init(agent: GenerationAgentSnapshot? = nil, item: GenerationHistoryItem? = nil, meteringEvents: [GenerationAgentMeteringEvent]? = nil, run: GenerationAgentRunSnapshot? = nil, status: String? = nil, steps: [GenerationAgentRunStepSnapshot]? = nil, targetType: String? = nil, usage: GenerationAgentUsageSummary? = nil) {
+        self.agent = agent
+        self.item = item
+        self.meteringEvents = meteringEvents
+        self.run = run
+        self.status = status
+        self.steps = steps
+        self.targetType = targetType
+        self.usage = usage
+    }
+}
+
+public struct GenerationAgentRunSnapshot: Codable {
+    public let id: String?
+    public let requestId: String?
+    public let source: String?
+    public let status: String?
+
+
+    public init(id: String? = nil, requestId: String? = nil, source: String? = nil, status: String? = nil) {
+        self.id = id
+        self.requestId = requestId
+        self.source = source
+        self.status = status
+    }
+}
+
+public struct GenerationAgentRunStepSnapshot: Codable {
+    public let id: String?
+    public let index: Int?
+    public let status: String?
+    public let title: String?
+    public let type: String?
+
+
+    public init(id: String? = nil, index: Int? = nil, status: String? = nil, title: String? = nil, type: String? = nil) {
+        self.id = id
+        self.index = index
+        self.status = status
+        self.title = title
+        self.type = type
+    }
+}
+
+public struct GenerationAgentRunsCreateResult: Codable {
+    public let code: String?
+    public let data: GenerationAgentRunCreateResponse?
+    public let message: String?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: GenerationAgentRunCreateResponse? = nil, message: String? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.message = message
+        self.msg = msg
+    }
+}
+
+public struct GenerationAgentSnapshot: Codable {
+    public let id: String?
+    public let model: String?
+    public let name: String?
+    public let versionId: String?
+
+
+    public init(id: String? = nil, model: String? = nil, name: String? = nil, versionId: String? = nil) {
+        self.id = id
+        self.model = model
+        self.name = name
+        self.versionId = versionId
+    }
+}
+
+public struct GenerationAgentUsageFactMetadata: Codable {
+    public let agentId: String?
+    public let agentVersionId: String?
+    public let mcpServerId: String?
+    public let meteringSource: String?
+    public let runId: String?
+    public let skillId: String?
+    public let stepId: String?
+    public let toolId: String?
+
+
+    public init(agentId: String? = nil, agentVersionId: String? = nil, mcpServerId: String? = nil, meteringSource: String? = nil, runId: String? = nil, skillId: String? = nil, stepId: String? = nil, toolId: String? = nil) {
+        self.agentId = agentId
+        self.agentVersionId = agentVersionId
+        self.mcpServerId = mcpServerId
+        self.meteringSource = meteringSource
+        self.runId = runId
+        self.skillId = skillId
+        self.stepId = stepId
+        self.toolId = toolId
+    }
+}
+
+public struct GenerationAgentUsageSummary: Codable {
+    public let cachedTokens: Int?
+    public let completionTokens: Int?
+    public let events: [GenerationAgentMeteringEvent]?
+    public let imageCount: Int?
+    public let promptTokens: Int?
+    public let totalTokens: Int?
+    public let videoSeconds: String?
+
+
+    public init(cachedTokens: Int? = nil, completionTokens: Int? = nil, events: [GenerationAgentMeteringEvent]? = nil, imageCount: Int? = nil, promptTokens: Int? = nil, totalTokens: Int? = nil, videoSeconds: String? = nil) {
+        self.cachedTokens = cachedTokens
+        self.completionTokens = completionTokens
+        self.events = events
+        self.imageCount = imageCount
+        self.promptTokens = promptTokens
+        self.totalTokens = totalTokens
+        self.videoSeconds = videoSeconds
+    }
+}
+
 public struct GenerationHistoryItem: Codable {
     public let createdAt: String?
     public let date: String?
@@ -5721,6 +6596,33 @@ public struct GenerationsListResult: Codable {
         self.data = data
         self.message = message
         self.msg = msg
+    }
+}
+
+public struct IamApiKeyRecord: Codable {
+    public let createdAt: String?
+    public let expiresAt: String?
+    public let id: String?
+    public let keyHash: String?
+    public let name: String?
+    public let permissionScopeJson: [String: String]?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let userId: String?
+
+
+    public init(createdAt: String? = nil, expiresAt: String? = nil, id: String? = nil, keyHash: String? = nil, name: String? = nil, permissionScopeJson: [String: String]? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, userId: String? = nil) {
+        self.createdAt = createdAt
+        self.expiresAt = expiresAt
+        self.id = id
+        self.keyHash = keyHash
+        self.name = name
+        self.permissionScopeJson = permissionScopeJson
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.userId = userId
     }
 }
 
@@ -5819,6 +6721,29 @@ public struct IamCurrentSessionUpdateRequest: Codable {
         self.deviceName = deviceName
         self.organizationCode = organizationCode
         self.organizationId = organizationId
+    }
+}
+
+public struct IamDeviceRecord: Codable {
+    public let createdAt: String?
+    public let deviceFingerprint: String?
+    public let id: String?
+    public let lastSeenAt: String?
+    public let name: String?
+    public let tenantId: String?
+    public let trusted: Bool?
+    public let userId: String?
+
+
+    public init(createdAt: String? = nil, deviceFingerprint: String? = nil, id: String? = nil, lastSeenAt: String? = nil, name: String? = nil, tenantId: String? = nil, trusted: Bool? = nil, userId: String? = nil) {
+        self.createdAt = createdAt
+        self.deviceFingerprint = deviceFingerprint
+        self.id = id
+        self.lastSeenAt = lastSeenAt
+        self.name = name
+        self.tenantId = tenantId
+        self.trusted = trusted
+        self.userId = userId
     }
 }
 
@@ -6171,6 +7096,15 @@ public struct IamGatewayRiskRuleRecord: Codable {
     }
 }
 
+public struct IamLoginQrCodeConfirmRequest: Codable {
+    public let qrKey: String?
+
+
+    public init(qrKey: String? = nil) {
+        self.qrKey = qrKey
+    }
+}
+
 public struct IamLoginQrCodeResponse: Codable {
     public let description: String?
     public let expireTime: Int?
@@ -6207,6 +7141,29 @@ public struct IamLoginQrCodeStatusResponse: Codable {
     }
 }
 
+public struct IamMfaFactorRecord: Codable {
+    public let createdAt: String?
+    public let factorType: String?
+    public let id: String?
+    public let secretRef: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let userId: String?
+
+
+    public init(createdAt: String? = nil, factorType: String? = nil, id: String? = nil, secretRef: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, userId: String? = nil) {
+        self.createdAt = createdAt
+        self.factorType = factorType
+        self.id = id
+        self.secretRef = secretRef
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.userId = userId
+    }
+}
+
 public struct IamOauthAuthorizationUrlResponse: Codable {
     public let authUrl: String?
 
@@ -6236,17 +7193,21 @@ public struct IamOauthSessionCreateRequest: Codable {
 public struct IamOrganizationMemberRecord: Codable {
     public let id: String?
     public let joinedAt: String?
+    public let leftAt: String?
     public let organizationId: String?
+    public let remark: String?
     public let roleCode: String?
     public let status: String?
     public let tenantId: String?
     public let userId: String?
 
 
-    public init(id: String? = nil, joinedAt: String? = nil, organizationId: String? = nil, roleCode: String? = nil, status: String? = nil, tenantId: String? = nil, userId: String? = nil) {
+    public init(id: String? = nil, joinedAt: String? = nil, leftAt: String? = nil, organizationId: String? = nil, remark: String? = nil, roleCode: String? = nil, status: String? = nil, tenantId: String? = nil, userId: String? = nil) {
         self.id = id
         self.joinedAt = joinedAt
+        self.leftAt = leftAt
         self.organizationId = organizationId
+        self.remark = remark
         self.roleCode = roleCode
         self.status = status
         self.tenantId = tenantId
@@ -6318,6 +7279,48 @@ public struct IamPasswordResetRequestResponse: Codable {
     }
 }
 
+public struct IamPermissionRecord: Codable {
+    public let action: String?
+    public let code: String?
+    public let createdAt: String?
+    public let id: String?
+    public let name: String?
+    public let resource: String?
+
+
+    public init(action: String? = nil, code: String? = nil, createdAt: String? = nil, id: String? = nil, name: String? = nil, resource: String? = nil) {
+        self.action = action
+        self.code = code
+        self.createdAt = createdAt
+        self.id = id
+        self.name = name
+        self.resource = resource
+    }
+}
+
+public struct IamPolicyRecord: Codable {
+    public let code: String?
+    public let createdAt: String?
+    public let id: String?
+    public let name: String?
+    public let policyJson: [String: String]?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(code: String? = nil, createdAt: String? = nil, id: String? = nil, name: String? = nil, policyJson: [String: String]? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.code = code
+        self.createdAt = createdAt
+        self.id = id
+        self.name = name
+        self.policyJson = policyJson
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
 public struct IamRegistrationCreateRequest: Codable {
     public let channel: String?
     public let confirmPassword: String?
@@ -6340,6 +7343,44 @@ public struct IamRegistrationCreateRequest: Codable {
         self.tenantCode = tenantCode
         self.username = username
         self.verificationCode = verificationCode
+    }
+}
+
+public struct IamRolePermissionRecord: Codable {
+    public let createdAt: String?
+    public let id: String?
+    public let permissionId: String?
+    public let roleId: String?
+    public let tenantId: String?
+
+
+    public init(createdAt: String? = nil, id: String? = nil, permissionId: String? = nil, roleId: String? = nil, tenantId: String? = nil) {
+        self.createdAt = createdAt
+        self.id = id
+        self.permissionId = permissionId
+        self.roleId = roleId
+        self.tenantId = tenantId
+    }
+}
+
+public struct IamRoleRecord: Codable {
+    public let code: String?
+    public let createdAt: String?
+    public let id: String?
+    public let name: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(code: String? = nil, createdAt: String? = nil, id: String? = nil, name: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.code = code
+        self.createdAt = createdAt
+        self.id = id
+        self.name = name
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
     }
 }
 
@@ -6685,6 +7726,25 @@ public struct IamUserResponse: Codable {
         self.thirdPartyBound = thirdPartyBound
         self.twoFactorEnabled = twoFactorEnabled
         self.username = username
+    }
+}
+
+public struct IamUserRoleRecord: Codable {
+    public let createdAt: String?
+    public let id: String?
+    public let organizationId: String?
+    public let roleId: String?
+    public let tenantId: String?
+    public let userId: String?
+
+
+    public init(createdAt: String? = nil, id: String? = nil, organizationId: String? = nil, roleId: String? = nil, tenantId: String? = nil, userId: String? = nil) {
+        self.createdAt = createdAt
+        self.id = id
+        self.organizationId = organizationId
+        self.roleId = roleId
+        self.tenantId = tenantId
+        self.userId = userId
     }
 }
 
@@ -7240,6 +8300,21 @@ public struct IntegrationWebhookEndpointRecord: Codable {
     }
 }
 
+public struct LoginQrCodesConfirmResult: Codable {
+    public let code: String?
+    public let data: IamLoginQrCodeStatusResponse?
+    public let message: String?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: IamLoginQrCodeStatusResponse? = nil, message: String? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.message = message
+        self.msg = msg
+    }
+}
+
 public struct LoginQrCodesCreateResult: Codable {
     public let code: String?
     public let data: IamLoginQrCodeResponse?
@@ -7275,16 +8350,18 @@ public struct Message: Codable {
     public let desc: String?
     public let id: String?
     public let read: Bool?
+    public let showAsPopup: Bool?
     public let time: String?
     public let title: String?
     public let type: String?
 
 
-    public init(content: String? = nil, desc: String? = nil, id: String? = nil, read: Bool? = nil, time: String? = nil, title: String? = nil, type: String? = nil) {
+    public init(content: String? = nil, desc: String? = nil, id: String? = nil, read: Bool? = nil, showAsPopup: Bool? = nil, time: String? = nil, title: String? = nil, type: String? = nil) {
         self.content = content
         self.desc = desc
         self.id = id
         self.read = read
+        self.showAsPopup = showAsPopup
         self.time = time
         self.title = title
         self.type = type
@@ -8429,11 +9506,6 @@ public struct PlusAgentSkillRecord: Codable {
     }
 }
 
-public struct PlusApiKeyRecord: Codable {
-
-    public init() {}
-}
-
 public struct PlusApiResult: Codable {
     public let code: String?
     public let data: NoData?
@@ -8683,11 +9755,6 @@ public struct PlusMemberLevelRecord: Codable {
     public init() {}
 }
 
-public struct PlusOauthAccountRecord: Codable {
-
-    public init() {}
-}
-
 public struct PlusOrderDispatchRuleRecord: Codable {
 
     public init() {}
@@ -8708,16 +9775,6 @@ public struct PlusOrderWorkerDispatchProfileRecord: Codable {
     public init() {}
 }
 
-public struct PlusOrganizationMemberRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusOrganizationRecord: Codable {
-
-    public init() {}
-}
-
 public struct PlusPartnerRecord: Codable {
 
     public init() {}
@@ -8733,11 +9790,6 @@ public struct PlusPaymentWebhookEventRecord: Codable {
     public init() {}
 }
 
-public struct PlusPermissionRecord: Codable {
-
-    public init() {}
-}
-
 public struct PlusPositionRecord: Codable {
 
     public init() {}
@@ -8749,16 +9801,6 @@ public struct PlusProductRecord: Codable {
 }
 
 public struct PlusRefundRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusRolePermissionRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusRoleRecord: Codable {
 
     public init() {}
 }
@@ -8779,11 +9821,6 @@ public struct PlusShoppingCartRecord: Codable {
 }
 
 public struct PlusSkuRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusTenantRecord: Codable {
 
     public init() {}
 }
@@ -8817,16 +9854,6 @@ public struct PlusUserCardRecord: Codable {
 }
 
 public struct PlusUserCouponRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusUserRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusUserRoleRecord: Codable {
 
     public init() {}
 }
@@ -9005,6 +10032,19 @@ public struct ProviderConfig: Codable {
     }
 }
 
+public struct ProviderRetryPolicy: Codable {
+    public let backoffMs: Int?
+    public let maxAttempts: Int?
+    public let retryableStatusCodes: [Int]?
+
+
+    public init(backoffMs: Int? = nil, maxAttempts: Int? = nil, retryableStatusCodes: [Int]? = nil) {
+        self.backoffMs = backoffMs
+        self.maxAttempts = maxAttempts
+        self.retryableStatusCodes = retryableStatusCodes
+    }
+}
+
 public struct ProvidersListResult: Codable {
     public let code: String?
     public let data: ProvidersResponse?
@@ -9054,12 +10094,14 @@ public struct RankingVendorOptionsResponse: Codable {
 public struct RechargePackage: Codable {
     public let bonus: Int?
     public let id: String?
+    public let points: Int?
     public let rmb: String?
 
 
-    public init(bonus: Int? = nil, id: String? = nil, rmb: String? = nil) {
+    public init(bonus: Int? = nil, id: String? = nil, points: Int? = nil, rmb: String? = nil) {
         self.bonus = bonus
         self.id = id
+        self.points = points
         self.rmb = rmb
     }
 }
@@ -9151,13 +10193,15 @@ public struct RoutingChannelItem: Codable {
     public let protocol_: String?
     public let provider: String?
     public let providerCode: String?
+    public let retryPolicy: ProviderRetryPolicy?
     public let rpm: Int?
     public let status: String?
+    public let timeoutMs: Int?
     public let vendor: String?
     public let weight: Int?
 
 
-    public init(accessType: String? = nil, apiKey: String? = nil, balance: String? = nil, baseUrl: String? = nil, capabilities: [String]? = nil, errors: Int? = nil, id: String? = nil, isMultimodal: Bool? = nil, latency: String? = nil, models: [String]? = nil, name: String? = nil, protocol_: String? = nil, provider: String? = nil, providerCode: String? = nil, rpm: Int? = nil, status: String? = nil, vendor: String? = nil, weight: Int? = nil) {
+    public init(accessType: String? = nil, apiKey: String? = nil, balance: String? = nil, baseUrl: String? = nil, capabilities: [String]? = nil, errors: Int? = nil, id: String? = nil, isMultimodal: Bool? = nil, latency: String? = nil, models: [String]? = nil, name: String? = nil, protocol_: String? = nil, provider: String? = nil, providerCode: String? = nil, retryPolicy: ProviderRetryPolicy? = nil, rpm: Int? = nil, status: String? = nil, timeoutMs: Int? = nil, vendor: String? = nil, weight: Int? = nil) {
         self.accessType = accessType
         self.apiKey = apiKey
         self.balance = balance
@@ -9172,8 +10216,10 @@ public struct RoutingChannelItem: Codable {
         self.protocol_ = protocol_
         self.provider = provider
         self.providerCode = providerCode
+        self.retryPolicy = retryPolicy
         self.rpm = rpm
         self.status = status
+        self.timeoutMs = timeoutMs
         self.vendor = vendor
         self.weight = weight
     }
@@ -9392,6 +10438,21 @@ public struct RoutingUsageSnapshot: Codable {
     public init(chartData: [[String: Any]]? = nil, modelStats: [[String: Any]]? = nil) {
         self.chartData = chartData
         self.modelStats = modelStats
+    }
+}
+
+public struct RuntimeSettingsRetrieveResult: Codable {
+    public let code: String?
+    public let data: AuthRuntimeSettingsResponse?
+    public let message: String?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AuthRuntimeSettingsResponse? = nil, message: String? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.message = message
+        self.msg = msg
     }
 }
 
@@ -10073,6 +11134,36 @@ public struct SystemSchemaMigrationRecord: Codable {
     }
 }
 
+public struct UpdateApiKeyRequest: Codable {
+    public let expires: String?
+    public let group: String?
+    public let ipLimit: String?
+    public let isUnlimitedQuota: Bool?
+    public let modalities: [String]?
+    public let name: String?
+    public let quota: String?
+
+
+    public init(expires: String? = nil, group: String? = nil, ipLimit: String? = nil, isUnlimitedQuota: Bool? = nil, modalities: [String]? = nil, name: String? = nil, quota: String? = nil) {
+        self.expires = expires
+        self.group = group
+        self.ipLimit = ipLimit
+        self.isUnlimitedQuota = isUnlimitedQuota
+        self.modalities = modalities
+        self.name = name
+        self.quota = quota
+    }
+}
+
+public struct UpdateApiKeyResponse: Codable {
+    public let item: AppApiKeyItem?
+
+
+    public init(item: AppApiKeyItem? = nil) {
+        self.item = item
+    }
+}
+
 public struct UpdateRoutingChannelRequest: Codable {
     public let accessType: String?
     public let baseUrl: String?
@@ -10080,21 +11171,25 @@ public struct UpdateRoutingChannelRequest: Codable {
     public let models: [String]?
     public let name: String?
     public let protocol_: String?
+    public let retryPolicy: ProviderRetryPolicy?
     public let secretRef: String?
     public let status: String?
+    public let timeoutMs: Int?
     public let vendor: String?
     public let weight: Int?
 
 
-    public init(accessType: String? = nil, baseUrl: String? = nil, capabilities: [String]? = nil, models: [String]? = nil, name: String? = nil, protocol_: String? = nil, secretRef: String? = nil, status: String? = nil, vendor: String? = nil, weight: Int? = nil) {
+    public init(accessType: String? = nil, baseUrl: String? = nil, capabilities: [String]? = nil, models: [String]? = nil, name: String? = nil, protocol_: String? = nil, retryPolicy: ProviderRetryPolicy? = nil, secretRef: String? = nil, status: String? = nil, timeoutMs: Int? = nil, vendor: String? = nil, weight: Int? = nil) {
         self.accessType = accessType
         self.baseUrl = baseUrl
         self.capabilities = capabilities
         self.models = models
         self.name = name
         self.protocol_ = protocol_
+        self.retryPolicy = retryPolicy
         self.secretRef = secretRef
         self.status = status
+        self.timeoutMs = timeoutMs
         self.vendor = vendor
         self.weight = weight
     }
@@ -10351,6 +11446,21 @@ public struct VerificationCodesVerifyResult: Codable {
 
 
     public init(code: String? = nil, data: IamVerificationCodeVerifyResponse? = nil, message: String? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.message = message
+        self.msg = msg
+    }
+}
+
+public struct VerificationPolicyRetrieveResult: Codable {
+    public let code: String?
+    public let data: AuthVerificationPolicy?
+    public let message: String?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AuthVerificationPolicy? = nil, message: String? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
         self.message = message

@@ -67,7 +67,7 @@
 | `/console/account` | 账户资料、余额、发票、安全、登录日志 | `plus_user`、`plus_account`、`plus_invoice*`、`iam_user_security_setting`、`iam_user_login_event`、`ops_audit_log` | PII 不复制到扩展表；登录明细进入 IAM 登录事件，不混入后台操作审计 |
 | `/console/recharge` | 充值包、充值方式 | `plus_vip_recharge_pack`、`plus_vip_recharge_method` | 充值包沿用存量结构 |
 | `/console/settings` | 语言、时区、Webhook、通知偏好 | `iam_user_preference`、`integration_webhook_endpoint`、`ops_notification_delivery` | Webhook secret 存引用，通知偏好入用户偏好 |
-| `/console/messages` | 消息列表、详情、已读、账单提醒、预警 | `ops_notification_message`、`ops_notification_delivery` | 消息定义和用户投递状态分离 |
+| `/console/notifications` | 通知列表、详情、已读、账单提醒、预警 | `ops_notification_message`、`ops_notification_delivery` | 通知定义和用户投递状态分离 |
 | `/console/providers` | Claude/Codex/Gemini/OpenCode 配置、模型、代理 | `integration_provider`、`integration_channel`、`integration_provider_account`、`integration_proxy`、`integration_channel_model` | 本地/云 Provider 用同一标准表 |
 | `/console/user` | 个人资料、OAuth、MFA、安全状态、最近登录 | `plus_user`、`plus_oauth_account`、`iam_user_preference`、`iam_user_security_setting`、`iam_user_login_event` | 用户主数据仍在 `plus_user`，OAuth 物理表名与 entity 保持一致 |
 

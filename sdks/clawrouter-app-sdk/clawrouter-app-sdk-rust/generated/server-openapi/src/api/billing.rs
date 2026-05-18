@@ -100,12 +100,9 @@ impl BillingApi {
         self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
-    /// List account points recharge packages
-    pub async fn account_points_recharges_packages_list(&self, status: Option<&str>) -> Result<AccountPointsRechargesPackagesListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(app_path(&"/billing/account/points/recharges/packages".to_string()), &query);
+    /// List packages
+    pub async fn account_points_recharges_packages_list(&self) -> Result<AccountPointsRechargesPackagesListResult, SdkworkError> {
+        let path = app_path(&"/billing/account/points/recharges/packages".to_string());
         self.client.get(&path, None, None).await
     }
 
@@ -354,7 +351,7 @@ impl BillingApi {
         self.client.get(&path, None, None).await
     }
 
-    /// List packages
+    /// List VIP packs
     pub async fn vip_packs_list(&self) -> Result<VipPacksListResult, SdkworkError> {
         let path = app_path(&"/billing/vip/packs".to_string());
         self.client.get(&path, None, None).await

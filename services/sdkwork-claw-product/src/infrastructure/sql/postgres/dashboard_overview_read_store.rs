@@ -44,6 +44,17 @@ WHERE status = 1
   )
 "#;
 
+const LOAD_USAGE_TOTALS: &str = r#"
+SELECT
+    CAST(COALESCE(SUM(COALESCE(request_count, 0)), 0) AS TEXT) AS total_request_count,
+    CAST(COALESCE(SUM(COALESCE(customer_charge_amount, cost_amount, 0)), 0) AS TEXT) AS total_used_credits
+FROM ai_usage_fact
+WHERE status = 1
+  AND tenant_id = $1
+  AND organization_id = $2
+  AND user_id = $3
+"#;
+
 const LOAD_USAGE_CHART: &str = r#"
 SELECT
     substr(CAST(occurred_at AS TEXT), 1, $6) AS period,
@@ -76,8 +87,8 @@ SELECT
     CAST(COALESCE(cost_amount, 0) AS TEXT) AS cost_amount
 FROM ai_model_rank_snapshot
 WHERE status = 1
-  AND (tenant_id IS NULL OR tenant_id = $1)
-  AND (organization_id IS NULL OR organization_id = $2)
+  AND (tenant_id = $1 OR tenant_id = 0 OR tenant_id IS NULL)
+  AND (organization_id = $2 OR organization_id = 0 OR organization_id IS NULL)
 ORDER BY snapshot_date DESC NULLS LAST, snapshot_period DESC NULLS LAST, rank_no ASC NULLS LAST, id DESC
 LIMIT 5
 "#;
@@ -91,8 +102,8 @@ SELECT
 FROM content_announcement
 WHERE status = 1
   AND deleted_at IS NULL
-  AND (tenant_id IS NULL OR tenant_id = $1)
-  AND (organization_id IS NULL OR organization_id = $2)
+  AND (tenant_id = $1 OR tenant_id = 0 OR tenant_id IS NULL)
+  AND (organization_id = $2 OR organization_id = 0 OR organization_id IS NULL)
   AND (effective_from IS NULL OR effective_from <= CURRENT_TIMESTAMP)
   AND (effective_to IS NULL OR effective_to > CURRENT_TIMESTAMP)
 ORDER BY COALESCE(pinned, false) DESC, published_at DESC NULLS LAST, id DESC
@@ -103,8 +114,8 @@ const LOAD_PERFORMANCE_SPARKLINE: &str = r#"
 SELECT CAST(COALESCE(metric_value, 0) AS TEXT) AS metric_value
 FROM ops_metric_snapshot
 WHERE status = 1
-  AND (tenant_id IS NULL OR tenant_id = $1)
-  AND (organization_id IS NULL OR organization_id = $2)
+  AND (tenant_id = $1 OR tenant_id = 0 OR tenant_id IS NULL)
+  AND (organization_id = $2 OR organization_id = 0 OR organization_id IS NULL)
   AND lower(COALESCE(metric_name, '')) IN ('latency_p50_ms', 'latency_p95_ms', 'gateway_latency_ms')
 ORDER BY period_start DESC NULLS LAST, id DESC
 LIMIT 10
@@ -157,6 +168,7 @@ impl DashboardOverviewReadStore for PostgresDashboardOverviewReadStore {
                 chart_data,
                 top_models,
                 announcements,
+                configuration_domains: Vec::new(),
                 warnings: Vec::new(),
             })
         })
@@ -182,11 +194,14 @@ async fn load_summary(
     let total_tokens = decimal_cell(&row, "total_tokens");
     let (rpm, tpm) = derive_dashboard_summary_rates(query, request_count, total_tokens);
     let error_count = load_error_count(pool, query, subject).await?;
+    let (total_request_count, total_used_credits) = load_usage_totals(pool, subject).await?;
 
     Ok(DashboardOverviewSummary {
         available_credits: 0.0,
         used_credits: decimal_cell(&row, "used_credits"),
         request_count,
+        total_used_credits,
+        total_request_count,
         error_count,
         image_requests: integer_cell(&row, "image_requests"),
         video_requests: integer_cell(&row, "video_requests"),
@@ -213,6 +228,24 @@ async fn load_error_count(
         .map_err(sql_error)?;
 
     Ok(integer_cell(&row, "error_count"))
+}
+
+async fn load_usage_totals(
+    pool: &PgPool,
+    subject: DashboardOverviewSubject,
+) -> Result<(i64, f64), DomainError> {
+    let row = sqlx::query(LOAD_USAGE_TOTALS)
+        .bind(subject.tenant_id)
+        .bind(subject.organization_id)
+        .bind(subject.user_id)
+        .fetch_one(pool)
+        .await
+        .map_err(sql_error)?;
+
+    Ok((
+        integer_cell(&row, "total_request_count"),
+        decimal_cell(&row, "total_used_credits"),
+    ))
 }
 
 async fn load_chart_data(

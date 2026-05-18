@@ -376,6 +376,12 @@ function buildVerificationPlan(settings, env = process.env) {
     env,
   });
   plan.push({
+    label: 'portal console agents runtime tests',
+    command: 'node',
+    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/console-agents-runtime.test.ts'],
+    env,
+  });
+  plan.push({
     label: 'portal console routing runtime tests',
     command: 'node',
     args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/console-routing-runtime.test.ts'],

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CopyButton } from 'sdkwork-claw-router-commons';
 import { Search, ChevronDown, ChevronRight, Download } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { RoutingService, RequestTrace } from '../routingService';
 
 function buildRequestAudit(req: RequestTrace): string {
@@ -33,6 +34,7 @@ function buildResponseAudit(req: RequestTrace): string {
 }
 
 export function RequestDataTab() {
+  const { t } = useTranslation();
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [requestTraces, setRequestTraces] = useState<RequestTrace[]>([]);
   const [search, setSearch] = useState('');
@@ -87,29 +89,29 @@ export function RequestDataTab() {
     <div className="animate-in fade-in duration-300">
       <div className="flex justify-between items-end mb-6">
         <div>
-          <h3 className="text-xl font-bold text-slate-900 dark:text-white">Request data audit</h3>
-          <p className="text-sm text-slate-500 mt-1">Inspect safe request and response audit metadata, payload hashes, and masked error details.</p>
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white">{t('console.routing.components.requestdatatab.title', '请求数据审计')}</h3>
+          <p className="text-sm text-slate-500 mt-1">{t('console.routing.components.requestdatatab.description', '查看安全的请求与响应审计元数据、载荷哈希和脱敏错误详情。')}</p>
         </div>
         <div className="flex gap-3">
           <div className="relative">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
-            <input type="text" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search request id or trace id..." className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-lg pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-blue-500 w-64 text-slate-900 dark:text-white placeholder-slate-600 transition-colors" />
+            <input type="text" value={search} onChange={(event) => setSearch(event.target.value)} placeholder={t('console.routing.components.requestdatatab.searchPlaceholder', '搜索请求 ID 或追踪 ID...')} className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-lg pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-blue-500 w-64 text-slate-900 dark:text-white placeholder-slate-600 transition-colors" />
           </div>
           <button onClick={exportLogs} disabled={filteredRequestTraces.length === 0} className="flex items-center gap-2 bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
-            <Download className="w-4 h-4" /> Export logs
+            <Download className="w-4 h-4" /> {t('common.actions.exportLogs')}
           </button>
         </div>
       </div>
 
       <div className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-xl flex flex-col overflow-hidden">
         <div className="grid grid-cols-12 gap-4 p-4 px-6 bg-slate-50 dark:bg-[#1e1e1e]/50 text-xs font-bold text-slate-400 uppercase tracking-wider border-b border-slate-200 dark:border-white/5">
-           <div className="col-span-3">Request id & time</div>
-           <div className="col-span-2">Model</div>
-           <div className="col-span-3">Channel</div>
-           <div className="col-span-1">Status</div>
-           <div className="col-span-1">Latency</div>
-           <div className="col-span-1">Tokens</div>
-           <div className="col-span-1 text-right">Details</div>
+           <div className="col-span-3">{t('console.routing.components.requestdatatab.headers.request', '请求 ID 和时间')}</div>
+           <div className="col-span-2">{t('console.routing.components.requestdatatab.headers.model', '模型')}</div>
+           <div className="col-span-3">{t('console.routing.components.requestdatatab.headers.channel', '渠道')}</div>
+           <div className="col-span-1">{t('console.routing.components.requestdatatab.headers.status', '状态')}</div>
+           <div className="col-span-1">{t('console.routing.components.requestdatatab.headers.latency', '延迟')}</div>
+           <div className="col-span-1">{t('console.routing.components.requestdatatab.headers.tokens', 'Token')}</div>
+           <div className="col-span-1 text-right">{t('console.routing.components.requestdatatab.headers.details', '详情')}</div>
         </div>
 
         <div className="flex-1 overflow-y-auto">
@@ -148,14 +150,14 @@ export function RequestDataTab() {
                         <>
                     <div className="space-y-2">
                        <div className="flex items-center justify-between">
-                         <h5 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Request Audit</h5>
+                         <h5 className="text-xs font-bold text-slate-400 uppercase tracking-widest">{t('console.routing.components.requestdatatab.requestAudit', '请求审计')}</h5>
                          <CopyButton
                            text={requestAudit}
-                           label="Copy request audit"
-                           copiedLabel="Copied request audit"
+                           label={t('common.actions.copyRequestAudit')}
+                           copiedLabel={t('common.actions.copiedRequestAudit')}
                            className="text-slate-500 hover:text-slate-900 dark:text-white"
                            iconClassName="w-3.5 h-3.5"
-                           title="Copy request audit"
+                           title={t('common.actions.copyRequestAudit')}
                          />
                        </div>
                        <div className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-lg p-4 font-mono text-xs text-slate-700 dark:text-slate-300 overflow-x-auto">
@@ -164,14 +166,14 @@ export function RequestDataTab() {
                     </div>
                     <div className="space-y-2">
                        <div className="flex items-center justify-between">
-                         <h5 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Response Audit</h5>
+                         <h5 className="text-xs font-bold text-slate-400 uppercase tracking-widest">{t('console.routing.components.requestdatatab.responseAudit', '响应审计')}</h5>
                          <CopyButton
                            text={responseAudit}
-                           label="Copy response audit"
-                           copiedLabel="Copied response audit"
+                           label={t('common.actions.copyResponseAudit')}
+                           copiedLabel={t('common.actions.copiedResponseAudit')}
                            className="text-slate-500 hover:text-slate-900 dark:text-white"
                            iconClassName="w-3.5 h-3.5"
-                           title="Copy response audit"
+                           title={t('common.actions.copyResponseAudit')}
                          />
                        </div>
                        <div className="bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/5 rounded-lg p-4 font-mono text-xs text-emerald-400 overflow-x-auto">

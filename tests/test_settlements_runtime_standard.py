@@ -156,6 +156,58 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
         self.assertIn("await SettlementsService.fetchDashboardData", view)
         self.assertNotIn("SettlementsService.fetchDashboardData({ year: selectedYear }).then", view)
 
+    def test_console_settlements_product_states_are_localized(self) -> None:
+        view = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-settlements"
+            / "src"
+            / "SettlementsView.tsx"
+        ).read_text(encoding="utf-8")
+        service = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-settlements"
+            / "src"
+            / "settlementsService.ts"
+        ).read_text(encoding="utf-8")
+        i18n = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-i18n"
+            / "src"
+            / "index.ts"
+        ).read_text(encoding="utf-8")
+
+        for marker in [
+            "console.settlements.states.loading",
+            "console.settlements.states.loadingDescription",
+            "console.settlements.states.loadErrorTitle",
+            "console.settlements.states.loadErrorFallback",
+            "console.settlements.states.emptyTitle",
+            "console.settlements.states.emptyDescription",
+        ]:
+            self.assertIn(marker, view + service + i18n)
+            self.assertGreaterEqual(i18n.count(f'"{marker}"'), 2)
+
+        for hardcoded_copy in [
+            "Loading settlement dashboard...",
+            "Fetching settlement chart and bill data.",
+            "Settlement dashboard could not be loaded",
+            "Failed to load settlement dashboard.",
+            "No settlement data found",
+            "The selected year has no settlement chart or bill rows yet.",
+            "Failed to fetch settlement dashboard",
+        ]:
+            self.assertNotIn(hardcoded_copy, view)
+            self.assertNotIn(hardcoded_copy, service)
+
     def test_console_settlements_ui_is_read_only_until_command_contract_exists(self) -> None:
         view = (
             ROOT
@@ -189,8 +241,10 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
         settlement_operation_contract = contract[settlement_operation_start:next_operation_start]
 
         self.assertIn("SettlementsService.fetchDashboardData({ year: selectedYear })", view)
-        self.assertIn("readOnlySettlementActions", view)
-        self.assertIn("Read-only", view)
+        self.assertNotIn("readOnlySettlementActions", view)
+        self.assertNotIn("Read-only", view)
+        self.assertNotIn("read-only", view)
+        self.assertNotIn("command contract", view)
         self.assertIn("BusinessStatePanel", view)
         self.assertNotIn("trigger actual invoice viewing", view)
         self.assertNotIn("<Download", view)

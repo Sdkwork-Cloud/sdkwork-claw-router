@@ -14,6 +14,12 @@ export async function fetchClawRouterAuthRuntimeSettings(): Promise<ApiRecord> {
   return readApiRecord(result);
 }
 
+export async function fetchClawRouterAuthVerificationPolicy(): Promise<ApiRecord> {
+  const result = await getClawRouterAppSdkClient().auth.verificationPolicy.retrieve();
+  ensurePlusApiSuccess(result, 'Unable to load Claw Router auth verification policy');
+  return readApiRecord(result);
+}
+
 export async function fetchClawRouterAuthSettings(): Promise<ApiRecord> {
   const result = await getClawRouterBackendSdkClient().system.auth.settings.retrieve();
   ensurePlusApiSuccess(result, 'Unable to load Claw Router auth settings');

@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AccessGroupsCreateResult, AccessGroupsDeleteResult, AccessGroupsListResult, AccessGroupsUpdateResult, AdminAccessGroupCreateRequest, AdminAccessGroupUpdateRequest, AdminApiKeyCreateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersListResult};
+use crate::models::{AccessGroupsCreateResult, AccessGroupsDeleteResult, AccessGroupsListResult, AccessGroupsUpdateResult, AdminAccessGroupCreateRequest, AdminAccessGroupUpdateRequest, AdminApiKeyCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersCreateResult, UsersListResult, UsersUpdateResult};
 
 #[derive(Clone)]
 pub struct IamApi {
@@ -80,6 +80,30 @@ impl IamApi {
     pub async fn users_list(&self) -> Result<UsersListResult, SdkworkError> {
         let path = backend_path(&"/iam/users".to_string());
         self.client.get(&path, None, None).await
+    }
+
+    /// Create user
+    pub async fn users_create(&self, body: &AdminUserCreateRequest, x_request_id: Option<&str>) -> Result<UsersCreateResult, SdkworkError> {
+        let path = backend_path(&"/iam/users".to_string());
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// Update user
+    pub async fn users_update(&self, body: &AdminUserUpdateRequest, x_request_id: Option<&str>) -> Result<UsersUpdateResult, SdkworkError> {
+        let path = backend_path(&"/iam/users".to_string());
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
 }

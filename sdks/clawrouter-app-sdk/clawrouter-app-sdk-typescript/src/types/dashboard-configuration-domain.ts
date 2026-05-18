@@ -1,0 +1,11 @@
+/** Dashboard configuration domain schema exposed by Claw Router. */
+export interface DashboardConfigurationDomain {
+  /** Domain field on dashboard configuration domain. */
+  domain: string;
+  /** Id field on dashboard configuration domain. */
+  id: string;
+  /** Name field on dashboard configuration domain. */
+  name: string;
+  /** Remark field on dashboard configuration domain. */
+  remark: string;
+}

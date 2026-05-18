@@ -629,12 +629,12 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "method: readHttpMethod(item.method)",
                 "readRequiredNumber(item, 'status', 'Gateway trace status is required')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-messages" / "src" / "messagesService.ts": [
-                "return readRequiredApiItems(result, 'Failed to fetch messages').map(readMessage)",
-                "readRequiredString(value, 'id', 'Message id is required')",
-                "readRequiredString(value, 'desc', 'Message description is required')",
-                "readMessageType(value.type)",
-                "readMessageRead(value.read)",
+            PORTAL_PACKAGES / "sdkwork-claw-router-commons" / "src" / "notificationService.ts": [
+                "return readRequiredApiItems(result, 'Failed to fetch notifications').map(readNotification)",
+                "readRequiredString(value, 'id', 'Notification id is required')",
+                "readRequiredString(value, 'desc', 'Notification description is required')",
+                "readNotificationType(value.type)",
+                "readNotificationRead(value.read)",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-console-providers" / "src" / "providerService.ts": [
                 "readRequiredRecord(value, 'Provider record is required')",
@@ -809,7 +809,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 ".filter(isGatewayTrace)",
                 "function isGatewayTrace(",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-messages" / "src" / "messagesService.ts": [
+            PORTAL_PACKAGES / "sdkwork-claw-router-commons" / "src" / "notificationService.ts": [
                 ".filter(isMessage)",
                 "function isMessage(",
             ],

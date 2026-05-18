@@ -5,6 +5,7 @@ use axum::extract::State;
 use axum::http::{HeaderMap, StatusCode};
 use axum::routing::post;
 use axum::{Json, Router};
+use sdkwork_claw_product::domain::ProviderAuthProfile;
 use sdkwork_claw_product::infrastructure::provider::SecretRefOpenAiCompatibleEmbeddingsRelay;
 use sdkwork_claw_product::ports::{
     EmbeddingsRelay, EmbeddingsRelayRequest, EmbeddingsRelayResponse, ProviderSecretResolver,
@@ -57,6 +58,9 @@ async fn secret_ref_embeddings_relay_resolves_endpoint_and_secret_from_request_c
     let response = relay
         .create_embedding(EmbeddingsRelayRequest {
             api_key_id: 101,
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
             pricing_plan_code: "standard".to_owned(),
@@ -65,6 +69,7 @@ async fn secret_ref_embeddings_relay_resolves_endpoint_and_secret_from_request_c
             provider_model: "openai/global/text-embedding-3-small".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some(secret_ref.to_owned()),
+            provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
             request_body: json!({
@@ -113,6 +118,9 @@ async fn secret_ref_embeddings_relay_rejects_missing_endpoint_or_secret_ref_with
     let missing_endpoint = relay
         .create_embedding(EmbeddingsRelayRequest {
             api_key_id: 101,
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
             pricing_plan_code: "standard".to_owned(),
@@ -121,6 +129,7 @@ async fn secret_ref_embeddings_relay_rejects_missing_endpoint_or_secret_ref_with
             provider_model: "openai/global/text-embedding-3-small".to_owned(),
             provider_base_url: None,
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+            provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
             request_body: json!({"model": "text-embedding-3-small", "input": ["ping"]}),
@@ -132,6 +141,9 @@ async fn secret_ref_embeddings_relay_rejects_missing_endpoint_or_secret_ref_with
     let missing_secret_ref = relay
         .create_embedding(EmbeddingsRelayRequest {
             api_key_id: 101,
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
             group_id: 10,
             group_code: "standard-group".to_owned(),
             pricing_plan_code: "standard".to_owned(),
@@ -140,6 +152,7 @@ async fn secret_ref_embeddings_relay_rejects_missing_endpoint_or_secret_ref_with
             provider_model: "openai/global/text-embedding-3-small".to_owned(),
             provider_base_url: Some("http://127.0.0.1:8080".to_owned()),
             provider_secret_ref: None,
+            provider_auth_profile: ProviderAuthProfile::bearer(),
             provider_timeout_ms: None,
             provider_retry_policy: None,
             request_body: json!({"model": "text-embedding-3-small", "input": ["ping"]}),

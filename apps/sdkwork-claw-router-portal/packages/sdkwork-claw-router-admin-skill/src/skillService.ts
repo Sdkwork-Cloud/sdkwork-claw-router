@@ -25,6 +25,7 @@ import type {
   AdminSkillAssetItem,
   AdminSkillAssetUpdateRequest,
   AdminSkillCategoryCreateRequest,
+  AdminSkillCategoryUpdateRequest,
   AdminSkillCreateRequest,
   AdminSkillItem,
   AdminSkillPackageCreateRequest,
@@ -60,6 +61,19 @@ export interface AdminSkillCategoryCreateInput extends AdminSkillCategoryCreateR
   sortWeight?: number;
   parentId?: string | null;
   path?: string;
+  visible?: boolean;
+  status?: number;
+  type?: 19 | 20;
+}
+
+export interface AdminSkillCategoryUpdateInput extends AdminSkillCategoryUpdateRequest {
+  name?: string;
+  code?: string | null;
+  description?: string | null;
+  icon?: string | null;
+  sortWeight?: number;
+  parentId?: string | null;
+  path?: string | null;
   visible?: boolean;
   status?: number;
   type?: 19 | 20;
@@ -398,6 +412,25 @@ export class AdminSkillService {
     return normalizeSkillCategory(readRequiredApiItem(result, 'Created skill category response is missing data'));
   }
 
+  static async updateSkillCategory(categoryId: string, input: AdminSkillCategoryUpdateInput): Promise<AdminSkillCategory> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.categories.update(
+      requiredSafePathSegment(categoryId, 'categoryId'),
+      normalizeUpdateCategoryRequest(input),
+      createRequestParams('admin-skill-category-update'),
+    );
+    ensurePlusApiSuccess(result, 'Failed to update skill category');
+    return normalizeSkillCategory(readRequiredApiItem(result, 'Updated skill category response is missing data'));
+  }
+
+  static async deleteSkillCategory(categoryId: string): Promise<boolean> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.categories.delete(
+      requiredSafePathSegment(categoryId, 'categoryId'),
+      createRequestParams('admin-skill-category-delete'),
+    );
+    ensureDeleteResult(result, 'Skill category delete confirmation is required');
+    return true;
+  }
+
   static async fetchSkillPackages(query: AdminSkillPackageListInput = {}): Promise<AdminSkillPackage[]> {
     const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.list(normalizePackageListRequest(query));
     ensurePlusApiSuccess(result, 'Failed to fetch skill packages');
@@ -691,39 +724,17 @@ export function createSkillCategoryInputFromForm(form: FormData): AdminSkillCate
   const input: AdminSkillCategoryCreateInput = {
     name: requiredFormText(form, 'name', 255),
   };
-  const code = optionalFormText(form, 'code', 128);
-  if (code !== undefined) {
-    input.code = code;
+  mergeSharedCategoryFormFields(input, form, 'create');
+  return input;
+}
+
+export function updateSkillCategoryInputFromForm(form: FormData): AdminSkillCategoryUpdateInput {
+  const input: AdminSkillCategoryUpdateInput = {};
+  const name = optionalFormText(form, 'name', 255);
+  if (name) {
+    input.name = name;
   }
-  const description = optionalFormText(form, 'description', 512);
-  if (description !== undefined) {
-    input.description = description;
-  }
-  const icon = optionalFormText(form, 'icon', 255);
-  if (icon !== undefined) {
-    input.icon = icon;
-  }
-  const parentId = optionalFormText(form, 'parentId', 128);
-  if (parentId !== undefined) {
-    input.parentId = parentId;
-  }
-  const path = optionalFormText(form, 'path', 1024);
-  if (path !== undefined) {
-    input.path = path;
-  }
-  const sortWeight = optionalFormNonNegativeInteger(form, 'sortWeight');
-  if (sortWeight !== undefined) {
-    input.sortWeight = sortWeight;
-  }
-  const status = optionalFormNonNegativeInteger(form, 'status');
-  if (status !== undefined) {
-    input.status = status;
-  }
-  assignOptionalCategoryType(input, optionalFormInteger(form, 'type'));
-  const visible = optionalFormBoolean(form, 'visible');
-  if (visible !== undefined) {
-    input.visible = visible;
-  }
+  mergeSharedCategoryFormFields(input, form, 'update');
   return input;
 }
 
@@ -838,6 +849,20 @@ function normalizeCreateCategoryRequest(input: AdminSkillCategoryCreateInput): A
     sortWeight: input.sortWeight === undefined ? undefined : nonNegativeInteger(input.sortWeight, 'sortWeight', 1_000_000),
     status: input.status === undefined ? undefined : nonNegativeInteger(input.status, 'status', 1_000_000),
   };
+}
+
+function normalizeUpdateCategoryRequest(input: AdminSkillCategoryUpdateInput): AdminSkillCategoryUpdateRequest {
+  return pruneUndefined({
+    ...input,
+    name: optionalText(input.name, 'name', 255),
+    code: normalizeNullableCode(input.code, 'code', 128),
+    description: normalizeNullableText(input.description, 'description', 512),
+    icon: normalizeNullableUrlOrPath(input.icon, 'icon', 255),
+    parentId: normalizeNullableId(input.parentId),
+    path: normalizeNullablePath(input.path, 'path', 1024),
+    sortWeight: input.sortWeight === undefined ? undefined : nonNegativeInteger(input.sortWeight, 'sortWeight', 1_000_000),
+    status: input.status === undefined ? undefined : nonNegativeInteger(input.status, 'status', 1_000_000),
+  });
 }
 
 function normalizeListRequest(input: AdminSkillListInput): AdminSkillListSdkParams {
@@ -1295,6 +1320,40 @@ function mergeSharedSkillFormFields(input: AdminSkillCreateInput | AdminSkillUpd
   }
 }
 
+function mergeSharedCategoryFormFields(
+  input: AdminSkillCategoryCreateInput | AdminSkillCategoryUpdateInput,
+  form: FormData,
+  mode: 'create' | 'update',
+): void {
+  for (const [key, maxLength] of [
+    ['code', 128],
+    ['description', 512],
+    ['icon', 255],
+    ['parentId', 128],
+    ['path', 1024],
+  ] as const) {
+    const value = mode === 'create' || key === 'description'
+      ? optionalFormText(form, key, maxLength)
+      : optionalNullableFormText(form, key, maxLength);
+    if (value !== undefined) {
+      input[key] = value;
+    }
+  }
+  const sortWeight = optionalFormNonNegativeInteger(form, 'sortWeight');
+  if (sortWeight !== undefined) {
+    input.sortWeight = sortWeight;
+  }
+  const status = optionalFormNonNegativeInteger(form, 'status');
+  if (status !== undefined) {
+    input.status = status;
+  }
+  assignOptionalCategoryType(input, optionalFormInteger(form, 'type'));
+  const visible = optionalFormBoolean(form, 'visible');
+  if (visible !== undefined) {
+    input.visible = visible;
+  }
+}
+
 function mergeSharedPackageFormFields(input: AdminSkillPackageCreateInput | AdminSkillPackageUpdateInput, form: FormData): void {
   for (const [key, maxLength] of [
     ['summary', 512],
@@ -1391,6 +1450,13 @@ function requiredFormText(form: FormData, key: string, maxLength: number): strin
 
 function optionalFormText(form: FormData, key: string, maxLength: number): string | undefined {
   return optionalText(formString(form, key), key, maxLength);
+}
+
+function optionalNullableFormText(form: FormData, key: string, maxLength: number): string | null | undefined {
+  if (!form.has(key)) {
+    return undefined;
+  }
+  return optionalText(formString(form, key), key, maxLength) ?? null;
 }
 
 function optionalFormInteger(form: FormData, key: string): number | undefined {
@@ -1499,6 +1565,13 @@ function optionalCode(value: unknown, fieldName: string, maxLength: number): str
   return normalized;
 }
 
+function normalizeNullableCode(value: unknown, fieldName: string, maxLength: number): string | null | undefined {
+  if (value === null) {
+    return null;
+  }
+  return optionalCode(value, fieldName, maxLength);
+}
+
 function normalizeNullableText(value: unknown, fieldName: string, maxLength: number): string | null | undefined {
   if (value === null) {
     return null;
@@ -1519,6 +1592,17 @@ function normalizeNullableUrlOrPath(value: unknown, fieldName: string, maxLength
     return null;
   }
   return optionalUrlOrPath(value, fieldName, maxLength);
+}
+
+function normalizeNullablePath(value: unknown, fieldName: string, maxLength: number): string | null | undefined {
+  if (value === null) {
+    return null;
+  }
+  const normalized = optionalText(value, fieldName, maxLength);
+  if (normalized && !normalized.startsWith('/')) {
+    throw new Error(`${fieldName} must start with /`);
+  }
+  return normalized;
 }
 
 function validateUrlOrPath(value: string, fieldName: string): void {
@@ -1787,7 +1871,7 @@ function readVisibility(value: string): SkillVisibility {
   throw new Error(`Unsupported skill visibility: ${value}`);
 }
 
-function assignOptionalCategoryType(target: AdminSkillCategoryCreateInput, value: number | undefined): void {
+function assignOptionalCategoryType(target: { type?: 19 | 20 }, value: number | undefined): void {
   if (value === undefined) {
     return;
   }

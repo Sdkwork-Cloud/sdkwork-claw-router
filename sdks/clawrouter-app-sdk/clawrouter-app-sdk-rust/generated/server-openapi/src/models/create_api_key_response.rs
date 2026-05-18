@@ -8,7 +8,7 @@ pub struct CreateApiKeyResponse {
     /// Item field on create api key response.
     pub item: AppApiKeyItem,
 
-    /// One-time raw API key secret. It is never returned by list/read APIs.
+    /// Full raw API key secret returned by create responses. Authenticated owner management list and update responses also expose this value as item.copyableKey for console copy actions.
     #[serde(rename = "rawKey")]
     pub raw_key: String,
 }

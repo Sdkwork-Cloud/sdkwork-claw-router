@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, ChevronUp, LayoutGrid, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import type { CoursePlaylistView } from '../../data';
 
 export function CoursePlaylist({
@@ -9,6 +10,7 @@ export function CoursePlaylist({
   playlist: CoursePlaylistView;
   onLessonSelect?: (lessonId: string) => void;
 }) {
+  const { t } = useTranslation();
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [expandedChapters, setExpandedChapters] = useState<Record<number, boolean>>({ 0: true });
   const [showGrid, setShowGrid] = useState(false);
@@ -44,7 +46,7 @@ export function CoursePlaylist({
           <button
             onClick={() => setShowGrid(!showGrid)}
             className={`p-1.5 ml-1 rounded-md transition-colors ${showGrid ? 'bg-slate-100 dark:bg-white/10 text-slate-900 dark:text-white' : 'text-slate-400 hover:text-slate-600 hover:bg-slate-100 dark:hover:bg-white/10 dark:hover:text-slate-200'}`}
-            title="Lesson grid"
+            title={t('common.actions.lessonGrid')}
           >
             <LayoutGrid className="w-4 h-4" />
           </button>

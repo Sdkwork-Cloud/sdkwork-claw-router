@@ -13,6 +13,8 @@ class DashboardOverviewSummary:
     music_requests: int
     request_count: int
     rpm: float
+    total_request_count: int
+    total_used_credits: float
     tpm: float
     used_credits: float
     video_requests: int

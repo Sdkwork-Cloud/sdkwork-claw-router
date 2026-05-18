@@ -30,6 +30,12 @@ public class AiApi {
         return client.convertValue(raw, new TypeReference<GatewayTracesListResult>() {});
     }
 
+    /** Create Playground generation agent run */
+    public GenerationAgentRunsCreateResult generationAgentRunsCreate(GenerationAgentRunCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.appPath("/ai/generation_agent/runs"), body, null, null, "application/json");
+        return client.convertValue(raw, new TypeReference<GenerationAgentRunsCreateResult>() {});
+    }
+
     /** List generation history */
     public GenerationsListResult generationsList() throws Exception {
         Object raw = client.get(ApiPaths.appPath("/ai/generations"));

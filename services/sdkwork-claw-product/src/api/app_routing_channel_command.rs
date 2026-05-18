@@ -13,7 +13,7 @@ use serde_json::{Map, Value};
 
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
-use crate::domain::{DomainError, ProviderRetryPolicy};
+use crate::domain::{DomainError, ProviderCircuitBreakerPolicy, ProviderRetryPolicy};
 use crate::infrastructure::OsApiKeySecretGenerator;
 use crate::ports::{
     AppRoutingChannelCommandFuture, AppRoutingChannelCommandStore, AppRoutingChannelDeleteOutcome,
@@ -60,6 +60,7 @@ struct NormalizedCreateRoutingChannelRequest {
     is_multimodal: bool,
     timeout_ms: Option<i64>,
     retry_policy_json: Option<String>,
+    circuit_breaker_policy_json: Option<String>,
     weight: i64,
     status: String,
 }
@@ -78,6 +79,7 @@ struct NormalizedUpdateRoutingChannelRequest {
     capabilities: Option<Vec<String>>,
     timeout_ms: Option<Option<i64>>,
     retry_policy_json: Option<Option<String>>,
+    circuit_breaker_policy_json: Option<Option<String>>,
     weight: Option<i64>,
     status: Option<String>,
 }
@@ -447,6 +449,8 @@ fn normalize_create_request(
         .map(normalize_timeout_ms)
         .transpose()?;
     let retry_policy_json = optional_non_null_retry_policy_json(&request, "retryPolicy")?;
+    let circuit_breaker_policy_json =
+        optional_non_null_circuit_breaker_policy_json(&request, "circuitBreakerPolicy")?;
     let weight = optional_integer(&request, "weight")?.unwrap_or(100);
     let weight = normalize_weight(weight)?;
     let status = optional_text(&request, "status", "channel status", 32)?
@@ -467,6 +471,7 @@ fn normalize_create_request(
         is_multimodal,
         timeout_ms,
         retry_policy_json,
+        circuit_breaker_policy_json,
         weight,
         status,
     })
@@ -515,6 +520,8 @@ fn normalize_update_request(
         .map(|value| value.map(normalize_timeout_ms).transpose())
         .transpose()?;
     let retry_policy_json = optional_retry_policy_json(&request, "retryPolicy")?;
+    let circuit_breaker_policy_json =
+        optional_circuit_breaker_policy_json(&request, "circuitBreakerPolicy")?;
     let weight = optional_integer(&request, "weight")?
         .map(normalize_weight)
         .transpose()?;
@@ -532,6 +539,7 @@ fn normalize_update_request(
         && capabilities.is_none()
         && timeout_ms.is_none()
         && retry_policy_json.is_none()
+        && circuit_breaker_policy_json.is_none()
         && weight.is_none()
         && status.is_none()
     {
@@ -551,6 +559,7 @@ fn normalize_update_request(
         capabilities,
         timeout_ms,
         retry_policy_json,
+        circuit_breaker_policy_json,
         weight,
         status,
     })
@@ -856,6 +865,56 @@ fn optional_non_null_retry_policy_json(
     }
 }
 
+fn optional_circuit_breaker_policy_json(
+    request: &Map<String, Value>,
+    key: &str,
+) -> Result<Option<Option<String>>, String> {
+    let Some(value) = request.get(key) else {
+        return Ok(None);
+    };
+    if value.is_null() {
+        return Ok(Some(None));
+    }
+    let Value::Object(object) = value else {
+        return Err("circuitBreakerPolicy must be a JSON object or null".to_owned());
+    };
+    for key in object.keys() {
+        if key != "failureThreshold" {
+            return Err(format!(
+                "circuitBreakerPolicy contains unsupported field: {key}"
+            ));
+        }
+    }
+    let failure_threshold = object
+        .get("failureThreshold")
+        .and_then(Value::as_u64)
+        .ok_or_else(|| {
+            "circuitBreakerPolicy.failureThreshold must be a positive integer".to_owned()
+        })?;
+    let canonical =
+        ProviderCircuitBreakerPolicy::new(usize::try_from(failure_threshold).map_err(|_| {
+            "circuitBreakerPolicy.failureThreshold must be a positive integer".to_owned()
+        })?)
+        .map_err(|error| circuit_breaker_policy_error_message(&error.to_string()))?;
+    serde_json::to_string(&serde_json::json!({
+        "failure_threshold": canonical.failure_threshold
+    }))
+    .map(Some)
+    .map(Some)
+    .map_err(|error| format!("circuitBreakerPolicy could not be serialized: {error}"))
+}
+
+fn optional_non_null_circuit_breaker_policy_json(
+    request: &Map<String, Value>,
+    key: &str,
+) -> Result<Option<String>, String> {
+    match optional_circuit_breaker_policy_json(request, key)? {
+        Some(Some(value)) => Ok(Some(value)),
+        Some(None) => Err("circuitBreakerPolicy must be a JSON object".to_owned()),
+        None => Ok(None),
+    }
+}
+
 fn normalize_provider_code(vendor: &str) -> Result<String, String> {
     let normalized = vendor.trim().to_ascii_lowercase();
     let code = match normalized.as_str() {
@@ -1043,6 +1102,18 @@ fn retry_policy_error_message(message: &str) -> String {
         .replace("retryPolicy backoff_ms", "retryPolicy.backoffMs")
 }
 
+fn circuit_breaker_policy_error_message(message: &str) -> String {
+    message
+        .replace(
+            "integration_channel.circuit_breaker_policy",
+            "circuitBreakerPolicy",
+        )
+        .replace(
+            "circuitBreakerPolicy failure_threshold",
+            "circuitBreakerPolicy.failureThreshold",
+        )
+}
+
 fn build_create_command(
     state: AppRoutingChannelCommandState,
     headers: &HeaderMap,
@@ -1070,6 +1141,7 @@ fn build_create_command(
         is_multimodal: request.is_multimodal,
         timeout_ms: request.timeout_ms,
         retry_policy_json: request.retry_policy_json,
+        circuit_breaker_policy_json: request.circuit_breaker_policy_json,
         weight: request.weight,
         status: request.status,
         request_id: normalize_request_id(headers, &state)?,
@@ -1105,6 +1177,7 @@ fn build_update_command(
         capabilities: request.capabilities,
         timeout_ms: request.timeout_ms,
         retry_policy_json: request.retry_policy_json,
+        circuit_breaker_policy_json: request.circuit_breaker_policy_json,
         weight: request.weight,
         status: request.status,
         request_id: normalize_request_id(headers, &state)?,

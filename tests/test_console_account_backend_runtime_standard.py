@@ -25,6 +25,58 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("AccountService.fetchAccountDetails().then", account_view)
         self.assertNotIn('<Loader2 className="w-8 h-8', account_view)
 
+    def test_console_account_product_states_are_localized(self) -> None:
+        account_view = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-account"
+            / "src"
+            / "AccountView.tsx"
+        ).read_text(encoding="utf-8")
+        account_service = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-console-account"
+            / "src"
+            / "accountService.ts"
+        ).read_text(encoding="utf-8")
+        i18n = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-i18n"
+            / "src"
+            / "index.ts"
+        ).read_text(encoding="utf-8")
+
+        for marker in [
+            "console.account.states.loading",
+            "console.account.states.loadErrorTitle",
+            "console.account.states.loadErrorFallback",
+            "console.account.states.emptyTitle",
+            "console.account.states.emptyDescription",
+            "console.account.securitySummary",
+        ]:
+            self.assertIn(marker, account_view + account_service + i18n)
+            self.assertGreaterEqual(i18n.count(f'"{marker}"'), 2)
+
+        for hardcoded_copy in [
+            "Loading account details...",
+            "Account details could not be loaded",
+            "Failed to load account details.",
+            "Account details are unavailable",
+            "The account summary API returned no displayable account data.",
+            "Security status summary",
+            "Failed to fetch account details",
+        ]:
+            self.assertNotIn(hardcoded_copy, account_view)
+            self.assertNotIn(hardcoded_copy, account_service)
+
     def test_console_account_ui_is_read_only_until_command_contract_exists(self) -> None:
         account_view = (
             ROOT
@@ -58,8 +110,10 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         account_operation_contract = contract[account_operation_start:next_operation_start]
 
         self.assertIn("AccountService.fetchAccountDetails()", account_view)
-        self.assertIn("readOnlyAccountActions", account_view)
-        self.assertIn("Read-only", account_view)
+        self.assertNotIn("readOnlyAccountActions", account_view)
+        self.assertNotIn("Read-only", account_view)
+        self.assertNotIn("read-only", account_view)
+        self.assertNotIn("command contract", account_view)
         self.assertIn("BusinessStatePanel", account_view)
         self.assertIn("CopyButton", account_view)
         self.assertNotIn("<button", account_view)
@@ -202,9 +256,9 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
 
             self.assertIn(store_name, store)
             for table in [
-                "plus_user",
+                "iam_user",
                 "plus_account",
-                "plus_organization",
+                "iam_organization",
                 "plus_invoice",
                 "iam_user_security_setting",
                 "iam_user_login_event",

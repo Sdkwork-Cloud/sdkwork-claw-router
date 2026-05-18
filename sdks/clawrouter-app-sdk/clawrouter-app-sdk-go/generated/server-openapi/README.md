@@ -73,6 +73,7 @@ client.SetHeader("X-Custom-Header", "value")
 
 ## API Modules
 
+- `client.Agents` - agents API
 - `client.Ai` - ai API
 - `client.Auth` - auth API
 - `client.Billing` - billing API
@@ -83,6 +84,22 @@ client.SetHeader("X-Custom-Header", "value")
 - `client.Platform` - platform API
 
 ## Usage Examples
+
+### agents
+
+```go
+// List user agents
+params := map[string]interface{}{
+    "page": 1,
+    "page_size": 2,
+    "q": "q",
+}
+result, err := client.Agents.List(params)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
 
 ### ai
 

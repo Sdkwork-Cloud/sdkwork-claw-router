@@ -2,6 +2,7 @@ import Foundation
 
 /// API modules for clawrouter-backend-sdk
 public struct API {
+    public static let agents = AgentsApi.self
     public static let ai = AiApi.self
     public static let billing = BillingApi.self
     public static let content = ContentApi.self

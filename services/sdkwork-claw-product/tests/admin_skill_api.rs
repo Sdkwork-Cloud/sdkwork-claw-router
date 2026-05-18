@@ -9,11 +9,12 @@ use sdkwork_claw_product::ports::{
     AdminSkillItem, AdminSkillPackageItem, AdminSkillStore, CreateAdminSkillArtifactCommand,
     CreateAdminSkillAssetCommand, CreateAdminSkillCategoryCommand, CreateAdminSkillCommand,
     CreateAdminSkillPackageCommand, DeleteAdminSkillArtifactCommand, DeleteAdminSkillAssetCommand,
-    DeleteAdminSkillCommand, DeleteAdminSkillPackageCommand, ListAdminSkillArtifactsQuery,
-    ListAdminSkillAssetsQuery, ListAdminSkillCategoriesQuery, ListAdminSkillPackagesQuery,
-    ListAdminSkillsQuery, ReviewAdminSkillCommand, SetAdminSkillEnabledCommand,
-    SetAdminSkillMarketStatusCommand, SetAdminSkillPackageEnabledCommand,
-    UpdateAdminSkillArtifactCommand, UpdateAdminSkillAssetCommand, UpdateAdminSkillCommand,
+    DeleteAdminSkillCategoryCommand, DeleteAdminSkillCommand, DeleteAdminSkillPackageCommand,
+    ListAdminSkillArtifactsQuery, ListAdminSkillAssetsQuery, ListAdminSkillCategoriesQuery,
+    ListAdminSkillPackagesQuery, ListAdminSkillsQuery, ReviewAdminSkillCommand,
+    SetAdminSkillEnabledCommand, SetAdminSkillMarketStatusCommand,
+    SetAdminSkillPackageEnabledCommand, UpdateAdminSkillArtifactCommand,
+    UpdateAdminSkillAssetCommand, UpdateAdminSkillCategoryCommand, UpdateAdminSkillCommand,
     UpdateAdminSkillPackageCommand,
 };
 use serde_json::{json, Value};
@@ -57,6 +58,33 @@ async fn admin_skill_route_manages_categories_skills_and_market_review_state() {
         category_payload["data"]["item"]["code"]
     );
     assert_eq!(19, category_payload["data"]["item"]["type"]);
+
+    let category_update_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("PUT")
+                .uri("/backend/v3/api/ecosystem/skills/categories/1")
+                .header("content-type", "application/json")
+                .header("x-sdkwork-tenant-id", "10")
+                .header("x-sdkwork-organization-id", "20")
+                .header("x-sdkwork-user-id", "30")
+                .body(Body::from(
+                    r#"{"name":"Prompt Engineering Pro","sortWeight":95,"visible":false}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, category_update_response.status());
+    let category_update_payload = json_payload(category_update_response).await;
+    assert_eq!(
+        "Prompt Engineering Pro",
+        category_update_payload["data"]["item"]["name"]
+    );
+    assert_eq!(95, category_update_payload["data"]["item"]["sortWeight"]);
+    assert_eq!(false, category_update_payload["data"]["item"]["visible"]);
 
     let create_response = router
         .clone()
@@ -238,10 +266,30 @@ async fn admin_skill_route_manages_categories_skills_and_market_review_state() {
     let delete_payload = json_payload(delete_response).await;
     assert_eq!(true, delete_payload["data"]["deleted"]);
 
+    let category_delete_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("DELETE")
+                .uri("/backend/v3/api/ecosystem/skills/categories/1")
+                .header("x-sdkwork-tenant-id", "10")
+                .header("x-sdkwork-organization-id", "20")
+                .header("x-sdkwork-user-id", "30")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, category_delete_response.status());
+    let category_delete_payload = json_payload(category_delete_response).await;
+    assert_eq!(true, category_delete_payload["data"]["deleted"]);
+
     let commands = store.commands.lock().unwrap();
     assert_eq!(
         vec![
             "create_category",
+            "update_category",
             "create_skill",
             "update_skill",
             "review_skill",
@@ -250,7 +298,8 @@ async fn admin_skill_route_manages_categories_skills_and_market_review_state() {
             "set_enabled",
             "set_market_status",
             "review_skill",
-            "delete_skill"
+            "delete_skill",
+            "delete_category"
         ],
         *commands
     );
@@ -813,6 +862,75 @@ impl AdminSkillStore for TestAdminSkillStore {
             };
             self.categories.lock().unwrap().push(item.clone());
             Ok(item)
+        })
+    }
+
+    fn update_category<'a>(
+        &'a self,
+        command: UpdateAdminSkillCategoryCommand,
+    ) -> AdminSkillCommandFuture<'a, Option<AdminSkillCategoryItem>> {
+        Box::pin(async move {
+            self.commands.lock().unwrap().push("update_category");
+            let mut categories = self.categories.lock().unwrap();
+            let Some(item) = categories.iter_mut().find(|item| {
+                item.id == command.category_id
+                    && item.tenant_id == command.subject.tenant_id
+                    && item.organization_id == command.subject.organization_id
+                    && item.status >= 0
+            }) else {
+                return Ok(None);
+            };
+            if let Some(name) = command.name {
+                item.name = name;
+            }
+            if let Some(description) = command.description {
+                item.description = description;
+            }
+            if let Some(code) = command.code {
+                item.code = code;
+            }
+            if let Some(icon) = command.icon {
+                item.icon = icon;
+            }
+            if let Some(sort_weight) = command.sort_weight {
+                item.sort_weight = sort_weight;
+            }
+            if let Some(parent_id) = command.parent_id {
+                item.parent_id = parent_id;
+            }
+            if let Some(path) = command.path {
+                item.path = path;
+            }
+            if let Some(visible) = command.visible {
+                item.visible = visible;
+            }
+            if let Some(status) = command.status {
+                item.status = status;
+            }
+            if let Some(category_type) = command.category_type {
+                item.category_type = category_type;
+            }
+            Ok(Some(item.clone()))
+        })
+    }
+
+    fn delete_category<'a>(
+        &'a self,
+        command: DeleteAdminSkillCategoryCommand,
+    ) -> AdminSkillCommandFuture<'a, bool> {
+        Box::pin(async move {
+            self.commands.lock().unwrap().push("delete_category");
+            let mut categories = self.categories.lock().unwrap();
+            let Some(item) = categories.iter_mut().find(|item| {
+                item.id == command.category_id
+                    && item.tenant_id == command.subject.tenant_id
+                    && item.organization_id == command.subject.organization_id
+                    && item.status >= 0
+            }) else {
+                return Ok(false);
+            };
+            item.status = -1;
+            Ok(true)
         })
     }
 

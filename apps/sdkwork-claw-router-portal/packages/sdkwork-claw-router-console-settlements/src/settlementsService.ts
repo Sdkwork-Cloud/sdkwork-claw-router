@@ -59,7 +59,7 @@ export class SettlementsService {
     const result = await getClawRouterAppSdkClient().billing.settlements.dashboard.list(
       toSettlementDashboardQueryParams(params),
     );
-    ensurePlusApiSuccess(result, 'Failed to fetch settlement dashboard');
+    ensurePlusApiSuccess(result, 'console.settlements.states.loadErrorFallback');
     const data = readApiRecord(result);
     return {
       chartData: readRequiredApiItems(data, 'Settlement chart data is required', ['chartData'])

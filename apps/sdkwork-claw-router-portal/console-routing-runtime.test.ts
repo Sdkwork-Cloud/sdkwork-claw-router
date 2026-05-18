@@ -39,7 +39,7 @@ async function withRoutingSdkFetch<T>(
   Object.defineProperty(globalThis, "window", {
     configurable: true,
     enumerable: true,
-    value: {},
+    value: { dispatchEvent: () => true },
   });
   globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url;
@@ -165,6 +165,8 @@ test("routing channel create form values normalize into a create command without
     retryMaxAttempts: "3",
     retryableStatusCodes: "429, 503, 503",
     retryBackoffMs: "25",
+    circuitBreakerEnabled: true,
+    circuitBreakerFailureThreshold: "4",
     weight: 10,
     status: "active",
   };
@@ -184,6 +186,9 @@ test("routing channel create form values normalize into a create command without
       maxAttempts: 3,
       retryableStatusCodes: [429, 503],
       backoffMs: 25,
+    },
+    circuitBreakerPolicy: {
+      failureThreshold: 4,
     },
     weight: 10,
     status: "active",
@@ -218,6 +223,8 @@ test("routing channel update form values keep command fields explicit and option
     retryMaxAttempts: "3",
     retryableStatusCodes: "429, 503",
     retryBackoffMs: "0",
+    circuitBreakerEnabled: false,
+    circuitBreakerFailureThreshold: "",
     weight: 20,
     status: "disabled",
   };
@@ -230,6 +237,7 @@ test("routing channel update form values keep command fields explicit and option
     models: ["gpt-4o"],
     timeoutMs: null,
     retryPolicy: null,
+    circuitBreakerPolicy: null,
     weight: 20,
     status: "disabled",
   });
@@ -250,7 +258,7 @@ test("routing channel auth type helpers preserve custom backend auth modes", () 
   assert.equal(resolveRoutingAuthTypeSubmitValue("hmac-signed", authTypesList), "hmac-signed");
   assert.throws(
     () => resolveRoutingAuthTypeSubmitValue(" ", authTypesList),
-    /authType is required/,
+    /console\.routing\.validation\.authTypeRequired/,
   );
 });
 
@@ -270,7 +278,7 @@ test("routing channel select helpers preserve custom vendors and protocols", () 
   assert.equal(resolveRoutingMultiProtocolSubmitValue(["OpenAI", "Acme RPC"], protocolsList), "OpenAI compatible protocol, Acme RPC");
   assert.throws(
     () => resolveRoutingMultiProtocolSubmitValue([], protocolsList),
-    /protocol is required/,
+    /console\.routing\.validation\.protocolRequired/,
   );
 });
 
@@ -294,7 +302,7 @@ test("routing channel form rejects invalid numeric high availability values", ()
         weight: 10,
         status: "active",
       }),
-    /timeoutMs must be between 1 and 600000/,
+    /console\.routing\.validation\.timeoutMsRange/,
   );
 
   assert.throws(
@@ -316,7 +324,7 @@ test("routing channel form rejects invalid numeric high availability values", ()
         weight: 10,
         status: "active",
       }),
-    /retryPolicy\.retryableStatusCodes contains unsupported status: 418/,
+    /console\.routing\.validation\.retryStatusUnsupported/,
   );
 
   assert.throws(
@@ -333,7 +341,7 @@ test("routing channel form rejects invalid numeric high availability values", ()
         weight: Number.NaN,
         status: "disabled",
       }),
-    /weight must be an integer/,
+    /console\.routing\.validation\.weightInteger/,
   );
 
   assert.throws(
@@ -350,7 +358,7 @@ test("routing channel form rejects invalid numeric high availability values", ()
         weight: "10.4" as unknown as number,
         status: "active",
       }),
-    /weight must be an integer/,
+    /console\.routing\.validation\.weightInteger/,
   );
 
   assert.throws(
@@ -367,7 +375,79 @@ test("routing channel form rejects invalid numeric high availability values", ()
         weight: 10,
         status: "active",
       }),
-    /Unsupported routing channel capability: unknown/,
+    /console\.routing\.validation\.unsupportedCapability/,
+  );
+});
+
+test("routing channel form normalizes and validates circuit breaker policy", () => {
+  assert.deepEqual(
+    createRoutingChannelInputFromForm({
+      name: "OpenAI",
+      vendor: "OpenAI",
+      protocol: "OpenAI",
+      accessType: "API Key",
+      baseUrl: "https://api.openai.com/v1",
+      secretRef: "vault://providers/openai/main",
+      models: ["gpt-4o"],
+      capabilities: ["llm"],
+      circuitBreakerEnabled: true,
+      circuitBreakerFailureThreshold: "2",
+      weight: 10,
+      status: "active",
+    }).circuitBreakerPolicy,
+    { failureThreshold: 2 },
+  );
+  assert.equal(
+    createRoutingChannelInputFromForm({
+      name: "OpenAI",
+      vendor: "OpenAI",
+      protocol: "OpenAI",
+      accessType: "API Key",
+      baseUrl: "https://api.openai.com/v1",
+      secretRef: "vault://providers/openai/main",
+      models: ["gpt-4o"],
+      capabilities: ["llm"],
+      circuitBreakerEnabled: false,
+      circuitBreakerFailureThreshold: "2",
+      weight: 10,
+      status: "active",
+    }).circuitBreakerPolicy,
+    undefined,
+  );
+  assert.equal(
+    createRoutingChannelUpdateInputFromForm({
+      name: "OpenAI",
+      vendor: "OpenAI",
+      protocol: "OpenAI",
+      accessType: "API Key",
+      baseUrl: "https://api.openai.com/v1",
+      secretRef: "vault://providers/openai/main",
+      models: ["gpt-4o"],
+      capabilities: ["llm"],
+      circuitBreakerEnabled: false,
+      circuitBreakerFailureThreshold: "",
+      weight: 10,
+      status: "active",
+    }).circuitBreakerPolicy,
+    null,
+  );
+  assert.throws(
+    () =>
+      createRoutingChannelInputFromForm({
+        name: "OpenAI",
+        vendor: "OpenAI",
+        protocol: "OpenAI",
+        accessType: "API Key",
+        baseUrl: "https://api.openai.com/v1",
+        secretRef: "vault://providers/openai/main",
+        models: ["gpt-4o"],
+        capabilities: ["llm"],
+        circuitBreakerEnabled: true,
+        circuitBreakerFailureThreshold: "101",
+        weight: 10,
+        status: "active",
+      }),
+    /console\.routing\.validation\.circuitBreakerPolicyFailureThresholdRange/,
   );
 });
 
@@ -387,11 +467,11 @@ test("routing channel form requires explicit model bindings instead of synthetic
 
   assert.throws(
     () => createRoutingChannelInputFromForm(values),
-    /models must include at least one item/,
+    /console\.routing\.validation\.modelsRequired/,
   );
   assert.throws(
     () => createRoutingChannelUpdateInputFromForm(values),
-    /models must include at least one item/,
+    /console\.routing\.validation\.modelsRequired/,
   );
 });
 
@@ -410,7 +490,7 @@ test("routing channel form rejects unsupported status instead of defaulting acti
         weight: 10,
         status: "paused",
       }),
-    /Unsupported routing channel status: paused/,
+    /console\.routing\.validation\.statusUnsupported/,
   );
 });
 
@@ -428,6 +508,9 @@ test("routing service calls generated app SDK paths and normalizes routing respo
                 retryableStatusCodes: [429, 503],
                 backoffMs: 25,
               },
+              circuitBreakerPolicy: {
+                failureThreshold: 4,
+              },
             }),
           ],
         };
@@ -444,6 +527,9 @@ test("routing service calls generated app SDK paths and normalizes routing respo
               retryableStatusCodes: [429, 503],
               backoffMs: 25,
             },
+            circuitBreakerPolicy: {
+              failureThreshold: 4,
+            },
             weight: 10,
           }),
         };
@@ -456,6 +542,7 @@ test("routing service calls generated app SDK paths and normalizes routing respo
             apiKey: "ref:***updated",
             models: ["gpt-4o"],
             timeoutMs: 30000,
+            circuitBreakerPolicy: null,
             weight: 20,
           }),
         };
@@ -570,6 +657,9 @@ test("routing service calls generated app SDK paths and normalizes routing respo
           retryableStatusCodes: [429, 503],
           backoffMs: 25,
         },
+        circuitBreakerPolicy: {
+          failureThreshold: 4,
+        },
         weight: 10,
       });
       const updated = await RoutingService.updateChannel("4001", {
@@ -577,6 +667,7 @@ test("routing service calls generated app SDK paths and normalizes routing respo
         models: ["gpt-4o"],
         timeoutMs: null,
         retryPolicy: null,
+        circuitBreakerPolicy: null,
         weight: 20,
       });
       const disabled = await RoutingService.setChannelStatus("4001", "disabled");
@@ -595,8 +686,11 @@ test("routing service calls generated app SDK paths and normalizes routing respo
         retryableStatusCodes: [429, 503],
         backoffMs: 25,
       });
+      assert.deepEqual(channels[0].circuitBreakerPolicy, { failureThreshold: 4 });
       assert.equal(created.id, "4001");
+      assert.deepEqual(created.circuitBreakerPolicy, { failureThreshold: 4 });
       assert.equal(updated.name, "Updated Channel");
+      assert.equal(updated.circuitBreakerPolicy, undefined);
       assert.equal(disabled.status, "disabled");
       assert.equal(tested.success, true);
       assert.equal(deleted, true);
@@ -639,6 +733,9 @@ test("routing service calls generated app SDK paths and normalizes routing respo
           retryableStatusCodes: [429, 503],
           backoffMs: 25,
         },
+        circuitBreakerPolicy: {
+          failureThreshold: 4,
+        },
         weight: 10,
       });
       assert.deepEqual(JSON.parse(captured[2].body), {
@@ -646,6 +743,7 @@ test("routing service calls generated app SDK paths and normalizes routing respo
         models: ["gpt-4o"],
         timeoutMs: null,
         retryPolicy: null,
+        circuitBreakerPolicy: null,
         weight: 20,
       });
       assert.equal(captured.every((request) => request.headers["content-type"] === "application/json"), true);
@@ -702,7 +800,7 @@ test("routing fallback tab does not expose unwired editable global HA controls",
 
   assert.doesNotMatch(source, /<input\b/);
   assert.doesNotMatch(source, /cursor-pointer shadow-inner/);
-  assert.match(source, /Channel-level/);
+  assert.match(source, /console\.routing\.components\.fallbacktab\.channelRetryTitle/);
 });
 
 test("routing channel modal does not expose unsupported per-channel model mapping controls", () => {
@@ -932,6 +1030,54 @@ test("routing channel list fails closed when app SDK returns malformed channel r
   );
 });
 
+test("routing channel list fails closed when app SDK returns malformed circuit breaker policy", async () => {
+  await withRoutingSdkFetch(
+    (url, init) => {
+      if (url === "/app/v3/api/ai/routing/channels" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            sampleRoutingChannel({
+              circuitBreakerPolicy: {
+                failureThreshold: 0,
+              },
+            }),
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => RoutingService.fetchChannels(),
+        /Routing channel circuitBreakerPolicy.failureThreshold must be between 1 and 100/,
+      );
+    },
+  );
+});
+
+test("routing channel list fails closed when app SDK returns non-object circuit breaker policy", async () => {
+  await withRoutingSdkFetch(
+    (url, init) => {
+      if (url === "/app/v3/api/ai/routing/channels" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            sampleRoutingChannel({
+              circuitBreakerPolicy: "malformed-circuit-breaker-policy",
+            }),
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => RoutingService.fetchChannels(),
+        /Routing channel circuitBreakerPolicy must be an object/,
+      );
+    },
+  );
+});
+
 test("routing channel list fails closed when app SDK omits channel models", async () => {
   await withRoutingSdkFetch(
     (url, init) => {
@@ -1139,6 +1285,102 @@ test("routing API key list fails closed when app SDK omits masked key values", a
       );
     },
   );
+});
+
+test("routing API key list treats masked API key values as display-only", async () => {
+  await withRoutingSdkFetch(
+    (url, init) => {
+      if (url === "/app/v3/api/ai/routing/api_keys" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            {
+              id: "100",
+              name: "Owner Key",
+              key_display_masked: "sk-owner********ABCD",
+              status: "enabled",
+              totalUsage: "5",
+              createdAt: "2026-04-29 12:00:00",
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      const result = await RoutingService.fetchApiKeys();
+
+      assert.equal(result[0].displayKey, "sk-owner********ABCD");
+      assert.equal(result[0].copyableKey, null);
+    },
+  );
+});
+
+test("routing API key list falls back to id label instead of prefix when name is missing", async () => {
+  await withRoutingSdkFetch(
+    (url, init) => {
+      if (url === "/app/v3/api/ai/routing/api_keys" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            {
+              id: "100",
+              name: "",
+              keyPrefix: "sk-owner",
+              key_display_masked: "sk-owner********ABCD",
+              status: "enabled",
+              totalUsage: "5",
+              createdAt: "2026-04-29 12:00:00",
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      const result = await RoutingService.fetchApiKeys();
+
+      assert.equal(result[0].name, "API Key #100");
+      assert.notEqual(result[0].name, "sk-owner");
+    },
+  );
+});
+
+test("routing API key list exposes copyableKey only when app SDK returns plaintext owner key", async () => {
+  await withRoutingSdkFetch(
+    (url, init) => {
+      if (url === "/app/v3/api/ai/routing/api_keys" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            {
+              id: "100",
+              name: "Owner Key",
+              displayKey: "sk-owner********ABCD",
+              copyableKey: "sk-owner-secret",
+              status: "enabled",
+              totalUsage: "5",
+              createdAt: "2026-04-29 12:00:00",
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      const result = await RoutingService.fetchApiKeys();
+
+      assert.equal(result[0].displayKey, "sk-owner********ABCD");
+      assert.equal(result[0].copyableKey, "sk-owner-secret");
+    },
+  );
+});
+
+test("routing API key table never copies masked key material", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(new URL("./packages/sdkwork-claw-router-console-routing/src/components/ApiKeysTab.tsx", import.meta.url), "utf8"),
+  );
+
+  assert.doesNotMatch(source, /text=\{k\.key\}/);
+  assert.match(source, /k\.copyableKey/);
+  assert.match(source, /text=\{k\.copyableKey\}/);
 });
 
 test("routing API key list fails closed when app SDK returns unsupported key status", async () => {
@@ -1359,4 +1601,16 @@ test("routing strategy fails closed when app SDK returns unsupported strategy ty
       );
     },
   );
+});
+
+test("routing local sidebar keeps channel account labels compact and single line", () => {
+  const source = readFileSync(
+    "packages/sdkwork-claw-router-console-routing/src/RoutingView.tsx",
+    "utf8",
+  );
+
+  assert.match(source, /text=\{t\("console\.routing\.routingview\.text\.184dsbn", "渠道账号"\)\}/);
+  assert.doesNotMatch(source, /渠道账号管理\s*\(Channel Accounts\)/);
+  assert.match(source, /className="min-w-0 flex-1 truncate whitespace-nowrap text-left"/);
+  assert.match(source, /<span className="min-w-0 flex-1 truncate whitespace-nowrap text-left">\{text\}<\/span>/);
 });

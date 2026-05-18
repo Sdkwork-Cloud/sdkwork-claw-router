@@ -205,6 +205,9 @@ sdk_archive_root = "/usr/lib/clawrouter/portal/dist/sdk-archives"
 [provider_relay.runtime]
 response_timeout_millis = 120000
 health_probe_timeout_millis = 10000
+catalog_refresh_interval_millis = 5000
+circuit_breaker_recovery_window_millis = 60000
+failure_strategy = "failover"
 
 [provider_relay.retry]
 max_attempts = 2
@@ -275,9 +278,12 @@ browser origins, such as an external CDN-hosted portal. Leave it empty for the
 packaged same-origin edge deployment; wildcard origins and origins with paths
 are rejected.
 `[provider_relay.runtime]` configures global OpenAI-compatible upstream response
-timeouts and admin/app channel health-check timeouts. `[provider_relay.retry]`
-is the default retry policy when a database routing channel does not define its
-own retry policy.
+timeouts, admin/app channel health-check timeouts, background route catalog
+refresh, circuit-breaker recovery probes, and runtime failure handling.
+`failure_strategy = "failover"` tries the next configured route candidate for
+retryable provider faults; `fail_closed` returns the first provider fault without
+trying later candidates. `[provider_relay.retry]` is the default retry policy
+when a database routing channel does not define its own retry policy.
 
 For production server/service/container deployments, use the structured TOML fields above. `password_file` is the preferred secret path. Direct `password` is supported only when the TOML file is protected as a secret-bearing file:
 
@@ -461,7 +467,7 @@ Bootstrap admin environment variables:
 | `SDKWORK_CLAW_BOOTSTRAP_ADMIN_ENABLED` | `true` | Set to `false` to disable automatic bootstrap admin creation and repair. |
 | `SDKWORK_CLAW_BOOTSTRAP_ADMIN_USERNAME` | `admin` | Bootstrap username. Letters, digits, `.`, `-`, and `_` are allowed. |
 | `SDKWORK_CLAW_BOOTSTRAP_ADMIN_DISPLAY_NAME` | `Administrator` | Display name for the bootstrap user. |
-| `SDKWORK_CLAW_BOOTSTRAP_ADMIN_EMAIL` | `admin@sdkwork.local` | Email identity for the bootstrap user. |
+| `SDKWORK_CLAW_BOOTSTRAP_ADMIN_EMAIL` | `admin@sdkwork.com` | Email identity for the bootstrap user. |
 | `SDKWORK_CLAW_BOOTSTRAP_ADMIN_PASSWORD` | generated | Optional explicit initial password. Must be 12 to 128 characters. |
 
 Example installer output:
@@ -477,11 +483,34 @@ Example installer output:
     "userId": "1",
     "username": "admin",
     "displayName": "Administrator",
-    "email": "admin@sdkwork.local",
+    "email": "admin@sdkwork.com",
     "initialPassword": "generated-or-configured-password",
     "generatedPassword": true
   }
 }
+```
+
+When you need to quickly recover administrator access, reset the `admin` password through the root `pnpm` commands. Development mode targets the default `target/dev/clawrouter.sqlite` database, while release mode uses the database configuration from the runtime `clawrouter.toml`. The wrapper does not forward the password to the installer/cargo child process as a command-line argument. To also avoid exposing the password in shell history or the Node process arguments, provide it through `SDKWORK_CLAW_ADMIN_RESET_PASSWORD`.
+
+```bash
+pnpm admin:reset:dev -- --password "Admin-Dev-Password-2026!"
+pnpm admin:reset:release -- --password "Admin-Release-Password-2026!"
+```
+
+For release operations, prefer:
+
+```bash
+SDKWORK_CLAW_ADMIN_RESET_PASSWORD="Admin-Release-Password-2026!" pnpm admin:reset:release
+```
+
+The default reset target is username `admin`, display name `Administrator`, and email identity `admin@sdkwork.com`. Override them when needed:
+
+```bash
+pnpm admin:reset:release -- \
+  --username admin \
+  --display-name "Administrator" \
+  --email "admin@sdkwork.com" \
+  --password "Admin-Release-Password-2026!"
 ```
 
 Claw Router login methods, registration, QR login, verification-code policy, and recovery options are controlled by IAM runtime settings. `v0.3.0` keeps a strict default posture: password login is available by default, while QR login, code login, OAuth, and session bridge require explicit enablement.

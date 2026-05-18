@@ -71,6 +71,7 @@ val client = SdkworkAppClient(config)
 
 ## API Modules
 
+- `client.agents` - agents API
 - `client.ai` - ai API
 - `client.auth` - auth API
 - `client.billing` - billing API
@@ -81,6 +82,19 @@ val client = SdkworkAppClient(config)
 - `client.platform` - platform API
 
 ## Usage Examples
+
+### agents
+
+```kotlin
+// List user agents
+val params = linkedMapOf<String, Any>(
+    "page" to 1,
+    "page_size" to 2,
+    "q" to "q"
+)
+val result = client.agents.list(params)
+println(result)
+```
 
 ### ai
 

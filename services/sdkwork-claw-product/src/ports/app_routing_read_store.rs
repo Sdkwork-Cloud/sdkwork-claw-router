@@ -3,7 +3,7 @@ use std::pin::Pin;
 
 use serde::Serialize;
 
-use crate::domain::{DomainResult, ProviderRetryPolicy};
+use crate::domain::{DomainResult, ProviderCircuitBreakerPolicy, ProviderRetryPolicy};
 
 pub type AppRoutingReadFuture<'a, T> = Pin<Box<dyn Future<Output = DomainResult<T>> + Send + 'a>>;
 
@@ -45,6 +45,8 @@ pub struct AppRoutingChannelItem {
     pub timeout_ms: Option<i64>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub retry_policy: Option<AppRoutingRetryPolicyItem>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub circuit_breaker_policy: Option<AppRoutingCircuitBreakerPolicyItem>,
     pub weight: i64,
     pub status: String,
     pub latency: String,
@@ -73,12 +75,30 @@ impl AppRoutingRetryPolicyItem {
     }
 }
 
+#[derive(Debug, Clone, Default, Serialize, PartialEq, Eq)]
+#[serde(rename_all = "camelCase")]
+pub struct AppRoutingCircuitBreakerPolicyItem {
+    pub failure_threshold: usize,
+}
+
+impl AppRoutingCircuitBreakerPolicyItem {
+    pub fn from_json(value: &str) -> Option<Self> {
+        ProviderCircuitBreakerPolicy::from_json_str(value)
+            .ok()
+            .map(|policy| Self {
+                failure_threshold: policy.failure_threshold,
+            })
+    }
+}
+
 #[derive(Debug, Clone, Default, Serialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct AppRoutingApiKeyItem {
     pub id: String,
     pub name: String,
-    pub key: String,
+    pub display_key: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub copyable_key: Option<String>,
     pub status: String,
     pub total_usage: String,
     pub created_at: String,

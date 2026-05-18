@@ -38,5 +38,6 @@ pub struct IamRegistrationCreateRequest {
 
     /// Verification code field on iam registration create request.
     #[serde(rename = "verificationCode")]
-    pub verification_code: String,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub verification_code: Option<String>,
 }

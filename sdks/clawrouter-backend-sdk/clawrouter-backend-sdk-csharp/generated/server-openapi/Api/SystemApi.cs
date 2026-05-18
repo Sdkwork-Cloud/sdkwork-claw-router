@@ -16,6 +16,29 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
+        /// Retrieve IAM auth runtime settings
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AuthSettingsRetrieveResult?> AuthSettingsRetrieveAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AuthSettingsRetrieveResult>(ApiPaths.BackendPath("/system/auth/settings"));
+        }
+
+        /// <summary>
+        /// Update IAM auth runtime settings
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AuthSettingsUpdateResult?> AuthSettingsUpdateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAuthSettingsUpdateRequest body, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.AuthSettingsUpdateResult>(ApiPaths.BackendPath("/system/auth/settings"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
         /// List dashboard data
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.DashboardAdminOverviewRetrieveResult?> DashboardAdminOverviewRetrieveAsync()
@@ -169,36 +192,6 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 new QueryParameterSpec("model", model, "form", true, false, null),
             });
             return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.RecordsListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/system/records"), queryString));
-        }
-
-        /// <summary>
-        /// Create user
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.UsersCreateResult?> UsersCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminUserCreateRequest body, string? xRequestId = null)
-        {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.UsersCreateResult>(ApiPaths.BackendPath("/system/users"), body, null, requestHeaders, "application/json");
-        }
-
-        /// <summary>
-        /// Update user
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.UsersUpdateResult?> UsersUpdateAsync(Sdkwork.ClawRouter.Backend.Models.AdminUserUpdateRequest body, string? xRequestId = null)
-        {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.UsersUpdateResult>(ApiPaths.BackendPath("/system/users"), body, null, requestHeaders, "application/json");
         }
 
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);

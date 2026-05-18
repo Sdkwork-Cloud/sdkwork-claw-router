@@ -31,8 +31,8 @@ export interface ProviderConfig {
 export class ProviderService {
   static async fetchProviders(): Promise<ProviderConfig[]> {
     const result = await getClawRouterAppSdkClient().ai.providers.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch providers');
-    return readRequiredApiItems(result, 'Failed to fetch providers')
+    ensurePlusApiSuccess(result, 'console.providers.states.loadErrorFallback');
+    return readRequiredApiItems(result, 'console.providers.states.loadErrorFallback')
       .map(normalizeProviderConfig);
   }
 }

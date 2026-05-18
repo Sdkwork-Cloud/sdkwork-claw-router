@@ -126,6 +126,10 @@ WHERE m.deleted_at IS NULL
   AND a.deleted_at IS NULL
   AND m.status = 1
   AND c.status = 1
+  AND (
+      COALESCE(c.health_status, 1) = 1
+      OR COALESCE(c.updated_at, CURRENT_TIMESTAMP) + ($1 * INTERVAL '1 second') <= CURRENT_TIMESTAMP
+  )
   AND p.status = 1
   AND a.status = 1
   AND COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) IS NOT NULL
@@ -155,6 +159,10 @@ WHERE c.deleted_at IS NULL
   AND p.deleted_at IS NULL
   AND a.deleted_at IS NULL
   AND c.status = 1
+  AND (
+      COALESCE(c.health_status, 1) = 1
+      OR COALESCE(c.updated_at, CURRENT_TIMESTAMP) + ($1 * INTERVAL '1 second') <= CURRENT_TIMESTAMP
+  )
   AND p.status = 1
   AND a.status = 1
   AND COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) IS NOT NULL
@@ -239,6 +247,9 @@ ORDER BY priority ASC, effective_from DESC, id DESC
         r#"
 SELECT
     id,
+    COALESCE(tenant_id, 0) AS tenant_id,
+    COALESCE(organization_id, 0) AS organization_id,
+    COALESCE(NULLIF(name, ''), code) AS name,
     code,
     pricing_plan_code,
     rate_multiplier::text AS rate_multiplier,
@@ -262,6 +273,7 @@ SELECT
     COALESCE(key_prefix, '') AS key_prefix,
     COALESCE(NULLIF(key_display_masked, ''), COALESCE(key_prefix, '') || '********') AS key_display_masked,
     COALESCE(key_hash, '') AS key_hash,
+    metadata ->> 'copyableKeyCiphertext' AS copyable_key,
     policy_id,
     quota_policy_id,
     created_at::text AS created_at,

@@ -2,6 +2,7 @@ package com.sdkwork.clawrouter.app;
 
 import com.sdkwork.common.core.Types;
 import com.sdkwork.clawrouter.app.http.HttpClient;
+import com.sdkwork.clawrouter.app.api.AgentsApi;
 import com.sdkwork.clawrouter.app.api.AiApi;
 import com.sdkwork.clawrouter.app.api.AuthApi;
 import com.sdkwork.clawrouter.app.api.BillingApi;
@@ -13,6 +14,7 @@ import com.sdkwork.clawrouter.app.api.PlatformApi;
 
 public class SdkworkAppClient {
     private final HttpClient httpClient;
+    private AgentsApi agents;
     private AiApi ai;
     private AuthApi auth;
     private BillingApi billing;
@@ -24,6 +26,7 @@ public class SdkworkAppClient {
 
     public SdkworkAppClient(String baseUrl) {
         this.httpClient = new HttpClient(baseUrl);
+        this.agents = new AgentsApi(httpClient);
         this.ai = new AiApi(httpClient);
         this.auth = new AuthApi(httpClient);
         this.billing = new BillingApi(httpClient);
@@ -36,6 +39,7 @@ public class SdkworkAppClient {
 
     public SdkworkAppClient(Types.SdkConfig config) {
         this.httpClient = new HttpClient(config);
+        this.agents = new AgentsApi(httpClient);
         this.ai = new AiApi(httpClient);
         this.auth = new AuthApi(httpClient);
         this.billing = new BillingApi(httpClient);
@@ -44,6 +48,10 @@ public class SdkworkAppClient {
         this.ecosystem = new EcosystemApi(httpClient);
         this.iam = new IamApi(httpClient);
         this.platform = new PlatformApi(httpClient);
+    }
+
+    public AgentsApi getAgents() {
+        return this.agents;
     }
 
     public AiApi getAi() {

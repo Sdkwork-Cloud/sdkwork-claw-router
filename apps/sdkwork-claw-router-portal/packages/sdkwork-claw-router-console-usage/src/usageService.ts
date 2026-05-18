@@ -54,10 +54,10 @@ export class UsageService {
   static async fetchLogs(params?: Record<string, unknown>): Promise<UsageLogPage> {
     const query = toUsageLogQueryParams(params);
     const result = await getClawRouterAppSdkClient().ai.usage.logs.list(query);
-    ensurePlusApiSuccess(result, 'Failed to fetch usage logs');
+    ensurePlusApiSuccess(result, 'console.usage.errors.fetchFallback');
 
     const data = readApiRecord(result);
-    const logs = readRequiredApiItems(result, 'Failed to fetch usage logs', ['logs', 'items', 'records', 'list'])
+    const logs = readRequiredApiItems(result, 'console.usage.errors.fetchFallback', ['logs', 'items', 'records', 'list'])
       .map(normalizeUsageLog);
 
     return {

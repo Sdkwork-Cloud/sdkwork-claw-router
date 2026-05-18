@@ -17,6 +17,30 @@ func NewSystemApi(client *sdkhttp.Client) *SystemApi {
     return &SystemApi{client: client}
 }
 
+// Retrieve IAM auth runtime settings
+func (a *SystemApi) AuthSettingsRetrieve() (sdktypes.AuthSettingsRetrieveResult, error) {
+    raw, err := a.client.Get(BackendApiPath("/system/auth/settings"), nil, nil)
+    if err != nil {
+        var zero sdktypes.AuthSettingsRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AuthSettingsRetrieveResult](raw)
+}
+
+// Update IAM auth runtime settings
+func (a *SystemApi) AuthSettingsUpdate(body sdktypes.AdminAuthSettingsUpdateRequest, xRequestId *string) (sdktypes.AuthSettingsUpdateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Patch(BackendApiPath("/system/auth/settings"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.AuthSettingsUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AuthSettingsUpdateResult](raw)
+}
+
 // List dashboard data
 func (a *SystemApi) DashboardAdminOverviewRetrieve() (sdktypes.DashboardAdminOverviewRetrieveResult, error) {
     raw, err := a.client.Get(BackendApiPath("/system/dashboard/admin/overview"), nil, nil)
@@ -188,34 +212,6 @@ func (a *SystemApi) RecordsList(page *int, pageSize *int, user *string, token *s
         return zero, err
     }
     return decodeResult[sdktypes.RecordsListResult](raw)
-}
-
-// Create user
-func (a *SystemApi) UsersCreate(body sdktypes.AdminUserCreateRequest, xRequestId *string) (sdktypes.UsersCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/system/users"), body, nil, headers, "application/json")
-    if err != nil {
-        var zero sdktypes.UsersCreateResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.UsersCreateResult](raw)
-}
-
-// Update user
-func (a *SystemApi) UsersUpdate(body sdktypes.AdminUserUpdateRequest, xRequestId *string) (sdktypes.UsersUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath("/system/users"), body, nil, headers, "application/json")
-    if err != nil {
-        var zero sdktypes.UsersUpdateResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.UsersUpdateResult](raw)
 }
 
 type PathParameterSpec struct {

@@ -30,7 +30,7 @@ async function withBackendSdkFetch<T>(
   Object.defineProperty(globalThis, "window", {
     configurable: true,
     enumerable: true,
-    value: {},
+    value: { dispatchEvent: () => true },
   });
   globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url;
@@ -120,10 +120,10 @@ test("admin group create modal uses backend enums and does not expose ignored co
     "utf8",
   );
 
-  assert.match(source, /<option value="standard">/);
-  assert.match(source, /<option value="subscription">/);
-  assert.match(source, /<option value="public">/);
-  assert.match(source, /<option value="dedicated">/);
+  assert.match(source, /<option[^>]*value="standard">/);
+  assert.match(source, /<option[^>]*value="subscription">/);
+  assert.match(source, /<option[^>]*value="public">/);
+  assert.match(source, /<option[^>]*value="dedicated">/);
   assert.doesNotMatch(source, /name="isPublic"/);
   assert.match(source, /name="capacityTotal" type="number"[^>]*min="1"[^>]*step="1"/);
   for (const field of ["description", "allowAllClients", "fallbackGroup"]) {
@@ -132,6 +132,25 @@ test("admin group create modal uses backend enums and does not expose ignored co
   for (const unsupportedControl of ["仅允许 OAuth 账号", "仅允许隐私保护已设置的账号"]) {
     assert.doesNotMatch(source, new RegExp(unsupportedControl), `${unsupportedControl} is not supported by the backend command`);
   }
+});
+
+test("admin group edit modal select controls keep readable option colors in dark mode", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const name of ["platform", "type", "billingType"]) {
+    assert.match(
+      source,
+      new RegExp(`name="${name}"[^>]*className=\\{groupSelectClassName\\}`),
+      `${name} select should use the shared readable select colors`,
+    );
+  }
+  assert.match(source, /const groupSelectClassName = '[^']*bg-white[^']*text-slate-900[^']*dark:bg-\[#202020\][^']*dark:text-white[^']*';/);
+  assert.match(source, /const groupOptionClassName = 'bg-white text-slate-900 dark:bg-\[#202020\] dark:text-white';/);
+  assert.match(source, /<option className=\{groupOptionClassName\} value="standard">/);
+  assert.match(source, /<option className=\{groupOptionClassName\} value="public">/);
 });
 
 test("admin group table actions are wired to real supported workflows", () => {
@@ -149,6 +168,19 @@ test("admin group table actions are wired to real supported workflows", () => {
   assert.match(source, /value=\{typeFilter\}/);
   assert.match(source, /setSortDirection/);
   assert.doesNotMatch(source, /专属倍率/);
+});
+
+test("admin group page keeps existing rows visible when a refresh reports a load error", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /loadError && groups\.length > 0/);
+  assert.match(source, /loadError && groups\.length === 0/);
+  assert.doesNotMatch(source, /\) : loadError \? \(/);
+  assert.match(source, /t\('admin\.group\.state\.loadErrorTitle'\)/);
+  assert.match(source, /t\('admin\.group\.state\.staleDataDescription'\)/);
 });
 
 test("admin group update input does not reuse returned group view model", () => {
@@ -521,6 +553,48 @@ test("admin group list fails closed when backend omits required group fields", a
       },
     );
   }
+});
+
+test("admin group list keeps named groups visible when optional display fields are missing", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/iam/access_groups" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            {
+              id: "group-1",
+              name: "Default Enterprise",
+              billingType: "subscription",
+              rateMultiplier: "2.5",
+              type: "dedicated",
+              accountCount: { available: "3", total: 5 },
+              capacity: { used: "10", total: 200 },
+              usage: { today: "6", total: 600 },
+              status: "disabled",
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      const groups = await GroupService.fetchGroups();
+
+      assert.equal(groups[0].name, "Default Enterprise");
+      assert.equal(groups[0].platform, "unknown");
+    },
+  );
+});
+
+test("admin group page localizes load errors instead of exposing internal service messages", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /description=\{t\('admin\.group\.state\.loadErrorDescription'\)\}/);
+  assert.doesNotMatch(source, /description=\{loadError\}/);
+  assert.doesNotMatch(source, /error: loadError/);
 });
 
 test("admin group list fails closed when backend returns unsupported group enums", async () => {

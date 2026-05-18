@@ -738,6 +738,91 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 result.messages,
             )
 
+    def test_accepts_openai_v1_operation_through_ai_sdk_boundary(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/demo/src/chatService.ts",
+                """
+                import { getClawRouterAiSdkClient } from 'sdkwork-claw-router-commons/runtime';
+
+                export class ChatService {
+                  static async sendMessage(): Promise<string> {
+                    const client = getClawRouterAiSdkClient({ apiKey: 'test-key' });
+                    const response = await client.chat.completions.create({
+                      model: 'gpt-test',
+                      messages: [{ role: 'user', content: 'hello' }],
+                    });
+                    return response.id;
+                  }
+                }
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                routes:
+                  - route: /demo
+                    required_tables: [ai_request_trace, ai_usage_fact]
+                frontend_operations:
+                  - route: /demo
+                    source: apps/sdkwork-claw-router-portal/packages/demo/src/chatService.ts
+                    operation: sendMessage
+                    kind: create
+                    api_surface: openai_v1
+                    api_method: POST
+                    api_path: /v1/chat/completions
+                    read_sources: [ai_request_trace]
+                    write_tables: [ai_request_trace, ai_usage_fact]
+                """,
+            )
+
+            result = FrontendOperationAudit(root=root).validate()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_reports_openai_v1_operation_without_ai_sdk_boundary(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/demo/src/chatService.ts",
+                """
+                export class ChatService {
+                  static async sendMessage(): Promise<string> {
+                    return 'local';
+                  }
+                }
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                routes:
+                  - route: /demo
+                    required_tables: [ai_request_trace, ai_usage_fact]
+                frontend_operations:
+                  - route: /demo
+                    source: apps/sdkwork-claw-router-portal/packages/demo/src/chatService.ts
+                    operation: sendMessage
+                    kind: create
+                    api_surface: openai_v1
+                    api_method: POST
+                    api_path: /v1/chat/completions
+                    read_sources: [ai_request_trace]
+                    write_tables: [ai_request_trace, ai_usage_fact]
+                """,
+            )
+
+            result = FrontendOperationAudit(root=root).validate()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "frontend operation apps/sdkwork-claw-router-portal/packages/demo/src/chatService.ts#sendMessage must use getClawRouterAiSdkClient for openai_v1 api_surface",
+                result.messages,
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

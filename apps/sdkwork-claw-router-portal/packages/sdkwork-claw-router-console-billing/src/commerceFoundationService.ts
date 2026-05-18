@@ -97,7 +97,7 @@ export class CommerceFoundationService {
 
   static async retrieveAccountPointsExchangeRate(): Promise<PointsExchangeRate> {
     const result = await getClawRouterAppSdkClient().billing.account.points.exchangeRate.retrieve();
-    ensurePlusApiSuccess(result, 'Failed to fetch account points exchange rate');
+    ensurePlusApiSuccess(result, 'console.billing.errors.exchangeRateFallback');
     return normalizePointsExchangeRate(readApiRecord(result));
   }
 
@@ -133,8 +133,8 @@ export class CommerceFoundationService {
 
   static async listAccountPointsExchangeRules(params?: BillingAccountPointsExchangesRulesListParams): Promise<PointsExchangeRule[]> {
     const result = await getClawRouterAppSdkClient().billing.account.points.exchanges.rules.list(params);
-    ensurePlusApiSuccess(result, 'Failed to fetch account points exchange rules');
-    return readRequiredApiItems(result, 'Failed to fetch account points exchange rules')
+    ensurePlusApiSuccess(result, 'console.billing.errors.exchangeRulesFallback');
+    return readRequiredApiItems(result, 'console.billing.errors.exchangeRulesFallback')
       .map(normalizePointsExchangeRule);
   }
 

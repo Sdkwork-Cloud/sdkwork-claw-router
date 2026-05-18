@@ -1,5 +1,6 @@
 import 'package:sdkwork_common_flutter/sdkwork_common_flutter.dart';
 import 'src/http/client.dart';
+import 'src/api/agents.dart';
 import 'src/api/ai.dart';
 import 'src/api/billing.dart';
 import 'src/api/content.dart';
@@ -12,6 +13,7 @@ import 'src/api/system.dart';
 class SdkworkBackendClient {
   final HttpClient _httpClient;
 
+  late final AgentsApi agents;
   late final AiApi ai;
   late final BillingApi billing;
   late final ContentApi content;
@@ -24,6 +26,7 @@ class SdkworkBackendClient {
   SdkworkBackendClient({
     required SdkConfig config,
   }) : _httpClient = HttpClient(config: config) {
+    agents = AgentsApi(_httpClient);
     ai = AiApi(_httpClient);
     billing = BillingApi(_httpClient);
     content = ContentApi(_httpClient);

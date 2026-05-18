@@ -16,8 +16,10 @@ type RoutingChannelItem struct {
 	Protocol string `json:"protocol"`
 	Provider string `json:"provider"`
 	ProviderCode string `json:"providerCode"`
+	RetryPolicy ProviderRetryPolicy `json:"retryPolicy"`
 	Rpm int `json:"rpm"`
 	Status string `json:"status"`
+	TimeoutMs int `json:"timeoutMs"`
 	Vendor string `json:"vendor"`
 	Weight int `json:"weight"`
 }

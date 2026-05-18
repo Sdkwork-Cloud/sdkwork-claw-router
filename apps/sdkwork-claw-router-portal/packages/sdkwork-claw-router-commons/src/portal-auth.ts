@@ -2,6 +2,7 @@ import {
   getStoredAppSessionAccessToken,
   getStoredAppSessionAuthToken,
 } from './app-session-token.ts';
+import { PORTAL_SESSION_CHANGE_EVENT } from './portal-session-events.ts';
 
 export interface PortalAuthLocationLike {
   hash?: string;
@@ -37,6 +38,19 @@ export function resolvePortalLoginRequiredAction({
 
 export function hasStoredPortalSession(): boolean {
   return Boolean(getStoredAppSessionAuthToken() || getStoredAppSessionAccessToken());
+}
+
+export function subscribePortalSessionChange(listener: () => void): () => void {
+  if (typeof window === 'undefined') {
+    return () => {};
+  }
+
+  window.addEventListener(PORTAL_SESSION_CHANGE_EVENT, listener);
+  window.addEventListener('storage', listener);
+  return () => {
+    window.removeEventListener(PORTAL_SESSION_CHANGE_EVENT, listener);
+    window.removeEventListener('storage', listener);
+  };
 }
 
 function normalizePortalPathname(pathname: string): string {

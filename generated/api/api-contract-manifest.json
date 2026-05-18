@@ -1,6 +1,550 @@
 {
   "operations": [
     {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/agents",
+      "api_surface": "backend",
+      "description": "Returns organization-scoped agent definitions for admin governance, including active default version and derived capability summary.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts#listAgents",
+      "kind": "read",
+      "module": "admin-agents",
+      "openapi_exposed": true,
+      "operation": "listAgents",
+      "operation_id": "agentDefinitions.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "q",
+          "required": false,
+          "schema": {
+            "maxLength": 128,
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "owner_user_id",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        {
+          "in": "query",
+          "name": "status",
+          "required": false,
+          "schema": {
+            "enum": [
+              "active",
+              "disabled"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "visibility",
+          "required": false,
+          "schema": {
+            "enum": [
+              "private",
+              "organization",
+              "public"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "page",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        {
+          "in": "query",
+          "name": "page_size",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ai_agent",
+        "ai_agent_version",
+        "ai_agent_tool_binding",
+        "ai_agent_mcp_server",
+        "ai_agent_memory"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "AdminAgentListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminAgentListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": false,
+                "name": "AdminAgentItem",
+                "properties": {
+                  "avatarUrl": {
+                    "maxLength": 2048,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "capabilities": {
+                    "additionalProperties": false,
+                    "name": "AdminAgentCapabilities",
+                    "properties": {
+                      "mcpServerCount": {
+                        "format": "int64",
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "memoryEnabled": {
+                        "type": "boolean"
+                      },
+                      "skillBindingCount": {
+                        "format": "int64",
+                        "minimum": 0,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "memoryEnabled",
+                      "mcpServerCount",
+                      "skillBindingCount"
+                    ],
+                    "type": "object"
+                  },
+                  "code": {
+                    "maxLength": 96,
+                    "minLength": 1,
+                    "pattern": "^[a-z0-9][a-z0-9-]{0,95}$",
+                    "type": "string"
+                  },
+                  "createdAt": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "defaultVersion": {
+                    "additionalProperties": false,
+                    "name": "AdminAgentVersionItem",
+                    "properties": {
+                      "createdAt": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "id": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "mcpPolicy": {
+                        "additionalProperties": true,
+                        "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                        "name": "AgentPolicy",
+                        "type": "object"
+                      },
+                      "memoryPolicy": {
+                        "additionalProperties": true,
+                        "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                        "name": "AgentPolicy",
+                        "type": "object"
+                      },
+                      "model": {
+                        "maxLength": 128,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "releaseStatus": {
+                        "enum": [
+                          "draft",
+                          "published",
+                          "archived"
+                        ],
+                        "type": "string"
+                      },
+                      "runtimePolicy": {
+                        "additionalProperties": true,
+                        "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                        "name": "AgentPolicy",
+                        "type": "object"
+                      },
+                      "skillPolicy": {
+                        "additionalProperties": true,
+                        "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                        "name": "AgentPolicy",
+                        "type": "object"
+                      },
+                      "systemPrompt": {
+                        "maxLength": 32768,
+                        "type": "string"
+                      },
+                      "toolPolicy": {
+                        "additionalProperties": true,
+                        "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                        "name": "AgentPolicy",
+                        "type": "object"
+                      },
+                      "updatedAt": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "versionNo": {
+                        "format": "int64",
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "versionNo",
+                      "releaseStatus",
+                      "systemPrompt",
+                      "toolPolicy",
+                      "memoryPolicy",
+                      "mcpPolicy",
+                      "skillPolicy",
+                      "runtimePolicy",
+                      "createdAt",
+                      "updatedAt"
+                    ],
+                    "type": "object"
+                  },
+                  "description": {
+                    "maxLength": 1024,
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "name": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "ownerUserId": {
+                    "format": "int64",
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "status": {
+                    "enum": [
+                      "active",
+                      "disabled"
+                    ],
+                    "type": "string"
+                  },
+                  "templateSource": {
+                    "maxLength": 128,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "updatedAt": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "visibility": {
+                    "enum": [
+                      "private",
+                      "organization",
+                      "public"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "ownerUserId",
+                  "code",
+                  "name",
+                  "description",
+                  "visibility",
+                  "status",
+                  "createdAt",
+                  "updatedAt",
+                  "defaultVersion",
+                  "capabilities"
+                ],
+                "type": "object"
+              },
+              "maxItems": 100,
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/agents",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "agents",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts",
+      "summary": "List managed agents",
+      "tag": "agents",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/agents/{agentId}",
+      "api_surface": "backend",
+      "description": "Returns one organization-scoped agent by numeric id, uuid, or normalized code for admin governance.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts#retrieveAgent",
+      "kind": "read",
+      "module": "admin-agents",
+      "openapi_exposed": true,
+      "operation": "retrieveAgent",
+      "operation_id": "agentDefinitions.retrieve",
+      "path_params": [
+        "agentId"
+      ],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ai_agent",
+        "ai_agent_version",
+        "ai_agent_tool_binding",
+        "ai_agent_mcp_server",
+        "ai_agent_memory"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "AdminAgentItem",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminAgentItem",
+          "properties": {
+            "avatarUrl": {
+              "maxLength": 2048,
+              "nullable": true,
+              "type": "string"
+            },
+            "capabilities": {
+              "additionalProperties": false,
+              "name": "AdminAgentCapabilities",
+              "properties": {
+                "mcpServerCount": {
+                  "format": "int64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "memoryEnabled": {
+                  "type": "boolean"
+                },
+                "skillBindingCount": {
+                  "format": "int64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "memoryEnabled",
+                "mcpServerCount",
+                "skillBindingCount"
+              ],
+              "type": "object"
+            },
+            "code": {
+              "maxLength": 96,
+              "minLength": 1,
+              "pattern": "^[a-z0-9][a-z0-9-]{0,95}$",
+              "type": "string"
+            },
+            "createdAt": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "defaultVersion": {
+              "additionalProperties": false,
+              "name": "AdminAgentVersionItem",
+              "properties": {
+                "createdAt": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "id": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "mcpPolicy": {
+                  "additionalProperties": true,
+                  "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                  "name": "AgentPolicy",
+                  "type": "object"
+                },
+                "memoryPolicy": {
+                  "additionalProperties": true,
+                  "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                  "name": "AgentPolicy",
+                  "type": "object"
+                },
+                "model": {
+                  "maxLength": 128,
+                  "nullable": true,
+                  "type": "string"
+                },
+                "releaseStatus": {
+                  "enum": [
+                    "draft",
+                    "published",
+                    "archived"
+                  ],
+                  "type": "string"
+                },
+                "runtimePolicy": {
+                  "additionalProperties": true,
+                  "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                  "name": "AgentPolicy",
+                  "type": "object"
+                },
+                "skillPolicy": {
+                  "additionalProperties": true,
+                  "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                  "name": "AgentPolicy",
+                  "type": "object"
+                },
+                "systemPrompt": {
+                  "maxLength": 32768,
+                  "type": "string"
+                },
+                "toolPolicy": {
+                  "additionalProperties": true,
+                  "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                  "name": "AgentPolicy",
+                  "type": "object"
+                },
+                "updatedAt": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "versionNo": {
+                  "format": "int64",
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "id",
+                "versionNo",
+                "releaseStatus",
+                "systemPrompt",
+                "toolPolicy",
+                "memoryPolicy",
+                "mcpPolicy",
+                "skillPolicy",
+                "runtimePolicy",
+                "createdAt",
+                "updatedAt"
+              ],
+              "type": "object"
+            },
+            "description": {
+              "maxLength": 1024,
+              "type": "string"
+            },
+            "id": {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "name": {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "ownerUserId": {
+              "format": "int64",
+              "minimum": 1,
+              "type": "integer"
+            },
+            "status": {
+              "enum": [
+                "active",
+                "disabled"
+              ],
+              "type": "string"
+            },
+            "templateSource": {
+              "maxLength": 128,
+              "nullable": true,
+              "type": "string"
+            },
+            "updatedAt": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "visibility": {
+              "enum": [
+                "private",
+                "organization",
+                "public"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "ownerUserId",
+            "code",
+            "name",
+            "description",
+            "visibility",
+            "status",
+            "createdAt",
+            "updatedAt",
+            "defaultVersion",
+            "capabilities"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/agents",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "agents",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts",
+      "summary": "Retrieve managed agent",
+      "tag": "agents",
+      "write_tables": []
+    },
+    {
       "api_method": "POST",
       "api_path": "/backend/v3/api/content/announcements",
       "api_surface": "backend",
@@ -32,6 +576,10 @@
               "minLength": 1,
               "type": "string"
             },
+            "showAsPopup": {
+              "description": "Whether eligible users should see this announcement as a popup when the frontend loads.",
+              "type": "boolean"
+            },
             "status": {
               "description": "Publication state for the announcement.",
               "enum": [
@@ -61,6 +609,7 @@
             "title",
             "target",
             "status",
+            "showAsPopup",
             "content"
           ],
           "type": "object"
@@ -92,6 +641,9 @@
                   "minLength": 1,
                   "type": "string"
                 },
+                "showAsPopup": {
+                  "type": "boolean"
+                },
                 "status": {
                   "enum": [
                     "published",
@@ -119,6 +671,7 @@
                 "title",
                 "target",
                 "status",
+                "showAsPopup",
                 "date",
                 "content"
               ],
@@ -241,6 +794,9 @@
                     "minLength": 1,
                     "type": "string"
                   },
+                  "showAsPopup": {
+                    "type": "boolean"
+                  },
                   "status": {
                     "enum": [
                       "published",
@@ -268,6 +824,7 @@
                   "title",
                   "target",
                   "status",
+                  "showAsPopup",
                   "date",
                   "content"
                 ],
@@ -326,6 +883,10 @@
               "minLength": 1,
               "type": "string"
             },
+            "showAsPopup": {
+              "description": "Optional popup-display toggle update.",
+              "type": "boolean"
+            },
             "status": {
               "description": "Optional announcement publication state update.",
               "enum": [
@@ -380,6 +941,9 @@
                   "minLength": 1,
                   "type": "string"
                 },
+                "showAsPopup": {
+                  "type": "boolean"
+                },
                 "status": {
                   "enum": [
                     "published",
@@ -407,6 +971,7 @@
                 "title",
                 "target",
                 "status",
+                "showAsPopup",
                 "date",
                 "content"
               ],
@@ -466,6 +1031,12 @@
               "minLength": 1,
               "type": "string"
             },
+            "apiKey": {
+              "description": "Plaintext provider API key accepted only on create/update input. Backend encrypts it into integration_provider_account.auth_config and never returns it.",
+              "maxLength": 4096,
+              "minLength": 1,
+              "type": "string"
+            },
             "baseUrl": {
               "maxLength": 512,
               "type": "string"
@@ -485,6 +1056,21 @@
               "maxItems": 16,
               "type": "array",
               "uniqueItems": true
+            },
+            "circuitBreakerPolicy": {
+              "additionalProperties": false,
+              "name": "ProviderCircuitBreakerPolicy",
+              "properties": {
+                "failureThreshold": {
+                  "maximum": 100,
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "failureThreshold"
+              ],
+              "type": "object"
             },
             "models": {
               "items": {
@@ -549,7 +1135,7 @@
               "type": "object"
             },
             "secretRef": {
-              "description": "Vault/KMS secret reference. Plaintext credential fields are forbidden.",
+              "description": "Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead.",
               "maxLength": 256,
               "minLength": 1,
               "pattern": "^(vault|secret)://[^\\\\s]+$",
@@ -586,7 +1172,7 @@
           "required": [
             "name",
             "vendor",
-            "secretRef",
+            "apiKey",
             "models"
           ],
           "type": "object"
@@ -630,6 +1216,21 @@
                   },
                   "maxItems": 16,
                   "type": "array"
+                },
+                "circuitBreakerPolicy": {
+                  "additionalProperties": false,
+                  "name": "ProviderCircuitBreakerPolicy",
+                  "properties": {
+                    "failureThreshold": {
+                      "maximum": 100,
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "failureThreshold"
+                  ],
+                  "type": "object"
                 },
                 "errors": {
                   "format": "int64",
@@ -1104,6 +1705,21 @@
                     "maxItems": 16,
                     "type": "array"
                   },
+                  "circuitBreakerPolicy": {
+                    "additionalProperties": false,
+                    "name": "ProviderCircuitBreakerPolicy",
+                    "properties": {
+                      "failureThreshold": {
+                        "maximum": 100,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "failureThreshold"
+                    ],
+                    "type": "object"
+                  },
                   "errors": {
                     "format": "int64",
                     "minimum": 0,
@@ -1416,7 +2032,7 @@
             },
             "item": {
               "additionalProperties": false,
-              "description": "Persisted channel snapshot returned after the provider health probe. Secret refs and tokens are not returned.",
+              "description": "Persisted channel snapshot returned after the provider health probe. Secret references may be returned for credential lookup; plaintext tokens are never returned.",
               "name": "AdminChannelItem",
               "properties": {
                 "accessType": {
@@ -1446,6 +2062,21 @@
                   },
                   "maxItems": 16,
                   "type": "array"
+                },
+                "circuitBreakerPolicy": {
+                  "additionalProperties": false,
+                  "name": "ProviderCircuitBreakerPolicy",
+                  "properties": {
+                    "failureThreshold": {
+                      "maximum": 100,
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "failureThreshold"
+                  ],
+                  "type": "object"
                 },
                 "errors": {
                   "format": "int64",
@@ -1640,6 +2271,12 @@
               "minLength": 1,
               "type": "string"
             },
+            "apiKey": {
+              "description": "Plaintext provider API key accepted only on create/update input. Backend encrypts it into integration_provider_account.auth_config and never returns it.",
+              "maxLength": 4096,
+              "minLength": 1,
+              "type": "string"
+            },
             "baseUrl": {
               "maxLength": 512,
               "nullable": true,
@@ -1660,6 +2297,22 @@
               "maxItems": 16,
               "type": "array",
               "uniqueItems": true
+            },
+            "circuitBreakerPolicy": {
+              "additionalProperties": false,
+              "name": "ProviderCircuitBreakerPolicy",
+              "nullable": true,
+              "properties": {
+                "failureThreshold": {
+                  "maximum": 100,
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "failureThreshold"
+              ],
+              "type": "object"
             },
             "id": {
               "maxLength": 64,
@@ -1729,7 +2382,7 @@
               "type": "object"
             },
             "secretRef": {
-              "description": "Vault/KMS secret reference. Plaintext credential fields are forbidden.",
+              "description": "Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead.",
               "maxLength": 256,
               "minLength": 1,
               "pattern": "^(vault|secret)://[^\\\\s]+$",
@@ -1808,6 +2461,21 @@
                   },
                   "maxItems": 16,
                   "type": "array"
+                },
+                "circuitBreakerPolicy": {
+                  "additionalProperties": false,
+                  "name": "ProviderCircuitBreakerPolicy",
+                  "properties": {
+                    "failureThreshold": {
+                      "maximum": 100,
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "failureThreshold"
+                  ],
+                  "type": "object"
                 },
                 "errors": {
                   "format": "int64",
@@ -6323,6 +6991,355 @@
         "ai_model",
         "ai_model_capability",
         "ai_model_pricing",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/ai/models/list",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts#fetchInitializedCatalog",
+      "kind": "action",
+      "module": "admin-model",
+      "openapi_exposed": false,
+      "operation": "fetchInitializedCatalog",
+      "operation_id": "models.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "ai_model_vendor",
+        "ai_model",
+        "ai_model_capability",
+        "ai_model_pricing",
+        "ai_model_rank_snapshot",
+        "ai_pricing_import_snapshot"
+      ],
+      "request_body_required": null,
+      "request_id_header": true,
+      "request_schema": {
+        "name": "AdminModelCatalogInitializationRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminModelCatalogInitializationRequest",
+          "properties": {
+            "force": {
+              "description": "Refresh is forced so an empty persisted catalog is populated immediately.",
+              "type": "boolean"
+            },
+            "mode": {
+              "description": "Empty catalog initialization performs the same official refresh used by the manual sync action.",
+              "enum": [
+                "official_refresh"
+              ],
+              "type": "string"
+            },
+            "source": {
+              "description": "Frontend initialization uses the bundled sdkwork-models catalog source when persisted lists are empty.",
+              "enum": [
+                "sdkwork_models"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "InitializedModelCatalog",
+        "schema": {
+          "additionalProperties": false,
+          "name": "InitializedModelCatalog",
+          "properties": {
+            "initialized": {
+              "description": "True when the service had to refresh an empty persisted model catalog before returning data.",
+              "type": "boolean"
+            },
+            "models": {
+              "description": "AI model snapshots after optional initialization.",
+              "items": {
+                "additionalProperties": false,
+                "name": "AdminAiModelItem",
+                "properties": {
+                  "apiFormat": {
+                    "maxLength": 128,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "calls": {
+                    "maxLength": 64,
+                    "type": "string"
+                  },
+                  "capabilityIntro": {
+                    "maxLength": 4096,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "contextTokens": {
+                    "format": "int64",
+                    "minimum": 0,
+                    "nullable": true,
+                    "type": "integer"
+                  },
+                  "description": {
+                    "maxLength": 2048,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "inputModalities": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 16,
+                    "type": "array"
+                  },
+                  "limitations": {
+                    "items": {
+                      "maxLength": 512,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 64,
+                    "type": "array"
+                  },
+                  "maxOutputTokens": {
+                    "format": "int64",
+                    "minimum": 0,
+                    "nullable": true,
+                    "type": "integer"
+                  },
+                  "modalities": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 16,
+                    "type": "array"
+                  },
+                  "name": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "outputModalities": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 16,
+                    "type": "array"
+                  },
+                  "priceIn": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "priceOut": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "releaseStage": {
+                    "format": "int64",
+                    "nullable": true,
+                    "type": "integer"
+                  },
+                  "replacementModel": {
+                    "maxLength": 128,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "routingState": {
+                    "format": "int64",
+                    "nullable": true,
+                    "type": "integer"
+                  },
+                  "shelfState": {
+                    "format": "int64",
+                    "nullable": true,
+                    "type": "integer"
+                  },
+                  "status": {
+                    "enum": [
+                      "active",
+                      "inactive"
+                    ],
+                    "type": "string"
+                  },
+                  "supportedLanguages": {
+                    "items": {
+                      "maxLength": 128,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 128,
+                    "type": "array"
+                  },
+                  "supportsJsonSchema": {
+                    "type": "boolean"
+                  },
+                  "supportsStreaming": {
+                    "type": "boolean"
+                  },
+                  "supportsTools": {
+                    "type": "boolean"
+                  },
+                  "trainingDataCutoff": {
+                    "maxLength": 128,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "Chat",
+                      "Image",
+                      "Audio",
+                      "Embedding",
+                      "Music",
+                      "SoundEffect",
+                      "Video"
+                    ],
+                    "type": "string"
+                  },
+                  "useCases": {
+                    "items": {
+                      "maxLength": 256,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 64,
+                    "type": "array"
+                  },
+                  "vendorCode": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "vendorId": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "vendorId",
+                  "vendorCode",
+                  "name",
+                  "type",
+                  "priceIn",
+                  "priceOut",
+                  "status",
+                  "calls",
+                  "description",
+                  "modalities",
+                  "inputModalities",
+                  "outputModalities",
+                  "apiFormat",
+                  "capabilityIntro",
+                  "limitations",
+                  "supportedLanguages",
+                  "useCases",
+                  "trainingDataCutoff",
+                  "contextTokens",
+                  "maxOutputTokens",
+                  "supportsStreaming",
+                  "supportsTools",
+                  "supportsJsonSchema",
+                  "releaseStage",
+                  "shelfState",
+                  "routingState",
+                  "replacementModel"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "vendors": {
+              "description": "Model vendor snapshots after optional initialization.",
+              "items": {
+                "additionalProperties": false,
+                "name": "AdminModelVendorItem",
+                "properties": {
+                  "color": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "description": {
+                    "maxLength": 512,
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "name": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "status": {
+                    "enum": [
+                      "active",
+                      "inactive"
+                    ],
+                    "type": "string"
+                  },
+                  "vendorCode": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "vendorCode",
+                  "name",
+                  "status",
+                  "color",
+                  "description"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "initialized",
+            "vendors",
+            "models"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/model",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "intelligence",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "tag": "ai",
+      "write_tables": [
+        "ai_model_vendor",
+        "ai_model",
+        "ai_model_capability",
+        "ai_model_pricing",
+        "ai_pricing_import_snapshot",
         "ops_audit_log"
       ]
     },
@@ -12203,6 +13220,60 @@
     },
     {
       "api_method": "DELETE",
+      "api_path": "/backend/v3/api/ecosystem/skills/categories/{categoryId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts#deleteSkillCategory",
+      "kind": "delete",
+      "module": "admin-skill",
+      "openapi_exposed": true,
+      "operation": "deleteSkillCategory",
+      "operation_id": "skills.categories.delete",
+      "path_params": [
+        "categoryId"
+      ],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "plus_category",
+        "plus_agent_skill_package",
+        "plus_agent_skill"
+      ],
+      "request_body_required": false,
+      "request_id_header": true,
+      "response_schema": {
+        "name": "AdminSkillCategoryDeleteResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminSkillCategoryDeleteResponse",
+          "properties": {
+            "deleted": {
+              "description": "Whether the skill category was deleted.",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "deleted"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/skill",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "ecosystem",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts",
+      "tag": "ecosystem",
+      "write_tables": [
+        "plus_category",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
       "api_path": "/backend/v3/api/ecosystem/skills/package/{packageId}",
       "api_surface": "backend",
       "file_targets": [],
@@ -16891,6 +17962,193 @@
     },
     {
       "api_method": "PUT",
+      "api_path": "/backend/v3/api/ecosystem/skills/categories/{categoryId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts#updateSkillCategory",
+      "kind": "update",
+      "module": "admin-skill",
+      "openapi_exposed": true,
+      "operation": "updateSkillCategory",
+      "operation_id": "skills.categories.update",
+      "path_params": [
+        "categoryId"
+      ],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "plus_category"
+      ],
+      "request_body_required": null,
+      "request_id_header": true,
+      "request_schema": {
+        "name": "AdminSkillCategoryUpdateRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminSkillCategoryUpdateRequest",
+          "properties": {
+            "code": {
+              "description": "Optional stable category code.",
+              "maxLength": 128,
+              "minLength": 1,
+              "nullable": true,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "type": "string"
+            },
+            "description": {
+              "description": "Optional category description.",
+              "maxLength": 512,
+              "nullable": true,
+              "type": "string"
+            },
+            "icon": {
+              "description": "Optional icon URL or asset path.",
+              "maxLength": 255,
+              "nullable": true,
+              "type": "string"
+            },
+            "name": {
+              "description": "Skill category display name.",
+              "maxLength": 255,
+              "minLength": 1,
+              "type": "string"
+            },
+            "parentId": {
+              "maxLength": 128,
+              "nullable": true,
+              "type": "string"
+            },
+            "path": {
+              "maxLength": 1024,
+              "nullable": true,
+              "pattern": "^/",
+              "type": "string"
+            },
+            "sortWeight": {
+              "format": "int32",
+              "maximum": 1000000,
+              "minimum": -1000000,
+              "type": "integer"
+            },
+            "status": {
+              "format": "int32",
+              "type": "integer"
+            },
+            "type": {
+              "enum": [
+                19,
+                20
+              ],
+              "format": "int32",
+              "type": "integer"
+            },
+            "visible": {
+              "type": "boolean"
+            }
+          },
+          "required": [],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "AdminSkillCategoryMutationResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminSkillCategoryMutationResponse",
+          "properties": {
+            "item": {
+              "additionalProperties": false,
+              "description": "Updated skill category snapshot returned by the backend.",
+              "name": "AdminSkillCategoryItem",
+              "properties": {
+                "code": {
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_-]+$",
+                  "type": "string"
+                },
+                "description": {
+                  "maxLength": 512,
+                  "type": "string"
+                },
+                "icon": {
+                  "maxLength": 255,
+                  "type": "string"
+                },
+                "id": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "name": {
+                  "maxLength": 255,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "parentId": {
+                  "maxLength": 128,
+                  "nullable": true,
+                  "type": "string"
+                },
+                "path": {
+                  "maxLength": 1024,
+                  "pattern": "^/",
+                  "type": "string"
+                },
+                "sortWeight": {
+                  "format": "int32",
+                  "maximum": 1000000,
+                  "minimum": -1000000,
+                  "type": "integer"
+                },
+                "status": {
+                  "format": "int32",
+                  "type": "integer"
+                },
+                "type": {
+                  "enum": [
+                    19,
+                    20
+                  ],
+                  "format": "int32",
+                  "type": "integer"
+                },
+                "visible": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "sortWeight",
+                "visible",
+                "status",
+                "type"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "item"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/skill",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "ecosystem",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts",
+      "tag": "ecosystem",
+      "write_tables": [
+        "plus_category",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PUT",
       "api_path": "/backend/v3/api/ecosystem/skills/package/{packageId}",
       "api_surface": "backend",
       "file_targets": [],
@@ -17102,7 +18360,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/system/users",
+      "api_path": "/backend/v3/api/iam/users",
       "api_surface": "backend",
       "file_targets": [],
       "idempotency_required": false,
@@ -17116,9 +18374,9 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "plus_user",
-        "plus_role",
-        "plus_user_role"
+        "iam_user",
+        "iam_role",
+        "iam_user_role"
       ],
       "request_body_required": null,
       "request_id_header": true,
@@ -17236,14 +18494,14 @@
       "route_scope": "admin",
       "sdk_api_prefix": "/backend/v3/api",
       "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "system",
+      "sdk_domain": "iam",
       "sdk_family": "clawrouter-backend-sdk",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts",
-      "tag": "system",
+      "tag": "iam",
       "write_tables": [
-        "plus_user",
+        "iam_user",
         "plus_account",
-        "plus_user_role",
+        "iam_user_role",
         "ops_audit_log"
       ]
     },
@@ -17263,9 +18521,8 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "plus_user",
-        "iam_gateway_api_key",
-        "plus_api_key"
+        "iam_user",
+        "iam_gateway_api_key"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -17339,7 +18596,7 @@
               "type": "object"
             },
             "rawKey": {
-              "description": "One-time plaintext API key material returned immediately after creation.",
+              "description": "Full plaintext API key material returned immediately after creation.",
               "maxLength": 256,
               "minLength": 1,
               "type": "string"
@@ -17362,7 +18619,6 @@
       "tag": "iam",
       "write_tables": [
         "iam_gateway_api_key",
-        "plus_api_key",
         "ops_audit_log"
       ]
     },
@@ -17384,9 +18640,8 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "plus_user",
-        "iam_gateway_api_key",
-        "plus_api_key"
+        "iam_user",
+        "iam_gateway_api_key"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -17416,7 +18671,6 @@
       "tag": "iam",
       "write_tables": [
         "iam_gateway_api_key",
-        "plus_api_key",
         "ops_audit_log"
       ]
     },
@@ -17436,8 +18690,7 @@
       "query_parameters": [],
       "query_parameters_declared": true,
       "read_sources": [
-        "iam_gateway_api_key",
-        "plus_api_key"
+        "iam_gateway_api_key"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -17515,10 +18768,10 @@
       "query_parameters": [],
       "query_parameters_declared": true,
       "read_sources": [
-        "plus_user",
+        "iam_user",
         "plus_account",
-        "plus_role",
-        "plus_user_role",
+        "iam_role",
+        "iam_user_role",
         "iam_user_login_event"
       ],
       "request_body_required": null,
@@ -17631,7 +18884,7 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "plus_user",
+        "iam_user",
         "plus_account",
         "plus_account_history",
         "plus_vip_point_change",
@@ -17763,7 +19016,7 @@
     },
     {
       "api_method": "PUT",
-      "api_path": "/backend/v3/api/system/users",
+      "api_path": "/backend/v3/api/iam/users",
       "api_surface": "backend",
       "file_targets": [],
       "idempotency_required": false,
@@ -17777,9 +19030,9 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "plus_user",
-        "plus_role",
-        "plus_user_role"
+        "iam_user",
+        "iam_role",
+        "iam_user_role"
       ],
       "request_body_required": null,
       "request_id_header": true,
@@ -17902,13 +19155,13 @@
       "route_scope": "admin",
       "sdk_api_prefix": "/backend/v3/api",
       "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "system",
+      "sdk_domain": "iam",
       "sdk_family": "clawrouter-backend-sdk",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts",
-      "tag": "system",
+      "tag": "iam",
       "write_tables": [
-        "plus_user",
-        "plus_user_role",
+        "iam_user",
+        "iam_user_role",
         "ops_audit_log"
       ]
     },
@@ -20852,6 +22105,101 @@
       "write_tables": []
     },
     {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/communication/notifications",
+      "api_surface": "app",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts#fetchNotifications",
+      "kind": "read",
+      "module": "commons",
+      "openapi_exposed": true,
+      "operation": "fetchNotifications",
+      "operation_id": "notifications.list",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ops_notification_message",
+        "ops_notification_delivery"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "NotificationsResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "NotificationsResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": false,
+                "name": "NotificationItem",
+                "properties": {
+                  "content": {
+                    "type": "string"
+                  },
+                  "desc": {
+                    "description": "User-facing short notification summary.",
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "read": {
+                    "type": "boolean"
+                  },
+                  "showAsPopup": {
+                    "description": "Whether this notification should be displayed as a modal popup when the frontend loads.",
+                    "type": "boolean"
+                  },
+                  "time": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "info",
+                      "billing",
+                      "warning",
+                      "alert"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "title",
+                  "desc",
+                  "content",
+                  "time",
+                  "type",
+                  "read"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/console/notifications",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "communication",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts",
+      "tag": "communication",
+      "write_tables": []
+    },
+    {
       "api_method": "POST",
       "api_path": "/app/v3/api/auth/sessions",
       "api_surface": "app",
@@ -20935,9 +22283,9 @@
       "query_parameters": [],
       "query_parameters_declared": true,
       "read_sources": [
-        "plus_user",
+        "iam_user",
         "plus_account",
-        "plus_organization",
+        "iam_organization",
         "plus_invoice",
         "iam_user_security_setting",
         "iam_user_login_event",
@@ -21126,6 +22474,822 @@
     },
     {
       "api_method": "POST",
+      "api_path": "/app/v3/api/agents",
+      "api_surface": "app",
+      "description": "Creates a private user-owned agent with a default draft version and policy documents for model, tools, memory, MCP, skills, and runtime execution.",
+      "file_targets": [],
+      "idempotency_required": true,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts#createAgent",
+      "kind": "create",
+      "module": "console-agents",
+      "openapi_exposed": true,
+      "operation": "createAgent",
+      "operation_id": "agentDefinitions.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "ai_agent",
+        "ai_agent_version"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "AgentCreateRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AgentCreateRequest",
+          "properties": {
+            "code": {
+              "maxLength": 96,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9._:-]+$",
+              "type": "string"
+            },
+            "description": {
+              "maxLength": 1024,
+              "type": "string"
+            },
+            "mcpPolicy": {
+              "additionalProperties": true,
+              "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+              "name": "AgentPolicy",
+              "type": "object"
+            },
+            "memoryPolicy": {
+              "additionalProperties": true,
+              "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+              "name": "AgentPolicy",
+              "type": "object"
+            },
+            "model": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "name": {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "runtimePolicy": {
+              "additionalProperties": true,
+              "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+              "name": "AgentPolicy",
+              "type": "object"
+            },
+            "skillPolicy": {
+              "additionalProperties": true,
+              "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+              "name": "AgentPolicy",
+              "type": "object"
+            },
+            "systemPrompt": {
+              "maxLength": 32768,
+              "type": "string"
+            },
+            "toolPolicy": {
+              "additionalProperties": true,
+              "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+              "name": "AgentPolicy",
+              "type": "object"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "AgentItemResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AgentItemResponse",
+          "properties": {
+            "item": {
+              "additionalProperties": false,
+              "name": "AgentItem",
+              "properties": {
+                "avatarUrl": {
+                  "maxLength": 2048,
+                  "nullable": true,
+                  "type": "string"
+                },
+                "capabilities": {
+                  "additionalProperties": false,
+                  "name": "AgentCapabilities",
+                  "properties": {
+                    "mcpServerCount": {
+                      "format": "int64",
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "memoryEnabled": {
+                      "type": "boolean"
+                    },
+                    "skillBindingCount": {
+                      "format": "int64",
+                      "minimum": 0,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "memoryEnabled",
+                    "mcpServerCount",
+                    "skillBindingCount"
+                  ],
+                  "type": "object"
+                },
+                "code": {
+                  "maxLength": 96,
+                  "minLength": 1,
+                  "pattern": "^[a-z0-9][a-z0-9-]{0,95}$",
+                  "type": "string"
+                },
+                "createdAt": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "defaultVersion": {
+                  "additionalProperties": false,
+                  "name": "AgentVersionItem",
+                  "properties": {
+                    "createdAt": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "id": {
+                      "maxLength": 128,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "mcpPolicy": {
+                      "additionalProperties": true,
+                      "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                      "name": "AgentPolicy",
+                      "type": "object"
+                    },
+                    "memoryPolicy": {
+                      "additionalProperties": true,
+                      "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                      "name": "AgentPolicy",
+                      "type": "object"
+                    },
+                    "model": {
+                      "maxLength": 128,
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "releaseStatus": {
+                      "enum": [
+                        "draft",
+                        "published",
+                        "archived"
+                      ],
+                      "type": "string"
+                    },
+                    "runtimePolicy": {
+                      "additionalProperties": true,
+                      "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                      "name": "AgentPolicy",
+                      "type": "object"
+                    },
+                    "skillPolicy": {
+                      "additionalProperties": true,
+                      "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                      "name": "AgentPolicy",
+                      "type": "object"
+                    },
+                    "systemPrompt": {
+                      "maxLength": 32768,
+                      "type": "string"
+                    },
+                    "toolPolicy": {
+                      "additionalProperties": true,
+                      "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                      "name": "AgentPolicy",
+                      "type": "object"
+                    },
+                    "updatedAt": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "versionNo": {
+                      "format": "int64",
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "versionNo",
+                    "releaseStatus",
+                    "systemPrompt",
+                    "toolPolicy",
+                    "memoryPolicy",
+                    "mcpPolicy",
+                    "skillPolicy",
+                    "runtimePolicy",
+                    "createdAt",
+                    "updatedAt"
+                  ],
+                  "type": "object"
+                },
+                "description": {
+                  "maxLength": 1024,
+                  "type": "string"
+                },
+                "id": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "name": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "ownerUserId": {
+                  "format": "int64",
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "status": {
+                  "enum": [
+                    "active",
+                    "disabled"
+                  ],
+                  "type": "string"
+                },
+                "templateSource": {
+                  "maxLength": 128,
+                  "nullable": true,
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "visibility": {
+                  "enum": [
+                    "private",
+                    "organization",
+                    "public"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "ownerUserId",
+                "code",
+                "name",
+                "description",
+                "visibility",
+                "status",
+                "createdAt",
+                "updatedAt",
+                "defaultVersion",
+                "capabilities"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "item"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/console/agents",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "agents",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts",
+      "summary": "Create user agent",
+      "tag": "agents",
+      "write_tables": [
+        "ai_agent",
+        "ai_agent_version"
+      ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/agents",
+      "api_surface": "app",
+      "description": "Returns agent definitions owned by the current app user, including the active default version and derived capability summary.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts#listAgents",
+      "kind": "read",
+      "module": "console-agents",
+      "openapi_exposed": true,
+      "operation": "listAgents",
+      "operation_id": "agentDefinitions.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "page",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        {
+          "in": "query",
+          "name": "page_size",
+          "required": false,
+          "schema": {
+            "format": "int64",
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        {
+          "in": "query",
+          "name": "q",
+          "required": false,
+          "schema": {
+            "maxLength": 128,
+            "type": "string"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ai_agent",
+        "ai_agent_version",
+        "ai_agent_tool_binding",
+        "ai_agent_mcp_server",
+        "ai_agent_memory"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "AgentListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AgentListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": false,
+                "name": "AgentItem",
+                "properties": {
+                  "avatarUrl": {
+                    "maxLength": 2048,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "capabilities": {
+                    "additionalProperties": false,
+                    "name": "AgentCapabilities",
+                    "properties": {
+                      "mcpServerCount": {
+                        "format": "int64",
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "memoryEnabled": {
+                        "type": "boolean"
+                      },
+                      "skillBindingCount": {
+                        "format": "int64",
+                        "minimum": 0,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "memoryEnabled",
+                      "mcpServerCount",
+                      "skillBindingCount"
+                    ],
+                    "type": "object"
+                  },
+                  "code": {
+                    "maxLength": 96,
+                    "minLength": 1,
+                    "pattern": "^[a-z0-9][a-z0-9-]{0,95}$",
+                    "type": "string"
+                  },
+                  "createdAt": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "defaultVersion": {
+                    "additionalProperties": false,
+                    "name": "AgentVersionItem",
+                    "properties": {
+                      "createdAt": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "id": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "mcpPolicy": {
+                        "additionalProperties": true,
+                        "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                        "name": "AgentPolicy",
+                        "type": "object"
+                      },
+                      "memoryPolicy": {
+                        "additionalProperties": true,
+                        "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                        "name": "AgentPolicy",
+                        "type": "object"
+                      },
+                      "model": {
+                        "maxLength": 128,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "releaseStatus": {
+                        "enum": [
+                          "draft",
+                          "published",
+                          "archived"
+                        ],
+                        "type": "string"
+                      },
+                      "runtimePolicy": {
+                        "additionalProperties": true,
+                        "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                        "name": "AgentPolicy",
+                        "type": "object"
+                      },
+                      "skillPolicy": {
+                        "additionalProperties": true,
+                        "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                        "name": "AgentPolicy",
+                        "type": "object"
+                      },
+                      "systemPrompt": {
+                        "maxLength": 32768,
+                        "type": "string"
+                      },
+                      "toolPolicy": {
+                        "additionalProperties": true,
+                        "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                        "name": "AgentPolicy",
+                        "type": "object"
+                      },
+                      "updatedAt": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "versionNo": {
+                        "format": "int64",
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "versionNo",
+                      "releaseStatus",
+                      "systemPrompt",
+                      "toolPolicy",
+                      "memoryPolicy",
+                      "mcpPolicy",
+                      "skillPolicy",
+                      "runtimePolicy",
+                      "createdAt",
+                      "updatedAt"
+                    ],
+                    "type": "object"
+                  },
+                  "description": {
+                    "maxLength": 1024,
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "name": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "ownerUserId": {
+                    "format": "int64",
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "status": {
+                    "enum": [
+                      "active",
+                      "disabled"
+                    ],
+                    "type": "string"
+                  },
+                  "templateSource": {
+                    "maxLength": 128,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "updatedAt": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "visibility": {
+                    "enum": [
+                      "private",
+                      "organization",
+                      "public"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "ownerUserId",
+                  "code",
+                  "name",
+                  "description",
+                  "visibility",
+                  "status",
+                  "createdAt",
+                  "updatedAt",
+                  "defaultVersion",
+                  "capabilities"
+                ],
+                "type": "object"
+              },
+              "maxItems": 100,
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/console/agents",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "agents",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts",
+      "summary": "List user agents",
+      "tag": "agents",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/agents/{agentId}",
+      "api_surface": "app",
+      "description": "Returns one user-owned agent by numeric id, uuid, or normalized code, including its active default version.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts#retrieveAgent",
+      "kind": "read",
+      "module": "console-agents",
+      "openapi_exposed": true,
+      "operation": "retrieveAgent",
+      "operation_id": "agentDefinitions.retrieve",
+      "path_params": [
+        "agentId"
+      ],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ai_agent",
+        "ai_agent_version",
+        "ai_agent_tool_binding",
+        "ai_agent_mcp_server",
+        "ai_agent_memory"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "AgentItem",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AgentItem",
+          "properties": {
+            "avatarUrl": {
+              "maxLength": 2048,
+              "nullable": true,
+              "type": "string"
+            },
+            "capabilities": {
+              "additionalProperties": false,
+              "name": "AgentCapabilities",
+              "properties": {
+                "mcpServerCount": {
+                  "format": "int64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "memoryEnabled": {
+                  "type": "boolean"
+                },
+                "skillBindingCount": {
+                  "format": "int64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "memoryEnabled",
+                "mcpServerCount",
+                "skillBindingCount"
+              ],
+              "type": "object"
+            },
+            "code": {
+              "maxLength": 96,
+              "minLength": 1,
+              "pattern": "^[a-z0-9][a-z0-9-]{0,95}$",
+              "type": "string"
+            },
+            "createdAt": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "defaultVersion": {
+              "additionalProperties": false,
+              "name": "AgentVersionItem",
+              "properties": {
+                "createdAt": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "id": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "mcpPolicy": {
+                  "additionalProperties": true,
+                  "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                  "name": "AgentPolicy",
+                  "type": "object"
+                },
+                "memoryPolicy": {
+                  "additionalProperties": true,
+                  "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                  "name": "AgentPolicy",
+                  "type": "object"
+                },
+                "model": {
+                  "maxLength": 128,
+                  "nullable": true,
+                  "type": "string"
+                },
+                "releaseStatus": {
+                  "enum": [
+                    "draft",
+                    "published",
+                    "archived"
+                  ],
+                  "type": "string"
+                },
+                "runtimePolicy": {
+                  "additionalProperties": true,
+                  "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                  "name": "AgentPolicy",
+                  "type": "object"
+                },
+                "skillPolicy": {
+                  "additionalProperties": true,
+                  "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                  "name": "AgentPolicy",
+                  "type": "object"
+                },
+                "systemPrompt": {
+                  "maxLength": 32768,
+                  "type": "string"
+                },
+                "toolPolicy": {
+                  "additionalProperties": true,
+                  "description": "Open JSON policy document validated by the agent runtime for model, tool, memory, MCP, skill, or execution settings.",
+                  "name": "AgentPolicy",
+                  "type": "object"
+                },
+                "updatedAt": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "versionNo": {
+                  "format": "int64",
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "id",
+                "versionNo",
+                "releaseStatus",
+                "systemPrompt",
+                "toolPolicy",
+                "memoryPolicy",
+                "mcpPolicy",
+                "skillPolicy",
+                "runtimePolicy",
+                "createdAt",
+                "updatedAt"
+              ],
+              "type": "object"
+            },
+            "description": {
+              "maxLength": 1024,
+              "type": "string"
+            },
+            "id": {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "name": {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "ownerUserId": {
+              "format": "int64",
+              "minimum": 1,
+              "type": "integer"
+            },
+            "status": {
+              "enum": [
+                "active",
+                "disabled"
+              ],
+              "type": "string"
+            },
+            "templateSource": {
+              "maxLength": 128,
+              "nullable": true,
+              "type": "string"
+            },
+            "updatedAt": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "visibility": {
+              "enum": [
+                "private",
+                "organization",
+                "public"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "ownerUserId",
+            "code",
+            "name",
+            "description",
+            "visibility",
+            "status",
+            "createdAt",
+            "updatedAt",
+            "defaultVersion",
+            "capabilities"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/console/agents",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "agents",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts",
+      "summary": "Retrieve user agent",
+      "tag": "agents",
+      "write_tables": []
+    },
+    {
+      "api_method": "POST",
       "api_path": "/app/v3/api/iam/api_keys",
       "api_surface": "app",
       "file_targets": [],
@@ -21210,9 +23374,15 @@
           "properties": {
             "item": {
               "additionalProperties": false,
-              "description": "Created API key metadata with masked key material.",
+              "description": "Created API key metadata. Authenticated owner management responses include copyableKey matching rawKey.",
               "name": "AppApiKeyItem",
               "properties": {
+                "copyableKey": {
+                  "description": "Full plaintext API key returned only by authenticated owner management responses; public catalog responses omit this field.",
+                  "maxLength": 256,
+                  "minLength": 1,
+                  "type": "string"
+                },
                 "created": {
                   "maxLength": 64,
                   "type": "string"
@@ -21222,6 +23392,12 @@
                   "type": "string"
                 },
                 "group": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "groupName": {
+                  "description": "Display name snapshot for the bound API key group so the list view does not need to preload selectable groups.",
                   "maxLength": 128,
                   "minLength": 1,
                   "type": "string"
@@ -21297,7 +23473,7 @@
               "type": "object"
             },
             "rawKey": {
-              "description": "One-time raw API key secret. It is never returned by list/read APIs.",
+              "description": "Full raw API key secret returned by create responses. Authenticated owner management list and update responses also expose this value as item.copyableKey for console copy actions.",
               "minLength": 1,
               "type": "string"
             }
@@ -21318,11 +23494,150 @@
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts",
       "tag": "iam",
       "write_tables": [
+        "iam_gateway_api_key_group",
         "iam_gateway_api_key",
         "iam_gateway_access_policy",
         "ai_quota_policy",
         "ops_audit_log"
       ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/app/v3/api/iam/api_keys/{apiKeyId}",
+      "api_surface": "app",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts#deleteKey",
+      "kind": "delete",
+      "module": "console-api-keys",
+      "openapi_exposed": true,
+      "operation": "deleteKey",
+      "operation_id": "apiKeys.delete",
+      "path_params": [
+        "apiKeyId"
+      ],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "iam_gateway_api_key"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "DeleteApiKeyResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "DeleteApiKeyResponse",
+          "properties": {
+            "deleted": {
+              "type": "boolean"
+            },
+            "id": {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "deleted"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/console/api-keys",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "iam",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts",
+      "tag": "iam",
+      "write_tables": [
+        "iam_gateway_api_key",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/iam/api_key_groups",
+      "api_surface": "app",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts#fetchGroups",
+      "kind": "read",
+      "module": "console-api-keys",
+      "openapi_exposed": true,
+      "operation": "fetchGroups",
+      "operation_id": "apiKeyGroups.list",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "iam_gateway_api_key_group",
+        "iam_gateway_api_key_group_metric_snapshot",
+        "ai_pricing_plan"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "AppApiKeyGroupListResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AppApiKeyGroupListResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": false,
+                "name": "AppApiKeyGroup",
+                "properties": {
+                  "code": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "name": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "rate": {
+                    "maxLength": 64,
+                    "nullable": true,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "code",
+                  "name",
+                  "rate"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/console/api-keys",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "iam",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts",
+      "tag": "iam",
+      "write_tables": []
     },
     {
       "api_method": "GET",
@@ -21395,9 +23710,15 @@
             "items": {
               "items": {
                 "additionalProperties": false,
-                "description": "API key metadata with masked key material.",
+                "description": "API key metadata with masked key material and authenticated owner copyable key material.",
                 "name": "AppApiKeyItem",
                 "properties": {
+                  "copyableKey": {
+                    "description": "Full plaintext API key returned only by authenticated owner management responses; public catalog responses omit this field.",
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "type": "string"
+                  },
                   "created": {
                     "maxLength": 64,
                     "type": "string"
@@ -21407,6 +23728,12 @@
                     "type": "string"
                   },
                   "group": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "groupName": {
+                    "description": "Display name snapshot for the bound API key group so the list view does not need to preload selectable groups.",
                     "maxLength": 128,
                     "minLength": 1,
                     "type": "string"
@@ -21500,6 +23827,214 @@
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts",
       "tag": "iam",
       "write_tables": []
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/app/v3/api/iam/api_keys/{apiKeyId}",
+      "api_surface": "app",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts#updateKey",
+      "kind": "update",
+      "module": "console-api-keys",
+      "openapi_exposed": true,
+      "operation": "updateKey",
+      "operation_id": "apiKeys.update",
+      "path_params": [
+        "apiKeyId"
+      ],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "iam_gateway_api_key",
+        "iam_gateway_api_key_group",
+        "iam_gateway_access_policy",
+        "ai_quota_policy"
+      ],
+      "request_body_required": null,
+      "request_id_header": true,
+      "request_schema": {
+        "name": "UpdateApiKeyRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "UpdateApiKeyRequest",
+          "properties": {
+            "expires": {
+              "description": "Expiration timestamp in YYYY-MM-DDTHH:mm format, or never.",
+              "maxLength": 32,
+              "type": "string"
+            },
+            "group": {
+              "description": "API key group code to bind to this key.",
+              "maxLength": 64,
+              "type": "string"
+            },
+            "ipLimit": {
+              "description": "Comma-separated IP or CIDR allowlist, or unrestricted.",
+              "maxLength": 1024,
+              "type": "string"
+            },
+            "isUnlimitedQuota": {
+              "description": "Whether the quota is unlimited.",
+              "type": "boolean"
+            },
+            "modalities": {
+              "items": {
+                "enum": [
+                  "text",
+                  "image",
+                  "video",
+                  "audio",
+                  "music"
+                ],
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "name": {
+              "description": "API key display name.",
+              "maxLength": 128,
+              "type": "string"
+            },
+            "quota": {
+              "description": "Optional quota limit as a canonical decimal string.",
+              "format": "decimal",
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "UpdateApiKeyResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "UpdateApiKeyResponse",
+          "properties": {
+            "item": {
+              "additionalProperties": false,
+              "description": "Updated API key metadata. Authenticated owner management responses include copyableKey for console copy actions.",
+              "name": "AppApiKeyItem",
+              "properties": {
+                "copyableKey": {
+                  "description": "Full plaintext API key returned only by authenticated owner management responses; public catalog responses omit this field.",
+                  "maxLength": 256,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "created": {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                "expires": {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                "group": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "groupName": {
+                  "description": "Display name snapshot for the bound API key group so the list view does not need to preload selectable groups.",
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "id": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "ipLimit": {
+                  "maxLength": 1024,
+                  "type": "string"
+                },
+                "maskedKey": {
+                  "maxLength": 256,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "modalities": {
+                  "items": {
+                    "enum": [
+                      "text",
+                      "image",
+                      "video",
+                      "audio",
+                      "music"
+                    ],
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "name": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "quota": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "rate": {
+                  "maxLength": 64,
+                  "nullable": true,
+                  "type": "string"
+                },
+                "status": {
+                  "enum": [
+                    "enabled",
+                    "disabled"
+                  ],
+                  "type": "string"
+                },
+                "usedQuota": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "maskedKey",
+                "group",
+                "quota",
+                "usedQuota",
+                "modalities",
+                "ipLimit",
+                "created",
+                "expires",
+                "status"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "item"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/console/api-keys",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "iam",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts",
+      "tag": "iam",
+      "write_tables": [
+        "iam_gateway_api_key",
+        "iam_gateway_access_policy",
+        "ai_quota_policy",
+        "ops_audit_log"
+      ]
     },
     {
       "api_method": "GET",
@@ -26540,6 +29075,34 @@
               },
               "type": "array"
             },
+            "configurationDomains": {
+              "items": {
+                "additionalProperties": false,
+                "name": "DashboardConfigurationDomain",
+                "properties": {
+                  "domain": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "remark": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "domain",
+                  "remark"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
             "multimodalSparkline": {
               "items": {
                 "additionalProperties": false,
@@ -26618,6 +29181,13 @@
                 "rpm": {
                   "type": "number"
                 },
+                "totalRequestCount": {
+                  "format": "int64",
+                  "type": "integer"
+                },
+                "totalUsedCredits": {
+                  "type": "number"
+                },
                 "tpm": {
                   "type": "number"
                 },
@@ -26633,6 +29203,8 @@
                 "availableCredits",
                 "usedCredits",
                 "requestCount",
+                "totalUsedCredits",
+                "totalRequestCount",
                 "errorCount",
                 "imageRequests",
                 "videoRequests",
@@ -26825,97 +29397,6 @@
       "sdk_family": "clawrouter-app-sdk",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-gateway/src/gatewayService.ts",
       "tag": "ai",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/app/v3/api/communication/notifications",
-      "api_surface": "app",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-messages/src/messagesService.ts#fetchMessages",
-      "kind": "read",
-      "module": "console-messages",
-      "openapi_exposed": true,
-      "operation": "fetchMessages",
-      "operation_id": "notifications.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": true,
-      "read_sources": [
-        "ops_notification_message",
-        "ops_notification_delivery"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "response_schema": {
-        "name": "MessagesResponse",
-        "schema": {
-          "additionalProperties": false,
-          "name": "MessagesResponse",
-          "properties": {
-            "items": {
-              "items": {
-                "additionalProperties": false,
-                "name": "Message",
-                "properties": {
-                  "content": {
-                    "type": "string"
-                  },
-                  "desc": {
-                    "description": "User-facing short notification summary.",
-                    "type": "string"
-                  },
-                  "id": {
-                    "type": "string"
-                  },
-                  "read": {
-                    "type": "boolean"
-                  },
-                  "time": {
-                    "type": "string"
-                  },
-                  "title": {
-                    "type": "string"
-                  },
-                  "type": {
-                    "enum": [
-                      "info",
-                      "billing",
-                      "warning",
-                      "alert"
-                    ],
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "id",
-                  "title",
-                  "desc",
-                  "content",
-                  "time",
-                  "type",
-                  "read"
-                ],
-                "type": "object"
-              },
-              "type": "array"
-            }
-          },
-          "required": [
-            "items"
-          ],
-          "type": "object"
-        }
-      },
-      "route": "/console/messages",
-      "route_scope": "console",
-      "sdk_api_prefix": "/app/v3/api",
-      "sdk_client": "SdkworkAppClient",
-      "sdk_domain": "communication",
-      "sdk_family": "clawrouter-app-sdk",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-messages/src/messagesService.ts",
-      "tag": "communication",
       "write_tables": []
     },
     {
@@ -27257,6 +29738,21 @@
               "type": "array",
               "uniqueItems": true
             },
+            "circuitBreakerPolicy": {
+              "additionalProperties": false,
+              "name": "ProviderCircuitBreakerPolicy",
+              "properties": {
+                "failureThreshold": {
+                  "maximum": 100,
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "failureThreshold"
+              ],
+              "type": "object"
+            },
             "models": {
               "items": {
                 "maxLength": 128,
@@ -27389,6 +29885,21 @@
                     "type": "string"
                   },
                   "type": "array"
+                },
+                "circuitBreakerPolicy": {
+                  "additionalProperties": false,
+                  "name": "ProviderCircuitBreakerPolicy",
+                  "properties": {
+                    "failureThreshold": {
+                      "maximum": 100,
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "failureThreshold"
+                  ],
+                  "type": "object"
                 },
                 "errors": {
                   "format": "int64",
@@ -27616,14 +30127,20 @@
             "items": {
               "items": {
                 "additionalProperties": false,
+                "name": "RoutingApiKeyItem",
                 "properties": {
+                  "copyableKey": {
+                    "description": "Full plaintext owner API key returned only for authenticated console owner management reads.",
+                    "type": "string"
+                  },
                   "createdAt": {
                     "type": "string"
                   },
-                  "id": {
+                  "displayKey": {
+                    "description": "Masked API key display value. UI must never copy this field as secret material.",
                     "type": "string"
                   },
-                  "key": {
+                  "id": {
                     "type": "string"
                   },
                   "name": {
@@ -27643,7 +30160,7 @@
                 "required": [
                   "id",
                   "name",
-                  "key",
+                  "displayKey",
                   "status",
                   "totalUsage",
                   "createdAt"
@@ -27718,6 +30235,21 @@
                       "type": "string"
                     },
                     "type": "array"
+                  },
+                  "circuitBreakerPolicy": {
+                    "additionalProperties": false,
+                    "name": "ProviderCircuitBreakerPolicy",
+                    "properties": {
+                      "failureThreshold": {
+                        "maximum": 100,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "failureThreshold"
+                    ],
+                    "type": "object"
                   },
                   "errors": {
                     "format": "int64",
@@ -28253,6 +30785,21 @@
                   },
                   "type": "array"
                 },
+                "circuitBreakerPolicy": {
+                  "additionalProperties": false,
+                  "name": "ProviderCircuitBreakerPolicy",
+                  "properties": {
+                    "failureThreshold": {
+                      "maximum": 100,
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "failureThreshold"
+                  ],
+                  "type": "object"
+                },
                 "errors": {
                   "format": "int64",
                   "type": "integer"
@@ -28445,6 +30992,21 @@
                     "type": "string"
                   },
                   "type": "array"
+                },
+                "circuitBreakerPolicy": {
+                  "additionalProperties": false,
+                  "name": "ProviderCircuitBreakerPolicy",
+                  "properties": {
+                    "failureThreshold": {
+                      "maximum": 100,
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "failureThreshold"
+                  ],
+                  "type": "object"
                 },
                 "errors": {
                   "format": "int64",
@@ -28661,6 +31223,22 @@
               "type": "array",
               "uniqueItems": true
             },
+            "circuitBreakerPolicy": {
+              "additionalProperties": false,
+              "name": "ProviderCircuitBreakerPolicy",
+              "nullable": true,
+              "properties": {
+                "failureThreshold": {
+                  "maximum": 100,
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "failureThreshold"
+              ],
+              "type": "object"
+            },
             "models": {
               "items": {
                 "maxLength": 128,
@@ -28789,6 +31367,21 @@
                     "type": "string"
                   },
                   "type": "array"
+                },
+                "circuitBreakerPolicy": {
+                  "additionalProperties": false,
+                  "name": "ProviderCircuitBreakerPolicy",
+                  "properties": {
+                    "failureThreshold": {
+                      "maximum": 100,
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "failureThreshold"
+                  ],
+                  "type": "object"
                 },
                 "errors": {
                   "format": "int64",
@@ -37513,6 +40106,210 @@
     },
     {
       "api_method": "GET",
+      "api_path": "/v1/chat/completions/{completionId}/messages",
+      "api_surface": "openai_v1",
+      "description": "Lists messages for one stored OpenAI-compatible chat completion using the selected user API key.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts#fetchMessages",
+      "kind": "read",
+      "module": "playground",
+      "openapi_exposed": true,
+      "operation": "fetchMessages",
+      "operation_id": "chat.completions.messages.list",
+      "path_params": [
+        "completionId"
+      ],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "limit",
+          "required": false,
+          "schema": {
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        {
+          "in": "query",
+          "name": "order",
+          "required": false,
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ai_request_trace",
+        "ai_usage_fact"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "route": "/playground",
+      "route_scope": "public",
+      "sdk_api_prefix": "/v1",
+      "sdk_client": "SdkworkAiClient",
+      "sdk_domain": "intelligence",
+      "sdk_family": "clawrouter-open-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts",
+      "summary": "Fetch stored Playground chat messages",
+      "tag": "chat",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/v1/chat/completions",
+      "api_surface": "openai_v1",
+      "description": "Lists stored OpenAI-compatible chat completions for the selected user API key and maps them into Playground session summaries.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts#fetchSessions",
+      "kind": "read",
+      "module": "playground",
+      "openapi_exposed": true,
+      "operation": "fetchSessions",
+      "operation_id": "chat.completions.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "limit",
+          "required": false,
+          "schema": {
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        {
+          "in": "query",
+          "name": "order",
+          "required": false,
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ai_request_trace",
+        "ai_usage_fact"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "route": "/playground",
+      "route_scope": "public",
+      "sdk_api_prefix": "/v1",
+      "sdk_client": "SdkworkAiClient",
+      "sdk_domain": "intelligence",
+      "sdk_family": "clawrouter-open-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts",
+      "summary": "Fetch stored Playground chat sessions",
+      "tag": "chat",
+      "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/v1/chat/completions",
+      "api_surface": "openai_v1",
+      "description": "Creates a stored OpenAI-compatible chat completion through the generated AI SDK and returns a Playground assistant message plus session summary.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts#sendMessage",
+      "kind": "create",
+      "module": "playground",
+      "openapi_exposed": true,
+      "operation": "sendMessage",
+      "operation_id": "chat.completions.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "ai_request_trace",
+        "ai_usage_fact"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "PlaygroundChatCompletionCreateRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "PlaygroundChatCompletionCreateRequest",
+          "properties": {
+            "messages": {
+              "items": {
+                "additionalProperties": false,
+                "name": "PlaygroundChatCompletionMessageInput",
+                "properties": {
+                  "content": {
+                    "maxLength": 32768,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "role": {
+                    "enum": [
+                      "user",
+                      "assistant"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "role",
+                  "content"
+                ],
+                "type": "object"
+              },
+              "maxItems": 256,
+              "type": "array"
+            },
+            "metadata": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "model": {
+              "maxLength": 256,
+              "minLength": 1,
+              "type": "string"
+            },
+            "store": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "model",
+            "messages",
+            "store"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/playground",
+      "route_scope": "public",
+      "sdk_api_prefix": "/v1",
+      "sdk_client": "SdkworkAiClient",
+      "sdk_domain": "intelligence",
+      "sdk_family": "clawrouter-open-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts",
+      "summary": "Send Playground chat message",
+      "tag": "chat",
+      "write_tables": [
+        "ai_request_trace",
+        "ai_usage_fact"
+      ]
+    },
+    {
+      "api_method": "GET",
       "api_path": "/app/v3/api/ai/generations",
       "api_surface": "app",
       "file_targets": [],
@@ -37522,7 +40319,7 @@
       "module": "playground",
       "openapi_exposed": true,
       "operation": "fetchGenerationHistory",
-      "operation_id": "generations.list",
+      "operation_id": "generation.list",
       "path_params": [],
       "query_parameters": [],
       "query_parameters_declared": true,
@@ -37545,6 +40342,14 @@
                 "additionalProperties": false,
                 "name": "GenerationHistoryItem",
                 "properties": {
+                  "aspectRatio": {
+                    "enum": [
+                      "1:1",
+                      "16:9",
+                      "9:16"
+                    ],
+                    "type": "string"
+                  },
                   "createdAt": {
                     "maxLength": 64,
                     "type": "string"
@@ -37553,6 +40358,11 @@
                     "maxLength": 32,
                     "minLength": 1,
                     "type": "string"
+                  },
+                  "durationSeconds": {
+                    "maximum": 86400,
+                    "minimum": 0,
+                    "type": "integer"
                   },
                   "id": {
                     "maxLength": 128,
@@ -37566,6 +40376,10 @@
                     },
                     "maxItems": 20,
                     "type": "array"
+                  },
+                  "modelCatalogKey": {
+                    "maxLength": 256,
+                    "type": "string"
                   },
                   "modelInfo": {
                     "maxLength": 256,
@@ -38453,6 +41267,667 @@
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts",
       "tag": "ai",
       "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/ai/generation/agents/runs",
+      "api_surface": "app",
+      "description": "Classifies a free-form generation prompt into a target modality and creates an auditable generation agent run with step and metering metadata for the active app user.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts#runAgentGeneration",
+      "kind": "create",
+      "module": "playground",
+      "openapi_exposed": true,
+      "operation": "runAgentGeneration",
+      "operation_id": "generation.agent.runs.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "ai_agent",
+        "ai_agent_version",
+        "ai_agent_tool_binding",
+        "ai_agent_mcp_server",
+        "ai_model_vendor",
+        "ai_model",
+        "ai_model_capability"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "GenerationAgentRunCreateRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "GenerationAgentRunCreateRequest",
+          "properties": {
+            "generationConfig": {
+              "additionalProperties": false,
+              "name": "GenerationAgentGenerationConfig",
+              "properties": {
+                "aspectRatio": {
+                  "enum": [
+                    "1:1",
+                    "16:9",
+                    "9:16"
+                  ],
+                  "type": "string"
+                },
+                "durationSeconds": {
+                  "maximum": 600,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "imageCount": {
+                  "maximum": 8,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "quality": {
+                  "enum": [
+                    "standard",
+                    "high"
+                  ],
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "prompt": {
+              "maxLength": 4096,
+              "minLength": 1,
+              "type": "string"
+            },
+            "referenceImages": {
+              "items": {
+                "additionalProperties": false,
+                "name": "GenerationAgentReferenceImageInput",
+                "properties": {
+                  "assetId": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "dataUrl": {
+                    "maxLength": 10485760,
+                    "type": "string"
+                  },
+                  "mimeType": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "name": {
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sizeBytes": {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "url": {
+                    "maxLength": 2048,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "type": "array"
+            },
+            "selectedModel": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "targetType": {
+              "enum": [
+                "image",
+                "video",
+                "music",
+                "audio",
+                "sfx"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "prompt"
+          ],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "GenerationAgentRunCreateResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "GenerationAgentRunCreateResponse",
+          "properties": {
+            "agent": {
+              "additionalProperties": false,
+              "name": "GenerationAgentSnapshot",
+              "properties": {
+                "id": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "model": {
+                  "maxLength": 128,
+                  "nullable": true,
+                  "type": "string"
+                },
+                "name": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "versionId": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "versionId",
+                "name"
+              ],
+              "type": "object"
+            },
+            "item": {
+              "additionalProperties": false,
+              "name": "GenerationHistoryItem",
+              "properties": {
+                "aspectRatio": {
+                  "enum": [
+                    "1:1",
+                    "16:9",
+                    "9:16"
+                  ],
+                  "type": "string"
+                },
+                "createdAt": {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                "date": {
+                  "maxLength": 32,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "durationSeconds": {
+                  "maximum": 86400,
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "id": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "images": {
+                  "items": {
+                    "maxLength": 2048,
+                    "type": "string"
+                  },
+                  "maxItems": 20,
+                  "type": "array"
+                },
+                "modelCatalogKey": {
+                  "maxLength": 256,
+                  "type": "string"
+                },
+                "modelInfo": {
+                  "maxLength": 256,
+                  "type": "string"
+                },
+                "prompt": {
+                  "maxLength": 4096,
+                  "type": "string"
+                },
+                "status": {
+                  "enum": [
+                    "pending",
+                    "processing",
+                    "completed",
+                    "failed",
+                    "cancelled"
+                  ],
+                  "type": "string"
+                },
+                "type": {
+                  "enum": [
+                    "image",
+                    "images",
+                    "video",
+                    "music",
+                    "audio",
+                    "sfx"
+                  ],
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                "url": {
+                  "maxLength": 2048,
+                  "type": "string"
+                },
+                "videos": {
+                  "items": {
+                    "additionalProperties": false,
+                    "name": "GenerationHistoryMediaItem",
+                    "properties": {
+                      "thumb": {
+                        "maxLength": 2048,
+                        "type": "string"
+                      },
+                      "url": {
+                        "maxLength": 2048,
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "url"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 20,
+                  "type": "array"
+                }
+              },
+              "required": [
+                "id",
+                "date",
+                "prompt",
+                "type",
+                "images",
+                "videos"
+              ],
+              "type": "object"
+            },
+            "meteringEvents": {
+              "items": {
+                "additionalProperties": false,
+                "name": "GenerationAgentMeteringEvent",
+                "properties": {
+                  "quantity": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "token",
+                      "image",
+                      "video",
+                      "audio",
+                      "tool",
+                      "mcp",
+                      "skill",
+                      "storage",
+                      "network"
+                    ],
+                    "type": "string"
+                  },
+                  "usageFactMetadata": {
+                    "additionalProperties": false,
+                    "name": "GenerationAgentUsageFactMetadata",
+                    "properties": {
+                      "agentId": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "agentVersionId": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "mcpServerId": {
+                        "maxLength": 128,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "meteringSource": {
+                        "enum": [
+                          "agent-runtime"
+                        ],
+                        "type": "string"
+                      },
+                      "runId": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "skillId": {
+                        "maxLength": 128,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "stepId": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "toolId": {
+                        "maxLength": 128,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "userId": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "agentId",
+                      "agentVersionId",
+                      "runId",
+                      "stepId",
+                      "userId",
+                      "meteringSource"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "type",
+                  "quantity",
+                  "usageFactMetadata"
+                ],
+                "type": "object"
+              },
+              "maxItems": 64,
+              "type": "array"
+            },
+            "run": {
+              "additionalProperties": false,
+              "name": "GenerationAgentRunSnapshot",
+              "properties": {
+                "id": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "requestId": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "source": {
+                  "enum": [
+                    "generation-agent"
+                  ],
+                  "type": "string"
+                },
+                "status": {
+                  "enum": [
+                    "queued",
+                    "planning",
+                    "running",
+                    "waiting_for_tool",
+                    "succeeded",
+                    "failed",
+                    "cancelled"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "requestId",
+                "source",
+                "status"
+              ],
+              "type": "object"
+            },
+            "status": {
+              "enum": [
+                "pending",
+                "processing",
+                "completed",
+                "failed",
+                "cancelled"
+              ],
+              "type": "string"
+            },
+            "steps": {
+              "items": {
+                "additionalProperties": false,
+                "name": "GenerationAgentRunStepSnapshot",
+                "properties": {
+                  "id": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "index": {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "status": {
+                    "enum": [
+                      "queued",
+                      "running",
+                      "succeeded",
+                      "failed",
+                      "skipped"
+                    ],
+                    "type": "string"
+                  },
+                  "title": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "input",
+                      "memory_retrieval",
+                      "model_call",
+                      "skill_call",
+                      "mcp_tool_call",
+                      "media_generation",
+                      "metering",
+                      "output"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "index",
+                  "type",
+                  "status",
+                  "title"
+                ],
+                "type": "object"
+              },
+              "maxItems": 128,
+              "type": "array"
+            },
+            "targetType": {
+              "enum": [
+                "image",
+                "video",
+                "music",
+                "audio",
+                "sfx"
+              ],
+              "type": "string"
+            },
+            "usage": {
+              "additionalProperties": false,
+              "name": "GenerationAgentUsageSummary",
+              "properties": {
+                "cachedTokens": {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "completionTokens": {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "events": {
+                  "items": {
+                    "additionalProperties": false,
+                    "name": "GenerationAgentMeteringEvent",
+                    "properties": {
+                      "quantity": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "type": {
+                        "enum": [
+                          "token",
+                          "image",
+                          "video",
+                          "audio",
+                          "tool",
+                          "mcp",
+                          "skill",
+                          "storage",
+                          "network"
+                        ],
+                        "type": "string"
+                      },
+                      "usageFactMetadata": {
+                        "additionalProperties": false,
+                        "name": "GenerationAgentUsageFactMetadata",
+                        "properties": {
+                          "agentId": {
+                            "maxLength": 128,
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "agentVersionId": {
+                            "maxLength": 128,
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "mcpServerId": {
+                            "maxLength": 128,
+                            "nullable": true,
+                            "type": "string"
+                          },
+                          "meteringSource": {
+                            "enum": [
+                              "agent-runtime"
+                            ],
+                            "type": "string"
+                          },
+                          "runId": {
+                            "maxLength": 128,
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "skillId": {
+                            "maxLength": 128,
+                            "nullable": true,
+                            "type": "string"
+                          },
+                          "stepId": {
+                            "maxLength": 128,
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "toolId": {
+                            "maxLength": 128,
+                            "nullable": true,
+                            "type": "string"
+                          },
+                          "userId": {
+                            "maxLength": 128,
+                            "minLength": 1,
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "agentId",
+                          "agentVersionId",
+                          "runId",
+                          "stepId",
+                          "userId",
+                          "meteringSource"
+                        ],
+                        "type": "object"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "quantity",
+                      "usageFactMetadata"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 64,
+                  "type": "array"
+                },
+                "imageCount": {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "promptTokens": {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "totalTokens": {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "videoSeconds": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "promptTokens",
+                "cachedTokens",
+                "completionTokens",
+                "totalTokens",
+                "imageCount",
+                "videoSeconds",
+                "events"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "agent",
+            "item",
+            "meteringEvents",
+            "run",
+            "steps",
+            "targetType",
+            "status",
+            "usage"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/playground",
+      "route_scope": "public",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "intelligence",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts",
+      "summary": "Create generation agent run",
+      "tag": "ai",
+      "write_tables": [
+        "ai_agent_run",
+        "ai_agent_run_step",
+        "ai_generation_job",
+        "ai_usage_fact"
+      ]
     },
     {
       "api_method": "GET",
@@ -40643,6 +44118,90 @@
     },
     {
       "api_method": "POST",
+      "api_path": "/app/v3/api/auth/qr_login_codes/confirm",
+      "api_surface": "app",
+      "description": "Confirms a QR login challenge from an already authenticated SDKWork session.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts#confirmLoginQrCode",
+      "kind": "create",
+      "module": "login",
+      "openapi_exposed": true,
+      "operation": "confirmLoginQrCode",
+      "operation_id": "loginQrCodes.confirm",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "iam_session",
+        "iam_user",
+        "iam_security_event"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "IamLoginQrCodeConfirmRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "IamLoginQrCodeConfirmRequest",
+          "properties": {
+            "qrKey": {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "qrKey"
+          ],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "IamLoginQrCodeStatusResponse",
+        "schema": {
+          "additionalProperties": false,
+          "properties": {
+            "session": {
+              "$ref": "#/components/schemas/IamSessionResponse"
+            },
+            "status": {
+              "enum": [
+                "pending",
+                "scanned",
+                "confirmed",
+                "expired"
+              ],
+              "type": "string"
+            },
+            "token": {
+              "$ref": "#/components/schemas/IamSessionResponse"
+            },
+            "userInfo": {
+              "$ref": "#/components/schemas/IamUserResponse"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/auth/login",
+      "route_scope": "public",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "iam",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+      "summary": "Confirm QR login code",
+      "tag": "auth",
+      "write_tables": [
+        "iam_security_event"
+      ]
+    },
+    {
+      "api_method": "POST",
       "api_path": "/app/v3/api/auth/qr_login_codes",
       "api_surface": "app",
       "description": "Creates a short-lived QR login challenge for the shared SDKWork auth surface.",
@@ -42244,6 +45803,66 @@
       "write_tables": []
     },
     {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/auth/verification_policy",
+      "api_surface": "app",
+      "description": "Returns the public email and phone verification policy flags consumed by appbase IAM.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts#fetchClawRouterAuthVerificationPolicy",
+      "kind": "read",
+      "module": "login",
+      "openapi_exposed": true,
+      "operation": "fetchClawRouterAuthVerificationPolicy",
+      "operation_id": "verificationPolicy.retrieve",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ops_config_snapshot"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "AuthVerificationPolicy",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AuthVerificationPolicy",
+          "properties": {
+            "emailCodeLoginEnabled": {
+              "type": "boolean"
+            },
+            "emailRegistrationVerificationRequired": {
+              "type": "boolean"
+            },
+            "phoneCodeLoginEnabled": {
+              "type": "boolean"
+            },
+            "phoneRegistrationVerificationRequired": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "emailCodeLoginEnabled",
+            "emailRegistrationVerificationRequired",
+            "phoneCodeLoginEnabled",
+            "phoneRegistrationVerificationRequired"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/auth/login",
+      "route_scope": "public",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "iam",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts",
+      "summary": "Retrieve public IAM verification policy",
+      "tag": "auth",
+      "write_tables": []
+    },
+    {
       "api_method": "PATCH",
       "api_path": "/backend/v3/api/system/auth/settings",
       "api_surface": "backend",
@@ -42536,25 +46155,27 @@
   },
   "summary": {
     "api_method_counts": {
-      "DELETE": 23,
-      "GET": 131,
-      "PATCH": 6,
-      "POST": 88,
-      "PUT": 16
+      "DELETE": 25,
+      "GET": 139,
+      "PATCH": 7,
+      "POST": 93,
+      "PUT": 17
     },
     "api_surface_counts": {
-      "app": 152,
-      "backend": 112
+      "app": 161,
+      "backend": 117,
+      "openai_v1": 3
     },
-    "operation_count": 264,
+    "operation_count": 281,
     "route_scope_counts": {
-      "admin": 112,
-      "console": 81,
-      "public": 71
+      "admin": 117,
+      "console": 87,
+      "public": 77
     },
     "sdk_client_counts": {
-      "SdkworkAppClient": 152,
-      "SdkworkBackendClient": 112
+      "SdkworkAiClient": 3,
+      "SdkworkAppClient": 161,
+      "SdkworkBackendClient": 117
     }
   }
 }

@@ -9,6 +9,8 @@ type DashboardOverviewSummary struct {
 	MusicRequests int `json:"musicRequests"`
 	RequestCount int `json:"requestCount"`
 	Rpm float64 `json:"rpm"`
+	TotalRequestCount int `json:"totalRequestCount"`
+	TotalUsedCredits float64 `json:"totalUsedCredits"`
 	Tpm float64 `json:"tpm"`
 	UsedCredits float64 `json:"usedCredits"`
 	VideoRequests int `json:"videoRequests"`

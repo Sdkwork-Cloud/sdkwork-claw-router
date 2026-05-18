@@ -4,7 +4,9 @@ package com.sdkwork.clawrouter.backend.model;
 public class IamOrganizationMemberRecord {
     private String id;
     private String joinedAt;
+    private String leftAt;
     private String organizationId;
+    private String remark;
     private String roleCode;
     private String status;
     private String tenantId;
@@ -26,12 +28,28 @@ public class IamOrganizationMemberRecord {
         this.joinedAt = joinedAt;
     }
 
+    public String getLeftAt() {
+        return this.leftAt;
+    }
+    
+    public void setLeftAt(String leftAt) {
+        this.leftAt = leftAt;
+    }
+
     public String getOrganizationId() {
         return this.organizationId;
     }
     
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public String getRemark() {
+        return this.remark;
+    }
+    
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 
     public String getRoleCode() {

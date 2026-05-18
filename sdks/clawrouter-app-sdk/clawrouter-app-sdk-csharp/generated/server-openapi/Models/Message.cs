@@ -10,6 +10,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? Desc { get; set; }
         public string? Id { get; set; }
         public bool? Read { get; set; }
+        public bool? ShowAsPopup { get; set; }
         public string? Time { get; set; }
         public string? Title { get; set; }
         public string? Type { get; set; }

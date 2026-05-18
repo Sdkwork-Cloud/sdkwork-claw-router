@@ -82,12 +82,9 @@ public class BillingApi {
         return try await client.post(ApiPaths.appPath("/billing/account/points/recharges/orders/\(serializePathParameter(orderNo, PathParameterSpec(name: "orderNo", style: "simple", explode: false)))/cancel"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AccountPointsRechargesOrdersCancelResult.self)
     }
 
-    /// List account points recharge packages
-    public func accountPointsRechargesPackagesList(status: String? = nil) async throws -> AccountPointsRechargesPackagesListResult? {
-        let query = buildQueryString([
-            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
-        ])
-        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/billing/account/points/recharges/packages"), query), responseType: AccountPointsRechargesPackagesListResult.self)
+    /// List packages
+    public func accountPointsRechargesPackagesList() async throws -> AccountPointsRechargesPackagesListResult? {
+        return try await client.get(ApiPaths.appPath("/billing/account/points/recharges/packages"), responseType: AccountPointsRechargesPackagesListResult.self)
     }
 
     /// List account points recharge records
@@ -307,7 +304,7 @@ public class BillingApi {
         return try await client.get(ApiPaths.appPath("/billing/vip/pack_groups/\(serializePathParameter(packGroupId, PathParameterSpec(name: "packGroupId", style: "simple", explode: false)))/packs"), responseType: VipPackGroupsPacksListResult.self)
     }
 
-    /// List packages
+    /// List VIP packs
     public func vipPacksList() async throws -> VipPacksListResult? {
         return try await client.get(ApiPaths.appPath("/billing/vip/packs"), responseType: VipPacksListResult.self)
     }

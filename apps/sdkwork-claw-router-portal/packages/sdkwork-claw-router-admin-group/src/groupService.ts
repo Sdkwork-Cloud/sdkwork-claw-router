@@ -203,7 +203,7 @@ function normalizeGroup(value: unknown): GroupData {
   return {
     id: readRequiredString(item, 'id', 'Group id is required'),
     name: readRequiredString(item, 'name', 'Group name is required'),
-    platform: readRequiredString(item, 'platform', 'Group platform is required'),
+    platform: readDisplayString(item, 'platform', 'unknown'),
     billingType: readRequiredString(item, 'billingType', 'Group billing type is required'),
     rateMultiplier: readRequiredNumber(item, 'rateMultiplier', 'Group rate multiplier is required'),
     type: readGroupType(item),
@@ -236,6 +236,11 @@ function readRequiredRecord(value: unknown, message: string): ApiRecord {
 
 function readRequiredNestedRecord(record: ApiRecord, key: string, message: string): ApiRecord {
   return readRequiredRecord(record[key], message);
+}
+
+function readDisplayString(record: ApiRecord, key: string, fallback: string): string {
+  const value = readString(record, key)?.trim();
+  return value ? value : fallback;
 }
 
 function readGroupType(item: ApiRecord): GroupData['type'] {

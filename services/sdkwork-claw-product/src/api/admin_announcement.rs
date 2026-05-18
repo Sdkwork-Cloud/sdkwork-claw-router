@@ -36,6 +36,7 @@ struct AdminAnnouncementCreateRequest {
     title: Option<String>,
     target: Option<String>,
     status: Option<String>,
+    show_as_popup: Option<bool>,
     content: Option<String>,
 }
 
@@ -45,6 +46,7 @@ struct AdminAnnouncementUpdateRequest {
     title: Option<String>,
     target: Option<String>,
     status: Option<String>,
+    show_as_popup: Option<bool>,
     content: Option<String>,
 }
 
@@ -53,6 +55,7 @@ struct NormalizedCreateRequest {
     content: String,
     target: String,
     status: String,
+    show_as_popup: bool,
 }
 
 struct NormalizedUpdateRequest {
@@ -60,6 +63,7 @@ struct NormalizedUpdateRequest {
     content: Option<String>,
     target: Option<String>,
     status: Option<String>,
+    show_as_popup: Option<bool>,
 }
 
 enum AnnouncementCommandBuildError {
@@ -92,6 +96,7 @@ struct AdminAnnouncementItemResponse {
     title: String,
     target: String,
     status: String,
+    show_as_popup: bool,
     date: String,
     content: String,
 }
@@ -287,6 +292,7 @@ fn normalize_create_request(
         )?,
         target: normalize_target(request.target.as_deref())?,
         status: normalize_status(request.status.as_deref())?,
+        show_as_popup: request.show_as_popup.unwrap_or(false),
     })
 }
 
@@ -313,8 +319,14 @@ fn normalize_update_request(
         .as_deref()
         .map(|value| normalize_status(Some(value)))
         .transpose()?;
+    let show_as_popup = request.show_as_popup;
 
-    if title.is_none() && content.is_none() && target.is_none() && status.is_none() {
+    if title.is_none()
+        && content.is_none()
+        && target.is_none()
+        && status.is_none()
+        && show_as_popup.is_none()
+    {
         return Err("announcement update must include at least one editable field".to_owned());
     }
 
@@ -323,6 +335,7 @@ fn normalize_update_request(
         content,
         target,
         status,
+        show_as_popup,
     })
 }
 
@@ -382,6 +395,7 @@ fn build_create_command(
         content: request.content,
         target: request.target,
         status: request.status,
+        show_as_popup: request.show_as_popup,
         request_id: normalize_request_id(headers, &state)?,
         requested_at: current_timestamp_string(),
     })
@@ -402,6 +416,7 @@ fn build_update_command(
         content: request.content,
         target: request.target,
         status: request.status,
+        show_as_popup: request.show_as_popup,
         request_id: normalize_request_id(headers, &state)?,
         requested_at: current_timestamp_string(),
     })
@@ -462,6 +477,7 @@ fn to_item_response(item: AdminAnnouncementItem) -> AdminAnnouncementItemRespons
         title: item.title,
         target: item.target,
         status: item.status,
+        show_as_popup: item.show_as_popup,
         date: item.date,
         content: item.content,
     }

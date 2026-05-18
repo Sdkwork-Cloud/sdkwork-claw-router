@@ -92,12 +92,9 @@ class BillingApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<AccountPointsRechargesOrdersCancelResult>() {})
     }
 
-    /** List account points recharge packages */
-    suspend fun accountPointsRechargesPackagesList(status: String? = null): AccountPointsRechargesPackagesListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/billing/account/points/recharges/packages"), query))
+    /** List packages */
+    suspend fun accountPointsRechargesPackagesList(): AccountPointsRechargesPackagesListResult? {
+        val raw = client.get(ApiPaths.appPath("/billing/account/points/recharges/packages"))
         return client.convertValue(raw, object : TypeReference<AccountPointsRechargesPackagesListResult>() {})
     }
 
@@ -346,7 +343,7 @@ class BillingApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<VipPackGroupsPacksListResult>() {})
     }
 
-    /** List packages */
+    /** List VIP packs */
     suspend fun vipPacksList(): VipPacksListResult? {
         val raw = client.get(ApiPaths.appPath("/billing/vip/packs"))
         return client.convertValue(raw, object : TypeReference<VipPacksListResult>() {})

@@ -11,9 +11,17 @@ pub struct IamOrganizationMemberRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub joined_at: Option<String>,
 
+    /// Left at field on iam organization member record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub left_at: Option<String>,
+
     /// Organization id field on iam organization member record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
+
+    /// Remark field on iam organization member record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub remark: Option<String>,
 
     /// Role code field on iam organization member record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

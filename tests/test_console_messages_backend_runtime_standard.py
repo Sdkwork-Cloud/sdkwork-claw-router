@@ -235,7 +235,7 @@ class ConsoleMessagesBackendRuntimeStandardTest(unittest.TestCase):
             / "messages-response.ts"
         )
         message_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "message.ts"
-        frontend = (
+        compatibility_service = (
             ROOT
             / "apps"
             / "sdkwork-claw-router-portal"
@@ -243,6 +243,15 @@ class ConsoleMessagesBackendRuntimeStandardTest(unittest.TestCase):
             / "sdkwork-claw-router-console-messages"
             / "src"
             / "messagesService.ts"
+        ).read_text(encoding="utf-8")
+        notification_service = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-commons"
+            / "src"
+            / "notificationService.ts"
         ).read_text(encoding="utf-8")
 
         self.assertIn('"Message"', openapi)
@@ -263,14 +272,18 @@ class ConsoleMessagesBackendRuntimeStandardTest(unittest.TestCase):
             sdk_communication,
         )
         self.assertIn("appApiPath(`/communication/notifications`)", sdk_communication)
-        self.assertIn("getClawRouterAppSdkClient().communication.notifications.list()", frontend)
-
-        self.assertIn("Message as SdkMessage", frontend)
-        self.assertIn("export interface Message", frontend)
-        self.assertIn("id: SdkMessage['id'];", frontend)
-        self.assertIn("type: SdkMessage['type'];", frontend)
-        self.assertIn("Promise<Message[]>", frontend)
-        self.assertNotIn("normalizeMessage", frontend)
+        self.assertIn(
+            "getClawRouterAppSdkClient().communication.notifications.list()",
+            notification_service,
+        )
+        self.assertIn("Message as SdkMessage", notification_service)
+        self.assertIn("export interface NotificationItem", notification_service)
+        self.assertIn("id: SdkMessage['id'];", notification_service)
+        self.assertIn("type: SdkMessage['type'];", notification_service)
+        self.assertIn("Promise<NotificationItem[]>", notification_service)
+        self.assertIn("NotificationService.fetchNotifications()", compatibility_service)
+        self.assertNotIn("normalizeMessage", compatibility_service)
+        self.assertNotIn("normalizeMessage", notification_service)
 
 
 if __name__ == "__main__":

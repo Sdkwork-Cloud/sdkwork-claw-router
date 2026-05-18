@@ -186,7 +186,7 @@ def encode_query_value(value: str, allow_reserved: bool) -> str:
 
 class PlatformApi:
     """platform platform API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.apps = PlatformAppsApi(client)
@@ -194,7 +194,7 @@ class PlatformApi:
 
 class PlatformAppsApi:
     """platform platform.apps API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.store = PlatformAppsStoreApi(client)
@@ -202,7 +202,7 @@ class PlatformAppsApi:
 
 class PlatformAppsStoreApi:
     """platform platform.apps.store API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
         self.categories = PlatformAppsStoreCategoriesApi(client)
@@ -226,7 +226,7 @@ class PlatformAppsStoreApi:
 
 class PlatformAppsStoreCategoriesApi:
     """platform platform.apps.store.categories API client."""
-    
+
     def __init__(self, client: HttpClient):
         self._client = client
 

@@ -997,10 +997,9 @@ async fn list_promo_codes(
             uc.use_at::text AS used_at,
             COALESCE(NULLIF(u.email, ''), NULLIF(u.username, ''), '') AS used_by
         FROM plus_user_coupon uc
-        LEFT JOIN plus_user u
-          ON u.id = uc.user_id
-         AND u.tenant_id = uc.tenant_id
-         AND u.organization_id = uc.organization_id
+        LEFT JOIN iam_user u
+          ON u.id = uc.user_id::text
+         AND u.tenant_id = uc.tenant_id::text
         WHERE uc.tenant_id = $1
           AND uc.organization_id = $2
           AND uc.status > 0
@@ -1265,10 +1264,9 @@ async fn list_redemption_records(
           ON c.id = uc.coupon_id
          AND c.tenant_id = uc.tenant_id
          AND c.organization_id = uc.organization_id
-        LEFT JOIN plus_user u
-          ON u.id = uc.user_id
-         AND u.tenant_id = uc.tenant_id
-         AND u.organization_id = uc.organization_id
+        LEFT JOIN iam_user u
+          ON u.id = uc.user_id::text
+         AND u.tenant_id = uc.tenant_id::text
         WHERE uc.tenant_id = $1
           AND uc.organization_id = $2
           AND uc.user_id IS NOT NULL
@@ -1317,10 +1315,9 @@ async fn list_recharge_records(
         FROM plus_vip_recharge vr
         LEFT JOIN plus_vip_recharge_method m
           ON m.id = vr.recharge_method_id
-        LEFT JOIN plus_user u
-          ON u.id = vr.user_id
-         AND u.tenant_id = vr.tenant_id
-         AND u.organization_id = vr.organization_id
+        LEFT JOIN iam_user u
+          ON u.id = vr.user_id::text
+         AND u.tenant_id = vr.tenant_id::text
         WHERE vr.tenant_id = $1
           AND vr.organization_id = $2
         ORDER BY COALESCE(vr.recharge_time, vr.updated_at, vr.created_at) DESC, vr.id DESC
@@ -1355,10 +1352,9 @@ async fn load_recharge_record(
         FROM plus_vip_recharge vr
         LEFT JOIN plus_vip_recharge_method m
           ON m.id = vr.recharge_method_id
-        LEFT JOIN plus_user u
-          ON u.id = vr.user_id
-         AND u.tenant_id = vr.tenant_id
-         AND u.organization_id = vr.organization_id
+        LEFT JOIN iam_user u
+          ON u.id = vr.user_id::text
+         AND u.tenant_id = vr.tenant_id::text
         WHERE vr.tenant_id = $1
           AND vr.organization_id = $2
           AND (
