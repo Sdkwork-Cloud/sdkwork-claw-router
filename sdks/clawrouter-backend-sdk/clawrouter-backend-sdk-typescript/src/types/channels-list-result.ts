@@ -7,7 +7,5 @@ export interface ChannelsListResult {
   /** Data field on channels list result. */
   data?: AdminChannelsResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

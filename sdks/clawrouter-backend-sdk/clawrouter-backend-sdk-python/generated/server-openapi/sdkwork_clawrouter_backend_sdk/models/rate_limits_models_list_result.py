@@ -11,5 +11,4 @@ class RateLimitsModelsListResult:
     """Rate limits models list result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminModelLimitsResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

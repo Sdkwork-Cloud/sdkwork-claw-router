@@ -26,6 +26,7 @@ pub struct RuntimeTomlConfig {
     pub redis: RedisSectionConfig,
     pub security: SecuritySectionConfig,
     pub provider_relay: ProviderRelaySectionConfig,
+    pub provider_adapter: ProviderAdapterSectionConfig,
     pub provider_secret_map: ProviderSecretMapSectionConfig,
     pub usage_settlement: UsageSettlementSectionConfig,
     pub model_ranking: ModelRankingSectionConfig,
@@ -46,6 +47,7 @@ pub struct ServicesSectionConfig {
     pub gateway: ServiceBindSectionConfig,
     pub admin_api: ServiceBindSectionConfig,
     pub app_api: ServiceBindSectionConfig,
+    pub provider_adapter: ServiceBindSectionConfig,
 }
 
 #[derive(Debug, Clone, Default, PartialEq, Eq, Deserialize)]
@@ -145,6 +147,7 @@ pub struct RequestLimitsSectionConfig {
     pub admin_app_json_body_max_bytes: Option<u64>,
     pub admin_skill_json_body_max_bytes: Option<u64>,
     pub forum_json_body_max_bytes: Option<u64>,
+    pub sdk_reference_json_body_max_bytes: Option<u64>,
     pub payment_callback_body_max_bytes: Option<u64>,
 }
 
@@ -241,6 +244,18 @@ pub struct ProviderPassthroughSectionConfig {
     pub auth_value: Option<String>,
     pub auth_value_file: Option<String>,
     pub default_headers: BTreeMap<String, String>,
+}
+
+#[derive(Debug, Clone, Default, PartialEq, Eq, Deserialize)]
+#[serde(default)]
+pub struct ProviderAdapterSectionConfig {
+    pub adapter_base_url: Option<String>,
+    pub manifest: Option<String>,
+    pub manifest_file: Option<String>,
+    pub json: Option<String>,
+    pub json_file: Option<String>,
+    pub gateway_token: Option<String>,
+    pub gateway_token_file: Option<String>,
 }
 
 #[derive(Debug, Clone, Default, PartialEq, Eq, Deserialize)]
@@ -421,6 +436,21 @@ pub fn config_secret_value(
     Ok(normalize_optional_string(config_value))
 }
 
+pub fn config_file_value(
+    name: &str,
+    file_name: &str,
+    config_value: Option<&str>,
+    config_file: Option<&str>,
+) -> Result<Option<String>, String> {
+    if let Some(value) = env_optional(name) {
+        return Ok(Some(value));
+    }
+    if let Some(path) = env_optional(file_name).or_else(|| normalize_optional_string(config_file)) {
+        return read_config_file(file_name, &path).map(Some);
+    }
+    Ok(normalize_optional_string(config_value))
+}
+
 pub fn config_bool(name: &str, config_value: Option<bool>) -> Result<Option<bool>, String> {
     match env_optional(name) {
         Some(value) => parse_bool(name, value.as_str()).map(Some),
@@ -466,6 +496,14 @@ pub fn env_optional(name: &str) -> Option<String> {
 }
 
 pub fn read_secret_file(label: &str, path: &str) -> Result<String, String> {
+    read_nonblank_file(label, path)
+}
+
+pub fn read_config_file(label: &str, path: &str) -> Result<String, String> {
+    read_nonblank_file(label, path)
+}
+
+fn read_nonblank_file(label: &str, path: &str) -> Result<String, String> {
     let path = PathBuf::from(expand_runtime_path_variables(path.trim()));
     let value = std::fs::read_to_string(&path)
         .map_err(|error| format!("failed to read {label} {}: {error}", path.display()))?;

@@ -189,7 +189,7 @@ async fn create_agent(
         Ok(command) => command,
         Err(AppAgentRegistryBuildError::BadRequest(message)) => return bad_request(message),
         Err(AppAgentRegistryBuildError::System(error)) => {
-            return app_agent_registry_system_response("app agent command is invalid", error)
+            return app_agent_registry_system_response("app agent command is invalid", error);
         }
     };
 

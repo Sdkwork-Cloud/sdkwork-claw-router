@@ -4,6 +4,5 @@ package types
 type SessionsCurrentDeleteResult struct {
 	Code string `json:"code"`
 	Data NoData `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

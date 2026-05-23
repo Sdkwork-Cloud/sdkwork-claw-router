@@ -3,7 +3,12 @@ import { Bot } from 'lucide-react';
 import { ChatHistoryItem } from '../ChatHistoryItem';
 import { GenerationChatInput } from '../GenerationChatInput';
 import type { GenerationModality, Modality } from '../../pages/Playground';
-import type { PlaygroundHistoryItem, PlaygroundModelGroup, PlaygroundPreviewSetter } from '../../playgroundTypes';
+import type {
+  PlaygroundGenerationSubmitInput,
+  PlaygroundHistoryItem,
+  PlaygroundModelGroup,
+  PlaygroundPreviewSetter,
+} from '../../playgroundTypes';
 
 export function AgentView({
   agentHistory,
@@ -24,18 +29,19 @@ export function AgentView({
   modelGroups: PlaygroundModelGroup[],
   selectedModels: Record<Modality, string>,
   setSelectedModel: (targetModality: GenerationModality) => (modelId: string) => void,
-  onSubmitGeneration: (input: { prompt: string; selectedModality: GenerationModality; selectedModel?: string }) => Promise<void>,
+  onSubmitGeneration: (input: PlaygroundGenerationSubmitInput) => Promise<void>,
   submitting: boolean,
   submitError: string | null,
 }) {
   const { t } = useTranslation();
+  const sharedContentWidthClassName = 'w-full max-w-[1280px]';
 
   return (
     <div className="flex-1 min-h-0 relative flex flex-col bg-[#111]">
       <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar">
         <div className="flex flex-col min-h-full pb-[240px] pt-16 px-4 md:px-12">
           {agentHistory.length === 0 && (
-            <div className="mx-auto flex w-full max-w-xl flex-1 flex-col items-center justify-center gap-3 text-center">
+            <div className={`mx-auto flex ${sharedContentWidthClassName} flex-1 flex-col items-center justify-center gap-3 text-center`}>
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-cyan-300">
                 <Bot className="h-6 w-6" />
               </div>
@@ -46,7 +52,7 @@ export function AgentView({
 
           {agentHistory.length > 0 && <div className="flex-1 min-h-0" />}
 
-          <div className="w-full max-w-3xl mx-auto flex flex-col gap-10 mt-4">
+          <div className={`mx-auto mt-4 flex flex-col gap-10 ${sharedContentWidthClassName}`}>
              {agentHistory.map((item, index) => {
                 const isNewDate = index === 0 || agentHistory[index-1].date !== item.date;
 

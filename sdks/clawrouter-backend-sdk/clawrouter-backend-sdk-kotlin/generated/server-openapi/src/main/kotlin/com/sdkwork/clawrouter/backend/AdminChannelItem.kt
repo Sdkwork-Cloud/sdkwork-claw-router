@@ -2,10 +2,14 @@ package com.sdkwork.clawrouter.backend
 
 data class AdminChannelItem(
     val accessType: String? = null,
+    val apiKey: String? = null,
     val balance: String? = null,
     val baseUrl: String? = null,
     val capabilities: List<String>? = null,
+    val circuitBreakerPolicy: ProviderCircuitBreakerPolicy? = null,
+    val createdAt: String? = null,
     val errors: Int? = null,
+    val expiresAt: String? = null,
     val id: String? = null,
     val isMultimodal: Boolean? = null,
     val models: List<String>? = null,

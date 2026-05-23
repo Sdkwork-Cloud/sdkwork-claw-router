@@ -71,7 +71,8 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
         self.assertIn("x-timestamp", app_callback)
         self.assertIn("x-sdkwork-signature", app_callback)
         self.assertIn("Wechatpay-Signature", app_callback)
-        self.assertIn("MAX_CALLBACK_BODY_BYTES", app_callback)
+        self.assertIn("DEFAULT_CALLBACK_BODY_MAX_BYTES", app_callback)
+        self.assertIn("RequestLimitsConfig::DEFAULT_PAYMENT_CALLBACK_BODY_MAX_BYTES", app_callback)
         self.assertIn("PaymentWebhookConfig::ENV_PAYMENT_WEBHOOK_SECRET", app_callback)
         self.assertIn('PlusApiResult::error("4001"', app_callback)
         self.assertIn('PlusApiResult::error("4090"', app_callback)
@@ -202,20 +203,25 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
         source = integration_test_path.read_text(encoding="utf-8")
 
         self.assertIn("SqlitePaymentCallbackStore", source)
-        self.assertIn("sqlite_payment_callback_fulfills_recharge_once_and_records_webhook_success", source)
+        self.assertIn("sqlite_payment_callback_fulfills_appbase_recharge_once_and_records_webhook_success", source)
         self.assertIn("sqlite_payment_callback_duplicate_event_does_not_credit_twice", source)
         self.assertIn("sqlite_payment_callback_rejects_nonce_replay", source)
         self.assertIn("sqlite_payment_callback_rejects_amount_mismatch_and_marks_webhook_failed", source)
-        self.assertIn("CREATE TABLE plus_payment_webhook_event", source)
-        self.assertIn("CREATE TABLE plus_payment", source)
-        self.assertIn("CREATE TABLE plus_order", source)
-        self.assertIn("CREATE TABLE plus_vip_recharge", source)
-        self.assertIn("CREATE TABLE plus_account", source)
-        self.assertIn("CREATE TABLE plus_account_history", source)
-        self.assertIn("CREATE TABLE plus_vip_point_change", source)
-        self.assertIn("available_points", source)
-        self.assertIn("plus_account_history", source)
-        self.assertIn("plus_vip_point_change", source)
+        self.assertIn("CREATE TABLE commerce_payment_webhook_event", source)
+        self.assertIn("CREATE TABLE commerce_payment_intent", source)
+        self.assertIn("CREATE TABLE commerce_payment_attempt", source)
+        self.assertIn("CREATE TABLE commerce_order", source)
+        self.assertIn("CREATE TABLE commerce_account", source)
+        self.assertIn("CREATE TABLE commerce_account_ledger_entry", source)
+        self.assertIn("available_amount", source)
+        self.assertIn("commerce_account_ledger_entry", source)
+        self.assertNotIn("CREATE TABLE plus_payment_webhook_event", source)
+        self.assertNotIn("CREATE TABLE plus_payment", source)
+        self.assertNotIn("CREATE TABLE plus_order", source)
+        self.assertNotIn("CREATE TABLE plus_vip_recharge", source)
+        self.assertNotIn("CREATE TABLE plus_account_history", source)
+        self.assertNotIn("CREATE TABLE plus_vip_point_change", source)
+        self.assertNotIn("point_change_uuid", source)
 
     def test_sql_payment_callback_stores_are_atomic_idempotent_and_fulfill_recharge_once(self) -> None:
         for relative in [
@@ -223,13 +229,18 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
             "services/sdkwork-claw-product/src/infrastructure/sql/postgres/payment_callback_store.rs",
         ]:
             store = (ROOT / relative).read_text(encoding="utf-8")
-            self.assertIn("plus_payment_webhook_event", store)
-            self.assertIn("plus_payment", store)
-            self.assertIn("plus_order", store)
-            self.assertIn("plus_vip_recharge", store)
-            self.assertIn("plus_account", store)
-            self.assertIn("plus_account_history", store)
-            self.assertIn("plus_vip_point_change", store)
+            self.assertIn("commerce_payment_webhook_event", store)
+            self.assertIn("commerce_payment_intent", store)
+            self.assertIn("commerce_payment_attempt", store)
+            self.assertIn("commerce_order", store)
+            self.assertIn("commerce_account", store)
+            self.assertIn("commerce_account_ledger_entry", store)
+            self.assertNotIn("plus_payment_webhook_event", store)
+            self.assertNotIn("plus_payment", store)
+            self.assertNotIn("plus_order", store)
+            self.assertNotIn("plus_vip_recharge", store)
+            self.assertNotIn("plus_account_history", store)
+            self.assertNotIn("plus_vip_point_change", store)
             self.assertIn("BEGIN", store.upper())
             self.assertIn("COMMIT", store.upper())
             self.assertIn("begin_webhook_event", store)
@@ -242,29 +253,29 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
             self.assertIn("transaction_id", store)
             self.assertIn("fulfill_recharge_once", store)
             self.assertIn("existing_account_history_count", store)
-            self.assertIn("existing_point_change_count", store)
             self.assertIn("ensure_points_account", store)
             self.assertIn("update_account_points", store)
             self.assertIn("insert_account_history", store)
-            self.assertIn("insert_point_change", store)
-            self.assertIn("status = 2", store)
-            self.assertIn("status = 3", store)
-            self.assertIn("status = 5", store)
-            self.assertIn("status = 1", store)
-            self.assertIn("account_type = 2", store)
+            self.assertNotIn("existing_point_change_count", store)
+            self.assertNotIn("insert_point_change", store)
+            self.assertIn("CommercePaymentStatus::Succeeded.as_str()", store)
+            self.assertIn("CommercePaymentStatus::Failed.as_str()", store)
+            self.assertIn("CommercePaymentStatus::Canceled.as_str()", store)
+            self.assertIn("ORDER_STATUS_PAID", store)
+            self.assertIn("ORDER_STATUS_CANCELLED", store)
             self.assertIn("asset_type", store)
-            self.assertIn("transaction_type", store)
-            self.assertIn("21", store)
-            self.assertIn("'PURCHASE'", store)
+            self.assertIn("CommerceAccountAssetType::Points.as_str()", store)
+            self.assertIn("CommerceLedgerDirection::Credit.as_str()", store)
+            self.assertIn("business_type = 'recharge'", store)
+            self.assertIn("'commerce_payment_attempt'", store)
             self.assertIn("SUCCESS", store)
             self.assertIn("FAILED", store)
-            self.assertIn('status: required_integer_cell(&row, "status", "payment")?', store)
-            self.assertIn('status: required_integer_cell(&row, "status", "vip recharge")?', store)
+            self.assertIn('status: required_string_cell(&row, "status", "payment")?', store)
             self.assertIn("missing payment callback payment status from database row", store)
-            self.assertIn("missing payment callback vip recharge status from database row", store)
             self.assertNotIn("COALESCE(p.status, 0) AS status", store)
             self.assertNotIn("COALESCE(status, 0) AS status", store)
             self.assertNotIn('status: integer_cell(&row, "status")', store)
+            self.assertNotIn('status: required_integer_cell(&row, "status", "payment")?', store)
 
         sqlite_store = (
             ROOT
@@ -274,10 +285,8 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
             ROOT
             / "services/sdkwork-claw-product/src/infrastructure/sql/postgres/payment_callback_store.rs"
         ).read_text(encoding="utf-8")
-        self.assertIn("p.status AS status", sqlite_store)
-        self.assertIn("status AS status", sqlite_store)
-        self.assertIn("CAST(p.status AS TEXT) AS status", postgres_store)
-        self.assertIn("CAST(status AS TEXT) AS status", postgres_store)
+        self.assertIn("pa.status AS status", sqlite_store)
+        self.assertIn("pa.status AS status", postgres_store)
 
     def test_sqlite_and_postgres_payment_callback_stores_preserve_same_fulfillment_semantics(self) -> None:
         sqlite_store = (
@@ -297,35 +306,31 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
         required_semantics = [
             "payment callback nonce replay detected",
             "payment callback amount does not match payment amount",
-            "payment callback points recharge record was not found",
+            "payment callback points payload is required for recharge",
             "duplicate webhook event ignored",
             "payment callback fulfilled recharge successfully",
-            "plus_payment_webhook_event",
-            "plus_payment",
-            "plus_order",
-            "plus_vip_recharge",
-            "plus_account",
-            "plus_account_history",
-            "plus_vip_point_change",
-            "status = 2",
-            "status = 3",
-            "status = 5",
-            "status = 1",
-            "account_type = 2",
+            "commerce_payment_webhook_event",
+            "commerce_payment_intent",
+            "commerce_payment_attempt",
+            "commerce_order",
+            "commerce_account",
+            "commerce_account_ledger_entry",
+            "CommercePaymentStatus::Succeeded.as_str()",
+            "CommercePaymentStatus::Failed.as_str()",
+            "CommercePaymentStatus::Canceled.as_str()",
+            "ORDER_STATUS_PAID",
+            "ORDER_STATUS_CANCELLED",
             "asset_type",
-            "transaction_type",
-            "21",
-            "source_type = 'PURCHASE'",
+            "CommerceAccountAssetType::Points.as_str()",
+            "CommerceLedgerDirection::Credit.as_str()",
+            "'commerce_payment_attempt'",
             "existing_account_history_count",
-            "existing_point_change_count",
             "finish_webhook_event",
             '"SUCCESS"',
             '"FAILED"',
             "'RECEIVED'",
-            'required_integer_cell(&row, "status", "payment")?',
-            'required_integer_cell(&row, "status", "vip recharge")?',
+            'required_string_cell(&row, "status", "payment")?',
             "missing payment callback payment status from database row",
-            "missing payment callback vip recharge status from database row",
         ]
         for semantic in required_semantics:
             self.assertIn(semantic, sqlite_store)
@@ -335,12 +340,16 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
             "COALESCE(p.status, 0) AS status",
             "COALESCE(status, 0) AS status",
             'status: integer_cell(&row, "status")',
+            "plus_payment_webhook_event",
+            "plus_vip_recharge",
+            "plus_account_history",
+            "plus_vip_point_change",
         ]:
             self.assertNotIn(forbidden, sqlite_store)
             self.assertNotIn(forbidden, postgres_store)
 
         self.assertIn("FOR UPDATE", postgres_store)
-        self.assertIn("FOR UPDATE OF p, o", postgres_store)
+        self.assertIn("FOR UPDATE OF pa, o, pi", postgres_store)
 
     def test_payment_callback_amount_uses_exact_decimal_contract_not_binary_float(self) -> None:
         callback_port = (

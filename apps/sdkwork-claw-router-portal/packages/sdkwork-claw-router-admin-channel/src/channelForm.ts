@@ -13,6 +13,7 @@ export type ChannelFormValues = {
   baseUrl: string;
   apiKey?: string;
   secretRef?: string;
+  expiresAt?: string;
   capabilities: string[];
   models: string[];
   circuitBreakerEnabled?: boolean;
@@ -98,9 +99,10 @@ export function createChannelInputFromForm(values: ChannelFormValues): ChannelCr
     baseUrl: optionalText(values.baseUrl),
     apiKey: optionalText(values.apiKey),
     secretRef: optionalText(values.secretRef),
+    expiresAt: optionalText(values.expiresAt),
     capabilities: normalizedCapabilities(values.capabilities),
     models: normalizedTextArray(values.models),
-    circuitBreakerPolicy: normalizeCircuitBreakerPolicy(values, false),
+    circuitBreakerPolicy: normalizeCreateCircuitBreakerPolicy(values),
     weight,
     status: channelStatus(values.status),
   });
@@ -116,6 +118,7 @@ export function createChannelUpdateInputFromForm(values: ChannelFormValues): Cha
     baseUrl: optionalText(values.baseUrl),
     apiKey: optionalText(values.apiKey),
     secretRef: optionalText(values.secretRef),
+    expiresAt: values.expiresAt === undefined ? undefined : optionalText(values.expiresAt) ?? null,
     capabilities: normalizedCapabilities(values.capabilities),
     models: normalizedTextArray(values.models),
     circuitBreakerPolicy: 'circuitBreakerEnabled' in values
@@ -240,6 +243,11 @@ function normalizeCircuitBreakerPolicy(
     throw new Error('circuitBreakerPolicy.failureThreshold must be between 1 and 100');
   }
   return { failureThreshold };
+}
+
+function normalizeCreateCircuitBreakerPolicy(values: ChannelFormValues): ChannelCreateInput['circuitBreakerPolicy'] {
+  const policy = normalizeCircuitBreakerPolicy(values, false);
+  return policy === null ? undefined : policy;
 }
 
 function channelStatus(value: string): NonNullable<ChannelCreateInput['status']> {

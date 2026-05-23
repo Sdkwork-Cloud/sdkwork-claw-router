@@ -11,5 +11,4 @@ class ModelRankingsJobsListResult:
     """Model rankings jobs list result schema exposed by Claw Router."""
     code: str
     data: Optional[ModelRankingRefreshJobHistoryPage] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

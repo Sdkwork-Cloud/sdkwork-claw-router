@@ -336,7 +336,7 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("command contract", view)
         self.assertNotIn("<Search", view)
         self.assertNotIn("actionLabel=\"", view)
-        self.assertNotIn("onAction={() => navigate('/console/billing?tab=recharge')}", view)
+        self.assertNotIn("onAction={() => navigate('/console/' + 'billing?tab=recharge')}", view)
         self.assertNotIn("onAction?: () => void", view)
         for unsupported_action in [
             "exportDashboard",

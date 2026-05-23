@@ -81,11 +81,12 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 
 - `client.getAgents()` - agents API
 - `client.getAi()` - ai API
-- `client.getBilling()` - billing API
+- `client.getCommerce()` - commerce API
 - `client.getContent()` - content API
 - `client.getEcosystem()` - ecosystem API
 - `client.getIam()` - iam API
 - `client.getIntegration()` - integration API
+- `client.getOpenPlatform()` - open_platform API
 - `client.getPlatform()` - platform API
 - `client.getSystem()` - system API
 
@@ -102,7 +103,7 @@ params.put("status", "active");
 params.put("visibility", "private");
 params.put("page", 5);
 params.put("page_size", 6);
-AgentsListResult result = client.getAgents().list(params);
+AgentDefinitionsListResult result = client.getAgents().agentDefinitionsList(params);
 System.out.println(result);
 ```
 
@@ -114,11 +115,11 @@ ModelVendorsListResult result = client.getAi().modelVendorsList();
 System.out.println(result);
 ```
 
-### billing
+### commerce
 
 ```java
-// List referral stats
-ReferralsStatsListResult result = client.getBilling().referralsStatsList();
+// Commerce Reports Payment Reconciliation Retrieve
+CommerceReportsPaymentReconciliationRetrieveResult result = client.getCommerce().reportsPaymentReconciliationRetrieve();
 System.out.println(result);
 ```
 
@@ -154,19 +155,21 @@ ChannelsListResult result = client.getIntegration().channelsList();
 System.out.println(result);
 ```
 
+### open_platform
+
+```java
+// List open platform providers
+Map<String, Object> params = new LinkedHashMap<>();
+params.put("status", "active");
+ProvidersListResult result = client.getOpenPlatform().providersList(params);
+System.out.println(result);
+```
+
 ### platform
 
 ```java
-// List apps
-Map<String, Object> params = new LinkedHashMap<>();
-params.put("q", "q");
-params.put("status", "ACTIVE");
-params.put("market_status", "DRAFT");
-params.put("app_type", "app-type");
-params.put("page", 5);
-params.put("page_size", 6);
-String xRequestId = "X-Request-Id";
-AppsListResult result = client.getPlatform().appsList(params, xRequestId);
+// List app categories
+AppsCategoriesListResult result = client.getPlatform().appsCategoriesList();
 System.out.println(result);
 ```
 

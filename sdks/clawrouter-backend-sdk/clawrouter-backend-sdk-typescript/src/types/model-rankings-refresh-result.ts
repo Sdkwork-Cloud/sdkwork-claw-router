@@ -7,7 +7,5 @@ export interface ModelRankingsRefreshResult {
   /** Data field on model rankings refresh result. */
   data?: ModelRankingRefreshTriggerResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

@@ -3,13 +3,17 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
+import { AdminAnalyticsService } from "./packages/sdkwork-claw-router-admin-analytics/src/analyticsService.ts";
 import { AdminDashboardService } from "./packages/sdkwork-claw-router-admin-dashboard/src/dashboardService.ts";
-import { FinanceService } from "./packages/sdkwork-claw-router-admin-finance/src/financeService.ts";
-import { buildFinanceOverviewCards, buildFinanceReportCsv } from "./packages/sdkwork-claw-router-admin-finance/src/financeViewModel.ts";
+import {
+  backendCommerceReportsOrderRevenueList,
+  backendInvoicesTitlesList,
+} from "./packages/sdkwork-claw-router-admin-finance/src/financeService.ts";
 import { MonitorService } from "./packages/sdkwork-claw-router-admin-monitor/src/monitorService.ts";
 import { createModelInputFromForm, updateModelInputFromForm } from "./packages/sdkwork-claw-router-admin-model/src/modelForm.ts";
 import { ModelService, type Model } from "./packages/sdkwork-claw-router-admin-model/src/modelService.ts";
 import { RecordService } from "./packages/sdkwork-claw-router-admin-record/src/recordService.ts";
+import { SiteSettingsService } from "./packages/sdkwork-claw-router-admin-site/src/SiteSettingsService.ts";
 
 const originalFetch = globalThis.fetch;
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
@@ -91,6 +95,55 @@ function readAdminDashboardSource(): string {
   );
 }
 
+function readAdminAnalyticsSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-analytics/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+}
+
+function readAdminAnalyticsServiceSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-analytics/src/analyticsService.ts", import.meta.url),
+    "utf8",
+  );
+}
+
+function readI18nSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url),
+    "utf8",
+  );
+}
+
+function readAdminLayoutSource(): string {
+  return readFileSync(new URL("./src/AdminLayout.tsx", import.meta.url), "utf8");
+}
+
+function readAppSource(): string {
+  return readFileSync(new URL("./src/App.tsx", import.meta.url), "utf8");
+}
+
+function readAdminAnalyticsContractSource(): string {
+  return readFileSync(new URL("../../docs/schema-registry/frontend-field-contracts.yaml", import.meta.url), "utf8");
+}
+
+function readAdminAnalyticsRouteClassificationSource(): string {
+  return readFileSync(new URL("../../docs/schema-registry/frontend-route-classification.yaml", import.meta.url), "utf8");
+}
+
+function readClawRouterTablesRegistrySource(): string {
+  return readFileSync(new URL("../../docs/schema-registry/sdkwork-claw-router.tables.yaml", import.meta.url), "utf8");
+}
+
+function readFrontendContractSource(): string {
+  return readFileSync(new URL("../../docs/schema-registry/frontend-field-contracts.yaml", import.meta.url), "utf8");
+}
+
+function readSchemaManifestSource(): string {
+  return readFileSync(new URL("../../generated/schema/manifest/schema-manifest.json", import.meta.url), "utf8");
+}
+
 function adminDashboardFixture(overrides: Record<string, unknown> = {}): Record<string, unknown> {
   return {
     userConsumption: [],
@@ -101,6 +154,562 @@ function adminDashboardFixture(overrides: Record<string, unknown> = {}): Record<
     ...overrides,
   };
 }
+
+function adminAnalyticsFixture(overrides: Record<string, unknown> = {}): Record<string, unknown> {
+  return {
+    timeRange: "daily",
+    startTime: "2026-05-01T00:00:00Z",
+    endTime: "2026-05-18T23:59:59Z",
+    limit: 10,
+    summary: {
+      totalUsers: 3,
+      activeUsers: 2,
+      activeModels: 2,
+      totalRequests: 42,
+      successfulRequests: 40,
+      failedRequests: 2,
+      totalTokens: 128000,
+      totalPoints: 91.5,
+      upstreamCost: 38.25,
+      averageTokensPerRequest: 3047.62,
+      averagePointsPerRequest: 2.18,
+      errorRate: 4.76,
+    },
+    trend: [
+      { time: "2026-05-18", requests: 42, tokens: 128000, points: 91.5, users: 2 },
+    ],
+    userRankings: {
+      points: [
+        { rank: 1, userId: "101", userName: "alice", email: "alice@example.com", requestCount: 24, totalTokens: 76000, points: 58.2, modelDistribution: [{ name: "gpt-4o", value: 14, color: "#2563eb" }] },
+      ],
+      tokens: [
+        { rank: 1, userId: "102", userName: "bob", requestCount: 18, totalTokens: 82000, points: 33.3, modelDistribution: [{ name: "claude-sonnet", value: 18, color: "#16a34a" }] },
+      ],
+      requests: [
+        { rank: 1, userId: "101", userName: "alice", requestCount: 24, totalTokens: 76000, points: 58.2, modelDistribution: [{ name: "gpt-4o", value: 14, color: "#2563eb" }] },
+      ],
+    },
+    modelRankings: {
+      points: [
+        { rank: 1, model: "gpt-4o", catalogKey: "openai/gpt-4o", vendor: "openai", modality: "text", requestCount: 24, totalTokens: 76000, points: 58.2, upstreamCost: 21.4, userCount: 2, averageTokensPerRequest: 3166.67, errorRate: 0 },
+      ],
+      tokens: [
+        { rank: 1, model: "claude-sonnet", catalogKey: "anthropic/claude-sonnet", vendor: "anthropic", modality: "text", requestCount: 18, totalTokens: 82000, points: 33.3, upstreamCost: 16.85, userCount: 1, averageTokensPerRequest: 4555.56, errorRate: 5 },
+      ],
+      requests: [
+        { rank: 1, model: "gpt-4o", catalogKey: "openai/gpt-4o", vendor: "openai", modality: "text", requestCount: 24, totalTokens: 76000, points: 58.2, upstreamCost: 21.4, userCount: 2, averageTokensPerRequest: 3166.67, errorRate: 0 },
+      ],
+    },
+    modelDistribution: [{ name: "gpt-4o", value: 24, color: "#2563eb" }],
+    modalityDistribution: [{ name: "text", value: 42, color: "#2563eb" }],
+    insights: [
+      { key: "errorRate", title: "Request failure rate", value: "4.8%", severity: "info", detail: "Failure rate is calculated from request traces." },
+    ],
+    ...overrides,
+  };
+}
+
+function emptyAdminAnalyticsFixture(overrides: Record<string, unknown> = {}): Record<string, unknown> {
+  return adminAnalyticsFixture({
+    summary: {
+      totalUsers: 0,
+      activeUsers: 0,
+      activeModels: 0,
+      totalRequests: 0,
+      successfulRequests: 0,
+      failedRequests: 0,
+      totalTokens: 0,
+      totalPoints: 0,
+      upstreamCost: 0,
+      averageTokensPerRequest: 0,
+      averagePointsPerRequest: 0,
+      errorRate: 0,
+    },
+    trend: [],
+    userRankings: {
+      points: [],
+      tokens: [],
+      requests: [],
+    },
+    modelRankings: {
+      points: [],
+      tokens: [],
+      requests: [],
+    },
+    modelDistribution: [],
+    modalityDistribution: [],
+    insights: [],
+    ...overrides,
+  });
+}
+
+test("admin site settings uses generated backend SDK and is reachable from admin navigation", async () => {
+  const adminLayoutSource = readAdminLayoutSource();
+  const appSource = readAppSource();
+  const i18nSource = readI18nSource();
+  const contractSource = readFrontendContractSource();
+
+  for (const marker of [
+    "/admin/site",
+    "admin.menu.ops.system",
+    "admin.menu.siteSettings",
+  ]) {
+    assert.ok(adminLayoutSource.includes(marker), `missing admin site navigation marker: ${marker}`);
+  }
+
+  assert.ok(appSource.includes("ClawRouterSiteSettingsPage"), "App routes must lazy-load the site settings page");
+  assert.ok(appSource.includes("sdkwork-claw-router-admin-site"), "Site settings page must live in the admin site package");
+  assert.ok(appSource.includes('path="site"'), "App routes must expose /admin/site");
+  assert.ok(i18nSource.includes("admin.siteSettings.title"), "i18n must include admin site settings copy");
+  assert.ok(contractSource.includes("site.settings.retrieve"), "schema registry must declare site settings retrieve");
+  assert.ok(contractSource.includes("site.runtime.retrieve"), "schema registry must declare public site runtime retrieve");
+
+  await withBackendSdkFetch(
+    (url, init) => {
+      const parsed = new URL(url, "http://localhost");
+      assert.equal(parsed.pathname, "/backend/v3/api/system/site/settings");
+      if ((init?.method ?? "GET") === "PATCH") {
+        const body = String(init?.body ?? "");
+        assert.match(body, /"siteName":"Tenant AI Gateway"/);
+        assert.match(body, /"icpRecordNumber":"京ICP备2026000000号-1"/);
+        assert.match(body, /"icpRecordUrl":"https:\/\/beian\.miit\.gov\.cn\//);
+        assert.match(body, /"policeRecordNumber":"京公网安备11010502000000号"/);
+        assert.match(body, /"policeRecordUrl":"https:\/\/www\.beian\.gov\.cn\/portal\/registerSystemInfo\?recordcode=11010502000000"/);
+      }
+      return {
+        siteName: "Tenant AI Gateway",
+        shortName: "Tenant AI",
+        description: "Tenant-branded AI gateway",
+        logoUrl: "https://cdn.example.com/logo.svg",
+        iconUrl: "https://cdn.example.com/icon.svg",
+        faviconUrl: "https://cdn.example.com/favicon.ico",
+        brandColor: "#2563eb",
+        accentColor: "#16a34a",
+        footerCopyright: "Tenant AI. All rights reserved.",
+        seoTitle: "Tenant AI Gateway",
+        seoDescription: "Tenant-branded AI gateway",
+        supportUrl: "https://support.example.com",
+        docsUrl: "https://docs.example.com",
+        privacyUrl: "https://example.com/privacy",
+        termsUrl: "https://example.com/terms",
+        icpRecordNumber: "京ICP备2026000000号-1",
+        icpRecordUrl: "https://beian.miit.gov.cn/",
+        policeRecordNumber: "京公网安备11010502000000号",
+        policeRecordUrl: "https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502000000",
+        customCss: "",
+      };
+    },
+    async (captured) => {
+      const current = await SiteSettingsService.fetchSettings();
+      assert.equal(current.siteName, "Tenant AI Gateway");
+      assert.equal(current.icpRecordNumber, "京ICP备2026000000号-1");
+      assert.equal(current.policeRecordNumber, "京公网安备11010502000000号");
+
+      const saved = await SiteSettingsService.updateSettings({
+        ...current,
+        siteName: "Tenant AI Gateway",
+      });
+      assert.equal(saved.shortName, "Tenant AI");
+      assert.equal(saved.icpRecordNumber, "京ICP备2026000000号-1");
+      assert.equal(saved.icpRecordUrl, "https://beian.miit.gov.cn/");
+      assert.equal(saved.policeRecordNumber, "京公网安备11010502000000号");
+      assert.equal(saved.policeRecordUrl, "https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502000000");
+      assert.deepEqual(
+        captured.map((request) => [request.method, request.url]),
+        [
+          ["GET", "/backend/v3/api/system/site/settings"],
+          ["PATCH", "/backend/v3/api/system/site/settings"],
+        ],
+      );
+    },
+  );
+});
+
+test("admin open platform account management is reachable from admin navigation", () => {
+  const appSource = readFileSync(new URL("./src/App.tsx", import.meta.url), "utf8");
+  const adminLayoutSource = readAdminLayoutSource();
+  const i18nSource = readFileSync(new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url), "utf8");
+  const packageJson = JSON.parse(readFileSync(new URL("./package.json", import.meta.url), "utf8")) as {
+    dependencies: Record<string, string>;
+  };
+
+  assert.equal(packageJson.dependencies["sdkwork-claw-router-admin-open-platform"], "workspace:*");
+  assert.doesNotMatch(appSource, /const OpenPlatformAdmin = lazyRoute\(\(\) => import\('sdkwork-claw-router-admin-open-platform'\), 'OpenPlatformAdmin'\);/);
+  assert.match(appSource, /const WechatOfficialAccountAdmin = lazyRoute<AdminSectionRouteProps>\(\(\) => import\('sdkwork-claw-router-admin-wechat-official-account'\), 'WechatOfficialAccountAdmin'\);/);
+  assert.match(appSource, /const WechatMiniProgramAdmin = lazyRoute<AdminSectionRouteProps>\(\(\) => import\('sdkwork-claw-router-admin-wechat-mini-program'\), 'WechatMiniProgramAdmin'\);/);
+  assert.match(appSource, /<Route path="open-platform" element=\{<Navigate to="\/admin\/open-platform\/official-accounts\/accounts" replace \/>} \/>/);
+  assert.match(adminLayoutSource, /path:\s*'\/admin\/open-platform\/official-accounts\/accounts'/);
+  assert.match(adminLayoutSource, /labelKey:\s*'admin\.menu\.openPlatformOfficialAccountAccounts'/);
+  assert.match(adminLayoutSource, /path:\s*'\/admin\/open-platform\/mini-programs\/accounts'/);
+  assert.match(adminLayoutSource, /labelKey:\s*'admin\.menu\.openPlatformMiniProgramAccounts'/);
+  assert.doesNotMatch(adminLayoutSource, /path:\s*'\/admin\/open-platform',\s*labelKey:\s*'admin\.menu\.openPlatform'/);
+  assert.match(i18nSource, /"admin\.menu\.openPlatformOfficialAccounts":\s*"WeChat Official Accounts"/);
+  assert.match(i18nSource, /"admin\.menu\.openPlatformMiniPrograms":\s*"WeChat Mini Programs"/);
+});
+
+test("admin site settings fills blank filing fields with default compliance information", async () => {
+  await withBackendSdkFetch(
+    (url) => {
+      const parsed = new URL(url, "http://localhost");
+      assert.equal(parsed.pathname, "/backend/v3/api/system/site/settings");
+      return {
+        siteName: "Tenant AI Gateway",
+        shortName: "Tenant AI",
+        description: "Tenant-branded AI gateway",
+        logoUrl: "",
+        iconUrl: "",
+        faviconUrl: "",
+        brandColor: "#2563eb",
+        accentColor: "#16a34a",
+        footerCopyright: "Tenant AI. All rights reserved.",
+        seoTitle: "Tenant AI Gateway",
+        seoDescription: "Tenant-branded AI gateway",
+        supportUrl: "",
+        docsUrl: "https://docs.example.com",
+        privacyUrl: "https://example.com/privacy",
+        termsUrl: "https://example.com/terms",
+        icpRecordNumber: "",
+        icpRecordUrl: "",
+        policeRecordNumber: "   ",
+        policeRecordUrl: "",
+        customCss: "",
+      };
+    },
+    async () => {
+      const current = await SiteSettingsService.fetchSettings();
+      assert.equal(current.icpRecordNumber, "京ICP备2026000000号-1");
+      assert.equal(current.icpRecordUrl, "https://beian.miit.gov.cn/");
+      assert.equal(current.policeRecordNumber, "京公网安备11010502000000号");
+      assert.equal(
+        current.policeRecordUrl,
+        "https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502000000",
+      );
+    },
+  );
+});
+
+test("admin analytics service reads overview through generated backend SDK query path", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      assert.equal(init?.method ?? "GET", "GET");
+      const requestUrl = new URL(url, "http://localhost");
+      assert.equal(requestUrl.pathname, "/backend/v3/api/system/analytics/admin/overview");
+      assert.equal(requestUrl.searchParams.get("time_range"), "monthly");
+      assert.equal(requestUrl.searchParams.get("start_time"), "2026-05-01T00:00:00Z");
+      assert.equal(requestUrl.searchParams.get("end_time"), "2026-05-31T23:59:59Z");
+      assert.equal(requestUrl.searchParams.get("limit"), "12");
+      return adminAnalyticsFixture({
+        timeRange: "monthly",
+        limit: 12,
+      });
+    },
+    async (captured) => {
+      const result = await AdminAnalyticsService.fetchOverview({
+        timeRange: "monthly",
+        startTime: "2026-05-01T00:00:00Z",
+        endTime: "2026-05-31T23:59:59Z",
+        limit: 12,
+      });
+
+      assert.equal(captured.length, 1);
+      assert.equal(result.summary.totalRequests, 42);
+      assert.equal(result.userRankings.points[0].userName, "alice");
+      assert.equal(result.modelRankings.points[0].model, "gpt-4o");
+      assert.equal(result.modelDistribution[0].value, 24);
+    },
+  );
+});
+
+test("admin analytics service keeps backend empty overview as real zero state", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      assert.equal(init?.method ?? "GET", "GET");
+      const requestUrl = new URL(url, "http://localhost");
+      assert.equal(requestUrl.pathname, "/backend/v3/api/system/analytics/admin/overview");
+      return emptyAdminAnalyticsFixture({
+        timeRange: "weekly",
+      });
+    },
+    async () => {
+      const result = await AdminAnalyticsService.fetchOverview({ timeRange: "weekly" });
+
+      assert.equal(result.timeRange, "weekly");
+      assert.equal(result.summary.totalRequests, 0);
+      assert.equal(result.summary.totalTokens, 0);
+      assert.equal(result.summary.totalPoints, 0);
+      assert.equal(result.trend.length, 0);
+      assert.equal(result.userRankings.points.length, 0);
+      assert.equal(result.modelRankings.requests.length, 0);
+      assert.equal(result.modelDistribution.length, 0);
+      assert.equal(result.modalityDistribution.length, 0);
+      assert.equal(result.insights.length, 0);
+    },
+  );
+});
+
+test("admin analytics service keeps empty backend overview truthful instead of inventing usage", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      assert.equal(init?.method ?? "GET", "GET");
+      const requestUrl = new URL(url, "http://localhost");
+      assert.equal(requestUrl.pathname, "/backend/v3/api/system/analytics/admin/overview");
+      return emptyAdminAnalyticsFixture({
+        timeRange: "daily",
+      });
+    },
+    async () => {
+      const result = await AdminAnalyticsService.fetchOverview({ timeRange: "daily" });
+
+      assert.equal(result.summary.totalRequests, 0);
+      assert.equal(result.summary.totalTokens, 0);
+      assert.equal(result.summary.totalPoints, 0);
+      assert.deepEqual(result.trend, []);
+      assert.deepEqual(result.userRankings.points, []);
+      assert.deepEqual(result.userRankings.tokens, []);
+      assert.deepEqual(result.userRankings.requests, []);
+      assert.deepEqual(result.modelRankings.points, []);
+      assert.deepEqual(result.modelDistribution, []);
+      assert.deepEqual(result.modalityDistribution, []);
+      assert.deepEqual(result.insights, []);
+    },
+  );
+});
+
+test("admin analytics service derives only from real partial backend data and never seeds fake ranking rows", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      assert.equal(init?.method ?? "GET", "GET");
+      const requestUrl = new URL(url, "http://localhost");
+      assert.equal(requestUrl.pathname, "/backend/v3/api/system/analytics/admin/overview");
+      return emptyAdminAnalyticsFixture({
+        summary: {
+          totalUsers: 1,
+          activeUsers: 1,
+          activeModels: 1,
+          totalRequests: 9,
+          successfulRequests: 8,
+          failedRequests: 1,
+          totalTokens: 900,
+          totalPoints: 18,
+          upstreamCost: 9,
+          averageTokensPerRequest: 100,
+          averagePointsPerRequest: 2,
+          errorRate: 11.11111111111111,
+        },
+        trend: [],
+        userRankings: {
+          points: [],
+          tokens: [],
+          requests: [],
+        },
+        modelRankings: {
+          points: [],
+          tokens: [],
+          requests: [],
+        },
+        modelDistribution: [],
+        modalityDistribution: [],
+        insights: [],
+      });
+    },
+    async () => {
+      const result = await AdminAnalyticsService.fetchOverview({ timeRange: "daily" });
+
+      assert.equal(result.summary.totalRequests, 9);
+      assert.equal(result.summary.totalTokens, 900);
+      assert.equal(result.userRankings.points.length, 0);
+      assert.equal(result.modelRankings.requests.length, 0);
+      assert.deepEqual(result.modelDistribution, []);
+      assert.deepEqual(result.modalityDistribution, []);
+      assert.equal(result.trend.length, 1);
+      assert.equal(result.trend[0].requests, 9);
+      assert.equal(result.insights.length, 1);
+      assert.equal(result.insights[0].title, "admin.analytics.insights.requestSuccessRate.title");
+    },
+  );
+});
+
+test("admin analytics service derives missing visualization dimensions only from real ranking data", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      assert.equal(init?.method ?? "GET", "GET");
+      const requestUrl = new URL(url, "http://localhost");
+      assert.equal(requestUrl.pathname, "/backend/v3/api/system/analytics/admin/overview");
+      return adminAnalyticsFixture({
+        summary: {
+          totalUsers: 8,
+          activeUsers: 6,
+          activeModels: 3,
+          totalRequests: 7,
+          successfulRequests: 7,
+          failedRequests: 0,
+          totalTokens: 2300,
+          totalPoints: 5.75,
+          upstreamCost: 1.25,
+          averageTokensPerRequest: 328.57,
+          averagePointsPerRequest: 0.82,
+          errorRate: 0,
+        },
+        trend: [],
+        modelDistribution: [],
+        modalityDistribution: [],
+        insights: [],
+      });
+    },
+    async () => {
+      const result = await AdminAnalyticsService.fetchOverview({ timeRange: "daily" });
+
+      assert.equal(result.summary.totalRequests, 7);
+      assert.equal(result.summary.totalTokens, 2300);
+      assert.equal(result.userRankings.points[0].userName, "alice");
+      assert.ok(result.trend.length > 0);
+      assert.ok(result.modelDistribution.length > 0);
+      assert.ok(result.modalityDistribution.length > 0);
+      assert.ok(result.insights.length > 0);
+      assert.deepEqual(result.modelDistribution.map((item) => item.name), ["gpt-4o"]);
+      assert.deepEqual(result.modalityDistribution.map((item) => item.name), ["text"]);
+    },
+  );
+});
+
+test("admin analytics package is routed as a compact statistics workspace", () => {
+  const appSource = readFileSync(new URL("./src/App.tsx", import.meta.url), "utf8");
+  const layoutSource = readFileSync(new URL("./src/AdminLayout.tsx", import.meta.url), "utf8");
+  const packageJson = JSON.parse(readFileSync(new URL("./package.json", import.meta.url), "utf8")) as { dependencies: Record<string, string> };
+  const source = readAdminAnalyticsSource();
+  const serviceSource = readAdminAnalyticsServiceSource();
+
+  assert.equal(packageJson.dependencies["sdkwork-claw-router-admin-analytics"], "workspace:*");
+  assert.match(appSource, /import\('sdkwork-claw-router-admin-analytics'\)/);
+  assert.match(appSource, /<Route path="analytics" element=\{<AnalyticsAdmin \/>}/);
+  assert.match(layoutSource, /path:\s*'\/admin\/analytics'/);
+  assert.match(layoutSource, /labelKey:\s*'admin\.menu\.analytics'/);
+  assert.match(source, /AdminAnalyticsService\.fetchOverview/);
+  assert.match(source, /data-admin-analytics-sidebar/);
+  assert.match(source, /data-admin-analytics-table/);
+  assert.match(source, /data-admin-analytics-metric-card/);
+  assert.match(source, /admin\.analytics\.states\.loadingShort/);
+  assert.doesNotMatch(source, /Math\.random|generateFake|mockAnalytics/i);
+  assert.match(source, /admin\.analytics\.states\.noTrend/);
+  assert.match(source, /admin\.analytics\.states\.noModelDistribution/);
+  assert.match(source, /admin\.analytics\.states\.noUsers/);
+  assert.match(source, /admin\.analytics\.states\.noModels/);
+  assert.doesNotMatch(source, /title="(?:Loading analytics|No distribution data)/);
+  assert.doesNotMatch(serviceSource, /sdkwork-claw-router-commons\/runtime/);
+  assert.doesNotMatch(serviceSource, /Request success rate|Derived from normalized backend analytics summary/);
+  assert.match(serviceSource, /admin\.analytics\.insights\.requestSuccessRate\.title/);
+  assert.match(serviceSource, /admin\.analytics\.insights\.requestSuccessRate\.detail/);
+});
+
+test("admin analytics page localizes controls, generated labels, and backend category sentinels", () => {
+  const source = readAdminAnalyticsSource();
+  const serviceSource = readAdminAnalyticsServiceSource();
+  const i18nSource = readI18nSource();
+
+  const requiredAnalyticsKeys = new Set([
+    "admin.analytics.rankMetric.points",
+    "admin.analytics.rankMetric.tokens",
+    "admin.analytics.rankMetric.requests",
+    "admin.analytics.sections.overview",
+    "admin.analytics.sections.users",
+    "admin.analytics.sections.models",
+    "admin.analytics.sections.distributions",
+    "admin.analytics.sections.insights",
+    "admin.analytics.timeRange.hourly",
+    "admin.analytics.timeRange.daily",
+    "admin.analytics.timeRange.weekly",
+    "admin.analytics.timeRange.monthly",
+    "admin.analytics.timeRange.yearly",
+    "admin.analytics.insights.title",
+    "admin.analytics.labels.unknown",
+    "admin.analytics.labels.others",
+    "admin.analytics.modality.text",
+    "admin.analytics.modality.image",
+    "admin.analytics.modality.video",
+    "admin.analytics.modality.audio",
+    "admin.analytics.modality.music",
+    "admin.analytics.modality.embedding",
+  ]);
+  const staticAnalyticsKeyPattern = /admin\.analytics\.[A-Za-z0-9.]+/g;
+  for (const analyticsSource of [source, serviceSource]) {
+    for (const match of analyticsSource.matchAll(staticAnalyticsKeyPattern)) {
+      const rawKey = match[0];
+      if (!rawKey.endsWith(".")) {
+        requiredAnalyticsKeys.add(rawKey);
+      }
+    }
+  }
+
+  for (const key of requiredAnalyticsKeys) {
+    const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    assert.equal(
+      i18nSource.match(new RegExp(`"${escapedKey}"\\s*:`, "g"))?.length,
+      2,
+      `${key} must be present in both English and Chinese analytics resources`,
+    );
+  }
+
+  assert.match(source, /translateAnalyticsLabel/);
+  assert.match(source, /translateAnalyticsLabel\(item\.modality,\s*t\)/);
+  assert.match(source, /<AnalyticsTooltip\s+t=\{t\}/);
+  assert.match(source, /<InlineDistribution\s+data=\{item\.modelDistribution\}\s+t=\{t\}/);
+  assert.match(source, /i18n\.resolvedLanguage/);
+  assert.doesNotMatch(source, /toLocaleString\('en-US'/);
+
+  assert.doesNotMatch(serviceSource, /createSeededOverview|createSeededDistribution|seedModelPrimary|seedModalityText|Model A|\$\{name\} 2/);
+  assert.doesNotMatch(i18nSource, /admin\.analytics\.labels\.seed/);
+});
+
+test("admin analytics contracts declare the route, SDK runtime, table sources, and all exported view models", () => {
+  const contractSource = readAdminAnalyticsContractSource();
+  const classificationSource = readAdminAnalyticsRouteClassificationSource();
+  const tableRegistrySource = readClawRouterTablesRegistrySource();
+  const schemaManifestSource = readSchemaManifestSource();
+  const analyticsSourcePath = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-analytics/src/analyticsService.ts";
+
+  for (const interfaceName of [
+    "AdminAnalyticsQuery",
+    "PieChartData",
+    "AdminAnalyticsSummary",
+    "AdminAnalyticsTrendPoint",
+    "AdminAnalyticsUserRankItem",
+    "AdminAnalyticsModelRankItem",
+    "AdminAnalyticsInsight",
+    "AdminAnalyticsOverview",
+  ]) {
+    assert.match(
+      contractSource,
+      new RegExp(
+        `(?:^|\\r?\\n)\\s*- route: \\/admin\\/analytics\\r?\\n\\s+source: ${analyticsSourcePath.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\r?\\n\\s+interface: ${interfaceName}\\r?\\n`,
+      ),
+    );
+  }
+
+  assert.match(contractSource, /interface: AdminAnalyticsOverview[\s\S]*?modelDistribution\.name[\s\S]*?insights\.detail/);
+  assert.doesNotMatch(
+    contractSource,
+    /interface: AdminAnalyticsOverview[\s\S]*?fields: \[[^\]]*userRankings\.points[^\]]*\]/,
+  );
+
+  assert.match(
+    classificationSource,
+    /route: \/admin\/analytics[\s\S]*?package: sdkwork-claw-router-admin-analytics[\s\S]*?delivery_kind: sdk_backed_business_runtime[\s\S]*?api_surface: backend/,
+  );
+
+  for (const tableName of ["ai_request_trace", "ai_usage_fact"]) {
+    assert.match(
+      tableRegistrySource,
+      new RegExp(`table: ${tableName}[\\s\\S]*?frontend_routes:\\r?\\n(?:\\s+- [^\\r\\n]+\\r?\\n)*\\s+- \\/admin\\/analytics`),
+    );
+  }
+
+  const schemaManifest = JSON.parse(schemaManifestSource) as {
+    routes: Record<string, { tables: string[]; route_scope: string; required_api_surface: string }>;
+  };
+  assert.deepEqual(schemaManifest.routes["/admin/analytics"]?.tables, ["ai_request_trace", "ai_usage_fact"]);
+  assert.equal(schemaManifest.routes["/admin/analytics"]?.route_scope, "admin");
+  assert.equal(schemaManifest.routes["/admin/analytics"]?.required_api_surface, "backend");
+});
 
 test("admin dashboard service reads generated backend SDK dashboard data", async () => {
   await withBackendSdkFetch(
@@ -227,10 +836,11 @@ test("admin dashboard service derives summary cards from backend snapshot withou
 
 test("admin model form keeps persisted capability fields from the model editor", () => {
   const form = new FormData();
-  form.set("name", "gpt-capability-pro");
+  form.set("model", "gpt-capability-pro");
+  form.set("displayName", "GPT Capability Pro");
   form.set("type", "Chat");
-  form.set("priceIn", "0.120000");
-  form.set("priceOut", "0.450000");
+  form.set("priceIn.global", "0.120000");
+  form.set("priceOut.global", "0.450000");
   form.set("contextTokens", "128k");
   form.set("maxOutputTokens", "8192");
   form.set("description", "Commercial chat model for production traffic.");
@@ -245,10 +855,22 @@ test("admin model form keeps persisted capability fields from the model editor",
   const created = createModelInputFromForm(form, "vendor-1");
   assert.deepEqual(created, {
     vendorId: "vendor-1",
-    name: "gpt-capability-pro",
+    model: "gpt-capability-pro",
+    displayName: "GPT Capability Pro",
     type: "Chat",
     priceIn: "0.120000",
     priceOut: "0.450000",
+    cacheReadPrice: "",
+    cacheWritePrice: "",
+    regionPrices: [
+      {
+        regionCode: "global",
+        priceIn: "0.120000",
+        priceOut: "0.450000",
+        cacheReadPrice: "",
+        cacheWritePrice: "",
+      },
+    ],
     contextTokens: "128k",
     maxOutputTokens: 8192,
     description: "Commercial chat model for production traffic.",
@@ -264,6 +886,9 @@ test("admin model form keeps persisted capability fields from the model editor",
   const currentModel = {
     id: "model-1",
     vendorId: "vendor-1",
+    vendorCode: "openai",
+    model: "gpt-capability-pro",
+    displayName: "GPT Capability Pro",
     name: "gpt-capability-pro",
     type: "Chat",
     priceIn: "0.120000",
@@ -304,10 +929,18 @@ test("admin model service sends capability fields through the generated backend 
       assert.equal(init?.method ?? "GET", "POST");
       assert.deepEqual(JSON.parse(String(init?.body ?? "{}")), {
         vendorId: "vendor-1",
-        name: "gpt-capability-pro",
+        model: "gpt-capability-pro",
+        displayName: "GPT Capability Pro",
         type: "Chat",
         priceIn: "0.120000",
         priceOut: "0.450000",
+        regionPrices: [
+          {
+            regionCode: "global",
+            priceIn: "0.120000",
+            priceOut: "0.450000",
+          },
+        ],
         contextTokens: "128k",
         description: "Commercial chat model for production traffic.",
         capabilityIntro: "Low latency chat, structured output, and tool calling.",
@@ -331,10 +964,13 @@ test("admin model service sends capability fields through the generated backend 
           id: "model-1",
           vendorId: "vendor-1",
           vendorCode: "openai",
-          name: "gpt-capability-pro",
+          model: "gpt-capability-pro",
+          displayName: "GPT Capability Pro",
           type: "Chat",
           priceIn: "0.120000",
           priceOut: "0.450000",
+          cacheReadPrice: "",
+          cacheWritePrice: "",
           status: "active",
           calls: "0",
           description: "Commercial chat model for production traffic.",
@@ -362,7 +998,8 @@ test("admin model service sends capability fields through the generated backend 
     async () => {
       const result = await ModelService.addModel({
         vendorId: "vendor-1",
-        name: "gpt-capability-pro",
+        model: "gpt-capability-pro",
+        displayName: "GPT Capability Pro",
         type: "Chat",
         priceIn: "0.120000",
         priceOut: "0.450000",
@@ -383,143 +1020,41 @@ test("admin model service sends capability fields through the generated backend 
     },
   );
 });
-test("admin finance service reads transaction and billing lists from generated backend SDK data", async () => {
+test("admin finance uses standard commerce management resources without legacy billing routes", async () => {
+  const source = readAdminFinanceSource();
+  const serviceSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-finance/src/financeService.ts", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /AdminResourceCenter/);
+  assert.match(source, /backendInvoicesTitlesList\(DEFAULT_PAGE_PARAMS\)/);
+  assert.match(source, /backendCommerceReportsOrderRevenueList\(DEFAULT_PAGE_PARAMS\)/);
+  assert.match(source, /backendCouponsRedemptionsList\(DEFAULT_PAGE_PARAMS\)/);
+  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.invoices\.titles\.list/);
+  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.commerceReports\.orderRevenue\.list/);
+  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.coupons\.redemptions\.list/);
+  assert.doesNotMatch(serviceSource, /billing\/finance/);
+
   await withBackendSdkFetch(
     (url) => {
-      if (url === "/backend/v3/api/billing/finance/ledger") {
-        return {
-          items: [
-            {
-              id: "txn-1",
-              time: "2026-05-05T08:00:00Z",
-              userId: "user-1",
-              type: "refund",
-              amount: "12.5",
-              balance: "100",
-              description: "Credit refund",
-              status: "pending",
-            },
-          ],
-        };
+      if (url === "/backend/v3/api/invoices/titles?page=1&page_size=100") {
+        return { items: [{ title_no: "title-1", owner_user_id: "user-1", invoice_type: "company", tax_no: "tax-1", status: "active" }] };
       }
-      if (url === "/backend/v3/api/billing/finance/usage_statements") {
-        return {
-          items: [
-            {
-              id: "bill-1",
-              userId: "user-1",
-              period: "2026-05",
-              totalTokens: "12000",
-              totalCost: "36.5",
-              status: "overdue",
-              dueDate: "2026-06-01",
-            },
-          ],
-        };
+      if (url === "/backend/v3/api/commerce_reports/order_revenue?page=1&page_size=100") {
+        return { items: [{ period: "2026-05", order_count: 3, gross_amount: "99.00", currency_code: "CNY", product_type: "membership" }] };
       }
       throw new Error(`unexpected SDK URL: ${url}`);
     },
     async (captured) => {
-      const transactions = await FinanceService.fetchTransactions();
-      const billing = await FinanceService.fetchBilling();
+      await backendInvoicesTitlesList({ page: 1, pageSize: 100 });
+      await backendCommerceReportsOrderRevenueList({ page: 1, pageSize: 100 });
 
       assert.deepEqual(captured.map((request) => request.url), [
-        "/backend/v3/api/billing/finance/ledger",
-        "/backend/v3/api/billing/finance/usage_statements",
+        "/backend/v3/api/invoices/titles?page=1&page_size=100",
+        "/backend/v3/api/commerce_reports/order_revenue?page=1&page_size=100",
       ]);
-      assert.equal(transactions[0].amount, "12.50");
-      assert.equal(transactions[0].status, "pending");
-      assert.equal(billing[0].totalTokens, 12000);
-      assert.equal(billing[0].totalCost, "36.50");
-      assert.equal(billing[0].status, "overdue");
     },
-  );
-});
-
-test("admin finance page derives overview and report export from loaded backend data", () => {
-  const source = readAdminFinanceSource();
-
-  assert.match(source, /const overviewCards = buildFinanceOverviewCards\(transactions, billing\)/);
-  assert.match(source, /const exportCurrentReport = \(\) => \{/);
-  assert.match(source, /buildFinanceReportCsv\(activeTab === 'transactions' \? filteredTransactions : filteredBilling, activeTab\)/);
-  assert.match(source, /new Blob\(\[csv\], \{ type: 'text\/csv;charset=utf-8;' \}\)/);
-  assert.match(source, /disabled=\{totalItems === 0\}/);
-  assert.doesNotMatch(source, /12450\.00/);
-  assert.doesNotMatch(source, /98230\.50/);
-  assert.doesNotMatch(source, /14 笔/);
-  assert.doesNotMatch(source, /<Filter\b/);
-  assert.doesNotMatch(source, />\s*查看详情\s*</);
-
-  const transactions = [
-    {
-      id: "txn-1",
-      time: "2026-05-16T01:00:00Z",
-      userId: "user-1",
-      type: "recharge",
-      amount: "125.50",
-      balance: "125.50",
-      description: "Recharge",
-      status: "success",
-    },
-    {
-      id: "txn-2",
-      time: "2026-05-16T02:00:00Z",
-      userId: "user-2",
-      type: "refund",
-      amount: "-20.00",
-      balance: "10.00",
-      description: "Refund",
-      status: "pending",
-    },
-    {
-      id: "txn-3",
-      time: "2026-05-15T02:00:00Z",
-      userId: "user-3",
-      type: "consume",
-      amount: "-3.25",
-      balance: "8.00",
-      description: "Usage",
-      status: "failed",
-    },
-  ] satisfies Awaited<ReturnType<typeof FinanceService.fetchTransactions>>;
-  const billing = [
-    {
-      id: "bill-1",
-      userId: "user-1",
-      period: "2026-05",
-      totalTokens: 1200,
-      totalCost: "1.50",
-      status: "unpaid",
-      dueDate: "2026-06-01",
-    },
-    {
-      id: "bill-2",
-      userId: "user-2",
-      period: "2026-05",
-      totalTokens: 3400,
-      totalCost: "2.25",
-      status: "overdue",
-      dueDate: "2026-06-02",
-    },
-  ] satisfies Awaited<ReturnType<typeof FinanceService.fetchBilling>>;
-
-  assert.deepEqual(
-    buildFinanceOverviewCards(transactions, billing, "2026-05-16").map(card => [card.title, card.value, card.target]),
-    [
-      ["今日充值总计", "$125.50", "1 笔成功充值"],
-      ["本月消费总计", "$3.25", "1 笔消费流水"],
-      ["今日退款", "$20.00", "1 笔退款流水"],
-      ["待结算账单", "2 笔", "$3.75 待处理"],
-    ],
-  );
-
-  assert.match(
-    buildFinanceReportCsv(transactions.slice(0, 1), "transactions"),
-    /^id,time,userId,type,amount,balance,status,description\r?\ntxn-1,2026-05-16T01:00:00Z,user-1,recharge,125.50,125.50,success,Recharge$/,
-  );
-  assert.match(
-    buildFinanceReportCsv(billing.slice(0, 1), "billing"),
-    /^id,period,userId,totalTokens,totalCost,status,dueDate\r?\nbill-1,2026-05,user-1,1200,1.50,unpaid,2026-06-01$/,
   );
 });
 
@@ -934,299 +1469,6 @@ test("admin dashboard recent usage fails closed when backend returns invalid mon
   );
 });
 
-test("admin finance transaction list fails closed when backend omits stable transaction ids", async () => {
-  await withBackendSdkFetch(
-    (url) => {
-      if (url === "/backend/v3/api/billing/finance/ledger") {
-        return {
-          items: [
-            {
-              time: "2026-05-05T08:00:00Z",
-              userId: "user-1",
-              type: "refund",
-              amount: "12.5",
-              balance: "100",
-              description: "Credit refund",
-              status: "pending",
-            },
-          ],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => FinanceService.fetchTransactions(),
-        /Transaction id is required/,
-      );
-    },
-  );
-});
-
-test("admin finance transaction list fails closed when backend returns malformed rows", async () => {
-  await withBackendSdkFetch(
-    (url) => {
-      if (url === "/backend/v3/api/billing/finance/ledger") {
-        return {
-          items: [
-            {
-              id: "txn-1",
-              time: "2026-05-05T08:00:00Z",
-              userId: "user-1",
-              type: "refund",
-              amount: "12.5",
-              balance: "100",
-              description: "Credit refund",
-              status: "pending",
-            },
-            "malformed-row",
-          ],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => FinanceService.fetchTransactions(),
-        /Transaction record is required/,
-      );
-    },
-  );
-});
-
-test("admin finance transaction list fails closed when backend returns unsupported transaction types", async () => {
-  await withBackendSdkFetch(
-    (url) => {
-      if (url === "/backend/v3/api/billing/finance/ledger") {
-        return {
-          items: [
-            {
-              id: "txn-1",
-              time: "2026-05-05T08:00:00Z",
-              userId: "user-1",
-              type: "manual-adjustment",
-              amount: "12.5",
-              balance: "100",
-              description: "Manual adjustment",
-              status: "pending",
-            },
-          ],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => FinanceService.fetchTransactions(),
-        /Unsupported transaction type: manual-adjustment/,
-      );
-    },
-  );
-});
-
-test("admin finance transaction list fails closed when backend omits required ledger fields", async () => {
-  for (const [field, message] of [
-    ["time", /Transaction time is required/],
-    ["userId", /Transaction user id is required/],
-    ["amount", /Transaction amount is required/],
-    ["balance", /Transaction balance is required/],
-    ["description", /Transaction description is required/],
-  ] as const) {
-    await withBackendSdkFetch(
-      (url) => {
-        if (url === "/backend/v3/api/billing/finance/ledger") {
-          const transaction = {
-            id: "txn-1",
-            time: "2026-05-05T08:00:00Z",
-            userId: "user-1",
-            type: "refund",
-            amount: "12.5",
-            balance: "100",
-            description: "Credit refund",
-            status: "pending",
-          } as Record<string, unknown>;
-          delete transaction[field];
-          return { items: [transaction] };
-        }
-        throw new Error(`unexpected SDK URL: ${url}`);
-      },
-      async () => {
-        await assert.rejects(
-          () => FinanceService.fetchTransactions(),
-          message,
-        );
-      },
-    );
-  }
-});
-
-test("admin finance transaction list fails closed when backend returns invalid money or status values", async () => {
-  for (const [patch, message] of [
-    [{ amount: "not-money" }, /Transaction amount must be a money string/],
-    [{ balance: "12.345" }, /Transaction balance must be a money string/],
-    [{ status: "settled" }, /Unsupported transaction status: settled/],
-  ] as const) {
-    await withBackendSdkFetch(
-      (url) => {
-        if (url === "/backend/v3/api/billing/finance/ledger") {
-          return {
-            items: [
-              {
-                id: "txn-1",
-                time: "2026-05-05T08:00:00Z",
-                userId: "user-1",
-                type: "refund",
-                amount: "12.5",
-                balance: "100",
-                description: "Credit refund",
-                status: "pending",
-                ...patch,
-              },
-            ],
-          };
-        }
-        throw new Error(`unexpected SDK URL: ${url}`);
-      },
-      async () => {
-        await assert.rejects(
-          () => FinanceService.fetchTransactions(),
-          message,
-        );
-      },
-    );
-  }
-});
-
-test("admin finance billing list fails closed when backend omits stable billing ids", async () => {
-  await withBackendSdkFetch(
-    (url) => {
-      if (url === "/backend/v3/api/billing/finance/usage_statements") {
-        return {
-          items: [
-            {
-              userId: "user-1",
-              period: "2026-05",
-              totalTokens: "12000",
-              totalCost: "36.5",
-              status: "overdue",
-              dueDate: "2026-06-01",
-            },
-          ],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => FinanceService.fetchBilling(),
-        /Billing record id is required/,
-      );
-    },
-  );
-});
-
-test("admin finance billing list fails closed when backend returns malformed rows", async () => {
-  await withBackendSdkFetch(
-    (url) => {
-      if (url === "/backend/v3/api/billing/finance/usage_statements") {
-        return {
-          items: [
-            {
-              id: "bill-1",
-              userId: "user-1",
-              period: "2026-05",
-              totalTokens: "12000",
-              totalCost: "36.5",
-              status: "overdue",
-              dueDate: "2026-06-01",
-            },
-            "malformed-row",
-          ],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => FinanceService.fetchBilling(),
-        /Billing record is required/,
-      );
-    },
-  );
-});
-
-test("admin finance billing list fails closed when backend omits required statement fields", async () => {
-  for (const [field, message] of [
-    ["userId", /Billing user id is required/],
-    ["period", /Billing period is required/],
-    ["totalTokens", /Billing total tokens are required/],
-    ["totalCost", /Billing total cost is required/],
-    ["status", /Billing status is required/],
-    ["dueDate", /Billing due date is required/],
-  ] as const) {
-    await withBackendSdkFetch(
-      (url) => {
-        if (url === "/backend/v3/api/billing/finance/usage_statements") {
-          const billing = {
-            id: "bill-1",
-            userId: "user-1",
-            period: "2026-05",
-            totalTokens: "12000",
-            totalCost: "36.5",
-            status: "overdue",
-            dueDate: "2026-06-01",
-          } as Record<string, unknown>;
-          delete billing[field];
-          return { items: [billing] };
-        }
-        throw new Error(`unexpected SDK URL: ${url}`);
-      },
-      async () => {
-        await assert.rejects(
-          () => FinanceService.fetchBilling(),
-          message,
-        );
-      },
-    );
-  }
-});
-
-test("admin finance billing list fails closed when backend returns invalid statement values", async () => {
-  for (const [patch, message] of [
-    [{ totalTokens: -1 }, /Billing total tokens are required/],
-    [{ totalCost: "not-money" }, /Billing total cost must be a money string/],
-    [{ status: "archived" }, /Unsupported billing status: archived/],
-  ] as const) {
-    await withBackendSdkFetch(
-      (url) => {
-        if (url === "/backend/v3/api/billing/finance/usage_statements") {
-          return {
-            items: [
-              {
-                id: "bill-1",
-                userId: "user-1",
-                period: "2026-05",
-                totalTokens: "12000",
-                totalCost: "36.5",
-                status: "overdue",
-                dueDate: "2026-06-01",
-                ...patch,
-              },
-            ],
-          };
-        }
-        throw new Error(`unexpected SDK URL: ${url}`);
-      },
-      async () => {
-        await assert.rejects(
-          () => FinanceService.fetchBilling(),
-          message,
-        );
-      },
-    );
-  }
-});
-
 test("admin monitor lists fail closed when backend omits stable node or alert ids", async () => {
   await withBackendSdkFetch(
     (url) => {
@@ -1614,5 +1856,47 @@ test("admin record log list fails closed when backend omits or corrupts paginati
         );
       },
     );
+  }
+});
+
+test("admin finance tables fill the available admin viewport", () => {
+  const source = readAdminFinanceSource();
+
+  for (const expected of [
+    "AdminResourceCenter",
+    "tableViewportDataAttribute=\"admin-finance-table-viewport\"",
+    "sections={sections}",
+    "showSectionNavigation={false}",
+  ]) {
+    assert.ok(source.includes(expected), `missing adaptive admin finance table marker: ${expected}`);
+  }
+});
+
+test("admin record table fills the available admin viewport", () => {
+  const source = readAdminRecordSource();
+
+  for (const expected of [
+    "AdminTableShell",
+    "data-admin-record-table-card",
+    "data-admin-record-table-viewport",
+    "flex h-full min-h-0 w-full flex-col",
+    "sticky top-0 z-10",
+    "footer={",
+  ]) {
+    assert.ok(source.includes(expected), `missing adaptive admin record table marker: ${expected}`);
+  }
+});
+
+test("admin monitor table fills the available admin viewport", () => {
+  const source = readAdminMonitorSource();
+
+  for (const expected of [
+    "AdminTableShell",
+    "data-admin-monitor-table-card",
+    "data-admin-monitor-table-viewport",
+    "flex h-full min-h-0 w-full flex-col",
+    "sticky top-0 z-10",
+  ]) {
+    assert.ok(source.includes(expected), `missing adaptive admin monitor table marker: ${expected}`);
   }
 });

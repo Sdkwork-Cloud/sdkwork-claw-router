@@ -28,6 +28,7 @@ const MAX_ACCESS_TYPE_LEN: usize = 64;
 const MAX_BASE_URL_LEN: usize = 512;
 const MAX_SECRET_REF_LEN: usize = 256;
 const MAX_API_KEY_LEN: usize = 4096;
+const MAX_EXPIRES_AT_LEN: usize = 64;
 const MAX_MODEL_LEN: usize = 128;
 const MAX_MODELS: usize = 200;
 const MAX_CAPABILITIES: usize = 16;
@@ -62,6 +63,7 @@ struct NormalizedCreateRequest {
     timeout_ms: Option<i64>,
     retry_policy_json: Option<String>,
     circuit_breaker_policy_json: Option<String>,
+    expires_at: Option<String>,
     weight: i64,
     status: String,
 }
@@ -84,6 +86,7 @@ struct NormalizedUpdateRequest {
     timeout_ms: Option<Option<i64>>,
     retry_policy_json: Option<Option<String>>,
     circuit_breaker_policy_json: Option<Option<String>>,
+    expires_at: Option<Option<String>>,
     weight: Option<i64>,
     status: Option<String>,
 }
@@ -118,7 +121,7 @@ struct AdminChannelTestResponse {
     success: bool,
     status: String,
     latency: String,
-    item: AdminChannelItemResponse,
+    item: AdminChannelSafeItemResponse,
 }
 
 #[derive(Debug, Serialize)]
@@ -133,6 +136,41 @@ struct AdminChannelItemResponse {
     base_url: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
     secret_ref: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    api_key: Option<String>,
+    created_at: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    expires_at: Option<String>,
+    models: Vec<String>,
+    capabilities: Vec<String>,
+    is_multimodal: bool,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    timeout_ms: Option<i64>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    retry_policy: Option<AdminChannelRetryPolicyResponse>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    circuit_breaker_policy: Option<AdminChannelCircuitBreakerPolicyResponse>,
+    weight: i64,
+    status: String,
+    balance: String,
+    errors: i64,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminChannelSafeItemResponse {
+    id: String,
+    name: String,
+    vendor: String,
+    protocol: String,
+    access_type: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    base_url: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    masked_label: Option<String>,
+    created_at: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    expires_at: Option<String>,
     models: Vec<String>,
     capabilities: Vec<String>,
     is_multimodal: bool,
@@ -335,7 +373,7 @@ async fn test_channel(
             success: outcome.success,
             status: outcome.status,
             latency: outcome.latency,
-            item: to_item_response(outcome.item),
+            item: to_safe_item_response(outcome.item),
         }))
         .into_response(),
         Ok(None) => not_found_response("channel was not found"),
@@ -418,6 +456,9 @@ fn normalize_create_request(
     let retry_policy_json = optional_non_null_retry_policy_json(&request, "retryPolicy")?;
     let circuit_breaker_policy_json =
         optional_non_null_circuit_breaker_policy_json(&request, "circuitBreakerPolicy")?;
+    let expires_at = optional_text(&request, "expiresAt", "expiresAt", MAX_EXPIRES_AT_LEN)?
+        .map(validate_expires_at)
+        .transpose()?;
     let weight = optional_integer(&request, "weight")?.unwrap_or(100);
     let weight = normalize_weight(weight)?;
     let status = optional_text(&request, "status", "channel status", 32)?
@@ -442,6 +483,7 @@ fn normalize_create_request(
         timeout_ms,
         retry_policy_json,
         circuit_breaker_policy_json,
+        expires_at,
         weight,
         status,
     })
@@ -492,6 +534,10 @@ fn normalize_update_request(
     let retry_policy_json = optional_retry_policy_json(&request, "retryPolicy")?;
     let circuit_breaker_policy_json =
         optional_circuit_breaker_policy_json(&request, "circuitBreakerPolicy")?;
+    let expires_at =
+        optional_nullable_text(&request, "expiresAt", "expiresAt", MAX_EXPIRES_AT_LEN)?
+            .map(|value| value.map(validate_expires_at).transpose())
+            .transpose()?;
     let weight = optional_integer(&request, "weight")?
         .map(normalize_weight)
         .transpose()?;
@@ -510,6 +556,7 @@ fn normalize_update_request(
         && timeout_ms.is_none()
         && retry_policy_json.is_none()
         && circuit_breaker_policy_json.is_none()
+        && expires_at.is_none()
         && weight.is_none()
         && status.is_none()
     {
@@ -533,6 +580,7 @@ fn normalize_update_request(
         timeout_ms,
         retry_policy_json,
         circuit_breaker_policy_json,
+        expires_at,
         weight,
         status,
     })
@@ -1084,7 +1132,7 @@ fn normalize_capabilities(capabilities: Vec<String>) -> Result<Vec<String>, Stri
                 return Err(
                     "capabilities must contain only llm, image, audio, music, sfx, or video"
                         .to_owned(),
-                )
+                );
             }
         }
     }
@@ -1118,6 +1166,17 @@ fn normalize_status(value: &str) -> Result<String, String> {
         "active" | "disabled" | "error" => Ok(value),
         _ => Err("channel status must be one of active, disabled, error".to_owned()),
     }
+}
+
+fn validate_expires_at(value: String) -> Result<String, String> {
+    let value = value.trim();
+    if value.is_empty() {
+        return Err("expiresAt must be a non-empty timestamp or null".to_owned());
+    }
+    if !value.bytes().all(|byte| (0x21..=0x7e).contains(&byte)) {
+        return Err("expiresAt must contain only visible ASCII characters".to_owned());
+    }
+    Ok(value.to_owned())
 }
 
 fn validate_secret_ref(value: &str) -> Result<(), String> {
@@ -1257,6 +1316,7 @@ fn build_create_command(
         timeout_ms: request.timeout_ms,
         retry_policy_json: request.retry_policy_json,
         circuit_breaker_policy_json: request.circuit_breaker_policy_json,
+        expires_at: request.expires_at,
         weight: request.weight,
         status: request.status,
         request_id: normalize_request_id(headers, &state)?,
@@ -1299,6 +1359,7 @@ fn build_update_command(
         timeout_ms: request.timeout_ms,
         retry_policy_json: request.retry_policy_json,
         circuit_breaker_policy_json: request.circuit_breaker_policy_json,
+        expires_at: request.expires_at,
         weight: request.weight,
         status: request.status,
         request_id: normalize_request_id(headers, &state)?,
@@ -1386,6 +1447,41 @@ fn to_item_response(item: AdminChannelItem) -> AdminChannelItemResponse {
         access_type: item.access_type,
         base_url: item.base_url,
         secret_ref: item.secret_ref,
+        api_key: item.api_key,
+        created_at: item.created_at,
+        expires_at: item.expires_at,
+        models: item.models,
+        capabilities: item.capabilities,
+        is_multimodal: item.is_multimodal,
+        timeout_ms: item.timeout_ms,
+        retry_policy: item
+            .retry_policy_json
+            .as_deref()
+            .and_then(retry_policy_response_from_json),
+        circuit_breaker_policy: item
+            .circuit_breaker_policy_json
+            .as_deref()
+            .and_then(circuit_breaker_policy_response_from_json),
+        weight: item.weight,
+        status: item.status,
+        balance: item.balance,
+        errors: item.errors,
+    }
+}
+
+fn to_safe_item_response(item: AdminChannelItem) -> AdminChannelSafeItemResponse {
+    AdminChannelSafeItemResponse {
+        id: item.id.to_string(),
+        name: item.name,
+        vendor: item.vendor,
+        protocol: item.protocol,
+        access_type: item.access_type,
+        base_url: item.base_url,
+        masked_label: item
+            .api_key
+            .or_else(|| item.secret_ref.map(|_| "configured".to_owned())),
+        created_at: item.created_at,
+        expires_at: item.expires_at,
         models: item.models,
         capabilities: item.capabilities,
         is_multimodal: item.is_multimodal,

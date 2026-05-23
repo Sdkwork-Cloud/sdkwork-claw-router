@@ -1,14 +1,13 @@
-﻿use std::env;
+use std::env;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use sdkwork_claw_product::infrastructure::sql::postgres::{
-    PostgresAppGenerationHistoryReadStore, PostgresBillingStore, PostgresGatewayUsageRecorder,
+    PostgresAppGenerationHistoryReadStore, PostgresGatewayUsageRecorder,
     PostgresPaymentCallbackStore,
 };
 use sdkwork_claw_product::ports::{
-    AppGenerationHistoryReadStore, AppGenerationHistorySubject, BillingStore, BillingSubject,
-    GatewayUsageRecordCommand, GatewayUsageRecorder, PaymentCallbackCommand, PaymentCallbackStatus,
-    PaymentCallbackStore, RedeemCodeCommand,
+    AppGenerationHistoryReadStore, AppGenerationHistorySubject, GatewayUsageRecordCommand,
+    GatewayUsageRecorder, PaymentCallbackCommand, PaymentCallbackStatus, PaymentCallbackStore,
 };
 use sqlx::postgres::PgPoolOptions;
 use sqlx::{PgPool, Row};
@@ -20,8 +19,8 @@ async fn postgres_payment_callback_concurrent_first_account_creation_credits_one
     let Some(ctx) = PostgresTestContext::new("payment_callback").await else {
         return;
     };
-    seed_pending_recharge_payment(&ctx.pool, 1001, 2001, 3001, "pg-order-1", "10.00", 100).await;
-    seed_pending_recharge_payment(&ctx.pool, 1002, 2002, 3002, "pg-order-2", "20.00", 200).await;
+    seed_pending_recharge_payment(&ctx.pool, "pg-order-1", "10.00", 100).await;
+    seed_pending_recharge_payment(&ctx.pool, "pg-order-2", "20.00", 200).await;
 
     let store_a = PostgresPaymentCallbackStore::new(ctx.pool.clone());
     let store_b = store_a.clone();
@@ -60,7 +59,7 @@ async fn postgres_payment_callback_concurrent_first_account_creation_credits_one
         1,
         scalar_i64(
             &ctx.pool,
-            "SELECT COUNT(1) FROM plus_account WHERE tenant_id = 10 AND organization_id = 20 AND user_id = 30 AND account_type = 2"
+            "SELECT COUNT(1) FROM commerce_account WHERE tenant_id = '10' AND organization_id = '20' AND owner_user_id = '30' AND asset_type = 'points' AND currency_code = 'POINT'"
         )
         .await
     );
@@ -68,92 +67,39 @@ async fn postgres_payment_callback_concurrent_first_account_creation_credits_one
         300,
         scalar_i64(
             &ctx.pool,
-            "SELECT available_points FROM plus_account WHERE tenant_id = 10 AND organization_id = 20 AND user_id = 30 AND account_type = 2"
+            "SELECT available_amount::bigint FROM commerce_account WHERE tenant_id = '10' AND organization_id = '20' AND owner_user_id = '30' AND asset_type = 'points' AND currency_code = 'POINT'"
         )
         .await
     );
     assert_eq!(
         2,
-        scalar_i64(&ctx.pool, "SELECT COUNT(1) FROM plus_account_history").await
-    );
-    assert_eq!(
-        2,
-        scalar_i64(&ctx.pool, "SELECT COUNT(1) FROM plus_vip_point_change").await
-    );
-    assert_eq!(
-        2,
         scalar_i64(
             &ctx.pool,
-            "SELECT COUNT(1) FROM plus_vip_recharge WHERE status = 1"
-        )
-        .await
-    );
-
-    ctx.cleanup().await;
-}
-
-#[tokio::test]
-async fn postgres_billing_redeem_concurrent_first_account_creation_credits_one_account() {
-    let Some(ctx) = PostgresTestContext::new("billing_redeem").await else {
-        return;
-    };
-    seed_redeem_coupon(&ctx.pool, 5001, "PG-WELCOME-1", 500).await;
-    seed_redeem_coupon(&ctx.pool, 5002, "PG-WELCOME-2", 600).await;
-
-    let store_a = PostgresBillingStore::new(ctx.pool.clone());
-    let store_b = store_a.clone();
-    let first = async move {
-        store_a
-            .redeem_code(redeem_command("PG-WELCOME-1", "pg-redeem-1"))
-            .await
-    };
-    let second = async move {
-        store_b
-            .redeem_code(redeem_command("PG-WELCOME-2", "pg-redeem-2"))
-            .await
-    };
-
-    let (first, second) = tokio::join!(first, second);
-    let first = first.unwrap();
-    let second = second.unwrap();
-    let mut balances = [first.balance, second.balance];
-    balances.sort();
-
-    assert_eq!([50, 110], balances);
-    assert_eq!(110, first.credited_points + second.credited_points);
-    assert_eq!(
-        1,
-        scalar_i64(
-            &ctx.pool,
-            "SELECT COUNT(1) FROM plus_account WHERE tenant_id = 10 AND organization_id = 20 AND user_id = 30 AND account_type = 2"
-        )
-        .await
-    );
-    assert_eq!(
-        110,
-        scalar_i64(
-            &ctx.pool,
-            "SELECT available_points FROM plus_account WHERE tenant_id = 10 AND organization_id = 20 AND user_id = 30 AND account_type = 2"
+            "SELECT COUNT(1) FROM commerce_account_ledger_entry WHERE business_type = 'recharge' AND direction = 'credit'"
         )
         .await
     );
     assert_eq!(
         2,
-        scalar_i64(&ctx.pool, "SELECT COUNT(1) FROM plus_account_history").await
-    );
-    assert_eq!(
-        2,
-        scalar_i64(&ctx.pool, "SELECT COUNT(1) FROM plus_vip_point_change").await
-    );
-    assert_eq!(
-        2,
-        scalar_i64(&ctx.pool, "SELECT COUNT(1) FROM plus_user_coupon").await
+        scalar_i64(
+            &ctx.pool,
+            "SELECT COUNT(1) FROM commerce_payment_attempt WHERE status = 'succeeded'"
+        )
+        .await
     );
     assert_eq!(
         2,
         scalar_i64(
             &ctx.pool,
-            "SELECT COUNT(1) FROM plus_coupon WHERE received_count = 1"
+            "SELECT COUNT(1) FROM commerce_payment_intent WHERE status = 'succeeded'"
+        )
+        .await
+    );
+    assert_eq!(
+        2,
+        scalar_i64(
+            &ctx.pool,
+            "SELECT COUNT(1) FROM commerce_order WHERE status = 'paid'"
         )
         .await
     );
@@ -425,16 +371,11 @@ impl PostgresTestContext {
 
 async fn create_schema(pool: &PgPool) {
     for statement in [
-        r#"CREATE TABLE plus_payment_webhook_event (
-            id BIGSERIAL PRIMARY KEY,
-            uuid TEXT NOT NULL UNIQUE,
-            tenant_id BIGINT NOT NULL,
-            organization_id BIGINT NOT NULL,
-            data_scope INTEGER NOT NULL,
-            created_at TIMESTAMPTZ NOT NULL,
-            updated_at TIMESTAMPTZ NOT NULL,
-            v INTEGER NOT NULL,
-            provider INTEGER NOT NULL,
+        r#"CREATE TABLE commerce_payment_webhook_event (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            provider TEXT NOT NULL,
             event_id TEXT NOT NULL,
             nonce TEXT NOT NULL,
             signature TEXT,
@@ -444,153 +385,153 @@ async fn create_schema(pool: &PgPool) {
             payload_digest TEXT NOT NULL,
             status TEXT NOT NULL,
             message TEXT,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            created_at TIMESTAMPTZ NOT NULL,
             processed_at TIMESTAMPTZ,
-            CONSTRAINT uk_payment_webhook_provider_event UNIQUE (provider, event_id),
-            CONSTRAINT uk_payment_webhook_provider_nonce UNIQUE (provider, nonce)
+            updated_at TIMESTAMPTZ NOT NULL,
+            CONSTRAINT uk_commerce_payment_webhook_provider_event UNIQUE (tenant_id, provider, event_id),
+            CONSTRAINT uk_commerce_payment_webhook_provider_nonce UNIQUE (tenant_id, provider, nonce)
         )"#,
-        r#"CREATE TABLE plus_order (
-            id BIGINT PRIMARY KEY,
-            tenant_id BIGINT NOT NULL,
-            organization_id BIGINT NOT NULL,
-            user_id BIGINT NOT NULL,
-            status INTEGER NOT NULL,
-            total_amount NUMERIC NOT NULL,
-            paid_amount NUMERIC NOT NULL DEFAULT 0,
-            paid_points_amount BIGINT NOT NULL DEFAULT 0,
-            order_sn TEXT,
-            out_trade_no TEXT,
-            payment_method TEXT,
-            transaction_id TEXT,
-            created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
-            pay_success_time TIMESTAMPTZ,
-            cancel_time TIMESTAMPTZ,
-            updated_at TIMESTAMPTZ
+        r#"CREATE TABLE commerce_account (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            owner_user_id TEXT NOT NULL,
+            asset_type TEXT NOT NULL,
+            currency_code TEXT,
+            available_amount TEXT NOT NULL DEFAULT '0',
+            frozen_amount TEXT NOT NULL DEFAULT '0',
+            version INTEGER NOT NULL DEFAULT 0,
+            status TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, organization_id, owner_user_id, asset_type, currency_code)
         )"#,
-        r#"CREATE TABLE plus_payment (
-            id BIGINT PRIMARY KEY,
-            tenant_id BIGINT NOT NULL,
-            organization_id BIGINT NOT NULL,
-            order_id BIGINT NOT NULL,
-            provider INTEGER NOT NULL,
-            out_trade_no TEXT NOT NULL UNIQUE,
-            amount NUMERIC NOT NULL,
-            status INTEGER NOT NULL,
-            purpose TEXT NOT NULL,
-            channel INTEGER,
-            product_type TEXT,
-            transaction_id TEXT,
-            created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
-            success_time TIMESTAMPTZ,
-            updated_at TIMESTAMPTZ
-        )"#,
-        r#"CREATE TABLE plus_vip_recharge (
-            id BIGINT PRIMARY KEY,
-            tenant_id BIGINT NOT NULL,
-            organization_id BIGINT NOT NULL,
-            user_id BIGINT NOT NULL,
+        r#"CREATE TABLE commerce_account_ledger_entry (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            account_id TEXT NOT NULL,
+            owner_user_id TEXT NOT NULL,
+            asset_type TEXT NOT NULL,
+            direction TEXT NOT NULL,
+            amount TEXT NOT NULL,
+            balance_after TEXT NOT NULL,
+            business_type TEXT NOT NULL,
             transaction_no TEXT NOT NULL,
-            status INTEGER NOT NULL,
-            point_amount BIGINT NOT NULL,
-            amount NUMERIC,
-            recharge_time TIMESTAMPTZ,
-            updated_at TIMESTAMPTZ,
-            remark TEXT
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            source_type TEXT,
+            source_id TEXT,
+            remark TEXT,
+            created_at TEXT NOT NULL,
+            UNIQUE (tenant_id, transaction_no)
         )"#,
-        r#"CREATE TABLE plus_account (
-            id BIGSERIAL PRIMARY KEY,
-            uuid TEXT NOT NULL UNIQUE,
-            tenant_id BIGINT NOT NULL,
-            organization_id BIGINT NOT NULL,
-            data_scope INTEGER NOT NULL,
-            created_at TIMESTAMPTZ NOT NULL,
-            updated_at TIMESTAMPTZ NOT NULL,
-            v INTEGER NOT NULL,
-            user_id BIGINT NOT NULL,
-            account_type INTEGER NOT NULL,
-            owner INTEGER NOT NULL,
-            owner_id BIGINT NOT NULL,
-            available_balance NUMERIC NOT NULL,
-            frozen_balance NUMERIC NOT NULL,
-            available_points BIGINT NOT NULL,
-            frozen_points BIGINT NOT NULL,
-            token_balance BIGINT NOT NULL,
-            frozen_token BIGINT NOT NULL,
-            status INTEGER NOT NULL,
-            CONSTRAINT uk_plus_account_user_type UNIQUE (tenant_id, organization_id, user_id, account_type)
+        r#"CREATE TABLE commerce_order (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            owner_user_id TEXT NOT NULL,
+            order_no TEXT NOT NULL,
+            status TEXT NOT NULL,
+            subject TEXT NOT NULL,
+            currency_code TEXT NOT NULL,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            paid_at TEXT,
+            cancelled_at TEXT,
+            expired_at TEXT,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, order_no)
         )"#,
-        r#"CREATE TABLE plus_account_history (
-            id BIGSERIAL PRIMARY KEY,
-            uuid TEXT NOT NULL UNIQUE,
-            tenant_id BIGINT NOT NULL,
-            organization_id BIGINT NOT NULL,
-            data_scope INTEGER NOT NULL,
-            created_at TIMESTAMPTZ NOT NULL,
-            updated_at TIMESTAMPTZ NOT NULL,
-            v INTEGER NOT NULL,
-            account_type INTEGER NOT NULL,
-            asset_type INTEGER NOT NULL,
-            account_id BIGINT NOT NULL,
-            transaction_id TEXT NOT NULL,
-            transaction_type INTEGER NOT NULL,
-            points_change BIGINT NOT NULL,
-            points_before BIGINT NOT NULL,
-            points_after BIGINT NOT NULL,
-            source_type INTEGER NOT NULL,
-            source_id TEXT NOT NULL,
-            status INTEGER NOT NULL,
-            usage_result TEXT,
-            remarks TEXT
+        r#"CREATE TABLE commerce_payment_intent (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            owner_user_id TEXT NOT NULL,
+            order_id TEXT NOT NULL,
+            provider TEXT NOT NULL,
+            amount TEXT NOT NULL,
+            currency_code TEXT NOT NULL,
+            status TEXT NOT NULL,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
         )"#,
-        r#"CREATE TABLE plus_vip_point_change (
-            id BIGSERIAL PRIMARY KEY,
-            uuid TEXT NOT NULL UNIQUE,
-            tenant_id BIGINT NOT NULL,
-            organization_id BIGINT NOT NULL,
-            data_scope INTEGER NOT NULL,
-            created_at TIMESTAMPTZ NOT NULL,
-            updated_at TIMESTAMPTZ NOT NULL,
-            v INTEGER NOT NULL,
-            user_id BIGINT NOT NULL,
-            change_type INTEGER NOT NULL,
-            change_amount BIGINT NOT NULL,
-            before_balance BIGINT NOT NULL,
-            after_balance BIGINT NOT NULL,
-            source_id BIGINT NOT NULL,
-            source_type TEXT NOT NULL,
-            remark TEXT
+        r#"CREATE TABLE commerce_payment_attempt (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            owner_user_id TEXT NOT NULL,
+            payment_intent_id TEXT NOT NULL,
+            order_id TEXT NOT NULL,
+            provider TEXT NOT NULL,
+            out_trade_no TEXT NOT NULL,
+            amount TEXT NOT NULL,
+            currency_code TEXT NOT NULL,
+            status TEXT NOT NULL,
+            callback_payload TEXT,
+            created_at TEXT NOT NULL,
+            paid_at TEXT,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, provider, out_trade_no)
         )"#,
-        r#"CREATE TABLE plus_coupon (
-            id BIGINT PRIMARY KEY,
-            redeem_code TEXT NOT NULL UNIQUE,
-            amount BIGINT NOT NULL,
-            start_time TIMESTAMPTZ,
-            end_time TIMESTAMPTZ,
-            total BIGINT NOT NULL,
-            received_count BIGINT NOT NULL,
-            get_limit BIGINT NOT NULL,
-            stackable BOOLEAN NOT NULL,
-            status INTEGER NOT NULL,
-            updated_at TIMESTAMPTZ
+        r#"CREATE TABLE commerce_coupon_template (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            template_no TEXT NOT NULL,
+            title TEXT NOT NULL,
+            discount_type TEXT NOT NULL,
+            discount_value TEXT NOT NULL,
+            minimum_amount TEXT NOT NULL DEFAULT '0',
+            total_quantity INTEGER,
+            claimed_quantity INTEGER NOT NULL DEFAULT 0,
+            redeemed_quantity INTEGER NOT NULL DEFAULT 0,
+            status TEXT NOT NULL,
+            starts_at TEXT,
+            expires_at TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, template_no)
         )"#,
-        r#"CREATE TABLE plus_user_coupon (
-            id BIGSERIAL PRIMARY KEY,
-            uuid TEXT NOT NULL UNIQUE,
-            tenant_id BIGINT NOT NULL,
-            organization_id BIGINT NOT NULL,
-            data_scope INTEGER NOT NULL,
-            created_at TIMESTAMPTZ NOT NULL,
-            updated_at TIMESTAMPTZ NOT NULL,
-            v INTEGER NOT NULL,
-            user_id BIGINT NOT NULL,
-            coupon_id BIGINT NOT NULL,
+        r#"CREATE TABLE commerce_coupon (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            template_id TEXT NOT NULL,
+            owner_user_id TEXT NOT NULL,
             coupon_code TEXT NOT NULL,
-            acquire_at TIMESTAMPTZ,
-            acquire_type INTEGER NOT NULL,
-            point_cost BIGINT NOT NULL,
-            points_refunded BOOLEAN NOT NULL,
-            expire_at TIMESTAMPTZ,
-            status INTEGER NOT NULL,
-            can_shared BOOLEAN NOT NULL
+            status TEXT NOT NULL,
+            claimed_at TEXT NOT NULL,
+            expires_at TEXT,
+            redeemed_at TEXT,
+            disabled_at TEXT,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, coupon_code)
+        )"#,
+        r#"CREATE TABLE commerce_coupon_redemption (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            coupon_id TEXT NOT NULL,
+            order_id TEXT NOT NULL,
+            owner_user_id TEXT NOT NULL,
+            discount_amount TEXT NOT NULL,
+            status TEXT NOT NULL,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            redeemed_at TEXT NOT NULL,
+            rolled_back_at TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, coupon_id, order_id)
         )"#,
         r#"CREATE TABLE ai_request_trace (
             id BIGSERIAL PRIMARY KEY,
@@ -765,71 +706,57 @@ async fn create_schema(pool: &PgPool) {
 
 async fn seed_pending_recharge_payment(
     pool: &PgPool,
-    order_id: i64,
-    payment_id: i64,
-    recharge_id: i64,
     out_trade_no: &str,
     amount: &str,
     point_amount: i64,
 ) {
+    let order_id = format!("order-entity-{out_trade_no}");
+    let payment_intent_id = format!("payment-intent-{out_trade_no}");
     sqlx::query(
         r#"
-        INSERT INTO plus_order
-            (id, tenant_id, organization_id, user_id, status, total_amount, paid_amount, order_sn, out_trade_no)
+        INSERT INTO commerce_order
+            (id, tenant_id, organization_id, owner_user_id, order_no, status, subject, currency_code, request_no, idempotency_key, created_at, paid_at, cancelled_at, expired_at, updated_at)
         VALUES
-            ($1, 10, 20, 30, 1, $2::numeric, 0, $3, $3)
+            ($1, '10', '20', '30', $2, 'pending_payment', 'points_recharge', 'CNY', $3, $4, '2026-04-29 00:00:00', NULL, NULL, NULL, '2026-04-29 00:00:00')
         "#,
     )
-    .bind(order_id)
-    .bind(amount)
+    .bind(&order_id)
     .bind(out_trade_no)
+    .bind(format!("request-{out_trade_no}"))
+    .bind(format!("idem-{out_trade_no}"))
     .execute(pool)
     .await
     .unwrap();
     sqlx::query(
         r#"
-        INSERT INTO plus_payment
-            (id, tenant_id, organization_id, order_id, provider, out_trade_no, amount, status, purpose)
+        INSERT INTO commerce_payment_intent
+            (id, tenant_id, organization_id, owner_user_id, order_id, provider, amount, currency_code, status, request_no, idempotency_key, created_at, updated_at)
         VALUES
-            ($1, 10, 20, $2, 7, $3, $4::numeric, 1, 'POINTS')
+            ($1, '10', '20', '30', $2, 'stripe', $3, 'CNY', 'pending', $4, $5, '2026-04-29 00:00:00', '2026-04-29 00:00:00')
         "#,
     )
-    .bind(payment_id)
-    .bind(order_id)
-    .bind(out_trade_no)
+    .bind(&payment_intent_id)
+    .bind(&order_id)
     .bind(amount)
+    .bind(format!("payment-request-{out_trade_no}"))
+    .bind(format!("payment-idem-{out_trade_no}"))
     .execute(pool)
     .await
     .unwrap();
     sqlx::query(
         r#"
-        INSERT INTO plus_vip_recharge
-            (id, tenant_id, organization_id, user_id, transaction_no, status, point_amount, amount)
+        INSERT INTO commerce_payment_attempt
+            (id, tenant_id, organization_id, owner_user_id, payment_intent_id, order_id, provider, out_trade_no, amount, currency_code, status, callback_payload, created_at, paid_at, updated_at)
         VALUES
-            ($1, 10, 20, 30, $2, 3, $3, $4::numeric)
+            ($1, '10', '20', '30', $2, $3, 'stripe', $4, $5, 'CNY', 'pending', $6, '2026-04-29 00:00:00', NULL, '2026-04-29 00:00:00')
         "#,
     )
-    .bind(recharge_id)
+    .bind(format!("payment-attempt-{out_trade_no}"))
+    .bind(&payment_intent_id)
+    .bind(&order_id)
     .bind(out_trade_no)
-    .bind(point_amount)
     .bind(amount)
-    .execute(pool)
-    .await
-    .unwrap();
-}
-
-async fn seed_redeem_coupon(pool: &PgPool, coupon_id: i64, redeem_code: &str, amount_cents: i64) {
-    sqlx::query(
-        r#"
-        INSERT INTO plus_coupon
-            (id, redeem_code, amount, start_time, end_time, total, received_count, get_limit, stackable, status, updated_at)
-        VALUES
-            ($1, $2, $3, '2026-04-01 00:00:00'::timestamp AT TIME ZONE 'UTC', '2026-12-31 23:59:59'::timestamp AT TIME ZONE 'UTC', 100, 0, 1, true, 1, CURRENT_TIMESTAMP)
-        "#,
-    )
-    .bind(coupon_id)
-    .bind(redeem_code)
-    .bind(amount_cents)
+    .bind(format!(r#"{{"points":{point_amount}}}"#))
     .execute(pool)
     .await
     .unwrap();
@@ -848,7 +775,6 @@ fn success_command(
         event_uuid: format!("{event_id}-uuid"),
         account_uuid: format!("{event_id}-account"),
         account_history_uuid: format!("{event_id}-history"),
-        point_change_uuid: format!("{event_id}-point-change"),
         event_id: event_id.to_owned(),
         nonce: nonce.to_owned(),
         signature: Some(format!("{event_id}-signature")),
@@ -859,24 +785,6 @@ fn success_command(
         amount: amount.map(ToOwned::to_owned),
         status: PaymentCallbackStatus::Success,
         received_at: "2026-04-29 00:00:00".to_owned(),
-    }
-}
-
-fn redeem_command(code: &str, seed: &str) -> RedeemCodeCommand {
-    RedeemCodeCommand {
-        subject: BillingSubject {
-            tenant_id: 10,
-            organization_id: 20,
-            user_id: 30,
-        },
-        code: code.to_owned(),
-        user_coupon_uuid: format!("{seed}-user-coupon"),
-        account_uuid: format!("{seed}-account"),
-        account_history_uuid: format!("{seed}-history"),
-        point_change_uuid: format!("{seed}-point-change"),
-        coupon_code: code.to_owned(),
-        transaction_id: format!("{seed}-transaction"),
-        requested_at: "2026-04-29 00:00:00".to_owned(),
     }
 }
 

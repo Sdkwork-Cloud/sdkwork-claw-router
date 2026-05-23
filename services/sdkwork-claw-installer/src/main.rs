@@ -423,6 +423,7 @@ fn installer_error_code(error: &(dyn std::error::Error + 'static), message: &str
         return match installer_error {
             DatabaseInstallError::Database(_) => "database_error",
             DatabaseInstallError::Catalog(_) => "catalog_error",
+            DatabaseInstallError::Commerce(_) => "commerce_error",
             DatabaseInstallError::InvalidState(_) => "invalid_state",
         };
     }
@@ -645,5 +646,23 @@ fn status_code(status: &InstallationStatus) -> &'static str {
         InstallationStatus::Incomplete => "incomplete",
         InstallationStatus::Corrupt => "corrupt",
         InstallationStatus::CatalogUnavailable => "catalog_unavailable",
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use sdkwork_commerce_core::CommerceServiceError;
+
+    #[test]
+    fn installer_error_code_maps_commerce_bootstrap_errors() {
+        let error = DatabaseInstallError::Commerce(CommerceServiceError::storage(
+            "failed to seed commerce experience",
+        ));
+
+        assert_eq!(
+            "commerce_error",
+            installer_error_code(&error, &error.to_string())
+        );
     }
 }

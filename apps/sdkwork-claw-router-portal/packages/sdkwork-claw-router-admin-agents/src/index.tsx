@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { Bot, Database, Eye, Folder, FolderTree, RefreshCw, Search, ServerCog, UserRound, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { BusinessStateTableRow } from 'sdkwork-claw-router-commons';
+import { AdminTableShell, BottomPagination, BusinessStateTableRow } from 'sdkwork-claw-router-commons';
 import {
   AdminAgentService,
   type AdminAgentItem,
@@ -24,6 +24,7 @@ export function AdminAgentsView() {
   const [ownerUserId, setOwnerUserId] = useState('');
   const [status, setStatus] = useState('');
   const [visibility, setVisibility] = useState('');
+  const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState('25');
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -31,7 +32,7 @@ export function AdminAgentsView() {
   const [detailError, setDetailError] = useState<string | null>(null);
 
   const query = useMemo<AdminAgentListQuery>(() => {
-    const nextQuery: AdminAgentListQuery = { page: 1 };
+    const nextQuery: AdminAgentListQuery = { page };
     const normalizedQ = q.trim();
     if (normalizedQ) {
       nextQuery.q = normalizedQ;
@@ -51,7 +52,7 @@ export function AdminAgentsView() {
       nextQuery.pageSize = normalizedPageSize;
     }
     return nextQuery;
-  }, [ownerUserId, pageSize, q, status, visibility]);
+  }, [ownerUserId, page, pageSize, q, status, visibility]);
 
   const loadAgents = async () => {
     setLoading(true);
@@ -105,6 +106,7 @@ export function AdminAgentsView() {
     setOwnerUserId('');
     setStatus('');
     setVisibility('');
+    setPage(1);
     setPageSize('25');
   };
 
@@ -180,8 +182,8 @@ export function AdminAgentsView() {
   );
 
   return (
-    <div className="flex h-full w-full min-w-0 flex-col gap-4">
-      <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+    <div className="flex h-full w-full min-w-0 flex-col gap-4 overflow-hidden">
+      <div className="flex shrink-0 flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
             <Bot className="h-6 w-6 text-emerald-500" />
@@ -201,14 +203,14 @@ export function AdminAgentsView() {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid shrink-0 grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4">
         <MetricCard icon={<Bot className="h-5 w-5" />} label={t('admin.agents.metrics.total')} value={agents.length.toLocaleString()} tone="emerald" />
         <MetricCard icon={<ServerCog className="h-5 w-5" />} label={t('admin.agents.metrics.active')} value={totals.activeCount.toLocaleString()} tone="blue" />
         <MetricCard icon={<Database className="h-5 w-5" />} label={t('admin.agents.metrics.memory')} value={totals.memoryCount.toLocaleString()} tone="amber" />
         <MetricCard icon={<UserRound className="h-5 w-5" />} label={t('admin.agents.metrics.extensions')} value={`${totals.mcpCount.toLocaleString()} / ${totals.skillCount.toLocaleString()}`} tone="slate" />
       </div>
 
-      <div data-admin-agent-layout className="grid min-h-0 gap-4 xl:grid-cols-[320px_minmax(0,1fr)]">
+      <div data-admin-agent-layout className="grid min-h-0 flex-1 gap-4 xl:grid-cols-[320px_minmax(0,1fr)]">
         <AdminAgentCategoryTree
           categories={agentCategories}
           selectedCategoryId={selectedCategoryId}
@@ -217,73 +219,116 @@ export function AdminAgentsView() {
           onSelect={setSelectedCategoryId}
         />
 
-        <section data-admin-agent-table-card className="min-w-0 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#171717]">
-          <div className="border-b border-slate-200 p-3 dark:border-white/10">
-            <div className="flex flex-col gap-2 xl:flex-row xl:items-center">
-              <div className="relative min-w-0 xl:w-[320px]">
-                <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-                <input
-                  value={q}
-                  onChange={(event) => setQ(event.target.value)}
-                  className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-emerald-400 dark:border-white/10 dark:bg-white/5 dark:text-white"
-                  placeholder={t('admin.agents.filters.searchPlaceholder')}
-                />
+        <AdminTableShell
+          data-admin-agent-table-card
+          viewportProps={{ 'data-admin-agent-table-viewport': true }}
+          header={(
+            <>
+              <div className="border-b border-slate-200 p-3 dark:border-white/10">
+                <div className="flex flex-col gap-2 xl:flex-row xl:items-center">
+                  <div className="relative min-w-0 xl:w-[320px]">
+                    <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                    <input
+                      value={q}
+                      onChange={(event) => {
+                        setPage(1);
+                        setQ(event.target.value);
+                      }}
+                      className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-emerald-400 dark:border-white/10 dark:bg-white/5 dark:text-white"
+                      placeholder={t('admin.agents.filters.searchPlaceholder')}
+                    />
+                  </div>
+                  <input
+                    value={ownerUserId}
+                    onChange={(event) => {
+                      setPage(1);
+                      setOwnerUserId(event.target.value);
+                    }}
+                    className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-emerald-400 dark:border-white/10 dark:bg-white/5 dark:text-white xl:w-40"
+                    placeholder={t('admin.agents.filters.ownerPlaceholder')}
+                    inputMode="numeric"
+                  />
+                  <select
+                    value={status}
+                    onChange={(event) => {
+                      setPage(1);
+                      setStatus(event.target.value);
+                    }}
+                    className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-emerald-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
+                  >
+                    <option value="">{t('admin.agents.filters.allStatuses')}</option>
+                    {statusOptions.map((option) => <option key={option} value={option}>{t(`admin.agents.status.${option}`)}</option>)}
+                  </select>
+                  <select
+                    value={visibility}
+                    onChange={(event) => {
+                      setPage(1);
+                      setVisibility(event.target.value);
+                    }}
+                    className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-emerald-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
+                  >
+                    <option value="">{t('admin.agents.filters.allVisibility')}</option>
+                    {visibilityOptions.map((option) => <option key={option} value={option}>{t(`admin.agents.visibility.${option}`)}</option>)}
+                  </select>
+                  <select
+                    value={pageSize}
+                    onChange={(event) => {
+                      setPageSize(event.target.value);
+                      setPage(1);
+                    }}
+                    className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-emerald-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
+                    aria-label={t('admin.agents.filters.pageSize')}
+                  >
+                    {[10, 25, 50, 100].map((size) => <option key={size} value={String(size)}>{t('admin.agents.filters.pageSizeValue', { count: size })}</option>)}
+                  </select>
+                  <button
+                    type="button"
+                    onClick={resetFilters}
+                    className="inline-flex h-10 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10"
+                  >
+                    <X className="h-4 w-4" />
+                    {t('common.actions.reset')}
+                  </button>
+                  <div className="inline-flex h-10 min-w-0 items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 text-sm font-medium text-slate-600 dark:border-white/10 dark:bg-white/[0.03] dark:text-slate-300">
+                    <Folder className="h-4 w-4 shrink-0 text-slate-400" />
+                    <span className="max-w-[220px] truncate">{selectedCategoryName}</span>
+                  </div>
+                </div>
               </div>
-              <input
-                value={ownerUserId}
-                onChange={(event) => setOwnerUserId(event.target.value)}
-                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-emerald-400 dark:border-white/10 dark:bg-white/5 dark:text-white xl:w-40"
-                placeholder={t('admin.agents.filters.ownerPlaceholder')}
-                inputMode="numeric"
+
+              {loadError ? (
+                <div className="border-b border-red-100 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
+                  {loadError}
+                </div>
+              ) : null}
+            </>
+          )}
+          footer={(
+            <div data-admin-agent-pagination>
+              <BottomPagination
+                page={page}
+                pageSize={Number(pageSize)}
+                itemCount={filteredAgents.length}
+                hasNextPage={filteredAgents.length >= Number(pageSize)}
+                disabled={loading}
+                showingLabel={t('admin.agents.pagination.showing')}
+                pageLabel={t('admin.agents.pagination.page', { page })}
+                pageSizeLabel={t('admin.agents.pagination.pageSize')}
+                previousLabel={t('common.actions.previousPage')}
+                nextLabel={t('common.actions.nextPage')}
+                pageSizeOptions={[10, 25, 50, 100]}
+                onPreviousPage={() => setPage((current) => Math.max(1, current - 1))}
+                onNextPage={() => setPage((current) => current + 1)}
+                onPageSizeChange={(nextPageSize) => {
+                  setPageSize(String(nextPageSize));
+                  setPage(1);
+                }}
               />
-              <select
-                value={status}
-                onChange={(event) => setStatus(event.target.value)}
-                className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-emerald-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
-              >
-                <option value="">{t('admin.agents.filters.allStatuses')}</option>
-                {statusOptions.map((option) => <option key={option} value={option}>{t(`admin.agents.status.${option}`)}</option>)}
-              </select>
-              <select
-                value={visibility}
-                onChange={(event) => setVisibility(event.target.value)}
-                className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-emerald-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
-              >
-                <option value="">{t('admin.agents.filters.allVisibility')}</option>
-                {visibilityOptions.map((option) => <option key={option} value={option}>{t(`admin.agents.visibility.${option}`)}</option>)}
-              </select>
-              <select
-                value={pageSize}
-                onChange={(event) => setPageSize(event.target.value)}
-                className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-emerald-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
-                aria-label={t('admin.agents.filters.pageSize')}
-              >
-                {[10, 25, 50, 100].map((size) => <option key={size} value={String(size)}>{t('admin.agents.filters.pageSizeValue', { count: size })}</option>)}
-              </select>
-              <button
-                type="button"
-                onClick={resetFilters}
-                className="inline-flex h-10 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10"
-              >
-                <X className="h-4 w-4" />
-                {t('common.actions.reset')}
-              </button>
-              <div className="inline-flex h-10 min-w-0 items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 text-sm font-medium text-slate-600 dark:border-white/10 dark:bg-white/[0.03] dark:text-slate-300">
-                <Folder className="h-4 w-4 shrink-0 text-slate-400" />
-                <span className="max-w-[220px] truncate">{selectedCategoryName}</span>
-              </div>
             </div>
-          </div>
-
-          {loadError ? (
-            <div className="border-b border-red-100 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
-              {loadError}
-            </div>
-          ) : null}
-
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[980px] text-left text-sm">
-              <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500 dark:bg-white/[0.03] dark:text-slate-400">
+          )}
+        >
+          <table className="w-full min-w-[980px] text-left text-sm">
+              <thead className="sticky top-0 z-10 bg-slate-50 text-xs uppercase tracking-wide text-slate-500 dark:bg-white/[0.03] dark:text-slate-400">
                 <tr>
                   <th className="px-4 py-3 font-semibold">{t('admin.agents.table.agent')}</th>
                   <th className="px-4 py-3 font-semibold">{t('admin.agents.table.owner')}</th>
@@ -353,9 +398,8 @@ export function AdminAgentsView() {
                   ))
                 )}
               </tbody>
-            </table>
-          </div>
-        </section>
+          </table>
+        </AdminTableShell>
       </div>
 
       <AgentDetailsDrawer
@@ -406,9 +450,9 @@ function AdminAgentCategoryTree({
   return (
     <aside
       data-admin-agent-category-tree
-      className="min-h-0 rounded-lg border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#171717]"
+      className="flex min-h-0 flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#171717]"
     >
-      <div className="flex items-center justify-between gap-3 border-b border-slate-200 p-3 dark:border-white/10">
+      <div className="flex shrink-0 items-center justify-between gap-3 border-b border-slate-200 p-3 dark:border-white/10">
         <div className="min-w-0">
           <div className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
             <FolderTree className="h-4 w-4 text-emerald-600 dark:text-emerald-300" />
@@ -420,7 +464,7 @@ function AdminAgentCategoryTree({
         </div>
         {loading ? <RefreshCw className="h-4 w-4 animate-spin text-emerald-500" /> : null}
       </div>
-      <div className="max-h-[calc(100vh-220px)] min-h-[360px] overflow-y-auto p-2">
+      <div className="min-h-0 flex-1 overflow-y-auto p-2">
         {categories.map((category) => {
           const selected = selectedCategoryId === category.id;
           return (
@@ -445,7 +489,7 @@ function AdminAgentCategoryTree({
           );
         })}
       </div>
-      <div className="border-t border-slate-200 px-3 py-2 text-xs text-slate-500 dark:border-white/10">
+      <div className="shrink-0 border-t border-slate-200 px-3 py-2 text-xs text-slate-500 dark:border-white/10">
         {t('admin.agents.categories.total', { count: totalCount })}
       </div>
     </aside>

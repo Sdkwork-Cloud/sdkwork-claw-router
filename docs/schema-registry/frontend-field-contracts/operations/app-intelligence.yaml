@@ -1,0 +1,400 @@
+fragment: operations/app-intelligence
+frontend_operations:
+- route: /playground
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts
+  operation: fetchGenerationHistory
+  operation_scope: app_shell
+  operation_id: generation.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/ai/generations
+  sdk_domain: intelligence
+  read_sources:
+  - ai_generation_session
+  - ai_generation_job
+  - ai_generation_asset
+  - ai_generation_asset_action
+  query_parameters: []
+  response_schema:
+    name: GenerationHistoryResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 100
+        items: &id001
+          name: GenerationHistoryItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - date
+          - prompt
+          - type
+          - images
+          - videos
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            date:
+              type: string
+              minLength: 1
+              maxLength: 32
+            prompt:
+              type: string
+              maxLength: 4096
+            type:
+              type: string
+              enum:
+              - text
+              - image
+              - images
+              - video
+              - music
+              - audio
+              - sfx
+            modelInfo:
+              type: string
+              maxLength: 256
+            modelCatalogKey:
+              type: string
+              maxLength: 256
+            url:
+              type: string
+              maxLength: 2048
+            images:
+              type: array
+              maxItems: 20
+              items:
+                type: string
+                maxLength: 2048
+            videos:
+              type: array
+              maxItems: 20
+              items:
+                name: GenerationHistoryMediaItem
+                type: object
+                additionalProperties: false
+                required:
+                - url
+                properties:
+                  url:
+                    type: string
+                    minLength: 1
+                    maxLength: 2048
+                  thumb:
+                    type: string
+                    maxLength: 2048
+            aspectRatio:
+              type: string
+              enum:
+              - '1:1'
+              - '16:9'
+              - '9:16'
+            durationSeconds:
+              type: integer
+              minimum: 0
+              maximum: 86400
+            status:
+              type: string
+              enum:
+              - pending
+              - processing
+              - completed
+              - failed
+              - cancelled
+            outputText:
+              type: string
+              maxLength: 262144
+            createdAt:
+              type: string
+              maxLength: 64
+            updatedAt:
+              type: string
+              maxLength: 64
+- route: /playground
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  operation: listGenerationHistory
+  operation_id: generation.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/ai/generations
+  openapi_exposed: false
+  sdk_domain: intelligence
+  summary: List Playground generation history
+  description: Lists persisted generation sessions, jobs, and assets for the active app user through the generated app SDK.
+  read_sources:
+  - ai_generation_session
+  - ai_generation_job
+  - ai_generation_asset
+  - ai_generation_asset_action
+  query_parameters: []
+  response_schema:
+    name: GenerationHistoryResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 100
+        items: *id001
+- route: /playground
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  operation: listModelCatalog
+  operation_id: models.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/ai/models
+  openapi_exposed: false
+  sdk_domain: intelligence
+  summary: List model catalog for Playground
+  description: Lists standard app model catalog entries used by Playground model pickers and grouped client-side by vendor and modality.
+  read_sources:
+  - ai_model_vendor
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing
+  query_parameters:
+  - name: billing_meter
+    schema:
+      type: string
+  - name: vendor_code
+    schema:
+      type: string
+  - name: vendor_codes
+    schema:
+      type: array
+      maxItems: 32
+      items:
+        type: string
+        minLength: 1
+        maxLength: 64
+    style: form
+    explode: false
+  - name: modalities
+    schema:
+      type: array
+      maxItems: 32
+      items:
+        type: string
+        minLength: 1
+        maxLength: 64
+    style: form
+    explode: false
+  - name: capabilities
+    schema:
+      type: array
+      maxItems: 64
+      items:
+        type: string
+        minLength: 1
+        maxLength: 64
+    style: form
+    explode: false
+  - name: categories
+    schema:
+      type: array
+      maxItems: 32
+      items:
+        type: string
+        minLength: 1
+        maxLength: 64
+    style: form
+    explode: false
+  - name: groups
+    schema:
+      type: array
+      maxItems: 32
+      items:
+        type: string
+        minLength: 1
+        maxLength: 64
+    style: form
+    explode: false
+  - name: q
+    schema:
+      type: string
+  - name: limit
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 1000
+- route: /playground
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts
+  operation: fetchModelGroups
+  operation_scope: app_shell
+  operation_id: playground.models.grouped
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/ai/models
+  sdk_domain: intelligence
+  openapi_exposed: false
+  description: Derived Playground model picker view that reuses the standard app model catalog and groups returned items by vendor and modality bucket client-side.
+  read_sources:
+  - ai_model_vendor
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing
+  response_schema:
+    name: PlaygroundModelGroupsView
+    required:
+    - groups
+    properties:
+      groups:
+        type: array
+        maxItems: 128
+        items:
+          name: PlaygroundModelGroupView
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - vendor
+          - llms
+          - images
+          - videos
+          - audios
+          - music
+          - sfx
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            vendor:
+              name: PlaygroundModelVendorView
+              type: object
+              additionalProperties: false
+              required:
+              - code
+              - name
+              properties:
+                code:
+                  type: string
+                  minLength: 1
+                  maxLength: 64
+                name:
+                  type: string
+                  minLength: 1
+                  maxLength: 128
+            llms:
+              type: array
+              maxItems: 1000
+              items: &id002
+                name: PlaygroundModelOptionView
+                type: object
+                additionalProperties: false
+                required:
+                - catalogKey
+                - model
+                - displayName
+                - vendorCode
+                - vendorName
+                - modalities
+                - inputModalities
+                - outputModalities
+                - capabilities
+                - supportsStreaming
+                - supportsTools
+                - supportsJsonSchema
+                properties:
+                  catalogKey:
+                    type: string
+                    minLength: 1
+                    maxLength: 256
+                  model:
+                    type: string
+                    minLength: 1
+                    maxLength: 256
+                  displayName:
+                    type: string
+                    minLength: 1
+                    maxLength: 256
+                  description:
+                    type: string
+                    nullable: true
+                    maxLength: 2048
+                  vendorCode:
+                    type: string
+                    minLength: 1
+                    maxLength: 64
+                  vendorName:
+                    type: string
+                    minLength: 1
+                    maxLength: 128
+                  modalities:
+                    type: array
+                    maxItems: 32
+                    items:
+                      type: string
+                      minLength: 1
+                      maxLength: 64
+                  inputModalities:
+                    type: array
+                    maxItems: 32
+                    items:
+                      type: string
+                      minLength: 1
+                      maxLength: 64
+                  outputModalities:
+                    type: array
+                    maxItems: 32
+                    items:
+                      type: string
+                      minLength: 1
+                      maxLength: 64
+                  capabilities:
+                    type: array
+                    maxItems: 64
+                    items:
+                      type: string
+                      minLength: 1
+                      maxLength: 64
+                  apiFormat:
+                    type: string
+                    nullable: true
+                    maxLength: 128
+                  contextTokens:
+                    type: integer
+                    format: int64
+                    nullable: true
+                    minimum: 1
+                  maxOutputTokens:
+                    type: integer
+                    format: int64
+                    nullable: true
+                    minimum: 1
+                  supportsStreaming:
+                    type: boolean
+                  supportsTools:
+                    type: boolean
+                  supportsJsonSchema:
+                    type: boolean
+            images:
+              type: array
+              maxItems: 1000
+              items: *id002
+            videos:
+              type: array
+              maxItems: 1000
+              items: *id002
+            audios:
+              type: array
+              maxItems: 1000
+              items: *id002
+            music:
+              type: array
+              maxItems: 1000
+              items: *id002
+            sfx:
+              type: array
+              maxItems: 1000
+              items: *id002

@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
 if TYPE_CHECKING:
+    from .provider_circuit_breaker_policy import ProviderCircuitBreakerPolicy
     from .provider_retry_policy import ProviderRetryPolicy
 
 

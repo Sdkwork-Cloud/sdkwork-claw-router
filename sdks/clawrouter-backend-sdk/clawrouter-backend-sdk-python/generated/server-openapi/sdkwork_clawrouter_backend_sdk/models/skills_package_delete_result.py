@@ -11,5 +11,4 @@ class SkillsPackageDeleteResult:
     """Skills package delete result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminSkillPackageDeleteResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

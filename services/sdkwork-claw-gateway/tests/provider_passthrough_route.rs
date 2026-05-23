@@ -4,9 +4,13 @@ use axum::http::HeaderMap;
 use axum::http::{Request, StatusCode};
 use axum::routing::any;
 use axum::Router;
-use sdkwork_claw_config::{ProviderRelayConfig, ProviderSecretMapConfig};
+use sdkwork_claw_config::{ProviderAdapterConfig, ProviderRelayConfig, ProviderSecretMapConfig};
 use sdkwork_claw_product::application::ApiKeySecretHasher;
 use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
+use sdkwork_claw_provider_adapter_contract::{
+    AdapterInvocationRequest, AdapterInvocationResponse, AdapterInvocationShape, AdapterSecret,
+};
+use serde_json::json;
 use std::collections::BTreeSet;
 use std::sync::{Arc, Mutex};
 use tower::ServiceExt;
@@ -204,6 +208,12 @@ struct CapturedNativeProviderRequest {
     body: String,
 }
 
+#[derive(Debug, Clone)]
+struct CapturedProviderNativeAdapterRequest {
+    authorization: Option<String>,
+    body: AdapterInvocationRequest,
+}
+
 #[tokio::test]
 async fn gateway_mounts_provider_native_passthrough_boundaries_without_404() {
     let router = sdkwork_claw_gateway::router();
@@ -269,6 +279,496 @@ async fn gateway_mounts_provider_native_passthrough_boundaries_without_404() {
         );
         assert_eq!(path, payload["error"]["path"]);
     }
+}
+
+#[tokio::test]
+async fn gateway_provider_native_passthrough_keeps_official_standard_provider_direct_when_only_non_standard_adapter_route_exists(
+) {
+    let direct_captured = Arc::new(Mutex::new(Vec::new()));
+    let provider = Router::new()
+        .route(
+            "/vidu/ent/v2/start-end2video",
+            any(capture_native_provider_request),
+        )
+        .route(
+            "/vidu/ent/v2/text2video",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&direct_captured));
+    let provider_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let provider_addr = provider_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(provider_listener, provider).await.unwrap();
+    });
+
+    let adapter_captured = Arc::new(Mutex::new(Vec::new()));
+    let adapter = Router::new()
+        .route(
+            "/providers/tencent-cloud/vidu/ent/v2/start-end2video",
+            any(capture_provider_native_adapter_request),
+        )
+        .with_state(Arc::clone(&adapter_captured));
+    let adapter_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let adapter_addr = adapter_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(adapter_listener, adapter).await.unwrap();
+    });
+
+    let passthrough_config = ProviderRelayConfig::from_provider_passthrough_json(format!(
+        r#"{{
+            "vidu": {{
+                "baseUrl": "http://{provider_addr}/vidu",
+                "auth": {{
+                    "type": "header",
+                    "name": "token",
+                    "value": "sk-vidu-upstream"
+                }}
+            }}
+        }}"#
+    ))
+    .unwrap();
+    let adapter_config = ProviderAdapterConfig::from_json(
+        format!(
+            r#"{{
+                "routes": [{{
+                    "providerCode": "tencent-cloud",
+                    "adapterKind": "internal_http",
+                    "adapterBaseUrl": "http://{adapter_addr}",
+                    "capability": "video_generation",
+                    "endpointKey": "video.start_end2video",
+                    "method": "POST",
+                    "standardPathPattern": "/vidu/ent/v2/start-end2video",
+                    "adapterPathTemplate": "/providers/{{provider_code}}{{standard_path}}",
+                    "invocationShape": "async_task_start",
+                    "status": "enabled",
+                    "priority": 10
+                }}]
+            }}"#
+        ),
+        Some("adapter-token".to_owned()),
+    )
+    .unwrap();
+    let router = sdkwork_claw_gateway::router_with_provider_passthrough_and_adapter_config(
+        passthrough_config,
+        Some(adapter_config),
+    );
+
+    let official_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/vidu/ent/v2/start-end2video")
+                .header("token", "client-token-should-not-pass")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"vidu2.0","prompt":"official direct route"}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::CREATED, official_response.status());
+    assert!(
+        adapter_captured.lock().unwrap().is_empty(),
+        "official Vidu standard API must stay direct even when Tencent Cloud adapts the same standard path"
+    );
+
+    let direct_response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/vidu/ent/v2/text2video")
+                .header("token", "client-token-should-not-pass")
+                .header("content-type", "application/json")
+                .body(Body::from(r#"{"model":"vidu2.0","prompt":"direct route"}"#))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::CREATED, direct_response.status());
+    assert_eq!(0, adapter_captured.lock().unwrap().len());
+    let direct_calls = direct_captured.lock().unwrap();
+    assert_eq!(2, direct_calls.len());
+    assert_eq!("POST", direct_calls[0].method);
+    assert_eq!(
+        "/vidu/ent/v2/start-end2video",
+        direct_calls[0].path_and_query
+    );
+    assert_eq!("POST", direct_calls[1].method);
+    assert_eq!("/vidu/ent/v2/text2video", direct_calls[1].path_and_query);
+    assert_eq!(
+        Some("sk-vidu-upstream".to_owned()),
+        direct_calls[0].vidu_token
+    );
+    assert_eq!(
+        Some("sk-vidu-upstream".to_owned()),
+        direct_calls[1].vidu_token
+    );
+    assert!(direct_calls[0].body.contains("official direct route"));
+    assert!(direct_calls[1].body.contains("direct route"));
+}
+
+#[tokio::test]
+async fn gateway_provider_native_passthrough_adapts_registered_non_standard_provider() {
+    let direct_captured = Arc::new(Mutex::new(Vec::new()));
+    let provider = Router::new()
+        .route(
+            "/vidu/ent/v2/start-end2video",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&direct_captured));
+    let provider_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let provider_addr = provider_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(provider_listener, provider).await.unwrap();
+    });
+
+    let adapter_captured = Arc::new(Mutex::new(Vec::new()));
+    let adapter = Router::new()
+        .route(
+            "/providers/tencent-cloud/vidu/ent/v2/start-end2video",
+            any(capture_provider_native_adapter_request),
+        )
+        .with_state(Arc::clone(&adapter_captured));
+    let adapter_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let adapter_addr = adapter_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(adapter_listener, adapter).await.unwrap();
+    });
+
+    let passthrough_config = ProviderRelayConfig::from_provider_passthrough_json(format!(
+        r#"{{
+            "tencent-cloud": {{
+                "baseUrl": "http://{provider_addr}/vidu",
+                "auth": {{
+                    "type": "bearer",
+                    "value": "sk-tencent-cloud-upstream"
+                }}
+            }}
+        }}"#
+    ))
+    .unwrap();
+    let adapter_config = ProviderAdapterConfig::from_json(
+        format!(
+            r#"{{
+                "routes": [{{
+                    "providerCode": "tencent-cloud",
+                    "adapterKind": "internal_http",
+                    "adapterBaseUrl": "http://{adapter_addr}",
+                    "capability": "video_generation",
+                    "endpointKey": "video.start_end2video",
+                    "method": "POST",
+                    "standardPathPattern": "/vidu/ent/v2/start-end2video",
+                    "adapterPathTemplate": "/providers/{{provider_code}}{{standard_path}}",
+                    "invocationShape": "async_task_start",
+                    "status": "enabled",
+                    "priority": 10
+                }}]
+            }}"#
+        ),
+        Some("adapter-token".to_owned()),
+    )
+    .unwrap();
+    let router = sdkwork_claw_gateway::router_with_provider_passthrough_and_adapter_config(
+        passthrough_config,
+        Some(adapter_config),
+    );
+
+    let adapter_response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/tencent-cloud/vidu/ent/v2/start-end2video")
+                .header("authorization", "Bearer client-token-should-not-pass")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"vidu2.0","prompt":"adapter route"}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::ACCEPTED, adapter_response.status());
+    assert!(
+        direct_captured.lock().unwrap().is_empty(),
+        "registered non-standard provider endpoint must call adapter instead of direct target"
+    );
+    let adapter_calls = adapter_captured.lock().unwrap();
+    assert_eq!(1, adapter_calls.len());
+    assert_eq!(
+        Some("Bearer adapter-token".to_owned()),
+        adapter_calls[0].authorization
+    );
+    assert_eq!(
+        "video.start_end2video",
+        adapter_calls[0].body.invocation.endpoint_key
+    );
+    assert_eq!(
+        AdapterInvocationShape::AsyncTaskStart,
+        adapter_calls[0].body.invocation.shape
+    );
+    assert_eq!(
+        "/vidu/ent/v2/start-end2video",
+        adapter_calls[0].body.invocation.standard_path
+    );
+    assert_eq!(
+        "tencent-cloud",
+        adapter_calls[0].body.provider.provider_code
+    );
+    assert_eq!(
+        Some(format!("http://{provider_addr}/vidu")),
+        adapter_calls[0].body.provider.base_url
+    );
+    assert_eq!(json!("adapter route"), adapter_calls[0].body.body["prompt"]);
+    assert!(matches!(
+        adapter_calls[0].body.secret,
+        AdapterSecret::GatewayResolved(_)
+    ));
+}
+
+#[tokio::test]
+async fn gateway_database_provider_native_adapter_routes_after_account_pool_selection() {
+    let direct_captured = Arc::new(Mutex::new(Vec::new()));
+    let direct_provider = Router::new()
+        .route(
+            "/vidu/ent/v2/start-end2video",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&direct_captured));
+    let direct_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let direct_addr = direct_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(direct_listener, direct_provider).await.unwrap();
+    });
+
+    let adapter_captured = Arc::new(Mutex::new(Vec::new()));
+    let adapter = Router::new()
+        .route(
+            "/providers/tencent-cloud/vidu/ent/v2/start-end2video",
+            any(capture_provider_native_adapter_request),
+        )
+        .with_state(Arc::clone(&adapter_captured));
+    let adapter_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let adapter_addr = adapter_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(adapter_listener, adapter).await.unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_tencent_cloud_vidu_start_end2video_account_pool(
+        &catalog,
+        &format!("http://{direct_addr}/vidu"),
+    )
+    .await;
+    let adapter_config = ProviderAdapterConfig::from_json(
+        format!(
+            r#"{{
+                "routes": [
+                    {{
+                        "providerCode": "tencent-cloud",
+                        "adapterKind": "internal_http",
+                        "adapterBaseUrl": "http://{adapter_addr}",
+                        "capability": "video_generation",
+                        "endpointKey": "video.start_end2video",
+                        "method": "POST",
+                        "standardPathPattern": "/vidu/ent/v2/start-end2video",
+                        "adapterPathTemplate": "/providers/{{provider_code}}{{standard_path}}",
+                        "invocationShape": "async_task_start",
+                        "status": "enabled",
+                        "priority": 10
+                    }}
+                ]
+            }}"#
+        ),
+        Some("adapter-token".to_owned()),
+    )
+    .unwrap();
+    let router =
+        sdkwork_claw_gateway::router_with_database_api_key_provider_configs_and_adapter_config(
+            catalog.database_config().unwrap(),
+            Some(catalog.api_key_security_config().unwrap()),
+            None,
+            Some(
+                ProviderSecretMapConfig::from_json(
+                    r#"{"vault://providers/tencent-cloud/account/main":"sk-tencent-cloud-account"}"#,
+                )
+                .unwrap(),
+            ),
+            Some(adapter_config),
+        )
+        .await
+        .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/vidu/ent/v2/start-end2video")
+                .header("authorization", catalog.gateway_authorization_header())
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"vidu2.0","prompt":"db account adapter"}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    let response_status = response.status();
+    let response_body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    assert_eq!(
+        StatusCode::ACCEPTED,
+        response_status,
+        "{}",
+        String::from_utf8_lossy(&response_body)
+    );
+    assert!(
+        direct_captured.lock().unwrap().is_empty(),
+        "database-routed registered adapter endpoint must not call the direct provider target"
+    );
+    let adapter_calls = adapter_captured.lock().unwrap();
+    assert_eq!(1, adapter_calls.len());
+    assert_eq!(
+        Some("Bearer adapter-token".to_owned()),
+        adapter_calls[0].authorization
+    );
+    assert_eq!(
+        "tencent-cloud",
+        adapter_calls[0].body.provider.provider_code
+    );
+    assert_eq!(9301, adapter_calls[0].body.provider.channel_id);
+    assert_eq!(
+        Some(format!("http://{direct_addr}/vidu")),
+        adapter_calls[0].body.provider.base_url
+    );
+    assert_eq!(
+        "video.start_end2video",
+        adapter_calls[0].body.invocation.endpoint_key
+    );
+    assert_eq!(
+        AdapterInvocationShape::AsyncTaskStart,
+        adapter_calls[0].body.invocation.shape
+    );
+    assert_eq!(
+        json!("db account adapter"),
+        adapter_calls[0].body.body["prompt"]
+    );
+    assert!(matches!(
+        adapter_calls[0].body.secret,
+        AdapterSecret::GatewayResolved(_)
+    ));
+}
+
+#[tokio::test]
+async fn gateway_database_provider_native_adapter_directs_when_selected_account_has_no_adapter_route(
+) {
+    let direct_captured = Arc::new(Mutex::new(Vec::new()));
+    let direct_provider = Router::new()
+        .route(
+            "/vidu/ent/v2/start-end2video",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&direct_captured));
+    let direct_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let direct_addr = direct_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(direct_listener, direct_provider).await.unwrap();
+    });
+
+    let adapter_captured = Arc::new(Mutex::new(Vec::new()));
+    let adapter = Router::new()
+        .route(
+            "/providers/tencent-cloud/vidu/ent/v2/start-end2video",
+            any(capture_provider_native_adapter_request),
+        )
+        .with_state(Arc::clone(&adapter_captured));
+    let adapter_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let adapter_addr = adapter_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(adapter_listener, adapter).await.unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_vidu_start_end2video_account_pool(&catalog, &format!("http://{direct_addr}/vidu")).await;
+    let adapter_config = ProviderAdapterConfig::from_json(
+        format!(
+            r#"{{
+                "routes": [{{
+                    "providerCode": "tencent-cloud",
+                    "adapterKind": "internal_http",
+                    "adapterBaseUrl": "http://{adapter_addr}",
+                    "capability": "video_generation",
+                    "endpointKey": "video.start_end2video",
+                    "method": "POST",
+                    "standardPathPattern": "/vidu/ent/v2/start-end2video",
+                    "adapterPathTemplate": "/providers/{{provider_code}}{{standard_path}}",
+                    "invocationShape": "async_task_start",
+                    "status": "enabled",
+                    "priority": 1
+                }}]
+            }}"#
+        ),
+        Some("adapter-token".to_owned()),
+    )
+    .unwrap();
+    let router =
+        sdkwork_claw_gateway::router_with_database_api_key_provider_configs_and_adapter_config(
+            catalog.database_config().unwrap(),
+            Some(catalog.api_key_security_config().unwrap()),
+            None,
+            Some(
+                ProviderSecretMapConfig::from_json(
+                    r#"{"vault://providers/vidu/account/main":"sk-vidu-account"}"#,
+                )
+                .unwrap(),
+            ),
+            Some(adapter_config),
+        )
+        .await
+        .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/vidu/ent/v2/start-end2video")
+                .header("authorization", catalog.gateway_authorization_header())
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"vidu2.0","prompt":"db account direct"}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::CREATED, response.status());
+    assert!(
+        adapter_captured.lock().unwrap().is_empty(),
+        "a metadata route for a non-standard provider must not adapt an official standard provider account"
+    );
+    let direct_calls = direct_captured.lock().unwrap();
+    assert_eq!(1, direct_calls.len());
+    assert_eq!("POST", direct_calls[0].method);
+    assert_eq!(
+        "/vidu/ent/v2/start-end2video",
+        direct_calls[0].path_and_query
+    );
+    assert_eq!(
+        Some("sk-vidu-account".to_owned()),
+        direct_calls[0].vidu_token
+    );
+    assert!(direct_calls[0].body.contains("db account direct"));
 }
 
 #[tokio::test]
@@ -3279,6 +3779,176 @@ async fn capture_native_provider_request(
     )
 }
 
+async fn capture_provider_native_adapter_request(
+    State(captured): State<Arc<Mutex<Vec<CapturedProviderNativeAdapterRequest>>>>,
+    headers: HeaderMap,
+    axum::Json(body): axum::Json<AdapterInvocationRequest>,
+) -> (StatusCode, axum::Json<AdapterInvocationResponse>) {
+    captured
+        .lock()
+        .unwrap()
+        .push(CapturedProviderNativeAdapterRequest {
+            authorization: headers
+                .get("authorization")
+                .and_then(|value| value.to_str().ok())
+                .map(str::to_owned),
+            body,
+        });
+    (
+        StatusCode::ACCEPTED,
+        axum::Json(
+            AdapterInvocationResponse::json_task(
+                202,
+                json!({"id": "adapter-task-1", "status": "queued"}),
+            )
+            .with_provider_task_id("provider-task-1"),
+        ),
+    )
+}
+
+async fn seed_vidu_start_end2video_account_pool(
+    catalog: &sdkwork_claw_test_support::SeededSqliteCatalog,
+    base_url: &str,
+) {
+    seed_start_end2video_account_pool(
+        catalog,
+        9301,
+        "vidu-official",
+        "vidu",
+        "vidu-official",
+        "vault://providers/vidu/account/main",
+        "header",
+        r#"{"name":"token"}"#,
+        base_url,
+    )
+    .await;
+}
+
+async fn seed_tencent_cloud_vidu_start_end2video_account_pool(
+    catalog: &sdkwork_claw_test_support::SeededSqliteCatalog,
+    base_url: &str,
+) {
+    seed_start_end2video_account_pool(
+        catalog,
+        9301,
+        "tencent-cloud",
+        "tencent",
+        "tencent-cloud",
+        "vault://providers/tencent-cloud/account/main",
+        "bearer",
+        "{}",
+        base_url,
+    )
+    .await;
+}
+
+async fn seed_start_end2video_account_pool(
+    catalog: &sdkwork_claw_test_support::SeededSqliteCatalog,
+    id: i64,
+    provider_code: &str,
+    upstream_vendor_code: &str,
+    upstream_provider_code: &str,
+    secret_ref: &str,
+    auth_type: &str,
+    auth_config: &str,
+    base_url: &str,
+) {
+    let pool = catalog.open_pool().await.unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO integration_provider
+            (id, provider_code, integration_type, upstream_vendor_code,
+             upstream_provider_code, base_url, status)
+        VALUES
+            (?, ?, 3, ?, ?, ?, 1)
+        "#,
+    )
+    .bind(id)
+    .bind(provider_code)
+    .bind(upstream_vendor_code)
+    .bind(upstream_provider_code)
+    .bind(base_url)
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO integration_provider_account
+            (id, provider_code, secret_ref, status, auth_type, auth_config)
+        VALUES
+            (?, ?, ?, 1, ?, ?)
+        "#,
+    )
+    .bind(id)
+    .bind(provider_code)
+    .bind(secret_ref)
+    .bind(auth_type)
+    .bind(auth_config)
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO integration_channel
+            (id, provider_code, base_url, account_id, status, priority, weight)
+        VALUES
+            (?, ?, ?, ?, 1, 10, 100)
+        "#,
+    )
+    .bind(id)
+    .bind(provider_code)
+    .bind(base_url)
+    .bind(id)
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_routing_profile
+            (id, uuid, tenant_id, organization_id, data_scope, status, created_at,
+             updated_at, version, metadata, policy_id, profile_version, profile_name,
+             release_status, traffic_percent, config_hash)
+        VALUES
+            (9301, 'routing-profile-vidu-video', 10, 20, 1, 1,
+             '2026-05-10 00:00:00', '2026-05-10 00:00:00', 0, '{}',
+             9301, 1, 'Vidu Video Profile', 2, '100.000000',
+             'vidu-video-profile-hash')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_routing_policy
+            (id, tenant_id, organization_id, policy_code, policy_scope, subject_id,
+             capability, default_profile_id, fallback_mode, status)
+        VALUES
+            (9301, 10, 20, 'vidu-video-group-policy', 5, 10, 5, 9301, 1, 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_routing_rule
+            (id, tenant_id, organization_id, profile_id, rule_code, priority,
+             match_expression, target_model, candidate_channels, fallback_chain,
+             constraints, status)
+        VALUES
+            (9301, 10, 20, 9301, 'vidu-start-end2video', 1,
+             '{"routeKey":"video.start_end2video"}',
+             'video.start_end2video', '[{"channel_id":9301,"weight":100}]',
+             '[]', '{}', 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    pool.close().await;
+}
+
 async fn seed_openai_passthrough_group_account_pools(
     catalog: &sdkwork_claw_test_support::SeededSqliteCatalog,
     standard_base_url: &str,
@@ -3328,7 +3998,7 @@ async fn seed_openai_passthrough_group_account_pools(
     sqlx::query(
         r#"
         UPDATE integration_channel
-        SET base_url_override = ?
+        SET base_url = ?
         WHERE id = 3001
         "#,
     )
@@ -3350,7 +4020,7 @@ async fn seed_openai_passthrough_group_account_pools(
     sqlx::query(
         r#"
         INSERT INTO integration_channel
-            (id, provider_code, base_url_override, account_id, status, priority, weight)
+            (id, provider_code, base_url, account_id, status, priority, weight)
         VALUES
             (3002, 'openrouter', ?, 9003, 1, 10, 100)
         "#,
@@ -3505,7 +4175,7 @@ async fn seed_openai_passthrough_default_account_pool_fallback(
     sqlx::query(
         r#"
         UPDATE integration_channel
-        SET base_url_override = ?
+        SET base_url = ?
         WHERE id = 3001
         "#,
     )
@@ -3538,7 +4208,7 @@ async fn seed_openai_passthrough_default_account_pool_fallback(
     sqlx::query(
         r#"
         INSERT INTO integration_channel
-            (id, provider_code, base_url_override, account_id, status, priority, weight)
+            (id, provider_code, base_url, account_id, status, priority, weight)
         VALUES
             (3004, 'openrouter', ?, 9004, 1, 20, 100)
         "#,
@@ -3618,7 +4288,7 @@ async fn seed_openai_passthrough_header_auth_account_pool_with_auth_config(
         r#"
         INSERT INTO integration_provider
             (id, provider_code, integration_type, upstream_vendor_code,
-             upstream_provider_code, base_url_template, status)
+             upstream_provider_code, base_url, status)
         VALUES
             (9005, 'google', 3, 'google', 'google', ?, 1)
         "#,
@@ -3644,7 +4314,7 @@ async fn seed_openai_passthrough_header_auth_account_pool_with_auth_config(
         r#"
         UPDATE integration_channel
         SET provider_code = 'google',
-            base_url_override = ?,
+            base_url = ?,
             account_id = 9005
         WHERE id = 3001
         "#,

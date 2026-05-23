@@ -53,6 +53,58 @@ func (a *PlatformApi) AppsCreate(body sdktypes.AdminAppCreateRequest, xRequestId
     return decodeResult[sdktypes.AppsCreateResult](raw)
 }
 
+// List app categories
+func (a *PlatformApi) AppsCategoriesList() (sdktypes.AppsCategoriesListResult, error) {
+    raw, err := a.client.Get(BackendApiPath("/platform/apps/categories"), nil, nil)
+    if err != nil {
+        var zero sdktypes.AppsCategoriesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AppsCategoriesListResult](raw)
+}
+
+// Create app category
+func (a *PlatformApi) AppsCategoriesCreate(body sdktypes.AdminAppCategoryCreateRequest, xRequestId *string) (sdktypes.AppsCategoriesCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(BackendApiPath("/platform/apps/categories"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.AppsCategoriesCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AppsCategoriesCreateResult](raw)
+}
+
+// Delete app category
+func (a *PlatformApi) AppsCategoriesDelete(categoryId string, xRequestId *string) (sdktypes.AppsCategoriesDeleteResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/platform/apps/categories/%s", SerializePathParameter(categoryId, PathParameterSpec{Name: "categoryId", Style: "simple", Explode: false}))), nil, headers)
+    if err != nil {
+        var zero sdktypes.AppsCategoriesDeleteResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AppsCategoriesDeleteResult](raw)
+}
+
+// Update app category
+func (a *PlatformApi) AppsCategoriesUpdate(categoryId string, body sdktypes.AdminAppCategoryUpdateRequest, xRequestId *string) (sdktypes.AppsCategoriesUpdateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/platform/apps/categories/%s", SerializePathParameter(categoryId, PathParameterSpec{Name: "categoryId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.AppsCategoriesUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AppsCategoriesUpdateResult](raw)
+}
+
 // Delete app
 func (a *PlatformApi) AppsDelete(appId string, xRequestId *string) (sdktypes.AppsDeleteResult, error) {
     headers := BuildRequestHeaders(

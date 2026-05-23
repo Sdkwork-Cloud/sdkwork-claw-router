@@ -1,5 +1,5 @@
 import {
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
   readRequiredApiItems,
@@ -31,7 +31,7 @@ export interface ProviderConfig {
 export class ProviderService {
   static async fetchProviders(): Promise<ProviderConfig[]> {
     const result = await getClawRouterAppSdkClient().ai.providers.list();
-    ensurePlusApiSuccess(result, 'console.providers.states.loadErrorFallback');
+    ensureSdkworkApiSuccess(result, 'console.providers.states.loadErrorFallback');
     return readRequiredApiItems(result, 'console.providers.states.loadErrorFallback')
       .map(normalizeProviderConfig);
   }

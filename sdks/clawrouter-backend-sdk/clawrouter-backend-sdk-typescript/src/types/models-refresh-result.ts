@@ -7,7 +7,5 @@ export interface ModelsRefreshResult {
   /** Data field on models refresh result. */
   data?: AdminModelCatalogSyncResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

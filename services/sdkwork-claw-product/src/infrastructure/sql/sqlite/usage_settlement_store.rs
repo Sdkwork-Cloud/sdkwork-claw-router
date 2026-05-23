@@ -1,6 +1,7 @@
 use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
 
+use sdkwork_commerce_core::{CommerceAccountAssetType, CommerceLedgerDirection};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::DomainError;
@@ -8,12 +9,7 @@ use crate::ports::{
     UsageSettlementCommand, UsageSettlementFuture, UsageSettlementOutcome, UsageSettlementStore,
 };
 
-const ACCOUNT_TYPE_POINTS: i64 = 2;
-const ASSET_TYPE_POINTS: i64 = 2;
-const DIRECTION_DEBIT: i64 = 1;
-const LEDGER_STATUS_SUCCESS: i64 = 2;
-const TRANSACTION_TYPE_USAGE_DEBIT: i64 = 22;
-const SOURCE_TYPE_USAGE_SETTLEMENT: i64 = 8;
+const POINTS_CURRENCY_CODE: &str = "POINT";
 const USAGE_SETTLEMENT_PENDING: i64 = 0;
 const USAGE_SETTLEMENT_SUCCESS: i64 = 2;
 const USAGE_SETTLEMENT_FAILED: i64 = 3;
@@ -55,8 +51,8 @@ struct UsageFactForSettlement {
 
 #[derive(Debug, Clone)]
 struct PointsAccount {
-    id: i64,
-    available_points: i64,
+    id: String,
+    available_amount: i64,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -171,12 +167,12 @@ async fn settle_usage_fact(
     let points = charge_points(&usage_fact.amount)?;
     let account = ensure_points_account(tx, command, usage_fact).await?;
     let settlement_id =
-        upsert_processing_settlement(tx, command, usage_fact, account.id, points).await?;
+        upsert_processing_settlement(tx, command, usage_fact, &account.id, points).await?;
     if points == 0 {
         mark_settlement_success(tx, command, usage_fact, settlement_id, None).await?;
         return Ok(SettlementStep::Settled(0));
     }
-    if account.available_points < points {
+    if account.available_amount < points {
         mark_settlement_failed(
             tx,
             usage_fact,
@@ -189,29 +185,39 @@ async fn settle_usage_fact(
     }
 
     let transaction_id = settlement_no(usage_fact.id);
-    if existing_account_history_id(tx, account.id, &transaction_id)
-        .await?
-        .is_some()
+    if let Some(ledger_entry_id) =
+        existing_account_ledger_entry_id(tx, &account.id, &transaction_id).await?
     {
-        mark_settlement_success(tx, command, usage_fact, settlement_id, None).await?;
+        mark_settlement_success(
+            tx,
+            command,
+            usage_fact,
+            settlement_id,
+            Some(ledger_entry_id.as_str()),
+        )
+        .await?;
         return Ok(SettlementStep::Skipped);
     }
 
-    let balance_after = account.available_points - points;
-    update_account_points(tx, account.id, balance_after).await?;
-    let history_id = insert_account_history(
+    let balance_after = account.available_amount - points;
+    update_account_points(tx, &account.id, balance_after).await?;
+    let ledger_entry_id = insert_account_ledger_entry(
         tx,
-        command,
         usage_fact,
-        settlement_id,
-        account.id,
-        account.available_points,
+        &account.id,
         balance_after,
         points,
         &transaction_id,
     )
     .await?;
-    mark_settlement_success(tx, command, usage_fact, settlement_id, Some(history_id)).await?;
+    mark_settlement_success(
+        tx,
+        command,
+        usage_fact,
+        settlement_id,
+        Some(ledger_entry_id.as_str()),
+    )
+    .await?;
     Ok(SettlementStep::Settled(points))
 }
 
@@ -221,7 +227,7 @@ async fn already_settled(
 ) -> Result<bool, DomainError> {
     let row = sqlx::query(
         r#"
-        SELECT account_history_id
+        SELECT account_ledger_entry_id
         FROM commerce_usage_settlement
         WHERE tenant_id = ?
           AND organization_id = ?
@@ -247,13 +253,14 @@ async fn ensure_points_account(
 ) -> Result<PointsAccount, DomainError> {
     let existing = sqlx::query(
         r#"
-        SELECT id, COALESCE(available_points, 0) AS available_points
-        FROM plus_account
-        WHERE tenant_id = ?
-          AND organization_id = ?
-          AND user_id = ?
-          AND account_type = ?
-          AND status = 1
+        SELECT id, CAST(COALESCE(available_amount, '0') AS TEXT) AS available_amount
+        FROM commerce_account
+        WHERE tenant_id = CAST(? AS TEXT)
+          AND (organization_id IS NULL OR organization_id = CAST(? AS TEXT))
+          AND owner_user_id = CAST(? AS TEXT)
+          AND asset_type = ?
+          AND currency_code = ?
+          AND status = 'active'
         ORDER BY id ASC
         LIMIT 1
         "#,
@@ -261,44 +268,73 @@ async fn ensure_points_account(
     .bind(usage_fact.tenant_id)
     .bind(usage_fact.organization_id)
     .bind(usage_fact.user_id)
-    .bind(ACCOUNT_TYPE_POINTS)
+    .bind(CommerceAccountAssetType::Points.as_str())
+    .bind(POINTS_CURRENCY_CODE)
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to load usage settlement points account", error))?;
     if let Some(row) = existing {
         return Ok(PointsAccount {
-            id: integer_cell(&row, "id"),
-            available_points: integer_cell(&row, "available_points"),
+            id: string_cell(&row, "id"),
+            available_amount: integer_cell(&row, "available_amount"),
         });
     }
 
     sqlx::query(
         r#"
-        INSERT INTO plus_account
-            (uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, user_id, account_type, owner, owner_id, available_balance, frozen_balance, available_points, frozen_points, token_balance, frozen_token, status)
+        INSERT INTO commerce_account
+            (id, tenant_id, organization_id, owner_user_id, asset_type, currency_code, available_amount, frozen_amount, version, status, created_at, updated_at)
         VALUES
-            (?, ?, ?, 1, ?, ?, 0, ?, ?, 0, ?, 0, 0, 0, 0, 0, 0, 1)
+            (?, CAST(? AS TEXT), CAST(? AS TEXT), CAST(? AS TEXT), ?, ?, '0', '0', 0, 'active', ?, ?)
+        ON CONFLICT(tenant_id, organization_id, owner_user_id, asset_type, currency_code) DO NOTHING
         "#,
     )
-    .bind(stable_uuid("usage-account", usage_fact.id))
+    .bind(stable_account_id(usage_fact))
     .bind(usage_fact.tenant_id)
     .bind(usage_fact.organization_id)
+    .bind(usage_fact.user_id)
+    .bind(CommerceAccountAssetType::Points.as_str())
+    .bind(POINTS_CURRENCY_CODE)
     .bind(&command.requested_at)
     .bind(&command.requested_at)
-    .bind(usage_fact.user_id)
-    .bind(ACCOUNT_TYPE_POINTS)
-    .bind(usage_fact.user_id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create usage settlement points account", error))?;
-    let id: i64 = sqlx::query_scalar("SELECT last_insert_rowid()")
-        .fetch_one(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to read usage settlement points account id", error))?;
+
+    let row = sqlx::query(
+        r#"
+        SELECT id, CAST(COALESCE(available_amount, '0') AS TEXT) AS available_amount
+        FROM commerce_account
+        WHERE tenant_id = CAST(? AS TEXT)
+          AND (organization_id IS NULL OR organization_id = CAST(? AS TEXT))
+          AND owner_user_id = CAST(? AS TEXT)
+          AND asset_type = ?
+          AND currency_code = ?
+          AND status = 'active'
+        ORDER BY id ASC
+        LIMIT 1
+        "#,
+    )
+    .bind(usage_fact.tenant_id)
+    .bind(usage_fact.organization_id)
+    .bind(usage_fact.user_id)
+    .bind(CommerceAccountAssetType::Points.as_str())
+    .bind(POINTS_CURRENCY_CODE)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| {
+        store_error(
+            "failed to load created usage settlement points account",
+            error,
+        )
+    })?
+    .ok_or_else(|| {
+        DomainError::conflict("usage settlement points account was not available after creation")
+    })?;
 
     Ok(PointsAccount {
-        id,
-        available_points: 0,
+        id: string_cell(&row, "id"),
+        available_amount: integer_cell(&row, "available_amount"),
     })
 }
 
@@ -306,7 +342,7 @@ async fn upsert_processing_settlement(
     tx: &mut Transaction<'_, Sqlite>,
     command: &UsageSettlementCommand,
     usage_fact: &UsageFactForSettlement,
-    account_id: i64,
+    account_id: &str,
     points: i64,
 ) -> Result<i64, DomainError> {
     sqlx::query(
@@ -344,8 +380,8 @@ async fn upsert_processing_settlement(
     .bind(settlement_no(usage_fact.id))
     .bind(usage_fact.id)
     .bind(account_id)
-    .bind(ASSET_TYPE_POINTS)
-    .bind(DIRECTION_DEBIT)
+    .bind(CommerceAccountAssetType::Points.as_str())
+    .bind(CommerceLedgerDirection::Debit.as_str())
     .bind(&usage_fact.amount)
     .bind(points)
     .bind(usage_fact.tokens)
@@ -374,17 +410,18 @@ async fn upsert_processing_settlement(
     .map_err(|error| store_error("failed to read usage settlement bridge id", error))
 }
 
-async fn existing_account_history_id(
+async fn existing_account_ledger_entry_id(
     tx: &mut Transaction<'_, Sqlite>,
-    account_id: i64,
+    account_id: &str,
     transaction_id: &str,
-) -> Result<Option<i64>, DomainError> {
+) -> Result<Option<String>, DomainError> {
     sqlx::query_scalar(
         r#"
         SELECT id
-        FROM plus_account_history
+        FROM commerce_account_ledger_entry
         WHERE account_id = ?
-          AND transaction_id = ?
+          AND transaction_no = ?
+          AND business_type = 'usage'
         LIMIT 1
         "#,
     )
@@ -397,18 +434,19 @@ async fn existing_account_history_id(
 
 async fn update_account_points(
     tx: &mut Transaction<'_, Sqlite>,
-    account_id: i64,
+    account_id: &str,
     balance_after: i64,
 ) -> Result<(), DomainError> {
     sqlx::query(
         r#"
-        UPDATE plus_account
-        SET available_points = ?,
+        UPDATE commerce_account
+        SET available_amount = ?,
+            version = version + 1,
             updated_at = CURRENT_TIMESTAMP
         WHERE id = ?
         "#,
     )
-    .bind(balance_after)
+    .bind(balance_after.to_string())
     .bind(account_id)
     .execute(&mut **tx)
     .await
@@ -416,54 +454,42 @@ async fn update_account_points(
     Ok(())
 }
 
-async fn insert_account_history(
+async fn insert_account_ledger_entry(
     tx: &mut Transaction<'_, Sqlite>,
-    command: &UsageSettlementCommand,
     usage_fact: &UsageFactForSettlement,
-    settlement_id: i64,
-    account_id: i64,
-    balance_before: i64,
+    account_id: &str,
     balance_after: i64,
     points: i64,
     transaction_id: &str,
-) -> Result<i64, DomainError> {
+) -> Result<String, DomainError> {
+    let ledger_entry_id = stable_uuid("usage-ledger", usage_fact.id);
     sqlx::query(
         r#"
-        INSERT INTO plus_account_history
-            (uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v,
-             account_type, asset_type, account_id, transaction_id, transaction_type,
-             points_change, points_before, points_after, source_type, source_id, status,
-             usage_result, remarks)
+        INSERT INTO commerce_account_ledger_entry
+            (id, tenant_id, organization_id, account_id, owner_user_id, asset_type, direction, amount, balance_after, business_type, transaction_no, request_no, idempotency_key, source_type, source_id, remark, created_at)
         VALUES
-            (?, ?, ?, 1, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (?, CAST(? AS TEXT), CAST(? AS TEXT), ?, CAST(? AS TEXT), ?, ?, ?, ?, 'usage', ?, ?, ?, 'ai_usage_fact', ?, ?, CURRENT_TIMESTAMP)
         "#,
     )
-    .bind(stable_uuid("usage-ledger", usage_fact.id))
+    .bind(&ledger_entry_id)
     .bind(usage_fact.tenant_id)
     .bind(usage_fact.organization_id)
-    .bind(&command.requested_at)
-    .bind(&command.requested_at)
-    .bind(ACCOUNT_TYPE_POINTS)
-    .bind(ASSET_TYPE_POINTS)
     .bind(account_id)
+    .bind(usage_fact.user_id)
+    .bind(CommerceAccountAssetType::Points.as_str())
+    .bind(CommerceLedgerDirection::Debit.as_str())
+    .bind(points.to_string())
+    .bind(balance_after.to_string())
     .bind(transaction_id)
-    .bind(TRANSACTION_TYPE_USAGE_DEBIT)
-    .bind(-points)
-    .bind(balance_before)
-    .bind(balance_after)
-    .bind(SOURCE_TYPE_USAGE_SETTLEMENT)
-    .bind(settlement_id.to_string())
-    .bind(LEDGER_STATUS_SUCCESS)
-    .bind(usage_result(usage_fact, settlement_id, points))
+    .bind(&usage_fact.request_id)
+    .bind(transaction_id)
+    .bind(usage_fact.id.to_string())
     .bind(format!("usage_request={}", usage_fact.request_id))
     .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to insert usage settlement account history", error))?;
+    .map_err(|error| store_error("failed to insert usage settlement account ledger entry", error))?;
 
-    sqlx::query_scalar("SELECT last_insert_rowid()")
-        .fetch_one(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to read usage settlement account history id", error))
+    Ok(ledger_entry_id)
 }
 
 async fn mark_settlement_success(
@@ -471,12 +497,12 @@ async fn mark_settlement_success(
     command: &UsageSettlementCommand,
     usage_fact: &UsageFactForSettlement,
     settlement_id: i64,
-    history_id: Option<i64>,
+    ledger_entry_id: Option<&str>,
 ) -> Result<(), DomainError> {
     sqlx::query(
         r#"
         UPDATE commerce_usage_settlement
-        SET account_history_id = COALESCE(?, account_history_id),
+        SET account_ledger_entry_id = COALESCE(?, account_ledger_entry_id),
             settlement_status = ?,
             settled_at = ?,
             failure_code = NULL,
@@ -484,7 +510,7 @@ async fn mark_settlement_success(
         WHERE id = ?
         "#,
     )
-    .bind(history_id)
+    .bind(ledger_entry_id)
     .bind(USAGE_SETTLEMENT_SUCCESS)
     .bind(&command.requested_at)
     .bind(settlement_id)
@@ -518,7 +544,7 @@ async fn mark_settlement_failed(
     sqlx::query(
         r#"
         UPDATE commerce_usage_settlement
-        SET account_history_id = NULL,
+        SET account_ledger_entry_id = NULL,
             settlement_status = ?,
             settled_at = NULL,
             failure_code = ?,
@@ -552,16 +578,6 @@ async fn mark_settlement_failed(
 
 fn settlement_no(usage_fact_id: i64) -> String {
     format!("usage-settlement-{usage_fact_id}")
-}
-
-fn usage_result(usage_fact: &UsageFactForSettlement, settlement_id: i64, points: i64) -> String {
-    format!(
-        r#"{{"usage_fact_id":{},"settlement_id":{},"request_id":"{}","points":{}}}"#,
-        usage_fact.id,
-        settlement_id,
-        json_escape(&usage_fact.request_id),
-        points
-    )
 }
 
 fn charge_points(amount: &str) -> Result<i64, DomainError> {
@@ -626,8 +642,13 @@ fn stable_uuid(prefix: &str, usage_fact_id: i64) -> String {
     format!("{prefix}-{:016x}", hasher.finish())
 }
 
-fn json_escape(value: &str) -> String {
-    value.replace('\\', "\\\\").replace('"', "\\\"")
+fn stable_account_id(usage_fact: &UsageFactForSettlement) -> String {
+    let mut hasher = DefaultHasher::new();
+    "usage-account".hash(&mut hasher);
+    usage_fact.tenant_id.hash(&mut hasher);
+    usage_fact.organization_id.hash(&mut hasher);
+    usage_fact.user_id.hash(&mut hasher);
+    format!("usage-account-{:016x}", hasher.finish())
 }
 
 fn truncate_message(message: &str) -> String {

@@ -58,6 +58,10 @@ const sdkReferencePageSource = () => readFileSync(
   new URL("./packages/sdkwork-claw-router-sdk-reference/src/pages/SdkReference.tsx", import.meta.url),
   "utf8",
 );
+const sdkEndpointViewSource = () => readFileSync(
+  new URL("./packages/sdkwork-claw-router-sdk-reference/src/components/SdkEndpointView.tsx", import.meta.url),
+  "utf8",
+);
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
 
 function withClawRouterRuntimeEnv<T>(env: Record<string, string>, fn: () => T): T {
@@ -1482,6 +1486,45 @@ test("sdk reference language switching does not reload OpenAPI schema documents"
   assert.equal(source.includes("[activeSystem, activeSdk.id]"), false);
   assert.equal(source.includes("await fetch(schemaUrl)"), false);
   assert.equal(source.includes("loadSdkReferenceSystems()"), true);
+});
+
+test("sdk reference generation uses app SDK instead of local tool API fetches", () => {
+  const pageSource = sdkReferencePageSource();
+  const serviceSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-sdk-reference/src/sdkReferenceGenerationService.ts", import.meta.url),
+    "utf8",
+  );
+  const appSdkSource = readFileSync(
+    new URL("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/sdk-reference.ts", import.meta.url),
+    "utf8",
+  );
+
+  assert.equal(pageSource.includes("fetch('/api/sdk-readme'"), false);
+  assert.equal(pageSource.includes('fetch("/api/sdk-readme"'), false);
+  assert.equal(pageSource.includes("fetch('/api/generate-sdk'"), false);
+  assert.equal(pageSource.includes('fetch("/api/generate-sdk"'), false);
+  assert.equal(serviceSource.includes("fetch('/api/sdk-readme'"), false);
+  assert.equal(serviceSource.includes('fetch("/api/sdk-readme"'), false);
+  assert.equal(serviceSource.includes("fetch('/api/generate-sdk'"), false);
+  assert.equal(serviceSource.includes('fetch("/api/generate-sdk"'), false);
+  assert.match(serviceSource, /getClawRouterAppSdkClient/u);
+  assert.match(serviceSource, /sdkReference\.documentation\.create/u);
+  assert.match(serviceSource, /sdkReference\.archives\.create/u);
+  assert.match(appSdkSource, /appApiPath\(`\/sdk_reference\/documentation`\)/u);
+  assert.match(appSdkSource, /appApiPath\(`\/sdk_reference\/archives`\)/u);
+});
+
+test("sdk endpoint docs show code definition and example before parameter details", () => {
+  const source = sdkEndpointViewSource();
+  const codeIndex = source.indexOf("CODE DEFINITION");
+  const exampleIndex = source.indexOf("EXAMPLE USAGE");
+  const parametersIndex = source.indexOf("PARAMETERS AND RETURNS");
+
+  assert.notEqual(codeIndex, -1);
+  assert.notEqual(exampleIndex, -1);
+  assert.notEqual(parametersIndex, -1);
+  assert.ok(codeIndex < exampleIndex, "code definition should be before example usage");
+  assert.ok(exampleIndex < parametersIndex, "example usage should be before parameter details");
 });
 
 test("api and sdk reference sidebar child directories align with endpoint rows", () => {

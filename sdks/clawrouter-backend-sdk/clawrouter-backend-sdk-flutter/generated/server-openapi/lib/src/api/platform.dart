@@ -50,6 +50,62 @@ class PlatformApi {
     })();
   }
 
+  /// List app categories
+  Future<AppsCategoriesListResult?> appsCategoriesList() async {
+    final response = await _client.get(ApiPaths.backendPath('/platform/apps/categories'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AppsCategoriesListResult.fromJson(map);
+    })();
+  }
+
+  /// Create app category
+  Future<AppsCategoriesCreateResult?> appsCategoriesCreate(AdminAppCategoryCreateRequest body, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.backendPath('/platform/apps/categories'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AppsCategoriesCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Delete app category
+  Future<AppsCategoriesDeleteResult?> appsCategoriesDelete(String categoryId, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final response = await _client.delete(ApiPaths.backendPath('/platform/apps/categories/${serializePathParameter(categoryId, const PathParameterSpec('categoryId', 'simple', false))}'), headers: requestHeaders);
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AppsCategoriesDeleteResult.fromJson(map);
+    })();
+  }
+
+  /// Update app category
+  Future<AppsCategoriesUpdateResult?> appsCategoriesUpdate(String categoryId, AdminAppCategoryUpdateRequest body, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.put(ApiPaths.backendPath('/platform/apps/categories/${serializePathParameter(categoryId, const PathParameterSpec('categoryId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AppsCategoriesUpdateResult.fromJson(map);
+    })();
+  }
+
   /// Delete app
   Future<AppsDeleteResult?> appsDelete(String appId, [String? xRequestId]) async {
     final requestHeaders = buildRequestHeaders(

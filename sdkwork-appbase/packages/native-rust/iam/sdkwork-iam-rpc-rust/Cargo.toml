@@ -1,0 +1,13 @@
+[package]
+name = "sdkwork_iam_rpc"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "SDKWork IAM RPC service manifest and adapter foundation."
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+sdkwork_rpc_core = { path = "../../foundation/sdkwork-rpc-core-rust" }
+sdkwork_iam_http = { path = "../sdkwork-iam-http-rust" }

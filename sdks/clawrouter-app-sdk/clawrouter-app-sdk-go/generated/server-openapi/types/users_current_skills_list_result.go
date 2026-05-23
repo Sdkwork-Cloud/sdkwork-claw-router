@@ -4,6 +4,5 @@ package types
 type UsersCurrentSkillsListResult struct {
 	Code string `json:"code"`
 	Data AppInstalledSkillsResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

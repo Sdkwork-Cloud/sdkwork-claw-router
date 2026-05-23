@@ -24,7 +24,7 @@ func main() {
     cfg := sdkhttp.NewDefaultConfig("http://localhost:18081")
     client := github.com/sdkwork/clawrouter-backend-sdk.NewSdkworkBackendClientWithConfig(cfg)
     client.SetApiKey("your-api-key")
-    
+
     // Use the SDK
     result, err := client.Ai.ModelVendorsList()
     if err != nil {
@@ -75,11 +75,12 @@ client.SetHeader("X-Custom-Header", "value")
 
 - `client.Agents` - agents API
 - `client.Ai` - ai API
-- `client.Billing` - billing API
+- `client.Commerce` - commerce API
 - `client.Content` - content API
 - `client.Ecosystem` - ecosystem API
 - `client.Iam` - iam API
 - `client.Integration` - integration API
+- `client.OpenPlatform` - open_platform API
 - `client.Platform` - platform API
 - `client.System` - system API
 
@@ -97,7 +98,7 @@ params := map[string]interface{}{
     "page": 5,
     "page_size": 6,
 }
-result, err := client.Agents.List(params)
+result, err := client.Agents.AgentDefinitionsList(params)
 if err != nil {
     panic(err)
 }
@@ -115,11 +116,11 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### billing
+### commerce
 
 ```go
-// List referral stats
-result, err := client.Billing.ReferralsStatsList()
+// Commerce Reports Payment Reconciliation Retrieve
+result, err := client.Commerce.ReportsPaymentReconciliationRetrieve()
 if err != nil {
     panic(err)
 }
@@ -170,20 +171,25 @@ if err != nil {
 fmt.Println(result)
 ```
 
+### open_platform
+
+```go
+// List open platform providers
+params := map[string]interface{}{
+    "status": "active",
+}
+result, err := client.OpenPlatform.ProvidersList(params)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
 ### platform
 
 ```go
-// List apps
-params := map[string]interface{}{
-    "q": "q",
-    "status": "ACTIVE",
-    "market_status": "DRAFT",
-    "app_type": "app_type",
-    "page": 5,
-    "page_size": 6,
-}
-xRequestId := "X-Request-Id"
-result, err := client.Platform.AppsList(params, &xRequestId)
+// List app categories
+result, err := client.Platform.AppsCategoriesList()
 if err != nil {
     panic(err)
 }

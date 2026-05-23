@@ -46,11 +46,19 @@ pub struct AppGenerationHistoryItem {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub model_info: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    pub model_catalog_key: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub url: Option<String>,
     pub images: Vec<String>,
     pub videos: Vec<AppGenerationMediaItem>,
     #[serde(skip_serializing_if = "Option::is_none")]
+    pub aspect_ratio: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub duration_seconds: Option<i64>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub output_text: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]

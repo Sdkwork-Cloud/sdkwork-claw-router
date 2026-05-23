@@ -296,7 +296,11 @@ function runProjectRuntimeStandardizer(outputPath, config) {
     '--sdk-dir',
     workspace.sdkFamilyName,
   ];
-  if (typeof config.apiSpecPath === 'string' && !isRemoteInput(config.apiSpecPath)) {
+  if (
+    workspace.sdkFamilyName !== 'clawrouter-open-sdk'
+    && typeof config.apiSpecPath === 'string'
+    && !isRemoteInput(config.apiSpecPath)
+  ) {
     args.push('--api-spec-path', config.apiSpecPath);
   }
   const result = spawnSync(

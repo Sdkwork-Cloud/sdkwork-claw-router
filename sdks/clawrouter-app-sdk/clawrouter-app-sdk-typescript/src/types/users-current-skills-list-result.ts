@@ -7,7 +7,5 @@ export interface UsersCurrentSkillsListResult {
   /** Data field on users current skills list result. */
   data?: AppInstalledSkillsResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

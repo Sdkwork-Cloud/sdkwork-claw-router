@@ -72,11 +72,15 @@ client.SetHeader("X-Custom-Header", "value");
 - `client.Ai` - ai API
 - `client.Auth` - auth API
 - `client.Billing` - billing API
-- `client.Communication` - communication API
+- `client.Chat` - chat API
 - `client.Content` - content API
 - `client.Ecosystem` - ecosystem API
 - `client.Iam` - iam API
+- `client.Memory` - memory API
+- `client.Notification` - notification API
 - `client.Platform` - platform API
+- `client.Runtime` - runtime API
+- `client.System` - system API
 
 ## Usage Examples
 
@@ -90,7 +94,7 @@ var query = new Dictionary<string, object>
     ["page_size"] = 2,
     ["q"] = "q",
 };
-var result = await client.Agents.ListAsync(query);
+var result = await client.Agents.AgentDefinitionsListAsync(query);
 Console.WriteLine(result);
 ```
 
@@ -118,11 +122,16 @@ var result = await client.Billing.AccountPointsRetrieveAsync();
 Console.WriteLine(result);
 ```
 
-### communication
+### chat
 
 ```csharp
-// List messages
-var result = await client.Communication.NotificationsListAsync();
+// List product chat conversations
+var query = new Dictionary<string, object>
+{
+    ["page"] = 1,
+    ["page_size"] = 2,
+};
+var result = await client.Chat.ConversationsListAsync(query);
 Console.WriteLine(result);
 ```
 
@@ -145,8 +154,36 @@ Console.WriteLine(result);
 ### iam
 
 ```csharp
-// List keys
-var result = await client.Iam.ApiKeysListAsync();
+// List groups
+var result = await client.Iam.ApiKeyGroupsListAsync();
+Console.WriteLine(result);
+```
+
+### memory
+
+```csharp
+// List memory spaces
+var query = new Dictionary<string, object>
+{
+    ["page"] = 1,
+    ["page_size"] = 2,
+};
+var result = await client.Memory.SpacesListAsync(query);
+Console.WriteLine(result);
+```
+
+### notification
+
+```csharp
+// List notifications
+var query = new Dictionary<string, object>
+{
+    ["app_id"] = "1",
+    ["include_archived"] = false,
+    ["page"] = 3,
+    ["page_size"] = 4,
+};
+var result = await client.Notification.NotificationsListAsync(query);
 Console.WriteLine(result);
 ```
 
@@ -155,6 +192,37 @@ Console.WriteLine(result);
 ```csharp
 // Get categories
 var result = await client.Platform.AppsStoreCategoriesListAsync();
+Console.WriteLine(result);
+```
+
+### runtime
+
+```csharp
+// List runtime invocations
+var query = new Dictionary<string, object>
+{
+    ["page"] = 1,
+    ["page_size"] = 2,
+    ["conversation_id"] = "1",
+    ["chat_turn_id"] = "1",
+    ["agent_session_id"] = "1",
+    ["runtime"] = "runtime",
+    ["status"] = "status",
+};
+var result = await client.Runtime.InvocationsListAsync(query);
+Console.WriteLine(result);
+```
+
+### system
+
+```csharp
+// Retrieve public site runtime branding settings
+var query = new Dictionary<string, object>
+{
+    ["tenant_code"] = "ok",
+    ["organization_code"] = "ok",
+};
+var result = await client.System.SiteRuntimeRetrieveAsync(query);
 Console.WriteLine(result);
 ```
 

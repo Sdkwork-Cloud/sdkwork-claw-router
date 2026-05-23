@@ -4,6 +4,5 @@ package types
 type AppsUnpublishResult struct {
 	Code string `json:"code"`
 	Data AdminAppMutationResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

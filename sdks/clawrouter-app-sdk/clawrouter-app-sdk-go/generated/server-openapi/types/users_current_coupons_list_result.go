@@ -4,6 +4,5 @@ package types
 type UsersCurrentCouponsListResult struct {
 	Code string `json:"code"`
 	Data BillingRedeemHistoryResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

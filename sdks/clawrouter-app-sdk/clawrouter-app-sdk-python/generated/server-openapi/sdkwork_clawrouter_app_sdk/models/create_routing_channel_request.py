@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
 if TYPE_CHECKING:
+    from .provider_circuit_breaker_policy import ProviderCircuitBreakerPolicy
     from .provider_retry_policy import ProviderRetryPolicy
 
 
@@ -16,6 +17,7 @@ class CreateRoutingChannelRequest:
     access_type: Optional[str] = None
     base_url: Optional[str] = None
     capabilities: Optional[List[str]] = None
+    circuit_breaker_policy: Optional[ProviderCircuitBreakerPolicy] = None
     protocol: Optional[str] = None
     retry_policy: Optional[ProviderRetryPolicy] = None
     status: Optional[str] = None

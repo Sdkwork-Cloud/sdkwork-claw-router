@@ -11,5 +11,4 @@ class AppsListResult:
     """Apps list result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminAppListResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

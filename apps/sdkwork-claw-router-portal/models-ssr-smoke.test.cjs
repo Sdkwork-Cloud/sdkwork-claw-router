@@ -91,7 +91,7 @@ function createCommonsShim() {
       { type: 'button', title: title ?? label ?? 'Copy' },
       label ?? title ?? 'Copy',
     ),
-    ensurePlusApiSuccess: () => undefined,
+    ensureSdkworkApiSuccess: () => undefined,
     FilterCheckbox: ({ checked, icon, label }) => React.createElement(
       'button',
       { 'aria-pressed': checked ? 'true' : 'false', type: 'button' },

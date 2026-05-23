@@ -80,7 +80,9 @@ impl AdminChannelStore for PostgresAdminChannelStore {
         &'a self,
         query: ListAdminChannelsQuery,
     ) -> AdminChannelCommandFuture<'a, Vec<AdminChannelItem>> {
-        Box::pin(async move { list_channels(&self.pool, query).await })
+        Box::pin(async move {
+            list_channels(&self.pool, query, self.api_key_secret_codec.as_deref()).await
+        })
     }
 
     fn create_channel<'a>(
@@ -148,6 +150,7 @@ impl AdminChannelStore for PostgresAdminChannelStore {
                 channel_id,
                 command.subject.tenant_id,
                 command.subject.organization_id,
+                self.api_key_secret_codec.as_deref(),
             )
             .await?
             .ok_or_else(|| DomainError::new("created channel could not be reloaded"))?;
@@ -268,6 +271,7 @@ impl AdminChannelStore for PostgresAdminChannelStore {
                 command.channel_id,
                 command.subject.tenant_id,
                 command.subject.organization_id,
+                self.api_key_secret_codec.as_deref(),
             )
             .await?;
             tx.commit()
@@ -418,6 +422,7 @@ impl AdminChannelStore for PostgresAdminChannelStore {
                 command.channel_id,
                 command.subject.tenant_id,
                 command.subject.organization_id,
+                self.api_key_secret_codec.as_deref(),
             )
             .await?
             .ok_or_else(|| DomainError::new("tested channel could not be reloaded"))?;
@@ -439,6 +444,7 @@ impl AdminChannelStore for PostgresAdminChannelStore {
 async fn list_channels(
     pool: &PgPool,
     query: ListAdminChannelsQuery,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
 ) -> DomainResult<Vec<AdminChannelItem>> {
     let rows = sqlx::query(
         r#"
@@ -447,12 +453,14 @@ async fn list_channels(
             c.uuid,
             c.tenant_id,
             c.organization_id,
+            c.created_at::text AS created_at,
+            c.metadata->>'expiresAt' AS expires_at,
             COALESCE(NULLIF(c.name, ''), p.display_name, c.provider_code, '') AS name,
             COALESCE(NULLIF(p.display_name, ''), c.provider_code, '') AS vendor,
             COALESCE(c.provider_code, '') AS provider_code,
             c.protocol,
             c.access_type,
-            COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) AS base_url,
+            COALESCE(NULLIF(c.base_url, ''), p.base_url) AS base_url,
             c.timeout_ms,
             c.retry_policy::text AS retry_policy_json,
             c.circuit_breaker_policy::text AS circuit_breaker_policy_json,
@@ -462,6 +470,7 @@ async fn list_channels(
             c.health_status,
             COALESCE(c.consecutive_error_count, 0) AS channel_errors,
             a.secret_ref,
+            a.auth_config::text AS provider_auth_config,
             a.upstream_balance_amount::text AS balance_amount,
             a.upstream_balance_currency,
             COALESCE(a.consecutive_error_count, 0) AS account_errors,
@@ -501,7 +510,7 @@ async fn list_channels(
         load_models_for_channels(pool, query.subject.tenant_id, query.subject.organization_id)
             .await?;
     rows.into_iter()
-        .map(|row| item_from_postgres_row(row, &models))
+        .map(|row| item_from_postgres_row(row, &models, api_key_secret_codec))
         .collect()
 }
 
@@ -550,12 +559,13 @@ async fn insert_channel(
     account_id: i64,
 ) -> DomainResult<i64> {
     let capabilities_json = string_array_json(&command.capabilities)?;
+    let metadata_json = channel_metadata_json(command.expires_at.as_deref())?;
     sqlx::query_scalar(
         r#"
         INSERT INTO integration_channel
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, provider_code, channel_code, name, protocol, access_type, base_url_override, timeout_ms, retry_policy, circuit_breaker_policy, model_mode, environment, capabilities, priority, weight, account_id, health_status, consecutive_error_count)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, provider_code, channel_code, name, protocol, access_type, base_url, timeout_ms, retry_policy, circuit_breaker_policy, model_mode, environment, capabilities, priority, weight, account_id, health_status, consecutive_error_count)
         VALUES
-            ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, $7, $8, $9, $10, $11, $12, $13, $14::jsonb, $15::jsonb, 1, 1, $16::jsonb, 100, $17, $18, $19, 0)
+            ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, $7::jsonb, $8, $9, $10, $11, $12, $13, $14, $15::jsonb, $16::jsonb, 1, 1, $17::jsonb, 100, $18, $19, $20, 0)
         RETURNING id
         "#,
     )
@@ -565,6 +575,7 @@ async fn insert_channel(
     .bind(status_code(&command.status))
     .bind(&command.requested_at)
     .bind(&command.requested_at)
+    .bind(metadata_json)
     .bind(&command.provider_code)
     .bind(entity_code("chn", &command.channel_uuid))
     .bind(&command.name)
@@ -601,6 +612,11 @@ async fn update_channel(
         .circuit_breaker_policy_json
         .as_ref()
         .and_then(|value| value.as_deref());
+    let expires_at_touched = command.expires_at.is_some();
+    let expires_at = command
+        .expires_at
+        .as_ref()
+        .and_then(|value| value.as_deref());
     let capabilities_json = command
         .capabilities
         .as_ref()
@@ -613,19 +629,24 @@ async fn update_channel(
             provider_code = COALESCE($2, provider_code),
             protocol = COALESCE($3, protocol),
             access_type = COALESCE($4, access_type),
-            base_url_override = CASE WHEN $5 THEN $6 ELSE base_url_override END,
+            base_url = CASE WHEN $5 THEN $6 ELSE base_url END,
             timeout_ms = CASE WHEN $7 THEN $8 ELSE timeout_ms END,
             retry_policy = CASE WHEN $9 THEN $10::jsonb ELSE retry_policy END,
             circuit_breaker_policy = CASE WHEN $11 THEN $12::jsonb ELSE circuit_breaker_policy END,
-            capabilities = COALESCE($13::jsonb, capabilities),
-            weight = COALESCE($14, weight),
-            status = COALESCE($15, status),
-            health_status = COALESCE($16, health_status),
-            updated_at = $17::timestamptz,
+            metadata = CASE
+                WHEN $13 AND $14::text IS NULL THEN COALESCE(metadata, '{}'::jsonb) - 'expiresAt'
+                WHEN $13 THEN jsonb_set(COALESCE(metadata, '{}'::jsonb), '{expiresAt}', to_jsonb($14::text), true)
+                ELSE metadata
+            END,
+            capabilities = COALESCE($15::jsonb, capabilities),
+            weight = COALESCE($16, weight),
+            status = COALESCE($17, status),
+            health_status = COALESCE($18, health_status),
+            updated_at = $19::timestamptz,
             version = COALESCE(version, 0) + 1
-        WHERE id = $18
-          AND tenant_id = $19
-          AND organization_id = $20
+        WHERE id = $20
+          AND tenant_id = $21
+          AND organization_id = $22
           AND deleted_at IS NULL
         "#,
     )
@@ -646,6 +667,8 @@ async fn update_channel(
     .bind(retry_policy_json)
     .bind(circuit_breaker_policy_touched)
     .bind(circuit_breaker_policy_json)
+    .bind(expires_at_touched)
+    .bind(expires_at)
     .bind(capabilities_json)
     .bind(command.weight)
     .bind(command.status.as_ref().map(|value| status_code(value)))
@@ -941,7 +964,7 @@ async fn load_channel_probe_target(
             c.id AS channel_id,
             p.id AS provider_id,
             c.account_id AS provider_account_id,
-            COALESCE(NULLIF(c.base_url_override, ''), NULLIF(p.base_url_template, ''), '') AS provider_base_url,
+            COALESCE(NULLIF(c.base_url, ''), NULLIF(p.base_url, ''), '') AS provider_base_url,
             COALESCE(NULLIF(a.secret_ref, ''), '') AS provider_secret_ref,
             a.auth_config::text AS provider_auth_config,
             COALESCE(NULLIF(cm.provider_model, ''), '') AS provider_model,
@@ -1122,6 +1145,7 @@ async fn load_channel_by_id(
     channel_id: i64,
     tenant_id: i64,
     organization_id: i64,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
 ) -> DomainResult<Option<AdminChannelItem>> {
     let row = sqlx::query(
         r#"
@@ -1130,12 +1154,14 @@ async fn load_channel_by_id(
             c.uuid,
             c.tenant_id,
             c.organization_id,
+            c.created_at::text AS created_at,
+            c.metadata->>'expiresAt' AS expires_at,
             COALESCE(NULLIF(c.name, ''), p.display_name, c.provider_code, '') AS name,
             COALESCE(NULLIF(p.display_name, ''), c.provider_code, '') AS vendor,
             COALESCE(c.provider_code, '') AS provider_code,
             c.protocol,
             c.access_type,
-            COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) AS base_url,
+            COALESCE(NULLIF(c.base_url, ''), p.base_url) AS base_url,
             c.timeout_ms,
             c.retry_policy::text AS retry_policy_json,
             c.circuit_breaker_policy::text AS circuit_breaker_policy_json,
@@ -1145,6 +1171,7 @@ async fn load_channel_by_id(
             c.health_status,
             COALESCE(c.consecutive_error_count, 0) AS channel_errors,
             a.secret_ref,
+            a.auth_config::text AS provider_auth_config,
             a.upstream_balance_amount::text AS balance_amount,
             a.upstream_balance_currency,
             COALESCE(a.consecutive_error_count, 0) AS account_errors,
@@ -1185,7 +1212,7 @@ async fn load_channel_by_id(
         return Ok(None);
     };
     let models = load_models_for_channels_tx(tx, tenant_id, organization_id).await?;
-    item_from_postgres_row(row, &models).map(Some)
+    item_from_postgres_row(row, &models, api_key_secret_codec).map(Some)
 }
 
 async fn load_channel_provider_code(
@@ -1376,6 +1403,7 @@ async fn insert_audit_log(
 fn item_from_postgres_row(
     row: sqlx::postgres::PgRow,
     models: &HashMap<i64, Vec<String>>,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
 ) -> DomainResult<AdminChannelItem> {
     let id: i64 = row.try_get("id").map_err(row_error)?;
     let capabilities = parse_string_array(
@@ -1396,11 +1424,19 @@ fn item_from_postgres_row(
             .ok()
             .flatten(),
     );
+    let provider_auth_config = row
+        .try_get::<Option<String>, _>("provider_auth_config")
+        .ok()
+        .flatten();
+    let api_key =
+        decode_provider_secret_value(provider_auth_config.as_deref(), api_key_secret_codec)?;
     Ok(AdminChannelItem {
         id,
         uuid: row.try_get("uuid").map_err(row_error)?,
         tenant_id: row.try_get("tenant_id").map_err(row_error)?,
         organization_id: row.try_get("organization_id").map_err(row_error)?,
+        created_at: row.try_get("created_at").map_err(row_error)?,
+        expires_at: optional_trimmed_string_cell(&row, "expires_at"),
         name: row.try_get("name").map_err(row_error)?,
         vendor: display_vendor(
             row.try_get::<String, _>("vendor")
@@ -1412,6 +1448,7 @@ fn item_from_postgres_row(
         access_type: access_type_label(required_integer_cell(&row, "access_type", "access_type")?)?,
         base_url: row.try_get("base_url").ok().flatten(),
         secret_ref: row.try_get("secret_ref").ok().flatten(),
+        api_key,
         models: models.get(&id).cloned().unwrap_or_default(),
         is_multimodal: capabilities.iter().any(|capability| capability != "llm"),
         capabilities,
@@ -1474,6 +1511,18 @@ fn entity_code(prefix: &str, uuid: &str) -> String {
 
 fn string_array_json(values: &[String]) -> DomainResult<String> {
     serde_json::to_string(values).map_err(|error| DomainError::new(error.to_string()))
+}
+
+fn channel_metadata_json(expires_at: Option<&str>) -> DomainResult<String> {
+    let mut metadata = serde_json::Map::new();
+    if let Some(expires_at) = expires_at.map(str::trim).filter(|value| !value.is_empty()) {
+        metadata.insert(
+            "expiresAt".to_owned(),
+            serde_json::Value::String(expires_at.to_owned()),
+        );
+    }
+    serde_json::to_string(&serde_json::Value::Object(metadata))
+        .map_err(|error| DomainError::new(error.to_string()))
 }
 
 fn parse_string_array(value: &str) -> DomainResult<Vec<String>> {
@@ -1581,7 +1630,7 @@ fn status_label(
         value => {
             return Err(DomainError::new(format!(
                 "invalid admin channel status from database row: {value}"
-            )))
+            )));
         }
     }
     validate_health_status(health_status)?;
@@ -1699,6 +1748,17 @@ fn optional_string_cell(row: &sqlx::postgres::PgRow, column: &str) -> Option<Str
         .ok()
         .flatten()
         .or_else(|| row.try_get::<String, _>(column).ok())
+}
+
+fn optional_trimmed_string_cell(row: &sqlx::postgres::PgRow, column: &str) -> Option<String> {
+    optional_string_cell(row, column).and_then(|value| {
+        let value = value.trim().to_owned();
+        if value.is_empty() {
+            None
+        } else {
+            Some(value)
+        }
+    })
 }
 
 fn optional_u64_cell(row: &sqlx::postgres::PgRow, column: &str) -> Option<u64> {

@@ -11,5 +11,4 @@ class AuthSettingsUpdateResult:
     """Auth settings update result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminAuthSettingsResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

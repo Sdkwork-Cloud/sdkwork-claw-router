@@ -4,7 +4,7 @@ package types
 type IntegrationChannelRecord struct {
 	AccessType string `json:"access_type"`
 	AccountId string `json:"account_id"`
-	BaseUrlOverride string `json:"base_url_override"`
+	BaseUrl string `json:"base_url"`
 	Capabilities map[string]JsonValue `json:"capabilities"`
 	ChannelCode string `json:"channel_code"`
 	CircuitBreakerPolicy map[string]JsonValue `json:"circuit_breaker_policy"`

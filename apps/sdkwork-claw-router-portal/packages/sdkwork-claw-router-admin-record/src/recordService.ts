@@ -1,5 +1,5 @@
-import {
-  ensurePlusApiSuccess,
+﻿import {
+  ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
   optionalBoundedPositiveInteger,
@@ -46,7 +46,7 @@ export interface LogRecord {
 export class RecordService {
   static async fetchLogs(filters: RecordLogFilters = {}): Promise<{ logs: LogRecord[]; total: number }> {
     const result = await getClawRouterBackendSdkClient().system.records.list(toRecordLogQueryBody(filters));
-    ensurePlusApiSuccess(result, 'Failed to fetch backend logs');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch backend logs');
     const data = readApiRecord(result);
     const logs = readRequiredApiItems(result, 'Failed to fetch backend logs', ['logs', 'items', 'records', 'list'])
       .map(normalizeLogRecord);

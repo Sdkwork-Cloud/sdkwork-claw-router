@@ -7,7 +7,5 @@ export interface AccessGroupsUpdateResult {
   /** Data field on access groups update result. */
   data?: AdminAccessGroupMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

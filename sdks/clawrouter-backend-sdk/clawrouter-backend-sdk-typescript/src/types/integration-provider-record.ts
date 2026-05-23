@@ -4,8 +4,8 @@ import type { JsonValue } from './json-value';
 export interface IntegrationProviderRecord {
   /** Auth type field on integration provider record. */
   auth_type?: string;
-  /** Base url template field on integration provider record. */
-  base_url_template?: string;
+  /** Base url field on integration provider record. */
+  base_url?: string;
   /** Capabilities field on integration provider record. */
   capabilities?: Record<string, JsonValue>;
   /** Color token field on integration provider record. */

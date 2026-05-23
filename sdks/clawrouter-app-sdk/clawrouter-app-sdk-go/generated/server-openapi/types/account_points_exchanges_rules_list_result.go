@@ -4,6 +4,5 @@ package types
 type AccountPointsExchangesRulesListResult struct {
 	Code string `json:"code"`
 	Data CommerceExchangeRulesResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

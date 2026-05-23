@@ -5,10 +5,10 @@ use axum::http::{Request, StatusCode};
 use sdkwork_claw_product::application::EntityUuidGenerator;
 use sdkwork_claw_product::domain::DomainResult;
 use sdkwork_claw_product::ports::{
-    AdminAiModelItem, AdminModelCatalogSyncItem, AdminModelCommandFuture, AdminModelStore,
-    AdminModelVendorItem, CreateAdminAiModelCommand, CreateAdminModelVendorCommand,
-    DeleteAdminAiModelCommand, ListAdminAiModelsQuery, ListAdminModelVendorsQuery,
-    SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand,
+    AdminAiModelItem, AdminAiModelRegionPriceCommand, AdminModelCatalogSyncItem,
+    AdminModelCommandFuture, AdminModelStore, AdminModelVendorItem, CreateAdminAiModelCommand,
+    CreateAdminModelVendorCommand, DeleteAdminAiModelCommand, ListAdminAiModelsQuery,
+    ListAdminModelVendorsQuery, SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand,
 };
 use serde_json::Value;
 use tower::ServiceExt;
@@ -41,7 +41,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         signed_request(
             "POST",
             "/backend/v3/api/ai/models",
-            r#"{"vendorId":"1","name":"acme-chat-large","type":"Chat","priceIn":"0.120000","priceOut":"0.450000","contextTokens":"128000","description":"Acme commercial chat model","modalities":["text"],"inputModalities":["text"],"outputModalities":["text"],"apiFormat":"openai_responses","supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true}"#,
+            r#"{"vendorId":"1","name":"acme-chat-large","type":"Chat","priceIn":"0.120000","priceOut":"0.450000","cacheReadPrice":"0.030000","cacheWritePrice":"0.060000","contextTokens":"128000","description":"Acme commercial chat model","modalities":["text"],"inputModalities":["text"],"outputModalities":["text"],"apiFormat":"openai_responses","supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true}"#,
         ),
     )
     .await;
@@ -49,6 +49,8 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
     assert_eq!("Chat", create_model["data"]["item"]["type"]);
     assert_eq!("0.120000", create_model["data"]["item"]["priceIn"]);
     assert_eq!("0.450000", create_model["data"]["item"]["priceOut"]);
+    assert_eq!("0.030000", create_model["data"]["item"]["cacheReadPrice"]);
+    assert_eq!("0.060000", create_model["data"]["item"]["cacheWritePrice"]);
     assert_eq!(128000, create_model["data"]["item"]["contextTokens"]);
     assert_eq!(
         "Acme commercial chat model",
@@ -59,6 +61,47 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         create_model["data"]["item"]["apiFormat"]
     );
     assert_eq!(true, create_model["data"]["item"]["supportsStreaming"]);
+    assert_eq!(
+        Some(vec![AdminAiModelRegionPriceCommand {
+            region_code: "global".to_owned(),
+            price_in: "0.120000".to_owned(),
+            price_out: "0.450000".to_owned(),
+            cache_read_price: Some("0.030000".to_owned()),
+            cache_write_price: Some("0.060000".to_owned()),
+        }]),
+        store.created_region_prices.lock().unwrap().last().cloned()
+    );
+
+    let regional_model = request_json(
+        router.clone(),
+        signed_request(
+            "POST",
+            "/backend/v3/api/ai/models",
+            r#"{"vendorId":"1","name":"acme-chat-regional","type":"Chat","priceIn":"0.120000","priceOut":"0.450000","regionPrices":[{"regionCode":"cn","priceIn":"0.180000","priceOut":"0.560000","cacheReadPrice":"0.040000","cacheWritePrice":"0.080000"},{"regionCode":"global","priceIn":"0.120000","priceOut":"0.450000"}],"contextTokens":"128000"}"#,
+        ),
+    )
+    .await;
+    assert_eq!("acme-chat-regional", regional_model["data"]["item"]["name"]);
+    assert_eq!("0.120000", regional_model["data"]["item"]["priceIn"]);
+    assert_eq!(
+        Some(vec![
+            AdminAiModelRegionPriceCommand {
+                region_code: "cn".to_owned(),
+                price_in: "0.180000".to_owned(),
+                price_out: "0.560000".to_owned(),
+                cache_read_price: Some("0.040000".to_owned()),
+                cache_write_price: Some("0.080000".to_owned()),
+            },
+            AdminAiModelRegionPriceCommand {
+                region_code: "global".to_owned(),
+                price_in: "0.120000".to_owned(),
+                price_out: "0.450000".to_owned(),
+                cache_read_price: None,
+                cache_write_price: None,
+            },
+        ]),
+        store.created_region_prices.lock().unwrap().last().cloned()
+    );
 
     let create_sfx_model = request_json(
         router.clone(),
@@ -78,7 +121,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         signed_request(
             "PATCH",
             "/backend/v3/api/ai/models/1",
-            r#"{"name":"acme-chat-large-v2","type":"Chat","priceIn":"0.180000","priceOut":"0.520000","contextTokens":"256k","status":"inactive","description":"Updated Acme commercial chat model","supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true}"#,
+            r#"{"name":"acme-chat-large-v2","type":"Chat","priceIn":"0.180000","priceOut":"0.520000","cacheReadPrice":"0.040000","cacheWritePrice":"0.080000","contextTokens":"256k","status":"inactive","description":"Updated Acme commercial chat model","supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true}"#,
         ),
     )
     .await;
@@ -86,6 +129,8 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
     assert_eq!("inactive", update_model["data"]["item"]["status"]);
     assert_eq!("0.180000", update_model["data"]["item"]["priceIn"]);
     assert_eq!("0.520000", update_model["data"]["item"]["priceOut"]);
+    assert_eq!("0.040000", update_model["data"]["item"]["cacheReadPrice"]);
+    assert_eq!("0.080000", update_model["data"]["item"]["cacheWritePrice"]);
     assert_eq!(256000, update_model["data"]["item"]["contextTokens"]);
 
     let vendors = request_json(
@@ -135,10 +180,11 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         signed_request("GET", "/backend/v3/api/ai/models", ""),
     )
     .await;
-    assert_eq!(2, models["data"]["items"].as_array().unwrap().len());
+    assert_eq!(3, models["data"]["items"].as_array().unwrap().len());
     assert_eq!("acme-chat-large-v2", models["data"]["items"][0]["name"]);
-    assert_eq!("acme-sfx-pro", models["data"]["items"][1]["name"]);
-    assert_eq!("SoundEffect", models["data"]["items"][1]["type"]);
+    assert_eq!("acme-chat-regional", models["data"]["items"][1]["name"]);
+    assert_eq!("acme-sfx-pro", models["data"]["items"][2]["name"]);
+    assert_eq!("SoundEffect", models["data"]["items"][2]["type"]);
 
     let delete_model = request_json(
         router.clone(),
@@ -152,13 +198,15 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         signed_request("GET", "/backend/v3/api/ai/models", ""),
     )
     .await;
-    assert_eq!(1, models["data"]["items"].as_array().unwrap().len());
-    assert_eq!("acme-sfx-pro", models["data"]["items"][0]["name"]);
+    assert_eq!(2, models["data"]["items"].as_array().unwrap().len());
+    assert_eq!("acme-chat-regional", models["data"]["items"][0]["name"]);
+    assert_eq!("acme-sfx-pro", models["data"]["items"][1]["name"]);
 
     assert_eq!(
         vec![
             "create_vendor:acme_ai",
             "create_model:acme-chat-large",
+            "create_model:acme-chat-regional",
             "create_model:acme-sfx-pro",
             "update_model:1:acme-chat-large-v2",
             "sync:sdkwork_models:catalog_version_refresh:openai,google:true:D:/catalogs/sdkwork-models:2026.05.08.1",
@@ -281,6 +329,7 @@ struct TestAdminModelStore {
     vendors: Mutex<Vec<AdminModelVendorItem>>,
     models: Mutex<Vec<AdminAiModelItem>>,
     commands: Mutex<Vec<String>>,
+    created_region_prices: Mutex<Vec<Vec<AdminAiModelRegionPriceCommand>>>,
 }
 
 impl AdminModelStore for TestAdminModelStore {
@@ -359,17 +408,30 @@ impl AdminModelStore for TestAdminModelStore {
                 .lock()
                 .unwrap()
                 .push(format!("create_model:{}", command.model));
+            self.created_region_prices
+                .lock()
+                .unwrap()
+                .push(command.region_prices.clone());
+            let region_code = command.region_code;
+            let model = command.model;
+            let display_name = command.display_name;
             let item = AdminAiModelItem {
-                id: 1,
+                id: self.models.lock().unwrap().len() as i64 + 1,
                 uuid: command.model_uuid,
                 tenant_id: command.subject.tenant_id,
                 organization_id: command.subject.organization_id,
                 vendor_id: command.vendor_id,
                 vendor_code: "acme_ai".to_owned(),
-                name: command.model,
+                region_code: region_code.clone(),
+                catalog_key: format!("acme_ai/{}/{}", region_code, model),
+                model,
+                display_name: display_name.clone(),
+                name: display_name,
                 model_type: command.model_type,
                 price_in: command.price_in,
                 price_out: command.price_out,
+                cache_read_price: command.cache_read_price.unwrap_or_default(),
+                cache_write_price: command.cache_write_price.unwrap_or_default(),
                 status: "active".to_owned(),
                 calls: "0".to_owned(),
                 description: command.description,
@@ -465,7 +527,15 @@ impl AdminModelStore for TestAdminModelStore {
                 model.vendor_id = vendor_id;
             }
             if let Some(name) = command.model {
-                model.name = name;
+                model.model = name.clone();
+                if command.display_name.is_none() {
+                    model.display_name = name.clone();
+                    model.name = name;
+                }
+            }
+            if let Some(display_name) = command.display_name {
+                model.display_name = display_name.clone().unwrap_or_else(|| model.model.clone());
+                model.name = model.display_name.clone();
             }
             if let Some(model_type) = command.model_type {
                 model.model_type = model_type;
@@ -475,6 +545,12 @@ impl AdminModelStore for TestAdminModelStore {
             }
             if let Some(price_out) = command.price_out {
                 model.price_out = price_out;
+            }
+            if let Some(cache_read_price) = command.cache_read_price {
+                model.cache_read_price = cache_read_price.unwrap_or_default();
+            }
+            if let Some(cache_write_price) = command.cache_write_price {
+                model.cache_write_price = cache_write_price.unwrap_or_default();
             }
             if let Some(status) = command.status {
                 model.status = status;

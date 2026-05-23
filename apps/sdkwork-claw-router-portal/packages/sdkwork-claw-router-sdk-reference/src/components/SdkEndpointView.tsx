@@ -1,20 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Play, X } from 'lucide-react';
+import { Play, Loader2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { CopyButton } from 'sdkwork-claw-router-commons';
 import { ApiPlayground } from 'sdkwork-claw-router-api-reference';
 import type { ApiParameter } from 'sdkwork-claw-router-api-reference/openapiTypes';
 import type { ApiReferenceEndpoint } from 'sdkwork-claw-router-api-reference/openapiTypes';
+import type { OpenApiDocument } from 'sdkwork-claw-router-api-reference/openapiTypes';
 import {
   buildSdkEndpointDocumentation,
   type SdkEndpointData,
 } from '../sdkEndpointDocumentation';
+import {
+  generateSdkReferenceDocumentation,
+  type SdkReferenceDocumentationResponse,
+} from '../sdkReferenceGenerationService';
+import type { GeneratedSdkToolConfig } from '../sdkReferenceRuntime';
+import { normalizeSdkReferenceLanguage } from '../sdkReferenceRuntime';
 
 interface SdkEndpointViewProps {
   endpoint: ApiReferenceEndpoint;
   sdkData: SdkEndpointData;
   language: string;
+  sdkConfig: GeneratedSdkToolConfig;
+  spec: OpenApiDocument | null;
 }
 
 interface FlattenedSdkParameter {
@@ -39,13 +48,53 @@ function flattenSdkParameters(parameters: ApiParameter[] = [], parentPath = ''):
   });
 }
 
-export function SdkEndpointView({ endpoint, sdkData, language }: SdkEndpointViewProps) {
+export function SdkEndpointView({ endpoint, sdkData, language, sdkConfig, spec }: SdkEndpointViewProps) {
   const { t } = useTranslation();
   const [showPlayground, setShowPlayground] = useState(false);
-  const documentation = buildSdkEndpointDocumentation(endpoint, sdkData, language);
-  const methodName = documentation.methodName;
-  const codeDefinition = documentation.codeDefinition;
-  const exampleUsage = documentation.exampleUsage;
+  const [generatedDocs, setGeneratedDocs] = useState<SdkReferenceDocumentationResponse | null>(null);
+  const [loadingDocs, setLoadingDocs] = useState(false);
+
+  const normalizedLanguage = normalizeSdkReferenceLanguage(language);
+  const localDocumentation = buildSdkEndpointDocumentation(endpoint, sdkData, normalizedLanguage);
+
+  useEffect(() => {
+    if (!spec) {
+      setGeneratedDocs(null);
+      return;
+    }
+
+    let cancelled = false;
+    const fetchDocumentation = async () => {
+      setLoadingDocs(true);
+      try {
+        const result = await generateSdkReferenceDocumentation({
+          spec,
+          language: normalizedLanguage,
+          config: sdkConfig,
+        });
+        if (!cancelled) {
+          setGeneratedDocs(result);
+        }
+      } catch {
+        if (!cancelled) {
+          setGeneratedDocs(null);
+        }
+      } finally {
+        if (!cancelled) {
+          setLoadingDocs(false);
+        }
+      }
+    };
+
+    fetchDocumentation();
+    return () => {
+      cancelled = true;
+    };
+  }, [spec, normalizedLanguage, sdkConfig]);
+
+  const codeDefinition = generatedDocs?.methodDefinition || localDocumentation.codeDefinition;
+  const exampleUsage = generatedDocs?.usageExample || localDocumentation.exampleUsage;
+  const methodName = localDocumentation.methodName;
 
   return (
     <div className="w-full px-4 md:px-8 py-8 md:py-12 pb-32 space-y-12">
@@ -74,64 +123,6 @@ export function SdkEndpointView({ endpoint, sdkData, language }: SdkEndpointView
         </div>
       </div>
 
-      {/* METHOD DEFINITION */}
-      <div className="space-y-4">
-        <h3 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2 uppercase tracking-wider">
-          <span className="text-blue-500">{'>_'}</span> METHOD DEFINITION
-        </h3>
-
-        <div className="rounded-xl border border-slate-200 dark:border-white/10 overflow-hidden bg-white dark:bg-[#111]">
-          <div className="px-6 py-4 border-b border-slate-200 dark:border-white/10 flex items-center gap-4 bg-slate-50 dark:bg-white/5">
-            <span className="font-bold text-slate-900 dark:text-white">{methodName}</span>
-            <span className="text-xs px-2 py-1 rounded bg-slate-200 dark:bg-white/10 text-slate-600 dark:text-slate-300">Function</span>
-          </div>
-
-          <table className="w-full text-left text-sm">
-            <thead>
-              <tr className="border-b border-slate-200 dark:border-white/10">
-                <th className="px-6 py-3 font-medium text-slate-500 w-1/4">PARAMETER</th>
-                <th className="px-6 py-3 font-medium text-slate-500 w-1/4">TYPE</th>
-                <th className="px-6 py-3 font-medium text-slate-500 w-1/8">REQUIRED</th>
-                <th className="px-6 py-3 font-medium text-slate-500">DESCRIPTION</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-100 dark:divide-white/5">
-              {documentation.parameters.length > 0 ? (
-                flattenSdkParameters(documentation.parameters).map((row) => (
-                  <SdkParameterRow key={row.path} parameter={row.parameter} path={row.path} />
-                ))
-              ) : (
-                <tr>
-                  <td colSpan={4} className="px-6 py-4 text-sm text-slate-500 dark:text-slate-400">
-                    This method does not define a JSON request body.
-                  </td>
-                </tr>
-              )}
-            </tbody>
-            <tfoot className="border-t border-slate-200 dark:border-white/10 border-double border-t-2">
-              <tr>
-                <td colSpan={1} className="px-6 py-4 font-medium text-slate-500">RETURNS</td>
-                <td colSpan={3} className="px-6 py-4 font-mono font-bold text-blue-600 dark:text-blue-400 text-right">{documentation.responseType}</td>
-              </tr>
-            </tfoot>
-          </table>
-          {documentation.returns.length > 0 && (
-            <div className="border-t border-slate-200 dark:border-white/10 px-6 py-4">
-              <div className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-500">Return Fields</div>
-              <div className="divide-y divide-slate-100 rounded-lg border border-slate-100 dark:divide-white/5 dark:border-white/10">
-                {flattenSdkParameters(documentation.returns).map(({ parameter, path }) => (
-                  <div key={path} className="grid grid-cols-1 gap-2 px-4 py-3 text-sm md:grid-cols-[minmax(160px,1fr)_minmax(160px,1fr)_2fr]">
-                    <code className="font-semibold text-teal-600 dark:text-teal-400">{path}</code>
-                    <code className="text-emerald-600 dark:text-emerald-400">{parameter.type}</code>
-                    <span className="text-slate-600 dark:text-slate-400">{parameter.desc}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-
       {/* CODE DEFINITION */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
@@ -149,10 +140,11 @@ export function SdkEndpointView({ endpoint, sdkData, language }: SdkEndpointView
         </div>
 
         <div className="rounded-xl border border-slate-200 dark:border-white/10 overflow-hidden bg-slate-50 dark:bg-[#1e1e1e]">
-          <div className="px-4 py-2 border-b border-slate-200 dark:border-white/5 flex">
-            <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 bg-white dark:bg-white/5 px-2 py-1 rounded uppercase">{documentation.languageLabel}</span>
+          <div className="px-4 py-2 border-b border-slate-200 dark:border-white/5 flex items-center gap-2">
+            <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 bg-white dark:bg-white/5 px-2 py-1 rounded uppercase">{localDocumentation.languageLabel}</span>
+            {loadingDocs && <Loader2 className="w-3 h-3 animate-spin text-slate-400" />}
           </div>
-          <pre className="p-6 overflow-x-auto text-sm font-mono leading-relaxed text-slate-700 dark:text-slate-300">
+          <pre className={`p-6 overflow-x-auto text-sm font-mono leading-relaxed text-slate-700 dark:text-slate-300 transition-opacity duration-300 ${loadingDocs ? 'opacity-50' : 'opacity-100'}`}>
             {codeDefinition}
           </pre>
         </div>
@@ -175,9 +167,67 @@ export function SdkEndpointView({ endpoint, sdkData, language }: SdkEndpointView
         </div>
 
         <div className="rounded-xl border border-slate-200 dark:border-white/10 overflow-hidden bg-slate-50 dark:bg-[#1e1e1e]">
-          <pre className="p-6 overflow-x-auto text-sm font-mono leading-relaxed text-slate-700 dark:text-slate-300">
+          <pre className={`p-6 overflow-x-auto text-sm font-mono leading-relaxed text-slate-700 dark:text-slate-300 transition-opacity duration-300 ${loadingDocs ? 'opacity-50' : 'opacity-100'}`}>
             {exampleUsage}
           </pre>
+        </div>
+      </div>
+
+      {/* PARAMETERS AND RETURNS */}
+      <div className="space-y-4">
+        <h3 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2 uppercase tracking-wider">
+          <span className="text-blue-500">{'>_'}</span> PARAMETERS AND RETURNS
+        </h3>
+
+        <div className="rounded-xl border border-slate-200 dark:border-white/10 overflow-hidden bg-white dark:bg-[#111]">
+          <div className="px-6 py-4 border-b border-slate-200 dark:border-white/10 flex items-center gap-4 bg-slate-50 dark:bg-white/5">
+            <span className="font-bold text-slate-900 dark:text-white">{methodName}</span>
+            <span className="text-xs px-2 py-1 rounded bg-slate-200 dark:bg-white/10 text-slate-600 dark:text-slate-300">Function</span>
+          </div>
+
+          <table className="w-full text-left text-sm">
+            <thead>
+              <tr className="border-b border-slate-200 dark:border-white/10">
+                <th className="px-6 py-3 font-medium text-slate-500 w-1/4">PARAMETER</th>
+                <th className="px-6 py-3 font-medium text-slate-500 w-1/4">TYPE</th>
+                <th className="px-6 py-3 font-medium text-slate-500 w-1/8">REQUIRED</th>
+                <th className="px-6 py-3 font-medium text-slate-500">DESCRIPTION</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100 dark:divide-white/5">
+              {localDocumentation.parameters.length > 0 ? (
+                flattenSdkParameters(localDocumentation.parameters).map((row) => (
+                  <SdkParameterRow key={row.path} parameter={row.parameter} path={row.path} />
+                ))
+              ) : (
+                <tr>
+                  <td colSpan={4} className="px-6 py-4 text-sm text-slate-500 dark:text-slate-400">
+                    This method does not define a JSON request body.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+            <tfoot className="border-t border-slate-200 dark:border-white/10 border-double border-t-2">
+              <tr>
+                <td colSpan={1} className="px-6 py-4 font-medium text-slate-500">RETURNS</td>
+                <td colSpan={3} className="px-6 py-4 font-mono font-bold text-blue-600 dark:text-blue-400 text-right">{localDocumentation.responseType}</td>
+              </tr>
+            </tfoot>
+          </table>
+          {localDocumentation.returns.length > 0 && (
+            <div className="border-t border-slate-200 dark:border-white/10 px-6 py-4">
+              <div className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-500">Return Fields</div>
+              <div className="divide-y divide-slate-100 rounded-lg border border-slate-100 dark:divide-white/5 dark:border-white/10">
+                {flattenSdkParameters(localDocumentation.returns).map(({ parameter, path }) => (
+                  <div key={path} className="grid grid-cols-1 gap-2 px-4 py-3 text-sm md:grid-cols-[minmax(160px,1fr)_minmax(160px,1fr)_2fr]">
+                    <code className="font-semibold text-teal-600 dark:text-teal-400">{path}</code>
+                    <code className="text-emerald-600 dark:text-emerald-400">{parameter.type}</code>
+                    <span className="text-slate-600 dark:text-slate-400">{parameter.desc}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
 

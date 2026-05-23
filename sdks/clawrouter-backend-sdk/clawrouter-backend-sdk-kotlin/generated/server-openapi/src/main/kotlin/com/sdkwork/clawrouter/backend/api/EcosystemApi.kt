@@ -54,6 +54,30 @@ class EcosystemApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<SkillsCategoriesCreateResult>() {})
     }
 
+    /** Delete skill category */
+    suspend fun skillsCategoriesDelete(categoryId: String, xRequestId: String? = null): SkillsCategoriesDeleteResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.delete(ApiPaths.backendPath("/ecosystem/skills/categories/${serializePathParameter(categoryId, PathParameterSpec("categoryId", "simple", false))}"), null, requestHeaders)
+        return client.convertValue(raw, object : TypeReference<SkillsCategoriesDeleteResult>() {})
+    }
+
+    /** Update skill category */
+    suspend fun skillsCategoriesUpdate(categoryId: String, body: AdminSkillCategoryUpdateRequest, xRequestId: String? = null): SkillsCategoriesUpdateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.put(ApiPaths.backendPath("/ecosystem/skills/categories/${serializePathParameter(categoryId, PathParameterSpec("categoryId", "simple", false))}"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<SkillsCategoriesUpdateResult>() {})
+    }
+
     /** List skill packages */
     suspend fun skillsPackageList(q: String? = null, enabled: Boolean? = null, categoryId: String? = null, page: Int? = null, pageSize: Int? = null): SkillsPackageListResult? {
         val query = buildQueryString(listOf(

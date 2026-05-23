@@ -8,6 +8,7 @@ public class RoutingChannelItem {
     private String balance;
     private String baseUrl;
     private List<String> capabilities;
+    private ProviderCircuitBreakerPolicy circuitBreakerPolicy;
     private Integer errors;
     private String id;
     private Boolean isMultimodal;
@@ -27,7 +28,7 @@ public class RoutingChannelItem {
     public String getAccessType() {
         return this.accessType;
     }
-    
+
     public void setAccessType(String accessType) {
         this.accessType = accessType;
     }
@@ -35,7 +36,7 @@ public class RoutingChannelItem {
     public String getApiKey() {
         return this.apiKey;
     }
-    
+
     public void setApiKey(String apiKey) {
         this.apiKey = apiKey;
     }
@@ -43,7 +44,7 @@ public class RoutingChannelItem {
     public String getBalance() {
         return this.balance;
     }
-    
+
     public void setBalance(String balance) {
         this.balance = balance;
     }
@@ -51,7 +52,7 @@ public class RoutingChannelItem {
     public String getBaseUrl() {
         return this.baseUrl;
     }
-    
+
     public void setBaseUrl(String baseUrl) {
         this.baseUrl = baseUrl;
     }
@@ -59,15 +60,23 @@ public class RoutingChannelItem {
     public List<String> getCapabilities() {
         return this.capabilities;
     }
-    
+
     public void setCapabilities(List<String> capabilities) {
         this.capabilities = capabilities;
+    }
+
+    public ProviderCircuitBreakerPolicy getCircuitBreakerPolicy() {
+        return this.circuitBreakerPolicy;
+    }
+
+    public void setCircuitBreakerPolicy(ProviderCircuitBreakerPolicy circuitBreakerPolicy) {
+        this.circuitBreakerPolicy = circuitBreakerPolicy;
     }
 
     public Integer getErrors() {
         return this.errors;
     }
-    
+
     public void setErrors(Integer errors) {
         this.errors = errors;
     }
@@ -75,7 +84,7 @@ public class RoutingChannelItem {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -83,7 +92,7 @@ public class RoutingChannelItem {
     public Boolean getIsMultimodal() {
         return this.isMultimodal;
     }
-    
+
     public void setIsMultimodal(Boolean isMultimodal) {
         this.isMultimodal = isMultimodal;
     }
@@ -91,7 +100,7 @@ public class RoutingChannelItem {
     public String getLatency() {
         return this.latency;
     }
-    
+
     public void setLatency(String latency) {
         this.latency = latency;
     }
@@ -99,7 +108,7 @@ public class RoutingChannelItem {
     public List<String> getModels() {
         return this.models;
     }
-    
+
     public void setModels(List<String> models) {
         this.models = models;
     }
@@ -107,7 +116,7 @@ public class RoutingChannelItem {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -115,7 +124,7 @@ public class RoutingChannelItem {
     public String getProtocol() {
         return this.protocol;
     }
-    
+
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
@@ -123,7 +132,7 @@ public class RoutingChannelItem {
     public String getProvider() {
         return this.provider;
     }
-    
+
     public void setProvider(String provider) {
         this.provider = provider;
     }
@@ -131,7 +140,7 @@ public class RoutingChannelItem {
     public String getProviderCode() {
         return this.providerCode;
     }
-    
+
     public void setProviderCode(String providerCode) {
         this.providerCode = providerCode;
     }
@@ -139,7 +148,7 @@ public class RoutingChannelItem {
     public ProviderRetryPolicy getRetryPolicy() {
         return this.retryPolicy;
     }
-    
+
     public void setRetryPolicy(ProviderRetryPolicy retryPolicy) {
         this.retryPolicy = retryPolicy;
     }
@@ -147,7 +156,7 @@ public class RoutingChannelItem {
     public Integer getRpm() {
         return this.rpm;
     }
-    
+
     public void setRpm(Integer rpm) {
         this.rpm = rpm;
     }
@@ -155,7 +164,7 @@ public class RoutingChannelItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -163,7 +172,7 @@ public class RoutingChannelItem {
     public Integer getTimeoutMs() {
         return this.timeoutMs;
     }
-    
+
     public void setTimeoutMs(Integer timeoutMs) {
         this.timeoutMs = timeoutMs;
     }
@@ -171,7 +180,7 @@ public class RoutingChannelItem {
     public String getVendor() {
         return this.vendor;
     }
-    
+
     public void setVendor(String vendor) {
         this.vendor = vendor;
     }
@@ -179,7 +188,7 @@ public class RoutingChannelItem {
     public Integer getWeight() {
         return this.weight;
     }
-    
+
     public void setWeight(Integer weight) {
         this.weight = weight;
     }

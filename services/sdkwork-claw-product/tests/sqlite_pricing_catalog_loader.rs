@@ -41,7 +41,8 @@ async fn sqlite_loader_builds_pricing_catalog_snapshot_from_schema_tables() {
     assert_eq!(1, page.items.len());
     let item = &page.items[0];
     assert_eq!("gpt-4o-mini", item.model);
-    assert_eq!("openai/global/gpt-4o-mini", item.catalog_key);
+    assert_eq!("openai/gpt-4o-mini", item.catalog_key);
+    assert_eq!("global", item.region_code);
     assert_eq!(vec!["azure_openai", "openrouter"], item.provider_codes);
     assert_eq!(
         "0.110000",
@@ -60,7 +61,7 @@ async fn sqlite_loader_builds_pricing_catalog_snapshot_from_schema_tables() {
         }
     }
 
-    let routes = snapshot.list_provider_routes("openai/global/gpt-4o-mini");
+    let routes = snapshot.list_provider_routes("openai/gpt-4o-mini");
     let openrouter = routes
         .iter()
         .find(|route| route.provider_code == "openrouter")
@@ -131,7 +132,7 @@ async fn sqlite_loader_treats_rfc3339_effective_from_as_active_timestamp() {
 
     let price = snapshot
         .find_model_price(
-            "openai/global/gpt-4o-mini",
+            "openai/gpt-4o-mini",
             PriceSide::OfficialReference,
             BillingMeter::LlmInputToken,
             None,
@@ -195,7 +196,7 @@ async fn sqlite_loader_excludes_unhealthy_provider_channels_from_routing_snapsho
 
     assert!(
         snapshot
-            .list_provider_routes("openai/global/gpt-4o-mini")
+            .list_provider_routes("openai/gpt-4o-mini")
             .iter()
             .all(|route| route.provider_code != "openrouter"),
         "unhealthy provider model routes must be excluded from the runtime catalog snapshot"
@@ -238,7 +239,7 @@ async fn sqlite_loader_reincludes_unhealthy_provider_channels_after_recovery_pro
 
     assert!(
         snapshot
-            .list_provider_routes("openai/global/gpt-4o-mini")
+            .list_provider_routes("openai/gpt-4o-mini")
             .iter()
             .any(|route| route.provider_code == "openrouter"),
         "unhealthy provider model routes must be re-included after the recovery probe window"
@@ -268,7 +269,6 @@ async fn create_schema(pool: &SqlitePool) {
             model TEXT NOT NULL,
             display_name TEXT NOT NULL,
             vendor_code TEXT NOT NULL,
-            region_code TEXT NOT NULL,
             capability INTEGER,
             capabilities TEXT NOT NULL,
             modalities TEXT,
@@ -306,7 +306,7 @@ async fn create_schema(pool: &SqlitePool) {
             id INTEGER PRIMARY KEY,
             provider_code TEXT NOT NULL,
             integration_type INTEGER,
-            base_url_template TEXT,
+            base_url TEXT,
             status INTEGER NOT NULL,
             deleted_at TEXT
         )"#,
@@ -322,7 +322,7 @@ async fn create_schema(pool: &SqlitePool) {
         r#"CREATE TABLE integration_channel (
             id INTEGER PRIMARY KEY,
             provider_code TEXT NOT NULL,
-            base_url_override TEXT,
+            base_url TEXT,
             timeout_ms INTEGER,
             retry_policy TEXT,
             health_status INTEGER,
@@ -486,15 +486,15 @@ async fn seed_catalog(pool: &SqlitePool) {
     for statement in [
         "INSERT INTO ai_model_vendor (id, vendor_code, display_name, status, sort_order) VALUES (1, 'openai', 'OpenAI', 1, 1)",
         r#"INSERT INTO ai_model
-            (id, catalog_key, model, display_name, vendor_code, region_code, capability, capabilities, modalities, input_modalities, output_modalities, description, capability_intro, limitations, supported_languages, use_cases, training_data_cutoff, context_tokens, max_output_tokens, supports_streaming, supports_tools, supports_json_schema, api_format, release_stage, shelf_state, routing_state, status, rank_score)
-            VALUES (1, 'openai/global/gpt-4o-mini', 'gpt-4o-mini', 'GPT-4o mini', 'openai', 'global', 1, '["chat","tools","json_schema"]', '["text","image"]', '["text","image"]', '["text"]', 'Fast public model.', 'Low latency chat model.', '["Validate facts"]', '["English","Chinese"]', '["Support","Extraction"]', '2025', 128000, 16384, 1, 1, 1, 'openai_compatible', 1, 1, 1, 1, '100.0')"#,
-        "INSERT INTO ai_model_capability (id, model_id, catalog_key, capability_code, status) VALUES (1, 1, 'openai/global/gpt-4o-mini', 'chat', 1)",
-        "INSERT INTO integration_provider (id, provider_code, integration_type, base_url_template, status) VALUES (1, 'azure_openai', 2, 'http://provider-proxy.internal/azure-template', 1)",
-        "INSERT INTO integration_provider (id, provider_code, integration_type, base_url_template, status) VALUES (2, 'openrouter', 3, 'http://provider-proxy.internal/openrouter-template', 1)",
+            (id, catalog_key, model, display_name, vendor_code, capability, capabilities, modalities, input_modalities, output_modalities, description, capability_intro, limitations, supported_languages, use_cases, training_data_cutoff, context_tokens, max_output_tokens, supports_streaming, supports_tools, supports_json_schema, api_format, release_stage, shelf_state, routing_state, status, rank_score)
+            VALUES (1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'GPT-4o mini', 'openai', 1, '["chat","tools","json_schema"]', '["text","image"]', '["text","image"]', '["text"]', 'Fast public model.', 'Low latency chat model.', '["Validate facts"]', '["English","Chinese"]', '["Support","Extraction"]', '2025', 128000, 16384, 1, 1, 1, 'openai_compatible', 1, 1, 1, 1, '100.0')"#,
+        "INSERT INTO ai_model_capability (id, model_id, catalog_key, capability_code, status) VALUES (1, 1, 'openai/gpt-4o-mini', 'chat', 1)",
+        "INSERT INTO integration_provider (id, provider_code, integration_type, base_url, status) VALUES (1, 'azure_openai', 2, 'http://provider-proxy.internal/azure-template', 1)",
+        "INSERT INTO integration_provider (id, provider_code, integration_type, base_url, status) VALUES (2, 'openrouter', 3, 'http://provider-proxy.internal/openrouter-template', 1)",
         "INSERT INTO integration_provider_account (id, provider_code, secret_ref, status) VALUES (9001, 'azure_openai', 'vault://providers/azure/account/main', 1)",
         "INSERT INTO integration_provider_account (id, provider_code, secret_ref, status) VALUES (9002, 'openrouter', 'vault://providers/openrouter/account/main', 1)",
-        "INSERT INTO integration_channel (id, provider_code, base_url_override, account_id, status, priority, weight) VALUES (2001, 'azure_openai', 'http://provider-proxy.internal/azure', 9001, 1, 10, 100)",
-        "INSERT INTO integration_channel (id, provider_code, base_url_override, timeout_ms, retry_policy, account_id, status, priority, weight) VALUES (3001, 'openrouter', 'http://provider-proxy.internal/openrouter', 30000, '{\"max_attempts\":3,\"retryable_status_codes\":[429,503],\"backoff_ms\":0}', 9002, 1, 20, 100)",
+        "INSERT INTO integration_channel (id, provider_code, base_url, account_id, status, priority, weight) VALUES (2001, 'azure_openai', 'http://provider-proxy.internal/azure', 9001, 1, 10, 100)",
+        "INSERT INTO integration_channel (id, provider_code, base_url, timeout_ms, retry_policy, account_id, status, priority, weight) VALUES (3001, 'openrouter', 'http://provider-proxy.internal/openrouter', 30000, '{\"max_attempts\":3,\"retryable_status_codes\":[429,503],\"backoff_ms\":0}', 9002, 1, 20, 100)",
         "INSERT INTO integration_channel_model (id, catalog_key, model, channel_id, provider_model, status) VALUES (1, 'openai/global/gpt-4o-mini', 'gpt-4o-mini', 2001, 'gpt-4o-mini', 1)",
         "INSERT INTO integration_channel_model (id, catalog_key, model, channel_id, provider_model, status) VALUES (2, 'openai/global/gpt-4o-mini', 'gpt-4o-mini', 3001, 'openai/global/gpt-4o-mini', 1)",
         "INSERT INTO ai_routing_profile (id, tenant_id, organization_id, policy_id, profile_code, profile_version, status) VALUES (9101, 10, 20, 9001, 'standard-profile', 1, 1)",

@@ -1,6 +1,6 @@
 package types
 
-// Persisted skill category snapshot returned by the backend.
+// Updated skill category snapshot returned by the backend.
 type AdminSkillCategoryItem struct {
 	Code string `json:"code"`
 	Description string `json:"description"`

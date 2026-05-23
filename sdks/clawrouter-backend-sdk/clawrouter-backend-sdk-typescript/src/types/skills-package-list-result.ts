@@ -7,7 +7,5 @@ export interface SkillsPackageListResult {
   /** Data field on skills package list result. */
   data?: AdminSkillPackageListResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

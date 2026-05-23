@@ -1,5 +1,5 @@
 import {
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
   readRequiredApiItem,
@@ -180,14 +180,14 @@ export const prefillModels: Record<string, string[]> = {
 export class RoutingService {
   static async fetchRequestTraces(): Promise<RequestTrace[]> {
     const result = await getClawRouterAppSdkClient().ai.routing.requestTraces.list();
-    ensurePlusApiSuccess(result, 'console.routing.states.requestTraces.loadErrorFallback');
+    ensureSdkworkApiSuccess(result, 'console.routing.states.requestTraces.loadErrorFallback');
     return readRequiredApiItems(result, 'console.routing.states.requestTraces.loadErrorFallback')
       .map(normalizeRequestTrace);
   }
 
   static async fetchUsageData(): Promise<{ chartData: RoutingUsageData[]; modelStats: RoutingModelStats[] }> {
     const result = await getClawRouterAppSdkClient().ai.routing.usage.list();
-    ensurePlusApiSuccess(result, 'console.routing.states.usage.loadErrorFallback');
+    ensureSdkworkApiSuccess(result, 'console.routing.states.usage.loadErrorFallback');
     const data = readApiRecord(result);
     return {
       chartData: readRequiredApiItems(data, 'console.routing.states.usage.loadErrorFallback', ['chartData'])
@@ -199,14 +199,14 @@ export class RoutingService {
 
   static async fetchChannels(): Promise<Channel[]> {
     const result = await getClawRouterAppSdkClient().ai.routing.channels.list();
-    ensurePlusApiSuccess(result, 'console.routing.states.channels.loadErrorFallback');
+    ensureSdkworkApiSuccess(result, 'console.routing.states.channels.loadErrorFallback');
     return readRequiredApiItems(result, 'console.routing.states.channels.loadErrorFallback')
       .map(normalizeRoutingChannel);
   }
 
   static async createChannel(input: RoutingChannelMutationInput): Promise<Channel> {
     const result = await getClawRouterAppSdkClient().ai.routing.channels.create(toCreateRoutingChannelRequest(input));
-    ensurePlusApiSuccess(result, 'console.routing.messages.channelSaveFailed');
+    ensureSdkworkApiSuccess(result, 'console.routing.messages.channelSaveFailed');
     return normalizeRoutingChannel(readRequiredApiItem(result, 'Created routing channel is missing'));
   }
 
@@ -215,7 +215,7 @@ export class RoutingService {
       requiredSafePathSegment(channelId, 'channelId'),
       toUpdateRoutingChannelRequest(input),
     );
-    ensurePlusApiSuccess(result, 'console.routing.messages.channelSaveFailed');
+    ensureSdkworkApiSuccess(result, 'console.routing.messages.channelSaveFailed');
     return normalizeRoutingChannel(readRequiredApiItem(result, 'Updated routing channel is missing'));
   }
 
@@ -231,14 +231,14 @@ export class RoutingService {
       requiredSafePathSegment(channelId, 'channelId'),
       { status: normalizedStatus },
     );
-    ensurePlusApiSuccess(result, 'console.routing.messages.channelStatusUpdateFailed');
+    ensureSdkworkApiSuccess(result, 'console.routing.messages.channelStatusUpdateFailed');
     return normalizeRoutingChannel(readRequiredApiItem(result, 'Updated routing channel is missing'));
   }
 
   static async testChannel(channelId: string): Promise<RoutingChannelTestResult> {
     const normalizedChannelId = requiredSafePathSegment(channelId, 'channelId');
     const result = await getClawRouterAppSdkClient().ai.routing.channels.verify(normalizedChannelId);
-    ensurePlusApiSuccess(result, 'console.routing.messages.channelTestFailed');
+    ensureSdkworkApiSuccess(result, 'console.routing.messages.channelTestFailed');
     const data = readApiRecord(result);
     return {
       channelId: readRequiredString(data, 'channelId', 'Routing channel test channel id is required'),
@@ -251,14 +251,14 @@ export class RoutingService {
 
   static async fetchApiKeys(): Promise<RoutingApiKey[]> {
     const result = await getClawRouterAppSdkClient().ai.routing.apiKeys.list();
-    ensurePlusApiSuccess(result, 'console.routing.states.apiKeys.loadErrorFallback');
+    ensureSdkworkApiSuccess(result, 'console.routing.states.apiKeys.loadErrorFallback');
     return readRequiredApiItems(result, 'console.routing.states.apiKeys.loadErrorFallback')
       .map(normalizeRoutingApiKey);
   }
 
   static async fetchStrategy(): Promise<RoutingStrategySnapshot> {
     const result = await getClawRouterAppSdkClient().ai.routing.strategy.list();
-    ensurePlusApiSuccess(result, 'console.routing.states.strategy.loadErrorFallback');
+    ensureSdkworkApiSuccess(result, 'console.routing.states.strategy.loadErrorFallback');
     return normalizeRoutingStrategySnapshot(readApiRecord(result));
   }
 
@@ -268,7 +268,7 @@ export class RoutingService {
       mappingRules: snapshot.mappingRules.map(toUpdateMappingRuleRequest),
     };
     const result = await getClawRouterAppSdkClient().ai.routing.strategy.update(request);
-    ensurePlusApiSuccess(result, 'console.routing.states.strategy.saveErrorFallback');
+    ensureSdkworkApiSuccess(result, 'console.routing.states.strategy.saveErrorFallback');
   }
 }
 
@@ -295,7 +295,7 @@ function toCreateRoutingChannelRequest(input: RoutingChannelMutationInput): Crea
 }
 
 function ensureDeleteResult(result: unknown, message: string): void {
-  ensurePlusApiSuccess(result, message);
+  ensureSdkworkApiSuccess(result, message);
   if (readBoolean(readApiRecord(result), 'deleted') !== true) {
     throw new Error(message);
   }
@@ -538,7 +538,7 @@ function normalizeRoutingChannel(value: unknown): Channel {
     providerCode,
     protocol: readRequiredFirstString(item, ['protocol'], 'Routing channel protocol is required'),
     accessType: readRequiredFirstString(item, ['accessType', 'access_type'], 'Routing channel access type is required'),
-    baseUrl: readRequiredFirstString(item, ['baseUrl', 'base_url', 'baseUrlOverride', 'base_url_override'], 'Routing channel base URL is required'),
+    baseUrl: readRequiredFirstString(item, ['baseUrl', 'base_url'], 'Routing channel base URL is required'),
     apiKey: readRequiredFirstString(item, ['apiKey', 'secretRef', 'secret_ref', 'maskedLabel', 'masked_label'], 'Routing channel secret reference is required'),
     models: readRequiredFirstStringArray(item, ['models', 'modelList', 'model_list'], 'Routing channel models are required'),
     capabilities,

@@ -12,8 +12,8 @@ pub struct BillingRedeemHistoryItem {
     /// Date field on billing redeem history item.
     pub date: String,
 
-    /// Id field on billing redeem history item.
-    pub id: i64,
+    /// Stable appbase commerce_coupon id for the issued coupon.
+    pub id: String,
 
     /// Status field on billing redeem history item.
     pub status: String,

@@ -7,7 +7,5 @@ export interface CommentsPinsCreateResult {
   /** Data field on comments pins create result. */
   data?: ForumCommentItem;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

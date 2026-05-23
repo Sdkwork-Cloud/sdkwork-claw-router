@@ -39,9 +39,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
     catalog
 }
 
-fn catalog_with_hashed_api_key_missing_billing_subject(
-    key_hash: String,
-) -> InMemoryPricingCatalog {
+fn catalog_with_hashed_api_key_missing_billing_subject(key_hash: String) -> InMemoryPricingCatalog {
     let mut catalog = catalog_with_hashed_api_key(key_hash.clone());
     catalog.add_api_key(GatewayApiKey::new(101, 10, "sk-live", &key_hash));
     catalog
@@ -242,7 +240,7 @@ fn catalog_with_group_account_pools(
     catalog
 }
 
-fn catalog_with_regional_minimax_models(key_hash: String) -> InMemoryPricingCatalog {
+fn catalog_with_regional_minimax_pricing_and_routes(key_hash: String) -> InMemoryPricingCatalog {
     let mut catalog = InMemoryPricingCatalog::default();
     catalog.add_vendor(ModelVendorDefinition::new(
         "minimax",
@@ -261,16 +259,7 @@ fn catalog_with_regional_minimax_models(key_hash: String) -> InMemoryPricingCata
             "minimax",
             vec!["chat", "tools"],
         )
-        .with_catalog_key("minimax/cn/MiniMax-M2.7"),
-    );
-    catalog.add_model(
-        AiModel::new(
-            "MiniMax-M2.7",
-            "MiniMax M2.7",
-            "minimax",
-            vec!["chat", "tools"],
-        )
-        .with_catalog_key("minimax/global/MiniMax-M2.7"),
+        .with_catalog_key("minimax/MiniMax-M2.7"),
     );
     catalog.add_provider_route(
         ModelProviderRoute::new_for_catalog_key(
@@ -285,10 +274,29 @@ fn catalog_with_regional_minimax_models(key_hash: String) -> InMemoryPricingCata
             Some("vault://providers/minimax/account/cn"),
         ),
     );
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "minimax/global/MiniMax-M2.7",
+            "MiniMax-M2.7",
+            "minimax_global_direct",
+            4002,
+            "MiniMax-M2.7",
+        )
+        .with_provider_endpoint(
+            Some("http://provider-proxy.internal/minimax-global"),
+            Some("vault://providers/minimax/account/global"),
+        ),
+    );
     catalog.add_provider_account_pool_route(
         ProviderAccountPoolRoute::new("minimax_direct", 4001).with_provider_endpoint(
             Some("http://provider-proxy.internal/minimax"),
             Some("vault://providers/minimax/account/cn"),
+        ),
+    );
+    catalog.add_provider_account_pool_route(
+        ProviderAccountPoolRoute::new("minimax_global_direct", 4002).with_provider_endpoint(
+            Some("http://provider-proxy.internal/minimax-global"),
+            Some("vault://providers/minimax/account/global"),
         ),
     );
     catalog.add_plan(PricingPlan::new(
@@ -322,15 +330,73 @@ fn catalog_with_regional_minimax_models(key_hash: String) -> InMemoryPricingCata
         )
         .for_provider("minimax_direct", 4001),
     );
-    add_group_routing_policy(
-        &mut catalog,
-        10,
-        9401,
-        9501,
-        9502,
-        "standard-group-minimax-m27",
-        "minimax/cn/MiniMax-M2.7",
-        4001,
+    catalog.add_price(ModelPrice::new_for_catalog_key(
+        "minimax/global/MiniMax-M2.7",
+        "MiniMax-M2.7",
+        PriceSide::OfficialReference,
+        BillingMeter::LlmInputToken,
+        Money::cny("0.006000").unwrap(),
+    ));
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "minimax/global/MiniMax-M2.7",
+            "MiniMax-M2.7",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::cny("0.006000").unwrap(),
+        )
+        .for_provider("minimax_global_direct", 4002),
+    );
+    catalog.add_routing_policy(
+        RoutingPolicy::new(
+            9401,
+            10,
+            20,
+            "standard-group-minimax-policy",
+            RoutingPolicyScope::ApiKeyGroup,
+            Some(10),
+            Some(9501),
+        )
+        .with_capability(RoutingCapability::Chat),
+    );
+    catalog.add_routing_rule(
+        RoutingRule::new(
+            9502,
+            10,
+            20,
+            9501,
+            "standard-group-minimax-m27-base",
+            1,
+            r#"{"catalogKey":"minimax/MiniMax-M2.7"}"#,
+            "minimax/MiniMax-M2.7",
+        )
+        .with_candidate_channels(vec![RouteCandidate::new(4001, 100)]),
+    );
+    catalog.add_routing_rule(
+        RoutingRule::new(
+            9503,
+            10,
+            20,
+            9501,
+            "standard-group-minimax-m27-cn",
+            1,
+            r#"{"catalogKey":"minimax/cn/MiniMax-M2.7"}"#,
+            "minimax/cn/MiniMax-M2.7",
+        )
+        .with_candidate_channels(vec![RouteCandidate::new(4001, 100)]),
+    );
+    catalog.add_routing_rule(
+        RoutingRule::new(
+            9504,
+            10,
+            20,
+            9501,
+            "standard-group-minimax-m27-global",
+            1,
+            r#"{"catalogKey":"minimax/global/MiniMax-M2.7"}"#,
+            "minimax/global/MiniMax-M2.7",
+        )
+        .with_candidate_channels(vec![RouteCandidate::new(4002, 100)]),
     );
     catalog
 }
@@ -454,12 +520,12 @@ async fn openai_chat_completions_rejects_unknown_model_after_authentication() {
 }
 
 #[tokio::test]
-async fn openai_chat_completions_rejects_ambiguous_official_model_id_when_multiple_vendors_match() {
+async fn openai_chat_completions_accepts_official_model_id_when_model_is_not_region_scoped() {
     let hasher =
         Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
     let key_hash = hasher.hash_secret("sk-live-secret").unwrap();
     let router = sdkwork_claw_product::api::openai_chat_completions_router(
-        Arc::new(catalog_with_regional_minimax_models(key_hash)),
+        Arc::new(catalog_with_regional_minimax_pricing_and_routes(key_hash)),
         hasher,
     );
 
@@ -478,30 +544,22 @@ async fn openai_chat_completions_rejects_ambiguous_official_model_id_when_multip
         .await
         .unwrap();
 
-    assert_eq!(StatusCode::BAD_REQUEST, response.status());
+    assert_eq!(StatusCode::NOT_IMPLEMENTED, response.status());
     let body = axum::body::to_bytes(response.into_body(), usize::MAX)
         .await
         .unwrap();
     let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
 
-    assert_eq!("ambiguous_model", payload["error"]["code"]);
-    assert!(payload["error"]["message"]
-        .as_str()
-        .unwrap()
-        .contains("minimax/cn/MiniMax-M2.7"));
-    assert!(payload["error"]["message"]
-        .as_str()
-        .unwrap()
-        .contains("minimax/global/MiniMax-M2.7"));
+    assert_eq!("provider_relay_not_configured", payload["error"]["code"]);
 }
 
 #[tokio::test]
-async fn openai_chat_completions_accepts_catalog_key_for_regional_model_identity() {
+async fn openai_chat_completions_accepts_catalog_key_for_regional_price_route_scope() {
     let hasher =
         Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
     let key_hash = hasher.hash_secret("sk-live-secret").unwrap();
     let router = sdkwork_claw_product::api::openai_chat_completions_router(
-        Arc::new(catalog_with_regional_minimax_models(key_hash)),
+        Arc::new(catalog_with_regional_minimax_pricing_and_routes(key_hash)),
         hasher,
     );
 

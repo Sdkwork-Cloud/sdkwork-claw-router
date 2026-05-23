@@ -5,6 +5,9 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from tools.api_contract_manifest import ApiContractManifestGenerator
+from tools.appbase_capability_guardian import AppbaseCapabilityGuardian
+from tools.appbase_integration_guardian import AppbaseIntegrationGuardian
+from tools.appbase_openapi_schema_guardian import AppbaseOpenApiSchemaGuardian
 from tools.architecture_standard_guardian import ArchitectureStandardGuardian
 from tools.clawrouter_gateway_openapi_generator import ClawRouterGatewayOpenApiGenerator
 from tools.clawrouter_openapi_contract_audit import ClawRouterOpenApiContractAudit
@@ -15,12 +18,14 @@ from tools.clawrouter_sdk_guardian import ClawRouterSdkGuardian
 from tools.clawrouter_skill_guardian import ClawRouterSkillGuardian
 from tools.domain_type_generator import DomainTypeGenerator
 from tools.flyway_schema_contract_audit import FlywaySchemaContractAudit
+from tools.frontend_contract_loader import FrontendFieldContractCompiler
 from tools.frontend_contract_guardian import FrontendContractGuardian
 from tools.frontend_field_audit import FrontendFieldAudit
 from tools.frontend_operation_audit import FrontendOperationAudit
 from tools.java_legacy_contract_audit import JavaLegacyContractAudit
 from tools.openapi_component_generator import OpenApiComponentGenerator
 from tools.rust_backend_architecture_guardian import RustBackendArchitectureGuardian
+from tools.rust_route_overlap_audit import RustRouteOverlapAudit
 from tools.schema_compiler import SchemaCompiler
 from tools.schema_guardian import SchemaGuardian
 from tools.schema_manifest import SchemaManifestGenerator
@@ -67,6 +72,12 @@ class SchemaQualityGate:
         rust_backend_architecture = RustBackendArchitectureGuardian(root=self.root).run()
         messages.extend(rust_backend_architecture.messages)
 
+        rust_route_overlap = RustRouteOverlapAudit(root=self.root).run()
+        messages.extend(rust_route_overlap.messages)
+
+        frontend_contract_snapshot = FrontendFieldContractCompiler(root=self.root).check()
+        messages.extend(frontend_contract_snapshot.messages)
+
         api_contract_manifest = ApiContractManifestGenerator(root=self.root).check()
         messages.extend(api_contract_manifest.messages)
 
@@ -105,6 +116,17 @@ class SchemaQualityGate:
 
         frontend_operation_audit = FrontendOperationAudit(root=self.root).check()
         messages.extend(frontend_operation_audit.messages)
+
+        if (self.root / "sdkwork-appbase").exists():
+            appbase_capability = AppbaseCapabilityGuardian(root=self.root).run()
+            messages.extend(appbase_capability.messages)
+
+        if (self.root / "specs" / "appbase-integration.yaml").exists():
+            appbase_integration = AppbaseIntegrationGuardian(root=self.root).run()
+            messages.extend(appbase_integration.messages)
+
+            appbase_openapi_schema = AppbaseOpenApiSchemaGuardian(root=self.root).run()
+            messages.extend(appbase_openapi_schema.messages)
 
         return SchemaQualityGateResult(ok=not messages, messages=messages)
 

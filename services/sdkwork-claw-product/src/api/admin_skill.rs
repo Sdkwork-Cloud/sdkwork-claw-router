@@ -1942,7 +1942,7 @@ fn build_update_category_command(
         Some(_) => {
             return Err(AdminSkillCommandBuildError::BadRequest(
                 "category code must be a string or null".to_owned(),
-            ))
+            ));
         }
     };
     let path = match request.path.as_ref() {
@@ -1956,7 +1956,7 @@ fn build_update_category_command(
         Some(_) => {
             return Err(AdminSkillCommandBuildError::BadRequest(
                 "category path must be a string or null".to_owned(),
-            ))
+            ));
         }
     };
     let parent_id = normalize_nullable_id_value(request.parent_id.as_ref(), "parentId")?;
@@ -2039,7 +2039,7 @@ fn build_list_query(
     let page_size = match request.page_size {
         Some(value) if value <= 0 => return Err("pageSize must be a positive integer".to_owned()),
         Some(value) if value > MAX_PAGE_SIZE => {
-            return Err(format!("pageSize must be at most {MAX_PAGE_SIZE}"))
+            return Err(format!("pageSize must be at most {MAX_PAGE_SIZE}"));
         }
         value => value,
     };
@@ -2079,7 +2079,7 @@ fn build_list_packages_query(
     let page_size = match request.page_size {
         Some(value) if value <= 0 => return Err("pageSize must be a positive integer".to_owned()),
         Some(value) if value > MAX_PAGE_SIZE => {
-            return Err(format!("pageSize must be at most {MAX_PAGE_SIZE}"))
+            return Err(format!("pageSize must be at most {MAX_PAGE_SIZE}"));
         }
         value => value,
     };

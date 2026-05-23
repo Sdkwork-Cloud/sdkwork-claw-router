@@ -1,7 +1,7 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { CreateRoutingChannelRequest, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationAgentRunCreateRequest, GenerationAgentRunsCreateResult, GenerationListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, ProvidersListResult, RoutingApiKeysListResult, RoutingChannelsCreateResult, RoutingChannelsDeleteResult, RoutingChannelsListResult, RoutingChannelsStatusUpdateResult, RoutingChannelsUpdateResult, RoutingChannelsVerifyResult, RoutingRequestTracesListResult, RoutingStrategyListResult, RoutingStrategyUpdateResult, RoutingUsageListResult, SetRoutingChannelStatusRequest, UpdateRoutingChannelRequest, UpdateRoutingStrategyRequest, UsageLogsListResult } from '../types';
+import type { CreateRoutingChannelRequest, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, ProvidersListResult, RoutingApiKeysListResult, RoutingChannelsCreateResult, RoutingChannelsDeleteResult, RoutingChannelsListResult, RoutingChannelsStatusUpdateResult, RoutingChannelsUpdateResult, RoutingChannelsVerifyResult, RoutingRequestTracesListResult, RoutingStrategyListResult, RoutingStrategyUpdateResult, RoutingUsageListResult, SetRoutingChannelStatusRequest, UpdateRoutingChannelRequest, UpdateRoutingStrategyRequest, UsageLogsListResult } from '../types';
 
 
 export interface AiUsageLogsListParams {
@@ -310,38 +310,11 @@ export class AiModelRankingsApi {
   }
 }
 
-export class AiGenerationAgentRunsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Create generation agent run */
-  async create(body: GenerationAgentRunCreateRequest): Promise<GenerationAgentRunsCreateResult> {
-    return this.client.post<GenerationAgentRunsCreateResult>(appApiPath(`/ai/generation/agents/runs`), body, undefined, undefined, 'application/json');
-  }
-}
-
-export class AiGenerationAgentApi {
-  private client: HttpClient;
-  public readonly runs: AiGenerationAgentRunsApi;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-    this.runs = new AiGenerationAgentRunsApi(client);
-  }
-
-}
-
 export class AiGenerationApi {
   private client: HttpClient;
-  public readonly agent: AiGenerationAgentApi;
 
   constructor(client: HttpClient) {
     this.client = client;
-    this.agent = new AiGenerationAgentApi(client);
   }
 
 

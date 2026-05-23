@@ -10,6 +10,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? Created { get; set; }
         public string? Expires { get; set; }
         public string? Group { get; set; }
+        public string? GroupName { get; set; }
         public string? Id { get; set; }
         public string? IpLimit { get; set; }
         public string? MaskedKey { get; set; }

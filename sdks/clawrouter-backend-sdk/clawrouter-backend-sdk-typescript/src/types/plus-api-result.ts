@@ -6,6 +6,6 @@ export interface PlusApiResult {
   data?: never;
   /** Human-readable response message. */
   message?: string;
-  /** Java-compatible response message field. */
+  /** Human-readable response message. */
   msg?: string;
 }

@@ -7,7 +7,5 @@ export interface RuntimeSettingsRetrieveResult {
   /** Data field on runtime settings retrieve result. */
   data?: AuthRuntimeSettingsResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

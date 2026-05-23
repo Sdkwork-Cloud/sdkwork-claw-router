@@ -3,7 +3,7 @@ package com.sdkwork.clawrouter.app
 data class IntegrationChannelRecord(
     val accessType: String? = null,
     val accountId: String? = null,
-    val baseUrlOverride: String? = null,
+    val baseUrl: String? = null,
     val capabilities: Map<String, String>? = null,
     val channelCode: String? = null,
     val circuitBreakerPolicy: Map<String, String>? = null,

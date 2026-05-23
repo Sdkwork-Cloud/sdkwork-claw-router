@@ -4,15 +4,19 @@ import java.util.List;
 
 public class AdminAiModelItem {
     private String apiFormat;
+    private String cacheReadPrice;
+    private String cacheWritePrice;
     private String calls;
     private String capabilityIntro;
     private Integer contextTokens;
     private String description;
+    private String displayName;
     private String id;
     private List<String> inputModalities;
     private List<String> limitations;
     private Integer maxOutputTokens;
     private List<String> modalities;
+    private String model;
     private String name;
     private List<String> outputModalities;
     private String priceIn;
@@ -35,15 +39,31 @@ public class AdminAiModelItem {
     public String getApiFormat() {
         return this.apiFormat;
     }
-    
+
     public void setApiFormat(String apiFormat) {
         this.apiFormat = apiFormat;
+    }
+
+    public String getCacheReadPrice() {
+        return this.cacheReadPrice;
+    }
+
+    public void setCacheReadPrice(String cacheReadPrice) {
+        this.cacheReadPrice = cacheReadPrice;
+    }
+
+    public String getCacheWritePrice() {
+        return this.cacheWritePrice;
+    }
+
+    public void setCacheWritePrice(String cacheWritePrice) {
+        this.cacheWritePrice = cacheWritePrice;
     }
 
     public String getCalls() {
         return this.calls;
     }
-    
+
     public void setCalls(String calls) {
         this.calls = calls;
     }
@@ -51,7 +71,7 @@ public class AdminAiModelItem {
     public String getCapabilityIntro() {
         return this.capabilityIntro;
     }
-    
+
     public void setCapabilityIntro(String capabilityIntro) {
         this.capabilityIntro = capabilityIntro;
     }
@@ -59,7 +79,7 @@ public class AdminAiModelItem {
     public Integer getContextTokens() {
         return this.contextTokens;
     }
-    
+
     public void setContextTokens(Integer contextTokens) {
         this.contextTokens = contextTokens;
     }
@@ -67,15 +87,23 @@ public class AdminAiModelItem {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -83,7 +111,7 @@ public class AdminAiModelItem {
     public List<String> getInputModalities() {
         return this.inputModalities;
     }
-    
+
     public void setInputModalities(List<String> inputModalities) {
         this.inputModalities = inputModalities;
     }
@@ -91,7 +119,7 @@ public class AdminAiModelItem {
     public List<String> getLimitations() {
         return this.limitations;
     }
-    
+
     public void setLimitations(List<String> limitations) {
         this.limitations = limitations;
     }
@@ -99,7 +127,7 @@ public class AdminAiModelItem {
     public Integer getMaxOutputTokens() {
         return this.maxOutputTokens;
     }
-    
+
     public void setMaxOutputTokens(Integer maxOutputTokens) {
         this.maxOutputTokens = maxOutputTokens;
     }
@@ -107,15 +135,23 @@ public class AdminAiModelItem {
     public List<String> getModalities() {
         return this.modalities;
     }
-    
+
     public void setModalities(List<String> modalities) {
         this.modalities = modalities;
+    }
+
+    public String getModel() {
+        return this.model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -123,7 +159,7 @@ public class AdminAiModelItem {
     public List<String> getOutputModalities() {
         return this.outputModalities;
     }
-    
+
     public void setOutputModalities(List<String> outputModalities) {
         this.outputModalities = outputModalities;
     }
@@ -131,7 +167,7 @@ public class AdminAiModelItem {
     public String getPriceIn() {
         return this.priceIn;
     }
-    
+
     public void setPriceIn(String priceIn) {
         this.priceIn = priceIn;
     }
@@ -139,7 +175,7 @@ public class AdminAiModelItem {
     public String getPriceOut() {
         return this.priceOut;
     }
-    
+
     public void setPriceOut(String priceOut) {
         this.priceOut = priceOut;
     }
@@ -147,7 +183,7 @@ public class AdminAiModelItem {
     public Integer getReleaseStage() {
         return this.releaseStage;
     }
-    
+
     public void setReleaseStage(Integer releaseStage) {
         this.releaseStage = releaseStage;
     }
@@ -155,7 +191,7 @@ public class AdminAiModelItem {
     public String getReplacementModel() {
         return this.replacementModel;
     }
-    
+
     public void setReplacementModel(String replacementModel) {
         this.replacementModel = replacementModel;
     }
@@ -163,7 +199,7 @@ public class AdminAiModelItem {
     public Integer getRoutingState() {
         return this.routingState;
     }
-    
+
     public void setRoutingState(Integer routingState) {
         this.routingState = routingState;
     }
@@ -171,7 +207,7 @@ public class AdminAiModelItem {
     public Integer getShelfState() {
         return this.shelfState;
     }
-    
+
     public void setShelfState(Integer shelfState) {
         this.shelfState = shelfState;
     }
@@ -179,7 +215,7 @@ public class AdminAiModelItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -187,7 +223,7 @@ public class AdminAiModelItem {
     public List<String> getSupportedLanguages() {
         return this.supportedLanguages;
     }
-    
+
     public void setSupportedLanguages(List<String> supportedLanguages) {
         this.supportedLanguages = supportedLanguages;
     }
@@ -195,7 +231,7 @@ public class AdminAiModelItem {
     public Boolean getSupportsJsonSchema() {
         return this.supportsJsonSchema;
     }
-    
+
     public void setSupportsJsonSchema(Boolean supportsJsonSchema) {
         this.supportsJsonSchema = supportsJsonSchema;
     }
@@ -203,7 +239,7 @@ public class AdminAiModelItem {
     public Boolean getSupportsStreaming() {
         return this.supportsStreaming;
     }
-    
+
     public void setSupportsStreaming(Boolean supportsStreaming) {
         this.supportsStreaming = supportsStreaming;
     }
@@ -211,7 +247,7 @@ public class AdminAiModelItem {
     public Boolean getSupportsTools() {
         return this.supportsTools;
     }
-    
+
     public void setSupportsTools(Boolean supportsTools) {
         this.supportsTools = supportsTools;
     }
@@ -219,7 +255,7 @@ public class AdminAiModelItem {
     public String getTrainingDataCutoff() {
         return this.trainingDataCutoff;
     }
-    
+
     public void setTrainingDataCutoff(String trainingDataCutoff) {
         this.trainingDataCutoff = trainingDataCutoff;
     }
@@ -227,7 +263,7 @@ public class AdminAiModelItem {
     public String getType() {
         return this.type;
     }
-    
+
     public void setType(String type) {
         this.type = type;
     }
@@ -235,7 +271,7 @@ public class AdminAiModelItem {
     public List<String> getUseCases() {
         return this.useCases;
     }
-    
+
     public void setUseCases(List<String> useCases) {
         this.useCases = useCases;
     }
@@ -243,7 +279,7 @@ public class AdminAiModelItem {
     public String getVendorCode() {
         return this.vendorCode;
     }
-    
+
     public void setVendorCode(String vendorCode) {
         this.vendorCode = vendorCode;
     }
@@ -251,7 +287,7 @@ public class AdminAiModelItem {
     public String getVendorId() {
         return this.vendorId;
     }
-    
+
     public void setVendorId(String vendorId) {
         this.vendorId = vendorId;
     }

@@ -104,7 +104,7 @@ async fn create_tables(pool: &SqlitePool) {
             organization_id INTEGER NOT NULL,
             provider_code TEXT NOT NULL,
             account_id INTEGER NOT NULL,
-            base_url_override TEXT,
+            base_url TEXT,
             capabilities TEXT,
             priority INTEGER,
             weight INTEGER,
@@ -149,7 +149,7 @@ async fn seed_configs(pool: &SqlitePool) {
     sqlx::query(
         r#"
         INSERT INTO integration_channel
-            (id, tenant_id, organization_id, provider_code, account_id, base_url_override, capabilities, priority, weight, status)
+            (id, tenant_id, organization_id, provider_code, account_id, base_url, capabilities, priority, weight, status)
         VALUES
             (2001, 10, 20, 'ses', 9001, 'https://email.us-east-1.amazonaws.test', '["verification","email","verification:scene:login"]', 20, 80, 1),
             (2002, 10, 20, 'sendgrid', 9002, 'https://api.sendgrid.test', '["verification:email","verification:scene:login"]', 10, 20, 1),

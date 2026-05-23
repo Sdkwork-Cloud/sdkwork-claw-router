@@ -7,7 +7,5 @@ export interface FeedsCategoryRetrieveResult {
   /** Data field on feeds category retrieve result. */
   data?: ForumFeedItemList;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

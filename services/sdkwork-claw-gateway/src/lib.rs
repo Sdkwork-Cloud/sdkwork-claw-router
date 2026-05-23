@@ -5,6 +5,7 @@ mod openai_passthrough_routes;
 mod openai_route_taxonomy;
 mod passthrough;
 mod provider_account_auth;
+pub mod provider_adapter_transport;
 mod provider_passthrough_transport;
 mod route_scoped_openai_passthrough;
 pub mod runtime;
@@ -15,11 +16,12 @@ pub use edge_server::{edge_server_router, EdgeServerConfig};
 #[rustfmt::skip]
 pub use openai_passthrough_routes::{openai_compatible_passthrough_paths, openai_method_passthrough_paths, stored_chat_completion_passthrough_paths};
 #[rustfmt::skip]
-pub use passthrough::{provider_native_passthrough_providers, router_with_provider_passthrough_config};
+pub use passthrough::{provider_native_passthrough_providers, router_with_provider_passthrough_and_adapter_config, router_with_provider_passthrough_config};
 #[rustfmt::skip]
 pub use runtime::{
     router_from_env, router_with_database_and_api_key_config,
     router_with_database_api_key_and_provider_configs,
+    router_with_database_api_key_provider_configs_and_adapter_config,
     router_with_database_api_key_and_provider_relay_config,
     router_with_database_api_key_provider_configs_and_usage_settlement_worker_config,
     router_with_optional_database_api_key_and_provider_configs, router_with_optional_database_api_key_and_provider_relay_config,

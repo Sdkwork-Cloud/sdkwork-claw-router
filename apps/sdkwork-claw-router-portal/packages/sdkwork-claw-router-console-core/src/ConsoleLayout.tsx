@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard, Activity, Key, CreditCard,
-  FileText, Settings, LogOut, ChevronLeft, ChevronRight, Bell, ShieldCheck, User, Box, Network, Bot
+  Settings, LogOut, ChevronLeft, ChevronRight, Bell, Box, Network, Bot, Crown, Receipt, Wallet
 } from 'lucide-react';
 
 import { Navbar } from 'sdkwork-claw-router-commons';
@@ -15,13 +15,14 @@ const mainNavigation = [
   { name: (t: TranslationFunction) => t("console.core.consolelayout.text.1hgvoqd", "仪表盘"), path: '/console/dashboard', icon: LayoutDashboard },
   { name: (t: TranslationFunction) => t("console.core.consolelayout.text.1wrh7eu", "令牌管理"), path: '/console/api-keys', icon: Key },
   { name: (t: TranslationFunction) => t("console.core.consolelayout.text.p2qyw6", "调用统计"), path: '/console/usage', icon: Activity },
-  { name: (t: TranslationFunction) => t("console.billing.billingview.text.gd62li", "钱包与充值"), path: '/console/billing', icon: CreditCard },
-  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.11nott7", "账单与报表"), path: '/console/settlements', icon: FileText },
+  { name: (t: TranslationFunction) => t("console.account.nav.account", "账户详情"), path: '/console/account', icon: CreditCard },
+  { name: (t: TranslationFunction) => t("console.wallet.nav.wallet", "充值兑换"), path: '/console/wallet', icon: Wallet },
+  { name: (t: TranslationFunction) => t("console.memberships.nav.memberships", "会员"), path: '/console/memberships', icon: Crown },
+  { name: (t: TranslationFunction) => t("console.settlements.nav.settlements", "账单与报表"), path: '/console/settlements', icon: Receipt },
   { name: (t: TranslationFunction) => t("console.core.consolelayout.text.3n18hg", "消息中心"), path: '/console/notifications', icon: Bell },
   { name: (t: TranslationFunction) => t("console.core.consolelayout.text.d29cz6", "工具配置"), path: '/console/providers', icon: Box },
   { name: (t: TranslationFunction) => t("console.core.consolelayout.text.1x2j5b5", "本地路由"), path: '/console/routing', icon: Network },
   { name: (t: TranslationFunction) => t("console.core.consolelayout.text.agents", "Agent 管理"), path: '/console/agents', icon: Bot },
-  { name: (t: TranslationFunction) => t("console.core.consolelayout.text.tc07jn", "账户详情"), path: '/console/account', icon: User },
 ];
 
 export interface ConsoleContextProps {

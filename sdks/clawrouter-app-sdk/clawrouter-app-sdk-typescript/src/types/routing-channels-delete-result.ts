@@ -7,7 +7,5 @@ export interface RoutingChannelsDeleteResult {
   /** Data field on routing channels delete result. */
   data?: RoutingChannelDeleteResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AgentCreateRequest, AgentsCreateResult, AgentsListResult, AgentsRetrieveResult
+from ..models import AgentCreateRequest, AgentDefinitionsCreateResult, AgentDefinitionsListResult, AgentDefinitionsRetrieveResult, AgentRunCompleteRequest, AgentRunCreateRequest, AgentRunsCreateResult, AgentRunsListResult, AgentRunsRetrieveResult, AgentRunsSubmitResult, AgentRunStepCompleteRequest, AgentRunStepCreateRequest, AgentRunStepsCreateResult, AgentRunStepsListResult, AgentRunStepsSubmitResult, AgentSessionCreateRequest, AgentSessionsCreateResult, AgentSessionsListResult, AgentSessionsRetrieveResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -242,9 +242,20 @@ class AgentsApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.agent_definitions = AgentsAgentDefinitionsApi(client)
+        self.agent_runs = AgentsAgentRunsApi(client)
+        self.agent_run_steps = AgentsAgentRunStepsApi(client)
+        self.agent_sessions = AgentsAgentSessionsApi(client)
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None) -> AgentsListResult:
+class AgentsAgentDefinitionsApi:
+    """agents agents.agent_definitions API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None) -> AgentDefinitionsListResult:
         """List user agents"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -253,7 +264,7 @@ class AgentsApi:
         ])
         return self._client.get(_append_query_string(f"/app/v3/api/agents", query))
 
-    def create(self, body: AgentCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> AgentsCreateResult:
+    def create(self, body: AgentCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> AgentDefinitionsCreateResult:
         """Create user agent"""
         request_headers = build_request_headers(
             {
@@ -264,6 +275,114 @@ class AgentsApi:
         )
         return self._client.post(f"/app/v3/api/agents", json=body, headers=request_headers)
 
-    def retrieve(self, agent_id: str) -> AgentsRetrieveResult:
+    def retrieve(self, agent_id: str) -> AgentDefinitionsRetrieveResult:
         """Retrieve user agent"""
         return self._client.get(f"/app/v3/api/agents/{serialize_path_parameter(agent_id, {'name': 'agentId', 'style': 'simple', 'explode': False})}")
+
+class AgentsAgentRunsApi:
+    """agents agents.agent_runs API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self, run_id: str) -> AgentRunsRetrieveResult:
+        """Retrieve agent run"""
+        return self._client.get(f"/app/v3/api/agents/runs/{serialize_path_parameter(run_id, {'name': 'runId', 'style': 'simple', 'explode': False})}")
+
+    def submit(self, run_id: str, body: AgentRunCompleteRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> AgentRunsSubmitResult:
+        """Complete agent run"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/app/v3/api/agents/runs/{serialize_path_parameter(run_id, {'name': 'runId', 'style': 'simple', 'explode': False})}/complete", json=body, headers=request_headers)
+
+    def list(self, session_id: str, page: Optional[int] = None, page_size: Optional[int] = None) -> AgentRunsListResult:
+        """List agent session runs"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/app/v3/api/agents/sessions/{serialize_path_parameter(session_id, {'name': 'sessionId', 'style': 'simple', 'explode': False})}/runs", query))
+
+    def create(self, session_id: str, body: AgentRunCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> AgentRunsCreateResult:
+        """Create agent run"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/app/v3/api/agents/sessions/{serialize_path_parameter(session_id, {'name': 'sessionId', 'style': 'simple', 'explode': False})}/runs", json=body, headers=request_headers)
+
+class AgentsAgentRunStepsApi:
+    """agents agents.agent_run_steps API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, run_id: str, page: Optional[int] = None, page_size: Optional[int] = None) -> AgentRunStepsListResult:
+        """List agent run steps"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/app/v3/api/agents/runs/{serialize_path_parameter(run_id, {'name': 'runId', 'style': 'simple', 'explode': False})}/steps", query))
+
+    def create(self, run_id: str, body: AgentRunStepCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> AgentRunStepsCreateResult:
+        """Create agent run step"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/app/v3/api/agents/runs/{serialize_path_parameter(run_id, {'name': 'runId', 'style': 'simple', 'explode': False})}/steps", json=body, headers=request_headers)
+
+    def submit(self, run_id: str, step_id: str, body: AgentRunStepCompleteRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> AgentRunStepsSubmitResult:
+        """Complete agent run step"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/app/v3/api/agents/runs/{serialize_path_parameter(run_id, {'name': 'runId', 'style': 'simple', 'explode': False})}/steps/{serialize_path_parameter(step_id, {'name': 'stepId', 'style': 'simple', 'explode': False})}/complete", json=body, headers=request_headers)
+
+class AgentsAgentSessionsApi:
+    """agents agents.agent_sessions API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self, session_id: str) -> AgentSessionsRetrieveResult:
+        """Retrieve agent session"""
+        return self._client.get(f"/app/v3/api/agents/sessions/{serialize_path_parameter(session_id, {'name': 'sessionId', 'style': 'simple', 'explode': False})}")
+
+    def list(self, agent_id: str, page: Optional[int] = None, page_size: Optional[int] = None) -> AgentSessionsListResult:
+        """List agent sessions"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/app/v3/api/agents/{serialize_path_parameter(agent_id, {'name': 'agentId', 'style': 'simple', 'explode': False})}/sessions", query))
+
+    def create(self, agent_id: str, body: AgentSessionCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> AgentSessionsCreateResult:
+        """Create agent session"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/app/v3/api/agents/{serialize_path_parameter(agent_id, {'name': 'agentId', 'style': 'simple', 'explode': False})}/sessions", json=body, headers=request_headers)

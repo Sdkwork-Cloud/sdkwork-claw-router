@@ -1,4 +1,4 @@
-﻿use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAppGenerationHistoryReadStore;
+use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAppGenerationHistoryReadStore;
 use sdkwork_claw_product::ports::{AppGenerationHistoryReadStore, AppGenerationHistorySubject};
 use sqlx::sqlite::SqlitePoolOptions;
 use sqlx::SqlitePool;
@@ -142,6 +142,82 @@ async fn sqlite_generation_history_skips_jobs_without_explicit_modality() {
     );
 }
 
+#[tokio::test]
+async fn sqlite_generation_history_loads_standard_agent_runtime_playground_generation_runs() {
+    let pool = sqlite_pool().await;
+    create_generation_tables(&pool).await;
+    seed_standard_agent_runtime_generation(&pool).await;
+
+    let store = SqliteAppGenerationHistoryReadStore::new(pool);
+    let items = store
+        .load_generation_history(Some(owner_subject()))
+        .await
+        .unwrap();
+
+    assert_eq!(1, items.len());
+    let item = &items[0];
+    assert_eq!("agent-run-1", item.id);
+    assert_eq!("image", item.item_type);
+    assert_eq!("Create launch image", item.prompt);
+    assert_eq!("image-pro", item.model_info.as_deref().unwrap());
+    assert_eq!("image-pro", item.model_catalog_key.as_deref().unwrap());
+    assert_eq!("16:9", item.aspect_ratio.as_deref().unwrap());
+    assert_eq!(5, item.duration_seconds.unwrap());
+    assert_eq!("completed", item.status.as_deref().unwrap());
+    assert_eq!(
+        "Generated launch image text",
+        item.output_text.as_deref().unwrap()
+    );
+    assert_eq!("2026-05-04", item.date);
+    assert_eq!("2026-05-04T11:00:00Z", item.created_at.as_deref().unwrap());
+    assert_eq!("2026-05-04T11:01:00Z", item.updated_at.as_deref().unwrap());
+    assert_eq!(
+        vec!["https://cdn.example.test/runtime-image.png".to_owned()],
+        item.images
+    );
+    assert_eq!(
+        "https://cdn.example.test/runtime-image.png",
+        item.url.as_deref().unwrap()
+    );
+
+    let payload = serde_json::to_string(&items).unwrap();
+    for internal_value in [
+        "runtime/storage/hidden-image.png",
+        "runtime-image-sha256",
+        "agent-run-trace-secret",
+    ] {
+        assert!(
+            !payload.contains(internal_value),
+            "generation history DTO must not expose standard runtime internal value: {internal_value}"
+        );
+    }
+}
+
+#[tokio::test]
+async fn sqlite_generation_history_keeps_text_only_agent_runtime_output_as_text() {
+    let pool = sqlite_pool().await;
+    create_generation_tables(&pool).await;
+    seed_text_only_agent_runtime_generation(&pool).await;
+
+    let store = SqliteAppGenerationHistoryReadStore::new(pool);
+    let items = store
+        .load_generation_history(Some(owner_subject()))
+        .await
+        .unwrap();
+
+    assert_eq!(1, items.len());
+    let item = &items[0];
+    assert_eq!("agent-run-text-1", item.id);
+    assert_eq!("text", item.item_type);
+    assert_eq!("Explain the launch plan", item.prompt);
+    assert_eq!("llm-pro", item.model_info.as_deref().unwrap());
+    assert_eq!("completed", item.status.as_deref().unwrap());
+    assert_eq!("Text answer", item.output_text.as_deref().unwrap());
+    assert!(item.images.is_empty());
+    assert!(item.videos.is_empty());
+    assert!(item.url.is_none());
+}
+
 async fn sqlite_pool() -> SqlitePool {
     SqlitePoolOptions::new()
         .max_connections(1)
@@ -198,6 +274,128 @@ async fn create_generation_tables(pool: &SqlitePool) {
             client_ip_hash TEXT,
             user_agent_hash TEXT,
             provider_error TEXT
+        )
+        "#,
+        r#"
+        CREATE TABLE ai_agent_run (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            user_id INTEGER NOT NULL,
+            request_id TEXT NOT NULL,
+            trace_id TEXT,
+            status TEXT NOT NULL DEFAULT 'active',
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            agent_id INTEGER,
+            agent_version_id INTEGER,
+            agent_session_id TEXT,
+            memory_space_id TEXT,
+            runtime TEXT,
+            model TEXT,
+            run_uuid TEXT NOT NULL,
+            run_status TEXT NOT NULL,
+            source_surface TEXT,
+            input_message TEXT,
+            output_message TEXT,
+            target_modality INTEGER,
+            planner_model TEXT,
+            execution_mode TEXT,
+            started_at TEXT,
+            completed_at TEXT,
+            cancelled_at TEXT,
+            failed_at TEXT,
+            error_message_masked TEXT,
+            metering_status INTEGER,
+            usage_fact_id INTEGER,
+            usage_json TEXT,
+            total_steps INTEGER,
+            prompt_tokens INTEGER,
+            completion_tokens INTEGER,
+            cached_tokens INTEGER,
+            total_tokens INTEGER,
+            image_count INTEGER,
+            audio_seconds TEXT,
+            video_seconds TEXT
+        )
+        "#,
+        r#"
+        CREATE TABLE ai_runtime_invocation (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            user_id INTEGER NOT NULL,
+            conversation_id TEXT,
+            chat_turn_id TEXT,
+            chat_item_id TEXT,
+            agent_session_id TEXT,
+            agent_run_id TEXT,
+            agent_run_step_id TEXT,
+            invocation_no INTEGER NOT NULL DEFAULT 1,
+            invocation_type TEXT NOT NULL,
+            runtime TEXT NOT NULL,
+            endpoint TEXT,
+            attempt_no INTEGER NOT NULL DEFAULT 1,
+            status TEXT NOT NULL,
+            request_id TEXT,
+            trace_id TEXT,
+            provider_response_id TEXT,
+            provider_session_id TEXT,
+            provider_conversation_id TEXT,
+            provider_step_id TEXT,
+            model TEXT,
+            provider TEXT,
+            tool_name TEXT,
+            tool_call_id TEXT,
+            cwd TEXT,
+            sandbox_policy TEXT,
+            approval_policy TEXT,
+            permission_mode TEXT,
+            streaming INTEGER NOT NULL DEFAULT 0,
+            started_at TEXT,
+            completed_at TEXT,
+            latency_ms INTEGER,
+            ttft_ms INTEGER,
+            exit_code INTEGER,
+            finish_reason TEXT,
+            error_type TEXT,
+            error_code TEXT,
+            error_message_masked TEXT,
+            request_json TEXT,
+            response_json TEXT,
+            usage_json TEXT,
+            created_at TEXT NOT NULL,
+            metadata TEXT NOT NULL DEFAULT '{}'
+        )
+        "#,
+        r#"
+        CREATE TABLE ai_runtime_artifact (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            user_id INTEGER NOT NULL,
+            conversation_id TEXT,
+            chat_turn_id TEXT,
+            message_id TEXT,
+            chat_item_id TEXT,
+            agent_session_id TEXT,
+            agent_run_id TEXT,
+            agent_run_step_id TEXT,
+            runtime_invocation_id TEXT,
+            artifact_type TEXT NOT NULL,
+            name TEXT,
+            mime_type TEXT,
+            content_text TEXT,
+            content_json TEXT,
+            storage_key TEXT,
+            storage_url TEXT,
+            sha256 TEXT,
+            size_bytes INTEGER,
+            created_at TEXT NOT NULL,
+            metadata TEXT NOT NULL DEFAULT '{}'
         )
         "#,
     ] {
@@ -423,6 +621,374 @@ async fn seed_mixed_history(pool: &SqlitePool) {
         1,
     )
     .await;
+}
+
+async fn seed_standard_agent_runtime_generation(pool: &SqlitePool) {
+    sqlx::query(
+        r#"
+        INSERT INTO ai_agent_run (
+            uuid,
+            tenant_id,
+            organization_id,
+            user_id,
+            request_id,
+            trace_id,
+            status,
+            created_at,
+            metadata,
+            agent_id,
+            agent_version_id,
+            agent_session_id,
+            runtime,
+            model,
+            run_uuid,
+            run_status,
+            source_surface,
+            input_message,
+            output_message,
+            execution_mode,
+            started_at,
+            completed_at,
+            total_steps
+        )
+        VALUES (
+            'agent-run-1',
+            10,
+            20,
+            30,
+            'request-agent-run-1',
+            'agent-run-trace-secret',
+            'active',
+            '2026-05-04 11:00:00',
+            '{"completed":true}',
+            101,
+            201,
+            'agent-session-1',
+            'openai_compatible',
+            'image-pro',
+            'agent-run-1',
+            'completed',
+            'playground',
+            'Create launch image',
+            'Generated launch image text',
+            'interactive',
+            '2026-05-04 11:00:00',
+            '2026-05-04 11:01:00',
+            1
+        )
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_runtime_invocation (
+            uuid,
+            tenant_id,
+            organization_id,
+            user_id,
+            agent_session_id,
+            agent_run_id,
+            invocation_type,
+            runtime,
+            endpoint,
+            status,
+            request_id,
+            model,
+            streaming,
+            started_at,
+            completed_at,
+            request_json,
+            response_json,
+            created_at,
+            metadata
+        )
+        VALUES (
+            'runtime-invocation-1',
+            10,
+            20,
+            30,
+            'agent-session-1',
+            'agent-run-1',
+            'agent_run',
+            'openai_compatible',
+            'agent.stream',
+            'completed',
+            'request-agent-run-1',
+            'image-pro',
+            1,
+            '2026-05-04 11:00:05',
+            '2026-05-04 11:01:00',
+            '{"targetType":"image","generationConfig":{"aspectRatio":"16:9","durationSeconds":5}}',
+            '{"outputText":"Generated launch image text","media":[{"modality":"image","url":"https://cdn.example.test/runtime-image.png","mimeType":"image/png","durationSeconds":5}]}',
+            '2026-05-04 11:00:05',
+            '{"surface":"playground"}'
+        )
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_runtime_artifact (
+            uuid,
+            tenant_id,
+            organization_id,
+            user_id,
+            agent_session_id,
+            agent_run_id,
+            runtime_invocation_id,
+            artifact_type,
+            name,
+            mime_type,
+            content_json,
+            storage_key,
+            storage_url,
+            sha256,
+            size_bytes,
+            created_at,
+            metadata
+        )
+        VALUES (
+            'runtime-artifact-1',
+            10,
+            20,
+            30,
+            'agent-session-1',
+            'agent-run-1',
+            'runtime-invocation-1',
+            'image',
+            'runtime-image.png',
+            'image/png',
+            '{"url":"https://cdn.example.test/runtime-image.png","modality":"image","durationSeconds":5}',
+            'runtime/storage/hidden-image.png',
+            'https://cdn.example.test/runtime-image.png',
+            'runtime-image-sha256',
+            12345,
+            '2026-05-04 11:00:50',
+            '{"public":true}'
+        )
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_agent_run (
+            uuid,
+            tenant_id,
+            organization_id,
+            user_id,
+            request_id,
+            status,
+            created_at,
+            metadata,
+            agent_id,
+            agent_version_id,
+            runtime,
+            model,
+            run_uuid,
+            run_status,
+            source_surface,
+            input_message,
+            execution_mode,
+            started_at,
+            completed_at,
+            total_steps
+        )
+        VALUES (
+            'agent-run-other-user',
+            10,
+            20,
+            31,
+            'request-agent-run-other-user',
+            'active',
+            '2026-05-04 11:02:00',
+            '{}',
+            101,
+            201,
+            'openai_compatible',
+            'image-pro',
+            'agent-run-other-user',
+            'completed',
+            'playground',
+            'Other user generation',
+            'interactive',
+            '2026-05-04 11:02:00',
+            '2026-05-04 11:03:00',
+            1
+        )
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_agent_run (
+            uuid,
+            tenant_id,
+            organization_id,
+            user_id,
+            request_id,
+            status,
+            created_at,
+            metadata,
+            agent_id,
+            agent_version_id,
+            runtime,
+            model,
+            run_uuid,
+            run_status,
+            source_surface,
+            input_message,
+            execution_mode,
+            started_at,
+            completed_at,
+            total_steps
+        )
+        VALUES (
+            'agent-run-chat-surface',
+            10,
+            20,
+            30,
+            'request-agent-run-chat-surface',
+            'active',
+            '2026-05-04 11:04:00',
+            '{}',
+            101,
+            201,
+            'openai_compatible',
+            'image-pro',
+            'agent-run-chat-surface',
+            'completed',
+            'chat',
+            'Chat agent run must not appear',
+            'interactive',
+            '2026-05-04 11:04:00',
+            '2026-05-04 11:05:00',
+            1
+        )
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+}
+
+async fn seed_text_only_agent_runtime_generation(pool: &SqlitePool) {
+    sqlx::query(
+        r#"
+        INSERT INTO ai_agent_run (
+            uuid,
+            tenant_id,
+            organization_id,
+            user_id,
+            request_id,
+            status,
+            created_at,
+            metadata,
+            agent_id,
+            agent_version_id,
+            agent_session_id,
+            runtime,
+            model,
+            run_uuid,
+            run_status,
+            source_surface,
+            input_message,
+            output_message,
+            execution_mode,
+            started_at,
+            completed_at,
+            total_steps
+        )
+        VALUES (
+            'agent-run-text-1',
+            10,
+            20,
+            30,
+            'request-agent-run-text-1',
+            'active',
+            '2026-05-04 12:00:00',
+            '{}',
+            101,
+            201,
+            'agent-session-text-1',
+            'openai_compatible',
+            'llm-pro',
+            'agent-run-text-1',
+            'completed',
+            'playground',
+            'Explain the launch plan',
+            '',
+            'interactive',
+            '2026-05-04 12:00:00',
+            '2026-05-04 12:01:00',
+            1
+        )
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_runtime_invocation (
+            uuid,
+            tenant_id,
+            organization_id,
+            user_id,
+            agent_session_id,
+            agent_run_id,
+            invocation_type,
+            runtime,
+            endpoint,
+            status,
+            request_id,
+            model,
+            streaming,
+            started_at,
+            completed_at,
+            request_json,
+            response_json,
+            created_at,
+            metadata
+        )
+        VALUES (
+            'runtime-invocation-text-1',
+            10,
+            20,
+            30,
+            'agent-session-text-1',
+            'agent-run-text-1',
+            'agent_run',
+            'openai_compatible',
+            'agent.stream',
+            'completed',
+            'request-agent-run-text-1',
+            'llm-pro',
+            1,
+            '2026-05-04 12:00:05',
+            '2026-05-04 12:01:00',
+            '{"generationConfig":{"durationSeconds":5}}',
+            '{"outputText":"Text answer"}',
+            '2026-05-04 12:00:05',
+            '{"surface":"playground"}'
+        )
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
 }
 
 async fn insert_asset(

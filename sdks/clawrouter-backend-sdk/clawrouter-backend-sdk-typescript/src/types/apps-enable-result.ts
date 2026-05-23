@@ -7,7 +7,5 @@ export interface AppsEnableResult {
   /** Data field on apps enable result. */
   data?: AdminAppMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

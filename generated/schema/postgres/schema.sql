@@ -578,43 +578,6 @@ CREATE INDEX IF NOT EXISTS idx_favorite_content ON plus_favorite (content_type, 
 CREATE INDEX IF NOT EXISTS idx_favorite_folder_id ON plus_favorite (folder_id);
 CREATE INDEX IF NOT EXISTS idx_favorite_created_at ON plus_favorite (created_at);
 
-CREATE TABLE IF NOT EXISTS ops_coupon_issue_batch (
-    id BIGSERIAL PRIMARY KEY,
-    uuid VARCHAR(64) NOT NULL,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    status INTEGER NOT NULL DEFAULT 1,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    version BIGINT NOT NULL DEFAULT 0,
-    deleted_at TIMESTAMPTZ,
-    deleted_by BIGINT,
-    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
-    coupon_id BIGINT,
-    coupon_template_id BIGINT,
-    batch_no VARCHAR(64),
-    campaign_code VARCHAR(64),
-    name VARCHAR(128),
-    code_prefix VARCHAR(32),
-    code_pattern VARCHAR(128),
-    requested_count BIGINT,
-    generated_count BIGINT,
-    available_count BIGINT,
-    claimed_count BIGINT,
-    used_count BIGINT,
-    voided_count BIGINT,
-    generation_status INTEGER,
-    audience_filter JSONB,
-    expire_at TIMESTAMPTZ,
-    generated_at TIMESTAMPTZ,
-    created_by BIGINT
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS uk_ops_coupon_issue_batch_no ON ops_coupon_issue_batch (tenant_id, organization_id, batch_no);
-CREATE INDEX IF NOT EXISTS idx_ops_coupon_issue_batch_coupon ON ops_coupon_issue_batch (tenant_id, organization_id, coupon_id, status, created_at, id);
-CREATE INDEX IF NOT EXISTS idx_ops_coupon_issue_batch_campaign ON ops_coupon_issue_batch (tenant_id, organization_id, campaign_code, created_at, id);
-
 CREATE TABLE IF NOT EXISTS ops_referral_stat_snapshot (
     id BIGSERIAL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
@@ -957,7 +920,7 @@ CREATE TABLE IF NOT EXISTS integration_provider (
     upstream_vendor_code VARCHAR(64),
     upstream_provider_code VARCHAR(64),
     protocol INTEGER,
-    base_url_template VARCHAR(512),
+    base_url VARCHAR(512),
     auth_type INTEGER,
     capabilities JSONB,
     metadata_schema_version VARCHAR(32),
@@ -986,7 +949,7 @@ CREATE TABLE IF NOT EXISTS integration_channel (
     name VARCHAR(128),
     protocol INTEGER,
     access_type INTEGER,
-    base_url_override VARCHAR(512),
+    base_url VARCHAR(512),
     model_mode INTEGER,
     environment INTEGER,
     region VARCHAR(64),
@@ -1027,6 +990,7 @@ CREATE TABLE IF NOT EXISTS integration_provider_account (
     auth_type INTEGER,
     credential_profile INTEGER,
     external_account_id VARCHAR(128),
+    base_url VARCHAR(512),
     auth_config JSONB,
     secret_ref VARCHAR(256),
     secret_hash VARCHAR(128),
@@ -1048,7 +1012,129 @@ CREATE TABLE IF NOT EXISTS integration_provider_account (
 );
 
 CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_provider_account_tenant_code ON integration_provider_account (tenant_id, organization_id, provider_code, account_code);
-CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_provider_account_secret_hash ON integration_provider_account (tenant_id, organization_id, provider_code, secret_hash);
+
+CREATE TABLE IF NOT EXISTS open_platform_provider (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    provider VARCHAR(64) NOT NULL,
+    name VARCHAR(128) NOT NULL,
+    icon_url VARCHAR(512),
+    docs_url VARCHAR(512),
+    website_url VARCHAR(512),
+    capabilities JSONB,
+    sort_order INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_open_platform_provider_tenant_provider ON open_platform_provider (tenant_id, organization_id, provider);
+CREATE INDEX IF NOT EXISTS idx_open_platform_provider_status_sort ON open_platform_provider (tenant_id, organization_id, status, sort_order, id);
+
+CREATE TABLE IF NOT EXISTS open_platform_manifest (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version VARCHAR(32) NOT NULL,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    manifest_key VARCHAR(128) NOT NULL,
+    provider VARCHAR(64) NOT NULL,
+    account_type VARCHAR(64) NOT NULL,
+    capability_schema JSONB,
+    callback_schema JSONB,
+    entry_schema JSONB,
+    sort_order INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_open_platform_manifest_tenant_key ON open_platform_manifest (tenant_id, organization_id, manifest_key);
+CREATE INDEX IF NOT EXISTS idx_open_platform_manifest_provider_type ON open_platform_manifest (tenant_id, organization_id, provider, account_type, status, sort_order, id);
+
+CREATE TABLE IF NOT EXISTS open_platform_account (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    account_key VARCHAR(128) NOT NULL,
+    name VARCHAR(128) NOT NULL,
+    provider VARCHAR(64) NOT NULL,
+    account_type VARCHAR(64) NOT NULL,
+    app_id VARCHAR(128),
+    secret_ref VARCHAR(256),
+    token_ref VARCHAR(256),
+    aes_key_ref VARCHAR(256),
+    default_entry_id BIGINT,
+    qr_default BOOLEAN
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_open_platform_account_tenant_key ON open_platform_account (tenant_id, organization_id, account_key);
+CREATE INDEX IF NOT EXISTS idx_open_platform_account_provider_type_status ON open_platform_account (tenant_id, organization_id, provider, account_type, status, id);
+
+CREATE TABLE IF NOT EXISTS open_platform_entry (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    account_id BIGINT NOT NULL,
+    entry_key VARCHAR(128) NOT NULL,
+    entry_type VARCHAR(64) NOT NULL,
+    entry_url VARCHAR(1024) NOT NULL
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_open_platform_entry_account_key ON open_platform_entry (tenant_id, organization_id, account_id, entry_key);
+CREATE INDEX IF NOT EXISTS idx_open_platform_entry_account_status ON open_platform_entry (tenant_id, organization_id, account_id, status, id);
+
+CREATE TABLE IF NOT EXISTS open_platform_pay_binding (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    account_id BIGINT NOT NULL,
+    payment_account_id VARCHAR(128) NOT NULL,
+    payment_channel_id VARCHAR(128),
+    scene VARCHAR(64) NOT NULL,
+    mode VARCHAR(64) NOT NULL
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_open_platform_pay_binding_account_scene ON open_platform_pay_binding (tenant_id, organization_id, account_id, payment_account_id, scene);
+CREATE INDEX IF NOT EXISTS idx_open_platform_pay_binding_account_status ON open_platform_pay_binding (tenant_id, organization_id, account_id, status, id);
 
 CREATE TABLE IF NOT EXISTS integration_channel_model (
     id BIGSERIAL PRIMARY KEY,
@@ -1297,7 +1383,6 @@ CREATE TABLE IF NOT EXISTS ai_model (
     display_name VARCHAR(128),
     vendor_id BIGINT,
     vendor_code VARCHAR(64) NOT NULL,
-    region_code VARCHAR(64) NOT NULL,
     vendor_name_snapshot VARCHAR(128),
     family_id BIGINT,
     family_code VARCHAR(64),
@@ -1342,13 +1427,13 @@ CREATE TABLE IF NOT EXISTS ai_model (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_uuid ON ai_model (uuid);
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_tenant_catalog_key ON ai_model (tenant_id, organization_id, catalog_key);
 CREATE INDEX IF NOT EXISTS idx_ai_model_tenant_status_updated ON ai_model (tenant_id, organization_id, status, updated_at, id);
-CREATE INDEX IF NOT EXISTS idx_ai_model_vendor_region_status ON ai_model (tenant_id, organization_id, vendor_code, region_code, status, updated_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_model_vendor_status ON ai_model (tenant_id, organization_id, vendor_code, status, updated_at, id);
 CREATE INDEX IF NOT EXISTS idx_ai_model_model_status ON ai_model (tenant_id, organization_id, model, status, id);
-CREATE INDEX IF NOT EXISTS idx_ai_model_family_status ON ai_model (tenant_id, organization_id, vendor_code, region_code, family_code, status, updated_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_model_family_status ON ai_model (tenant_id, organization_id, vendor_code, family_code, status, updated_at, id);
 CREATE INDEX IF NOT EXISTS idx_ai_model_capability_status ON ai_model (tenant_id, organization_id, capability, status, updated_at, id);
 CREATE INDEX IF NOT EXISTS idx_ai_model_public_listing ON ai_model (tenant_id, organization_id, shelf_state, routing_state, release_stage, status, rank_score, id);
 CREATE INDEX IF NOT EXISTS idx_ai_model_public_rank_desc ON ai_model (tenant_id, organization_id, status, routing_state, shelf_state, rank_score, id);
-CREATE INDEX IF NOT EXISTS idx_ai_model_catalog_search ON ai_model (tenant_id, organization_id, status, vendor_code, region_code, capability, routing_state, shelf_state, display_name, id);
+CREATE INDEX IF NOT EXISTS idx_ai_model_catalog_search ON ai_model (tenant_id, organization_id, status, vendor_code, capability, routing_state, shelf_state, display_name, id);
 
 CREATE TABLE IF NOT EXISTS ai_model_capability (
     id BIGSERIAL PRIMARY KEY,
@@ -1367,7 +1452,6 @@ CREATE TABLE IF NOT EXISTS ai_model_capability (
     catalog_key VARCHAR(256) NOT NULL,
     model VARCHAR(128),
     vendor_code VARCHAR(64),
-    region_code VARCHAR(64) NOT NULL,
     capability INTEGER,
     capability_code VARCHAR(64),
     modality INTEGER,
@@ -1387,7 +1471,7 @@ CREATE TABLE IF NOT EXISTS ai_model_capability (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_capability_uuid ON ai_model_capability (uuid);
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_capability_model_code ON ai_model_capability (tenant_id, organization_id, model_id, capability_code, modality, parameter_name);
 CREATE INDEX IF NOT EXISTS idx_ai_model_capability_tenant_status ON ai_model_capability (tenant_id, organization_id, status, model_id, sort_order, id);
-CREATE INDEX IF NOT EXISTS idx_ai_model_capability_vendor_region_capability ON ai_model_capability (tenant_id, organization_id, vendor_code, region_code, capability, supported, id);
+CREATE INDEX IF NOT EXISTS idx_ai_model_capability_vendor_capability ON ai_model_capability (tenant_id, organization_id, vendor_code, capability, supported, id);
 
 CREATE TABLE IF NOT EXISTS ai_model_catalog_source (
     id BIGSERIAL PRIMARY KEY,
@@ -2231,15 +2315,19 @@ CREATE TABLE IF NOT EXISTS ai_agent_run (
     request_id VARCHAR(128) NOT NULL,
     trace_id VARCHAR(128),
     payload_hash VARCHAR(128),
-    status INTEGER NOT NULL DEFAULT 1,
+    status VARCHAR(64) NOT NULL DEFAULT 'active',
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     retention_until TIMESTAMPTZ,
     legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
     agent_id BIGINT NOT NULL,
     agent_version_id BIGINT NOT NULL,
+    agent_session_id VARCHAR(128),
+    memory_space_id VARCHAR(128),
+    runtime VARCHAR(128),
+    model VARCHAR(128),
     run_uuid VARCHAR(128) NOT NULL,
-    run_status INTEGER NOT NULL,
+    run_status VARCHAR(64) NOT NULL DEFAULT 'running',
     source_surface VARCHAR(64),
     input_message TEXT,
     output_message TEXT,
@@ -2253,6 +2341,7 @@ CREATE TABLE IF NOT EXISTS ai_agent_run (
     error_message_masked VARCHAR(1024),
     metering_status INTEGER,
     usage_fact_id BIGINT,
+    usage_json JSONB,
     total_steps INTEGER,
     prompt_tokens BIGINT,
     completion_tokens BIGINT,
@@ -2266,6 +2355,7 @@ CREATE TABLE IF NOT EXISTS ai_agent_run (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_agent_run_request ON ai_agent_run (tenant_id, organization_id, request_id);
 CREATE INDEX IF NOT EXISTS idx_ai_agent_run_agent_created ON ai_agent_run (tenant_id, organization_id, agent_id, created_at, id);
 CREATE INDEX IF NOT EXISTS idx_ai_agent_run_user_created ON ai_agent_run (tenant_id, organization_id, user_id, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_agent_run_session_created ON ai_agent_run (tenant_id, organization_id, user_id, agent_session_id, created_at, id);
 CREATE INDEX IF NOT EXISTS idx_ai_agent_run_status_created ON ai_agent_run (tenant_id, organization_id, run_status, created_at, id);
 CREATE INDEX IF NOT EXISTS idx_ai_agent_run_usage_fact ON ai_agent_run (tenant_id, organization_id, usage_fact_id);
 
@@ -2278,7 +2368,7 @@ CREATE TABLE IF NOT EXISTS ai_agent_run_step (
     request_id VARCHAR(128),
     trace_id VARCHAR(128),
     payload_hash VARCHAR(128),
-    status INTEGER NOT NULL DEFAULT 1,
+    status VARCHAR(64) NOT NULL DEFAULT 'active',
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     retention_until TIMESTAMPTZ,
     legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
@@ -2288,14 +2378,17 @@ CREATE TABLE IF NOT EXISTS ai_agent_run_step (
     agent_version_id BIGINT,
     step_index INTEGER NOT NULL,
     step_type INTEGER NOT NULL,
-    step_status INTEGER NOT NULL,
+    step_status VARCHAR(64) NOT NULL DEFAULT 'running',
     title VARCHAR(128),
     tool_binding_id BIGINT,
     skill_id BIGINT,
     mcp_server_id BIGINT,
+    tool_name VARCHAR(128),
     model VARCHAR(128),
+    runtime_invocation_id VARCHAR(128),
     input_snapshot JSONB,
     output_snapshot JSONB,
+    usage_json JSONB,
     error_message_masked VARCHAR(1024),
     started_at TIMESTAMPTZ,
     completed_at TIMESTAMPTZ,
@@ -2313,6 +2406,7 @@ CREATE TABLE IF NOT EXISTS ai_agent_run_step (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_agent_run_step_index ON ai_agent_run_step (tenant_id, organization_id, run_id, step_index);
 CREATE INDEX IF NOT EXISTS idx_ai_agent_run_step_run_type ON ai_agent_run_step (tenant_id, organization_id, run_id, step_type, step_index);
 CREATE INDEX IF NOT EXISTS idx_ai_agent_run_step_tool ON ai_agent_run_step (tenant_id, organization_id, tool_binding_id, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_agent_run_step_runtime_invocation ON ai_agent_run_step (tenant_id, organization_id, runtime_invocation_id);
 CREATE INDEX IF NOT EXISTS idx_ai_agent_run_step_usage_fact ON ai_agent_run_step (tenant_id, organization_id, usage_fact_id);
 
 CREATE TABLE IF NOT EXISTS ai_agent_memory (
@@ -2346,6 +2440,661 @@ CREATE TABLE IF NOT EXISTS ai_agent_memory (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_agent_memory_hash ON ai_agent_memory (tenant_id, organization_id, owner_user_id, agent_id, memory_hash);
 CREATE INDEX IF NOT EXISTS idx_ai_agent_memory_agent_scope ON ai_agent_memory (tenant_id, organization_id, agent_id, owner_user_id, memory_scope, updated_at, id);
 CREATE INDEX IF NOT EXISTS idx_ai_agent_memory_retention ON ai_agent_memory (tenant_id, organization_id, status, expires_at, id);
+
+CREATE TABLE IF NOT EXISTS ai_chat_conversation (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT NOT NULL,
+    owner_type INTEGER,
+    owner_id BIGINT,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status VARCHAR(64) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    conversation_code VARCHAR(128) NOT NULL,
+    title VARCHAR(256) NOT NULL,
+    summary TEXT,
+    visibility VARCHAR(32),
+    source_surface VARCHAR(64) NOT NULL,
+    default_provider VARCHAR(128),
+    default_model VARCHAR(128),
+    default_endpoint VARCHAR(128),
+    agent_id VARCHAR(128),
+    agent_session_id VARCHAR(128),
+    memory_space_id VARCHAR(128),
+    last_turn_id BIGINT,
+    last_item_id BIGINT,
+    last_message_preview TEXT,
+    message_count BIGINT,
+    turn_count BIGINT,
+    item_count BIGINT,
+    input_token_total BIGINT,
+    output_token_total BIGINT,
+    cached_token_total BIGINT,
+    reasoning_token_total BIGINT,
+    cost_amount_total NUMERIC(38, 12),
+    currency VARCHAR(16)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_chat_conversation_code ON ai_chat_conversation (tenant_id, organization_id, user_id, conversation_code);
+CREATE INDEX IF NOT EXISTS idx_ai_chat_conversation_user_updated ON ai_chat_conversation (tenant_id, organization_id, user_id, updated_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_chat_conversation_agent_session ON ai_chat_conversation (tenant_id, organization_id, agent_session_id);
+CREATE INDEX IF NOT EXISTS idx_ai_chat_conversation_memory_space ON ai_chat_conversation (tenant_id, organization_id, memory_space_id);
+
+CREATE TABLE IF NOT EXISTS ai_chat_turn (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT NOT NULL,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status VARCHAR(64) NOT NULL DEFAULT 'running',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    conversation_id BIGINT NOT NULL,
+    turn_no BIGINT NOT NULL,
+    parent_turn_id BIGINT,
+    branch_id VARCHAR(128),
+    provider VARCHAR(128),
+    model VARCHAR(128),
+    endpoint VARCHAR(128),
+    streaming BOOLEAN,
+    agent_id VARCHAR(128),
+    agent_session_id VARCHAR(128),
+    input_item_id BIGINT,
+    final_output_item_id BIGINT,
+    context_snapshot_id BIGINT,
+    runtime_invocation_id VARCHAR(128),
+    started_at TIMESTAMPTZ,
+    completed_at TIMESTAMPTZ,
+    request_snapshot JSONB,
+    response_snapshot JSONB,
+    usage_snapshot JSONB,
+    input_token_total BIGINT,
+    output_token_total BIGINT,
+    cached_token_total BIGINT,
+    reasoning_token_total BIGINT,
+    cost_amount NUMERIC(38, 12),
+    currency VARCHAR(16)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_chat_turn_no ON ai_chat_turn (tenant_id, organization_id, conversation_id, turn_no);
+CREATE INDEX IF NOT EXISTS idx_ai_chat_turn_conversation_created ON ai_chat_turn (tenant_id, organization_id, conversation_id, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_chat_turn_agent_session ON ai_chat_turn (tenant_id, organization_id, agent_session_id, created_at, id);
+
+CREATE TABLE IF NOT EXISTS ai_chat_item (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT NOT NULL,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status VARCHAR(64) NOT NULL DEFAULT 'pending',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    conversation_id BIGINT NOT NULL,
+    turn_id BIGINT,
+    parent_item_id BIGINT,
+    sequence_no BIGINT NOT NULL,
+    item_type VARCHAR(64) NOT NULL,
+    role VARCHAR(64),
+    direction VARCHAR(32) NOT NULL,
+    provider_item_id VARCHAR(128),
+    provider_call_id VARCHAR(128),
+    provider_response_id VARCHAR(128),
+    provider VARCHAR(128),
+    model VARCHAR(128),
+    runtime VARCHAR(128),
+    runtime_invocation_id VARCHAR(128),
+    content_text TEXT,
+    content_json JSONB,
+    raw_provider_json JSONB,
+    completed_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_chat_item_sequence ON ai_chat_item (tenant_id, organization_id, conversation_id, sequence_no);
+CREATE INDEX IF NOT EXISTS idx_ai_chat_item_turn ON ai_chat_item (tenant_id, organization_id, turn_id, sequence_no, id);
+CREATE INDEX IF NOT EXISTS idx_ai_chat_item_provider_response ON ai_chat_item (tenant_id, organization_id, provider_response_id);
+
+CREATE TABLE IF NOT EXISTS ai_chat_message (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT NOT NULL,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status VARCHAR(64) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    conversation_id BIGINT NOT NULL,
+    turn_id BIGINT,
+    item_id BIGINT NOT NULL,
+    message_no BIGINT NOT NULL,
+    role VARCHAR(64) NOT NULL,
+    message_kind VARCHAR(64) NOT NULL,
+    direction VARCHAR(32) NOT NULL,
+    content_text TEXT,
+    content_json JSONB,
+    raw_provider_json JSONB,
+    model VARCHAR(128),
+    provider VARCHAR(128),
+    runtime VARCHAR(128),
+    runtime_invocation_id VARCHAR(128),
+    usage_link_id VARCHAR(128),
+    finish_reason VARCHAR(128),
+    token_count BIGINT,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_chat_message_no ON ai_chat_message (tenant_id, organization_id, conversation_id, message_no);
+CREATE INDEX IF NOT EXISTS idx_ai_chat_message_turn ON ai_chat_message (tenant_id, organization_id, turn_id, message_no, id);
+
+CREATE TABLE IF NOT EXISTS ai_chat_message_part (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT NOT NULL,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status VARCHAR(64) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    message_id BIGINT NOT NULL,
+    item_id BIGINT NOT NULL,
+    part_no INTEGER NOT NULL,
+    part_type VARCHAR(64) NOT NULL,
+    text_content TEXT,
+    json_content JSONB,
+    mime_type VARCHAR(128),
+    asset_id VARCHAR(128),
+    storage_url TEXT,
+    file_name VARCHAR(512),
+    file_size BIGINT,
+    sha256 VARCHAR(128),
+    provider_part_id VARCHAR(128)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_chat_message_part_no ON ai_chat_message_part (tenant_id, organization_id, message_id, part_no);
+CREATE INDEX IF NOT EXISTS idx_ai_chat_message_part_item ON ai_chat_message_part (tenant_id, organization_id, item_id, part_no);
+
+CREATE TABLE IF NOT EXISTS ai_chat_context_snapshot (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT NOT NULL,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status VARCHAR(64) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    conversation_id BIGINT NOT NULL,
+    turn_id BIGINT,
+    runtime_invocation_id BIGINT,
+    snapshot_no INTEGER NOT NULL,
+    strategy VARCHAR(64) NOT NULL,
+    included_item_ids JSONB,
+    excluded_item_ids JSONB,
+    included_memory_ids JSONB,
+    excluded_memory_ids JSONB,
+    memory_pack JSONB,
+    memory_token_count BIGINT,
+    provider_conversation_id VARCHAR(128),
+    previous_response_id VARCHAR(128),
+    input_token_estimate BIGINT,
+    truncation_reason VARCHAR(256),
+    context_json JSONB
+);
+
+CREATE INDEX IF NOT EXISTS idx_ai_chat_context_snapshot_turn ON ai_chat_context_snapshot (tenant_id, organization_id, turn_id, snapshot_no);
+CREATE INDEX IF NOT EXISTS idx_ai_chat_context_snapshot_invocation ON ai_chat_context_snapshot (tenant_id, organization_id, runtime_invocation_id);
+
+CREATE TABLE IF NOT EXISTS ai_agent_session (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT NOT NULL,
+    owner_type INTEGER,
+    owner_id BIGINT,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status VARCHAR(64) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    agent_id VARCHAR(128) NOT NULL,
+    agent_version_id VARCHAR(128),
+    session_code VARCHAR(128) NOT NULL,
+    title VARCHAR(256) NOT NULL,
+    summary TEXT,
+    session_kind VARCHAR(64) NOT NULL,
+    source_surface VARCHAR(64) NOT NULL,
+    visibility VARCHAR(32),
+    chat_conversation_id VARCHAR(128),
+    memory_space_id VARCHAR(128),
+    parent_session_id VARCHAR(128),
+    forked_from_run_id VARCHAR(128),
+    forked_from_step_id VARCHAR(128),
+    runtime VARCHAR(128),
+    provider_session_id VARCHAR(128),
+    provider_conversation_id VARCHAR(128),
+    runtime_state_storage_key TEXT,
+    resume_strategy VARCHAR(64),
+    cwd TEXT,
+    workspace_id VARCHAR(128),
+    repository_id VARCHAR(128),
+    git_branch VARCHAR(256),
+    git_commit VARCHAR(128),
+    sandbox_policy VARCHAR(128),
+    approval_policy VARCHAR(128),
+    permission_mode VARCHAR(128),
+    default_model VARCHAR(128),
+    execution_mode VARCHAR(64),
+    last_run_id VARCHAR(128),
+    last_step_id BIGINT,
+    last_active_at TIMESTAMPTZ,
+    run_count BIGINT,
+    step_count BIGINT,
+    tool_call_count BIGINT
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_agent_session_code ON ai_agent_session (tenant_id, organization_id, user_id, session_code);
+CREATE INDEX IF NOT EXISTS idx_ai_agent_session_agent_updated ON ai_agent_session (tenant_id, organization_id, agent_id, user_id, updated_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_agent_session_conversation ON ai_agent_session (tenant_id, organization_id, chat_conversation_id);
+CREATE INDEX IF NOT EXISTS idx_ai_agent_session_provider ON ai_agent_session (tenant_id, organization_id, runtime, provider_session_id);
+CREATE INDEX IF NOT EXISTS idx_ai_agent_session_status_updated ON ai_agent_session (tenant_id, organization_id, status, updated_at, id);
+
+CREATE TABLE IF NOT EXISTS ai_memory_space (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT NOT NULL,
+    owner_type VARCHAR(64),
+    owner_id VARCHAR(128),
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status VARCHAR(64) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    space_type VARCHAR(64) NOT NULL,
+    title VARCHAR(256) NOT NULL,
+    memory_enabled BOOLEAN,
+    auto_extract_enabled BOOLEAN,
+    auto_recall_enabled BOOLEAN,
+    review_required BOOLEAN,
+    max_injected_tokens BIGINT,
+    retention_policy JSONB,
+    sensitivity_policy JSONB,
+    entry_count BIGINT
+);
+
+CREATE INDEX IF NOT EXISTS idx_ai_memory_space_owner ON ai_memory_space (tenant_id, organization_id, space_type, owner_id, status);
+CREATE INDEX IF NOT EXISTS idx_ai_memory_space_user_updated ON ai_memory_space (tenant_id, organization_id, user_id, updated_at, id);
+
+CREATE TABLE IF NOT EXISTS ai_memory_space_binding (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status VARCHAR(64) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    memory_space_id BIGINT NOT NULL,
+    binding_type VARCHAR(64) NOT NULL,
+    binding_id VARCHAR(128),
+    binding_role VARCHAR(64) NOT NULL,
+    priority INTEGER,
+    enabled BOOLEAN
+);
+
+CREATE INDEX IF NOT EXISTS idx_ai_memory_space_binding_subject ON ai_memory_space_binding (tenant_id, organization_id, binding_type, binding_id, enabled, priority);
+
+CREATE TABLE IF NOT EXISTS ai_memory_entry (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT NOT NULL,
+    owner_type INTEGER,
+    owner_id BIGINT,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status VARCHAR(64) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    space_id BIGINT NOT NULL,
+    memory_code VARCHAR(128) NOT NULL,
+    memory_type VARCHAR(64) NOT NULL,
+    subject_type VARCHAR(64),
+    subject_key VARCHAR(256),
+    content_text TEXT NOT NULL,
+    content_json JSONB,
+    source_kind VARCHAR(64) NOT NULL,
+    source_conversation_id VARCHAR(128),
+    source_turn_id VARCHAR(128),
+    source_item_id VARCHAR(128),
+    source_invocation_id VARCHAR(128),
+    importance_score NUMERIC(38, 12),
+    confidence_score NUMERIC(38, 12),
+    sensitivity_level VARCHAR(64) NOT NULL,
+    trust_level VARCHAR(64) NOT NULL,
+    valid_from TIMESTAMPTZ,
+    valid_until TIMESTAMPTZ,
+    expires_at TIMESTAMPTZ,
+    last_recalled_at TIMESTAMPTZ,
+    recall_count BIGINT,
+    version_no BIGINT,
+    supersedes_memory_id BIGINT,
+    created_by VARCHAR(128)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_memory_entry_code ON ai_memory_entry (tenant_id, organization_id, space_id, memory_code);
+CREATE INDEX IF NOT EXISTS idx_ai_memory_entry_space_status ON ai_memory_entry (tenant_id, organization_id, space_id, status, updated_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_memory_entry_subject ON ai_memory_entry (tenant_id, organization_id, subject_type, subject_key, status);
+CREATE INDEX IF NOT EXISTS idx_ai_memory_entry_user_status ON ai_memory_entry (tenant_id, organization_id, user_id, status, updated_at, id);
+
+CREATE TABLE IF NOT EXISTS ai_memory_embedding (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status VARCHAR(64) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    memory_id BIGINT NOT NULL,
+    embedding_provider VARCHAR(128),
+    embedding_model VARCHAR(128),
+    embedding_dimensions INTEGER,
+    content_hash VARCHAR(128),
+    vector_json JSONB,
+    vector_storage_key TEXT,
+    indexed_at TIMESTAMPTZ
+);
+
+CREATE INDEX IF NOT EXISTS idx_ai_memory_embedding_memory ON ai_memory_embedding (tenant_id, organization_id, memory_id, status);
+
+CREATE TABLE IF NOT EXISTS ai_memory_event (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT NOT NULL,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status VARCHAR(64) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    memory_id BIGINT,
+    space_id BIGINT,
+    event_type VARCHAR(64) NOT NULL,
+    actor_type VARCHAR(64) NOT NULL,
+    actor_id VARCHAR(128),
+    conversation_id VARCHAR(128),
+    turn_id VARCHAR(128),
+    invocation_id VARCHAR(128),
+    before_json JSONB,
+    after_json JSONB,
+    decision_reason TEXT
+);
+
+CREATE INDEX IF NOT EXISTS idx_ai_memory_event_memory ON ai_memory_event (tenant_id, organization_id, memory_id, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_memory_event_conversation ON ai_memory_event (tenant_id, organization_id, conversation_id, turn_id, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_memory_event_user_created ON ai_memory_event (tenant_id, organization_id, user_id, created_at, id);
+
+CREATE TABLE IF NOT EXISTS ai_memory_link (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT NOT NULL,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status VARCHAR(64) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    memory_id BIGINT NOT NULL,
+    memory_space_id BIGINT,
+    conversation_id VARCHAR(128),
+    chat_turn_id VARCHAR(128),
+    chat_item_id VARCHAR(128),
+    message_id VARCHAR(128),
+    agent_session_id VARCHAR(128),
+    agent_run_id VARCHAR(128),
+    agent_run_step_id VARCHAR(128),
+    runtime_invocation_id VARCHAR(128),
+    link_type VARCHAR(64) NOT NULL,
+    recall_query TEXT,
+    recall_score NUMERIC(38, 12),
+    recall_rank INTEGER,
+    injected_text_snapshot TEXT,
+    token_count BIGINT,
+    policy_decision VARCHAR(128)
+);
+
+CREATE INDEX IF NOT EXISTS idx_ai_memory_link_memory ON ai_memory_link (tenant_id, organization_id, memory_id, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_memory_link_chat ON ai_memory_link (tenant_id, organization_id, conversation_id, chat_turn_id, link_type);
+CREATE INDEX IF NOT EXISTS idx_ai_memory_link_agent ON ai_memory_link (tenant_id, organization_id, agent_session_id, agent_run_id, link_type);
+CREATE INDEX IF NOT EXISTS idx_ai_memory_link_user_created ON ai_memory_link (tenant_id, organization_id, user_id, created_at, id);
+
+CREATE TABLE IF NOT EXISTS ai_runtime_invocation (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT NOT NULL,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status VARCHAR(64) NOT NULL DEFAULT 'running',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    conversation_id VARCHAR(128),
+    chat_turn_id VARCHAR(128),
+    chat_item_id VARCHAR(128),
+    agent_session_id VARCHAR(128),
+    agent_run_id VARCHAR(128),
+    agent_run_step_id VARCHAR(128),
+    invocation_no BIGINT NOT NULL,
+    invocation_type VARCHAR(64) NOT NULL,
+    runtime VARCHAR(128) NOT NULL,
+    endpoint VARCHAR(128),
+    attempt_no INTEGER,
+    streaming BOOLEAN NOT NULL DEFAULT FALSE,
+    started_at TIMESTAMPTZ,
+    completed_at TIMESTAMPTZ,
+    latency_ms BIGINT,
+    ttft_ms BIGINT,
+    exit_code BIGINT,
+    finish_reason VARCHAR(128),
+    error_type VARCHAR(128),
+    error_code VARCHAR(128),
+    error_message_masked VARCHAR(1024),
+    provider_response_id VARCHAR(128),
+    provider_session_id VARCHAR(128),
+    provider_conversation_id VARCHAR(128),
+    provider_step_id VARCHAR(128),
+    model VARCHAR(128),
+    provider VARCHAR(128),
+    tool_name VARCHAR(128),
+    tool_call_id VARCHAR(128),
+    cwd TEXT,
+    sandbox_policy VARCHAR(128),
+    approval_policy VARCHAR(128),
+    permission_mode VARCHAR(128),
+    request_json JSONB,
+    response_json JSONB,
+    usage_json JSONB
+);
+
+CREATE INDEX IF NOT EXISTS idx_ai_runtime_invocation_chat ON ai_runtime_invocation (tenant_id, organization_id, conversation_id, chat_turn_id, invocation_no);
+CREATE INDEX IF NOT EXISTS idx_ai_runtime_invocation_agent ON ai_runtime_invocation (tenant_id, organization_id, agent_session_id, agent_run_id, invocation_no);
+CREATE INDEX IF NOT EXISTS idx_ai_runtime_invocation_request ON ai_runtime_invocation (tenant_id, organization_id, request_id, attempt_no);
+CREATE INDEX IF NOT EXISTS idx_ai_runtime_invocation_user_created ON ai_runtime_invocation (tenant_id, organization_id, user_id, created_at, id);
+
+CREATE TABLE IF NOT EXISTS ai_runtime_invocation_event (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT NOT NULL,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status VARCHAR(64) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    invocation_id BIGINT NOT NULL,
+    conversation_id VARCHAR(128),
+    chat_turn_id VARCHAR(128),
+    agent_session_id VARCHAR(128),
+    agent_run_id VARCHAR(128),
+    agent_run_step_id VARCHAR(128),
+    event_no BIGINT NOT NULL,
+    event_type VARCHAR(128) NOT NULL,
+    event_source VARCHAR(64) NOT NULL,
+    payload_json JSONB,
+    text_delta TEXT
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_runtime_invocation_event_no ON ai_runtime_invocation_event (tenant_id, organization_id, invocation_id, event_no);
+CREATE INDEX IF NOT EXISTS idx_ai_runtime_invocation_event_user_created ON ai_runtime_invocation_event (tenant_id, organization_id, user_id, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_runtime_invocation_event_chat ON ai_runtime_invocation_event (tenant_id, organization_id, conversation_id, chat_turn_id, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_runtime_invocation_event_agent ON ai_runtime_invocation_event (tenant_id, organization_id, agent_session_id, agent_run_id, created_at, id);
+
+CREATE TABLE IF NOT EXISTS ai_runtime_usage_link (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT NOT NULL,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status VARCHAR(64) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    conversation_id VARCHAR(128),
+    chat_turn_id VARCHAR(128),
+    chat_item_id VARCHAR(128),
+    message_id VARCHAR(128),
+    agent_session_id VARCHAR(128),
+    agent_run_id VARCHAR(128),
+    agent_run_step_id VARCHAR(128),
+    agent_run_step_id_key VARCHAR(128) GENERATED ALWAYS AS (COALESCE(agent_run_step_id, '')) STORED,
+    runtime_invocation_id VARCHAR(128),
+    usage_fact_id BIGINT,
+    usage_type VARCHAR(64) NOT NULL,
+    provider VARCHAR(128),
+    model VARCHAR(128),
+    input_tokens BIGINT,
+    output_tokens BIGINT,
+    cached_tokens BIGINT,
+    reasoning_tokens BIGINT,
+    total_tokens BIGINT,
+    cost_amount NUMERIC(38, 12),
+    currency VARCHAR(16),
+    occurred_at TIMESTAMPTZ
+);
+
+CREATE INDEX IF NOT EXISTS idx_ai_runtime_usage_link_usage_fact ON ai_runtime_usage_link (tenant_id, organization_id, usage_fact_id);
+CREATE INDEX IF NOT EXISTS idx_ai_runtime_usage_link_chat ON ai_runtime_usage_link (tenant_id, organization_id, conversation_id, chat_turn_id, occurred_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_runtime_usage_link_agent ON ai_runtime_usage_link (tenant_id, organization_id, agent_session_id, agent_run_id, occurred_at, id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_runtime_usage_link_agent_scope ON ai_runtime_usage_link (tenant_id, organization_id, user_id, agent_run_id, usage_type, agent_run_step_id_key);
+
+CREATE TABLE IF NOT EXISTS ai_runtime_artifact (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT NOT NULL,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status VARCHAR(64) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    conversation_id VARCHAR(128),
+    chat_turn_id VARCHAR(128),
+    message_id VARCHAR(128),
+    chat_item_id VARCHAR(128),
+    agent_session_id VARCHAR(128),
+    agent_run_id VARCHAR(128),
+    agent_run_step_id VARCHAR(128),
+    runtime_invocation_id VARCHAR(128),
+    artifact_type VARCHAR(64) NOT NULL,
+    name VARCHAR(512),
+    mime_type VARCHAR(128),
+    content_text TEXT,
+    content_json JSONB,
+    storage_key TEXT,
+    storage_url TEXT,
+    sha256 VARCHAR(128),
+    size_bytes BIGINT
+);
+
+CREATE INDEX IF NOT EXISTS idx_ai_runtime_artifact_chat ON ai_runtime_artifact (tenant_id, organization_id, conversation_id, chat_turn_id, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_runtime_artifact_user_created ON ai_runtime_artifact (tenant_id, organization_id, user_id, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_runtime_artifact_agent ON ai_runtime_artifact (tenant_id, organization_id, agent_session_id, agent_run_id, created_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_agent_tool_binding (
     id BIGSERIAL PRIMARY KEY,
@@ -2593,12 +3342,12 @@ CREATE TABLE IF NOT EXISTS commerce_usage_settlement (
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
     settlement_no VARCHAR(128),
     usage_fact_id BIGINT,
-    account_id BIGINT,
-    account_history_id BIGINT,
+    account_id VARCHAR(64),
+    account_ledger_entry_id VARCHAR(64),
     order_id BIGINT,
     payment_id BIGINT,
-    asset_type INTEGER,
-    direction INTEGER,
+    asset_type VARCHAR(32),
+    direction VARCHAR(16),
     amount NUMERIC(38, 12),
     points BIGINT,
     tokens BIGINT,
@@ -2708,7 +3457,7 @@ CREATE TABLE IF NOT EXISTS commerce_usage_statement_item (
 
 CREATE INDEX IF NOT EXISTS idx_commerce_usage_statement_item_statement ON commerce_usage_statement_item (statement_id, item_type, model);
 
-CREATE TABLE IF NOT EXISTS commerce_billing_export (
+CREATE TABLE IF NOT EXISTS commerce_settlement_export (
     id BIGSERIAL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
@@ -2736,8 +3485,8 @@ CREATE TABLE IF NOT EXISTS commerce_billing_export (
     audit_log_id BIGINT
 );
 
-CREATE UNIQUE INDEX IF NOT EXISTS uk_commerce_billing_export_no ON commerce_billing_export (export_no);
-CREATE INDEX IF NOT EXISTS idx_commerce_billing_export_tenant_period ON commerce_billing_export (tenant_id, organization_id, period_start, period_end, created_at, id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_commerce_settlement_export_no ON commerce_settlement_export (export_no);
+CREATE INDEX IF NOT EXISTS idx_commerce_settlement_export_tenant_period ON commerce_settlement_export (tenant_id, organization_id, period_start, period_end, created_at, id);
 
 CREATE TABLE IF NOT EXISTS studio_catalog_action (
     id BIGSERIAL PRIMARY KEY,
@@ -3384,22 +4133,48 @@ CREATE TABLE IF NOT EXISTS ops_notification_message (
     deleted_at TIMESTAMPTZ,
     deleted_by BIGINT,
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    app_id VARCHAR(128),
+    scope_type INTEGER NOT NULL DEFAULT 1,
     message_code VARCHAR(128),
     message_type INTEGER,
     title VARCHAR(200),
     summary VARCHAR(512),
     content TEXT,
     severity INTEGER,
-    target_scope INTEGER,
-    target_user_id BIGINT,
-    target_owner_type INTEGER,
-    target_owner_id BIGINT,
+    priority INTEGER NOT NULL DEFAULT 0,
+    show_as_popup BOOLEAN NOT NULL DEFAULT FALSE,
     action_url VARCHAR(512),
     published_at TIMESTAMPTZ,
     expire_at TIMESTAMPTZ
 );
 
-CREATE INDEX IF NOT EXISTS idx_ops_notification_message_target ON ops_notification_message (tenant_id, organization_id, target_scope, target_user_id, published_at, id);
+CREATE INDEX IF NOT EXISTS idx_ops_notification_message_scope ON ops_notification_message (tenant_id, organization_id, app_id, scope_type, status, published_at, id);
+CREATE INDEX IF NOT EXISTS idx_ops_notification_message_popup ON ops_notification_message (tenant_id, organization_id, show_as_popup, published_at, id);
+
+CREATE TABLE IF NOT EXISTS ops_notification_recipient (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    message_id BIGINT NOT NULL,
+    app_id VARCHAR(128),
+    recipient_type INTEGER NOT NULL,
+    recipient_value VARCHAR(256),
+    recipient_user_id BIGINT,
+    recipient_role_code VARCHAR(128)
+);
+
+CREATE INDEX IF NOT EXISTS idx_ops_notification_recipient_message ON ops_notification_recipient (tenant_id, organization_id, message_id, status, id);
+CREATE INDEX IF NOT EXISTS idx_ops_notification_recipient_user ON ops_notification_recipient (tenant_id, organization_id, recipient_type, recipient_user_id, status, id);
+CREATE INDEX IF NOT EXISTS idx_ops_notification_recipient_role ON ops_notification_recipient (tenant_id, organization_id, recipient_type, recipient_role_code, status, id);
 
 CREATE TABLE IF NOT EXISTS ops_notification_delivery (
     id BIGSERIAL PRIMARY KEY,
@@ -3417,17 +4192,47 @@ CREATE TABLE IF NOT EXISTS ops_notification_delivery (
     deleted_at TIMESTAMPTZ,
     deleted_by BIGINT,
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    app_id VARCHAR(128) NOT NULL DEFAULT 'default',
     message_id BIGINT,
     delivery_channel INTEGER,
     delivery_status INTEGER,
     read_at TIMESTAMPTZ,
+    popup_seen_at TIMESTAMPTZ,
+    archived_at TIMESTAMPTZ,
     delivered_at TIMESTAMPTZ,
     failure_code VARCHAR(128),
     retry_count INTEGER
 );
 
-CREATE UNIQUE INDEX IF NOT EXISTS uk_ops_notification_delivery_user_message ON ops_notification_delivery (message_id, user_id, delivery_channel);
-CREATE INDEX IF NOT EXISTS idx_ops_notification_delivery_user_read ON ops_notification_delivery (tenant_id, organization_id, user_id, read_at, created_at, id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ops_notification_delivery_user_message_app ON ops_notification_delivery (tenant_id, organization_id, message_id, user_id, app_id, delivery_channel);
+CREATE INDEX IF NOT EXISTS idx_ops_notification_delivery_user_read ON ops_notification_delivery (tenant_id, organization_id, user_id, app_id, read_at, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_ops_notification_delivery_popup_seen ON ops_notification_delivery (tenant_id, organization_id, user_id, app_id, popup_seen_at, id);
+
+CREATE TABLE IF NOT EXISTS ops_notification_preference (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    owner_type INTEGER,
+    owner_id BIGINT,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    app_id VARCHAR(128) NOT NULL DEFAULT 'default',
+    message_type INTEGER NOT NULL DEFAULT 0,
+    delivery_channel INTEGER NOT NULL DEFAULT 1,
+    enabled BOOLEAN NOT NULL DEFAULT TRUE,
+    quiet_hours JSONB NOT NULL DEFAULT '{}'::jsonb
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ops_notification_preference_user_app_type_channel ON ops_notification_preference (tenant_id, organization_id, user_id, app_id, message_type, delivery_channel);
+CREATE INDEX IF NOT EXISTS idx_ops_notification_preference_user ON ops_notification_preference (tenant_id, organization_id, user_id, app_id, status, id);
 
 CREATE TABLE IF NOT EXISTS ops_metric_snapshot (
     id BIGSERIAL PRIMARY KEY,

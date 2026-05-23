@@ -5,9 +5,10 @@ use axum::http::{Request, StatusCode};
 use sdkwork_claw_product::application::EntityUuidGenerator;
 use sdkwork_claw_product::domain::DomainResult;
 use sdkwork_claw_product::ports::{
-    AdminAppCommandFuture, AdminAppItem, AdminAppStore, CreateAdminAppCommand,
-    DeleteAdminAppCommand, GetAdminAppQuery, ListAdminAppsQuery, SetAdminAppStatusCommand,
-    UpdateAdminAppCommand,
+    AdminAppCategoryItem, AdminAppCommandFuture, AdminAppItem, AdminAppStore,
+    CreateAdminAppCategoryCommand, CreateAdminAppCommand, DeleteAdminAppCategoryCommand,
+    DeleteAdminAppCommand, GetAdminAppQuery, ListAdminAppCategoriesQuery, ListAdminAppsQuery,
+    SetAdminAppStatusCommand, UpdateAdminAppCategoryCommand, UpdateAdminAppCommand,
 };
 use serde_json::Value;
 use tower::ServiceExt;
@@ -209,6 +210,104 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
             "delete_app"
         ],
         *commands
+    );
+}
+
+#[tokio::test]
+async fn admin_app_route_manages_app_store_categories() {
+    let store = Arc::new(TestAdminAppStore::default());
+    let router = sdkwork_claw_product::api::admin_app_router_with_store(
+        store.clone(),
+        Arc::new(TestUuidGenerator),
+    );
+
+    let create_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/platform/apps/categories")
+                .header("content-type", "application/json")
+                .header("x-sdkwork-tenant-id", "10")
+                .header("x-sdkwork-organization-id", "20")
+                .header("x-sdkwork-user-id", "30")
+                .header("X-Request-Id", "req-create-app-category")
+                .body(Body::from(
+                    r#"{"name":"Productivity","code":"app-store-productivity","description":"Work apps","sortWeight":120,"path":"/app-store/productivity","visible":true,"status":1}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, create_response.status());
+    let create_payload = json_payload(create_response).await;
+    assert_eq!("2000", create_payload["code"]);
+    assert_eq!("1", create_payload["data"]["item"]["id"]);
+    assert_eq!("Productivity", create_payload["data"]["item"]["name"]);
+    assert_eq!(999999, create_payload["data"]["item"]["type"]);
+
+    let list_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/backend/v3/api/platform/apps/categories")
+                .header("x-sdkwork-tenant-id", "10")
+                .header("x-sdkwork-organization-id", "20")
+                .header("x-sdkwork-user-id", "30")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, list_response.status());
+    let list_payload = json_payload(list_response).await;
+    assert_eq!(1, list_payload["data"]["items"].as_array().unwrap().len());
+
+    let update_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("PUT")
+                .uri("/backend/v3/api/platform/apps/categories/1")
+                .header("content-type", "application/json")
+                .header("x-sdkwork-tenant-id", "10")
+                .header("x-sdkwork-organization-id", "20")
+                .header("x-sdkwork-user-id", "30")
+                .body(Body::from(r#"{"name":"Workflows","sortWeight":140}"#))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, update_response.status());
+    let update_payload = json_payload(update_response).await;
+    assert_eq!("Workflows", update_payload["data"]["item"]["name"]);
+    assert_eq!(140, update_payload["data"]["item"]["sortWeight"]);
+
+    let delete_response = router
+        .oneshot(
+            Request::builder()
+                .method("DELETE")
+                .uri("/backend/v3/api/platform/apps/categories/1")
+                .header("x-sdkwork-tenant-id", "10")
+                .header("x-sdkwork-organization-id", "20")
+                .header("x-sdkwork-user-id", "30")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, delete_response.status());
+    let delete_payload = json_payload(delete_response).await;
+    assert_eq!(true, delete_payload["data"]["deleted"]);
+    assert_eq!(
+        vec![
+            "create_app_category",
+            "list_app_categories",
+            "update_app_category",
+            "delete_app_category"
+        ],
+        *store.commands.lock().unwrap()
     );
 }
 
@@ -651,10 +750,100 @@ async fn json_payload(response: axum::response::Response) -> Value {
 #[derive(Default)]
 struct TestAdminAppStore {
     apps: Mutex<Vec<AdminAppItem>>,
+    categories: Mutex<Vec<AdminAppCategoryItem>>,
     commands: Mutex<Vec<&'static str>>,
 }
 
 impl AdminAppStore for TestAdminAppStore {
+    fn list_categories<'a>(
+        &'a self,
+        query: ListAdminAppCategoriesQuery,
+    ) -> AdminAppCommandFuture<'a, Vec<AdminAppCategoryItem>> {
+        Box::pin(async move {
+            self.commands.lock().unwrap().push("list_app_categories");
+            Ok(self
+                .categories
+                .lock()
+                .unwrap()
+                .iter()
+                .filter(|item| {
+                    item.tenant_id == query.subject.tenant_id
+                        && item.organization_id == query.subject.organization_id
+                })
+                .cloned()
+                .collect())
+        })
+    }
+
+    fn create_category<'a>(
+        &'a self,
+        command: CreateAdminAppCategoryCommand,
+    ) -> AdminAppCommandFuture<'a, AdminAppCategoryItem> {
+        Box::pin(async move {
+            self.commands.lock().unwrap().push("create_app_category");
+            let id = self.categories.lock().unwrap().len() as i64 + 1;
+            let item = AdminAppCategoryItem {
+                id,
+                uuid: command.category_uuid,
+                tenant_id: command.subject.tenant_id,
+                organization_id: command.subject.organization_id,
+                name: command.name,
+                description: command.description,
+                code: command.code,
+                icon: command.icon,
+                sort_weight: command.sort_weight,
+                parent_id: command.parent_id,
+                path: command.path,
+                visible: command.visible,
+                status: command.status,
+                category_type: command.category_type,
+            };
+            self.categories.lock().unwrap().push(item.clone());
+            Ok(item)
+        })
+    }
+
+    fn update_category<'a>(
+        &'a self,
+        command: UpdateAdminAppCategoryCommand,
+    ) -> AdminAppCommandFuture<'a, Option<AdminAppCategoryItem>> {
+        Box::pin(async move {
+            self.commands.lock().unwrap().push("update_app_category");
+            let mut categories = self.categories.lock().unwrap();
+            let Some(item) = categories.iter_mut().find(|item| {
+                item.id == command.category_id
+                    && item.tenant_id == command.subject.tenant_id
+                    && item.organization_id == command.subject.organization_id
+            }) else {
+                return Ok(None);
+            };
+            if let Some(value) = command.name {
+                item.name = value;
+            }
+            if let Some(value) = command.sort_weight {
+                item.sort_weight = value;
+            }
+            Ok(Some(item.clone()))
+        })
+    }
+
+    fn delete_category<'a>(
+        &'a self,
+        command: DeleteAdminAppCategoryCommand,
+    ) -> AdminAppCommandFuture<'a, bool> {
+        Box::pin(async move {
+            self.commands.lock().unwrap().push("delete_app_category");
+            let mut categories = self.categories.lock().unwrap();
+            let before = categories.len();
+            categories.retain(|item| {
+                !(item.id == command.category_id
+                    && item.tenant_id == command.subject.tenant_id
+                    && item.organization_id == command.subject.organization_id)
+            });
+            Ok(categories.len() != before)
+        })
+    }
+
     fn list_apps<'a>(
         &'a self,
         query: ListAdminAppsQuery,

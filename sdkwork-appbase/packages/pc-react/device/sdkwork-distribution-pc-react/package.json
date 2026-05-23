@@ -1,0 +1,50 @@
+{
+  "name": "@sdkwork/distribution-pc-react",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Version distribution, release packaging, and delivery workflows.",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./downloads": {
+      "types": "./src/downloads/index.ts",
+      "import": "./src/downloads/index.ts",
+      "default": "./src/downloads/index.ts"
+    }
+  },
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "lucide-react": "catalog:"
+  },
+  "peerDependencies": {
+    "@sdkwork/core-pc-react": "*",
+    "@sdkwork/ui-pc-react": "*",
+    "react": ">=18.2.0 <20.0.0",
+    "react-dom": ">=18.2.0 <20.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@sdkwork/core-pc-react": {
+      "optional": true
+    },
+    "@sdkwork/ui-pc-react": {
+      "optional": true
+    }
+  },
+  "sdkwork": {
+    "workspace": "sdkwork-appbase",
+    "architecture": "pc-react",
+    "domain": "device",
+    "capability": "distribution",
+    "status": "ready"
+  }
+}

@@ -3,14 +3,12 @@ import Foundation
 public struct AccessGroupsCreateResult: Codable {
     public let code: String?
     public let data: AdminAccessGroupMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAccessGroupMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAccessGroupMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -18,14 +16,12 @@ public struct AccessGroupsCreateResult: Codable {
 public struct AccessGroupsDeleteResult: Codable {
     public let code: String?
     public let data: AdminDeleteResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminDeleteResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminDeleteResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -33,14 +29,12 @@ public struct AccessGroupsDeleteResult: Codable {
 public struct AccessGroupsListResult: Codable {
     public let code: String?
     public let data: AdminAccessGroupsResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAccessGroupsResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAccessGroupsResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -48,14 +42,168 @@ public struct AccessGroupsListResult: Codable {
 public struct AccessGroupsUpdateResult: Codable {
     public let code: String?
     public let data: AdminAccessGroupMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAccessGroupMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAccessGroupMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
+        self.msg = msg
+    }
+}
+
+public struct AccountsCreateResult: Codable {
+    public let code: String?
+    public let data: OpenPlatformAccountResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: OpenPlatformAccountResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct AccountsDeleteResult: Codable {
+    public let code: String?
+    public let data: OpenPlatformAccountResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: OpenPlatformAccountResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct AccountsEntriesCreateResult: Codable {
+    public let code: String?
+    public let data: OpenPlatformEntryResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: OpenPlatformEntryResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct AccountsEntriesDeleteResult: Codable {
+    public let code: String?
+    public let data: OpenPlatformEntryResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: OpenPlatformEntryResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct AccountsEntriesListResult: Codable {
+    public let code: String?
+    public let data: OpenPlatformEntryListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: OpenPlatformEntryListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct AccountsEntriesUpdateResult: Codable {
+    public let code: String?
+    public let data: OpenPlatformEntryResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: OpenPlatformEntryResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct AccountsListResult: Codable {
+    public let code: String?
+    public let data: OpenPlatformAccountListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: OpenPlatformAccountListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct AccountsPayBindingsCreateResult: Codable {
+    public let code: String?
+    public let data: OpenPlatformPayBindingResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: OpenPlatformPayBindingResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct AccountsPayBindingsDeleteResult: Codable {
+    public let code: String?
+    public let data: OpenPlatformPayBindingResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: OpenPlatformPayBindingResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct AccountsPayBindingsListResult: Codable {
+    public let code: String?
+    public let data: OpenPlatformPayBindingListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: OpenPlatformPayBindingListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct AccountsRetrieveResult: Codable {
+    public let code: String?
+    public let data: OpenPlatformAccountResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: OpenPlatformAccountResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct AccountsUpdateResult: Codable {
+    public let code: String?
+    public let data: OpenPlatformAccountResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: OpenPlatformAccountResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
         self.msg = msg
     }
 }
@@ -235,17 +383,22 @@ public struct AdminAgentVersionItem: Codable {
 
 public struct AdminAiModelCreateRequest: Codable {
     public let apiFormat: String?
+    public let cacheReadPrice: String?
+    public let cacheWritePrice: String?
     public let capabilityIntro: String?
     public let contextTokens: String?
     public let description: String?
+    public let displayName: String?
     public let inputModalities: [String]?
     public let limitations: [String]?
     public let maxOutputTokens: Int?
     public let modalities: [String]?
+    public let model: String?
     public let name: String?
     public let outputModalities: [String]?
     public let priceIn: String?
     public let priceOut: String?
+    public let regionPrices: [AdminAiModelRegionPrice]?
     public let releaseStage: Int?
     public let replacementModel: String?
     public let routingState: Int?
@@ -260,19 +413,24 @@ public struct AdminAiModelCreateRequest: Codable {
     public let vendorId: String?
 
 
-    public init(apiFormat: String? = nil, capabilityIntro: String? = nil, contextTokens: String? = nil, description: String? = nil, inputModalities: [String]? = nil, limitations: [String]? = nil, maxOutputTokens: Int? = nil, modalities: [String]? = nil, name: String? = nil, outputModalities: [String]? = nil, priceIn: String? = nil, priceOut: String? = nil, releaseStage: Int? = nil, replacementModel: String? = nil, routingState: Int? = nil, shelfState: Int? = nil, supportedLanguages: [String]? = nil, supportsJsonSchema: Bool? = nil, supportsStreaming: Bool? = nil, supportsTools: Bool? = nil, trainingDataCutoff: String? = nil, type: String? = nil, useCases: [String]? = nil, vendorId: String? = nil) {
+    public init(apiFormat: String? = nil, cacheReadPrice: String? = nil, cacheWritePrice: String? = nil, capabilityIntro: String? = nil, contextTokens: String? = nil, description: String? = nil, displayName: String? = nil, inputModalities: [String]? = nil, limitations: [String]? = nil, maxOutputTokens: Int? = nil, modalities: [String]? = nil, model: String? = nil, name: String? = nil, outputModalities: [String]? = nil, priceIn: String? = nil, priceOut: String? = nil, regionPrices: [AdminAiModelRegionPrice]? = nil, releaseStage: Int? = nil, replacementModel: String? = nil, routingState: Int? = nil, shelfState: Int? = nil, supportedLanguages: [String]? = nil, supportsJsonSchema: Bool? = nil, supportsStreaming: Bool? = nil, supportsTools: Bool? = nil, trainingDataCutoff: String? = nil, type: String? = nil, useCases: [String]? = nil, vendorId: String? = nil) {
         self.apiFormat = apiFormat
+        self.cacheReadPrice = cacheReadPrice
+        self.cacheWritePrice = cacheWritePrice
         self.capabilityIntro = capabilityIntro
         self.contextTokens = contextTokens
         self.description = description
+        self.displayName = displayName
         self.inputModalities = inputModalities
         self.limitations = limitations
         self.maxOutputTokens = maxOutputTokens
         self.modalities = modalities
+        self.model = model
         self.name = name
         self.outputModalities = outputModalities
         self.priceIn = priceIn
         self.priceOut = priceOut
+        self.regionPrices = regionPrices
         self.releaseStage = releaseStage
         self.replacementModel = replacementModel
         self.routingState = routingState
@@ -290,15 +448,19 @@ public struct AdminAiModelCreateRequest: Codable {
 
 public struct AdminAiModelItem: Codable {
     public let apiFormat: String?
+    public let cacheReadPrice: String?
+    public let cacheWritePrice: String?
     public let calls: String?
     public let capabilityIntro: String?
     public let contextTokens: Int?
     public let description: String?
+    public let displayName: String?
     public let id: String?
     public let inputModalities: [String]?
     public let limitations: [String]?
     public let maxOutputTokens: Int?
     public let modalities: [String]?
+    public let model: String?
     public let name: String?
     public let outputModalities: [String]?
     public let priceIn: String?
@@ -319,17 +481,21 @@ public struct AdminAiModelItem: Codable {
     public let vendorId: String?
 
 
-    public init(apiFormat: String? = nil, calls: String? = nil, capabilityIntro: String? = nil, contextTokens: Int? = nil, description: String? = nil, id: String? = nil, inputModalities: [String]? = nil, limitations: [String]? = nil, maxOutputTokens: Int? = nil, modalities: [String]? = nil, name: String? = nil, outputModalities: [String]? = nil, priceIn: String? = nil, priceOut: String? = nil, releaseStage: Int? = nil, replacementModel: String? = nil, routingState: Int? = nil, shelfState: Int? = nil, status: String? = nil, supportedLanguages: [String]? = nil, supportsJsonSchema: Bool? = nil, supportsStreaming: Bool? = nil, supportsTools: Bool? = nil, trainingDataCutoff: String? = nil, type: String? = nil, useCases: [String]? = nil, vendorCode: String? = nil, vendorId: String? = nil) {
+    public init(apiFormat: String? = nil, cacheReadPrice: String? = nil, cacheWritePrice: String? = nil, calls: String? = nil, capabilityIntro: String? = nil, contextTokens: Int? = nil, description: String? = nil, displayName: String? = nil, id: String? = nil, inputModalities: [String]? = nil, limitations: [String]? = nil, maxOutputTokens: Int? = nil, modalities: [String]? = nil, model: String? = nil, name: String? = nil, outputModalities: [String]? = nil, priceIn: String? = nil, priceOut: String? = nil, releaseStage: Int? = nil, replacementModel: String? = nil, routingState: Int? = nil, shelfState: Int? = nil, status: String? = nil, supportedLanguages: [String]? = nil, supportsJsonSchema: Bool? = nil, supportsStreaming: Bool? = nil, supportsTools: Bool? = nil, trainingDataCutoff: String? = nil, type: String? = nil, useCases: [String]? = nil, vendorCode: String? = nil, vendorId: String? = nil) {
         self.apiFormat = apiFormat
+        self.cacheReadPrice = cacheReadPrice
+        self.cacheWritePrice = cacheWritePrice
         self.calls = calls
         self.capabilityIntro = capabilityIntro
         self.contextTokens = contextTokens
         self.description = description
+        self.displayName = displayName
         self.id = id
         self.inputModalities = inputModalities
         self.limitations = limitations
         self.maxOutputTokens = maxOutputTokens
         self.modalities = modalities
+        self.model = model
         self.name = name
         self.outputModalities = outputModalities
         self.priceIn = priceIn
@@ -360,19 +526,41 @@ public struct AdminAiModelMutationResponse: Codable {
     }
 }
 
+public struct AdminAiModelRegionPrice: Codable {
+    public let cacheReadPrice: String?
+    public let cacheWritePrice: String?
+    public let priceIn: String?
+    public let priceOut: String?
+    public let regionCode: String?
+
+
+    public init(cacheReadPrice: String? = nil, cacheWritePrice: String? = nil, priceIn: String? = nil, priceOut: String? = nil, regionCode: String? = nil) {
+        self.cacheReadPrice = cacheReadPrice
+        self.cacheWritePrice = cacheWritePrice
+        self.priceIn = priceIn
+        self.priceOut = priceOut
+        self.regionCode = regionCode
+    }
+}
+
 public struct AdminAiModelUpdateRequest: Codable {
     public let apiFormat: String?
+    public let cacheReadPrice: String?
+    public let cacheWritePrice: String?
     public let capabilityIntro: String?
     public let contextTokens: String?
     public let description: String?
+    public let displayName: String?
     public let inputModalities: [String]?
     public let limitations: [String]?
     public let maxOutputTokens: Int?
     public let modalities: [String]?
+    public let model: String?
     public let name: String?
     public let outputModalities: [String]?
     public let priceIn: String?
     public let priceOut: String?
+    public let regionPrices: [AdminAiModelRegionPrice]?
     public let releaseStage: Int?
     public let replacementModel: String?
     public let routingState: Int?
@@ -388,19 +576,24 @@ public struct AdminAiModelUpdateRequest: Codable {
     public let vendorId: String?
 
 
-    public init(apiFormat: String? = nil, capabilityIntro: String? = nil, contextTokens: String? = nil, description: String? = nil, inputModalities: [String]? = nil, limitations: [String]? = nil, maxOutputTokens: Int? = nil, modalities: [String]? = nil, name: String? = nil, outputModalities: [String]? = nil, priceIn: String? = nil, priceOut: String? = nil, releaseStage: Int? = nil, replacementModel: String? = nil, routingState: Int? = nil, shelfState: Int? = nil, status: String? = nil, supportedLanguages: [String]? = nil, supportsJsonSchema: Bool? = nil, supportsStreaming: Bool? = nil, supportsTools: Bool? = nil, trainingDataCutoff: String? = nil, type: String? = nil, useCases: [String]? = nil, vendorId: String? = nil) {
+    public init(apiFormat: String? = nil, cacheReadPrice: String? = nil, cacheWritePrice: String? = nil, capabilityIntro: String? = nil, contextTokens: String? = nil, description: String? = nil, displayName: String? = nil, inputModalities: [String]? = nil, limitations: [String]? = nil, maxOutputTokens: Int? = nil, modalities: [String]? = nil, model: String? = nil, name: String? = nil, outputModalities: [String]? = nil, priceIn: String? = nil, priceOut: String? = nil, regionPrices: [AdminAiModelRegionPrice]? = nil, releaseStage: Int? = nil, replacementModel: String? = nil, routingState: Int? = nil, shelfState: Int? = nil, status: String? = nil, supportedLanguages: [String]? = nil, supportsJsonSchema: Bool? = nil, supportsStreaming: Bool? = nil, supportsTools: Bool? = nil, trainingDataCutoff: String? = nil, type: String? = nil, useCases: [String]? = nil, vendorId: String? = nil) {
         self.apiFormat = apiFormat
+        self.cacheReadPrice = cacheReadPrice
+        self.cacheWritePrice = cacheWritePrice
         self.capabilityIntro = capabilityIntro
         self.contextTokens = contextTokens
         self.description = description
+        self.displayName = displayName
         self.inputModalities = inputModalities
         self.limitations = limitations
         self.maxOutputTokens = maxOutputTokens
         self.modalities = modalities
+        self.model = model
         self.name = name
         self.outputModalities = outputModalities
         self.priceIn = priceIn
         self.priceOut = priceOut
+        self.regionPrices = regionPrices
         self.releaseStage = releaseStage
         self.replacementModel = replacementModel
         self.routingState = routingState
@@ -423,6 +616,180 @@ public struct AdminAiModelsResponse: Codable {
 
     public init(items: [AdminAiModelItem]? = nil) {
         self.items = items
+    }
+}
+
+public struct AdminAnalyticsInsight: Codable {
+    public let detail: String?
+    public let key: String?
+    public let severity: String?
+    public let title: String?
+    public let value: String?
+
+
+    public init(detail: String? = nil, key: String? = nil, severity: String? = nil, title: String? = nil, value: String? = nil) {
+        self.detail = detail
+        self.key = key
+        self.severity = severity
+        self.title = title
+        self.value = value
+    }
+}
+
+public struct AdminAnalyticsModelRankItem: Codable {
+    public let averageTokensPerRequest: Double?
+    public let catalogKey: String?
+    public let errorRate: Double?
+    public let modality: String?
+    public let model: String?
+    public let points: Double?
+    public let rank: Int?
+    public let requestCount: Int?
+    public let totalTokens: Double?
+    public let upstreamCost: Double?
+    public let userCount: Int?
+    public let vendor: String?
+
+
+    public init(averageTokensPerRequest: Double? = nil, catalogKey: String? = nil, errorRate: Double? = nil, modality: String? = nil, model: String? = nil, points: Double? = nil, rank: Int? = nil, requestCount: Int? = nil, totalTokens: Double? = nil, upstreamCost: Double? = nil, userCount: Int? = nil, vendor: String? = nil) {
+        self.averageTokensPerRequest = averageTokensPerRequest
+        self.catalogKey = catalogKey
+        self.errorRate = errorRate
+        self.modality = modality
+        self.model = model
+        self.points = points
+        self.rank = rank
+        self.requestCount = requestCount
+        self.totalTokens = totalTokens
+        self.upstreamCost = upstreamCost
+        self.userCount = userCount
+        self.vendor = vendor
+    }
+}
+
+public struct AdminAnalyticsModelRankings: Codable {
+    public let points: [AdminAnalyticsModelRankItem]?
+    public let requests: [AdminAnalyticsModelRankItem]?
+    public let tokens: [AdminAnalyticsModelRankItem]?
+
+
+    public init(points: [AdminAnalyticsModelRankItem]? = nil, requests: [AdminAnalyticsModelRankItem]? = nil, tokens: [AdminAnalyticsModelRankItem]? = nil) {
+        self.points = points
+        self.requests = requests
+        self.tokens = tokens
+    }
+}
+
+public struct AdminAnalyticsOverviewResponse: Codable {
+    public let endTime: String?
+    public let insights: [AdminAnalyticsInsight]?
+    public let limit: Int?
+    public let modalityDistribution: [AdminPieChartItem]?
+    public let modelDistribution: [AdminPieChartItem]?
+    public let modelRankings: AdminAnalyticsModelRankings?
+    public let startTime: String?
+    public let summary: AdminAnalyticsSummary?
+    public let timeRange: String?
+    public let trend: [AdminAnalyticsTrendPoint]?
+    public let userRankings: AdminAnalyticsUserRankings?
+
+
+    public init(endTime: String? = nil, insights: [AdminAnalyticsInsight]? = nil, limit: Int? = nil, modalityDistribution: [AdminPieChartItem]? = nil, modelDistribution: [AdminPieChartItem]? = nil, modelRankings: AdminAnalyticsModelRankings? = nil, startTime: String? = nil, summary: AdminAnalyticsSummary? = nil, timeRange: String? = nil, trend: [AdminAnalyticsTrendPoint]? = nil, userRankings: AdminAnalyticsUserRankings? = nil) {
+        self.endTime = endTime
+        self.insights = insights
+        self.limit = limit
+        self.modalityDistribution = modalityDistribution
+        self.modelDistribution = modelDistribution
+        self.modelRankings = modelRankings
+        self.startTime = startTime
+        self.summary = summary
+        self.timeRange = timeRange
+        self.trend = trend
+        self.userRankings = userRankings
+    }
+}
+
+public struct AdminAnalyticsSummary: Codable {
+    public let activeModels: Int?
+    public let activeUsers: Int?
+    public let averagePointsPerRequest: Double?
+    public let averageTokensPerRequest: Double?
+    public let errorRate: Double?
+    public let failedRequests: Int?
+    public let successfulRequests: Int?
+    public let totalPoints: Double?
+    public let totalRequests: Int?
+    public let totalTokens: Double?
+    public let totalUsers: Int?
+    public let upstreamCost: Double?
+
+
+    public init(activeModels: Int? = nil, activeUsers: Int? = nil, averagePointsPerRequest: Double? = nil, averageTokensPerRequest: Double? = nil, errorRate: Double? = nil, failedRequests: Int? = nil, successfulRequests: Int? = nil, totalPoints: Double? = nil, totalRequests: Int? = nil, totalTokens: Double? = nil, totalUsers: Int? = nil, upstreamCost: Double? = nil) {
+        self.activeModels = activeModels
+        self.activeUsers = activeUsers
+        self.averagePointsPerRequest = averagePointsPerRequest
+        self.averageTokensPerRequest = averageTokensPerRequest
+        self.errorRate = errorRate
+        self.failedRequests = failedRequests
+        self.successfulRequests = successfulRequests
+        self.totalPoints = totalPoints
+        self.totalRequests = totalRequests
+        self.totalTokens = totalTokens
+        self.totalUsers = totalUsers
+        self.upstreamCost = upstreamCost
+    }
+}
+
+public struct AdminAnalyticsTrendPoint: Codable {
+    public let points: Double?
+    public let requests: Double?
+    public let time: String?
+    public let tokens: Double?
+    public let users: Int?
+
+
+    public init(points: Double? = nil, requests: Double? = nil, time: String? = nil, tokens: Double? = nil, users: Int? = nil) {
+        self.points = points
+        self.requests = requests
+        self.time = time
+        self.tokens = tokens
+        self.users = users
+    }
+}
+
+public struct AdminAnalyticsUserRankItem: Codable {
+    public let email: String?
+    public let modelDistribution: [AdminPieChartItem]?
+    public let points: Double?
+    public let rank: Int?
+    public let requestCount: Int?
+    public let totalTokens: Double?
+    public let userId: String?
+    public let userName: String?
+
+
+    public init(email: String? = nil, modelDistribution: [AdminPieChartItem]? = nil, points: Double? = nil, rank: Int? = nil, requestCount: Int? = nil, totalTokens: Double? = nil, userId: String? = nil, userName: String? = nil) {
+        self.email = email
+        self.modelDistribution = modelDistribution
+        self.points = points
+        self.rank = rank
+        self.requestCount = requestCount
+        self.totalTokens = totalTokens
+        self.userId = userId
+        self.userName = userName
+    }
+}
+
+public struct AdminAnalyticsUserRankings: Codable {
+    public let points: [AdminAnalyticsUserRankItem]?
+    public let requests: [AdminAnalyticsUserRankItem]?
+    public let tokens: [AdminAnalyticsUserRankItem]?
+
+
+    public init(points: [AdminAnalyticsUserRankItem]? = nil, requests: [AdminAnalyticsUserRankItem]? = nil, tokens: [AdminAnalyticsUserRankItem]? = nil) {
+        self.points = points
+        self.requests = requests
+        self.tokens = tokens
     }
 }
 
@@ -541,6 +908,112 @@ public struct AdminApiKeyItem: Codable {
 public struct AdminApiKeysMapResponse: Codable {
 
     public init() {}
+}
+
+public struct AdminAppCategoryCreateRequest: Codable {
+    public let code: String?
+    public let description: String?
+    public let icon: String?
+    public let name: String?
+    public let parentId: String?
+    public let path: String?
+    public let sortWeight: Int?
+    public let status: Int?
+    public let visible: Bool?
+
+
+    public init(code: String? = nil, description: String? = nil, icon: String? = nil, name: String? = nil, parentId: String? = nil, path: String? = nil, sortWeight: Int? = nil, status: Int? = nil, visible: Bool? = nil) {
+        self.code = code
+        self.description = description
+        self.icon = icon
+        self.name = name
+        self.parentId = parentId
+        self.path = path
+        self.sortWeight = sortWeight
+        self.status = status
+        self.visible = visible
+    }
+}
+
+public struct AdminAppCategoryDeleteResponse: Codable {
+    public let deleted: Bool?
+
+
+    public init(deleted: Bool? = nil) {
+        self.deleted = deleted
+    }
+}
+
+public struct AdminAppCategoryItem: Codable {
+    public let code: String?
+    public let description: String?
+    public let icon: String?
+    public let id: String?
+    public let name: String?
+    public let parentId: String?
+    public let path: String?
+    public let sortWeight: Int?
+    public let status: Int?
+    public let type: Int?
+    public let visible: Bool?
+
+
+    public init(code: String? = nil, description: String? = nil, icon: String? = nil, id: String? = nil, name: String? = nil, parentId: String? = nil, path: String? = nil, sortWeight: Int? = nil, status: Int? = nil, type: Int? = nil, visible: Bool? = nil) {
+        self.code = code
+        self.description = description
+        self.icon = icon
+        self.id = id
+        self.name = name
+        self.parentId = parentId
+        self.path = path
+        self.sortWeight = sortWeight
+        self.status = status
+        self.type = type
+        self.visible = visible
+    }
+}
+
+public struct AdminAppCategoryListResponse: Codable {
+    public let items: [AdminAppCategoryItem]?
+
+
+    public init(items: [AdminAppCategoryItem]? = nil) {
+        self.items = items
+    }
+}
+
+public struct AdminAppCategoryMutationResponse: Codable {
+    public let item: AdminAppCategoryItem?
+
+
+    public init(item: AdminAppCategoryItem? = nil) {
+        self.item = item
+    }
+}
+
+public struct AdminAppCategoryUpdateRequest: Codable {
+    public let code: String?
+    public let description: String?
+    public let icon: String?
+    public let name: String?
+    public let parentId: String?
+    public let path: String?
+    public let sortWeight: Int?
+    public let status: Int?
+    public let visible: Bool?
+
+
+    public init(code: String? = nil, description: String? = nil, icon: String? = nil, name: String? = nil, parentId: String? = nil, path: String? = nil, sortWeight: Int? = nil, status: Int? = nil, visible: Bool? = nil) {
+        self.code = code
+        self.description = description
+        self.icon = icon
+        self.name = name
+        self.parentId = parentId
+        self.path = path
+        self.sortWeight = sortWeight
+        self.status = status
+        self.visible = visible
+    }
 }
 
 public struct AdminAppConfig: Codable {
@@ -765,21 +1238,25 @@ public struct AdminAuthSettingsResponse: Codable {
     public let oauthProviders: [String]?
     public let oauthRegion: String?
     public let qrLoginEnabled: Bool?
+    public let qrLoginType: String?
     public let recoveryMethods: [String]?
     public let registerMethods: [String]?
     public let verificationPolicy: AdminAuthVerificationPolicy?
+    public let wechat: AdminAuthWechatSettings?
 
 
-    public init(leftRailMode: String? = nil, loginMethods: [String]? = nil, oauthLoginEnabled: Bool? = nil, oauthProviders: [String]? = nil, oauthRegion: String? = nil, qrLoginEnabled: Bool? = nil, recoveryMethods: [String]? = nil, registerMethods: [String]? = nil, verificationPolicy: AdminAuthVerificationPolicy? = nil) {
+    public init(leftRailMode: String? = nil, loginMethods: [String]? = nil, oauthLoginEnabled: Bool? = nil, oauthProviders: [String]? = nil, oauthRegion: String? = nil, qrLoginEnabled: Bool? = nil, qrLoginType: String? = nil, recoveryMethods: [String]? = nil, registerMethods: [String]? = nil, verificationPolicy: AdminAuthVerificationPolicy? = nil, wechat: AdminAuthWechatSettings? = nil) {
         self.leftRailMode = leftRailMode
         self.loginMethods = loginMethods
         self.oauthLoginEnabled = oauthLoginEnabled
         self.oauthProviders = oauthProviders
         self.oauthRegion = oauthRegion
         self.qrLoginEnabled = qrLoginEnabled
+        self.qrLoginType = qrLoginType
         self.recoveryMethods = recoveryMethods
         self.registerMethods = registerMethods
         self.verificationPolicy = verificationPolicy
+        self.wechat = wechat
     }
 }
 
@@ -790,21 +1267,25 @@ public struct AdminAuthSettingsUpdateRequest: Codable {
     public let oauthProviders: [String]?
     public let oauthRegion: String?
     public let qrLoginEnabled: Bool?
+    public let qrLoginType: String?
     public let recoveryMethods: [String]?
     public let registerMethods: [String]?
     public let verificationPolicy: AdminAuthVerificationPolicy?
+    public let wechat: AdminAuthWechatSettingsUpdate?
 
 
-    public init(leftRailMode: String? = nil, loginMethods: [String]? = nil, oauthLoginEnabled: Bool? = nil, oauthProviders: [String]? = nil, oauthRegion: String? = nil, qrLoginEnabled: Bool? = nil, recoveryMethods: [String]? = nil, registerMethods: [String]? = nil, verificationPolicy: AdminAuthVerificationPolicy? = nil) {
+    public init(leftRailMode: String? = nil, loginMethods: [String]? = nil, oauthLoginEnabled: Bool? = nil, oauthProviders: [String]? = nil, oauthRegion: String? = nil, qrLoginEnabled: Bool? = nil, qrLoginType: String? = nil, recoveryMethods: [String]? = nil, registerMethods: [String]? = nil, verificationPolicy: AdminAuthVerificationPolicy? = nil, wechat: AdminAuthWechatSettingsUpdate? = nil) {
         self.leftRailMode = leftRailMode
         self.loginMethods = loginMethods
         self.oauthLoginEnabled = oauthLoginEnabled
         self.oauthProviders = oauthProviders
         self.oauthRegion = oauthRegion
         self.qrLoginEnabled = qrLoginEnabled
+        self.qrLoginType = qrLoginType
         self.recoveryMethods = recoveryMethods
         self.registerMethods = registerMethods
         self.verificationPolicy = verificationPolicy
+        self.wechat = wechat
     }
 }
 
@@ -823,33 +1304,262 @@ public struct AdminAuthVerificationPolicy: Codable {
     }
 }
 
-public struct AdminBillingRecordItem: Codable {
-    public let dueDate: String?
-    public let id: String?
-    public let period: String?
-    public let status: String?
-    public let totalCost: String?
-    public let totalTokens: Int?
-    public let userId: String?
+public struct AdminAuthWechatMini: Codable {
+    public let appId: String?
+    public let enabled: Bool?
+    public let env: String?
+    public let key: String?
+    public let name: String?
+    public let path: String?
+    public let primary: Bool?
+    public let secretRef: String?
+    public let url: String?
 
 
-    public init(dueDate: String? = nil, id: String? = nil, period: String? = nil, status: String? = nil, totalCost: String? = nil, totalTokens: Int? = nil, userId: String? = nil) {
-        self.dueDate = dueDate
-        self.id = id
-        self.period = period
-        self.status = status
-        self.totalCost = totalCost
-        self.totalTokens = totalTokens
-        self.userId = userId
+    public init(appId: String? = nil, enabled: Bool? = nil, env: String? = nil, key: String? = nil, name: String? = nil, path: String? = nil, primary: Bool? = nil, secretRef: String? = nil, url: String? = nil) {
+        self.appId = appId
+        self.enabled = enabled
+        self.env = env
+        self.key = key
+        self.name = name
+        self.path = path
+        self.primary = primary
+        self.secretRef = secretRef
+        self.url = url
     }
 }
 
-public struct AdminBillingRecordsResponse: Codable {
-    public let items: [AdminBillingRecordItem]?
+public struct AdminAuthWechatOfficial: Codable {
+    public let aesKeyRef: String?
+    public let appId: String?
+    public let enabled: Bool?
+    public let key: String?
+    public let name: String?
+    public let originalId: String?
+    public let primary: Bool?
+    public let scene: String?
+    public let secretRef: String?
+    public let tokenRef: String?
+    public let url: String?
 
 
-    public init(items: [AdminBillingRecordItem]? = nil) {
+    public init(aesKeyRef: String? = nil, appId: String? = nil, enabled: Bool? = nil, key: String? = nil, name: String? = nil, originalId: String? = nil, primary: Bool? = nil, scene: String? = nil, secretRef: String? = nil, tokenRef: String? = nil, url: String? = nil) {
+        self.aesKeyRef = aesKeyRef
+        self.appId = appId
+        self.enabled = enabled
+        self.key = key
+        self.name = name
+        self.originalId = originalId
+        self.primary = primary
+        self.scene = scene
+        self.secretRef = secretRef
+        self.tokenRef = tokenRef
+        self.url = url
+    }
+}
+
+public struct AdminAuthWechatSettings: Codable {
+    public let mini: [AdminAuthWechatMini]?
+    public let official: [AdminAuthWechatOfficial]?
+
+
+    public init(mini: [AdminAuthWechatMini]? = nil, official: [AdminAuthWechatOfficial]? = nil) {
+        self.mini = mini
+        self.official = official
+    }
+}
+
+public struct AdminAuthWechatSettingsUpdate: Codable {
+    public let mini: [AdminAuthWechatMini]?
+    public let official: [AdminAuthWechatOfficial]?
+
+
+    public init(mini: [AdminAuthWechatMini]? = nil, official: [AdminAuthWechatOfficial]? = nil) {
+        self.mini = mini
+        self.official = official
+    }
+}
+
+public struct AdminCacheInstance: Codable {
+    public let cacheDeletes: Int?
+    public let cacheErrors: Int?
+    public let cacheHits: Int?
+    public let cacheInspections: Int?
+    public let cacheMisses: Int?
+    public let cacheRefreshes: Int?
+    public let cacheWrites: Int?
+    public let connectionProfileName: String?
+    public let defaultTtlSeconds: Int?
+    public let entryCount: Int?
+    public let expiredEntryCount: Int?
+    public let keyPrefix: String?
+    public let maxEntries: Int?
+    public let name: String?
+    public let providerKind: String?
+    public let purpose: String?
+    public let status: String?
+    public let supportsDelete: Bool?
+    public let supportsInspect: Bool?
+    public let supportsRefresh: Bool?
+
+
+    public init(cacheDeletes: Int? = nil, cacheErrors: Int? = nil, cacheHits: Int? = nil, cacheInspections: Int? = nil, cacheMisses: Int? = nil, cacheRefreshes: Int? = nil, cacheWrites: Int? = nil, connectionProfileName: String? = nil, defaultTtlSeconds: Int? = nil, entryCount: Int? = nil, expiredEntryCount: Int? = nil, keyPrefix: String? = nil, maxEntries: Int? = nil, name: String? = nil, providerKind: String? = nil, purpose: String? = nil, status: String? = nil, supportsDelete: Bool? = nil, supportsInspect: Bool? = nil, supportsRefresh: Bool? = nil) {
+        self.cacheDeletes = cacheDeletes
+        self.cacheErrors = cacheErrors
+        self.cacheHits = cacheHits
+        self.cacheInspections = cacheInspections
+        self.cacheMisses = cacheMisses
+        self.cacheRefreshes = cacheRefreshes
+        self.cacheWrites = cacheWrites
+        self.connectionProfileName = connectionProfileName
+        self.defaultTtlSeconds = defaultTtlSeconds
+        self.entryCount = entryCount
+        self.expiredEntryCount = expiredEntryCount
+        self.keyPrefix = keyPrefix
+        self.maxEntries = maxEntries
+        self.name = name
+        self.providerKind = providerKind
+        self.purpose = purpose
+        self.status = status
+        self.supportsDelete = supportsDelete
+        self.supportsInspect = supportsInspect
+        self.supportsRefresh = supportsRefresh
+    }
+}
+
+public struct AdminCacheKeyItem: Codable {
+    public let expiresInSeconds: Int?
+    public let instanceName: String?
+    public let key: String?
+    public let namespace: String?
+    public let status: String?
+
+
+    public init(expiresInSeconds: Int? = nil, instanceName: String? = nil, key: String? = nil, namespace: String? = nil, status: String? = nil) {
+        self.expiresInSeconds = expiresInSeconds
+        self.instanceName = instanceName
+        self.key = key
+        self.namespace = namespace
+        self.status = status
+    }
+}
+
+public struct AdminCacheKeyListResponse: Codable {
+    public let hasMore: Bool?
+    public let instanceName: String?
+    public let items: [AdminCacheKeyItem]?
+    public let limit: Int?
+    public let namespace: String?
+    public let nextCursor: String?
+    public let returnedItems: Int?
+    public let scanComplete: Bool?
+    public let scannedItems: Int?
+
+
+    public init(hasMore: Bool? = nil, instanceName: String? = nil, items: [AdminCacheKeyItem]? = nil, limit: Int? = nil, namespace: String? = nil, nextCursor: String? = nil, returnedItems: Int? = nil, scanComplete: Bool? = nil, scannedItems: Int? = nil) {
+        self.hasMore = hasMore
+        self.instanceName = instanceName
         self.items = items
+        self.limit = limit
+        self.namespace = namespace
+        self.nextCursor = nextCursor
+        self.returnedItems = returnedItems
+        self.scanComplete = scanComplete
+        self.scannedItems = scannedItems
+    }
+}
+
+public struct AdminCacheNamespacePolicy: Codable {
+    public let consistency: String?
+    public let enabled: Bool?
+    public let failureMode: String?
+    public let instanceName: String?
+    public let jitterPercent: Int?
+    public let namespace: String?
+    public let scope: String?
+    public let sensitivity: String?
+    public let staleWhileRevalidateSeconds: Int?
+    public let tags: [String]?
+    public let ttlSeconds: Int?
+
+
+    public init(consistency: String? = nil, enabled: Bool? = nil, failureMode: String? = nil, instanceName: String? = nil, jitterPercent: Int? = nil, namespace: String? = nil, scope: String? = nil, sensitivity: String? = nil, staleWhileRevalidateSeconds: Int? = nil, tags: [String]? = nil, ttlSeconds: Int? = nil) {
+        self.consistency = consistency
+        self.enabled = enabled
+        self.failureMode = failureMode
+        self.instanceName = instanceName
+        self.jitterPercent = jitterPercent
+        self.namespace = namespace
+        self.scope = scope
+        self.sensitivity = sensitivity
+        self.staleWhileRevalidateSeconds = staleWhileRevalidateSeconds
+        self.tags = tags
+        self.ttlSeconds = ttlSeconds
+    }
+}
+
+public struct AdminCacheOperationResponse: Codable {
+    public let cacheKey: String?
+    public let deletedEntries: Int?
+    public let instanceName: String?
+    public let namespace: String?
+    public let operation: String?
+    public let refreshedEntries: Int?
+    public let status: String?
+
+
+    public init(cacheKey: String? = nil, deletedEntries: Int? = nil, instanceName: String? = nil, namespace: String? = nil, operation: String? = nil, refreshedEntries: Int? = nil, status: String? = nil) {
+        self.cacheKey = cacheKey
+        self.deletedEntries = deletedEntries
+        self.instanceName = instanceName
+        self.namespace = namespace
+        self.operation = operation
+        self.refreshedEntries = refreshedEntries
+        self.status = status
+    }
+}
+
+public struct AdminCacheOverviewResponse: Codable {
+    public let instances: [AdminCacheInstance]?
+    public let namespacePolicies: [AdminCacheNamespacePolicy]?
+    public let summary: AdminCacheSummary?
+
+
+    public init(instances: [AdminCacheInstance]? = nil, namespacePolicies: [AdminCacheNamespacePolicy]? = nil, summary: AdminCacheSummary? = nil) {
+        self.instances = instances
+        self.namespacePolicies = namespacePolicies
+        self.summary = summary
+    }
+}
+
+public struct AdminCacheSummary: Codable {
+    public let cacheDeletes: Int?
+    public let cacheErrors: Int?
+    public let cacheHits: Int?
+    public let cacheInspections: Int?
+    public let cacheMisses: Int?
+    public let cacheRefreshes: Int?
+    public let cacheWrites: Int?
+    public let expiredEntries: Int?
+    public let runtimeTarget: String?
+    public let totalEntries: Int?
+    public let totalInstances: Int?
+    public let totalNamespaces: Int?
+
+
+    public init(cacheDeletes: Int? = nil, cacheErrors: Int? = nil, cacheHits: Int? = nil, cacheInspections: Int? = nil, cacheMisses: Int? = nil, cacheRefreshes: Int? = nil, cacheWrites: Int? = nil, expiredEntries: Int? = nil, runtimeTarget: String? = nil, totalEntries: Int? = nil, totalInstances: Int? = nil, totalNamespaces: Int? = nil) {
+        self.cacheDeletes = cacheDeletes
+        self.cacheErrors = cacheErrors
+        self.cacheHits = cacheHits
+        self.cacheInspections = cacheInspections
+        self.cacheMisses = cacheMisses
+        self.cacheRefreshes = cacheRefreshes
+        self.cacheWrites = cacheWrites
+        self.expiredEntries = expiredEntries
+        self.runtimeTarget = runtimeTarget
+        self.totalEntries = totalEntries
+        self.totalInstances = totalInstances
+        self.totalNamespaces = totalNamespaces
     }
 }
 
@@ -866,8 +1576,11 @@ public struct AdminCapacityPair: Codable {
 
 public struct AdminChannelCreateRequest: Codable {
     public let accessType: String?
+    public let apiKey: String?
     public let baseUrl: String?
     public let capabilities: [String]?
+    public let circuitBreakerPolicy: ProviderCircuitBreakerPolicy?
+    public let expiresAt: String?
     public let models: [String]?
     public let name: String?
     public let protocol_: String?
@@ -879,10 +1592,13 @@ public struct AdminChannelCreateRequest: Codable {
     public let weight: Int?
 
 
-    public init(accessType: String? = nil, baseUrl: String? = nil, capabilities: [String]? = nil, models: [String]? = nil, name: String? = nil, protocol_: String? = nil, retryPolicy: ProviderRetryPolicy? = nil, secretRef: String? = nil, status: String? = nil, timeoutMs: Int? = nil, vendor: String? = nil, weight: Int? = nil) {
+    public init(accessType: String? = nil, apiKey: String? = nil, baseUrl: String? = nil, capabilities: [String]? = nil, circuitBreakerPolicy: ProviderCircuitBreakerPolicy? = nil, expiresAt: String? = nil, models: [String]? = nil, name: String? = nil, protocol_: String? = nil, retryPolicy: ProviderRetryPolicy? = nil, secretRef: String? = nil, status: String? = nil, timeoutMs: Int? = nil, vendor: String? = nil, weight: Int? = nil) {
         self.accessType = accessType
+        self.apiKey = apiKey
         self.baseUrl = baseUrl
         self.capabilities = capabilities
+        self.circuitBreakerPolicy = circuitBreakerPolicy
+        self.expiresAt = expiresAt
         self.models = models
         self.name = name
         self.protocol_ = protocol_
@@ -897,10 +1613,14 @@ public struct AdminChannelCreateRequest: Codable {
 
 public struct AdminChannelItem: Codable {
     public let accessType: String?
+    public let apiKey: String?
     public let balance: String?
     public let baseUrl: String?
     public let capabilities: [String]?
+    public let circuitBreakerPolicy: ProviderCircuitBreakerPolicy?
+    public let createdAt: String?
     public let errors: Int?
+    public let expiresAt: String?
     public let id: String?
     public let isMultimodal: Bool?
     public let models: [String]?
@@ -914,12 +1634,16 @@ public struct AdminChannelItem: Codable {
     public let weight: Int?
 
 
-    public init(accessType: String? = nil, balance: String? = nil, baseUrl: String? = nil, capabilities: [String]? = nil, errors: Int? = nil, id: String? = nil, isMultimodal: Bool? = nil, models: [String]? = nil, name: String? = nil, protocol_: String? = nil, retryPolicy: ProviderRetryPolicy? = nil, secretRef: String? = nil, status: String? = nil, timeoutMs: Int? = nil, vendor: String? = nil, weight: Int? = nil) {
+    public init(accessType: String? = nil, apiKey: String? = nil, balance: String? = nil, baseUrl: String? = nil, capabilities: [String]? = nil, circuitBreakerPolicy: ProviderCircuitBreakerPolicy? = nil, createdAt: String? = nil, errors: Int? = nil, expiresAt: String? = nil, id: String? = nil, isMultimodal: Bool? = nil, models: [String]? = nil, name: String? = nil, protocol_: String? = nil, retryPolicy: ProviderRetryPolicy? = nil, secretRef: String? = nil, status: String? = nil, timeoutMs: Int? = nil, vendor: String? = nil, weight: Int? = nil) {
         self.accessType = accessType
+        self.apiKey = apiKey
         self.balance = balance
         self.baseUrl = baseUrl
         self.capabilities = capabilities
+        self.circuitBreakerPolicy = circuitBreakerPolicy
+        self.createdAt = createdAt
         self.errors = errors
+        self.expiresAt = expiresAt
         self.id = id
         self.isMultimodal = isMultimodal
         self.models = models
@@ -962,8 +1686,11 @@ public struct AdminChannelTestResponse: Codable {
 
 public struct AdminChannelUpdateRequest: Codable {
     public let accessType: String?
+    public let apiKey: String?
     public let baseUrl: String?
     public let capabilities: [String]?
+    public let circuitBreakerPolicy: ProviderCircuitBreakerPolicy?
+    public let expiresAt: String?
     public let id: String?
     public let models: [String]?
     public let name: String?
@@ -976,10 +1703,13 @@ public struct AdminChannelUpdateRequest: Codable {
     public let weight: Int?
 
 
-    public init(accessType: String? = nil, baseUrl: String? = nil, capabilities: [String]? = nil, id: String? = nil, models: [String]? = nil, name: String? = nil, protocol_: String? = nil, retryPolicy: ProviderRetryPolicy? = nil, secretRef: String? = nil, status: String? = nil, timeoutMs: Int? = nil, vendor: String? = nil, weight: Int? = nil) {
+    public init(accessType: String? = nil, apiKey: String? = nil, baseUrl: String? = nil, capabilities: [String]? = nil, circuitBreakerPolicy: ProviderCircuitBreakerPolicy? = nil, expiresAt: String? = nil, id: String? = nil, models: [String]? = nil, name: String? = nil, protocol_: String? = nil, retryPolicy: ProviderRetryPolicy? = nil, secretRef: String? = nil, status: String? = nil, timeoutMs: Int? = nil, vendor: String? = nil, weight: Int? = nil) {
         self.accessType = accessType
+        self.apiKey = apiKey
         self.baseUrl = baseUrl
         self.capabilities = capabilities
+        self.circuitBreakerPolicy = circuitBreakerPolicy
+        self.expiresAt = expiresAt
         self.id = id
         self.models = models
         self.name = name
@@ -1010,110 +1740,6 @@ public struct AdminCountPair: Codable {
     public init(available: Double? = nil, total: Double? = nil) {
         self.available = available
         self.total = total
-    }
-}
-
-public struct AdminCouponBatchGenerateRequest: Codable {
-    public let count: Int?
-    public let couponId: Int?
-    public let name: String?
-    public let prefix_: String?
-
-
-    public init(count: Int? = nil, couponId: Int? = nil, name: String? = nil, prefix_: String? = nil) {
-        self.count = count
-        self.couponId = couponId
-        self.name = name
-        self.prefix_ = prefix_
-    }
-}
-
-public struct AdminCouponBatchGenerateResponse: Codable {
-    public let batch: AdminCouponBatchItem?
-    public let codes: [AdminPromoCodeItem]?
-
-
-    public init(batch: AdminCouponBatchItem? = nil, codes: [AdminPromoCodeItem]? = nil) {
-        self.batch = batch
-        self.codes = codes
-    }
-}
-
-public struct AdminCouponBatchItem: Codable {
-    public let count: Int?
-    public let couponId: String?
-    public let createdAt: String?
-    public let id: String?
-    public let name: String?
-    public let prefix_: String?
-
-
-    public init(count: Int? = nil, couponId: String? = nil, createdAt: String? = nil, id: String? = nil, name: String? = nil, prefix_: String? = nil) {
-        self.count = count
-        self.couponId = couponId
-        self.createdAt = createdAt
-        self.id = id
-        self.name = name
-        self.prefix_ = prefix_
-    }
-}
-
-public struct AdminCouponBatchesResponse: Codable {
-    public let items: [AdminCouponBatchItem]?
-
-
-    public init(items: [AdminCouponBatchItem]? = nil) {
-        self.items = items
-    }
-}
-
-public struct AdminCouponCreateRequest: Codable {
-    public let name: String?
-    public let status: String?
-    public let type: String?
-    public let value: String?
-
-
-    public init(name: String? = nil, status: String? = nil, type: String? = nil, value: String? = nil) {
-        self.name = name
-        self.status = status
-        self.type = type
-        self.value = value
-    }
-}
-
-public struct AdminCouponItem: Codable {
-    public let id: String?
-    public let name: String?
-    public let status: String?
-    public let type: String?
-    public let value: String?
-
-
-    public init(id: String? = nil, name: String? = nil, status: String? = nil, type: String? = nil, value: String? = nil) {
-        self.id = id
-        self.name = name
-        self.status = status
-        self.type = type
-        self.value = value
-    }
-}
-
-public struct AdminCouponMutationResponse: Codable {
-    public let item: AdminCouponItem?
-
-
-    public init(item: AdminCouponItem? = nil) {
-        self.item = item
-    }
-}
-
-public struct AdminCouponsResponse: Codable {
-    public let items: [AdminCouponItem]?
-
-
-    public init(items: [AdminCouponItem]? = nil) {
-        self.items = items
     }
 }
 
@@ -1186,15 +1812,6 @@ public struct AdminDeleteResponse: Codable {
 
     public init(deleted: Bool? = nil) {
         self.deleted = deleted
-    }
-}
-
-public struct AdminExchangeRuleMutationResponse: Codable {
-    public let item: CommerceExchangeRuleItem?
-
-
-    public init(item: CommerceExchangeRuleItem? = nil) {
-        self.item = item
     }
 }
 
@@ -1508,34 +2125,6 @@ public struct AdminMonitorPerformanceResponse: Codable {
     }
 }
 
-public struct AdminPaymentAttemptItem: Codable {
-    public let amount: String?
-    public let createdAt: String?
-    public let id: String?
-    public let orderNo: String?
-    public let provider: String?
-    public let status: String?
-
-
-    public init(amount: String? = nil, createdAt: String? = nil, id: String? = nil, orderNo: String? = nil, provider: String? = nil, status: String? = nil) {
-        self.amount = amount
-        self.createdAt = createdAt
-        self.id = id
-        self.orderNo = orderNo
-        self.provider = provider
-        self.status = status
-    }
-}
-
-public struct AdminPaymentAttemptsResponse: Codable {
-    public let items: [AdminPaymentAttemptItem]?
-
-
-    public init(items: [AdminPaymentAttemptItem]? = nil) {
-        self.items = items
-    }
-}
-
 public struct AdminPieChartItem: Codable {
     public let color: String?
     public let name: String?
@@ -1546,52 +2135,6 @@ public struct AdminPieChartItem: Codable {
         self.color = color
         self.name = name
         self.value = value
-    }
-}
-
-public struct AdminPromoCodeItem: Codable {
-    public let batchId: String?
-    public let code: String?
-    public let id: String?
-    public let status: String?
-    public let usedAt: String?
-    public let usedBy: String?
-
-
-    public init(batchId: String? = nil, code: String? = nil, id: String? = nil, status: String? = nil, usedAt: String? = nil, usedBy: String? = nil) {
-        self.batchId = batchId
-        self.code = code
-        self.id = id
-        self.status = status
-        self.usedAt = usedAt
-        self.usedBy = usedBy
-    }
-}
-
-public struct AdminPromoCodeStatusUpdateRequest: Codable {
-    public let status: String?
-
-
-    public init(status: String? = nil) {
-        self.status = status
-    }
-}
-
-public struct AdminPromoCodeStatusUpdateResponse: Codable {
-    public let updated: Bool?
-
-
-    public init(updated: Bool? = nil) {
-        self.updated = updated
-    }
-}
-
-public struct AdminPromoCodesResponse: Codable {
-    public let items: [AdminPromoCodeItem]?
-
-
-    public init(items: [AdminPromoCodeItem]? = nil) {
-        self.items = items
     }
 }
 
@@ -1721,45 +2264,11 @@ public struct AdminRateLimitMutationResponse: Codable {
 }
 
 public struct AdminRechargePackageMutationResponse: Codable {
-    public let item: RechargePackage?
+    public let item: [String: Any]?
 
 
-    public init(item: RechargePackage? = nil) {
+    public init(item: [String: Any]? = nil) {
         self.item = item
-    }
-}
-
-public struct AdminRechargeRecordItem: Codable {
-    public let amount: String?
-    public let id: String?
-    public let method: String?
-    public let status: String?
-    public let time: String?
-    public let tradeNo: String?
-    public let usdCredited: String?
-    public let user: String?
-    public let userId: String?
-
-
-    public init(amount: String? = nil, id: String? = nil, method: String? = nil, status: String? = nil, time: String? = nil, tradeNo: String? = nil, usdCredited: String? = nil, user: String? = nil, userId: String? = nil) {
-        self.amount = amount
-        self.id = id
-        self.method = method
-        self.status = status
-        self.time = time
-        self.tradeNo = tradeNo
-        self.usdCredited = usdCredited
-        self.user = user
-        self.userId = userId
-    }
-}
-
-public struct AdminRechargeRecordsResponse: Codable {
-    public let items: [AdminRechargeRecordItem]?
-
-
-    public init(items: [AdminRechargeRecordItem]? = nil) {
-        self.items = items
     }
 }
 
@@ -1829,34 +2338,6 @@ public struct AdminRecordLogsResponse: Codable {
     }
 }
 
-public struct AdminRedemptionRecordItem: Codable {
-    public let amount: String?
-    public let code: String?
-    public let id: String?
-    public let time: String?
-    public let user: String?
-    public let userId: String?
-
-
-    public init(amount: String? = nil, code: String? = nil, id: String? = nil, time: String? = nil, user: String? = nil, userId: String? = nil) {
-        self.amount = amount
-        self.code = code
-        self.id = id
-        self.time = time
-        self.user = user
-        self.userId = userId
-    }
-}
-
-public struct AdminRedemptionRecordsResponse: Codable {
-    public let items: [AdminRedemptionRecordItem]?
-
-
-    public init(items: [AdminRedemptionRecordItem]? = nil) {
-        self.items = items
-    }
-}
-
 public struct AdminReferralStatItem: Codable {
     public let bonusAwarded: String?
     public let id: String?
@@ -1882,6 +2363,100 @@ public struct AdminReferralStatsResponse: Codable {
 
     public init(items: [AdminReferralStatItem]? = nil) {
         self.items = items
+    }
+}
+
+public struct AdminSiteSettingsResponse: Codable {
+    public let accentColor: String?
+    public let brandColor: String?
+    public let customCss: String?
+    public let description: String?
+    public let docsUrl: String?
+    public let faviconUrl: String?
+    public let footerCopyright: String?
+    public let iconUrl: String?
+    public let icpRecordNumber: String?
+    public let icpRecordUrl: String?
+    public let logoUrl: String?
+    public let policeRecordNumber: String?
+    public let policeRecordUrl: String?
+    public let privacyUrl: String?
+    public let seoDescription: String?
+    public let seoTitle: String?
+    public let shortName: String?
+    public let siteName: String?
+    public let supportUrl: String?
+    public let termsUrl: String?
+
+
+    public init(accentColor: String? = nil, brandColor: String? = nil, customCss: String? = nil, description: String? = nil, docsUrl: String? = nil, faviconUrl: String? = nil, footerCopyright: String? = nil, iconUrl: String? = nil, icpRecordNumber: String? = nil, icpRecordUrl: String? = nil, logoUrl: String? = nil, policeRecordNumber: String? = nil, policeRecordUrl: String? = nil, privacyUrl: String? = nil, seoDescription: String? = nil, seoTitle: String? = nil, shortName: String? = nil, siteName: String? = nil, supportUrl: String? = nil, termsUrl: String? = nil) {
+        self.accentColor = accentColor
+        self.brandColor = brandColor
+        self.customCss = customCss
+        self.description = description
+        self.docsUrl = docsUrl
+        self.faviconUrl = faviconUrl
+        self.footerCopyright = footerCopyright
+        self.iconUrl = iconUrl
+        self.icpRecordNumber = icpRecordNumber
+        self.icpRecordUrl = icpRecordUrl
+        self.logoUrl = logoUrl
+        self.policeRecordNumber = policeRecordNumber
+        self.policeRecordUrl = policeRecordUrl
+        self.privacyUrl = privacyUrl
+        self.seoDescription = seoDescription
+        self.seoTitle = seoTitle
+        self.shortName = shortName
+        self.siteName = siteName
+        self.supportUrl = supportUrl
+        self.termsUrl = termsUrl
+    }
+}
+
+public struct AdminSiteSettingsUpdateRequest: Codable {
+    public let accentColor: String?
+    public let brandColor: String?
+    public let customCss: String?
+    public let description: String?
+    public let docsUrl: String?
+    public let faviconUrl: String?
+    public let footerCopyright: String?
+    public let iconUrl: String?
+    public let icpRecordNumber: String?
+    public let icpRecordUrl: String?
+    public let logoUrl: String?
+    public let policeRecordNumber: String?
+    public let policeRecordUrl: String?
+    public let privacyUrl: String?
+    public let seoDescription: String?
+    public let seoTitle: String?
+    public let shortName: String?
+    public let siteName: String?
+    public let supportUrl: String?
+    public let termsUrl: String?
+
+
+    public init(accentColor: String? = nil, brandColor: String? = nil, customCss: String? = nil, description: String? = nil, docsUrl: String? = nil, faviconUrl: String? = nil, footerCopyright: String? = nil, iconUrl: String? = nil, icpRecordNumber: String? = nil, icpRecordUrl: String? = nil, logoUrl: String? = nil, policeRecordNumber: String? = nil, policeRecordUrl: String? = nil, privacyUrl: String? = nil, seoDescription: String? = nil, seoTitle: String? = nil, shortName: String? = nil, siteName: String? = nil, supportUrl: String? = nil, termsUrl: String? = nil) {
+        self.accentColor = accentColor
+        self.brandColor = brandColor
+        self.customCss = customCss
+        self.description = description
+        self.docsUrl = docsUrl
+        self.faviconUrl = faviconUrl
+        self.footerCopyright = footerCopyright
+        self.iconUrl = iconUrl
+        self.icpRecordNumber = icpRecordNumber
+        self.icpRecordUrl = icpRecordUrl
+        self.logoUrl = logoUrl
+        self.policeRecordNumber = policeRecordNumber
+        self.policeRecordUrl = policeRecordUrl
+        self.privacyUrl = privacyUrl
+        self.seoDescription = seoDescription
+        self.seoTitle = seoTitle
+        self.shortName = shortName
+        self.siteName = siteName
+        self.supportUrl = supportUrl
+        self.termsUrl = termsUrl
     }
 }
 
@@ -2206,6 +2781,15 @@ public struct AdminSkillCategoryCreateRequest: Codable {
     }
 }
 
+public struct AdminSkillCategoryDeleteResponse: Codable {
+    public let deleted: Bool?
+
+
+    public init(deleted: Bool? = nil) {
+        self.deleted = deleted
+    }
+}
+
 public struct AdminSkillCategoryItem: Codable {
     public let code: String?
     public let description: String?
@@ -2250,6 +2834,33 @@ public struct AdminSkillCategoryMutationResponse: Codable {
 
     public init(item: AdminSkillCategoryItem? = nil) {
         self.item = item
+    }
+}
+
+public struct AdminSkillCategoryUpdateRequest: Codable {
+    public let code: String?
+    public let description: String?
+    public let icon: String?
+    public let name: String?
+    public let parentId: String?
+    public let path: String?
+    public let sortWeight: Int?
+    public let status: Int?
+    public let type: Int?
+    public let visible: Bool?
+
+
+    public init(code: String? = nil, description: String? = nil, icon: String? = nil, name: String? = nil, parentId: String? = nil, path: String? = nil, sortWeight: Int? = nil, status: Int? = nil, type: Int? = nil, visible: Bool? = nil) {
+        self.code = code
+        self.description = description
+        self.icon = icon
+        self.name = name
+        self.parentId = parentId
+        self.path = path
+        self.sortWeight = sortWeight
+        self.status = status
+        self.type = type
+        self.visible = visible
     }
 }
 
@@ -2674,38 +3285,6 @@ public struct AdminTokenLimitsResponse: Codable {
     }
 }
 
-public struct AdminTransactionRecordItem: Codable {
-    public let amount: String?
-    public let balance: String?
-    public let description: String?
-    public let id: String?
-    public let status: String?
-    public let time: String?
-    public let type: String?
-    public let userId: String?
-
-
-    public init(amount: String? = nil, balance: String? = nil, description: String? = nil, id: String? = nil, status: String? = nil, time: String? = nil, type: String? = nil, userId: String? = nil) {
-        self.amount = amount
-        self.balance = balance
-        self.description = description
-        self.id = id
-        self.status = status
-        self.time = time
-        self.type = type
-        self.userId = userId
-    }
-}
-
-public struct AdminTransactionsResponse: Codable {
-    public let items: [AdminTransactionRecordItem]?
-
-
-    public init(items: [AdminTransactionRecordItem]? = nil) {
-        self.items = items
-    }
-}
-
 public struct AdminUsagePair: Codable {
     public let today: Double?
     public let total: Double?
@@ -2714,17 +3293,6 @@ public struct AdminUsagePair: Codable {
     public init(today: Double? = nil, total: Double? = nil) {
         self.today = today
         self.total = total
-    }
-}
-
-public struct AdminUserBalanceAdjustmentRequest: Codable {
-    public let amount: Double?
-    public let type: String?
-
-
-    public init(amount: Double? = nil, type: String? = nil) {
-        self.amount = amount
-        self.type = type
     }
 }
 
@@ -2801,32 +3369,28 @@ public struct AdminUsersResponse: Codable {
     }
 }
 
-public struct AgentsListResult: Codable {
+public struct AgentDefinitionsListResult: Codable {
     public let code: String?
     public let data: AdminAgentListResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAgentListResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAgentListResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
 
-public struct AgentsRetrieveResult: Codable {
+public struct AgentDefinitionsRetrieveResult: Codable {
     public let code: String?
     public let data: AdminAgentItem?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAgentItem? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAgentItem? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -3000,6 +3564,7 @@ public struct AiAgentRecord: Codable {
 
 public struct AiAgentRunRecord: Codable {
     public let agentId: String?
+    public let agentSessionId: String?
     public let agentVersionId: String?
     public let audioSeconds: String?
     public let cachedTokens: String?
@@ -3014,8 +3579,10 @@ public struct AiAgentRunRecord: Codable {
     public let imageCount: String?
     public let inputMessage: String?
     public let legalHold: Bool?
+    public let memorySpaceId: String?
     public let metadata: [String: String]?
     public let meteringStatus: String?
+    public let model: String?
     public let organizationId: String?
     public let outputMessage: String?
     public let payloadHash: String?
@@ -3023,8 +3590,8 @@ public struct AiAgentRunRecord: Codable {
     public let promptTokens: String?
     public let requestId: String?
     public let retentionUntil: String?
-    public let runStatus: String?
     public let runUuid: String?
+    public let runtime: String?
     public let sourceSurface: String?
     public let startedAt: String?
     public let status: String?
@@ -3034,13 +3601,15 @@ public struct AiAgentRunRecord: Codable {
     public let totalTokens: String?
     public let traceId: String?
     public let usageFactId: String?
+    public let usageJson: [String: String]?
     public let userId: String?
     public let uuid: String?
     public let videoSeconds: String?
 
 
-    public init(agentId: String? = nil, agentVersionId: String? = nil, audioSeconds: String? = nil, cachedTokens: String? = nil, cancelledAt: String? = nil, completedAt: String? = nil, completionTokens: String? = nil, createdAt: String? = nil, errorMessageMasked: String? = nil, executionMode: String? = nil, failedAt: String? = nil, id: String? = nil, imageCount: String? = nil, inputMessage: String? = nil, legalHold: Bool? = nil, metadata: [String: String]? = nil, meteringStatus: String? = nil, organizationId: String? = nil, outputMessage: String? = nil, payloadHash: String? = nil, plannerModel: String? = nil, promptTokens: String? = nil, requestId: String? = nil, retentionUntil: String? = nil, runStatus: String? = nil, runUuid: String? = nil, sourceSurface: String? = nil, startedAt: String? = nil, status: String? = nil, targetModality: String? = nil, tenantId: String? = nil, totalSteps: Int? = nil, totalTokens: String? = nil, traceId: String? = nil, usageFactId: String? = nil, userId: String? = nil, uuid: String? = nil, videoSeconds: String? = nil) {
+    public init(agentId: String? = nil, agentSessionId: String? = nil, agentVersionId: String? = nil, audioSeconds: String? = nil, cachedTokens: String? = nil, cancelledAt: String? = nil, completedAt: String? = nil, completionTokens: String? = nil, createdAt: String? = nil, errorMessageMasked: String? = nil, executionMode: String? = nil, failedAt: String? = nil, id: String? = nil, imageCount: String? = nil, inputMessage: String? = nil, legalHold: Bool? = nil, memorySpaceId: String? = nil, metadata: [String: String]? = nil, meteringStatus: String? = nil, model: String? = nil, organizationId: String? = nil, outputMessage: String? = nil, payloadHash: String? = nil, plannerModel: String? = nil, promptTokens: String? = nil, requestId: String? = nil, retentionUntil: String? = nil, runUuid: String? = nil, runtime: String? = nil, sourceSurface: String? = nil, startedAt: String? = nil, status: String? = nil, targetModality: String? = nil, tenantId: String? = nil, totalSteps: Int? = nil, totalTokens: String? = nil, traceId: String? = nil, usageFactId: String? = nil, usageJson: [String: String]? = nil, userId: String? = nil, uuid: String? = nil, videoSeconds: String? = nil) {
         self.agentId = agentId
+        self.agentSessionId = agentSessionId
         self.agentVersionId = agentVersionId
         self.audioSeconds = audioSeconds
         self.cachedTokens = cachedTokens
@@ -3055,8 +3624,10 @@ public struct AiAgentRunRecord: Codable {
         self.imageCount = imageCount
         self.inputMessage = inputMessage
         self.legalHold = legalHold
+        self.memorySpaceId = memorySpaceId
         self.metadata = metadata
         self.meteringStatus = meteringStatus
+        self.model = model
         self.organizationId = organizationId
         self.outputMessage = outputMessage
         self.payloadHash = payloadHash
@@ -3064,8 +3635,8 @@ public struct AiAgentRunRecord: Codable {
         self.promptTokens = promptTokens
         self.requestId = requestId
         self.retentionUntil = retentionUntil
-        self.runStatus = runStatus
         self.runUuid = runUuid
+        self.runtime = runtime
         self.sourceSurface = sourceSurface
         self.startedAt = startedAt
         self.status = status
@@ -3075,6 +3646,7 @@ public struct AiAgentRunRecord: Codable {
         self.totalTokens = totalTokens
         self.traceId = traceId
         self.usageFactId = usageFactId
+        self.usageJson = usageJson
         self.userId = userId
         self.uuid = uuid
         self.videoSeconds = videoSeconds
@@ -3105,24 +3677,26 @@ public struct AiAgentRunStepRecord: Codable {
     public let requestId: String?
     public let retentionUntil: String?
     public let runId: String?
+    public let runtimeInvocationId: String?
     public let skillId: String?
     public let startedAt: String?
     public let status: String?
     public let stepIndex: Int?
-    public let stepStatus: String?
     public let stepType: String?
     public let tenantId: String?
     public let title: String?
     public let toolBindingId: String?
+    public let toolName: String?
     public let totalTokens: String?
     public let traceId: String?
     public let usageFactId: String?
+    public let usageJson: [String: String]?
     public let userId: String?
     public let uuid: String?
     public let videoSeconds: String?
 
 
-    public init(agentId: String? = nil, agentVersionId: String? = nil, audioSeconds: String? = nil, cachedTokens: String? = nil, completedAt: String? = nil, completionTokens: String? = nil, createdAt: String? = nil, errorMessageMasked: String? = nil, id: String? = nil, imageCount: String? = nil, inputSnapshot: [String: String]? = nil, latencyMs: Int? = nil, legalHold: Bool? = nil, mcpServerId: String? = nil, metadata: [String: String]? = nil, model: String? = nil, organizationId: String? = nil, outputSnapshot: [String: String]? = nil, payloadHash: String? = nil, promptTokens: String? = nil, requestId: String? = nil, retentionUntil: String? = nil, runId: String? = nil, skillId: String? = nil, startedAt: String? = nil, status: String? = nil, stepIndex: Int? = nil, stepStatus: String? = nil, stepType: String? = nil, tenantId: String? = nil, title: String? = nil, toolBindingId: String? = nil, totalTokens: String? = nil, traceId: String? = nil, usageFactId: String? = nil, userId: String? = nil, uuid: String? = nil, videoSeconds: String? = nil) {
+    public init(agentId: String? = nil, agentVersionId: String? = nil, audioSeconds: String? = nil, cachedTokens: String? = nil, completedAt: String? = nil, completionTokens: String? = nil, createdAt: String? = nil, errorMessageMasked: String? = nil, id: String? = nil, imageCount: String? = nil, inputSnapshot: [String: String]? = nil, latencyMs: Int? = nil, legalHold: Bool? = nil, mcpServerId: String? = nil, metadata: [String: String]? = nil, model: String? = nil, organizationId: String? = nil, outputSnapshot: [String: String]? = nil, payloadHash: String? = nil, promptTokens: String? = nil, requestId: String? = nil, retentionUntil: String? = nil, runId: String? = nil, runtimeInvocationId: String? = nil, skillId: String? = nil, startedAt: String? = nil, status: String? = nil, stepIndex: Int? = nil, stepType: String? = nil, tenantId: String? = nil, title: String? = nil, toolBindingId: String? = nil, toolName: String? = nil, totalTokens: String? = nil, traceId: String? = nil, usageFactId: String? = nil, usageJson: [String: String]? = nil, userId: String? = nil, uuid: String? = nil, videoSeconds: String? = nil) {
         self.agentId = agentId
         self.agentVersionId = agentVersionId
         self.audioSeconds = audioSeconds
@@ -3146,21 +3720,128 @@ public struct AiAgentRunStepRecord: Codable {
         self.requestId = requestId
         self.retentionUntil = retentionUntil
         self.runId = runId
+        self.runtimeInvocationId = runtimeInvocationId
         self.skillId = skillId
         self.startedAt = startedAt
         self.status = status
         self.stepIndex = stepIndex
-        self.stepStatus = stepStatus
         self.stepType = stepType
         self.tenantId = tenantId
         self.title = title
         self.toolBindingId = toolBindingId
+        self.toolName = toolName
         self.totalTokens = totalTokens
         self.traceId = traceId
         self.usageFactId = usageFactId
+        self.usageJson = usageJson
         self.userId = userId
         self.uuid = uuid
         self.videoSeconds = videoSeconds
+    }
+}
+
+public struct AiAgentSessionRecord: Codable {
+    public let agentId: String?
+    public let agentVersionId: String?
+    public let approvalPolicy: String?
+    public let chatConversationId: String?
+    public let createdAt: String?
+    public let cwd: String?
+    public let dataScope: String?
+    public let defaultModel: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let executionMode: String?
+    public let forkedFromRunId: String?
+    public let forkedFromStepId: String?
+    public let gitBranch: String?
+    public let gitCommit: String?
+    public let id: String?
+    public let lastActiveAt: String?
+    public let lastRunId: String?
+    public let lastStepId: String?
+    public let memorySpaceId: String?
+    public let metadata: [String: String]?
+    public let organizationId: String?
+    public let ownerId: String?
+    public let ownerType: String?
+    public let parentSessionId: String?
+    public let permissionMode: String?
+    public let providerConversationId: String?
+    public let providerSessionId: String?
+    public let repositoryId: String?
+    public let resumeStrategy: String?
+    public let runCount: String?
+    public let runtime: String?
+    public let runtimeStateStorageKey: String?
+    public let sandboxPolicy: String?
+    public let sessionCode: String?
+    public let sessionKind: String?
+    public let sourceSurface: String?
+    public let status: String?
+    public let stepCount: String?
+    public let summary: String?
+    public let tenantId: String?
+    public let title: String?
+    public let toolCallCount: String?
+    public let updatedAt: String?
+    public let userId: String?
+    public let uuid: String?
+    public let version: String?
+    public let visibility: String?
+    public let workspaceId: String?
+
+
+    public init(agentId: String? = nil, agentVersionId: String? = nil, approvalPolicy: String? = nil, chatConversationId: String? = nil, createdAt: String? = nil, cwd: String? = nil, dataScope: String? = nil, defaultModel: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, executionMode: String? = nil, forkedFromRunId: String? = nil, forkedFromStepId: String? = nil, gitBranch: String? = nil, gitCommit: String? = nil, id: String? = nil, lastActiveAt: String? = nil, lastRunId: String? = nil, lastStepId: String? = nil, memorySpaceId: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, ownerId: String? = nil, ownerType: String? = nil, parentSessionId: String? = nil, permissionMode: String? = nil, providerConversationId: String? = nil, providerSessionId: String? = nil, repositoryId: String? = nil, resumeStrategy: String? = nil, runCount: String? = nil, runtime: String? = nil, runtimeStateStorageKey: String? = nil, sandboxPolicy: String? = nil, sessionCode: String? = nil, sessionKind: String? = nil, sourceSurface: String? = nil, status: String? = nil, stepCount: String? = nil, summary: String? = nil, tenantId: String? = nil, title: String? = nil, toolCallCount: String? = nil, updatedAt: String? = nil, userId: String? = nil, uuid: String? = nil, version: String? = nil, visibility: String? = nil, workspaceId: String? = nil) {
+        self.agentId = agentId
+        self.agentVersionId = agentVersionId
+        self.approvalPolicy = approvalPolicy
+        self.chatConversationId = chatConversationId
+        self.createdAt = createdAt
+        self.cwd = cwd
+        self.dataScope = dataScope
+        self.defaultModel = defaultModel
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.executionMode = executionMode
+        self.forkedFromRunId = forkedFromRunId
+        self.forkedFromStepId = forkedFromStepId
+        self.gitBranch = gitBranch
+        self.gitCommit = gitCommit
+        self.id = id
+        self.lastActiveAt = lastActiveAt
+        self.lastRunId = lastRunId
+        self.lastStepId = lastStepId
+        self.memorySpaceId = memorySpaceId
+        self.metadata = metadata
+        self.organizationId = organizationId
+        self.ownerId = ownerId
+        self.ownerType = ownerType
+        self.parentSessionId = parentSessionId
+        self.permissionMode = permissionMode
+        self.providerConversationId = providerConversationId
+        self.providerSessionId = providerSessionId
+        self.repositoryId = repositoryId
+        self.resumeStrategy = resumeStrategy
+        self.runCount = runCount
+        self.runtime = runtime
+        self.runtimeStateStorageKey = runtimeStateStorageKey
+        self.sandboxPolicy = sandboxPolicy
+        self.sessionCode = sessionCode
+        self.sessionKind = sessionKind
+        self.sourceSurface = sourceSurface
+        self.status = status
+        self.stepCount = stepCount
+        self.summary = summary
+        self.tenantId = tenantId
+        self.title = title
+        self.toolCallCount = toolCallCount
+        self.updatedAt = updatedAt
+        self.userId = userId
+        self.uuid = uuid
+        self.version = version
+        self.visibility = visibility
+        self.workspaceId = workspaceId
     }
 }
 
@@ -3340,6 +4021,432 @@ public struct AiBillingMeterRecord: Codable {
         self.usageType = usageType
         self.uuid = uuid
         self.version = version
+    }
+}
+
+public struct AiChatContextSnapshotRecord: Codable {
+    public let contextJson: [String: String]?
+    public let conversationId: String?
+    public let createdAt: String?
+    public let excludedItemIds: [String: String]?
+    public let excludedMemoryIds: [String: String]?
+    public let id: String?
+    public let includedItemIds: [String: String]?
+    public let includedMemoryIds: [String: String]?
+    public let inputTokenEstimate: String?
+    public let legalHold: Bool?
+    public let memoryPack: [String: String]?
+    public let memoryTokenCount: String?
+    public let metadata: [String: String]?
+    public let organizationId: String?
+    public let payloadHash: String?
+    public let previousResponseId: String?
+    public let providerConversationId: String?
+    public let requestId: String?
+    public let retentionUntil: String?
+    public let runtimeInvocationId: String?
+    public let snapshotNo: Int?
+    public let status: String?
+    public let strategy: String?
+    public let tenantId: String?
+    public let traceId: String?
+    public let truncationReason: String?
+    public let turnId: String?
+    public let userId: String?
+    public let uuid: String?
+
+
+    public init(contextJson: [String: String]? = nil, conversationId: String? = nil, createdAt: String? = nil, excludedItemIds: [String: String]? = nil, excludedMemoryIds: [String: String]? = nil, id: String? = nil, includedItemIds: [String: String]? = nil, includedMemoryIds: [String: String]? = nil, inputTokenEstimate: String? = nil, legalHold: Bool? = nil, memoryPack: [String: String]? = nil, memoryTokenCount: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, payloadHash: String? = nil, previousResponseId: String? = nil, providerConversationId: String? = nil, requestId: String? = nil, retentionUntil: String? = nil, runtimeInvocationId: String? = nil, snapshotNo: Int? = nil, status: String? = nil, strategy: String? = nil, tenantId: String? = nil, traceId: String? = nil, truncationReason: String? = nil, turnId: String? = nil, userId: String? = nil, uuid: String? = nil) {
+        self.contextJson = contextJson
+        self.conversationId = conversationId
+        self.createdAt = createdAt
+        self.excludedItemIds = excludedItemIds
+        self.excludedMemoryIds = excludedMemoryIds
+        self.id = id
+        self.includedItemIds = includedItemIds
+        self.includedMemoryIds = includedMemoryIds
+        self.inputTokenEstimate = inputTokenEstimate
+        self.legalHold = legalHold
+        self.memoryPack = memoryPack
+        self.memoryTokenCount = memoryTokenCount
+        self.metadata = metadata
+        self.organizationId = organizationId
+        self.payloadHash = payloadHash
+        self.previousResponseId = previousResponseId
+        self.providerConversationId = providerConversationId
+        self.requestId = requestId
+        self.retentionUntil = retentionUntil
+        self.runtimeInvocationId = runtimeInvocationId
+        self.snapshotNo = snapshotNo
+        self.status = status
+        self.strategy = strategy
+        self.tenantId = tenantId
+        self.traceId = traceId
+        self.truncationReason = truncationReason
+        self.turnId = turnId
+        self.userId = userId
+        self.uuid = uuid
+    }
+}
+
+public struct AiChatConversationRecord: Codable {
+    public let agentId: String?
+    public let agentSessionId: String?
+    public let cachedTokenTotal: String?
+    public let conversationCode: String?
+    public let costAmountTotal: String?
+    public let createdAt: String?
+    public let currency: String?
+    public let dataScope: String?
+    public let defaultEndpoint: String?
+    public let defaultModel: String?
+    public let defaultProvider: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let id: String?
+    public let inputTokenTotal: String?
+    public let itemCount: String?
+    public let lastItemId: String?
+    public let lastMessagePreview: String?
+    public let lastTurnId: String?
+    public let memorySpaceId: String?
+    public let messageCount: String?
+    public let metadata: [String: String]?
+    public let organizationId: String?
+    public let outputTokenTotal: String?
+    public let ownerId: String?
+    public let ownerType: String?
+    public let reasoningTokenTotal: String?
+    public let sourceSurface: String?
+    public let status: String?
+    public let summary: String?
+    public let tenantId: String?
+    public let title: String?
+    public let turnCount: String?
+    public let updatedAt: String?
+    public let userId: String?
+    public let uuid: String?
+    public let version: String?
+    public let visibility: String?
+
+
+    public init(agentId: String? = nil, agentSessionId: String? = nil, cachedTokenTotal: String? = nil, conversationCode: String? = nil, costAmountTotal: String? = nil, createdAt: String? = nil, currency: String? = nil, dataScope: String? = nil, defaultEndpoint: String? = nil, defaultModel: String? = nil, defaultProvider: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, id: String? = nil, inputTokenTotal: String? = nil, itemCount: String? = nil, lastItemId: String? = nil, lastMessagePreview: String? = nil, lastTurnId: String? = nil, memorySpaceId: String? = nil, messageCount: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, outputTokenTotal: String? = nil, ownerId: String? = nil, ownerType: String? = nil, reasoningTokenTotal: String? = nil, sourceSurface: String? = nil, status: String? = nil, summary: String? = nil, tenantId: String? = nil, title: String? = nil, turnCount: String? = nil, updatedAt: String? = nil, userId: String? = nil, uuid: String? = nil, version: String? = nil, visibility: String? = nil) {
+        self.agentId = agentId
+        self.agentSessionId = agentSessionId
+        self.cachedTokenTotal = cachedTokenTotal
+        self.conversationCode = conversationCode
+        self.costAmountTotal = costAmountTotal
+        self.createdAt = createdAt
+        self.currency = currency
+        self.dataScope = dataScope
+        self.defaultEndpoint = defaultEndpoint
+        self.defaultModel = defaultModel
+        self.defaultProvider = defaultProvider
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.id = id
+        self.inputTokenTotal = inputTokenTotal
+        self.itemCount = itemCount
+        self.lastItemId = lastItemId
+        self.lastMessagePreview = lastMessagePreview
+        self.lastTurnId = lastTurnId
+        self.memorySpaceId = memorySpaceId
+        self.messageCount = messageCount
+        self.metadata = metadata
+        self.organizationId = organizationId
+        self.outputTokenTotal = outputTokenTotal
+        self.ownerId = ownerId
+        self.ownerType = ownerType
+        self.reasoningTokenTotal = reasoningTokenTotal
+        self.sourceSurface = sourceSurface
+        self.status = status
+        self.summary = summary
+        self.tenantId = tenantId
+        self.title = title
+        self.turnCount = turnCount
+        self.updatedAt = updatedAt
+        self.userId = userId
+        self.uuid = uuid
+        self.version = version
+        self.visibility = visibility
+    }
+}
+
+public struct AiChatItemRecord: Codable {
+    public let completedAt: String?
+    public let contentJson: [String: String]?
+    public let contentText: String?
+    public let conversationId: String?
+    public let createdAt: String?
+    public let direction: String?
+    public let id: String?
+    public let itemType: String?
+    public let legalHold: Bool?
+    public let metadata: [String: String]?
+    public let model: String?
+    public let organizationId: String?
+    public let parentItemId: String?
+    public let payloadHash: String?
+    public let provider: String?
+    public let providerCallId: String?
+    public let providerItemId: String?
+    public let providerResponseId: String?
+    public let rawProviderJson: [String: String]?
+    public let requestId: String?
+    public let retentionUntil: String?
+    public let role: String?
+    public let runtime: String?
+    public let runtimeInvocationId: String?
+    public let sequenceNo: String?
+    public let status: String?
+    public let tenantId: String?
+    public let traceId: String?
+    public let turnId: String?
+    public let userId: String?
+    public let uuid: String?
+
+
+    public init(completedAt: String? = nil, contentJson: [String: String]? = nil, contentText: String? = nil, conversationId: String? = nil, createdAt: String? = nil, direction: String? = nil, id: String? = nil, itemType: String? = nil, legalHold: Bool? = nil, metadata: [String: String]? = nil, model: String? = nil, organizationId: String? = nil, parentItemId: String? = nil, payloadHash: String? = nil, provider: String? = nil, providerCallId: String? = nil, providerItemId: String? = nil, providerResponseId: String? = nil, rawProviderJson: [String: String]? = nil, requestId: String? = nil, retentionUntil: String? = nil, role: String? = nil, runtime: String? = nil, runtimeInvocationId: String? = nil, sequenceNo: String? = nil, status: String? = nil, tenantId: String? = nil, traceId: String? = nil, turnId: String? = nil, userId: String? = nil, uuid: String? = nil) {
+        self.completedAt = completedAt
+        self.contentJson = contentJson
+        self.contentText = contentText
+        self.conversationId = conversationId
+        self.createdAt = createdAt
+        self.direction = direction
+        self.id = id
+        self.itemType = itemType
+        self.legalHold = legalHold
+        self.metadata = metadata
+        self.model = model
+        self.organizationId = organizationId
+        self.parentItemId = parentItemId
+        self.payloadHash = payloadHash
+        self.provider = provider
+        self.providerCallId = providerCallId
+        self.providerItemId = providerItemId
+        self.providerResponseId = providerResponseId
+        self.rawProviderJson = rawProviderJson
+        self.requestId = requestId
+        self.retentionUntil = retentionUntil
+        self.role = role
+        self.runtime = runtime
+        self.runtimeInvocationId = runtimeInvocationId
+        self.sequenceNo = sequenceNo
+        self.status = status
+        self.tenantId = tenantId
+        self.traceId = traceId
+        self.turnId = turnId
+        self.userId = userId
+        self.uuid = uuid
+    }
+}
+
+public struct AiChatMessagePartRecord: Codable {
+    public let assetId: String?
+    public let createdAt: String?
+    public let fileName: String?
+    public let fileSize: String?
+    public let id: String?
+    public let itemId: String?
+    public let jsonContent: [String: String]?
+    public let legalHold: Bool?
+    public let messageId: String?
+    public let metadata: [String: String]?
+    public let mimeType: String?
+    public let organizationId: String?
+    public let partNo: Int?
+    public let partType: String?
+    public let payloadHash: String?
+    public let providerPartId: String?
+    public let requestId: String?
+    public let retentionUntil: String?
+    public let sha256: String?
+    public let status: String?
+    public let storageUrl: String?
+    public let tenantId: String?
+    public let textContent: String?
+    public let traceId: String?
+    public let userId: String?
+    public let uuid: String?
+
+
+    public init(assetId: String? = nil, createdAt: String? = nil, fileName: String? = nil, fileSize: String? = nil, id: String? = nil, itemId: String? = nil, jsonContent: [String: String]? = nil, legalHold: Bool? = nil, messageId: String? = nil, metadata: [String: String]? = nil, mimeType: String? = nil, organizationId: String? = nil, partNo: Int? = nil, partType: String? = nil, payloadHash: String? = nil, providerPartId: String? = nil, requestId: String? = nil, retentionUntil: String? = nil, sha256: String? = nil, status: String? = nil, storageUrl: String? = nil, tenantId: String? = nil, textContent: String? = nil, traceId: String? = nil, userId: String? = nil, uuid: String? = nil) {
+        self.assetId = assetId
+        self.createdAt = createdAt
+        self.fileName = fileName
+        self.fileSize = fileSize
+        self.id = id
+        self.itemId = itemId
+        self.jsonContent = jsonContent
+        self.legalHold = legalHold
+        self.messageId = messageId
+        self.metadata = metadata
+        self.mimeType = mimeType
+        self.organizationId = organizationId
+        self.partNo = partNo
+        self.partType = partType
+        self.payloadHash = payloadHash
+        self.providerPartId = providerPartId
+        self.requestId = requestId
+        self.retentionUntil = retentionUntil
+        self.sha256 = sha256
+        self.status = status
+        self.storageUrl = storageUrl
+        self.tenantId = tenantId
+        self.textContent = textContent
+        self.traceId = traceId
+        self.userId = userId
+        self.uuid = uuid
+    }
+}
+
+public struct AiChatMessageRecord: Codable {
+    public let contentJson: [String: String]?
+    public let contentText: String?
+    public let conversationId: String?
+    public let createdAt: String?
+    public let direction: String?
+    public let finishReason: String?
+    public let id: String?
+    public let itemId: String?
+    public let legalHold: Bool?
+    public let messageKind: String?
+    public let messageNo: String?
+    public let metadata: [String: String]?
+    public let model: String?
+    public let organizationId: String?
+    public let payloadHash: String?
+    public let provider: String?
+    public let rawProviderJson: [String: String]?
+    public let requestId: String?
+    public let retentionUntil: String?
+    public let role: String?
+    public let runtime: String?
+    public let runtimeInvocationId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let tokenCount: String?
+    public let traceId: String?
+    public let turnId: String?
+    public let usageLinkId: String?
+    public let userId: String?
+    public let uuid: String?
+
+
+    public init(contentJson: [String: String]? = nil, contentText: String? = nil, conversationId: String? = nil, createdAt: String? = nil, direction: String? = nil, finishReason: String? = nil, id: String? = nil, itemId: String? = nil, legalHold: Bool? = nil, messageKind: String? = nil, messageNo: String? = nil, metadata: [String: String]? = nil, model: String? = nil, organizationId: String? = nil, payloadHash: String? = nil, provider: String? = nil, rawProviderJson: [String: String]? = nil, requestId: String? = nil, retentionUntil: String? = nil, role: String? = nil, runtime: String? = nil, runtimeInvocationId: String? = nil, status: String? = nil, tenantId: String? = nil, tokenCount: String? = nil, traceId: String? = nil, turnId: String? = nil, usageLinkId: String? = nil, userId: String? = nil, uuid: String? = nil) {
+        self.contentJson = contentJson
+        self.contentText = contentText
+        self.conversationId = conversationId
+        self.createdAt = createdAt
+        self.direction = direction
+        self.finishReason = finishReason
+        self.id = id
+        self.itemId = itemId
+        self.legalHold = legalHold
+        self.messageKind = messageKind
+        self.messageNo = messageNo
+        self.metadata = metadata
+        self.model = model
+        self.organizationId = organizationId
+        self.payloadHash = payloadHash
+        self.provider = provider
+        self.rawProviderJson = rawProviderJson
+        self.requestId = requestId
+        self.retentionUntil = retentionUntil
+        self.role = role
+        self.runtime = runtime
+        self.runtimeInvocationId = runtimeInvocationId
+        self.status = status
+        self.tenantId = tenantId
+        self.tokenCount = tokenCount
+        self.traceId = traceId
+        self.turnId = turnId
+        self.usageLinkId = usageLinkId
+        self.userId = userId
+        self.uuid = uuid
+    }
+}
+
+public struct AiChatTurnRecord: Codable {
+    public let agentId: String?
+    public let agentSessionId: String?
+    public let branchId: String?
+    public let cachedTokenTotal: String?
+    public let completedAt: String?
+    public let contextSnapshotId: String?
+    public let conversationId: String?
+    public let costAmount: String?
+    public let createdAt: String?
+    public let currency: String?
+    public let endpoint: String?
+    public let finalOutputItemId: String?
+    public let id: String?
+    public let inputItemId: String?
+    public let inputTokenTotal: String?
+    public let legalHold: Bool?
+    public let metadata: [String: String]?
+    public let model: String?
+    public let organizationId: String?
+    public let outputTokenTotal: String?
+    public let parentTurnId: String?
+    public let payloadHash: String?
+    public let provider: String?
+    public let reasoningTokenTotal: String?
+    public let requestId: String?
+    public let requestSnapshot: [String: String]?
+    public let responseSnapshot: [String: String]?
+    public let retentionUntil: String?
+    public let runtimeInvocationId: String?
+    public let startedAt: String?
+    public let status: String?
+    public let streaming: Bool?
+    public let tenantId: String?
+    public let traceId: String?
+    public let turnNo: String?
+    public let usageSnapshot: [String: String]?
+    public let userId: String?
+    public let uuid: String?
+
+
+    public init(agentId: String? = nil, agentSessionId: String? = nil, branchId: String? = nil, cachedTokenTotal: String? = nil, completedAt: String? = nil, contextSnapshotId: String? = nil, conversationId: String? = nil, costAmount: String? = nil, createdAt: String? = nil, currency: String? = nil, endpoint: String? = nil, finalOutputItemId: String? = nil, id: String? = nil, inputItemId: String? = nil, inputTokenTotal: String? = nil, legalHold: Bool? = nil, metadata: [String: String]? = nil, model: String? = nil, organizationId: String? = nil, outputTokenTotal: String? = nil, parentTurnId: String? = nil, payloadHash: String? = nil, provider: String? = nil, reasoningTokenTotal: String? = nil, requestId: String? = nil, requestSnapshot: [String: String]? = nil, responseSnapshot: [String: String]? = nil, retentionUntil: String? = nil, runtimeInvocationId: String? = nil, startedAt: String? = nil, status: String? = nil, streaming: Bool? = nil, tenantId: String? = nil, traceId: String? = nil, turnNo: String? = nil, usageSnapshot: [String: String]? = nil, userId: String? = nil, uuid: String? = nil) {
+        self.agentId = agentId
+        self.agentSessionId = agentSessionId
+        self.branchId = branchId
+        self.cachedTokenTotal = cachedTokenTotal
+        self.completedAt = completedAt
+        self.contextSnapshotId = contextSnapshotId
+        self.conversationId = conversationId
+        self.costAmount = costAmount
+        self.createdAt = createdAt
+        self.currency = currency
+        self.endpoint = endpoint
+        self.finalOutputItemId = finalOutputItemId
+        self.id = id
+        self.inputItemId = inputItemId
+        self.inputTokenTotal = inputTokenTotal
+        self.legalHold = legalHold
+        self.metadata = metadata
+        self.model = model
+        self.organizationId = organizationId
+        self.outputTokenTotal = outputTokenTotal
+        self.parentTurnId = parentTurnId
+        self.payloadHash = payloadHash
+        self.provider = provider
+        self.reasoningTokenTotal = reasoningTokenTotal
+        self.requestId = requestId
+        self.requestSnapshot = requestSnapshot
+        self.responseSnapshot = responseSnapshot
+        self.retentionUntil = retentionUntil
+        self.runtimeInvocationId = runtimeInvocationId
+        self.startedAt = startedAt
+        self.status = status
+        self.streaming = streaming
+        self.tenantId = tenantId
+        self.traceId = traceId
+        self.turnNo = turnNo
+        self.usageSnapshot = usageSnapshot
+        self.userId = userId
+        self.uuid = uuid
     }
 }
 
@@ -3593,6 +4700,360 @@ public struct AiGenerationSessionRecord: Codable {
     }
 }
 
+public struct AiMemoryEmbeddingRecord: Codable {
+    public let contentHash: String?
+    public let createdAt: String?
+    public let dataScope: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let embeddingDimensions: Int?
+    public let embeddingModel: String?
+    public let embeddingProvider: String?
+    public let id: String?
+    public let indexedAt: String?
+    public let memoryId: String?
+    public let metadata: [String: String]?
+    public let organizationId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let uuid: String?
+    public let vectorJson: [String: String]?
+    public let vectorStorageKey: String?
+    public let version: String?
+
+
+    public init(contentHash: String? = nil, createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, embeddingDimensions: Int? = nil, embeddingModel: String? = nil, embeddingProvider: String? = nil, id: String? = nil, indexedAt: String? = nil, memoryId: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, uuid: String? = nil, vectorJson: [String: String]? = nil, vectorStorageKey: String? = nil, version: String? = nil) {
+        self.contentHash = contentHash
+        self.createdAt = createdAt
+        self.dataScope = dataScope
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.embeddingDimensions = embeddingDimensions
+        self.embeddingModel = embeddingModel
+        self.embeddingProvider = embeddingProvider
+        self.id = id
+        self.indexedAt = indexedAt
+        self.memoryId = memoryId
+        self.metadata = metadata
+        self.organizationId = organizationId
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.uuid = uuid
+        self.vectorJson = vectorJson
+        self.vectorStorageKey = vectorStorageKey
+        self.version = version
+    }
+}
+
+public struct AiMemoryEntryRecord: Codable {
+    public let confidenceScore: String?
+    public let contentJson: [String: String]?
+    public let contentText: String?
+    public let createdAt: String?
+    public let createdBy: String?
+    public let dataScope: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let expiresAt: String?
+    public let id: String?
+    public let importanceScore: String?
+    public let lastRecalledAt: String?
+    public let memoryCode: String?
+    public let memoryType: String?
+    public let metadata: [String: String]?
+    public let organizationId: String?
+    public let ownerId: String?
+    public let ownerType: String?
+    public let recallCount: String?
+    public let sensitivityLevel: String?
+    public let sourceConversationId: String?
+    public let sourceInvocationId: String?
+    public let sourceItemId: String?
+    public let sourceKind: String?
+    public let sourceTurnId: String?
+    public let spaceId: String?
+    public let status: String?
+    public let subjectKey: String?
+    public let subjectType: String?
+    public let supersedesMemoryId: String?
+    public let tenantId: String?
+    public let trustLevel: String?
+    public let updatedAt: String?
+    public let userId: String?
+    public let uuid: String?
+    public let validFrom: String?
+    public let validUntil: String?
+    public let version: String?
+    public let versionNo: String?
+
+
+    public init(confidenceScore: String? = nil, contentJson: [String: String]? = nil, contentText: String? = nil, createdAt: String? = nil, createdBy: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, expiresAt: String? = nil, id: String? = nil, importanceScore: String? = nil, lastRecalledAt: String? = nil, memoryCode: String? = nil, memoryType: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, ownerId: String? = nil, ownerType: String? = nil, recallCount: String? = nil, sensitivityLevel: String? = nil, sourceConversationId: String? = nil, sourceInvocationId: String? = nil, sourceItemId: String? = nil, sourceKind: String? = nil, sourceTurnId: String? = nil, spaceId: String? = nil, status: String? = nil, subjectKey: String? = nil, subjectType: String? = nil, supersedesMemoryId: String? = nil, tenantId: String? = nil, trustLevel: String? = nil, updatedAt: String? = nil, userId: String? = nil, uuid: String? = nil, validFrom: String? = nil, validUntil: String? = nil, version: String? = nil, versionNo: String? = nil) {
+        self.confidenceScore = confidenceScore
+        self.contentJson = contentJson
+        self.contentText = contentText
+        self.createdAt = createdAt
+        self.createdBy = createdBy
+        self.dataScope = dataScope
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.expiresAt = expiresAt
+        self.id = id
+        self.importanceScore = importanceScore
+        self.lastRecalledAt = lastRecalledAt
+        self.memoryCode = memoryCode
+        self.memoryType = memoryType
+        self.metadata = metadata
+        self.organizationId = organizationId
+        self.ownerId = ownerId
+        self.ownerType = ownerType
+        self.recallCount = recallCount
+        self.sensitivityLevel = sensitivityLevel
+        self.sourceConversationId = sourceConversationId
+        self.sourceInvocationId = sourceInvocationId
+        self.sourceItemId = sourceItemId
+        self.sourceKind = sourceKind
+        self.sourceTurnId = sourceTurnId
+        self.spaceId = spaceId
+        self.status = status
+        self.subjectKey = subjectKey
+        self.subjectType = subjectType
+        self.supersedesMemoryId = supersedesMemoryId
+        self.tenantId = tenantId
+        self.trustLevel = trustLevel
+        self.updatedAt = updatedAt
+        self.userId = userId
+        self.uuid = uuid
+        self.validFrom = validFrom
+        self.validUntil = validUntil
+        self.version = version
+        self.versionNo = versionNo
+    }
+}
+
+public struct AiMemoryEventRecord: Codable {
+    public let actorId: String?
+    public let actorType: String?
+    public let afterJson: [String: String]?
+    public let beforeJson: [String: String]?
+    public let conversationId: String?
+    public let createdAt: String?
+    public let decisionReason: String?
+    public let eventType: String?
+    public let id: String?
+    public let invocationId: String?
+    public let legalHold: Bool?
+    public let memoryId: String?
+    public let metadata: [String: String]?
+    public let organizationId: String?
+    public let payloadHash: String?
+    public let requestId: String?
+    public let retentionUntil: String?
+    public let spaceId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let traceId: String?
+    public let turnId: String?
+    public let userId: String?
+    public let uuid: String?
+
+
+    public init(actorId: String? = nil, actorType: String? = nil, afterJson: [String: String]? = nil, beforeJson: [String: String]? = nil, conversationId: String? = nil, createdAt: String? = nil, decisionReason: String? = nil, eventType: String? = nil, id: String? = nil, invocationId: String? = nil, legalHold: Bool? = nil, memoryId: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, payloadHash: String? = nil, requestId: String? = nil, retentionUntil: String? = nil, spaceId: String? = nil, status: String? = nil, tenantId: String? = nil, traceId: String? = nil, turnId: String? = nil, userId: String? = nil, uuid: String? = nil) {
+        self.actorId = actorId
+        self.actorType = actorType
+        self.afterJson = afterJson
+        self.beforeJson = beforeJson
+        self.conversationId = conversationId
+        self.createdAt = createdAt
+        self.decisionReason = decisionReason
+        self.eventType = eventType
+        self.id = id
+        self.invocationId = invocationId
+        self.legalHold = legalHold
+        self.memoryId = memoryId
+        self.metadata = metadata
+        self.organizationId = organizationId
+        self.payloadHash = payloadHash
+        self.requestId = requestId
+        self.retentionUntil = retentionUntil
+        self.spaceId = spaceId
+        self.status = status
+        self.tenantId = tenantId
+        self.traceId = traceId
+        self.turnId = turnId
+        self.userId = userId
+        self.uuid = uuid
+    }
+}
+
+public struct AiMemoryLinkRecord: Codable {
+    public let agentRunId: String?
+    public let agentRunStepId: String?
+    public let agentSessionId: String?
+    public let chatItemId: String?
+    public let chatTurnId: String?
+    public let conversationId: String?
+    public let createdAt: String?
+    public let id: String?
+    public let injectedTextSnapshot: String?
+    public let legalHold: Bool?
+    public let linkType: String?
+    public let memoryId: String?
+    public let memorySpaceId: String?
+    public let messageId: String?
+    public let metadata: [String: String]?
+    public let organizationId: String?
+    public let payloadHash: String?
+    public let policyDecision: String?
+    public let recallQuery: String?
+    public let recallRank: Int?
+    public let recallScore: String?
+    public let requestId: String?
+    public let retentionUntil: String?
+    public let runtimeInvocationId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let tokenCount: String?
+    public let traceId: String?
+    public let userId: String?
+    public let uuid: String?
+
+
+    public init(agentRunId: String? = nil, agentRunStepId: String? = nil, agentSessionId: String? = nil, chatItemId: String? = nil, chatTurnId: String? = nil, conversationId: String? = nil, createdAt: String? = nil, id: String? = nil, injectedTextSnapshot: String? = nil, legalHold: Bool? = nil, linkType: String? = nil, memoryId: String? = nil, memorySpaceId: String? = nil, messageId: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, payloadHash: String? = nil, policyDecision: String? = nil, recallQuery: String? = nil, recallRank: Int? = nil, recallScore: String? = nil, requestId: String? = nil, retentionUntil: String? = nil, runtimeInvocationId: String? = nil, status: String? = nil, tenantId: String? = nil, tokenCount: String? = nil, traceId: String? = nil, userId: String? = nil, uuid: String? = nil) {
+        self.agentRunId = agentRunId
+        self.agentRunStepId = agentRunStepId
+        self.agentSessionId = agentSessionId
+        self.chatItemId = chatItemId
+        self.chatTurnId = chatTurnId
+        self.conversationId = conversationId
+        self.createdAt = createdAt
+        self.id = id
+        self.injectedTextSnapshot = injectedTextSnapshot
+        self.legalHold = legalHold
+        self.linkType = linkType
+        self.memoryId = memoryId
+        self.memorySpaceId = memorySpaceId
+        self.messageId = messageId
+        self.metadata = metadata
+        self.organizationId = organizationId
+        self.payloadHash = payloadHash
+        self.policyDecision = policyDecision
+        self.recallQuery = recallQuery
+        self.recallRank = recallRank
+        self.recallScore = recallScore
+        self.requestId = requestId
+        self.retentionUntil = retentionUntil
+        self.runtimeInvocationId = runtimeInvocationId
+        self.status = status
+        self.tenantId = tenantId
+        self.tokenCount = tokenCount
+        self.traceId = traceId
+        self.userId = userId
+        self.uuid = uuid
+    }
+}
+
+public struct AiMemorySpaceBindingRecord: Codable {
+    public let bindingId: String?
+    public let bindingRole: String?
+    public let bindingType: String?
+    public let createdAt: String?
+    public let dataScope: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let enabled: Bool?
+    public let id: String?
+    public let memorySpaceId: String?
+    public let metadata: [String: String]?
+    public let organizationId: String?
+    public let priority: Int?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let uuid: String?
+    public let version: String?
+
+
+    public init(bindingId: String? = nil, bindingRole: String? = nil, bindingType: String? = nil, createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, enabled: Bool? = nil, id: String? = nil, memorySpaceId: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, priority: Int? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, uuid: String? = nil, version: String? = nil) {
+        self.bindingId = bindingId
+        self.bindingRole = bindingRole
+        self.bindingType = bindingType
+        self.createdAt = createdAt
+        self.dataScope = dataScope
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.enabled = enabled
+        self.id = id
+        self.memorySpaceId = memorySpaceId
+        self.metadata = metadata
+        self.organizationId = organizationId
+        self.priority = priority
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.uuid = uuid
+        self.version = version
+    }
+}
+
+public struct AiMemorySpaceRecord: Codable {
+    public let autoExtractEnabled: Bool?
+    public let autoRecallEnabled: Bool?
+    public let createdAt: String?
+    public let dataScope: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let entryCount: String?
+    public let id: String?
+    public let maxInjectedTokens: String?
+    public let memoryEnabled: Bool?
+    public let metadata: [String: String]?
+    public let organizationId: String?
+    public let ownerId: String?
+    public let ownerType: String?
+    public let retentionPolicy: [String: String]?
+    public let reviewRequired: Bool?
+    public let sensitivityPolicy: [String: String]?
+    public let spaceType: String?
+    public let status: String?
+    public let tenantId: String?
+    public let title: String?
+    public let updatedAt: String?
+    public let userId: String?
+    public let uuid: String?
+    public let version: String?
+
+
+    public init(autoExtractEnabled: Bool? = nil, autoRecallEnabled: Bool? = nil, createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, entryCount: String? = nil, id: String? = nil, maxInjectedTokens: String? = nil, memoryEnabled: Bool? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, ownerId: String? = nil, ownerType: String? = nil, retentionPolicy: [String: String]? = nil, reviewRequired: Bool? = nil, sensitivityPolicy: [String: String]? = nil, spaceType: String? = nil, status: String? = nil, tenantId: String? = nil, title: String? = nil, updatedAt: String? = nil, userId: String? = nil, uuid: String? = nil, version: String? = nil) {
+        self.autoExtractEnabled = autoExtractEnabled
+        self.autoRecallEnabled = autoRecallEnabled
+        self.createdAt = createdAt
+        self.dataScope = dataScope
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.entryCount = entryCount
+        self.id = id
+        self.maxInjectedTokens = maxInjectedTokens
+        self.memoryEnabled = memoryEnabled
+        self.metadata = metadata
+        self.organizationId = organizationId
+        self.ownerId = ownerId
+        self.ownerType = ownerType
+        self.retentionPolicy = retentionPolicy
+        self.reviewRequired = reviewRequired
+        self.sensitivityPolicy = sensitivityPolicy
+        self.spaceType = spaceType
+        self.status = status
+        self.tenantId = tenantId
+        self.title = title
+        self.updatedAt = updatedAt
+        self.userId = userId
+        self.uuid = uuid
+        self.version = version
+    }
+}
+
 public struct AiModelCapabilityRecord: Codable {
     public let capability: String?
     public let capabilityCode: String?
@@ -3615,7 +5076,6 @@ public struct AiModelCapabilityRecord: Codable {
     public let outputModalities: [String: String]?
     public let parameterName: String?
     public let parameterSchema: [String: String]?
-    public let regionCode: String?
     public let schemaVersion: String?
     public let sortOrder: Int?
     public let status: String?
@@ -3627,7 +5087,7 @@ public struct AiModelCapabilityRecord: Codable {
     public let version: String?
 
 
-    public init(capability: String? = nil, capabilityCode: String? = nil, catalogKey: String? = nil, createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, description: String? = nil, endpointFormats: [String: String]? = nil, id: String? = nil, inputModalities: [String: String]? = nil, limitUnit: String? = nil, limitValue: String? = nil, metadata: [String: String]? = nil, modality: String? = nil, model: String? = nil, modelId: String? = nil, organizationId: String? = nil, outputModalities: [String: String]? = nil, parameterName: String? = nil, parameterSchema: [String: String]? = nil, regionCode: String? = nil, schemaVersion: String? = nil, sortOrder: Int? = nil, status: String? = nil, supported: Bool? = nil, tenantId: String? = nil, updatedAt: String? = nil, uuid: String? = nil, vendorCode: String? = nil, version: String? = nil) {
+    public init(capability: String? = nil, capabilityCode: String? = nil, catalogKey: String? = nil, createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, description: String? = nil, endpointFormats: [String: String]? = nil, id: String? = nil, inputModalities: [String: String]? = nil, limitUnit: String? = nil, limitValue: String? = nil, metadata: [String: String]? = nil, modality: String? = nil, model: String? = nil, modelId: String? = nil, organizationId: String? = nil, outputModalities: [String: String]? = nil, parameterName: String? = nil, parameterSchema: [String: String]? = nil, schemaVersion: String? = nil, sortOrder: Int? = nil, status: String? = nil, supported: Bool? = nil, tenantId: String? = nil, updatedAt: String? = nil, uuid: String? = nil, vendorCode: String? = nil, version: String? = nil) {
         self.capability = capability
         self.capabilityCode = capabilityCode
         self.catalogKey = catalogKey
@@ -3649,7 +5109,6 @@ public struct AiModelCapabilityRecord: Codable {
         self.outputModalities = outputModalities
         self.parameterName = parameterName
         self.parameterSchema = parameterSchema
-        self.regionCode = regionCode
         self.schemaVersion = schemaVersion
         self.sortOrder = sortOrder
         self.status = status
@@ -4127,7 +5586,6 @@ public struct AiModelRecord: Codable {
     public let performanceProfile: [String: String]?
     public let providerHint: String?
     public let rankScore: String?
-    public let regionCode: String?
     public let releaseStage: String?
     public let replacementModel: String?
     public let retiredAt: String?
@@ -4149,7 +5607,7 @@ public struct AiModelRecord: Codable {
     public let version: String?
 
 
-    public init(apiFormat: String? = nil, capabilities: [String: String]? = nil, capability: String? = nil, capabilityIntro: String? = nil, catalogKey: String? = nil, colorToken: String? = nil, contextTokens: String? = nil, createdAt: String? = nil, dataScope: String? = nil, defaultPricingId: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, deprecatedAt: String? = nil, description: String? = nil, displayName: String? = nil, docsUrl: String? = nil, familyCode: String? = nil, familyId: String? = nil, iconUrl: String? = nil, id: String? = nil, inputModalities: [String: String]? = nil, licenseType: String? = nil, limitations: [String: String]? = nil, maxDurationSeconds: Int? = nil, maxInputTokens: String? = nil, maxOutputTokens: String? = nil, metadata: [String: String]? = nil, modalities: [String: String]? = nil, model: String? = nil, modelAliases: [String: String]? = nil, modelFamily: String? = nil, modelVersion: String? = nil, organizationId: String? = nil, outputModalities: [String: String]? = nil, performanceProfile: [String: String]? = nil, providerHint: String? = nil, rankScore: String? = nil, regionCode: String? = nil, releaseStage: String? = nil, replacementModel: String? = nil, retiredAt: String? = nil, routingState: String? = nil, shelfState: String? = nil, status: String? = nil, supportedLanguages: [String: String]? = nil, supportsJsonSchema: Bool? = nil, supportsStreaming: Bool? = nil, supportsTools: Bool? = nil, tenantId: String? = nil, trainingDataCutoff: String? = nil, updatedAt: String? = nil, useCases: [String: String]? = nil, uuid: String? = nil, vendorCode: String? = nil, vendorId: String? = nil, vendorNameSnapshot: String? = nil, version: String? = nil) {
+    public init(apiFormat: String? = nil, capabilities: [String: String]? = nil, capability: String? = nil, capabilityIntro: String? = nil, catalogKey: String? = nil, colorToken: String? = nil, contextTokens: String? = nil, createdAt: String? = nil, dataScope: String? = nil, defaultPricingId: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, deprecatedAt: String? = nil, description: String? = nil, displayName: String? = nil, docsUrl: String? = nil, familyCode: String? = nil, familyId: String? = nil, iconUrl: String? = nil, id: String? = nil, inputModalities: [String: String]? = nil, licenseType: String? = nil, limitations: [String: String]? = nil, maxDurationSeconds: Int? = nil, maxInputTokens: String? = nil, maxOutputTokens: String? = nil, metadata: [String: String]? = nil, modalities: [String: String]? = nil, model: String? = nil, modelAliases: [String: String]? = nil, modelFamily: String? = nil, modelVersion: String? = nil, organizationId: String? = nil, outputModalities: [String: String]? = nil, performanceProfile: [String: String]? = nil, providerHint: String? = nil, rankScore: String? = nil, releaseStage: String? = nil, replacementModel: String? = nil, retiredAt: String? = nil, routingState: String? = nil, shelfState: String? = nil, status: String? = nil, supportedLanguages: [String: String]? = nil, supportsJsonSchema: Bool? = nil, supportsStreaming: Bool? = nil, supportsTools: Bool? = nil, tenantId: String? = nil, trainingDataCutoff: String? = nil, updatedAt: String? = nil, useCases: [String: String]? = nil, uuid: String? = nil, vendorCode: String? = nil, vendorId: String? = nil, vendorNameSnapshot: String? = nil, version: String? = nil) {
         self.apiFormat = apiFormat
         self.capabilities = capabilities
         self.capability = capability
@@ -4187,7 +5645,6 @@ public struct AiModelRecord: Codable {
         self.performanceProfile = performanceProfile
         self.providerHint = providerHint
         self.rankScore = rankScore
-        self.regionCode = regionCode
         self.releaseStage = releaseStage
         self.replacementModel = replacementModel
         self.retiredAt = retiredAt
@@ -5194,6 +6651,304 @@ public struct AiRoutingRuleRecord: Codable {
     }
 }
 
+public struct AiRuntimeArtifactRecord: Codable {
+    public let agentRunId: String?
+    public let agentRunStepId: String?
+    public let agentSessionId: String?
+    public let artifactType: String?
+    public let chatItemId: String?
+    public let chatTurnId: String?
+    public let contentJson: [String: String]?
+    public let contentText: String?
+    public let conversationId: String?
+    public let createdAt: String?
+    public let id: String?
+    public let legalHold: Bool?
+    public let messageId: String?
+    public let metadata: [String: String]?
+    public let mimeType: String?
+    public let name: String?
+    public let organizationId: String?
+    public let payloadHash: String?
+    public let requestId: String?
+    public let retentionUntil: String?
+    public let runtimeInvocationId: String?
+    public let sha256: String?
+    public let sizeBytes: String?
+    public let status: String?
+    public let storageKey: String?
+    public let storageUrl: String?
+    public let tenantId: String?
+    public let traceId: String?
+    public let userId: String?
+    public let uuid: String?
+
+
+    public init(agentRunId: String? = nil, agentRunStepId: String? = nil, agentSessionId: String? = nil, artifactType: String? = nil, chatItemId: String? = nil, chatTurnId: String? = nil, contentJson: [String: String]? = nil, contentText: String? = nil, conversationId: String? = nil, createdAt: String? = nil, id: String? = nil, legalHold: Bool? = nil, messageId: String? = nil, metadata: [String: String]? = nil, mimeType: String? = nil, name: String? = nil, organizationId: String? = nil, payloadHash: String? = nil, requestId: String? = nil, retentionUntil: String? = nil, runtimeInvocationId: String? = nil, sha256: String? = nil, sizeBytes: String? = nil, status: String? = nil, storageKey: String? = nil, storageUrl: String? = nil, tenantId: String? = nil, traceId: String? = nil, userId: String? = nil, uuid: String? = nil) {
+        self.agentRunId = agentRunId
+        self.agentRunStepId = agentRunStepId
+        self.agentSessionId = agentSessionId
+        self.artifactType = artifactType
+        self.chatItemId = chatItemId
+        self.chatTurnId = chatTurnId
+        self.contentJson = contentJson
+        self.contentText = contentText
+        self.conversationId = conversationId
+        self.createdAt = createdAt
+        self.id = id
+        self.legalHold = legalHold
+        self.messageId = messageId
+        self.metadata = metadata
+        self.mimeType = mimeType
+        self.name = name
+        self.organizationId = organizationId
+        self.payloadHash = payloadHash
+        self.requestId = requestId
+        self.retentionUntil = retentionUntil
+        self.runtimeInvocationId = runtimeInvocationId
+        self.sha256 = sha256
+        self.sizeBytes = sizeBytes
+        self.status = status
+        self.storageKey = storageKey
+        self.storageUrl = storageUrl
+        self.tenantId = tenantId
+        self.traceId = traceId
+        self.userId = userId
+        self.uuid = uuid
+    }
+}
+
+public struct AiRuntimeInvocationEventRecord: Codable {
+    public let agentRunId: String?
+    public let agentRunStepId: String?
+    public let agentSessionId: String?
+    public let chatTurnId: String?
+    public let conversationId: String?
+    public let createdAt: String?
+    public let eventNo: String?
+    public let eventSource: String?
+    public let eventType: String?
+    public let id: String?
+    public let invocationId: String?
+    public let legalHold: Bool?
+    public let metadata: [String: String]?
+    public let organizationId: String?
+    public let payloadHash: String?
+    public let payloadJson: [String: String]?
+    public let requestId: String?
+    public let retentionUntil: String?
+    public let status: String?
+    public let tenantId: String?
+    public let textDelta: String?
+    public let traceId: String?
+    public let userId: String?
+    public let uuid: String?
+
+
+    public init(agentRunId: String? = nil, agentRunStepId: String? = nil, agentSessionId: String? = nil, chatTurnId: String? = nil, conversationId: String? = nil, createdAt: String? = nil, eventNo: String? = nil, eventSource: String? = nil, eventType: String? = nil, id: String? = nil, invocationId: String? = nil, legalHold: Bool? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, payloadHash: String? = nil, payloadJson: [String: String]? = nil, requestId: String? = nil, retentionUntil: String? = nil, status: String? = nil, tenantId: String? = nil, textDelta: String? = nil, traceId: String? = nil, userId: String? = nil, uuid: String? = nil) {
+        self.agentRunId = agentRunId
+        self.agentRunStepId = agentRunStepId
+        self.agentSessionId = agentSessionId
+        self.chatTurnId = chatTurnId
+        self.conversationId = conversationId
+        self.createdAt = createdAt
+        self.eventNo = eventNo
+        self.eventSource = eventSource
+        self.eventType = eventType
+        self.id = id
+        self.invocationId = invocationId
+        self.legalHold = legalHold
+        self.metadata = metadata
+        self.organizationId = organizationId
+        self.payloadHash = payloadHash
+        self.payloadJson = payloadJson
+        self.requestId = requestId
+        self.retentionUntil = retentionUntil
+        self.status = status
+        self.tenantId = tenantId
+        self.textDelta = textDelta
+        self.traceId = traceId
+        self.userId = userId
+        self.uuid = uuid
+    }
+}
+
+public struct AiRuntimeInvocationRecord: Codable {
+    public let agentRunId: String?
+    public let agentRunStepId: String?
+    public let agentSessionId: String?
+    public let approvalPolicy: String?
+    public let attemptNo: Int?
+    public let chatItemId: String?
+    public let chatTurnId: String?
+    public let completedAt: String?
+    public let conversationId: String?
+    public let createdAt: String?
+    public let cwd: String?
+    public let endpoint: String?
+    public let errorCode: String?
+    public let errorMessageMasked: String?
+    public let errorType: String?
+    public let exitCode: String?
+    public let finishReason: String?
+    public let id: String?
+    public let invocationNo: String?
+    public let invocationType: String?
+    public let latencyMs: String?
+    public let legalHold: Bool?
+    public let metadata: [String: String]?
+    public let model: String?
+    public let organizationId: String?
+    public let payloadHash: String?
+    public let permissionMode: String?
+    public let provider: String?
+    public let providerConversationId: String?
+    public let providerResponseId: String?
+    public let providerSessionId: String?
+    public let providerStepId: String?
+    public let requestId: String?
+    public let requestJson: [String: String]?
+    public let responseJson: [String: String]?
+    public let retentionUntil: String?
+    public let runtime: String?
+    public let sandboxPolicy: String?
+    public let startedAt: String?
+    public let status: String?
+    public let tenantId: String?
+    public let toolCallId: String?
+    public let toolName: String?
+    public let traceId: String?
+    public let ttftMs: String?
+    public let usageJson: [String: String]?
+    public let userId: String?
+    public let uuid: String?
+
+
+    public init(agentRunId: String? = nil, agentRunStepId: String? = nil, agentSessionId: String? = nil, approvalPolicy: String? = nil, attemptNo: Int? = nil, chatItemId: String? = nil, chatTurnId: String? = nil, completedAt: String? = nil, conversationId: String? = nil, createdAt: String? = nil, cwd: String? = nil, endpoint: String? = nil, errorCode: String? = nil, errorMessageMasked: String? = nil, errorType: String? = nil, exitCode: String? = nil, finishReason: String? = nil, id: String? = nil, invocationNo: String? = nil, invocationType: String? = nil, latencyMs: String? = nil, legalHold: Bool? = nil, metadata: [String: String]? = nil, model: String? = nil, organizationId: String? = nil, payloadHash: String? = nil, permissionMode: String? = nil, provider: String? = nil, providerConversationId: String? = nil, providerResponseId: String? = nil, providerSessionId: String? = nil, providerStepId: String? = nil, requestId: String? = nil, requestJson: [String: String]? = nil, responseJson: [String: String]? = nil, retentionUntil: String? = nil, runtime: String? = nil, sandboxPolicy: String? = nil, startedAt: String? = nil, status: String? = nil, tenantId: String? = nil, toolCallId: String? = nil, toolName: String? = nil, traceId: String? = nil, ttftMs: String? = nil, usageJson: [String: String]? = nil, userId: String? = nil, uuid: String? = nil) {
+        self.agentRunId = agentRunId
+        self.agentRunStepId = agentRunStepId
+        self.agentSessionId = agentSessionId
+        self.approvalPolicy = approvalPolicy
+        self.attemptNo = attemptNo
+        self.chatItemId = chatItemId
+        self.chatTurnId = chatTurnId
+        self.completedAt = completedAt
+        self.conversationId = conversationId
+        self.createdAt = createdAt
+        self.cwd = cwd
+        self.endpoint = endpoint
+        self.errorCode = errorCode
+        self.errorMessageMasked = errorMessageMasked
+        self.errorType = errorType
+        self.exitCode = exitCode
+        self.finishReason = finishReason
+        self.id = id
+        self.invocationNo = invocationNo
+        self.invocationType = invocationType
+        self.latencyMs = latencyMs
+        self.legalHold = legalHold
+        self.metadata = metadata
+        self.model = model
+        self.organizationId = organizationId
+        self.payloadHash = payloadHash
+        self.permissionMode = permissionMode
+        self.provider = provider
+        self.providerConversationId = providerConversationId
+        self.providerResponseId = providerResponseId
+        self.providerSessionId = providerSessionId
+        self.providerStepId = providerStepId
+        self.requestId = requestId
+        self.requestJson = requestJson
+        self.responseJson = responseJson
+        self.retentionUntil = retentionUntil
+        self.runtime = runtime
+        self.sandboxPolicy = sandboxPolicy
+        self.startedAt = startedAt
+        self.status = status
+        self.tenantId = tenantId
+        self.toolCallId = toolCallId
+        self.toolName = toolName
+        self.traceId = traceId
+        self.ttftMs = ttftMs
+        self.usageJson = usageJson
+        self.userId = userId
+        self.uuid = uuid
+    }
+}
+
+public struct AiRuntimeUsageLinkRecord: Codable {
+    public let agentRunId: String?
+    public let agentRunStepId: String?
+    public let agentSessionId: String?
+    public let cachedTokens: String?
+    public let chatItemId: String?
+    public let chatTurnId: String?
+    public let conversationId: String?
+    public let costAmount: String?
+    public let createdAt: String?
+    public let currency: String?
+    public let id: String?
+    public let inputTokens: String?
+    public let legalHold: Bool?
+    public let messageId: String?
+    public let metadata: [String: String]?
+    public let model: String?
+    public let occurredAt: String?
+    public let organizationId: String?
+    public let outputTokens: String?
+    public let payloadHash: String?
+    public let provider: String?
+    public let reasoningTokens: String?
+    public let requestId: String?
+    public let retentionUntil: String?
+    public let runtimeInvocationId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let totalTokens: String?
+    public let traceId: String?
+    public let usageFactId: String?
+    public let usageType: String?
+    public let userId: String?
+    public let uuid: String?
+
+
+    public init(agentRunId: String? = nil, agentRunStepId: String? = nil, agentSessionId: String? = nil, cachedTokens: String? = nil, chatItemId: String? = nil, chatTurnId: String? = nil, conversationId: String? = nil, costAmount: String? = nil, createdAt: String? = nil, currency: String? = nil, id: String? = nil, inputTokens: String? = nil, legalHold: Bool? = nil, messageId: String? = nil, metadata: [String: String]? = nil, model: String? = nil, occurredAt: String? = nil, organizationId: String? = nil, outputTokens: String? = nil, payloadHash: String? = nil, provider: String? = nil, reasoningTokens: String? = nil, requestId: String? = nil, retentionUntil: String? = nil, runtimeInvocationId: String? = nil, status: String? = nil, tenantId: String? = nil, totalTokens: String? = nil, traceId: String? = nil, usageFactId: String? = nil, usageType: String? = nil, userId: String? = nil, uuid: String? = nil) {
+        self.agentRunId = agentRunId
+        self.agentRunStepId = agentRunStepId
+        self.agentSessionId = agentSessionId
+        self.cachedTokens = cachedTokens
+        self.chatItemId = chatItemId
+        self.chatTurnId = chatTurnId
+        self.conversationId = conversationId
+        self.costAmount = costAmount
+        self.createdAt = createdAt
+        self.currency = currency
+        self.id = id
+        self.inputTokens = inputTokens
+        self.legalHold = legalHold
+        self.messageId = messageId
+        self.metadata = metadata
+        self.model = model
+        self.occurredAt = occurredAt
+        self.organizationId = organizationId
+        self.outputTokens = outputTokens
+        self.payloadHash = payloadHash
+        self.provider = provider
+        self.reasoningTokens = reasoningTokens
+        self.requestId = requestId
+        self.retentionUntil = retentionUntil
+        self.runtimeInvocationId = runtimeInvocationId
+        self.status = status
+        self.tenantId = tenantId
+        self.totalTokens = totalTokens
+        self.traceId = traceId
+        self.usageFactId = usageFactId
+        self.usageType = usageType
+        self.userId = userId
+        self.uuid = uuid
+    }
+}
+
 public struct AiUsageFactRecord: Codable {
     public let apiKeyGroupId: String?
     public let apiKeyGroupSnapshot: String?
@@ -5341,17 +7096,28 @@ public struct AiUsageFactRecord: Codable {
     }
 }
 
-public struct AnnouncementsCreateResult: Codable {
+public struct AnalyticsAdminOverviewRetrieveResult: Codable {
     public let code: String?
-    public let data: AdminAnnouncementMutationResponse?
-    public let message: String?
+    public let data: AdminAnalyticsOverviewResponse?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAnnouncementMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAnalyticsOverviewResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
+        self.msg = msg
+    }
+}
+
+public struct AnnouncementsCreateResult: Codable {
+    public let code: String?
+    public let data: AdminAnnouncementMutationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminAnnouncementMutationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
         self.msg = msg
     }
 }
@@ -5359,14 +7125,12 @@ public struct AnnouncementsCreateResult: Codable {
 public struct AnnouncementsDeleteResult: Codable {
     public let code: String?
     public let data: AdminDeleteResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminDeleteResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminDeleteResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5374,14 +7138,12 @@ public struct AnnouncementsDeleteResult: Codable {
 public struct AnnouncementsListResult: Codable {
     public let code: String?
     public let data: AdminAnnouncementsResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAnnouncementsResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAnnouncementsResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5389,14 +7151,12 @@ public struct AnnouncementsListResult: Codable {
 public struct AnnouncementsUpdateResult: Codable {
     public let code: String?
     public let data: AdminAnnouncementMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAnnouncementMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAnnouncementMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5404,14 +7164,12 @@ public struct AnnouncementsUpdateResult: Codable {
 public struct ApiKeysCreateResult: Codable {
     public let code: String?
     public let data: AdminApiKeyCreateResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminApiKeyCreateResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminApiKeyCreateResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5419,14 +7177,12 @@ public struct ApiKeysCreateResult: Codable {
 public struct ApiKeysDeleteResult: Codable {
     public let code: String?
     public let data: AdminDeleteResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminDeleteResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminDeleteResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5434,14 +7190,64 @@ public struct ApiKeysDeleteResult: Codable {
 public struct ApiKeysListResult: Codable {
     public let code: String?
     public let data: AdminApiKeysMapResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminApiKeysMapResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminApiKeysMapResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
+        self.msg = msg
+    }
+}
+
+public struct AppsCategoriesCreateResult: Codable {
+    public let code: String?
+    public let data: AdminAppCategoryMutationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminAppCategoryMutationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct AppsCategoriesDeleteResult: Codable {
+    public let code: String?
+    public let data: AdminAppCategoryDeleteResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminAppCategoryDeleteResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct AppsCategoriesListResult: Codable {
+    public let code: String?
+    public let data: AdminAppCategoryListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminAppCategoryListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct AppsCategoriesUpdateResult: Codable {
+    public let code: String?
+    public let data: AdminAppCategoryMutationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminAppCategoryMutationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
         self.msg = msg
     }
 }
@@ -5449,14 +7255,12 @@ public struct ApiKeysListResult: Codable {
 public struct AppsCreateResult: Codable {
     public let code: String?
     public let data: AdminAppMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAppMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAppMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5464,14 +7268,12 @@ public struct AppsCreateResult: Codable {
 public struct AppsDeleteResult: Codable {
     public let code: String?
     public let data: AdminAppDeleteResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAppDeleteResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAppDeleteResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5479,14 +7281,12 @@ public struct AppsDeleteResult: Codable {
 public struct AppsDisableResult: Codable {
     public let code: String?
     public let data: AdminAppMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAppMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAppMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5494,14 +7294,12 @@ public struct AppsDisableResult: Codable {
 public struct AppsEnableResult: Codable {
     public let code: String?
     public let data: AdminAppMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAppMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAppMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5509,14 +7307,12 @@ public struct AppsEnableResult: Codable {
 public struct AppsListResult: Codable {
     public let code: String?
     public let data: AdminAppListResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAppListResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAppListResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5524,14 +7320,12 @@ public struct AppsListResult: Codable {
 public struct AppsPublishResult: Codable {
     public let code: String?
     public let data: AdminAppMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAppMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAppMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5539,14 +7333,12 @@ public struct AppsPublishResult: Codable {
 public struct AppsRetrieveResult: Codable {
     public let code: String?
     public let data: AdminAppMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAppMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAppMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5554,14 +7346,12 @@ public struct AppsRetrieveResult: Codable {
 public struct AppsUnpublishResult: Codable {
     public let code: String?
     public let data: AdminAppMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAppMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAppMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5569,14 +7359,25 @@ public struct AppsUnpublishResult: Codable {
 public struct AppsUpdateResult: Codable {
     public let code: String?
     public let data: AdminAppMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAppMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAppMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
+        self.msg = msg
+    }
+}
+
+public struct AuditCommerceEventsListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
         self.msg = msg
     }
 }
@@ -5584,14 +7385,12 @@ public struct AppsUpdateResult: Codable {
 public struct AuthSettingsRetrieveResult: Codable {
     public let code: String?
     public let data: AdminAuthSettingsResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAuthSettingsResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAuthSettingsResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5599,14 +7398,298 @@ public struct AuthSettingsRetrieveResult: Codable {
 public struct AuthSettingsUpdateResult: Codable {
     public let code: String?
     public let data: AdminAuthSettingsResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAuthSettingsResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAuthSettingsResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
+        self.msg = msg
+    }
+}
+
+public struct CacheInstancesDeleteResult: Codable {
+    public let code: String?
+    public let data: AdminCacheOperationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminCacheOperationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CacheInstancesRefreshCreateResult: Codable {
+    public let code: String?
+    public let data: AdminCacheOperationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminCacheOperationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CacheNamespacesDeleteResult: Codable {
+    public let code: String?
+    public let data: AdminCacheOperationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminCacheOperationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CacheNamespacesKeysDeleteResult: Codable {
+    public let code: String?
+    public let data: AdminCacheOperationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminCacheOperationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CacheNamespacesKeysListResult: Codable {
+    public let code: String?
+    public let data: AdminCacheKeyListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminCacheKeyListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CacheNamespacesRefreshCreateResult: Codable {
+    public let code: String?
+    public let data: AdminCacheOperationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminCacheOperationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CacheOverviewRetrieveResult: Codable {
+    public let code: String?
+    public let data: AdminCacheOverviewResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminCacheOverviewResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CacheRefreshCreateResult: Codable {
+    public let code: String?
+    public let data: AdminCacheOperationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminCacheOperationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CatalogAttributesCreateResult: Codable {
+    public let code: String?
+    public let data: CommerceProductAttributeMutationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceProductAttributeMutationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CatalogAttributesListResult: Codable {
+    public let code: String?
+    public let data: CommerceProductAttributeListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceProductAttributeListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CatalogCategoriesCreateResult: Codable {
+    public let code: String?
+    public let data: CommerceProductCategoryMutationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceProductCategoryMutationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CatalogCategoriesDeleteResult: Codable {
+    public let code: String?
+    public let data: AdminDeleteResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminDeleteResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CatalogCategoriesListResult: Codable {
+    public let code: String?
+    public let data: CommerceProductCategoryListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceProductCategoryListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CatalogCategoriesUpdateResult: Codable {
+    public let code: String?
+    public let data: CommerceProductCategoryMutationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceProductCategoryMutationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CatalogPriceListsCreateResult: Codable {
+    public let code: String?
+    public let data: CommercePriceListMutationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommercePriceListMutationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CatalogPriceListsListResult: Codable {
+    public let code: String?
+    public let data: CommercePriceListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommercePriceListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CatalogProductsCreateResult: Codable {
+    public let code: String?
+    public let data: CommerceProductSpuMutationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceProductSpuMutationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CatalogProductsListResult: Codable {
+    public let code: String?
+    public let data: CommerceProductSpuListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceProductSpuListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CatalogProductsUpdateResult: Codable {
+    public let code: String?
+    public let data: CommerceProductSpuMutationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceProductSpuMutationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CatalogSkusCreateResult: Codable {
+    public let code: String?
+    public let data: CommerceProductSkuMutationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceProductSkuMutationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CatalogSkusListResult: Codable {
+    public let code: String?
+    public let data: CommerceProductSkuListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceProductSkuListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CatalogSkusUpdateResult: Codable {
+    public let code: String?
+    public let data: CommerceProductSkuMutationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceProductSkuMutationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
         self.msg = msg
     }
 }
@@ -5614,14 +7697,12 @@ public struct AuthSettingsUpdateResult: Codable {
 public struct ChannelsCreateResult: Codable {
     public let code: String?
     public let data: AdminChannelMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminChannelMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminChannelMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5629,14 +7710,12 @@ public struct ChannelsCreateResult: Codable {
 public struct ChannelsDeleteResult: Codable {
     public let code: String?
     public let data: AdminDeleteResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminDeleteResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminDeleteResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5644,14 +7723,12 @@ public struct ChannelsDeleteResult: Codable {
 public struct ChannelsListResult: Codable {
     public let code: String?
     public let data: AdminChannelsResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminChannelsResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminChannelsResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5659,14 +7736,12 @@ public struct ChannelsListResult: Codable {
 public struct ChannelsUpdateResult: Codable {
     public let code: String?
     public let data: AdminChannelMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminChannelMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminChannelMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -5674,19 +7749,3045 @@ public struct ChannelsUpdateResult: Codable {
 public struct ChannelsVerifyResult: Codable {
     public let code: String?
     public let data: AdminChannelTestResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminChannelTestResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminChannelTestResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
 
-public struct CommerceBillingExportRecord: Codable {
+public struct CommerceAccountHoldRecord: Codable {
+    public let accountId: String?
+    public let amount: String?
+    public let assetType: String?
+    public let createdAt: String?
+    public let expiresAt: String?
+    public let idempotencyKey: String?
+    public let organizationId: String?
+    public let ownerUserId: String?
+    public let preholdNo: String?
+    public let releasedAt: String?
+    public let requestNo: String?
+    public let settledAt: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(accountId: String? = nil, amount: String? = nil, assetType: String? = nil, createdAt: String? = nil, expiresAt: String? = nil, idempotencyKey: String? = nil, organizationId: String? = nil, ownerUserId: String? = nil, preholdNo: String? = nil, releasedAt: String? = nil, requestNo: String? = nil, settledAt: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.accountId = accountId
+        self.amount = amount
+        self.assetType = assetType
+        self.createdAt = createdAt
+        self.expiresAt = expiresAt
+        self.idempotencyKey = idempotencyKey
+        self.organizationId = organizationId
+        self.ownerUserId = ownerUserId
+        self.preholdNo = preholdNo
+        self.releasedAt = releasedAt
+        self.requestNo = requestNo
+        self.settledAt = settledAt
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceAccountLedgerEntryRecord: Codable {
+    public let accountId: String?
+    public let amount: String?
+    public let assetType: String?
+    public let balanceAfter: String?
+    public let businessType: String?
+    public let createdAt: String?
+    public let direction: String?
+    public let idempotencyKey: String?
+    public let organizationId: String?
+    public let ownerUserId: String?
+    public let remark: String?
+    public let requestNo: String?
+    public let sourceId: String?
+    public let sourceType: String?
+    public let tenantId: String?
+    public let transactionNo: String?
+
+
+    public init(accountId: String? = nil, amount: String? = nil, assetType: String? = nil, balanceAfter: String? = nil, businessType: String? = nil, createdAt: String? = nil, direction: String? = nil, idempotencyKey: String? = nil, organizationId: String? = nil, ownerUserId: String? = nil, remark: String? = nil, requestNo: String? = nil, sourceId: String? = nil, sourceType: String? = nil, tenantId: String? = nil, transactionNo: String? = nil) {
+        self.accountId = accountId
+        self.amount = amount
+        self.assetType = assetType
+        self.balanceAfter = balanceAfter
+        self.businessType = businessType
+        self.createdAt = createdAt
+        self.direction = direction
+        self.idempotencyKey = idempotencyKey
+        self.organizationId = organizationId
+        self.ownerUserId = ownerUserId
+        self.remark = remark
+        self.requestNo = requestNo
+        self.sourceId = sourceId
+        self.sourceType = sourceType
+        self.tenantId = tenantId
+        self.transactionNo = transactionNo
+    }
+}
+
+public struct CommerceAccountRecord: Codable {
+    public let assetType: String?
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let organizationId: String?
+    public let ownerUserId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(assetType: String? = nil, createdAt: String? = nil, currencyCode: String? = nil, organizationId: String? = nil, ownerUserId: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.assetType = assetType
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.organizationId = organizationId
+        self.ownerUserId = ownerUserId
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceCartItemRecord: Codable {
+    public let cartId: String?
+    public let createdAt: String?
+    public let metadataJson: [String: String]?
+    public let organizationId: String?
+    public let priceSnapshotJson: [String: String]?
+    public let skuId: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(cartId: String? = nil, createdAt: String? = nil, metadataJson: [String: String]? = nil, organizationId: String? = nil, priceSnapshotJson: [String: String]? = nil, skuId: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.cartId = cartId
+        self.createdAt = createdAt
+        self.metadataJson = metadataJson
+        self.organizationId = organizationId
+        self.priceSnapshotJson = priceSnapshotJson
+        self.skuId = skuId
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceCartRecord: Codable {
+    public let cartNo: String?
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let organizationId: String?
+    public let ownerUserId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(cartNo: String? = nil, createdAt: String? = nil, currencyCode: String? = nil, organizationId: String? = nil, ownerUserId: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.cartNo = cartNo
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.organizationId = organizationId
+        self.ownerUserId = ownerUserId
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceCheckoutLineRecord: Codable {
+    public let checkoutSessionId: String?
+    public let createdAt: String?
+    public let fulfillmentType: String?
+    public let inventoryReservationId: String?
+    public let organizationId: String?
+    public let priceSnapshotJson: [String: String]?
+    public let promotionSnapshotJson: [String: String]?
+    public let purchaseType: String?
+    public let skuId: String?
+    public let tenantId: String?
+
+
+    public init(checkoutSessionId: String? = nil, createdAt: String? = nil, fulfillmentType: String? = nil, inventoryReservationId: String? = nil, organizationId: String? = nil, priceSnapshotJson: [String: String]? = nil, promotionSnapshotJson: [String: String]? = nil, purchaseType: String? = nil, skuId: String? = nil, tenantId: String? = nil) {
+        self.checkoutSessionId = checkoutSessionId
+        self.createdAt = createdAt
+        self.fulfillmentType = fulfillmentType
+        self.inventoryReservationId = inventoryReservationId
+        self.organizationId = organizationId
+        self.priceSnapshotJson = priceSnapshotJson
+        self.promotionSnapshotJson = promotionSnapshotJson
+        self.purchaseType = purchaseType
+        self.skuId = skuId
+        self.tenantId = tenantId
+    }
+}
+
+public struct CommerceCheckoutQuoteRecord: Codable {
+    public let checkoutSessionId: String?
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let expiresAt: String?
+    public let organizationId: String?
+    public let originalAmount: String?
+    public let payableAmount: String?
+    public let quoteNo: String?
+    public let tenantId: String?
+
+
+    public init(checkoutSessionId: String? = nil, createdAt: String? = nil, currencyCode: String? = nil, expiresAt: String? = nil, organizationId: String? = nil, originalAmount: String? = nil, payableAmount: String? = nil, quoteNo: String? = nil, tenantId: String? = nil) {
+        self.checkoutSessionId = checkoutSessionId
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.expiresAt = expiresAt
+        self.organizationId = organizationId
+        self.originalAmount = originalAmount
+        self.payableAmount = payableAmount
+        self.quoteNo = quoteNo
+        self.tenantId = tenantId
+    }
+}
+
+public struct CommerceCheckoutSessionRecord: Codable {
+    public let checkoutSessionNo: String?
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let expiresAt: String?
+    public let idempotencyKey: String?
+    public let organizationId: String?
+    public let ownerUserId: String?
+    public let requestHash: String?
+    public let sourceId: String?
+    public let sourceType: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(checkoutSessionNo: String? = nil, createdAt: String? = nil, currencyCode: String? = nil, expiresAt: String? = nil, idempotencyKey: String? = nil, organizationId: String? = nil, ownerUserId: String? = nil, requestHash: String? = nil, sourceId: String? = nil, sourceType: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.checkoutSessionNo = checkoutSessionNo
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.expiresAt = expiresAt
+        self.idempotencyKey = idempotencyKey
+        self.organizationId = organizationId
+        self.ownerUserId = ownerUserId
+        self.requestHash = requestHash
+        self.sourceId = sourceId
+        self.sourceType = sourceType
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceCouponIssueBatchRecord: Codable {
+    public let audienceFilter: String?
+    public let batchNo: String?
+    public let campaignCode: String?
+    public let codePattern: String?
+    public let codePrefix: String?
+    public let couponTemplateId: String?
+    public let createdAt: String?
+    public let createdBy: String?
+    public let generatedAt: String?
+    public let generationStatus: String?
+    public let organizationId: String?
+    public let requestedQuantity: String?
+    public let status: String?
+    public let tenantId: String?
+    public let title: String?
+    public let updatedAt: String?
+
+
+    public init(audienceFilter: String? = nil, batchNo: String? = nil, campaignCode: String? = nil, codePattern: String? = nil, codePrefix: String? = nil, couponTemplateId: String? = nil, createdAt: String? = nil, createdBy: String? = nil, generatedAt: String? = nil, generationStatus: String? = nil, organizationId: String? = nil, requestedQuantity: String? = nil, status: String? = nil, tenantId: String? = nil, title: String? = nil, updatedAt: String? = nil) {
+        self.audienceFilter = audienceFilter
+        self.batchNo = batchNo
+        self.campaignCode = campaignCode
+        self.codePattern = codePattern
+        self.codePrefix = codePrefix
+        self.couponTemplateId = couponTemplateId
+        self.createdAt = createdAt
+        self.createdBy = createdBy
+        self.generatedAt = generatedAt
+        self.generationStatus = generationStatus
+        self.organizationId = organizationId
+        self.requestedQuantity = requestedQuantity
+        self.status = status
+        self.tenantId = tenantId
+        self.title = title
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceCouponRecord: Codable {
+    public let claimedAt: String?
+    public let couponCode: String?
+    public let createdAt: String?
+    public let disabledAt: String?
+    public let expiresAt: String?
+    public let idempotencyKey: String?
+    public let issueBatchId: String?
+    public let organizationId: String?
+    public let ownerUserId: String?
+    public let redeemedAt: String?
+    public let requestNo: String?
+    public let status: String?
+    public let templateId: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(claimedAt: String? = nil, couponCode: String? = nil, createdAt: String? = nil, disabledAt: String? = nil, expiresAt: String? = nil, idempotencyKey: String? = nil, issueBatchId: String? = nil, organizationId: String? = nil, ownerUserId: String? = nil, redeemedAt: String? = nil, requestNo: String? = nil, status: String? = nil, templateId: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.claimedAt = claimedAt
+        self.couponCode = couponCode
+        self.createdAt = createdAt
+        self.disabledAt = disabledAt
+        self.expiresAt = expiresAt
+        self.idempotencyKey = idempotencyKey
+        self.issueBatchId = issueBatchId
+        self.organizationId = organizationId
+        self.ownerUserId = ownerUserId
+        self.redeemedAt = redeemedAt
+        self.requestNo = requestNo
+        self.status = status
+        self.templateId = templateId
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceCouponRedemptionRecord: Codable {
+    public let couponId: String?
+    public let createdAt: String?
+    public let discountAmount: String?
+    public let idempotencyKey: String?
+    public let orderId: String?
+    public let organizationId: String?
+    public let ownerUserId: String?
+    public let redeemedAt: String?
+    public let requestNo: String?
+    public let rolledBackAt: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(couponId: String? = nil, createdAt: String? = nil, discountAmount: String? = nil, idempotencyKey: String? = nil, orderId: String? = nil, organizationId: String? = nil, ownerUserId: String? = nil, redeemedAt: String? = nil, requestNo: String? = nil, rolledBackAt: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.couponId = couponId
+        self.createdAt = createdAt
+        self.discountAmount = discountAmount
+        self.idempotencyKey = idempotencyKey
+        self.orderId = orderId
+        self.organizationId = organizationId
+        self.ownerUserId = ownerUserId
+        self.redeemedAt = redeemedAt
+        self.requestNo = requestNo
+        self.rolledBackAt = rolledBackAt
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceCouponTemplateRecord: Codable {
+    public let createdAt: String?
+    public let discountType: String?
+    public let discountValue: String?
+    public let expiresAt: String?
+    public let organizationId: String?
+    public let startsAt: String?
+    public let status: String?
+    public let templateNo: String?
+    public let tenantId: String?
+    public let title: String?
+    public let totalQuantity: String?
+    public let updatedAt: String?
+
+
+    public init(createdAt: String? = nil, discountType: String? = nil, discountValue: String? = nil, expiresAt: String? = nil, organizationId: String? = nil, startsAt: String? = nil, status: String? = nil, templateNo: String? = nil, tenantId: String? = nil, title: String? = nil, totalQuantity: String? = nil, updatedAt: String? = nil) {
+        self.createdAt = createdAt
+        self.discountType = discountType
+        self.discountValue = discountValue
+        self.expiresAt = expiresAt
+        self.organizationId = organizationId
+        self.startsAt = startsAt
+        self.status = status
+        self.templateNo = templateNo
+        self.tenantId = tenantId
+        self.title = title
+        self.totalQuantity = totalQuantity
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceDigitalDeliveryRecord: Codable {
+    public let createdAt: String?
+    public let deliveredAt: String?
+    public let deliveryNo: String?
+    public let deliveryRef: String?
+    public let deliveryType: String?
+    public let fulfillmentId: String?
+    public let orderItemId: String?
+    public let organizationId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(createdAt: String? = nil, deliveredAt: String? = nil, deliveryNo: String? = nil, deliveryRef: String? = nil, deliveryType: String? = nil, fulfillmentId: String? = nil, orderItemId: String? = nil, organizationId: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.createdAt = createdAt
+        self.deliveredAt = deliveredAt
+        self.deliveryNo = deliveryNo
+        self.deliveryRef = deliveryRef
+        self.deliveryType = deliveryType
+        self.fulfillmentId = fulfillmentId
+        self.orderItemId = orderItemId
+        self.organizationId = organizationId
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceExchangeRuleRecord: Codable {
+    public let createdAt: String?
+    public let idempotencyKey: String?
+    public let organizationId: String?
+    public let rate: String?
+    public let remark: String?
+    public let requestNo: String?
+    public let ruleNo: String?
+    public let sourceAssetType: String?
+    public let status: String?
+    public let targetAssetType: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(createdAt: String? = nil, idempotencyKey: String? = nil, organizationId: String? = nil, rate: String? = nil, remark: String? = nil, requestNo: String? = nil, ruleNo: String? = nil, sourceAssetType: String? = nil, status: String? = nil, targetAssetType: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.createdAt = createdAt
+        self.idempotencyKey = idempotencyKey
+        self.organizationId = organizationId
+        self.rate = rate
+        self.remark = remark
+        self.requestNo = requestNo
+        self.ruleNo = ruleNo
+        self.sourceAssetType = sourceAssetType
+        self.status = status
+        self.targetAssetType = targetAssetType
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceFulfillmentItemRecord: Codable {
+    public let createdAt: String?
+    public let fulfillmentId: String?
+    public let orderItemId: String?
+    public let organizationId: String?
+    public let skuId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(createdAt: String? = nil, fulfillmentId: String? = nil, orderItemId: String? = nil, organizationId: String? = nil, skuId: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.createdAt = createdAt
+        self.fulfillmentId = fulfillmentId
+        self.orderItemId = orderItemId
+        self.organizationId = organizationId
+        self.skuId = skuId
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceFulfillmentOrderRecord: Codable {
+    public let addressSnapshotId: String?
+    public let completedAt: String?
+    public let createdAt: String?
+    public let fulfillmentNo: String?
+    public let fulfillmentType: String?
+    public let orderId: String?
+    public let organizationId: String?
+    public let providerCode: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let warehouseId: String?
+
+
+    public init(addressSnapshotId: String? = nil, completedAt: String? = nil, createdAt: String? = nil, fulfillmentNo: String? = nil, fulfillmentType: String? = nil, orderId: String? = nil, organizationId: String? = nil, providerCode: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, warehouseId: String? = nil) {
+        self.addressSnapshotId = addressSnapshotId
+        self.completedAt = completedAt
+        self.createdAt = createdAt
+        self.fulfillmentNo = fulfillmentNo
+        self.fulfillmentType = fulfillmentType
+        self.orderId = orderId
+        self.organizationId = organizationId
+        self.providerCode = providerCode
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.warehouseId = warehouseId
+    }
+}
+
+public struct CommerceIdempotencyKeyRecord: Codable {
+    public let createdAt: String?
+    public let expiresAt: String?
+    public let idempotencyKey: String?
+    public let lockedUntil: String?
+    public let organizationId: String?
+    public let requestHash: String?
+    public let responseJson: String?
+    public let scope: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(createdAt: String? = nil, expiresAt: String? = nil, idempotencyKey: String? = nil, lockedUntil: String? = nil, organizationId: String? = nil, requestHash: String? = nil, responseJson: String? = nil, scope: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.createdAt = createdAt
+        self.expiresAt = expiresAt
+        self.idempotencyKey = idempotencyKey
+        self.lockedUntil = lockedUntil
+        self.organizationId = organizationId
+        self.requestHash = requestHash
+        self.responseJson = responseJson
+        self.scope = scope
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceInventoryLedgerItem: Codable {
+    public let balanceAfter: Int?
+    public let businessType: String?
+    public let createdAt: String?
+    public let direction: String?
+    public let id: String?
+    public let movementNo: String?
+    public let quantity: Int?
+    public let skuId: String?
+    public let sourceId: String?
+    public let sourceType: String?
+    public let warehouseId: String?
+
+
+    public init(balanceAfter: Int? = nil, businessType: String? = nil, createdAt: String? = nil, direction: String? = nil, id: String? = nil, movementNo: String? = nil, quantity: Int? = nil, skuId: String? = nil, sourceId: String? = nil, sourceType: String? = nil, warehouseId: String? = nil) {
+        self.balanceAfter = balanceAfter
+        self.businessType = businessType
+        self.createdAt = createdAt
+        self.direction = direction
+        self.id = id
+        self.movementNo = movementNo
+        self.quantity = quantity
+        self.skuId = skuId
+        self.sourceId = sourceId
+        self.sourceType = sourceType
+        self.warehouseId = warehouseId
+    }
+}
+
+public struct CommerceInventoryLedgerListResponse: Codable {
+    public let items: [CommerceInventoryLedgerItem]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
+
+
+    public init(items: [CommerceInventoryLedgerItem]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommerceInventoryLedgerRecord: Codable {
+    public let businessType: String?
+    public let createdAt: String?
+    public let direction: String?
+    public let idempotencyKey: String?
+    public let movementNo: String?
+    public let organizationId: String?
+    public let skuId: String?
+    public let sourceId: String?
+    public let sourceType: String?
+    public let tenantId: String?
+    public let warehouseId: String?
+
+
+    public init(businessType: String? = nil, createdAt: String? = nil, direction: String? = nil, idempotencyKey: String? = nil, movementNo: String? = nil, organizationId: String? = nil, skuId: String? = nil, sourceId: String? = nil, sourceType: String? = nil, tenantId: String? = nil, warehouseId: String? = nil) {
+        self.businessType = businessType
+        self.createdAt = createdAt
+        self.direction = direction
+        self.idempotencyKey = idempotencyKey
+        self.movementNo = movementNo
+        self.organizationId = organizationId
+        self.skuId = skuId
+        self.sourceId = sourceId
+        self.sourceType = sourceType
+        self.tenantId = tenantId
+        self.warehouseId = warehouseId
+    }
+}
+
+public struct CommerceInventoryReservationItem: Codable {
+    public let checkoutSessionId: String?
+    public let createdAt: String?
+    public let expiresAt: String?
+    public let id: String?
+    public let orderId: String?
+    public let quantity: Int?
+    public let reservationNo: String?
+    public let skuId: String?
+    public let status: String?
+
+
+    public init(checkoutSessionId: String? = nil, createdAt: String? = nil, expiresAt: String? = nil, id: String? = nil, orderId: String? = nil, quantity: Int? = nil, reservationNo: String? = nil, skuId: String? = nil, status: String? = nil) {
+        self.checkoutSessionId = checkoutSessionId
+        self.createdAt = createdAt
+        self.expiresAt = expiresAt
+        self.id = id
+        self.orderId = orderId
+        self.quantity = quantity
+        self.reservationNo = reservationNo
+        self.skuId = skuId
+        self.status = status
+    }
+}
+
+public struct CommerceInventoryReservationListResponse: Codable {
+    public let items: [CommerceInventoryReservationItem]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
+
+
+    public init(items: [CommerceInventoryReservationItem]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommerceInventoryReservationRecord: Codable {
+    public let checkoutSessionId: String?
+    public let createdAt: String?
+    public let expiresAt: String?
+    public let idempotencyKey: String?
+    public let orderId: String?
+    public let organizationId: String?
+    public let reservationNo: String?
+    public let skuId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let warehouseId: String?
+
+
+    public init(checkoutSessionId: String? = nil, createdAt: String? = nil, expiresAt: String? = nil, idempotencyKey: String? = nil, orderId: String? = nil, organizationId: String? = nil, reservationNo: String? = nil, skuId: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, warehouseId: String? = nil) {
+        self.checkoutSessionId = checkoutSessionId
+        self.createdAt = createdAt
+        self.expiresAt = expiresAt
+        self.idempotencyKey = idempotencyKey
+        self.orderId = orderId
+        self.organizationId = organizationId
+        self.reservationNo = reservationNo
+        self.skuId = skuId
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.warehouseId = warehouseId
+    }
+}
+
+public struct CommerceInventoryStockItem: Codable {
+    public let availableQuantity: Int?
+    public let createdAt: String?
+    public let id: String?
+    public let reservedQuantity: Int?
+    public let skuId: String?
+    public let soldQuantity: Int?
+    public let status: String?
+    public let updatedAt: String?
+    public let version: Int?
+    public let warehouseId: String?
+
+
+    public init(availableQuantity: Int? = nil, createdAt: String? = nil, id: String? = nil, reservedQuantity: Int? = nil, skuId: String? = nil, soldQuantity: Int? = nil, status: String? = nil, updatedAt: String? = nil, version: Int? = nil, warehouseId: String? = nil) {
+        self.availableQuantity = availableQuantity
+        self.createdAt = createdAt
+        self.id = id
+        self.reservedQuantity = reservedQuantity
+        self.skuId = skuId
+        self.soldQuantity = soldQuantity
+        self.status = status
+        self.updatedAt = updatedAt
+        self.version = version
+        self.warehouseId = warehouseId
+    }
+}
+
+public struct CommerceInventoryStockListResponse: Codable {
+    public let items: [CommerceInventoryStockItem]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
+
+
+    public init(items: [CommerceInventoryStockItem]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommerceInventoryStockMutationResponse: Codable {
+    public let item: CommerceInventoryStockItem?
+
+
+    public init(item: CommerceInventoryStockItem? = nil) {
+        self.item = item
+    }
+}
+
+public struct CommerceInventoryStockRecord: Codable {
+    public let createdAt: String?
+    public let organizationId: String?
+    public let skuId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let warehouseId: String?
+
+
+    public init(createdAt: String? = nil, organizationId: String? = nil, skuId: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, warehouseId: String? = nil) {
+        self.createdAt = createdAt
+        self.organizationId = organizationId
+        self.skuId = skuId
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.warehouseId = warehouseId
+    }
+}
+
+public struct CommerceInventoryStockUpdateRequest: Codable {
+    public let availableQuantity: Int?
+    public let reasonCode: String?
+    public let reservedQuantity: Int?
+    public let status: String?
+    public let version: Int?
+
+
+    public init(availableQuantity: Int? = nil, reasonCode: String? = nil, reservedQuantity: Int? = nil, status: String? = nil, version: Int? = nil) {
+        self.availableQuantity = availableQuantity
+        self.reasonCode = reasonCode
+        self.reservedQuantity = reservedQuantity
+        self.status = status
+        self.version = version
+    }
+}
+
+public struct CommerceInvoiceEventRecord: Codable {
+    public let actorId: String?
+    public let actorType: String?
+    public let createdAt: String?
+    public let eventNo: String?
+    public let eventType: String?
+    public let fromStatus: String?
+    public let idempotencyKey: String?
+    public let invoiceId: String?
+    public let message: String?
+    public let organizationId: String?
+    public let payloadJson: [String: String]?
+    public let reasonCode: String?
+    public let requestId: String?
+    public let tenantId: String?
+    public let toStatus: String?
+
+
+    public init(actorId: String? = nil, actorType: String? = nil, createdAt: String? = nil, eventNo: String? = nil, eventType: String? = nil, fromStatus: String? = nil, idempotencyKey: String? = nil, invoiceId: String? = nil, message: String? = nil, organizationId: String? = nil, payloadJson: [String: String]? = nil, reasonCode: String? = nil, requestId: String? = nil, tenantId: String? = nil, toStatus: String? = nil) {
+        self.actorId = actorId
+        self.actorType = actorType
+        self.createdAt = createdAt
+        self.eventNo = eventNo
+        self.eventType = eventType
+        self.fromStatus = fromStatus
+        self.idempotencyKey = idempotencyKey
+        self.invoiceId = invoiceId
+        self.message = message
+        self.organizationId = organizationId
+        self.payloadJson = payloadJson
+        self.reasonCode = reasonCode
+        self.requestId = requestId
+        self.tenantId = tenantId
+        self.toStatus = toStatus
+    }
+}
+
+public struct CommerceInvoiceItemRecord: Codable {
+    public let amount: String?
+    public let createdAt: String?
+    public let invoiceId: String?
+    public let orderItemId: String?
+    public let tenantId: String?
+    public let title: String?
+
+
+    public init(amount: String? = nil, createdAt: String? = nil, invoiceId: String? = nil, orderItemId: String? = nil, tenantId: String? = nil, title: String? = nil) {
+        self.amount = amount
+        self.createdAt = createdAt
+        self.invoiceId = invoiceId
+        self.orderItemId = orderItemId
+        self.tenantId = tenantId
+        self.title = title
+    }
+}
+
+public struct CommerceInvoiceProviderAttemptRecord: Codable {
+    public let attemptNo: String?
+    public let createdAt: String?
+    public let failedAt: String?
+    public let failureCode: String?
+    public let failureMessage: String?
+    public let invoiceId: String?
+    public let organizationId: String?
+    public let providerAccountId: String?
+    public let providerCode: String?
+    public let providerInvoiceId: String?
+    public let status: String?
+    public let submittedAt: String?
+    public let succeededAt: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(attemptNo: String? = nil, createdAt: String? = nil, failedAt: String? = nil, failureCode: String? = nil, failureMessage: String? = nil, invoiceId: String? = nil, organizationId: String? = nil, providerAccountId: String? = nil, providerCode: String? = nil, providerInvoiceId: String? = nil, status: String? = nil, submittedAt: String? = nil, succeededAt: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.attemptNo = attemptNo
+        self.createdAt = createdAt
+        self.failedAt = failedAt
+        self.failureCode = failureCode
+        self.failureMessage = failureMessage
+        self.invoiceId = invoiceId
+        self.organizationId = organizationId
+        self.providerAccountId = providerAccountId
+        self.providerCode = providerCode
+        self.providerInvoiceId = providerInvoiceId
+        self.status = status
+        self.submittedAt = submittedAt
+        self.succeededAt = succeededAt
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceInvoiceRecord: Codable {
+    public let createdAt: String?
+    public let documentUrl: String?
+    public let invoiceCode: String?
+    public let invoiceNo: String?
+    public let issuedAt: String?
+    public let orderId: String?
+    public let organizationId: String?
+    public let ownerUserId: String?
+    public let paymentId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let titleId: String?
+    public let updatedAt: String?
+
+
+    public init(createdAt: String? = nil, documentUrl: String? = nil, invoiceCode: String? = nil, invoiceNo: String? = nil, issuedAt: String? = nil, orderId: String? = nil, organizationId: String? = nil, ownerUserId: String? = nil, paymentId: String? = nil, status: String? = nil, tenantId: String? = nil, titleId: String? = nil, updatedAt: String? = nil) {
+        self.createdAt = createdAt
+        self.documentUrl = documentUrl
+        self.invoiceCode = invoiceCode
+        self.invoiceNo = invoiceNo
+        self.issuedAt = issuedAt
+        self.orderId = orderId
+        self.organizationId = organizationId
+        self.ownerUserId = ownerUserId
+        self.paymentId = paymentId
+        self.status = status
+        self.tenantId = tenantId
+        self.titleId = titleId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceInvoiceTitleRecord: Codable {
+    public let createdAt: String?
+    public let name: String?
+    public let ownerUserId: String?
+    public let taxNo: String?
+    public let tenantId: String?
+    public let titleType: String?
+    public let updatedAt: String?
+
+
+    public init(createdAt: String? = nil, name: String? = nil, ownerUserId: String? = nil, taxNo: String? = nil, tenantId: String? = nil, titleType: String? = nil, updatedAt: String? = nil) {
+        self.createdAt = createdAt
+        self.name = name
+        self.ownerUserId = ownerUserId
+        self.taxNo = taxNo
+        self.tenantId = tenantId
+        self.titleType = titleType
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceMembershipBenefitMutationRequest: Codable {
+    public let benefitKey: String?
+    public let claimed: Bool?
+    public let description: String?
+    public let icon: String?
+    public let id: Int?
+    public let name: String?
+    public let type: String?
+    public let usageLimit: Int?
+    public let usedCount: Int?
+
+
+    public init(benefitKey: String? = nil, claimed: Bool? = nil, description: String? = nil, icon: String? = nil, id: Int? = nil, name: String? = nil, type: String? = nil, usageLimit: Int? = nil, usedCount: Int? = nil) {
+        self.benefitKey = benefitKey
+        self.claimed = claimed
+        self.description = description
+        self.icon = icon
+        self.id = id
+        self.name = name
+        self.type = type
+        self.usageLimit = usageLimit
+        self.usedCount = usedCount
+    }
+}
+
+public struct CommerceMembershipEntitlementRecord: Codable {
+    public let createdAt: String?
+    public let entitlementCode: String?
+    public let name: String?
+    public let organizationId: String?
+    public let planId: String?
+    public let quotaAmount: String?
+    public let quotaPeriod: String?
+    public let resetPolicy: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(createdAt: String? = nil, entitlementCode: String? = nil, name: String? = nil, organizationId: String? = nil, planId: String? = nil, quotaAmount: String? = nil, quotaPeriod: String? = nil, resetPolicy: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.createdAt = createdAt
+        self.entitlementCode = entitlementCode
+        self.name = name
+        self.organizationId = organizationId
+        self.planId = planId
+        self.quotaAmount = quotaAmount
+        self.quotaPeriod = quotaPeriod
+        self.resetPolicy = resetPolicy
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceMembershipEntitlementUsageRecord: Codable {
+    public let balanceAfter: String?
+    public let createdAt: String?
+    public let entitlementId: String?
+    public let idempotencyKey: String?
+    public let membershipId: String?
+    public let occurredAt: String?
+    public let organizationId: String?
+    public let ownerUserId: String?
+    public let sourceId: String?
+    public let sourceType: String?
+    public let tenantId: String?
+    public let usageNo: String?
+    public let usedAmount: String?
+
+
+    public init(balanceAfter: String? = nil, createdAt: String? = nil, entitlementId: String? = nil, idempotencyKey: String? = nil, membershipId: String? = nil, occurredAt: String? = nil, organizationId: String? = nil, ownerUserId: String? = nil, sourceId: String? = nil, sourceType: String? = nil, tenantId: String? = nil, usageNo: String? = nil, usedAmount: String? = nil) {
+        self.balanceAfter = balanceAfter
+        self.createdAt = createdAt
+        self.entitlementId = entitlementId
+        self.idempotencyKey = idempotencyKey
+        self.membershipId = membershipId
+        self.occurredAt = occurredAt
+        self.organizationId = organizationId
+        self.ownerUserId = ownerUserId
+        self.sourceId = sourceId
+        self.sourceType = sourceType
+        self.tenantId = tenantId
+        self.usageNo = usageNo
+        self.usedAmount = usedAmount
+    }
+}
+
+public struct CommerceMembershipMemberStatusRequest: Codable {
+    public let status: String?
+
+
+    public init(status: String? = nil) {
+        self.status = status
+    }
+}
+
+public struct CommerceMembershipPackageGroupMutationRequest: Codable {
+    public let billingCycle: String?
+    public let code: String?
+    public let description: String?
+    public let durationDays: Int?
+    public let name: String?
+    public let sortWeight: Int?
+    public let status: String?
+
+
+    public init(billingCycle: String? = nil, code: String? = nil, description: String? = nil, durationDays: Int? = nil, name: String? = nil, sortWeight: Int? = nil, status: String? = nil) {
+        self.billingCycle = billingCycle
+        self.code = code
+        self.description = description
+        self.durationDays = durationDays
+        self.name = name
+        self.sortWeight = sortWeight
+        self.status = status
+    }
+}
+
+public struct CommerceMembershipPackageGroupRecord: Codable {
+    public let createdAt: String?
+    public let description: String?
+    public let groupNo: String?
+    public let name: String?
+    public let organizationId: String?
+    public let planId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(createdAt: String? = nil, description: String? = nil, groupNo: String? = nil, name: String? = nil, organizationId: String? = nil, planId: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.createdAt = createdAt
+        self.description = description
+        self.groupNo = groupNo
+        self.name = name
+        self.organizationId = organizationId
+        self.planId = planId
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceMembershipPackageMutationRequest: Codable {
+    public let code: String?
+    public let currencyCode: String?
+    public let durationDays: Int?
+    public let name: String?
+    public let packageGroupId: String?
+    public let planId: String?
+    public let priceAmount: String?
+    public let status: String?
+
+
+    public init(code: String? = nil, currencyCode: String? = nil, durationDays: Int? = nil, name: String? = nil, packageGroupId: String? = nil, planId: String? = nil, priceAmount: String? = nil, status: String? = nil) {
+        self.code = code
+        self.currencyCode = currencyCode
+        self.durationDays = durationDays
+        self.name = name
+        self.packageGroupId = packageGroupId
+        self.planId = planId
+        self.priceAmount = priceAmount
+        self.status = status
+    }
+}
+
+public struct CommerceMembershipPackageRecord: Codable {
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let durationDays: String?
+    public let endsAt: String?
+    public let organizationId: String?
+    public let packageGroupId: String?
+    public let packageNo: String?
+    public let planId: String?
+    public let priceAmount: String?
+    public let recurrenceCycle: String?
+    public let skuId: String?
+    public let startsAt: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(createdAt: String? = nil, currencyCode: String? = nil, durationDays: String? = nil, endsAt: String? = nil, organizationId: String? = nil, packageGroupId: String? = nil, packageNo: String? = nil, planId: String? = nil, priceAmount: String? = nil, recurrenceCycle: String? = nil, skuId: String? = nil, startsAt: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.durationDays = durationDays
+        self.endsAt = endsAt
+        self.organizationId = organizationId
+        self.packageGroupId = packageGroupId
+        self.packageNo = packageNo
+        self.planId = planId
+        self.priceAmount = priceAmount
+        self.recurrenceCycle = recurrenceCycle
+        self.skuId = skuId
+        self.startsAt = startsAt
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceMembershipPlanMutationRequest: Codable {
+    public let benefits: [CommerceMembershipBenefitMutationRequest]?
+    public let code: String?
+    public let name: String?
+    public let rank: Int?
+    public let status: String?
+
+
+    public init(benefits: [CommerceMembershipBenefitMutationRequest]? = nil, code: String? = nil, name: String? = nil, rank: Int? = nil, status: String? = nil) {
+        self.benefits = benefits
+        self.code = code
+        self.name = name
+        self.rank = rank
+        self.status = status
+    }
+}
+
+public struct CommerceMembershipPlanRecord: Codable {
+    public let benefitsJson: [String: String]?
+    public let createdAt: String?
+    public let levelCode: String?
+    public let name: String?
+    public let organizationId: String?
+    public let planNo: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(benefitsJson: [String: String]? = nil, createdAt: String? = nil, levelCode: String? = nil, name: String? = nil, organizationId: String? = nil, planNo: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.benefitsJson = benefitsJson
+        self.createdAt = createdAt
+        self.levelCode = levelCode
+        self.name = name
+        self.organizationId = organizationId
+        self.planNo = planNo
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceMembershipRecord: Codable {
+    public let createdAt: String?
+    public let expiresAt: String?
+    public let graceUntil: String?
+    public let membershipNo: String?
+    public let organizationId: String?
+    public let ownerUserId: String?
+    public let planId: String?
+    public let sourceOrderId: String?
+    public let sourcePaymentIntentId: String?
+    public let startsAt: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(createdAt: String? = nil, expiresAt: String? = nil, graceUntil: String? = nil, membershipNo: String? = nil, organizationId: String? = nil, ownerUserId: String? = nil, planId: String? = nil, sourceOrderId: String? = nil, sourcePaymentIntentId: String? = nil, startsAt: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.createdAt = createdAt
+        self.expiresAt = expiresAt
+        self.graceUntil = graceUntil
+        self.membershipNo = membershipNo
+        self.organizationId = organizationId
+        self.ownerUserId = ownerUserId
+        self.planId = planId
+        self.sourceOrderId = sourceOrderId
+        self.sourcePaymentIntentId = sourcePaymentIntentId
+        self.startsAt = startsAt
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceOperationResponse: Codable {
+    public let paymentId: String?
+    public let qrCodeImageUrl: String?
+    public let qrCodePayload: String?
+    public let requestNo: String?
+    public let status: String?
+    public let success: Bool?
+
+
+    public init(paymentId: String? = nil, qrCodeImageUrl: String? = nil, qrCodePayload: String? = nil, requestNo: String? = nil, status: String? = nil, success: Bool? = nil) {
+        self.paymentId = paymentId
+        self.qrCodeImageUrl = qrCodeImageUrl
+        self.qrCodePayload = qrCodePayload
+        self.requestNo = requestNo
+        self.status = status
+        self.success = success
+    }
+}
+
+public struct CommerceOrderAddressSnapshotRecord: Codable {
+    public let addressLine1Encrypted: String?
+    public let capturedAt: String?
+    public let city: String?
+    public let countryCode: String?
+    public let district: String?
+    public let orderId: String?
+    public let organizationId: String?
+    public let phoneMasked: String?
+    public let postalCode: String?
+    public let recipientNameSnapshot: String?
+    public let regionCode: String?
+    public let sourceAddressId: String?
+    public let tenantId: String?
+
+
+    public init(addressLine1Encrypted: String? = nil, capturedAt: String? = nil, city: String? = nil, countryCode: String? = nil, district: String? = nil, orderId: String? = nil, organizationId: String? = nil, phoneMasked: String? = nil, postalCode: String? = nil, recipientNameSnapshot: String? = nil, regionCode: String? = nil, sourceAddressId: String? = nil, tenantId: String? = nil) {
+        self.addressLine1Encrypted = addressLine1Encrypted
+        self.capturedAt = capturedAt
+        self.city = city
+        self.countryCode = countryCode
+        self.district = district
+        self.orderId = orderId
+        self.organizationId = organizationId
+        self.phoneMasked = phoneMasked
+        self.postalCode = postalCode
+        self.recipientNameSnapshot = recipientNameSnapshot
+        self.regionCode = regionCode
+        self.sourceAddressId = sourceAddressId
+        self.tenantId = tenantId
+    }
+}
+
+public struct CommerceOrderAmountBreakdownRecord: Codable {
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let discountAmount: String?
+    public let orderId: String?
+    public let originalAmount: String?
+    public let payableAmount: String?
+    public let tenantId: String?
+
+
+    public init(createdAt: String? = nil, currencyCode: String? = nil, discountAmount: String? = nil, orderId: String? = nil, originalAmount: String? = nil, payableAmount: String? = nil, tenantId: String? = nil) {
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.discountAmount = discountAmount
+        self.orderId = orderId
+        self.originalAmount = originalAmount
+        self.payableAmount = payableAmount
+        self.tenantId = tenantId
+    }
+}
+
+public struct CommerceOrderCancellationRecord: Codable {
+    public let approvedBy: String?
+    public let cancellationNo: String?
+    public let completedAt: String?
+    public let createdAt: String?
+    public let idempotencyKey: String?
+    public let orderId: String?
+    public let organizationId: String?
+    public let reasonCode: String?
+    public let reasonMessage: String?
+    public let requestedBy: String?
+    public let status: String?
+    public let tenantId: String?
+
+
+    public init(approvedBy: String? = nil, cancellationNo: String? = nil, completedAt: String? = nil, createdAt: String? = nil, idempotencyKey: String? = nil, orderId: String? = nil, organizationId: String? = nil, reasonCode: String? = nil, reasonMessage: String? = nil, requestedBy: String? = nil, status: String? = nil, tenantId: String? = nil) {
+        self.approvedBy = approvedBy
+        self.cancellationNo = cancellationNo
+        self.completedAt = completedAt
+        self.createdAt = createdAt
+        self.idempotencyKey = idempotencyKey
+        self.orderId = orderId
+        self.organizationId = organizationId
+        self.reasonCode = reasonCode
+        self.reasonMessage = reasonMessage
+        self.requestedBy = requestedBy
+        self.status = status
+        self.tenantId = tenantId
+    }
+}
+
+public struct CommerceOrderEventRecord: Codable {
+    public let actorId: String?
+    public let actorType: String?
+    public let createdAt: String?
+    public let eventNo: String?
+    public let eventType: String?
+    public let fromStatus: String?
+    public let idempotencyKey: String?
+    public let message: String?
+    public let orderId: String?
+    public let organizationId: String?
+    public let payloadJson: [String: String]?
+    public let reasonCode: String?
+    public let requestId: String?
+    public let tenantId: String?
+    public let toStatus: String?
+
+
+    public init(actorId: String? = nil, actorType: String? = nil, createdAt: String? = nil, eventNo: String? = nil, eventType: String? = nil, fromStatus: String? = nil, idempotencyKey: String? = nil, message: String? = nil, orderId: String? = nil, organizationId: String? = nil, payloadJson: [String: String]? = nil, reasonCode: String? = nil, requestId: String? = nil, tenantId: String? = nil, toStatus: String? = nil) {
+        self.actorId = actorId
+        self.actorType = actorType
+        self.createdAt = createdAt
+        self.eventNo = eventNo
+        self.eventType = eventType
+        self.fromStatus = fromStatus
+        self.idempotencyKey = idempotencyKey
+        self.message = message
+        self.orderId = orderId
+        self.organizationId = organizationId
+        self.payloadJson = payloadJson
+        self.reasonCode = reasonCode
+        self.requestId = requestId
+        self.tenantId = tenantId
+        self.toStatus = toStatus
+    }
+}
+
+public struct CommerceOrderItemRecord: Codable {
+    public let createdAt: String?
+    public let orderId: String?
+    public let quantity: String?
+    public let skuId: String?
+    public let tenantId: String?
+    public let title: String?
+    public let totalAmount: String?
+    public let unitPriceAmount: String?
+
+
+    public init(createdAt: String? = nil, orderId: String? = nil, quantity: String? = nil, skuId: String? = nil, tenantId: String? = nil, title: String? = nil, totalAmount: String? = nil, unitPriceAmount: String? = nil) {
+        self.createdAt = createdAt
+        self.orderId = orderId
+        self.quantity = quantity
+        self.skuId = skuId
+        self.tenantId = tenantId
+        self.title = title
+        self.totalAmount = totalAmount
+        self.unitPriceAmount = unitPriceAmount
+    }
+}
+
+public struct CommerceOrderRecord: Codable {
+    public let cancelledAt: String?
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let expiredAt: String?
+    public let idempotencyKey: String?
+    public let orderNo: String?
+    public let organizationId: String?
+    public let ownerUserId: String?
+    public let paidAt: String?
+    public let requestNo: String?
+    public let status: String?
+    public let subject: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(cancelledAt: String? = nil, createdAt: String? = nil, currencyCode: String? = nil, expiredAt: String? = nil, idempotencyKey: String? = nil, orderNo: String? = nil, organizationId: String? = nil, ownerUserId: String? = nil, paidAt: String? = nil, requestNo: String? = nil, status: String? = nil, subject: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.cancelledAt = cancelledAt
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.expiredAt = expiredAt
+        self.idempotencyKey = idempotencyKey
+        self.orderNo = orderNo
+        self.organizationId = organizationId
+        self.ownerUserId = ownerUserId
+        self.paidAt = paidAt
+        self.requestNo = requestNo
+        self.status = status
+        self.subject = subject
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommercePaymentAttemptItem: Codable {
+    public let amount: String?
+    public let attemptNo: String?
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let externalTradeNo: String?
+    public let id: String?
+    public let intentId: String?
+    public let methodCode: String?
+    public let paidAt: String?
+    public let providerCode: String?
+    public let status: String?
+    public let updatedAt: String?
+
+
+    public init(amount: String? = nil, attemptNo: String? = nil, createdAt: String? = nil, currencyCode: String? = nil, externalTradeNo: String? = nil, id: String? = nil, intentId: String? = nil, methodCode: String? = nil, paidAt: String? = nil, providerCode: String? = nil, status: String? = nil, updatedAt: String? = nil) {
+        self.amount = amount
+        self.attemptNo = attemptNo
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.externalTradeNo = externalTradeNo
+        self.id = id
+        self.intentId = intentId
+        self.methodCode = methodCode
+        self.paidAt = paidAt
+        self.providerCode = providerCode
+        self.status = status
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommercePaymentAttemptListResponse: Codable {
+    public let items: [CommercePaymentAttemptItem]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
+
+
+    public init(items: [CommercePaymentAttemptItem]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommercePaymentAttemptRecord: Codable {
+    public let amount: String?
+    public let callbackPayload: String?
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let orderId: String?
+    public let organizationId: String?
+    public let outTradeNo: String?
+    public let ownerUserId: String?
+    public let paidAt: String?
+    public let paymentIntentId: String?
+    public let provider: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(amount: String? = nil, callbackPayload: String? = nil, createdAt: String? = nil, currencyCode: String? = nil, orderId: String? = nil, organizationId: String? = nil, outTradeNo: String? = nil, ownerUserId: String? = nil, paidAt: String? = nil, paymentIntentId: String? = nil, provider: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.amount = amount
+        self.callbackPayload = callbackPayload
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.orderId = orderId
+        self.organizationId = organizationId
+        self.outTradeNo = outTradeNo
+        self.ownerUserId = ownerUserId
+        self.paidAt = paidAt
+        self.paymentIntentId = paymentIntentId
+        self.provider = provider
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommercePaymentChannelItem: Codable {
+    public let channelNo: String?
+    public let countryCode: String?
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let id: String?
+    public let methodCode: String?
+    public let priority: Int?
+    public let providerAccountId: String?
+    public let providerCode: String?
+    public let sceneCode: String?
+    public let status: String?
+    public let updatedAt: String?
+
+
+    public init(channelNo: String? = nil, countryCode: String? = nil, createdAt: String? = nil, currencyCode: String? = nil, id: String? = nil, methodCode: String? = nil, priority: Int? = nil, providerAccountId: String? = nil, providerCode: String? = nil, sceneCode: String? = nil, status: String? = nil, updatedAt: String? = nil) {
+        self.channelNo = channelNo
+        self.countryCode = countryCode
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.id = id
+        self.methodCode = methodCode
+        self.priority = priority
+        self.providerAccountId = providerAccountId
+        self.providerCode = providerCode
+        self.sceneCode = sceneCode
+        self.status = status
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommercePaymentChannelListResponse: Codable {
+    public let items: [CommercePaymentChannelItem]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
+
+
+    public init(items: [CommercePaymentChannelItem]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommercePaymentChannelRecord: Codable {
+    public let channelNo: String?
+    public let countryCode: String?
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let methodId: String?
+    public let organizationId: String?
+    public let providerAccountId: String?
+    public let sceneCode: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(channelNo: String? = nil, countryCode: String? = nil, createdAt: String? = nil, currencyCode: String? = nil, methodId: String? = nil, organizationId: String? = nil, providerAccountId: String? = nil, sceneCode: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.channelNo = channelNo
+        self.countryCode = countryCode
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.methodId = methodId
+        self.organizationId = organizationId
+        self.providerAccountId = providerAccountId
+        self.sceneCode = sceneCode
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommercePaymentIntentItem: Codable {
+    public let amount: String?
+    public let checkoutSessionId: String?
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let id: String?
+    public let intentNo: String?
+    public let methodCode: String?
+    public let orderId: String?
+    public let providerCode: String?
+    public let status: String?
+    public let subjectType: String?
+    public let updatedAt: String?
+
+
+    public init(amount: String? = nil, checkoutSessionId: String? = nil, createdAt: String? = nil, currencyCode: String? = nil, id: String? = nil, intentNo: String? = nil, methodCode: String? = nil, orderId: String? = nil, providerCode: String? = nil, status: String? = nil, subjectType: String? = nil, updatedAt: String? = nil) {
+        self.amount = amount
+        self.checkoutSessionId = checkoutSessionId
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.id = id
+        self.intentNo = intentNo
+        self.methodCode = methodCode
+        self.orderId = orderId
+        self.providerCode = providerCode
+        self.status = status
+        self.subjectType = subjectType
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommercePaymentIntentListResponse: Codable {
+    public let items: [CommercePaymentIntentItem]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
+
+
+    public init(items: [CommercePaymentIntentItem]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommercePaymentIntentRecord: Codable {
+    public let amount: String?
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let idempotencyKey: String?
+    public let orderId: String?
+    public let organizationId: String?
+    public let ownerUserId: String?
+    public let provider: String?
+    public let requestNo: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(amount: String? = nil, createdAt: String? = nil, currencyCode: String? = nil, idempotencyKey: String? = nil, orderId: String? = nil, organizationId: String? = nil, ownerUserId: String? = nil, provider: String? = nil, requestNo: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.amount = amount
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.idempotencyKey = idempotencyKey
+        self.orderId = orderId
+        self.organizationId = organizationId
+        self.ownerUserId = ownerUserId
+        self.provider = provider
+        self.requestNo = requestNo
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommercePaymentMethodItem: Codable {
+    public let checkoutScenes: [String]?
+    public let createdAt: String?
+    public let displayName: String?
+    public let id: String?
+    public let methodCode: String?
+    public let methodType: String?
+    public let providerCode: String?
+    public let sortOrder: Int?
+    public let status: String?
+    public let updatedAt: String?
+
+
+    public init(checkoutScenes: [String]? = nil, createdAt: String? = nil, displayName: String? = nil, id: String? = nil, methodCode: String? = nil, methodType: String? = nil, providerCode: String? = nil, sortOrder: Int? = nil, status: String? = nil, updatedAt: String? = nil) {
+        self.checkoutScenes = checkoutScenes
+        self.createdAt = createdAt
+        self.displayName = displayName
+        self.id = id
+        self.methodCode = methodCode
+        self.methodType = methodType
+        self.providerCode = providerCode
+        self.sortOrder = sortOrder
+        self.status = status
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommercePaymentMethodListResponse: Codable {
+    public let items: [CommercePaymentMethodItem]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
+
+
+    public init(items: [CommercePaymentMethodItem]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommercePaymentMethodRecord: Codable {
+    public let createdAt: String?
+    public let displayName: String?
+    public let idempotencyKey: String?
+    public let methodKey: String?
+    public let organizationId: String?
+    public let provider: String?
+    public let requestNo: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(createdAt: String? = nil, displayName: String? = nil, idempotencyKey: String? = nil, methodKey: String? = nil, organizationId: String? = nil, provider: String? = nil, requestNo: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.createdAt = createdAt
+        self.displayName = displayName
+        self.idempotencyKey = idempotencyKey
+        self.methodKey = methodKey
+        self.organizationId = organizationId
+        self.provider = provider
+        self.requestNo = requestNo
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommercePaymentProviderAccountItem: Codable {
+    public let accountNo: String?
+    public let certificateRef: String?
+    public let countryCode: String?
+    public let createdAt: String?
+    public let environment: String?
+    public let id: String?
+    public let merchantId: String?
+    public let note: String?
+    public let providerCode: String?
+    public let rotatedAt: String?
+    public let secretRef: String?
+    public let settlementCurrency: String?
+    public let status: String?
+    public let updatedAt: String?
+    public let webhookSecretRef: String?
+
+
+    public init(accountNo: String? = nil, certificateRef: String? = nil, countryCode: String? = nil, createdAt: String? = nil, environment: String? = nil, id: String? = nil, merchantId: String? = nil, note: String? = nil, providerCode: String? = nil, rotatedAt: String? = nil, secretRef: String? = nil, settlementCurrency: String? = nil, status: String? = nil, updatedAt: String? = nil, webhookSecretRef: String? = nil) {
+        self.accountNo = accountNo
+        self.certificateRef = certificateRef
+        self.countryCode = countryCode
+        self.createdAt = createdAt
+        self.environment = environment
+        self.id = id
+        self.merchantId = merchantId
+        self.note = note
+        self.providerCode = providerCode
+        self.rotatedAt = rotatedAt
+        self.secretRef = secretRef
+        self.settlementCurrency = settlementCurrency
+        self.status = status
+        self.updatedAt = updatedAt
+        self.webhookSecretRef = webhookSecretRef
+    }
+}
+
+public struct CommercePaymentProviderAccountListResponse: Codable {
+    public let items: [CommercePaymentProviderAccountItem]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
+
+
+    public init(items: [CommercePaymentProviderAccountItem]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommercePaymentProviderAccountMutationRequest: Codable {
+    public let accountNo: String?
+    public let certificateRef: String?
+    public let clientRequestNo: String?
+    public let countryCode: String?
+    public let environment: String?
+    public let merchantId: String?
+    public let note: String?
+    public let providerCode: String?
+    public let rotatedAt: String?
+    public let secretRef: String?
+    public let settlementCurrency: String?
+    public let status: String?
+    public let webhookSecretRef: String?
+
+
+    public init(accountNo: String? = nil, certificateRef: String? = nil, clientRequestNo: String? = nil, countryCode: String? = nil, environment: String? = nil, merchantId: String? = nil, note: String? = nil, providerCode: String? = nil, rotatedAt: String? = nil, secretRef: String? = nil, settlementCurrency: String? = nil, status: String? = nil, webhookSecretRef: String? = nil) {
+        self.accountNo = accountNo
+        self.certificateRef = certificateRef
+        self.clientRequestNo = clientRequestNo
+        self.countryCode = countryCode
+        self.environment = environment
+        self.merchantId = merchantId
+        self.note = note
+        self.providerCode = providerCode
+        self.rotatedAt = rotatedAt
+        self.secretRef = secretRef
+        self.settlementCurrency = settlementCurrency
+        self.status = status
+        self.webhookSecretRef = webhookSecretRef
+    }
+}
+
+public struct CommercePaymentProviderAccountMutationResponse: Codable {
+    public let item: CommercePaymentProviderAccountItem?
+
+
+    public init(item: CommercePaymentProviderAccountItem? = nil) {
+        self.item = item
+    }
+}
+
+public struct CommercePaymentProviderAccountRecord: Codable {
+    public let accountNo: String?
+    public let certificateRef: String?
+    public let countryCode: String?
+    public let createdAt: String?
+    public let environment: String?
+    public let merchantId: String?
+    public let organizationId: String?
+    public let providerCode: String?
+    public let rotatedAt: String?
+    public let secretRef: String?
+    public let settlementCurrency: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let webhookSecretRef: String?
+
+
+    public init(accountNo: String? = nil, certificateRef: String? = nil, countryCode: String? = nil, createdAt: String? = nil, environment: String? = nil, merchantId: String? = nil, organizationId: String? = nil, providerCode: String? = nil, rotatedAt: String? = nil, secretRef: String? = nil, settlementCurrency: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, webhookSecretRef: String? = nil) {
+        self.accountNo = accountNo
+        self.certificateRef = certificateRef
+        self.countryCode = countryCode
+        self.createdAt = createdAt
+        self.environment = environment
+        self.merchantId = merchantId
+        self.organizationId = organizationId
+        self.providerCode = providerCode
+        self.rotatedAt = rotatedAt
+        self.secretRef = secretRef
+        self.settlementCurrency = settlementCurrency
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.webhookSecretRef = webhookSecretRef
+    }
+}
+
+public struct CommercePaymentProviderItem: Codable {
+    public let capabilities: [String]?
+    public let createdAt: String?
+    public let displayName: String?
+    public let id: String?
+    public let providerCode: String?
+    public let providerType: String?
+    public let settlementType: String?
+    public let status: String?
+    public let supportedCountries: [String]?
+    public let supportedCurrencies: [String]?
+    public let updatedAt: String?
+
+
+    public init(capabilities: [String]? = nil, createdAt: String? = nil, displayName: String? = nil, id: String? = nil, providerCode: String? = nil, providerType: String? = nil, settlementType: String? = nil, status: String? = nil, supportedCountries: [String]? = nil, supportedCurrencies: [String]? = nil, updatedAt: String? = nil) {
+        self.capabilities = capabilities
+        self.createdAt = createdAt
+        self.displayName = displayName
+        self.id = id
+        self.providerCode = providerCode
+        self.providerType = providerType
+        self.settlementType = settlementType
+        self.status = status
+        self.supportedCountries = supportedCountries
+        self.supportedCurrencies = supportedCurrencies
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommercePaymentProviderListResponse: Codable {
+    public let items: [CommercePaymentProviderItem]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
+
+
+    public init(items: [CommercePaymentProviderItem]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommercePaymentProviderRecord: Codable {
+    public let createdAt: String?
+    public let displayName: String?
+    public let organizationId: String?
+    public let providerCode: String?
+    public let providerType: String?
+    public let status: String?
+    public let supportedCountries: [String: String]?
+    public let supportedCurrencies: [String: String]?
+    public let supportedMethods: [String: String]?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(createdAt: String? = nil, displayName: String? = nil, organizationId: String? = nil, providerCode: String? = nil, providerType: String? = nil, status: String? = nil, supportedCountries: [String: String]? = nil, supportedCurrencies: [String: String]? = nil, supportedMethods: [String: String]? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.createdAt = createdAt
+        self.displayName = displayName
+        self.organizationId = organizationId
+        self.providerCode = providerCode
+        self.providerType = providerType
+        self.status = status
+        self.supportedCountries = supportedCountries
+        self.supportedCurrencies = supportedCurrencies
+        self.supportedMethods = supportedMethods
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommercePaymentReconciliationRunItem: Codable {
+    public let businessDate: String?
+    public let createdAt: String?
+    public let finishedAt: String?
+    public let id: String?
+    public let providerCode: String?
+    public let runNo: String?
+    public let status: String?
+
+
+    public init(businessDate: String? = nil, createdAt: String? = nil, finishedAt: String? = nil, id: String? = nil, providerCode: String? = nil, runNo: String? = nil, status: String? = nil) {
+        self.businessDate = businessDate
+        self.createdAt = createdAt
+        self.finishedAt = finishedAt
+        self.id = id
+        self.providerCode = providerCode
+        self.runNo = runNo
+        self.status = status
+    }
+}
+
+public struct CommercePaymentReconciliationRunListResponse: Codable {
+    public let items: [CommercePaymentReconciliationRunItem]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
+
+
+    public init(items: [CommercePaymentReconciliationRunItem]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommercePaymentReconciliationRunRecord: Codable {
+    public let completedAt: String?
+    public let createdAt: String?
+    public let differenceAmount: String?
+    public let idempotencyKey: String?
+    public let matchedCount: String?
+    public let mismatchedCount: String?
+    public let missingInternalCount: String?
+    public let missingProviderCount: String?
+    public let organizationId: String?
+    public let periodEnd: String?
+    public let periodStart: String?
+    public let providerAccountId: String?
+    public let providerCode: String?
+    public let reportFileRef: String?
+    public let requestNo: String?
+    public let runNo: String?
+    public let settlementCurrency: String?
+    public let startedAt: String?
+    public let status: String?
+    public let tenantId: String?
+    public let totalInternalAmount: String?
+    public let totalProviderAmount: String?
+    public let updatedAt: String?
+
+
+    public init(completedAt: String? = nil, createdAt: String? = nil, differenceAmount: String? = nil, idempotencyKey: String? = nil, matchedCount: String? = nil, mismatchedCount: String? = nil, missingInternalCount: String? = nil, missingProviderCount: String? = nil, organizationId: String? = nil, periodEnd: String? = nil, periodStart: String? = nil, providerAccountId: String? = nil, providerCode: String? = nil, reportFileRef: String? = nil, requestNo: String? = nil, runNo: String? = nil, settlementCurrency: String? = nil, startedAt: String? = nil, status: String? = nil, tenantId: String? = nil, totalInternalAmount: String? = nil, totalProviderAmount: String? = nil, updatedAt: String? = nil) {
+        self.completedAt = completedAt
+        self.createdAt = createdAt
+        self.differenceAmount = differenceAmount
+        self.idempotencyKey = idempotencyKey
+        self.matchedCount = matchedCount
+        self.mismatchedCount = mismatchedCount
+        self.missingInternalCount = missingInternalCount
+        self.missingProviderCount = missingProviderCount
+        self.organizationId = organizationId
+        self.periodEnd = periodEnd
+        self.periodStart = periodStart
+        self.providerAccountId = providerAccountId
+        self.providerCode = providerCode
+        self.reportFileRef = reportFileRef
+        self.requestNo = requestNo
+        self.runNo = runNo
+        self.settlementCurrency = settlementCurrency
+        self.startedAt = startedAt
+        self.status = status
+        self.tenantId = tenantId
+        self.totalInternalAmount = totalInternalAmount
+        self.totalProviderAmount = totalProviderAmount
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommercePaymentRouteRuleItem: Codable {
+    public let channelId: String?
+    public let countryCode: String?
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let fallbackChannelId: String?
+    public let fallbackEnabled: Bool?
+    public let id: String?
+    public let methodCode: String?
+    public let priority: Int?
+    public let ruleNo: String?
+    public let sceneCode: String?
+    public let status: String?
+    public let updatedAt: String?
+
+
+    public init(channelId: String? = nil, countryCode: String? = nil, createdAt: String? = nil, currencyCode: String? = nil, fallbackChannelId: String? = nil, fallbackEnabled: Bool? = nil, id: String? = nil, methodCode: String? = nil, priority: Int? = nil, ruleNo: String? = nil, sceneCode: String? = nil, status: String? = nil, updatedAt: String? = nil) {
+        self.channelId = channelId
+        self.countryCode = countryCode
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.fallbackChannelId = fallbackChannelId
+        self.fallbackEnabled = fallbackEnabled
+        self.id = id
+        self.methodCode = methodCode
+        self.priority = priority
+        self.ruleNo = ruleNo
+        self.sceneCode = sceneCode
+        self.status = status
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommercePaymentRouteRuleListResponse: Codable {
+    public let items: [CommercePaymentRouteRuleItem]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
+
+
+    public init(items: [CommercePaymentRouteRuleItem]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommercePaymentRouteRuleRecord: Codable {
+    public let amountMax: String?
+    public let amountMin: String?
+    public let channelId: String?
+    public let clientPlatform: String?
+    public let countryCode: String?
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let endsAt: String?
+    public let organizationId: String?
+    public let purchaseType: String?
+    public let riskLevel: String?
+    public let ruleNo: String?
+    public let startsAt: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let userSegment: String?
+
+
+    public init(amountMax: String? = nil, amountMin: String? = nil, channelId: String? = nil, clientPlatform: String? = nil, countryCode: String? = nil, createdAt: String? = nil, currencyCode: String? = nil, endsAt: String? = nil, organizationId: String? = nil, purchaseType: String? = nil, riskLevel: String? = nil, ruleNo: String? = nil, startsAt: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, userSegment: String? = nil) {
+        self.amountMax = amountMax
+        self.amountMin = amountMin
+        self.channelId = channelId
+        self.clientPlatform = clientPlatform
+        self.countryCode = countryCode
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.endsAt = endsAt
+        self.organizationId = organizationId
+        self.purchaseType = purchaseType
+        self.riskLevel = riskLevel
+        self.ruleNo = ruleNo
+        self.startsAt = startsAt
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.userSegment = userSegment
+    }
+}
+
+public struct CommercePaymentWebhookEventItem: Codable {
+    public let eventNo: String?
+    public let eventType: String?
+    public let externalEventId: String?
+    public let id: String?
+    public let processStatus: String?
+    public let processedAt: String?
+    public let providerCode: String?
+    public let receivedAt: String?
+
+
+    public init(eventNo: String? = nil, eventType: String? = nil, externalEventId: String? = nil, id: String? = nil, processStatus: String? = nil, processedAt: String? = nil, providerCode: String? = nil, receivedAt: String? = nil) {
+        self.eventNo = eventNo
+        self.eventType = eventType
+        self.externalEventId = externalEventId
+        self.id = id
+        self.processStatus = processStatus
+        self.processedAt = processedAt
+        self.providerCode = providerCode
+        self.receivedAt = receivedAt
+    }
+}
+
+public struct CommercePaymentWebhookEventListResponse: Codable {
+    public let items: [CommercePaymentWebhookEventItem]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
+
+
+    public init(items: [CommercePaymentWebhookEventItem]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommercePaymentWebhookEventRecord: Codable {
+    public let createdAt: String?
+    public let eventId: String?
+    public let idempotencyKey: String?
+    public let message: String?
+    public let nonce: String?
+    public let organizationId: String?
+    public let outTradeNo: String?
+    public let payloadDigest: String?
+    public let processedAt: String?
+    public let provider: String?
+    public let requestNo: String?
+    public let requestTimestamp: String?
+    public let signature: String?
+    public let status: String?
+    public let tenantId: String?
+    public let transactionId: String?
+    public let updatedAt: String?
+
+
+    public init(createdAt: String? = nil, eventId: String? = nil, idempotencyKey: String? = nil, message: String? = nil, nonce: String? = nil, organizationId: String? = nil, outTradeNo: String? = nil, payloadDigest: String? = nil, processedAt: String? = nil, provider: String? = nil, requestNo: String? = nil, requestTimestamp: String? = nil, signature: String? = nil, status: String? = nil, tenantId: String? = nil, transactionId: String? = nil, updatedAt: String? = nil) {
+        self.createdAt = createdAt
+        self.eventId = eventId
+        self.idempotencyKey = idempotencyKey
+        self.message = message
+        self.nonce = nonce
+        self.organizationId = organizationId
+        self.outTradeNo = outTradeNo
+        self.payloadDigest = payloadDigest
+        self.processedAt = processedAt
+        self.provider = provider
+        self.requestNo = requestNo
+        self.requestTimestamp = requestTimestamp
+        self.signature = signature
+        self.status = status
+        self.tenantId = tenantId
+        self.transactionId = transactionId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommercePriceListItem: Codable {
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let customerSegment: String?
+    public let endsAt: String?
+    public let id: String?
+    public let marketCode: String?
+    public let priceListNo: String?
+    public let startsAt: String?
+    public let status: String?
+    public let updatedAt: String?
+
+
+    public init(createdAt: String? = nil, currencyCode: String? = nil, customerSegment: String? = nil, endsAt: String? = nil, id: String? = nil, marketCode: String? = nil, priceListNo: String? = nil, startsAt: String? = nil, status: String? = nil, updatedAt: String? = nil) {
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.customerSegment = customerSegment
+        self.endsAt = endsAt
+        self.id = id
+        self.marketCode = marketCode
+        self.priceListNo = priceListNo
+        self.startsAt = startsAt
+        self.status = status
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommercePriceListItemRecord: Codable {
+    public let compareAtAmount: String?
+    public let createdAt: String?
+    public let maxQuantity: String?
+    public let organizationId: String?
+    public let priceAmount: String?
+    public let priceListId: String?
+    public let skuId: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(compareAtAmount: String? = nil, createdAt: String? = nil, maxQuantity: String? = nil, organizationId: String? = nil, priceAmount: String? = nil, priceListId: String? = nil, skuId: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.compareAtAmount = compareAtAmount
+        self.createdAt = createdAt
+        self.maxQuantity = maxQuantity
+        self.organizationId = organizationId
+        self.priceAmount = priceAmount
+        self.priceListId = priceListId
+        self.skuId = skuId
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommercePriceListMutationRequest: Codable {
+    public let currencyCode: String?
+    public let customerSegment: String?
+    public let endsAt: String?
+    public let marketCode: String?
+    public let priceListNo: String?
+    public let startsAt: String?
+    public let status: String?
+
+
+    public init(currencyCode: String? = nil, customerSegment: String? = nil, endsAt: String? = nil, marketCode: String? = nil, priceListNo: String? = nil, startsAt: String? = nil, status: String? = nil) {
+        self.currencyCode = currencyCode
+        self.customerSegment = customerSegment
+        self.endsAt = endsAt
+        self.marketCode = marketCode
+        self.priceListNo = priceListNo
+        self.startsAt = startsAt
+        self.status = status
+    }
+}
+
+public struct CommercePriceListMutationResponse: Codable {
+    public let item: CommercePriceListItem?
+
+
+    public init(item: CommercePriceListItem? = nil) {
+        self.item = item
+    }
+}
+
+public struct CommercePriceListRecord: Codable {
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let customerSegment: String?
+    public let endsAt: String?
+    public let marketCode: String?
+    public let organizationId: String?
+    public let priceListNo: String?
+    public let startsAt: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(createdAt: String? = nil, currencyCode: String? = nil, customerSegment: String? = nil, endsAt: String? = nil, marketCode: String? = nil, organizationId: String? = nil, priceListNo: String? = nil, startsAt: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.customerSegment = customerSegment
+        self.endsAt = endsAt
+        self.marketCode = marketCode
+        self.organizationId = organizationId
+        self.priceListNo = priceListNo
+        self.startsAt = startsAt
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommercePriceListResponse: Codable {
+    public let items: [CommercePriceListItem]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
+
+
+    public init(items: [CommercePriceListItem]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommerceProductAttributeItem: Codable {
+    public let attributeNo: String?
+    public let filterable: Bool?
+    public let id: String?
+    public let name: String?
+    public let required_: Bool?
+    public let scope: String?
+    public let searchable: Bool?
+    public let status: String?
+    public let valueType: String?
+
+
+    public init(attributeNo: String? = nil, filterable: Bool? = nil, id: String? = nil, name: String? = nil, required_: Bool? = nil, scope: String? = nil, searchable: Bool? = nil, status: String? = nil, valueType: String? = nil) {
+        self.attributeNo = attributeNo
+        self.filterable = filterable
+        self.id = id
+        self.name = name
+        self.required_ = required_
+        self.scope = scope
+        self.searchable = searchable
+        self.status = status
+        self.valueType = valueType
+    }
+}
+
+public struct CommerceProductAttributeListResponse: Codable {
+    public let items: [CommerceProductAttributeItem]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
+
+
+    public init(items: [CommerceProductAttributeItem]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommerceProductAttributeMutationRequest: Codable {
+    public let attributeNo: String?
+    public let filterable: Bool?
+    public let name: String?
+    public let required_: Bool?
+    public let scope: String?
+    public let searchable: Bool?
+    public let status: String?
+    public let valueType: String?
+
+
+    public init(attributeNo: String? = nil, filterable: Bool? = nil, name: String? = nil, required_: Bool? = nil, scope: String? = nil, searchable: Bool? = nil, status: String? = nil, valueType: String? = nil) {
+        self.attributeNo = attributeNo
+        self.filterable = filterable
+        self.name = name
+        self.required_ = required_
+        self.scope = scope
+        self.searchable = searchable
+        self.status = status
+        self.valueType = valueType
+    }
+}
+
+public struct CommerceProductAttributeMutationResponse: Codable {
+    public let item: CommerceProductAttributeItem?
+
+
+    public init(item: CommerceProductAttributeItem? = nil) {
+        self.item = item
+    }
+}
+
+public struct CommerceProductAttributeRecord: Codable {
+    public let attributeNo: String?
+    public let createdAt: String?
+    public let filterable: Bool?
+    public let name: String?
+    public let organizationId: String?
+    public let required_: Bool?
+    public let scope: String?
+    public let searchable: Bool?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let valueType: String?
+
+
+    public init(attributeNo: String? = nil, createdAt: String? = nil, filterable: Bool? = nil, name: String? = nil, organizationId: String? = nil, required_: Bool? = nil, scope: String? = nil, searchable: Bool? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, valueType: String? = nil) {
+        self.attributeNo = attributeNo
+        self.createdAt = createdAt
+        self.filterable = filterable
+        self.name = name
+        self.organizationId = organizationId
+        self.required_ = required_
+        self.scope = scope
+        self.searchable = searchable
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.valueType = valueType
+    }
+}
+
+public struct CommerceProductAttributeValueRecord: Codable {
+    public let attributeId: String?
+    public let createdAt: String?
+    public let displayValue: String?
+    public let organizationId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let valueCode: String?
+
+
+    public init(attributeId: String? = nil, createdAt: String? = nil, displayValue: String? = nil, organizationId: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, valueCode: String? = nil) {
+        self.attributeId = attributeId
+        self.createdAt = createdAt
+        self.displayValue = displayValue
+        self.organizationId = organizationId
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.valueCode = valueCode
+    }
+}
+
+public struct CommerceProductCategoryItem: Codable {
+    public let categoryNo: String?
+    public let createdAt: String?
+    public let id: String?
+    public let levelNo: Int?
+    public let name: String?
+    public let parentId: String?
+    public let path: String?
+    public let sortOrder: Int?
+    public let status: String?
+    public let updatedAt: String?
+
+
+    public init(categoryNo: String? = nil, createdAt: String? = nil, id: String? = nil, levelNo: Int? = nil, name: String? = nil, parentId: String? = nil, path: String? = nil, sortOrder: Int? = nil, status: String? = nil, updatedAt: String? = nil) {
+        self.categoryNo = categoryNo
+        self.createdAt = createdAt
+        self.id = id
+        self.levelNo = levelNo
+        self.name = name
+        self.parentId = parentId
+        self.path = path
+        self.sortOrder = sortOrder
+        self.status = status
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceProductCategoryListResponse: Codable {
+    public let items: [CommerceProductCategoryItem]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
+
+
+    public init(items: [CommerceProductCategoryItem]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommerceProductCategoryMutationRequest: Codable {
+    public let categoryNo: String?
+    public let name: String?
+    public let parentId: String?
+    public let sortOrder: Int?
+    public let status: String?
+
+
+    public init(categoryNo: String? = nil, name: String? = nil, parentId: String? = nil, sortOrder: Int? = nil, status: String? = nil) {
+        self.categoryNo = categoryNo
+        self.name = name
+        self.parentId = parentId
+        self.sortOrder = sortOrder
+        self.status = status
+    }
+}
+
+public struct CommerceProductCategoryMutationResponse: Codable {
+    public let item: CommerceProductCategoryItem?
+
+
+    public init(item: CommerceProductCategoryItem? = nil) {
+        self.item = item
+    }
+}
+
+public struct CommerceProductCategoryRecord: Codable {
+    public let categoryNo: String?
+    public let createdAt: String?
+    public let description: String?
+    public let iconUrl: String?
+    public let levelNo: Int?
+    public let name: String?
+    public let organizationId: String?
+    public let parentId: String?
+    public let path: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(categoryNo: String? = nil, createdAt: String? = nil, description: String? = nil, iconUrl: String? = nil, levelNo: Int? = nil, name: String? = nil, organizationId: String? = nil, parentId: String? = nil, path: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.categoryNo = categoryNo
+        self.createdAt = createdAt
+        self.description = description
+        self.iconUrl = iconUrl
+        self.levelNo = levelNo
+        self.name = name
+        self.organizationId = organizationId
+        self.parentId = parentId
+        self.path = path
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceProductMediaItem: Codable {
+    public let altText: String?
+    public let id: String?
+    public let mediaType: String?
+    public let ownerId: String?
+    public let ownerType: String?
+    public let sortOrder: Int?
+    public let status: String?
+    public let url: String?
+
+
+    public init(altText: String? = nil, id: String? = nil, mediaType: String? = nil, ownerId: String? = nil, ownerType: String? = nil, sortOrder: Int? = nil, status: String? = nil, url: String? = nil) {
+        self.altText = altText
+        self.id = id
+        self.mediaType = mediaType
+        self.ownerId = ownerId
+        self.ownerType = ownerType
+        self.sortOrder = sortOrder
+        self.status = status
+        self.url = url
+    }
+}
+
+public struct CommerceProductMediaRecord: Codable {
+    public let altText: String?
+    public let createdAt: String?
+    public let mediaType: String?
+    public let organizationId: String?
+    public let ownerId: String?
+    public let ownerType: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let url: String?
+
+
+    public init(altText: String? = nil, createdAt: String? = nil, mediaType: String? = nil, organizationId: String? = nil, ownerId: String? = nil, ownerType: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, url: String? = nil) {
+        self.altText = altText
+        self.createdAt = createdAt
+        self.mediaType = mediaType
+        self.organizationId = organizationId
+        self.ownerId = ownerId
+        self.ownerType = ownerType
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.url = url
+    }
+}
+
+public struct CommerceProductSkuAttributeItem: Codable {
+    public let attributeId: String?
+    public let attributeName: String?
+    public let attributeValueId: String?
+    public let customValue: String?
+    public let displayValue: String?
+    public let valueCode: String?
+
+
+    public init(attributeId: String? = nil, attributeName: String? = nil, attributeValueId: String? = nil, customValue: String? = nil, displayValue: String? = nil, valueCode: String? = nil) {
+        self.attributeId = attributeId
+        self.attributeName = attributeName
+        self.attributeValueId = attributeValueId
+        self.customValue = customValue
+        self.displayValue = displayValue
+        self.valueCode = valueCode
+    }
+}
+
+public struct CommerceProductSkuAttributeRecord: Codable {
+    public let attributeId: String?
+    public let attributeValueId: String?
+    public let createdAt: String?
+    public let customValue: String?
+    public let organizationId: String?
+    public let skuId: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(attributeId: String? = nil, attributeValueId: String? = nil, createdAt: String? = nil, customValue: String? = nil, organizationId: String? = nil, skuId: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.attributeId = attributeId
+        self.attributeValueId = attributeValueId
+        self.createdAt = createdAt
+        self.customValue = customValue
+        self.organizationId = organizationId
+        self.skuId = skuId
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceProductSkuItem: Codable {
+    public let attributes: [CommerceProductSkuAttributeItem]?
+    public let createdAt: String?
+    public let defaultCurrencyCode: String?
+    public let defaultPriceAmount: String?
+    public let fulfillmentType: String?
+    public let id: String?
+    public let productId: String?
+    public let publishedAt: String?
+    public let salesUnit: String?
+    public let skuNo: String?
+    public let status: String?
+    public let taxCategory: String?
+    public let title: String?
+    public let updatedAt: String?
+
+
+    public init(attributes: [CommerceProductSkuAttributeItem]? = nil, createdAt: String? = nil, defaultCurrencyCode: String? = nil, defaultPriceAmount: String? = nil, fulfillmentType: String? = nil, id: String? = nil, productId: String? = nil, publishedAt: String? = nil, salesUnit: String? = nil, skuNo: String? = nil, status: String? = nil, taxCategory: String? = nil, title: String? = nil, updatedAt: String? = nil) {
+        self.attributes = attributes
+        self.createdAt = createdAt
+        self.defaultCurrencyCode = defaultCurrencyCode
+        self.defaultPriceAmount = defaultPriceAmount
+        self.fulfillmentType = fulfillmentType
+        self.id = id
+        self.productId = productId
+        self.publishedAt = publishedAt
+        self.salesUnit = salesUnit
+        self.skuNo = skuNo
+        self.status = status
+        self.taxCategory = taxCategory
+        self.title = title
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceProductSkuListResponse: Codable {
+    public let items: [CommerceProductSkuItem]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
+
+
+    public init(items: [CommerceProductSkuItem]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommerceProductSkuMutationRequest: Codable {
+    public let attributes: [CommerceProductSkuAttributeItem]?
+    public let defaultCurrencyCode: String?
+    public let defaultPriceAmount: String?
+    public let fulfillmentType: String?
+    public let productId: String?
+    public let salesUnit: String?
+    public let skuNo: String?
+    public let status: String?
+    public let taxCategory: String?
+    public let title: String?
+
+
+    public init(attributes: [CommerceProductSkuAttributeItem]? = nil, defaultCurrencyCode: String? = nil, defaultPriceAmount: String? = nil, fulfillmentType: String? = nil, productId: String? = nil, salesUnit: String? = nil, skuNo: String? = nil, status: String? = nil, taxCategory: String? = nil, title: String? = nil) {
+        self.attributes = attributes
+        self.defaultCurrencyCode = defaultCurrencyCode
+        self.defaultPriceAmount = defaultPriceAmount
+        self.fulfillmentType = fulfillmentType
+        self.productId = productId
+        self.salesUnit = salesUnit
+        self.skuNo = skuNo
+        self.status = status
+        self.taxCategory = taxCategory
+        self.title = title
+    }
+}
+
+public struct CommerceProductSkuMutationResponse: Codable {
+    public let item: CommerceProductSkuItem?
+
+
+    public init(item: CommerceProductSkuItem? = nil) {
+        self.item = item
+    }
+}
+
+public struct CommerceProductSkuRecord: Codable {
+    public let createdAt: String?
+    public let defaultCurrencyCode: String?
+    public let defaultPriceAmount: String?
+    public let fulfillmentType: String?
+    public let organizationId: String?
+    public let publishedAt: String?
+    public let salesUnit: String?
+    public let skuNo: String?
+    public let spuId: String?
+    public let status: String?
+    public let taxCategory: String?
+    public let tenantId: String?
+    public let title: String?
+    public let updatedAt: String?
+
+
+    public init(createdAt: String? = nil, defaultCurrencyCode: String? = nil, defaultPriceAmount: String? = nil, fulfillmentType: String? = nil, organizationId: String? = nil, publishedAt: String? = nil, salesUnit: String? = nil, skuNo: String? = nil, spuId: String? = nil, status: String? = nil, taxCategory: String? = nil, tenantId: String? = nil, title: String? = nil, updatedAt: String? = nil) {
+        self.createdAt = createdAt
+        self.defaultCurrencyCode = defaultCurrencyCode
+        self.defaultPriceAmount = defaultPriceAmount
+        self.fulfillmentType = fulfillmentType
+        self.organizationId = organizationId
+        self.publishedAt = publishedAt
+        self.salesUnit = salesUnit
+        self.skuNo = skuNo
+        self.spuId = spuId
+        self.status = status
+        self.taxCategory = taxCategory
+        self.tenantId = tenantId
+        self.title = title
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceProductSpuItem: Codable {
+    public let brand: String?
+    public let categoryId: String?
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let defaultSkuId: String?
+    public let description: String?
+    public let id: String?
+    public let media: [CommerceProductMediaItem]?
+    public let minPriceAmount: String?
+    public let productType: String?
+    public let publishedAt: String?
+    public let spuNo: String?
+    public let status: String?
+    public let subtitle: String?
+    public let title: String?
+    public let updatedAt: String?
+
+
+    public init(brand: String? = nil, categoryId: String? = nil, createdAt: String? = nil, currencyCode: String? = nil, defaultSkuId: String? = nil, description: String? = nil, id: String? = nil, media: [CommerceProductMediaItem]? = nil, minPriceAmount: String? = nil, productType: String? = nil, publishedAt: String? = nil, spuNo: String? = nil, status: String? = nil, subtitle: String? = nil, title: String? = nil, updatedAt: String? = nil) {
+        self.brand = brand
+        self.categoryId = categoryId
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.defaultSkuId = defaultSkuId
+        self.description = description
+        self.id = id
+        self.media = media
+        self.minPriceAmount = minPriceAmount
+        self.productType = productType
+        self.publishedAt = publishedAt
+        self.spuNo = spuNo
+        self.status = status
+        self.subtitle = subtitle
+        self.title = title
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceProductSpuListResponse: Codable {
+    public let items: [CommerceProductSpuItem]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
+
+
+    public init(items: [CommerceProductSpuItem]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommerceProductSpuMutationRequest: Codable {
+    public let brand: String?
+    public let categoryId: String?
+    public let description: String?
+    public let productType: String?
+    public let spuNo: String?
+    public let status: String?
+    public let subtitle: String?
+    public let title: String?
+
+
+    public init(brand: String? = nil, categoryId: String? = nil, description: String? = nil, productType: String? = nil, spuNo: String? = nil, status: String? = nil, subtitle: String? = nil, title: String? = nil) {
+        self.brand = brand
+        self.categoryId = categoryId
+        self.description = description
+        self.productType = productType
+        self.spuNo = spuNo
+        self.status = status
+        self.subtitle = subtitle
+        self.title = title
+    }
+}
+
+public struct CommerceProductSpuMutationResponse: Codable {
+    public let item: CommerceProductSpuItem?
+
+
+    public init(item: CommerceProductSpuItem? = nil) {
+        self.item = item
+    }
+}
+
+public struct CommerceProductSpuRecord: Codable {
+    public let brand: String?
+    public let categoryId: String?
+    public let createdAt: String?
+    public let description: String?
+    public let organizationId: String?
+    public let productType: String?
+    public let publishedAt: String?
+    public let spuNo: String?
+    public let status: String?
+    public let subtitle: String?
+    public let tenantId: String?
+    public let title: String?
+    public let updatedAt: String?
+
+
+    public init(brand: String? = nil, categoryId: String? = nil, createdAt: String? = nil, description: String? = nil, organizationId: String? = nil, productType: String? = nil, publishedAt: String? = nil, spuNo: String? = nil, status: String? = nil, subtitle: String? = nil, tenantId: String? = nil, title: String? = nil, updatedAt: String? = nil) {
+        self.brand = brand
+        self.categoryId = categoryId
+        self.createdAt = createdAt
+        self.description = description
+        self.organizationId = organizationId
+        self.productType = productType
+        self.publishedAt = publishedAt
+        self.spuNo = spuNo
+        self.status = status
+        self.subtitle = subtitle
+        self.tenantId = tenantId
+        self.title = title
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceRechargePackageMutationRequest: Codable {
+    public let bonus: Int?
+    public let rmb: String?
+    public let status: String?
+
+
+    public init(bonus: Int? = nil, rmb: String? = nil, status: String? = nil) {
+        self.bonus = bonus
+        self.rmb = rmb
+        self.status = status
+    }
+}
+
+public struct CommerceRechargePackageRecord: Codable {
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let externalId: String?
+    public let idempotencyKey: String?
+    public let name: String?
+    public let organizationId: String?
+    public let packageNo: String?
+    public let priceAmount: String?
+    public let requestNo: String?
+    public let skuId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let validFrom: String?
+    public let validTo: String?
+
+
+    public init(createdAt: String? = nil, currencyCode: String? = nil, externalId: String? = nil, idempotencyKey: String? = nil, name: String? = nil, organizationId: String? = nil, packageNo: String? = nil, priceAmount: String? = nil, requestNo: String? = nil, skuId: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, validFrom: String? = nil, validTo: String? = nil) {
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.externalId = externalId
+        self.idempotencyKey = idempotencyKey
+        self.name = name
+        self.organizationId = organizationId
+        self.packageNo = packageNo
+        self.priceAmount = priceAmount
+        self.requestNo = requestNo
+        self.skuId = skuId
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.validFrom = validFrom
+        self.validTo = validTo
+    }
+}
+
+public struct CommerceRefundAttemptRecord: Codable {
+    public let amount: String?
+    public let createdAt: String?
+    public let currencyCode: String?
+    public let failedAt: String?
+    public let failureCode: String?
+    public let failureMessage: String?
+    public let organizationId: String?
+    public let outRefundNo: String?
+    public let providerAccountId: String?
+    public let providerCode: String?
+    public let providerRefundId: String?
+    public let refundAttemptNo: String?
+    public let refundId: String?
+    public let status: String?
+    public let submittedAt: String?
+    public let succeededAt: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(amount: String? = nil, createdAt: String? = nil, currencyCode: String? = nil, failedAt: String? = nil, failureCode: String? = nil, failureMessage: String? = nil, organizationId: String? = nil, outRefundNo: String? = nil, providerAccountId: String? = nil, providerCode: String? = nil, providerRefundId: String? = nil, refundAttemptNo: String? = nil, refundId: String? = nil, status: String? = nil, submittedAt: String? = nil, succeededAt: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.amount = amount
+        self.createdAt = createdAt
+        self.currencyCode = currencyCode
+        self.failedAt = failedAt
+        self.failureCode = failureCode
+        self.failureMessage = failureMessage
+        self.organizationId = organizationId
+        self.outRefundNo = outRefundNo
+        self.providerAccountId = providerAccountId
+        self.providerCode = providerCode
+        self.providerRefundId = providerRefundId
+        self.refundAttemptNo = refundAttemptNo
+        self.refundId = refundId
+        self.status = status
+        self.submittedAt = submittedAt
+        self.succeededAt = succeededAt
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceRefundEventRecord: Codable {
+    public let actorId: String?
+    public let actorType: String?
+    public let createdAt: String?
+    public let eventNo: String?
+    public let eventType: String?
+    public let fromStatus: String?
+    public let idempotencyKey: String?
+    public let message: String?
+    public let organizationId: String?
+    public let payloadJson: [String: String]?
+    public let reasonCode: String?
+    public let refundId: String?
+    public let requestId: String?
+    public let tenantId: String?
+    public let toStatus: String?
+
+
+    public init(actorId: String? = nil, actorType: String? = nil, createdAt: String? = nil, eventNo: String? = nil, eventType: String? = nil, fromStatus: String? = nil, idempotencyKey: String? = nil, message: String? = nil, organizationId: String? = nil, payloadJson: [String: String]? = nil, reasonCode: String? = nil, refundId: String? = nil, requestId: String? = nil, tenantId: String? = nil, toStatus: String? = nil) {
+        self.actorId = actorId
+        self.actorType = actorType
+        self.createdAt = createdAt
+        self.eventNo = eventNo
+        self.eventType = eventType
+        self.fromStatus = fromStatus
+        self.idempotencyKey = idempotencyKey
+        self.message = message
+        self.organizationId = organizationId
+        self.payloadJson = payloadJson
+        self.reasonCode = reasonCode
+        self.refundId = refundId
+        self.requestId = requestId
+        self.tenantId = tenantId
+        self.toStatus = toStatus
+    }
+}
+
+public struct CommerceRefundItemRecord: Codable {
+    public let createdAt: String?
+    public let orderItemId: String?
+    public let organizationId: String?
+    public let refundAmount: String?
+    public let refundId: String?
+    public let tenantId: String?
+
+
+    public init(createdAt: String? = nil, orderItemId: String? = nil, organizationId: String? = nil, refundAmount: String? = nil, refundId: String? = nil, tenantId: String? = nil) {
+        self.createdAt = createdAt
+        self.orderItemId = orderItemId
+        self.organizationId = organizationId
+        self.refundAmount = refundAmount
+        self.refundId = refundId
+        self.tenantId = tenantId
+    }
+}
+
+public struct CommerceRefundRecord: Codable {
+    public let amount: String?
+    public let createdAt: String?
+    public let idempotencyKey: String?
+    public let paymentAttemptId: String?
+    public let refundNo: String?
+    public let requestNo: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(amount: String? = nil, createdAt: String? = nil, idempotencyKey: String? = nil, paymentAttemptId: String? = nil, refundNo: String? = nil, requestNo: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.amount = amount
+        self.createdAt = createdAt
+        self.idempotencyKey = idempotencyKey
+        self.paymentAttemptId = paymentAttemptId
+        self.refundNo = refundNo
+        self.requestNo = requestNo
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct CommerceReportsOrderRevenueListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CommerceReportsPaymentReconciliationRetrieveResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardResourceResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardResourceResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CommerceReportsRefundsListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct CommerceSettlementExportRecord: Codable {
     public let approvedBy: String?
     public let auditLogId: String?
     public let createdAt: String?
@@ -5743,48 +10844,94 @@ public struct CommerceBillingExportRecord: Codable {
     }
 }
 
-public struct CommerceExchangeRuleItem: Codable {
-    public let id: String?
-    public let rate: String?
-    public let sourceAssetType: String?
+public struct CommerceShipmentRecord: Codable {
+    public let carrierCode: String?
+    public let createdAt: String?
+    public let deliveredAt: String?
+    public let fulfillmentId: String?
+    public let organizationId: String?
+    public let shipmentNo: String?
+    public let shippedAt: String?
     public let status: String?
-    public let targetAssetType: String?
+    public let tenantId: String?
+    public let trackingNo: String?
+    public let updatedAt: String?
 
 
-    public init(id: String? = nil, rate: String? = nil, sourceAssetType: String? = nil, status: String? = nil, targetAssetType: String? = nil) {
-        self.id = id
-        self.rate = rate
-        self.sourceAssetType = sourceAssetType
+    public init(carrierCode: String? = nil, createdAt: String? = nil, deliveredAt: String? = nil, fulfillmentId: String? = nil, organizationId: String? = nil, shipmentNo: String? = nil, shippedAt: String? = nil, status: String? = nil, tenantId: String? = nil, trackingNo: String? = nil, updatedAt: String? = nil) {
+        self.carrierCode = carrierCode
+        self.createdAt = createdAt
+        self.deliveredAt = deliveredAt
+        self.fulfillmentId = fulfillmentId
+        self.organizationId = organizationId
+        self.shipmentNo = shipmentNo
+        self.shippedAt = shippedAt
         self.status = status
-        self.targetAssetType = targetAssetType
+        self.tenantId = tenantId
+        self.trackingNo = trackingNo
+        self.updatedAt = updatedAt
     }
 }
 
-public struct CommerceExchangeRuleUpsertRequest: Codable {
-    public let rate: String?
-    public let sourceAssetType: String?
-    public let status: String?
-    public let targetAssetType: String?
+public struct CommerceShipmentTrackingEventRecord: Codable {
+    public let createdAt: String?
+    public let description: String?
+    public let eventCode: String?
+    public let eventTime: String?
+    public let location: String?
+    public let organizationId: String?
+    public let rawPayloadJson: [String: String]?
+    public let shipmentId: String?
+    public let tenantId: String?
 
 
-    public init(rate: String? = nil, sourceAssetType: String? = nil, status: String? = nil, targetAssetType: String? = nil) {
-        self.rate = rate
-        self.sourceAssetType = sourceAssetType
-        self.status = status
-        self.targetAssetType = targetAssetType
+    public init(createdAt: String? = nil, description: String? = nil, eventCode: String? = nil, eventTime: String? = nil, location: String? = nil, organizationId: String? = nil, rawPayloadJson: [String: String]? = nil, shipmentId: String? = nil, tenantId: String? = nil) {
+        self.createdAt = createdAt
+        self.description = description
+        self.eventCode = eventCode
+        self.eventTime = eventTime
+        self.location = location
+        self.organizationId = organizationId
+        self.rawPayloadJson = rawPayloadJson
+        self.shipmentId = shipmentId
+        self.tenantId = tenantId
     }
 }
 
-public struct CommerceRechargePackageMutationRequest: Codable {
-    public let bonus: Int?
-    public let rmb: String?
-    public let status: String?
+public struct CommerceStandardCollectionResponse: Codable {
+    public let items: [[String: Any]]?
+    public let page: Int?
+    public let pageSize: Int?
+    public let total: Int?
 
 
-    public init(bonus: Int? = nil, rmb: String? = nil, status: String? = nil) {
-        self.bonus = bonus
-        self.rmb = rmb
-        self.status = status
+    public init(items: [[String: Any]]? = nil, page: Int? = nil, pageSize: Int? = nil, total: Int? = nil) {
+        self.items = items
+        self.page = page
+        self.pageSize = pageSize
+        self.total = total
+    }
+}
+
+public struct CommerceStandardCommandRequest: Codable {
+    public let clientRequestNo: String?
+    public let metadata: [String: String]?
+    public let note: String?
+
+
+    public init(clientRequestNo: String? = nil, metadata: [String: String]? = nil, note: String? = nil) {
+        self.clientRequestNo = clientRequestNo
+        self.metadata = metadata
+        self.note = note
+    }
+}
+
+public struct CommerceStandardResourceResponse: Codable {
+    public let item: [String: Any]?
+
+
+    public init(item: [String: Any]? = nil) {
+        self.item = item
     }
 }
 
@@ -5842,8 +10989,8 @@ public struct CommerceUsagePricingPlanRecord: Codable {
 }
 
 public struct CommerceUsageSettlementRecord: Codable {
-    public let accountHistoryId: String?
     public let accountId: String?
+    public let accountLedgerEntryId: String?
     public let amount: String?
     public let assetType: String?
     public let createdAt: String?
@@ -5874,9 +11021,9 @@ public struct CommerceUsageSettlementRecord: Codable {
     public let uuid: String?
 
 
-    public init(accountHistoryId: String? = nil, accountId: String? = nil, amount: String? = nil, assetType: String? = nil, createdAt: String? = nil, currency: String? = nil, direction: String? = nil, failureCode: String? = nil, failureMessage: String? = nil, id: String? = nil, legalHold: Bool? = nil, metadata: [String: String]? = nil, orderId: String? = nil, organizationId: String? = nil, payloadHash: String? = nil, paymentId: String? = nil, points: String? = nil, priceSnapshot: [String: String]? = nil, requestId: String? = nil, retentionUntil: String? = nil, settledAt: String? = nil, settlementNo: String? = nil, settlementStatus: String? = nil, status: String? = nil, tenantId: String? = nil, tokens: String? = nil, traceId: String? = nil, usageFactId: String? = nil, userId: String? = nil, uuid: String? = nil) {
-        self.accountHistoryId = accountHistoryId
+    public init(accountId: String? = nil, accountLedgerEntryId: String? = nil, amount: String? = nil, assetType: String? = nil, createdAt: String? = nil, currency: String? = nil, direction: String? = nil, failureCode: String? = nil, failureMessage: String? = nil, id: String? = nil, legalHold: Bool? = nil, metadata: [String: String]? = nil, orderId: String? = nil, organizationId: String? = nil, payloadHash: String? = nil, paymentId: String? = nil, points: String? = nil, priceSnapshot: [String: String]? = nil, requestId: String? = nil, retentionUntil: String? = nil, settledAt: String? = nil, settlementNo: String? = nil, settlementStatus: String? = nil, status: String? = nil, tenantId: String? = nil, tokens: String? = nil, traceId: String? = nil, usageFactId: String? = nil, userId: String? = nil, uuid: String? = nil) {
         self.accountId = accountId
+        self.accountLedgerEntryId = accountLedgerEntryId
         self.amount = amount
         self.assetType = assetType
         self.createdAt = createdAt
@@ -6031,6 +11178,47 @@ public struct CommerceUsageStatementRecord: Codable {
         self.totalTokens = totalTokens
         self.updatedAt = updatedAt
         self.uuid = uuid
+    }
+}
+
+public struct CommerceUserAddressRecord: Codable {
+    public let addressLine1Encrypted: String?
+    public let addressLine2Encrypted: String?
+    public let city: String?
+    public let countryCode: String?
+    public let createdAt: String?
+    public let district: String?
+    public let organizationId: String?
+    public let ownerUserId: String?
+    public let phoneCountryCode: String?
+    public let phoneMasked: String?
+    public let phoneNumberEncrypted: String?
+    public let postalCode: String?
+    public let recipientName: String?
+    public let regionCode: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+
+
+    public init(addressLine1Encrypted: String? = nil, addressLine2Encrypted: String? = nil, city: String? = nil, countryCode: String? = nil, createdAt: String? = nil, district: String? = nil, organizationId: String? = nil, ownerUserId: String? = nil, phoneCountryCode: String? = nil, phoneMasked: String? = nil, phoneNumberEncrypted: String? = nil, postalCode: String? = nil, recipientName: String? = nil, regionCode: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil) {
+        self.addressLine1Encrypted = addressLine1Encrypted
+        self.addressLine2Encrypted = addressLine2Encrypted
+        self.city = city
+        self.countryCode = countryCode
+        self.createdAt = createdAt
+        self.district = district
+        self.organizationId = organizationId
+        self.ownerUserId = ownerUserId
+        self.phoneCountryCode = phoneCountryCode
+        self.phoneMasked = phoneMasked
+        self.phoneNumberEncrypted = phoneNumberEncrypted
+        self.postalCode = postalCode
+        self.recipientName = recipientName
+        self.regionCode = regionCode
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
     }
 }
 
@@ -6688,122 +11876,54 @@ public struct ContentSdkReleaseRecord: Codable {
     }
 }
 
-public struct CouponBatchesCreateResult: Codable {
+public struct CouponsCampaignsListResult: Codable {
     public let code: String?
-    public let data: AdminCouponBatchGenerateResponse?
-    public let message: String?
+    public let data: CommerceStandardCollectionResponse?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminCouponBatchGenerateResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
 
-public struct CouponBatchesListResult: Codable {
+public struct CouponsCodesListResult: Codable {
     public let code: String?
-    public let data: AdminCouponBatchesResponse?
-    public let message: String?
+    public let data: CommerceStandardCollectionResponse?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminCouponBatchesResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
 
-public struct CouponCodesListResult: Codable {
+public struct CouponsRedemptionsListResult: Codable {
     public let code: String?
-    public let data: AdminPromoCodesResponse?
-    public let message: String?
+    public let data: CommerceStandardCollectionResponse?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminPromoCodesResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
 
-public struct CouponCodesStatusUpdateResult: Codable {
+public struct CouponsTemplatesListResult: Codable {
     public let code: String?
-    public let data: AdminPromoCodeStatusUpdateResponse?
-    public let message: String?
+    public let data: CommerceStandardCollectionResponse?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminPromoCodeStatusUpdateResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
-        self.msg = msg
-    }
-}
-
-public struct CouponsCreateResult: Codable {
-    public let code: String?
-    public let data: AdminCouponMutationResponse?
-    public let message: String?
-    public let msg: String?
-
-
-    public init(code: String? = nil, data: AdminCouponMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
-        self.code = code
-        self.data = data
-        self.message = message
-        self.msg = msg
-    }
-}
-
-public struct CouponsDeleteResult: Codable {
-    public let code: String?
-    public let data: AdminDeleteResponse?
-    public let message: String?
-    public let msg: String?
-
-
-    public init(code: String? = nil, data: AdminDeleteResponse? = nil, message: String? = nil, msg: String? = nil) {
-        self.code = code
-        self.data = data
-        self.message = message
-        self.msg = msg
-    }
-}
-
-public struct CouponsListResult: Codable {
-    public let code: String?
-    public let data: AdminCouponsResponse?
-    public let message: String?
-    public let msg: String?
-
-
-    public init(code: String? = nil, data: AdminCouponsResponse? = nil, message: String? = nil, msg: String? = nil) {
-        self.code = code
-        self.data = data
-        self.message = message
-        self.msg = msg
-    }
-}
-
-public struct CouponsUpdateResult: Codable {
-    public let code: String?
-    public let data: AdminCouponMutationResponse?
-    public let message: String?
-    public let msg: String?
-
-
-    public init(code: String? = nil, data: AdminCouponMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
-        self.code = code
-        self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -6811,44 +11931,12 @@ public struct CouponsUpdateResult: Codable {
 public struct DashboardAdminOverviewRetrieveResult: Codable {
     public let code: String?
     public let data: AdminDashboardDataResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminDashboardDataResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminDashboardDataResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
-        self.msg = msg
-    }
-}
-
-public struct ExchangeRulesListResult: Codable {
-    public let code: String?
-    public let data: [CommerceExchangeRuleItem]?
-    public let message: String?
-    public let msg: String?
-
-
-    public init(code: String? = nil, data: [CommerceExchangeRuleItem]? = nil, message: String? = nil, msg: String? = nil) {
-        self.code = code
-        self.data = data
-        self.message = message
-        self.msg = msg
-    }
-}
-
-public struct ExchangeRulesUpdateResult: Codable {
-    public let code: String?
-    public let data: AdminExchangeRuleMutationResponse?
-    public let message: String?
-    public let msg: String?
-
-
-    public init(code: String? = nil, data: AdminExchangeRuleMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
-        self.code = code
-        self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -6866,47 +11954,15 @@ public struct FieldError: Codable {
     }
 }
 
-public struct FinanceLedgerListResult: Codable {
-    public let code: String?
-    public let data: AdminTransactionsResponse?
-    public let message: String?
-    public let msg: String?
-
-
-    public init(code: String? = nil, data: AdminTransactionsResponse? = nil, message: String? = nil, msg: String? = nil) {
-        self.code = code
-        self.data = data
-        self.message = message
-        self.msg = msg
-    }
-}
-
-public struct FinanceUsageStatementsListResult: Codable {
-    public let code: String?
-    public let data: AdminBillingRecordsResponse?
-    public let message: String?
-    public let msg: String?
-
-
-    public init(code: String? = nil, data: AdminBillingRecordsResponse? = nil, message: String? = nil, msg: String? = nil) {
-        self.code = code
-        self.data = data
-        self.message = message
-        self.msg = msg
-    }
-}
-
 public struct FirewallsRulesCreateResult: Codable {
     public let code: String?
     public let data: AdminFirewallMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminFirewallMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminFirewallMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -6914,14 +11970,12 @@ public struct FirewallsRulesCreateResult: Codable {
 public struct FirewallsRulesDeleteResult: Codable {
     public let code: String?
     public let data: AdminDeleteResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminDeleteResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminDeleteResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -6929,14 +11983,25 @@ public struct FirewallsRulesDeleteResult: Codable {
 public struct FirewallsRulesListResult: Codable {
     public let code: String?
     public let data: AdminFirewallRulesResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminFirewallRulesResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminFirewallRulesResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
+        self.msg = msg
+    }
+}
+
+public struct FulfillmentsListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
         self.msg = msg
     }
 }
@@ -7896,14 +12961,12 @@ public struct InstallationStatusResponse: Codable {
 public struct InstallationStatusRetrieveResult: Codable {
     public let code: String?
     public let data: InstallationStatusResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: InstallationStatusResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: InstallationStatusResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -7972,7 +13035,7 @@ public struct IntegrationChannelModelRecord: Codable {
 public struct IntegrationChannelRecord: Codable {
     public let accessType: String?
     public let accountId: String?
-    public let baseUrlOverride: String?
+    public let baseUrl: String?
     public let capabilities: [String: String]?
     public let channelCode: String?
     public let circuitBreakerPolicy: [String: String]?
@@ -8006,10 +13069,10 @@ public struct IntegrationChannelRecord: Codable {
     public let weight: Int?
 
 
-    public init(accessType: String? = nil, accountId: String? = nil, baseUrlOverride: String? = nil, capabilities: [String: String]? = nil, channelCode: String? = nil, circuitBreakerPolicy: [String: String]? = nil, consecutiveErrorCount: String? = nil, createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, environment: String? = nil, healthStatus: String? = nil, id: String? = nil, lastLatencyMs: Int? = nil, metadata: [String: String]? = nil, modelMode: String? = nil, name: String? = nil, organizationId: String? = nil, priority: Int? = nil, protocol_: String? = nil, providerCode: String? = nil, providerId: String? = nil, proxyId: String? = nil, region: String? = nil, retryPolicy: [String: String]? = nil, rpmLimit: String? = nil, status: String? = nil, tenantId: String? = nil, timeoutMs: Int? = nil, updatedAt: String? = nil, uuid: String? = nil, version: String? = nil, weight: Int? = nil) {
+    public init(accessType: String? = nil, accountId: String? = nil, baseUrl: String? = nil, capabilities: [String: String]? = nil, channelCode: String? = nil, circuitBreakerPolicy: [String: String]? = nil, consecutiveErrorCount: String? = nil, createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, environment: String? = nil, healthStatus: String? = nil, id: String? = nil, lastLatencyMs: Int? = nil, metadata: [String: String]? = nil, modelMode: String? = nil, name: String? = nil, organizationId: String? = nil, priority: Int? = nil, protocol_: String? = nil, providerCode: String? = nil, providerId: String? = nil, proxyId: String? = nil, region: String? = nil, retryPolicy: [String: String]? = nil, rpmLimit: String? = nil, status: String? = nil, tenantId: String? = nil, timeoutMs: Int? = nil, updatedAt: String? = nil, uuid: String? = nil, version: String? = nil, weight: Int? = nil) {
         self.accessType = accessType
         self.accountId = accountId
-        self.baseUrlOverride = baseUrlOverride
+        self.baseUrl = baseUrl
         self.capabilities = capabilities
         self.channelCode = channelCode
         self.circuitBreakerPolicy = circuitBreakerPolicy
@@ -8049,6 +13112,7 @@ public struct IntegrationProviderAccountRecord: Codable {
     public let accountName: String?
     public let authConfig: [String: String]?
     public let authType: String?
+    public let baseUrl: String?
     public let consecutiveErrorCount: String?
     public let createdAt: String?
     public let credentialProfile: String?
@@ -8084,11 +13148,12 @@ public struct IntegrationProviderAccountRecord: Codable {
     public let version: String?
 
 
-    public init(accountCode: String? = nil, accountName: String? = nil, authConfig: [String: String]? = nil, authType: String? = nil, consecutiveErrorCount: String? = nil, createdAt: String? = nil, credentialProfile: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, externalAccountId: String? = nil, id: String? = nil, lastBalanceCheckedAt: String? = nil, lastRotatedAt: String? = nil, lastUsedAt: String? = nil, lastVerifiedAt: String? = nil, maskedLabel: String? = nil, metadata: [String: String]? = nil, nextRotateAt: String? = nil, organizationId: String? = nil, providerCode: String? = nil, providerId: String? = nil, quotaLimit: String? = nil, quotaUnit: String? = nil, quotaUsed: String? = nil, riskLevel: String? = nil, secretHash: String? = nil, secretRef: String? = nil, secretRotationPolicy: [String: String]? = nil, secretVersion: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, upstreamBalanceAmount: String? = nil, upstreamBalanceCurrency: String? = nil, uuid: String? = nil, version: String? = nil) {
+    public init(accountCode: String? = nil, accountName: String? = nil, authConfig: [String: String]? = nil, authType: String? = nil, baseUrl: String? = nil, consecutiveErrorCount: String? = nil, createdAt: String? = nil, credentialProfile: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, externalAccountId: String? = nil, id: String? = nil, lastBalanceCheckedAt: String? = nil, lastRotatedAt: String? = nil, lastUsedAt: String? = nil, lastVerifiedAt: String? = nil, maskedLabel: String? = nil, metadata: [String: String]? = nil, nextRotateAt: String? = nil, organizationId: String? = nil, providerCode: String? = nil, providerId: String? = nil, quotaLimit: String? = nil, quotaUnit: String? = nil, quotaUsed: String? = nil, riskLevel: String? = nil, secretHash: String? = nil, secretRef: String? = nil, secretRotationPolicy: [String: String]? = nil, secretVersion: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, upstreamBalanceAmount: String? = nil, upstreamBalanceCurrency: String? = nil, uuid: String? = nil, version: String? = nil) {
         self.accountCode = accountCode
         self.accountName = accountName
         self.authConfig = authConfig
         self.authType = authType
+        self.baseUrl = baseUrl
         self.consecutiveErrorCount = consecutiveErrorCount
         self.createdAt = createdAt
         self.credentialProfile = credentialProfile
@@ -8182,7 +13247,7 @@ public struct IntegrationProviderHealthSnapshotRecord: Codable {
 
 public struct IntegrationProviderRecord: Codable {
     public let authType: String?
-    public let baseUrlTemplate: String?
+    public let baseUrl: String?
     public let capabilities: [String: String]?
     public let colorToken: String?
     public let createdAt: String?
@@ -8212,9 +13277,9 @@ public struct IntegrationProviderRecord: Codable {
     public let websiteUrl: String?
 
 
-    public init(authType: String? = nil, baseUrlTemplate: String? = nil, capabilities: [String: String]? = nil, colorToken: String? = nil, createdAt: String? = nil, dataScope: String? = nil, defaultVendorCode: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, description: String? = nil, displayName: String? = nil, docsUrl: String? = nil, iconUrl: String? = nil, id: String? = nil, integrationType: String? = nil, metadata: [String: String]? = nil, metadataSchemaVersion: String? = nil, organizationId: String? = nil, protocol_: String? = nil, providerCode: String? = nil, sortOrder: Int? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, upstreamProviderCode: String? = nil, upstreamVendorCode: String? = nil, uuid: String? = nil, version: String? = nil, websiteUrl: String? = nil) {
+    public init(authType: String? = nil, baseUrl: String? = nil, capabilities: [String: String]? = nil, colorToken: String? = nil, createdAt: String? = nil, dataScope: String? = nil, defaultVendorCode: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, description: String? = nil, displayName: String? = nil, docsUrl: String? = nil, iconUrl: String? = nil, id: String? = nil, integrationType: String? = nil, metadata: [String: String]? = nil, metadataSchemaVersion: String? = nil, organizationId: String? = nil, protocol_: String? = nil, providerCode: String? = nil, sortOrder: Int? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, upstreamProviderCode: String? = nil, upstreamVendorCode: String? = nil, uuid: String? = nil, version: String? = nil, websiteUrl: String? = nil) {
         self.authType = authType
-        self.baseUrlTemplate = baseUrlTemplate
+        self.baseUrl = baseUrl
         self.capabilities = capabilities
         self.colorToken = colorToken
         self.createdAt = createdAt
@@ -8350,6 +13415,318 @@ public struct IntegrationWebhookEndpointRecord: Codable {
         self.userId = userId
         self.uuid = uuid
         self.version = version
+    }
+}
+
+public struct InventoryLedgerEntriesListResult: Codable {
+    public let code: String?
+    public let data: CommerceInventoryLedgerListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceInventoryLedgerListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct InventoryReservationsListResult: Codable {
+    public let code: String?
+    public let data: CommerceInventoryReservationListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceInventoryReservationListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct InventoryStocksListResult: Codable {
+    public let code: String?
+    public let data: CommerceInventoryStockListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceInventoryStockListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct InventoryStocksUpdateResult: Codable {
+    public let code: String?
+    public let data: CommerceInventoryStockMutationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceInventoryStockMutationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct InvoicesListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct InvoicesRetrieveResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardResourceResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardResourceResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct InvoicesTitlesListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct ManifestsListResult: Codable {
+    public let code: String?
+    public let data: OpenPlatformManifestListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: OpenPlatformManifestListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct MarketingReferralStatsListResult: Codable {
+    public let code: String?
+    public let data: AdminReferralStatsResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminReferralStatsResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct MembershipsEntitlementsListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct MembershipsMembersListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct MembershipsMembersStatusUpdateResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardResourceResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardResourceResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct MembershipsPackageGroupsCreateResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardResourceResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardResourceResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct MembershipsPackageGroupsDeleteResult: Codable {
+    public let code: String?
+    public let data: AdminDeleteResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminDeleteResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct MembershipsPackageGroupsListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct MembershipsPackageGroupsUpdateResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardResourceResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardResourceResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct MembershipsPackagesCreateResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardResourceResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardResourceResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct MembershipsPackagesDeleteResult: Codable {
+    public let code: String?
+    public let data: AdminDeleteResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminDeleteResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct MembershipsPackagesListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct MembershipsPackagesUpdateResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardResourceResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardResourceResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct MembershipsPlansCreateResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardResourceResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardResourceResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct MembershipsPlansDeleteResult: Codable {
+    public let code: String?
+    public let data: AdminDeleteResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminDeleteResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct MembershipsPlansListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct MembershipsPlansUpdateResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardResourceResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardResourceResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
     }
 }
 
@@ -8629,14 +14006,12 @@ public struct ModelRankingRefreshTriggerResponse: Codable {
 public struct ModelRankingsJobsListResult: Codable {
     public let code: String?
     public let data: ModelRankingRefreshJobHistoryPage?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: ModelRankingRefreshJobHistoryPage? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: ModelRankingRefreshJobHistoryPage? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -8644,14 +14019,12 @@ public struct ModelRankingsJobsListResult: Codable {
 public struct ModelRankingsListResult: Codable {
     public let code: String?
     public let data: ModelRankingsSnapshot?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: ModelRankingsSnapshot? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: ModelRankingsSnapshot? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -8659,14 +14032,12 @@ public struct ModelRankingsListResult: Codable {
 public struct ModelRankingsRefreshResult: Codable {
     public let code: String?
     public let data: ModelRankingRefreshTriggerResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: ModelRankingRefreshTriggerResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: ModelRankingRefreshTriggerResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -8720,14 +14091,12 @@ public struct ModelRankingsSource: Codable {
 public struct ModelRankingsStatusRetrieveResult: Codable {
     public let code: String?
     public let data: ModelRankingRefreshStatus?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: ModelRankingRefreshStatus? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: ModelRankingRefreshStatus? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -8735,14 +14104,12 @@ public struct ModelRankingsStatusRetrieveResult: Codable {
 public struct ModelVendorsCreateResult: Codable {
     public let code: String?
     public let data: AdminModelVendorMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminModelVendorMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminModelVendorMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -8750,14 +14117,12 @@ public struct ModelVendorsCreateResult: Codable {
 public struct ModelVendorsListResult: Codable {
     public let code: String?
     public let data: AdminModelVendorsResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminModelVendorsResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminModelVendorsResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -8765,14 +14130,12 @@ public struct ModelVendorsListResult: Codable {
 public struct ModelsCreateResult: Codable {
     public let code: String?
     public let data: AdminAiModelMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAiModelMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAiModelMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -8780,14 +14143,12 @@ public struct ModelsCreateResult: Codable {
 public struct ModelsDeleteResult: Codable {
     public let code: String?
     public let data: AdminDeleteResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminDeleteResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminDeleteResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -8795,14 +14156,12 @@ public struct ModelsDeleteResult: Codable {
 public struct ModelsListResult: Codable {
     public let code: String?
     public let data: AdminAiModelsResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAiModelsResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAiModelsResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -8810,14 +14169,12 @@ public struct ModelsListResult: Codable {
 public struct ModelsRefreshResult: Codable {
     public let code: String?
     public let data: AdminModelCatalogSyncResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminModelCatalogSyncResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminModelCatalogSyncResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -8825,14 +14182,12 @@ public struct ModelsRefreshResult: Codable {
 public struct ModelsUpdateResult: Codable {
     public let code: String?
     public let data: AdminAiModelMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminAiModelMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminAiModelMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -8840,14 +14195,12 @@ public struct ModelsUpdateResult: Codable {
 public struct MonitorAlertsListResult: Codable {
     public let code: String?
     public let data: AdminMonitorAlertsResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminMonitorAlertsResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminMonitorAlertsResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -8855,14 +14208,12 @@ public struct MonitorAlertsListResult: Codable {
 public struct MonitorNodesListResult: Codable {
     public let code: String?
     public let data: AdminMonitorNodesResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminMonitorNodesResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminMonitorNodesResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -8870,14 +14221,12 @@ public struct MonitorNodesListResult: Codable {
 public struct MonitorPerformanceListResult: Codable {
     public let code: String?
     public let data: AdminMonitorPerformanceResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminMonitorPerformanceResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminMonitorPerformanceResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -8885,6 +14234,505 @@ public struct MonitorPerformanceListResult: Codable {
 public struct NoData: Codable {
 
     public init() {}
+}
+
+public struct OpenPlatformAccountCreateRequest: Codable {
+    public let aesKeyRef: String?
+    public let appId: String?
+    public let key: String?
+    public let name: String?
+    public let provider: String?
+    public let secretRef: String?
+    public let tokenRef: String?
+    public let type: String?
+
+
+    public init(aesKeyRef: String? = nil, appId: String? = nil, key: String? = nil, name: String? = nil, provider: String? = nil, secretRef: String? = nil, tokenRef: String? = nil, type: String? = nil) {
+        self.aesKeyRef = aesKeyRef
+        self.appId = appId
+        self.key = key
+        self.name = name
+        self.provider = provider
+        self.secretRef = secretRef
+        self.tokenRef = tokenRef
+        self.type = type
+    }
+}
+
+public struct OpenPlatformAccountItem: Codable {
+    public let aesKeyRef: String?
+    public let appId: String?
+    public let createdAt: String?
+    public let defaultEntryId: String?
+    public let id: String?
+    public let key: String?
+    public let name: String?
+    public let provider: String?
+    public let qrDefault: Bool?
+    public let secretRef: String?
+    public let status: String?
+    public let tokenRef: String?
+    public let type: String?
+    public let updatedAt: String?
+
+
+    public init(aesKeyRef: String? = nil, appId: String? = nil, createdAt: String? = nil, defaultEntryId: String? = nil, id: String? = nil, key: String? = nil, name: String? = nil, provider: String? = nil, qrDefault: Bool? = nil, secretRef: String? = nil, status: String? = nil, tokenRef: String? = nil, type: String? = nil, updatedAt: String? = nil) {
+        self.aesKeyRef = aesKeyRef
+        self.appId = appId
+        self.createdAt = createdAt
+        self.defaultEntryId = defaultEntryId
+        self.id = id
+        self.key = key
+        self.name = name
+        self.provider = provider
+        self.qrDefault = qrDefault
+        self.secretRef = secretRef
+        self.status = status
+        self.tokenRef = tokenRef
+        self.type = type
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct OpenPlatformAccountListResponse: Codable {
+    public let items: [OpenPlatformAccountItem]?
+
+
+    public init(items: [OpenPlatformAccountItem]? = nil) {
+        self.items = items
+    }
+}
+
+public struct OpenPlatformAccountRecord: Codable {
+    public let accountKey: String?
+    public let accountType: String?
+    public let aesKeyRef: String?
+    public let appId: String?
+    public let createdAt: String?
+    public let dataScope: String?
+    public let defaultEntryId: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let id: String?
+    public let metadata: [String: String]?
+    public let name: String?
+    public let organizationId: String?
+    public let provider: String?
+    public let qrDefault: Bool?
+    public let secretRef: String?
+    public let status: String?
+    public let tenantId: String?
+    public let tokenRef: String?
+    public let updatedAt: String?
+    public let uuid: String?
+    public let version: String?
+
+
+    public init(accountKey: String? = nil, accountType: String? = nil, aesKeyRef: String? = nil, appId: String? = nil, createdAt: String? = nil, dataScope: String? = nil, defaultEntryId: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, id: String? = nil, metadata: [String: String]? = nil, name: String? = nil, organizationId: String? = nil, provider: String? = nil, qrDefault: Bool? = nil, secretRef: String? = nil, status: String? = nil, tenantId: String? = nil, tokenRef: String? = nil, updatedAt: String? = nil, uuid: String? = nil, version: String? = nil) {
+        self.accountKey = accountKey
+        self.accountType = accountType
+        self.aesKeyRef = aesKeyRef
+        self.appId = appId
+        self.createdAt = createdAt
+        self.dataScope = dataScope
+        self.defaultEntryId = defaultEntryId
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.id = id
+        self.metadata = metadata
+        self.name = name
+        self.organizationId = organizationId
+        self.provider = provider
+        self.qrDefault = qrDefault
+        self.secretRef = secretRef
+        self.status = status
+        self.tenantId = tenantId
+        self.tokenRef = tokenRef
+        self.updatedAt = updatedAt
+        self.uuid = uuid
+        self.version = version
+    }
+}
+
+public struct OpenPlatformAccountResponse: Codable {
+    public let item: OpenPlatformAccountItem?
+
+
+    public init(item: OpenPlatformAccountItem? = nil) {
+        self.item = item
+    }
+}
+
+public struct OpenPlatformAccountUpdateRequest: Codable {
+    public let aesKeyRef: String?
+    public let appId: String?
+    public let defaultEntryId: String?
+    public let name: String?
+    public let qrDefault: Bool?
+    public let secretRef: String?
+    public let status: String?
+    public let tokenRef: String?
+
+
+    public init(aesKeyRef: String? = nil, appId: String? = nil, defaultEntryId: String? = nil, name: String? = nil, qrDefault: Bool? = nil, secretRef: String? = nil, status: String? = nil, tokenRef: String? = nil) {
+        self.aesKeyRef = aesKeyRef
+        self.appId = appId
+        self.defaultEntryId = defaultEntryId
+        self.name = name
+        self.qrDefault = qrDefault
+        self.secretRef = secretRef
+        self.status = status
+        self.tokenRef = tokenRef
+    }
+}
+
+public struct OpenPlatformEntryCreateRequest: Codable {
+    public let key: String?
+    public let type: String?
+    public let url: String?
+
+
+    public init(key: String? = nil, type: String? = nil, url: String? = nil) {
+        self.key = key
+        self.type = type
+        self.url = url
+    }
+}
+
+public struct OpenPlatformEntryItem: Codable {
+    public let accountId: String?
+    public let createdAt: String?
+    public let id: String?
+    public let key: String?
+    public let status: String?
+    public let type: String?
+    public let updatedAt: String?
+    public let url: String?
+
+
+    public init(accountId: String? = nil, createdAt: String? = nil, id: String? = nil, key: String? = nil, status: String? = nil, type: String? = nil, updatedAt: String? = nil, url: String? = nil) {
+        self.accountId = accountId
+        self.createdAt = createdAt
+        self.id = id
+        self.key = key
+        self.status = status
+        self.type = type
+        self.updatedAt = updatedAt
+        self.url = url
+    }
+}
+
+public struct OpenPlatformEntryListResponse: Codable {
+    public let items: [OpenPlatformEntryItem]?
+
+
+    public init(items: [OpenPlatformEntryItem]? = nil) {
+        self.items = items
+    }
+}
+
+public struct OpenPlatformEntryRecord: Codable {
+    public let accountId: String?
+    public let createdAt: String?
+    public let dataScope: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let entryKey: String?
+    public let entryType: String?
+    public let entryUrl: String?
+    public let id: String?
+    public let metadata: [String: String]?
+    public let organizationId: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let uuid: String?
+    public let version: String?
+
+
+    public init(accountId: String? = nil, createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, entryKey: String? = nil, entryType: String? = nil, entryUrl: String? = nil, id: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, uuid: String? = nil, version: String? = nil) {
+        self.accountId = accountId
+        self.createdAt = createdAt
+        self.dataScope = dataScope
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.entryKey = entryKey
+        self.entryType = entryType
+        self.entryUrl = entryUrl
+        self.id = id
+        self.metadata = metadata
+        self.organizationId = organizationId
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.uuid = uuid
+        self.version = version
+    }
+}
+
+public struct OpenPlatformEntryResponse: Codable {
+    public let item: OpenPlatformEntryItem?
+
+
+    public init(item: OpenPlatformEntryItem? = nil) {
+        self.item = item
+    }
+}
+
+public struct OpenPlatformEntryUpdateRequest: Codable {
+    public let key: String?
+    public let status: String?
+    public let type: String?
+    public let url: String?
+
+
+    public init(key: String? = nil, status: String? = nil, type: String? = nil, url: String? = nil) {
+        self.key = key
+        self.status = status
+        self.type = type
+        self.url = url
+    }
+}
+
+public struct OpenPlatformManifestItem: Codable {
+    public let id: String?
+    public let key: String?
+    public let provider: String?
+    public let status: String?
+    public let type: String?
+    public let version: String?
+
+
+    public init(id: String? = nil, key: String? = nil, provider: String? = nil, status: String? = nil, type: String? = nil, version: String? = nil) {
+        self.id = id
+        self.key = key
+        self.provider = provider
+        self.status = status
+        self.type = type
+        self.version = version
+    }
+}
+
+public struct OpenPlatformManifestListResponse: Codable {
+    public let items: [OpenPlatformManifestItem]?
+
+
+    public init(items: [OpenPlatformManifestItem]? = nil) {
+        self.items = items
+    }
+}
+
+public struct OpenPlatformManifestRecord: Codable {
+    public let accountType: String?
+    public let callbackSchema: [String: String]?
+    public let capabilitySchema: [String: String]?
+    public let createdAt: String?
+    public let dataScope: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let entrySchema: [String: String]?
+    public let id: String?
+    public let manifestKey: String?
+    public let metadata: [String: String]?
+    public let organizationId: String?
+    public let provider: String?
+    public let sortOrder: Int?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let uuid: String?
+    public let version: String?
+
+
+    public init(accountType: String? = nil, callbackSchema: [String: String]? = nil, capabilitySchema: [String: String]? = nil, createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, entrySchema: [String: String]? = nil, id: String? = nil, manifestKey: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, provider: String? = nil, sortOrder: Int? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, uuid: String? = nil, version: String? = nil) {
+        self.accountType = accountType
+        self.callbackSchema = callbackSchema
+        self.capabilitySchema = capabilitySchema
+        self.createdAt = createdAt
+        self.dataScope = dataScope
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.entrySchema = entrySchema
+        self.id = id
+        self.manifestKey = manifestKey
+        self.metadata = metadata
+        self.organizationId = organizationId
+        self.provider = provider
+        self.sortOrder = sortOrder
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.uuid = uuid
+        self.version = version
+    }
+}
+
+public struct OpenPlatformPayBindingCreateRequest: Codable {
+    public let mode: String?
+    public let paymentAccountId: String?
+    public let paymentChannelId: String?
+    public let scene: String?
+
+
+    public init(mode: String? = nil, paymentAccountId: String? = nil, paymentChannelId: String? = nil, scene: String? = nil) {
+        self.mode = mode
+        self.paymentAccountId = paymentAccountId
+        self.paymentChannelId = paymentChannelId
+        self.scene = scene
+    }
+}
+
+public struct OpenPlatformPayBindingItem: Codable {
+    public let accountId: String?
+    public let createdAt: String?
+    public let id: String?
+    public let mode: String?
+    public let paymentAccountId: String?
+    public let paymentChannelId: String?
+    public let scene: String?
+    public let status: String?
+    public let updatedAt: String?
+
+
+    public init(accountId: String? = nil, createdAt: String? = nil, id: String? = nil, mode: String? = nil, paymentAccountId: String? = nil, paymentChannelId: String? = nil, scene: String? = nil, status: String? = nil, updatedAt: String? = nil) {
+        self.accountId = accountId
+        self.createdAt = createdAt
+        self.id = id
+        self.mode = mode
+        self.paymentAccountId = paymentAccountId
+        self.paymentChannelId = paymentChannelId
+        self.scene = scene
+        self.status = status
+        self.updatedAt = updatedAt
+    }
+}
+
+public struct OpenPlatformPayBindingListResponse: Codable {
+    public let items: [OpenPlatformPayBindingItem]?
+
+
+    public init(items: [OpenPlatformPayBindingItem]? = nil) {
+        self.items = items
+    }
+}
+
+public struct OpenPlatformPayBindingRecord: Codable {
+    public let accountId: String?
+    public let createdAt: String?
+    public let dataScope: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let id: String?
+    public let metadata: [String: String]?
+    public let mode: String?
+    public let organizationId: String?
+    public let paymentAccountId: String?
+    public let paymentChannelId: String?
+    public let scene: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let uuid: String?
+    public let version: String?
+
+
+    public init(accountId: String? = nil, createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, id: String? = nil, metadata: [String: String]? = nil, mode: String? = nil, organizationId: String? = nil, paymentAccountId: String? = nil, paymentChannelId: String? = nil, scene: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, uuid: String? = nil, version: String? = nil) {
+        self.accountId = accountId
+        self.createdAt = createdAt
+        self.dataScope = dataScope
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.id = id
+        self.metadata = metadata
+        self.mode = mode
+        self.organizationId = organizationId
+        self.paymentAccountId = paymentAccountId
+        self.paymentChannelId = paymentChannelId
+        self.scene = scene
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.uuid = uuid
+        self.version = version
+    }
+}
+
+public struct OpenPlatformPayBindingResponse: Codable {
+    public let item: OpenPlatformPayBindingItem?
+
+
+    public init(item: OpenPlatformPayBindingItem? = nil) {
+        self.item = item
+    }
+}
+
+public struct OpenPlatformProviderItem: Codable {
+    public let id: String?
+    public let name: String?
+    public let provider: String?
+    public let status: String?
+
+
+    public init(id: String? = nil, name: String? = nil, provider: String? = nil, status: String? = nil) {
+        self.id = id
+        self.name = name
+        self.provider = provider
+        self.status = status
+    }
+}
+
+public struct OpenPlatformProviderListResponse: Codable {
+    public let items: [OpenPlatformProviderItem]?
+
+
+    public init(items: [OpenPlatformProviderItem]? = nil) {
+        self.items = items
+    }
+}
+
+public struct OpenPlatformProviderRecord: Codable {
+    public let capabilities: [String: String]?
+    public let createdAt: String?
+    public let dataScope: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let docsUrl: String?
+    public let iconUrl: String?
+    public let id: String?
+    public let metadata: [String: String]?
+    public let name: String?
+    public let organizationId: String?
+    public let provider: String?
+    public let sortOrder: Int?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let uuid: String?
+    public let version: String?
+    public let websiteUrl: String?
+
+
+    public init(capabilities: [String: String]? = nil, createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, docsUrl: String? = nil, iconUrl: String? = nil, id: String? = nil, metadata: [String: String]? = nil, name: String? = nil, organizationId: String? = nil, provider: String? = nil, sortOrder: Int? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, uuid: String? = nil, version: String? = nil, websiteUrl: String? = nil) {
+        self.capabilities = capabilities
+        self.createdAt = createdAt
+        self.dataScope = dataScope
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.docsUrl = docsUrl
+        self.iconUrl = iconUrl
+        self.id = id
+        self.metadata = metadata
+        self.name = name
+        self.organizationId = organizationId
+        self.provider = provider
+        self.sortOrder = sortOrder
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.uuid = uuid
+        self.version = version
+        self.websiteUrl = websiteUrl
+    }
 }
 
 public struct OpsAlertEventRecord: Codable {
@@ -9045,73 +14893,6 @@ public struct OpsConfigSnapshotRecord: Codable {
         self.traceId = traceId
         self.userId = userId
         self.uuid = uuid
-    }
-}
-
-public struct OpsCouponIssueBatchRecord: Codable {
-    public let audienceFilter: [String: String]?
-    public let availableCount: String?
-    public let batchNo: String?
-    public let campaignCode: String?
-    public let claimedCount: String?
-    public let codePattern: String?
-    public let codePrefix: String?
-    public let couponId: String?
-    public let couponTemplateId: String?
-    public let createdAt: String?
-    public let createdBy: String?
-    public let dataScope: String?
-    public let deletedAt: String?
-    public let deletedBy: String?
-    public let expireAt: String?
-    public let generatedAt: String?
-    public let generatedCount: String?
-    public let generationStatus: String?
-    public let id: String?
-    public let metadata: [String: String]?
-    public let name: String?
-    public let organizationId: String?
-    public let requestedCount: String?
-    public let status: String?
-    public let tenantId: String?
-    public let updatedAt: String?
-    public let usedCount: String?
-    public let uuid: String?
-    public let version: String?
-    public let voidedCount: String?
-
-
-    public init(audienceFilter: [String: String]? = nil, availableCount: String? = nil, batchNo: String? = nil, campaignCode: String? = nil, claimedCount: String? = nil, codePattern: String? = nil, codePrefix: String? = nil, couponId: String? = nil, couponTemplateId: String? = nil, createdAt: String? = nil, createdBy: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, expireAt: String? = nil, generatedAt: String? = nil, generatedCount: String? = nil, generationStatus: String? = nil, id: String? = nil, metadata: [String: String]? = nil, name: String? = nil, organizationId: String? = nil, requestedCount: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, usedCount: String? = nil, uuid: String? = nil, version: String? = nil, voidedCount: String? = nil) {
-        self.audienceFilter = audienceFilter
-        self.availableCount = availableCount
-        self.batchNo = batchNo
-        self.campaignCode = campaignCode
-        self.claimedCount = claimedCount
-        self.codePattern = codePattern
-        self.codePrefix = codePrefix
-        self.couponId = couponId
-        self.couponTemplateId = couponTemplateId
-        self.createdAt = createdAt
-        self.createdBy = createdBy
-        self.dataScope = dataScope
-        self.deletedAt = deletedAt
-        self.deletedBy = deletedBy
-        self.expireAt = expireAt
-        self.generatedAt = generatedAt
-        self.generatedCount = generatedCount
-        self.generationStatus = generationStatus
-        self.id = id
-        self.metadata = metadata
-        self.name = name
-        self.organizationId = organizationId
-        self.requestedCount = requestedCount
-        self.status = status
-        self.tenantId = tenantId
-        self.updatedAt = updatedAt
-        self.usedCount = usedCount
-        self.uuid = uuid
-        self.version = version
-        self.voidedCount = voidedCount
     }
 }
 
@@ -9399,6 +15180,7 @@ public struct OpsMetricSnapshotRecord: Codable {
 }
 
 public struct OpsNotificationDeliveryRecord: Codable {
+    public let archivedAt: String?
     public let createdAt: String?
     public let dataScope: String?
     public let deletedAt: String?
@@ -9413,6 +15195,7 @@ public struct OpsNotificationDeliveryRecord: Codable {
     public let organizationId: String?
     public let ownerId: String?
     public let ownerType: String?
+    public let popupSeenAt: String?
     public let readAt: String?
     public let retryCount: Int?
     public let status: String?
@@ -9423,7 +15206,8 @@ public struct OpsNotificationDeliveryRecord: Codable {
     public let version: String?
 
 
-    public init(createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, deliveredAt: String? = nil, deliveryChannel: String? = nil, deliveryStatus: String? = nil, failureCode: String? = nil, id: String? = nil, messageId: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, ownerId: String? = nil, ownerType: String? = nil, readAt: String? = nil, retryCount: Int? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, userId: String? = nil, uuid: String? = nil, version: String? = nil) {
+    public init(archivedAt: String? = nil, createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, deliveredAt: String? = nil, deliveryChannel: String? = nil, deliveryStatus: String? = nil, failureCode: String? = nil, id: String? = nil, messageId: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, ownerId: String? = nil, ownerType: String? = nil, popupSeenAt: String? = nil, readAt: String? = nil, retryCount: Int? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, userId: String? = nil, uuid: String? = nil, version: String? = nil) {
+        self.archivedAt = archivedAt
         self.createdAt = createdAt
         self.dataScope = dataScope
         self.deletedAt = deletedAt
@@ -9438,6 +15222,7 @@ public struct OpsNotificationDeliveryRecord: Codable {
         self.organizationId = organizationId
         self.ownerId = ownerId
         self.ownerType = ownerType
+        self.popupSeenAt = popupSeenAt
         self.readAt = readAt
         self.retryCount = retryCount
         self.status = status
@@ -9451,6 +15236,7 @@ public struct OpsNotificationDeliveryRecord: Codable {
 
 public struct OpsNotificationMessageRecord: Codable {
     public let actionUrl: String?
+    public let appId: String?
     public let content: String?
     public let createdAt: String?
     public let dataScope: String?
@@ -9466,10 +15252,6 @@ public struct OpsNotificationMessageRecord: Codable {
     public let severity: String?
     public let status: String?
     public let summary: String?
-    public let targetOwnerId: String?
-    public let targetOwnerType: String?
-    public let targetScope: String?
-    public let targetUserId: String?
     public let tenantId: String?
     public let title: String?
     public let updatedAt: String?
@@ -9477,8 +15259,9 @@ public struct OpsNotificationMessageRecord: Codable {
     public let version: String?
 
 
-    public init(actionUrl: String? = nil, content: String? = nil, createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, expireAt: String? = nil, id: String? = nil, messageCode: String? = nil, messageType: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, publishedAt: String? = nil, severity: String? = nil, status: String? = nil, summary: String? = nil, targetOwnerId: String? = nil, targetOwnerType: String? = nil, targetScope: String? = nil, targetUserId: String? = nil, tenantId: String? = nil, title: String? = nil, updatedAt: String? = nil, uuid: String? = nil, version: String? = nil) {
+    public init(actionUrl: String? = nil, appId: String? = nil, content: String? = nil, createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, expireAt: String? = nil, id: String? = nil, messageCode: String? = nil, messageType: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, publishedAt: String? = nil, severity: String? = nil, status: String? = nil, summary: String? = nil, tenantId: String? = nil, title: String? = nil, updatedAt: String? = nil, uuid: String? = nil, version: String? = nil) {
         self.actionUrl = actionUrl
+        self.appId = appId
         self.content = content
         self.createdAt = createdAt
         self.dataScope = dataScope
@@ -9494,12 +15277,84 @@ public struct OpsNotificationMessageRecord: Codable {
         self.severity = severity
         self.status = status
         self.summary = summary
-        self.targetOwnerId = targetOwnerId
-        self.targetOwnerType = targetOwnerType
-        self.targetScope = targetScope
-        self.targetUserId = targetUserId
         self.tenantId = tenantId
         self.title = title
+        self.updatedAt = updatedAt
+        self.uuid = uuid
+        self.version = version
+    }
+}
+
+public struct OpsNotificationPreferenceRecord: Codable {
+    public let createdAt: String?
+    public let dataScope: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let id: String?
+    public let metadata: [String: String]?
+    public let organizationId: String?
+    public let ownerId: String?
+    public let ownerType: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let userId: String?
+    public let uuid: String?
+    public let version: String?
+
+
+    public init(createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, id: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, ownerId: String? = nil, ownerType: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, userId: String? = nil, uuid: String? = nil, version: String? = nil) {
+        self.createdAt = createdAt
+        self.dataScope = dataScope
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.id = id
+        self.metadata = metadata
+        self.organizationId = organizationId
+        self.ownerId = ownerId
+        self.ownerType = ownerType
+        self.status = status
+        self.tenantId = tenantId
+        self.updatedAt = updatedAt
+        self.userId = userId
+        self.uuid = uuid
+        self.version = version
+    }
+}
+
+public struct OpsNotificationRecipientRecord: Codable {
+    public let appId: String?
+    public let createdAt: String?
+    public let dataScope: String?
+    public let deletedAt: String?
+    public let deletedBy: String?
+    public let id: String?
+    public let metadata: [String: String]?
+    public let organizationId: String?
+    public let recipientRoleCode: String?
+    public let recipientUserId: String?
+    public let recipientValue: String?
+    public let status: String?
+    public let tenantId: String?
+    public let updatedAt: String?
+    public let uuid: String?
+    public let version: String?
+
+
+    public init(appId: String? = nil, createdAt: String? = nil, dataScope: String? = nil, deletedAt: String? = nil, deletedBy: String? = nil, id: String? = nil, metadata: [String: String]? = nil, organizationId: String? = nil, recipientRoleCode: String? = nil, recipientUserId: String? = nil, recipientValue: String? = nil, status: String? = nil, tenantId: String? = nil, updatedAt: String? = nil, uuid: String? = nil, version: String? = nil) {
+        self.appId = appId
+        self.createdAt = createdAt
+        self.dataScope = dataScope
+        self.deletedAt = deletedAt
+        self.deletedBy = deletedBy
+        self.id = id
+        self.metadata = metadata
+        self.organizationId = organizationId
+        self.recipientRoleCode = recipientRoleCode
+        self.recipientUserId = recipientUserId
+        self.recipientValue = recipientValue
+        self.status = status
+        self.tenantId = tenantId
         self.updatedAt = updatedAt
         self.uuid = uuid
         self.version = version
@@ -9632,34 +15487,173 @@ public struct OpsReferralStatSnapshotRecord: Codable {
     }
 }
 
-public struct PaymentsAttemptsListResult: Codable {
+public struct OrdersEventsListResult: Codable {
     public let code: String?
-    public let data: AdminPaymentAttemptsResponse?
-    public let message: String?
+    public let data: CommerceStandardCollectionResponse?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminPaymentAttemptsResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
 
-public struct PlusAccountExchangeConfigRecord: Codable {
+public struct OrdersListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
 
-    public init() {}
+
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
 }
 
-public struct PlusAccountHistoryRecord: Codable {
+public struct OrdersRetrieveResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardResourceResponse?
+    public let msg: String?
 
-    public init() {}
+
+    public init(code: String? = nil, data: CommerceStandardResourceResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
 }
 
-public struct PlusAccountRecord: Codable {
+public struct PaymentsAttemptsListResult: Codable {
+    public let code: String?
+    public let data: CommercePaymentAttemptListResponse?
+    public let msg: String?
 
-    public init() {}
+
+    public init(code: String? = nil, data: CommercePaymentAttemptListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct PaymentsChannelsListResult: Codable {
+    public let code: String?
+    public let data: CommercePaymentChannelListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommercePaymentChannelListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct PaymentsIntentsListResult: Codable {
+    public let code: String?
+    public let data: CommercePaymentIntentListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommercePaymentIntentListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct PaymentsMethodsListResult: Codable {
+    public let code: String?
+    public let data: CommercePaymentMethodListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommercePaymentMethodListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct PaymentsProviderAccountsCreateResult: Codable {
+    public let code: String?
+    public let data: CommercePaymentProviderAccountMutationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommercePaymentProviderAccountMutationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct PaymentsProviderAccountsListResult: Codable {
+    public let code: String?
+    public let data: CommercePaymentProviderAccountListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommercePaymentProviderAccountListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct PaymentsProvidersListResult: Codable {
+    public let code: String?
+    public let data: CommercePaymentProviderListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommercePaymentProviderListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct PaymentsReconciliationRunsListResult: Codable {
+    public let code: String?
+    public let data: CommercePaymentReconciliationRunListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommercePaymentReconciliationRunListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct PaymentsRouteRulesListResult: Codable {
+    public let code: String?
+    public let data: CommercePaymentRouteRuleListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommercePaymentRouteRuleListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct PaymentsWebhookEventsListResult: Codable {
+    public let code: String?
+    public let data: CommercePaymentWebhookEventListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommercePaymentWebhookEventListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
 }
 
 public struct PlusAgentSkillPackageRecord: Codable {
@@ -9872,27 +15866,7 @@ public struct PlusContentVoteRecord: Codable {
     }
 }
 
-public struct PlusCouponRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusCouponTemplateRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusCurrencyRecord: Codable {
-
-    public init() {}
-}
-
 public struct PlusDepartmentRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusExchangeRateRecord: Codable {
 
     public init() {}
 }
@@ -9953,26 +15927,6 @@ public struct PlusInvitationRelationRecord: Codable {
     public init() {}
 }
 
-public struct PlusInvoiceItemRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusInvoiceRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusInvoiceRecordRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusLedgerBridgeRecord: Codable {
-
-    public init() {}
-}
-
 public struct PlusMemberCardRecord: Codable {
 
     public init() {}
@@ -9983,72 +15937,12 @@ public struct PlusMemberLevelRecord: Codable {
     public init() {}
 }
 
-public struct PlusOrderDispatchRuleRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusOrderItemRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusOrderRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusOrderWorkerDispatchProfileRecord: Codable {
-
-    public init() {}
-}
-
 public struct PlusPartnerRecord: Codable {
 
     public init() {}
 }
 
-public struct PlusPaymentRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusPaymentWebhookEventRecord: Codable {
-
-    public init() {}
-}
-
 public struct PlusPositionRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusProductRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusRefundRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusShopRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusShoppingCartItemRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusShoppingCartRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusSkuRecord: Codable {
 
     public init() {}
 }
@@ -10081,86 +15975,37 @@ public struct PlusUserCardRecord: Codable {
     public init() {}
 }
 
-public struct PlusUserCouponRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusVipBenefitRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusVipBenefitUsageRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusVipLevelBenefitRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusVipLevelRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusVipPackGroupRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusVipPackRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusVipPointChangeRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusVipRechargeMethodRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusVipRechargePackRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusVipRechargeRecord: Codable {
-
-    public init() {}
-}
-
-public struct PlusVipUserRecord: Codable {
-
-    public init() {}
-}
-
 public struct ProblemDetail: Codable {
     public let code: String?
     public let detail: String?
     public let errors: [FieldError]?
     public let instance: String?
+    public let requestId: String?
     public let status: Int?
     public let title: String?
     public let traceId: String?
     public let type: String?
 
 
-    public init(code: String? = nil, detail: String? = nil, errors: [FieldError]? = nil, instance: String? = nil, status: Int? = nil, title: String? = nil, traceId: String? = nil, type: String? = nil) {
+    public init(code: String? = nil, detail: String? = nil, errors: [FieldError]? = nil, instance: String? = nil, requestId: String? = nil, status: Int? = nil, title: String? = nil, traceId: String? = nil, type: String? = nil) {
         self.code = code
         self.detail = detail
         self.errors = errors
         self.instance = instance
+        self.requestId = requestId
         self.status = status
         self.title = title
         self.traceId = traceId
         self.type = type
+    }
+}
+
+public struct ProviderCircuitBreakerPolicy: Codable {
+    public let failureThreshold: Int?
+
+
+    public init(failureThreshold: Int? = nil) {
+        self.failureThreshold = failureThreshold
     }
 }
 
@@ -10180,14 +16025,12 @@ public struct ProviderRetryPolicy: Codable {
 public struct ProviderSecretsCreateResult: Codable {
     public let code: String?
     public let data: AdminProviderSecretMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminProviderSecretMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminProviderSecretMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10195,14 +16038,12 @@ public struct ProviderSecretsCreateResult: Codable {
 public struct ProviderSecretsDeleteResult: Codable {
     public let code: String?
     public let data: AdminDeleteResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminDeleteResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminDeleteResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10210,14 +16051,12 @@ public struct ProviderSecretsDeleteResult: Codable {
 public struct ProviderSecretsListResult: Codable {
     public let code: String?
     public let data: AdminProviderSecretsResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminProviderSecretsResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminProviderSecretsResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10225,14 +16064,25 @@ public struct ProviderSecretsListResult: Codable {
 public struct ProviderSecretsUpdateResult: Codable {
     public let code: String?
     public let data: AdminProviderSecretMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminProviderSecretMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminProviderSecretMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
+        self.msg = msg
+    }
+}
+
+public struct ProvidersListResult: Codable {
+    public let code: String?
+    public let data: OpenPlatformProviderListResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: OpenPlatformProviderListResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
         self.msg = msg
     }
 }
@@ -10240,14 +16090,12 @@ public struct ProviderSecretsUpdateResult: Codable {
 public struct RateLimitsApiKeysCreateResult: Codable {
     public let code: String?
     public let data: AdminRateLimitMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminRateLimitMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminRateLimitMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10255,14 +16103,12 @@ public struct RateLimitsApiKeysCreateResult: Codable {
 public struct RateLimitsApiKeysListResult: Codable {
     public let code: String?
     public let data: AdminTokenLimitsResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminTokenLimitsResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminTokenLimitsResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10270,14 +16116,12 @@ public struct RateLimitsApiKeysListResult: Codable {
 public struct RateLimitsIpCreateResult: Codable {
     public let code: String?
     public let data: AdminRateLimitMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminRateLimitMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminRateLimitMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10285,14 +16129,12 @@ public struct RateLimitsIpCreateResult: Codable {
 public struct RateLimitsIpListResult: Codable {
     public let code: String?
     public let data: AdminIpLimitsResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminIpLimitsResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminIpLimitsResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10300,14 +16142,12 @@ public struct RateLimitsIpListResult: Codable {
 public struct RateLimitsModelsCreateResult: Codable {
     public let code: String?
     public let data: AdminRateLimitMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminRateLimitMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminRateLimitMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10315,44 +16155,38 @@ public struct RateLimitsModelsCreateResult: Codable {
 public struct RateLimitsModelsListResult: Codable {
     public let code: String?
     public let data: AdminModelLimitsResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminModelLimitsResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminModelLimitsResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
 
-public struct RechargePackage: Codable {
-    public let bonus: Int?
-    public let id: String?
-    public let points: Int?
-    public let rmb: String?
+public struct RechargesOrdersListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
 
 
-    public init(bonus: Int? = nil, id: String? = nil, points: Int? = nil, rmb: String? = nil) {
-        self.bonus = bonus
-        self.id = id
-        self.points = points
-        self.rmb = rmb
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
     }
 }
 
 public struct RechargesPackagesCreateResult: Codable {
     public let code: String?
     public let data: AdminRechargePackageMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminRechargePackageMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminRechargePackageMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10360,29 +16194,25 @@ public struct RechargesPackagesCreateResult: Codable {
 public struct RechargesPackagesDeleteResult: Codable {
     public let code: String?
     public let data: AdminDeleteResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminDeleteResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminDeleteResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
 
 public struct RechargesPackagesListResult: Codable {
     public let code: String?
-    public let data: [RechargePackage]?
-    public let message: String?
+    public let data: CommerceStandardCollectionResponse?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: [RechargePackage]? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10390,44 +16220,12 @@ public struct RechargesPackagesListResult: Codable {
 public struct RechargesPackagesUpdateResult: Codable {
     public let code: String?
     public let data: AdminRechargePackageMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminRechargePackageMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminRechargePackageMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
-        self.msg = msg
-    }
-}
-
-public struct RechargesRecordsListResult: Codable {
-    public let code: String?
-    public let data: AdminRechargeRecordsResponse?
-    public let message: String?
-    public let msg: String?
-
-
-    public init(code: String? = nil, data: AdminRechargeRecordsResponse? = nil, message: String? = nil, msg: String? = nil) {
-        self.code = code
-        self.data = data
-        self.message = message
-        self.msg = msg
-    }
-}
-
-public struct RechargesRecordsRetrieveResult: Codable {
-    public let code: String?
-    public let data: AdminRechargeRecordItem?
-    public let message: String?
-    public let msg: String?
-
-
-    public init(code: String? = nil, data: AdminRechargeRecordItem? = nil, message: String? = nil, msg: String? = nil) {
-        self.code = code
-        self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10435,29 +16233,90 @@ public struct RechargesRecordsRetrieveResult: Codable {
 public struct RecordsListResult: Codable {
     public let code: String?
     public let data: AdminRecordLogsResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminRecordLogsResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminRecordLogsResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
 
-public struct ReferralsStatsListResult: Codable {
+public struct RefundsListResult: Codable {
     public let code: String?
-    public let data: AdminReferralStatsResponse?
-    public let message: String?
+    public let data: CommerceStandardCollectionResponse?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminReferralStatsResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
+        self.msg = msg
+    }
+}
+
+public struct RefundsRetrieveResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardResourceResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardResourceResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct ShipmentsListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct ShipmentsTrackingEventsListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct SiteSettingsRetrieveResult: Codable {
+    public let code: String?
+    public let data: AdminSiteSettingsResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminSiteSettingsResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct SiteSettingsUpdateResult: Codable {
+    public let code: String?
+    public let data: AdminSiteSettingsResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminSiteSettingsResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
         self.msg = msg
     }
 }
@@ -10465,14 +16324,12 @@ public struct ReferralsStatsListResult: Codable {
 public struct SkillsArtifactsCreateResult: Codable {
     public let code: String?
     public let data: AdminSkillArtifactMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillArtifactMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillArtifactMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10480,14 +16337,12 @@ public struct SkillsArtifactsCreateResult: Codable {
 public struct SkillsArtifactsDeleteResult: Codable {
     public let code: String?
     public let data: AdminSkillArtifactDeleteResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillArtifactDeleteResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillArtifactDeleteResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10495,14 +16350,12 @@ public struct SkillsArtifactsDeleteResult: Codable {
 public struct SkillsArtifactsListResult: Codable {
     public let code: String?
     public let data: AdminSkillArtifactListResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillArtifactListResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillArtifactListResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10510,14 +16363,12 @@ public struct SkillsArtifactsListResult: Codable {
 public struct SkillsArtifactsRetrieveResult: Codable {
     public let code: String?
     public let data: AdminSkillArtifactMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillArtifactMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillArtifactMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10525,14 +16376,12 @@ public struct SkillsArtifactsRetrieveResult: Codable {
 public struct SkillsArtifactsUpdateResult: Codable {
     public let code: String?
     public let data: AdminSkillArtifactMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillArtifactMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillArtifactMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10540,14 +16389,12 @@ public struct SkillsArtifactsUpdateResult: Codable {
 public struct SkillsAssetsCreateResult: Codable {
     public let code: String?
     public let data: AdminSkillAssetMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillAssetMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillAssetMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10555,14 +16402,12 @@ public struct SkillsAssetsCreateResult: Codable {
 public struct SkillsAssetsDeleteResult: Codable {
     public let code: String?
     public let data: AdminSkillAssetDeleteResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillAssetDeleteResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillAssetDeleteResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10570,14 +16415,12 @@ public struct SkillsAssetsDeleteResult: Codable {
 public struct SkillsAssetsListResult: Codable {
     public let code: String?
     public let data: AdminSkillAssetListResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillAssetListResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillAssetListResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10585,14 +16428,12 @@ public struct SkillsAssetsListResult: Codable {
 public struct SkillsAssetsRetrieveResult: Codable {
     public let code: String?
     public let data: AdminSkillAssetMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillAssetMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillAssetMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10600,14 +16441,12 @@ public struct SkillsAssetsRetrieveResult: Codable {
 public struct SkillsAssetsUpdateResult: Codable {
     public let code: String?
     public let data: AdminSkillAssetMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillAssetMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillAssetMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10615,14 +16454,25 @@ public struct SkillsAssetsUpdateResult: Codable {
 public struct SkillsCategoriesCreateResult: Codable {
     public let code: String?
     public let data: AdminSkillCategoryMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillCategoryMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillCategoryMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
+        self.msg = msg
+    }
+}
+
+public struct SkillsCategoriesDeleteResult: Codable {
+    public let code: String?
+    public let data: AdminSkillCategoryDeleteResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminSkillCategoryDeleteResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
         self.msg = msg
     }
 }
@@ -10630,14 +16480,25 @@ public struct SkillsCategoriesCreateResult: Codable {
 public struct SkillsCategoriesListResult: Codable {
     public let code: String?
     public let data: AdminSkillCategoryListResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillCategoryListResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillCategoryListResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
+        self.msg = msg
+    }
+}
+
+public struct SkillsCategoriesUpdateResult: Codable {
+    public let code: String?
+    public let data: AdminSkillCategoryMutationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: AdminSkillCategoryMutationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
         self.msg = msg
     }
 }
@@ -10645,14 +16506,12 @@ public struct SkillsCategoriesListResult: Codable {
 public struct SkillsCreateResult: Codable {
     public let code: String?
     public let data: AdminSkillMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10660,14 +16519,12 @@ public struct SkillsCreateResult: Codable {
 public struct SkillsDeleteResult: Codable {
     public let code: String?
     public let data: AdminSkillDeleteResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillDeleteResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillDeleteResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10675,14 +16532,12 @@ public struct SkillsDeleteResult: Codable {
 public struct SkillsDisableResult: Codable {
     public let code: String?
     public let data: AdminSkillMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10690,14 +16545,12 @@ public struct SkillsDisableResult: Codable {
 public struct SkillsEnableResult: Codable {
     public let code: String?
     public let data: AdminSkillMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10705,14 +16558,12 @@ public struct SkillsEnableResult: Codable {
 public struct SkillsListResult: Codable {
     public let code: String?
     public let data: AdminSkillListResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillListResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillListResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10720,14 +16571,12 @@ public struct SkillsListResult: Codable {
 public struct SkillsPackageCreateResult: Codable {
     public let code: String?
     public let data: AdminSkillPackageMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillPackageMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillPackageMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10735,14 +16584,12 @@ public struct SkillsPackageCreateResult: Codable {
 public struct SkillsPackageDeleteResult: Codable {
     public let code: String?
     public let data: AdminSkillPackageDeleteResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillPackageDeleteResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillPackageDeleteResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10750,14 +16597,12 @@ public struct SkillsPackageDeleteResult: Codable {
 public struct SkillsPackageDisableResult: Codable {
     public let code: String?
     public let data: AdminSkillPackageMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillPackageMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillPackageMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10765,14 +16610,12 @@ public struct SkillsPackageDisableResult: Codable {
 public struct SkillsPackageEnableResult: Codable {
     public let code: String?
     public let data: AdminSkillPackageMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillPackageMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillPackageMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10780,14 +16623,12 @@ public struct SkillsPackageEnableResult: Codable {
 public struct SkillsPackageListResult: Codable {
     public let code: String?
     public let data: AdminSkillPackageListResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillPackageListResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillPackageListResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10795,14 +16636,12 @@ public struct SkillsPackageListResult: Codable {
 public struct SkillsPackageRetrieveResult: Codable {
     public let code: String?
     public let data: AdminSkillPackageMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillPackageMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillPackageMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10810,14 +16649,12 @@ public struct SkillsPackageRetrieveResult: Codable {
 public struct SkillsPackageUpdateResult: Codable {
     public let code: String?
     public let data: AdminSkillPackageMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillPackageMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillPackageMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10825,14 +16662,12 @@ public struct SkillsPackageUpdateResult: Codable {
 public struct SkillsPublishResult: Codable {
     public let code: String?
     public let data: AdminSkillMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10840,14 +16675,12 @@ public struct SkillsPublishResult: Codable {
 public struct SkillsRetrieveResult: Codable {
     public let code: String?
     public let data: AdminSkillMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10855,14 +16688,12 @@ public struct SkillsRetrieveResult: Codable {
 public struct SkillsReviewApproveResult: Codable {
     public let code: String?
     public let data: AdminSkillMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10870,14 +16701,12 @@ public struct SkillsReviewApproveResult: Codable {
 public struct SkillsReviewRejectResult: Codable {
     public let code: String?
     public let data: AdminSkillMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10885,14 +16714,12 @@ public struct SkillsReviewRejectResult: Codable {
 public struct SkillsUnpublishResult: Codable {
     public let code: String?
     public let data: AdminSkillMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -10900,14 +16727,12 @@ public struct SkillsUnpublishResult: Codable {
 public struct SkillsUpdateResult: Codable {
     public let code: String?
     public let data: AdminSkillMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminSkillMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -11139,47 +16964,15 @@ public struct SystemSchemaMigrationRecord: Codable {
     }
 }
 
-public struct UsersBalanceAdjustmentsCreateResult: Codable {
-    public let code: String?
-    public let data: AdminUserMutationResponse?
-    public let message: String?
-    public let msg: String?
-
-
-    public init(code: String? = nil, data: AdminUserMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
-        self.code = code
-        self.data = data
-        self.message = message
-        self.msg = msg
-    }
-}
-
-public struct UsersCouponsListResult: Codable {
-    public let code: String?
-    public let data: AdminRedemptionRecordsResponse?
-    public let message: String?
-    public let msg: String?
-
-
-    public init(code: String? = nil, data: AdminRedemptionRecordsResponse? = nil, message: String? = nil, msg: String? = nil) {
-        self.code = code
-        self.data = data
-        self.message = message
-        self.msg = msg
-    }
-}
-
 public struct UsersCreateResult: Codable {
     public let code: String?
     public let data: AdminUserMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminUserMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminUserMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -11187,14 +16980,12 @@ public struct UsersCreateResult: Codable {
 public struct UsersListResult: Codable {
     public let code: String?
     public let data: AdminUsersResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminUsersResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminUsersResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
         self.msg = msg
     }
 }
@@ -11202,14 +16993,64 @@ public struct UsersListResult: Codable {
 public struct UsersUpdateResult: Codable {
     public let code: String?
     public let data: AdminUserMutationResponse?
-    public let message: String?
     public let msg: String?
 
 
-    public init(code: String? = nil, data: AdminUserMutationResponse? = nil, message: String? = nil, msg: String? = nil) {
+    public init(code: String? = nil, data: AdminUserMutationResponse? = nil, msg: String? = nil) {
         self.code = code
         self.data = data
-        self.message = message
+        self.msg = msg
+    }
+}
+
+public struct WalletAccountsListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct WalletAdjustmentsCreateResult: Codable {
+    public let code: String?
+    public let data: CommerceOperationResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceOperationResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct WalletExchangeRulesListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
+        self.msg = msg
+    }
+}
+
+public struct WalletLedgerEntriesListResult: Codable {
+    public let code: String?
+    public let data: CommerceStandardCollectionResponse?
+    public let msg: String?
+
+
+    public init(code: String? = nil, data: CommerceStandardCollectionResponse? = nil, msg: String? = nil) {
+        self.code = code
+        self.data = data
         self.msg = msg
     }
 }

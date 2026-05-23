@@ -33,7 +33,7 @@ const BACKEND_SURFACE_OPENAPI_CONTRACT = {
   expectedTitle: 'SDKWork Claw Router Backend API',
   requiredPaths: [
     '/backend/v3/api/ai/model_vendors',
-    '/backend/v3/api/billing/recharges/packages',
+    '/backend/v3/api/recharges/packages',
     '/backend/v3/api/ecosystem/skills',
   ],
 };
@@ -43,7 +43,7 @@ const APP_SURFACE_OPENAPI_CONTRACT = {
   requiredPaths: [
     '/app/v3/api/platform/apps/store',
     '/app/v3/api/ecosystem/skills',
-    '/app/v3/api/billing/account/points/recharges/packages',
+    '/app/v3/api/recharges/packages',
   ],
 };
 

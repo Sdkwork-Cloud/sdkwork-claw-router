@@ -20,6 +20,27 @@ class FrontendOperationAuditTest(unittest.TestCase):
         path.write_text(textwrap.dedent(content).strip() + "\n", encoding="utf-8")
         return path
 
+    def write_modular_contract(self, root: Path, content: str) -> Path:
+        fragment = root / "docs" / "schema-registry" / "frontend-field-contracts" / "operations" / "demo.yaml"
+        fragment.parent.mkdir(parents=True, exist_ok=True)
+        fragment.write_text(textwrap.dedent(content).strip() + "\n", encoding="utf-8")
+        index = root / "docs" / "schema-registry" / "frontend-field-contracts" / "index.yaml"
+        index.write_text(
+            textwrap.dedent(
+                """
+                schema: sdkwork-claw-router-frontend-field-contracts
+                version: 0.1.0
+                source: apps/sdkwork-claw-router-portal/src/App.tsx
+                rule: every actual portal route must be backed by explicit schema tables.
+                fragments:
+                  - operations/demo.yaml
+                """
+            ).strip()
+            + "\n",
+            encoding="utf-8",
+        )
+        return index
+
     def test_extracts_class_static_and_object_service_operations(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -215,6 +236,49 @@ class FrontendOperationAuditTest(unittest.TestCase):
                   - route: /demo
                     required_tables: [demo_table]
                 frontend_operations: []
+                """,
+            )
+
+            result = FrontendOperationAudit(root=root).validate()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_default_contract_path_prefers_modular_index_over_stale_snapshot(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                """
+                import { getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/runtime';
+
+                export async function fetchItems(): Promise<void> {
+                  await getClawRouterAppSdkClient().demo.items.list();
+                }
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                routes: []
+                frontend_operations: []
+                """,
+            )
+            self.write_modular_contract(
+                root,
+                """
+                routes:
+                  - route: /demo
+                    required_tables: [demo_table]
+                frontend_operations:
+                  - route: /demo
+                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    operation: fetchItems
+                    kind: read
+                    api_surface: app
+                    api_method: GET
+                    api_path: /app/v3/api/demo/items
+                    read_sources: [demo_table]
                 """,
             )
 
@@ -737,6 +801,220 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 "frontend operation apps/sdkwork-claw-router-portal/packages/demo/src/adminService.ts#fetchItems must use getClawRouterBackendSdkClient for backend api_surface",
                 result.messages,
             )
+
+    def test_accepts_commerce_service_as_generated_sdk_boundary(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/demo/src/billingService.ts",
+                """
+                import { getClawRouterCommerceService } from 'sdkwork-claw-router-commons/runtime';
+
+                export class BillingService {
+                  static async fetchWallet(): Promise<unknown> {
+                    return getClawRouterCommerceService().wallet.overview.retrieve();
+                  }
+                }
+                """,
+            )
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts",
+                """
+                import {
+                  getClawRouterAppSdkClient,
+                  getClawRouterBackendSdkClient,
+                } from './sdk-clients.ts';
+
+                export function getClawRouterCommerceService() {
+                  return {
+                    wallet: {
+                      overview: {
+                        retrieve: () => getClawRouterAppSdkClient().billing.wallet.overview.retrieve(),
+                      },
+                    },
+                    admin: {
+                      finance: {
+                        ledger: {
+                          list: () => getClawRouterBackendSdkClient().billing.finance.ledger.list(),
+                        },
+                      },
+                    },
+                  };
+                }
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                routes:
+                  - route: /console/commerce
+                    required_tables: [commerce_account]
+                frontend_operations:
+                  - route: /console/commerce
+                    source: apps/sdkwork-claw-router-portal/packages/demo/src/billingService.ts
+                    operation: fetchWallet
+                    kind: read
+                    api_surface: app
+                    api_method: GET
+                    api_path: /app/v3/api/billing/account/summary
+                    read_sources: [commerce_account]
+                """,
+            )
+
+            result = FrontendOperationAudit(root=root).validate()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_commerce_runtime_import_as_generated_sdk_boundary(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts",
+                """
+                import { getClawRouterAppSdkClient } from './sdk-clients.ts';
+
+                export async function appAccountsCurrentSummaryRetrieve(): Promise<unknown> {
+                  return getClawRouterAppSdkClient().commerce.accounts.current.summary.retrieve();
+                }
+                """,
+            )
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-console-service.ts",
+                """
+                import { appAccountsCurrentSummaryRetrieve } from './commerce-runtime.ts';
+
+                export class ConsoleCommerceService {
+                  static async fetchAccountDetails(): Promise<unknown> {
+                    return appAccountsCurrentSummaryRetrieve();
+                  }
+                }
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                routes:
+                  - route: /console/account
+                    required_tables: [commerce_account]
+                frontend_operations:
+                  - route: /console/account
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-console-service.ts
+                    operation: fetchAccountDetails
+                    operation_scope: app_shell
+                    kind: read
+                    api_surface: app
+                    api_method: GET
+                    api_path: /app/v3/api/accounts/current/summary
+                    read_sources: [commerce_account]
+                """,
+            )
+
+            result = FrontendOperationAudit(root=root).validate()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_local_runtime_adapter_import_as_generated_sdk_boundary(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/demo/src/appRuntimeApiOperations.ts",
+                """
+                import { getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/runtime';
+
+                export async function listModelCatalog(): Promise<unknown> {
+                  return getClawRouterAppSdkClient().intelligence.modelsList();
+                }
+                """,
+            )
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                """
+                import { listModelCatalog } from './appRuntimeApiOperations.ts';
+
+                export class DemoService {
+                  static async fetchModelGroups(): Promise<unknown> {
+                    return listModelCatalog();
+                  }
+                }
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                routes:
+                  - route: /demo
+                    required_tables: [ai_model]
+                frontend_operations:
+                  - route: /demo
+                    source: apps/sdkwork-claw-router-portal/packages/demo/src/appRuntimeApiOperations.ts
+                    operation: listModelCatalog
+                    kind: read
+                    api_surface: app
+                    api_method: GET
+                    api_path: /app/v3/api/ai/models
+                    read_sources: [ai_model]
+                  - route: /demo
+                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    operation: fetchModelGroups
+                    operation_scope: app_shell
+                    kind: read
+                    api_surface: app
+                    api_method: GET
+                    api_path: /app/v3/api/ai/models
+                    read_sources: [ai_model]
+                """,
+            )
+
+            result = FrontendOperationAudit(root=root).validate()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_app_shell_operation_with_global_read_sources(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/siteBranding.ts",
+                """
+                import { getClawRouterAppSdkClient } from './sdk-clients.ts';
+
+                export async function fetchSiteBranding(): Promise<unknown> {
+                  return getClawRouterAppSdkClient().system.site.runtime.retrieve();
+                }
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                routes:
+                  - route: /
+                    required_tables: [content_doc_page]
+                frontend_operations:
+                  - route: /
+                    operation_scope: app_shell
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/siteBranding.ts
+                    operation: fetchSiteBranding
+                    operation_id: site.runtime.retrieve
+                    kind: read
+                    api_surface: app
+                    api_method: GET
+                    api_path: /app/v3/api/system/site/runtime
+                    read_sources: [ops_config_snapshot]
+                """,
+            )
+
+            result = FrontendOperationAudit(root=root).validate()
+
+            self.assertTrue(result.ok, result.messages)
+
+            audit = FrontendOperationAudit(root=root).generate()
+            self.assertEqual("app_shell", audit["operations"][0]["operation_scope"])
 
     def test_accepts_openai_v1_operation_through_ai_sdk_boundary(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

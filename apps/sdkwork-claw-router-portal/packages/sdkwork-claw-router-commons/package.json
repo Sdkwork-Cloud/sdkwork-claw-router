@@ -18,6 +18,36 @@
       "import": "./src/runtime.ts",
       "require": "./src/runtime.ts",
       "default": "./src/runtime.ts"
+    },
+    "./api-result": {
+      "types": "./src/api-result.ts",
+      "import": "./src/api-result.ts",
+      "require": "./src/api-result.ts",
+      "default": "./src/api-result.ts"
+    },
+    "./sdk-clients": {
+      "types": "./src/sdk-clients.ts",
+      "import": "./src/sdk-clients.ts",
+      "require": "./src/sdk-clients.ts",
+      "default": "./src/sdk-clients.ts"
+    },
+    "./sdk-request-boundary": {
+      "types": "./src/sdk-request-boundary.ts",
+      "import": "./src/sdk-request-boundary.ts",
+      "require": "./src/sdk-request-boundary.ts",
+      "default": "./src/sdk-request-boundary.ts"
+    },
+    "./components/BusinessState": {
+      "types": "./src/components/BusinessState.tsx",
+      "import": "./src/components/BusinessState.tsx",
+      "require": "./src/components/BusinessState.tsx",
+      "default": "./src/components/BusinessState.tsx"
+    },
+    "./components/ConfirmDialog": {
+      "types": "./src/components/ConfirmDialog.tsx",
+      "import": "./src/components/ConfirmDialog.tsx",
+      "require": "./src/components/ConfirmDialog.tsx",
+      "default": "./src/components/ConfirmDialog.tsx"
     }
   },
   "scripts": {
@@ -31,6 +61,7 @@
     "@sdkwork/clawrouter-open-sdk": "workspace:*",
     "@sdkwork/iam-runtime": "workspace:*",
     "@sdkwork/iam-service": "workspace:*",
+    "@sdkwork/notification-pc-react": "workspace:*",
     "@sdkwork/sdk-common": "^1.0.2"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 export type ApiRecord = Record<string, unknown>;
 
-export function ensurePlusApiSuccess(result: unknown, message: string): void {
+export function ensureSdkworkApiSuccess(result: unknown, message: string): void {
   if (Array.isArray(result)) {
     if (result.length === 0) {
       throw new Error(message);
@@ -130,7 +130,7 @@ function isNonEntityResultRecord(record: ApiRecord): boolean {
 }
 
 function isApiEnvelope(record: ApiRecord): boolean {
-  return isKnownApiCode(record.code) && ('data' in record || 'msg' in record || 'message' in record);
+  return isKnownApiCode(record.code) && ('data' in record || 'msg' in record);
 }
 
 function isKnownApiCode(value: unknown): boolean {

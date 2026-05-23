@@ -1,3 +1,4 @@
+use sdkwork_commerce_core::{CommerceAccountAssetType, CommerceLedgerDirection};
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::domain::{DecimalValue, DomainError, DomainResult};
@@ -8,21 +9,17 @@ use crate::ports::{
     UpdateAdminUserCommand,
 };
 
-const CASH_ACCOUNT_TYPE: i32 = 1;
-const BALANCE_ASSET_TYPE: i32 = 1;
 const USER_STATUS_ACTIVE: i32 = 1;
 const USER_STATUS_BANNED: i32 = 0;
 const API_KEY_STATUS_ACTIVE: i32 = 1;
 const API_KEY_STATUS_REVOKED: i32 = 4;
-const TRANSACTION_RECHARGE: i32 = 10;
-const TRANSACTION_REFUND: i32 = 3;
-const TRANSACTION_STATUS_SUCCESS: i32 = 2;
 const TARGET_TYPE_USER: i32 = 61;
 const TARGET_TYPE_API_KEY: i32 = 62;
 const TARGET_TYPE_ACCOUNT: i32 = 63;
 const DEFAULT_API_KEY_GROUP_CODE: &str = "default";
 const DEFAULT_API_KEY_GROUP_NAME: &str = "Default";
 const DEFAULT_PRICING_PLAN_CODE: &str = "standard";
+const CASH_CURRENCY_CODE: &str = "USD";
 
 #[derive(Debug, Clone)]
 pub struct PostgresAdminUserStore {
@@ -67,13 +64,7 @@ impl AdminUserStore for PostgresAdminUserStore {
             )
             .await?;
             let user_id = insert_user(&mut tx, &command).await?;
-            if postgres_table_exists_in_transaction(&mut tx, "plus_account").await? {
-                insert_cash_account(&mut tx, &command, user_id).await?;
-            } else if command.initial_balance != DecimalValue::ZERO {
-                return Err(DomainError::new(
-                    "user balance account store is unavailable",
-                ));
-            }
+            insert_cash_account(&mut tx, &command, user_id).await?;
             insert_audit_log(
                 &mut tx,
                 &command.audit_log_uuid,
@@ -183,13 +174,8 @@ impl AdminUserStore for PostgresAdminUserStore {
                 })?;
                 return Ok(None);
             }
-            if !postgres_table_exists_in_transaction(&mut tx, "plus_account").await? {
-                return Err(DomainError::new(
-                    "user balance account store is unavailable",
-                ));
-            }
             let account = ensure_cash_account(&mut tx, &command).await?;
-            let balance_before = DecimalValue::parse(&account.available_balance)?;
+            let balance_before = DecimalValue::parse(&account.available_amount)?;
             let balance_after = if command.adjustment_type == "refund" {
                 let next = balance_before.subtract(command.amount);
                 if next < DecimalValue::ZERO {
@@ -199,10 +185,16 @@ impl AdminUserStore for PostgresAdminUserStore {
             } else {
                 balance_before + command.amount
             };
-            update_account_balance(&mut tx, account.id, balance_after, &command.requested_at)
+            update_account_balance(&mut tx, &account.id, balance_after, &command.requested_at)
                 .await?;
-            insert_account_history(&mut tx, &command, account.id, balance_before, balance_after)
-                .await?;
+            insert_account_history(
+                &mut tx,
+                &command,
+                &account.id,
+                balance_before,
+                balance_after,
+            )
+            .await?;
             insert_audit_log(
                 &mut tx,
                 &command.audit_log_uuid,
@@ -213,11 +205,11 @@ impl AdminUserStore for PostgresAdminUserStore {
                 command.subject.operator_type,
                 "adjust_user_balance",
                 TARGET_TYPE_ACCOUNT,
-                account.id,
+                command.user_id,
                 serde_json::json!({
                     "action": "adjust_user_balance",
                     "userId": command.user_id,
-                    "accountId": account.id,
+                    "accountId": &account.id,
                     "type": &command.adjustment_type,
                     "amount": command.amount.to_fixed_string(4),
                     "balanceBefore": balance_before.to_fixed_string(4),
@@ -342,8 +334,7 @@ impl AdminUserStore for PostgresAdminUserStore {
 }
 
 async fn list_users(pool: &PgPool, query: ListAdminUsersQuery) -> DomainResult<Vec<AdminUserItem>> {
-    let has_legacy_account = postgres_table_exists(pool, "plus_account").await?;
-    let sql = if has_legacy_account {
+    let rows = sqlx::query(
         r#"
         SELECT
             u.id::bigint AS id,
@@ -351,7 +342,7 @@ async fn list_users(pool: &PgPool, query: ListAdminUsersQuery) -> DomainResult<V
             COALESCE(NULLIF(u.username, ''), u.email, 'user-' || u.id::text) AS username,
             COALESCE(NULLIF(m.role_code, ''), 'user') AS role_code,
             COALESCE(NULLIF(m.role_code, ''), 'standard') AS group_code,
-            COALESCE(a.available_balance, 0)::text AS balance,
+            COALESCE(a.available_amount, '0')::text AS balance,
             CASE LOWER(COALESCE(u.status, ''))
                 WHEN 'active' THEN 1
                 ELSE 0
@@ -366,103 +357,51 @@ async fn list_users(pool: &PgPool, query: ListAdminUsersQuery) -> DomainResult<V
          AND m.organization_id = $1
          AND m.status = 'active'
         LEFT JOIN LATERAL (
-            SELECT account.id, account.available_balance
-            FROM plus_account account
-            WHERE account.user_id = u.id::bigint
+            SELECT account.id, account.available_amount
+            FROM commerce_account account
+            WHERE account.owner_user_id = u.id
               AND account.tenant_id = $2
               AND account.organization_id = $3
-              AND account.account_type = 1
-              AND account.status = 1
+              AND account.asset_type = $4
+              AND account.currency_code = $5
+              AND account.status = 'active'
             ORDER BY account.updated_at DESC NULLS LAST, account.id DESC
             LIMIT 1
         ) a ON true
         LEFT JOIN (
             SELECT user_id, MAX(COALESCE(occurred_at, created_at)) AS last_active
             FROM iam_user_login_event
-            WHERE tenant_id = $4
-              AND organization_id = $5
-            GROUP BY user_id
-        ) le ON le.user_id = u.id::bigint
-        LEFT JOIN (
-            SELECT user_id, MAX(last_used_at) AS last_used_at
-            FROM iam_gateway_api_key
             WHERE tenant_id = $6
               AND organization_id = $7
-              AND deleted_at IS NULL
-            GROUP BY user_id
-        ) k ON k.user_id = u.id::bigint
-        WHERE u.tenant_id = $8
-          AND LOWER(COALESCE(u.status, '')) IN ('active', 'banned', 'disabled', 'inactive')
-        ORDER BY u.created_at DESC NULLS LAST, u.id::bigint DESC
-        LIMIT 500
-        "#
-    } else {
-        r#"
-        SELECT
-            u.id::bigint AS id,
-            COALESCE(u.email, '') AS email,
-            COALESCE(NULLIF(u.username, ''), u.email, 'user-' || u.id::text) AS username,
-            COALESCE(NULLIF(m.role_code, ''), 'user') AS role_code,
-            COALESCE(NULLIF(m.role_code, ''), 'standard') AS group_code,
-            '0' AS balance,
-            CASE LOWER(COALESCE(u.status, ''))
-                WHEN 'active' THEN 1
-                ELSE 0
-            END AS user_status,
-            COALESCE(le.last_active, u.updated_at, u.created_at)::text AS last_active,
-            COALESCE(k.last_used_at::text, '') AS last_used,
-            COALESCE(u.created_at::text, '') AS created_at
-        FROM iam_user u
-        JOIN iam_organization_member m
-          ON m.tenant_id = u.tenant_id
-         AND m.user_id = u.id
-         AND m.organization_id = $1
-         AND m.status = 'active'
-        LEFT JOIN (
-            SELECT user_id, MAX(COALESCE(occurred_at, created_at)) AS last_active
-            FROM iam_user_login_event
-            WHERE tenant_id = $2
-              AND organization_id = $3
             GROUP BY user_id
         ) le ON le.user_id = u.id::bigint
         LEFT JOIN (
             SELECT user_id, MAX(last_used_at) AS last_used_at
             FROM iam_gateway_api_key
-            WHERE tenant_id = $4
-              AND organization_id = $5
+            WHERE tenant_id = $8
+              AND organization_id = $9
               AND deleted_at IS NULL
             GROUP BY user_id
         ) k ON k.user_id = u.id::bigint
-        WHERE u.tenant_id = $6
+        WHERE u.tenant_id = $10
           AND LOWER(COALESCE(u.status, '')) IN ('active', 'banned', 'disabled', 'inactive')
         ORDER BY u.created_at DESC NULLS LAST, u.id::bigint DESC
         LIMIT 500
-        "#
-    };
-    let mut query_builder = sqlx::query(sql);
-    if has_legacy_account {
-        query_builder = query_builder
-            .bind(query.subject.organization_id.to_string())
-            .bind(query.subject.tenant_id)
-            .bind(query.subject.organization_id)
-            .bind(query.subject.tenant_id)
-            .bind(query.subject.organization_id)
-            .bind(query.subject.tenant_id)
-            .bind(query.subject.organization_id)
-            .bind(query.subject.tenant_id.to_string());
-    } else {
-        query_builder = query_builder
-            .bind(query.subject.organization_id.to_string())
-            .bind(query.subject.tenant_id)
-            .bind(query.subject.organization_id)
-            .bind(query.subject.tenant_id)
-            .bind(query.subject.organization_id)
-            .bind(query.subject.tenant_id.to_string());
-    }
-    let rows = query_builder
-        .fetch_all(pool)
-        .await
-        .map_err(|error| store_error("failed to list admin users", error))?;
+        "#,
+    )
+    .bind(query.subject.organization_id.to_string())
+    .bind(query.subject.tenant_id.to_string())
+    .bind(query.subject.organization_id.to_string())
+    .bind(CommerceAccountAssetType::Cash.as_str())
+    .bind(CASH_CURRENCY_CODE)
+    .bind(query.subject.tenant_id)
+    .bind(query.subject.organization_id)
+    .bind(query.subject.tenant_id)
+    .bind(query.subject.organization_id)
+    .bind(query.subject.tenant_id.to_string())
+    .fetch_all(pool)
+    .await
+    .map_err(|error| store_error("failed to list admin users", error))?;
 
     rows.into_iter().map(user_from_row).collect()
 }
@@ -596,25 +535,30 @@ async fn insert_cash_account(
     tx: &mut Transaction<'_, Postgres>,
     command: &CreateAdminUserCommand,
     user_id: i64,
-) -> DomainResult<i64> {
-    sqlx::query_scalar(
+) -> DomainResult<String> {
+    let account_id = account_id(&command.account_uuid);
+    sqlx::query(
         r#"
-        INSERT INTO plus_account
-            (uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, user_id, account_type, owner, owner_id, available_balance, frozen_balance, available_points, frozen_points, token_balance, frozen_token, status)
+        INSERT INTO commerce_account
+            (id, tenant_id, organization_id, owner_user_id, asset_type, currency_code, available_amount, frozen_amount, version, status, created_at, updated_at)
         VALUES
-            ($1, $2, $3, 1, $4::timestamp AT TIME ZONE 'UTC', $4::timestamp AT TIME ZONE 'UTC', 0, $5, 1, 1, $5, $6::numeric, 0, 0, 0, 0, 0, 1)
-        RETURNING id
+            ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), CAST($4 AS TEXT), $5, $6, $7, '0', 0, 'active', $8, $8)
+        ON CONFLICT (tenant_id, organization_id, owner_user_id, asset_type, currency_code) DO UPDATE SET
+            updated_at = excluded.updated_at
         "#,
     )
-    .bind(&command.account_uuid)
+    .bind(&account_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
-    .bind(&command.requested_at)
     .bind(user_id)
+    .bind(CommerceAccountAssetType::Cash.as_str())
+    .bind(CASH_CURRENCY_CODE)
     .bind(command.initial_balance.to_fixed_string(4))
-    .fetch_one(&mut **tx)
+    .bind(&command.requested_at)
+    .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to create user cash account", error))
+    .map_err(|error| store_error("failed to create user cash account", error))?;
+    Ok(account_id)
 }
 
 async fn update_user_row(
@@ -691,19 +635,23 @@ async fn ensure_cash_account(
     if let Some(account) = load_cash_account(tx, command).await? {
         return Ok(account);
     }
+    let account_id = account_id(&command.account_uuid);
     sqlx::query(
         r#"
-        INSERT INTO plus_account
-            (uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, user_id, account_type, owner, owner_id, available_balance, frozen_balance, available_points, frozen_points, token_balance, frozen_token, status)
+        INSERT INTO commerce_account
+            (id, tenant_id, organization_id, owner_user_id, asset_type, currency_code, available_amount, frozen_amount, version, status, created_at, updated_at)
         VALUES
-            ($1, $2, $3, 1, $4::timestamp AT TIME ZONE 'UTC', $4::timestamp AT TIME ZONE 'UTC', 0, $5, 1, 1, $5, 0, 0, 0, 0, 0, 0, 1)
+            ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), CAST($4 AS TEXT), $5, $6, '0', '0', 0, 'active', $7, $7)
+        ON CONFLICT (tenant_id, organization_id, owner_user_id, asset_type, currency_code) DO NOTHING
         "#,
     )
-    .bind(&command.account_uuid)
+    .bind(&account_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
-    .bind(&command.requested_at)
     .bind(command.user_id)
+    .bind(CommerceAccountAssetType::Cash.as_str())
+    .bind(CASH_CURRENCY_CODE)
+    .bind(&command.requested_at)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create user cash account", error))?;
@@ -718,13 +666,14 @@ async fn load_cash_account(
 ) -> DomainResult<Option<CashAccountRow>> {
     let row = sqlx::query(
         r#"
-        SELECT id, COALESCE(available_balance, 0)::text AS available_balance
-        FROM plus_account
-        WHERE tenant_id = $1
-          AND organization_id = $2
-          AND user_id = $3
-          AND account_type = 1
-          AND status = 1
+        SELECT id, COALESCE(available_amount, '0')::text AS available_amount
+        FROM commerce_account
+        WHERE tenant_id = CAST($1 AS TEXT)
+          AND organization_id = CAST($2 AS TEXT)
+          AND owner_user_id = CAST($3 AS TEXT)
+          AND asset_type = $4
+          AND currency_code = $5
+          AND status = 'active'
         ORDER BY updated_at DESC NULLS LAST, id DESC
         LIMIT 1
         FOR UPDATE
@@ -733,13 +682,15 @@ async fn load_cash_account(
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .bind(command.user_id)
+    .bind(CommerceAccountAssetType::Cash.as_str())
+    .bind(CASH_CURRENCY_CODE)
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to load user cash account", error))?;
     row.map(|row| {
         Ok(CashAccountRow {
-            id: integer_cell(&row, "id"),
-            available_balance: row.try_get("available_balance").map_err(row_error)?,
+            id: row.try_get("id").map_err(row_error)?,
+            available_amount: row.try_get("available_amount").map_err(row_error)?,
         })
     })
     .transpose()
@@ -747,16 +698,16 @@ async fn load_cash_account(
 
 async fn update_account_balance(
     tx: &mut Transaction<'_, Postgres>,
-    account_id: i64,
+    account_id: &str,
     balance_after: DecimalValue,
     requested_at: &str,
 ) -> DomainResult<()> {
     sqlx::query(
         r#"
-        UPDATE plus_account
-        SET available_balance = $1::numeric,
-            updated_at = $2::timestamp AT TIME ZONE 'UTC',
-            v = COALESCE(v, 0) + 1
+        UPDATE commerce_account
+        SET available_amount = $1,
+            updated_at = $2,
+            version = COALESCE(version, 0) + 1
         WHERE id = $3
         "#,
     )
@@ -772,40 +723,45 @@ async fn update_account_balance(
 async fn insert_account_history(
     tx: &mut Transaction<'_, Postgres>,
     command: &AdjustAdminUserBalanceCommand,
-    account_id: i64,
+    account_id: &str,
     balance_before: DecimalValue,
     balance_after: DecimalValue,
 ) -> DomainResult<()> {
+    let direction = if command.adjustment_type == "refund" {
+        CommerceLedgerDirection::Debit
+    } else {
+        CommerceLedgerDirection::Credit
+    };
     sqlx::query(
         r#"
-        INSERT INTO plus_account_history
-            (uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, account_type, asset_type, account_id, transaction_id, transaction_type, amount, balance_before, balance_after, status, usage_result, remarks)
+        INSERT INTO commerce_account_ledger_entry
+            (id, tenant_id, organization_id, account_id, owner_user_id, asset_type, direction, amount, balance_after, business_type, transaction_no, request_no, idempotency_key, source_type, source_id, remark, created_at)
         VALUES
-            ($1, $2, $3, 1, $4::timestamp AT TIME ZONE 'UTC', $4::timestamp AT TIME ZONE 'UTC', 0, $5, $6, $7, $8, $9, $10::numeric, $11::numeric, $12::numeric, $13, $14, $15)
+            ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), $4, CAST($5 AS TEXT), $6, $7, $8, $9, $10, $11, $11, $11, 'admin_user_balance_adjustment', CAST($12 AS TEXT), $13, $14)
         "#,
     )
     .bind(&command.account_history_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
-    .bind(&command.requested_at)
-    .bind(CASH_ACCOUNT_TYPE)
-    .bind(BALANCE_ASSET_TYPE)
     .bind(account_id)
-    .bind(&command.request_id)
-    .bind(if command.adjustment_type == "refund" {
-        TRANSACTION_REFUND
-    } else {
-        TRANSACTION_RECHARGE
-    })
+    .bind(command.user_id)
+    .bind(CommerceAccountAssetType::Cash.as_str())
+    .bind(direction.as_str())
     .bind(command.amount.to_fixed_string(4))
-    .bind(balance_before.to_fixed_string(4))
     .bind(balance_after.to_fixed_string(4))
-    .bind(TRANSACTION_STATUS_SUCCESS)
-    .bind("{}")
+    .bind(if command.adjustment_type == "refund" {
+        "refund"
+    } else {
+        "recharge"
+    })
+    .bind(&command.request_id)
+    .bind(command.user_id)
     .bind(format!("admin_{}", command.adjustment_type))
+    .bind(&command.requested_at)
     .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to insert account history", error))?;
+    .map_err(|error| store_error("failed to insert account ledger entry", error))?;
+    let _ = balance_before;
     Ok(())
 }
 
@@ -1042,8 +998,7 @@ async fn load_user_by_id(
     tenant_id: i64,
     organization_id: i64,
 ) -> DomainResult<Option<AdminUserItem>> {
-    let has_legacy_account = postgres_table_exists_in_transaction(tx, "plus_account").await?;
-    let sql = if has_legacy_account {
+    let row = sqlx::query(
         r#"
         SELECT
             u.id::bigint AS id,
@@ -1051,7 +1006,7 @@ async fn load_user_by_id(
             COALESCE(NULLIF(u.username, ''), u.email, 'user-' || u.id::text) AS username,
             COALESCE(NULLIF(m.role_code, ''), 'user') AS role_code,
             COALESCE(NULLIF(m.role_code, ''), 'standard') AS group_code,
-            COALESCE(a.available_balance, 0)::text AS balance,
+            COALESCE(a.available_amount, '0')::text AS balance,
             CASE LOWER(COALESCE(u.status, ''))
                 WHEN 'active' THEN 1
                 ELSE 0
@@ -1066,105 +1021,52 @@ async fn load_user_by_id(
          AND m.organization_id = $1
          AND m.status = 'active'
         LEFT JOIN LATERAL (
-            SELECT account.id, account.available_balance
-            FROM plus_account account
-            WHERE account.user_id = u.id::bigint
+            SELECT account.id, account.available_amount
+            FROM commerce_account account
+            WHERE account.owner_user_id = u.id
               AND account.tenant_id = $2
               AND account.organization_id = $3
-              AND account.account_type = 1
-              AND account.status = 1
+              AND account.asset_type = $4
+              AND account.currency_code = $5
+              AND account.status = 'active'
             ORDER BY account.updated_at DESC NULLS LAST, account.id DESC
             LIMIT 1
         ) a ON true
         LEFT JOIN (
             SELECT user_id, MAX(COALESCE(occurred_at, created_at)) AS last_active
             FROM iam_user_login_event
-            WHERE tenant_id = $4
-              AND organization_id = $5
-            GROUP BY user_id
-        ) le ON le.user_id = u.id::bigint
-        LEFT JOIN (
-            SELECT user_id, MAX(last_used_at) AS last_used_at
-            FROM iam_gateway_api_key
             WHERE tenant_id = $6
               AND organization_id = $7
-              AND deleted_at IS NULL
-            GROUP BY user_id
-        ) k ON k.user_id = u.id::bigint
-        WHERE u.id = $8
-          AND u.tenant_id = $9
-          AND LOWER(COALESCE(u.status, '')) IN ('active', 'banned', 'disabled', 'inactive')
-        LIMIT 1
-        "#
-    } else {
-        r#"
-        SELECT
-            u.id::bigint AS id,
-            COALESCE(u.email, '') AS email,
-            COALESCE(NULLIF(u.username, ''), u.email, 'user-' || u.id::text) AS username,
-            COALESCE(NULLIF(m.role_code, ''), 'user') AS role_code,
-            COALESCE(NULLIF(m.role_code, ''), 'standard') AS group_code,
-            '0' AS balance,
-            CASE LOWER(COALESCE(u.status, ''))
-                WHEN 'active' THEN 1
-                ELSE 0
-            END AS user_status,
-            COALESCE(le.last_active, u.updated_at, u.created_at)::text AS last_active,
-            COALESCE(k.last_used_at::text, '') AS last_used,
-            COALESCE(u.created_at::text, '') AS created_at
-        FROM iam_user u
-        JOIN iam_organization_member m
-          ON m.tenant_id = u.tenant_id
-         AND m.user_id = u.id
-         AND m.organization_id = $1
-         AND m.status = 'active'
-        LEFT JOIN (
-            SELECT user_id, MAX(COALESCE(occurred_at, created_at)) AS last_active
-            FROM iam_user_login_event
-            WHERE tenant_id = $2
-              AND organization_id = $3
             GROUP BY user_id
         ) le ON le.user_id = u.id::bigint
         LEFT JOIN (
             SELECT user_id, MAX(last_used_at) AS last_used_at
             FROM iam_gateway_api_key
-            WHERE tenant_id = $4
-              AND organization_id = $5
+            WHERE tenant_id = $8
+              AND organization_id = $9
               AND deleted_at IS NULL
             GROUP BY user_id
         ) k ON k.user_id = u.id::bigint
-        WHERE u.id = $6
-          AND u.tenant_id = $7
+        WHERE u.id = $10
+          AND u.tenant_id = $11
           AND LOWER(COALESCE(u.status, '')) IN ('active', 'banned', 'disabled', 'inactive')
         LIMIT 1
-        "#
-    };
-    let mut query_builder = sqlx::query(sql);
-    if has_legacy_account {
-        query_builder = query_builder
-            .bind(organization_id.to_string())
-            .bind(tenant_id)
-            .bind(organization_id)
-            .bind(tenant_id)
-            .bind(organization_id)
-            .bind(tenant_id)
-            .bind(organization_id)
-            .bind(user_id.to_string())
-            .bind(tenant_id.to_string());
-    } else {
-        query_builder = query_builder
-            .bind(organization_id.to_string())
-            .bind(tenant_id)
-            .bind(organization_id)
-            .bind(tenant_id)
-            .bind(organization_id)
-            .bind(user_id.to_string())
-            .bind(tenant_id.to_string());
-    }
-    let row = query_builder
-        .fetch_optional(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to load admin user", error))?;
+        "#,
+    )
+    .bind(organization_id.to_string())
+    .bind(tenant_id.to_string())
+    .bind(organization_id.to_string())
+    .bind(CommerceAccountAssetType::Cash.as_str())
+    .bind(CASH_CURRENCY_CODE)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(user_id.to_string())
+    .bind(tenant_id.to_string())
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load admin user", error))?;
     row.map(user_from_row).transpose()
 }
 
@@ -1266,8 +1168,19 @@ fn api_key_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminUserApiKeyI
 
 #[derive(Debug, Clone)]
 struct CashAccountRow {
-    id: i64,
-    available_balance: String,
+    id: String,
+    available_amount: String,
+}
+
+fn account_id(uuid: &str) -> String {
+    let value = uuid.trim();
+    if value.is_empty() {
+        "admin-user-cash-account".to_owned()
+    } else if value.starts_with("account-") {
+        value.to_owned()
+    } else {
+        format!("account-{value}")
+    }
 }
 
 async fn next_numeric_id(
@@ -1281,27 +1194,6 @@ async fn next_numeric_id(
         .fetch_one(&mut **tx)
         .await
         .map_err(|error| store_error("failed to allocate IAM numeric id", error))
-}
-
-async fn postgres_table_exists(pool: &PgPool, table: &str) -> DomainResult<bool> {
-    let exists: bool = sqlx::query_scalar("SELECT to_regclass($1) IS NOT NULL")
-        .bind(table)
-        .fetch_one(pool)
-        .await
-        .map_err(|error| store_error("failed to inspect postgres schema", error))?;
-    Ok(exists)
-}
-
-async fn postgres_table_exists_in_transaction(
-    tx: &mut Transaction<'_, Postgres>,
-    table: &str,
-) -> DomainResult<bool> {
-    let exists: bool = sqlx::query_scalar("SELECT to_regclass($1) IS NOT NULL")
-        .bind(table)
-        .fetch_one(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to inspect postgres schema", error))?;
-    Ok(exists)
 }
 
 fn user_status_code(status: &str) -> &'static str {

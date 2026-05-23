@@ -10,7 +10,6 @@ class AiModelRecord:
     display_name: str
     model: str
     organization_id: str
-    region_code: str
     release_stage: str
     routing_state: str
     shelf_state: str

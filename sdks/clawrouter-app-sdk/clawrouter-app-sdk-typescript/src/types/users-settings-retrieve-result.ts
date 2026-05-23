@@ -7,7 +7,5 @@ export interface UsersSettingsRetrieveResult {
   /** Data field on users settings retrieve result. */
   data?: SettingsDataResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

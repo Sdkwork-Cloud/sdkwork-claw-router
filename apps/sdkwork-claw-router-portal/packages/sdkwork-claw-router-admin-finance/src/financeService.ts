@@ -1,92 +1,98 @@
 import {
-  ensurePlusApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
   readRequiredApiItems,
-  readRequiredNonNegativeNumber,
   readRequiredString,
-  readDecimalString,
-  readString,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
 
-export interface TransactionRecord {
-  id: string;
-  time: string;
-  userId: string;
-  type: 'recharge' | 'refund' | 'consume';
-  amount: string;
-  balance: string;
-  description: string;
-  status: 'success' | 'failed' | 'pending';
+type BackendCommerce = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
+
+export async function backendInvoicesTitlesList(params?: Parameters<BackendCommerce['invoices']['titles']['list']>[0]) {
+  return getClawRouterBackendSdkClient().commerce.invoices.titles.list(params);
 }
 
-export interface BillingRecord {
-  id: string;
-  userId: string;
-  period: string;
-  totalTokens: number;
-  totalCost: string;
-  status: 'paid' | 'unpaid' | 'overdue';
-  dueDate: string;
+export async function backendInvoicesList(params?: Parameters<BackendCommerce['invoices']['list']>[0]) {
+  return getClawRouterBackendSdkClient().commerce.invoices.list(params);
 }
 
-export class FinanceService {
-  static async fetchTransactions(): Promise<TransactionRecord[]> {
-    const result = await getClawRouterBackendSdkClient().billing.finance.ledger.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch transactions');
-    return readRequiredApiItems(result, 'Failed to fetch transactions')
-      .map(normalizeTransaction);
-  }
-
-  static async fetchBilling(): Promise<BillingRecord[]> {
-    const result = await getClawRouterBackendSdkClient().billing.finance.usageStatements.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch billing records');
-    return readRequiredApiItems(result, 'Failed to fetch billing records')
-      .map(normalizeBillingRecord);
-  }
+export async function backendInvoicesRetrieve(invoiceId: string) {
+  return getClawRouterBackendSdkClient().commerce.invoices.retrieve(invoiceId);
 }
 
-function normalizeTransaction(value: unknown): TransactionRecord {
-  const item = readRequiredRecord(value, 'Transaction record is required');
-  return {
-    id: readRequiredString(item, 'id', 'Transaction id is required'),
-    time: readRequiredString(item, 'time', 'Transaction time is required'),
-    userId: readRequiredString(item, 'userId', 'Transaction user id is required'),
-    type: readTransactionType(item),
-    amount: readMoneyString(
-      item,
-      'amount',
-      'Transaction amount is required',
-      'Transaction amount must be a money string',
-    ),
-    balance: readMoneyString(
-      item,
-      'balance',
-      'Transaction balance is required',
-      'Transaction balance must be a money string',
-    ),
-    description: readRequiredString(item, 'description', 'Transaction description is required'),
-    status: readTransactionStatus(item),
-  };
+export async function backendCouponsTemplatesList(params?: Parameters<BackendCommerce['coupons']['templates']['list']>[0]) {
+  const result = await getClawRouterBackendSdkClient().commerce.coupons.templates.list(params);
+  return readRequiredCouponItems(result);
 }
 
-function normalizeBillingRecord(value: unknown): BillingRecord {
-  const item = readRequiredRecord(value, 'Billing record is required');
-  return {
-    id: readRequiredString(item, 'id', 'Billing record id is required'),
-    userId: readRequiredString(item, 'userId', 'Billing user id is required'),
-    period: readRequiredString(item, 'period', 'Billing period is required'),
-    totalTokens: readRequiredNonNegativeNumber(item, 'totalTokens', 'Billing total tokens are required'),
-    totalCost: readMoneyString(
-      item,
-      'totalCost',
-      'Billing total cost is required',
-      'Billing total cost must be a money string',
-    ),
-    status: readBillingStatus(item),
-    dueDate: readRequiredString(item, 'dueDate', 'Billing due date is required'),
-  };
+export async function backendCouponsCampaignsList(params?: Parameters<BackendCommerce['coupons']['campaigns']['list']>[0]) {
+  const result = await getClawRouterBackendSdkClient().commerce.coupons.campaigns.list(params);
+  return readRequiredCouponBatchItems(result);
+}
+
+export async function backendCouponsCodesList(params?: Parameters<BackendCommerce['coupons']['codes']['list']>[0]) {
+  const result = await getClawRouterBackendSdkClient().commerce.coupons.codes.list(params);
+  return readRequiredPromoCodeItems(result);
+}
+
+export async function backendCouponsRedemptionsList(params?: Parameters<BackendCommerce['coupons']['redemptions']['list']>[0]) {
+  const result = await getClawRouterBackendSdkClient().commerce.coupons.redemptions.list(params);
+  return readRequiredRedemptionItems(result);
+}
+
+export async function backendCommerceReportsPaymentReconciliationRetrieve() {
+  return getClawRouterBackendSdkClient().commerce.commerceReports.paymentReconciliation.retrieve();
+}
+
+export async function backendCommerceReportsOrderRevenueList(
+  params?: Parameters<BackendCommerce['commerceReports']['orderRevenue']['list']>[0],
+) {
+  return getClawRouterBackendSdkClient().commerce.commerceReports.orderRevenue.list(params);
+}
+
+export async function backendCommerceReportsRefundsList(params?: Parameters<BackendCommerce['commerceReports']['refunds']['list']>[0]) {
+  return getClawRouterBackendSdkClient().commerce.commerceReports.refunds.list(params);
+}
+
+export async function backendAuditCommerceEventsList(params?: Parameters<BackendCommerce['audit']['commerceEvents']['list']>[0]) {
+  return getClawRouterBackendSdkClient().commerce.audit.commerceEvents.list(params);
+}
+
+function readRequiredCouponItems(result: unknown): ApiRecord[] {
+  return readRequiredStableIdItems(result, 'Coupon records are required', (item) => {
+    readRequiredString(item, 'id', 'Coupon id is required');
+  });
+}
+
+function readRequiredCouponBatchItems(result: unknown): ApiRecord[] {
+  return readRequiredStableIdItems(result, 'Coupon batch records are required', (item) => {
+    readRequiredString(item, 'id', 'Coupon batch id is required');
+  });
+}
+
+function readRequiredPromoCodeItems(result: unknown): ApiRecord[] {
+  return readRequiredStableIdItems(result, 'Promo code records are required', (item) => {
+    readRequiredString(item, 'id', 'Promo code id is required');
+  });
+}
+
+function readRequiredRedemptionItems(result: unknown): ApiRecord[] {
+  return readRequiredStableIdItems(result, 'Redemption records are required', (item) => {
+    readRequiredString(item, 'id', 'Redemption record id is required');
+  });
+}
+
+function readRequiredStableIdItems(
+  result: unknown,
+  listMessage: string,
+  assertStableId: (item: ApiRecord) => void,
+): ApiRecord[] {
+  return readRequiredApiItems(result, listMessage)
+    .map((value) => {
+      const item = readRequiredRecord(value, listMessage);
+      assertStableId(item);
+      return item;
+    });
 }
 
 function readRequiredRecord(value: unknown, message: string): ApiRecord {
@@ -94,36 +100,4 @@ function readRequiredRecord(value: unknown, message: string): ApiRecord {
     throw new Error(message);
   }
   return value;
-}
-
-function readTransactionType(item: ApiRecord): 'recharge' | 'refund' | 'consume' {
-  const type = readString(item, 'type');
-  if (type === 'recharge' || type === 'refund' || type === 'consume') {
-    return type;
-  }
-  throw new Error(type ? `Unsupported transaction type: ${type}` : 'Transaction type is required');
-}
-
-function readTransactionStatus(item: ApiRecord): 'success' | 'failed' | 'pending' {
-  const status = readRequiredString(item, 'status', 'Transaction status is required');
-  if (status === 'success' || status === 'failed' || status === 'pending') {
-    return status;
-  }
-  throw new Error(`Unsupported transaction status: ${status}`);
-}
-
-function readBillingStatus(item: ApiRecord): 'paid' | 'unpaid' | 'overdue' {
-  const status = readRequiredString(item, 'status', 'Billing status is required');
-  if (status === 'paid' || status === 'unpaid' || status === 'overdue') {
-    return status;
-  }
-  throw new Error(`Unsupported billing status: ${status}`);
-}
-
-function readMoneyString(item: ApiRecord, key: string, missingMessage: string, invalidMessage: string): string {
-  const value = readRequiredString(item, key, missingMessage);
-  if (!/^-?\d+(?:\.\d{1,6})?$/.test(value)) {
-    throw new Error(invalidMessage);
-  }
-  return readDecimalString(item, key, 6);
 }

@@ -1,0 +1,31 @@
+fragment: models/console-usage
+frontend_models:
+- route: /console/usage
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-usage/src/usageService.ts
+  interface: UsageLog
+  fields:
+  - id
+  - requestId
+  - time
+  - tokenName
+  - group
+  - type
+  - model
+  - totalTime
+  - ttft
+  - isStream
+  - inputTokens
+  - cacheReadTokens
+  - outputTokens
+  - cost
+  - multiplier
+  - baseInputPrice
+  - baseOutputPrice
+  - cacheReadPrice
+  - path
+  - reasoningEffort
+  - ip
+  data_sources:
+  - ai_request_trace
+  - ai_usage_fact
+  - ai_routing_decision_log

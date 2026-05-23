@@ -10,6 +10,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? Detail { get; set; }
         public List<FieldError>? Errors { get; set; }
         public string? Instance { get; set; }
+        public string? RequestId { get; set; }
         public int? Status { get; set; }
         public string? Title { get; set; }
         public string? TraceId { get; set; }

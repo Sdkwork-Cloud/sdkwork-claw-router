@@ -7,7 +7,5 @@ export interface GatewayTracesListResult {
   /** Data field on gateway traces list result. */
   data?: GatewayTracesResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

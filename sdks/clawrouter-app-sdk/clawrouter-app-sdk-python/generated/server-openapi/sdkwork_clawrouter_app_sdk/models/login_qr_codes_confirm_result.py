@@ -11,5 +11,4 @@ class LoginQrCodesConfirmResult:
     """Login qr codes confirm result schema exposed by Claw Router."""
     code: str
     data: Optional[IamLoginQrCodeStatusResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

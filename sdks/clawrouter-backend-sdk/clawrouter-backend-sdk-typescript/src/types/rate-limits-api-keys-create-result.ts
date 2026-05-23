@@ -7,7 +7,5 @@ export interface RateLimitsApiKeysCreateResult {
   /** Data field on rate limits api keys create result. */
   data?: AdminRateLimitMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

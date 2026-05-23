@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AgentsListResult, AgentsRetrieveResult};
+use crate::models::{AgentDefinitionsListResult, AgentDefinitionsRetrieveResult};
 
 #[derive(Clone)]
 pub struct AgentsApi {
@@ -16,7 +16,7 @@ impl AgentsApi {
     }
 
     /// List managed agents
-    pub async fn list(&self, q: Option<&str>, owner_user_id: Option<i64>, status: Option<&str>, visibility: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<AgentsListResult, SdkworkError> {
+    pub async fn agent_definitions_list(&self, q: Option<&str>, owner_user_id: Option<i64>, status: Option<&str>, visibility: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<AgentDefinitionsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("q", q, "form", true, false, None),
             QueryParameterSpec::new("owner_user_id", owner_user_id, "form", true, false, None),
@@ -30,7 +30,7 @@ impl AgentsApi {
     }
 
     /// Retrieve managed agent
-    pub async fn retrieve(&self, agent_id: &str) -> Result<AgentsRetrieveResult, SdkworkError> {
+    pub async fn agent_definitions_retrieve(&self, agent_id: &str) -> Result<AgentDefinitionsRetrieveResult, SdkworkError> {
         let path = backend_path(&format!("/agents/{}", serialize_path_parameter(agent_id, PathParameterSpec::new("agentId", "simple", false))));
         self.client.get(&path, None, None).await
     }

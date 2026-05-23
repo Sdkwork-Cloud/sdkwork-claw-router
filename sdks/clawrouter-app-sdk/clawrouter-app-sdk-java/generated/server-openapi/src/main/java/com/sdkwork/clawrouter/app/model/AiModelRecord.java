@@ -40,7 +40,6 @@ public class AiModelRecord {
     private Map<String, String> performanceProfile;
     private String providerHint;
     private String rankScore;
-    private String regionCode;
     private String releaseStage;
     private String replacementModel;
     private String retiredAt;
@@ -64,7 +63,7 @@ public class AiModelRecord {
     public String getApiFormat() {
         return this.apiFormat;
     }
-    
+
     public void setApiFormat(String apiFormat) {
         this.apiFormat = apiFormat;
     }
@@ -72,7 +71,7 @@ public class AiModelRecord {
     public Map<String, String> getCapabilities() {
         return this.capabilities;
     }
-    
+
     public void setCapabilities(Map<String, String> capabilities) {
         this.capabilities = capabilities;
     }
@@ -80,7 +79,7 @@ public class AiModelRecord {
     public String getCapability() {
         return this.capability;
     }
-    
+
     public void setCapability(String capability) {
         this.capability = capability;
     }
@@ -88,7 +87,7 @@ public class AiModelRecord {
     public String getCapabilityIntro() {
         return this.capabilityIntro;
     }
-    
+
     public void setCapabilityIntro(String capabilityIntro) {
         this.capabilityIntro = capabilityIntro;
     }
@@ -96,7 +95,7 @@ public class AiModelRecord {
     public String getCatalogKey() {
         return this.catalogKey;
     }
-    
+
     public void setCatalogKey(String catalogKey) {
         this.catalogKey = catalogKey;
     }
@@ -104,7 +103,7 @@ public class AiModelRecord {
     public String getColorToken() {
         return this.colorToken;
     }
-    
+
     public void setColorToken(String colorToken) {
         this.colorToken = colorToken;
     }
@@ -112,7 +111,7 @@ public class AiModelRecord {
     public String getContextTokens() {
         return this.contextTokens;
     }
-    
+
     public void setContextTokens(String contextTokens) {
         this.contextTokens = contextTokens;
     }
@@ -120,7 +119,7 @@ public class AiModelRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -128,7 +127,7 @@ public class AiModelRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -136,7 +135,7 @@ public class AiModelRecord {
     public String getDefaultPricingId() {
         return this.defaultPricingId;
     }
-    
+
     public void setDefaultPricingId(String defaultPricingId) {
         this.defaultPricingId = defaultPricingId;
     }
@@ -144,7 +143,7 @@ public class AiModelRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -152,7 +151,7 @@ public class AiModelRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -160,7 +159,7 @@ public class AiModelRecord {
     public String getDeprecatedAt() {
         return this.deprecatedAt;
     }
-    
+
     public void setDeprecatedAt(String deprecatedAt) {
         this.deprecatedAt = deprecatedAt;
     }
@@ -168,7 +167,7 @@ public class AiModelRecord {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -176,7 +175,7 @@ public class AiModelRecord {
     public String getDisplayName() {
         return this.displayName;
     }
-    
+
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
@@ -184,7 +183,7 @@ public class AiModelRecord {
     public String getDocsUrl() {
         return this.docsUrl;
     }
-    
+
     public void setDocsUrl(String docsUrl) {
         this.docsUrl = docsUrl;
     }
@@ -192,7 +191,7 @@ public class AiModelRecord {
     public String getFamilyCode() {
         return this.familyCode;
     }
-    
+
     public void setFamilyCode(String familyCode) {
         this.familyCode = familyCode;
     }
@@ -200,7 +199,7 @@ public class AiModelRecord {
     public String getFamilyId() {
         return this.familyId;
     }
-    
+
     public void setFamilyId(String familyId) {
         this.familyId = familyId;
     }
@@ -208,7 +207,7 @@ public class AiModelRecord {
     public String getIconUrl() {
         return this.iconUrl;
     }
-    
+
     public void setIconUrl(String iconUrl) {
         this.iconUrl = iconUrl;
     }
@@ -216,7 +215,7 @@ public class AiModelRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -224,7 +223,7 @@ public class AiModelRecord {
     public Map<String, String> getInputModalities() {
         return this.inputModalities;
     }
-    
+
     public void setInputModalities(Map<String, String> inputModalities) {
         this.inputModalities = inputModalities;
     }
@@ -232,7 +231,7 @@ public class AiModelRecord {
     public String getLicenseType() {
         return this.licenseType;
     }
-    
+
     public void setLicenseType(String licenseType) {
         this.licenseType = licenseType;
     }
@@ -240,7 +239,7 @@ public class AiModelRecord {
     public Map<String, String> getLimitations() {
         return this.limitations;
     }
-    
+
     public void setLimitations(Map<String, String> limitations) {
         this.limitations = limitations;
     }
@@ -248,7 +247,7 @@ public class AiModelRecord {
     public Integer getMaxDurationSeconds() {
         return this.maxDurationSeconds;
     }
-    
+
     public void setMaxDurationSeconds(Integer maxDurationSeconds) {
         this.maxDurationSeconds = maxDurationSeconds;
     }
@@ -256,7 +255,7 @@ public class AiModelRecord {
     public String getMaxInputTokens() {
         return this.maxInputTokens;
     }
-    
+
     public void setMaxInputTokens(String maxInputTokens) {
         this.maxInputTokens = maxInputTokens;
     }
@@ -264,7 +263,7 @@ public class AiModelRecord {
     public String getMaxOutputTokens() {
         return this.maxOutputTokens;
     }
-    
+
     public void setMaxOutputTokens(String maxOutputTokens) {
         this.maxOutputTokens = maxOutputTokens;
     }
@@ -272,7 +271,7 @@ public class AiModelRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -280,7 +279,7 @@ public class AiModelRecord {
     public Map<String, String> getModalities() {
         return this.modalities;
     }
-    
+
     public void setModalities(Map<String, String> modalities) {
         this.modalities = modalities;
     }
@@ -288,7 +287,7 @@ public class AiModelRecord {
     public String getModel() {
         return this.model;
     }
-    
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -296,7 +295,7 @@ public class AiModelRecord {
     public Map<String, String> getModelAliases() {
         return this.modelAliases;
     }
-    
+
     public void setModelAliases(Map<String, String> modelAliases) {
         this.modelAliases = modelAliases;
     }
@@ -304,7 +303,7 @@ public class AiModelRecord {
     public String getModelFamily() {
         return this.modelFamily;
     }
-    
+
     public void setModelFamily(String modelFamily) {
         this.modelFamily = modelFamily;
     }
@@ -312,7 +311,7 @@ public class AiModelRecord {
     public String getModelVersion() {
         return this.modelVersion;
     }
-    
+
     public void setModelVersion(String modelVersion) {
         this.modelVersion = modelVersion;
     }
@@ -320,7 +319,7 @@ public class AiModelRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -328,7 +327,7 @@ public class AiModelRecord {
     public Map<String, String> getOutputModalities() {
         return this.outputModalities;
     }
-    
+
     public void setOutputModalities(Map<String, String> outputModalities) {
         this.outputModalities = outputModalities;
     }
@@ -336,7 +335,7 @@ public class AiModelRecord {
     public Map<String, String> getPerformanceProfile() {
         return this.performanceProfile;
     }
-    
+
     public void setPerformanceProfile(Map<String, String> performanceProfile) {
         this.performanceProfile = performanceProfile;
     }
@@ -344,7 +343,7 @@ public class AiModelRecord {
     public String getProviderHint() {
         return this.providerHint;
     }
-    
+
     public void setProviderHint(String providerHint) {
         this.providerHint = providerHint;
     }
@@ -352,23 +351,15 @@ public class AiModelRecord {
     public String getRankScore() {
         return this.rankScore;
     }
-    
+
     public void setRankScore(String rankScore) {
         this.rankScore = rankScore;
-    }
-
-    public String getRegionCode() {
-        return this.regionCode;
-    }
-    
-    public void setRegionCode(String regionCode) {
-        this.regionCode = regionCode;
     }
 
     public String getReleaseStage() {
         return this.releaseStage;
     }
-    
+
     public void setReleaseStage(String releaseStage) {
         this.releaseStage = releaseStage;
     }
@@ -376,7 +367,7 @@ public class AiModelRecord {
     public String getReplacementModel() {
         return this.replacementModel;
     }
-    
+
     public void setReplacementModel(String replacementModel) {
         this.replacementModel = replacementModel;
     }
@@ -384,7 +375,7 @@ public class AiModelRecord {
     public String getRetiredAt() {
         return this.retiredAt;
     }
-    
+
     public void setRetiredAt(String retiredAt) {
         this.retiredAt = retiredAt;
     }
@@ -392,7 +383,7 @@ public class AiModelRecord {
     public String getRoutingState() {
         return this.routingState;
     }
-    
+
     public void setRoutingState(String routingState) {
         this.routingState = routingState;
     }
@@ -400,7 +391,7 @@ public class AiModelRecord {
     public String getShelfState() {
         return this.shelfState;
     }
-    
+
     public void setShelfState(String shelfState) {
         this.shelfState = shelfState;
     }
@@ -408,7 +399,7 @@ public class AiModelRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -416,7 +407,7 @@ public class AiModelRecord {
     public Map<String, String> getSupportedLanguages() {
         return this.supportedLanguages;
     }
-    
+
     public void setSupportedLanguages(Map<String, String> supportedLanguages) {
         this.supportedLanguages = supportedLanguages;
     }
@@ -424,7 +415,7 @@ public class AiModelRecord {
     public Boolean getSupportsJsonSchema() {
         return this.supportsJsonSchema;
     }
-    
+
     public void setSupportsJsonSchema(Boolean supportsJsonSchema) {
         this.supportsJsonSchema = supportsJsonSchema;
     }
@@ -432,7 +423,7 @@ public class AiModelRecord {
     public Boolean getSupportsStreaming() {
         return this.supportsStreaming;
     }
-    
+
     public void setSupportsStreaming(Boolean supportsStreaming) {
         this.supportsStreaming = supportsStreaming;
     }
@@ -440,7 +431,7 @@ public class AiModelRecord {
     public Boolean getSupportsTools() {
         return this.supportsTools;
     }
-    
+
     public void setSupportsTools(Boolean supportsTools) {
         this.supportsTools = supportsTools;
     }
@@ -448,7 +439,7 @@ public class AiModelRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -456,7 +447,7 @@ public class AiModelRecord {
     public String getTrainingDataCutoff() {
         return this.trainingDataCutoff;
     }
-    
+
     public void setTrainingDataCutoff(String trainingDataCutoff) {
         this.trainingDataCutoff = trainingDataCutoff;
     }
@@ -464,7 +455,7 @@ public class AiModelRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -472,7 +463,7 @@ public class AiModelRecord {
     public Map<String, String> getUseCases() {
         return this.useCases;
     }
-    
+
     public void setUseCases(Map<String, String> useCases) {
         this.useCases = useCases;
     }
@@ -480,7 +471,7 @@ public class AiModelRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -488,7 +479,7 @@ public class AiModelRecord {
     public String getVendorCode() {
         return this.vendorCode;
     }
-    
+
     public void setVendorCode(String vendorCode) {
         this.vendorCode = vendorCode;
     }
@@ -496,7 +487,7 @@ public class AiModelRecord {
     public String getVendorId() {
         return this.vendorId;
     }
-    
+
     public void setVendorId(String vendorId) {
         this.vendorId = vendorId;
     }
@@ -504,7 +495,7 @@ public class AiModelRecord {
     public String getVendorNameSnapshot() {
         return this.vendorNameSnapshot;
     }
-    
+
     public void setVendorNameSnapshot(String vendorNameSnapshot) {
         this.vendorNameSnapshot = vendorNameSnapshot;
     }
@@ -512,7 +503,7 @@ public class AiModelRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

@@ -1,4 +1,4 @@
-use std::collections::BTreeSet;
+use std::collections::{BTreeMap, BTreeSet};
 use std::error::Error;
 use std::fmt::{Display, Formatter};
 
@@ -17,6 +17,10 @@ pub(crate) const SYNC_MODE_DRY_RUN: &str = "dry_run";
 
 pub(crate) fn catalog_key(vendor_code: &str, region_code: &str, model_id: &str) -> String {
     format!("{vendor_code}/{region_code}/{model_id}")
+}
+
+pub(crate) fn model_base_catalog_key(vendor_code: &str, model_id: &str) -> String {
+    format!("{vendor_code}/{model_id}")
 }
 
 #[derive(Debug)]
@@ -101,6 +105,7 @@ pub(crate) fn catalog_with_selected_vendors(
     Ok(ModelCatalog {
         manifest: catalog.manifest.clone(),
         meters: catalog.meters.clone(),
+        protocols: catalog.protocols.clone(),
         vendors: catalog
             .vendors
             .iter()
@@ -124,8 +129,14 @@ pub(crate) fn catalog_scope_model_count(catalog: &ModelCatalog) -> usize {
     catalog
         .vendors
         .iter()
-        .map(|vendor| vendor.models.len())
-        .sum()
+        .flat_map(|vendor| {
+            vendor
+                .models
+                .iter()
+                .map(|model| model_base_catalog_key(&vendor.vendor.vendor_code, &model.model_id))
+        })
+        .collect::<BTreeSet<_>>()
+        .len()
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -163,31 +174,34 @@ impl CatalogScopeCounts {
 }
 
 pub(crate) fn catalog_scope_counts(catalog: &ModelCatalog) -> CatalogScopeCounts {
-    let catalog_keys = catalog
+    let model_catalog_keys = catalog
         .vendors
         .iter()
         .flat_map(|vendor| {
-            vendor.models.iter().map(|model| {
-                catalog_key(
-                    &vendor.vendor.vendor_code,
-                    &vendor.vendor.region_code,
-                    &model.model_id,
-                )
-            })
+            vendor
+                .models
+                .iter()
+                .map(|model| model_base_catalog_key(&vendor.vendor.vendor_code, &model.model_id))
         })
         .collect::<BTreeSet<_>>();
     let capability_count = catalog
         .vendors
         .iter()
-        .flat_map(|vendor| vendor.models.iter())
-        .map(|model| {
-            if model.capabilities.is_empty() {
-                1
-            } else {
-                model.capabilities.len()
-            }
+        .flat_map(|vendor| {
+            vendor.models.iter().flat_map(|model| {
+                let vendor_code = vendor.vendor.vendor_code.clone();
+                let capabilities = if model.capabilities.is_empty() {
+                    vec![model.primary_capability.clone()]
+                } else {
+                    model.capabilities.clone()
+                };
+                capabilities.into_iter().map(move |capability| {
+                    model_base_catalog_key(&vendor_code, &model.model_id) + "/" + &capability
+                })
+            })
         })
-        .sum();
+        .collect::<BTreeSet<_>>()
+        .len();
     let price_count = catalog
         .vendors
         .iter()
@@ -201,13 +215,15 @@ pub(crate) fn catalog_scope_counts(catalog: &ModelCatalog) -> CatalogScopeCounts
             let vendor_code = vendor.vendor.vendor_code.as_str();
             let region_code = vendor.vendor.region_code.as_str();
             vendor.rankings.iter().flat_map(move |snapshot| {
-                snapshot
-                    .items
-                    .iter()
-                    .map(move |item| catalog_key(vendor_code, region_code, &item.model_id))
+                snapshot.items.iter().map(move |item| {
+                    (
+                        model_base_catalog_key(vendor_code, &item.model_id),
+                        catalog_key(vendor_code, region_code, &item.model_id),
+                    )
+                })
             })
         })
-        .filter(|item_catalog_key| catalog_keys.contains(item_catalog_key))
+        .filter(|(model_catalog_key, _)| model_catalog_keys.contains(model_catalog_key))
         .count();
     CatalogScopeCounts {
         meter_count: catalog.meters.len(),
@@ -236,18 +252,15 @@ pub(crate) fn catalog_authority_keys(catalog: &ModelCatalog) -> CatalogAuthority
         .vendors
         .iter()
         .flat_map(|vendor| {
-            vendor.models.iter().map(|model| {
-                catalog_key(
-                    &vendor.vendor.vendor_code,
-                    &vendor.vendor.region_code,
-                    &model.model_id,
-                )
-            })
+            vendor
+                .models
+                .iter()
+                .map(|model| model_base_catalog_key(&vendor.vendor.vendor_code, &model.model_id))
         })
         .collect::<BTreeSet<_>>()
         .into_iter()
         .collect::<Vec<_>>();
-    let catalog_key_set = catalog_keys.iter().cloned().collect::<BTreeSet<_>>();
+    let model_catalog_key_set = catalog_keys.iter().cloned().collect::<BTreeSet<_>>();
     let vendor_region_uuids = catalog
         .vendors
         .iter()
@@ -283,20 +296,15 @@ pub(crate) fn catalog_authority_keys(catalog: &ModelCatalog) -> CatalogAuthority
         .iter()
         .flat_map(|vendor| {
             let vendor_code = vendor.vendor.vendor_code.clone();
-            let region_code = vendor.vendor.region_code.clone();
             vendor.models.iter().flat_map(move |model| {
                 let vendor_code = vendor_code.clone();
-                let region_code = region_code.clone();
                 let capabilities = if model.capabilities.is_empty() {
                     vec![model.primary_capability.clone()]
                 } else {
                     model.capabilities.clone()
                 };
                 capabilities.into_iter().map(move |capability| {
-                    stable_uuid(
-                        "sdk-cap",
-                        &[&vendor_code, &region_code, &model.model_id, &capability],
-                    )
+                    stable_uuid("sdk-cap", &[&vendor_code, &model.model_id, &capability])
                 })
             })
         })
@@ -330,14 +338,14 @@ pub(crate) fn catalog_authority_keys(catalog: &ModelCatalog) -> CatalogAuthority
         .flat_map(|vendor| {
             let vendor_code = vendor.vendor.vendor_code.clone();
             let region_code = vendor.vendor.region_code.clone();
-            let catalog_key_set = catalog_key_set.clone();
+            let model_catalog_key_set = model_catalog_key_set.clone();
             vendor.rankings.iter().flat_map(move |snapshot| {
                 let vendor_code = vendor_code.clone();
                 let region_code = region_code.clone();
-                let catalog_key_set = catalog_key_set.clone();
+                let model_catalog_key_set = model_catalog_key_set.clone();
                 snapshot.items.iter().filter_map(move |item| {
-                    let item_catalog_key = catalog_key(&vendor_code, &region_code, &item.model_id);
-                    if catalog_key_set.contains(&item_catalog_key) {
+                    let model_catalog_key = model_base_catalog_key(&vendor_code, &item.model_id);
+                    if model_catalog_key_set.contains(&model_catalog_key) {
                         Some(stable_uuid(
                             "sdk-rank",
                             &[
@@ -398,29 +406,37 @@ pub(crate) fn catalog_preview_admin_items(
         .vendors
         .iter()
         .flat_map(|vendor| {
-            vendor.models.iter().enumerate().map(|(index, model)| {
+            vendor.models.iter().map(move |model| {
                 let prices = vendor
                     .pricing
                     .iter()
                     .find(|pricing| pricing.model_id == model.model_id);
-                AdminAiModelItem {
-                    id: (index as i64) + 1,
+                let catalog_key =
+                    model_base_catalog_key(&vendor.vendor.vendor_code, &model.model_id);
+                let item = AdminAiModelItem {
+                    id: 0,
                     uuid: stable_uuid(
                         "sdk-model-preview",
-                        &[
-                            &vendor.vendor.vendor_code,
-                            &vendor.vendor.region_code,
-                            &model.model_id,
-                        ],
+                        &[&vendor.vendor.vendor_code, &model.model_id],
                     ),
                     tenant_id: subject.tenant_id,
                     organization_id: subject.organization_id,
                     vendor_id: vendor.vendor.vendor_code.clone(),
                     vendor_code: vendor.vendor.vendor_code.clone(),
-                    name: model.model_id.clone(),
+                    region_code: vendor.vendor.region_code.clone(),
+                    catalog_key,
+                    model: model.model_id.clone(),
+                    display_name: model.display_name.clone(),
+                    name: if model.display_name.trim().is_empty() {
+                        model.model_id.clone()
+                    } else {
+                        model.display_name.clone()
+                    },
                     model_type: preview_model_type(model),
                     price_in: preview_price(prices, true),
                     price_out: preview_price(prices, false),
+                    cache_read_price: preview_cache_price(prices, "llm_cache_read_token"),
+                    cache_write_price: preview_cache_price(prices, "llm_cache_write_token"),
                     status: "active".to_owned(),
                     calls: "0".to_owned(),
                     description: model.description.clone(),
@@ -443,8 +459,16 @@ pub(crate) fn catalog_preview_admin_items(
                     routing_state: Some(routing_state_code(&model.routing_state)),
                     replacement_model: model.replacement_model.clone(),
                     deleted_at: None,
-                }
+                };
+                (item.catalog_key.clone(), item)
             })
+        })
+        .collect::<BTreeMap<_, _>>()
+        .into_values()
+        .enumerate()
+        .map(|(index, mut item)| {
+            item.id = (index as i64) + 1;
+            item
         })
         .collect::<Vec<_>>();
     (vendors, models)
@@ -568,6 +592,18 @@ fn preview_price(pricing: Option<&sdkwork_models::ModelPricing>, input: bool) ->
         .prices
         .iter()
         .find(|price| meters.contains(&price.meter_code.as_str()))
+        .map(|price| price.unit_price.clone())
+        .unwrap_or_default()
+}
+
+fn preview_cache_price(pricing: Option<&sdkwork_models::ModelPricing>, meter_code: &str) -> String {
+    pricing
+        .and_then(|pricing| {
+            pricing
+                .prices
+                .iter()
+                .find(|price| price.meter_code == meter_code)
+        })
         .map(|price| price.unit_price.clone())
         .unwrap_or_default()
 }

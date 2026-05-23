@@ -247,7 +247,6 @@ async fn load_ranking_aggregates(
                 m.model,
                 COALESCE(NULLIF(m.display_name, ''), m.model, m.catalog_key) AS display_name,
                 COALESCE(m.vendor_code, '') AS vendor_code,
-                COALESCE(NULLIF(m.region_code, ''), 'global') AS region_code,
                 COALESCE(NULLIF(m.vendor_name_snapshot, ''), m.vendor_code, 'Unknown') AS vendor_name_snapshot,
                 COALESCE(m.capability, 1) AS modality,
                 COALESCE(NULLIF(m.color_token, ''), '#64748b') AS color_token,
@@ -301,7 +300,20 @@ async fn load_ranking_aggregates(
                 u.catalog_key,
                 COALESCE(NULLIF(m.model, ''), NULLIF(u.model, ''), u.catalog_key) AS model,
                 m.vendor_code,
-                m.region_code,
+                COALESCE(
+                    NULLIF(
+                        CASE
+                            WHEN length(COALESCE(u.catalog_key, '')) - length(replace(COALESCE(u.catalog_key, ''), '/', '')) >= 2
+                            THEN substr(
+                                substr(u.catalog_key, instr(u.catalog_key, '/') + 1),
+                                1,
+                                instr(substr(u.catalog_key, instr(u.catalog_key, '/') + 1), '/') - 1
+                            )
+                        END,
+                        ''
+                    ),
+                    'global'
+                ) AS region_code,
                 m.vendor_name_snapshot,
                 COALESCE(u.modality, m.modality, 1) AS modality,
                 m.color_token,
@@ -313,7 +325,16 @@ async fn load_ranking_aggregates(
                 COALESCE(NULLIF(MAX(u.currency), ''), 'USD') AS currency
             FROM ai_usage_fact u
             JOIN model_scope m
-              ON m.catalog_key = u.catalog_key
+              ON (
+                  m.catalog_key = u.catalog_key
+                  OR (
+                      length(COALESCE(u.catalog_key, '')) - length(replace(COALESCE(u.catalog_key, ''), '/', '')) >= 2
+                      AND m.catalog_key = substr(u.catalog_key, 1, instr(u.catalog_key, '/') - 1) || '/' || substr(
+                          substr(u.catalog_key, instr(u.catalog_key, '/') + 1),
+                          instr(substr(u.catalog_key, instr(u.catalog_key, '/') + 1), '/') + 1
+                      )
+                  )
+              )
              AND m.model_row_no = 1
             WHERE u.status = 1
               AND (?1 <= 0 OR u.tenant_id = ?1)
@@ -326,7 +347,20 @@ async fn load_ranking_aggregates(
                 u.catalog_key,
                 COALESCE(NULLIF(m.model, ''), NULLIF(u.model, ''), u.catalog_key),
                 m.vendor_code,
-                m.region_code,
+                COALESCE(
+                    NULLIF(
+                        CASE
+                            WHEN length(COALESCE(u.catalog_key, '')) - length(replace(COALESCE(u.catalog_key, ''), '/', '')) >= 2
+                            THEN substr(
+                                substr(u.catalog_key, instr(u.catalog_key, '/') + 1),
+                                1,
+                                instr(substr(u.catalog_key, instr(u.catalog_key, '/') + 1), '/') - 1
+                            )
+                        END,
+                        ''
+                    ),
+                    'global'
+                ),
                 m.vendor_name_snapshot,
                 COALESCE(u.modality, m.modality, 1),
                 m.color_token,

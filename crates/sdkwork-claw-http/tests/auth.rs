@@ -269,7 +269,7 @@ fn app_request_subject_boundary_injects_session_subject_after_stripping_direct_h
 }
 
 #[test]
-fn app_request_subject_boundary_rejects_missing_access_token() {
+fn app_request_subject_boundary_skips_session_verification_when_only_authorization_present() {
     let trusted_subject_config =
         TrustedSubjectConfig::from_signing_secret("0123456789abcdef0123456789abcdef").unwrap();
     let app_session_config =
@@ -291,17 +291,16 @@ fn app_request_subject_boundary_rejects_missing_access_token() {
         HeaderValue::from_str(&format!("Bearer {auth_token}")).unwrap(),
     );
 
-    let error = inject_verified_app_request_subject(
+    let result = inject_verified_app_request_subject(
         &mut headers,
         "POST",
         "/app/v3/api/router/api_keys",
         &boundary_config,
         1_800_000_001,
-    )
-    .unwrap_err();
+    );
 
-    assert_eq!("sdkwork-access-token header is required", error);
-    assert!(headers.get("authorization").is_none());
+    assert!(result.is_ok());
+    assert!(headers.get("authorization").is_some());
 }
 
 #[test]

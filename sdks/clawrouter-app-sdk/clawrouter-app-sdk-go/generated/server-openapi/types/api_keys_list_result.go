@@ -4,6 +4,5 @@ package types
 type ApiKeysListResult struct {
 	Code string `json:"code"`
 	Data AppApiKeyListResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

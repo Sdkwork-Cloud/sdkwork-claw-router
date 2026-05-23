@@ -5,6 +5,7 @@ type CreateRoutingChannelRequest struct {
 	AccessType string `json:"accessType"`
 	BaseUrl string `json:"baseUrl"`
 	Capabilities []string `json:"capabilities"`
+	CircuitBreakerPolicy ProviderCircuitBreakerPolicy `json:"circuitBreakerPolicy"`
 	Models []string `json:"models"`
 	Name string `json:"name"`
 	Protocol string `json:"protocol"`

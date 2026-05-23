@@ -17,6 +17,22 @@ func NewSystemApi(client *sdkhttp.Client) *SystemApi {
     return &SystemApi{client: client}
 }
 
+// List overview
+func (a *SystemApi) AnalyticsAdminOverviewRetrieve(timeRange *string, startTime *string, endTime *string, limit *int) (sdktypes.AnalyticsAdminOverviewRetrieveResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "time_range", Value: func() interface{} { if timeRange == nil { return nil }; return *timeRange }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "start_time", Value: func() interface{} { if startTime == nil { return nil }; return *startTime }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "end_time", Value: func() interface{} { if endTime == nil { return nil }; return *endTime }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "limit", Value: func() interface{} { if limit == nil { return nil }; return *limit }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/system/analytics/admin/overview"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.AnalyticsAdminOverviewRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AnalyticsAdminOverviewRetrieveResult](raw)
+}
+
 // Retrieve IAM auth runtime settings
 func (a *SystemApi) AuthSettingsRetrieve() (sdktypes.AuthSettingsRetrieveResult, error) {
     raw, err := a.client.Get(BackendApiPath("/system/auth/settings"), nil, nil)
@@ -39,6 +55,90 @@ func (a *SystemApi) AuthSettingsUpdate(body sdktypes.AdminAuthSettingsUpdateRequ
         return zero, err
     }
     return decodeResult[sdktypes.AuthSettingsUpdateResult](raw)
+}
+
+// Delete one runtime cache instance
+func (a *SystemApi) CacheInstancesDelete(instanceName string) (sdktypes.CacheInstancesDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/system/cache/instances/%s", SerializePathParameter(instanceName, PathParameterSpec{Name: "instanceName", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.CacheInstancesDeleteResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CacheInstancesDeleteResult](raw)
+}
+
+// Refresh one runtime cache instance
+func (a *SystemApi) CacheInstancesRefreshCreate(instanceName string) (sdktypes.CacheInstancesRefreshCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/system/cache/instances/%s/refresh", SerializePathParameter(instanceName, PathParameterSpec{Name: "instanceName", Style: "simple", Explode: false}))), nil, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.CacheInstancesRefreshCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CacheInstancesRefreshCreateResult](raw)
+}
+
+// Delete a runtime cache namespace
+func (a *SystemApi) CacheNamespacesDelete(namespace string) (sdktypes.CacheNamespacesDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/system/cache/namespaces/%s", SerializePathParameter(namespace, PathParameterSpec{Name: "namespace", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.CacheNamespacesDeleteResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CacheNamespacesDeleteResult](raw)
+}
+
+// List runtime cache keys in a namespace
+func (a *SystemApi) CacheNamespacesKeysList(namespace string, limit *int, cursor *string) (sdktypes.CacheNamespacesKeysListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "limit", Value: func() interface{} { if limit == nil { return nil }; return *limit }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "cursor", Value: func() interface{} { if cursor == nil { return nil }; return *cursor }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath(fmt.Sprintf("/system/cache/namespaces/%s/keys", SerializePathParameter(namespace, PathParameterSpec{Name: "namespace", Style: "simple", Explode: false}))), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.CacheNamespacesKeysListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CacheNamespacesKeysListResult](raw)
+}
+
+// Delete a runtime cache key
+func (a *SystemApi) CacheNamespacesKeysDelete(namespace string, key string) (sdktypes.CacheNamespacesKeysDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/system/cache/namespaces/%s/keys/%s", SerializePathParameter(namespace, PathParameterSpec{Name: "namespace", Style: "simple", Explode: false}), SerializePathParameter(key, PathParameterSpec{Name: "key", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.CacheNamespacesKeysDeleteResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CacheNamespacesKeysDeleteResult](raw)
+}
+
+// Refresh one runtime cache namespace
+func (a *SystemApi) CacheNamespacesRefreshCreate(namespace string) (sdktypes.CacheNamespacesRefreshCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/system/cache/namespaces/%s/refresh", SerializePathParameter(namespace, PathParameterSpec{Name: "namespace", Style: "simple", Explode: false}))), nil, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.CacheNamespacesRefreshCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CacheNamespacesRefreshCreateResult](raw)
+}
+
+// Retrieve runtime cache overview
+func (a *SystemApi) CacheOverviewRetrieve() (sdktypes.CacheOverviewRetrieveResult, error) {
+    raw, err := a.client.Get(BackendApiPath("/system/cache/overview"), nil, nil)
+    if err != nil {
+        var zero sdktypes.CacheOverviewRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CacheOverviewRetrieveResult](raw)
+}
+
+// Refresh all runtime cache instances
+func (a *SystemApi) CacheRefreshCreate() (sdktypes.CacheRefreshCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/system/cache/refresh"), nil, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.CacheRefreshCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CacheRefreshCreateResult](raw)
 }
 
 // List dashboard data
@@ -93,6 +193,16 @@ func (a *SystemApi) InstallationStatusRetrieve() (sdktypes.InstallationStatusRet
         return zero, err
     }
     return decodeResult[sdktypes.InstallationStatusRetrieveResult](raw)
+}
+
+// List referral stats
+func (a *SystemApi) MarketingReferralStatsList() (sdktypes.MarketingReferralStatsListResult, error) {
+    raw, err := a.client.Get(BackendApiPath("/system/marketing/referral_stats"), nil, nil)
+    if err != nil {
+        var zero sdktypes.MarketingReferralStatsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.MarketingReferralStatsListResult](raw)
 }
 
 // List alerts
@@ -212,6 +322,30 @@ func (a *SystemApi) RecordsList(page *int, pageSize *int, user *string, token *s
         return zero, err
     }
     return decodeResult[sdktypes.RecordsListResult](raw)
+}
+
+// Retrieve site branding and deployment personalization settings
+func (a *SystemApi) SiteSettingsRetrieve() (sdktypes.SiteSettingsRetrieveResult, error) {
+    raw, err := a.client.Get(BackendApiPath("/system/site/settings"), nil, nil)
+    if err != nil {
+        var zero sdktypes.SiteSettingsRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.SiteSettingsRetrieveResult](raw)
+}
+
+// Update site branding and deployment personalization settings
+func (a *SystemApi) SiteSettingsUpdate(body sdktypes.AdminSiteSettingsUpdateRequest, xRequestId *string) (sdktypes.SiteSettingsUpdateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Patch(BackendApiPath("/system/site/settings"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.SiteSettingsUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.SiteSettingsUpdateResult](raw)
 }
 
 type PathParameterSpec struct {

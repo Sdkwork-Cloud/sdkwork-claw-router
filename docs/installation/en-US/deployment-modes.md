@@ -12,9 +12,9 @@ SDKWork Claw Router release packages cover `archive`, `service`, `container`, an
 | `container` | `container-image` | PostgreSQL | Containerfile / entrypoint | Docker, Kubernetes, container platforms |
 | `source` | source checkout | development SQLite or PostgreSQL | `pnpm dev` / `pnpm start` | development, validation, private builds |
 
-Redis is optional and disabled by default in every mode. It becomes a standard
-infrastructure setting only when a deployment needs shared cache, distributed
-locks, queues, or rate-limit buckets.
+Redis is enabled and required by default for archive, service, and container
+server deployments because the server cache runtime uses shared Redis-backed
+state. Desktop packages keep Redis optional and disabled by default.
 
 ## Desktop
 
@@ -57,7 +57,7 @@ Characteristics:
 
 - Self-contained server archive.
 - PostgreSQL by default.
-- Optional Redis through `[redis]` when shared infrastructure is needed.
+- Redis through `[redis]` is enabled and required by default.
 - Configuration, data, and logs are managed by deployment scripts or operations tooling.
 
 Start:
@@ -79,7 +79,7 @@ Characteristics:
 - Windows `.msi` packages install runtime files and service metadata for host-specific service registration.
 - Uses PostgreSQL by default and stores protected service overrides in `/etc/clawrouter/clawrouter.env` on Linux.
 - Stores PostgreSQL password material in `/etc/clawrouter/database.secret` by default, or directly in protected TOML when the TOML file is managed as a secret-bearing file.
-- Provides optional `/etc/clawrouter/redis.secret` for deployments that enable `[redis]`.
+- Provides `/etc/clawrouter/redis.secret` for Redis password material when Redis authentication is used.
 - Linux service packages keep `/etc/clawrouter` read-only to the running process and allow writes only to data and log directories.
 - Native installer manifests include `nativeInstall` with final paths, service metadata, permissions, and operator commands.
 
@@ -106,7 +106,7 @@ Characteristics:
 
 - Includes `container/Containerfile` and entrypoint.
 - Entrypoint runs `ensure`, `refresh-catalog --force`, then starts gateway.
-- PostgreSQL configuration, optional Redis configuration, password files, logs, and writable data should be injected through environment variables, platform secrets, or mounts.
+- PostgreSQL configuration, required Redis configuration, password files, logs, and writable data should be injected through environment variables, platform secrets, or mounts.
 
 Example:
 
@@ -122,7 +122,7 @@ docker run --rm -p 3900:3900 \
 For Kubernetes:
 
 - Store the database password in a Secret.
-- Store the Redis password in a Secret only when `[redis].enabled = true`.
+- Store the Redis password in a Secret when Redis authentication is used.
 - Provide `clawrouter.toml` through a ConfigMap or mounted file.
 - Point readinessProbe at `/readyz`.
 - Point livenessProbe at `/healthz`.

@@ -7,7 +7,5 @@ export interface AppsStoreCategoriesListResult {
   /** Data field on apps store categories list result. */
   data?: AppCategoriesResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

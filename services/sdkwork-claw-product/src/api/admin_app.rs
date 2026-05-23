@@ -15,8 +15,10 @@ use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
 use crate::ports::{
-    AdminAppItem, AdminAppStore, AdminAppSubject, CreateAdminAppCommand, DeleteAdminAppCommand,
-    GetAdminAppQuery, ListAdminAppsQuery, SetAdminAppStatusCommand, UpdateAdminAppCommand,
+    AdminAppCategoryItem, AdminAppItem, AdminAppStore, AdminAppSubject,
+    CreateAdminAppCategoryCommand, CreateAdminAppCommand, DeleteAdminAppCategoryCommand,
+    DeleteAdminAppCommand, GetAdminAppQuery, ListAdminAppCategoriesQuery, ListAdminAppsQuery,
+    SetAdminAppStatusCommand, UpdateAdminAppCategoryCommand, UpdateAdminAppCommand,
 };
 
 const REQUEST_ID_HEADER: &str = "X-Request-Id";
@@ -29,6 +31,11 @@ const MAX_VERSION_LEN: usize = 64;
 const MAX_URL_LEN: usize = 512;
 const MAX_PACKAGE_LEN: usize = 255;
 const MAX_DESCRIPTION_LEN: usize = 4000;
+const MAX_CATEGORY_NAME_LEN: usize = 255;
+const MAX_CATEGORY_CODE_LEN: usize = 128;
+const MAX_CATEGORY_ICON_LEN: usize = 255;
+const MAX_CATEGORY_PATH_LEN: usize = 1024;
+const APP_STORE_CATEGORY_TYPE: i32 = 999_999;
 const DEFAULT_JSON_BODY_MAX_BYTES: usize =
     sdkwork_claw_config::RequestLimitsConfig::DEFAULT_ADMIN_APP_JSON_BODY_MAX_BYTES;
 
@@ -112,6 +119,34 @@ struct UpdateAppRequest {
     download_url: Option<Value>,
 }
 
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct CreateCategoryRequest {
+    name: Option<String>,
+    description: Option<String>,
+    code: Option<String>,
+    icon: Option<String>,
+    sort_weight: Option<i32>,
+    parent_id: Option<Value>,
+    path: Option<String>,
+    visible: Option<bool>,
+    status: Option<i32>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct UpdateCategoryRequest {
+    name: Option<String>,
+    description: Option<Value>,
+    code: Option<Value>,
+    icon: Option<Value>,
+    sort_weight: Option<i32>,
+    parent_id: Option<Value>,
+    path: Option<Value>,
+    visible: Option<bool>,
+    status: Option<i32>,
+}
+
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
 struct AdminAppListResponse<T> {
@@ -127,6 +162,34 @@ struct AdminAppItemEnvelope<T> {
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
 struct AdminAppDeleteResponse {
+    deleted: bool,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminAppCategoryItemResponse {
+    id: String,
+    name: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    description: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    code: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    icon: Option<String>,
+    sort_weight: i32,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    parent_id: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    path: Option<String>,
+    visible: bool,
+    status: i32,
+    #[serde(rename = "type")]
+    category_type: i32,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminAppCategoryDeleteResponse {
     deleted: bool,
 }
 
@@ -215,6 +278,16 @@ pub fn admin_app_router_with_store_and_json_body_limit(
     json_body_max_bytes: usize,
 ) -> Router {
     Router::new()
+        .route(
+            "/backend/v3/api/platform/apps/categories",
+            get(fetch_categories).post(create_category),
+        )
+        .route(
+            "/backend/v3/api/platform/apps/categories/{category_id}",
+            get(fetch_categories)
+                .put(update_category)
+                .delete(delete_category),
+        )
         .route("/backend/v3/api/platform/apps/list", post(fetch_apps))
         .route(
             "/backend/v3/api/platform/apps",
@@ -249,6 +322,115 @@ pub fn admin_app_router_with_store_and_json_body_limit(
             entity_uuid_generator,
             json_body_max_bytes: json_body_max_bytes.max(1),
         })
+}
+
+async fn fetch_categories(State(state): State<AdminAppState>, headers: HeaderMap) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    match state
+        .store
+        .list_categories(ListAdminAppCategoriesQuery { subject })
+        .await
+    {
+        Ok(items) => Json(PlusApiResult::success(AdminAppListResponse {
+            items: items.into_iter().map(to_category_response).collect(),
+        }))
+        .into_response(),
+        Err(error) => admin_app_system_response("app category read model is unavailable", error),
+    }
+}
+
+async fn create_category(
+    State(state): State<AdminAppState>,
+    headers: HeaderMap,
+    body: Bytes,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let request = match parse_json_body::<CreateCategoryRequest>(
+        &body,
+        "app category",
+        state.json_body_max_bytes,
+    ) {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
+    let command = match build_create_category_command(state.clone(), &headers, subject, request) {
+        Ok(command) => command,
+        Err(error) => return command_build_error_response(error),
+    };
+    match state.store.create_category(command).await {
+        Ok(item) => Json(PlusApiResult::success(AdminAppItemEnvelope {
+            item: to_category_response(item),
+        }))
+        .into_response(),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => admin_app_system_response("app category command store is unavailable", error),
+    }
+}
+
+async fn update_category(
+    State(state): State<AdminAppState>,
+    Path(category_id): Path<String>,
+    headers: HeaderMap,
+    body: Bytes,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let request = match parse_json_body::<UpdateCategoryRequest>(
+        &body,
+        "app category update",
+        state.json_body_max_bytes,
+    ) {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
+    let command =
+        match build_update_category_command(state.clone(), &headers, subject, category_id, request)
+        {
+            Ok(command) => command,
+            Err(error) => return command_build_error_response(error),
+        };
+    match state.store.update_category(command).await {
+        Ok(Some(item)) => Json(PlusApiResult::success(AdminAppItemEnvelope {
+            item: to_category_response(item),
+        }))
+        .into_response(),
+        Ok(None) => not_found_response("app category was not found"),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => admin_app_system_response("app category update store is unavailable", error),
+    }
+}
+
+async fn delete_category(
+    State(state): State<AdminAppState>,
+    Path(category_id): Path<String>,
+    headers: HeaderMap,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let command = match build_delete_category_command(state.clone(), &headers, subject, category_id)
+    {
+        Ok(command) => command,
+        Err(error) => return command_build_error_response(error),
+    };
+    match state.store.delete_category(command).await {
+        Ok(deleted) => Json(PlusApiResult::success(AdminAppCategoryDeleteResponse {
+            deleted,
+        }))
+        .into_response(),
+        Err(error) if error.is_not_found() => not_found_response(&error.to_string()),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => admin_app_system_response("app category delete store is unavailable", error),
+    }
 }
 
 async fn fetch_apps(
@@ -655,6 +837,39 @@ fn build_create_app_command(
     })
 }
 
+fn build_create_category_command(
+    state: AdminAppState,
+    headers: &HeaderMap,
+    subject: AdminAppSubject,
+    request: CreateCategoryRequest,
+) -> Result<CreateAdminAppCategoryCommand, AdminAppCommandBuildError> {
+    Ok(CreateAdminAppCategoryCommand {
+        subject,
+        category_uuid: generate_entity_uuid(&state)?,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        name: normalize_required_text(request.name.as_deref(), "name", MAX_CATEGORY_NAME_LEN)?,
+        description: normalize_optional_text(
+            request.description.as_deref(),
+            "description",
+            MAX_DESCRIPTION_LEN,
+        )?,
+        code: normalize_optional_text(request.code.as_deref(), "code", MAX_CATEGORY_CODE_LEN)?,
+        icon: normalize_optional_text(request.icon.as_deref(), "icon", MAX_CATEGORY_ICON_LEN)?,
+        sort_weight: request.sort_weight.unwrap_or_default(),
+        parent_id: request
+            .parent_id
+            .as_ref()
+            .map(|value| normalize_value_id(value, "parentId"))
+            .transpose()?,
+        path: normalize_optional_text(request.path.as_deref(), "path", MAX_CATEGORY_PATH_LEN)?,
+        visible: request.visible.unwrap_or(true),
+        status: normalize_category_status(request.status.unwrap_or(1))?,
+        category_type: APP_STORE_CATEGORY_TYPE,
+        request_id: normalize_request_id(headers, &state)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
 fn build_update_app_command(
     state: AdminAppState,
     headers: &HeaderMap,
@@ -750,6 +965,62 @@ fn build_update_app_command(
     })
 }
 
+fn build_update_category_command(
+    state: AdminAppState,
+    headers: &HeaderMap,
+    subject: AdminAppSubject,
+    category_id: String,
+    request: UpdateCategoryRequest,
+) -> Result<UpdateAdminAppCategoryCommand, AdminAppCommandBuildError> {
+    let category_id = normalize_id(&category_id, "categoryId")?;
+    let parent_id = request
+        .parent_id
+        .as_ref()
+        .map(|value| normalize_nullable_value_id(value, "parentId"))
+        .transpose()?;
+    if matches!(parent_id, Some(Some(parent_id)) if parent_id == category_id) {
+        return Err(AdminAppCommandBuildError::BadRequest(
+            "category parent cannot reference itself".to_owned(),
+        ));
+    }
+    Ok(UpdateAdminAppCategoryCommand {
+        subject,
+        category_id,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        name: request
+            .name
+            .as_deref()
+            .map(|value| normalize_required_text(Some(value), "name", MAX_CATEGORY_NAME_LEN))
+            .transpose()?,
+        description: request
+            .description
+            .as_ref()
+            .map(|value| normalize_nullable_text_value(value, "description", MAX_DESCRIPTION_LEN))
+            .transpose()?,
+        code: request
+            .code
+            .as_ref()
+            .map(|value| normalize_nullable_text_value(value, "code", MAX_CATEGORY_CODE_LEN))
+            .transpose()?,
+        icon: request
+            .icon
+            .as_ref()
+            .map(|value| normalize_nullable_text_value(value, "icon", MAX_CATEGORY_ICON_LEN))
+            .transpose()?,
+        sort_weight: request.sort_weight,
+        parent_id,
+        path: request
+            .path
+            .as_ref()
+            .map(|value| normalize_nullable_text_value(value, "path", MAX_CATEGORY_PATH_LEN))
+            .transpose()?,
+        visible: request.visible,
+        status: request.status.map(normalize_category_status).transpose()?,
+        request_id: normalize_request_id(headers, &state)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
 fn build_set_status_command(
     state: AdminAppState,
     headers: &HeaderMap,
@@ -784,6 +1055,37 @@ fn build_delete_app_command(
     })
 }
 
+fn build_delete_category_command(
+    state: AdminAppState,
+    headers: &HeaderMap,
+    subject: AdminAppSubject,
+    category_id: String,
+) -> Result<DeleteAdminAppCategoryCommand, AdminAppCommandBuildError> {
+    Ok(DeleteAdminAppCategoryCommand {
+        subject,
+        category_id: normalize_id(&category_id, "categoryId")?,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        request_id: normalize_request_id(headers, &state)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn to_category_response(item: AdminAppCategoryItem) -> AdminAppCategoryItemResponse {
+    AdminAppCategoryItemResponse {
+        id: item.id.to_string(),
+        name: item.name,
+        description: item.description,
+        code: item.code,
+        icon: item.icon,
+        sort_weight: item.sort_weight,
+        parent_id: item.parent_id.map(|value| value.to_string()),
+        path: item.path,
+        visible: item.visible,
+        status: item.status,
+        category_type: item.category_type,
+    }
+}
+
 fn to_app_response(item: AdminAppItem) -> AdminAppItemResponse {
     AdminAppItemResponse {
         id: item.id.to_string(),
@@ -813,6 +1115,16 @@ fn to_app_response(item: AdminAppItem) -> AdminAppItemResponse {
         download_url: item.download_url,
         created_at: item.created_at,
         updated_at: item.updated_at,
+    }
+}
+
+fn normalize_category_status(value: i32) -> Result<i32, AdminAppCommandBuildError> {
+    if (-1..=1).contains(&value) {
+        Ok(value)
+    } else {
+        Err(AdminAppCommandBuildError::BadRequest(
+            "status must be -1, 0, or 1".to_owned(),
+        ))
     }
 }
 

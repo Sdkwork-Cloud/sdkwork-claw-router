@@ -1,13 +1,11 @@
-import type { AdminPaymentAttemptsResponse } from './admin-payment-attempts-response';
+import type { CommercePaymentAttemptListResponse } from './commerce-payment-attempt-list-response';
 
 /** Payments attempts list result schema exposed by Claw Router. */
 export interface PaymentsAttemptsListResult {
   /** Business response code. */
   code: string;
   /** Data field on payments attempts list result. */
-  data?: AdminPaymentAttemptsResponse;
+  data?: CommercePaymentAttemptListResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

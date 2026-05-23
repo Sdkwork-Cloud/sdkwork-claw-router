@@ -1,0 +1,28 @@
+fragment: models/playground
+frontend_models:
+- route: /playground
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundTypes.ts
+  interface: PlaygroundHistoryItem
+  fields:
+  - id
+  - date
+  - prompt
+  - type
+  - modelInfo
+  - modelCatalogKey
+  - url
+  - images
+  - videos
+  - aspectRatio
+  - durationSeconds
+  - activeIndex
+  - status
+  - outputText
+  - generationConfig
+  - createdAt
+  - updatedAt
+  data_sources:
+  - ai_generation_session
+  - ai_generation_job
+  - ai_generation_asset
+  - ai_generation_asset_action

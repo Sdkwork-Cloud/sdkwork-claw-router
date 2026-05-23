@@ -15,7 +15,7 @@ AppCenter 必须沿用 Java 侧 `PlusApp` 设计体系，数据库主数据表�
 | 能力 | 标准数据源 | 说明 |
 | --- | --- | --- |
 | 应用基础信息 | `plus_app` | `name`、`description`、`version`、`icon`、`icon_url`、`access_url`、`status`、`app_type` |
-| 应用分类 | `plus_app.app_type` | Java `AppStoreAppService` 已按 `appType` 生成 store category；无类型时使用 `General` |
+| 应用分类 | `plus_category` | App Store 分类统一读取 `plus_category` 中 `type=999999`、`group_name=app-store` 的分类树；`plus_app.app_type` 仅保留为应用运行类型/兼容字段，不再作为分类事实来源 |
 | 开发者名称 | `plus_user` + `plus_app.user_id` | Java `AppStoreAppService` 优先取 `PlusUser.nickname/username`，兜底取 `installSkill.name` 或 `SDKWork` |
 | 图标/封面/截图 | `plus_app.icon`、`plus_app.icon_url`、`plus_app.resource_list` | 前端 `image/screenshots` 由适配层从资源列表筛选 cover/screenshot，不改变 UI |
 | 平台支持 | `plus_app.platforms`、`plus_app.install_platforms` | 对应前端 `PlatformType` 与 `OS` 筛选能力 |
@@ -67,7 +67,7 @@ Backend/Admin 走 backend-api 标准，路径沿用 Java：
 | `id` | `AppVO.appId` / `plus_app.id` | API 层按 string 输出，避免 JS int64 精度问题 |
 | `name` | `AppVO.name` / `plus_app.name` | 直接映射 |
 | `developer` | `AppVO.developer` | 由 `PlusUser` 或 `installSkill.name` 补齐 |
-| `category` | `AppVO.category` | 由 `appType` 归一化，前端无需改 UI |
+| `category` | `AppVO.category` | 由 `plus_category.name` 投影；前端无需改 UI |
 | `image` | `iconUrl`、`icon.url`、`resourceList.cover` | 优先 `iconUrl`，再取图标资源，再取资源列表首个 cover |
 | `rating` | `studio_catalog_action` 聚合 | 无行为数据时可返回默认空值/0，不写入 `plus_app` |
 | `downloads` | `studio_catalog_action` 聚合 | 前端展示文本由适配层格式化，例如 `450k+` |

@@ -11,5 +11,4 @@ class AccountPointsRechargesCreateResult:
     """Account points recharges create result schema exposed by Claw Router."""
     code: str
     data: Optional[SubmitRechargeResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

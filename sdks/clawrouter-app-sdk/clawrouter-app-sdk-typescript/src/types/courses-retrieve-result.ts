@@ -7,7 +7,5 @@ export interface CoursesRetrieveResult {
   /** Data field on courses retrieve result. */
   data?: CourseDetail;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

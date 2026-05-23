@@ -1,9 +1,19 @@
 import { useState, useRef, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Bot, Image as ImageIcon, Video, Music, Plus, ArrowUp, ChevronDown, Type, Activity, Package, Smile, Loader2 } from 'lucide-react';
+import { Bot, Image as ImageIcon, Video, Music, Plus, ArrowUp, ChevronDown, Activity, Package, Smile, Loader2 } from 'lucide-react';
+import {
+  createDefaultSdkworkGenerationAssetConfig,
+  getSdkworkGenerationModelBucket,
+  serializeSdkworkGenerationAssetConfig,
+} from '@sdkwork/generation-pc-react/react';
 import { PlaygroundModelPicker, createFallbackModel } from './PlaygroundModelPicker';
 import type { GenerationModality, Modality } from '../pages/Playground';
-import type { PlaygroundGenerationSubmitInput, PlaygroundModelBucket, PlaygroundModelGroup } from '../playgroundTypes';
+import type {
+  PlaygroundGenerationSubmitInput,
+  PlaygroundGenerationTargetType,
+  PlaygroundModelBucket,
+  PlaygroundModelGroup,
+} from '../playgroundTypes';
 
 export function GenerationChatInput({
   selectedModality,
@@ -87,8 +97,15 @@ export function GenerationChatInput({
     if (selectedModality === 'package') {
       return;
     }
+    const generationConfig = isPlaygroundGenerationTargetType(selectedModality)
+      ? serializeSdkworkGenerationAssetConfig(
+        createDefaultSdkworkGenerationAssetConfig(selectedModality),
+        selectedModality,
+      )
+      : undefined;
     try {
       await onSubmit({
+        generationConfig,
         prompt: normalizedPrompt,
         selectedModality,
         selectedModel: selectedModels[selectedModality] || undefined,
@@ -105,7 +122,7 @@ export function GenerationChatInput({
       <div
         className={`w-full bg-[#1c1c1e] border border-white/10 transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] shadow-[0_8px_30px_rgba(0,0,0,0.5)] ${
           isFocused
-            ? 'rounded-[24px] p-4 shadow-[0_16px_40px_rgba(0,0,0,0.8)]'
+            ? 'rounded-[12px] p-2 shadow-[0_16px_40px_rgba(0,0,0,0.8)]'
             : 'rounded-full p-2 cursor-text hover:border-white/20'
         }`}
         onClick={() => { if (!isFocused) setIsFocused(true); }}
@@ -143,7 +160,7 @@ export function GenerationChatInput({
 
         {/* Focused Content */}
         {isFocused && (
-          <div className="flex min-h-[200px] flex-col animate-in fade-in duration-300">
+          <div className="flex flex-col animate-in fade-in duration-300">
             <div className="flex gap-4">
               {/* Right Textarea */}
               <div className="flex-1 relative">
@@ -157,14 +174,14 @@ export function GenerationChatInput({
                        void handleSubmit();
                      }
                    }}
-                   className="w-full min-h-[96px] bg-transparent border-none text-[15px] leading-relaxed text-white placeholder:text-slate-500 focus:outline-none resize-none"
+                   className="w-full min-h-[120px] bg-transparent border-none text-[15px] leading-relaxed text-white placeholder:text-slate-500 focus:outline-none resize-none"
                    placeholder={currentPlaceholder}
                  />
               </div>
             </div>
 
             {/* Bottom Toolbar */}
-            <div className="mt-4 flex items-center justify-between gap-4">
+            <div className="mt-2 flex items-center justify-between gap-3">
               <div className="flex min-w-0 flex-1 flex-wrap items-center gap-2">
                  {/* Modality Switcher Dropdown */}
                  <div className="relative">
@@ -221,15 +238,6 @@ export function GenerationChatInput({
                    </div>
                  )}
 
-                 {/* Settings / Parameters Button */}
-                 <button
-                   type="button"
-                   title={t('playground.parameters')}
-                   aria-label={t('playground.parameters')}
-                   className="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-white bg-[#252528] hover:bg-[#2a2a2d] transition-colors border border-transparent border-white/5 group"
-                 >
-                   <Type className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                 </button>
               </div>
 
               <div className="flex items-center gap-3">
@@ -257,20 +265,19 @@ export function GenerationChatInput({
 }
 
 function toModelBucket(value: GenerationModality): PlaygroundModelBucket | null {
-  switch (value) {
-    case 'agent':
-      return 'llms';
-    case 'image':
-      return 'images';
-    case 'video':
-      return 'videos';
-    case 'music':
-      return 'music';
-    case 'audio':
-      return 'audios';
-    case 'sfx':
-      return 'sfx';
-    case 'package':
-      return null;
+  if (value === 'agent') {
+    return 'llms';
   }
+  if (value === 'package') {
+    return null;
+  }
+  return getSdkworkGenerationModelBucket(value);
+}
+
+function isPlaygroundGenerationTargetType(value: GenerationModality): value is PlaygroundGenerationTargetType {
+  return value === 'image'
+    || value === 'video'
+    || value === 'music'
+    || value === 'audio'
+    || value === 'sfx';
 }

@@ -68,12 +68,14 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
                 ResolvedPriceSource::ExplicitCustomerCharge,
             ),
             None => (
-                official
-                    .unit_price
-                    .multiply(plan.default_multiplier)
-                    .multiply(group.official_price_multiplier)
-                    .add(&plan.default_markup_amount)?
-                    .multiply(group.rate_multiplier),
+                add_default_markup(
+                    official
+                        .unit_price
+                        .multiply(plan.default_multiplier)
+                        .multiply(group.official_price_multiplier),
+                    &plan.default_markup_amount,
+                )?
+                .multiply(group.rate_multiplier),
                 ResolvedPriceSource::DerivedFromOfficialReference,
             ),
         };
@@ -202,4 +204,11 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
         let _ = route;
         Ok(())
     }
+}
+
+fn add_default_markup(base: Money, markup: &Money) -> DomainResult<Money> {
+    if markup.is_zero() && base.currency != markup.currency {
+        return Ok(base);
+    }
+    base.add(markup)
 }

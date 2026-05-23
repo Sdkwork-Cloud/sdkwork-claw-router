@@ -4,6 +4,7 @@ import java.util.Map;
 
 public class AiAgentRunRecord {
     private String agentId;
+    private String agentSessionId;
     private String agentVersionId;
     private String audioSeconds;
     private String cachedTokens;
@@ -18,8 +19,10 @@ public class AiAgentRunRecord {
     private String imageCount;
     private String inputMessage;
     private Boolean legalHold;
+    private String memorySpaceId;
     private Map<String, String> metadata;
     private String meteringStatus;
+    private String model;
     private String organizationId;
     private String outputMessage;
     private String payloadHash;
@@ -27,8 +30,8 @@ public class AiAgentRunRecord {
     private String promptTokens;
     private String requestId;
     private String retentionUntil;
-    private String runStatus;
     private String runUuid;
+    private String runtime;
     private String sourceSurface;
     private String startedAt;
     private String status;
@@ -38,6 +41,7 @@ public class AiAgentRunRecord {
     private String totalTokens;
     private String traceId;
     private String usageFactId;
+    private Map<String, String> usageJson;
     private String userId;
     private String uuid;
     private String videoSeconds;
@@ -45,15 +49,23 @@ public class AiAgentRunRecord {
     public String getAgentId() {
         return this.agentId;
     }
-    
+
     public void setAgentId(String agentId) {
         this.agentId = agentId;
+    }
+
+    public String getAgentSessionId() {
+        return this.agentSessionId;
+    }
+
+    public void setAgentSessionId(String agentSessionId) {
+        this.agentSessionId = agentSessionId;
     }
 
     public String getAgentVersionId() {
         return this.agentVersionId;
     }
-    
+
     public void setAgentVersionId(String agentVersionId) {
         this.agentVersionId = agentVersionId;
     }
@@ -61,7 +73,7 @@ public class AiAgentRunRecord {
     public String getAudioSeconds() {
         return this.audioSeconds;
     }
-    
+
     public void setAudioSeconds(String audioSeconds) {
         this.audioSeconds = audioSeconds;
     }
@@ -69,7 +81,7 @@ public class AiAgentRunRecord {
     public String getCachedTokens() {
         return this.cachedTokens;
     }
-    
+
     public void setCachedTokens(String cachedTokens) {
         this.cachedTokens = cachedTokens;
     }
@@ -77,7 +89,7 @@ public class AiAgentRunRecord {
     public String getCancelledAt() {
         return this.cancelledAt;
     }
-    
+
     public void setCancelledAt(String cancelledAt) {
         this.cancelledAt = cancelledAt;
     }
@@ -85,7 +97,7 @@ public class AiAgentRunRecord {
     public String getCompletedAt() {
         return this.completedAt;
     }
-    
+
     public void setCompletedAt(String completedAt) {
         this.completedAt = completedAt;
     }
@@ -93,7 +105,7 @@ public class AiAgentRunRecord {
     public String getCompletionTokens() {
         return this.completionTokens;
     }
-    
+
     public void setCompletionTokens(String completionTokens) {
         this.completionTokens = completionTokens;
     }
@@ -101,7 +113,7 @@ public class AiAgentRunRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -109,7 +121,7 @@ public class AiAgentRunRecord {
     public String getErrorMessageMasked() {
         return this.errorMessageMasked;
     }
-    
+
     public void setErrorMessageMasked(String errorMessageMasked) {
         this.errorMessageMasked = errorMessageMasked;
     }
@@ -117,7 +129,7 @@ public class AiAgentRunRecord {
     public String getExecutionMode() {
         return this.executionMode;
     }
-    
+
     public void setExecutionMode(String executionMode) {
         this.executionMode = executionMode;
     }
@@ -125,7 +137,7 @@ public class AiAgentRunRecord {
     public String getFailedAt() {
         return this.failedAt;
     }
-    
+
     public void setFailedAt(String failedAt) {
         this.failedAt = failedAt;
     }
@@ -133,7 +145,7 @@ public class AiAgentRunRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -141,7 +153,7 @@ public class AiAgentRunRecord {
     public String getImageCount() {
         return this.imageCount;
     }
-    
+
     public void setImageCount(String imageCount) {
         this.imageCount = imageCount;
     }
@@ -149,7 +161,7 @@ public class AiAgentRunRecord {
     public String getInputMessage() {
         return this.inputMessage;
     }
-    
+
     public void setInputMessage(String inputMessage) {
         this.inputMessage = inputMessage;
     }
@@ -157,15 +169,23 @@ public class AiAgentRunRecord {
     public Boolean getLegalHold() {
         return this.legalHold;
     }
-    
+
     public void setLegalHold(Boolean legalHold) {
         this.legalHold = legalHold;
+    }
+
+    public String getMemorySpaceId() {
+        return this.memorySpaceId;
+    }
+
+    public void setMemorySpaceId(String memorySpaceId) {
+        this.memorySpaceId = memorySpaceId;
     }
 
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -173,15 +193,23 @@ public class AiAgentRunRecord {
     public String getMeteringStatus() {
         return this.meteringStatus;
     }
-    
+
     public void setMeteringStatus(String meteringStatus) {
         this.meteringStatus = meteringStatus;
+    }
+
+    public String getModel() {
+        return this.model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -189,7 +217,7 @@ public class AiAgentRunRecord {
     public String getOutputMessage() {
         return this.outputMessage;
     }
-    
+
     public void setOutputMessage(String outputMessage) {
         this.outputMessage = outputMessage;
     }
@@ -197,7 +225,7 @@ public class AiAgentRunRecord {
     public String getPayloadHash() {
         return this.payloadHash;
     }
-    
+
     public void setPayloadHash(String payloadHash) {
         this.payloadHash = payloadHash;
     }
@@ -205,7 +233,7 @@ public class AiAgentRunRecord {
     public String getPlannerModel() {
         return this.plannerModel;
     }
-    
+
     public void setPlannerModel(String plannerModel) {
         this.plannerModel = plannerModel;
     }
@@ -213,7 +241,7 @@ public class AiAgentRunRecord {
     public String getPromptTokens() {
         return this.promptTokens;
     }
-    
+
     public void setPromptTokens(String promptTokens) {
         this.promptTokens = promptTokens;
     }
@@ -221,7 +249,7 @@ public class AiAgentRunRecord {
     public String getRequestId() {
         return this.requestId;
     }
-    
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -229,31 +257,31 @@ public class AiAgentRunRecord {
     public String getRetentionUntil() {
         return this.retentionUntil;
     }
-    
+
     public void setRetentionUntil(String retentionUntil) {
         this.retentionUntil = retentionUntil;
-    }
-
-    public String getRunStatus() {
-        return this.runStatus;
-    }
-    
-    public void setRunStatus(String runStatus) {
-        this.runStatus = runStatus;
     }
 
     public String getRunUuid() {
         return this.runUuid;
     }
-    
+
     public void setRunUuid(String runUuid) {
         this.runUuid = runUuid;
+    }
+
+    public String getRuntime() {
+        return this.runtime;
+    }
+
+    public void setRuntime(String runtime) {
+        this.runtime = runtime;
     }
 
     public String getSourceSurface() {
         return this.sourceSurface;
     }
-    
+
     public void setSourceSurface(String sourceSurface) {
         this.sourceSurface = sourceSurface;
     }
@@ -261,7 +289,7 @@ public class AiAgentRunRecord {
     public String getStartedAt() {
         return this.startedAt;
     }
-    
+
     public void setStartedAt(String startedAt) {
         this.startedAt = startedAt;
     }
@@ -269,7 +297,7 @@ public class AiAgentRunRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -277,7 +305,7 @@ public class AiAgentRunRecord {
     public String getTargetModality() {
         return this.targetModality;
     }
-    
+
     public void setTargetModality(String targetModality) {
         this.targetModality = targetModality;
     }
@@ -285,7 +313,7 @@ public class AiAgentRunRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -293,7 +321,7 @@ public class AiAgentRunRecord {
     public Integer getTotalSteps() {
         return this.totalSteps;
     }
-    
+
     public void setTotalSteps(Integer totalSteps) {
         this.totalSteps = totalSteps;
     }
@@ -301,7 +329,7 @@ public class AiAgentRunRecord {
     public String getTotalTokens() {
         return this.totalTokens;
     }
-    
+
     public void setTotalTokens(String totalTokens) {
         this.totalTokens = totalTokens;
     }
@@ -309,7 +337,7 @@ public class AiAgentRunRecord {
     public String getTraceId() {
         return this.traceId;
     }
-    
+
     public void setTraceId(String traceId) {
         this.traceId = traceId;
     }
@@ -317,15 +345,23 @@ public class AiAgentRunRecord {
     public String getUsageFactId() {
         return this.usageFactId;
     }
-    
+
     public void setUsageFactId(String usageFactId) {
         this.usageFactId = usageFactId;
+    }
+
+    public Map<String, String> getUsageJson() {
+        return this.usageJson;
+    }
+
+    public void setUsageJson(Map<String, String> usageJson) {
+        this.usageJson = usageJson;
     }
 
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -333,7 +369,7 @@ public class AiAgentRunRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -341,7 +377,7 @@ public class AiAgentRunRecord {
     public String getVideoSeconds() {
         return this.videoSeconds;
     }
-    
+
     public void setVideoSeconds(String videoSeconds) {
         this.videoSeconds = videoSeconds;
     }

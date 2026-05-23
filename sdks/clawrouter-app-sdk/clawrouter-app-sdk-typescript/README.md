@@ -89,17 +89,30 @@ const client = new SdkworkAppClient({
 
 ## API Modules
 
+- `client.commerce` - commerce API
 - `client.agents` - agents API
 - `client.ai` - ai API
 - `client.auth` - auth API
-- `client.billing` - billing API
-- `client.communication` - communication API
+- `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
+- `client.memory` - memory API
+- `client.notification` - notification API
+- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
+- `client.runtime` - runtime API
+- `client.sdkReference` - sdk_reference API
+- `client.system` - system API
 
 ## Usage Examples
+
+### commerce
+
+```typescript
+// Accounts Current Summary Retrieve
+const result = await client.commerce.accounts.current.summary.retrieve();
+```
 
 ### agents
 
@@ -146,18 +159,15 @@ const params = {
 const result = await client.auth.sessions.create(body, params);
 ```
 
-### billing
+### chat
 
 ```typescript
-// Retrieve account points
-const result = await client.billing.account.points.retrieve();
-```
-
-### communication
-
-```typescript
-// List notifications
-const result = await client.communication.notifications.list();
+// List product chat conversations
+const params = {
+  page: 1,
+  page_size: 2,
+};
+const result = await client.chat.conversations.list(params);
 ```
 
 ### content
@@ -181,11 +191,99 @@ const result = await client.ecosystem.skills.categories.list();
 const result = await client.iam.apiKeyGroups.list();
 ```
 
+### memory
+
+```typescript
+// List memory spaces
+const params = {
+  page: 1,
+  page_size: 2,
+};
+const result = await client.memory.spaces.list(params);
+```
+
+### notification
+
+```typescript
+// List notifications
+const params = {
+  app_id: 'app_id',
+  include_archived: false,
+  page: 3,
+  page_size: 4,
+};
+const result = await client.notification.listNotifications(params);
+```
+
+### open_platform
+
+```typescript
+// Create open platform QR auth session
+const body = {
+  purpose: 'login',
+};
+const result = await client.openPlatform.qrAuth.sessions.create(body);
+```
+
 ### platform
 
 ```typescript
 // Get categories
 const result = await client.platform.apps.store.categories.list();
+```
+
+### runtime
+
+```typescript
+// List runtime invocations
+const params = {
+  page: 1,
+  page_size: 2,
+  conversation_id: 'conversation_id',
+  chat_turn_id: 'chat_turn_id',
+  agent_session_id: 'agent_session_id',
+  runtime: 'runtime',
+  status: 'status',
+};
+const result = await client.runtime.invocations.list(params);
+```
+
+### sdk_reference
+
+```typescript
+// Generate SDK archive
+const body = {
+  config: {
+    apiPrefix: 'apiPrefix',
+    apiSpecPath: 'apiSpecPath',
+    author: 'author',
+    baseUrl: 'baseUrl',
+    description: 'description',
+    language: 'language',
+    license: 'license',
+    name: 'name',
+    outputPath: 'outputPath',
+    packageName: 'packageName',
+    sdkType: 'app',
+    version: 'version',
+  },
+  language: 'language',
+  spec: {
+    value: 'value',
+  },
+};
+const result = await client.sdkReference.archives.create(body);
+```
+
+### system
+
+```typescript
+// Retrieve public site runtime branding settings
+const params = {
+  tenant_code: 'tenant_code',
+  organization_code: 'organization_code',
+};
+const result = await client.system.site.runtime.retrieve(params);
 ```
 
 ## Error Handling

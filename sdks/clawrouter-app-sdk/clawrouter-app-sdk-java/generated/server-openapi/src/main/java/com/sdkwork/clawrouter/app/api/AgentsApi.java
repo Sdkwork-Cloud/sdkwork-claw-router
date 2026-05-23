@@ -8,36 +8,128 @@ import java.util.Map;
 
 public class AgentsApi {
     private final HttpClient client;
-    
+
     public AgentsApi(HttpClient client) {
         this.client = client;
     }
 
     /** List user agents */
-    public AgentsListResult list(Integer page, Integer pageSize, String q) throws Exception {
+    public AgentDefinitionsListResult agentDefinitionsList(Integer page, Integer pageSize, String q) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
             new QueryParameterSpec("q", q, "form", true, false, null)
         ));
         Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/agents"), query));
-        return client.convertValue(raw, new TypeReference<AgentsListResult>() {});
+        return client.convertValue(raw, new TypeReference<AgentDefinitionsListResult>() {});
     }
 
     /** Create user agent */
-    public AgentsCreateResult create(AgentCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public AgentDefinitionsCreateResult agentDefinitionsCreate(AgentCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
                 Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/agents"), body, null, requestHeaders, "application/json");
-        return client.convertValue(raw, new TypeReference<AgentsCreateResult>() {});
+        return client.convertValue(raw, new TypeReference<AgentDefinitionsCreateResult>() {});
+    }
+
+    /** Retrieve agent run */
+    public AgentRunsRetrieveResult agentRunsRetrieve(String runId) throws Exception {
+        Object raw = client.get(ApiPaths.appPath("/agents/runs/" + serializePathParameter(runId, new PathParameterSpec("runId", "simple", false)) + ""));
+        return client.convertValue(raw, new TypeReference<AgentRunsRetrieveResult>() {});
+    }
+
+    /** Complete agent run */
+    public AgentRunsSubmitResult agentRunsSubmit(String runId, AgentRunCompleteRequest body, String idempotencyKey, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.appPath("/agents/runs/" + serializePathParameter(runId, new PathParameterSpec("runId", "simple", false)) + "/complete"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<AgentRunsSubmitResult>() {});
+    }
+
+    /** List agent run steps */
+    public AgentRunStepsListResult agentRunStepsList(String runId, Integer page, Integer pageSize) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/agents/runs/" + serializePathParameter(runId, new PathParameterSpec("runId", "simple", false)) + "/steps"), query));
+        return client.convertValue(raw, new TypeReference<AgentRunStepsListResult>() {});
+    }
+
+    /** Create agent run step */
+    public AgentRunStepsCreateResult agentRunStepsCreate(String runId, AgentRunStepCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.appPath("/agents/runs/" + serializePathParameter(runId, new PathParameterSpec("runId", "simple", false)) + "/steps"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<AgentRunStepsCreateResult>() {});
+    }
+
+    /** Complete agent run step */
+    public AgentRunStepsSubmitResult agentRunStepsSubmit(String runId, String stepId, AgentRunStepCompleteRequest body, String idempotencyKey, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.appPath("/agents/runs/" + serializePathParameter(runId, new PathParameterSpec("runId", "simple", false)) + "/steps/" + serializePathParameter(stepId, new PathParameterSpec("stepId", "simple", false)) + "/complete"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<AgentRunStepsSubmitResult>() {});
+    }
+
+    /** Retrieve agent session */
+    public AgentSessionsRetrieveResult agentSessionsRetrieve(String sessionId) throws Exception {
+        Object raw = client.get(ApiPaths.appPath("/agents/sessions/" + serializePathParameter(sessionId, new PathParameterSpec("sessionId", "simple", false)) + ""));
+        return client.convertValue(raw, new TypeReference<AgentSessionsRetrieveResult>() {});
+    }
+
+    /** List agent session runs */
+    public AgentRunsListResult agentRunsList(String sessionId, Integer page, Integer pageSize) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/agents/sessions/" + serializePathParameter(sessionId, new PathParameterSpec("sessionId", "simple", false)) + "/runs"), query));
+        return client.convertValue(raw, new TypeReference<AgentRunsListResult>() {});
+    }
+
+    /** Create agent run */
+    public AgentRunsCreateResult agentRunsCreate(String sessionId, AgentRunCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.appPath("/agents/sessions/" + serializePathParameter(sessionId, new PathParameterSpec("sessionId", "simple", false)) + "/runs"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<AgentRunsCreateResult>() {});
     }
 
     /** Retrieve user agent */
-    public AgentsRetrieveResult retrieve(String agentId) throws Exception {
+    public AgentDefinitionsRetrieveResult agentDefinitionsRetrieve(String agentId) throws Exception {
         Object raw = client.get(ApiPaths.appPath("/agents/" + serializePathParameter(agentId, new PathParameterSpec("agentId", "simple", false)) + ""));
-        return client.convertValue(raw, new TypeReference<AgentsRetrieveResult>() {});
+        return client.convertValue(raw, new TypeReference<AgentDefinitionsRetrieveResult>() {});
+    }
+
+    /** List agent sessions */
+    public AgentSessionsListResult agentSessionsList(String agentId, Integer page, Integer pageSize) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/agents/" + serializePathParameter(agentId, new PathParameterSpec("agentId", "simple", false)) + "/sessions"), query));
+        return client.convertValue(raw, new TypeReference<AgentSessionsListResult>() {});
+    }
+
+    /** Create agent session */
+    public AgentSessionsCreateResult agentSessionsCreate(String agentId, AgentSessionCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.appPath("/agents/" + serializePathParameter(agentId, new PathParameterSpec("agentId", "simple", false)) + "/sessions"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<AgentSessionsCreateResult>() {});
     }
 
     private record PathParameterSpec(String name, String style, boolean explode) {}

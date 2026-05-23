@@ -4,18 +4,22 @@ import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
 import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
-import { BillingService } from "./packages/sdkwork-claw-router-console-billing/src/billingService.ts";
-import { CheckoutService } from "./packages/sdkwork-claw-router-console-billing/src/checkoutService.ts";
-import { CommerceFoundationService } from "./packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts";
+import { CheckoutService } from "./packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts";
+import { RechargeService } from "./packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts";
+import { WalletService } from "./packages/sdkwork-claw-router-console-wallet/src/walletService.ts";
+
+type CapturedSdkRequest = {
+  body: string;
+  method: string;
+  url: string;
+};
 
 const originalFetch = globalThis.fetch;
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
 
-type CapturedSdkRequest = {
-  url: string;
-  method: string;
-  body: string;
-};
+function readPortalFile(relativePath: string): string {
+  return readFileSync(new URL(relativePath, import.meta.url), "utf8");
+}
 
 async function withBillingSdkResponse<T>(
   responseBody: unknown,
@@ -30,9 +34,9 @@ async function withBillingSdkResponse<T>(
   globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url;
     captured.push({
-      url,
-      method: init?.method ?? "GET",
       body: typeof init?.body === "string" ? init.body : "",
+      method: init?.method ?? "GET",
+      url,
     });
     return new Response(JSON.stringify(responseBody), {
       status: 200,
@@ -56,57 +60,64 @@ async function withBillingSdkResponse<T>(
   }
 }
 
-test("billing redeem code uses the generated app SDK path and returns confirmed success data", async () => {
+test("billing capability is split into wallet, recharge, and checkout business packages", () => {
+  const appSource = readPortalFile("./src/App.tsx");
+  const packageJson = readPortalFile("./package.json");
+  const routeClassification = readPortalFile("../../docs/schema-registry/frontend-route-classification.yaml");
+
+  for (const packageName of [
+    "sdkwork-claw-router-console-wallet",
+    "sdkwork-claw-router-console-recharge",
+    "sdkwork-claw-router-console-checkout",
+    "sdkwork-claw-router-console-memberships",
+  ]) {
+    assert.match(packageJson, new RegExp(`"${packageName}": "workspace:\\*"`));
+    assert.match(appSource, new RegExp(`import\\('${packageName}'\\)`));
+  }
+
+  for (const route of ["/console/wallet", "/console/recharge", "/console/checkout", "/console/memberships"]) {
+    assert.match(appSource, new RegExp(escapeRegExp(route)));
+    assert.match(routeClassification, new RegExp(`route: ${escapeRegExp(route)}`));
+  }
+
+  for (const retiredToken of [
+    "sdkwork-claw-router-console-commerce",
+    "/console/billing",
+    "/console/commerce",
+    "/app/v3/api/billing",
+  ]) {
+    assert.doesNotMatch(appSource, new RegExp(escapeRegExp(retiredToken)));
+    assert.doesNotMatch(packageJson, new RegExp(escapeRegExp(retiredToken)));
+    assert.doesNotMatch(routeClassification, new RegExp(escapeRegExp(retiredToken)));
+  }
+});
+
+test("wallet redeem code uses the generated app SDK coupon redemption path", async () => {
   await withBillingSdkResponse(
-    { code: "2000", msg: "Redeemed", data: { amount: "12.5" } },
+    { code: "2000", msg: "Redeemed", data: { amount: "12.5", message: "Redeemed" } },
     async (captured) => {
-      const result = await BillingService.redeemCode(" GIFT-2026 ");
+      const result = await WalletService.redeemCode(" GIFT-2026 ");
 
       assert.deepEqual(result, {
-        success: true,
-        message: "Redeemed successfully",
         amount: "12.50",
+        message: "Redeemed",
+        success: true,
       });
       assert.equal(captured.length, 1);
-      assert.equal(captured[0].url, "/app/v3/api/billing/coupons/redeem");
-      assert.equal(captured[0].method, "POST");
-      assert.match(captured[0].body, /GIFT-2026/);
+      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/coupons/redemptions");
+      assert.equal(captured[0]?.method, "POST");
+      assert.match(captured[0]?.body ?? "", /coupon-redemption/);
+      assert.match(captured[0]?.body ?? "", /console-wallet/);
+      assert.match(captured[0]?.body ?? "", /GIFT-2026/);
     },
   );
 });
 
-test("billing referral contract gap is displayed as unavailable instead of copyable placeholder data", () => {
-  const source = readFileSync(
-    new URL("./packages/sdkwork-claw-router-console-billing/src/BillingView.tsx", import.meta.url),
-    "utf8",
-  );
-
-  assert.match(source, /referralContractUnavailable/);
-  assert.doesNotMatch(source, /value=\{referralContractUnavailable\}/);
-  assert.doesNotMatch(source, /text=\{referralContractUnavailable\}/);
-  assert.doesNotMatch(source, /label="Copy promotion link"|label="Copy invitation code"/);
-  assert.doesNotMatch(source, /<QrCode\b/);
-});
-
-test("billing redeem code reports API business failures without throwing away the message", async () => {
+test("wallet redeem code rejects blank codes before calling generated app SDK", async () => {
   await withBillingSdkResponse(
-    { code: "4001", msg: "Invalid redeem code", data: null },
-    async () => {
-      const result = await BillingService.redeemCode("BAD-CODE");
-
-      assert.deepEqual(result, {
-        success: false,
-        message: "Invalid redeem code",
-      });
-    },
-  );
-});
-
-test("billing redeem code rejects blank codes before calling generated app SDK", async () => {
-  await withBillingSdkResponse(
-    { code: "2000", msg: "unexpected", data: { amount: "99.99" } },
+    { code: "2000", data: { amount: "99.99" } },
     async (captured) => {
-      const result = await BillingService.redeemCode("   ");
+      const result = await WalletService.redeemCode("   ");
 
       assert.equal(result.success, false);
       assert.match(result.message, /code is required/);
@@ -115,581 +126,233 @@ test("billing redeem code rejects blank codes before calling generated app SDK",
   );
 });
 
-test("billing redeem code does not invent an amount when app SDK omits optional redeem amount", async () => {
+test("wallet redeem code does not invent an amount when app SDK omits optional amount", async () => {
   await withBillingSdkResponse(
-    { code: "2000", msg: "Redeemed", data: { message: "Redeemed successfully" } },
+    { code: "2000", data: { message: "Redeemed successfully" } },
     async () => {
-      const result = await BillingService.redeemCode("GIFT-2026");
+      const result = await WalletService.redeemCode("GIFT-2026");
 
       assert.deepEqual(result, {
-        success: true,
         message: "Redeemed successfully",
+        success: true,
       });
     },
   );
 });
 
-test("billing redeem code fails closed when app SDK returns invalid optional redeem amounts", async () => {
+test("wallet redeem code fails closed when app SDK returns invalid optional amount", async () => {
   await withBillingSdkResponse(
-    { code: "2000", msg: "Redeemed", data: { amount: "free" } },
+    { code: "2000", data: { amount: "free" } },
     async () => {
-      const result = await BillingService.redeemCode("GIFT-2026");
+      const result = await WalletService.redeemCode("GIFT-2026");
 
       assert.deepEqual(result, {
-        success: false,
         message: "Redeem amount must be a money string",
+        success: false,
       });
     },
   );
 });
 
-test("billing redeem code fails closed for non-API responses instead of returning fake success", async () => {
-  await withBillingSdkResponse(
-    { html: "<!doctype html>", data: { amount: "99.99" } },
-    async () => {
-      const result = await BillingService.redeemCode("SPA-FALLBACK");
-
-      assert.equal(result.success, false);
-      assert.match(result.message, /Failed to redeem code|Unknown error/);
-      assert.equal("amount" in result, false);
-    },
-  );
-});
-
-test("billing redeem history fails closed when app SDK omits stable history ids", async () => {
+test("wallet recharge history uses the generated app SDK wallet ledger path", async () => {
   await withBillingSdkResponse(
     {
       code: "2000",
       data: {
         items: [
           {
-            code: "GIFT-2026",
-            amount: "12.50",
-            date: "2026-05-05",
-            status: "success",
+            id: "ledger-1",
+            orderNo: "recharge-order-1",
+            method: "wechat",
+            amount: "99.9",
+            date: "2026-05-21T00:00:00Z",
+            status: "posted",
           },
         ],
       },
     },
-    async () => {
-      await assert.rejects(
-        () => BillingService.fetchRedeemHistory(),
-        /Redeem history id is required/,
-      );
+    async (captured) => {
+      const history = await WalletService.fetchRechargeHistory();
+
+      assert.deepEqual(history, [
+        {
+          amount: "99.90",
+          date: "2026-05-21T00:00:00Z",
+          id: "ledger-1",
+          method: "wechat",
+          orderNo: "recharge-order-1",
+          status: "success",
+        },
+      ]);
+      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/wallet/ledger_entries");
+      assert.equal(captured[0]?.method, "GET");
+      assert.match(captured[0]?.url ?? "", /page=1/);
+      assert.match(captured[0]?.url ?? "", /page_size=100/);
+      assert.match(captured[0]?.url ?? "", /status=posted/);
     },
   );
 });
 
-test("billing redeem history fails closed when app SDK returns malformed history rows", async () => {
+test("wallet recharge history fails closed when ledger rows omit stable ids", async () => {
   await withBillingSdkResponse(
     {
       code: "2000",
       data: {
         items: [
           {
-            id: 1,
-            code: "GIFT-2026",
-            amount: "12.50",
-            date: "2026-05-05",
-            status: "success",
-          },
-          "malformed-row",
-        ],
-      },
-    },
-    async () => {
-      await assert.rejects(
-        () => BillingService.fetchRedeemHistory(),
-        /Redeem history record is required/,
-      );
-    },
-  );
-});
-
-test("billing redeem history fails closed when app SDK omits redeem codes", async () => {
-  await withBillingSdkResponse(
-    {
-      code: "2000",
-      data: {
-        items: [
-          {
-            id: 1,
-            amount: "12.50",
-            date: "2026-05-05",
-            status: "success",
-          },
-        ],
-      },
-    },
-    async () => {
-      await assert.rejects(
-        () => BillingService.fetchRedeemHistory(),
-        /Redeem history code is required/,
-      );
-    },
-  );
-});
-
-test("billing recharge history fails closed when app SDK omits stable history ids", async () => {
-  await withBillingSdkResponse(
-    {
-      code: "2000",
-      data: {
-        items: [
-          {
-            orderNo: "order-1",
+            orderNo: "recharge-order-1",
             method: "wechat",
             amount: "99.90",
-            date: "2026-05-05",
-            status: "success",
+            date: "2026-05-21T00:00:00Z",
+            status: "posted",
           },
         ],
       },
     },
     async () => {
       await assert.rejects(
-        () => BillingService.fetchRechargeHistory(),
+        () => WalletService.fetchRechargeHistory(),
         /Recharge history id is required/,
       );
     },
   );
 });
 
-test("billing recharge history fails closed when app SDK omits order numbers", async () => {
+test("recharge package list and order creation use standard recharge paths", async () => {
   await withBillingSdkResponse(
     {
       code: "2000",
       data: {
         items: [
           {
-            id: 1,
-            method: "wechat",
-            amount: "99.90",
-            date: "2026-05-05",
-            status: "success",
+            id: "pkg-100",
+            priceAmount: "100",
+            points: 1000,
+            bonus: 100,
           },
         ],
       },
-    },
-    async () => {
-      await assert.rejects(
-        () => BillingService.fetchRechargeHistory(),
-        /Recharge history order number is required/,
-      );
-    },
-  );
-});
-
-test("billing redeem history fails closed when app SDK omits money amounts", async () => {
-  await withBillingSdkResponse(
-    {
-      code: "2000",
-      data: {
-        items: [
-          {
-            id: 1,
-            code: "GIFT-2026",
-            date: "2026-05-05",
-            status: "success",
-          },
-        ],
-      },
-    },
-    async () => {
-      await assert.rejects(
-        () => BillingService.fetchRedeemHistory(),
-        /Redeem history amount is required/,
-      );
-    },
-  );
-});
-
-test("billing redeem history fails closed when app SDK returns invalid money amounts", async () => {
-  await withBillingSdkResponse(
-    {
-      code: "2000",
-      data: {
-        items: [
-          {
-            id: 1,
-            code: "GIFT-2026",
-            amount: "free",
-            date: "2026-05-05",
-            status: "success",
-          },
-        ],
-      },
-    },
-    async () => {
-      await assert.rejects(
-        () => BillingService.fetchRedeemHistory(),
-        /Redeem history amount must be a money string/,
-      );
-    },
-  );
-});
-
-test("billing redeem history fails closed when app SDK omits dates", async () => {
-  await withBillingSdkResponse(
-    {
-      code: "2000",
-      data: {
-        items: [
-          {
-            id: 1,
-            code: "GIFT-2026",
-            amount: "12.50",
-            status: "success",
-          },
-        ],
-      },
-    },
-    async () => {
-      await assert.rejects(
-        () => BillingService.fetchRedeemHistory(),
-        /Redeem history date is required/,
-      );
-    },
-  );
-});
-
-test("billing redeem history fails closed when app SDK returns unsupported statuses", async () => {
-  await withBillingSdkResponse(
-    {
-      code: "2000",
-      data: {
-        items: [
-          {
-            id: 1,
-            code: "GIFT-2026",
-            amount: "12.50",
-            date: "2026-05-05",
-            status: "cancelled",
-          },
-        ],
-      },
-    },
-    async () => {
-      await assert.rejects(
-        () => BillingService.fetchRedeemHistory(),
-        /Unsupported billing status: cancelled/,
-      );
-    },
-  );
-});
-
-test("billing recharge history fails closed when app SDK omits payment methods", async () => {
-  await withBillingSdkResponse(
-    {
-      code: "2000",
-      data: {
-        items: [
-          {
-            id: 1,
-            orderNo: "order-1",
-            amount: "99.90",
-            date: "2026-05-05",
-            status: "success",
-          },
-        ],
-      },
-    },
-    async () => {
-      await assert.rejects(
-        () => BillingService.fetchRechargeHistory(),
-        /Recharge history payment method is required/,
-      );
-    },
-  );
-});
-
-test("billing recharge history fails closed when app SDK returns invalid money amounts", async () => {
-  await withBillingSdkResponse(
-    {
-      code: "2000",
-      data: {
-        items: [
-          {
-            id: 1,
-            orderNo: "order-1",
-            method: "wechat",
-            amount: "ten",
-            date: "2026-05-05",
-            status: "success",
-          },
-        ],
-      },
-    },
-    async () => {
-      await assert.rejects(
-        () => BillingService.fetchRechargeHistory(),
-        /Recharge history amount must be a money string/,
-      );
-    },
-  );
-});
-
-test("checkout status uses the generated app SDK path and returns confirmed status data", async () => {
-  await withBillingSdkResponse(
-    {
-      code: "2000",
-      data: checkoutStatusResponse(),
     },
     async (captured) => {
-      const result = await CheckoutService.fetchCheckoutStatus("ORDER-20260505");
+      const packages = await RechargeService.fetchPackages();
 
-      assert.deepEqual(result, checkoutStatusResponse());
-      assert.equal(captured.length, 1);
-      assert.equal(captured[0].url, "/app/v3/api/billing/payments/checkout/ORDER-20260505");
-      assert.equal(captured[0].method, "GET");
+      assert.deepEqual(packages, [{ bonus: 100, id: "pkg-100", points: 1000, rmb: "100.00" }]);
+      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/recharges/packages");
+      assert.equal(captured[0]?.method, "GET");
+    },
+  );
+
+  await withBillingSdkResponse(
+    { code: "2000", data: { orderNo: "recharge-order-1", success: true } },
+    async (captured) => {
+      const result = await RechargeService.submitRecharge("99.90", "wechat", "pkg-100");
+
+      assert.deepEqual(result, { orderNo: "recharge-order-1", success: true });
+      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/recharges/orders");
+      assert.equal(captured[0]?.method, "POST");
+      assert.match(captured[0]?.body ?? "", /console-recharge/);
+      assert.match(captured[0]?.body ?? "", /wechat/);
+      assert.match(captured[0]?.body ?? "", /pkg-100/);
     },
   );
 });
 
-test("checkout status rejects unsafe order numbers before calling generated app SDK", async () => {
+test("console recharge page matches the product recharge reference layout", () => {
+  const rechargeViewSource = readPortalFile(
+    "./packages/sdkwork-claw-router-console-recharge/src/RechargeView.tsx",
+  );
+
+  assert.match(rechargeViewSource, /data-console-recharge-reference-panel/);
+  assert.match(rechargeViewSource, /console\.recharge\.tabs\.redeem/);
+  assert.match(rechargeViewSource, /console\.recharge\.tabs\.online/);
+  assert.match(rechargeViewSource, /选择充值金额 \(USD\)/);
+  assert.match(rechargeViewSource, /自定义金额/);
+  assert.match(rechargeViewSource, /获得积分:/);
+  assert.match(rechargeViewSource, /实际支付金额:/);
+  assert.match(rechargeViewSource, /去支付/);
+
+  for (const amount of ["10", "50", "100", "200", "500", "1000", "2000", "5000"]) {
+    assert.match(rechargeViewSource, new RegExp(`amount: '${amount}\\.00'`));
+  }
+
+  for (const retiredLayoutToken of [
+    "AccountService",
+    "PaymentMethodRadio",
+    "当前可用虚拟余额",
+    "支付方式",
+    "充值确认",
+    "ShieldCheck",
+  ]) {
+    assert.doesNotMatch(rechargeViewSource, new RegExp(escapeRegExp(retiredLayoutToken)));
+  }
+});
+
+test("recharge order creation validates amount and method before calling app SDK", async () => {
   await withBillingSdkResponse(
-    { code: "2000", data: checkoutStatusResponse() },
+    { code: "2000", data: { orderNo: "unexpected", success: true } },
     async (captured) => {
       await assert.rejects(
-        () => CheckoutService.fetchCheckoutStatus("bad/order"),
-        /orderNo must be a safe path segment/,
+        () => RechargeService.submitRecharge("0", "wechat", "pkg-100"),
+        /amount must be greater than zero/,
+      );
+      await assert.rejects(
+        () => RechargeService.submitRecharge("99.90", "   ", "pkg-100"),
+        /method is required/,
       );
       assert.equal(captured.length, 0);
     },
   );
 });
 
-test("checkout status fails closed when app SDK omits order numbers", async () => {
+test("checkout status uses the generated app SDK recharge order path", async () => {
   await withBillingSdkResponse(
-    { code: "2000", data: checkoutStatusResponse({ orderNo: undefined }) },
-    async () => {
-      await assert.rejects(
-        () => CheckoutService.fetchCheckoutStatus("ORDER-20260505"),
-        /Checkout order number is required/,
-      );
+    { code: "2000", data: checkoutStatusResponse() },
+    async (captured) => {
+      const result = await CheckoutService.fetchCheckoutStatus("recharge-order-1");
+
+      assert.deepEqual(result, checkoutStatusResponse());
+      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/recharges/orders/recharge-order-1");
+      assert.equal(captured[0]?.method, "GET");
     },
   );
 });
 
-test("checkout status fails closed when app SDK omits amounts", async () => {
+test("checkout status fails closed for malformed recharge order records", async () => {
   await withBillingSdkResponse(
-    { code: "2000", data: checkoutStatusResponse({ amount: undefined }) },
+    { code: "2000", data: { ...checkoutStatusResponse(), amount: "free" } },
     async () => {
       await assert.rejects(
-        () => CheckoutService.fetchCheckoutStatus("ORDER-20260505"),
-        /Checkout amount is required/,
-      );
-    },
-  );
-});
-
-test("checkout status fails closed when app SDK returns invalid amounts", async () => {
-  await withBillingSdkResponse(
-    { code: "2000", data: checkoutStatusResponse({ amount: "free" }) },
-    async () => {
-      await assert.rejects(
-        () => CheckoutService.fetchCheckoutStatus("ORDER-20260505"),
+        () => CheckoutService.fetchCheckoutStatus("recharge-order-1"),
         /Checkout amount must be a money string/,
       );
     },
   );
 });
 
-test("checkout status fails closed when app SDK returns malformed optional string fields", async () => {
-  await withBillingSdkResponse(
-    { code: "2000", data: checkoutStatusResponse({ outTradeNo: { value: "OUT-1" } }) },
-    async () => {
-      await assert.rejects(
-        () => CheckoutService.fetchCheckoutStatus("ORDER-20260505"),
-        /Checkout outer trade number is required/,
-      );
-    },
-  );
-});
-
-test("checkout status fails closed when app SDK omits credited points", async () => {
-  await withBillingSdkResponse(
-    { code: "2000", data: checkoutStatusResponse({ points: undefined }) },
-    async () => {
-      await assert.rejects(
-        () => CheckoutService.fetchCheckoutStatus("ORDER-20260505"),
-        /Checkout points are required/,
-      );
-    },
-  );
-});
-
-test("checkout status fails closed when app SDK returns unsupported payment statuses", async () => {
-  await withBillingSdkResponse(
-    { code: "2000", data: checkoutStatusResponse({ paymentStatus: "unknown" }) },
-    async () => {
-      await assert.rejects(
-        () => CheckoutService.fetchCheckoutStatus("ORDER-20260505"),
-        /Unsupported checkout payment status: unknown/,
-      );
-    },
-  );
-});
-
-test("commerce foundation service calls generated app SDK account points paths", async () => {
-  await withBillingSdkResponse(
-    { code: "2000", data: { availablePoints: 125, frozenPoints: 0 } },
-    async (captured) => {
-      const result = await CommerceFoundationService.retrieveAccountPoints();
-
-      assert.deepEqual(result, { availablePoints: 125, frozenPoints: 0 });
-      assert.equal(captured.length, 1);
-      assert.equal(captured[0].url, "/app/v3/api/billing/account/points");
-      assert.equal(captured[0].method, "GET");
-    },
-  );
-});
-
-test("commerce foundation service normalizes generated app SDK exchange rate and rule responses", async () => {
-  await withBillingSdkResponse(
-    {
-      code: "2000",
-      data: {
-        sourceAssetType: "POINTS",
-        targetAssetType: "CASH",
-        rate: "120.000000",
-      },
-    },
-    async (captured) => {
-      const rate = await CommerceFoundationService.retrieveAccountPointsExchangeRate();
-
-      assert.equal(captured[0].url, "/app/v3/api/billing/account/points/exchange_rate");
-      assert.equal(captured[0].method, "GET");
-      assert.deepEqual(rate, {
-        sourceAssetType: "POINTS",
-        targetAssetType: "CASH",
-        rate: "120",
-      });
-    },
-  );
-
-  await withBillingSdkResponse(
-    {
-      code: "2000",
-      data: [
-        {
-          id: "exchange-1",
-          sourceAssetType: "POINTS",
-          targetAssetType: "CASH",
-          rate: "120.000000",
-          status: "active",
-        },
-      ],
-    },
-    async (captured) => {
-      const rules = await CommerceFoundationService.listAccountPointsExchangeRules({
-        sourceAssetType: "POINTS",
-        targetAssetType: "CASH",
-      });
-
-      assert.equal(
-        captured[0].url,
-        "/app/v3/api/billing/account/points/exchanges/rules?source_asset_type=POINTS&target_asset_type=CASH",
-      );
-      assert.equal(captured[0].method, "GET");
-      assert.deepEqual(rules, [
-        {
-          id: "exchange-1",
-          sourceAssetType: "POINTS",
-          targetAssetType: "CASH",
-          rate: "120",
-          status: "active",
-        },
-      ]);
-    },
-  );
-});
-
-test("commerce foundation exchange rules fail closed on malformed generated SDK data", async () => {
-  await withBillingSdkResponse(
-    {
-      code: "2000",
-      data: {
-        sourceAssetType: "POINTS",
-        targetAssetType: "CASH",
-        rate: "free",
-      },
-    },
-    async () => {
-      await assert.rejects(
-        () => CommerceFoundationService.retrieveAccountPointsExchangeRate(),
-        /Exchange rate must be a positive decimal string/,
-      );
-    },
-  );
-
-  await withBillingSdkResponse(
-    {
-      code: "2000",
-      data: ["malformed-rule"],
-    },
-    async () => {
-      await assert.rejects(
-        () => CommerceFoundationService.listAccountPointsExchangeRules(),
-        /Exchange rule record is required/,
-      );
-    },
-  );
-
-  await withBillingSdkResponse(
-    {
-      code: "2000",
-      data: {
-        sourceAssetType: "CASH",
-        targetAssetType: "POINTS",
-        rate: "120",
-      },
-    },
-    async () => {
-      await assert.rejects(
-        () => CommerceFoundationService.retrieveAccountPointsExchangeRate(),
-        /exchange sourceAssetType must be POINTS/,
-      );
-    },
-  );
-});
-
-test("commerce foundation service uses generated SDK types instead of loose record wrappers", async () => {
-  const source = await import("node:fs/promises").then((fs) =>
-    fs.readFile(
-      new URL("./packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts", import.meta.url),
-      "utf8",
-    ),
-  );
-
-  assert.match(source, /CommerceWalletCommandRequest/);
-  assert.doesNotMatch(source, /type\s+Params\s*=\s*Record<string,\s*unknown>/);
-  assert.doesNotMatch(source, /type\s+Body\s*=\s*Record<string,\s*unknown>/);
-});
-
-function checkoutStatusResponse(overrides: Partial<Record<string, unknown>> = {}): Record<string, unknown> {
-  const response: Record<string, unknown> = {
-    orderNo: "ORDER-20260505",
-    outTradeNo: "",
+function checkoutStatusResponse(): Record<string, unknown> {
+  return {
     amount: "99.90",
-    points: 999,
-    paymentMethod: "wechat",
+    createdAt: "2026-05-21T00:00:00Z",
+    expiresAt: "2026-05-21T00:15:00Z",
+    nextAction: "scan_qr",
+    orderNo: "recharge-order-1",
     orderStatus: "pending",
+    outTradeNo: "provider-order-1",
+    paidAt: "",
+    paymentMethod: "wechat",
     paymentStatus: "pending",
+    points: 999,
+    qrCodePayload: "weixin://wxpay/bizpayurl?pr=recharge-order-1",
     rechargeStatus: "pending",
     status: "pending",
-    createdAt: "2026-05-05T10:00:00Z",
-    expiresAt: "2026-05-05T10:15:00Z",
-    paidAt: "",
-    nextAction: "scan_qr",
-    qrCodePayload: "weixin://wxpay/bizpayurl?pr=ORDER-20260505",
   };
-  for (const [key, value] of Object.entries(overrides)) {
-    if (value === undefined) {
-      delete response[key];
-    } else {
-      response[key] = value;
-    }
-  }
-  return response;
+}
+
+function requestPath(url: string | undefined): string {
+  assert.ok(url, "captured request URL is required");
+  return url.split("?", 1)[0] ?? url;
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }

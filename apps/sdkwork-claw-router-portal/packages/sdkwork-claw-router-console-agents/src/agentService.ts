@@ -1,6 +1,6 @@
 import {
   createRequestToken,
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
   readApiData,
@@ -82,7 +82,7 @@ export class AgentService {
   static async listAgents(query: AgentListQuery = {}): Promise<AgentDefinition[]> {
     try {
       const result = await appAgentsSdk().list(normalizeListQuery(query));
-      ensurePlusApiSuccess(result, 'console.agents.errors.loadFailed');
+      ensureSdkworkApiSuccess(result, 'console.agents.errors.loadFailed');
       return readRequiredApiItems(result, 'console.agents.errors.loadFailed').map(normalizeAgentDefinition);
     } catch (error) {
       throw new Error(readSdkErrorMessage(error, 'console.agents.errors.loadFailed'));
@@ -92,7 +92,7 @@ export class AgentService {
   static async retrieveAgent(agentId: string): Promise<AgentDefinition> {
     try {
       const result = await appAgentsSdk().retrieve(requiredText(agentId, 'agentId'));
-      ensurePlusApiSuccess(result, 'console.agents.errors.detailLoadFailed');
+      ensureSdkworkApiSuccess(result, 'console.agents.errors.detailLoadFailed');
       return normalizeAgentDefinition(readRequiredApiItem(result, 'console.agents.errors.detailLoadFailed'));
     } catch (error) {
       throw new Error(readSdkErrorMessage(error, 'console.agents.errors.detailLoadFailed'));
@@ -108,7 +108,7 @@ export class AgentService {
         body,
         { idempotencyKey, xRequestId: requestId },
       );
-      ensurePlusApiSuccess(result, 'console.agents.errors.createFailed');
+      ensureSdkworkApiSuccess(result, 'console.agents.errors.createFailed');
       return normalizeAgentDefinition(readRequiredApiItem(result, 'console.agents.errors.createFailed'));
     } catch (error) {
       throw new Error(readSdkErrorMessage(error, 'console.agents.errors.createFailed'));

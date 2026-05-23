@@ -32,7 +32,6 @@ pub struct PaymentCallbackCommand {
     pub event_uuid: String,
     pub account_uuid: String,
     pub account_history_uuid: String,
-    pub point_change_uuid: String,
     pub event_id: String,
     pub nonce: String,
     pub signature: Option<String>,

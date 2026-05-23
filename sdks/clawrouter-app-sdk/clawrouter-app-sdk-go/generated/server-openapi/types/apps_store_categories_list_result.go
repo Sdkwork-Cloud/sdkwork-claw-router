@@ -4,6 +4,5 @@ package types
 type AppsStoreCategoriesListResult struct {
 	Code string `json:"code"`
 	Data AppCategoriesResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

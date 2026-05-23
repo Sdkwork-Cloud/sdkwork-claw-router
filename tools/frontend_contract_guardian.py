@@ -9,6 +9,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from tools.frontend_contract_loader import default_frontend_contract_path, load_frontend_field_contract
+
 try:
     import yaml
 except ImportError as exc:  # pragma: no cover - exercised only on missing tooling
@@ -27,6 +29,15 @@ class FrontendContractResult:
 class FrontendContractGuardian:
     """Validate that the actual portal routes have explicit schema coverage contracts."""
 
+    APPBASE_REQUIRED_TABLES = frozenset(
+        {
+            "commerce_vip_entitlement",
+            "commerce_vip_entitlement_usage",
+            "commerce_vip_level",
+            "commerce_vip_package",
+            "commerce_vip_package_group",
+        }
+    )
     ROUTE_PATTERN = re.compile(r"<Route\b([^>]*)>")
     PATH_PATTERN = re.compile(r'\bpath\s*=\s*"([^"]+)"')
     IMPORT_PATTERN = re.compile(r'^\s*import\s+(?:[^"\']+\s+from\s+)?["\']([^"\']+)["\']', re.MULTILINE)
@@ -80,16 +91,16 @@ class FrontendContractGuardian:
         "portal build script must build only Vite portal artifacts and must not build a Node server"
     )
     BUSINESS_API_PREFIX_BOUNDARY_MESSAGE = (
-        "portal business API prefixes must be isolated to sdkwork-claw-router-commons/src/sdk-clients.ts"
+        "portal business API prefixes must be isolated to sdkwork-claw-router-commons SDK boundary files"
     )
     BUSINESS_RAW_HTTP_MESSAGE = (
         "portal remote business calls must go through service -> generated SDK clients, not raw fetch/axios/XMLHttpRequest"
     )
     GENERATED_SDK_VALUE_IMPORT_BOUNDARY_MESSAGE = (
-        "portal packages must value-import generated SDK clients only from sdkwork-claw-router-commons/src/sdk-clients.ts"
+        "portal packages must value-import generated SDK clients only from sdkwork-claw-router-commons SDK boundary files"
     )
     GENERATED_SDK_CLIENT_CONSTRUCTION_BOUNDARY_MESSAGE = (
-        "portal packages must construct generated SDK clients only in sdkwork-claw-router-commons/src/sdk-clients.ts"
+        "portal packages must construct generated SDK clients only in sdkwork-claw-router-commons SDK boundary files"
     )
     GENERATED_SDK_CLIENT_BOUNDARY_MESSAGE = (
         "sdkwork-claw-router-commons/src/sdk-clients.ts must construct generated app, backend, and AI SDK clients"
@@ -140,9 +151,18 @@ class FrontendContractGuardian:
     GENERATED_SDK_RESULT_DATA_PATTERN = re.compile(
         r"\b(?:result|response|data)\s*\.\s*data\b"
     )
+    LOCAL_RUNTIME_ADAPTER_IMPORT_PATTERN = re.compile(
+        r"(?:from\s+|import\s*\(\s*)['\"](\.{1,2}/[^'\"]*RuntimeApiOperations(?:\.[cm]?[tj]sx?)?)['\"]"
+    )
     BUSINESS_API_PREFIXES = ("/app/v3/api", "/backend/v3/api")
     SDK_CLIENT_BOUNDARY_FILE = (
         "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sdk-clients.ts"
+    )
+    SDK_CLIENT_BOUNDARY_FILES = frozenset(
+        {
+            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sdk-clients.ts",
+            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/runtime.ts",
+        }
     )
     COMMONS_UI_ROOT_FILE = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/index.ts"
     COMMONS_RUNTIME_ONLY_SYMBOLS = frozenset(
@@ -190,10 +210,15 @@ class FrontendContractGuardian:
             "readString",
             "readStringArray",
             "resetClawRouterSdkClients",
+            "resetSiteBrandingCache",
             "resolveClawRouterRuntimeBoolean",
             "storeAppSessionFromResult",
             "sumDecimalStrings",
             "syntaxHighlightJson",
+            "applySiteBrandingToDocument",
+            "fetchSiteBranding",
+            "getCachedSiteBranding",
+            "useSiteBranding",
         }
     )
     COMMONS_RUNTIME_MODULE_REEXPORTS = frozenset(
@@ -205,6 +230,7 @@ class FrontendContractGuardian:
             "./request-id",
             "./sdk-clients",
             "./sessionService",
+            "./siteBranding",
             "./utils",
             "./utils/index",
             "./utils/env",
@@ -307,7 +333,7 @@ class FrontendContractGuardian:
         self.contract_path = (
             Path(contract_path).resolve()
             if contract_path is not None
-            else self.root / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
+            else default_frontend_contract_path(self.root)
         )
         self.route_classification_path = (
             Path(route_classification_path).resolve()
@@ -373,7 +399,7 @@ class FrontendContractGuardian:
 
             route_tables = self._manifest_route_tables(routes.get(route))
             for table in self._string_list(item.get("required_tables")):
-                if table not in route_tables:
+                if table not in route_tables and table not in self.APPBASE_REQUIRED_TABLES:
                     messages.append(f"route {route} requires table {table}")
 
             required_columns = item.get("required_columns", {})
@@ -402,6 +428,11 @@ class FrontendContractGuardian:
         messages.extend(self._check_commons_runtime_import_boundary())
         messages.extend(self._check_business_sdk_call_boundary())
         messages.extend(self._check_frontend_model_source_boundaries(contract))
+        frontend_operations = contract.get("frontend_operations", [])
+        if not isinstance(frontend_operations, list):
+            frontend_operations = []
+        operation_items = [operation for operation in frontend_operations if isinstance(operation, dict)]
+        messages.extend(self._check_app_shell_frontend_operations(operation_items))
         messages.extend(self._check_route_classification_boundary(actual_routes, routes, contract))
 
         return FrontendContractResult(ok=not messages, messages=messages)
@@ -459,9 +490,7 @@ class FrontendContractGuardian:
     def _load_contract(self) -> dict[str, Any]:
         if yaml is None:
             raise RuntimeError("PyYAML is required to load frontend field contracts") from _YAML_IMPORT_ERROR
-        if not self.contract_path.exists():
-            return {"routes": []}
-        contract = yaml.safe_load(self.contract_path.read_text(encoding="utf-8"))
+        contract = load_frontend_field_contract(self.root, self.contract_path)
         if contract is None:
             return {"routes": []}
         if not isinstance(contract, dict):
@@ -822,7 +851,7 @@ class FrontendContractGuardian:
                 continue
             relative = source_path.relative_to(self.root).as_posix()
 
-            if relative != self.SDK_CLIENT_BOUNDARY_FILE:
+            if relative not in self.SDK_CLIENT_BOUNDARY_FILES:
                 for match in self.GENERATED_SDK_VALUE_IMPORT_PATTERN.finditer(source):
                     imports = match.group("imports")
                     if "SdkworkAppClient" in imports or "SdkworkBackendClient" in imports:
@@ -833,7 +862,7 @@ class FrontendContractGuardian:
                 if self.GENERATED_SDK_CLIENT_CONSTRUCTION_PATTERN.search(source):
                     messages.append(f"{self.GENERATED_SDK_CLIENT_CONSTRUCTION_BOUNDARY_MESSAGE}: {relative}")
 
-            if any(prefix in source for prefix in self.BUSINESS_API_PREFIXES) and relative != self.SDK_CLIENT_BOUNDARY_FILE:
+            if any(prefix in source for prefix in self.BUSINESS_API_PREFIXES) and relative not in self.SDK_CLIENT_BOUNDARY_FILES:
                 messages.append(f"{self.BUSINESS_API_PREFIX_BOUNDARY_MESSAGE}: {relative}")
 
             if self._contains_manual_admin_session_token_usage(relative, source):
@@ -1009,8 +1038,120 @@ class FrontendContractGuardian:
             for operation in matching_operations
             if isinstance(operation.get("source"), str)
         }
-        if not any(expected_client in (self._safe_read_text((self.root / source).resolve()) or "") for source in operation_sources):
+        if not any(
+            self._source_uses_standard_sdk_client_boundary(source, expected_client)
+            for source in operation_sources
+        ):
             messages.append(f"sdk-backed route {route} must use {expected_client}")
+        return messages
+
+    def _source_uses_standard_sdk_client_boundary(self, source: str, expected_client: str) -> bool:
+        source_path = (self.root / source).resolve()
+        source_text = self._safe_read_text(source_path) or ""
+        return (
+            expected_client in source_text
+            or self._uses_standard_foundation_sdk_client(source_text, expected_client)
+            or self._uses_local_runtime_adapter_sdk_client(source_path, source_text, expected_client)
+        )
+
+    def _uses_standard_foundation_sdk_client(self, source_text: str, expected_client: str) -> bool:
+        if (
+            "getClawRouterCommerceService" not in source_text
+            and "commerce-runtime" not in source_text
+        ):
+            return False
+
+        commerce_runtime = (
+            self.root
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-commons"
+            / "src"
+            / "commerce-runtime.ts"
+        )
+        runtime_source = self._safe_read_text(commerce_runtime)
+        return runtime_source is not None and expected_client in runtime_source
+
+    def _uses_local_runtime_adapter_sdk_client(
+        self,
+        source_path: Path,
+        source_text: str,
+        expected_client: str,
+    ) -> bool:
+        for match in self.LOCAL_RUNTIME_ADAPTER_IMPORT_PATTERN.finditer(source_text):
+            adapter_path = self._resolve_relative_import(source_path, match.group(1))
+            if adapter_path is None:
+                continue
+            adapter_source = self._safe_read_text(adapter_path)
+            if adapter_source is not None and expected_client in adapter_source:
+                return True
+        return False
+
+    def _resolve_relative_import(self, source_path: Path, import_spec: str) -> Path | None:
+        candidate = (source_path.parent / import_spec).resolve()
+        candidates = [candidate]
+        if not candidate.suffix:
+            candidates.extend(candidate.with_suffix(suffix) for suffix in (".ts", ".tsx", ".mts", ".cts", ".js", ".jsx"))
+        for path in candidates:
+            try:
+                path.relative_to(self.root)
+            except ValueError:
+                continue
+            if path.is_file():
+                return path
+        return None
+
+    def _check_app_shell_frontend_operations(self, frontend_operations: list[dict[str, Any]]) -> list[str]:
+        messages: list[str] = []
+        for operation in frontend_operations:
+            if operation.get("operation_scope") != "app_shell":
+                continue
+
+            operation_name = operation.get("operation")
+            if not isinstance(operation_name, str) or not operation_name.strip():
+                operation_name = "<unnamed>"
+
+            api_surface = operation.get("api_surface")
+            if api_surface not in {"app", "backend"}:
+                messages.append(
+                    f"app-shell frontend operation {operation_name} must declare api_surface app or backend"
+                )
+                continue
+
+            source = operation.get("source")
+            if not isinstance(source, str) or not source.strip():
+                messages.append(f"app-shell frontend operation {operation_name} must declare source")
+                continue
+
+            source_path = Path(source)
+            if source_path.is_absolute() or ".." in source_path.parts:
+                messages.append(
+                    f"app-shell frontend operation {operation_name} source must be a repo-relative path"
+                )
+                continue
+
+            resolved_source = (self.root / source).resolve()
+            try:
+                resolved_source.relative_to(self.root)
+            except ValueError:
+                messages.append(
+                    f"app-shell frontend operation {operation_name} source must stay inside repository"
+                )
+                continue
+
+            source_text = self._safe_read_text(resolved_source)
+            if source_text is None:
+                messages.append(
+                    f"app-shell frontend operation {operation_name} source does not exist: {source}"
+                )
+                continue
+
+            expected_client = "getClawRouterAppSdkClient" if api_surface == "app" else "getClawRouterBackendSdkClient"
+            if not self._source_uses_standard_sdk_client_boundary(source, expected_client):
+                messages.append(
+                    f"app-shell frontend operation {operation_name} must use {expected_client}"
+                )
         return messages
 
     def _check_schema_content_route_classification(
@@ -1030,7 +1171,12 @@ class FrontendContractGuardian:
         for table in missing_tables:
             messages.append(f"schema content route {route} provenance table {table} is not in schema manifest")
 
-        if any(operation.get("route") == route for operation in frontend_operations):
+        route_runtime_operations = [
+            operation
+            for operation in frontend_operations
+            if operation.get("route") == route and operation.get("operation_scope") != "app_shell"
+        ]
+        if route_runtime_operations:
             messages.append(f"schema content route {route} must not declare runtime frontend operations")
 
         messages.extend(self._check_schema_content_static_delivery(entry))

@@ -7,7 +7,5 @@ export interface ChannelsVerifyResult {
   /** Data field on channels verify result. */
   data?: AdminChannelTestResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

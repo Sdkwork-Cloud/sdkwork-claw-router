@@ -11,7 +11,6 @@ const sdkFamily = 'clawrouter-open-sdk';
 const sdkType = 'ai';
 const authorityInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.openapi.json`;
 const sdkgenInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.sdkgen.json`;
-void authorityInputPath;
 const baseUrl = 'https://api.sdkwork.com';
 const apiPrefix = '/v1';
 const description = 'SDKWork Claw Router OpenAI-compatible gateway SDK';

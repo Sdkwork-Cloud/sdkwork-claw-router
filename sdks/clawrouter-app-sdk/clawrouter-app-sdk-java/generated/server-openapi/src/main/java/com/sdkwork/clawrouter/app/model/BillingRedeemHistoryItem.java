@@ -5,13 +5,13 @@ public class BillingRedeemHistoryItem {
     private String amount;
     private String code;
     private String date;
-    private Integer id;
+    private String id;
     private String status;
 
     public String getAmount() {
         return this.amount;
     }
-    
+
     public void setAmount(String amount) {
         this.amount = amount;
     }
@@ -19,7 +19,7 @@ public class BillingRedeemHistoryItem {
     public String getCode() {
         return this.code;
     }
-    
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -27,23 +27,23 @@ public class BillingRedeemHistoryItem {
     public String getDate() {
         return this.date;
     }
-    
+
     public void setDate(String date) {
         this.date = date;
     }
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
     }
-    
-    public void setId(Integer id) {
+
+    public void setId(String id) {
         this.id = id;
     }
 
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }

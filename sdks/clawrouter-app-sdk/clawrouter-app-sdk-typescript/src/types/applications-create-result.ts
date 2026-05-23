@@ -7,7 +7,5 @@ export interface ApplicationsCreateResult {
   /** Data field on applications create result. */
   data?: CourseApplicationCreateResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

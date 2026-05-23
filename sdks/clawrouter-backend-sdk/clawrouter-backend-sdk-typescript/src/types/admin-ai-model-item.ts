@@ -2,6 +2,10 @@
 export interface AdminAiModelItem {
   /** Api format field on admin ai model item. */
   apiFormat: string | null;
+  /** Cache read price field on admin ai model item. */
+  cacheReadPrice: string;
+  /** Cache write price field on admin ai model item. */
+  cacheWritePrice: string;
   /** Calls field on admin ai model item. */
   calls: string;
   /** Capability intro field on admin ai model item. */
@@ -10,6 +14,8 @@ export interface AdminAiModelItem {
   contextTokens: number | null;
   /** Description field on admin ai model item. */
   description: string | null;
+  /** Product display name. Falls back to model when no display name is configured. */
+  displayName: string;
   /** Id field on admin ai model item. */
   id: string;
   /** Input modalities field on admin ai model item. */
@@ -20,7 +26,9 @@ export interface AdminAiModelItem {
   maxOutputTokens: number | null;
   /** Modalities field on admin ai model item. */
   modalities: string[];
-  /** Name field on admin ai model item. */
+  /** Runtime model identifier used for provider calls, routing, and pricing keys. */
+  model: string;
+  /** Compatibility display alias. Equal to displayName. */
   name: string;
   /** Output modalities field on admin ai model item. */
   outputModalities: string[];

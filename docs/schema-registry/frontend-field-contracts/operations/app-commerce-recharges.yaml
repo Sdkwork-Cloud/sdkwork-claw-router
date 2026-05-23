@@ -1,0 +1,282 @@
+fragment: operations/app-commerce-recharges
+frontend_operations:
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  operation: appRechargesPackagesList
+  operation_id: recharges.packages.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/recharges/packages
+  sdk_domain: commerce
+  summary: Recharges Packages List
+  description: Standard appbase commerce API for recharges.packages.list; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_recharge_package
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_order
+  - commerce_order_item
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_account
+  - commerce_account_ledger_entry
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema:
+    name: CommerceStandardCollectionResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items:
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            status:
+              type: string
+              nullable: true
+              maxLength: 64
+            createdAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            updatedAt:
+              type: string
+              nullable: true
+              maxLength: 64
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  operation: appRechargesOrdersCreate
+  operation_id: recharges.orders.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/recharges/orders
+  sdk_domain: commerce
+  summary: Recharges Orders Create
+  description: Standard appbase commerce API for recharges.orders.create; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_recharge_package
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_order
+  - commerce_order_item
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_account
+  - commerce_account_ledger_entry
+  request_id_header: true
+  idempotency_required: true
+  write_tables:
+  - commerce_order
+  - commerce_order_item
+  - commerce_payment_intent
+  - commerce_account_ledger_entry
+  - ops_audit_log
+  request_schema:
+    name: CommerceStandardCommandRequest
+    type: object
+    additionalProperties: false
+    properties:
+      clientRequestNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      note:
+        type: string
+        maxLength: 512
+      metadata:
+        type: object
+        additionalProperties: true
+  response_schema:
+    name: CommerceOperationResponse
+    type: object
+    additionalProperties: false
+    required:
+    - success
+    - requestNo
+    - status
+    properties:
+      success:
+        type: boolean
+      requestNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      status:
+        type: string
+        minLength: 1
+        maxLength: 64
+      paymentId:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 128
+      qrCodePayload:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 2048
+      qrCodeImageUrl:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 2048
+- route: /console/checkout
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  operation: appRechargesOrdersRetrieve
+  operation_id: recharges.orders.retrieve
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/recharges/orders/{orderId}
+  sdk_domain: commerce
+  summary: Recharges Orders Retrieve
+  description: Standard appbase commerce API for recharges.orders.retrieve; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_recharge_package
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_order
+  - commerce_order_item
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_account
+  - commerce_account_ledger_entry
+  query_parameters: []
+  response_schema:
+    name: CommerceStandardResourceResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    properties:
+      item:
+        type: object
+        additionalProperties: false
+        required:
+        - id
+        properties:
+          id:
+            type: string
+            minLength: 1
+            maxLength: 128
+          status:
+            type: string
+            nullable: true
+            maxLength: 64
+          createdAt:
+            type: string
+            nullable: true
+            maxLength: 64
+          updatedAt:
+            type: string
+            nullable: true
+            maxLength: 64
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  operation: fetchRechargePackages
+  operation_id: console.rechargePackages.list
+  operation_scope: app_shell
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/recharges/packages
+  read_sources:
+  - commerce_recharge_package
+  - commerce_product_spu
+  - commerce_product_sku
+  write_tables: []
+  file_targets: []
+  openapi_exposed: false
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  operation: fetchPackages
+  operation_id: console.rechargePackages.fetch
+  operation_scope: app_shell
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/recharges/packages
+  read_sources:
+  - commerce_recharge_package
+  - commerce_product_spu
+  - commerce_product_sku
+  write_tables: []
+  file_targets: []
+  openapi_exposed: false
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  operation: submitRecharge
+  operation_id: console.rechargeOrders.create
+  operation_scope: app_shell
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/recharges/orders
+  read_sources:
+  - commerce_recharge_package
+  - commerce_payment_method
+  write_tables:
+  - commerce_order
+  - commerce_order_item
+  - commerce_payment_intent
+  - ops_audit_log
+  file_targets: []
+  openapi_exposed: false
+- route: /console/checkout
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  operation: fetchCheckoutStatus
+  operation_id: console.checkoutStatus.retrieve
+  operation_scope: app_shell
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/recharges/orders/{orderId}
+  read_sources:
+  - commerce_order
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  write_tables: []
+  file_targets: []
+  openapi_exposed: false

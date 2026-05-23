@@ -38,7 +38,7 @@ SELECT
     model,
     display_name,
     vendor_code,
-    region_code,
+    'global' AS region_code,
     COALESCE((
         SELECT jsonb_agg(DISTINCT capability_code ORDER BY capability_code)::text
         FROM (
@@ -110,7 +110,7 @@ SELECT
     c.provider_code,
     m.channel_id,
     m.provider_model,
-    COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) AS base_url,
+    COALESCE(NULLIF(c.base_url, ''), p.base_url) AS base_url,
     a.secret_ref,
     a.auth_type::text AS auth_type,
     a.auth_config::text AS auth_config_json,
@@ -132,8 +132,8 @@ WHERE m.deleted_at IS NULL
   )
   AND p.status = 1
   AND a.status = 1
-  AND COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) IS NOT NULL
-  AND NULLIF(COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template), '') IS NOT NULL
+  AND COALESCE(NULLIF(c.base_url, ''), p.base_url) IS NOT NULL
+  AND NULLIF(COALESCE(NULLIF(c.base_url, ''), p.base_url), '') IS NOT NULL
   AND NULLIF(a.secret_ref, '') IS NOT NULL
   AND (m.effective_from IS NULL OR m.effective_from <= CURRENT_TIMESTAMP)
   AND (m.effective_to IS NULL OR m.effective_to > CURRENT_TIMESTAMP)
@@ -146,7 +146,7 @@ ORDER BY c.priority ASC, c.weight DESC, m.id ASC
 SELECT
     c.provider_code,
     c.id AS channel_id,
-    COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) AS base_url,
+    COALESCE(NULLIF(c.base_url, ''), p.base_url) AS base_url,
     a.secret_ref,
     a.auth_type::text AS auth_type,
     a.auth_config::text AS auth_config_json,
@@ -165,8 +165,8 @@ WHERE c.deleted_at IS NULL
   )
   AND p.status = 1
   AND a.status = 1
-  AND COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) IS NOT NULL
-  AND NULLIF(COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template), '') IS NOT NULL
+  AND COALESCE(NULLIF(c.base_url, ''), p.base_url) IS NOT NULL
+  AND NULLIF(COALESCE(NULLIF(c.base_url, ''), p.base_url), '') IS NOT NULL
   AND NULLIF(a.secret_ref, '') IS NOT NULL
 ORDER BY c.priority ASC, c.weight DESC, c.id ASC
 "#

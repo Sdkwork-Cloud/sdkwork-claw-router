@@ -1,0 +1,499 @@
+fragment: operations/app-commerce-catalog
+frontend_operations:
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  operation: listCatalogCategories
+  operation_id: catalog.categories.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/catalog/categories
+  sdk_domain: commerce
+  summary: List visible product categories
+  description: Returns active appbase commerce product categories for buyer catalog navigation.
+  read_sources:
+  - commerce_product_category
+  query_parameters:
+  - name: parent_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  response_schema:
+    name: CommerceProductCategoryListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items:
+          name: CommerceProductCategoryItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - categoryNo
+          - name
+          - path
+          - levelNo
+          - status
+          - sortOrder
+          - createdAt
+          - updatedAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            categoryNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            parentId:
+              type: string
+              nullable: true
+              maxLength: 128
+            name:
+              type: string
+              minLength: 1
+              maxLength: 256
+            path:
+              type: string
+              minLength: 1
+              maxLength: 1024
+            levelNo:
+              type: integer
+              format: int64
+              minimum: 0
+            status:
+              type: string
+              enum:
+              - active
+              - inactive
+              - archived
+            sortOrder:
+              type: integer
+              format: int64
+              minimum: 0
+            createdAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+            updatedAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  operation: listCatalogProducts
+  operation_id: catalog.products.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/catalog/products
+  sdk_domain: commerce
+  summary: List visible catalog products
+  description: Returns buyer-visible SPUs with stable product type, category, media, and price summary fields.
+  read_sources:
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_product_category
+  - commerce_product_media
+  - commerce_price_list
+  - commerce_price_list_item
+  query_parameters:
+  - name: q
+    schema:
+      type: string
+      maxLength: 256
+  - name: category_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: product_type
+    schema:
+      type: string
+      maxLength: 64
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: sort
+    schema:
+      type: string
+      maxLength: 128
+  response_schema:
+    name: CommerceProductSpuListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items: &id001
+          name: CommerceProductSpuItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - spuNo
+          - productType
+          - title
+          - status
+          - createdAt
+          - updatedAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            spuNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            productType:
+              type: string
+              enum:
+              - physical_good
+              - virtual_good
+              - membership
+              - points_recharge
+              - wallet_recharge
+              - subscription
+              - service
+            title:
+              type: string
+              minLength: 1
+              maxLength: 512
+            subtitle:
+              type: string
+              nullable: true
+              maxLength: 512
+            description:
+              type: string
+              nullable: true
+              maxLength: 20000
+            categoryId:
+              type: string
+              nullable: true
+              maxLength: 128
+            brand:
+              type: string
+              nullable: true
+              maxLength: 128
+            status:
+              type: string
+              enum:
+              - draft
+              - active
+              - inactive
+              - archived
+            publishedAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            defaultSkuId:
+              type: string
+              nullable: true
+              maxLength: 128
+            minPriceAmount:
+              type: string
+              nullable: true
+              pattern: ^\d+(?:\.\d{1,6})?$
+            currencyCode:
+              type: string
+              nullable: true
+              minLength: 3
+              maxLength: 16
+            media:
+              type: array
+              items:
+                name: CommerceProductMediaItem
+                type: object
+                additionalProperties: false
+                required:
+                - id
+                - ownerType
+                - ownerId
+                - mediaType
+                - url
+                - sortOrder
+                - status
+                properties:
+                  id:
+                    type: string
+                    minLength: 1
+                    maxLength: 128
+                  ownerType:
+                    type: string
+                    enum:
+                    - spu
+                    - sku
+                  ownerId:
+                    type: string
+                    minLength: 1
+                    maxLength: 128
+                  mediaType:
+                    type: string
+                    enum:
+                    - image
+                    - video
+                    - document
+                  url:
+                    type: string
+                    minLength: 1
+                    maxLength: 2048
+                  altText:
+                    type: string
+                    nullable: true
+                    maxLength: 512
+                  sortOrder:
+                    type: integer
+                    format: int64
+                    minimum: 0
+                  status:
+                    type: string
+                    enum:
+                    - active
+                    - inactive
+                    - deleted
+            createdAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+            updatedAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  operation: retrieveCatalogProduct
+  operation_id: catalog.products.retrieve
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/catalog/products/{productId}
+  sdk_domain: commerce
+  summary: Retrieve catalog product detail
+  description: Returns one buyer-visible SPU with purchasable SKU variants, attributes, media, and price summary.
+  read_sources:
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_product_category
+  - commerce_product_attribute
+  - commerce_product_attribute_value
+  - commerce_product_sku_attribute
+  - commerce_product_media
+  - commerce_price_list
+  - commerce_price_list_item
+  query_parameters: []
+  response_schema:
+    name: CommerceProductSpuDetailResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    - skus
+    properties:
+      item: *id001
+      skus:
+        type: array
+        items: &id002
+          name: CommerceProductSkuItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - skuNo
+          - productId
+          - title
+          - fulfillmentType
+          - status
+          - createdAt
+          - updatedAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            skuNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            productId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            title:
+              type: string
+              minLength: 1
+              maxLength: 512
+            fulfillmentType:
+              type: string
+              enum:
+              - physical_shipment
+              - digital_delivery
+              - entitlement_grant
+              - points_credit
+              - wallet_credit
+              - subscription_activation
+              - service_activation
+              - none
+            taxCategory:
+              type: string
+              nullable: true
+              maxLength: 128
+            salesUnit:
+              type: string
+              nullable: true
+              maxLength: 64
+            defaultPriceAmount:
+              type: string
+              nullable: true
+              pattern: ^\d+(?:\.\d{1,6})?$
+            defaultCurrencyCode:
+              type: string
+              nullable: true
+              minLength: 3
+              maxLength: 16
+            status:
+              type: string
+              enum:
+              - draft
+              - active
+              - inactive
+              - archived
+            publishedAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            attributes:
+              type: array
+              items:
+                name: CommerceProductSkuAttributeItem
+                type: object
+                additionalProperties: false
+                required:
+                - attributeId
+                - attributeName
+                properties:
+                  attributeId:
+                    type: string
+                    minLength: 1
+                    maxLength: 128
+                  attributeName:
+                    type: string
+                    minLength: 1
+                    maxLength: 256
+                  attributeValueId:
+                    type: string
+                    nullable: true
+                    maxLength: 128
+                  valueCode:
+                    type: string
+                    nullable: true
+                    maxLength: 128
+                  displayValue:
+                    type: string
+                    nullable: true
+                    maxLength: 512
+                  customValue:
+                    type: string
+                    nullable: true
+                    maxLength: 512
+            createdAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+            updatedAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  operation: retrieveCatalogSku
+  operation_id: catalog.skus.retrieve
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/catalog/skus/{skuId}
+  sdk_domain: commerce
+  summary: Retrieve catalog SKU detail
+  description: Returns one purchasable SKU variant with fulfillment type, attribute values, and default price fields.
+  read_sources:
+  - commerce_product_sku
+  - commerce_product_spu
+  - commerce_product_attribute
+  - commerce_product_attribute_value
+  - commerce_product_sku_attribute
+  - commerce_price_list
+  - commerce_price_list_item
+  query_parameters: []
+  response_schema:
+    name: CommerceProductSkuResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    properties:
+      item: *id002

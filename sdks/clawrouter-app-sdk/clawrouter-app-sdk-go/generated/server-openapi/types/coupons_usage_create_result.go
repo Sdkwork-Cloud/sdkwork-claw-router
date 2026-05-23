@@ -4,6 +4,5 @@ package types
 type CouponsUsageCreateResult struct {
 	Code string `json:"code"`
 	Data CommerceOperationResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

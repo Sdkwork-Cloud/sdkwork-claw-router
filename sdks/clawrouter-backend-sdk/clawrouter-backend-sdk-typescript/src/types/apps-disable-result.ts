@@ -7,7 +7,5 @@ export interface AppsDisableResult {
   /** Data field on apps disable result. */
   data?: AdminAppMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

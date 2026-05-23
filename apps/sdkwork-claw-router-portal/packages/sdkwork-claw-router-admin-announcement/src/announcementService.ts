@@ -1,6 +1,6 @@
 import {
   createRequestToken,
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
   readApiRecord,
@@ -46,7 +46,7 @@ export type AnnouncementUpdateInput = {
 export class AnnouncementService {
   static async fetchAnnouncements(): Promise<Announcement[]> {
     const result = await announcementBackendClient().content.announcements.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch announcements');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch announcements');
     return readRequiredApiItems(result, 'Failed to fetch announcements')
       .map(normalizeAnnouncement);
   }
@@ -57,7 +57,7 @@ export class AnnouncementService {
       toUpdateAnnouncementRequest(updates),
       requestParams('admin-announcement-update'),
     );
-    ensurePlusApiSuccess(result, 'Failed to update announcement');
+    ensureSdkworkApiSuccess(result, 'Failed to update announcement');
     return normalizeAnnouncement(readRequiredApiItem(result, 'Updated announcement response is missing data'));
   }
 
@@ -66,7 +66,7 @@ export class AnnouncementService {
       toCreateAnnouncementRequest(ann),
       requestParams('admin-announcement-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to add announcement');
+    ensureSdkworkApiSuccess(result, 'Failed to add announcement');
     return normalizeAnnouncement(readRequiredApiItem(result, 'Created announcement response is missing data'));
   }
 
@@ -145,7 +145,7 @@ function requestParams(scope: string): { xRequestId: string } {
 }
 
 function ensureDeleteResult(result: unknown, message: string): void {
-  ensurePlusApiSuccess(result, message);
+  ensureSdkworkApiSuccess(result, message);
   if (readBoolean(readApiRecord(result), 'deleted') !== true) {
     throw new Error(message);
   }

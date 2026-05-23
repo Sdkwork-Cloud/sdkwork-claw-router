@@ -7,7 +7,7 @@ use sdkwork_claw_test_support::{
 };
 use serde_json::Value;
 use std::sync::atomic::{AtomicU64, Ordering};
-use std::time::{SystemTime, UNIX_EPOCH};
+use std::time::{Duration, SystemTime, UNIX_EPOCH};
 use tower::ServiceExt;
 
 static DB_COUNTER: AtomicU64 = AtomicU64::new(0);
@@ -29,14 +29,17 @@ async fn admin_api_reports_database_installation_status_after_startup_install() 
     .await
     .unwrap();
 
-    let response = router
-        .oneshot(app_session_request(
+    let response = tokio::time::timeout(
+        Duration::from_secs(2),
+        router.oneshot(app_session_request(
             "GET",
             "/backend/v3/api/system/installation/status",
             Body::empty(),
-        ))
-        .await
-        .unwrap();
+        )),
+    )
+    .await
+    .expect("installation status route should not run the full install audit on every request")
+    .unwrap();
 
     assert_eq!(StatusCode::OK, response.status());
     let body = axum::body::to_bytes(response.into_body(), usize::MAX)
@@ -54,6 +57,97 @@ async fn admin_api_reports_database_installation_status_after_startup_install() 
     assert_eq!("production", payload["data"]["environment"]);
     assert_eq!("commercial", payload["data"]["seedProfile"]);
     assert_eq!(false, payload["data"]["changed"]);
+}
+
+#[tokio::test]
+async fn admin_api_serves_cache_management_overview_from_runtime() {
+    let database_url = unique_sqlite_url();
+    let database_config =
+        DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap();
+    let api_key_config =
+        ApiKeySecurityConfig::from_pepper_secret("0123456789abcdef0123456789abcdef").unwrap();
+
+    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+        database_config,
+        Some(api_key_config),
+        Some(trusted_subject_config().unwrap()),
+        Some(app_session_config().unwrap()),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(app_session_request(
+            "GET",
+            "/backend/v3/api/system/cache/overview",
+            Body::empty(),
+        ))
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: Value = serde_json::from_slice(&body).unwrap();
+
+    assert_eq!("2000", payload["code"]);
+    assert_eq!(
+        "desktop_packaged",
+        payload["data"]["summary"]["runtimeTarget"]
+    );
+    assert_eq!(1, payload["data"]["summary"]["totalInstances"]);
+    assert_eq!(1, payload["data"]["summary"]["totalNamespaces"]);
+    assert_eq!(
+        "local_cache",
+        payload["data"]["instances"][0]["providerKind"]
+    );
+    assert_eq!(
+        "auth.qr.challenge",
+        payload["data"]["namespacePolicies"][0]["namespace"]
+    );
+}
+
+#[tokio::test]
+async fn admin_api_serves_admin_analytics_overview_from_database_runtime() {
+    let database_url = unique_sqlite_url();
+    let database_config =
+        DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap();
+    let api_key_config =
+        ApiKeySecurityConfig::from_pepper_secret("0123456789abcdef0123456789abcdef").unwrap();
+
+    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+        database_config,
+        Some(api_key_config),
+        Some(trusted_subject_config().unwrap()),
+        Some(app_session_config().unwrap()),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(app_session_request(
+            "GET",
+            "/backend/v3/api/system/analytics/admin/overview?time_range=daily&limit=10",
+            Body::empty(),
+        ))
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: Value = serde_json::from_slice(&body).unwrap();
+
+    assert_eq!("2000", payload["code"]);
+    assert_eq!("daily", payload["data"]["timeRange"]);
+    assert_eq!(10, payload["data"]["limit"]);
+    assert!(payload["data"]["summary"]["totalRequests"].is_number());
+    assert!(payload["data"]["userRankings"]["points"].is_array());
+    assert!(payload["data"]["modelRankings"]["points"].is_array());
+    assert!(payload["data"]["modalityDistribution"].is_array());
+    assert!(payload["data"]["insights"].is_array());
 }
 
 #[tokio::test]

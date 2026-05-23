@@ -4,6 +4,5 @@ package types
 type UsersSettingsUpdateResult struct {
 	Code string `json:"code"`
 	Data UpdateSettingsResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

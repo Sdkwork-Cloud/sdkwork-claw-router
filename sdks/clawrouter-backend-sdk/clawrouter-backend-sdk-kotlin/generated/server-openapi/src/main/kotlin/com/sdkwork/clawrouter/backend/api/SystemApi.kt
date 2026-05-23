@@ -8,6 +8,18 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 
 class SystemApi(private val client: HttpClient) {
 
+    /** List overview */
+    suspend fun analyticsAdminOverviewRetrieve(timeRange: String? = null, startTime: String? = null, endTime: String? = null, limit: Int? = null): AnalyticsAdminOverviewRetrieveResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("time_range", timeRange, "form", true, false, null),
+            QueryParameterSpec("start_time", startTime, "form", true, false, null),
+            QueryParameterSpec("end_time", endTime, "form", true, false, null),
+            QueryParameterSpec("limit", limit, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/system/analytics/admin/overview"), query))
+        return client.convertValue(raw, object : TypeReference<AnalyticsAdminOverviewRetrieveResult>() {})
+    }
+
     /** Retrieve IAM auth runtime settings */
     suspend fun authSettingsRetrieve(): AuthSettingsRetrieveResult? {
         val raw = client.get(ApiPaths.backendPath("/system/auth/settings"))
@@ -24,6 +36,58 @@ class SystemApi(private val client: HttpClient) {
         )
         val raw = client.patch(ApiPaths.backendPath("/system/auth/settings"), body, null, requestHeaders, "application/json")
         return client.convertValue(raw, object : TypeReference<AuthSettingsUpdateResult>() {})
+    }
+
+    /** Delete one runtime cache instance */
+    suspend fun cacheInstancesDelete(instanceName: String): CacheInstancesDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/system/cache/instances/${serializePathParameter(instanceName, PathParameterSpec("instanceName", "simple", false))}"))
+        return client.convertValue(raw, object : TypeReference<CacheInstancesDeleteResult>() {})
+    }
+
+    /** Refresh one runtime cache instance */
+    suspend fun cacheInstancesRefreshCreate(instanceName: String): CacheInstancesRefreshCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/system/cache/instances/${serializePathParameter(instanceName, PathParameterSpec("instanceName", "simple", false))}/refresh"), null)
+        return client.convertValue(raw, object : TypeReference<CacheInstancesRefreshCreateResult>() {})
+    }
+
+    /** Delete a runtime cache namespace */
+    suspend fun cacheNamespacesDelete(namespace: String): CacheNamespacesDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/system/cache/namespaces/${serializePathParameter(namespace, PathParameterSpec("namespace", "simple", false))}"))
+        return client.convertValue(raw, object : TypeReference<CacheNamespacesDeleteResult>() {})
+    }
+
+    /** List runtime cache keys in a namespace */
+    suspend fun cacheNamespacesKeysList(namespace: String, limit: Int? = null, cursor: String? = null): CacheNamespacesKeysListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("limit", limit, "form", true, false, null),
+            QueryParameterSpec("cursor", cursor, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/system/cache/namespaces/${serializePathParameter(namespace, PathParameterSpec("namespace", "simple", false))}/keys"), query))
+        return client.convertValue(raw, object : TypeReference<CacheNamespacesKeysListResult>() {})
+    }
+
+    /** Delete a runtime cache key */
+    suspend fun cacheNamespacesKeysDelete(namespace: String, key: String): CacheNamespacesKeysDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/system/cache/namespaces/${serializePathParameter(namespace, PathParameterSpec("namespace", "simple", false))}/keys/${serializePathParameter(key, PathParameterSpec("key", "simple", false))}"))
+        return client.convertValue(raw, object : TypeReference<CacheNamespacesKeysDeleteResult>() {})
+    }
+
+    /** Refresh one runtime cache namespace */
+    suspend fun cacheNamespacesRefreshCreate(namespace: String): CacheNamespacesRefreshCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/system/cache/namespaces/${serializePathParameter(namespace, PathParameterSpec("namespace", "simple", false))}/refresh"), null)
+        return client.convertValue(raw, object : TypeReference<CacheNamespacesRefreshCreateResult>() {})
+    }
+
+    /** Retrieve runtime cache overview */
+    suspend fun cacheOverviewRetrieve(): CacheOverviewRetrieveResult? {
+        val raw = client.get(ApiPaths.backendPath("/system/cache/overview"))
+        return client.convertValue(raw, object : TypeReference<CacheOverviewRetrieveResult>() {})
+    }
+
+    /** Refresh all runtime cache instances */
+    suspend fun cacheRefreshCreate(): CacheRefreshCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/system/cache/refresh"), null)
+        return client.convertValue(raw, object : TypeReference<CacheRefreshCreateResult>() {})
     }
 
     /** List dashboard data */
@@ -60,6 +124,12 @@ class SystemApi(private val client: HttpClient) {
     suspend fun installationStatusRetrieve(): InstallationStatusRetrieveResult? {
         val raw = client.get(ApiPaths.backendPath("/system/installation/status"))
         return client.convertValue(raw, object : TypeReference<InstallationStatusRetrieveResult>() {})
+    }
+
+    /** List referral stats */
+    suspend fun marketingReferralStatsList(): MarketingReferralStatsListResult? {
+        val raw = client.get(ApiPaths.backendPath("/system/marketing/referral_stats"))
+        return client.convertValue(raw, object : TypeReference<MarketingReferralStatsListResult>() {})
     }
 
     /** List alerts */
@@ -145,6 +215,24 @@ class SystemApi(private val client: HttpClient) {
         ))
         val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/system/records"), query))
         return client.convertValue(raw, object : TypeReference<RecordsListResult>() {})
+    }
+
+    /** Retrieve site branding and deployment personalization settings */
+    suspend fun siteSettingsRetrieve(): SiteSettingsRetrieveResult? {
+        val raw = client.get(ApiPaths.backendPath("/system/site/settings"))
+        return client.convertValue(raw, object : TypeReference<SiteSettingsRetrieveResult>() {})
+    }
+
+    /** Update site branding and deployment personalization settings */
+    suspend fun siteSettingsUpdate(body: AdminSiteSettingsUpdateRequest, xRequestId: String? = null): SiteSettingsUpdateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.patch(ApiPaths.backendPath("/system/site/settings"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<SiteSettingsUpdateResult>() {})
     }
 
     private data class PathParameterSpec(val name: String, val style: String, val explode: Boolean)

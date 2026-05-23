@@ -7,7 +7,5 @@ export interface AppsDeleteResult {
   /** Data field on apps delete result. */
   data?: AdminAppDeleteResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

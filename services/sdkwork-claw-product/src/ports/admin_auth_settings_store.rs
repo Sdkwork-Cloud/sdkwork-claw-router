@@ -34,6 +34,40 @@ impl Default for AdminAuthVerificationPolicy {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
+pub struct AdminAuthWechatOfficial {
+    pub key: String,
+    pub name: String,
+    pub app_id: String,
+    pub original_id: String,
+    pub secret_ref: String,
+    pub token_ref: String,
+    pub aes_key_ref: String,
+    pub url: String,
+    pub enabled: bool,
+    pub primary: bool,
+    pub scene: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct AdminAuthWechatMini {
+    pub key: String,
+    pub name: String,
+    pub app_id: String,
+    pub secret_ref: String,
+    pub url: String,
+    pub enabled: bool,
+    pub primary: bool,
+    pub path: String,
+    pub env: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Default)]
+pub struct AdminAuthWechatSettings {
+    pub official: Vec<AdminAuthWechatOfficial>,
+    pub mini: Vec<AdminAuthWechatMini>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct AdminAuthSettings {
     pub left_rail_mode: String,
     pub login_methods: Vec<String>,
@@ -41,9 +75,11 @@ pub struct AdminAuthSettings {
     pub oauth_providers: Vec<String>,
     pub oauth_region: String,
     pub qr_login_enabled: bool,
+    pub qr_login_type: String,
     pub recovery_methods: Vec<String>,
     pub register_methods: Vec<String>,
     pub verification_policy: AdminAuthVerificationPolicy,
+    pub wechat: AdminAuthWechatSettings,
 }
 
 impl Default for AdminAuthSettings {
@@ -55,9 +91,11 @@ impl Default for AdminAuthSettings {
             oauth_providers: Vec::new(),
             oauth_region: "mainland".to_owned(),
             qr_login_enabled: false,
+            qr_login_type: "web".to_owned(),
             recovery_methods: vec!["email".to_owned(), "phone".to_owned()],
             register_methods: vec!["email".to_owned(), "phone".to_owned()],
             verification_policy: AdminAuthVerificationPolicy::default(),
+            wechat: AdminAuthWechatSettings::default(),
         }
     }
 }
@@ -73,6 +111,8 @@ impl AdminAuthSettings {
         if !matches!(self.oauth_region.as_str(), "mainland" | "overseas") {
             self.oauth_region = "mainland".to_owned();
         }
+        self.qr_login_type = normalize_qr_login_type(&self.qr_login_type);
+        normalize_wechat_settings(&mut self.wechat);
 
         sync_login_method(
             &mut self.login_methods,
@@ -107,6 +147,107 @@ impl AdminAuthSettings {
 
         self
     }
+}
+
+fn normalize_qr_login_type(value: &str) -> String {
+    match value.trim() {
+        "official" | "wechat_official_account" | "official_account" | "wechat-official" => {
+            "official".to_owned()
+        }
+        "mini" | "wechat_mini_program" | "miniapp" | "wechat-mini-program" => "mini".to_owned(),
+        "web" | "sdkwork_app" | "sdkwork-app" | "mobile_app" | "" => "web".to_owned(),
+        _ => "web".to_owned(),
+    }
+}
+
+fn normalize_wechat_settings(settings: &mut AdminAuthWechatSettings) {
+    normalize_wechat_official_entries(&mut settings.official);
+    normalize_wechat_mini_entries(&mut settings.mini);
+}
+
+fn normalize_wechat_official_entries(entries: &mut Vec<AdminAuthWechatOfficial>) {
+    entries.retain(|entry| {
+        !entry.key.trim().is_empty()
+            && !entry.name.trim().is_empty()
+            && !entry.app_id.trim().is_empty()
+            && !entry.secret_ref.trim().is_empty()
+            && !entry.token_ref.trim().is_empty()
+    });
+    let mut has_primary = false;
+    for entry in entries {
+        entry.key = compact_ascii(&entry.key, 64);
+        entry.name = compact_text(&entry.name, 64);
+        entry.app_id = compact_ascii(&entry.app_id, 64);
+        entry.original_id = compact_ascii(&entry.original_id, 64);
+        entry.secret_ref = compact_ascii(&entry.secret_ref, 256);
+        entry.token_ref = compact_ascii(&entry.token_ref, 256);
+        entry.aes_key_ref = compact_ascii(&entry.aes_key_ref, 256);
+        entry.url = compact_ascii(&entry.url, 2048);
+        entry.scene = compact_ascii(&entry.scene, 64);
+        if !entry.enabled {
+            entry.primary = false;
+        } else if entry.primary && !has_primary {
+            has_primary = true;
+        } else {
+            entry.primary = false;
+        }
+    }
+}
+
+fn normalize_wechat_mini_entries(entries: &mut Vec<AdminAuthWechatMini>) {
+    entries.retain(|entry| {
+        !entry.key.trim().is_empty()
+            && !entry.name.trim().is_empty()
+            && !entry.app_id.trim().is_empty()
+            && !entry.secret_ref.trim().is_empty()
+            && !entry.path.trim().is_empty()
+    });
+    let mut has_primary = false;
+    for entry in entries {
+        entry.key = compact_ascii(&entry.key, 64);
+        entry.name = compact_text(&entry.name, 64);
+        entry.app_id = compact_ascii(&entry.app_id, 64);
+        entry.secret_ref = compact_ascii(&entry.secret_ref, 256);
+        entry.url = compact_ascii(&entry.url, 2048);
+        entry.path = normalize_mini_path_for_snapshot(&entry.path);
+        entry.env = match entry.env.trim() {
+            "trial" => "trial".to_owned(),
+            "develop" => "develop".to_owned(),
+            _ => "release".to_owned(),
+        };
+        if !entry.enabled {
+            entry.primary = false;
+        } else if entry.primary && !has_primary {
+            has_primary = true;
+        } else {
+            entry.primary = false;
+        }
+    }
+}
+
+fn compact_ascii(value: &str, max_len: usize) -> String {
+    value
+        .trim()
+        .chars()
+        .filter(|ch| ch.is_ascii() && !ch.is_ascii_control())
+        .take(max_len)
+        .collect()
+}
+
+fn compact_text(value: &str, max_len: usize) -> String {
+    value.trim().chars().take(max_len).collect()
+}
+
+fn normalize_mini_path_for_snapshot(value: &str) -> String {
+    let value = value.trim().trim_start_matches('/');
+    value
+        .split(['?', '#'])
+        .next()
+        .unwrap_or_default()
+        .chars()
+        .filter(|ch| ch.is_ascii() && !ch.is_ascii_control())
+        .take(128)
+        .collect()
 }
 
 fn sync_login_method(methods: &mut Vec<String>, method: &str, enabled: bool) {

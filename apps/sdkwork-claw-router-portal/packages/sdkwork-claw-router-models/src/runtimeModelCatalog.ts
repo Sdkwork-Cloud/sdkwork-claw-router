@@ -161,7 +161,7 @@ function toRuntimeCatalogItem(item: unknown): RuntimeModelCatalogItem | null {
   if (model === null || catalogKey === null || vendorCode === null || regionCode === null) {
     return null;
   }
-  if (catalogKey !== `${vendorCode}/${regionCode}/${model}`) {
+  if (!matchesRuntimeCatalogIdentity(catalogKey, vendorCode, regionCode, model)) {
     return null;
   }
 
@@ -821,10 +821,20 @@ function normalizeCatalogKey(value: string): string | null {
     return null;
   }
   const parts = normalized.split('/');
-  if (parts.length !== 3 || parts.some((part) => part.length === 0)) {
+  if (parts.length < 2 || parts.some((part) => part.length === 0)) {
     return null;
   }
   return normalized;
+}
+
+function matchesRuntimeCatalogIdentity(
+  catalogKey: string,
+  vendorCode: string,
+  regionCode: string,
+  model: string,
+): boolean {
+  return catalogKey === `${vendorCode}/${model}`
+    || catalogKey === `${vendorCode}/${regionCode}/${model}`;
 }
 
 function normalizeRuntimeIdentifierOrNullable(value: unknown): string | null | undefined {

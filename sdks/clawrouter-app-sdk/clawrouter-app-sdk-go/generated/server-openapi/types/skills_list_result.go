@@ -4,6 +4,5 @@ package types
 type SkillsListResult struct {
 	Code string `json:"code"`
 	Data SkillsCatalogResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

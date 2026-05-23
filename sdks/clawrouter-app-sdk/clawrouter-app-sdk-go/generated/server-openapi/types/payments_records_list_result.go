@@ -4,6 +4,5 @@ package types
 type PaymentsRecordsListResult struct {
 	Code string `json:"code"`
 	Data BillingRechargeHistoryResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

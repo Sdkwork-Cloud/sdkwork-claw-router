@@ -1,0 +1,123 @@
+fragment: models/admin-memberships
+frontend_models:
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  interface: MembershipsAdminPackageGroup
+  fields:
+  - id
+  - name
+  - description
+  - planId
+  - status
+  - packageCount
+  data_sources:
+  - commerce_membership_package_group
+  - commerce_membership_package
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  interface: MembershipsAdminPackageItem
+  fields:
+  - id
+  - packageNo
+  - groupId
+  - planId
+  - skuId
+  - name
+  - priceAmount
+  - currencyCode
+  - durationDays
+  - recurrenceCycle
+  - status
+  data_sources:
+  - commerce_membership_package
+  - commerce_membership_package_group
+  - commerce_membership_plan
+  - commerce_product_sku
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  interface: MembershipsAdminPlanItem
+  fields:
+  - id
+  - planNo
+  - levelCode
+  - name
+  - rank
+  - status
+  - benefitCount
+  - updatedAt
+  data_sources:
+  - commerce_membership_plan
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  interface: MembershipsAdminPlanCreateInput
+  fields:
+  - code
+  - name
+  - rank
+  - status
+  data_sources:
+  - commerce_membership_plan
+- route: /admin/memberships/recharge-packages
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  interface: MembershipsAdminRechargePackageItem
+  fields:
+  - id
+  - packageNo
+  - name
+  - skuId
+  - priceAmount
+  - currencyCode
+  - bonusAmount
+  - grantAmount
+  - status
+  - updatedAt
+  data_sources:
+  - commerce_recharge_package
+  - commerce_product_spu
+  - commerce_product_sku
+- route: /admin/memberships/recharge-packages
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  interface: MembershipsAdminRechargePackageMutationInput
+  fields:
+  - rmb
+  - bonus
+  - status
+  data_sources:
+  - commerce_recharge_package
+- route: /admin/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  interface: MembershipsAdminPackageCatalog
+  fields:
+  - groups
+  - groups.id
+  - groups.name
+  - groups.description
+  - groups.planId
+  - groups.status
+  - groups.packageCount
+  - packages
+  - packages.id
+  - packages.packageNo
+  - packages.groupId
+  - packages.planId
+  - packages.skuId
+  - packages.name
+  - packages.priceAmount
+  - packages.currencyCode
+  - packages.durationDays
+  - packages.recurrenceCycle
+  - packages.status
+  - plans
+  - plans.id
+  - plans.planNo
+  - plans.levelCode
+  - plans.name
+  - plans.rank
+  - plans.status
+  - plans.benefitCount
+  - plans.updatedAt
+  data_sources:
+  - commerce_membership_package_group
+  - commerce_membership_package
+  - commerce_membership_plan
+  - commerce_product_sku

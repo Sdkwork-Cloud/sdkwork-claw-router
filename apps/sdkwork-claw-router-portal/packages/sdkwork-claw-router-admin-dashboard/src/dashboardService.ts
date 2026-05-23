@@ -1,17 +1,18 @@
 import {
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
   readApiRecord,
   readDecimalString,
   readRequiredNonNegativeNumber,
   readRequiredString,
-  readString,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
 import type { InstallationStatusResponse } from '@sdkwork/clawrouter-backend-sdk';
 
 export type AdminDashboardTranslator = (key: string, fallback: string, options?: Record<string, unknown>) => string;
+
+const DEFAULT_DASHBOARD_TRANSLATOR: AdminDashboardTranslator = (_key, fallback, options) => interpolateFallback(fallback, options);
 
 export interface PieChartData {
   name: string;
@@ -48,7 +49,7 @@ export interface DashboardSummaryCard {
 }
 
 export class AdminDashboardService {
-  static async fetchDashboardData(t: AdminDashboardTranslator): Promise<{
+  static async fetchDashboardData(t: AdminDashboardTranslator = DEFAULT_DASHBOARD_TRANSLATOR): Promise<{
     summaryCards: DashboardSummaryCard[];
     userConsumption: PieChartData[];
     multimodal: PieChartData[];
@@ -57,7 +58,7 @@ export class AdminDashboardService {
     recentUsage: RecentUsageTrace[];
   }> {
     const result = await getClawRouterBackendSdkClient().system.dashboard.admin.overview.retrieve();
-    ensurePlusApiSuccess(result, 'Failed to fetch admin dashboard');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch admin dashboard');
     const data = readApiRecord(result);
     const userConsumption = readRequiredRecordArray(data, 'userConsumption', 'Dashboard userConsumption is required', 'Dashboard pie chart record is required')
       .map(normalizePieChartData);
@@ -87,7 +88,7 @@ export class AdminDashboardService {
 
   static async fetchInstallationStatus(): Promise<InstallationStatusResponse> {
     const result = await getClawRouterBackendSdkClient().system.installation.status.retrieve();
-    ensurePlusApiSuccess(result, 'Failed to fetch installation status');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch installation status');
     return normalizeInstallationStatus(readApiRecord(result));
   }
 }
@@ -316,4 +317,14 @@ function formatCompactNumber(value: number): string {
 function formatCompactUnit(value: number, unit: number): string {
   const normalized = value / unit;
   return Number.isInteger(normalized) ? String(normalized) : normalized.toFixed(1);
+}
+
+function interpolateFallback(fallback: string, options?: Record<string, unknown>): string {
+  if (!options) {
+    return fallback;
+  }
+  return fallback.replace(/\{\{(\w+)}}/g, (match, key: string) => {
+    const value = options[key];
+    return value === undefined || value === null ? match : String(value);
+  });
 }

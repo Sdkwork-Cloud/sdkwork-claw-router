@@ -28,6 +28,27 @@ class FrontendContractGuardianTest(unittest.TestCase):
         path.write_text(textwrap.dedent(content).strip() + "\n", encoding="utf-8")
         return path
 
+    def write_modular_contract(self, root: Path, content: str) -> Path:
+        fragment = root / "docs" / "schema-registry" / "frontend-field-contracts" / "routes" / "demo.yaml"
+        fragment.parent.mkdir(parents=True, exist_ok=True)
+        fragment.write_text(textwrap.dedent(content).strip() + "\n", encoding="utf-8")
+        index = root / "docs" / "schema-registry" / "frontend-field-contracts" / "index.yaml"
+        index.write_text(
+            textwrap.dedent(
+                """
+                schema: sdkwork-claw-router-frontend-field-contracts
+                version: 0.1.0
+                source: apps/sdkwork-claw-router-portal/src/App.tsx
+                rule: every actual portal route must be backed by explicit schema tables.
+                fragments:
+                  - routes/demo.yaml
+                """
+            ).strip()
+            + "\n",
+            encoding="utf-8",
+        )
+        return index
+
     def write_catalog_source(self, root: Path, relative_path: str, content: str) -> str:
         path = root / relative_path
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -372,6 +393,43 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 "table ai_usage_fact requires column customer_charge_amount for route /console/account",
                 result.messages,
             )
+
+    def test_accepts_sdkwork_appbase_required_tables_without_router_schema_ownership(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_app(root, '<Route path="/vip" element={<VipPurchaseView />} />')
+            self.write_manifest(
+                root,
+                {
+                    "routes": {"/vip": {"tables": ["commerce_account"]}},
+                    "tables": [
+                        {
+                            "table": "commerce_account",
+                            "columns": [{"name": "id"}],
+                        }
+                    ],
+                },
+            )
+            self.write_contract(
+                root,
+                """
+                routes:
+                  - route: /vip
+                    required_tables:
+                      - commerce_account
+                      - commerce_vip_entitlement
+                      - commerce_vip_entitlement_usage
+                      - commerce_vip_package
+                      - commerce_vip_package_group
+                """,
+            )
+
+            result = FrontendContractGuardian(root=root).run()
+
+            self.assertNotIn("route /vip requires table commerce_vip_entitlement", result.messages)
+            self.assertNotIn("route /vip requires table commerce_vip_entitlement_usage", result.messages)
+            self.assertNotIn("route /vip requires table commerce_vip_package", result.messages)
+            self.assertNotIn("route /vip requires table commerce_vip_package_group", result.messages)
 
     def test_accepts_required_physical_columns_for_legacy_tables(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -816,13 +874,13 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "portal packages must value-import generated SDK clients only from sdkwork-claw-router-commons/src/sdk-clients.ts: "
+                "portal packages must value-import generated SDK clients only from sdkwork-claw-router-commons SDK boundary files: "
                 "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts "
                 "imports @sdkwork/clawrouter-app-sdk",
                 result.messages,
             )
             self.assertIn(
-                "portal packages must construct generated SDK clients only in sdkwork-claw-router-commons/src/sdk-clients.ts: "
+                "portal packages must construct generated SDK clients only in sdkwork-claw-router-commons SDK boundary files: "
                 "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts",
                 result.messages,
             )
@@ -898,7 +956,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "portal business API prefixes must be isolated to sdkwork-claw-router-commons/src/sdk-clients.ts: "
+                "portal business API prefixes must be isolated to sdkwork-claw-router-commons SDK boundary files: "
                 "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts",
                 result.messages,
             )
@@ -1340,6 +1398,404 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn(
                 "sdk-backed route /console/dashboard must declare at least one app frontend operation contract",
+                result.messages,
+            )
+
+    def test_accepts_sdk_runtime_classification_through_commerce_foundation_service(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_app(
+                root,
+                """
+                const Commerce = lazyRoute(() => import('sdkwork-claw-router-console-commerce'), 'Commerce');
+                <Route path="/console/commerce" element={<Commerce />} />
+                """,
+            )
+            self.write_manifest(
+                root,
+                {
+                    "routes": {
+                        "/console/commerce": {
+                            "required_api_surface": "app",
+                            "route_scope": "console",
+                            "tables": ["commerce_account"],
+                        },
+                    },
+                    "tables": [{"table": "commerce_account", "columns": [{"name": "balance"}]}],
+                },
+            )
+            self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /console/commerce
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-commerce/src/commerceService.ts
+                    operation: fetchBillingSummary
+                    operation_id: account.summary.retrieve
+                    api_surface: app
+                    read_sources: [commerce_account]
+                routes:
+                  - route: /console/commerce
+                    required_tables: [commerce_account]
+                """,
+            )
+            self.write_route_classification(
+                root,
+                """
+                schema: sdkwork-claw-router-frontend-route-classification
+                source: apps/sdkwork-claw-router-portal/src/App.tsx
+                routes:
+                  - route: /console/commerce
+                    package: sdkwork-claw-router-console-commerce
+                    owner: customer-console
+                    route_scope: console
+                    delivery_kind: sdk_backed_business_runtime
+                    api_surface: app
+                    evidence:
+                      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-commerce/src/commerceService.ts
+                      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
+                """,
+            )
+            self.write_portal_source(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-commerce/src/commerceService.ts",
+                """
+                import { getClawRouterCommerceService } from 'sdkwork-claw-router-commons/runtime';
+
+                export async function fetchBillingSummary() {
+                  return getClawRouterCommerceService().account.summary.retrieve();
+                }
+                """,
+            )
+            self.write_portal_source(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts",
+                """
+                import { getClawRouterAppSdkClient, getClawRouterBackendSdkClient } from './sdk-clients.ts';
+
+                export function getClawRouterCommerceService() {
+                  return {
+                    account: {
+                      summary: {
+                        retrieve: () => getClawRouterAppSdkClient().billing.account.summary.retrieve(),
+                      },
+                    },
+                    admin: {
+                      finance: {
+                        ledger: {
+                          list: () => getClawRouterBackendSdkClient().billing.finance.ledger.list(),
+                        },
+                      },
+                    },
+                  };
+                }
+                """,
+            )
+
+            result = FrontendContractGuardian(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_default_contract_path_prefers_modular_index_over_stale_snapshot(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_app(root, '<Route path="/demo" element={<Demo />} />')
+            self.write_manifest(
+                root,
+                {
+                    "routes": {"/demo": {"tables": ["demo_table"]}},
+                    "tables": [
+                        {
+                            "table": "demo_table",
+                            "columns": [{"name": "id"}],
+                        }
+                    ],
+                },
+            )
+            self.write_contract(root, "routes: []")
+            self.write_modular_contract(
+                root,
+                """
+                routes:
+                  - route: /demo
+                    required_tables: [demo_table]
+                    required_columns:
+                      demo_table: [id]
+                frontend_operations: []
+                frontend_models: []
+                """,
+            )
+
+            result = FrontendContractGuardian(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_app_shell_operation_on_schema_content_route_when_sdk_backed(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            home_hash = self.write_catalog_source(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-home/src/pages/Home.tsx",
+                """
+                export function Home() {
+                  return null;
+                }
+                """,
+            )
+            self.write_app(
+                root,
+                """
+                const Home = lazyRoute(() => import('sdkwork-claw-router-home'), 'Home');
+                <Route path="/" element={<Home />} />
+                """,
+            )
+            self.write_manifest(
+                root,
+                {
+                    "routes": {
+                        "/": {
+                            "required_api_surface": "app",
+                            "route_scope": "public",
+                            "tables": ["content_doc_page"],
+                        },
+                    },
+                    "tables": [{"table": "content_doc_page", "columns": [{"name": "slug"}]}],
+                },
+            )
+            self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /
+                    operation_scope: app_shell
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/siteBranding.ts
+                    operation: fetchSiteBranding
+                    operation_id: site.runtime.retrieve
+                    api_surface: app
+                    read_sources: [ops_config_snapshot]
+                routes:
+                  - route: /
+                    required_tables: [content_doc_page]
+                """,
+            )
+            self.write_portal_source(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/siteBranding.ts",
+                """
+                import { getClawRouterAppSdkClient } from './sdk-clients.ts';
+
+                export async function fetchSiteBranding() {
+                  return getClawRouterAppSdkClient().system.site.runtime.retrieve();
+                }
+                """,
+            )
+            self.write_route_classification(
+                root,
+                """
+                schema: sdkwork-claw-router-frontend-route-classification
+                source: apps/sdkwork-claw-router-portal/src/App.tsx
+                routes:
+                  - route: /
+                    package: sdkwork-claw-router-home
+                    owner: public-portal
+                    route_scope: public
+                    delivery_kind: schema_provenanced_content
+                    provenance_tables: [content_doc_page]
+                    static_delivery:
+                      mode: curated_seed_content
+                      refresh_policy: manual_content_release
+                      max_staleness: release_bound
+                      upgrade_triggers: [authoring_workflow]
+                      source_manifest_ref: home-page
+                    evidence:
+                      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-home/src/pages/Home.tsx
+                      - generated/schema/manifest/schema-manifest.json
+                """,
+            )
+            self.write_static_source_manifest(
+                root,
+                {
+                    "schema": "sdkwork-claw-router-frontend-static-source-manifest",
+                    "version": 1,
+                    "snapshots": {
+                        "home-page": {
+                            "id": "home-page",
+                            "route": "/",
+                            "mode": "curated_seed_content",
+                            "source_ref": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-home/src/pages/Home.tsx",
+                            "source_hash": home_hash,
+                            "schema_tables": ["content_doc_page"],
+                            "observed_at": "2026-05-18",
+                        },
+                    },
+                },
+            )
+
+            result = FrontendContractGuardian(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_app_shell_operation_via_commerce_runtime_sdk_boundary(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_app(root, '<Route path="/console/account" element={<Account />} />')
+            self.write_manifest(
+                root,
+                {
+                    "routes": {
+                        "/console/account": {
+                            "required_api_surface": "app",
+                            "route_scope": "console",
+                            "tables": ["commerce_account"],
+                        },
+                    },
+                    "tables": [{"table": "commerce_account", "columns": [{"name": "account_id"}]}],
+                },
+            )
+            self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /console/account
+                    operation_scope: app_shell
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-console-service.ts
+                    operation: fetchAccountDetails
+                    operation_id: console.accountDetails.retrieve
+                    api_surface: app
+                routes:
+                  - route: /console/account
+                    required_tables: [commerce_account]
+                """,
+            )
+            self.write_portal_source(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts",
+                """
+                import { getClawRouterAppSdkClient } from './sdk-clients.ts';
+
+                export async function appAccountsCurrentSummaryRetrieve() {
+                  return getClawRouterAppSdkClient().commerce.accounts.current.summary.retrieve();
+                }
+                """,
+            )
+            self.write_portal_source(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-console-service.ts",
+                """
+                import { appAccountsCurrentSummaryRetrieve } from './commerce-runtime.ts';
+
+                export class ConsoleCommerceService {
+                  static async fetchAccountDetails() {
+                    return appAccountsCurrentSummaryRetrieve();
+                  }
+                }
+                """,
+            )
+
+            result = FrontendContractGuardian(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_app_shell_operation_via_local_runtime_adapter_sdk_boundary(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_app(root, '<Route path="/playground" element={<Playground />} />')
+            self.write_manifest(
+                root,
+                {
+                    "routes": {
+                        "/playground": {
+                            "required_api_surface": "app",
+                            "route_scope": "console",
+                            "tables": ["ai_model"],
+                        },
+                    },
+                    "tables": [{"table": "ai_model", "columns": [{"name": "id"}]}],
+                },
+            )
+            self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /playground
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+                    operation: listModelCatalog
+                    operation_id: models.list
+                    api_surface: app
+                  - route: /playground
+                    operation_scope: app_shell
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts
+                    operation: fetchModelGroups
+                    operation_id: playground.models.grouped
+                    api_surface: app
+                routes:
+                  - route: /playground
+                    required_tables: [ai_model]
+                """,
+            )
+            self.write_portal_source(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts",
+                """
+                import { getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/runtime';
+
+                export async function listModelCatalog() {
+                  return getClawRouterAppSdkClient().intelligence.modelsList();
+                }
+                """,
+            )
+            self.write_portal_source(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts",
+                """
+                import { listModelCatalog } from './appRuntimeApiOperations.ts';
+
+                export class PlaygroundService {
+                  static async fetchModelGroups() {
+                    return listModelCatalog();
+                  }
+                }
+                """,
+            )
+
+            result = FrontendContractGuardian(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_reports_app_shell_operation_without_standard_sdk_client(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_app(root, '<Route path="/" element={<Home />} />')
+            self.write_manifest(root, {"routes": {"/": {"route_scope": "public", "tables": []}}, "tables": []})
+            self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /
+                    operation_scope: app_shell
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/siteBranding.ts
+                    operation: fetchSiteBranding
+                    operation_id: site.runtime.retrieve
+                    api_surface: app
+                routes:
+                  - route: /
+                """,
+            )
+            self.write_portal_source(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/siteBranding.ts",
+                """
+                export async function fetchSiteBranding() {
+                  return { siteName: 'Claw Router' };
+                }
+                """,
+            )
+
+            result = FrontendContractGuardian(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "app-shell frontend operation fetchSiteBranding must use getClawRouterAppSdkClient",
                 result.messages,
             )
 

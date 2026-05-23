@@ -153,7 +153,7 @@ export function DashboardAdmin() {
   }
 
   return (
-    <div className="w-full h-full flex flex-col space-y-4 overflow-y-auto pb-8 custom-scrollbar">
+    <div className="w-full flex flex-col space-y-4 pb-8">
 
       {/* Top Value Cards (Grid of 8) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 shrink-0">

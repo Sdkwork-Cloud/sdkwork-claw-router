@@ -2,8 +2,8 @@ use sqlx::{Row, SqlitePool};
 
 use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::app_catalog_mapping::{
-    app_category_from_raw, build_app_item, query_matches_app, RawAppStoreRecord,
-    RawCatalogArtifact, RawCatalogAsset, CATALOG_TARGET_TYPE_APP,
+    build_app_item, query_matches_app, RawAppStoreRecord, RawCatalogArtifact, RawCatalogAsset,
+    CATALOG_TARGET_TYPE_APP,
 };
 use crate::ports::{
     AppStoreItem, AppStoreQuery, AppStoreReadFuture, AppStoreReadStore, AppStoreSubject,
@@ -148,23 +148,23 @@ LIMIT 1
 
 const LOAD_CATEGORIES: &str = r#"
 SELECT
-    COALESCE(CAST(a.config AS TEXT), '') AS config,
-    COALESCE(CAST(a.app_type AS TEXT), '') AS app_type,
-    COALESCE(CAST(a.install_config AS TEXT), '') AS install_config
-FROM plus_app a
+    COALESCE(NULLIF(c.name, ''), '') AS name
+FROM plus_category c
 WHERE (
       (
-          a.tenant_id = ?1
+          c.tenant_id = ?1
           AND (
-              a.organization_id = ?2
-              OR (?2 > 0 AND a.organization_id = 0)
+              c.organization_id = ?2
+              OR (?2 > 0 AND c.organization_id = 0)
           )
       )
-      OR (a.tenant_id = ?3 AND a.organization_id = 0)
+      OR (c.tenant_id = ?3 AND c.organization_id = 0)
   )
-  AND COALESCE(a.status, 1) = 1
-  AND COALESCE(NULLIF(json_extract(a.config, '$.portal.marketStatus'), ''), NULLIF(json_extract(a.config, '$.marketStatus'), ''), 'DRAFT') = 'PUBLISHED'
-ORDER BY COALESCE(a.updated_at, a.created_at) DESC, a.id DESC
+  AND c.type = 999999
+  AND c.group_name = 'app-store'
+  AND COALESCE(c.visible, 1) = 1
+  AND COALESCE(c.status, 1) = 1
+ORDER BY COALESCE(c.sort_weight, 0), c.id
 "#;
 
 const LOAD_ASSETS: &str = r#"
@@ -322,16 +322,9 @@ impl AppStoreReadStore for SqliteAppStoreReadStore {
                 .map_err(sql_error)?;
             let mut categories: Vec<String> = rows
                 .iter()
-                .map(|row| {
-                    app_category_from_raw(
-                        &string_cell(row, "app_type"),
-                        &string_cell(row, "config"),
-                        &string_cell(row, "install_config"),
-                    )
-                })
+                .map(|row| string_cell(row, "name"))
                 .filter(|category| !category.trim().is_empty())
                 .collect::<Vec<_>>();
-            categories.sort_by_key(|category| category.to_lowercase());
             categories.dedup_by(|left, right| left.eq_ignore_ascii_case(right));
             Ok(categories)
         })

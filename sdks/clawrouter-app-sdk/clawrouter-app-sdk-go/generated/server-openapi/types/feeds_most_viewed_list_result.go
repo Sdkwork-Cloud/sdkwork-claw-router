@@ -4,6 +4,5 @@ package types
 type FeedsMostViewedListResult struct {
 	Code string `json:"code"`
 	Data ForumFeedItemList `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

@@ -157,7 +157,8 @@ async fn app_payment_callback_route_rejects_missing_signature_before_store() {
     let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
 
     assert_eq!("4001", payload["code"]);
-    assert_eq!("payment callback signature is required", payload["message"]);
+    assert_eq!("payment callback signature is required", payload["msg"]);
+    assert_eq!(None, payload.get("message"));
     assert!(captured.lock().unwrap().is_empty());
 }
 
@@ -199,8 +200,9 @@ async fn app_payment_callback_route_rejects_sub_cent_amount_before_store() {
     assert_eq!("4001", payload["code"]);
     assert_eq!(
         "payment callback amount must not contain sub-cent precision",
-        payload["message"]
+        payload["msg"]
     );
+    assert_eq!(None, payload.get("message"));
     assert!(captured.lock().unwrap().is_empty());
 }
 

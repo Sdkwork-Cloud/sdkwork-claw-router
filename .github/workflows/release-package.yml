@@ -138,6 +138,7 @@ jobs:
       PACKAGE_PLATFORM: ${{ matrix.platform }}
       PACKAGE_ARCHITECTURE: ${{ matrix.architecture }}
       PACKAGE_MODES: ${{ needs.plan.outputs.deployment_modes_csv }}
+      CLAWROUTER_DOWNLOAD_CDN_BASE_URL: ${{ vars.CLAWROUTER_DOWNLOAD_CDN_BASE_URL }}
       GH_TOKEN: ${{ github.token }}
     steps:
       - name: Checkout release source
@@ -166,6 +167,7 @@ jobs:
           $ErrorActionPreference = "Stop"
           Copy-Item -LiteralPath "release-tools/sdkwork-claw-router/scripts/claw-router-release-version.mjs" -Destination "apps/sdkwork-claw-router/scripts/claw-router-release-version.mjs" -Force
           Copy-Item -LiteralPath "release-tools/sdkwork-claw-router/scripts/plan-claw-router-install-packages.mjs" -Destination "apps/sdkwork-claw-router/scripts/plan-claw-router-install-packages.mjs" -Force
+          Copy-Item -LiteralPath "release-tools/sdkwork-claw-router/scripts/update-claw-router-downloads.mjs" -Destination "apps/sdkwork-claw-router/scripts/update-claw-router-downloads.mjs" -Force
           Copy-Item -LiteralPath "release-tools/sdkwork-claw-router/scripts/build-claw-router-install-package.mjs" -Destination "apps/sdkwork-claw-router/scripts/build-claw-router-install-package.mjs" -Force
           Copy-Item -LiteralPath "release-tools/sdkwork-claw-router/scripts/build-claw-router-native-installer.mjs" -Destination "apps/sdkwork-claw-router/scripts/build-claw-router-native-installer.mjs" -Force
           Copy-Item -LiteralPath "release-tools/sdkwork-claw-router/scripts/validate-claw-router-install-artifacts.mjs" -Destination "apps/sdkwork-claw-router/scripts/validate-claw-router-install-artifacts.mjs" -Force
@@ -252,6 +254,11 @@ jobs:
         working-directory: apps/sdkwork-claw-router
         shell: pwsh
         run: |
+          $downloadArgs = @("--version", $env:PACKAGE_VERSION, "--release-tag", $env:RELEASE_TAG)
+          if ($env:CLAWROUTER_DOWNLOAD_CDN_BASE_URL) {
+            $downloadArgs += @("--cdn-base-url", $env:CLAWROUTER_DOWNLOAD_CDN_BASE_URL)
+          }
+          node scripts/update-claw-router-downloads.mjs @downloadArgs
           node scripts/build-claw-router-production.mjs
           cargo build -p sdkwork-claw-installer --bin clawrouterctl --release
 

@@ -126,7 +126,7 @@ ssl_mode = "require"
 max_connections = 16
 
 [redis]
-enabled = false
+enabled = true
 host = "redis.example.com"
 port = 6379
 database = 0
@@ -234,14 +234,13 @@ deployment_mode = "server"
 
 The `.deb` package creates `/etc/clawrouter/database.secret` with the placeholder value `change-me`. Replace that file with the real PostgreSQL password before starting `clawrouter`; startup rejects server configurations that still use `db.example.com` or `change-me`.
 
-Redis is initialized as configuration only. It is not required for first start,
-and `[redis].enabled = false` is the correct default for single-node or
-database-only deployments. Enable Redis only when the deployment needs shared
-cache, distributed locks, queues, or rate-limit buckets. When enabled, set
-`[redis].host`, `[redis].port`, and `[redis].database`; use `[redis].url` only
-as an advanced managed-endpoint override. Use `/etc/clawrouter/redis.secret` or
-another protected `password_file`, and keep direct `[redis].password` only for
-TOML files managed as secret-bearing files.
+Redis is enabled and required by default for server/service/container
+deployments. Configure `[redis].host`, `[redis].port`, and `[redis].database`
+before first startup; use `[redis].url` only as an advanced managed-endpoint
+override. Use `/etc/clawrouter/redis.secret` or another protected
+`password_file`, and keep direct `[redis].password` only for TOML files managed
+as secret-bearing files. Desktop deployments keep Redis optional and disabled
+by default.
 
 `[paths].course_upload_root` stores local course application video uploads. Put
 it on durable storage for service and container deployments and keep it inside
@@ -425,6 +424,7 @@ Stable error codes:
 - `invalid_state`
 - `database_error`
 - `catalog_error`
+- `commerce_error`
 - `installer_error`
 
 ## Health Checks

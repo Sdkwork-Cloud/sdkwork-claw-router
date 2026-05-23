@@ -68,11 +68,12 @@ client.setHeader("X-Custom-Header", value: "value")
 
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.billing` - billing API
+- `client.commerce` - commerce API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
+- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
 - `client.system` - system API
 
@@ -90,7 +91,7 @@ let params: [String: Any] = [
     "page": 5,
     "page_size": 6
 ]
-let result = try await client.agents.list(params: params)
+let result = try await client.agents.agentDefinitionsList(params: params)
 print(result)
 ```
 
@@ -102,11 +103,11 @@ let result = try await client.ai.modelVendorsList()
 print(result)
 ```
 
-### billing
+### commerce
 
 ```swift
-// List referral stats
-let result = try await client.billing.referralsStatsList()
+// Commerce Reports Payment Reconciliation Retrieve
+let result = try await client.commerce.reportsPaymentReconciliationRetrieve()
 print(result)
 ```
 
@@ -142,20 +143,22 @@ let result = try await client.integration.channelsList()
 print(result)
 ```
 
+### open_platform
+
+```swift
+// List open platform providers
+let params: [String: Any] = [
+    "status": "active"
+]
+let result = try await client.openPlatform.providersList(params: params)
+print(result)
+```
+
 ### platform
 
 ```swift
-// List apps
-let params: [String: Any] = [
-    "q": "q",
-    "status": "ACTIVE",
-    "market_status": "DRAFT",
-    "app_type": "app-type",
-    "page": 5,
-    "page_size": 6
-]
-let xRequestId = "X-Request-Id"
-let result = try await client.platform.appsList(params: params, xRequestId: xRequestId)
+// List app categories
+let result = try await client.platform.appsCategoriesList()
 print(result)
 ```
 

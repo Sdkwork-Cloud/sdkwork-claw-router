@@ -95,6 +95,10 @@ pub struct AiAgentRunStepRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub run_id: Option<String>,
 
+    /// Runtime invocation id field on ai agent run step record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub runtime_invocation_id: Option<String>,
+
     /// Skill id field on ai agent run step record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub skill_id: Option<String>,
@@ -110,10 +114,6 @@ pub struct AiAgentRunStepRecord {
     /// Step index field on ai agent run step record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub step_index: Option<i64>,
-
-    /// Step status field on ai agent run step record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub step_status: Option<String>,
 
     /// Step type field on ai agent run step record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -131,6 +131,10 @@ pub struct AiAgentRunStepRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub tool_binding_id: Option<String>,
 
+    /// Tool name field on ai agent run step record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub tool_name: Option<String>,
+
     /// Total tokens field on ai agent run step record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub total_tokens: Option<String>,
@@ -142,6 +146,10 @@ pub struct AiAgentRunStepRecord {
     /// Usage fact id field on ai agent run step record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub usage_fact_id: Option<String>,
+
+    /// Usage json field on ai agent run step record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub usage_json: Option<std::collections::HashMap<String, String>>,
 
     /// User id field on ai agent run step record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

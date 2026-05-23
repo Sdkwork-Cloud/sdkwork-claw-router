@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class IntegrationProviderRecord {
     private String authType;
-    private String baseUrlTemplate;
+    private String baseUrl;
     private Map<String, String> capabilities;
     private String colorToken;
     private String createdAt;
@@ -36,23 +36,23 @@ public class IntegrationProviderRecord {
     public String getAuthType() {
         return this.authType;
     }
-    
+
     public void setAuthType(String authType) {
         this.authType = authType;
     }
 
-    public String getBaseUrlTemplate() {
-        return this.baseUrlTemplate;
+    public String getBaseUrl() {
+        return this.baseUrl;
     }
-    
-    public void setBaseUrlTemplate(String baseUrlTemplate) {
-        this.baseUrlTemplate = baseUrlTemplate;
+
+    public void setBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl;
     }
 
     public Map<String, String> getCapabilities() {
         return this.capabilities;
     }
-    
+
     public void setCapabilities(Map<String, String> capabilities) {
         this.capabilities = capabilities;
     }
@@ -60,7 +60,7 @@ public class IntegrationProviderRecord {
     public String getColorToken() {
         return this.colorToken;
     }
-    
+
     public void setColorToken(String colorToken) {
         this.colorToken = colorToken;
     }
@@ -68,7 +68,7 @@ public class IntegrationProviderRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -76,7 +76,7 @@ public class IntegrationProviderRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -84,7 +84,7 @@ public class IntegrationProviderRecord {
     public String getDefaultVendorCode() {
         return this.defaultVendorCode;
     }
-    
+
     public void setDefaultVendorCode(String defaultVendorCode) {
         this.defaultVendorCode = defaultVendorCode;
     }
@@ -92,7 +92,7 @@ public class IntegrationProviderRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -100,7 +100,7 @@ public class IntegrationProviderRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -108,7 +108,7 @@ public class IntegrationProviderRecord {
     public String getDescription() {
         return this.description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -116,7 +116,7 @@ public class IntegrationProviderRecord {
     public String getDisplayName() {
         return this.displayName;
     }
-    
+
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
@@ -124,7 +124,7 @@ public class IntegrationProviderRecord {
     public String getDocsUrl() {
         return this.docsUrl;
     }
-    
+
     public void setDocsUrl(String docsUrl) {
         this.docsUrl = docsUrl;
     }
@@ -132,7 +132,7 @@ public class IntegrationProviderRecord {
     public String getIconUrl() {
         return this.iconUrl;
     }
-    
+
     public void setIconUrl(String iconUrl) {
         this.iconUrl = iconUrl;
     }
@@ -140,7 +140,7 @@ public class IntegrationProviderRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -148,7 +148,7 @@ public class IntegrationProviderRecord {
     public String getIntegrationType() {
         return this.integrationType;
     }
-    
+
     public void setIntegrationType(String integrationType) {
         this.integrationType = integrationType;
     }
@@ -156,7 +156,7 @@ public class IntegrationProviderRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -164,7 +164,7 @@ public class IntegrationProviderRecord {
     public String getMetadataSchemaVersion() {
         return this.metadataSchemaVersion;
     }
-    
+
     public void setMetadataSchemaVersion(String metadataSchemaVersion) {
         this.metadataSchemaVersion = metadataSchemaVersion;
     }
@@ -172,7 +172,7 @@ public class IntegrationProviderRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -180,7 +180,7 @@ public class IntegrationProviderRecord {
     public String getProtocol() {
         return this.protocol;
     }
-    
+
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
@@ -188,7 +188,7 @@ public class IntegrationProviderRecord {
     public String getProviderCode() {
         return this.providerCode;
     }
-    
+
     public void setProviderCode(String providerCode) {
         this.providerCode = providerCode;
     }
@@ -196,7 +196,7 @@ public class IntegrationProviderRecord {
     public Integer getSortOrder() {
         return this.sortOrder;
     }
-    
+
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;
     }
@@ -204,7 +204,7 @@ public class IntegrationProviderRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -212,7 +212,7 @@ public class IntegrationProviderRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -220,7 +220,7 @@ public class IntegrationProviderRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -228,7 +228,7 @@ public class IntegrationProviderRecord {
     public String getUpstreamProviderCode() {
         return this.upstreamProviderCode;
     }
-    
+
     public void setUpstreamProviderCode(String upstreamProviderCode) {
         this.upstreamProviderCode = upstreamProviderCode;
     }
@@ -236,7 +236,7 @@ public class IntegrationProviderRecord {
     public String getUpstreamVendorCode() {
         return this.upstreamVendorCode;
     }
-    
+
     public void setUpstreamVendorCode(String upstreamVendorCode) {
         this.upstreamVendorCode = upstreamVendorCode;
     }
@@ -244,7 +244,7 @@ public class IntegrationProviderRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -252,7 +252,7 @@ public class IntegrationProviderRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -260,7 +260,7 @@ public class IntegrationProviderRecord {
     public String getWebsiteUrl() {
         return this.websiteUrl;
     }
-    
+
     public void setWebsiteUrl(String websiteUrl) {
         this.websiteUrl = websiteUrl;
     }

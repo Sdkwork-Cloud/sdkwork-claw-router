@@ -7,7 +7,5 @@ export interface ModelsCreateResult {
   /** Data field on models create result. */
   data?: AdminAiModelMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

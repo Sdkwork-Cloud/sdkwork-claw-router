@@ -1,0 +1,233 @@
+fragment: operations/app-sdkreference
+frontend_operations:
+- route: /sdk-reference
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/sdkReferenceGenerationService.ts
+  operation: generateSdkReferenceDocumentation
+  operation_id: documentation.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/sdk_reference/documentation
+  sdk_domain: sdkReference
+  summary: Generate SDK reference documentation
+  description: Generates SDK README and code documentation from the submitted OpenAPI document using the backend Rust SDK generator integration.
+  read_sources:
+  - content_sdk_release
+  write_tables:
+  - content_sdk_release
+  - ops_audit_log
+  request_schema:
+    name: SdkReferenceDocumentationGenerateRequest
+    type: object
+    additionalProperties: false
+    required:
+    - spec
+    - language
+    - config
+    properties:
+      spec:
+        type: object
+        additionalProperties: true
+      language:
+        type: string
+        minLength: 1
+        maxLength: 32
+      config:
+        type: object
+        additionalProperties: false
+        required:
+        - name
+        - version
+        - language
+        - sdkType
+        - baseUrl
+        - apiPrefix
+        - packageName
+        properties:
+          name:
+            type: string
+            minLength: 1
+            maxLength: 128
+          version:
+            type: string
+            minLength: 1
+            maxLength: 64
+          language:
+            type: string
+            minLength: 1
+            maxLength: 32
+          sdkType:
+            type: string
+            enum:
+            - app
+            - backend
+            - ai
+            - custom
+          outputPath:
+            type: string
+            maxLength: 512
+          apiSpecPath:
+            type: string
+            maxLength: 512
+          baseUrl:
+            type: string
+            minLength: 1
+            maxLength: 2048
+          apiPrefix:
+            type: string
+            maxLength: 256
+          packageName:
+            type: string
+            minLength: 1
+            maxLength: 256
+          author:
+            type: string
+            maxLength: 128
+          license:
+            type: string
+            maxLength: 64
+          description:
+            type: string
+            maxLength: 512
+  response_schema:
+    name: SdkReferenceDocumentationResponse
+    type: object
+    additionalProperties: false
+    required:
+    - readme
+    - language
+    - generated
+    properties:
+      readme:
+        type: string
+        minLength: 1
+        maxLength: 1048576
+      methodDefinition:
+        type: string
+        nullable: true
+        maxLength: 262144
+      usageExample:
+        type: string
+        nullable: true
+        maxLength: 262144
+      language:
+        type: string
+        minLength: 1
+        maxLength: 32
+      generated:
+        type: boolean
+- route: /sdk-reference
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/sdkReferenceGenerationService.ts
+  operation: generateSdkReferenceArchive
+  operation_id: archives.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/sdk_reference/archives
+  sdk_domain: sdkReference
+  summary: Generate SDK archive
+  description: Generates a downloadable SDK archive from the submitted OpenAPI document using the backend Rust SDK generator integration.
+  read_sources:
+  - content_sdk_release
+  write_tables:
+  - content_sdk_release
+  - ops_audit_log
+  request_schema:
+    name: SdkReferenceArchiveGenerateRequest
+    type: object
+    additionalProperties: false
+    required:
+    - spec
+    - language
+    - config
+    properties:
+      spec:
+        type: object
+        additionalProperties: true
+      language:
+        type: string
+        minLength: 1
+        maxLength: 32
+      config:
+        type: object
+        additionalProperties: false
+        required:
+        - name
+        - version
+        - language
+        - sdkType
+        - baseUrl
+        - apiPrefix
+        - packageName
+        properties:
+          name:
+            type: string
+            minLength: 1
+            maxLength: 128
+          version:
+            type: string
+            minLength: 1
+            maxLength: 64
+          language:
+            type: string
+            minLength: 1
+            maxLength: 32
+          sdkType:
+            type: string
+            enum:
+            - app
+            - backend
+            - ai
+            - custom
+          outputPath:
+            type: string
+            maxLength: 512
+          apiSpecPath:
+            type: string
+            maxLength: 512
+          baseUrl:
+            type: string
+            minLength: 1
+            maxLength: 2048
+          apiPrefix:
+            type: string
+            maxLength: 256
+          packageName:
+            type: string
+            minLength: 1
+            maxLength: 256
+          author:
+            type: string
+            maxLength: 128
+          license:
+            type: string
+            maxLength: 64
+          description:
+            type: string
+            maxLength: 512
+  response_schema:
+    name: SdkReferenceArchiveResponse
+    type: object
+    additionalProperties: false
+    required:
+    - fileName
+    - contentType
+    - contentBase64
+    - language
+    properties:
+      fileName:
+        type: string
+        minLength: 1
+        maxLength: 256
+      contentType:
+        type: string
+        minLength: 1
+        maxLength: 128
+      contentBase64:
+        type: string
+        minLength: 1
+        maxLength: 52428800
+      language:
+        type: string
+        minLength: 1
+        maxLength: 32

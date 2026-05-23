@@ -7,7 +7,5 @@ export interface ProviderSecretsListResult {
   /** Data field on provider secrets list result. */
   data?: AdminProviderSecretsResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

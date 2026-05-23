@@ -11,5 +11,4 @@ class AccountPointsHistoryListResult:
     """Account points history list result schema exposed by Claw Router."""
     code: str
     data: Optional[List[CommercePointsHistoryItem]] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

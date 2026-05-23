@@ -2,7 +2,7 @@ import Foundation
 
 public class PlatformApi {
     private let client: HttpClient
-    
+
     public init(client: HttpClient) {
         self.client = client
     }
@@ -35,6 +35,44 @@ public class PlatformApi {
             [:]
         )
         return try await client.post(ApiPaths.backendPath("/platform/apps"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AppsCreateResult.self)
+    }
+
+    /// List app categories
+    public func appsCategoriesList() async throws -> AppsCategoriesListResult? {
+        return try await client.get(ApiPaths.backendPath("/platform/apps/categories"), responseType: AppsCategoriesListResult.self)
+    }
+
+    /// Create app category
+    public func appsCategoriesCreate(body: AdminAppCategoryCreateRequest, xRequestId: String? = nil) async throws -> AppsCategoriesCreateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.post(ApiPaths.backendPath("/platform/apps/categories"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AppsCategoriesCreateResult.self)
+    }
+
+    /// Delete app category
+    public func appsCategoriesDelete(categoryId: String, xRequestId: String? = nil) async throws -> AppsCategoriesDeleteResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.delete(ApiPaths.backendPath("/platform/apps/categories/\(serializePathParameter(categoryId, PathParameterSpec(name: "categoryId", style: "simple", explode: false)))"), params: nil, headers: requestHeaders, responseType: AppsCategoriesDeleteResult.self)
+    }
+
+    /// Update app category
+    public func appsCategoriesUpdate(categoryId: String, body: AdminAppCategoryUpdateRequest, xRequestId: String? = nil) async throws -> AppsCategoriesUpdateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.put(ApiPaths.backendPath("/platform/apps/categories/\(serializePathParameter(categoryId, PathParameterSpec(name: "categoryId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AppsCategoriesUpdateResult.self)
     }
 
     /// Delete app

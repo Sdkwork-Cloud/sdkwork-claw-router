@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
 if TYPE_CHECKING:
+    from .provider_circuit_breaker_policy import ProviderCircuitBreakerPolicy
     from .provider_retry_policy import ProviderRetryPolicy
 
 
@@ -11,8 +12,11 @@ class AdminChannelUpdateRequest:
     """Admin channel update request schema exposed by Claw Router."""
     id: str
     access_type: Optional[str] = None
+    api_key: Optional[str] = None
     base_url: Optional[str] = None
     capabilities: Optional[List[str]] = None
+    circuit_breaker_policy: Optional[ProviderCircuitBreakerPolicy] = None
+    expires_at: Optional[str] = None
     models: Optional[List[str]] = None
     name: Optional[str] = None
     protocol: Optional[str] = None

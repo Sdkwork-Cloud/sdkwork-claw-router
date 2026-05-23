@@ -11,5 +11,4 @@ class AppsStoreListResult:
     """Apps store list result schema exposed by Claw Router."""
     code: str
     data: Optional[AppCatalogResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

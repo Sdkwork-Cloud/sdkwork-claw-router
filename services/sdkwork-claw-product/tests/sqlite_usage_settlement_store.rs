@@ -4,9 +4,9 @@ use sqlx::sqlite::SqlitePoolOptions;
 use sqlx::{Row, SqlitePool};
 
 #[tokio::test]
-async fn sqlite_usage_settlement_debits_points_once_and_links_usage_to_ledger() {
+async fn sqlite_usage_settlement_debits_appbase_points_once_and_links_usage_to_ledger() {
     let pool = test_pool().await;
-    seed_points_account(&pool, 701, 1000).await;
+    seed_points_account(&pool, "account-701", 1000).await;
     seed_usage_fact(&pool, 501, "req-usage-501", "7.722000", 18, Some(0)).await;
     let store = SqliteUsageSettlementStore::new(pool.clone());
 
@@ -29,7 +29,15 @@ async fn sqlite_usage_settlement_debits_points_once_and_links_usage_to_ledger() 
         922,
         scalar_i64(
             &pool,
-            "SELECT available_points FROM plus_account WHERE id = 701"
+            "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE id = 'account-701'"
+        )
+        .await
+    );
+    assert_eq!(
+        1,
+        scalar_i64(
+            &pool,
+            "SELECT version FROM commerce_account WHERE id = 'account-701'"
         )
         .await
     );
@@ -39,12 +47,16 @@ async fn sqlite_usage_settlement_debits_points_once_and_links_usage_to_ledger() 
     );
     assert_eq!(
         1,
-        scalar_i64(&pool, "SELECT COUNT(1) FROM plus_account_history").await
+        scalar_i64(
+            &pool,
+            "SELECT COUNT(1) FROM commerce_account_ledger_entry WHERE business_type = 'usage'"
+        )
+        .await
     );
 
     let settlement = sqlx::query(
         r#"
-        SELECT id, settlement_no, usage_fact_id, account_id, account_history_id, amount, points, tokens, currency, settlement_status, failure_code
+        SELECT id, settlement_no, usage_fact_id, account_id, account_ledger_entry_id, asset_type, direction, amount, points, tokens, currency, settlement_status, failure_code
         FROM commerce_usage_settlement
         WHERE usage_fact_id = 501
         "#,
@@ -53,12 +65,14 @@ async fn sqlite_usage_settlement_debits_points_once_and_links_usage_to_ledger() 
     .await
     .unwrap();
     let settlement_id = settlement.get::<i64, _>("id");
-    let account_history_id = settlement.get::<i64, _>("account_history_id");
+    let ledger_entry_id = settlement.get::<String, _>("account_ledger_entry_id");
     let settlement_no = settlement.get::<String, _>("settlement_no");
     assert_eq!("usage-settlement-501", settlement_no);
     assert_eq!(501, settlement.get::<i64, _>("usage_fact_id"));
-    assert_eq!(701, settlement.get::<i64, _>("account_id"));
-    assert!(account_history_id > 0);
+    assert_eq!("account-701", settlement.get::<String, _>("account_id"));
+    assert!(!ledger_entry_id.is_empty());
+    assert_eq!("points", settlement.get::<String, _>("asset_type"));
+    assert_eq!("debit", settlement.get::<String, _>("direction"));
     assert_eq!("7.722000", settlement.get::<String, _>("amount"));
     assert_eq!(78, settlement.get::<i64, _>("points"));
     assert_eq!(18, settlement.get::<i64, _>("tokens"));
@@ -71,32 +85,34 @@ async fn sqlite_usage_settlement_debits_points_once_and_links_usage_to_ledger() 
 
     let ledger = sqlx::query(
         r#"
-        SELECT transaction_id, transaction_type, asset_type, points_change, points_before, points_after, source_type, source_id, status, usage_result, remarks
-        FROM plus_account_history
+        SELECT tenant_id, organization_id, account_id, owner_user_id, asset_type, direction, amount, balance_after, business_type, transaction_no, request_no, idempotency_key, source_type, source_id, remark
+        FROM commerce_account_ledger_entry
         WHERE id = ?
         "#,
     )
-    .bind(account_history_id)
+    .bind(&ledger_entry_id)
     .fetch_one(&pool)
     .await
     .unwrap();
-    assert_eq!(settlement_no, ledger.get::<String, _>("transaction_id"));
-    assert_eq!(22, ledger.get::<i64, _>("transaction_type"));
-    assert_eq!(2, ledger.get::<i64, _>("asset_type"));
-    assert_eq!(-78, ledger.get::<i64, _>("points_change"));
-    assert_eq!(1000, ledger.get::<i64, _>("points_before"));
-    assert_eq!(922, ledger.get::<i64, _>("points_after"));
-    assert_eq!(8, ledger.get::<i64, _>("source_type"));
+    assert_eq!("10", ledger.get::<String, _>("tenant_id"));
+    assert_eq!("20", ledger.get::<String, _>("organization_id"));
+    assert_eq!("account-701", ledger.get::<String, _>("account_id"));
+    assert_eq!("30", ledger.get::<String, _>("owner_user_id"));
+    assert_eq!("points", ledger.get::<String, _>("asset_type"));
+    assert_eq!("debit", ledger.get::<String, _>("direction"));
+    assert_eq!("78", ledger.get::<String, _>("amount"));
+    assert_eq!("922", ledger.get::<String, _>("balance_after"));
+    assert_eq!("usage", ledger.get::<String, _>("business_type"));
+    assert_eq!(settlement_no, ledger.get::<String, _>("transaction_no"));
+    assert_eq!("req-usage-501", ledger.get::<String, _>("request_no"));
     assert_eq!(
-        settlement_id.to_string(),
-        ledger.get::<String, _>("source_id")
+        "usage-settlement-501",
+        ledger.get::<String, _>("idempotency_key")
     );
-    assert_eq!(2, ledger.get::<i64, _>("status"));
+    assert_eq!("ai_usage_fact", ledger.get::<String, _>("source_type"));
+    assert_eq!("501", ledger.get::<String, _>("source_id"));
     assert!(ledger
-        .get::<String, _>("usage_result")
-        .contains("\"usage_fact_id\":501"));
-    assert!(ledger
-        .get::<String, _>("remarks")
+        .get::<String, _>("remark")
         .contains("usage_request=req-usage-501"));
 
     let usage =
@@ -111,7 +127,7 @@ async fn sqlite_usage_settlement_debits_points_once_and_links_usage_to_ledger() 
 #[tokio::test]
 async fn sqlite_usage_settlement_skips_usage_without_explicit_settlement_status() {
     let pool = test_pool().await;
-    seed_points_account(&pool, 701, 1000).await;
+    seed_points_account(&pool, "account-701", 1000).await;
     seed_usage_fact(&pool, 504, "req-usage-504", "5.000000", 10, None).await;
     let store = SqliteUsageSettlementStore::new(pool.clone());
 
@@ -127,7 +143,7 @@ async fn sqlite_usage_settlement_skips_usage_without_explicit_settlement_status(
         1000,
         scalar_i64(
             &pool,
-            "SELECT available_points FROM plus_account WHERE id = 701"
+            "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE id = 'account-701'"
         )
         .await
     );
@@ -137,7 +153,7 @@ async fn sqlite_usage_settlement_skips_usage_without_explicit_settlement_status(
     );
     assert_eq!(
         0,
-        scalar_i64(&pool, "SELECT COUNT(1) FROM plus_account_history").await
+        scalar_i64(&pool, "SELECT COUNT(1) FROM commerce_account_ledger_entry").await
     );
     assert!(
         sqlx::query("SELECT settlement_status FROM ai_usage_fact WHERE id = 504")
@@ -152,7 +168,7 @@ async fn sqlite_usage_settlement_skips_usage_without_explicit_settlement_status(
 #[tokio::test]
 async fn sqlite_usage_settlement_marks_insufficient_points_failed_and_allows_retry() {
     let pool = test_pool().await;
-    seed_points_account(&pool, 701, 1000).await;
+    seed_points_account(&pool, "account-701", 1000).await;
     seed_usage_fact(&pool, 502, "req-usage-502", "100.010000", 99, Some(0)).await;
     let store = SqliteUsageSettlementStore::new(pool.clone());
 
@@ -168,13 +184,13 @@ async fn sqlite_usage_settlement_marks_insufficient_points_failed_and_allows_ret
         1000,
         scalar_i64(
             &pool,
-            "SELECT available_points FROM plus_account WHERE id = 701"
+            "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE id = 'account-701'"
         )
         .await
     );
     assert_eq!(
         0,
-        scalar_i64(&pool, "SELECT COUNT(1) FROM plus_account_history").await
+        scalar_i64(&pool, "SELECT COUNT(1) FROM commerce_account_ledger_entry").await
     );
     assert_eq!(
         3,
@@ -193,7 +209,7 @@ async fn sqlite_usage_settlement_marks_insufficient_points_failed_and_allows_ret
         .await
     );
 
-    sqlx::query("UPDATE plus_account SET available_points = 2000 WHERE id = 701")
+    sqlx::query("UPDATE commerce_account SET available_amount = '2000' WHERE id = 'account-701'")
         .execute(&pool)
         .await
         .unwrap();
@@ -209,7 +225,7 @@ async fn sqlite_usage_settlement_marks_insufficient_points_failed_and_allows_ret
         999,
         scalar_i64(
             &pool,
-            "SELECT available_points FROM plus_account WHERE id = 701"
+            "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE id = 'account-701'"
         )
         .await
     );
@@ -219,7 +235,7 @@ async fn sqlite_usage_settlement_marks_insufficient_points_failed_and_allows_ret
     );
     assert_eq!(
         1,
-        scalar_i64(&pool, "SELECT COUNT(1) FROM plus_account_history").await
+        scalar_i64(&pool, "SELECT COUNT(1) FROM commerce_account_ledger_entry").await
     );
     assert_eq!(
         2,
@@ -250,7 +266,7 @@ async fn sqlite_usage_settlement_marks_insufficient_points_failed_and_allows_ret
 #[tokio::test]
 async fn sqlite_usage_settlement_zero_tenant_command_settles_global_pending_usage() {
     let pool = test_pool().await;
-    seed_points_account(&pool, 701, 1000).await;
+    seed_points_account(&pool, "account-701", 1000).await;
     seed_usage_fact(&pool, 503, "req-usage-503", "0.990000", 2, Some(0)).await;
     let store = SqliteUsageSettlementStore::new(pool.clone());
 
@@ -278,7 +294,7 @@ async fn sqlite_usage_settlement_zero_tenant_command_settles_global_pending_usag
         990,
         scalar_i64(
             &pool,
-            "SELECT available_points FROM plus_account WHERE id = 701"
+            "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE id = 'account-701'"
         )
         .await
     );
@@ -365,10 +381,10 @@ async fn create_schema(pool: &SqlitePool) {
             metadata TEXT NOT NULL,
             settlement_no TEXT,
             usage_fact_id INTEGER NOT NULL,
-            account_id INTEGER,
-            account_history_id INTEGER,
-            asset_type INTEGER,
-            direction INTEGER,
+            account_id TEXT,
+            account_ledger_entry_id TEXT,
+            asset_type TEXT,
+            direction TEXT,
             amount TEXT,
             points INTEGER,
             tokens INTEGER,
@@ -380,68 +396,57 @@ async fn create_schema(pool: &SqlitePool) {
             failure_message TEXT,
             UNIQUE (tenant_id, organization_id, usage_fact_id)
         )"#,
-        r#"CREATE TABLE plus_account (
-            id INTEGER PRIMARY KEY,
-            uuid TEXT NOT NULL,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            data_scope INTEGER NOT NULL,
+        r#"CREATE TABLE commerce_account (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            owner_user_id TEXT NOT NULL,
+            asset_type TEXT NOT NULL,
+            currency_code TEXT,
+            available_amount TEXT NOT NULL DEFAULT '0',
+            frozen_amount TEXT NOT NULL DEFAULT '0',
+            version INTEGER NOT NULL DEFAULT 0,
+            status TEXT NOT NULL,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL,
-            user_id INTEGER NOT NULL,
-            account_type INTEGER NOT NULL,
-            owner INTEGER,
-            owner_id INTEGER,
-            available_balance TEXT,
-            frozen_balance TEXT,
-            available_points INTEGER,
-            frozen_points INTEGER,
-            token_balance INTEGER,
-            frozen_token INTEGER,
-            status INTEGER NOT NULL,
-            UNIQUE (tenant_id, organization_id, user_id, account_type)
+            UNIQUE (tenant_id, organization_id, owner_user_id, asset_type, currency_code)
         )"#,
-        r#"CREATE TABLE plus_account_history (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            data_scope INTEGER NOT NULL,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL,
-            account_type INTEGER,
-            asset_type INTEGER,
-            account_id INTEGER,
-            transaction_id TEXT,
-            transaction_type INTEGER,
-            points_change INTEGER,
-            points_before INTEGER,
-            points_after INTEGER,
-            source_type INTEGER,
+        r#"CREATE TABLE commerce_account_ledger_entry (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            account_id TEXT NOT NULL,
+            owner_user_id TEXT NOT NULL,
+            asset_type TEXT NOT NULL,
+            direction TEXT NOT NULL,
+            amount TEXT NOT NULL,
+            balance_after TEXT NOT NULL,
+            business_type TEXT NOT NULL,
+            transaction_no TEXT NOT NULL,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            source_type TEXT,
             source_id TEXT,
-            status INTEGER,
-            usage_result TEXT,
-            remarks TEXT
+            remark TEXT,
+            created_at TEXT NOT NULL,
+            UNIQUE (tenant_id, transaction_no)
         )"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
 }
 
-async fn seed_points_account(pool: &SqlitePool, account_id: i64, available_points: i64) {
+async fn seed_points_account(pool: &SqlitePool, account_id: &str, available_points: i64) {
     sqlx::query(
         r#"
-        INSERT INTO plus_account
-            (id, uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, user_id, account_type, owner, owner_id, available_balance, frozen_balance, available_points, frozen_points, token_balance, frozen_token, status)
+        INSERT INTO commerce_account
+            (id, tenant_id, organization_id, owner_user_id, asset_type, currency_code, available_amount, frozen_amount, version, status, created_at, updated_at)
         VALUES
-            (?, ?, 10, 20, 1, '2026-04-30T11:59:00Z', '2026-04-30T11:59:00Z', 0, 30, 2, 0, 30, '0', '0', ?, 0, 0, 0, 1)
+            (?, '10', '20', '30', 'points', 'POINT', ?, '0', 0, 'active', '2026-04-30T11:59:00Z', '2026-04-30T11:59:00Z')
         "#,
     )
     .bind(account_id)
-    .bind(format!("account-{account_id}"))
-    .bind(available_points)
+    .bind(available_points.to_string())
     .execute(pool)
     .await
     .unwrap();

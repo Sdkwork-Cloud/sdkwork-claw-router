@@ -2,13 +2,13 @@ import Foundation
 
 public class AgentsApi {
     private let client: HttpClient
-    
+
     public init(client: HttpClient) {
         self.client = client
     }
 
     /// List managed agents
-    public func list(q: String? = nil, ownerUserId: Int? = nil, status: String? = nil, visibility: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> AgentsListResult? {
+    public func agentDefinitionsList(q: String? = nil, ownerUserId: Int? = nil, status: String? = nil, visibility: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> AgentDefinitionsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "owner_user_id", value: ownerUserId, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -17,12 +17,12 @@ public class AgentsApi {
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
-        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/agents"), query), responseType: AgentsListResult.self)
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/agents"), query), responseType: AgentDefinitionsListResult.self)
     }
 
     /// Retrieve managed agent
-    public func retrieve(agentId: String) async throws -> AgentsRetrieveResult? {
-        return try await client.get(ApiPaths.backendPath("/agents/\(serializePathParameter(agentId, PathParameterSpec(name: "agentId", style: "simple", explode: false)))"), responseType: AgentsRetrieveResult.self)
+    public func agentDefinitionsRetrieve(agentId: String) async throws -> AgentDefinitionsRetrieveResult? {
+        return try await client.get(ApiPaths.backendPath("/agents/\(serializePathParameter(agentId, PathParameterSpec(name: "agentId", style: "simple", explode: false)))"), responseType: AgentDefinitionsRetrieveResult.self)
     }
 
     private struct PathParameterSpec {

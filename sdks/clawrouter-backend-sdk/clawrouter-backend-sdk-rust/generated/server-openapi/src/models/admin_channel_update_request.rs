@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{ProviderRetryPolicy};
+use crate::models::{ProviderCircuitBreakerPolicy, ProviderRetryPolicy};
 
 /// Admin channel update request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -10,6 +10,11 @@ pub struct AdminChannelUpdateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub access_type: Option<String>,
 
+    /// Plaintext provider API key accepted only on create/update input. Backend encrypts it into integration_provider_account.auth_config and never returns it.
+    #[serde(rename = "apiKey")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub api_key: Option<String>,
+
     /// Base url field on admin channel update request.
     #[serde(rename = "baseUrl")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -18,6 +23,16 @@ pub struct AdminChannelUpdateRequest {
     /// Capabilities field on admin channel update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub capabilities: Option<Vec<String>>,
+
+    /// Circuit breaker policy field on admin channel update request.
+    #[serde(rename = "circuitBreakerPolicy")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub circuit_breaker_policy: Option<ProviderCircuitBreakerPolicy>,
+
+    /// Expires at field on admin channel update request.
+    #[serde(rename = "expiresAt")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub expires_at: Option<String>,
 
     /// Id field on admin channel update request.
     pub id: String,
@@ -39,7 +54,7 @@ pub struct AdminChannelUpdateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub retry_policy: Option<ProviderRetryPolicy>,
 
-    /// Vault/KMS secret reference. Plaintext credential fields are forbidden.
+    /// Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead.
     #[serde(rename = "secretRef")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub secret_ref: Option<String>,

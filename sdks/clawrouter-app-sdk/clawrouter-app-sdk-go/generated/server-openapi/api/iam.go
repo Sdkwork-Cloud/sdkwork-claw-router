@@ -17,6 +17,16 @@ func NewIamApi(client *sdkhttp.Client) *IamApi {
     return &IamApi{client: client}
 }
 
+// List groups
+func (a *IamApi) ApiKeyGroupsList() (sdktypes.ApiKeyGroupsListResult, error) {
+    raw, err := a.client.Get(AppApiPath("/iam/api_key_groups"), nil, nil)
+    if err != nil {
+        var zero sdktypes.ApiKeyGroupsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ApiKeyGroupsListResult](raw)
+}
+
 // List keys
 func (a *IamApi) ApiKeysList() (sdktypes.ApiKeysListResult, error) {
     raw, err := a.client.Get(AppApiPath("/iam/api_keys"), nil, nil)

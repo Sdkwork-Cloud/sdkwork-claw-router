@@ -11,6 +11,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? Balance { get; set; }
         public string? BaseUrl { get; set; }
         public List<string>? Capabilities { get; set; }
+        public ProviderCircuitBreakerPolicy? CircuitBreakerPolicy { get; set; }
         public int? Errors { get; set; }
         public string? Id { get; set; }
         public bool? IsMultimodal { get; set; }

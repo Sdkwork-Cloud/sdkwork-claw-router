@@ -8,7 +8,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
     {
         public string? Code { get; set; }
         public AdminModelVendorsResponse? Data { get; set; }
-        public string? Message { get; set; }
         public string? Msg { get; set; }
     }
 }

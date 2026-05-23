@@ -1,0 +1,537 @@
+fragment: operations/app-platform
+frontend_operations:
+- route: /apps
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/appService.ts
+  operation: getApps
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/platform/apps/store
+  description: Returns public App Store entries where PlusApp runtime status is ACTIVE and config.portal.marketStatus is PUBLISHED. Authenticated positive-organization app sessions may read same-tenant public organization_id = 0 app projections;
+    tenant isolation is always enforced.
+  read_sources:
+  - plus_app
+  - plus_category
+  - studio_catalog_action
+  - studio_catalog_asset
+  - studio_catalog_artifact
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int32
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int32
+      minimum: 1
+      maximum: 100
+  - name: q
+    schema:
+      type: string
+      maxLength: 128
+  - name: status
+    schema:
+      type: string
+      enum:
+      - ACTIVE
+      - INACTIVE
+  - name: start_time
+    schema:
+      type: string
+      format: date-time
+      maxLength: 64
+      description: UTC ISO-8601 date-time ending in Z or a local date/date-time without timezone offset.
+  - name: end_time
+    schema:
+      type: string
+      format: date-time
+      maxLength: 64
+      description: UTC ISO-8601 date-time ending in Z or a local date/date-time without timezone offset.
+  response_schema:
+    name: AppCatalogResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 100
+        items:
+          name: AppCatalogItem
+          type: object
+          additionalProperties: false
+          required: &id001
+          - id
+          - name
+          - developer
+          - category
+          - image
+          - rating
+          - description
+          - downloads
+          - screenshots
+          - features
+          - releases
+          properties: &id002
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+              description: Stable application identity from plus_app.config.standard.appKey when present; falls back to plus_app.id only when appKey is absent.
+            name:
+              type: string
+              minLength: 1
+              maxLength: 128
+            developer:
+              type: string
+              minLength: 1
+              maxLength: 128
+            category:
+              type: string
+              minLength: 1
+              maxLength: 128
+            image:
+              type: string
+              maxLength: 2048
+            rating:
+              type: number
+              minimum: 0
+              maximum: 5
+            description:
+              type: string
+              maxLength: 4096
+            downloads:
+              type: string
+              maxLength: 64
+            screenshots:
+              type: array
+              maxItems: 20
+              items:
+                type: string
+                maxLength: 2048
+            features:
+              type: array
+              maxItems: 64
+              items:
+                type: string
+                minLength: 1
+                maxLength: 128
+            releases:
+              type: array
+              maxItems: 64
+              items:
+                name: AppReleaseItem
+                type: object
+                additionalProperties: false
+                required:
+                - id
+                - platformType
+                - os
+                - version
+                - size
+                - releaseDate
+                - downloadUrl
+                properties:
+                  id:
+                    type: string
+                    minLength: 1
+                    maxLength: 128
+                  platformType:
+                    type: string
+                    enum:
+                    - Desktop
+                    - Mobile
+                    - Web
+                    - Mini Program
+                  os:
+                    type: string
+                    enum:
+                    - Windows
+                    - macOS
+                    - Linux
+                    - iOS
+                    - Android
+                    - HarmonyOS
+                    - PC Web
+                    - Mobile Web
+                    - WeChat
+                    - Alipay
+                    - ByteDance
+                    - Baidu
+                    - QuickApp
+                  version:
+                    type: string
+                    minLength: 1
+                    maxLength: 64
+                  size:
+                    type: string
+                    maxLength: 64
+                  releaseDate:
+                    type: string
+                    maxLength: 64
+                  downloadUrl:
+                    type: string
+                    maxLength: 2048
+                  whatsNew:
+                    type: string
+                    maxLength: 4096
+- route: /apps
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/appService.ts
+  operation: getAppById
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/platform/apps/store/{appId}
+  description: Path parameter appId accepts either the stable appKey or numeric plus_app.id and applies the same ACTIVE/PUBLISHED and public organization_id = 0 visibility rules as getApps.
+  read_sources:
+  - plus_app
+  - plus_category
+  - studio_catalog_action
+  - studio_catalog_asset
+  - studio_catalog_artifact
+  query_parameters: []
+  response_schema:
+    name: AppDetailResponse
+    type: object
+    additionalProperties: false
+    required: *id001
+    properties: *id002
+- route: /apps
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/appService.ts
+  operation: getCategories
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/platform/apps/store/categories
+  read_sources:
+  - plus_category
+  query_parameters: []
+  response_schema:
+    name: AppCategoriesResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 100
+        items:
+          type: string
+          minLength: 1
+          maxLength: 128
+- route: /auth/login
+  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  operation: generateLoginQrCode
+  operation_id: qrAuth.sessions.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/open_platform/qr_auth/sessions
+  sdk_domain: platform
+  summary: Create open platform QR auth session
+  description: Creates a short-lived QR auth session. Without a default open platform account the QR content is a normal fallback URL that any scanner can open and complete with password login or registration; configured official-account and
+    mini-app defaults return their bound entry URLs with session context.
+  request_body_required: true
+  request_schema:
+    name: OpenPlatformQrAuthSessionCreateRequest
+    required:
+    - purpose
+    properties:
+      purpose:
+        type: string
+        enum:
+        - login
+        - register
+  read_sources:
+  - iam_security_event
+  - open_platform_account
+  - open_platform_entry
+  write_tables:
+  - iam_security_event
+  response_schema: &id003
+    name: OpenPlatformQrAuthSessionResponse
+    required:
+    - id
+    - sessionKey
+    - purpose
+    - qrContent
+    - fallbackUrl
+    - status
+    - expiresAt
+    - createdAt
+    - updatedAt
+    properties:
+      id:
+        type: string
+        minLength: 1
+        maxLength: 160
+      sessionKey:
+        type: string
+        minLength: 1
+        maxLength: 128
+      purpose:
+        type: string
+        enum:
+        - login
+        - register
+      defaultAccountId:
+        type: string
+        nullable: true
+        maxLength: 128
+      defaultEntryId:
+        type: string
+        nullable: true
+        maxLength: 128
+      defaultProvider:
+        type: string
+        nullable: true
+        enum:
+        - wechat
+        - alipay
+        - douyin
+        - baidu
+        - kuaishou
+        - feishu
+      defaultAccountType:
+        type: string
+        nullable: true
+        enum:
+        - official_account
+        - mini_app
+      qrContent:
+        type: object
+        additionalProperties: false
+        required:
+        - content
+        - mode
+        properties:
+          content:
+            type: string
+            minLength: 1
+            maxLength: 2048
+          mode:
+            type: string
+            enum:
+            - fallback_url
+            - official_account_entry
+            - mini_app_url
+      fallbackUrl:
+        type: string
+        minLength: 1
+        maxLength: 2048
+      status:
+        type: string
+        enum:
+        - pending
+        - scanned
+        - completed
+        - expired
+        - cancelled
+      scannedAt:
+        type: string
+        nullable: true
+        maxLength: 64
+      completedAt:
+        type: string
+        nullable: true
+        maxLength: 64
+      expiresAt:
+        type: string
+        maxLength: 64
+      createdAt:
+        type: string
+        maxLength: 64
+      updatedAt:
+        type: string
+        maxLength: 64
+      session:
+        $ref: '#/components/schemas/IamSessionResponse'
+      token:
+        $ref: '#/components/schemas/IamSessionResponse'
+      userInfo:
+        $ref: '#/components/schemas/IamUserResponse'
+- route: /auth/login
+  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  operation: checkLoginQrCodeStatus
+  operation_id: qrAuth.sessions.retrieve
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/open_platform/qr_auth/sessions/{sessionKey}
+  sdk_domain: platform
+  summary: Retrieve open platform QR auth session
+  description: Retrieves the current QR auth session status. Desktop login pages poll this endpoint and receive the IAM session when password, webhook, or external platform completion succeeds.
+  query_parameters: []
+  path_parameters:
+  - name: sessionKey
+    required: true
+    schema:
+      type: string
+      minLength: 1
+      maxLength: 128
+  read_sources:
+  - iam_session
+  - iam_user
+  - iam_security_event
+  response_schema: *id003
+- route: /auth/login
+  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  operation: callbackLoginQrCode
+  operation_id: qrAuth.sessions.scans.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/open_platform/qr_auth/sessions/{sessionKey}/scans
+  sdk_domain: platform
+  summary: Record open platform QR auth scan
+  description: Records the scanner source and optional platform binding for a QR auth session. This endpoint never accepts raw OpenID; platform identifiers must be hashed or provider-neutral external IDs.
+  path_parameters:
+  - name: sessionKey
+    required: true
+    schema:
+      type: string
+      minLength: 1
+      maxLength: 128
+  read_sources:
+  - iam_security_event
+  write_tables:
+  - iam_security_event
+  request_schema:
+    name: OpenPlatformQrAuthScanCreateRequest
+    required:
+    - scanSource
+    properties:
+      scanSource:
+        type: string
+        enum:
+        - app
+        - browser
+        - mini_app
+        - official_account
+        - webhook
+      accountId:
+        type: string
+        maxLength: 128
+      entryId:
+        type: string
+        maxLength: 128
+      externalUserId:
+        type: string
+        maxLength: 128
+      ipHash:
+        type: string
+        minLength: 64
+        maxLength: 64
+        pattern: ^[A-Fa-f0-9]{64}$
+      userAgent:
+        type: string
+        maxLength: 256
+  response_schema:
+    name: OpenPlatformQrAuthScanResponse
+    required:
+    - id
+    - sessionId
+    - sessionKey
+    - scanSource
+    - createdAt
+    properties:
+      id:
+        type: string
+        minLength: 1
+        maxLength: 160
+      sessionId:
+        type: string
+        minLength: 1
+        maxLength: 160
+      sessionKey:
+        type: string
+        minLength: 1
+        maxLength: 128
+      accountId:
+        type: string
+        nullable: true
+        maxLength: 128
+      entryId:
+        type: string
+        nullable: true
+        maxLength: 128
+      externalUserId:
+        type: string
+        nullable: true
+        maxLength: 128
+      scanSource:
+        type: string
+        enum:
+        - app
+        - browser
+        - mini_app
+        - official_account
+        - webhook
+      ipHash:
+        type: string
+        maxLength: 64
+      userAgent:
+        type: string
+        maxLength: 256
+      createdAt:
+        type: string
+        maxLength: 64
+- route: /auth/login
+  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  operation: confirmLoginQrCode
+  operation_id: qrAuth.sessions.passwords.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/open_platform/qr_auth/sessions/{sessionKey}/passwords
+  sdk_domain: platform
+  summary: Complete open platform QR auth by password
+  description: Completes a scanned QR auth session with password login or password registration according to the session purpose, then exposes the issued IAM session to the polling desktop login page.
+  path_parameters:
+  - name: sessionKey
+    required: true
+    schema:
+      type: string
+      minLength: 1
+      maxLength: 128
+  read_sources:
+  - iam_session
+  - iam_user
+  - iam_credential
+  - iam_security_event
+  write_tables:
+  - iam_session
+  - iam_audit_event
+  - iam_security_event
+  request_schema:
+    name: OpenPlatformQrAuthPasswordCreateRequest
+    required:
+    - username
+    - password
+    properties:
+      username:
+        type: string
+        minLength: 1
+        maxLength: 128
+      password:
+        type: string
+        minLength: 1
+        maxLength: 128
+      confirmPassword:
+        type: string
+        maxLength: 128
+      email:
+        type: string
+        maxLength: 256
+      phone:
+        type: string
+        maxLength: 32
+      channel:
+        type: string
+        enum:
+        - EMAIL
+        - PHONE
+      verificationCode:
+        type: string
+        maxLength: 32
+  response_schema: *id003

@@ -4,6 +4,5 @@ package types
 type RoutingStrategyUpdateResult struct {
 	Code string `json:"code"`
 	Data UpdateRoutingStrategyResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

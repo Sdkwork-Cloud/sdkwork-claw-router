@@ -124,6 +124,18 @@ pub struct RevokeAppSessionCommand {
     pub detail_json: String,
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct RecordAppSecurityEventCommand {
+    pub security_event_id: String,
+    pub tenant_id: Option<i64>,
+    pub user_id: Option<i64>,
+    pub session_id: Option<String>,
+    pub event_type: String,
+    pub severity: String,
+    pub detail_json: String,
+    pub created_at: String,
+}
+
 pub type AppSessionEventStoreFuture<'a, T> =
     Pin<Box<dyn Future<Output = DomainResult<T>> + Send + 'a>>;
 
@@ -170,6 +182,17 @@ pub trait AppSessionEventStore {
         &'a self,
         _command: RevokeAppSessionCommand,
     ) -> AppSessionEventStoreFuture<'a, bool> {
+        Box::pin(async {
+            Err(crate::domain::DomainError::new(
+                "app session lifecycle store is not configured",
+            ))
+        })
+    }
+
+    fn record_app_security_event<'a>(
+        &'a self,
+        _command: RecordAppSecurityEventCommand,
+    ) -> AppSessionEventStoreFuture<'a, ()> {
         Box::pin(async {
             Err(crate::domain::DomainError::new(
                 "app session lifecycle store is not configured",

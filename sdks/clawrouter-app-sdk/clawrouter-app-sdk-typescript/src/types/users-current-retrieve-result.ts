@@ -7,7 +7,5 @@ export interface UsersCurrentRetrieveResult {
   /** Data field on users current retrieve result. */
   data?: IamUserResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

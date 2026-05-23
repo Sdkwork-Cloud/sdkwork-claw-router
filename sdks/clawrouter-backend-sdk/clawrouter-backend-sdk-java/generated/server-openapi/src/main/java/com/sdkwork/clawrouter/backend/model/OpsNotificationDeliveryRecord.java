@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.backend.model;
 import java.util.Map;
 
 public class OpsNotificationDeliveryRecord {
+    private String archivedAt;
     private String createdAt;
     private String dataScope;
     private String deletedAt;
@@ -17,6 +18,7 @@ public class OpsNotificationDeliveryRecord {
     private String organizationId;
     private String ownerId;
     private String ownerType;
+    private String popupSeenAt;
     private String readAt;
     private Integer retryCount;
     private String status;
@@ -26,10 +28,18 @@ public class OpsNotificationDeliveryRecord {
     private String uuid;
     private String version;
 
+    public String getArchivedAt() {
+        return this.archivedAt;
+    }
+
+    public void setArchivedAt(String archivedAt) {
+        this.archivedAt = archivedAt;
+    }
+
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -37,7 +47,7 @@ public class OpsNotificationDeliveryRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -45,7 +55,7 @@ public class OpsNotificationDeliveryRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -53,7 +63,7 @@ public class OpsNotificationDeliveryRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -61,7 +71,7 @@ public class OpsNotificationDeliveryRecord {
     public String getDeliveredAt() {
         return this.deliveredAt;
     }
-    
+
     public void setDeliveredAt(String deliveredAt) {
         this.deliveredAt = deliveredAt;
     }
@@ -69,7 +79,7 @@ public class OpsNotificationDeliveryRecord {
     public String getDeliveryChannel() {
         return this.deliveryChannel;
     }
-    
+
     public void setDeliveryChannel(String deliveryChannel) {
         this.deliveryChannel = deliveryChannel;
     }
@@ -77,7 +87,7 @@ public class OpsNotificationDeliveryRecord {
     public String getDeliveryStatus() {
         return this.deliveryStatus;
     }
-    
+
     public void setDeliveryStatus(String deliveryStatus) {
         this.deliveryStatus = deliveryStatus;
     }
@@ -85,7 +95,7 @@ public class OpsNotificationDeliveryRecord {
     public String getFailureCode() {
         return this.failureCode;
     }
-    
+
     public void setFailureCode(String failureCode) {
         this.failureCode = failureCode;
     }
@@ -93,7 +103,7 @@ public class OpsNotificationDeliveryRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -101,7 +111,7 @@ public class OpsNotificationDeliveryRecord {
     public String getMessageId() {
         return this.messageId;
     }
-    
+
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
@@ -109,7 +119,7 @@ public class OpsNotificationDeliveryRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -117,7 +127,7 @@ public class OpsNotificationDeliveryRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -125,7 +135,7 @@ public class OpsNotificationDeliveryRecord {
     public String getOwnerId() {
         return this.ownerId;
     }
-    
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -133,15 +143,23 @@ public class OpsNotificationDeliveryRecord {
     public String getOwnerType() {
         return this.ownerType;
     }
-    
+
     public void setOwnerType(String ownerType) {
         this.ownerType = ownerType;
+    }
+
+    public String getPopupSeenAt() {
+        return this.popupSeenAt;
+    }
+
+    public void setPopupSeenAt(String popupSeenAt) {
+        this.popupSeenAt = popupSeenAt;
     }
 
     public String getReadAt() {
         return this.readAt;
     }
-    
+
     public void setReadAt(String readAt) {
         this.readAt = readAt;
     }
@@ -149,7 +167,7 @@ public class OpsNotificationDeliveryRecord {
     public Integer getRetryCount() {
         return this.retryCount;
     }
-    
+
     public void setRetryCount(Integer retryCount) {
         this.retryCount = retryCount;
     }
@@ -157,7 +175,7 @@ public class OpsNotificationDeliveryRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -165,7 +183,7 @@ public class OpsNotificationDeliveryRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -173,7 +191,7 @@ public class OpsNotificationDeliveryRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -181,7 +199,7 @@ public class OpsNotificationDeliveryRecord {
     public String getUserId() {
         return this.userId;
     }
-    
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -189,7 +207,7 @@ public class OpsNotificationDeliveryRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -197,7 +215,7 @@ public class OpsNotificationDeliveryRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

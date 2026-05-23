@@ -11,5 +11,4 @@ class UsersSettingsUpdateResult:
     """Users settings update result schema exposed by Claw Router."""
     code: str
     data: Optional[UpdateSettingsResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

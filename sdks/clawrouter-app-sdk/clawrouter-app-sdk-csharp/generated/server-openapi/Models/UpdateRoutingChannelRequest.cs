@@ -9,6 +9,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? AccessType { get; set; }
         public string? BaseUrl { get; set; }
         public List<string>? Capabilities { get; set; }
+        public ProviderCircuitBreakerPolicy? CircuitBreakerPolicy { get; set; }
         public List<string>? Models { get; set; }
         public string? Name { get; set; }
         public string? Protocol { get; set; }

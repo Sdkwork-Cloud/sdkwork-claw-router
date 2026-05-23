@@ -7,7 +7,5 @@ export interface GenerationListResult {
   /** Data field on generation list result. */
   data?: GenerationHistoryResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

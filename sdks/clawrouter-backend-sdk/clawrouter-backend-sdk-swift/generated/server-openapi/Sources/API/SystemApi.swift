@@ -2,9 +2,20 @@ import Foundation
 
 public class SystemApi {
     private let client: HttpClient
-    
+
     public init(client: HttpClient) {
         self.client = client
+    }
+
+    /// List overview
+    public func analyticsAdminOverviewRetrieve(timeRange: String? = nil, startTime: String? = nil, endTime: String? = nil, limit: Int? = nil) async throws -> AnalyticsAdminOverviewRetrieveResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "time_range", value: timeRange, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "start_time", value: startTime, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "end_time", value: endTime, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "limit", value: limit, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/system/analytics/admin/overview"), query), responseType: AnalyticsAdminOverviewRetrieveResult.self)
     }
 
     /// Retrieve IAM auth runtime settings
@@ -21,6 +32,50 @@ public class SystemApi {
             [:]
         )
         return try await client.patch(ApiPaths.backendPath("/system/auth/settings"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AuthSettingsUpdateResult.self)
+    }
+
+    /// Delete one runtime cache instance
+    public func cacheInstancesDelete(instanceName: String) async throws -> CacheInstancesDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/system/cache/instances/\(serializePathParameter(instanceName, PathParameterSpec(name: "instanceName", style: "simple", explode: false)))"), responseType: CacheInstancesDeleteResult.self)
+    }
+
+    /// Refresh one runtime cache instance
+    public func cacheInstancesRefreshCreate(instanceName: String) async throws -> CacheInstancesRefreshCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/system/cache/instances/\(serializePathParameter(instanceName, PathParameterSpec(name: "instanceName", style: "simple", explode: false)))/refresh"), body: nil, responseType: CacheInstancesRefreshCreateResult.self)
+    }
+
+    /// Delete a runtime cache namespace
+    public func cacheNamespacesDelete(namespace: String) async throws -> CacheNamespacesDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/system/cache/namespaces/\(serializePathParameter(namespace, PathParameterSpec(name: "namespace", style: "simple", explode: false)))"), responseType: CacheNamespacesDeleteResult.self)
+    }
+
+    /// List runtime cache keys in a namespace
+    public func cacheNamespacesKeysList(namespace: String, limit: Int? = nil, cursor: String? = nil) async throws -> CacheNamespacesKeysListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "limit", value: limit, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "cursor", value: cursor, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/system/cache/namespaces/\(serializePathParameter(namespace, PathParameterSpec(name: "namespace", style: "simple", explode: false)))/keys"), query), responseType: CacheNamespacesKeysListResult.self)
+    }
+
+    /// Delete a runtime cache key
+    public func cacheNamespacesKeysDelete(namespace: String, key: String) async throws -> CacheNamespacesKeysDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/system/cache/namespaces/\(serializePathParameter(namespace, PathParameterSpec(name: "namespace", style: "simple", explode: false)))/keys/\(serializePathParameter(key, PathParameterSpec(name: "key", style: "simple", explode: false)))"), responseType: CacheNamespacesKeysDeleteResult.self)
+    }
+
+    /// Refresh one runtime cache namespace
+    public func cacheNamespacesRefreshCreate(namespace: String) async throws -> CacheNamespacesRefreshCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/system/cache/namespaces/\(serializePathParameter(namespace, PathParameterSpec(name: "namespace", style: "simple", explode: false)))/refresh"), body: nil, responseType: CacheNamespacesRefreshCreateResult.self)
+    }
+
+    /// Retrieve runtime cache overview
+    public func cacheOverviewRetrieve() async throws -> CacheOverviewRetrieveResult? {
+        return try await client.get(ApiPaths.backendPath("/system/cache/overview"), responseType: CacheOverviewRetrieveResult.self)
+    }
+
+    /// Refresh all runtime cache instances
+    public func cacheRefreshCreate() async throws -> CacheRefreshCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/system/cache/refresh"), body: nil, responseType: CacheRefreshCreateResult.self)
     }
 
     /// List dashboard data
@@ -52,6 +107,11 @@ public class SystemApi {
     /// List installation status
     public func installationStatusRetrieve() async throws -> InstallationStatusRetrieveResult? {
         return try await client.get(ApiPaths.backendPath("/system/installation/status"), responseType: InstallationStatusRetrieveResult.self)
+    }
+
+    /// List referral stats
+    public func marketingReferralStatsList() async throws -> MarketingReferralStatsListResult? {
+        return try await client.get(ApiPaths.backendPath("/system/marketing/referral_stats"), responseType: MarketingReferralStatsListResult.self)
     }
 
     /// List alerts
@@ -127,6 +187,22 @@ public class SystemApi {
             QueryParameterSpec(name: "model", value: model, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/system/records"), query), responseType: RecordsListResult.self)
+    }
+
+    /// Retrieve site branding and deployment personalization settings
+    public func siteSettingsRetrieve() async throws -> SiteSettingsRetrieveResult? {
+        return try await client.get(ApiPaths.backendPath("/system/site/settings"), responseType: SiteSettingsRetrieveResult.self)
+    }
+
+    /// Update site branding and deployment personalization settings
+    public func siteSettingsUpdate(body: AdminSiteSettingsUpdateRequest, xRequestId: String? = nil) async throws -> SiteSettingsUpdateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.patch(ApiPaths.backendPath("/system/site/settings"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SiteSettingsUpdateResult.self)
     }
 
     private struct PathParameterSpec {

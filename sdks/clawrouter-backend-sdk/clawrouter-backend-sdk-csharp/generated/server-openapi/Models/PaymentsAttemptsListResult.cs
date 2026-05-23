@@ -7,8 +7,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class PaymentsAttemptsListResult
     {
         public string? Code { get; set; }
-        public AdminPaymentAttemptsResponse? Data { get; set; }
-        public string? Message { get; set; }
+        public CommercePaymentAttemptListResponse? Data { get; set; }
         public string? Msg { get; set; }
     }
 }

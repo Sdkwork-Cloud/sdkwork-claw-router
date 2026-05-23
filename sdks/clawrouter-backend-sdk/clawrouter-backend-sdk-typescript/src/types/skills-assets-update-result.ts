@@ -7,7 +7,5 @@ export interface SkillsAssetsUpdateResult {
   /** Data field on skills assets update result. */
   data?: AdminSkillAssetMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

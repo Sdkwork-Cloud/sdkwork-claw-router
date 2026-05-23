@@ -11,5 +11,4 @@ class RoutingRequestTracesListResult:
     """Routing request traces list result schema exposed by Claw Router."""
     code: str
     data: Optional[RoutingRequestTracesResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

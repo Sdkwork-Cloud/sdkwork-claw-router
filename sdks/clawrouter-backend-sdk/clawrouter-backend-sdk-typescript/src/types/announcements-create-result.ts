@@ -7,7 +7,5 @@ export interface AnnouncementsCreateResult {
   /** Data field on announcements create result. */
   data?: AdminAnnouncementMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

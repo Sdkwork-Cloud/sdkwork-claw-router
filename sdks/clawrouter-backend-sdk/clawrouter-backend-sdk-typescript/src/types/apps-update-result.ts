@@ -7,7 +7,5 @@ export interface AppsUpdateResult {
   /** Data field on apps update result. */
   data?: AdminAppMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

@@ -11,5 +11,4 @@ class AccountTokensDeductionsCreateResult:
     """Account tokens deductions create result schema exposed by Claw Router."""
     code: str
     data: Optional[CommerceOperationResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

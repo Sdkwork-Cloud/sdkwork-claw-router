@@ -1,0 +1,43 @@
+fragment: models/console-account
+frontend_models:
+- route: /console/account
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src/accountService.ts
+  interface: AccountStats
+  fields:
+  - id
+  - name
+  - email
+  - isVerified
+  - tier
+  - organization
+  - availableCredits
+  - estDaysRemaining
+  - monthlyConsumption
+  - consumptionByService
+  - consumptionByService.name
+  - consumptionByService.value
+  - consumptionByService.color
+  - consumptionByService.percentage
+  - invoiceSettings
+  - invoiceSettings.orgFull
+  - invoiceSettings.taxId
+  - invoiceSettings.paymentMethod
+  - invoiceSettings.invoiceType
+  - security
+  - security.mfaEnabled
+  - security.qpsLimit
+  - security.ipWhitelistCount
+  - loginLogs
+  - loginLogs.ip
+  - loginLogs.location
+  - loginLogs.device
+  - loginLogs.time
+  - loginLogs.status
+  data_sources:
+  - iam_user
+  - commerce_account
+  - iam_organization
+  - commerce_invoice
+  - iam_user_security_setting
+  - iam_user_login_event
+  - ai_usage_fact

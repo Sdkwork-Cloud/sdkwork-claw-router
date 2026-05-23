@@ -7,10 +7,14 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class AdminChannelItem
     {
         public string? AccessType { get; set; }
+        public string? ApiKey { get; set; }
         public string? Balance { get; set; }
         public string? BaseUrl { get; set; }
         public List<string>? Capabilities { get; set; }
+        public ProviderCircuitBreakerPolicy? CircuitBreakerPolicy { get; set; }
+        public string? CreatedAt { get; set; }
         public int? Errors { get; set; }
+        public string? ExpiresAt { get; set; }
         public string? Id { get; set; }
         public bool? IsMultimodal { get; set; }
         public List<string>? Models { get; set; }

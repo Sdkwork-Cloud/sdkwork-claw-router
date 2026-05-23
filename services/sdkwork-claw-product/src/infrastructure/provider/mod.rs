@@ -1,6 +1,13 @@
+mod adapter_aware_chat_completion_relay;
+mod adapter_aware_embeddings_relay;
+mod adapter_aware_openai_relay;
+mod adapter_aware_responses_relay;
 mod openai_compatible_relay;
 mod provider_secret_map_resolver;
 
+pub use adapter_aware_chat_completion_relay::AdapterAwareChatCompletionRelay;
+pub use adapter_aware_embeddings_relay::AdapterAwareEmbeddingsRelay;
+pub use adapter_aware_responses_relay::AdapterAwareResponsesRelay;
 pub use openai_compatible_relay::{
     OpenAiCompatibleChatCompletionRelay, OpenAiCompatibleChatCompletionStreamRelay,
     OpenAiCompatibleEmbeddingsRelay, OpenAiCompatibleResponsesRelay,

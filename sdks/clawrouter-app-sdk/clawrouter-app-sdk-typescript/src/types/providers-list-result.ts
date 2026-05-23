@@ -7,7 +7,5 @@ export interface ProvidersListResult {
   /** Data field on providers list result. */
   data?: ProvidersResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

@@ -7,7 +7,5 @@ export interface MonitorNodesListResult {
   /** Data field on monitor nodes list result. */
   data?: AdminMonitorNodesResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

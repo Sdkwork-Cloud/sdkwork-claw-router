@@ -18,6 +18,14 @@ function getLoadErrorMessage(error: unknown, fallback: string): string {
   return error instanceof Error && error.message ? error.message : fallback;
 }
 
+function markMessageReadFeedback(messages: Message[], messageId: Message['id']): Message[] {
+  return messages.map((message) => (
+    message.id === messageId
+      ? { ...message, read: true, popupSeen: true }
+      : message
+  ));
+}
+
 export function MessagesView() {
   const { t } = useTranslation();
   const [messages, setMessages] = useState<Message[]>([]);
@@ -70,6 +78,17 @@ export function MessagesView() {
     setFilter(nextFilter);
     setSelectedId(null);
   };
+
+  const handleSelectMessage = useCallback((message: Message) => {
+    setSelectedId(message.id);
+    if (message.read) {
+      return;
+    }
+    setMessages((current) => markMessageReadFeedback(current, message.id));
+    void MessagesService.acknowledge(message.id).catch((error) => {
+      setLoadError(getLoadErrorMessage(error, t('console.messages.acknowledgeError', '通知已读状态更新失败')));
+    });
+  }, [t]);
 
   return (
     <div className="p-4 lg:p-6 w-full mx-auto animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#1e1e1e]">
@@ -155,7 +174,7 @@ export function MessagesView() {
                     key={message.id}
                     message={message}
                     selected={selectedId === message.id}
-                    onSelect={() => setSelectedId(message.id)}
+                    onSelect={() => handleSelectMessage(message)}
                   />
                 ))}
               </div>

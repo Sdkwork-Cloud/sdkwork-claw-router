@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{ProviderRetryPolicy};
+use crate::models::{ProviderCircuitBreakerPolicy, ProviderRetryPolicy};
 
 /// Routing channel item schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -22,6 +22,11 @@ pub struct RoutingChannelItem {
 
     /// Capabilities field on routing channel item.
     pub capabilities: Vec<String>,
+
+    /// Circuit breaker policy field on routing channel item.
+    #[serde(rename = "circuitBreakerPolicy")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub circuit_breaker_policy: Option<ProviderCircuitBreakerPolicy>,
 
     /// Errors field on routing channel item.
     pub errors: i64,

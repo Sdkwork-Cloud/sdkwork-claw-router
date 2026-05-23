@@ -1,0 +1,189 @@
+fragment: operations/app-notification
+frontend_operations:
+- route: /console/notifications
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
+  operation: fetchNotifications
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/notification/notifications
+  read_sources:
+  - ops_notification_message
+  - ops_notification_recipient
+  - ops_notification_delivery
+  - iam_organization_member
+  query_parameters:
+  - name: app_id
+    schema:
+      type: string
+      maxLength: 128
+      pattern: ^[A-Za-z0-9._-]+$
+  - name: include_archived
+    schema:
+      type: boolean
+  - name: page
+    schema:
+      type: integer
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      minimum: 1
+      maximum: 100
+  response_schema:
+    name: NotificationsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: NotificationItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - appId
+          - title
+          - desc
+          - content
+          - time
+          - type
+          - read
+          - showAsPopup
+          - popupSeen
+          - archived
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            appId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            title:
+              type: string
+              minLength: 1
+              maxLength: 200
+            desc:
+              type: string
+              maxLength: 512
+              description: User-facing short notification summary.
+            content:
+              type: string
+              maxLength: 20000
+            time:
+              type: string
+              minLength: 1
+              maxLength: 64
+            type:
+              type: string
+              enum:
+              - info
+              - billing
+              - warning
+              - alert
+            read:
+              type: boolean
+            showAsPopup:
+              type: boolean
+              description: Whether this notification should be displayed as a modal popup when the frontend loads.
+            popupSeen:
+              type: boolean
+              description: Server-side per-user state indicating that the popup has already been presented for this app.
+            archived:
+              type: boolean
+            actionUrl:
+              type: string
+              nullable: true
+              maxLength: 512
+- route: /console/notifications
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
+  operation: list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/notification/notifications
+  openapi_exposed: false
+  read_sources:
+  - ops_notification_message
+  - ops_notification_recipient
+  - ops_notification_delivery
+  - iam_organization_member
+  query_parameters:
+  - name: app_id
+    schema:
+      type: string
+      maxLength: 128
+      pattern: ^[A-Za-z0-9._-]+$
+  - name: include_archived
+    schema:
+      type: boolean
+  - name: page
+    schema:
+      type: integer
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      minimum: 1
+      maximum: 100
+- route: /console/notifications
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
+  operation: acknowledge
+  operation_id: notifications.acknowledge.create
+  kind: action
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/notification/notifications/{notificationId}/acknowledge
+  read_sources:
+  - ops_notification_message
+  - ops_notification_recipient
+  - iam_organization_member
+  write_tables:
+  - ops_notification_delivery
+  request_body_required: false
+  query_parameters:
+  - name: app_id
+    schema:
+      type: string
+      maxLength: 128
+      pattern: ^[A-Za-z0-9._-]+$
+  response_schema: &id001
+    name: NotificationMutationResponse
+    type: object
+    additionalProperties: false
+    required:
+    - updated
+    - state
+    properties:
+      updated:
+        type: boolean
+      state:
+        type: string
+        enum:
+        - acknowledged
+        - popup_seen
+- route: /console/notifications
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
+  operation: markPopupSeen
+  operation_id: notifications.popupSeen.create
+  kind: action
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/notification/notifications/{notificationId}/popup_seen
+  read_sources:
+  - ops_notification_message
+  - ops_notification_recipient
+  - iam_organization_member
+  write_tables:
+  - ops_notification_delivery
+  request_body_required: false
+  query_parameters:
+  - name: app_id
+    schema:
+      type: string
+      maxLength: 128
+      pattern: ^[A-Za-z0-9._-]+$
+  response_schema: *id001

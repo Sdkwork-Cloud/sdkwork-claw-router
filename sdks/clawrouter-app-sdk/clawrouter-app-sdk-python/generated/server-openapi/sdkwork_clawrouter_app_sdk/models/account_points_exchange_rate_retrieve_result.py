@@ -11,5 +11,4 @@ class AccountPointsExchangeRateRetrieveResult:
     """Account points exchange rate retrieve result schema exposed by Claw Router."""
     code: str
     data: Optional[CommercePointsExchangeRateResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

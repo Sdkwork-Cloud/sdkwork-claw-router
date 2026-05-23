@@ -35,7 +35,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "72f0661b3ced10c9a910bb58734f82d779d5b5cc88d820ef63d7b472a76b5598"
+      "sha256": "2d550174f498b8ce9b19d0c1f726ed3c9f56f861ca3e3b8892d932c8c5e2a999"
     },
     {
       "path": "sdkwork-sdk.json",
@@ -43,11 +43,11 @@
     },
     {
       "path": "src/api/agents.rs",
-      "sha256": "9c820dea10aa4e3cd0ad4c65d55e352d885563ed23b20896c78cae6902384d46"
+      "sha256": "249f1310078751da436aa7ed296e7a281462aa56ef85733fb40271860d6ad7f3"
     },
     {
       "path": "src/api/ai.rs",
-      "sha256": "a6c5710822724918027f4f25c664d13f6ac0b6719761f1dec0391d775e0e7a04"
+      "sha256": "874bbe7512c079bf9dcb72fff23db3ed22f6f881203232f21f0ac4521a928c4f"
     },
     {
       "path": "src/api/auth.rs",
@@ -59,11 +59,11 @@
     },
     {
       "path": "src/api/billing.rs",
-      "sha256": "b2cfa4bc6cfe76d8ec7be92509612f4c605bf1901563b77bfa6680c1d1061966"
+      "sha256": "19abb5e6c603d1d0d3e8cf12bb6f6cc14b69eb7bf6679d980f6ab82750df7543"
     },
     {
-      "path": "src/api/communication.rs",
-      "sha256": "08c0fad76e70b071a6ea302452a6860703f2aaf2c17f54ae2a3cdcaa51fc3df1"
+      "path": "src/api/chat.rs",
+      "sha256": "f881385036904d8c4d8c66c547fe0540b8988c2074fd8035c9d39989efc3c79a"
     },
     {
       "path": "src/api/content.rs",
@@ -78,8 +78,16 @@
       "sha256": "37f2f83ed841f8efd0d3de7881f3d3d9581801492e0b153e3feb5402fdf364b3"
     },
     {
+      "path": "src/api/memory.rs",
+      "sha256": "b80b09c3146037800b9ae6bf166018e366b6b127d5dc89a4ed1ec727917be5b4"
+    },
+    {
       "path": "src/api/mod.rs",
-      "sha256": "752606d01b10440fac8ae890b925c80289ba7df2eafaaa5c83bd7634cd649a99"
+      "sha256": "d69ca9374eacac1f9edc1a7dc99f48861c6ace4a95cbd1da1623a8b17345ed26"
+    },
+    {
+      "path": "src/api/notification.rs",
+      "sha256": "686f821bca6c1abb2a15b0020002ce14cf783668558afdf729d38bf25d3f0ecd"
     },
     {
       "path": "src/api/paths.rs",
@@ -90,8 +98,16 @@
       "sha256": "aeb44893da74ccea9177b463f09eea538b51690d4684edb97ec9a6c9bb618c72"
     },
     {
+      "path": "src/api/runtime.rs",
+      "sha256": "f51fdcd50d583a35240c167bfdf45ac3d280f67d1a40406fc034e3ad379b00c3"
+    },
+    {
+      "path": "src/api/system.rs",
+      "sha256": "7b3c19857ee43144e195ca12dea1156151181389e725f88866a77fb6af66107a"
+    },
+    {
       "path": "src/client.rs",
-      "sha256": "5e3dda9bf4c38e3853d0aac8df6d05a04a7d3b7d8f066428841d4d1ee69f66cb"
+      "sha256": "07217e948a54cd2d2d1caab54c0c04012c02fa203c484f91df3768a946592560"
     },
     {
       "path": "src/http/client.rs",
@@ -119,51 +135,51 @@
     },
     {
       "path": "src/models/account_points_exchange_rate_retrieve_result.rs",
-      "sha256": "f93cf983199fbf939df30fcd66dc546460a0653a90cdb993513dc6715f3a9a58"
+      "sha256": "eef8d06bebc7980f8448a68cacb3d57d7e4e762d26db4b677011983ca879ec94"
     },
     {
       "path": "src/models/account_points_exchanges_create_result.rs",
-      "sha256": "bfe8375b9dd902f007250872881d28e09b339d9f991665fcc68d1a4c228b597a"
+      "sha256": "d37b585b4a5eef22c85b06f27e2f9c3c143ab370938b86aeec24dcf7ed39934d"
     },
     {
       "path": "src/models/account_points_exchanges_retrieve_result.rs",
-      "sha256": "52a4c835a76c780a5328f1453347764a8c4b8cb5e10618d1a6594315ff4146ea"
+      "sha256": "cd91d9e58365fc484ad5d4a31fbd3ce57f9ab33fe17b5054a1878985342b3da0"
     },
     {
       "path": "src/models/account_points_exchanges_rules_list_result.rs",
-      "sha256": "a8cfb7f2cf7bceeba7fe4ad324514fe37bfcada952b0a05f31a1bc1bf06fca62"
+      "sha256": "ceb37de1c7d9ef73903e681adc7ba41d3eecb077281a43fac23e9b98b08164f9"
     },
     {
       "path": "src/models/account_points_history_list_result.rs",
-      "sha256": "49cfeb71b2e86f26ffd163362c676ee2cb9ae1a0032df285a673793e7de45c78"
+      "sha256": "cabe6513c213cd023fa6b2d54527603016160904d54d03ac729584df42e9cfbc"
     },
     {
       "path": "src/models/account_points_recharges_create_result.rs",
-      "sha256": "b63b2373fe30b5d45dc49d663a14eb1e47cf5b7d1fa5b4211203be75bf9a03aa"
+      "sha256": "e8abbb631084e5b02f480321ef99bdfb8010825ca801b833f10da7468c66a6bf"
     },
     {
       "path": "src/models/account_points_recharges_orders_cancel_result.rs",
-      "sha256": "feb30aaf784ae3cec33cd4f152fe83f7908f1beb52d0ec65122e3561877073db"
+      "sha256": "ceb9ccd08eb084f1b675887b4a60140ac2ed05b1b69758cf0fcad4b9f34da5f4"
     },
     {
       "path": "src/models/account_points_recharges_orders_retrieve_result.rs",
-      "sha256": "2f01ea57020e7f743b1cc7801270200c2ee2a2c6529a73c9cd2974161f259dd0"
+      "sha256": "3175c2e7ed392214286b218fbdb88440fe4ede45801922a7c06d3fd3d7e000ca"
     },
     {
       "path": "src/models/account_points_recharges_packages_list_result.rs",
-      "sha256": "915b23607c86d22b5a165628ad864e93b34f1b1467ee44cc32f68fd33a3a05cf"
+      "sha256": "a08321399a4592fd3c4e6c3f58562cc2681b06d3aad9b9e61828873d39eb58e7"
     },
     {
       "path": "src/models/account_points_recharges_records_list_result.rs",
-      "sha256": "c66cd29efedfd37e01c2967c05243ab0d895b0925c30377eaf8bc2b9faee40b2"
+      "sha256": "167fdc90aedcead072e083644a0259ecead701da659390779c88df39f8b4fbc8"
     },
     {
       "path": "src/models/account_points_retrieve_result.rs",
-      "sha256": "e6d952453e953f5594287861e4ce539ad04bb467b03b651fca620a3b9cb24b81"
+      "sha256": "eedacb46a6ee535b401cf5196e0e5839d5c54d5e62aab4344035bd42ed4734b5"
     },
     {
       "path": "src/models/account_points_transfers_create_result.rs",
-      "sha256": "b672d486e118bef2e58191737066d7336bef67c22edd637db42c6262a15ae3ab"
+      "sha256": "88655887e563e16f222caba5b535707a68901008f81774f5c5d05ebcfe62be8e"
     },
     {
       "path": "src/models/account_security_summary.rs",
@@ -175,15 +191,15 @@
     },
     {
       "path": "src/models/account_summary_retrieve_result.rs",
-      "sha256": "abbdd36dca571af2a00ac81043e93d9467ea6829cb13c65bb682d04fa978e716"
+      "sha256": "ed846f6dc128fe0ff15a1c67a1d18a4baa0dafb4c45d0fba1f2b048d261114a3"
     },
     {
       "path": "src/models/account_tokens_deductions_create_result.rs",
-      "sha256": "5128e3591655cbbc11b7378f4c2fb42e3c4f3eb79129b098f2c4ca5ba0f3cb4c"
+      "sha256": "9f9037d71878bc5faeb6bffc702a42ffb40191ba35681395bce04549c3595a24"
     },
     {
       "path": "src/models/account_tokens_retrieve_result.rs",
-      "sha256": "c8990614e53ec0280b75b92a760cb0f2f33c1c445437a278ccc32226d316e4e2"
+      "sha256": "66b0546b56209ad2e614000f49d223935cf4898a8c3980bbd4f07e2f6611004f"
     },
     {
       "path": "src/models/agent_capabilities.rs",
@@ -195,15 +211,15 @@
     },
     {
       "path": "src/models/agent_definitions_create_result.rs",
-      "sha256": "c95dcbdcd43153b47ffc8638eb8b016a2834bc473bd7ab924f4781e7c877d9be"
+      "sha256": "5426256e3753dc0c60e62dd071d834e2561ad4a0d89d01d9b012b96e51f4f96a"
     },
     {
       "path": "src/models/agent_definitions_list_result.rs",
-      "sha256": "0006d725cde66192816112deb59a4c950ee32b58d185424d0a479ab7613059ef"
+      "sha256": "f338264b0806720f88091151b3804c222f3cd8322175e4f96eaaaea762456d4c"
     },
     {
       "path": "src/models/agent_definitions_retrieve_result.rs",
-      "sha256": "0f64b8660c11ad1e2656886a28038321666e2c1e7ecb7206fcd7adf9ae6b64ea"
+      "sha256": "e697342352029e958c41a563a8f54008b77c9b0fe069fcbc2e02cce82f74e731"
     },
     {
       "path": "src/models/agent_item_response.rs",
@@ -216,6 +232,102 @@
     {
       "path": "src/models/agent_list_response.rs",
       "sha256": "e29d62299ea0f4c4bc21c701b1cc7b4f3e2d881cdbc8a39387f6450253fc2667"
+    },
+    {
+      "path": "src/models/agent_run_complete_request.rs",
+      "sha256": "d68cd78c9e076e93bc663c898c59e7226f7a86f64097a64dfb536c683424dfc4"
+    },
+    {
+      "path": "src/models/agent_run_create_request.rs",
+      "sha256": "e9245705f1d4db0b48220a9898ce59e3c4a84487de10d038becf64f714855404"
+    },
+    {
+      "path": "src/models/agent_run_item.rs",
+      "sha256": "951cbabb4a8f3fc31a8d2352ead6c38b8bc2054019ff7749da24ca7c21615198"
+    },
+    {
+      "path": "src/models/agent_run_list_response.rs",
+      "sha256": "45dbf89fd6e5004ab652b112a848f14260ba2f0e382489a7788d54f485c16ad6"
+    },
+    {
+      "path": "src/models/agent_run_response.rs",
+      "sha256": "3d2612be31f0890fa2a754c2f3f91d8e63bb06d0a30d245896640abf90b944fb"
+    },
+    {
+      "path": "src/models/agent_run_step_complete_request.rs",
+      "sha256": "ea062a519b7cc815ebb9def2e9ebefe0c854f9c629fb948bc47df43f32af29cf"
+    },
+    {
+      "path": "src/models/agent_run_step_create_request.rs",
+      "sha256": "26d10dc102f97d709c47f8009cb3b92dc0af808ed0b5bf2903832ce0c4c13493"
+    },
+    {
+      "path": "src/models/agent_run_step_item.rs",
+      "sha256": "efbd278c678ef01201671e668d16a0d556c5fcfcf5e77e9ca676fafb850a330b"
+    },
+    {
+      "path": "src/models/agent_run_step_list_response.rs",
+      "sha256": "60b7092f70ab31a17da3ecea572243175a7577348feb3032c63b3374a845d1d2"
+    },
+    {
+      "path": "src/models/agent_run_step_response.rs",
+      "sha256": "3bc8234c8b2417e3b7c5c6952767ea57a096cc003d6744dfac007fd8a7b36733"
+    },
+    {
+      "path": "src/models/agent_run_steps_create_result.rs",
+      "sha256": "83336550d3efb8ed5dc2fd9aec658fe73c962075f0847be13f4b9a757002a664"
+    },
+    {
+      "path": "src/models/agent_run_steps_list_result.rs",
+      "sha256": "883626bfab021f7ca71f9c42ef144a846c6b28319ecd4bb1f7ac1d5fed00a35d"
+    },
+    {
+      "path": "src/models/agent_run_steps_submit_result.rs",
+      "sha256": "abbb47967a08b189d980ad33763ef0afd389c87bf278a05f28c6cc57bbd69815"
+    },
+    {
+      "path": "src/models/agent_runs_create_result.rs",
+      "sha256": "469b7f8a1bcbe1ae1ef46ced915d5f5a7135f9b00d82564015f595fbe9659537"
+    },
+    {
+      "path": "src/models/agent_runs_list_result.rs",
+      "sha256": "318b5456eafa33ba8802ad95979fbeea4118d82883da2831e1b7b12ff0b8fc6b"
+    },
+    {
+      "path": "src/models/agent_runs_retrieve_result.rs",
+      "sha256": "c1fe905d53d132d2e7a54554da3dc26a642610bd91e50fefe5efdb29e81d7c74"
+    },
+    {
+      "path": "src/models/agent_runs_submit_result.rs",
+      "sha256": "d5de4e98ba7eb48f2f53bca88edc352f052e7851de4fc5c35b361bbe60d3b948"
+    },
+    {
+      "path": "src/models/agent_session_create_request.rs",
+      "sha256": "fa0ebcb7526a126d9e6acfd3d26aa0975c5ac38148072bd55a44ecba3a3e061a"
+    },
+    {
+      "path": "src/models/agent_session_item.rs",
+      "sha256": "1727fd8b6349571a1812d7d97b4010eb46823cfad7c34392bbc73a8881e27859"
+    },
+    {
+      "path": "src/models/agent_session_list_response.rs",
+      "sha256": "419cb812a93befda6e04e96b1ce8aa1b03923d90da9cd609fa015ae4348326df"
+    },
+    {
+      "path": "src/models/agent_session_response.rs",
+      "sha256": "3773c69dce0b2c0d3c09af789c7a485404c95655d9f2c2c3f74432a5d45963b7"
+    },
+    {
+      "path": "src/models/agent_sessions_create_result.rs",
+      "sha256": "4fd5d94eeebe7009570a2d1b3ccf6c3334ccb6db5335a5c8d11ab04ae4b48b2d"
+    },
+    {
+      "path": "src/models/agent_sessions_list_result.rs",
+      "sha256": "1387354aaea10826d951784e8849149d1acf921388d375936ff054e51392987a"
+    },
+    {
+      "path": "src/models/agent_sessions_retrieve_result.rs",
+      "sha256": "897045e40029c9b05a25731d4932c856ab4d0ae32506f673658ee08ba45806cc"
     },
     {
       "path": "src/models/agent_version_item.rs",
@@ -235,11 +347,15 @@
     },
     {
       "path": "src/models/ai_agent_run_record.rs",
-      "sha256": "429222282df71c3c6f608e9613ba2f541661261e84e79bfcf262a6cb2e550c38"
+      "sha256": "c6fc7d0107b0f3179e942979c9ec606c024b8b48e2f65b769857899f190714d5"
     },
     {
       "path": "src/models/ai_agent_run_step_record.rs",
-      "sha256": "488d0067dd75ac7fe14a7755b6eb87580cb51b481b904eaf63ed6226d4dd9b31"
+      "sha256": "0cb2c42aec7f71bd93f7634acba1f98154c4c90ff364bac84e39489a0ef49dd3"
+    },
+    {
+      "path": "src/models/ai_agent_session_record.rs",
+      "sha256": "f7c86cf7df6b07683c0b2b2524a733d96efbd6bbd7d7c43ca0122d87e6a8d977"
     },
     {
       "path": "src/models/ai_agent_tool_binding_record.rs",
@@ -252,6 +368,30 @@
     {
       "path": "src/models/ai_billing_meter_record.rs",
       "sha256": "c2e4e92d709b27ca62377f1b3dc5ace78277700aef5200df1a332354a6f77297"
+    },
+    {
+      "path": "src/models/ai_chat_context_snapshot_record.rs",
+      "sha256": "cff46054e6663690053ba4b203c27f2198377345a21074105773c76f74afaa27"
+    },
+    {
+      "path": "src/models/ai_chat_conversation_record.rs",
+      "sha256": "db1cf8fd28b1f2e4da2252e530f996e845b0e589b182c58fb80d511c57c1d5b6"
+    },
+    {
+      "path": "src/models/ai_chat_item_record.rs",
+      "sha256": "49ab9554f9aa661b8d1c547d937371f7c9b9ec0cdaa70bd22fb3d030a26c8e74"
+    },
+    {
+      "path": "src/models/ai_chat_message_part_record.rs",
+      "sha256": "f80362919a591820dcb21c447a0943384f2990d3e8fb133dc6979d4d04427877"
+    },
+    {
+      "path": "src/models/ai_chat_message_record.rs",
+      "sha256": "6d6776137ba3d99dbbd7e020d2b1be0e7f504f301d087203666b0e5e168f5ef7"
+    },
+    {
+      "path": "src/models/ai_chat_turn_record.rs",
+      "sha256": "2f684d4a99b9dde8e20d1069258f0c87384f1cb6b3b79736ded7e4967cc6fd09"
     },
     {
       "path": "src/models/ai_generation_asset_action_record.rs",
@@ -270,8 +410,32 @@
       "sha256": "2fb3dffbbe9804330bc65ade97d6b2e157e22046d265cd5d16dbc6422a8c1533"
     },
     {
+      "path": "src/models/ai_memory_embedding_record.rs",
+      "sha256": "6d7228b6092c75ea9da44e1ef90bb9d976a91614691f318b58da9e17581a1e02"
+    },
+    {
+      "path": "src/models/ai_memory_entry_record.rs",
+      "sha256": "f3fa15e37170b42e8e134c490c472330315b4a465a88efb35f5bd88f1205d857"
+    },
+    {
+      "path": "src/models/ai_memory_event_record.rs",
+      "sha256": "5f262ad8b202816acfa0bd96f5039a62f4d792314a04375a96281aa522eec290"
+    },
+    {
+      "path": "src/models/ai_memory_link_record.rs",
+      "sha256": "4f092adeb2461abcb29165cb9154e8d3f0a081e2f1e74400ec219a3d3576e5b4"
+    },
+    {
+      "path": "src/models/ai_memory_space_binding_record.rs",
+      "sha256": "218ec790e8dc3e677ed1b4fb775eb1eb5e7820a0fd122723932025aca96fa5e1"
+    },
+    {
+      "path": "src/models/ai_memory_space_record.rs",
+      "sha256": "376d2fffa1d103043cc19bdd4ee5eb5bb30c761a677d25de6c83dd052e6aab83"
+    },
+    {
       "path": "src/models/ai_model_capability_record.rs",
-      "sha256": "c6e67bb099968fef090ceb33c4120baeb58e7bcbf7478435abc03f22ee566ae4"
+      "sha256": "bfe62a759760e65d191192908bbcac9280bc219d5660747a0fa0e51c631273de"
     },
     {
       "path": "src/models/ai_model_catalog_source_record.rs",
@@ -295,7 +459,7 @@
     },
     {
       "path": "src/models/ai_model_record.rs",
-      "sha256": "7039354636b606f11ce457285b6f1d7730630b98c000858fd274c8f4c136c490"
+      "sha256": "173e29d74b7afb352fea95c952b933d23ec1d3a3428424159f663c211b2b6f3d"
     },
     {
       "path": "src/models/ai_model_vendor_record.rs",
@@ -354,28 +518,44 @@
       "sha256": "1d04cb662f036d68e5b013caa279c2ec24440089058b57a3f4b94b077adb1f20"
     },
     {
+      "path": "src/models/ai_runtime_artifact_record.rs",
+      "sha256": "d048f21c7ec9819b03b05f185b11706ef520e590d2c1f2071fd4a3d2f30c7f63"
+    },
+    {
+      "path": "src/models/ai_runtime_invocation_event_record.rs",
+      "sha256": "32d780fbe685fdcb9a3f1e272c9d039b3a9b1e535f9a764179543bd830ac7205"
+    },
+    {
+      "path": "src/models/ai_runtime_invocation_record.rs",
+      "sha256": "5d5839786a9ba2a23f25f7dc73c0d3f91a665461a7b4331372ed97c57a15c6ad"
+    },
+    {
+      "path": "src/models/ai_runtime_usage_link_record.rs",
+      "sha256": "fe27b5c186f1869c191e35d4bb2b7619a5563fa4ad6e24cfaf5a737f7351dd2c"
+    },
+    {
       "path": "src/models/ai_usage_fact_record.rs",
       "sha256": "6ba12eacfebf8dfdf73a315c2e210821f72e3450ac9d303fa8c8fa15f0abbce7"
     },
     {
       "path": "src/models/api_key_groups_list_result.rs",
-      "sha256": "15e9ba7c7b998ce1700d3a015f33085a5d60c4373eef585347420b9ab0404851"
+      "sha256": "2fd2b7bb2a82e77c05113aa081066ed14d6cdfe415050b52c18b95f02f99882b"
     },
     {
       "path": "src/models/api_keys_create_result.rs",
-      "sha256": "2bf190d5fdd8bb13ef747e1ee46a14afa7cd4509d8038fd8cb9a31c35f56e82c"
+      "sha256": "2a59cea673f6f9d053d15a95093143c9d3a0496c06e090dee24557de8ea32672"
     },
     {
       "path": "src/models/api_keys_delete_result.rs",
-      "sha256": "0d27f2f25b76de6f72ecb10f82935e36366dd58ce75608fd4cdb0f87c239e18b"
+      "sha256": "d0d4e354487cd9ccbd8203e1deb4d6de2ba0c9cb9d0202333a8cd8426b4aa64c"
     },
     {
       "path": "src/models/api_keys_list_result.rs",
-      "sha256": "a7e54182ea527a8d8d95f6a30db0679c63bb86c7f09badfad1d472778f03bb9a"
+      "sha256": "989186a1258b9449905a0a0f6b8af72ecef23e3bf904e548a6ee46463911a707"
     },
     {
       "path": "src/models/api_keys_update_result.rs",
-      "sha256": "15ad67d5e66a7b9590aeb90937c571874f312d45c50164960a627c72776d9373"
+      "sha256": "5dc5c5efc9ac8e7a1b9e6be1186b66cef5f2398771119b9c448133a407e15600"
     },
     {
       "path": "src/models/app_api_key_group_list_response.rs",
@@ -447,23 +627,31 @@
     },
     {
       "path": "src/models/applications_create_result.rs",
-      "sha256": "46f91af1954d263324e6fbe21ff47251c7126b7e2e9861a387f782fdbda6359b"
+      "sha256": "30e9da082a0d71a5c6022a5629ef183fd085f00aa895b78018c5351e10a77268"
     },
     {
       "path": "src/models/applications_videos_create_result.rs",
-      "sha256": "d8223453d8de4cdaf365be2d93400a141d51e33e5915cff982b3380249b2f1ba"
+      "sha256": "f27cfe685b95174c832c7ee22ec31f3151a6746de9408ac52b7693f8754b482a"
     },
     {
       "path": "src/models/apps_store_categories_list_result.rs",
-      "sha256": "20f97ef578f45e6dba7707c3e46a89cb410a0530c300d7c14ca452f9c840e95c"
+      "sha256": "24535cae87b04841c2f1ce25b792455ecc6480a84bfb375ee88e7927cf355782"
     },
     {
       "path": "src/models/apps_store_list_result.rs",
-      "sha256": "574bbda56e2b4503eb72af1ab15578b9b6ea3d637c9f2ac3f2eb1a1cc4744d8d"
+      "sha256": "cf23200673866cdfc01db788e7c1d6a9e6224108227e19980426656f2e14cda3"
     },
     {
       "path": "src/models/apps_store_retrieve_result.rs",
-      "sha256": "3f04568ff543549d0ade9652c8406f37e02763fd4a16f327982dab7a54412dd1"
+      "sha256": "8ab8e2eb13158206ada33c87f56b8d4493ae4f2f8b4762258e359aeae5c86330"
+    },
+    {
+      "path": "src/models/artifacts_create_result.rs",
+      "sha256": "1ed44cf8b5827660e7883a055272b40bd21f8c8d81340797b3e4fdf913d1ccf4"
+    },
+    {
+      "path": "src/models/artifacts_list_result.rs",
+      "sha256": "03fb8dabb66450078aebf7272c3e754efa8e484e757027be8db740a8e3935c64"
     },
     {
       "path": "src/models/auth_runtime_settings_response.rs",
@@ -475,11 +663,51 @@
     },
     {
       "path": "src/models/billing_recharge_history_item.rs",
-      "sha256": "942c58628c12eccf74793ed3abab363e8278958b3c45c42cca6881a7512cbf84"
+      "sha256": "da340ddc9a2d60c7ccb5d687ada4ab97287c88a0c446bf1aa833d86e2b02df64"
     },
     {
       "path": "src/models/billing_redeem_history_item.rs",
-      "sha256": "3ef5dc05ba723a347ef2e244913cfe066d73cb92491967f5973e4944b74894d8"
+      "sha256": "2bab217d209d173266bb4b1bf63f373c43d6b39aa55485616b7f64b013ab7633"
+    },
+    {
+      "path": "src/models/chat_conversation_create_request.rs",
+      "sha256": "dd5a2338343eda07b728283681e70844048bba265b78670edf65b496f18a380b"
+    },
+    {
+      "path": "src/models/chat_conversation_item.rs",
+      "sha256": "5bda65224d00a55bd3f59b0cf07c836bc05f87f83b24ede67bc6f5b47c99bfbe"
+    },
+    {
+      "path": "src/models/chat_conversation_list_response.rs",
+      "sha256": "b59d1102ec60a3a10230739bdf4de3455a701284ad30d3ed43ffb3f1298ccb57"
+    },
+    {
+      "path": "src/models/chat_conversation_response.rs",
+      "sha256": "e00c78151eae2057641985c7aaee7db528f0ce4b04fbd336784cae03d2b438a4"
+    },
+    {
+      "path": "src/models/chat_message_item.rs",
+      "sha256": "f0eeeb864dd5385aa969caada2235cc2146010566121114ba5f4114bfe9efb50"
+    },
+    {
+      "path": "src/models/chat_message_list_response.rs",
+      "sha256": "f35f9b8567d3e21f1cdc4b23d376e675ad4e5d0e98d07766803fedcdf3472460"
+    },
+    {
+      "path": "src/models/chat_turn_create_request.rs",
+      "sha256": "22d0f006e8050592f201f02364846020e3d96c0af8ef91891532cb8e85b4b1fb"
+    },
+    {
+      "path": "src/models/chat_turn_create_response.rs",
+      "sha256": "2d859779d9b7a8af3524de50562e91a548db7d0b6774684bf54f09022c91ba82"
+    },
+    {
+      "path": "src/models/chat_turn_item.rs",
+      "sha256": "7a730bd4f7d3cdb2ec215dde306884a048b50eeb82cc593ecbef3be02dfcaed3"
+    },
+    {
+      "path": "src/models/chat_turn_response_request.rs",
+      "sha256": "e5ba7c7c351b8140381f8640a1d5ac9c298c7c49326251e5f41279815042dade"
     },
     {
       "path": "src/models/checkout_status_response.rs",
@@ -487,51 +715,63 @@
     },
     {
       "path": "src/models/comments_create_result.rs",
-      "sha256": "a87c87b547092004b6bb930ad1b30ca4682f6267abe911bfd14610ce84783e85"
+      "sha256": "4bc91c56fb001bcac06e6789cd2d071846b06542466274792276f06bd7d44667"
     },
     {
       "path": "src/models/comments_delete_result.rs",
-      "sha256": "4bf1bceac3111578239a86b7b6923779542d591a1472f5776c5aa3760df61530"
+      "sha256": "17a0992118c6ef0ee271070691563f6b5befde201d57909907b95be5e58bbd0a"
     },
     {
       "path": "src/models/comments_likes_create_result.rs",
-      "sha256": "b6fb277d8c8b2e0e6e2f94c3294b85caa3fa7c352405e7e80dfb67acd6b5a24d"
+      "sha256": "9371427ec128144c91533919ae2c3f59f41c1f8ca7ca28df602629623fa2d256"
     },
     {
       "path": "src/models/comments_likes_current_delete_result.rs",
-      "sha256": "5b91a9833bf9235c9cd02bda90e8432d6935ef1fe5d6cc5c5c7a0edfde254504"
+      "sha256": "32e2cff54a50147036da5c2d000c85f60f2cc186efe9ca017878bc4257659f51"
     },
     {
       "path": "src/models/comments_list_result.rs",
-      "sha256": "c52afe15e49b583de5607de173f68a21f8fb1e6c079f7213db0ea8473d7e153c"
+      "sha256": "b7fbbff4e5793b3b39a704a9f0f1caae3e11062024c304df49b0094d3fed6d90"
     },
     {
       "path": "src/models/comments_pins_create_result.rs",
-      "sha256": "5fcc1a063f4ce854f43e2340887e30ae4727ad32a7a82f1e12290c02cee7266d"
+      "sha256": "763d5711c841b9b649347f9d3b2f8715ef6338ed4e4f6c8e487ec3d10b5c968e"
     },
     {
       "path": "src/models/comments_pins_current_delete_result.rs",
-      "sha256": "e2d95c45d3e07edd6724bb207eb5bc3ff07940f3824db30f4832a4497b933fd2"
+      "sha256": "a2340287b319a5d53f42da45ae9ce27e4bcb25937ea74654252512052fd1e0b3"
     },
     {
       "path": "src/models/comments_replies_list_result.rs",
-      "sha256": "462e4f8a10f05b7d72a7f707a29cf75dde1453ccae1846e3632f1beb67618399"
+      "sha256": "1b8874870a9e76f208707b29d0169196483f90265caf9cbbc80c82a20aaf7e11"
     },
     {
       "path": "src/models/comments_reply_create_result.rs",
-      "sha256": "5c38b4f6645a3cbb8854dc9ef40ccecf7aa54c3ec1d009b889dd3ec377b817f3"
+      "sha256": "72b11f7ffb3661fbbada8846ae1768f94ae715379c79b2b0a907862eb1811c82"
     },
     {
       "path": "src/models/comments_retrieve_result.rs",
-      "sha256": "07d0004dbf44fc064fca2a7948fbabb5791c7a4fadac2d2342313cdaf2851ecf"
+      "sha256": "3fe7cbbef1be00fadf5592d41ebd3180b0e4636a32b154b219337bf7a4f34e18"
     },
     {
       "path": "src/models/comments_statistics_list_result.rs",
-      "sha256": "c600fe6f7471e45968da7581aa19168ea4c9b57e59c5edc21298f374529338d3"
+      "sha256": "36b473a0339276047590be1baac66c078cc6f1b8a919d3fcf1ff512b391b68be"
+    },
+    {
+      "path": "src/models/commerce_account_ledger_entry_record.rs",
+      "sha256": "becbba12ac1888fdf7d3d2f30d7b219dde656665910fb73befe51c0ad422f5a3"
+    },
+    {
+      "path": "src/models/commerce_account_record.rs",
+      "sha256": "f9eb63089a50337a8d2ab7ca3b29f8d64daa2b3a18f67355016d46371a060125"
     },
     {
       "path": "src/models/commerce_billing_export_record.rs",
       "sha256": "8f8b43f15639ed2e900347041e3e94a7b30d5802fd018ea24c4a3d0d011b9405"
+    },
+    {
+      "path": "src/models/commerce_billing_prehold_record.rs",
+      "sha256": "11d7b3e53c3394c1b3af8cb1ec6a00c238776efd3cdde7a42b31e0a3c4f502a7"
     },
     {
       "path": "src/models/commerce_coupon_catalog_item.rs",
@@ -542,6 +782,22 @@
       "sha256": "a17760bd83444302d289ee5db00b649c79ac31c686826dacd44aab34003a1cfe"
     },
     {
+      "path": "src/models/commerce_coupon_issue_batch_record.rs",
+      "sha256": "8883841664b4750297e1473b3d757a9701631990b414ebb424101de620699c56"
+    },
+    {
+      "path": "src/models/commerce_coupon_record.rs",
+      "sha256": "70aab83a20dfa89f7ffddac7651c3870b65acbda52c6eab1f6349e749fd8abfb"
+    },
+    {
+      "path": "src/models/commerce_coupon_redemption_record.rs",
+      "sha256": "517b3a2c7d0aa8da724778c4a8a1539d7fff53d090f72ea45411708184655fa0"
+    },
+    {
+      "path": "src/models/commerce_coupon_template_record.rs",
+      "sha256": "f774658c7b08de058f370337800dd93bfe653faca6f8df27869fab7a3b682cce"
+    },
+    {
       "path": "src/models/commerce_coupon_usage_request.rs",
       "sha256": "eace9827775e8c66f82d887bcb9e1b3c593c4af4aa64b032d912437d2cf7bb45"
     },
@@ -550,16 +806,60 @@
       "sha256": "9aa3288d902b996616188b44885d6d49ef1f1637ef98769a3ad2a9be2f8b5bb0"
     },
     {
-      "path": "src/models/commerce_empty_command_request.rs",
-      "sha256": "5e2fee71a7829551321f2e1816be1586da466d223fda439e77bff34186f2b0a7"
-    },
-    {
       "path": "src/models/commerce_exchange_rule_item.rs",
       "sha256": "a15a9ee029f15932145b26c49d564b1aaa98860e318f1ca753c867303364180a"
     },
     {
+      "path": "src/models/commerce_exchange_rule_record.rs",
+      "sha256": "8e3818d66980878d8fb18f2a89fd739d6c96efc97d4d24dbd34b795eee53118a"
+    },
+    {
+      "path": "src/models/commerce_idempotency_key_record.rs",
+      "sha256": "10cd79fdadb414347166dba2c804d9a316d87dc9d5a5dd7589c64f4d1d5326a3"
+    },
+    {
+      "path": "src/models/commerce_invoice_item_record.rs",
+      "sha256": "4bb03974ab80fb398d24ad48468068e596767e188638cda1e75167f0a3b58b3f"
+    },
+    {
+      "path": "src/models/commerce_invoice_record.rs",
+      "sha256": "0ae5a384bdad756e3312e7c07835e1ef07c614e94b783396a99e3532125e093a"
+    },
+    {
+      "path": "src/models/commerce_invoice_title_record.rs",
+      "sha256": "360645ac562ef2e695bbd24680532a4510cc80887e1d15ff960d54595618c066"
+    },
+    {
       "path": "src/models/commerce_operation_response.rs",
       "sha256": "e3cc36c04713d4f024201ae6b3125499a0a34d4718b5bb7761ea2971e4dd5124"
+    },
+    {
+      "path": "src/models/commerce_order_amount_breakdown_record.rs",
+      "sha256": "c52cb73f52a59f0818b581e99191e73c3dea9d1b9e32130cc16bada7e91c6d3c"
+    },
+    {
+      "path": "src/models/commerce_order_item_record.rs",
+      "sha256": "f114b0c3212ca06265d5811bf688e944d51b031052f927e673b6c5953836470d"
+    },
+    {
+      "path": "src/models/commerce_order_record.rs",
+      "sha256": "d8cdee174a47f4b01bf1ef59272cee93301854cf637faf3c0baa71658469c4bb"
+    },
+    {
+      "path": "src/models/commerce_payment_attempt_record.rs",
+      "sha256": "b1dfcc93a5652bb36ea9d7c27a54c1f284d304ccd20678cac00198c2b3f0c99b"
+    },
+    {
+      "path": "src/models/commerce_payment_intent_record.rs",
+      "sha256": "3443af4513ce06b8a7420e1653098cf531394339909ae9be963a5d9640e35899"
+    },
+    {
+      "path": "src/models/commerce_payment_method_record.rs",
+      "sha256": "54c1099b7291339a4d8d37ee7d9cf1055e219fd5f68fc903c4b1314b8afe7e74"
+    },
+    {
+      "path": "src/models/commerce_payment_webhook_event_record.rs",
+      "sha256": "3682ac68bec3a16ae77a63c422961d958adf61a286b3a33f41f3612b447b225f"
     },
     {
       "path": "src/models/commerce_points_balance_response.rs",
@@ -578,8 +878,24 @@
       "sha256": "b04a429dca41f52dab319e1683af63c2f7a55bce95bd9259e495b6755b13fb27"
     },
     {
+      "path": "src/models/commerce_product_record.rs",
+      "sha256": "75b7139c7a9abe7eea8123ca672d8ec0355308063b96fbf852e44fa2dff33398"
+    },
+    {
       "path": "src/models/commerce_recharge_order_cancel_request.rs",
       "sha256": "43e8ee30e63742a7832411d3c34ac411de32de6219ca8c3b5da857c79ebb2a52"
+    },
+    {
+      "path": "src/models/commerce_recharge_package_record.rs",
+      "sha256": "8a63d28604fe386594cfa0b8075276b732a80b409ca5b113213d4befdb34cafa"
+    },
+    {
+      "path": "src/models/commerce_refund_record.rs",
+      "sha256": "3a428b0e56e161878c6df7961df09292245c307e728dfea2b25aefe5453e85d0"
+    },
+    {
+      "path": "src/models/commerce_sku_record.rs",
+      "sha256": "3fbe0cd35ff92c78abe18bb75219ebd782a41c9821aa38d1622e33e6243f9e9f"
     },
     {
       "path": "src/models/commerce_token_balance_response.rs",
@@ -591,7 +907,7 @@
     },
     {
       "path": "src/models/commerce_usage_settlement_record.rs",
-      "sha256": "1e265e750b4cfd26d5fe31ca19c51410d25c708cc78502e50ab6334fd3395718"
+      "sha256": "af79737ce51251893e7a240047bdb082940d72e7eb714ef761416a488fe26a2c"
     },
     {
       "path": "src/models/commerce_usage_statement_item_record.rs",
@@ -600,42 +916,6 @@
     {
       "path": "src/models/commerce_usage_statement_record.rs",
       "sha256": "d1a5afadd3dbb543c993580a091b17e02726bd94ae9e9cc995a3dfe1460a880b"
-    },
-    {
-      "path": "src/models/commerce_vip_benefit_item.rs",
-      "sha256": "f4d79a2e9048a0bac57b16fdc89057b85ac7141b3a9920a05575b741d5ef3d21"
-    },
-    {
-      "path": "src/models/commerce_vip_daily_reward_status_response.rs",
-      "sha256": "41fbb6725772f4be809afdcbdd817a9bf1a9bc97ee27872f6bbba38c6d17f9f0"
-    },
-    {
-      "path": "src/models/commerce_vip_info_response.rs",
-      "sha256": "11eabaaac72dce09f1ef2c2ab17b21735ca2ea978ef306f3701f9ad583f04461"
-    },
-    {
-      "path": "src/models/commerce_vip_level_item.rs",
-      "sha256": "4bd27c770207c40d5070b6cc62c15efec40392a11217273b78e085e78fe59a2d"
-    },
-    {
-      "path": "src/models/commerce_vip_pack_group_item.rs",
-      "sha256": "950b1892433dcb9a6406706f225c735e7a40c1e6d8c5d81f64b79e624140b8f0"
-    },
-    {
-      "path": "src/models/commerce_vip_pack_item.rs",
-      "sha256": "6e3912370825bb91fe3b73ee8c85843105a9b1bc05ba5ec91a4057255c1faa99"
-    },
-    {
-      "path": "src/models/commerce_vip_privilege_speed_up_request.rs",
-      "sha256": "f7fb8f6e67078af80538b98abbb90f59b04c845165ac053033c80f740616719f"
-    },
-    {
-      "path": "src/models/commerce_vip_privilege_usage_item.rs",
-      "sha256": "c55c4e654d9e2f5da767d8ad1b6c3244bb3c462b7e1a7e9e5105ced599e1f66b"
-    },
-    {
-      "path": "src/models/commerce_vip_purchase_request.rs",
-      "sha256": "fa06d29bc639ed3059cd46c658d73f64e1dcbd69811408ee5a5fb4121a203969"
     },
     {
       "path": "src/models/commerce_wallet_account_item.rs",
@@ -706,28 +986,44 @@
       "sha256": "c00debb22a6215957c898c3ce0e6f4af7902b127e87de16ef3623506e4cc2fd9"
     },
     {
+      "path": "src/models/conversation_messages_list_result.rs",
+      "sha256": "4fca443041e56a5f5fe94d098b2e1bc48acd50f57e0acd5e283f8457bc10b875"
+    },
+    {
+      "path": "src/models/conversations_create_result.rs",
+      "sha256": "0e9492c0d2ea908d489ce2c1975da40257756f896b6ba30fa1d38ee3fd6e7d34"
+    },
+    {
+      "path": "src/models/conversations_list_result.rs",
+      "sha256": "89e956a5b3ad0edfd90ef5f529b5b00f47493bf82674a384348d46bd1ac5d031"
+    },
+    {
+      "path": "src/models/conversations_retrieve_result.rs",
+      "sha256": "5f15eaff7e887925af6afb723813ff29e47036c2f92f1889e2a2b4eaa938867a"
+    },
+    {
       "path": "src/models/coupons_catalog_list_result.rs",
-      "sha256": "ce8d53e4793d64c8b88b3626cff46e099d785ec10beddc567e4a91d5b5f4f718"
+      "sha256": "187cd690b2b0f87c2c995951714fe95a32fd6941cc1006d3e78e5a6f900bfd65"
     },
     {
       "path": "src/models/coupons_catalog_retrieve_result.rs",
-      "sha256": "382c5f116f01691144e1409a0d0f5b809ce656cbf1d9371c41848a43641f23f3"
+      "sha256": "76fb07d605ddc3a3f1b8a74e0379652470f91d5cdbef578afd76312f37453de9"
     },
     {
       "path": "src/models/coupons_claims_create_result.rs",
-      "sha256": "3533e3678bd90f69f5858a950a0b7c66ed14bc689094071eee1c962fecb929b3"
+      "sha256": "9cb230aade03980e6fb409328cbc6a541b5e905906843d98d281f171d22f9809"
     },
     {
       "path": "src/models/coupons_redeem_create_result.rs",
-      "sha256": "bcec14de0b79c64a967ec364c056668e9aab245bb508ee4992fdb18b87aeeac3"
+      "sha256": "e6dfa4690f3233f05f29c57ed8d4f90f653e93e601d52e89d0d8a03621ef14b3"
     },
     {
       "path": "src/models/coupons_usage_create_result.rs",
-      "sha256": "e0ebd6f83eb84f55ddbe5cb2dc2020ac014d39f2c9120d1db8c1773049e2edd9"
+      "sha256": "2e14b7f241ac14e4d20137efb753ea8dd5a771e487f084863054e95d59516f63"
     },
     {
       "path": "src/models/coupons_usage_reversals_create_result.rs",
-      "sha256": "32021a18447a258dd8bc41db1adf1776c06db9d757d5c251c8cdfef1f5d45ec6"
+      "sha256": "485106a6a5f5d22116d982eeb2ffb5ba947f79a781d243a449deabefb34c6fd9"
     },
     {
       "path": "src/models/course_application_create_request.rs",
@@ -791,19 +1087,19 @@
     },
     {
       "path": "src/models/courses_categories_list_result.rs",
-      "sha256": "b63fb88e844e7695f8509b5de5baecc40d1d8c2e60961e32da7cbfd6018af90f"
+      "sha256": "bad8be86e044c0be8d32a26820f900293dbab300f92460c604d0661b2db7bfa8"
     },
     {
       "path": "src/models/courses_list_result.rs",
-      "sha256": "0c9aa8dfbd013bc3b47f3cbba593a8c99e3a4631b56041ff3e37c61ab0239fcb"
+      "sha256": "a313e3f8e56472e9d9f3a33731485f24e9a87480097f9ca65d5e6fcce01d2126"
     },
     {
       "path": "src/models/courses_overview_retrieve_result.rs",
-      "sha256": "72c4848a5785f04f481cf82ec9292ef0f281b5e8e7c0e21ae8d47e149a7c9f4f"
+      "sha256": "7a9f089eb00b1fa9185391af7629488d3169cc2b9d5d5f6d320b96ecc218a6b2"
     },
     {
       "path": "src/models/courses_retrieve_result.rs",
-      "sha256": "201f8a234f304f10584bacdd1b33e35dd2af710e3df2e24512024a0862b7052f"
+      "sha256": "b10842d57d697ccd83dee7d8a9c17162c1d5fe9ba476200a59f234b232d50131"
     },
     {
       "path": "src/models/create_api_key_request.rs",
@@ -815,7 +1111,7 @@
     },
     {
       "path": "src/models/create_routing_channel_request.rs",
-      "sha256": "5ce944dc3f875a51bfe5364b676418087351dff75bc53dd652616a6bd4aad41a"
+      "sha256": "7f53a6144ca76eab8e673b23098fbc7653840e2a81bf61704199b85649a6b933"
     },
     {
       "path": "src/models/dashboard_announcement.rs",
@@ -835,7 +1131,7 @@
     },
     {
       "path": "src/models/dashboard_overview_retrieve_result.rs",
-      "sha256": "94bcdbb68b504dbf9d197587fa96651d1934b52c885d40c49272c1060489d673"
+      "sha256": "79354e4ecf2fa91bdf3d96bea53f8549dfdfd588fed5ffd4a057dc2f392e8d85"
     },
     {
       "path": "src/models/dashboard_overview_summary.rs",
@@ -854,72 +1150,84 @@
       "sha256": "be982278cf776803cee18799cb2e36906e2b2e1992b54cf54d519ec813d04142"
     },
     {
+      "path": "src/models/entries_create_result.rs",
+      "sha256": "d5f7c8016a5a2fceeebf5f4fe99cfac9f5441822b00505d7dd2ec8d8616f4bb4"
+    },
+    {
+      "path": "src/models/entries_list_result.rs",
+      "sha256": "a477ef5cc4b069681489079c21de4302f618cf631c3ff3f4cdc0c6cf630044af"
+    },
+    {
+      "path": "src/models/entries_retrieve_result.rs",
+      "sha256": "6c9c1f2baa6276aa0725e0183e14ed6b50ca83f72c2572a680f62540c8fd2520"
+    },
+    {
       "path": "src/models/feeds_category_retrieve_result.rs",
-      "sha256": "bee6e59066fda94d73646e685db25fd93aaaca44b260d29ddc29b8963cbf657c"
+      "sha256": "04578a63568774c5ffa2d0e83293553ebb6b91a00f0f6b3ba3392a7028aeb168"
     },
     {
       "path": "src/models/feeds_collections_create_result.rs",
-      "sha256": "b9e6cf85755c9abc72d2671b6d31827188b7c2e43e931169bfd6ae73269391a2"
+      "sha256": "eda48c188be6bc1f4105a4ce6e32fbdbd5e892f46ab997eb8702ebfb793b4ae1"
     },
     {
       "path": "src/models/feeds_collections_current_delete_result.rs",
-      "sha256": "faedb79c555b2d44d75a5edab6eb33b8c34367ee3230569219322a572a59ec3d"
+      "sha256": "5afac4b6f966a3cf626ca729d99c936f910c267660c83f8d54c18a4096df23ca"
     },
     {
       "path": "src/models/feeds_collections_current_retrieve_result.rs",
-      "sha256": "0c4cafbad560edd64125ed17ac216ad80bd7c1ff762319238d3436cff1dbdf09"
+      "sha256": "04b6a032d8fc9ee4e9b992b895817a3b1ea82b58347afbc352615c86ad25bb3e"
     },
     {
       "path": "src/models/feeds_create_result.rs",
-      "sha256": "4059230fc318137b212e1cc909bc258580ab214fbecfd2cd297f5fd539caf160"
+      "sha256": "e633608225c22d07264a3b5b952a5a9404685bb79e5318cf33552adc06a86a94"
     },
     {
       "path": "src/models/feeds_delete_result.rs",
-      "sha256": "06cde9b28615acf9b399193b69f40fc05d8795907da86c8e6569b028e6aa7763"
+      "sha256": "4b65c8b92bd373d37f73ecae98b3a91571dd4c435a5bba5526c70bda4a3899d3"
     },
     {
       "path": "src/models/feeds_hot_list_result.rs",
-      "sha256": "a4606e323e3bc97ced2839f8271896b525d990db3dd222e13966002c5d458f3f"
+      "sha256": "4e20747f6402c4852c6fce4970ed8c57e00ba4a8c2348bb7edd9a85b14e3be1c"
     },
     {
       "path": "src/models/feeds_likes_create_result.rs",
-      "sha256": "6fae46de11b4242645b253b054b9c9fd662a1622b31584fc331a48fc2cc55f40"
+      "sha256": "825961192b847fe5245c47ad1329b49514d26e4c497ad583189d60137829d873"
     },
     {
       "path": "src/models/feeds_likes_current_delete_result.rs",
-      "sha256": "3184a9c3ba823e105c8a49d001d09d4a268879a9a531f5e4b27d132e8ec660f9"
+      "sha256": "2525a156781e4ae815c9ffb91f65eb71e4a57c9741f3f039531a271083f551d0"
     },
     {
       "path": "src/models/feeds_list_result.rs",
-      "sha256": "a27da804c863d8ab8b2ecc55b710f6b16057332e2bbd1ab0fa33835ee41af643"
+      "sha256": "94b45914d2408bebea9a23c486844ff66b9a363a33e9976415526d1a13a0e645"
     },
     {
       "path": "src/models/feeds_most_liked_list_result.rs",
-      "sha256": "365d4ac16ed10009d6edfec7eb28d120236be589839600e3c721b24a2a5227f0"
+      "sha256": "9d0d259128e3f571f1d4344c0700cb56548fc46c4f8baf0e1c5a2059a467e0fa"
     },
     {
       "path": "src/models/feeds_most_viewed_list_result.rs",
-      "sha256": "762d3ea98aec9bfd58ba22126ab5ca82591af3779ef647bffb9176a48042660d"
+      "sha256": "b958c8bbccf03f90dabb136b5affc6784caadb01451e1ced14f34c8ec905fc6f"
     },
     {
       "path": "src/models/feeds_overview_retrieve_result.rs",
-      "sha256": "0b7f3842852c617c9c514c08b55588d18d37cc616933a518c430b0fe71e29d00"
+      "sha256": "92781b356d6e0d2641e796d41ecf8c05bb6ca44a2648e35099a6ca4cb5d1c56d"
     },
     {
       "path": "src/models/feeds_recommend_list_result.rs",
-      "sha256": "d02ef1f927edfb13731a192d4e337354ff9a46c0bcf27138cd9912d45fc0ac29"
+      "sha256": "26939e6d9f2dab814c5208686adab469736f718e205a8d721d41ef2db46c2ac8"
     },
     {
       "path": "src/models/feeds_retrieve_result.rs",
-      "sha256": "c19313f41d02b5ea4718223acf09b46866441a4ab2e770c62b4ed6809653e74a"
+      "sha256": "bf678ebbcdd9898691c99ce3079ddd19708920a610dab8ef9c0f9f7311d6ba51"
     },
     {
       "path": "src/models/feeds_shares_create_result.rs",
-      "sha256": "adca13ed0f6e86c9f4a58a3b903067152559994efaeb9a403d4d4a47461d00e6"
+      "sha256": "7ed398dce110a015732fc3d34a722ce58decc702a3c0e1d9f4de80f7d106f535"
     },
     {
       "path": "src/models/feeds_top_list_result.rs",
-      "sha256": "5f049f55f65332cfaa24d029e239b18f7c61f1ef1c17bcd8622cc328c7b1e806"
+      "sha256": "98761ec3e27d02bbaaf23d901d34de2c55497109410718a612de7e09db539d89"
     },
     {
       "path": "src/models/field_error.rs",
@@ -983,59 +1291,15 @@
     },
     {
       "path": "src/models/gateway_traces_list_result.rs",
-      "sha256": "e0b4b97b074ac26dc65709e0f7827c7c72a3f56e07ffe5f6a492eb0ee113223a"
+      "sha256": "caa55ddd7ceb8729c4601a64a48e792f3035f5e2bde83438f779e2bfde12f95e"
     },
     {
       "path": "src/models/gateway_traces_response.rs",
       "sha256": "9dabc48d6a2398124e28f9e8b0af9e32862425bdf5d6df99a50c01a25518a36e"
     },
     {
-      "path": "src/models/generation_agent_generation_config.rs",
-      "sha256": "c2068f7a24420ccbce79b18cd7a6003966a4f6884e6617ffab90a90e7d57c03b"
-    },
-    {
-      "path": "src/models/generation_agent_metering_event.rs",
-      "sha256": "614c5b7eb8d32b122e728f6271ab8b8419a0e4f5652c9aeb27395b02a7004c76"
-    },
-    {
-      "path": "src/models/generation_agent_reference_image_input.rs",
-      "sha256": "b79a5b5fdf46ecac753002614fb0777d57b5b939f9263fe6c30556a7b787a1cf"
-    },
-    {
-      "path": "src/models/generation_agent_run_create_request.rs",
-      "sha256": "683d8d5080bf387e4235c6c74e4721d333a7dc9fa45c510535f316f05d91884d"
-    },
-    {
-      "path": "src/models/generation_agent_run_create_response.rs",
-      "sha256": "2c7404c642b75ed1320c8522ecc844ab65b8f9f44cc773962c451fcc2f027935"
-    },
-    {
-      "path": "src/models/generation_agent_run_snapshot.rs",
-      "sha256": "bef45f82ab0befa41c5920f99817322c608f56d91e0cf5e07e9c7792c2337f3b"
-    },
-    {
-      "path": "src/models/generation_agent_run_step_snapshot.rs",
-      "sha256": "eddc1644eb10d6a69c435981e68d2413ac1ca01f8db1a49be9dbce94cf970aea"
-    },
-    {
-      "path": "src/models/generation_agent_runs_create_result.rs",
-      "sha256": "838dab3f732cb63f29a5431e13264a167faf50e68c49abc8be604e110889daee"
-    },
-    {
-      "path": "src/models/generation_agent_snapshot.rs",
-      "sha256": "7e9c4ded207adc1ed474b891a771f844fd32a142b0dd01e8e73242cb61129731"
-    },
-    {
-      "path": "src/models/generation_agent_usage_fact_metadata.rs",
-      "sha256": "f0c151cdf46889d99e4995e925d68260da18a6362e7c7e77394eff1e48a563b6"
-    },
-    {
-      "path": "src/models/generation_agent_usage_summary.rs",
-      "sha256": "a2ec1760d064b933aa088f40d8a1ab733ed8e2d6e1f1fb115c9db2e1a8f504a7"
-    },
-    {
       "path": "src/models/generation_history_item.rs",
-      "sha256": "61dc79e4b4b5290fa81db7a61957894b250a569b9b76fa5c50114bf620bee51c"
+      "sha256": "772ba20ddf5ed7124aa3b993169050f398b8f5cbf0887ea02bc97e1c88eaa52e"
     },
     {
       "path": "src/models/generation_history_media_item.rs",
@@ -1047,7 +1311,7 @@
     },
     {
       "path": "src/models/generation_list_result.rs",
-      "sha256": "abcfd274abacd07323dcb9ea83517ed094dcdbe29f8d521b5beb518b636a77bc"
+      "sha256": "793546fa3b84ccbdcc0ee6b6fb41c23cd17411999376068568ebe2cd3e4eedbf"
     },
     {
       "path": "src/models/iam_api_key_record.rs",
@@ -1231,11 +1495,11 @@
     },
     {
       "path": "src/models/integration_channel_record.rs",
-      "sha256": "d86485f424fe52924d703f54f8a5abe86b14771cf1a3694aac2be639da38c215"
+      "sha256": "e025863b87202fc3dc27564d8104a72bd2f7610a1cf84e71a18d1315199e829b"
     },
     {
       "path": "src/models/integration_provider_account_record.rs",
-      "sha256": "784a0c198e680af568a244f595a6298cb622ea2a61aeee7bddd3c92f0b81fb23"
+      "sha256": "21f3428af3e9de15aa44c0459cb0b127c769cb2485d15fc9140886a7486284b4"
     },
     {
       "path": "src/models/integration_provider_health_snapshot_record.rs",
@@ -1243,7 +1507,7 @@
     },
     {
       "path": "src/models/integration_provider_record.rs",
-      "sha256": "899f44e755be9e3949d4a03265ab243ce6ec864b08ef2ea6b5a770024e34a3ba"
+      "sha256": "74a23f5b65fd895f169cdeaf85fd37dd3cbfbdb7c927b99937cc301d2c660e06"
     },
     {
       "path": "src/models/integration_proxy_record.rs",
@@ -1254,20 +1518,80 @@
       "sha256": "72f86364df5ddc0235ef092f6949606d9a1fef5e42df8a34f74b42aa26f35161"
     },
     {
+      "path": "src/models/invocation_event_streams_list_result.rs",
+      "sha256": "85bd4dafc1c333e7660b5ee2904e32f7f4dab4913652886ff65907560ecc848c"
+    },
+    {
+      "path": "src/models/invocation_events_create_result.rs",
+      "sha256": "3a599c1f6679658717160b5a7f2281d34f263860528a2b4af0090a038ac5ea92"
+    },
+    {
+      "path": "src/models/invocation_events_list_result.rs",
+      "sha256": "03ce5b46566e66fb232e3df8f0fe72e5524bab2919369124a09f875b225156a6"
+    },
+    {
+      "path": "src/models/invocations_create_result.rs",
+      "sha256": "2b1ec30f07fa742bbae9379c449647d200ffde5c4cf4c59c28d571653521600e"
+    },
+    {
+      "path": "src/models/invocations_list_result.rs",
+      "sha256": "21598d0a8e76ad506e39d6f3bdc14a60363d4526c80a86d24c81f4840574c845"
+    },
+    {
+      "path": "src/models/invocations_retrieve_result.rs",
+      "sha256": "a2d4105b2fe91058f0dc2469a1a72eba542e49adc2993c951e8a1fc179ab1abd"
+    },
+    {
+      "path": "src/models/invocations_submit_result.rs",
+      "sha256": "cf16bfef8c8e5883494be3d76ec350df3926002bdf480aec21940a226997e6e1"
+    },
+    {
       "path": "src/models/login_qr_codes_confirm_result.rs",
-      "sha256": "e4fa1da93ee075b9f1029f2ac8e562ef837470389aa8c5fac66e2e2537eff215"
+      "sha256": "699fe982cf0697be7be613de2e407005c70c7c387a72617aca9c1baed925fe12"
     },
     {
       "path": "src/models/login_qr_codes_create_result.rs",
-      "sha256": "db6b9e8f104fa50a62718fa984884ac4edd290bf8501852358fdb670e147effe"
+      "sha256": "c8a0e25cc042d4e54d41e442eb81d10d5adb06937574523dcfdb19b73a1d4478"
     },
     {
       "path": "src/models/login_qr_codes_retrieve_result.rs",
-      "sha256": "d6774205305fd9255aec9ddaa654eb9a0adc7082df39684efd85fc9fdbaa9a23"
+      "sha256": "e62f68196c382e0945e29426c5ccc99547c62dcd6c054995ab73f87910781b4c"
+    },
+    {
+      "path": "src/models/memory_entry_create_request.rs",
+      "sha256": "597c9b50781286b84317686aa1866a7db83d451f41135bea5b6dbedca8d3cfe3"
+    },
+    {
+      "path": "src/models/memory_entry_item.rs",
+      "sha256": "458f901c7975c10d4dd5701f4bbc1d247fcbf13b9f43297035fe1c13e9015729"
+    },
+    {
+      "path": "src/models/memory_entry_list_response.rs",
+      "sha256": "95487b0cf281e0f6527015faf9c6120109e30a89f310d57e680e9d308c25b46a"
+    },
+    {
+      "path": "src/models/memory_entry_response.rs",
+      "sha256": "c958c6dbac20f1a5a687572ef8de124811716e2193c87f6f675bcf6adb5236e8"
+    },
+    {
+      "path": "src/models/memory_space_create_request.rs",
+      "sha256": "64d2f3e16dfe8408fc9bc9e1c90014b07f73d70a70b29a949bb75cb4d6766e13"
+    },
+    {
+      "path": "src/models/memory_space_item.rs",
+      "sha256": "9d898ac6bac615ca5d886b71b223b92a59c30a624f3800a222e6ceb7017dca52"
+    },
+    {
+      "path": "src/models/memory_space_list_response.rs",
+      "sha256": "039de9075d600f16ab7076530603ec39e1d8874b2a9fa2f549ac84ecd6f09c63"
+    },
+    {
+      "path": "src/models/memory_space_response.rs",
+      "sha256": "9a3e4097034cc033e65d2ec68d5b80c142a929e75a6d5cbb5f5c9ee806b76dc7"
     },
     {
       "path": "src/models/mod.rs",
-      "sha256": "3dd5b3863a241819041a49e988c4385048bbb3b4b19e7b73014802180ee7c17e"
+      "sha256": "038fd516cacb105a6f4b8b96ec59537d35982ebef21355aae0993d5e4f891bd8"
     },
     {
       "path": "src/models/model_ranking_history_entry.rs",
@@ -1283,7 +1607,7 @@
     },
     {
       "path": "src/models/model_rankings_list_result.rs",
-      "sha256": "34b74b6685db1096ba099675ccbe174669fb2c80270890c0bfcc80d495264894"
+      "sha256": "8c8a85e812657e1b95479c58802c5f5a446c3b42467a844393f52ba73bdd3382"
     },
     {
       "path": "src/models/model_rankings_snapshot.rs",
@@ -1295,11 +1619,11 @@
     },
     {
       "path": "src/models/model_vendors_list_result.rs",
-      "sha256": "d6400cd85cb2eb6601eb6432e8e3fc1528f860640ceb360d835de3542f9c19db"
+      "sha256": "2b79415d7438179d294ad89ccc6d9e9211ebc2a4dc66c0f0e5c0155c0620f7ce"
     },
     {
       "path": "src/models/models_list_result.rs",
-      "sha256": "8bfaeb94c65897b35a4c471e5dea6ce7223d197d92cc4dfb17db2d2c8cccc47e"
+      "sha256": "3a140cb5aa41c47823680e742d045a1fdf5f7cdb2f1d9b27ba43e8d659058a65"
     },
     {
       "path": "src/models/no_data.rs",
@@ -1307,11 +1631,23 @@
     },
     {
       "path": "src/models/notification_item.rs",
-      "sha256": "d09cbc0b8b2fb0ab5b59694e9777a2af79461876b93ba5063e08035095c3f420"
+      "sha256": "03049550d70f4a97a36e647dbae99ebb36fd4d8d7801c5789323d1e0f8a1873f"
+    },
+    {
+      "path": "src/models/notification_mutation_response.rs",
+      "sha256": "f3542baf91a43c429f21bbf84c393d026623de02c064f4bf923858a5d64892d2"
+    },
+    {
+      "path": "src/models/notifications_acknowledge_create_result.rs",
+      "sha256": "384bb61ce8751c460e9a2c5afe423a042a7a8d5e63c1b89cf17f63ed4109bf30"
     },
     {
       "path": "src/models/notifications_list_result.rs",
-      "sha256": "5d52f397619d7b68c20ff333d1bbf2307c729a4c89ea7e7968d2b804224a38c6"
+      "sha256": "a748c2a2114d17ce2099bf330899162471e691a88f69ffed32371b00c92cc15d"
+    },
+    {
+      "path": "src/models/notifications_popup_seen_create_result.rs",
+      "sha256": "01f05bb1e192c9c40ed3e52886388b56ca54b86c051f053979bf78141d26805a"
     },
     {
       "path": "src/models/notifications_response.rs",
@@ -1319,11 +1655,11 @@
     },
     {
       "path": "src/models/oauth_authorization_urls_retrieve_result.rs",
-      "sha256": "40f4970023b0f8bfa72d29ee5733abd12d92b4ca23a2b8a75d715479887a1b66"
+      "sha256": "758a406459e0e81a98908862fe0ae0fb146980fc7a1ad70e157b32968903db90"
     },
     {
       "path": "src/models/oauth_sessions_create_result.rs",
-      "sha256": "02ad88281c37459e5aaa5599ef03d7185b38e5984d0aa913f99cbf0067bc890e"
+      "sha256": "f4d2d2fe23c9e392d3211141786ec5bc58409fb8841233cc8d94b55146f093cf"
     },
     {
       "path": "src/models/ops_alert_event_record.rs",
@@ -1336,10 +1672,6 @@
     {
       "path": "src/models/ops_config_snapshot_record.rs",
       "sha256": "253461b2da9368586a94720eba79da78a6a95aa1c31fa13d48ebe63f463d9565"
-    },
-    {
-      "path": "src/models/ops_coupon_issue_batch_record.rs",
-      "sha256": "5f4b186b1e8b8315fe5b0b1f1d06f7626a859ddb939f7c5997e2debc0f503a84"
     },
     {
       "path": "src/models/ops_gateway_heartbeat_record.rs",
@@ -1363,11 +1695,19 @@
     },
     {
       "path": "src/models/ops_notification_delivery_record.rs",
-      "sha256": "57befc710427a0e652ce772fa413786e805fa2a469c584d7c9ee2c190dbf6b7c"
+      "sha256": "e36793e2c9df35c368019402b0d2cce7cbf06d70bb5e14add13a7a3c992463b4"
     },
     {
       "path": "src/models/ops_notification_message_record.rs",
-      "sha256": "26f3005be213a8a525b746ce0d79bf4a67db16fae5e01550fa60487a135932c5"
+      "sha256": "dc511fdf3e0d49e2713a24c3c15366baa40cbc3c86909f18c4135428e5fbc279"
+    },
+    {
+      "path": "src/models/ops_notification_preference_record.rs",
+      "sha256": "fda393557bd410a0d8fa5f190842a05ebd69aa6f44b40b9f366d356d66ef5d02"
+    },
+    {
+      "path": "src/models/ops_notification_recipient_record.rs",
+      "sha256": "13e8cad606623aa04391e2040e7803154967f851ed520aaff881acfe47adda87"
     },
     {
       "path": "src/models/ops_outbox_event_record.rs",
@@ -1379,35 +1719,23 @@
     },
     {
       "path": "src/models/password_reset_requests_create_result.rs",
-      "sha256": "65dd4855f913f0e82b7cd061acedfdead7baa6bfe06b8c1681a8b9605455f80e"
+      "sha256": "35e1bbd9fde4e5a05d934e73df6510160fb5cdec4a2d81f9973663d67e900100"
     },
     {
       "path": "src/models/password_resets_create_result.rs",
-      "sha256": "be635d4d605421ca0df30749d20c93c386227219d120a5b035bf4de4554a160b"
+      "sha256": "1ebaca34a67722ce1e3f7ad300fd6293839d743e9497db26e037e5a161aaa7c5"
     },
     {
       "path": "src/models/payments_checkout_retrieve_result.rs",
-      "sha256": "e8724b481e03b821a2dc206a69ba7526bb7f53014830a67ce14f22a1a72618b6"
+      "sha256": "79ab3790d2d13aa21ae87b134f62bb71ca679fbe0ab2bee11568cbd7585915fa"
     },
     {
       "path": "src/models/payments_records_list_result.rs",
-      "sha256": "501aee38c3967395702fda5bce0e284449d0cd11af8ac1524f0109ab619b9479"
+      "sha256": "be453bd7efecee31c0aa5e879bd0ead3ccf55c36c2b5d5ced0916c7feb3f1b73"
     },
     {
       "path": "src/models/payments_records_retrieve_result.rs",
-      "sha256": "4f2d42e01131ec3765f778a1db7fbdbe82735f7edf53df7788a56582dc367ef6"
-    },
-    {
-      "path": "src/models/plus_account_exchange_config_record.rs",
-      "sha256": "7a44f6107ad48ed5d9cbc378db3153574d95b4145ea12bebd8c11e1a0fa6db30"
-    },
-    {
-      "path": "src/models/plus_account_history_record.rs",
-      "sha256": "684478cbcdc4dd928be0ecb0ae2737c85e6496e1b6658b14619b3a1ab34ed5ac"
-    },
-    {
-      "path": "src/models/plus_account_record.rs",
-      "sha256": "22b576dd3a982dba186997b6ee37bbc8b3af6ffa5a4e524ef6f76074b384ee7a"
+      "sha256": "d1a4101474e5d07da5a9ccb6baf0d6ad10dc63a0a63a149e34a7c77495df246b"
     },
     {
       "path": "src/models/plus_agent_skill_package_record.rs",
@@ -1419,7 +1747,7 @@
     },
     {
       "path": "src/models/plus_api_result.rs",
-      "sha256": "98cbfae330aa3979e8410ed2b9eda21e5918fe02b10052efcea567e37512ecfd"
+      "sha256": "564231e20955cb381f26920c33cee7e3d977b60ae93db705efce8efa1541914a"
     },
     {
       "path": "src/models/plus_app_record.rs",
@@ -1458,24 +1786,8 @@
       "sha256": "b200f3ff532f9997a16f88b220bf0fe65754e374684f9696dda3e45e684b2d61"
     },
     {
-      "path": "src/models/plus_coupon_record.rs",
-      "sha256": "c2b4eab54b0857cd007f600443cdb88e3bea009dc397b3c8631599e33ced7c81"
-    },
-    {
-      "path": "src/models/plus_coupon_template_record.rs",
-      "sha256": "6e07b4e3f82f4d4f03de199e65366613407e96035ccff3e8583748cc4b619b17"
-    },
-    {
-      "path": "src/models/plus_currency_record.rs",
-      "sha256": "26a6c824b0d7ea2e66eb252a94a41ed3e6d097c29570ab4acdb7b94a7fbc827d"
-    },
-    {
       "path": "src/models/plus_department_record.rs",
       "sha256": "186af5520fde9c315d449749a9f11e12d343d11ea538f36edbe28b392ad5cd5f"
-    },
-    {
-      "path": "src/models/plus_exchange_rate_record.rs",
-      "sha256": "a190ef8dba992932daee4353b60caba094bdaa495be83029674d792e9e3aba8e"
     },
     {
       "path": "src/models/plus_favorite_record.rs",
@@ -1494,22 +1806,6 @@
       "sha256": "cd801eb56fb28b1f39ad11e154b62113f5f18ecc2b006289e79912e5db3b6506"
     },
     {
-      "path": "src/models/plus_invoice_item_record.rs",
-      "sha256": "d99cdd6f22e968be9261ec64707706bff7520ee7bba915747803a9cc5f0288f2"
-    },
-    {
-      "path": "src/models/plus_invoice_record_record.rs",
-      "sha256": "fe7a50c9a7111c0c5b9965f650271f9561fc62adcbc432d68fb275377bbc60ed"
-    },
-    {
-      "path": "src/models/plus_invoice_record.rs",
-      "sha256": "f7aeed0d1974eab4a8b58c1cef40dbc2fd370c976ca193d469971472a344893a"
-    },
-    {
-      "path": "src/models/plus_ledger_bridge_record.rs",
-      "sha256": "4e655e5f46d6f8a710242ea0c814ce8fba9f749bbdd8e092db76c60ca6da445d"
-    },
-    {
       "path": "src/models/plus_member_card_record.rs",
       "sha256": "979914379e99b424616d09ea6ebf348f7fdae887395c6bfa7e36beedaa608318"
     },
@@ -1518,60 +1814,12 @@
       "sha256": "1972466f08186f04a2173a8c60f36dc7f762d58b600a0b6bb973753dfbacfb4e"
     },
     {
-      "path": "src/models/plus_order_dispatch_rule_record.rs",
-      "sha256": "089363cfeb8d247eb313daf727de98f095b0c06641ab204cf0a5ec5af0c1b0f2"
-    },
-    {
-      "path": "src/models/plus_order_item_record.rs",
-      "sha256": "f5b2743e4e86522918a6314ed7cb79a23a0e8002d98e3292b08a2493c1ce1f9e"
-    },
-    {
-      "path": "src/models/plus_order_record.rs",
-      "sha256": "949c078adae88f297249e3f241e01f2f80a6ec70a826bd58360a41a75819deda"
-    },
-    {
-      "path": "src/models/plus_order_worker_dispatch_profile_record.rs",
-      "sha256": "e21d2e4e19eb2c69dddb37acbcec8fa07ed8006f22b8c30376d96ad2f4a13f35"
-    },
-    {
       "path": "src/models/plus_partner_record.rs",
       "sha256": "9d5012301d4b8338037f5c6ba9e104ed16a19e3f27a33d0cb07cdd3882c7666b"
     },
     {
-      "path": "src/models/plus_payment_record.rs",
-      "sha256": "655a8b137ea07bbfcf2eae5057ebb6641868b300497d7fa644941db2d92ecdac"
-    },
-    {
-      "path": "src/models/plus_payment_webhook_event_record.rs",
-      "sha256": "646aa5f7c5cfaac0c32e1dd018e3ca323a58da94523c29d502cd279964d9c66a"
-    },
-    {
       "path": "src/models/plus_position_record.rs",
       "sha256": "74844d6c54411f740d37cb3f014ce205699ad735bf935a8db92d0e041e401e0d"
-    },
-    {
-      "path": "src/models/plus_product_record.rs",
-      "sha256": "bac6bb780521fb353e975a6d135776ffd4abb083b68b0f7d47ff1dd03dcc105b"
-    },
-    {
-      "path": "src/models/plus_refund_record.rs",
-      "sha256": "bdb02890a15246b55866e3d4820d9585acc6c925e4d837e330eef160a1b168ed"
-    },
-    {
-      "path": "src/models/plus_shop_record.rs",
-      "sha256": "4a25cb4385c3dc464cca82636075aed384e20f9553f5ad4f6030feda5e6e3d21"
-    },
-    {
-      "path": "src/models/plus_shopping_cart_item_record.rs",
-      "sha256": "5d5c489e3f41d9cf83cc2f64c71aae0c5acdbfce145c4e712cfa3402367faa6f"
-    },
-    {
-      "path": "src/models/plus_shopping_cart_record.rs",
-      "sha256": "4b38068d979a2dcba15228af1f4ce258464b06663fb940d820c8b1ebbeb4cbd7"
-    },
-    {
-      "path": "src/models/plus_sku_record.rs",
-      "sha256": "5946d0e8a68e818c8fb031c4a75911c6c0f04f9904bd179549835e0eb4242e04"
     },
     {
       "path": "src/models/plus_usage_record_record.rs",
@@ -1590,76 +1838,32 @@
       "sha256": "38e4589d091ac99679936e01b0e1f25796308c4a04d4bde854e9012fcf91c3e6"
     },
     {
-      "path": "src/models/plus_user_coupon_record.rs",
-      "sha256": "2d4a91196eba568a0f5e17fc492e9726f384b42ba953eeae90cb07865bb0e201"
-    },
-    {
-      "path": "src/models/plus_vip_benefit_record.rs",
-      "sha256": "a251d248969bde15b77a49dc52681a052a7af56de87f5998c704ac633a2139fc"
-    },
-    {
-      "path": "src/models/plus_vip_benefit_usage_record.rs",
-      "sha256": "96790de9662845129a26319a3e54727d17b74b9179aff83f6cee64b8ab2ac8af"
-    },
-    {
-      "path": "src/models/plus_vip_level_benefit_record.rs",
-      "sha256": "f7fe8057ce640beadedbaf45b3af4771783cc7f213cdc2962df7dfb1c7f929e5"
-    },
-    {
-      "path": "src/models/plus_vip_level_record.rs",
-      "sha256": "b969d610527f0b1136859d1863d7ceb2c2f6134f4664de67a1897c7db5cdd8b2"
-    },
-    {
-      "path": "src/models/plus_vip_pack_group_record.rs",
-      "sha256": "a2db1d1184d243bdff84be2b85ca6877528ec6b5a1be15c7dda9ccd7c646c6da"
-    },
-    {
-      "path": "src/models/plus_vip_pack_record.rs",
-      "sha256": "f68fbd5c0b0ca78e82f4b8772786a10eaa58700f6d6b21b47025e2bcd68d12d3"
-    },
-    {
-      "path": "src/models/plus_vip_point_change_record.rs",
-      "sha256": "54d792ba2be45272585b2ae45cb2393991b3993aeaba6a7bca34c444b6f3ec12"
-    },
-    {
-      "path": "src/models/plus_vip_recharge_method_record.rs",
-      "sha256": "196d76f64c0a09e80ead1d241caf0e32c8c60496f03022470668b417dd2f5c22"
-    },
-    {
-      "path": "src/models/plus_vip_recharge_pack_record.rs",
-      "sha256": "a35556c29eebbf41dbb386424f4efbf6876f2d4798b5154bd9b13dbf119b5f87"
-    },
-    {
-      "path": "src/models/plus_vip_recharge_record.rs",
-      "sha256": "feecf7ca0eff88a88948aa5c6865a23efabc4b6375cf2f610c649d1dc8530877"
-    },
-    {
-      "path": "src/models/plus_vip_user_record.rs",
-      "sha256": "35c9f1ab83d4ee9370e3af8342b58fad24a49512e288e3c5cc6145d2b0ada15d"
-    },
-    {
       "path": "src/models/preflight_estimates_create_result.rs",
-      "sha256": "04caa6194a18fd97da95c179ed5c8b49749b68f2af0d972ddb60b199e18aa4d8"
+      "sha256": "bec1062d8c174171f5389216157e7ef2b1d377990b6c6ffd6e68378ead687aeb"
     },
     {
       "path": "src/models/preflight_prechecks_create_result.rs",
-      "sha256": "2de2d471696c229377986e5d089a76024621b30cd651e518ce29b458206b3c8d"
+      "sha256": "7c38d99be0d2a018b2eff5d1c6b4158fe89117e73fbf21d90f47f9cc61cc378e"
     },
     {
       "path": "src/models/preflight_preholds_create_result.rs",
-      "sha256": "02f95f419375bfa72f5f58906faed52b87e3413a7ab8000b510769f53c3ac210"
+      "sha256": "3008f834740af51881c818d0eace400c8663bb0e87a87f7b3a4877a5f36e9fbf"
     },
     {
       "path": "src/models/preflight_releases_create_result.rs",
-      "sha256": "11de13310ef17f4aad49229444bae76e7fafd011bb0d552e2b63e18cac258d23"
+      "sha256": "f4e9e22b4293a652ff0701b5c9627f893c4a842a2f6159f006f7646d7564cac9"
     },
     {
       "path": "src/models/preflight_settlements_create_result.rs",
-      "sha256": "36e2cdec17c24832a128c43222c59e13efce92610ea6fe825fa71338dcab3d6d"
+      "sha256": "c07c8f3f1ffc2bae8e3a4eefe1f453028bd495e8362aeacbd7a52cb16a5d9b62"
     },
     {
       "path": "src/models/problem_detail.rs",
       "sha256": "82138a7c404c77ec62ded0e0863e9396ddba5bc3984f58e02d3b71ac62ef5a56"
+    },
+    {
+      "path": "src/models/provider_circuit_breaker_policy.rs",
+      "sha256": "98324956b530e25de8ecda55d09097d7af4ab874807f5a212ae3df0f2545e706"
     },
     {
       "path": "src/models/provider_config.rs",
@@ -1671,7 +1875,7 @@
     },
     {
       "path": "src/models/providers_list_result.rs",
-      "sha256": "bb9507c353402b5cdf88b8caf7f864afda4bf2761738c393e776a8ad36e15af2"
+      "sha256": "2b239fd67e59f5060fb4f6dc6210ef071a20f4531ac5584171f9ebc425618c0a"
     },
     {
       "path": "src/models/providers_response.rs",
@@ -1699,7 +1903,7 @@
     },
     {
       "path": "src/models/registrations_create_result.rs",
-      "sha256": "d63b29b3abae7d5237f08f9ab2c9f61266b5ba90353a6f02ba03e3e9bbf56051"
+      "sha256": "d357baa40d3b6522d809434487bc67acbc1c3a2b82ac5c1e873a14d0830a34cb"
     },
     {
       "path": "src/models/routing_api_key_item.rs",
@@ -1707,7 +1911,7 @@
     },
     {
       "path": "src/models/routing_api_keys_list_result.rs",
-      "sha256": "d34a553fd0fa73b7d1a08134523307a0dff16fda7eae91c85b6c09c72c6cba8e"
+      "sha256": "b2a4d1c2ffe0ac9cc14f55b18bc19c16afada2f5e29379489f04935faa0d20d3"
     },
     {
       "path": "src/models/routing_api_keys_response.rs",
@@ -1719,7 +1923,7 @@
     },
     {
       "path": "src/models/routing_channel_item.rs",
-      "sha256": "5e5ebb81ffe090f81a6a29236a934f53b69082d359d8db2c9101ced6a99f15c4"
+      "sha256": "5cf966769e9721b1bd452c25723cca1a561a7663344f2bed0db28d0bbc46ec82"
     },
     {
       "path": "src/models/routing_channel_mutation_response.rs",
@@ -1731,15 +1935,15 @@
     },
     {
       "path": "src/models/routing_channels_create_result.rs",
-      "sha256": "e739da3ff35c49b5831e3adf4b3060f0e0e5ed9fac4ebe042e2283eb318676fc"
+      "sha256": "6c1fe939b2329b3187395d8e689fb2f6306be31fda432626dcae7c171ba57d17"
     },
     {
       "path": "src/models/routing_channels_delete_result.rs",
-      "sha256": "c9f237ec1b6c995e0f4e6ec06c7ad777ffbab59a9944f11f698ddea18500da6f"
+      "sha256": "99cb4facdac7a596416a43c31f96e9cccff0e211a45664b4dc989e5cf471871f"
     },
     {
       "path": "src/models/routing_channels_list_result.rs",
-      "sha256": "0a9519bc9a789961811147a78b316d9d7019a31de5725b5bebd39d3f21f929eb"
+      "sha256": "0060fd83663527dbac0853021e3904678302869cdb7c786506c080b2f4a5b1b7"
     },
     {
       "path": "src/models/routing_channels_response.rs",
@@ -1747,19 +1951,19 @@
     },
     {
       "path": "src/models/routing_channels_status_update_result.rs",
-      "sha256": "dd08d0efb97883d6cf2b697800c3b9970dc9cbd24043ec7f82a01b6ace255b86"
+      "sha256": "b84a2d09a1e47ef466890e4b9f40b910bcfcfee4352b3e9584068a9522f136c5"
     },
     {
       "path": "src/models/routing_channels_update_result.rs",
-      "sha256": "4d2ac0958e8185833651e4629cd5dff09469beccbe4c21239fb2c5ac643b220c"
+      "sha256": "f2a0c54c8927b9b596d2382dd02f5ff0d61e0f04457870b14609e16bfec2ddbb"
     },
     {
       "path": "src/models/routing_channels_verify_result.rs",
-      "sha256": "f737865c61164887ea5bf22dfbaf0f42eb31cc68b5383c6f11feca58a1a1b56a"
+      "sha256": "c8179f86b8a6d72501ee9fa2a6253d3217444a4af65a329346e4681d1e637153"
     },
     {
       "path": "src/models/routing_request_traces_list_result.rs",
-      "sha256": "f3c54a355a7349495c3a23f2774ee0af9785bded0f75e3c5593dfd08934138cb"
+      "sha256": "98cc9798afe4bdee27930ae6ca2f8f5e483add86959af6715543d983bdfbb28c"
     },
     {
       "path": "src/models/routing_request_traces_response.rs",
@@ -1767,7 +1971,7 @@
     },
     {
       "path": "src/models/routing_strategy_list_result.rs",
-      "sha256": "2fdf3b8fda8f33d3c9741063351556ddc8c5caf750f747d7d791183bdf7afea2"
+      "sha256": "76e20b1ed56c571e17a093148962bc57857014e061b06a0bca2ad23fd6e709f4"
     },
     {
       "path": "src/models/routing_strategy_snapshot.rs",
@@ -1775,39 +1979,91 @@
     },
     {
       "path": "src/models/routing_strategy_update_result.rs",
-      "sha256": "0aa262bff98ac96282f018f9c336948412de2d46b33a3328ba6297dd4829cfc6"
+      "sha256": "cca303bc652a02097167ec25b28251f3d3249badd30f16106fd1c29f59254923"
     },
     {
       "path": "src/models/routing_usage_list_result.rs",
-      "sha256": "c7c4fad9e0d4273b52f20770c3f21ca8c42cdf0a1142e8dcda31f3eb7d6dcdcd"
+      "sha256": "460d837b43481d4c3328ee7e26ec897b7cb4c920833d065a3bf36360f45a0a33"
     },
     {
       "path": "src/models/routing_usage_snapshot.rs",
       "sha256": "8522cff6d128542ec856ae9963a0470be6a8b66b19314f44a866339121826ceb"
     },
     {
+      "path": "src/models/runtime_artifact_create_request.rs",
+      "sha256": "dcdb8b9def742984105cecbbd00d0960d49db5ab1889e54d5c6ca435fb246683"
+    },
+    {
+      "path": "src/models/runtime_artifact_item.rs",
+      "sha256": "26ece7bfbea8c093dfe3af4ca8af88407abc0497ce81bfea357fe79b5463726f"
+    },
+    {
+      "path": "src/models/runtime_artifact_list_response.rs",
+      "sha256": "13b4b6476d74fd4e26e055fa0098e472aef0d313370794c4ae8a5c7cb7246b2e"
+    },
+    {
+      "path": "src/models/runtime_artifact_response.rs",
+      "sha256": "890b5fcae229a5cd00af7534cfa1fb42d14349d4635ae791f0901974fec1bbcf"
+    },
+    {
+      "path": "src/models/runtime_event_create_request.rs",
+      "sha256": "59d9c353a101db908496c8c2923f09e9f915084ac9d84e267883200d11d9ac27"
+    },
+    {
+      "path": "src/models/runtime_event_item.rs",
+      "sha256": "344464d2138025cacc9d63e76991b505ba3cc5d8ebbf4cdb097b2a4daad0f6ac"
+    },
+    {
+      "path": "src/models/runtime_event_list_response.rs",
+      "sha256": "a02c38989167645622ad906b6e0dd00a88bc7b5ae7129345056306c1646d41a0"
+    },
+    {
+      "path": "src/models/runtime_event_response.rs",
+      "sha256": "d27974af8b47c33bf0ed1dd78014b1b444465ee816b7ab1256e9e4c4f13ddf49"
+    },
+    {
+      "path": "src/models/runtime_invocation_complete_request.rs",
+      "sha256": "b2239cbcba436a9e79eda1c64707d78a6015680d311c88cf55795b8af73f3015"
+    },
+    {
+      "path": "src/models/runtime_invocation_create_request.rs",
+      "sha256": "291892ca4d9d35e9987bfa59cb53933f21a347f2df3814b71b55049adf358037"
+    },
+    {
+      "path": "src/models/runtime_invocation_item.rs",
+      "sha256": "0051c011af310884bef80bfbc5f2bc98baa2360919ef0b1ab8bd1bf3bcb57cca"
+    },
+    {
+      "path": "src/models/runtime_invocation_list_response.rs",
+      "sha256": "4fba94d78f668bfe306334ec876cd9f66534f859ee7523f6ee6f09939c8807fd"
+    },
+    {
+      "path": "src/models/runtime_invocation_response.rs",
+      "sha256": "71522d6080e969bff30eb4f8a763f462516acb6dd19b0c35ef7fe69372e57322"
+    },
+    {
       "path": "src/models/runtime_settings_retrieve_result.rs",
-      "sha256": "89d013d69c2de2c583a914e1959023166f455fba76fcb8d516a43e570ef5f479"
+      "sha256": "f26cc929ad6603aa4018d406cd11850e3d8fe8bbfb4d93a57fa7fa6132f64220"
     },
     {
       "path": "src/models/sessions_create_result.rs",
-      "sha256": "329ea8c1b93039a1bbff3356ce55c6b1b2f21c680cd530484fe6393468f7c771"
+      "sha256": "396b84e6c73a868d131e45387395c604ad43c138e9b3268be4b16f51a3676071"
     },
     {
       "path": "src/models/sessions_current_delete_result.rs",
-      "sha256": "8466a228c58636597cb1e45923d266e56478b719ec1e8d61c979f0fd0bcfdd8a"
+      "sha256": "5510b4808c4aed0be099eca9be70543c2a50e7069701364a35bc4e9db83a8308"
     },
     {
       "path": "src/models/sessions_current_retrieve_result.rs",
-      "sha256": "ca0a6eca0a902148475b00b200563bf40c5b7fa90bccf6e0b6ff2a98a6febb5f"
+      "sha256": "13d8f5d77078ab92a10b583ae1245e5b9e14c081c29e48b5eb40ac0cdabea829"
     },
     {
       "path": "src/models/sessions_current_update_result.rs",
-      "sha256": "701a1eb8f1241ec54b5d8687aa9093039cb372995e07a2fe2a568435ea50211e"
+      "sha256": "d1dcd0c3da5793f2913eeba48324c666dc968ea37dd091957fce3d63137b8f70"
     },
     {
       "path": "src/models/sessions_refresh_result.rs",
-      "sha256": "0903a6af30ed4dd24b681916eef90ce1d9ca43ea6bf62427abfca6753fd3e74a"
+      "sha256": "383d16c22d7c4cf2070bed0022c05cb41fa0d9a2848bbcde35fd7aad70e489c2"
     },
     {
       "path": "src/models/set_routing_channel_status_request.rs",
@@ -1843,7 +2099,15 @@
     },
     {
       "path": "src/models/settlements_dashboard_list_result.rs",
-      "sha256": "e37025bc3c4cc77e00385b1b447065532ac9d707bb7365dad180ea302901d968"
+      "sha256": "63e3d8ed49e5d10676deecc87680f5797ee60fec58af15ea77a68761d71179c4"
+    },
+    {
+      "path": "src/models/site_runtime_retrieve_result.rs",
+      "sha256": "e6ae360ea01c133cc9b06c33a7966447acaf78d2c9fa1efc66bb2f5ca963ddf2"
+    },
+    {
+      "path": "src/models/site_runtime_settings_response.rs",
+      "sha256": "0f379da1b6160b04d97429c95c576930a5c3c5015746427ab3ef9c74dec8ac79"
     },
     {
       "path": "src/models/skill_catalog_item.rs",
@@ -1867,27 +2131,39 @@
     },
     {
       "path": "src/models/skills_categories_list_result.rs",
-      "sha256": "f995e832b0ae438d5ad2080368c52fbe55115b703b5856b271441fa0b4951a0c"
+      "sha256": "632686fedc4b3ef0632ba150eca2f496f0bbbbb779f9cba9b5afc8ad26fc5266"
     },
     {
       "path": "src/models/skills_config_update_result.rs",
-      "sha256": "bcfd6b341ce094e7f0a4cd81008c65a2f5a4023fe2122aae731910f8e067be1c"
+      "sha256": "c9a14ea60d64193a7649bc0681f75b3e2ef36eefa77f3af5dee3222aa4f0531e"
     },
     {
       "path": "src/models/skills_disable_result.rs",
-      "sha256": "4b93f5316ef2f4675b227adf7d273fdacbb6bade4131ccc9170535b4982ca2e1"
+      "sha256": "f1ee25bb094a26e184befd6c9a38305084c68a5843503bbda421b8461bd6ea5e"
     },
     {
       "path": "src/models/skills_enable_result.rs",
-      "sha256": "a7aac234ddc8877c292e6e4d70cf4825d9b5d0ae38cdc115a744fcf84d796b8f"
+      "sha256": "c4a8ead57c90a885a525e690fb893262abbc8b151d1b5888b70369b7e82a3ec8"
     },
     {
       "path": "src/models/skills_list_result.rs",
-      "sha256": "a6d3238b86879ee9a04a5b780cfbf996ae233cb6c25c3307c56d07febca595e2"
+      "sha256": "a0694c3dcbfdc8e1122760ec56f75cfdca439a7d6f0b670cb7b5163a05897623"
     },
     {
       "path": "src/models/skills_retrieve_result.rs",
-      "sha256": "fef5f43a8f12e93534995367ca6dfcc926418fef5f6c26e96af5176cd39ff12d"
+      "sha256": "9624646946e8ea659be74bf521d61078eb1ef86966384c6a77d1f5ce986669d0"
+    },
+    {
+      "path": "src/models/spaces_create_result.rs",
+      "sha256": "fd4b6ebb00743a1abda38890eb5f4743f88dd24878f6b817588f1b8b456441f3"
+    },
+    {
+      "path": "src/models/spaces_list_result.rs",
+      "sha256": "c243add15e1a328b76f7f3e1b19991b6849212acb3585161bcf554c4a194f942"
+    },
+    {
+      "path": "src/models/spaces_retrieve_result.rs",
+      "sha256": "fe23ee95ba8c291b52f0e41c32bd6106e8c2961be7898383a2f48d1eac1db4ce"
     },
     {
       "path": "src/models/studio_catalog_action_record.rs",
@@ -1918,6 +2194,14 @@
       "sha256": "53ae4743a03be76ac206b51ea273dfb1578f3685d5c30be6218a2c856b8e445a"
     },
     {
+      "path": "src/models/turn_responses_create_result.rs",
+      "sha256": "99fbf660588b6a34afc47cf1e0fa40394ec45a050488cc31a7f41948c8920ca4"
+    },
+    {
+      "path": "src/models/turns_create_result.rs",
+      "sha256": "024c528ad011ba9741ac5626d5db6c5c89685b64e64a71e3e19bf5ad70860491"
+    },
+    {
       "path": "src/models/update_api_key_request.rs",
       "sha256": "1de1811e8475d531f1264fbcd256f4e3edb156014893f13d2f7187054e39cce6"
     },
@@ -1927,7 +2211,7 @@
     },
     {
       "path": "src/models/update_routing_channel_request.rs",
-      "sha256": "67c659520777d4a9ec3c91713d6b294da62d56d8b9ade3f8da0a947c88cb7dd3"
+      "sha256": "be31f636efa6e84d5e668e1f10420a04ed52e0940bf403c5ed3fffc191a11ab9"
     },
     {
       "path": "src/models/update_routing_strategy_request.rs",
@@ -1951,159 +2235,91 @@
     },
     {
       "path": "src/models/usage_logs_list_result.rs",
-      "sha256": "afa8d05c435fdbc155db62241abc923b7f5cf1b8430aae082abe48521a088792"
+      "sha256": "f09f2855dad7af8932177dee018a46a0e721407e6291c4066a05cae428c3c24c"
     },
     {
       "path": "src/models/usage_logs_response.rs",
       "sha256": "57e5e4dcda2673813ee5959361f06ac65e8bae6d9b05b217efec7864937368e8"
     },
     {
+      "path": "src/models/usage_snapshot.rs",
+      "sha256": "4150ebb6b998ad4aa1398e38214cf3d157a2831f012f188b505753b2dbc47c3c"
+    },
+    {
       "path": "src/models/users_current_comments_list_result.rs",
-      "sha256": "1fcdcdcff440d8e73fe01d3d4375c49af26c597086c7a87439703bd895170ea3"
+      "sha256": "e6aa9e7fa125f02ba444e1d8b516d26e7b445a9dd3194469e9a320a5a0ce92a8"
     },
     {
       "path": "src/models/users_current_coupons_list_result.rs",
-      "sha256": "a9b51f42b5f68f82c3835d914161bbd2b68335562613b40983f0b9722477603b"
+      "sha256": "69723593c963a9a45d334bc642090d42f3d15f6d09a953205a66dd8992e702f9"
     },
     {
       "path": "src/models/users_current_coupons_retrieve_result.rs",
-      "sha256": "e6de18ca3f42ebc81da000ba0e34d70e348776f2e5c1daa3c23154bf1f2e0f42"
+      "sha256": "c2100e74a2ac647cc384ea7961894ce96f60351d523c9d662c99f5482c8e5d81"
     },
     {
       "path": "src/models/users_current_retrieve_result.rs",
-      "sha256": "be57b75f88da49e7741ff7859291a8c5d99533a2911203d2216484371aa5050d"
+      "sha256": "90cda88f269d19ad0eb64ac780f5f60b85cb0ef37fdbfac5f84b907de085d0db"
     },
     {
       "path": "src/models/users_current_skills_list_result.rs",
-      "sha256": "485d6b52c35059e6819db03323f66abe2e9aab51d90dc39ed935a9b042a51ce1"
+      "sha256": "f6525322e3ebb44397327f1d69def76528da07470cc0cf4e61d12e1dc3d7035d"
     },
     {
       "path": "src/models/users_settings_retrieve_result.rs",
-      "sha256": "d6d0f5a15f656d671efe4163e8ccfef6130ea4fe9d042b5785107320a0cb99d8"
+      "sha256": "ee33238f4e23372dc0aaf98b84a17fd1b4c37121756a0d041c887393553f032e"
     },
     {
       "path": "src/models/users_settings_update_result.rs",
-      "sha256": "7cb4f557fc89a3eb81a0b37f358cbded3a5e45ec2d0d19a25495994d461da967"
+      "sha256": "7bd128bc5298188271a2a778a49223976ed42809c4b7c4a46bcfcfc02e702981"
     },
     {
       "path": "src/models/verification_codes_create_result.rs",
-      "sha256": "21ed9064462598aee3f3d1f59e625ecd8bec31f804c558c51d1cacf4e394129f"
+      "sha256": "83c6415c7fa1b0b592c3a443bbddcafd9b0db7505199f92131478e1d8b9ec374"
     },
     {
       "path": "src/models/verification_codes_verify_result.rs",
-      "sha256": "b4913f78d655cfb36fb4f7fccfb1d8b61858c32da63a51cd07ff183dc4a66d5c"
+      "sha256": "4aaf82f7e6536e084273226764841459e00297cbc2eed23d2d0aa070b0a03127"
     },
     {
       "path": "src/models/verification_policy_retrieve_result.rs",
-      "sha256": "b10f336896641cb087319b4970919cd903f11340dd3d387e3e2fec706ed934be"
-    },
-    {
-      "path": "src/models/vip_benefits_list_result.rs",
-      "sha256": "eca937062b3a19d38db2408fee4e0fe18a9f3487a0386fe40fd632ea988269b9"
-    },
-    {
-      "path": "src/models/vip_info_retrieve_result.rs",
-      "sha256": "cb877bb7f8beca0e336273730f3b6f9f5ae30bc045d59c5abd06a9cde3c96256"
-    },
-    {
-      "path": "src/models/vip_levels_list_result.rs",
-      "sha256": "2a169c536388fc0da6d546a27e30762f76ed8aca49ad25122eb9349d065ddd31"
-    },
-    {
-      "path": "src/models/vip_pack_groups_list_result.rs",
-      "sha256": "2fddedf37f560c822a64dda8f9a87cf8bf4941ae6731494c528ea438d82be7a4"
-    },
-    {
-      "path": "src/models/vip_pack_groups_packs_list_result.rs",
-      "sha256": "074acbb6248f85a302a0a68f195462781ce1d2002ab3f90cc6c0939b410357dd"
-    },
-    {
-      "path": "src/models/vip_pack_groups_retrieve_result.rs",
-      "sha256": "4d38f14312f0e1a3a8bf9ce20c5e169241ead2ed58db8117fcb42febde13ff62"
-    },
-    {
-      "path": "src/models/vip_packs_list_result.rs",
-      "sha256": "2fe00bf90401f1288c888835bf9e25b127d040a33fb6fe4cd6078e4a274b0ccf"
-    },
-    {
-      "path": "src/models/vip_packs_retrieve_result.rs",
-      "sha256": "e600d45dc7bb3560af3f00cd4361e3f406507be5e9893b1ccd2970b8bed3f275"
-    },
-    {
-      "path": "src/models/vip_points_balance_retrieve_result.rs",
-      "sha256": "49ec6ab357af57e31160c74f5219f7b10cb4bb064b9a2063872659947ca759d2"
-    },
-    {
-      "path": "src/models/vip_points_daily_rewards_create_result.rs",
-      "sha256": "aaaa6d904c60caa400d7b707031e5b07ab8ebeaeedec53282bf23cc0395ae2fe"
-    },
-    {
-      "path": "src/models/vip_points_daily_rewards_status_retrieve_result.rs",
-      "sha256": "ca79f28809881b56ca2498c21a4632e2ae5039998aa5e539678cdbc25ca116e3"
-    },
-    {
-      "path": "src/models/vip_points_history_list_result.rs",
-      "sha256": "f8b0527c2909c5a20e9500ba3d7bdbae0b77b228c597df6317c365ae4d9d7aec"
-    },
-    {
-      "path": "src/models/vip_privileges_speed_ups_create_result.rs",
-      "sha256": "fb4e4695fdf72bc57b7b89c60decf647f54d8f8fa9cf5e08493fcb0695326823"
-    },
-    {
-      "path": "src/models/vip_privileges_usage_retrieve_result.rs",
-      "sha256": "ea3d854361a983b38c732a172b0d489985ce526a1248b08cf8e76546d90c38d6"
-    },
-    {
-      "path": "src/models/vip_purchase_create_result.rs",
-      "sha256": "e3a6c5ee3599ae4dd79db77b99ee78c4490a459e75860a995125ad5850057ea1"
-    },
-    {
-      "path": "src/models/vip_purchase_renew_result.rs",
-      "sha256": "d4a92362d8ffb07df9192dfac2526e5d6e40633c3fb52b36df94b3743e2c0ce2"
-    },
-    {
-      "path": "src/models/vip_purchase_upgrade_result.rs",
-      "sha256": "1ee1a59f6530680ee75cd5898b591085e961dc9330931bacb076ebc04fe8e672"
-    },
-    {
-      "path": "src/models/vip_status_retrieve_result.rs",
-      "sha256": "e34c1175d2e6c4e36170ff353ebeff8dfdc9b08ffff1e4a2a671213a72d322ac"
+      "sha256": "8d36d9dab03a0a6829c9c35a597310be0bdf3e5ca0f0e0cf0aa9c01dc67dff75"
     },
     {
       "path": "src/models/wallet_accounts_list_result.rs",
-      "sha256": "62192d5cdca47268bb87776ee24f24f1b93f1a4be60c93cdd67d30536301606a"
+      "sha256": "3acd11e53d37005d6f3d276c509f626ae795f83cdd2d5aa65c8bf2f9493b4b25"
     },
     {
       "path": "src/models/wallet_exchanges_create_result.rs",
-      "sha256": "bd70168b51f065abb9282ade943c73a246840c88e72e0730510fe03dc9bbda42"
+      "sha256": "02b92f7bbe1f6320da89f13bad8dc4bbbe360f0fe446447a118b0070ddbeb3b3"
     },
     {
       "path": "src/models/wallet_operations_retrieve_result.rs",
-      "sha256": "5276e2e70c9ac24b34043c61a2f9a5430b36bee349a99ed6675ba92c4d16f61c"
+      "sha256": "748393cee748b5a60de8391915c7f8ae3fafc2a03cd743e20720efa8ace03890"
     },
     {
       "path": "src/models/wallet_overview_retrieve_result.rs",
-      "sha256": "3637ebfbc09ba1e83577fc9c8d2c8569b3077f598ac230f1762fc857944010df"
+      "sha256": "ad3bdb99fd97f0bc8aa2dcf2d5ad9d64f7969cee005796ae7c478709788dd891"
     },
     {
       "path": "src/models/wallet_topups_create_result.rs",
-      "sha256": "e4c06acce1e95554cc067caff52930f32cf5830eb5b4e2fcf1fe1d1e04a22845"
+      "sha256": "869bbd3a9fe139e5cb1b6ccd0cc5489fd0b8ced2b07c5a79888c0254fa98cdbf"
     },
     {
       "path": "src/models/wallet_transactions_list_result.rs",
-      "sha256": "8f48f30fc54b5e993df7782f3f9f29cbd94a19b592f5e8a29fccd77282a98895"
+      "sha256": "45d7ac758662792181c47626dd3183f3405c833c027ddc695bebc61274785213"
     },
     {
       "path": "src/models/wallet_transactions_retrieve_result.rs",
-      "sha256": "e34aac8456a1b57586244931c6c90c56c8a4c658da91a48a46edf0d8bf9f97fa"
+      "sha256": "674b1b6cc54db867d27b8270db6793d91ab3efd7be4953c1f960475f46e5ac50"
     },
     {
       "path": "src/models/wallet_transfers_create_result.rs",
-      "sha256": "1012164320de52e4da5dcbccd7d91059d254152c7a339d641d964a0cc4c27980"
+      "sha256": "7d358c10800d148420413597be43c0c00f86e88a497e508912a2d07ca4449839"
     },
     {
       "path": "src/models/wallet_withdrawals_create_result.rs",
-      "sha256": "c9cf41914d27d1c0ea99d09fdca9debf3f11e5cd121f846b38aca474853bbc7a"
+      "sha256": "ff381584ad821106f9615dd1d40e8f8aff22cdfefbb4bcdbf505c8f0c5a31a85"
     }
   ],
   "scaffoldFiles": [

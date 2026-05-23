@@ -61,7 +61,7 @@
 | `/console/usage` 多模态计费 | 结果数、条目数、字符数、音频秒数、视频秒数、统一计费数量 | `ai_billing_meter`、`ai_usage_fact` | 所有模态最终都落 `billing_meter_code + billable_quantity + billable_unit`，原始 token/秒数/个数作为明细字段保留 |
 | `/console/gateway` | endpoint、method、status、duration、channel | `ai_request_trace`、`ops_gateway_instance` | 运行状态与请求事实分离 |
 | `/console/routing` | 渠道账号、模型映射、策略、HA、fallback、请求数据 | `integration_*`、`ai_routing_*`、`ai_request_trace`、`ai_usage_fact` | Provider secret 不落库；策略发布有快照和 outbox |
-| `/console/billing` | 兑换码、充值、充值历史 | `plus_coupon*`、`plus_vip_recharge*`、`plus_order`、`plus_payment` | 交易事实复用 `plus_*` |
+| `/console/commerce` | 兑换码、充值、充值历史 | `commerce_coupon*`、`commerce_recharge_package`、`commerce_order`、`commerce_payment_*` | 交易事实复用 `sdkwork-appbase` commerce 标准表 |
 | `/console/checkout` | 支付确认、支付状态 | `plus_order`、`plus_payment` | 支付状态以支付服务事实为准 |
 | `/console/settlements` | 账期账单、分项、导出 | `commerce_usage_statement`、`commerce_usage_statement_item`、`commerce_billing_export` | 账单是投影，不替代 `plus_invoice` |
 | `/console/account` | 账户资料、余额、发票、安全、登录日志 | `plus_user`、`plus_account`、`plus_invoice*`、`iam_user_security_setting`、`iam_user_login_event`、`ops_audit_log` | PII 不复制到扩展表；登录明细进入 IAM 登录事件，不混入后台操作审计 |

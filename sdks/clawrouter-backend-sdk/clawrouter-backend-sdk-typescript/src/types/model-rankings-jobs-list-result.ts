@@ -7,7 +7,5 @@ export interface ModelRankingsJobsListResult {
   /** Data field on model rankings jobs list result. */
   data?: ModelRankingRefreshJobHistoryPage;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

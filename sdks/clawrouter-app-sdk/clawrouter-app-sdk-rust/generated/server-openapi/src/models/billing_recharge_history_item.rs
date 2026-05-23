@@ -9,8 +9,8 @@ pub struct BillingRechargeHistoryItem {
     /// Date field on billing recharge history item.
     pub date: String,
 
-    /// Id field on billing recharge history item.
-    pub id: i64,
+    /// Stable appbase commerce_payment_attempt id for the recharge payment record.
+    pub id: String,
 
     /// Method field on billing recharge history item.
     pub method: String,

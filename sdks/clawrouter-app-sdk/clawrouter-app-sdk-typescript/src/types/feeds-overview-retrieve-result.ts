@@ -7,7 +7,5 @@ export interface FeedsOverviewRetrieveResult {
   /** Data field on feeds overview retrieve result. */
   data?: ForumOverviewResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

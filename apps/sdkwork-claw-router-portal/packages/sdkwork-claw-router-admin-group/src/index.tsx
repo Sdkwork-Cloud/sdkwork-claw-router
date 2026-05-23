@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
+import { AdminTableShell, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
 import { Plus, Search, Trash2, Edit, ChevronDown, RefreshCw, ArrowUpDown, Settings, LayoutGrid, X } from 'lucide-react';
 import { GroupService, GroupData } from './groupService';
 import { createGroupInputFromForm, createGroupUpdateInputFromForm } from './groupForm';
@@ -115,8 +115,8 @@ export function GroupAdmin() {
   };
 
   return (
-    <div className="w-full h-full flex flex-col space-y-6">
-      <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-4 mb-2">
+    <div className="flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden">
+      <div className="flex shrink-0 flex-col xl:flex-row justify-between items-start xl:items-center gap-4">
         <div className="flex flex-wrap items-center gap-3 w-full xl:w-auto">
           <div className="relative">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -169,16 +169,19 @@ export function GroupAdmin() {
         </div>
       </div>
 
-      <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl shadow-sm overflow-hidden flex flex-col flex-1">
-        {loadError && groups.length > 0 ? (
+      <AdminTableShell
+        data-admin-group-table-card
+        className="rounded-xl dark:bg-[#1a1a1a]"
+        header={loadError && groups.length > 0 ? (
           <div className="border-b border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-200">
             <div className="font-semibold">{t('admin.group.state.loadErrorTitle')}</div>
             <div className="mt-1 text-xs">{t('admin.group.state.staleDataDescription')}</div>
           </div>
         ) : null}
-        <div className="overflow-x-auto flex-1">
+        viewportProps={{ 'data-admin-group-table-viewport': true }}
+      >
           <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 whitespace-nowrap">
-            <thead className="bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10 text-xs font-semibold text-slate-500 dark:text-slate-400">
+            <thead className="sticky top-0 z-10 bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10 text-xs font-semibold text-slate-500 dark:text-slate-400">
               <tr>
                 <th className="px-6 py-4">{t("admin.group.index.text.hzx914", "名称")}<ChevronDown className="inline w-3 h-3 ml-1" /></th>
                 <th className="px-6 py-4">{t("admin.group.index.text.ah7xpy", "平台")}<ChevronDown className="inline w-3 h-3 ml-1" /></th>
@@ -270,8 +273,7 @@ export function GroupAdmin() {
               ))}
             </tbody>
           </table>
-        </div>
-      </div>
+      </AdminTableShell>
 
       {/* CREATE GROUP MODAL */}
       {isModalOpen && (

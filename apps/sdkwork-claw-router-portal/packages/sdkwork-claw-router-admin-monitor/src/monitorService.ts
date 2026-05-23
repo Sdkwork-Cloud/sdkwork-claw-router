@@ -1,5 +1,5 @@
-import {
-  ensurePlusApiSuccess,
+﻿import {
+  ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
   readRequiredApiItems,
@@ -40,21 +40,21 @@ export interface PerformanceDatum {
 export class MonitorService {
   static async fetchNodes(): Promise<SysNode[]> {
     const result = await getClawRouterBackendSdkClient().system.monitor.nodes.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch system nodes');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch system nodes');
     return readRequiredApiItems(result, 'Failed to fetch system nodes')
       .map(normalizeNode);
   }
 
   static async fetchAlerts(): Promise<Alert[]> {
     const result = await getClawRouterBackendSdkClient().system.monitor.alerts.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch alerts');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch alerts');
     return readRequiredApiItems(result, 'Failed to fetch alerts')
       .map(normalizeAlert);
   }
 
   static async fetchPerformanceData(): Promise<PerformanceDatum[]> {
     const result = await getClawRouterBackendSdkClient().system.monitor.performance.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch performance data');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch performance data');
     return readRequiredApiItems(result, 'Failed to fetch performance data')
       .map(normalizePerformanceDatum);
   }

@@ -49,6 +49,14 @@ impl ProviderPassthroughTarget {
         &self.base_url
     }
 
+    pub(crate) fn auth(&self) -> &ProviderPassthroughAuth {
+        &self.auth
+    }
+
+    pub(crate) fn default_headers(&self) -> &[ProviderPassthroughHeader] {
+        &self.default_headers
+    }
+
     pub(crate) fn base_url_has_openai_v1_prefix(&self) -> bool {
         self.base_url
             .parse::<Uri>()

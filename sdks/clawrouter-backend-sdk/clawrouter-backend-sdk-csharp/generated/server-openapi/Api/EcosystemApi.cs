@@ -73,6 +73,36 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
+        /// Delete skill category
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsCategoriesDeleteResult?> SkillsCategoriesDeleteAsync(string categoryId, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.SkillsCategoriesDeleteResult>(ApiPaths.BackendPath($"/ecosystem/skills/categories/{SerializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false))}"), null, requestHeaders);
+        }
+
+        /// <summary>
+        /// Update skill category
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsCategoriesUpdateResult?> SkillsCategoriesUpdateAsync(string categoryId, Sdkwork.ClawRouter.Backend.Models.AdminSkillCategoryUpdateRequest body, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.SkillsCategoriesUpdateResult>(ApiPaths.BackendPath($"/ecosystem/skills/categories/{SerializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false))}"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
         /// List skill packages
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsPackageListResult?> SkillsPackageListAsync(string? q = null, bool? enabled = null, string? categoryId = null, int? page = null, int? pageSize = null)

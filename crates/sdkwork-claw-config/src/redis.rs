@@ -50,12 +50,19 @@ impl RedisConfig {
     pub fn from_env_or_runtime_toml(
         runtime_toml: Option<&crate::RuntimeTomlConfig>,
     ) -> Result<Option<Self>, String> {
+        Self::from_env_or_runtime_toml_with_default_enabled(runtime_toml, false)
+    }
+
+    pub fn from_env_or_runtime_toml_with_default_enabled(
+        runtime_toml: Option<&crate::RuntimeTomlConfig>,
+        default_enabled: bool,
+    ) -> Result<Option<Self>, String> {
         let section = runtime_toml.map(|config| &config.redis);
         let enabled = crate::runtime::config_bool(
             Self::ENV_REDIS_ENABLED,
             section.and_then(|section| section.enabled),
         )?
-        .unwrap_or(false);
+        .unwrap_or(default_enabled);
         if !enabled {
             return Ok(None);
         }
@@ -93,8 +100,7 @@ impl RedisConfig {
         let tls = crate::runtime::config_bool(
             Self::ENV_REDIS_TLS,
             section.and_then(|section| section.tls),
-        )?
-        .unwrap_or(Self::DEFAULT_TLS);
+        )?;
         let max_connections = positive_u32(
             "Redis max connections",
             crate::runtime::config_u32(
@@ -150,7 +156,7 @@ impl RedisConfig {
                 username,
                 password,
                 key_prefix,
-                tls,
+                tls.unwrap_or(Self::DEFAULT_TLS),
                 max_connections,
                 connect_timeout_millis,
                 command_timeout_millis,
@@ -169,7 +175,7 @@ impl RedisConfig {
         username: Option<String>,
         password: Option<String>,
         key_prefix: Option<String>,
-        tls: bool,
+        tls: Option<bool>,
         max_connections: u32,
         connect_timeout_millis: u64,
         command_timeout_millis: u64,
@@ -188,8 +194,23 @@ impl RedisConfig {
             );
         }
         let url = normalize_redis_url(&url)?;
+        let url_uses_tls = redis_url_uses_tls(&url);
+        if let Some(tls) = tls {
+            if tls && !url_uses_tls {
+                return Err(
+                    "runtime config [redis] tls is enabled but url uses redis:// (non-TLS); use rediss:// or disable tls"
+                        .to_owned(),
+                );
+            }
+            if !tls && url_uses_tls {
+                return Err(
+                    "runtime config [redis] tls is disabled but url uses rediss:// (TLS); use redis:// or enable tls"
+                        .to_owned(),
+                );
+            }
+        }
         Ok(Self {
-            tls: redis_url_uses_tls(&url),
+            tls: url_uses_tls,
             url,
             host: None,
             port: None,
@@ -201,12 +222,6 @@ impl RedisConfig {
             connect_timeout_millis,
             command_timeout_millis,
             pool_idle_timeout_seconds,
-        })
-        .map(|mut config| {
-            if tls {
-                config.tls = true;
-            }
-            config
         })
     }
 

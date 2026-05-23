@@ -8,9 +8,21 @@ import java.util.Map;
 
 public class SystemApi {
     private final HttpClient client;
-    
+
     public SystemApi(HttpClient client) {
         this.client = client;
+    }
+
+    /** List overview */
+    public AnalyticsAdminOverviewRetrieveResult analyticsAdminOverviewRetrieve(String timeRange, String startTime, String endTime, Integer limit) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("time_range", timeRange, "form", true, false, null),
+            new QueryParameterSpec("start_time", startTime, "form", true, false, null),
+            new QueryParameterSpec("end_time", endTime, "form", true, false, null),
+            new QueryParameterSpec("limit", limit, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/system/analytics/admin/overview"), query));
+        return client.convertValue(raw, new TypeReference<AnalyticsAdminOverviewRetrieveResult>() {});
     }
 
     /** Retrieve IAM auth runtime settings */
@@ -27,6 +39,58 @@ public class SystemApi {
         );
         Object raw = client.patch(ApiPaths.backendPath("/system/auth/settings"), body, null, requestHeaders, "application/json");
         return client.convertValue(raw, new TypeReference<AuthSettingsUpdateResult>() {});
+    }
+
+    /** Delete one runtime cache instance */
+    public CacheInstancesDeleteResult cacheInstancesDelete(String instanceName) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/system/cache/instances/" + serializePathParameter(instanceName, new PathParameterSpec("instanceName", "simple", false)) + ""));
+        return client.convertValue(raw, new TypeReference<CacheInstancesDeleteResult>() {});
+    }
+
+    /** Refresh one runtime cache instance */
+    public CacheInstancesRefreshCreateResult cacheInstancesRefreshCreate(String instanceName) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/system/cache/instances/" + serializePathParameter(instanceName, new PathParameterSpec("instanceName", "simple", false)) + "/refresh"), null);
+        return client.convertValue(raw, new TypeReference<CacheInstancesRefreshCreateResult>() {});
+    }
+
+    /** Delete a runtime cache namespace */
+    public CacheNamespacesDeleteResult cacheNamespacesDelete(String namespace) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/system/cache/namespaces/" + serializePathParameter(namespace, new PathParameterSpec("namespace", "simple", false)) + ""));
+        return client.convertValue(raw, new TypeReference<CacheNamespacesDeleteResult>() {});
+    }
+
+    /** List runtime cache keys in a namespace */
+    public CacheNamespacesKeysListResult cacheNamespacesKeysList(String namespace, Integer limit, String cursor) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("limit", limit, "form", true, false, null),
+            new QueryParameterSpec("cursor", cursor, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/system/cache/namespaces/" + serializePathParameter(namespace, new PathParameterSpec("namespace", "simple", false)) + "/keys"), query));
+        return client.convertValue(raw, new TypeReference<CacheNamespacesKeysListResult>() {});
+    }
+
+    /** Delete a runtime cache key */
+    public CacheNamespacesKeysDeleteResult cacheNamespacesKeysDelete(String namespace, String key) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/system/cache/namespaces/" + serializePathParameter(namespace, new PathParameterSpec("namespace", "simple", false)) + "/keys/" + serializePathParameter(key, new PathParameterSpec("key", "simple", false)) + ""));
+        return client.convertValue(raw, new TypeReference<CacheNamespacesKeysDeleteResult>() {});
+    }
+
+    /** Refresh one runtime cache namespace */
+    public CacheNamespacesRefreshCreateResult cacheNamespacesRefreshCreate(String namespace) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/system/cache/namespaces/" + serializePathParameter(namespace, new PathParameterSpec("namespace", "simple", false)) + "/refresh"), null);
+        return client.convertValue(raw, new TypeReference<CacheNamespacesRefreshCreateResult>() {});
+    }
+
+    /** Retrieve runtime cache overview */
+    public CacheOverviewRetrieveResult cacheOverviewRetrieve() throws Exception {
+        Object raw = client.get(ApiPaths.backendPath("/system/cache/overview"));
+        return client.convertValue(raw, new TypeReference<CacheOverviewRetrieveResult>() {});
+    }
+
+    /** Refresh all runtime cache instances */
+    public CacheRefreshCreateResult cacheRefreshCreate() throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/system/cache/refresh"), null);
+        return client.convertValue(raw, new TypeReference<CacheRefreshCreateResult>() {});
     }
 
     /** List dashboard data */
@@ -61,6 +125,12 @@ public class SystemApi {
     public InstallationStatusRetrieveResult installationStatusRetrieve() throws Exception {
         Object raw = client.get(ApiPaths.backendPath("/system/installation/status"));
         return client.convertValue(raw, new TypeReference<InstallationStatusRetrieveResult>() {});
+    }
+
+    /** List referral stats */
+    public MarketingReferralStatsListResult marketingReferralStatsList() throws Exception {
+        Object raw = client.get(ApiPaths.backendPath("/system/marketing/referral_stats"));
+        return client.convertValue(raw, new TypeReference<MarketingReferralStatsListResult>() {});
     }
 
     /** List alerts */
@@ -140,6 +210,22 @@ public class SystemApi {
         ));
         Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/system/records"), query));
         return client.convertValue(raw, new TypeReference<RecordsListResult>() {});
+    }
+
+    /** Retrieve site branding and deployment personalization settings */
+    public SiteSettingsRetrieveResult siteSettingsRetrieve() throws Exception {
+        Object raw = client.get(ApiPaths.backendPath("/system/site/settings"));
+        return client.convertValue(raw, new TypeReference<SiteSettingsRetrieveResult>() {});
+    }
+
+    /** Update site branding and deployment personalization settings */
+    public SiteSettingsUpdateResult siteSettingsUpdate(AdminSiteSettingsUpdateRequest body, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.patch(ApiPaths.backendPath("/system/site/settings"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<SiteSettingsUpdateResult>() {});
     }
 
     private record PathParameterSpec(String name, String style, boolean explode) {}

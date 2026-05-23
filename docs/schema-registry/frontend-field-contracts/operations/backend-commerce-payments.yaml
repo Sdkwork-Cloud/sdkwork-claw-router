@@ -1,0 +1,917 @@
+fragment: operations/backend-commerce-payments
+frontend_operations:
+- route: /admin/payments
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  operation: backendPaymentsProvidersList
+  operation_id: payments.providers.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/payments/providers
+  sdk_domain: commerce
+  summary: Payments Providers List
+  description: Standard appbase commerce API for payments.providers.list; no legacy billing compatibility route is exposed.
+  read_sources: &paymentReadSources
+  - commerce_payment_provider
+  - commerce_payment_provider_account
+  - commerce_payment_method
+  - commerce_payment_channel
+  - commerce_payment_route_rule
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_payment_webhook_event
+  - commerce_payment_reconciliation_run
+  query_parameters: &paymentListQueryParameters
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema:
+    name: CommercePaymentProviderListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items: &commercePaymentProviderItem
+          name: CommercePaymentProviderItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - providerCode
+          - displayName
+          - providerType
+          - supportedCountries
+          - supportedCurrencies
+          - capabilities
+          - status
+          - createdAt
+          - updatedAt
+          properties:
+            id: &idSchema
+              type: string
+              minLength: 1
+              maxLength: 128
+            providerCode: &paymentProviderCodeSchema
+              type: string
+              enum:
+              - wechat_pay
+              - alipay
+              - paypal
+              - stripe
+              - apple_pay
+              - google_pay
+            displayName:
+              type: string
+              minLength: 1
+              maxLength: 128
+            providerType:
+              type: string
+              enum:
+              - domestic_wallet
+              - international_wallet
+              - card_processor
+              - platform_wallet
+              - account_balance
+            settlementType:
+              type: string
+              nullable: true
+              enum:
+              - direct
+              - aggregator
+              - platform
+            supportedCountries:
+              type: array
+              items: &countryCodeSchema
+                type: string
+                minLength: 2
+                maxLength: 2
+                pattern: ^[A-Z]{2}$
+            supportedCurrencies:
+              type: array
+              items: &currencyCodeSchema
+                type: string
+                minLength: 3
+                maxLength: 3
+                pattern: ^[A-Z]{3}$
+            capabilities:
+              type: array
+              items:
+                type: string
+                enum:
+                - payment_intent
+                - payment_query
+                - payment_close
+                - refund
+                - webhook
+                - reconciliation
+                - tokenization
+            status: &paymentConfigStatusSchema
+              type: string
+              enum:
+              - active
+              - inactive
+              - disabled
+            createdAt: &timestampSchema
+              type: string
+              minLength: 1
+              maxLength: 64
+            updatedAt: *timestampSchema
+      total: &totalSchema
+        type: integer
+        format: int64
+        minimum: 0
+      page: &pageSchema
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize: &pageSizeSchema
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200
+- route: /admin/payments
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  operation: backendPaymentsProviderAccountsList
+  operation_id: payments.providerAccounts.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/payments/provider_accounts
+  sdk_domain: commerce
+  summary: Payments Provider Accounts List
+  description: Standard appbase commerce API for payments.providerAccounts.list; no legacy billing compatibility route is exposed.
+  read_sources: *paymentReadSources
+  query_parameters:
+  - name: provider_code
+    schema: *paymentProviderCodeSchema
+  - name: page
+    schema: *pageSchema
+  - name: page_size
+    schema: *pageSizeSchema
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema:
+    name: CommercePaymentProviderAccountListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items: &commercePaymentProviderAccountItem
+          name: CommercePaymentProviderAccountItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - accountNo
+          - providerCode
+          - merchantId
+          - environment
+          - countryCode
+          - settlementCurrency
+          - secretRef
+          - status
+          - createdAt
+          - updatedAt
+          properties:
+            id: *idSchema
+            accountNo: &accountNoSchema
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[A-Za-z0-9_-]+$
+            providerCode: *paymentProviderCodeSchema
+            merchantId: &merchantIdSchema
+              type: string
+              minLength: 1
+              maxLength: 128
+            environment: &paymentEnvironmentSchema
+              type: string
+              enum:
+              - sandbox
+              - production
+            countryCode: *countryCodeSchema
+            settlementCurrency: *currencyCodeSchema
+            secretRef: &secretRefSchema
+              type: string
+              minLength: 1
+              maxLength: 256
+            webhookSecretRef:
+              type: string
+              nullable: true
+              maxLength: 256
+            certificateRef:
+              type: string
+              nullable: true
+              maxLength: 256
+            rotatedAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            status: *paymentConfigStatusSchema
+            note:
+              type: string
+              nullable: true
+              maxLength: 512
+            createdAt: *timestampSchema
+            updatedAt: *timestampSchema
+      total: *totalSchema
+      page: *pageSchema
+      pageSize: *pageSizeSchema
+- route: /admin/payments
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  operation: backendPaymentsProviderAccountsCreate
+  operation_id: payments.providerAccounts.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/payments/provider_accounts
+  sdk_domain: commerce
+  summary: Payments Provider Accounts Create
+  description: Standard appbase commerce API for payments.providerAccounts.create; no legacy billing compatibility route is exposed.
+  read_sources: *paymentReadSources
+  request_id_header: true
+  idempotency_required: true
+  write_tables:
+  - commerce_payment_provider_account
+  - ops_audit_log
+  request_schema:
+    name: CommercePaymentProviderAccountMutationRequest
+    type: object
+    additionalProperties: false
+    required:
+    - accountNo
+    - providerCode
+    - merchantId
+    - environment
+    - countryCode
+    - settlementCurrency
+    - secretRef
+    - status
+    properties:
+      accountNo: *accountNoSchema
+      providerCode: *paymentProviderCodeSchema
+      merchantId: *merchantIdSchema
+      environment: *paymentEnvironmentSchema
+      countryCode: *countryCodeSchema
+      settlementCurrency: *currencyCodeSchema
+      secretRef: *secretRefSchema
+      webhookSecretRef:
+        type: string
+        nullable: true
+        maxLength: 256
+      certificateRef:
+        type: string
+        nullable: true
+        maxLength: 256
+      rotatedAt:
+        type: string
+        nullable: true
+        maxLength: 64
+      status: *paymentConfigStatusSchema
+      clientRequestNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      note:
+        type: string
+        nullable: true
+        maxLength: 512
+  response_schema:
+    name: CommercePaymentProviderAccountMutationResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    properties:
+      item: *commercePaymentProviderAccountItem
+- route: /admin/payments
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  operation: backendPaymentsMethodsList
+  operation_id: payments.methods.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/payments/methods
+  sdk_domain: commerce
+  summary: Payments Methods List
+  description: Standard appbase commerce API for payments.methods.list; no legacy billing compatibility route is exposed.
+  read_sources: *paymentReadSources
+  query_parameters: *paymentListQueryParameters
+  response_schema: &commercePaymentMethodListResponse
+    name: CommercePaymentMethodListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items: &commercePaymentMethodItem
+          name: CommercePaymentMethodItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - methodCode
+          - displayName
+          - methodType
+          - checkoutScenes
+          - status
+          - sortOrder
+          - createdAt
+          - updatedAt
+          properties:
+            id: *idSchema
+            methodCode: &paymentMethodCodeSchema
+              type: string
+              enum:
+              - wechat_pay
+              - alipay
+              - paypal
+              - card
+              - apple_pay
+              - google_pay
+              - wallet_balance
+            displayName:
+              type: string
+              minLength: 1
+              maxLength: 128
+            providerCode:
+              type: string
+              nullable: true
+              enum:
+              - wechat_pay
+              - alipay
+              - paypal
+              - stripe
+              - apple_pay
+              - google_pay
+            methodType:
+              type: string
+              enum:
+              - domestic_wallet
+              - international_wallet
+              - card
+              - platform_wallet
+              - account_balance
+            checkoutScenes:
+              type: array
+              items: &paymentSceneSchema
+                type: string
+                enum:
+                - checkout
+                - membership_purchase
+                - points_recharge
+                - wallet_recharge
+                - subscription
+                - invoice
+            status: *paymentConfigStatusSchema
+            sortOrder:
+              type: integer
+              format: int64
+              minimum: 0
+            createdAt: *timestampSchema
+            updatedAt: *timestampSchema
+      total: *totalSchema
+      page: *pageSchema
+      pageSize: *pageSizeSchema
+- route: /admin/payments
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  operation: backendPaymentsChannelsList
+  operation_id: payments.channels.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/payments/channels
+  sdk_domain: commerce
+  summary: Payments Channels List
+  description: Standard appbase commerce API for payments.channels.list; no legacy billing compatibility route is exposed.
+  read_sources: *paymentReadSources
+  query_parameters:
+  - name: provider_account_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: method_code
+    schema: *paymentMethodCodeSchema
+  - name: page
+    schema: *pageSchema
+  - name: page_size
+    schema: *pageSizeSchema
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema:
+    name: CommercePaymentChannelListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items: &commercePaymentChannelItem
+          name: CommercePaymentChannelItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - channelNo
+          - methodCode
+          - providerCode
+          - providerAccountId
+          - countryCode
+          - currencyCode
+          - sceneCode
+          - priority
+          - status
+          - createdAt
+          - updatedAt
+          properties:
+            id: *idSchema
+            channelNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            methodCode: *paymentMethodCodeSchema
+            providerCode: *paymentProviderCodeSchema
+            providerAccountId: *idSchema
+            countryCode: *countryCodeSchema
+            currencyCode: *currencyCodeSchema
+            sceneCode: *paymentSceneSchema
+            priority:
+              type: integer
+              format: int64
+              minimum: 0
+            status: *paymentConfigStatusSchema
+            createdAt: *timestampSchema
+            updatedAt: *timestampSchema
+      total: *totalSchema
+      page: *pageSchema
+      pageSize: *pageSizeSchema
+- route: /admin/payments
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  operation: backendPaymentsRouteRulesList
+  operation_id: payments.routeRules.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/payments/route_rules
+  sdk_domain: commerce
+  summary: Payments Route Rules List
+  description: Standard appbase commerce API for payments.routeRules.list; no legacy billing compatibility route is exposed.
+  read_sources: *paymentReadSources
+  query_parameters:
+  - name: method_code
+    schema: *paymentMethodCodeSchema
+  - name: country_code
+    schema: *countryCodeSchema
+  - name: currency_code
+    schema: *currencyCodeSchema
+  - name: page
+    schema: *pageSchema
+  - name: page_size
+    schema: *pageSizeSchema
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema:
+    name: CommercePaymentRouteRuleListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items: &commercePaymentRouteRuleItem
+          name: CommercePaymentRouteRuleItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - ruleNo
+          - methodCode
+          - countryCode
+          - currencyCode
+          - sceneCode
+          - priority
+          - fallbackEnabled
+          - status
+          - createdAt
+          - updatedAt
+          properties:
+            id: *idSchema
+            ruleNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            methodCode: *paymentMethodCodeSchema
+            countryCode: *countryCodeSchema
+            currencyCode: *currencyCodeSchema
+            sceneCode: *paymentSceneSchema
+            channelId:
+              type: string
+              nullable: true
+              maxLength: 128
+            fallbackChannelId:
+              type: string
+              nullable: true
+              maxLength: 128
+            priority:
+              type: integer
+              format: int64
+              minimum: 0
+            fallbackEnabled:
+              type: boolean
+            status: *paymentConfigStatusSchema
+            createdAt: *timestampSchema
+            updatedAt: *timestampSchema
+      total: *totalSchema
+      page: *pageSchema
+      pageSize: *pageSizeSchema
+- route: /admin/payments
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  operation: backendPaymentsIntentsList
+  operation_id: payments.intents.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/payments/intents
+  sdk_domain: commerce
+  summary: Payments Intents List
+  description: Standard appbase commerce API for payments.intents.list; no legacy billing compatibility route is exposed.
+  read_sources: *paymentReadSources
+  query_parameters:
+  - name: order_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: provider_code
+    schema: *paymentProviderCodeSchema
+  - name: page
+    schema: *pageSchema
+  - name: page_size
+    schema: *pageSizeSchema
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema:
+    name: CommercePaymentIntentListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items: &commercePaymentIntentItem
+          name: CommercePaymentIntentItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - intentNo
+          - orderId
+          - subjectType
+          - amount
+          - currencyCode
+          - status
+          - createdAt
+          - updatedAt
+          properties:
+            id: *idSchema
+            intentNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            orderId: *idSchema
+            checkoutSessionId:
+              type: string
+              nullable: true
+              maxLength: 128
+            subjectType: &paymentSubjectTypeSchema
+              type: string
+              enum:
+              - order
+              - membership_purchase
+              - points_recharge
+              - wallet_recharge
+              - subscription
+              - invoice
+            methodCode:
+              type: string
+              nullable: true
+              enum:
+              - wechat_pay
+              - alipay
+              - paypal
+              - card
+              - apple_pay
+              - google_pay
+              - wallet_balance
+            providerCode:
+              type: string
+              nullable: true
+              enum:
+              - wechat_pay
+              - alipay
+              - paypal
+              - stripe
+              - apple_pay
+              - google_pay
+            amount: &moneyAmountSchema
+              type: string
+              pattern: ^\d+(?:\.\d{1,6})?$
+            currencyCode: *currencyCodeSchema
+            status: &paymentRuntimeStatusSchema
+              type: string
+              enum:
+              - pending
+              - processing
+              - succeeded
+              - failed
+              - canceled
+              - expired
+              - refunding
+              - refunded
+            createdAt: *timestampSchema
+            updatedAt: *timestampSchema
+      total: *totalSchema
+      page: *pageSchema
+      pageSize: *pageSizeSchema
+- route: /admin/payments
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  operation: backendPaymentsAttemptsList
+  operation_id: payments.attempts.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/payments/attempts
+  sdk_domain: commerce
+  summary: Payments Attempts List
+  description: Standard appbase commerce API for payments.attempts.list; no legacy billing compatibility route is exposed.
+  read_sources: *paymentReadSources
+  query_parameters:
+  - name: intent_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: provider_code
+    schema: *paymentProviderCodeSchema
+  - name: page
+    schema: *pageSchema
+  - name: page_size
+    schema: *pageSizeSchema
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema:
+    name: CommercePaymentAttemptListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items: &commercePaymentAttemptItem
+          name: CommercePaymentAttemptItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - attemptNo
+          - intentId
+          - providerCode
+          - amount
+          - currencyCode
+          - status
+          - createdAt
+          properties:
+            id: *idSchema
+            attemptNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            intentId: *idSchema
+            providerCode: *paymentProviderCodeSchema
+            methodCode: *paymentMethodCodeSchema
+            externalTradeNo:
+              type: string
+              nullable: true
+              maxLength: 128
+            amount: *moneyAmountSchema
+            currencyCode: *currencyCodeSchema
+            status: *paymentRuntimeStatusSchema
+            paidAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            createdAt: *timestampSchema
+            updatedAt:
+              type: string
+              nullable: true
+              maxLength: 64
+      total: *totalSchema
+      page: *pageSchema
+      pageSize: *pageSizeSchema
+- route: /admin/payments
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  operation: backendPaymentsWebhookEventsList
+  operation_id: payments.webhookEvents.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/payments/webhook_events
+  sdk_domain: commerce
+  summary: Payments Webhook Events List
+  description: Standard appbase commerce API for payments.webhookEvents.list; no legacy billing compatibility route is exposed.
+  read_sources: *paymentReadSources
+  query_parameters:
+  - name: provider_code
+    schema: *paymentProviderCodeSchema
+  - name: page
+    schema: *pageSchema
+  - name: page_size
+    schema: *pageSizeSchema
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema:
+    name: CommercePaymentWebhookEventListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items:
+          name: CommercePaymentWebhookEventItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - eventNo
+          - providerCode
+          - eventType
+          - processStatus
+          - receivedAt
+          properties:
+            id: *idSchema
+            eventNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            providerCode: *paymentProviderCodeSchema
+            eventType:
+              type: string
+              minLength: 1
+              maxLength: 128
+            externalEventId:
+              type: string
+              nullable: true
+              maxLength: 128
+            processStatus:
+              type: string
+              enum:
+              - received
+              - verified
+              - processed
+              - ignored
+              - failed
+            receivedAt: *timestampSchema
+            processedAt:
+              type: string
+              nullable: true
+              maxLength: 64
+      total: *totalSchema
+      page: *pageSchema
+      pageSize: *pageSizeSchema
+- route: /admin/payments
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  operation: backendPaymentsReconciliationRunsList
+  operation_id: payments.reconciliationRuns.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/payments/reconciliation_runs
+  sdk_domain: commerce
+  summary: Payments Reconciliation Runs List
+  description: Standard appbase commerce API for payments.reconciliationRuns.list; no legacy billing compatibility route is exposed.
+  read_sources: *paymentReadSources
+  query_parameters:
+  - name: provider_code
+    schema: *paymentProviderCodeSchema
+  - name: business_date
+    schema:
+      type: string
+      maxLength: 32
+  - name: page
+    schema: *pageSchema
+  - name: page_size
+    schema: *pageSizeSchema
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema:
+    name: CommercePaymentReconciliationRunListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items:
+          name: CommercePaymentReconciliationRunItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - runNo
+          - providerCode
+          - businessDate
+          - status
+          - createdAt
+          properties:
+            id: *idSchema
+            runNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            providerCode: *paymentProviderCodeSchema
+            businessDate:
+              type: string
+              minLength: 1
+              maxLength: 32
+            status:
+              type: string
+              enum:
+              - pending
+              - running
+              - succeeded
+              - failed
+              - canceled
+            finishedAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            createdAt: *timestampSchema
+      total: *totalSchema
+      page: *pageSchema
+      pageSize: *pageSizeSchema

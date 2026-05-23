@@ -7,7 +7,5 @@ export interface CommentsLikesCurrentDeleteResult {
   /** Data field on comments likes current delete result. */
   data?: ForumCommentItem;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

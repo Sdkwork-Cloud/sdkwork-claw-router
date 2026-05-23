@@ -22,7 +22,6 @@ data class AiModelCapabilityRecord(
     val outputModalities: Map<String, String>? = null,
     val parameterName: String? = null,
     val parameterSchema: Map<String, String>? = null,
-    val regionCode: String? = null,
     val schemaVersion: String? = null,
     val sortOrder: Int? = null,
     val status: String? = null,

@@ -7,7 +7,5 @@ export interface VerificationCodesCreateResult {
   /** Data field on verification codes create result. */
   data?: IamVerificationCodeResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

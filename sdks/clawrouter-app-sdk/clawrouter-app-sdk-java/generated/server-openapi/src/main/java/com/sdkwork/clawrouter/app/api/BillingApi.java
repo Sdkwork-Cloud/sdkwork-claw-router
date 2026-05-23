@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class BillingApi {
     private final HttpClient client;
-    
+
     public BillingApi(HttpClient client) {
         this.client = client;
     }
@@ -274,139 +274,6 @@ public class BillingApi {
     public UsersCurrentCouponsRetrieveResult usersCurrentCouponsRetrieve(String userCouponId) throws Exception {
         Object raw = client.get(ApiPaths.appPath("/billing/users/current/coupons/" + serializePathParameter(userCouponId, new PathParameterSpec("userCouponId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<UsersCurrentCouponsRetrieveResult>() {});
-    }
-
-    /** List VIP benefits */
-    public VipBenefitsListResult vipBenefitsList() throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/billing/vip/benefits"));
-        return client.convertValue(raw, new TypeReference<VipBenefitsListResult>() {});
-    }
-
-    /** Retrieve VIP info */
-    public VipInfoRetrieveResult vipInfoRetrieve() throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/billing/vip/info"));
-        return client.convertValue(raw, new TypeReference<VipInfoRetrieveResult>() {});
-    }
-
-    /** List VIP levels */
-    public VipLevelsListResult vipLevelsList() throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/billing/vip/levels"));
-        return client.convertValue(raw, new TypeReference<VipLevelsListResult>() {});
-    }
-
-    /** List VIP pack groups */
-    public VipPackGroupsListResult getVipPackGroupsList() throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/billing/vip/pack_groups"));
-        return client.convertValue(raw, new TypeReference<VipPackGroupsListResult>() {});
-    }
-
-    /** Retrieve VIP pack group */
-    public VipPackGroupsRetrieveResult vipPackGroupsRetrieve(String packGroupId) throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/billing/vip/pack_groups/" + serializePathParameter(packGroupId, new PathParameterSpec("packGroupId", "simple", false)) + ""));
-        return client.convertValue(raw, new TypeReference<VipPackGroupsRetrieveResult>() {});
-    }
-
-    /** List VIP pack group packs */
-    public VipPackGroupsPacksListResult getVipPackGroupsListPackGroups(String packGroupId) throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/billing/vip/pack_groups/" + serializePathParameter(packGroupId, new PathParameterSpec("packGroupId", "simple", false)) + "/packs"));
-        return client.convertValue(raw, new TypeReference<VipPackGroupsPacksListResult>() {});
-    }
-
-    /** List VIP packs */
-    public VipPacksListResult vipPacksList() throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/billing/vip/packs"));
-        return client.convertValue(raw, new TypeReference<VipPacksListResult>() {});
-    }
-
-    /** Retrieve VIP pack */
-    public VipPacksRetrieveResult vipPacksRetrieve(String packId) throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/billing/vip/packs/" + serializePathParameter(packId, new PathParameterSpec("packId", "simple", false)) + ""));
-        return client.convertValue(raw, new TypeReference<VipPacksRetrieveResult>() {});
-    }
-
-    /** Retrieve VIP points balance */
-    public VipPointsBalanceRetrieveResult vipPointsBalanceRetrieve() throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/billing/vip/points/balance"));
-        return client.convertValue(raw, new TypeReference<VipPointsBalanceRetrieveResult>() {});
-    }
-
-    /** Create VIP daily reward */
-    public VipPointsDailyRewardsCreateResult vipPointsDailyRewardsCreate(CommerceEmptyCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/billing/vip/points/daily_rewards"), body, null, requestHeaders, "application/json");
-        return client.convertValue(raw, new TypeReference<VipPointsDailyRewardsCreateResult>() {});
-    }
-
-    /** Retrieve VIP daily reward status */
-    public VipPointsDailyRewardsStatusRetrieveResult vipPointsDailyRewardsStatusRetrieve() throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/billing/vip/points/daily_rewards/status"));
-        return client.convertValue(raw, new TypeReference<VipPointsDailyRewardsStatusRetrieveResult>() {});
-    }
-
-    /** List VIP points history */
-    public VipPointsHistoryListResult vipPointsHistoryList(Integer page, Integer pageSize, String cursor) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("page", page, "form", true, false, null),
-            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            new QueryParameterSpec("cursor", cursor, "form", true, false, null)
-        ));
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/billing/vip/points/history"), query));
-        return client.convertValue(raw, new TypeReference<VipPointsHistoryListResult>() {});
-    }
-
-    /** Create VIP privilege speed up */
-    public VipPrivilegesSpeedUpsCreateResult vipPrivilegesSpeedUpsCreate(CommerceVipPrivilegeSpeedUpRequest body, String idempotencyKey, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/billing/vip/privileges/speed_ups"), body, null, requestHeaders, "application/json");
-        return client.convertValue(raw, new TypeReference<VipPrivilegesSpeedUpsCreateResult>() {});
-    }
-
-    /** Retrieve VIP privilege usage */
-    public VipPrivilegesUsageRetrieveResult vipPrivilegesUsageRetrieve() throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/billing/vip/privileges/usage"));
-        return client.convertValue(raw, new TypeReference<VipPrivilegesUsageRetrieveResult>() {});
-    }
-
-    /** Create VIP purchase */
-    public VipPurchaseCreateResult vipPurchaseCreate(CommerceVipPurchaseRequest body, String idempotencyKey, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/billing/vip/purchase"), body, null, requestHeaders, "application/json");
-        return client.convertValue(raw, new TypeReference<VipPurchaseCreateResult>() {});
-    }
-
-    /** Renew VIP purchase */
-    public VipPurchaseRenewResult vipPurchaseRenew(CommerceVipPurchaseRequest body, String idempotencyKey, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/billing/vip/purchase/renew"), body, null, requestHeaders, "application/json");
-        return client.convertValue(raw, new TypeReference<VipPurchaseRenewResult>() {});
-    }
-
-    /** Upgrade VIP purchase */
-    public VipPurchaseUpgradeResult vipPurchaseUpgrade(CommerceVipPurchaseRequest body, String idempotencyKey, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/billing/vip/purchase/upgrade"), body, null, requestHeaders, "application/json");
-        return client.convertValue(raw, new TypeReference<VipPurchaseUpgradeResult>() {});
-    }
-
-    /** Retrieve VIP status */
-    public VipStatusRetrieveResult vipStatusRetrieve() throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/billing/vip/status"));
-        return client.convertValue(raw, new TypeReference<VipStatusRetrieveResult>() {});
     }
 
     /** List wallet accounts */

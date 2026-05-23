@@ -7,7 +7,5 @@ export interface SkillsCategoriesUpdateResult {
   /** Data field on skills categories update result. */
   data?: AdminSkillCategoryMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

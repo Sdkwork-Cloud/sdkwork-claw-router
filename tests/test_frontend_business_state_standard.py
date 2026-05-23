@@ -97,9 +97,9 @@ class FrontendBusinessStateStandardTest(unittest.TestCase):
             / "src"
             / "index.tsx",
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-console-billing"
+            / "sdkwork-claw-router-console-commerce"
             / "src"
-            / "BillingView.tsx",
+            / "CommerceView.tsx",
         ]
         panel_components = [
             PORTAL_PACKAGES
@@ -123,7 +123,7 @@ class FrontendBusinessStateStandardTest(unittest.TestCase):
             / "src"
             / "AccountView.tsx",
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-console-billing"
+            / "sdkwork-claw-router-console-commerce"
             / "src"
             / "CheckoutView.tsx",
             PORTAL_PACKAGES

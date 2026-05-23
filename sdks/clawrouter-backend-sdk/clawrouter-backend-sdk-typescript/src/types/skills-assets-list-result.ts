@@ -7,7 +7,5 @@ export interface SkillsAssetsListResult {
   /** Data field on skills assets list result. */
   data?: AdminSkillAssetListResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

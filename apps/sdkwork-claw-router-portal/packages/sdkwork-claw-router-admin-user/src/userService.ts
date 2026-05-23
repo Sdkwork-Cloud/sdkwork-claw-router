@@ -1,7 +1,7 @@
 import {
   createRequestParams,
   createRequestToken,
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
   readApiData,
@@ -17,10 +17,13 @@ import {
 } from 'sdkwork-claw-router-commons/runtime';
 import type {
   AdminApiKeyCreateRequest,
-  AdminUserBalanceAdjustmentRequest,
   AdminUserCreateRequest,
   AdminUserUpdateRequest,
 } from '@sdkwork/clawrouter-backend-sdk';
+
+export const USER_ADMIN_ERROR_KEYS = {
+  updateBalanceFallback: 'admin.user.errors.updateBalanceFallback',
+} as const;
 
 export interface UserListItem {
   id: number;
@@ -55,27 +58,33 @@ export type UserUpdateInput = {
   status?: UserListItem['status'];
 };
 
-export type UserBalanceAdjustmentInput = {
-  amount: number;
-  type: AdminUserBalanceAdjustmentRequest['type'];
-};
-
 export type ApiKeyCreateInput = {
   userId: number;
   name: string;
 };
 
+export type UserAdminTableData = {
+  users: UserListItem[];
+  apiKeysMap: Record<number, ApiKeyItem[]>;
+  apiKeysLoadError: Error | null;
+};
+
+type UserAdminTableDataLoaders = {
+  fetchUsers?: typeof UserService.fetchUsers;
+  fetchApiKeysMap?: typeof UserService.fetchApiKeysMap;
+};
+
 export class UserService {
   static async fetchUsers(): Promise<UserListItem[]> {
     const result = await getClawRouterBackendSdkClient().iam.users.list();
-    ensurePlusApiSuccess(result, 'admin.user.errors.fetchUsersFallback');
+    ensureSdkworkApiSuccess(result, 'admin.user.errors.fetchUsersFallback');
     return readRequiredApiItems(result, 'admin.user.errors.fetchUsersFallback')
       .map(normalizeUser);
   }
 
   static async fetchApiKeysMap(): Promise<Record<number, ApiKeyItem[]>> {
     const result = await getClawRouterBackendSdkClient().iam.apiKeys.list();
-    ensurePlusApiSuccess(result, 'admin.user.errors.fetchApiKeysFallback');
+    ensureSdkworkApiSuccess(result, 'admin.user.errors.fetchApiKeysFallback');
     return normalizeApiKeysMap(readApiData(result));
   }
 
@@ -84,18 +93,8 @@ export class UserService {
       toCreateUserRequest(user),
       createRequestParams('admin-user-create'),
     );
-    ensurePlusApiSuccess(result, 'admin.user.errors.addUserFallback');
+    ensureSdkworkApiSuccess(result, 'admin.user.errors.addUserFallback');
     return normalizeUser(readRequiredApiItem(result, 'admin.user.errors.addUserMissingData'));
-  }
-
-  static async updateBalance(id: number, input: UserBalanceAdjustmentInput): Promise<UserListItem> {
-    const result = await getClawRouterBackendSdkClient().billing.users.balanceAdjustments.create(
-      String(positiveId(id, 'userId')),
-      toBalanceAdjustmentRequest(input),
-      createRequestParams('admin-user-balance-adjust'),
-    );
-    ensurePlusApiSuccess(result, 'admin.user.errors.updateBalanceFallback');
-    return normalizeUser(readRequiredApiItem(result, 'admin.user.errors.updateBalanceMissingData'));
   }
 
   static async updateUser(id: number, updates: UserUpdateInput): Promise<UserListItem> {
@@ -103,7 +102,7 @@ export class UserService {
       toUpdateUserRequest(id, updates),
       createRequestParams('admin-user-update'),
     );
-    ensurePlusApiSuccess(result, 'admin.user.errors.updateUserFallback');
+    ensureSdkworkApiSuccess(result, 'admin.user.errors.updateUserFallback');
     return normalizeUser(readRequiredApiItem(result, 'admin.user.errors.updateUserMissingData'));
   }
 
@@ -113,7 +112,7 @@ export class UserService {
       toCreateApiKeyRequest(input),
       { idempotencyKey: tokens.idempotencyKey, xRequestId: tokens.requestId },
     );
-    ensurePlusApiSuccess(result, 'admin.user.errors.createApiKeyFallback');
+    ensureSdkworkApiSuccess(result, 'admin.user.errors.createApiKeyFallback');
     const data = readApiRecord(result);
     const keyData = data.key;
     if (!isRecord(keyData)) {
@@ -137,6 +136,30 @@ export class UserService {
     ensureDeleteResult(result, 'admin.user.errors.deleteApiKeyFallback');
     void userId;
   }
+
+  static loadAdminTableData(
+    loaders: UserAdminTableDataLoaders = {},
+  ): Promise<UserAdminTableData> {
+    const fetchUsers = loaders.fetchUsers ?? UserService.fetchUsers;
+    const fetchApiKeysMap = loaders.fetchApiKeysMap ?? UserService.fetchApiKeysMap;
+
+    return fetchUsers().then(async (users) => {
+      try {
+        const apiKeysMap = await fetchApiKeysMap();
+        return {
+          users,
+          apiKeysMap,
+          apiKeysLoadError: null,
+        };
+      } catch (error) {
+        return {
+          users,
+          apiKeysMap: {},
+          apiKeysLoadError: asError(error),
+        };
+      }
+    });
+  }
 }
 
 function toCreateUserRequest(user: UserCreateInput): AdminUserCreateRequest {
@@ -154,13 +177,6 @@ function toUpdateUserRequest(id: number, updates: UserUpdateInput): AdminUserUpd
     group: optionalText(updates.group),
     status: updates.status,
   });
-}
-
-function toBalanceAdjustmentRequest(input: UserBalanceAdjustmentInput): AdminUserBalanceAdjustmentRequest {
-  return {
-    amount: positiveAmount(input.amount, 'amount'),
-    type: input.type,
-  };
 }
 
 function toCreateApiKeyRequest(input: ApiKeyCreateInput): AdminApiKeyCreateRequest {
@@ -190,13 +206,6 @@ function positiveId(value: number, fieldName: string): number {
   return value;
 }
 
-function positiveAmount(value: number, fieldName: string): number {
-  if (!Number.isFinite(value) || value <= 0) {
-    throw new Error(`${fieldName} must be greater than zero`);
-  }
-  return value;
-}
-
 function pruneUndefined<T extends object>(value: T): T {
   return Object.fromEntries(Object.entries(value).filter(([, item]) => item !== undefined)) as T;
 }
@@ -209,10 +218,14 @@ function idempotencyTokens(scope: string): { idempotencyKey: string; requestId: 
 }
 
 function ensureDeleteResult(result: unknown, message: string): void {
-  ensurePlusApiSuccess(result, message);
+  ensureSdkworkApiSuccess(result, message);
   if (readBoolean(readApiRecord(result), 'deleted') !== true) {
     throw new Error(message);
   }
+}
+
+function asError(error: unknown): Error {
+  return error instanceof Error ? error : new Error(String(error));
 }
 
 function normalizeUser(value: unknown): UserListItem {

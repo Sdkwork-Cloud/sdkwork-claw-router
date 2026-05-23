@@ -71,6 +71,37 @@ class EcosystemApi {
     })();
   }
 
+  /// Delete skill category
+  Future<SkillsCategoriesDeleteResult?> skillsCategoriesDelete(String categoryId, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final response = await _client.delete(ApiPaths.backendPath('/ecosystem/skills/categories/${serializePathParameter(categoryId, const PathParameterSpec('categoryId', 'simple', false))}'), headers: requestHeaders);
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : SkillsCategoriesDeleteResult.fromJson(map);
+    })();
+  }
+
+  /// Update skill category
+  Future<SkillsCategoriesUpdateResult?> skillsCategoriesUpdate(String categoryId, AdminSkillCategoryUpdateRequest body, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.put(ApiPaths.backendPath('/ecosystem/skills/categories/${serializePathParameter(categoryId, const PathParameterSpec('categoryId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : SkillsCategoriesUpdateResult.fromJson(map);
+    })();
+  }
+
   /// List skill packages
   Future<SkillsPackageListResult?> skillsPackageList([String? q, bool? enabled, String? categoryId, int? page, int? pageSize]) async {
     final query = buildQueryString([

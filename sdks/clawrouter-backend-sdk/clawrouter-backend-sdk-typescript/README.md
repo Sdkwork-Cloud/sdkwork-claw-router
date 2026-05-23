@@ -72,11 +72,12 @@ const client = new SdkworkBackendClient({
 
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.billing` - billing API
+- `client.commerce` - commerce API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
+- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
 - `client.system` - system API
 
@@ -104,11 +105,11 @@ const result = await client.agents.agentDefinitions.list(params);
 const result = await client.ai.modelVendors.list();
 ```
 
-### billing
+### commerce
 
 ```typescript
-// List referral stats
-const result = await client.billing.referrals.stats.list();
+// Commerce Reports Payment Reconciliation Retrieve
+const result = await client.commerce.commerceReports.paymentReconciliation.retrieve();
 ```
 
 ### content
@@ -139,24 +140,21 @@ const result = await client.iam.accessGroups.list();
 const result = await client.integration.channels.list();
 ```
 
+### open_platform
+
+```typescript
+// List open platform providers
+const params = {
+  status: 'active',
+};
+const result = await client.openPlatform.providers.list(params);
+```
+
 ### platform
 
 ```typescript
-// List apps
-const xRequestId = 'X-Request-Id';
-const query = {
-  q: 'q',
-  status: 'ACTIVE',
-  market_status: 'DRAFT',
-  app_type: 'app_type',
-  page: 5,
-  page_size: 6,
-};
-const params = {
-  ...query,
-  xRequestId,
-};
-const result = await client.platform.apps.list(params);
+// List app categories
+const result = await client.platform.apps.categories.list();
 ```
 
 ### system

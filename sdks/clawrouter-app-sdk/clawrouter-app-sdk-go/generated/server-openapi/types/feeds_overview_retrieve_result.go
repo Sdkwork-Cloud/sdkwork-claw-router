@@ -4,6 +4,5 @@ package types
 type FeedsOverviewRetrieveResult struct {
 	Code string `json:"code"`
 	Data ForumOverviewResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

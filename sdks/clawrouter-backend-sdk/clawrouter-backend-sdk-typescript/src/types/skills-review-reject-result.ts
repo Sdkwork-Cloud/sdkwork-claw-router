@@ -7,7 +7,5 @@ export interface SkillsReviewRejectResult {
   /** Data field on skills review reject result. */
   data?: AdminSkillMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

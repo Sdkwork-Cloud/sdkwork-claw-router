@@ -11,5 +11,4 @@ class ProviderSecretsUpdateResult:
     """Provider secrets update result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminProviderSecretMutationResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

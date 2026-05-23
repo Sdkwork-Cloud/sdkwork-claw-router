@@ -11,5 +11,4 @@ class SkillsPackageListResult:
     """Skills package list result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminSkillPackageListResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

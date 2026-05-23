@@ -7,7 +7,5 @@ export interface AppsRetrieveResult {
   /** Data field on apps retrieve result. */
   data?: AdminAppMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

@@ -3,8 +3,11 @@ package types
 // Admin channel create request schema exposed by Claw Router.
 type AdminChannelCreateRequest struct {
 	AccessType string `json:"accessType"`
+	ApiKey string `json:"apiKey"`
 	BaseUrl string `json:"baseUrl"`
 	Capabilities []string `json:"capabilities"`
+	CircuitBreakerPolicy ProviderCircuitBreakerPolicy `json:"circuitBreakerPolicy"`
+	ExpiresAt string `json:"expiresAt"`
 	Models []string `json:"models"`
 	Name string `json:"name"`
 	Protocol string `json:"protocol"`

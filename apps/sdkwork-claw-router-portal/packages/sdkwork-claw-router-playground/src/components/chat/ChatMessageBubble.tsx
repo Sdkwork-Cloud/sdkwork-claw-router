@@ -5,7 +5,8 @@ export function ChatMessageBubble({ message }: { message: ChatMessage }) {
   const isUser = message.role === 'user';
   const timestamp = formatChatTime(message.createdAt);
   const isPending = message.status === 'responding';
-  const blocks = isPending ? [] : splitMessageBlocks(message.content);
+  const showTypingIndicator = isPending && message.content.trim().length === 0;
+  const blocks = splitMessageBlocks(message.content);
 
   return (
     <div className={`flex w-full gap-3 ${isUser ? 'justify-end' : 'justify-start'}`}>
@@ -25,7 +26,7 @@ export function ChatMessageBubble({ message }: { message: ChatMessage }) {
                 : 'rounded-bl-md bg-[#1d1d20] text-slate-100'
           }`}
         >
-          {isPending ? (
+          {showTypingIndicator ? (
             <span className="inline-flex items-center gap-2 text-slate-400">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-current" />
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-current [animation-delay:120ms]" />

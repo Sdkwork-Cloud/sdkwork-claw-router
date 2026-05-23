@@ -7,7 +7,5 @@ export interface SkillsCategoriesDeleteResult {
   /** Data field on skills categories delete result. */
   data?: AdminSkillCategoryDeleteResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

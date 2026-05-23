@@ -8,6 +8,12 @@ import com.sdkwork.clawrouter.app.http.HttpClient
 
 class IamApi(private val client: HttpClient) {
 
+    /** List groups */
+    suspend fun apiKeyGroupsList(): ApiKeyGroupsListResult? {
+        val raw = client.get(ApiPaths.appPath("/iam/api_key_groups"))
+        return client.convertValue(raw, object : TypeReference<ApiKeyGroupsListResult>() {})
+    }
+
     /** List keys */
     suspend fun apiKeysList(): ApiKeysListResult? {
         val raw = client.get(ApiPaths.appPath("/iam/api_keys"))

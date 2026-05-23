@@ -18,12 +18,14 @@ export interface GenerationHistoryItem {
   modelCatalogKey?: string;
   /** Model info field on generation history item. */
   modelInfo?: string;
+  /** Output text field on generation history item. */
+  outputText?: string;
   /** Prompt field on generation history item. */
   prompt: string;
   /** Status field on generation history item. */
   status?: 'pending' | 'processing' | 'completed' | 'failed' | 'cancelled';
   /** Type field on generation history item. */
-  type: 'image' | 'images' | 'video' | 'music' | 'audio' | 'sfx';
+  type: 'text' | 'image' | 'images' | 'video' | 'music' | 'audio' | 'sfx';
   /** Updated at field on generation history item. */
   updatedAt?: string;
   /** Url field on generation history item. */

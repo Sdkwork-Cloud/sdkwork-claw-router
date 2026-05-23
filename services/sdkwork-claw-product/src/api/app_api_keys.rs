@@ -211,7 +211,7 @@ async fn fetch_keys(State(state): State<AppApiKeyState>, headers: HeaderMap) -> 
                 StatusCode::UNAUTHORIZED,
                 Json(PlusApiResult::error("4010", error.to_string())),
             )
-                .into_response()
+                .into_response();
         }
     };
 
@@ -244,7 +244,7 @@ async fn fetch_key_groups(State(state): State<AppApiKeyState>, headers: HeaderMa
                 StatusCode::UNAUTHORIZED,
                 Json(PlusApiResult::error("4010", error.to_string())),
             )
-                .into_response()
+                .into_response();
         }
     };
 
@@ -1133,7 +1133,7 @@ fn normalize_expire_at(value: Option<&str>) -> Result<Option<String>, AppApiKeyC
         _ => {
             return Err(AppApiKeyCreateError::BadRequest(
                 "api key expiration must use YYYY-MM-DDTHH:mm format".to_owned(),
-            ))
+            ));
         }
     };
     validate_timestamp(&normalized)?;

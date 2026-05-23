@@ -1,8 +1,172 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AgentCreateRequest, AgentDefinitionsCreateResult, AgentDefinitionsListResult, AgentDefinitionsRetrieveResult } from '../types';
+import type { AgentCreateRequest, AgentDefinitionsCreateResult, AgentDefinitionsListResult, AgentDefinitionsRetrieveResult, AgentRunCompleteRequest, AgentRunCreateRequest, AgentRunsCreateResult, AgentRunsListResult, AgentRunsRetrieveResult, AgentRunsSubmitResult, AgentRunStepCompleteRequest, AgentRunStepCreateRequest, AgentRunStepsCreateResult, AgentRunStepsListResult, AgentRunStepsSubmitResult, AgentSessionCreateRequest, AgentSessionsCreateResult, AgentSessionsListResult, AgentSessionsRetrieveResult } from '../types';
 
+
+export interface AgentsAgentSessionsListParams {
+  page?: number;
+  pageSize?: number;
+}
+
+export interface AgentsAgentSessionsCreateParams {
+  idempotencyKey: string;
+  xRequestId?: string;
+}
+
+export class AgentsAgentSessionsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Retrieve agent session */
+  async retrieve(sessionId: string): Promise<AgentSessionsRetrieveResult> {
+    return this.client.get<AgentSessionsRetrieveResult>(appApiPath(`/agents/sessions/${serializePathParameter(sessionId, { name: 'sessionId', style: 'simple', explode: false })}`));
+  }
+
+/** List agent sessions */
+  async list(agentId: string, params?: AgentsAgentSessionsListParams): Promise<AgentSessionsListResult> {
+    const query = buildQueryString([
+      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
+      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<AgentSessionsListResult>(appendQueryString(appApiPath(`/agents/${serializePathParameter(agentId, { name: 'agentId', style: 'simple', explode: false })}/sessions`), query));
+  }
+
+/** Create agent session */
+  async create(agentId: string, body: AgentSessionCreateRequest, params: AgentsAgentSessionsCreateParams): Promise<AgentSessionsCreateResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
+        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.post<AgentSessionsCreateResult>(appApiPath(`/agents/${serializePathParameter(agentId, { name: 'agentId', style: 'simple', explode: false })}/sessions`), body, undefined, requestHeaders, 'application/json');
+  }
+}
+
+export interface AgentsAgentRunStepsListParams {
+  page?: number;
+  pageSize?: number;
+}
+
+export interface AgentsAgentRunStepsCreateParams {
+  idempotencyKey: string;
+  xRequestId?: string;
+}
+
+export interface AgentsAgentRunStepsSubmitParams {
+  idempotencyKey: string;
+  xRequestId?: string;
+}
+
+export class AgentsAgentRunStepsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** List agent run steps */
+  async list(runId: string, params?: AgentsAgentRunStepsListParams): Promise<AgentRunStepsListResult> {
+    const query = buildQueryString([
+      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
+      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<AgentRunStepsListResult>(appendQueryString(appApiPath(`/agents/runs/${serializePathParameter(runId, { name: 'runId', style: 'simple', explode: false })}/steps`), query));
+  }
+
+/** Create agent run step */
+  async create(runId: string, body: AgentRunStepCreateRequest, params: AgentsAgentRunStepsCreateParams): Promise<AgentRunStepsCreateResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
+        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.post<AgentRunStepsCreateResult>(appApiPath(`/agents/runs/${serializePathParameter(runId, { name: 'runId', style: 'simple', explode: false })}/steps`), body, undefined, requestHeaders, 'application/json');
+  }
+
+/** Complete agent run step */
+  async submit(runId: string, stepId: string, body: AgentRunStepCompleteRequest, params: AgentsAgentRunStepsSubmitParams): Promise<AgentRunStepsSubmitResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
+        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.post<AgentRunStepsSubmitResult>(appApiPath(`/agents/runs/${serializePathParameter(runId, { name: 'runId', style: 'simple', explode: false })}/steps/${serializePathParameter(stepId, { name: 'stepId', style: 'simple', explode: false })}/complete`), body, undefined, requestHeaders, 'application/json');
+  }
+}
+
+export interface AgentsAgentRunsSubmitParams {
+  idempotencyKey: string;
+  xRequestId?: string;
+}
+
+export interface AgentsAgentRunsListParams {
+  page?: number;
+  pageSize?: number;
+}
+
+export interface AgentsAgentRunsCreateParams {
+  idempotencyKey: string;
+  xRequestId?: string;
+}
+
+export class AgentsAgentRunsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Retrieve agent run */
+  async retrieve(runId: string): Promise<AgentRunsRetrieveResult> {
+    return this.client.get<AgentRunsRetrieveResult>(appApiPath(`/agents/runs/${serializePathParameter(runId, { name: 'runId', style: 'simple', explode: false })}`));
+  }
+
+/** Complete agent run */
+  async submit(runId: string, body: AgentRunCompleteRequest, params: AgentsAgentRunsSubmitParams): Promise<AgentRunsSubmitResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
+        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.post<AgentRunsSubmitResult>(appApiPath(`/agents/runs/${serializePathParameter(runId, { name: 'runId', style: 'simple', explode: false })}/complete`), body, undefined, requestHeaders, 'application/json');
+  }
+
+/** List agent session runs */
+  async list(sessionId: string, params?: AgentsAgentRunsListParams): Promise<AgentRunsListResult> {
+    const query = buildQueryString([
+      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
+      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<AgentRunsListResult>(appendQueryString(appApiPath(`/agents/sessions/${serializePathParameter(sessionId, { name: 'sessionId', style: 'simple', explode: false })}/runs`), query));
+  }
+
+/** Create agent run */
+  async create(sessionId: string, body: AgentRunCreateRequest, params: AgentsAgentRunsCreateParams): Promise<AgentRunsCreateResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
+        'X-Request-Id': { value: params.xRequestId, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.post<AgentRunsCreateResult>(appApiPath(`/agents/sessions/${serializePathParameter(sessionId, { name: 'sessionId', style: 'simple', explode: false })}/runs`), body, undefined, requestHeaders, 'application/json');
+  }
+}
 
 export interface AgentsAgentDefinitionsListParams {
   page?: number;
@@ -54,10 +218,16 @@ export class AgentsAgentDefinitionsApi {
 export class AgentsApi {
   private client: HttpClient;
   public readonly agentDefinitions: AgentsAgentDefinitionsApi;
+  public readonly agentRuns: AgentsAgentRunsApi;
+  public readonly agentRunSteps: AgentsAgentRunStepsApi;
+  public readonly agentSessions: AgentsAgentSessionsApi;
 
   constructor(client: HttpClient) {
     this.client = client;
     this.agentDefinitions = new AgentsAgentDefinitionsApi(client);
+    this.agentRuns = new AgentsAgentRunsApi(client);
+    this.agentRunSteps = new AgentsAgentRunStepsApi(client);
+    this.agentSessions = new AgentsAgentSessionsApi(client);
   }
 
 }

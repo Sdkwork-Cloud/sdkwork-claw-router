@@ -5,6 +5,7 @@ data class IntegrationProviderAccountRecord(
     val accountName: String? = null,
     val authConfig: Map<String, String>? = null,
     val authType: String? = null,
+    val baseUrl: String? = null,
     val consecutiveErrorCount: String? = null,
     val createdAt: String? = null,
     val credentialProfile: String? = null,

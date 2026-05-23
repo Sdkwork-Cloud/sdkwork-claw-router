@@ -1,10 +1,13 @@
 package com.sdkwork.clawrouter.app
 
 data class GenerationHistoryItem(
+    val aspectRatio: String? = null,
     val createdAt: String? = null,
     val date: String? = null,
+    val durationSeconds: Int? = null,
     val id: String? = null,
     val images: List<String>? = null,
+    val modelCatalogKey: String? = null,
     val modelInfo: String? = null,
     val prompt: String? = null,
     val status: String? = null,

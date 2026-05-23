@@ -1,0 +1,349 @@
+schemaVersion: 1
+kind: sdkwork.appbase.capability.catalog
+standardVersion: 2026-05-21
+purpose: >
+  Canonical SDKWork Appbase capability catalog. Capabilities declared here are
+  reusable building blocks that concrete applications assemble through generated
+  SDK ports, runtime adapters, storage providers, and UI packages.
+
+capabilities:
+  - id: commerce
+    domain: commerce
+    status: standard
+    maturity: L3
+    targetMaturity: L3
+    priority: P0
+    owner: sdkwork-appbase
+    scope:
+      - product-center
+      - catalog
+      - spu
+      - sku
+      - category
+      - attribute
+      - price-list
+      - inventory
+      - cart
+      - addresses
+      - checkout
+      - orders
+      - payments
+      - payment-providers
+      - payment-provider-accounts
+      - payment-methods
+      - payment-channels
+      - payment-route-rules
+      - payment-webhooks
+      - payment-reconciliation
+      - refunds
+      - fulfillments
+      - shipments
+      - memberships
+      - points
+      - recharges
+      - wallet
+      - coupons
+      - invoices
+      - settlements
+      - audit
+      - reports
+    requiredLayers:
+      - kind: contracts
+        path: packages/common/commerce/sdkwork-commerce-contracts
+        manifest: package.json
+      - kind: sdk_ports
+        path: packages/common/commerce/sdkwork-commerce-sdk-ports
+        manifest: package.json
+      - kind: service
+        path: packages/common/commerce/sdkwork-commerce-service
+        manifest: package.json
+      - kind: runtime
+        path: packages/common/commerce/sdkwork-commerce-runtime
+        manifest: package.json
+      - kind: native_rust_core
+        path: packages/native-rust/commerce/sdkwork-commerce-core-rust
+        manifest: Cargo.toml
+      - kind: native_rust_storage_sqlx
+        path: packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust
+        manifest: Cargo.toml
+      - kind: pc_react
+        path: packages/pc-react/commerce/sdkwork-commerce-pc-react
+        manifest: package.json
+    qualityGates:
+      - category: contract
+        command: pnpm --filter @sdkwork/commerce-contracts test
+      - category: runtime
+        command: pnpm --filter @sdkwork/commerce-runtime test
+      - category: storage
+        command: cargo test -p sdkwork_commerce_storage_sqlx
+      - category: frontend
+        command: pnpm --filter @sdkwork/commerce-pc-react typecheck
+    integration:
+      productForksForbidden: true
+      sdkBoundary: generated-sdk-through-ports
+      appResponsibility: >
+        Applications seed product-specific offerings and inject generated SDK
+        clients; they must not fork commerce account, order, payment, VIP,
+        wallet, coupon, or ledger stores.
+
+  - id: iam
+    domain: iam
+    status: standardizing
+    maturity: L3
+    targetMaturity: L3
+    priority: P0
+    owner: sdkwork-appbase
+    scope:
+      - auth
+      - session
+      - app-context
+      - sharding-context
+      - tenant
+      - organization
+      - user
+      - permission
+      - api-key-subject
+      - token-store
+    requiredLayers:
+      - kind: contracts
+        path: packages/common/iam/sdkwork-iam-contracts
+        manifest: package.json
+      - kind: sdk_ports
+        path: packages/common/iam/sdkwork-iam-sdk-ports
+        manifest: package.json
+      - kind: service
+        path: packages/common/iam/sdkwork-iam-service
+        manifest: package.json
+      - kind: runtime
+        path: packages/common/iam/sdkwork-iam-runtime
+        manifest: package.json
+      - kind: native_rust_core
+        path: packages/native-rust/iam/sdkwork-iam-core-rust
+        manifest: Cargo.toml
+      - kind: native_rust_storage_sqlx
+        path: packages/native-rust/iam/sdkwork-iam-storage-sqlx-rust
+        manifest: Cargo.toml
+      - kind: pc_react
+        path: packages/pc-react/iam/sdkwork-iam-react
+        manifest: package.json
+    qualityGates:
+      - category: contract
+        command: pnpm --filter @sdkwork/iam-contracts test
+      - category: runtime
+        command: pnpm --filter @sdkwork/iam-runtime test
+      - category: storage
+        command: cargo test -p sdkwork_iam_storage_sqlx
+      - category: frontend
+        command: pnpm --filter @sdkwork/iam-react typecheck
+    integration:
+      productForksForbidden: true
+      sdkBoundary: generated-sdk-through-ports
+      appResponsibility: >
+        Applications define product roles and route guards; they must not fork
+        session, token, tenant, organization, permission, or subject context
+        runtime.
+
+  - id: foundation
+    domain: foundation
+    status: standardizing
+    maturity: L2
+    targetMaturity: L3
+    priority: P0
+    owner: sdkwork-appbase
+    scope:
+      - runtime-bootstrap
+      - sdk-client-injection
+      - request-context-headers
+      - cache-namespace
+      - feature-flag
+      - settings
+      - audit
+      - config
+    requiredLayers:
+      - kind: contracts
+        path: packages/common/foundation/sdkwork-runtime-bootstrap
+        manifest: package.json
+      - kind: runtime
+        path: packages/common/foundation/sdkwork-runtime-bootstrap
+        manifest: package.json
+      - kind: service
+        path: packages/common/foundation/sdkwork-cache-core
+        manifest: package.json
+      - kind: pc_react
+        path: packages/pc-react/foundation/sdkwork-appbase-pc-react
+        manifest: package.json
+    qualityGates:
+      - category: contract
+        command: pnpm --filter @sdkwork/runtime-bootstrap test
+      - category: runtime
+        command: pnpm --filter @sdkwork/cache-core test
+      - category: frontend
+        command: pnpm --filter @sdkwork/appbase-pc-react typecheck
+    integration:
+      productForksForbidden: true
+      sdkBoundary: generated-sdk-through-ports
+      appResponsibility: >
+        Applications provide deployment metadata and concrete cache/settings
+        adapters; they must not create product-local SDK bootstrap clients.
+
+  - id: notification
+    domain: notification
+    status: planned-standard
+    maturity: L1
+    targetMaturity: L3
+    priority: P0
+    owner: sdkwork-appbase
+    scope:
+      - inbox
+      - announcement
+      - recipient
+      - delivery
+      - template
+      - read-state
+      - preference
+      - toast
+      - badge
+    requiredLayers:
+      - kind: pc_react
+        path: packages/pc-react/notification/sdkwork-notification-pc-react
+        manifest: package.json
+    qualityGates:
+      - category: frontend
+        command: pnpm --filter @sdkwork/notification-pc-react typecheck
+    integration:
+      productForksForbidden: true
+      sdkBoundary: generated-sdk-through-ports
+      appResponsibility: >
+        Applications publish domain events and notification templates. Appbase
+        must own inbox, recipient, read-state, preference, and delivery
+        contracts before this capability can become L3.
+
+  - id: intelligence-runtime
+    domain: intelligence
+    status: planned-standard
+    maturity: L1
+    targetMaturity: L3
+    priority: P1
+    owner: sdkwork-appbase
+    scope:
+      - chat
+      - agent
+      - run
+      - step
+      - tool-call
+      - mcp-binding
+      - memory
+      - artifact
+      - generation-history
+      - metering
+    requiredLayers:
+      - kind: contracts
+        path: packages/common/intelligence/sdkwork-agent-contracts
+        manifest: package.json
+      - kind: pc_react
+        path: packages/pc-react/intelligence/sdkwork-chat-pc-react
+        manifest: package.json
+    qualityGates:
+      - category: contract
+        command: pnpm --filter @sdkwork/agent-contracts test
+      - category: frontend
+        command: pnpm --filter @sdkwork/chat-pc-react typecheck
+    integration:
+      productForksForbidden: true
+      sdkBoundary: generated-sdk-through-ports
+      appResponsibility: >
+        AI products provide execution engines and provider routing. Appbase must
+        own chat, agent, memory, artifact, and metering contracts before this
+        capability can become L3.
+
+  - id: content-assets
+    domain: content
+    status: planned-standard
+    maturity: L1
+    targetMaturity: L3
+    priority: P1
+    owner: sdkwork-appbase
+    scope:
+      - file
+      - upload-session
+      - object-reference
+      - asset-metadata
+      - generated-media
+      - thumbnail
+      - access-policy
+      - retention-policy
+    requiredLayers:
+      - kind: pc_react
+        path: packages/pc-react/content/sdkwork-assets-pc-react
+        manifest: package.json
+    qualityGates:
+      - category: frontend
+        command: pnpm --filter @sdkwork/assets-pc-react typecheck
+    integration:
+      productForksForbidden: true
+      sdkBoundary: generated-sdk-through-ports
+      appResponsibility: >
+        Applications choose concrete storage providers and publish domain asset
+        usage. Appbase must own object storage contracts, access policy, and
+        native storage adapters before this capability can become L3.
+
+  - id: generation
+    domain: content
+    status: ready
+    maturity: L1
+    targetMaturity: L3
+    priority: P1
+    owner: sdkwork-appbase
+    scope:
+      - generation-history
+      - generation-workspace
+      - task-result-provenance
+      - run-digest
+      - media-generation
+    requiredLayers:
+      - kind: pc_react
+        path: packages/pc-react/content/sdkwork-generation-pc-react
+        manifest: package.json
+    qualityGates:
+      - category: frontend
+        command: pnpm --filter @sdkwork/generation-pc-react typecheck
+    integration:
+      productForksForbidden: true
+      sdkBoundary: generated-sdk-through-ports
+      appResponsibility: >
+        Applications inject generated SDK-backed adapters for history, model
+        catalog, and runtime execution. Appbase owns reusable generation
+        workspace state, summaries, route intents, and display components.
+
+  - id: ecosystem
+    domain: ecosystem
+    status: planned-standard
+    maturity: L1
+    targetMaturity: L3
+    priority: P1
+    owner: sdkwork-appbase
+    scope:
+      - app-market
+      - plugin-market
+      - skill-market
+      - category
+      - tag
+      - rating
+      - favorite
+      - comment
+      - reaction
+      - publish-workflow
+    requiredLayers:
+      - kind: pc_react
+        path: packages/pc-react/ecosystem/sdkwork-market-pc-react
+        manifest: package.json
+    qualityGates:
+      - category: frontend
+        command: pnpm --filter @sdkwork/market-pc-react typecheck
+    integration:
+      productForksForbidden: true
+      sdkBoundary: generated-sdk-through-ports
+      appResponsibility: >
+        Applications provide product-specific catalog records and install
+        actions. Appbase must own catalog, moderation, comments, reactions, and
+        publishing contracts before this capability can become L3.

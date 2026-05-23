@@ -7,7 +7,5 @@ export interface ChannelsDeleteResult {
   /** Data field on channels delete result. */
   data?: AdminDeleteResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

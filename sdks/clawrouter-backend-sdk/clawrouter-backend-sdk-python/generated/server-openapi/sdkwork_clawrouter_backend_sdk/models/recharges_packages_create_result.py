@@ -11,5 +11,4 @@ class RechargesPackagesCreateResult:
     """Recharges packages create result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminRechargePackageMutationResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

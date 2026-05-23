@@ -9,6 +9,15 @@ ORDER BY sort_order ASC, display_name ASC, id ASC
 "#;
 
 pub const LOAD_MODELS: &str = r#"
+WITH model_base AS (
+    SELECT
+        m.*
+    FROM ai_model m
+    WHERE m.deleted_at IS NULL
+      AND m.status = 1
+      AND COALESCE(m.shelf_state, 1) <> 3
+      AND COALESCE(m.routing_state, 1) = 1
+)
 SELECT
     catalog_key,
     model,
@@ -45,7 +54,7 @@ FROM (
         m.catalog_key,
         m.display_name,
         m.vendor_code,
-        m.region_code,
+        'global' AS region_code,
         m.description,
         m.modalities,
         m.input_modalities,
@@ -81,45 +90,25 @@ FROM (
             WHEN 7 THEN 'rerank'
             ELSE 'chat'
         END AS capability_code
-    FROM ai_model m
-    WHERE m.deleted_at IS NULL
-      AND m.status = 1
-      AND COALESCE(m.shelf_state, 1) <> 3
-      AND COALESCE(m.routing_state, 1) = 1
+    FROM model_base m
     UNION ALL
-    SELECT m.id, m.model, m.catalog_key, m.display_name, m.vendor_code, m.region_code, m.description, m.modalities, m.input_modalities, m.output_modalities, m.api_format, m.capability_intro, m.limitations, m.supported_languages, m.use_cases, m.training_data_cutoff, m.context_tokens, m.max_output_tokens, m.supports_streaming, m.supports_tools, m.supports_json_schema, m.release_stage, m.shelf_state, m.routing_state, m.replacement_model, m.rank_score, 'responses'
-    FROM ai_model m
-    WHERE m.deleted_at IS NULL
-      AND m.status = 1
-      AND COALESCE(m.shelf_state, 1) <> 3
-      AND COALESCE(m.routing_state, 1) = 1
-      AND COALESCE(m.api_format, '') = 'openai_responses'
+    SELECT m.id, m.model, m.catalog_key, m.display_name, m.vendor_code, 'global' AS region_code, m.description, m.modalities, m.input_modalities, m.output_modalities, m.api_format, m.capability_intro, m.limitations, m.supported_languages, m.use_cases, m.training_data_cutoff, m.context_tokens, m.max_output_tokens, m.supports_streaming, m.supports_tools, m.supports_json_schema, m.release_stage, m.shelf_state, m.routing_state, m.replacement_model, m.rank_score, 'responses'
+    FROM model_base m
+    WHERE COALESCE(m.api_format, '') = 'openai_responses'
       AND COALESCE(m.capability, 1) = 1
     UNION ALL
-    SELECT m.id, m.model, m.catalog_key, m.display_name, m.vendor_code, m.region_code, m.description, m.modalities, m.input_modalities, m.output_modalities, m.api_format, m.capability_intro, m.limitations, m.supported_languages, m.use_cases, m.training_data_cutoff, m.context_tokens, m.max_output_tokens, m.supports_streaming, m.supports_tools, m.supports_json_schema, m.release_stage, m.shelf_state, m.routing_state, m.replacement_model, m.rank_score, 'tools'
-    FROM ai_model m
-    WHERE m.deleted_at IS NULL
-      AND m.status = 1
-      AND COALESCE(m.shelf_state, 1) <> 3
-      AND COALESCE(m.routing_state, 1) = 1
-      AND COALESCE(m.supports_tools, 0) = 1
+    SELECT m.id, m.model, m.catalog_key, m.display_name, m.vendor_code, 'global' AS region_code, m.description, m.modalities, m.input_modalities, m.output_modalities, m.api_format, m.capability_intro, m.limitations, m.supported_languages, m.use_cases, m.training_data_cutoff, m.context_tokens, m.max_output_tokens, m.supports_streaming, m.supports_tools, m.supports_json_schema, m.release_stage, m.shelf_state, m.routing_state, m.replacement_model, m.rank_score, 'tools'
+    FROM model_base m
+    WHERE COALESCE(m.supports_tools, 0) = 1
     UNION ALL
-    SELECT m.id, m.model, m.catalog_key, m.display_name, m.vendor_code, m.region_code, m.description, m.modalities, m.input_modalities, m.output_modalities, m.api_format, m.capability_intro, m.limitations, m.supported_languages, m.use_cases, m.training_data_cutoff, m.context_tokens, m.max_output_tokens, m.supports_streaming, m.supports_tools, m.supports_json_schema, m.release_stage, m.shelf_state, m.routing_state, m.replacement_model, m.rank_score, 'json_schema'
-    FROM ai_model m
-    WHERE m.deleted_at IS NULL
-      AND m.status = 1
-      AND COALESCE(m.shelf_state, 1) <> 3
-      AND COALESCE(m.routing_state, 1) = 1
-      AND COALESCE(m.supports_json_schema, 0) = 1
+    SELECT m.id, m.model, m.catalog_key, m.display_name, m.vendor_code, 'global' AS region_code, m.description, m.modalities, m.input_modalities, m.output_modalities, m.api_format, m.capability_intro, m.limitations, m.supported_languages, m.use_cases, m.training_data_cutoff, m.context_tokens, m.max_output_tokens, m.supports_streaming, m.supports_tools, m.supports_json_schema, m.release_stage, m.shelf_state, m.routing_state, m.replacement_model, m.rank_score, 'json_schema'
+    FROM model_base m
+    WHERE COALESCE(m.supports_json_schema, 0) = 1
     UNION ALL
-    SELECT m.id, m.model, m.catalog_key, m.display_name, m.vendor_code, m.region_code, m.description, m.modalities, m.input_modalities, m.output_modalities, m.api_format, m.capability_intro, m.limitations, m.supported_languages, m.use_cases, m.training_data_cutoff, m.context_tokens, m.max_output_tokens, m.supports_streaming, m.supports_tools, m.supports_json_schema, m.release_stage, m.shelf_state, m.routing_state, m.replacement_model, m.rank_score, c.capability_code
-    FROM ai_model m
+    SELECT m.id, m.model, m.catalog_key, m.display_name, m.vendor_code, 'global' AS region_code, m.description, m.modalities, m.input_modalities, m.output_modalities, m.api_format, m.capability_intro, m.limitations, m.supported_languages, m.use_cases, m.training_data_cutoff, m.context_tokens, m.max_output_tokens, m.supports_streaming, m.supports_tools, m.supports_json_schema, m.release_stage, m.shelf_state, m.routing_state, m.replacement_model, m.rank_score, c.capability_code
+    FROM model_base m
     JOIN ai_model_capability c ON c.model_id = m.id
-    WHERE m.deleted_at IS NULL
-      AND m.status = 1
-      AND COALESCE(m.shelf_state, 1) <> 3
-      AND COALESCE(m.routing_state, 1) = 1
-      AND c.deleted_at IS NULL
+    WHERE c.deleted_at IS NULL
       AND c.status = 1
       AND c.capability_code IS NOT NULL
 ) m
@@ -134,7 +123,7 @@ SELECT
     c.provider_code,
     m.channel_id,
     m.provider_model,
-    COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) AS base_url,
+    COALESCE(NULLIF(c.base_url, ''), p.base_url) AS base_url,
     a.secret_ref,
     CAST(a.auth_type AS TEXT) AS auth_type,
     CAST(a.auth_config AS TEXT) AS auth_config_json,
@@ -159,8 +148,8 @@ WHERE m.deleted_at IS NULL
   )
   AND p.status = 1
   AND a.status = 1
-  AND COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) IS NOT NULL
-  AND NULLIF(COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template), '') IS NOT NULL
+  AND COALESCE(NULLIF(c.base_url, ''), p.base_url) IS NOT NULL
+  AND NULLIF(COALESCE(NULLIF(c.base_url, ''), p.base_url), '') IS NOT NULL
   AND NULLIF(a.secret_ref, '') IS NOT NULL
   AND (m.effective_from IS NULL OR datetime(m.effective_from) <= CURRENT_TIMESTAMP)
   AND (m.effective_to IS NULL OR datetime(m.effective_to) > CURRENT_TIMESTAMP)
@@ -171,7 +160,7 @@ pub const LOAD_PROVIDER_ACCOUNT_POOL_ROUTES: &str = r#"
 SELECT
     c.provider_code,
     c.id AS channel_id,
-    COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) AS base_url,
+    COALESCE(NULLIF(c.base_url, ''), p.base_url) AS base_url,
     a.secret_ref,
     CAST(a.auth_type AS TEXT) AS auth_type,
     CAST(a.auth_config AS TEXT) AS auth_config_json,
@@ -193,8 +182,8 @@ WHERE c.deleted_at IS NULL
   )
   AND p.status = 1
   AND a.status = 1
-  AND COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) IS NOT NULL
-  AND NULLIF(COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template), '') IS NOT NULL
+  AND COALESCE(NULLIF(c.base_url, ''), p.base_url) IS NOT NULL
+  AND NULLIF(COALESCE(NULLIF(c.base_url, ''), p.base_url), '') IS NOT NULL
   AND NULLIF(a.secret_ref, '') IS NOT NULL
 ORDER BY c.priority ASC, c.weight DESC, c.id ASC
 "#;

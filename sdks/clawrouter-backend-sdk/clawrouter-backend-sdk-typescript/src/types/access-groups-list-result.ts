@@ -7,7 +7,5 @@ export interface AccessGroupsListResult {
   /** Data field on access groups list result. */
   data?: AdminAccessGroupsResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

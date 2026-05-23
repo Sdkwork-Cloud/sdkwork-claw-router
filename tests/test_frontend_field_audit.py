@@ -226,6 +226,42 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 audit["interfaces"][0]["fields"],
             )
 
+    def test_exported_imported_type_alias_can_satisfy_frontend_model_contract(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                """
+                import type { SdkworkCommerceDemoModel } from '@sdkwork/commerce-service';
+
+                export type DemoModel = SdkworkCommerceDemoModel;
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                frontend_models:
+                  - route: /demo
+                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    interface: DemoModel
+                    fields: [id, name]
+                    data_sources: [demo_table]
+                routes:
+                  - route: /demo
+                    required_tables: [demo_table]
+                """,
+            )
+
+            audit = FrontendFieldAudit(root=root).generate()
+            result = FrontendFieldAudit(root=root).validate()
+
+            self.assertTrue(result.ok, result.messages)
+            self.assertEqual(
+                ["id", "name"],
+                audit["interfaces"][0]["fields"],
+            )
+
     def test_default_scanned_source_expands_local_interface_references(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

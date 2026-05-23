@@ -64,11 +64,15 @@ client.setHeader('X-Custom-Header', 'value');
 - `client.ai` - ai API
 - `client.auth` - auth API
 - `client.billing` - billing API
-- `client.communication` - communication API
+- `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
+- `client.memory` - memory API
+- `client.notification` - notification API
 - `client.platform` - platform API
+- `client.runtime` - runtime API
+- `client.system` - system API
 
 ## Usage Examples
 
@@ -80,7 +84,7 @@ final params = <String, dynamic>{
   'page_size': 2,
   'q': 'q',
 };
-final result = await client.agents.list(params);
+final result = await client.agents.agentDefinitionsList(params);
 print(result);
 ```
 
@@ -105,10 +109,14 @@ final result = await client.billing.accountPointsRetrieve();
 print(result);
 ```
 
-### communication
+### chat
 ```dart
-// List messages
-final result = await client.communication.notificationsList();
+// List product chat conversations
+final params = <String, dynamic>{
+  'page': 1,
+  'page_size': 2,
+};
+final result = await client.chat.conversationsList(params);
 print(result);
 ```
 
@@ -128,8 +136,32 @@ print(result);
 
 ### iam
 ```dart
-// List keys
-final result = await client.iam.apiKeysList();
+// List groups
+final result = await client.iam.apiKeyGroupsList();
+print(result);
+```
+
+### memory
+```dart
+// List memory spaces
+final params = <String, dynamic>{
+  'page': 1,
+  'page_size': 2,
+};
+final result = await client.memory.spacesList(params);
+print(result);
+```
+
+### notification
+```dart
+// List notifications
+final params = <String, dynamic>{
+  'app_id': '1',
+  'include_archived': false,
+  'page': 3,
+  'page_size': 4,
+};
+final result = await client.notification.notificationsList(params);
 print(result);
 ```
 
@@ -137,6 +169,33 @@ print(result);
 ```dart
 // Get categories
 final result = await client.platform.appsStoreCategoriesList();
+print(result);
+```
+
+### runtime
+```dart
+// List runtime invocations
+final params = <String, dynamic>{
+  'page': 1,
+  'page_size': 2,
+  'conversation_id': '1',
+  'chat_turn_id': '1',
+  'agent_session_id': '1',
+  'runtime': 'runtime',
+  'status': 'status',
+};
+final result = await client.runtime.invocationsList(params);
+print(result);
+```
+
+### system
+```dart
+// Retrieve public site runtime branding settings
+final params = <String, dynamic>{
+  'tenant_code': 'ok',
+  'organization_code': 'ok',
+};
+final result = await client.system.siteRuntimeRetrieve(params);
 print(result);
 ```
 

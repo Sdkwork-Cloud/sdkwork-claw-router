@@ -1,3 +1,4 @@
+use sdkwork_commerce_core::{CommerceCouponStatus, CommercePaymentStatus, CommerceRechargeStatus};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
@@ -14,30 +15,22 @@ use crate::ports::{
     UpdateAdminPromoCodeStatusCommand, UpdateAdminRechargePackageCommand,
 };
 
-const COUPON_TYPE_AMOUNT: i64 = 1;
-const COUPON_TYPE_DISCOUNT: i64 = 2;
-const COUPON_STATUS_DELETED: i64 = -1;
-const COUPON_STATUS_INACTIVE: i64 = 0;
-const COUPON_STATUS_ACTIVE: i64 = 1;
-const PROMO_STATUS_AVAILABLE: i64 = 1;
-const PROMO_STATUS_CLAIMED: i64 = 2;
-const PROMO_STATUS_USED: i64 = 3;
-const PROMO_STATUS_VOIDED: i64 = 4;
-const BATCH_STATUS_ACTIVE: i64 = 1;
-const BATCH_GENERATION_STATUS_COMPLETED: i64 = 2;
 const TARGET_TYPE_COUPON: i32 = 71;
 const TARGET_TYPE_COUPON_BATCH: i32 = 72;
 const TARGET_TYPE_PROMO_CODE: i32 = 73;
 const TARGET_TYPE_RECHARGE_PACKAGE: i32 = 74;
 const TARGET_TYPE_EXCHANGE_RULE: i32 = 75;
-const RECHARGE_PACKAGE_TYPE: i64 = 2;
-const RECHARGE_PRODUCT_CATEGORY_ID: i64 = 1;
-const ACCOUNT_EXCHANGE_POINTS_TO_CASH_RATE: &str = "POINTS_TO_CASH_RATE";
+const POINTS_ASSET_TYPE: &str = "POINTS";
+const CASH_ASSET_TYPE: &str = "CASH";
+const POINTS_STORAGE_ASSET_TYPE: &str = "points";
+const CASH_STORAGE_ASSET_TYPE: &str = "cash";
+const EXCHANGE_RULE_STATUS_ACTIVE: &str = "active";
+const POINTS_TO_CASH_RULE_NO: &str = "POINTS_TO_CASH";
 
 #[derive(Debug, Clone)]
 struct PromoCodeStatusFact {
-    status: i64,
-    user_id: Option<i64>,
+    status: String,
+    user_id: Option<String>,
     used_at: Option<String>,
 }
 
@@ -69,9 +62,8 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
                 self.pool.begin().await.map_err(|error| {
                     store_error("failed to begin admin coupon transaction", error)
                 })?;
-            let template_id = insert_coupon_template(&mut tx, &command).await?;
-            let coupon_id = insert_coupon(&mut tx, &command).await?;
-            insert_audit_log(
+            let coupon_id = upsert_coupon_template(&mut tx, &command).await?;
+            insert_audit_log_for_target_uuid(
                 &mut tx,
                 &command.audit_log_uuid,
                 &command.request_id,
@@ -81,11 +73,10 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
                 command.subject.operator_type,
                 "create_coupon",
                 TARGET_TYPE_COUPON,
-                coupon_id,
+                &coupon_id,
                 serde_json::json!({
                     "action": "create_coupon",
-                    "couponId": coupon_id,
-                    "templateId": template_id,
+                    "couponId": &coupon_id,
                     "name": &command.name,
                     "type": &command.coupon_type,
                     "value": &command.value,
@@ -95,7 +86,7 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
             .await?;
             let item = load_coupon_by_id(
                 &mut tx,
-                coupon_id,
+                &coupon_id,
                 command.subject.tenant_id,
                 command.subject.organization_id,
             )
@@ -118,7 +109,7 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
             })?;
             let deleted = soft_delete_coupon(&mut tx, &command).await?;
             if deleted {
-                insert_audit_log(
+                insert_audit_log_for_target_uuid(
                     &mut tx,
                     &command.audit_log_uuid,
                     &command.request_id,
@@ -128,10 +119,10 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
                     command.subject.operator_type,
                     "delete_coupon",
                     TARGET_TYPE_COUPON,
-                    command.coupon_id,
+                    &command.coupon_id,
                     serde_json::json!({
                         "action": "delete_coupon",
-                        "couponId": command.coupon_id,
+                        "couponId": &command.coupon_id,
                         "deleted": true
                     }),
                 )
@@ -156,7 +147,7 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
             if !updated {
                 return Err(DomainError::not_found("coupon was not found"));
             }
-            insert_audit_log(
+            insert_audit_log_for_target_uuid(
                 &mut tx,
                 &command.audit_log_uuid,
                 &command.request_id,
@@ -166,10 +157,10 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
                 command.subject.operator_type,
                 "update_coupon",
                 TARGET_TYPE_COUPON,
-                command.coupon_id,
+                &command.coupon_id,
                 serde_json::json!({
                     "action": "update_coupon",
-                    "couponId": command.coupon_id,
+                    "couponId": &command.coupon_id,
                     "name": &command.name,
                     "type": &command.coupon_type,
                     "value": &command.value,
@@ -179,7 +170,7 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
             .await?;
             let item = load_coupon_by_id(
                 &mut tx,
-                command.coupon_id,
+                &command.coupon_id,
                 command.subject.tenant_id,
                 command.subject.organization_id,
             )
@@ -209,7 +200,7 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
             })?;
             if !coupon_exists(
                 &mut tx,
-                command.coupon_id,
+                &command.coupon_id,
                 command.subject.tenant_id,
                 command.subject.organization_id,
             )
@@ -218,9 +209,9 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
                 return Err(DomainError::not_found("coupon was not found"));
             }
             let batch_id = insert_coupon_batch(&mut tx, &command).await?;
-            let codes = insert_promo_codes(&mut tx, &command, batch_id).await?;
+            let codes = insert_promo_codes(&mut tx, &command, &batch_id).await?;
             update_coupon_received_count(&mut tx, &command).await?;
-            insert_audit_log(
+            insert_audit_log_for_target_uuid(
                 &mut tx,
                 &command.audit_log_uuid,
                 &command.request_id,
@@ -230,11 +221,11 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
                 command.subject.operator_type,
                 "generate_coupon_batch",
                 TARGET_TYPE_COUPON_BATCH,
-                batch_id,
+                &batch_id,
                 serde_json::json!({
                     "action": "generate_coupon_batch",
-                    "batchId": batch_id,
-                    "couponId": command.coupon_id,
+                    "batchId": &batch_id,
+                    "couponId": &command.coupon_id,
                     "count": command.count,
                     "prefix": &command.prefix
                 }),
@@ -242,7 +233,7 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
             .await?;
             let batch = load_batch_by_id(
                 &mut tx,
-                batch_id,
+                &batch_id,
                 command.subject.tenant_id,
                 command.subject.organization_id,
             )
@@ -276,9 +267,9 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
             let updated = update_promo_code_status(&mut tx, &command).await?;
             if updated {
                 if let Some(batch_id) = find_batch_for_promo_code(&mut tx, &command).await? {
-                    refresh_batch_counters(&mut tx, batch_id).await?;
+                    refresh_batch_counters(&mut tx, &batch_id).await?;
                 }
-                insert_audit_log(
+                insert_audit_log_for_target_uuid(
                     &mut tx,
                     &command.audit_log_uuid,
                     &command.request_id,
@@ -288,10 +279,10 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
                     command.subject.operator_type,
                     "update_promo_code_status",
                     TARGET_TYPE_PROMO_CODE,
-                    command.promo_code_id,
+                    &command.promo_code_id,
                     serde_json::json!({
                         "action": "update_promo_code_status",
-                        "promoCodeId": command.promo_code_id,
+                        "promoCodeId": &command.promo_code_id,
                         "status": &command.status
                     }),
                 )
@@ -350,8 +341,13 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
                     error,
                 )
             })?;
-            let package_id = insert_recharge_package(&mut tx, &command).await?;
-            sync_recharge_package_product_for_create(&mut tx, &command).await?;
+            let package_sequence = insert_recharge_package(&mut tx, &command).await?;
+            let package_id = recharge_package_id(
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                package_sequence,
+            );
+            sync_recharge_package_product_for_create(&mut tx, &command, package_sequence).await?;
             insert_audit_log(
                 &mut tx,
                 &command.audit_log_uuid,
@@ -362,10 +358,10 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
                 command.subject.operator_type,
                 "create_recharge_package",
                 TARGET_TYPE_RECHARGE_PACKAGE,
-                package_id,
+                0,
                 serde_json::json!({
                     "action": "create_recharge_package",
-                    "packageId": package_id,
+                    "packageId": &package_id,
                     "rmb": &command.rmb,
                     "bonus": command.bonus,
                     "status": recharge_package_status_label(command.status)
@@ -374,7 +370,7 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
             .await?;
             let item = load_recharge_package_by_id(
                 &mut tx,
-                package_id,
+                &package_id,
                 command.subject.tenant_id,
                 command.subject.organization_id,
             )
@@ -400,7 +396,7 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
             })?;
             let previous_rmb = load_recharge_package_amount(
                 &mut tx,
-                command.package_id,
+                &command.package_id,
                 command.subject.tenant_id,
                 command.subject.organization_id,
             )
@@ -421,10 +417,10 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
                 command.subject.operator_type,
                 "update_recharge_package",
                 TARGET_TYPE_RECHARGE_PACKAGE,
-                command.package_id,
+                0,
                 serde_json::json!({
                     "action": "update_recharge_package",
-                    "packageId": command.package_id,
+                    "packageId": &command.package_id,
                     "rmb": &command.rmb,
                     "bonus": command.bonus,
                     "status": recharge_package_status_label(command.status)
@@ -433,7 +429,7 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
             .await?;
             let item = load_recharge_package_by_id(
                 &mut tx,
-                command.package_id,
+                &command.package_id,
                 command.subject.tenant_id,
                 command.subject.organization_id,
             )
@@ -470,10 +466,10 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
                     command.subject.operator_type,
                     "delete_recharge_package",
                     TARGET_TYPE_RECHARGE_PACKAGE,
-                    command.package_id,
+                    0,
                     serde_json::json!({
                         "action": "delete_recharge_package",
-                        "packageId": command.package_id,
+                        "packageId": &command.package_id,
                         "deleted": true
                     }),
                 )
@@ -498,7 +494,7 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
                 store_error("failed to begin exchange rule update transaction", error)
             })?;
             let exchange_rule_id = upsert_exchange_rule(&mut tx, &command).await?;
-            insert_audit_log(
+            insert_audit_log_for_target_uuid(
                 &mut tx,
                 &command.audit_log_uuid,
                 &command.request_id,
@@ -508,10 +504,10 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
                 command.subject.operator_type,
                 "update_exchange_rule",
                 TARGET_TYPE_EXCHANGE_RULE,
-                exchange_rule_id,
+                &exchange_rule_id,
                 serde_json::json!({
                     "action": "update_exchange_rule",
-                    "exchangeRuleId": exchange_rule_id,
+                    "exchangeRuleId": &exchange_rule_id,
                     "sourceAssetType": &command.source_asset_type,
                     "targetAssetType": &command.target_asset_type,
                     "rate": &command.rate
@@ -520,7 +516,7 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
             .await?;
             let item = load_exchange_rule_by_id(
                 &mut tx,
-                exchange_rule_id,
+                &exchange_rule_id,
                 command.subject.tenant_id,
                 command.subject.organization_id,
             )
@@ -556,15 +552,15 @@ async fn list_coupons(
         r#"
         SELECT
             CAST(id AS TEXT) AS id,
-            COALESCE(name, '') AS name,
-            type AS type_code,
-            CAST(COALESCE(amount, 0) AS TEXT) AS amount,
-            CAST(COALESCE(discount, 0) AS TEXT) AS discount,
+            COALESCE(title, '') AS name,
+            COALESCE(discount_type, '') AS type_code,
+            CAST(COALESCE(discount_value, '0') AS TEXT) AS amount,
+            CAST(COALESCE(discount_value, '0') AS TEXT) AS discount,
             status AS status
-        FROM plus_coupon
-        WHERE tenant_id = ?
-          AND organization_id = ?
-          AND status >= 0
+        FROM commerce_coupon_template
+        WHERE tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
+          AND status <> 'disabled'
         ORDER BY updated_at DESC, id DESC
         LIMIT 500
         "#,
@@ -578,75 +574,37 @@ async fn list_coupons(
     rows.iter().map(coupon_from_row).collect()
 }
 
-async fn insert_coupon_template(
+async fn upsert_coupon_template(
     tx: &mut Transaction<'_, Sqlite>,
     command: &CreateAdminCouponCommand,
-) -> DomainResult<i64> {
+) -> DomainResult<String> {
     sqlx::query(
         r#"
-        INSERT INTO plus_coupon_template
-            (uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, name, template_code, type, description, amount, discount, min_consume, total, get_limit, received_count, used_count, status, validity_type, validity_days, can_share, stackable, scope_type, scope_value)
+        INSERT INTO commerce_coupon_template
+            (id, tenant_id, organization_id, template_no, title, discount_type, discount_value, minimum_amount, total_quantity, claimed_quantity, redeemed_quantity, status, starts_at, expires_at, created_at, updated_at)
         VALUES
-            (?, ?, ?, 0, ?, ?, 1, ?, ?, ?, '', ?, ?, 0, 0, 0, 0, 0, ?, 1, 0, 0, 0, 1, '')
-        "#,
-    )
-    .bind(&command.template_uuid)
-    .bind(&command.requested_at)
-    .bind(&command.requested_at)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
-    .bind(&command.name)
-    .bind(format!("tpl-{}", command.template_uuid))
-    .bind(coupon_type_code(&command.coupon_type))
-    .bind(command.amount_cents)
-    .bind(command.discount_value.as_deref())
-    .bind(coupon_status_code(&command.status))
-    .execute(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to create coupon template", error))?;
-
-    sqlx::query_scalar("SELECT last_insert_rowid()")
-        .fetch_one(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to read created coupon template id", error))
-}
-
-async fn insert_coupon(
-    tx: &mut Transaction<'_, Sqlite>,
-    command: &CreateAdminCouponCommand,
-) -> DomainResult<i64> {
-    sqlx::query(
-        r#"
-        INSERT INTO plus_coupon
-            (uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, name, redeem_code, point_cost, type, description, amount, discount, min_consume, total, get_limit, received_count, used_count, status, stackable, scope_type, scope_value)
-        VALUES
-            (?, ?, ?, 0, ?, ?, 1, ?, ?, 0, ?, '', ?, ?, 0, 0, 0, 0, 0, ?, 0, 1, '')
+            (?, CAST(? AS TEXT), CAST(? AS TEXT), ?, ?, ?, ?, '0', NULL, 0, 0, ?, NULL, NULL, ?, ?)
         "#,
     )
     .bind(&command.coupon_uuid)
-    .bind(&command.requested_at)
-    .bind(&command.requested_at)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
+    .bind(coupon_template_no(&command.coupon_uuid))
     .bind(&command.name)
-    .bind(format!("coupon-{}", command.coupon_uuid))
-    .bind(coupon_type_code(&command.coupon_type))
-    .bind(command.amount_cents)
-    .bind(command.discount_value.as_deref())
-    .bind(coupon_status_code(&command.status))
+    .bind(coupon_discount_type(&command.coupon_type))
+    .bind(coupon_discount_value(command))
+    .bind(coupon_status_value(&command.status))
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
     .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to create coupon", error))?;
-
-    sqlx::query_scalar("SELECT last_insert_rowid()")
-        .fetch_one(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to read created coupon id", error))
+    .map_err(|error| store_error("failed to create coupon template", error))?;
+    Ok(command.coupon_uuid.clone())
 }
 
 async fn load_coupon_by_id(
     tx: &mut Transaction<'_, Sqlite>,
-    coupon_id: i64,
+    coupon_id: &str,
     tenant_id: i64,
     organization_id: i64,
 ) -> DomainResult<Option<AdminCouponItem>> {
@@ -654,16 +612,16 @@ async fn load_coupon_by_id(
         r#"
         SELECT
             CAST(id AS TEXT) AS id,
-            COALESCE(name, '') AS name,
-            type AS type_code,
-            CAST(COALESCE(amount, 0) AS TEXT) AS amount,
-            CAST(COALESCE(discount, 0) AS TEXT) AS discount,
+            COALESCE(title, '') AS name,
+            COALESCE(discount_type, '') AS type_code,
+            CAST(COALESCE(discount_value, '0') AS TEXT) AS amount,
+            CAST(COALESCE(discount_value, '0') AS TEXT) AS discount,
             status AS status
-        FROM plus_coupon
+        FROM commerce_coupon_template
         WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
-          AND status >= 0
+          AND tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
+          AND status <> 'disabled'
         LIMIT 1
         "#,
     )
@@ -683,19 +641,18 @@ async fn soft_delete_coupon(
 ) -> DomainResult<bool> {
     let result = sqlx::query(
         r#"
-        UPDATE plus_coupon
+        UPDATE commerce_coupon_template
         SET status = ?,
-            updated_at = ?,
-            v = COALESCE(v, 0) + 1
+            updated_at = ?
         WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
-          AND status >= 0
+          AND tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
+          AND status <> 'disabled'
         "#,
     )
-    .bind(COUPON_STATUS_DELETED)
+    .bind(CommerceCouponStatus::Disabled.as_str())
     .bind(&command.requested_at)
-    .bind(command.coupon_id)
+    .bind(&command.coupon_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .execute(&mut **tx)
@@ -710,27 +667,24 @@ async fn update_coupon_row(
 ) -> DomainResult<bool> {
     let result = sqlx::query(
         r#"
-        UPDATE plus_coupon
-        SET name = ?,
-            type = ?,
-            amount = ?,
-            discount = ?,
+        UPDATE commerce_coupon_template
+        SET title = ?,
+            discount_type = ?,
+            discount_value = ?,
             status = ?,
-            updated_at = ?,
-            v = COALESCE(v, 0) + 1
+            updated_at = ?
         WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
-          AND status >= 0
+          AND tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
+          AND status <> 'disabled'
         "#,
     )
     .bind(&command.name)
-    .bind(coupon_type_code(&command.coupon_type))
-    .bind(command.amount_cents)
-    .bind(command.discount_value.as_deref())
-    .bind(coupon_status_code(&command.status))
+    .bind(coupon_discount_type(&command.coupon_type))
+    .bind(coupon_discount_value(command))
+    .bind(coupon_status_value(&command.status))
     .bind(&command.requested_at)
-    .bind(command.coupon_id)
+    .bind(&command.coupon_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .execute(&mut **tx)
@@ -755,18 +709,18 @@ async fn list_batches(
 
 async fn coupon_exists(
     tx: &mut Transaction<'_, Sqlite>,
-    coupon_id: i64,
+    coupon_id: &str,
     tenant_id: i64,
     organization_id: i64,
 ) -> DomainResult<bool> {
     let count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(*)
-        FROM plus_coupon
+        FROM commerce_coupon_template
         WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
-          AND status >= 0
+          AND tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
+          AND status <> 'disabled'
         "#,
     )
     .bind(coupon_id)
@@ -781,23 +735,20 @@ async fn coupon_exists(
 async fn insert_coupon_batch(
     tx: &mut Transaction<'_, Sqlite>,
     command: &GenerateAdminCouponBatchCommand,
-) -> DomainResult<i64> {
+) -> DomainResult<String> {
     let batch_no = batch_no(&command.prefix, &command.batch_uuid);
     sqlx::query(
         r#"
-        INSERT INTO ops_coupon_issue_batch
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, coupon_id, coupon_template_id, batch_no, campaign_code, name, code_prefix, code_pattern, requested_count, generated_count, available_count, claimed_count, used_count, voided_count, generation_status, audience_filter, generated_at, created_by)
+        INSERT INTO commerce_coupon_issue_batch
+            (id, tenant_id, organization_id, coupon_template_id, batch_no, campaign_code, title, code_prefix, code_pattern, requested_quantity, generated_quantity, available_quantity, claimed_quantity, redeemed_quantity, disabled_quantity, status, generation_status, audience_filter, generated_at, created_by, created_at, updated_at)
         VALUES
-            (?, ?, ?, 1, ?, ?, ?, 0, ?, NULL, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0, 0, ?, '{}', ?, ?)
+            (?, CAST(? AS TEXT), CAST(? AS TEXT), ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0, 0, 'active', 'completed', '{}', ?, CAST(? AS TEXT), ?, ?)
         "#,
     )
     .bind(&command.batch_uuid)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
-    .bind(BATCH_STATUS_ACTIVE)
-    .bind(&command.requested_at)
-    .bind(&command.requested_at)
-    .bind(command.coupon_id)
+    .bind(&command.coupon_id)
     .bind(&batch_no)
     .bind(&batch_no)
     .bind(&command.name)
@@ -806,23 +757,20 @@ async fn insert_coupon_batch(
     .bind(command.count)
     .bind(command.count)
     .bind(command.count)
-    .bind(BATCH_GENERATION_STATUS_COMPLETED)
     .bind(&command.requested_at)
     .bind(command.subject.operator_id)
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create coupon issue batch", error))?;
-
-    sqlx::query_scalar("SELECT last_insert_rowid()")
-        .fetch_one(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to read created coupon batch id", error))
+    Ok(command.batch_uuid.clone())
 }
 
 async fn insert_promo_codes(
     tx: &mut Transaction<'_, Sqlite>,
     command: &GenerateAdminCouponBatchCommand,
-    batch_id: i64,
+    batch_id: &str,
 ) -> DomainResult<Vec<AdminPromoCodeItem>> {
     let mut codes = Vec::with_capacity(command.count as usize);
     let mut sequence = next_promo_code_sequence(tx, command).await?;
@@ -832,26 +780,30 @@ async fn insert_promo_codes(
             let uuid = format!("{}-code-{current_sequence}", command.batch_uuid);
             let result = sqlx::query(
                 r#"
-                INSERT INTO plus_user_coupon
-                    (uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, user_id, coupon_id, coupon_code, acquire_at, acquire_request_no, acquire_type, point_cost, points_refunded, expire_at, status, can_shared)
+                INSERT INTO commerce_coupon
+                    (id, tenant_id, organization_id, template_id, issue_batch_id, owner_user_id, coupon_code, status, claimed_at, expires_at, redeemed_at, disabled_at, request_no, idempotency_key, created_at, updated_at)
                 VALUES
-                    (?, ?, ?, 0, ?, ?, 1, NULL, ?, ?, ?, ?, 20, 0, 0, NULL, ?, 0)
-                ON CONFLICT(coupon_code) DO NOTHING
+                    (?, CAST(? AS TEXT), CAST(? AS TEXT), ?, ?, NULL, ?, ?, NULL, NULL, NULL, NULL, ?, ?, ?, ?)
+                ON CONFLICT(tenant_id, coupon_code) DO NOTHING
                 "#,
             )
-            .bind(uuid)
-            .bind(&command.requested_at)
-            .bind(&command.requested_at)
+            .bind(&uuid)
             .bind(command.subject.tenant_id)
             .bind(command.subject.organization_id)
-            .bind(command.coupon_id)
+            .bind(&command.coupon_id)
+            .bind(batch_id)
             .bind(&code)
-            .bind(&command.requested_at)
+            .bind(CommerceCouponStatus::Active.as_str())
             .bind(format!(
                 "{}-{current_sequence}",
                 batch_no(&command.prefix, &command.batch_uuid)
             ))
-            .bind(PROMO_STATUS_AVAILABLE)
+            .bind(format!(
+                "{}-{current_sequence}",
+                batch_no(&command.prefix, &command.batch_uuid)
+            ))
+            .bind(&command.requested_at)
+            .bind(&command.requested_at)
             .execute(&mut **tx)
             .await
             .map_err(|error| store_error("failed to create promo code", error))?;
@@ -861,13 +813,9 @@ async fn insert_promo_codes(
             if result.rows_affected() == 0 {
                 continue;
             }
-            let id: i64 = sqlx::query_scalar("SELECT last_insert_rowid()")
-                .fetch_one(&mut **tx)
-                .await
-                .map_err(|error| store_error("failed to read created promo code id", error))?;
             codes.push(AdminPromoCodeItem {
-                id: id.to_string(),
-                batch_id: batch_id.to_string(),
+                id: uuid,
+                batch_id: batch_id.to_owned(),
                 code,
                 status: "available".to_owned(),
                 used_by: None,
@@ -887,7 +835,7 @@ async fn next_promo_code_sequence(
     let existing_codes: Vec<String> = sqlx::query_scalar(
         r#"
         SELECT coupon_code
-        FROM plus_user_coupon
+        FROM commerce_coupon
         WHERE coupon_code LIKE ? ESCAPE '!'
         "#,
     )
@@ -926,7 +874,7 @@ async fn promo_code_exists(tx: &mut Transaction<'_, Sqlite>, code: &str) -> Doma
     let count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(*)
-        FROM plus_user_coupon
+        FROM commerce_coupon
         WHERE coupon_code = ?
         "#,
     )
@@ -943,18 +891,17 @@ async fn update_coupon_received_count(
 ) -> DomainResult<()> {
     sqlx::query(
         r#"
-        UPDATE plus_coupon
-        SET received_count = COALESCE(received_count, 0) + ?,
-            updated_at = ?,
-            v = COALESCE(v, 0) + 1
+        UPDATE commerce_coupon_template
+        SET claimed_quantity = COALESCE(claimed_quantity, 0) + ?,
+            updated_at = ?
         WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
+          AND tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
         "#,
     )
     .bind(command.count)
     .bind(&command.requested_at)
-    .bind(command.coupon_id)
+    .bind(&command.coupon_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .execute(&mut **tx)
@@ -965,7 +912,7 @@ async fn update_coupon_received_count(
 
 async fn load_batch_by_id(
     tx: &mut Transaction<'_, Sqlite>,
-    batch_id: i64,
+    batch_id: &str,
     tenant_id: i64,
     organization_id: i64,
 ) -> DomainResult<Option<AdminCouponBatchItem>> {
@@ -988,46 +935,20 @@ async fn list_promo_codes(
         r#"
         SELECT
             CAST(uc.id AS TEXT) AS id,
-            COALESCE(
-                (
-                    SELECT CAST(b.id AS TEXT)
-                    FROM ops_coupon_issue_batch b
-                    WHERE b.tenant_id = uc.tenant_id
-                      AND b.organization_id = uc.organization_id
-                      AND b.coupon_id = uc.coupon_id
-                      AND b.status = 1
-                      AND b.deleted_at IS NULL
-                      AND SUBSTR(COALESCE(uc.acquire_request_no, ''), 1, LENGTH(COALESCE(b.batch_no, '')) + 1) = COALESCE(b.batch_no, '') || '-'
-                    ORDER BY b.created_at DESC, b.id DESC
-                    LIMIT 1
-                ),
-                (
-                    SELECT CAST(b.id AS TEXT)
-                    FROM ops_coupon_issue_batch b
-                    WHERE b.tenant_id = uc.tenant_id
-                      AND b.organization_id = uc.organization_id
-                      AND b.coupon_id = uc.coupon_id
-                      AND b.status = 1
-                      AND b.deleted_at IS NULL
-                      AND SUBSTR(COALESCE(uc.coupon_code, ''), 1, LENGTH(COALESCE(b.code_prefix, '')) + 1) = COALESCE(b.code_prefix, '') || '-'
-                    ORDER BY b.created_at DESC, b.id DESC
-                    LIMIT 1
-                ),
-                '0'
-            ) AS batch_id,
+            COALESCE(uc.issue_batch_id, '') AS batch_id,
             COALESCE(uc.coupon_code, '') AS code,
             uc.status AS status,
-            uc.user_id AS user_id,
-            CAST(uc.use_at AS TEXT) AS used_at,
+            uc.owner_user_id AS user_id,
+            CAST(uc.redeemed_at AS TEXT) AS used_at,
             COALESCE(NULLIF(u.email, ''), NULLIF(u.username, ''), '') AS used_by
-        FROM plus_user_coupon uc
+        FROM commerce_coupon uc
         LEFT JOIN iam_user u
-          ON u.id = CAST(uc.user_id AS TEXT)
-         AND u.tenant_id = CAST(uc.tenant_id AS TEXT)
-        WHERE uc.tenant_id = ?
-          AND uc.organization_id = ?
-          AND uc.status > 0
-        ORDER BY uc.created_at DESC, uc.id DESC
+          ON u.id = uc.owner_user_id
+         AND u.tenant_id = uc.tenant_id
+        WHERE uc.tenant_id = CAST(? AS TEXT)
+          AND uc.organization_id = CAST(? AS TEXT)
+          AND uc.issue_batch_id IS NOT NULL
+        ORDER BY uc.created_at DESC, uc.coupon_code DESC, uc.id DESC
         LIMIT 1000
         "#,
     )
@@ -1044,36 +965,41 @@ async fn update_promo_code_status(
     tx: &mut Transaction<'_, Sqlite>,
     command: &UpdateAdminPromoCodeStatusCommand,
 ) -> DomainResult<bool> {
-    let status = promo_status_code(&command.status);
+    let status = promo_status_value(&command.status);
     let Some(fact) = load_promo_code_status_fact(tx, command).await? else {
         return Ok(false);
     };
-    ensure_promo_status_transition(&fact, status)?;
+    ensure_promo_status_transition(&fact, &status)?;
     let result = sqlx::query(
         r#"
-        UPDATE plus_user_coupon
+        UPDATE commerce_coupon
         SET status = ?,
-            use_at = CASE
-                WHEN ? = ? THEN COALESCE(use_at, ?)
-                WHEN ? = ? THEN NULL
-                ELSE use_at
+            redeemed_at = CASE
+                WHEN ? = 'redeemed' THEN COALESCE(redeemed_at, ?)
+                WHEN ? = 'active' THEN NULL
+                ELSE redeemed_at
             END,
-            updated_at = ?,
-            v = COALESCE(v, 0) + 1
+            disabled_at = CASE
+                WHEN ? = 'disabled' THEN COALESCE(disabled_at, ?)
+                WHEN ? = 'active' THEN NULL
+                ELSE disabled_at
+            END,
+            updated_at = ?
         WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
-          AND status > 0
+          AND tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
+          AND status <> 'disabled'
         "#,
     )
-    .bind(status)
-    .bind(status)
-    .bind(PROMO_STATUS_USED)
+    .bind(&status)
+    .bind(&status)
     .bind(&command.requested_at)
-    .bind(status)
-    .bind(PROMO_STATUS_AVAILABLE)
+    .bind(&status)
+    .bind(&status)
     .bind(&command.requested_at)
-    .bind(command.promo_code_id)
+    .bind(&status)
+    .bind(&command.requested_at)
+    .bind(&command.promo_code_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .execute(&mut **tx)
@@ -1090,17 +1016,17 @@ async fn load_promo_code_status_fact(
         r#"
         SELECT
             status AS status,
-            user_id,
-            CAST(use_at AS TEXT) AS used_at
-        FROM plus_user_coupon
+            owner_user_id AS user_id,
+            CAST(redeemed_at AS TEXT) AS used_at
+        FROM commerce_coupon
         WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
-          AND status > 0
+          AND tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
+          AND status <> 'disabled'
         LIMIT 1
         "#,
     )
-    .bind(command.promo_code_id)
+    .bind(&command.promo_code_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .fetch_optional(&mut **tx)
@@ -1109,8 +1035,8 @@ async fn load_promo_code_status_fact(
 
     row.map(|row| {
         Ok(PromoCodeStatusFact {
-            status: required_integer_cell(&row, "status", "promo code")?,
-            user_id: row.try_get("user_id").ok().flatten(),
+            status: string_cell(&row, "status"),
+            user_id: optional_string_cell(&row, "user_id").filter(|value| !value.is_empty()),
             used_at: optional_string_cell(&row, "used_at").filter(|value| !value.is_empty()),
         })
     })
@@ -1120,35 +1046,18 @@ async fn load_promo_code_status_fact(
 async fn find_batch_for_promo_code(
     tx: &mut Transaction<'_, Sqlite>,
     command: &UpdateAdminPromoCodeStatusCommand,
-) -> DomainResult<Option<i64>> {
+) -> DomainResult<Option<String>> {
     sqlx::query_scalar(
         r#"
-        SELECT b.id
-        FROM plus_user_coupon uc
-        JOIN ops_coupon_issue_batch b
-          ON b.tenant_id = uc.tenant_id
-         AND b.organization_id = uc.organization_id
-         AND b.coupon_id = uc.coupon_id
-         AND b.status = 1
-         AND b.deleted_at IS NULL
-         AND (
-             SUBSTR(COALESCE(uc.acquire_request_no, ''), 1, LENGTH(COALESCE(b.batch_no, '')) + 1) = COALESCE(b.batch_no, '') || '-'
-             OR SUBSTR(COALESCE(uc.coupon_code, ''), 1, LENGTH(COALESCE(b.code_prefix, '')) + 1) = COALESCE(b.code_prefix, '') || '-'
-         )
-        WHERE uc.id = ?
-          AND uc.tenant_id = ?
-          AND uc.organization_id = ?
-        ORDER BY
-          CASE
-            WHEN SUBSTR(COALESCE(uc.acquire_request_no, ''), 1, LENGTH(COALESCE(b.batch_no, '')) + 1) = COALESCE(b.batch_no, '') || '-' THEN 0
-            ELSE 1
-          END,
-          b.created_at DESC,
-          b.id DESC
+        SELECT issue_batch_id
+        FROM commerce_coupon
+        WHERE id = ?
+          AND tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
         LIMIT 1
         "#,
     )
-    .bind(command.promo_code_id)
+    .bind(&command.promo_code_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .fetch_optional(&mut **tx)
@@ -1158,111 +1067,48 @@ async fn find_batch_for_promo_code(
 
 async fn refresh_batch_counters(
     tx: &mut Transaction<'_, Sqlite>,
-    batch_id: i64,
+    batch_id: &str,
 ) -> DomainResult<()> {
     sqlx::query(
         r#"
-        UPDATE ops_coupon_issue_batch
-        SET available_count = (
+        UPDATE commerce_coupon_issue_batch
+        SET available_quantity = (
                 SELECT COUNT(*)
-                FROM plus_user_coupon uc
-                WHERE uc.tenant_id = ops_coupon_issue_batch.tenant_id
-                  AND uc.organization_id = ops_coupon_issue_batch.organization_id
-                  AND uc.coupon_id = ops_coupon_issue_batch.coupon_id
-                  AND (
-                      SUBSTR(COALESCE(uc.acquire_request_no, ''), 1, LENGTH(COALESCE(ops_coupon_issue_batch.batch_no, '')) + 1) = COALESCE(ops_coupon_issue_batch.batch_no, '') || '-'
-                      OR (
-                          NOT EXISTS (
-                              SELECT 1
-                              FROM ops_coupon_issue_batch exact_batch
-                              WHERE exact_batch.tenant_id = uc.tenant_id
-                                AND exact_batch.organization_id = uc.organization_id
-                                AND exact_batch.coupon_id = uc.coupon_id
-                                AND exact_batch.status = 1
-                                AND exact_batch.deleted_at IS NULL
-                                AND SUBSTR(COALESCE(uc.acquire_request_no, ''), 1, LENGTH(COALESCE(exact_batch.batch_no, '')) + 1) = COALESCE(exact_batch.batch_no, '') || '-'
-                          )
-                          AND SUBSTR(COALESCE(uc.coupon_code, ''), 1, LENGTH(COALESCE(ops_coupon_issue_batch.code_prefix, '')) + 1) = COALESCE(ops_coupon_issue_batch.code_prefix, '') || '-'
-                      )
-                  )
-                  AND uc.status = 1
-                  AND uc.user_id IS NULL
-                  AND uc.use_at IS NULL
+                FROM commerce_coupon c
+                WHERE c.tenant_id = commerce_coupon_issue_batch.tenant_id
+                  AND c.organization_id = commerce_coupon_issue_batch.organization_id
+                  AND c.issue_batch_id = commerce_coupon_issue_batch.id
+                  AND c.status = 'active'
+                  AND c.owner_user_id IS NULL
+                  AND c.redeemed_at IS NULL
             ),
-            claimed_count = (
+            claimed_quantity = (
                 SELECT COUNT(*)
-                FROM plus_user_coupon uc
-                WHERE uc.tenant_id = ops_coupon_issue_batch.tenant_id
-                  AND uc.organization_id = ops_coupon_issue_batch.organization_id
-                  AND uc.coupon_id = ops_coupon_issue_batch.coupon_id
-                  AND (
-                      SUBSTR(COALESCE(uc.acquire_request_no, ''), 1, LENGTH(COALESCE(ops_coupon_issue_batch.batch_no, '')) + 1) = COALESCE(ops_coupon_issue_batch.batch_no, '') || '-'
-                      OR (
-                          NOT EXISTS (
-                              SELECT 1
-                              FROM ops_coupon_issue_batch exact_batch
-                              WHERE exact_batch.tenant_id = uc.tenant_id
-                                AND exact_batch.organization_id = uc.organization_id
-                                AND exact_batch.coupon_id = uc.coupon_id
-                                AND exact_batch.status = 1
-                                AND exact_batch.deleted_at IS NULL
-                                AND SUBSTR(COALESCE(uc.acquire_request_no, ''), 1, LENGTH(COALESCE(exact_batch.batch_no, '')) + 1) = COALESCE(exact_batch.batch_no, '') || '-'
-                          )
-                          AND SUBSTR(COALESCE(uc.coupon_code, ''), 1, LENGTH(COALESCE(ops_coupon_issue_batch.code_prefix, '')) + 1) = COALESCE(ops_coupon_issue_batch.code_prefix, '') || '-'
-                      )
-                  )
-                  AND (uc.status = 2 OR (uc.status = 1 AND uc.user_id IS NOT NULL AND uc.use_at IS NULL))
+                FROM commerce_coupon c
+                WHERE c.tenant_id = commerce_coupon_issue_batch.tenant_id
+                  AND c.organization_id = commerce_coupon_issue_batch.organization_id
+                  AND c.issue_batch_id = commerce_coupon_issue_batch.id
+                  AND c.status = 'active'
+                  AND c.owner_user_id IS NOT NULL
+                  AND c.redeemed_at IS NULL
             ),
-            used_count = (
+            redeemed_quantity = (
                 SELECT COUNT(*)
-                FROM plus_user_coupon uc
-                WHERE uc.tenant_id = ops_coupon_issue_batch.tenant_id
-                  AND uc.organization_id = ops_coupon_issue_batch.organization_id
-                  AND uc.coupon_id = ops_coupon_issue_batch.coupon_id
-                  AND (
-                      SUBSTR(COALESCE(uc.acquire_request_no, ''), 1, LENGTH(COALESCE(ops_coupon_issue_batch.batch_no, '')) + 1) = COALESCE(ops_coupon_issue_batch.batch_no, '') || '-'
-                      OR (
-                          NOT EXISTS (
-                              SELECT 1
-                              FROM ops_coupon_issue_batch exact_batch
-                              WHERE exact_batch.tenant_id = uc.tenant_id
-                                AND exact_batch.organization_id = uc.organization_id
-                                AND exact_batch.coupon_id = uc.coupon_id
-                                AND exact_batch.status = 1
-                                AND exact_batch.deleted_at IS NULL
-                                AND SUBSTR(COALESCE(uc.acquire_request_no, ''), 1, LENGTH(COALESCE(exact_batch.batch_no, '')) + 1) = COALESCE(exact_batch.batch_no, '') || '-'
-                          )
-                          AND SUBSTR(COALESCE(uc.coupon_code, ''), 1, LENGTH(COALESCE(ops_coupon_issue_batch.code_prefix, '')) + 1) = COALESCE(ops_coupon_issue_batch.code_prefix, '') || '-'
-                      )
-                  )
-                  AND (uc.status = 3 OR uc.use_at IS NOT NULL)
+                FROM commerce_coupon c
+                WHERE c.tenant_id = commerce_coupon_issue_batch.tenant_id
+                  AND c.organization_id = commerce_coupon_issue_batch.organization_id
+                  AND c.issue_batch_id = commerce_coupon_issue_batch.id
+                  AND (c.status = 'redeemed' OR c.redeemed_at IS NOT NULL)
             ),
-            voided_count = (
+            disabled_quantity = (
                 SELECT COUNT(*)
-                FROM plus_user_coupon uc
-                WHERE uc.tenant_id = ops_coupon_issue_batch.tenant_id
-                  AND uc.organization_id = ops_coupon_issue_batch.organization_id
-                  AND uc.coupon_id = ops_coupon_issue_batch.coupon_id
-                  AND (
-                      SUBSTR(COALESCE(uc.acquire_request_no, ''), 1, LENGTH(COALESCE(ops_coupon_issue_batch.batch_no, '')) + 1) = COALESCE(ops_coupon_issue_batch.batch_no, '') || '-'
-                      OR (
-                          NOT EXISTS (
-                              SELECT 1
-                              FROM ops_coupon_issue_batch exact_batch
-                              WHERE exact_batch.tenant_id = uc.tenant_id
-                                AND exact_batch.organization_id = uc.organization_id
-                                AND exact_batch.coupon_id = uc.coupon_id
-                                AND exact_batch.status = 1
-                                AND exact_batch.deleted_at IS NULL
-                                AND SUBSTR(COALESCE(uc.acquire_request_no, ''), 1, LENGTH(COALESCE(exact_batch.batch_no, '')) + 1) = COALESCE(exact_batch.batch_no, '') || '-'
-                          )
-                          AND SUBSTR(COALESCE(uc.coupon_code, ''), 1, LENGTH(COALESCE(ops_coupon_issue_batch.code_prefix, '')) + 1) = COALESCE(ops_coupon_issue_batch.code_prefix, '') || '-'
-                      )
-                  )
-                  AND uc.status = 4
+                FROM commerce_coupon c
+                WHERE c.tenant_id = commerce_coupon_issue_batch.tenant_id
+                  AND c.organization_id = commerce_coupon_issue_batch.organization_id
+                  AND c.issue_batch_id = commerce_coupon_issue_batch.id
+                  AND c.status = 'disabled'
             ),
-            updated_at = CURRENT_TIMESTAMP,
-            version = COALESCE(version, 0) + 1
+            updated_at = CURRENT_TIMESTAMP
         WHERE id = ?
         "#,
     )
@@ -1280,31 +1126,29 @@ async fn list_redemption_records(
     let rows = sqlx::query(
         r#"
         SELECT
-            CAST(uc.id AS TEXT) AS id,
-            CAST(uc.user_id AS TEXT) AS user_id,
+            CAST(c.id AS TEXT) AS id,
+            CAST(c.owner_user_id AS TEXT) AS user_id,
             COALESCE(NULLIF(u.email, ''), NULLIF(u.username, ''), '') AS user_name,
-            COALESCE(uc.coupon_code, '') AS code,
-            CAST(COALESCE(c.amount, 0) AS TEXT) AS amount,
-            CAST(COALESCE(uc.use_at, uc.updated_at, uc.acquire_at) AS TEXT) AS time
-        FROM plus_user_coupon uc
-        JOIN plus_coupon c
-          ON c.id = uc.coupon_id
-         AND c.tenant_id = uc.tenant_id
-         AND c.organization_id = uc.organization_id
+            COALESCE(c.coupon_code, '') AS code,
+            CAST(COALESCE(t.discount_value, '0') AS TEXT) AS amount,
+            CAST(COALESCE(c.redeemed_at, c.updated_at, c.claimed_at, c.created_at) AS TEXT) AS time
+        FROM commerce_coupon c
+        JOIN commerce_coupon_template t
+          ON t.id = c.template_id
+         AND t.tenant_id = c.tenant_id
         LEFT JOIN iam_user u
-          ON u.id = CAST(uc.user_id AS TEXT)
-         AND u.tenant_id = CAST(uc.tenant_id AS TEXT)
-        WHERE uc.tenant_id = ?
-          AND uc.organization_id = ?
-          AND uc.user_id IS NOT NULL
-          AND (uc.use_at IS NOT NULL OR uc.status = ?)
-        ORDER BY COALESCE(uc.use_at, uc.updated_at, uc.acquire_at) DESC, uc.id DESC
+          ON u.id = c.owner_user_id
+         AND u.tenant_id = c.tenant_id
+        WHERE c.tenant_id = CAST(? AS TEXT)
+          AND c.organization_id = CAST(? AS TEXT)
+          AND c.owner_user_id IS NOT NULL
+          AND (c.redeemed_at IS NOT NULL OR c.status = 'redeemed')
+        ORDER BY COALESCE(c.redeemed_at, c.updated_at, c.claimed_at, c.created_at) DESC, c.id DESC
         LIMIT 500
         "#,
     )
     .bind(query.subject.tenant_id)
     .bind(query.subject.organization_id)
-    .bind(PROMO_STATUS_USED)
     .fetch_all(pool)
     .await
     .map_err(|error| store_error("failed to list redemption records", error))?;
@@ -1316,7 +1160,7 @@ async fn list_redemption_records(
                 user_id: string_cell(row, "user_id"),
                 user: string_cell(row, "user_name"),
                 code: string_cell(row, "code"),
-                amount: cents_string_to_money(&string_cell(row, "amount")),
+                amount: decimal_money_string(&string_cell(row, "amount")),
                 time: string_cell(row, "time"),
             })
         })
@@ -1330,24 +1174,31 @@ async fn list_recharge_records(
     let rows = sqlx::query(
         r#"
         SELECT
-            CAST(vr.id AS TEXT) AS id,
-            COALESCE(NULLIF(vr.transaction_no, ''), 'recharge-' || vr.id) AS trade_no,
-            CAST(vr.user_id AS TEXT) AS user_id,
+            CAST(pa.id AS TEXT) AS id,
+            COALESCE(NULLIF(pa.out_trade_no, ''), NULLIF(o.order_no, ''), pa.id) AS trade_no,
+            CAST(pa.owner_user_id AS TEXT) AS user_id,
             COALESCE(NULLIF(u.email, ''), NULLIF(u.username, ''), '') AS user_name,
-            CAST(COALESCE(vr.amount, 0) AS TEXT) AS amount,
-            CAST(COALESCE(vr.point_amount, 0) AS TEXT) AS point_amount,
-            COALESCE(NULLIF(m.method_key, ''), NULLIF(m.name, ''), 'manual') AS method,
-            vr.status AS status,
-            CAST(COALESCE(vr.recharge_time, vr.updated_at, vr.created_at) AS TEXT) AS time
-        FROM plus_vip_recharge vr
-        LEFT JOIN plus_vip_recharge_method m
-          ON m.id = vr.recharge_method_id
+            CAST(COALESCE(pa.amount, '0') AS TEXT) AS amount,
+            COALESCE(NULLIF(json_extract(COALESCE(pa.callback_payload, '{}'), '$.points'), ''), '0') AS point_amount,
+            COALESCE(NULLIF(pm.display_name, ''), NULLIF(pa.provider, ''), 'manual') AS method,
+            COALESCE(NULLIF(o.status, ''), NULLIF(pa.status, ''), 'pending') AS status,
+            CAST(COALESCE(pa.paid_at, pa.updated_at, pa.created_at, o.updated_at, o.created_at) AS TEXT) AS time
+        FROM commerce_payment_attempt pa
+        JOIN commerce_order o
+          ON o.id = pa.order_id
+         AND o.tenant_id = pa.tenant_id
+         AND (o.organization_id IS NULL OR pa.organization_id IS NULL OR o.organization_id = pa.organization_id)
+         AND o.subject = 'points_recharge'
+        LEFT JOIN commerce_payment_method pm
+          ON pm.tenant_id = pa.tenant_id
+         AND (pm.organization_id IS NULL OR pa.organization_id IS NULL OR pm.organization_id = pa.organization_id)
+         AND pm.method_key = pa.provider
         LEFT JOIN iam_user u
-          ON u.id = CAST(vr.user_id AS TEXT)
-         AND u.tenant_id = CAST(vr.tenant_id AS TEXT)
-        WHERE vr.tenant_id = ?
-          AND vr.organization_id = ?
-        ORDER BY COALESCE(vr.recharge_time, vr.updated_at, vr.created_at) DESC, vr.id DESC
+          ON u.id = CAST(pa.owner_user_id AS TEXT)
+         AND u.tenant_id = pa.tenant_id
+        WHERE pa.tenant_id = CAST(? AS TEXT)
+          AND pa.organization_id = CAST(? AS TEXT)
+        ORDER BY COALESCE(pa.paid_at, pa.updated_at, pa.created_at, o.updated_at, o.created_at) DESC, pa.id DESC
         LIMIT 500
         "#,
     )
@@ -1367,32 +1218,41 @@ async fn load_recharge_record(
     let row = sqlx::query(
         r#"
         SELECT
-            CAST(vr.id AS TEXT) AS id,
-            COALESCE(NULLIF(vr.transaction_no, ''), 'recharge-' || vr.id) AS trade_no,
-            CAST(vr.user_id AS TEXT) AS user_id,
+            CAST(pa.id AS TEXT) AS id,
+            COALESCE(NULLIF(pa.out_trade_no, ''), NULLIF(o.order_no, ''), pa.id) AS trade_no,
+            CAST(pa.owner_user_id AS TEXT) AS user_id,
             COALESCE(NULLIF(u.email, ''), NULLIF(u.username, ''), '') AS user_name,
-            CAST(COALESCE(vr.amount, 0) AS TEXT) AS amount,
-            CAST(COALESCE(vr.point_amount, 0) AS TEXT) AS point_amount,
-            COALESCE(NULLIF(m.method_key, ''), NULLIF(m.name, ''), 'manual') AS method,
-            vr.status AS status,
-            CAST(COALESCE(vr.recharge_time, vr.updated_at, vr.created_at) AS TEXT) AS time
-        FROM plus_vip_recharge vr
-        LEFT JOIN plus_vip_recharge_method m
-          ON m.id = vr.recharge_method_id
+            CAST(COALESCE(pa.amount, '0') AS TEXT) AS amount,
+            COALESCE(NULLIF(json_extract(COALESCE(pa.callback_payload, '{}'), '$.points'), ''), '0') AS point_amount,
+            COALESCE(NULLIF(pm.display_name, ''), NULLIF(pa.provider, ''), 'manual') AS method,
+            COALESCE(NULLIF(o.status, ''), NULLIF(pa.status, ''), 'pending') AS status,
+            CAST(COALESCE(pa.paid_at, pa.updated_at, pa.created_at, o.updated_at, o.created_at) AS TEXT) AS time
+        FROM commerce_payment_attempt pa
+        JOIN commerce_order o
+          ON o.id = pa.order_id
+         AND o.tenant_id = pa.tenant_id
+         AND (o.organization_id IS NULL OR pa.organization_id IS NULL OR o.organization_id = pa.organization_id)
+         AND o.subject = 'points_recharge'
+        LEFT JOIN commerce_payment_method pm
+          ON pm.tenant_id = pa.tenant_id
+         AND (pm.organization_id IS NULL OR pa.organization_id IS NULL OR pm.organization_id = pa.organization_id)
+         AND pm.method_key = pa.provider
         LEFT JOIN iam_user u
-          ON u.id = CAST(vr.user_id AS TEXT)
-         AND u.tenant_id = CAST(vr.tenant_id AS TEXT)
-        WHERE vr.tenant_id = ?
-          AND vr.organization_id = ?
+          ON u.id = CAST(pa.owner_user_id AS TEXT)
+         AND u.tenant_id = pa.tenant_id
+        WHERE pa.tenant_id = CAST(? AS TEXT)
+          AND pa.organization_id = CAST(? AS TEXT)
           AND (
-              vr.transaction_no = ?
-              OR 'recharge-' || vr.id = ?
+              pa.out_trade_no = ?
+              OR o.order_no = ?
+              OR pa.id = ?
           )
         LIMIT 1
         "#,
     )
     .bind(query.subject.tenant_id)
     .bind(query.subject.organization_id)
+    .bind(&query.order_no)
     .bind(&query.order_no)
     .bind(&query.order_no)
     .fetch_optional(pool)
@@ -1410,17 +1270,17 @@ async fn list_recharge_packages(
         r#"
         SELECT
             CAST(id AS TEXT) AS id,
-            CAST(price AS TEXT) AS rmb,
-            COALESCE(point_amount, 0) AS bonus
-        FROM plus_vip_recharge_pack
-        WHERE tenant_id = ?
-          AND organization_id = ?
+            CAST(price_amount AS TEXT) AS rmb,
+            COALESCE(bonus_points, 0) AS bonus
+        FROM commerce_recharge_package
+        WHERE tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
         "#,
     );
     if query.status.is_some() {
         sql.push_str(" AND status = ?");
     } else {
-        sql.push_str(" AND status >= 0");
+        sql.push_str(" AND status <> 'deleted'");
     }
     sql.push_str(" ORDER BY COALESCE(sort_weight, 0) ASC, id ASC LIMIT 500");
 
@@ -1428,7 +1288,7 @@ async fn list_recharge_packages(
         .bind(query.subject.tenant_id)
         .bind(query.subject.organization_id);
     if let Some(status) = query.status {
-        query_builder = query_builder.bind(recharge_package_status_code(status));
+        query_builder = query_builder.bind(recharge_package_status_label(status));
     }
     let rows = query_builder
         .fetch_all(pool)
@@ -1445,20 +1305,23 @@ async fn list_exchange_rules(
     let rows = sqlx::query(
         r#"
         SELECT
-            COALESCE(NULLIF(uuid, ''), CAST(id AS TEXT)) AS id,
-            COALESCE(config_key, '') AS config_key,
-            CAST(COALESCE(config_value, 0) AS TEXT) AS rate
-        FROM plus_account_exchange_config
-        WHERE tenant_id = ?
-          AND organization_id = ?
-          AND config_key = ?
+            id,
+            source_asset_type,
+            target_asset_type,
+            rate,
+            status
+        FROM commerce_exchange_rule
+        WHERE tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
+          AND source_asset_type = 'points'
+          AND target_asset_type = 'cash'
+          AND status = 'active'
         ORDER BY updated_at DESC, id DESC
         LIMIT 500
         "#,
     )
     .bind(query.subject.tenant_id)
     .bind(query.subject.organization_id)
-    .bind(ACCOUNT_EXCHANGE_POINTS_TO_CASH_RATE)
     .fetch_all(pool)
     .await
     .map_err(|error| store_error("failed to list exchange rules", error))?;
@@ -1476,32 +1339,71 @@ async fn insert_recharge_package(
     tx: &mut Transaction<'_, Sqlite>,
     command: &CreateAdminRechargePackageCommand,
 ) -> DomainResult<i64> {
+    let sequence = next_recharge_package_sequence(
+        tx,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+    )
+    .await?;
+    let package_id = recharge_package_id(
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        sequence,
+    );
+    let sku_id = recharge_sku_id(
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        sequence,
+    );
     sqlx::query(
         r#"
-        INSERT INTO plus_vip_recharge_pack
-            (uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, app_id, name, description, price, point_amount, vip_duration_days, status, sort_weight, valid_from, valid_to, remark, recharge_type)
+        INSERT INTO commerce_recharge_package
+            (id, tenant_id, organization_id, external_id, package_no, sku_id, name, price_amount, currency_code, bonus_points, status, valid_from, valid_to, sort_weight, request_no, idempotency_key, created_at, updated_at)
         VALUES
-            (?, ?, ?, 0, ?, ?, 1, 1, ?, '', ?, ?, NULL, ?, 0, NULL, NULL, '', ?)
+            (?, CAST(? AS TEXT), CAST(? AS TEXT), ?, ?, ?, ?, ?, 'CNY', ?, ?, NULL, NULL, ?, ?, ?, ?, ?)
         "#,
     )
-    .bind(&command.package_uuid)
-    .bind(&command.requested_at)
-    .bind(&command.requested_at)
+    .bind(&package_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
+    .bind(sequence)
+    .bind(recharge_package_no(sequence))
+    .bind(&sku_id)
     .bind(recharge_package_name(&command.rmb))
     .bind(&command.rmb)
     .bind(command.bonus)
-    .bind(recharge_package_status_code(command.status))
-    .bind(RECHARGE_PACKAGE_TYPE)
+    .bind(recharge_package_status_label(command.status))
+    .bind(sequence)
+    .bind(&command.request_id)
+    .bind(&command.request_id)
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create recharge package", error))?;
 
-    sqlx::query_scalar("SELECT last_insert_rowid()")
-        .fetch_one(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to read created recharge package id", error))
+    Ok(sequence)
+}
+
+async fn next_recharge_package_sequence(
+    tx: &mut Transaction<'_, Sqlite>,
+    tenant_id: i64,
+    organization_id: i64,
+) -> DomainResult<i64> {
+    let current: Option<i64> = sqlx::query_scalar(
+        r#"
+        SELECT MAX(external_id)
+        FROM commerce_recharge_package
+        WHERE tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
+        "#,
+    )
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to allocate recharge package id", error))?;
+    Ok(current.unwrap_or(0) + 1)
 }
 
 async fn update_recharge_package_row(
@@ -1510,27 +1412,28 @@ async fn update_recharge_package_row(
 ) -> DomainResult<bool> {
     let result = sqlx::query(
         r#"
-        UPDATE plus_vip_recharge_pack
+        UPDATE commerce_recharge_package
         SET name = ?,
-            price = ?,
-            point_amount = ?,
+            price_amount = ?,
+            bonus_points = ?,
             status = ?,
-            recharge_type = ?,
-            updated_at = ?,
-            v = COALESCE(v, 0) + 1
+            request_no = ?,
+            idempotency_key = ?,
+            updated_at = ?
         WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
-          AND status >= 0
+          AND tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
+          AND status <> 'deleted'
         "#,
     )
     .bind(recharge_package_name(&command.rmb))
     .bind(&command.rmb)
     .bind(command.bonus)
-    .bind(recharge_package_status_code(command.status))
-    .bind(RECHARGE_PACKAGE_TYPE)
+    .bind(recharge_package_status_label(command.status))
+    .bind(&command.request_id)
+    .bind(&command.request_id)
     .bind(&command.requested_at)
-    .bind(command.package_id)
+    .bind(&command.package_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .execute(&mut **tx)
@@ -1545,19 +1448,22 @@ async fn soft_delete_recharge_package(
 ) -> DomainResult<bool> {
     let result = sqlx::query(
         r#"
-        UPDATE plus_vip_recharge_pack
+        UPDATE commerce_recharge_package
         SET status = ?,
-            updated_at = ?,
-            v = COALESCE(v, 0) + 1
+            request_no = ?,
+            idempotency_key = ?,
+            updated_at = ?
         WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
-          AND status >= 0
+          AND tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
+          AND status <> 'deleted'
         "#,
     )
-    .bind(COUPON_STATUS_DELETED)
+    .bind("deleted")
+    .bind(&command.request_id)
+    .bind(&command.request_id)
     .bind(&command.requested_at)
-    .bind(command.package_id)
+    .bind(&command.package_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .execute(&mut **tx)
@@ -1568,17 +1474,17 @@ async fn soft_delete_recharge_package(
 
 async fn load_recharge_package_amount(
     tx: &mut Transaction<'_, Sqlite>,
-    package_id: i64,
+    package_id: &str,
     tenant_id: i64,
     organization_id: i64,
 ) -> DomainResult<Option<String>> {
     let value: Option<String> = sqlx::query_scalar(
         r#"
-        SELECT CAST(price AS TEXT)
-        FROM plus_vip_recharge_pack
+        SELECT CAST(price_amount AS TEXT)
+        FROM commerce_recharge_package
         WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
+          AND tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
         LIMIT 1
         "#,
     )
@@ -1596,7 +1502,7 @@ async fn load_recharge_package_amount(
 
 async fn load_recharge_package_by_id(
     tx: &mut Transaction<'_, Sqlite>,
-    package_id: i64,
+    package_id: &str,
     tenant_id: i64,
     organization_id: i64,
 ) -> DomainResult<Option<AdminRechargePackageItem>> {
@@ -1604,13 +1510,13 @@ async fn load_recharge_package_by_id(
         r#"
         SELECT
             CAST(id AS TEXT) AS id,
-            CAST(price AS TEXT) AS rmb,
-            COALESCE(point_amount, 0) AS bonus
-        FROM plus_vip_recharge_pack
+            CAST(price_amount AS TEXT) AS rmb,
+            COALESCE(bonus_points, 0) AS bonus
+        FROM commerce_recharge_package
         WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
-          AND status >= 0
+          AND tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
+          AND status <> 'deleted'
         LIMIT 1
         "#,
     )
@@ -1627,83 +1533,75 @@ async fn load_recharge_package_by_id(
 async fn upsert_exchange_rule(
     tx: &mut Transaction<'_, Sqlite>,
     command: &UpdateAdminExchangeRuleCommand,
-) -> DomainResult<i64> {
-    let updated = sqlx::query(
-        r#"
-        UPDATE plus_account_exchange_config
-        SET config_value = ?,
-            remarks = ?,
-            updated_at = ?,
-            v = COALESCE(v, 0) + 1
-        WHERE tenant_id = ?
-          AND organization_id = ?
-          AND config_key = ?
-        "#,
-    )
-    .bind(&command.rate)
-    .bind(exchange_rule_remarks(command))
-    .bind(&command.requested_at)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
-    .bind(ACCOUNT_EXCHANGE_POINTS_TO_CASH_RATE)
-    .execute(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to update exchange rule", error))?;
-
-    if updated.rows_affected() > 0 {
-        return load_exchange_rule_id(
-            tx,
-            command.subject.tenant_id,
-            command.subject.organization_id,
-        )
-        .await?
-        .ok_or_else(|| DomainError::new("updated exchange rule id could not be reloaded"));
-    }
-
+) -> DomainResult<String> {
+    let rule_id = exchange_rule_id(command);
+    let source_asset_type = storage_asset_type(&command.source_asset_type)?;
+    let target_asset_type = storage_asset_type(&command.target_asset_type)?;
     sqlx::query(
         r#"
-        INSERT INTO plus_account_exchange_config
-            (uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, config_key, config_value, remarks)
+        INSERT INTO commerce_exchange_rule
+            (id, tenant_id, organization_id, rule_no, source_asset_type, target_asset_type, rate, status, remark, request_no, idempotency_key, created_at, updated_at)
         VALUES
-            (?, ?, ?, 0, ?, ?, 1, ?, ?, ?)
+            (?, CAST(? AS TEXT), CAST(? AS TEXT), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ON CONFLICT(tenant_id, organization_id, source_asset_type, target_asset_type) DO UPDATE SET
+            rate = excluded.rate,
+            status = excluded.status,
+            remark = excluded.remark,
+            request_no = excluded.request_no,
+            idempotency_key = excluded.idempotency_key,
+            updated_at = excluded.updated_at
         "#,
     )
-    .bind(format!("exchange-rule-{}", command.audit_log_uuid))
-    .bind(&command.requested_at)
-    .bind(&command.requested_at)
+    .bind(&rule_id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
-    .bind(ACCOUNT_EXCHANGE_POINTS_TO_CASH_RATE)
+    .bind(POINTS_TO_CASH_RULE_NO)
+    .bind(source_asset_type)
+    .bind(target_asset_type)
     .bind(&command.rate)
+    .bind(EXCHANGE_RULE_STATUS_ACTIVE)
     .bind(exchange_rule_remarks(command))
+    .bind(&command.request_id)
+    .bind(&command.request_id)
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
     .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to insert exchange rule", error))?;
+    .map_err(|error| store_error("failed to upsert exchange rule", error))?;
 
-    sqlx::query_scalar("SELECT last_insert_rowid()")
-        .fetch_one(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to read created exchange rule id", error))
+    load_exchange_rule_id(
+        tx,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        source_asset_type,
+        target_asset_type,
+    )
+    .await?
+    .ok_or_else(|| DomainError::new("upserted exchange rule id could not be reloaded"))
 }
 
 async fn load_exchange_rule_id(
     tx: &mut Transaction<'_, Sqlite>,
     tenant_id: i64,
     organization_id: i64,
-) -> DomainResult<Option<i64>> {
+    source_asset_type: &str,
+    target_asset_type: &str,
+) -> DomainResult<Option<String>> {
     sqlx::query_scalar(
         r#"
         SELECT id
-        FROM plus_account_exchange_config
-        WHERE tenant_id = ?
-          AND organization_id = ?
-          AND config_key = ?
+        FROM commerce_exchange_rule
+        WHERE tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
+          AND source_asset_type = ?
+          AND target_asset_type = ?
         LIMIT 1
         "#,
     )
     .bind(tenant_id)
     .bind(organization_id)
-    .bind(ACCOUNT_EXCHANGE_POINTS_TO_CASH_RATE)
+    .bind(source_asset_type)
+    .bind(target_asset_type)
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to load exchange rule id", error))
@@ -1711,28 +1609,30 @@ async fn load_exchange_rule_id(
 
 async fn load_exchange_rule_by_id(
     tx: &mut Transaction<'_, Sqlite>,
-    exchange_rule_id: i64,
+    exchange_rule_id: &str,
     tenant_id: i64,
     organization_id: i64,
 ) -> DomainResult<Option<AdminExchangeRuleItem>> {
     let row = sqlx::query(
         r#"
         SELECT
-            COALESCE(NULLIF(uuid, ''), CAST(id AS TEXT)) AS id,
-            COALESCE(config_key, '') AS config_key,
-            CAST(COALESCE(config_value, 0) AS TEXT) AS rate
-        FROM plus_account_exchange_config
+            id,
+            source_asset_type,
+            target_asset_type,
+            rate,
+            status
+        FROM commerce_exchange_rule
         WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
-          AND config_key = ?
+          AND tenant_id = CAST(? AS TEXT)
+          AND organization_id = CAST(? AS TEXT)
+          AND source_asset_type = 'points'
+          AND target_asset_type = 'cash'
         LIMIT 1
         "#,
     )
     .bind(exchange_rule_id)
     .bind(tenant_id)
     .bind(organization_id)
-    .bind(ACCOUNT_EXCHANGE_POINTS_TO_CASH_RATE)
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to load exchange rule", error))?;
@@ -1743,28 +1643,10 @@ async fn load_exchange_rule_by_id(
 async fn sync_recharge_package_product_for_create(
     tx: &mut Transaction<'_, Sqlite>,
     command: &CreateAdminRechargePackageCommand,
+    sequence: i64,
 ) -> DomainResult<()> {
-    let product_id = insert_recharge_product(
-        tx,
-        &command.product_uuid,
-        &command.requested_at,
-        command.subject.tenant_id,
-        command.subject.organization_id,
-        &command.rmb,
-        command.status,
-    )
-    .await?;
-    insert_recharge_sku(
-        tx,
-        &command.sku_uuid,
-        &command.requested_at,
-        command.subject.tenant_id,
-        command.subject.organization_id,
-        product_id,
-        &command.rmb,
-        command.status,
-    )
-    .await
+    let product_id = insert_recharge_product_for_create(tx, command, sequence).await?;
+    insert_recharge_sku_for_create(tx, command, sequence, &product_id).await
 }
 
 async fn sync_recharge_package_product_for_update(
@@ -1785,34 +1667,22 @@ async fn sync_recharge_package_product_for_update(
     if let Some(product_id) = product_id {
         update_recharge_product_and_sku(
             tx,
-            product_id,
+            &product_id,
             &command.requested_at,
+            &command.request_id,
             &command.rmb,
             command.status,
         )
         .await
     } else {
-        let product_id = insert_recharge_product(
+        let sequence = next_recharge_package_sequence(
             tx,
-            &command.product_uuid,
-            &command.requested_at,
             command.subject.tenant_id,
             command.subject.organization_id,
-            &command.rmb,
-            command.status,
         )
         .await?;
-        insert_recharge_sku(
-            tx,
-            &command.sku_uuid,
-            &command.requested_at,
-            command.subject.tenant_id,
-            command.subject.organization_id,
-            product_id,
-            &command.rmb,
-            command.status,
-        )
-        .await
+        let product_id = insert_recharge_product_for_update(tx, command, sequence).await?;
+        insert_recharge_sku_for_update(tx, command, sequence, &product_id).await
     }
 }
 
@@ -1822,7 +1692,7 @@ async fn disable_recharge_product_and_sku_for_amount(
 ) -> DomainResult<()> {
     let Some(rmb) = load_recharge_package_amount(
         tx,
-        command.package_id,
+        &command.package_id,
         command.subject.tenant_id,
         command.subject.organization_id,
     )
@@ -1833,8 +1703,9 @@ async fn disable_recharge_product_and_sku_for_amount(
     if let Some(product_id) = find_recharge_product_for_amount(tx, &rmb).await? {
         update_recharge_product_and_sku(
             tx,
-            product_id,
+            &product_id,
             &command.requested_at,
+            &command.request_id,
             &rmb,
             AdminRechargePackageStatus::Inactive,
         )
@@ -1843,76 +1714,159 @@ async fn disable_recharge_product_and_sku_for_amount(
     Ok(())
 }
 
-async fn insert_recharge_product(
+async fn insert_recharge_product_for_create(
     tx: &mut Transaction<'_, Sqlite>,
-    uuid: &str,
+    command: &CreateAdminRechargePackageCommand,
+    sequence: i64,
+) -> DomainResult<String> {
+    insert_recharge_product_row(
+        tx,
+        &command.requested_at,
+        &command.request_id,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        sequence,
+        &command.rmb,
+        command.status,
+    )
+    .await
+}
+
+async fn insert_recharge_product_for_update(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &UpdateAdminRechargePackageCommand,
+    sequence: i64,
+) -> DomainResult<String> {
+    insert_recharge_product_row(
+        tx,
+        &command.requested_at,
+        &command.request_id,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        sequence,
+        &command.rmb,
+        command.status,
+    )
+    .await
+}
+
+async fn insert_recharge_product_row(
+    tx: &mut Transaction<'_, Sqlite>,
     requested_at: &str,
+    request_id: &str,
     tenant_id: i64,
     organization_id: i64,
+    sequence: i64,
     rmb: &str,
     status: AdminRechargePackageStatus,
-) -> DomainResult<i64> {
+) -> DomainResult<String> {
+    let product_id = recharge_product_id(tenant_id, organization_id, sequence);
     sqlx::query(
         r#"
-        INSERT INTO plus_product
-            (uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, user_id, title, code, subtitle, resources, price, original_price, stock, sales_count, status, on_sale_at, description, tags, category_id, base_attributes, spec_attributes)
+        INSERT INTO commerce_product
+            (id, tenant_id, organization_id, product_no, title, subtitle, description, category_id, status, created_at, updated_at)
         VALUES
-            (?, ?, ?, 0, ?, ?, 1, NULL, ?, ?, '', '{}', ?, ?, 999999, 0, ?, ?, '', 'billing,recharge', ?, '{}', '{}')
+            (?, CAST(? AS TEXT), CAST(? AS TEXT), ?, ?, '', ?, 'recharge', ?, ?, ?)
+        ON CONFLICT(tenant_id, product_no) DO UPDATE SET
+            title = excluded.title,
+            description = excluded.description,
+            status = excluded.status,
+            updated_at = excluded.updated_at
         "#,
     )
-    .bind(uuid)
-    .bind(requested_at)
-    .bind(requested_at)
+    .bind(&product_id)
     .bind(tenant_id)
     .bind(organization_id)
+    .bind(recharge_product_no(sequence))
     .bind(recharge_package_name(rmb))
-    .bind(recharge_product_code(rmb))
-    .bind(rmb)
-    .bind(rmb)
-    .bind(recharge_package_status_code(status))
+    .bind(format!("request_id={request_id}"))
+    .bind(recharge_package_status_label(status))
     .bind(requested_at)
-    .bind(RECHARGE_PRODUCT_CATEGORY_ID)
+    .bind(requested_at)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create recharge product", error))?;
 
-    sqlx::query_scalar("SELECT last_insert_rowid()")
-        .fetch_one(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to read created recharge product id", error))
+    Ok(product_id)
 }
 
-async fn insert_recharge_sku(
+async fn insert_recharge_sku_for_create(
     tx: &mut Transaction<'_, Sqlite>,
-    uuid: &str,
+    command: &CreateAdminRechargePackageCommand,
+    sequence: i64,
+    product_id: &str,
+) -> DomainResult<()> {
+    insert_recharge_sku_row(
+        tx,
+        &command.requested_at,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        sequence,
+        product_id,
+        &command.rmb,
+        command.status,
+    )
+    .await
+}
+
+async fn insert_recharge_sku_for_update(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &UpdateAdminRechargePackageCommand,
+    sequence: i64,
+    product_id: &str,
+) -> DomainResult<()> {
+    insert_recharge_sku_row(
+        tx,
+        &command.requested_at,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        sequence,
+        product_id,
+        &command.rmb,
+        command.status,
+    )
+    .await
+}
+
+async fn insert_recharge_sku_row(
+    tx: &mut Transaction<'_, Sqlite>,
     requested_at: &str,
     tenant_id: i64,
     organization_id: i64,
-    product_id: i64,
+    sequence: i64,
+    product_id: &str,
     rmb: &str,
     status: AdminRechargePackageStatus,
 ) -> DomainResult<()> {
     sqlx::query(
         r#"
-        INSERT INTO plus_sku
-            (uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, product_id, sku_code, name, title, price, original_price, stock, sales, status, image, specs)
+        INSERT INTO commerce_sku
+            (id, tenant_id, organization_id, product_id, sku_no, name, title, price_amount, original_price_amount, currency_code, stock_quantity, sold_quantity, status, spec_json, created_at, updated_at)
         VALUES
-            (?, ?, ?, 0, ?, ?, 1, ?, ?, ?, ?, ?, ?, 999999, 0, ?, '', ?)
+            (?, CAST(? AS TEXT), CAST(? AS TEXT), ?, ?, ?, ?, ?, ?, 'CNY', 999999, 0, ?, ?, ?, ?)
+        ON CONFLICT(tenant_id, sku_no) DO UPDATE SET
+            name = excluded.name,
+            title = excluded.title,
+            price_amount = excluded.price_amount,
+            original_price_amount = excluded.original_price_amount,
+            status = excluded.status,
+            spec_json = excluded.spec_json,
+            updated_at = excluded.updated_at
         "#,
     )
-    .bind(uuid)
-    .bind(requested_at)
-    .bind(requested_at)
+    .bind(recharge_sku_id(tenant_id, organization_id, sequence))
     .bind(tenant_id)
     .bind(organization_id)
     .bind(product_id)
-    .bind(recharge_sku_code(rmb))
+    .bind(recharge_sku_no(sequence))
     .bind(recharge_package_name(rmb))
     .bind(recharge_package_name(rmb))
     .bind(rmb)
     .bind(rmb)
-    .bind(recharge_package_status_code(status))
+    .bind(recharge_package_status_label(status))
     .bind(recharge_sku_specs(rmb))
+    .bind(requested_at)
+    .bind(requested_at)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create recharge sku", error))?;
@@ -1922,15 +1876,15 @@ async fn insert_recharge_sku(
 async fn find_recharge_product_for_amount(
     tx: &mut Transaction<'_, Sqlite>,
     rmb: &str,
-) -> DomainResult<Option<i64>> {
+) -> DomainResult<Option<String>> {
     sqlx::query_scalar(
         r#"
         SELECT pr.id
-        FROM plus_product pr
-        JOIN plus_sku s ON s.product_id = pr.id
-        WHERE CAST(s.price AS TEXT) = CAST(? AS TEXT)
-          AND pr.status >= 0
-          AND s.status >= 0
+        FROM commerce_product pr
+        JOIN commerce_sku s ON s.product_id = pr.id
+        WHERE CAST(s.price_amount AS TEXT) = CAST(? AS TEXT)
+          AND pr.status <> 'deleted'
+          AND s.status <> 'deleted'
         ORDER BY pr.id ASC
         LIMIT 1
         "#,
@@ -1943,27 +1897,25 @@ async fn find_recharge_product_for_amount(
 
 async fn update_recharge_product_and_sku(
     tx: &mut Transaction<'_, Sqlite>,
-    product_id: i64,
+    product_id: &str,
     requested_at: &str,
+    request_id: &str,
     rmb: &str,
     status: AdminRechargePackageStatus,
 ) -> DomainResult<()> {
     sqlx::query(
         r#"
-        UPDATE plus_product
+        UPDATE commerce_product
         SET title = ?,
-            price = ?,
-            original_price = ?,
             status = ?,
-            updated_at = ?,
-            v = COALESCE(v, 0) + 1
+            description = ?,
+            updated_at = ?
         WHERE id = ?
         "#,
     )
     .bind(recharge_package_name(rmb))
-    .bind(rmb)
-    .bind(rmb)
-    .bind(recharge_package_status_code(status))
+    .bind(recharge_package_status_label(status))
+    .bind(format!("request_id={request_id}"))
     .bind(requested_at)
     .bind(product_id)
     .execute(&mut **tx)
@@ -1972,15 +1924,14 @@ async fn update_recharge_product_and_sku(
 
     sqlx::query(
         r#"
-        UPDATE plus_sku
+        UPDATE commerce_sku
         SET name = ?,
             title = ?,
-            price = ?,
-            original_price = ?,
+            price_amount = ?,
+            original_price_amount = ?,
             status = ?,
-            specs = ?,
-            updated_at = ?,
-            v = COALESCE(v, 0) + 1
+            spec_json = ?,
+            updated_at = ?
         WHERE product_id = ?
         "#,
     )
@@ -1988,7 +1939,7 @@ async fn update_recharge_product_and_sku(
     .bind(recharge_package_name(rmb))
     .bind(rmb)
     .bind(rmb)
-    .bind(recharge_package_status_code(status))
+    .bind(recharge_package_status_label(status))
     .bind(recharge_sku_specs(rmb))
     .bind(requested_at)
     .bind(product_id)
@@ -2046,18 +1997,20 @@ async fn list_payment_attempts(
     let rows = sqlx::query(
         r#"
         SELECT
-            'payment-' || p.id AS id,
-            COALESCE(NULLIF(p.out_trade_no, ''), NULLIF(o.order_sn, ''), '') AS order_no,
-            p.provider AS provider,
-            CAST(COALESCE(p.amount, 0) AS TEXT) AS amount,
-            p.status AS status,
-            CAST(COALESCE(p.success_time, p.updated_at, p.created_at) AS TEXT) AS created_at
-        FROM plus_payment p
-        LEFT JOIN plus_order o
-          ON o.id = p.order_id
-        WHERE p.tenant_id = ?
-          AND p.organization_id = ?
-        ORDER BY COALESCE(p.success_time, p.updated_at, p.created_at) DESC, p.id DESC
+            CAST(pa.id AS TEXT) AS id,
+            COALESCE(NULLIF(o.order_no, ''), NULLIF(pa.out_trade_no, ''), '') AS order_no,
+            pa.provider AS provider,
+            CAST(COALESCE(pa.amount, '0') AS TEXT) AS amount,
+            pa.status AS status,
+            CAST(COALESCE(pa.paid_at, pa.updated_at, pa.created_at) AS TEXT) AS created_at
+        FROM commerce_payment_attempt pa
+        LEFT JOIN commerce_order o
+          ON o.id = pa.order_id
+         AND o.tenant_id = pa.tenant_id
+         AND (o.organization_id IS NULL OR pa.organization_id IS NULL OR o.organization_id = pa.organization_id)
+        WHERE pa.tenant_id = CAST(? AS TEXT)
+          AND pa.organization_id = CAST(? AS TEXT)
+        ORDER BY COALESCE(pa.paid_at, pa.updated_at, pa.created_at) DESC, pa.id DESC
         LIMIT 500
         "#,
     )
@@ -2107,19 +2060,55 @@ async fn insert_audit_log(
     Ok(())
 }
 
+async fn insert_audit_log_for_target_uuid(
+    tx: &mut Transaction<'_, Sqlite>,
+    audit_log_uuid: &str,
+    request_id: &str,
+    tenant_id: i64,
+    organization_id: i64,
+    operator_id: i64,
+    operator_type: i32,
+    action: &'static str,
+    target_type: i32,
+    target_uuid: &str,
+    change_summary: serde_json::Value,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        INSERT INTO ops_audit_log
+            (uuid, tenant_id, organization_id, action, target_type, target_uuid, request_id, operator_id, operator_type, change_summary)
+        VALUES
+            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        "#,
+    )
+    .bind(audit_log_uuid)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(action)
+    .bind(target_type)
+    .bind(target_uuid)
+    .bind(request_id)
+    .bind(operator_id)
+    .bind(operator_type)
+    .bind(change_summary.to_string())
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to write marketing audit log", error))?;
+    Ok(())
+}
+
 const BATCH_LIST_SQL: &str = r#"
 SELECT
     CAST(id AS TEXT) AS id,
-    CAST(COALESCE(coupon_id, 0) AS TEXT) AS coupon_id,
-    COALESCE(name, '') AS name,
-    COALESCE(generated_count, requested_count, 0) AS count,
+    CAST(coupon_template_id AS TEXT) AS coupon_id,
+    COALESCE(title, '') AS name,
+    COALESCE(generated_quantity, requested_quantity, 0) AS count,
     COALESCE(code_prefix, '') AS prefix,
     CAST(created_at AS TEXT) AS created_at
-FROM ops_coupon_issue_batch
-WHERE tenant_id = ?
-  AND organization_id = ?
-  AND status = 1
-  AND deleted_at IS NULL
+FROM commerce_coupon_issue_batch
+WHERE tenant_id = CAST(? AS TEXT)
+  AND organization_id = CAST(? AS TEXT)
+  AND status = 'active'
 ORDER BY created_at DESC, id DESC
 LIMIT 500
 "#;
@@ -2127,31 +2116,29 @@ LIMIT 500
 const BATCH_BY_ID_SQL: &str = r#"
 SELECT
     CAST(id AS TEXT) AS id,
-    CAST(COALESCE(coupon_id, 0) AS TEXT) AS coupon_id,
-    COALESCE(name, '') AS name,
-    COALESCE(generated_count, requested_count, 0) AS count,
+    CAST(coupon_template_id AS TEXT) AS coupon_id,
+    COALESCE(title, '') AS name,
+    COALESCE(generated_quantity, requested_quantity, 0) AS count,
     COALESCE(code_prefix, '') AS prefix,
     CAST(created_at AS TEXT) AS created_at
-FROM ops_coupon_issue_batch
+FROM commerce_coupon_issue_batch
 WHERE id = ?
-  AND tenant_id = ?
-  AND organization_id = ?
-  AND status = 1
-  AND deleted_at IS NULL
+  AND tenant_id = CAST(? AS TEXT)
+  AND organization_id = CAST(? AS TEXT)
+  AND status = 'active'
 LIMIT 1
 "#;
 
 fn coupon_from_row(row: &sqlx::sqlite::SqliteRow) -> DomainResult<AdminCouponItem> {
     let amount = string_cell(row, "amount");
     let discount = string_cell(row, "discount");
-    let coupon_type =
-        coupon_type_label(required_integer_cell(row, "type_code", "coupon type")?)?.to_owned();
+    let coupon_type = coupon_type_label(&string_cell(row, "type_code"))?.to_owned();
     let value = if coupon_type == "discount" {
         discount_value_string(&discount)
     } else {
-        cents_string_to_money(&amount)
+        decimal_money_string(&amount)
     };
-    let status = coupon_status_label(required_integer_cell(row, "status", "coupon")?)?.to_owned();
+    let status = coupon_status_label(&string_cell(row, "status"))?.to_owned();
     Ok(AdminCouponItem {
         id: string_cell(row, "id"),
         name: string_cell(row, "name"),
@@ -2175,8 +2162,12 @@ fn batch_from_row(row: &sqlx::sqlite::SqliteRow) -> DomainResult<AdminCouponBatc
 fn promo_code_from_row(row: &sqlx::sqlite::SqliteRow) -> DomainResult<AdminPromoCodeItem> {
     let user_id = optional_string_cell(row, "user_id");
     let used_at = optional_string_cell(row, "used_at").filter(|value| !value.is_empty());
-    let status = required_integer_cell(row, "status", "promo code")?;
-    let status = promo_status_label(status, user_id.as_deref(), used_at.as_deref())?.to_owned();
+    let status = promo_status_label(
+        &string_cell(row, "status"),
+        user_id.as_deref(),
+        used_at.as_deref(),
+    )?
+    .to_owned();
     Ok(AdminPromoCodeItem {
         id: string_cell(row, "id"),
         batch_id: string_cell(row, "batch_id"),
@@ -2190,7 +2181,7 @@ fn promo_code_from_row(row: &sqlx::sqlite::SqliteRow) -> DomainResult<AdminPromo
 fn recharge_record_from_row(
     row: &sqlx::sqlite::SqliteRow,
 ) -> DomainResult<AdminRechargeRecordItem> {
-    let status = recharge_status_label(integer_cell(row, "status"))?.to_owned();
+    let status = recharge_status_label(&string_cell(row, "status"))?.to_owned();
     Ok(AdminRechargeRecordItem {
         id: string_cell(row, "id"),
         trade_no: string_cell(row, "trade_no"),
@@ -2204,54 +2195,103 @@ fn recharge_record_from_row(
     })
 }
 
-fn coupon_type_code(value: &str) -> i64 {
+fn coupon_template_no(coupon_uuid: &str) -> String {
+    format!("tpl-{coupon_uuid}")
+}
+
+fn coupon_discount_type(value: &str) -> &'static str {
     if value == "discount" {
-        COUPON_TYPE_DISCOUNT
+        "percentage"
     } else {
-        COUPON_TYPE_AMOUNT
+        "fixed_amount"
     }
 }
 
-fn coupon_type_label(type_code: i64) -> DomainResult<&'static str> {
-    match type_code {
-        COUPON_TYPE_AMOUNT => Ok("amount"),
-        COUPON_TYPE_DISCOUNT => Ok("discount"),
+trait AdminCouponDiscountValue {
+    fn coupon_type(&self) -> &str;
+    fn amount_cents(&self) -> i64;
+    fn discount_value(&self) -> Option<&str>;
+}
+
+impl AdminCouponDiscountValue for CreateAdminCouponCommand {
+    fn coupon_type(&self) -> &str {
+        &self.coupon_type
+    }
+
+    fn amount_cents(&self) -> i64 {
+        self.amount_cents
+    }
+
+    fn discount_value(&self) -> Option<&str> {
+        self.discount_value.as_deref()
+    }
+}
+
+impl AdminCouponDiscountValue for UpdateAdminCouponCommand {
+    fn coupon_type(&self) -> &str {
+        &self.coupon_type
+    }
+
+    fn amount_cents(&self) -> i64 {
+        self.amount_cents
+    }
+
+    fn discount_value(&self) -> Option<&str> {
+        self.discount_value.as_deref()
+    }
+}
+
+fn coupon_discount_value(command: &impl AdminCouponDiscountValue) -> String {
+    if command.coupon_type() == "discount" {
+        command.discount_value().unwrap_or("0").to_owned()
+    } else {
+        let cents = command.amount_cents();
+        format!("{}.{:02}", cents / 100, cents.rem_euclid(100))
+    }
+}
+
+fn coupon_type_label(value: &str) -> DomainResult<&'static str> {
+    match value.trim().to_ascii_lowercase().as_str() {
+        "fixed_amount" | "amount" | "fixed" | "cash" => Ok("amount"),
+        "percentage" | "percent" | "discount" => Ok("discount"),
         value => Err(DomainError::new(format!(
             "unsupported admin coupon type: {value}"
         ))),
     }
 }
 
-fn coupon_status_code(value: &str) -> i64 {
+fn coupon_status_value(value: &str) -> &'static str {
     if value == "inactive" {
-        COUPON_STATUS_INACTIVE
+        CommerceCouponStatus::Draft.as_str()
     } else {
-        COUPON_STATUS_ACTIVE
+        CommerceCouponStatus::Active.as_str()
     }
 }
 
-fn coupon_status_label(status: i64) -> DomainResult<&'static str> {
-    match status {
-        COUPON_STATUS_ACTIVE => Ok("active"),
-        COUPON_STATUS_INACTIVE => Ok("inactive"),
+fn coupon_status_label(value: &str) -> DomainResult<&'static str> {
+    match value.trim().to_ascii_lowercase().as_str() {
+        status if status == CommerceCouponStatus::Active.as_str() => Ok("active"),
+        status if status == CommerceCouponStatus::Draft.as_str() => Ok("inactive"),
+        status if status == CommerceCouponStatus::Disabled.as_str() => Ok("inactive"),
+        status if status == CommerceCouponStatus::Expired.as_str() => Ok("inactive"),
+        status if status == CommerceCouponStatus::Redeemed.as_str() => Ok("inactive"),
         value => Err(DomainError::new(format!(
             "unsupported admin coupon status: {value}"
         ))),
     }
 }
 
-fn promo_status_code(value: &str) -> i64 {
+fn promo_status_value(value: &str) -> &'static str {
     match value {
-        "claimed" => PROMO_STATUS_CLAIMED,
-        "used" => PROMO_STATUS_USED,
-        "voided" => PROMO_STATUS_VOIDED,
-        _ => PROMO_STATUS_AVAILABLE,
+        "used" => CommerceCouponStatus::Redeemed.as_str(),
+        "voided" => CommerceCouponStatus::Disabled.as_str(),
+        _ => CommerceCouponStatus::Active.as_str(),
     }
 }
 
 fn ensure_promo_status_transition(
     fact: &PromoCodeStatusFact,
-    target_status: i64,
+    target_status: &str,
 ) -> DomainResult<()> {
     let has_user = fact.user_id.is_some();
     let has_used_at = fact
@@ -2259,28 +2299,22 @@ fn ensure_promo_status_transition(
         .as_deref()
         .map(|value| !value.is_empty())
         .unwrap_or(false);
-    let is_used = fact.status == PROMO_STATUS_USED || has_used_at;
+    let is_used = fact.status == CommerceCouponStatus::Redeemed.as_str() || has_used_at;
 
     if is_used {
-        if target_status == PROMO_STATUS_USED {
+        if target_status == CommerceCouponStatus::Redeemed.as_str() {
             return Ok(());
         }
         return Err(DomainError::conflict("used promo code cannot be reopened"));
     }
 
-    if target_status == PROMO_STATUS_AVAILABLE && has_user {
+    if target_status == CommerceCouponStatus::Active.as_str() && has_user {
         return Err(DomainError::conflict(
             "claimed promo code cannot be reopened",
         ));
     }
 
-    if target_status == PROMO_STATUS_CLAIMED && !has_user {
-        return Err(DomainError::conflict(
-            "promo code must be assigned to a user before it can be marked claimed",
-        ));
-    }
-
-    if target_status == PROMO_STATUS_USED && !has_user {
+    if target_status == CommerceCouponStatus::Redeemed.as_str() && !has_user {
         return Err(DomainError::conflict(
             "promo code must be claimed before it can be marked used",
         ));
@@ -2290,33 +2324,42 @@ fn ensure_promo_status_transition(
 }
 
 fn promo_status_label(
-    status: i64,
+    status: &str,
     user_id: Option<&str>,
     used_at: Option<&str>,
 ) -> DomainResult<&'static str> {
-    match status {
-        PROMO_STATUS_VOIDED => Ok("voided"),
-        PROMO_STATUS_USED => Ok("used"),
-        PROMO_STATUS_CLAIMED => Ok("claimed"),
-        PROMO_STATUS_AVAILABLE if used_at.is_some() => Ok("used"),
-        PROMO_STATUS_AVAILABLE if user_id.map(|value| !value.is_empty()).unwrap_or(false) => {
+    match status.trim().to_ascii_lowercase().as_str() {
+        status if status == CommerceCouponStatus::Disabled.as_str() => Ok("voided"),
+        status if status == CommerceCouponStatus::Redeemed.as_str() => Ok("used"),
+        status if status == CommerceCouponStatus::Active.as_str() && used_at.is_some() => {
+            Ok("used")
+        }
+        status
+            if status == CommerceCouponStatus::Active.as_str()
+                && user_id.map(|value| !value.is_empty()).unwrap_or(false) =>
+        {
             Ok("claimed")
         }
-        PROMO_STATUS_AVAILABLE => Ok("available"),
+        status if status == CommerceCouponStatus::Active.as_str() => Ok("available"),
+        status if status == CommerceCouponStatus::Draft.as_str() => Ok("available"),
         value => Err(DomainError::new(format!(
             "unsupported admin promo code status: {value}"
         ))),
     }
 }
 
-fn recharge_status_label(status: i64) -> DomainResult<&'static str> {
-    match status {
-        1 => Ok("success"),
-        2 => Ok("pending"),
-        3 => Ok("failed"),
-        4 => Ok("closed"),
-        value => Err(DomainError::new(format!(
-            "unsupported admin recharge status: {value}"
+fn recharge_status_label(value: &str) -> DomainResult<&'static str> {
+    match value.trim().to_ascii_lowercase().as_str() {
+        "" | "pending" | "pending_payment" => Ok("pending"),
+        status if status == CommerceRechargeStatus::Pending.as_str() => Ok("pending"),
+        status if status == CommerceRechargeStatus::Paid.as_str() => Ok("success"),
+        status if status == CommerceRechargeStatus::Fulfilled.as_str() => Ok("success"),
+        "succeeded" | "success" => Ok("success"),
+        "failed" | "cancelled" | "canceled" => Ok("failed"),
+        status if status == CommerceRechargeStatus::Closed.as_str() => Ok("closed"),
+        "expired" => Ok("closed"),
+        status => Err(DomainError::new(format!(
+            "unsupported admin recharge status: {status}"
         ))),
     }
 }
@@ -2335,14 +2378,12 @@ fn recharge_package_from_row(
 }
 
 fn exchange_rule_from_row(row: &sqlx::sqlite::SqliteRow) -> DomainResult<AdminExchangeRuleItem> {
-    let config_key = string_cell(row, "config_key");
-    let (source_asset_type, target_asset_type) = exchange_config_key_asset_pair(&config_key)?;
     Ok(AdminExchangeRuleItem {
         id: string_cell(row, "id"),
-        source_asset_type: source_asset_type.to_owned(),
-        target_asset_type: target_asset_type.to_owned(),
+        source_asset_type: display_asset_type(&string_cell(row, "source_asset_type"))?,
+        target_asset_type: display_asset_type(&string_cell(row, "target_asset_type"))?,
         rate: canonical_decimal_string(&string_cell(row, "rate"), 6, "exchange rule rate")?,
-        status: "active".to_owned(),
+        status: string_cell(row, "status"),
     })
 }
 
@@ -2354,17 +2395,9 @@ fn payment_attempt_from_row(
         order_no: string_cell(row, "order_no"),
         provider: payment_provider_label(&string_cell(row, "provider")),
         amount: canonical_money_string(&string_cell(row, "amount"), "payment attempt amount")?,
-        status: payment_status_label(required_integer_cell(row, "status", "payment attempt")?)?
-            .to_owned(),
+        status: payment_status_label(&string_cell(row, "status"))?.to_owned(),
         created_at: string_cell(row, "created_at"),
     })
-}
-
-fn recharge_package_status_code(status: AdminRechargePackageStatus) -> i64 {
-    match status {
-        AdminRechargePackageStatus::Active => COUPON_STATUS_ACTIVE,
-        AdminRechargePackageStatus::Inactive => COUPON_STATUS_INACTIVE,
-    }
 }
 
 fn recharge_package_status_label(status: AdminRechargePackageStatus) -> &'static str {
@@ -2395,15 +2428,6 @@ fn exchange_rule_matches_filters(
             .unwrap_or(true)
 }
 
-fn exchange_config_key_asset_pair(config_key: &str) -> DomainResult<(&'static str, &'static str)> {
-    match config_key {
-        ACCOUNT_EXCHANGE_POINTS_TO_CASH_RATE => Ok(("POINTS", "CASH")),
-        value => Err(DomainError::new(format!(
-            "unsupported exchange rule config key: {value}"
-        ))),
-    }
-}
-
 fn payment_provider_label(value: &str) -> String {
     let value = value.trim();
     if value.is_empty() {
@@ -2416,14 +2440,17 @@ fn payment_provider_label(value: &str) -> String {
     }
 }
 
-fn payment_status_label(status: i64) -> DomainResult<&'static str> {
-    match status {
-        0 | 1 => Ok("pending"),
-        2 => Ok("success"),
-        3 => Ok("failed"),
-        4 | 5 => Ok("expired"),
-        value => Err(DomainError::new(format!(
-            "unsupported admin payment attempt status: {value}"
+fn payment_status_label(value: &str) -> DomainResult<&'static str> {
+    match value.trim().to_ascii_lowercase().as_str() {
+        "" => Ok("pending"),
+        status if status == CommercePaymentStatus::Pending.as_str() => Ok("pending"),
+        status if status == CommercePaymentStatus::Succeeded.as_str() => Ok("success"),
+        "success" => Ok("success"),
+        status if status == CommercePaymentStatus::Failed.as_str() => Ok("failed"),
+        status if status == CommercePaymentStatus::Canceled.as_str() => Ok("expired"),
+        "cancelled" | "expired" => Ok("expired"),
+        status => Err(DomainError::new(format!(
+            "unsupported admin payment attempt status: {status}"
         ))),
     }
 }
@@ -2474,6 +2501,36 @@ fn exchange_rule_remarks(command: &UpdateAdminExchangeRuleCommand) -> String {
     )
 }
 
+fn exchange_rule_id(command: &UpdateAdminExchangeRuleCommand) -> String {
+    format!(
+        "exchange-rule-{}-{}-{}-{}",
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        storage_asset_type(&command.source_asset_type).unwrap_or(POINTS_STORAGE_ASSET_TYPE),
+        storage_asset_type(&command.target_asset_type).unwrap_or(CASH_STORAGE_ASSET_TYPE)
+    )
+}
+
+fn storage_asset_type(value: &str) -> DomainResult<&'static str> {
+    match value.trim() {
+        POINTS_ASSET_TYPE => Ok(POINTS_STORAGE_ASSET_TYPE),
+        CASH_ASSET_TYPE => Ok(CASH_STORAGE_ASSET_TYPE),
+        value => Err(DomainError::new(format!(
+            "unsupported exchange rule asset type: {value}"
+        ))),
+    }
+}
+
+fn display_asset_type(value: &str) -> DomainResult<String> {
+    match value.trim() {
+        POINTS_STORAGE_ASSET_TYPE => Ok(POINTS_ASSET_TYPE.to_owned()),
+        CASH_STORAGE_ASSET_TYPE => Ok(CASH_ASSET_TYPE.to_owned()),
+        value => Err(DomainError::new(format!(
+            "unsupported exchange rule asset type: {value}"
+        ))),
+    }
+}
+
 fn money_cents(amount: &str) -> DomainResult<i64> {
     let amount = amount.trim().trim_start_matches('$').replace(',', "");
     if amount.is_empty() || amount.starts_with('-') {
@@ -2514,12 +2571,28 @@ fn recharge_package_name(rmb: &str) -> String {
     format!("Points recharge {rmb}")
 }
 
-fn recharge_product_code(rmb: &str) -> String {
-    format!("points-recharge-{}", rmb.replace('.', "-"))
+fn recharge_package_id(tenant_id: i64, organization_id: i64, sequence: i64) -> String {
+    format!("recharge-package-{tenant_id}-{organization_id}-{sequence}")
 }
 
-fn recharge_sku_code(rmb: &str) -> String {
-    format!("points-recharge-sku-{}", rmb.replace('.', "-"))
+fn recharge_package_no(sequence: i64) -> String {
+    format!("RECHARGE-PACKAGE-{sequence}")
+}
+
+fn recharge_product_id(tenant_id: i64, organization_id: i64, sequence: i64) -> String {
+    format!("recharge-product-{tenant_id}-{organization_id}-{sequence}")
+}
+
+fn recharge_product_no(sequence: i64) -> String {
+    format!("RECHARGE-PRODUCT-{sequence}")
+}
+
+fn recharge_sku_id(tenant_id: i64, organization_id: i64, sequence: i64) -> String {
+    format!("recharge-sku-{tenant_id}-{organization_id}-{sequence}")
+}
+
+fn recharge_sku_no(sequence: i64) -> String {
+    format!("RECHARGE-SKU-{sequence}")
 }
 
 fn recharge_sku_specs(rmb: &str) -> String {
@@ -2580,14 +2653,6 @@ fn integer_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> i64 {
     optional_integer_cell(row, column).unwrap_or(0)
 }
 
-fn required_integer_cell(
-    row: &sqlx::sqlite::SqliteRow,
-    column: &str,
-    source: &str,
-) -> DomainResult<i64> {
-    optional_integer_cell(row, column).ok_or_else(|| missing_admin_marketing_status_error(source))
-}
-
 fn optional_integer_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Option<i64> {
     row.try_get::<i64, _>(column)
         .ok()
@@ -2598,28 +2663,6 @@ fn optional_integer_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Option<
                 .next()
                 .and_then(|value| value.parse().ok())
         })
-}
-
-fn missing_admin_marketing_status_error(source: &str) -> DomainError {
-    match source {
-        "coupon" => DomainError::new("missing admin marketing coupon status from database row"),
-        "coupon type" => DomainError::new("missing admin marketing coupon type from database row"),
-        "promo code" => {
-            DomainError::new("missing admin marketing promo code status from database row")
-        }
-        value => DomainError::new(format!(
-            "missing admin marketing {value} status from database row"
-        )),
-    }
-}
-
-fn cents_string_to_money(value: &str) -> String {
-    let cents = value
-        .split('.')
-        .next()
-        .and_then(|value| value.parse::<i64>().ok())
-        .unwrap_or(0);
-    format!("${}.{:02}", cents / 100, cents.rem_euclid(100))
 }
 
 fn decimal_money_string(value: &str) -> String {
@@ -2663,107 +2706,140 @@ mod tests {
 
     #[test]
     fn coupon_status_label_rejects_unknown_database_status() {
-        assert_eq!("active", coupon_status_label(COUPON_STATUS_ACTIVE).unwrap());
+        assert_eq!(
+            "active",
+            coupon_status_label(CommerceCouponStatus::Active.as_str()).unwrap()
+        );
         assert_eq!(
             "inactive",
-            coupon_status_label(COUPON_STATUS_INACTIVE).unwrap()
+            coupon_status_label(CommerceCouponStatus::Draft.as_str()).unwrap()
+        );
+        assert_eq!(
+            "inactive",
+            coupon_status_label(CommerceCouponStatus::Disabled.as_str()).unwrap()
         );
 
-        let unsupported = coupon_status_label(2).expect_err("unknown coupon status must fail");
+        let unsupported =
+            coupon_status_label("legacy-status").expect_err("unknown coupon status must fail");
         assert!(
             unsupported
                 .to_string()
-                .contains("unsupported admin coupon status: 2"),
+                .contains("unsupported admin coupon status: legacy-status"),
             "{unsupported}"
-        );
-
-        let deleted = coupon_status_label(COUPON_STATUS_DELETED)
-            .expect_err("deleted coupon status must fail");
-        assert!(
-            deleted
-                .to_string()
-                .contains("unsupported admin coupon status: -1"),
-            "{deleted}"
         );
     }
 
     #[test]
     fn coupon_type_label_rejects_unknown_database_type_without_deriving_from_discount() {
-        assert_eq!("amount", coupon_type_label(COUPON_TYPE_AMOUNT).unwrap());
-        assert_eq!("discount", coupon_type_label(COUPON_TYPE_DISCOUNT).unwrap());
+        assert_eq!("amount", coupon_type_label("fixed_amount").unwrap());
+        assert_eq!("discount", coupon_type_label("percentage").unwrap());
 
-        let unsupported = coupon_type_label(99).expect_err("unknown coupon type must fail");
+        let unsupported =
+            coupon_type_label("legacy-type").expect_err("unknown coupon type must fail");
         assert!(
             unsupported
                 .to_string()
-                .contains("unsupported admin coupon type: 99"),
+                .contains("unsupported admin coupon type: legacy-type"),
             "{unsupported}"
         );
-    }
-
-    #[test]
-    fn missing_admin_marketing_status_error_is_source_specific() {
-        assert!(missing_admin_marketing_status_error("coupon")
-            .to_string()
-            .contains("missing admin marketing coupon status from database row"));
-        assert!(missing_admin_marketing_status_error("coupon type")
-            .to_string()
-            .contains("missing admin marketing coupon type from database row"));
-        assert!(missing_admin_marketing_status_error("promo code")
-            .to_string()
-            .contains("missing admin marketing promo code status from database row"));
     }
 
     #[test]
     fn promo_status_label_rejects_unknown_database_status_without_deriving_valid_state() {
         assert_eq!(
             "available",
-            promo_status_label(PROMO_STATUS_AVAILABLE, None, None).unwrap()
+            promo_status_label(CommerceCouponStatus::Active.as_str(), None, None).unwrap()
         );
         assert_eq!(
             "claimed",
-            promo_status_label(PROMO_STATUS_AVAILABLE, Some("30"), None).unwrap()
+            promo_status_label(CommerceCouponStatus::Active.as_str(), Some("30"), None).unwrap()
         );
         assert_eq!(
             "used",
-            promo_status_label(PROMO_STATUS_AVAILABLE, Some("30"), Some("2026-05-01")).unwrap()
+            promo_status_label(
+                CommerceCouponStatus::Active.as_str(),
+                Some("30"),
+                Some("2026-05-01")
+            )
+            .unwrap()
         );
         assert_eq!(
             "voided",
-            promo_status_label(PROMO_STATUS_VOIDED, Some("30"), Some("2026-05-01")).unwrap()
+            promo_status_label(
+                CommerceCouponStatus::Disabled.as_str(),
+                Some("30"),
+                Some("2026-05-01")
+            )
+            .unwrap()
         );
 
-        let positive = promo_status_label(99, Some("30"), Some("2026-05-01"))
+        let positive = promo_status_label("legacy-status", Some("30"), Some("2026-05-01"))
             .expect_err("unknown promo status must fail even with used metadata");
         assert!(
             positive
                 .to_string()
-                .contains("unsupported admin promo code status: 99"),
+                .contains("unsupported admin promo code status: legacy-status"),
             "{positive}"
-        );
-
-        let negative =
-            promo_status_label(-1, None, None).expect_err("negative promo status must fail");
-        assert!(
-            negative
-                .to_string()
-                .contains("unsupported admin promo code status: -1"),
-            "{negative}"
         );
     }
 
     #[test]
     fn recharge_status_label_rejects_unknown_database_status() {
-        assert_eq!("success", recharge_status_label(1).unwrap());
-        assert_eq!("pending", recharge_status_label(2).unwrap());
-        assert_eq!("failed", recharge_status_label(3).unwrap());
-        assert_eq!("closed", recharge_status_label(4).unwrap());
+        assert_eq!("pending", recharge_status_label("pending_payment").unwrap());
+        assert_eq!(
+            "pending",
+            recharge_status_label(CommerceRechargeStatus::Pending.as_str()).unwrap()
+        );
+        assert_eq!(
+            "success",
+            recharge_status_label(CommerceRechargeStatus::Paid.as_str()).unwrap()
+        );
+        assert_eq!(
+            "success",
+            recharge_status_label(CommerceRechargeStatus::Fulfilled.as_str()).unwrap()
+        );
+        assert_eq!("failed", recharge_status_label("cancelled").unwrap());
+        assert_eq!(
+            "closed",
+            recharge_status_label(CommerceRechargeStatus::Closed.as_str()).unwrap()
+        );
+        assert_eq!("closed", recharge_status_label("expired").unwrap());
 
-        let unsupported = recharge_status_label(0).expect_err("unknown recharge status must fail");
+        let unsupported =
+            recharge_status_label("legacy-status").expect_err("unknown recharge status must fail");
         assert!(
             unsupported
                 .to_string()
-                .contains("unsupported admin recharge status: 0"),
+                .contains("unsupported admin recharge status: legacy-status"),
+            "{unsupported}"
+        );
+    }
+
+    #[test]
+    fn payment_status_label_rejects_unknown_database_status() {
+        assert_eq!(
+            "pending",
+            payment_status_label(CommercePaymentStatus::Pending.as_str()).unwrap()
+        );
+        assert_eq!(
+            "success",
+            payment_status_label(CommercePaymentStatus::Succeeded.as_str()).unwrap()
+        );
+        assert_eq!(
+            "failed",
+            payment_status_label(CommercePaymentStatus::Failed.as_str()).unwrap()
+        );
+        assert_eq!(
+            "expired",
+            payment_status_label(CommercePaymentStatus::Canceled.as_str()).unwrap()
+        );
+
+        let unsupported =
+            payment_status_label("legacy-status").expect_err("unknown payment status must fail");
+        assert!(
+            unsupported
+                .to_string()
+                .contains("unsupported admin payment attempt status: legacy-status"),
             "{unsupported}"
         );
     }

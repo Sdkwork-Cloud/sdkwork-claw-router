@@ -11,5 +11,4 @@ class MonitorAlertsListResult:
     """Monitor alerts list result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminMonitorAlertsResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

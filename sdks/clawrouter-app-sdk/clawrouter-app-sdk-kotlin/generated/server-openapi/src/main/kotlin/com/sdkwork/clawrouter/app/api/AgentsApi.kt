@@ -9,18 +9,18 @@ import com.sdkwork.clawrouter.app.http.HttpClient
 class AgentsApi(private val client: HttpClient) {
 
     /** List user agents */
-    suspend fun list(page: Int? = null, pageSize: Int? = null, q: String? = null): AgentsListResult? {
+    suspend fun agentDefinitionsList(page: Int? = null, pageSize: Int? = null, q: String? = null): AgentDefinitionsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
             QueryParameterSpec("q", q, "form", true, false, null)
         ))
         val raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/agents"), query))
-        return client.convertValue(raw, object : TypeReference<AgentsListResult>() {})
+        return client.convertValue(raw, object : TypeReference<AgentDefinitionsListResult>() {})
     }
 
     /** Create user agent */
-    suspend fun create(body: AgentCreateRequest, idempotencyKey: String, xRequestId: String? = null): AgentsCreateResult? {
+    suspend fun agentDefinitionsCreate(body: AgentCreateRequest, idempotencyKey: String, xRequestId: String? = null): AgentDefinitionsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
@@ -29,13 +29,120 @@ class AgentsApi(private val client: HttpClient) {
             emptyMap()
         )
         val raw = client.post(ApiPaths.appPath("/agents"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<AgentsCreateResult>() {})
+        return client.convertValue(raw, object : TypeReference<AgentDefinitionsCreateResult>() {})
+    }
+
+    /** Retrieve agent run */
+    suspend fun agentRunsRetrieve(runId: String): AgentRunsRetrieveResult? {
+        val raw = client.get(ApiPaths.appPath("/agents/runs/${serializePathParameter(runId, PathParameterSpec("runId", "simple", false))}"))
+        return client.convertValue(raw, object : TypeReference<AgentRunsRetrieveResult>() {})
+    }
+
+    /** Complete agent run */
+    suspend fun agentRunsSubmit(runId: String, body: AgentRunCompleteRequest, idempotencyKey: String, xRequestId: String? = null): AgentRunsSubmitResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.post(ApiPaths.appPath("/agents/runs/${serializePathParameter(runId, PathParameterSpec("runId", "simple", false))}/complete"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<AgentRunsSubmitResult>() {})
+    }
+
+    /** List agent run steps */
+    suspend fun agentRunStepsList(runId: String, page: Int? = null, pageSize: Int? = null): AgentRunStepsListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("page", page, "form", true, false, null),
+            QueryParameterSpec("page_size", pageSize, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/agents/runs/${serializePathParameter(runId, PathParameterSpec("runId", "simple", false))}/steps"), query))
+        return client.convertValue(raw, object : TypeReference<AgentRunStepsListResult>() {})
+    }
+
+    /** Create agent run step */
+    suspend fun agentRunStepsCreate(runId: String, body: AgentRunStepCreateRequest, idempotencyKey: String, xRequestId: String? = null): AgentRunStepsCreateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.post(ApiPaths.appPath("/agents/runs/${serializePathParameter(runId, PathParameterSpec("runId", "simple", false))}/steps"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<AgentRunStepsCreateResult>() {})
+    }
+
+    /** Complete agent run step */
+    suspend fun agentRunStepsSubmit(runId: String, stepId: String, body: AgentRunStepCompleteRequest, idempotencyKey: String, xRequestId: String? = null): AgentRunStepsSubmitResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.post(ApiPaths.appPath("/agents/runs/${serializePathParameter(runId, PathParameterSpec("runId", "simple", false))}/steps/${serializePathParameter(stepId, PathParameterSpec("stepId", "simple", false))}/complete"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<AgentRunStepsSubmitResult>() {})
+    }
+
+    /** Retrieve agent session */
+    suspend fun agentSessionsRetrieve(sessionId: String): AgentSessionsRetrieveResult? {
+        val raw = client.get(ApiPaths.appPath("/agents/sessions/${serializePathParameter(sessionId, PathParameterSpec("sessionId", "simple", false))}"))
+        return client.convertValue(raw, object : TypeReference<AgentSessionsRetrieveResult>() {})
+    }
+
+    /** List agent session runs */
+    suspend fun agentRunsList(sessionId: String, page: Int? = null, pageSize: Int? = null): AgentRunsListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("page", page, "form", true, false, null),
+            QueryParameterSpec("page_size", pageSize, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/agents/sessions/${serializePathParameter(sessionId, PathParameterSpec("sessionId", "simple", false))}/runs"), query))
+        return client.convertValue(raw, object : TypeReference<AgentRunsListResult>() {})
+    }
+
+    /** Create agent run */
+    suspend fun agentRunsCreate(sessionId: String, body: AgentRunCreateRequest, idempotencyKey: String, xRequestId: String? = null): AgentRunsCreateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.post(ApiPaths.appPath("/agents/sessions/${serializePathParameter(sessionId, PathParameterSpec("sessionId", "simple", false))}/runs"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<AgentRunsCreateResult>() {})
     }
 
     /** Retrieve user agent */
-    suspend fun retrieve(agentId: String): AgentsRetrieveResult? {
+    suspend fun agentDefinitionsRetrieve(agentId: String): AgentDefinitionsRetrieveResult? {
         val raw = client.get(ApiPaths.appPath("/agents/${serializePathParameter(agentId, PathParameterSpec("agentId", "simple", false))}"))
-        return client.convertValue(raw, object : TypeReference<AgentsRetrieveResult>() {})
+        return client.convertValue(raw, object : TypeReference<AgentDefinitionsRetrieveResult>() {})
+    }
+
+    /** List agent sessions */
+    suspend fun agentSessionsList(agentId: String, page: Int? = null, pageSize: Int? = null): AgentSessionsListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("page", page, "form", true, false, null),
+            QueryParameterSpec("page_size", pageSize, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/agents/${serializePathParameter(agentId, PathParameterSpec("agentId", "simple", false))}/sessions"), query))
+        return client.convertValue(raw, object : TypeReference<AgentSessionsListResult>() {})
+    }
+
+    /** Create agent session */
+    suspend fun agentSessionsCreate(agentId: String, body: AgentSessionCreateRequest, idempotencyKey: String, xRequestId: String? = null): AgentSessionsCreateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.post(ApiPaths.appPath("/agents/${serializePathParameter(agentId, PathParameterSpec("agentId", "simple", false))}/sessions"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<AgentSessionsCreateResult>() {})
     }
 
     private data class PathParameterSpec(val name: String, val style: String, val explode: Boolean)

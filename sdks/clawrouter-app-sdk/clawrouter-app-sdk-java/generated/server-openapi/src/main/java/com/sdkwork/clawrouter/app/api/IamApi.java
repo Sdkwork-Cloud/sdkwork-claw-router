@@ -8,9 +8,15 @@ import java.util.Map;
 
 public class IamApi {
     private final HttpClient client;
-    
+
     public IamApi(HttpClient client) {
         this.client = client;
+    }
+
+    /** List groups */
+    public ApiKeyGroupsListResult apiKeyGroupsList() throws Exception {
+        Object raw = client.get(ApiPaths.appPath("/iam/api_key_groups"));
+        return client.convertValue(raw, new TypeReference<ApiKeyGroupsListResult>() {});
     }
 
     /** List keys */

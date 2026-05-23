@@ -24,9 +24,24 @@ sudo editor /etc/clawrouter/clawrouter.toml
 sudo systemctl start clawrouter
 ```
 
+After the service is healthy, publish it through nginx with the SDKWork
+site-family path convention:
+
+```bash
+pnpm nginx:plan -- --domain api.sdkwork.com
+sudo pnpm nginx:deploy -- --domain api.sdkwork.com --cert-name sdkwork.com
+sudo nginx -t
+sudo systemctl reload nginx
+```
+
+The deployed nginx file is
+`/etc/nginx/sites-enabled/sdkwork/api.sdkwork.com.conf`, where the file stem is
+the complete domain name. Generated configs proxy to `http://127.0.0.1:3900`.
+Use `etc/nginx/NGINX_SAMPLE.conf` as the canonical template and see
+`etc/nginx/sdkwork/` for full-domain examples.
+
 The package creates the default TOML, `/etc/clawrouter/clawrouter.env`,
-`/etc/clawrouter/database.secret`, optional `/etc/clawrouter/redis.secret`,
-data/log directories, enables
+`/etc/clawrouter/database.secret`, `/etc/clawrouter/redis.secret`, data/log directories, enables
 `clawrouter.service` on systemd hosts, and runs initialization from systemd
 before startup. Configure PostgreSQL before starting the service. The running
 service can write `/var/lib/clawrouter` and `/var/log/clawrouter`; it reads
@@ -34,9 +49,9 @@ service can write `/var/lib/clawrouter` and `/var/log/clawrouter`; it reads
 `install-manifest.json` with `installConfiguration`, and native installers add a
 `nativeInstall` layout for deployment automation.
 
-Redis is part of the standard `clawrouter.toml` contract but is disabled by
-default. Leave `[redis].enabled = false` unless the deployment needs shared
-cache, distributed locks, queues, or rate-limit buckets. When enabled, configure
-`[redis].host`, `[redis].port`, and `[redis].database`; use `[redis].url` only
-as an advanced managed-endpoint override. Prefer `[redis].password_file` over
-direct passwords.
+Redis is part of the standard `clawrouter.toml` contract. Server, service, and
+container packages keep `[redis].enabled = true` by default and require
+`[redis].host`, `[redis].port`, and `[redis].database` before first startup; use
+`[redis].url` only as an advanced managed-endpoint override. Prefer
+`[redis].password_file` over direct passwords. Desktop packages keep Redis
+optional and disabled by default.

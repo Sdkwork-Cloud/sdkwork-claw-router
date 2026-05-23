@@ -1,0 +1,14 @@
+fragment: models/admin-marketing
+frontend_models:
+- route: /admin/marketing
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  interface: ReferralStat
+  fields:
+  - id
+  - inviter
+  - total_invited
+  - total_revenue
+  - bonus_awarded
+  - link
+  data_sources:
+  - ops_referral_stat_snapshot

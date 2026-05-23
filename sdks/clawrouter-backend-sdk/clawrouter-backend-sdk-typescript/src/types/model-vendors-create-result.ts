@@ -7,7 +7,5 @@ export interface ModelVendorsCreateResult {
   /** Data field on model vendors create result. */
   data?: AdminModelVendorMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

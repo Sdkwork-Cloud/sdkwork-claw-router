@@ -7,7 +7,5 @@ export interface NotificationsListResult {
   /** Data field on notifications list result. */
   data?: NotificationsResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

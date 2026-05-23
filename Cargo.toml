@@ -3,16 +3,42 @@ members = [
     "crates/sdkwork-claw-contract",
     "crates/sdkwork-claw-config",
     "crates/sdkwork-claw-core",
+    "crates/sdkwork-claw-provider-adapter-contract",
+    "crates/sdkwork-claw-provider-adapter-core",
+    "crates/sdkwork-claw-provider-adapter-http",
+    "crates/sdkwork-claw-provider-adapter-registry",
     "crates/sdkwork-claw-security",
     "crates/sdkwork-claw-http",
     "crates/sdkwork-claw-observability",
     "crates/sdkwork-claw-test-support",
+    "crates/provider-adapters/tencent-cloud",
+    "crates/provider-adapters/alicloud",
     "services/sdkwork-claw-gateway",
     "services/sdkwork-claw-admin-api",
     "services/sdkwork-claw-app-api",
     "services/sdkwork-claw-installer",
+    "services/sdkwork-claw-provider-adapter",
     "services/sdkwork-claw-product",
     "data/sdkwork-models/sdkwork-models-rust",
+    "sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-core-rust",
+    "sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust",
+    "sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-storage-sqlx-rust",
+    "sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-tauri-rust",
+    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-account-rust",
+    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-bootstrap-rust",
+    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-catalog-rust",
+    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-core-rust",
+    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust",
+    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-inventory-rust",
+    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-invoice-rust",
+    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-membership-rust",
+    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-membership-sqlx-rust",
+    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-order-rust",
+    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-payment-rust",
+    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-promotion-rust",
+    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-runtime-rust",
+    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust",
+    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-tauri-rust",
 ]
 resolver = "2"
 
@@ -24,6 +50,7 @@ license-file = "LICENSE"
 [workspace.dependencies]
 anyhow = "1.0"
 axum = { version = "0.8", features = ["multipart"] }
+base64 = "0.22.1"
 bytes = "1.11.1"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
@@ -38,6 +65,7 @@ hyper-rustls = { version = "0.27.9", default-features = false, features = ["http
 hyper-util = { version = "0.1.20", features = ["client-legacy", "http1", "tokio"] }
 hex = "0.4.3"
 ring = "0.17.14"
+redis = { version = "1.2.1", default-features = false, features = ["tokio-comp", "connection-manager"] }
 sha2 = "0.10.9"
 sqlx = { version = "0.8.6", default-features = false, features = ["runtime-tokio", "sqlite", "postgres"] }
 tokio = { version = "1.51", features = ["macros", "rt-multi-thread", "net", "time", "test-util", "fs", "io-util"] }

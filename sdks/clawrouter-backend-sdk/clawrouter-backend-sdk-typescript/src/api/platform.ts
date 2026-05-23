@@ -1,8 +1,67 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AdminAppCreateRequest, AdminAppUpdateRequest, AppsCreateResult, AppsDeleteResult, AppsDisableResult, AppsEnableResult, AppsListResult, AppsPublishResult, AppsRetrieveResult, AppsUnpublishResult, AppsUpdateResult } from '../types';
+import type { AdminAppCategoryCreateRequest, AdminAppCategoryUpdateRequest, AdminAppCreateRequest, AdminAppUpdateRequest, AppsCategoriesCreateResult, AppsCategoriesDeleteResult, AppsCategoriesListResult, AppsCategoriesUpdateResult, AppsCreateResult, AppsDeleteResult, AppsDisableResult, AppsEnableResult, AppsListResult, AppsPublishResult, AppsRetrieveResult, AppsUnpublishResult, AppsUpdateResult } from '../types';
 
+
+export interface PlatformAppsCategoriesCreateParams {
+  xRequestId?: string;
+}
+
+export interface PlatformAppsCategoriesDeleteParams {
+  xRequestId?: string;
+}
+
+export interface PlatformAppsCategoriesUpdateParams {
+  xRequestId?: string;
+}
+
+export class PlatformAppsCategoriesApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** List app categories */
+  async list(): Promise<AppsCategoriesListResult> {
+    return this.client.get<AppsCategoriesListResult>(backendApiPath(`/platform/apps/categories`));
+  }
+
+/** Create app category */
+  async create(body: AdminAppCategoryCreateRequest, params?: PlatformAppsCategoriesCreateParams): Promise<AppsCategoriesCreateResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.post<AppsCategoriesCreateResult>(backendApiPath(`/platform/apps/categories`), body, undefined, requestHeaders, 'application/json');
+  }
+
+/** Delete app category */
+  async delete(categoryId: string, params?: PlatformAppsCategoriesDeleteParams): Promise<AppsCategoriesDeleteResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.delete<AppsCategoriesDeleteResult>(backendApiPath(`/platform/apps/categories/${serializePathParameter(categoryId, { name: 'categoryId', style: 'simple', explode: false })}`), undefined, requestHeaders);
+  }
+
+/** Update app category */
+  async update(categoryId: string, body: AdminAppCategoryUpdateRequest, params?: PlatformAppsCategoriesUpdateParams): Promise<AppsCategoriesUpdateResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.put<AppsCategoriesUpdateResult>(backendApiPath(`/platform/apps/categories/${serializePathParameter(categoryId, { name: 'categoryId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
+  }
+}
 
 export interface PlatformAppsListParams {
   q?: string;
@@ -48,9 +107,11 @@ export interface PlatformAppsUnpublishParams {
 
 export class PlatformAppsApi {
   private client: HttpClient;
+  public readonly categories: PlatformAppsCategoriesApi;
 
   constructor(client: HttpClient) {
     this.client = client;
+    this.categories = new PlatformAppsCategoriesApi(client);
   }
 
 

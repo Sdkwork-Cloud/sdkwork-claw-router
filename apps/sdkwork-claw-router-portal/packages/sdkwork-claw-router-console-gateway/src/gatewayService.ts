@@ -1,5 +1,5 @@
 import {
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
   readRequiredApiItems,
@@ -22,7 +22,7 @@ export interface GatewayTrace {
 export class GatewayService {
   static async fetchTraces(): Promise<GatewayTrace[]> {
     const result = await getClawRouterAppSdkClient().ai.gateway.traces.list();
-    ensurePlusApiSuccess(result, 'console.gateway.states.loadErrorFallback');
+    ensureSdkworkApiSuccess(result, 'console.gateway.states.loadErrorFallback');
     return readRequiredApiItems(result, 'console.gateway.states.loadErrorFallback').map(readGatewayTrace);
   }
 }

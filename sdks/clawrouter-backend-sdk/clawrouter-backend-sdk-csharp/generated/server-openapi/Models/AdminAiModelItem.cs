@@ -7,15 +7,19 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class AdminAiModelItem
     {
         public string? ApiFormat { get; set; }
+        public string? CacheReadPrice { get; set; }
+        public string? CacheWritePrice { get; set; }
         public string? Calls { get; set; }
         public string? CapabilityIntro { get; set; }
         public int? ContextTokens { get; set; }
         public string? Description { get; set; }
+        public string? DisplayName { get; set; }
         public string? Id { get; set; }
         public List<string>? InputModalities { get; set; }
         public List<string>? Limitations { get; set; }
         public int? MaxOutputTokens { get; set; }
         public List<string>? Modalities { get; set; }
+        public string? Model { get; set; }
         public string? Name { get; set; }
         public List<string>? OutputModalities { get; set; }
         public string? PriceIn { get; set; }

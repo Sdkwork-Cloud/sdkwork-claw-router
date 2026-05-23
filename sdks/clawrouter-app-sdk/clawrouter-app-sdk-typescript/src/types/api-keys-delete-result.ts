@@ -7,7 +7,5 @@ export interface ApiKeysDeleteResult {
   /** Data field on api keys delete result. */
   data?: DeleteApiKeyResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

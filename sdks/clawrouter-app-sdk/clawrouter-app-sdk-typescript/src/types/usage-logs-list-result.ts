@@ -7,7 +7,5 @@ export interface UsageLogsListResult {
   /** Data field on usage logs list result. */
   data?: UsageLogsResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

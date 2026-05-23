@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, ChevronDown, Zap, Search, Cpu, Info, AlignLeft, User } from 'lucide-react';
-import { BusinessStateTableRow } from 'sdkwork-claw-router-commons';
+import { AdminTableShell, BusinessStateTableRow } from 'sdkwork-claw-router-commons';
 import { formatDecimalAmount } from 'sdkwork-claw-router-commons/runtime';
 import { RecordService, LogRecord } from './recordService';
 
@@ -70,10 +70,10 @@ export function RecordAdmin() {
   const streamCount = logs.filter((log) => log.isStream).length;
 
   return (
-    <div className="w-full h-full flex flex-col space-y-6">
+    <div className="flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden">
 
       {/* Page Header & Stats */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-white/10">
+      <div className="flex shrink-0 flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-white/10">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <AlignLeft className="w-6 h-6 text-indigo-500" />
@@ -100,7 +100,7 @@ export function RecordAdmin() {
       </div>
 
       {/* Filter Bar */}
-      <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-3 shadow-sm flex flex-col md:flex-row flex-wrap items-center gap-3">
+      <div className="shrink-0 bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-3 shadow-sm flex flex-col md:flex-row flex-wrap items-center gap-3">
         {/* User Search */}
         <div className="relative w-full md:w-auto flex-1 min-w-[150px]">
           <User className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -150,10 +150,60 @@ export function RecordAdmin() {
       </div>
 
       {/* Main Data Table */}
-      <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl shadow-sm overflow-hidden flex flex-col flex-1 min-h-[500px]">
-        <div className="overflow-x-auto relative min-h-[400px]">
+      <AdminTableShell
+        data-admin-record-table-card
+        className="rounded-xl dark:bg-[#1a1a1a]"
+        viewportClassName="relative"
+        viewportProps={{ 'data-admin-record-table-viewport': true }}
+        footer={(
+          <div className="p-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs mt-auto bg-slate-50 dark:bg-[#121212]">
+            <div className="text-slate-500">
+              {t('admin.record.index.text.1v5bfx3', 'Showing ')}
+              {firstRow}
+              {' '}
+              {t('admin.record.index.text.z5dszr', 'to ')}
+              {lastRow}
+              {' '}
+              {t('admin.record.index.text.1b7ol37', 'of ')}
+              {total}
+              {' '}
+              {t('admin.record.index.text.1rfm5gs', 'rows')}
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-slate-500 mr-2">{t("admin.record.index.text.wtrnlj", "鎬婚〉鏁?")}{totalPages}</span>
+              <button
+                onClick={() => setPage((current) => Math.max(1, current - 1))}
+                disabled={page <= 1 || loading}
+                className="w-7 h-7 flex items-center justify-center rounded border border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <ChevronRight className="w-3.5 h-3.5 rotate-180" />
+              </button>
+              <span className="min-w-7 h-7 px-2 flex items-center justify-center rounded bg-indigo-600 text-white font-medium">{page}</span>
+              <button
+                onClick={() => setPage((current) => Math.min(totalPages, current + 1))}
+                disabled={page >= totalPages || loading}
+                className="w-7 h-7 flex items-center justify-center rounded border border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <ChevronRight className="w-3.5 h-3.5" />
+              </button>
+              <select
+                value={pageSize}
+                onChange={(event) => {
+                  setPageSize(Number(event.target.value));
+                  setPage(1);
+                }}
+                className="ml-2 bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded px-2 py-1 focus:outline-none focus:border-indigo-500 text-slate-700 dark:text-slate-300"
+              >
+                <option value={10}>{t("admin.record.index.text.9gtzua", "姣忛〉: 10")}</option>
+                <option value={20}>{t("admin.record.index.text.7st86h", "姣忛〉: 20")}</option>
+                <option value={50}>{t("admin.record.index.text.79bzw6", "姣忛〉: 50")}</option>
+              </select>
+            </div>
+          </div>
+        )}
+      >
           <table className="w-full text-left text-sm whitespace-nowrap min-w-[1300px]">
-            <thead className="bg-slate-50 dark:bg-[#121212] text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-white/10 select-none text-xs uppercase font-semibold">
+            <thead className="sticky top-0 z-10 bg-slate-50 dark:bg-[#121212] text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-white/10 select-none text-xs uppercase font-semibold">
               <tr>
                 <th className="px-4 py-3.5 pl-6 font-medium">{t("admin.marketing.index.text.1f90xvr", "时间")}</th>
                 <th className="px-4 py-3.5 font-medium">{t("admin.record.index.text.1in002o", "用户")}</th>
@@ -334,44 +384,7 @@ export function RecordAdmin() {
               })}
             </tbody>
           </table>
-        </div>
-
-        {/* Pagination Details */}
-        <div className="p-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs mt-auto bg-slate-50 dark:bg-[#121212]">
-          <div className="text-slate-500">
-            {t("admin.record.index.text.1v5bfx3", "显示第")}{firstRow} {t("admin.record.index.text.z5dszr", "条 - 第")}{lastRow} {t("admin.record.index.text.1b7ol37", "条, 共")}{total} {t("admin.record.index.text.1rfm5gs", "条")}</div>
-          <div className="flex items-center gap-2">
-            <span className="text-slate-500 mr-2">{t("admin.record.index.text.wtrnlj", "总页数:")}{totalPages}</span>
-            <button
-              onClick={() => setPage((current) => Math.max(1, current - 1))}
-              disabled={page <= 1 || loading}
-              className="w-7 h-7 flex items-center justify-center rounded border border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <ChevronRight className="w-3.5 h-3.5 rotate-180" />
-            </button>
-            <span className="min-w-7 h-7 px-2 flex items-center justify-center rounded bg-indigo-600 text-white font-medium">{page}</span>
-            <button
-              onClick={() => setPage((current) => Math.min(totalPages, current + 1))}
-              disabled={page >= totalPages || loading}
-              className="w-7 h-7 flex items-center justify-center rounded border border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/5 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <ChevronRight className="w-3.5 h-3.5" />
-            </button>
-            <select
-              value={pageSize}
-              onChange={(event) => {
-                setPageSize(Number(event.target.value));
-                setPage(1);
-              }}
-              className="ml-2 bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded px-2 py-1 focus:outline-none focus:border-indigo-500 text-slate-700 dark:text-slate-300"
-            >
-              <option value={10}>{t("admin.record.index.text.9gtzua", "每页: 10")}</option>
-              <option value={20}>{t("admin.record.index.text.7st86h", "每页: 20")}</option>
-              <option value={50}>{t("admin.record.index.text.79bzw6", "每页: 50")}</option>
-            </select>
-          </div>
-        </div>
-      </div>
+      </AdminTableShell>
     </div>
   );
 }

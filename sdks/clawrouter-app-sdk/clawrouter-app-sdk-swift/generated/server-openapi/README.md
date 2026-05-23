@@ -70,11 +70,15 @@ client.setHeader("X-Custom-Header", value: "value")
 - `client.ai` - ai API
 - `client.auth` - auth API
 - `client.billing` - billing API
-- `client.communication` - communication API
+- `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
+- `client.memory` - memory API
+- `client.notification` - notification API
 - `client.platform` - platform API
+- `client.runtime` - runtime API
+- `client.system` - system API
 
 ## Usage Examples
 
@@ -87,7 +91,7 @@ let params: [String: Any] = [
     "page_size": 2,
     "q": "q"
 ]
-let result = try await client.agents.list(params: params)
+let result = try await client.agents.agentDefinitionsList(params: params)
 print(result)
 ```
 
@@ -115,11 +119,15 @@ let result = try await client.billing.accountPointsRetrieve()
 print(result)
 ```
 
-### communication
+### chat
 
 ```swift
-// List messages
-let result = try await client.communication.notificationsList()
+// List product chat conversations
+let params: [String: Any] = [
+    "page": 1,
+    "page_size": 2
+]
+let result = try await client.chat.conversationsList(params: params)
 print(result)
 ```
 
@@ -142,8 +150,34 @@ print(result)
 ### iam
 
 ```swift
-// List keys
-let result = try await client.iam.apiKeysList()
+// List groups
+let result = try await client.iam.apiKeyGroupsList()
+print(result)
+```
+
+### memory
+
+```swift
+// List memory spaces
+let params: [String: Any] = [
+    "page": 1,
+    "page_size": 2
+]
+let result = try await client.memory.spacesList(params: params)
+print(result)
+```
+
+### notification
+
+```swift
+// List notifications
+let params: [String: Any] = [
+    "app_id": "1",
+    "include_archived": false,
+    "page": 3,
+    "page_size": 4
+]
+let result = try await client.notification.notificationsList(params: params)
 print(result)
 ```
 
@@ -152,6 +186,35 @@ print(result)
 ```swift
 // Get categories
 let result = try await client.platform.appsStoreCategoriesList()
+print(result)
+```
+
+### runtime
+
+```swift
+// List runtime invocations
+let params: [String: Any] = [
+    "page": 1,
+    "page_size": 2,
+    "conversation_id": "1",
+    "chat_turn_id": "1",
+    "agent_session_id": "1",
+    "runtime": "runtime",
+    "status": "status"
+]
+let result = try await client.runtime.invocationsList(params: params)
+print(result)
+```
+
+### system
+
+```swift
+// Retrieve public site runtime branding settings
+let params: [String: Any] = [
+    "tenant_code": "ok",
+    "organization_code": "ok"
+]
+let result = try await client.system.siteRuntimeRetrieve(params: params)
 print(result)
 ```
 

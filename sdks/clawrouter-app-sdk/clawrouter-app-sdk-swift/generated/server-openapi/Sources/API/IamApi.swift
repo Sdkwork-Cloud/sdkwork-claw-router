@@ -2,9 +2,14 @@ import Foundation
 
 public class IamApi {
     private let client: HttpClient
-    
+
     public init(client: HttpClient) {
         self.client = client
+    }
+
+    /// List groups
+    public func apiKeyGroupsList() async throws -> ApiKeyGroupsListResult? {
+        return try await client.get(ApiPaths.appPath("/iam/api_key_groups"), responseType: ApiKeyGroupsListResult.self)
     }
 
     /// List keys

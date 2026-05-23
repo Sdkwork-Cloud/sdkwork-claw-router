@@ -2,6 +2,7 @@ package com.sdkwork.clawrouter.app
 
 data class AiAgentRunRecord(
     val agentId: String? = null,
+    val agentSessionId: String? = null,
     val agentVersionId: String? = null,
     val audioSeconds: String? = null,
     val cachedTokens: String? = null,
@@ -16,8 +17,10 @@ data class AiAgentRunRecord(
     val imageCount: String? = null,
     val inputMessage: String? = null,
     val legalHold: Boolean? = null,
+    val memorySpaceId: String? = null,
     val metadata: Map<String, String>? = null,
     val meteringStatus: String? = null,
+    val model: String? = null,
     val organizationId: String? = null,
     val outputMessage: String? = null,
     val payloadHash: String? = null,
@@ -25,8 +28,8 @@ data class AiAgentRunRecord(
     val promptTokens: String? = null,
     val requestId: String? = null,
     val retentionUntil: String? = null,
-    val runStatus: String? = null,
     val runUuid: String? = null,
+    val runtime: String? = null,
     val sourceSurface: String? = null,
     val startedAt: String? = null,
     val status: String? = null,
@@ -36,6 +39,7 @@ data class AiAgentRunRecord(
     val totalTokens: String? = null,
     val traceId: String? = null,
     val usageFactId: String? = null,
+    val usageJson: Map<String, String>? = null,
     val userId: String? = null,
     val uuid: String? = null,
     val videoSeconds: String? = null

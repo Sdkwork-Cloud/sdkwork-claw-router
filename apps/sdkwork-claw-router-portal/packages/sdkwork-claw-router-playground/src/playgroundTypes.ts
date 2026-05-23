@@ -1,17 +1,21 @@
-export type PlaygroundMedia = string | { url?: string; thumb?: string };
+import type {
+  SdkworkGenerationArtifact,
+  SdkworkGenerationAssetModality,
+  SdkworkGenerationHistoryItem,
+  SdkworkGenerationMedia,
+  SdkworkGenerationModelBucket,
+  SdkworkGenerationSerializedAssetConfig,
+} from '@sdkwork/generation-pc-react/react';
 
-export type PlaygroundModelBucket = 'llms' | 'images' | 'videos' | 'audios' | 'music' | 'sfx';
+export type PlaygroundMedia = SdkworkGenerationMedia;
 
-export type PlaygroundGenerationTargetType = 'image' | 'video' | 'music' | 'audio' | 'sfx';
+export type PlaygroundModelBucket = SdkworkGenerationModelBucket;
+
+export type PlaygroundGenerationTargetType = SdkworkGenerationAssetModality;
 
 export type PlaygroundGenerationRunStatus = 'pending' | 'processing' | 'completed' | 'failed' | 'cancelled';
 
-export interface PlaygroundGenerationConfig {
-  imageCount?: number;
-  aspectRatio?: '1:1' | '16:9' | '9:16';
-  durationSeconds?: number;
-  quality?: 'standard' | 'high';
-}
+export type PlaygroundGenerationConfig = SdkworkGenerationSerializedAssetConfig;
 
 export interface PlaygroundReferenceImageInput {
   name: string;
@@ -22,23 +26,9 @@ export interface PlaygroundReferenceImageInput {
   assetId?: string;
 }
 
-export interface PlaygroundHistoryItem {
-  id: string;
-  date: string;
-  prompt: string;
-  type: 'image' | 'images' | 'video' | 'music' | 'audio' | 'sfx';
-  modelInfo?: string;
-  modelCatalogKey?: string;
-  url?: string;
-  images?: string[];
-  videos?: PlaygroundMedia[];
-  aspectRatio?: PlaygroundGenerationConfig['aspectRatio'];
-  durationSeconds?: number;
-  activeIndex?: number;
-  status?: string;
-  createdAt?: string;
-  updatedAt?: string;
-}
+export type PlaygroundGenerationArtifact = SdkworkGenerationArtifact;
+
+export type PlaygroundHistoryItem = SdkworkGenerationHistoryItem;
 
 export interface GenerationAgentRunCreateInput {
   prompt: string;
@@ -46,6 +36,8 @@ export interface GenerationAgentRunCreateInput {
   selectedModel?: string;
   generationConfig?: PlaygroundGenerationConfig;
   referenceImages?: PlaygroundReferenceImageInput[];
+  onDelta?: (delta: string) => void;
+  onArtifact?: (artifact: PlaygroundGenerationArtifact) => void;
 }
 
 export interface PlaygroundGenerationSubmitInput {
@@ -138,7 +130,7 @@ export interface GenerationAgentRunCreateResult {
   meteringEvents: GenerationAgentMeteringEvent[];
   run: GenerationAgentRunSnapshot;
   steps: GenerationAgentRunStepSnapshot[];
-  targetType: PlaygroundGenerationTargetType;
+  targetType?: PlaygroundGenerationTargetType;
   status: PlaygroundGenerationRunStatus;
   usage: GenerationAgentUsageSummary;
 }

@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 class IntegrationProviderRecord:
     """Integration provider record schema exposed by Claw Router."""
     auth_type: Optional[str] = None
-    base_url_template: Optional[str] = None
+    base_url: Optional[str] = None
     capabilities: Optional[Dict[str, str]] = None
     color_token: Optional[str] = None
     created_at: Optional[str] = None

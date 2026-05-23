@@ -11,11 +11,12 @@ namespace Sdkwork.ClawRouter.Backend
 
         public AgentsApi Agents { get; }
         public AiApi Ai { get; }
-        public BillingApi Billing { get; }
+        public CommerceApi Commerce { get; }
         public ContentApi Content { get; }
         public EcosystemApi Ecosystem { get; }
         public IamApi Iam { get; }
         public IntegrationApi Integration { get; }
+        public OpenPlatformApi OpenPlatform { get; }
         public PlatformApi Platform { get; }
         public SystemApi System { get; }
 
@@ -24,11 +25,12 @@ namespace Sdkwork.ClawRouter.Backend
             _httpClient = new SdkHttpClient(baseUrl);
             Agents = new AgentsApi(_httpClient);
             Ai = new AiApi(_httpClient);
-            Billing = new BillingApi(_httpClient);
+            Commerce = new CommerceApi(_httpClient);
             Content = new ContentApi(_httpClient);
             Ecosystem = new EcosystemApi(_httpClient);
             Iam = new IamApi(_httpClient);
             Integration = new IntegrationApi(_httpClient);
+            OpenPlatform = new OpenPlatformApi(_httpClient);
             Platform = new PlatformApi(_httpClient);
             System = new SystemApi(_httpClient);
         }
@@ -38,11 +40,12 @@ namespace Sdkwork.ClawRouter.Backend
             _httpClient = new SdkHttpClient(config);
             Agents = new AgentsApi(_httpClient);
             Ai = new AiApi(_httpClient);
-            Billing = new BillingApi(_httpClient);
+            Commerce = new CommerceApi(_httpClient);
             Content = new ContentApi(_httpClient);
             Ecosystem = new EcosystemApi(_httpClient);
             Iam = new IamApi(_httpClient);
             Integration = new IntegrationApi(_httpClient);
+            OpenPlatform = new OpenPlatformApi(_httpClient);
             Platform = new PlatformApi(_httpClient);
             System = new SystemApi(_httpClient);
         }

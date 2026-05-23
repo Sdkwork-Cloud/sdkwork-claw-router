@@ -84,6 +84,9 @@ bind = "0.0.0.0:18081"
 [services.app_api]
 bind = "0.0.0.0:18082"
 
+[services.provider_adapter]
+bind = "0.0.0.0:39110"
+
 [server]
 bind = "0.0.0.0:3900"
 external_scheme = "https"
@@ -139,6 +142,7 @@ video_upload_body_limit_bytes = 1074790400
 admin_app_json_body_max_bytes = 131072
 admin_skill_json_body_max_bytes = 65536
 forum_json_body_max_bytes = 262144
+sdk_reference_json_body_max_bytes = 8388608
 payment_callback_body_max_bytes = 65536
 
 [observability]
@@ -198,6 +202,11 @@ auth_value_file = "/etc/clawrouter/google-provider.secret"
 [provider_relay.passthrough.google.default_headers]
 x-goog-api-client = "clawrouter"
 
+[provider_adapter]
+adapter_base_url = "http://provider-adapter.internal:39110"
+manifest_file = "/etc/clawrouter/provider-adapter-manifest.json"
+gateway_token_file = "/etc/clawrouter/provider-adapter-token.secret"
+
 [provider_secret_map]
 json_file = "/etc/clawrouter/provider-secrets.json"
 
@@ -255,6 +264,10 @@ password_file = "/etc/clawrouter/bootstrap-admin.secret"
     assert_eq!(
         Some("0.0.0.0:18082"),
         config.services.app_api.bind.as_deref()
+    );
+    assert_eq!(
+        Some("0.0.0.0:39110"),
+        config.services.provider_adapter.bind.as_deref()
     );
     assert_eq!(Some("0.0.0.0:3900"), config.server.bind.as_deref());
     assert_eq!(Some("https"), config.server.external_scheme.as_deref());
@@ -354,6 +367,10 @@ password_file = "/etc/clawrouter/bootstrap-admin.secret"
     assert_eq!(
         Some(262144),
         config.request_limits.forum_json_body_max_bytes
+    );
+    assert_eq!(
+        Some(8388608),
+        config.request_limits.sdk_reference_json_body_max_bytes
     );
     assert_eq!(
         Some(65536),
@@ -473,6 +490,18 @@ password_file = "/etc/clawrouter/bootstrap-admin.secret"
             .default_headers
             .get("x-goog-api-client")
             .map(String::as_str)
+    );
+    assert_eq!(
+        Some("http://provider-adapter.internal:39110"),
+        config.provider_adapter.adapter_base_url.as_deref()
+    );
+    assert_eq!(
+        Some("/etc/clawrouter/provider-adapter-manifest.json"),
+        config.provider_adapter.manifest_file.as_deref()
+    );
+    assert_eq!(
+        Some("/etc/clawrouter/provider-adapter-token.secret"),
+        config.provider_adapter.gateway_token_file.as_deref()
     );
     assert_eq!(
         Some("/etc/clawrouter/provider-secrets.json"),

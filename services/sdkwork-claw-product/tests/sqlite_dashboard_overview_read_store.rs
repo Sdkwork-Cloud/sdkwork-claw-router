@@ -1,0 +1,168 @@
+use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteDashboardOverviewReadStore;
+use sdkwork_claw_product::ports::{
+    DashboardOverviewQuery, DashboardOverviewReadStore, DashboardOverviewSubject,
+};
+use sqlx::sqlite::SqlitePoolOptions;
+
+#[tokio::test]
+async fn sqlite_dashboard_overview_reads_announcements_from_standard_notifications() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    create_schema(&pool).await;
+    seed_dashboard_notification(&pool).await;
+
+    let store = SqliteDashboardOverviewReadStore::new(pool);
+    let snapshot = store
+        .load_dashboard_overview(
+            DashboardOverviewQuery::default(),
+            Some(DashboardOverviewSubject {
+                tenant_id: 10,
+                organization_id: 20,
+                user_id: 30,
+            }),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(1, snapshot.announcements.len());
+    assert_eq!(2007, snapshot.announcements[0].id);
+    assert_eq!("Planned model upgrade", snapshot.announcements[0].text);
+    assert_eq!("warning", snapshot.announcements[0].announcement_type);
+}
+
+async fn create_schema(pool: &sqlx::SqlitePool) {
+    for statement in [
+        r#"
+        CREATE TABLE ai_usage_fact (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            user_id INTEGER NOT NULL,
+            status INTEGER NOT NULL,
+            request_count INTEGER,
+            total_tokens INTEGER,
+            customer_charge_amount TEXT,
+            cost_amount TEXT,
+            modality INTEGER,
+            occurred_at TEXT
+        )
+        "#,
+        r#"
+        CREATE TABLE ai_request_trace (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            user_id INTEGER NOT NULL,
+            request_id TEXT,
+            status INTEGER NOT NULL,
+            started_at TEXT,
+            http_status INTEGER,
+            provider_error_code TEXT,
+            error_type TEXT
+        )
+        "#,
+        r#"
+        CREATE TABLE ai_model_rank_snapshot (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER,
+            organization_id INTEGER,
+            status INTEGER NOT NULL,
+            rank_no INTEGER,
+            previous_rank_no INTEGER,
+            model TEXT,
+            vendor_name_snapshot TEXT,
+            vendor_code TEXT,
+            modality INTEGER,
+            request_count INTEGER,
+            cost_amount TEXT,
+            snapshot_date TEXT,
+            snapshot_period TEXT
+        )
+        "#,
+        r#"
+        CREATE TABLE ops_notification_message (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            status INTEGER NOT NULL,
+            deleted_at TEXT,
+            app_id TEXT,
+            scope_type INTEGER NOT NULL DEFAULT 1,
+            message_code TEXT,
+            message_type INTEGER,
+            title TEXT,
+            summary TEXT,
+            content TEXT,
+            severity INTEGER,
+            priority INTEGER,
+            show_as_popup INTEGER,
+            published_at TEXT,
+            expire_at TEXT,
+            created_at TEXT
+        )
+        "#,
+        r#"
+        CREATE TABLE ops_notification_recipient (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            status INTEGER NOT NULL DEFAULT 1,
+            deleted_at TEXT,
+            message_id INTEGER NOT NULL,
+            app_id TEXT,
+            recipient_type INTEGER NOT NULL,
+            recipient_value TEXT,
+            recipient_user_id INTEGER,
+            recipient_role_code TEXT
+        )
+        "#,
+        r#"
+        CREATE TABLE ops_metric_snapshot (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER,
+            organization_id INTEGER,
+            status INTEGER NOT NULL,
+            metric_name TEXT,
+            metric_value TEXT,
+            period_start TEXT
+        )
+        "#,
+    ] {
+        sqlx::query(statement).execute(pool).await.unwrap();
+    }
+}
+
+async fn seed_dashboard_notification(pool: &sqlx::SqlitePool) {
+    sqlx::query(
+        r#"
+        INSERT INTO ops_notification_message
+            (id, uuid, tenant_id, organization_id, status, app_id, scope_type, message_code, message_type, title, summary, content, severity, priority, show_as_popup, published_at, expire_at, created_at)
+        VALUES
+            (2007, 'dashboard-announcement-2007', 10, 20, 1, NULL, 2, 'announcement:2007', 1, 'Planned model upgrade', 'Planned model upgrade summary', 'Planned model upgrade content', 3, 100, 1, '2026-04-29 08:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00'),
+            (2008, 'dashboard-draft-2008', 10, 20, 0, NULL, 2, 'announcement:2008', 1, 'Draft notice', 'Draft notice summary', 'Draft notice content', 1, 100, 1, '2026-04-29 08:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00'),
+            (2009, 'dashboard-role-2009', 10, 20, 1, NULL, 2, 'announcement:2009', 1, 'Role notice', 'Role notice summary', 'Role notice content', 1, 100, 1, '2026-04-29 08:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00')
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO ops_notification_recipient
+            (id, uuid, tenant_id, organization_id, status, message_id, app_id, recipient_type, recipient_value)
+        VALUES
+            (2007, 'dashboard-announcement-recipient-2007', 10, 20, 1, 2007, NULL, 1, 'all'),
+            (2008, 'dashboard-draft-recipient-2008', 10, 20, 1, 2008, NULL, 1, 'all'),
+            (2009, 'dashboard-role-recipient-2009', 10, 20, 1, 2009, NULL, 3, 'vip')
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+}

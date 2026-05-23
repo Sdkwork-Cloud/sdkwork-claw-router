@@ -7,7 +7,5 @@ export interface InstallationStatusRetrieveResult {
   /** Data field on installation status retrieve result. */
   data?: InstallationStatusResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

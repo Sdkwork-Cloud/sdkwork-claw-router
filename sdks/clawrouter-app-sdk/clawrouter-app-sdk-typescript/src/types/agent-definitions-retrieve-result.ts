@@ -7,7 +7,5 @@ export interface AgentDefinitionsRetrieveResult {
   /** Data field on agent definitions retrieve result. */
   data?: AgentItem;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

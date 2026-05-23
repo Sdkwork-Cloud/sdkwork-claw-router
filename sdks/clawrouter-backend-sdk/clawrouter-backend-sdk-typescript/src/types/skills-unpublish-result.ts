@@ -7,7 +7,5 @@ export interface SkillsUnpublishResult {
   /** Data field on skills unpublish result. */
   data?: AdminSkillMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

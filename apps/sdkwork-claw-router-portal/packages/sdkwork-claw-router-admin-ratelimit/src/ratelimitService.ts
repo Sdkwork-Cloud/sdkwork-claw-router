@@ -1,6 +1,6 @@
-import {
+﻿import {
   createRequestToken,
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
   readApiRecord,
@@ -90,7 +90,7 @@ export type FirewallCreateInput = {
 export class RateLimitService {
   static async fetchIpLimits(): Promise<IpLimitRule[]> {
     const result = await getClawRouterBackendSdkClient().system.rateLimits.ip.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch IP limits');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch IP limits');
     return readRequiredApiItems(result, 'Failed to fetch IP limits')
       .map(normalizeIpLimit);
   }
@@ -100,13 +100,13 @@ export class RateLimitService {
       toCreateIpLimitRequest(rule),
       requestParams('admin-ip-limit-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to add IP limit');
+    ensureSdkworkApiSuccess(result, 'Failed to add IP limit');
     return normalizeIpLimit(readRequiredApiItem(result, 'Created IP limit response is missing data'));
   }
 
   static async fetchTokenLimits(): Promise<TokenLimitRule[]> {
     const result = await getClawRouterBackendSdkClient().system.rateLimits.apiKeys.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch token limits');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch token limits');
     return readRequiredApiItems(result, 'Failed to fetch token limits')
       .map(normalizeTokenLimit);
   }
@@ -116,13 +116,13 @@ export class RateLimitService {
       toCreateTokenLimitRequest(rule),
       requestParams('admin-token-limit-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to add token limit');
+    ensureSdkworkApiSuccess(result, 'Failed to add token limit');
     return normalizeTokenLimit(readRequiredApiItem(result, 'Created token limit response is missing data'));
   }
 
   static async fetchModelLimits(): Promise<ModelLimitRule[]> {
     const result = await getClawRouterBackendSdkClient().system.rateLimits.models.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch model limits');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch model limits');
     return readRequiredApiItems(result, 'Failed to fetch model limits')
       .map(normalizeModelLimit);
   }
@@ -132,13 +132,13 @@ export class RateLimitService {
       toCreateModelLimitRequest(rule),
       requestParams('admin-model-limit-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to add model limit');
+    ensureSdkworkApiSuccess(result, 'Failed to add model limit');
     return normalizeModelLimit(readRequiredApiItem(result, 'Created model limit response is missing data'));
   }
 
   static async fetchFirewalls(): Promise<FirewallRule[]> {
     const result = await getClawRouterBackendSdkClient().system.firewalls.rules.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch firewall rules');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch firewall rules');
     return readRequiredApiItems(result, 'Failed to fetch firewall rules')
       .map(normalizeFirewall);
   }
@@ -148,7 +148,7 @@ export class RateLimitService {
       toCreateFirewallRequest(rule),
       requestParams('admin-firewall-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to add firewall rule');
+    ensureSdkworkApiSuccess(result, 'Failed to add firewall rule');
     return normalizeFirewall(readRequiredApiItem(result, 'Created firewall rule response is missing data'));
   }
 
@@ -218,7 +218,7 @@ function requestParams(scope: string): { xRequestId: string } {
 }
 
 function ensureDeleteResult(result: unknown, message: string): void {
-  ensurePlusApiSuccess(result, message);
+  ensureSdkworkApiSuccess(result, message);
   if (readBoolean(readApiRecord(result), 'deleted') !== true) {
     throw new Error(message);
   }

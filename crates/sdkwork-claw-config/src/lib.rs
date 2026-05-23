@@ -3,6 +3,7 @@ pub mod app_session;
 pub mod database;
 pub mod deployment;
 pub mod payment_webhook;
+pub mod provider_adapter;
 pub mod provider_relay;
 pub mod provider_secret_map;
 pub mod redis;
@@ -19,6 +20,7 @@ pub use database::{
 };
 pub use deployment::DeploymentMode;
 pub use payment_webhook::PaymentWebhookConfig;
+pub use provider_adapter::{ProviderAdapterConfig, ProviderAdapterManifestDiscoveryConfig};
 pub use provider_relay::{
     OpenAiRelayConfig, ProviderPassthroughAuth, ProviderPassthroughAuthType,
     ProviderPassthroughHeader, ProviderRelayConfig,
@@ -31,11 +33,12 @@ pub use runtime::{
     InstallSectionConfig, ModelRankingSectionConfig, ObservabilitySectionConfig,
     PathsSectionConfig, PortalPublicSectionConfig, PortalSectionConfig,
     PortalSecuritySectionConfig, PortalStaticSectionConfig, PortalToolsSectionConfig,
-    ProviderPassthroughSectionConfig, ProviderRelayOpenAiSectionConfig,
-    ProviderRelayRetrySectionConfig, ProviderRelayRuntimeSectionConfig, ProviderRelaySectionConfig,
-    ProviderSecretMapSectionConfig, RedisSectionConfig, RequestLimitsSectionConfig, RuntimeConfig,
-    RuntimeSectionConfig, RuntimeTomlConfig, SecuritySectionConfig, ServerSectionConfig,
-    ServiceBindSectionConfig, ServicesSectionConfig, UsageSettlementSectionConfig,
+    ProviderAdapterSectionConfig, ProviderPassthroughSectionConfig,
+    ProviderRelayOpenAiSectionConfig, ProviderRelayRetrySectionConfig,
+    ProviderRelayRuntimeSectionConfig, ProviderRelaySectionConfig, ProviderSecretMapSectionConfig,
+    RedisSectionConfig, RequestLimitsSectionConfig, RuntimeConfig, RuntimeSectionConfig,
+    RuntimeTomlConfig, SecuritySectionConfig, ServerSectionConfig, ServiceBindSectionConfig,
+    ServicesSectionConfig, UsageSettlementSectionConfig,
 };
 pub use startup_install::StartupInstallMode;
 pub use trusted_subject::TrustedSubjectConfig;

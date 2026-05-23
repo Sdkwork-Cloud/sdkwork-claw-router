@@ -4,6 +4,5 @@ package types
 type ModelRankingsStatusRetrieveResult struct {
 	Code string `json:"code"`
 	Data ModelRankingRefreshStatus `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

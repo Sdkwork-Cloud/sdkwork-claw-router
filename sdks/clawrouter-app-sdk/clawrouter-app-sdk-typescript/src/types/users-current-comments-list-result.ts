@@ -7,7 +7,5 @@ export interface UsersCurrentCommentsListResult {
   /** Data field on users current comments list result. */
   data?: ForumCommentPage;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

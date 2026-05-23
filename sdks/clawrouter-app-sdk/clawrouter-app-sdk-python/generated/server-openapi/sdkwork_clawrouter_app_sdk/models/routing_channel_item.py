@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
 if TYPE_CHECKING:
+    from .provider_circuit_breaker_policy import ProviderCircuitBreakerPolicy
     from .provider_retry_policy import ProviderRetryPolicy
 
 
@@ -27,5 +28,6 @@ class RoutingChannelItem:
     status: str
     vendor: str
     weight: int
+    circuit_breaker_policy: Optional[ProviderCircuitBreakerPolicy] = None
     retry_policy: Optional[ProviderRetryPolicy] = None
     timeout_ms: Optional[int] = None

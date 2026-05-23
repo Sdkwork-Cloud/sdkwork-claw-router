@@ -1563,11 +1563,21 @@ fn normalize_like_pattern(value: Option<&str>) -> Option<String> {
 
 fn feed_order_by(feed_type: &str) -> &'static str {
     match feed_type.trim().to_ascii_lowercase().as_str() {
-        "hot" => "COALESCE(f.is_hot, 0) DESC, COALESCE(f.like_count, 0) DESC, COALESCE(f.view_count, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC",
-        "recommend" | "recommended" => "COALESCE(f.is_recommended, 0) DESC, COALESCE(f.sort_order, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC",
-        "top" | "pinned" => "COALESCE(f.is_top, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC",
-        "most_viewed" | "viewed" => "COALESCE(f.view_count, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC",
-        "most_liked" | "liked" => "COALESCE(f.like_count, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC",
+        "hot" => {
+            "COALESCE(f.is_hot, 0) DESC, COALESCE(f.like_count, 0) DESC, COALESCE(f.view_count, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC"
+        }
+        "recommend" | "recommended" => {
+            "COALESCE(f.is_recommended, 0) DESC, COALESCE(f.sort_order, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC"
+        }
+        "top" | "pinned" => {
+            "COALESCE(f.is_top, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC"
+        }
+        "most_viewed" | "viewed" => {
+            "COALESCE(f.view_count, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC"
+        }
+        "most_liked" | "liked" => {
+            "COALESCE(f.like_count, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC"
+        }
         _ => "COALESCE(f.is_top, 0) DESC, COALESCE(f.publish_time, f.created_at) DESC, f.id DESC",
     }
 }

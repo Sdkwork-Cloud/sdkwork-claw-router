@@ -305,6 +305,23 @@ test("admin user static copy is translated through i18n keys", () => {
   );
 });
 
+test("admin user table fills the available admin viewport", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-user/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "AdminTableShell",
+    "data-admin-user-table-card",
+    "data-admin-user-table-viewport",
+    "flex h-full min-h-0 w-full flex-col",
+    "sticky top-0 z-10",
+  ]) {
+    assert.match(source, new RegExp(escapeRegExp(expected)), `missing adaptive admin user table marker: ${expected}`);
+  }
+});
+
 test("admin user service reads created API key data returned by the generated backend SDK", async () => {
   await withBackendSdkResponse(
     {
@@ -328,6 +345,47 @@ test("admin user service reads created API key data returned by the generated ba
       assert.equal(result.key.id, "admin-key-1");
       assert.equal(result.rawKey, "sk-admin-secret");
     },
+  );
+});
+
+test("admin user initial table load preserves users when API key prefetch fails", async () => {
+  const users = [
+    {
+      id: 42,
+      email: "admin@example.com",
+      username: "Admin",
+      role: "admin",
+      group: "default",
+      balance: "0.00",
+      status: "active" as const,
+      lastActive: "2026-05-05T09:00:00Z",
+      lastUsed: "2026-05-05T09:00:00Z",
+      createdAt: "2026-05-05T08:00:00Z",
+    },
+  ];
+
+  const result = await UserService.loadAdminTableData({
+    fetchUsers: async () => users,
+    fetchApiKeysMap: async () => {
+      throw new Error("admin.user.errors.fetchApiKeysFallback");
+    },
+  });
+
+  assert.deepEqual(result.users, users);
+  assert.deepEqual(result.apiKeysMap, {});
+  assert.match(result.apiKeysLoadError?.message ?? "", /admin\.user\.errors\.fetchApiKeysFallback/);
+});
+
+test("admin user initial table load still fails when the users request fails", async () => {
+  await assert.rejects(
+    () =>
+      UserService.loadAdminTableData({
+        fetchUsers: async () => {
+          throw new Error("users boom");
+        },
+        fetchApiKeysMap: async () => ({}),
+      }),
+    /users boom/,
   );
 });
 

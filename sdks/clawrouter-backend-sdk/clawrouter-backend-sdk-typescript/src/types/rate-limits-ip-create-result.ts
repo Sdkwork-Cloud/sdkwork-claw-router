@@ -7,7 +7,5 @@ export interface RateLimitsIpCreateResult {
   /** Data field on rate limits ip create result. */
   data?: AdminRateLimitMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

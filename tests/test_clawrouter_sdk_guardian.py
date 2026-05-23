@@ -4,6 +4,11 @@ import unittest
 from pathlib import Path
 
 from tools.clawrouter_sdk_guardian import ClawRouterSdkGuardian
+from tools.clawrouter_sdk_runtime_standardizer import (
+    sdk_derived_specs,
+    sdk_generation_input_path_symbol,
+    sdk_generation_input_spec,
+)
 
 
 class ClawRouterSdkGuardianTest(unittest.TestCase):
@@ -30,7 +35,8 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
                 {
                     "workspace": sdk_dir,
                     "authoritySpec": f"openapi/{sdk_dir}.openapi.json",
-                    "derivedSpec": f"openapi/{sdk_dir}.sdkgen.json",
+                    "generationInputSpec": sdk_generation_input_spec(sdk_dir),
+                    "derivedSpecs": sdk_derived_specs(sdk_dir),
                     "languages": [
                         {
                             "language": "typescript",
@@ -73,13 +79,24 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
             '{"openapi":"3.0.3","info":{"title":"fixture","version":"0.1.0"},"paths":{}}\n',
             encoding="utf-8",
         )
+        strict_input_path = sdk_generation_input_path_symbol(sdk_dir)
+        sdkgen_input_path_line = (
+            "const sdkgenInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.sdkgen.json`;\n"
+            if sdk_dir == "clawrouter-open-sdk"
+            else ""
+        )
         (family / "bin" / "generate-sdk.mjs").write_text(
             "const OFFICIAL_LANGUAGES = ['typescript', 'flutter', 'rust', 'java', 'csharp', 'swift', 'kotlin', 'go', 'python'];\n"
-            "const sdkFamily = 'fixture';\n"
+            f"const sdkFamily = '{sdk_dir}';\n"
             "const authorityInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.openapi.json`;\n"
-            "const sdkgenInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.sdkgen.json`;\n"
+            f"{sdkgen_input_path_line}"
+            "function strictTypeScriptArgs() {\n"
+            f"  return ['-i', {strict_input_path}];\n"
+            "}\n"
+            "function generatorArgs() {\n"
+            f"  return ['-i', {strict_input_path}];\n"
+            "}\n"
             "console.log('--language');\n"
-            "console.log(\"'-i', sdkgenInputPath\");\n"
             "console.log('sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi');\n",
             encoding="utf-8",
         )
@@ -227,6 +244,7 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
                     "dependencies": {
                         "@sdkwork/clawrouter-app-sdk": "workspace:*",
                         "@sdkwork/clawrouter-backend-sdk": "workspace:*",
+                        "@sdkwork/clawrouter-open-sdk": "workspace:*",
                     }
                 }
             )
@@ -239,6 +257,7 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
                     "dependencies": {
                         "@sdkwork/clawrouter-app-sdk": "workspace:*",
                         "@sdkwork/clawrouter-backend-sdk": "workspace:*",
+                        "@sdkwork/clawrouter-open-sdk": "workspace:*",
                     }
                 }
             )
@@ -250,8 +269,10 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
         (commons / "src" / "sdk-clients.ts").write_text(
             "import { SdkworkAppClient } from '@sdkwork/clawrouter-app-sdk';\n"
             "import { SdkworkBackendClient } from '@sdkwork/clawrouter-backend-sdk';\n"
+            "import { SdkworkAiClient } from '@sdkwork/clawrouter-open-sdk';\n"
             "export function createClawRouterAppSdkClient() { return new SdkworkAppClient({ baseUrl: '' }); }\n"
-            "export function createClawRouterBackendSdkClient() { return new SdkworkBackendClient({ baseUrl: '' }); }\n",
+            "export function createClawRouterBackendSdkClient() { return new SdkworkBackendClient({ baseUrl: '' }); }\n"
+            "export function createClawRouterAiSdkClient() { return new SdkworkAiClient({ baseUrl: '' }); }\n",
             encoding="utf-8",
         )
 
@@ -411,7 +432,40 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
                 result.messages,
             )
 
-    def test_reports_sdk_family_generator_that_bypasses_family_sdkgen_contract(self) -> None:
+    def test_reports_sdk_family_legacy_single_derived_spec_field(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(
+                root,
+                "clawrouter-app-sdk",
+                "@sdkwork/clawrouter-app-sdk",
+                "app",
+                "SdkworkAppClient",
+                "/app/v3/api",
+            )
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            self.write_portal_sdk_boundary(root)
+            assembly_path = root / "sdks" / "clawrouter-app-sdk" / ".sdkwork-assembly.json"
+            assembly = json.loads(assembly_path.read_text(encoding="utf-8"))
+            assembly["derivedSpec"] = "openapi/clawrouter-app-sdk.sdkgen.json"
+            assembly_path.write_text(json.dumps(assembly) + "\n", encoding="utf-8")
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "clawrouter-app-sdk .sdkwork-assembly.json must not declare legacy derivedSpec; use derivedSpecs",
+                result.messages,
+            )
+
+    def test_reports_sdk_family_generator_that_bypasses_authority_openapi_contract(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_sdk(
@@ -433,6 +487,15 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
             self.write_portal_sdk_boundary(root)
             (root / "sdks" / "clawrouter-app-sdk" / "bin" / "generate-sdk.mjs").write_text(
                 "const OFFICIAL_LANGUAGES = ['typescript', 'flutter', 'rust', 'java', 'csharp', 'swift', 'kotlin', 'go', 'python'];\n"
+                "const sdkFamily = 'clawrouter-app-sdk';\n"
+                "const authorityInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.openapi.json`;\n"
+                "const sdkgenInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.sdkgen.json`;\n"
+                "function strictTypeScriptArgs() {\n"
+                "  return ['-i', sdkgenInputPath];\n"
+                "}\n"
+                "function generatorArgs() {\n"
+                "  return ['-i', sdkgenInputPath];\n"
+                "}\n"
                 "console.log('--language');\n"
                 "console.log('generated/openapi/clawrouter-app-openapi.json');\n"
                 "console.log('sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi');\n",
@@ -443,7 +506,254 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "clawrouter-app-sdk bin/generate-sdk.mjs must generate from openapi/${sdkFamily}.sdkgen.json",
+                "clawrouter-app-sdk bin/generate-sdk.mjs strictTypeScriptArgs() must generate from openapi/${sdkFamily}.openapi.json",
+                result.messages,
+            )
+
+    def test_reports_sdk_family_generator_that_mixes_authority_and_derived_inputs(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(
+                root,
+                "clawrouter-app-sdk",
+                "@sdkwork/clawrouter-app-sdk",
+                "app",
+                "SdkworkAppClient",
+                "/app/v3/api",
+            )
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            self.write_portal_sdk_boundary(root)
+            (root / "sdks" / "clawrouter-app-sdk" / "bin" / "generate-sdk.mjs").write_text(
+                "const OFFICIAL_LANGUAGES = ['typescript', 'flutter', 'rust', 'java', 'csharp', 'swift', 'kotlin', 'go', 'python'];\n"
+                "const sdkFamily = 'clawrouter-app-sdk';\n"
+                "const authorityInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.openapi.json`;\n"
+                "const sdkgenInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.sdkgen.json`;\n"
+                "function strictTypeScriptArgs() {\n"
+                "  return ['-i', authorityInputPath, '-i', sdkgenInputPath];\n"
+                "}\n"
+                "function generatorArgs() {\n"
+                "  return ['-i', authorityInputPath, '-i', sdkgenInputPath];\n"
+                "}\n"
+                "console.log('--language');\n"
+                "console.log('sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi');\n",
+                encoding="utf-8",
+            )
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "clawrouter-app-sdk bin/generate-sdk.mjs strictTypeScriptArgs() must not generate from openapi/${sdkFamily}.sdkgen.json",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-app-sdk bin/generate-sdk.mjs generatorArgs(language) must not generate from openapi/${sdkFamily}.sdkgen.json",
+                result.messages,
+            )
+
+    def test_reports_app_backend_generator_that_declares_unused_sdkgen_input_path(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(
+                root,
+                "clawrouter-app-sdk",
+                "@sdkwork/clawrouter-app-sdk",
+                "app",
+                "SdkworkAppClient",
+                "/app/v3/api",
+            )
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            self.write_portal_sdk_boundary(root)
+            script_path = root / "sdks" / "clawrouter-app-sdk" / "bin" / "generate-sdk.mjs"
+            script_path.write_text(
+                script_path.read_text(encoding="utf-8")
+                + "const sdkgenInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.sdkgen.json`;\n",
+                encoding="utf-8",
+            )
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "clawrouter-app-sdk bin/generate-sdk.mjs must not declare sdkgenInputPath because generation uses the authority OpenAPI",
+                result.messages,
+            )
+
+    def test_reports_open_sdk_generator_that_omits_sdkgen_input_path(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(
+                root,
+                "clawrouter-app-sdk",
+                "@sdkwork/clawrouter-app-sdk",
+                "app",
+                "SdkworkAppClient",
+                "/app/v3/api",
+            )
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            self.write_portal_sdk_boundary(root)
+            script_path = root / "sdks" / "clawrouter-open-sdk" / "bin" / "generate-sdk.mjs"
+            script_path.write_text(
+                script_path.read_text(encoding="utf-8").replace(
+                    "const sdkgenInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.sdkgen.json`;\n",
+                    "",
+                ),
+                encoding="utf-8",
+            )
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "clawrouter-open-sdk bin/generate-sdk.mjs must declare sdkgenInputPath because generation uses the derived sdkgen contract",
+                result.messages,
+            )
+
+    def test_reports_authority_input_path_that_points_to_sdkgen_contract(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(
+                root,
+                "clawrouter-app-sdk",
+                "@sdkwork/clawrouter-app-sdk",
+                "app",
+                "SdkworkAppClient",
+                "/app/v3/api",
+            )
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            self.write_portal_sdk_boundary(root)
+            script_path = root / "sdks" / "clawrouter-app-sdk" / "bin" / "generate-sdk.mjs"
+            script_path.write_text(
+                script_path.read_text(encoding="utf-8").replace(
+                    "const authorityInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.openapi.json`;",
+                    "const authorityInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.sdkgen.json`;",
+                ),
+                encoding="utf-8",
+            )
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "clawrouter-app-sdk bin/generate-sdk.mjs authorityInputPath must point to openapi/${sdkFamily}.openapi.json",
+                result.messages,
+            )
+
+    def test_reports_open_sdk_sdkgen_input_path_that_points_to_authority_contract(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(
+                root,
+                "clawrouter-app-sdk",
+                "@sdkwork/clawrouter-app-sdk",
+                "app",
+                "SdkworkAppClient",
+                "/app/v3/api",
+            )
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            self.write_portal_sdk_boundary(root)
+            script_path = root / "sdks" / "clawrouter-open-sdk" / "bin" / "generate-sdk.mjs"
+            script_path.write_text(
+                script_path.read_text(encoding="utf-8").replace(
+                    "const sdkgenInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.sdkgen.json`;",
+                    "const sdkgenInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.openapi.json`;",
+                ),
+                encoding="utf-8",
+            )
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "clawrouter-open-sdk bin/generate-sdk.mjs sdkgenInputPath must point to openapi/${sdkFamily}.sdkgen.json",
+                result.messages,
+            )
+
+    def test_reports_sdk_family_openapi_when_it_is_not_synchronized_with_generated_openapi(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(
+                root,
+                "clawrouter-app-sdk",
+                "@sdkwork/clawrouter-app-sdk",
+                "app",
+                "SdkworkAppClient",
+                "/app/v3/api",
+            )
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            self.write_portal_sdk_boundary(root)
+            generated_openapi = root / "generated" / "openapi"
+            generated_openapi.mkdir(parents=True, exist_ok=True)
+            (generated_openapi / "clawrouter-app-openapi.json").write_text(
+                '{"openapi":"3.1.2","info":{"title":"generated-app","version":"0.1.0"},"paths":{}}\n',
+                encoding="utf-8",
+            )
+            (generated_openapi / "clawrouter-backend-openapi.json").write_text(
+                '{"openapi":"3.1.2","info":{"title":"generated-backend","version":"0.1.0"},"paths":{}}\n',
+                encoding="utf-8",
+            )
+            app_family_openapi = root / "sdks" / "clawrouter-app-sdk" / "openapi" / "clawrouter-app-sdk.openapi.json"
+            backend_family_openapi = root / "sdks" / "clawrouter-backend-sdk" / "openapi" / "clawrouter-backend-sdk.openapi.json"
+            app_family_openapi.write_text(
+                '{"openapi":"3.1.2","info":{"title":"stale-app","version":"0.1.0"},"paths":{}}\n',
+                encoding="utf-8",
+            )
+            backend_family_openapi.write_text(
+                '{"openapi":"3.1.2","info":{"title":"stale-backend","version":"0.1.0"},"paths":{}}\n',
+                encoding="utf-8",
+            )
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "clawrouter-app-sdk openapi/clawrouter-app-sdk.openapi.json must stay synchronized with generated/openapi/clawrouter-app-openapi.json",
+                result.messages,
+            )
+            self.assertIn(
+                "clawrouter-backend-sdk openapi/clawrouter-backend-sdk.openapi.json must stay synchronized with generated/openapi/clawrouter-backend-openapi.json",
                 result.messages,
             )
 
@@ -980,7 +1290,9 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn("portal package.json must depend on @sdkwork/clawrouter-app-sdk", result.messages)
+            self.assertIn("portal package.json must depend on @sdkwork/clawrouter-open-sdk", result.messages)
             self.assertIn("portal commons package.json must depend on @sdkwork/clawrouter-backend-sdk", result.messages)
+            self.assertIn("portal commons package.json must depend on @sdkwork/clawrouter-open-sdk", result.messages)
             self.assertIn("portal SDK boundary is missing: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sdk-clients.ts", result.messages)
 
     def test_reports_portal_runtime_missing_sdk_client_export(self) -> None:

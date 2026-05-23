@@ -3,13 +3,13 @@ use serde::{Deserialize, Serialize};
 /// Commerce usage settlement record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct CommerceUsageSettlementRecord {
-    /// Account history id field on commerce usage settlement record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub account_history_id: Option<String>,
-
     /// Account id field on commerce usage settlement record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub account_id: Option<String>,
+
+    /// Account ledger entry id field on commerce usage settlement record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub account_ledger_entry_id: Option<String>,
 
     /// Amount field on commerce usage settlement record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

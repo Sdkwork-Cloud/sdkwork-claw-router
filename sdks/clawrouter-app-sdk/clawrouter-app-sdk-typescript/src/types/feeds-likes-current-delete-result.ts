@@ -7,7 +7,5 @@ export interface FeedsLikesCurrentDeleteResult {
   /** Data field on feeds likes current delete result. */
   data?: ForumFeedItem;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

@@ -7,7 +7,5 @@ export interface RateLimitsIpListResult {
   /** Data field on rate limits ip list result. */
   data?: AdminIpLimitsResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

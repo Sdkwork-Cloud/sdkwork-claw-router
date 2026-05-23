@@ -4,6 +4,5 @@ package types
 type AccessGroupsDeleteResult struct {
 	Code string `json:"code"`
 	Data AdminDeleteResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

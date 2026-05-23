@@ -7,7 +7,5 @@ export interface SkillsPackageCreateResult {
   /** Data field on skills package create result. */
   data?: AdminSkillPackageMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

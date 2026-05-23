@@ -59,6 +59,18 @@ From a source checkout, inspect the full matrix:
 node scripts/plan-claw-router-install-packages.mjs --json
 ```
 
+Build a Linux x64 service release from a source checkout:
+
+```bash
+pnpm release:env:write -- --check
+pnpm release:env:write -- --force
+pnpm build
+pnpm install:package:build -- --package-id linux-x64-service
+```
+
+The resulting Ubuntu/Debian package uses the public asset name
+`clawrouter-linux-x64-server-0.3.0.deb`.
+
 ## 2. Fast Install Recipes
 
 ### Ubuntu/Debian Service
@@ -384,11 +396,11 @@ macOS: ~/Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite
 
 `archive`, `service`, and `container` packages use PostgreSQL by default. Configure PostgreSQL with structured TOML fields: `host`, `port`, `database`, `username`, and either `password_file` or `password`. Keep `password_file` as the normal production path. Use direct `password` only when `clawrouter.toml` is protected as a secret-bearing file.
 
-Redis is part of the same runtime TOML standard, but it is optional and disabled by default:
+Redis is part of the same runtime TOML standard. It is enabled and required by default for `archive`, `service`, and `container` server packages:
 
 ```toml
 [redis]
-enabled = false
+enabled = true
 host = "redis.example.com"
 port = 6379
 database = 0
@@ -404,7 +416,7 @@ command_timeout_millis = 1000
 pool_idle_timeout_seconds = 60
 ```
 
-Leave `[redis].enabled = false` unless the deployment needs shared cache, distributed locks, queues, or rate-limit buckets. When Redis is enabled, set `host`, `port`, and `database`; use `url` only as an advanced override for managed Redis endpoints. Prefer `password_file` over direct `password`. Linux service installs use `/etc/clawrouter/redis.secret`; container packages mount `/run/secrets/clawrouter-redis-password`.
+Keep `[redis].enabled = true` for server deployments and set `host`, `port`, and `database` before first startup; use `url` only as an advanced override for managed Redis endpoints. Prefer `password_file` over direct `password`. Linux service installs use `/etc/clawrouter/redis.secret`; container packages mount `/run/secrets/clawrouter-redis-password`. Desktop packages keep Redis optional and disabled by default.
 
 `[edge]` owns the packaged Rust edge server, upstream service targets, portal static root, upstream timeouts, and the extra CORS origin allowlist. Leave `cors_allowed_origins` empty for same-origin packages; use explicit HTTP/HTTPS origins only when an external trusted portal or CDN must call the edge API from a different browser origin. Wildcards and origins with paths are rejected. `[portal.static]` separates no-store HTML/runtime environment responses from long-lived hashed assets. `[portal.security]` controls browser-facing security policy. Keep HSTS disabled until the public hostname is served through HTTPS; HSTS preload requires `hsts_max_age_seconds >= 31536000` and `hsts_include_subdomains = true`. Add only explicit trusted HTTP/HTTPS origins to `csp_frame_src` for embedded players or other framed content. `[portal.tools]` keeps the optional tool API body limit and rate limit in TOML. `[provider_relay.runtime]` controls global OpenAI-compatible upstream response timeouts, channel health-check timeouts, background route catalog refresh, circuit-breaker recovery probes, and runtime failure handling. `failure_strategy = "failover"` tries the next configured route candidate for retryable provider faults; `fail_closed` returns the first provider fault without trying later candidates. `[provider_relay.retry]` is the default retry policy when a database routing channel does not define one. `[courses]` controls local course video upload size; keep reverse proxy, container ingress, and load balancer request-body limits at or above `video_upload_body_limit_bytes`. `[request_limits]` controls admin app JSON, admin skill JSON, public forum JSON, and payment callback body limits; keep load balancer, reverse proxy, and container ingress limits aligned with these values. `[observability]` owns production logging defaults: `log_filter` sets the tracing filter, `log_format` is one of `compact`, `json`, `pretty`, or `full`, `log_ansi` should stay `false` for systemd and container logs, and the target/thread fields control emitted log metadata. Use `RUST_LOG` only as a temporary process-level override.
 
@@ -495,6 +507,37 @@ curl http://127.0.0.1:3900/readyz
 
 `/healthz` confirms the edge process is running. `/readyz` confirms database-backed app/admin/gateway readiness.
 
+### Nginx Reverse Proxy
+
+Production nginx site files follow the SDKWork site-family convention:
+
+```text
+/etc/nginx/sites-enabled/sdkwork/<domain>.conf
+```
+
+The `<domain>` value is the full public host name and must also be the file name stem. For example, `api.sdkwork.com` deploys to `/etc/nginx/sites-enabled/sdkwork/api.sdkwork.com.conf`, and `www.sdkwork.com` deploys to `/etc/nginx/sites-enabled/sdkwork/www.sdkwork.com.conf`.
+
+After the service passes local health checks, render or deploy nginx from the source checkout:
+
+```bash
+pnpm nginx:plan -- --domain api.sdkwork.com
+pnpm nginx:render -- --domain api.sdkwork.com --output-root target/nginx
+sudo pnpm nginx:deploy -- --domain api.sdkwork.com --cert-name sdkwork.com
+sudo nginx -t
+sudo systemctl reload nginx
+curl https://api.sdkwork.com/healthz
+curl https://api.sdkwork.com/readyz
+```
+
+Generated configs proxy to the release edge server at `http://127.0.0.1:3900` and use standardized certificate paths:
+
+```text
+/opt/certs/letsencrypt/live/sdkwork.com/fullchain.pem
+/opt/certs/letsencrypt/live/sdkwork.com/privkey.pem
+```
+
+Use `--cert-name`, `--cert-root`, `--output`, or `--output-root` when your certificate or nginx installation uses a different layout. The repository keeps the canonical nginx template in `etc/nginx/NGINX_SAMPLE.conf` and full-domain examples in `etc/nginx/sdkwork/api.sdkwork.com.conf` and `etc/nginx/sdkwork/www.sdkwork.com.conf`; `etc/nginx/API_SAMPLE.conf` remains only as the older API-compatible sample.
+
 ## 7. Container Packages
 
 `container` packages include:
@@ -535,5 +578,6 @@ Service and container deployments must mount runtime configuration, logs, and mu
 - `invalid_state`: current installation state cannot satisfy the requested command.
 - `database_error`: database is unreachable, permissions are missing, or schema initialization failed.
 - `catalog_error`: model catalog path, version, or content validation failed.
+- `commerce_error`: commerce bootstrap schema or seed initialization failed.
 - `/healthz` succeeds but `/readyz` fails: the edge process is up, but gateway/admin/app/portal upstreams or database dependencies are not ready.
 - Linux service exits immediately: check `/etc/clawrouter/clawrouter.toml`, `/etc/clawrouter/database.secret`, `/etc/clawrouter/clawrouter.env`, and `journalctl -u clawrouter`.

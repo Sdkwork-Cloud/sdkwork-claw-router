@@ -1,5 +1,5 @@
 import {
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
   optionalBoundedPositiveInteger,
@@ -67,14 +67,14 @@ export interface AdminAgentListQuery {
   pageSize?: number;
 }
 
-type BackendAgentsSdk = ReturnType<typeof getClawRouterBackendSdkClient>['agents']['agentDefinitions'];
-type BackendAgentsListParams = NonNullable<Parameters<BackendAgentsSdk['list']>[0]>;
+type BackendAgents = ReturnType<typeof getClawRouterBackendSdkClient>['agents'];
+type BackendAgentsListParams = NonNullable<Parameters<BackendAgents['agentDefinitions']['list']>[0]>;
 
 export class AdminAgentService {
   static async listAgents(query: AdminAgentListQuery = {}): Promise<AdminAgentItem[]> {
     try {
-      const result = await backendAgentsSdk().list(normalizeListQuery(query));
-      ensurePlusApiSuccess(result, 'Failed to load agent list');
+      const result = await backendAgentsSdk().agentDefinitions.list(normalizeListQuery(query));
+      ensureSdkworkApiSuccess(result, 'Failed to load agent list');
       return readRequiredApiItems(result, 'Agent list response is missing data').map(normalizeAdminAgentItem);
     } catch (error) {
       throw new Error(readSdkErrorMessage(error, 'Failed to load agent list'));
@@ -83,8 +83,8 @@ export class AdminAgentService {
 
   static async retrieveAgent(agentId: string): Promise<AdminAgentItem> {
     try {
-      const result = await backendAgentsSdk().retrieve(requiredAgentId(agentId));
-      ensurePlusApiSuccess(result, 'Failed to load agent details');
+      const result = await backendAgentsSdk().agentDefinitions.retrieve(requiredAgentId(agentId));
+      ensureSdkworkApiSuccess(result, 'Failed to load agent details');
       return normalizeAdminAgentItem(readRequiredApiItem(result, 'Agent details response is missing data'));
     } catch (error) {
       throw new Error(readSdkErrorMessage(error, 'Failed to load agent details'));
@@ -92,8 +92,8 @@ export class AdminAgentService {
   }
 }
 
-function backendAgentsSdk(): BackendAgentsSdk {
-  return getClawRouterBackendSdkClient().agents.agentDefinitions;
+function backendAgentsSdk(): BackendAgents {
+  return getClawRouterBackendSdkClient().agents;
 }
 
 function normalizeListQuery(query: AdminAgentListQuery): BackendAgentsListParams {

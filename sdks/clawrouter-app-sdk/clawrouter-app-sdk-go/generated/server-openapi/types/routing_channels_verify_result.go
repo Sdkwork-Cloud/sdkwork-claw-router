@@ -4,6 +4,5 @@ package types
 type RoutingChannelsVerifyResult struct {
 	Code string `json:"code"`
 	Data RoutingChannelTestResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

@@ -6,6 +6,7 @@ type AppApiKeyItem struct {
 	Created string `json:"created"`
 	Expires string `json:"expires"`
 	Group string `json:"group"`
+	GroupName string `json:"groupName"`
 	Id string `json:"id"`
 	IpLimit string `json:"ipLimit"`
 	MaskedKey string `json:"maskedKey"`

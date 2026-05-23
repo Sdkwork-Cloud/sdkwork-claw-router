@@ -43,7 +43,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public Dictionary<string, string>? PerformanceProfile { get; set; }
         public string? ProviderHint { get; set; }
         public string? RankScore { get; set; }
-        public string? RegionCode { get; set; }
         public string? ReleaseStage { get; set; }
         public string? ReplacementModel { get; set; }
         public string? RetiredAt { get; set; }

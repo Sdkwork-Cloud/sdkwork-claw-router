@@ -7,7 +7,5 @@ export interface SessionsCurrentRetrieveResult {
   /** Data field on sessions current retrieve result. */
   data?: IamSessionResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

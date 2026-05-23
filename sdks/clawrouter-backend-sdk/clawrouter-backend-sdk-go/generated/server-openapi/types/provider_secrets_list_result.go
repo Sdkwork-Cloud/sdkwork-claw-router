@@ -4,6 +4,5 @@ package types
 type ProviderSecretsListResult struct {
 	Code string `json:"code"`
 	Data AdminProviderSecretsResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

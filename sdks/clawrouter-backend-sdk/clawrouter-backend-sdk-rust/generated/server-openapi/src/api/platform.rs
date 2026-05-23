@@ -4,7 +4,7 @@ use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AdminAppCreateRequest, AdminAppUpdateRequest, AppsCreateResult, AppsDeleteResult, AppsDisableResult, AppsEnableResult, AppsListResult, AppsPublishResult, AppsRetrieveResult, AppsUnpublishResult, AppsUpdateResult};
+use crate::models::{AdminAppCategoryCreateRequest, AdminAppCategoryUpdateRequest, AdminAppCreateRequest, AdminAppUpdateRequest, AppsCategoriesCreateResult, AppsCategoriesDeleteResult, AppsCategoriesListResult, AppsCategoriesUpdateResult, AppsCreateResult, AppsDeleteResult, AppsDisableResult, AppsEnableResult, AppsListResult, AppsPublishResult, AppsRetrieveResult, AppsUnpublishResult, AppsUpdateResult};
 
 #[derive(Clone)]
 pub struct PlatformApi {
@@ -46,6 +46,48 @@ impl PlatformApi {
             &[],
         );
         self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// List app categories
+    pub async fn apps_categories_list(&self) -> Result<AppsCategoriesListResult, SdkworkError> {
+        let path = backend_path(&"/platform/apps/categories".to_string());
+        self.client.get(&path, None, None).await
+    }
+
+    /// Create app category
+    pub async fn apps_categories_create(&self, body: &AdminAppCategoryCreateRequest, x_request_id: Option<&str>) -> Result<AppsCategoriesCreateResult, SdkworkError> {
+        let path = backend_path(&"/platform/apps/categories".to_string());
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// Delete app category
+    pub async fn apps_categories_delete(&self, category_id: &str, x_request_id: Option<&str>) -> Result<AppsCategoriesDeleteResult, SdkworkError> {
+        let path = backend_path(&format!("/platform/apps/categories/{}", serialize_path_parameter(category_id, PathParameterSpec::new("categoryId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.delete(&path, None, headers.as_ref()).await
+    }
+
+    /// Update app category
+    pub async fn apps_categories_update(&self, category_id: &str, body: &AdminAppCategoryUpdateRequest, x_request_id: Option<&str>) -> Result<AppsCategoriesUpdateResult, SdkworkError> {
+        let path = backend_path(&format!("/platform/apps/categories/{}", serialize_path_parameter(category_id, PathParameterSpec::new("categoryId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
     /// Delete app

@@ -2,22 +2,30 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .admin_ai_model_region_price import AdminAiModelRegionPrice
+
 
 @dataclass
 class AdminAiModelUpdateRequest:
     """Admin ai model update request schema exposed by Claw Router."""
     api_format: Optional[str] = None
+    cache_read_price: Optional[str] = None
+    cache_write_price: Optional[str] = None
     capability_intro: Optional[str] = None
     context_tokens: Optional[str] = None
     description: Optional[str] = None
+    display_name: Optional[str] = None
     input_modalities: Optional[List[str]] = None
     limitations: Optional[List[str]] = None
     max_output_tokens: Optional[int] = None
     modalities: Optional[List[str]] = None
+    model: Optional[str] = None
     name: Optional[str] = None
     output_modalities: Optional[List[str]] = None
     price_in: Optional[str] = None
     price_out: Optional[str] = None
+    region_prices: Optional[List[AdminAiModelRegionPrice]] = None
     release_stage: Optional[int] = None
     replacement_model: Optional[str] = None
     routing_state: Optional[int] = None

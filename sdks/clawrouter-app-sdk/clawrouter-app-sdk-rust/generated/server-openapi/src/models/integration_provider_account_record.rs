@@ -19,6 +19,10 @@ pub struct IntegrationProviderAccountRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub auth_type: Option<String>,
 
+    /// Base url field on integration provider account record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub base_url: Option<String>,
+
     /// Consecutive error count field on integration provider account record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub consecutive_error_count: Option<String>,

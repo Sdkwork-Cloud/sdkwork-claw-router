@@ -1,0 +1,434 @@
+fragment: operations/backend-commerce-inventory
+frontend_operations:
+- route: /admin/inventory
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/inventoryService.ts
+  operation: listInventoryStocks
+  operation_id: inventory.stocks.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/inventory/stocks
+  sdk_domain: commerce
+  summary: List inventory stock records
+  description: Returns stock by SKU and warehouse with available, reserved, sold, and optimistic version fields.
+  read_sources:
+  - commerce_inventory_stock
+  - commerce_product_sku
+  query_parameters:
+  - name: sku_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: warehouse_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  response_schema:
+    name: CommerceInventoryStockListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items: &id001
+          name: CommerceInventoryStockItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - skuId
+          - availableQuantity
+          - reservedQuantity
+          - soldQuantity
+          - version
+          - status
+          - createdAt
+          - updatedAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            skuId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            warehouseId:
+              type: string
+              nullable: true
+              maxLength: 128
+            availableQuantity:
+              type: integer
+              format: int64
+              minimum: 0
+            reservedQuantity:
+              type: integer
+              format: int64
+              minimum: 0
+            soldQuantity:
+              type: integer
+              format: int64
+              minimum: 0
+            version:
+              type: integer
+              format: int64
+              minimum: 0
+            status:
+              type: string
+              enum:
+              - active
+              - inactive
+              - locked
+            createdAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+            updatedAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200
+- route: /admin/inventory
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/inventoryService.ts
+  operation: updateInventoryStock
+  operation_id: inventory.stocks.update
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/inventory/stocks/{stockId}
+  sdk_domain: commerce
+  summary: Update inventory stock
+  description: Updates one stock record using optimistic version control and writes inventory ledger evidence.
+  request_id_header: true
+  idempotency_required: true
+  read_sources:
+  - commerce_inventory_stock
+  - commerce_product_sku
+  write_tables:
+  - commerce_inventory_stock
+  - commerce_inventory_ledger
+  - ops_audit_log
+  request_schema:
+    name: CommerceInventoryStockUpdateRequest
+    type: object
+    additionalProperties: false
+    required:
+    - version
+    properties:
+      availableQuantity:
+        type: integer
+        format: int64
+        minimum: 0
+      reservedQuantity:
+        type: integer
+        format: int64
+        minimum: 0
+      status:
+        type: string
+        enum:
+        - active
+        - inactive
+        - locked
+      version:
+        type: integer
+        format: int64
+        minimum: 0
+      reasonCode:
+        type: string
+        nullable: true
+        maxLength: 128
+  response_schema:
+    name: CommerceInventoryStockMutationResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    properties:
+      item: *id001
+- route: /admin/inventory
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/inventoryService.ts
+  operation: listInventoryReservations
+  operation_id: inventory.reservations.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/inventory/reservations
+  sdk_domain: commerce
+  summary: List inventory reservations
+  description: Returns checkout and order stock reservations with reservation lifecycle status.
+  read_sources:
+  - commerce_inventory_reservation
+  - commerce_inventory_stock
+  - commerce_product_sku
+  - commerce_checkout_session
+  - commerce_order
+  query_parameters:
+  - name: sku_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: order_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: checkout_session_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  response_schema:
+    name: CommerceInventoryReservationListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items:
+          name: CommerceInventoryReservationItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - reservationNo
+          - skuId
+          - quantity
+          - status
+          - expiresAt
+          - createdAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            reservationNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            checkoutSessionId:
+              type: string
+              nullable: true
+              maxLength: 128
+            orderId:
+              type: string
+              nullable: true
+              maxLength: 128
+            skuId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            quantity:
+              type: integer
+              format: int64
+              minimum: 1
+            status:
+              type: string
+              enum:
+              - reserved
+              - confirmed
+              - released
+              - expired
+              - deducted
+            expiresAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+            createdAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200
+- route: /admin/inventory
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/inventoryService.ts
+  operation: listInventoryLedgerEntries
+  operation_id: inventory.ledgerEntries.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/inventory/ledger_entries
+  sdk_domain: commerce
+  summary: List inventory ledger entries
+  description: Returns immutable stock movement ledger entries for audit, reconciliation, and operational traceability.
+  read_sources:
+  - commerce_inventory_ledger
+  - commerce_inventory_stock
+  - commerce_product_sku
+  query_parameters:
+  - name: sku_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: warehouse_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: source_type
+    schema:
+      type: string
+      maxLength: 128
+  - name: source_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  response_schema:
+    name: CommerceInventoryLedgerListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items:
+          name: CommerceInventoryLedgerItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - movementNo
+          - skuId
+          - direction
+          - quantity
+          - balanceAfter
+          - businessType
+          - sourceType
+          - sourceId
+          - createdAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            movementNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            skuId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            warehouseId:
+              type: string
+              nullable: true
+              maxLength: 128
+            direction:
+              type: string
+              enum:
+              - in
+              - out
+              - reserve
+              - release
+              - deduct
+            quantity:
+              type: integer
+              format: int64
+              minimum: 1
+            balanceAfter:
+              type: integer
+              format: int64
+              minimum: 0
+            businessType:
+              type: string
+              minLength: 1
+              maxLength: 128
+            sourceType:
+              type: string
+              minLength: 1
+              maxLength: 128
+            sourceId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            createdAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200

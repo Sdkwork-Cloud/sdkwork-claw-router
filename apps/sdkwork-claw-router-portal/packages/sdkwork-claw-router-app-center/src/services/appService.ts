@@ -4,7 +4,7 @@ import type {
   AppDetailResponse as SdkAppDetailResponse,
 } from '@sdkwork/clawrouter-app-sdk';
 import {
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
   optionalBoundedPositiveInteger,
@@ -58,7 +58,7 @@ export const appService = {
   async getApps(filters?: AppFilters): Promise<App[]> {
     const query = toAppCatalogQueryParams(filters);
     const result = await getClawRouterAppSdkClient().platform.apps.store.list(query);
-    ensurePlusApiSuccess(result, 'Failed to fetch apps');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch apps');
     const items: SdkAppCatalogResponse['items'] = readRequiredApiItems(
       result,
       'Failed to fetch apps',
@@ -79,7 +79,7 @@ export const appService = {
     if (result === null || result === undefined) {
       return undefined;
     }
-    ensurePlusApiSuccess(result, 'Failed to fetch app details');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch app details');
     if (readApiData(result) === null || readApiData(result) === undefined) {
       return undefined;
     }
@@ -89,7 +89,7 @@ export const appService = {
 
   async getCategories(): Promise<string[]> {
     const result = await getClawRouterAppSdkClient().platform.apps.store.categories.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch app categories');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch app categories');
     const items: SdkAppCategoriesResponse['items'] = readRequiredApiItems(
       result,
       'Failed to fetch app categories',

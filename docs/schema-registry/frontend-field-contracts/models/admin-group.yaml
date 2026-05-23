@@ -1,0 +1,48 @@
+fragment: models/admin-group
+frontend_models:
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  interface: GroupData
+  fields:
+  - id
+  - name
+  - platform
+  - billingType
+  - rateMultiplier
+  - type
+  - accountCount
+  - capacity
+  - usage
+  - status
+  data_sources:
+  - iam_gateway_api_key_group
+  - iam_gateway_api_key_group_metric_snapshot
+  - ai_pricing_plan
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  interface: GroupCreateInput
+  fields:
+  - name
+  - platform
+  - billingType
+  - rateMultiplier
+  - type
+  - capacity
+  - status
+  data_sources:
+  - iam_gateway_api_key_group
+  - ai_pricing_plan
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  interface: GroupUpdateInput
+  fields:
+  - name
+  - platform
+  - billingType
+  - rateMultiplier
+  - type
+  - capacity
+  - status
+  data_sources:
+  - iam_gateway_api_key_group
+  - ai_pricing_plan

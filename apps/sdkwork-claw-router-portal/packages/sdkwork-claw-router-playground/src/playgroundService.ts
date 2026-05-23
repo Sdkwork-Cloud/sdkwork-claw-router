@@ -1,37 +1,32 @@
 import {
-  ensurePlusApiSuccess,
-  getClawRouterAppSdkClient,
+  ensureSdkworkApiSuccess,
   getStoredAppSessionAuthToken,
   hasStoredPortalSession,
   isRecord,
-  readApiRecord,
   readBoolean,
   readNullableString,
   readNumber,
-  readRequiredNonNegativeNumber,
   readRequiredApiItems,
   readRequiredString,
   readStringArray,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
+import {
+  createSdkworkGenerationService,
+  type SdkworkGenerationRun,
+  type SdkworkGenerationStatus,
+  type SdkworkGenerationWorkspaceData,
+} from '@sdkwork/generation-pc-react/generation-service';
+import {
+  listGenerationHistory,
+  listModelCatalog,
+} from './appRuntimeApiOperations.ts';
 import { mapGenerationHistoryItems } from './historyMapper.ts';
+import { runPlaygroundGeneration } from './playgroundGenerationService.ts';
 export type { PlaygroundHistoryItem, PlaygroundMedia, PlaygroundModelGroup, PlaygroundModelOption } from './playgroundTypes.ts';
-import type * as SdkworkGeneration from '@sdkwork/generation-pc-react';
 import type {
   GenerationAgentRunCreateInput,
   GenerationAgentRunCreateResult,
-  GenerationAgentMeteringEvent,
-  GenerationAgentMeteringEventType,
-  GenerationAgentRunSnapshot,
-  GenerationAgentRunStatus,
-  GenerationAgentRunStepSnapshot,
-  GenerationAgentSnapshot,
-  GenerationAgentStepStatus,
-  GenerationAgentStepType,
-  GenerationAgentUsageFactMetadata,
-  GenerationAgentUsageSummary,
-  PlaygroundGenerationRunStatus,
-  PlaygroundGenerationTargetType,
   PlaygroundHistoryItem,
   PlaygroundModelBucket,
   PlaygroundModelGroup,
@@ -39,64 +34,22 @@ import type {
   PlaygroundModelPriceAvailability,
   PlaygroundModelReferencePrice,
 } from './playgroundTypes.ts';
-
 const MODEL_BUCKETS: PlaygroundModelBucket[] = ['llms', 'images', 'videos', 'audios', 'music', 'sfx'];
 const UNKNOWN_MODEL_LABEL = 'Unknown model';
 const TITLE_MAX_LENGTH = 96;
-
-type CreateSdkworkGenerationServiceOptions = SdkworkGeneration.CreateSdkworkGenerationServiceOptions;
-type SdkworkGenerationRun = SdkworkGeneration.SdkworkGenerationRun;
-type SdkworkGenerationService = SdkworkGeneration.SdkworkGenerationService;
-type SdkworkGenerationStatus = SdkworkGeneration.SdkworkGenerationStatus;
-type SdkworkGenerationWorkspaceData = SdkworkGeneration.SdkworkGenerationWorkspaceData;
-type SdkworkGenerationServiceFactory = (
-  options?: CreateSdkworkGenerationServiceOptions,
-) => SdkworkGenerationService;
 
 export class PlaygroundService {
   static async fetchGenerationHistory(): Promise<PlaygroundHistoryItem[]> {
     if (!hasStoredPortalSession()) {
       return [];
     }
-    const result = await getClawRouterAppSdkClient().ai.generation.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch Playground history');
+    const result = await listGenerationHistory();
+    ensureSdkworkApiSuccess(result, 'Failed to fetch Playground history');
     return mapGenerationHistoryItems(readRequiredApiItems(result, 'Failed to fetch Playground history'));
   }
 
   static async runAgentGeneration(input: GenerationAgentRunCreateInput): Promise<GenerationAgentRunCreateResult> {
-    const prompt = normalizeText(input.prompt);
-    if (!prompt) {
-      throw new Error('Generation agent prompt is required');
-    }
-    if (!hasStoredPortalSession()) {
-      throw new Error('Portal session is required to run generation agent');
-    }
-
-    const selectedModel = normalizeText(input.selectedModel);
-    const result = await getClawRouterAppSdkClient().ai.generation.agent.runs.create({
-      prompt,
-      targetType: input.targetType,
-      selectedModel: selectedModel || undefined,
-      generationConfig: input.generationConfig,
-      referenceImages: input.referenceImages,
-    });
-    ensurePlusApiSuccess(result, 'Failed to run generation agent');
-
-    const data = readApiRecord(result);
-    if (!isRecord(data.item)) {
-      throw new Error('Generation agent response missing item');
-    }
-    const [item] = mapGenerationHistoryItems([data.item]);
-    return {
-      agent: readAgentSnapshot(data.agent),
-      item,
-      meteringEvents: readAgentMeteringEvents(data.meteringEvents, 'Generation agent metering events are required'),
-      run: readAgentRunSnapshot(data.run),
-      steps: readAgentRunSteps(data.steps),
-      targetType: readGenerationTargetType(data.targetType),
-      status: readGenerationRunStatus(data.status),
-      usage: readAgentUsageSummary(data.usage),
-    };
+    return runPlaygroundGeneration(input);
   }
 
   static fetchGenerationWorkspace(): Promise<SdkworkGenerationWorkspaceData> {
@@ -104,8 +57,8 @@ export class PlaygroundService {
   }
 
   static async fetchModelGroups(): Promise<PlaygroundModelGroup[]> {
-    const result = await getClawRouterAppSdkClient().ai.models.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch Playground model groups');
+    const result = await listModelCatalog();
+    ensureSdkworkApiSuccess(result, 'Failed to fetch Playground model groups');
     const items = readRequiredApiItems(result, 'Playground model catalog response missing items');
     return groupModelCatalogItems(items);
   }
@@ -113,59 +66,12 @@ export class PlaygroundService {
 
 async function fetchGenerationWorkspaceData(): Promise<SdkworkGenerationWorkspaceData> {
   const runs = mapHistoryToGenerationRuns(await PlaygroundService.fetchGenerationHistory());
-  const createSdkworkGenerationService = await loadSdkworkGenerationServiceFactory();
   const service = createSdkworkGenerationService({
     getSessionTokens: readGenerationSessionTokens,
+    includeSampleRuns: false,
     listRuns: async () => runs,
-    runs,
   });
-  const workspace = await service.getWorkspace();
-
-  if (runs.length === 0 && workspace.runs.length > 0) {
-    return createGenerationWorkspaceData({
-      isAuthenticated: isGenerationAuthenticated(),
-      runs,
-    });
-  }
-  return workspace;
-}
-
-async function loadSdkworkGenerationServiceFactory(): Promise<SdkworkGenerationServiceFactory> {
-  try {
-    const generationModule = await import('@sdkwork/generation-pc-react');
-    if (typeof generationModule.createSdkworkGenerationService === 'function') {
-      return generationModule.createSdkworkGenerationService as SdkworkGenerationServiceFactory;
-    }
-  } catch (error) {
-    if (isMissingGenerationModule(error)) {
-      return createFallbackSdkworkGenerationService;
-    }
-    throw error;
-  }
-  return createFallbackSdkworkGenerationService;
-}
-
-function createFallbackSdkworkGenerationService(
-  options: CreateSdkworkGenerationServiceOptions = {},
-): SdkworkGenerationService {
-  const fallbackRuns = options.runs ?? [];
-
-  return {
-    getEmptyWorkspace: () => {
-      return createGenerationWorkspaceData({
-        isAuthenticated: isGenerationAuthenticated(options),
-        runs: fallbackRuns,
-      });
-    },
-
-    getWorkspace: async () => {
-      const runs = options.listRuns ? await options.listRuns() : fallbackRuns;
-      return createGenerationWorkspaceData({
-        isAuthenticated: isGenerationAuthenticated(options),
-        runs,
-      });
-    },
-  };
+  return service.getWorkspace();
 }
 
 function mapHistoryToGenerationRuns(items: PlaygroundHistoryItem[]): SdkworkGenerationRun[] {
@@ -210,232 +116,14 @@ function readGenerationUpdatedAt(item: PlaygroundHistoryItem): string {
   return normalizeText(item.updatedAt) || normalizeText(item.createdAt) || `${item.date}T00:00:00Z`;
 }
 
-function createGenerationWorkspaceData({
-  isAuthenticated,
-  runs,
-}: {
-  isAuthenticated: boolean;
-  runs: readonly SdkworkGenerationRun[];
-}): SdkworkGenerationWorkspaceData {
-  const sortedRuns = sortGenerationRunsByRecent(runs);
-  return {
-    digest: {
-      completedRuns: sortedRuns.filter((run) => run.status === 'completed').length,
-      failedRuns: sortedRuns.filter((run) => run.status === 'failed').length,
-      runningRuns: sortedRuns.filter((run) => run.status === 'running').length,
-      totalRuns: sortedRuns.length,
-      totalTokensUsed: sortedRuns.reduce((total, run) => total + run.tokensUsed, 0),
-    },
-    isAuthenticated,
-    runs: sortedRuns,
-  };
-}
-
-function sortGenerationRunsByRecent(runs: readonly SdkworkGenerationRun[]): SdkworkGenerationRun[] {
-  return [...runs].sort((left, right) => (
-    readTimestamp(right.updatedAt) - readTimestamp(left.updatedAt)
-    || left.title.localeCompare(right.title)
-  ));
-}
-
-function readTimestamp(value: string): number {
-  const timestamp = Date.parse(value);
-  return Number.isFinite(timestamp) ? timestamp : 0;
-}
-
 function readGenerationSessionTokens(): { authToken?: string } {
   return {
     authToken: getStoredAppSessionAuthToken(),
   };
 }
 
-function isGenerationAuthenticated(options?: Pick<CreateSdkworkGenerationServiceOptions, 'getSessionTokens'>): boolean {
-  const authToken = options?.getSessionTokens?.().authToken ?? getStoredAppSessionAuthToken();
-  return Boolean(normalizeText(authToken));
-}
-
 function normalizeText(value: string | undefined): string {
   return (value ?? '').trim();
-}
-
-function readGenerationTargetType(value: unknown): PlaygroundGenerationTargetType {
-  switch (value) {
-    case 'image':
-    case 'video':
-    case 'music':
-    case 'audio':
-    case 'sfx':
-      return value;
-    default:
-      throw new Error('Generation agent target type is required');
-  }
-}
-
-function readGenerationRunStatus(value: unknown): PlaygroundGenerationRunStatus {
-  switch (value) {
-    case 'pending':
-    case 'processing':
-    case 'completed':
-    case 'failed':
-    case 'cancelled':
-      return value;
-    default:
-      throw new Error('Generation agent status is required');
-  }
-}
-
-function readAgentSnapshot(value: unknown): GenerationAgentSnapshot {
-  const record = readRequiredRecord(value, 'Generation agent snapshot is required');
-  return {
-    id: readRequiredString(record, 'id', 'Generation agent id is required'),
-    versionId: readRequiredString(record, 'versionId', 'Generation agent version id is required'),
-    name: readRequiredString(record, 'name', 'Generation agent name is required'),
-    model: readNullableString(record, 'model') ?? undefined,
-  };
-}
-
-function readAgentRunSnapshot(value: unknown): GenerationAgentRunSnapshot {
-  const record = readRequiredRecord(value, 'Generation agent run snapshot is required');
-  const source = readRequiredString(record, 'source', 'Generation agent run source is required');
-  if (source !== 'generation-agent') {
-    throw new Error('Generation agent run source is required');
-  }
-  return {
-    id: readRequiredString(record, 'id', 'Generation agent run id is required'),
-    requestId: readRequiredString(record, 'requestId', 'Generation agent run request id is required'),
-    source,
-    status: readAgentRunStatus(record.status),
-  };
-}
-
-function readAgentRunStatus(value: unknown): GenerationAgentRunStatus {
-  switch (value) {
-    case 'queued':
-    case 'planning':
-    case 'running':
-    case 'waiting_for_tool':
-    case 'succeeded':
-    case 'failed':
-    case 'cancelled':
-      return value;
-    default:
-      throw new Error('Generation agent run status is required');
-  }
-}
-
-function readAgentRunSteps(value: unknown): GenerationAgentRunStepSnapshot[] {
-  if (!Array.isArray(value)) {
-    throw new Error('Generation agent run steps are required');
-  }
-  return value.map((item) => {
-    const record = readRequiredRecord(item, 'Generation agent run step record is required');
-    return {
-      id: readRequiredString(record, 'id', 'Generation agent run step id is required'),
-      index: readRequiredNonNegativeNumber(record, 'index', 'Generation agent run step index is required'),
-      type: readAgentStepType(record.type),
-      status: readAgentStepStatus(record.status),
-      title: readRequiredString(record, 'title', 'Generation agent run step title is required'),
-    };
-  });
-}
-
-function readAgentStepType(value: unknown): GenerationAgentStepType {
-  switch (value) {
-    case 'input':
-    case 'memory_retrieval':
-    case 'model_call':
-    case 'skill_call':
-    case 'mcp_tool_call':
-    case 'media_generation':
-    case 'metering':
-    case 'output':
-      return value;
-    default:
-      throw new Error('Generation agent run step type is required');
-  }
-}
-
-function readAgentStepStatus(value: unknown): GenerationAgentStepStatus {
-  switch (value) {
-    case 'queued':
-    case 'running':
-    case 'succeeded':
-    case 'failed':
-    case 'skipped':
-      return value;
-    default:
-      throw new Error('Generation agent run step status is required');
-  }
-}
-
-function readAgentUsageSummary(value: unknown): GenerationAgentUsageSummary {
-  const record = readRequiredRecord(value, 'Generation agent usage summary is required');
-  return {
-    promptTokens: readRequiredNonNegativeNumber(record, 'promptTokens', 'Generation agent prompt tokens are required'),
-    cachedTokens: readRequiredNonNegativeNumber(record, 'cachedTokens', 'Generation agent cached tokens are required'),
-    completionTokens: readRequiredNonNegativeNumber(record, 'completionTokens', 'Generation agent completion tokens are required'),
-    totalTokens: readRequiredNonNegativeNumber(record, 'totalTokens', 'Generation agent total tokens are required'),
-    imageCount: readRequiredNonNegativeNumber(record, 'imageCount', 'Generation agent image count is required'),
-    videoSeconds: readRequiredString(record, 'videoSeconds', 'Generation agent video seconds are required'),
-    events: readAgentMeteringEvents(record.events, 'Generation agent usage events are required'),
-  };
-}
-
-function readAgentMeteringEvents(value: unknown, message: string): GenerationAgentMeteringEvent[] {
-  if (!Array.isArray(value)) {
-    throw new Error(message);
-  }
-  return value.map((item) => {
-    const record = readRequiredRecord(item, 'Generation agent metering event record is required');
-    return {
-      type: readAgentMeteringEventType(record.type),
-      quantity: readRequiredString(record, 'quantity', 'Generation agent metering quantity is required'),
-      usageFactMetadata: readAgentUsageFactMetadata(record.usageFactMetadata),
-    };
-  });
-}
-
-function readAgentMeteringEventType(value: unknown): GenerationAgentMeteringEventType {
-  switch (value) {
-    case 'token':
-    case 'image':
-    case 'video':
-    case 'audio':
-    case 'tool':
-    case 'mcp':
-    case 'skill':
-    case 'storage':
-    case 'network':
-      return value;
-    default:
-      throw new Error('Generation agent metering event type is required');
-  }
-}
-
-function readAgentUsageFactMetadata(value: unknown): GenerationAgentUsageFactMetadata {
-  const record = readRequiredRecord(value, 'Generation agent usage fact metadata is required');
-  const meteringSource = readRequiredString(record, 'meteringSource', 'Generation agent metering source is required');
-  if (meteringSource !== 'agent-runtime') {
-    throw new Error('Generation agent metering source is required');
-  }
-  return {
-    agentId: readRequiredString(record, 'agentId', 'Generation agent usage agent id is required'),
-    agentVersionId: readRequiredString(record, 'agentVersionId', 'Generation agent usage agent version id is required'),
-    runId: readRequiredString(record, 'runId', 'Generation agent usage run id is required'),
-    stepId: readRequiredString(record, 'stepId', 'Generation agent usage step id is required'),
-    userId: readRequiredString(record, 'userId', 'Generation agent usage user id is required'),
-    skillId: readNullableString(record, 'skillId') ?? undefined,
-    mcpServerId: readNullableString(record, 'mcpServerId') ?? undefined,
-    toolId: readNullableString(record, 'toolId') ?? undefined,
-    meteringSource,
-  };
-}
-
-function isMissingGenerationModule(error: unknown): boolean {
-  return error instanceof Error && (
-    error.message.includes('Cannot find module')
-    || error.message.includes('Cannot find package')
-  );
 }
 
 function groupModelCatalogItems(items: unknown[]): PlaygroundModelGroup[] {

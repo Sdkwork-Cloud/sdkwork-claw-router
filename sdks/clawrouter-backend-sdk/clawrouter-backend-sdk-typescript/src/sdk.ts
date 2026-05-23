@@ -4,11 +4,12 @@ import type { AuthTokenManager } from '@sdkwork/sdk-common';
 
 import { AgentsApi, createAgentsApi } from './api/agents';
 import { AiApi, createAiApi } from './api/ai';
-import { BillingApi, createBillingApi } from './api/billing';
+import { CommerceApi, createCommerceApi } from './api/commerce';
 import { ContentApi, createContentApi } from './api/content';
 import { EcosystemApi, createEcosystemApi } from './api/ecosystem';
 import { IamApi, createIamApi } from './api/iam';
 import { IntegrationApi, createIntegrationApi } from './api/integration';
+import { OpenPlatformApi, createOpenPlatformApi } from './api/open-platform';
 import { PlatformApi, createPlatformApi } from './api/platform';
 import { SystemApi, createSystemApi } from './api/system';
 
@@ -17,11 +18,12 @@ export class SdkworkBackendClient {
 
   public readonly agents: AgentsApi;
   public readonly ai: AiApi;
-  public readonly billing: BillingApi;
+  public readonly commerce: CommerceApi;
   public readonly content: ContentApi;
   public readonly ecosystem: EcosystemApi;
   public readonly iam: IamApi;
   public readonly integration: IntegrationApi;
+  public readonly openPlatform: OpenPlatformApi;
   public readonly platform: PlatformApi;
   public readonly system: SystemApi;
 
@@ -31,7 +33,7 @@ export class SdkworkBackendClient {
 
     this.ai = createAiApi(this.httpClient);
 
-    this.billing = createBillingApi(this.httpClient);
+    this.commerce = createCommerceApi(this.httpClient);
 
     this.content = createContentApi(this.httpClient);
 
@@ -40,6 +42,8 @@ export class SdkworkBackendClient {
     this.iam = createIamApi(this.httpClient);
 
     this.integration = createIntegrationApi(this.httpClient);
+
+    this.openPlatform = createOpenPlatformApi(this.httpClient);
 
     this.platform = createPlatformApi(this.httpClient);
 

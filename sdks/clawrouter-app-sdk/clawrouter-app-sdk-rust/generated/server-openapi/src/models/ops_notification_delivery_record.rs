@@ -3,6 +3,10 @@ use serde::{Deserialize, Serialize};
 /// Ops notification delivery record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct OpsNotificationDeliveryRecord {
+    /// Archived at field on ops notification delivery record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub archived_at: Option<String>,
+
     /// Created at field on ops notification delivery record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
@@ -58,6 +62,10 @@ pub struct OpsNotificationDeliveryRecord {
     /// Owner type field on ops notification delivery record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub owner_type: Option<String>,
+
+    /// Popup seen at field on ops notification delivery record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub popup_seen_at: Option<String>,
 
     /// Read at field on ops notification delivery record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

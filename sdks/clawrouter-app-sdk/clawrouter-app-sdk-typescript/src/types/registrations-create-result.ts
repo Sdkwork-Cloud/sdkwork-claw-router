@@ -7,7 +7,5 @@ export interface RegistrationsCreateResult {
   /** Data field on registrations create result. */
   data?: IamSessionResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

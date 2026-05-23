@@ -16,10 +16,10 @@ use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
 use crate::infrastructure::sql::model_catalog_import::DEFAULT_CATALOG_REFRESH_SOURCE;
 use crate::ports::{
-    AdminAiModelItem, AdminModelCatalogSyncItem, AdminModelStore, AdminModelSubject,
-    AdminModelVendorItem, CreateAdminAiModelCommand, CreateAdminModelVendorCommand,
-    DeleteAdminAiModelCommand, ListAdminAiModelsQuery, ListAdminModelVendorsQuery,
-    SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand,
+    AdminAiModelItem, AdminAiModelRegionPriceCommand, AdminModelCatalogSyncItem, AdminModelStore,
+    AdminModelSubject, AdminModelVendorItem, CreateAdminAiModelCommand,
+    CreateAdminModelVendorCommand, DeleteAdminAiModelCommand, ListAdminAiModelsQuery,
+    ListAdminModelVendorsQuery, SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand,
 };
 
 const REQUEST_ID_HEADER: &str = "X-Request-Id";
@@ -40,6 +40,8 @@ const MAX_SYNC_VENDOR_CODES: usize = 32;
 const MAX_CATALOG_ROOT_LEN: usize = 512;
 const MAX_CATALOG_VERSION_LEN: usize = 128;
 const MAX_MODEL_ID_LEN: usize = 128;
+const MAX_REGION_CODE_LEN: usize = 64;
+const DEFAULT_MODEL_REGION_CODE: &str = "global";
 const MAX_CONTEXT_TOKENS: i64 = 100_000_000;
 const MAX_OUTPUT_TOKENS: i64 = 100_000_000;
 const INTEGRATION_PROVIDER_ONLY_CODES: &[&str] = &[
@@ -84,11 +86,16 @@ struct AdminModelVendorCreateRequest {
 #[serde(rename_all = "camelCase")]
 struct AdminAiModelCreateRequest {
     vendor_id: Option<Value>,
+    model: Option<String>,
     name: Option<String>,
+    display_name: Option<String>,
     #[serde(rename = "type")]
     model_type: Option<String>,
     price_in: Option<Value>,
     price_out: Option<Value>,
+    cache_read_price: Option<Value>,
+    cache_write_price: Option<Value>,
+    region_prices: Option<Vec<AdminAiModelRegionPriceRequest>>,
     context_tokens: Option<Value>,
     description: Option<String>,
     modalities: Option<Vec<String>>,
@@ -114,11 +121,16 @@ struct AdminAiModelCreateRequest {
 #[serde(rename_all = "camelCase")]
 struct AdminAiModelUpdateRequest {
     vendor_id: Option<Value>,
+    model: Option<String>,
     name: Option<String>,
+    display_name: Option<String>,
     #[serde(rename = "type")]
     model_type: Option<String>,
     price_in: Option<Value>,
     price_out: Option<Value>,
+    cache_read_price: Option<Value>,
+    cache_write_price: Option<Value>,
+    region_prices: Option<Vec<AdminAiModelRegionPriceRequest>>,
     status: Option<String>,
     context_tokens: Option<Value>,
     description: Option<String>,
@@ -139,6 +151,16 @@ struct AdminAiModelUpdateRequest {
     shelf_state: Option<Value>,
     routing_state: Option<Value>,
     replacement_model: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminAiModelRegionPriceRequest {
+    region_code: Option<String>,
+    price_in: Option<Value>,
+    price_out: Option<Value>,
+    cache_read_price: Option<Value>,
+    cache_write_price: Option<Value>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -165,9 +187,14 @@ struct NormalizedVendorCreateRequest {
 struct NormalizedModelCreateRequest {
     vendor_id: String,
     model: String,
+    display_name: String,
     model_type: String,
     price_in: String,
     price_out: String,
+    cache_read_price: Option<String>,
+    cache_write_price: Option<String>,
+    region_code: String,
+    region_prices: Vec<AdminAiModelRegionPriceCommand>,
     description: Option<String>,
     modalities: Vec<String>,
     input_modalities: Vec<String>,
@@ -193,9 +220,14 @@ struct NormalizedModelCreateRequest {
 struct NormalizedModelUpdateRequest {
     vendor_id: Option<String>,
     model: Option<String>,
+    display_name: Option<Option<String>>,
     model_type: Option<String>,
     price_in: Option<String>,
     price_out: Option<String>,
+    cache_read_price: Option<Option<String>>,
+    cache_write_price: Option<Option<String>>,
+    region_code: Option<String>,
+    region_prices: Option<Vec<AdminAiModelRegionPriceCommand>>,
     status: Option<String>,
     description: Option<Option<String>>,
     modalities: Option<Vec<String>>,
@@ -273,11 +305,15 @@ struct AdminAiModelItemResponse {
     id: String,
     vendor_id: String,
     vendor_code: String,
+    model: String,
+    display_name: String,
     name: String,
     #[serde(rename = "type")]
     model_type: String,
     price_in: String,
     price_out: String,
+    cache_read_price: String,
+    cache_write_price: String,
     status: String,
     calls: String,
     description: Option<String>,
@@ -590,13 +626,20 @@ fn build_create_model_command(
         model_uuid: generate_entity_uuid(&state)?,
         input_pricing_uuid: generate_entity_uuid(&state)?,
         output_pricing_uuid: generate_entity_uuid(&state)?,
+        cache_read_pricing_uuid: generate_entity_uuid(&state)?,
+        cache_write_pricing_uuid: generate_entity_uuid(&state)?,
         capability_uuid: generate_entity_uuid(&state)?,
         audit_log_uuid: generate_entity_uuid(&state)?,
         vendor_id: request.vendor_id,
         model: request.model,
+        display_name: request.display_name,
         model_type: request.model_type,
         price_in: request.price_in,
         price_out: request.price_out,
+        cache_read_price: request.cache_read_price,
+        cache_write_price: request.cache_write_price,
+        region_code: request.region_code,
+        region_prices: request.region_prices,
         description: request.description,
         modalities: request.modalities,
         input_modalities: request.input_modalities,
@@ -634,13 +677,20 @@ fn build_update_model_command(
         capability_uuid: generate_entity_uuid(&state)?,
         input_pricing_uuid: generate_entity_uuid(&state)?,
         output_pricing_uuid: generate_entity_uuid(&state)?,
+        cache_read_pricing_uuid: generate_entity_uuid(&state)?,
+        cache_write_pricing_uuid: generate_entity_uuid(&state)?,
         audit_log_uuid: generate_entity_uuid(&state)?,
         model_id: normalize_model_id(&model_id)?,
         vendor_id: request.vendor_id,
         model: request.model,
+        display_name: request.display_name,
         model_type: request.model_type,
         price_in: request.price_in,
         price_out: request.price_out,
+        cache_read_price: request.cache_read_price,
+        cache_write_price: request.cache_write_price,
+        region_code: request.region_code,
+        region_prices: request.region_prices,
         status: request.status,
         description: request.description,
         modalities: request.modalities,
@@ -758,12 +808,33 @@ fn normalize_model_create_request(
         MAX_MODEL_METADATA_TEXT_LEN,
     )?
     .unwrap_or_else(|| defaults.output_modalities.clone());
+    let price_in = normalize_decimal_amount(request.price_in.as_ref(), "priceIn")?;
+    let price_out = normalize_decimal_amount(request.price_out.as_ref(), "priceOut")?;
+    let cache_read_price =
+        normalize_optional_decimal_amount(request.cache_read_price.as_ref(), "cacheReadPrice")?;
+    let cache_write_price =
+        normalize_optional_decimal_amount(request.cache_write_price.as_ref(), "cacheWritePrice")?;
+    let region_prices = normalize_create_region_prices(
+        request.region_prices,
+        &price_in,
+        &price_out,
+        cache_read_price.as_deref(),
+        cache_write_price.as_deref(),
+    )?;
+    let region_code = primary_region_code(&region_prices);
+    let model = normalize_model_name(request.model.as_deref().or(request.name.as_deref()))?;
+    let display_name = normalize_model_display_name(request.display_name.as_deref(), &model)?;
     Ok(NormalizedModelCreateRequest {
         vendor_id: normalize_value_text(request.vendor_id.as_ref(), "vendorId", MAX_NAME_LEN)?,
-        model: normalize_model_name(request.name.as_deref())?,
+        model,
+        display_name,
         model_type,
-        price_in: normalize_decimal_amount(request.price_in.as_ref(), "priceIn")?,
-        price_out: normalize_decimal_amount(request.price_out.as_ref(), "priceOut")?,
+        price_in,
+        price_out,
+        cache_read_price,
+        cache_write_price,
+        region_code,
+        region_prices,
         description: normalize_nullable_text(
             request.description.as_deref(),
             "description",
@@ -879,6 +950,30 @@ fn normalize_model_update_request(
         MAX_API_FORMAT_LEN,
     )?
     .or_else(|| defaults.as_ref().map(|value| value.api_format.to_owned()));
+    let price_in = request
+        .price_in
+        .as_ref()
+        .map(|value| normalize_decimal_amount(Some(value), "priceIn"))
+        .transpose()?;
+    let price_out = request
+        .price_out
+        .as_ref()
+        .map(|value| normalize_decimal_amount(Some(value), "priceOut"))
+        .transpose()?;
+    let cache_read_price = request
+        .cache_read_price
+        .as_ref()
+        .map(|value| normalize_optional_decimal_amount(Some(value), "cacheReadPrice"))
+        .transpose()?;
+    let cache_write_price = request
+        .cache_write_price
+        .as_ref()
+        .map(|value| normalize_optional_decimal_amount(Some(value), "cacheWritePrice"))
+        .transpose()?;
+    let region_prices = normalize_update_region_prices(request.region_prices)?;
+    let region_code = region_prices
+        .as_ref()
+        .map(|prices| primary_region_code(prices));
     Ok(NormalizedModelUpdateRequest {
         vendor_id: request
             .vendor_id
@@ -886,21 +981,22 @@ fn normalize_model_update_request(
             .map(|value| normalize_value_text(Some(value), "vendorId", MAX_NAME_LEN))
             .transpose()?,
         model: request
-            .name
+            .model
             .as_deref()
+            .or(request.name.as_deref())
             .map(|value| normalize_model_name(Some(value)))
             .transpose()?,
+        display_name: match request.display_name {
+            Some(value) => Some(normalize_optional_model_display_name(Some(&value))?),
+            None => None,
+        },
         model_type,
-        price_in: request
-            .price_in
-            .as_ref()
-            .map(|value| normalize_decimal_amount(Some(value), "priceIn"))
-            .transpose()?,
-        price_out: request
-            .price_out
-            .as_ref()
-            .map(|value| normalize_decimal_amount(Some(value), "priceOut"))
-            .transpose()?,
+        price_in,
+        price_out,
+        cache_read_price,
+        cache_write_price,
+        region_code,
+        region_prices,
         status: request
             .status
             .as_deref()
@@ -1063,6 +1159,20 @@ fn normalize_model_name(value: Option<&str>) -> Result<String, AdminModelCommand
     Ok(value)
 }
 
+fn normalize_model_display_name(
+    value: Option<&str>,
+    fallback_model: &str,
+) -> Result<String, AdminModelCommandBuildError> {
+    let value = normalize_optional_model_display_name(value)?;
+    Ok(value.unwrap_or_else(|| fallback_model.to_owned()))
+}
+
+fn normalize_optional_model_display_name(
+    value: Option<&str>,
+) -> Result<Option<String>, AdminModelCommandBuildError> {
+    normalize_nullable_text(value, "displayName", MAX_NAME_LEN)
+}
+
 fn normalize_nullable_model_name(
     value: Option<&str>,
     field_name: &str,
@@ -1092,6 +1202,131 @@ fn normalize_model_code(
         )));
     }
     Ok(Some(value.replace('-', "_")))
+}
+
+fn normalize_region_code(
+    value: Option<&str>,
+    field_name: &str,
+) -> Result<String, AdminModelCommandBuildError> {
+    let value = value.unwrap_or(DEFAULT_MODEL_REGION_CODE).trim();
+    if value.is_empty() {
+        return Ok(DEFAULT_MODEL_REGION_CODE.to_owned());
+    }
+    if value.len() > MAX_REGION_CODE_LEN
+        || !value.bytes().enumerate().all(|(index, byte)| {
+            byte.is_ascii_lowercase()
+                || byte.is_ascii_digit()
+                || (index > 0 && matches!(byte, b'-' | b'_'))
+        })
+    {
+        return Err(AdminModelCommandBuildError::BadRequest(format!(
+            "{field_name} must be a lowercase region code"
+        )));
+    }
+    Ok(value.to_owned())
+}
+
+fn normalize_create_region_prices(
+    region_prices: Option<Vec<AdminAiModelRegionPriceRequest>>,
+    default_price_in: &str,
+    default_price_out: &str,
+    default_cache_read_price: Option<&str>,
+    default_cache_write_price: Option<&str>,
+) -> Result<Vec<AdminAiModelRegionPriceCommand>, AdminModelCommandBuildError> {
+    match region_prices {
+        Some(region_prices) if !region_prices.is_empty() => {
+            normalize_region_price_requests(region_prices, true)
+        }
+        _ => Ok(vec![AdminAiModelRegionPriceCommand {
+            region_code: DEFAULT_MODEL_REGION_CODE.to_owned(),
+            price_in: default_price_in.to_owned(),
+            price_out: default_price_out.to_owned(),
+            cache_read_price: default_cache_read_price.map(str::to_owned),
+            cache_write_price: default_cache_write_price.map(str::to_owned),
+        }]),
+    }
+}
+
+fn primary_region_code(region_prices: &[AdminAiModelRegionPriceCommand]) -> String {
+    region_prices
+        .iter()
+        .find(|price| price.region_code == DEFAULT_MODEL_REGION_CODE)
+        .or_else(|| region_prices.first())
+        .map(|price| price.region_code.clone())
+        .unwrap_or_else(|| DEFAULT_MODEL_REGION_CODE.to_owned())
+}
+
+fn normalize_update_region_prices(
+    region_prices: Option<Vec<AdminAiModelRegionPriceRequest>>,
+) -> Result<Option<Vec<AdminAiModelRegionPriceCommand>>, AdminModelCommandBuildError> {
+    match region_prices {
+        Some(region_prices) => {
+            if region_prices.is_empty() {
+                return Err(AdminModelCommandBuildError::BadRequest(
+                    "regionPrices must not be empty".to_owned(),
+                ));
+            }
+            normalize_region_price_requests(region_prices, true).map(Some)
+        }
+        None => Ok(None),
+    }
+}
+
+fn normalize_region_price_requests(
+    region_prices: Vec<AdminAiModelRegionPriceRequest>,
+    require_prices: bool,
+) -> Result<Vec<AdminAiModelRegionPriceCommand>, AdminModelCommandBuildError> {
+    let mut normalized = Vec::with_capacity(region_prices.len());
+    for (index, price) in region_prices.into_iter().enumerate() {
+        let field_prefix = format!("regionPrices[{index}]");
+        let region_code = normalize_region_code(
+            price.region_code.as_deref(),
+            &format!("{field_prefix}.regionCode"),
+        )?;
+        if normalized
+            .iter()
+            .any(|item: &AdminAiModelRegionPriceCommand| item.region_code == region_code)
+        {
+            return Err(AdminModelCommandBuildError::BadRequest(format!(
+                "{field_prefix}.regionCode duplicates region {region_code}"
+            )));
+        }
+        let price_in = if require_prices {
+            normalize_decimal_amount(price.price_in.as_ref(), &format!("{field_prefix}.priceIn"))?
+        } else {
+            normalize_optional_decimal_amount(
+                price.price_in.as_ref(),
+                &format!("{field_prefix}.priceIn"),
+            )?
+            .unwrap_or_default()
+        };
+        let price_out = if require_prices {
+            normalize_decimal_amount(
+                price.price_out.as_ref(),
+                &format!("{field_prefix}.priceOut"),
+            )?
+        } else {
+            normalize_optional_decimal_amount(
+                price.price_out.as_ref(),
+                &format!("{field_prefix}.priceOut"),
+            )?
+            .unwrap_or_default()
+        };
+        normalized.push(AdminAiModelRegionPriceCommand {
+            region_code,
+            price_in,
+            price_out,
+            cache_read_price: normalize_optional_decimal_amount(
+                price.cache_read_price.as_ref(),
+                &format!("{field_prefix}.cacheReadPrice"),
+            )?,
+            cache_write_price: normalize_optional_decimal_amount(
+                price.cache_write_price.as_ref(),
+                &format!("{field_prefix}.cacheWritePrice"),
+            )?,
+        });
+    }
+    Ok(normalized)
 }
 
 fn normalize_model_type(value: Option<&str>) -> Result<String, AdminModelCommandBuildError> {
@@ -1318,6 +1553,17 @@ fn normalize_positive_i64(
         )));
     }
     Ok(value)
+}
+
+fn normalize_optional_decimal_amount(
+    value: Option<&Value>,
+    field_name: &str,
+) -> Result<Option<String>, AdminModelCommandBuildError> {
+    match value {
+        None | Some(Value::Null) => Ok(None),
+        Some(Value::String(value)) if value.trim().is_empty() => Ok(None),
+        Some(value) => normalize_decimal_amount(Some(value), field_name).map(Some),
+    }
 }
 
 fn normalize_optional_positive_i64(
@@ -1549,10 +1795,14 @@ fn to_model_response(item: AdminAiModelItem) -> AdminAiModelItemResponse {
         id: item.id.to_string(),
         vendor_id: item.vendor_id,
         vendor_code: item.vendor_code,
+        model: item.model,
+        display_name: item.display_name,
         name: item.name,
         model_type: item.model_type,
         price_in: item.price_in,
         price_out: item.price_out,
+        cache_read_price: item.cache_read_price,
+        cache_write_price: item.cache_write_price,
         status: item.status,
         calls: item.calls,
         description: item.description,

@@ -23,6 +23,7 @@ const portalPackageModuleCache = new Map<string, string | null>();
 const PORTAL_RUNTIME_URL_ENV = [
   ['PORTAL_PUBLIC_APP_API_BASE_URL', 'VITE_CLAWROUTER_APP_API_BASE_URL'],
   ['PORTAL_PUBLIC_BACKEND_API_BASE_URL', 'VITE_CLAWROUTER_BACKEND_API_BASE_URL'],
+  ['PORTAL_PUBLIC_DOWNLOAD_BASE_URL', 'VITE_CLAWROUTER_DOWNLOAD_BASE_URL'],
 ] as const;
 
 const PORTAL_RUNTIME_BOOLEAN_ENV = [
@@ -373,7 +374,9 @@ export default defineConfig(({mode}) => {
   const configDir = import.meta.dirname;
   const workspaceRoot = path.resolve(configDir, '../..');
   const appbaseRoot = path.resolve(configDir, '../../../sdkwork-appbase');
-  const sdkworkUiRoot = path.resolve(configDir, '../../../sdkwork-ui');
+  const appApiSdkRoot = path.resolve(configDir, '../../../../spring-ai-plus-app-api/sdkwork-sdk-app/sdkwork-app-sdk-typescript');
+  const sdkworkCoreRoot = path.resolve(configDir, '../../../sdkwork-core');
+  const sdkworkUiRoot = path.resolve(configDir, '../../../../../sdkwork-ui');
   loadEnv(mode, configDir, '');
   return {
     plugins: [
@@ -383,7 +386,7 @@ export default defineConfig(({mode}) => {
       clawrouterImportMetaHotTransform(),
       clawrouterTypeScriptTransform(),
       clawrouterPortalLocalPackageResolver(configDir),
-      clawrouterPortalWorkspaceDependencyResolver(configDir, [appbaseRoot, sdkworkUiRoot]),
+      clawrouterPortalWorkspaceDependencyResolver(configDir, [appbaseRoot, appApiSdkRoot, sdkworkCoreRoot, sdkworkUiRoot]),
       tailwindcss(),
     ],
     esbuild: false,
@@ -408,19 +411,32 @@ export default defineConfig(({mode}) => {
         { find: '@sdkwork/appbase-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/foundation/sdkwork-appbase-pc-react/src/index.ts') },
         { find: '@sdkwork/auth-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/iam/sdkwork-auth-pc-react/src/index.ts') },
         { find: '@sdkwork/auth-runtime-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/iam/sdkwork-auth-runtime-pc-react/src/index.ts') },
+        { find: '@sdkwork/app-sdk', replacement: path.resolve(appApiSdkRoot, 'src/index.ts') },
         { find: '@sdkwork/clawrouter-app-sdk', replacement: path.resolve(configDir, '../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/index.ts') },
         { find: '@sdkwork/clawrouter-backend-sdk', replacement: path.resolve(configDir, '../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/index.ts') },
-        { find: '@sdkwork/core-pc-react', replacement: path.resolve(configDir, 'src/auth/corePcReactCompat.ts') },
+        { find: '@sdkwork/conversation', replacement: path.resolve(appbaseRoot, 'packages/common/conversation/sdkwork-conversation/src/index.ts') },
+        { find: '@sdkwork/core-pc-react', replacement: path.resolve(sdkworkCoreRoot, 'sdkwork-core-pc-react/src/index.ts') },
+        { find: '@sdkwork/distribution-pc-react/downloads', replacement: path.resolve(appbaseRoot, 'packages/pc-react/device/sdkwork-distribution-pc-react/src/downloads/index.ts') },
+        { find: '@sdkwork/distribution-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/device/sdkwork-distribution-pc-react/src/index.ts') },
+        { find: '@sdkwork/generation-pc-react/react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/react.ts') },
+        { find: '@sdkwork/generation-pc-react/generation-service', replacement: path.resolve(appbaseRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/generation-service.ts') },
+        { find: '@sdkwork/generation-pc-react/generation-history', replacement: path.resolve(appbaseRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/generation-history.ts') },
         { find: '@sdkwork/generation-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/index.ts') },
         { find: '@sdkwork/host-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/host/sdkwork-host-pc-react/src/index.ts') },
         { find: '@sdkwork/host-tauri-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/host/sdkwork-host-tauri-pc-react/src/index.ts') },
         { find: '@sdkwork/i18n-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/foundation/sdkwork-i18n-pc-react/src/index.ts') },
+        { find: '@sdkwork/notification-pc-react/service', replacement: path.resolve(appbaseRoot, 'packages/pc-react/notification/sdkwork-notification-pc-react/src/notificationService.ts') },
+        { find: '@sdkwork/notification-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/notification/sdkwork-notification-pc-react/src/index.ts') },
+        { find: '@sdkwork/open-platform-admin-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/integration/sdkwork-open-platform-admin-pc-react/src/index.ts') },
+        { find: '@sdkwork/platform', replacement: path.resolve(appbaseRoot, 'packages/common/integration/sdkwork-platform/src/index.ts') },
         { find: '@sdkwork/iam-contracts', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-contracts/src/index.ts') },
         { find: '@sdkwork/iam-core-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/iam/sdkwork-iam-core-pc-react/src/index.ts') },
         { find: '@sdkwork/iam-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/iam/sdkwork-iam-react/src/index.tsx') },
         { find: '@sdkwork/iam-runtime', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-runtime/src/index.ts') },
         { find: '@sdkwork/iam-sdk-ports', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts') },
         { find: '@sdkwork/iam-service', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-service/src/index.ts') },
+        { find: '@sdkwork/ui-pc-react/components/ui/button', replacement: path.resolve(sdkworkUiRoot, 'sdkwork-ui-pc-react/src/components/ui/button.tsx') },
+        { find: '@sdkwork/ui-pc-react/components/ui/feedback/states', replacement: path.resolve(sdkworkUiRoot, 'sdkwork-ui-pc-react/src/components/ui/feedback/states.tsx') },
         { find: '@sdkwork/ui-pc-react/theme', replacement: path.resolve(sdkworkUiRoot, 'sdkwork-ui-pc-react/src/theme/index.ts') },
         { find: '@sdkwork/ui-pc-react', replacement: path.resolve(sdkworkUiRoot, 'sdkwork-ui-pc-react/src/index.ts') },
         { find: 'qrcode', replacement: resolvePortalDependency('qrcode/lib/browser.js', configDir) },
@@ -438,6 +454,8 @@ export default defineConfig(({mode}) => {
           configDir,
           workspaceRoot,
           appbaseRoot,
+          appApiSdkRoot,
+          sdkworkCoreRoot,
           sdkworkUiRoot,
         ],
       },
@@ -448,6 +466,7 @@ export default defineConfig(({mode}) => {
     build: {
       target: 'esnext',
       minify: false,
+      cssMinify: true,
       commonjsOptions: {
         transformMixedEsModules: true,
         requireReturnsDefault: 'auto',
@@ -466,6 +485,11 @@ export default defineConfig(({mode}) => {
               return 'vendor-react';
             }
             const normalizedId = id.replaceAll('\\', '/');
+            const normalizedAppbaseRoot = normalizePath(appbaseRoot);
+            const normalizedAppApiSdkRoot = normalizePath(appApiSdkRoot);
+            const normalizedSdkworkCoreRoot = normalizePath(sdkworkCoreRoot);
+            const normalizedSdkworkUiRoot = normalizePath(sdkworkUiRoot);
+            const normalizedClawRouterSdkRoot = normalizePath(path.resolve(configDir, '../../sdks'));
             const routePackageMatch = normalizedId.match(LOCAL_ROUTE_PACKAGE_PATTERN);
             if (routePackageMatch) {
               const packageName = routePackageMatch.groups?.packageName;
@@ -482,6 +506,41 @@ export default defineConfig(({mode}) => {
                 return 'models-core';
               }
               return packageName;
+            }
+            if (
+              normalizedId.startsWith(`${normalizedAppbaseRoot}/packages/pc-react/iam/`)
+              || normalizedId.startsWith(`${normalizedAppbaseRoot}/packages/common/iam/`)
+            ) {
+              return 'vendor-auth';
+            }
+            if (
+              normalizedId.startsWith(`${normalizedAppbaseRoot}/packages/pc-react/foundation/`)
+              || normalizedId.startsWith(`${normalizedAppbaseRoot}/packages/common/foundation/`)
+              || normalizedId.startsWith(`${normalizedAppbaseRoot}/packages/pc-react/notification/`)
+              || normalizedId.startsWith(`${normalizedSdkworkCoreRoot}/`)
+              || normalizedId.startsWith(`${normalizedSdkworkUiRoot}/`)
+            ) {
+              return 'vendor-ui';
+            }
+            if (
+              normalizedId.startsWith(`${normalizedAppbaseRoot}/packages/pc-react/content/`)
+              || normalizedId.startsWith(`${normalizedAppbaseRoot}/packages/common/conversation/`)
+            ) {
+              return 'vendor-generation';
+            }
+            if (
+              normalizedId.startsWith(`${normalizedAppbaseRoot}/packages/pc-react/device/`)
+              || normalizedId.startsWith(`${normalizedAppbaseRoot}/packages/pc-react/host/`)
+              || normalizedId.startsWith(`${normalizedAppbaseRoot}/packages/pc-react/integration/`)
+              || normalizedId.startsWith(`${normalizedAppbaseRoot}/packages/common/integration/`)
+            ) {
+              return 'vendor-platform';
+            }
+            if (
+              normalizedId.startsWith(`${normalizedAppApiSdkRoot}/`)
+              || normalizedId.startsWith(`${normalizedClawRouterSdkRoot}/`)
+            ) {
+              return 'vendor-sdkwork-sdk';
             }
             if (!id.includes('node_modules')) {
               return undefined;

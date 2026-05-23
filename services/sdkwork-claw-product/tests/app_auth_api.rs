@@ -2,9 +2,13 @@ use axum::body::Body;
 use axum::http::{Request, StatusCode};
 use sdkwork_claw_config::AppSessionConfig;
 use sdkwork_claw_http::verify_app_session_token;
-use sdkwork_claw_product::application::Pbkdf2Sha256PasswordHasher;
+use sdkwork_claw_product::application::{
+    default_desktop_cache_manager, EntityUuidGenerator, Pbkdf2Sha256PasswordHasher,
+    RuntimeCacheManager,
+};
+use sdkwork_claw_product::domain::DomainResult;
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
-    SqliteAppAuthStore, SqliteAppSessionEventStore,
+    SqliteAdminOpenPlatformStore, SqliteAppAuthStore, SqliteAppSessionEventStore,
 };
 use sdkwork_claw_product::ports::{
     AdminAuthSettings, AdminAuthSettingsFuture, AdminAuthSettingsStore, GetAdminAuthSettingsQuery,
@@ -13,6 +17,7 @@ use sdkwork_claw_product::ports::{
     VerificationCodeDeliveryReceipt, VerificationCodeDeliveryRequest, VerificationCodeSender,
 };
 use serde_json::json;
+use sha2::{Digest, Sha256};
 use sqlx::sqlite::SqlitePoolOptions;
 use sqlx::{Row, SqlitePool};
 use std::sync::Arc;
@@ -551,12 +556,77 @@ async fn app_auth_login_legacy_path_is_not_exposed() {
 }
 
 #[tokio::test]
-async fn app_auth_qr_login_codes_create_and_retrieve_use_standard_iam_resource_paths() {
+async fn app_auth_open_platform_qr_auth_legacy_qr_login_paths_are_not_exposed() {
     let pool = create_pool().await;
     create_minimal_auth_schema(&pool).await;
-    let router = app_auth_router_with_settings(pool, qr_login_settings());
+    create_open_platform_schema(&pool).await;
+    let router = app_auth_router_with_open_platform(pool, qr_login_settings());
+
+    for (method, uri) in [
+        ("POST", "/app/v3/api/auth/qr_login_codes"),
+        ("GET", "/app/v3/api/auth/qr_login_codes/missing-key"),
+        (
+            "POST",
+            "/app/v3/api/auth/qr_login_codes/missing-key/callback",
+        ),
+        ("POST", "/app/v3/api/auth/qr_login_codes/confirm"),
+    ] {
+        let response = router
+            .clone()
+            .oneshot(
+                Request::builder()
+                    .method(method)
+                    .uri(uri)
+                    .header("content-type", "application/json")
+                    .body(Body::from("{}"))
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+        assert_eq!(StatusCode::NOT_FOUND, response.status(), "{method} {uri}");
+    }
+}
+
+#[tokio::test]
+async fn app_auth_open_platform_qr_auth_fallback_scan_and_password_login_complete_session() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    create_open_platform_schema(&pool).await;
+    seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
+    let router = app_auth_router_with_open_platform(pool.clone(), qr_login_settings());
 
     let create_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/open_platform/qr_auth/sessions")
+                .header("content-type", "application/json")
+                .header("host", "console.example.test")
+                .body(Body::from(json!({ "purpose": "login" }).to_string()))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, create_response.status());
+    let create_payload = response_json(create_response).await;
+    assert_eq!("2000", create_payload["code"]);
+    let session_key = create_payload["data"]["sessionKey"].as_str().unwrap();
+    assert_eq!("login", create_payload["data"]["purpose"]);
+    assert_eq!("pending", create_payload["data"]["status"]);
+    assert_eq!("fallback_url", create_payload["data"]["qrContent"]["mode"]);
+    assert_eq!(
+        format!(
+            "https://console.example.test/auth/qr/{session_key}?session_key={session_key}&purpose=login&scan_source=browser"
+        ),
+        create_payload["data"]["qrContent"]["content"]
+    );
+    assert_eq!(
+        create_payload["data"]["fallbackUrl"],
+        create_payload["data"]["qrContent"]["content"]
+    );
+
+    let legacy_response = router
         .clone()
         .oneshot(
             Request::builder()
@@ -568,88 +638,22 @@ async fn app_auth_qr_login_codes_create_and_retrieve_use_standard_iam_resource_p
         )
         .await
         .unwrap();
-    assert_eq!(StatusCode::OK, create_response.status());
-    let create_payload = response_json(create_response).await;
-    assert_eq!("2000", create_payload["code"]);
-    let qr_key = create_payload["data"]["qrKey"].as_str().unwrap();
-    assert!(!qr_key.is_empty());
-    assert_eq!("Desktop QR Login", create_payload["data"]["title"]);
-    assert_eq!("app", create_payload["data"]["type"]);
-    assert!(create_payload["data"]["qrContent"]
-        .as_str()
-        .unwrap()
-        .contains(qr_key));
-    assert!(create_payload["data"]["expireTime"].as_i64().unwrap() > current_unix_seconds());
+    assert_eq!(StatusCode::NOT_FOUND, legacy_response.status());
 
-    let retrieve_response = router
-        .oneshot(
-            Request::builder()
-                .method("GET")
-                .uri(format!("/app/v3/api/auth/qr_login_codes/{qr_key}"))
-                .body(Body::empty())
-                .unwrap(),
-        )
-        .await
-        .unwrap();
-    assert_eq!(StatusCode::OK, retrieve_response.status());
-    let retrieve_payload = response_json(retrieve_response).await;
-    assert_eq!("2000", retrieve_payload["code"]);
-    assert_eq!("pending", retrieve_payload["data"]["status"]);
-}
-
-#[tokio::test]
-async fn app_auth_qr_login_codes_confirm_and_verification_policy_use_standard_iam_paths() {
-    let pool = create_pool().await;
-    create_minimal_auth_schema(&pool).await;
-    seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
-    let router = app_auth_router_with_settings(pool, qr_login_settings());
-
-    let login_response = router
+    let scan_response = router
         .clone()
-        .oneshot(login_request("alice@example.com", "correct-password"))
-        .await
-        .unwrap();
-    assert_eq!(StatusCode::OK, login_response.status());
-    let login_payload = response_json(login_response).await;
-    let auth_token = login_payload["data"]["authToken"].as_str().unwrap();
-    let access_token = login_payload["data"]["accessToken"].as_str().unwrap();
-
-    let policy_response = router
-        .clone()
-        .oneshot(
-            Request::builder()
-                .method("GET")
-                .uri("/app/v3/api/auth/verification_policy")
-                .body(Body::empty())
-                .unwrap(),
-        )
-        .await
-        .unwrap();
-    assert_eq!(StatusCode::OK, policy_response.status());
-    let policy_payload = response_json(policy_response).await;
-    assert_eq!("2000", policy_payload["code"]);
-    assert_eq!(false, policy_payload["data"]["emailCodeLoginEnabled"]);
-    assert_eq!(false, policy_payload["data"]["phoneCodeLoginEnabled"]);
-    assert_eq!(
-        false,
-        policy_payload["data"]["emailRegistrationVerificationRequired"]
-    );
-    assert_eq!(
-        false,
-        policy_payload["data"]["phoneRegistrationVerificationRequired"]
-    );
-
-    let confirm_response = router
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/app/v3/api/auth/qr_login_codes/confirm")
+                .uri(format!(
+                    "/app/v3/api/open_platform/qr_auth/sessions/{session_key}/scans"
+                ))
                 .header("content-type", "application/json")
-                .header("authorization", format!("Bearer {auth_token}"))
-                .header("Sdkwork-Access-Token", access_token)
                 .body(Body::from(
                     json!({
-                        "qrKey": "qr-key-standard-1"
+                        "scanSource": "browser",
+                        "ipHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                        "userAgent": "Mozilla/5.0"
                     })
                     .to_string(),
                 ))
@@ -657,18 +661,777 @@ async fn app_auth_qr_login_codes_confirm_and_verification_policy_use_standard_ia
         )
         .await
         .unwrap();
-    assert_eq!(StatusCode::OK, confirm_response.status());
-    let confirm_payload = response_json(confirm_response).await;
-    assert_eq!("2000", confirm_payload["code"]);
-    assert_eq!("confirmed", confirm_payload["data"]["status"]);
-    assert_eq!(
-        login_payload["data"]["sessionId"],
-        confirm_payload["data"]["session"]["sessionId"]
+    assert_eq!(StatusCode::OK, scan_response.status());
+    let scan_payload = response_json(scan_response).await;
+    assert_eq!("2000", scan_payload["code"]);
+    assert_eq!(session_key, scan_payload["data"]["sessionKey"]);
+    assert_eq!("browser", scan_payload["data"]["scanSource"]);
+
+    let password_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri(format!(
+                    "/app/v3/api/open_platform/qr_auth/sessions/{session_key}/passwords"
+                ))
+                .header("content-type", "application/json")
+                .header("X-Request-Id", "qr-password-login-1")
+                .body(Body::from(
+                    json!({
+                        "username": "alice@example.com",
+                        "password": "correct-password"
+                    })
+                    .to_string(),
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, password_response.status());
+    let password_payload = response_json(password_response).await;
+    assert_eq!("completed", password_payload["data"]["status"]);
+    assert!(
+        password_payload["data"]["session"]["authToken"]
+            .as_str()
+            .unwrap()
+            .len()
+            > 32
     );
+    assert_eq!("30", password_payload["data"]["userInfo"]["id"]);
+
+    let retrieve_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri(format!(
+                    "/app/v3/api/open_platform/qr_auth/sessions/{session_key}"
+                ))
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, retrieve_response.status());
+    let retrieve_payload = response_json(retrieve_response).await;
+    assert_eq!("completed", retrieve_payload["data"]["status"]);
+    assert_eq!("30", retrieve_payload["data"]["userInfo"]["id"]);
+
+    let created_event_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM iam_security_event WHERE event_type = 'qr_auth.session.created'",
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(1, created_event_count);
+    let completed_detail_json: String = sqlx::query_scalar(
+        "SELECT detail_json FROM iam_security_event WHERE event_type = 'qr_auth.session.completed' LIMIT 1",
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    let completed_detail: serde_json::Value = serde_json::from_str(&completed_detail_json).unwrap();
     assert_eq!(
-        login_payload["data"]["user"]["id"],
-        confirm_payload["data"]["userInfo"]["id"]
+        64,
+        completed_detail["sessionKeyHash"].as_str().unwrap().len()
     );
+    assert!(completed_detail.get("externalUserId").is_none());
+    assert!(
+        !completed_detail_json.contains(session_key),
+        "security event detail must not store the raw sessionKey"
+    );
+
+    let rescan_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri(format!(
+                    "/app/v3/api/open_platform/qr_auth/sessions/{session_key}/scans"
+                ))
+                .header("content-type", "application/json")
+                .body(Body::from(json!({ "scanSource": "browser" }).to_string()))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::BAD_REQUEST, rescan_response.status());
+    let rescan_payload = response_json(rescan_response).await;
+    assert_eq!(
+        "QR auth session is already completed",
+        rescan_payload["msg"]
+    );
+}
+
+#[tokio::test]
+async fn app_auth_open_platform_qr_auth_fallback_rejects_unsafe_public_host_headers() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    let router = app_auth_router_with_settings(pool, qr_login_settings());
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/open_platform/qr_auth/sessions")
+                .header("content-type", "application/json")
+                .header("host", "trusted.example.test@evil.example.test?x=1")
+                .header("x-forwarded-host", "forwarded.example.test#fragment")
+                .body(Body::from(json!({ "purpose": "login" }).to_string()))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    let session_key = payload["data"]["sessionKey"].as_str().unwrap();
+    assert_eq!(
+        format!(
+            "https://localhost/auth/qr/{session_key}?session_key={session_key}&purpose=login&scan_source=browser"
+        ),
+        payload["data"]["fallbackUrl"]
+    );
+}
+
+#[tokio::test]
+async fn app_auth_open_platform_qr_auth_requires_scan_and_rejects_scan_metadata_rewrite() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    create_open_platform_schema(&pool).await;
+    seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
+    let router = app_auth_router_with_open_platform(pool.clone(), qr_login_settings());
+
+    let create_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/open_platform/qr_auth/sessions")
+                .header("content-type", "application/json")
+                .body(Body::from(json!({ "purpose": "login" }).to_string()))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, create_response.status());
+    let create_payload = response_json(create_response).await;
+    let session_key = create_payload["data"]["sessionKey"].as_str().unwrap();
+
+    let password_before_scan = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri(format!(
+                    "/app/v3/api/open_platform/qr_auth/sessions/{session_key}/passwords"
+                ))
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    json!({
+                        "username": "alice@example.com",
+                        "password": "correct-password"
+                    })
+                    .to_string(),
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::BAD_REQUEST, password_before_scan.status());
+    let password_before_scan_payload = response_json(password_before_scan).await;
+    assert_eq!(
+        "QR auth password completion requires a recorded scan",
+        password_before_scan_payload["msg"]
+    );
+
+    let forged_binding_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri(format!(
+                    "/app/v3/api/open_platform/qr_auth/sessions/{session_key}/scans"
+                ))
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    json!({
+                        "scanSource": "browser",
+                        "accountId": "1001"
+                    })
+                    .to_string(),
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::BAD_REQUEST, forged_binding_response.status());
+    let forged_binding_payload = response_json(forged_binding_response).await;
+    assert_eq!(
+        "accountId is not bound to this QR auth session",
+        forged_binding_payload["msg"]
+    );
+
+    let scan_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri(format!(
+                    "/app/v3/api/open_platform/qr_auth/sessions/{session_key}/scans"
+                ))
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    json!({
+                        "scanSource": "browser",
+                        "externalUserId": "external-user-1",
+                        "ipHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                        "userAgent": "First Agent"
+                    })
+                    .to_string(),
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, scan_response.status());
+
+    let duplicate_scan_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri(format!(
+                    "/app/v3/api/open_platform/qr_auth/sessions/{session_key}/scans"
+                ))
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    json!({
+                        "scanSource": "browser",
+                        "externalUserId": "external-user-1",
+                        "ipHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                        "userAgent": "First Agent"
+                    })
+                    .to_string(),
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, duplicate_scan_response.status());
+
+    let rewrite_external_user_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri(format!(
+                    "/app/v3/api/open_platform/qr_auth/sessions/{session_key}/scans"
+                ))
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    json!({
+                        "scanSource": "browser",
+                        "externalUserId": "external-user-2",
+                        "ipHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                        "userAgent": "First Agent"
+                    })
+                    .to_string(),
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(
+        StatusCode::BAD_REQUEST,
+        rewrite_external_user_response.status()
+    );
+    let rewrite_external_user_payload = response_json(rewrite_external_user_response).await;
+    assert_eq!(
+        "externalUserId does not match QR login scanner",
+        rewrite_external_user_payload["msg"]
+    );
+
+    let rewrite_agent_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri(format!(
+                    "/app/v3/api/open_platform/qr_auth/sessions/{session_key}/scans"
+                ))
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    json!({
+                        "scanSource": "browser",
+                        "externalUserId": "external-user-1",
+                        "ipHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                        "userAgent": "Second Agent"
+                    })
+                    .to_string(),
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::BAD_REQUEST, rewrite_agent_response.status());
+    let rewrite_agent_payload = response_json(rewrite_agent_response).await;
+    assert_eq!(
+        "userAgent does not match QR login scanner",
+        rewrite_agent_payload["msg"]
+    );
+
+    let scanned_event_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM iam_security_event WHERE event_type = 'qr_auth.session.scanned'",
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(1, scanned_event_count);
+
+    let scan_detail_json: String = sqlx::query_scalar(
+        "SELECT detail_json FROM iam_security_event WHERE event_type = 'qr_auth.session.scanned' LIMIT 1",
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    let scan_detail: serde_json::Value = serde_json::from_str(&scan_detail_json).unwrap();
+    assert_eq!(
+        test_sha256_hex("external-user-1"),
+        scan_detail["externalUserIdHash"].as_str().unwrap()
+    );
+    assert!(!scan_detail_json.contains("external-user-1"));
+    assert!(!scan_detail_json.contains("First Agent"));
+}
+
+#[tokio::test]
+async fn app_auth_open_platform_qr_auth_uses_configured_mini_app_default_entry() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    create_open_platform_schema(&pool).await;
+    seed_open_platform_mini_default(&pool).await;
+    let router = app_auth_router_with_open_platform(pool.clone(), qr_login_settings());
+
+    let response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/open_platform/qr_auth/sessions")
+                .header("content-type", "application/json")
+                .body(Body::from(json!({ "purpose": "login" }).to_string()))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    let session_key = payload["data"]["sessionKey"].as_str().unwrap();
+    assert_eq!("mini_app_url", payload["data"]["qrContent"]["mode"]);
+    assert_eq!("1001", payload["data"]["defaultAccountId"]);
+    assert_eq!("2001", payload["data"]["defaultEntryId"]);
+    assert_eq!("wechat", payload["data"]["defaultProvider"]);
+    assert_eq!("mini_app", payload["data"]["defaultAccountType"]);
+    assert_eq!(
+        format!(
+            "https://wxaurl.cn/sdkwork-login?session_key={session_key}&purpose=login&account_id=1001&entry_id=2001"
+        ),
+        payload["data"]["qrContent"]["content"]
+    );
+
+    let mismatch_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri(format!(
+                    "/app/v3/api/open_platform/qr_auth/sessions/{session_key}/scans"
+                ))
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    json!({
+                        "scanSource": "mini_app",
+                        "accountId": "9999",
+                        "entryId": "2001"
+                    })
+                    .to_string(),
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::BAD_REQUEST, mismatch_response.status());
+    let mismatch_payload = response_json(mismatch_response).await;
+    assert_eq!(
+        "accountId does not match QR login scanner",
+        mismatch_payload["msg"]
+    );
+
+    let scan_response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri(format!(
+                    "/app/v3/api/open_platform/qr_auth/sessions/{session_key}/scans"
+                ))
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    json!({
+                        "scanSource": "mini_app",
+                        "accountId": "1001",
+                        "entryId": "2001",
+                        "externalUserId": "mini-user-1"
+                    })
+                    .to_string(),
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, scan_response.status());
+    let scan_payload = response_json(scan_response).await;
+    assert_eq!("mini_app", scan_payload["data"]["scanSource"]);
+    assert_eq!("1001", scan_payload["data"]["accountId"]);
+    assert_eq!("2001", scan_payload["data"]["entryId"]);
+}
+
+#[tokio::test]
+async fn app_auth_open_platform_qr_auth_uses_configured_official_account_default_entry() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    create_open_platform_schema(&pool).await;
+    seed_open_platform_official_default(&pool).await;
+    let router = app_auth_router_with_open_platform(pool, qr_login_settings());
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/open_platform/qr_auth/sessions")
+                .header("content-type", "application/json")
+                .body(Body::from(json!({ "purpose": "login" }).to_string()))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    let session_key = payload["data"]["sessionKey"].as_str().unwrap();
+    assert_eq!(
+        "official_account_entry",
+        payload["data"]["qrContent"]["mode"]
+    );
+    assert_eq!("1002", payload["data"]["defaultAccountId"]);
+    assert_eq!("2002", payload["data"]["defaultEntryId"]);
+    assert_eq!("wechat", payload["data"]["defaultProvider"]);
+    assert_eq!("official_account", payload["data"]["defaultAccountType"]);
+    assert_eq!(
+        format!(
+            "https://mp.weixin.qq.com/sdkwork-login?campaign=auth&session_key={session_key}&purpose=login&account_id=1002&entry_id=2002"
+        ),
+        payload["data"]["qrContent"]["content"]
+    );
+}
+
+#[tokio::test]
+async fn app_auth_open_platform_qr_auth_encodes_added_qr_query_params() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    create_open_platform_schema(&pool).await;
+    seed_open_platform_official_default_with_url(
+        &pool,
+        "https://mp.weixin.qq.com/sdkwork-login?campaign=auth%20spring",
+    )
+    .await;
+    let router = app_auth_router_with_open_platform_and_uuid_generator(
+        pool,
+        qr_login_settings(),
+        Arc::new(ReservedQueryUuidGenerator),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/open_platform/qr_auth/sessions")
+                .header("content-type", "application/json")
+                .body(Body::from(json!({ "purpose": "register" }).to_string()))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    let session_key = payload["data"]["sessionKey"].as_str().unwrap();
+    assert_eq!(
+        "official_account_entry",
+        payload["data"]["qrContent"]["mode"]
+    );
+    assert_eq!("qr+auth/session=1", session_key);
+    assert_eq!(
+        "https://mp.weixin.qq.com/sdkwork-login?campaign=auth%20spring&session_key=qr%2Bauth%2Fsession%3D1&purpose=register&account_id=1002&entry_id=2002",
+        payload["data"]["qrContent"]["content"]
+    );
+}
+
+#[tokio::test]
+async fn app_auth_open_platform_qr_auth_overrides_reserved_qr_query_params() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    create_open_platform_schema(&pool).await;
+    seed_open_platform_official_default_with_url(
+        &pool,
+        "https://mp.weixin.qq.com/sdkwork-login?session_key=stale-session&purpose=login&account_id=stale-account&entry_id=stale-entry&campaign=auth",
+    )
+    .await;
+    let router = app_auth_router_with_open_platform_and_uuid_generator(
+        pool,
+        qr_login_settings(),
+        Arc::new(ReservedQueryUuidGenerator),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/open_platform/qr_auth/sessions")
+                .header("content-type", "application/json")
+                .body(Body::from(json!({ "purpose": "register" }).to_string()))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    assert_eq!(
+        "https://mp.weixin.qq.com/sdkwork-login?campaign=auth&session_key=qr%2Bauth%2Fsession%3D1&purpose=register&account_id=1002&entry_id=2002",
+        payload["data"]["qrContent"]["content"]
+    );
+}
+
+#[tokio::test]
+async fn app_auth_open_platform_qr_auth_falls_back_when_default_entry_is_not_scannable() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    create_open_platform_schema(&pool).await;
+    seed_open_platform_mini_default_with_url(&pool, "https://example.com/not-a-wechat-mini-url")
+        .await;
+    let router = app_auth_router_with_open_platform(pool.clone(), qr_login_settings());
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/open_platform/qr_auth/sessions")
+                .header("content-type", "application/json")
+                .header("host", "console.example.test")
+                .body(Body::from(json!({ "purpose": "login" }).to_string()))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    let session_key = payload["data"]["sessionKey"].as_str().unwrap();
+    assert_eq!("fallback_url", payload["data"]["qrContent"]["mode"]);
+    assert_eq!("1001", payload["data"]["defaultAccountId"]);
+    assert_eq!(
+        format!(
+            "https://console.example.test/auth/qr/{session_key}?session_key={session_key}&purpose=login&scan_source=browser"
+        ),
+        payload["data"]["qrContent"]["content"]
+    );
+
+    let fallback_detail_json: String = sqlx::query_scalar(
+        "SELECT detail_json FROM iam_security_event WHERE event_type = 'qr_auth.session.fallback' LIMIT 1",
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    let fallback_detail: serde_json::Value = serde_json::from_str(&fallback_detail_json).unwrap();
+    assert_eq!(
+        "mini app URL does not match provider URL rules",
+        fallback_detail["reason"]
+    );
+    assert!(!fallback_detail_json.contains(session_key));
+}
+
+#[tokio::test]
+async fn app_auth_open_platform_qr_auth_falls_back_when_default_entry_url_has_userinfo() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    create_open_platform_schema(&pool).await;
+    seed_open_platform_official_default_with_url(
+        &pool,
+        "https://trusted.example.test@evil.example.test/sdkwork-login",
+    )
+    .await;
+    let router = app_auth_router_with_open_platform(pool.clone(), qr_login_settings());
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/open_platform/qr_auth/sessions")
+                .header("content-type", "application/json")
+                .header("host", "console.example.test")
+                .body(Body::from(json!({ "purpose": "login" }).to_string()))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    let session_key = payload["data"]["sessionKey"].as_str().unwrap();
+    assert_eq!("fallback_url", payload["data"]["qrContent"]["mode"]);
+    assert_eq!(
+        format!(
+            "https://console.example.test/auth/qr/{session_key}?session_key={session_key}&purpose=login&scan_source=browser"
+        ),
+        payload["data"]["qrContent"]["content"]
+    );
+
+    let fallback_detail_json: String = sqlx::query_scalar(
+        "SELECT detail_json FROM iam_security_event WHERE event_type = 'qr_auth.session.fallback' LIMIT 1",
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    let fallback_detail: serde_json::Value = serde_json::from_str(&fallback_detail_json).unwrap();
+    assert_eq!(
+        "QR entry URL must not contain user info",
+        fallback_detail["reason"]
+    );
+    assert!(!fallback_detail_json.contains("trusted.example.test@evil.example.test"));
+}
+
+#[tokio::test]
+async fn app_auth_open_platform_qr_auth_registers_new_user_after_scan() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    create_open_platform_schema(&pool).await;
+    seed_user(
+        &pool,
+        10,
+        "bootstrap",
+        "bootstrap@example.com",
+        "Bootstrap",
+        1,
+    )
+    .await;
+    let router = app_auth_router_with_open_platform(pool.clone(), qr_login_settings());
+
+    let create_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/open_platform/qr_auth/sessions")
+                .header("content-type", "application/json")
+                .body(Body::from(json!({ "purpose": "register" }).to_string()))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, create_response.status());
+    let create_payload = response_json(create_response).await;
+    let session_key = create_payload["data"]["sessionKey"].as_str().unwrap();
+    assert_eq!("register", create_payload["data"]["purpose"]);
+
+    let scan_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri(format!(
+                    "/app/v3/api/open_platform/qr_auth/sessions/{session_key}/scans"
+                ))
+                .header("content-type", "application/json")
+                .body(Body::from(json!({ "scanSource": "browser" }).to_string()))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, scan_response.status());
+
+    let password_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri(format!(
+                    "/app/v3/api/open_platform/qr_auth/sessions/{session_key}/passwords"
+                ))
+                .header("content-type", "application/json")
+                .header("X-Request-Id", "qr-register-1")
+                .body(Body::from(
+                    json!({
+                        "username": "qr-new-user",
+                        "email": "qr-new-user@example.com",
+                        "channel": "EMAIL",
+                        "password": "new-user-password",
+                        "confirmPassword": "new-user-password"
+                    })
+                    .to_string(),
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, password_response.status());
+    let password_payload = response_json(password_response).await;
+    assert_eq!("completed", password_payload["data"]["status"]);
+    assert_eq!(
+        "qr-new-user",
+        password_payload["data"]["userInfo"]["username"]
+    );
+    assert!(
+        password_payload["data"]["session"]["authToken"]
+            .as_str()
+            .unwrap()
+            .len()
+            > 32
+    );
+
+    let created_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM iam_user WHERE username = 'qr-new-user' AND email = 'qr-new-user@example.com'",
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(1, created_count);
+}
+
+#[tokio::test]
+async fn app_auth_runtime_settings_expose_default_qr_login_type_without_provider_secrets() {
+    let pool = create_pool().await;
+    create_minimal_auth_schema(&pool).await;
+    let mut settings = qr_login_settings();
+    settings.qr_login_type = "mini".to_owned();
+    let router = app_auth_router_with_settings(pool, settings);
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/auth/runtime_settings")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    assert_eq!("mini", payload["data"]["qrLoginType"]);
+    assert!(payload["data"].get("wechat").is_none());
 }
 
 #[tokio::test]
@@ -877,12 +1640,20 @@ async fn app_auth_registrations_create_requires_verification_code() {
 }
 
 fn app_auth_router(pool: SqlitePool) -> axum::Router {
-    sdkwork_claw_product::api::app_auth_router_with_store(
+    app_auth_router_with_cache(pool, default_desktop_cache_manager())
+}
+
+fn app_auth_router_with_cache(
+    pool: SqlitePool,
+    cache_manager: RuntimeCacheManager,
+) -> axum::Router {
+    sdkwork_claw_product::api::app_auth_router_with_store_and_cache_manager(
         Arc::new(SqliteAppAuthStore::new(pool.clone())),
         Arc::new(SqliteAppSessionEventStore::new(pool)),
         Arc::new(sdkwork_claw_product::infrastructure::OsApiKeySecretGenerator),
         app_session_config(),
         Arc::new(Pbkdf2Sha256PasswordHasher),
+        cache_manager,
     )
 }
 
@@ -911,19 +1682,51 @@ fn app_auth_router_with_settings(pool: SqlitePool, settings: AdminAuthSettings) 
     )
 }
 
+fn app_auth_router_with_open_platform(
+    pool: SqlitePool,
+    settings: AdminAuthSettings,
+) -> axum::Router {
+    app_auth_router_with_open_platform_and_uuid_generator(
+        pool,
+        settings,
+        Arc::new(sdkwork_claw_product::infrastructure::OsApiKeySecretGenerator),
+    )
+}
+
+fn app_auth_router_with_open_platform_and_uuid_generator(
+    pool: SqlitePool,
+    settings: AdminAuthSettings,
+    entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+) -> axum::Router {
+    sdkwork_claw_product::api::app_auth_router_with_store_auth_settings_store_open_platform_store_cache_and_verification_sender(
+        Arc::new(SqliteAppAuthStore::new(pool.clone())),
+        Some(Arc::new(TestAdminAuthSettingsStore::new(settings))),
+        Some(Arc::new(SqliteAdminOpenPlatformStore::new(pool.clone()))),
+        Arc::new(SqliteAppSessionEventStore::new(pool)),
+        entity_uuid_generator,
+        app_session_config(),
+        Arc::new(Pbkdf2Sha256PasswordHasher),
+        default_desktop_cache_manager(),
+        Arc::new(sdkwork_claw_product::ports::DebugVerificationCodeSender),
+        true,
+    )
+}
+
 fn app_auth_router_with_sender_and_settings(
     pool: SqlitePool,
     sender: Arc<dyn VerificationCodeSender + Send + Sync>,
     expose_debug_code: bool,
     settings: AdminAuthSettings,
 ) -> axum::Router {
-    sdkwork_claw_product::api::app_auth_router_with_store_auth_settings_store_and_verification_sender(
+    sdkwork_claw_product::api::app_auth_router_with_store_auth_settings_store_cache_and_verification_sender(
         Arc::new(SqliteAppAuthStore::new(pool.clone())),
         Some(Arc::new(TestAdminAuthSettingsStore::new(settings))),
         Arc::new(SqliteAppSessionEventStore::new(pool)),
         Arc::new(sdkwork_claw_product::infrastructure::OsApiKeySecretGenerator),
         app_session_config(),
         Arc::new(Pbkdf2Sha256PasswordHasher),
+        None,
+        default_desktop_cache_manager(),
         sender,
         expose_debug_code,
     )
@@ -939,6 +1742,14 @@ impl TestAdminAuthSettingsStore {
         Self {
             settings: settings.normalized(),
         }
+    }
+}
+
+struct ReservedQueryUuidGenerator;
+
+impl EntityUuidGenerator for ReservedQueryUuidGenerator {
+    fn generate_entity_uuid(&self) -> DomainResult<String> {
+        Ok("qr+auth/session=1".to_owned())
     }
 }
 
@@ -1275,6 +2086,138 @@ async fn create_minimal_auth_schema(pool: &SqlitePool) {
     .unwrap();
 }
 
+async fn create_open_platform_schema(pool: &SqlitePool) {
+    for statement in [
+        r#"
+        CREATE TABLE open_platform_account (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            data_scope INTEGER NOT NULL DEFAULT 1,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            account_key TEXT NOT NULL,
+            name TEXT NOT NULL,
+            provider TEXT NOT NULL,
+            account_type TEXT NOT NULL,
+            app_id TEXT,
+            secret_ref TEXT,
+            token_ref TEXT,
+            aes_key_ref TEXT,
+            default_entry_id INTEGER,
+            qr_default INTEGER NOT NULL DEFAULT 0
+        )
+        "#,
+        r#"
+        CREATE TABLE open_platform_entry (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            data_scope INTEGER NOT NULL DEFAULT 1,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            account_id INTEGER NOT NULL,
+            entry_key TEXT NOT NULL,
+            entry_type TEXT NOT NULL,
+            entry_url TEXT NOT NULL
+        )
+        "#,
+        r#"
+        CREATE TABLE ops_audit_log (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            action TEXT NOT NULL,
+            target_type INTEGER NOT NULL,
+            target_id INTEGER NOT NULL,
+            request_id TEXT NOT NULL,
+            operator_id INTEGER NOT NULL,
+            operator_type INTEGER NOT NULL,
+            change_summary TEXT NOT NULL
+        )
+        "#,
+    ] {
+        sqlx::query(statement).execute(pool).await.unwrap();
+    }
+}
+
+async fn seed_open_platform_mini_default(pool: &SqlitePool) {
+    seed_open_platform_mini_default_with_url(pool, "https://wxaurl.cn/sdkwork-login").await;
+}
+
+async fn seed_open_platform_mini_default_with_url(pool: &SqlitePool, entry_url: &str) {
+    sqlx::query(
+        r#"
+        INSERT INTO open_platform_account
+            (id, uuid, tenant_id, organization_id, account_key, name, provider, account_type, app_id, secret_ref, token_ref, aes_key_ref, default_entry_id, qr_default, status, created_at, updated_at)
+        VALUES
+            (1001, 'account-1001', 10, 20, 'mini-main', 'Main Mini', 'wechat', 'mini_app', 'wxabcdef1234567890', 'secret://wechat/mini-main/secret', NULL, NULL, 2001, 1, 1, '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO open_platform_entry
+            (id, uuid, tenant_id, organization_id, account_id, entry_key, entry_type, entry_url, status, created_at, updated_at)
+        VALUES
+            (2001, 'entry-2001', 10, 20, 1001, 'login', 'mini_app_url', ?, 1, '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
+        "#,
+    )
+    .bind(entry_url)
+    .execute(pool)
+    .await
+    .unwrap();
+}
+
+async fn seed_open_platform_official_default(pool: &SqlitePool) {
+    seed_open_platform_official_default_with_url(
+        pool,
+        "https://mp.weixin.qq.com/sdkwork-login?campaign=auth",
+    )
+    .await;
+}
+
+async fn seed_open_platform_official_default_with_url(pool: &SqlitePool, entry_url: &str) {
+    sqlx::query(
+        r#"
+        INSERT INTO open_platform_account
+            (id, uuid, tenant_id, organization_id, account_key, name, provider, account_type, app_id, secret_ref, token_ref, aes_key_ref, default_entry_id, qr_default, status, created_at, updated_at)
+        VALUES
+            (1002, 'account-1002', 10, 20, 'oa-main', 'Main Official', 'wechat', 'official_account', 'wxofficial1234567890', 'secret://wechat/oa-main/secret', 'secret://wechat/oa-main/token', 'secret://wechat/oa-main/aes', 2002, 1, 1, '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO open_platform_entry
+            (id, uuid, tenant_id, organization_id, account_id, entry_key, entry_type, entry_url, status, created_at, updated_at)
+        VALUES
+            (2002, 'entry-2002', 10, 20, 1002, 'login', 'url', ?, 1, '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
+        "#,
+    )
+    .bind(entry_url)
+    .execute(pool)
+    .await
+    .unwrap();
+}
+
 async fn seed_user(
     pool: &SqlitePool,
     user_id: i64,
@@ -1393,6 +2336,10 @@ async fn response_json(response: axum::response::Response) -> serde_json::Value 
         .await
         .unwrap();
     serde_json::from_slice(&body).unwrap()
+}
+
+fn test_sha256_hex(value: &str) -> String {
+    hex::encode(Sha256::digest(value.as_bytes()))
 }
 
 fn current_unix_seconds() -> i64 {

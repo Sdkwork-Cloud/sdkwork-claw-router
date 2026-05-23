@@ -43,6 +43,7 @@ class ClawRouterOpenApiContractAuditTest(unittest.TestCase):
                     "post": {
                         "operationId": "modelVendors.create",
                         "summary": "Create model vendor",
+                        "description": "Create a model vendor resource.",
                         "tags": ["ai"],
                         "requestBody": {
                             "required": True,
@@ -76,6 +77,7 @@ class ClawRouterOpenApiContractAuditTest(unittest.TestCase):
                     "post": {
                         "operationId": "modelVendors.refresh",
                         "summary": "Refresh model vendors",
+                        "description": "Refresh derived model vendor data.",
                         "tags": ["ai"],
                         "responses": {
                             "200": {
@@ -196,6 +198,7 @@ class ClawRouterOpenApiContractAuditTest(unittest.TestCase):
                             "status": {"type": "integer", "minimum": 100, "maximum": 599},
                             "detail": {"type": "string"},
                             "instance": {"type": "string"},
+                            "requestId": {"type": "string"},
                             "code": {"type": "string"},
                             "traceId": {"type": "string"},
                             "errors": {
@@ -581,6 +584,36 @@ class ClawRouterOpenApiContractAuditTest(unittest.TestCase):
                 result.messages,
             )
 
+    def test_rejects_missing_default_problem_detail_error_response(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            spec = self.valid_spec("app")
+            del spec["paths"]["/app/v3/api/ai/model_vendors"]["post"]["responses"]["default"]
+            self.write_specs(root, app_spec=spec)
+
+            result = ClawRouterOpenApiContractAudit(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "app POST /app/v3/api/ai/model_vendors must declare default application/problem+json ProblemDetail response",
+                result.messages,
+            )
+
+    def test_rejects_problem_detail_without_request_id(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            spec = self.valid_spec("app")
+            del spec["components"]["schemas"]["ProblemDetail"]["properties"]["requestId"]
+            self.write_specs(root, app_spec=spec)
+
+            result = ClawRouterOpenApiContractAudit(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "app schema component ProblemDetail.requestId must be declared",
+                result.messages,
+            )
+
     def test_rejects_shared_weak_components(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -750,6 +783,42 @@ class ClawRouterOpenApiContractAuditTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn(
                 "app schema component NoData must be a closed empty object",
+                result.messages,
+            )
+
+    def test_rejects_unbounded_result_data_component(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            spec = self.valid_spec("app")
+            spec["components"]["schemas"]["AiModelVendorRecord"] = {
+                "type": "object",
+                "additionalProperties": True,
+                "properties": {},
+            }
+            self.write_specs(root, app_spec=spec)
+
+            result = ClawRouterOpenApiContractAudit(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "app POST /app/v3/api/ai/model_vendors result schema CreateModelVendorResult.data component AiModelVendorRecord object schema must not use unbounded additionalProperties true",
+                result.messages,
+            )
+
+    def test_rejects_array_schema_without_typed_items(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            spec = self.valid_spec("backend")
+            spec["components"]["schemas"]["CreateModelVendorRequest"]["properties"]["labels"] = {
+                "type": "array"
+            }
+            self.write_specs(root, backend_spec=spec)
+
+            result = ClawRouterOpenApiContractAudit(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "backend POST /backend/v3/api/ai/model_vendors request schema CreateModelVendorRequest.labels array schema must declare typed items",
                 result.messages,
             )
 

@@ -11,5 +11,4 @@ class PaymentsRecordsListResult:
     """Payments records list result schema exposed by Claw Router."""
     code: str
     data: Optional[List[BillingRechargeHistoryItem]] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

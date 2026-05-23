@@ -194,12 +194,12 @@ pub fn admin_marketing_router_with_store(
             get(fetch_recharge_record),
         )
         .route(
-            "/backend/v3/api/billing/recharges/packages",
+            "/backend/v3/api/recharges/packages",
             get(fetch_recharge_packages).post(create_recharge_package),
         )
         .route(
-            "/backend/v3/api/billing/recharges/packages/{package_id}",
-            put(update_recharge_package).delete(delete_recharge_package),
+            "/backend/v3/api/recharges/packages/{package_id}",
+            patch(update_recharge_package).delete(delete_recharge_package),
         )
         .route(
             "/backend/v3/api/billing/exchange_rules",
@@ -274,7 +274,7 @@ async fn delete_coupon(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let coupon_id = match parse_positive_id(&coupon_id, "coupon id") {
+    let coupon_id = match normalize_path_id(&coupon_id, "coupon id") {
         Ok(coupon_id) => coupon_id,
         Err(message) => return bad_request(message),
     };
@@ -304,7 +304,7 @@ async fn update_coupon(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let coupon_id = match parse_positive_id(&coupon_id, "coupon id") {
+    let coupon_id = match normalize_path_id(&coupon_id, "coupon id") {
         Ok(coupon_id) => coupon_id,
         Err(message) => return bad_request(message),
     };
@@ -401,7 +401,7 @@ async fn update_promo_code_status(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let promo_code_id = match parse_positive_id(&code_id, "promo code id") {
+    let promo_code_id = match normalize_path_id(&code_id, "promo code id") {
         Ok(promo_code_id) => promo_code_id,
         Err(message) => return bad_request(message),
     };
@@ -560,7 +560,7 @@ async fn update_recharge_package(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let package_id = match parse_positive_id(&package_id, "package id") {
+    let package_id = match normalize_path_id(&package_id, "package id") {
         Ok(package_id) => package_id,
         Err(message) => return bad_request(message),
     };
@@ -601,7 +601,7 @@ async fn delete_recharge_package(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let package_id = match parse_positive_id(&package_id, "package id") {
+    let package_id = match normalize_path_id(&package_id, "package id") {
         Ok(package_id) => package_id,
         Err(message) => return bad_request(message),
     };
@@ -776,7 +776,6 @@ fn build_create_coupon_command(
     Ok(CreateAdminCouponCommand {
         subject,
         coupon_uuid: generate_entity_uuid(&state)?,
-        template_uuid: generate_entity_uuid(&state)?,
         audit_log_uuid: generate_entity_uuid(&state)?,
         name,
         coupon_type,
@@ -793,7 +792,7 @@ fn build_delete_coupon_command(
     state: AdminMarketingState,
     headers: &HeaderMap,
     subject: AdminMarketingSubject,
-    coupon_id: i64,
+    coupon_id: String,
 ) -> Result<DeleteAdminCouponCommand, AdminMarketingCommandBuildError> {
     Ok(DeleteAdminCouponCommand {
         subject,
@@ -808,7 +807,7 @@ fn build_update_coupon_command(
     state: AdminMarketingState,
     headers: &HeaderMap,
     subject: AdminMarketingSubject,
-    coupon_id: i64,
+    coupon_id: String,
     request: CreateCouponRequest,
 ) -> Result<UpdateAdminCouponCommand, AdminMarketingCommandBuildError> {
     let name = normalize_required_text(request.name.as_deref(), "coupon name", MAX_NAME_LEN)?;
@@ -857,7 +856,7 @@ fn build_update_promo_code_status_command(
     state: AdminMarketingState,
     headers: &HeaderMap,
     subject: AdminMarketingSubject,
-    promo_code_id: i64,
+    promo_code_id: String,
     request: UpdatePromoCodeStatusRequest,
 ) -> Result<UpdateAdminPromoCodeStatusCommand, AdminMarketingCommandBuildError> {
     Ok(UpdateAdminPromoCodeStatusCommand {
@@ -895,7 +894,7 @@ fn build_update_recharge_package_command(
     state: AdminMarketingState,
     headers: &HeaderMap,
     subject: AdminMarketingSubject,
-    package_id: i64,
+    package_id: String,
     request: RechargePackageMutationRequest,
 ) -> Result<UpdateAdminRechargePackageCommand, AdminMarketingCommandBuildError> {
     let mutation = normalize_recharge_package_mutation(request)?;
@@ -917,7 +916,7 @@ fn build_delete_recharge_package_command(
     state: AdminMarketingState,
     headers: &HeaderMap,
     subject: AdminMarketingSubject,
-    package_id: i64,
+    package_id: String,
 ) -> Result<DeleteAdminRechargePackageCommand, AdminMarketingCommandBuildError> {
     Ok(DeleteAdminRechargePackageCommand {
         subject,
@@ -1005,12 +1004,12 @@ fn normalize_coupon_value(
         Some(_) => {
             return Err(AdminMarketingCommandBuildError::BadRequest(
                 "coupon value must be a number or string".to_owned(),
-            ))
+            ));
         }
         None => {
             return Err(AdminMarketingCommandBuildError::BadRequest(
                 "coupon value is required".to_owned(),
-            ))
+            ));
         }
     };
     if coupon_type == "discount" {
@@ -1059,12 +1058,12 @@ fn normalize_recharge_package_rmb(
         Some(_) => {
             return Err(AdminMarketingCommandBuildError::BadRequest(
                 "recharge package rmb must be a number or string".to_owned(),
-            ))
+            ));
         }
         None => {
             return Err(AdminMarketingCommandBuildError::BadRequest(
                 "recharge package rmb is required".to_owned(),
-            ))
+            ));
         }
     };
     let cents = decimal_money_to_cents_with_field(&raw, "recharge package rmb")?;
@@ -1081,7 +1080,7 @@ fn normalize_recharge_package_bonus(
         None => {
             return Err(AdminMarketingCommandBuildError::BadRequest(
                 "recharge package bonus is required".to_owned(),
-            ))
+            ));
         }
     }
     .ok_or_else(|| {
@@ -1184,23 +1183,13 @@ fn cents_to_plain_money_string(cents: i64) -> String {
 fn normalize_id_value(
     value: Option<&Value>,
     field_name: &str,
-) -> Result<i64, AdminMarketingCommandBuildError> {
+) -> Result<String, AdminMarketingCommandBuildError> {
     let id = match value {
-        Some(Value::String(value)) => value.trim().parse::<i64>().ok(),
-        Some(Value::Number(value)) => value.as_i64(),
-        _ => None,
-    }
-    .ok_or_else(|| {
-        AdminMarketingCommandBuildError::BadRequest(format!(
-            "{field_name} must be a positive integer"
-        ))
-    })?;
-    if id <= 0 {
-        return Err(AdminMarketingCommandBuildError::BadRequest(format!(
-            "{field_name} must be a positive integer"
-        )));
-    }
-    Ok(id)
+        Some(Value::String(value)) => value.trim().to_owned(),
+        Some(Value::Number(value)) => value.to_string(),
+        _ => String::new(),
+    };
+    normalize_required_text(Some(&id), field_name, 128)
 }
 
 fn normalize_batch_count(value: Option<i64>) -> Result<i64, AdminMarketingCommandBuildError> {
@@ -1330,8 +1319,7 @@ fn normalize_exchange_rule_status(
     }
     if status == "inactive" || status == "disabled" {
         return Err(AdminMarketingCommandBuildError::BadRequest(
-            "exchange rule status only supports active because legacy storage has no inactive field"
-                .to_owned(),
+            "exchange rule status only supports active".to_owned(),
         ));
     }
     Err(AdminMarketingCommandBuildError::BadRequest(
@@ -1357,12 +1345,12 @@ fn normalize_exchange_rate_value(
         Some(_) => {
             return Err(AdminMarketingCommandBuildError::BadRequest(
                 "exchange rule rate must be a number or string".to_owned(),
-            ))
+            ));
         }
         None => {
             return Err(AdminMarketingCommandBuildError::BadRequest(
                 "exchange rule rate is required".to_owned(),
-            ))
+            ));
         }
     };
     normalize_exchange_rate_text(&raw)
@@ -1408,15 +1396,15 @@ fn normalize_exchange_rate_text(value: &str) -> Result<String, AdminMarketingCom
     }
 }
 
-fn parse_positive_id(value: &str, field_name: &str) -> Result<i64, String> {
-    let id = value
-        .trim()
-        .parse::<i64>()
-        .map_err(|_| format!("{field_name} must be a positive integer"))?;
-    if id <= 0 {
-        return Err(format!("{field_name} must be a positive integer"));
+fn normalize_path_id(value: &str, field_name: &str) -> Result<String, String> {
+    let value = value.trim();
+    if value.is_empty() {
+        return Err(format!("{field_name} is required"));
     }
-    Ok(id)
+    if value.chars().count() > 128 {
+        return Err(format!("{field_name} must be at most 128 characters"));
+    }
+    Ok(value.to_owned())
 }
 
 fn normalize_order_no(value: &str) -> Result<String, String> {

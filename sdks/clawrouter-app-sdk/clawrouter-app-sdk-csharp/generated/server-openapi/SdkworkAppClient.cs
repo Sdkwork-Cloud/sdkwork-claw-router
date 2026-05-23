@@ -13,11 +13,15 @@ namespace Sdkwork.ClawRouter.App
         public AiApi Ai { get; }
         public AuthApi Auth { get; }
         public BillingApi Billing { get; }
-        public CommunicationApi Communication { get; }
+        public ChatApi Chat { get; }
         public ContentApi Content { get; }
         public EcosystemApi Ecosystem { get; }
         public IamApi Iam { get; }
+        public MemoryApi Memory { get; }
+        public NotificationApi Notification { get; }
         public PlatformApi Platform { get; }
+        public RuntimeApi Runtime { get; }
+        public SystemApi System { get; }
 
         public SdkworkAppClient(string baseUrl)
         {
@@ -26,11 +30,15 @@ namespace Sdkwork.ClawRouter.App
             Ai = new AiApi(_httpClient);
             Auth = new AuthApi(_httpClient);
             Billing = new BillingApi(_httpClient);
-            Communication = new CommunicationApi(_httpClient);
+            Chat = new ChatApi(_httpClient);
             Content = new ContentApi(_httpClient);
             Ecosystem = new EcosystemApi(_httpClient);
             Iam = new IamApi(_httpClient);
+            Memory = new MemoryApi(_httpClient);
+            Notification = new NotificationApi(_httpClient);
             Platform = new PlatformApi(_httpClient);
+            Runtime = new RuntimeApi(_httpClient);
+            System = new SystemApi(_httpClient);
         }
 
         public SdkworkAppClient(SdkConfig config)
@@ -40,11 +48,15 @@ namespace Sdkwork.ClawRouter.App
             Ai = new AiApi(_httpClient);
             Auth = new AuthApi(_httpClient);
             Billing = new BillingApi(_httpClient);
-            Communication = new CommunicationApi(_httpClient);
+            Chat = new ChatApi(_httpClient);
             Content = new ContentApi(_httpClient);
             Ecosystem = new EcosystemApi(_httpClient);
             Iam = new IamApi(_httpClient);
+            Memory = new MemoryApi(_httpClient);
+            Notification = new NotificationApi(_httpClient);
             Platform = new PlatformApi(_httpClient);
+            Runtime = new RuntimeApi(_httpClient);
+            System = new SystemApi(_httpClient);
         }
 
         public SdkworkAppClient SetApiKey(string apiKey)

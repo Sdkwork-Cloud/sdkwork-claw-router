@@ -5,7 +5,6 @@ use serde::Serialize;
 pub struct PlusApiResult<T: Serialize> {
     pub code: String,
     pub msg: String,
-    pub message: String,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub data: Option<T>,
 }
@@ -15,7 +14,6 @@ impl<T: Serialize> PlusApiResult<T> {
         Self {
             code: "2000".to_owned(),
             msg: "SUCCESS".to_owned(),
-            message: "SUCCESS".to_owned(),
             data: Some(data),
         }
     }
@@ -26,7 +24,6 @@ impl PlusApiResult<()> {
         let msg = msg.into();
         Self {
             code: code.into(),
-            message: msg.clone(),
             msg,
             data: None,
         }

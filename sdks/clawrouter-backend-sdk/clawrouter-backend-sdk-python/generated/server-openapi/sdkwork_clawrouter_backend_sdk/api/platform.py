@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AdminAppCreateRequest, AdminAppUpdateRequest, AppsCreateResult, AppsDeleteResult, AppsDisableResult, AppsEnableResult, AppsListResult, AppsPublishResult, AppsRetrieveResult, AppsUnpublishResult, AppsUpdateResult
+from ..models import AdminAppCategoryCreateRequest, AdminAppCategoryUpdateRequest, AdminAppCreateRequest, AdminAppUpdateRequest, AppsCategoriesCreateResult, AppsCategoriesDeleteResult, AppsCategoriesListResult, AppsCategoriesUpdateResult, AppsCreateResult, AppsDeleteResult, AppsDisableResult, AppsEnableResult, AppsListResult, AppsPublishResult, AppsRetrieveResult, AppsUnpublishResult, AppsUpdateResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -250,6 +250,7 @@ class PlatformAppsApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.categories = PlatformAppsCategoriesApi(client)
 
 
     def list(self, q: Optional[str] = None, status: Optional[str] = None, market_status: Optional[str] = None, app_type: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None, x_request_id: Optional[str] = None) -> AppsListResult:
@@ -349,3 +350,44 @@ class PlatformAppsApi:
             {}
         )
         return self._client.post(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}/unpublish", headers=request_headers)
+
+class PlatformAppsCategoriesApi:
+    """platform platform.apps.categories API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> AppsCategoriesListResult:
+        """List app categories"""
+        return self._client.get(f"/backend/v3/api/platform/apps/categories")
+
+    def create(self, body: AdminAppCategoryCreateRequest, x_request_id: Optional[str] = None) -> AppsCategoriesCreateResult:
+        """Create app category"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/backend/v3/api/platform/apps/categories", json=body, headers=request_headers)
+
+    def delete(self, category_id: str, x_request_id: Optional[str] = None) -> AppsCategoriesDeleteResult:
+        """Delete app category"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.delete(f"/backend/v3/api/platform/apps/categories/{serialize_path_parameter(category_id, {'name': 'categoryId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+
+    def update(self, category_id: str, body: AdminAppCategoryUpdateRequest, x_request_id: Optional[str] = None) -> AppsCategoriesUpdateResult:
+        """Update app category"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.put(f"/backend/v3/api/platform/apps/categories/{serialize_path_parameter(category_id, {'name': 'categoryId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)

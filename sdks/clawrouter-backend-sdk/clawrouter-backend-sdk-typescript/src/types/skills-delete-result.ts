@@ -7,7 +7,5 @@ export interface SkillsDeleteResult {
   /** Data field on skills delete result. */
   data?: AdminSkillDeleteResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

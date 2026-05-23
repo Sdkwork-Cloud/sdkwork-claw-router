@@ -1605,7 +1605,7 @@ test("routing strategy fails closed when app SDK returns unsupported strategy ty
 
 test("routing local sidebar keeps channel account labels compact and single line", () => {
   const source = readFileSync(
-    "packages/sdkwork-claw-router-console-routing/src/RoutingView.tsx",
+    new URL("./packages/sdkwork-claw-router-console-routing/src/RoutingView.tsx", import.meta.url),
     "utf8",
   );
 

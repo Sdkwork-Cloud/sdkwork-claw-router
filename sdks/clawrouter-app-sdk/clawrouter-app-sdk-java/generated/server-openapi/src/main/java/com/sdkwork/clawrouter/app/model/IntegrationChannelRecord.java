@@ -5,7 +5,7 @@ import java.util.Map;
 public class IntegrationChannelRecord {
     private String accessType;
     private String accountId;
-    private String baseUrlOverride;
+    private String baseUrl;
     private Map<String, String> capabilities;
     private String channelCode;
     private Map<String, String> circuitBreakerPolicy;
@@ -41,7 +41,7 @@ public class IntegrationChannelRecord {
     public String getAccessType() {
         return this.accessType;
     }
-    
+
     public void setAccessType(String accessType) {
         this.accessType = accessType;
     }
@@ -49,23 +49,23 @@ public class IntegrationChannelRecord {
     public String getAccountId() {
         return this.accountId;
     }
-    
+
     public void setAccountId(String accountId) {
         this.accountId = accountId;
     }
 
-    public String getBaseUrlOverride() {
-        return this.baseUrlOverride;
+    public String getBaseUrl() {
+        return this.baseUrl;
     }
-    
-    public void setBaseUrlOverride(String baseUrlOverride) {
-        this.baseUrlOverride = baseUrlOverride;
+
+    public void setBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl;
     }
 
     public Map<String, String> getCapabilities() {
         return this.capabilities;
     }
-    
+
     public void setCapabilities(Map<String, String> capabilities) {
         this.capabilities = capabilities;
     }
@@ -73,7 +73,7 @@ public class IntegrationChannelRecord {
     public String getChannelCode() {
         return this.channelCode;
     }
-    
+
     public void setChannelCode(String channelCode) {
         this.channelCode = channelCode;
     }
@@ -81,7 +81,7 @@ public class IntegrationChannelRecord {
     public Map<String, String> getCircuitBreakerPolicy() {
         return this.circuitBreakerPolicy;
     }
-    
+
     public void setCircuitBreakerPolicy(Map<String, String> circuitBreakerPolicy) {
         this.circuitBreakerPolicy = circuitBreakerPolicy;
     }
@@ -89,7 +89,7 @@ public class IntegrationChannelRecord {
     public String getConsecutiveErrorCount() {
         return this.consecutiveErrorCount;
     }
-    
+
     public void setConsecutiveErrorCount(String consecutiveErrorCount) {
         this.consecutiveErrorCount = consecutiveErrorCount;
     }
@@ -97,7 +97,7 @@ public class IntegrationChannelRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -105,7 +105,7 @@ public class IntegrationChannelRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -113,7 +113,7 @@ public class IntegrationChannelRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -121,7 +121,7 @@ public class IntegrationChannelRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -129,7 +129,7 @@ public class IntegrationChannelRecord {
     public String getEnvironment() {
         return this.environment;
     }
-    
+
     public void setEnvironment(String environment) {
         this.environment = environment;
     }
@@ -137,7 +137,7 @@ public class IntegrationChannelRecord {
     public String getHealthStatus() {
         return this.healthStatus;
     }
-    
+
     public void setHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
     }
@@ -145,7 +145,7 @@ public class IntegrationChannelRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -153,7 +153,7 @@ public class IntegrationChannelRecord {
     public Integer getLastLatencyMs() {
         return this.lastLatencyMs;
     }
-    
+
     public void setLastLatencyMs(Integer lastLatencyMs) {
         this.lastLatencyMs = lastLatencyMs;
     }
@@ -161,7 +161,7 @@ public class IntegrationChannelRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -169,7 +169,7 @@ public class IntegrationChannelRecord {
     public String getModelMode() {
         return this.modelMode;
     }
-    
+
     public void setModelMode(String modelMode) {
         this.modelMode = modelMode;
     }
@@ -177,7 +177,7 @@ public class IntegrationChannelRecord {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -185,7 +185,7 @@ public class IntegrationChannelRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -193,7 +193,7 @@ public class IntegrationChannelRecord {
     public Integer getPriority() {
         return this.priority;
     }
-    
+
     public void setPriority(Integer priority) {
         this.priority = priority;
     }
@@ -201,7 +201,7 @@ public class IntegrationChannelRecord {
     public String getProtocol() {
         return this.protocol;
     }
-    
+
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
@@ -209,7 +209,7 @@ public class IntegrationChannelRecord {
     public String getProviderCode() {
         return this.providerCode;
     }
-    
+
     public void setProviderCode(String providerCode) {
         this.providerCode = providerCode;
     }
@@ -217,7 +217,7 @@ public class IntegrationChannelRecord {
     public String getProviderId() {
         return this.providerId;
     }
-    
+
     public void setProviderId(String providerId) {
         this.providerId = providerId;
     }
@@ -225,7 +225,7 @@ public class IntegrationChannelRecord {
     public String getProxyId() {
         return this.proxyId;
     }
-    
+
     public void setProxyId(String proxyId) {
         this.proxyId = proxyId;
     }
@@ -233,7 +233,7 @@ public class IntegrationChannelRecord {
     public String getRegion() {
         return this.region;
     }
-    
+
     public void setRegion(String region) {
         this.region = region;
     }
@@ -241,7 +241,7 @@ public class IntegrationChannelRecord {
     public Map<String, String> getRetryPolicy() {
         return this.retryPolicy;
     }
-    
+
     public void setRetryPolicy(Map<String, String> retryPolicy) {
         this.retryPolicy = retryPolicy;
     }
@@ -249,7 +249,7 @@ public class IntegrationChannelRecord {
     public String getRpmLimit() {
         return this.rpmLimit;
     }
-    
+
     public void setRpmLimit(String rpmLimit) {
         this.rpmLimit = rpmLimit;
     }
@@ -257,7 +257,7 @@ public class IntegrationChannelRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -265,7 +265,7 @@ public class IntegrationChannelRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -273,7 +273,7 @@ public class IntegrationChannelRecord {
     public Integer getTimeoutMs() {
         return this.timeoutMs;
     }
-    
+
     public void setTimeoutMs(Integer timeoutMs) {
         this.timeoutMs = timeoutMs;
     }
@@ -281,7 +281,7 @@ public class IntegrationChannelRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -289,7 +289,7 @@ public class IntegrationChannelRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -297,7 +297,7 @@ public class IntegrationChannelRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -305,7 +305,7 @@ public class IntegrationChannelRecord {
     public Integer getWeight() {
         return this.weight;
     }
-    
+
     public void setWeight(Integer weight) {
         this.weight = weight;
     }

@@ -2,11 +2,12 @@ import 'package:sdkwork_common_flutter/sdkwork_common_flutter.dart';
 import 'src/http/client.dart';
 import 'src/api/agents.dart';
 import 'src/api/ai.dart';
-import 'src/api/billing.dart';
+import 'src/api/commerce.dart';
 import 'src/api/content.dart';
 import 'src/api/ecosystem.dart';
 import 'src/api/iam.dart';
 import 'src/api/integration.dart';
+import 'src/api/open_platform.dart';
 import 'src/api/platform.dart';
 import 'src/api/system.dart';
 
@@ -15,11 +16,12 @@ class SdkworkBackendClient {
 
   late final AgentsApi agents;
   late final AiApi ai;
-  late final BillingApi billing;
+  late final CommerceApi commerce;
   late final ContentApi content;
   late final EcosystemApi ecosystem;
   late final IamApi iam;
   late final IntegrationApi integration;
+  late final OpenPlatformApi openPlatform;
   late final PlatformApi platform;
   late final SystemApi system;
 
@@ -28,11 +30,12 @@ class SdkworkBackendClient {
   }) : _httpClient = HttpClient(config: config) {
     agents = AgentsApi(_httpClient);
     ai = AiApi(_httpClient);
-    billing = BillingApi(_httpClient);
+    commerce = CommerceApi(_httpClient);
     content = ContentApi(_httpClient);
     ecosystem = EcosystemApi(_httpClient);
     iam = IamApi(_httpClient);
     integration = IntegrationApi(_httpClient);
+    openPlatform = OpenPlatformApi(_httpClient);
     platform = PlatformApi(_httpClient);
     system = SystemApi(_httpClient);
   }

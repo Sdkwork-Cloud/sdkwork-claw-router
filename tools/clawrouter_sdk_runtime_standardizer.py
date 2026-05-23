@@ -122,6 +122,32 @@ SDK_GENERATED_OPENAPI_PATHS = {
     "clawrouter-backend-sdk": Path("generated/openapi/clawrouter-backend-openapi.json"),
     "clawrouter-open-sdk": Path("apps/sdkwork-claw-router-portal/public/openapi.json"),
 }
+
+
+def sdk_generation_input_spec(sdk_family: str) -> str:
+    if sdk_family == "clawrouter-open-sdk":
+        return f"openapi/{sdk_family}.sdkgen.json"
+    return f"openapi/{sdk_family}.openapi.json"
+
+
+def sdk_generation_input_path_symbol(sdk_family: str) -> str:
+    if sdk_family == "clawrouter-open-sdk":
+        return "sdkgenInputPath"
+    return "authorityInputPath"
+
+
+def sdk_forbidden_generation_input_path_symbol(sdk_family: str) -> str:
+    if sdk_family == "clawrouter-open-sdk":
+        return "authorityInputPath"
+    return "sdkgenInputPath"
+
+
+def sdk_derived_specs(sdk_family: str) -> dict[str, str]:
+    if sdk_family == "clawrouter-open-sdk":
+        return {"sdk-generator": f"openapi/{sdk_family}.sdkgen.json"}
+    return {}
+
+
 PROJECT_REQUIRED_TYPE_MODULES: dict[str, tuple[str, str]] = {}
 UNION_ARRAY_TYPE_PATTERN = re.compile(
     r"(?P<operator>\??:\s*)"
@@ -608,10 +634,8 @@ class SdkRuntimeStandardizer:
             "title": SDK_DESCRIPTIONS[sdk_family],
             "apiVersion": version,
             "authoritySpec": f"openapi/{sdk_family}.openapi.json",
-            "derivedSpec": f"openapi/{sdk_family}.sdkgen.json",
-            "derivedSpecs": {
-                "default": f"openapi/{sdk_family}.sdkgen.json",
-            },
+            "generationInputSpec": sdk_generation_input_spec(sdk_family),
+            "derivedSpecs": sdk_derived_specs(sdk_family),
             "discoverySurface": {
                 "sdkTarget": SDK_TYPES[sdk_family],
                 "apiPrefix": SDK_API_PREFIXES[sdk_family],
@@ -630,6 +654,17 @@ class SdkRuntimeStandardizer:
         typescript_directory = SDK_TYPESCRIPT_DIRECTORIES[sdk_family]
         package_name = SDK_PACKAGE_NAMES[sdk_family]
         language_lines = "\n".join(f"- `{language}`" for language in OFFICIAL_SDK_LANGUAGES)
+        generation_input = (
+            f"`openapi/{sdk_family}.sdkgen.json` derived from the authority contract"
+            if sdk_family == "clawrouter-open-sdk"
+            else f"`openapi/{sdk_family}.openapi.json`"
+        )
+        derived_contract_line = (
+            f"- Derived sdkgen contract: `openapi/{sdk_family}.sdkgen.json` "
+            "(generator input for recursive OpenAI-compatible schemas)\n"
+            if sdk_family == "clawrouter-open-sdk"
+            else f"- Derived sdkgen contract: `openapi/{sdk_family}.sdkgen.json` (synchronized artifact, not a generation source)\n"
+        )
         return (
             f"# {sdk_family}\n\n"
             f"{SDK_DESCRIPTIONS[sdk_family]}.\n\n"
@@ -637,7 +672,8 @@ class SdkRuntimeStandardizer:
             "Language SDKs live under this family root instead of directly under `sdks/`.\n\n"
             "## Workspace Layout\n\n"
             f"- Authority contract: `openapi/{sdk_family}.openapi.json`\n"
-            f"- Derived sdkgen contract: `openapi/{sdk_family}.sdkgen.json`\n"
+            f"{derived_contract_line}"
+            f"- SDK generation input: {generation_input}\n"
             "- Assembly snapshot: `.sdkwork-assembly.json`\n"
             f"- TypeScript workspace: `{typescript_directory}`\n"
             "- Other language workspaces: `<family>-<language>/generated/server-openapi`\n"
@@ -678,6 +714,12 @@ class SdkRuntimeStandardizer:
         }[sdk_family]
         package_names = SDK_LANGUAGE_PACKAGE_NAMES[sdk_family]
         namespaces = SDK_LANGUAGE_NAMESPACES.get(sdk_family, {})
+        sdk_generator_input_path = sdk_generation_input_path_symbol(sdk_family)
+        sdkgen_input_path_line = (
+            "const sdkgenInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.sdkgen.json`;\n"
+            if sdk_family == "clawrouter-open-sdk"
+            else ""
+        )
         standard_profile_line = (
             "    '--standard-profile', 'sdkwork-v3',\n"
             if sdk_family in {"clawrouter-app-sdk", "clawrouter-backend-sdk"}
@@ -695,8 +737,7 @@ class SdkRuntimeStandardizer:
             f"const sdkFamily = '{sdk_family}';\n"
             f"const sdkType = '{sdk_type}';\n"
             "const authorityInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.openapi.json`;\n"
-            "const sdkgenInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.sdkgen.json`;\n"
-            "void authorityInputPath;\n"
+            f"{sdkgen_input_path_line}"
             f"const baseUrl = '{base_url}';\n"
             f"const apiPrefix = '{api_prefix}';\n"
             f"const description = '{description}';\n"
@@ -774,7 +815,7 @@ class SdkRuntimeStandardizer:
             "  return [\n"
             "    'tools/clawrouter_strict_sdk_generate.mjs',\n"
             "    'generate',\n"
-            "    '-i', sdkgenInputPath,\n"
+            f"    '-i', {sdk_generator_input_path},\n"
             f"    '-o', 'sdks/{sdk_family}/{typescript_directory}',\n"
             "    '-n', sdkFamily,\n"
             "    '-t', sdkType,\n"
@@ -792,7 +833,7 @@ class SdkRuntimeStandardizer:
             "  const args = [\n"
             "    path.resolve(workspaceRoot, '..', '..', 'sdk', 'sdkwork-sdk-generator', 'bin', 'sdkgen.js'),\n"
             "    'generate',\n"
-            "    '-i', sdkgenInputPath,\n"
+            f"    '-i', {sdk_generator_input_path},\n"
             "    '-o', `sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi`,\n"
             "    '-n', sdkFamily,\n"
             "    '-t', sdkType,\n"
@@ -817,6 +858,8 @@ class SdkRuntimeStandardizer:
 
     def _render_verify_script(self, sdk_family: str) -> str:
         typescript_directory = SDK_TYPESCRIPT_DIRECTORIES[sdk_family]
+        generation_input_spec = sdk_generation_input_spec(sdk_family)
+        derived_specs = sdk_derived_specs(sdk_family)
         return (
             "#!/usr/bin/env node\n"
             "import { existsSync, readFileSync } from 'node:fs';\n"
@@ -839,6 +882,17 @@ class SdkRuntimeStandardizer:
             "const assembly = JSON.parse(readFileSync(path.join(workspaceRoot, '.sdkwork-assembly.json'), 'utf8'));\n"
             f"if (assembly.workspace !== '{sdk_family}') {{\n"
             "  throw new Error('SDK assembly workspace drifted');\n"
+            "}\n"
+            f"const expectedGenerationInputSpec = '{generation_input_spec}';\n"
+            f"const expectedDerivedSpecs = {json.dumps(derived_specs, ensure_ascii=False, sort_keys=True, separators=(',', ':'))};\n"
+            "if (Object.prototype.hasOwnProperty.call(assembly, 'derivedSpec')) {\n"
+            "  throw new Error('SDK assembly must not declare legacy derivedSpec; use derivedSpecs');\n"
+            "}\n"
+            "if (assembly.generationInputSpec !== expectedGenerationInputSpec) {\n"
+            "  throw new Error(`SDK assembly generationInputSpec must be ${expectedGenerationInputSpec}`);\n"
+            "}\n"
+            "if (JSON.stringify(assembly.derivedSpecs ?? null) !== JSON.stringify(expectedDerivedSpecs)) {\n"
+            "  throw new Error('SDK assembly derivedSpecs drifted');\n"
             "}\n"
             "if (!Array.isArray(assembly.languages) || !assembly.languages.some((item) => item.language === 'typescript')) {\n"
             "  throw new Error('SDK assembly must include the TypeScript workspace');\n"
@@ -890,13 +944,15 @@ class SdkRuntimeStandardizer:
             package["dependencies"] = dependencies
         dependencies["@sdkwork/sdk-common"] = SDK_COMMON_VERSION
 
-        self._write_json(package_path, package)
-        updated.append(package_path)
+        if self._read_json_or_none(package_path) != package:
+            self._write_json(package_path, package)
+            updated.append(package_path)
 
         build_script_path = base / "custom" / "build-runtime.mjs"
         build_script_path.parent.mkdir(parents=True, exist_ok=True)
-        build_script_path.write_text(BUILD_SCRIPT, encoding="utf-8", newline="\n")
-        updated.append(build_script_path)
+        if not build_script_path.is_file() or build_script_path.read_text(encoding="utf-8") != BUILD_SCRIPT:
+            build_script_path.write_text(BUILD_SCRIPT, encoding="utf-8", newline="\n")
+            updated.append(build_script_path)
 
         custom_readme_path = base / "custom" / "README.md"
         custom_readme = (

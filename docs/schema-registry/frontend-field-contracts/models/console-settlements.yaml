@@ -1,0 +1,59 @@
+fragment: models/console-settlements
+frontend_models:
+- route: /console/settlements
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts
+  interface: Bill
+  fields:
+  - id
+  - period
+  - startDate
+  - endDate
+  - totalTokens
+  - totalCost
+  - status
+  - breakdown
+  - breakdown.text
+  - breakdown.text.cost
+  - breakdown.text.usage
+  - breakdown.text.models
+  - breakdown.image
+  - breakdown.image.cost
+  - breakdown.image.usage
+  - breakdown.image.models
+  - breakdown.video
+  - breakdown.video.cost
+  - breakdown.video.usage
+  - breakdown.video.models
+  - breakdown.audio
+  - breakdown.audio.cost
+  - breakdown.audio.usage
+  - breakdown.audio.models
+  - breakdown.music
+  - breakdown.music.cost
+  - breakdown.music.usage
+  - breakdown.music.models
+  data_sources:
+  - commerce_usage_statement
+  - commerce_usage_statement_item
+- route: /console/settlements
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts
+  interface: BillBreakdownItem
+  fields:
+  - cost
+  - usage
+  - models
+  data_sources:
+  - commerce_usage_statement_item
+- route: /console/settlements
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts
+  interface: SettlementChartData
+  fields:
+  - day
+  - text
+  - image
+  - video
+  - audio
+  - music
+  data_sources:
+  - ai_usage_fact
+  - commerce_usage_statement_item

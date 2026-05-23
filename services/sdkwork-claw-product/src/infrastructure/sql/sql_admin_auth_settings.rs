@@ -1,7 +1,10 @@
 use serde::{Deserialize, Serialize};
 
 use crate::domain::{DomainError, DomainResult};
-use crate::ports::{AdminAuthSettings, AdminAuthVerificationPolicy};
+use crate::ports::{
+    AdminAuthSettings, AdminAuthVerificationPolicy, AdminAuthWechatMini, AdminAuthWechatOfficial,
+    AdminAuthWechatSettings,
+};
 
 pub(crate) const AUTH_SETTINGS_SOURCE_TABLE: &str = "iam_auth_runtime_settings";
 pub(crate) const AUTH_SETTINGS_AUDIT_TARGET_TYPE: i32 = 65;
@@ -18,9 +21,11 @@ pub(crate) struct StoredAuthSettings {
     pub oauth_providers: Vec<String>,
     pub oauth_region: String,
     pub qr_login_enabled: bool,
+    pub qr_login_type: String,
     pub recovery_methods: Vec<String>,
     pub register_methods: Vec<String>,
     pub verification_policy: StoredAuthVerificationPolicy,
+    pub wechat: StoredAuthWechatSettings,
 }
 
 impl Default for StoredAuthSettings {
@@ -47,6 +52,86 @@ impl Default for StoredAuthVerificationPolicy {
 
 #[derive(Debug, Clone, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
+#[serde(default)]
+pub(crate) struct StoredAuthWechatSettings {
+    pub official: Vec<StoredAuthWechatOfficial>,
+    pub mini: Vec<StoredAuthWechatMini>,
+}
+
+impl Default for StoredAuthWechatSettings {
+    fn default() -> Self {
+        AdminAuthWechatSettings::default().into()
+    }
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+#[serde(default)]
+pub(crate) struct StoredAuthWechatOfficial {
+    pub key: String,
+    pub name: String,
+    pub app_id: String,
+    pub original_id: String,
+    pub secret_ref: String,
+    pub token_ref: String,
+    pub aes_key_ref: String,
+    pub url: String,
+    pub enabled: bool,
+    pub primary: bool,
+    pub scene: String,
+}
+
+impl Default for StoredAuthWechatOfficial {
+    fn default() -> Self {
+        Self {
+            key: String::new(),
+            name: String::new(),
+            app_id: String::new(),
+            original_id: String::new(),
+            secret_ref: String::new(),
+            token_ref: String::new(),
+            aes_key_ref: String::new(),
+            url: String::new(),
+            enabled: true,
+            primary: false,
+            scene: String::new(),
+        }
+    }
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+#[serde(default)]
+pub(crate) struct StoredAuthWechatMini {
+    pub key: String,
+    pub name: String,
+    pub app_id: String,
+    pub secret_ref: String,
+    pub url: String,
+    pub enabled: bool,
+    pub primary: bool,
+    pub path: String,
+    pub env: String,
+}
+
+impl Default for StoredAuthWechatMini {
+    fn default() -> Self {
+        Self {
+            key: String::new(),
+            name: String::new(),
+            app_id: String::new(),
+            secret_ref: String::new(),
+            url: String::new(),
+            enabled: true,
+            primary: false,
+            path: String::new(),
+            env: "release".to_owned(),
+        }
+    }
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
 struct StoredAuthSettingsEnvelope {
     action: Option<String>,
     settings: StoredAuthSettings,
@@ -61,9 +146,11 @@ impl From<AdminAuthSettings> for StoredAuthSettings {
             oauth_providers: value.oauth_providers,
             oauth_region: value.oauth_region,
             qr_login_enabled: value.qr_login_enabled,
+            qr_login_type: value.qr_login_type,
             recovery_methods: value.recovery_methods,
             register_methods: value.register_methods,
             verification_policy: value.verification_policy.into(),
+            wechat: value.wechat.into(),
         }
     }
 }
@@ -77,9 +164,11 @@ impl From<StoredAuthSettings> for AdminAuthSettings {
             oauth_providers: value.oauth_providers,
             oauth_region: value.oauth_region,
             qr_login_enabled: value.qr_login_enabled,
+            qr_login_type: value.qr_login_type,
             recovery_methods: value.recovery_methods,
             register_methods: value.register_methods,
             verification_policy: value.verification_policy.into(),
+            wechat: value.wechat.into(),
         }
     }
 }
@@ -106,6 +195,92 @@ impl From<StoredAuthVerificationPolicy> for AdminAuthVerificationPolicy {
             phone_code_login_enabled: value.phone_code_login_enabled,
             phone_registration_verification_required: value
                 .phone_registration_verification_required,
+        }
+    }
+}
+
+impl From<AdminAuthWechatSettings> for StoredAuthWechatSettings {
+    fn from(value: AdminAuthWechatSettings) -> Self {
+        Self {
+            official: value.official.into_iter().map(Into::into).collect(),
+            mini: value.mini.into_iter().map(Into::into).collect(),
+        }
+    }
+}
+
+impl From<StoredAuthWechatSettings> for AdminAuthWechatSettings {
+    fn from(value: StoredAuthWechatSettings) -> Self {
+        Self {
+            official: value.official.into_iter().map(Into::into).collect(),
+            mini: value.mini.into_iter().map(Into::into).collect(),
+        }
+    }
+}
+
+impl From<AdminAuthWechatOfficial> for StoredAuthWechatOfficial {
+    fn from(value: AdminAuthWechatOfficial) -> Self {
+        Self {
+            key: value.key,
+            name: value.name,
+            app_id: value.app_id,
+            original_id: value.original_id,
+            secret_ref: value.secret_ref,
+            token_ref: value.token_ref,
+            aes_key_ref: value.aes_key_ref,
+            url: value.url,
+            enabled: value.enabled,
+            primary: value.primary,
+            scene: value.scene,
+        }
+    }
+}
+
+impl From<StoredAuthWechatOfficial> for AdminAuthWechatOfficial {
+    fn from(value: StoredAuthWechatOfficial) -> Self {
+        Self {
+            key: value.key,
+            name: value.name,
+            app_id: value.app_id,
+            original_id: value.original_id,
+            secret_ref: value.secret_ref,
+            token_ref: value.token_ref,
+            aes_key_ref: value.aes_key_ref,
+            url: value.url,
+            enabled: value.enabled,
+            primary: value.primary,
+            scene: value.scene,
+        }
+    }
+}
+
+impl From<AdminAuthWechatMini> for StoredAuthWechatMini {
+    fn from(value: AdminAuthWechatMini) -> Self {
+        Self {
+            key: value.key,
+            name: value.name,
+            app_id: value.app_id,
+            secret_ref: value.secret_ref,
+            url: value.url,
+            enabled: value.enabled,
+            primary: value.primary,
+            path: value.path,
+            env: value.env,
+        }
+    }
+}
+
+impl From<StoredAuthWechatMini> for AdminAuthWechatMini {
+    fn from(value: StoredAuthWechatMini) -> Self {
+        Self {
+            key: value.key,
+            name: value.name,
+            app_id: value.app_id,
+            secret_ref: value.secret_ref,
+            url: value.url,
+            enabled: value.enabled,
+            primary: value.primary,
+            path: value.path,
+            env: value.env,
         }
     }
 }
@@ -163,5 +338,56 @@ mod tests {
             vec!["email".to_owned(), "phone".to_owned()],
             settings.recovery_methods
         );
+    }
+
+    #[test]
+    fn settings_from_payload_round_trips_compact_wechat_qr_settings() {
+        let settings = settings_from_payload(
+            r#"{
+                "settings": {
+                    "qrLoginEnabled": true,
+                    "qrLoginType": "mini",
+                    "wechat": {
+                        "official": [
+                            {
+                                "key": "oa-main",
+                                "name": "Main OA",
+                                "appId": "wx1234567890abcdef",
+                                "originalId": "gh_123456",
+                                "secretRef": "secret://wechat/oa-main/secret",
+                                "tokenRef": "secret://wechat/oa-main/token",
+                                "aesKeyRef": "secret://wechat/oa-main/aes",
+                                "enabled": true,
+                                "primary": true,
+                                "scene": "login"
+                            }
+                        ],
+                        "mini": [
+                            {
+                                "key": "mini-main",
+                                "name": "Main Mini",
+                                "appId": "wxabcdef1234567890",
+                                "secretRef": "secret://wechat/mini-main/secret",
+                                "enabled": true,
+                                "primary": true,
+                                "path": "pages/auth/login",
+                                "env": "trial"
+                            }
+                        ]
+                    }
+                }
+            }"#,
+        )
+        .unwrap();
+
+        assert!(settings.qr_login_enabled);
+        assert_eq!("mini", settings.qr_login_type);
+        assert_eq!(1, settings.wechat.official.len());
+        assert_eq!("oa-main", settings.wechat.official[0].key);
+        assert_eq!("gh_123456", settings.wechat.official[0].original_id);
+        assert_eq!(1, settings.wechat.mini.len());
+        assert_eq!("mini-main", settings.wechat.mini[0].key);
+        assert_eq!("pages/auth/login", settings.wechat.mini[0].path);
+        assert_eq!("trial", settings.wechat.mini[0].env);
     }
 }

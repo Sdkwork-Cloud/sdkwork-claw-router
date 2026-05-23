@@ -1,0 +1,165 @@
+fragment: models/admin-channel
+frontend_models:
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: ChannelItem
+  fields:
+  - id
+  - name
+  - vendor
+  - protocol
+  - accessType
+  - baseUrl
+  - secretRef
+  - apiKey
+  - createdAt
+  - expiresAt
+  - models
+  - capabilities
+  - isMultimodal
+  - timeoutMs
+  - retryPolicy
+  - circuitBreakerPolicy
+  - weight
+  - status
+  - balance
+  - errors
+  data_sources:
+  - integration_channel
+  - integration_channel_model
+  - integration_provider
+  - integration_provider_account
+  - integration_provider_health_snapshot
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: ChannelModelCatalogItem
+  fields:
+  - catalogKey
+  - model
+  - displayName
+  - vendorCode
+  - regionCode
+  data_sources:
+  - ai_model_vendor
+  - ai_model
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: ChannelCreateInput
+  fields:
+  - name
+  - vendor
+  - protocol
+  - accessType
+  - baseUrl
+  - apiKey
+  - secretRef
+  - expiresAt
+  - models
+  - capabilities
+  - timeoutMs
+  - retryPolicy
+  - circuitBreakerPolicy
+  - weight
+  - status
+  data_sources:
+  - integration_channel
+  - integration_channel_model
+  - integration_provider
+  - integration_provider_account
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: ChannelUpdateInput
+  fields:
+  - name
+  - vendor
+  - protocol
+  - accessType
+  - baseUrl
+  - apiKey
+  - secretRef
+  - expiresAt
+  - models
+  - capabilities
+  - timeoutMs
+  - retryPolicy
+  - circuitBreakerPolicy
+  - weight
+  - status
+  data_sources:
+  - integration_channel
+  - integration_channel_model
+  - integration_provider
+  - integration_provider_account
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: ChannelTestResult
+  fields:
+  - channelId
+  - success
+  - status
+  - latency
+  - item
+  - item.id
+  - item.name
+  - item.vendor
+  - item.protocol
+  - item.accessType
+  - item.baseUrl
+  - item.secretRef
+  - item.apiKey
+  - item.createdAt
+  - item.expiresAt
+  - item.models
+  - item.capabilities
+  - item.isMultimodal
+  - item.timeoutMs
+  - item.retryPolicy
+  - item.circuitBreakerPolicy
+  - item.weight
+  - item.status
+  - item.balance
+  - item.errors
+  data_sources:
+  - integration_channel
+  - integration_provider_account
+  - integration_provider_health_snapshot
+  - ops_config_snapshot
+  - ops_audit_log
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: ProviderSecretItem
+  fields:
+  - id
+  - providerCode
+  - accountCode
+  - name
+  - authType
+  - secretRef
+  - maskedLabel
+  - status
+  - createdAt
+  - updatedAt
+  data_sources:
+  - integration_provider_account
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: ProviderSecretInput
+  fields:
+  - providerCode
+  - name
+  - authType
+  - secretRef
+  - status
+  data_sources:
+  - integration_provider_account
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: ProviderSecretUpdateInput
+  fields:
+  - providerCode
+  - name
+  - authType
+  - secretRef
+  - status
+  data_sources:
+  - integration_provider_account

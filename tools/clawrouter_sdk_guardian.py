@@ -7,6 +7,15 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from tools.clawrouter_sdk_runtime_standardizer import (
+    SDK_GENERATED_OPENAPI_PATHS,
+    SdkRuntimeStandardizer,
+    sdk_derived_specs,
+    sdk_forbidden_generation_input_path_symbol,
+    sdk_generation_input_path_symbol,
+    sdk_generation_input_spec,
+)
+
 
 @dataclass(frozen=True)
 class ClawRouterSdkGuardianResult:
@@ -155,6 +164,7 @@ class ClawRouterSdkGuardian:
         self._require_file(base / "README.md", messages)
         self._require_file(base / "custom" / "README.md", messages)
         self._require_file(base / ".sdkwork" / "sdkwork-generator-manifest.json", messages)
+        messages.extend(self._check_family_openapi_sync(expected, family))
 
         sdk_source = self._read_text(base / "src" / "sdk.ts", messages)
         if sdk_source is not None and expected.client_name not in sdk_source:
@@ -172,6 +182,47 @@ class ClawRouterSdkGuardian:
             self._check_public_app_model_catalog_types(expected.typescript_directory, base, messages)
         if expected.sdk_type == "backend":
             self._check_backend_ecosystem_skill_resource_tree(expected.typescript_directory, base, messages)
+        return messages
+
+    def _check_family_openapi_sync(self, expected: ExpectedSdk, family: Path) -> list[str]:
+        source_relative = SDK_GENERATED_OPENAPI_PATHS.get(expected.family_directory)
+        if source_relative is None:
+            return []
+
+        source_path = self.root / source_relative
+        if not source_path.exists():
+            return []
+
+        messages: list[str] = []
+        source_spec = self._read_json(source_path, messages)
+        if source_spec is None:
+            return messages
+
+        openapi_path = family / "openapi" / f"{expected.family_directory}.openapi.json"
+        sdkgen_path = family / "openapi" / f"{expected.family_directory}.sdkgen.json"
+        family_openapi = self._read_json(openapi_path, messages)
+        family_sdkgen = self._read_json(sdkgen_path, messages)
+        family_openapi_relative = openapi_path.relative_to(family).as_posix()
+        family_sdkgen_relative = sdkgen_path.relative_to(family).as_posix()
+        source_relative = source_path.relative_to(self.root).as_posix()
+
+        if family_openapi is not None and family_openapi != source_spec:
+            messages.append(
+                f"{expected.family_directory} {family_openapi_relative} must stay synchronized with {source_relative}"
+            )
+
+        expected_sdkgen = source_spec
+        if expected.family_directory == "clawrouter-open-sdk":
+            expected_sdkgen = SdkRuntimeStandardizer(root=self.root)._derive_sdkgen_openapi(source_spec)
+
+        if family_sdkgen is not None and family_sdkgen != expected_sdkgen:
+            source_label = source_relative
+            if expected.family_directory == "clawrouter-open-sdk":
+                source_label = f"derived {source_label}"
+            messages.append(
+                f"{expected.family_directory} {family_sdkgen_relative} must stay synchronized with {source_label}"
+            )
+
         return messages
 
     def _check_sdk_family(self, expected: ExpectedSdk, family: Path) -> list[str]:
@@ -210,25 +261,127 @@ class ClawRouterSdkGuardian:
                 messages.append(
                     f"{expected.family_directory} bin/generate-sdk.mjs must support --language language selection"
                 )
+            authority_input_value = self._javascript_const_string_value(generate_script, "authorityInputPath")
+            expected_authority_input_value = "sdks/${sdkFamily}/openapi/${sdkFamily}.openapi.json"
+            if authority_input_value is None:
+                messages.append(
+                    f"{expected.family_directory} bin/generate-sdk.mjs must declare authorityInputPath"
+                )
+            elif authority_input_value != expected_authority_input_value:
+                messages.append(
+                    f"{expected.family_directory} bin/generate-sdk.mjs authorityInputPath must point to "
+                    "openapi/${sdkFamily}.openapi.json"
+                )
+            if expected.family_directory == "clawrouter-open-sdk":
+                sdkgen_input_value = self._javascript_const_string_value(generate_script, "sdkgenInputPath")
+                expected_sdkgen_input_value = "sdks/${sdkFamily}/openapi/${sdkFamily}.sdkgen.json"
+                if sdkgen_input_value is None:
+                    messages.append(
+                        f"{expected.family_directory} bin/generate-sdk.mjs must declare sdkgenInputPath "
+                        "because generation uses the derived sdkgen contract"
+                    )
+                elif sdkgen_input_value != expected_sdkgen_input_value:
+                    messages.append(
+                        f"{expected.family_directory} bin/generate-sdk.mjs sdkgenInputPath must point to "
+                        "openapi/${sdkFamily}.sdkgen.json"
+                    )
+            elif "const sdkgenInputPath" in generate_script:
+                messages.append(
+                    f"{expected.family_directory} bin/generate-sdk.mjs must not declare sdkgenInputPath "
+                    "because generation uses the authority OpenAPI"
+                )
             if f"sdks/${{sdkFamily}}/${{sdkFamily}}-${{language}}/generated/server-openapi" not in generate_script:
                 messages.append(
                     f"{expected.family_directory} bin/generate-sdk.mjs must generate non-TypeScript SDKs "
                     "under <family>-<language>/generated/server-openapi"
                 )
-            if (
-                "sdkgenInputPath" not in generate_script
-                or "openapi/${sdkFamily}.sdkgen.json" not in generate_script
-                or "'-i', sdkgenInputPath" not in generate_script
-            ):
-                messages.append(
-                    f"{expected.family_directory} bin/generate-sdk.mjs must generate from "
-                    "openapi/${sdkFamily}.sdkgen.json"
-                )
+            strict_type_script_body = self._javascript_function_body(generate_script, "strictTypeScriptArgs")
+            if strict_type_script_body is None:
+                messages.append(f"{expected.family_directory} bin/generate-sdk.mjs must define strictTypeScriptArgs()")
+            else:
+                strict_input_path = sdk_generation_input_path_symbol(expected.family_directory)
+                forbidden_strict_input_path = sdk_forbidden_generation_input_path_symbol(expected.family_directory)
+                if f"'-i', {strict_input_path}" not in strict_type_script_body:
+                    if expected.family_directory == "clawrouter-open-sdk":
+                        messages.append(
+                            f"{expected.family_directory} bin/generate-sdk.mjs strictTypeScriptArgs() must generate from "
+                            "openapi/${sdkFamily}.sdkgen.json"
+                        )
+                    else:
+                        messages.append(
+                            f"{expected.family_directory} bin/generate-sdk.mjs strictTypeScriptArgs() must generate from "
+                            "openapi/${sdkFamily}.openapi.json"
+                        )
+                if f"'-i', {forbidden_strict_input_path}" in strict_type_script_body:
+                    if expected.family_directory == "clawrouter-open-sdk":
+                        messages.append(
+                            f"{expected.family_directory} bin/generate-sdk.mjs strictTypeScriptArgs() must not generate from "
+                            "openapi/${sdkFamily}.openapi.json"
+                        )
+                    else:
+                        messages.append(
+                            f"{expected.family_directory} bin/generate-sdk.mjs strictTypeScriptArgs() must not generate from "
+                            "openapi/${sdkFamily}.sdkgen.json"
+                        )
+            generator_body = self._javascript_function_body(generate_script, "generatorArgs")
+            if generator_body is None:
+                messages.append(f"{expected.family_directory} bin/generate-sdk.mjs must define generatorArgs(language)")
+            else:
+                generator_input_path = sdk_generation_input_path_symbol(expected.family_directory)
+                forbidden_generator_input_path = sdk_forbidden_generation_input_path_symbol(expected.family_directory)
+                if f"'-i', {generator_input_path}" not in generator_body:
+                    if expected.family_directory == "clawrouter-open-sdk":
+                        messages.append(
+                            f"{expected.family_directory} bin/generate-sdk.mjs generatorArgs(language) must generate from "
+                            "openapi/${sdkFamily}.sdkgen.json"
+                        )
+                    else:
+                        messages.append(
+                            f"{expected.family_directory} bin/generate-sdk.mjs generatorArgs(language) must generate from "
+                            "openapi/${sdkFamily}.openapi.json"
+                        )
+                if f"'-i', {forbidden_generator_input_path}" in generator_body:
+                    if expected.family_directory == "clawrouter-open-sdk":
+                        messages.append(
+                            f"{expected.family_directory} bin/generate-sdk.mjs generatorArgs(language) must not generate from "
+                            "openapi/${sdkFamily}.openapi.json"
+                        )
+                    else:
+                        messages.append(
+                            f"{expected.family_directory} bin/generate-sdk.mjs generatorArgs(language) must not generate from "
+                            "openapi/${sdkFamily}.sdkgen.json"
+                        )
 
         assembly = self._read_json(family / ".sdkwork-assembly.json", messages)
         if assembly is not None:
             if assembly.get("workspace") != expected.family_directory:
                 messages.append(f"{expected.family_directory} .sdkwork-assembly.json workspace must match")
+            if "derivedSpec" in assembly:
+                messages.append(
+                    f"{expected.family_directory} .sdkwork-assembly.json must not declare legacy derivedSpec; "
+                    "use derivedSpecs"
+                )
+            expected_generation_input = sdk_generation_input_spec(expected.family_directory)
+            if assembly.get("generationInputSpec") != expected_generation_input:
+                messages.append(
+                    f"{expected.family_directory} .sdkwork-assembly.json generationInputSpec must be "
+                    f"{expected_generation_input}"
+                )
+            derived_specs = assembly.get("derivedSpecs")
+            expected_derived_specs = sdk_derived_specs(expected.family_directory)
+            if not isinstance(derived_specs, dict):
+                messages.append(f"{expected.family_directory} .sdkwork-assembly.json derivedSpecs must be an object")
+            elif expected.family_directory == "clawrouter-open-sdk":
+                if derived_specs != expected_derived_specs:
+                    messages.append(
+                        f"{expected.family_directory} .sdkwork-assembly.json derivedSpecs.sdk-generator must be "
+                        f"openapi/{expected.family_directory}.sdkgen.json"
+                    )
+            elif derived_specs != expected_derived_specs:
+                messages.append(
+                    f"{expected.family_directory} .sdkwork-assembly.json derivedSpecs must be empty because "
+                    "generation uses the authority OpenAPI"
+                )
             languages = assembly.get("languages")
             if not isinstance(languages, list) or not any(
                 isinstance(item, dict)
@@ -305,6 +458,37 @@ class ClawRouterSdkGuardian:
     def _require_file(self, path: Path, messages: list[str]) -> None:
         if not path.exists() or not path.is_file():
             messages.append(f"required SDK file is missing: {path}")
+
+    def _javascript_function_body(self, source: str, function_name: str) -> str | None:
+        marker = f"function {function_name}("
+        start = source.find(marker)
+        if start < 0:
+            return None
+
+        open_brace = source.find("{", start)
+        if open_brace < 0:
+            return None
+
+        depth = 0
+        for index in range(open_brace, len(source)):
+            character = source[index]
+            if character == "{":
+                depth += 1
+            elif character == "}":
+                depth -= 1
+                if depth == 0:
+                    return source[open_brace + 1 : index]
+        return None
+
+    def _javascript_const_string_value(self, source: str, const_name: str) -> str | None:
+        match = re.search(
+            rf"\bconst\s+{re.escape(const_name)}\s*=\s*(?P<quote>[`'\"])(?P<value>.*?)(?P=quote)\s*;",
+            source,
+            flags=re.DOTALL,
+        )
+        if match is None:
+            return None
+        return match.group("value")
 
     def _check_package_entry_files(
         self,
@@ -680,6 +864,13 @@ class ClawRouterSdkGuardian:
                 "portal package.json",
                 messages,
             )
+            self._check_dependency(
+                portal_package,
+                "@sdkwork/clawrouter-open-sdk",
+                "workspace:*",
+                "portal package.json",
+                messages,
+            )
 
         commons_package = self._read_json(commons_root / "package.json", messages)
         if commons_package is not None:
@@ -697,6 +888,13 @@ class ClawRouterSdkGuardian:
                 "portal commons package.json",
                 messages,
             )
+            self._check_dependency(
+                commons_package,
+                "@sdkwork/clawrouter-open-sdk",
+                "workspace:*",
+                "portal commons package.json",
+                messages,
+            )
 
         boundary_relative = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sdk-clients.ts"
         boundary_path = self.root / boundary_relative
@@ -707,8 +905,10 @@ class ClawRouterSdkGuardian:
             for token in (
                 "@sdkwork/clawrouter-app-sdk",
                 "@sdkwork/clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-open-sdk",
                 "createClawRouterAppSdkClient",
                 "createClawRouterBackendSdkClient",
+                "createClawRouterAiSdkClient",
             ):
                 if token not in boundary_source:
                     messages.append(f"portal SDK boundary must mention {token}")

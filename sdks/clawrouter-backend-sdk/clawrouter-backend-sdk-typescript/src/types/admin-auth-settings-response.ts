@@ -1,4 +1,5 @@
 import type { AdminAuthVerificationPolicy } from './admin-auth-verification-policy';
+import type { AdminAuthWechatSettings } from './admin-auth-wechat-settings';
 
 /** Admin auth settings response schema exposed by Claw Router. */
 export interface AdminAuthSettingsResponse {
@@ -14,10 +15,14 @@ export interface AdminAuthSettingsResponse {
   oauthRegion?: 'mainland' | 'overseas';
   /** Qr login enabled field on admin auth settings response. */
   qrLoginEnabled: boolean;
+  /** Qr login type field on admin auth settings response. */
+  qrLoginType: 'web' | 'official' | 'mini';
   /** Recovery methods field on admin auth settings response. */
   recoveryMethods: ('email' | 'phone')[];
   /** Register methods field on admin auth settings response. */
   registerMethods: ('email' | 'phone')[];
   /** Verification policy field on admin auth settings response. */
   verificationPolicy: AdminAuthVerificationPolicy;
+  /** Wechat field on admin auth settings response. */
+  wechat: AdminAuthWechatSettings;
 }

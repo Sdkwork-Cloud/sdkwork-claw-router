@@ -7,6 +7,7 @@ public class IntegrationProviderAccountRecord {
     private String accountName;
     private Map<String, String> authConfig;
     private String authType;
+    private String baseUrl;
     private String consecutiveErrorCount;
     private String createdAt;
     private String credentialProfile;
@@ -44,7 +45,7 @@ public class IntegrationProviderAccountRecord {
     public String getAccountCode() {
         return this.accountCode;
     }
-    
+
     public void setAccountCode(String accountCode) {
         this.accountCode = accountCode;
     }
@@ -52,7 +53,7 @@ public class IntegrationProviderAccountRecord {
     public String getAccountName() {
         return this.accountName;
     }
-    
+
     public void setAccountName(String accountName) {
         this.accountName = accountName;
     }
@@ -60,7 +61,7 @@ public class IntegrationProviderAccountRecord {
     public Map<String, String> getAuthConfig() {
         return this.authConfig;
     }
-    
+
     public void setAuthConfig(Map<String, String> authConfig) {
         this.authConfig = authConfig;
     }
@@ -68,15 +69,23 @@ public class IntegrationProviderAccountRecord {
     public String getAuthType() {
         return this.authType;
     }
-    
+
     public void setAuthType(String authType) {
         this.authType = authType;
+    }
+
+    public String getBaseUrl() {
+        return this.baseUrl;
+    }
+
+    public void setBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl;
     }
 
     public String getConsecutiveErrorCount() {
         return this.consecutiveErrorCount;
     }
-    
+
     public void setConsecutiveErrorCount(String consecutiveErrorCount) {
         this.consecutiveErrorCount = consecutiveErrorCount;
     }
@@ -84,7 +93,7 @@ public class IntegrationProviderAccountRecord {
     public String getCreatedAt() {
         return this.createdAt;
     }
-    
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -92,7 +101,7 @@ public class IntegrationProviderAccountRecord {
     public String getCredentialProfile() {
         return this.credentialProfile;
     }
-    
+
     public void setCredentialProfile(String credentialProfile) {
         this.credentialProfile = credentialProfile;
     }
@@ -100,7 +109,7 @@ public class IntegrationProviderAccountRecord {
     public String getDataScope() {
         return this.dataScope;
     }
-    
+
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
     }
@@ -108,7 +117,7 @@ public class IntegrationProviderAccountRecord {
     public String getDeletedAt() {
         return this.deletedAt;
     }
-    
+
     public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
@@ -116,7 +125,7 @@ public class IntegrationProviderAccountRecord {
     public String getDeletedBy() {
         return this.deletedBy;
     }
-    
+
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
     }
@@ -124,7 +133,7 @@ public class IntegrationProviderAccountRecord {
     public String getExternalAccountId() {
         return this.externalAccountId;
     }
-    
+
     public void setExternalAccountId(String externalAccountId) {
         this.externalAccountId = externalAccountId;
     }
@@ -132,7 +141,7 @@ public class IntegrationProviderAccountRecord {
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -140,7 +149,7 @@ public class IntegrationProviderAccountRecord {
     public String getLastBalanceCheckedAt() {
         return this.lastBalanceCheckedAt;
     }
-    
+
     public void setLastBalanceCheckedAt(String lastBalanceCheckedAt) {
         this.lastBalanceCheckedAt = lastBalanceCheckedAt;
     }
@@ -148,7 +157,7 @@ public class IntegrationProviderAccountRecord {
     public String getLastRotatedAt() {
         return this.lastRotatedAt;
     }
-    
+
     public void setLastRotatedAt(String lastRotatedAt) {
         this.lastRotatedAt = lastRotatedAt;
     }
@@ -156,7 +165,7 @@ public class IntegrationProviderAccountRecord {
     public String getLastUsedAt() {
         return this.lastUsedAt;
     }
-    
+
     public void setLastUsedAt(String lastUsedAt) {
         this.lastUsedAt = lastUsedAt;
     }
@@ -164,7 +173,7 @@ public class IntegrationProviderAccountRecord {
     public String getLastVerifiedAt() {
         return this.lastVerifiedAt;
     }
-    
+
     public void setLastVerifiedAt(String lastVerifiedAt) {
         this.lastVerifiedAt = lastVerifiedAt;
     }
@@ -172,7 +181,7 @@ public class IntegrationProviderAccountRecord {
     public String getMaskedLabel() {
         return this.maskedLabel;
     }
-    
+
     public void setMaskedLabel(String maskedLabel) {
         this.maskedLabel = maskedLabel;
     }
@@ -180,7 +189,7 @@ public class IntegrationProviderAccountRecord {
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
-    
+
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
@@ -188,7 +197,7 @@ public class IntegrationProviderAccountRecord {
     public String getNextRotateAt() {
         return this.nextRotateAt;
     }
-    
+
     public void setNextRotateAt(String nextRotateAt) {
         this.nextRotateAt = nextRotateAt;
     }
@@ -196,7 +205,7 @@ public class IntegrationProviderAccountRecord {
     public String getOrganizationId() {
         return this.organizationId;
     }
-    
+
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
@@ -204,7 +213,7 @@ public class IntegrationProviderAccountRecord {
     public String getProviderCode() {
         return this.providerCode;
     }
-    
+
     public void setProviderCode(String providerCode) {
         this.providerCode = providerCode;
     }
@@ -212,7 +221,7 @@ public class IntegrationProviderAccountRecord {
     public String getProviderId() {
         return this.providerId;
     }
-    
+
     public void setProviderId(String providerId) {
         this.providerId = providerId;
     }
@@ -220,7 +229,7 @@ public class IntegrationProviderAccountRecord {
     public String getQuotaLimit() {
         return this.quotaLimit;
     }
-    
+
     public void setQuotaLimit(String quotaLimit) {
         this.quotaLimit = quotaLimit;
     }
@@ -228,7 +237,7 @@ public class IntegrationProviderAccountRecord {
     public String getQuotaUnit() {
         return this.quotaUnit;
     }
-    
+
     public void setQuotaUnit(String quotaUnit) {
         this.quotaUnit = quotaUnit;
     }
@@ -236,7 +245,7 @@ public class IntegrationProviderAccountRecord {
     public String getQuotaUsed() {
         return this.quotaUsed;
     }
-    
+
     public void setQuotaUsed(String quotaUsed) {
         this.quotaUsed = quotaUsed;
     }
@@ -244,7 +253,7 @@ public class IntegrationProviderAccountRecord {
     public String getRiskLevel() {
         return this.riskLevel;
     }
-    
+
     public void setRiskLevel(String riskLevel) {
         this.riskLevel = riskLevel;
     }
@@ -252,7 +261,7 @@ public class IntegrationProviderAccountRecord {
     public String getSecretHash() {
         return this.secretHash;
     }
-    
+
     public void setSecretHash(String secretHash) {
         this.secretHash = secretHash;
     }
@@ -260,7 +269,7 @@ public class IntegrationProviderAccountRecord {
     public String getSecretRef() {
         return this.secretRef;
     }
-    
+
     public void setSecretRef(String secretRef) {
         this.secretRef = secretRef;
     }
@@ -268,7 +277,7 @@ public class IntegrationProviderAccountRecord {
     public Map<String, String> getSecretRotationPolicy() {
         return this.secretRotationPolicy;
     }
-    
+
     public void setSecretRotationPolicy(Map<String, String> secretRotationPolicy) {
         this.secretRotationPolicy = secretRotationPolicy;
     }
@@ -276,7 +285,7 @@ public class IntegrationProviderAccountRecord {
     public String getSecretVersion() {
         return this.secretVersion;
     }
-    
+
     public void setSecretVersion(String secretVersion) {
         this.secretVersion = secretVersion;
     }
@@ -284,7 +293,7 @@ public class IntegrationProviderAccountRecord {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -292,7 +301,7 @@ public class IntegrationProviderAccountRecord {
     public String getTenantId() {
         return this.tenantId;
     }
-    
+
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
@@ -300,7 +309,7 @@ public class IntegrationProviderAccountRecord {
     public String getUpdatedAt() {
         return this.updatedAt;
     }
-    
+
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -308,7 +317,7 @@ public class IntegrationProviderAccountRecord {
     public String getUpstreamBalanceAmount() {
         return this.upstreamBalanceAmount;
     }
-    
+
     public void setUpstreamBalanceAmount(String upstreamBalanceAmount) {
         this.upstreamBalanceAmount = upstreamBalanceAmount;
     }
@@ -316,7 +325,7 @@ public class IntegrationProviderAccountRecord {
     public String getUpstreamBalanceCurrency() {
         return this.upstreamBalanceCurrency;
     }
-    
+
     public void setUpstreamBalanceCurrency(String upstreamBalanceCurrency) {
         this.upstreamBalanceCurrency = upstreamBalanceCurrency;
     }
@@ -324,7 +333,7 @@ public class IntegrationProviderAccountRecord {
     public String getUuid() {
         return this.uuid;
     }
-    
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -332,7 +341,7 @@ public class IntegrationProviderAccountRecord {
     public String getVersion() {
         return this.version;
     }
-    
+
     public void setVersion(String version) {
         this.version = version;
     }

@@ -73,11 +73,12 @@ val client = SdkworkBackendClient(config)
 
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.billing` - billing API
+- `client.commerce` - commerce API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
+- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
 - `client.system` - system API
 
@@ -95,7 +96,7 @@ val params = linkedMapOf<String, Any>(
     "page" to 5,
     "page_size" to 6
 )
-val result = client.agents.list(params)
+val result = client.agents.agentDefinitionsList(params)
 println(result)
 ```
 
@@ -107,11 +108,11 @@ val result = client.ai.modelVendorsList()
 println(result)
 ```
 
-### billing
+### commerce
 
 ```kotlin
-// List referral stats
-val result = client.billing.referralsStatsList()
+// Commerce Reports Payment Reconciliation Retrieve
+val result = client.commerce.reportsPaymentReconciliationRetrieve()
 println(result)
 ```
 
@@ -147,20 +148,22 @@ val result = client.integration.channelsList()
 println(result)
 ```
 
+### open_platform
+
+```kotlin
+// List open platform providers
+val params = linkedMapOf<String, Any>(
+    "status" to "active"
+)
+val result = client.openPlatform.providersList(params)
+println(result)
+```
+
 ### platform
 
 ```kotlin
-// List apps
-val params = linkedMapOf<String, Any>(
-    "q" to "q",
-    "status" to "ACTIVE",
-    "market_status" to "DRAFT",
-    "app_type" to "app-type",
-    "page" to 5,
-    "page_size" to 6
-)
-val xRequestId = "X-Request-Id"
-val result = client.platform.appsList(params, xRequestId)
+// List app categories
+val result = client.platform.appsCategoriesList()
 println(result)
 ```
 

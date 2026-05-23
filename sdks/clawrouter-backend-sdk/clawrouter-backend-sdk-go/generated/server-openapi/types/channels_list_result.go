@@ -4,6 +4,5 @@ package types
 type ChannelsListResult struct {
 	Code string `json:"code"`
 	Data AdminChannelsResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

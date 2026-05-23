@@ -4,6 +4,5 @@ package types
 type AccountPointsExchangeRateRetrieveResult struct {
 	Code string `json:"code"`
 	Data CommercePointsExchangeRateResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

@@ -1,0 +1,188 @@
+fragment: operations/backend-commerce-coupons
+frontend_operations:
+- route: /admin/finance
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  operation: backendCouponsTemplatesList
+  operation_id: coupons.templates.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/coupons/templates
+  sdk_domain: commerce
+  summary: Coupons Templates List
+  description: Standard appbase commerce API for coupons.templates.list; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_order
+  - commerce_order_item
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema: &id001
+    name: CommerceStandardCollectionResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items:
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            status:
+              type: string
+              nullable: true
+              maxLength: 64
+            createdAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            updatedAt:
+              type: string
+              nullable: true
+              maxLength: 64
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200
+- route: /admin/finance
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  operation: backendCouponsCampaignsList
+  operation_id: coupons.campaigns.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/coupons/campaigns
+  sdk_domain: commerce
+  summary: Coupons Campaigns List
+  description: Standard appbase commerce API for coupons.campaigns.list; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_order
+  - commerce_order_item
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema: *id001
+- route: /admin/finance
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  operation: backendCouponsCodesList
+  operation_id: coupons.codes.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/coupons/codes
+  sdk_domain: commerce
+  summary: Coupons Codes List
+  description: Standard appbase commerce API for coupons.codes.list; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_order
+  - commerce_order_item
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema: *id001
+- route: /admin/finance
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  operation: backendCouponsRedemptionsList
+  operation_id: coupons.redemptions.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/coupons/redemptions
+  sdk_domain: commerce
+  summary: Coupons Redemptions List
+  description: Standard appbase commerce API for coupons.redemptions.list; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_order
+  - commerce_order_item
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema: *id001

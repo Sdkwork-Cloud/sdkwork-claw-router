@@ -4,6 +4,5 @@ package types
 type ModelVendorsCreateResult struct {
 	Code string `json:"code"`
 	Data AdminModelVendorMutationResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

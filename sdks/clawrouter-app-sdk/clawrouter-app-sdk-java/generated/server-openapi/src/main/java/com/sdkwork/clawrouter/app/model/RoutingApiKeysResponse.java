@@ -1,16 +1,15 @@
 package com.sdkwork.clawrouter.app.model;
 
 import java.util.List;
-import java.util.Map;
 
 public class RoutingApiKeysResponse {
-    private List<Map<String, Object>> items;
+    private List<RoutingApiKeyItem> items;
 
-    public List<Map<String, Object>> getItems() {
+    public List<RoutingApiKeyItem> getItems() {
         return this.items;
     }
-    
-    public void setItems(List<Map<String, Object>> items) {
+
+    public void setItems(List<RoutingApiKeyItem> items) {
         this.items = items;
     }
 }

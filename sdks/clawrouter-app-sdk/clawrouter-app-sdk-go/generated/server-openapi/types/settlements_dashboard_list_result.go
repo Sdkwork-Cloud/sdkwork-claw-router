@@ -4,6 +4,5 @@ package types
 type SettlementsDashboardListResult struct {
 	Code string `json:"code"`
 	Data SettlementDashboardResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

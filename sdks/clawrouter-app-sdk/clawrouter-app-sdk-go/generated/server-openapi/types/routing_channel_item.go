@@ -7,6 +7,7 @@ type RoutingChannelItem struct {
 	Balance string `json:"balance"`
 	BaseUrl string `json:"baseUrl"`
 	Capabilities []string `json:"capabilities"`
+	CircuitBreakerPolicy ProviderCircuitBreakerPolicy `json:"circuitBreakerPolicy"`
 	Errors int `json:"errors"`
 	Id string `json:"id"`
 	IsMultimodal bool `json:"isMultimodal"`

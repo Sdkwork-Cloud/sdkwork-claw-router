@@ -4,6 +4,5 @@ package types
 type RateLimitsApiKeysCreateResult struct {
 	Code string `json:"code"`
 	Data AdminRateLimitMutationResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

@@ -4,6 +4,5 @@ package types
 type SkillsArtifactsUpdateResult struct {
 	Code string `json:"code"`
 	Data AdminSkillArtifactMutationResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

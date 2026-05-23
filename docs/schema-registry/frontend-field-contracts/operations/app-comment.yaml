@@ -1,0 +1,492 @@
+fragment: operations/app-comment
+frontend_operations:
+- route: /forum/:id
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  operation: fetchForumComments
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/content/comments
+  sdk_domain: comment
+  read_sources:
+  - plus_comments
+  - plus_content_vote
+  query_parameters:
+  - name: content_type
+    required: true
+    schema:
+      type: string
+      enum:
+      - feeds
+      - comments
+      - course
+      - courses
+      - FEEDS
+      - COMMENTS
+      - COURSE
+      - COURSES
+  - name: content_id
+    required: true
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 100
+  response_schema: &id002
+    name: ForumCommentPage
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - content
+    - totalElements
+    - page
+    - size
+    properties:
+      items:
+        type: array
+        maxItems: 100
+        items: &id001
+          name: ForumCommentItem
+          type: object
+          additionalProperties: false
+          required:
+          - commentId
+          - content
+          - contentType
+          - contentId
+          - userId
+          - status
+          - likes
+          - replyCount
+          - isTop
+          - author
+          - createdAt
+          properties:
+            commentId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            content:
+              type: string
+              minLength: 1
+              maxLength: 20000
+            contentType:
+              type: string
+              enum:
+              - FEEDS
+              - COMMENTS
+              - COURSE
+            contentId:
+              type: integer
+              format: int64
+              minimum: 1
+            userId:
+              type: integer
+              format: int64
+              minimum: 0
+            status:
+              type: string
+              enum:
+              - PUBLISHED
+              - PENDING
+              - DELETED
+            likes:
+              type: integer
+              format: int64
+              minimum: 0
+            replyCount:
+              type: integer
+              format: int64
+              minimum: 0
+            isTop:
+              type: boolean
+            parentId:
+              type: integer
+              format: int64
+              minimum: 1
+            author: &id003
+              name: ForumAuthor
+              type: object
+              additionalProperties: false
+              required:
+              - id
+              - name
+              - isFollowing
+              properties:
+                id:
+                  type: integer
+                  format: int64
+                  minimum: 0
+                name:
+                  type: string
+                  minLength: 1
+                  maxLength: 128
+                avatar:
+                  type: string
+                  maxLength: 2048
+                bio:
+                  type: string
+                  maxLength: 512
+                isFollowing:
+                  type: boolean
+            createdAt:
+              type: string
+              maxLength: 64
+      content:
+        type: array
+        maxItems: 100
+        items: *id001
+      totalElements:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      size:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 100
+- route: /forum/:id
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  operation: fetchForumCommentReplies
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/content/comments/{commentId}/replies
+  sdk_domain: comment
+  read_sources:
+  - plus_comments
+  - plus_content_vote
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 100
+  response_schema: *id002
+- route: /forum/:id
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  operation: fetchForumCommentDetail
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/content/comments/{commentId}
+  sdk_domain: comment
+  read_sources:
+  - plus_comments
+  - plus_content_vote
+  query_parameters: []
+  response_schema:
+    name: ForumCommentDetail
+    type: object
+    additionalProperties: false
+    required:
+    - commentId
+    - content
+    - contentType
+    - contentId
+    - userId
+    - status
+    - likes
+    - replyCount
+    - isTop
+    - author
+    - ipAddress
+    - deviceInfo
+    - createdAt
+    - updatedAt
+    - replies
+    properties:
+      commentId:
+        type: string
+        minLength: 1
+        maxLength: 128
+      content:
+        type: string
+        minLength: 1
+        maxLength: 20000
+      contentType:
+        type: string
+        enum:
+        - FEEDS
+        - COMMENTS
+        - COURSE
+      contentId:
+        type: integer
+        format: int64
+        minimum: 1
+      userId:
+        type: integer
+        format: int64
+        minimum: 0
+      status:
+        type: string
+        enum:
+        - PUBLISHED
+        - PENDING
+        - DELETED
+      likes:
+        type: integer
+        format: int64
+        minimum: 0
+      replyCount:
+        type: integer
+        format: int64
+        minimum: 0
+      isTop:
+        type: boolean
+      parentId:
+        type: integer
+        format: int64
+        minimum: 1
+      author: *id003
+      ipAddress:
+        type: string
+        maxLength: 128
+      deviceInfo:
+        type: string
+        maxLength: 512
+      createdAt:
+        type: string
+        maxLength: 64
+      updatedAt:
+        type: string
+        maxLength: 64
+      replies:
+        type: array
+        maxItems: 100
+        items: *id001
+- route: /forum/:id
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  operation: fetchMyForumComments
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/content/users/current/comments
+  sdk_domain: comment
+  read_sources:
+  - plus_comments
+  - plus_content_vote
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 100
+  response_schema: *id002
+- route: /forum/:id
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  operation: fetchForumCommentStatistics
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/content/comments/statistics
+  sdk_domain: comment
+  read_sources:
+  - plus_comments
+  query_parameters:
+  - name: content_type
+    required: true
+    schema:
+      type: string
+      enum:
+      - feeds
+      - comments
+      - course
+      - courses
+      - FEEDS
+      - COMMENTS
+      - COURSE
+      - COURSES
+  - name: content_id
+    required: true
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  response_schema:
+    name: ForumCommentStatistics
+    type: object
+    additionalProperties: false
+    required:
+    - totalComments
+    properties:
+      totalComments:
+        type: integer
+        format: int64
+        minimum: 0
+- route: /forum/:id
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  operation: createForumComment
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/content/comments
+  sdk_domain: comment
+  read_sources:
+  - plus_comments
+  write_tables:
+  - plus_comments
+  request_id_header: true
+  request_schema:
+    name: ForumCreateCommentRequest
+    type: object
+    additionalProperties: false
+    required:
+    - contentType
+    - contentId
+    - content
+    properties:
+      contentType:
+        type: string
+        enum:
+        - feeds
+        - comments
+        - course
+        - courses
+        - FEEDS
+        - COMMENTS
+        - COURSE
+        - COURSES
+      contentId:
+        type: integer
+        format: int64
+        minimum: 1
+      content:
+        type: string
+        minLength: 1
+        maxLength: 20000
+      deviceInfo:
+        type: string
+        maxLength: 512
+  response_schema: *id001
+- route: /forum/:id
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  operation: replyForumComment
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/content/comments/{commentId}/reply
+  sdk_domain: comment
+  read_sources:
+  - plus_comments
+  write_tables:
+  - plus_comments
+  request_id_header: true
+  request_schema:
+    name: ForumReplyCommentRequest
+    type: object
+    additionalProperties: false
+    required:
+    - content
+    properties:
+      content:
+        type: string
+        minLength: 1
+        maxLength: 20000
+      deviceInfo:
+        type: string
+        maxLength: 512
+  response_schema: *id001
+- route: /forum/:id
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  operation: deleteForumComment
+  kind: delete
+  api_surface: app
+  api_method: DELETE
+  api_path: /app/v3/api/content/comments/{commentId}
+  sdk_domain: comment
+  read_sources:
+  - plus_comments
+  write_tables:
+  - plus_comments
+  response_schema:
+    name: NoData
+    schema:
+      $ref: '#/components/schemas/NoData'
+- route: /forum/:id
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  operation: likeForumComment
+  kind: action
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/content/comments/{commentId}/likes
+  sdk_domain: comment
+  read_sources:
+  - plus_comments
+  - plus_content_vote
+  write_tables:
+  - plus_content_vote
+  - plus_comments
+  request_id_header: true
+  request_body_required: false
+  response_schema: *id001
+- route: /forum/:id
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  operation: unlikeForumComment
+  kind: delete
+  api_surface: app
+  api_method: DELETE
+  api_path: /app/v3/api/content/comments/{commentId}/likes/current
+  sdk_domain: comment
+  read_sources:
+  - plus_comments
+  - plus_content_vote
+  write_tables:
+  - plus_content_vote
+  - plus_comments
+  response_schema: *id001
+- route: /forum/:id
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  operation: pinForumComment
+  kind: action
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/content/comments/{commentId}/pins
+  sdk_domain: comment
+  read_sources:
+  - plus_comments
+  write_tables:
+  - plus_comments
+  request_id_header: true
+  request_body_required: false
+  response_schema: *id001
+- route: /forum/:id
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  operation: unpinForumComment
+  kind: delete
+  api_surface: app
+  api_method: DELETE
+  api_path: /app/v3/api/content/comments/{commentId}/pins/current
+  sdk_domain: comment
+  read_sources:
+  - plus_comments
+  write_tables:
+  - plus_comments
+  response_schema: *id001

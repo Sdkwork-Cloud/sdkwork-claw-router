@@ -11,5 +11,4 @@ class CoursesOverviewRetrieveResult:
     """Courses overview retrieve result schema exposed by Claw Router."""
     code: str
     data: Optional[CourseOverview] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

@@ -1,0 +1,118 @@
+fragment: operations/backend-iam
+frontend_operations:
+- route: /admin/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  operation: fetchUsers
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/iam/users
+  read_sources:
+  - iam_user
+  - commerce_account
+  - iam_role
+  - iam_user_role
+  - iam_user_login_event
+  query_parameters: []
+  response_schema:
+    name: AdminUsersResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminUserItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - email
+          - username
+          - role
+          - group
+          - balance
+          - status
+          - lastActive
+          - lastUsed
+          - createdAt
+          properties:
+            id:
+              type: integer
+              minimum: 1
+            email:
+              type: string
+              format: email
+              minLength: 3
+              maxLength: 254
+            username:
+              type: string
+              maxLength: 128
+            role:
+              type: string
+              maxLength: 128
+            group:
+              type: string
+              maxLength: 128
+            balance:
+              type: string
+              maxLength: 64
+            status:
+              type: string
+              enum:
+              - active
+              - banned
+            lastActive:
+              type: string
+              maxLength: 64
+            lastUsed:
+              type: string
+              maxLength: 64
+            createdAt:
+              type: string
+              maxLength: 64
+- route: /admin/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  operation: fetchApiKeysMap
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/iam/api_keys
+  read_sources:
+  - iam_gateway_api_key
+  query_parameters: []
+  response_schema:
+    name: AdminApiKeysMapResponse
+    type: object
+    additionalProperties:
+      type: array
+      items:
+        name: AdminApiKeyItem
+        type: object
+        additionalProperties: false
+        required:
+        - id
+        - name
+        - key
+        - used
+        - status
+        properties:
+          id:
+            type: string
+            minLength: 1
+            maxLength: 128
+          name:
+            type: string
+            minLength: 1
+            maxLength: 128
+          key:
+            type: string
+            minLength: 1
+            maxLength: 256
+          used:
+            type: string
+            maxLength: 64
+          status:
+            type: string
+            maxLength: 64
+    properties: {}

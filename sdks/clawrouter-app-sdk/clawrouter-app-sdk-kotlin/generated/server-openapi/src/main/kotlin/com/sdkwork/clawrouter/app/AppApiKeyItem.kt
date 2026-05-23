@@ -5,6 +5,7 @@ data class AppApiKeyItem(
     val created: String? = null,
     val expires: String? = null,
     val group: String? = null,
+    val groupName: String? = null,
     val id: String? = null,
     val ipLimit: String? = null,
     val maskedKey: String? = null,

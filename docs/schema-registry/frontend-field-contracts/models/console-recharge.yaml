@@ -1,0 +1,14 @@
+fragment: models/console-recharge
+frontend_models:
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  interface: RechargePackage
+  fields:
+  - id
+  - rmb
+  - bonus
+  - points
+  data_sources:
+  - commerce_recharge_package
+  - commerce_product_spu
+  - commerce_product_sku

@@ -4,6 +4,5 @@ package types
 type InstallationStatusRetrieveResult struct {
 	Code string `json:"code"`
 	Data InstallationStatusResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

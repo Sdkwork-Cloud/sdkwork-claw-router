@@ -4,6 +4,5 @@ package types
 type SkillsPackageDeleteResult struct {
 	Code string `json:"code"`
 	Data AdminSkillPackageDeleteResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

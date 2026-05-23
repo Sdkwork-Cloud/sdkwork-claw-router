@@ -1,0 +1,37 @@
+fragment: models/skills-hub
+frontend_models:
+- route: /skills-hub
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/skillRuntime.ts
+  interface: Skill
+  fields:
+  - id
+  - name
+  - developer
+  - description
+  - category
+  - image
+  - rating
+  - downloads
+  - features
+  - lastUpdated
+  - clawhubImage
+  - version
+  - size
+  - license
+  - frameworks
+  - screenshots
+  - packages
+  - packages.id
+  - packages.version
+  - packages.artifactRef
+  - packages.artifactSizeBytes
+  - packages.frameworks
+  - packages.licenseName
+  - packages.publishedAt
+  data_sources:
+  - plus_agent_skill
+  - plus_agent_skill_package
+  - plus_category
+  - studio_catalog_action
+  - studio_catalog_asset
+  - studio_catalog_artifact

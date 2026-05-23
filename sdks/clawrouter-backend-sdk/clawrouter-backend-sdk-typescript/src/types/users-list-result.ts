@@ -7,7 +7,5 @@ export interface UsersListResult {
   /** Data field on users list result. */
   data?: AdminUsersResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

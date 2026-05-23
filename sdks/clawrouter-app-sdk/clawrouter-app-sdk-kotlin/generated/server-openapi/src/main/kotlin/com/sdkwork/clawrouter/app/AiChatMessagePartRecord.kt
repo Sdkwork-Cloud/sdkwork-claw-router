@@ -1,0 +1,30 @@
+package com.sdkwork.clawrouter.app
+
+data class AiChatMessagePartRecord(
+    val assetId: String? = null,
+    val createdAt: String? = null,
+    val fileName: String? = null,
+    val fileSize: String? = null,
+    val id: String? = null,
+    val itemId: String? = null,
+    val jsonContent: Map<String, String>? = null,
+    val legalHold: Boolean? = null,
+    val messageId: String? = null,
+    val metadata: Map<String, String>? = null,
+    val mimeType: String? = null,
+    val organizationId: String? = null,
+    val partNo: Int? = null,
+    val partType: String? = null,
+    val payloadHash: String? = null,
+    val providerPartId: String? = null,
+    val requestId: String? = null,
+    val retentionUntil: String? = null,
+    val sha256: String? = null,
+    val status: String? = null,
+    val storageUrl: String? = null,
+    val tenantId: String? = null,
+    val textContent: String? = null,
+    val traceId: String? = null,
+    val userId: String? = null,
+    val uuid: String? = null
+)

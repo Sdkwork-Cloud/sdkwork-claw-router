@@ -7,6 +7,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 class OpsNotificationMessageRecord:
     """Ops notification message record schema exposed by Claw Router."""
     action_url: Optional[str] = None
+    app_id: Optional[str] = None
     content: Optional[str] = None
     created_at: Optional[str] = None
     data_scope: Optional[str] = None
@@ -22,10 +23,6 @@ class OpsNotificationMessageRecord:
     severity: Optional[str] = None
     status: Optional[str] = None
     summary: Optional[str] = None
-    target_owner_id: Optional[str] = None
-    target_owner_type: Optional[str] = None
-    target_scope: Optional[str] = None
-    target_user_id: Optional[str] = None
     tenant_id: Optional[str] = None
     title: Optional[str] = None
     updated_at: Optional[str] = None

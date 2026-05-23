@@ -7,7 +7,5 @@ export interface RecordsListResult {
   /** Data field on records list result. */
   data?: AdminRecordLogsResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

@@ -4,6 +4,5 @@ package types
 type CommentsCreateResult struct {
 	Code string `json:"code"`
 	Data ForumCommentItem `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

@@ -61,11 +61,12 @@ client.set_header("X-Custom-Header", "value");
 
 - `client.agents()` - agents API
 - `client.ai()` - ai API
-- `client.billing()` - billing API
+- `client.commerce()` - commerce API
 - `client.content()` - content API
 - `client.ecosystem()` - ecosystem API
 - `client.iam()` - iam API
 - `client.integration()` - integration API
+- `client.open_platform()` - open_platform API
 - `client.platform()` - platform API
 - `client.system()` - system API
 
@@ -83,7 +84,7 @@ query.insert("status".to_string(), serde_json::json!("active"));
 query.insert("visibility".to_string(), serde_json::json!("private"));
 query.insert("page".to_string(), serde_json::json!(5));
 query.insert("page_size".to_string(), serde_json::json!(6));
-let result = client.agents().list(Some(&query)).await?;
+let result = client.agents().agent_definitions_list(Some(&query)).await?;
 println!("{result:?}");
 ```
 
@@ -95,11 +96,11 @@ let result = client.ai().model_vendors_list().await?;
 println!("{result:?}");
 ```
 
-### billing
+### commerce
 
 ```rust
-// List referral stats
-let result = client.billing().referrals_stats_list().await?;
+// Commerce Reports Payment Reconciliation Retrieve
+let result = client.commerce().reports_payment_reconciliation_retrieve().await?;
 println!("{result:?}");
 ```
 
@@ -135,20 +136,22 @@ let result = client.integration().channels_list().await?;
 println!("{result:?}");
 ```
 
-### platform
+### open_platform
 
 ```rust
 use std::collections::HashMap;
-// List apps
+// List open platform providers
 let mut query = HashMap::new();
-query.insert("q".to_string(), serde_json::json!("q"));
-query.insert("status".to_string(), serde_json::json!("ACTIVE"));
-query.insert("market_status".to_string(), serde_json::json!("DRAFT"));
-query.insert("app_type".to_string(), serde_json::json!("app-type"));
-query.insert("page".to_string(), serde_json::json!(5));
-query.insert("page_size".to_string(), serde_json::json!(6));
-let x_request_id = "X-Request-Id";
-let result = client.platform().apps_list(Some(&query), Some(x_request_id)).await?;
+query.insert("status".to_string(), serde_json::json!("active"));
+let result = client.open_platform().providers_list(Some(&query)).await?;
+println!("{result:?}");
+```
+
+### platform
+
+```rust
+// List app categories
+let result = client.platform().apps_categories_list().await?;
 println!("{result:?}");
 ```
 

@@ -7,7 +7,5 @@ export interface AuthSettingsRetrieveResult {
   /** Data field on auth settings retrieve result. */
   data?: AdminAuthSettingsResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

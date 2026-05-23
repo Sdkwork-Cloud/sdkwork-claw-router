@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminRechargePackageMutationResponse
     {
-        public RechargePackage? Item { get; set; }
+        public Dictionary<string, object>? Item { get; set; }
     }
 }

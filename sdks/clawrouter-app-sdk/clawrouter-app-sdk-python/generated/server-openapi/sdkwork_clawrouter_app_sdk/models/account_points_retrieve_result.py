@@ -11,5 +11,4 @@ class AccountPointsRetrieveResult:
     """Account points retrieve result schema exposed by Claw Router."""
     code: str
     data: Optional[CommercePointsBalanceResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

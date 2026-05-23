@@ -1,5 +1,5 @@
 import {
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
   readApiRecord,
@@ -47,7 +47,7 @@ export class RankingService {
       q: normalizeQueryString(filters.searchQuery),
       limit: filters.limit ?? 200,
     });
-    ensurePlusApiSuccess(result, 'Failed to fetch model rankings');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch model rankings');
     const data = readApiRecord(result);
     const items = readRequiredApiItems(data, 'Failed to fetch model rankings', ['items'])
       .map(normalizeRankingModel)
@@ -62,7 +62,7 @@ export class RankingService {
 
   static async fetchModelVendors(): Promise<RankingVendorOption[]> {
     const result = await getClawRouterAppSdkClient().ai.modelVendors.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch ranking model vendors');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch ranking model vendors');
 
     return readRequiredApiItems(result, 'Failed to fetch ranking model vendors')
       .map(normalizeRankingVendorOption)

@@ -1,0 +1,199 @@
+fragment: operations/backend-content
+frontend_operations:
+- route: /admin/announcement
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-announcement/src/announcementService.ts
+  operation: fetchAnnouncements
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/content/announcements
+  read_sources:
+  - content_announcement
+  query_parameters: []
+  response_schema:
+    name: AdminAnnouncementsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminAnnouncementItem
+          type: object
+          additionalProperties: false
+          required: &id001
+          - id
+          - title
+          - target
+          - status
+          - showAsPopup
+          - date
+          - content
+          properties: &id002
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            title:
+              type: string
+              minLength: 1
+              maxLength: 200
+            target:
+              type: string
+              enum:
+              - all
+              - vip
+              - free
+              - beta
+            status:
+              type: string
+              enum:
+              - published
+              - draft
+            showAsPopup:
+              type: boolean
+            date:
+              type: string
+              minLength: 1
+              maxLength: 64
+            content:
+              type: string
+              minLength: 1
+              maxLength: 20000
+- route: /admin/announcement
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-announcement/src/announcementService.ts
+  operation: addAnnouncement
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/content/announcements
+  read_sources:
+  - content_announcement
+  write_tables:
+  - content_announcement
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminAnnouncementCreateRequest
+    required:
+    - title
+    - target
+    - status
+    - showAsPopup
+    - content
+    properties:
+      title:
+        type: string
+        minLength: 1
+        maxLength: 200
+        description: Announcement title displayed in admin and console surfaces.
+      target:
+        type: string
+        enum:
+        - all
+        - vip
+        - free
+        - beta
+        description: Audience segment that should receive the announcement.
+      status:
+        type: string
+        enum:
+        - published
+        - draft
+        description: Publication state for the announcement.
+      showAsPopup:
+        type: boolean
+        description: Whether eligible users should see this announcement as a popup when the frontend loads.
+      content:
+        type: string
+        minLength: 1
+        maxLength: 20000
+        description: Announcement body content.
+  response_schema:
+    name: AdminAnnouncementMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAnnouncementItem
+        type: object
+        additionalProperties: false
+        required: *id001
+        properties: *id002
+        description: Persisted announcement snapshot returned by the backend.
+- route: /admin/announcement
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-announcement/src/announcementService.ts
+  operation: updateAnnouncement
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/content/announcements/{announcementId}
+  read_sources:
+  - content_announcement
+  write_tables:
+  - content_announcement
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminAnnouncementUpdateRequest
+    properties:
+      title:
+        type: string
+        minLength: 1
+        maxLength: 200
+        description: Optional announcement title update.
+      target:
+        type: string
+        enum:
+        - all
+        - vip
+        - free
+        - beta
+        description: Optional announcement audience segment update.
+      status:
+        type: string
+        enum:
+        - published
+        - draft
+        description: Optional announcement publication state update.
+      showAsPopup:
+        type: boolean
+        description: Optional popup-display toggle update.
+      content:
+        type: string
+        minLength: 1
+        maxLength: 20000
+        description: Optional announcement body content update.
+  response_schema:
+    name: AdminAnnouncementMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAnnouncementItem
+        type: object
+        additionalProperties: false
+        required: *id001
+        properties: *id002
+        description: Persisted announcement snapshot returned by the backend.
+- route: /admin/announcement
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-announcement/src/announcementService.ts
+  operation: deleteAnnouncement
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/content/announcements/{announcementId}
+  read_sources:
+  - content_announcement
+  write_tables:
+  - content_announcement
+  - ops_audit_log
+  response_schema:
+    name: AdminDeleteResponse
+    type: object
+    additionalProperties: false
+    required:
+    - deleted
+    properties:
+      deleted:
+        type: boolean

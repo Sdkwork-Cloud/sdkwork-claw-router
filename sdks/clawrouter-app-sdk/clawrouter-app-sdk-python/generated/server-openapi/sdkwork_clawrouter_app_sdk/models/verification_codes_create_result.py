@@ -11,5 +11,4 @@ class VerificationCodesCreateResult:
     """Verification codes create result schema exposed by Claw Router."""
     code: str
     data: Optional[IamVerificationCodeResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

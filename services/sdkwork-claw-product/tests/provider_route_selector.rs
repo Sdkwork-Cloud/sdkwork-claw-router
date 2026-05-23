@@ -714,6 +714,92 @@ fn selector_reports_pricing_unavailable_when_callable_candidate_has_no_price() {
 }
 
 #[test]
+fn selector_prices_candidate_routes_with_their_regional_catalog_key() {
+    let mut catalog = InMemoryPricingCatalog::default();
+    catalog.add_vendor(ModelVendorDefinition::new(
+        "minimax",
+        ModelVendor::MiniMax,
+        "MiniMax",
+    ));
+    catalog.add_model(
+        AiModel::new("MiniMax-M2.7", "MiniMax M2.7", "minimax", vec!["chat"])
+            .with_catalog_key("minimax/MiniMax-M2.7"),
+    );
+    catalog.add_plan(PricingPlan::new(
+        "standard",
+        PriceSide::OfficialReference,
+        DecimalValue::parse("1.000000").unwrap(),
+        Money::cny("0.000000").unwrap(),
+    ));
+    catalog.add_api_key_group(ApiKeyGroup::new(
+        10,
+        "standard-group",
+        "standard",
+        DecimalValue::parse("1.000000").unwrap(),
+        DecimalValue::parse("1.000000").unwrap(),
+    ));
+    catalog
+        .add_api_key(GatewayApiKey::new(100, 10, "sk-test", "hash:sk-test").with_owner(10, 20, 30));
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "minimax/cn/MiniMax-M2.7",
+            "MiniMax-M2.7",
+            "minimax_cn_direct",
+            4001,
+            "MiniMax-M2.7",
+        )
+        .with_provider_endpoint(
+            Some("http://provider-proxy.internal/minimax-cn"),
+            Some("vault://providers/minimax/account/cn"),
+        ),
+    );
+    catalog.add_price(ModelPrice::new_for_catalog_key(
+        "minimax/global/MiniMax-M2.7",
+        "MiniMax-M2.7",
+        PriceSide::OfficialReference,
+        BillingMeter::LlmInputToken,
+        Money::cny("0.210000").unwrap(),
+    ));
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "minimax/cn/MiniMax-M2.7",
+            "MiniMax-M2.7",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::cny("0.150000").unwrap(),
+        )
+        .for_provider("minimax_cn_direct", 4001),
+    );
+    add_group_policy_rule(
+        &mut catalog,
+        2,
+        201,
+        202,
+        r#"{"catalogKey":"minimax/MiniMax-M2.7"}"#,
+        "minimax/MiniMax-M2.7",
+        vec![RouteCandidate::new(4001, 100)],
+        vec![],
+    );
+
+    let error = ProviderRouteSelector::new(&catalog)
+        .select(SelectProviderRouteQuery {
+            context: authenticated_context(),
+            catalog_key: "minimax/MiniMax-M2.7".to_owned(),
+            requested_model: "MiniMax-M2.7".to_owned(),
+            capability: RoutingCapability::Chat,
+            billing_meter: BillingMeter::LlmInputToken,
+        })
+        .unwrap_err();
+
+    assert_eq!(
+        ProviderRouteSelectionErrorKind::PricingUnavailable,
+        error.kind()
+    );
+    assert!(error.to_string().contains("minimax/cn/MiniMax-M2.7"));
+    assert!(error.to_string().contains("official reference price"));
+}
+
+#[test]
 fn selector_rejects_matched_policy_without_matching_rule() {
     let mut catalog = base_catalog();
     add_callable_route(

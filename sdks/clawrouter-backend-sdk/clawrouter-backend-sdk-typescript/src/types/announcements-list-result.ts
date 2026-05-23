@@ -7,7 +7,5 @@ export interface AnnouncementsListResult {
   /** Data field on announcements list result. */
   data?: AdminAnnouncementsResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

@@ -8,7 +8,9 @@ import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-common
 import {
   AdminAppService,
   createAdminAppInputFromForm,
+  createAppCategoryInputFromForm,
   updateAdminAppInputFromForm,
+  updateAppCategoryInputFromForm,
 } from "./packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts";
 
 const originalFetch = globalThis.fetch;
@@ -101,6 +103,23 @@ function sampleApp(overrides: Record<string, unknown> = {}) {
   };
 }
 
+function sampleCategory(overrides: Record<string, unknown> = {}) {
+  return {
+    id: "2001",
+    name: "Productivity",
+    description: "Apps for productivity workflows",
+    code: "productivity",
+    icon: "/icons/productivity.svg",
+    sortWeight: 10,
+    parentId: null,
+    path: "/productivity",
+    visible: true,
+    status: 1,
+    type: 999999,
+    ...overrides,
+  };
+}
+
 test("admin app form helpers create normalized backend DTOs", () => {
   const createForm = new FormData();
   createForm.set("name", " Browser Smoke Admin App ");
@@ -168,6 +187,54 @@ test("admin app form helpers create normalized backend DTOs", () => {
   });
 });
 
+test("admin app category form helpers create normalized backend DTOs", () => {
+  const createForm = new FormData();
+  createForm.set("name", " Productivity ");
+  createForm.set("description", " Workflow apps ");
+  createForm.set("code", " productivity_tools ");
+  createForm.set("icon", " /icons/productivity.svg ");
+  createForm.set("parentId", "2000");
+  createForm.set("path", " /productivity ");
+  createForm.set("sortWeight", "-10");
+  createForm.set("status", "1");
+  createForm.set("visible", "true");
+
+  assert.deepEqual(createAppCategoryInputFromForm(createForm), {
+    name: "Productivity",
+    description: "Workflow apps",
+    code: "productivity_tools",
+    icon: "/icons/productivity.svg",
+    parentId: "2000",
+    path: "/productivity",
+    sortWeight: -10,
+    status: 1,
+    visible: true,
+  });
+
+  const updateForm = new FormData();
+  updateForm.set("name", " Productivity Pro ");
+  updateForm.set("description", " ");
+  updateForm.set("code", " ");
+  updateForm.set("icon", " ");
+  updateForm.set("parentId", " ");
+  updateForm.set("path", " ");
+  updateForm.set("sortWeight", "25");
+  updateForm.set("status", "-1");
+  updateForm.set("visible", "false");
+
+  assert.deepEqual(updateAppCategoryInputFromForm(updateForm), {
+    name: "Productivity Pro",
+    description: null,
+    code: null,
+    icon: null,
+    parentId: null,
+    path: null,
+    sortWeight: 25,
+    status: -1,
+    visible: false,
+  });
+});
+
 test("admin app management page localizes visible copy", () => {
   const pageSource = readPortalFile("./packages/sdkwork-claw-router-app-center/src/pages/AppAdmin.tsx");
   const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
@@ -175,6 +242,13 @@ test("admin app management page localizes visible copy", () => {
   for (const key of [
     "admin.app.title",
     "admin.app.subtitle",
+    "admin.app.actions.addChildCategory",
+    "admin.app.actions.create",
+    "admin.app.actions.createCategory",
+    "admin.app.actions.deleteCategory",
+    "admin.app.actions.editCategory",
+    "admin.app.boolean.no",
+    "admin.app.boolean.yes",
     "admin.app.filters.searchPlaceholder",
     "admin.app.filters.allRuntime",
     "admin.app.filters.allMarketplace",
@@ -193,6 +267,9 @@ test("admin app management page localizes visible copy", () => {
     "admin.app.modals.createTitle",
     "admin.app.modals.editTitle",
     "admin.app.modals.description",
+    "admin.app.modals.category.createTitle",
+    "admin.app.modals.category.description",
+    "admin.app.modals.category.editTitle",
     "admin.app.fields.name",
     "admin.app.fields.appKey",
     "admin.app.fields.version",
@@ -215,13 +292,35 @@ test("admin app management page localizes visible copy", () => {
     "admin.app.fields.installSkill",
     "admin.app.fields.installConfig",
     "admin.app.fields.releaseNotes",
+    "admin.app.fields.code",
+    "admin.app.fields.parentCategory",
+    "admin.app.fields.path",
+    "admin.app.fields.sortWeight",
+    "admin.app.fields.status",
+    "admin.app.fields.visible",
     "admin.app.confirm.deleteTitle",
     "admin.app.confirm.deleteDescription",
     "admin.app.confirm.deleteConfirm",
+    "admin.app.confirm.deleteCategory.title",
+    "admin.app.confirm.deleteCategory.description",
     "admin.app.errors.loadFallback",
     "admin.app.errors.saveFallback",
     "admin.app.errors.deleteFallback",
     "admin.app.errors.actionFallback",
+    "admin.app.errors.categoryLoadFallback",
+    "admin.app.errors.categorySaveFallback",
+    "admin.app.errors.categoryDeleteFallback",
+    "admin.app.loading.categories",
+    "admin.app.pagination.showing",
+    "admin.app.pagination.page",
+    "admin.app.pagination.pageSize",
+    "admin.app.tree.all",
+    "admin.app.tree.count",
+    "admin.app.tree.empty",
+    "admin.app.tree.root",
+    "admin.app.tree.selected",
+    "admin.app.tree.title",
+    "admin.app.tree.total",
   ]) {
     const escaped = key.replaceAll(".", "\\.");
     assert.match(pageSource, new RegExp(escaped), `${key} must be consumed by AppAdmin`);
@@ -260,6 +359,122 @@ test("admin app management page localizes visible copy", () => {
     assert.doesNotMatch(pageSource, new RegExp(`['"\`]${escaped}['"\`]`));
     assert.doesNotMatch(pageSource, new RegExp(`>\\s*${escaped}\\s*<`));
   }
+});
+
+test("admin app management page renders a category tree beside the app list", () => {
+  const pageSource = readPortalFile("./packages/sdkwork-claw-router-app-center/src/pages/AppAdmin.tsx");
+
+  for (const expected of [
+    "data-admin-app-layout",
+    "data-admin-app-category-tree",
+    "data-admin-app-table-card",
+    "buildCategoryTree",
+    "flattenCategoryTree",
+    "AppCategoryTree",
+    "CategoryTreeItem",
+    "CategoryModal",
+    "AdminAppService.fetchAppCategories",
+    "AdminAppService.createAppCategory",
+    "AdminAppService.updateAppCategory",
+    "AdminAppService.deleteAppCategory",
+  ]) {
+    assert.ok(pageSource.includes(expected), `missing admin app category tree marker: ${expected}`);
+  }
+});
+
+test("admin app management page uses bottom pagination instead of a fixed first-page fetch", () => {
+  const pageSource = readPortalFile("./packages/sdkwork-claw-router-app-center/src/pages/AppAdmin.tsx");
+  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+
+  for (const expected of [
+    "data-admin-app-pagination",
+    "BottomPagination",
+    "const [page, setPage] = useState(1);",
+    "const [pageSize, setPageSize] = useState(20);",
+    "page,",
+    "pageSize,",
+    "setPage(1)",
+    "setPage((current) => Math.max(1, current - 1))",
+    "setPage((current) => current + 1)",
+    "hasNextPage={apps.length >= pageSize}",
+  ]) {
+    assert.ok(pageSource.includes(expected), `missing admin app pagination marker: ${expected}`);
+  }
+
+  for (const removed of [
+    "page: 1,\n      pageSize: 100,",
+    "AdminAppService.fetchApps({ page: 1, pageSize: 100 })",
+  ]) {
+    assert.ok(!pageSource.includes(removed), `admin app page still uses fixed pagination: ${removed}`);
+  }
+
+  for (const key of [
+    "admin.app.pagination.showing",
+    "admin.app.pagination.page",
+    "admin.app.pagination.pageSize",
+  ]) {
+    assert.ok(pageSource.includes(`t('${key}'`), `admin app page should consume i18n key ${key}`);
+    assert.equal(
+      i18nSource.split(`"${key}":`).length - 1,
+      2,
+      `admin app i18n key ${key} must exist once in English and once in Chinese resources`,
+    );
+  }
+});
+
+test("admin app management table fills the available admin viewport", () => {
+  const pageSource = readPortalFile("./packages/sdkwork-claw-router-app-center/src/pages/AppAdmin.tsx");
+
+  for (const expected of [
+    "AdminTableShell",
+    "data-admin-app-table-card",
+    "data-admin-app-table-viewport",
+    "data-admin-app-pagination",
+    "flex h-full min-h-0 w-full min-w-0 flex-col gap-4 overflow-hidden",
+    "flex shrink-0 flex-col gap-3 lg:flex-row lg:items-end lg:justify-between",
+    "grid shrink-0 grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4",
+    "data-admin-app-layout className=\"grid min-h-0 flex-1 grid-rows-[minmax(0,240px)_minmax(0,1fr)] gap-4 overflow-hidden xl:grid-cols-[320px_minmax(0,1fr)] xl:grid-rows-[minmax(0,1fr)]\"",
+    "className=\"border-b border-slate-200 p-3 dark:border-white/10\"",
+    "className=\"flex flex-col gap-2 xl:flex-row xl:items-center\"",
+    "footer={",
+    "sticky top-0 z-10",
+  ]) {
+    assert.ok(pageSource.includes(expected), `missing adaptive admin app table marker: ${expected}`);
+  }
+
+  assert.ok(
+    pageSource.indexOf("data-admin-app-table-viewport") < pageSource.indexOf("data-admin-app-pagination"),
+    "admin app pagination should render outside the scrollable table viewport",
+  );
+});
+
+test("admin layout lets document own vertical page scrolling", () => {
+  const layoutSource = readPortalFile("./src/AdminLayout.tsx");
+  const dashboardSource = readPortalFile("./packages/sdkwork-claw-router-admin-dashboard/src/index.tsx");
+
+  for (const expected of [
+    "flex min-h-screen flex-col bg-slate-50 dark:bg-black font-sans text-slate-900 dark:text-white",
+    "flex flex-1 pt-16",
+    "w-64 min-h-0 bg-white dark:bg-[#121212] border-r border-slate-200 dark:border-white/10 flex flex-col overflow-hidden",
+    "flex-1 flex flex-col bg-slate-50 dark:bg-[#0a0a0a] min-w-0 relative",
+    "flex flex-1 flex-col p-6 md:p-8",
+  ]) {
+    assert.ok(layoutSource.includes(expected), `missing document-scrolled admin layout marker: ${expected}`);
+  }
+
+  assert.doesNotMatch(layoutSource, /h-\[100dvh\]/);
+  assert.doesNotMatch(layoutSource, /flex-1 overflow-hidden pt-16/);
+  assert.doesNotMatch(
+    layoutSource,
+    /flex-1 flex flex-col bg-slate-50 dark:bg\[#0a0a0a\] min-w-0 overflow-y-auto relative/,
+    "admin main content should not create its own vertical scrolling region",
+  );
+  assert.doesNotMatch(
+    dashboardSource,
+    /w-full h-full flex flex-col space-y-4 overflow-y-auto pb-8 custom-scrollbar/,
+    "admin dashboard root must not own vertical scrolling",
+  );
+  assert.match(dashboardSource, /w-full flex flex-col space-y-4 pb-8/);
 });
 
 test("public app center empty state is localized", () => {
@@ -462,6 +677,72 @@ test("admin app service calls generated backend SDK paths and normalizes lifecyc
   );
 });
 
+test("admin app service calls generated backend SDK paths for app categories", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/platform/apps/categories" && method === "GET") {
+        return { items: [sampleCategory()] };
+      }
+      if (url === "/backend/v3/api/platform/apps/categories" && method === "POST") {
+        return { item: sampleCategory({ id: "2002", name: "Creative" }) };
+      }
+      if (url === "/backend/v3/api/platform/apps/categories/2001" && method === "PUT") {
+        return { item: sampleCategory({ name: "Productivity Pro", sortWeight: 25 }) };
+      }
+      if (url === "/backend/v3/api/platform/apps/categories/2001" && method === "DELETE") {
+        return { deleted: true };
+      }
+      throw new Error(`Unexpected request ${method} ${url}`);
+    },
+    async (captured) => {
+      const categories = await AdminAppService.fetchAppCategories();
+      const created = await AdminAppService.createAppCategory({
+        name: "Creative",
+        code: "creative",
+        path: "/creative",
+        sortWeight: 5,
+        visible: true,
+        status: 1,
+      });
+      const updated = await AdminAppService.updateAppCategory("2001", {
+        name: "Productivity Pro",
+        sortWeight: 25,
+      });
+      const deleted = await AdminAppService.deleteAppCategory("2001");
+
+      assert.equal(categories[0].type, 999999);
+      assert.equal(categories[0].code, "productivity");
+      assert.equal(created.id, "2002");
+      assert.equal(updated.name, "Productivity Pro");
+      assert.equal(deleted, true);
+
+      assert.deepEqual(captured.map((request) => `${request.method} ${request.url}`), [
+        "GET /backend/v3/api/platform/apps/categories",
+        "POST /backend/v3/api/platform/apps/categories",
+        "PUT /backend/v3/api/platform/apps/categories/2001",
+        "DELETE /backend/v3/api/platform/apps/categories/2001",
+      ]);
+      assert.equal(captured[0].body, "");
+      assert.deepEqual(JSON.parse(captured[1].body), {
+        name: "Creative",
+        code: "creative",
+        path: "/creative",
+        sortWeight: 5,
+        visible: true,
+        status: 1,
+      });
+      assert.deepEqual(JSON.parse(captured[2].body), {
+        name: "Productivity Pro",
+        sortWeight: 25,
+      });
+      for (const request of captured.filter((item) => item.headers["x-request-id"] !== undefined)) {
+        assert.match(request.headers["x-request-id"], /^admin-app-category-/);
+      }
+    },
+  );
+});
+
 test("admin app service validates path segments and structured JSON form fields", async () => {
   await assert.rejects(() => AdminAppService.fetchApp("../admin"), /appId must be a safe path segment/);
   await assert.rejects(() => AdminAppService.updateApp("app/1", { name: "x" }), /appId must be a safe path segment/);
@@ -496,6 +777,30 @@ test("admin app service validates path segments and structured JSON form fields"
   arrayForm.set("name", "Invalid Release Notes");
   arrayForm.set("releaseNotes", "{}");
   assert.throws(() => createAdminAppInputFromForm(arrayForm), /releaseNotes must be a JSON array of objects/);
+});
+
+test("admin app category service validates paths and fails closed on non-app category types", async () => {
+  await assert.rejects(() => AdminAppService.updateAppCategory("../category", { name: "x" }), /categoryId must be a safe path segment/);
+  await assert.rejects(() => AdminAppService.deleteAppCategory("category/1"), /categoryId must be a safe path segment/);
+  await assert.rejects(() => AdminAppService.createAppCategory({ name: "" }), /name is required/);
+  await assert.rejects(() => AdminAppService.createAppCategory({ name: "Invalid", code: "bad code" }), /code must use ASCII letters, numbers, hyphen, or underscore/);
+  await assert.rejects(() => AdminAppService.createAppCategory({ name: "Invalid", path: "relative" }), /path must start with \//);
+  await assert.rejects(() => AdminAppService.createAppCategory({ name: "Invalid", sortWeight: 1_000_001 }), /sortWeight must be between -1000000 and 1000000/);
+
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/platform/apps/categories" && (init?.method ?? "GET") === "GET") {
+        return { items: [sampleCategory({ type: 19 })] };
+      }
+      throw new Error(`Unexpected request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => AdminAppService.fetchAppCategories(),
+        /Unsupported app category type: 19/,
+      );
+    },
+  );
 });
 
 test("admin app delete fails closed unless backend confirms deletion", async () => {

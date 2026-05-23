@@ -7,7 +7,5 @@ export interface RoutingRequestTracesListResult {
   /** Data field on routing request traces list result. */
   data?: RoutingRequestTracesResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

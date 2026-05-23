@@ -54,7 +54,15 @@ test('root package exposes pnpm product entrypoints', () => {
   );
   assert.equal(
     rootPackage.scripts.release,
-    'pnpm release:env:write -- --check && pnpm release:env:write -- --force && pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean && pnpm verify',
+    'pnpm downloads:check && pnpm release:env:write -- --check && pnpm release:env:write -- --force && pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean && pnpm verify',
+  );
+  assert.equal(
+    rootPackage.scripts['downloads:update'],
+    'node scripts/update-claw-router-downloads.mjs',
+  );
+  assert.equal(
+    rootPackage.scripts['downloads:check'],
+    'node scripts/update-claw-router-downloads.mjs --check',
   );
   assert.equal(
     rootPackage.scripts['admin:reset:dev'],
@@ -87,6 +95,42 @@ test('root package exposes pnpm product entrypoints', () => {
   assert.equal(
     rootPackage.scripts['verify:fast'],
     'node scripts/verify-claw-router-product.mjs --fast',
+  );
+  assert.equal(
+    rootPackage.scripts['test:rust:quick'],
+    'node scripts/run-claw-router-rust-tests.mjs quick',
+  );
+  assert.equal(
+    rootPackage.scripts['test:rust:admin-api'],
+    'node scripts/run-claw-router-rust-tests.mjs admin-api',
+  );
+  assert.equal(
+    rootPackage.scripts['test:rust:app-api'],
+    'node scripts/run-claw-router-rust-tests.mjs app-api',
+  );
+  assert.equal(
+    rootPackage.scripts['test:rust:gateway'],
+    'node scripts/run-claw-router-rust-tests.mjs gateway',
+  );
+  assert.equal(
+    rootPackage.scripts['test:rust:product-relay'],
+    'node scripts/run-claw-router-rust-tests.mjs product-relay',
+  );
+  assert.equal(
+    rootPackage.scripts['test:rust:runtime'],
+    'node scripts/run-claw-router-rust-tests.mjs runtime',
+  );
+  assert.equal(
+    rootPackage.scripts['test:rust:full'],
+    'node scripts/run-claw-router-rust-tests.mjs full',
+  );
+  assert.equal(
+    rootPackage.scripts['test:rust:measure'],
+    'node scripts/measure-claw-router-test-targets.mjs',
+  );
+  assert.equal(
+    rootPackage.scripts['test:rust:stop'],
+    'node scripts/stop-claw-router-test-processes.mjs',
   );
   assert.equal(
     rootPackage.scripts['clean:fast'],
@@ -132,6 +176,279 @@ test('root package exposes pnpm product entrypoints', () => {
     rootPackage.scripts['skills:seed:check'],
     'node scripts/mirror-clawhub-skills-seed.mjs --check',
   );
+  assert.equal(
+    rootPackage.scripts['nginx:plan'],
+    'node scripts/configure-nginx.mjs --dry-run',
+  );
+  assert.equal(
+    rootPackage.scripts['nginx:render'],
+    'node scripts/configure-nginx.mjs --write',
+  );
+  assert.equal(
+    rootPackage.scripts['nginx:deploy'],
+    'node scripts/configure-nginx.mjs --deploy',
+  );
+});
+
+test('rust test runner exposes isolated daily-maintenance profiles', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'run-claw-router-rust-tests.mjs')).href
+  );
+
+  const quick = module.buildRustTestPlan(module.parseArgs(['quick']), {
+    env: {},
+    platform: 'win32',
+  });
+  assert.equal(quick.profile, 'quick');
+  assert.equal(quick.steps[0].label, 'rust format for frequently touched packages');
+  assert.deepEqual(quick.steps[0].args.slice(0, 2), ['fmt', '-p']);
+  assert.equal(quick.steps[0].env.CARGO_TARGET_DIR, 'target-rust-tests\\daily');
+  assert.equal(quick.steps[0].env.SDKWORK_CLAW_HTTP_OPENAPI_BUILD_MODE, 'copy');
+  assert.equal(quick.steps.some((step) => step.args.includes('sdkwork-claw-config')), true);
+
+  const adminApi = module.buildRustTestPlan(module.parseArgs(['admin-api', '--test-threads', '4']), {
+    env: {},
+    platform: 'win32',
+  });
+  assert.equal(adminApi.profile, 'admin-api');
+  assert.equal(
+    adminApi.steps.some((step) => step.args.includes('database_config_router')),
+    true,
+  );
+  assert.deepEqual(adminApi.steps.at(-1).args.slice(-2), ['--test-threads', '4']);
+
+  const appApi = module.buildRustTestPlan(module.parseArgs(['app-api']), {
+    env: {},
+    platform: 'linux',
+  });
+  assert.equal(appApi.profile, 'app-api');
+  assert.equal(appApi.steps[0].env.CARGO_TARGET_DIR, 'target-rust-tests/daily');
+  assert.equal(
+    appApi.steps.some((step) => step.args.includes('database_config_router')),
+    true,
+  );
+  assert.equal(appApi.steps[0].args.includes('sdkwork-claw-app-api'), true);
+
+  const gateway = module.buildRustTestPlan(module.parseArgs(['gateway']), {
+    env: {},
+    platform: 'linux',
+  });
+  assert.equal(gateway.profile, 'gateway');
+  assert.equal(gateway.steps.some((step) => step.args.includes('provider_passthrough_route')), true);
+  assert.equal(gateway.steps.some((step) => step.args.includes('edge_server')), true);
+
+  const productRelay = module.buildRustTestPlan(module.parseArgs(['product-relay']), {
+    env: {},
+    platform: 'linux',
+  });
+  assert.equal(productRelay.profile, 'product-relay');
+  assert.equal(
+    productRelay.steps.some((step) => step.args.includes('openai_compatible_http_relay')),
+    true,
+  );
+  assert.equal(
+    productRelay.steps.some((step) => step.args.includes('openai_chat_adapter_api')),
+    true,
+  );
+
+  const runtime = module.buildRustTestPlan(module.parseArgs(['runtime']), {
+    env: {},
+    platform: 'linux',
+  });
+  assert.equal(runtime.profile, 'runtime');
+  assert.equal(runtime.steps.length, 1);
+  assert.equal(runtime.steps[0].env.SDKWORK_CLAW_HTTP_OPENAPI_BUILD_MODE, 'copy');
+  assert.deepEqual(runtime.steps[0].args.slice(0, 11), [
+    'test',
+    '-p',
+    'sdkwork-claw-product',
+    '-p',
+    'sdkwork-claw-gateway',
+    '-p',
+    'sdkwork-claw-admin-api',
+    '-p',
+    'sdkwork-claw-app-api',
+    '-p',
+    'sdkwork-claw-installer',
+  ]);
+});
+
+test('rust test process cleanup scopes Windows stops to repository-local targets', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'stop-claw-router-test-processes.mjs')).href
+  );
+
+  const candidates = module.selectStoppableProcesses(
+    [
+      {
+        Id: 1,
+        ProcessName: 'database_config_router',
+        Path: path.join(workspaceRoot, 'target', 'debug', 'deps', 'database_config_router.exe'),
+      },
+      {
+        Id: 2,
+        ProcessName: 'sdkwork-claw-admin-api',
+        Path: path.join(workspaceRoot, 'target-rust-tests', 'quick', 'debug', 'sdkwork-claw-admin-api.exe'),
+      },
+      {
+        Id: 3,
+        ProcessName: 'unrelated',
+        Path: path.join(path.dirname(workspaceRoot), 'other-project', 'target', 'debug', 'unrelated.exe'),
+      },
+      {
+        Id: 4,
+        ProcessName: 'cargo',
+        Path: 'C:\\Users\\admin\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe',
+      },
+    ],
+    { workspaceRoot, currentPid: 999 },
+  );
+
+  assert.deepEqual(candidates.map((processInfo) => processInfo.Id), [1, 2]);
+});
+
+test('nginx deployment spec documents the sdkwork site-family path convention', () => {
+  const specsRoot = resolveClawRouterBusinessSpecsRoot(workspaceRoot);
+  const nginxSpecPath = path.join(specsRoot, 'NGINX_SPEC.md');
+
+  assert.equal(existsSync(nginxSpecPath), true, 'specs/NGINX_SPEC.md must exist');
+
+  const nginxSpec = readFileSync(nginxSpecPath, 'utf8');
+  assert.ok(nginxSpec.includes('/etc/nginx/sites-enabled/sdkwork/<domain>.conf'));
+  assert.ok(nginxSpec.includes('/etc/nginx/sites-enabled/sdkwork/api.sdkwork.com.conf'));
+  assert.ok(nginxSpec.includes('/etc/nginx/sites-enabled/sdkwork/www.sdkwork.com.conf'));
+  assert.ok(nginxSpec.includes('/opt/certs/letsencrypt/live/<cert-name>/fullchain.pem'));
+  assert.ok(nginxSpec.includes('/opt/certs/letsencrypt/live/<cert-name>/privkey.pem'));
+  assert.ok(nginxSpec.includes('etc/nginx/NGINX_SAMPLE.conf'));
+  assert.ok(nginxSpec.includes('pnpm nginx:deploy -- --domain api.sdkwork.com'));
+  assert.ok(nginxSpec.includes('http://127.0.0.1:3900'));
+});
+
+test('nginx configurator renders full-domain config files with standardized certs', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'configure-nginx.mjs')).href
+  );
+
+  const settings = module.parseNginxConfigureArgs([
+    '--domain',
+    'api.sdkwork.com',
+    '--site-family',
+    'sdkwork',
+    '--site-type',
+    'api',
+    '--dry-run',
+  ]);
+  assert.equal(settings.domain, 'api.sdkwork.com');
+  assert.equal(settings.siteFamily, 'sdkwork');
+  assert.equal(settings.siteType, 'api');
+  assert.equal(settings.upstream, 'http://127.0.0.1:3900');
+  assert.equal(settings.certRoot, '/opt/certs/letsencrypt/live');
+  assert.equal(settings.certName, null);
+  assert.equal(settings.dryRun, true);
+
+  const linuxPlan = module.createNginxDeploymentPlan(settings, {
+    platform: 'linux',
+    workspaceRoot,
+  });
+  assert.equal(linuxPlan.domain, 'api.sdkwork.com');
+  assert.equal(linuxPlan.siteFamily, 'sdkwork');
+  assert.equal(linuxPlan.nginxConfigPath, '/etc/nginx/sites-enabled/sdkwork/api.sdkwork.com.conf');
+  assert.equal(linuxPlan.outputPath, '/etc/nginx/sites-enabled/sdkwork/api.sdkwork.com.conf');
+  assert.equal(linuxPlan.fileName, 'api.sdkwork.com.conf');
+  assert.equal(linuxPlan.upstream, 'http://127.0.0.1:3900');
+  assert.equal(linuxPlan.certificates.fullchain, '/opt/certs/letsencrypt/live/sdkwork.com/fullchain.pem');
+  assert.equal(linuxPlan.certificates.privkey, '/opt/certs/letsencrypt/live/sdkwork.com/privkey.pem');
+
+  const rendered = module.renderNginxConfig(linuxPlan);
+  assert.ok(rendered.includes('server_name api.sdkwork.com;'));
+  assert.ok(rendered.includes('proxy_pass http://127.0.0.1:3900;'));
+  assert.ok(rendered.includes('http://127.0.0.1:3900/backend/v3/api/net/dns/record/verify'));
+  assert.ok(rendered.includes('ssl_certificate /opt/certs/letsencrypt/live/sdkwork.com/fullchain.pem;'));
+  assert.ok(rendered.includes('ssl_certificate_key /opt/certs/letsencrypt/live/sdkwork.com/privkey.pem;'));
+  assert.ok(rendered.includes('ssl_protocols TLSv1.2 TLSv1.3;'));
+  assert.equal(rendered.includes('127.0.0.1:8080'), false);
+
+  const windowsPlan = module.createNginxDeploymentPlan(
+    module.parseNginxConfigureArgs(['--domain', 'www.sdkwork.com', '--site-type', 'web']),
+    { platform: 'win32', workspaceRoot },
+  );
+  assert.equal(windowsPlan.nginxConfigPath, '/etc/nginx/sites-enabled/sdkwork/www.sdkwork.com.conf');
+  assert.equal(windowsPlan.fileName, 'www.sdkwork.com.conf');
+  assert.equal(
+    slashPath(path.relative(workspaceRoot, windowsPlan.outputPath)),
+    'target/nginx/sites-enabled/sdkwork/www.sdkwork.com.conf',
+  );
+
+  assert.throws(
+    () => module.createNginxDeploymentPlan(
+      module.parseNginxConfigureArgs(['--domain', '../api.sdkwork.com']),
+      { platform: 'linux', workspaceRoot },
+    ),
+    /domain must be a fully qualified hostname/,
+  );
+});
+
+test('rust target measurement plan covers known slow integration surfaces', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'measure-claw-router-test-targets.mjs')).href
+  );
+
+  const plan = module.buildMeasurementPlan(module.parseArgs(['--dry-run']), {
+    env: {},
+    platform: 'win32',
+  });
+  assert.equal(plan.targetDir, 'target-rust-tests\\measure');
+  assert.equal(plan.steps.length > 8, true);
+  assert.equal(
+    plan.steps.some(
+      (step) =>
+        step.packageName === 'sdkwork-claw-admin-api' &&
+        step.testTarget === 'database_config_router',
+    ),
+    true,
+  );
+  assert.equal(
+    plan.steps.some(
+      (step) =>
+        step.packageName === 'sdkwork-claw-gateway' &&
+        step.testTarget === 'provider_passthrough_route',
+    ),
+    true,
+  );
+  assert.equal(
+    plan.steps.some(
+      (step) =>
+        step.packageName === 'sdkwork-claw-product' &&
+        step.testTarget === 'openai_compatible_http_relay',
+    ),
+    true,
+  );
+  assert.equal(plan.steps[0].env.SDKWORK_CLAW_HTTP_OPENAPI_BUILD_MODE, 'copy');
+});
+
+test('nginx examples use the production edge upstream and full-domain filenames', () => {
+  const nginxSample = readFileSync(path.join(workspaceRoot, 'etc', 'nginx', 'NGINX_SAMPLE.conf'), 'utf8');
+  assert.ok(nginxSample.includes('Deploy path: /etc/nginx/sites-enabled/sdkwork/api.sdkwork.com.conf'));
+  assert.ok(nginxSample.includes('server_name api.sdkwork.com;'));
+  assert.ok(nginxSample.includes('proxy_pass http://127.0.0.1:3900;'));
+  assert.ok(nginxSample.includes('/opt/certs/letsencrypt/live/sdkwork.com/fullchain.pem'));
+  assert.equal(nginxSample.includes('127.0.0.1:8080'), false);
+
+  const apiSample = readFileSync(path.join(workspaceRoot, 'etc', 'nginx', 'API_SAMPLE.conf'), 'utf8');
+  assert.ok(apiSample.includes('server_name api.sdkwork.com;'));
+  assert.ok(apiSample.includes('proxy_pass http://127.0.0.1:3900;'));
+  assert.ok(apiSample.includes('/opt/certs/letsencrypt/live/sdkwork.com/fullchain.pem'));
+  assert.equal(apiSample.includes('127.0.0.1:8080'), false);
+
+  for (const domain of ['api.sdkwork.com', 'www.sdkwork.com']) {
+    const examplePath = path.join(workspaceRoot, 'etc', 'nginx', 'sdkwork', `${domain}.conf`);
+    assert.equal(existsSync(examplePath), true, `${domain}.conf example must exist`);
+    const config = readFileSync(examplePath, 'utf8');
+    assert.ok(config.includes(`server_name ${domain};`));
+    assert.ok(config.includes('proxy_pass http://127.0.0.1:3900;'));
+    assert.ok(config.includes('/opt/certs/letsencrypt/live/sdkwork.com/fullchain.pem'));
+    assert.equal(config.includes('127.0.0.1:8080'), false);
+  }
 });
 
 test('installation documentation covers release, source, initialization, usage, and valid local links', () => {
@@ -165,11 +482,29 @@ test('installation documentation covers release, source, initialization, usage, 
   const enSource = readFileSync(path.join(workspaceRoot, 'docs/installation/en-US/source-install.md'), 'utf8');
   const zhUsage = readFileSync(path.join(workspaceRoot, 'docs/installation/zh-CN/usage.md'), 'utf8');
   const enUsage = readFileSync(path.join(workspaceRoot, 'docs/installation/en-US/usage.md'), 'utf8');
+  const installationIndex = readFileSync(path.join(workspaceRoot, 'docs/installation/README.md'), 'utf8');
+  const zhInstallationIndex = readFileSync(path.join(workspaceRoot, 'docs/installation/zh-CN/README.md'), 'utf8');
+  const enInstallationIndex = readFileSync(path.join(workspaceRoot, 'docs/installation/en-US/README.md'), 'utf8');
 
   assert.ok(zhRelease.includes('clawrouter-linux-x64-archive-0.3.0.tar.gz'));
   assert.ok(enRelease.includes('clawrouter-linux-x64-archive-0.3.0.tar.gz'));
+  assert.ok(zhRelease.includes('pnpm install:package:build -- --package-id linux-x64-service'));
+  assert.ok(enRelease.includes('pnpm install:package:build -- --package-id linux-x64-service'));
   assert.ok(zhRelease.includes('sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb'));
   assert.ok(enRelease.includes('sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb'));
+  assert.ok(zhRelease.includes('/etc/nginx/sites-enabled/sdkwork/api.sdkwork.com.conf'));
+  assert.ok(enRelease.includes('/etc/nginx/sites-enabled/sdkwork/api.sdkwork.com.conf'));
+  assert.ok(zhRelease.includes('etc/nginx/NGINX_SAMPLE.conf'));
+  assert.ok(enRelease.includes('etc/nginx/NGINX_SAMPLE.conf'));
+  assert.ok(zhRelease.includes('sudo pnpm nginx:deploy -- --domain api.sdkwork.com --cert-name sdkwork.com'));
+  assert.ok(enRelease.includes('sudo pnpm nginx:deploy -- --domain api.sdkwork.com --cert-name sdkwork.com'));
+  for (const readme of [rootReadme, installationIndex, zhInstallationIndex, enInstallationIndex]) {
+    assert.ok(readme.includes('/etc/nginx/sites-enabled/sdkwork/api.sdkwork.com.conf'));
+    assert.ok(readme.includes('etc/nginx/NGINX_SAMPLE.conf'));
+    assert.ok(readme.includes('pnpm nginx:plan -- --domain api.sdkwork.com'));
+    assert.ok(readme.includes('sudo pnpm nginx:deploy -- --domain api.sdkwork.com --cert-name sdkwork.com'));
+    assert.ok(readme.includes('http://127.0.0.1:3900'));
+  }
   assert.equal(zhRelease.includes('sudo systemctl enable --now clawrouter'), false);
   assert.equal(enRelease.includes('sudo systemctl enable --now clawrouter'), false);
   assert.ok(enRelease.includes('/usr/bin/clawrouter'));
@@ -210,16 +545,108 @@ test('root release entrypoint regenerates the release env before strict prefligh
     readFileSync(path.join(workspaceRoot, 'package.json'), 'utf8'),
   );
   const releaseScript = rootPackage.scripts.release;
+  const downloadsCheckIndex = releaseScript.indexOf('pnpm downloads:check');
   const envCheckIndex = releaseScript.indexOf('pnpm release:env:write -- --check');
   const envWriteIndex = releaseScript.indexOf('pnpm release:env:write -- --force');
   const preflightIndex = releaseScript.indexOf('pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean');
   const verifyIndex = releaseScript.indexOf('pnpm verify');
 
-  assert.ok(envCheckIndex >= 0, 'release must validate release env before writing');
+  assert.ok(downloadsCheckIndex >= 0, 'release must validate checked-in download JSON before release preflight');
+  assert.ok(envCheckIndex > downloadsCheckIndex, 'release must validate download JSON before release env');
   assert.ok(envWriteIndex > envCheckIndex, 'release must write .env.release.local after check');
   assert.ok(preflightIndex > envWriteIndex, 'release must run strict preflight after env write');
   assert.ok(verifyIndex > preflightIndex, 'release must run verify after strict preflight');
   assert.ok(!releaseScript.includes('.env.release.example'), 'release must not write or consume the checked-in example template');
+});
+
+test('download catalog generator derives homepage JSON from release version and package matrix', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'update-claw-router-downloads.mjs')).href
+  );
+
+  const catalog = module.createClawRouterDownloadCatalog({
+    generatedAt: '2026-05-18T00:00:00.000Z',
+    releaseBaseUrl: 'https://downloads.example.test/releases/v1.2.3',
+    releaseTag: 'v1.2.3',
+    version: '1.2.3',
+  });
+  const actions = catalog.cards.flatMap((card) => card.actions);
+  const actionsById = new Map(actions.map((action) => [action.id, action]));
+
+  assert.equal(catalog.schemaVersion, '2026-05-18.sdkwork-download-catalog.v1');
+  assert.equal(catalog.product.version, '1.2.3');
+  assert.equal(catalog.product.releaseTag, 'v1.2.3');
+  assert.deepEqual(catalog.cards.map((card) => card.kind), ['desktop', 'server', 'mobile']);
+  assert.equal(
+    actionsById.get('desktop-windows-x64')?.href,
+    'https://downloads.example.test/releases/v1.2.3/clawrouter-windows-x64-desktop-1.2.3.msi',
+  );
+  assert.equal(
+    actionsById.get('server-linux-x64')?.href,
+    'https://downloads.example.test/releases/v1.2.3/clawrouter-linux-x64-server-1.2.3.deb',
+  );
+  assert.equal(actionsById.get('server-docker')?.disabled, true);
+  assert.equal(actionsById.get('mobile-android')?.disabled, true);
+  assert.equal(actions.some((action) => action.href === '#'), false);
+});
+
+test('download catalog generator emits selectable CDN sources only when configured', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'update-claw-router-downloads.mjs')).href
+  );
+
+  const githubOnlyCatalog = module.createClawRouterDownloadCatalog({
+    generatedAt: '2026-05-18T00:00:00.000Z',
+    releaseBaseUrl: 'https://github.com/Sdkwork-Cloud/sdkwork-claw-router/releases/download/v1.2.3',
+    releaseTag: 'v1.2.3',
+    version: '1.2.3',
+  });
+  const cdnCatalog = module.createClawRouterDownloadCatalog({
+    cdnBaseUrl: 'https://cdn.example.test/claw-router/v1.2.3',
+    generatedAt: '2026-05-18T00:00:00.000Z',
+    releaseBaseUrl: 'https://github.com/Sdkwork-Cloud/sdkwork-claw-router/releases/download/v1.2.3',
+    releaseTag: 'v1.2.3',
+    version: '1.2.3',
+  });
+  const githubOnlyActions = githubOnlyCatalog.cards.flatMap((card) => card.actions);
+  const cdnActionsById = new Map(cdnCatalog.cards.flatMap((card) => card.actions.map((action) => [action.id, action])));
+  const windowsSources = cdnActionsById.get('desktop-windows-x64')?.sources ?? [];
+
+  assert.equal(
+    githubOnlyActions.some((action) => action.sources?.some((source) => source.id === 'cdn')),
+    false,
+    'default generated JSON must not include CDN sources',
+  );
+  assert.deepEqual(windowsSources.map((source) => source.id), ['github', 'cdn']);
+  assert.equal(
+    windowsSources.find((source) => source.id === 'github')?.href,
+    'https://github.com/Sdkwork-Cloud/sdkwork-claw-router/releases/download/v1.2.3/clawrouter-windows-x64-desktop-1.2.3.msi',
+  );
+  assert.equal(
+    windowsSources.find((source) => source.id === 'cdn')?.href,
+    'https://cdn.example.test/claw-router/v1.2.3/clawrouter-windows-x64-desktop-1.2.3.msi',
+  );
+  assert.equal(cdnActionsById.get('server-docker')?.sources, undefined);
+});
+
+test('verification plan checks the release download catalog before expensive suites', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
+  );
+  const plan = module.buildVerificationPlan(
+    { skipRustTests: false, skipPythonTests: false, skipSchemaGate: true },
+    {},
+  );
+  const fastPlan = module.buildFastVerificationPlan({});
+  const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
+  const fastCommandLines = fastPlan.map((step) => `${step.command} ${step.args.join(' ')}`);
+  const downloadsCheckIndex = plan.findIndex((step) => step.label === 'claw router download catalog check');
+  const toolingTestsIndex = plan.findIndex((step) => step.label === 'tooling contract tests');
+
+  assert.ok(downloadsCheckIndex >= 0, 'verification must include the download catalog freshness check');
+  assert.ok(downloadsCheckIndex < toolingTestsIndex, 'download catalog freshness must fail before broad tooling tests');
+  assert.ok(commandLines.some((commandLine) => /pnpm(?:\.cmd)? downloads:check/u.test(commandLine)));
+  assert.ok(fastCommandLines.some((commandLine) => /pnpm(?:\.cmd)? downloads:check/u.test(commandLine)));
 });
 
 test('app store seed updater defaults to file seed updates and gates database sync behind explicit flag', async () => {
@@ -713,6 +1140,75 @@ test('claw router workspace constrains default SQLite dev database without overr
       delete process.env.SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP;
     } else {
       process.env.SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP = previousRankingStartup;
+    }
+  }
+});
+
+test('claw router workspace provides Redis host and port defaults for server dev services', async () => {
+  const previousRedisEnabled = process.env.SDKWORK_CLAW_REDIS_ENABLED;
+  const previousRedisHost = process.env.SDKWORK_CLAW_REDIS_HOST;
+  const previousRedisPort = process.env.SDKWORK_CLAW_REDIS_PORT;
+  const previousRedisDatabase = process.env.SDKWORK_CLAW_REDIS_DATABASE;
+  const previousRedisUrl = process.env.SDKWORK_CLAW_REDIS_URL;
+  try {
+    delete process.env.SDKWORK_CLAW_REDIS_ENABLED;
+    delete process.env.SDKWORK_CLAW_REDIS_HOST;
+    delete process.env.SDKWORK_CLAW_REDIS_PORT;
+    delete process.env.SDKWORK_CLAW_REDIS_DATABASE;
+    delete process.env.SDKWORK_CLAW_REDIS_URL;
+    const module = await import(
+      pathToFileURL(path.join(workspaceRoot, 'scripts', 'dev', 'start-workspace.mjs')).href
+    );
+
+    const settings = module.parseWorkspaceArgs([]);
+    const plan = module.buildWorkspaceCommandPlan(settings, { workspaceRoot });
+    for (const step of plan.steps.filter((step) =>
+      ['gateway', 'admin-api', 'app-api', 'server'].includes(step.name),
+    )) {
+      assert.equal(step.env.SDKWORK_CLAW_REDIS_HOST, '127.0.0.1');
+      assert.equal(step.env.SDKWORK_CLAW_REDIS_PORT, '6379');
+      assert.equal(step.env.SDKWORK_CLAW_REDIS_DATABASE, '0');
+      assert.equal(step.env.SDKWORK_CLAW_REDIS_URL, undefined);
+    }
+
+    process.env.SDKWORK_CLAW_REDIS_URL = 'redis://cache.internal:6380/3';
+    process.env.SDKWORK_CLAW_REDIS_HOST = 'stale-redis.internal';
+    process.env.SDKWORK_CLAW_REDIS_PORT = '6381';
+    process.env.SDKWORK_CLAW_REDIS_DATABASE = '4';
+    const urlPlan = module.buildWorkspaceCommandPlan(module.parseWorkspaceArgs([]), { workspaceRoot });
+    for (const step of urlPlan.steps.filter((step) =>
+      ['gateway', 'admin-api', 'app-api', 'server'].includes(step.name),
+    )) {
+      assert.equal(step.env.SDKWORK_CLAW_REDIS_URL, 'redis://cache.internal:6380/3');
+      assert.equal(step.env.SDKWORK_CLAW_REDIS_HOST, undefined);
+      assert.equal(step.env.SDKWORK_CLAW_REDIS_PORT, undefined);
+      assert.equal(step.env.SDKWORK_CLAW_REDIS_DATABASE, undefined);
+    }
+  } finally {
+    if (previousRedisEnabled === undefined) {
+      delete process.env.SDKWORK_CLAW_REDIS_ENABLED;
+    } else {
+      process.env.SDKWORK_CLAW_REDIS_ENABLED = previousRedisEnabled;
+    }
+    if (previousRedisHost === undefined) {
+      delete process.env.SDKWORK_CLAW_REDIS_HOST;
+    } else {
+      process.env.SDKWORK_CLAW_REDIS_HOST = previousRedisHost;
+    }
+    if (previousRedisPort === undefined) {
+      delete process.env.SDKWORK_CLAW_REDIS_PORT;
+    } else {
+      process.env.SDKWORK_CLAW_REDIS_PORT = previousRedisPort;
+    }
+    if (previousRedisDatabase === undefined) {
+      delete process.env.SDKWORK_CLAW_REDIS_DATABASE;
+    } else {
+      process.env.SDKWORK_CLAW_REDIS_DATABASE = previousRedisDatabase;
+    }
+    if (previousRedisUrl === undefined) {
+      delete process.env.SDKWORK_CLAW_REDIS_URL;
+    } else {
+      process.env.SDKWORK_CLAW_REDIS_URL = previousRedisUrl;
     }
   }
 });
@@ -1449,6 +1945,9 @@ test('production starter initializes server PostgreSQL runtime config template',
   assert.ok(content.includes('# password = "change-me"'));
   assert.ok(content.includes('ssl_mode = "require"'));
   assert.ok(content.includes('max_connections = 16'));
+  assert.ok(content.includes('[redis]'));
+  assert.ok(content.includes('enabled = true'));
+  assert.ok(content.includes('host = "redis.example.com"'));
   rmSync(fixtureRoot, { recursive: true, force: true });
 });
 
@@ -1738,8 +2237,9 @@ test('install package planner covers platforms, architectures, modes, fast init,
   assert.equal(windowsService.databasePolicy.defaultUsername, 'sdkwork_claw_router');
   assert.equal(windowsService.databasePolicy.passwordFile.path, '%ProgramData%/SdkWork/ClawRouter/database.secret');
   assert.equal(windowsService.redisPolicy.configSection, 'redis');
-  assert.equal(windowsService.redisPolicy.enabledByDefault, false);
-  assert.equal(windowsService.redisPolicy.required, false);
+  assert.equal(windowsService.redisPolicy.enabledByDefault, true);
+  assert.equal(windowsService.redisPolicy.required, true);
+  assert.equal(windowsService.redisPolicy.runtimeRequired, true);
   assert.equal(windowsService.redisPolicy.requiredWhenEnabled.includes('host'), true);
   assert.equal(windowsService.redisPolicy.requiredWhenEnabled.includes('port'), true);
   assert.equal(windowsService.redisPolicy.requiredWhenEnabled.includes('database'), true);
@@ -1779,7 +2279,9 @@ test('install package planner covers platforms, architectures, modes, fast init,
   assert.equal(linuxContainer.databasePolicy.requiresExternalDatabase, true);
   assert.equal(linuxContainer.databasePolicy.passwordFile.path, '/run/secrets/clawrouter-postgres-password');
   assert.equal(linuxContainer.redisPolicy.passwordFile.path, '/run/secrets/clawrouter-redis-password');
-  assert.equal(linuxContainer.redisPolicy.required, false);
+  assert.equal(linuxContainer.redisPolicy.enabledByDefault, true);
+  assert.equal(linuxContainer.redisPolicy.required, true);
+  assert.equal(linuxContainer.redisPolicy.runtimeRequired, true);
   assert.equal(linuxContainer.containerIntegration.kind, 'container-image');
   assert.equal(linuxContainer.containerIntegration.entrypoint, '/opt/clawrouter/bin/clawrouter');
   for (const packageItem of plan.packages.filter((item) => item.deploymentMode === 'container')) {
@@ -1948,9 +2450,9 @@ test('install package archive builder creates manifest-backed archives without l
     assert.equal(result.manifest.installConfiguration.database.externalRequired, true);
     assert.ok(result.manifest.installConfiguration.database.requiredFields.includes('password_file or password'));
     assert.equal(result.manifest.installConfiguration.redis.configSection, 'redis');
-    assert.equal(result.manifest.installConfiguration.redis.enabledByDefault, false);
-    assert.equal(result.manifest.installConfiguration.redis.required, false);
-    assert.equal(result.manifest.installConfiguration.redis.runtimeRequired, false);
+    assert.equal(result.manifest.installConfiguration.redis.enabledByDefault, true);
+    assert.equal(result.manifest.installConfiguration.redis.required, true);
+    assert.equal(result.manifest.installConfiguration.redis.runtimeRequired, true);
     assert.deepEqual(result.manifest.installConfiguration.redis.requiredFieldsWhenEnabled, ['host', 'port', 'database']);
     assert.deepEqual(result.manifest.installConfiguration.redis.secretFields, ['password_file', 'password']);
     assert.equal(result.manifest.installConfiguration.redis.host, 'redis.example.com');
@@ -2123,7 +2625,7 @@ test('install package builder emits service and container deployment packages fr
     assert.ok(serviceConfigTemplate.includes('username = "sdkwork_claw_router"'));
     assert.ok(serviceConfigTemplate.includes('password_file = "/etc/clawrouter/database.secret"'));
     assert.ok(serviceConfigTemplate.includes('[redis]'));
-    assert.ok(serviceConfigTemplate.includes('enabled = false'));
+    assert.ok(serviceConfigTemplate.includes('enabled = true'));
     assert.ok(serviceConfigTemplate.includes('host = "redis.example.com"'));
     assert.ok(serviceConfigTemplate.includes('port = 6379'));
     assert.ok(serviceConfigTemplate.includes('database = 0'));
@@ -2227,7 +2729,7 @@ test('install package builder emits service and container deployment packages fr
       'INSTALL.md',
     );
     assert.ok(serviceInstallGuide.includes('configured for external PostgreSQL'));
-    assert.ok(serviceInstallGuide.includes('Redis is optional and disabled by default'));
+    assert.ok(serviceInstallGuide.includes('Redis is enabled and required by default for server deployments'));
     assert.ok(serviceInstallGuide.includes('[redis].enabled = true'));
     assert.ok(serviceInstallGuide.includes('/etc/clawrouter/redis.secret'));
     assert.ok(serviceInstallGuide.includes('Course upload storage is configured in [paths] and [courses].'));
@@ -2320,7 +2822,9 @@ test('install package builder emits service and container deployment packages fr
     assert.equal(metadata.redis.defaultPort, 6379);
     assert.equal(metadata.redis.defaultDatabase, 0);
     assert.equal(metadata.redis.urlOverrideExample, 'redis://redis.example.com:6379/0');
-    assert.equal(metadata.redis.enabledByDefault, false);
+    assert.equal(metadata.redis.enabledByDefault, true);
+    assert.equal(metadata.redis.required, true);
+    assert.equal(metadata.redis.runtimeRequired, true);
     assert.equal(metadata.courses.uploadRoot, '/var/lib/clawrouter/uploads/courses');
     assert.equal(metadata.courses.videoUploadMaxBytes, 1073741824);
     assert.equal(metadata.courses.videoUploadBodyLimitBytes, 1074790400);
@@ -2329,7 +2833,7 @@ test('install package builder emits service and container deployment packages fr
     assert.ok(containerInstallGuide.includes('Configuration Files'));
     assert.ok(containerInstallGuide.includes('/run/secrets/clawrouter-postgres-password'));
     assert.ok(containerInstallGuide.includes('/run/secrets/clawrouter-redis-password'));
-    assert.ok(containerInstallGuide.includes('Redis is optional and disabled by default'));
+    assert.ok(containerInstallGuide.includes('Redis is enabled and required by default for server deployments'));
     assert.ok(containerInstallGuide.includes(':ro'));
     assert.ok(!containerInstallGuide.includes('--secret clawrouter-postgres-password'));
     assert.equal(
@@ -2685,8 +3189,8 @@ test('native installer builder emits apt-installable Debian packages for Linux s
     assert.ok(postinstText.includes('Runtime TOML: /etc/clawrouter/clawrouter.toml'));
     assert.ok(postinstText.includes('Service environment: /etc/clawrouter/clawrouter.env'));
     assert.ok(postinstText.includes('PostgreSQL password file: /etc/clawrouter/database.secret'));
-    assert.ok(postinstText.includes('Optional Redis password file: /etc/clawrouter/redis.secret'));
-    assert.ok(postinstText.includes('Redis is disabled by default; enable [redis] only when a deployment needs shared cache, locks, queues, or rate-limit buckets.'));
+    assert.ok(postinstText.includes('Redis password file: /etc/clawrouter/redis.secret'));
+    assert.ok(postinstText.includes('Redis is enabled and required by default for server deployments; configure [redis] before first startup.'));
     assert.ok(postinstText.includes('sudo editor /etc/clawrouter/clawrouter.toml'));
     assert.ok(postinstText.includes('sudo editor /etc/clawrouter/database.secret'));
     assert.ok(postinstText.includes('sudo systemctl start clawrouter'));
@@ -3034,6 +3538,14 @@ test('release workflow validates native installer payload layouts before upload'
   assert.ok(workflow.includes('node scripts/validate-claw-router-install-artifacts.mjs'));
   assert.ok(workflow.includes('--package-id $packageId'));
   assert.ok(workflow.includes('--artifact-path $file.FullName'));
+});
+
+test('release workflow can opt into CDN download links without making CDN mandatory', () => {
+  const workflow = readFileSync(path.join(workspaceRoot, '.github', 'workflows', 'release-package.yml'), 'utf8');
+  assert.ok(workflow.includes('CLAWROUTER_DOWNLOAD_CDN_BASE_URL: ${{ vars.CLAWROUTER_DOWNLOAD_CDN_BASE_URL }}'));
+  assert.ok(workflow.includes('if ($env:CLAWROUTER_DOWNLOAD_CDN_BASE_URL)'));
+  assert.ok(workflow.includes('$downloadArgs += @("--cdn-base-url", $env:CLAWROUTER_DOWNLOAD_CDN_BASE_URL)'));
+  assert.ok(workflow.includes('node scripts/update-claw-router-downloads.mjs @downloadArgs'));
 });
 
 test('install package tar writer supports long production asset paths', async () => {
@@ -3390,6 +3902,18 @@ test('API router product chain is covered from portal services through SDK and R
     ),
     'utf8',
   );
+  const appRuntimeApiOperationsSource = readFileSync(
+    path.join(
+      workspaceRoot,
+      'apps',
+      'sdkwork-claw-router-portal',
+      'packages',
+      'sdkwork-claw-router-playground',
+      'src',
+      'appRuntimeApiOperations.ts',
+    ),
+    'utf8',
+  );
   const routingComponentsSource = [
     'ApiKeysTab.tsx',
     'ChannelsTab.tsx',
@@ -3480,7 +4004,7 @@ test('API router product chain is covered from portal services through SDK and R
     path.join(workspaceRoot, 'services', 'sdkwork-claw-gateway', 'tests', 'openai_chat_route.rs'),
     'utf8',
   );
-  const appAiServiceSurface = `${routingServiceSource}\n${modelServiceSource}\n${playgroundServiceSource}`;
+  const appAiServiceSurface = `${routingServiceSource}\n${modelServiceSource}\n${playgroundServiceSource}\n${appRuntimeApiOperationsSource}`;
 
   const requiredAppRouterOperations = [
     {
@@ -3617,7 +4141,7 @@ test('API router product chain is covered from portal services through SDK and R
 
   const sdkServiceCallByOperation = {
     fetchModels: 'getClawRouterAppSdkClient().ai.models.list(',
-    fetchGenerationHistory: 'getClawRouterAppSdkClient().ai.generations.list(',
+    fetchGenerationHistory: 'getClawRouterAppSdkClient().ai.generation.list(',
     fetchChannels: 'getClawRouterAppSdkClient().ai.routing.channels.list()',
     createChannel: 'getClawRouterAppSdkClient().ai.routing.channels.create(',
     updateChannel: 'getClawRouterAppSdkClient().ai.routing.channels.update(',
@@ -3649,7 +4173,7 @@ test('API router product chain is covered from portal services through SDK and R
 
   const sdkOperationIdByOperation = {
     fetchModels: 'models.list',
-    fetchGenerationHistory: 'generations.list',
+    fetchGenerationHistory: 'generation.list',
     fetchChannels: 'routing.channels.list',
     createChannel: 'routing.channels.create',
     updateChannel: 'routing.channels.update',
@@ -3751,9 +4275,9 @@ test('API router product chain is covered from portal services through SDK and R
   assert.equal(playgroundModelGroupsOperation.sdk_client, 'SdkworkAppClient');
   assert.equal(playgroundModelGroupsOperation.sdk_family, 'clawrouter-app-sdk');
   assert.equal(playgroundModelGroupsOperation.openapi_exposed, false);
-  assert.equal(playgroundModelGroupsOperation.operation_id, 'models.list');
+  assert.equal(playgroundModelGroupsOperation.operation_id, 'playground.models.grouped');
   assert.ok(
-    appAiServiceSurface.includes('getClawRouterAppSdkClient().ai.models.list()'),
+    appAiServiceSurface.includes('getClawRouterAppSdkClient().ai.models.list('),
     'fetchModelGroups must reuse the generated app SDK model catalog method',
   );
   assert.ok(
@@ -3799,7 +4323,7 @@ test('API router product chain is covered from portal services through SDK and R
   assert.ok(appDatabaseTestSource.includes('/app/v3/api/ai/routing/channels'));
 
   assert.ok(gatewayRuntimeSource.includes('router_with_openai_runtime_routes'));
-  assert.ok(gatewayRuntimeSource.includes('openai_chat_completions_router_with_relays_and_usage_recorder'));
+  assert.ok(gatewayRuntimeSource.includes('openai_chat_completions_router_with_relays_usage_recorder_plugins_and_runtime_config'));
   assert.ok(openaiChatSource.includes('/v1/chat/completions'));
   assert.ok(openaiChatSource.includes('GatewayUsageRecorder'));
   assert.ok(openaiChatSource.includes('build_usage_record_command'));
@@ -4154,6 +4678,7 @@ test('fast verification plan keeps only low-cost Codex iteration checks', async 
 
   assert.deepEqual(labels, [
     'sdkwork-models catalog check',
+    'claw router download catalog check',
     'app store seed check',
     'skills seed check',
     'repository delivery guard',
@@ -4163,6 +4688,7 @@ test('fast verification plan keeps only low-cost Codex iteration checks', async 
   ]);
   assert.deepEqual(commandLines, [
     'pnpm.cmd models:check',
+    'pnpm.cmd downloads:check',
     'pnpm.cmd app-store:seed:check',
     'pnpm.cmd skills:seed:check',
     'python -B -m tools.repository_delivery_guardian',
@@ -4342,7 +4868,7 @@ test('edge dev smoke validates the current gateway and surface OpenAPI contract 
       expectedTitle: 'SDKWork Claw Router Backend API',
       requiredPaths: [
         '/backend/v3/api/ai/model_vendors',
-        '/backend/v3/api/billing/recharges/packages',
+        '/backend/v3/api/recharges/packages',
         '/backend/v3/api/ecosystem/skills',
       ],
     },
@@ -4352,7 +4878,7 @@ test('edge dev smoke validates the current gateway and surface OpenAPI contract 
       requiredPaths: [
         '/app/v3/api/platform/apps/store',
         '/app/v3/api/ecosystem/skills',
-        '/app/v3/api/billing/account/points/recharges/packages',
+        '/app/v3/api/recharges/packages',
       ],
     },
   ]) {
@@ -4844,13 +5370,13 @@ test('environment and deployment specs document Claw Router runtime config stand
   assert.ok(environmentSpec.includes('Server and container deployments default to PostgreSQL.'));
   assert.ok(environmentSpec.includes('password_file = "/etc/clawrouter/database.secret"'));
   assert.ok(environmentSpec.includes('[redis]'));
-  assert.ok(environmentSpec.includes('enabled = false'));
+  assert.ok(environmentSpec.includes('enabled = true'));
   assert.ok(environmentSpec.includes('host = "redis.example.com"'));
   assert.ok(environmentSpec.includes('port = 6379'));
   assert.ok(environmentSpec.includes('database = 0'));
   assert.ok(environmentSpec.includes('password_file = "/etc/clawrouter/redis.secret"'));
   assert.ok(environmentSpec.includes('Desktop deployments default to SQLite.'));
-  assert.ok(deploymentSpec.includes('Redis is optional and disabled by default.'));
+  assert.ok(deploymentSpec.includes('Redis is enabled and required by default for server and container deployments.'));
   assert.ok(deploymentSpec.includes('clawrouterctl ensure'));
   assert.ok(deploymentSpec.includes('clawrouterctl refresh-catalog --force'));
 });
@@ -5265,8 +5791,9 @@ test('verification plan includes all commercial contract guardians before tests'
     {},
   );
   const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
+  const toolingTestsIndex = commandLines.indexOf('node scripts/run-claw-router-product.test.mjs');
 
-  assert.deepEqual(commandLines.slice(3, 18), [
+  assert.deepEqual(commandLines.slice(toolingTestsIndex, toolingTestsIndex + 15), [
     'node scripts/run-claw-router-product.test.mjs',
     'python -B -m tools.repository_delivery_guardian',
     'python -B -m tools.clawrouter_sdk_guardian',
@@ -5283,7 +5810,7 @@ test('verification plan includes all commercial contract guardians before tests'
     'python -B -m tools.frontend_operation_audit',
     'python -B -m tools.frontend_field_audit',
   ]);
-  assert.equal(commandLines[18], 'python -B -m tools.java_legacy_contract_audit');
+  assert.equal(commandLines[toolingTestsIndex + 15], 'python -B -m tools.java_legacy_contract_audit');
 });
 
 test('verification plan verifies production portal through Rust edge server without Node server tests', async () => {
@@ -5483,14 +6010,7 @@ test('portal mutable entity services must require backend stable ids', () => {
     },
     {
       file: path.join('sdkwork-claw-router-admin-marketing', 'src', 'marketingService.ts'),
-      requiredMessages: [
-        'Coupon id is required',
-        'Coupon batch id is required',
-        'Promo code id is required',
-        'Redemption record id is required',
-        'Recharge record id is required',
-        'Referral stat id is required',
-      ],
+      requiredMessages: ['Referral stat id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
@@ -5505,7 +6025,12 @@ test('portal mutable entity services must require backend stable ids', () => {
     },
     {
       file: path.join('sdkwork-claw-router-admin-finance', 'src', 'financeService.ts'),
-      requiredMessages: ['Transaction id is required', 'Billing record id is required'],
+      requiredMessages: [
+        'Coupon id is required',
+        'Coupon batch id is required',
+        'Promo code id is required',
+        'Redemption record id is required',
+      ],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
@@ -5519,23 +6044,18 @@ test('portal mutable entity services must require backend stable ids', () => {
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-claw-router-console-billing', 'src', 'billingService.ts'),
+      file: path.join('sdkwork-claw-router-console-wallet', 'src', 'walletService.ts'),
       requiredMessages: ['Redeem history id is required', 'Recharge history id is required'],
       forbidden: [/id:\s*readNumber\(item,\s*['"]id['"]\)/u],
     },
     {
+      file: path.join('sdkwork-claw-router-admin-wallet', 'src', 'walletService.ts'),
+      requiredMessages: ['Recharge record id is required'],
+      forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
+    },
+    {
       file: path.join('sdkwork-claw-router-console-providers', 'src', 'providerService.ts'),
       requiredMessages: ['Provider id is required'],
-      forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
-    },
-    {
-      file: path.join('sdkwork-claw-router-console-recharge', 'src', 'rechargeService.ts'),
-      requiredMessages: ['Recharge package id is required'],
-      forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
-    },
-    {
-      file: path.join('sdkwork-claw-router-console-settlements', 'src', 'settlementsService.ts'),
-      requiredMessages: ['Settlement bill id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
@@ -5560,6 +6080,8 @@ test('portal mutable entity services must require backend stable ids', () => {
           || source.includes(`readRequiredString(item, 'vendorId', '${message}')`)
           || source.includes(`readRequiredString(item, 'couponId', '${message}')`)
           || source.includes(`readRequiredString(item, 'batchId', '${message}')`)
+          || source.includes(`firstRequiredString(item, ['id', 'couponId', 'coupon_id', 'redemptionNo', 'redemption_no'], '${message}')`)
+          || source.includes(`firstRequiredString(item, ['id', 'transactionNo', 'transaction_no', 'requestNo', 'request_no'], '${message}')`)
           || source.includes(`readRequiredAnyString(item, ['id', 'uuid', 'channelCode', 'channel_code'], '${message}')`),
         `${service.file} must fail closed with "${message}" when backend omits a stable id`,
       );
@@ -5693,10 +6215,11 @@ test('portal workspace packages declare ESM module metadata', () => {
     'sdkwork-claw-router-commons',
     'sdkwork-claw-router-console-account',
     'sdkwork-claw-router-console-api-keys',
-    'sdkwork-claw-router-console-billing',
+    'sdkwork-claw-router-console-checkout',
     'sdkwork-claw-router-console-core',
     'sdkwork-claw-router-console-dashboard',
     'sdkwork-claw-router-console-gateway',
+    'sdkwork-claw-router-console-memberships',
     'sdkwork-claw-router-console-messages',
     'sdkwork-claw-router-console-providers',
     'sdkwork-claw-router-console-recharge',
@@ -5705,6 +6228,7 @@ test('portal workspace packages declare ESM module metadata', () => {
     'sdkwork-claw-router-console-settlements',
     'sdkwork-claw-router-console-usage',
     'sdkwork-claw-router-console-user',
+    'sdkwork-claw-router-console-wallet',
     'sdkwork-claw-router-core',
     'sdkwork-claw-router-courses',
     'sdkwork-claw-router-forum',
@@ -6211,7 +6735,8 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
   assert.match(browserSmokeSource, /setRouteTextareaValue/);
   assert.match(browserSmokeSource, /installRouteDownloadProbe/);
   assert.match(browserSmokeSource, /installRouteClipboardProbe/);
-  assert.match(browserSmokeSource, /clickRouteButtonByTitle\("Copy Response"\)/);
+  assert.match(browserSmokeSource, /clickRouteSaveResponseButton\(\)/);
+  assert.match(browserSmokeSource, /clickRouteCopyResponseButton\(\)/);
   assert.match(browserSmokeSource, /clickRouteButtonByExactText\("Send and Download"\)/);
   assert.match(browserSmokeSource, /clickRouteButtonByTitle\("Close Drawer"\)/);
   assert.match(browserSmokeSource, /setRouteSelectValueByOptionText\("Bearer Token"\)/);
@@ -6244,6 +6769,8 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
   assert.match(browserSmokeSource, /APP_SDK_CATEGORY_FAILURE_FIXTURE_MODE/);
   assert.match(browserSmokeSource, /APP_SDK_MISSING_FIXTURE_MODE/);
   assert.match(browserSmokeSource, /APP_SDK_RETRY_FIXTURE_MODE/);
+  assert.match(browserSmokeSource, /APP_SDK_SHARED_BROWSER_FIXTURES/);
+  assert.match(browserSmokeSource, /app\/v3\/api\/notification\/notifications/);
   assert.match(browserSmokeSource, /app\/v3\/api\/platform\/apps\/store/);
   assert.match(browserSmokeSource, /app\/v3\/api\/ecosystem\/skills/);
   assert.match(browserSmokeSource, /Fetch\.enable/);
@@ -6384,6 +6911,30 @@ test('verification plan includes portal app center runtime tests before broad su
   ));
 });
 
+test('verification plan includes portal home downloads runtime tests before broad suites', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
+  );
+  const plan = module.buildVerificationPlan(
+    { skipRustTests: false, skipPythonTests: false, skipSchemaGate: true },
+    {},
+  );
+  const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
+  const appCenterRuntimeIndex = plan.findIndex((step) => step.label === 'portal app center runtime tests');
+  const homeDownloadsRuntimeIndex = plan.findIndex((step) => step.label === 'portal home downloads runtime tests');
+  const apiReferenceRuntimeIndex = plan.findIndex((step) => step.label === 'portal api reference playground runtime tests');
+  const rustTestsIndex = plan.findIndex((step) => step.label === 'rust workspace tests');
+  const pythonTestsIndex = plan.findIndex((step) => step.label === 'python standard tests');
+
+  assert.ok(homeDownloadsRuntimeIndex > appCenterRuntimeIndex, 'home downloads runtime tests must run after app center runtime tests');
+  assert.ok(homeDownloadsRuntimeIndex < apiReferenceRuntimeIndex, 'home downloads runtime tests must run before API reference runtime tests');
+  assert.ok(homeDownloadsRuntimeIndex < rustTestsIndex, 'home downloads runtime tests must run before broad Rust tests');
+  assert.ok(homeDownloadsRuntimeIndex < pythonTestsIndex, 'home downloads runtime tests must run before broad Python tests');
+  assert.ok(commandLines.includes(
+    'node --experimental-strip-types apps/sdkwork-claw-router-portal/home-downloads-runtime.test.ts',
+  ));
+});
+
 test('verification plan includes portal api reference playground runtime tests before broad suites', async () => {
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
@@ -6427,6 +6978,30 @@ test('verification plan includes portal api reference SSR smoke before broad sui
   assert.ok(apiReferenceSsrIndex < pythonTestsIndex, 'api reference SSR smoke must run before broad Python tests');
   assert.ok(commandLines.includes(
     'node apps/sdkwork-claw-router-portal/api-reference-ssr-smoke.test.cjs',
+  ));
+});
+
+test('verification plan includes portal playground chat runtime tests before broad suites', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
+  );
+  const plan = module.buildVerificationPlan(
+    { skipRustTests: false, skipPythonTests: false, skipSchemaGate: true },
+    {},
+  );
+  const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
+  const apiReferenceSsrIndex = plan.findIndex((step) => step.label === 'portal api reference SSR smoke tests');
+  const playgroundChatRuntimeIndex = plan.findIndex((step) => step.label === 'portal playground chat runtime tests');
+  const apiKeyRuntimeIndex = plan.findIndex((step) => step.label === 'portal api key runtime tests');
+  const rustTestsIndex = plan.findIndex((step) => step.label === 'rust workspace tests');
+  const pythonTestsIndex = plan.findIndex((step) => step.label === 'python standard tests');
+
+  assert.ok(playgroundChatRuntimeIndex > apiReferenceSsrIndex, 'playground chat runtime tests must run after API reference SSR smoke');
+  assert.ok(playgroundChatRuntimeIndex < apiKeyRuntimeIndex, 'playground chat runtime tests must run before console API key runtime tests');
+  assert.ok(playgroundChatRuntimeIndex < rustTestsIndex, 'playground chat runtime tests must run before broad Rust tests');
+  assert.ok(playgroundChatRuntimeIndex < pythonTestsIndex, 'playground chat runtime tests must run before broad Python tests');
+  assert.ok(commandLines.includes(
+    'node --experimental-strip-types apps/sdkwork-claw-router-portal/playground-chat-runtime.test.ts',
   ));
 });
 
@@ -6524,6 +7099,8 @@ test('production browser smoke validates admin skill route through backend SDK f
   assert.ok(smokeSource.includes('/admin/skill?__browser-smoke-admin-skill=1'));
   assert.ok(smokeSource.includes('requiresPortalSession: true'));
   assert.ok(smokeSource.includes('sdkwork.clawRouter.appSession.v1'));
+  assert.ok(smokeSource.includes('/app/v3/api/auth/sessions/current'));
+  assert.ok(smokeSource.includes('/backend/v3/api/system/installation/status'));
   assert.ok(smokeSource.includes('urlPattern: "*://*/backend/v3/api/*"'));
   assert.ok(smokeSource.includes('/backend/v3/api/ecosystem/skills/categories'));
   assert.ok(smokeSource.includes('/backend/v3/api/ecosystem/skills/package'));
@@ -6541,7 +7118,10 @@ test('production browser smoke validates admin app route through backend SDK fix
   assert.ok(smokeSource.includes('/admin/app?__browser-smoke-admin-app=1'));
   assert.ok(smokeSource.includes('requiresPortalSession: true'));
   assert.ok(smokeSource.includes('sdkwork.clawRouter.appSession.v1'));
+  assert.ok(smokeSource.includes('/app/v3/api/auth/sessions/current'));
+  assert.ok(smokeSource.includes('/backend/v3/api/system/installation/status'));
   assert.ok(smokeSource.includes('urlPattern: "*://*/backend/v3/api/*"'));
+  assert.ok(smokeSource.includes('/backend/v3/api/platform/apps/categories'));
   assert.ok(smokeSource.includes('/backend/v3/api/platform/apps'));
   assert.ok(smokeSource.includes('Browser Smoke Admin App'));
   assert.ok(smokeSource.includes('app-browser-smoke'));
@@ -6583,7 +7163,7 @@ test('verification plan includes portal api key runtime tests before broad suite
   ));
 });
 
-test('verification plan includes portal billing runtime tests before broad suites', async () => {
+test('verification plan includes portal commerce business runtime tests before broad suites', async () => {
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
   );
@@ -6593,17 +7173,17 @@ test('verification plan includes portal billing runtime tests before broad suite
   );
   const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
   const apiKeyRuntimeIndex = plan.findIndex((step) => step.label === 'portal api key runtime tests');
-  const billingRuntimeIndex = plan.findIndex((step) => step.label === 'portal billing runtime tests');
+  const commerceBusinessRuntimeIndex = plan.findIndex((step) => step.label === 'portal commerce business runtime tests');
   const consoleRoutingRuntimeIndex = plan.findIndex((step) => step.label === 'portal console routing runtime tests');
   const rustTestsIndex = plan.findIndex((step) => step.label === 'rust workspace tests');
   const pythonTestsIndex = plan.findIndex((step) => step.label === 'python standard tests');
 
-  assert.ok(billingRuntimeIndex > apiKeyRuntimeIndex, 'billing runtime tests must run after account API key runtime tests');
-  assert.ok(billingRuntimeIndex < consoleRoutingRuntimeIndex, 'billing runtime tests must run before console routing runtime tests');
-  assert.ok(billingRuntimeIndex < rustTestsIndex, 'billing runtime tests must run before broad Rust tests');
-  assert.ok(billingRuntimeIndex < pythonTestsIndex, 'billing runtime tests must run before broad Python tests');
+  assert.ok(commerceBusinessRuntimeIndex > apiKeyRuntimeIndex, 'commerce business runtime tests must run after account API key runtime tests');
+  assert.ok(commerceBusinessRuntimeIndex < consoleRoutingRuntimeIndex, 'commerce business runtime tests must run before console routing runtime tests');
+  assert.ok(commerceBusinessRuntimeIndex < rustTestsIndex, 'commerce business runtime tests must run before broad Rust tests');
+  assert.ok(commerceBusinessRuntimeIndex < pythonTestsIndex, 'commerce business runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/billing-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-claw-router-portal/commerce-business-runtime.test.ts',
   ));
 });
 
@@ -6616,13 +7196,13 @@ test('verification plan includes portal console app runtime tests before broad s
     {},
   );
   const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
-  const billingRuntimeIndex = plan.findIndex((step) => step.label === 'portal billing runtime tests');
+  const commerceBusinessRuntimeIndex = plan.findIndex((step) => step.label === 'portal commerce business runtime tests');
   const consoleAppRuntimeIndex = plan.findIndex((step) => step.label === 'portal console app runtime tests');
   const consoleRoutingRuntimeIndex = plan.findIndex((step) => step.label === 'portal console routing runtime tests');
   const rustTestsIndex = plan.findIndex((step) => step.label === 'rust workspace tests');
   const pythonTestsIndex = plan.findIndex((step) => step.label === 'python standard tests');
 
-  assert.ok(consoleAppRuntimeIndex > billingRuntimeIndex, 'console app runtime tests must run after billing runtime tests');
+  assert.ok(consoleAppRuntimeIndex > commerceBusinessRuntimeIndex, 'console app runtime tests must run after commerce business runtime tests');
   assert.ok(consoleAppRuntimeIndex < consoleRoutingRuntimeIndex, 'console app runtime tests must run before console routing runtime tests');
   assert.ok(consoleAppRuntimeIndex < rustTestsIndex, 'console app runtime tests must run before broad Rust tests');
   assert.ok(consoleAppRuntimeIndex < pythonTestsIndex, 'console app runtime tests must run before broad Python tests');

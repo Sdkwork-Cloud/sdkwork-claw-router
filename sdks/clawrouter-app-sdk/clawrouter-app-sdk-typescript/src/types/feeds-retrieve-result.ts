@@ -7,7 +7,5 @@ export interface FeedsRetrieveResult {
   /** Data field on feeds retrieve result. */
   data?: ForumFeedItem;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

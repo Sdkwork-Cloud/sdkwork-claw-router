@@ -25,18 +25,20 @@ type AiAgentRunStepRecord struct {
 	RequestId string `json:"request_id"`
 	RetentionUntil string `json:"retention_until"`
 	RunId string `json:"run_id"`
+	RuntimeInvocationId string `json:"runtime_invocation_id"`
 	SkillId string `json:"skill_id"`
 	StartedAt string `json:"started_at"`
 	Status string `json:"status"`
 	StepIndex int `json:"step_index"`
-	StepStatus string `json:"step_status"`
 	StepType string `json:"step_type"`
 	TenantId string `json:"tenant_id"`
 	Title string `json:"title"`
 	ToolBindingId string `json:"tool_binding_id"`
+	ToolName string `json:"tool_name"`
 	TotalTokens string `json:"total_tokens"`
 	TraceId string `json:"trace_id"`
 	UsageFactId string `json:"usage_fact_id"`
+	UsageJson map[string]JsonValue `json:"usage_json"`
 	UserId string `json:"user_id"`
 	Uuid string `json:"uuid"`
 	VideoSeconds string `json:"video_seconds"`

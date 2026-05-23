@@ -1,7 +1,7 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { IamCurrentSessionUpdateRequest, IamLoginQrCodeConfirmRequest, IamOauthSessionCreateRequest, IamPasswordResetCreateRequest, IamPasswordResetRequestCreateRequest, IamRegistrationCreateRequest, IamSessionCreateRequest, IamSessionRefreshRequest, IamVerificationCodeCreateRequest, IamVerificationCodeVerifyRequest, LoginQrCodesConfirmResult, LoginQrCodesCreateResult, LoginQrCodesRetrieveResult, OauthAuthorizationUrlsRetrieveResult, OauthSessionsCreateResult, PasswordResetRequestsCreateResult, PasswordResetsCreateResult, RegistrationsCreateResult, RuntimeSettingsRetrieveResult, SessionsCreateResult, SessionsCurrentDeleteResult, SessionsCurrentRetrieveResult, SessionsCurrentUpdateResult, SessionsRefreshResult, VerificationCodesCreateResult, VerificationCodesVerifyResult, VerificationPolicyRetrieveResult } from '../types';
+import type { IamCurrentSessionUpdateRequest, IamOauthSessionCreateRequest, IamPasswordResetCreateRequest, IamPasswordResetRequestCreateRequest, IamRegistrationCreateRequest, IamSessionCreateRequest, IamSessionRefreshRequest, IamVerificationCodeCreateRequest, IamVerificationCodeVerifyRequest, OauthAuthorizationUrlsRetrieveResult, OauthSessionsCreateResult, PasswordResetRequestsCreateResult, PasswordResetsCreateResult, RegistrationsCreateResult, RuntimeSettingsRetrieveResult, SessionsCreateResult, SessionsCurrentDeleteResult, SessionsCurrentRetrieveResult, SessionsCurrentUpdateResult, SessionsRefreshResult, VerificationCodesCreateResult, VerificationCodesVerifyResult, VerificationPolicyRetrieveResult } from '../types';
 
 
 export class AuthVerificationPolicyApi {
@@ -139,30 +139,6 @@ export class AuthRegistrationsApi {
   }
 }
 
-export class AuthLoginQrCodesApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Create QR login code */
-  async create(): Promise<LoginQrCodesCreateResult> {
-    return this.client.post<LoginQrCodesCreateResult>(appApiPath(`/auth/qr_login_codes`));
-  }
-
-/** Confirm QR login code */
-  async confirm(body: IamLoginQrCodeConfirmRequest): Promise<LoginQrCodesConfirmResult> {
-    return this.client.post<LoginQrCodesConfirmResult>(appApiPath(`/auth/qr_login_codes/confirm`), body, undefined, undefined, 'application/json');
-  }
-
-/** Retrieve QR login status */
-  async retrieve(qrKey: string): Promise<LoginQrCodesRetrieveResult> {
-    return this.client.get<LoginQrCodesRetrieveResult>(appApiPath(`/auth/qr_login_codes/${serializePathParameter(qrKey, { name: 'qrKey', style: 'simple', explode: false })}`));
-  }
-}
-
 export class AuthPasswordResetsApi {
   private client: HttpClient;
 
@@ -238,7 +214,6 @@ export class AuthApi {
   public readonly oauthSessions: AuthOauthSessionsApi;
   public readonly passwordResetRequests: AuthPasswordResetRequestsApi;
   public readonly passwordResets: AuthPasswordResetsApi;
-  public readonly loginQrCodes: AuthLoginQrCodesApi;
   public readonly registrations: AuthRegistrationsApi;
   public readonly runtimeSettings: AuthRuntimeSettingsApi;
   public readonly sessions: AuthSessionsApi;
@@ -251,7 +226,6 @@ export class AuthApi {
     this.oauthSessions = new AuthOauthSessionsApi(client);
     this.passwordResetRequests = new AuthPasswordResetRequestsApi(client);
     this.passwordResets = new AuthPasswordResetsApi(client);
-    this.loginQrCodes = new AuthLoginQrCodesApi(client);
     this.registrations = new AuthRegistrationsApi(client);
     this.runtimeSettings = new AuthRuntimeSettingsApi(client);
     this.sessions = new AuthSessionsApi(client);
@@ -273,77 +247,7 @@ function appendQueryString(path: string, rawQueryString: string): string {
   return path.includes('?') ? `${path}&${query}` : `${path}?${query}`;
 }
 
-interface PathParameterSpec {
-  name: string;
-  style: string;
-  explode: boolean;
-}
 
-function serializePathParameter(value: unknown, spec: PathParameterSpec): string {
-  if (value === undefined || value === null) {
-    return '';
-  }
-
-  const style = spec.style || 'simple';
-  if (Array.isArray(value)) {
-    return serializePathArray(spec.name, value, style, spec.explode);
-  }
-  if (typeof value === 'object') {
-    return serializePathObject(spec.name, value as Record<string, unknown>, style, spec.explode);
-  }
-  return pathPrefix(spec.name, style, false) + encodePathValue(serializePathPrimitive(value));
-}
-
-function serializePathArray(name: string, values: unknown[], style: string, explode: boolean): string {
-  const serialized = values
-    .filter((item) => item !== undefined && item !== null)
-    .map((item) => encodePathValue(serializePathPrimitive(item)));
-  if (serialized.length === 0) {
-    return pathPrefix(name, style, false);
-  }
-  if (style === 'matrix') {
-    return explode
-      ? serialized.map((item) => `;${name}=${item}`).join('')
-      : `;${name}=${serialized.join(',')}`;
-  }
-  return pathPrefix(name, style, false) + serialized.join(explode ? '.' : ',');
-}
-
-function serializePathObject(name: string, value: Record<string, unknown>, style: string, explode: boolean): string {
-  const entries = Object.entries(value).filter(([, entryValue]) => entryValue !== undefined && entryValue !== null);
-  if (entries.length === 0) {
-    return pathPrefix(name, style, true);
-  }
-  if (style === 'matrix') {
-    return explode
-      ? entries.map(([key, entryValue]) => `;${encodePathValue(key)}=${encodePathValue(serializePathPrimitive(entryValue))}`).join('')
-      : `;${name}=${entries.flatMap(([key, entryValue]) => [encodePathValue(key), encodePathValue(serializePathPrimitive(entryValue))]).join(',')}`;
-  }
-  const serialized = explode
-    ? entries.map(([key, entryValue]) => `${encodePathValue(key)}=${encodePathValue(serializePathPrimitive(entryValue))}`).join(style === 'label' ? '.' : ',')
-    : entries.flatMap(([key, entryValue]) => [encodePathValue(key), encodePathValue(serializePathPrimitive(entryValue))]).join(',');
-  return pathPrefix(name, style, true) + serialized;
-}
-
-function pathPrefix(name: string, style: string, _objectValue: boolean): string {
-  if (style === 'label') return '.';
-  if (style === 'matrix') return `;${name}`;
-  return '';
-}
-
-function encodePathValue(value: string): string {
-  return encodeURIComponent(value);
-}
-
-function serializePathPrimitive(value: unknown): string {
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-  if (typeof value === 'object') {
-    return JSON.stringify(value);
-  }
-  return String(value);
-}
 interface QueryParameterSpec {
   name: string;
   value: unknown;

@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class AiApi {
     private final HttpClient client;
-    
+
     public AiApi(HttpClient client) {
         this.client = client;
     }
@@ -30,16 +30,10 @@ public class AiApi {
         return client.convertValue(raw, new TypeReference<GatewayTracesListResult>() {});
     }
 
-    /** Create Playground generation agent run */
-    public GenerationAgentRunsCreateResult generationAgentRunsCreate(GenerationAgentRunCreateRequest body) throws Exception {
-        Object raw = client.post(ApiPaths.appPath("/ai/generation_agent/runs"), body, null, null, "application/json");
-        return client.convertValue(raw, new TypeReference<GenerationAgentRunsCreateResult>() {});
-    }
-
     /** List generation history */
-    public GenerationsListResult generationsList() throws Exception {
+    public GenerationListResult generationList() throws Exception {
         Object raw = client.get(ApiPaths.appPath("/ai/generations"));
-        return client.convertValue(raw, new TypeReference<GenerationsListResult>() {});
+        return client.convertValue(raw, new TypeReference<GenerationListResult>() {});
     }
 
     /** List model rankings */

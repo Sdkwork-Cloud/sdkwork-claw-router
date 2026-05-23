@@ -7,7 +7,5 @@ export interface SkillsConfigUpdateResult {
   /** Data field on skills config update result. */
   data?: AppInstalledSkillResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

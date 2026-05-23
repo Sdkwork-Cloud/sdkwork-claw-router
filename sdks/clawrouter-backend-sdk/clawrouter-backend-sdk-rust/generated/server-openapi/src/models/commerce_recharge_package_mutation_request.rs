@@ -6,7 +6,7 @@ pub struct CommerceRechargePackageMutationRequest {
     /// Bonus field on commerce recharge package mutation request.
     pub bonus: i64,
 
-    /// Recharge package price as a canonical decimal money string.
+    /// Rmb field on commerce recharge package mutation request.
     pub rmb: String,
 
     /// Status field on commerce recharge package mutation request.

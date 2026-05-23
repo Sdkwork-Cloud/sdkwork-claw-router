@@ -1,6 +1,6 @@
 import {
   createRequestToken,
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
   readRequiredApiItem,
@@ -15,7 +15,7 @@ import type {
   AppApiKeyGroupListResponse as SdkAppApiKeyGroupListResponse,
   AppApiKeyListResponse as SdkAppApiKeyListResponse,
 } from '@sdkwork/clawrouter-app-sdk';
-import { DEFAULT_API_KEY_GROUP } from './apiKeyForm';
+import { DEFAULT_API_KEY_GROUP } from './apiKeyForm.ts';
 
 type SdkAppApiKeyItem = SdkAppApiKeyListResponse['items'][number];
 
@@ -67,7 +67,7 @@ export class ApiKeyService {
   static async fetchKeys(): Promise<ApiKey[]> {
     try {
       const result = await getClawRouterAppSdkClient().iam.apiKeys.list();
-      ensurePlusApiSuccess(result, 'console.apiKeys.errors.loadFallback');
+      ensureSdkworkApiSuccess(result, 'console.apiKeys.errors.loadFallback');
       const items = readRequiredApiItems(result, 'console.apiKeys.errors.loadFallback');
 
       return items.map(normalizeApiKey);
@@ -79,7 +79,7 @@ export class ApiKeyService {
   static async fetchGroups(): Promise<ApiKeyGroup[]> {
     try {
       const result = await getClawRouterAppSdkClient().iam.apiKeyGroups.list();
-      ensurePlusApiSuccess(result, 'console.apiKeys.errors.loadGroupsFallback');
+      ensureSdkworkApiSuccess(result, 'console.apiKeys.errors.loadGroupsFallback');
       const items = readRequiredApiItems(result, 'console.apiKeys.errors.loadGroupsFallback');
 
       return items.map(normalizeApiKeyGroup);
@@ -130,7 +130,7 @@ export class ApiKeyService {
   static async deleteKey(keyId: string): Promise<void> {
     try {
       const result = await getClawRouterAppSdkClient().iam.apiKeys.delete(requiredText(keyId, 'apiKeyId'));
-      ensurePlusApiSuccess(result, 'console.apiKeys.errors.deleteFallback');
+      ensureSdkworkApiSuccess(result, 'console.apiKeys.errors.deleteFallback');
     } catch (error) {
       throw new Error(readSdkErrorMessage(error, 'console.apiKeys.errors.deleteFallback'));
     }

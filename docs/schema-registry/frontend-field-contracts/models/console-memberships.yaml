@@ -1,0 +1,32 @@
+fragment: models/console-memberships
+frontend_models:
+- route: /console/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  interface: MembershipSummary
+  fields:
+  - membershipNo
+  - planId
+  - status
+  - startsAt
+  - expiresAt
+  data_sources:
+  - commerce_membership
+  - commerce_membership_plan
+  - commerce_membership_entitlement
+- route: /console/memberships
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  interface: MembershipPackage
+  fields:
+  - id
+  - packageNo
+  - planId
+  - skuId
+  - priceAmount
+  - currencyCode
+  - durationDays
+  - recurrenceCycle
+  - status
+  data_sources:
+  - commerce_membership_package
+  - commerce_membership_plan
+  - commerce_product_sku

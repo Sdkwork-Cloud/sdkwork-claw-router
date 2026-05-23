@@ -7,7 +7,5 @@ export interface RoutingChannelsVerifyResult {
   /** Data field on routing channels verify result. */
   data?: RoutingChannelTestResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

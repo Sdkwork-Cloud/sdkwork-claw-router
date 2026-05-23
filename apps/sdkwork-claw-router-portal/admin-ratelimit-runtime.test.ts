@@ -810,3 +810,20 @@ test("admin firewall list fails closed when backend omits firewall values", asyn
     },
   );
 });
+
+test("admin ratelimit tables use adaptive admin table shells", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-ratelimit/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "AdminTableShell",
+    "data-admin-ratelimit-table-card",
+    "data-admin-ratelimit-table-viewport",
+    "flex h-full min-h-0 w-full flex-col",
+    "sticky top-0 z-10",
+  ]) {
+    assert.ok(source.includes(expected), `missing adaptive admin ratelimit table marker: ${expected}`);
+  }
+});

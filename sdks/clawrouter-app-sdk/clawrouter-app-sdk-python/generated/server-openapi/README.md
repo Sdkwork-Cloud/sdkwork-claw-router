@@ -70,11 +70,15 @@ client.set_header('X-Custom-Header', 'value')
 - `client.ai` - ai API
 - `client.auth` - auth API
 - `client.billing` - billing API
-- `client.communication` - communication API
+- `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
+- `client.memory` - memory API
+- `client.notification` - notification API
 - `client.platform` - platform API
+- `client.runtime` - runtime API
+- `client.system` - system API
 
 ## Usage Examples
 
@@ -87,7 +91,7 @@ params = {
     'page_size': 2,
     'q': 'q',
 }
-result = client.agents.list(params)
+result = client.agents.agent_definitions.list(params)
 print(result)
 ```
 
@@ -115,11 +119,15 @@ result = client.billing.account.points.retrieve()
 print(result)
 ```
 
-### communication
+### chat
 
 ```python
-# List messages
-result = client.communication.notifications.list()
+# List product chat conversations
+params = {
+    'page': 1,
+    'page_size': 2,
+}
+result = client.chat.conversations.list(params)
 print(result)
 ```
 
@@ -142,8 +150,34 @@ print(result)
 ### iam
 
 ```python
-# List keys
-result = client.iam.api_keys.list()
+# List groups
+result = client.iam.api_key_groups.list()
+print(result)
+```
+
+### memory
+
+```python
+# List memory spaces
+params = {
+    'page': 1,
+    'page_size': 2,
+}
+result = client.memory.spaces.list(params)
+print(result)
+```
+
+### notification
+
+```python
+# List notifications
+params = {
+    'app_id': 'app_id',
+    'include_archived': False,
+    'page': 3,
+    'page_size': 4,
+}
+result = client.notification.list_notifications(params)
 print(result)
 ```
 
@@ -152,6 +186,35 @@ print(result)
 ```python
 # Get categories
 result = client.platform.apps.store.categories.list()
+print(result)
+```
+
+### runtime
+
+```python
+# List runtime invocations
+params = {
+    'page': 1,
+    'page_size': 2,
+    'conversation_id': 'conversation_id',
+    'chat_turn_id': 'chat_turn_id',
+    'agent_session_id': 'agent_session_id',
+    'runtime': 'runtime',
+    'status': 'status',
+}
+result = client.runtime.invocations.list(params)
+print(result)
+```
+
+### system
+
+```python
+# Retrieve public site runtime branding settings
+params = {
+    'tenant_code': 'tenant_code',
+    'organization_code': 'organization_code',
+}
+result = client.system.site.runtime.retrieve(params)
 print(result)
 ```
 

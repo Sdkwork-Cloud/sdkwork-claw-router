@@ -1,0 +1,1819 @@
+fragment: operations/backend-ai
+frontend_operations:
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: fetchModels
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/models
+  openapi_exposed: false
+  read_sources:
+  - ai_model_vendor
+  - ai_model
+  query_parameters: []
+  response_schema:
+    name: AdminChannelModelCatalogResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 1000
+        items:
+          name: AdminChannelModelCatalogItem
+          type: object
+          additionalProperties: true
+          required:
+          - model
+          - vendorCode
+          properties:
+            catalogKey:
+              type: string
+              minLength: 3
+              maxLength: 256
+            model:
+              type: string
+              minLength: 1
+              maxLength: 128
+            displayName:
+              type: string
+              minLength: 1
+              maxLength: 128
+            vendorCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+            regionCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+- route: /admin/model
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: fetchVendors
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/model_vendors
+  read_sources:
+  - ai_model_vendor
+  query_parameters: []
+  response_schema:
+    name: AdminModelVendorsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminModelVendorItem
+          type: object
+          additionalProperties: false
+          required: &id001
+          - id
+          - vendorCode
+          - name
+          - status
+          - color
+          - description
+          properties: &id002
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            vendorCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+            name:
+              type: string
+              minLength: 1
+              maxLength: 128
+            status:
+              type: string
+              enum:
+              - active
+              - inactive
+            color:
+              type: string
+              minLength: 1
+              maxLength: 64
+            description:
+              type: string
+              maxLength: 512
+        description: Model vendor snapshots returned by the backend.
+- route: /admin/model
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: fetchModels
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/models
+  read_sources:
+  - ai_model_vendor
+  - ai_model
+  - ai_model_pricing
+  - ai_model_rank_snapshot
+  query_parameters: []
+  response_schema:
+    name: AdminAiModelsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminAiModelItem
+          type: object
+          additionalProperties: false
+          required: &id003
+          - id
+          - vendorId
+          - vendorCode
+          - model
+          - displayName
+          - name
+          - type
+          - priceIn
+          - priceOut
+          - cacheReadPrice
+          - cacheWritePrice
+          - status
+          - calls
+          - description
+          - modalities
+          - inputModalities
+          - outputModalities
+          - apiFormat
+          - capabilityIntro
+          - limitations
+          - supportedLanguages
+          - useCases
+          - trainingDataCutoff
+          - contextTokens
+          - maxOutputTokens
+          - supportsStreaming
+          - supportsTools
+          - supportsJsonSchema
+          - releaseStage
+          - shelfState
+          - routingState
+          - replacementModel
+          properties: &id004
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            vendorId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            vendorCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+            model:
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[A-Za-z0-9._:/-]+$
+              description: Runtime model identifier used for provider calls, routing, and pricing keys.
+            displayName:
+              type: string
+              minLength: 1
+              maxLength: 128
+              description: Product display name. Falls back to model when no display name is configured.
+            name:
+              type: string
+              minLength: 1
+              maxLength: 128
+              description: Compatibility display alias. Equal to displayName.
+            type:
+              type: string
+              enum:
+              - Chat
+              - Image
+              - Audio
+              - Embedding
+              - Music
+              - SoundEffect
+              - Video
+            priceIn:
+              type: string
+              minLength: 1
+              maxLength: 64
+            priceOut:
+              type: string
+              minLength: 1
+              maxLength: 64
+            cacheReadPrice:
+              type: string
+              maxLength: 64
+            cacheWritePrice:
+              type: string
+              maxLength: 64
+            status:
+              type: string
+              enum:
+              - active
+              - inactive
+            calls:
+              type: string
+              maxLength: 64
+            description:
+              type: string
+              nullable: true
+              maxLength: 2048
+            modalities:
+              type: array
+              maxItems: 16
+              items:
+                type: string
+                minLength: 1
+                maxLength: 64
+            inputModalities:
+              type: array
+              maxItems: 16
+              items:
+                type: string
+                minLength: 1
+                maxLength: 64
+            outputModalities:
+              type: array
+              maxItems: 16
+              items:
+                type: string
+                minLength: 1
+                maxLength: 64
+            apiFormat:
+              type: string
+              nullable: true
+              maxLength: 128
+            capabilityIntro:
+              type: string
+              nullable: true
+              maxLength: 4096
+            limitations:
+              type: array
+              maxItems: 64
+              items:
+                type: string
+                minLength: 1
+                maxLength: 512
+            supportedLanguages:
+              type: array
+              maxItems: 128
+              items:
+                type: string
+                minLength: 1
+                maxLength: 128
+            useCases:
+              type: array
+              maxItems: 64
+              items:
+                type: string
+                minLength: 1
+                maxLength: 256
+            trainingDataCutoff:
+              type: string
+              nullable: true
+              maxLength: 128
+            contextTokens:
+              type: integer
+              format: int64
+              nullable: true
+              minimum: 0
+            maxOutputTokens:
+              type: integer
+              format: int64
+              nullable: true
+              minimum: 0
+            supportsStreaming:
+              type: boolean
+            supportsTools:
+              type: boolean
+            supportsJsonSchema:
+              type: boolean
+            releaseStage:
+              type: integer
+              format: int64
+              nullable: true
+            shelfState:
+              type: integer
+              format: int64
+              nullable: true
+            routingState:
+              type: integer
+              format: int64
+              nullable: true
+            replacementModel:
+              type: string
+              nullable: true
+              maxLength: 128
+        description: AI model catalog snapshots returned by the backend.
+- route: /admin/model
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: fetchInitializedCatalog
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/ai/models/refresh
+  openapi_exposed: false
+  read_sources:
+  - ai_model_vendor
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing
+  - ai_model_rank_snapshot
+  - ai_pricing_import_snapshot
+  write_tables:
+  - ai_model_vendor
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing
+  - ai_pricing_import_snapshot
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminModelCatalogInitializationRequest
+    required: []
+    properties:
+      source:
+        type: string
+        enum:
+        - sdkwork_models
+        description: Frontend initialization uses the bundled sdkwork-models catalog source when persisted lists are empty.
+      mode:
+        type: string
+        enum:
+        - official_refresh
+        description: Empty catalog initialization performs the same official refresh used by the manual sync action.
+      force:
+        type: boolean
+        description: Refresh is forced so an empty persisted catalog is populated immediately.
+  response_schema:
+    name: InitializedModelCatalog
+    required:
+    - initialized
+    - vendors
+    - models
+    properties:
+      initialized:
+        type: boolean
+        description: True when the service had to refresh an empty persisted model catalog before returning data.
+      vendors:
+        type: array
+        items:
+          name: AdminModelVendorItem
+          type: object
+          additionalProperties: false
+          required: *id001
+          properties: *id002
+        description: Model vendor snapshots after optional initialization.
+      models:
+        type: array
+        items:
+          name: AdminAiModelItem
+          type: object
+          additionalProperties: false
+          required: *id003
+          properties: *id004
+        description: AI model snapshots after optional initialization.
+- route: /admin/model
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: fetchModelRankings
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/model_rankings
+  read_sources:
+  - ai_model_rank_snapshot
+  query_parameters:
+  - name: rank_scope
+    schema:
+      type: string
+  - name: vendor_code
+    schema:
+      type: string
+  - name: modality
+    schema:
+      type: string
+  - name: q
+    schema:
+      type: string
+  - name: limit
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  response_schema:
+    name: ModelRankingsSnapshot
+    required:
+    - source
+    - items
+    - history
+    properties:
+      source:
+        name: ModelRankingsSource
+        type: object
+        additionalProperties: false
+        required:
+        - sourceLabel
+        - sourceDescription
+        - observedAt
+        - snapshotDate
+        - snapshotPeriod
+        - windowStart
+        - windowEnd
+        - generatedAt
+        - refreshIntervalSeconds
+        - nextRefreshAt
+        - cacheMaxAgeSeconds
+        - rankScope
+        - sourceTables
+        properties:
+          sourceLabel:
+            type: string
+            minLength: 1
+            maxLength: 128
+          sourceDescription:
+            type: string
+            minLength: 1
+            maxLength: 512
+          observedAt:
+            type: string
+            maxLength: 64
+          snapshotDate:
+            type: string
+            minLength: 1
+            maxLength: 64
+          snapshotPeriod:
+            type: string
+            minLength: 1
+            maxLength: 32
+          windowStart:
+            type: string
+            maxLength: 64
+          windowEnd:
+            type: string
+            maxLength: 64
+          generatedAt:
+            type: string
+            maxLength: 64
+          refreshIntervalSeconds:
+            type: integer
+            format: int64
+            minimum: 1
+          nextRefreshAt:
+            type: string
+            maxLength: 64
+          cacheMaxAgeSeconds:
+            type: integer
+            format: int64
+            minimum: 1
+          rankScope:
+            type: string
+            minLength: 1
+            maxLength: 64
+          sourceTables:
+            type: array
+            maxItems: 8
+            items:
+              type: string
+              minLength: 1
+              maxLength: 128
+      items:
+        type: array
+        maxItems: 200
+        items:
+          name: ModelRankingItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - rank
+          - prevRank
+          - name
+          - vendor
+          - vendorCode
+          - modality
+          - baseVolume
+          - costIndicator
+          - latency
+          - isNew
+          - color
+          - strengths
+          - requests
+          - tokens
+          - cost
+          - currency
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 256
+              description: Stable model catalog identity; must match ranking history catalogKey and must not include snapshot date prefixes.
+            rank:
+              type: integer
+              format: int64
+              minimum: 1
+            prevRank:
+              type: integer
+              format: int64
+              minimum: 0
+            name:
+              type: string
+              minLength: 1
+              maxLength: 128
+            vendor:
+              type: string
+              minLength: 1
+              maxLength: 128
+            vendorCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+            modality:
+              type: string
+              enum:
+              - LLM
+              - Image
+              - Audio
+              - Video
+              - Music
+              - Embedding
+              - Rerank
+              - Unknown
+            baseVolume:
+              type: integer
+              format: int64
+              minimum: 0
+            costIndicator:
+              type: integer
+              format: int64
+              minimum: 1
+              maximum: 5
+            latency:
+              type: integer
+              format: int64
+              minimum: 0
+            contextSize:
+              type: string
+              nullable: true
+              maxLength: 64
+            isNew:
+              type: boolean
+            color:
+              type: string
+              minLength: 1
+              maxLength: 64
+            winRate:
+              type: number
+              nullable: true
+              minimum: 0
+              maximum: 100
+            pricing:
+              type: string
+              nullable: true
+              maxLength: 128
+            license:
+              type: string
+              nullable: true
+              enum:
+              - Open Source
+              - Proprietary
+            strengths:
+              type: array
+              maxItems: 16
+              items:
+                type: string
+                minLength: 1
+                maxLength: 64
+            requests:
+              type: integer
+              format: int64
+              minimum: 0
+            tokens:
+              type: integer
+              format: int64
+              minimum: 0
+            cost:
+              type: number
+              minimum: 0
+            currency:
+              type: string
+              minLength: 1
+              maxLength: 16
+            trendScore:
+              type: number
+              nullable: true
+      history:
+        type: array
+        maxItems: 60
+        items:
+          name: ModelRankingHistoryPoint
+          type: object
+          additionalProperties: false
+          required:
+          - date
+          - index
+          - entries
+          properties:
+            date:
+              type: string
+              minLength: 1
+              maxLength: 64
+            index:
+              type: integer
+              format: int64
+              minimum: 0
+            entries:
+              type: array
+              maxItems: 500
+              items:
+                name: ModelRankingHistoryEntry
+                type: object
+                additionalProperties: false
+                required:
+                - model
+                - catalogKey
+                - rank
+                - volume
+                - color
+                properties:
+                  model:
+                    type: string
+                    minLength: 1
+                    maxLength: 128
+                  catalogKey:
+                    type: string
+                    minLength: 1
+                    maxLength: 256
+                  rank:
+                    type: integer
+                    format: int64
+                    minimum: 0
+                  volume:
+                    type: integer
+                    format: int64
+                    minimum: 0
+                  color:
+                    type: string
+                    minLength: 1
+                    maxLength: 64
+- route: /admin/model
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: fetchModelRankingRefreshStatus
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/model_rankings/status
+  read_sources:
+  - ai_model_rank_snapshot
+  - ops_job_execution
+  query_parameters:
+  - name: rank_scope
+    schema:
+      type: string
+      minLength: 1
+      maxLength: 64
+  response_schema:
+    name: ModelRankingRefreshStatus
+    required:
+    - status
+    - tenantId
+    - organizationId
+    - rankScope
+    - snapshotDate
+    - snapshotPeriod
+    - windowStart
+    - windowEnd
+    - generatedAt
+    - refreshIntervalSeconds
+    - nextRefreshAt
+    - cacheMaxAgeSeconds
+    - generatedCount
+    - sourceCount
+    - sourceTables
+    - latestJob
+    properties:
+      status:
+        type: string
+        enum:
+        - ready
+        - empty
+        - unavailable
+        description: Published ranking read-model status for the latest visible snapshot.
+      tenantId:
+        type: integer
+        format: int64
+        minimum: 0
+        description: Tenant scope used by the selected ranking snapshot.
+      organizationId:
+        type: integer
+        format: int64
+        minimum: 0
+        description: Organization scope used by the selected ranking snapshot.
+      rankScope:
+        type: string
+        minLength: 1
+        maxLength: 64
+        description: Ranking scope, for example commercial-default.
+      snapshotDate:
+        type: string
+        maxLength: 64
+        description: Snapshot business date for the latest visible ranking.
+      snapshotPeriod:
+        type: string
+        minLength: 1
+        maxLength: 32
+        description: Snapshot period granularity, for example daily.
+      windowStart:
+        type: string
+        maxLength: 64
+        description: Inclusive source aggregation window start.
+      windowEnd:
+        type: string
+        maxLength: 64
+        description: Exclusive source aggregation window end.
+      generatedAt:
+        type: string
+        maxLength: 64
+        description: Time when the ranking snapshot was generated.
+      refreshIntervalSeconds:
+        type: integer
+        format: int64
+        minimum: 1
+        description: Planned refresh interval used by the ranking task.
+      nextRefreshAt:
+        type: string
+        maxLength: 64
+        description: Planned next refresh time.
+      cacheMaxAgeSeconds:
+        type: integer
+        format: int64
+        minimum: 1
+        description: Maximum cache age clients and services should use for this status snapshot.
+      generatedCount:
+        type: integer
+        format: int64
+        minimum: 0
+        description: Number of ranking rows generated in the selected snapshot.
+      sourceCount:
+        type: integer
+        format: int64
+        minimum: 0
+        description: Number of source usage rows represented by the selected snapshot.
+      sourceTables:
+        type: array
+        maxItems: 8
+        items:
+          type: string
+          minLength: 1
+          maxLength: 128
+      latestJob:
+        name: ModelRankingRefreshLatestJob
+        type: object
+        nullable: true
+        additionalProperties: false
+        required:
+        - id
+        - jobName
+        - status
+        - tenantId
+        - organizationId
+        - rankScope
+        - snapshotDate
+        - snapshotPeriod
+        - windowStart
+        - windowEnd
+        - startedAt
+        - endedAt
+        - durationMs
+        - generatedCount
+        - sourceCount
+        - successCount
+        - failureCount
+        - nextRefreshAt
+        - failureReason
+        properties:
+          id:
+            type: string
+            minLength: 1
+            maxLength: 128
+            description: Stable job execution identifier from ops_job_execution.
+          jobName:
+            type: string
+            minLength: 1
+            maxLength: 128
+            description: Job name, expected to be model_ranking_refresh.
+          status:
+            type: string
+            enum:
+            - succeeded
+            - failed
+            - empty
+            - skipped
+            - running
+            description: Latest matching ranking refresh job status.
+          tenantId:
+            type: integer
+            format: int64
+            minimum: 0
+          organizationId:
+            type: integer
+            format: int64
+            minimum: 0
+          rankScope:
+            type: string
+            minLength: 1
+            maxLength: 64
+          snapshotDate:
+            type: string
+            maxLength: 64
+          snapshotPeriod:
+            type: string
+            minLength: 1
+            maxLength: 32
+          windowStart:
+            type: string
+            maxLength: 64
+          windowEnd:
+            type: string
+            maxLength: 64
+          startedAt:
+            type: string
+            maxLength: 64
+          endedAt:
+            type: string
+            maxLength: 64
+          durationMs:
+            type: integer
+            format: int64
+            minimum: 0
+          generatedCount:
+            type: integer
+            format: int64
+            minimum: 0
+          sourceCount:
+            type: integer
+            format: int64
+            minimum: 0
+          successCount:
+            type: integer
+            format: int64
+            minimum: 0
+          failureCount:
+            type: integer
+            format: int64
+            minimum: 0
+          nextRefreshAt:
+            type: string
+            maxLength: 64
+          failureReason:
+            type:
+            - string
+            - 'null'
+            maxLength: 1024
+- route: /admin/model
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: fetchModelRankingRefreshJobs
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/model_rankings/jobs
+  read_sources:
+  - ops_job_execution
+  query_parameters:
+  - name: rank_scope
+    schema:
+      type: string
+      minLength: 1
+      maxLength: 64
+  - name: limit
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 100
+  response_schema:
+    name: ModelRankingRefreshJobHistoryPage
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 100
+        items:
+          name: ModelRankingRefreshJobItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - jobName
+          - status
+          - tenantId
+          - organizationId
+          - rankScope
+          - snapshotDate
+          - snapshotPeriod
+          - windowStart
+          - windowEnd
+          - startedAt
+          - endedAt
+          - durationMs
+          - generatedCount
+          - sourceCount
+          - successCount
+          - failureCount
+          - nextRefreshAt
+          - failureReason
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+              description: Stable job execution identifier from ops_job_execution.
+            jobName:
+              type: string
+              minLength: 1
+              maxLength: 128
+              description: Job name, expected to be model_ranking_refresh.
+            status:
+              type: string
+              enum:
+              - succeeded
+              - failed
+              - empty
+              - skipped
+              - running
+              description: Normalized execution status for operator diagnostics.
+            tenantId:
+              type: integer
+              format: int64
+              minimum: 0
+            organizationId:
+              type: integer
+              format: int64
+              minimum: 0
+            rankScope:
+              type: string
+              minLength: 1
+              maxLength: 64
+            snapshotDate:
+              type: string
+              maxLength: 64
+            snapshotPeriod:
+              type: string
+              minLength: 1
+              maxLength: 32
+            windowStart:
+              type: string
+              maxLength: 64
+            windowEnd:
+              type: string
+              maxLength: 64
+            startedAt:
+              type: string
+              maxLength: 64
+            endedAt:
+              type: string
+              maxLength: 64
+            durationMs:
+              type: integer
+              format: int64
+              minimum: 0
+            generatedCount:
+              type: integer
+              format: int64
+              minimum: 0
+            sourceCount:
+              type: integer
+              format: int64
+              minimum: 0
+            successCount:
+              type: integer
+              format: int64
+              minimum: 0
+            failureCount:
+              type: integer
+              format: int64
+              minimum: 0
+            nextRefreshAt:
+              type: string
+              maxLength: 64
+            failureReason:
+              type:
+              - string
+              - 'null'
+              maxLength: 1024
+- route: /admin/model
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: triggerModelRankingRefresh
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/ai/model_rankings/refresh
+  read_sources:
+  - ai_model
+  - ai_usage_fact
+  - ai_model_rank_snapshot
+  write_tables:
+  - ai_model_rank_snapshot
+  - ops_job_execution
+  request_id_header: true
+  request_schema:
+    name: ModelRankingRefreshTriggerRequest
+    additionalProperties: false
+    properties:
+      rankScope:
+        type: string
+        minLength: 1
+        maxLength: 80
+        pattern: ^[A-Za-z0-9._:-]+$
+        description: Ranking scope to regenerate. Defaults to commercial-default.
+      snapshotPeriod:
+        type: string
+        enum:
+        - hourly
+        - daily
+        - weekly
+        - monthly
+        description: Snapshot granularity used by the ranking worker.
+      limit:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 1000
+        description: Maximum ranking rows to generate.
+      lookbackDays:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 366
+        description: Source usage lookback window in days.
+      refreshIntervalSeconds:
+        type: integer
+        format: int64
+        minimum: 60
+        maximum: 86400
+        description: Planned interval used for audit metadata and next refresh time.
+      cacheMaxAgeSeconds:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 86400
+        description: Cache freshness contract for ranking readers after this refresh.
+  response_schema:
+    name: ModelRankingRefreshTriggerResponse
+    required:
+    - triggered
+    - status
+    - tenantId
+    - organizationId
+    - rankScope
+    - snapshotDate
+    - snapshotPeriod
+    - windowStart
+    - windowEnd
+    - generatedCount
+    - sourceCount
+    - refreshIntervalSeconds
+    - cacheMaxAgeSeconds
+    - nextRefreshAt
+    properties:
+      triggered:
+        type: boolean
+        description: Whether a manual refresh worker run was started.
+      status:
+        type: string
+        enum:
+        - succeeded
+        - empty
+        description: Result of the manual ranking worker run.
+      tenantId:
+        type: integer
+        format: int64
+        minimum: 0
+      organizationId:
+        type: integer
+        format: int64
+        minimum: 0
+      rankScope:
+        type: string
+        minLength: 1
+        maxLength: 80
+      snapshotDate:
+        type: string
+        minLength: 1
+        maxLength: 64
+      snapshotPeriod:
+        type: string
+        enum:
+        - hourly
+        - daily
+        - weekly
+        - monthly
+      windowStart:
+        type: string
+        minLength: 1
+        maxLength: 64
+      windowEnd:
+        type: string
+        minLength: 1
+        maxLength: 64
+      generatedCount:
+        type: integer
+        format: int64
+        minimum: 0
+      sourceCount:
+        type: integer
+        format: int64
+        minimum: 0
+      refreshIntervalSeconds:
+        type: integer
+        format: int64
+        minimum: 60
+      cacheMaxAgeSeconds:
+        type: integer
+        format: int64
+        minimum: 1
+      nextRefreshAt:
+        type: string
+        minLength: 1
+        maxLength: 64
+- route: /admin/model
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: syncVendorsAndModels
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/ai/models/refresh
+  read_sources:
+  - ai_model_vendor
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing
+  - ai_pricing_import_snapshot
+  write_tables:
+  - ai_model_vendor
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing
+  - ai_pricing_import_snapshot
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminModelCatalogSyncRequest
+    required: []
+    properties:
+      source:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9_-]+$
+        description: Optional catalog source label; defaults to sdkwork_models.
+      mode:
+        type: string
+        enum:
+        - official_refresh
+        - vendor_refresh
+        - catalog_version_refresh
+        - dry_run
+        description: Refresh mode. dry_run previews without mutating catalog tables.
+      vendorCodes:
+        type: array
+        maxItems: 32
+        items:
+          type: string
+          minLength: 1
+          maxLength: 64
+          pattern: ^[A-Za-z0-9_-]+$
+        description: Optional vendor directory codes to refresh.
+      force:
+        type: boolean
+        description: Whether to force refresh even when the selected catalog version is already installed.
+      catalogRoot:
+        type: string
+        minLength: 1
+        maxLength: 512
+        description: Optional sdkwork-models project root. Overrides SDKWORK_MODELS_CATALOG_ROOT for this sync.
+      catalogVersion:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[A-Za-z0-9_.-]+$
+        description: Optional catalogVersion pin; sync fails if the loaded catalog differs.
+  response_schema:
+    name: AdminModelCatalogSyncResponse
+    required:
+    - synced
+    - source
+    - mode
+    - dryRun
+    - catalogVersion
+    - vendorCodes
+    - sourceHash
+    - meterCount
+    - vendorCount
+    - familyCount
+    - modelCount
+    - capabilityCount
+    - priceCount
+    - rankingCount
+    - acceptedCount
+    - vendors
+    - models
+    properties:
+      synced:
+        type: boolean
+        description: Whether the catalog snapshot refresh completed.
+      source:
+        type: string
+        description: Normalized catalog source label used for the sync.
+      mode:
+        type: string
+        enum:
+        - official_refresh
+        - vendor_refresh
+        - catalog_version_refresh
+        - dry_run
+        description: Normalized sync mode executed by the backend.
+      dryRun:
+        type: boolean
+        description: Whether this response represents an observation-only sync that did not mutate model catalog facts.
+      catalogVersion:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: sdkwork-models catalogVersion loaded for this sync.
+      requestedCatalogVersion:
+        type: string
+        nullable: true
+        maxLength: 128
+        description: Optional catalogVersion pin requested by the caller.
+      catalogRoot:
+        type: string
+        nullable: true
+        maxLength: 512
+        description: Optional sdkwork-models project root requested by the caller.
+      vendorCodes:
+        type: array
+        items:
+          type: string
+          minLength: 1
+          maxLength: 64
+        description: Actual vendor scope covered by the loaded catalog snapshot.
+      sourceHash:
+        type: string
+        minLength: 64
+        maxLength: 64
+        pattern: ^[a-f0-9]{64}$
+        description: Stable SHA-256 hash of the selected sdkwork-models catalog scope, independent of request id, time, or snapshot id.
+      meterCount:
+        type: integer
+        format: int64
+        minimum: 0
+        description: Shared sdkwork-models billing meter fact count considered by the sync.
+      vendorCount:
+        type: integer
+        format: int64
+        minimum: 0
+        description: Selected vendor directory count considered by the sync.
+      familyCount:
+        type: integer
+        format: int64
+        minimum: 0
+        description: Selected model family fact count considered by the sync.
+      modelCount:
+        type: integer
+        format: int64
+        minimum: 0
+        description: Selected model definition fact count considered by the sync.
+      capabilityCount:
+        type: integer
+        format: int64
+        minimum: 0
+        description: Generated model capability fact count considered by the sync.
+      priceCount:
+        type: integer
+        format: int64
+        minimum: 0
+        description: Expanded pricing fact count considered by the sync.
+      rankingCount:
+        type: integer
+        format: int64
+        minimum: 0
+        description: Selected ranking snapshot item count considered by the sync.
+      acceptedCount:
+        type: integer
+        format: int64
+        minimum: 0
+        description: Total accepted standard fact count across meters, vendors, families, models, capabilities, prices, and rankings.
+      snapshotId:
+        type: string
+        description: Pricing import snapshot identifier created by the sync.
+      syncRunId:
+        type: string
+        description: Model catalog sync-run identifier created by the sync.
+      vendors:
+        type: array
+        items:
+          name: AdminModelVendorItem
+          type: object
+          additionalProperties: false
+          required: *id001
+          properties: *id002
+        description: Current model vendor snapshots after sync.
+      models:
+        type: array
+        items:
+          name: AdminAiModelItem
+          type: object
+          additionalProperties: false
+          required: *id003
+          properties: *id004
+        description: Current ai model snapshots after sync.
+- route: /admin/model
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: addVendor
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/ai/model_vendors
+  read_sources:
+  - ai_model_vendor
+  write_tables:
+  - ai_model_vendor
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminModelVendorCreateRequest
+    required:
+    - name
+    properties:
+      vendorCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9_-]+$
+        description: Optional normalized vendor code; generated from name when omitted.
+      name:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: Human-readable vendor display name.
+      status:
+        type: string
+        enum:
+        - active
+        - inactive
+      color:
+        type: string
+        minLength: 1
+        maxLength: 64
+        description: Safe style token used by the admin console.
+      description:
+        type: string
+        maxLength: 512
+        description: Vendor description shown in the admin console.
+  response_schema:
+    name: AdminModelVendorMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminModelVendorItem
+        type: object
+        additionalProperties: false
+        required: *id001
+        properties: *id002
+        description: Persisted model vendor snapshot returned by the backend.
+- route: /admin/model
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: addModel
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/ai/models
+  read_sources:
+  - ai_model_vendor
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing
+  write_tables:
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminAiModelCreateRequest
+    required:
+    - vendorId
+    - model
+    - type
+    - priceIn
+    - priceOut
+    - contextTokens
+    properties:
+      vendorId:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: Vendor row id or vendor code selected in the admin console.
+      model:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._:/-]+$
+        description: Runtime model identifier used for provider calls, routing, and pricing keys.
+      displayName:
+        type: string
+        nullable: true
+        maxLength: 128
+        description: Optional product display name. Empty or null falls back to model.
+      name:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._:/-]+$
+        description: Deprecated compatibility alias for model.
+      type:
+        type: string
+        enum:
+        - Chat
+        - Image
+        - Audio
+        - Embedding
+        - Music
+        - SoundEffect
+        - Video
+        description: Primary model modality shown in the admin console.
+      priceIn:
+        type: string
+        pattern: ^[0-9]+(\.[0-9]{1,12})?$
+        description: Official reference input unit price in USD.
+      priceOut:
+        type: string
+        pattern: ^[0-9]+(\.[0-9]{1,12})?$
+        description: Official reference output unit price in USD.
+      cacheReadPrice:
+        type: string
+        pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
+        description: Optional official reference cache-read unit price in USD.
+      cacheWritePrice:
+        type: string
+        pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
+        description: Optional official reference cache-write unit price in USD.
+      regionPrices:
+        type: array
+        minItems: 1
+        maxItems: 32
+        items: &id005
+          name: AdminAiModelRegionPrice
+          type: object
+          additionalProperties: false
+          description: Regional official reference pricing input for admin AI model commands.
+          required:
+          - regionCode
+          - priceIn
+          - priceOut
+          properties:
+            regionCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+              pattern: ^[a-z][a-z0-9_-]{0,63}$
+              description: Model catalog pricing region code.
+            priceIn:
+              type: string
+              pattern: ^[0-9]+(\.[0-9]{1,12})?$
+              description: Official reference input unit price in USD.
+            priceOut:
+              type: string
+              pattern: ^[0-9]+(\.[0-9]{1,12})?$
+              description: Official reference output unit price in USD.
+            cacheReadPrice:
+              type: string
+              pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
+              description: Optional official reference cache-read unit price in USD.
+            cacheWritePrice:
+              type: string
+              pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
+              description: Optional official reference cache-write unit price in USD.
+        description: Official reference prices by region.
+      contextTokens:
+        type: string
+        minLength: 1
+        maxLength: 32
+        description: Positive token window, accepting plain integers or K/M suffixes.
+      description:
+        type: string
+        nullable: true
+        maxLength: 2048
+        description: Public model description used by the catalog and admin console.
+      modalities:
+        type: array
+        maxItems: 16
+        items:
+          type: string
+          minLength: 1
+          maxLength: 64
+      inputModalities:
+        type: array
+        maxItems: 16
+        items:
+          type: string
+          minLength: 1
+          maxLength: 64
+      outputModalities:
+        type: array
+        maxItems: 16
+        items:
+          type: string
+          minLength: 1
+          maxLength: 64
+      apiFormat:
+        type: string
+        nullable: true
+        maxLength: 128
+      capabilityIntro:
+        type: string
+        nullable: true
+        maxLength: 4096
+      limitations:
+        type: array
+        maxItems: 64
+        items:
+          type: string
+          minLength: 1
+          maxLength: 512
+      supportedLanguages:
+        type: array
+        maxItems: 128
+        items:
+          type: string
+          minLength: 1
+          maxLength: 128
+      useCases:
+        type: array
+        maxItems: 64
+        items:
+          type: string
+          minLength: 1
+          maxLength: 256
+      trainingDataCutoff:
+        type: string
+        nullable: true
+        maxLength: 128
+      maxOutputTokens:
+        type: integer
+        format: int64
+        nullable: true
+        minimum: 0
+      supportsStreaming:
+        type: boolean
+      supportsTools:
+        type: boolean
+      supportsJsonSchema:
+        type: boolean
+      releaseStage:
+        type: integer
+        format: int64
+        nullable: true
+      shelfState:
+        type: integer
+        format: int64
+        nullable: true
+      routingState:
+        type: integer
+        format: int64
+        nullable: true
+      replacementModel:
+        type: string
+        nullable: true
+        maxLength: 128
+  response_schema:
+    name: AdminAiModelMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAiModelItem
+        type: object
+        additionalProperties: false
+        required: *id003
+        properties: *id004
+        description: Persisted ai model snapshot returned by the backend.
+- route: /admin/model
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: updateModel
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/ai/models/{modelId}
+  read_sources:
+  - ai_model_vendor
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing
+  write_tables:
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminAiModelUpdateRequest
+    properties:
+      vendorId:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: Optional vendor row id or vendor code selected in the admin console.
+      model:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._:/-]+$
+        description: Optional runtime model identifier update.
+      displayName:
+        type: string
+        nullable: true
+        maxLength: 128
+        description: Optional product display name update. Empty or null falls back to model.
+      name:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._:/-]+$
+        description: Deprecated compatibility alias for model.
+      type:
+        type: string
+        enum:
+        - Chat
+        - Image
+        - Audio
+        - Embedding
+        - Music
+        - SoundEffect
+        - Video
+        description: Optional primary model modality update.
+      priceIn:
+        type: string
+        pattern: ^[0-9]+(\.[0-9]{1,12})?$
+        description: Optional official reference input unit price in USD.
+      priceOut:
+        type: string
+        pattern: ^[0-9]+(\.[0-9]{1,12})?$
+        description: Optional official reference output unit price in USD.
+      cacheReadPrice:
+        type: string
+        pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
+        description: Optional official reference cache-read unit price in USD. Empty string clears the cache-read price.
+      cacheWritePrice:
+        type: string
+        pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
+        description: Optional official reference cache-write unit price in USD. Empty string clears the cache-write price.
+      regionPrices:
+        type: array
+        minItems: 1
+        maxItems: 32
+        items: *id005
+        description: Optional official reference prices by region.
+      status:
+        type: string
+        enum:
+        - active
+        - inactive
+        description: Optional model catalog status.
+      contextTokens:
+        type: string
+        minLength: 1
+        maxLength: 32
+        description: Optional positive token window, accepting plain integers or K/M suffixes.
+      description:
+        type: string
+        nullable: true
+        maxLength: 2048
+        description: Optional public model description used by the catalog and admin console.
+      modalities:
+        type: array
+        maxItems: 16
+        items:
+          type: string
+          minLength: 1
+          maxLength: 64
+      inputModalities:
+        type: array
+        maxItems: 16
+        items:
+          type: string
+          minLength: 1
+          maxLength: 64
+      outputModalities:
+        type: array
+        maxItems: 16
+        items:
+          type: string
+          minLength: 1
+          maxLength: 64
+      apiFormat:
+        type: string
+        nullable: true
+        maxLength: 128
+      capabilityIntro:
+        type: string
+        nullable: true
+        maxLength: 4096
+      limitations:
+        type: array
+        maxItems: 64
+        items:
+          type: string
+          minLength: 1
+          maxLength: 512
+      supportedLanguages:
+        type: array
+        maxItems: 128
+        items:
+          type: string
+          minLength: 1
+          maxLength: 128
+      useCases:
+        type: array
+        maxItems: 64
+        items:
+          type: string
+          minLength: 1
+          maxLength: 256
+      trainingDataCutoff:
+        type: string
+        nullable: true
+        maxLength: 128
+      maxOutputTokens:
+        type: integer
+        format: int64
+        nullable: true
+        minimum: 0
+      supportsStreaming:
+        type: boolean
+      supportsTools:
+        type: boolean
+      supportsJsonSchema:
+        type: boolean
+      releaseStage:
+        type: integer
+        format: int64
+        nullable: true
+      shelfState:
+        type: integer
+        format: int64
+        nullable: true
+      routingState:
+        type: integer
+        format: int64
+        nullable: true
+      replacementModel:
+        type: string
+        nullable: true
+        maxLength: 128
+  response_schema:
+    name: AdminAiModelMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAiModelItem
+        type: object
+        additionalProperties: false
+        required: *id003
+        properties: *id004
+        description: Persisted ai model snapshot returned by the backend.
+- route: /admin/model
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: deleteModel
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/ai/models/{modelId}
+  read_sources:
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing
+  write_tables:
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing
+  - ops_audit_log
+  response_schema:
+    name: AdminDeleteResponse
+    type: object
+    additionalProperties: false
+    required:
+    - deleted
+    properties:
+      deleted:
+        type: boolean

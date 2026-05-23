@@ -11,5 +11,4 @@ class WalletTransactionsListResult:
     """Wallet transactions list result schema exposed by Claw Router."""
     code: str
     data: Optional[List[CommerceWalletTransactionItem]] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

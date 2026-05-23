@@ -7,7 +7,5 @@ export interface SkillsCategoriesListResult {
   /** Data field on skills categories list result. */
   data?: AdminSkillCategoryListResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

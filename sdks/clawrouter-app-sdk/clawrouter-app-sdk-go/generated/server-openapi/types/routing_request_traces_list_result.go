@@ -4,6 +4,5 @@ package types
 type RoutingRequestTracesListResult struct {
 	Code string `json:"code"`
 	Data RoutingRequestTracesResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

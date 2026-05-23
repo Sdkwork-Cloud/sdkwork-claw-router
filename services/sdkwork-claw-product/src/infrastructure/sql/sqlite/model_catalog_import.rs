@@ -420,8 +420,7 @@ async fn import_models(
 ) -> Result<BTreeMap<String, i64>, sqlx::Error> {
     for vendor in &catalog.vendors {
         for model in &vendor.models {
-            let model_catalog_key =
-                catalog_key(&model.vendor_code, &model.region_code, &model.model_id);
+            let model_catalog_key = model_base_catalog_key(&model.vendor_code, &model.model_id);
             let vendor_id = vendor_ids.get(&model.vendor_code).copied();
             let family_id = family_ids
                 .get(&(
@@ -433,14 +432,13 @@ async fn import_models(
             sqlx::query(
                 r#"
                 INSERT INTO ai_model
-                    (uuid, tenant_id, organization_id, data_scope, status, metadata, catalog_key, model, display_name, vendor_id, vendor_code, region_code, vendor_name_snapshot, family_id, family_code, provider_hint, model_family, capability, capabilities, modalities, input_modalities, output_modalities, color_token, docs_url, api_format, context_tokens, max_input_tokens, max_output_tokens, supports_streaming, supports_tools, supports_json_schema, performance_profile, rank_score, release_stage, shelf_state, routing_state, replacement_model, description)
+                    (uuid, tenant_id, organization_id, data_scope, status, metadata, catalog_key, model, display_name, vendor_id, vendor_code, vendor_name_snapshot, family_id, family_code, provider_hint, model_family, capability, capabilities, modalities, input_modalities, output_modalities, color_token, docs_url, api_format, context_tokens, max_input_tokens, max_output_tokens, supports_streaming, supports_tools, supports_json_schema, performance_profile, rank_score, release_stage, shelf_state, routing_state, replacement_model, description)
                 VALUES
-                    (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ON CONFLICT(tenant_id, organization_id, catalog_key) DO UPDATE SET
                     display_name = excluded.display_name,
                     vendor_id = excluded.vendor_id,
                     vendor_code = excluded.vendor_code,
-                    region_code = excluded.region_code,
                     vendor_name_snapshot = excluded.vendor_name_snapshot,
                     family_id = excluded.family_id,
                     family_code = excluded.family_code,
@@ -474,7 +472,7 @@ async fn import_models(
             )
             .bind(stable_uuid(
                 "sdk-model",
-                &[&model.vendor_code, &model.region_code, &model.model_id],
+                &[&model.vendor_code, &model.model_id],
             ))
             .bind(SYSTEM_TENANT_ID)
             .bind(SYSTEM_ORGANIZATION_ID)
@@ -490,7 +488,6 @@ async fn import_models(
             .bind(&model.display_name)
             .bind(vendor_id)
             .bind(&model.vendor_code)
-            .bind(&model.region_code)
             .bind(model.vendor_name.as_deref().unwrap_or(&vendor.vendor.display_name))
             .bind(family_id)
             .bind(&model.family_code)
@@ -549,8 +546,7 @@ async fn import_capabilities(
 ) -> Result<(), sqlx::Error> {
     for vendor in &catalog.vendors {
         for model in &vendor.models {
-            let model_catalog_key =
-                catalog_key(&model.vendor_code, &model.region_code, &model.model_id);
+            let model_catalog_key = model_base_catalog_key(&model.vendor_code, &model.model_id);
             let model_id = model_ids.get(&model_catalog_key).copied();
             let capabilities = if model.capabilities.is_empty() {
                 vec![model.primary_capability.clone()]
@@ -561,15 +557,14 @@ async fn import_capabilities(
                 sqlx::query(
                     r#"
                     INSERT INTO ai_model_capability
-                        (uuid, tenant_id, organization_id, data_scope, status, metadata, model_id, catalog_key, model, vendor_code, region_code, capability, capability_code, modality, input_modalities, output_modalities, endpoint_formats, supported, schema_version, sort_order)
+                        (uuid, tenant_id, organization_id, data_scope, status, metadata, model_id, catalog_key, model, vendor_code, capability, capability_code, modality, input_modalities, output_modalities, endpoint_formats, supported, schema_version, sort_order)
                     VALUES
-                        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?)
+                        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?)
                     ON CONFLICT(uuid) DO UPDATE SET
                         model_id = excluded.model_id,
                         catalog_key = excluded.catalog_key,
                         model = excluded.model,
                         vendor_code = excluded.vendor_code,
-                        region_code = excluded.region_code,
                         capability = excluded.capability,
                         capability_code = excluded.capability_code,
                         modality = excluded.modality,
@@ -587,7 +582,7 @@ async fn import_capabilities(
                 )
                 .bind(stable_uuid(
                     "sdk-cap",
-                    &[&model.vendor_code, &model.region_code, &model.model_id, capability],
+                    &[&model.vendor_code, &model.model_id, capability],
                 ))
                 .bind(SYSTEM_TENANT_ID)
                 .bind(SYSTEM_ORGANIZATION_ID)
@@ -602,7 +597,6 @@ async fn import_capabilities(
                 .bind(&model_catalog_key)
                 .bind(&model.model_id)
                 .bind(&model.vendor_code)
-                .bind(&model.region_code)
                 .bind(capability_code(capability))
                 .bind(capability)
                 .bind(primary_modality(model))
@@ -632,7 +626,9 @@ async fn import_pricing(
                 &pricing.model_id,
             );
             for (index, price) in pricing.prices.iter().enumerate() {
-                let model_id = model_ids.get(&pricing_catalog_key).copied();
+                let model_catalog_key =
+                    model_base_catalog_key(&pricing.vendor_code, &pricing.model_id);
+                let model_id = model_ids.get(&model_catalog_key).copied();
                 let meter_id: Option<i64> = sqlx::query_scalar(
                     "SELECT id FROM ai_billing_meter WHERE tenant_id = 0 AND organization_id = 0 AND meter_code = ?",
                 )
@@ -734,11 +730,7 @@ async fn import_rankings(
         .flat_map(|vendor| {
             vendor.models.iter().map(|model| {
                 (
-                    catalog_key(
-                        &vendor.vendor.vendor_code,
-                        &vendor.vendor.region_code,
-                        &model.model_id,
-                    ),
+                    model_base_catalog_key(&vendor.vendor.vendor_code, &model.model_id),
                     model,
                 )
             })
@@ -752,7 +744,9 @@ async fn import_rankings(
                     &vendor.vendor.region_code,
                     &item.model_id,
                 );
-                let Some(model) = model_map.get(&item_catalog_key) else {
+                let model_lookup_key =
+                    model_base_catalog_key(&vendor.vendor.vendor_code, &item.model_id);
+                let Some(model) = model_map.get(&model_lookup_key) else {
                     continue;
                 };
                 sqlx::query(
@@ -804,13 +798,16 @@ async fn import_rankings(
                 ))
                 .bind(&snapshot.snapshot_date)
                 .bind(&snapshot.rank_scope)
-                .bind(model_ids.get(&item_catalog_key).copied())
+                .bind(model_ids.get(&model_lookup_key).copied())
                 .bind(&item_catalog_key)
                 .bind(&item.model_id)
                 .bind(&model.vendor_code)
-                .bind(&model.region_code)
+                .bind(&vendor.vendor.region_code)
                 .bind(model.vendor_name.as_deref().unwrap_or(&vendor.vendor.display_name))
-                .bind(format!("{}_{}_direct", model.vendor_code, model.region_code))
+                .bind(format!(
+                    "{}_{}_direct",
+                    model.vendor_code, vendor.vendor.region_code
+                ))
                 .bind(primary_modality(model))
                 .bind(item.rank_no)
                 .bind(item.previous_rank_no)
@@ -838,11 +835,8 @@ async fn update_family_defaults(
     for vendor in &catalog.vendors {
         for family in &vendor.families {
             if let Some(default_model) = &family.default_model {
-                let default_catalog_key = catalog_key(
-                    &vendor.vendor.vendor_code,
-                    &vendor.vendor.region_code,
-                    default_model,
-                );
+                let default_catalog_key =
+                    model_base_catalog_key(&vendor.vendor.vendor_code, default_model);
                 sqlx::query(
                     r#"
                     UPDATE ai_model_family

@@ -37,7 +37,7 @@ async fn app_skills_catalog_route_returns_sdk_contract_items() {
     let payload = response_json(response).await;
 
     assert_eq!("2000", payload["code"]);
-    assert_eq!("SUCCESS", payload["message"]);
+    assert_eq!("SUCCESS", payload["msg"]);
     assert_eq!(1, payload["data"]["items"].as_array().unwrap().len());
     assert_eq!("routing-skill", payload["data"]["items"][0]["id"]);
     assert_eq!("Routing Skill", payload["data"]["items"][0]["name"]);
@@ -292,7 +292,7 @@ async fn app_skills_config_route_rejects_reserved_portal_metadata() {
     assert_eq!(StatusCode::BAD_REQUEST, response.status());
     let payload = response_json(response).await;
     assert_eq!("4001", payload["code"]);
-    assert!(payload["message"]
+    assert!(payload["msg"]
         .as_str()
         .unwrap()
         .contains("reserved portal metadata"));
@@ -326,7 +326,7 @@ async fn app_skills_config_route_rejects_reserved_portal_metadata_inside_arrays(
     assert_eq!(StatusCode::BAD_REQUEST, response.status());
     let payload = response_json(response).await;
     assert_eq!("4001", payload["code"]);
-    assert!(payload["message"]
+    assert!(payload["msg"]
         .as_str()
         .unwrap()
         .contains("reserved portal metadata"));

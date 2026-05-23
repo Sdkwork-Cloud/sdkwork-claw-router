@@ -7,7 +7,5 @@ export interface AppsStoreListResult {
   /** Data field on apps store list result. */
   data?: AppCatalogResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

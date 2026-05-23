@@ -1,14 +1,17 @@
 import { useTranslation } from 'react-i18next';
-import { Image as ImageIcon, Video, Music, Headphones, FileAudio } from 'lucide-react';
+import { Bot, Image as ImageIcon, Video, Music, Headphones, FileAudio } from 'lucide-react';
+import { getSdkworkGenerationPreviewKind } from '@sdkwork/generation-pc-react/react';
 import { VideoMessageItem, MusicMessageItem, ImagesMessageItem, AudioMessageItem } from './MessageItems';
 import type { PlaygroundHistoryItem, PlaygroundPreviewSetter } from '../playgroundTypes';
 
 export function ChatHistoryItem({ item, setPreviewItem, isCompact = false }: { item: PlaygroundHistoryItem, setPreviewItem: PlaygroundPreviewSetter, isCompact?: boolean }) {
   const { t } = useTranslation();
-  const isImage = item.type === 'images' || item.type === 'image';
-  const isVideo = item.type === 'video';
-  const typeLabel = isImage ? t('playground.input.type.image') : isVideo ? t('playground.input.type.video') : item.type === 'music' ? t('playground.input.type.music') : item.type === 'audio' ? t('playground.input.type.audio') : t('playground.input.type.sfx');
-  const typeIcon = isImage ? <ImageIcon className="w-3.5 h-3.5" /> : isVideo ? <Video className="w-3.5 h-3.5" /> : item.type === 'music' ? <Music className="w-3.5 h-3.5" /> : item.type === 'audio' ? <Headphones className="w-3.5 h-3.5" /> : <FileAudio className="w-3.5 h-3.5" />;
+  const previewKind = getSdkworkGenerationPreviewKind(item.type);
+  const isText = previewKind === 'text';
+  const isImage = previewKind === 'image';
+  const isVideo = previewKind === 'video';
+  const typeLabel = isText ? t('playground.input.type.agent') : isImage ? t('playground.input.type.image') : isVideo ? t('playground.input.type.video') : item.type === 'music' ? t('playground.input.type.music') : item.type === 'audio' ? t('playground.input.type.audio') : t('playground.input.type.sfx');
+  const typeIcon = isText ? <Bot className="w-3.5 h-3.5" /> : isImage ? <ImageIcon className="w-3.5 h-3.5" /> : isVideo ? <Video className="w-3.5 h-3.5" /> : item.type === 'music' ? <Music className="w-3.5 h-3.5" /> : item.type === 'audio' ? <Headphones className="w-3.5 h-3.5" /> : <FileAudio className="w-3.5 h-3.5" />;
   const [modelName, modelConfig] = (item.modelInfo || '').split('|').map((value) => value.trim());
 
   return (
@@ -33,13 +36,21 @@ export function ChatHistoryItem({ item, setPreviewItem, isCompact = false }: { i
          {item.prompt}
       </p>
 
-      <div className="mt-1">
-         {item.type === 'video' && <VideoMessageItem item={item} setPreviewItem={setPreviewItem} />}
-         {item.type === 'music' && <MusicMessageItem item={item} setPreviewItem={setPreviewItem} />}
-         {(item.type === 'images' || item.type === 'image') && <ImagesMessageItem item={item} setPreviewItem={setPreviewItem} />}
-         {item.type === 'audio' && <AudioMessageItem item={item} setPreviewItem={setPreviewItem} />}
-         {item.type === 'sfx' && <AudioMessageItem item={item} setPreviewItem={setPreviewItem} />}
-      </div>
+      {item.outputText && (
+        <div className="rounded-lg border border-white/5 bg-white/[0.03] px-3 py-2 text-[13px] leading-relaxed text-slate-200">
+          {item.outputText}
+        </div>
+      )}
+
+      {!(isText) && (
+        <div className="mt-1">
+           {item.type === 'video' && <VideoMessageItem item={item} setPreviewItem={setPreviewItem} />}
+           {item.type === 'music' && <MusicMessageItem item={item} setPreviewItem={setPreviewItem} />}
+           {isImage && <ImagesMessageItem item={item} setPreviewItem={setPreviewItem} />}
+           {item.type === 'audio' && <AudioMessageItem item={item} setPreviewItem={setPreviewItem} />}
+           {item.type === 'sfx' && <AudioMessageItem item={item} setPreviewItem={setPreviewItem} />}
+        </div>
+      )}
    </div>
   );
 }

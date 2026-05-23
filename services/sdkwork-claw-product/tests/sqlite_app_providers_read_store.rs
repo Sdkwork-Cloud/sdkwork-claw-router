@@ -112,7 +112,7 @@ async fn create_provider_tables(pool: &SqlitePool) {
             integration_type INTEGER,
             display_name TEXT,
             description TEXT,
-            base_url_template TEXT,
+            base_url TEXT,
             status INTEGER NOT NULL,
             sort_order INTEGER,
             deleted_at TEXT
@@ -148,7 +148,7 @@ async fn create_provider_tables(pool: &SqlitePool) {
             provider_code TEXT NOT NULL,
             account_id INTEGER,
             proxy_id INTEGER,
-            base_url_override TEXT,
+            base_url TEXT,
             status INTEGER NOT NULL,
             health_status INTEGER NOT NULL,
             priority INTEGER NOT NULL,
@@ -205,7 +205,7 @@ async fn seed_provider_with_type(pool: &SqlitePool, integration_type: i64) {
         r#"
         INSERT INTO integration_provider (
             id, tenant_id, organization_id, provider_code, default_vendor_code, integration_type,
-            display_name, description, base_url_template, status, sort_order
+            display_name, description, base_url, status, sort_order
         )
         VALUES (?, 10, 20, ?, ?, ?, ?, 'Provider integration', ?, 1, ?)
         "#,
@@ -239,7 +239,7 @@ async fn seed_provider_with_type(pool: &SqlitePool, integration_type: i64) {
         r#"
         INSERT INTO integration_channel (
             id, tenant_id, organization_id, provider_id, provider_code, account_id,
-            base_url_override, status, health_status, priority, weight
+            base_url, status, health_status, priority, weight
         )
         VALUES (?, 10, 20, ?, ?, ?, ?, 1, 1, 10, 100)
         "#,

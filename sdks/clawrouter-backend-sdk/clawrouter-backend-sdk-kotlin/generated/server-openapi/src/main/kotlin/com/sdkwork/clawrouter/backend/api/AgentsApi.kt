@@ -9,7 +9,7 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 class AgentsApi(private val client: HttpClient) {
 
     /** List managed agents */
-    suspend fun list(q: String? = null, ownerUserId: Int? = null, status: String? = null, visibility: String? = null, page: Int? = null, pageSize: Int? = null): AgentsListResult? {
+    suspend fun agentDefinitionsList(q: String? = null, ownerUserId: Int? = null, status: String? = null, visibility: String? = null, page: Int? = null, pageSize: Int? = null): AgentDefinitionsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("q", q, "form", true, false, null),
             QueryParameterSpec("owner_user_id", ownerUserId, "form", true, false, null),
@@ -19,13 +19,13 @@ class AgentsApi(private val client: HttpClient) {
             QueryParameterSpec("page_size", pageSize, "form", true, false, null)
         ))
         val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/agents"), query))
-        return client.convertValue(raw, object : TypeReference<AgentsListResult>() {})
+        return client.convertValue(raw, object : TypeReference<AgentDefinitionsListResult>() {})
     }
 
     /** Retrieve managed agent */
-    suspend fun retrieve(agentId: String): AgentsRetrieveResult? {
+    suspend fun agentDefinitionsRetrieve(agentId: String): AgentDefinitionsRetrieveResult? {
         val raw = client.get(ApiPaths.backendPath("/agents/${serializePathParameter(agentId, PathParameterSpec("agentId", "simple", false))}"))
-        return client.convertValue(raw, object : TypeReference<AgentsRetrieveResult>() {})
+        return client.convertValue(raw, object : TypeReference<AgentDefinitionsRetrieveResult>() {})
     }
 
     private data class PathParameterSpec(val name: String, val style: String, val explode: Boolean)

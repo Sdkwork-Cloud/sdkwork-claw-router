@@ -2,7 +2,7 @@ import Foundation
 
 public class EcosystemApi {
     private let client: HttpClient
-    
+
     public init(client: HttpClient) {
         self.client = client
     }
@@ -47,6 +47,28 @@ public class EcosystemApi {
             [:]
         )
         return try await client.post(ApiPaths.backendPath("/ecosystem/skills/categories"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SkillsCategoriesCreateResult.self)
+    }
+
+    /// Delete skill category
+    public func skillsCategoriesDelete(categoryId: String, xRequestId: String? = nil) async throws -> SkillsCategoriesDeleteResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.delete(ApiPaths.backendPath("/ecosystem/skills/categories/\(serializePathParameter(categoryId, PathParameterSpec(name: "categoryId", style: "simple", explode: false)))"), params: nil, headers: requestHeaders, responseType: SkillsCategoriesDeleteResult.self)
+    }
+
+    /// Update skill category
+    public func skillsCategoriesUpdate(categoryId: String, body: AdminSkillCategoryUpdateRequest, xRequestId: String? = nil) async throws -> SkillsCategoriesUpdateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.put(ApiPaths.backendPath("/ecosystem/skills/categories/\(serializePathParameter(categoryId, PathParameterSpec(name: "categoryId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SkillsCategoriesUpdateResult.self)
     }
 
     /// List skill packages

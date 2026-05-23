@@ -11,5 +11,4 @@ class UsersCurrentCouponsRetrieveResult:
     """Users current coupons retrieve result schema exposed by Claw Router."""
     code: str
     data: Optional[BillingRedeemHistoryItem] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

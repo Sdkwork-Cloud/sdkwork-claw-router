@@ -92,7 +92,6 @@ pub enum AdminRechargePackageStatus {
 pub struct CreateAdminCouponCommand {
     pub subject: AdminMarketingSubject,
     pub coupon_uuid: String,
-    pub template_uuid: String,
     pub audit_log_uuid: String,
     pub name: String,
     pub coupon_type: String,
@@ -107,7 +106,7 @@ pub struct CreateAdminCouponCommand {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct DeleteAdminCouponCommand {
     pub subject: AdminMarketingSubject,
-    pub coupon_id: i64,
+    pub coupon_id: String,
     pub audit_log_uuid: String,
     pub request_id: String,
     pub requested_at: String,
@@ -116,7 +115,7 @@ pub struct DeleteAdminCouponCommand {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct UpdateAdminCouponCommand {
     pub subject: AdminMarketingSubject,
-    pub coupon_id: i64,
+    pub coupon_id: String,
     pub audit_log_uuid: String,
     pub name: String,
     pub coupon_type: String,
@@ -133,7 +132,7 @@ pub struct GenerateAdminCouponBatchCommand {
     pub subject: AdminMarketingSubject,
     pub batch_uuid: String,
     pub audit_log_uuid: String,
-    pub coupon_id: i64,
+    pub coupon_id: String,
     pub name: String,
     pub count: i64,
     pub prefix: String,
@@ -144,7 +143,7 @@ pub struct GenerateAdminCouponBatchCommand {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct UpdateAdminPromoCodeStatusCommand {
     pub subject: AdminMarketingSubject,
-    pub promo_code_id: i64,
+    pub promo_code_id: String,
     pub status: String,
     pub audit_log_uuid: String,
     pub request_id: String,
@@ -168,7 +167,7 @@ pub struct CreateAdminRechargePackageCommand {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct UpdateAdminRechargePackageCommand {
     pub subject: AdminMarketingSubject,
-    pub package_id: i64,
+    pub package_id: String,
     pub product_uuid: String,
     pub sku_uuid: String,
     pub audit_log_uuid: String,
@@ -182,7 +181,7 @@ pub struct UpdateAdminRechargePackageCommand {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct DeleteAdminRechargePackageCommand {
     pub subject: AdminMarketingSubject,
-    pub package_id: i64,
+    pub package_id: String,
     pub audit_log_uuid: String,
     pub request_id: String,
     pub requested_at: String,

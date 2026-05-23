@@ -7,7 +7,5 @@ export interface AppsCreateResult {
   /** Data field on apps create result. */
   data?: AdminAppMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

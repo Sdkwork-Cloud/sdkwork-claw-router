@@ -4,6 +4,5 @@ package types
 type AppsDeleteResult struct {
 	Code string `json:"code"`
 	Data AdminAppDeleteResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

@@ -82,9 +82,6 @@ pub struct AiModelCapabilityRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub parameter_schema: Option<std::collections::HashMap<String, String>>,
 
-    /// Region code field on ai model capability record.
-    pub region_code: String,
-
     /// Schema version field on ai model capability record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub schema_version: Option<String>,

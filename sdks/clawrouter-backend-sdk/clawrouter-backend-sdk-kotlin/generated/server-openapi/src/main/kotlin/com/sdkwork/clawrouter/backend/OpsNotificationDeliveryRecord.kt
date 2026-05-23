@@ -1,6 +1,7 @@
 package com.sdkwork.clawrouter.backend
 
 data class OpsNotificationDeliveryRecord(
+    val archivedAt: String? = null,
     val createdAt: String? = null,
     val dataScope: String? = null,
     val deletedAt: String? = null,
@@ -15,6 +16,7 @@ data class OpsNotificationDeliveryRecord(
     val organizationId: String? = null,
     val ownerId: String? = null,
     val ownerType: String? = null,
+    val popupSeenAt: String? = null,
     val readAt: String? = null,
     val retryCount: Int? = null,
     val status: String? = null,

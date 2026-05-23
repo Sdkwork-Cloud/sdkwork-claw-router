@@ -11,5 +11,4 @@ class RoutingChannelsDeleteResult:
     """Routing channels delete result schema exposed by Claw Router."""
     code: str
     data: Optional[RoutingChannelDeleteResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

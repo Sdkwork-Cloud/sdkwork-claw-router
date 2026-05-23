@@ -14,6 +14,14 @@ const SQLITE_DASHBOARD_OVERVIEW_READ_STORE: &str =
     include_str!("../src/infrastructure/sql/sqlite/dashboard_overview_read_store.rs");
 const POSTGRES_DASHBOARD_OVERVIEW_READ_STORE: &str =
     include_str!("../src/infrastructure/sql/postgres/dashboard_overview_read_store.rs");
+const SQLITE_APP_NOTIFICATION_STORE: &str =
+    include_str!("../src/infrastructure/sql/sqlite/app_notification_store.rs");
+const POSTGRES_APP_NOTIFICATION_STORE: &str =
+    include_str!("../src/infrastructure/sql/postgres/app_notification_store.rs");
+const SQLITE_ADMIN_ANNOUNCEMENT_STORE: &str =
+    include_str!("../src/infrastructure/sql/sqlite/admin_announcement_store.rs");
+const POSTGRES_ADMIN_ANNOUNCEMENT_STORE: &str =
+    include_str!("../src/infrastructure/sql/postgres/admin_announcement_store.rs");
 const SQLITE_ADMIN_CHANNEL_STORE: &str =
     include_str!("../src/infrastructure/sql/sqlite/admin_channel_store.rs");
 const POSTGRES_ADMIN_CHANNEL_STORE: &str =
@@ -154,6 +162,81 @@ fn dashboard_overview_shared_read_models_use_public_zero_scope() {
         "(organization_id = $2 OR organization_id = 0 OR organization_id IS NULL)",
     ] {
         assert_sql_contains(POSTGRES_DASHBOARD_OVERVIEW_READ_STORE, expected);
+    }
+
+    for forbidden in [
+        "FROM content_announcement a WHERE a.status = 1 AND a.deleted_at IS NULL AND (a.tenant_id = ?1 OR a.tenant_id = 0 OR a.tenant_id IS NULL)",
+        "FROM content_announcement a WHERE a.status = 1 AND a.deleted_at IS NULL AND (a.tenant_id = $1 OR a.tenant_id = 0 OR a.tenant_id IS NULL)",
+    ] {
+        assert_sql_not_contains(SQLITE_DASHBOARD_OVERVIEW_READ_STORE, forbidden);
+        assert_sql_not_contains(POSTGRES_DASHBOARD_OVERVIEW_READ_STORE, forbidden);
+    }
+}
+
+#[test]
+fn dashboard_overview_announcements_follow_app_notification_visibility_contract() {
+    for expected in [
+        "FROM ops_notification_message m",
+        "AND m.tenant_id = ?1",
+        "AND m.organization_id = ?2",
+        "AND m.scope_type = 2",
+        "AND m.message_code = CAST('announcement:' || m.id AS TEXT)",
+        "AND (m.published_at IS NULL OR datetime(m.published_at) <= CURRENT_TIMESTAMP)",
+        "AND (m.expire_at IS NULL OR datetime(m.expire_at) > CURRENT_TIMESTAMP)",
+        "FROM ops_notification_recipient r",
+        "AND r.recipient_type = 1",
+    ] {
+        assert_sql_contains(SQLITE_DASHBOARD_OVERVIEW_READ_STORE, expected);
+    }
+
+    for expected in [
+        "FROM ops_notification_message m",
+        "AND m.tenant_id = $1",
+        "AND m.organization_id = $2",
+        "AND m.scope_type = 2",
+        "AND m.message_code = ('announcement:' || m.id::text)",
+        "AND (m.published_at IS NULL OR m.published_at <= CURRENT_TIMESTAMP)",
+        "AND (m.expire_at IS NULL OR m.expire_at > CURRENT_TIMESTAMP)",
+        "FROM ops_notification_recipient r",
+        "AND r.recipient_type = 1",
+    ] {
+        assert_sql_contains(POSTGRES_DASHBOARD_OVERVIEW_READ_STORE, expected);
+    }
+
+    assert_sql_not_contains(
+        SQLITE_DASHBOARD_OVERVIEW_READ_STORE,
+        "FROM content_announcement",
+    );
+    assert_sql_not_contains(
+        POSTGRES_DASHBOARD_OVERVIEW_READ_STORE,
+        "FROM content_announcement",
+    );
+}
+
+#[test]
+fn app_notification_store_does_not_bridge_content_announcements() {
+    for source in [
+        SQLITE_APP_NOTIFICATION_STORE,
+        POSTGRES_APP_NOTIFICATION_STORE,
+    ] {
+        assert_sql_contains(source, "FROM ops_notification_message m");
+        assert_sql_not_contains(source, "announcement-");
+        assert_sql_not_contains(source, "FROM content_announcement");
+        assert_sql_not_contains(source, "message_id = -");
+    }
+}
+
+#[test]
+fn admin_announcement_store_uses_standard_notification_tables() {
+    for source in [
+        SQLITE_ADMIN_ANNOUNCEMENT_STORE,
+        POSTGRES_ADMIN_ANNOUNCEMENT_STORE,
+    ] {
+        assert_sql_contains(source, "FROM ops_notification_message");
+        assert_sql_contains(source, "INSERT INTO ops_notification_message");
+        assert_sql_contains(source, "INSERT INTO ops_notification_recipient");
+        assert_sql_not_contains(source, "INSERT INTO content_announcement");
+        assert_sql_not_contains(source, "UPDATE content_announcement");
     }
 }
 

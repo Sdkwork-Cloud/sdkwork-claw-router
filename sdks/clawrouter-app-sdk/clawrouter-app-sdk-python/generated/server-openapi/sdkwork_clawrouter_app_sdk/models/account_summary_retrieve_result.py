@@ -11,5 +11,4 @@ class AccountSummaryRetrieveResult:
     """Account summary retrieve result schema exposed by Claw Router."""
     code: str
     data: Optional[AccountSummaryResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

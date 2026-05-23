@@ -52,9 +52,19 @@ function createMotionShim() {
 }
 
 function createI18nShim() {
+  const translations = {
+    'common.actions.authorization': 'Authorization',
+    'common.actions.body': 'Body',
+    'common.actions.bulkEdit': 'Bulk Edit',
+    'common.actions.copyUrl': 'Copy URL',
+    'common.actions.headers': 'Headers',
+    'common.actions.params': 'Params',
+    'common.actions.saveResponse': 'Save Response',
+    'common.actions.send': 'Send',
+  };
   return {
     useTranslation: () => ({
-      t: (_key, fallback) => fallback ?? _key,
+      t: (key, fallback) => fallback ?? translations[key] ?? key,
     }),
   };
 }

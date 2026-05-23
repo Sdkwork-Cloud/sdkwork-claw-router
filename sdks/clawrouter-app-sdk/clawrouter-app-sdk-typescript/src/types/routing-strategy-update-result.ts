@@ -7,7 +7,5 @@ export interface RoutingStrategyUpdateResult {
   /** Data field on routing strategy update result. */
   data?: UpdateRoutingStrategyResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

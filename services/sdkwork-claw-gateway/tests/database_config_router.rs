@@ -290,7 +290,7 @@ async fn database_config_router_applies_database_retry_policy_without_duplicate_
     sqlx::query(
         r#"
         UPDATE integration_channel
-        SET base_url_override = ?,
+        SET base_url = ?,
             retry_policy = '{"max_attempts":3,"retryable_status_codes":[503],"backoff_ms":0}'
         WHERE id = 3001
         "#,
@@ -507,7 +507,7 @@ async fn database_config_router_background_settlement_worker_settles_recorded_ch
         990,
         scalar_i64(
             &read_pool,
-            "SELECT available_points FROM plus_account WHERE id = 701"
+            "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE id = 'account-701'"
         )
         .await
     );
@@ -517,7 +517,11 @@ async fn database_config_router_background_settlement_worker_settles_recorded_ch
     );
     assert_eq!(
         1,
-        scalar_i64(&read_pool, "SELECT COUNT(1) FROM plus_account_history").await
+        scalar_i64(
+            &read_pool,
+            "SELECT COUNT(1) FROM commerce_account_ledger_entry WHERE business_type = 'usage'"
+        )
+        .await
     );
     assert_eq!(
         2,
@@ -790,7 +794,7 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_chat_r
 
     let catalog = seeded_sqlite_catalog().await.unwrap();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query("UPDATE integration_channel SET base_url_override = ? WHERE id = 3001")
+    sqlx::query("UPDATE integration_channel SET base_url = ? WHERE id = 3001")
         .bind(format!("http://{addr}"))
         .execute(&pool)
         .await
@@ -862,7 +866,7 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_stream
 
     let catalog = seeded_sqlite_catalog().await.unwrap();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query("UPDATE integration_channel SET base_url_override = ? WHERE id = 3001")
+    sqlx::query("UPDATE integration_channel SET base_url = ? WHERE id = 3001")
         .bind(format!("http://{addr}"))
         .execute(&pool)
         .await
@@ -931,7 +935,7 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_respon
 
     let catalog = seeded_sqlite_catalog().await.unwrap();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query("UPDATE integration_channel SET base_url_override = ? WHERE id = 3001")
+    sqlx::query("UPDATE integration_channel SET base_url = ? WHERE id = 3001")
         .bind(format!("http://{addr}"))
         .execute(&pool)
         .await
@@ -998,7 +1002,7 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_embedd
 
     let catalog = seeded_sqlite_catalog().await.unwrap();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query("UPDATE integration_channel SET base_url_override = ? WHERE id = 3001")
+    sqlx::query("UPDATE integration_channel SET base_url = ? WHERE id = 3001")
         .bind(format!("http://{addr}"))
         .execute(&pool)
         .await

@@ -290,11 +290,12 @@ function artifactIdForPackage({ platform, architecture, deploymentMode }) {
 
 function redisPolicyFor({ platform, runtimeProfile, deploymentMode = 'archive' }) {
   const locations = runtimeConfigLocationsFor(platform, runtimeProfile);
+  const serverRuntimeRequiresRedis = runtimeProfile !== 'desktop';
   return {
     configSection: 'redis',
-    enabledByDefault: false,
-    required: false,
-    runtimeRequired: false,
+    enabledByDefault: serverRuntimeRequiresRedis,
+    required: serverRuntimeRequiresRedis,
+    runtimeRequired: serverRuntimeRequiresRedis,
     requiredWhenEnabled: ['host', 'port', 'database'],
     secretFields: ['password_file', 'password'],
     defaultHost: 'redis.example.com',
@@ -304,7 +305,7 @@ function redisPolicyFor({ platform, runtimeProfile, deploymentMode = 'archive' }
     urlOverrideExample: 'redis://redis.example.com:6379/0',
     passwordFile: {
       path: redisPasswordFileFor(platform, deploymentMode, locations),
-      required: false,
+      required: serverRuntimeRequiresRedis,
     },
     keyPrefix: 'clawrouter',
     tls: false,
@@ -685,11 +686,15 @@ function validatePackageItem(packageItem, seenIds, issues) {
   if (packageItem.redisPolicy?.configSection !== 'redis') {
     issues.push(`${packageItem.id} redisPolicy must declare the redis config section`);
   }
-  if (packageItem.redisPolicy?.enabledByDefault !== false) {
-    issues.push(`${packageItem.id} redisPolicy must be disabled by default`);
+  const redisRequiredByRuntimeProfile = packageItem.runtimeProfile !== 'desktop';
+  if (packageItem.redisPolicy?.enabledByDefault !== redisRequiredByRuntimeProfile) {
+    issues.push(`${packageItem.id} redisPolicy must ${redisRequiredByRuntimeProfile ? 'be enabled' : 'be disabled'} by default`);
   }
-  if (packageItem.redisPolicy?.required !== false || packageItem.redisPolicy?.runtimeRequired !== false) {
-    issues.push(`${packageItem.id} redisPolicy must be optional at install and startup`);
+  if (
+    packageItem.redisPolicy?.required !== redisRequiredByRuntimeProfile
+    || packageItem.redisPolicy?.runtimeRequired !== redisRequiredByRuntimeProfile
+  ) {
+    issues.push(`${packageItem.id} redisPolicy must ${redisRequiredByRuntimeProfile ? 'be required at install and startup' : 'be optional at install and startup'}`);
   }
   for (const key of ['host', 'port', 'database']) {
     if (!packageItem.redisPolicy?.requiredWhenEnabled?.includes(key)) {
@@ -707,6 +712,9 @@ function validatePackageItem(packageItem, seenIds, issues) {
   }
   if (!packageItem.redisPolicy?.passwordFile?.path) {
     issues.push(`${packageItem.id} redisPolicy must declare the standard optional password file path`);
+  }
+  if (packageItem.redisPolicy?.passwordFile?.required !== redisRequiredByRuntimeProfile) {
+    issues.push(`${packageItem.id} redisPolicy password file must ${redisRequiredByRuntimeProfile ? 'be required' : 'remain optional'}`);
   }
   for (const envKey of [
     'SDKWORK_CLAW_REDIS_HOST',

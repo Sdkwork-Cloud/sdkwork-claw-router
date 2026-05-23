@@ -26,6 +26,7 @@ pub struct ChatCompletionRelayRequest {
     pub pricing_plan_code: String,
     pub model: String,
     pub provider_code: String,
+    pub provider_channel_id: i64,
     pub provider_model: String,
     pub provider_base_url: Option<String>,
     pub provider_secret_ref: Option<String>,

@@ -10,6 +10,7 @@ class IntegrationProviderAccountRecord:
     account_name: Optional[str] = None
     auth_config: Optional[Dict[str, str]] = None
     auth_type: Optional[str] = None
+    base_url: Optional[str] = None
     consecutive_error_count: Optional[str] = None
     created_at: Optional[str] = None
     credential_profile: Optional[str] = None

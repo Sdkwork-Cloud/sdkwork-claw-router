@@ -6,8 +6,8 @@ export interface IntegrationChannelRecord {
   access_type?: string;
   /** Account id field on integration channel record. */
   account_id?: string;
-  /** Base url override field on integration channel record. */
-  base_url_override?: string;
+  /** Base url field on integration channel record. */
+  base_url?: string;
   /** Capabilities field on integration channel record. */
   capabilities?: Record<string, JsonValue>;
   /** Channel code field on integration channel record. */

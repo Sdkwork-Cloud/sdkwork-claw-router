@@ -11,5 +11,4 @@ class RateLimitsApiKeysCreateResult:
     """Rate limits api keys create result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminRateLimitMutationResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

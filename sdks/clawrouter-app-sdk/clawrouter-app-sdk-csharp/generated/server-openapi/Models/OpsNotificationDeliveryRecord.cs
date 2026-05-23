@@ -6,6 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class OpsNotificationDeliveryRecord
     {
+        public string? ArchivedAt { get; set; }
         public string? CreatedAt { get; set; }
         public string? DataScope { get; set; }
         public string? DeletedAt { get; set; }
@@ -20,6 +21,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? OrganizationId { get; set; }
         public string? OwnerId { get; set; }
         public string? OwnerType { get; set; }
+        public string? PopupSeenAt { get; set; }
         public string? ReadAt { get; set; }
         public int? RetryCount { get; set; }
         public string? Status { get; set; }

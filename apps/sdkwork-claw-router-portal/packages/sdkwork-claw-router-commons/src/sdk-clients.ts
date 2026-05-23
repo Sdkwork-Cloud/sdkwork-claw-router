@@ -254,7 +254,10 @@ function buildAiConfig(options: ClawRouterAiSdkClientOptions): SdkworkAiConfig {
 }
 
 function hasRuntimeOverrides(
-  options: ClawRouterAppSdkClientOptions | ClawRouterBackendSdkClientOptions | ClawRouterAiSdkClientOptions,
+  options:
+    | ClawRouterAppSdkClientOptions
+    | ClawRouterBackendSdkClientOptions
+    | ClawRouterAiSdkClientOptions,
 ): boolean {
   return Object.keys(options).length > 0;
 }

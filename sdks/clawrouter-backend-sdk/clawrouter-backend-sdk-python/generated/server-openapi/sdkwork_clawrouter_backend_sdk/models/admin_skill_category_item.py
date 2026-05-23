@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
 @dataclass
 class AdminSkillCategoryItem:
-    """Persisted skill category snapshot returned by the backend."""
+    """Updated skill category snapshot returned by the backend."""
     id: str
     name: str
     sort_weight: int

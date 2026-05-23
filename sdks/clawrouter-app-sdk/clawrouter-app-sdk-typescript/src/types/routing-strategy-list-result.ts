@@ -7,7 +7,5 @@ export interface RoutingStrategyListResult {
   /** Data field on routing strategy list result. */
   data?: RoutingStrategySnapshot;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

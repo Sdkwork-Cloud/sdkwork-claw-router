@@ -1,0 +1,201 @@
+fragment: operations/app-commerce-checkout
+frontend_operations:
+- route: /console/checkout
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  operation: appCheckoutSessionsCreate
+  operation_id: checkout.sessions.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/checkout/sessions
+  sdk_domain: commerce
+  summary: Checkout Sessions Create
+  description: Standard appbase commerce API for checkout.sessions.create; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_checkout_session
+  - commerce_checkout_line
+  - commerce_checkout_quote
+  - commerce_cart
+  - commerce_cart_item
+  - commerce_user_address
+  - commerce_product_sku
+  - commerce_inventory_reservation
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_order
+  request_id_header: true
+  idempotency_required: true
+  write_tables:
+  - commerce_checkout_session
+  - commerce_checkout_line
+  - commerce_inventory_reservation
+  - ops_audit_log
+  request_schema: &id001
+    name: CommerceStandardCommandRequest
+    type: object
+    additionalProperties: false
+    properties:
+      clientRequestNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      note:
+        type: string
+        maxLength: 512
+      metadata:
+        type: object
+        additionalProperties: true
+  response_schema: &id002
+    name: CommerceOperationResponse
+    type: object
+    additionalProperties: false
+    required:
+    - success
+    - requestNo
+    - status
+    properties:
+      success:
+        type: boolean
+      requestNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      status:
+        type: string
+        minLength: 1
+        maxLength: 64
+      paymentId:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 128
+      qrCodePayload:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 2048
+      qrCodeImageUrl:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 2048
+- route: /console/checkout
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  operation: appCheckoutSessionsRetrieve
+  operation_id: checkout.sessions.retrieve
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/checkout/sessions/{checkoutSessionId}
+  sdk_domain: commerce
+  summary: Checkout Sessions Retrieve
+  description: Standard appbase commerce API for checkout.sessions.retrieve; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_checkout_session
+  - commerce_checkout_line
+  - commerce_checkout_quote
+  - commerce_cart
+  - commerce_cart_item
+  - commerce_user_address
+  - commerce_product_sku
+  - commerce_inventory_reservation
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_order
+  query_parameters: []
+  response_schema:
+    name: CommerceStandardResourceResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    properties:
+      item:
+        type: object
+        additionalProperties: false
+        required:
+        - id
+        properties:
+          id:
+            type: string
+            minLength: 1
+            maxLength: 128
+          status:
+            type: string
+            nullable: true
+            maxLength: 64
+          createdAt:
+            type: string
+            nullable: true
+            maxLength: 64
+          updatedAt:
+            type: string
+            nullable: true
+            maxLength: 64
+- route: /console/checkout
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  operation: appCheckoutSessionsQuotesCreate
+  operation_id: checkout.sessions.quotes.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/checkout/sessions/{checkoutSessionId}/quotes
+  sdk_domain: commerce
+  summary: Checkout Sessions Quotes Create
+  description: Standard appbase commerce API for checkout.sessions.quotes.create; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_checkout_session
+  - commerce_checkout_line
+  - commerce_checkout_quote
+  - commerce_cart
+  - commerce_cart_item
+  - commerce_user_address
+  - commerce_product_sku
+  - commerce_inventory_reservation
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_order
+  request_id_header: true
+  idempotency_required: true
+  write_tables:
+  - commerce_checkout_quote
+  - commerce_checkout_line
+  - commerce_inventory_reservation
+  - ops_audit_log
+  request_schema: *id001
+  response_schema: *id002
+- route: /console/checkout
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  operation: appCheckoutSessionsOrdersCreate
+  operation_id: checkout.sessions.orders.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/checkout/sessions/{checkoutSessionId}/orders
+  sdk_domain: commerce
+  summary: Checkout Sessions Orders Create
+  description: Standard appbase commerce API for checkout.sessions.orders.create; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_checkout_session
+  - commerce_checkout_line
+  - commerce_checkout_quote
+  - commerce_cart
+  - commerce_cart_item
+  - commerce_user_address
+  - commerce_product_sku
+  - commerce_inventory_reservation
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_order
+  request_id_header: true
+  idempotency_required: true
+  write_tables:
+  - commerce_order
+  - commerce_order_item
+  - commerce_order_amount_breakdown
+  - commerce_order_address_snapshot
+  - commerce_checkout_session
+  - commerce_inventory_reservation
+  - ops_audit_log
+  request_schema: *id001
+  response_schema: *id002

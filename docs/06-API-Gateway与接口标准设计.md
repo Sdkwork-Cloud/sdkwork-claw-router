@@ -93,7 +93,7 @@ App API 典型分组：
 | 用量 | `/app/v3/api/usage/**` |
 | 网关信息 | `/app/v3/api/gateway/**` |
 | 路由配置 | `/app/v3/api/routing/**` |
-| 账务 | `/app/v3/api/billing/**`、`/app/v3/api/payments/**` 或现有交易资源路径 |
+| 账务 | `/app/v3/api/billing/**`；支付回调仅使用 `/app/v3/api/payments/callback/**` |
 | 结算 | `/app/v3/api/settlements/**` |
 | 账户 | `/app/v3/api/account/**` |
 | 充值 | `/app/v3/api/recharge/**` 或 Java app-api 已登记的 VIP/充值资源路径 |

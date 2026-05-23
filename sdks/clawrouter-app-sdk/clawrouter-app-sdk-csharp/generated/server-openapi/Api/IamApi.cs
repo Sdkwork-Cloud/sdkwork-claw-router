@@ -16,6 +16,14 @@ namespace Sdkwork.ClawRouter.App.Api
         }
 
         /// <summary>
+        /// List groups
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.ApiKeyGroupsListResult?> ApiKeyGroupsListAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.ApiKeyGroupsListResult>(ApiPaths.AppPath("/iam/api_key_groups"));
+        }
+
+        /// <summary>
         /// List keys
         /// </summary>
         public async Task<Sdkwork.ClawRouter.App.Models.ApiKeysListResult?> ApiKeysListAsync()

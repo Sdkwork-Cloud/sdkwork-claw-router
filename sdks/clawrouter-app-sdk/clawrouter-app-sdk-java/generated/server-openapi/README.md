@@ -83,11 +83,15 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 - `client.getAi()` - ai API
 - `client.getAuth()` - auth API
 - `client.getBilling()` - billing API
-- `client.getCommunication()` - communication API
+- `client.getChat()` - chat API
 - `client.getContent()` - content API
 - `client.getEcosystem()` - ecosystem API
 - `client.getIam()` - iam API
+- `client.getMemory()` - memory API
+- `client.getNotification()` - notification API
 - `client.getPlatform()` - platform API
+- `client.getRuntime()` - runtime API
+- `client.getSystem()` - system API
 
 ## Usage Examples
 
@@ -99,7 +103,7 @@ Map<String, Object> params = new LinkedHashMap<>();
 params.put("page", 1);
 params.put("page_size", 2);
 params.put("q", "q");
-AgentsListResult result = client.getAgents().list(params);
+AgentDefinitionsListResult result = client.getAgents().agentDefinitionsList(params);
 System.out.println(result);
 ```
 
@@ -127,11 +131,14 @@ AccountPointsRetrieveResult result = client.getBilling().accountPointsRetrieve()
 System.out.println(result);
 ```
 
-### communication
+### chat
 
 ```java
-// List messages
-NotificationsListResult result = client.getCommunication().notificationsList();
+// List product chat conversations
+Map<String, Object> params = new LinkedHashMap<>();
+params.put("page", 1);
+params.put("page_size", 2);
+ConversationsListResult result = client.getChat().conversationsList(params);
 System.out.println(result);
 ```
 
@@ -154,8 +161,32 @@ System.out.println(result);
 ### iam
 
 ```java
-// List keys
-ApiKeysListResult result = client.getIam().apiKeysList();
+// List groups
+ApiKeyGroupsListResult result = client.getIam().apiKeyGroupsList();
+System.out.println(result);
+```
+
+### memory
+
+```java
+// List memory spaces
+Map<String, Object> params = new LinkedHashMap<>();
+params.put("page", 1);
+params.put("page_size", 2);
+SpacesListResult result = client.getMemory().spacesList(params);
+System.out.println(result);
+```
+
+### notification
+
+```java
+// List notifications
+Map<String, Object> params = new LinkedHashMap<>();
+params.put("app_id", "1");
+params.put("include_archived", false);
+params.put("page", 3);
+params.put("page_size", 4);
+NotificationsListResult result = client.getNotification().notificationsList(params);
 System.out.println(result);
 ```
 
@@ -164,6 +195,33 @@ System.out.println(result);
 ```java
 // Get categories
 AppsStoreCategoriesListResult result = client.getPlatform().appsStoreCategoriesList();
+System.out.println(result);
+```
+
+### runtime
+
+```java
+// List runtime invocations
+Map<String, Object> params = new LinkedHashMap<>();
+params.put("page", 1);
+params.put("page_size", 2);
+params.put("conversation_id", "1");
+params.put("chat_turn_id", "1");
+params.put("agent_session_id", "1");
+params.put("runtime", "runtime");
+params.put("status", "status");
+InvocationsListResult result = client.getRuntime().invocationsList(params);
+System.out.println(result);
+```
+
+### system
+
+```java
+// Retrieve public site runtime branding settings
+Map<String, Object> params = new LinkedHashMap<>();
+params.put("tenant_code", "ok");
+params.put("organization_code", "ok");
+SiteRuntimeRetrieveResult result = client.getSystem().siteRuntimeRetrieve(params);
 System.out.println(result);
 ```
 

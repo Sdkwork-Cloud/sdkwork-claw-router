@@ -1,0 +1,131 @@
+fragment: operations/backend-commerce-refunds
+frontend_operations:
+- route: /admin/orders
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
+  operation: backendRefundsList
+  operation_id: refunds.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/refunds
+  sdk_domain: commerce
+  summary: Refunds List
+  description: Standard appbase commerce API for refunds.list; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - commerce_order
+  - commerce_order_item
+  - commerce_payment_attempt
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema:
+    name: CommerceStandardCollectionResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items:
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            status:
+              type: string
+              nullable: true
+              maxLength: 64
+            createdAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            updatedAt:
+              type: string
+              nullable: true
+              maxLength: 64
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200
+- route: /admin/orders
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
+  operation: backendRefundsRetrieve
+  operation_id: refunds.retrieve
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/refunds/{refundId}
+  sdk_domain: commerce
+  summary: Refunds Retrieve
+  description: Standard appbase commerce API for refunds.retrieve; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - commerce_order
+  - commerce_order_item
+  - commerce_payment_attempt
+  query_parameters: []
+  response_schema:
+    name: CommerceStandardResourceResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    properties:
+      item:
+        type: object
+        additionalProperties: false
+        required:
+        - id
+        properties:
+          id:
+            type: string
+            minLength: 1
+            maxLength: 128
+          status:
+            type: string
+            nullable: true
+            maxLength: 64
+          createdAt:
+            type: string
+            nullable: true
+            maxLength: 64
+          updatedAt:
+            type: string
+            nullable: true
+            maxLength: 64

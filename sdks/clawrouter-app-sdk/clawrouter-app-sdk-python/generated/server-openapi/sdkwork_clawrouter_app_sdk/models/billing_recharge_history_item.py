@@ -8,7 +8,7 @@ class BillingRechargeHistoryItem:
     """Billing recharge history item schema exposed by Claw Router."""
     amount: str
     date: str
-    id: int
+    id: str
     method: str
     order_no: str
     status: str

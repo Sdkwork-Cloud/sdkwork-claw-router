@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.component.spec",
+  "component": {
+    "name": "@sdkwork/cache-core",
+    "displayName": "SDKWork Cache Core",
+    "version": "0.1.0",
+    "type": "node-package",
+    "root": "sdkwork-appbase/packages/common/foundation/sdkwork-cache-core",
+    "domain": "foundation",
+    "declaredDomain": "foundation",
+    "capability": "cache-core",
+    "status": "standard",
+    "languages": [
+      "typescript"
+    ],
+    "generated": false,
+    "private": true,
+    "manifests": [
+      "package.json"
+    ]
+  },
+  "canonicalSpecs": [
+    {
+      "file": "COMPONENT_SPEC.md",
+      "path": "../../../../../../../specs/COMPONENT_SPEC.md",
+      "purpose": "Local component specs directory and manifest rules."
+    },
+    {
+      "file": "CONFIG_SPEC.md",
+      "path": "../../../../../../../specs/CONFIG_SPEC.md",
+      "purpose": "Runtime configuration, environment, SDK bootstrap, and feature flag rules."
+    },
+    {
+      "file": "DEPLOYMENT_SPEC.md",
+      "path": "../../../../../../../specs/DEPLOYMENT_SPEC.md",
+      "purpose": "Desktop, service, container, and release runtime binding rules."
+    },
+    {
+      "file": "DOCUMENTATION_SPEC.md",
+      "path": "../../../../../../../specs/DOCUMENTATION_SPEC.md",
+      "purpose": "Module README, examples, ADR, changelog, and runbook rules."
+    },
+    {
+      "file": "DOMAIN_SPEC.md",
+      "path": "../../../../../../../specs/DOMAIN_SPEC.md",
+      "purpose": "Canonical domain ownership and naming."
+    },
+    {
+      "file": "GOVERNANCE_SPEC.md",
+      "path": "../../../../../../../specs/GOVERNANCE_SPEC.md",
+      "purpose": "Standard ownership, exception, compatibility, and migration rules."
+    },
+    {
+      "file": "MODULE_SPEC.md",
+      "path": "../../../../../../../specs/MODULE_SPEC.md",
+      "purpose": "Reusable package contract and dependency direction."
+    },
+    {
+      "file": "OBSERVABILITY_SPEC.md",
+      "path": "../../../../../../../specs/OBSERVABILITY_SPEC.md",
+      "purpose": "Operational metrics, health, and admin observability rules."
+    },
+    {
+      "file": "PERFORMANCE_SPEC.md",
+      "path": "../../../../../../../specs/PERFORMANCE_SPEC.md",
+      "purpose": "TTL, fast-path, P0 call, and performance budget rules."
+    },
+    {
+      "file": "PRIVACY_SPEC.md",
+      "path": "../../../../../../../specs/PRIVACY_SPEC.md",
+      "purpose": "Personal, tenant, sensitive, and regulated data rules."
+    },
+    {
+      "file": "README.md",
+      "path": "../../../../../../../specs/README.md",
+      "purpose": "SDKWork root standards entrypoint."
+    },
+    {
+      "file": "SECURITY_SPEC.md",
+      "path": "../../../../../../../specs/SECURITY_SPEC.md",
+      "purpose": "Secure auth, token, secrets, CORS, validation, and logging rules."
+    },
+    {
+      "file": "TEST_SPEC.md",
+      "path": "../../../../../../../specs/TEST_SPEC.md",
+      "purpose": "Contract, frontend, SDK, security, parity, and documentation verification rules."
+    }
+  ],
+  "contracts": {
+    "publicExports": [
+      "."
+    ],
+    "runtimeEntrypoints": [
+      "package.json#scripts.typecheck",
+      "package.json#scripts.test"
+    ],
+    "sdkClients": [],
+    "events": [],
+    "configKeys": [
+      "SdkworkCacheConnectionProfile",
+      "SdkworkCacheInstanceSpec",
+      "SdkworkCacheNamespacePolicy",
+      "package.json#sdkwork"
+    ],
+    "runtimeTargets": [
+      "desktop_packaged",
+      "service"
+    ],
+    "providerKinds": [
+      "local_cache",
+      "redis_cache"
+    ],
+    "adminOperations": [
+      "snapshot",
+      "refreshAll",
+      "refreshInstance",
+      "deleteNamespace",
+      "deleteKey"
+    ]
+  },
+  "integration": {
+    "authority": "Root SDKWork specs remain authoritative. Local cache specs may extend but must not contradict them.",
+    "dependencyPolicy": "Consumers integrate through @sdkwork/cache-core public exports and bind concrete stores in runtime bootstrap only.",
+    "runtimeBindingPolicy": "Desktop packaged runtimes must use local_cache instances. Service, Docker, and Kubernetes runtimes must use redis_cache instances.",
+    "managementPolicy": "Admin cache pages and operations should call application APIs backed by SdkworkCacheManager semantics instead of adapter internals. Cache instance keyPrefix values must be normalized, unique, and non-overlapping. Snapshot, refresh, and delete operations must be scoped by each cache instance keyPrefix so shared Redis databases or drivers never cross-count or invalidate unrelated keys.",
+    "securityPolicy": "Secret material must be referenced through connection profiles and protected runtime config, never browser-visible config."
+  },
+  "verification": {
+    "commands": [
+      "pnpm --dir apps/sdkwork-appbase exec vitest run packages/common/foundation/sdkwork-cache-core/tests/cache-core.standard.test.ts --config vitest.config.ts --configLoader native --pool vmThreads",
+      "pnpm --dir apps/sdkwork-appbase exec tsc -p packages/common/foundation/sdkwork-cache-core/tsconfig.json --noEmit"
+    ]
+  },
+  "metadata": {
+    "managedBy": "apps/sdkwork-appbase",
+    "standardVersion": "2026-05-18"
+  }
+}

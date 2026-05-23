@@ -1,0 +1,82 @@
+fragment: models/admin-user
+frontend_models:
+- route: /admin/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  interface: ApiKeyItem
+  fields:
+  - id
+  - name
+  - key
+  - used
+  - status
+  data_sources:
+  - iam_gateway_api_key
+- route: /admin/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  interface: ApiKeyCreateInput
+  fields:
+  - userId
+  - name
+  data_sources:
+  - iam_user
+  - iam_gateway_api_key
+- route: /admin/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  interface: UserCreateInput
+  fields:
+  - email
+  - username
+  - balance
+  data_sources:
+  - iam_user
+  - commerce_account
+- route: /admin/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  interface: UserListItem
+  fields:
+  - id
+  - email
+  - username
+  - role
+  - group
+  - balance
+  - status
+  - lastActive
+  - lastUsed
+  - createdAt
+  data_sources:
+  - iam_user
+  - commerce_account
+  - iam_role
+  - iam_user_role
+  - iam_user_login_event
+- route: /admin/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  interface: UserAdminTableData
+  fields:
+  - users
+  - users.id
+  - users.email
+  - users.username
+  - users.role
+  - users.group
+  - users.balance
+  - users.status
+  - users.lastActive
+  - users.lastUsed
+  - users.createdAt
+  - apiKeysMap
+  - apiKeysLoadError
+  data_sources:
+  - iam_user
+  - iam_gateway_api_key
+- route: /admin/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  interface: UserUpdateInput
+  fields:
+  - username
+  - group
+  - status
+  data_sources:
+  - iam_user
+  - iam_user_role

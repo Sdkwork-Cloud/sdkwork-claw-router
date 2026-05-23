@@ -10,6 +10,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? AccountName { get; set; }
         public Dictionary<string, string>? AuthConfig { get; set; }
         public string? AuthType { get; set; }
+        public string? BaseUrl { get; set; }
         public string? ConsecutiveErrorCount { get; set; }
         public string? CreatedAt { get; set; }
         public string? CredentialProfile { get; set; }

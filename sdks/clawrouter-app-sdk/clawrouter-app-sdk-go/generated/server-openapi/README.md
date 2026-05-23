@@ -24,7 +24,7 @@ func main() {
     cfg := sdkhttp.NewDefaultConfig("http://localhost:18082")
     client := github.com/sdkwork/clawrouter-app-sdk.NewSdkworkAppClientWithConfig(cfg)
     client.SetApiKey("your-api-key")
-    
+
     // Use the SDK
     result, err := client.Auth.SessionsCurrentRetrieve()
     if err != nil {
@@ -77,11 +77,15 @@ client.SetHeader("X-Custom-Header", "value")
 - `client.Ai` - ai API
 - `client.Auth` - auth API
 - `client.Billing` - billing API
-- `client.Communication` - communication API
+- `client.Chat` - chat API
 - `client.Content` - content API
 - `client.Ecosystem` - ecosystem API
 - `client.Iam` - iam API
+- `client.Memory` - memory API
+- `client.Notification` - notification API
 - `client.Platform` - platform API
+- `client.Runtime` - runtime API
+- `client.System` - system API
 
 ## Usage Examples
 
@@ -94,7 +98,7 @@ params := map[string]interface{}{
     "page_size": 2,
     "q": "q",
 }
-result, err := client.Agents.List(params)
+result, err := client.Agents.AgentDefinitionsList(params)
 if err != nil {
     panic(err)
 }
@@ -134,11 +138,15 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### communication
+### chat
 
 ```go
-// List messages
-result, err := client.Communication.NotificationsList()
+// List product chat conversations
+params := map[string]interface{}{
+    "page": 1,
+    "page_size": 2,
+}
+result, err := client.Chat.ConversationsList(params)
 if err != nil {
     panic(err)
 }
@@ -170,8 +178,40 @@ fmt.Println(result)
 ### iam
 
 ```go
-// List keys
-result, err := client.Iam.ApiKeysList()
+// List groups
+result, err := client.Iam.ApiKeyGroupsList()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### memory
+
+```go
+// List memory spaces
+params := map[string]interface{}{
+    "page": 1,
+    "page_size": 2,
+}
+result, err := client.Memory.SpacesList(params)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### notification
+
+```go
+// List notifications
+params := map[string]interface{}{
+    "app_id": "app_id",
+    "include_archived": false,
+    "page": 3,
+    "page_size": 4,
+}
+result, err := client.Notification.NotificationsList(params)
 if err != nil {
     panic(err)
 }
@@ -183,6 +223,41 @@ fmt.Println(result)
 ```go
 // Get categories
 result, err := client.Platform.AppsStoreCategoriesList()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### runtime
+
+```go
+// List runtime invocations
+params := map[string]interface{}{
+    "page": 1,
+    "page_size": 2,
+    "conversation_id": "conversation_id",
+    "chat_turn_id": "chat_turn_id",
+    "agent_session_id": "agent_session_id",
+    "runtime": "runtime",
+    "status": "status",
+}
+result, err := client.Runtime.InvocationsList(params)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### system
+
+```go
+// Retrieve public site runtime branding settings
+params := map[string]interface{}{
+    "tenant_code": "tenant_code",
+    "organization_code": "organization_code",
+}
+result, err := client.System.SiteRuntimeRetrieve(params)
 if err != nil {
     panic(err)
 }

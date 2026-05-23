@@ -14,6 +14,8 @@ export interface AdminChannelUpdateRequest {
   capabilities?: ('llm' | 'image' | 'audio' | 'music' | 'sfx' | 'video')[];
   /** Circuit breaker policy field on admin channel update request. */
   circuitBreakerPolicy?: ProviderCircuitBreakerPolicy | JsonNull;
+  /** Expires at field on admin channel update request. */
+  expiresAt?: string | null;
   /** Id field on admin channel update request. */
   id: string;
   /** Models field on admin channel update request. */

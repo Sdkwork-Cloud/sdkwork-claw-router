@@ -4,6 +4,5 @@ package types
 type AuthSettingsRetrieveResult struct {
 	Code string `json:"code"`
 	Data AdminAuthSettingsResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

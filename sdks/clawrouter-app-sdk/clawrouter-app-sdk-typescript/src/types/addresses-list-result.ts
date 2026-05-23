@@ -1,0 +1,11 @@
+import type { CommerceStandardCollectionResponse } from './commerce-standard-collection-response';
+
+/** Addresses list result schema exposed by Claw Router. */
+export interface AddressesListResult {
+  /** Business response code. */
+  code: string;
+  /** Data field on addresses list result. */
+  data?: CommerceStandardCollectionResponse;
+  /** Human-readable response message. */
+  msg?: string;
+}

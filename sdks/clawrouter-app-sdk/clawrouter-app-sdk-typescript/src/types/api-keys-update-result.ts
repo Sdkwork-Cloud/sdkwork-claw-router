@@ -7,7 +7,5 @@ export interface ApiKeysUpdateResult {
   /** Data field on api keys update result. */
   data?: UpdateApiKeyResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

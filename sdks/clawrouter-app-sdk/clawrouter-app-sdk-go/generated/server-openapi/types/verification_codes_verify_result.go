@@ -4,6 +4,5 @@ package types
 type VerificationCodesVerifyResult struct {
 	Code string `json:"code"`
 	Data IamVerificationCodeVerifyResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

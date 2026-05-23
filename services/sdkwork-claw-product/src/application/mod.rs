@@ -1,5 +1,6 @@
 mod api_key_authenticator;
 mod api_key_secret_generator;
+mod cache_runtime;
 mod model_catalog_query;
 mod model_ranking_refresh_worker;
 mod model_rankings_service;
@@ -14,6 +15,17 @@ pub use api_key_authenticator::{
     AuthenticatedApiKeyContext,
 };
 pub use api_key_secret_generator::{ApiKeySecretGenerator, EntityUuidGenerator};
+pub use cache_runtime::{
+    default_desktop_cache_manager, default_desktop_cache_runtime, default_service_cache_manager,
+    default_service_cache_runtime, CacheBackend, CacheBackendCursor, CacheBackendFuture,
+    CacheBackendKeyList, CacheBackendKeyMetadata, CacheBackendStats, CacheInstanceSnapshot,
+    CacheInstanceSpec, CacheKeyMetadata, CacheNamespaceKeyList, CacheNamespacePolicy,
+    CacheOperationOutcome, CacheProviderKind, CacheRuntime, CacheRuntimeSnapshot,
+    CacheRuntimeSummary, CacheRuntimeTarget, LocalCacheBackend, RedisCacheBackend,
+    RuntimeCacheManager, AUTH_QR_CACHE_NAMESPACE, DEFAULT_CACHE_KEY_PREFIX,
+    DEFAULT_DESKTOP_CACHE_INSTANCE_NAME, DEFAULT_REDIS_CONNECTION_PROFILE_NAME,
+    DEFAULT_SERVICE_CACHE_INSTANCE_NAME,
+};
 pub use model_catalog_query::{
     ListModelCatalogQuery, ModelCatalogItem, ModelCatalogPage, ModelCatalogPriceView,
     ModelCatalogQueryService, ModelCatalogReferencePriceView, PriceAvailability,

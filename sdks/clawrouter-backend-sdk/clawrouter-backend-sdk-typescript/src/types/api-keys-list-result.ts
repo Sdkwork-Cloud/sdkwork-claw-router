@@ -7,7 +7,5 @@ export interface ApiKeysListResult {
   /** Data field on api keys list result. */
   data?: AdminApiKeysMapResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

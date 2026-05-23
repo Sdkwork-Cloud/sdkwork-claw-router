@@ -11,5 +11,4 @@ class AnnouncementsUpdateResult:
     """Announcements update result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminAnnouncementMutationResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

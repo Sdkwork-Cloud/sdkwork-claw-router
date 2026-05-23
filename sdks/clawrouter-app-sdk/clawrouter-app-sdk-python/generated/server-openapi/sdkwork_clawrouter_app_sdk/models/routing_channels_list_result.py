@@ -11,5 +11,4 @@ class RoutingChannelsListResult:
     """Routing channels list result schema exposed by Claw Router."""
     code: str
     data: Optional[RoutingChannelsResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

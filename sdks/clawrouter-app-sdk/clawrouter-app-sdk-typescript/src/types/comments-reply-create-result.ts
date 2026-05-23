@@ -7,7 +7,5 @@ export interface CommentsReplyCreateResult {
   /** Data field on comments reply create result. */
   data?: ForumCommentItem;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

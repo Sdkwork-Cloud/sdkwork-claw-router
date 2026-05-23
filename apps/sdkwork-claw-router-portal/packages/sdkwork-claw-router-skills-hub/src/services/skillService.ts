@@ -8,7 +8,7 @@ import type {
 } from '@sdkwork/clawrouter-app-sdk';
 import {
   createRequestParams,
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
   normalizeJsonObject,
@@ -65,7 +65,7 @@ export const skillService = {
   async getSkills(filters?: SkillFilters): Promise<Skill[]> {
     const query = toSkillCatalogQueryParams(filters);
     const result = await getClawRouterAppSdkClient().ecosystem.skills.list(query);
-    ensurePlusApiSuccess(result, 'Failed to fetch skills');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skills');
     const items: SdkSkillsCatalogResponse['items'] = readRequiredApiItems(
       result,
       'Failed to fetch skills',
@@ -85,7 +85,7 @@ export const skillService = {
     if (result === null || result === undefined) {
       return undefined;
     }
-    ensurePlusApiSuccess(result, 'Failed to fetch skill details');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill details');
     if (readApiData(result) === null || readApiData(result) === undefined) {
       return undefined;
     }
@@ -95,7 +95,7 @@ export const skillService = {
 
   async getCategories(): Promise<string[]> {
     const result = await getClawRouterAppSdkClient().ecosystem.skills.categories.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch skill categories');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill categories');
     const items: SdkSkillCategoriesResponse['items'] = readRequiredApiItems(
       result,
       'Failed to fetch skill categories',
@@ -113,7 +113,7 @@ export const skillService = {
 
   async getMySkills(): Promise<InstalledSkill[]> {
     const result = await getClawRouterAppSdkClient().ecosystem.users.current.skills.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch installed skills');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch installed skills');
     const items: SdkAppInstalledSkillsResponse['items'] = readRequiredApiItems(
       result,
       'Failed to fetch installed skills',
@@ -127,7 +127,7 @@ export const skillService = {
       skillConfigRequest(config),
       createRequestParams('skill-enable'),
     );
-    ensurePlusApiSuccess(result, 'Failed to enable skill');
+    ensureSdkworkApiSuccess(result, 'Failed to enable skill');
     return readInstalledSkillResult(result, 'Enabled skill response is missing data');
   },
 
@@ -136,7 +136,7 @@ export const skillService = {
       requiredSafePathSegment(skillId, 'skillId'),
       createRequestParams('skill-disable'),
     );
-    ensurePlusApiSuccess(result, 'Failed to disable skill');
+    ensureSdkworkApiSuccess(result, 'Failed to disable skill');
     return readInstalledSkillResult(result, 'Disabled skill response is missing data');
   },
 
@@ -146,7 +146,7 @@ export const skillService = {
       skillConfigRequest(config),
       createRequestParams('skill-config'),
     );
-    ensurePlusApiSuccess(result, 'Failed to update skill config');
+    ensureSdkworkApiSuccess(result, 'Failed to update skill config');
     return readInstalledSkillResult(result, 'Updated skill response is missing data');
   },
 };

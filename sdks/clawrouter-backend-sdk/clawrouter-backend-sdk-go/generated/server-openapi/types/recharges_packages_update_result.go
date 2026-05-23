@@ -4,6 +4,5 @@ package types
 type RechargesPackagesUpdateResult struct {
 	Code string `json:"code"`
 	Data AdminRechargePackageMutationResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

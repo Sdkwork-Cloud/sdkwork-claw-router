@@ -1,0 +1,178 @@
+fragment: operations/backend-commerce-orders
+frontend_operations:
+- route: /admin/orders
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
+  operation: backendOrdersList
+  operation_id: orders.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/orders
+  sdk_domain: commerce
+  summary: Orders List
+  description: Standard appbase commerce API for orders.list; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_order
+  - commerce_order_item
+  - commerce_order_amount_breakdown
+  - commerce_order_address_snapshot
+  - commerce_order_event
+  - commerce_order_cancellation
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_fulfillment_order
+  - commerce_refund
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema: &id001
+    name: CommerceStandardCollectionResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items:
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            status:
+              type: string
+              nullable: true
+              maxLength: 64
+            createdAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            updatedAt:
+              type: string
+              nullable: true
+              maxLength: 64
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200
+- route: /admin/orders
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
+  operation: backendOrdersRetrieve
+  operation_id: orders.retrieve
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/orders/{orderId}
+  sdk_domain: commerce
+  summary: Orders Retrieve
+  description: Standard appbase commerce API for orders.retrieve; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_order
+  - commerce_order_item
+  - commerce_order_amount_breakdown
+  - commerce_order_address_snapshot
+  - commerce_order_event
+  - commerce_order_cancellation
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_fulfillment_order
+  - commerce_refund
+  query_parameters: []
+  response_schema:
+    name: CommerceStandardResourceResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    properties:
+      item:
+        type: object
+        additionalProperties: false
+        required:
+        - id
+        properties:
+          id:
+            type: string
+            minLength: 1
+            maxLength: 128
+          status:
+            type: string
+            nullable: true
+            maxLength: 64
+          createdAt:
+            type: string
+            nullable: true
+            maxLength: 64
+          updatedAt:
+            type: string
+            nullable: true
+            maxLength: 64
+- route: /admin/orders
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
+  operation: backendOrdersEventsList
+  operation_id: orders.events.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/orders/{orderId}/events
+  sdk_domain: commerce
+  summary: Orders Events List
+  description: Standard appbase commerce API for orders.events.list; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_order
+  - commerce_order_item
+  - commerce_order_amount_breakdown
+  - commerce_order_address_snapshot
+  - commerce_order_event
+  - commerce_order_cancellation
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_fulfillment_order
+  - commerce_refund
+  query_parameters:
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  response_schema: *id001

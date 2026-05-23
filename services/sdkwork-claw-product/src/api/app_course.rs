@@ -495,7 +495,7 @@ async fn serve_course_upload_asset(
     let content_type = match course_video_content_type_for_path(&asset_path) {
         Some(content_type) => content_type,
         None => {
-            return bad_request("course upload asset must be a supported video file".to_owned())
+            return bad_request("course upload asset must be a supported video file".to_owned());
         }
     };
     let file = match fs::File::open(&asset_path).await {
@@ -886,7 +886,7 @@ fn resolve_course_upload_path(upload_root: &FsPath, file_path: &str) -> Result<P
             _ => {
                 return Err(
                     "course upload asset path must stay within /uploads/courses/".to_owned(),
-                )
+                );
             }
         }
     }

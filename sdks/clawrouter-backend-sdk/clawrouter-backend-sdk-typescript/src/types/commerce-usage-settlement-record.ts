@@ -2,10 +2,10 @@ import type { JsonValue } from './json-value';
 
 /** Commerce usage settlement record schema exposed by Claw Router. */
 export interface CommerceUsageSettlementRecord {
-  /** Account history id field on commerce usage settlement record. */
-  account_history_id?: string;
   /** Account id field on commerce usage settlement record. */
   account_id?: string;
+  /** Account ledger entry id field on commerce usage settlement record. */
+  account_ledger_entry_id?: string;
   /** Amount field on commerce usage settlement record. */
   amount?: string;
   /** Asset type field on commerce usage settlement record. */

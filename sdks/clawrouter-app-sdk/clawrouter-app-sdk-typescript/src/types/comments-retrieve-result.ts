@@ -7,7 +7,5 @@ export interface CommentsRetrieveResult {
   /** Data field on comments retrieve result. */
   data?: ForumCommentDetail;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

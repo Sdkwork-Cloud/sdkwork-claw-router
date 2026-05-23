@@ -11,5 +11,4 @@ class AccessGroupsListResult:
     """Access groups list result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminAccessGroupsResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

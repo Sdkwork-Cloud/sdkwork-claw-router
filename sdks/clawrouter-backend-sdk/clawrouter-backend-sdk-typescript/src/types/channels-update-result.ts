@@ -7,7 +7,5 @@ export interface ChannelsUpdateResult {
   /** Data field on channels update result. */
   data?: AdminChannelMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

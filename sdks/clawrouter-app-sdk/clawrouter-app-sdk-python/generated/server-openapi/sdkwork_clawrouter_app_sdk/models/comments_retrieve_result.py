@@ -11,5 +11,4 @@ class CommentsRetrieveResult:
     """Comments retrieve result schema exposed by Claw Router."""
     code: str
     data: Optional[ForumCommentDetail] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

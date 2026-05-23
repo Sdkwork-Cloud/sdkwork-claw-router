@@ -4,6 +4,5 @@ package types
 type RuntimeSettingsRetrieveResult struct {
 	Code string `json:"code"`
 	Data AuthRuntimeSettingsResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

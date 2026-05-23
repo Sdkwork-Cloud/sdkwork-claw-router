@@ -1,6 +1,6 @@
-import {
+﻿import {
   createRequestParams,
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
   readApiRecord,
@@ -42,10 +42,14 @@ export interface Model {
   id: string;
   vendorId: string;
   vendorCode: string;
+  model: string;
+  displayName: string;
   name: string;
   type: 'Chat' | 'Image' | 'Audio' | 'Embedding' | 'Music' | 'SoundEffect' | 'Video';
   priceIn: string;
   priceOut: string;
+  cacheReadPrice: string;
+  cacheWritePrice: string;
   status: 'active' | 'inactive';
   calls: string;
   description: string | null;
@@ -129,12 +133,25 @@ export type VendorCreateInput = {
   description: string;
 };
 
+export type ModelRegionPriceInput = {
+  regionCode: string;
+  priceIn: string;
+  priceOut: string;
+  cacheReadPrice?: string;
+  cacheWritePrice?: string;
+};
+
 export type ModelCreateInput = {
   vendorId: string;
-  name: string;
+  model?: string;
+  displayName?: string | null;
+  name?: string;
   type: Model['type'];
   priceIn: string;
   priceOut: string;
+  cacheReadPrice: string;
+  cacheWritePrice: string;
+  regionPrices: ModelRegionPriceInput[];
   contextTokens: string;
   maxOutputTokens?: number | null;
   description?: string | null;
@@ -150,6 +167,8 @@ export type ModelCreateInput = {
 export type ModelUpdateInput = ModelCreateInput & {
   currentType?: Model['type'];
 };
+
+type ModelPatchInput = Partial<ModelUpdateInput> & Pick<AdminAiModelUpdateRequest, 'status'>;
 
 export const KNOWN_VENDORS = [
   { id: 'v_openai', name: 'OpenAI', desc: 'Industry leading LLMs inclusive of GPT-4 and DALL-E.' },
@@ -175,14 +194,14 @@ export function selectPreferredModelVendorId(
 export class ModelService {
   static async fetchVendors(): Promise<Vendor[]> {
     const result = await getClawRouterBackendSdkClient().ai.modelVendors.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch vendors');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch vendors');
     return readRequiredApiItems(result, 'Failed to fetch vendors')
       .map(normalizeVendor);
   }
 
   static async fetchModels(): Promise<Model[]> {
     const modelsResult = await getClawRouterBackendSdkClient().ai.models.list();
-    ensurePlusApiSuccess(modelsResult, 'Failed to fetch models');
+    ensureSdkworkApiSuccess(modelsResult, 'Failed to fetch models');
     const models = readRequiredApiItems(modelsResult, 'Failed to fetch models')
       .map(normalizeModel);
     const rankingCalls = modelCallsByName(await fetchModelRankingCallStats());
@@ -191,7 +210,7 @@ export class ModelService {
     }
     return models.map((model) => ({
       ...model,
-      calls: rankingCalls.get(model.name) ?? model.calls,
+      calls: rankingCalls.get(model.displayName) ?? rankingCalls.get(model.model) ?? model.calls,
     }));
   }
 
@@ -217,7 +236,7 @@ export class ModelService {
 
   static async fetchModelRankings(): Promise<Pick<ModelRankingItem, 'name' | 'requests' | 'baseVolume'>[]> {
     const result = await getClawRouterBackendSdkClient().ai.modelRankings.list({ limit: 200 });
-    ensurePlusApiSuccess(result, 'Failed to fetch model rankings');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch model rankings');
     return readRequiredApiItems(readApiRecord(result), 'Failed to fetch model rankings', ['items'])
       .map(normalizeRankingItem)
       .filter((item): item is Pick<ModelRankingItem, 'name' | 'requests' | 'baseVolume'> => item !== null);
@@ -225,13 +244,13 @@ export class ModelService {
 
   static async fetchModelRankingRefreshStatus(): Promise<ModelRankingRefreshStatusView> {
     const result = await getClawRouterBackendSdkClient().ai.modelRankings.status.retrieve();
-    ensurePlusApiSuccess(result, 'Failed to fetch model ranking refresh status');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch model ranking refresh status');
     return normalizeModelRankingRefreshStatus(readApiRecord(result));
   }
 
   static async fetchModelRankingRefreshJobs(): Promise<ModelRankingRefreshJobHistoryView> {
     const result = await getClawRouterBackendSdkClient().ai.modelRankings.jobs.list({ limit: 20 });
-    ensurePlusApiSuccess(result, 'Failed to fetch model ranking refresh jobs');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch model ranking refresh jobs');
     return {
       items: readRequiredApiItems(readApiRecord(result), 'Failed to fetch model ranking refresh jobs', ['items'])
         .map(normalizeModelRankingRefreshJob),
@@ -243,7 +262,7 @@ export class ModelService {
       toModelRankingRefreshTriggerRequest(),
       createRequestParams('admin-model-ranking-refresh'),
     );
-    ensurePlusApiSuccess(result, 'Failed to trigger model ranking refresh');
+    ensureSdkworkApiSuccess(result, 'Failed to trigger model ranking refresh');
     return normalizeModelRankingRefreshTrigger(readApiRecord(result));
   }
 
@@ -252,7 +271,7 @@ export class ModelService {
       toSyncCatalogRequest(),
       createRequestParams('admin-model-catalog-sync'),
     );
-    ensurePlusApiSuccess(result, 'Failed to sync vendors and models');
+    ensureSdkworkApiSuccess(result, 'Failed to sync vendors and models');
     const data = readApiRecord(result);
     return {
       synced: readRequiredBoolean(data, 'synced', 'Model catalog sync response is missing synced flag'),
@@ -286,7 +305,7 @@ export class ModelService {
       toCreateVendorRequest(vendor),
       createRequestParams('admin-model-vendor-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to add vendor');
+    ensureSdkworkApiSuccess(result, 'Failed to add vendor');
     return normalizeVendor(readRequiredApiItem(result, 'Created vendor response is missing data'));
   }
 
@@ -295,7 +314,7 @@ export class ModelService {
       toCreateModelRequest(model),
       createRequestParams('admin-ai-model-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to add model');
+    ensureSdkworkApiSuccess(result, 'Failed to add model');
     return normalizeModel(readRequiredApiItem(result, 'Created model response is missing data'));
   }
 
@@ -305,8 +324,12 @@ export class ModelService {
       toUpdateModelRequest(model),
       createRequestParams('admin-ai-model-update'),
     );
-    ensurePlusApiSuccess(result, 'Failed to update model');
+    ensureSdkworkApiSuccess(result, 'Failed to update model');
     return normalizeModel(readRequiredApiItem(result, 'Updated model response is missing data'));
+  }
+
+  static updateModelStatus(id: string, status: Model['status']): Promise<Model> {
+    return updateModelPatch(id, { status }, 'admin-ai-model-status-update', 'Failed to update model status');
   }
 
   static async deleteModel(id: string): Promise<boolean> {
@@ -316,8 +339,23 @@ export class ModelService {
   }
 }
 
+async function updateModelPatch(
+  id: string,
+  model: ModelPatchInput,
+  requestIdPrefix: string,
+  errorMessage: string,
+): Promise<Model> {
+  const result = await getClawRouterBackendSdkClient().ai.models.update(
+    requiredSafePathSegment(id, 'modelId'),
+    toUpdateModelRequest(model),
+    createRequestParams(requestIdPrefix),
+  );
+  ensureSdkworkApiSuccess(result, errorMessage);
+  return normalizeModel(readRequiredApiItem(result, 'Updated model response is missing data'));
+}
+
 function ensureDeleteResult(result: unknown, message: string): void {
-  ensurePlusApiSuccess(result, message);
+  ensureSdkworkApiSuccess(result, message);
   if (readBoolean(readApiRecord(result), 'deleted') !== true) {
     throw new Error(message);
   }
@@ -433,33 +471,94 @@ function toCreateVendorRequest(vendor: VendorCreateInput): AdminModelVendorCreat
 }
 
 function toCreateModelRequest(model: ModelCreateInput): AdminAiModelCreateRequest {
-  return {
+  const regionPrices = normalizedRegionPrices(model);
+  const runtimeModel = resolveModelIdentifier(model);
+  const request: AdminAiModelCreateRequest = {
     vendorId: requiredText(model.vendorId, 'vendorId'),
-    name: modelName(model.name),
+    model: modelName(runtimeModel),
+    displayName: optionalNullableText(model.displayName, 'displayName', 128) ?? undefined,
     type: modelType(model.type),
     priceIn: decimalAmount(model.priceIn, 'priceIn'),
     priceOut: decimalAmount(model.priceOut, 'priceOut'),
+    cacheReadPrice: optionalDecimalAmount(model.cacheReadPrice, 'cacheReadPrice'),
+    cacheWritePrice: optionalDecimalAmount(model.cacheWritePrice, 'cacheWritePrice'),
+    regionPrices: regionPrices.map((regionPrice) => ({
+      regionCode: regionCode(regionPrice.regionCode, 'regionPrices.regionCode'),
+      priceIn: decimalAmount(regionPrice.priceIn, `regionPrices.${regionPrice.regionCode}.priceIn`),
+      priceOut: decimalAmount(regionPrice.priceOut, `regionPrices.${regionPrice.regionCode}.priceOut`),
+      cacheReadPrice: optionalDecimalAmount(regionPrice.cacheReadPrice, `regionPrices.${regionPrice.regionCode}.cacheReadPrice`),
+      cacheWritePrice: optionalDecimalAmount(regionPrice.cacheWritePrice, `regionPrices.${regionPrice.regionCode}.cacheWritePrice`),
+    })),
     contextTokens: requiredText(model.contextTokens, 'contextTokens'),
     ...defaultModelCreateMetadata(model.type),
     ...modelCapabilityMetadata(model),
   };
+  return removeUndefinedProperties(request);
 }
 
-function toUpdateModelRequest(model: ModelUpdateInput): AdminAiModelUpdateRequest {
-  const nextType = modelType(model.type);
+function toUpdateModelRequest(model: ModelPatchInput): AdminAiModelUpdateRequest {
   const request: AdminAiModelUpdateRequest = {
-    vendorId: requiredText(model.vendorId, 'vendorId'),
-    name: modelName(model.name),
-    priceIn: decimalAmount(model.priceIn, 'priceIn'),
-    priceOut: decimalAmount(model.priceOut, 'priceOut'),
-    contextTokens: requiredText(model.contextTokens, 'contextTokens'),
     ...modelCapabilityMetadata(model),
   };
-  if (!model.currentType || model.currentType !== nextType) {
-    request.type = nextType;
-    Object.assign(request, defaultModelCreateMetadata(nextType));
+  if (model.vendorId !== undefined) {
+    request.vendorId = requiredText(model.vendorId, 'vendorId');
+  }
+  if (model.model !== undefined || model.name !== undefined) {
+    request.model = modelName(resolveModelIdentifier(model));
+  }
+  if (model.displayName !== undefined) {
+    request.displayName = optionalNullableText(model.displayName, 'displayName', 128) ?? undefined;
+  }
+  if (model.priceIn !== undefined) {
+    request.priceIn = decimalAmount(model.priceIn, 'priceIn');
+  }
+  if (model.priceOut !== undefined) {
+    request.priceOut = decimalAmount(model.priceOut, 'priceOut');
+  }
+  if (model.cacheReadPrice !== undefined) {
+    request.cacheReadPrice = optionalDecimalAmount(model.cacheReadPrice, 'cacheReadPrice');
+  }
+  if (model.cacheWritePrice !== undefined) {
+    request.cacheWritePrice = optionalDecimalAmount(model.cacheWritePrice, 'cacheWritePrice');
+  }
+  if (model.regionPrices !== undefined || model.priceIn !== undefined || model.priceOut !== undefined) {
+    request.regionPrices = normalizedRegionPrices(model).map((regionPrice) => ({
+      regionCode: regionCode(regionPrice.regionCode, 'regionPrices.regionCode'),
+      priceIn: decimalAmount(regionPrice.priceIn, `regionPrices.${regionPrice.regionCode}.priceIn`),
+      priceOut: decimalAmount(regionPrice.priceOut, `regionPrices.${regionPrice.regionCode}.priceOut`),
+      cacheReadPrice: optionalDecimalAmount(regionPrice.cacheReadPrice, `regionPrices.${regionPrice.regionCode}.cacheReadPrice`),
+      cacheWritePrice: optionalDecimalAmount(regionPrice.cacheWritePrice, `regionPrices.${regionPrice.regionCode}.cacheWritePrice`),
+    }));
+  }
+  if (model.contextTokens !== undefined) {
+    request.contextTokens = requiredText(model.contextTokens, 'contextTokens');
+  }
+  if (model.status !== undefined) {
+    request.status = model.status;
+  }
+  if (model.type !== undefined) {
+    const nextType = modelType(model.type);
+    if (!model.currentType || model.currentType !== nextType) {
+      Object.assign(request, defaultModelCreateMetadata(nextType));
+      request.type = nextType;
+    }
   }
   return request;
+}
+
+function normalizedRegionPrices(model: Partial<Pick<ModelCreateInput, 'priceIn' | 'priceOut' | 'cacheReadPrice' | 'cacheWritePrice'>> & {
+  regionPrices?: ModelRegionPriceInput[];
+}): ModelRegionPriceInput[] {
+  if (Array.isArray(model.regionPrices) && model.regionPrices.length > 0) {
+    return model.regionPrices;
+  }
+  return [{
+    regionCode: 'global',
+    priceIn: requiredText(model.priceIn ?? '', 'priceIn'),
+    priceOut: requiredText(model.priceOut ?? '', 'priceOut'),
+    cacheReadPrice: model.cacheReadPrice,
+    cacheWritePrice: model.cacheWritePrice,
+  }];
 }
 
 function requiredText(value: string, fieldName: string): string {
@@ -490,9 +589,25 @@ function optionalNullableText(value: string | null | undefined, fieldName: strin
 }
 
 function modelName(value: string): string {
-  const normalized = requiredText(value, 'name');
+  const normalized = requiredText(value, 'model');
   if (!/^[A-Za-z0-9._:/-]+$/.test(normalized)) {
-    throw new Error('name must use ASCII letters, numbers, dot, underscore, colon, slash, or hyphen');
+    throw new Error('model must use ASCII letters, numbers, dot, underscore, colon, slash, or hyphen');
+  }
+  return normalized;
+}
+
+function resolveModelIdentifier(model: Pick<ModelCreateInput, 'model' | 'name'>): string {
+  const runtimeModel = model.model?.trim() || model.name?.trim() || '';
+  if (!runtimeModel) {
+    throw new Error('model is required');
+  }
+  return runtimeModel;
+}
+
+function regionCode(value: string, fieldName: string): string {
+  const normalized = requiredText(value, fieldName);
+  if (!/^[a-z0-9][a-z0-9_-]{0,63}$/.test(normalized)) {
+    throw new Error(`${fieldName} must be a lowercase region code`);
   }
   return normalized;
 }
@@ -514,6 +629,34 @@ function decimalAmount(value: string, fieldName: string): string {
     throw new Error(`${fieldName} must be greater than zero`);
   }
   return normalized;
+}
+
+function optionalDecimalAmount(value: string | undefined, fieldName: string): string | undefined {
+  if (value === undefined) {
+    return undefined;
+  }
+  const normalized = value.trim().replace(/,/g, '');
+  if (!normalized) {
+    return '';
+  }
+  if (!/^[0-9]+(\.[0-9]{1,12})?$/.test(normalized)) {
+    throw new Error(`${fieldName} must be a positive decimal amount`);
+  }
+  const numeric = Number(normalized);
+  if (!Number.isFinite(numeric) || numeric <= 0) {
+    throw new Error(`${fieldName} must be greater than zero`);
+  }
+  return normalized;
+}
+
+function removeUndefinedProperties<T extends object>(value: T): T {
+  const record = value as Record<string, unknown>;
+  for (const key of Object.keys(value)) {
+    if (record[key] === undefined) {
+      delete record[key];
+    }
+  }
+  return value;
 }
 
 function optionalNonNegativeInteger(value: number | null | undefined, fieldName: string): number | null {
@@ -540,7 +683,7 @@ function boundedStringArray(values: string[] | undefined, fieldName: string, max
   });
 }
 
-function modelCapabilityMetadata(model: ModelCreateInput): Partial<Pick<
+function modelCapabilityMetadata(model: Partial<ModelCreateInput>): Partial<Pick<
   AdminAiModelCreateRequest,
   | 'description'
   | 'capabilityIntro'
@@ -605,14 +748,20 @@ function normalizeVendor(value: unknown): Vendor {
 
 function normalizeModel(value: unknown): Model {
   const item = readRequiredRecord(value, 'Model record is required');
+  const runtimeModel = readModelIdentifier(item);
+  const displayName = readModelDisplayName(item, runtimeModel);
   return {
     id: readRequiredString(item, 'id', 'Model id is required'),
     vendorId: readRequiredString(item, 'vendorId', 'Model vendor id is required'),
     vendorCode: readRequiredString(item, 'vendorCode', 'Model vendor code is required'),
-    name: readRequiredString(item, 'name', 'Model name is required'),
+    model: runtimeModel,
+    displayName,
+    name: displayName,
     type: readModelType(item),
-    priceIn: readRequiredString(item, 'priceIn', 'Model input price is required'),
-    priceOut: readRequiredString(item, 'priceOut', 'Model output price is required'),
+    priceIn: readRequiredStringField(item, 'priceIn', 'Model input price is required'),
+    priceOut: readRequiredStringField(item, 'priceOut', 'Model output price is required'),
+    cacheReadPrice: readRequiredStringField(item, 'cacheReadPrice', 'Model cache read price is required'),
+    cacheWritePrice: readRequiredStringField(item, 'cacheWritePrice', 'Model cache write price is required'),
     status: readModelStatus(item),
     calls: readRequiredString(item, 'calls', 'Model calls are required'),
     description: readRequiredNullableString(item, 'description', 'Model description field is required'),
@@ -635,6 +784,19 @@ function normalizeModel(value: unknown): Model {
     routingState: readRequiredNullableNumber(item, 'routingState', 'Model routing state field is required', 'Model routing state'),
     replacementModel: readRequiredNullableString(item, 'replacementModel', 'Model replacement model field is required'),
   };
+}
+
+function readModelIdentifier(item: ApiRecord): string {
+  return readRequiredStringField(item, 'model', 'Model model is required');
+}
+
+function readModelDisplayName(item: ApiRecord, runtimeModel: string): string {
+  const displayName = readString(item, 'displayName').trim();
+  if (displayName) {
+    return displayName;
+  }
+  const name = readString(item, 'name').trim();
+  return name || runtimeModel;
 }
 
 function modelCallsByName(items: Pick<ModelRankingItem, 'name' | 'requests' | 'baseVolume'>[]): Map<string, string> {
@@ -690,6 +852,13 @@ function readRequiredNullableString(item: ApiRecord, key: string, message: strin
     throw new Error(message);
   }
   return readNullableString(item, key);
+}
+
+function readRequiredStringField(item: ApiRecord, key: string, message: string): string {
+  if (!(key in item)) {
+    throw new Error(message);
+  }
+  return readString(item, key).trim();
 }
 
 function readRequiredNullableNumber(item: ApiRecord, key: string, message: string, label: string): number | null {

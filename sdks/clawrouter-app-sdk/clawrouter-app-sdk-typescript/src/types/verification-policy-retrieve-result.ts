@@ -7,7 +7,5 @@ export interface VerificationPolicyRetrieveResult {
   /** Data field on verification policy retrieve result. */
   data?: AuthVerificationPolicy;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

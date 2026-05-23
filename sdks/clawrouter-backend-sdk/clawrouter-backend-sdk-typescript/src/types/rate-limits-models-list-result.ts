@@ -7,7 +7,5 @@ export interface RateLimitsModelsListResult {
   /** Data field on rate limits models list result. */
   data?: AdminModelLimitsResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

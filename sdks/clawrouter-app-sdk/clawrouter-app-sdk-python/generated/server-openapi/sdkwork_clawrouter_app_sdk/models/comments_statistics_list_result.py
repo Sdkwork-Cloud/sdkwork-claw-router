@@ -11,5 +11,4 @@ class CommentsStatisticsListResult:
     """Comments statistics list result schema exposed by Claw Router."""
     code: str
     data: Optional[ForumCommentStatistics] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

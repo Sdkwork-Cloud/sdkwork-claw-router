@@ -7,7 +7,5 @@ export interface ApiKeysCreateResult {
   /** Data field on api keys create result. */
   data?: CreateApiKeyResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

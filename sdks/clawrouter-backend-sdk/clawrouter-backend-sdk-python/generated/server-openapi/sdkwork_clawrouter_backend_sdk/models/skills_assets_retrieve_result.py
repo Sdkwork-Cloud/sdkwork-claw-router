@@ -11,5 +11,4 @@ class SkillsAssetsRetrieveResult:
     """Skills assets retrieve result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminSkillAssetMutationResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

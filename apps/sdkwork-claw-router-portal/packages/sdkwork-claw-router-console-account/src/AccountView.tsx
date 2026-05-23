@@ -1,8 +1,8 @@
-import { useCallback, useState, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { User, Mail, Building, ShieldCheck, LogIn, Smartphone, KeyRound, Briefcase, Wallet, CreditCard, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { BusinessStatePanel, CopyButton } from 'sdkwork-claw-router-commons';
-import { AccountService, AccountStats } from './accountService';
+import { AccountService, type AccountStats } from './accountService';
 
 import { useTranslation } from 'react-i18next';
 type TranslationFunction = ReturnType<typeof useTranslation>['t'];
@@ -171,7 +171,7 @@ export function AccountView() {
                 </div>
                 <div className="mt-6 flex items-center justify-between">
                   <div className="text-xs text-slate-400">{t("console.account.accountview.text.kp8u5l", "预计可支撑并发调用约")}<strong className="text-white">{data.estDaysRemaining} {t("console.account.accountview.text.cae2ro", "天")}</strong></div>
-                  <Link to="/console/billing?tab=recharge" className="text-xs font-bold bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-lg transition-colors border border-white/5 flex items-center gap-1 shadow-sm">
+                  <Link to="/console/recharge" className="text-xs font-bold bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-lg transition-colors border border-white/5 flex items-center gap-1 shadow-sm">
                     {t("console.account.accountview.text.1p5af6r", "去充值")}<ArrowRight className="w-3 h-3" />
                   </Link>
                 </div>

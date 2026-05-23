@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Search, Plus, Megaphone, Clock, CheckCircle2, MoreVertical, X, Edit, Trash2, Send, Loader2, AlertCircle, BellRing, BellOff } from 'lucide-react';
 import Editor from '@monaco-editor/react';
 import { useTranslation } from 'react-i18next';
-import { BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
+import { AdminTableShell, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
 import { AnnouncementService, type Announcement } from './announcementService';
 import {
   createAnnouncementInputFromForm,
@@ -194,8 +194,8 @@ export function AnnouncementAdmin() {
   };
 
   return (
-    <div className="w-full h-full flex flex-col space-y-6">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-4">
+    <div className="flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden">
+      <div className="flex shrink-0 flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
         <div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-2">
             <Megaphone className="w-6 h-6 text-amber-500" />
@@ -222,16 +222,19 @@ export function AnnouncementAdmin() {
       </div>
 
       {error && (
-        <div className="flex items-start gap-2 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/30 dark:bg-red-500/10 dark:text-red-300">
+        <div className="flex shrink-0 items-start gap-2 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/30 dark:bg-red-500/10 dark:text-red-300">
           <AlertCircle className="mt-0.5 h-4 w-4 flex-shrink-0" />
           <span>{error}</span>
         </div>
       )}
 
-      <div className="flex-1 bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl shadow-sm overflow-hidden flex flex-col">
-        <div className="overflow-x-auto flex-1">
+      <AdminTableShell
+        data-admin-announcement-table-card
+        className="rounded-xl dark:bg-[#1a1a1a]"
+        viewportProps={{ 'data-admin-announcement-table-viewport': true }}
+      >
           <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
-            <thead className="bg-slate-50 dark:bg-[#121212] sticky top-0 border-b border-slate-200 dark:border-white/10 text-xs uppercase font-semibold text-slate-500 dark:text-slate-400">
+            <thead className="sticky top-0 z-10 bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10 text-xs uppercase font-semibold text-slate-500 dark:text-slate-400">
               <tr>
                 <th className="px-6 py-4">{t('admin.announcement.table.title')}</th>
                 <th className="px-6 py-4">{t('admin.announcement.table.audience')}</th>
@@ -321,8 +324,7 @@ export function AnnouncementAdmin() {
               ))}
             </tbody>
           </table>
-        </div>
-      </div>
+      </AdminTableShell>
 
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm shadow-xl">

@@ -1,4 +1,4 @@
-import { ensurePlusApiSuccess, getClawRouterAppSdkClient, readRequiredApiItems } from 'sdkwork-claw-router-commons/runtime';
+import { ensureSdkworkApiSuccess, getClawRouterAppSdkClient, readRequiredApiItems } from 'sdkwork-claw-router-commons/runtime';
 import type { Model, ModelCategoryKey, ModelGroupKey } from './data/models';
 import {
   findModelByCatalogRouteId,
@@ -33,7 +33,7 @@ export class ModelService {
       q: normalizeQueryString(filters.searchQuery),
       limit: filters.limit,
     });
-    ensurePlusApiSuccess(result, 'Failed to fetch models');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch models');
     return resolveRuntimeModelCatalog(readRequiredApiItems(result, 'Failed to fetch models'));
   }
 }

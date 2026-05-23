@@ -14,86 +14,117 @@ fn assert_sql_contains(sql: &str, expected: &str) {
     );
 }
 
-#[test]
-fn payment_callback_payment_lookup_casts_integer_projection_aliases_for_stable_postgres_mapping() {
-    for projection in [
-        "CAST(p.id AS TEXT) AS id",
-        "CAST(p.order_id AS TEXT) AS order_id",
-        "CAST(p.tenant_id AS TEXT) AS tenant_id",
-        "CAST(p.organization_id AS TEXT) AS organization_id",
-        "CAST(COALESCE(o.user_id, 0) AS TEXT) AS user_id",
-        "CAST(p.status AS TEXT) AS status",
-        "CAST(COALESCE(p.provider, 0) AS TEXT) AS provider",
-        "required_integer_cell(&row, \"status\", \"payment\")?",
-    ] {
-        assert_sql_contains(POSTGRES_PAYMENT_CALLBACK_STORE, projection);
-    }
+fn assert_sql_not_contains(sql: &str, unexpected: &str) {
+    let actual = compact_sql(sql);
+    let compact_unexpected = compact_sql(unexpected);
     assert!(
-        !POSTGRES_PAYMENT_CALLBACK_STORE.contains("CAST(COALESCE(p.status, 0) AS TEXT) AS status"),
-        "Postgres payment callback must not default missing payment statuses"
+        !actual.contains(&compact_unexpected),
+        "Postgres payment callback SQL must not contain `{unexpected}`"
     );
 }
 
 #[test]
-fn payment_callback_recharge_and_account_queries_cast_integer_projection_aliases() {
-    for projection in [
-        "SELECT CAST(id AS TEXT) AS id, CAST(status AS TEXT) AS status, CAST(COALESCE(point_amount, 0) AS TEXT) AS point_amount",
-        "required_integer_cell(&row, \"status\", \"vip recharge\")?",
-        "SELECT CAST(id AS TEXT) AS id, CAST(COALESCE(available_points, 0) AS TEXT) AS available_points",
-    ] {
-        assert_sql_contains(POSTGRES_PAYMENT_CALLBACK_STORE, projection);
-    }
-    assert!(
-        !POSTGRES_PAYMENT_CALLBACK_STORE.contains("CAST(COALESCE(status, 0) AS TEXT) AS status"),
-        "Postgres payment callback must not default missing recharge statuses"
-    );
-}
-
-#[test]
-fn payment_callback_points_account_creation_uses_account_unique_key_conflict_guard() {
+fn payment_callback_payment_lookup_uses_appbase_order_payment_attempt_and_intent_tables() {
     for expected in [
-        "ON CONFLICT (tenant_id, organization_id, user_id, account_type) DO NOTHING",
-        "RETURNING CAST(id AS TEXT) AS id",
+        "FROM commerce_payment_attempt pa",
+        "JOIN commerce_order o",
+        "JOIN commerce_payment_intent pi",
+        "WHERE pa.provider = $1 AND pa.out_trade_no = $2",
+        "FOR UPDATE OF pa, o, pi",
+        "required_string_cell(&row, \"status\", \"payment\")?",
+    ] {
+        assert_sql_contains(POSTGRES_PAYMENT_CALLBACK_STORE, expected);
+    }
+
+    for unexpected in [
+        "FROM plus_payment p",
+        "JOIN plus_order o",
+        "CAST(COALESCE(p.status, 0) AS TEXT) AS status",
+    ] {
+        assert_sql_not_contains(POSTGRES_PAYMENT_CALLBACK_STORE, unexpected);
+    }
+}
+
+#[test]
+fn payment_callback_points_account_creation_uses_appbase_account_unique_key_conflict_guard() {
+    for expected in [
+        "FROM commerce_account",
+        "owner_user_id = $3",
+        "asset_type = $4",
+        "currency_code = $5",
+        "ON CONFLICT (tenant_id, organization_id, owner_user_id, asset_type, currency_code) DO NOTHING",
+        "RETURNING id",
         "payment callback points account was not available after concurrent creation",
     ] {
         assert_sql_contains(POSTGRES_PAYMENT_CALLBACK_STORE, expected);
+    }
+
+    for unexpected in [
+        "FROM plus_account",
+        "INSERT INTO plus_account",
+        "ON CONFLICT (tenant_id, organization_id, user_id, account_type) DO NOTHING",
+    ] {
+        assert_sql_not_contains(POSTGRES_PAYMENT_CALLBACK_STORE, unexpected);
     }
 }
 
 #[test]
 fn payment_callback_webhook_event_queries_lock_and_scope_idempotency_by_provider_event_and_nonce() {
     for expected in [
-        "SELECT event_id FROM plus_payment_webhook_event WHERE provider = $1 AND nonce = $2 LIMIT 1",
-        "SELECT CAST(id AS TEXT) AS id, status FROM plus_payment_webhook_event WHERE provider = $1 AND event_id = $2 LIMIT 1 FOR UPDATE",
-        "UPDATE plus_payment_webhook_event SET status = 'RECEIVED'",
+        "SELECT event_id FROM commerce_payment_webhook_event WHERE tenant_id = $1 AND provider = $2 AND nonce = $3 LIMIT 1",
+        "SELECT id, status FROM commerce_payment_webhook_event WHERE tenant_id = $1 AND provider = $2 AND event_id = $3 LIMIT 1 FOR UPDATE",
+        "UPDATE commerce_payment_webhook_event SET status = 'RECEIVED'",
         "RETURNING id",
     ] {
         assert_sql_contains(POSTGRES_PAYMENT_CALLBACK_STORE, expected);
     }
+
+    assert_sql_not_contains(
+        POSTGRES_PAYMENT_CALLBACK_STORE,
+        "plus_payment_webhook_event",
+    );
 }
 
 #[test]
-fn payment_callback_success_updates_payment_order_recharge_and_accounting_tables() {
+fn payment_callback_success_updates_appbase_payment_order_and_ledger_tables() {
     for expected in [
-        "UPDATE plus_payment SET status = 2, transaction_id = $1, success_time = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP WHERE id = $2 AND status <> 2",
-        "UPDATE plus_order SET status = 2, transaction_id = $1, paid_amount = total_amount, pay_success_time = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP WHERE id = $2 AND status IN (1, 5)",
-        "UPDATE plus_account SET available_points = $1, updated_at = CURRENT_TIMESTAMP WHERE id = $2",
-        "INSERT INTO plus_account_history",
-        "INSERT INTO plus_vip_point_change",
-        "UPDATE plus_vip_recharge SET status = 1, recharge_time = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP, remark = $1 WHERE id = $2",
+        "UPDATE commerce_payment_attempt SET status = $1, paid_at = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP WHERE id = $2 AND status <> $1",
+        "UPDATE commerce_payment_intent SET status = $1, updated_at = CURRENT_TIMESTAMP WHERE id = $2 AND status <> $1",
+        "UPDATE commerce_order SET status = $1, paid_at = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP WHERE id = $2 AND status IN ($3, 'pending')",
+        "UPDATE commerce_account SET available_amount = $1, version = version + 1, updated_at = CURRENT_TIMESTAMP WHERE id = $2",
+        "INSERT INTO commerce_account_ledger_entry",
+        "'commerce_payment_attempt'",
     ] {
         assert_sql_contains(POSTGRES_PAYMENT_CALLBACK_STORE, expected);
+    }
+
+    for unexpected in [
+        "UPDATE plus_payment SET",
+        "UPDATE plus_order",
+        "UPDATE plus_account",
+        "INSERT INTO plus_account_history",
+        "INSERT INTO plus_vip_point_change",
+        "UPDATE plus_vip_recharge",
+    ] {
+        assert_sql_not_contains(POSTGRES_PAYMENT_CALLBACK_STORE, unexpected);
     }
 }
 
 #[test]
-fn payment_callback_failed_or_closed_updates_payment_order_and_recharge_without_overwriting_success(
-) {
+fn payment_callback_failed_or_closed_updates_appbase_payment_order_without_overwriting_success() {
     for expected in [
-        "UPDATE plus_payment SET status = $1, transaction_id = $2, updated_at = CURRENT_TIMESTAMP WHERE id = $3 AND status <> 2",
-        "UPDATE plus_order SET status = 5, cancel_time = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP WHERE id = $1 AND status = 1",
-        "UPDATE plus_vip_recharge SET status = 2, updated_at = CURRENT_TIMESTAMP, remark = $1 WHERE tenant_id = $2 AND organization_id = $3 AND user_id = $4 AND transaction_no = $5 AND status <> 1",
+        "UPDATE commerce_payment_attempt SET status = $1, updated_at = CURRENT_TIMESTAMP WHERE id = $2 AND status <> $3",
+        "UPDATE commerce_payment_intent SET status = $1, updated_at = CURRENT_TIMESTAMP WHERE id = $2 AND status <> $3",
+        "UPDATE commerce_order SET status = $1, cancelled_at = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP WHERE id = $2 AND status IN ($3, 'pending')",
     ] {
         assert_sql_contains(POSTGRES_PAYMENT_CALLBACK_STORE, expected);
+    }
+
+    for unexpected in [
+        "UPDATE plus_payment SET status = $1",
+        "UPDATE plus_order SET status",
+        "UPDATE plus_vip_recharge SET status",
+    ] {
+        assert_sql_not_contains(POSTGRES_PAYMENT_CALLBACK_STORE, unexpected);
     }
 }

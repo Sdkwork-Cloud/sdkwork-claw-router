@@ -1,0 +1,199 @@
+fragment: models/admin-open-platform
+frontend_models:
+- route: /admin/service-providers/accounts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  interface: ServiceProviderAccountItem
+  fields:
+  - id
+  - key
+  - name
+  - provider
+  - type
+  - status
+  - qrDefault
+  - appId
+  - tokenRef
+  - secretRef
+  - aesKeyRef
+  - createdAt
+  - updatedAt
+  data_sources:
+  - open_platform_account
+- route: /admin/service-providers/accounts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  interface: ServiceProviderAccountRow
+  fields:
+  - providerId
+  - providerCode
+  - providerName
+  - providerStatus
+  - account
+  data_sources:
+  - open_platform_provider
+  - open_platform_account
+- route: /admin/service-providers/accounts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  interface: ServiceProviderAccountCreateInput
+  fields:
+  - key
+  - name
+  - provider
+  - type
+  - appId
+  - tokenRef
+  - secretRef
+  - aesKeyRef
+  data_sources:
+  - open_platform_account
+- route: /admin/open-platform/mini-programs/accounts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
+  interface: WechatMiniProgramItem
+  fields:
+  - id
+  - key
+  - name
+  - status
+  - qrDefault
+  - defaultEntryId
+  - appId
+  - tokenRef
+  - secretRef
+  - aesKeyRef
+  - createdAt
+  - updatedAt
+  data_sources:
+  - open_platform_account
+- route: /admin/open-platform/mini-programs/urls
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
+  interface: WechatMiniProgramEntryItem
+  fields:
+  - id
+  - accountId
+  - key
+  - type
+  - url
+  - status
+  - createdAt
+  - updatedAt
+  data_sources:
+  - open_platform_entry
+- route: /admin/open-platform/mini-programs/accounts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
+  interface: WechatMiniProgramInput
+  fields:
+  - key
+  - name
+  - appId
+  - tokenRef
+  - secretRef
+  - aesKeyRef
+  data_sources:
+  - open_platform_account
+- route: /admin/open-platform/mini-programs/accounts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
+  interface: WechatMiniProgramUpdateInput
+  fields:
+  - name
+  - status
+  - qrDefault
+  - defaultEntryId
+  - appId
+  - tokenRef
+  - secretRef
+  - aesKeyRef
+  data_sources:
+  - open_platform_account
+- route: /admin/open-platform/mini-programs/urls
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
+  interface: WechatMiniProgramEntryInput
+  fields:
+  - key
+  - url
+  data_sources:
+  - open_platform_entry
+- route: /admin/open-platform/mini-programs/urls
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
+  interface: WechatMiniProgramEntryUpdateInput
+  fields:
+  - key
+  - url
+  - status
+  data_sources:
+  - open_platform_entry
+- route: /admin/open-platform/official-accounts/accounts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
+  interface: WechatOfficialAccountItem
+  fields:
+  - id
+  - key
+  - name
+  - status
+  - qrDefault
+  - defaultEntryId
+  - appId
+  - tokenRef
+  - secretRef
+  - aesKeyRef
+  - createdAt
+  - updatedAt
+  data_sources:
+  - open_platform_account
+- route: /admin/open-platform/official-accounts/menus
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
+  interface: WechatOfficialEntryItem
+  fields:
+  - id
+  - accountId
+  - key
+  - type
+  - url
+  - status
+  - createdAt
+  - updatedAt
+  data_sources:
+  - open_platform_entry
+- route: /admin/open-platform/official-accounts/accounts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
+  interface: WechatOfficialAccountInput
+  fields:
+  - key
+  - name
+  - appId
+  - tokenRef
+  - secretRef
+  - aesKeyRef
+  data_sources:
+  - open_platform_account
+- route: /admin/open-platform/official-accounts/accounts
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
+  interface: WechatOfficialAccountUpdateInput
+  fields:
+  - name
+  - status
+  - qrDefault
+  - defaultEntryId
+  - appId
+  - tokenRef
+  - secretRef
+  - aesKeyRef
+  data_sources:
+  - open_platform_account
+- route: /admin/open-platform/official-accounts/menus
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
+  interface: WechatOfficialEntryInput
+  fields:
+  - key
+  - type
+  - url
+  data_sources:
+  - open_platform_entry
+- route: /admin/open-platform/official-accounts/menus
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
+  interface: WechatOfficialEntryUpdateInput
+  fields:
+  - key
+  - type
+  - url
+  - status
+  data_sources:
+  - open_platform_entry

@@ -3,13 +3,17 @@ use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::{
-    AdminAppCommandFuture, AdminAppItem, AdminAppStore, CreateAdminAppCommand,
-    DeleteAdminAppCommand, GetAdminAppQuery, ListAdminAppsQuery, SetAdminAppStatusCommand,
-    UpdateAdminAppCommand,
+    AdminAppCategoryItem, AdminAppCommandFuture, AdminAppItem, AdminAppStore,
+    CreateAdminAppCategoryCommand, CreateAdminAppCommand, DeleteAdminAppCategoryCommand,
+    DeleteAdminAppCommand, GetAdminAppQuery, ListAdminAppCategoriesQuery, ListAdminAppsQuery,
+    SetAdminAppStatusCommand, UpdateAdminAppCategoryCommand, UpdateAdminAppCommand,
 };
 
 const APP_TARGET_TYPE: i32 = 15;
 const PUBLIC_APP_STORE_TENANT_ID: i64 = 20_001;
+const PUBLIC_APP_STORE_ORGANIZATION_ID: i64 = 0;
+const APP_STORE_CATEGORY_TYPE: i32 = 999_999;
+const APP_STORE_CATEGORY_GROUP: &str = "app-store";
 const ASSIGNED_ID_FLOOR: i64 = 1_000_000_000_000;
 const ASSIGNED_ID_RANGE: u64 = 8_000_000_000_000;
 const MAX_ASSIGNED_ID_ATTEMPTS: u8 = 16;
@@ -26,6 +30,140 @@ impl SqliteAdminAppStore {
 }
 
 impl AdminAppStore for SqliteAdminAppStore {
+    fn list_categories<'a>(
+        &'a self,
+        query: ListAdminAppCategoriesQuery,
+    ) -> AdminAppCommandFuture<'a, Vec<AdminAppCategoryItem>> {
+        Box::pin(async move { list_categories(&self.pool, query).await })
+    }
+
+    fn create_category<'a>(
+        &'a self,
+        command: CreateAdminAppCategoryCommand,
+    ) -> AdminAppCommandFuture<'a, AdminAppCategoryItem> {
+        Box::pin(async move {
+            let mut tx =
+                self.pool.begin().await.map_err(|error| {
+                    store_error("failed to begin app category transaction", error)
+                })?;
+            let id = insert_category(&mut tx, &command).await?;
+            insert_audit_log(
+                &mut tx,
+                &command.audit_log_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.operator_id,
+                command.subject.operator_type,
+                "create_app_category",
+                id,
+                serde_json::json!({
+                    "action": "create_app_category",
+                    "categoryId": id,
+                    "name": &command.name,
+                    "type": command.category_type,
+                    "group": APP_STORE_CATEGORY_GROUP
+                }),
+            )
+            .await?;
+            let item = load_category_by_id(
+                &mut tx,
+                id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+            )
+            .await?
+            .ok_or_else(|| DomainError::new("created app category could not be reloaded"))?;
+            tx.commit()
+                .await
+                .map_err(|error| store_error("failed to commit app category transaction", error))?;
+            Ok(item)
+        })
+    }
+
+    fn update_category<'a>(
+        &'a self,
+        command: UpdateAdminAppCategoryCommand,
+    ) -> AdminAppCommandFuture<'a, Option<AdminAppCategoryItem>> {
+        Box::pin(async move {
+            let mut tx =
+                self.pool.begin().await.map_err(|error| {
+                    store_error("failed to begin app category transaction", error)
+                })?;
+            let updated = update_category(&mut tx, &command).await?;
+            if !updated {
+                tx.commit().await.map_err(|error| {
+                    store_error("failed to commit app category transaction", error)
+                })?;
+                return Ok(None);
+            }
+            insert_audit_log(
+                &mut tx,
+                &command.audit_log_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.operator_id,
+                command.subject.operator_type,
+                "update_app_category",
+                command.category_id,
+                serde_json::json!({
+                    "action": "update_app_category",
+                    "categoryId": command.category_id,
+                    "nameChanged": command.name.is_some(),
+                    "parentChanged": command.parent_id.is_some()
+                }),
+            )
+            .await?;
+            let item = load_category_by_id(
+                &mut tx,
+                command.category_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+            )
+            .await?;
+            tx.commit()
+                .await
+                .map_err(|error| store_error("failed to commit app category transaction", error))?;
+            Ok(item)
+        })
+    }
+
+    fn delete_category<'a>(
+        &'a self,
+        command: DeleteAdminAppCategoryCommand,
+    ) -> AdminAppCommandFuture<'a, bool> {
+        Box::pin(async move {
+            let mut tx =
+                self.pool.begin().await.map_err(|error| {
+                    store_error("failed to begin app category transaction", error)
+                })?;
+            let deleted = delete_category(&mut tx, &command).await?;
+            if deleted {
+                insert_audit_log(
+                    &mut tx,
+                    &command.audit_log_uuid,
+                    &command.request_id,
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    command.subject.operator_type,
+                    "delete_app_category",
+                    command.category_id,
+                    serde_json::json!({
+                        "action": "delete_app_category",
+                        "categoryId": command.category_id
+                    }),
+                )
+                .await?;
+            }
+            tx.commit()
+                .await
+                .map_err(|error| store_error("failed to commit app category transaction", error))?;
+            Ok(deleted)
+        })
+    }
+
     fn list_apps<'a>(
         &'a self,
         query: ListAdminAppsQuery,
@@ -226,6 +364,51 @@ impl AdminAppStore for SqliteAdminAppStore {
             Ok(deleted)
         })
     }
+}
+
+async fn list_categories(
+    pool: &SqlitePool,
+    query: ListAdminAppCategoriesQuery,
+) -> DomainResult<Vec<AdminAppCategoryItem>> {
+    let rows = sqlx::query(
+        r#"
+        SELECT id, uuid, tenant_id, organization_id, name, description, code, icon,
+               COALESCE(sort_weight, 0) AS sort_weight,
+               parent_id, path, COALESCE(visible, 1) AS visible,
+               COALESCE(status, 1) AS status, type AS category_type
+        FROM plus_category
+        WHERE (
+              (tenant_id = ? AND organization_id = ?)
+              OR (tenant_id = ? AND organization_id = ?)
+          )
+          AND type = ?
+          AND group_name = ?
+          AND COALESCE(status, 1) >= 0
+        ORDER BY
+            CASE
+                WHEN tenant_id = ? AND organization_id = ? THEN 0
+                WHEN tenant_id = ? AND organization_id = ? THEN 1
+                ELSE 2
+            END,
+            COALESCE(sort_weight, 0) ASC,
+            id ASC
+        LIMIT 500
+        "#,
+    )
+    .bind(query.subject.tenant_id)
+    .bind(query.subject.organization_id)
+    .bind(PUBLIC_APP_STORE_TENANT_ID)
+    .bind(PUBLIC_APP_STORE_ORGANIZATION_ID)
+    .bind(APP_STORE_CATEGORY_TYPE)
+    .bind(APP_STORE_CATEGORY_GROUP)
+    .bind(query.subject.tenant_id)
+    .bind(query.subject.organization_id)
+    .bind(PUBLIC_APP_STORE_TENANT_ID)
+    .bind(PUBLIC_APP_STORE_ORGANIZATION_ID)
+    .fetch_all(pool)
+    .await
+    .map_err(|error| store_error("failed to list app categories", error))?;
+    rows.into_iter().map(category_from_row).collect()
 }
 
 async fn list_apps(
@@ -482,6 +665,73 @@ async fn insert_app(
     Ok(id)
 }
 
+async fn insert_category(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &CreateAdminAppCategoryCommand,
+) -> DomainResult<i64> {
+    let id = next_category_assigned_id(tx, &command.category_uuid).await?;
+    sqlx::query(
+        r#"
+        INSERT INTO plus_category
+            (id, uuid, tenant_id, organization_id, data_scope, name, description, type, group_name, code, icon, sort_weight, parent_id, path, visible, status, created_at, updated_at)
+        VALUES
+            (?, ?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        "#,
+    )
+    .bind(id)
+    .bind(&command.category_uuid)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(&command.name)
+    .bind(command.description.as_deref())
+    .bind(command.category_type)
+    .bind(APP_STORE_CATEGORY_GROUP)
+    .bind(command.code.as_deref())
+    .bind(command.icon.as_deref())
+    .bind(command.sort_weight)
+    .bind(command.parent_id)
+    .bind(command.path.as_deref())
+    .bind(command.visible)
+    .bind(command.status)
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to create app category", error))?;
+    Ok(id)
+}
+
+async fn load_category_by_id(
+    tx: &mut Transaction<'_, Sqlite>,
+    category_id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+) -> DomainResult<Option<AdminAppCategoryItem>> {
+    let row = sqlx::query(
+        r#"
+        SELECT id, uuid, tenant_id, organization_id, name, description, code, icon,
+               COALESCE(sort_weight, 0) AS sort_weight,
+               parent_id, path, COALESCE(visible, 1) AS visible,
+               COALESCE(status, 1) AS status, type AS category_type
+        FROM plus_category
+        WHERE id = ?
+          AND tenant_id = ?
+          AND organization_id = ?
+          AND type = ?
+          AND group_name = ?
+        "#,
+    )
+    .bind(category_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(APP_STORE_CATEGORY_TYPE)
+    .bind(APP_STORE_CATEGORY_GROUP)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load app category", error))?;
+    row.map(category_from_row).transpose()
+}
+
 async fn update_app(
     tx: &mut Transaction<'_, Sqlite>,
     command: &UpdateAdminAppCommand,
@@ -619,6 +869,66 @@ async fn update_app(
     Ok(true)
 }
 
+async fn update_category(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &UpdateAdminAppCategoryCommand,
+) -> DomainResult<bool> {
+    if command.parent_id.flatten() == Some(command.category_id) {
+        return Err(DomainError::new(
+            "app category parent cannot reference itself",
+        ));
+    }
+    let result = sqlx::query(
+        r#"
+        UPDATE plus_category
+        SET name = CASE WHEN ? THEN ? ELSE name END,
+            description = CASE WHEN ? THEN ? ELSE description END,
+            code = CASE WHEN ? THEN ? ELSE code END,
+            icon = CASE WHEN ? THEN ? ELSE icon END,
+            sort_weight = CASE WHEN ? THEN ? ELSE sort_weight END,
+            parent_id = CASE WHEN ? THEN ? ELSE parent_id END,
+            path = CASE WHEN ? THEN ? ELSE path END,
+            visible = CASE WHEN ? THEN ? ELSE visible END,
+            status = CASE WHEN ? THEN ? ELSE status END,
+            updated_at = ?,
+            v = COALESCE(v, 0) + 1
+        WHERE id = ?
+          AND tenant_id = ?
+          AND organization_id = ?
+          AND type = ?
+          AND group_name = ?
+        "#,
+    )
+    .bind(command.name.is_some())
+    .bind(command.name.as_deref())
+    .bind(command.description.is_some())
+    .bind(command.description.clone().flatten())
+    .bind(command.code.is_some())
+    .bind(command.code.clone().flatten())
+    .bind(command.icon.is_some())
+    .bind(command.icon.clone().flatten())
+    .bind(command.sort_weight.is_some())
+    .bind(command.sort_weight)
+    .bind(command.parent_id.is_some())
+    .bind(command.parent_id.flatten())
+    .bind(command.path.is_some())
+    .bind(command.path.clone().flatten())
+    .bind(command.visible.is_some())
+    .bind(command.visible)
+    .bind(command.status.is_some())
+    .bind(command.status)
+    .bind(&command.requested_at)
+    .bind(command.category_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(APP_STORE_CATEGORY_TYPE)
+    .bind(APP_STORE_CATEGORY_GROUP)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update app category", error))?;
+    Ok(result.rows_affected() > 0)
+}
+
 async fn set_app_status(
     tx: &mut Transaction<'_, Sqlite>,
     command: &SetAdminAppStatusCommand,
@@ -697,6 +1007,67 @@ async fn delete_app(
     delete_catalog_projection(tx, "studio_catalog_asset", command).await?;
     delete_catalog_projection(tx, "studio_catalog_artifact", command).await?;
     Ok(true)
+}
+
+async fn delete_category(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &DeleteAdminAppCategoryCommand,
+) -> DomainResult<bool> {
+    ensure_category_delete_allowed(tx, command).await?;
+    let result = sqlx::query(
+        r#"
+        UPDATE plus_category
+        SET status = -1,
+            visible = 0,
+            updated_at = ?,
+            v = COALESCE(v, 0) + 1
+        WHERE id = ?
+          AND tenant_id = ?
+          AND organization_id = ?
+          AND type = ?
+          AND group_name = ?
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(command.category_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(APP_STORE_CATEGORY_TYPE)
+    .bind(APP_STORE_CATEGORY_GROUP)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to delete app category", error))?;
+    Ok(result.rows_affected() > 0)
+}
+
+async fn ensure_category_delete_allowed(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &DeleteAdminAppCategoryCommand,
+) -> DomainResult<()> {
+    let child_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM plus_category
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND parent_id = ?
+          AND type = ?
+          AND group_name = ?
+          AND COALESCE(status, 1) >= 0
+        "#,
+    )
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(command.category_id)
+    .bind(APP_STORE_CATEGORY_TYPE)
+    .bind(APP_STORE_CATEGORY_GROUP)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to validate child app categories", error))?;
+    if child_count > 0 {
+        return Err(DomainError::conflict("app category has child categories"));
+    }
+    Ok(())
 }
 
 async fn delete_catalog_projection(
@@ -798,6 +1169,26 @@ async fn next_assigned_id(tx: &mut Transaction<'_, Sqlite>, app_uuid: &str) -> D
     ))
 }
 
+async fn next_category_assigned_id(
+    tx: &mut Transaction<'_, Sqlite>,
+    category_uuid: &str,
+) -> DomainResult<i64> {
+    for attempt in 0..MAX_ASSIGNED_ID_ATTEMPTS {
+        let id = assigned_entity_id("admin-app-category", category_uuid, attempt);
+        let exists: i64 = sqlx::query_scalar("SELECT COUNT(1) FROM plus_category WHERE id = ?")
+            .bind(id)
+            .fetch_one(&mut **tx)
+            .await
+            .map_err(|error| store_error("failed to check app category assigned id", error))?;
+        if exists == 0 {
+            return Ok(id);
+        }
+    }
+    Err(DomainError::conflict(
+        "failed to allocate assigned id for admin-app-category",
+    ))
+}
+
 fn assigned_entity_id(namespace: &str, entity_uuid: &str, attempt: u8) -> i64 {
     let mut hasher = Sha256::new();
     hasher.update(namespace.as_bytes());
@@ -883,6 +1274,25 @@ fn app_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminAppItem> {
         created_at: row.try_get("created_at").unwrap_or_default(),
         updated_at: row.try_get("updated_at").unwrap_or_default(),
         config,
+    })
+}
+
+fn category_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminAppCategoryItem> {
+    Ok(AdminAppCategoryItem {
+        id: row.try_get("id").map_err(row_error)?,
+        uuid: row.try_get("uuid").map_err(row_error)?,
+        tenant_id: row.try_get("tenant_id").map_err(row_error)?,
+        organization_id: row.try_get("organization_id").map_err(row_error)?,
+        name: row.try_get("name").map_err(row_error)?,
+        description: row.try_get("description").ok().flatten(),
+        code: row.try_get("code").ok().flatten(),
+        icon: row.try_get("icon").ok().flatten(),
+        sort_weight: integer_cell(&row, "sort_weight") as i32,
+        parent_id: row.try_get("parent_id").ok().flatten(),
+        path: row.try_get("path").ok().flatten(),
+        visible: integer_cell(&row, "visible") != 0,
+        status: integer_cell(&row, "status") as i32,
+        category_type: integer_cell(&row, "category_type") as i32,
     })
 }
 

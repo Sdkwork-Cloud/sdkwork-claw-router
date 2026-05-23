@@ -1,0 +1,319 @@
+use std::sync::{Arc, Mutex};
+
+use axum::body::Body;
+use axum::extract::State;
+use axum::http::{HeaderMap, Request, StatusCode};
+use axum::response::IntoResponse;
+use axum::routing::post;
+use axum::{Json, Router};
+use sdkwork_claw_product::application::ApiKeySecretHasher;
+use sdkwork_claw_product::domain::{
+    AiModel, ApiKeyGroup, BillingMeter, DecimalValue, GatewayApiKey, ModelPrice,
+    ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
+    ProviderAccountPoolRoute, RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope,
+    RoutingRule,
+};
+use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
+use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
+use sdkwork_claw_product::ports::{ResponsesRelay, ResponsesRelayRequest};
+use sdkwork_claw_provider_adapter_contract::{
+    AdapterInvocationRequest, AdapterInvocationResponse, AdapterInvocationShape, AdapterKind,
+    AdapterRouteStatus, AdapterSecret,
+};
+use sdkwork_claw_provider_adapter_registry::{ProviderAdapterRegistry, ProviderAdapterRouteConfig};
+use serde_json::json;
+use tower::ServiceExt;
+
+#[derive(Debug)]
+struct RecordingResponsesRelay {
+    captured: Arc<Mutex<Vec<ResponsesRelayRequest>>>,
+}
+
+impl ResponsesRelay for RecordingResponsesRelay {
+    fn create_response<'a>(
+        &'a self,
+        request: ResponsesRelayRequest,
+    ) -> sdkwork_claw_product::ports::ResponsesRelayFuture<'a> {
+        self.captured.lock().unwrap().push(request);
+        Box::pin(async {
+            Ok(sdkwork_claw_product::ports::ResponsesRelayResponse::json(
+                200,
+                json!({
+                    "id": "resp-direct",
+                    "object": "response",
+                    "output": [{"type": "message", "role": "assistant", "content": [{"type": "output_text", "text": "direct"}]}],
+                    "usage": {"input_tokens": 1, "output_tokens": 1, "total_tokens": 2}
+                }),
+            ))
+        })
+    }
+}
+
+#[derive(Debug, Clone)]
+struct FakeAdapterServer {
+    base_url: String,
+    calls: Arc<Mutex<Vec<AdapterInvocationRequest>>>,
+}
+
+#[tokio::test]
+async fn openai_responses_registry_hit_calls_internal_adapter_without_direct_relay() {
+    let fake_adapter = spawn_fake_adapter_server().await;
+    let direct_calls = Arc::new(Mutex::new(Vec::new()));
+    let relay = Arc::new(RecordingResponsesRelay {
+        captured: Arc::clone(&direct_calls),
+    });
+    let adapter_relay =
+        sdkwork_claw_product::infrastructure::provider::AdapterAwareResponsesRelay::new(
+            relay,
+            Arc::new(ProviderAdapterRegistry::new(vec![adapter_route(
+                fake_adapter.base_url.as_str(),
+            )])),
+            sdkwork_claw_provider_adapter_http::ProviderAdapterHttpClient::new("test-token"),
+        );
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
+    let router = sdkwork_claw_product::api::openai_responses_router_with_relay(
+        Arc::new(catalog_with_hashed_api_key(key_hash)),
+        hasher,
+        Arc::new(adapter_relay),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/responses")
+                .header("authorization", "Bearer sk-standard-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(r#"{"model":"gpt-4.1-mini","input":"ping"}"#))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    assert!(direct_calls.lock().unwrap().is_empty());
+    let adapter_calls = fake_adapter.calls.lock().unwrap();
+    assert_eq!(1, adapter_calls.len());
+    let adapter_call = &adapter_calls[0];
+    assert_eq!("openai.responses", adapter_call.invocation.endpoint_key);
+    assert_eq!("/v1/responses", adapter_call.invocation.standard_path);
+    assert_eq!(
+        AdapterInvocationShape::SyncJson,
+        adapter_call.invocation.shape
+    );
+    assert_eq!("openrouter", adapter_call.provider.provider_code);
+    assert_eq!(3001, adapter_call.provider.channel_id);
+    assert_eq!(
+        "openai/global/gpt-4.1-mini",
+        adapter_call.provider.provider_model
+    );
+    assert!(matches!(
+        &adapter_call.secret,
+        AdapterSecret::AdapterResolved { secret_ref }
+            if secret_ref == "vault://providers/openrouter/account/responses"
+    ));
+    drop(adapter_calls);
+    let payload = response_json(response).await;
+    assert_eq!("resp-adapter", payload["id"]);
+}
+
+#[tokio::test]
+async fn openai_responses_registry_miss_calls_existing_direct_relay() {
+    let direct_calls = Arc::new(Mutex::new(Vec::new()));
+    let relay = Arc::new(RecordingResponsesRelay {
+        captured: Arc::clone(&direct_calls),
+    });
+    let adapter_relay =
+        sdkwork_claw_product::infrastructure::provider::AdapterAwareResponsesRelay::new(
+            relay,
+            Arc::new(ProviderAdapterRegistry::default()),
+            sdkwork_claw_provider_adapter_http::ProviderAdapterHttpClient::new("test-token"),
+        );
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
+    let router = sdkwork_claw_product::api::openai_responses_router_with_relay(
+        Arc::new(catalog_with_hashed_api_key(key_hash)),
+        hasher,
+        Arc::new(adapter_relay),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/responses")
+                .header("authorization", "Bearer sk-standard-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(r#"{"model":"gpt-4.1-mini","input":"ping"}"#))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    assert_eq!(1, direct_calls.lock().unwrap().len());
+    let payload = response_json(response).await;
+    assert_eq!("resp-direct", payload["id"]);
+}
+
+fn adapter_route(base_url: &str) -> ProviderAdapterRouteConfig {
+    ProviderAdapterRouteConfig {
+        provider_code: "openrouter".to_owned(),
+        adapter_kind: AdapterKind::InternalHttp,
+        adapter_base_url: base_url.to_owned(),
+        capability: Some("responses".to_owned()),
+        endpoint_key: Some("openai.responses".to_owned()),
+        method: "POST".to_owned(),
+        invocation_shape: AdapterInvocationShape::SyncJson,
+        standard_path_pattern: "/v1/responses".to_owned(),
+        adapter_path_template: "/providers/{provider_code}{standard_path}".to_owned(),
+        status: AdapterRouteStatus::Enabled,
+        priority: 10,
+    }
+}
+
+async fn spawn_fake_adapter_server() -> FakeAdapterServer {
+    let calls = Arc::new(Mutex::new(Vec::new()));
+    let app = Router::new()
+        .route(
+            "/providers/openrouter/v1/responses",
+            post(capture_adapter_invocation),
+        )
+        .with_state(Arc::clone(&calls));
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let addr = listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(listener, app).await.unwrap();
+    });
+    FakeAdapterServer {
+        base_url: format!("http://{addr}"),
+        calls,
+    }
+}
+
+async fn capture_adapter_invocation(
+    State(calls): State<Arc<Mutex<Vec<AdapterInvocationRequest>>>>,
+    headers: HeaderMap,
+    Json(body): Json<AdapterInvocationRequest>,
+) -> impl IntoResponse {
+    assert_eq!(
+        Some("Bearer test-token"),
+        headers
+            .get(axum::http::header::AUTHORIZATION)
+            .and_then(|value| value.to_str().ok())
+    );
+    calls.lock().unwrap().push(body);
+    Json(AdapterInvocationResponse::json(
+        200,
+        json!({
+            "id": "resp-adapter",
+            "object": "response",
+            "output": [{"type": "message", "role": "assistant", "content": [{"type": "output_text", "text": "adapter"}]}],
+            "usage": {"input_tokens": 1, "output_tokens": 1, "total_tokens": 2}
+        }),
+    ))
+}
+
+async fn response_json(response: axum::response::Response) -> serde_json::Value {
+    let bytes = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    serde_json::from_slice(&bytes).unwrap()
+}
+
+fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
+    let mut catalog = InMemoryPricingCatalog::default();
+    catalog.add_vendor(ModelVendorDefinition::new(
+        "openai",
+        ModelVendor::OpenAi,
+        "OpenAI",
+    ));
+    catalog.add_model(
+        AiModel::new(
+            "gpt-4.1-mini",
+            "GPT-4.1 mini",
+            "openai",
+            vec!["responses", "tools"],
+        )
+        .with_catalog_key("openai/global/gpt-4.1-mini"),
+    );
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "openai/global/gpt-4.1-mini",
+            "gpt-4.1-mini",
+            "openrouter",
+            3001,
+            "openai/global/gpt-4.1-mini",
+        )
+        .with_provider_endpoint(
+            Some("http://provider-proxy.internal/openrouter"),
+            Some("vault://providers/openrouter/account/responses"),
+        ),
+    );
+    catalog.add_provider_account_pool_route(
+        ProviderAccountPoolRoute::new("openrouter", 3001).with_provider_endpoint(
+            Some("http://provider-proxy.internal/openrouter"),
+            Some("vault://providers/openrouter/account/responses"),
+        ),
+    );
+    catalog.add_plan(PricingPlan::new(
+        "standard",
+        PriceSide::OfficialReference,
+        DecimalValue::parse("1.200000").unwrap(),
+        Money::usd("0.000000").unwrap(),
+    ));
+    catalog.add_api_key_group(ApiKeyGroup::new(
+        10,
+        "standard-group",
+        "standard",
+        DecimalValue::parse("1.000000").unwrap(),
+        DecimalValue::parse("1.100000").unwrap(),
+    ));
+    catalog.add_api_key(GatewayApiKey::new(101, 10, "sk-live", &key_hash).with_owner(10, 20, 30));
+    catalog.add_price(ModelPrice::new_for_catalog_key(
+        "openai/global/gpt-4.1-mini",
+        "gpt-4.1-mini",
+        PriceSide::OfficialReference,
+        BillingMeter::LlmInputToken,
+        Money::usd("0.150000").unwrap(),
+    ));
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "openai/global/gpt-4.1-mini",
+            "gpt-4.1-mini",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::usd("0.110000").unwrap(),
+        )
+        .for_provider("openrouter", 3001),
+    );
+    catalog.add_routing_policy(
+        RoutingPolicy::new(
+            9001,
+            10,
+            20,
+            "standard-group-responses-policy",
+            RoutingPolicyScope::ApiKeyGroup,
+            Some(10),
+            Some(9101),
+        )
+        .with_capability(RoutingCapability::Chat),
+    );
+    catalog.add_routing_rule(
+        RoutingRule::new(
+            9102,
+            10,
+            20,
+            9101,
+            "standard-group-gpt-4-1-mini",
+            1,
+            r#"{"catalogKey":"openai/global/gpt-4.1-mini"}"#,
+            "openai/global/gpt-4.1-mini",
+        )
+        .with_candidate_channels(vec![RouteCandidate::new(3001, 100)]),
+    );
+    catalog
+}

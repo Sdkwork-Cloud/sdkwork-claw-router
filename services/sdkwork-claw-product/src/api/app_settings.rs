@@ -129,7 +129,7 @@ async fn update_settings(
                 StatusCode::BAD_REQUEST,
                 Json(PlusApiResult::error("4001", message)),
             )
-                .into_response()
+                .into_response();
         }
     };
     let command = match build_update_settings_command(state.clone(), subject, settings) {
@@ -139,7 +139,7 @@ async fn update_settings(
                 StatusCode::INTERNAL_SERVER_ERROR,
                 Json(PlusApiResult::error("5000", error.to_string())),
             )
-                .into_response()
+                .into_response();
         }
     };
 

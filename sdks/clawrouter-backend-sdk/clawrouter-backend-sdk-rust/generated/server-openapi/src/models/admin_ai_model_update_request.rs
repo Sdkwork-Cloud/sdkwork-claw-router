@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{AdminAiModelRegionPrice};
+
 /// Admin ai model update request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminAiModelUpdateRequest {
@@ -7,6 +9,16 @@ pub struct AdminAiModelUpdateRequest {
     #[serde(rename = "apiFormat")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub api_format: Option<String>,
+
+    /// Optional official reference cache-read unit price in USD. Empty string clears the cache-read price.
+    #[serde(rename = "cacheReadPrice")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub cache_read_price: Option<String>,
+
+    /// Optional official reference cache-write unit price in USD. Empty string clears the cache-write price.
+    #[serde(rename = "cacheWritePrice")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub cache_write_price: Option<String>,
 
     /// Capability intro field on admin ai model update request.
     #[serde(rename = "capabilityIntro")]
@@ -21,6 +33,11 @@ pub struct AdminAiModelUpdateRequest {
     /// Description field on admin ai model update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
+
+    /// Display name field on admin ai model update request.
+    #[serde(rename = "displayName")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub display_name: Option<String>,
 
     /// Input modalities field on admin ai model update request.
     #[serde(rename = "inputModalities")]
@@ -40,7 +57,11 @@ pub struct AdminAiModelUpdateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub modalities: Option<Vec<String>>,
 
-    /// Optional AI model identifier update.
+    /// Optional runtime model identifier update.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub model: Option<String>,
+
+    /// Deprecated compatibility alias for model.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
 
@@ -58,6 +79,11 @@ pub struct AdminAiModelUpdateRequest {
     #[serde(rename = "priceOut")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub price_out: Option<String>,
+
+    /// Optional official reference prices by region.
+    #[serde(rename = "regionPrices")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub region_prices: Option<Vec<AdminAiModelRegionPrice>>,
 
     /// Release stage field on admin ai model update request.
     #[serde(rename = "releaseStage")]

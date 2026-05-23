@@ -11,5 +11,4 @@ class RoutingChannelsVerifyResult:
     """Routing channels verify result schema exposed by Claw Router."""
     code: str
     data: Optional[RoutingChannelTestResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

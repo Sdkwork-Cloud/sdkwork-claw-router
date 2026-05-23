@@ -7,7 +7,5 @@ export interface SkillsArtifactsRetrieveResult {
   /** Data field on skills artifacts retrieve result. */
   data?: AdminSkillArtifactMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

@@ -3,12 +3,176 @@ use sdkwork_claw_product::infrastructure::sql::installer::{
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminModelStore;
 use sdkwork_claw_product::ports::{
-    AdminModelStore, AdminModelSubject, ListAdminAiModelsQuery, SyncAdminModelCatalogCommand,
-    UpdateAdminAiModelCommand,
+    AdminAiModelRegionPriceCommand, AdminModelStore, AdminModelSubject, CreateAdminAiModelCommand,
+    ListAdminAiModelsQuery, SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand,
 };
 use sqlx::sqlite::SqlitePoolOptions;
 use sqlx::Row;
 use std::collections::BTreeSet;
+
+#[tokio::test]
+async fn sqlite_admin_model_store_creates_region_pricing_catalog_rows() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    let installer = DatabaseInstaller::for_sqlite(pool.clone())
+        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
+        .unwrap();
+    installer.ensure_installed().await.unwrap();
+    let store = SqliteAdminModelStore::new(pool.clone());
+    let subject = AdminModelSubject {
+        tenant_id: 0,
+        organization_id: 0,
+        operator_id: 99,
+        operator_type: 1,
+    };
+
+    let vendor_id: i64 =
+        sqlx::query_scalar("SELECT id FROM ai_model_vendor WHERE vendor_code = 'openai' LIMIT 1")
+            .fetch_one(&pool)
+            .await
+            .unwrap();
+
+    let item = store
+        .create_model(CreateAdminAiModelCommand {
+            subject,
+            model_uuid: "model-region-price-test".to_owned(),
+            input_pricing_uuid: "pricing-region-input-test".to_owned(),
+            output_pricing_uuid: "pricing-region-output-test".to_owned(),
+            cache_read_pricing_uuid: "pricing-region-cache-read-test".to_owned(),
+            cache_write_pricing_uuid: "pricing-region-cache-write-test".to_owned(),
+            capability_uuid: "capability-region-price-test".to_owned(),
+            audit_log_uuid: "audit-region-price-test".to_owned(),
+            vendor_id: vendor_id.to_string(),
+            model: "admin-region-model".to_owned(),
+            display_name: "admin-region-model".to_owned(),
+            model_type: "Chat".to_owned(),
+            price_in: "0.120000".to_owned(),
+            price_out: "0.450000".to_owned(),
+            cache_read_price: None,
+            cache_write_price: None,
+            region_code: "global".to_owned(),
+            region_prices: vec![
+                AdminAiModelRegionPriceCommand {
+                    region_code: "cn".to_owned(),
+                    price_in: "0.180000".to_owned(),
+                    price_out: "0.560000".to_owned(),
+                    cache_read_price: Some("0.040000".to_owned()),
+                    cache_write_price: Some("0.080000".to_owned()),
+                },
+                AdminAiModelRegionPriceCommand {
+                    region_code: "global".to_owned(),
+                    price_in: "0.120000".to_owned(),
+                    price_out: "0.450000".to_owned(),
+                    cache_read_price: None,
+                    cache_write_price: None,
+                },
+            ],
+            description: Some("Region priced model".to_owned()),
+            modalities: vec!["text".to_owned()],
+            input_modalities: vec!["text".to_owned()],
+            output_modalities: vec!["text".to_owned()],
+            api_format: "openai_responses".to_owned(),
+            capability_intro: None,
+            limitations: Vec::new(),
+            supported_languages: Vec::new(),
+            use_cases: Vec::new(),
+            training_data_cutoff: None,
+            context_tokens: 128000,
+            max_output_tokens: None,
+            supports_streaming: true,
+            supports_tools: true,
+            supports_json_schema: true,
+            release_stage: 1,
+            shelf_state: 1,
+            routing_state: 1,
+            replacement_model: None,
+            request_id: "req-region-price-model-store".to_owned(),
+            requested_at: "2026-05-07T12:00:00Z".to_owned(),
+        })
+        .await
+        .unwrap();
+
+    assert_eq!("admin-region-model", item.name);
+    assert_eq!(0.18, decimal_value(&item.price_in));
+    assert_eq!(0.45, decimal_value(&item.price_out));
+
+    let model_row = sqlx::query(
+        r#"
+        SELECT catalog_key
+        FROM ai_model
+        WHERE uuid = 'model-region-price-test'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        "openai/admin-region-model",
+        model_row.get::<String, _>("catalog_key")
+    );
+
+    let capability_row = sqlx::query(
+        r#"
+        SELECT catalog_key
+        FROM ai_model_capability
+        WHERE uuid = 'capability-region-price-test'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        "openai/admin-region-model",
+        capability_row.get::<String, _>("catalog_key")
+    );
+
+    let pricing_rows = sqlx::query(
+        r#"
+        SELECT catalog_key, region_code, billing_meter_code, CAST(unit_price AS TEXT) AS unit_price
+        FROM ai_model_pricing
+        WHERE model_id = ?
+          AND price_side = 1
+          AND pricing_scope = 1
+          AND status = 1
+          AND deleted_at IS NULL
+        ORDER BY region_code ASC, priority ASC
+        "#,
+    )
+    .bind(item.id)
+    .fetch_all(&pool)
+    .await
+    .unwrap();
+    let pricing = pricing_rows
+        .iter()
+        .map(|row| {
+            (
+                row.get::<String, _>("catalog_key"),
+                row.get::<String, _>("region_code"),
+                row.get::<String, _>("billing_meter_code"),
+                decimal_value(&row.get::<String, _>("unit_price")),
+            )
+        })
+        .collect::<Vec<_>>();
+    assert_eq!(6, pricing.len());
+    assert!(pricing.iter().any(|(catalog_key, region, meter, price)| {
+        catalog_key == "openai/cn/admin-region-model"
+            && region == "cn"
+            && meter == "llm_input_token"
+            && *price == 0.18
+    }));
+    assert!(pricing.iter().any(|(catalog_key, region, meter, price)| {
+        catalog_key == "openai/global/admin-region-model"
+            && region == "global"
+            && meter == "llm_output_token"
+            && *price == 0.45
+    }));
+    assert!(pricing.iter().any(|(_, region, meter, price)| {
+        region == "cn" && meter == "llm_cache_read_token" && *price == 0.04
+    }));
+}
 
 #[tokio::test]
 async fn sqlite_admin_model_store_updates_installed_model_graph() {
@@ -37,13 +201,20 @@ async fn sqlite_admin_model_store_updates_installed_model_graph() {
             capability_uuid: "capability-update-test".to_owned(),
             input_pricing_uuid: "pricing-update-input-test".to_owned(),
             output_pricing_uuid: "pricing-update-output-test".to_owned(),
+            cache_read_pricing_uuid: "pricing-update-cache-read-test".to_owned(),
+            cache_write_pricing_uuid: "pricing-update-cache-write-test".to_owned(),
             audit_log_uuid: "audit-update-model-test".to_owned(),
             model_id: model_id.to_string(),
             vendor_id: None,
             model: Some("gpt-image-commercial-edit".to_owned()),
+            display_name: None,
             model_type: Some("Image".to_owned()),
             price_in: Some("0.111000".to_owned()),
             price_out: Some("0.222000".to_owned()),
+            cache_read_price: None,
+            cache_write_price: None,
+            region_code: None,
+            region_prices: None,
             status: Some("inactive".to_owned()),
             description: Some(Some("Updated commercial image model".to_owned())),
             modalities: Some(vec!["image".to_owned()]),
@@ -70,7 +241,7 @@ async fn sqlite_admin_model_store_updates_installed_model_graph() {
         .await
         .unwrap();
 
-    assert_eq!("gpt-image-commercial-edit", item.name);
+    assert_eq!("GPT Image 1.5", item.name);
     assert_eq!("Image", item.model_type);
     assert_eq!("inactive", item.status);
     assert_eq!(Some(2048), item.context_tokens);
@@ -101,10 +272,7 @@ async fn sqlite_admin_model_store_updates_installed_model_graph() {
         "gpt-image-commercial-edit",
         model_row.get::<String, _>("model")
     );
-    assert_eq!(
-        "gpt-image-commercial-edit",
-        model_row.get::<String, _>("display_name")
-    );
+    assert_eq!("GPT Image 1.5", model_row.get::<String, _>("display_name"));
     assert_eq!("openai", model_row.get::<String, _>("vendor_code"));
     assert_eq!("OpenAI", model_row.get::<String, _>("vendor_name_snapshot"));
     assert_eq!(2_i64, model_row.get::<i64, _>("capability"));
@@ -224,6 +392,190 @@ async fn sqlite_admin_model_store_updates_installed_model_graph() {
     .await
     .unwrap();
     assert_eq!(1, audit_count);
+}
+
+#[tokio::test]
+async fn sqlite_admin_model_store_updates_preserves_and_clears_cache_prices() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    let installer = DatabaseInstaller::for_sqlite(pool.clone())
+        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
+        .unwrap();
+    installer.ensure_installed().await.unwrap();
+
+    let model_id: i64 = sqlx::query_scalar("SELECT id FROM ai_model WHERE model = 'MiniMax-M2.7'")
+        .fetch_one(&pool)
+        .await
+        .unwrap();
+    let store = SqliteAdminModelStore::new(pool.clone());
+    let subject = AdminModelSubject {
+        tenant_id: 0,
+        organization_id: 0,
+        operator_id: 99,
+        operator_type: 1,
+    };
+
+    let cache_price_rows = sqlx::query(
+        r#"
+        SELECT billing_meter_code, CAST(unit_price AS TEXT) AS unit_price
+        FROM ai_model_pricing
+        WHERE model_id = ?
+          AND price_side = 1
+          AND billing_meter_code IN ('llm_cache_read_token', 'llm_cache_write_token')
+          AND status = 1
+          AND deleted_at IS NULL
+        ORDER BY billing_meter_code ASC
+        "#,
+    )
+    .bind(model_id)
+    .fetch_all(&pool)
+    .await
+    .unwrap();
+    let cache_price_pairs = cache_price_rows
+        .iter()
+        .map(|row| {
+            (
+                row.get::<String, _>("billing_meter_code"),
+                row.get::<String, _>("unit_price"),
+            )
+        })
+        .collect::<Vec<_>>();
+    let initial_cache_read_price = cache_price_pairs
+        .iter()
+        .find_map(|(meter, price)| (meter == "llm_cache_read_token").then(|| decimal_value(price)))
+        .unwrap_or_else(|| {
+            panic!("installed cache read pricing row must exist: {cache_price_pairs:?}")
+        });
+    let initial_cache_write_price = cache_price_pairs
+        .iter()
+        .find_map(|(meter, price)| (meter == "llm_cache_write_token").then(|| decimal_value(price)))
+        .unwrap_or_else(|| {
+            panic!("installed cache write pricing row must exist: {cache_price_pairs:?}")
+        });
+
+    let updated = store
+        .update_model(UpdateAdminAiModelCommand {
+            subject,
+            capability_uuid: "capability-cache-preserve-test".to_owned(),
+            input_pricing_uuid: "pricing-cache-preserve-input-test".to_owned(),
+            output_pricing_uuid: "pricing-cache-preserve-output-test".to_owned(),
+            cache_read_pricing_uuid: "pricing-cache-preserve-read-test".to_owned(),
+            cache_write_pricing_uuid: "pricing-cache-preserve-write-test".to_owned(),
+            audit_log_uuid: "audit-cache-preserve-model-test".to_owned(),
+            model_id: model_id.to_string(),
+            vendor_id: None,
+            model: Some("MiniMax-M2.7-commercial".to_owned()),
+            display_name: None,
+            model_type: Some("Chat".to_owned()),
+            price_in: Some("0.333333".to_owned()),
+            price_out: Some("1.444444".to_owned()),
+            cache_read_price: None,
+            cache_write_price: None,
+            region_code: None,
+            region_prices: None,
+            status: Some("active".to_owned()),
+            description: None,
+            modalities: Some(vec!["text".to_owned()]),
+            input_modalities: Some(vec!["text".to_owned()]),
+            output_modalities: Some(vec!["text".to_owned()]),
+            api_format: Some("openai_compatible".to_owned()),
+            capability_intro: None,
+            limitations: None,
+            supported_languages: None,
+            use_cases: None,
+            training_data_cutoff: None,
+            context_tokens: Some(204800),
+            max_output_tokens: Some(Some(32768)),
+            supports_streaming: Some(true),
+            supports_tools: Some(true),
+            supports_json_schema: Some(true),
+            release_stage: Some(1),
+            shelf_state: Some(1),
+            routing_state: Some(1),
+            replacement_model: None,
+            request_id: "req-cache-preserve-model-store".to_owned(),
+            requested_at: "2026-05-07T13:00:00Z".to_owned(),
+        })
+        .await
+        .unwrap();
+
+    assert_eq!(
+        initial_cache_read_price,
+        decimal_value(&updated.cache_read_price)
+    );
+    assert_eq!(
+        initial_cache_write_price,
+        decimal_value(&updated.cache_write_price)
+    );
+
+    let cleared = store
+        .update_model(UpdateAdminAiModelCommand {
+            subject,
+            capability_uuid: "capability-cache-clear-test".to_owned(),
+            input_pricing_uuid: "pricing-cache-clear-input-test".to_owned(),
+            output_pricing_uuid: "pricing-cache-clear-output-test".to_owned(),
+            cache_read_pricing_uuid: "pricing-cache-clear-read-test".to_owned(),
+            cache_write_pricing_uuid: "pricing-cache-clear-write-test".to_owned(),
+            audit_log_uuid: "audit-cache-clear-model-test".to_owned(),
+            model_id: model_id.to_string(),
+            vendor_id: None,
+            model: None,
+            display_name: None,
+            model_type: None,
+            price_in: None,
+            price_out: None,
+            cache_read_price: Some(None),
+            cache_write_price: Some(Some("".to_owned())),
+            region_code: None,
+            region_prices: None,
+            status: None,
+            description: None,
+            modalities: None,
+            input_modalities: None,
+            output_modalities: None,
+            api_format: None,
+            capability_intro: None,
+            limitations: None,
+            supported_languages: None,
+            use_cases: None,
+            training_data_cutoff: None,
+            context_tokens: None,
+            max_output_tokens: None,
+            supports_streaming: None,
+            supports_tools: None,
+            supports_json_schema: None,
+            release_stage: None,
+            shelf_state: None,
+            routing_state: None,
+            replacement_model: None,
+            request_id: "req-cache-clear-model-store".to_owned(),
+            requested_at: "2026-05-07T13:05:00Z".to_owned(),
+        })
+        .await
+        .unwrap();
+
+    assert_eq!("", cleared.cache_read_price);
+    assert_eq!("", cleared.cache_write_price);
+
+    let active_cache_pricing_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_model_pricing
+        WHERE model_id = ?
+          AND price_side = 1
+          AND billing_meter_code IN ('llm_cache_read_token', 'llm_cache_write_token')
+          AND status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(model_id)
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(0, active_cache_pricing_count);
 }
 
 #[tokio::test]
@@ -1092,4 +1444,10 @@ async fn create_admin_model_tables(pool: &sqlx::SqlitePool) {
     .execute(pool)
     .await
     .unwrap();
+}
+
+fn decimal_value(value: &str) -> f64 {
+    value
+        .parse::<f64>()
+        .unwrap_or_else(|error| panic!("invalid decimal value {value}: {error}"))
 }

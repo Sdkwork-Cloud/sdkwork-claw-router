@@ -4,6 +4,8 @@ import type { JsonValue } from './json-value';
 export interface OpsNotificationMessageRecord {
   /** Action url field on ops notification message record. */
   action_url?: string;
+  /** App id field on ops notification message record. */
+  app_id?: string;
   /** Content field on ops notification message record. */
   content?: string;
   /** Created at field on ops notification message record. */
@@ -34,14 +36,6 @@ export interface OpsNotificationMessageRecord {
   status?: string;
   /** Summary field on ops notification message record. */
   summary?: string;
-  /** Target owner id field on ops notification message record. */
-  target_owner_id?: string;
-  /** Target owner type field on ops notification message record. */
-  target_owner_type?: string;
-  /** Target scope field on ops notification message record. */
-  target_scope?: string;
-  /** Target user id field on ops notification message record. */
-  target_user_id?: string;
   /** Tenant id field on ops notification message record. */
   tenant_id?: string;
   /** Title field on ops notification message record. */

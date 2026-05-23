@@ -296,7 +296,7 @@ async fn app_model_catalog_route_returns_public_plus_result_without_secret_mater
 
     assert_eq!("2000", payload["code"]);
     assert_eq!("SUCCESS", payload["msg"]);
-    assert_eq!("SUCCESS", payload["message"]);
+    assert_eq!(None, payload.get("message"));
     assert_eq!(1, payload["data"]["items"].as_array().unwrap().len());
     assert_eq!("gpt-4o-mini", payload["data"]["items"][0]["model"]);
     assert_eq!(

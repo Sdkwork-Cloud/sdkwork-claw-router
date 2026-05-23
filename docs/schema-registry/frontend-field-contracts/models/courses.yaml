@@ -1,0 +1,192 @@
+fragment: models/courses
+frontend_models:
+- route: /courses
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseCatalog.ts
+  interface: Course
+  fields:
+  - id
+  - contentId
+  - courseCode
+  - title
+  - description
+  - thumbnail
+  - instructor
+  - instructor.name
+  - instructor.avatar
+  - instructor.title
+  - instructor.bio
+  - duration
+  - lessonsCount
+  - rating
+  - studentsCount
+  - level
+  - category
+  - tags
+  - bilibiliBvid
+  - content
+  - price
+  - isCollection
+  - publishedAt
+  - relatedCourseIds
+  - engagement
+  - engagement.views
+  - engagement.likes
+  - engagement.saves
+  - engagement.shares
+  - engagement.discussions
+  data_sources:
+  - content_course
+  - content_course_relation
+  - plus_category
+  - plus_comments
+  - content_reaction
+- route: /courses
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  interface: CourseCategory
+  fields:
+  - id
+  - code
+  - label
+  - name
+  - description
+  - icon
+  - sortWeight
+  - courseCount
+  data_sources:
+  - plus_category
+  - content_course
+- route: /courses
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  interface: CourseOverviewStats
+  fields:
+  - totalCourses
+  - totalLessons
+  - totalStudents
+  - totalCategories
+  data_sources:
+  - content_course
+  - plus_category
+  - plus_comments
+  - content_reaction
+- route: /courses
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  interface: CourseOverview
+  fields:
+  - stats
+  - stats.totalCourses
+  - stats.totalLessons
+  - stats.totalStudents
+  - stats.totalCategories
+  - source
+  data_sources:
+  - content_course
+  - plus_category
+  - plus_comments
+  - content_reaction
+- route: /courses
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  interface: CourseQuery
+  fields:
+  - level
+  - category
+  - searchQuery
+  - page
+  - size
+  data_sources:
+  - content_course
+  - plus_category
+- route: /courses
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  interface: CourseCatalogResult
+  fields:
+  - courses
+  - categories
+  - categories.id
+  - categories.code
+  - categories.label
+  - categories.name
+  - categories.description
+  - categories.icon
+  - categories.sortWeight
+  - categories.courseCount
+  - page
+  - size
+  - totalElements
+  - source
+  data_sources:
+  - content_course
+  - content_course_relation
+  - plus_category
+  - plus_comments
+  - content_reaction
+- route: /courses
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  interface: CourseApplicationInput
+  fields:
+  - title
+  - category
+  - description
+  - sourceProvider
+  - externalBvid
+  - videoUrl
+  - contactName
+  - contactEmail
+  - notes
+  data_sources:
+  - content_course_application
+- route: /courses
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  interface: CourseApplicationResult
+  fields:
+  - id
+  - applicationId
+  - title
+  - category
+  - sourceProvider
+  - externalBvid
+  - videoUrl
+  - contactName
+  - contactEmail
+  - status
+  - submittedAt
+  data_sources:
+  - content_course_application
+- route: /courses
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  interface: CourseApplicationVideoUploadInput
+  fields:
+  - file
+  - fileName
+  data_sources:
+  - content_course_application
+  file_targets:
+  - course_application_video_uploads
+- route: /courses
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  interface: CourseApplicationVideoUploadResult
+  fields:
+  - videoUrl
+  - fileName
+  - contentType
+  - sizeBytes
+  - sha256
+  - uploadedAt
+  data_sources:
+  - content_course_application
+  file_targets:
+  - course_application_video_uploads
+- route: /courses/:id
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  interface: CourseDetailResult
+  fields:
+  - detail
+  - course
+  - source
+  data_sources:
+  - content_course
+  - content_course_section
+  - content_course_lesson
+  - content_course_relation
+  - plus_category
+  - plus_comments
+  - content_reaction

@@ -76,8 +76,6 @@ export interface AiModelRecord {
   provider_hint?: string;
   /** Rank score field on ai model record. */
   rank_score?: string;
-  /** Region code field on ai model record. */
-  region_code: string;
   /** Release stage field on ai model record. */
   release_stage: string;
   /** Replacement model field on ai model record. */

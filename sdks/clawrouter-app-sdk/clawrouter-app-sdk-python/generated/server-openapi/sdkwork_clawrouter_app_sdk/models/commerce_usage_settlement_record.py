@@ -6,8 +6,8 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class CommerceUsageSettlementRecord:
     """Commerce usage settlement record schema exposed by Claw Router."""
-    account_history_id: Optional[str] = None
     account_id: Optional[str] = None
+    account_ledger_entry_id: Optional[str] = None
     amount: Optional[str] = None
     asset_type: Optional[str] = None
     created_at: Optional[str] = None

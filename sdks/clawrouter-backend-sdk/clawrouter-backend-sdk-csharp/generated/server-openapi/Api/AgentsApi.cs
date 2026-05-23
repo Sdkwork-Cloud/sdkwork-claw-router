@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List managed agents
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AgentsListResult?> ListAsync(string? q = null, int? ownerUserId = null, string? status = null, string? visibility = null, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AgentDefinitionsListResult?> AgentDefinitionsListAsync(string? q = null, int? ownerUserId = null, string? status = null, string? visibility = null, int? page = null, int? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -29,15 +29,15 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 new QueryParameterSpec("page", page, "form", true, false, null),
                 new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
             });
-            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AgentsListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/agents"), queryString));
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AgentDefinitionsListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/agents"), queryString));
         }
 
         /// <summary>
         /// Retrieve managed agent
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AgentsRetrieveResult?> RetrieveAsync(string agentId)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AgentDefinitionsRetrieveResult?> AgentDefinitionsRetrieveAsync(string agentId)
         {
-            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AgentsRetrieveResult>(ApiPaths.BackendPath($"/agents/{SerializePathParameter(agentId, new PathParameterSpec("agentId", "simple", false))}"));
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AgentDefinitionsRetrieveResult>(ApiPaths.BackendPath($"/agents/{SerializePathParameter(agentId, new PathParameterSpec("agentId", "simple", false))}"));
         }
 
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);

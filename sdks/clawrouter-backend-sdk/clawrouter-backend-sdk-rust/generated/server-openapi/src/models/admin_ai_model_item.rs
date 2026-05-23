@@ -7,6 +7,14 @@ pub struct AdminAiModelItem {
     #[serde(rename = "apiFormat")]
     pub api_format: String,
 
+    /// Cache read price field on admin ai model item.
+    #[serde(rename = "cacheReadPrice")]
+    pub cache_read_price: String,
+
+    /// Cache write price field on admin ai model item.
+    #[serde(rename = "cacheWritePrice")]
+    pub cache_write_price: String,
+
     /// Calls field on admin ai model item.
     pub calls: String,
 
@@ -20,6 +28,10 @@ pub struct AdminAiModelItem {
 
     /// Description field on admin ai model item.
     pub description: String,
+
+    /// Product display name. Falls back to model when no display name is configured.
+    #[serde(rename = "displayName")]
+    pub display_name: String,
 
     /// Id field on admin ai model item.
     pub id: String,
@@ -38,7 +50,10 @@ pub struct AdminAiModelItem {
     /// Modalities field on admin ai model item.
     pub modalities: Vec<String>,
 
-    /// Name field on admin ai model item.
+    /// Runtime model identifier used for provider calls, routing, and pricing keys.
+    pub model: String,
+
+    /// Compatibility display alias. Equal to displayName.
     pub name: String,
 
     /// Output modalities field on admin ai model item.

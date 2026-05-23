@@ -8,7 +8,7 @@ SELECT
     model,
     display_name,
     vendor_code,
-    region_code,
+    'global' AS region_code,
     COALESCE((
         SELECT jsonb_agg(DISTINCT capability_code ORDER BY capability_code)::text
         FROM (
@@ -76,21 +76,29 @@ ORDER BY rank_score DESC, display_name ASC, id ASC
     pub fn list_provider_routes() -> &'static str {
         r#"
 SELECT
-    m.catalog_key AS catalog_key,
-    m.model AS model,
+    r.catalog_key AS catalog_key,
+    r.model AS model,
     c.provider_code,
-    m.channel_id,
-    m.provider_model
-FROM integration_channel_model m
-JOIN integration_channel c ON c.id = m.channel_id
-WHERE m.deleted_at IS NULL
+    r.channel_id,
+    r.provider_model
+FROM integration_channel_model r
+JOIN integration_channel c ON c.id = r.channel_id
+WHERE r.deleted_at IS NULL
   AND c.deleted_at IS NULL
-  AND m.status = 1
+  AND r.status = 1
   AND c.status = 1
-  AND m.catalog_key = $1
-  AND (m.effective_from IS NULL OR m.effective_from <= CURRENT_TIMESTAMP)
-  AND (m.effective_to IS NULL OR m.effective_to > CURRENT_TIMESTAMP)
-ORDER BY c.priority ASC, c.weight DESC, m.id ASC
+  AND (
+      r.catalog_key = $1
+      OR (
+          array_length(string_to_array($1, '/'), 1) = 2
+          AND array_length(string_to_array(r.catalog_key, '/'), 1) = 3
+          AND split_part(r.catalog_key, '/', 1) = split_part($1, '/', 1)
+          AND split_part(r.catalog_key, '/', 3) = split_part($1, '/', 2)
+      )
+  )
+  AND (r.effective_from IS NULL OR r.effective_from <= CURRENT_TIMESTAMP)
+  AND (r.effective_to IS NULL OR r.effective_to > CURRENT_TIMESTAMP)
+ORDER BY c.priority ASC, c.weight DESC, r.id ASC
 "#
     }
 
@@ -115,7 +123,15 @@ SELECT
 FROM ai_model_pricing
 WHERE deleted_at IS NULL
   AND status = 1
-  AND catalog_key = $1
+  AND (
+      catalog_key = $1
+      OR (
+          array_length(string_to_array($1, '/'), 1) = 2
+          AND array_length(string_to_array(catalog_key, '/'), 1) = 3
+          AND split_part(catalog_key, '/', 1) = split_part($1, '/', 1)
+          AND split_part(catalog_key, '/', 3) = split_part($1, '/', 2)
+      )
+  )
   AND price_side = $2
   AND billing_meter_code = $3
   AND (effective_from IS NULL OR effective_from <= CURRENT_TIMESTAMP)
@@ -198,7 +214,7 @@ SELECT
     model,
     display_name,
     vendor_code,
-    region_code,
+    'global' AS region_code,
     COALESCE((
         SELECT jsonb_agg(DISTINCT capability_code ORDER BY capability_code)::text
         FROM (
@@ -258,7 +274,13 @@ WHERE deleted_at IS NULL
   AND status = 1
   AND COALESCE(shelf_state, 1) <> 3
   AND COALESCE(routing_state, 1) = 1
-  AND catalog_key = $1
+  AND (
+      m.catalog_key = $1
+      OR (
+          array_length(string_to_array($1, '/'), 1) = 3
+          AND m.catalog_key = split_part($1, '/', 1) || '/' || split_part($1, '/', 3)
+      )
+  )
 LIMIT 1
 "#
     }
@@ -279,22 +301,30 @@ LIMIT 1
     pub fn find_provider_route() -> &'static str {
         r#"
 SELECT
-    m.catalog_key AS catalog_key,
-    m.model AS model,
+    r.catalog_key AS catalog_key,
+    r.model AS model,
     c.provider_code,
-    m.channel_id,
-    m.provider_model
-FROM integration_channel_model m
-JOIN integration_channel c ON c.id = m.channel_id
-WHERE m.deleted_at IS NULL
+    r.channel_id,
+    r.provider_model
+FROM integration_channel_model r
+JOIN integration_channel c ON c.id = r.channel_id
+WHERE r.deleted_at IS NULL
   AND c.deleted_at IS NULL
-  AND m.status = 1
+  AND r.status = 1
   AND c.status = 1
-  AND m.catalog_key = $1
+  AND (
+      r.catalog_key = $1
+      OR (
+          array_length(string_to_array($1, '/'), 1) = 2
+          AND array_length(string_to_array(r.catalog_key, '/'), 1) = 3
+          AND split_part(r.catalog_key, '/', 1) = split_part($1, '/', 1)
+          AND split_part(r.catalog_key, '/', 3) = split_part($1, '/', 2)
+      )
+  )
   AND c.provider_code = $2
-  AND (m.effective_from IS NULL OR m.effective_from <= CURRENT_TIMESTAMP)
-  AND (m.effective_to IS NULL OR m.effective_to > CURRENT_TIMESTAMP)
-ORDER BY c.priority ASC, c.weight DESC, m.id ASC
+  AND (r.effective_from IS NULL OR r.effective_from <= CURRENT_TIMESTAMP)
+  AND (r.effective_to IS NULL OR r.effective_to > CURRENT_TIMESTAMP)
+ORDER BY c.priority ASC, c.weight DESC, r.id ASC
 LIMIT 1
 "#
     }
@@ -320,7 +350,15 @@ SELECT
 FROM ai_model_pricing
 WHERE deleted_at IS NULL
   AND status = 1
-  AND catalog_key = $1
+  AND (
+      catalog_key = $1
+      OR (
+          array_length(string_to_array($1, '/'), 1) = 2
+          AND array_length(string_to_array(catalog_key, '/'), 1) = 3
+          AND split_part(catalog_key, '/', 1) = split_part($1, '/', 1)
+          AND split_part(catalog_key, '/', 3) = split_part($1, '/', 2)
+      )
+  )
   AND price_side = $2
   AND billing_meter_code = $3
   AND (($4 IS NULL AND provider_code IS NULL) OR provider_code = $4)

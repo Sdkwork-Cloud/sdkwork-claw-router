@@ -55,6 +55,7 @@ fn generation_history_sql_rejects_unknown_item_types_before_mapping() {
         "a.asset_type AS item_kind",
         "j.modality AS item_kind",
         "item_type_label(required_integer_cell(&row, \"item_kind\", \"item kind\")?)?",
+        "1 => Ok(\"text\")",
         "2 => Ok(\"image\")",
         "3 => Ok(\"video\")",
         "4 => Ok(\"audio\")",
@@ -91,6 +92,13 @@ fn generation_history_sql_scopes_and_deduplicates_rows_by_trusted_subject() {
         "j.tenant_id = $1",
         "j.organization_id = $2",
         "j.user_id = $3",
+        "r.tenant_id = $1",
+        "r.organization_id = $2",
+        "r.user_id = $3",
+        "r.source_surface = 'playground'",
+        "ai_agent_run r",
+        "ai_runtime_invocation i",
+        "ai_runtime_artifact ar",
         "AND NOT EXISTS (",
         "a.job_id = j.id",
         "a.deleted_at IS NULL",
@@ -115,9 +123,32 @@ fn generation_history_sql_formats_public_timestamps_as_rfc3339_utc() {
     for expected in [
         "to_char((COALESCE(a.created_at, j.created_at) AT TIME ZONE 'UTC'), 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"') AS created_at",
         "to_char((COALESCE(a.updated_at, j.completed_at, j.created_at) AT TIME ZONE 'UTC'), 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"') AS updated_at",
+        "to_char((r.created_at AT TIME ZONE 'UTC'), 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"') AS created_at",
+        "to_char((COALESCE(r.completed_at, i.completed_at, r.created_at) AT TIME ZONE 'UTC'), 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"') AS updated_at",
         "date: history_date(&created_at)",
         "created_at: optional_string(created_at)",
         "updated_at: optional_string(updated_at)",
+    ] {
+        assert_sql_contains(POSTGRES_GENERATION_HISTORY_STORE, expected);
+    }
+}
+
+#[test]
+fn generation_history_sql_projects_standard_agent_runtime_generation_fields() {
+    for expected in [
+        "request_json ->> 'targetType'",
+        "request_json #>> '{generationConfig,aspectRatio}'",
+        "request_json #>> '{generationConfig,durationSeconds}'",
+        "response_json ->> 'outputText'",
+        "COALESCE(NULLIF(r.output_message, ''), NULLIF(i.response_json ->> 'outputText', ''), '') AS output_text",
+        "WHEN target_modality IN (1, 2, 3, 4, 5, 6) THEN target_modality",
+        "WHEN target_signal IN ('text', 'llm', 'chat', 'agent') OR target_signal LIKE '%text%' THEN 1",
+        "WHEN NULLIF(output_text, '') IS NOT NULL THEN 1",
+        "WHERE item_kind IN (1, 2, 3, 4, 5, 6)",
+        "model_catalog_key: optional_string(string_cell(&row, \"model_catalog_key\"))",
+        "aspect_ratio: optional_string(string_cell(&row, \"aspect_ratio\"))",
+        "duration_seconds: optional_integer_cell(&row, \"duration_seconds\")",
+        "output_text: optional_string(string_cell(&row, \"output_text\"))",
     ] {
         assert_sql_contains(POSTGRES_GENERATION_HISTORY_STORE, expected);
     }

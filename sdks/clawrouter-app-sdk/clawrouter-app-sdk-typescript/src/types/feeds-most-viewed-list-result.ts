@@ -7,7 +7,5 @@ export interface FeedsMostViewedListResult {
   /** Data field on feeds most viewed list result. */
   data?: ForumFeedItemList;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

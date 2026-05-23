@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   Ban,
   ChevronRight,
@@ -19,7 +19,7 @@ import {
   XCircle,
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
+import { AdminTableShell, BottomPagination, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
 import {
   AdminSkillService,
   createSkillCategoryInputFromForm,
@@ -37,6 +37,8 @@ import {
   type AdminSkillAsset,
   type AdminSkillCategory,
   type AdminSkillPackage,
+  type SkillMarketStatus,
+  type SkillReviewStatus,
 } from './skillService';
 
 type SkillModalMode = 'create' | 'edit';
@@ -45,6 +47,8 @@ type CategoryModalMode = 'create' | 'edit';
 type AssetModalMode = 'create' | 'edit';
 type ArtifactModalMode = 'create' | 'edit';
 type SkillAdminTab = 'skills' | 'packages';
+type SkillMarketStatusFilter = '' | SkillMarketStatus;
+type SkillReviewStatusFilter = '' | SkillReviewStatus;
 type DeleteTarget = AdminSkill | null;
 type PackageDeleteTarget = AdminSkillPackage | null;
 type CategoryDeleteTarget = AdminSkillCategory | null;
@@ -203,9 +207,9 @@ function SkillCategoryTree({
   return (
     <aside
       data-admin-skill-category-tree
-      className="min-h-0 rounded-lg border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#171717]"
+      className="flex min-h-0 flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#171717]"
     >
-      <div className="flex items-center justify-between gap-3 border-b border-slate-200 p-3 dark:border-white/10">
+      <div className="flex shrink-0 items-center justify-between gap-3 border-b border-slate-200 p-3 dark:border-white/10">
         <div className="min-w-0">
           <div className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
             <FolderTree className="h-4 w-4 text-emerald-600 dark:text-emerald-300" />
@@ -221,7 +225,7 @@ function SkillCategoryTree({
           icon={<FolderPlus className="h-4 w-4" />}
         />
       </div>
-      <div className="max-h-[calc(100vh-220px)] min-h-[360px] overflow-y-auto p-2">
+      <div className="min-h-0 flex-1 overflow-y-auto p-2">
         <button
           type="button"
           onClick={() => onSelect('')}
@@ -264,7 +268,7 @@ function SkillCategoryTree({
           ))
         )}
       </div>
-      <div className="border-t border-slate-200 px-3 py-2 text-xs text-slate-500 dark:border-white/10">
+      <div className="shrink-0 border-t border-slate-200 px-3 py-2 text-xs text-slate-500 dark:border-white/10">
         {t('admin.skill.tree.total', { count: categories.length })}
       </div>
     </aside>
@@ -343,8 +347,12 @@ export function SkillAdmin() {
   const [activeTab, setActiveTab] = useState<SkillAdminTab>('skills');
   const [keyword, setKeyword] = useState('');
   const [selectedCategoryId, setSelectedCategoryId] = useState('');
-  const [marketStatus, setMarketStatus] = useState('');
-  const [reviewStatus, setReviewStatus] = useState('');
+  const [marketStatus, setMarketStatus] = useState<SkillMarketStatusFilter>('');
+  const [reviewStatus, setReviewStatus] = useState<SkillReviewStatusFilter>('');
+  const [skillPage, setSkillPage] = useState(1);
+  const [packagePage, setPackagePage] = useState(1);
+  const [skillPageSize, setSkillPageSize] = useState(20);
+  const [packagePageSize, setPackagePageSize] = useState(20);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [actionError, setActionError] = useState<string | null>(null);
@@ -363,14 +371,30 @@ export function SkillAdmin() {
   const [reviewTarget, setReviewTarget] = useState<ReviewTarget>(null);
   const [resourceTarget, setResourceTarget] = useState<ResourceTarget>(null);
 
-  const loadAll = async () => {
+  const packageQuery = useMemo(() => ({
+    searchQuery: keyword.trim(),
+    categoryId: selectedCategoryId || undefined,
+    page: packagePage,
+    pageSize: packagePageSize,
+  }), [keyword, packagePage, packagePageSize, selectedCategoryId]);
+
+  const skillQuery = useMemo(() => ({
+    searchQuery: keyword.trim(),
+    categoryId: selectedCategoryId || undefined,
+    marketStatus: marketStatus || undefined,
+    reviewStatus: reviewStatus || undefined,
+    page: skillPage,
+    pageSize: skillPageSize,
+  }), [keyword, marketStatus, reviewStatus, selectedCategoryId, skillPage, skillPageSize]);
+
+  const loadAll = useCallback(async () => {
     setLoading(true);
     setLoadError(null);
     try {
       const [nextCategories, nextPackages, nextSkills] = await Promise.all([
         AdminSkillService.fetchSkillCategories(),
-        AdminSkillService.fetchSkillPackages({ page: 1, pageSize: 100 }),
-        AdminSkillService.fetchSkills({ page: 1, pageSize: 100 }),
+        AdminSkillService.fetchSkillPackages(packageQuery),
+        AdminSkillService.fetchSkills(skillQuery),
       ]);
       setCategories(nextCategories);
       setPackages(nextPackages);
@@ -380,11 +404,11 @@ export function SkillAdmin() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [packageQuery, skillQuery]);
 
   useEffect(() => {
     void loadAll();
-  }, []);
+  }, [loadAll]);
 
   const categoryNameById = useMemo(() => new Map(categories.map((item) => [item.id, item.name])), [categories]);
   const packageNameById = useMemo(() => new Map(packages.map((item) => [item.id, item.name])), [packages]);
@@ -674,8 +698,8 @@ export function SkillAdmin() {
   };
 
   return (
-    <div className="flex h-full w-full flex-col">
-      <div data-admin-skill-layout className="grid min-h-0 gap-4 xl:grid-cols-[320px_minmax(0,1fr)]">
+    <div className="flex h-full min-h-0 w-full flex-col overflow-hidden">
+      <div data-admin-skill-layout className="grid min-h-0 flex-1 gap-4 xl:grid-cols-[320px_minmax(0,1fr)]">
         <SkillCategoryTree
           categories={categories}
           tree={categoryTree}
@@ -684,117 +708,180 @@ export function SkillAdmin() {
           skills={skills}
           packages={packages}
           loading={loading}
-          onSelect={setSelectedCategoryId}
+          onSelect={(categoryId) => {
+            setSkillPage(1);
+            setPackagePage(1);
+            setSelectedCategoryId(categoryId);
+          }}
           onCreateRoot={() => openCreateCategory(null)}
           onCreateChild={(category) => openCreateCategory(category.id)}
           onEditCategory={openEditCategory}
           onDeleteCategory={setDeleteCategoryTarget}
         />
-        <div data-admin-skill-table-card className="rounded-lg border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#171717]">
-        <div data-admin-skill-table-header className="border-b border-slate-200 p-3 dark:border-white/10">
-          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-            <div
-              role="tablist"
-              aria-label={t('admin.skill.tabs.label')}
-              className="inline-flex w-full rounded-lg border border-slate-200 bg-slate-50 p-1 dark:border-white/10 dark:bg-white/[0.03] sm:w-auto"
-            >
-              <button
-                type="button"
-                role="tab"
-                aria-selected={activeTab === 'skills'}
-                onClick={() => setActiveTab('skills')}
-                className={`inline-flex min-h-9 flex-1 items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-semibold transition-colors sm:min-w-[160px] ${
-                  activeTab === 'skills'
-                    ? 'bg-white text-slate-950 shadow-sm dark:bg-slate-950 dark:text-white'
-                    : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
-                }`}
-              >
-                <span>{t('admin.skill.tabs.skills')}</span>
-                <span className={`rounded px-1.5 py-0.5 text-[11px] ${activeTab === 'skills' ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-200' : 'bg-white text-slate-500 dark:bg-white/10 dark:text-slate-300'}`}>
-                  {skills.length.toLocaleString()}
-                </span>
-              </button>
-              <button
-                type="button"
-                role="tab"
-                aria-selected={activeTab === 'packages'}
-                onClick={() => setActiveTab('packages')}
-                className={`inline-flex min-h-9 flex-1 items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-semibold transition-colors sm:min-w-[160px] ${
-                  activeTab === 'packages'
-                    ? 'bg-white text-slate-950 shadow-sm dark:bg-slate-950 dark:text-white'
-                    : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
-                }`}
-              >
-                <span>{t('admin.skill.tabs.packages')}</span>
-                <span className={`rounded px-1.5 py-0.5 text-[11px] ${activeTab === 'packages' ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-200' : 'bg-white text-slate-500 dark:bg-white/10 dark:text-slate-300'}`}>
-                  {packages.length.toLocaleString()}
-                </span>
-              </button>
-            </div>
-            <div className="flex flex-wrap justify-end gap-2">
-              <button
-                type="button"
-                onClick={() => openCreateCategory(null)}
-                className="inline-flex h-9 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-700 shadow-sm transition-colors hover:border-emerald-300 hover:text-emerald-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:border-emerald-500/40 dark:hover:text-emerald-300"
-              >
-                <Plus className="h-4 w-4" />
-                {t('admin.skill.actions.createCategory')}
-              </button>
-              <button
-                type="button"
-                onClick={activeTab === 'packages' ? openCreatePackage : openCreateSkill}
-                className="inline-flex h-9 items-center gap-2 rounded-lg bg-slate-900 px-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
-              >
-                <Plus className="h-4 w-4" />
-                {activeTab === 'packages' ? t('admin.skill.actions.createPackage') : t('admin.skill.actions.createSkill')}
-              </button>
-            </div>
-          </div>
-          <div data-admin-skill-table-filters className="mt-3 flex flex-col gap-2 lg:flex-row lg:items-center">
-            <div className="relative min-w-0 lg:w-[320px]">
-              <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-              <input
-                value={keyword}
-                onChange={(event) => setKeyword(event.target.value)}
-                className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-emerald-400 dark:border-white/10 dark:bg-white/5 dark:text-white"
-                placeholder={t('admin.skill.filters.searchPlaceholder')}
-              />
-            </div>
-            <div className="inline-flex h-10 items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 text-sm font-medium text-slate-600 dark:border-white/10 dark:bg-white/[0.03] dark:text-slate-300">
-              <Folder className="h-4 w-4 text-slate-400" />
-              <span className="max-w-[220px] truncate">{selectedCategoryName}</span>
-            </div>
-            {activeTab === 'skills' ? (
-              <>
-                <select
-                  value={marketStatus}
-                  onChange={(event) => setMarketStatus(event.target.value)}
-                  className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-emerald-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
-                >
-                  {marketStatusOptions.map((option) => <option key={option.value} value={option.value}>{t(option.labelKey)}</option>)}
-                </select>
-                <select
-                  value={reviewStatus}
-                  onChange={(event) => setReviewStatus(event.target.value)}
-                  className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-emerald-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
-                >
-                  {reviewStatusOptions.map((option) => <option key={option.value} value={option.value}>{t(option.labelKey)}</option>)}
-                </select>
-              </>
-            ) : null}
-          </div>
-        </div>
+        <AdminTableShell
+          data-admin-skill-table-card
+          viewportProps={{ 'data-admin-skill-table-viewport': true }}
+          header={(
+            <>
+              <div data-admin-skill-table-header className="border-b border-slate-200 p-3 dark:border-white/10">
+                <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                  <div
+                    role="tablist"
+                    aria-label={t('admin.skill.tabs.label')}
+                    className="inline-flex w-full rounded-lg border border-slate-200 bg-slate-50 p-1 dark:border-white/10 dark:bg-white/[0.03] sm:w-auto"
+                  >
+                    <button
+                      type="button"
+                      role="tab"
+                      aria-selected={activeTab === 'skills'}
+                      onClick={() => setActiveTab('skills')}
+                      className={`inline-flex min-h-9 flex-1 items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-semibold transition-colors sm:min-w-[160px] ${
+                        activeTab === 'skills'
+                          ? 'bg-white text-slate-950 shadow-sm dark:bg-slate-950 dark:text-white'
+                          : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                      }`}
+                    >
+                      <span>{t('admin.skill.tabs.skills')}</span>
+                      <span className={`rounded px-1.5 py-0.5 text-[11px] ${activeTab === 'skills' ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-200' : 'bg-white text-slate-500 dark:bg-white/10 dark:text-slate-300'}`}>
+                        {skills.length.toLocaleString()}
+                      </span>
+                    </button>
+                    <button
+                      type="button"
+                      role="tab"
+                      aria-selected={activeTab === 'packages'}
+                      onClick={() => setActiveTab('packages')}
+                      className={`inline-flex min-h-9 flex-1 items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-semibold transition-colors sm:min-w-[160px] ${
+                        activeTab === 'packages'
+                          ? 'bg-white text-slate-950 shadow-sm dark:bg-slate-950 dark:text-white'
+                          : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                      }`}
+                    >
+                      <span>{t('admin.skill.tabs.packages')}</span>
+                      <span className={`rounded px-1.5 py-0.5 text-[11px] ${activeTab === 'packages' ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-200' : 'bg-white text-slate-500 dark:bg-white/10 dark:text-slate-300'}`}>
+                        {packages.length.toLocaleString()}
+                      </span>
+                    </button>
+                  </div>
+                  <div className="flex flex-wrap justify-end gap-2">
+                    <button
+                      type="button"
+                      onClick={() => openCreateCategory(null)}
+                      className="inline-flex h-9 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-700 shadow-sm transition-colors hover:border-emerald-300 hover:text-emerald-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:border-emerald-500/40 dark:hover:text-emerald-300"
+                    >
+                      <Plus className="h-4 w-4" />
+                      {t('admin.skill.actions.createCategory')}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={activeTab === 'packages' ? openCreatePackage : openCreateSkill}
+                      className="inline-flex h-9 items-center gap-2 rounded-lg bg-slate-900 px-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
+                    >
+                      <Plus className="h-4 w-4" />
+                      {activeTab === 'packages' ? t('admin.skill.actions.createPackage') : t('admin.skill.actions.createSkill')}
+                    </button>
+                  </div>
+                </div>
+                <div data-admin-skill-table-filters className="mt-3 flex flex-col gap-2 lg:flex-row lg:items-center">
+                  <div className="relative min-w-0 lg:w-[320px]">
+                    <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                    <input
+                      value={keyword}
+                      onChange={(event) => {
+                        setSkillPage(1);
+                        setPackagePage(1);
+                        setKeyword(event.target.value);
+                      }}
+                      className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-emerald-400 dark:border-white/10 dark:bg-white/5 dark:text-white"
+                      placeholder={t('admin.skill.filters.searchPlaceholder')}
+                    />
+                  </div>
+                  <div className="inline-flex h-10 items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 text-sm font-medium text-slate-600 dark:border-white/10 dark:bg-white/[0.03] dark:text-slate-300">
+                    <Folder className="h-4 w-4 text-slate-400" />
+                    <span className="max-w-[220px] truncate">{selectedCategoryName}</span>
+                  </div>
+                  {activeTab === 'skills' ? (
+                    <>
+                      <select
+                        value={marketStatus}
+                        onChange={(event) => {
+                          setSkillPage(1);
+                          setMarketStatus(event.target.value as SkillMarketStatusFilter);
+                        }}
+                        className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-emerald-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
+                      >
+                        {marketStatusOptions.map((option) => <option key={option.value} value={option.value}>{t(option.labelKey)}</option>)}
+                      </select>
+                      <select
+                        value={reviewStatus}
+                        onChange={(event) => {
+                          setSkillPage(1);
+                          setReviewStatus(event.target.value as SkillReviewStatusFilter);
+                        }}
+                        className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-emerald-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
+                      >
+                        {reviewStatusOptions.map((option) => <option key={option.value} value={option.value}>{t(option.labelKey)}</option>)}
+                      </select>
+                    </>
+                  ) : null}
+                </div>
+              </div>
 
-        {actionError ? (
-          <div className="border-b border-red-100 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
-            {actionError}
-          </div>
-        ) : null}
+              {actionError ? (
+                <div className="border-b border-red-100 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
+                  {actionError}
+                </div>
+              ) : null}
+            </>
+          )}
+          footer={(
+            <div data-admin-skill-pagination>
+              {activeTab === 'packages' ? (
+                <BottomPagination
+                  page={packagePage}
+                  pageSize={packagePageSize}
+                  itemCount={filteredPackages.length}
+                  hasNextPage={filteredPackages.length >= packagePageSize}
+                  disabled={loading}
+                  showingLabel={t('admin.skill.pagination.showing')}
+                  pageLabel={t('admin.skill.pagination.page', { page: packagePage })}
+                  pageSizeLabel={t('admin.skill.pagination.pageSize')}
+                  previousLabel={t('common.actions.previousPage')}
+                  nextLabel={t('common.actions.nextPage')}
+                  onPreviousPage={() => setPackagePage((current) => Math.max(1, current - 1))}
+                  onNextPage={() => setPackagePage((current) => current + 1)}
+                  onPageSizeChange={(nextPageSize) => {
+                    setPackagePageSize(nextPageSize);
+                    setPackagePage(1);
+                  }}
+                />
+              ) : (
+                <BottomPagination
+                  page={skillPage}
+                  pageSize={skillPageSize}
+                  itemCount={filteredSkills.length}
+                  hasNextPage={filteredSkills.length >= skillPageSize}
+                  disabled={loading}
+                  showingLabel={t('admin.skill.pagination.showing')}
+                  pageLabel={t('admin.skill.pagination.page', { page: skillPage })}
+                  pageSizeLabel={t('admin.skill.pagination.pageSize')}
+                  previousLabel={t('common.actions.previousPage')}
+                  nextLabel={t('common.actions.nextPage')}
+                  onPreviousPage={() => setSkillPage((current) => Math.max(1, current - 1))}
+                  onNextPage={() => setSkillPage((current) => current + 1)}
+                  onPageSizeChange={(nextPageSize) => {
+                    setSkillPageSize(nextPageSize);
+                    setSkillPage(1);
+                  }}
+                />
+              )}
+            </div>
+          )}
+        >
 
       {activeTab === 'packages' ? (
-        <div className="overflow-x-auto">
           <table className="w-full min-w-[820px] text-left text-sm">
-            <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500 dark:bg-white/[0.03] dark:text-slate-400">
+            <thead className="sticky top-0 z-10 bg-slate-50 text-xs uppercase tracking-wide text-slate-500 dark:bg-white/[0.03] dark:text-slate-400">
               <tr>
                 <th className="px-4 py-3 font-semibold">{t('admin.skill.tables.package')}</th>
                 <th className="px-4 py-3 font-semibold">{t('admin.skill.tables.category')}</th>
@@ -855,13 +942,11 @@ export function SkillAdmin() {
               )}
             </tbody>
           </table>
-        </div>
       ) : null}
 
       {activeTab === 'skills' ? (
-        <div className="overflow-x-auto">
           <table className="w-full min-w-[1100px] text-left text-sm">
-            <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500 dark:bg-white/[0.03] dark:text-slate-400">
+            <thead className="sticky top-0 z-10 bg-slate-50 text-xs uppercase tracking-wide text-slate-500 dark:bg-white/[0.03] dark:text-slate-400">
               <tr>
                 <th className="px-4 py-3 font-semibold">{t('admin.skill.tables.skill')}</th>
                 <th className="px-4 py-3 font-semibold">{t('admin.skill.tables.category')}</th>
@@ -956,9 +1041,8 @@ export function SkillAdmin() {
               )}
             </tbody>
           </table>
-        </div>
       ) : null}
-        </div>
+        </AdminTableShell>
       </div>
 
       {skillModalOpen ? (

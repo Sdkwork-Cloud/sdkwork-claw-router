@@ -4,13 +4,12 @@ package com.sdkwork.clawrouter.backend.model;
 public class ModelsListResult {
     private String code;
     private AdminAiModelsResponse data;
-    private String message;
     private String msg;
 
     public String getCode() {
         return this.code;
     }
-    
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -18,23 +17,15 @@ public class ModelsListResult {
     public AdminAiModelsResponse getData() {
         return this.data;
     }
-    
+
     public void setData(AdminAiModelsResponse data) {
         this.data = data;
-    }
-
-    public String getMessage() {
-        return this.message;
-    }
-    
-    public void setMessage(String message) {
-        this.message = message;
     }
 
     public String getMsg() {
         return this.msg;
     }
-    
+
     public void setMsg(String msg) {
         this.msg = msg;
     }

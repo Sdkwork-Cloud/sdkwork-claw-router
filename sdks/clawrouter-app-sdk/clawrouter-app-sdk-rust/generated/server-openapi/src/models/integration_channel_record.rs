@@ -11,9 +11,9 @@ pub struct IntegrationChannelRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub account_id: Option<String>,
 
-    /// Base url override field on integration channel record.
+    /// Base url field on integration channel record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub base_url_override: Option<String>,
+    pub base_url: Option<String>,
 
     /// Capabilities field on integration channel record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

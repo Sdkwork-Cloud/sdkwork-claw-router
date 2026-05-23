@@ -15,11 +15,11 @@ pub const OPENAPI_SCHEMA_TABS_PATH: &str = "/openapi/schema-tabs.json";
 pub const OPENAPI_SCHEMA_CACHE_TTL_SECONDS: u32 = 30;
 pub const OPENAPI_SCHEMA_CACHE_CONTROL: &str = "public, max-age=30, stale-while-revalidate=60";
 
-const APP_OPENAPI_JSON: &str =
-    include_str!("../../../generated/openapi/clawrouter-app-openapi.json");
-const BACKEND_OPENAPI_JSON: &str =
-    include_str!("../../../generated/openapi/clawrouter-backend-openapi.json");
 const GATEWAY_OPENAPI_JSON: &str = include_str!(concat!(env!("OUT_DIR"), "/gateway-openapi.json"));
+const APP_OPENAPI_JSON: &str =
+    include_str!(concat!(env!("OUT_DIR"), "/clawrouter-app-openapi.json"));
+const BACKEND_OPENAPI_JSON: &str =
+    include_str!(concat!(env!("OUT_DIR"), "/clawrouter-backend-openapi.json"));
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]

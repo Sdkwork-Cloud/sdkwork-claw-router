@@ -1,0 +1,812 @@
+fragment: operations/app-course
+frontend_operations:
+- route: /courses
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  operation: fetchCourses
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/courses
+  sdk_domain: course
+  read_sources:
+  - content_course
+  - content_course_relation
+  - plus_category
+  - plus_comments
+  - content_reaction
+  query_parameters:
+  - name: level
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 3
+  - name: category
+    schema:
+      type: string
+      maxLength: 64
+  - name: q
+    schema:
+      type: string
+      maxLength: 128
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 100
+  response_schema:
+    name: CourseListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - content
+    - page
+    - size
+    - totalElements
+    properties:
+      items:
+        type: array
+        maxItems: 100
+        items: &id001
+          name: CourseItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - contentId
+          - courseCode
+          - title
+          - description
+          - thumbnailUrl
+          - instructor
+          - durationText
+          - lessonsCount
+          - ratingScore
+          - studentsCount
+          - level
+          - levelLabel
+          - category
+          - categoryLabel
+          - tags
+          - externalBvid
+          - content
+          - currency
+          - isCollection
+          - publishedAt
+          - commentCount
+          - engagement
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            contentId:
+              type: integer
+              format: int64
+              minimum: 1
+            courseCode:
+              type: string
+              minLength: 1
+              maxLength: 128
+            title:
+              type: string
+              minLength: 1
+              maxLength: 255
+            description:
+              type: string
+              maxLength: 2048
+            thumbnailUrl:
+              type: string
+              maxLength: 2048
+            instructor: &id002
+              name: CourseInstructor
+              type: object
+              additionalProperties: false
+              required:
+              - name
+              - avatar
+              - title
+              - bio
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                  maxLength: 128
+                avatar:
+                  type: string
+                  maxLength: 2048
+                title:
+                  type: string
+                  maxLength: 128
+                bio:
+                  type: string
+                  maxLength: 1024
+            durationText:
+              type: string
+              maxLength: 64
+            lessonsCount:
+              type: integer
+              format: int64
+              minimum: 0
+            ratingScore:
+              type: number
+              minimum: 0
+              maximum: 5
+            studentsCount:
+              type: integer
+              format: int64
+              minimum: 0
+            level:
+              type: integer
+              format: int64
+              minimum: 0
+              maximum: 3
+            levelLabel:
+              type: string
+              maxLength: 64
+            category:
+              type: string
+              maxLength: 128
+            categoryLabel:
+              type: string
+              maxLength: 128
+            tags:
+              type: array
+              maxItems: 32
+              items:
+                type: string
+                minLength: 1
+                maxLength: 64
+            externalBvid:
+              type: string
+              maxLength: 128
+            content:
+              type: string
+              maxLength: 20000
+            priceAmount:
+              type:
+              - string
+              - 'null'
+              maxLength: 64
+            currency:
+              type: string
+              maxLength: 16
+            isCollection:
+              type: boolean
+            publishedAt:
+              type: string
+              maxLength: 64
+            commentCount:
+              type: integer
+              format: int64
+              minimum: 0
+            engagement: &id003
+              name: CourseEngagement
+              type: object
+              additionalProperties: false
+              required:
+              - views
+              - likes
+              - saves
+              - shares
+              - discussions
+              - studentsCount
+              properties:
+                views:
+                  type: integer
+                  format: int64
+                  minimum: 0
+                likes:
+                  type: integer
+                  format: int64
+                  minimum: 0
+                saves:
+                  type: integer
+                  format: int64
+                  minimum: 0
+                shares:
+                  type: integer
+                  format: int64
+                  minimum: 0
+                discussions:
+                  type: integer
+                  format: int64
+                  minimum: 0
+                studentsCount:
+                  type: integer
+                  format: int64
+                  minimum: 0
+      content:
+        type: array
+        maxItems: 100
+        items: *id001
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      size:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 100
+      totalElements:
+        type: integer
+        format: int64
+        minimum: 0
+- route: /courses
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  operation: fetchCourseOverview
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/courses/overview
+  sdk_domain: course
+  read_sources:
+  - content_course
+  - plus_category
+  - plus_comments
+  - content_reaction
+  query_parameters: []
+  response_schema:
+    name: CourseOverview
+    type: object
+    additionalProperties: false
+    required:
+    - stats
+    - source
+    properties:
+      stats:
+        name: CourseOverviewStats
+        type: object
+        additionalProperties: false
+        required:
+        - totalCourses
+        - totalLessons
+        - totalStudents
+        - totalCategories
+        properties:
+          totalCourses:
+            type: integer
+            format: int64
+            minimum: 0
+          totalLessons:
+            type: integer
+            format: int64
+            minimum: 0
+          totalStudents:
+            type: integer
+            format: int64
+            minimum: 0
+          totalCategories:
+            type: integer
+            format: int64
+            minimum: 0
+      source: &id004
+        name: CourseOverviewSource
+        type: object
+        additionalProperties: false
+        required:
+        - sourceLabel
+        - sourceDescription
+        - sourceTables
+        - observedAt
+        properties:
+          sourceLabel:
+            type: string
+            minLength: 1
+            maxLength: 128
+          sourceDescription:
+            type: string
+            minLength: 1
+            maxLength: 512
+          sourceTables:
+            type: array
+            maxItems: 8
+            items:
+              type: string
+              minLength: 1
+              maxLength: 128
+          observedAt:
+            type: string
+            minLength: 1
+            maxLength: 64
+- route: /courses
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  operation: fetchCourseCategories
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/courses/categories
+  sdk_domain: course
+  read_sources:
+  - plus_category
+  - content_course
+  query_parameters: []
+  response_schema:
+    name: CourseCategoryList
+    type: array
+    maxItems: 100
+    items:
+      name: CourseCategoryItem
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - code
+      - label
+      - name
+      - description
+      - icon
+      - sortWeight
+      - courseCount
+      properties:
+        id:
+          type: string
+          minLength: 1
+          maxLength: 128
+        code:
+          type: string
+          minLength: 1
+          maxLength: 128
+        label:
+          type: string
+          minLength: 1
+          maxLength: 128
+        name:
+          type: string
+          minLength: 1
+          maxLength: 128
+        description:
+          type: string
+          maxLength: 1024
+        icon:
+          type: string
+          maxLength: 128
+        sortWeight:
+          type: integer
+          format: int64
+        courseCount:
+          type: integer
+          format: int64
+          minimum: 0
+- route: /courses
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  operation: submitCourseApplication
+  operation_id: applications.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/courses/applications
+  sdk_domain: course
+  read_sources:
+  - content_course_application
+  write_tables:
+  - content_course_application
+  request_schema:
+    name: CourseApplicationCreateRequest
+    type: object
+    additionalProperties: false
+    required:
+    - title
+    - category
+    - description
+    - sourceProvider
+    properties:
+      title:
+        type: string
+        minLength: 1
+        maxLength: 200
+      category:
+        type: string
+        minLength: 1
+        maxLength: 64
+      description:
+        type: string
+        minLength: 1
+        maxLength: 2000
+      sourceProvider:
+        type: string
+        enum:
+        - bilibili
+        - local
+      externalBvid:
+        type: string
+        maxLength: 64
+      videoUrl:
+        type: string
+        maxLength: 1024
+      contactName:
+        type: string
+        maxLength: 128
+      contactEmail:
+        type: string
+        maxLength: 254
+      notes:
+        type: string
+        maxLength: 2000
+  response_schema:
+    name: CourseApplicationCreateResponse
+    type: object
+    additionalProperties: false
+    required:
+    - id
+    - applicationId
+    - title
+    - category
+    - description
+    - sourceProvider
+    - status
+    - submittedAt
+    properties:
+      id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      applicationId:
+        type: integer
+        format: int64
+        minimum: 1
+      title:
+        type: string
+        minLength: 1
+        maxLength: 200
+      category:
+        type: string
+        minLength: 1
+        maxLength: 64
+      description:
+        type: string
+        minLength: 1
+        maxLength: 2000
+      sourceProvider:
+        type: string
+        enum:
+        - bilibili
+        - local
+      externalBvid:
+        type: string
+        maxLength: 64
+      videoUrl:
+        type: string
+        maxLength: 1024
+      contactName:
+        type: string
+        maxLength: 128
+      contactEmail:
+        type: string
+        maxLength: 254
+      status:
+        type: string
+        minLength: 1
+        maxLength: 64
+      submittedAt:
+        type: string
+        minLength: 1
+        maxLength: 64
+- route: /courses
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  operation: uploadCourseApplicationVideo
+  operation_id: applications.videos.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/courses/applications/videos
+  sdk_domain: course
+  read_sources: []
+  write_tables: []
+  file_targets:
+  - course_application_video_uploads
+  request_content_type: multipart/form-data
+  request_schema:
+    name: CourseApplicationVideoUploadRequest
+    type: object
+    additionalProperties: false
+    required:
+    - file
+    properties:
+      file:
+        type: string
+        format: binary
+      fileName:
+        type: string
+        minLength: 1
+        maxLength: 255
+  response_schema:
+    name: CourseApplicationVideoUploadResponse
+    type: object
+    additionalProperties: false
+    required:
+    - videoUrl
+    - fileName
+    - contentType
+    - sizeBytes
+    - sha256
+    - uploadedAt
+    properties:
+      videoUrl:
+        type: string
+        minLength: 1
+        maxLength: 1024
+      fileName:
+        type: string
+        minLength: 1
+        maxLength: 255
+      contentType:
+        type: string
+        minLength: 1
+        maxLength: 128
+      sizeBytes:
+        type: integer
+        format: int64
+        minimum: 1
+      sha256:
+        type: string
+        minLength: 64
+        maxLength: 64
+        pattern: ^[a-f0-9]{64}$
+      uploadedAt:
+        type: string
+        minLength: 1
+        maxLength: 64
+- route: /courses/:id
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  operation: fetchCourseDetail
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/courses/{courseId}
+  sdk_domain: course
+  read_sources:
+  - content_course
+  - content_course_section
+  - content_course_lesson
+  - content_course_relation
+  - plus_category
+  - plus_comments
+  - content_reaction
+  query_parameters: []
+  response_schema:
+    name: CourseDetail
+    type: object
+    additionalProperties: false
+    required:
+    - id
+    - contentId
+    - courseCode
+    - title
+    - description
+    - thumbnailUrl
+    - instructor
+    - durationText
+    - lessonsCount
+    - ratingScore
+    - studentsCount
+    - level
+    - levelLabel
+    - category
+    - categoryLabel
+    - tags
+    - externalBvid
+    - content
+    - currency
+    - isCollection
+    - publishedAt
+    - commentCount
+    - engagement
+    - sections
+    - relatedCourses
+    - source
+    properties:
+      id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      contentId:
+        type: integer
+        format: int64
+        minimum: 1
+      courseCode:
+        type: string
+        minLength: 1
+        maxLength: 128
+      title:
+        type: string
+        minLength: 1
+        maxLength: 255
+      description:
+        type: string
+        maxLength: 2048
+      thumbnailUrl:
+        type: string
+        maxLength: 2048
+      instructor: *id002
+      durationText:
+        type: string
+        maxLength: 64
+      lessonsCount:
+        type: integer
+        format: int64
+        minimum: 0
+      ratingScore:
+        type: number
+        minimum: 0
+        maximum: 5
+      studentsCount:
+        type: integer
+        format: int64
+        minimum: 0
+      level:
+        type: integer
+        format: int64
+        minimum: 0
+        maximum: 3
+      levelLabel:
+        type: string
+        maxLength: 64
+      category:
+        type: string
+        maxLength: 128
+      categoryLabel:
+        type: string
+        maxLength: 128
+      tags:
+        type: array
+        maxItems: 32
+        items:
+          type: string
+          minLength: 1
+          maxLength: 64
+      externalBvid:
+        type: string
+        maxLength: 128
+      content:
+        type: string
+        maxLength: 20000
+      priceAmount:
+        type:
+        - string
+        - 'null'
+        maxLength: 64
+      currency:
+        type: string
+        maxLength: 16
+      isCollection:
+        type: boolean
+      publishedAt:
+        type: string
+        maxLength: 64
+      commentCount:
+        type: integer
+        format: int64
+        minimum: 0
+      engagement: *id003
+      sections:
+        type: array
+        maxItems: 100
+        items:
+          name: CourseSectionItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - sectionId
+          - sectionNo
+          - title
+          - description
+          - sortOrder
+          - lessonCount
+          - durationSeconds
+          - lessons
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            sectionId:
+              type: integer
+              format: int64
+              minimum: 1
+            sectionNo:
+              type: integer
+              format: int64
+              minimum: 0
+            title:
+              type: string
+              minLength: 1
+              maxLength: 255
+            description:
+              type: string
+              maxLength: 1024
+            sortOrder:
+              type: integer
+              format: int64
+            lessonCount:
+              type: integer
+              format: int64
+              minimum: 0
+            durationSeconds:
+              type: integer
+              format: int64
+              minimum: 0
+            lessons:
+              type: array
+              maxItems: 100
+              items:
+                name: CourseLessonItem
+                type: object
+                additionalProperties: false
+                required:
+                - id
+                - lessonId
+                - lessonNo
+                - number
+                - title
+                - description
+                - videoUrl
+                - externalBvid
+                - sourceProvider
+                - durationSeconds
+                - durationText
+                - content
+                - sortOrder
+                - freePreview
+                properties:
+                  id:
+                    type: string
+                    minLength: 1
+                    maxLength: 128
+                  lessonId:
+                    type: integer
+                    format: int64
+                    minimum: 1
+                  lessonNo:
+                    type: integer
+                    format: int64
+                    minimum: 0
+                  number:
+                    type: integer
+                    format: int64
+                    minimum: 0
+                  title:
+                    type: string
+                    minLength: 1
+                    maxLength: 255
+                  description:
+                    type: string
+                    maxLength: 1024
+                  videoUrl:
+                    type: string
+                    maxLength: 2048
+                  externalBvid:
+                    type: string
+                    maxLength: 128
+                  sourceProvider:
+                    type: string
+                    maxLength: 64
+                  durationSeconds:
+                    type: integer
+                    format: int64
+                    minimum: 0
+                  durationText:
+                    type: string
+                    maxLength: 64
+                  content:
+                    type: string
+                    maxLength: 20000
+                  sortOrder:
+                    type: integer
+                    format: int64
+                  freePreview:
+                    type: boolean
+      relatedCourses:
+        type: array
+        maxItems: 16
+        items: *id001
+      source: *id004

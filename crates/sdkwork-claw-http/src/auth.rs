@@ -110,7 +110,6 @@ pub struct AppSubjectBoundaryConfig {
 struct BoundaryErrorEnvelope {
     code: &'static str,
     msg: String,
-    message: String,
     data: Option<()>,
 }
 
@@ -243,7 +242,20 @@ pub async fn app_request_subject_boundary(
         .path_and_query()
         .map(|value| value.as_str().to_owned())
         .unwrap_or_else(|| request.uri().path().to_owned());
-    let now_unix_seconds = current_unix_seconds();
+    let now_unix_seconds = match current_unix_seconds() {
+        Ok(seconds) => seconds,
+        Err(error) => {
+            return (
+                StatusCode::SERVICE_UNAVAILABLE,
+                Json(BoundaryErrorEnvelope {
+                    code: "5030",
+                    msg: error,
+                    data: None,
+                }),
+            )
+                .into_response();
+        }
+    };
     match inject_verified_app_request_subject(
         request.headers_mut(),
         &method,
@@ -267,13 +279,19 @@ pub async fn optional_app_request_subject_boundary(
         .path_and_query()
         .map(|value| value.as_str().to_owned())
         .unwrap_or_else(|| request.uri().path().to_owned());
-    inject_optional_app_request_subject(
-        request.headers_mut(),
-        &method,
-        &path_and_query,
-        &config,
-        current_unix_seconds(),
-    );
+    if let Ok(now_unix_seconds) = current_unix_seconds() {
+        inject_optional_app_request_subject(
+            request.headers_mut(),
+            &method,
+            &path_and_query,
+            &config,
+            now_unix_seconds,
+        );
+    } else {
+        remove_internal_trusted_subject_headers(request.headers_mut());
+        remove_signed_subject_headers(request.headers_mut());
+        remove_app_session_token_headers(request.headers_mut());
+    }
     next.run(request).await
 }
 
@@ -295,7 +313,7 @@ pub fn inject_verified_app_request_subject(
     if TrustedRequestSubject::from_headers(headers).is_ok() {
         return Ok(());
     }
-    if !has_any_app_session_token_header(headers) {
+    if !has_dual_app_session_token_headers(headers) {
         return Ok(());
     }
     let subject =
@@ -333,7 +351,7 @@ pub fn inject_optional_app_request_subject(
         }
     }
 
-    if !has_any_app_session_token_header(headers) {
+    if !has_dual_app_session_token_headers(headers) {
         return;
     };
     match verify_dual_app_session_headers(headers, config.app_session(), now_unix_seconds) {
@@ -358,12 +376,26 @@ pub async fn trusted_request_subject_boundary(
         .path_and_query()
         .map(|value| value.as_str().to_owned())
         .unwrap_or_else(|| request.uri().path().to_owned());
+    let now_unix_seconds = match current_unix_seconds() {
+        Ok(seconds) => seconds,
+        Err(error) => {
+            return (
+                StatusCode::SERVICE_UNAVAILABLE,
+                Json(BoundaryErrorEnvelope {
+                    code: "5030",
+                    msg: error,
+                    data: None,
+                }),
+            )
+                .into_response();
+        }
+    };
     match inject_verified_trusted_request_subject(
         request.headers_mut(),
         &method,
         &path_and_query,
         &config,
-        current_unix_seconds(),
+        now_unix_seconds,
     ) {
         Ok(()) => next.run(request).await,
         Err(error) => unauthorized_boundary_response(error.to_string()),
@@ -582,19 +614,21 @@ fn unauthorized_boundary_response(message: String) -> Response {
         StatusCode::UNAUTHORIZED,
         Json(BoundaryErrorEnvelope {
             code: "4010",
-            msg: message.clone(),
-            message,
+            msg: message,
             data: None,
         }),
     )
         .into_response()
 }
 
-fn current_unix_seconds() -> i64 {
+fn current_unix_seconds() -> Result<i64, String> {
     SystemTime::now()
         .duration_since(UNIX_EPOCH)
         .map(|duration| duration.as_secs() as i64)
-        .unwrap_or(0)
+        .map_err(|error| {
+            tracing::error!("system clock error: unable to determine current unix time: {error}");
+            format!("system clock error: unable to determine current unix time: {error}")
+        })
 }
 
 fn remove_internal_trusted_subject_headers(headers: &mut HeaderMap) {
@@ -603,8 +637,8 @@ fn remove_internal_trusted_subject_headers(headers: &mut HeaderMap) {
     headers.remove(X_SDKWORK_USER_ID);
 }
 
-fn has_any_app_session_token_header(headers: &HeaderMap) -> bool {
-    headers.contains_key(AUTHORIZATION) || headers.contains_key(SDKWORK_ACCESS_TOKEN)
+fn has_dual_app_session_token_headers(headers: &HeaderMap) -> bool {
+    headers.contains_key(AUTHORIZATION) && headers.contains_key(SDKWORK_ACCESS_TOKEN)
 }
 
 fn remove_app_session_token_headers(headers: &mut HeaderMap) {

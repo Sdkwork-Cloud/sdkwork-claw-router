@@ -8,7 +8,7 @@ class IntegrationChannelRecord:
     """Integration channel record schema exposed by Claw Router."""
     access_type: Optional[str] = None
     account_id: Optional[str] = None
-    base_url_override: Optional[str] = None
+    base_url: Optional[str] = None
     capabilities: Optional[Dict[str, str]] = None
     channel_code: Optional[str] = None
     circuit_breaker_policy: Optional[Dict[str, str]] = None

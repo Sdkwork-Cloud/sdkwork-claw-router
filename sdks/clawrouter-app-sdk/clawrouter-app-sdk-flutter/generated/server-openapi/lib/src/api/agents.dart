@@ -12,7 +12,7 @@ class AgentsApi {
   AgentsApi(this._client);
 
   /// List user agents
-  Future<AgentsListResult?> list([int? page, int? pageSize, String? q]) async {
+  Future<AgentDefinitionsListResult?> agentDefinitionsList([int? page, int? pageSize, String? q]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -21,12 +21,12 @@ class AgentsApi {
     final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.appPath('/agents'), query));
     return (() {
       final map = sdkworkResponseAsMap(response);
-      return map == null ? null : AgentsListResult.fromJson(map);
+      return map == null ? null : AgentDefinitionsListResult.fromJson(map);
     })();
   }
 
   /// Create user agent
-  Future<AgentsCreateResult?> create(AgentCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<AgentDefinitionsCreateResult?> agentDefinitionsCreate(AgentCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
@@ -38,16 +38,158 @@ class AgentsApi {
     final response = await _client.post(ApiPaths.appPath('/agents'), body: payload, headers: requestHeaders, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
-      return map == null ? null : AgentsCreateResult.fromJson(map);
+      return map == null ? null : AgentDefinitionsCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Retrieve agent run
+  Future<AgentRunsRetrieveResult?> agentRunsRetrieve(String runId) async {
+    final response = await _client.get(ApiPaths.appPath('/agents/runs/${serializePathParameter(runId, const PathParameterSpec('runId', 'simple', false))}'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AgentRunsRetrieveResult.fromJson(map);
+    })();
+  }
+
+  /// Complete agent run
+  Future<AgentRunsSubmitResult?> agentRunsSubmit(String runId, AgentRunCompleteRequest body, String idempotencyKey, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.appPath('/agents/runs/${serializePathParameter(runId, const PathParameterSpec('runId', 'simple', false))}/complete'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AgentRunsSubmitResult.fromJson(map);
+    })();
+  }
+
+  /// List agent run steps
+  Future<AgentRunStepsListResult?> agentRunStepsList(String runId, [int? page, int? pageSize]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.appPath('/agents/runs/${serializePathParameter(runId, const PathParameterSpec('runId', 'simple', false))}/steps'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AgentRunStepsListResult.fromJson(map);
+    })();
+  }
+
+  /// Create agent run step
+  Future<AgentRunStepsCreateResult?> agentRunStepsCreate(String runId, AgentRunStepCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.appPath('/agents/runs/${serializePathParameter(runId, const PathParameterSpec('runId', 'simple', false))}/steps'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AgentRunStepsCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Complete agent run step
+  Future<AgentRunStepsSubmitResult?> agentRunStepsSubmit(String runId, String stepId, AgentRunStepCompleteRequest body, String idempotencyKey, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.appPath('/agents/runs/${serializePathParameter(runId, const PathParameterSpec('runId', 'simple', false))}/steps/${serializePathParameter(stepId, const PathParameterSpec('stepId', 'simple', false))}/complete'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AgentRunStepsSubmitResult.fromJson(map);
+    })();
+  }
+
+  /// Retrieve agent session
+  Future<AgentSessionsRetrieveResult?> agentSessionsRetrieve(String sessionId) async {
+    final response = await _client.get(ApiPaths.appPath('/agents/sessions/${serializePathParameter(sessionId, const PathParameterSpec('sessionId', 'simple', false))}'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AgentSessionsRetrieveResult.fromJson(map);
+    })();
+  }
+
+  /// List agent session runs
+  Future<AgentRunsListResult?> agentRunsList(String sessionId, [int? page, int? pageSize]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.appPath('/agents/sessions/${serializePathParameter(sessionId, const PathParameterSpec('sessionId', 'simple', false))}/runs'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AgentRunsListResult.fromJson(map);
+    })();
+  }
+
+  /// Create agent run
+  Future<AgentRunsCreateResult?> agentRunsCreate(String sessionId, AgentRunCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.appPath('/agents/sessions/${serializePathParameter(sessionId, const PathParameterSpec('sessionId', 'simple', false))}/runs'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AgentRunsCreateResult.fromJson(map);
     })();
   }
 
   /// Retrieve user agent
-  Future<AgentsRetrieveResult?> retrieve(String agentId) async {
+  Future<AgentDefinitionsRetrieveResult?> agentDefinitionsRetrieve(String agentId) async {
     final response = await _client.get(ApiPaths.appPath('/agents/${serializePathParameter(agentId, const PathParameterSpec('agentId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
-      return map == null ? null : AgentsRetrieveResult.fromJson(map);
+      return map == null ? null : AgentDefinitionsRetrieveResult.fromJson(map);
+    })();
+  }
+
+  /// List agent sessions
+  Future<AgentSessionsListResult?> agentSessionsList(String agentId, [int? page, int? pageSize]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.appPath('/agents/${serializePathParameter(agentId, const PathParameterSpec('agentId', 'simple', false))}/sessions'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AgentSessionsListResult.fromJson(map);
+    })();
+  }
+
+  /// Create agent session
+  Future<AgentSessionsCreateResult?> agentSessionsCreate(String agentId, AgentSessionCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.appPath('/agents/${serializePathParameter(agentId, const PathParameterSpec('agentId', 'simple', false))}/sessions'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AgentSessionsCreateResult.fromJson(map);
     })();
   }
 }

@@ -11,6 +11,8 @@ import { ChatService } from './chatService';
 import type { ChatApiKeyOption, ChatMessage, ChatSessionSummary, SimpleChatInputSubmit } from './chatTypes';
 import type { PlaygroundModelGroup, PlaygroundModelOption } from '../../playgroundTypes';
 
+const CHAT_LOCAL_SESSION_SCOPE = 'app-session';
+
 export function ChatPage() {
   const { t } = useTranslation();
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -164,22 +166,13 @@ export function ChatPage() {
     () => findChatModel(modelGroups, selectedModelId),
     [modelGroups, selectedModelId],
   );
+  const chatStoreScope = selectedApiKeyId || CHAT_LOCAL_SESSION_SCOPE;
 
   useEffect(() => {
     let cancelled = false;
     clearNewChatDraft();
     resetActiveConversationView();
-    if (!selectedApiKey?.copyableKey) {
-      setSessions([]);
-      setMessagesBySessionId({});
-      sessionsRef.current = [];
-      messagesRef.current = [];
-      messagesBySessionIdRef.current = {};
-      setLoadingSessions(false);
-      return undefined;
-    }
-
-    const localConversation = mergeChatSessions(selectedApiKey.id, [], {});
+    const localConversation = mergeChatSessions(chatStoreScope, [], {});
     sessionsRef.current = localConversation.sessions;
     messagesBySessionIdRef.current = localConversation.messagesBySessionId;
     setSessions(localConversation.sessions);
@@ -195,10 +188,10 @@ export function ChatPage() {
     });
 
     setLoadingSessions(true);
-    ChatService.fetchSessions({ apiKey: selectedApiKey.copyableKey })
+    ChatService.fetchSessions()
       .then((items) => {
         if (!cancelled) {
-          const merged = mergeChatSessions(selectedApiKey.id, items, localConversation.messagesBySessionId);
+          const merged = mergeChatSessions(chatStoreScope, items, localConversation.messagesBySessionId);
           sessionsRef.current = merged.sessions;
           messagesBySessionIdRef.current = merged.messagesBySessionId;
           setSessions(merged.sessions);
@@ -232,22 +225,21 @@ export function ChatPage() {
     return () => {
       cancelled = true;
     };
-  }, [clearNewChatDraft, resetActiveConversationView, selectedApiKey?.copyableKey, selectedApiKey?.id, t]);
+  }, [clearNewChatDraft, resetActiveConversationView, selectedApiKeyId, t]);
 
   useEffect(() => {
     let cancelled = false;
-    if (!selectedApiKey?.copyableKey || !selectedSessionId) {
+    if (!selectedSessionId) {
       setLoadingMessages(false);
       setMessageError(null);
       return undefined;
     }
 
-    const storedMessages = loadStoredChatMessages(selectedApiKey.id, selectedSessionId);
+    const storedMessages = loadStoredChatMessages(chatStoreScope, selectedSessionId);
     setMessages(storedMessages);
     setLoadingMessages(true);
     setMessageError(null);
     ChatService.fetchMessages({
-      apiKey: selectedApiKey.copyableKey,
       completionId: selectedSession?.latestCompletionId || selectedSessionId,
     })
       .then((items) => {
@@ -255,7 +247,7 @@ export function ChatPage() {
           setMessages(items);
           setMessagesBySessionId((current) => {
             const next = { ...current, [selectedSessionId]: items };
-            saveStoredChatConversation(selectedApiKey.id, sessionsRef.current, next);
+            saveStoredChatConversation(chatStoreScope, sessionsRef.current, next);
             return next;
           });
         }
@@ -277,16 +269,9 @@ export function ChatPage() {
     return () => {
       cancelled = true;
     };
-  }, [selectedApiKey?.copyableKey, selectedSession?.latestCompletionId, selectedSessionId, t]);
+  }, [chatStoreScope, selectedSession?.latestCompletionId, selectedSessionId, t]);
 
   const handleSubmit = async (input: SimpleChatInputSubmit): Promise<boolean> => {
-    if (!input.apiKey) {
-      setMessages((current) => [
-        ...current,
-        createFailedAssistantMessage(t('playground.chat.errors.missingApiKey')),
-      ]);
-      return false;
-    }
     const selectedModel = findChatModel(modelGroups, input.selectedModelId) || selectedChatModel || firstChatModel(modelGroups);
     if (!selectedModel) {
       setMessages((current) => [
@@ -303,15 +288,37 @@ export function ChatPage() {
     const priorMessages = messagesRef.current;
     const priorSessions = sessionsRef.current;
     const priorMessagesBySessionId = messagesBySessionIdRef.current;
-    const selectedApiKeySnapshot = selectedApiKey;
+    const selectedApiKeySnapshotId = selectedApiKey?.id || '';
     const selectedSessionIdSnapshot = selectedSessionId;
+    let streamedAssistantContent = '';
     setMessages((current) => [...current, userMessage, pendingAssistant]);
 
     try {
       const result = await ChatService.sendMessage({
         apiKey: input.apiKey,
         messages: priorMessages,
+        onDelta: (delta) => {
+          if (!delta) {
+            return;
+          }
+          const apiKeyChanged = selectedApiKeySnapshotId !== selectedApiKeyIdRef.current;
+          const sessionChanged = selectedSessionIdSnapshot !== selectedSessionIdRef.current;
+          if (apiKeyChanged || sessionChanged) {
+            return;
+          }
+          streamedAssistantContent += delta;
+          setMessages((current) => current.map((message) => (
+            message.id === pendingAssistant.id
+              ? {
+                ...message,
+                content: `${message.content}${delta}`,
+                status: 'responding',
+              }
+              : message
+          )));
+        },
         prompt: input.prompt,
+        selectedApiKeyId: input.selectedApiKeyId,
         selectedModel,
         sessionId: selectedSessionIdSnapshot || undefined,
       });
@@ -321,7 +328,7 @@ export function ChatPage() {
         userMessage,
         result.assistantMessage,
       ];
-      const activeSessions = selectedApiKeySnapshot.id === selectedApiKeyIdRef.current
+      const activeSessions = selectedApiKeySnapshotId === selectedApiKeyIdRef.current
         ? sessionsRef.current
         : priorSessions;
       const nextSessions = [result.session, ...activeSessions.filter((session) => session.id !== result.session.id)];
@@ -329,10 +336,10 @@ export function ChatPage() {
         ...priorMessagesBySessionId,
         [sessionId]: nextMessages,
       };
-      const apiKeyChanged = selectedApiKeySnapshot.id !== selectedApiKeyIdRef.current;
+      const apiKeyChanged = selectedApiKeySnapshotId !== selectedApiKeyIdRef.current;
       const sessionChanged = selectedSessionIdSnapshot !== selectedSessionIdRef.current;
       if (apiKeyChanged || sessionChanged) {
-        saveStoredChatConversation(selectedApiKeySnapshot.id, nextSessions, nextMessagesBySessionId);
+        saveStoredChatConversation(chatStoreScope, nextSessions, nextMessagesBySessionId);
         return false;
       }
       sessionsRef.current = nextSessions;
@@ -343,12 +350,12 @@ export function ChatPage() {
       )));
       setSessions(nextSessions);
       setMessagesBySessionId(nextMessagesBySessionId);
-      saveStoredChatConversation(selectedApiKeySnapshot.id, nextSessions, nextMessagesBySessionId);
+      saveStoredChatConversation(chatStoreScope, nextSessions, nextMessagesBySessionId);
       clearNewChatDraft();
       setSelectedSessionId(sessionId);
       return true;
     } catch (error) {
-      const apiKeyChanged = selectedApiKeySnapshot.id !== selectedApiKeyIdRef.current;
+      const apiKeyChanged = selectedApiKeySnapshotId !== selectedApiKeyIdRef.current;
       const sessionChanged = selectedSessionIdSnapshot !== selectedSessionIdRef.current;
       if (apiKeyChanged || sessionChanged) {
         return false;
@@ -358,8 +365,36 @@ export function ChatPage() {
         : error instanceof Error
           ? error.message
           : t('playground.chat.errors.emptyResponse');
-      setMessages(priorMessages);
-      setMessageError(message);
+      const errorMessage = message;
+      const failedMessages = [
+        ...normalizeChatHistoryMessages(priorMessages),
+        userMessage,
+        {
+          ...pendingAssistant,
+          content: streamedAssistantContent || errorMessage,
+          status: 'failed' as const,
+        },
+      ];
+      messagesRef.current = failedMessages;
+      setMessages((current) => {
+        let normalizedCurrent = current;
+        if (!normalizedCurrent.some((item) => item.id === userMessage.id)) {
+          normalizedCurrent = [...normalizedCurrent, userMessage];
+        }
+        if (!normalizedCurrent.some((item) => item.id === pendingAssistant.id)) {
+          normalizedCurrent = [...normalizedCurrent, pendingAssistant];
+        }
+        return normalizedCurrent.map((item) => (
+          item.id === pendingAssistant.id
+            ? {
+              ...item,
+              content: item.content || streamedAssistantContent || errorMessage,
+              status: 'failed' as const,
+            }
+            : item
+        ));
+      });
+      setMessageError(errorMessage);
       return false;
     } finally {
       setSubmitting(false);

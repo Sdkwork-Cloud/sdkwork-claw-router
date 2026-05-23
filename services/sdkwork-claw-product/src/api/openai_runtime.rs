@@ -13,7 +13,7 @@ use crate::domain::{
 };
 use crate::ports::PricingCatalog;
 
-pub(super) type OpenAiRouteError = Box<Response>;
+pub(crate) type OpenAiRouteError = Box<Response>;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ResolvedOpenAiProviderRoute {
@@ -200,7 +200,7 @@ where
     .first_route())
 }
 
-pub(super) fn resolve_openai_provider_route_plan<C>(
+pub(crate) fn resolve_openai_provider_route_plan<C>(
     catalog: &C,
     context: &AuthenticatedApiKeyContext,
     model: &str,
@@ -214,11 +214,12 @@ where
 {
     let catalog_model = find_catalog_model(catalog, model)?;
     ensure_model_capability(&catalog_model, accepted_capabilities, capability_label)?;
-    let catalog_key = catalog_model.catalog_key;
+    let model_catalog_key = catalog_model.catalog_key;
+    let routing_catalog_key = route_scope_catalog_key(model, &model_catalog_key);
     let model_plan = ProviderRouteSelector::new(catalog)
         .select_plan(SelectProviderRouteQuery {
             context: context.clone(),
-            catalog_key: catalog_key.clone(),
+            catalog_key: routing_catalog_key.clone(),
             requested_model: model.to_owned(),
             capability,
             billing_meter,
@@ -228,20 +229,45 @@ where
     let routes = model_plan
         .routes
         .into_iter()
-        .map(|selection| resolve_model_route(catalog_key.as_str(), selection, &account_pool_routes))
+        .map(|selection| {
+            resolve_model_route(
+                routing_catalog_key.as_str(),
+                selection,
+                &account_pool_routes,
+            )
+        })
         .collect::<Result<Vec<_>, _>>()?;
     if routes.is_empty() {
         return Err(provider_route_selection_error(
             ProviderRouteSelectionError::provider_route_unavailable(format!(
                 "provider route is not available for configured account pool: route plan is empty for model {}",
-                catalog_key
+                routing_catalog_key
             )),
         ));
     }
     Ok(ResolvedOpenAiProviderRoutePlan {
-        catalog_key,
+        catalog_key: routing_catalog_key,
         routes,
     })
+}
+
+fn route_scope_catalog_key(requested_model: &str, model_catalog_key: &str) -> String {
+    if catalog_key_is_regional(requested_model) {
+        requested_model.trim().to_owned()
+    } else {
+        model_catalog_key.to_owned()
+    }
+}
+
+fn catalog_key_is_regional(value: &str) -> bool {
+    matches!(
+        value
+            .split('/')
+            .filter(|part| !part.trim().is_empty())
+            .collect::<Vec<_>>()
+            .as_slice(),
+        [_vendor, _region, _model]
+    )
 }
 
 fn resolve_model_route(
@@ -282,7 +308,7 @@ fn resolve_model_route(
     }
 
     Ok(ResolvedOpenAiProviderRoute {
-        catalog_key: catalog_key.to_owned(),
+        catalog_key: model_route.catalog_key,
         policy_id: selection.policy_id,
         rule_id: selection.rule_id,
         provider_code: model_route.provider_code,

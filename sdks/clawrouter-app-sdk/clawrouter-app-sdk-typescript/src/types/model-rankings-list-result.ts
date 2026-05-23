@@ -7,7 +7,5 @@ export interface ModelRankingsListResult {
   /** Data field on model rankings list result. */
   data?: ModelRankingsSnapshot;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

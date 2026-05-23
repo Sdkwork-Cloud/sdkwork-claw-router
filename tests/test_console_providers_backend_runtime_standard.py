@@ -294,17 +294,44 @@ class ConsoleProvidersBackendRuntimeStandardTest(unittest.TestCase):
             ROOT / "generated" / "schema" / "manifest" / "schema-manifest.json"
         ).read_text(encoding="utf-8")
 
-        provider_table_start = registry.index("  - table: integration_provider")
-        provider_table_end = registry.index("\n  - table: integration_channel", provider_table_start)
+        provider_table_start = registry.index("- table: integration_provider")
+        provider_table_end = registry.index("\n- table: integration_channel", provider_table_start)
         provider_table = registry[provider_table_start:provider_table_end]
 
         self.assertIn("code_column: integration_type", registry)
         self.assertIn("integration_type: enum_int32", provider_table)
+        self.assertIn("base_url: string(512)", provider_table)
+        self.assertNotIn("base_url_template: string(512)", provider_table)
         self.assertNotIn("provider_type: enum_int32", provider_table)
         self.assertIn("integration_type INTEGER", schema_sql)
+        self.assertIn("base_url VARCHAR(512)", schema_sql)
+        self.assertNotIn("base_url_template VARCHAR(512)", schema_sql)
         self.assertNotIn("provider_type INTEGER", schema_sql)
         self.assertIn('"name": "integration_type"', manifest)
+        self.assertIn('"name": "base_url"', manifest)
+        self.assertNotIn('"name": "base_url_template"', manifest)
         self.assertNotIn('"name": "provider_type"', manifest)
+
+    def test_integration_channel_and_account_own_base_url_without_override_naming(self) -> None:
+        registry = (
+            ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+        ).read_text(encoding="utf-8")
+        schema_sql = (
+            ROOT / "generated" / "schema" / "postgres" / "schema.sql"
+        ).read_text(encoding="utf-8")
+
+        channel_table_start = registry.index("- table: integration_channel")
+        channel_table_end = registry.index("\n- table: integration_provider_account", channel_table_start)
+        channel_table = registry[channel_table_start:channel_table_end]
+        account_table_start = registry.index("- table: integration_provider_account")
+        account_table_end = registry.index("\n- table: integration_channel_model", account_table_start)
+        account_table = registry[account_table_start:account_table_end]
+
+        self.assertIn("base_url: string(512)", channel_table)
+        self.assertIn("base_url: string(512)", account_table)
+        self.assertNotIn("base_url_override: string(512)", channel_table)
+        self.assertIn("base_url VARCHAR(512)", schema_sql)
+        self.assertNotIn("base_url_override VARCHAR(512)", schema_sql)
 
     def test_console_providers_ui_is_read_only_until_command_contract_exists(self) -> None:
         providers_view = (

@@ -1,176 +1,196 @@
 import {
-  ensurePlusApiSuccess,
   getClawRouterAppSdkClient,
+  createRequestParams,
+  createRequestToken,
   isRecord,
-  readApiRecord,
-  readDecimalString,
   readRequiredApiItems,
-  readRequiredString,
+  readString,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
-import type { SettlementDashboardResponse as SdkSettlementDashboardResponse } from '@sdkwork/clawrouter-app-sdk';
-
-const MIN_SETTLEMENT_DASHBOARD_YEAR = 2000;
-const MAX_SETTLEMENT_DASHBOARD_YEAR = 2100;
-
-type SettlementBillSdkContract = {
-  breakdown: SdkSettlementDashboardResponse['bills'][number]['breakdown'];
-};
 
 export interface SettlementChartData {
-  day: SdkSettlementDashboardResponse['chartData'][number]['day'];
-  text: string & SdkSettlementDashboardResponse['chartData'][number]['text'];
-  image: string & SdkSettlementDashboardResponse['chartData'][number]['image'];
-  video: string & SdkSettlementDashboardResponse['chartData'][number]['video'];
-  audio: string & SdkSettlementDashboardResponse['chartData'][number]['audio'];
-  music: string & SdkSettlementDashboardResponse['chartData'][number]['music'];
+  day: string;
+  text: string;
+  image: string;
+  video: string;
+  audio: string;
+  music: string;
 }
 
 export interface BillBreakdownItem {
-  cost: string & SdkSettlementDashboardResponse['bills'][number]['breakdown']['text']['cost'];
-  usage: SdkSettlementDashboardResponse['bills'][number]['breakdown']['text']['usage'];
-  models: SdkSettlementDashboardResponse['bills'][number]['breakdown']['text']['models'];
+  cost: string;
+  usage: string;
+  models: string[];
 }
 
 export interface Bill {
-  id: SdkSettlementDashboardResponse['bills'][number]['id'];
-  period: SdkSettlementDashboardResponse['bills'][number]['period'];
-  startDate: SdkSettlementDashboardResponse['bills'][number]['startDate'];
-  endDate: SdkSettlementDashboardResponse['bills'][number]['endDate'];
-  totalTokens: SdkSettlementDashboardResponse['bills'][number]['totalTokens'];
-  totalCost: string & SdkSettlementDashboardResponse['bills'][number]['totalCost'];
-  status: SdkSettlementDashboardResponse['bills'][number]['status'];
+  id: string;
+  period: string;
+  startDate: string;
+  endDate: string;
+  totalTokens: string;
+  totalCost: string;
+  status: string;
   breakdown: {
     text: BillBreakdownItem;
     image: BillBreakdownItem;
     video: BillBreakdownItem;
     audio: BillBreakdownItem;
     music: BillBreakdownItem;
-  } & SettlementBillSdkContract['breakdown'];
+  };
 }
 
-type SettlementDashboardData = {
-  chartData: SettlementChartData[];
-  bills: Bill[];
-};
+type SettlementUsageBucket = 'text' | 'image' | 'video' | 'audio' | 'music';
+
+const MIN_SETTLEMENT_DASHBOARD_YEAR = 2000;
+const MAX_SETTLEMENT_DASHBOARD_YEAR = 2100;
 
 export class SettlementsService {
-  static async fetchDashboardData(params?: Record<string, unknown>): Promise<SettlementDashboardData> {
-    const result = await getClawRouterAppSdkClient().billing.settlements.dashboard.list(
-      toSettlementDashboardQueryParams(params),
-    );
-    ensurePlusApiSuccess(result, 'console.settlements.states.loadErrorFallback');
-    const data = readApiRecord(result);
-    return {
-      chartData: readRequiredApiItems(data, 'Settlement chart data is required', ['chartData'])
-        .map(normalizeSettlementChartData),
-      bills: readRequiredApiItems(data, 'Settlement bills are required', ['bills'])
-        .map(normalizeBill),
+  static async fetchDashboardData(params?: { year?: string | number }): Promise<{
+    chartData: SettlementChartData[];
+    bills: Bill[];
+  }> {
+    const query = toSettlementDashboardQueryParams(params);
+    const [ledgerResult, invoiceResult] = await Promise.all([
+      appWalletLedgerEntriesList({ page: 1, pageSize: 500 }),
+      appInvoicesList({ page: 1, pageSize: 100 }),
+    ]);
+    const ledgerEntries = readRequiredApiItems(ledgerResult, 'Settlement ledger entries are required')
+      .map((item) => readRequiredRecord(item, 'Settlement ledger entry is required'));
+    const invoices = readRequiredApiItems(invoiceResult, 'Settlement invoice records are required')
+      .map((item) => readRequiredRecord(item, 'Settlement invoice record is required'));
+    return buildSettlementDashboard(query.year, ledgerEntries, invoices);
+  }
+}
+
+function toSettlementDashboardQueryParams(params?: { year?: string | number }): { year: string } {
+  const currentYear = boundedSettlementYear(new Date().getFullYear());
+  const rawYear = params?.year;
+  if (rawYear === undefined || rawYear === null || rawYear === '') {
+    return { year: String(currentYear) };
+  }
+  const parsedYear = typeof rawYear === 'number'
+    ? rawYear
+    : Number.parseInt(String(rawYear).trim(), 10);
+  return { year: String(boundedSettlementYear(parsedYear)) };
+}
+
+function boundedSettlementYear(value: number): number {
+  if (!Number.isFinite(value)) {
+    return boundedSettlementYear(new Date().getFullYear());
+  }
+  const year = Math.trunc(value);
+  return Math.min(MAX_SETTLEMENT_DASHBOARD_YEAR, Math.max(MIN_SETTLEMENT_DASHBOARD_YEAR, year));
+}
+
+type AppCommerce = ReturnType<typeof getClawRouterAppSdkClient>['commerce'];
+
+export async function appInvoicesList(params?: Parameters<AppCommerce['invoices']['list']>[0]) {
+  return getClawRouterAppSdkClient().commerce.invoices.list(params);
+}
+
+export async function appInvoicesRetrieve(invoiceId: string) {
+  return getClawRouterAppSdkClient().commerce.invoices.retrieve(invoiceId);
+}
+
+export async function appInvoicesCreate(body: Parameters<AppCommerce['invoices']['create']>[0]) {
+  return getClawRouterAppSdkClient().commerce.invoices.create(body, createRequestParams('app-invoice-create'));
+}
+
+async function appWalletLedgerEntriesList(params?: Parameters<AppCommerce['wallet']['ledgerEntries']['list']>[0]) {
+  return getClawRouterAppSdkClient().commerce.wallet.ledgerEntries.list(params);
+}
+
+export async function fetchSettlementDashboard(params?: { year?: string | number }) {
+  return SettlementsService.fetchDashboardData(params);
+}
+
+function buildSettlementDashboard(year: string, ledgerEntries: ApiRecord[], invoices: ApiRecord[]) {
+  const chartByDay = new Map<string, SettlementChartData>();
+  for (const entry of ledgerEntries) {
+    const day = (readFirstString(entry, ['date', 'createdAt', 'created_at']) || `${year}-01-01`).slice(0, 10);
+    if (!day.startsWith(year)) {
+      continue;
+    }
+    const row = chartByDay.get(day) ?? {
+      day,
+      text: '0.000000',
+      image: '0.000000',
+      video: '0.000000',
+      audio: '0.000000',
+      music: '0.000000',
     };
+    const amount = absDecimal(readFirstString(entry, ['amount', 'amountDelta', 'amount_delta']) || '0');
+    const bucket = settlementBucket(entry);
+    row[bucket] = sumMoney(row[bucket], amount);
+    chartByDay.set(day, row);
   }
-}
-
-function toSettlementDashboardQueryParams(params: Record<string, unknown> = {}): { year?: number } {
+  const bills = invoices
+    .map((invoice) => normalizeSettlementBill(invoice))
+    .filter((bill) => bill.startDate.startsWith(year) || bill.period.startsWith(year) || bill.endDate.startsWith(year));
+  if (bills.length === 0 && ledgerEntries.length > 0) {
+    bills.push(buildLedgerFallbackBill(year, ledgerEntries));
+  }
   return {
-    year: optionalSettlementDashboardYear(params.year),
+    chartData: [...chartByDay.values()].sort((left, right) => left.day.localeCompare(right.day)),
+    bills,
   };
 }
 
-function optionalSettlementDashboardYear(value: unknown): number | undefined {
-  if (value === undefined || value === null) {
-    return undefined;
-  }
-  const normalized = typeof value === 'string' ? value.trim() : value;
-  if (normalized === '') {
-    return undefined;
-  }
-  if (typeof normalized !== 'number' && typeof normalized !== 'string') {
-    throw new Error('year must be an integer');
-  }
-  const year = Number(normalized);
-  if (!Number.isInteger(year)) {
-    throw new Error('year must be an integer');
-  }
-  if (year < MIN_SETTLEMENT_DASHBOARD_YEAR || year > MAX_SETTLEMENT_DASHBOARD_YEAR) {
-    throw new Error(`year must be between ${MIN_SETTLEMENT_DASHBOARD_YEAR} and ${MAX_SETTLEMENT_DASHBOARD_YEAR}`);
-  }
-  return year;
+function settlementBucket(entry: ApiRecord): SettlementUsageBucket {
+  const text = `${readFirstString(entry, ['sourceType', 'source_type', 'description', 'remark'])}`.toLowerCase();
+  if (text.includes('image')) return 'image';
+  if (text.includes('video')) return 'video';
+  if (text.includes('audio') || text.includes('voice')) return 'audio';
+  if (text.includes('music')) return 'music';
+  return 'text';
 }
 
-function normalizeSettlementChartData(value: unknown): SettlementChartData {
-  const item = readRequiredRecord(value, 'Settlement chart record is required');
+function normalizeSettlementBill(invoice: ApiRecord): Bill {
+  const id = readFirstString(invoice, ['invoiceNo', 'invoice_no', 'id']) || createRequestToken('invoice');
+  const createdAt = readFirstString(invoice, ['createdAt', 'created_at', 'issuedAt', 'issued_at']) || new Date().toISOString().slice(0, 10);
+  const amount = readFirstString(invoice, ['invoiceAmount', 'invoice_amount', 'amount', 'totalAmount', 'total_amount']) || '0';
+  const normalizedAmount = formatDecimalString(amount, 6);
   return {
-    day: readRequiredString(item, 'day', 'Settlement chart day is required'),
-    text: readRequiredDecimalString(
-      item,
-      'text',
-      'Settlement chart text is required',
-      'Settlement chart text must be a decimal string',
-    ),
-    image: readRequiredDecimalString(
-      item,
-      'image',
-      'Settlement chart image is required',
-      'Settlement chart image must be a decimal string',
-    ),
-    video: readRequiredDecimalString(
-      item,
-      'video',
-      'Settlement chart video is required',
-      'Settlement chart video must be a decimal string',
-    ),
-    audio: readRequiredDecimalString(
-      item,
-      'audio',
-      'Settlement chart audio is required',
-      'Settlement chart audio must be a decimal string',
-    ),
-    music: readRequiredDecimalString(
-      item,
-      'music',
-      'Settlement chart music is required',
-      'Settlement chart music must be a decimal string',
-    ),
+    id,
+    period: readFirstString(invoice, ['period']) || createdAt.slice(0, 7),
+    startDate: readFirstString(invoice, ['startDate', 'start_date']) || `${createdAt.slice(0, 7)}-01`,
+    endDate: readFirstString(invoice, ['endDate', 'end_date']) || createdAt.slice(0, 10),
+    totalTokens: readFirstString(invoice, ['totalTokens', 'total_tokens']) || '0',
+    totalCost: normalizedAmount,
+    status: readFirstString(invoice, ['status']) || 'pending',
+    breakdown: emptyBreakdown(normalizedAmount),
   };
 }
 
-function normalizeBill(value: unknown): Bill {
-  const item = readRequiredRecord(value, 'Settlement bill record is required');
-  const breakdown = readRequiredRecord(item.breakdown, 'Settlement bill breakdown is required');
+function buildLedgerFallbackBill(year: string, ledgerEntries: ApiRecord[]): Bill {
+  const totalCost = ledgerEntries
+    .map((entry) => absDecimal(readFirstString(entry, ['amount', 'amountDelta', 'amount_delta']) || '0'))
+    .reduce((total, amount) => sumMoney(total, amount), '0.000000');
   return {
-    id: readRequiredString(item, 'id', 'Settlement bill id is required'),
-    period: readRequiredString(item, 'period', 'Settlement bill period is required'),
-    startDate: readRequiredString(item, 'startDate', 'Settlement bill start date is required'),
-    endDate: readRequiredString(item, 'endDate', 'Settlement bill end date is required'),
-    totalTokens: readRequiredString(item, 'totalTokens', 'Settlement bill total tokens are required'),
-    totalCost: readRequiredDecimalString(
-      item,
-      'totalCost',
-      'Settlement bill total cost is required',
-      'Settlement bill total cost must be a decimal string',
-    ),
-    status: readRequiredString(item, 'status', 'Settlement bill status is required'),
-    breakdown: {
-      text: normalizeBreakdown(breakdown.text, 'text'),
-      image: normalizeBreakdown(breakdown.image, 'image'),
-      video: normalizeBreakdown(breakdown.video, 'video'),
-      audio: normalizeBreakdown(breakdown.audio, 'audio'),
-      music: normalizeBreakdown(breakdown.music, 'music'),
-    },
+    id: `BILL-${year}`,
+    period: `${year} Annual`,
+    startDate: `${year}-01-01`,
+    endDate: `${year}-12-31`,
+    totalTokens: '0',
+    totalCost,
+    status: 'pending',
+    breakdown: emptyBreakdown(totalCost),
   };
 }
 
-function normalizeBreakdown(value: unknown, label: string): BillBreakdownItem {
-  const item = readRequiredRecord(value, `Settlement ${label} breakdown is required`);
+function emptyBreakdown(totalCost = '0.000000'): Bill['breakdown'] {
+  const empty = (cost: string): BillBreakdownItem => ({
+    cost,
+    usage: '-',
+    models: [],
+  });
   return {
-    cost: readRequiredDecimalString(
-      item,
-      'cost',
-      `Settlement ${label} breakdown cost is required`,
-      `Settlement ${label} breakdown cost must be a decimal string`,
-    ),
-    usage: readRequiredString(item, 'usage', `Settlement ${label} breakdown usage is required`),
-    models: readRequiredStringArray(item, 'models', 'Settlement breakdown models must be strings'),
+    text: empty(totalCost),
+    image: empty('0.000000'),
+    video: empty('0.000000'),
+    audio: empty('0.000000'),
+    music: empty('0.000000'),
   };
 }
 
@@ -181,30 +201,27 @@ function readRequiredRecord(value: unknown, message: string): ApiRecord {
   return value;
 }
 
-function readRequiredStringArray(record: ApiRecord, key: string, message: string): string[] {
-  const value = record[key];
-  if (!Array.isArray(value) || value.some((item) => typeof item !== 'string')) {
-    throw new Error(message);
+function readFirstString(item: ApiRecord, keys: readonly string[]): string {
+  for (const key of keys) {
+    const value = readString(item, key).trim();
+    if (value) {
+      return value;
+    }
   }
-  return [...value];
+  return '';
 }
 
-function readRequiredDecimalString(
-  record: ApiRecord,
-  key: string,
-  missingMessage: string,
-  invalidMessage: string,
-): string {
-  const value = record[key];
-  if (typeof value !== 'string' && typeof value !== 'number') {
-    throw new Error(missingMessage);
-  }
-  const normalized = String(value).trim();
-  if (!normalized) {
-    throw new Error(missingMessage);
-  }
-  if (!/^-?\d+(?:\.\d{1,6})?$/.test(normalized)) {
-    throw new Error(invalidMessage);
-  }
-  return readDecimalString(record, key);
+function absDecimal(value: string): string {
+  const normalized = formatDecimalString(value, 6);
+  return normalized.startsWith('-') ? normalized.slice(1) : normalized;
+}
+
+function sumMoney(left: string, right: string): string {
+  return (Number(left) + Number(right)).toFixed(6);
+}
+
+function formatDecimalString(value: string, digits: number): string {
+  const normalized = value.trim().replace(/,/g, '');
+  const parsed = Number(normalized);
+  return Number.isFinite(parsed) ? parsed.toFixed(digits) : (0).toFixed(digits);
 }

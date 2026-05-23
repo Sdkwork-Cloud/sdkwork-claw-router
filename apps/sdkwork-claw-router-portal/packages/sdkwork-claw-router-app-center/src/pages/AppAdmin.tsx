@@ -1,9 +1,13 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   Ban,
+  ChevronRight,
   CheckCircle2,
   CircleOff,
   Edit2,
+  Folder,
+  FolderPlus,
+  FolderTree,
   Loader2,
   Package,
   Plus,
@@ -13,19 +17,29 @@ import {
   X,
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
+import { AdminTableShell, BottomPagination, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
 import {
   AdminAppService,
   createAdminAppInputFromForm,
+  createAppCategoryInputFromForm,
   updateAdminAppInputFromForm,
+  updateAppCategoryInputFromForm,
   type AdminApp,
+  type AdminAppCategory,
   type AdminAppMarketStatus,
   type AdminAppStatus,
 } from '../services/adminAppService';
 
 type AppModalMode = 'create' | 'edit';
+type CategoryModalMode = 'create' | 'edit';
 type AppStatusFilter = '' | AdminAppStatus;
 type AppMarketStatusFilter = '' | AdminAppMarketStatus;
+type CategoryTreeNode = AdminAppCategory & { children: CategoryTreeNode[]; depth: number };
+type CategoryModalState = {
+  mode: CategoryModalMode;
+  category: AdminAppCategory | null;
+  parentId: string | null;
+} | null;
 
 const statusOptions = [
   { value: '', labelKey: 'admin.app.filters.allRuntime' },
@@ -40,13 +54,238 @@ const marketStatusOptions = [
   { value: 'OFFLINE', labelKey: 'admin.app.status.offline' },
 ];
 
+function buildCategoryTree(categories: AdminAppCategory[]): CategoryTreeNode[] {
+  const nodes = new Map<string, CategoryTreeNode>();
+  const parentById = new Map<string, string | null>();
+  categories.forEach((category) => {
+    nodes.set(category.id, { ...category, children: [], depth: 0 });
+    parentById.set(category.id, category.parentId);
+  });
+
+  const roots: CategoryTreeNode[] = [];
+  nodes.forEach((node) => {
+    const parentId = node.parentId;
+    const parent = parentId ? nodes.get(parentId) : undefined;
+    if (!parent || parentId === node.id || hasCategoryParentCycle(node.id, parentId, parentById)) {
+      roots.push(node);
+      return;
+    }
+    parent.children.push(node);
+  });
+
+  const sortAndDepth = (items: CategoryTreeNode[], depth: number) => {
+    items.sort(compareCategoryNodes);
+    items.forEach((item) => {
+      item.depth = depth;
+      sortAndDepth(item.children, depth + 1);
+    });
+  };
+  sortAndDepth(roots, 0);
+  return roots;
+}
+
+function hasCategoryParentCycle(categoryId: string, parentId: string | null, parentById: Map<string, string | null>): boolean {
+  let current = parentId;
+  const visited = new Set<string>();
+  while (current) {
+    if (current === categoryId || visited.has(current)) {
+      return true;
+    }
+    visited.add(current);
+    current = parentById.get(current) ?? null;
+  }
+  return false;
+}
+
+function compareCategoryNodes(left: CategoryTreeNode, right: CategoryTreeNode): number {
+  if (right.sortWeight !== left.sortWeight) {
+    return right.sortWeight - left.sortWeight;
+  }
+  const nameOrder = left.name.localeCompare(right.name);
+  return nameOrder || left.id.localeCompare(right.id);
+}
+
+function flattenCategoryTree(tree: CategoryTreeNode[]): CategoryTreeNode[] {
+  const items: CategoryTreeNode[] = [];
+  const visit = (nodes: CategoryTreeNode[]) => {
+    nodes.forEach((node) => {
+      items.push(node);
+      visit(node.children);
+    });
+  };
+  visit(tree);
+  return items;
+}
+
+function AppCategoryTree({
+  categories,
+  tree,
+  selectedCategoryId,
+  selectedCategoryName,
+  apps,
+  loading,
+  onSelect,
+  onCreateRoot,
+  onCreateChild,
+  onEditCategory,
+  onDeleteCategory,
+}: {
+  categories: AdminAppCategory[];
+  tree: CategoryTreeNode[];
+  selectedCategoryId: string;
+  selectedCategoryName: string | undefined;
+  apps: AdminApp[];
+  loading: boolean;
+  onSelect: (categoryId: string) => void;
+  onCreateRoot: () => void;
+  onCreateChild: (category: AdminAppCategory) => void;
+  onEditCategory: (category: AdminAppCategory) => void;
+  onDeleteCategory: (category: AdminAppCategory) => void;
+}) {
+  const { t } = useTranslation();
+  return (
+    <aside
+      data-admin-app-category-tree
+      className="flex min-h-0 flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#171717]"
+    >
+      <div className="flex shrink-0 items-center justify-between gap-3 border-b border-slate-200 p-3 dark:border-white/10">
+        <div className="min-w-0">
+          <div className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
+            <FolderTree className="h-4 w-4 text-sky-600 dark:text-sky-300" />
+            <span>{t('admin.app.tree.title')}</span>
+          </div>
+          <div className="mt-1 truncate text-xs text-slate-500">
+            {t('admin.app.tree.selected', { name: selectedCategoryName || t('admin.app.tree.all') })}
+          </div>
+        </div>
+        <IconButton
+          title={t('admin.app.actions.createCategory')}
+          onClick={onCreateRoot}
+          icon={<FolderPlus className="h-4 w-4" />}
+        />
+      </div>
+      <div className="min-h-0 flex-1 overflow-y-auto p-2">
+        <button
+          type="button"
+          onClick={() => onSelect('')}
+          className={`mb-1 flex w-full items-center justify-between gap-2 rounded-lg px-2 py-2 text-left text-sm transition-colors ${
+            !selectedCategoryId
+              ? 'bg-sky-50 text-sky-800 dark:bg-sky-500/15 dark:text-sky-100'
+              : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-white/[0.04]'
+          }`}
+        >
+          <span className="flex min-w-0 items-center gap-2">
+            <Folder className="h-4 w-4 shrink-0" />
+            <span className="truncate font-semibold">{t('admin.app.tree.all')}</span>
+          </span>
+          <span className="rounded bg-white px-1.5 py-0.5 text-[11px] font-semibold text-slate-500 dark:bg-white/10 dark:text-slate-300">
+            {t('admin.app.tree.count', { count: apps.length })}
+          </span>
+        </button>
+
+        {loading ? (
+          <div className="flex items-center gap-2 px-2 py-3 text-sm text-slate-500">
+            <Loader2 className="h-4 w-4 animate-spin" />
+            {t('admin.app.loading.categories')}
+          </div>
+        ) : tree.length === 0 ? (
+          <div className="rounded-lg border border-dashed border-slate-200 px-3 py-6 text-center text-sm text-slate-500 dark:border-white/10">
+            {t('admin.app.tree.empty')}
+          </div>
+        ) : (
+          tree.map((node) => (
+            <CategoryTreeItem
+              key={node.id}
+              node={node}
+              selectedCategoryId={selectedCategoryId}
+              onSelect={onSelect}
+              onCreateChild={onCreateChild}
+              onEditCategory={onEditCategory}
+              onDeleteCategory={onDeleteCategory}
+            />
+          ))
+        )}
+      </div>
+      <div className="shrink-0 border-t border-slate-200 px-3 py-2 text-xs text-slate-500 dark:border-white/10">
+        {t('admin.app.tree.total', { count: categories.length })}
+      </div>
+    </aside>
+  );
+}
+
+function CategoryTreeItem({
+  node,
+  selectedCategoryId,
+  onSelect,
+  onCreateChild,
+  onEditCategory,
+  onDeleteCategory,
+}: {
+  node: CategoryTreeNode;
+  selectedCategoryId: string;
+  onSelect: (categoryId: string) => void;
+  onCreateChild: (category: AdminAppCategory) => void;
+  onEditCategory: (category: AdminAppCategory) => void;
+  onDeleteCategory: (category: AdminAppCategory) => void;
+}) {
+  const { t } = useTranslation();
+  const isSelected = selectedCategoryId === node.id;
+  return (
+    <div>
+      <div
+        className={`group flex items-center gap-1 rounded-lg py-1.5 pl-2 pr-1 transition-colors ${
+          isSelected
+            ? 'bg-sky-50 text-sky-800 dark:bg-sky-500/15 dark:text-sky-100'
+            : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-white/[0.04]'
+        }`}
+        style={{ marginLeft: `${node.depth * 14}px` }}
+      >
+        <button
+          type="button"
+          onClick={() => onSelect(node.id)}
+          className="flex min-w-0 flex-1 items-center gap-2 text-left"
+        >
+          <ChevronRight className={`h-3.5 w-3.5 shrink-0 text-slate-400 ${node.children.length > 0 ? '' : 'opacity-0'}`} />
+          <Folder className="h-4 w-4 shrink-0" />
+          <span className="truncate text-sm font-semibold">{node.name}</span>
+          {!node.visible || node.status < 0 ? <span className="rounded bg-slate-100 px-1 text-[10px] text-slate-500 dark:bg-white/10">{node.status}</span> : null}
+        </button>
+        <span className="shrink-0 rounded bg-white px-1.5 py-0.5 text-[11px] font-semibold text-slate-500 dark:bg-white/10 dark:text-slate-300">
+          0
+        </span>
+        <div className="flex shrink-0 opacity-0 transition-opacity group-hover:opacity-100 focus-within:opacity-100">
+          <IconButton title={t('admin.app.actions.addChildCategory')} onClick={() => onCreateChild(node)} icon={<FolderPlus className="h-3.5 w-3.5" />} />
+          <IconButton title={t('admin.app.actions.editCategory')} onClick={() => onEditCategory(node)} icon={<Edit2 className="h-3.5 w-3.5" />} />
+          <IconButton title={t('admin.app.actions.deleteCategory')} onClick={() => onDeleteCategory(node)} icon={<Trash2 className="h-3.5 w-3.5" />} danger />
+        </div>
+      </div>
+      {node.children.map((child) => (
+        <CategoryTreeItem
+          key={child.id}
+          node={child}
+          selectedCategoryId={selectedCategoryId}
+          onSelect={onSelect}
+          onCreateChild={onCreateChild}
+          onEditCategory={onEditCategory}
+          onDeleteCategory={onDeleteCategory}
+        />
+      ))}
+    </div>
+  );
+}
+
 export function AppAdmin() {
   const { t } = useTranslation();
+  const [categories, setCategories] = useState<AdminAppCategory[]>([]);
   const [apps, setApps] = useState<AdminApp[]>([]);
   const [keyword, setKeyword] = useState('');
+  const [selectedCategoryId, setSelectedCategoryId] = useState('');
   const [status, setStatus] = useState<AppStatusFilter>('');
   const [marketStatus, setMarketStatus] = useState<AppMarketStatusFilter>('');
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(20);
   const [loading, setLoading] = useState(true);
+  const [categoryLoading, setCategoryLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [actionError, setActionError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
@@ -54,7 +293,9 @@ export function AppAdmin() {
   const [modalMode, setModalMode] = useState<AppModalMode>('create');
   const [modalOpen, setModalOpen] = useState(false);
   const [editingApp, setEditingApp] = useState<AdminApp | null>(null);
+  const [categoryModalState, setCategoryModalState] = useState<CategoryModalState>(null);
   const [deleteTarget, setDeleteTarget] = useState<AdminApp | null>(null);
+  const [deleteCategoryTarget, setDeleteCategoryTarget] = useState<AdminAppCategory | null>(null);
 
   const adminAppQuery = useMemo(() => {
     const normalizedKeyword = keyword.trim();
@@ -62,10 +303,10 @@ export function AppAdmin() {
       searchQuery: normalizedKeyword,
       status: status || undefined,
       marketStatus: marketStatus || undefined,
-      page: 1,
-      pageSize: 100,
+      page,
+      pageSize,
     };
-  }, [keyword, marketStatus, status]);
+  }, [keyword, marketStatus, page, pageSize, status]);
 
   const loadApps = useCallback(async () => {
     setLoading(true);
@@ -83,12 +324,42 @@ export function AppAdmin() {
     void loadApps();
   }, [loadApps]);
 
+  const loadCategories = useCallback(async () => {
+    setCategoryLoading(true);
+    setLoadError(null);
+    try {
+      setCategories(await AdminAppService.fetchAppCategories());
+    } catch (error) {
+      setLoadError(errorMessage(error, t('admin.app.errors.categoryLoadFallback')));
+    } finally {
+      setCategoryLoading(false);
+    }
+  }, [t]);
+
+  useEffect(() => {
+    void loadCategories();
+  }, [loadCategories]);
+
   const summary = useMemo(() => ({
     total: apps.length,
     active: apps.filter((item) => item.status === 'ACTIVE').length,
     published: apps.filter((item) => item.marketStatus === 'PUBLISHED').length,
     draft: apps.filter((item) => item.marketStatus === 'DRAFT').length,
   }), [apps]);
+
+  const categoryNameById = useMemo(() => new Map(categories.map((item) => [item.id, item.name])), [categories]);
+  const categoryTree = useMemo(() => buildCategoryTree(categories), [categories]);
+  const selectedCategoryName = selectedCategoryId ? categoryNameById.get(selectedCategoryId) : t('admin.app.tree.all');
+
+  const openCreateCategory = (parentId: string | null = selectedCategoryId || null) => {
+    setActionError(null);
+    setCategoryModalState({ mode: 'create', category: null, parentId });
+  };
+
+  const openEditCategory = (category: AdminAppCategory) => {
+    setActionError(null);
+    setCategoryModalState({ mode: 'edit', category, parentId: category.parentId });
+  };
 
   const openCreate = () => {
     setModalMode('create');
@@ -123,6 +394,31 @@ export function AppAdmin() {
       setEditingApp(null);
     } catch (error) {
       setActionError(errorMessage(error, t('admin.app.errors.saveFallback')));
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleSaveCategory = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (saving || !categoryModalState) {
+      return;
+    }
+    setSaving(true);
+    setActionError(null);
+    try {
+      const form = new FormData(event.currentTarget);
+      if (categoryModalState.mode === 'edit' && categoryModalState.category) {
+        const updated = await AdminAppService.updateAppCategory(categoryModalState.category.id, updateAppCategoryInputFromForm(form));
+        setCategories((items) => items.map((item) => item.id === updated.id ? updated : item));
+      } else {
+        const created = await AdminAppService.createAppCategory(createAppCategoryInputFromForm(form));
+        setCategories((items) => [...items, created]);
+        setSelectedCategoryId(created.id);
+      }
+      setCategoryModalState(null);
+    } catch (error) {
+      setActionError(errorMessage(error, t('admin.app.errors.categorySaveFallback')));
     } finally {
       setSaving(false);
     }
@@ -166,15 +462,38 @@ export function AppAdmin() {
     }
   };
 
+  const executeDeleteCategory = async () => {
+    if (!deleteCategoryTarget) {
+      return;
+    }
+    const id = deleteCategoryTarget.id;
+    setPendingActionId(`category:${id}`);
+    setActionError(null);
+    try {
+      const deleted = await AdminAppService.deleteAppCategory(id);
+      if (deleted) {
+        setCategories((items) => items.filter((item) => item.id !== id));
+        if (selectedCategoryId === id) {
+          setSelectedCategoryId('');
+        }
+      }
+      setDeleteCategoryTarget(null);
+    } catch (error) {
+      setActionError(errorMessage(error, t('admin.app.errors.categoryDeleteFallback')));
+    } finally {
+      setPendingActionId(null);
+    }
+  };
+
   return (
-    <div className="flex h-full w-full flex-col space-y-6">
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+    <div className="flex h-full min-h-0 w-full min-w-0 flex-col gap-4 overflow-hidden">
+      <div className="flex shrink-0 flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <h2 className="mb-2 flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
+          <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
             <Package className="h-6 w-6 text-sky-500" />
             {t('admin.app.title')}
           </h2>
-          <p className="text-sm text-slate-500 dark:text-slate-400">
+          <p className="mt-2 max-w-3xl text-sm text-slate-500 dark:text-slate-400">
             {t('admin.app.subtitle')}
           </p>
         </div>
@@ -188,47 +507,104 @@ export function AppAdmin() {
         </button>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid shrink-0 grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4">
         <Metric label={t('admin.app.metrics.total')} value={summary.total} />
         <Metric label={t('admin.app.metrics.active')} value={summary.active} />
         <Metric label={t('admin.app.metrics.published')} value={summary.published} />
         <Metric label={t('admin.app.metrics.draft')} value={summary.draft} />
       </div>
 
-      <div className="rounded-lg border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#171717]">
-        <div className="flex flex-col gap-3 border-b border-slate-200 p-4 dark:border-white/10 lg:flex-row lg:items-center">
-          <div className="relative flex-1">
-            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-            <input
-              value={keyword}
-              onChange={(event) => setKeyword(event.target.value)}
-              className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-sky-400 dark:border-white/10 dark:bg-white/5 dark:text-white"
-              placeholder={t('admin.app.filters.searchPlaceholder')}
-            />
-          </div>
-          <select
-            value={status}
-            onChange={(event) => setStatus(event.target.value as AppStatusFilter)}
-            className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-sky-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
-          >
-            {statusOptions.map((option) => <option key={option.value} value={option.value}>{t(option.labelKey)}</option>)}
-          </select>
-          <select
-            value={marketStatus}
-            onChange={(event) => setMarketStatus(event.target.value as AppMarketStatusFilter)}
-            className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-sky-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
-          >
-            {marketStatusOptions.map((option) => <option key={option.value} value={option.value}>{t(option.labelKey)}</option>)}
-          </select>
-        </div>
-        {actionError ? (
-          <div className="border-b border-red-100 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
-            {actionError}
-          </div>
-        ) : null}
-        <div className="overflow-x-auto">
+      <div data-admin-app-layout className="grid min-h-0 flex-1 grid-rows-[minmax(0,240px)_minmax(0,1fr)] gap-4 overflow-hidden xl:grid-cols-[320px_minmax(0,1fr)] xl:grid-rows-[minmax(0,1fr)]">
+        <AppCategoryTree
+          categories={categories}
+          tree={categoryTree}
+          selectedCategoryId={selectedCategoryId}
+          selectedCategoryName={selectedCategoryName}
+          apps={apps}
+          loading={categoryLoading}
+          onSelect={(categoryId) => {
+            setPage(1);
+            setSelectedCategoryId(categoryId);
+          }}
+          onCreateRoot={() => openCreateCategory(null)}
+          onCreateChild={(category) => openCreateCategory(category.id)}
+          onEditCategory={openEditCategory}
+          onDeleteCategory={setDeleteCategoryTarget}
+        />
+
+        <AdminTableShell
+          data-admin-app-table-card
+          viewportProps={{ 'data-admin-app-table-viewport': true }}
+          header={(
+            <>
+              <div className="border-b border-slate-200 p-3 dark:border-white/10">
+                <div className="flex flex-col gap-2 xl:flex-row xl:items-center">
+                  <div className="relative min-w-0 xl:w-[320px]">
+                    <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                    <input
+                      value={keyword}
+                      onChange={(event) => {
+                        setPage(1);
+                        setKeyword(event.target.value);
+                      }}
+                      className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-sky-400 dark:border-white/10 dark:bg-white/5 dark:text-white"
+                      placeholder={t('admin.app.filters.searchPlaceholder')}
+                    />
+                  </div>
+                  <select
+                    value={status}
+                    onChange={(event) => {
+                      setPage(1);
+                      setStatus(event.target.value as AppStatusFilter);
+                    }}
+                    className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-sky-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
+                  >
+                    {statusOptions.map((option) => <option key={option.value} value={option.value}>{t(option.labelKey)}</option>)}
+                  </select>
+                  <select
+                    value={marketStatus}
+                    onChange={(event) => {
+                      setPage(1);
+                      setMarketStatus(event.target.value as AppMarketStatusFilter);
+                    }}
+                    className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-sky-400 dark:border-white/10 dark:bg-[#202020] dark:text-slate-200"
+                  >
+                    {marketStatusOptions.map((option) => <option key={option.value} value={option.value}>{t(option.labelKey)}</option>)}
+                  </select>
+                </div>
+              </div>
+              {actionError ? (
+                <div className="border-b border-red-100 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
+                  {actionError}
+                </div>
+              ) : null}
+            </>
+          )}
+          footer={(
+            <div data-admin-app-pagination>
+              <BottomPagination
+                page={page}
+                pageSize={pageSize}
+                itemCount={apps.length}
+                hasNextPage={apps.length >= pageSize}
+                disabled={loading}
+                showingLabel={t('admin.app.pagination.showing')}
+                pageLabel={t('admin.app.pagination.page', { page })}
+                pageSizeLabel={t('admin.app.pagination.pageSize')}
+                previousLabel={t('common.actions.previousPage')}
+                nextLabel={t('common.actions.nextPage')}
+                onPreviousPage={() => setPage((current) => Math.max(1, current - 1))}
+                onNextPage={() => setPage((current) => current + 1)}
+                onPageSizeChange={(nextPageSize) => {
+                  setPageSize(nextPageSize);
+                  setPage(1);
+                }}
+              />
+            </div>
+          )}
+        >
           <table className="w-full min-w-[1100px] text-left text-sm">
-            <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500 dark:bg-white/[0.03] dark:text-slate-400">
+            <thead className="sticky top-0 z-10 bg-slate-50 text-xs uppercase tracking-wide text-slate-500 dark:bg-white/[0.03] dark:text-slate-400">
               <tr>
                 <th className="px-4 py-3 font-semibold">{t('admin.app.table.app')}</th>
                 <th className="px-4 py-3 font-semibold">{t('admin.app.table.delivery')}</th>
@@ -306,7 +682,7 @@ export function AppAdmin() {
               )}
             </tbody>
           </table>
-        </div>
+        </AdminTableShell>
       </div>
 
       {modalOpen ? (
@@ -325,6 +701,23 @@ export function AppAdmin() {
         />
       ) : null}
 
+      {categoryModalState ? (
+        <CategoryModal
+          mode={categoryModalState.mode}
+          category={categoryModalState.category}
+          categories={categories}
+          parentId={categoryModalState.parentId}
+          isSaving={saving}
+          error={actionError}
+          onClose={() => {
+            if (!saving) {
+              setCategoryModalState(null);
+            }
+          }}
+          onSubmit={handleSaveCategory}
+        />
+      ) : null}
+
       {deleteTarget ? (
         <ConfirmDialog
           title={t('admin.app.confirm.deleteTitle')}
@@ -337,6 +730,23 @@ export function AppAdmin() {
           onCancel={() => {
             if (!pendingActionId) {
               setDeleteTarget(null);
+            }
+          }}
+        />
+      ) : null}
+
+      {deleteCategoryTarget ? (
+        <ConfirmDialog
+          title={t('admin.app.confirm.deleteCategory.title')}
+          description={t('admin.app.confirm.deleteCategory.description', { name: deleteCategoryTarget.name })}
+          confirmLabel={t('common.actions.delete')}
+          tone="danger"
+          isBusy={pendingActionId === `category:${deleteCategoryTarget.id}`}
+          icon={<Trash2 className="h-4 w-4" />}
+          onConfirm={() => void executeDeleteCategory()}
+          onCancel={() => {
+            if (!pendingActionId) {
+              setDeleteCategoryTarget(null);
             }
           }}
         />
@@ -416,6 +826,83 @@ function AppModal({
             <TextArea label={t('admin.app.fields.releaseNotes')} name="releaseNotes" defaultValue={formatJson(app?.releaseNotes ?? [])} />
           </div>
           <div className="mt-5 flex justify-end gap-3">
+            <button type="button" onClick={onClose} disabled={isSaving} className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60 dark:border-white/10 dark:text-slate-200 dark:hover:bg-white/5">
+              {t('common.actions.cancel')}
+            </button>
+            <button type="submit" disabled={isSaving} className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-bold text-white hover:bg-slate-800 disabled:opacity-60 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200">
+              {isSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
+              {t('common.actions.save')}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+function CategoryModal({
+  mode,
+  category,
+  categories,
+  parentId,
+  isSaving,
+  error,
+  onClose,
+  onSubmit,
+}: {
+  mode: CategoryModalMode;
+  category: AdminAppCategory | null;
+  categories: AdminAppCategory[];
+  parentId: string | null;
+  isSaving: boolean;
+  error: string | null;
+  onClose: () => void;
+  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+}) {
+  const { t } = useTranslation();
+  const isEdit = mode === 'edit';
+  const parentOptions = useMemo(
+    () => flattenCategoryTree(buildCategoryTree(categories)).filter((item) => item.id !== category?.id),
+    [categories, category?.id],
+  );
+  return (
+    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/50 px-4 backdrop-blur-sm">
+      <div className="w-full max-w-2xl rounded-xl border border-slate-200 bg-white p-5 shadow-2xl dark:border-white/10 dark:bg-[#171717]">
+        <div className="mb-4 flex items-start justify-between gap-4">
+          <div>
+            <h3 className="text-base font-bold text-slate-900 dark:text-white">
+              {isEdit ? t('admin.app.modals.category.editTitle') : t('admin.app.modals.category.createTitle')}
+            </h3>
+            <p className="mt-1 text-xs text-slate-500">{t('admin.app.modals.category.description')}</p>
+          </div>
+          <button type="button" onClick={onClose} className="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-white/10 dark:hover:text-white">
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+        {error ? <div className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-500/10 dark:text-red-300">{error}</div> : null}
+        <form onSubmit={onSubmit} className="space-y-4">
+          <div className="grid gap-4 md:grid-cols-2">
+            <Field label={t('admin.app.fields.name')} name="name" defaultValue={category?.name ?? ''} required />
+            <Field label={t('admin.app.fields.code')} name="code" defaultValue={category?.code ?? ''} />
+            <SelectField label={t('admin.app.fields.parentCategory')} name="parentId" defaultValue={category?.parentId ?? parentId ?? ''}>
+              <option value="">{t('admin.app.tree.root')}</option>
+              {parentOptions.map((item) => (
+                <option key={item.id} value={item.id}>
+                  {`${'  '.repeat(item.depth)}${item.name}`}
+                </option>
+              ))}
+            </SelectField>
+            <Field label={t('admin.app.fields.sortWeight')} name="sortWeight" type="number" defaultValue={String(category?.sortWeight ?? 0)} />
+            <SelectField label={t('admin.app.fields.visible')} name="visible" defaultValue={String(category?.visible ?? true)}>
+              <option value="true">{t('admin.app.boolean.yes')}</option>
+              <option value="false">{t('admin.app.boolean.no')}</option>
+            </SelectField>
+            <Field label={t('admin.app.fields.status')} name="status" type="number" defaultValue={String(category?.status ?? 1)} />
+            <Field label={t('admin.app.fields.icon')} name="icon" defaultValue={category?.icon ?? ''} />
+            <Field label={t('admin.app.fields.path')} name="path" defaultValue={category?.path ?? ''} />
+          </div>
+          <TextArea label={t('admin.app.fields.description')} name="description" defaultValue={category?.description ?? ''} rows={4} plain />
+          <div className="flex justify-end gap-3">
             <button type="button" onClick={onClose} disabled={isSaving} className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60 dark:border-white/10 dark:text-slate-200 dark:hover:bg-white/5">
               {t('common.actions.cancel')}
             </button>

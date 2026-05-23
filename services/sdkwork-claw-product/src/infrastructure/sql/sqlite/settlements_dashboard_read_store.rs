@@ -39,8 +39,10 @@ LEFT JOIN commerce_billing_export be
  AND be.tenant_id = s.tenant_id
  AND be.organization_id = s.organization_id
  AND be.id = s.export_id
-LEFT JOIN plus_invoice pi
-  ON pi.id = s.invoice_id
+LEFT JOIN commerce_invoice pi
+  ON pi.id = CAST(s.invoice_id AS TEXT)
+ AND pi.tenant_id = CAST(s.tenant_id AS TEXT)
+ AND pi.organization_id = CAST(s.organization_id AS TEXT)
 WHERE s.status = 1
   AND s.tenant_id = ?1
   AND s.organization_id = ?2

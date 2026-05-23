@@ -11,5 +11,4 @@ class ApplicationsVideosCreateResult:
     """Applications videos create result schema exposed by Claw Router."""
     code: str
     data: Optional[CourseApplicationVideoUploadResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

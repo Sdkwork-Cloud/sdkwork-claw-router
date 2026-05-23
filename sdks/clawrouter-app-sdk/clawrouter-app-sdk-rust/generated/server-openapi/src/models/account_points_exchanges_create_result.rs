@@ -14,9 +14,5 @@ pub struct AccountPointsExchangesCreateResult {
 
     /// Human-readable response message.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub message: Option<String>,
-
-    /// Java-compatible response message field.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
     pub msg: Option<String>,
 }

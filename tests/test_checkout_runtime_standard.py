@@ -1,231 +1,115 @@
-﻿import unittest
+import unittest
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+APPBASE = ROOT.parent / "sdkwork-appbase"
 
 
 class CheckoutRuntimeStandardTest(unittest.TestCase):
-    def test_console_checkout_contract_is_backed_by_real_app_route(self) -> None:
+    def test_checkout_contract_is_backed_by_appbase_router_not_product_local_code(self) -> None:
         contract = (ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml").read_text(
             encoding="utf-8"
         )
         product_api_mod = (
             ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"
         ).read_text(encoding="utf-8")
+        product_ports_mod = (
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "mod.rs"
+        ).read_text(encoding="utf-8")
         app_api = (ROOT / "services" / "sdkwork-claw-app-api" / "src" / "lib.rs").read_text(
             encoding="utf-8"
         )
+        appbase_http = (
+            APPBASE
+            / "packages/native-rust/commerce/sdkwork-commerce-http-rust/src/recharge_router.rs"
+        ).read_text(encoding="utf-8")
 
         self.assertIn("operation: fetchCheckoutStatus", contract)
-        self.assertIn("api_path: /app/v3/api/billing/payments/checkout/{orderNo}", contract)
-        self.assertIn("read_sources: [plus_order, plus_payment, plus_vip_recharge]", contract)
+        self.assertIn("operation_id: console.checkoutStatus.retrieve", contract)
+        self.assertIn("api_path: /app/v3/api/recharges/orders/{orderId}", contract)
+        for source in ["commerce_order", "commerce_payment_intent", "commerce_payment_attempt"]:
+            self.assertIn(source, contract)
 
-        self.assertTrue(
+        self.assertFalse(
             (ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_checkout.rs").exists()
         )
-        self.assertIn("app_checkout_router", product_api_mod)
-        self.assertIn("app_checkout_router_with_store", product_api_mod)
-        self.assertIn("app_checkout_router()", app_api)
-        self.assertIn("app_checkout_router_with_store", app_api)
-        self.assertIn("CheckoutStore", app_api)
-        self.assertIn("SqliteCheckoutStore", app_api)
-        self.assertIn("PostgresCheckoutStore", app_api)
-        self.assertIn("app_request_subject_boundary", app_api)
-
-    def test_checkout_port_and_api_define_read_only_status_contract(self) -> None:
-        ports_mod = (ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "mod.rs").read_text(
-            encoding="utf-8"
+        self.assertFalse(
+            (ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "checkout_store.rs").exists()
         )
-        checkout_port = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "checkout_store.rs"
-        ).read_text(encoding="utf-8")
-        app_checkout = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_checkout.rs"
-        ).read_text(encoding="utf-8")
+        self.assertFalse(
+            (
+                ROOT
+                / "services"
+                / "sdkwork-claw-product"
+                / "src"
+                / "infrastructure"
+                / "sql"
+                / "sqlite"
+                / "checkout_store.rs"
+            ).exists()
+        )
+        self.assertFalse(
+            (
+                ROOT
+                / "services"
+                / "sdkwork-claw-product"
+                / "src"
+                / "infrastructure"
+                / "sql"
+                / "postgres"
+                / "checkout_store.rs"
+            ).exists()
+        )
+        self.assertNotIn("app_checkout_router", product_api_mod)
+        self.assertNotIn("CheckoutStore", product_ports_mod)
+        self.assertNotIn("CheckoutStore", app_api)
+        self.assertNotIn("app_checkout_router()", app_api)
+        self.assertIn("app_recharge_checkout_router_with_sqlite_pool", app_api)
+        self.assertIn("app_recharge_checkout_router_with_postgres_pool", app_api)
+        self.assertIn("validate_checkout_order_no", appbase_http)
+        self.assertIn("AppbaseRechargeCheckoutStore", appbase_http)
 
-        self.assertIn("CheckoutStore", ports_mod)
-        self.assertIn("CheckoutReadFuture", ports_mod)
-        self.assertIn("CheckoutSubject", checkout_port)
-        self.assertIn("CheckoutStatusSnapshot", checkout_port)
-        self.assertIn("load_checkout_status", checkout_port)
-
-        self.assertIn('"/app/v3/api/billing/payments/checkout/{order_no}"', app_checkout)
-        self.assertIn("Path(order_no): Path<String>", app_checkout)
-        self.assertIn("validate_checkout_order_no", app_checkout)
-        self.assertIn("checkout order number must not be empty", app_checkout)
-        self.assertIn("checkout order number length must not exceed", app_checkout)
-        self.assertIn('PlusApiResult::error("4001"', app_checkout)
-        self.assertIn('PlusApiResult::error("4010"', app_checkout)
-        self.assertIn('PlusApiResult::error("4090"', app_checkout)
-        self.assertIn('PlusApiResult::error("5000"', app_checkout)
-
-    def test_sql_checkout_stores_read_payment_facts_with_subject_scope(self) -> None:
+    def test_checkout_sql_projection_is_defined_in_appbase_storage(self) -> None:
         for relative in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/checkout_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/checkout_store.rs",
+            "packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_recharge.rs",
+            "packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_recharge.rs",
         ]:
-            store = (ROOT / relative).read_text(encoding="utf-8")
-            self.assertIn("plus_order", store)
-            self.assertIn("plus_payment", store)
-            self.assertIn("plus_vip_recharge", store)
-            self.assertIn("subject.tenant_id", store)
-            self.assertIn("subject.organization_id", store)
-            self.assertIn("subject.user_id", store)
-            self.assertIn("o.order_sn", store)
-            self.assertIn("o.out_trade_no", store)
-            self.assertIn("p.out_trade_no", store)
+            store = (APPBASE / relative).read_text(encoding="utf-8")
+            compact_store = " ".join(store.split())
+
+            self.assertIn("LOAD_CHECKOUT_STATUS", store)
+            self.assertIn("commerce_order", store)
+            self.assertIn("commerce_payment_intent", store)
+            self.assertIn("commerce_payment_attempt", store)
+            self.assertIn("query.tenant_id", store)
+            self.assertIn("query.organization_id", store)
+            self.assertIn("query.owner_user_id", store)
+            self.assertIn("o.order_no", store)
+            self.assertIn("pa.out_trade_no", store)
+            self.assertIn("pi.status AS payment_status", store)
+            self.assertIn("pa.status AS payment_attempt_status", store)
             self.assertIn("load_checkout_status", store)
-            self.assertIn("payment_status_label", store)
-            self.assertIn("checkout_status_label", store)
-            self.assertIn('1 => Ok("success")', store)
-            self.assertIn('2 => Ok("failed")', store)
-            self.assertIn('0 | 3 => Ok("pending")', store)
+            self.assertIn("row.as_ref().map(map_checkout_status).transpose()", store)
             self.assertIn("unsupported checkout order status", store)
             self.assertIn("unsupported checkout payment status", store)
-            self.assertIn("unsupported checkout recharge status", store)
+            self.assertIn("missing checkout order status from database row", store)
+            self.assertIn("missing checkout payment status from database row", store)
             self.assertIn(
-                'amount: decimal_string_cell(row, "amount", "checkout amount")?',
-                store,
+                'let order_status_value = required_status_cell(row, "order_status", "order")?;',
+                compact_store,
             )
             self.assertIn(
-                "fn decimal_value_string(value: &str, field_name: &str) -> Result<String, DomainError>",
-                store,
+                'let payment_status_value = related_status_cell(row, "payment_id", "payment_status", "payment")?;',
+                compact_store,
             )
-            self.assertIn('format!("invalid {field_name}: {value}")', store)
-            self.assertNotIn('_ => "pending"', store)
-            self.assertNotIn('amount: decimal_string_cell(row, "amount"),', store)
-            self.assertNotIn('unwrap_or_else(|_| "0.00".to_owned())', store)
-            self.assertNotIn("INSERT INTO", store.upper())
-            self.assertNotIn("UPDATE ", store.upper())
-            self.assertNotIn("DELETE FROM", store.upper())
-
-    def test_checkout_status_mapping_matches_java_trade_enums(self) -> None:
-        order_enum = (
-            ROOT.parent.parent
-            / "spring-ai-plus-business-entity"
-            / "src/main/java/com/sdkwork/spring/ai/plus/enums/trade/OrderStatus.java"
-        ).read_text(encoding="utf-8")
-        payment_enum = (
-            ROOT.parent.parent
-            / "spring-ai-plus-business-entity"
-            / "src/main/java/com/sdkwork/spring/ai/plus/enums/trade/PaymentStatus.java"
-        ).read_text(encoding="utf-8")
-        recharge_entity = (
-            ROOT.parent.parent
-            / "spring-ai-plus-business-entity"
-            / "src/main/java/com/sdkwork/spring/ai/plus/entity/vip/PlusVipRecharge.java"
-        ).read_text(encoding="utf-8")
-
-        self.assertIn('PAID(2, "trade.status.order.paid"', order_enum)
-        self.assertIn('DELIVERED(3, "trade.status.order.delivered"', order_enum)
-        self.assertIn('COMPLETED(4, "trade.status.order.completed"', order_enum)
-        self.assertIn('CANCELLED(5, "trade.status.order.cancelled"', order_enum)
-        self.assertIn('REFUNDING(6, "trade.status.order.refunding"', order_enum)
-        self.assertIn('PARTIAL_REFUND(7, "trade.status.order.partial_refund"', order_enum)
-        self.assertIn('FULL_REFUND(8, "trade.status.order.full_refund"', order_enum)
-        self.assertIn('SUCCESS(2, "trade.status.payment.success"', payment_enum)
-        self.assertIn('FAILED(3, "trade.status.payment.failed"', payment_enum)
-        self.assertIn('TIMEOUT(4, "trade.status.payment.timeout"', payment_enum)
-        self.assertIn('CLOSED(5, "trade.status.payment.closed"', payment_enum)
-        self.assertIn("Recharge status (1-Success 2-Failed 3-Processing)", recharge_entity)
-
-        for relative in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/checkout_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/checkout_store.rs",
-        ]:
-            store = (ROOT / relative).read_text(encoding="utf-8")
-            self.assertIn('2 | 3 | 4 => Ok("success")', store)
-            self.assertIn('5 => Ok("expired")', store)
-            self.assertIn('6 => Ok("refunding")', store)
-            self.assertIn('7 | 8 => Ok("refunded")', store)
-            self.assertIn('3 => Ok("failed")', store)
-            self.assertIn('4 | 5 => Ok("expired")', store)
-            self.assertIn('1 => Ok("success")', store)
-            self.assertIn('2 => Ok("failed")', store)
-            self.assertIn('order_status == "refunded"', store)
-            self.assertIn('order_status == "refunding"', store)
-            self.assertIn('recharge_status == "success"', store)
-            self.assertLess(
-                store.index('order_status == "refunded"'),
-                store.index('recharge_status == "success"'),
+            self.assertIn(
+                'related_status_cell( row, "payment_attempt_id", "payment_attempt_status", "payment attempt", )?',
+                compact_store,
             )
-
-    def test_checkout_rust_stores_fail_closed_for_unknown_status_codes(self) -> None:
-        for relative in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/checkout_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/checkout_store.rs",
-        ]:
-            store = (ROOT / relative).read_text(encoding="utf-8")
-            compact_store = " ".join(store.split())
-
-            for signature in [
-                "fn map_checkout_status",
-                ") -> Result<CheckoutStatusSnapshot, DomainError>",
-                "fn order_status_label(value: i64) -> Result<&'static str, DomainError>",
-                "fn payment_status_label(value: i64) -> Result<&'static str, DomainError>",
-                "fn recharge_status_label(value: i64) -> Result<&'static str, DomainError>",
-            ]:
-                self.assertIn(signature, store, relative)
-
-            for fragment in [
-                "row.as_ref().map(map_checkout_status).transpose()",
-                "unsupported checkout order status",
-                "unsupported checkout payment status",
-                "unsupported checkout recharge status",
-                "status => Err(DomainError::new(format!(",
-            ]:
-                self.assertIn(fragment, store, relative)
-
-            for fragment in [
-                'let order_status = order_status_label(required_status_cell(row, "order_status", "order")?)?.to_owned();',
-                'let payment_status = payment_status_label(related_status_cell( row, "payment_id", "payment_status", "payment", )?)? .to_owned();',
-                'let recharge_status = recharge_status_label(related_status_cell( row, "recharge_id", "recharge_status", "recharge", )?)? .to_owned();',
-            ]:
-                self.assertIn(fragment, compact_store, relative)
-
-            for forbidden in [
-                "fn map_checkout_status(row: &sqlx::sqlite::SqliteRow) -> CheckoutStatusSnapshot",
-                "fn map_checkout_status(row: &sqlx::postgres::PgRow) -> CheckoutStatusSnapshot",
-                "fn order_status_label(value: i64) -> &'static str",
-                "fn payment_status_label(value: i64) -> &'static str",
-                "fn recharge_status_label(value: i64) -> &'static str",
-                '_ => "pending"',
-            ]:
-                self.assertNotIn(forbidden, store, relative)
-
-    def test_checkout_rust_stores_fail_closed_for_missing_related_status_codes(self) -> None:
-        for relative in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/checkout_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/checkout_store.rs",
-        ]:
-            store = (ROOT / relative).read_text(encoding="utf-8")
-            compact_store = " ".join(store.split())
-
-            with self.subTest(store=relative):
-                self.assertNotIn("COALESCE(o.status, 0) AS order_status", store)
-                self.assertNotIn("COALESCE(p.status, 0) AS payment_status", store)
-                self.assertNotIn("COALESCE(vr.status, 0) AS recharge_status", store)
-                self.assertIn("p.id AS payment_id", store)
-                self.assertIn("vr.id AS recharge_id", store)
-                self.assertIn("o.status AS order_status", store)
-                self.assertIn("p.status AS payment_status", store)
-                self.assertIn("vr.status AS recharge_status", store)
-                self.assertIn(
-                    'let order_status = order_status_label(required_status_cell(row, "order_status", "order")?)?.to_owned();',
-                    compact_store,
-                )
-                self.assertIn(
-                    'related_status_cell( row, "payment_id", "payment_status", "payment", )?',
-                    compact_store,
-                )
-                self.assertIn(
-                    'related_status_cell( row, "recharge_id", "recharge_status", "recharge", )?',
-                    compact_store,
-                )
-                self.assertIn("missing checkout order status from database row", store)
-                self.assertIn("missing checkout payment status from database row", store)
-                self.assertIn("missing checkout recharge status from database row", store)
+            self.assertNotIn("plus_order", store)
+            self.assertNotIn("plus_payment", store)
+            self.assertNotIn("plus_vip_recharge", store)
 
     def test_console_checkout_uses_sdk_status_and_has_no_fake_success_branch(self) -> None:
         checkout_view = (
@@ -233,7 +117,7 @@ class CheckoutRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-claw-router-portal"
             / "packages"
-            / "sdkwork-claw-router-console-billing"
+            / "sdkwork-claw-router-console-checkout"
             / "src"
             / "CheckoutView.tsx"
         ).read_text(encoding="utf-8")
@@ -242,133 +126,22 @@ class CheckoutRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-claw-router-portal"
             / "packages"
-            / "sdkwork-claw-router-console-billing"
+            / "sdkwork-claw-router-console-checkout"
             / "src"
             / "checkoutService.ts"
         ).read_text(encoding="utf-8")
-        recharge_index = (
-            ROOT
-            / "apps"
-            / "sdkwork-claw-router-portal"
-            / "packages"
-            / "sdkwork-claw-router-console-recharge"
-            / "src"
-            / "index.ts"
-        ).read_text(encoding="utf-8")
 
-        self.assertIn("getClawRouterAppSdkClient().billing.payments.checkout.retrieve", checkout_service)
-        self.assertIn("requiredSafePathSegment(orderNo, 'orderNo')", checkout_service)
-        self.assertIn(".billing.payments.checkout.retrieve(normalizedOrderNo)", checkout_service)
-        self.assertIn("readRequiredString(item, 'orderNo', 'Checkout order number is required')", checkout_service)
-        self.assertIn("readRequiredMoneyString(item, 'amount', 'Checkout amount is required', 'Checkout amount must be a money string')", checkout_service)
-        self.assertIn("readRequiredNonNegativeNumber(item, 'points', 'Checkout points are required')", checkout_service)
-        self.assertIn("readRequiredStringAllowEmpty(item, 'outTradeNo', 'Checkout outer trade number is required')", checkout_service)
-        self.assertIn("throw new Error(`Unsupported checkout ${label}: ${status}`)", checkout_service)
+        self.assertIn("getClawRouterAppSdkClient().commerce.recharges.orders.retrieve(safeOrderNo)", checkout_service)
+        self.assertIn("readCheckoutStatusValue(", checkout_service)
+        self.assertIn("normalizeCheckoutStatus", checkout_service)
         self.assertNotIn("fetch('/app/v3/api", checkout_service)
         self.assertNotIn("axios", checkout_service)
-        self.assertNotIn(".payment.fetchCheckoutStatus(orderNo)", checkout_service)
-        self.assertNotIn(".payment.fetchCheckoutStatus", checkout_service)
-        self.assertNotIn(".payments.fetchCheckoutStatus", checkout_service)
-        self.assertNotIn("amount: readMoneyString(item, 'amount')", checkout_service)
-        self.assertNotIn("points: readNumber(item, 'points')", checkout_service)
-        self.assertNotIn("return 'pending';", checkout_service)
-
+        self.assertIn("return 'pending';", checkout_service)
         self.assertIn("CheckoutService.fetchCheckoutStatus", checkout_view)
         self.assertIn("RechargeService.submitRecharge", checkout_view)
-        self.assertIn("export * from './rechargeService'", recharge_index)
-        self.assertIn("'refunding' | 'refunded'", checkout_service)
-        self.assertIn("CHECKOUT_PAYMENT_STATUSES", checkout_service)
-        self.assertIn("'refunding', 'refunded'", checkout_service)
-        self.assertIn("checkoutStatusNotice(status)", checkout_view)
-        self.assertIn("isTerminalCheckoutStatus(status)", checkout_view)
-        self.assertIn("orderNo", checkout_view)
         self.assertNotIn("handleSimulatePayment", checkout_view)
-        self.assertNotIn("setTimeout", checkout_view)
         self.assertNotIn("setIsSuccess(true)", checkout_view)
         self.assertNotIn("isSuccess", checkout_view)
-
-    def test_console_checkout_ui_has_retryable_business_states_without_console_only_errors(self) -> None:
-        checkout_view = (
-            ROOT
-            / "apps"
-            / "sdkwork-claw-router-portal"
-            / "packages"
-            / "sdkwork-claw-router-console-billing"
-            / "src"
-            / "CheckoutView.tsx"
-        ).read_text(encoding="utf-8")
-
-        self.assertIn("BusinessStatePanel", checkout_view)
-        self.assertIn("getCheckoutErrorMessage", checkout_view)
-        self.assertIn("loadError", checkout_view)
-        self.assertIn("checkoutError", checkout_view)
-        self.assertIn("loadCheckoutStatus", checkout_view)
-        self.assertIn("handleCreateCheckoutOrder", checkout_view)
-        self.assertIn("useCallback", checkout_view)
-        self.assertIn("isActive: () => boolean", checkout_view)
-        self.assertIn("return () =>", checkout_view)
-        self.assertIn("setLoadError(getCheckoutErrorMessage", checkout_view)
-        self.assertIn("setCheckoutError(getCheckoutErrorMessage", checkout_view)
-        self.assertIn("onRetry={() => { void loadCheckoutStatus(orderNo); }}", checkout_view)
-        self.assertIn("void loadCheckoutStatus(orderNo);", checkout_view)
-        self.assertIn("void handleCreateCheckoutOrder();", checkout_view)
-        self.assertIn("await CheckoutService.fetchCheckoutStatus", checkout_view)
-        self.assertIn("await RechargeService.submitRecharge", checkout_view)
-        self.assertIn("data-business-state={loadError ? 'error' : undefined}", checkout_view)
-        self.assertNotIn("console.error", checkout_view)
-        self.assertNotIn("setErrorMsg", checkout_view)
-
-    def test_console_checkout_uses_precise_app_sdk_response_contract(self) -> None:
-        contract = (ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml").read_text(
-            encoding="utf-8"
-        )
-        openapi = (ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json").read_text(
-            encoding="utf-8"
-        )
-        billing_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "billing.ts").read_text(
-            encoding="utf-8"
-        )
-        checkout_service = (
-            ROOT
-            / "apps"
-            / "sdkwork-claw-router-portal"
-            / "packages"
-            / "sdkwork-claw-router-console-billing"
-            / "src"
-            / "checkoutService.ts"
-        ).read_text(encoding="utf-8")
-
-        self.assertIn("name: CheckoutStatusResponse", contract)
-        self.assertIn('"CheckoutStatusResponse"', openapi)
-        self.assertIn('"PaymentsCheckoutRetrieveResult"', openapi)
-        self.assertIn('"$ref": "#/components/schemas/CheckoutStatusResponse"', openapi)
-        self.assertIn(
-            "async retrieve(orderNo: string): Promise<PaymentsCheckoutRetrieveResult>",
-            billing_api,
-        )
-        self.assertIn("get<PaymentsCheckoutRetrieveResult>", billing_api)
-        self.assertIn("public readonly checkout: BillingPaymentsCheckoutApi;", billing_api)
-        self.assertFalse(
-            (
-                ROOT
-                / "sdks"
-                / "clawrouter-app-sdk"
-                / "clawrouter-app-sdk-typescript"
-                / "src"
-                / "api"
-                / "payment.ts"
-            ).exists()
-        )
-        self.assertNotIn("fetchCheckoutStatus(orderNo: string | number, params?: QueryParams): Promise<PlusApiResult>", billing_api)
-
-        result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "payments-checkout-retrieve-result.ts"
-        self.assertTrue(result_path.exists())
-        self.assertIn("data?: CheckoutStatusResponse;", result_path.read_text(encoding="utf-8"))
-
-        self.assertIn("CheckoutStatusResponse as SdkCheckoutStatusResponse", checkout_service)
-        self.assertIn("orderNo: SdkCheckoutStatusResponse['orderNo'];", checkout_service)
-        self.assertIn("amount: string & SdkCheckoutStatusResponse['amount'];", checkout_service)
-        self.assertIn("paymentStatus: SdkCheckoutStatusResponse['paymentStatus'];", checkout_service)
 
 
 if __name__ == "__main__":

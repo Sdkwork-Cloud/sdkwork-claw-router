@@ -136,7 +136,8 @@ async fn assert_standard_bad_request(response: axum::response::Response, expecte
     let payload: Value = serde_json::from_str(&body_text).unwrap();
 
     assert_eq!("4001", payload["code"]);
-    assert_eq!(payload["msg"], payload["message"]);
+    assert!(payload["msg"].as_str().unwrap().contains(expected_message));
+    assert_eq!(None, payload.get("message"));
     assert!(body_text.contains(expected_message));
     assert!(!body_text.contains("timestamptz"));
     assert!(!body_text.contains("sqlx"));

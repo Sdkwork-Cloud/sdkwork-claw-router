@@ -7,7 +7,5 @@ export interface SkillsAssetsDeleteResult {
   /** Data field on skills assets delete result. */
   data?: AdminSkillAssetDeleteResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

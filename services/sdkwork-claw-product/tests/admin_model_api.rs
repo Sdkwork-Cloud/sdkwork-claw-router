@@ -100,7 +100,7 @@ async fn admin_model_catalog_route_returns_plus_result_with_catalog_price_view()
 
     assert_eq!("2000", payload["code"]);
     assert_eq!("SUCCESS", payload["msg"]);
-    assert_eq!("SUCCESS", payload["message"]);
+    assert_eq!("SUCCESS", payload["msg"]);
     assert_eq!("gpt-4o-mini", payload["data"]["items"][0]["model"]);
     assert_eq!("openai", payload["data"]["items"][0]["vendorCode"]);
     assert_eq!(

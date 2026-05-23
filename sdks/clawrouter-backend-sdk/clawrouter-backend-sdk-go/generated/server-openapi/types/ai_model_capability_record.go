@@ -23,7 +23,6 @@ type AiModelCapabilityRecord struct {
 	OutputModalities map[string]JsonValue `json:"output_modalities"`
 	ParameterName string `json:"parameter_name"`
 	ParameterSchema map[string]JsonValue `json:"parameter_schema"`
-	RegionCode string `json:"region_code"`
 	SchemaVersion string `json:"schema_version"`
 	SortOrder int `json:"sort_order"`
 	Status string `json:"status"`

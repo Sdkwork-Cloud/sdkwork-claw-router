@@ -7,7 +7,5 @@ export interface FeedsCollectionsCreateResult {
   /** Data field on feeds collections create result. */
   data?: ForumFeedItem;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

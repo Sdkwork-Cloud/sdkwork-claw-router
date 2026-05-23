@@ -35,7 +35,7 @@ async fn app_store_catalog_route_returns_sdk_contract_items() {
     let payload = response_json(response).await;
 
     assert_eq!("2000", payload["code"]);
-    assert_eq!("SUCCESS", payload["message"]);
+    assert_eq!("SUCCESS", payload["msg"]);
     assert_eq!(1, payload["data"]["items"].as_array().unwrap().len());
     assert_eq!("claw-router", payload["data"]["items"][0]["id"]);
     assert_eq!("Claw Router", payload["data"]["items"][0]["name"]);
@@ -176,7 +176,7 @@ async fn app_store_catalog_route_rejects_unsupported_status_values() {
         assert_eq!(StatusCode::BAD_REQUEST, response.status(), "{status}");
         let payload = response_json(response).await;
         assert_eq!("4001", payload["code"]);
-        assert!(payload["message"]
+        assert!(payload["msg"]
             .as_str()
             .unwrap_or_default()
             .contains("status must be ACTIVE or INACTIVE"));
@@ -203,7 +203,7 @@ async fn app_store_catalog_route_rejects_invalid_time_window_values() {
     assert_eq!(StatusCode::BAD_REQUEST, response.status());
     let payload = response_json(response).await;
     assert_eq!("4001", payload["code"]);
-    assert!(payload["message"]
+    assert!(payload["msg"]
         .as_str()
         .unwrap_or_default()
         .contains("start_time must be an ISO-8601 date-time"));
@@ -229,7 +229,7 @@ async fn app_store_catalog_route_rejects_non_ascii_time_window_without_panic() {
     assert_eq!(StatusCode::BAD_REQUEST, response.status());
     let payload = response_json(response).await;
     assert_eq!("4001", payload["code"]);
-    assert!(payload["message"]
+    assert!(payload["msg"]
         .as_str()
         .unwrap_or_default()
         .contains("start_time must be an ISO-8601 date-time"));
@@ -255,7 +255,7 @@ async fn app_store_catalog_route_rejects_ambiguous_time_zone_offsets() {
     assert_eq!(StatusCode::BAD_REQUEST, response.status());
     let payload = response_json(response).await;
     assert_eq!("4001", payload["code"]);
-    assert!(payload["message"]
+    assert!(payload["msg"]
         .as_str()
         .unwrap_or_default()
         .contains("start_time must use UTC Z or no timezone offset"));
@@ -281,7 +281,7 @@ async fn app_store_catalog_route_rejects_inverted_time_windows() {
     assert_eq!(StatusCode::BAD_REQUEST, response.status());
     let payload = response_json(response).await;
     assert_eq!("4001", payload["code"]);
-    assert!(payload["message"]
+    assert!(payload["msg"]
         .as_str()
         .unwrap_or_default()
         .contains("start_time must be earlier than or equal to end_time"));

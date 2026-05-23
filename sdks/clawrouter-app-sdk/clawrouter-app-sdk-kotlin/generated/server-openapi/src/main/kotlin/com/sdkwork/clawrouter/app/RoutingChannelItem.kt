@@ -6,6 +6,7 @@ data class RoutingChannelItem(
     val balance: String? = null,
     val baseUrl: String? = null,
     val capabilities: List<String>? = null,
+    val circuitBreakerPolicy: ProviderCircuitBreakerPolicy? = null,
     val errors: Int? = null,
     val id: String? = null,
     val isMultimodal: Boolean? = null,

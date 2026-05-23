@@ -11,5 +11,4 @@ class AccessGroupsUpdateResult:
     """Access groups update result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminAccessGroupMutationResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

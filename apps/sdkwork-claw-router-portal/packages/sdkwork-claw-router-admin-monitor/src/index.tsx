@@ -7,7 +7,7 @@ import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   Legend, LineChart, Line
 } from 'recharts';
-import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
+import { AdminTableShell, BusinessStatePanel } from 'sdkwork-claw-router-commons';
 import { MonitorService, SysNode, Alert, PerformanceDatum } from './monitorService';
 
 import { useTranslation } from 'react-i18next';
@@ -75,9 +75,9 @@ function NodesTab() {
   });
 
   return (
-    <div className="space-y-6">
+    <div className="flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden">
       {/* Overview Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid shrink-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {[
           { title: 'Total Nodes', value: String(nodes.length), desc: `Across ${regions} regions`, icon: Server, color: 'text-blue-500' },
           { title: 'System Health', value: `${healthRate.toFixed(1)}%`, desc: `${onlineNodes}/${nodes.length} nodes online`, icon: Activity, color: 'text-green-500' },
@@ -100,7 +100,7 @@ function NodesTab() {
       </div>
 
       {/* Charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid shrink-0 grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-white dark:bg-[#1a1a1a] p-5 rounded-xl border border-slate-200 dark:border-white/10 shadow-sm">
           <h3 className="text-sm font-medium text-slate-900 dark:text-white mb-4">Cluster Resource Usage (Avg)</h3>
           <div className="h-64">
@@ -146,8 +146,11 @@ function NodesTab() {
       </div>
 
       {/* Node List */}
-      <div className="bg-white dark:bg-[#1a1a1a] rounded-xl border border-slate-200 dark:border-white/10 shadow-sm overflow-hidden">
-        <div className="p-4 border-b border-slate-200 dark:border-white/10 flex items-center justify-between">
+      <AdminTableShell
+        data-admin-monitor-table-card
+        className="rounded-xl dark:bg-[#1a1a1a]"
+        header={(
+          <div className="p-4 border-b border-slate-200 dark:border-white/10 flex items-center justify-between">
           <h3 className="font-medium text-slate-900 dark:text-white">Active Nodes</h3>
           <div className="flex gap-2">
              <div className="relative">
@@ -162,9 +165,12 @@ function NodesTab() {
              </div>
           </div>
         </div>
-        <div className="overflow-x-auto">
+        )}
+        viewportProps={{ 'data-admin-monitor-table-viewport': true }}
+      >
+        <div className="contents">
           <table className="w-full text-sm text-left">
-            <thead className="text-xs text-slate-500 uppercase bg-slate-50 dark:bg-white/5 border-b border-slate-200 dark:border-white/10">
+            <thead className="sticky top-0 z-10 text-xs text-slate-500 uppercase bg-slate-50 dark:bg-white/5 border-b border-slate-200 dark:border-white/10">
               <tr>
                 <th className="px-6 py-3 font-medium">Node / IP</th>
                 <th className="px-6 py-3 font-medium">Region</th>
@@ -237,7 +243,7 @@ function NodesTab() {
             </tbody>
           </table>
         </div>
-      </div>
+      </AdminTableShell>
     </div>
   );
 }
@@ -290,9 +296,9 @@ function AlertsTab() {
   });
 
   return (
-    <div className="space-y-6">
+    <div className="flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden">
       {/* Alert Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid shrink-0 grid-cols-1 md:grid-cols-3 gap-4">
          <div className="bg-red-50 dark:bg-red-500/5 p-5 rounded-xl border border-red-100 dark:border-red-500/10 flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-red-600 dark:text-red-400">Critical Alerts</p>
@@ -323,8 +329,11 @@ function AlertsTab() {
       </div>
 
       {/* Alert List */}
-      <div className="bg-white dark:bg-[#1a1a1a] rounded-xl border border-slate-200 dark:border-white/10 shadow-sm overflow-hidden">
-        <div className="p-4 border-b border-slate-200 dark:border-white/10 flex flex-wrap items-center justify-between gap-4">
+      <AdminTableShell
+        data-admin-monitor-alert-table-card
+        className="rounded-xl dark:bg-[#1a1a1a]"
+        header={(
+          <div className="p-4 border-b border-slate-200 dark:border-white/10 flex flex-wrap items-center justify-between gap-4">
           <h3 className="font-medium text-slate-900 dark:text-white">Recent Alerts</h3>
           <div className="flex gap-2">
             <select
@@ -348,6 +357,9 @@ function AlertsTab() {
             </select>
           </div>
         </div>
+        )}
+        viewportProps={{ 'data-admin-monitor-alert-table-viewport': true }}
+      >
 
         <div className="divide-y divide-slate-200 dark:divide-white/5">
            {filteredAlerts.map(alert => (
@@ -378,7 +390,7 @@ function AlertsTab() {
              </div>
            ))}
         </div>
-      </div>
+      </AdminTableShell>
     </div>
   );
 }
@@ -388,15 +400,15 @@ export function MonitorAdmin() {
   const [activeTab, setActiveTab] = useState('nodes');
 
   return (
-    <div className="w-full h-full flex flex-col space-y-6">
-      <div className="flex flex-col mb-4">
+    <div className="flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden">
+      <div className="flex shrink-0 flex-col">
         <h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-2">
           <Activity className="w-6 h-6 text-red-500" />
           {t("admin.monitor.index.text.kga9uh", "运维与监控")}</h2>
         <p className="text-sm text-slate-500">{t("admin.monitor.index.text.akk4xs", "监控计算节点，查看异常告警及API健康检测大盘。")}</p>
       </div>
 
-      <div className="flex gap-4 border-b border-slate-200 dark:border-white/10 mb-6">
+      <div className="flex shrink-0 gap-4 border-b border-slate-200 dark:border-white/10">
         <button
           className={`px-4 py-2 font-medium text-sm transition-colors border-b-2 ${activeTab === 'nodes' ? 'border-red-500 text-slate-900 dark:text-white' : 'border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}
           onClick={() => setActiveTab('nodes')}
@@ -409,7 +421,7 @@ export function MonitorAdmin() {
           {t("admin.monitor.index.text.14p0m6f", "系统告警日志")}</button>
       </div>
 
-      <div className="flex-1">
+      <div className="min-h-0 flex-1">
         {activeTab === 'nodes' && <NodesTab />}
         {activeTab === 'alerts' && <AlertsTab />}
       </div>

@@ -62,11 +62,12 @@ client.setHeader('X-Custom-Header', 'value');
 
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.billing` - billing API
+- `client.commerce` - commerce API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
+- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
 - `client.system` - system API
 
@@ -83,7 +84,7 @@ final params = <String, dynamic>{
   'page': 5,
   'page_size': 6,
 };
-final result = await client.agents.list(params);
+final result = await client.agents.agentDefinitionsList(params);
 print(result);
 ```
 
@@ -94,10 +95,10 @@ final result = await client.ai.modelVendorsList();
 print(result);
 ```
 
-### billing
+### commerce
 ```dart
-// List referral stats
-final result = await client.billing.referralsStatsList();
+// Commerce Reports Payment Reconciliation Retrieve
+final result = await client.commerce.reportsPaymentReconciliationRetrieve();
 print(result);
 ```
 
@@ -129,19 +130,20 @@ final result = await client.integration.channelsList();
 print(result);
 ```
 
+### open_platform
+```dart
+// List open platform providers
+final params = <String, dynamic>{
+  'status': 'active',
+};
+final result = await client.openPlatform.providersList(params);
+print(result);
+```
+
 ### platform
 ```dart
-// List apps
-final params = <String, dynamic>{
-  'q': 'q',
-  'status': 'ACTIVE',
-  'market_status': 'DRAFT',
-  'app_type': 'app-type',
-  'page': 5,
-  'page_size': 6,
-};
-final xRequestId = 'X-Request-Id';
-final result = await client.platform.appsList(params, xRequestId);
+// List app categories
+final result = await client.platform.appsCategoriesList();
 print(result);
 ```
 

@@ -4,6 +4,8 @@ import type { JsonValue } from './json-value';
 export interface AiAgentRunRecord {
   /** Agent id field on ai agent run record. */
   agent_id?: string;
+  /** Agent session id field on ai agent run record. */
+  agent_session_id?: string;
   /** Agent version id field on ai agent run record. */
   agent_version_id?: string;
   /** Audio seconds field on ai agent run record. */
@@ -32,10 +34,14 @@ export interface AiAgentRunRecord {
   input_message?: string;
   /** Legal hold field on ai agent run record. */
   legal_hold?: boolean;
+  /** Memory space id field on ai agent run record. */
+  memory_space_id?: string;
   /** Metadata field on ai agent run record. */
   metadata?: Record<string, JsonValue>;
   /** Metering status field on ai agent run record. */
   metering_status?: string;
+  /** Model field on ai agent run record. */
+  model?: string;
   /** Organization id field on ai agent run record. */
   organization_id?: string;
   /** Output message field on ai agent run record. */
@@ -50,10 +56,10 @@ export interface AiAgentRunRecord {
   request_id?: string;
   /** Retention until field on ai agent run record. */
   retention_until?: string;
-  /** Run status field on ai agent run record. */
-  run_status?: string;
   /** Run uuid field on ai agent run record. */
   run_uuid?: string;
+  /** Runtime field on ai agent run record. */
+  runtime?: string;
   /** Source surface field on ai agent run record. */
   source_surface?: string;
   /** Started at field on ai agent run record. */
@@ -72,6 +78,8 @@ export interface AiAgentRunRecord {
   trace_id?: string;
   /** Usage fact id field on ai agent run record. */
   usage_fact_id?: string;
+  /** Usage json field on ai agent run record. */
+  usage_json?: Record<string, JsonValue>;
   /** User id field on ai agent run record. */
   user_id?: string;
   /** Uuid field on ai agent run record. */

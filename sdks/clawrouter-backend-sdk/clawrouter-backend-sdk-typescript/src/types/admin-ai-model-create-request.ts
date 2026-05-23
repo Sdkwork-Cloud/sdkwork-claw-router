@@ -1,13 +1,21 @@
+import type { AdminAiModelRegionPrice } from './admin-ai-model-region-price';
+
 /** Admin ai model create request schema exposed by Claw Router. */
 export interface AdminAiModelCreateRequest {
   /** Api format field on admin ai model create request. */
   apiFormat?: string | null;
+  /** Optional official reference cache-read unit price in USD. */
+  cacheReadPrice?: string;
+  /** Optional official reference cache-write unit price in USD. */
+  cacheWritePrice?: string;
   /** Capability intro field on admin ai model create request. */
   capabilityIntro?: string | null;
   /** Positive token window, accepting plain integers or K/M suffixes. */
   contextTokens: string;
   /** Description field on admin ai model create request. */
   description?: string | null;
+  /** Display name field on admin ai model create request. */
+  displayName?: string | null;
   /** Input modalities field on admin ai model create request. */
   inputModalities?: string[];
   /** Limitations field on admin ai model create request. */
@@ -16,14 +24,18 @@ export interface AdminAiModelCreateRequest {
   maxOutputTokens?: number | null;
   /** Modalities field on admin ai model create request. */
   modalities?: string[];
-  /** AI model identifier. */
-  name: string;
+  /** Runtime model identifier used for provider calls, routing, and pricing keys. */
+  model: string;
+  /** Deprecated compatibility alias for model. */
+  name?: string;
   /** Output modalities field on admin ai model create request. */
   outputModalities?: string[];
   /** Official reference input unit price in USD. */
   priceIn: string;
   /** Official reference output unit price in USD. */
   priceOut: string;
+  /** Official reference prices by region. */
+  regionPrices?: AdminAiModelRegionPrice[];
   /** Release stage field on admin ai model create request. */
   releaseStage?: number | null;
   /** Replacement model field on admin ai model create request. */

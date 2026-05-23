@@ -7,7 +7,5 @@ export interface FeedsMostLikedListResult {
   /** Data field on feeds most liked list result. */
   data?: ForumFeedItemList;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

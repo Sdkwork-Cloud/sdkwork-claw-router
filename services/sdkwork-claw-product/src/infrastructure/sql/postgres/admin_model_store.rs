@@ -3,9 +3,10 @@ use sqlx::{PgPool, Postgres, Row, Transaction};
 use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::installer::ENV_MODELS_CATALOG_ROOT;
 use crate::infrastructure::sql::model_catalog_import::{
-    catalog_preview_admin_items, catalog_scope_counts, catalog_scope_source_hash,
-    catalog_scope_vendor_codes, catalog_with_selected_vendors, is_dry_run_mode,
-    load_catalog_root_with_pin, CatalogScopeCounts,
+    catalog_key as build_model_catalog_key, catalog_preview_admin_items, catalog_scope_counts,
+    catalog_scope_source_hash, catalog_scope_vendor_codes, catalog_with_selected_vendors,
+    is_dry_run_mode, load_catalog_root_with_pin, model_base_catalog_key, stable_uuid,
+    CatalogScopeCounts,
 };
 use crate::infrastructure::sql::model_modality;
 use crate::ports::{
@@ -19,10 +20,11 @@ const MODEL_VENDOR_TARGET_TYPE: i32 = 41;
 const AI_MODEL_TARGET_TYPE: i32 = 42;
 const MODEL_CATALOG_SYNC_TARGET_TYPE: i32 = 43;
 const OFFICIAL_REFERENCE_PRICE_SIDE: i32 = 1;
-const INPUT_BILLING_METER_FILTER_SQL: &str =
-    "('llm_input_token', 'embedding_input_token', 'image_input_token', 'audio_input_second', 'audio_input_minute', 'tts_input_character', 'api_request')";
-const OUTPUT_BILLING_METER_FILTER_SQL: &str =
-    "('llm_output_token', 'image_output_token', 'image_result', 'audio_output_second', 'music_output_second', 'sfx_result', 'video_output_second', 'api_result')";
+const DEFAULT_MODEL_REGION_CODE: &str = "global";
+const INPUT_BILLING_METER_FILTER_SQL: &str = "('llm_input_token', 'embedding_input_token', 'image_input_token', 'audio_input_second', 'audio_input_minute', 'tts_input_character', 'api_request')";
+const OUTPUT_BILLING_METER_FILTER_SQL: &str = "('llm_output_token', 'image_output_token', 'image_result', 'audio_output_second', 'music_output_second', 'sfx_result', 'video_output_second', 'api_result')";
+const CACHE_READ_BILLING_METER_FILTER_SQL: &str = "('llm_cache_read_token')";
+const CACHE_WRITE_BILLING_METER_FILTER_SQL: &str = "('llm_cache_write_token')";
 
 #[derive(Debug, Clone)]
 pub struct PostgresAdminModelStore {
@@ -40,9 +42,13 @@ struct VendorIdentity {
 #[derive(Debug, Clone)]
 struct EffectiveModelUpdate {
     model: String,
+    display_name: String,
     model_type: String,
+    region_code: String,
     price_in: String,
     price_out: String,
+    cache_read_price: String,
+    cache_write_price: String,
     status: String,
     description: Option<String>,
     modalities: Vec<String>,
@@ -154,8 +160,7 @@ impl AdminModelStore for PostgresAdminModelStore {
             let vendor = find_vendor(&mut tx, &command).await?;
             let model_id = insert_model(&mut tx, &command, &vendor).await?;
             insert_model_capability(&mut tx, model_id, &command, &vendor).await?;
-            insert_model_pricing(&mut tx, model_id, &command, &vendor, true).await?;
-            insert_model_pricing(&mut tx, model_id, &command, &vendor, false).await?;
+            insert_model_region_pricing(&mut tx, model_id, &command, &vendor).await?;
             insert_audit_log(
                 &mut tx,
                 &command.audit_log_uuid,
@@ -171,11 +176,14 @@ impl AdminModelStore for PostgresAdminModelStore {
                     "action": "create_ai_model",
                     "modelId": model_id,
                     "model": &command.model,
+                    "displayName": &command.display_name,
                     "vendorId": vendor.id,
                     "vendorCode": &vendor.code,
                     "type": &command.model_type,
                     "priceIn": &command.price_in,
                     "priceOut": &command.price_out,
+                    "cacheReadPrice": &command.cache_read_price,
+                    "cacheWritePrice": &command.cache_write_price,
                     "contextTokens": command.context_tokens
                 }),
             )
@@ -204,6 +212,41 @@ impl AdminModelStore for PostgresAdminModelStore {
                 store_error("failed to begin ai model update transaction", error)
             })?;
             let current = find_model_for_update(&mut tx, &command).await?;
+            if is_status_only_model_update(&command) {
+                let status = command.status.as_deref().unwrap_or(current.status.as_str());
+                update_model_status_only(&mut tx, current.id, &command, status).await?;
+                insert_audit_log(
+                    &mut tx,
+                    &command.audit_log_uuid,
+                    &command.request_id,
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    command.subject.operator_type,
+                    "update_ai_model",
+                    AI_MODEL_TARGET_TYPE,
+                    current.id,
+                    serde_json::json!({
+                        "action": "update_ai_model",
+                        "modelId": current.id,
+                        "model": &current.model,
+                        "status": status
+                    }),
+                )
+                .await?;
+                let item = load_model_by_id(
+                    &mut tx,
+                    current.id,
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                )
+                .await?
+                .ok_or_else(|| DomainError::new("updated ai model could not be reloaded"))?;
+                tx.commit().await.map_err(|error| {
+                    store_error("failed to commit ai model update transaction", error)
+                })?;
+                return Ok(item);
+            }
             let vendor = match command.vendor_id.as_deref() {
                 Some(vendor_id) => {
                     find_vendor_by_value(&mut tx, command.subject, vendor_id).await?
@@ -218,10 +261,57 @@ impl AdminModelStore for PostgresAdminModelStore {
                 }
             };
             let update = effective_model_update(&current, &command);
+            let cache_read_price_update = command
+                .cache_read_price
+                .as_ref()
+                .map(|_| update.cache_read_price.as_str());
+            let cache_write_price_update = command
+                .cache_write_price
+                .as_ref()
+                .map(|_| update.cache_write_price.as_str());
             update_model_core(&mut tx, current.id, &command, &vendor, &update).await?;
             upsert_model_capability(&mut tx, current.id, &command, &vendor, &update).await?;
-            upsert_model_pricing(&mut tx, current.id, &command, &vendor, &update, true).await?;
-            upsert_model_pricing(&mut tx, current.id, &command, &vendor, &update, false).await?;
+            if let Some(region_prices) = command.region_prices.as_ref() {
+                replace_model_region_pricing(
+                    &mut tx,
+                    current.id,
+                    &command,
+                    &vendor,
+                    &update,
+                    region_prices,
+                )
+                .await?;
+            } else {
+                upsert_model_pricing(&mut tx, current.id, &command, &vendor, &update, true).await?;
+                upsert_model_pricing(&mut tx, current.id, &command, &vendor, &update, false)
+                    .await?;
+                upsert_optional_model_pricing(
+                    &mut tx,
+                    current.id,
+                    &command,
+                    &vendor,
+                    &update,
+                    &command.cache_read_pricing_uuid,
+                    "llm_cache_read_token",
+                    CACHE_READ_BILLING_METER_FILTER_SQL,
+                    cache_read_price_update,
+                    3,
+                )
+                .await?;
+                upsert_optional_model_pricing(
+                    &mut tx,
+                    current.id,
+                    &command,
+                    &vendor,
+                    &update,
+                    &command.cache_write_pricing_uuid,
+                    "llm_cache_write_token",
+                    CACHE_WRITE_BILLING_METER_FILTER_SQL,
+                    cache_write_price_update,
+                    4,
+                )
+                .await?;
+            }
             insert_audit_log(
                 &mut tx,
                 &command.audit_log_uuid,
@@ -237,11 +327,14 @@ impl AdminModelStore for PostgresAdminModelStore {
                     "action": "update_ai_model",
                     "modelId": current.id,
                     "model": &update.model,
+                    "displayName": &update.display_name,
                     "vendorId": vendor.id,
                     "vendorCode": &vendor.code,
                     "type": &update.model_type,
                     "priceIn": &update.price_in,
                     "priceOut": &update.price_out,
+                    "cacheReadPrice": &update.cache_read_price,
+                    "cacheWritePrice": &update.cache_write_price,
                     "contextTokens": update.context_tokens
                 }),
             )
@@ -396,7 +489,8 @@ impl AdminModelStore for PostgresAdminModelStore {
                 serde_json::json!({
                     "action": "delete_ai_model",
                     "modelId": model.id,
-                    "model": model.name,
+                    "model": model.model,
+                    "displayName": model.display_name,
                     "vendorId": model.vendor_id,
                     "vendorCode": model.vendor_code
                 }),
@@ -408,6 +502,39 @@ impl AdminModelStore for PostgresAdminModelStore {
             Ok(())
         })
     }
+}
+
+fn is_status_only_model_update(command: &UpdateAdminAiModelCommand) -> bool {
+    command.status.is_some()
+        && command.vendor_id.is_none()
+        && command.model.is_none()
+        && command.display_name.is_none()
+        && command.model_type.is_none()
+        && command.price_in.is_none()
+        && command.price_out.is_none()
+        && command.cache_read_price.is_none()
+        && command.cache_write_price.is_none()
+        && command.region_code.is_none()
+        && command.region_prices.is_none()
+        && command.description.is_none()
+        && command.modalities.is_none()
+        && command.input_modalities.is_none()
+        && command.output_modalities.is_none()
+        && command.api_format.is_none()
+        && command.capability_intro.is_none()
+        && command.limitations.is_none()
+        && command.supported_languages.is_none()
+        && command.use_cases.is_none()
+        && command.training_data_cutoff.is_none()
+        && command.context_tokens.is_none()
+        && command.max_output_tokens.is_none()
+        && command.supports_streaming.is_none()
+        && command.supports_tools.is_none()
+        && command.supports_json_schema.is_none()
+        && command.release_stage.is_none()
+        && command.shelf_state.is_none()
+        && command.routing_state.is_none()
+        && command.replacement_model.is_none()
 }
 
 async fn apply_sdkwork_models_catalog_refresh(
@@ -711,12 +838,13 @@ async fn insert_model(
     let limitations = json_array_text(&command.limitations)?;
     let supported_languages = json_array_text(&command.supported_languages)?;
     let use_cases = json_array_text(&command.use_cases)?;
+    let catalog_key = model_base_catalog_key(&vendor.code, &command.model);
     sqlx::query_scalar(
         r#"
         INSERT INTO ai_model
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model, display_name, vendor_id, vendor_code, vendor_name_snapshot, capability, modalities, input_modalities, output_modalities, description, capability_intro, limitations, supported_languages, use_cases, training_data_cutoff, context_tokens, max_output_tokens, supports_streaming, supports_tools, supports_json_schema, api_format, release_stage, shelf_state, routing_state, replacement_model, rank_score)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, deleted_at, metadata, catalog_key, model, display_name, vendor_id, vendor_code, vendor_name_snapshot, capability, modalities, input_modalities, output_modalities, description, capability_intro, limitations, supported_languages, use_cases, training_data_cutoff, context_tokens, max_output_tokens, supports_streaming, supports_tools, supports_json_schema, api_format, release_stage, shelf_state, routing_state, replacement_model, rank_score)
         VALUES
-            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, '{}'::jsonb, $6, $7, $8, $9, $10, $11, $12::jsonb, $13::jsonb, $14::jsonb, $15, $16, $17::jsonb, $18::jsonb, $19::jsonb, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, 0)
+            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, NULL, '{}'::jsonb, $6, $7, $8, $9, $10, $11, $12, $13, $14::jsonb, $15::jsonb, $16::jsonb, $17, $18, $19::jsonb, $20::jsonb, $21::jsonb, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32)
         RETURNING id
         "#,
     )
@@ -725,8 +853,9 @@ async fn insert_model(
     .bind(command.subject.organization_id)
     .bind(&command.requested_at)
     .bind(&command.requested_at)
+    .bind(catalog_key)
     .bind(&command.model)
-    .bind(&command.model)
+    .bind(&command.display_name)
     .bind(vendor.id)
     .bind(&vendor.code)
     .bind(&vendor.name)
@@ -762,12 +891,13 @@ async fn insert_model_capability(
     vendor: &VendorIdentity,
 ) -> DomainResult<()> {
     let capability_code_text = model_capability_code(&command.model_type);
+    let catalog_key = model_base_catalog_key(&vendor.code, &command.model);
     sqlx::query(
         r#"
         INSERT INTO ai_model_capability
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, model, vendor_code, capability, capability_code, modality, input_modalities, output_modalities, supported, schema_version, sort_order)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, capability, capability_code, modality, input_modalities, output_modalities, supported, schema_version, sort_order)
         VALUES
-            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, '{}'::jsonb, $6, $7, $8, $9, $10, $11, $12::jsonb, $13::jsonb, true, 'v1', 1)
+            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, '{}'::jsonb, $6, $7, $8, $9, $10, $11, $12, $13, $14::jsonb, $15::jsonb, true, 'v1', 1)
         "#,
     )
     .bind(&command.capability_uuid)
@@ -776,6 +906,7 @@ async fn insert_model_capability(
     .bind(&command.requested_at)
     .bind(&command.requested_at)
     .bind(model_id)
+    .bind(catalog_key)
     .bind(&command.model)
     .bind(&vendor.code)
     .bind(capability_code(&command.model_type))
@@ -789,34 +920,99 @@ async fn insert_model_capability(
     Ok(())
 }
 
-async fn insert_model_pricing(
+async fn insert_model_region_pricing(
     tx: &mut Transaction<'_, Postgres>,
     model_id: i64,
     command: &CreateAdminAiModelCommand,
     vendor: &VendorIdentity,
-    input: bool,
 ) -> DomainResult<()> {
-    let (uuid, meter, unit_price, priority) = if input {
-        (
-            &command.input_pricing_uuid,
+    for region_price in &command.region_prices {
+        insert_region_model_pricing(
+            tx,
+            model_id,
+            command,
+            vendor,
+            &region_price.region_code,
             input_billing_meter(&command.model_type),
-            &command.price_in,
-            1_i32,
+            &region_price.price_in,
+            1,
+            "input",
         )
-    } else {
-        (
-            &command.output_pricing_uuid,
+        .await?;
+        insert_region_model_pricing(
+            tx,
+            model_id,
+            command,
+            vendor,
+            &region_price.region_code,
             output_billing_meter(&command.model_type),
-            &command.price_out,
-            2_i32,
+            &region_price.price_out,
+            2,
+            "output",
         )
-    };
+        .await?;
+        if let Some(price) = region_price
+            .cache_read_price
+            .as_deref()
+            .filter(|price| !price.trim().is_empty())
+        {
+            insert_region_model_pricing(
+                tx,
+                model_id,
+                command,
+                vendor,
+                &region_price.region_code,
+                "llm_cache_read_token",
+                price,
+                3,
+                "cache_read",
+            )
+            .await?;
+        }
+        if let Some(price) = region_price
+            .cache_write_price
+            .as_deref()
+            .filter(|price| !price.trim().is_empty())
+        {
+            insert_region_model_pricing(
+                tx,
+                model_id,
+                command,
+                vendor,
+                &region_price.region_code,
+                "llm_cache_write_token",
+                price,
+                4,
+                "cache_write",
+            )
+            .await?;
+        }
+    }
+    Ok(())
+}
+
+async fn insert_region_model_pricing(
+    tx: &mut Transaction<'_, Postgres>,
+    model_id: i64,
+    command: &CreateAdminAiModelCommand,
+    vendor: &VendorIdentity,
+    region_code: &str,
+    meter: &str,
+    unit_price: &str,
+    priority: i32,
+    price_kind: &str,
+) -> DomainResult<()> {
+    let catalog_key = model_catalog_key(&vendor.code, region_code, &command.model);
+    let uuid = stable_uuid(
+        "admin-price",
+        &[&command.model_uuid, region_code, meter, price_kind],
+    );
     sqlx::query(
         r#"
         INSERT INTO ai_model_pricing
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, model, vendor_code, price_side, billing_meter_code, unit_price, currency, priority, effective_from)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, region_code, price_side, pricing_scope, billing_type, billing_mode, billing_meter_code, price_item_type, unit, unit_size, metering_mode, quantity_source, minimum_quantity, quantity_step, included_quantity, unit_price, currency, rounding_mode, min_charge_amount, pricing_formula_mode, price_origin, priority, effective_from)
         VALUES
-            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, '{}'::jsonb, $6, $7, $8, $9, $10, $11::numeric, 'USD', $12, $13::timestamptz)
+            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, '{}'::jsonb, $6, $7, $8, $9, $10, $11, 1, 1, 1, $12, 1, 1, 1, 1, 1, 0, 1, 0, $13::numeric, 'USD', 1, 0, 1, 1, $14, $15::timestamptz)
         "#,
     )
     .bind(uuid)
@@ -825,8 +1021,10 @@ async fn insert_model_pricing(
     .bind(&command.requested_at)
     .bind(&command.requested_at)
     .bind(model_id)
+    .bind(catalog_key)
     .bind(&command.model)
     .bind(&vendor.code)
+    .bind(region_code)
     .bind(OFFICIAL_REFERENCE_PRICE_SIDE)
     .bind(meter)
     .bind(unit_price)
@@ -834,7 +1032,7 @@ async fn insert_model_pricing(
     .bind(&command.requested_at)
     .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to create model pricing", error))?;
+    .map_err(|error| store_error("failed to create regional model pricing", error))?;
     Ok(())
 }
 
@@ -1214,12 +1412,26 @@ fn effective_model_update(
         .model_type
         .clone()
         .unwrap_or_else(|| current.model_type.clone());
+    let next_model = command
+        .model
+        .clone()
+        .unwrap_or_else(|| current.model.clone());
+    let display_name = match command.display_name.clone() {
+        Some(Some(display_name)) => display_name,
+        Some(None) => next_model.clone(),
+        None if current.display_name.trim().is_empty() || current.display_name == current.model => {
+            next_model.clone()
+        }
+        None => current.display_name.clone(),
+    };
     EffectiveModelUpdate {
-        model: command
-            .model
-            .clone()
-            .unwrap_or_else(|| current.name.clone()),
+        model: next_model,
+        display_name,
         model_type,
+        region_code: command
+            .region_code
+            .clone()
+            .unwrap_or_else(|| current.region_code.clone()),
         price_in: command
             .price_in
             .clone()
@@ -1228,6 +1440,16 @@ fn effective_model_update(
             .price_out
             .clone()
             .unwrap_or_else(|| current.price_out.clone()),
+        cache_read_price: command
+            .cache_read_price
+            .clone()
+            .unwrap_or_else(|| Some(current.cache_read_price.clone()))
+            .unwrap_or_default(),
+        cache_write_price: command
+            .cache_write_price
+            .clone()
+            .unwrap_or_else(|| Some(current.cache_write_price.clone()))
+            .unwrap_or_default(),
         status: command
             .status
             .clone()
@@ -1293,6 +1515,31 @@ fn effective_model_update(
     }
 }
 
+async fn update_model_status_only(
+    tx: &mut Transaction<'_, Postgres>,
+    model_id: i64,
+    command: &UpdateAdminAiModelCommand,
+    status: &str,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE ai_model
+        SET status = $1,
+            updated_at = $2::timestamptz,
+            version = COALESCE(version, 0) + 1
+        WHERE id = $3
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(status_code(status))
+    .bind(&command.requested_at)
+    .bind(model_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update ai model status", error))?;
+    Ok(())
+}
+
 async fn update_model_core(
     tx: &mut Transaction<'_, Postgres>,
     model_id: i64,
@@ -1310,37 +1557,39 @@ async fn update_model_core(
             display_name = $4,
             vendor_id = $5,
             vendor_code = $6,
-            vendor_name_snapshot = $7,
-            capability = $8,
-            modalities = $9::jsonb,
-            input_modalities = $10::jsonb,
-            output_modalities = $11::jsonb,
-            description = $12,
-            capability_intro = $13,
-            limitations = $14::jsonb,
-            supported_languages = $15::jsonb,
-            use_cases = $16::jsonb,
-            training_data_cutoff = $17,
-            context_tokens = $18,
-            max_output_tokens = $19,
-            supports_streaming = $20,
-            supports_tools = $21,
-            supports_json_schema = $22,
-            api_format = $23,
-            release_stage = $24,
-            shelf_state = $25,
-            routing_state = $26,
-            replacement_model = $27
-        WHERE id = $28
+            catalog_key = $7,
+            vendor_name_snapshot = $8,
+            capability = $9,
+            modalities = $10::jsonb,
+            input_modalities = $11::jsonb,
+            output_modalities = $12::jsonb,
+            description = $13,
+            capability_intro = $14,
+            limitations = $15::jsonb,
+            supported_languages = $16::jsonb,
+            use_cases = $17::jsonb,
+            training_data_cutoff = $18,
+            context_tokens = $19,
+            max_output_tokens = $20,
+            supports_streaming = $21,
+            supports_tools = $22,
+            supports_json_schema = $23,
+            api_format = $24,
+            release_stage = $25,
+            shelf_state = $26,
+            routing_state = $27,
+            replacement_model = $28
+        WHERE id = $29
           AND deleted_at IS NULL
         "#,
     )
     .bind(status_code(&update.status))
     .bind(&command.requested_at)
     .bind(&update.model)
-    .bind(&update.model)
+    .bind(&update.display_name)
     .bind(vendor.id)
     .bind(&vendor.code)
+    .bind(model_base_catalog_key(&vendor.code, &update.model))
     .bind(&vendor.name)
     .bind(capability_code(&update.model_type))
     .bind(json_array_text(&update.modalities)?)
@@ -1385,19 +1634,21 @@ async fn upsert_model_capability(
             updated_at = $1::timestamptz,
             model = $2,
             vendor_code = $3,
-            capability = $4,
-            capability_code = $5,
-            modality = $6,
-            input_modalities = $7::jsonb,
-            output_modalities = $8::jsonb,
+            catalog_key = $4,
+            capability = $5,
+            capability_code = $6,
+            modality = $7,
+            input_modalities = $8::jsonb,
+            output_modalities = $9::jsonb,
             supported = true
-        WHERE model_id = $9
+        WHERE model_id = $10
           AND deleted_at IS NULL
         "#,
     )
     .bind(&command.requested_at)
     .bind(&update.model)
     .bind(&vendor.code)
+    .bind(model_base_catalog_key(&vendor.code, &update.model))
     .bind(capability_code(&update.model_type))
     .bind(capability_code_text)
     .bind(modality_code(&update.model_type))
@@ -1413,9 +1664,9 @@ async fn upsert_model_capability(
     sqlx::query(
         r#"
         INSERT INTO ai_model_capability
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, model, vendor_code, capability, capability_code, modality, input_modalities, output_modalities, supported, schema_version, sort_order)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, capability, capability_code, modality, input_modalities, output_modalities, supported, schema_version, sort_order)
         VALUES
-            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, '{}'::jsonb, $6, $7, $8, $9, $10, $11, $12::jsonb, $13::jsonb, true, 'v1', 1)
+            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, '{}'::jsonb, $6, $7, $8, $9, $10, $11, $12, $13::jsonb, $14::jsonb, true, 'v1', 1)
         "#,
     )
     .bind(&command.capability_uuid)
@@ -1424,6 +1675,7 @@ async fn upsert_model_capability(
     .bind(&command.requested_at)
     .bind(&command.requested_at)
     .bind(model_id)
+    .bind(model_base_catalog_key(&vendor.code, &update.model))
     .bind(&update.model)
     .bind(&vendor.code)
     .bind(capability_code(&update.model_type))
@@ -1474,16 +1726,19 @@ async fn upsert_model_pricing(
             updated_at = $1::timestamptz,
             model = $2,
             vendor_code = $3,
-            billing_meter_code = $4,
-            unit_price = $5::numeric,
+            catalog_key = $4,
+            region_code = $5,
+            billing_meter_code = $6,
+            unit_price = $7::numeric,
             currency = 'USD',
-            priority = $6,
-            effective_from = COALESCE(effective_from, $7::timestamptz)
+            priority = $8,
+            effective_from = COALESCE(effective_from, $9::timestamptz)
         WHERE id = (
             SELECT id
             FROM ai_model_pricing
-            WHERE model_id = $8
-              AND price_side = $9
+            WHERE model_id = $10
+              AND price_side = $11
+            AND COALESCE(region_code, $12) = $13
               AND billing_meter_code IN {meter_filter_sql}
             ORDER BY id ASC
             LIMIT 1
@@ -1495,12 +1750,20 @@ async fn upsert_model_pricing(
     .bind(&command.requested_at)
     .bind(&update.model)
     .bind(&vendor.code)
+    .bind(model_catalog_key(
+        &vendor.code,
+        &update.region_code,
+        &update.model,
+    ))
+    .bind(&update.region_code)
     .bind(meter)
     .bind(unit_price)
     .bind(priority)
     .bind(&command.requested_at)
     .bind(model_id)
     .bind(OFFICIAL_REFERENCE_PRICE_SIDE)
+    .bind(&update.region_code)
+    .bind(&update.region_code)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to update model pricing", error))?;
@@ -1510,9 +1773,9 @@ async fn upsert_model_pricing(
     sqlx::query(
         r#"
         INSERT INTO ai_model_pricing
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, model, vendor_code, price_side, billing_meter_code, unit_price, currency, priority, effective_from)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, region_code, price_side, pricing_scope, billing_type, billing_mode, billing_meter_code, price_item_type, unit, unit_size, metering_mode, quantity_source, minimum_quantity, quantity_step, included_quantity, unit_price, currency, rounding_mode, min_charge_amount, pricing_formula_mode, price_origin, priority, effective_from)
         VALUES
-            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, '{}'::jsonb, $6, $7, $8, $9, $10, $11::numeric, 'USD', $12, $13::timestamptz)
+            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, '{}'::jsonb, $6, $7, $8, $9, $10, $11, 1, 1, 1, $12, 1, 1, 1, 1, 1, 0, 1, 0, $13::numeric, 'USD', 1, 0, 1, 1, $14, $15::timestamptz)
         "#,
     )
     .bind(uuid)
@@ -1521,8 +1784,10 @@ async fn upsert_model_pricing(
     .bind(&command.requested_at)
     .bind(&command.requested_at)
     .bind(model_id)
+    .bind(model_catalog_key(&vendor.code, &update.region_code, &update.model))
     .bind(&update.model)
     .bind(&vendor.code)
+    .bind(&update.region_code)
     .bind(OFFICIAL_REFERENCE_PRICE_SIDE)
     .bind(meter)
     .bind(unit_price)
@@ -1531,6 +1796,273 @@ async fn upsert_model_pricing(
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create model pricing during update", error))?;
+    Ok(())
+}
+
+async fn upsert_optional_model_pricing(
+    tx: &mut Transaction<'_, Postgres>,
+    model_id: i64,
+    command: &UpdateAdminAiModelCommand,
+    vendor: &VendorIdentity,
+    update: &EffectiveModelUpdate,
+    uuid: &str,
+    meter: &str,
+    meter_filter_sql: &str,
+    unit_price: Option<&str>,
+    priority: i32,
+) -> DomainResult<()> {
+    let Some(unit_price) = unit_price else {
+        return Ok(());
+    };
+    if unit_price.trim().is_empty() {
+        sqlx::query(
+            format!(
+                r#"
+        UPDATE ai_model_pricing
+        SET status = 0,
+            deleted_at = $1::timestamptz,
+            updated_at = $2::timestamptz
+        WHERE model_id = $3
+          AND price_side = $4
+          AND COALESCE(region_code, $5) = $6
+          AND billing_meter_code IN {meter_filter_sql}
+          AND deleted_at IS NULL
+        "#,
+            )
+            .as_str(),
+        )
+        .bind(&command.requested_at)
+        .bind(&command.requested_at)
+        .bind(model_id)
+        .bind(OFFICIAL_REFERENCE_PRICE_SIDE)
+        .bind(&update.region_code)
+        .bind(&update.region_code)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to clear optional model pricing", error))?;
+        return Ok(());
+    }
+    let result = sqlx::query(
+        format!(
+            r#"
+        UPDATE ai_model_pricing
+        SET status = 1,
+            deleted_at = NULL,
+            updated_at = $1::timestamptz,
+            model = $2,
+            vendor_code = $3,
+            catalog_key = $4,
+            region_code = $5,
+            billing_meter_code = $6,
+            unit_price = $7::numeric,
+            currency = 'USD',
+            priority = $8,
+            effective_from = COALESCE(effective_from, $9::timestamptz)
+        WHERE id = (
+            SELECT id
+            FROM ai_model_pricing
+            WHERE model_id = $10
+              AND price_side = $11
+              AND COALESCE(region_code, $12) = $13
+              AND billing_meter_code IN {meter_filter_sql}
+            ORDER BY id ASC
+            LIMIT 1
+        )
+        "#,
+        )
+        .as_str(),
+    )
+    .bind(&command.requested_at)
+    .bind(&update.model)
+    .bind(&vendor.code)
+    .bind(model_catalog_key(
+        &vendor.code,
+        &update.region_code,
+        &update.model,
+    ))
+    .bind(&update.region_code)
+    .bind(meter)
+    .bind(unit_price)
+    .bind(priority)
+    .bind(&command.requested_at)
+    .bind(model_id)
+    .bind(OFFICIAL_REFERENCE_PRICE_SIDE)
+    .bind(&update.region_code)
+    .bind(&update.region_code)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update optional model pricing", error))?;
+    if result.rows_affected() > 0 {
+        return Ok(());
+    }
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model_pricing
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, region_code, price_side, pricing_scope, billing_type, billing_mode, billing_meter_code, price_item_type, unit, unit_size, metering_mode, quantity_source, minimum_quantity, quantity_step, included_quantity, unit_price, currency, rounding_mode, min_charge_amount, pricing_formula_mode, price_origin, priority, effective_from)
+        VALUES
+            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, '{}'::jsonb, $6, $7, $8, $9, $10, $11, 1, 1, 1, $12, 1, 1, 1, 1, 1, 0, 1, 0, $13::numeric, 'USD', 1, 0, 1, 1, $14, $15::timestamptz)
+        "#,
+    )
+    .bind(uuid)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
+    .bind(model_id)
+    .bind(model_catalog_key(&vendor.code, &update.region_code, &update.model))
+    .bind(&update.model)
+    .bind(&vendor.code)
+    .bind(&update.region_code)
+    .bind(OFFICIAL_REFERENCE_PRICE_SIDE)
+    .bind(meter)
+    .bind(unit_price)
+    .bind(priority)
+    .bind(&command.requested_at)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to create optional model pricing during update", error))?;
+    Ok(())
+}
+
+async fn replace_model_region_pricing(
+    tx: &mut Transaction<'_, Postgres>,
+    model_id: i64,
+    command: &UpdateAdminAiModelCommand,
+    vendor: &VendorIdentity,
+    update: &EffectiveModelUpdate,
+    region_prices: &[crate::ports::AdminAiModelRegionPriceCommand],
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE ai_model_pricing
+        SET status = 0,
+            deleted_at = $1::timestamptz,
+            updated_at = $2::timestamptz
+        WHERE model_id = $3
+          AND price_side = $4
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
+    .bind(model_id)
+    .bind(OFFICIAL_REFERENCE_PRICE_SIDE)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to replace regional model pricing", error))?;
+
+    for region_price in region_prices {
+        insert_update_region_model_pricing(
+            tx,
+            model_id,
+            command,
+            vendor,
+            update,
+            &region_price.region_code,
+            input_billing_meter(&update.model_type),
+            &region_price.price_in,
+            1,
+            "input",
+        )
+        .await?;
+        insert_update_region_model_pricing(
+            tx,
+            model_id,
+            command,
+            vendor,
+            update,
+            &region_price.region_code,
+            output_billing_meter(&update.model_type),
+            &region_price.price_out,
+            2,
+            "output",
+        )
+        .await?;
+        if let Some(price) = region_price
+            .cache_read_price
+            .as_deref()
+            .filter(|price| !price.trim().is_empty())
+        {
+            insert_update_region_model_pricing(
+                tx,
+                model_id,
+                command,
+                vendor,
+                update,
+                &region_price.region_code,
+                "llm_cache_read_token",
+                price,
+                3,
+                "cache_read",
+            )
+            .await?;
+        }
+        if let Some(price) = region_price
+            .cache_write_price
+            .as_deref()
+            .filter(|price| !price.trim().is_empty())
+        {
+            insert_update_region_model_pricing(
+                tx,
+                model_id,
+                command,
+                vendor,
+                update,
+                &region_price.region_code,
+                "llm_cache_write_token",
+                price,
+                4,
+                "cache_write",
+            )
+            .await?;
+        }
+    }
+    Ok(())
+}
+
+async fn insert_update_region_model_pricing(
+    tx: &mut Transaction<'_, Postgres>,
+    model_id: i64,
+    command: &UpdateAdminAiModelCommand,
+    vendor: &VendorIdentity,
+    update: &EffectiveModelUpdate,
+    region_code: &str,
+    meter: &str,
+    unit_price: &str,
+    priority: i32,
+    price_kind: &str,
+) -> DomainResult<()> {
+    let catalog_key = model_catalog_key(&vendor.code, region_code, &update.model);
+    let uuid = stable_uuid(
+        "admin-price",
+        &[&command.model_id, region_code, meter, price_kind],
+    );
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model_pricing
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, region_code, price_side, pricing_scope, billing_type, billing_mode, billing_meter_code, price_item_type, unit, unit_size, metering_mode, quantity_source, minimum_quantity, quantity_step, included_quantity, unit_price, currency, rounding_mode, min_charge_amount, pricing_formula_mode, price_origin, priority, effective_from)
+        VALUES
+            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, '{}'::jsonb, $6, $7, $8, $9, $10, $11, 1, 1, 1, $12, 1, 1, 1, 1, 1, 0, 1, 0, $13::numeric, 'USD', 1, 0, 1, 1, $14, $15::timestamptz)
+        "#,
+    )
+    .bind(uuid)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
+    .bind(model_id)
+    .bind(catalog_key)
+    .bind(&update.model)
+    .bind(&vendor.code)
+    .bind(region_code)
+    .bind(OFFICIAL_REFERENCE_PRICE_SIDE)
+    .bind(meter)
+    .bind(unit_price)
+    .bind(priority)
+    .bind(&command.requested_at)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to replace regional model pricing row", error))?;
     Ok(())
 }
 
@@ -1697,7 +2229,22 @@ fn model_select_sql(
             COALESCE(m.organization_id, 0) AS organization_id,
             COALESCE(m.vendor_id, 0)::text AS vendor_id,
             COALESCE(m.vendor_code, '') AS vendor_code,
-            COALESCE(m.model, '') AS name,
+            COALESCE(
+                NULLIF((
+                    SELECT p.region_code
+                    FROM ai_model_pricing p
+                    WHERE p.model_id = m.id
+                      AND p.status = 1
+                      AND p.deleted_at IS NULL
+                    ORDER BY p.priority ASC NULLS LAST, p.id ASC
+                    LIMIT 1
+                ), ''),
+                'global'
+            ) AS region_code,
+            COALESCE(m.catalog_key, COALESCE(m.vendor_code, '') || '/' || COALESCE(m.model, '')) AS catalog_key,
+            COALESCE(m.model, '') AS model,
+            COALESCE(NULLIF(m.display_name, ''), m.model, '') AS display_name,
+            COALESCE(NULLIF(m.display_name, ''), m.model, '') AS name,
             m.capability,
             COALESCE(m.modalities::text, '[]') AS modalities_json,
             COALESCE(m.input_modalities::text, '[]') AS input_modalities_json,
@@ -1731,6 +2278,28 @@ fn model_select_sql(
                 ORDER BY p.priority ASC NULLS LAST, p.id ASC
                 LIMIT 1
             ), '') AS price_out,
+            COALESCE((
+                SELECT p.unit_price::text
+                FROM ai_model_pricing p
+                WHERE p.model_id = m.id
+                  AND p.price_side = 1
+                  AND p.billing_meter_code IN ('llm_cache_read_token')
+                  AND p.status = 1
+                  AND p.deleted_at IS NULL
+                ORDER BY p.priority ASC NULLS LAST, p.id ASC
+                LIMIT 1
+            ), '') AS cache_read_price,
+            COALESCE((
+                SELECT p.unit_price::text
+                FROM ai_model_pricing p
+                WHERE p.model_id = m.id
+                  AND p.price_side = 1
+                  AND p.billing_meter_code IN ('llm_cache_write_token')
+                  AND p.status = 1
+                  AND p.deleted_at IS NULL
+                ORDER BY p.priority ASC NULLS LAST, p.id ASC
+                LIMIT 1
+            ), '') AS cache_write_price,
             COALESCE(rc.calls, '0') AS calls,
             m.status,
             m.context_tokens AS context_tokens,
@@ -1778,10 +2347,18 @@ fn model_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminAiModelItem> 
         organization_id: optional_integer_cell(&row, "organization_id").unwrap_or(0),
         vendor_id: row.try_get("vendor_id").map_err(row_error)?,
         vendor_code: row.try_get("vendor_code").map_err(row_error)?,
+        region_code: row
+            .try_get("region_code")
+            .unwrap_or_else(|_| "global".to_owned()),
+        catalog_key: row.try_get("catalog_key").unwrap_or_default(),
+        model: row.try_get("model").map_err(row_error)?,
+        display_name: row.try_get("display_name").map_err(row_error)?,
         name: row.try_get("name").map_err(row_error)?,
         model_type: model_type_label(capability, &modalities)?,
         price_in: row.try_get("price_in").unwrap_or_default(),
         price_out: row.try_get("price_out").unwrap_or_default(),
+        cache_read_price: row.try_get("cache_read_price").unwrap_or_default(),
+        cache_write_price: row.try_get("cache_write_price").unwrap_or_default(),
         status: status_label(required_integer_cell(&row, "status", "model status")?)?,
         calls: row.try_get("calls").unwrap_or_else(|_| "0".to_owned()),
         description: row.try_get("description").ok().flatten(),
@@ -1921,6 +2498,15 @@ fn parse_string_array(value: &str, field_name: &str) -> DomainResult<Vec<String>
 fn json_array_text(values: &[String]) -> DomainResult<String> {
     serde_json::to_string(values)
         .map_err(|error| DomainError::new(format!("failed to encode ai model json array: {error}")))
+}
+
+fn model_catalog_key(vendor_code: &str, region_code: &str, model: &str) -> String {
+    let region_code = if region_code.trim().is_empty() {
+        DEFAULT_MODEL_REGION_CODE
+    } else {
+        region_code.trim()
+    };
+    build_model_catalog_key(vendor_code, region_code, model)
 }
 
 fn input_billing_meter(model_type: &str) -> &'static str {

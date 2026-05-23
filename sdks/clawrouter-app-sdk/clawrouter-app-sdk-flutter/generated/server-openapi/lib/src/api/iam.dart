@@ -11,6 +11,15 @@ class IamApi {
 
   IamApi(this._client);
 
+  /// List groups
+  Future<ApiKeyGroupsListResult?> apiKeyGroupsList() async {
+    final response = await _client.get(ApiPaths.appPath('/iam/api_key_groups'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ApiKeyGroupsListResult.fromJson(map);
+    })();
+  }
+
   /// List keys
   Future<ApiKeysListResult?> apiKeysList() async {
     final response = await _client.get(ApiPaths.appPath('/iam/api_keys'));

@@ -8,6 +8,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from tools.frontend_contract_loader import default_frontend_contract_path, load_frontend_field_contract
+
 try:
     import yaml
 except ImportError as exc:  # pragma: no cover - exercised only on missing tooling
@@ -38,11 +40,21 @@ class FrontendFieldAudit:
     )
     EXPORTED_INTERFACE_PATTERN = re.compile(r"export\s+interface\s+(\w+)(?:\s+extends\s+[^{]+)?\s*\{")
     EXPORTED_TYPE_PATTERN = re.compile(r"export\s+type\s+(\w+)\s*=\s*\{")
+    EXPORTED_IMPORTED_TYPE_ALIAS_PATTERN = re.compile(
+        r"export\s+type\s+(\w+)\s*=\s*([A-Za-z_][A-Za-z0-9_]*)\s*;"
+    )
     LOCAL_INTERFACE_PATTERN = re.compile(r"(?:export\s+)?interface\s+(\w+)(?:\s+extends\s+[^{]+)?\s*\{")
     LOCAL_TYPE_PATTERN = re.compile(r"(?:export\s+)?type\s+(\w+)\s*=\s*\{")
+    TYPE_IMPORT_PATTERN = re.compile(
+        r"import\s+type\s*\{(?P<body>[\s\S]*?)\}\s*from\s*['\"](?P<module>[^'\"]+)['\"]\s*;"
+    )
     FIELD_PATTERN = re.compile(r"^(?:([A-Za-z_][A-Za-z0-9_]*)\??|'([^']+)'|\"([^\"]+)\")\s*:")
     DIRECT_TYPE_REFERENCE_PATTERN = re.compile(r"^\s*(?:readonly\s+)?([A-Z][A-Za-z0-9_]*)\s*(?:\[\])?\s*[;,]?$")
     ARRAY_TYPE_REFERENCE_PATTERN = re.compile(r"^\s*(?:ReadonlyArray|Array)<\s*([A-Z][A-Za-z0-9_]*)\s*>\s*[;,]?$")
+    CONTRACT_TYPE_ALIAS_MODULES = frozenset({
+        "@sdkwork/commerce-service",
+        "@sdkwork/generation-pc-react/react",
+    })
 
     def __init__(
         self,
@@ -54,7 +66,7 @@ class FrontendFieldAudit:
         self.contract_path = (
             Path(contract_path).resolve()
             if contract_path is not None
-            else self.root / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
+            else default_frontend_contract_path(self.root)
         )
         self.output_path = (
             Path(output_path).resolve()
@@ -67,7 +79,14 @@ class FrontendFieldAudit:
         contract_index = self._frontend_model_contract_index()
         source_files = self._source_files()
         for source in source_files:
+            source_contract_fields = self._contract_fields_by_interface_for_source(
+                self._display_path(source),
+                contract_index,
+            )
             extracted = self._extract_interfaces(source, expand_references=True)
+            extracted.update(
+                self._extract_contract_imported_type_aliases(source, source_contract_fields, existing=extracted)
+            )
             for name, fields in sorted(extracted.items()):
                 key = f"{self._display_path(source)}#{name}"
                 contract = contract_index.get(key, {})
@@ -80,7 +99,14 @@ class FrontendFieldAudit:
             resolved_source = self.root / source_path
             if not resolved_source.exists():
                 continue
+            source_contract_fields = self._contract_fields_by_interface_for_source(
+                source_path,
+                contract_index,
+            )
             extracted = self._extract_interfaces(resolved_source, expand_references=True)
+            extracted.update(
+                self._extract_contract_imported_type_aliases(resolved_source, source_contract_fields, existing=extracted)
+            )
             for name in sorted(declared_interfaces):
                 if name not in extracted:
                     continue
@@ -305,6 +331,47 @@ class FrontendFieldAudit:
 
         return {name: parse_type(name) for name in bodies if name in exported_names}
 
+    def _extract_contract_imported_type_aliases(
+        self,
+        source: Path,
+        contract_fields: dict[str, list[str]],
+        existing: dict[str, list[str]],
+    ) -> dict[str, list[str]]:
+        if not contract_fields:
+            return {}
+
+        text = source.read_text(encoding="utf-8", errors="ignore")
+        imported_types = self._contract_imported_type_names(text)
+        aliases: dict[str, list[str]] = {}
+        for match in self.EXPORTED_IMPORTED_TYPE_ALIAS_PATTERN.finditer(text):
+            alias_name = match.group(1)
+            imported_name = match.group(2)
+            if alias_name in existing or alias_name not in contract_fields:
+                continue
+            if imported_name not in imported_types:
+                continue
+            aliases[alias_name] = contract_fields[alias_name]
+        return aliases
+
+    def _contract_imported_type_names(self, text: str) -> set[str]:
+        names: set[str] = set()
+        for match in self.TYPE_IMPORT_PATTERN.finditer(text):
+            module = match.group("module")
+            if module not in self.CONTRACT_TYPE_ALIAS_MODULES:
+                continue
+            for raw_name in match.group("body").split(","):
+                name = raw_name.strip()
+                if not name:
+                    continue
+                name = re.sub(r"//.*$", "", name).strip()
+                if not name:
+                    continue
+                alias_parts = re.split(r"\s+as\s+", name)
+                imported_name = alias_parts[-1].strip()
+                if re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", imported_name):
+                    names.add(imported_name)
+        return names
+
     def _balanced_block(self, text: str, start: int) -> tuple[str, int]:
         depth = 0
         for index in range(start, len(text)):
@@ -379,11 +446,7 @@ class FrontendFieldAudit:
     def _load_contract(self) -> dict[str, Any]:
         if yaml is None:
             raise RuntimeError("PyYAML is required to load frontend field contracts") from _YAML_IMPORT_ERROR
-        if not self.contract_path.exists():
-            return {}
-        contract = yaml.safe_load(self.contract_path.read_text(encoding="utf-8"))
-        if contract is None:
-            return {}
+        contract = load_frontend_field_contract(self.root, self.contract_path)
         if not isinstance(contract, dict):
             raise ValueError("frontend field contract root must be a mapping")
         return contract
@@ -404,6 +467,26 @@ class FrontendFieldAudit:
                 continue
             indexed[f"{source}#{interface}"] = entry
         return indexed
+
+    def _contract_fields_by_interface_for_source(
+        self,
+        source_path: str,
+        contract_index: dict[str, dict[str, Any]],
+    ) -> dict[str, list[str]]:
+        fields_by_interface: dict[str, list[str]] = {}
+        prefix = f"{source_path}#"
+        for key, entry in contract_index.items():
+            if not key.startswith(prefix):
+                continue
+            interface = key.removeprefix(prefix)
+            fields = entry.get("fields", [])
+            derived_fields = entry.get("derived_fields", [])
+            if not isinstance(fields, list) or not all(isinstance(field, str) for field in fields):
+                continue
+            if not isinstance(derived_fields, list) or not all(isinstance(field, str) for field in derived_fields):
+                continue
+            fields_by_interface[interface] = [*fields, *derived_fields]
+        return fields_by_interface
 
     def _contract_declared_interfaces_by_source(self) -> dict[str, set[str]]:
         contract = self._load_contract()

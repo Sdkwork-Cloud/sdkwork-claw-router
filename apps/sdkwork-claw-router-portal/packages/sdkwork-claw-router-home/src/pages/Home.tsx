@@ -3,7 +3,7 @@ import { Features } from '../components/Features';
 import { ModelShowcase } from 'sdkwork-claw-router-models';
 import { AppCenterPreview } from 'sdkwork-claw-router-app-center';
 import { SupportedModalities } from '../components/SupportedModalities';
-import { BottomDownload } from '../components/BottomDownload';
+import { DownloadSection } from '../components/DownloadSection';
 
 export function Home() {
   return (
@@ -13,7 +13,7 @@ export function Home() {
       <Features />
       <ModelShowcase />
       <AppCenterPreview />
-      <BottomDownload />
+      <DownloadSection />
     </main>
   );
 }

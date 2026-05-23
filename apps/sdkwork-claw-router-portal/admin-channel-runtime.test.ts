@@ -4,7 +4,11 @@ import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
 import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
-import { ChannelService, ProviderSecretService } from "./packages/sdkwork-claw-router-admin-channel/src/channelService.ts";
+import {
+  ChannelModelCatalogService,
+  ChannelService,
+  ProviderSecretService,
+} from "./packages/sdkwork-claw-router-admin-channel/src/channelService.ts";
 import {
   createChannelInputFromForm,
   createChannelStatusUpdateInput,
@@ -17,7 +21,7 @@ import {
   resolveChannelSelectFormValue,
   resolveChannelSelectSubmitValue,
 } from "./packages/sdkwork-claw-router-admin-channel/src/channelForm.ts";
-import { knownModelVendors, protocolsList } from "./packages/sdkwork-claw-router-admin-channel/src/channelOptions.tsx";
+import { knownModelVendors, protocolsList } from "./packages/sdkwork-claw-router-admin-channel/src/channelOptions.ts";
 
 const originalFetch = globalThis.fetch;
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
@@ -80,6 +84,7 @@ test("admin channel create input does not reuse returned channel view model", ()
     accessType: " Standard API Key ",
     baseUrl: " https://api.openai.com/v1 ",
     apiKey: " sk-live-openai ",
+    expiresAt: " 2026-06-30T08:00:00Z ",
     capabilities: ["llm", " image ", "llm"],
     models: [" gpt-4o ", " ", "gpt-4o-mini"],
     circuitBreakerEnabled: true,
@@ -95,6 +100,7 @@ test("admin channel create input does not reuse returned channel view model", ()
     accessType: "Standard API Key",
     baseUrl: "https://api.openai.com/v1",
     apiKey: "sk-live-openai",
+    expiresAt: "2026-06-30T08:00:00Z",
     capabilities: ["llm", "image"],
     models: ["gpt-4o", "gpt-4o-mini"],
     circuitBreakerPolicy: { failureThreshold: 4 },
@@ -104,6 +110,53 @@ test("admin channel create input does not reuse returned channel view model", ()
   for (const field of ["id", "isMultimodal", "balance", "errors"]) {
     assert.equal(field in input, false);
   }
+});
+
+test("admin channel form treats empty expiration as never expires by default", () => {
+  const createInput = createChannelInputFromForm({
+    name: "OpenAI",
+    vendor: "OpenAI",
+    protocol: "OpenAI",
+    accessType: "api-key",
+    baseUrl: "https://api.openai.com/v1",
+    apiKey: "sk-openai",
+    expiresAt: " ",
+    capabilities: ["llm"],
+    models: ["gpt-4o"],
+    weight: 100,
+    status: "active",
+  });
+  assert.equal("expiresAt" in createInput, false);
+
+  const updateInput = createChannelUpdateInputFromForm({
+    name: "OpenAI",
+    vendor: "OpenAI",
+    protocol: "OpenAI",
+    accessType: "api-key",
+    baseUrl: "https://api.openai.com/v1",
+    apiKey: " ",
+    expiresAt: " ",
+    capabilities: ["llm"],
+    models: ["gpt-4o"],
+    weight: 100,
+    status: "active",
+  });
+  assert.equal(updateInput.expiresAt, null);
+
+  const updateWithExpiry = createChannelUpdateInputFromForm({
+    name: "OpenAI",
+    vendor: "OpenAI",
+    protocol: "OpenAI",
+    accessType: "api-key",
+    baseUrl: "https://api.openai.com/v1",
+    apiKey: " ",
+    expiresAt: " 2026-07-01T00:00:00Z ",
+    capabilities: ["llm"],
+    models: ["gpt-4o"],
+    weight: 100,
+    status: "active",
+  });
+  assert.equal(updateWithExpiry.expiresAt, "2026-07-01T00:00:00Z");
 });
 
 test("admin channel create input rejects invalid optional values before persistence", () => {
@@ -279,6 +332,82 @@ test("admin channel modal rejects invalid traffic weight instead of defaulting i
   assert.doesNotMatch(source, /weight:\s*Number\.isFinite\(weight\) && weight > 0 \? weight : 100/);
 });
 
+test("admin channel modal keeps api key input on its own row with plaintext visibility controls", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /const \[apiKeyVisible, setApiKeyVisible\] = useState\(false\)/);
+  assert.match(source, /className="grid grid-cols-1 gap-4"\s*>\s*<div>\s*<label[^>]*>\{t\('admin\.channel\.fields\.baseUrl'\)\}/s);
+  assert.match(source, /<button\s+type="button"\s+onClick=\{\(\) => setApiKeyVisible\(\(current\) => !current\)\}/);
+  assert.match(source, /type=\{apiKeyVisible \? 'text' : 'password'\}/);
+  assert.match(source, /apiKeyVisible \? <EyeOff className="h-4 w-4" \/> : <Eye className="h-4 w-4" \/>/);
+});
+
+test("admin channel credential details can reveal returned plaintext api key", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /const \[apiKeyVisible, setApiKeyVisible\] = useState\(false\)/);
+  assert.match(source, /label=\{t\('admin\.channel\.fields\.apiKey'\)\}/);
+  assert.match(source, /value=\{apiKeyVisible \? channel\.apiKey : maskApiKeyForDisplay\(channel\.apiKey\)\}/);
+  assert.match(source, /onToggleVisibility=\{\(\) => setApiKeyVisible\(\(current\) => !current\)\}/);
+  assert.match(source, /admin\.channel\.credentials\.apiKeyUnavailable/);
+});
+
+test("admin channel account lifetime fields are shown with never-expires default copy", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+  const i18nSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /name="expiresAt"/);
+  assert.match(source, /type="datetime-local"/);
+  assert.match(source, /admin\.channel\.fields\.createdAt/);
+  assert.match(source, /admin\.channel\.fields\.expiresAt/);
+  assert.match(source, /admin\.channel\.table\.createdAt/);
+  assert.match(source, /admin\.channel\.table\.expiresAt/);
+  assert.match(source, /admin\.channel\.expiration\.never/);
+  assert.match(source, /<BusinessStateTableRow colSpan=\{8\}/);
+  assert.match(source, /label=\{t\('admin\.channel\.fields\.createdAt'\)\} value=\{displayChannelTime\(channel\.createdAt/);
+  assert.match(source, /label=\{t\('admin\.channel\.fields\.expiresAt'\)\}[\s\S]+admin\.channel\.expiration\.never/);
+
+  for (const key of [
+    "admin.channel.fields.createdAt",
+    "admin.channel.fields.expiresAt",
+    "admin.channel.table.createdAt",
+    "admin.channel.table.expiresAt",
+    "admin.channel.expiration.never",
+    "admin.channel.help.expiresAt",
+  ]) {
+    const occurrences = i18nSource.match(new RegExp(`"${key.replaceAll(".", "\\.")}"`, "g"))?.length ?? 0;
+    assert.equal(occurrences, 2, `expected ${key} to exist in English and Chinese resources`);
+  }
+});
+
+test("admin channel list keeps model cells compact and shows actions by default", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /<ChannelModelsCell models=\{channel\.models\} \/>/);
+  assert.match(source, /function ChannelModelsCell\(\{ models \}: \{ models: string\[\] \}\)/);
+  assert.match(source, /t\('admin\.channel\.modelCount', \{ count: models\.length \}\)/);
+  assert.match(source, /models\.map\(\(model\) =>/);
+  assert.doesNotMatch(source, /channel\.models\.slice\(0, 3\)\.map/);
+  assert.doesNotMatch(source, /\+{channel\.models\.length - 3}/);
+  assert.doesNotMatch(source, /opacity-0 group-hover:opacity-100/);
+  assert.match(source, /className="flex items-center justify-end gap-1"/);
+});
+
 test("admin channel modal does not expose unsupported per-channel model mapping controls", () => {
   const source = readFileSync(
     new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
@@ -301,7 +430,7 @@ test("admin channel visible account copy is routed through i18n resources", () =
     "utf8",
   );
   const optionsSource = readFileSync(
-    new URL("./packages/sdkwork-claw-router-admin-channel/src/channelOptions.tsx", import.meta.url),
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/channelOptions.ts", import.meta.url),
     "utf8",
   );
   const i18nSource = readFileSync(
@@ -464,6 +593,68 @@ test("admin channel credentials are viewed from account row actions instead of a
   assert.match(source, /admin\.channel\.actions\.viewCredential/);
 });
 
+test("admin channel model catalog maps runtime ids instead of display aliases", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ai/models" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "model-1",
+              vendorId: "vendor-1",
+              vendorCode: "openai",
+              model: "gpt-4o-mini",
+              displayName: "GPT-4o Mini",
+              name: "GPT-4o Mini",
+              type: "Chat",
+              priceIn: "0.1500",
+              priceOut: "0.6000",
+              cacheReadPrice: "0.0750",
+              cacheWritePrice: "0.1500",
+              status: "active",
+              calls: "42",
+              description: null,
+              modalities: ["text"],
+              inputModalities: ["text"],
+              outputModalities: ["text"],
+              apiFormat: "openai_responses",
+              capabilityIntro: null,
+              limitations: [],
+              supportedLanguages: [],
+              useCases: [],
+              trainingDataCutoff: null,
+              contextTokens: 128000,
+              maxOutputTokens: null,
+              supportsStreaming: true,
+              supportsTools: true,
+              supportsJsonSchema: true,
+              releaseStage: 1,
+              shelfState: 1,
+              routingState: 1,
+              replacementModel: null,
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${method} ${url}`);
+    },
+    async () => {
+      const models = await ChannelModelCatalogService.fetchModels();
+
+      assert.deepEqual(models, [
+        {
+          catalogKey: "openai/global/gpt-4o-mini",
+          model: "gpt-4o-mini",
+          displayName: "GPT-4o Mini",
+          vendorCode: "openai",
+          regionCode: "global",
+        },
+      ]);
+    },
+  );
+});
+
 test("admin provider secret create input does not reuse returned credential fields", () => {
   const input = createProviderSecretInputFromForm({
     providerCode: " openai ",
@@ -561,6 +752,7 @@ test("admin channel service persists and clears circuit breaker policy through b
             accessType: "api-key",
             baseUrl: "https://api.openai.com/v1",
             secretRef: "vault://providers/openai/main",
+            createdAt: "2026-05-05T08:00:00Z",
             models: ["gpt-4o"],
             capabilities: ["llm"],
             isMultimodal: false,
@@ -584,6 +776,7 @@ test("admin channel service persists and clears circuit breaker policy through b
             accessType: "api-key",
             baseUrl: "https://api.openai.com/v1",
             secretRef: "vault://providers/openai/main",
+            createdAt: "2026-05-05T08:00:00Z",
             models: ["gpt-4o"],
             capabilities: ["llm"],
             isMultimodal: false,
@@ -636,6 +829,7 @@ test("admin channel list fails closed when backend returns malformed circuit bre
               protocol: "OpenAI",
               accessType: "api-key",
               secretRef: "vault://providers/openai/main",
+              createdAt: "2026-05-05T08:00:00Z",
               models: ["gpt-4o"],
               capabilities: ["llm"],
               isMultimodal: false,
@@ -676,7 +870,10 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
               accessType: "api-key",
               baseUrl: "https://api.openai.com/v1",
               secretRef: "vault://providers/openai/main",
-              models: ["gpt-4o"],
+              apiKey: "sk-live-openai",
+              createdAt: "2026-05-05T08:00:00Z",
+              expiresAt: "2026-06-30T08:00:00Z",
+              models: ["openai/global/gpt-4o"],
               capabilities: ["llm"],
               isMultimodal: false,
               timeoutMs: "30000",
@@ -706,7 +903,9 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
             accessType: "api-key",
             baseUrl: "https://api.anthropic.com",
             secretRef: "vault://providers/anthropic/backup",
-            models: ["claude-3-5-sonnet"],
+            apiKey: "sk-ant-live-secret",
+            createdAt: "2026-05-06T08:00:00Z",
+            models: ["anthropic/global/claude-3-5-sonnet"],
             capabilities: ["llm"],
             isMultimodal: false,
             circuitBreakerPolicy: {
@@ -727,7 +926,10 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
             vendor: "Anthropic",
             protocol: "Anthropic",
             accessType: "api-key",
-            models: ["claude-3-5-sonnet"],
+            apiKey: "sk-ant-live-secret",
+            createdAt: "2026-05-06T08:00:00Z",
+            expiresAt: null,
+            models: ["anthropic/global/claude-3-5-sonnet"],
             capabilities: ["llm"],
             isMultimodal: false,
             circuitBreakerPolicy: null,
@@ -750,7 +952,10 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
           vendor: "OpenAI",
           protocol: "OpenAI",
           accessType: "api-key",
-          models: ["gpt-4o"],
+          apiKey: "sk-live-openai",
+          createdAt: "2026-05-05T08:00:00Z",
+          expiresAt: "2026-06-30T08:00:00Z",
+          models: ["openai/global/gpt-4o"],
           capabilities: ["llm"],
           isMultimodal: false,
           weight: 100,
@@ -774,6 +979,7 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
         accessType: "api-key",
         baseUrl: " https://api.anthropic.com ",
         apiKey: " sk-ant-live-secret ",
+        expiresAt: " 2026-07-01T00:00:00Z ",
         models: [" claude-3-5-sonnet "],
         capabilities: ["llm"],
         weight: 20,
@@ -784,12 +990,16 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
         name: "Anthropic Updated",
         weight: 30,
         status: "disabled",
+        expiresAt: null,
       });
       const tested = await ChannelService.testChannel("channel-2");
       const deleted = await ChannelService.deleteChannel("channel-2");
 
       assert.equal(channels[0].id, "channel-1");
       assert.equal(channels[0].status, "error");
+      assert.equal(channels[0].apiKey, "sk-live-openai");
+      assert.equal(channels[0].createdAt, "2026-05-05T08:00:00Z");
+      assert.equal(channels[0].expiresAt, "2026-06-30T08:00:00Z");
       assert.equal(channels[0].timeoutMs, 30000);
       assert.deepEqual(channels[0].retryPolicy?.retryableStatusCodes, [429, 500]);
       assert.deepEqual(channels[0].circuitBreakerPolicy, { failureThreshold: 2 });
@@ -817,7 +1027,8 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
         accessType: "api-key",
         baseUrl: "https://api.anthropic.com",
         apiKey: "sk-ant-live-secret",
-        models: ["claude-3-5-sonnet"],
+        expiresAt: "2026-07-01T00:00:00Z",
+        models: ["anthropic/global/claude-3-5-sonnet"],
         capabilities: ["llm"],
         circuitBreakerPolicy: { failureThreshold: 4 },
         weight: 20,
@@ -828,6 +1039,7 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
         name: "Anthropic Updated",
         weight: 30,
         status: "disabled",
+        expiresAt: null,
       });
       assert.equal(captured[1].headers["x-request-id"]?.startsWith("admin-channel-create-"), true);
       assert.equal(captured[2].headers["x-request-id"]?.startsWith("admin-channel-update-"), true);
@@ -1140,6 +1352,7 @@ test("admin channel list fails closed when backend omits stable channel ids", as
               protocol: "OpenAI",
               accessType: "api-key",
               secretRef: "vault://providers/openai/main",
+              createdAt: "2026-05-05T08:00:00Z",
               models: ["gpt-4o"],
               capabilities: ["llm"],
               isMultimodal: false,
@@ -1175,6 +1388,7 @@ test("admin channel list fails closed when backend returns malformed channel row
               protocol: "OpenAI",
               accessType: "api-key",
               secretRef: "vault://providers/openai/main",
+              createdAt: "2026-05-05T08:00:00Z",
               models: ["gpt-4o"],
               capabilities: ["llm"],
               isMultimodal: false,
@@ -1211,6 +1425,7 @@ test("admin channel list fails closed when backend omits channel models", async 
               protocol: "OpenAI",
               accessType: "api-key",
               secretRef: "vault://providers/openai/main",
+              createdAt: "2026-05-05T08:00:00Z",
               capabilities: ["llm"],
               isMultimodal: false,
               weight: 100,
@@ -1245,6 +1460,7 @@ test("admin channel list fails closed when backend returns unsupported channel s
               protocol: "OpenAI",
               accessType: "api-key",
               secretRef: "vault://providers/openai/main",
+              createdAt: "2026-05-05T08:00:00Z",
               models: ["gpt-4o"],
               capabilities: ["llm"],
               isMultimodal: false,
@@ -1314,6 +1530,7 @@ test("admin channel list fails closed when backend returns incomplete retry poli
               protocol: "OpenAI",
               accessType: "api-key",
               secretRef: "vault://providers/openai/main",
+              createdAt: "2026-05-05T08:00:00Z",
               models: ["gpt-4o"],
               capabilities: ["llm"],
               isMultimodal: false,
@@ -1352,6 +1569,7 @@ test("admin channel list fails closed when backend returns unsupported retry sta
               protocol: "OpenAI",
               accessType: "api-key",
               secretRef: "vault://providers/openai/main",
+              createdAt: "2026-05-05T08:00:00Z",
               models: ["gpt-4o"],
               capabilities: ["llm"],
               isMultimodal: false,
@@ -1486,4 +1704,22 @@ test("admin provider secret list fails closed when backend returns unsupported c
       );
     },
   );
+});
+
+test("admin channel table fills the available admin viewport", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "AdminTableShell",
+    "data-admin-channel-table-card",
+    "data-admin-channel-table-viewport",
+    "flex h-full min-h-0 w-full flex-col",
+    "sticky top-0 z-10",
+    "footer={",
+  ]) {
+    assert.ok(source.includes(expected), `missing adaptive admin channel table marker: ${expected}`);
+  }
 });

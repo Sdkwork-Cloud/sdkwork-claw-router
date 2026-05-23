@@ -48,6 +48,24 @@ pub struct AdminAppItem {
     pub updated_at: String,
 }
 
+#[derive(Debug, Clone, PartialEq)]
+pub struct AdminAppCategoryItem {
+    pub id: i64,
+    pub uuid: String,
+    pub tenant_id: i64,
+    pub organization_id: i64,
+    pub name: String,
+    pub description: Option<String>,
+    pub code: Option<String>,
+    pub icon: Option<String>,
+    pub sort_weight: i32,
+    pub parent_id: Option<i64>,
+    pub path: Option<String>,
+    pub visible: bool,
+    pub status: i32,
+    pub category_type: i32,
+}
+
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ListAdminAppsQuery {
     pub subject: AdminAppSubject,
@@ -57,6 +75,11 @@ pub struct ListAdminAppsQuery {
     pub app_type: Option<String>,
     pub page_no: Option<i64>,
     pub page_size: Option<i64>,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct ListAdminAppCategoriesQuery {
+    pub subject: AdminAppSubject,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -98,6 +121,25 @@ pub struct CreateAdminAppCommand {
 }
 
 #[derive(Debug, Clone, PartialEq)]
+pub struct CreateAdminAppCategoryCommand {
+    pub subject: AdminAppSubject,
+    pub category_uuid: String,
+    pub audit_log_uuid: String,
+    pub name: String,
+    pub description: Option<String>,
+    pub code: Option<String>,
+    pub icon: Option<String>,
+    pub sort_weight: i32,
+    pub parent_id: Option<i64>,
+    pub path: Option<String>,
+    pub visible: bool,
+    pub status: i32,
+    pub category_type: i32,
+    pub request_id: String,
+    pub requested_at: String,
+}
+
+#[derive(Debug, Clone, PartialEq)]
 pub struct UpdateAdminAppCommand {
     pub subject: AdminAppSubject,
     pub app_id: i64,
@@ -127,6 +169,24 @@ pub struct UpdateAdminAppCommand {
     pub requested_at: String,
 }
 
+#[derive(Debug, Clone, PartialEq)]
+pub struct UpdateAdminAppCategoryCommand {
+    pub subject: AdminAppSubject,
+    pub category_id: i64,
+    pub audit_log_uuid: String,
+    pub name: Option<String>,
+    pub description: Option<Option<String>>,
+    pub code: Option<Option<String>>,
+    pub icon: Option<Option<String>>,
+    pub sort_weight: Option<i32>,
+    pub parent_id: Option<Option<i64>>,
+    pub path: Option<Option<String>>,
+    pub visible: Option<bool>,
+    pub status: Option<i32>,
+    pub request_id: String,
+    pub requested_at: String,
+}
+
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct SetAdminAppStatusCommand {
     pub subject: AdminAppSubject,
@@ -147,7 +207,36 @@ pub struct DeleteAdminAppCommand {
     pub requested_at: String,
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct DeleteAdminAppCategoryCommand {
+    pub subject: AdminAppSubject,
+    pub category_id: i64,
+    pub audit_log_uuid: String,
+    pub request_id: String,
+    pub requested_at: String,
+}
+
 pub trait AdminAppStore {
+    fn list_categories<'a>(
+        &'a self,
+        query: ListAdminAppCategoriesQuery,
+    ) -> AdminAppCommandFuture<'a, Vec<AdminAppCategoryItem>>;
+
+    fn create_category<'a>(
+        &'a self,
+        command: CreateAdminAppCategoryCommand,
+    ) -> AdminAppCommandFuture<'a, AdminAppCategoryItem>;
+
+    fn update_category<'a>(
+        &'a self,
+        command: UpdateAdminAppCategoryCommand,
+    ) -> AdminAppCommandFuture<'a, Option<AdminAppCategoryItem>>;
+
+    fn delete_category<'a>(
+        &'a self,
+        command: DeleteAdminAppCategoryCommand,
+    ) -> AdminAppCommandFuture<'a, bool>;
+
     fn list_apps<'a>(
         &'a self,
         query: ListAdminAppsQuery,

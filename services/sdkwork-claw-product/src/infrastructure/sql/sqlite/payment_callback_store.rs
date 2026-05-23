@@ -1,3 +1,7 @@
+use sdkwork_commerce_core::{
+    CommerceAccountAssetType, CommerceLedgerDirection, CommercePaymentStatus,
+};
+use serde_json::Value;
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DecimalValue, DomainError};
@@ -6,8 +10,11 @@ use crate::ports::{
     PaymentCallbackStore,
 };
 
-// Java enum alignment for callback mutations: payment success status = 2, failed status = 3,
-// closed status = 5, and vip recharge success status = 1.
+const POINTS_CURRENCY_CODE: &str = "POINT";
+const ORDER_STATUS_PAID: &str = "paid";
+const ORDER_STATUS_CANCELLED: &str = "cancelled";
+const ORDER_STATUS_PENDING_PAYMENT: &str = "pending_payment";
+
 #[derive(Debug, Clone)]
 pub struct SqlitePaymentCallbackStore {
     pool: SqlitePool,
@@ -59,7 +66,7 @@ async fn process_payment_callback(
     let result = process_payment_status(&mut tx, &command).await;
     match result {
         Ok(outcome) => {
-            finish_webhook_event(&mut tx, webhook.id, "SUCCESS", &command, &outcome.message)
+            finish_webhook_event(&mut tx, &webhook.id, "SUCCESS", &command, &outcome.message)
                 .await?;
             tx.commit().await.map_err(|error| {
                 store_error("failed to commit payment callback transaction", error)
@@ -68,7 +75,7 @@ async fn process_payment_callback(
         }
         Err(error) => {
             let message = error.to_string();
-            finish_webhook_event(&mut tx, webhook.id, "FAILED", &command, &message).await?;
+            finish_webhook_event(&mut tx, &webhook.id, "FAILED", &command, &message).await?;
             tx.commit().await.map_err(|commit_error| {
                 store_error(
                     "failed to commit failed payment callback event",
@@ -80,9 +87,9 @@ async fn process_payment_callback(
     }
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone)]
 struct WebhookEvent {
-    id: i64,
+    id: String,
     duplicate: bool,
 }
 
@@ -93,13 +100,14 @@ async fn begin_webhook_event(
     let nonce_replay = sqlx::query(
         r#"
         SELECT event_id
-        FROM plus_payment_webhook_event
-        WHERE provider = ?
+        FROM commerce_payment_webhook_event
+        WHERE tenant_id = '0'
+          AND provider = ?
           AND nonce = ?
         LIMIT 1
         "#,
     )
-    .bind(command.provider)
+    .bind(&command.provider_key)
     .bind(&command.nonce)
     .fetch_optional(&mut **tx)
     .await
@@ -116,29 +124,30 @@ async fn begin_webhook_event(
     let existing = sqlx::query(
         r#"
         SELECT id, status
-        FROM plus_payment_webhook_event
-        WHERE provider = ?
+        FROM commerce_payment_webhook_event
+        WHERE tenant_id = '0'
+          AND provider = ?
           AND event_id = ?
         LIMIT 1
         "#,
     )
-    .bind(command.provider)
+    .bind(&command.provider_key)
     .bind(&command.event_id)
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to load payment callback webhook event", error))?;
     if let Some(row) = existing {
-        let id = integer_cell(&row, "id");
+        let id = string_cell(&row, "id");
         let status = string_cell(&row, "status");
         if status == "SUCCESS" {
             return Ok(WebhookEvent {
-                id,
+                id: id.clone(),
                 duplicate: true,
             });
         }
         sqlx::query(
             r#"
-            UPDATE plus_payment_webhook_event
+            UPDATE commerce_payment_webhook_event
             SET status = 'RECEIVED',
                 out_trade_no = ?,
                 transaction_id = ?,
@@ -151,7 +160,7 @@ async fn begin_webhook_event(
         .bind(&command.out_trade_no)
         .bind(&command.transaction_id)
         .bind(&command.payload_digest)
-        .bind(id)
+        .bind(&id)
         .execute(&mut **tx)
         .await
         .map_err(|error| store_error("failed to reset payment callback webhook event", error))?;
@@ -163,16 +172,14 @@ async fn begin_webhook_event(
 
     sqlx::query(
         r#"
-        INSERT INTO plus_payment_webhook_event
-            (uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, provider, event_id, nonce, signature, request_timestamp, out_trade_no, transaction_id, payload_digest, status, message)
+        INSERT INTO commerce_payment_webhook_event
+            (id, tenant_id, organization_id, provider, event_id, nonce, signature, request_timestamp, out_trade_no, transaction_id, payload_digest, status, message, request_no, idempotency_key, created_at, processed_at, updated_at)
         VALUES
-            (?, 0, 0, 1, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, 'RECEIVED', 'received webhook event')
+            (?, '0', NULL, ?, ?, ?, ?, ?, ?, ?, ?, 'RECEIVED', 'received webhook event', ?, ?, ?, NULL, ?)
         "#,
     )
     .bind(&command.event_uuid)
-    .bind(&command.received_at)
-    .bind(&command.received_at)
-    .bind(command.provider)
+    .bind(&command.provider_key)
     .bind(&command.event_id)
     .bind(&command.nonce)
     .bind(command.signature.as_deref())
@@ -180,29 +187,29 @@ async fn begin_webhook_event(
     .bind(&command.out_trade_no)
     .bind(&command.transaction_id)
     .bind(&command.payload_digest)
+    .bind(&command.event_id)
+    .bind(&command.nonce)
+    .bind(&command.received_at)
+    .bind(&command.received_at)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to insert payment callback webhook event", error))?;
-    let id: i64 = sqlx::query_scalar("SELECT last_insert_rowid()")
-        .fetch_one(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to read payment callback webhook event id", error))?;
     Ok(WebhookEvent {
-        id,
+        id: command.event_uuid.clone(),
         duplicate: false,
     })
 }
 
 async fn finish_webhook_event(
     tx: &mut Transaction<'_, Sqlite>,
-    webhook_id: i64,
+    webhook_id: &str,
     status: &str,
     command: &PaymentCallbackCommand,
     message: &str,
 ) -> Result<(), DomainError> {
     sqlx::query(
         r#"
-        UPDATE plus_payment_webhook_event
+        UPDATE commerce_payment_webhook_event
         SET status = ?,
             processed_at = CURRENT_TIMESTAMP,
             updated_at = CURRENT_TIMESTAMP,
@@ -242,7 +249,13 @@ async fn process_payment_status(
             fulfill_recharge_once(tx, &payment, command).await
         }
         PaymentCallbackStatus::Failed => {
-            mark_payment_failed(tx, &payment, command, 3).await?;
+            mark_payment_failed(
+                tx,
+                &payment,
+                command,
+                CommercePaymentStatus::Failed.as_str(),
+            )
+            .await?;
             Ok(PaymentCallbackOutcome {
                 success: true,
                 duplicate: false,
@@ -255,7 +268,13 @@ async fn process_payment_status(
             })
         }
         PaymentCallbackStatus::Closed => {
-            mark_payment_failed(tx, &payment, command, 5).await?;
+            mark_payment_failed(
+                tx,
+                &payment,
+                command,
+                CommercePaymentStatus::Canceled.as_str(),
+            )
+            .await?;
             Ok(PaymentCallbackOutcome {
                 success: true,
                 duplicate: false,
@@ -272,14 +291,16 @@ async fn process_payment_status(
 
 #[derive(Debug, Clone)]
 struct PaymentFact {
-    id: i64,
-    order_id: i64,
-    tenant_id: i64,
-    organization_id: i64,
-    user_id: i64,
+    id: String,
+    payment_intent_id: String,
+    order_id: String,
+    tenant_id: String,
+    organization_id: Option<String>,
+    user_id: String,
     amount: String,
-    status: i64,
+    status: String,
     purpose: String,
+    callback_payload: Option<String>,
 }
 
 async fn load_payment_for_callback(
@@ -289,85 +310,107 @@ async fn load_payment_for_callback(
     let row = sqlx::query(
         r#"
         SELECT
-            p.id,
-            p.order_id,
-            p.tenant_id,
-            p.organization_id,
-            COALESCE(o.user_id, 0) AS user_id,
-            CAST(COALESCE(p.amount, 0) AS TEXT) AS amount,
-            p.status AS status,
-            COALESCE(p.provider, 0) AS provider,
-            COALESCE(NULLIF(p.purpose, ''), 'ORDER') AS purpose
-        FROM plus_payment p
-        JOIN plus_order o
-          ON o.id = p.order_id
-         AND o.tenant_id = p.tenant_id
-         AND o.organization_id = p.organization_id
-        WHERE p.provider = ?
-          AND p.out_trade_no = ?
+            pa.id,
+            pa.payment_intent_id,
+            pa.order_id,
+            pa.tenant_id,
+            pa.organization_id,
+            pa.owner_user_id AS user_id,
+            CAST(COALESCE(pa.amount, '0') AS TEXT) AS amount,
+            pa.status AS status,
+            pa.provider AS provider,
+            COALESCE(NULLIF(o.subject, ''), 'order') AS purpose,
+            pa.callback_payload
+        FROM commerce_payment_attempt pa
+        JOIN commerce_order o
+          ON o.id = pa.order_id
+         AND o.tenant_id = pa.tenant_id
+         AND (o.organization_id IS NULL OR pa.organization_id IS NULL OR o.organization_id = pa.organization_id)
+        JOIN commerce_payment_intent pi
+          ON pi.id = pa.payment_intent_id
+         AND pi.tenant_id = pa.tenant_id
+         AND (pi.organization_id IS NULL OR pa.organization_id IS NULL OR pi.organization_id = pa.organization_id)
+        WHERE pa.provider = ?
+          AND pa.out_trade_no = ?
         LIMIT 1
         "#,
     )
-    .bind(command.provider)
+    .bind(&command.provider_key)
     .bind(&command.out_trade_no)
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to load payment callback payment", error))?
     .ok_or_else(|| DomainError::conflict("payment callback payment was not found"))?;
 
-    let provider = integer_cell(&row, "provider");
-    if provider != command.provider {
+    let provider = string_cell(&row, "provider");
+    if provider != command.provider_key {
         return Err(DomainError::conflict(
             "payment callback provider does not match payment provider",
         ));
     }
     Ok(PaymentFact {
-        id: integer_cell(&row, "id"),
-        order_id: integer_cell(&row, "order_id"),
-        tenant_id: integer_cell(&row, "tenant_id"),
-        organization_id: integer_cell(&row, "organization_id"),
-        user_id: integer_cell(&row, "user_id"),
+        id: string_cell(&row, "id"),
+        payment_intent_id: string_cell(&row, "payment_intent_id"),
+        order_id: string_cell(&row, "order_id"),
+        tenant_id: string_cell(&row, "tenant_id"),
+        organization_id: optional_string_cell(&row, "organization_id"),
+        user_id: string_cell(&row, "user_id"),
         amount: string_cell(&row, "amount"),
-        status: required_integer_cell(&row, "status", "payment")?,
+        status: required_string_cell(&row, "status", "payment")?,
         purpose: string_cell(&row, "purpose"),
+        callback_payload: optional_string_cell(&row, "callback_payload"),
     })
 }
 
 async fn mark_payment_success(
     tx: &mut Transaction<'_, Sqlite>,
     payment: &PaymentFact,
-    command: &PaymentCallbackCommand,
+    _command: &PaymentCallbackCommand,
 ) -> Result<(), DomainError> {
     sqlx::query(
         r#"
-        UPDATE plus_payment
-        SET status = 2,
-            transaction_id = ?,
-            success_time = CURRENT_TIMESTAMP,
+        UPDATE commerce_payment_attempt
+        SET status = ?,
+            paid_at = CURRENT_TIMESTAMP,
             updated_at = CURRENT_TIMESTAMP
         WHERE id = ?
-          AND status <> 2
+          AND status <> ?
         "#,
     )
-    .bind(&command.transaction_id)
-    .bind(payment.id)
+    .bind(CommercePaymentStatus::Succeeded.as_str())
+    .bind(&payment.id)
+    .bind(CommercePaymentStatus::Succeeded.as_str())
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to mark callback payment success", error))?;
     sqlx::query(
         r#"
-        UPDATE plus_order
-        SET status = 2,
-            transaction_id = ?,
-            paid_amount = total_amount,
-            pay_success_time = CURRENT_TIMESTAMP,
+        UPDATE commerce_payment_intent
+        SET status = ?,
             updated_at = CURRENT_TIMESTAMP
         WHERE id = ?
-          AND status IN (1, 5)
+          AND status <> ?
         "#,
     )
-    .bind(&command.transaction_id)
-    .bind(payment.order_id)
+    .bind(CommercePaymentStatus::Succeeded.as_str())
+    .bind(&payment.payment_intent_id)
+    .bind(CommercePaymentStatus::Succeeded.as_str())
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to mark callback payment intent success", error))?;
+    sqlx::query(
+        r#"
+        UPDATE commerce_order
+        SET status = ?,
+            paid_at = CURRENT_TIMESTAMP,
+            updated_at = CURRENT_TIMESTAMP
+        WHERE id = ?
+          AND status IN (?, 'pending')
+        "#,
+    )
+    .bind(ORDER_STATUS_PAID)
+    .bind(&payment.order_id)
+    .bind(ORDER_STATUS_PENDING_PAYMENT)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to mark callback order paid", error))?;
@@ -377,71 +420,56 @@ async fn mark_payment_success(
 async fn mark_payment_failed(
     tx: &mut Transaction<'_, Sqlite>,
     payment: &PaymentFact,
-    command: &PaymentCallbackCommand,
-    payment_status: i64,
+    _command: &PaymentCallbackCommand,
+    payment_status: &str,
 ) -> Result<(), DomainError> {
     sqlx::query(
         r#"
-        UPDATE plus_payment
+        UPDATE commerce_payment_attempt
         SET status = ?,
-            transaction_id = ?,
             updated_at = CURRENT_TIMESTAMP
         WHERE id = ?
-          AND status <> 2
+          AND status <> ?
         "#,
     )
     .bind(payment_status)
-    .bind(&command.transaction_id)
-    .bind(payment.id)
+    .bind(&payment.id)
+    .bind(CommercePaymentStatus::Succeeded.as_str())
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to mark callback payment failed", error))?;
     sqlx::query(
         r#"
-        UPDATE plus_order
-        SET status = 5,
-            cancel_time = CURRENT_TIMESTAMP,
+        UPDATE commerce_payment_intent
+        SET status = ?,
             updated_at = CURRENT_TIMESTAMP
         WHERE id = ?
-          AND status = 1
+          AND status <> ?
         "#,
     )
-    .bind(payment.order_id)
+    .bind(payment_status)
+    .bind(&payment.payment_intent_id)
+    .bind(CommercePaymentStatus::Succeeded.as_str())
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to mark callback payment intent failed", error))?;
+    sqlx::query(
+        r#"
+        UPDATE commerce_order
+        SET status = ?,
+            cancelled_at = CURRENT_TIMESTAMP,
+            updated_at = CURRENT_TIMESTAMP
+        WHERE id = ?
+          AND status IN (?, 'pending')
+        "#,
+    )
+    .bind(ORDER_STATUS_CANCELLED)
+    .bind(&payment.order_id)
+    .bind(ORDER_STATUS_PENDING_PAYMENT)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to mark callback order cancelled", error))?;
-    sqlx::query(
-        r#"
-        UPDATE plus_vip_recharge
-        SET status = 2,
-            updated_at = CURRENT_TIMESTAMP,
-            remark = ?
-        WHERE tenant_id = ?
-          AND organization_id = ?
-          AND user_id = ?
-          AND transaction_no = ?
-          AND status <> 1
-        "#,
-    )
-    .bind(format!(
-        "payment_callback_status={}",
-        command.status.as_str()
-    ))
-    .bind(payment.tenant_id)
-    .bind(payment.organization_id)
-    .bind(payment.user_id)
-    .bind(&command.out_trade_no)
-    .execute(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to mark callback recharge failed", error))?;
     Ok(())
-}
-
-#[derive(Debug, Clone)]
-struct RechargeFact {
-    id: i64,
-    status: i64,
-    point_amount: i64,
 }
 
 async fn fulfill_recharge_once(
@@ -449,33 +477,10 @@ async fn fulfill_recharge_once(
     payment: &PaymentFact,
     command: &PaymentCallbackCommand,
 ) -> Result<PaymentCallbackOutcome, DomainError> {
-    let recharge = sqlx::query(
-        r#"
-        SELECT id, status AS status, COALESCE(point_amount, 0) AS point_amount
-        FROM plus_vip_recharge
-        WHERE tenant_id = ?
-          AND organization_id = ?
-          AND user_id = ?
-          AND transaction_no = ?
-        LIMIT 1
-        "#,
-    )
-    .bind(payment.tenant_id)
-    .bind(payment.organization_id)
-    .bind(payment.user_id)
-    .bind(&command.out_trade_no)
-    .fetch_optional(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to load callback vip recharge", error))?;
-    let Some(row) = recharge else {
-        if payment.purpose.eq_ignore_ascii_case("POINTS") {
-            return Err(DomainError::conflict(
-                "payment callback points recharge record was not found",
-            ));
-        }
+    if !is_points_recharge(&payment.purpose) {
         return Ok(PaymentCallbackOutcome {
             success: true,
-            duplicate: payment.status == 2,
+            duplicate: payment_status_is_succeeded(&payment.status),
             out_trade_no: command.out_trade_no.clone(),
             transaction_id: command.transaction_id.clone(),
             status: "success".to_owned(),
@@ -483,14 +488,11 @@ async fn fulfill_recharge_once(
             credited_points: 0,
             balance: 0,
         });
-    };
-    let recharge = RechargeFact {
-        id: integer_cell(&row, "id"),
-        status: required_integer_cell(&row, "status", "vip recharge")?,
-        point_amount: integer_cell(&row, "point_amount"),
-    };
+    }
+    let credited_points = callback_points(payment)?;
     let account = ensure_points_account(tx, payment, command).await?;
-    if recharge.status == 1 {
+    let history_count = existing_account_history_count(tx, &account.id, payment, command).await?;
+    if history_count > 0 {
         return Ok(PaymentCallbackOutcome {
             success: true,
             duplicate: true,
@@ -498,73 +500,38 @@ async fn fulfill_recharge_once(
             transaction_id: command.transaction_id.clone(),
             status: "success".to_owned(),
             message: "payment callback recharge was already fulfilled".to_owned(),
-            credited_points: recharge.point_amount,
+            credited_points,
             balance: account.available_points,
         });
     }
 
-    let history_count = existing_account_history_count(tx, account.id, command).await?;
-    let point_change_count = existing_point_change_count(tx, payment, recharge.id).await?;
-    let mut balance_after = account.available_points;
-    if history_count == 0 && point_change_count == 0 {
-        balance_after = account.available_points + recharge.point_amount;
-        update_account_points(tx, account.id, balance_after).await?;
-        insert_account_history(
-            tx,
-            command,
-            payment,
-            account.id,
-            account.available_points,
-            balance_after,
-            recharge.point_amount,
-        )
-        .await?;
-        insert_point_change(
-            tx,
-            command,
-            payment,
-            recharge.id,
-            account.available_points,
-            balance_after,
-            recharge.point_amount,
-        )
-        .await?;
-    }
-
-    sqlx::query(
-        r#"
-        UPDATE plus_vip_recharge
-        SET status = 1,
-            recharge_time = CURRENT_TIMESTAMP,
-            updated_at = CURRENT_TIMESTAMP,
-            remark = ?
-        WHERE id = ?
-        "#,
+    let balance_after = account.available_points + credited_points;
+    update_account_points(tx, &account.id, balance_after).await?;
+    insert_account_history(
+        tx,
+        command,
+        payment,
+        &account.id,
+        balance_after,
+        credited_points,
     )
-    .bind(format!(
-        "payment_callback_transaction={}",
-        command.transaction_id
-    ))
-    .bind(recharge.id)
-    .execute(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to mark callback recharge success", error))?;
+    .await?;
 
     Ok(PaymentCallbackOutcome {
         success: true,
-        duplicate: history_count > 0 || point_change_count > 0 || payment.status == 2,
+        duplicate: payment_status_is_succeeded(&payment.status),
         out_trade_no: command.out_trade_no.clone(),
         transaction_id: command.transaction_id.clone(),
         status: "success".to_owned(),
         message: "payment callback fulfilled recharge successfully".to_owned(),
-        credited_points: recharge.point_amount,
+        credited_points,
         balance: balance_after,
     })
 }
 
 #[derive(Debug, Clone)]
 struct PointsAccount {
-    id: i64,
+    id: String,
     available_points: i64,
 }
 
@@ -575,71 +542,103 @@ async fn ensure_points_account(
 ) -> Result<PointsAccount, DomainError> {
     let existing = sqlx::query(
         r#"
-        SELECT id, COALESCE(available_points, 0) AS available_points
-        FROM plus_account
+        SELECT id, CAST(COALESCE(available_amount, '0') AS TEXT) AS available_points
+        FROM commerce_account
         WHERE tenant_id = ?
-          AND organization_id = ?
-          AND user_id = ?
-          AND account_type = 2
-          AND status = 1
+          AND (organization_id IS NULL OR organization_id = ?)
+          AND owner_user_id = ?
+          AND asset_type = ?
+          AND currency_code = ?
+          AND status = 'active'
         ORDER BY id ASC
         LIMIT 1
         "#,
     )
-    .bind(payment.tenant_id)
-    .bind(payment.organization_id)
-    .bind(payment.user_id)
+    .bind(&payment.tenant_id)
+    .bind(payment.organization_id.as_deref())
+    .bind(&payment.user_id)
+    .bind(CommerceAccountAssetType::Points.as_str())
+    .bind(POINTS_CURRENCY_CODE)
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to load callback points account", error))?;
     if let Some(row) = existing {
         return Ok(PointsAccount {
-            id: integer_cell(&row, "id"),
+            id: string_cell(&row, "id"),
             available_points: integer_cell(&row, "available_points"),
         });
     }
 
     sqlx::query(
         r#"
-        INSERT INTO plus_account
-            (uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, user_id, account_type, owner, owner_id, available_balance, frozen_balance, available_points, frozen_points, token_balance, frozen_token, status)
+        INSERT INTO commerce_account
+            (id, tenant_id, organization_id, owner_user_id, asset_type, currency_code, available_amount, frozen_amount, version, status, created_at, updated_at)
         VALUES
-            (?, ?, ?, 1, ?, ?, 0, ?, 2, 0, ?, 0, 0, 0, 0, 0, 0, 1)
+            (?, ?, ?, ?, ?, ?, '0', '0', 0, 'active', ?, ?)
+        ON CONFLICT(tenant_id, organization_id, owner_user_id, asset_type, currency_code) DO NOTHING
         "#,
     )
     .bind(&command.account_uuid)
-    .bind(payment.tenant_id)
-    .bind(payment.organization_id)
+    .bind(&payment.tenant_id)
+    .bind(payment.organization_id.as_deref())
+    .bind(&payment.user_id)
+    .bind(CommerceAccountAssetType::Points.as_str())
+    .bind(POINTS_CURRENCY_CODE)
     .bind(&command.received_at)
     .bind(&command.received_at)
-    .bind(payment.user_id)
-    .bind(payment.user_id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create callback points account", error))?;
-    let id: i64 = sqlx::query_scalar("SELECT last_insert_rowid()")
-        .fetch_one(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to read callback points account id", error))?;
+
+    let row = sqlx::query(
+        r#"
+        SELECT id, CAST(COALESCE(available_amount, '0') AS TEXT) AS available_points
+        FROM commerce_account
+        WHERE tenant_id = ?
+          AND (organization_id IS NULL OR organization_id = ?)
+          AND owner_user_id = ?
+          AND asset_type = ?
+          AND currency_code = ?
+          AND status = 'active'
+        ORDER BY id ASC
+        LIMIT 1
+        "#,
+    )
+    .bind(&payment.tenant_id)
+    .bind(payment.organization_id.as_deref())
+    .bind(&payment.user_id)
+    .bind(CommerceAccountAssetType::Points.as_str())
+    .bind(POINTS_CURRENCY_CODE)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load created callback points account", error))?
+    .ok_or_else(|| {
+        DomainError::conflict("payment callback points account was not available after creation")
+    })?;
+
     Ok(PointsAccount {
-        id,
-        available_points: 0,
+        id: string_cell(&row, "id"),
+        available_points: integer_cell(&row, "available_points"),
     })
 }
 
 async fn existing_account_history_count(
     tx: &mut Transaction<'_, Sqlite>,
-    account_id: i64,
+    account_id: &str,
+    payment: &PaymentFact,
     command: &PaymentCallbackCommand,
 ) -> Result<i64, DomainError> {
     sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM plus_account_history
-        WHERE account_id = ?
-          AND transaction_id = ?
+        FROM commerce_account_ledger_entry
+        WHERE tenant_id = ?
+          AND account_id = ?
+          AND transaction_no = ?
+          AND business_type = 'recharge'
         "#,
     )
+    .bind(&payment.tenant_id)
     .bind(account_id)
     .bind(&command.out_trade_no)
     .fetch_one(&mut **tx)
@@ -652,45 +651,21 @@ async fn existing_account_history_count(
     })
 }
 
-async fn existing_point_change_count(
-    tx: &mut Transaction<'_, Sqlite>,
-    payment: &PaymentFact,
-    recharge_id: i64,
-) -> Result<i64, DomainError> {
-    sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM plus_vip_point_change
-        WHERE tenant_id = ?
-          AND organization_id = ?
-          AND user_id = ?
-          AND source_id = ?
-          AND source_type = 'PURCHASE'
-        "#,
-    )
-    .bind(payment.tenant_id)
-    .bind(payment.organization_id)
-    .bind(payment.user_id)
-    .bind(recharge_id)
-    .fetch_one(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to check callback point change idempotency", error))
-}
-
 async fn update_account_points(
     tx: &mut Transaction<'_, Sqlite>,
-    account_id: i64,
+    account_id: &str,
     balance_after: i64,
 ) -> Result<(), DomainError> {
     sqlx::query(
         r#"
-        UPDATE plus_account
-        SET available_points = ?,
+        UPDATE commerce_account
+        SET available_amount = ?,
+            version = version + 1,
             updated_at = CURRENT_TIMESTAMP
         WHERE id = ?
         "#,
     )
-    .bind(balance_after)
+    .bind(balance_after.to_string())
     .bind(account_id)
     .execute(&mut **tx)
     .await
@@ -702,70 +677,79 @@ async fn insert_account_history(
     tx: &mut Transaction<'_, Sqlite>,
     command: &PaymentCallbackCommand,
     payment: &PaymentFact,
-    account_id: i64,
-    balance_before: i64,
+    account_id: &str,
     balance_after: i64,
     credited_points: i64,
 ) -> Result<(), DomainError> {
     sqlx::query(
         r#"
-        INSERT INTO plus_account_history
-            (uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, account_type, asset_type, account_id, transaction_id, transaction_type, points_change, points_before, points_after, source_type, source_id, status, usage_result, remarks)
+        INSERT INTO commerce_account_ledger_entry
+            (id, tenant_id, organization_id, account_id, owner_user_id, asset_type, direction, amount, balance_after, business_type, transaction_no, request_no, idempotency_key, source_type, source_id, remark, created_at)
         VALUES
-            (?, ?, ?, 1, ?, ?, 0, 2, 2, ?, ?, 21, ?, ?, ?, 1, ?, 2, ?, ?)
+            (?, ?, ?, ?, ?, ?, ?, ?, ?, 'recharge', ?, ?, ?, 'commerce_payment_attempt', ?, ?, ?)
         "#,
     )
     .bind(&command.account_history_uuid)
-    .bind(payment.tenant_id)
-    .bind(payment.organization_id)
-    .bind(&command.received_at)
-    .bind(&command.received_at)
+    .bind(&payment.tenant_id)
+    .bind(payment.organization_id.as_deref())
     .bind(account_id)
+    .bind(&payment.user_id)
+    .bind(CommerceAccountAssetType::Points.as_str())
+    .bind(CommerceLedgerDirection::Credit.as_str())
+    .bind(credited_points.to_string())
+    .bind(balance_after.to_string())
     .bind(&command.out_trade_no)
-    .bind(credited_points)
-    .bind(balance_before)
-    .bind(balance_after)
-    .bind(payment.order_id.to_string())
-    .bind("{}")
+    .bind(&command.out_trade_no)
+    .bind(&command.out_trade_no)
+    .bind(&payment.id)
     .bind(format!("payment_callback_transaction={}", command.transaction_id))
+    .bind(&command.received_at)
     .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to insert callback account history", error))?;
+    .map_err(|error| store_error("failed to insert callback account ledger entry", error))?;
     Ok(())
 }
 
-async fn insert_point_change(
-    tx: &mut Transaction<'_, Sqlite>,
-    command: &PaymentCallbackCommand,
-    payment: &PaymentFact,
-    recharge_id: i64,
-    balance_before: i64,
-    balance_after: i64,
-    credited_points: i64,
-) -> Result<(), DomainError> {
-    sqlx::query(
-        r#"
-        INSERT INTO plus_vip_point_change
-            (uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, user_id, change_type, change_amount, before_balance, after_balance, source_id, source_type, remark)
-        VALUES
-            (?, ?, ?, 1, ?, ?, 0, ?, 1, ?, ?, ?, ?, 'PURCHASE', ?)
-        "#,
+fn is_points_recharge(value: &str) -> bool {
+    matches!(
+        value.trim().to_ascii_lowercase().as_str(),
+        "points" | "points_recharge"
     )
-    .bind(&command.point_change_uuid)
-    .bind(payment.tenant_id)
-    .bind(payment.organization_id)
-    .bind(&command.received_at)
-    .bind(&command.received_at)
-    .bind(payment.user_id)
-    .bind(credited_points)
-    .bind(balance_before)
-    .bind(balance_after)
-    .bind(recharge_id)
-    .bind(format!("payment_callback_out_trade_no={}", command.out_trade_no))
-    .execute(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to insert callback vip point change", error))?;
-    Ok(())
+}
+
+fn payment_status_is_succeeded(value: &str) -> bool {
+    value
+        .trim()
+        .eq_ignore_ascii_case(CommercePaymentStatus::Succeeded.as_str())
+}
+
+fn callback_points(payment: &PaymentFact) -> Result<i64, DomainError> {
+    let payload = payment
+        .callback_payload
+        .as_deref()
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .ok_or_else(|| {
+            DomainError::conflict("payment callback points payload is required for recharge")
+        })?;
+    let value: Value = serde_json::from_str(payload)
+        .map_err(|_| DomainError::conflict("payment callback points payload is not valid json"))?;
+    let points = value
+        .get("points")
+        .and_then(|points| {
+            points
+                .as_i64()
+                .or_else(|| points.as_str().and_then(|value| value.parse::<i64>().ok()))
+        })
+        .ok_or_else(|| {
+            DomainError::conflict("payment callback points payload must include points")
+        })?;
+    if points <= 0 {
+        return Err(DomainError::conflict(
+            "payment callback points payload must be positive",
+        ));
+    }
+    Ok(points)
 }
 
 fn money_matches(expected: &str, actual: &str) -> bool {
@@ -787,16 +771,19 @@ fn string_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> String {
     optional_string_cell(row, column).unwrap_or_default()
 }
 
-fn integer_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> i64 {
-    optional_integer_cell(row, column).unwrap_or(0)
-}
-
-fn required_integer_cell(
+fn required_string_cell(
     row: &sqlx::sqlite::SqliteRow,
     column: &str,
     source: &str,
-) -> Result<i64, DomainError> {
-    optional_integer_cell(row, column).ok_or_else(|| missing_status_error(source))
+) -> Result<String, DomainError> {
+    optional_string_cell(row, column)
+        .map(|value| value.trim().to_owned())
+        .filter(|value| !value.is_empty())
+        .ok_or_else(|| missing_status_error(source))
+}
+
+fn integer_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> i64 {
+    optional_integer_cell(row, column).unwrap_or(0)
 }
 
 fn optional_integer_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Option<i64> {
@@ -814,9 +801,6 @@ fn optional_integer_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Option<
 fn missing_status_error(source: &str) -> DomainError {
     match source {
         "payment" => DomainError::new("missing payment callback payment status from database row"),
-        "vip recharge" => {
-            DomainError::new("missing payment callback vip recharge status from database row")
-        }
         value => DomainError::new(format!(
             "missing payment callback {value} status from database row"
         )),

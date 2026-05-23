@@ -11,5 +11,4 @@ class RoutingChannelsCreateResult:
     """Routing channels create result schema exposed by Claw Router."""
     code: str
     data: Optional[RoutingChannelMutationResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

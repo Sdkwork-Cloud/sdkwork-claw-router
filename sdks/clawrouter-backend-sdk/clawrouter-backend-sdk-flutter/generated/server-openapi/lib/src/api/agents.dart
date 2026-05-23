@@ -12,7 +12,7 @@ class AgentsApi {
   AgentsApi(this._client);
 
   /// List managed agents
-  Future<AgentsListResult?> list([String? q, int? ownerUserId, String? status, String? visibility, int? page, int? pageSize]) async {
+  Future<AgentDefinitionsListResult?> agentDefinitionsList([String? q, int? ownerUserId, String? status, String? visibility, int? page, int? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('q', q, 'form', true, false, null),
       QueryParameterSpec('owner_user_id', ownerUserId, 'form', true, false, null),
@@ -24,16 +24,16 @@ class AgentsApi {
     final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/agents'), query));
     return (() {
       final map = sdkworkResponseAsMap(response);
-      return map == null ? null : AgentsListResult.fromJson(map);
+      return map == null ? null : AgentDefinitionsListResult.fromJson(map);
     })();
   }
 
   /// Retrieve managed agent
-  Future<AgentsRetrieveResult?> retrieve(String agentId) async {
+  Future<AgentDefinitionsRetrieveResult?> agentDefinitionsRetrieve(String agentId) async {
     final response = await _client.get(ApiPaths.backendPath('/agents/${serializePathParameter(agentId, const PathParameterSpec('agentId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
-      return map == null ? null : AgentsRetrieveResult.fromJson(map);
+      return map == null ? null : AgentDefinitionsRetrieveResult.fromJson(map);
     })();
   }
 }

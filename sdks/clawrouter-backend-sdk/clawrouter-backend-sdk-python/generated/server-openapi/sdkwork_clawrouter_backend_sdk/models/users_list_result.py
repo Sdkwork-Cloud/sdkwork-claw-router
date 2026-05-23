@@ -11,5 +11,4 @@ class UsersListResult:
     """Users list result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminUsersResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

@@ -1,44 +1,29 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { ChevronDown, Image as ImageIcon, Loader2, Music, Plus, Timer, Upload, Volume2, X } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { Image as ImageIcon, Loader2, Music, Timer, Upload, Volume2, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import {
+  createDefaultSdkworkGenerationAssetConfig,
+  estimateSdkworkGenerationCredits,
+  findFirstSdkworkGenerationModelForModality,
+  findSdkworkGenerationModelById,
+  getSdkworkGenerationDurationOptions,
+  reconcileSdkworkGenerationAssetConfig,
+  serializeSdkworkGenerationAssetConfig,
+  updateSdkworkGenerationImageModeConfig,
+  updateSdkworkGenerationVideoModeConfig,
+  type SdkworkGenerationAssetConfig,
+  type SdkworkGenerationCreditEstimate,
+} from '@sdkwork/generation-pc-react/react';
 import type {
-  PlaygroundGenerationConfig,
   PlaygroundGenerationSubmitInput,
   PlaygroundGenerationTargetType,
   PlaygroundModelGroup,
-  PlaygroundModelOption,
-  PlaygroundModelReferencePrice,
   PlaygroundReferenceImageInput,
 } from '../playgroundTypes';
-import { usePopoverDismiss } from './usePopoverDismiss';
+import { ImageGenerationModePopup } from './ImageGenerationModePopup';
+import { VideoGenerationModePopup } from './VideoGenerationModePopup';
 
-const DEFAULT_POINTS_PER_USD = 10;
-
-type AssetGenerationAspectRatio = '1:1' | '16:9' | '9:16';
-
-type AssetGenerationConfig = {
-  imageCount: number;
-  aspectRatio: AssetGenerationAspectRatio;
-  durationSeconds: number;
-  quality: 'standard' | 'high';
-};
-
-type GenerationCreditEstimate = {
-  points: number | null;
-  detail: string;
-  reference: boolean;
-};
-
-const IMAGE_COUNT_OPTIONS = [1, 2, 4] as const;
-
-const ASPECT_RATIO_OPTIONS: Array<{
-  value: AssetGenerationAspectRatio;
-  labelKey: string;
-}> = [
-  { value: '1:1', labelKey: 'playground.aspectRatio.square' },
-  { value: '16:9', labelKey: 'playground.aspectRatio.landscape' },
-  { value: '9:16', labelKey: 'playground.aspectRatio.portrait' },
-];
+type AssetGenerationConfig = SdkworkGenerationAssetConfig;
 
 export function AssetGenerationPanel({
   modality,
@@ -64,21 +49,11 @@ export function AssetGenerationPanel({
   const [referenceImageName, setReferenceImageName] = useState<string | null>(null);
   const [referenceImageMetadata, setReferenceImageMetadata] = useState<PlaygroundReferenceImageInput | null>(null);
   const [referenceUploadError, setReferenceUploadError] = useState<string | null>(null);
-  const [config, setConfig] = useState<AssetGenerationConfig>({
-    imageCount: 1,
-    aspectRatio: '1:1',
-    durationSeconds: defaultDurationSeconds(modality),
-    quality: 'standard',
-  });
-  const normalizedPrompt = prompt.trim();
-  const canSubmit = normalizedPrompt.length > 0 && !submitting;
-  const selectedModel = findModelById(modelGroups, selectedModelId)
-    ?? firstModelForModality(modelGroups, modality);
-  const creditEstimate = estimatePlaygroundGenerationCredits({
-    modality,
-    model: selectedModel,
-    config,
-  });
+  const [config, setConfig] = useState<AssetGenerationConfig>(() => createPlaygroundAssetConfig(modality));
+
+  useEffect(() => {
+    setConfig((current) => reconcileSdkworkGenerationAssetConfig(current, modality));
+  }, [modality]);
 
   useEffect(() => () => {
     if (referenceImageUrlRef.current) {
@@ -86,18 +61,31 @@ export function AssetGenerationPanel({
     }
   }, []);
 
+  const normalizedPrompt = prompt.trim();
+  const canSubmit = normalizedPrompt.length > 0 && !submitting;
+  const selectedModel = findSdkworkGenerationModelById(modelGroups, selectedModelId)
+    ?? findFirstSdkworkGenerationModelForModality(modelGroups, modality);
+  const creditEstimate = estimateSdkworkGenerationCredits({
+    config,
+    modality,
+    model: selectedModel,
+    unavailableDetail: 'playground.generationCost.settlement',
+  });
+
   const handleSubmit = async () => {
     if (!canSubmit) {
       return;
     }
+
     await onSubmitGeneration({
       prompt: normalizedPrompt,
       selectedModality: modality,
       targetType: modality,
       selectedModel: selectedModel?.id || selectedModelId || undefined,
-      generationConfig: createGenerationConfig(config),
+      generationConfig: serializeSdkworkGenerationAssetConfig(config, modality),
       referenceImages: referenceImageMetadata ? [referenceImageMetadata] : [],
     });
+
     setPrompt('');
     setReferenceUploadError(null);
     if (referenceImageUrl) {
@@ -135,16 +123,13 @@ export function AssetGenerationPanel({
           </div>
 
           <GenerationConfigControls
-            modality={modality}
             config={config}
+            modality={modality}
             onChange={setConfig}
           />
 
           {modality === 'image' && (
             <ReferenceImageUploader
-              referenceImageUrl={referenceImageUrl}
-              referenceImageName={referenceImageName}
-              uploadError={referenceUploadError}
               onChangeReferenceImage={(nextReferenceImageUrl, nextReferenceImage) => {
                 if (referenceImageUrl) {
                   URL.revokeObjectURL(referenceImageUrl);
@@ -156,6 +141,9 @@ export function AssetGenerationPanel({
                 setReferenceImageMetadata(nextReferenceImage);
               }}
               onUploadError={setReferenceUploadError}
+              referenceImageName={referenceImageName}
+              referenceImageUrl={referenceImageUrl}
+              uploadError={referenceUploadError}
             />
           )}
         </div>
@@ -185,7 +173,7 @@ function GenerationBottomActionBar({
 }: {
   canSubmit: boolean;
   config: AssetGenerationConfig;
-  creditEstimate: GenerationCreditEstimate;
+  creditEstimate: SdkworkGenerationCreditEstimate;
   modality: PlaygroundGenerationTargetType;
   onChangeConfig: (config: AssetGenerationConfig) => void;
   onSubmit: () => Promise<void>;
@@ -201,30 +189,44 @@ function GenerationBottomActionBar({
   const outputLabel = generationOutputLabel(modality, config, t);
 
   return (
-    <div
-      className="z-30 flex h-[64px] shrink-0 items-center gap-2 border-t border-white/10 bg-[#151515]/95 px-4 shadow-[0_-10px_20px_rgba(0,0,0,0.28)] backdrop-blur"
-      title={estimateDetail}
-    >
-      {modality === 'image' ? (
-        <ImageGenerationBottomControls config={config} onChange={onChangeConfig} />
-      ) : (
-        <div className="min-w-0 flex-1" />
-      )}
-
-      <div className="flex min-w-0 shrink-0 items-center justify-end gap-2">
-        {creditEstimate.reference && (
-          <span className="shrink-0 whitespace-nowrap rounded bg-cyan-400/10 px-1.5 py-0.5 text-[10px] font-semibold text-cyan-300">
-            {t('playground.generationCost.reference')}
-          </span>
-        )}
-        <GenerationSubmitButton
-          canSubmit={canSubmit}
-          costLabel={costLabel}
-          onSubmit={onSubmit}
-          outputLabel={outputLabel}
-          submitting={submitting}
+    <div className="z-30 shrink-0" title={estimateDetail}>
+      {modality === 'video' && config.videoMode ? (
+        <VideoGenerationModePopup
+          canGenerate={canSubmit}
+          config={config.videoMode}
+          isGenerating={submitting}
+          onChangeConfig={(videoConfig) => onChangeConfig(updateSdkworkGenerationVideoModeConfig(config, videoConfig))}
+          onGenerate={onSubmit}
         />
-      </div>
+      ) : modality === 'image' && config.imageMode ? (
+        <ImageGenerationModePopup
+          canGenerate={canSubmit}
+          config={config.imageMode}
+          isGenerating={submitting}
+          onChangeConfig={(imageConfig) => onChangeConfig(updateSdkworkGenerationImageModeConfig(config, imageConfig))}
+          onGenerate={onSubmit}
+          showCost={creditEstimate.points ?? undefined}
+        />
+      ) : (
+        <div className="flex h-[64px] items-center gap-2 border-t border-white/10 bg-[#151515]/95 px-4 shadow-[0_-10px_20px_rgba(0,0,0,0.28)] backdrop-blur">
+          <div className="min-w-0 flex-1" />
+
+          <div className="flex min-w-0 shrink-0 items-center justify-end gap-2">
+            {creditEstimate.reference && (
+              <span className="shrink-0 whitespace-nowrap rounded bg-cyan-400/10 px-1.5 py-0.5 text-[10px] font-semibold text-cyan-300">
+                {t('playground.generationCost.reference')}
+              </span>
+            )}
+            <GenerationSubmitButton
+              canSubmit={canSubmit}
+              costLabel={costLabel}
+              onSubmit={onSubmit}
+              outputLabel={outputLabel}
+              submitting={submitting}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -251,10 +253,10 @@ function GenerationSubmitButton({
       onClick={() => {
         void onSubmit();
       }}
-      className={`flex h-9 w-[214px] shrink-0 items-center justify-between gap-2 whitespace-nowrap rounded-lg px-3 text-sm font-bold transition-colors ${
+      className={`flex h-9 w-[214px] shrink-0 items-center justify-between gap-2 whitespace-nowrap rounded-lg px-3 text-sm font-bold transition-all ${
         canSubmit
-          ? 'bg-white text-black hover:bg-slate-200'
-          : 'cursor-not-allowed bg-white/10 text-slate-500'
+          ? 'bg-gradient-to-r from-cyan-400 to-blue-500 text-white hover:from-cyan-500 hover:to-blue-600 shadow-lg shadow-cyan-400/30'
+          : 'cursor-not-allowed bg-gray-700 text-gray-500'
       }`}
     >
       {submitting ? (
@@ -354,101 +356,65 @@ function ReferenceImageUploader({
   );
 }
 
-function ImageGenerationBottomControls({
+function GenerationConfigControls({
+  modality,
   config,
   onChange,
 }: {
+  modality: PlaygroundGenerationTargetType;
   config: AssetGenerationConfig;
   onChange: (config: AssetGenerationConfig) => void;
 }) {
   const { t } = useTranslation();
-  const [openPopover, setOpenPopover] = useState<'ratio' | 'count' | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const showDuration = modality !== 'image' && modality !== 'video';
+  if (!showDuration) {
+    return null;
+  }
 
-  usePopoverDismiss(containerRef, openPopover !== null, () => setOpenPopover(null));
+  const durationOptions = getSdkworkGenerationDurationOptions(modality);
 
   return (
-    <div ref={containerRef} className="flex min-w-0 flex-1 items-center gap-1.5">
-      <div className="relative shrink-0">
-        <button
-          type="button"
-          aria-expanded={openPopover === 'ratio'}
-          onClick={() => setOpenPopover(openPopover === 'ratio' ? null : 'ratio')}
-          className="flex h-9 items-center gap-1 whitespace-nowrap rounded-lg border border-white/5 bg-[#202020] px-2 text-xs font-semibold text-slate-300 transition-colors hover:border-white/10 hover:text-white"
-        >
-          <ImageIcon className="h-3.5 w-3.5" />
-          <span className="sr-only">{t('playground.action.ratio')}</span>
-          <span className="font-mono text-cyan-200">{config.aspectRatio}</span>
-          <ChevronDown className="h-3.5 w-3.5 text-slate-500" />
-        </button>
-        {openPopover === 'ratio' && (
-          <GenerationPopover>
-            {ASPECT_RATIO_OPTIONS.map((option) => (
-              <button
-                key={option.value}
-                type="button"
-                onClick={() => {
-                  onChange({ ...config, aspectRatio: option.value });
-                  setOpenPopover(null);
-                }}
-                className={`flex h-8 w-full items-center justify-between gap-3 rounded-md px-2 text-xs font-semibold transition-colors ${
-                  config.aspectRatio === option.value
-                    ? 'bg-cyan-400/10 text-cyan-200'
-                    : 'text-slate-300 hover:bg-white/5 hover:text-white'
-                }`}
-              >
-                <span>{t(option.labelKey)}</span>
-                <span className="font-mono text-slate-500">{option.value}</span>
-              </button>
-            ))}
-          </GenerationPopover>
-        )}
-      </div>
-
-      <div className="relative shrink-0">
-        <button
-          type="button"
-          aria-expanded={openPopover === 'count'}
-          onClick={() => setOpenPopover(openPopover === 'count' ? null : 'count')}
-          className="flex h-9 items-center gap-1 whitespace-nowrap rounded-lg border border-white/5 bg-[#202020] px-2 text-xs font-semibold text-slate-300 transition-colors hover:border-white/10 hover:text-white"
-        >
-          <Plus className="h-3.5 w-3.5" />
-          <span>{t('playground.config.images', { count: config.imageCount })}</span>
-          <ChevronDown className="h-3.5 w-3.5 text-slate-500" />
-        </button>
-        {openPopover === 'count' && (
-          <GenerationPopover>
-            {IMAGE_COUNT_OPTIONS.map((count) => (
-              <button
-                key={count}
-                type="button"
-                onClick={() => {
-                  onChange({ ...config, imageCount: count });
-                  setOpenPopover(null);
-                }}
-                className={`flex h-8 w-full items-center gap-2 rounded-md px-2 text-xs font-semibold transition-colors ${
-                  config.imageCount === count
-                    ? 'bg-cyan-400/10 text-cyan-200'
-                    : 'text-slate-300 hover:bg-white/5 hover:text-white'
-                }`}
-              >
-                <ImageIcon className="h-3.5 w-3.5" />
-                {t('playground.config.images', { count })}
-              </button>
-            ))}
-          </GenerationPopover>
-        )}
+    <div className="grid gap-3">
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center justify-between text-xs">
+          <span className="font-semibold text-slate-400">{t('playground.duration')}</span>
+          <span className="font-mono text-slate-500">{config.durationSeconds}s</span>
+        </div>
+        <div className="grid grid-cols-3 gap-2">
+          {durationOptions.map((duration) => (
+            <button
+              key={duration}
+              type="button"
+              onClick={() => onChange({ ...config, durationSeconds: duration })}
+              className={`flex items-center justify-center gap-2 rounded-lg border px-3 py-2 text-xs font-semibold transition-colors ${
+                config.durationSeconds === duration
+                  ? 'border-cyan-400/40 bg-cyan-400/10 text-cyan-200'
+                  : 'border-white/5 bg-[#1f1f1f] text-slate-400 hover:border-white/10 hover:text-slate-200'
+              }`}
+            >
+              {modality === 'music' ? <Music className="h-3.5 w-3.5" /> : modality === 'audio' || modality === 'sfx' ? <Volume2 className="h-3.5 w-3.5" /> : <Timer className="h-3.5 w-3.5" />}
+              {duration}s
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
 
-function GenerationPopover({ children }: { children: ReactNode }) {
-  return (
-    <div className="absolute bottom-[calc(100%+8px)] left-0 z-40 min-w-[140px] rounded-lg border border-white/10 bg-[#202020] p-1 shadow-[0_12px_32px_rgba(0,0,0,0.45)]">
-      {children}
-    </div>
-  );
+function createPlaygroundAssetConfig(modality: PlaygroundGenerationTargetType): AssetGenerationConfig {
+  return createDefaultSdkworkGenerationAssetConfig(modality);
+}
+
+function generationOutputLabel(
+  modality: PlaygroundGenerationTargetType,
+  config: AssetGenerationConfig,
+  t: (key: string, options?: Record<string, unknown>) => string,
+): string {
+  if (modality === 'image') {
+    return t('playground.generationOutput.images', { count: config.imageCount });
+  }
+  return t('playground.generationOutput.items', { count: 1 });
 }
 
 function readReferenceImageDataUrl(file: File): Promise<string> {
@@ -466,348 +432,6 @@ function readReferenceImageDataUrl(file: File): Promise<string> {
   });
 }
 
-function GenerationConfigControls({
-  modality,
-  config,
-  onChange,
-}: {
-  modality: PlaygroundGenerationTargetType;
-  config: AssetGenerationConfig;
-  onChange: (config: AssetGenerationConfig) => void;
-}) {
-  const { t } = useTranslation();
-  const showDuration = modality !== 'image';
-  const durationOptions = durationOptionsForModality(modality);
-
-  return (
-    <div className="grid gap-3">
-      {modality === 'image' && (
-        <div className="grid gap-2">
-          <QualityButton config={config} onChange={onChange} />
-        </div>
-      )}
-
-      {showDuration && (
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center justify-between text-xs">
-            <span className="font-semibold text-slate-400">{t('playground.duration')}</span>
-            <span className="font-mono text-slate-500">{config.durationSeconds}s</span>
-          </div>
-          <div className="grid grid-cols-3 gap-2">
-            {durationOptions.map((duration) => (
-              <button
-                key={duration}
-                type="button"
-                onClick={() => onChange({ ...config, durationSeconds: duration })}
-                className={`flex items-center justify-center gap-2 rounded-lg border px-3 py-2 text-xs font-semibold transition-colors ${
-                  config.durationSeconds === duration
-                    ? 'border-cyan-400/40 bg-cyan-400/10 text-cyan-200'
-                    : 'border-white/5 bg-[#1f1f1f] text-slate-400 hover:border-white/10 hover:text-slate-200'
-                }`}
-              >
-                {modality === 'music' ? <Music className="h-3.5 w-3.5" /> : modality === 'audio' || modality === 'sfx' ? <Volume2 className="h-3.5 w-3.5" /> : <Timer className="h-3.5 w-3.5" />}
-                {duration}s
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
-function QualityButton({
-  config,
-  onChange,
-}: {
-  config: AssetGenerationConfig;
-  onChange: (config: AssetGenerationConfig) => void;
-}) {
-  const { t } = useTranslation();
-  const active = config.quality === 'high';
-  return (
-    <button
-      type="button"
-      onClick={() => onChange({ ...config, quality: active ? 'standard' : 'high' })}
-      className={`flex items-center justify-center gap-2 rounded-lg border px-3 py-2 text-xs font-semibold transition-colors ${
-        active
-          ? 'border-cyan-400/40 bg-cyan-400/10 text-cyan-200'
-          : 'border-white/5 bg-[#1f1f1f] text-slate-400 hover:border-white/10 hover:text-slate-200'
-      }`}
-    >
-      {t('playground.config.highQuality')}
-    </button>
-  );
-}
-
-function generationOutputLabel(
-  modality: PlaygroundGenerationTargetType,
-  config: AssetGenerationConfig,
-  t: (key: string, options?: Record<string, unknown>) => string,
-): string {
-  if (modality === 'image') {
-    return t('playground.generationOutput.images', { count: config.imageCount });
-  }
-  return t('playground.generationOutput.items', { count: 1 });
-}
-
-function createGenerationConfig(config: AssetGenerationConfig): PlaygroundGenerationConfig {
-  return {
-    imageCount: config.imageCount,
-    aspectRatio: config.aspectRatio,
-    durationSeconds: config.durationSeconds,
-    quality: config.quality,
-  };
-}
-
-function estimatePlaygroundGenerationCredits({
-  modality,
-  model,
-  config,
-}: {
-  modality: PlaygroundGenerationTargetType;
-  model: PlaygroundModelOption | null;
-  config: AssetGenerationConfig;
-}): GenerationCreditEstimate {
-  if (!model || model.priceAvailability.status === 'unavailable') {
-    return {
-      points: null,
-      detail: 'playground.generationCost.settlement',
-      reference: false,
-    };
-  }
-
-  const price = selectReferencePrice(model.officialReferencePrices, modality)
-    ?? fallbackReferencePrice(model);
-  if (!price) {
-    return {
-      points: null,
-      detail: 'playground.generationCost.settlement',
-      reference: false,
-    };
-  }
-
-  const unitPrice = readPositiveNumber(price.unitPrice);
-  if (unitPrice === null) {
-    return {
-      points: null,
-      detail: 'playground.generationCost.settlement',
-      reference: false,
-    };
-  }
-
-  const quantity = estimateMeterQuantity(price.billingMeter, modality, config);
-  const points = Math.ceil(unitPrice * quantity * DEFAULT_POINTS_PER_USD);
-  return {
-    points,
-    detail: describeCreditEstimate(price, quantity),
-    reference: model.priceAvailability.status === 'reference',
-  };
-}
-
-function findModelById(groups: PlaygroundModelGroup[], modelId: string): PlaygroundModelOption | null {
-  for (const group of groups) {
-    for (const bucket of ['llms', 'images', 'videos', 'audios', 'music', 'sfx'] as const) {
-      const model = group[bucket].find((item) => item.id === modelId);
-      if (model) {
-        return model;
-      }
-    }
-  }
-  return null;
-}
-
-function firstModelForModality(
-  groups: PlaygroundModelGroup[],
-  modality: PlaygroundGenerationTargetType,
-): PlaygroundModelOption | null {
-  const bucket = bucketForModality(modality);
-  for (const group of groups) {
-    const model = group[bucket][0];
-    if (model) {
-      return model;
-    }
-  }
-  return null;
-}
-
-function bucketForModality(
-  modality: PlaygroundGenerationTargetType,
-): 'images' | 'videos' | 'music' | 'audios' | 'sfx' {
-  switch (modality) {
-    case 'image':
-      return 'images';
-    case 'video':
-      return 'videos';
-    case 'music':
-      return 'music';
-    case 'audio':
-      return 'audios';
-    case 'sfx':
-      return 'sfx';
-  }
-}
-
-function selectReferencePrice(
-  prices: readonly PlaygroundModelReferencePrice[],
-  modality: PlaygroundGenerationTargetType,
-): PlaygroundModelReferencePrice | null {
-  const meters = metersForModality(modality);
-  for (const meter of meters) {
-    const price = prices.find((candidate) => candidate.billingMeter === meter);
-    if (price) {
-      return price;
-    }
-  }
-  return prices[0] ?? null;
-}
-
-function fallbackReferencePrice(model: PlaygroundModelOption): PlaygroundModelReferencePrice | null {
-  if (!model.officialReferenceUnitPrice || readPositiveNumber(model.officialReferenceUnitPrice) === null) {
-    return null;
-  }
-  return {
-    billingMeter: 'api_result',
-    unitPrice: model.officialReferenceUnitPrice,
-    currency: model.officialReferenceCurrency || 'USD',
-  };
-}
-
-function metersForModality(modality: PlaygroundGenerationTargetType): string[] {
-  switch (modality) {
-    case 'image':
-      return ['image_result', 'image_megapixel', 'image_pixel', 'image_output_token', 'api_result'];
-    case 'video':
-      return ['video_output_second', 'video_input_second', 'video_result', 'api_result'];
-    case 'music':
-      return ['music_output_second', 'audio_output_second', 'sfx_result', 'api_result'];
-    case 'audio':
-      return ['audio_output_second', 'audio_output_minute', 'tts_input_character', 'speech_character', 'api_result'];
-    case 'sfx':
-      return ['sfx_result', 'audio_output_second', 'audio_output_minute', 'api_result'];
-  }
-}
-
-function estimateMeterQuantity(
-  billingMeter: string,
-  modality: PlaygroundGenerationTargetType,
-  config: AssetGenerationConfig,
-): number {
-  const qualityMultiplier = config.quality === 'high' ? 1.5 : 1;
-  if (billingMeter.endsWith('_minute')) {
-    return Math.max(1, Math.ceil(config.durationSeconds / 60));
-  }
-  if (billingMeter.endsWith('_second')) {
-    return Math.max(1, config.durationSeconds);
-  }
-  if (billingMeter === 'image_result') {
-    return config.imageCount * qualityMultiplier;
-  }
-  if (billingMeter === 'image_megapixel') {
-    return config.imageCount * estimateImagePixels(config.aspectRatio) / 1_000_000 * qualityMultiplier;
-  }
-  if (billingMeter === 'image_pixel') {
-    return config.imageCount * estimateImagePixels(config.aspectRatio) * qualityMultiplier;
-  }
-  if (billingMeter === 'video_result') {
-    return Math.max(1, Math.ceil(config.durationSeconds / defaultDurationSeconds('video')));
-  }
-  if (billingMeter === 'sfx_result') {
-    return Math.max(1, modality === 'sfx' ? 1 : Math.ceil(config.durationSeconds / 30));
-  }
-  return 1;
-}
-
-function estimateImagePixels(aspectRatio: AssetGenerationAspectRatio): number {
-  switch (aspectRatio) {
-    case '16:9':
-    case '9:16':
-      return 1792 * 1024;
-    case '1:1':
-      return 1024 * 1024;
-  }
-}
-
-function describeCreditEstimate(price: PlaygroundModelReferencePrice, quantity: number): string {
-  return `${price.currency} ${formatDecimal(price.unitPrice)} x ${formatDecimal(quantity.toString())} ${unitLabelForMeter(price.billingMeter)}`;
-}
-
-function unitLabelForMeter(billingMeter: string): string {
-  if (billingMeter.endsWith('_second')) {
-    return 'sec';
-  }
-  if (billingMeter.endsWith('_minute')) {
-    return 'min';
-  }
-  if (billingMeter === 'image_result') {
-    return 'image';
-  }
-  if (billingMeter === 'video_result') {
-    return 'video';
-  }
-  if (billingMeter === 'sfx_result') {
-    return 'effect';
-  }
-  if (billingMeter === 'image_megapixel') {
-    return 'MP';
-  }
-  if (billingMeter === 'image_pixel') {
-    return 'px';
-  }
-  return 'unit';
-}
-
-function defaultDurationSeconds(modality: PlaygroundGenerationTargetType): number {
-  switch (modality) {
-    case 'video':
-      return 5;
-    case 'music':
-      return 30;
-    case 'audio':
-      return 10;
-    case 'sfx':
-      return 5;
-    case 'image':
-      return 1;
-  }
-}
-
-function durationOptionsForModality(modality: PlaygroundGenerationTargetType): number[] {
-  switch (modality) {
-    case 'video':
-      return [5, 10, 15];
-    case 'music':
-      return [30, 60, 120];
-    case 'audio':
-      return [10, 30, 60];
-    case 'sfx':
-      return [3, 5, 10];
-    case 'image':
-      return [];
-  }
-}
-
-function readPositiveNumber(value: string | null | undefined): number | null {
-  if (!value) {
-    return null;
-  }
-  const number = Number(value);
-  if (!Number.isFinite(number) || number < 0) {
-    return null;
-  }
-  return number;
-}
-
 function formatPoints(value: number): string {
   return value.toLocaleString('en-US');
-}
-
-function formatDecimal(value: string): string {
-  const number = Number(value);
-  if (!Number.isFinite(number)) {
-    return value;
-  }
-  return number.toLocaleString('en-US', {
-    maximumFractionDigits: 6,
-  });
 }

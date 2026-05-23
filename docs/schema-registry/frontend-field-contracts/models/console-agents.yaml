@@ -1,0 +1,104 @@
+fragment: models/console-agents
+frontend_models:
+- route: /console/agents
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
+  interface: AgentPolicyDocument
+  fields: []
+  data_sources:
+  - ai_agent_version
+- route: /console/agents
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
+  interface: AgentCapabilities
+  fields:
+  - memoryEnabled
+  - mcpServerCount
+  - skillBindingCount
+  data_sources:
+  - ai_agent
+  - ai_agent_tool_binding
+  - ai_agent_mcp_server
+  - ai_agent_memory
+- route: /console/agents
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
+  interface: AgentVersion
+  fields:
+  - id
+  - versionNo
+  - releaseStatus
+  - model
+  - systemPrompt
+  - toolPolicy
+  - memoryPolicy
+  - mcpPolicy
+  - skillPolicy
+  - runtimePolicy
+  - createdAt
+  - updatedAt
+  data_sources:
+  - ai_agent_version
+- route: /console/agents
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
+  interface: AgentDefinition
+  fields:
+  - id
+  - ownerUserId
+  - code
+  - name
+  - description
+  - visibility
+  - status
+  - avatarUrl
+  - templateSource
+  - createdAt
+  - updatedAt
+  - defaultVersion
+  - defaultVersion.id
+  - defaultVersion.versionNo
+  - defaultVersion.releaseStatus
+  - defaultVersion.model
+  - defaultVersion.systemPrompt
+  - defaultVersion.toolPolicy
+  - defaultVersion.memoryPolicy
+  - defaultVersion.mcpPolicy
+  - defaultVersion.skillPolicy
+  - defaultVersion.runtimePolicy
+  - defaultVersion.createdAt
+  - defaultVersion.updatedAt
+  - capabilities
+  - capabilities.memoryEnabled
+  - capabilities.mcpServerCount
+  - capabilities.skillBindingCount
+  data_sources:
+  - ai_agent
+  - ai_agent_version
+  - ai_agent_tool_binding
+  - ai_agent_mcp_server
+  - ai_agent_memory
+- route: /console/agents
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
+  interface: AgentListQuery
+  fields:
+  - page
+  - pageSize
+  - q
+  data_sources:
+  - ai_agent
+- route: /console/agents
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
+  interface: CreateAgentInput
+  fields:
+  - name
+  - code
+  - description
+  - model
+  - systemPrompt
+  - memoryEnabled
+  - mcpServers
+  - skills
+  - executionMode
+  data_sources:
+  - ai_agent
+  - ai_agent_version
+  - ai_agent_tool_binding
+  - ai_agent_mcp_server
+  - ai_agent_memory

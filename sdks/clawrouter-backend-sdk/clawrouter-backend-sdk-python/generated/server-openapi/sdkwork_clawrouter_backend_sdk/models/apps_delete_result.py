@@ -11,5 +11,4 @@ class AppsDeleteResult:
     """Apps delete result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminAppDeleteResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

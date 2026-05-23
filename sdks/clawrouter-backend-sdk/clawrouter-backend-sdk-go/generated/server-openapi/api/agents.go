@@ -18,7 +18,7 @@ func NewAgentsApi(client *sdkhttp.Client) *AgentsApi {
 }
 
 // List managed agents
-func (a *AgentsApi) List(q *string, ownerUserId *int, status *string, visibility *string, page *int, pageSize *int) (sdktypes.AgentsListResult, error) {
+func (a *AgentsApi) AgentDefinitionsList(q *string, ownerUserId *int, status *string, visibility *string, page *int, pageSize *int) (sdktypes.AgentDefinitionsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "owner_user_id", Value: func() interface{} { if ownerUserId == nil { return nil }; return *ownerUserId }(), Style: "form", Explode: true, AllowReserved: false},
@@ -29,20 +29,20 @@ func (a *AgentsApi) List(q *string, ownerUserId *int, status *string, visibility
     })
     raw, err := a.client.Get(AppendQueryString(BackendApiPath("/agents"), query), nil, nil)
     if err != nil {
-        var zero sdktypes.AgentsListResult
+        var zero sdktypes.AgentDefinitionsListResult
         return zero, err
     }
-    return decodeResult[sdktypes.AgentsListResult](raw)
+    return decodeResult[sdktypes.AgentDefinitionsListResult](raw)
 }
 
 // Retrieve managed agent
-func (a *AgentsApi) Retrieve(agentId string) (sdktypes.AgentsRetrieveResult, error) {
+func (a *AgentsApi) AgentDefinitionsRetrieve(agentId string) (sdktypes.AgentDefinitionsRetrieveResult, error) {
     raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/agents/%s", SerializePathParameter(agentId, PathParameterSpec{Name: "agentId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
-        var zero sdktypes.AgentsRetrieveResult
+        var zero sdktypes.AgentDefinitionsRetrieveResult
         return zero, err
     }
-    return decodeResult[sdktypes.AgentsRetrieveResult](raw)
+    return decodeResult[sdktypes.AgentDefinitionsRetrieveResult](raw)
 }
 
 type PathParameterSpec struct {

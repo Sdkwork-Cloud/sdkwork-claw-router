@@ -8,7 +8,7 @@ use axum::routing::get;
 use axum::{Json, Router};
 use sdkwork_claw_test_support::{
     app_session_config, app_session_dual_token_headers, default_trusted_request_subject,
-    payment_webhook_config, seeded_sqlite_catalog, trusted_subject_config,
+    payment_webhook_config, seeded_sqlite_catalog, trusted_request_subject, trusted_subject_config,
 };
 use serde_json::json;
 use tokio::net::TcpListener;
@@ -116,7 +116,7 @@ async fn edge_server_proxies_real_sqlite_gateway_admin_and_app_services() {
         "/backend/v3/api/ai/models",
         Body::empty(),
     )
-    .with_app_session(app_session_headers())
+    .with_app_session(admin_app_session_headers())
     .send()
     .await;
     assert_eq!(StatusCode::OK, admin_models.status);
@@ -125,7 +125,8 @@ async fn edge_server_proxies_real_sqlite_gateway_admin_and_app_services() {
     assert!(admin_model["id"].as_str().is_some());
     assert!(admin_model["vendorId"].as_str().is_some());
     assert_eq!("openai", admin_model["vendorCode"]);
-    assert_eq!("gpt-5.5-pro", admin_model["name"]);
+    assert_eq!("gpt-5.5-pro", admin_model["model"]);
+    assert_eq!("GPT-5.5 Pro", admin_model["displayName"]);
     assert_eq!("Chat", admin_model["type"]);
     assert!(admin_model["priceIn"].as_str().is_some());
     assert!(admin_model["priceOut"].as_str().is_some());
@@ -625,14 +626,23 @@ struct AppSessionHeaders {
 }
 
 fn app_session_headers() -> AppSessionHeaders {
+    app_session_headers_for_subject(default_trusted_request_subject())
+}
+
+fn admin_app_session_headers() -> AppSessionHeaders {
+    app_session_headers_for_subject(trusted_request_subject(10, 20, 1))
+}
+
+fn app_session_headers_for_subject(
+    subject: sdkwork_claw_http::TrustedRequestSubject,
+) -> AppSessionHeaders {
     let issued_at = SystemTime::now()
         .duration_since(UNIX_EPOCH)
         .map(|duration| duration.as_secs() as i64)
         .unwrap_or(0);
     let expires_at = issued_at + 300;
     let (authorization, access_token) =
-        app_session_dual_token_headers(default_trusted_request_subject(), issued_at, expires_at)
-            .unwrap();
+        app_session_dual_token_headers(subject, issued_at, expires_at).unwrap();
     AppSessionHeaders {
         authorization,
         access_token,

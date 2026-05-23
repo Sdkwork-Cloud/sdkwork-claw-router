@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminTokenLimitCreateRequest, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult
+from ..models import AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminSiteSettingsUpdateRequest, AdminTokenLimitCreateRequest, AnalyticsAdminOverviewRetrieveResult, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, CacheInstancesDeleteResult, CacheInstancesRefreshCreateResult, CacheNamespacesDeleteResult, CacheNamespacesKeysDeleteResult, CacheNamespacesKeysListResult, CacheNamespacesRefreshCreateResult, CacheOverviewRetrieveResult, CacheRefreshCreateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MarketingReferralStatsListResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, SiteSettingsRetrieveResult, SiteSettingsUpdateResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -242,14 +242,51 @@ class SystemApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.analytics = SystemAnalyticsApi(client)
         self.auth = SystemAuthApi(client)
+        self.cache = SystemCacheApi(client)
         self.dashboard = SystemDashboardApi(client)
         self.firewalls = SystemFirewallsApi(client)
         self.installation = SystemInstallationApi(client)
+        self.marketing = SystemMarketingApi(client)
         self.monitor = SystemMonitorApi(client)
         self.rate_limits = SystemRateLimitsApi(client)
         self.records = SystemRecordsApi(client)
+        self.site = SystemSiteApi(client)
 
+
+class SystemAnalyticsApi:
+    """system system.analytics API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.admin = SystemAnalyticsAdminApi(client)
+
+
+class SystemAnalyticsAdminApi:
+    """system system.analytics.admin API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.overview = SystemAnalyticsAdminOverviewApi(client)
+
+
+class SystemAnalyticsAdminOverviewApi:
+    """system system.analytics.admin.overview API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self, time_range: Optional[str] = None, start_time: Optional[str] = None, end_time: Optional[str] = None, limit: Optional[int] = None) -> AnalyticsAdminOverviewRetrieveResult:
+        """List overview"""
+        query = build_query_string([
+            {'name': 'time_range', 'value': time_range, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'start_time', 'value': start_time, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'end_time', 'value': end_time, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'limit', 'value': limit, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/system/analytics/admin/overview", query))
 
 class SystemAuthApi:
     """system system.auth API client."""
@@ -279,6 +316,105 @@ class SystemAuthSettingsApi:
             {}
         )
         return self._client.patch(f"/backend/v3/api/system/auth/settings", json=body, headers=request_headers)
+
+class SystemCacheApi:
+    """system system.cache API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.instances = SystemCacheInstancesApi(client)
+        self.namespaces = SystemCacheNamespacesApi(client)
+        self.overview = SystemCacheOverviewApi(client)
+        self.refresh = SystemCacheRefreshApi(client)
+
+
+class SystemCacheInstancesApi:
+    """system system.cache.instances API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.refresh = SystemCacheInstancesRefreshApi(client)
+
+
+    def delete(self, instance_name: str) -> CacheInstancesDeleteResult:
+        """Delete one runtime cache instance"""
+        return self._client.delete(f"/backend/v3/api/system/cache/instances/{serialize_path_parameter(instance_name, {'name': 'instanceName', 'style': 'simple', 'explode': False})}")
+
+class SystemCacheInstancesRefreshApi:
+    """system system.cache.instances.refresh API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def create(self, instance_name: str) -> CacheInstancesRefreshCreateResult:
+        """Refresh one runtime cache instance"""
+        return self._client.post(f"/backend/v3/api/system/cache/instances/{serialize_path_parameter(instance_name, {'name': 'instanceName', 'style': 'simple', 'explode': False})}/refresh")
+
+class SystemCacheNamespacesApi:
+    """system system.cache.namespaces API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.keys = SystemCacheNamespacesKeysApi(client)
+        self.refresh = SystemCacheNamespacesRefreshApi(client)
+
+
+    def delete(self, namespace: str) -> CacheNamespacesDeleteResult:
+        """Delete a runtime cache namespace"""
+        return self._client.delete(f"/backend/v3/api/system/cache/namespaces/{serialize_path_parameter(namespace, {'name': 'namespace', 'style': 'simple', 'explode': False})}")
+
+class SystemCacheNamespacesKeysApi:
+    """system system.cache.namespaces.keys API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, namespace: str, limit: Optional[int] = None, cursor: Optional[str] = None) -> CacheNamespacesKeysListResult:
+        """List runtime cache keys in a namespace"""
+        query = build_query_string([
+            {'name': 'limit', 'value': limit, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'cursor', 'value': cursor, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/system/cache/namespaces/{serialize_path_parameter(namespace, {'name': 'namespace', 'style': 'simple', 'explode': False})}/keys", query))
+
+    def delete(self, namespace: str, key: str) -> CacheNamespacesKeysDeleteResult:
+        """Delete a runtime cache key"""
+        return self._client.delete(f"/backend/v3/api/system/cache/namespaces/{serialize_path_parameter(namespace, {'name': 'namespace', 'style': 'simple', 'explode': False})}/keys/{serialize_path_parameter(key, {'name': 'key', 'style': 'simple', 'explode': False})}")
+
+class SystemCacheNamespacesRefreshApi:
+    """system system.cache.namespaces.refresh API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def create(self, namespace: str) -> CacheNamespacesRefreshCreateResult:
+        """Refresh one runtime cache namespace"""
+        return self._client.post(f"/backend/v3/api/system/cache/namespaces/{serialize_path_parameter(namespace, {'name': 'namespace', 'style': 'simple', 'explode': False})}/refresh")
+
+class SystemCacheOverviewApi:
+    """system system.cache.overview API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self) -> CacheOverviewRetrieveResult:
+        """Retrieve runtime cache overview"""
+        return self._client.get(f"/backend/v3/api/system/cache/overview")
+
+class SystemCacheRefreshApi:
+    """system system.cache.refresh API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def create(self) -> CacheRefreshCreateResult:
+        """Refresh all runtime cache instances"""
+        return self._client.post(f"/backend/v3/api/system/cache/refresh")
 
 class SystemDashboardApi:
     """system system.dashboard API client."""
@@ -358,6 +494,25 @@ class SystemInstallationStatusApi:
     def retrieve(self) -> InstallationStatusRetrieveResult:
         """List installation status"""
         return self._client.get(f"/backend/v3/api/system/installation/status")
+
+class SystemMarketingApi:
+    """system system.marketing API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.referral_stats = SystemMarketingReferralStatsApi(client)
+
+
+class SystemMarketingReferralStatsApi:
+    """system system.marketing.referral_stats API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> MarketingReferralStatsListResult:
+        """List referral stats"""
+        return self._client.get(f"/backend/v3/api/system/marketing/referral_stats")
 
 class SystemMonitorApi:
     """system system.monitor API client."""
@@ -492,3 +647,32 @@ class SystemRecordsApi:
             {'name': 'model', 'value': model, 'style': 'form', 'explode': True, 'allow_reserved': False},
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/system/records", query))
+
+class SystemSiteApi:
+    """system system.site API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.settings = SystemSiteSettingsApi(client)
+
+
+class SystemSiteSettingsApi:
+    """system system.site.settings API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self) -> SiteSettingsRetrieveResult:
+        """Retrieve site branding and deployment personalization settings"""
+        return self._client.get(f"/backend/v3/api/system/site/settings")
+
+    def update(self, body: AdminSiteSettingsUpdateRequest, x_request_id: Optional[str] = None) -> SiteSettingsUpdateResult:
+        """Update site branding and deployment personalization settings"""
+        request_headers = build_request_headers(
+            {
+                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.patch(f"/backend/v3/api/system/site/settings", json=body, headers=request_headers)

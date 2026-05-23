@@ -7,7 +7,5 @@ export interface CoursesListResult {
   /** Data field on courses list result. */
   data?: CourseListResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

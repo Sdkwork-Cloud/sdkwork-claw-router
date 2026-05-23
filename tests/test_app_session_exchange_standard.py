@@ -15,9 +15,6 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         app_api = (ROOT / "services" / "sdkwork-claw-app-api" / "src" / "lib.rs").read_text(
             encoding="utf-8"
         )
-        product_api_mod = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"
-        ).read_text(encoding="utf-8")
         app_sdk_api_index = (ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "index.ts")
         session_service = (
             ROOT
@@ -32,32 +29,30 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         self.assertIn("operation: createAppSession", contract)
         self.assertIn("operation_id: sessions.create", contract)
         self.assertIn("api_path: /app/v3/api/auth/sessions", contract)
-        self.assertIn("read_sources: [iam_user, iam_session]", contract)
-        self.assertIn("write_tables: [iam_session, iam_security_event, iam_audit_event]", contract)
+        self.assertRegex(contract, r"read_sources:\s*\n\s*-\s+iam_user\s*\n\s*-\s+iam_session")
+        self.assertRegex(
+            contract,
+            r"write_tables:\s*\n\s*-\s+iam_session\s*\n\s*-\s+iam_security_event\s*\n\s*-\s+iam_audit_event",
+        )
         self.assertIsNone(
             re.search(r"(?m)^\s*api_path:\s*/app/v3/api/auth/session\s*$", contract)
         )
         self.assertNotIn("write_tables: [iam_user_login_event]", contract)
 
-        self.assertTrue(
-            (ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_session.rs").exists()
-        )
-        self.assertIn("app_session_router_with_event_store", product_api_mod)
-        app_session_api = (
-            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_session.rs"
-        ).read_text(encoding="utf-8")
         app_auth_api = (
             ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_auth.rs"
         ).read_text(encoding="utf-8")
-        self.assertIn('"/app/v3/api/auth/sessions"', app_session_api)
-        self.assertNotIn('"/app/v3/api/auth/session"', app_session_api)
-        self.assertIn("TrustedRequestSubject::from_headers", app_session_api)
-        self.assertIn("AppSessionEventStore", app_session_api)
-        self.assertIn("create_session_bridge_response", app_session_api)
-        self.assertIn("issue_iam_session", app_session_api)
-        self.assertNotIn("x-sdkwork-tenant-id", app_session_api)
+        self.assertFalse(
+            (ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_session.rs").exists(),
+            "session bridge must live in the unified app auth router, not a second route factory",
+        )
         self.assertIn('const APP_SESSION_PATH: &str = "/app/v3/api/auth/sessions";', app_auth_api)
         self.assertIn("app_sessions_router_with_store", app_auth_api)
+        self.assertIn("create_session_bridge_response", app_auth_api)
+        self.assertIn("TrustedRequestSubject::from_headers", app_auth_api)
+        self.assertIn("AppSessionEventStore", app_auth_api)
+        self.assertIn("issue_iam_session", app_auth_api)
+        self.assertIn('if grant_type == "session_bridge"', app_auth_api)
         self.assertIn("sign_app_session_token", app_auth_api)
         self.assertIn("session_id_hash", app_auth_api)
         self.assertIn("access_token", app_auth_api)
@@ -70,6 +65,7 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         self.assertIn("app_sessions_router(", app_api)
         self.assertIn("app_sessions_router_with_store", app_api)
         self.assertIn("trusted_request_subject_boundary", app_auth_api)
+        self.assertNotIn('"/app/v3/api/auth/session"', app_auth_api)
 
         self.assertTrue(app_sdk_api_index.exists())
         self.assertTrue(session_service.exists())
@@ -181,7 +177,7 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
 
         self.assertIn("function isApiEnvelope(record: ApiRecord): boolean", api_result)
         self.assertIn(
-            "return isKnownApiCode(record.code) && ('data' in record || 'msg' in record || 'message' in record);",
+            "return isKnownApiCode(record.code) && ('data' in record || 'msg' in record);",
             api_result,
         )
         self.assertIn("function isKnownApiCode(value: unknown): boolean", api_result)
@@ -351,7 +347,9 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         self.assertIn("buildPortalAuthLoginRedirect(location)", navbar)
         self.assertNotIn("sessionBootstrapLoading", navbar)
         self.assertNotIn("SESSION_BOOTSTRAP_ERROR_MESSAGE", navbar)
-        self.assertIn("getNotificationLoadErrorMessage(error)", navbar)
+        self.assertIn("SdkworkNotificationBell", navbar)
+        self.assertIn("loading: t('commons.navbar.loadingNotifications'", navbar)
+        self.assertIn("retry: t('commons.navbar.retryNotifications'", navbar)
         self.assertNotIn("result.message", navbar)
         self.assertNotIn("console.error", navbar)
         self.assertNotIn("Authorization", navbar)

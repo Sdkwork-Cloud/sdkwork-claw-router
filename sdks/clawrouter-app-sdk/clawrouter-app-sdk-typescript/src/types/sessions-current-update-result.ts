@@ -7,7 +7,5 @@ export interface SessionsCurrentUpdateResult {
   /** Data field on sessions current update result. */
   data?: IamSessionResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

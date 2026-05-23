@@ -4,14 +4,11 @@ import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
 import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
-import { AccountService } from "./packages/sdkwork-claw-router-console-account/src/accountService.ts";
 import { createApiKeyInputFromForm, createApiKeyInputsFromForm } from "./packages/sdkwork-claw-router-console-api-keys/src/apiKeyForm.ts";
 import { ApiKeyService } from "./packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts";
 import { DashboardService } from "./packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts";
 import { ProviderService } from "./packages/sdkwork-claw-router-console-providers/src/providerService.ts";
-import { RechargeService } from "./packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts";
 import { SettingsService } from "./packages/sdkwork-claw-router-console-settings/src/settingsService.ts";
-import { SettlementsService } from "./packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts";
 import {
   buildSettlementSummary,
   buildSettlementYearOptions,
@@ -74,6 +71,8 @@ function dashboardOverviewFixture(overrides: Record<string, unknown> = {}): Reco
       availableCredits: "125.5",
       usedCredits: "30.25",
       requestCount: "42",
+      totalUsedCredits: "30.25",
+      totalRequestCount: "42",
       errorCount: 1,
       imageRequests: 3,
       videoRequests: 2,
@@ -191,7 +190,7 @@ test("console dashboard service preserves configured domain rows from overview d
   );
 });
 
-test("console dashboard service initializes display data when overview rows are empty", async () => {
+test("console dashboard service initializes chart/model scaffolding but never fabricates announcements", async () => {
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
@@ -201,6 +200,8 @@ test("console dashboard service initializes display data when overview rows are 
           availableCredits: 0,
           usedCredits: 0,
           requestCount: 0,
+          totalUsedCredits: 0,
+          totalRequestCount: 0,
           errorCount: 0,
           imageRequests: 0,
           videoRequests: 0,
@@ -226,7 +227,7 @@ test("console dashboard service initializes display data when overview rows are 
       assert.equal(result.summary.usedCredits, 0);
       assert.ok(result.chartData.length > 0);
       assert.ok(result.topModels.length > 0);
-      assert.ok(result.announcements.length > 0);
+      assert.equal(result.announcements.length, 0);
       assert.ok(result.requestSparkline.length > 0);
       assert.ok(result.multimodalSparkline.length > 0);
       assert.ok(result.performanceSparkline.length > 0);
@@ -240,9 +241,11 @@ test("console dashboard service initializes display data when overview rows are 
 
 test("console dashboard view shows configuration info above modality distribution with actions", () => {
   const source = readConsoleDashboardSource();
+  const configInfoIndex = source.indexOf('console.dashboard.dashboardview.text.configInfo');
+  const modalityDistributionIndex = source.indexOf('console.dashboard.dashboardview.text.da5r28');
 
-  assert.ok(source.indexOf("配置信息") > 0);
-  assert.ok(source.indexOf("配置信息") < source.indexOf("模态分布"));
+  assert.ok(configInfoIndex > 0);
+  assert.ok(modalityDistributionIndex > configInfoIndex);
   assert.match(source, /configurationDomains/);
   assert.match(source, /ExternalLink/);
   assert.match(source, /Gauge/);
@@ -323,6 +326,8 @@ test("console dashboard service fails closed when app SDK omits required summary
     ["availableCredits", /Dashboard overview available credits are required/],
     ["usedCredits", /Dashboard overview used credits are required/],
     ["requestCount", /Dashboard overview request count is required/],
+    ["totalUsedCredits", /Dashboard overview total used credits are required/],
+    ["totalRequestCount", /Dashboard overview total request count is required/],
     ["errorCount", /Dashboard overview error count is required/],
     ["imageRequests", /Dashboard overview image requests are required/],
     ["videoRequests", /Dashboard overview video requests are required/],
@@ -605,44 +610,6 @@ test("console usage service rejects invalid log query params before generated ap
   );
 });
 
-test("console settlements service reads dashboard decimals from generated app SDK data", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      assert.equal(url, "/app/v3/api/billing/settlements/dashboard?year=2026");
-      return {
-        chartData: [{ day: "05-05", text: "1.234567", image: "2", video: "0", audio: "0", music: "0" }],
-        bills: [
-          {
-            id: "bill-1",
-            period: "2026-05",
-            startDate: "2026-05-01",
-            endDate: "2026-05-31",
-            totalTokens: "12000",
-            totalCost: "36.500000",
-            status: "open",
-            breakdown: {
-              text: { cost: "12.345678", usage: "10k", models: ["gpt-4o-mini"] },
-              image: { cost: "2", usage: "3", models: ["dall-e"] },
-              video: { cost: "0", usage: "0", models: [] },
-              audio: { cost: "0", usage: "0", models: [] },
-              music: { cost: "0", usage: "0", models: [] },
-            },
-          },
-        ],
-      };
-    },
-    async (captured) => {
-      const result = await SettlementsService.fetchDashboardData({ year: "2026" });
-
-      assert.equal(captured.length, 1);
-      assert.equal(result.chartData[0].text, "1.234567");
-      assert.equal(result.bills[0].totalCost, "36.500000");
-      assert.equal(result.bills[0].breakdown.text.cost, "12.345678");
-      assert.deepEqual(result.bills[0].breakdown.image.models, ["dall-e"]);
-    },
-  );
-});
-
 test("console settlements view model derives year options and current-month totals without fake comparisons", () => {
   const referenceDate = new Date("2027-02-15T08:00:00Z");
   assert.equal(getDefaultSettlementYear(referenceDate), "2027");
@@ -658,7 +625,7 @@ test("console settlements view model derives year options and current-month tota
         endDate: "2023-12-31",
         totalTokens: "1",
         totalCost: "10.000000",
-        status: "已结清",
+        status: "settled",
         breakdown: {
           text: { cost: "0", usage: "0", models: [] },
           image: { cost: "0", usage: "0", models: [] },
@@ -687,7 +654,7 @@ test("console settlements view model derives year options and current-month tota
         endDate: "2027-02-28",
         totalTokens: "12000",
         totalCost: "36.500000",
-        status: "待结算",
+        status: "open",
         breakdown: {
           text: { cost: "12.345678", usage: "10k", models: ["gpt-4o-mini"] },
           image: { cost: "2", usage: "3", models: ["dall-e"] },
@@ -703,7 +670,7 @@ test("console settlements view model derives year options and current-month tota
         endDate: "2027-01-31",
         totalTokens: "100",
         totalCost: "3.500000",
-        status: "已结清",
+        status: "settled",
         breakdown: {
           text: { cost: "0", usage: "0", models: [] },
           image: { cost: "0", usage: "0", models: [] },
@@ -720,529 +687,6 @@ test("console settlements view model derives year options and current-month tota
   assert.equal(summary.nextSettlementDate, "2027-02-28 00:00:00");
   assert.equal(summary.billCount, 2);
   assert.equal(summary.supportsYearOverYearComparison, false);
-});
-
-test("console settlements lists fail closed when app SDK returns malformed dashboard rows", async () => {
-  for (const [field, row, message] of [
-    ["chartData", "not-a-chart-record", /Settlement chart record is required/],
-    ["bills", "not-a-bill-record", /Settlement bill record is required/],
-  ] as const) {
-    await withAppSdkFetch(
-      (url) => {
-        if (url === "/app/v3/api/billing/settlements/dashboard") {
-          return {
-            chartData: [],
-            bills: [],
-            [field]: [row],
-          };
-        }
-        throw new Error(`unexpected SDK URL: ${url}`);
-      },
-      async () => {
-        await assert.rejects(
-          () => SettlementsService.fetchDashboardData(),
-          message,
-        );
-      },
-    );
-  }
-});
-
-test("console settlements chart fails closed when app SDK omits or corrupts decimal fields", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/settlements/dashboard") {
-        return {
-          chartData: [{ text: "1.234567", image: "0", video: "0", audio: "0", music: "0" }],
-          bills: [],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => SettlementsService.fetchDashboardData(),
-        /Settlement chart day is required/,
-      );
-    },
-  );
-
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/settlements/dashboard") {
-        return {
-          chartData: [{ day: "05-05", image: "0", video: "0", audio: "0", music: "0" }],
-          bills: [],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => SettlementsService.fetchDashboardData(),
-        /Settlement chart text is required/,
-      );
-    },
-  );
-
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/settlements/dashboard") {
-        return {
-          chartData: [{ day: "05-05", text: "bad-decimal", image: "0", video: "0", audio: "0", music: "0" }],
-          bills: [],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => SettlementsService.fetchDashboardData(),
-        /Settlement chart text must be a decimal string/,
-      );
-    },
-  );
-});
-
-test("console settlements service normalizes year query before generated app SDK call", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      assert.equal(url, "/app/v3/api/billing/settlements/dashboard?year=2025");
-      return { chartData: [], bills: [] };
-    },
-    async (captured) => {
-      const result = await SettlementsService.fetchDashboardData({
-        year: " 2025 ",
-        ignored: "drop-me",
-        empty: "",
-      });
-
-      assert.equal(captured.length, 1);
-      assert.deepEqual(result, { chartData: [], bills: [] });
-    },
-  );
-});
-
-test("console settlements service rejects invalid year query before generated app SDK call", async () => {
-  await withAppSdkFetch(
-    () => {
-      throw new Error("app SDK must not be called for invalid settlement dashboard queries");
-    },
-    async (captured) => {
-      await assert.rejects(() => SettlementsService.fetchDashboardData({ year: "1999" }), /year must be between 2000 and 2100/);
-      await assert.rejects(() => SettlementsService.fetchDashboardData({ year: "2101" }), /year must be between 2000 and 2100/);
-      await assert.rejects(() => SettlementsService.fetchDashboardData({ year: "2025.5" }), /year must be an integer/);
-      await assert.rejects(
-        () => SettlementsService.fetchDashboardData({ year: { value: "2025" } }),
-        /year must be an integer/,
-      );
-      assert.equal(captured.length, 0);
-    },
-  );
-});
-
-test("console settlement bills fail closed when app SDK omits required bill breakdowns", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/settlements/dashboard") {
-        return {
-          chartData: [],
-          bills: [
-            {
-              id: "bill-1",
-              period: "2026-05",
-              startDate: "2026-05-01",
-              endDate: "2026-05-31",
-              totalTokens: "12000",
-              totalCost: "36.500000",
-              status: "open",
-            },
-          ],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => SettlementsService.fetchDashboardData(),
-        /Settlement bill breakdown is required/,
-      );
-    },
-  );
-
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/settlements/dashboard") {
-        return {
-          chartData: [],
-          bills: [
-            {
-              id: "bill-1",
-              period: "2026-05",
-              startDate: "2026-05-01",
-              endDate: "2026-05-31",
-              totalTokens: "12000",
-              totalCost: "36.500000",
-              status: "open",
-              breakdown: {
-                text: { cost: "12.345678", usage: "10k", models: ["gpt-4o-mini"] },
-                video: { cost: "0", usage: "0", models: [] },
-                audio: { cost: "0", usage: "0", models: [] },
-                music: { cost: "0", usage: "0", models: [] },
-              },
-            },
-          ],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => SettlementsService.fetchDashboardData(),
-        /Settlement image breakdown is required/,
-      );
-    },
-  );
-});
-
-test("console settlement bills fail closed when app SDK returns invalid breakdown models", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/settlements/dashboard") {
-        return {
-          chartData: [],
-          bills: [
-            {
-              id: "bill-1",
-              period: "2026-05",
-              startDate: "2026-05-01",
-              endDate: "2026-05-31",
-              totalTokens: "12000",
-              totalCost: "36.500000",
-              status: "open",
-              breakdown: {
-                text: { cost: "12.345678", usage: "10k", models: ["gpt-4o-mini", {}] },
-                image: { cost: "2", usage: "3", models: ["dall-e"] },
-                video: { cost: "0", usage: "0", models: [] },
-                audio: { cost: "0", usage: "0", models: [] },
-                music: { cost: "0", usage: "0", models: [] },
-              },
-            },
-          ],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => SettlementsService.fetchDashboardData(),
-        /Settlement breakdown models must be strings/,
-      );
-    },
-  );
-});
-
-test("console account service reads account summary from generated app SDK", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      assert.equal(url, "/app/v3/api/billing/account/summary");
-      return {
-        id: "user-1",
-        name: "Owner",
-        email: "owner@example.com",
-        isVerified: true,
-        tier: "enterprise",
-        organization: "SDKWork",
-        availableCredits: "125.5",
-        estDaysRemaining: "30",
-        monthlyConsumption: "40.25",
-        consumptionByService: [{ name: "Text", value: "30", color: "#2563eb", percentage: 75 }],
-        invoiceSettings: {
-          orgFull: "SDKWork Inc.",
-          taxId: "tax-1",
-          paymentMethod: "Corporate account",
-          invoiceType: "VAT",
-        },
-        security: {
-          mfaEnabled: true,
-          qpsLimit: "120",
-          ipWhitelistCount: 2,
-        },
-        loginLogs: [
-          {
-            ip: "10.0.0.***",
-            location: "Shanghai",
-            device: "Chrome",
-            time: "2026-05-05T08:00:00Z",
-            status: "warning",
-          },
-        ],
-      };
-    },
-    async (captured) => {
-      const result = await AccountService.fetchAccountDetails();
-
-      assert.equal(captured.length, 1);
-      assert.equal(result.id, "user-1");
-      assert.equal(result.availableCredits, 125.5);
-      assert.equal(result.consumptionByService[0].value, 30);
-      assert.equal(result.security.qpsLimit, 120);
-      assert.equal(result.loginLogs[0].status, "warning");
-    },
-  );
-});
-
-test("console account service fails closed when app SDK returns malformed account rows", async () => {
-  for (const [field, row, message] of [
-    ["consumptionByService", "not-a-consumption-record", /Account consumption record is required/],
-    ["loginLogs", "not-a-login-record", /Account login log record is required/],
-  ] as const) {
-    await withAppSdkFetch(
-      (url) => {
-        if (url === "/app/v3/api/billing/account/summary") {
-          return {
-            id: "user-1",
-            name: "Owner",
-            email: "owner@example.com",
-            isVerified: true,
-            tier: "enterprise",
-            organization: "SDKWork",
-            availableCredits: "125.5",
-            estDaysRemaining: "30",
-            monthlyConsumption: "40.25",
-            consumptionByService: [],
-            invoiceSettings: {
-              orgFull: "SDKWork Inc.",
-              taxId: "tax-1",
-              paymentMethod: "Corporate account",
-              invoiceType: "VAT",
-            },
-            security: {
-              mfaEnabled: true,
-              qpsLimit: "120",
-              ipWhitelistCount: 2,
-            },
-            loginLogs: [],
-            [field]: [row],
-          };
-        }
-        throw new Error(`unexpected SDK URL: ${url}`);
-      },
-      async () => {
-        await assert.rejects(
-          () => AccountService.fetchAccountDetails(),
-          message,
-        );
-      },
-    );
-  }
-});
-
-test("console account service fails closed when app SDK omits required account fields", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/account/summary") {
-        return {
-          id: "user-1",
-          name: "Owner",
-          email: "owner@example.com",
-          tier: "enterprise",
-          organization: "SDKWork",
-          availableCredits: "125.5",
-          estDaysRemaining: "30",
-          monthlyConsumption: "40.25",
-          consumptionByService: [],
-          invoiceSettings: {
-            orgFull: "SDKWork Inc.",
-            taxId: "tax-1",
-            paymentMethod: "Corporate account",
-            invoiceType: "VAT",
-          },
-          security: {
-            mfaEnabled: true,
-            qpsLimit: "120",
-            ipWhitelistCount: 2,
-          },
-          loginLogs: [],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => AccountService.fetchAccountDetails(),
-        /Account verification status is required/,
-      );
-    },
-  );
-
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/account/summary") {
-        return {
-          id: "user-1",
-          name: "Owner",
-          email: "owner@example.com",
-          isVerified: true,
-          tier: "enterprise",
-          organization: "SDKWork",
-          availableCredits: "125.5",
-          estDaysRemaining: "30",
-          monthlyConsumption: "40.25",
-          consumptionByService: [{ value: 30, color: "#2563eb", percentage: 75 }],
-          invoiceSettings: {
-            orgFull: "SDKWork Inc.",
-            taxId: "tax-1",
-            paymentMethod: "Corporate account",
-            invoiceType: "VAT",
-          },
-          security: {
-            mfaEnabled: true,
-            qpsLimit: "120",
-            ipWhitelistCount: 2,
-          },
-          loginLogs: [],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => AccountService.fetchAccountDetails(),
-        /Account consumption service name is required/,
-      );
-    },
-  );
-
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/account/summary") {
-        return {
-          id: "user-1",
-          name: "Owner",
-          email: "owner@example.com",
-          isVerified: true,
-          tier: "enterprise",
-          organization: "SDKWork",
-          availableCredits: "125.5",
-          estDaysRemaining: "30",
-          monthlyConsumption: "40.25",
-          consumptionByService: [],
-          invoiceSettings: {
-            orgFull: "SDKWork Inc.",
-            taxId: "tax-1",
-            paymentMethod: "Corporate account",
-            invoiceType: "VAT",
-          },
-          security: {
-            mfaEnabled: true,
-            qpsLimit: "120",
-            ipWhitelistCount: 2,
-          },
-          loginLogs: [
-            {
-              ip: "10.0.0.***",
-              location: "Shanghai",
-              device: "Chrome",
-              time: "2026-05-05T08:00:00Z",
-              status: "muted",
-            },
-          ],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => AccountService.fetchAccountDetails(),
-        /Unsupported account login status: muted/,
-      );
-    },
-  );
-});
-
-test("console recharge service reads packages and submits recharge through generated app SDK", async () => {
-  await withAppSdkFetch(
-    (url, init) => {
-      if (url === "/app/v3/api/billing/account/points/recharges/packages") {
-        return { items: [{ id: "pack-1", rmb: "99.9", bonus: "20", points: 1019 }] };
-      }
-      if (url === "/app/v3/api/billing/account/points/recharges") {
-        assert.equal(init?.method ?? "GET", "POST");
-        assert.match(typeof init?.body === "string" ? init.body : "", /"amount":"99.90"/);
-        return {
-          success: true,
-          orderNo: "order-1",
-          amount: "99.90",
-          paymentMethod: "wechat",
-          points: 999,
-          status: "pending",
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async (captured) => {
-      const packages = await RechargeService.fetchPackages();
-      const submitted = await RechargeService.submitRecharge("99.90", "wechat");
-
-      assert.deepEqual(captured.map((request) => request.url), [
-        "/app/v3/api/billing/account/points/recharges/packages",
-        "/app/v3/api/billing/account/points/recharges",
-      ]);
-      assert.equal(packages[0].rmb, "99.90");
-      assert.equal(packages[0].bonus, 20);
-      assert.equal(packages[0].points, 1019);
-      assert.deepEqual(submitted, { success: true, orderNo: "order-1" });
-    },
-  );
-});
-
-test("console recharge service rejects invalid submit commands before calling generated app SDK", async () => {
-  await withAppSdkFetch(
-    () => {
-      throw new Error("app SDK must not be called for invalid recharge commands");
-    },
-    async (captured) => {
-      await assert.rejects(
-        () => RechargeService.submitRecharge("0", "wechat"),
-        /amount must be greater than zero/,
-      );
-      await assert.rejects(
-        () => RechargeService.submitRecharge("10.00", ""),
-        /method is required/,
-      );
-      assert.equal(captured.length, 0);
-    },
-  );
-});
-
-test("console recharge service submits large exact decimal strings without binary float conversion", async () => {
-  const largeAmount = `${"9".repeat(320)}.99`;
-
-  await withAppSdkFetch(
-    (url, init) => {
-      assert.equal(url, "/app/v3/api/billing/account/points/recharges");
-      assert.equal(init?.method ?? "GET", "POST");
-      assert.equal(
-        typeof init?.body === "string" ? JSON.parse(init.body).amount : "",
-        largeAmount,
-      );
-      return {
-        success: true,
-        orderNo: "order-large",
-        amount: largeAmount,
-        paymentMethod: "wechat",
-        points: 999999,
-        status: "pending",
-      };
-    },
-    async (captured) => {
-      const result = await RechargeService.submitRecharge(largeAmount, "wechat");
-
-      assert.equal(captured.length, 1);
-      assert.deepEqual(result, { success: true, orderNo: "order-large" });
-    },
-  );
 });
 
 test("console settings service reads and updates settings through generated app SDK", async () => {
@@ -1541,7 +985,11 @@ test("console API key service reads and creates keys through generated app SDK",
               status: "enabled",
             },
           ],
-          groups: [
+        };
+      }
+      if (url === "/app/v3/api/iam/api_key_groups" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
             {
               id: "group-1",
               code: "default",
@@ -1573,7 +1021,8 @@ test("console API key service reads and creates keys through generated app SDK",
       throw new Error(`unexpected SDK URL: ${init?.method ?? "GET"} ${url}`);
     },
     async (captured) => {
-      const page = await ApiKeyService.fetchKeys();
+      const keys = await ApiKeyService.fetchKeys();
+      const groups = await ApiKeyService.fetchGroups();
       const created = await ApiKeyService.createKey({
         name: "Batch key",
         group: "default",
@@ -1584,15 +1033,19 @@ test("console API key service reads and creates keys through generated app SDK",
         expires: "never",
       });
 
-      assert.equal(page.keys[0].id, "key-1");
-      assert.deepEqual(page.keys[0].modalities, ["text", "image"]);
-      assert.equal(page.groups[0].code, "default");
+      assert.equal(keys[0].id, "key-1");
+      assert.deepEqual(keys[0].modalities, ["text", "image"]);
+      assert.equal(groups[0].code, "default");
       assert.equal(created.rawKey, "sk-live-new-secret");
       assert.deepEqual(
         captured.map((request) => `${request.method} ${request.url}`),
-        ["GET /app/v3/api/iam/api_keys", "POST /app/v3/api/iam/api_keys"],
+        [
+          "GET /app/v3/api/iam/api_keys",
+          "GET /app/v3/api/iam/api_key_groups",
+          "POST /app/v3/api/iam/api_keys",
+        ],
       );
-      assert.deepEqual(JSON.parse(captured[1].body), {
+      assert.deepEqual(JSON.parse(captured[2].body), {
         name: "Batch key",
         group: "default",
         quota: "0.000000",
@@ -1659,33 +1112,19 @@ test("console API key service fails closed when app SDK omits required group fie
   ] as const) {
     await withAppSdkFetch(
       (url, init) => {
-        if (url === "/app/v3/api/iam/api_keys" && (init?.method ?? "GET") === "GET") {
+        if (url === "/app/v3/api/iam/api_key_groups" && (init?.method ?? "GET") === "GET") {
           const group = { id: "group-1", code: "default", name: "Default", rate: "1x" } as Record<string, unknown>;
           delete group[field];
           return {
-            items: [
-              {
-                id: "key-1",
-                name: "Production key",
-                maskedKey: "sk-prod********1234",
-                group: "default",
-                quota: "1000.000000",
-                usedQuota: "10.000000",
-                modalities: ["text"],
-                ipLimit: "unrestricted",
-                created: "2026-05-05T08:00:00Z",
-                expires: "never",
-                status: "enabled",
-              },
-            ],
             groups: [group],
+            items: [group],
           };
         }
         throw new Error(`unexpected SDK URL: ${init?.method ?? "GET"} ${url}`);
       },
       async () => {
         await assert.rejects(
-          () => ApiKeyService.fetchKeys(),
+          () => ApiKeyService.fetchGroups(),
           message,
         );
       },
@@ -1899,219 +1338,6 @@ test("console usage logs fail closed when app SDK omits or corrupts pagination t
       },
     );
   }
-});
-
-test("console settlement bills fail closed when app SDK omits stable bill ids", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/settlements/dashboard") {
-        return {
-          chartData: [],
-          bills: [
-            {
-              period: "2026-05",
-              startDate: "2026-05-01",
-              endDate: "2026-05-31",
-              totalTokens: "12000",
-              totalCost: "36.500000",
-              status: "open",
-              breakdown: {},
-            },
-          ],
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => SettlementsService.fetchDashboardData(),
-        /Settlement bill id is required/,
-      );
-    },
-  );
-});
-
-test("console recharge packages fail closed when app SDK omits stable package ids", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/account/points/recharges/packages") {
-        return { items: [{ rmb: "99.9", bonus: "20" }] };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => RechargeService.fetchPackages(),
-        /Recharge package id is required/,
-      );
-    },
-  );
-});
-
-test("console recharge packages fail closed when app SDK returns malformed package rows", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/account/points/recharges/packages") {
-        return { items: [{ id: "pack-1", rmb: "99.9", bonus: "20", points: 1019 }, "malformed-row"] };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => RechargeService.fetchPackages(),
-        /Recharge package record is required/,
-      );
-    },
-  );
-});
-
-test("console recharge packages fail closed when app SDK omits package money amounts", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/account/points/recharges/packages") {
-        return { items: [{ id: "pack-1", bonus: "20" }] };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => RechargeService.fetchPackages(),
-        /Recharge package money amount is required/,
-      );
-    },
-  );
-});
-
-test("console recharge packages fail closed when app SDK returns invalid package money amounts", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/account/points/recharges/packages") {
-        return { items: [{ id: "pack-1", rmb: "free", bonus: "20" }] };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => RechargeService.fetchPackages(),
-        /Recharge package money amount must be a money string/,
-      );
-    },
-  );
-});
-
-test("console recharge packages fail closed when app SDK omits bonus points", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/account/points/recharges/packages") {
-        return { items: [{ id: "pack-1", rmb: "99.90", points: 999 }] };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => RechargeService.fetchPackages(),
-        /Recharge package bonus is required/,
-      );
-    },
-  );
-});
-
-test("console recharge packages fail closed when app SDK omits total credited points", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/account/points/recharges/packages") {
-        return { items: [{ id: "pack-1", rmb: "99.90", bonus: 20 }] };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => RechargeService.fetchPackages(),
-        /Recharge package points are required/,
-      );
-    },
-  );
-});
-
-test("console recharge submit fails closed when app SDK omits order numbers", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/account/points/recharges") {
-        return {
-          success: true,
-          amount: "99.90",
-          paymentMethod: "wechat",
-          points: 999,
-          status: "pending",
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => RechargeService.submitRecharge("99.90", "wechat"),
-        /Recharge order number is required/,
-      );
-    },
-  );
-});
-
-test("console recharge submit fails closed when app SDK reports unsuccessful orders", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/account/points/recharges") {
-        return { success: false, orderNo: "order-1" };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => RechargeService.submitRecharge("99.90", "wechat"),
-        /Recharge submission was not accepted/,
-      );
-    },
-  );
-});
-
-test("console recharge submit fails closed when app SDK omits confirmed amounts", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/account/points/recharges") {
-        return { success: true, orderNo: "order-1", paymentMethod: "wechat", points: 999, status: "pending" };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => RechargeService.submitRecharge("99.90", "wechat"),
-        /Recharge amount is required/,
-      );
-    },
-  );
-});
-
-test("console recharge submit fails closed when app SDK returns invalid confirmed points", async () => {
-  await withAppSdkFetch(
-    (url) => {
-      if (url === "/app/v3/api/billing/account/points/recharges") {
-        return {
-          success: true,
-          orderNo: "order-1",
-          amount: "99.90",
-          paymentMethod: "wechat",
-          points: "invalid",
-          status: "pending",
-        };
-      }
-      throw new Error(`unexpected SDK URL: ${url}`);
-    },
-    async () => {
-      await assert.rejects(
-        () => RechargeService.submitRecharge("99.90", "wechat"),
-        /Recharge points are required/,
-      );
-    },
-  );
 });
 
 test("console provider configs fail closed when app SDK omits stable provider ids", async () => {

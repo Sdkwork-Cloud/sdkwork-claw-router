@@ -519,7 +519,7 @@ async fn insert_or_load_provider_for_code(
     sqlx::query_scalar(
         r#"
         INSERT INTO integration_provider
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, provider_code, default_vendor_code, display_name, base_url_template, sort_order)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, provider_code, default_vendor_code, display_name, base_url, sort_order)
         VALUES
             ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, $6, $7, $8, $9, 100)
         RETURNING id
@@ -588,7 +588,7 @@ async fn insert_channel(
     sqlx::query_scalar(
         r#"
         INSERT INTO integration_channel
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, provider_id, provider_code, channel_code, name, protocol, access_type, base_url_override, timeout_ms, retry_policy, circuit_breaker_policy, model_mode, environment, capabilities, priority, weight, account_id, health_status, last_latency_ms, rpm_limit, consecutive_error_count)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, provider_id, provider_code, channel_code, name, protocol, access_type, base_url, timeout_ms, retry_policy, circuit_breaker_policy, model_mode, environment, capabilities, priority, weight, account_id, health_status, last_latency_ms, rpm_limit, consecutive_error_count)
         VALUES
             ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, $7, $8, $9, $10, $11, $12, $13, $14, $15::jsonb, $16::jsonb, 1, 1, $17::jsonb, 100, $18, $19, $20, 0, 0, 0)
         RETURNING id
@@ -651,7 +651,7 @@ async fn update_channel(
             provider_code = COALESCE($3, provider_code),
             protocol = COALESCE($4, protocol),
             access_type = COALESCE($5, access_type),
-            base_url_override = CASE WHEN $6 THEN $7 ELSE base_url_override END,
+            base_url = CASE WHEN $6 THEN $7 ELSE base_url END,
             timeout_ms = CASE WHEN $8 THEN $9 ELSE timeout_ms END,
             retry_policy = CASE WHEN $10 THEN $11::jsonb ELSE retry_policy END,
             circuit_breaker_policy = CASE WHEN $12 THEN $13::jsonb ELSE circuit_breaker_policy END,
@@ -925,7 +925,7 @@ async fn load_channel_probe_target(
             c.id AS channel_id,
             c.provider_id,
             c.account_id AS provider_account_id,
-            COALESCE(NULLIF(c.base_url_override, ''), NULLIF(p.base_url_template, ''), '') AS provider_base_url,
+            COALESCE(NULLIF(c.base_url, ''), NULLIF(p.base_url, ''), '') AS provider_base_url,
             COALESCE(NULLIF(a.secret_ref, ''), '') AS provider_secret_ref,
             COALESCE(NULLIF(cm.provider_model, ''), '') AS provider_model,
             c.timeout_ms
@@ -1119,7 +1119,7 @@ async fn load_channel_by_id(
             COALESCE(NULLIF(c.provider_code, ''), 'custom') AS provider_code,
             c.protocol AS protocol,
             c.access_type AS access_type,
-            COALESCE(NULLIF(c.base_url_override, ''), '') AS base_url,
+            COALESCE(NULLIF(c.base_url, ''), '') AS base_url,
             COALESCE(NULLIF(a.masked_label, ''), 'configured') AS api_key,
             CAST(COALESCE(c.capabilities, '["llm"]'::jsonb) AS TEXT) AS capabilities_json,
             c.timeout_ms,

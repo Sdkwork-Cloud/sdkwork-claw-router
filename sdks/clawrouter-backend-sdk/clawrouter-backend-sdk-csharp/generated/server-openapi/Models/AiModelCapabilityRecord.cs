@@ -27,7 +27,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public Dictionary<string, string>? OutputModalities { get; set; }
         public string? ParameterName { get; set; }
         public Dictionary<string, string>? ParameterSchema { get; set; }
-        public string? RegionCode { get; set; }
         public string? SchemaVersion { get; set; }
         public int? SortOrder { get; set; }
         public string? Status { get; set; }

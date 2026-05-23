@@ -7,7 +7,5 @@ export interface RateLimitsModelsCreateResult {
   /** Data field on rate limits models create result. */
   data?: AdminRateLimitMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

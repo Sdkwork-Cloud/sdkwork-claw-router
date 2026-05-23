@@ -9,7 +9,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? Amount { get; set; }
         public string? Code { get; set; }
         public string? Date { get; set; }
-        public int? Id { get; set; }
+        public string? Id { get; set; }
         public string? Status { get; set; }
     }
 }

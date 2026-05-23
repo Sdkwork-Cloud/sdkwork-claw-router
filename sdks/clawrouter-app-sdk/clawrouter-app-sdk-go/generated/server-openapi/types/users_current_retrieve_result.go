@@ -4,6 +4,5 @@ package types
 type UsersCurrentRetrieveResult struct {
 	Code string `json:"code"`
 	Data IamUserResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

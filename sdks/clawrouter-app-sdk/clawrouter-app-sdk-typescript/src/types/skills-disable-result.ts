@@ -7,7 +7,5 @@ export interface SkillsDisableResult {
   /** Data field on skills disable result. */
   data?: AppInstalledSkillResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

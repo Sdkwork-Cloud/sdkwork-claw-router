@@ -3,6 +3,7 @@ package types
 // Ops notification message record schema exposed by Claw Router.
 type OpsNotificationMessageRecord struct {
 	ActionUrl string `json:"action_url"`
+	AppId string `json:"app_id"`
 	Content string `json:"content"`
 	CreatedAt string `json:"created_at"`
 	DataScope string `json:"data_scope"`
@@ -18,10 +19,6 @@ type OpsNotificationMessageRecord struct {
 	Severity string `json:"severity"`
 	Status string `json:"status"`
 	Summary string `json:"summary"`
-	TargetOwnerId string `json:"target_owner_id"`
-	TargetOwnerType string `json:"target_owner_type"`
-	TargetScope string `json:"target_scope"`
-	TargetUserId string `json:"target_user_id"`
 	TenantId string `json:"tenant_id"`
 	Title string `json:"title"`
 	UpdatedAt string `json:"updated_at"`

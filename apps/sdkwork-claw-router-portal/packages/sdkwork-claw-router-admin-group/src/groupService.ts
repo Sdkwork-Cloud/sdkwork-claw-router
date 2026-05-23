@@ -1,6 +1,6 @@
 import {
   createRequestToken,
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
   readApiRecord,
@@ -55,7 +55,7 @@ export type GroupUpdateInput = {
 export class GroupService {
   static async fetchGroups(): Promise<GroupData[]> {
     const result = await getClawRouterBackendSdkClient().iam.accessGroups.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch groups');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch groups');
     return readRequiredApiItems(result, 'Failed to fetch groups')
       .map(normalizeGroup);
   }
@@ -65,7 +65,7 @@ export class GroupService {
       toCreateGroupRequest(group),
       requestParams('admin-group-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to add group');
+    ensureSdkworkApiSuccess(result, 'Failed to add group');
     return normalizeGroup(readRequiredApiItem(result, 'Created group response is missing data'));
   }
 
@@ -75,7 +75,7 @@ export class GroupService {
       toUpdateGroupRequest(updates),
       requestParams('admin-group-update'),
     );
-    ensurePlusApiSuccess(result, 'Failed to update group');
+    ensureSdkworkApiSuccess(result, 'Failed to update group');
     return normalizeGroup(readRequiredApiItem(result, 'Updated group response is missing data'));
   }
 
@@ -189,7 +189,7 @@ function requestParams(scope: string): { xRequestId: string } {
 }
 
 function ensureDeleteResult(result: unknown, message: string): void {
-  ensurePlusApiSuccess(result, message);
+  ensureSdkworkApiSuccess(result, message);
   if (readBoolean(readApiRecord(result), 'deleted') !== true) {
     throw new Error(message);
   }

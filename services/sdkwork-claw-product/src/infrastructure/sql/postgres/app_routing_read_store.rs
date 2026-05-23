@@ -20,7 +20,7 @@ SELECT
     COALESCE(NULLIF(c.provider_code, ''), 'custom') AS provider_code,
     c.protocol AS protocol,
     c.access_type AS access_type,
-    COALESCE(NULLIF(c.base_url_override, ''), '') AS base_url,
+    COALESCE(NULLIF(c.base_url, ''), '') AS base_url,
     COALESCE(NULLIF(a.masked_label, ''), 'configured') AS api_key,
     CAST(COALESCE(c.capabilities, '["llm"]'::jsonb) AS TEXT) AS capabilities_json,
     c.timeout_ms,

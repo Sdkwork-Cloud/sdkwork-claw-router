@@ -2,7 +2,16 @@ use axum::body::Body;
 use axum::http::{Request, StatusCode};
 use sdkwork_claw_config::DatabaseConfig;
 use sdkwork_claw_http::ApiSurface;
+use serde_json::Value;
 use tower::ServiceExt;
+
+const APP_SDK_AUTHORITY_OPENAPI_JSON: &str =
+    include_str!("../../../sdks/clawrouter-app-sdk/openapi/clawrouter-app-sdk.openapi.json");
+const BACKEND_SDK_AUTHORITY_OPENAPI_JSON: &str = include_str!(
+    "../../../sdks/clawrouter-backend-sdk/openapi/clawrouter-backend-sdk.openapi.json"
+);
+const OPEN_SDK_AUTHORITY_OPENAPI_JSON: &str =
+    include_str!("../../../sdks/clawrouter-open-sdk/openapi/clawrouter-open-sdk.openapi.json");
 
 #[tokio::test]
 async fn service_router_exposes_standard_health_and_ready_endpoints() {
@@ -223,6 +232,181 @@ async fn service_router_exposes_surface_openapi_documents() {
 }
 
 #[tokio::test]
+async fn service_router_surface_openapi_documents_include_appbase_commerce_contracts() {
+    let app_payload = fetch_surface_openapi(
+        "sdkwork-claw-app-api",
+        ApiSurface::App,
+        "/app/v3/api/openapi.json",
+    )
+    .await;
+    for (method, path, operation_id) in [
+        (
+            "get",
+            "/app/v3/api/catalog/products",
+            "catalog.products.list",
+        ),
+        (
+            "get",
+            "/app/v3/api/catalog/skus/{skuId}",
+            "catalog.skus.retrieve",
+        ),
+        ("get", "/app/v3/api/cart/current", "cart.current.retrieve"),
+        (
+            "post",
+            "/app/v3/api/checkout/sessions",
+            "checkout.sessions.create",
+        ),
+        ("get", "/app/v3/api/orders/{orderId}", "orders.retrieve"),
+        (
+            "post",
+            "/app/v3/api/payments/intents",
+            "payments.intents.create",
+        ),
+        ("post", "/app/v3/api/refunds", "refunds.create"),
+        ("get", "/app/v3/api/fulfillments", "fulfillments.list"),
+        (
+            "get",
+            "/app/v3/api/memberships/current",
+            "memberships.current.retrieve",
+        ),
+        (
+            "post",
+            "/app/v3/api/memberships/purchases",
+            "memberships.purchases.create",
+        ),
+        (
+            "post",
+            "/app/v3/api/recharges/orders",
+            "recharges.orders.create",
+        ),
+        (
+            "get",
+            "/app/v3/api/wallet/overview",
+            "wallet.overview.retrieve",
+        ),
+        (
+            "get",
+            "/app/v3/api/wallet/points/exchanges/rules",
+            "wallet.points.exchangeRules.list",
+        ),
+        ("get", "/app/v3/api/invoices", "invoices.list"),
+    ] {
+        assert_openapi_operation(&app_payload, method, path, operation_id);
+    }
+    assert!(
+        app_payload["paths"]
+            .get("/app/v3/api/wallet/exchanges")
+            .is_none(),
+        "runtime app OpenAPI must not expose retired duplicate wallet exchanges route"
+    );
+
+    let backend_payload = fetch_surface_openapi(
+        "sdkwork-claw-admin-api",
+        ApiSurface::Backend,
+        "/backend/v3/api/openapi.json",
+    )
+    .await;
+    for (method, path, operation_id) in [
+        (
+            "post",
+            "/backend/v3/api/catalog/products",
+            "catalog.products.create",
+        ),
+        (
+            "patch",
+            "/backend/v3/api/inventory/stocks/{stockId}",
+            "inventory.stocks.update",
+        ),
+        ("get", "/backend/v3/api/orders", "orders.list"),
+        (
+            "get",
+            "/backend/v3/api/payments/providers",
+            "payments.providers.list",
+        ),
+        (
+            "post",
+            "/backend/v3/api/payments/provider_accounts",
+            "payments.providerAccounts.create",
+        ),
+        (
+            "get",
+            "/backend/v3/api/payments/route_rules",
+            "payments.routeRules.list",
+        ),
+        ("get", "/backend/v3/api/refunds", "refunds.list"),
+        (
+            "get",
+            "/backend/v3/api/shipments/{shipmentId}/tracking_events",
+            "shipments.trackingEvents.list",
+        ),
+        (
+            "post",
+            "/backend/v3/api/memberships/plans",
+            "memberships.plans.create",
+        ),
+        (
+            "get",
+            "/backend/v3/api/wallet/ledger_entries",
+            "wallet.ledgerEntries.list",
+        ),
+        (
+            "get",
+            "/backend/v3/api/coupons/campaigns",
+            "coupons.campaigns.list",
+        ),
+        (
+            "get",
+            "/backend/v3/api/commerce_reports/payment_reconciliation",
+            "commerceReports.paymentReconciliation.retrieve",
+        ),
+    ] {
+        assert_openapi_operation(&backend_payload, method, path, operation_id);
+    }
+}
+
+#[tokio::test]
+async fn service_router_openapi_documents_match_sdk_authority_contracts() {
+    let gateway_payload = fetch_runtime_openapi_json(
+        sdkwork_claw_http::service_router("sdkwork-claw-gateway"),
+        "/openapi.json",
+    )
+    .await;
+    assert_eq!(
+        authority_openapi_json(OPEN_SDK_AUTHORITY_OPENAPI_JSON),
+        gateway_payload,
+        "runtime gateway /openapi.json must match the Open SDK authority OpenAPI used for SDK generation"
+    );
+
+    let app_payload = fetch_runtime_openapi_json(
+        sdkwork_claw_http::service_router_with_contract_routes(
+            "sdkwork-claw-app-api",
+            ApiSurface::App,
+        ),
+        "/app/v3/api/openapi.json",
+    )
+    .await;
+    assert_eq!(
+        authority_openapi_json(APP_SDK_AUTHORITY_OPENAPI_JSON),
+        app_payload,
+        "runtime app /app/v3/api/openapi.json must match the app SDK authority OpenAPI used for SDK generation"
+    );
+
+    let backend_payload = fetch_runtime_openapi_json(
+        sdkwork_claw_http::service_router_with_contract_routes(
+            "sdkwork-claw-admin-api",
+            ApiSurface::Backend,
+        ),
+        "/backend/v3/api/openapi.json",
+    )
+    .await;
+    assert_eq!(
+        authority_openapi_json(BACKEND_SDK_AUTHORITY_OPENAPI_JSON),
+        backend_payload,
+        "runtime backend /backend/v3/api/openapi.json must match the backend SDK authority OpenAPI used for SDK generation"
+    );
+}
+
+#[tokio::test]
 async fn service_router_health_body_contains_service_identity() {
     let response = sdkwork_claw_http::service_router("sdkwork-claw-admin-api")
         .oneshot(
@@ -307,4 +491,49 @@ fn default_security_headers_are_defined() {
     assert!(headers.contains(&("x-content-type-options", "nosniff")));
     assert!(headers.contains(&("x-frame-options", "DENY")));
     assert!(headers.contains(&("referrer-policy", "no-referrer")));
+}
+
+async fn fetch_surface_openapi(
+    service_name: &'static str,
+    surface: ApiSurface,
+    path: &str,
+) -> Value {
+    let response = sdkwork_claw_http::service_router_with_contract_routes(service_name, surface)
+        .oneshot(Request::builder().uri(path).body(Body::empty()).unwrap())
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    serde_json::from_slice(&body).unwrap()
+}
+
+async fn fetch_runtime_openapi_json(router: axum::Router, path: &str) -> Value {
+    let response = router
+        .oneshot(Request::builder().uri(path).body(Body::empty()).unwrap())
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    serde_json::from_slice(&body).unwrap()
+}
+
+fn authority_openapi_json(source: &str) -> Value {
+    serde_json::from_str(source).unwrap()
+}
+
+fn assert_openapi_operation(payload: &Value, method: &str, path: &str, operation_id: &str) {
+    let operation = payload
+        .get("paths")
+        .and_then(|paths| paths.get(path))
+        .and_then(|path_item| path_item.get(method))
+        .unwrap_or_else(|| panic!("missing OpenAPI operation {method} {path}"));
+    assert_eq!(
+        Some(operation_id),
+        operation.get("operationId").and_then(Value::as_str),
+        "unexpected OpenAPI operationId for {method} {path}"
+    );
 }

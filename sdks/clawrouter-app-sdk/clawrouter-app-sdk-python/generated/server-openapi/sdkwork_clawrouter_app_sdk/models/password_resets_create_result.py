@@ -11,5 +11,4 @@ class PasswordResetsCreateResult:
     """Password resets create result schema exposed by Claw Router."""
     code: str
     data: Optional[NoData] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

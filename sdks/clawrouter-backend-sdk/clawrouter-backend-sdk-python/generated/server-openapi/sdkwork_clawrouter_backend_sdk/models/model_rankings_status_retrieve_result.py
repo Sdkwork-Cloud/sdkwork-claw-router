@@ -11,5 +11,4 @@ class ModelRankingsStatusRetrieveResult:
     """Model rankings status retrieve result schema exposed by Claw Router."""
     code: str
     data: Optional[ModelRankingRefreshStatus] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

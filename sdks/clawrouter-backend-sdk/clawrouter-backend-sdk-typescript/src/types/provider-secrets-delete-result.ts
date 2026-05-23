@@ -7,7 +7,5 @@ export interface ProviderSecretsDeleteResult {
   /** Data field on provider secrets delete result. */
   data?: AdminDeleteResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

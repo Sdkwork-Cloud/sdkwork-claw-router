@@ -11,5 +11,4 @@ class RateLimitsIpListResult:
     """Rate limits ip list result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminIpLimitsResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

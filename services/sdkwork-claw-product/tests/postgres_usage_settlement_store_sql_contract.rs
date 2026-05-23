@@ -23,7 +23,9 @@ fn usage_settlement_locks_pending_usage_and_points_account_in_one_transaction() 
         "settlement_status IN ($3, $4)",
         "ORDER BY COALESCE(occurred_at, CURRENT_TIMESTAMP), id",
         "FOR UPDATE SKIP LOCKED",
-        "FROM plus_account",
+        "FROM commerce_account",
+        "asset_type = $4",
+        "currency_code = $5",
         "FOR UPDATE",
     ] {
         assert_sql_contains(POSTGRES_USAGE_SETTLEMENT_STORE, expected);
@@ -44,12 +46,32 @@ fn usage_settlement_upserts_bridge_and_returns_ids_without_double_debit() {
         "INSERT INTO commerce_usage_settlement",
         "ON CONFLICT (tenant_id, organization_id, usage_fact_id) DO UPDATE SET",
         "RETURNING id",
-        "INSERT INTO plus_account_history",
-        "RETURNING id",
+        "INSERT INTO commerce_account_ledger_entry",
+        "business_type, transaction_no, request_no, idempotency_key, source_type, source_id, remark, created_at",
+        "'usage'",
+        "'ai_usage_fact'",
         "WHERE account_id = $1",
-        "AND transaction_id = $2",
+        "AND transaction_no = $2",
     ] {
         assert_sql_contains(POSTGRES_USAGE_SETTLEMENT_STORE, expected);
+    }
+}
+
+#[test]
+fn usage_settlement_has_no_legacy_plus_account_dependency() {
+    for forbidden in [
+        "plus_account",
+        "plus_account_history",
+        "account_history_id",
+        "available_points",
+        "points_change",
+    ] {
+        assert!(
+            !POSTGRES_USAGE_SETTLEMENT_STORE
+                .to_ascii_lowercase()
+                .contains(forbidden),
+            "Postgres usage settlement store must not keep legacy account design `{forbidden}`"
+        );
     }
 }
 

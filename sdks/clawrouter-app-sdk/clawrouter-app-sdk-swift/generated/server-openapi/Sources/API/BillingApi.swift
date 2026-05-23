@@ -2,7 +2,7 @@ import Foundation
 
 public class BillingApi {
     private let client: HttpClient
-    
+
     public init(client: HttpClient) {
         self.client = client
     }
@@ -272,136 +272,6 @@ public class BillingApi {
     /// Retrieve current user coupon
     public func usersCurrentCouponsRetrieve(userCouponId: String) async throws -> UsersCurrentCouponsRetrieveResult? {
         return try await client.get(ApiPaths.appPath("/billing/users/current/coupons/\(serializePathParameter(userCouponId, PathParameterSpec(name: "userCouponId", style: "simple", explode: false)))"), responseType: UsersCurrentCouponsRetrieveResult.self)
-    }
-
-    /// List VIP benefits
-    public func vipBenefitsList() async throws -> VipBenefitsListResult? {
-        return try await client.get(ApiPaths.appPath("/billing/vip/benefits"), responseType: VipBenefitsListResult.self)
-    }
-
-    /// Retrieve VIP info
-    public func vipInfoRetrieve() async throws -> VipInfoRetrieveResult? {
-        return try await client.get(ApiPaths.appPath("/billing/vip/info"), responseType: VipInfoRetrieveResult.self)
-    }
-
-    /// List VIP levels
-    public func vipLevelsList() async throws -> VipLevelsListResult? {
-        return try await client.get(ApiPaths.appPath("/billing/vip/levels"), responseType: VipLevelsListResult.self)
-    }
-
-    /// List VIP pack groups
-    public func getVipPackGroupsList() async throws -> VipPackGroupsListResult? {
-        return try await client.get(ApiPaths.appPath("/billing/vip/pack_groups"), responseType: VipPackGroupsListResult.self)
-    }
-
-    /// Retrieve VIP pack group
-    public func vipPackGroupsRetrieve(packGroupId: String) async throws -> VipPackGroupsRetrieveResult? {
-        return try await client.get(ApiPaths.appPath("/billing/vip/pack_groups/\(serializePathParameter(packGroupId, PathParameterSpec(name: "packGroupId", style: "simple", explode: false)))"), responseType: VipPackGroupsRetrieveResult.self)
-    }
-
-    /// List VIP pack group packs
-    public func getVipPackGroupsListPackGroups(packGroupId: String) async throws -> VipPackGroupsPacksListResult? {
-        return try await client.get(ApiPaths.appPath("/billing/vip/pack_groups/\(serializePathParameter(packGroupId, PathParameterSpec(name: "packGroupId", style: "simple", explode: false)))/packs"), responseType: VipPackGroupsPacksListResult.self)
-    }
-
-    /// List VIP packs
-    public func vipPacksList() async throws -> VipPacksListResult? {
-        return try await client.get(ApiPaths.appPath("/billing/vip/packs"), responseType: VipPacksListResult.self)
-    }
-
-    /// Retrieve VIP pack
-    public func vipPacksRetrieve(packId: String) async throws -> VipPacksRetrieveResult? {
-        return try await client.get(ApiPaths.appPath("/billing/vip/packs/\(serializePathParameter(packId, PathParameterSpec(name: "packId", style: "simple", explode: false)))"), responseType: VipPacksRetrieveResult.self)
-    }
-
-    /// Retrieve VIP points balance
-    public func vipPointsBalanceRetrieve() async throws -> VipPointsBalanceRetrieveResult? {
-        return try await client.get(ApiPaths.appPath("/billing/vip/points/balance"), responseType: VipPointsBalanceRetrieveResult.self)
-    }
-
-    /// Create VIP daily reward
-    public func vipPointsDailyRewardsCreate(body: CommerceEmptyCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> VipPointsDailyRewardsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/billing/vip/points/daily_rewards"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: VipPointsDailyRewardsCreateResult.self)
-    }
-
-    /// Retrieve VIP daily reward status
-    public func vipPointsDailyRewardsStatusRetrieve() async throws -> VipPointsDailyRewardsStatusRetrieveResult? {
-        return try await client.get(ApiPaths.appPath("/billing/vip/points/daily_rewards/status"), responseType: VipPointsDailyRewardsStatusRetrieveResult.self)
-    }
-
-    /// List VIP points history
-    public func vipPointsHistoryList(page: Int? = nil, pageSize: Int? = nil, cursor: String? = nil) async throws -> VipPointsHistoryListResult? {
-        let query = buildQueryString([
-            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "cursor", value: cursor, style: "form", explode: true, allowReserved: false, contentType: nil)
-        ])
-        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/billing/vip/points/history"), query), responseType: VipPointsHistoryListResult.self)
-    }
-
-    /// Create VIP privilege speed up
-    public func vipPrivilegesSpeedUpsCreate(body: CommerceVipPrivilegeSpeedUpRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> VipPrivilegesSpeedUpsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/billing/vip/privileges/speed_ups"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: VipPrivilegesSpeedUpsCreateResult.self)
-    }
-
-    /// Retrieve VIP privilege usage
-    public func vipPrivilegesUsageRetrieve() async throws -> VipPrivilegesUsageRetrieveResult? {
-        return try await client.get(ApiPaths.appPath("/billing/vip/privileges/usage"), responseType: VipPrivilegesUsageRetrieveResult.self)
-    }
-
-    /// Create VIP purchase
-    public func vipPurchaseCreate(body: CommerceVipPurchaseRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> VipPurchaseCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/billing/vip/purchase"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: VipPurchaseCreateResult.self)
-    }
-
-    /// Renew VIP purchase
-    public func vipPurchaseRenew(body: CommerceVipPurchaseRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> VipPurchaseRenewResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/billing/vip/purchase/renew"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: VipPurchaseRenewResult.self)
-    }
-
-    /// Upgrade VIP purchase
-    public func vipPurchaseUpgrade(body: CommerceVipPurchaseRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> VipPurchaseUpgradeResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/billing/vip/purchase/upgrade"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: VipPurchaseUpgradeResult.self)
-    }
-
-    /// Retrieve VIP status
-    public func vipStatusRetrieve() async throws -> VipStatusRetrieveResult? {
-        return try await client.get(ApiPaths.appPath("/billing/vip/status"), responseType: VipStatusRetrieveResult.self)
     }
 
     /// List wallet accounts

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { ShieldAlert, Plus, Search, Globe, Key, Database, X, Lock, Gauge, Trash2, Loader2, AlertTriangle } from 'lucide-react';
-import { BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
+import { AdminTableShell, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
 import { RateLimitService, IpLimitRule, TokenLimitRule, ModelLimitRule, FirewallRule } from './ratelimitService';
 import {
   createFirewallInputFromForm,
@@ -19,6 +19,21 @@ const RATELIMIT_TABS = [
   { id: 'model', label: (t: TranslationFunction) => t("admin.ratelimit.index.text.1xzz6og", "模型频控策略"), icon: <Database className="w-4 h-4" /> },
   { id: 'firewall', label: (t: TranslationFunction) => t("admin.ratelimit.index.text.1tmo5ay", "黑白名单(WAF)"), icon: <Lock className="w-4 h-4" /> },
 ];
+
+function RateLimitTableShell({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="min-h-0 flex-1 p-5">
+      <AdminTableShell
+        data-admin-ratelimit-table-card
+        className="rounded-lg shadow-none"
+        viewportClassName="relative"
+        viewportProps={{ 'data-admin-ratelimit-table-viewport': true }}
+      >
+        {children}
+      </AdminTableShell>
+    </div>
+  );
+}
 
 export function RateLimitAdmin() {
   const { t } = useTranslation();
@@ -43,7 +58,8 @@ export function RateLimitAdmin() {
   };
 
   return (
-    <div className="w-full h-full flex overflow-hidden border border-slate-200 dark:border-white/10 rounded-xl bg-white dark:bg-[#1a1a1a] shadow-sm">
+    <div className="flex h-full min-h-0 w-full flex-col overflow-hidden border border-slate-200 dark:border-white/10 rounded-xl bg-white dark:bg-[#1a1a1a] shadow-sm">
+      <div className="flex min-h-0 flex-1 overflow-hidden">
       {/* Internal Sidebar */}
       <div className="w-64 border-r border-slate-200 dark:border-white/10 flex flex-col bg-slate-50 dark:bg-[#121212] shrink-0">
         <div className="p-5 border-b border-slate-200 dark:border-white/10">
@@ -74,8 +90,9 @@ export function RateLimitAdmin() {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 overflow-hidden flex flex-col bg-white dark:bg-[#1a1a1a]">
+      <div className="min-h-0 flex-1 overflow-hidden flex flex-col bg-white dark:bg-[#1a1a1a]">
         {renderContent()}
+      </div>
       </div>
     </div>
   );
@@ -293,9 +310,9 @@ function IpRateLimitView({ search, setSearch }: { search: string, setSearch: (s:
             <Plus className="w-4 h-4" /> {t("admin.ratelimit.index.text.50zgee", "新增IP限流规则")}</button>
         </div>
       </div>
-      <div className="flex-1 overflow-auto p-5 relative">
-        <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-white/10 rounded-lg overflow-hidden">
-          <thead className="bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
+      <RateLimitTableShell>
+        <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
+          <thead className="sticky top-0 z-10 bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
             <tr>
               <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.122k66h", "规则名")}</th>
               <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.10tgl7u", "目标 IP/网段")}</th>
@@ -338,7 +355,7 @@ function IpRateLimitView({ search, setSearch }: { search: string, setSearch: (s:
             ))}
           </tbody>
         </table>
-      </div>
+      </RateLimitTableShell>
 
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
@@ -450,9 +467,9 @@ function TokenRateLimitView({ search, setSearch }: { search: string, setSearch: 
             <Plus className="w-4 h-4" /> {t("admin.ratelimit.index.text.1lq4o49", "自定义限速")}</button>
         </div>
       </div>
-      <div className="flex-1 overflow-auto p-5 relative">
-        <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-white/10 rounded-lg overflow-hidden">
-          <thead className="bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
+      <RateLimitTableShell>
+        <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
+          <thead className="sticky top-0 z-10 bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
             <tr>
               <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.1pwu3yg", "API Key (前缀)")}</th>
               <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.4qn97v", "关联用户")}</th>
@@ -495,7 +512,7 @@ function TokenRateLimitView({ search, setSearch }: { search: string, setSearch: 
             ))}
           </tbody>
         </table>
-      </div>
+      </RateLimitTableShell>
 
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
@@ -606,9 +623,9 @@ function ModelRateLimitView({ search, setSearch }: { search: string, setSearch: 
             <Plus className="w-4 h-4" /> {t("admin.ratelimit.index.text.1yr25uc", "覆盖默认限速")}</button>
         </div>
       </div>
-      <div className="flex-1 overflow-auto p-5 relative">
-        <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-white/10 rounded-lg overflow-hidden">
-          <thead className="bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
+      <RateLimitTableShell>
+        <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
+          <thead className="sticky top-0 z-10 bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
             <tr>
               <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.1iny067", "高净值模型")}</th>
               <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.ev2ft0", "作用范围 (用户分组)")}</th>
@@ -649,7 +666,7 @@ function ModelRateLimitView({ search, setSearch }: { search: string, setSearch: 
              ))}
           </tbody>
         </table>
-      </div>
+      </RateLimitTableShell>
 
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
@@ -782,9 +799,9 @@ function FirewallView({ search, setSearch }: { search: string, setSearch: (s: st
             <Plus className="w-4 h-4" /> {t("admin.ratelimit.index.text.12fbvrj", "封禁新对象")}</button>
         </div>
       </div>
-      <div className="flex-1 overflow-auto p-5 relative">
-        <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-white/10 rounded-lg overflow-hidden">
-          <thead className="bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
+      <RateLimitTableShell>
+        <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
+          <thead className="sticky top-0 z-10 bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
             <tr>
               <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.1fad1dp", "名单类型")}</th>
               <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">{t("admin.ratelimit.index.text.nump7a", "拦截/放行对象")}</th>
@@ -830,7 +847,7 @@ function FirewallView({ search, setSearch }: { search: string, setSearch: (s: st
              ))}
           </tbody>
         </table>
-      </div>
+      </RateLimitTableShell>
 
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">

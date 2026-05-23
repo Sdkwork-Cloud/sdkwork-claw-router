@@ -11,5 +11,4 @@ class SettlementsDashboardListResult:
     """Settlements dashboard list result schema exposed by Claw Router."""
     code: str
     data: Optional[SettlementDashboardResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

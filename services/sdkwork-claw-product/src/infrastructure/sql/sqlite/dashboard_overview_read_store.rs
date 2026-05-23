@@ -95,18 +95,30 @@ LIMIT 5
 
 const LOAD_ANNOUNCEMENTS: &str = r#"
 SELECT
-    id,
-    COALESCE(NULLIF(title, ''), NULLIF(content, ''), '') AS text,
-    CAST(COALESCE(published_at, created_at) AS TEXT) AS published_at,
-    announcement_type
-FROM content_announcement
-WHERE status = 1
-  AND deleted_at IS NULL
-  AND (tenant_id = ?1 OR tenant_id = 0 OR tenant_id IS NULL)
-  AND (organization_id = ?2 OR organization_id = 0 OR organization_id IS NULL)
-  AND (effective_from IS NULL OR datetime(effective_from) <= CURRENT_TIMESTAMP)
-  AND (effective_to IS NULL OR datetime(effective_to) > CURRENT_TIMESTAMP)
-ORDER BY COALESCE(pinned, 0) DESC, published_at DESC, id DESC
+    m.id,
+    COALESCE(NULLIF(m.title, ''), NULLIF(m.summary, ''), NULLIF(m.content, ''), '') AS text,
+    CAST(COALESCE(m.published_at, m.created_at) AS TEXT) AS published_at,
+    m.severity
+FROM ops_notification_message m
+WHERE m.status = 1
+  AND m.deleted_at IS NULL
+  AND m.tenant_id = ?1
+  AND m.organization_id = ?2
+  AND m.scope_type = 2
+  AND m.message_code = CAST('announcement:' || m.id AS TEXT)
+  AND (m.published_at IS NULL OR datetime(m.published_at) <= CURRENT_TIMESTAMP)
+  AND (m.expire_at IS NULL OR datetime(m.expire_at) > CURRENT_TIMESTAMP)
+  AND EXISTS (
+      SELECT 1
+      FROM ops_notification_recipient r
+      WHERE r.message_id = m.id
+        AND r.tenant_id = m.tenant_id
+        AND r.organization_id = m.organization_id
+        AND r.status = 1
+        AND r.deleted_at IS NULL
+        AND r.recipient_type = 1
+  )
+ORDER BY COALESCE(m.priority, 0) DESC, m.published_at DESC, m.id DESC
 LIMIT 5
 "#;
 
@@ -327,10 +339,7 @@ async fn load_announcements(
             id: integer_cell(&row, "id"),
             text: string_cell(&row, "text"),
             time: string_cell(&row, "published_at"),
-            announcement_type: announcement_type_label(optional_integer_cell(
-                &row,
-                "announcement_type",
-            )),
+            announcement_type: announcement_type_label(optional_integer_cell(&row, "severity")),
         })
         .collect())
 }

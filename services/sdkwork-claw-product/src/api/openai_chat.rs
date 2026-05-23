@@ -20,8 +20,9 @@ use crate::api::openai_error::openai_error;
 use crate::api::openai_invocation::{
     notify_after_relay_observers, notify_after_route_selection, notify_before_relay,
     notify_before_route_selection, notify_error, notify_route_fault, notify_route_success,
-    with_builtin_invocation_plugins, OpenAiInvocationContext, OpenAiInvocationEndpoint, OpenAiInvocationFault,
-    OpenAiInvocationPluginError, OpenAiInvocationPluginRef, OpenAiInvocationRelayOutcome,
+    with_builtin_invocation_plugins, OpenAiInvocationContext, OpenAiInvocationEndpoint,
+    OpenAiInvocationFault, OpenAiInvocationPluginError, OpenAiInvocationPluginRef,
+    OpenAiInvocationRelayOutcome,
 };
 use crate::api::openai_runtime::{
     authenticate_api_key, resolve_openai_provider_route_plan, route_http_status_is_retryable,
@@ -479,7 +480,7 @@ where
                 "invalid_request",
                 "invalid_request_error",
                 message,
-            )
+            );
         }
     };
     let identity = match ApiKeyIdentity::from_headers_and_uri(&headers, &uri) {
@@ -490,7 +491,7 @@ where
                 "invalid_request",
                 "invalid_request_error",
                 error,
-            )
+            );
         }
     };
     let context = match authenticate_api_key(
@@ -703,6 +704,7 @@ async fn relay_chat_completion_stream_route(
             pricing_plan_code: context.pricing_plan_code.clone(),
             model: requested_model.to_owned(),
             provider_code: route.provider_code.clone(),
+            provider_channel_id: route.channel_id,
             provider_model: route.provider_model.clone(),
             provider_base_url: route.provider_base_url.clone(),
             provider_secret_ref: route.provider_secret_ref.clone(),
@@ -931,6 +933,7 @@ async fn relay_chat_completion_route(
             pricing_plan_code: context.pricing_plan_code.clone(),
             model: requested_model.to_owned(),
             provider_code: route.provider_code.clone(),
+            provider_channel_id: route.channel_id,
             provider_model: route.provider_model.clone(),
             provider_base_url: route.provider_base_url.clone(),
             provider_secret_ref: route.provider_secret_ref.clone(),

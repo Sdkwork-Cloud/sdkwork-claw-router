@@ -52,14 +52,26 @@ function adminVendor(overrides: Record<string, unknown> = {}): Record<string, un
 }
 
 function adminModel(overrides: Record<string, unknown> = {}): Record<string, unknown> {
+  const runtimeModel = typeof overrides.model === "string"
+    ? overrides.model
+    : typeof overrides.name === "string"
+      ? overrides.name
+      : "gpt-4o-mini";
+  const displayName = typeof overrides.displayName === "string"
+    ? overrides.displayName
+    : runtimeModel;
   const model = {
     id: "model-1",
     vendorId: "vendor-1",
     vendorCode: "openai",
-    name: "gpt-4o-mini",
+    model: runtimeModel,
+    displayName,
+    name: displayName,
     type: "Chat",
     priceIn: "0.1500",
     priceOut: "0.6000",
+    cacheReadPrice: "0.0750",
+    cacheWritePrice: "0.1500",
     status: "active",
     calls: "42",
     description: null,
@@ -89,6 +101,10 @@ function adminModel(overrides: Record<string, unknown> = {}): Record<string, unk
     }
   }
   return model;
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 async function withBackendSdkFetch<T>(
@@ -209,22 +225,180 @@ test("admin model page does not expose unsupported vendor settings action", () =
   assert.doesNotMatch(source, /Vendor settings/);
 });
 
+test("admin model page groups rows by vendor code when persisted vendor ids differ", () => {
+  const source = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/index.tsx"),
+    "utf8",
+  );
+
+  assert.match(source, /modelsForVendor\(models,\s*v\)/);
+  assert.match(source, /modelsForVendor\(models,\s*selectedVendor\)/);
+  assert.doesNotMatch(source, /models\.filter\(m => m\.vendorId === selectedVendorId/);
+  assert.doesNotMatch(source, /models\.filter\(m => m\.vendorId === v\.id/);
+});
+
+test("admin model page visible copy uses the admin model i18n namespace", () => {
+  const source = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/index.tsx"),
+    "utf8",
+  );
+  const i18nSource = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-i18n/src/index.ts"),
+    "utf8",
+  );
+
+  const expectedKeys = [
+    "admin.model.title",
+    "admin.model.subtitle",
+    "admin.model.vendorSidebar.title",
+    "admin.model.search.placeholder",
+    "admin.model.filters.allModalities",
+    "admin.model.filters.modality",
+    "admin.model.filters.llm",
+    "admin.model.filters.image",
+    "admin.model.filters.video",
+    "admin.model.filters.audio",
+    "admin.model.filters.sfx",
+    "admin.model.filters.music",
+    "admin.model.filters.embedding",
+    "admin.model.table.model",
+    "admin.model.table.type",
+    "admin.model.table.price",
+    "admin.model.table.context",
+    "admin.model.table.calls",
+    "admin.model.table.status",
+    "admin.model.table.actions",
+    "admin.model.state.loadingModels",
+    "admin.model.state.modelsLoadError",
+    "admin.model.state.noModels",
+    "admin.model.state.noModelsDescription",
+    "admin.model.state.selectVendor",
+    "admin.model.status.active",
+    "admin.model.status.inactive",
+    "admin.model.pricing.input",
+    "admin.model.pricing.output",
+    "admin.model.pricing.cacheRead",
+    "admin.model.pricing.cacheWrite",
+    "admin.model.pagination.showing",
+    "admin.model.pagination.page",
+    "admin.model.pagination.pageSize",
+    "admin.model.vendorModal.title",
+    "admin.model.vendorModal.vendorBrand",
+    "admin.model.vendorModal.selectPlaceholder",
+    "admin.model.vendorModal.customNamePlaceholder",
+    "admin.model.vendorModal.description",
+    "admin.model.vendorModal.descriptionPlaceholder",
+    "admin.model.modelModal.editTitle",
+    "admin.model.modelModal.connectTitle",
+    "admin.model.modelModal.modelId",
+    "admin.model.modelModal.modelIdPlaceholder",
+    "admin.model.modelModal.modelType",
+    "admin.model.modelModal.contextWindow",
+    "admin.model.modelModal.contextPlaceholder",
+    "admin.model.modelModal.capabilities",
+    "admin.model.modelModal.maxOutputTokens",
+    "admin.model.modelModal.optionalPlaceholder",
+    "admin.model.modelModal.supportedLanguages",
+    "admin.model.modelModal.supportedLanguagesPlaceholder",
+    "admin.model.modelModal.description",
+    "admin.model.modelModal.descriptionPlaceholder",
+    "admin.model.modelModal.capabilityIntro",
+    "admin.model.modelModal.capabilityIntroPlaceholder",
+    "admin.model.modelModal.limitations",
+    "admin.model.modelModal.limitationsPlaceholder",
+    "admin.model.modelModal.useCases",
+    "admin.model.modelModal.useCasesPlaceholder",
+    "admin.model.modelModal.pricingTitle",
+    "admin.model.modelModal.inputUnitPrice",
+    "admin.model.modelModal.outputUnitPrice",
+    "admin.model.modelModal.cacheReadUnitPrice",
+    "admin.model.modelModal.cacheWriteUnitPrice",
+    "admin.model.modelTypes.video",
+    "admin.model.modelTypes.chat",
+    "admin.model.modelTypes.image",
+    "admin.model.modelTypes.audio",
+    "admin.model.modelTypes.music",
+    "admin.model.modelTypes.soundEffect",
+    "admin.model.modelTypes.embedding",
+    "admin.model.delete.title",
+    "admin.model.delete.description",
+    "admin.model.delete.confirm",
+  ];
+
+  for (const key of expectedKeys) {
+    assert.match(source, new RegExp(`t\\('${key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}'`));
+    assert.match(i18nSource, new RegExp(`"${key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"`));
+  }
+
+  for (const literal of [
+    "Model catalog management",
+    "Manage model vendors, model pricing, and routing readiness.",
+    "Model vendors",
+    "Search models for this vendor...",
+    "Ranking refresh runtime",
+    "Add model vendor",
+    "Model ID",
+    "Pricing ($ / 1M units)",
+    "Delete model configuration?",
+  ]) {
+    assert.doesNotMatch(source, new RegExp(escapeRegExp(literal)));
+  }
+});
+
+test("admin model list keeps the price column label and price rows on one line", () => {
+  const source = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/index.tsx"),
+    "utf8",
+  );
+
+  assert.match(source, /const modelPriceColumnClassName = ['"][^'"]*min-w-\[[^\]]+\][^'"]*whitespace-nowrap[^'"]*['"]/);
+  assert.match(source, /<th className=\{modelPriceColumnClassName\}>\{t\('admin\.model\.table\.price'\)\}<\/th>/);
+  assert.match(source, /const modelPricePillClassName = ['"][^'"]*min-w-\[[^\]]+\][^'"]*whitespace-nowrap[^'"]*['"]/);
+  assert.match(source, /<div className=\{modelPricePillClassName\}>/);
+});
+
 test("admin ai model create input does not reuse returned model view model", () => {
   const form = new FormData();
-  form.set("name", " gpt-4o-mini ");
+  form.set("model", " gpt-4o-mini ");
+  form.set("displayName", " GPT-4o mini ");
   form.set("type", "Chat");
-  form.set("priceIn", " 0.1500 ");
-  form.set("priceOut", " 0.6000 ");
+  form.set("priceIn.global", " 0.1500 ");
+  form.set("priceOut.global", " 0.6000 ");
+  form.set("cacheReadPrice.global", " 0.0750 ");
+  form.set("cacheWritePrice.global", " 0.1500 ");
+  form.set("priceIn.cn", " 0.2000 ");
+  form.set("priceOut.cn", " 0.8000 ");
+  form.set("cacheReadPrice.cn", " 0.1000 ");
+  form.set("cacheWritePrice.cn", " 0.2000 ");
   form.set("contextTokens", "128k");
 
   const input = createModelInputFromForm(form, "v_openai");
 
   assert.deepEqual(input, {
     vendorId: "v_openai",
-    name: "gpt-4o-mini",
+    model: "gpt-4o-mini",
+    displayName: "GPT-4o mini",
     type: "Chat",
     priceIn: "0.1500",
     priceOut: "0.6000",
+    cacheReadPrice: "0.0750",
+    cacheWritePrice: "0.1500",
+    regionPrices: [
+      {
+        regionCode: "cn",
+        priceIn: "0.2000",
+        priceOut: "0.8000",
+        cacheReadPrice: "0.1000",
+        cacheWritePrice: "0.2000",
+      },
+      {
+        regionCode: "global",
+        priceIn: "0.1500",
+        priceOut: "0.6000",
+        cacheReadPrice: "0.0750",
+        cacheWritePrice: "0.1500",
+      },
+    ],
     contextTokens: "128k",
     maxOutputTokens: null,
     description: null,
@@ -243,20 +417,31 @@ test("admin ai model create input does not reuse returned model view model", () 
 
 test("admin ai model update input preserves current type marker for partial updates", () => {
   const form = new FormData();
-  form.set("name", " gpt-4o-mini ");
+  form.set("model", " gpt-4o-mini ");
+  form.set("displayName", " ");
   form.set("type", "Chat");
-  form.set("priceIn", " 0.2000 ");
-  form.set("priceOut", " 0.8000 ");
+  form.set("priceIn.global", " 0.2000 ");
+  form.set("priceOut.global", " 0.8000 ");
+  form.set("cacheReadPrice.global", " 0.1000 ");
+  form.set("cacheWritePrice.global", " 0.2000 ");
+  form.set("priceIn.cn", " 0.3000 ");
+  form.set("priceOut.cn", " 0.9000 ");
+  form.set("cacheReadPrice.cn", " 0.1500 ");
+  form.set("cacheWritePrice.cn", " 0.3000 ");
   form.set("contextTokens", "128k");
 
   const input = updateModelInputFromForm(form, "v_openai", {
     id: "model-1",
     vendorId: "v_openai",
     vendorCode: "openai",
-    name: "gpt-4o-mini",
+    model: "gpt-4o-mini",
+    displayName: "GPT-4o mini",
+    name: "GPT-4o mini",
     type: "Chat",
     priceIn: "0.1500",
     priceOut: "0.6000",
+    cacheReadPrice: "0.0750",
+    cacheWritePrice: "0.1500",
     status: "inactive",
     calls: "42",
     description: null,
@@ -282,10 +467,29 @@ test("admin ai model update input preserves current type marker for partial upda
 
   assert.deepEqual(input, {
     vendorId: "v_openai",
-    name: "gpt-4o-mini",
+    model: "gpt-4o-mini",
+    displayName: null,
     type: "Chat",
     priceIn: "0.2000",
     priceOut: "0.8000",
+    cacheReadPrice: "0.1000",
+    cacheWritePrice: "0.2000",
+    regionPrices: [
+      {
+        regionCode: "cn",
+        priceIn: "0.3000",
+        priceOut: "0.9000",
+        cacheReadPrice: "0.1500",
+        cacheWritePrice: "0.3000",
+      },
+      {
+        regionCode: "global",
+        priceIn: "0.2000",
+        priceOut: "0.8000",
+        cacheReadPrice: "0.1000",
+        cacheWritePrice: "0.2000",
+      },
+    ],
     contextTokens: "128k",
     maxOutputTokens: null,
     description: null,
@@ -300,11 +504,36 @@ test("admin ai model update input preserves current type marker for partial upda
   });
 });
 
+test("admin ai model form keeps cache prices optional", () => {
+  const form = new FormData();
+  form.set("model", "gpt-4o-mini");
+  form.set("type", "Chat");
+  form.set("priceIn.global", "0.1500");
+  form.set("priceOut.global", "0.6000");
+  form.set("cacheReadPrice.global", " ");
+  form.set("cacheWritePrice.global", " ");
+  form.set("contextTokens", "128k");
+
+  const input = createModelInputFromForm(form, "v_openai");
+
+  assert.equal(input.cacheReadPrice, "");
+  assert.equal(input.cacheWritePrice, "");
+  assert.deepEqual(input.regionPrices, [
+    {
+      regionCode: "global",
+      priceIn: "0.1500",
+      priceOut: "0.6000",
+      cacheReadPrice: "",
+      cacheWritePrice: "",
+    },
+  ]);
+});
+
 test("admin ai model form rejects missing or unsupported model types", () => {
   const missing = new FormData();
-  missing.set("name", "gpt-4o-mini");
-  missing.set("priceIn", "0.1500");
-  missing.set("priceOut", "0.6000");
+  missing.set("model", "gpt-4o-mini");
+  missing.set("priceIn.global", "0.1500");
+  missing.set("priceOut.global", "0.6000");
 
   assert.throws(
     () => createModelInputFromForm(missing, "v_openai"),
@@ -312,10 +541,10 @@ test("admin ai model form rejects missing or unsupported model types", () => {
   );
 
   const unsupported = new FormData();
-  unsupported.set("name", "gpt-4o-mini");
+  unsupported.set("model", "gpt-4o-mini");
   unsupported.set("type", "Vision");
-  unsupported.set("priceIn", "0.1500");
-  unsupported.set("priceOut", "0.6000");
+  unsupported.set("priceIn.global", "0.1500");
+  unsupported.set("priceOut.global", "0.6000");
 
   assert.throws(
     () => createModelInputFromForm(unsupported, "v_openai"),
@@ -325,16 +554,77 @@ test("admin ai model form rejects missing or unsupported model types", () => {
 
 test("admin ai model form rejects missing context tokens instead of defaulting", () => {
   const form = new FormData();
-  form.set("name", "gpt-4o-mini");
+  form.set("model", "gpt-4o-mini");
   form.set("type", "Chat");
-  form.set("priceIn", "0.1500");
-  form.set("priceOut", "0.6000");
+  form.set("priceIn.global", "0.1500");
+  form.set("priceOut.global", "0.6000");
   form.set("contextTokens", " ");
 
   assert.throws(
     () => createModelInputFromForm(form, "v_openai"),
     /contextTokens is required/,
   );
+});
+
+test("admin model editor creates default mainland China and global pricing regions", () => {
+  const source = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/index.tsx"),
+    "utf8",
+  );
+  const formSource = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/modelForm.ts"),
+    "utf8",
+  );
+  const serviceSource = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/modelService.ts"),
+    "utf8",
+  );
+  const i18nSource = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-i18n/src/index.ts"),
+    "utf8",
+  );
+
+  for (const expected of [
+    "const MODEL_PRICING_REGIONS",
+    "code: 'cn'",
+    "code: 'global'",
+    "formData.get(`priceIn.${regionCode}`)",
+    "formData.get(`priceOut.${regionCode}`)",
+    "formData.get(`cacheReadPrice.${regionCode}`)",
+    "formData.get(`cacheWritePrice.${regionCode}`)",
+  ]) {
+    assert.ok(formSource.includes(expected), `missing region pricing form marker: ${expected}`);
+  }
+
+  for (const expected of [
+    "regionPrices: ModelRegionPriceInput[]",
+    "regionPrices: regionPrices.map",
+  ]) {
+    assert.ok(serviceSource.includes(expected), `missing region pricing service marker: ${expected}`);
+  }
+
+  for (const expected of [
+    "max-w-5xl",
+    "lg:grid-cols-[minmax(0,1fr)_360px]",
+    "admin.model.modelModal.pricingRegionsTitle",
+    "MODEL_PRICING_REGIONS.map",
+    "name={`priceIn.${region.code}`}",
+    "name={`priceOut.${region.code}`}",
+    "name={`cacheReadPrice.${region.code}`}",
+    "name={`cacheWritePrice.${region.code}`}",
+  ]) {
+    assert.ok(source.includes(expected), `missing region pricing modal marker: ${expected}`);
+  }
+
+  for (const key of [
+    "admin.model.modelModal.pricingRegionsTitle",
+    "admin.model.modelModal.pricingRegion.cn",
+    "admin.model.modelModal.pricingRegion.global",
+    "admin.model.modelModal.regionPricingHint",
+  ]) {
+    const occurrences = i18nSource.match(new RegExp(`"${key.replaceAll(".", "\\.")}"`, "g"))?.length ?? 0;
+    assert.equal(occurrences, 2, `expected ${key} to exist in English and Chinese resources`);
+  }
 });
 
 test("admin model service calls generated backend SDK paths and normalizes model catalog data", async () => {
@@ -416,7 +706,8 @@ test("admin model service calls generated backend SDK paths and normalizes model
               id: "model-2",
               vendorId: "vendor-2",
               vendorCode: "anthropic",
-              name: "claude-3-5-sonnet",
+              model: "claude-3-5-sonnet",
+              displayName: "Claude 3.5 Sonnet",
               priceIn: "3",
               priceOut: "15",
               calls: "7",
@@ -442,7 +733,8 @@ test("admin model service calls generated backend SDK paths and normalizes model
             id: "model-3",
             vendorId: "vendor-3",
             vendorCode: "custom-ai",
-            name: "custom/model-v1",
+            model: "custom/model-v1",
+            displayName: "Custom model v1",
             type: "Embedding",
             priceIn: "0.01",
             priceOut: "0.02",
@@ -464,7 +756,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
             id: "model-3",
             vendorId: "vendor-3",
             vendorCode: "custom-ai",
-            name: "custom/model-v2",
+            model: "custom/model-v2",
             type: "Embedding",
             priceIn: "0.03",
             priceOut: "0.04",
@@ -497,7 +789,8 @@ test("admin model service calls generated backend SDK paths and normalizes model
       });
       const model = await ModelService.addModel({
         vendorId: "vendor-3",
-        name: "custom/model-v1",
+        model: "custom/model-v1",
+        displayName: "Custom model v1",
         type: "Embedding",
         priceIn: "0.01",
         priceOut: "0.02",
@@ -505,7 +798,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
       });
       const updated = await ModelService.updateModel("model-3", {
         vendorId: "vendor-3",
-        name: "custom/model-v2",
+        model: "custom/model-v2",
         type: "Embedding",
         currentType: "Embedding",
         priceIn: "0.03",
@@ -527,6 +820,8 @@ test("admin model service calls generated backend SDK paths and normalizes model
       assert.equal(synced.requestedCatalogVersion, "2026.05.08.1");
       assert.equal(synced.catalogRoot, null);
       assert.deepEqual(synced.vendorCodes, ["anthropic"]);
+      assert.equal(synced.models[0].model, "claude-3-5-sonnet");
+      assert.equal(synced.models[0].displayName, "Claude 3.5 Sonnet");
       assert.equal(
         synced.sourceHash,
         "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
@@ -545,6 +840,10 @@ test("admin model service calls generated backend SDK paths and normalizes model
       assert.equal(synced.models[0].contextTokens, 200000);
       assert.equal(vendor.id, "vendor-3");
       assert.equal(model.type, "Embedding");
+      assert.equal(model.model, "custom/model-v1");
+      assert.equal(model.displayName, "Custom model v1");
+      assert.equal(updated.model, "custom/model-v2");
+      assert.equal(updated.displayName, "custom/model-v2");
       assert.equal(updated.name, "custom/model-v2");
       assert.equal(deleted, true);
       assert.deepEqual(
@@ -568,10 +867,18 @@ test("admin model service calls generated backend SDK paths and normalizes model
       });
       assert.deepEqual(JSON.parse(captured[5].body), {
         vendorId: "vendor-3",
-        name: "custom/model-v1",
+        model: "custom/model-v1",
+        displayName: "Custom model v1",
         type: "Embedding",
         priceIn: "0.01",
         priceOut: "0.02",
+        regionPrices: [
+          {
+            regionCode: "global",
+            priceIn: "0.01",
+            priceOut: "0.02",
+          },
+        ],
         contextTokens: "32k",
         modalities: ["embedding"],
         inputModalities: ["text"],
@@ -586,9 +893,16 @@ test("admin model service calls generated backend SDK paths and normalizes model
       });
       assert.deepEqual(JSON.parse(captured[6].body), {
         vendorId: "vendor-3",
-        name: "custom/model-v2",
+        model: "custom/model-v2",
         priceIn: "0.03",
         priceOut: "0.04",
+        regionPrices: [
+          {
+            regionCode: "global",
+            priceIn: "0.03",
+            priceOut: "0.04",
+          },
+        ],
         contextTokens: "64k",
       });
       assert.equal(captured[3].headers["x-request-id"]?.startsWith("admin-model-catalog-sync-"), true);
@@ -647,7 +961,7 @@ test("admin model service initializes empty catalog through generated backend SD
               id: "model-openai-gpt-4o-mini",
               vendorId: "vendor-openai",
               vendorCode: "openai",
-              name: "gpt-4o-mini",
+              model: "gpt-4o-mini",
             }),
           ],
         };
@@ -1077,6 +1391,43 @@ test("admin model list keeps backend calls when ranking summary is malformed", a
   );
 });
 
+test("admin model list keeps catalog rows when one pricing side is not available", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ai/models" && method === "GET") {
+        return {
+          items: [
+            adminModel({
+              name: "text-embedding-3-small",
+              type: "Embedding",
+              modalities: ["embedding"],
+              inputModalities: ["text"],
+              outputModalities: ["embedding"],
+              priceOut: "",
+              supportsStreaming: false,
+              supportsTools: false,
+              supportsJsonSchema: false,
+            }),
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/ai/model_rankings?limit=200" && method === "GET") {
+        return { items: [] };
+      }
+      throw new Error(`Unexpected SDK request ${method} ${url}`);
+    },
+    async () => {
+      const models = await ModelService.fetchModels();
+
+      assert.equal(models.length, 1);
+      assert.equal(models[0].name, "text-embedding-3-small");
+      assert.equal(models[0].priceIn, "0.1500");
+      assert.equal(models[0].priceOut, "");
+    },
+  );
+});
+
 test("admin model service rejects invalid commands before calling generated backend SDK", async () => {
   await withBackendSdkFetch(
     () => {
@@ -1097,13 +1448,13 @@ test("admin model service rejects invalid commands before calling generated back
         () =>
           ModelService.addModel({
             vendorId: "vendor-1",
-            name: "gpt 4",
+            model: "gpt 4",
             type: "Chat",
             priceIn: "0.1",
             priceOut: "0.2",
             contextTokens: "8k",
           }),
-        /name must use ASCII/,
+        /model must use ASCII/,
       );
       await assert.rejects(
         () =>
@@ -1367,7 +1718,7 @@ test("admin model list fails closed when backend returns unsupported model types
 test("admin model list fails closed when backend omits required model fields", async () => {
   const cases: Array<[string, RegExp]> = [
     ["vendorCode", /Model vendor code is required/],
-    ["name", /Model name is required/],
+    ["model", /Model model is required/],
     ["priceIn", /Model input price is required/],
     ["priceOut", /Model output price is required/],
     ["status", /Model status is required/],
@@ -1599,4 +1950,152 @@ test("admin model catalog sync rejects fractional fact counters", async () => {
       );
     },
   );
+});
+
+test("admin model table fills the available admin viewport", () => {
+  const source = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/index.tsx"),
+    "utf8",
+  );
+
+  for (const expected of [
+    "AdminTableShell",
+    "data-admin-model-table-card",
+    "data-admin-model-table-viewport",
+    "flex min-h-0 flex-1 flex-col",
+    "sticky top-0 z-10",
+  ]) {
+    assert.ok(source.includes(expected), `missing adaptive admin model table marker: ${expected}`);
+  }
+});
+
+test("admin model right pane stays as a paginated table list", () => {
+  const source = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/index.tsx"),
+    "utf8",
+  );
+
+  for (const expected of [
+    "BottomPagination",
+    "data-admin-model-pagination",
+    "const [page, setPage] = useState(1)",
+    "const [pageSize, setPageSize] = useState(20)",
+    "const paginatedVendorModels = vendorModels.slice",
+    "paginatedVendorModels.map",
+    "footer={(",
+  ]) {
+    assert.ok(source.includes(expected), `missing model table pagination marker: ${expected}`);
+  }
+
+  assert.match(source, /itemCount=\{paginatedVendorModels\.length\}/);
+  assert.match(source, /onPageSizeChange=\{\(nextPageSize\) => \{/);
+  assert.doesNotMatch(source, /renderRankingRefreshDiagnostics\(\)/);
+  assert.doesNotMatch(source, /w-14 h-14 rounded-xl \$\{selectedVendor\.color\}/);
+});
+
+test("admin model table supports multi-select modality filtering before pagination", () => {
+  const source = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/index.tsx"),
+    "utf8",
+  );
+
+  for (const expected of [
+    "type ModelModalityFilter = Model['type']",
+    "const modelModalityFilterOptions",
+    "const [modalityFilters, setModalityFilters] = useState<ModelModalityFilter[]>([])",
+    "modalityFilters.includes(m.type)",
+    "[selectedVendorId, search, modalityFilters]",
+    "data-admin-model-modality-filter",
+    "data-admin-model-modality-filter-option",
+    "data-admin-model-modality-filter-clear",
+    "toggleModalityFilter(option.value)",
+    "setModalityFilters([])",
+    "admin.model.filters.allModalities",
+    "admin.model.filters.modality",
+  ]) {
+    assert.ok(source.includes(expected), `missing model modality filter marker: ${expected}`);
+  }
+
+  for (const optionValue of ["Chat", "Image", "Video", "Audio", "SoundEffect", "Music", "Embedding"]) {
+    assert.match(source, new RegExp(`value: '${optionValue}'`));
+  }
+});
+
+test("admin model editor supports cache read and write prices", () => {
+  const source = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/index.tsx"),
+    "utf8",
+  );
+  const serviceSource = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/modelService.ts"),
+    "utf8",
+  );
+  const formSource = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/modelForm.ts"),
+    "utf8",
+  );
+
+  for (const expected of [
+    "cacheReadPrice: string",
+    "cacheWritePrice: string",
+    "cacheReadPrice: optionalDecimalAmount(model.cacheReadPrice, 'cacheReadPrice')",
+    "cacheWritePrice: optionalDecimalAmount(model.cacheWritePrice, 'cacheWritePrice')",
+    "readRequiredStringField(item, 'cacheReadPrice'",
+    "readRequiredStringField(item, 'cacheWritePrice'",
+  ]) {
+    assert.ok(serviceSource.includes(expected), `missing service cache price marker: ${expected}`);
+  }
+
+  for (const expected of [
+    "cacheReadPrice: readOptionalDecimalText(formData.get('cacheReadPrice'))",
+    "cacheWritePrice: readOptionalDecimalText(formData.get('cacheWritePrice'))",
+  ]) {
+    assert.ok(formSource.includes(expected), `missing form cache price marker: ${expected}`);
+  }
+
+  for (const expected of [
+    "admin.model.pricing.cacheRead",
+    "admin.model.pricing.cacheWrite",
+    "admin.model.modelModal.cacheReadUnitPrice",
+    "admin.model.modelModal.cacheWriteUnitPrice",
+    "name={`cacheReadPrice.${region.code}`}",
+    "name={`cacheWritePrice.${region.code}`}",
+    "defaultValue={region.code === 'global' ? editingModel?.cacheReadPrice ?? '' : ''}",
+    "defaultValue={region.code === 'global' ? editingModel?.cacheWritePrice ?? '' : ''}",
+    "formatPrice(m.cacheReadPrice)",
+    "formatPrice(m.cacheWritePrice)",
+  ]) {
+    assert.ok(source.includes(expected), `missing editor cache price marker: ${expected}`);
+  }
+});
+
+test("admin model editor uses six-decimal pricing precision", () => {
+  const source = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/index.tsx"),
+    "utf8",
+  );
+
+  const sixDecimalPriceInputs = source.match(/step="0\.000001"/g) ?? [];
+  assert.equal(sixDecimalPriceInputs.length, 4);
+  assert.doesNotMatch(source, /step="0\.0001"/);
+});
+
+test("admin model modality filter closes when clicking outside", () => {
+  const source = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/index.tsx"),
+    "utf8",
+  );
+
+  for (const expected of [
+    "const modalityFilterRef = useRef<HTMLDivElement | null>(null)",
+    "if (!isModalityFilterOpen) {",
+    "const handlePointerDown = (event: PointerEvent) => {",
+    "modalityFilterRef.current.contains(target)",
+    "setIsModalityFilterOpen(false)",
+    "document.addEventListener('pointerdown', handlePointerDown)",
+    "document.removeEventListener('pointerdown', handlePointerDown)",
+    "ref={modalityFilterRef}",
+  ]) {
+    assert.ok(source.includes(expected), `missing outside-click modality filter marker: ${expected}`);
+  }
 });

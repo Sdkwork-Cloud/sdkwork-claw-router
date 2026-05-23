@@ -38,7 +38,6 @@ data class AiModelRecord(
     val performanceProfile: Map<String, String>? = null,
     val providerHint: String? = null,
     val rankScore: String? = null,
-    val regionCode: String? = null,
     val releaseStage: String? = null,
     val replacementModel: String? = null,
     val retiredAt: String? = null,

@@ -158,6 +158,106 @@ fn resolves_upstream_cost_for_the_selected_provider_channel() {
 }
 
 #[test]
+fn regional_catalog_key_resolves_only_that_regions_price_stack() {
+    let mut catalog = InMemoryPricingCatalog::default();
+    catalog.add_vendor(ModelVendorDefinition::new(
+        "minimax",
+        ModelVendor::Unknown,
+        "MiniMax",
+    ));
+    catalog.add_model(
+        AiModel::new("MiniMax-M2.7", "MiniMax M2.7", "minimax", vec!["chat"])
+            .with_catalog_key("minimax/MiniMax-M2.7"),
+    );
+    catalog.add_plan(PricingPlan::new(
+        "standard",
+        PriceSide::OfficialReference,
+        DecimalValue::parse("1.000000").unwrap(),
+        Money::usd("0.000000").unwrap(),
+    ));
+    catalog.add_api_key_group(ApiKeyGroup::new(
+        10,
+        "standard-group",
+        "standard",
+        DecimalValue::parse("1.000000").unwrap(),
+        DecimalValue::parse("1.000000").unwrap(),
+    ));
+    catalog.add_api_key(GatewayApiKey::new(100, 10, "sk-test", "hash:sk-test"));
+    catalog.add_provider_route(ModelProviderRoute::new_for_catalog_key(
+        "minimax/cn/MiniMax-M2.7",
+        "MiniMax-M2.7",
+        "minimax_cn_direct",
+        3001,
+        "MiniMax-M2.7",
+    ));
+    catalog.add_provider_route(ModelProviderRoute::new_for_catalog_key(
+        "minimax/global/MiniMax-M2.7",
+        "MiniMax-M2.7",
+        "minimax_global_direct",
+        3002,
+        "MiniMax-M2.7",
+    ));
+    catalog.add_price(ModelPrice::new_for_catalog_key(
+        "minimax/cn/MiniMax-M2.7",
+        "MiniMax-M2.7",
+        PriceSide::OfficialReference,
+        BillingMeter::LlmInputToken,
+        Money::new("CNY", "0.210000").unwrap(),
+    ));
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "minimax/cn/MiniMax-M2.7",
+            "MiniMax-M2.7",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::new("CNY", "0.150000").unwrap(),
+        )
+        .for_provider("minimax_cn_direct", 3001),
+    );
+    catalog.add_price(ModelPrice::new_for_catalog_key(
+        "minimax/global/MiniMax-M2.7",
+        "MiniMax-M2.7",
+        PriceSide::OfficialReference,
+        BillingMeter::LlmInputToken,
+        Money::usd("0.030000").unwrap(),
+    ));
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "minimax/global/MiniMax-M2.7",
+            "MiniMax-M2.7",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::usd("0.020000").unwrap(),
+        )
+        .for_provider("minimax_global_direct", 3002),
+    );
+
+    let resolved = PricingResolver::new(&catalog)
+        .resolve(ResolveModelPriceQuery {
+            api_key_id: 100,
+            model: "minimax/cn/MiniMax-M2.7".to_owned(),
+            billing_meter: BillingMeter::LlmInputToken,
+            provider_code: Some("minimax_cn_direct".to_owned()),
+            channel_id: Some(3001),
+        })
+        .unwrap();
+
+    assert_eq!("CNY", resolved.official_reference.unit_price.currency);
+    assert_eq!(
+        "0.210000",
+        resolved.official_reference.unit_price.to_fixed_string(6)
+    );
+    assert_eq!(
+        "0.150000",
+        resolved
+            .upstream_cost
+            .unwrap()
+            .unit_price
+            .to_fixed_string(6)
+    );
+}
+
+#[test]
 fn rejects_selected_channel_that_is_not_a_provider_route_for_the_model() {
     let mut catalog = catalog_with_openai_model();
     catalog.add_price(

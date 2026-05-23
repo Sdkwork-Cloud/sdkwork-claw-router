@@ -4,6 +4,5 @@ package types
 type DashboardAdminOverviewRetrieveResult struct {
 	Code string `json:"code"`
 	Data AdminDashboardDataResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

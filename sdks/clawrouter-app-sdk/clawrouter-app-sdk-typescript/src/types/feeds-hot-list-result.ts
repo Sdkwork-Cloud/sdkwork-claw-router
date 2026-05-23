@@ -7,7 +7,5 @@ export interface FeedsHotListResult {
   /** Data field on feeds hot list result. */
   data?: ForumFeedItemList;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

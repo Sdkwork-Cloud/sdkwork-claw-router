@@ -63,7 +63,7 @@ where
                 "invalid_request",
                 "invalid_request_error",
                 error,
-            )
+            );
         }
     };
     if let Err(response) = authenticate(&state, &identity) {
@@ -99,7 +99,7 @@ where
                 "invalid_request",
                 "invalid_request_error",
                 error,
-            )
+            );
         }
     };
     if let Err(response) = authenticate(&state, &identity) {

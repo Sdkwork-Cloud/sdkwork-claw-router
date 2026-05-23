@@ -29,18 +29,20 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? RequestId { get; set; }
         public string? RetentionUntil { get; set; }
         public string? RunId { get; set; }
+        public string? RuntimeInvocationId { get; set; }
         public string? SkillId { get; set; }
         public string? StartedAt { get; set; }
         public string? Status { get; set; }
         public int? StepIndex { get; set; }
-        public string? StepStatus { get; set; }
         public string? StepType { get; set; }
         public string? TenantId { get; set; }
         public string? Title { get; set; }
         public string? ToolBindingId { get; set; }
+        public string? ToolName { get; set; }
         public string? TotalTokens { get; set; }
         public string? TraceId { get; set; }
         public string? UsageFactId { get; set; }
+        public Dictionary<string, string>? UsageJson { get; set; }
         public string? UserId { get; set; }
         public string? Uuid { get; set; }
         public string? VideoSeconds { get; set; }

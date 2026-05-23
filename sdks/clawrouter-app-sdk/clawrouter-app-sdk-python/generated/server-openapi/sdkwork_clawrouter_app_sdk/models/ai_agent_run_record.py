@@ -7,6 +7,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 class AiAgentRunRecord:
     """Ai agent run record schema exposed by Claw Router."""
     agent_id: Optional[str] = None
+    agent_session_id: Optional[str] = None
     agent_version_id: Optional[str] = None
     audio_seconds: Optional[str] = None
     cached_tokens: Optional[str] = None
@@ -21,8 +22,10 @@ class AiAgentRunRecord:
     image_count: Optional[str] = None
     input_message: Optional[str] = None
     legal_hold: Optional[bool] = None
+    memory_space_id: Optional[str] = None
     metadata: Optional[Dict[str, str]] = None
     metering_status: Optional[str] = None
+    model: Optional[str] = None
     organization_id: Optional[str] = None
     output_message: Optional[str] = None
     payload_hash: Optional[str] = None
@@ -30,8 +33,8 @@ class AiAgentRunRecord:
     prompt_tokens: Optional[str] = None
     request_id: Optional[str] = None
     retention_until: Optional[str] = None
-    run_status: Optional[str] = None
     run_uuid: Optional[str] = None
+    runtime: Optional[str] = None
     source_surface: Optional[str] = None
     started_at: Optional[str] = None
     status: Optional[str] = None
@@ -41,6 +44,7 @@ class AiAgentRunRecord:
     total_tokens: Optional[str] = None
     trace_id: Optional[str] = None
     usage_fact_id: Optional[str] = None
+    usage_json: Optional[Dict[str, str]] = None
     user_id: Optional[str] = None
     uuid: Optional[str] = None
     video_seconds: Optional[str] = None

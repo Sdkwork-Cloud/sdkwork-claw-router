@@ -1,0 +1,846 @@
+fragment: operations/backend-router
+frontend_operations:
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  operation: fetchGroups
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/router/access_groups
+  read_sources:
+  - iam_gateway_api_key_group
+  - iam_gateway_api_key_group_metric_snapshot
+  - ai_pricing_plan
+  query_parameters: []
+  response_schema:
+    name: AdminAccessGroupsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminAccessGroupItem
+          type: object
+          additionalProperties: false
+          required: &id001
+          - id
+          - name
+          - platform
+          - billingType
+          - rateMultiplier
+          - type
+          - accountCount
+          - capacity
+          - usage
+          - status
+          properties: &id002
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            name:
+              type: string
+              minLength: 1
+              maxLength: 128
+            platform:
+              type: string
+              minLength: 1
+              maxLength: 64
+            billingType:
+              type: string
+              enum:
+              - standard
+              - subscription
+            rateMultiplier:
+              type: number
+              minimum: 0.01
+              maximum: 100
+            type:
+              type: string
+              enum:
+              - public
+              - dedicated
+            accountCount:
+              name: AdminCountPair
+              type: object
+              additionalProperties: false
+              required:
+              - available
+              - total
+              properties:
+                available:
+                  type: number
+                  minimum: 0
+                total:
+                  type: number
+                  minimum: 0
+            capacity:
+              name: AdminCapacityPair
+              type: object
+              additionalProperties: false
+              required:
+              - used
+              - total
+              properties:
+                used:
+                  type: number
+                  minimum: 0
+                total:
+                  type: number
+                  minimum: 0
+            usage:
+              name: AdminUsagePair
+              type: object
+              additionalProperties: false
+              required:
+              - today
+              - total
+              properties:
+                today:
+                  type: number
+                  minimum: 0
+                total:
+                  type: number
+                  minimum: 0
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  operation: addGroup
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/router/access_groups
+  read_sources:
+  - iam_gateway_api_key_group
+  - ai_pricing_plan
+  write_tables:
+  - iam_gateway_api_key_group
+  - ai_pricing_plan_binding
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminAccessGroupCreateRequest
+    required:
+    - name
+    properties:
+      name:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: Access group display name.
+      platform:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9_-]+$
+        description: Normalized upstream platform code.
+      billingType:
+        type: string
+        enum:
+        - standard
+        - subscription
+        description: Billing contract attached to the access group.
+      rateMultiplier:
+        type: number
+        minimum: 0.01
+        maximum: 100
+        description: Customer rate multiplier rounded to six decimals.
+      type:
+        type: string
+        enum:
+        - public
+        - dedicated
+        description: Access group allocation mode.
+      capacity:
+        type: object
+        additionalProperties: false
+        properties:
+          total:
+            type: number
+            minimum: 0
+            maximum: 1000000000
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+  response_schema:
+    name: AdminAccessGroupMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAccessGroupItem
+        type: object
+        additionalProperties: false
+        required: *id001
+        properties: *id002
+        description: Persisted access group snapshot returned by the backend.
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  operation: updateGroup
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/router/access_groups/{groupId}
+  read_sources:
+  - iam_gateway_api_key_group
+  - ai_pricing_plan
+  write_tables:
+  - iam_gateway_api_key_group
+  - ai_pricing_plan_binding
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminAccessGroupUpdateRequest
+    required: []
+    properties:
+      name:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: Access group display name.
+      platform:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9_-]+$
+        description: Normalized upstream platform code.
+      billingType:
+        type: string
+        enum:
+        - standard
+        - subscription
+        description: Billing contract attached to the access group.
+      rateMultiplier:
+        type: number
+        minimum: 0.01
+        maximum: 100
+        description: Customer rate multiplier rounded to six decimals.
+      type:
+        type: string
+        enum:
+        - public
+        - dedicated
+        description: Access group allocation mode.
+      capacity:
+        type: object
+        additionalProperties: false
+        properties:
+          total:
+            type: number
+            minimum: 0
+            maximum: 1000000000
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+  response_schema:
+    name: AdminAccessGroupMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAccessGroupItem
+        type: object
+        additionalProperties: false
+        required: *id001
+        properties: *id002
+        description: Persisted access group snapshot returned by the backend.
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  operation: deleteGroup
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/router/access_groups/{groupId}
+  read_sources:
+  - iam_gateway_api_key_group
+  write_tables:
+  - iam_gateway_api_key_group
+  - ai_pricing_plan_binding
+  - ops_audit_log
+  response_schema: &id008
+    name: AdminDeleteResponse
+    type: object
+    additionalProperties: false
+    required:
+    - deleted
+    properties:
+      deleted:
+        type: boolean
+- route: /admin/monitor
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-monitor/src/monitorService.ts
+  operation: fetchNodes
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/router/monitor/nodes
+  read_sources:
+  - ops_gateway_instance
+  - ops_gateway_heartbeat
+  query_parameters: []
+  response_schema:
+    name: AdminMonitorNodesResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminMonitorNodeItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - name
+          - region
+          - status
+          - cpu
+          - memory
+          - uptime
+          - ip
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            name:
+              type: string
+              minLength: 1
+              maxLength: 128
+            region:
+              type: string
+              minLength: 1
+              maxLength: 128
+            status:
+              type: string
+              enum:
+              - online
+              - warning
+              - offline
+            cpu:
+              type: number
+              minimum: 0
+            memory:
+              type: number
+              minimum: 0
+            uptime:
+              type: string
+              minLength: 1
+              maxLength: 64
+            ip:
+              type: string
+              minLength: 1
+              maxLength: 128
+- route: /admin/monitor
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-monitor/src/monitorService.ts
+  operation: fetchAlerts
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/router/monitor/alerts
+  read_sources:
+  - ops_alert_event
+  query_parameters: []
+  response_schema:
+    name: AdminMonitorAlertsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminMonitorAlertItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - severity
+          - title
+          - message
+          - time
+          - status
+          - source
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            severity:
+              type: string
+              enum:
+              - critical
+              - warning
+              - info
+            title:
+              type: string
+              minLength: 1
+              maxLength: 200
+            message:
+              type: string
+              minLength: 1
+              maxLength: 1000
+            time:
+              type: string
+              minLength: 1
+              maxLength: 64
+            status:
+              type: string
+              enum:
+              - active
+              - resolved
+            source:
+              type: string
+              minLength: 1
+              maxLength: 128
+- route: /admin/monitor
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-monitor/src/monitorService.ts
+  operation: fetchPerformanceData
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/router/monitor/performance
+  read_sources:
+  - ops_metric_snapshot
+  query_parameters: []
+  response_schema:
+    name: AdminMonitorPerformanceResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminMonitorPerformanceItem
+          type: object
+          additionalProperties: false
+          required:
+          - time
+          - cpu
+          - memory
+          - network
+          properties:
+            time:
+              type: string
+              minLength: 1
+              maxLength: 64
+            cpu:
+              type: number
+              minimum: 0
+            memory:
+              type: number
+              minimum: 0
+            network:
+              type: number
+              minimum: 0
+- route: /admin/ratelimit
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  operation: fetchIpLimits
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/router/rate_limits/ip
+  read_sources:
+  - iam_gateway_risk_rule
+  query_parameters: []
+  response_schema:
+    name: AdminIpLimitsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items: &id005
+          name: AdminRateLimitItem
+          type: object
+          additionalProperties: false
+          required: &id003
+          - id
+          properties: &id004
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            ruleName:
+              type: string
+              maxLength: 128
+            targetIp:
+              type: string
+              maxLength: 256
+            keyPrefix:
+              type: string
+              maxLength: 128
+            user:
+              type: string
+              maxLength: 128
+            model:
+              type: string
+              maxLength: 128
+            group:
+              type: string
+              maxLength: 128
+            rps:
+              type: integer
+              minimum: 0
+            rpm:
+              type: integer
+              minimum: 0
+            rpd:
+              type: integer
+              minimum: 0
+            tpm:
+              type: integer
+              minimum: 0
+            burst:
+              type: integer
+              minimum: 0
+            blockDuration:
+              type: string
+              maxLength: 64
+            status:
+              type: string
+              enum:
+              - active
+              - inactive
+              - exhausted
+- route: /admin/ratelimit
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  operation: addIpLimit
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/router/rate_limits/ip
+  read_sources:
+  - iam_gateway_risk_rule
+  write_tables:
+  - iam_gateway_risk_rule
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminIpLimitCreateRequest
+    required:
+    - ruleName
+    - targetIp
+    - rps
+    - rpm
+    - blockDuration
+    properties:
+      ruleName:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: Human-readable IP rate limit rule name.
+      targetIp:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: IP address, CIDR block, or gateway-recognized IP target expression.
+      rps:
+        type: integer
+        minimum: 1
+        maximum: 1000000
+        description: Maximum requests per second for the target.
+      rpm:
+        type: integer
+        minimum: 1
+        maximum: 60000000
+        description: Maximum requests per minute for the target.
+      blockDuration:
+        type: string
+        minLength: 1
+        maxLength: 64
+        description: Gateway block duration label or duration expression.
+      status:
+        type: string
+        enum:
+        - active
+        - inactive
+  response_schema:
+    name: AdminRateLimitMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminRateLimitItem
+        type: object
+        additionalProperties: false
+        required: *id003
+        properties: *id004
+        description: Persisted rate limit rule snapshot returned by the backend.
+- route: /admin/ratelimit
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  operation: fetchTokenLimits
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/router/rate_limits/api_keys
+  read_sources:
+  - ai_quota_policy
+  - iam_gateway_api_key
+  query_parameters: []
+  response_schema:
+    name: AdminTokenLimitsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items: *id005
+- route: /admin/ratelimit
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  operation: addTokenLimit
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/router/rate_limits/api_keys
+  read_sources:
+  - ai_quota_policy
+  - iam_gateway_api_key
+  write_tables:
+  - ai_quota_policy
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminTokenLimitCreateRequest
+    required:
+    - keyPrefix
+    - user
+    - rps
+    - rpd
+    - burst
+    properties:
+      keyPrefix:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: Masked API key prefix or gateway key selector.
+      user:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: User identifier or display name attached to the token limit rule.
+      rps:
+        type: integer
+        minimum: 1
+        maximum: 1000000
+        description: Maximum requests per second for the API key.
+      rpd:
+        type: integer
+        minimum: 1
+        maximum: 1000000000
+        description: Maximum requests per day for the API key.
+      burst:
+        type: integer
+        minimum: 1
+        maximum: 1000000
+        description: Allowed short-term burst capacity.
+      status:
+        type: string
+        enum:
+        - active
+        - exhausted
+  response_schema:
+    name: AdminRateLimitMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminRateLimitItem
+        type: object
+        additionalProperties: false
+        required: *id003
+        properties: *id004
+        description: Persisted rate limit rule snapshot returned by the backend.
+- route: /admin/ratelimit
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  operation: fetchModelLimits
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/router/rate_limits/models
+  read_sources:
+  - ai_quota_policy
+  - iam_gateway_api_key_group
+  query_parameters: []
+  response_schema:
+    name: AdminModelLimitsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items: *id005
+- route: /admin/ratelimit
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  operation: addModelLimit
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/router/rate_limits/models
+  read_sources:
+  - ai_quota_policy
+  - iam_gateway_api_key_group
+  write_tables:
+  - ai_quota_policy
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminModelLimitCreateRequest
+    required:
+    - model
+    - group
+    - rpm
+    - tpm
+    properties:
+      model:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: AI model identifier.
+      group:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: Access group or quota group identifier.
+      rpm:
+        type: integer
+        minimum: 1
+        maximum: 60000000
+        description: Maximum requests per minute for the model and group.
+      tpm:
+        type: integer
+        minimum: 1
+        maximum: 1000000000
+        description: Maximum tokens per minute for the model and group.
+      status:
+        type: string
+        enum:
+        - active
+        - inactive
+  response_schema:
+    name: AdminRateLimitMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminRateLimitItem
+        type: object
+        additionalProperties: false
+        required: *id003
+        properties: *id004
+        description: Persisted rate limit rule snapshot returned by the backend.
+- route: /admin/ratelimit
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  operation: fetchFirewalls
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/router/firewall/rules
+  read_sources:
+  - iam_gateway_risk_rule
+  query_parameters: []
+  response_schema:
+    name: AdminFirewallRulesResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminFirewallItem
+          type: object
+          additionalProperties: false
+          required: &id006
+          - id
+          - type
+          - value
+          - reason
+          - time
+          properties: &id007
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            type:
+              type: string
+              minLength: 1
+              maxLength: 64
+            value:
+              type: string
+              minLength: 1
+              maxLength: 256
+            reason:
+              type: string
+              minLength: 1
+              maxLength: 512
+            time:
+              type: string
+              minLength: 1
+              maxLength: 64
+- route: /admin/ratelimit
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  operation: addFirewall
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/router/firewall/rules
+  read_sources:
+  - iam_gateway_risk_rule
+  write_tables:
+  - iam_gateway_risk_rule
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminFirewallRuleCreateRequest
+    required:
+    - type
+    - value
+    - reason
+    properties:
+      type:
+        type: string
+        minLength: 1
+        maxLength: 64
+        description: Firewall rule category.
+      value:
+        type: string
+        minLength: 1
+        maxLength: 256
+        description: IP address, CIDR block, domain, or request target expression.
+      reason:
+        type: string
+        minLength: 1
+        maxLength: 512
+        description: Operator-provided reason for audit records.
+  response_schema:
+    name: AdminFirewallMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminFirewallItem
+        type: object
+        additionalProperties: false
+        required: *id006
+        properties: *id007
+        description: Persisted firewall rule snapshot returned by the backend.
+- route: /admin/ratelimit
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  operation: removeFirewall
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/router/firewall/rules/{ruleId}
+  read_sources:
+  - iam_gateway_risk_rule
+  write_tables:
+  - iam_gateway_risk_rule
+  - ops_audit_log
+  response_schema: *id008

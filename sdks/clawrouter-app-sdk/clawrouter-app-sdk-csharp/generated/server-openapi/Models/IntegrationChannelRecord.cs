@@ -8,7 +8,7 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public string? AccessType { get; set; }
         public string? AccountId { get; set; }
-        public string? BaseUrlOverride { get; set; }
+        public string? BaseUrl { get; set; }
         public Dictionary<string, string>? Capabilities { get; set; }
         public string? ChannelCode { get; set; }
         public Dictionary<string, string>? CircuitBreakerPolicy { get; set; }

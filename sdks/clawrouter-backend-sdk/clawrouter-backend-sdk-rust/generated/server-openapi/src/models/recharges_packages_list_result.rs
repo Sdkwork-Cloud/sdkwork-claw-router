@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{RechargePackage};
+use crate::models::{CommerceStandardCollectionResponse};
 
 /// Recharges packages list result schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -10,13 +10,9 @@ pub struct RechargesPackagesListResult {
 
     /// Data field on recharges packages list result.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub data: Option<Vec<RechargePackage>>,
+    pub data: Option<CommerceStandardCollectionResponse>,
 
     /// Human-readable response message.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub message: Option<String>,
-
-    /// Java-compatible response message field.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub msg: Option<String>,
 }

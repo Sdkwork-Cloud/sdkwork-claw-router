@@ -69,7 +69,7 @@ http://127.0.0.1:3900/console
 - `/console/providers`：供应商和模型配置。
 - `/console/routing`：路由策略。
 - `/console/usage`：调用记录。
-- `/console/billing`、`/console/account`：账务和账户。
+- `/console/commerce`、`/console/account`：账务和账户。
 
 ## 5. 调用 Gateway API
 

@@ -7,7 +7,5 @@ export interface FeedsCollectionsCurrentDeleteResult {
   /** Data field on feeds collections current delete result. */
   data?: ForumFeedItem;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

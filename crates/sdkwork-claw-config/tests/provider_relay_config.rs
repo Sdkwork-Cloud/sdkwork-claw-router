@@ -1,7 +1,13 @@
 use sdkwork_claw_config::{
-    ProviderPassthroughAuth, ProviderPassthroughAuthType, ProviderPassthroughHeader,
-    ProviderRelayConfig, ProviderSecretMapConfig, RuntimeTomlConfig,
+    ProviderAdapterConfig, ProviderAdapterManifestDiscoveryConfig, ProviderPassthroughAuth,
+    ProviderPassthroughAuthType, ProviderPassthroughHeader, ProviderRelayConfig,
+    ProviderSecretMapConfig, RuntimeTomlConfig,
 };
+use sdkwork_claw_provider_adapter_contract::{
+    AdapterInvocationShape, AdapterKind, AdapterRouteStatus, ProviderAdapterEndpointManifest,
+    ProviderAdapterManifest, ProviderAdapterProviderManifest,
+};
+use std::sync::{Mutex, OnceLock};
 
 #[test]
 fn parses_optional_openai_relay_config_without_leaking_secret() {
@@ -295,6 +301,7 @@ fn missing_openai_relay_config_keeps_relay_unset() {
 
 #[test]
 fn from_env_accepts_provider_native_passthrough_without_openai_relay_env() {
+    let _env_lock = env_lock().lock().unwrap();
     std::env::remove_var(ProviderRelayConfig::ENV_OPENAI_RELAY_BASE_URL);
     std::env::remove_var(ProviderRelayConfig::ENV_OPENAI_RELAY_BEARER_TOKEN);
     std::env::set_var(
@@ -358,6 +365,544 @@ fn parses_provider_secret_map_without_leaking_secret_values() {
     assert!(!format!("{config:?}").contains("sk-provider-token"));
     assert!(!format!("{config:?}").contains("sk-local-token"));
     assert!(!format!("{config:?}").contains("bearer_tokens"));
+}
+
+#[test]
+fn parses_provider_adapter_registry_json_without_leaking_gateway_token() {
+    let config = ProviderAdapterConfig::from_json(
+        r#"{
+            "routes": [
+                {
+                    "providerCode": "tencent-cloud",
+                    "adapterKind": "internal_http",
+                    "adapterBaseUrl": "http://127.0.0.1:39110",
+                    "capability": "video_generation",
+                    "endpointKey": "video.start_end2video",
+                    "method": "POST",
+                    "standardPathPattern": "/vidu/ent/v2/start-end2video",
+                    "adapterPathTemplate": "/providers/{provider_code}{standard_path}",
+                    "status": "enabled",
+                    "priority": 10
+                }
+            ]
+        }"#,
+        Some("adapter-service-token".to_owned()),
+    )
+    .unwrap();
+
+    assert_eq!("adapter-service-token", config.gateway_token());
+    assert_eq!(1, config.routes().len());
+    let route = &config.routes()[0];
+    assert_eq!("tencent-cloud", route.provider_code);
+    assert_eq!(AdapterKind::InternalHttp, route.adapter_kind);
+    assert_eq!(AdapterRouteStatus::Enabled, route.status);
+    assert_eq!(
+        "/providers/{provider_code}{standard_path}",
+        route.adapter_path_template
+    );
+    assert!(!format!("{config:?}").contains("adapter-service-token"));
+}
+
+#[test]
+fn parses_provider_adapter_manifest_json_into_registry_routes() {
+    let manifest = ProviderAdapterManifest {
+        providers: vec![ProviderAdapterProviderManifest {
+            package: "tencent-cloud".to_owned(),
+            provider_family: "tencent-cloud".to_owned(),
+            provider_codes: vec!["tencent-cloud".to_owned(), "tencent-hunyuan".to_owned()],
+            endpoints: vec![ProviderAdapterEndpointManifest {
+                endpoint_key: "video.start_end2video".to_owned(),
+                capability: Some("video_generation".to_owned()),
+                method: "POST".to_owned(),
+                standard_path_pattern: "/vidu/ent/v2/start-end2video".to_owned(),
+                invocation_shape: AdapterInvocationShape::AsyncTaskStart,
+            }],
+        }],
+    };
+    let config_json = serde_json::json!({
+        "adapterBaseUrl": " http://127.0.0.1:39110/ ",
+        "manifest": manifest,
+    });
+
+    let config =
+        ProviderAdapterConfig::from_json(config_json.to_string(), Some("adapter-token".to_owned()))
+            .unwrap();
+
+    assert_eq!("adapter-token", config.gateway_token());
+    assert_eq!(2, config.routes().len());
+    let official_route = config
+        .routes()
+        .iter()
+        .find(|route| route.provider_code == "tencent-cloud")
+        .unwrap();
+    assert_eq!("http://127.0.0.1:39110", official_route.adapter_base_url);
+    assert_eq!(
+        Some("video_generation"),
+        official_route.capability.as_deref()
+    );
+    assert_eq!(
+        Some("video.start_end2video"),
+        official_route.endpoint_key.as_deref()
+    );
+    assert_eq!("POST", official_route.method);
+    assert_eq!(
+        "/providers/{provider_code}{standard_path}",
+        official_route.adapter_path_template
+    );
+}
+
+#[test]
+fn empty_provider_adapter_manifest_config_keeps_adapter_disabled_without_gateway_token() {
+    let config_json = serde_json::json!({
+        "adapterBaseUrl": "http://127.0.0.1:39110",
+        "manifest": {
+            "providers": []
+        }
+    });
+
+    let config =
+        ProviderAdapterConfig::from_optional_parts(Some(config_json.to_string()), None).unwrap();
+
+    assert!(config.is_none());
+}
+
+#[test]
+fn rejects_provider_adapter_registry_json_without_gateway_token() {
+    let error = ProviderAdapterConfig::from_json(
+        r#"{
+            "routes": [
+                {
+                    "providerCode": "tencent-cloud",
+                    "adapterKind": "internal_http",
+                    "adapterBaseUrl": "http://127.0.0.1:39110",
+                    "method": "POST",
+                    "standardPathPattern": "/vidu/ent/v2/start-end2video",
+                    "adapterPathTemplate": "/providers/{provider_code}{standard_path}",
+                    "status": "enabled",
+                    "priority": 10
+                }
+            ]
+        }"#,
+        None,
+    )
+    .unwrap_err();
+
+    assert!(error.contains("SDKWORK_CLAW_PROVIDER_ADAPTER_GATEWAY_TOKEN"));
+}
+
+#[test]
+fn reads_provider_adapter_registry_from_runtime_toml_file() {
+    let _env_lock = env_lock().lock().unwrap();
+    clear_provider_adapter_env();
+    let adapter_token_path = unique_secret_path("provider-adapter-token");
+    std::fs::write(&adapter_token_path, "adapter-service-token\n").unwrap();
+    let config = RuntimeTomlConfig::from_toml_str(&format!(
+        r#"
+[provider_adapter]
+gateway_token_file = "{}"
+json = '''
+{{
+  "routes": [
+    {{
+      "providerCode": "openrouter",
+      "adapterKind": "internal_http",
+      "adapterBaseUrl": "http://127.0.0.1:39110",
+      "capability": "chat",
+      "endpointKey": "openai.chat_completions",
+      "method": "POST",
+      "standardPathPattern": "/v1/chat/completions",
+      "adapterPathTemplate": "/providers/{{provider_code}}{{standard_path}}",
+      "status": "enabled",
+      "priority": 10
+    }}
+  ]
+}}
+'''
+"#,
+        adapter_token_path.display().to_string().replace('\\', "/")
+    ))
+    .unwrap();
+
+    let adapter = ProviderAdapterConfig::from_env_or_runtime_toml(Some(&config))
+        .unwrap()
+        .unwrap();
+
+    assert_eq!("adapter-service-token", adapter.gateway_token());
+    assert_eq!("openrouter", adapter.routes()[0].provider_code);
+
+    let _ = std::fs::remove_file(adapter_token_path);
+}
+
+#[test]
+fn reads_provider_adapter_manifest_from_runtime_toml_file() {
+    let _env_lock = env_lock().lock().unwrap();
+    clear_provider_adapter_env();
+    let adapter_token_path = unique_secret_path("provider-adapter-token");
+    let adapter_manifest_path = unique_secret_path("provider-adapter-manifest");
+    std::fs::write(&adapter_token_path, "adapter-service-token\n").unwrap();
+    std::fs::write(
+        &adapter_manifest_path,
+        r#"{
+          "adapterBaseUrl": "http://127.0.0.1:39110/",
+          "manifest": {
+            "providers": [
+              {
+                "package": "tencent-cloud",
+                "providerFamily": "tencent-cloud",
+                "providerCodes": ["tencent-cloud"],
+                "endpoints": [
+                  {
+                    "endpointKey": "video.start_end2video",
+                    "capability": "video_generation",
+                    "method": "POST",
+                    "standardPathPattern": "/vidu/ent/v2/start-end2video",
+                    "invocationShape": "async_task_start"
+                  }
+                ]
+              }
+            ]
+          }
+        }"#,
+    )
+    .unwrap();
+    let config = RuntimeTomlConfig::from_toml_str(&format!(
+        r#"
+[provider_adapter]
+gateway_token_file = "{}"
+json_file = "{}"
+"#,
+        adapter_token_path.display().to_string().replace('\\', "/"),
+        adapter_manifest_path
+            .display()
+            .to_string()
+            .replace('\\', "/")
+    ))
+    .unwrap();
+
+    let adapter = ProviderAdapterConfig::from_env_or_runtime_toml(Some(&config))
+        .unwrap()
+        .unwrap();
+
+    assert_eq!("adapter-service-token", adapter.gateway_token());
+    assert_eq!(1, adapter.routes().len());
+    assert_eq!("tencent-cloud", adapter.routes()[0].provider_code);
+    assert_eq!(
+        Some("video.start_end2video"),
+        adapter.routes()[0].endpoint_key.as_deref()
+    );
+
+    let _ = std::fs::remove_file(adapter_token_path);
+    let _ = std::fs::remove_file(adapter_manifest_path);
+}
+
+#[test]
+fn reads_provider_adapter_manifest_parts_from_runtime_toml_file() {
+    let _env_lock = env_lock().lock().unwrap();
+    clear_provider_adapter_env();
+    let adapter_token_path = unique_secret_path("provider-adapter-token");
+    let adapter_manifest_path = unique_secret_path("provider-adapter-manifest-parts");
+    std::fs::write(&adapter_token_path, "adapter-service-token\n").unwrap();
+    std::fs::write(
+        &adapter_manifest_path,
+        r#"{
+          "providers": [
+            {
+              "package": "tencent-cloud",
+              "providerFamily": "tencent-cloud",
+              "providerCodes": ["tencent-cloud"],
+              "endpoints": [
+                {
+                  "endpointKey": "video.start_end2video",
+                  "capability": "video_generation",
+                  "method": "POST",
+                  "standardPathPattern": "/vidu/ent/v2/start-end2video",
+                  "invocationShape": "async_task_start"
+                }
+              ]
+            }
+          ]
+        }"#,
+    )
+    .unwrap();
+    let config = RuntimeTomlConfig::from_toml_str(&format!(
+        r#"
+[provider_adapter]
+adapter_base_url = "http://127.0.0.1:39110/"
+gateway_token_file = "{}"
+manifest_file = "{}"
+"#,
+        adapter_token_path.display().to_string().replace('\\', "/"),
+        adapter_manifest_path
+            .display()
+            .to_string()
+            .replace('\\', "/")
+    ))
+    .unwrap();
+
+    let adapter = ProviderAdapterConfig::from_env_or_runtime_toml(Some(&config))
+        .unwrap()
+        .unwrap();
+
+    assert_eq!("adapter-service-token", adapter.gateway_token());
+    assert_eq!(1, adapter.routes().len());
+    let route = &adapter.routes()[0];
+    assert_eq!("tencent-cloud", route.provider_code);
+    assert_eq!("http://127.0.0.1:39110", route.adapter_base_url);
+    assert_eq!(Some("video_generation"), route.capability.as_deref());
+    assert_eq!(Some("video.start_end2video"), route.endpoint_key.as_deref());
+    assert_eq!(
+        "/providers/{provider_code}{standard_path}",
+        route.adapter_path_template
+    );
+
+    let _ = std::fs::remove_file(adapter_token_path);
+    let _ = std::fs::remove_file(adapter_manifest_path);
+}
+
+#[test]
+fn empty_provider_adapter_manifest_parts_keep_adapter_disabled_without_gateway_token() {
+    let _env_lock = env_lock().lock().unwrap();
+    clear_provider_adapter_env();
+    let adapter_manifest_path = unique_secret_path("provider-adapter-empty-manifest");
+    std::fs::write(&adapter_manifest_path, r#"{"providers":[]}"#).unwrap();
+    let config = RuntimeTomlConfig::from_toml_str(&format!(
+        r#"
+[provider_adapter]
+adapter_base_url = "http://127.0.0.1:39110/"
+manifest_file = "{}"
+"#,
+        adapter_manifest_path
+            .display()
+            .to_string()
+            .replace('\\', "/")
+    ))
+    .unwrap();
+
+    let adapter = ProviderAdapterConfig::from_env_or_runtime_toml(Some(&config)).unwrap();
+
+    assert!(adapter.is_none());
+
+    let _ = std::fs::remove_file(adapter_manifest_path);
+}
+
+#[test]
+fn provider_adapter_full_json_config_takes_precedence_over_manifest_parts() {
+    let _env_lock = env_lock().lock().unwrap();
+    clear_provider_adapter_env();
+    let adapter_token_path = unique_secret_path("provider-adapter-token");
+    let adapter_manifest_path = unique_secret_path("provider-adapter-shadowed-manifest");
+    std::fs::write(&adapter_token_path, "adapter-service-token\n").unwrap();
+    std::fs::write(
+        &adapter_manifest_path,
+        r#"{
+          "providers": [
+            {
+              "package": "tencent-cloud",
+              "providerFamily": "tencent-cloud",
+              "providerCodes": ["tencent-cloud"],
+              "endpoints": [
+                {
+                  "endpointKey": "video.start_end2video",
+                  "capability": "video_generation",
+                  "method": "POST",
+                  "standardPathPattern": "/vidu/ent/v2/start-end2video",
+                  "invocationShape": "async_task_start"
+                }
+              ]
+            }
+          ]
+        }"#,
+    )
+    .unwrap();
+    let config = RuntimeTomlConfig::from_toml_str(&format!(
+        r#"
+[provider_adapter]
+adapter_base_url = "http://127.0.0.1:39110/"
+gateway_token_file = "{}"
+manifest_file = "{}"
+json = '''
+{{
+  "routes": [
+    {{
+      "providerCode": "manual-provider",
+      "adapterKind": "internal_http",
+      "adapterBaseUrl": "http://127.0.0.1:39220/",
+      "capability": "chat",
+      "endpointKey": "openai.chat_completions",
+      "method": "post",
+      "standardPathPattern": "v1/chat/completions",
+      "adapterPathTemplate": "providers/{{provider_code}}{{standard_path}}",
+      "status": "enabled",
+      "priority": 10
+    }}
+  ]
+}}
+'''
+"#,
+        adapter_token_path.display().to_string().replace('\\', "/"),
+        adapter_manifest_path
+            .display()
+            .to_string()
+            .replace('\\', "/")
+    ))
+    .unwrap();
+
+    let adapter = ProviderAdapterConfig::from_env_or_runtime_toml(Some(&config))
+        .unwrap()
+        .unwrap();
+
+    assert_eq!(1, adapter.routes().len());
+    let route = &adapter.routes()[0];
+    assert_eq!("manual-provider", route.provider_code);
+    assert_eq!("http://127.0.0.1:39220", route.adapter_base_url);
+    assert_eq!("POST", route.method);
+    assert_eq!("/v1/chat/completions", route.standard_path_pattern);
+    assert_eq!(
+        "/providers/{provider_code}{standard_path}",
+        route.adapter_path_template
+    );
+
+    let _ = std::fs::remove_file(adapter_token_path);
+    let _ = std::fs::remove_file(adapter_manifest_path);
+}
+
+#[test]
+fn provider_adapter_manifest_parts_can_be_read_from_env() {
+    let _env_lock = env_lock().lock().unwrap();
+    clear_provider_adapter_env();
+    std::env::set_var(
+        ProviderAdapterConfig::ENV_PROVIDER_ADAPTER_BASE_URL,
+        "http://127.0.0.1:39110/",
+    );
+    std::env::set_var(
+        ProviderAdapterConfig::ENV_PROVIDER_ADAPTER_GATEWAY_TOKEN,
+        "adapter-service-token",
+    );
+    std::env::set_var(
+        ProviderAdapterConfig::ENV_PROVIDER_ADAPTER_MANIFEST,
+        r#"{
+          "providers": [
+            {
+              "package": "tencent-cloud",
+              "providerFamily": "tencent-cloud",
+              "providerCodes": ["vidu-env"],
+              "endpoints": [
+                {
+                  "endpointKey": "video.start_end2video",
+                  "capability": "video_generation",
+                  "method": "POST",
+                  "standardPathPattern": "/vidu/ent/v2/start-end2video",
+                  "invocationShape": "async_task_start"
+                }
+              ]
+            }
+          ]
+        }"#,
+    );
+
+    let adapter = ProviderAdapterConfig::from_env().unwrap().unwrap();
+
+    assert_eq!("adapter-service-token", adapter.gateway_token());
+    assert_eq!(1, adapter.routes().len());
+    assert_eq!("vidu-env", adapter.routes()[0].provider_code);
+    assert_eq!(
+        "http://127.0.0.1:39110",
+        adapter.routes()[0].adapter_base_url
+    );
+
+    clear_provider_adapter_env();
+}
+
+#[test]
+fn provider_adapter_manifest_discovery_uses_explicit_base_url_and_gateway_token() {
+    let _env_lock = env_lock().lock().unwrap();
+    clear_provider_adapter_env();
+    let config = RuntimeTomlConfig::from_toml_str(
+        r#"
+[provider_adapter]
+adapter_base_url = "http://127.0.0.1:39110/"
+gateway_token = "adapter-service-token"
+"#,
+    )
+    .unwrap();
+
+    let discovery = ProviderAdapterManifestDiscoveryConfig::from_env_or_runtime_toml(Some(&config))
+        .unwrap()
+        .unwrap();
+
+    assert_eq!("http://127.0.0.1:39110", discovery.adapter_base_url());
+    assert_eq!("adapter-service-token", discovery.gateway_token());
+    assert!(!format!("{discovery:?}").contains("adapter-service-token"));
+}
+
+#[test]
+fn provider_adapter_manifest_discovery_is_disabled_when_local_manifest_config_exists() {
+    let _env_lock = env_lock().lock().unwrap();
+    clear_provider_adapter_env();
+    let config = RuntimeTomlConfig::from_toml_str(
+        r#"
+[provider_adapter]
+adapter_base_url = "http://127.0.0.1:39110/"
+gateway_token = "adapter-service-token"
+manifest = '{"providers":[]}'
+"#,
+    )
+    .unwrap();
+
+    let discovery =
+        ProviderAdapterManifestDiscoveryConfig::from_env_or_runtime_toml(Some(&config)).unwrap();
+
+    assert!(discovery.is_none());
+}
+
+#[test]
+fn provider_adapter_manifest_discovery_requires_gateway_token_when_base_url_is_set() {
+    let _env_lock = env_lock().lock().unwrap();
+    clear_provider_adapter_env();
+    let config = RuntimeTomlConfig::from_toml_str(
+        r#"
+[provider_adapter]
+adapter_base_url = "http://127.0.0.1:39110/"
+"#,
+    )
+    .unwrap();
+
+    let error = ProviderAdapterManifestDiscoveryConfig::from_env_or_runtime_toml(Some(&config))
+        .unwrap_err();
+
+    assert!(error.contains("SDKWORK_CLAW_PROVIDER_ADAPTER_GATEWAY_TOKEN"));
+}
+
+#[test]
+fn rejects_non_empty_provider_adapter_manifest_parts_without_base_url() {
+    let error = ProviderAdapterConfig::from_optional_manifest_parts(
+        None,
+        Some(
+            r#"{
+              "providers": [
+                {
+                  "package": "tencent-cloud",
+                  "providerFamily": "tencent-cloud",
+                  "providerCodes": ["tencent-cloud"],
+                  "endpoints": [
+                    {
+                      "endpointKey": "video.start_end2video",
+                      "capability": "video_generation",
+                      "method": "POST",
+                      "standardPathPattern": "/vidu/ent/v2/start-end2video",
+                      "invocationShape": "async_task_start"
+                    }
+                  ]
+                }
+              ]
+            }"#
+            .to_owned(),
+        ),
+        Some("adapter-service-token".to_owned()),
+    )
+    .unwrap_err();
+
+    assert!(error.contains("adapterBaseUrl or adapter_base_url"));
 }
 
 #[test]
@@ -465,4 +1010,23 @@ fn unique_secret_path(name: &str) -> std::path::PathBuf {
             .unwrap()
             .as_nanos()
     ))
+}
+
+fn env_lock() -> &'static Mutex<()> {
+    static ENV_LOCK: OnceLock<Mutex<()>> = OnceLock::new();
+    ENV_LOCK.get_or_init(|| Mutex::new(()))
+}
+
+fn clear_provider_adapter_env() {
+    for name in [
+        ProviderAdapterConfig::ENV_PROVIDER_ADAPTER_JSON,
+        ProviderAdapterConfig::ENV_PROVIDER_ADAPTER_JSON_FILE,
+        ProviderAdapterConfig::ENV_PROVIDER_ADAPTER_BASE_URL,
+        ProviderAdapterConfig::ENV_PROVIDER_ADAPTER_MANIFEST,
+        ProviderAdapterConfig::ENV_PROVIDER_ADAPTER_MANIFEST_FILE,
+        ProviderAdapterConfig::ENV_PROVIDER_ADAPTER_GATEWAY_TOKEN,
+        ProviderAdapterConfig::ENV_PROVIDER_ADAPTER_GATEWAY_TOKEN_FILE,
+    ] {
+        std::env::remove_var(name);
+    }
 }

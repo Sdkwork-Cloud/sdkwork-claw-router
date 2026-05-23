@@ -467,6 +467,7 @@ async fn sqlite_app_store_filters_keyword_and_loads_detail_and_categories() {
     let pool = sqlite_pool().await;
     create_app_store_tables(&pool).await;
     seed_app_store(&pool).await;
+    seed_app_categories(&pool).await;
 
     let store = SqliteAppStoreReadStore::new(pool);
     let query = AppStoreQuery {
@@ -502,7 +503,14 @@ async fn sqlite_app_store_filters_keyword_and_loads_detail_and_categories() {
     assert!(missing.is_none());
 
     let categories = store.load_categories(Some(owner_subject())).await.unwrap();
-    assert_eq!(vec!["HTML".to_owned()], categories);
+    assert_eq!(
+        vec![
+            "HTML".to_owned(),
+            "Productivity".to_owned(),
+            "React".to_owned()
+        ],
+        categories
+    );
 }
 
 #[tokio::test]
@@ -510,6 +518,7 @@ async fn sqlite_app_store_loads_categories_from_all_public_apps_without_catalog_
     let pool = sqlite_pool().await;
     create_app_store_tables(&pool).await;
     seed_app_store(&pool).await;
+    seed_app_categories(&pool).await;
     for index in 0..101 {
         insert_app(
             &pool,
@@ -555,9 +564,9 @@ async fn sqlite_app_store_loads_categories_from_all_public_apps_without_catalog_
     let categories = store.load_categories(Some(owner_subject())).await.unwrap();
 
     assert_eq!(
-        vec!["HTML".to_owned(), "REACT".to_owned()],
+        vec!["HTML".to_owned(), "Productivity".to_owned(), "React".to_owned()],
         categories,
-        "categories endpoint must scan the complete public app set, not only the first catalog page"
+        "categories endpoint must read the unified plus_category app-store tree, not derive categories from plus_app.app_type"
     );
 }
 
@@ -745,6 +754,28 @@ async fn create_app_store_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
+        CREATE TABLE plus_category (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            shop_id INTEGER,
+            name TEXT NOT NULL,
+            description TEXT,
+            pid INTEGER,
+            type INTEGER NOT NULL,
+            group_name TEXT,
+            code TEXT,
+            tags TEXT,
+            icon TEXT,
+            sort_weight INTEGER,
+            parent_id INTEGER,
+            path TEXT,
+            visible INTEGER,
+            status INTEGER
+        )
+        "#,
+        r#"
         CREATE TABLE studio_catalog_action (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
@@ -808,6 +839,70 @@ async fn create_app_store_tables(pool: &SqlitePool) {
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
+}
+
+async fn seed_app_categories(pool: &SqlitePool) {
+    insert_app_category(pool, 20002001, "HTML", "app-store-html", 100).await;
+    insert_app_category(
+        pool,
+        20254147,
+        "Productivity",
+        "app-store-productivity",
+        101,
+    )
+    .await;
+    insert_app_category(pool, 20002002, "React", "app-store-react", 102).await;
+    insert_non_app_category(pool, 20003001, "Skills", "skills", 100).await;
+}
+
+async fn insert_app_category(pool: &SqlitePool, id: i64, name: &str, code: &str, sort_weight: i64) {
+    sqlx::query(
+        r#"
+        INSERT INTO plus_category (
+            id, uuid, tenant_id, organization_id, shop_id, name, description, pid,
+            type, group_name, code, tags, icon, sort_weight, parent_id, path, visible, status
+        )
+        VALUES (?1, ?2, 20001, 0, 0, ?3, ?4, 0, 999999, 'app-store', ?5, '[]', NULL, ?6, NULL, ?7, 1, 1)
+        "#,
+    )
+    .bind(id)
+    .bind(format!("sdkwork-app-category-{id}"))
+    .bind(name)
+    .bind(format!("{name} app category"))
+    .bind(code)
+    .bind(sort_weight)
+    .bind(format!("/app-store/{code}"))
+    .execute(pool)
+    .await
+    .unwrap();
+}
+
+async fn insert_non_app_category(
+    pool: &SqlitePool,
+    id: i64,
+    name: &str,
+    code: &str,
+    sort_weight: i64,
+) {
+    sqlx::query(
+        r#"
+        INSERT INTO plus_category (
+            id, uuid, tenant_id, organization_id, shop_id, name, description, pid,
+            type, group_name, code, tags, icon, sort_weight, parent_id, path, visible, status
+        )
+        VALUES (?1, ?2, 20001, 0, 0, ?3, ?4, 0, 19, 'skills', ?5, '[]', NULL, ?6, NULL, ?7, 1, 1)
+        "#,
+    )
+    .bind(id)
+    .bind(format!("sdkwork-skill-category-{id}"))
+    .bind(name)
+    .bind(format!("{name} skill category"))
+    .bind(code)
+    .bind(sort_weight)
+    .bind(format!("/skills/{code}"))
+    .execute(pool)
+    .await
+    .unwrap();
 }
 
 async fn seed_app_store(pool: &SqlitePool) {

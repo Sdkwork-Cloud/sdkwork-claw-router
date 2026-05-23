@@ -4,6 +4,7 @@ const SENSITIVE_HEADERS: &[&str] = &[
     "authorization",
     "access-token",
     "x-access-token",
+    "sdkwork-access-token",
     "x-api-key",
     "x-goog-api-key",
     "x-sdkwork-api-key-id",

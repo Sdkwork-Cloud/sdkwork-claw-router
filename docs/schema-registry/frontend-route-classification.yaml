@@ -2,628 +2,2134 @@ schema: sdkwork-claw-router-frontend-route-classification
 version: 0.1.0
 source: apps/sdkwork-claw-router-portal/src/App.tsx
 rule: every actual portal route declares whether it is SDK-backed runtime, schema-provenanced content, or a gated local developer tool surface.
-
 routes:
-  - route: /
-    package: sdkwork-claw-router-home
-    owner: public-portal
-    route_scope: public
-    delivery_kind: schema_provenanced_content
-    provenance_tables: [content_doc_page, plus_app]
-    static_delivery:
-      mode: curated_seed_content
-      refresh_policy: manual_content_release
-      max_staleness: release_bound
-      upgrade_triggers: [user_personalization, tenant_specific_data, authoring_workflow]
-      source_manifest_ref: "static-route:/"
-    evidence:
-      - generated/schema/manifest/schema-manifest.json
-      - docs/schema-registry/frontend-field-contracts.yaml
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-home/src/pages/Home.tsx
-
-  - route: /admin/announcement
-    package: sdkwork-claw-router-admin-announcement
-    owner: admin-control-plane
-    route_scope: admin
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: backend
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-announcement/src/announcementService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /admin/agents
-    package: sdkwork-claw-router-admin-agents
-    owner: admin-control-plane
-    route_scope: admin
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: backend
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /admin/channel
-    package: sdkwork-claw-router-admin-channel
-    owner: admin-control-plane
-    route_scope: admin
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: backend
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /admin/dashboard
-    package: sdkwork-claw-router-admin-dashboard
-    owner: admin-control-plane
-    route_scope: admin
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: backend
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-dashboard/src/dashboardService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /admin/finance
-    package: sdkwork-claw-router-admin-finance
-    owner: admin-control-plane
-    route_scope: admin
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: backend
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /admin/group
-    package: sdkwork-claw-router-admin-group
-    owner: admin-control-plane
-    route_scope: admin
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: backend
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /admin/marketing
-    package: sdkwork-claw-router-admin-marketing
-    owner: admin-control-plane
-    route_scope: admin
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: backend
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /admin/model
-    package: sdkwork-claw-router-admin-model
-    owner: admin-control-plane
-    route_scope: admin
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: backend
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /admin/app
-    package: sdkwork-claw-router-app-center
-    owner: admin-control-plane
-    route_scope: admin
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: backend
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /admin/skill
-    package: sdkwork-claw-router-admin-skill
-    owner: admin-control-plane
-    route_scope: admin
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: backend
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /admin/monitor
-    package: sdkwork-claw-router-admin-monitor
-    owner: admin-control-plane
-    route_scope: admin
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: backend
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-monitor/src/monitorService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /admin/ratelimit
-    package: sdkwork-claw-router-admin-ratelimit
-    owner: admin-control-plane
-    route_scope: admin
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: backend
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /admin/record
-    package: sdkwork-claw-router-admin-record
-    owner: admin-control-plane
-    route_scope: admin
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: backend
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-record/src/recordService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /admin/user
-    package: sdkwork-claw-router-admin-user
-    owner: admin-control-plane
-    route_scope: admin
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: backend
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /admin/settings
-    package: portal-root
-    owner: admin-control-plane
-    route_scope: admin
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: backend
-    evidence:
-      - apps/sdkwork-claw-router-portal/src/auth/ClawRouterAuthSettingsPage.tsx
-      - apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /api-reference
-    package: sdkwork-claw-router-api-reference
-    owner: developer-experience
-    route_scope: public
-    delivery_kind: local_developer_tool_api
-    browser_env: VITE_TOOL_API_ENABLED
-    runtime_env: PORTAL_PUBLIC_TOOL_API_ENABLED
-    tool_endpoints: [/api/code-snippet]
-    source_files:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/codeSnippetClient.ts
-    gate_sources:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/components/ApiEndpointView.tsx
-    browser_network_sources:
-      - endpoint: external_runtime_request
-        source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/apiReferenceSchemaTabs.ts
-        purpose: local_openapi_snapshot
-      - endpoint: /api/code-snippet
-        source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/codeSnippetClient.ts
-        purpose: local_tool_api
-      - endpoint: external_runtime_request
-        source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/components/ApiPlayground.tsx
-        purpose: explicit_api_playground_request
-    evidence:
-      - services/sdkwork-claw-gateway/src/edge_server.rs
-      - apps/sdkwork-claw-router-portal/vite.config.ts
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/components/ApiEndpointView.tsx
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/components/ApiPlayground.tsx
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/pages/ApiReference.tsx
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/codeSnippetClient.ts
-
-  - route: /apps
-    package: sdkwork-claw-router-app-center
-    owner: public-portal
-    route_scope: public
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    operation_routes: [/apps]
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/appRuntime.ts
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/appService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /apps/:id
-    package: sdkwork-claw-router-app-center
-    owner: public-portal
-    route_scope: public
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    operation_routes: [/apps]
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/appRuntime.ts
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/appService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /auth/login
-    package: portal-root
-    owner: customer-console
-    route_scope: public
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    operation_routes: [/auth/login]
-    evidence:
-      - apps/sdkwork-claw-router-portal/src/auth/ClawRouterAuthRoutes.tsx
-      - apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
-      - apps/sdkwork-claw-router-portal/src/auth/clawRouterTauriAuthHost.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /auth/register
-    package: portal-root
-    owner: public-portal
-    route_scope: public
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    operation_routes: [/auth/login]
-    evidence:
-      - apps/sdkwork-claw-router-portal/src/auth/ClawRouterAuthRoutes.tsx
-      - apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /auth/forgot-password
-    package: portal-root
-    owner: public-portal
-    route_scope: public
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    operation_routes: [/auth/login]
-    evidence:
-      - apps/sdkwork-claw-router-portal/src/auth/ClawRouterAuthRoutes.tsx
-      - apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /auth/oauth/callback/:provider
-    package: portal-root
-    owner: public-portal
-    route_scope: public
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    operation_routes: [/auth/login]
-    evidence:
-      - apps/sdkwork-claw-router-portal/src/auth/ClawRouterAuthRoutes.tsx
-      - apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /console/account
-    package: sdkwork-claw-router-console-account
-    owner: customer-console
-    route_scope: console
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src/accountService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /console/agents
-    package: sdkwork-claw-router-console-agents
-    owner: customer-console
-    route_scope: console
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /console/api-keys
-    package: sdkwork-claw-router-console-api-keys
-    owner: customer-console
-    route_scope: console
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /console/billing
-    package: sdkwork-claw-router-console-billing
-    owner: customer-console
-    route_scope: console
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/billingService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /console/checkout
-    package: sdkwork-claw-router-console-billing
-    owner: customer-console
-    route_scope: console
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/checkoutService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /console/dashboard
-    package: sdkwork-claw-router-console-dashboard
-    owner: customer-console
-    route_scope: console
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /console/gateway
-    package: sdkwork-claw-router-console-gateway
-    owner: customer-console
-    route_scope: console
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-gateway/src/gatewayService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /console/notifications
-    package: sdkwork-claw-router-console-messages
-    owner: customer-console
-    route_scope: console
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    operation_routes: [/console/notifications]
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-messages/src/messagesService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /console/messages
-    package: portal-root
-    owner: customer-console
-    route_scope: console
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    operation_routes: [/console/notifications]
-    evidence:
-      - apps/sdkwork-claw-router-portal/src/App.tsx
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-messages/src/messagesService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /console/providers
-    package: sdkwork-claw-router-console-providers
-    owner: customer-console
-    route_scope: console
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-providers/src/providerService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /console/recharge
-    package: sdkwork-claw-router-console-recharge
-    owner: customer-console
-    route_scope: console
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /console/routing
-    package: sdkwork-claw-router-console-routing
-    owner: customer-console
-    route_scope: console
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /console/settings
-    package: sdkwork-claw-router-console-settings
-    owner: customer-console
-    route_scope: console
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settings/src/settingsService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /console/settlements
-    package: sdkwork-claw-router-console-settlements
-    owner: customer-console
-    route_scope: console
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /console/usage
-    package: sdkwork-claw-router-console-usage
-    owner: customer-console
-    route_scope: console
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-usage/src/usageService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /console/user
-    package: sdkwork-claw-router-console-user
-    owner: customer-console
-    route_scope: console
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-user/src/userService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /courses
-    package: sdkwork-claw-router-courses
-    owner: public-portal
-    route_scope: public
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    operation_routes: [/courses]
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
-      - services/sdkwork-claw-product/src/api/app_course.rs
-      - generated/openapi/clawrouter-app-openapi.json
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /courses/:id
-    package: sdkwork-claw-router-courses
-    owner: public-portal
-    route_scope: public
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    operation_routes: [/courses, /courses/:id]
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
-      - services/sdkwork-claw-product/src/api/app_course.rs
-      - generated/openapi/clawrouter-app-openapi.json
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /docs
-    package: sdkwork-claw-router-api-reference
-    owner: developer-experience
-    route_scope: public
-    delivery_kind: schema_provenanced_content
-    provenance_tables: [content_doc_page, content_openapi_snapshot, content_sdk_release]
-    static_delivery:
-      mode: generated_reference_snapshot
-      refresh_policy: schema_registry_regeneration
-      max_staleness: release_bound
-      upgrade_triggers: [authoring_workflow, compliance_review]
-      source_manifest_ref: "static-route:/docs"
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/pages/Docs.tsx
-      - generated/schema/manifest/schema-manifest.json
-
-  - route: /forum
-    package: sdkwork-claw-router-forum
-    owner: public-portal
-    route_scope: public
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/components/ForumView.tsx
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumCatalog.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-      - generated/schema/manifest/schema-manifest.json
-
-  - route: /forum/:id
-    package: sdkwork-claw-router-forum
-    owner: public-portal
-    route_scope: public
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    operation_routes: [/forum]
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/components/ForumPostView.tsx
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumCatalog.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-      - generated/schema/manifest/schema-manifest.json
-
-  - route: /models
-    package: sdkwork-claw-router-models
-    owner: public-portal
-    route_scope: public
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/data/models.ts
-      - generated/schema/manifest/schema-manifest.json
-
-  - route: /models/:id
-    package: sdkwork-claw-router-models
-    owner: public-portal
-    route_scope: public
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    operation_routes: [/models]
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/pages/ModelDetails.tsx
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /models/:provider/:model
-    package: sdkwork-claw-router-models
-    owner: public-portal
-    route_scope: public
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    operation_routes: [/models]
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/pages/ModelDetails.tsx
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /playground
-    package: sdkwork-claw-router-playground
-    owner: customer-console
-    route_scope: public
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /product-docs
-    package: sdkwork-claw-router-api-reference
-    owner: developer-experience
-    route_scope: public
-    delivery_kind: schema_provenanced_content
-    provenance_tables: [content_doc_page, content_openapi_snapshot]
-    static_delivery:
-      mode: generated_reference_snapshot
-      refresh_policy: schema_registry_regeneration
-      max_staleness: release_bound
-      upgrade_triggers: [authoring_workflow, compliance_review]
-      source_manifest_ref: "static-route:/product-docs"
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/pages/ProductDocs.tsx
-      - generated/schema/manifest/schema-manifest.json
-
-  - route: /rankings
-    package: sdkwork-claw-router-rankings
-    owner: public-portal
-    route_scope: public
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-rankings/src/Rankings.tsx
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-rankings/src/rankingService.ts
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-rankings/src/rankingCatalog.ts
-      - generated/schema/manifest/schema-manifest.json
-
-  - route: /sdk-reference
-    package: sdkwork-claw-router-sdk-reference
-    owner: developer-experience
-    route_scope: public
-    delivery_kind: local_developer_tool_api
-    browser_env: VITE_TOOL_API_ENABLED
-    runtime_env: PORTAL_PUBLIC_TOOL_API_ENABLED
-    tool_endpoints: [/api/sdk-readme, /api/generate-sdk]
-    source_files:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/pages/SdkReference.tsx
-    gate_sources:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/pages/SdkReference.tsx
-    browser_network_sources:
-      - endpoint: /api/sdk-readme
-        source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/pages/SdkReference.tsx
-        purpose: local_tool_api
-      - endpoint: /api/generate-sdk
-        source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/pages/SdkReference.tsx
-        purpose: local_tool_api
-    evidence:
-      - services/sdkwork-claw-gateway/src/edge_server.rs
-      - apps/sdkwork-claw-router-portal/vite.config.ts
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/pages/SdkReference.tsx
-
-  - route: /skills-hub
-    package: sdkwork-claw-router-skills-hub
-    owner: public-portal
-    route_scope: public
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/services/skillService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
-
-  - route: /skills-hub/:id
-    package: sdkwork-claw-router-skills-hub
-    owner: public-portal
-    route_scope: public
-    delivery_kind: sdk_backed_business_runtime
-    api_surface: app
-    operation_routes: [/skills-hub]
-    evidence:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/services/skillService.ts
-      - docs/schema-registry/frontend-field-contracts.yaml
+- route: /
+  package: sdkwork-claw-router-home
+  owner: public-portal
+  route_scope: public
+  delivery_kind: schema_provenanced_content
+  provenance_tables:
+  - content_doc_page
+  - plus_app
+  static_delivery:
+    mode: curated_seed_content
+    refresh_policy: manual_content_release
+    max_staleness: release_bound
+    upgrade_triggers:
+    - user_personalization
+    - tenant_specific_data
+    - authoring_workflow
+    source_manifest_ref: static-route:/
+  evidence:
+  - generated/schema/manifest/schema-manifest.json
+  - docs/schema-registry/frontend-field-contracts.yaml
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-home/src/pages/Home.tsx
+- route: /admin/announcement
+  package: sdkwork-claw-router-admin-announcement
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-announcement/src/announcementService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/agents
+  package: sdkwork-claw-router-admin-agents
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  required_tables:
+  - ai_agent
+  - ai_agent_version
+  - ai_agent_tool_binding
+  - ai_agent_mcp_server
+  - ai_agent_memory
+  - ai_agent_run
+  - ai_agent_run_step
+  - ai_agent_session
+  - ai_chat_conversation
+  - ai_memory_space
+  - ai_memory_space_binding
+  - ai_runtime_invocation
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/channel
+  package: sdkwork-claw-router-admin-channel
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/dashboard
+  package: sdkwork-claw-router-admin-dashboard
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-dashboard/src/dashboardService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/analytics
+  package: sdkwork-claw-router-admin-analytics
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-analytics/src/analyticsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/cache
+  package: sdkwork-claw-router-admin-cache
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/group
+  package: sdkwork-claw-router-admin-group
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/marketing
+  package: sdkwork-claw-router-admin-marketing
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/model
+  package: sdkwork-claw-router-admin-model
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/app
+  package: sdkwork-claw-router-app-center
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/open-platform
+  package: sdkwork-claw-router-admin-open-platform
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  required_tables:
+  - open_platform_provider
+  - open_platform_manifest
+  - open_platform_account
+  - open_platform_entry
+  - open_platform_pay_binding
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/index.tsx
+  - apps/sdkwork-claw-router-portal/admin-open-platform-runtime.test.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/skill
+  package: sdkwork-claw-router-admin-skill
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/monitor
+  package: sdkwork-claw-router-admin-monitor
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-monitor/src/monitorService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/ratelimit
+  package: sdkwork-claw-router-admin-ratelimit
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/record
+  package: sdkwork-claw-router-admin-record
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-record/src/recordService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/user
+  package: sdkwork-claw-router-admin-user
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/settings
+  package: portal-root
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/auth/ClawRouterAuthSettingsPage.tsx
+  - apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/site
+  package: sdkwork-claw-router-admin-site
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-site/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-site/src/SiteSettingsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /api-reference
+  package: sdkwork-claw-router-api-reference
+  owner: developer-experience
+  route_scope: public
+  delivery_kind: local_developer_tool_api
+  browser_env: VITE_TOOL_API_ENABLED
+  runtime_env: PORTAL_PUBLIC_TOOL_API_ENABLED
+  tool_endpoints:
+  - /api/code-snippet
+  source_files:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/codeSnippetClient.ts
+  gate_sources:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/components/ApiEndpointView.tsx
+  browser_network_sources:
+  - endpoint: external_runtime_request
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/apiReferenceSchemaTabs.ts
+    purpose: local_openapi_snapshot
+  - endpoint: /api/code-snippet
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/codeSnippetClient.ts
+    purpose: local_tool_api
+  - endpoint: external_runtime_request
+    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/components/ApiPlayground.tsx
+    purpose: explicit_api_playground_request
+  evidence:
+  - services/sdkwork-claw-gateway/src/edge_server.rs
+  - apps/sdkwork-claw-router-portal/vite.config.ts
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/components/ApiEndpointView.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/components/ApiPlayground.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/pages/ApiReference.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/codeSnippetClient.ts
+- route: /apps
+  package: sdkwork-claw-router-app-center
+  owner: public-portal
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  operation_routes:
+  - /apps
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/appRuntime.ts
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/appService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /apps/:id
+  package: sdkwork-claw-router-app-center
+  owner: public-portal
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  operation_routes:
+  - /apps
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/appRuntime.ts
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/appService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /auth/login
+  package: portal-root
+  owner: customer-console
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  operation_routes:
+  - /auth/login
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/auth/ClawRouterAuthRoutes.tsx
+  - apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  - apps/sdkwork-claw-router-portal/src/auth/clawRouterTauriAuthHost.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /auth/register
+  package: portal-root
+  owner: public-portal
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  operation_routes:
+  - /auth/login
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/auth/ClawRouterAuthRoutes.tsx
+  - apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /auth/forgot-password
+  package: portal-root
+  owner: public-portal
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  operation_routes:
+  - /auth/login
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/auth/ClawRouterAuthRoutes.tsx
+  - apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /auth/oauth/callback/:provider
+  package: portal-root
+  owner: public-portal
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  operation_routes:
+  - /auth/login
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/auth/ClawRouterAuthRoutes.tsx
+  - apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/agents
+  package: sdkwork-claw-router-console-agents
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  required_tables:
+  - ai_agent
+  - ai_agent_version
+  - ai_agent_tool_binding
+  - ai_agent_mcp_server
+  - ai_agent_memory
+  - ai_agent_run
+  - ai_agent_run_step
+  - ai_agent_session
+  - ai_chat_conversation
+  - ai_memory_space
+  - ai_memory_space_binding
+  - ai_runtime_invocation
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-agents/src/agentService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/api-keys
+  package: sdkwork-claw-router-console-api-keys
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/dashboard
+  package: sdkwork-claw-router-console-dashboard
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/gateway
+  package: sdkwork-claw-router-console-gateway
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-gateway/src/gatewayService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/notifications
+  package: sdkwork-claw-router-console-messages
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  operation_routes:
+  - /console/notifications
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-messages/src/messagesService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/messages
+  package: portal-root
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  operation_routes:
+  - /console/notifications
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-messages/src/messagesService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/providers
+  package: sdkwork-claw-router-console-providers
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-providers/src/providerService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/routing
+  package: sdkwork-claw-router-console-routing
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/settings
+  package: sdkwork-claw-router-console-settings
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settings/src/settingsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/usage
+  package: sdkwork-claw-router-console-usage
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-usage/src/usageService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/user
+  package: sdkwork-claw-router-console-user
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-user/src/userService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /courses
+  package: sdkwork-claw-router-courses
+  owner: public-portal
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  operation_routes:
+  - /courses
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  - services/sdkwork-claw-product/src/api/app_course.rs
+  - generated/openapi/clawrouter-app-openapi.json
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /courses/:id
+  package: sdkwork-claw-router-courses
+  owner: public-portal
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  operation_routes:
+  - /courses
+  - /courses/:id
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  - services/sdkwork-claw-product/src/api/app_course.rs
+  - generated/openapi/clawrouter-app-openapi.json
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /docs
+  package: sdkwork-claw-router-api-reference
+  owner: developer-experience
+  route_scope: public
+  delivery_kind: schema_provenanced_content
+  provenance_tables:
+  - content_doc_page
+  - content_openapi_snapshot
+  - content_sdk_release
+  static_delivery:
+    mode: generated_reference_snapshot
+    refresh_policy: schema_registry_regeneration
+    max_staleness: release_bound
+    upgrade_triggers:
+    - authoring_workflow
+    - compliance_review
+    source_manifest_ref: static-route:/docs
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/pages/Docs.tsx
+  - generated/schema/manifest/schema-manifest.json
+- route: /forum
+  package: sdkwork-claw-router-forum
+  owner: public-portal
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/components/ForumView.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumCatalog.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+  - generated/schema/manifest/schema-manifest.json
+- route: /forum/:id
+  package: sdkwork-claw-router-forum
+  owner: public-portal
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  operation_routes:
+  - /forum
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/components/ForumPostView.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumCatalog.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+  - generated/schema/manifest/schema-manifest.json
+- route: /models
+  package: sdkwork-claw-router-models
+  owner: public-portal
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/data/models.ts
+  - generated/schema/manifest/schema-manifest.json
+- route: /models/:id
+  package: sdkwork-claw-router-models
+  owner: public-portal
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  operation_routes:
+  - /models
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/pages/ModelDetails.tsx
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /models/:provider/:model
+  package: sdkwork-claw-router-models
+  owner: public-portal
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  operation_routes:
+  - /models
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/pages/ModelDetails.tsx
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /playground
+  package: sdkwork-claw-router-playground
+  owner: customer-console
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  operation_routes:
+  - /playground
+  - /chat
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /product-docs
+  package: sdkwork-claw-router-api-reference
+  owner: developer-experience
+  route_scope: public
+  delivery_kind: schema_provenanced_content
+  provenance_tables:
+  - content_doc_page
+  - content_openapi_snapshot
+  static_delivery:
+    mode: generated_reference_snapshot
+    refresh_policy: schema_registry_regeneration
+    max_staleness: release_bound
+    upgrade_triggers:
+    - authoring_workflow
+    - compliance_review
+    source_manifest_ref: static-route:/product-docs
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/pages/ProductDocs.tsx
+  - generated/schema/manifest/schema-manifest.json
+- route: /rankings
+  package: sdkwork-claw-router-rankings
+  owner: public-portal
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-rankings/src/Rankings.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-rankings/src/rankingService.ts
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-rankings/src/rankingCatalog.ts
+  - generated/schema/manifest/schema-manifest.json
+- route: /sdk-reference
+  package: sdkwork-claw-router-sdk-reference
+  owner: developer-experience
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - services/sdkwork-claw-product/src/api/app_sdk_reference.rs
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/sdkReferenceGenerationService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /skills-hub
+  package: sdkwork-claw-router-skills-hub
+  owner: public-portal
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/services/skillService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /skills-hub/:id
+  package: sdkwork-claw-router-skills-hub
+  owner: public-portal
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  operation_routes:
+  - /skills-hub
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/services/skillService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /vip
+  package: sdkwork-claw-router-vip
+  owner: public-portal
+  route_scope: public
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  required_tables:
+  - commerce_membership_package_group
+  - commerce_membership_package
+  - commerce_membership_plan
+  - commerce_product_sku
+  - commerce_membership
+  - commerce_membership_entitlement
+  - commerce_account
+  - commerce_coupon_template
+  - commerce_coupon
+  - commerce_coupon_redemption
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/VipView.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/vipService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/account
+  package: sdkwork-claw-router-console-account
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src/AccountView.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src/accountService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/wallet
+  package: sdkwork-claw-router-console-wallet
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/WalletView.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/recharge
+  package: sdkwork-claw-router-console-recharge
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/RechargeView.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/checkout
+  package: sdkwork-claw-router-console-checkout
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/CheckoutView.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/memberships
+  package: sdkwork-claw-router-console-memberships
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/MembershipsView.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /console/settlements
+  package: sdkwork-claw-router-console-settlements
+  owner: customer-console
+  route_scope: console
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: app
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/SettlementsView.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/catalog
+  package: sdkwork-claw-router-admin-catalog
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/inventory
+  package: sdkwork-claw-router-admin-inventory
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/inventoryService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/orders
+  package: sdkwork-claw-router-admin-orders
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/payments
+  package: sdkwork-claw-router-admin-payments
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/memberships
+  package: sdkwork-claw-router-admin-memberships
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/wallet
+  package: sdkwork-claw-router-admin-wallet
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/walletService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/finance
+  package: sdkwork-claw-router-admin-finance
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/catalog/categories
+  package: sdkwork-claw-router-admin-catalog
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/catalog
+  required_tables:
+  - commerce_product_category
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_product_attribute
+  - commerce_product_attribute_value
+  - commerce_product_sku_attribute
+  - commerce_product_media
+  - commerce_price_list
+  - commerce_price_list_item
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/catalog/products
+  package: sdkwork-claw-router-admin-catalog
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/catalog
+  required_tables:
+  - commerce_product_category
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_product_attribute
+  - commerce_product_attribute_value
+  - commerce_product_sku_attribute
+  - commerce_product_media
+  - commerce_price_list
+  - commerce_price_list_item
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/catalog/skus
+  package: sdkwork-claw-router-admin-catalog
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/catalog
+  required_tables:
+  - commerce_product_category
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_product_attribute
+  - commerce_product_attribute_value
+  - commerce_product_sku_attribute
+  - commerce_product_media
+  - commerce_price_list
+  - commerce_price_list_item
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/catalog/attributes
+  package: sdkwork-claw-router-admin-catalog
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/catalog
+  required_tables:
+  - commerce_product_category
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_product_attribute
+  - commerce_product_attribute_value
+  - commerce_product_sku_attribute
+  - commerce_product_media
+  - commerce_price_list
+  - commerce_price_list_item
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/catalog/prices
+  package: sdkwork-claw-router-admin-catalog
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/catalog
+  required_tables:
+  - commerce_product_category
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_product_attribute
+  - commerce_product_attribute_value
+  - commerce_product_sku_attribute
+  - commerce_product_media
+  - commerce_price_list
+  - commerce_price_list_item
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/inventory/stocks
+  package: sdkwork-claw-router-admin-inventory
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/inventory
+  required_tables:
+  - commerce_inventory_stock
+  - commerce_inventory_reservation
+  - commerce_inventory_ledger
+  - commerce_product_sku
+  - commerce_checkout_session
+  - commerce_order
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/inventoryService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/inventory/reservations
+  package: sdkwork-claw-router-admin-inventory
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/inventory
+  required_tables:
+  - commerce_inventory_stock
+  - commerce_inventory_reservation
+  - commerce_inventory_ledger
+  - commerce_product_sku
+  - commerce_checkout_session
+  - commerce_order
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/inventoryService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/inventory/ledger
+  package: sdkwork-claw-router-admin-inventory
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/inventory
+  required_tables:
+  - commerce_inventory_stock
+  - commerce_inventory_reservation
+  - commerce_inventory_ledger
+  - commerce_product_sku
+  - commerce_checkout_session
+  - commerce_order
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/inventoryService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/orders/orders
+  package: sdkwork-claw-router-admin-orders
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/orders
+  required_tables:
+  - commerce_order
+  - commerce_order_item
+  - commerce_order_amount_breakdown
+  - commerce_order_address_snapshot
+  - commerce_order_event
+  - commerce_order_cancellation
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - commerce_refund_event
+  - commerce_fulfillment_order
+  - commerce_fulfillment_item
+  - commerce_shipment
+  - commerce_shipment_tracking_event
+  - commerce_digital_delivery
+  - ops_audit_log
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/orders/refunds
+  package: sdkwork-claw-router-admin-orders
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/orders
+  required_tables:
+  - commerce_order
+  - commerce_order_item
+  - commerce_order_amount_breakdown
+  - commerce_order_address_snapshot
+  - commerce_order_event
+  - commerce_order_cancellation
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - commerce_refund_event
+  - commerce_fulfillment_order
+  - commerce_fulfillment_item
+  - commerce_shipment
+  - commerce_shipment_tracking_event
+  - commerce_digital_delivery
+  - ops_audit_log
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/orders/fulfillments
+  package: sdkwork-claw-router-admin-orders
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/orders
+  required_tables:
+  - commerce_order
+  - commerce_order_item
+  - commerce_order_amount_breakdown
+  - commerce_order_address_snapshot
+  - commerce_order_event
+  - commerce_order_cancellation
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - commerce_refund_event
+  - commerce_fulfillment_order
+  - commerce_fulfillment_item
+  - commerce_shipment
+  - commerce_shipment_tracking_event
+  - commerce_digital_delivery
+  - ops_audit_log
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/orders/shipments
+  package: sdkwork-claw-router-admin-orders
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/orders
+  required_tables:
+  - commerce_order
+  - commerce_order_item
+  - commerce_order_amount_breakdown
+  - commerce_order_address_snapshot
+  - commerce_order_event
+  - commerce_order_cancellation
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - commerce_refund_event
+  - commerce_fulfillment_order
+  - commerce_fulfillment_item
+  - commerce_shipment
+  - commerce_shipment_tracking_event
+  - commerce_digital_delivery
+  - ops_audit_log
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/payments/providers
+  package: sdkwork-claw-router-admin-payments
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/payments
+  required_tables:
+  - commerce_payment_provider
+  - commerce_payment_provider_account
+  - commerce_payment_method
+  - commerce_payment_channel
+  - commerce_payment_route_rule
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_payment_webhook_event
+  - commerce_payment_reconciliation_run
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/payments/provider-accounts
+  package: sdkwork-claw-router-admin-payments
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/payments
+  required_tables:
+  - commerce_payment_provider
+  - commerce_payment_provider_account
+  - commerce_payment_method
+  - commerce_payment_channel
+  - commerce_payment_route_rule
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_payment_webhook_event
+  - commerce_payment_reconciliation_run
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/payments/methods
+  package: sdkwork-claw-router-admin-payments
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/payments
+  required_tables:
+  - commerce_payment_provider
+  - commerce_payment_provider_account
+  - commerce_payment_method
+  - commerce_payment_channel
+  - commerce_payment_route_rule
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_payment_webhook_event
+  - commerce_payment_reconciliation_run
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/payments/channels
+  package: sdkwork-claw-router-admin-payments
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/payments
+  required_tables:
+  - commerce_payment_provider
+  - commerce_payment_provider_account
+  - commerce_payment_method
+  - commerce_payment_channel
+  - commerce_payment_route_rule
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_payment_webhook_event
+  - commerce_payment_reconciliation_run
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/payments/route-rules
+  package: sdkwork-claw-router-admin-payments
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/payments
+  required_tables:
+  - commerce_payment_provider
+  - commerce_payment_provider_account
+  - commerce_payment_method
+  - commerce_payment_channel
+  - commerce_payment_route_rule
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_payment_webhook_event
+  - commerce_payment_reconciliation_run
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/payments/intents
+  package: sdkwork-claw-router-admin-payments
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/payments
+  required_tables:
+  - commerce_payment_provider
+  - commerce_payment_provider_account
+  - commerce_payment_method
+  - commerce_payment_channel
+  - commerce_payment_route_rule
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_payment_webhook_event
+  - commerce_payment_reconciliation_run
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/payments/attempts
+  package: sdkwork-claw-router-admin-payments
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/payments
+  required_tables:
+  - commerce_payment_provider
+  - commerce_payment_provider_account
+  - commerce_payment_method
+  - commerce_payment_channel
+  - commerce_payment_route_rule
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_payment_webhook_event
+  - commerce_payment_reconciliation_run
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/payments/webhook-events
+  package: sdkwork-claw-router-admin-payments
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/payments
+  required_tables:
+  - commerce_payment_provider
+  - commerce_payment_provider_account
+  - commerce_payment_method
+  - commerce_payment_channel
+  - commerce_payment_route_rule
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_payment_webhook_event
+  - commerce_payment_reconciliation_run
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/payments/reconciliation-runs
+  package: sdkwork-claw-router-admin-payments
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/payments
+  required_tables:
+  - commerce_payment_provider
+  - commerce_payment_provider_account
+  - commerce_payment_method
+  - commerce_payment_channel
+  - commerce_payment_route_rule
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_payment_webhook_event
+  - commerce_payment_reconciliation_run
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/memberships/packages
+  package: sdkwork-claw-router-admin-memberships
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/memberships
+  required_tables:
+  - commerce_membership_plan
+  - commerce_membership_package
+  - commerce_membership_package_group
+  - commerce_membership
+  - commerce_membership_entitlement
+  - commerce_membership_entitlement_usage
+  - commerce_product_spu
+  - commerce_product_sku
+  - ops_audit_log
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_order_item
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/memberships/plans
+  package: sdkwork-claw-router-admin-memberships
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/memberships
+  required_tables:
+  - commerce_membership_plan
+  - commerce_membership_package
+  - commerce_membership_package_group
+  - commerce_membership
+  - commerce_membership_entitlement
+  - commerce_membership_entitlement_usage
+  - commerce_product_spu
+  - commerce_product_sku
+  - ops_audit_log
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_order_item
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/memberships/members
+  package: sdkwork-claw-router-admin-memberships
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/memberships
+  required_tables:
+  - commerce_membership_plan
+  - commerce_membership_package
+  - commerce_membership_package_group
+  - commerce_membership
+  - commerce_membership_entitlement
+  - commerce_membership_entitlement_usage
+  - commerce_product_spu
+  - commerce_product_sku
+  - ops_audit_log
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_order_item
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/memberships/entitlements
+  package: sdkwork-claw-router-admin-memberships
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/memberships
+  required_tables:
+  - commerce_membership_plan
+  - commerce_membership_package
+  - commerce_membership_package_group
+  - commerce_membership
+  - commerce_membership_entitlement
+  - commerce_membership_entitlement_usage
+  - commerce_product_spu
+  - commerce_product_sku
+  - ops_audit_log
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_order_item
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/memberships/recharge-packages
+  package: sdkwork-claw-router-admin-memberships
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/memberships/recharge-packages
+  required_tables:
+  - commerce_account
+  - commerce_account_ledger_entry
+  - commerce_account_hold
+  - commerce_recharge_package
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_order
+  - commerce_order_item
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_exchange_rule
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/open-platform/official-accounts
+  package: sdkwork-claw-router-admin-open-platform
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/open-platform
+  required_tables:
+  - open_platform_provider
+  - open_platform_manifest
+  - open_platform_account
+  - open_platform_entry
+  - open_platform_pay_binding
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/index.tsx
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/open-platform/official-accounts/accounts
+  package: sdkwork-claw-router-admin-wechat-official-account
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/open-platform
+  required_tables:
+  - open_platform_provider
+  - open_platform_manifest
+  - open_platform_account
+  - open_platform_entry
+  - open_platform_pay_binding
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/open-platform/official-accounts/menus
+  package: sdkwork-claw-router-admin-wechat-official-account
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/open-platform
+  required_tables:
+  - open_platform_provider
+  - open_platform_manifest
+  - open_platform_account
+  - open_platform_entry
+  - open_platform_pay_binding
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/open-platform/official-accounts/messages
+  package: sdkwork-claw-router-admin-wechat-official-account
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/open-platform
+  required_tables:
+  - open_platform_provider
+  - open_platform_manifest
+  - open_platform_account
+  - open_platform_entry
+  - open_platform_pay_binding
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/open-platform/mini-programs
+  package: sdkwork-claw-router-admin-open-platform
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/open-platform
+  required_tables:
+  - open_platform_provider
+  - open_platform_manifest
+  - open_platform_account
+  - open_platform_entry
+  - open_platform_pay_binding
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/index.tsx
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/open-platform/mini-programs/accounts
+  package: sdkwork-claw-router-admin-wechat-mini-program
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/open-platform
+  required_tables:
+  - open_platform_provider
+  - open_platform_manifest
+  - open_platform_account
+  - open_platform_entry
+  - open_platform_pay_binding
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/open-platform/mini-programs/urls
+  package: sdkwork-claw-router-admin-wechat-mini-program
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/open-platform
+  required_tables:
+  - open_platform_provider
+  - open_platform_manifest
+  - open_platform_account
+  - open_platform_entry
+  - open_platform_pay_binding
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/service-providers
+  package: sdkwork-claw-router-admin-service-provider
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/service-providers/accounts
+  required_tables:
+  - open_platform_provider
+  - open_platform_account
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/service-providers/accounts
+  package: sdkwork-claw-router-admin-service-provider
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/service-providers/accounts
+  required_tables:
+  - open_platform_provider
+  - open_platform_account
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/wallet/recharge-packages
+  package: sdkwork-claw-router-admin-wallet
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/wallet
+  required_tables:
+  - commerce_account
+  - commerce_account_ledger_entry
+  - commerce_account_hold
+  - commerce_recharge_package
+  - commerce_order
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_exchange_rule
+  - ops_audit_log
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_order_item
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/walletService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/wallet/recharge-orders
+  package: sdkwork-claw-router-admin-wallet
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/wallet
+  required_tables:
+  - commerce_account
+  - commerce_account_ledger_entry
+  - commerce_account_hold
+  - commerce_recharge_package
+  - commerce_order
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_exchange_rule
+  - ops_audit_log
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_order_item
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/walletService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/wallet/wallet-accounts
+  package: sdkwork-claw-router-admin-wallet
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/wallet
+  required_tables:
+  - commerce_account
+  - commerce_account_ledger_entry
+  - commerce_account_hold
+  - commerce_recharge_package
+  - commerce_order
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_exchange_rule
+  - ops_audit_log
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_order_item
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/walletService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/wallet/wallet-ledger
+  package: sdkwork-claw-router-admin-wallet
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/wallet
+  required_tables:
+  - commerce_account
+  - commerce_account_ledger_entry
+  - commerce_account_hold
+  - commerce_recharge_package
+  - commerce_order
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_exchange_rule
+  - ops_audit_log
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_order_item
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/walletService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/wallet/exchange-rules
+  package: sdkwork-claw-router-admin-wallet
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/wallet
+  required_tables:
+  - commerce_account
+  - commerce_account_ledger_entry
+  - commerce_account_hold
+  - commerce_recharge_package
+  - commerce_order
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_exchange_rule
+  - ops_audit_log
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_order_item
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/walletService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/finance/invoice-titles
+  package: sdkwork-claw-router-admin-finance
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/finance
+  required_tables:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_invoice_title
+  - commerce_invoice
+  - commerce_invoice_item
+  - commerce_invoice_event
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - ops_audit_log
+  - commerce_order_item
+  - commerce_usage_statement
+  - commerce_usage_settlement
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/finance/invoices
+  package: sdkwork-claw-router-admin-finance
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/finance
+  required_tables:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_invoice_title
+  - commerce_invoice
+  - commerce_invoice_item
+  - commerce_invoice_event
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - ops_audit_log
+  - commerce_order_item
+  - commerce_usage_statement
+  - commerce_usage_settlement
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/finance/coupon-templates
+  package: sdkwork-claw-router-admin-finance
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/finance
+  required_tables:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_invoice_title
+  - commerce_invoice
+  - commerce_invoice_item
+  - commerce_invoice_event
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - ops_audit_log
+  - commerce_order_item
+  - commerce_usage_statement
+  - commerce_usage_settlement
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/finance/coupon-campaigns
+  package: sdkwork-claw-router-admin-finance
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/finance
+  required_tables:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_invoice_title
+  - commerce_invoice
+  - commerce_invoice_item
+  - commerce_invoice_event
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - ops_audit_log
+  - commerce_order_item
+  - commerce_usage_statement
+  - commerce_usage_settlement
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/finance/coupon-codes
+  package: sdkwork-claw-router-admin-finance
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/finance
+  required_tables:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_invoice_title
+  - commerce_invoice
+  - commerce_invoice_item
+  - commerce_invoice_event
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - ops_audit_log
+  - commerce_order_item
+  - commerce_usage_statement
+  - commerce_usage_settlement
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/finance/coupon-redemptions
+  package: sdkwork-claw-router-admin-finance
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/finance
+  required_tables:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_invoice_title
+  - commerce_invoice
+  - commerce_invoice_item
+  - commerce_invoice_event
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - ops_audit_log
+  - commerce_order_item
+  - commerce_usage_statement
+  - commerce_usage_settlement
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/marketing/coupon-templates
+  package: sdkwork-claw-router-admin-finance
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/finance
+  required_tables:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_invoice_title
+  - commerce_invoice
+  - commerce_invoice_item
+  - commerce_invoice_event
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - ops_audit_log
+  - commerce_order_item
+  - commerce_usage_statement
+  - commerce_usage_settlement
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/marketing/coupon-campaigns
+  package: sdkwork-claw-router-admin-finance
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/finance
+  required_tables:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_invoice_title
+  - commerce_invoice
+  - commerce_invoice_item
+  - commerce_invoice_event
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - ops_audit_log
+  - commerce_order_item
+  - commerce_usage_statement
+  - commerce_usage_settlement
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/marketing/coupon-codes
+  package: sdkwork-claw-router-admin-finance
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/finance
+  required_tables:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_invoice_title
+  - commerce_invoice
+  - commerce_invoice_item
+  - commerce_invoice_event
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - ops_audit_log
+  - commerce_order_item
+  - commerce_usage_statement
+  - commerce_usage_settlement
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/marketing/coupon-redemptions
+  package: sdkwork-claw-router-admin-finance
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/finance
+  required_tables:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_invoice_title
+  - commerce_invoice
+  - commerce_invoice_item
+  - commerce_invoice_event
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - ops_audit_log
+  - commerce_order_item
+  - commerce_usage_statement
+  - commerce_usage_settlement
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/finance/payment-reconciliation
+  package: sdkwork-claw-router-admin-finance
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/finance
+  required_tables:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_invoice_title
+  - commerce_invoice
+  - commerce_invoice_item
+  - commerce_invoice_event
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - ops_audit_log
+  - commerce_order_item
+  - commerce_usage_statement
+  - commerce_usage_settlement
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/finance/order-revenue
+  package: sdkwork-claw-router-admin-finance
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/finance
+  required_tables:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_invoice_title
+  - commerce_invoice
+  - commerce_invoice_item
+  - commerce_invoice_event
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - ops_audit_log
+  - commerce_order_item
+  - commerce_usage_statement
+  - commerce_usage_settlement
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/finance/refunds-report
+  package: sdkwork-claw-router-admin-finance
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/finance
+  required_tables:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_invoice_title
+  - commerce_invoice
+  - commerce_invoice_item
+  - commerce_invoice_event
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - ops_audit_log
+  - commerce_order_item
+  - commerce_usage_statement
+  - commerce_usage_settlement
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/finance/audit-events
+  package: sdkwork-claw-router-admin-finance
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/finance
+  required_tables:
+  - commerce_coupon_template
+  - commerce_coupon_issue_batch
+  - commerce_coupon
+  - commerce_coupon_redemption
+  - commerce_invoice_title
+  - commerce_invoice
+  - commerce_invoice_item
+  - commerce_invoice_event
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_refund_attempt
+  - ops_audit_log
+  - commerce_order_item
+  - commerce_usage_statement
+  - commerce_usage_settlement
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/marketing/referrals
+  package: sdkwork-claw-router-admin-marketing
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/marketing
+  required_tables:
+  - iam_user
+  - commerce_coupon_template
+  - commerce_coupon
+  - commerce_coupon_issue_batch
+  - commerce_coupon_redemption
+  - commerce_order
+  - commerce_payment_intent
+  - commerce_payment_method
+  - commerce_recharge_package
+  - commerce_exchange_rule
+  - plus_invitation_code
+  - plus_invitation_relation
+  - ops_referral_stat_snapshot
+  - commerce_payment_attempt
+  - commerce_product_spu
+  - commerce_product_sku
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml

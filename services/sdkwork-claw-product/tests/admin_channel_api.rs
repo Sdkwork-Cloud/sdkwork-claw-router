@@ -31,7 +31,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"],"timeoutMs":60000,"retryPolicy":{"maxAttempts":3,"retryableStatusCodes":[429,503],"backoffMs":25},"circuitBreakerPolicy":{"failureThreshold":2},"weight":80,"status":"active"}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"],"timeoutMs":60000,"retryPolicy":{"maxAttempts":3,"retryableStatusCodes":[429,503],"backoffMs":25},"circuitBreakerPolicy":{"failureThreshold":2},"expiresAt":"2026-06-30T08:00:00Z","weight":80,"status":"active"}"#,
                 ))
                 .unwrap(),
         )
@@ -66,6 +66,13 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
         create_payload["data"]["item"]["circuitBreakerPolicy"]["failureThreshold"]
     );
     assert_eq!(60_000, create_payload["data"]["item"]["timeoutMs"]);
+    assert!(create_payload["data"]["item"]["createdAt"]
+        .as_str()
+        .is_some_and(|value| !value.trim().is_empty()));
+    assert_eq!(
+        "2026-06-30T08:00:00Z",
+        create_payload["data"]["item"]["expiresAt"]
+    );
     assert!(create_payload["data"]["item"].get("authKey").is_none());
 
     let update_response = router
@@ -79,7 +86,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
                 .body(Body::from(
-                    r#"{"id":"1","status":"disabled","weight":15,"models":["openai/global/gpt-4o-mini"],"capabilities":["llm","image"],"timeoutMs":120000,"retryPolicy":null,"circuitBreakerPolicy":{"failureThreshold":3}}"#,
+                    r#"{"id":"1","status":"disabled","weight":15,"models":["openai/global/gpt-4o-mini"],"capabilities":["llm","image"],"timeoutMs":120000,"retryPolicy":null,"circuitBreakerPolicy":{"failureThreshold":3},"expiresAt":null}"#,
                 ))
                 .unwrap(),
         )
@@ -104,6 +111,10 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
             .unwrap()
             .len()
     );
+    assert!(update_payload["data"]["item"]["createdAt"]
+        .as_str()
+        .is_some_and(|value| !value.trim().is_empty()));
+    assert!(update_payload["data"]["item"].get("expiresAt").is_none());
 
     let list_response = router
         .clone()
@@ -128,6 +139,10 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
     assert_eq!("1", list_payload["data"]["items"][0]["id"]);
     assert_eq!("disabled", list_payload["data"]["items"][0]["status"]);
     assert_eq!(120_000, list_payload["data"]["items"][0]["timeoutMs"]);
+    assert!(list_payload["data"]["items"][0]["createdAt"]
+        .as_str()
+        .is_some_and(|value| !value.trim().is_empty()));
+    assert!(list_payload["data"]["items"][0].get("expiresAt").is_none());
     assert!(list_payload["data"]["items"][0]
         .get("retryPolicy")
         .is_none());
@@ -161,6 +176,9 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
     assert_eq!("active", test_payload["data"]["status"]);
     assert_eq!("37ms", test_payload["data"]["latency"]);
     assert_eq!("active", test_payload["data"]["item"]["status"]);
+    assert!(test_payload["data"]["item"]["createdAt"]
+        .as_str()
+        .is_some_and(|value| !value.trim().is_empty()));
     assert!(test_payload["data"]["item"].get("authKey").is_none());
 
     let delete_response = router
@@ -204,7 +222,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
 }
 
 #[tokio::test]
-async fn admin_channel_route_accepts_api_key_input_without_leaking_plaintext_secret() {
+async fn admin_channel_route_returns_manageable_plaintext_api_key_for_channel_accounts() {
     let store = Arc::new(TestChannelStore::default());
     let router = sdkwork_claw_product::api::admin_channel_router_with_store(
         store.clone(),
@@ -232,9 +250,8 @@ async fn admin_channel_route_accepts_api_key_input_without_leaking_plaintext_sec
     let payload = json_payload(response).await;
     assert_eq!("2000", payload["code"]);
     assert_eq!("OpenAI primary", payload["data"]["item"]["name"]);
-    assert!(payload["data"]["item"].get("apiKey").is_none());
+    assert_eq!("sk-live-secret", payload["data"]["item"]["apiKey"]);
     assert!(payload["data"]["item"].get("authKey").is_none());
-    assert!(!payload.to_string().contains("sk-live-secret"));
 
     let items = store.items.lock().unwrap();
     let created = items.first().expect("created channel should be stored");
@@ -652,6 +669,7 @@ impl AdminChannelStore for TestChannelStore {
                 access_type: command.access_type,
                 base_url: command.base_url,
                 secret_ref: Some(command.secret_ref),
+                api_key: command.credential_material,
                 models: command.models,
                 capabilities: command.capabilities,
                 is_multimodal: command.is_multimodal,
@@ -660,6 +678,8 @@ impl AdminChannelStore for TestChannelStore {
                 circuit_breaker_policy_json: command.circuit_breaker_policy_json,
                 weight: command.weight,
                 status: command.status,
+                created_at: command.requested_at,
+                expires_at: command.expires_at,
                 balance: "N/A".to_owned(),
                 errors: 0,
                 deleted_at: None,
@@ -705,6 +725,9 @@ impl AdminChannelStore for TestChannelStore {
             if let Some(secret_ref) = command.secret_ref {
                 item.secret_ref = Some(secret_ref);
             }
+            if let Some(credential_material) = command.credential_material {
+                item.api_key = Some(credential_material);
+            }
             if let Some(models) = command.models {
                 item.models = models;
             }
@@ -726,6 +749,9 @@ impl AdminChannelStore for TestChannelStore {
             }
             if let Some(status) = command.status {
                 item.status = status;
+            }
+            if let Some(expires_at) = command.expires_at {
+                item.expires_at = expires_at;
             }
             Ok(Some(item.clone()))
         })

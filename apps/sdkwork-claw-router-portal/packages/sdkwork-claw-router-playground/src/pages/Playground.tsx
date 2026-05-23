@@ -1,5 +1,16 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { createRequestToken } from 'sdkwork-claw-router-commons/runtime';
+import {
+  appendSdkworkGenerationArtifactToHistoryItem,
+  createSdkworkGenerationPendingHistoryItem,
+  getSdkworkGenerationPreviewKind,
+  getSdkworkGenerationModelBucket,
+  mapSdkworkGenerationHistoryTypeToModality,
+  readSdkworkGenerationMediaThumb,
+  readSdkworkGenerationMediaUrl,
+  restoreSdkworkGenerationSerializedConfigFromHistoryItem,
+} from '@sdkwork/generation-pc-react/react';
 import {
   Activity,
   Bot,
@@ -11,6 +22,7 @@ import {
   Clock,
   Download,
   FileAudio,
+  FolderOpen,
   Headphones,
   Image as ImageIcon,
   MessageSquare,
@@ -27,18 +39,20 @@ import { VideoView } from '../components/views/VideoView';
 import { MusicView } from '../components/views/MusicView';
 import { AudioView } from '../components/views/AudioView';
 import { SfxView } from '../components/views/SfxView';
+import { AssetView } from '../components/views/AssetView';
 import { ChatPage } from '../components/chat/ChatPage';
 import { IconSidebarItem } from '../components/IconSidebarItem';
 import { getDeterministicWaveBarStyle } from '../components/waveform';
 import { PlaygroundService } from '../playgroundService';
-import type { PlaygroundHistoryItem, PlaygroundMedia, PlaygroundModelBucket, PlaygroundModelGroup } from '../playgroundTypes';
+import type { PlaygroundHistoryItem, PlaygroundModelBucket, PlaygroundModelGroup } from '../playgroundTypes';
 import type {
+  PlaygroundGenerationConfig,
   PlaygroundGenerationSubmitInput,
   PlaygroundGenerationTargetType,
 } from '../playgroundTypes';
 
-export type Modality = 'agent' | 'chat' | 'image' | 'video' | 'music' | 'audio' | 'sfx' | 'package';
-export type GenerationModality = Exclude<Modality, 'chat'>;
+export type Modality = 'agent' | 'chat' | 'image' | 'video' | 'music' | 'audio' | 'sfx' | 'package' | 'assets';
+export type GenerationModality = Exclude<Modality, 'chat' | 'assets'>;
 
 const DEFAULT_FILTER = 'all';
 
@@ -58,52 +72,18 @@ const timeOptions = [
   { id: '90d', labelKey: 'playground.filter.last90Days' },
 ] as const;
 
-function readMediaUrl(media: PlaygroundMedia | undefined) {
-  if (typeof media === 'string') {
-    return media;
-  }
-  return media?.url;
-}
-
-function readMediaThumb(media: PlaygroundMedia | undefined) {
-  if (typeof media === 'string') {
-    return media;
-  }
-  return media?.thumb || media?.url;
-}
-
 function isImageItem(item: PlaygroundHistoryItem) {
-  return item.type === 'image' || item.type === 'images';
-}
-
-function getPreviewKind(item: PlaygroundHistoryItem) {
-  if (item.type === 'video') {
-    return 'video';
-  }
-  if (isImageItem(item)) {
-    return 'image';
-  }
-  return 'audio';
+  return getSdkworkGenerationPreviewKind(item.type) === 'image';
 }
 
 function toModelBucket(value: Modality): PlaygroundModelBucket | null {
-  switch (value) {
-    case 'agent':
-    case 'chat':
-      return 'llms';
-    case 'image':
-      return 'images';
-    case 'video':
-      return 'videos';
-    case 'music':
-      return 'music';
-    case 'audio':
-      return 'audios';
-    case 'sfx':
-      return 'sfx';
-    case 'package':
-      return null;
+  if (value === 'agent' || value === 'chat') {
+    return 'llms';
   }
+  if (value === 'package' || value === 'assets') {
+    return null;
+  }
+  return getSdkworkGenerationModelBucket(value);
 }
 
 function readFirstModelId(groups: PlaygroundModelGroup[], bucket: PlaygroundModelBucket): string {
@@ -138,33 +118,33 @@ function isWithinTimeFilter(item: PlaygroundHistoryItem, timeFilter: string): bo
   return timestamp >= Date.now() - days * 24 * 60 * 60 * 1000;
 }
 
-function generationTargetFromHistoryType(type: PlaygroundHistoryItem['type']): PlaygroundGenerationTargetType {
-  if (type === 'images') {
-    return 'image';
-  }
-  return type;
-}
-
 function resolveRegenerationModelId(
   item: PlaygroundHistoryItem,
   groups: PlaygroundModelGroup[],
   selectedModels: Record<Modality, string>,
 ): string | undefined {
-  const targetType = generationTargetFromHistoryType(item.type);
-  const bucket = toModelBucket(targetType);
+  const targetType = mapSdkworkGenerationHistoryTypeToModality(item.type);
+  const bucket = targetType === undefined ? 'llms' : toModelBucket(targetType);
   if (!bucket) {
-    return selectedModels[targetType] || undefined;
+    return undefined;
   }
   const candidates = [
     item.modelCatalogKey,
     item.modelInfo,
-    selectedModels[targetType],
+    targetType === undefined ? selectedModels.agent || selectedModels.chat : selectedModels[targetType],
     readFirstModelId(groups, bucket),
   ].filter((value): value is string => Boolean(value));
   return candidates.find((candidate) => hasSelectedModel(groups, bucket, candidate)) || candidates[0];
 }
 
-function previewPromptLabelKey(kind: 'image' | 'video' | 'audio' | null, item: PlaygroundHistoryItem | null): string {
+function readRegenerationGenerationConfig(item: PlaygroundHistoryItem): PlaygroundGenerationConfig | undefined {
+  return restoreSdkworkGenerationSerializedConfigFromHistoryItem(item);
+}
+
+function previewPromptLabelKey(kind: 'text' | 'image' | 'video' | 'audio' | null, item: PlaygroundHistoryItem | null): string {
+  if (kind === 'text') {
+    return 'playground.preview.agentPrompt';
+  }
   if (kind === 'video') {
     return 'playground.preview.videoPrompt';
   }
@@ -178,6 +158,10 @@ function previewPromptLabelKey(kind: 'image' | 'video' | 'audio' | null, item: P
     return 'playground.preview.sfxPrompt';
   }
   return 'playground.preview.audioPrompt';
+}
+
+function createClientRunId(): string {
+  return createRequestToken('pending-agent-run');
 }
 
 export function Playground() {
@@ -200,6 +184,7 @@ export function Playground() {
     audio: '',
     sfx: '',
     package: '',
+    assets: '',
   });
   const [showModelMenu, setShowModelMenu] = useState(false);
   const [openFilter, setOpenFilter] = useState<'time' | 'type' | 'action' | null>(null);
@@ -328,18 +313,63 @@ export function Playground() {
   }: PlaygroundGenerationSubmitInput) => {
     setAgentSubmitError(null);
     setIsAgentSubmitting(true);
+    const targetType = inputModality === 'agent' ? undefined : inputModality;
+    const modelId = selectedModel || selectedModels[inputModality] || selectedModels.agent || undefined;
+    const pendingItem = createSdkworkGenerationPendingHistoryItem({
+      id: createClientRunId(),
+      prompt,
+      selectedModel: modelId,
+      targetType,
+      generationConfig,
+    }) as PlaygroundHistoryItem;
+    setAgentHistory((current) => [pendingItem, ...current]);
     try {
-      const modelId = selectedModel || selectedModels[inputModality] || selectedModels.agent || undefined;
       const result = await PlaygroundService.runAgentGeneration({
         prompt,
-        targetType: inputModality === 'agent' ? undefined : inputModality,
+        targetType,
         selectedModel: modelId,
         generationConfig,
         referenceImages,
+        onDelta: (delta) => {
+          if (!delta) {
+            return;
+          }
+          setAgentHistory((current) => current.map((item) => (
+            item.id === pendingItem.id
+              ? {
+                ...item,
+                outputText: `${item.outputText || ''}${delta}`,
+                status: 'processing',
+                updatedAt: new Date().toISOString(),
+              }
+              : item
+          )));
+        },
+        onArtifact: (artifact) => {
+          setAgentHistory((current) => current.map((item) => (
+            item.id === pendingItem.id
+              ? appendSdkworkGenerationArtifactToHistoryItem(item, artifact)
+              : item
+          )));
+        },
       });
-      setAgentHistory((current) => [result.item, ...current.filter((item) => item.id !== result.item.id)]);
+      setAgentHistory((current) => [result.item, ...current.filter((item) => item.id !== result.item.id && item.id !== pendingItem.id)]);
     } catch (error) {
-      setAgentSubmitError(error instanceof Error ? error.message : t('playground.agent.submitError'));
+      setAgentHistory((current) => current.map((item) => (
+        item.id === pendingItem.id
+          ? {
+            ...item,
+            status: 'failed',
+            updatedAt: new Date().toISOString(),
+          }
+          : item
+      )));
+      const message = error instanceof Error && error.message.startsWith('playground.')
+        ? t(error.message)
+        : error instanceof Error
+          ? error.message
+          : t('playground.agent.submitError');
+      setAgentSubmitError(message);
       throw error;
     } finally {
       setIsAgentSubmitting(false);
@@ -368,11 +398,13 @@ export function Playground() {
     </div>
   );
 
-  const previewKind = previewItem ? getPreviewKind(previewItem) : null;
-  const previewVideoUrl = previewKind === 'video' ? readMediaUrl(previewItem?.videos?.[activeIndex]) || previewItem?.url : undefined;
+  const previewKind = previewItem ? getSdkworkGenerationPreviewKind(previewItem.type) : null;
+  const isText = previewItem?.type === 'text';
+  const previewVideoUrl = previewKind === 'video' ? readSdkworkGenerationMediaUrl(previewItem?.videos?.[activeIndex]) || previewItem?.url : undefined;
   const previewImageUrl = previewKind === 'image' ? previewItem?.images?.[activeIndex] : undefined;
   const previewAudioUrl = previewKind === 'audio' ? previewItem?.url : undefined;
-  const previewThumbnails = previewKind === 'video' ? previewItem?.videos : previewItem?.images;
+  const previewText = previewKind === 'text' ? previewItem?.outputText : undefined;
+  const previewThumbnails = previewKind === 'video' ? previewItem?.videos : previewKind === 'image' ? previewItem?.images : undefined;
   const previewAssetUrl = previewVideoUrl || previewImageUrl || previewAudioUrl || '';
 
   const downloadPreviewAsset = async () => {
@@ -408,8 +440,9 @@ export function Playground() {
     }
     await submitAgentGeneration({
       prompt: previewItem.prompt,
-      selectedModality: generationTargetFromHistoryType(previewItem.type),
+      selectedModality: mapSdkworkGenerationHistoryTypeToModality(previewItem.type) ?? 'agent',
       selectedModel: resolveRegenerationModelId(previewItem, modelGroups, selectedModels),
+      generationConfig: readRegenerationGenerationConfig(previewItem),
     });
   };
 
@@ -424,6 +457,8 @@ export function Playground() {
         <IconSidebarItem active={modality === 'music'} icon={<Music className="h-5 w-5" />} label={t('playground.modality.music')} onClick={() => setModality('music')} />
         <IconSidebarItem active={modality === 'audio'} icon={<Headphones className="h-5 w-5" />} label={t('playground.modality.audio')} onClick={() => setModality('audio')} />
         <IconSidebarItem active={modality === 'sfx'} icon={<FileAudio className="h-5 w-5" />} label={t('playground.modality.sfx')} onClick={() => setModality('sfx')} />
+        <div className="my-1 h-px w-8 bg-white/10" />
+        <IconSidebarItem active={modality === 'assets'} icon={<FolderOpen className="h-5 w-5" />} label={t('playground.modality.assets')} onClick={() => setModality('assets')} />
       </div>
 
       <div className="relative flex h-full min-w-0 flex-1 flex-col bg-[#111] text-white">
@@ -511,7 +546,14 @@ export function Playground() {
 
           {modality === 'chat' && <ChatPage />}
 
-          {modality !== 'agent' && modality !== 'chat' && (
+          {modality === 'assets' && (
+            <AssetView
+              agentHistory={filteredAgentHistory}
+              setPreviewItem={setPreviewItem}
+            />
+          )}
+
+          {modality !== 'agent' && modality !== 'chat' && modality !== 'assets' && (
             <div className="flex h-full w-full flex-col">
               <div className="relative min-h-0 flex-1 overflow-hidden">
                 {modality === 'image' && (
@@ -608,6 +650,17 @@ export function Playground() {
                     {previewKind === 'image' && previewImageUrl && (
                       <img src={previewImageUrl} alt="Preview" className="h-full w-full rounded-2xl object-contain" />
                     )}
+                    {isText && previewKind === 'text' && (
+                      <div className="relative flex h-[600px] w-[800px] max-w-full flex-col overflow-hidden rounded-2xl border border-white/5 bg-[#111] text-slate-200">
+                        <div className="flex items-center gap-3 border-b border-white/5 px-6 py-4 text-sm font-medium text-slate-400">
+                          <Bot className="h-5 w-5 text-indigo-300" />
+                          {t('playground.preview.textOutput')}
+                        </div>
+                        <div className="custom-scrollbar min-h-0 flex-1 whitespace-pre-wrap px-6 py-5 text-[15px] leading-7 text-slate-100">
+                          {previewText || t('playground.preview.noTextOutput')}
+                        </div>
+                      </div>
+                    )}
                     {previewKind === 'audio' && (
                       <div className="relative flex h-[600px] w-[800px] flex-col items-center justify-center overflow-hidden rounded-2xl border border-white/5 bg-gradient-to-tr from-[#111] to-[#1a1a24] text-slate-400">
                         <div className="mb-10 flex h-32 items-end gap-1.5">
@@ -655,7 +708,7 @@ export function Playground() {
                 {previewThumbnails && previewThumbnails.length > 1 && (
                   <div className="hide-scrollbar z-10 flex h-full min-h-0 w-[80px] shrink-0 flex-col items-center gap-3 overflow-y-auto py-1">
                     {previewThumbnails.map((media, index) => {
-                      const thumbSrc = readMediaThumb(media);
+                      const thumbSrc = readSdkworkGenerationMediaThumb(media);
                       if (!thumbSrc) {
                         return null;
                       }

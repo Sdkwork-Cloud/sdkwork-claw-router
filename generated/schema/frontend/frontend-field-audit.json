@@ -112,6 +112,191 @@
     },
     {
       "data_sources": [
+        "ai_usage_fact",
+        "ai_request_trace"
+      ],
+      "fields": [
+        "key",
+        "title",
+        "value",
+        "severity",
+        "detail"
+      ],
+      "file_targets": [],
+      "interface": "AdminAnalyticsInsight",
+      "route": "/admin/analytics",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-analytics/src/analyticsService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_usage_fact",
+        "ai_request_trace"
+      ],
+      "fields": [
+        "rank",
+        "model",
+        "catalogKey",
+        "vendor",
+        "modality",
+        "requestCount",
+        "totalTokens",
+        "points",
+        "upstreamCost",
+        "userCount",
+        "averageTokensPerRequest",
+        "errorRate"
+      ],
+      "file_targets": [],
+      "interface": "AdminAnalyticsModelRankItem",
+      "route": "/admin/analytics",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-analytics/src/analyticsService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_usage_fact",
+        "ai_request_trace"
+      ],
+      "fields": [
+        "timeRange",
+        "startTime",
+        "endTime",
+        "limit",
+        "summary",
+        "summary.totalUsers",
+        "summary.activeUsers",
+        "summary.activeModels",
+        "summary.totalRequests",
+        "summary.successfulRequests",
+        "summary.failedRequests",
+        "summary.totalTokens",
+        "summary.totalPoints",
+        "summary.upstreamCost",
+        "summary.averageTokensPerRequest",
+        "summary.averagePointsPerRequest",
+        "summary.errorRate",
+        "trend",
+        "trend.time",
+        "trend.requests",
+        "trend.tokens",
+        "trend.points",
+        "trend.users",
+        "userRankings",
+        "modelRankings",
+        "modelDistribution",
+        "modelDistribution.name",
+        "modelDistribution.value",
+        "modelDistribution.color",
+        "modalityDistribution",
+        "modalityDistribution.name",
+        "modalityDistribution.value",
+        "modalityDistribution.color",
+        "insights",
+        "insights.key",
+        "insights.title",
+        "insights.value",
+        "insights.severity",
+        "insights.detail"
+      ],
+      "file_targets": [],
+      "interface": "AdminAnalyticsOverview",
+      "route": "/admin/analytics",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-analytics/src/analyticsService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_usage_fact",
+        "ai_request_trace"
+      ],
+      "fields": [
+        "timeRange",
+        "startTime",
+        "endTime",
+        "limit"
+      ],
+      "file_targets": [],
+      "interface": "AdminAnalyticsQuery",
+      "route": "/admin/analytics",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-analytics/src/analyticsService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_usage_fact",
+        "ai_request_trace"
+      ],
+      "fields": [
+        "totalUsers",
+        "activeUsers",
+        "activeModels",
+        "totalRequests",
+        "successfulRequests",
+        "failedRequests",
+        "totalTokens",
+        "totalPoints",
+        "upstreamCost",
+        "averageTokensPerRequest",
+        "averagePointsPerRequest",
+        "errorRate"
+      ],
+      "file_targets": [],
+      "interface": "AdminAnalyticsSummary",
+      "route": "/admin/analytics",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-analytics/src/analyticsService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_usage_fact",
+        "ai_request_trace"
+      ],
+      "fields": [
+        "time",
+        "requests",
+        "tokens",
+        "points",
+        "users"
+      ],
+      "file_targets": [],
+      "interface": "AdminAnalyticsTrendPoint",
+      "route": "/admin/analytics",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-analytics/src/analyticsService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_usage_fact"
+      ],
+      "fields": [
+        "rank",
+        "userId",
+        "userName",
+        "email",
+        "requestCount",
+        "totalTokens",
+        "points",
+        "modelDistribution",
+        "modelDistribution.name",
+        "modelDistribution.value",
+        "modelDistribution.color"
+      ],
+      "file_targets": [],
+      "interface": "AdminAnalyticsUserRankItem",
+      "route": "/admin/analytics",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-analytics/src/analyticsService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_usage_fact"
+      ],
+      "fields": [
+        "name",
+        "value",
+        "color"
+      ],
+      "file_targets": [],
+      "interface": "PieChartData",
+      "route": "/admin/analytics",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-analytics/src/analyticsService.ts"
+    },
+    {
+      "data_sources": [
         "content_announcement"
       ],
       "fields": [
@@ -162,6 +347,205 @@
     },
     {
       "data_sources": [
+        "ops_config_snapshot",
+        "ops_audit_log"
+      ],
+      "fields": [
+        "name",
+        "providerKind",
+        "purpose",
+        "keyPrefix",
+        "defaultTtlSeconds",
+        "maxEntries",
+        "connectionProfileName",
+        "supportsInspect",
+        "supportsRefresh",
+        "supportsDelete",
+        "entryCount",
+        "expiredEntryCount",
+        "cacheHits",
+        "cacheMisses",
+        "cacheWrites",
+        "cacheDeletes",
+        "cacheRefreshes",
+        "cacheInspections",
+        "cacheErrors",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "CacheInstance",
+      "route": "/admin/cache",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_config_snapshot",
+        "ops_audit_log"
+      ],
+      "fields": [
+        "key",
+        "namespace",
+        "instanceName",
+        "status",
+        "expiresInSeconds"
+      ],
+      "file_targets": [],
+      "interface": "CacheKeyItem",
+      "route": "/admin/cache",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_config_snapshot",
+        "ops_audit_log"
+      ],
+      "fields": [
+        "namespace",
+        "instanceName",
+        "scannedItems",
+        "returnedItems",
+        "limit",
+        "hasMore",
+        "scanComplete",
+        "nextCursor",
+        "items",
+        "items.key",
+        "items.namespace",
+        "items.instanceName",
+        "items.status",
+        "items.expiresInSeconds"
+      ],
+      "file_targets": [],
+      "interface": "CacheKeyList",
+      "route": "/admin/cache",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_config_snapshot",
+        "ops_audit_log"
+      ],
+      "fields": [
+        "namespace",
+        "instanceName",
+        "ttlSeconds",
+        "scope",
+        "sensitivity",
+        "failureMode",
+        "consistency",
+        "jitterPercent",
+        "staleWhileRevalidateSeconds",
+        "tags",
+        "enabled"
+      ],
+      "file_targets": [],
+      "interface": "CacheNamespacePolicy",
+      "route": "/admin/cache",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_config_snapshot",
+        "ops_audit_log"
+      ],
+      "fields": [
+        "operation",
+        "instanceName",
+        "namespace",
+        "cacheKey",
+        "deletedEntries",
+        "refreshedEntries",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "CacheOperationOutcome",
+      "route": "/admin/cache",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_config_snapshot",
+        "ops_audit_log"
+      ],
+      "fields": [
+        "summary",
+        "summary.runtimeTarget",
+        "summary.totalInstances",
+        "summary.totalNamespaces",
+        "summary.totalEntries",
+        "summary.expiredEntries",
+        "summary.cacheHits",
+        "summary.cacheMisses",
+        "summary.cacheWrites",
+        "summary.cacheDeletes",
+        "summary.cacheRefreshes",
+        "summary.cacheInspections",
+        "summary.cacheErrors",
+        "instances",
+        "instances.name",
+        "instances.providerKind",
+        "instances.purpose",
+        "instances.keyPrefix",
+        "instances.defaultTtlSeconds",
+        "instances.maxEntries",
+        "instances.connectionProfileName",
+        "instances.supportsInspect",
+        "instances.supportsRefresh",
+        "instances.supportsDelete",
+        "instances.entryCount",
+        "instances.expiredEntryCount",
+        "instances.cacheHits",
+        "instances.cacheMisses",
+        "instances.cacheWrites",
+        "instances.cacheDeletes",
+        "instances.cacheRefreshes",
+        "instances.cacheInspections",
+        "instances.cacheErrors",
+        "instances.status",
+        "namespacePolicies",
+        "namespacePolicies.namespace",
+        "namespacePolicies.instanceName",
+        "namespacePolicies.ttlSeconds",
+        "namespacePolicies.scope",
+        "namespacePolicies.sensitivity",
+        "namespacePolicies.failureMode",
+        "namespacePolicies.consistency",
+        "namespacePolicies.jitterPercent",
+        "namespacePolicies.staleWhileRevalidateSeconds",
+        "namespacePolicies.tags",
+        "namespacePolicies.enabled"
+      ],
+      "file_targets": [],
+      "interface": "CacheOverview",
+      "route": "/admin/cache",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts"
+    },
+    {
+      "data_sources": [
+        "ops_config_snapshot",
+        "ops_audit_log"
+      ],
+      "fields": [
+        "runtimeTarget",
+        "totalInstances",
+        "totalNamespaces",
+        "totalEntries",
+        "expiredEntries",
+        "cacheHits",
+        "cacheMisses",
+        "cacheWrites",
+        "cacheDeletes",
+        "cacheRefreshes",
+        "cacheInspections",
+        "cacheErrors"
+      ],
+      "file_targets": [],
+      "interface": "CacheSummary",
+      "route": "/admin/cache",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts"
+    },
+    {
+      "data_sources": [
         "integration_channel",
         "integration_channel_model",
         "integration_provider",
@@ -175,6 +559,7 @@
         "baseUrl",
         "apiKey",
         "secretRef",
+        "expiresAt",
         "models",
         "capabilities",
         "timeoutMs",
@@ -204,6 +589,9 @@
         "accessType",
         "baseUrl",
         "secretRef",
+        "apiKey",
+        "createdAt",
+        "expiresAt",
         "models",
         "capabilities",
         "isMultimodal",
@@ -217,6 +605,23 @@
       ],
       "file_targets": [],
       "interface": "ChannelItem",
+      "route": "/admin/channel",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_vendor",
+        "ai_model"
+      ],
+      "fields": [
+        "catalogKey",
+        "model",
+        "displayName",
+        "vendorCode",
+        "regionCode"
+      ],
+      "file_targets": [],
+      "interface": "ChannelModelCatalogItem",
       "route": "/admin/channel",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
     },
@@ -241,6 +646,9 @@
         "item.accessType",
         "item.baseUrl",
         "item.secretRef",
+        "item.apiKey",
+        "item.createdAt",
+        "item.expiresAt",
         "item.models",
         "item.capabilities",
         "item.isMultimodal",
@@ -272,6 +680,7 @@
         "baseUrl",
         "apiKey",
         "secretRef",
+        "expiresAt",
         "models",
         "capabilities",
         "timeoutMs",
@@ -409,47 +818,6 @@
     },
     {
       "data_sources": [
-        "commerce_usage_statement"
-      ],
-      "fields": [
-        "id",
-        "userId",
-        "period",
-        "totalTokens",
-        "totalCost",
-        "status",
-        "dueDate"
-      ],
-      "file_targets": [],
-      "interface": "BillingRecord",
-      "route": "/admin/finance",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_account_history",
-        "plus_vip_point_change",
-        "plus_order",
-        "plus_payment",
-        "plus_refund"
-      ],
-      "fields": [
-        "id",
-        "time",
-        "userId",
-        "type",
-        "amount",
-        "balance",
-        "description",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "TransactionRecord",
-      "route": "/admin/finance",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts"
-    },
-    {
-      "data_sources": [
         "iam_gateway_api_key_group",
         "ai_pricing_plan"
       ],
@@ -511,183 +879,6 @@
     },
     {
       "data_sources": [
-        "ops_coupon_issue_batch"
-      ],
-      "fields": [
-        "id",
-        "couponId",
-        "name",
-        "count",
-        "prefix",
-        "createdAt"
-      ],
-      "file_targets": [],
-      "interface": "Batch",
-      "route": "/admin/marketing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_coupon",
-        "plus_coupon_template"
-      ],
-      "fields": [
-        "id",
-        "name",
-        "type",
-        "value",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "Coupon",
-      "route": "/admin/marketing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_coupon",
-        "plus_coupon_template",
-        "ops_coupon_issue_batch"
-      ],
-      "fields": [
-        "couponId",
-        "name",
-        "count",
-        "prefix"
-      ],
-      "file_targets": [],
-      "interface": "CouponBatchGenerateInput",
-      "route": "/admin/marketing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_coupon",
-        "plus_coupon_template"
-      ],
-      "fields": [
-        "name",
-        "type",
-        "value"
-      ],
-      "file_targets": [],
-      "interface": "CouponCreateInput",
-      "route": "/admin/marketing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_account_exchange_config"
-      ],
-      "fields": [
-        "id",
-        "sourceAssetType",
-        "targetAssetType",
-        "rate",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "ExchangeRule",
-      "route": "/admin/marketing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_payment",
-        "plus_order"
-      ],
-      "fields": [
-        "id",
-        "orderNo",
-        "provider",
-        "amount",
-        "status",
-        "createdAt"
-      ],
-      "file_targets": [],
-      "interface": "PaymentAttempt",
-      "route": "/admin/marketing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts"
-    },
-    {
-      "data_sources": [
-        "ops_coupon_issue_batch",
-        "plus_user_coupon"
-      ],
-      "fields": [
-        "id",
-        "batchId",
-        "code",
-        "status",
-        "usedBy",
-        "usedAt"
-      ],
-      "file_targets": [],
-      "interface": "PromoCode",
-      "route": "/admin/marketing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_vip_recharge_pack",
-        "plus_product",
-        "plus_sku"
-      ],
-      "fields": [
-        "id",
-        "rmb",
-        "bonus",
-        "points",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "RechargePackage",
-      "route": "/admin/marketing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_vip_recharge",
-        "plus_vip_recharge_method",
-        "plus_order",
-        "plus_payment"
-      ],
-      "fields": [
-        "id",
-        "tradeNo",
-        "userId",
-        "user",
-        "amount",
-        "usd_credited",
-        "method",
-        "status",
-        "time"
-      ],
-      "file_targets": [],
-      "interface": "RechargeRecord",
-      "route": "/admin/marketing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_user_coupon",
-        "plus_coupon"
-      ],
-      "fields": [
-        "id",
-        "userId",
-        "user",
-        "code",
-        "amount",
-        "time"
-      ],
-      "file_targets": [],
-      "interface": "RedemptionRecord",
-      "route": "/admin/marketing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts"
-    },
-    {
-      "data_sources": [
         "ops_referral_stat_snapshot"
       ],
       "fields": [
@@ -702,6 +893,162 @@
       "interface": "ReferralStat",
       "route": "/admin/marketing",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_package_group",
+        "commerce_membership_package",
+        "commerce_membership_plan",
+        "commerce_product_sku"
+      ],
+      "fields": [
+        "groups",
+        "groups.id",
+        "groups.name",
+        "groups.description",
+        "groups.planId",
+        "groups.status",
+        "groups.packageCount",
+        "packages",
+        "packages.id",
+        "packages.packageNo",
+        "packages.groupId",
+        "packages.planId",
+        "packages.skuId",
+        "packages.name",
+        "packages.priceAmount",
+        "packages.currencyCode",
+        "packages.durationDays",
+        "packages.recurrenceCycle",
+        "packages.status",
+        "plans",
+        "plans.id",
+        "plans.planNo",
+        "plans.levelCode",
+        "plans.name",
+        "plans.rank",
+        "plans.status",
+        "plans.benefitCount",
+        "plans.updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPackageCatalog",
+      "route": "/admin/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_package_group",
+        "commerce_membership_package"
+      ],
+      "fields": [
+        "id",
+        "name",
+        "description",
+        "planId",
+        "status",
+        "packageCount"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPackageGroup",
+      "route": "/admin/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_package",
+        "commerce_membership_package_group",
+        "commerce_membership_plan",
+        "commerce_product_sku"
+      ],
+      "fields": [
+        "id",
+        "packageNo",
+        "groupId",
+        "planId",
+        "skuId",
+        "name",
+        "priceAmount",
+        "currencyCode",
+        "durationDays",
+        "recurrenceCycle",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPackageItem",
+      "route": "/admin/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_plan"
+      ],
+      "fields": [
+        "code",
+        "name",
+        "rank",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPlanCreateInput",
+      "route": "/admin/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_plan"
+      ],
+      "fields": [
+        "id",
+        "planNo",
+        "levelCode",
+        "name",
+        "rank",
+        "status",
+        "benefitCount",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminPlanItem",
+      "route": "/admin/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_recharge_package",
+        "commerce_product_spu",
+        "commerce_product_sku"
+      ],
+      "fields": [
+        "id",
+        "packageNo",
+        "name",
+        "skuId",
+        "priceAmount",
+        "currencyCode",
+        "bonusAmount",
+        "grantAmount",
+        "status",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminRechargePackageItem",
+      "route": "/admin/memberships/recharge-packages",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_recharge_package"
+      ],
+      "fields": [
+        "rmb",
+        "bonus",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminRechargePackageMutationInput",
+      "route": "/admin/memberships/recharge-packages",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
     },
     {
       "data_sources": [
@@ -726,10 +1073,14 @@
         "models.id",
         "models.vendorId",
         "models.vendorCode",
+        "models.model",
+        "models.displayName",
         "models.name",
         "models.type",
         "models.priceIn",
         "models.priceOut",
+        "models.cacheReadPrice",
+        "models.cacheWritePrice",
         "models.status",
         "models.calls",
         "models.description",
@@ -767,10 +1118,14 @@
         "id",
         "vendorId",
         "vendorCode",
+        "model",
+        "displayName",
         "name",
         "type",
         "priceIn",
         "priceOut",
+        "cacheReadPrice",
+        "cacheWritePrice",
         "status",
         "calls",
         "description",
@@ -838,10 +1193,14 @@
         "models.id",
         "models.vendorId",
         "models.vendorCode",
+        "models.model",
+        "models.displayName",
         "models.name",
         "models.type",
         "models.priceIn",
         "models.priceOut",
+        "models.cacheReadPrice",
+        "models.cacheWritePrice",
         "models.status",
         "models.calls",
         "models.description",
@@ -878,10 +1237,20 @@
       ],
       "fields": [
         "vendorId",
+        "model",
+        "displayName",
         "name",
         "type",
         "priceIn",
         "priceOut",
+        "cacheReadPrice",
+        "cacheWritePrice",
+        "regionPrices",
+        "regionPrices.regionCode",
+        "regionPrices.priceIn",
+        "regionPrices.priceOut",
+        "regionPrices.cacheReadPrice",
+        "regionPrices.cacheWritePrice",
         "contextTokens",
         "maxOutputTokens",
         "description",
@@ -923,6 +1292,25 @@
       ],
       "file_targets": [],
       "interface": "ModelRankingRefreshStatusView",
+      "route": "/admin/model",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_vendor",
+        "ai_model",
+        "ai_model_capability",
+        "ai_model_pricing"
+      ],
+      "fields": [
+        "regionCode",
+        "priceIn",
+        "priceOut",
+        "cacheReadPrice",
+        "cacheWritePrice"
+      ],
+      "file_targets": [],
+      "interface": "ModelRegionPriceInput",
       "route": "/admin/model",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts"
     },
@@ -1180,6 +1568,66 @@
       "interface": "LogRecord",
       "route": "/admin/record",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-record/src/recordService.ts"
+    },
+    {
+      "data_sources": [
+        "open_platform_account"
+      ],
+      "fields": [
+        "key",
+        "name",
+        "provider",
+        "type",
+        "appId",
+        "tokenRef",
+        "secretRef",
+        "aesKeyRef"
+      ],
+      "file_targets": [],
+      "interface": "ServiceProviderAccountCreateInput",
+      "route": "/admin/service-providers/accounts",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts"
+    },
+    {
+      "data_sources": [
+        "open_platform_account"
+      ],
+      "fields": [
+        "id",
+        "key",
+        "name",
+        "provider",
+        "type",
+        "status",
+        "qrDefault",
+        "appId",
+        "tokenRef",
+        "secretRef",
+        "aesKeyRef",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "ServiceProviderAccountItem",
+      "route": "/admin/service-providers/accounts",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts"
+    },
+    {
+      "data_sources": [
+        "open_platform_provider",
+        "open_platform_account"
+      ],
+      "fields": [
+        "providerId",
+        "providerCode",
+        "providerName",
+        "providerStatus",
+        "account"
+      ],
+      "file_targets": [],
+      "interface": "ServiceProviderAccountRow",
+      "route": "/admin/service-providers/accounts",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts"
     },
     {
       "data_sources": [
@@ -1710,24 +2158,33 @@
     },
     {
       "data_sources": [
-        "plus_account",
-        "plus_account_history",
-        "plus_vip_point_change",
-        "plus_refund"
+        "iam_user",
+        "iam_gateway_api_key"
       ],
       "fields": [
-        "amount",
-        "type"
+        "users",
+        "users.id",
+        "users.email",
+        "users.username",
+        "users.role",
+        "users.group",
+        "users.balance",
+        "users.status",
+        "users.lastActive",
+        "users.lastUsed",
+        "users.createdAt",
+        "apiKeysMap",
+        "apiKeysLoadError"
       ],
       "file_targets": [],
-      "interface": "UserBalanceAdjustmentInput",
+      "interface": "UserAdminTableData",
       "route": "/admin/user",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts"
     },
     {
       "data_sources": [
         "iam_user",
-        "plus_account"
+        "commerce_account"
       ],
       "fields": [
         "email",
@@ -1742,7 +2199,7 @@
     {
       "data_sources": [
         "iam_user",
-        "plus_account",
+        "commerce_account",
         "iam_role",
         "iam_user_role",
         "iam_user_login_event"
@@ -1778,6 +2235,218 @@
       "interface": "UserUpdateInput",
       "route": "/admin/user",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts"
+    },
+    {
+      "data_sources": [
+        "open_platform_entry"
+      ],
+      "fields": [
+        "key",
+        "url"
+      ],
+      "file_targets": [],
+      "interface": "WechatMiniProgramEntryInput",
+      "route": "/admin/open-platform/mini-programs/urls",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts"
+    },
+    {
+      "data_sources": [
+        "open_platform_entry"
+      ],
+      "fields": [
+        "id",
+        "accountId",
+        "key",
+        "type",
+        "url",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "WechatMiniProgramEntryItem",
+      "route": "/admin/open-platform/mini-programs/urls",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts"
+    },
+    {
+      "data_sources": [
+        "open_platform_entry"
+      ],
+      "fields": [
+        "key",
+        "url",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "WechatMiniProgramEntryUpdateInput",
+      "route": "/admin/open-platform/mini-programs/urls",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts"
+    },
+    {
+      "data_sources": [
+        "open_platform_account"
+      ],
+      "fields": [
+        "key",
+        "name",
+        "appId",
+        "tokenRef",
+        "secretRef",
+        "aesKeyRef"
+      ],
+      "file_targets": [],
+      "interface": "WechatMiniProgramInput",
+      "route": "/admin/open-platform/mini-programs/accounts",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts"
+    },
+    {
+      "data_sources": [
+        "open_platform_account"
+      ],
+      "fields": [
+        "id",
+        "key",
+        "name",
+        "status",
+        "qrDefault",
+        "defaultEntryId",
+        "appId",
+        "tokenRef",
+        "secretRef",
+        "aesKeyRef",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "WechatMiniProgramItem",
+      "route": "/admin/open-platform/mini-programs/accounts",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts"
+    },
+    {
+      "data_sources": [
+        "open_platform_account"
+      ],
+      "fields": [
+        "name",
+        "status",
+        "qrDefault",
+        "defaultEntryId",
+        "appId",
+        "tokenRef",
+        "secretRef",
+        "aesKeyRef"
+      ],
+      "file_targets": [],
+      "interface": "WechatMiniProgramUpdateInput",
+      "route": "/admin/open-platform/mini-programs/accounts",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts"
+    },
+    {
+      "data_sources": [
+        "open_platform_account"
+      ],
+      "fields": [
+        "key",
+        "name",
+        "appId",
+        "tokenRef",
+        "secretRef",
+        "aesKeyRef"
+      ],
+      "file_targets": [],
+      "interface": "WechatOfficialAccountInput",
+      "route": "/admin/open-platform/official-accounts/accounts",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts"
+    },
+    {
+      "data_sources": [
+        "open_platform_account"
+      ],
+      "fields": [
+        "id",
+        "key",
+        "name",
+        "status",
+        "qrDefault",
+        "defaultEntryId",
+        "appId",
+        "tokenRef",
+        "secretRef",
+        "aesKeyRef",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "WechatOfficialAccountItem",
+      "route": "/admin/open-platform/official-accounts/accounts",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts"
+    },
+    {
+      "data_sources": [
+        "open_platform_account"
+      ],
+      "fields": [
+        "name",
+        "status",
+        "qrDefault",
+        "defaultEntryId",
+        "appId",
+        "tokenRef",
+        "secretRef",
+        "aesKeyRef"
+      ],
+      "file_targets": [],
+      "interface": "WechatOfficialAccountUpdateInput",
+      "route": "/admin/open-platform/official-accounts/accounts",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts"
+    },
+    {
+      "data_sources": [
+        "open_platform_entry"
+      ],
+      "fields": [
+        "key",
+        "type",
+        "url"
+      ],
+      "file_targets": [],
+      "interface": "WechatOfficialEntryInput",
+      "route": "/admin/open-platform/official-accounts/menus",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts"
+    },
+    {
+      "data_sources": [
+        "open_platform_entry"
+      ],
+      "fields": [
+        "id",
+        "accountId",
+        "key",
+        "type",
+        "url",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "WechatOfficialEntryItem",
+      "route": "/admin/open-platform/official-accounts/menus",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts"
+    },
+    {
+      "data_sources": [
+        "open_platform_entry"
+      ],
+      "fields": [
+        "key",
+        "type",
+        "url",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "WechatOfficialEntryUpdateInput",
+      "route": "/admin/open-platform/official-accounts/menus",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts"
     },
     {
       "data_sources": [
@@ -1869,6 +2538,68 @@
       ],
       "file_targets": [],
       "interface": "AdminApp",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "plus_category"
+      ],
+      "fields": [
+        "id",
+        "name",
+        "description",
+        "code",
+        "icon",
+        "sortWeight",
+        "parentId",
+        "path",
+        "visible",
+        "status",
+        "type"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppCategory",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "plus_category"
+      ],
+      "fields": [
+        "name",
+        "description",
+        "code",
+        "icon",
+        "sortWeight",
+        "parentId",
+        "path",
+        "visible",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppCategoryCreateInput",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "plus_category"
+      ],
+      "fields": [
+        "name",
+        "description",
+        "code",
+        "icon",
+        "sortWeight",
+        "parentId",
+        "path",
+        "visible",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppCategoryUpdateInput",
       "route": "/admin/app",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts"
     },
@@ -1984,14 +2715,18 @@
         "ops_notification_delivery"
       ],
       "fields": [
-        "id",
-        "title",
-        "desc",
+        "actionUrl",
+        "appId",
+        "archived",
         "content",
-        "time",
-        "type",
+        "desc",
+        "id",
+        "popupSeen",
         "read",
-        "showAsPopup"
+        "showAsPopup",
+        "time",
+        "title",
+        "type"
       ],
       "file_targets": [],
       "interface": "NotificationItem",
@@ -2001,9 +2736,9 @@
     {
       "data_sources": [
         "iam_user",
-        "plus_account",
+        "commerce_account",
         "iam_organization",
-        "plus_invoice",
+        "commerce_invoice",
         "iam_user_security_setting",
         "iam_user_login_event",
         "ai_usage_fact"
@@ -2274,65 +3009,9 @@
     },
     {
       "data_sources": [
-        "plus_vip_point_change",
-        "plus_order",
-        "plus_payment"
-      ],
-      "fields": [
-        "id",
-        "amount",
-        "date",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "BillingHistoryItem",
-      "route": "/console/billing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/billingService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_vip_point_change",
-        "plus_order",
-        "plus_payment"
-      ],
-      "fields": [
-        "id",
-        "orderNo",
-        "method",
-        "amount",
-        "date",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "RechargeHistoryItem",
-      "route": "/console/billing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/billingService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_coupon",
-        "plus_user_coupon",
-        "plus_vip_point_change",
-        "plus_order",
-        "plus_payment"
-      ],
-      "fields": [
-        "id",
-        "code",
-        "amount",
-        "date",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "RedeemHistoryItem",
-      "route": "/console/billing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/billingService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_order",
-        "plus_payment",
-        "plus_vip_recharge"
+        "commerce_order",
+        "commerce_payment_intent",
+        "commerce_payment_attempt"
       ],
       "fields": [
         "orderNo",
@@ -2353,34 +3032,7 @@
       "file_targets": [],
       "interface": "CheckoutStatus",
       "route": "/console/checkout",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/checkoutService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_account_exchange_config"
-      ],
-      "fields": [
-        "sourceAssetType",
-        "targetAssetType",
-        "rate"
-      ],
-      "file_targets": [],
-      "interface": "PointsExchangeRate",
-      "route": "/console/billing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_account_exchange_config"
-      ],
-      "fields": [
-        "id",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "PointsExchangeRule",
-      "route": "/console/billing",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts"
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts"
     },
     {
       "data_sources": [
@@ -2458,6 +3110,46 @@
     },
     {
       "data_sources": [
+        "commerce_membership_package",
+        "commerce_membership_plan",
+        "commerce_product_sku"
+      ],
+      "fields": [
+        "id",
+        "packageNo",
+        "planId",
+        "skuId",
+        "priceAmount",
+        "currencyCode",
+        "durationDays",
+        "recurrenceCycle",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipPackage",
+      "route": "/console/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership",
+        "commerce_membership_plan",
+        "commerce_membership_entitlement"
+      ],
+      "fields": [
+        "membershipNo",
+        "planId",
+        "status",
+        "startsAt",
+        "expiresAt"
+      ],
+      "file_targets": [],
+      "interface": "MembershipSummary",
+      "route": "/console/memberships",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts"
+    },
+    {
+      "data_sources": [
         "integration_provider",
         "integration_channel",
         "integration_channel_model",
@@ -2481,9 +3173,9 @@
     },
     {
       "data_sources": [
-        "plus_vip_recharge_pack",
-        "plus_product",
-        "plus_sku"
+        "commerce_recharge_package",
+        "commerce_product_spu",
+        "commerce_product_sku"
       ],
       "fields": [
         "id",
@@ -2912,6 +3604,54 @@
       "interface": "UserProfile",
       "route": "/console/user",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-user/src/userService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_account_ledger_entry",
+        "commerce_order",
+        "commerce_payment_attempt"
+      ],
+      "fields": [
+        "id",
+        "amount",
+        "date",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "CommerceHistoryItem",
+      "route": "/console/wallet",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_account_ledger_entry",
+        "commerce_order",
+        "commerce_payment_attempt"
+      ],
+      "fields": [
+        "orderNo",
+        "method"
+      ],
+      "file_targets": [],
+      "interface": "RechargeHistoryItem",
+      "route": "/console/wallet",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_coupon_template",
+        "commerce_coupon",
+        "commerce_account_ledger_entry",
+        "commerce_order",
+        "commerce_payment_attempt"
+      ],
+      "fields": [
+        "code"
+      ],
+      "file_targets": [],
+      "interface": "RedeemHistoryItem",
+      "route": "/console/wallet",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts"
     },
     {
       "data_sources": [
@@ -3504,6 +4244,8 @@
         "durationSeconds",
         "activeIndex",
         "status",
+        "outputText",
+        "generationConfig",
         "createdAt",
         "updatedAt"
       ],
@@ -3579,6 +4321,21 @@
     },
     {
       "data_sources": [
+        "content_sdk_release",
+        "content_openapi_snapshot"
+      ],
+      "fields": [
+        "spec",
+        "language",
+        "config"
+      ],
+      "file_targets": [],
+      "interface": "GenerateSdkReferenceInput",
+      "route": "/sdk-reference",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/sdkReferenceGenerationService.ts"
+    },
+    {
+      "data_sources": [
         "plus_agent_skill",
         "plus_agent_skill_package",
         "plus_category",
@@ -3616,10 +4373,224 @@
       "interface": "Skill",
       "route": "/skills-hub",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/skillRuntime.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_package_group",
+        "commerce_membership_package",
+        "commerce_membership_plan",
+        "commerce_product_sku",
+        "commerce_membership",
+        "commerce_membership_entitlement",
+        "commerce_account"
+      ],
+      "fields": [
+        "groups",
+        "groups.id",
+        "groups.groupNo",
+        "groups.name",
+        "groups.description",
+        "groups.discount",
+        "groups.sortOrder",
+        "groups.packages",
+        "groups.packages.id",
+        "groups.packages.packageNo",
+        "groups.packages.groupId",
+        "groups.packages.planId",
+        "groups.packages.planName",
+        "groups.packages.skuId",
+        "groups.packages.priceAmount",
+        "groups.packages.originalPriceAmount",
+        "groups.packages.currencyCode",
+        "groups.packages.durationDays",
+        "groups.packages.durationUnit",
+        "groups.packages.recurrenceCycle",
+        "groups.packages.status",
+        "groups.packages.pointsPerMonth",
+        "groups.packages.maxImages",
+        "groups.packages.maxVideos",
+        "groups.packages.features",
+        "groups.packages.features.id",
+        "groups.packages.features.name",
+        "groups.packages.features.description",
+        "groups.packages.features.icon",
+        "groups.packages.features.included",
+        "groups.packages.isPopular",
+        "groups.packages.isRecommended",
+        "groups.packages.isPreview",
+        "groups.packages.isPurchasable",
+        "groups.packages.badge",
+        "summary"
+      ],
+      "file_targets": [],
+      "interface": "VipCatalog",
+      "route": "/vip",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/vipService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_package",
+        "commerce_membership_plan",
+        "commerce_membership_package_group",
+        "commerce_product_sku"
+      ],
+      "fields": [
+        "id",
+        "packageNo",
+        "groupId",
+        "planId",
+        "planName",
+        "skuId",
+        "priceAmount",
+        "originalPriceAmount",
+        "currencyCode",
+        "durationDays",
+        "durationUnit",
+        "recurrenceCycle",
+        "status",
+        "pointsPerMonth",
+        "maxImages",
+        "maxVideos",
+        "features",
+        "features.id",
+        "features.name",
+        "features.description",
+        "features.icon",
+        "features.included",
+        "isPopular",
+        "isRecommended",
+        "isPreview",
+        "isPurchasable",
+        "badge"
+      ],
+      "file_targets": [],
+      "interface": "VipPackage",
+      "route": "/vip",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/vipService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_entitlement",
+        "commerce_membership_plan"
+      ],
+      "fields": [
+        "id",
+        "name",
+        "description",
+        "icon",
+        "included"
+      ],
+      "file_targets": [],
+      "interface": "VipPackageFeature",
+      "route": "/vip",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/vipService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership_package_group",
+        "commerce_membership_package"
+      ],
+      "fields": [
+        "id",
+        "groupNo",
+        "name",
+        "description",
+        "discount",
+        "sortOrder",
+        "packages",
+        "packages.id",
+        "packages.packageNo",
+        "packages.groupId",
+        "packages.planId",
+        "packages.planName",
+        "packages.skuId",
+        "packages.priceAmount",
+        "packages.originalPriceAmount",
+        "packages.currencyCode",
+        "packages.durationDays",
+        "packages.durationUnit",
+        "packages.recurrenceCycle",
+        "packages.status",
+        "packages.pointsPerMonth",
+        "packages.maxImages",
+        "packages.maxVideos",
+        "packages.features",
+        "packages.features.id",
+        "packages.features.name",
+        "packages.features.description",
+        "packages.features.icon",
+        "packages.features.included",
+        "packages.isPopular",
+        "packages.isRecommended",
+        "packages.isPreview",
+        "packages.isPurchasable",
+        "packages.badge"
+      ],
+      "file_targets": [],
+      "interface": "VipPackageGroup",
+      "route": "/vip",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/vipService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_order",
+        "commerce_payment_intent",
+        "commerce_membership"
+      ],
+      "fields": [
+        "success",
+        "requestNo",
+        "status",
+        "paymentId",
+        "qrCodePayload",
+        "qrCodeImageUrl"
+      ],
+      "file_targets": [],
+      "interface": "VipPurchaseResult",
+      "route": "/vip",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/vipService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_coupon_template",
+        "commerce_coupon",
+        "commerce_coupon_redemption",
+        "commerce_membership",
+        "commerce_membership_entitlement"
+      ],
+      "fields": [
+        "success",
+        "requestNo",
+        "status",
+        "message"
+      ],
+      "file_targets": [],
+      "interface": "VipRedeemResult",
+      "route": "/vip",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/vipService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_membership",
+        "commerce_membership_plan",
+        "commerce_membership_entitlement",
+        "commerce_account"
+      ],
+      "fields": [
+        "currentPlanId",
+        "currentPlanName",
+        "status",
+        "expiresAt",
+        "pointsBalance"
+      ],
+      "file_targets": [],
+      "interface": "VipSummary",
+      "route": "/vip",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/vipService.ts"
     }
   ],
   "summary": {
-    "interface_count": 158,
-    "source_file_count": 44
+    "interface_count": 196,
+    "source_file_count": 51
   }
 }

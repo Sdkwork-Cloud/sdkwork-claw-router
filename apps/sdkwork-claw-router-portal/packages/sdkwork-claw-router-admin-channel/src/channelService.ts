@@ -1,6 +1,6 @@
 import {
   createRequestToken,
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
   readApiRecord,
@@ -33,6 +33,9 @@ export interface ChannelItem {
   accessType: string;
   baseUrl?: string;
   secretRef?: string;
+  apiKey?: string;
+  createdAt: string;
+  expiresAt?: string;
   models: string[];
   capabilities: string[];
   isMultimodal: boolean;
@@ -45,6 +48,14 @@ export interface ChannelItem {
   errors: number;
 }
 
+export interface ChannelModelCatalogItem {
+  catalogKey: string;
+  model: string;
+  displayName: string;
+  vendorCode: string;
+  regionCode: string;
+}
+
 export type ChannelCreateInput = {
   name: string;
   vendor: string;
@@ -53,6 +64,7 @@ export type ChannelCreateInput = {
   baseUrl?: string;
   apiKey?: string;
   secretRef?: string;
+  expiresAt?: string;
   models: string[];
   capabilities?: NonNullable<AdminChannelCreateRequest['capabilities']>;
   timeoutMs?: number;
@@ -70,6 +82,7 @@ export type ChannelUpdateInput = {
   baseUrl?: string | null;
   apiKey?: string;
   secretRef?: string;
+  expiresAt?: string | null;
   models?: string[];
   capabilities?: NonNullable<AdminChannelUpdateRequest['capabilities']>;
   timeoutMs?: number | null;
@@ -119,7 +132,7 @@ export type ProviderSecretUpdateInput = {
 export class ChannelService {
   static async fetchChannels(): Promise<ChannelItem[]> {
     const result = await channelBackendClient().integration.channels.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch channels');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch channels');
     return readRequiredApiItems(result, 'Failed to fetch channels')
       .map(normalizeChannel);
   }
@@ -129,7 +142,7 @@ export class ChannelService {
       toCreateChannelRequest(channel),
       requestParams('admin-channel-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to add channel');
+    ensureSdkworkApiSuccess(result, 'Failed to add channel');
     return normalizeChannel(readRequiredApiItem(result, 'Created channel response is missing data'));
   }
 
@@ -139,7 +152,7 @@ export class ChannelService {
       toUpdateChannelRequest(channelId, updates),
       requestParams('admin-channel-update'),
     );
-    ensurePlusApiSuccess(result, 'Failed to update channel');
+    ensureSdkworkApiSuccess(result, 'Failed to update channel');
     return normalizeChannel(readRequiredApiItem(result, 'Updated channel response is missing data'));
   }
 
@@ -155,7 +168,7 @@ export class ChannelService {
       channelId,
       requestParams('admin-channel-test'),
     );
-    ensurePlusApiSuccess(result, 'Failed to test channel');
+    ensureSdkworkApiSuccess(result, 'Failed to test channel');
     const data = readApiRecord(result);
     return {
       channelId: readRequiredString(data, 'channelId', 'Channel test channel id is required'),
@@ -167,10 +180,20 @@ export class ChannelService {
   }
 }
 
+export class ChannelModelCatalogService {
+  static async fetchModels(): Promise<ChannelModelCatalogItem[]> {
+    const result = await channelBackendClient().ai.models.list();
+    ensureSdkworkApiSuccess(result, 'Failed to fetch model catalog');
+    return readRequiredApiItems(result, 'Failed to fetch model catalog')
+      .map(normalizeModelCatalogItem)
+      .filter((item): item is ChannelModelCatalogItem => item !== null);
+  }
+}
+
 export class ProviderSecretService {
   static async fetchProviderSecrets(filter: Partial<Pick<ProviderSecretItem, 'providerCode' | 'status'>> = {}): Promise<ProviderSecretItem[]> {
     const result = await channelBackendClient().integration.providerSecrets.list(toProviderSecretListRequest(filter));
-    ensurePlusApiSuccess(result, 'Failed to fetch provider credentials');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch provider credentials');
     return readRequiredApiItems(result, 'Failed to fetch provider credentials')
       .map(normalizeProviderSecret);
   }
@@ -180,7 +203,7 @@ export class ProviderSecretService {
       toCreateProviderSecretRequest(secret),
       requestParams('admin-provider-secret-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to add provider credential');
+    ensureSdkworkApiSuccess(result, 'Failed to add provider credential');
     return normalizeProviderSecret(readRequiredApiItem(result, 'Created provider credential response is missing data'));
   }
 
@@ -193,7 +216,7 @@ export class ProviderSecretService {
       toUpdateProviderSecretRequest(providerSecretId, updates),
       requestParams('admin-provider-secret-update'),
     );
-    ensurePlusApiSuccess(result, 'Failed to update provider credential');
+    ensureSdkworkApiSuccess(result, 'Failed to update provider credential');
     return normalizeProviderSecret(readRequiredApiItem(result, 'Updated provider credential response is missing data'));
   }
 
@@ -215,7 +238,7 @@ function toCreateChannelRequest(channel: ChannelCreateInput): AdminChannelCreate
   if (apiKey && secretRef) {
     throw new Error('channel credential must provide either apiKey or secretRef, not both');
   }
-  return pruneUndefined({
+  const request = pruneUndefined({
     name: requiredText(channel.name, 'name'),
     vendor: requiredText(channel.vendor, 'vendor'),
     protocol: optionalText(channel.protocol),
@@ -223,7 +246,8 @@ function toCreateChannelRequest(channel: ChannelCreateInput): AdminChannelCreate
     baseUrl: optionalText(channel.baseUrl),
     apiKey,
     secretRef,
-    models: requiredStringArray(channel.models, 'models'),
+    expiresAt: optionalText(channel.expiresAt),
+    models: requiredCatalogModelKeys(channel.models, channel.vendor),
     capabilities: channel.capabilities === undefined ? undefined : toChannelCapabilities(channel.capabilities),
     timeoutMs: optionalInteger(channel.timeoutMs),
     retryPolicy: channel.retryPolicy,
@@ -233,6 +257,9 @@ function toCreateChannelRequest(channel: ChannelCreateInput): AdminChannelCreate
     weight: optionalInteger(channel.weight),
     status: channel.status,
   });
+  return apiKey
+    ? { ...request, apiKey }
+    : { ...request, apiKey: '', secretRef };
 }
 
 function toUpdateChannelRequest(id: string, updates: ChannelUpdateInput): AdminChannelUpdateRequest {
@@ -245,7 +272,8 @@ function toUpdateChannelRequest(id: string, updates: ChannelUpdateInput): AdminC
     baseUrl: updates.baseUrl === undefined ? undefined : updates.baseUrl === null ? null : updates.baseUrl.trim(),
     apiKey: optionalText(updates.apiKey),
     secretRef: optionalText(updates.secretRef),
-    models: updates.models === undefined ? undefined : requiredStringArray(updates.models, 'models'),
+    expiresAt: updates.expiresAt === undefined ? undefined : updates.expiresAt === null ? null : updates.expiresAt.trim(),
+    models: updates.models === undefined ? undefined : requiredCatalogModelKeys(updates.models, updates.vendor),
     capabilities: updates.capabilities === undefined ? undefined : toChannelCapabilities(updates.capabilities),
     timeoutMs: updates.timeoutMs === undefined ? undefined : optionalNullableInteger(updates.timeoutMs),
     retryPolicy: updates.retryPolicy,
@@ -326,6 +354,45 @@ function requiredStringArray(values: string[], fieldName: string): string[] {
   return normalized;
 }
 
+function requiredCatalogModelKeys(values: string[], vendor: string | undefined): string[] {
+  return requiredStringArray(values, 'models').map((model) => toCatalogModelKey(model, vendor));
+}
+
+function toCatalogModelKey(model: string, vendor: string | undefined): string {
+  const value = model.trim();
+  if (isCatalogModelKey(value)) {
+    return value;
+  }
+  if (value.includes('/')) {
+    throw new Error(`models must use vendorCode/regionCode/modelId catalog keys: ${value}`);
+  }
+  return `${providerCodeForVendor(vendor ?? 'custom')}/global/${value}`;
+}
+
+export function providerCodeForVendor(vendor: string): string {
+  const normalized = vendor.trim().toLowerCase();
+  const mapping: Record<string, string> = {
+    'azure openai': 'azure_openai',
+    gemini: 'google',
+    google: 'google',
+    'google gemini': 'google',
+    zhipuai: 'zhipu',
+    'zhipu ai': 'zhipu',
+    'mistral ai': 'mistral',
+    'meta llama': 'meta',
+  };
+  return (mapping[normalized] ?? normalized.replace(/\s+/g, '_')).replace(/[^a-z0-9_-]/g, '') || 'custom';
+}
+
+export function isCatalogModelKey(value: string): boolean {
+  const parts = value.trim().split('/');
+  return parts.length === 3 && parts.every((part) => part.trim().length > 0);
+}
+
+export function normalizeModelCatalogKey(model: string, vendor: string): string {
+  return toCatalogModelKey(model, vendor);
+}
+
 function optionalText(value: string | undefined): string | undefined {
   const normalized = value?.trim();
   return normalized ? normalized : undefined;
@@ -365,7 +432,7 @@ function requestParams(scope: string): { xRequestId: string } {
 }
 
 function ensureDeleteResult(result: unknown, message: string): void {
-  ensurePlusApiSuccess(result, message);
+  ensureSdkworkApiSuccess(result, message);
   if (readBoolean(readApiRecord(result), 'deleted') !== true) {
     throw new Error(message);
   }
@@ -385,6 +452,9 @@ function normalizeChannel(value: unknown): ChannelItem {
     accessType: readRequiredString(item, 'accessType', 'Channel access type is required'),
     baseUrl: readOptionalString(item, 'baseUrl'),
     secretRef: readOptionalString(item, 'secretRef'),
+    apiKey: readOptionalString(item, 'apiKey'),
+    createdAt: readRequiredString(item, 'createdAt', 'Channel created time is required'),
+    expiresAt: readOptionalString(item, 'expiresAt'),
     models: readRequiredStringArray(item, 'models', 'Channel models are required'),
     capabilities: readRequiredStringArray(item, 'capabilities', 'Channel capabilities are required'),
     isMultimodal: readRequiredBoolean(item, 'isMultimodal', 'Channel multimodal flag is required'),
@@ -396,6 +466,33 @@ function normalizeChannel(value: unknown): ChannelItem {
     balance: readRequiredString(item, 'balance', 'Channel balance is required'),
     errors: readRequiredNonNegativeInteger(item, 'errors', 'Channel errors are required'),
   };
+}
+
+function normalizeModelCatalogItem(value: unknown): ChannelModelCatalogItem | null {
+  const item = readRequiredRecord(value, 'Model catalog record is required');
+  const vendorCode = readRequiredString(item, 'vendorCode', 'Model catalog vendor code is required');
+  const model = readRequiredString(item, 'model', 'Model catalog runtime model id is required');
+  const runtimeCatalogKey = readOptionalString(item, 'catalogKey');
+  const runtimeRegionCode = readOptionalString(item, 'regionCode');
+  const regionCode = runtimeRegionCode ?? catalogRegionFromKey(runtimeCatalogKey) ?? 'global';
+  const normalizedVendorCode = providerCodeForVendor(vendorCode);
+  const catalogKey = runtimeCatalogKey && isCatalogModelKey(runtimeCatalogKey)
+    ? runtimeCatalogKey
+    : `${normalizedVendorCode}/${regionCode}/${model}`;
+  return {
+    catalogKey,
+    model,
+    displayName: readOptionalString(item, 'displayName') ?? readOptionalString(item, 'name') ?? model,
+    vendorCode: normalizedVendorCode,
+    regionCode,
+  };
+}
+
+function catalogRegionFromKey(catalogKey: string | undefined): string | undefined {
+  if (!catalogKey || !isCatalogModelKey(catalogKey)) {
+    return undefined;
+  }
+  return catalogKey.split('/')[1];
 }
 
 function readOptionalString(item: ApiRecord, key: string): string | undefined {

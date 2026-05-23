@@ -2,14 +2,52 @@ use sdkwork_claw_product::infrastructure::sql::sqlite::SqlitePaymentCallbackStor
 use sdkwork_claw_product::ports::{
     PaymentCallbackCommand, PaymentCallbackStatus, PaymentCallbackStore,
 };
+use sdkwork_commerce_storage_sqlx::commerce_database_tables;
 use sqlx::sqlite::SqlitePoolOptions;
 use sqlx::{Row, SqlitePool};
 
+const SQLITE_PAYMENT_CALLBACK_STORE: &str =
+    include_str!("../src/infrastructure/sql/sqlite/payment_callback_store.rs");
+const POSTGRES_PAYMENT_CALLBACK_STORE: &str =
+    include_str!("../src/infrastructure/sql/postgres/payment_callback_store.rs");
+
+#[test]
+fn payment_callback_uses_appbase_order_payment_and_accounting_schema() {
+    let appbase_tables = commerce_database_tables();
+    assert!(appbase_tables.contains(&"commerce_order"));
+    assert!(appbase_tables.contains(&"commerce_payment_intent"));
+    assert!(appbase_tables.contains(&"commerce_payment_attempt"));
+    assert!(appbase_tables.contains(&"commerce_payment_webhook_event"));
+    assert!(appbase_tables.contains(&"commerce_account"));
+    assert!(appbase_tables.contains(&"commerce_account_ledger_entry"));
+
+    for source in [
+        SQLITE_PAYMENT_CALLBACK_STORE,
+        POSTGRES_PAYMENT_CALLBACK_STORE,
+    ] {
+        assert!(source.contains("commerce_order"));
+        assert!(source.contains("commerce_payment_intent"));
+        assert!(source.contains("commerce_payment_attempt"));
+        assert!(source.contains("commerce_payment_webhook_event"));
+        assert!(source.contains("commerce_account"));
+        assert!(source.contains("commerce_account_ledger_entry"));
+        assert!(!source.contains("plus_order"));
+        assert!(!source.contains("FROM plus_payment "));
+        assert!(!source.contains("UPDATE plus_payment "));
+        assert!(!source.contains("plus_payment_webhook_event"));
+        assert!(!source.contains("plus_vip_recharge"));
+        assert!(!source.contains("plus_account "));
+        assert!(!source.contains("plus_account_history"));
+        assert!(!source.contains("plus_vip_point_change"));
+        assert!(!source.contains("vip_recharge"));
+    }
+}
+
 #[tokio::test]
-async fn sqlite_payment_callback_fulfills_recharge_once_and_records_webhook_success() {
+async fn sqlite_payment_callback_fulfills_appbase_recharge_once_and_records_webhook_success() {
     let pool = test_pool().await;
     let store = SqlitePaymentCallbackStore::new(pool.clone());
-    seed_pending_recharge_payment(&pool, "order-1001", 88.50, 880).await;
+    seed_pending_recharge_payment(&pool, "order-1001", "payment-1001", "88.50", 880).await;
 
     let outcome = store
         .process_payment_callback(success_command(
@@ -27,22 +65,26 @@ async fn sqlite_payment_callback_fulfills_recharge_once_and_records_webhook_succ
     assert_eq!(880, outcome.credited_points);
     assert_eq!(1880, outcome.balance);
     assert_eq!(
-        2,
-        scalar_i64(
+        "succeeded",
+        scalar_string(
             &pool,
-            "SELECT status FROM plus_payment WHERE out_trade_no = 'order-1001'"
+            "SELECT status FROM commerce_payment_attempt WHERE out_trade_no = 'order-1001'"
         )
         .await
     );
     assert_eq!(
-        2,
-        scalar_i64(&pool, "SELECT status FROM plus_order WHERE id = 100").await
+        "succeeded",
+        scalar_string(
+            &pool,
+            "SELECT status FROM commerce_payment_intent WHERE id = 'payment-1001'"
+        )
+        .await
     );
     assert_eq!(
-        1,
-        scalar_i64(
+        "paid",
+        scalar_string(
             &pool,
-            "SELECT status FROM plus_vip_recharge WHERE transaction_no = 'order-1001'"
+            "SELECT status FROM commerce_order WHERE id = 'order-entity-order-1001'"
         )
         .await
     );
@@ -50,7 +92,7 @@ async fn sqlite_payment_callback_fulfills_recharge_once_and_records_webhook_succ
         1880,
         scalar_i64(
             &pool,
-            "SELECT available_points FROM plus_account WHERE user_id = 30 AND account_type = 2"
+            "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE owner_user_id = '30' AND asset_type = 'points'"
         )
         .await
     );
@@ -58,15 +100,7 @@ async fn sqlite_payment_callback_fulfills_recharge_once_and_records_webhook_succ
         1,
         scalar_i64(
             &pool,
-            "SELECT COUNT(1) FROM plus_account_history WHERE transaction_id = 'order-1001'"
-        )
-        .await
-    );
-    assert_eq!(
-        1,
-        scalar_i64(
-            &pool,
-            "SELECT COUNT(1) FROM plus_vip_point_change WHERE source_type = 'PURCHASE'"
+            "SELECT COUNT(1) FROM commerce_account_ledger_entry WHERE transaction_no = 'order-1001' AND business_type = 'recharge'"
         )
         .await
     );
@@ -74,7 +108,7 @@ async fn sqlite_payment_callback_fulfills_recharge_once_and_records_webhook_succ
         "SUCCESS",
         scalar_string(
             &pool,
-            "SELECT status FROM plus_payment_webhook_event WHERE event_id = 'evt-1001'"
+            "SELECT status FROM commerce_payment_webhook_event WHERE event_id = 'evt-1001'"
         )
         .await
     );
@@ -84,7 +118,7 @@ async fn sqlite_payment_callback_fulfills_recharge_once_and_records_webhook_succ
 async fn sqlite_payment_callback_duplicate_event_does_not_credit_twice() {
     let pool = test_pool().await;
     let store = SqlitePaymentCallbackStore::new(pool.clone());
-    seed_pending_recharge_payment(&pool, "order-1002", 30.00, 300).await;
+    seed_pending_recharge_payment(&pool, "order-1002", "payment-1002", "30.00", 300).await;
 
     let first = store
         .process_payment_callback(success_command(
@@ -113,7 +147,7 @@ async fn sqlite_payment_callback_duplicate_event_does_not_credit_twice() {
         1300,
         scalar_i64(
             &pool,
-            "SELECT available_points FROM plus_account WHERE user_id = 30 AND account_type = 2"
+            "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE owner_user_id = '30' AND asset_type = 'points'"
         )
         .await
     );
@@ -121,15 +155,7 @@ async fn sqlite_payment_callback_duplicate_event_does_not_credit_twice() {
         1,
         scalar_i64(
             &pool,
-            "SELECT COUNT(1) FROM plus_account_history WHERE transaction_id = 'order-1002'"
-        )
-        .await
-    );
-    assert_eq!(
-        1,
-        scalar_i64(
-            &pool,
-            "SELECT COUNT(1) FROM plus_vip_point_change WHERE source_type = 'PURCHASE'"
+            "SELECT COUNT(1) FROM commerce_account_ledger_entry WHERE transaction_no = 'order-1002'"
         )
         .await
     );
@@ -139,7 +165,7 @@ async fn sqlite_payment_callback_duplicate_event_does_not_credit_twice() {
 async fn sqlite_payment_callback_rejects_nonce_replay() {
     let pool = test_pool().await;
     let store = SqlitePaymentCallbackStore::new(pool.clone());
-    seed_pending_recharge_payment(&pool, "order-1003", 10.00, 100).await;
+    seed_pending_recharge_payment(&pool, "order-1003", "payment-1003", "10.00", 100).await;
 
     store
         .process_payment_callback(success_command(
@@ -169,7 +195,7 @@ async fn sqlite_payment_callback_rejects_nonce_replay() {
         1100,
         scalar_i64(
             &pool,
-            "SELECT available_points FROM plus_account WHERE user_id = 30 AND account_type = 2"
+            "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE owner_user_id = '30' AND asset_type = 'points'"
         )
         .await
     );
@@ -179,7 +205,7 @@ async fn sqlite_payment_callback_rejects_nonce_replay() {
 async fn sqlite_payment_callback_rejects_amount_mismatch_and_marks_webhook_failed() {
     let pool = test_pool().await;
     let store = SqlitePaymentCallbackStore::new(pool.clone());
-    seed_pending_recharge_payment(&pool, "order-1004", 20.00, 200).await;
+    seed_pending_recharge_payment(&pool, "order-1004", "payment-1004", "20.00", 200).await;
 
     let error = store
         .process_payment_callback(success_command(
@@ -195,22 +221,26 @@ async fn sqlite_payment_callback_rejects_amount_mismatch_and_marks_webhook_faile
     assert!(error.is_conflict());
     assert!(error.to_string().contains("amount does not match"));
     assert_eq!(
-        1,
-        scalar_i64(
+        "pending",
+        scalar_string(
             &pool,
-            "SELECT status FROM plus_payment WHERE out_trade_no = 'order-1004'"
+            "SELECT status FROM commerce_payment_attempt WHERE out_trade_no = 'order-1004'"
         )
         .await
     );
     assert_eq!(
-        1,
-        scalar_i64(&pool, "SELECT status FROM plus_order WHERE id = 100").await
+        "pending",
+        scalar_string(
+            &pool,
+            "SELECT status FROM commerce_payment_intent WHERE id = 'payment-1004'"
+        )
+        .await
     );
     assert_eq!(
-        3,
-        scalar_i64(
+        "pending_payment",
+        scalar_string(
             &pool,
-            "SELECT status FROM plus_vip_recharge WHERE transaction_no = 'order-1004'"
+            "SELECT status FROM commerce_order WHERE id = 'order-entity-order-1004'"
         )
         .await
     );
@@ -218,7 +248,7 @@ async fn sqlite_payment_callback_rejects_amount_mismatch_and_marks_webhook_faile
         "FAILED",
         scalar_string(
             &pool,
-            "SELECT status FROM plus_payment_webhook_event WHERE event_id = 'evt-1004'"
+            "SELECT status FROM commerce_payment_webhook_event WHERE event_id = 'evt-1004'"
         )
         .await
     );
@@ -226,7 +256,7 @@ async fn sqlite_payment_callback_rejects_amount_mismatch_and_marks_webhook_faile
         1000,
         scalar_i64(
             &pool,
-            "SELECT available_points FROM plus_account WHERE user_id = 30 AND account_type = 2"
+            "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE owner_user_id = '30' AND asset_type = 'points'"
         )
         .await
     );
@@ -234,7 +264,7 @@ async fn sqlite_payment_callback_rejects_amount_mismatch_and_marks_webhook_faile
         0,
         scalar_i64(
             &pool,
-            "SELECT COUNT(1) FROM plus_account_history WHERE transaction_id = 'order-1004'"
+            "SELECT COUNT(1) FROM commerce_account_ledger_entry WHERE transaction_no = 'order-1004'"
         )
         .await
     );
@@ -252,16 +282,13 @@ async fn test_pool() -> SqlitePool {
 
 async fn create_schema(pool: &SqlitePool) {
     for statement in [
-        r#"CREATE TABLE plus_payment_webhook_event (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            data_scope INTEGER NOT NULL,
+        r#"CREATE TABLE commerce_payment_webhook_event (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL,
-            provider INTEGER NOT NULL,
+            provider TEXT NOT NULL,
             event_id TEXT NOT NULL,
             nonce TEXT NOT NULL,
             signature TEXT,
@@ -271,108 +298,97 @@ async fn create_schema(pool: &SqlitePool) {
             payload_digest TEXT NOT NULL,
             status TEXT NOT NULL,
             message TEXT,
-            processed_at TEXT
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            processed_at TEXT,
+            UNIQUE (tenant_id, provider, event_id),
+            UNIQUE (tenant_id, provider, nonce)
         )"#,
-        r#"CREATE TABLE plus_order (
-            id INTEGER PRIMARY KEY,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            user_id INTEGER NOT NULL,
-            status INTEGER NOT NULL,
-            total_amount REAL NOT NULL,
-            paid_amount REAL NOT NULL DEFAULT 0,
-            transaction_id TEXT,
-            pay_success_time TEXT,
-            cancel_time TEXT,
-            updated_at TEXT
+        r#"CREATE TABLE commerce_order (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            owner_user_id TEXT NOT NULL,
+            order_no TEXT NOT NULL,
+            status TEXT NOT NULL,
+            subject TEXT NOT NULL,
+            currency_code TEXT NOT NULL,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            paid_at TEXT,
+            cancelled_at TEXT,
+            expired_at TEXT,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, order_no)
         )"#,
-        r#"CREATE TABLE plus_payment (
-            id INTEGER PRIMARY KEY,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            order_id INTEGER NOT NULL,
-            provider INTEGER NOT NULL,
+        r#"CREATE TABLE commerce_payment_intent (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            owner_user_id TEXT NOT NULL,
+            order_id TEXT NOT NULL,
+            provider TEXT NOT NULL,
+            amount TEXT NOT NULL,
+            currency_code TEXT NOT NULL,
+            status TEXT NOT NULL,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
+        )"#,
+        r#"CREATE TABLE commerce_payment_attempt (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            owner_user_id TEXT NOT NULL,
+            payment_intent_id TEXT NOT NULL,
+            order_id TEXT NOT NULL,
+            provider TEXT NOT NULL,
             out_trade_no TEXT NOT NULL,
-            amount REAL NOT NULL,
-            status INTEGER NOT NULL,
-            purpose TEXT NOT NULL,
-            transaction_id TEXT,
-            success_time TEXT,
-            updated_at TEXT
+            amount TEXT NOT NULL,
+            currency_code TEXT NOT NULL,
+            status TEXT NOT NULL,
+            callback_payload TEXT,
+            created_at TEXT NOT NULL,
+            paid_at TEXT,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, provider, out_trade_no)
         )"#,
-        r#"CREATE TABLE plus_vip_recharge (
-            id INTEGER PRIMARY KEY,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            user_id INTEGER NOT NULL,
+        r#"CREATE TABLE commerce_account (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            owner_user_id TEXT NOT NULL,
+            asset_type TEXT NOT NULL,
+            currency_code TEXT,
+            available_amount TEXT NOT NULL DEFAULT '0',
+            frozen_amount TEXT NOT NULL DEFAULT '0',
+            version INTEGER NOT NULL DEFAULT 0,
+            status TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, organization_id, owner_user_id, asset_type, currency_code)
+        )"#,
+        r#"CREATE TABLE commerce_account_ledger_entry (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            account_id TEXT NOT NULL,
+            owner_user_id TEXT NOT NULL,
+            asset_type TEXT NOT NULL,
+            direction TEXT NOT NULL,
+            amount TEXT NOT NULL,
+            balance_after TEXT NOT NULL,
+            business_type TEXT NOT NULL,
             transaction_no TEXT NOT NULL,
-            status INTEGER NOT NULL,
-            point_amount INTEGER NOT NULL,
-            recharge_time TEXT,
-            updated_at TEXT,
-            remark TEXT
-        )"#,
-        r#"CREATE TABLE plus_account (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            data_scope INTEGER NOT NULL,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            source_type TEXT,
+            source_id TEXT,
+            remark TEXT,
             created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL,
-            user_id INTEGER NOT NULL,
-            account_type INTEGER NOT NULL,
-            owner INTEGER NOT NULL,
-            owner_id INTEGER NOT NULL,
-            available_balance REAL NOT NULL,
-            frozen_balance REAL NOT NULL,
-            available_points INTEGER NOT NULL,
-            frozen_points INTEGER NOT NULL,
-            token_balance INTEGER NOT NULL,
-            frozen_token INTEGER NOT NULL,
-            status INTEGER NOT NULL
-        )"#,
-        r#"CREATE TABLE plus_account_history (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            data_scope INTEGER NOT NULL,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL,
-            account_type INTEGER NOT NULL,
-            asset_type INTEGER NOT NULL,
-            account_id INTEGER NOT NULL,
-            transaction_id TEXT NOT NULL,
-            transaction_type INTEGER NOT NULL,
-            points_change INTEGER NOT NULL,
-            points_before INTEGER NOT NULL,
-            points_after INTEGER NOT NULL,
-            source_type INTEGER NOT NULL,
-            source_id TEXT NOT NULL,
-            status INTEGER NOT NULL,
-            usage_result TEXT,
-            remarks TEXT
-        )"#,
-        r#"CREATE TABLE plus_vip_point_change (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            data_scope INTEGER NOT NULL,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL,
-            user_id INTEGER NOT NULL,
-            change_type INTEGER NOT NULL,
-            change_amount INTEGER NOT NULL,
-            before_balance INTEGER NOT NULL,
-            after_balance INTEGER NOT NULL,
-            source_id INTEGER NOT NULL,
-            source_type TEXT NOT NULL,
-            remark TEXT
+            UNIQUE (tenant_id, transaction_no)
         )"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
@@ -382,34 +398,66 @@ async fn create_schema(pool: &SqlitePool) {
 async fn seed_pending_recharge_payment(
     pool: &SqlitePool,
     out_trade_no: &str,
-    amount: f64,
+    payment_intent_id: &str,
+    amount: &str,
     point_amount: i64,
 ) {
+    let order_id = format!("order-entity-{out_trade_no}");
     sqlx::query(
-        "INSERT INTO plus_order (id, tenant_id, organization_id, user_id, status, total_amount, paid_amount) VALUES (100, 10, 20, 30, 1, ?, 0)",
+        r#"
+        INSERT INTO commerce_order
+            (id, tenant_id, organization_id, owner_user_id, order_no, status, subject, currency_code, request_no, idempotency_key, created_at, paid_at, cancelled_at, expired_at, updated_at)
+        VALUES
+            (?, '10', '20', '30', ?, 'pending_payment', 'points_recharge', 'CNY', ?, ?, '2026-04-29 00:00:00', NULL, NULL, NULL, '2026-04-29 00:00:00')
+        "#,
     )
-    .bind(amount)
+    .bind(&order_id)
+    .bind(out_trade_no)
+    .bind(format!("request-{out_trade_no}"))
+    .bind(format!("idem-{out_trade_no}"))
     .execute(pool)
     .await
     .unwrap();
     sqlx::query(
-        "INSERT INTO plus_payment (id, tenant_id, organization_id, order_id, provider, out_trade_no, amount, status, purpose) VALUES (200, 10, 20, 100, 7, ?, ?, 1, 'POINTS')",
+        r#"
+        INSERT INTO commerce_payment_intent
+            (id, tenant_id, organization_id, owner_user_id, order_id, provider, amount, currency_code, status, request_no, idempotency_key, created_at, updated_at)
+        VALUES
+            (?, '10', '20', '30', ?, 'stripe', ?, 'CNY', 'pending', ?, ?, '2026-04-29 00:00:00', '2026-04-29 00:00:00')
+        "#,
     )
+    .bind(payment_intent_id)
+    .bind(&order_id)
+    .bind(amount)
+    .bind(format!("payment-request-{out_trade_no}"))
+    .bind(format!("payment-idem-{out_trade_no}"))
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO commerce_payment_attempt
+            (id, tenant_id, organization_id, owner_user_id, payment_intent_id, order_id, provider, out_trade_no, amount, currency_code, status, callback_payload, created_at, paid_at, updated_at)
+        VALUES
+            (?, '10', '20', '30', ?, ?, 'stripe', ?, ?, 'CNY', 'pending', ?, '2026-04-29 00:00:00', NULL, '2026-04-29 00:00:00')
+        "#,
+    )
+    .bind(format!("attempt-{out_trade_no}"))
+    .bind(payment_intent_id)
+    .bind(&order_id)
     .bind(out_trade_no)
     .bind(amount)
+    .bind(format!(r#"{{"points":{point_amount}}}"#))
     .execute(pool)
     .await
     .unwrap();
     sqlx::query(
-        "INSERT INTO plus_vip_recharge (id, tenant_id, organization_id, user_id, transaction_no, status, point_amount) VALUES (300, 10, 20, 30, ?, 3, ?)",
-    )
-    .bind(out_trade_no)
-    .bind(point_amount)
-    .execute(pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        "INSERT INTO plus_account (id, uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, user_id, account_type, owner, owner_id, available_balance, frozen_balance, available_points, frozen_points, token_balance, frozen_token, status) VALUES (400, 'account-400', 10, 20, 1, '2026-04-29 00:00:00', '2026-04-29 00:00:00', 0, 30, 2, 0, 30, 0, 0, 1000, 0, 0, 0, 1)",
+        r#"
+        INSERT INTO commerce_account
+            (id, tenant_id, organization_id, owner_user_id, asset_type, currency_code, available_amount, frozen_amount, version, status, created_at, updated_at)
+        VALUES
+            ('account-30-points', '10', '20', '30', 'points', 'POINT', '1000', '0', 0, 'active', '2026-04-29 00:00:00', '2026-04-29 00:00:00')
+        "#,
     )
     .execute(pool)
     .await
@@ -429,7 +477,6 @@ fn success_command(
         event_uuid: format!("{event_id}-uuid"),
         account_uuid: format!("{event_id}-account"),
         account_history_uuid: format!("{event_id}-history"),
-        point_change_uuid: format!("{event_id}-point-change"),
         event_id: event_id.to_owned(),
         nonce: nonce.to_owned(),
         signature: Some(format!("{event_id}-signature")),

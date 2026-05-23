@@ -1,0 +1,81 @@
+fragment: models/console-api-keys
+frontend_models:
+- route: /console/api-keys
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  interface: ApiKey
+  fields:
+  - id
+  - name
+  - maskedKey
+  - copyableKey
+  - group
+  - rate
+  - quota
+  - usedQuota
+  - modalities
+  - ipLimit
+  - created
+  - expires
+  - status
+  derived_fields:
+  - displayName
+  - groupName
+  data_sources:
+  - iam_gateway_api_key
+  - iam_gateway_api_key_group
+  - iam_gateway_api_key_group_metric_snapshot
+  - iam_gateway_access_policy
+  - ai_quota_policy
+  - ai_model_pricing
+  - ai_pricing_plan
+- route: /console/api-keys
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  interface: ApiKeyGroup
+  fields:
+  - id
+  - code
+  - name
+  - rate
+  data_sources:
+  - iam_gateway_api_key_group
+  - iam_gateway_api_key_group_metric_snapshot
+  - ai_pricing_plan
+- route: /console/api-keys
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  interface: CreatedApiKey
+  fields:
+  - key
+  - key.id
+  - key.name
+  - key.displayName
+  - key.maskedKey
+  - key.copyableKey
+  - key.group
+  - key.rate
+  - key.quota
+  - key.usedQuota
+  - key.modalities
+  - key.ipLimit
+  - key.created
+  - key.expires
+  - key.status
+  - rawKey
+  derived_fields:
+  - key.groupName
+  data_sources:
+  - iam_gateway_api_key
+- route: /console/api-keys
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  interface: CreateApiKeyInput
+  fields:
+  - name
+  - group
+  - quota
+  - isUnlimitedQuota
+  - modalities
+  - ipLimit
+  - expires
+  data_sources:
+  - iam_gateway_api_key_group
+  - iam_gateway_access_policy
+  - ai_quota_policy

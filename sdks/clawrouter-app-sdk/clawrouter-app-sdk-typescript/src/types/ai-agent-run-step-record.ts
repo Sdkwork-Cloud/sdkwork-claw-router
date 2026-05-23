@@ -48,6 +48,8 @@ export interface AiAgentRunStepRecord {
   retention_until?: string;
   /** Run id field on ai agent run step record. */
   run_id?: string;
+  /** Runtime invocation id field on ai agent run step record. */
+  runtime_invocation_id?: string;
   /** Skill id field on ai agent run step record. */
   skill_id?: string;
   /** Started at field on ai agent run step record. */
@@ -56,8 +58,6 @@ export interface AiAgentRunStepRecord {
   status?: string;
   /** Step index field on ai agent run step record. */
   step_index?: number;
-  /** Step status field on ai agent run step record. */
-  step_status?: string;
   /** Step type field on ai agent run step record. */
   step_type?: string;
   /** Tenant id field on ai agent run step record. */
@@ -66,12 +66,16 @@ export interface AiAgentRunStepRecord {
   title?: string;
   /** Tool binding id field on ai agent run step record. */
   tool_binding_id?: string;
+  /** Tool name field on ai agent run step record. */
+  tool_name?: string;
   /** Total tokens field on ai agent run step record. */
   total_tokens?: string;
   /** Trace id field on ai agent run step record. */
   trace_id?: string;
   /** Usage fact id field on ai agent run step record. */
   usage_fact_id?: string;
+  /** Usage json field on ai agent run step record. */
+  usage_json?: Record<string, JsonValue>;
   /** User id field on ai agent run step record. */
   user_id?: string;
   /** Uuid field on ai agent run step record. */

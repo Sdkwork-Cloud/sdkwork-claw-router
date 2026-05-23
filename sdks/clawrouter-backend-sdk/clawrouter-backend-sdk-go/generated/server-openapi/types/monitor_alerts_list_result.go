@@ -4,6 +4,5 @@ package types
 type MonitorAlertsListResult struct {
 	Code string `json:"code"`
 	Data AdminMonitorAlertsResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

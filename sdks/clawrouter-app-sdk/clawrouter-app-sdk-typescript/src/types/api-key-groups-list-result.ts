@@ -7,7 +7,5 @@ export interface ApiKeyGroupsListResult {
   /** Data field on api key groups list result. */
   data?: AppApiKeyGroupListResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

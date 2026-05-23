@@ -1,7 +1,7 @@
 import {
   APP_API_PREFIX,
   BACKEND_API_PREFIX,
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
   readApiRecord,
@@ -106,17 +106,6 @@ const INITIAL_TOP_MODELS: ModelUsage[] = [
   { rank: 5, name: 'whisper-large-v3', supplier: 'OpenAI', modality: 'audio', requests: 0, cost: 0, trend: '0%', isUp: true },
 ];
 
-const INITIAL_ANNOUNCEMENTS: Announcement[] = [
-  {
-    id: 1,
-    text: 'console.dashboard.dashboardview.text.initialAnnouncement',
-    textI18nKey: 'console.dashboard.dashboardview.text.initialAnnouncement',
-    time: 'console.dashboard.dashboardview.text.initialized',
-    timeI18nKey: 'console.dashboard.dashboardview.text.initialized',
-    type: 'info',
-  },
-];
-
 export class DashboardService {
   static emptyDashboardSnapshot(timeRange: DashboardTimeRange = 'daily'): DashboardSnapshot {
     return createInitialDashboardSnapshot(timeRange);
@@ -127,7 +116,7 @@ export class DashboardService {
     const params = buildTimeRangeParams(timeRange);
     const result = await client.ai.dashboard.overview.retrieve(params);
 
-    ensurePlusApiSuccess(result, 'console.dashboard.dashboardview.text.loadErrorFallback');
+    ensureSdkworkApiSuccess(result, 'console.dashboard.dashboardview.text.loadErrorFallback');
     return normalizeDashboardSnapshot(readApiRecord(result), timeRange);
   }
 }
@@ -162,7 +151,7 @@ function createInitialDashboardSnapshot(timeRange: DashboardTimeRange): Dashboar
     performanceSparkline: sparkline,
     chartData,
     topModels: createInitialTopModels(),
-    announcements: createInitialAnnouncements(),
+    announcements: [],
     configurationDomains: createInitialConfigurationDomains(),
     warnings: [],
   };
@@ -188,7 +177,7 @@ function normalizeDashboardSnapshot(record: ApiRecord, timeRange: DashboardTimeR
     performanceSparkline: performanceSparkline.length > 0 ? performanceSparkline : initialSnapshot.performanceSparkline,
     chartData,
     topModels: normalizedTopModels.length > 0 ? normalizedTopModels : initialSnapshot.topModels,
-    announcements: normalizedAnnouncements.length > 0 ? normalizedAnnouncements : initialSnapshot.announcements,
+    announcements: normalizedAnnouncements,
     configurationDomains: normalizedConfigurationDomains.length > 0
       ? normalizedConfigurationDomains
       : initialSnapshot.configurationDomains,
@@ -242,10 +231,6 @@ function createZeroSparkline(length: number): SdkDashboardOverviewResponse['requ
 
 function createInitialTopModels(): ModelUsage[] {
   return INITIAL_TOP_MODELS.map((item) => ({ ...item }));
-}
-
-function createInitialAnnouncements(): Announcement[] {
-  return INITIAL_ANNOUNCEMENTS.map((item) => ({ ...item }));
 }
 
 function createInitialConfigurationDomains(): ConfigurationDomain[] {

@@ -7,7 +7,5 @@ export interface FeedsRecommendListResult {
   /** Data field on feeds recommend list result. */
   data?: ForumFeedItemList;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

@@ -931,6 +931,45 @@ test("runtime model catalog skips malformed items while keeping usable runtime m
   assert.deepEqual(models[0].capabilities, []);
 });
 
+test("runtime model catalog accepts canonical backend model catalog keys", () => {
+  const models = resolveRuntimeModelCatalog([
+    {
+      model: "gpt-4o-mini",
+      catalogKey: "openai/gpt-4o-mini",
+      displayName: "GPT-4o mini",
+      vendorCode: "openai",
+      regionCode: "global",
+      vendor: "OpenAI",
+      capabilities: ["chat", "tools"],
+      groups: ["default", "enterprise"],
+      categories: ["Recommended", "Proprietary"],
+      modalities: ["text"],
+      inputModalities: ["text"],
+      outputModalities: ["text"],
+      contextTokens: 128000,
+      maxOutputTokens: 16384,
+      providerCodes: ["openai"],
+      officialReferenceUnitPrice: "0.150000",
+      officialReferenceCurrency: "USD",
+      officialReferencePrices: [
+        { billingMeter: "llm_input_token", unitPrice: "0.150000", currency: "USD" },
+        { billingMeter: "llm_output_token", unitPrice: "0.600000", currency: "USD" },
+      ],
+      priceAvailability: {
+        status: "reference",
+        reason: "Public reference price only. Customer-specific pricing requires an API key context.",
+      },
+    },
+  ]);
+
+  assert.equal(models.length, 1);
+  assert.equal(models[0].id, "openai/gpt-4o-mini");
+  assert.equal(models[0].modelId, "gpt-4o-mini");
+  assert.equal(models[0].regionCode, "global");
+  assert.equal(models[0].pricing.input, 0.15);
+  assert.equal(models[0].pricing.output, 0.6);
+});
+
 test("runtime model catalog rejects mismatched catalog keys instead of synthesizing identities", () => {
   const models = resolveRuntimeModelCatalog([
     {

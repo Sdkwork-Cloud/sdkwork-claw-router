@@ -11,6 +11,21 @@ class SystemApi {
 
   SystemApi(this._client);
 
+  /// List overview
+  Future<AnalyticsAdminOverviewRetrieveResult?> analyticsAdminOverviewRetrieve([String? timeRange, String? startTime, String? endTime, int? limit]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('time_range', timeRange, 'form', true, false, null),
+      QueryParameterSpec('start_time', startTime, 'form', true, false, null),
+      QueryParameterSpec('end_time', endTime, 'form', true, false, null),
+      QueryParameterSpec('limit', limit, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/system/analytics/admin/overview'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AnalyticsAdminOverviewRetrieveResult.fromJson(map);
+    })();
+  }
+
   /// Retrieve IAM auth runtime settings
   Future<AuthSettingsRetrieveResult?> authSettingsRetrieve() async {
     final response = await _client.get(ApiPaths.backendPath('/system/auth/settings'));
@@ -33,6 +48,82 @@ class SystemApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AuthSettingsUpdateResult.fromJson(map);
+    })();
+  }
+
+  /// Delete one runtime cache instance
+  Future<CacheInstancesDeleteResult?> cacheInstancesDelete(String instanceName) async {
+    final response = await _client.delete(ApiPaths.backendPath('/system/cache/instances/${serializePathParameter(instanceName, const PathParameterSpec('instanceName', 'simple', false))}'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : CacheInstancesDeleteResult.fromJson(map);
+    })();
+  }
+
+  /// Refresh one runtime cache instance
+  Future<CacheInstancesRefreshCreateResult?> cacheInstancesRefreshCreate(String instanceName) async {
+    final response = await _client.post(ApiPaths.backendPath('/system/cache/instances/${serializePathParameter(instanceName, const PathParameterSpec('instanceName', 'simple', false))}/refresh'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : CacheInstancesRefreshCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Delete a runtime cache namespace
+  Future<CacheNamespacesDeleteResult?> cacheNamespacesDelete(String namespace) async {
+    final response = await _client.delete(ApiPaths.backendPath('/system/cache/namespaces/${serializePathParameter(namespace, const PathParameterSpec('namespace', 'simple', false))}'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : CacheNamespacesDeleteResult.fromJson(map);
+    })();
+  }
+
+  /// List runtime cache keys in a namespace
+  Future<CacheNamespacesKeysListResult?> cacheNamespacesKeysList(String namespace, [int? limit, String? cursor]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('limit', limit, 'form', true, false, null),
+      QueryParameterSpec('cursor', cursor, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/system/cache/namespaces/${serializePathParameter(namespace, const PathParameterSpec('namespace', 'simple', false))}/keys'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : CacheNamespacesKeysListResult.fromJson(map);
+    })();
+  }
+
+  /// Delete a runtime cache key
+  Future<CacheNamespacesKeysDeleteResult?> cacheNamespacesKeysDelete(String namespace, String key) async {
+    final response = await _client.delete(ApiPaths.backendPath('/system/cache/namespaces/${serializePathParameter(namespace, const PathParameterSpec('namespace', 'simple', false))}/keys/${serializePathParameter(key, const PathParameterSpec('key', 'simple', false))}'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : CacheNamespacesKeysDeleteResult.fromJson(map);
+    })();
+  }
+
+  /// Refresh one runtime cache namespace
+  Future<CacheNamespacesRefreshCreateResult?> cacheNamespacesRefreshCreate(String namespace) async {
+    final response = await _client.post(ApiPaths.backendPath('/system/cache/namespaces/${serializePathParameter(namespace, const PathParameterSpec('namespace', 'simple', false))}/refresh'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : CacheNamespacesRefreshCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Retrieve runtime cache overview
+  Future<CacheOverviewRetrieveResult?> cacheOverviewRetrieve() async {
+    final response = await _client.get(ApiPaths.backendPath('/system/cache/overview'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : CacheOverviewRetrieveResult.fromJson(map);
+    })();
+  }
+
+  /// Refresh all runtime cache instances
+  Future<CacheRefreshCreateResult?> cacheRefreshCreate() async {
+    final response = await _client.post(ApiPaths.backendPath('/system/cache/refresh'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : CacheRefreshCreateResult.fromJson(map);
     })();
   }
 
@@ -85,6 +176,15 @@ class SystemApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : InstallationStatusRetrieveResult.fromJson(map);
+    })();
+  }
+
+  /// List referral stats
+  Future<MarketingReferralStatsListResult?> marketingReferralStatsList() async {
+    final response = await _client.get(ApiPaths.backendPath('/system/marketing/referral_stats'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : MarketingReferralStatsListResult.fromJson(map);
     })();
   }
 
@@ -203,6 +303,31 @@ class SystemApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : RecordsListResult.fromJson(map);
+    })();
+  }
+
+  /// Retrieve site branding and deployment personalization settings
+  Future<SiteSettingsRetrieveResult?> siteSettingsRetrieve() async {
+    final response = await _client.get(ApiPaths.backendPath('/system/site/settings'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : SiteSettingsRetrieveResult.fromJson(map);
+    })();
+  }
+
+  /// Update site branding and deployment personalization settings
+  Future<SiteSettingsUpdateResult?> siteSettingsUpdate(AdminSiteSettingsUpdateRequest body, [String? xRequestId]) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.patch(ApiPaths.backendPath('/system/site/settings'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : SiteSettingsUpdateResult.fromJson(map);
     })();
   }
 }

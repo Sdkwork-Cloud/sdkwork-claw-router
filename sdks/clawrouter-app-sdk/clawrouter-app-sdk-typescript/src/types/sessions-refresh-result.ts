@@ -7,7 +7,5 @@ export interface SessionsRefreshResult {
   /** Data field on sessions refresh result. */
   data?: IamSessionResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

@@ -15,6 +15,7 @@
     "isolatedModules": true,
     "moduleDetection": "force",
     "allowJs": true,
+    "resolveJsonModule": true,
     "jsx": "react-jsx",
     "paths": {
       "@sdkwork/clawrouter-app-sdk": [
@@ -26,8 +27,77 @@
       "@sdkwork/clawrouter-open-sdk": [
         "../../sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/src/index.ts"
       ],
+      "@sdkwork/app-sdk": [
+        "../../../../spring-ai-plus-app-api/sdkwork-sdk-app/sdkwork-app-sdk-typescript/src/index.ts"
+      ],
+      "sdkwork-claw-router-admin-analytics": [
+        "./packages/sdkwork-claw-router-admin-analytics/src/index.tsx"
+      ],
+      "sdkwork-claw-router-admin-catalog": [
+        "./packages/sdkwork-claw-router-admin-catalog/src/index.tsx"
+      ],
+      "sdkwork-claw-router-admin-finance": [
+        "./packages/sdkwork-claw-router-admin-finance/src/index.tsx"
+      ],
+      "sdkwork-claw-router-admin-open-platform": [
+        "./packages/sdkwork-claw-router-admin-open-platform/src/index.tsx"
+      ],
+      "sdkwork-claw-router-admin-inventory": [
+        "./packages/sdkwork-claw-router-admin-inventory/src/index.tsx"
+      ],
+      "sdkwork-claw-router-admin-memberships": [
+        "./packages/sdkwork-claw-router-admin-memberships/src/index.tsx"
+      ],
+      "sdkwork-claw-router-admin-orders": [
+        "./packages/sdkwork-claw-router-admin-orders/src/index.tsx"
+      ],
+      "sdkwork-claw-router-admin-payments": [
+        "./packages/sdkwork-claw-router-admin-payments/src/index.tsx"
+      ],
+      "sdkwork-claw-router-admin-service-provider": [
+        "./packages/sdkwork-claw-router-admin-service-provider/src/index.tsx"
+      ],
+      "sdkwork-claw-router-admin-site": [
+        "./packages/sdkwork-claw-router-admin-site/src/index.tsx"
+      ],
+      "sdkwork-claw-router-admin-wallet": [
+        "./packages/sdkwork-claw-router-admin-wallet/src/index.tsx"
+      ],
+      "sdkwork-claw-router-admin-wechat-official-account": [
+        "./packages/sdkwork-claw-router-admin-wechat-official-account/src/index.tsx"
+      ],
+      "sdkwork-claw-router-admin-wechat-mini-program": [
+        "./packages/sdkwork-claw-router-admin-wechat-mini-program/src/index.tsx"
+      ],
+      "sdkwork-claw-router-console-account": [
+        "./packages/sdkwork-claw-router-console-account/src/index.ts"
+      ],
+      "sdkwork-claw-router-console-checkout": [
+        "./packages/sdkwork-claw-router-console-checkout/src/index.ts"
+      ],
+      "sdkwork-claw-router-console-memberships": [
+        "./packages/sdkwork-claw-router-console-memberships/src/index.ts"
+      ],
+      "sdkwork-claw-router-console-recharge": [
+        "./packages/sdkwork-claw-router-console-recharge/src/index.ts"
+      ],
+      "sdkwork-claw-router-console-settlements": [
+        "./packages/sdkwork-claw-router-console-settlements/src/index.ts"
+      ],
+      "sdkwork-claw-router-console-wallet": [
+        "./packages/sdkwork-claw-router-console-wallet/src/index.ts"
+      ],
+      "@sdkwork/distribution-pc-react": [
+        "../../../sdkwork-appbase/packages/pc-react/device/sdkwork-distribution-pc-react/src/index.ts"
+      ],
+      "@sdkwork/distribution-pc-react/downloads": [
+        "../../../sdkwork-appbase/packages/pc-react/device/sdkwork-distribution-pc-react/src/downloads/index.ts"
+      ],
       "@sdkwork/appbase-pc-react": [
         "../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-appbase-pc-react/src/index.ts"
+      ],
+      "@sdkwork/conversation": [
+        "../../../sdkwork-appbase/packages/common/conversation/sdkwork-conversation/src/index.ts"
       ],
       "@sdkwork/auth-pc-react": [
         "../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/index.ts"
@@ -36,10 +106,13 @@
         "../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-runtime-pc-react/src/index.ts"
       ],
       "@sdkwork/core-pc-react": [
-        "./src/auth/corePcReactCompat.ts"
+        "../../../sdkwork-core/sdkwork-core-pc-react/src/index.ts"
       ],
       "@sdkwork/generation-pc-react": [
         "../../../sdkwork-appbase/packages/pc-react/content/sdkwork-generation-pc-react/src/index.ts"
+      ],
+      "@sdkwork/generation-pc-react/react": [
+        "../../../sdkwork-appbase/packages/pc-react/content/sdkwork-generation-pc-react/src/react.ts"
       ],
       "@sdkwork/host-pc-react": [
         "../../../sdkwork-appbase/packages/pc-react/host/sdkwork-host-pc-react/src/index.ts"
@@ -49,6 +122,18 @@
       ],
       "@sdkwork/i18n-pc-react": [
         "../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-i18n-pc-react/src/index.ts"
+      ],
+      "@sdkwork/notification-pc-react": [
+        "../../../sdkwork-appbase/packages/pc-react/notification/sdkwork-notification-pc-react/src/index.ts"
+      ],
+      "@sdkwork/notification-pc-react/service": [
+        "../../../sdkwork-appbase/packages/pc-react/notification/sdkwork-notification-pc-react/src/notificationService.ts"
+      ],
+      "@sdkwork/open-platform-admin-pc-react": [
+        "../../../sdkwork-appbase/packages/pc-react/integration/sdkwork-open-platform-admin-pc-react/src/index.ts"
+      ],
+      "@sdkwork/platform": [
+        "../../../sdkwork-appbase/packages/common/integration/sdkwork-platform/src/index.ts"
       ],
       "@sdkwork/iam-contracts": [
         "../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-contracts/src/index.ts"
@@ -69,10 +154,16 @@
         "../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-service/src/index.ts"
       ],
       "@sdkwork/ui-pc-react": [
-        "../../../sdkwork-ui/sdkwork-ui-pc-react/src/index.ts"
+        "../../../../../sdkwork-ui/sdkwork-ui-pc-react/src/index.ts"
+      ],
+      "@sdkwork/ui-pc-react/components/ui/button": [
+        "../../../../../sdkwork-ui/sdkwork-ui-pc-react/src/components/ui/button.tsx"
+      ],
+      "@sdkwork/ui-pc-react/components/ui/feedback/states": [
+        "../../../../../sdkwork-ui/sdkwork-ui-pc-react/src/components/ui/feedback/states.tsx"
       ],
       "@sdkwork/ui-pc-react/theme": [
-        "../../../sdkwork-ui/sdkwork-ui-pc-react/src/theme/index.ts"
+        "../../../../../sdkwork-ui/sdkwork-ui-pc-react/src/theme/index.ts"
       ],
       "@sdkwork/sdk-common": [
         "node_modules/@sdkwork/sdk-common/dist/index.d.ts"

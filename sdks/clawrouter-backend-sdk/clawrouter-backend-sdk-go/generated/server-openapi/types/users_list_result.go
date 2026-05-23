@@ -4,6 +4,5 @@ package types
 type UsersListResult struct {
 	Code string `json:"code"`
 	Data AdminUsersResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

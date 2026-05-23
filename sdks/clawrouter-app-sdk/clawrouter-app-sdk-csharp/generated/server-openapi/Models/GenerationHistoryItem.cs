@@ -6,10 +6,13 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class GenerationHistoryItem
     {
+        public string? AspectRatio { get; set; }
         public string? CreatedAt { get; set; }
         public string? Date { get; set; }
+        public int? DurationSeconds { get; set; }
         public string? Id { get; set; }
         public List<string>? Images { get; set; }
+        public string? ModelCatalogKey { get; set; }
         public string? ModelInfo { get; set; }
         public string? Prompt { get; set; }
         public string? Status { get; set; }

@@ -4,6 +4,7 @@ data class UpdateRoutingChannelRequest(
     val accessType: String? = null,
     val baseUrl: String? = null,
     val capabilities: List<String>? = null,
+    val circuitBreakerPolicy: ProviderCircuitBreakerPolicy? = null,
     val models: List<String>? = null,
     val name: String? = null,
     val protocol: String? = null,

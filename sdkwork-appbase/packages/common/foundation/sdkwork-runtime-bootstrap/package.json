@@ -1,0 +1,32 @@
+{
+  "name": "@sdkwork/runtime-bootstrap",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "SDKWork shared runtime bootstrap for generated app and backend SDK clients.",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "pnpm --dir ../../../.. exec vitest run packages/common/foundation/sdkwork-runtime-bootstrap/tests --config vitest.config.ts --configLoader native --pool vmThreads"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.2"
+  },
+  "sdkwork": {
+    "architecture": "common",
+    "capability": "runtime-bootstrap",
+    "domain": "foundation",
+    "packageType": "runtime",
+    "status": "standard"
+  }
+}

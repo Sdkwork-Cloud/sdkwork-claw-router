@@ -7,7 +7,5 @@ export interface MonitorPerformanceListResult {
   /** Data field on monitor performance list result. */
   data?: AdminMonitorPerformanceResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

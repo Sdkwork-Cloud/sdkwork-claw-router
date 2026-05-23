@@ -11,5 +11,4 @@ class UsersCurrentRetrieveResult:
     """Users current retrieve result schema exposed by Claw Router."""
     code: str
     data: Optional[IamUserResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

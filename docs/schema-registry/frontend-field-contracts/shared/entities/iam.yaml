@@ -1,0 +1,97 @@
+fragment: shared/entities/iam
+x_response_entities:
+  auth_verification_policy: &id001
+    name: AuthVerificationPolicy
+    type: object
+    additionalProperties: false
+    required:
+    - emailCodeLoginEnabled
+    - emailRegistrationVerificationRequired
+    - phoneCodeLoginEnabled
+    - phoneRegistrationVerificationRequired
+    properties:
+      emailCodeLoginEnabled:
+        type: boolean
+      emailRegistrationVerificationRequired:
+        type: boolean
+      phoneCodeLoginEnabled:
+        type: boolean
+      phoneRegistrationVerificationRequired:
+        type: boolean
+  auth_runtime_settings:
+    name: AuthRuntimeSettingsResponse
+    type: object
+    additionalProperties: false
+    required:
+    - leftRailMode
+    - loginMethods
+    - oauthLoginEnabled
+    - oauthProviders
+    - qrLoginEnabled
+    - qrLoginType
+    - recoveryMethods
+    - registerMethods
+    - verificationPolicy
+    properties:
+      leftRailMode:
+        type: string
+        enum:
+        - auto
+        - highlights-only
+        - qr-only
+      loginMethods:
+        type: array
+        minItems: 1
+        maxItems: 8
+        uniqueItems: true
+        items:
+          type: string
+          enum:
+          - password
+          - emailCode
+          - phoneCode
+          - sessionBridge
+      oauthLoginEnabled:
+        type: boolean
+      oauthProviders:
+        type: array
+        maxItems: 16
+        uniqueItems: true
+        items:
+          type: string
+          maxLength: 64
+          pattern: ^[A-Za-z0-9_-]+$
+      oauthRegion:
+        type: string
+        enum:
+        - mainland
+        - overseas
+      qrLoginEnabled:
+        type: boolean
+      qrLoginType:
+        type: string
+        enum:
+        - web
+        - official
+        - mini
+      recoveryMethods:
+        type: array
+        minItems: 1
+        maxItems: 4
+        uniqueItems: true
+        items:
+          type: string
+          enum:
+          - email
+          - phone
+      registerMethods:
+        type: array
+        minItems: 1
+        maxItems: 4
+        uniqueItems: true
+        items:
+          type: string
+          enum:
+          - email
+          - phone
+      verificationPolicy: *id001

@@ -13,6 +13,8 @@ export interface AdminChannelCreateRequest {
   capabilities?: ('llm' | 'image' | 'audio' | 'music' | 'sfx' | 'video')[];
   /** Circuit breaker policy field on admin channel create request. */
   circuitBreakerPolicy?: ProviderCircuitBreakerPolicy;
+  /** Expires at field on admin channel create request. */
+  expiresAt?: string | null;
   /** Models field on admin channel create request. */
   models: string[];
   /** Name field on admin channel create request. */

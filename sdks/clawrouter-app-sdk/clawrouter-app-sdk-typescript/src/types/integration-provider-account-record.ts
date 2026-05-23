@@ -10,6 +10,8 @@ export interface IntegrationProviderAccountRecord {
   auth_config?: Record<string, JsonValue>;
   /** Auth type field on integration provider account record. */
   auth_type?: string;
+  /** Base url field on integration provider account record. */
+  base_url?: string;
   /** Consecutive error count field on integration provider account record. */
   consecutive_error_count?: string;
   /** Created at field on integration provider account record. */

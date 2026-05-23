@@ -7,6 +7,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class AiAgentRunRecord
     {
         public string? AgentId { get; set; }
+        public string? AgentSessionId { get; set; }
         public string? AgentVersionId { get; set; }
         public string? AudioSeconds { get; set; }
         public string? CachedTokens { get; set; }
@@ -21,8 +22,10 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? ImageCount { get; set; }
         public string? InputMessage { get; set; }
         public bool? LegalHold { get; set; }
+        public string? MemorySpaceId { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? MeteringStatus { get; set; }
+        public string? Model { get; set; }
         public string? OrganizationId { get; set; }
         public string? OutputMessage { get; set; }
         public string? PayloadHash { get; set; }
@@ -30,8 +33,8 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? PromptTokens { get; set; }
         public string? RequestId { get; set; }
         public string? RetentionUntil { get; set; }
-        public string? RunStatus { get; set; }
         public string? RunUuid { get; set; }
+        public string? Runtime { get; set; }
         public string? SourceSurface { get; set; }
         public string? StartedAt { get; set; }
         public string? Status { get; set; }
@@ -41,6 +44,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? TotalTokens { get; set; }
         public string? TraceId { get; set; }
         public string? UsageFactId { get; set; }
+        public Dictionary<string, string>? UsageJson { get; set; }
         public string? UserId { get; set; }
         public string? Uuid { get; set; }
         public string? VideoSeconds { get; set; }

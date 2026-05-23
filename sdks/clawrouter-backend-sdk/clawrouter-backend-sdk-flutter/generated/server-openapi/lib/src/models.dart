@@ -15,13 +15,11 @@ List<dynamic>? _sdkworkAsList(dynamic value) {
 class AccessGroupsCreateResult {
   final String? code;
   final AdminAccessGroupMutationResponse? data;
-  final String? message;
   final String? msg;
 
   AccessGroupsCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -32,7 +30,6 @@ class AccessGroupsCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAccessGroupMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -41,7 +38,6 @@ class AccessGroupsCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -50,13 +46,11 @@ class AccessGroupsCreateResult {
 class AccessGroupsDeleteResult {
   final String? code;
   final AdminDeleteResponse? data;
-  final String? message;
   final String? msg;
 
   AccessGroupsDeleteResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -67,7 +61,6 @@ class AccessGroupsDeleteResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminDeleteResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -76,7 +69,6 @@ class AccessGroupsDeleteResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -85,13 +77,11 @@ class AccessGroupsDeleteResult {
 class AccessGroupsListResult {
   final String? code;
   final AdminAccessGroupsResponse? data;
-  final String? message;
   final String? msg;
 
   AccessGroupsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -102,7 +92,6 @@ class AccessGroupsListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAccessGroupsResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -111,7 +100,6 @@ class AccessGroupsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -120,13 +108,11 @@ class AccessGroupsListResult {
 class AccessGroupsUpdateResult {
   final String? code;
   final AdminAccessGroupMutationResponse? data;
-  final String? message;
   final String? msg;
 
   AccessGroupsUpdateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -137,7 +123,6 @@ class AccessGroupsUpdateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAccessGroupMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -146,7 +131,378 @@ class AccessGroupsUpdateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
+      'msg': msg,
+    };
+  }
+}
+
+class AccountsCreateResult {
+  final String? code;
+  final OpenPlatformAccountResponse? data;
+  final String? msg;
+
+  AccountsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AccountsCreateResult.fromJson(Map<String, dynamic> json) {
+    return AccountsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : OpenPlatformAccountResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AccountsDeleteResult {
+  final String? code;
+  final OpenPlatformAccountResponse? data;
+  final String? msg;
+
+  AccountsDeleteResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AccountsDeleteResult.fromJson(Map<String, dynamic> json) {
+    return AccountsDeleteResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : OpenPlatformAccountResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AccountsEntriesCreateResult {
+  final String? code;
+  final OpenPlatformEntryResponse? data;
+  final String? msg;
+
+  AccountsEntriesCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AccountsEntriesCreateResult.fromJson(Map<String, dynamic> json) {
+    return AccountsEntriesCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : OpenPlatformEntryResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AccountsEntriesDeleteResult {
+  final String? code;
+  final OpenPlatformEntryResponse? data;
+  final String? msg;
+
+  AccountsEntriesDeleteResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AccountsEntriesDeleteResult.fromJson(Map<String, dynamic> json) {
+    return AccountsEntriesDeleteResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : OpenPlatformEntryResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AccountsEntriesListResult {
+  final String? code;
+  final OpenPlatformEntryListResponse? data;
+  final String? msg;
+
+  AccountsEntriesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AccountsEntriesListResult.fromJson(Map<String, dynamic> json) {
+    return AccountsEntriesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : OpenPlatformEntryListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AccountsEntriesUpdateResult {
+  final String? code;
+  final OpenPlatformEntryResponse? data;
+  final String? msg;
+
+  AccountsEntriesUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AccountsEntriesUpdateResult.fromJson(Map<String, dynamic> json) {
+    return AccountsEntriesUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : OpenPlatformEntryResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AccountsListResult {
+  final String? code;
+  final OpenPlatformAccountListResponse? data;
+  final String? msg;
+
+  AccountsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AccountsListResult.fromJson(Map<String, dynamic> json) {
+    return AccountsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : OpenPlatformAccountListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AccountsPayBindingsCreateResult {
+  final String? code;
+  final OpenPlatformPayBindingResponse? data;
+  final String? msg;
+
+  AccountsPayBindingsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AccountsPayBindingsCreateResult.fromJson(Map<String, dynamic> json) {
+    return AccountsPayBindingsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : OpenPlatformPayBindingResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AccountsPayBindingsDeleteResult {
+  final String? code;
+  final OpenPlatformPayBindingResponse? data;
+  final String? msg;
+
+  AccountsPayBindingsDeleteResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AccountsPayBindingsDeleteResult.fromJson(Map<String, dynamic> json) {
+    return AccountsPayBindingsDeleteResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : OpenPlatformPayBindingResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AccountsPayBindingsListResult {
+  final String? code;
+  final OpenPlatformPayBindingListResponse? data;
+  final String? msg;
+
+  AccountsPayBindingsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AccountsPayBindingsListResult.fromJson(Map<String, dynamic> json) {
+    return AccountsPayBindingsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : OpenPlatformPayBindingListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AccountsRetrieveResult {
+  final String? code;
+  final OpenPlatformAccountResponse? data;
+  final String? msg;
+
+  AccountsRetrieveResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AccountsRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return AccountsRetrieveResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : OpenPlatformAccountResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AccountsUpdateResult {
+  final String? code;
+  final OpenPlatformAccountResponse? data;
+  final String? msg;
+
+  AccountsUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AccountsUpdateResult.fromJson(Map<String, dynamic> json) {
+    return AccountsUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : OpenPlatformAccountResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
       'msg': msg,
     };
   }
@@ -625,17 +981,22 @@ class AdminAgentVersionItem {
 
 class AdminAiModelCreateRequest {
   final String? apiFormat;
+  final String? cacheReadPrice;
+  final String? cacheWritePrice;
   final String? capabilityIntro;
   final String? contextTokens;
   final String? description;
+  final String? displayName;
   final List<String>? inputModalities;
   final List<String>? limitations;
   final int? maxOutputTokens;
   final List<String>? modalities;
+  final String? model;
   final String? name;
   final List<String>? outputModalities;
   final String? priceIn;
   final String? priceOut;
+  final List<AdminAiModelRegionPrice>? regionPrices;
   final int? releaseStage;
   final String? replacementModel;
   final int? routingState;
@@ -651,17 +1012,22 @@ class AdminAiModelCreateRequest {
 
   AdminAiModelCreateRequest({
     this.apiFormat,
+    this.cacheReadPrice,
+    this.cacheWritePrice,
     this.capabilityIntro,
     this.contextTokens,
     this.description,
+    this.displayName,
     this.inputModalities,
     this.limitations,
     this.maxOutputTokens,
     this.modalities,
+    this.model,
     this.name,
     this.outputModalities,
     this.priceIn,
     this.priceOut,
+    this.regionPrices,
     this.releaseStage,
     this.replacementModel,
     this.routingState,
@@ -679,9 +1045,12 @@ class AdminAiModelCreateRequest {
   factory AdminAiModelCreateRequest.fromJson(Map<String, dynamic> json) {
     return AdminAiModelCreateRequest(
       apiFormat: json['apiFormat']?.toString(),
+      cacheReadPrice: json['cacheReadPrice']?.toString(),
+      cacheWritePrice: json['cacheWritePrice']?.toString(),
       capabilityIntro: json['capabilityIntro']?.toString(),
       contextTokens: json['contextTokens']?.toString(),
       description: json['description']?.toString(),
+      displayName: json['displayName']?.toString(),
       inputModalities: (() {
         final list = _sdkworkAsList(json['inputModalities']);
         if (list == null) {
@@ -713,6 +1082,7 @@ class AdminAiModelCreateRequest {
             .whereType<String>()
             .toList();
       })(),
+      model: json['model']?.toString(),
       name: json['name']?.toString(),
       outputModalities: (() {
         final list = _sdkworkAsList(json['outputModalities']);
@@ -726,6 +1096,19 @@ class AdminAiModelCreateRequest {
       })(),
       priceIn: json['priceIn']?.toString(),
       priceOut: json['priceOut']?.toString(),
+      regionPrices: (() {
+        final list = _sdkworkAsList(json['regionPrices']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAiModelRegionPrice.fromJson(map);
+      })())
+            .whereType<AdminAiModelRegionPrice>()
+            .toList();
+      })(),
       releaseStage: json['releaseStage'] is int ? json['releaseStage'] : null,
       replacementModel: json['replacementModel']?.toString(),
       routingState: json['routingState'] is int ? json['routingState'] : null,
@@ -762,17 +1145,22 @@ class AdminAiModelCreateRequest {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'apiFormat': apiFormat,
+      'cacheReadPrice': cacheReadPrice,
+      'cacheWritePrice': cacheWritePrice,
       'capabilityIntro': capabilityIntro,
       'contextTokens': contextTokens,
       'description': description,
+      'displayName': displayName,
       'inputModalities': inputModalities?.map((item) => item).toList(),
       'limitations': limitations?.map((item) => item).toList(),
       'maxOutputTokens': maxOutputTokens,
       'modalities': modalities?.map((item) => item).toList(),
+      'model': model,
       'name': name,
       'outputModalities': outputModalities?.map((item) => item).toList(),
       'priceIn': priceIn,
       'priceOut': priceOut,
+      'regionPrices': regionPrices?.map((item) => item.toJson()).toList(),
       'releaseStage': releaseStage,
       'replacementModel': replacementModel,
       'routingState': routingState,
@@ -791,15 +1179,19 @@ class AdminAiModelCreateRequest {
 
 class AdminAiModelItem {
   final String? apiFormat;
+  final String? cacheReadPrice;
+  final String? cacheWritePrice;
   final String? calls;
   final String? capabilityIntro;
   final int? contextTokens;
   final String? description;
+  final String? displayName;
   final String? id;
   final List<String>? inputModalities;
   final List<String>? limitations;
   final int? maxOutputTokens;
   final List<String>? modalities;
+  final String? model;
   final String? name;
   final List<String>? outputModalities;
   final String? priceIn;
@@ -821,15 +1213,19 @@ class AdminAiModelItem {
 
   AdminAiModelItem({
     this.apiFormat,
+    this.cacheReadPrice,
+    this.cacheWritePrice,
     this.calls,
     this.capabilityIntro,
     this.contextTokens,
     this.description,
+    this.displayName,
     this.id,
     this.inputModalities,
     this.limitations,
     this.maxOutputTokens,
     this.modalities,
+    this.model,
     this.name,
     this.outputModalities,
     this.priceIn,
@@ -853,10 +1249,13 @@ class AdminAiModelItem {
   factory AdminAiModelItem.fromJson(Map<String, dynamic> json) {
     return AdminAiModelItem(
       apiFormat: json['apiFormat']?.toString(),
+      cacheReadPrice: json['cacheReadPrice']?.toString(),
+      cacheWritePrice: json['cacheWritePrice']?.toString(),
       calls: json['calls']?.toString(),
       capabilityIntro: json['capabilityIntro']?.toString(),
       contextTokens: json['contextTokens'] is int ? json['contextTokens'] : null,
       description: json['description']?.toString(),
+      displayName: json['displayName']?.toString(),
       id: json['id']?.toString(),
       inputModalities: (() {
         final list = _sdkworkAsList(json['inputModalities']);
@@ -889,6 +1288,7 @@ class AdminAiModelItem {
             .whereType<String>()
             .toList();
       })(),
+      model: json['model']?.toString(),
       name: json['name']?.toString(),
       outputModalities: (() {
         final list = _sdkworkAsList(json['outputModalities']);
@@ -940,15 +1340,19 @@ class AdminAiModelItem {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'apiFormat': apiFormat,
+      'cacheReadPrice': cacheReadPrice,
+      'cacheWritePrice': cacheWritePrice,
       'calls': calls,
       'capabilityIntro': capabilityIntro,
       'contextTokens': contextTokens,
       'description': description,
+      'displayName': displayName,
       'id': id,
       'inputModalities': inputModalities?.map((item) => item).toList(),
       'limitations': limitations?.map((item) => item).toList(),
       'maxOutputTokens': maxOutputTokens,
       'modalities': modalities?.map((item) => item).toList(),
+      'model': model,
       'name': name,
       'outputModalities': outputModalities?.map((item) => item).toList(),
       'priceIn': priceIn,
@@ -994,19 +1398,60 @@ class AdminAiModelMutationResponse {
   }
 }
 
+class AdminAiModelRegionPrice {
+  final String? cacheReadPrice;
+  final String? cacheWritePrice;
+  final String? priceIn;
+  final String? priceOut;
+  final String? regionCode;
+
+  AdminAiModelRegionPrice({
+    this.cacheReadPrice,
+    this.cacheWritePrice,
+    this.priceIn,
+    this.priceOut,
+    this.regionCode
+  });
+
+  factory AdminAiModelRegionPrice.fromJson(Map<String, dynamic> json) {
+    return AdminAiModelRegionPrice(
+      cacheReadPrice: json['cacheReadPrice']?.toString(),
+      cacheWritePrice: json['cacheWritePrice']?.toString(),
+      priceIn: json['priceIn']?.toString(),
+      priceOut: json['priceOut']?.toString(),
+      regionCode: json['regionCode']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'cacheReadPrice': cacheReadPrice,
+      'cacheWritePrice': cacheWritePrice,
+      'priceIn': priceIn,
+      'priceOut': priceOut,
+      'regionCode': regionCode,
+    };
+  }
+}
+
 class AdminAiModelUpdateRequest {
   final String? apiFormat;
+  final String? cacheReadPrice;
+  final String? cacheWritePrice;
   final String? capabilityIntro;
   final String? contextTokens;
   final String? description;
+  final String? displayName;
   final List<String>? inputModalities;
   final List<String>? limitations;
   final int? maxOutputTokens;
   final List<String>? modalities;
+  final String? model;
   final String? name;
   final List<String>? outputModalities;
   final String? priceIn;
   final String? priceOut;
+  final List<AdminAiModelRegionPrice>? regionPrices;
   final int? releaseStage;
   final String? replacementModel;
   final int? routingState;
@@ -1023,17 +1468,22 @@ class AdminAiModelUpdateRequest {
 
   AdminAiModelUpdateRequest({
     this.apiFormat,
+    this.cacheReadPrice,
+    this.cacheWritePrice,
     this.capabilityIntro,
     this.contextTokens,
     this.description,
+    this.displayName,
     this.inputModalities,
     this.limitations,
     this.maxOutputTokens,
     this.modalities,
+    this.model,
     this.name,
     this.outputModalities,
     this.priceIn,
     this.priceOut,
+    this.regionPrices,
     this.releaseStage,
     this.replacementModel,
     this.routingState,
@@ -1052,9 +1502,12 @@ class AdminAiModelUpdateRequest {
   factory AdminAiModelUpdateRequest.fromJson(Map<String, dynamic> json) {
     return AdminAiModelUpdateRequest(
       apiFormat: json['apiFormat']?.toString(),
+      cacheReadPrice: json['cacheReadPrice']?.toString(),
+      cacheWritePrice: json['cacheWritePrice']?.toString(),
       capabilityIntro: json['capabilityIntro']?.toString(),
       contextTokens: json['contextTokens']?.toString(),
       description: json['description']?.toString(),
+      displayName: json['displayName']?.toString(),
       inputModalities: (() {
         final list = _sdkworkAsList(json['inputModalities']);
         if (list == null) {
@@ -1086,6 +1539,7 @@ class AdminAiModelUpdateRequest {
             .whereType<String>()
             .toList();
       })(),
+      model: json['model']?.toString(),
       name: json['name']?.toString(),
       outputModalities: (() {
         final list = _sdkworkAsList(json['outputModalities']);
@@ -1099,6 +1553,19 @@ class AdminAiModelUpdateRequest {
       })(),
       priceIn: json['priceIn']?.toString(),
       priceOut: json['priceOut']?.toString(),
+      regionPrices: (() {
+        final list = _sdkworkAsList(json['regionPrices']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAiModelRegionPrice.fromJson(map);
+      })())
+            .whereType<AdminAiModelRegionPrice>()
+            .toList();
+      })(),
       releaseStage: json['releaseStage'] is int ? json['releaseStage'] : null,
       replacementModel: json['replacementModel']?.toString(),
       routingState: json['routingState'] is int ? json['routingState'] : null,
@@ -1136,17 +1603,22 @@ class AdminAiModelUpdateRequest {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'apiFormat': apiFormat,
+      'cacheReadPrice': cacheReadPrice,
+      'cacheWritePrice': cacheWritePrice,
       'capabilityIntro': capabilityIntro,
       'contextTokens': contextTokens,
       'description': description,
+      'displayName': displayName,
       'inputModalities': inputModalities?.map((item) => item).toList(),
       'limitations': limitations?.map((item) => item).toList(),
       'maxOutputTokens': maxOutputTokens,
       'modalities': modalities?.map((item) => item).toList(),
+      'model': model,
       'name': name,
       'outputModalities': outputModalities?.map((item) => item).toList(),
       'priceIn': priceIn,
       'priceOut': priceOut,
+      'regionPrices': regionPrices?.map((item) => item.toJson()).toList(),
       'releaseStage': releaseStage,
       'replacementModel': replacementModel,
       'routingState': routingState,
@@ -1192,6 +1664,511 @@ class AdminAiModelsResponse {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminAnalyticsInsight {
+  final String? detail;
+  final String? key;
+  final String? severity;
+  final String? title;
+  final String? value;
+
+  AdminAnalyticsInsight({
+    this.detail,
+    this.key,
+    this.severity,
+    this.title,
+    this.value
+  });
+
+  factory AdminAnalyticsInsight.fromJson(Map<String, dynamic> json) {
+    return AdminAnalyticsInsight(
+      detail: json['detail']?.toString(),
+      key: json['key']?.toString(),
+      severity: json['severity']?.toString(),
+      title: json['title']?.toString(),
+      value: json['value']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'detail': detail,
+      'key': key,
+      'severity': severity,
+      'title': title,
+      'value': value,
+    };
+  }
+}
+
+class AdminAnalyticsModelRankItem {
+  final double? averageTokensPerRequest;
+  final String? catalogKey;
+  final double? errorRate;
+  final String? modality;
+  final String? model;
+  final double? points;
+  final int? rank;
+  final int? requestCount;
+  final double? totalTokens;
+  final double? upstreamCost;
+  final int? userCount;
+  final String? vendor;
+
+  AdminAnalyticsModelRankItem({
+    this.averageTokensPerRequest,
+    this.catalogKey,
+    this.errorRate,
+    this.modality,
+    this.model,
+    this.points,
+    this.rank,
+    this.requestCount,
+    this.totalTokens,
+    this.upstreamCost,
+    this.userCount,
+    this.vendor
+  });
+
+  factory AdminAnalyticsModelRankItem.fromJson(Map<String, dynamic> json) {
+    return AdminAnalyticsModelRankItem(
+      averageTokensPerRequest: json['averageTokensPerRequest'] is num ? json['averageTokensPerRequest'].toDouble() : null,
+      catalogKey: json['catalogKey']?.toString(),
+      errorRate: json['errorRate'] is num ? json['errorRate'].toDouble() : null,
+      modality: json['modality']?.toString(),
+      model: json['model']?.toString(),
+      points: json['points'] is num ? json['points'].toDouble() : null,
+      rank: json['rank'] is int ? json['rank'] : null,
+      requestCount: json['requestCount'] is int ? json['requestCount'] : null,
+      totalTokens: json['totalTokens'] is num ? json['totalTokens'].toDouble() : null,
+      upstreamCost: json['upstreamCost'] is num ? json['upstreamCost'].toDouble() : null,
+      userCount: json['userCount'] is int ? json['userCount'] : null,
+      vendor: json['vendor']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'averageTokensPerRequest': averageTokensPerRequest,
+      'catalogKey': catalogKey,
+      'errorRate': errorRate,
+      'modality': modality,
+      'model': model,
+      'points': points,
+      'rank': rank,
+      'requestCount': requestCount,
+      'totalTokens': totalTokens,
+      'upstreamCost': upstreamCost,
+      'userCount': userCount,
+      'vendor': vendor,
+    };
+  }
+}
+
+class AdminAnalyticsModelRankings {
+  final List<AdminAnalyticsModelRankItem>? points;
+  final List<AdminAnalyticsModelRankItem>? requests;
+  final List<AdminAnalyticsModelRankItem>? tokens;
+
+  AdminAnalyticsModelRankings({
+    this.points,
+    this.requests,
+    this.tokens
+  });
+
+  factory AdminAnalyticsModelRankings.fromJson(Map<String, dynamic> json) {
+    return AdminAnalyticsModelRankings(
+      points: (() {
+        final list = _sdkworkAsList(json['points']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAnalyticsModelRankItem.fromJson(map);
+      })())
+            .whereType<AdminAnalyticsModelRankItem>()
+            .toList();
+      })(),
+      requests: (() {
+        final list = _sdkworkAsList(json['requests']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAnalyticsModelRankItem.fromJson(map);
+      })())
+            .whereType<AdminAnalyticsModelRankItem>()
+            .toList();
+      })(),
+      tokens: (() {
+        final list = _sdkworkAsList(json['tokens']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAnalyticsModelRankItem.fromJson(map);
+      })())
+            .whereType<AdminAnalyticsModelRankItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'points': points?.map((item) => item.toJson()).toList(),
+      'requests': requests?.map((item) => item.toJson()).toList(),
+      'tokens': tokens?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminAnalyticsOverviewResponse {
+  final String? endTime;
+  final List<AdminAnalyticsInsight>? insights;
+  final int? limit;
+  final List<AdminPieChartItem>? modalityDistribution;
+  final List<AdminPieChartItem>? modelDistribution;
+  final AdminAnalyticsModelRankings? modelRankings;
+  final String? startTime;
+  final AdminAnalyticsSummary? summary;
+  final String? timeRange;
+  final List<AdminAnalyticsTrendPoint>? trend;
+  final AdminAnalyticsUserRankings? userRankings;
+
+  AdminAnalyticsOverviewResponse({
+    this.endTime,
+    this.insights,
+    this.limit,
+    this.modalityDistribution,
+    this.modelDistribution,
+    this.modelRankings,
+    this.startTime,
+    this.summary,
+    this.timeRange,
+    this.trend,
+    this.userRankings
+  });
+
+  factory AdminAnalyticsOverviewResponse.fromJson(Map<String, dynamic> json) {
+    return AdminAnalyticsOverviewResponse(
+      endTime: json['endTime']?.toString(),
+      insights: (() {
+        final list = _sdkworkAsList(json['insights']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAnalyticsInsight.fromJson(map);
+      })())
+            .whereType<AdminAnalyticsInsight>()
+            .toList();
+      })(),
+      limit: json['limit'] is int ? json['limit'] : null,
+      modalityDistribution: (() {
+        final list = _sdkworkAsList(json['modalityDistribution']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminPieChartItem.fromJson(map);
+      })())
+            .whereType<AdminPieChartItem>()
+            .toList();
+      })(),
+      modelDistribution: (() {
+        final list = _sdkworkAsList(json['modelDistribution']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminPieChartItem.fromJson(map);
+      })())
+            .whereType<AdminPieChartItem>()
+            .toList();
+      })(),
+      modelRankings: (() {
+        final map = _sdkworkAsMap(json['modelRankings']);
+        return map == null ? null : AdminAnalyticsModelRankings.fromJson(map);
+      })(),
+      startTime: json['startTime']?.toString(),
+      summary: (() {
+        final map = _sdkworkAsMap(json['summary']);
+        return map == null ? null : AdminAnalyticsSummary.fromJson(map);
+      })(),
+      timeRange: json['timeRange']?.toString(),
+      trend: (() {
+        final list = _sdkworkAsList(json['trend']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAnalyticsTrendPoint.fromJson(map);
+      })())
+            .whereType<AdminAnalyticsTrendPoint>()
+            .toList();
+      })(),
+      userRankings: (() {
+        final map = _sdkworkAsMap(json['userRankings']);
+        return map == null ? null : AdminAnalyticsUserRankings.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'endTime': endTime,
+      'insights': insights?.map((item) => item.toJson()).toList(),
+      'limit': limit,
+      'modalityDistribution': modalityDistribution?.map((item) => item.toJson()).toList(),
+      'modelDistribution': modelDistribution?.map((item) => item.toJson()).toList(),
+      'modelRankings': modelRankings?.toJson(),
+      'startTime': startTime,
+      'summary': summary?.toJson(),
+      'timeRange': timeRange,
+      'trend': trend?.map((item) => item.toJson()).toList(),
+      'userRankings': userRankings?.toJson(),
+    };
+  }
+}
+
+class AdminAnalyticsSummary {
+  final int? activeModels;
+  final int? activeUsers;
+  final double? averagePointsPerRequest;
+  final double? averageTokensPerRequest;
+  final double? errorRate;
+  final int? failedRequests;
+  final int? successfulRequests;
+  final double? totalPoints;
+  final int? totalRequests;
+  final double? totalTokens;
+  final int? totalUsers;
+  final double? upstreamCost;
+
+  AdminAnalyticsSummary({
+    this.activeModels,
+    this.activeUsers,
+    this.averagePointsPerRequest,
+    this.averageTokensPerRequest,
+    this.errorRate,
+    this.failedRequests,
+    this.successfulRequests,
+    this.totalPoints,
+    this.totalRequests,
+    this.totalTokens,
+    this.totalUsers,
+    this.upstreamCost
+  });
+
+  factory AdminAnalyticsSummary.fromJson(Map<String, dynamic> json) {
+    return AdminAnalyticsSummary(
+      activeModels: json['activeModels'] is int ? json['activeModels'] : null,
+      activeUsers: json['activeUsers'] is int ? json['activeUsers'] : null,
+      averagePointsPerRequest: json['averagePointsPerRequest'] is num ? json['averagePointsPerRequest'].toDouble() : null,
+      averageTokensPerRequest: json['averageTokensPerRequest'] is num ? json['averageTokensPerRequest'].toDouble() : null,
+      errorRate: json['errorRate'] is num ? json['errorRate'].toDouble() : null,
+      failedRequests: json['failedRequests'] is int ? json['failedRequests'] : null,
+      successfulRequests: json['successfulRequests'] is int ? json['successfulRequests'] : null,
+      totalPoints: json['totalPoints'] is num ? json['totalPoints'].toDouble() : null,
+      totalRequests: json['totalRequests'] is int ? json['totalRequests'] : null,
+      totalTokens: json['totalTokens'] is num ? json['totalTokens'].toDouble() : null,
+      totalUsers: json['totalUsers'] is int ? json['totalUsers'] : null,
+      upstreamCost: json['upstreamCost'] is num ? json['upstreamCost'].toDouble() : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'activeModels': activeModels,
+      'activeUsers': activeUsers,
+      'averagePointsPerRequest': averagePointsPerRequest,
+      'averageTokensPerRequest': averageTokensPerRequest,
+      'errorRate': errorRate,
+      'failedRequests': failedRequests,
+      'successfulRequests': successfulRequests,
+      'totalPoints': totalPoints,
+      'totalRequests': totalRequests,
+      'totalTokens': totalTokens,
+      'totalUsers': totalUsers,
+      'upstreamCost': upstreamCost,
+    };
+  }
+}
+
+class AdminAnalyticsTrendPoint {
+  final double? points;
+  final double? requests;
+  final String? time;
+  final double? tokens;
+  final int? users;
+
+  AdminAnalyticsTrendPoint({
+    this.points,
+    this.requests,
+    this.time,
+    this.tokens,
+    this.users
+  });
+
+  factory AdminAnalyticsTrendPoint.fromJson(Map<String, dynamic> json) {
+    return AdminAnalyticsTrendPoint(
+      points: json['points'] is num ? json['points'].toDouble() : null,
+      requests: json['requests'] is num ? json['requests'].toDouble() : null,
+      time: json['time']?.toString(),
+      tokens: json['tokens'] is num ? json['tokens'].toDouble() : null,
+      users: json['users'] is int ? json['users'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'points': points,
+      'requests': requests,
+      'time': time,
+      'tokens': tokens,
+      'users': users,
+    };
+  }
+}
+
+class AdminAnalyticsUserRankItem {
+  final String? email;
+  final List<AdminPieChartItem>? modelDistribution;
+  final double? points;
+  final int? rank;
+  final int? requestCount;
+  final double? totalTokens;
+  final String? userId;
+  final String? userName;
+
+  AdminAnalyticsUserRankItem({
+    this.email,
+    this.modelDistribution,
+    this.points,
+    this.rank,
+    this.requestCount,
+    this.totalTokens,
+    this.userId,
+    this.userName
+  });
+
+  factory AdminAnalyticsUserRankItem.fromJson(Map<String, dynamic> json) {
+    return AdminAnalyticsUserRankItem(
+      email: json['email']?.toString(),
+      modelDistribution: (() {
+        final list = _sdkworkAsList(json['modelDistribution']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminPieChartItem.fromJson(map);
+      })())
+            .whereType<AdminPieChartItem>()
+            .toList();
+      })(),
+      points: json['points'] is num ? json['points'].toDouble() : null,
+      rank: json['rank'] is int ? json['rank'] : null,
+      requestCount: json['requestCount'] is int ? json['requestCount'] : null,
+      totalTokens: json['totalTokens'] is num ? json['totalTokens'].toDouble() : null,
+      userId: json['userId']?.toString(),
+      userName: json['userName']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'email': email,
+      'modelDistribution': modelDistribution?.map((item) => item.toJson()).toList(),
+      'points': points,
+      'rank': rank,
+      'requestCount': requestCount,
+      'totalTokens': totalTokens,
+      'userId': userId,
+      'userName': userName,
+    };
+  }
+}
+
+class AdminAnalyticsUserRankings {
+  final List<AdminAnalyticsUserRankItem>? points;
+  final List<AdminAnalyticsUserRankItem>? requests;
+  final List<AdminAnalyticsUserRankItem>? tokens;
+
+  AdminAnalyticsUserRankings({
+    this.points,
+    this.requests,
+    this.tokens
+  });
+
+  factory AdminAnalyticsUserRankings.fromJson(Map<String, dynamic> json) {
+    return AdminAnalyticsUserRankings(
+      points: (() {
+        final list = _sdkworkAsList(json['points']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAnalyticsUserRankItem.fromJson(map);
+      })())
+            .whereType<AdminAnalyticsUserRankItem>()
+            .toList();
+      })(),
+      requests: (() {
+        final list = _sdkworkAsList(json['requests']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAnalyticsUserRankItem.fromJson(map);
+      })())
+            .whereType<AdminAnalyticsUserRankItem>()
+            .toList();
+      })(),
+      tokens: (() {
+        final list = _sdkworkAsList(json['tokens']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAnalyticsUserRankItem.fromJson(map);
+      })())
+            .whereType<AdminAnalyticsUserRankItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'points': points?.map((item) => item.toJson()).toList(),
+      'requests': requests?.map((item) => item.toJson()).toList(),
+      'tokens': tokens?.map((item) => item.toJson()).toList(),
     };
   }
 }
@@ -1465,6 +2442,245 @@ class AdminApiKeysMapResponse {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{};
+  }
+}
+
+class AdminAppCategoryCreateRequest {
+  final String? code;
+  final String? description;
+  final String? icon;
+  final String? name;
+  final String? parentId;
+  final String? path;
+  final int? sortWeight;
+  final int? status;
+  final bool? visible;
+
+  AdminAppCategoryCreateRequest({
+    this.code,
+    this.description,
+    this.icon,
+    this.name,
+    this.parentId,
+    this.path,
+    this.sortWeight,
+    this.status,
+    this.visible
+  });
+
+  factory AdminAppCategoryCreateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminAppCategoryCreateRequest(
+      code: json['code']?.toString(),
+      description: json['description']?.toString(),
+      icon: json['icon']?.toString(),
+      name: json['name']?.toString(),
+      parentId: json['parentId']?.toString(),
+      path: json['path']?.toString(),
+      sortWeight: json['sortWeight'] is int ? json['sortWeight'] : null,
+      status: json['status'] is int ? json['status'] : null,
+      visible: json['visible'] is bool ? json['visible'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'description': description,
+      'icon': icon,
+      'name': name,
+      'parentId': parentId,
+      'path': path,
+      'sortWeight': sortWeight,
+      'status': status,
+      'visible': visible,
+    };
+  }
+}
+
+class AdminAppCategoryDeleteResponse {
+  final bool? deleted;
+
+  AdminAppCategoryDeleteResponse({
+    this.deleted
+  });
+
+  factory AdminAppCategoryDeleteResponse.fromJson(Map<String, dynamic> json) {
+    return AdminAppCategoryDeleteResponse(
+      deleted: json['deleted'] is bool ? json['deleted'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'deleted': deleted,
+    };
+  }
+}
+
+class AdminAppCategoryItem {
+  final String? code;
+  final String? description;
+  final String? icon;
+  final String? id;
+  final String? name;
+  final String? parentId;
+  final String? path;
+  final int? sortWeight;
+  final int? status;
+  final int? type;
+  final bool? visible;
+
+  AdminAppCategoryItem({
+    this.code,
+    this.description,
+    this.icon,
+    this.id,
+    this.name,
+    this.parentId,
+    this.path,
+    this.sortWeight,
+    this.status,
+    this.type,
+    this.visible
+  });
+
+  factory AdminAppCategoryItem.fromJson(Map<String, dynamic> json) {
+    return AdminAppCategoryItem(
+      code: json['code']?.toString(),
+      description: json['description']?.toString(),
+      icon: json['icon']?.toString(),
+      id: json['id']?.toString(),
+      name: json['name']?.toString(),
+      parentId: json['parentId']?.toString(),
+      path: json['path']?.toString(),
+      sortWeight: json['sortWeight'] is int ? json['sortWeight'] : null,
+      status: json['status'] is int ? json['status'] : null,
+      type: json['type'] is int ? json['type'] : null,
+      visible: json['visible'] is bool ? json['visible'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'description': description,
+      'icon': icon,
+      'id': id,
+      'name': name,
+      'parentId': parentId,
+      'path': path,
+      'sortWeight': sortWeight,
+      'status': status,
+      'type': type,
+      'visible': visible,
+    };
+  }
+}
+
+class AdminAppCategoryListResponse {
+  final List<AdminAppCategoryItem>? items;
+
+  AdminAppCategoryListResponse({
+    this.items
+  });
+
+  factory AdminAppCategoryListResponse.fromJson(Map<String, dynamic> json) {
+    return AdminAppCategoryListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAppCategoryItem.fromJson(map);
+      })())
+            .whereType<AdminAppCategoryItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminAppCategoryMutationResponse {
+  final AdminAppCategoryItem? item;
+
+  AdminAppCategoryMutationResponse({
+    this.item
+  });
+
+  factory AdminAppCategoryMutationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminAppCategoryMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : AdminAppCategoryItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class AdminAppCategoryUpdateRequest {
+  final String? code;
+  final String? description;
+  final String? icon;
+  final String? name;
+  final String? parentId;
+  final String? path;
+  final int? sortWeight;
+  final int? status;
+  final bool? visible;
+
+  AdminAppCategoryUpdateRequest({
+    this.code,
+    this.description,
+    this.icon,
+    this.name,
+    this.parentId,
+    this.path,
+    this.sortWeight,
+    this.status,
+    this.visible
+  });
+
+  factory AdminAppCategoryUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminAppCategoryUpdateRequest(
+      code: json['code']?.toString(),
+      description: json['description']?.toString(),
+      icon: json['icon']?.toString(),
+      name: json['name']?.toString(),
+      parentId: json['parentId']?.toString(),
+      path: json['path']?.toString(),
+      sortWeight: json['sortWeight'] is int ? json['sortWeight'] : null,
+      status: json['status'] is int ? json['status'] : null,
+      visible: json['visible'] is bool ? json['visible'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'description': description,
+      'icon': icon,
+      'name': name,
+      'parentId': parentId,
+      'path': path,
+      'sortWeight': sortWeight,
+      'status': status,
+      'visible': visible,
+    };
   }
 }
 
@@ -2253,9 +3469,11 @@ class AdminAuthSettingsResponse {
   final List<String>? oauthProviders;
   final String? oauthRegion;
   final bool? qrLoginEnabled;
+  final String? qrLoginType;
   final List<String>? recoveryMethods;
   final List<String>? registerMethods;
   final AdminAuthVerificationPolicy? verificationPolicy;
+  final AdminAuthWechatSettings? wechat;
 
   AdminAuthSettingsResponse({
     this.leftRailMode,
@@ -2264,9 +3482,11 @@ class AdminAuthSettingsResponse {
     this.oauthProviders,
     this.oauthRegion,
     this.qrLoginEnabled,
+    this.qrLoginType,
     this.recoveryMethods,
     this.registerMethods,
-    this.verificationPolicy
+    this.verificationPolicy,
+    this.wechat
   });
 
   factory AdminAuthSettingsResponse.fromJson(Map<String, dynamic> json) {
@@ -2295,6 +3515,7 @@ class AdminAuthSettingsResponse {
       })(),
       oauthRegion: json['oauthRegion']?.toString(),
       qrLoginEnabled: json['qrLoginEnabled'] is bool ? json['qrLoginEnabled'] : null,
+      qrLoginType: json['qrLoginType']?.toString(),
       recoveryMethods: (() {
         final list = _sdkworkAsList(json['recoveryMethods']);
         if (list == null) {
@@ -2318,6 +3539,10 @@ class AdminAuthSettingsResponse {
       verificationPolicy: (() {
         final map = _sdkworkAsMap(json['verificationPolicy']);
         return map == null ? null : AdminAuthVerificationPolicy.fromJson(map);
+      })(),
+      wechat: (() {
+        final map = _sdkworkAsMap(json['wechat']);
+        return map == null ? null : AdminAuthWechatSettings.fromJson(map);
       })()
     );
   }
@@ -2330,9 +3555,11 @@ class AdminAuthSettingsResponse {
       'oauthProviders': oauthProviders?.map((item) => item).toList(),
       'oauthRegion': oauthRegion,
       'qrLoginEnabled': qrLoginEnabled,
+      'qrLoginType': qrLoginType,
       'recoveryMethods': recoveryMethods?.map((item) => item).toList(),
       'registerMethods': registerMethods?.map((item) => item).toList(),
       'verificationPolicy': verificationPolicy?.toJson(),
+      'wechat': wechat?.toJson(),
     };
   }
 }
@@ -2344,9 +3571,11 @@ class AdminAuthSettingsUpdateRequest {
   final List<String>? oauthProviders;
   final String? oauthRegion;
   final bool? qrLoginEnabled;
+  final String? qrLoginType;
   final List<String>? recoveryMethods;
   final List<String>? registerMethods;
   final AdminAuthVerificationPolicy? verificationPolicy;
+  final AdminAuthWechatSettingsUpdate? wechat;
 
   AdminAuthSettingsUpdateRequest({
     this.leftRailMode,
@@ -2355,9 +3584,11 @@ class AdminAuthSettingsUpdateRequest {
     this.oauthProviders,
     this.oauthRegion,
     this.qrLoginEnabled,
+    this.qrLoginType,
     this.recoveryMethods,
     this.registerMethods,
-    this.verificationPolicy
+    this.verificationPolicy,
+    this.wechat
   });
 
   factory AdminAuthSettingsUpdateRequest.fromJson(Map<String, dynamic> json) {
@@ -2386,6 +3617,7 @@ class AdminAuthSettingsUpdateRequest {
       })(),
       oauthRegion: json['oauthRegion']?.toString(),
       qrLoginEnabled: json['qrLoginEnabled'] is bool ? json['qrLoginEnabled'] : null,
+      qrLoginType: json['qrLoginType']?.toString(),
       recoveryMethods: (() {
         final list = _sdkworkAsList(json['recoveryMethods']);
         if (list == null) {
@@ -2409,6 +3641,10 @@ class AdminAuthSettingsUpdateRequest {
       verificationPolicy: (() {
         final map = _sdkworkAsMap(json['verificationPolicy']);
         return map == null ? null : AdminAuthVerificationPolicy.fromJson(map);
+      })(),
+      wechat: (() {
+        final map = _sdkworkAsMap(json['wechat']);
+        return map == null ? null : AdminAuthWechatSettingsUpdate.fromJson(map);
       })()
     );
   }
@@ -2421,9 +3657,11 @@ class AdminAuthSettingsUpdateRequest {
       'oauthProviders': oauthProviders?.map((item) => item).toList(),
       'oauthRegion': oauthRegion,
       'qrLoginEnabled': qrLoginEnabled,
+      'qrLoginType': qrLoginType,
       'recoveryMethods': recoveryMethods?.map((item) => item).toList(),
       'registerMethods': registerMethods?.map((item) => item).toList(),
       'verificationPolicy': verificationPolicy?.toJson(),
+      'wechat': wechat?.toJson(),
     };
   }
 }
@@ -2460,59 +3698,373 @@ class AdminAuthVerificationPolicy {
   }
 }
 
-class AdminBillingRecordItem {
-  final String? dueDate;
-  final String? id;
-  final String? period;
-  final String? status;
-  final String? totalCost;
-  final int? totalTokens;
-  final String? userId;
+class AdminAuthWechatMini {
+  final String? appId;
+  final bool? enabled;
+  final String? env;
+  final String? key;
+  final String? name;
+  final String? path;
+  final bool? primary;
+  final String? secretRef;
+  final String? url;
 
-  AdminBillingRecordItem({
-    this.dueDate,
-    this.id,
-    this.period,
-    this.status,
-    this.totalCost,
-    this.totalTokens,
-    this.userId
+  AdminAuthWechatMini({
+    this.appId,
+    this.enabled,
+    this.env,
+    this.key,
+    this.name,
+    this.path,
+    this.primary,
+    this.secretRef,
+    this.url
   });
 
-  factory AdminBillingRecordItem.fromJson(Map<String, dynamic> json) {
-    return AdminBillingRecordItem(
-      dueDate: json['dueDate']?.toString(),
-      id: json['id']?.toString(),
-      period: json['period']?.toString(),
-      status: json['status']?.toString(),
-      totalCost: json['totalCost']?.toString(),
-      totalTokens: json['totalTokens'] is int ? json['totalTokens'] : null,
-      userId: json['userId']?.toString()
+  factory AdminAuthWechatMini.fromJson(Map<String, dynamic> json) {
+    return AdminAuthWechatMini(
+      appId: json['appId']?.toString(),
+      enabled: json['enabled'] is bool ? json['enabled'] : null,
+      env: json['env']?.toString(),
+      key: json['key']?.toString(),
+      name: json['name']?.toString(),
+      path: json['path']?.toString(),
+      primary: json['primary'] is bool ? json['primary'] : null,
+      secretRef: json['secretRef']?.toString(),
+      url: json['url']?.toString()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'dueDate': dueDate,
-      'id': id,
-      'period': period,
-      'status': status,
-      'totalCost': totalCost,
-      'totalTokens': totalTokens,
-      'userId': userId,
+      'appId': appId,
+      'enabled': enabled,
+      'env': env,
+      'key': key,
+      'name': name,
+      'path': path,
+      'primary': primary,
+      'secretRef': secretRef,
+      'url': url,
     };
   }
 }
 
-class AdminBillingRecordsResponse {
-  final List<AdminBillingRecordItem>? items;
+class AdminAuthWechatOfficial {
+  final String? aesKeyRef;
+  final String? appId;
+  final bool? enabled;
+  final String? key;
+  final String? name;
+  final String? originalId;
+  final bool? primary;
+  final String? scene;
+  final String? secretRef;
+  final String? tokenRef;
+  final String? url;
 
-  AdminBillingRecordsResponse({
-    this.items
+  AdminAuthWechatOfficial({
+    this.aesKeyRef,
+    this.appId,
+    this.enabled,
+    this.key,
+    this.name,
+    this.originalId,
+    this.primary,
+    this.scene,
+    this.secretRef,
+    this.tokenRef,
+    this.url
   });
 
-  factory AdminBillingRecordsResponse.fromJson(Map<String, dynamic> json) {
-    return AdminBillingRecordsResponse(
+  factory AdminAuthWechatOfficial.fromJson(Map<String, dynamic> json) {
+    return AdminAuthWechatOfficial(
+      aesKeyRef: json['aesKeyRef']?.toString(),
+      appId: json['appId']?.toString(),
+      enabled: json['enabled'] is bool ? json['enabled'] : null,
+      key: json['key']?.toString(),
+      name: json['name']?.toString(),
+      originalId: json['originalId']?.toString(),
+      primary: json['primary'] is bool ? json['primary'] : null,
+      scene: json['scene']?.toString(),
+      secretRef: json['secretRef']?.toString(),
+      tokenRef: json['tokenRef']?.toString(),
+      url: json['url']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'aesKeyRef': aesKeyRef,
+      'appId': appId,
+      'enabled': enabled,
+      'key': key,
+      'name': name,
+      'originalId': originalId,
+      'primary': primary,
+      'scene': scene,
+      'secretRef': secretRef,
+      'tokenRef': tokenRef,
+      'url': url,
+    };
+  }
+}
+
+class AdminAuthWechatSettings {
+  final List<AdminAuthWechatMini>? mini;
+  final List<AdminAuthWechatOfficial>? official;
+
+  AdminAuthWechatSettings({
+    this.mini,
+    this.official
+  });
+
+  factory AdminAuthWechatSettings.fromJson(Map<String, dynamic> json) {
+    return AdminAuthWechatSettings(
+      mini: (() {
+        final list = _sdkworkAsList(json['mini']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAuthWechatMini.fromJson(map);
+      })())
+            .whereType<AdminAuthWechatMini>()
+            .toList();
+      })(),
+      official: (() {
+        final list = _sdkworkAsList(json['official']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAuthWechatOfficial.fromJson(map);
+      })())
+            .whereType<AdminAuthWechatOfficial>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'mini': mini?.map((item) => item.toJson()).toList(),
+      'official': official?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminAuthWechatSettingsUpdate {
+  final List<AdminAuthWechatMini>? mini;
+  final List<AdminAuthWechatOfficial>? official;
+
+  AdminAuthWechatSettingsUpdate({
+    this.mini,
+    this.official
+  });
+
+  factory AdminAuthWechatSettingsUpdate.fromJson(Map<String, dynamic> json) {
+    return AdminAuthWechatSettingsUpdate(
+      mini: (() {
+        final list = _sdkworkAsList(json['mini']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAuthWechatMini.fromJson(map);
+      })())
+            .whereType<AdminAuthWechatMini>()
+            .toList();
+      })(),
+      official: (() {
+        final list = _sdkworkAsList(json['official']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAuthWechatOfficial.fromJson(map);
+      })())
+            .whereType<AdminAuthWechatOfficial>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'mini': mini?.map((item) => item.toJson()).toList(),
+      'official': official?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminCacheInstance {
+  final int? cacheDeletes;
+  final int? cacheErrors;
+  final int? cacheHits;
+  final int? cacheInspections;
+  final int? cacheMisses;
+  final int? cacheRefreshes;
+  final int? cacheWrites;
+  final String? connectionProfileName;
+  final int? defaultTtlSeconds;
+  final int? entryCount;
+  final int? expiredEntryCount;
+  final String? keyPrefix;
+  final int? maxEntries;
+  final String? name;
+  final String? providerKind;
+  final String? purpose;
+  final String? status;
+  final bool? supportsDelete;
+  final bool? supportsInspect;
+  final bool? supportsRefresh;
+
+  AdminCacheInstance({
+    this.cacheDeletes,
+    this.cacheErrors,
+    this.cacheHits,
+    this.cacheInspections,
+    this.cacheMisses,
+    this.cacheRefreshes,
+    this.cacheWrites,
+    this.connectionProfileName,
+    this.defaultTtlSeconds,
+    this.entryCount,
+    this.expiredEntryCount,
+    this.keyPrefix,
+    this.maxEntries,
+    this.name,
+    this.providerKind,
+    this.purpose,
+    this.status,
+    this.supportsDelete,
+    this.supportsInspect,
+    this.supportsRefresh
+  });
+
+  factory AdminCacheInstance.fromJson(Map<String, dynamic> json) {
+    return AdminCacheInstance(
+      cacheDeletes: json['cacheDeletes'] is int ? json['cacheDeletes'] : null,
+      cacheErrors: json['cacheErrors'] is int ? json['cacheErrors'] : null,
+      cacheHits: json['cacheHits'] is int ? json['cacheHits'] : null,
+      cacheInspections: json['cacheInspections'] is int ? json['cacheInspections'] : null,
+      cacheMisses: json['cacheMisses'] is int ? json['cacheMisses'] : null,
+      cacheRefreshes: json['cacheRefreshes'] is int ? json['cacheRefreshes'] : null,
+      cacheWrites: json['cacheWrites'] is int ? json['cacheWrites'] : null,
+      connectionProfileName: json['connectionProfileName']?.toString(),
+      defaultTtlSeconds: json['defaultTtlSeconds'] is int ? json['defaultTtlSeconds'] : null,
+      entryCount: json['entryCount'] is int ? json['entryCount'] : null,
+      expiredEntryCount: json['expiredEntryCount'] is int ? json['expiredEntryCount'] : null,
+      keyPrefix: json['keyPrefix']?.toString(),
+      maxEntries: json['maxEntries'] is int ? json['maxEntries'] : null,
+      name: json['name']?.toString(),
+      providerKind: json['providerKind']?.toString(),
+      purpose: json['purpose']?.toString(),
+      status: json['status']?.toString(),
+      supportsDelete: json['supportsDelete'] is bool ? json['supportsDelete'] : null,
+      supportsInspect: json['supportsInspect'] is bool ? json['supportsInspect'] : null,
+      supportsRefresh: json['supportsRefresh'] is bool ? json['supportsRefresh'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'cacheDeletes': cacheDeletes,
+      'cacheErrors': cacheErrors,
+      'cacheHits': cacheHits,
+      'cacheInspections': cacheInspections,
+      'cacheMisses': cacheMisses,
+      'cacheRefreshes': cacheRefreshes,
+      'cacheWrites': cacheWrites,
+      'connectionProfileName': connectionProfileName,
+      'defaultTtlSeconds': defaultTtlSeconds,
+      'entryCount': entryCount,
+      'expiredEntryCount': expiredEntryCount,
+      'keyPrefix': keyPrefix,
+      'maxEntries': maxEntries,
+      'name': name,
+      'providerKind': providerKind,
+      'purpose': purpose,
+      'status': status,
+      'supportsDelete': supportsDelete,
+      'supportsInspect': supportsInspect,
+      'supportsRefresh': supportsRefresh,
+    };
+  }
+}
+
+class AdminCacheKeyItem {
+  final int? expiresInSeconds;
+  final String? instanceName;
+  final String? key;
+  final String? namespace;
+  final String? status;
+
+  AdminCacheKeyItem({
+    this.expiresInSeconds,
+    this.instanceName,
+    this.key,
+    this.namespace,
+    this.status
+  });
+
+  factory AdminCacheKeyItem.fromJson(Map<String, dynamic> json) {
+    return AdminCacheKeyItem(
+      expiresInSeconds: json['expiresInSeconds'] is int ? json['expiresInSeconds'] : null,
+      instanceName: json['instanceName']?.toString(),
+      key: json['key']?.toString(),
+      namespace: json['namespace']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'expiresInSeconds': expiresInSeconds,
+      'instanceName': instanceName,
+      'key': key,
+      'namespace': namespace,
+      'status': status,
+    };
+  }
+}
+
+class AdminCacheKeyListResponse {
+  final bool? hasMore;
+  final String? instanceName;
+  final List<AdminCacheKeyItem>? items;
+  final int? limit;
+  final String? namespace;
+  final String? nextCursor;
+  final int? returnedItems;
+  final bool? scanComplete;
+  final int? scannedItems;
+
+  AdminCacheKeyListResponse({
+    this.hasMore,
+    this.instanceName,
+    this.items,
+    this.limit,
+    this.namespace,
+    this.nextCursor,
+    this.returnedItems,
+    this.scanComplete,
+    this.scannedItems
+  });
+
+  factory AdminCacheKeyListResponse.fromJson(Map<String, dynamic> json) {
+    return AdminCacheKeyListResponse(
+      hasMore: json['hasMore'] is bool ? json['hasMore'] : null,
+      instanceName: json['instanceName']?.toString(),
       items: (() {
         final list = _sdkworkAsList(json['items']);
         if (list == null) {
@@ -2521,17 +4073,263 @@ class AdminBillingRecordsResponse {
         return list
             .map((item) => (() {
         final map = _sdkworkAsMap(item);
-        return map == null ? null : AdminBillingRecordItem.fromJson(map);
+        return map == null ? null : AdminCacheKeyItem.fromJson(map);
       })())
-            .whereType<AdminBillingRecordItem>()
+            .whereType<AdminCacheKeyItem>()
             .toList();
+      })(),
+      limit: json['limit'] is int ? json['limit'] : null,
+      namespace: json['namespace']?.toString(),
+      nextCursor: json['nextCursor']?.toString(),
+      returnedItems: json['returnedItems'] is int ? json['returnedItems'] : null,
+      scanComplete: json['scanComplete'] is bool ? json['scanComplete'] : null,
+      scannedItems: json['scannedItems'] is int ? json['scannedItems'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'hasMore': hasMore,
+      'instanceName': instanceName,
+      'items': items?.map((item) => item.toJson()).toList(),
+      'limit': limit,
+      'namespace': namespace,
+      'nextCursor': nextCursor,
+      'returnedItems': returnedItems,
+      'scanComplete': scanComplete,
+      'scannedItems': scannedItems,
+    };
+  }
+}
+
+class AdminCacheNamespacePolicy {
+  final String? consistency;
+  final bool? enabled;
+  final String? failureMode;
+  final String? instanceName;
+  final int? jitterPercent;
+  final String? namespace;
+  final String? scope;
+  final String? sensitivity;
+  final int? staleWhileRevalidateSeconds;
+  final List<String>? tags;
+  final int? ttlSeconds;
+
+  AdminCacheNamespacePolicy({
+    this.consistency,
+    this.enabled,
+    this.failureMode,
+    this.instanceName,
+    this.jitterPercent,
+    this.namespace,
+    this.scope,
+    this.sensitivity,
+    this.staleWhileRevalidateSeconds,
+    this.tags,
+    this.ttlSeconds
+  });
+
+  factory AdminCacheNamespacePolicy.fromJson(Map<String, dynamic> json) {
+    return AdminCacheNamespacePolicy(
+      consistency: json['consistency']?.toString(),
+      enabled: json['enabled'] is bool ? json['enabled'] : null,
+      failureMode: json['failureMode']?.toString(),
+      instanceName: json['instanceName']?.toString(),
+      jitterPercent: json['jitterPercent'] is int ? json['jitterPercent'] : null,
+      namespace: json['namespace']?.toString(),
+      scope: json['scope']?.toString(),
+      sensitivity: json['sensitivity']?.toString(),
+      staleWhileRevalidateSeconds: json['staleWhileRevalidateSeconds'] is int ? json['staleWhileRevalidateSeconds'] : null,
+      tags: (() {
+        final list = _sdkworkAsList(json['tags']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      ttlSeconds: json['ttlSeconds'] is int ? json['ttlSeconds'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'consistency': consistency,
+      'enabled': enabled,
+      'failureMode': failureMode,
+      'instanceName': instanceName,
+      'jitterPercent': jitterPercent,
+      'namespace': namespace,
+      'scope': scope,
+      'sensitivity': sensitivity,
+      'staleWhileRevalidateSeconds': staleWhileRevalidateSeconds,
+      'tags': tags?.map((item) => item).toList(),
+      'ttlSeconds': ttlSeconds,
+    };
+  }
+}
+
+class AdminCacheOperationResponse {
+  final String? cacheKey;
+  final int? deletedEntries;
+  final String? instanceName;
+  final String? namespace;
+  final String? operation;
+  final int? refreshedEntries;
+  final String? status;
+
+  AdminCacheOperationResponse({
+    this.cacheKey,
+    this.deletedEntries,
+    this.instanceName,
+    this.namespace,
+    this.operation,
+    this.refreshedEntries,
+    this.status
+  });
+
+  factory AdminCacheOperationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminCacheOperationResponse(
+      cacheKey: json['cacheKey']?.toString(),
+      deletedEntries: json['deletedEntries'] is int ? json['deletedEntries'] : null,
+      instanceName: json['instanceName']?.toString(),
+      namespace: json['namespace']?.toString(),
+      operation: json['operation']?.toString(),
+      refreshedEntries: json['refreshedEntries'] is int ? json['refreshedEntries'] : null,
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'cacheKey': cacheKey,
+      'deletedEntries': deletedEntries,
+      'instanceName': instanceName,
+      'namespace': namespace,
+      'operation': operation,
+      'refreshedEntries': refreshedEntries,
+      'status': status,
+    };
+  }
+}
+
+class AdminCacheOverviewResponse {
+  final List<AdminCacheInstance>? instances;
+  final List<AdminCacheNamespacePolicy>? namespacePolicies;
+  final AdminCacheSummary? summary;
+
+  AdminCacheOverviewResponse({
+    this.instances,
+    this.namespacePolicies,
+    this.summary
+  });
+
+  factory AdminCacheOverviewResponse.fromJson(Map<String, dynamic> json) {
+    return AdminCacheOverviewResponse(
+      instances: (() {
+        final list = _sdkworkAsList(json['instances']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminCacheInstance.fromJson(map);
+      })())
+            .whereType<AdminCacheInstance>()
+            .toList();
+      })(),
+      namespacePolicies: (() {
+        final list = _sdkworkAsList(json['namespacePolicies']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminCacheNamespacePolicy.fromJson(map);
+      })())
+            .whereType<AdminCacheNamespacePolicy>()
+            .toList();
+      })(),
+      summary: (() {
+        final map = _sdkworkAsMap(json['summary']);
+        return map == null ? null : AdminCacheSummary.fromJson(map);
       })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'items': items?.map((item) => item.toJson()).toList(),
+      'instances': instances?.map((item) => item.toJson()).toList(),
+      'namespacePolicies': namespacePolicies?.map((item) => item.toJson()).toList(),
+      'summary': summary?.toJson(),
+    };
+  }
+}
+
+class AdminCacheSummary {
+  final int? cacheDeletes;
+  final int? cacheErrors;
+  final int? cacheHits;
+  final int? cacheInspections;
+  final int? cacheMisses;
+  final int? cacheRefreshes;
+  final int? cacheWrites;
+  final int? expiredEntries;
+  final String? runtimeTarget;
+  final int? totalEntries;
+  final int? totalInstances;
+  final int? totalNamespaces;
+
+  AdminCacheSummary({
+    this.cacheDeletes,
+    this.cacheErrors,
+    this.cacheHits,
+    this.cacheInspections,
+    this.cacheMisses,
+    this.cacheRefreshes,
+    this.cacheWrites,
+    this.expiredEntries,
+    this.runtimeTarget,
+    this.totalEntries,
+    this.totalInstances,
+    this.totalNamespaces
+  });
+
+  factory AdminCacheSummary.fromJson(Map<String, dynamic> json) {
+    return AdminCacheSummary(
+      cacheDeletes: json['cacheDeletes'] is int ? json['cacheDeletes'] : null,
+      cacheErrors: json['cacheErrors'] is int ? json['cacheErrors'] : null,
+      cacheHits: json['cacheHits'] is int ? json['cacheHits'] : null,
+      cacheInspections: json['cacheInspections'] is int ? json['cacheInspections'] : null,
+      cacheMisses: json['cacheMisses'] is int ? json['cacheMisses'] : null,
+      cacheRefreshes: json['cacheRefreshes'] is int ? json['cacheRefreshes'] : null,
+      cacheWrites: json['cacheWrites'] is int ? json['cacheWrites'] : null,
+      expiredEntries: json['expiredEntries'] is int ? json['expiredEntries'] : null,
+      runtimeTarget: json['runtimeTarget']?.toString(),
+      totalEntries: json['totalEntries'] is int ? json['totalEntries'] : null,
+      totalInstances: json['totalInstances'] is int ? json['totalInstances'] : null,
+      totalNamespaces: json['totalNamespaces'] is int ? json['totalNamespaces'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'cacheDeletes': cacheDeletes,
+      'cacheErrors': cacheErrors,
+      'cacheHits': cacheHits,
+      'cacheInspections': cacheInspections,
+      'cacheMisses': cacheMisses,
+      'cacheRefreshes': cacheRefreshes,
+      'cacheWrites': cacheWrites,
+      'expiredEntries': expiredEntries,
+      'runtimeTarget': runtimeTarget,
+      'totalEntries': totalEntries,
+      'totalInstances': totalInstances,
+      'totalNamespaces': totalNamespaces,
     };
   }
 }
@@ -2562,8 +4360,11 @@ class AdminCapacityPair {
 
 class AdminChannelCreateRequest {
   final String? accessType;
+  final String? apiKey;
   final String? baseUrl;
   final List<String>? capabilities;
+  final ProviderCircuitBreakerPolicy? circuitBreakerPolicy;
+  final String? expiresAt;
   final List<String>? models;
   final String? name;
   final String? protocol;
@@ -2576,8 +4377,11 @@ class AdminChannelCreateRequest {
 
   AdminChannelCreateRequest({
     this.accessType,
+    this.apiKey,
     this.baseUrl,
     this.capabilities,
+    this.circuitBreakerPolicy,
+    this.expiresAt,
     this.models,
     this.name,
     this.protocol,
@@ -2592,6 +4396,7 @@ class AdminChannelCreateRequest {
   factory AdminChannelCreateRequest.fromJson(Map<String, dynamic> json) {
     return AdminChannelCreateRequest(
       accessType: json['accessType']?.toString(),
+      apiKey: json['apiKey']?.toString(),
       baseUrl: json['baseUrl']?.toString(),
       capabilities: (() {
         final list = _sdkworkAsList(json['capabilities']);
@@ -2603,6 +4408,11 @@ class AdminChannelCreateRequest {
             .whereType<String>()
             .toList();
       })(),
+      circuitBreakerPolicy: (() {
+        final map = _sdkworkAsMap(json['circuitBreakerPolicy']);
+        return map == null ? null : ProviderCircuitBreakerPolicy.fromJson(map);
+      })(),
+      expiresAt: json['expiresAt']?.toString(),
       models: (() {
         final list = _sdkworkAsList(json['models']);
         if (list == null) {
@@ -2630,8 +4440,11 @@ class AdminChannelCreateRequest {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'accessType': accessType,
+      'apiKey': apiKey,
       'baseUrl': baseUrl,
       'capabilities': capabilities?.map((item) => item).toList(),
+      'circuitBreakerPolicy': circuitBreakerPolicy?.toJson(),
+      'expiresAt': expiresAt,
       'models': models?.map((item) => item).toList(),
       'name': name,
       'protocol': protocol,
@@ -2647,10 +4460,14 @@ class AdminChannelCreateRequest {
 
 class AdminChannelItem {
   final String? accessType;
+  final String? apiKey;
   final String? balance;
   final String? baseUrl;
   final List<String>? capabilities;
+  final ProviderCircuitBreakerPolicy? circuitBreakerPolicy;
+  final String? createdAt;
   final int? errors;
+  final String? expiresAt;
   final String? id;
   final bool? isMultimodal;
   final List<String>? models;
@@ -2665,10 +4482,14 @@ class AdminChannelItem {
 
   AdminChannelItem({
     this.accessType,
+    this.apiKey,
     this.balance,
     this.baseUrl,
     this.capabilities,
+    this.circuitBreakerPolicy,
+    this.createdAt,
     this.errors,
+    this.expiresAt,
     this.id,
     this.isMultimodal,
     this.models,
@@ -2685,6 +4506,7 @@ class AdminChannelItem {
   factory AdminChannelItem.fromJson(Map<String, dynamic> json) {
     return AdminChannelItem(
       accessType: json['accessType']?.toString(),
+      apiKey: json['apiKey']?.toString(),
       balance: json['balance']?.toString(),
       baseUrl: json['baseUrl']?.toString(),
       capabilities: (() {
@@ -2697,7 +4519,13 @@ class AdminChannelItem {
             .whereType<String>()
             .toList();
       })(),
+      circuitBreakerPolicy: (() {
+        final map = _sdkworkAsMap(json['circuitBreakerPolicy']);
+        return map == null ? null : ProviderCircuitBreakerPolicy.fromJson(map);
+      })(),
+      createdAt: json['createdAt']?.toString(),
       errors: json['errors'] is int ? json['errors'] : null,
+      expiresAt: json['expiresAt']?.toString(),
       id: json['id']?.toString(),
       isMultimodal: json['isMultimodal'] is bool ? json['isMultimodal'] : null,
       models: (() {
@@ -2727,10 +4555,14 @@ class AdminChannelItem {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'accessType': accessType,
+      'apiKey': apiKey,
       'balance': balance,
       'baseUrl': baseUrl,
       'capabilities': capabilities?.map((item) => item).toList(),
+      'circuitBreakerPolicy': circuitBreakerPolicy?.toJson(),
+      'createdAt': createdAt,
       'errors': errors,
+      'expiresAt': expiresAt,
       'id': id,
       'isMultimodal': isMultimodal,
       'models': models?.map((item) => item).toList(),
@@ -2810,8 +4642,11 @@ class AdminChannelTestResponse {
 
 class AdminChannelUpdateRequest {
   final String? accessType;
+  final String? apiKey;
   final String? baseUrl;
   final List<String>? capabilities;
+  final ProviderCircuitBreakerPolicy? circuitBreakerPolicy;
+  final String? expiresAt;
   final String? id;
   final List<String>? models;
   final String? name;
@@ -2825,8 +4660,11 @@ class AdminChannelUpdateRequest {
 
   AdminChannelUpdateRequest({
     this.accessType,
+    this.apiKey,
     this.baseUrl,
     this.capabilities,
+    this.circuitBreakerPolicy,
+    this.expiresAt,
     this.id,
     this.models,
     this.name,
@@ -2842,6 +4680,7 @@ class AdminChannelUpdateRequest {
   factory AdminChannelUpdateRequest.fromJson(Map<String, dynamic> json) {
     return AdminChannelUpdateRequest(
       accessType: json['accessType']?.toString(),
+      apiKey: json['apiKey']?.toString(),
       baseUrl: json['baseUrl']?.toString(),
       capabilities: (() {
         final list = _sdkworkAsList(json['capabilities']);
@@ -2853,6 +4692,11 @@ class AdminChannelUpdateRequest {
             .whereType<String>()
             .toList();
       })(),
+      circuitBreakerPolicy: (() {
+        final map = _sdkworkAsMap(json['circuitBreakerPolicy']);
+        return map == null ? null : ProviderCircuitBreakerPolicy.fromJson(map);
+      })(),
+      expiresAt: json['expiresAt']?.toString(),
       id: json['id']?.toString(),
       models: (() {
         final list = _sdkworkAsList(json['models']);
@@ -2881,8 +4725,11 @@ class AdminChannelUpdateRequest {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'accessType': accessType,
+      'apiKey': apiKey,
       'baseUrl': baseUrl,
       'capabilities': capabilities?.map((item) => item).toList(),
+      'circuitBreakerPolicy': circuitBreakerPolicy?.toJson(),
+      'expiresAt': expiresAt,
       'id': id,
       'models': models?.map((item) => item).toList(),
       'name': name,
@@ -2949,272 +4796,6 @@ class AdminCountPair {
     return <String, dynamic>{
       'available': available,
       'total': total,
-    };
-  }
-}
-
-class AdminCouponBatchGenerateRequest {
-  final int? count;
-  final int? couponId;
-  final String? name;
-  final String? prefix;
-
-  AdminCouponBatchGenerateRequest({
-    this.count,
-    this.couponId,
-    this.name,
-    this.prefix
-  });
-
-  factory AdminCouponBatchGenerateRequest.fromJson(Map<String, dynamic> json) {
-    return AdminCouponBatchGenerateRequest(
-      count: json['count'] is int ? json['count'] : null,
-      couponId: json['couponId'] is int ? json['couponId'] : null,
-      name: json['name']?.toString(),
-      prefix: json['prefix']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'count': count,
-      'couponId': couponId,
-      'name': name,
-      'prefix': prefix,
-    };
-  }
-}
-
-class AdminCouponBatchGenerateResponse {
-  final AdminCouponBatchItem? batch;
-  final List<AdminPromoCodeItem>? codes;
-
-  AdminCouponBatchGenerateResponse({
-    this.batch,
-    this.codes
-  });
-
-  factory AdminCouponBatchGenerateResponse.fromJson(Map<String, dynamic> json) {
-    return AdminCouponBatchGenerateResponse(
-      batch: (() {
-        final map = _sdkworkAsMap(json['batch']);
-        return map == null ? null : AdminCouponBatchItem.fromJson(map);
-      })(),
-      codes: (() {
-        final list = _sdkworkAsList(json['codes']);
-        if (list == null) {
-          return null;
-        }
-        return list
-            .map((item) => (() {
-        final map = _sdkworkAsMap(item);
-        return map == null ? null : AdminPromoCodeItem.fromJson(map);
-      })())
-            .whereType<AdminPromoCodeItem>()
-            .toList();
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'batch': batch?.toJson(),
-      'codes': codes?.map((item) => item.toJson()).toList(),
-    };
-  }
-}
-
-class AdminCouponBatchItem {
-  final int? count;
-  final String? couponId;
-  final String? createdAt;
-  final String? id;
-  final String? name;
-  final String? prefix;
-
-  AdminCouponBatchItem({
-    this.count,
-    this.couponId,
-    this.createdAt,
-    this.id,
-    this.name,
-    this.prefix
-  });
-
-  factory AdminCouponBatchItem.fromJson(Map<String, dynamic> json) {
-    return AdminCouponBatchItem(
-      count: json['count'] is int ? json['count'] : null,
-      couponId: json['couponId']?.toString(),
-      createdAt: json['createdAt']?.toString(),
-      id: json['id']?.toString(),
-      name: json['name']?.toString(),
-      prefix: json['prefix']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'count': count,
-      'couponId': couponId,
-      'createdAt': createdAt,
-      'id': id,
-      'name': name,
-      'prefix': prefix,
-    };
-  }
-}
-
-class AdminCouponBatchesResponse {
-  final List<AdminCouponBatchItem>? items;
-
-  AdminCouponBatchesResponse({
-    this.items
-  });
-
-  factory AdminCouponBatchesResponse.fromJson(Map<String, dynamic> json) {
-    return AdminCouponBatchesResponse(
-      items: (() {
-        final list = _sdkworkAsList(json['items']);
-        if (list == null) {
-          return null;
-        }
-        return list
-            .map((item) => (() {
-        final map = _sdkworkAsMap(item);
-        return map == null ? null : AdminCouponBatchItem.fromJson(map);
-      })())
-            .whereType<AdminCouponBatchItem>()
-            .toList();
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'items': items?.map((item) => item.toJson()).toList(),
-    };
-  }
-}
-
-class AdminCouponCreateRequest {
-  final String? name;
-  final String? status;
-  final String? type;
-  final String? value;
-
-  AdminCouponCreateRequest({
-    this.name,
-    this.status,
-    this.type,
-    this.value
-  });
-
-  factory AdminCouponCreateRequest.fromJson(Map<String, dynamic> json) {
-    return AdminCouponCreateRequest(
-      name: json['name']?.toString(),
-      status: json['status']?.toString(),
-      type: json['type']?.toString(),
-      value: json['value']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'name': name,
-      'status': status,
-      'type': type,
-      'value': value,
-    };
-  }
-}
-
-class AdminCouponItem {
-  final String? id;
-  final String? name;
-  final String? status;
-  final String? type;
-  final String? value;
-
-  AdminCouponItem({
-    this.id,
-    this.name,
-    this.status,
-    this.type,
-    this.value
-  });
-
-  factory AdminCouponItem.fromJson(Map<String, dynamic> json) {
-    return AdminCouponItem(
-      id: json['id']?.toString(),
-      name: json['name']?.toString(),
-      status: json['status']?.toString(),
-      type: json['type']?.toString(),
-      value: json['value']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'id': id,
-      'name': name,
-      'status': status,
-      'type': type,
-      'value': value,
-    };
-  }
-}
-
-class AdminCouponMutationResponse {
-  final AdminCouponItem? item;
-
-  AdminCouponMutationResponse({
-    this.item
-  });
-
-  factory AdminCouponMutationResponse.fromJson(Map<String, dynamic> json) {
-    return AdminCouponMutationResponse(
-      item: (() {
-        final map = _sdkworkAsMap(json['item']);
-        return map == null ? null : AdminCouponItem.fromJson(map);
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'item': item?.toJson(),
-    };
-  }
-}
-
-class AdminCouponsResponse {
-  final List<AdminCouponItem>? items;
-
-  AdminCouponsResponse({
-    this.items
-  });
-
-  factory AdminCouponsResponse.fromJson(Map<String, dynamic> json) {
-    return AdminCouponsResponse(
-      items: (() {
-        final list = _sdkworkAsList(json['items']);
-        if (list == null) {
-          return null;
-        }
-        return list
-            .map((item) => (() {
-        final map = _sdkworkAsMap(item);
-        return map == null ? null : AdminCouponItem.fromJson(map);
-      })())
-            .whereType<AdminCouponItem>()
-            .toList();
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'items': items?.map((item) => item.toJson()).toList(),
     };
   }
 }
@@ -3427,29 +5008,6 @@ class AdminDeleteResponse {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'deleted': deleted,
-    };
-  }
-}
-
-class AdminExchangeRuleMutationResponse {
-  final CommerceExchangeRuleItem? item;
-
-  AdminExchangeRuleMutationResponse({
-    this.item
-  });
-
-  factory AdminExchangeRuleMutationResponse.fromJson(Map<String, dynamic> json) {
-    return AdminExchangeRuleMutationResponse(
-      item: (() {
-        final map = _sdkworkAsMap(json['item']);
-        return map == null ? null : CommerceExchangeRuleItem.fromJson(map);
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'item': item?.toJson(),
     };
   }
 }
@@ -4246,78 +5804,6 @@ class AdminMonitorPerformanceResponse {
   }
 }
 
-class AdminPaymentAttemptItem {
-  final String? amount;
-  final String? createdAt;
-  final String? id;
-  final String? orderNo;
-  final String? provider;
-  final String? status;
-
-  AdminPaymentAttemptItem({
-    this.amount,
-    this.createdAt,
-    this.id,
-    this.orderNo,
-    this.provider,
-    this.status
-  });
-
-  factory AdminPaymentAttemptItem.fromJson(Map<String, dynamic> json) {
-    return AdminPaymentAttemptItem(
-      amount: json['amount']?.toString(),
-      createdAt: json['createdAt']?.toString(),
-      id: json['id']?.toString(),
-      orderNo: json['orderNo']?.toString(),
-      provider: json['provider']?.toString(),
-      status: json['status']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'amount': amount,
-      'createdAt': createdAt,
-      'id': id,
-      'orderNo': orderNo,
-      'provider': provider,
-      'status': status,
-    };
-  }
-}
-
-class AdminPaymentAttemptsResponse {
-  final List<AdminPaymentAttemptItem>? items;
-
-  AdminPaymentAttemptsResponse({
-    this.items
-  });
-
-  factory AdminPaymentAttemptsResponse.fromJson(Map<String, dynamic> json) {
-    return AdminPaymentAttemptsResponse(
-      items: (() {
-        final list = _sdkworkAsList(json['items']);
-        if (list == null) {
-          return null;
-        }
-        return list
-            .map((item) => (() {
-        final map = _sdkworkAsMap(item);
-        return map == null ? null : AdminPaymentAttemptItem.fromJson(map);
-      })())
-            .whereType<AdminPaymentAttemptItem>()
-            .toList();
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'items': items?.map((item) => item.toJson()).toList(),
-    };
-  }
-}
-
 class AdminPieChartItem {
   final String? color;
   final String? name;
@@ -4342,118 +5828,6 @@ class AdminPieChartItem {
       'color': color,
       'name': name,
       'value': value,
-    };
-  }
-}
-
-class AdminPromoCodeItem {
-  final String? batchId;
-  final String? code;
-  final String? id;
-  final String? status;
-  final String? usedAt;
-  final String? usedBy;
-
-  AdminPromoCodeItem({
-    this.batchId,
-    this.code,
-    this.id,
-    this.status,
-    this.usedAt,
-    this.usedBy
-  });
-
-  factory AdminPromoCodeItem.fromJson(Map<String, dynamic> json) {
-    return AdminPromoCodeItem(
-      batchId: json['batchId']?.toString(),
-      code: json['code']?.toString(),
-      id: json['id']?.toString(),
-      status: json['status']?.toString(),
-      usedAt: json['usedAt']?.toString(),
-      usedBy: json['usedBy']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'batchId': batchId,
-      'code': code,
-      'id': id,
-      'status': status,
-      'usedAt': usedAt,
-      'usedBy': usedBy,
-    };
-  }
-}
-
-class AdminPromoCodeStatusUpdateRequest {
-  final String? status;
-
-  AdminPromoCodeStatusUpdateRequest({
-    this.status
-  });
-
-  factory AdminPromoCodeStatusUpdateRequest.fromJson(Map<String, dynamic> json) {
-    return AdminPromoCodeStatusUpdateRequest(
-      status: json['status']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'status': status,
-    };
-  }
-}
-
-class AdminPromoCodeStatusUpdateResponse {
-  final bool? updated;
-
-  AdminPromoCodeStatusUpdateResponse({
-    this.updated
-  });
-
-  factory AdminPromoCodeStatusUpdateResponse.fromJson(Map<String, dynamic> json) {
-    return AdminPromoCodeStatusUpdateResponse(
-      updated: json['updated'] is bool ? json['updated'] : null
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'updated': updated,
-    };
-  }
-}
-
-class AdminPromoCodesResponse {
-  final List<AdminPromoCodeItem>? items;
-
-  AdminPromoCodesResponse({
-    this.items
-  });
-
-  factory AdminPromoCodesResponse.fromJson(Map<String, dynamic> json) {
-    return AdminPromoCodesResponse(
-      items: (() {
-        final list = _sdkworkAsList(json['items']);
-        if (list == null) {
-          return null;
-        }
-        return list
-            .map((item) => (() {
-        final map = _sdkworkAsMap(item);
-        return map == null ? null : AdminPromoCodeItem.fromJson(map);
-      })())
-            .whereType<AdminPromoCodeItem>()
-            .toList();
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'items': items?.map((item) => item.toJson()).toList(),
     };
   }
 }
@@ -4741,7 +6115,7 @@ class AdminRateLimitMutationResponse {
 }
 
 class AdminRechargePackageMutationResponse {
-  final RechargePackage? item;
+  final Map<String, dynamic>? item;
 
   AdminRechargePackageMutationResponse({
     this.item
@@ -4749,100 +6123,13 @@ class AdminRechargePackageMutationResponse {
 
   factory AdminRechargePackageMutationResponse.fromJson(Map<String, dynamic> json) {
     return AdminRechargePackageMutationResponse(
-      item: (() {
-        final map = _sdkworkAsMap(json['item']);
-        return map == null ? null : RechargePackage.fromJson(map);
-      })()
+      item: _sdkworkAsMap(json['item'])
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'item': item?.toJson(),
-    };
-  }
-}
-
-class AdminRechargeRecordItem {
-  final String? amount;
-  final String? id;
-  final String? method;
-  final String? status;
-  final String? time;
-  final String? tradeNo;
-  final String? usdCredited;
-  final String? user;
-  final String? userId;
-
-  AdminRechargeRecordItem({
-    this.amount,
-    this.id,
-    this.method,
-    this.status,
-    this.time,
-    this.tradeNo,
-    this.usdCredited,
-    this.user,
-    this.userId
-  });
-
-  factory AdminRechargeRecordItem.fromJson(Map<String, dynamic> json) {
-    return AdminRechargeRecordItem(
-      amount: json['amount']?.toString(),
-      id: json['id']?.toString(),
-      method: json['method']?.toString(),
-      status: json['status']?.toString(),
-      time: json['time']?.toString(),
-      tradeNo: json['tradeNo']?.toString(),
-      usdCredited: json['usd_credited']?.toString(),
-      user: json['user']?.toString(),
-      userId: json['userId']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'amount': amount,
-      'id': id,
-      'method': method,
-      'status': status,
-      'time': time,
-      'tradeNo': tradeNo,
-      'usd_credited': usdCredited,
-      'user': user,
-      'userId': userId,
-    };
-  }
-}
-
-class AdminRechargeRecordsResponse {
-  final List<AdminRechargeRecordItem>? items;
-
-  AdminRechargeRecordsResponse({
-    this.items
-  });
-
-  factory AdminRechargeRecordsResponse.fromJson(Map<String, dynamic> json) {
-    return AdminRechargeRecordsResponse(
-      items: (() {
-        final list = _sdkworkAsList(json['items']);
-        if (list == null) {
-          return null;
-        }
-        return list
-            .map((item) => (() {
-        final map = _sdkworkAsMap(item);
-        return map == null ? null : AdminRechargeRecordItem.fromJson(map);
-      })())
-            .whereType<AdminRechargeRecordItem>()
-            .toList();
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'items': items?.map((item) => item.toJson()).toList(),
+      'item': item,
     };
   }
 }
@@ -4995,78 +6282,6 @@ class AdminRecordLogsResponse {
   }
 }
 
-class AdminRedemptionRecordItem {
-  final String? amount;
-  final String? code;
-  final String? id;
-  final String? time;
-  final String? user;
-  final String? userId;
-
-  AdminRedemptionRecordItem({
-    this.amount,
-    this.code,
-    this.id,
-    this.time,
-    this.user,
-    this.userId
-  });
-
-  factory AdminRedemptionRecordItem.fromJson(Map<String, dynamic> json) {
-    return AdminRedemptionRecordItem(
-      amount: json['amount']?.toString(),
-      code: json['code']?.toString(),
-      id: json['id']?.toString(),
-      time: json['time']?.toString(),
-      user: json['user']?.toString(),
-      userId: json['userId']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'amount': amount,
-      'code': code,
-      'id': id,
-      'time': time,
-      'user': user,
-      'userId': userId,
-    };
-  }
-}
-
-class AdminRedemptionRecordsResponse {
-  final List<AdminRedemptionRecordItem>? items;
-
-  AdminRedemptionRecordsResponse({
-    this.items
-  });
-
-  factory AdminRedemptionRecordsResponse.fromJson(Map<String, dynamic> json) {
-    return AdminRedemptionRecordsResponse(
-      items: (() {
-        final list = _sdkworkAsList(json['items']);
-        if (list == null) {
-          return null;
-        }
-        return list
-            .map((item) => (() {
-        final map = _sdkworkAsMap(item);
-        return map == null ? null : AdminRedemptionRecordItem.fromJson(map);
-      })())
-            .whereType<AdminRedemptionRecordItem>()
-            .toList();
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'items': items?.map((item) => item.toJson()).toList(),
-    };
-  }
-}
-
 class AdminReferralStatItem {
   final String? bonusAwarded;
   final String? id;
@@ -5135,6 +6350,198 @@ class AdminReferralStatsResponse {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminSiteSettingsResponse {
+  final String? accentColor;
+  final String? brandColor;
+  final String? customCss;
+  final String? description;
+  final String? docsUrl;
+  final String? faviconUrl;
+  final String? footerCopyright;
+  final String? iconUrl;
+  final String? icpRecordNumber;
+  final String? icpRecordUrl;
+  final String? logoUrl;
+  final String? policeRecordNumber;
+  final String? policeRecordUrl;
+  final String? privacyUrl;
+  final String? seoDescription;
+  final String? seoTitle;
+  final String? shortName;
+  final String? siteName;
+  final String? supportUrl;
+  final String? termsUrl;
+
+  AdminSiteSettingsResponse({
+    this.accentColor,
+    this.brandColor,
+    this.customCss,
+    this.description,
+    this.docsUrl,
+    this.faviconUrl,
+    this.footerCopyright,
+    this.iconUrl,
+    this.icpRecordNumber,
+    this.icpRecordUrl,
+    this.logoUrl,
+    this.policeRecordNumber,
+    this.policeRecordUrl,
+    this.privacyUrl,
+    this.seoDescription,
+    this.seoTitle,
+    this.shortName,
+    this.siteName,
+    this.supportUrl,
+    this.termsUrl
+  });
+
+  factory AdminSiteSettingsResponse.fromJson(Map<String, dynamic> json) {
+    return AdminSiteSettingsResponse(
+      accentColor: json['accentColor']?.toString(),
+      brandColor: json['brandColor']?.toString(),
+      customCss: json['customCss']?.toString(),
+      description: json['description']?.toString(),
+      docsUrl: json['docsUrl']?.toString(),
+      faviconUrl: json['faviconUrl']?.toString(),
+      footerCopyright: json['footerCopyright']?.toString(),
+      iconUrl: json['iconUrl']?.toString(),
+      icpRecordNumber: json['icpRecordNumber']?.toString(),
+      icpRecordUrl: json['icpRecordUrl']?.toString(),
+      logoUrl: json['logoUrl']?.toString(),
+      policeRecordNumber: json['policeRecordNumber']?.toString(),
+      policeRecordUrl: json['policeRecordUrl']?.toString(),
+      privacyUrl: json['privacyUrl']?.toString(),
+      seoDescription: json['seoDescription']?.toString(),
+      seoTitle: json['seoTitle']?.toString(),
+      shortName: json['shortName']?.toString(),
+      siteName: json['siteName']?.toString(),
+      supportUrl: json['supportUrl']?.toString(),
+      termsUrl: json['termsUrl']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'accentColor': accentColor,
+      'brandColor': brandColor,
+      'customCss': customCss,
+      'description': description,
+      'docsUrl': docsUrl,
+      'faviconUrl': faviconUrl,
+      'footerCopyright': footerCopyright,
+      'iconUrl': iconUrl,
+      'icpRecordNumber': icpRecordNumber,
+      'icpRecordUrl': icpRecordUrl,
+      'logoUrl': logoUrl,
+      'policeRecordNumber': policeRecordNumber,
+      'policeRecordUrl': policeRecordUrl,
+      'privacyUrl': privacyUrl,
+      'seoDescription': seoDescription,
+      'seoTitle': seoTitle,
+      'shortName': shortName,
+      'siteName': siteName,
+      'supportUrl': supportUrl,
+      'termsUrl': termsUrl,
+    };
+  }
+}
+
+class AdminSiteSettingsUpdateRequest {
+  final String? accentColor;
+  final String? brandColor;
+  final String? customCss;
+  final String? description;
+  final String? docsUrl;
+  final String? faviconUrl;
+  final String? footerCopyright;
+  final String? iconUrl;
+  final String? icpRecordNumber;
+  final String? icpRecordUrl;
+  final String? logoUrl;
+  final String? policeRecordNumber;
+  final String? policeRecordUrl;
+  final String? privacyUrl;
+  final String? seoDescription;
+  final String? seoTitle;
+  final String? shortName;
+  final String? siteName;
+  final String? supportUrl;
+  final String? termsUrl;
+
+  AdminSiteSettingsUpdateRequest({
+    this.accentColor,
+    this.brandColor,
+    this.customCss,
+    this.description,
+    this.docsUrl,
+    this.faviconUrl,
+    this.footerCopyright,
+    this.iconUrl,
+    this.icpRecordNumber,
+    this.icpRecordUrl,
+    this.logoUrl,
+    this.policeRecordNumber,
+    this.policeRecordUrl,
+    this.privacyUrl,
+    this.seoDescription,
+    this.seoTitle,
+    this.shortName,
+    this.siteName,
+    this.supportUrl,
+    this.termsUrl
+  });
+
+  factory AdminSiteSettingsUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminSiteSettingsUpdateRequest(
+      accentColor: json['accentColor']?.toString(),
+      brandColor: json['brandColor']?.toString(),
+      customCss: json['customCss']?.toString(),
+      description: json['description']?.toString(),
+      docsUrl: json['docsUrl']?.toString(),
+      faviconUrl: json['faviconUrl']?.toString(),
+      footerCopyright: json['footerCopyright']?.toString(),
+      iconUrl: json['iconUrl']?.toString(),
+      icpRecordNumber: json['icpRecordNumber']?.toString(),
+      icpRecordUrl: json['icpRecordUrl']?.toString(),
+      logoUrl: json['logoUrl']?.toString(),
+      policeRecordNumber: json['policeRecordNumber']?.toString(),
+      policeRecordUrl: json['policeRecordUrl']?.toString(),
+      privacyUrl: json['privacyUrl']?.toString(),
+      seoDescription: json['seoDescription']?.toString(),
+      seoTitle: json['seoTitle']?.toString(),
+      shortName: json['shortName']?.toString(),
+      siteName: json['siteName']?.toString(),
+      supportUrl: json['supportUrl']?.toString(),
+      termsUrl: json['termsUrl']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'accentColor': accentColor,
+      'brandColor': brandColor,
+      'customCss': customCss,
+      'description': description,
+      'docsUrl': docsUrl,
+      'faviconUrl': faviconUrl,
+      'footerCopyright': footerCopyright,
+      'iconUrl': iconUrl,
+      'icpRecordNumber': icpRecordNumber,
+      'icpRecordUrl': icpRecordUrl,
+      'logoUrl': logoUrl,
+      'policeRecordNumber': policeRecordNumber,
+      'policeRecordUrl': policeRecordUrl,
+      'privacyUrl': privacyUrl,
+      'seoDescription': seoDescription,
+      'seoTitle': seoTitle,
+      'shortName': shortName,
+      'siteName': siteName,
+      'supportUrl': supportUrl,
+      'termsUrl': termsUrl,
     };
   }
 }
@@ -5864,6 +7271,26 @@ class AdminSkillCategoryCreateRequest {
   }
 }
 
+class AdminSkillCategoryDeleteResponse {
+  final bool? deleted;
+
+  AdminSkillCategoryDeleteResponse({
+    this.deleted
+  });
+
+  factory AdminSkillCategoryDeleteResponse.fromJson(Map<String, dynamic> json) {
+    return AdminSkillCategoryDeleteResponse(
+      deleted: json['deleted'] is bool ? json['deleted'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'deleted': deleted,
+    };
+  }
+}
+
 class AdminSkillCategoryItem {
   final String? code;
   final String? description;
@@ -5975,6 +7402,62 @@ class AdminSkillCategoryMutationResponse {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'item': item?.toJson(),
+    };
+  }
+}
+
+class AdminSkillCategoryUpdateRequest {
+  final String? code;
+  final String? description;
+  final String? icon;
+  final String? name;
+  final String? parentId;
+  final String? path;
+  final int? sortWeight;
+  final int? status;
+  final int? type;
+  final bool? visible;
+
+  AdminSkillCategoryUpdateRequest({
+    this.code,
+    this.description,
+    this.icon,
+    this.name,
+    this.parentId,
+    this.path,
+    this.sortWeight,
+    this.status,
+    this.type,
+    this.visible
+  });
+
+  factory AdminSkillCategoryUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminSkillCategoryUpdateRequest(
+      code: json['code']?.toString(),
+      description: json['description']?.toString(),
+      icon: json['icon']?.toString(),
+      name: json['name']?.toString(),
+      parentId: json['parentId']?.toString(),
+      path: json['path']?.toString(),
+      sortWeight: json['sortWeight'] is int ? json['sortWeight'] : null,
+      status: json['status'] is int ? json['status'] : null,
+      type: json['type'] is int ? json['type'] : null,
+      visible: json['visible'] is bool ? json['visible'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'description': description,
+      'icon': icon,
+      'name': name,
+      'parentId': parentId,
+      'path': path,
+      'sortWeight': sortWeight,
+      'status': status,
+      'type': type,
+      'visible': visible,
     };
   }
 }
@@ -7052,86 +8535,6 @@ class AdminTokenLimitsResponse {
   }
 }
 
-class AdminTransactionRecordItem {
-  final String? amount;
-  final String? balance;
-  final String? description;
-  final String? id;
-  final String? status;
-  final String? time;
-  final String? type;
-  final String? userId;
-
-  AdminTransactionRecordItem({
-    this.amount,
-    this.balance,
-    this.description,
-    this.id,
-    this.status,
-    this.time,
-    this.type,
-    this.userId
-  });
-
-  factory AdminTransactionRecordItem.fromJson(Map<String, dynamic> json) {
-    return AdminTransactionRecordItem(
-      amount: json['amount']?.toString(),
-      balance: json['balance']?.toString(),
-      description: json['description']?.toString(),
-      id: json['id']?.toString(),
-      status: json['status']?.toString(),
-      time: json['time']?.toString(),
-      type: json['type']?.toString(),
-      userId: json['userId']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'amount': amount,
-      'balance': balance,
-      'description': description,
-      'id': id,
-      'status': status,
-      'time': time,
-      'type': type,
-      'userId': userId,
-    };
-  }
-}
-
-class AdminTransactionsResponse {
-  final List<AdminTransactionRecordItem>? items;
-
-  AdminTransactionsResponse({
-    this.items
-  });
-
-  factory AdminTransactionsResponse.fromJson(Map<String, dynamic> json) {
-    return AdminTransactionsResponse(
-      items: (() {
-        final list = _sdkworkAsList(json['items']);
-        if (list == null) {
-          return null;
-        }
-        return list
-            .map((item) => (() {
-        final map = _sdkworkAsMap(item);
-        return map == null ? null : AdminTransactionRecordItem.fromJson(map);
-      })())
-            .whereType<AdminTransactionRecordItem>()
-            .toList();
-      })()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'items': items?.map((item) => item.toJson()).toList(),
-    };
-  }
-}
-
 class AdminUsagePair {
   final double? today;
   final double? total;
@@ -7152,30 +8555,6 @@ class AdminUsagePair {
     return <String, dynamic>{
       'today': today,
       'total': total,
-    };
-  }
-}
-
-class AdminUserBalanceAdjustmentRequest {
-  final double? amount;
-  final String? type;
-
-  AdminUserBalanceAdjustmentRequest({
-    this.amount,
-    this.type
-  });
-
-  factory AdminUserBalanceAdjustmentRequest.fromJson(Map<String, dynamic> json) {
-    return AdminUserBalanceAdjustmentRequest(
-      amount: json['amount'] is num ? json['amount'].toDouble() : null,
-      type: json['type']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'amount': amount,
-      'type': type,
     };
   }
 }
@@ -7351,27 +8730,24 @@ class AdminUsersResponse {
   }
 }
 
-class AgentsListResult {
+class AgentDefinitionsListResult {
   final String? code;
   final AdminAgentListResponse? data;
-  final String? message;
   final String? msg;
 
-  AgentsListResult({
+  AgentDefinitionsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
-  factory AgentsListResult.fromJson(Map<String, dynamic> json) {
-    return AgentsListResult(
+  factory AgentDefinitionsListResult.fromJson(Map<String, dynamic> json) {
+    return AgentDefinitionsListResult(
       code: json['code']?.toString(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAgentListResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -7380,33 +8756,29 @@ class AgentsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
 }
 
-class AgentsRetrieveResult {
+class AgentDefinitionsRetrieveResult {
   final String? code;
   final AdminAgentItem? data;
-  final String? message;
   final String? msg;
 
-  AgentsRetrieveResult({
+  AgentDefinitionsRetrieveResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
-  factory AgentsRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return AgentsRetrieveResult(
+  factory AgentDefinitionsRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return AgentDefinitionsRetrieveResult(
       code: json['code']?.toString(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAgentItem.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -7415,7 +8787,6 @@ class AgentsRetrieveResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -7880,6 +9251,7 @@ class AiAgentRecord {
 
 class AiAgentRunRecord {
   final String? agentId;
+  final String? agentSessionId;
   final String? agentVersionId;
   final String? audioSeconds;
   final String? cachedTokens;
@@ -7894,8 +9266,10 @@ class AiAgentRunRecord {
   final String? imageCount;
   final String? inputMessage;
   final bool? legalHold;
+  final String? memorySpaceId;
   final Map<String, dynamic>? metadata;
   final String? meteringStatus;
+  final String? model;
   final String? organizationId;
   final String? outputMessage;
   final String? payloadHash;
@@ -7903,8 +9277,8 @@ class AiAgentRunRecord {
   final String? promptTokens;
   final String? requestId;
   final String? retentionUntil;
-  final String? runStatus;
   final String? runUuid;
+  final String? runtime;
   final String? sourceSurface;
   final String? startedAt;
   final String? status;
@@ -7914,12 +9288,14 @@ class AiAgentRunRecord {
   final String? totalTokens;
   final String? traceId;
   final String? usageFactId;
+  final Map<String, dynamic>? usageJson;
   final String? userId;
   final String? uuid;
   final String? videoSeconds;
 
   AiAgentRunRecord({
     this.agentId,
+    this.agentSessionId,
     this.agentVersionId,
     this.audioSeconds,
     this.cachedTokens,
@@ -7934,8 +9310,10 @@ class AiAgentRunRecord {
     this.imageCount,
     this.inputMessage,
     this.legalHold,
+    this.memorySpaceId,
     this.metadata,
     this.meteringStatus,
+    this.model,
     this.organizationId,
     this.outputMessage,
     this.payloadHash,
@@ -7943,8 +9321,8 @@ class AiAgentRunRecord {
     this.promptTokens,
     this.requestId,
     this.retentionUntil,
-    this.runStatus,
     this.runUuid,
+    this.runtime,
     this.sourceSurface,
     this.startedAt,
     this.status,
@@ -7954,6 +9332,7 @@ class AiAgentRunRecord {
     this.totalTokens,
     this.traceId,
     this.usageFactId,
+    this.usageJson,
     this.userId,
     this.uuid,
     this.videoSeconds
@@ -7962,6 +9341,7 @@ class AiAgentRunRecord {
   factory AiAgentRunRecord.fromJson(Map<String, dynamic> json) {
     return AiAgentRunRecord(
       agentId: json['agent_id']?.toString(),
+      agentSessionId: json['agent_session_id']?.toString(),
       agentVersionId: json['agent_version_id']?.toString(),
       audioSeconds: json['audio_seconds']?.toString(),
       cachedTokens: json['cached_tokens']?.toString(),
@@ -7976,6 +9356,7 @@ class AiAgentRunRecord {
       imageCount: json['image_count']?.toString(),
       inputMessage: json['input_message']?.toString(),
       legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      memorySpaceId: json['memory_space_id']?.toString(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -7991,6 +9372,7 @@ class AiAgentRunRecord {
         return result;
       })(),
       meteringStatus: json['metering_status']?.toString(),
+      model: json['model']?.toString(),
       organizationId: json['organization_id']?.toString(),
       outputMessage: json['output_message']?.toString(),
       payloadHash: json['payload_hash']?.toString(),
@@ -7998,8 +9380,8 @@ class AiAgentRunRecord {
       promptTokens: json['prompt_tokens']?.toString(),
       requestId: json['request_id']?.toString(),
       retentionUntil: json['retention_until']?.toString(),
-      runStatus: json['run_status']?.toString(),
       runUuid: json['run_uuid']?.toString(),
+      runtime: json['runtime']?.toString(),
       sourceSurface: json['source_surface']?.toString(),
       startedAt: json['started_at']?.toString(),
       status: json['status']?.toString(),
@@ -8009,6 +9391,20 @@ class AiAgentRunRecord {
       totalTokens: json['total_tokens']?.toString(),
       traceId: json['trace_id']?.toString(),
       usageFactId: json['usage_fact_id']?.toString(),
+      usageJson: (() {
+        final map = _sdkworkAsMap(json['usage_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
       userId: json['user_id']?.toString(),
       uuid: json['uuid']?.toString(),
       videoSeconds: json['video_seconds']?.toString()
@@ -8018,6 +9414,7 @@ class AiAgentRunRecord {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'agent_id': agentId,
+      'agent_session_id': agentSessionId,
       'agent_version_id': agentVersionId,
       'audio_seconds': audioSeconds,
       'cached_tokens': cachedTokens,
@@ -8032,8 +9429,10 @@ class AiAgentRunRecord {
       'image_count': imageCount,
       'input_message': inputMessage,
       'legal_hold': legalHold,
+      'memory_space_id': memorySpaceId,
       'metadata': metadata?.map((key, item) => MapEntry(key, item)),
       'metering_status': meteringStatus,
+      'model': model,
       'organization_id': organizationId,
       'output_message': outputMessage,
       'payload_hash': payloadHash,
@@ -8041,8 +9440,8 @@ class AiAgentRunRecord {
       'prompt_tokens': promptTokens,
       'request_id': requestId,
       'retention_until': retentionUntil,
-      'run_status': runStatus,
       'run_uuid': runUuid,
+      'runtime': runtime,
       'source_surface': sourceSurface,
       'started_at': startedAt,
       'status': status,
@@ -8052,6 +9451,7 @@ class AiAgentRunRecord {
       'total_tokens': totalTokens,
       'trace_id': traceId,
       'usage_fact_id': usageFactId,
+      'usage_json': usageJson?.map((key, item) => MapEntry(key, item)),
       'user_id': userId,
       'uuid': uuid,
       'video_seconds': videoSeconds,
@@ -8083,18 +9483,20 @@ class AiAgentRunStepRecord {
   final String? requestId;
   final String? retentionUntil;
   final String? runId;
+  final String? runtimeInvocationId;
   final String? skillId;
   final String? startedAt;
   final String? status;
   final int? stepIndex;
-  final String? stepStatus;
   final String? stepType;
   final String? tenantId;
   final String? title;
   final String? toolBindingId;
+  final String? toolName;
   final String? totalTokens;
   final String? traceId;
   final String? usageFactId;
+  final Map<String, dynamic>? usageJson;
   final String? userId;
   final String? uuid;
   final String? videoSeconds;
@@ -8123,18 +9525,20 @@ class AiAgentRunStepRecord {
     this.requestId,
     this.retentionUntil,
     this.runId,
+    this.runtimeInvocationId,
     this.skillId,
     this.startedAt,
     this.status,
     this.stepIndex,
-    this.stepStatus,
     this.stepType,
     this.tenantId,
     this.title,
     this.toolBindingId,
+    this.toolName,
     this.totalTokens,
     this.traceId,
     this.usageFactId,
+    this.usageJson,
     this.userId,
     this.uuid,
     this.videoSeconds
@@ -8204,18 +9608,33 @@ class AiAgentRunStepRecord {
       requestId: json['request_id']?.toString(),
       retentionUntil: json['retention_until']?.toString(),
       runId: json['run_id']?.toString(),
+      runtimeInvocationId: json['runtime_invocation_id']?.toString(),
       skillId: json['skill_id']?.toString(),
       startedAt: json['started_at']?.toString(),
       status: json['status']?.toString(),
       stepIndex: json['step_index'] is int ? json['step_index'] : null,
-      stepStatus: json['step_status']?.toString(),
       stepType: json['step_type']?.toString(),
       tenantId: json['tenant_id']?.toString(),
       title: json['title']?.toString(),
       toolBindingId: json['tool_binding_id']?.toString(),
+      toolName: json['tool_name']?.toString(),
       totalTokens: json['total_tokens']?.toString(),
       traceId: json['trace_id']?.toString(),
       usageFactId: json['usage_fact_id']?.toString(),
+      usageJson: (() {
+        final map = _sdkworkAsMap(json['usage_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
       userId: json['user_id']?.toString(),
       uuid: json['uuid']?.toString(),
       videoSeconds: json['video_seconds']?.toString()
@@ -8247,21 +9666,248 @@ class AiAgentRunStepRecord {
       'request_id': requestId,
       'retention_until': retentionUntil,
       'run_id': runId,
+      'runtime_invocation_id': runtimeInvocationId,
       'skill_id': skillId,
       'started_at': startedAt,
       'status': status,
       'step_index': stepIndex,
-      'step_status': stepStatus,
       'step_type': stepType,
       'tenant_id': tenantId,
       'title': title,
       'tool_binding_id': toolBindingId,
+      'tool_name': toolName,
       'total_tokens': totalTokens,
       'trace_id': traceId,
       'usage_fact_id': usageFactId,
+      'usage_json': usageJson?.map((key, item) => MapEntry(key, item)),
       'user_id': userId,
       'uuid': uuid,
       'video_seconds': videoSeconds,
+    };
+  }
+}
+
+class AiAgentSessionRecord {
+  final String? agentId;
+  final String? agentVersionId;
+  final String? approvalPolicy;
+  final String? chatConversationId;
+  final String? createdAt;
+  final String? cwd;
+  final String? dataScope;
+  final String? defaultModel;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? executionMode;
+  final String? forkedFromRunId;
+  final String? forkedFromStepId;
+  final String? gitBranch;
+  final String? gitCommit;
+  final String? id;
+  final String? lastActiveAt;
+  final String? lastRunId;
+  final String? lastStepId;
+  final String? memorySpaceId;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? ownerId;
+  final String? ownerType;
+  final String? parentSessionId;
+  final String? permissionMode;
+  final String? providerConversationId;
+  final String? providerSessionId;
+  final String? repositoryId;
+  final String? resumeStrategy;
+  final String? runCount;
+  final String? runtime;
+  final String? runtimeStateStorageKey;
+  final String? sandboxPolicy;
+  final String? sessionCode;
+  final String? sessionKind;
+  final String? sourceSurface;
+  final String? status;
+  final String? stepCount;
+  final String? summary;
+  final String? tenantId;
+  final String? title;
+  final String? toolCallCount;
+  final String? updatedAt;
+  final String? userId;
+  final String? uuid;
+  final String? version;
+  final String? visibility;
+  final String? workspaceId;
+
+  AiAgentSessionRecord({
+    this.agentId,
+    this.agentVersionId,
+    this.approvalPolicy,
+    this.chatConversationId,
+    this.createdAt,
+    this.cwd,
+    this.dataScope,
+    this.defaultModel,
+    this.deletedAt,
+    this.deletedBy,
+    this.executionMode,
+    this.forkedFromRunId,
+    this.forkedFromStepId,
+    this.gitBranch,
+    this.gitCommit,
+    this.id,
+    this.lastActiveAt,
+    this.lastRunId,
+    this.lastStepId,
+    this.memorySpaceId,
+    this.metadata,
+    this.organizationId,
+    this.ownerId,
+    this.ownerType,
+    this.parentSessionId,
+    this.permissionMode,
+    this.providerConversationId,
+    this.providerSessionId,
+    this.repositoryId,
+    this.resumeStrategy,
+    this.runCount,
+    this.runtime,
+    this.runtimeStateStorageKey,
+    this.sandboxPolicy,
+    this.sessionCode,
+    this.sessionKind,
+    this.sourceSurface,
+    this.status,
+    this.stepCount,
+    this.summary,
+    this.tenantId,
+    this.title,
+    this.toolCallCount,
+    this.updatedAt,
+    this.userId,
+    this.uuid,
+    this.version,
+    this.visibility,
+    this.workspaceId
+  });
+
+  factory AiAgentSessionRecord.fromJson(Map<String, dynamic> json) {
+    return AiAgentSessionRecord(
+      agentId: json['agent_id']?.toString(),
+      agentVersionId: json['agent_version_id']?.toString(),
+      approvalPolicy: json['approval_policy']?.toString(),
+      chatConversationId: json['chat_conversation_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      cwd: json['cwd']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      defaultModel: json['default_model']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      executionMode: json['execution_mode']?.toString(),
+      forkedFromRunId: json['forked_from_run_id']?.toString(),
+      forkedFromStepId: json['forked_from_step_id']?.toString(),
+      gitBranch: json['git_branch']?.toString(),
+      gitCommit: json['git_commit']?.toString(),
+      id: json['id']?.toString(),
+      lastActiveAt: json['last_active_at']?.toString(),
+      lastRunId: json['last_run_id']?.toString(),
+      lastStepId: json['last_step_id']?.toString(),
+      memorySpaceId: json['memory_space_id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      ownerId: json['owner_id']?.toString(),
+      ownerType: json['owner_type']?.toString(),
+      parentSessionId: json['parent_session_id']?.toString(),
+      permissionMode: json['permission_mode']?.toString(),
+      providerConversationId: json['provider_conversation_id']?.toString(),
+      providerSessionId: json['provider_session_id']?.toString(),
+      repositoryId: json['repository_id']?.toString(),
+      resumeStrategy: json['resume_strategy']?.toString(),
+      runCount: json['run_count']?.toString(),
+      runtime: json['runtime']?.toString(),
+      runtimeStateStorageKey: json['runtime_state_storage_key']?.toString(),
+      sandboxPolicy: json['sandbox_policy']?.toString(),
+      sessionCode: json['session_code']?.toString(),
+      sessionKind: json['session_kind']?.toString(),
+      sourceSurface: json['source_surface']?.toString(),
+      status: json['status']?.toString(),
+      stepCount: json['step_count']?.toString(),
+      summary: json['summary']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      title: json['title']?.toString(),
+      toolCallCount: json['tool_call_count']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString(),
+      visibility: json['visibility']?.toString(),
+      workspaceId: json['workspace_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'agent_id': agentId,
+      'agent_version_id': agentVersionId,
+      'approval_policy': approvalPolicy,
+      'chat_conversation_id': chatConversationId,
+      'created_at': createdAt,
+      'cwd': cwd,
+      'data_scope': dataScope,
+      'default_model': defaultModel,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'execution_mode': executionMode,
+      'forked_from_run_id': forkedFromRunId,
+      'forked_from_step_id': forkedFromStepId,
+      'git_branch': gitBranch,
+      'git_commit': gitCommit,
+      'id': id,
+      'last_active_at': lastActiveAt,
+      'last_run_id': lastRunId,
+      'last_step_id': lastStepId,
+      'memory_space_id': memorySpaceId,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'owner_id': ownerId,
+      'owner_type': ownerType,
+      'parent_session_id': parentSessionId,
+      'permission_mode': permissionMode,
+      'provider_conversation_id': providerConversationId,
+      'provider_session_id': providerSessionId,
+      'repository_id': repositoryId,
+      'resume_strategy': resumeStrategy,
+      'run_count': runCount,
+      'runtime': runtime,
+      'runtime_state_storage_key': runtimeStateStorageKey,
+      'sandbox_policy': sandboxPolicy,
+      'session_code': sessionCode,
+      'session_kind': sessionKind,
+      'source_surface': sourceSurface,
+      'status': status,
+      'step_count': stepCount,
+      'summary': summary,
+      'tenant_id': tenantId,
+      'title': title,
+      'tool_call_count': toolCallCount,
+      'updated_at': updatedAt,
+      'user_id': userId,
+      'uuid': uuid,
+      'version': version,
+      'visibility': visibility,
+      'workspace_id': workspaceId,
     };
   }
 }
@@ -8769,6 +10415,1130 @@ class AiBillingMeterRecord {
       'usage_type': usageType,
       'uuid': uuid,
       'version': version,
+    };
+  }
+}
+
+class AiChatContextSnapshotRecord {
+  final Map<String, dynamic>? contextJson;
+  final String? conversationId;
+  final String? createdAt;
+  final Map<String, dynamic>? excludedItemIds;
+  final Map<String, dynamic>? excludedMemoryIds;
+  final String? id;
+  final Map<String, dynamic>? includedItemIds;
+  final Map<String, dynamic>? includedMemoryIds;
+  final String? inputTokenEstimate;
+  final bool? legalHold;
+  final Map<String, dynamic>? memoryPack;
+  final String? memoryTokenCount;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? previousResponseId;
+  final String? providerConversationId;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? runtimeInvocationId;
+  final int? snapshotNo;
+  final String? status;
+  final String? strategy;
+  final String? tenantId;
+  final String? traceId;
+  final String? truncationReason;
+  final String? turnId;
+  final String? userId;
+  final String? uuid;
+
+  AiChatContextSnapshotRecord({
+    this.contextJson,
+    this.conversationId,
+    this.createdAt,
+    this.excludedItemIds,
+    this.excludedMemoryIds,
+    this.id,
+    this.includedItemIds,
+    this.includedMemoryIds,
+    this.inputTokenEstimate,
+    this.legalHold,
+    this.memoryPack,
+    this.memoryTokenCount,
+    this.metadata,
+    this.organizationId,
+    this.payloadHash,
+    this.previousResponseId,
+    this.providerConversationId,
+    this.requestId,
+    this.retentionUntil,
+    this.runtimeInvocationId,
+    this.snapshotNo,
+    this.status,
+    this.strategy,
+    this.tenantId,
+    this.traceId,
+    this.truncationReason,
+    this.turnId,
+    this.userId,
+    this.uuid
+  });
+
+  factory AiChatContextSnapshotRecord.fromJson(Map<String, dynamic> json) {
+    return AiChatContextSnapshotRecord(
+      contextJson: (() {
+        final map = _sdkworkAsMap(json['context_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      conversationId: json['conversation_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      excludedItemIds: (() {
+        final map = _sdkworkAsMap(json['excluded_item_ids']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      excludedMemoryIds: (() {
+        final map = _sdkworkAsMap(json['excluded_memory_ids']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      id: json['id']?.toString(),
+      includedItemIds: (() {
+        final map = _sdkworkAsMap(json['included_item_ids']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      includedMemoryIds: (() {
+        final map = _sdkworkAsMap(json['included_memory_ids']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      inputTokenEstimate: json['input_token_estimate']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      memoryPack: (() {
+        final map = _sdkworkAsMap(json['memory_pack']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      memoryTokenCount: json['memory_token_count']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      previousResponseId: json['previous_response_id']?.toString(),
+      providerConversationId: json['provider_conversation_id']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      runtimeInvocationId: json['runtime_invocation_id']?.toString(),
+      snapshotNo: json['snapshot_no'] is int ? json['snapshot_no'] : null,
+      status: json['status']?.toString(),
+      strategy: json['strategy']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      truncationReason: json['truncation_reason']?.toString(),
+      turnId: json['turn_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'context_json': contextJson?.map((key, item) => MapEntry(key, item)),
+      'conversation_id': conversationId,
+      'created_at': createdAt,
+      'excluded_item_ids': excludedItemIds?.map((key, item) => MapEntry(key, item)),
+      'excluded_memory_ids': excludedMemoryIds?.map((key, item) => MapEntry(key, item)),
+      'id': id,
+      'included_item_ids': includedItemIds?.map((key, item) => MapEntry(key, item)),
+      'included_memory_ids': includedMemoryIds?.map((key, item) => MapEntry(key, item)),
+      'input_token_estimate': inputTokenEstimate,
+      'legal_hold': legalHold,
+      'memory_pack': memoryPack?.map((key, item) => MapEntry(key, item)),
+      'memory_token_count': memoryTokenCount,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'previous_response_id': previousResponseId,
+      'provider_conversation_id': providerConversationId,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'runtime_invocation_id': runtimeInvocationId,
+      'snapshot_no': snapshotNo,
+      'status': status,
+      'strategy': strategy,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'truncation_reason': truncationReason,
+      'turn_id': turnId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class AiChatConversationRecord {
+  final String? agentId;
+  final String? agentSessionId;
+  final String? cachedTokenTotal;
+  final String? conversationCode;
+  final String? costAmountTotal;
+  final String? createdAt;
+  final String? currency;
+  final String? dataScope;
+  final String? defaultEndpoint;
+  final String? defaultModel;
+  final String? defaultProvider;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final String? inputTokenTotal;
+  final String? itemCount;
+  final String? lastItemId;
+  final String? lastMessagePreview;
+  final String? lastTurnId;
+  final String? memorySpaceId;
+  final String? messageCount;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? outputTokenTotal;
+  final String? ownerId;
+  final String? ownerType;
+  final String? reasoningTokenTotal;
+  final String? sourceSurface;
+  final String? status;
+  final String? summary;
+  final String? tenantId;
+  final String? title;
+  final String? turnCount;
+  final String? updatedAt;
+  final String? userId;
+  final String? uuid;
+  final String? version;
+  final String? visibility;
+
+  AiChatConversationRecord({
+    this.agentId,
+    this.agentSessionId,
+    this.cachedTokenTotal,
+    this.conversationCode,
+    this.costAmountTotal,
+    this.createdAt,
+    this.currency,
+    this.dataScope,
+    this.defaultEndpoint,
+    this.defaultModel,
+    this.defaultProvider,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.inputTokenTotal,
+    this.itemCount,
+    this.lastItemId,
+    this.lastMessagePreview,
+    this.lastTurnId,
+    this.memorySpaceId,
+    this.messageCount,
+    this.metadata,
+    this.organizationId,
+    this.outputTokenTotal,
+    this.ownerId,
+    this.ownerType,
+    this.reasoningTokenTotal,
+    this.sourceSurface,
+    this.status,
+    this.summary,
+    this.tenantId,
+    this.title,
+    this.turnCount,
+    this.updatedAt,
+    this.userId,
+    this.uuid,
+    this.version,
+    this.visibility
+  });
+
+  factory AiChatConversationRecord.fromJson(Map<String, dynamic> json) {
+    return AiChatConversationRecord(
+      agentId: json['agent_id']?.toString(),
+      agentSessionId: json['agent_session_id']?.toString(),
+      cachedTokenTotal: json['cached_token_total']?.toString(),
+      conversationCode: json['conversation_code']?.toString(),
+      costAmountTotal: json['cost_amount_total']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currency: json['currency']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      defaultEndpoint: json['default_endpoint']?.toString(),
+      defaultModel: json['default_model']?.toString(),
+      defaultProvider: json['default_provider']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      inputTokenTotal: json['input_token_total']?.toString(),
+      itemCount: json['item_count']?.toString(),
+      lastItemId: json['last_item_id']?.toString(),
+      lastMessagePreview: json['last_message_preview']?.toString(),
+      lastTurnId: json['last_turn_id']?.toString(),
+      memorySpaceId: json['memory_space_id']?.toString(),
+      messageCount: json['message_count']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      outputTokenTotal: json['output_token_total']?.toString(),
+      ownerId: json['owner_id']?.toString(),
+      ownerType: json['owner_type']?.toString(),
+      reasoningTokenTotal: json['reasoning_token_total']?.toString(),
+      sourceSurface: json['source_surface']?.toString(),
+      status: json['status']?.toString(),
+      summary: json['summary']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      title: json['title']?.toString(),
+      turnCount: json['turn_count']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString(),
+      visibility: json['visibility']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'agent_id': agentId,
+      'agent_session_id': agentSessionId,
+      'cached_token_total': cachedTokenTotal,
+      'conversation_code': conversationCode,
+      'cost_amount_total': costAmountTotal,
+      'created_at': createdAt,
+      'currency': currency,
+      'data_scope': dataScope,
+      'default_endpoint': defaultEndpoint,
+      'default_model': defaultModel,
+      'default_provider': defaultProvider,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'input_token_total': inputTokenTotal,
+      'item_count': itemCount,
+      'last_item_id': lastItemId,
+      'last_message_preview': lastMessagePreview,
+      'last_turn_id': lastTurnId,
+      'memory_space_id': memorySpaceId,
+      'message_count': messageCount,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'output_token_total': outputTokenTotal,
+      'owner_id': ownerId,
+      'owner_type': ownerType,
+      'reasoning_token_total': reasoningTokenTotal,
+      'source_surface': sourceSurface,
+      'status': status,
+      'summary': summary,
+      'tenant_id': tenantId,
+      'title': title,
+      'turn_count': turnCount,
+      'updated_at': updatedAt,
+      'user_id': userId,
+      'uuid': uuid,
+      'version': version,
+      'visibility': visibility,
+    };
+  }
+}
+
+class AiChatItemRecord {
+  final String? completedAt;
+  final Map<String, dynamic>? contentJson;
+  final String? contentText;
+  final String? conversationId;
+  final String? createdAt;
+  final String? direction;
+  final String? id;
+  final String? itemType;
+  final bool? legalHold;
+  final Map<String, dynamic>? metadata;
+  final String? model;
+  final String? organizationId;
+  final String? parentItemId;
+  final String? payloadHash;
+  final String? provider;
+  final String? providerCallId;
+  final String? providerItemId;
+  final String? providerResponseId;
+  final Map<String, dynamic>? rawProviderJson;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? role;
+  final String? runtime;
+  final String? runtimeInvocationId;
+  final String? sequenceNo;
+  final String? status;
+  final String? tenantId;
+  final String? traceId;
+  final String? turnId;
+  final String? userId;
+  final String? uuid;
+
+  AiChatItemRecord({
+    this.completedAt,
+    this.contentJson,
+    this.contentText,
+    this.conversationId,
+    this.createdAt,
+    this.direction,
+    this.id,
+    this.itemType,
+    this.legalHold,
+    this.metadata,
+    this.model,
+    this.organizationId,
+    this.parentItemId,
+    this.payloadHash,
+    this.provider,
+    this.providerCallId,
+    this.providerItemId,
+    this.providerResponseId,
+    this.rawProviderJson,
+    this.requestId,
+    this.retentionUntil,
+    this.role,
+    this.runtime,
+    this.runtimeInvocationId,
+    this.sequenceNo,
+    this.status,
+    this.tenantId,
+    this.traceId,
+    this.turnId,
+    this.userId,
+    this.uuid
+  });
+
+  factory AiChatItemRecord.fromJson(Map<String, dynamic> json) {
+    return AiChatItemRecord(
+      completedAt: json['completed_at']?.toString(),
+      contentJson: (() {
+        final map = _sdkworkAsMap(json['content_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      contentText: json['content_text']?.toString(),
+      conversationId: json['conversation_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      direction: json['direction']?.toString(),
+      id: json['id']?.toString(),
+      itemType: json['item_type']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      model: json['model']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      parentItemId: json['parent_item_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      provider: json['provider']?.toString(),
+      providerCallId: json['provider_call_id']?.toString(),
+      providerItemId: json['provider_item_id']?.toString(),
+      providerResponseId: json['provider_response_id']?.toString(),
+      rawProviderJson: (() {
+        final map = _sdkworkAsMap(json['raw_provider_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      role: json['role']?.toString(),
+      runtime: json['runtime']?.toString(),
+      runtimeInvocationId: json['runtime_invocation_id']?.toString(),
+      sequenceNo: json['sequence_no']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      turnId: json['turn_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'completed_at': completedAt,
+      'content_json': contentJson?.map((key, item) => MapEntry(key, item)),
+      'content_text': contentText,
+      'conversation_id': conversationId,
+      'created_at': createdAt,
+      'direction': direction,
+      'id': id,
+      'item_type': itemType,
+      'legal_hold': legalHold,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'model': model,
+      'organization_id': organizationId,
+      'parent_item_id': parentItemId,
+      'payload_hash': payloadHash,
+      'provider': provider,
+      'provider_call_id': providerCallId,
+      'provider_item_id': providerItemId,
+      'provider_response_id': providerResponseId,
+      'raw_provider_json': rawProviderJson?.map((key, item) => MapEntry(key, item)),
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'role': role,
+      'runtime': runtime,
+      'runtime_invocation_id': runtimeInvocationId,
+      'sequence_no': sequenceNo,
+      'status': status,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'turn_id': turnId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class AiChatMessagePartRecord {
+  final String? assetId;
+  final String? createdAt;
+  final String? fileName;
+  final String? fileSize;
+  final String? id;
+  final String? itemId;
+  final Map<String, dynamic>? jsonContent;
+  final bool? legalHold;
+  final String? messageId;
+  final Map<String, dynamic>? metadata;
+  final String? mimeType;
+  final String? organizationId;
+  final int? partNo;
+  final String? partType;
+  final String? payloadHash;
+  final String? providerPartId;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? sha256;
+  final String? status;
+  final String? storageUrl;
+  final String? tenantId;
+  final String? textContent;
+  final String? traceId;
+  final String? userId;
+  final String? uuid;
+
+  AiChatMessagePartRecord({
+    this.assetId,
+    this.createdAt,
+    this.fileName,
+    this.fileSize,
+    this.id,
+    this.itemId,
+    this.jsonContent,
+    this.legalHold,
+    this.messageId,
+    this.metadata,
+    this.mimeType,
+    this.organizationId,
+    this.partNo,
+    this.partType,
+    this.payloadHash,
+    this.providerPartId,
+    this.requestId,
+    this.retentionUntil,
+    this.sha256,
+    this.status,
+    this.storageUrl,
+    this.tenantId,
+    this.textContent,
+    this.traceId,
+    this.userId,
+    this.uuid
+  });
+
+  factory AiChatMessagePartRecord.fromJson(Map<String, dynamic> json) {
+    return AiChatMessagePartRecord(
+      assetId: json['asset_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      fileName: json['file_name']?.toString(),
+      fileSize: json['file_size']?.toString(),
+      id: json['id']?.toString(),
+      itemId: json['item_id']?.toString(),
+      jsonContent: (() {
+        final map = _sdkworkAsMap(json['json_content']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      messageId: json['message_id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      mimeType: json['mime_type']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      partNo: json['part_no'] is int ? json['part_no'] : null,
+      partType: json['part_type']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      providerPartId: json['provider_part_id']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      sha256: json['sha256']?.toString(),
+      status: json['status']?.toString(),
+      storageUrl: json['storage_url']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      textContent: json['text_content']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'asset_id': assetId,
+      'created_at': createdAt,
+      'file_name': fileName,
+      'file_size': fileSize,
+      'id': id,
+      'item_id': itemId,
+      'json_content': jsonContent?.map((key, item) => MapEntry(key, item)),
+      'legal_hold': legalHold,
+      'message_id': messageId,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'mime_type': mimeType,
+      'organization_id': organizationId,
+      'part_no': partNo,
+      'part_type': partType,
+      'payload_hash': payloadHash,
+      'provider_part_id': providerPartId,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'sha256': sha256,
+      'status': status,
+      'storage_url': storageUrl,
+      'tenant_id': tenantId,
+      'text_content': textContent,
+      'trace_id': traceId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class AiChatMessageRecord {
+  final Map<String, dynamic>? contentJson;
+  final String? contentText;
+  final String? conversationId;
+  final String? createdAt;
+  final String? direction;
+  final String? finishReason;
+  final String? id;
+  final String? itemId;
+  final bool? legalHold;
+  final String? messageKind;
+  final String? messageNo;
+  final Map<String, dynamic>? metadata;
+  final String? model;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? provider;
+  final Map<String, dynamic>? rawProviderJson;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? role;
+  final String? runtime;
+  final String? runtimeInvocationId;
+  final String? status;
+  final String? tenantId;
+  final String? tokenCount;
+  final String? traceId;
+  final String? turnId;
+  final String? usageLinkId;
+  final String? userId;
+  final String? uuid;
+
+  AiChatMessageRecord({
+    this.contentJson,
+    this.contentText,
+    this.conversationId,
+    this.createdAt,
+    this.direction,
+    this.finishReason,
+    this.id,
+    this.itemId,
+    this.legalHold,
+    this.messageKind,
+    this.messageNo,
+    this.metadata,
+    this.model,
+    this.organizationId,
+    this.payloadHash,
+    this.provider,
+    this.rawProviderJson,
+    this.requestId,
+    this.retentionUntil,
+    this.role,
+    this.runtime,
+    this.runtimeInvocationId,
+    this.status,
+    this.tenantId,
+    this.tokenCount,
+    this.traceId,
+    this.turnId,
+    this.usageLinkId,
+    this.userId,
+    this.uuid
+  });
+
+  factory AiChatMessageRecord.fromJson(Map<String, dynamic> json) {
+    return AiChatMessageRecord(
+      contentJson: (() {
+        final map = _sdkworkAsMap(json['content_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      contentText: json['content_text']?.toString(),
+      conversationId: json['conversation_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      direction: json['direction']?.toString(),
+      finishReason: json['finish_reason']?.toString(),
+      id: json['id']?.toString(),
+      itemId: json['item_id']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      messageKind: json['message_kind']?.toString(),
+      messageNo: json['message_no']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      model: json['model']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      provider: json['provider']?.toString(),
+      rawProviderJson: (() {
+        final map = _sdkworkAsMap(json['raw_provider_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      role: json['role']?.toString(),
+      runtime: json['runtime']?.toString(),
+      runtimeInvocationId: json['runtime_invocation_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      tokenCount: json['token_count']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      turnId: json['turn_id']?.toString(),
+      usageLinkId: json['usage_link_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'content_json': contentJson?.map((key, item) => MapEntry(key, item)),
+      'content_text': contentText,
+      'conversation_id': conversationId,
+      'created_at': createdAt,
+      'direction': direction,
+      'finish_reason': finishReason,
+      'id': id,
+      'item_id': itemId,
+      'legal_hold': legalHold,
+      'message_kind': messageKind,
+      'message_no': messageNo,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'model': model,
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'provider': provider,
+      'raw_provider_json': rawProviderJson?.map((key, item) => MapEntry(key, item)),
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'role': role,
+      'runtime': runtime,
+      'runtime_invocation_id': runtimeInvocationId,
+      'status': status,
+      'tenant_id': tenantId,
+      'token_count': tokenCount,
+      'trace_id': traceId,
+      'turn_id': turnId,
+      'usage_link_id': usageLinkId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class AiChatTurnRecord {
+  final String? agentId;
+  final String? agentSessionId;
+  final String? branchId;
+  final String? cachedTokenTotal;
+  final String? completedAt;
+  final String? contextSnapshotId;
+  final String? conversationId;
+  final String? costAmount;
+  final String? createdAt;
+  final String? currency;
+  final String? endpoint;
+  final String? finalOutputItemId;
+  final String? id;
+  final String? inputItemId;
+  final String? inputTokenTotal;
+  final bool? legalHold;
+  final Map<String, dynamic>? metadata;
+  final String? model;
+  final String? organizationId;
+  final String? outputTokenTotal;
+  final String? parentTurnId;
+  final String? payloadHash;
+  final String? provider;
+  final String? reasoningTokenTotal;
+  final String? requestId;
+  final Map<String, dynamic>? requestSnapshot;
+  final Map<String, dynamic>? responseSnapshot;
+  final String? retentionUntil;
+  final String? runtimeInvocationId;
+  final String? startedAt;
+  final String? status;
+  final bool? streaming;
+  final String? tenantId;
+  final String? traceId;
+  final String? turnNo;
+  final Map<String, dynamic>? usageSnapshot;
+  final String? userId;
+  final String? uuid;
+
+  AiChatTurnRecord({
+    this.agentId,
+    this.agentSessionId,
+    this.branchId,
+    this.cachedTokenTotal,
+    this.completedAt,
+    this.contextSnapshotId,
+    this.conversationId,
+    this.costAmount,
+    this.createdAt,
+    this.currency,
+    this.endpoint,
+    this.finalOutputItemId,
+    this.id,
+    this.inputItemId,
+    this.inputTokenTotal,
+    this.legalHold,
+    this.metadata,
+    this.model,
+    this.organizationId,
+    this.outputTokenTotal,
+    this.parentTurnId,
+    this.payloadHash,
+    this.provider,
+    this.reasoningTokenTotal,
+    this.requestId,
+    this.requestSnapshot,
+    this.responseSnapshot,
+    this.retentionUntil,
+    this.runtimeInvocationId,
+    this.startedAt,
+    this.status,
+    this.streaming,
+    this.tenantId,
+    this.traceId,
+    this.turnNo,
+    this.usageSnapshot,
+    this.userId,
+    this.uuid
+  });
+
+  factory AiChatTurnRecord.fromJson(Map<String, dynamic> json) {
+    return AiChatTurnRecord(
+      agentId: json['agent_id']?.toString(),
+      agentSessionId: json['agent_session_id']?.toString(),
+      branchId: json['branch_id']?.toString(),
+      cachedTokenTotal: json['cached_token_total']?.toString(),
+      completedAt: json['completed_at']?.toString(),
+      contextSnapshotId: json['context_snapshot_id']?.toString(),
+      conversationId: json['conversation_id']?.toString(),
+      costAmount: json['cost_amount']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currency: json['currency']?.toString(),
+      endpoint: json['endpoint']?.toString(),
+      finalOutputItemId: json['final_output_item_id']?.toString(),
+      id: json['id']?.toString(),
+      inputItemId: json['input_item_id']?.toString(),
+      inputTokenTotal: json['input_token_total']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      model: json['model']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      outputTokenTotal: json['output_token_total']?.toString(),
+      parentTurnId: json['parent_turn_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      provider: json['provider']?.toString(),
+      reasoningTokenTotal: json['reasoning_token_total']?.toString(),
+      requestId: json['request_id']?.toString(),
+      requestSnapshot: (() {
+        final map = _sdkworkAsMap(json['request_snapshot']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      responseSnapshot: (() {
+        final map = _sdkworkAsMap(json['response_snapshot']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      retentionUntil: json['retention_until']?.toString(),
+      runtimeInvocationId: json['runtime_invocation_id']?.toString(),
+      startedAt: json['started_at']?.toString(),
+      status: json['status']?.toString(),
+      streaming: json['streaming'] is bool ? json['streaming'] : null,
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      turnNo: json['turn_no']?.toString(),
+      usageSnapshot: (() {
+        final map = _sdkworkAsMap(json['usage_snapshot']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'agent_id': agentId,
+      'agent_session_id': agentSessionId,
+      'branch_id': branchId,
+      'cached_token_total': cachedTokenTotal,
+      'completed_at': completedAt,
+      'context_snapshot_id': contextSnapshotId,
+      'conversation_id': conversationId,
+      'cost_amount': costAmount,
+      'created_at': createdAt,
+      'currency': currency,
+      'endpoint': endpoint,
+      'final_output_item_id': finalOutputItemId,
+      'id': id,
+      'input_item_id': inputItemId,
+      'input_token_total': inputTokenTotal,
+      'legal_hold': legalHold,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'model': model,
+      'organization_id': organizationId,
+      'output_token_total': outputTokenTotal,
+      'parent_turn_id': parentTurnId,
+      'payload_hash': payloadHash,
+      'provider': provider,
+      'reasoning_token_total': reasoningTokenTotal,
+      'request_id': requestId,
+      'request_snapshot': requestSnapshot?.map((key, item) => MapEntry(key, item)),
+      'response_snapshot': responseSnapshot?.map((key, item) => MapEntry(key, item)),
+      'retention_until': retentionUntil,
+      'runtime_invocation_id': runtimeInvocationId,
+      'started_at': startedAt,
+      'status': status,
+      'streaming': streaming,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'turn_no': turnNo,
+      'usage_snapshot': usageSnapshot?.map((key, item) => MapEntry(key, item)),
+      'user_id': userId,
+      'uuid': uuid,
     };
   }
 }
@@ -9411,6 +12181,882 @@ class AiGenerationSessionRecord {
   }
 }
 
+class AiMemoryEmbeddingRecord {
+  final String? contentHash;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final int? embeddingDimensions;
+  final String? embeddingModel;
+  final String? embeddingProvider;
+  final String? id;
+  final String? indexedAt;
+  final String? memoryId;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final Map<String, dynamic>? vectorJson;
+  final String? vectorStorageKey;
+  final String? version;
+
+  AiMemoryEmbeddingRecord({
+    this.contentHash,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.embeddingDimensions,
+    this.embeddingModel,
+    this.embeddingProvider,
+    this.id,
+    this.indexedAt,
+    this.memoryId,
+    this.metadata,
+    this.organizationId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.vectorJson,
+    this.vectorStorageKey,
+    this.version
+  });
+
+  factory AiMemoryEmbeddingRecord.fromJson(Map<String, dynamic> json) {
+    return AiMemoryEmbeddingRecord(
+      contentHash: json['content_hash']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      embeddingDimensions: json['embedding_dimensions'] is int ? json['embedding_dimensions'] : null,
+      embeddingModel: json['embedding_model']?.toString(),
+      embeddingProvider: json['embedding_provider']?.toString(),
+      id: json['id']?.toString(),
+      indexedAt: json['indexed_at']?.toString(),
+      memoryId: json['memory_id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      vectorJson: (() {
+        final map = _sdkworkAsMap(json['vector_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      vectorStorageKey: json['vector_storage_key']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'content_hash': contentHash,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'embedding_dimensions': embeddingDimensions,
+      'embedding_model': embeddingModel,
+      'embedding_provider': embeddingProvider,
+      'id': id,
+      'indexed_at': indexedAt,
+      'memory_id': memoryId,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'vector_json': vectorJson?.map((key, item) => MapEntry(key, item)),
+      'vector_storage_key': vectorStorageKey,
+      'version': version,
+    };
+  }
+}
+
+class AiMemoryEntryRecord {
+  final String? confidenceScore;
+  final Map<String, dynamic>? contentJson;
+  final String? contentText;
+  final String? createdAt;
+  final String? createdBy;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? expiresAt;
+  final String? id;
+  final String? importanceScore;
+  final String? lastRecalledAt;
+  final String? memoryCode;
+  final String? memoryType;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? ownerId;
+  final String? ownerType;
+  final String? recallCount;
+  final String? sensitivityLevel;
+  final String? sourceConversationId;
+  final String? sourceInvocationId;
+  final String? sourceItemId;
+  final String? sourceKind;
+  final String? sourceTurnId;
+  final String? spaceId;
+  final String? status;
+  final String? subjectKey;
+  final String? subjectType;
+  final String? supersedesMemoryId;
+  final String? tenantId;
+  final String? trustLevel;
+  final String? updatedAt;
+  final String? userId;
+  final String? uuid;
+  final String? validFrom;
+  final String? validUntil;
+  final String? version;
+  final String? versionNo;
+
+  AiMemoryEntryRecord({
+    this.confidenceScore,
+    this.contentJson,
+    this.contentText,
+    this.createdAt,
+    this.createdBy,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.expiresAt,
+    this.id,
+    this.importanceScore,
+    this.lastRecalledAt,
+    this.memoryCode,
+    this.memoryType,
+    this.metadata,
+    this.organizationId,
+    this.ownerId,
+    this.ownerType,
+    this.recallCount,
+    this.sensitivityLevel,
+    this.sourceConversationId,
+    this.sourceInvocationId,
+    this.sourceItemId,
+    this.sourceKind,
+    this.sourceTurnId,
+    this.spaceId,
+    this.status,
+    this.subjectKey,
+    this.subjectType,
+    this.supersedesMemoryId,
+    this.tenantId,
+    this.trustLevel,
+    this.updatedAt,
+    this.userId,
+    this.uuid,
+    this.validFrom,
+    this.validUntil,
+    this.version,
+    this.versionNo
+  });
+
+  factory AiMemoryEntryRecord.fromJson(Map<String, dynamic> json) {
+    return AiMemoryEntryRecord(
+      confidenceScore: json['confidence_score']?.toString(),
+      contentJson: (() {
+        final map = _sdkworkAsMap(json['content_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      contentText: json['content_text']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      createdBy: json['created_by']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      expiresAt: json['expires_at']?.toString(),
+      id: json['id']?.toString(),
+      importanceScore: json['importance_score']?.toString(),
+      lastRecalledAt: json['last_recalled_at']?.toString(),
+      memoryCode: json['memory_code']?.toString(),
+      memoryType: json['memory_type']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      ownerId: json['owner_id']?.toString(),
+      ownerType: json['owner_type']?.toString(),
+      recallCount: json['recall_count']?.toString(),
+      sensitivityLevel: json['sensitivity_level']?.toString(),
+      sourceConversationId: json['source_conversation_id']?.toString(),
+      sourceInvocationId: json['source_invocation_id']?.toString(),
+      sourceItemId: json['source_item_id']?.toString(),
+      sourceKind: json['source_kind']?.toString(),
+      sourceTurnId: json['source_turn_id']?.toString(),
+      spaceId: json['space_id']?.toString(),
+      status: json['status']?.toString(),
+      subjectKey: json['subject_key']?.toString(),
+      subjectType: json['subject_type']?.toString(),
+      supersedesMemoryId: json['supersedes_memory_id']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      trustLevel: json['trust_level']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString(),
+      validFrom: json['valid_from']?.toString(),
+      validUntil: json['valid_until']?.toString(),
+      version: json['version']?.toString(),
+      versionNo: json['version_no']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'confidence_score': confidenceScore,
+      'content_json': contentJson?.map((key, item) => MapEntry(key, item)),
+      'content_text': contentText,
+      'created_at': createdAt,
+      'created_by': createdBy,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'expires_at': expiresAt,
+      'id': id,
+      'importance_score': importanceScore,
+      'last_recalled_at': lastRecalledAt,
+      'memory_code': memoryCode,
+      'memory_type': memoryType,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'owner_id': ownerId,
+      'owner_type': ownerType,
+      'recall_count': recallCount,
+      'sensitivity_level': sensitivityLevel,
+      'source_conversation_id': sourceConversationId,
+      'source_invocation_id': sourceInvocationId,
+      'source_item_id': sourceItemId,
+      'source_kind': sourceKind,
+      'source_turn_id': sourceTurnId,
+      'space_id': spaceId,
+      'status': status,
+      'subject_key': subjectKey,
+      'subject_type': subjectType,
+      'supersedes_memory_id': supersedesMemoryId,
+      'tenant_id': tenantId,
+      'trust_level': trustLevel,
+      'updated_at': updatedAt,
+      'user_id': userId,
+      'uuid': uuid,
+      'valid_from': validFrom,
+      'valid_until': validUntil,
+      'version': version,
+      'version_no': versionNo,
+    };
+  }
+}
+
+class AiMemoryEventRecord {
+  final String? actorId;
+  final String? actorType;
+  final Map<String, dynamic>? afterJson;
+  final Map<String, dynamic>? beforeJson;
+  final String? conversationId;
+  final String? createdAt;
+  final String? decisionReason;
+  final String? eventType;
+  final String? id;
+  final String? invocationId;
+  final bool? legalHold;
+  final String? memoryId;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? spaceId;
+  final String? status;
+  final String? tenantId;
+  final String? traceId;
+  final String? turnId;
+  final String? userId;
+  final String? uuid;
+
+  AiMemoryEventRecord({
+    this.actorId,
+    this.actorType,
+    this.afterJson,
+    this.beforeJson,
+    this.conversationId,
+    this.createdAt,
+    this.decisionReason,
+    this.eventType,
+    this.id,
+    this.invocationId,
+    this.legalHold,
+    this.memoryId,
+    this.metadata,
+    this.organizationId,
+    this.payloadHash,
+    this.requestId,
+    this.retentionUntil,
+    this.spaceId,
+    this.status,
+    this.tenantId,
+    this.traceId,
+    this.turnId,
+    this.userId,
+    this.uuid
+  });
+
+  factory AiMemoryEventRecord.fromJson(Map<String, dynamic> json) {
+    return AiMemoryEventRecord(
+      actorId: json['actor_id']?.toString(),
+      actorType: json['actor_type']?.toString(),
+      afterJson: (() {
+        final map = _sdkworkAsMap(json['after_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      beforeJson: (() {
+        final map = _sdkworkAsMap(json['before_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      conversationId: json['conversation_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      decisionReason: json['decision_reason']?.toString(),
+      eventType: json['event_type']?.toString(),
+      id: json['id']?.toString(),
+      invocationId: json['invocation_id']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      memoryId: json['memory_id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      spaceId: json['space_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      turnId: json['turn_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'actor_id': actorId,
+      'actor_type': actorType,
+      'after_json': afterJson?.map((key, item) => MapEntry(key, item)),
+      'before_json': beforeJson?.map((key, item) => MapEntry(key, item)),
+      'conversation_id': conversationId,
+      'created_at': createdAt,
+      'decision_reason': decisionReason,
+      'event_type': eventType,
+      'id': id,
+      'invocation_id': invocationId,
+      'legal_hold': legalHold,
+      'memory_id': memoryId,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'space_id': spaceId,
+      'status': status,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'turn_id': turnId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class AiMemoryLinkRecord {
+  final String? agentRunId;
+  final String? agentRunStepId;
+  final String? agentSessionId;
+  final String? chatItemId;
+  final String? chatTurnId;
+  final String? conversationId;
+  final String? createdAt;
+  final String? id;
+  final String? injectedTextSnapshot;
+  final bool? legalHold;
+  final String? linkType;
+  final String? memoryId;
+  final String? memorySpaceId;
+  final String? messageId;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? policyDecision;
+  final String? recallQuery;
+  final int? recallRank;
+  final String? recallScore;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? runtimeInvocationId;
+  final String? status;
+  final String? tenantId;
+  final String? tokenCount;
+  final String? traceId;
+  final String? userId;
+  final String? uuid;
+
+  AiMemoryLinkRecord({
+    this.agentRunId,
+    this.agentRunStepId,
+    this.agentSessionId,
+    this.chatItemId,
+    this.chatTurnId,
+    this.conversationId,
+    this.createdAt,
+    this.id,
+    this.injectedTextSnapshot,
+    this.legalHold,
+    this.linkType,
+    this.memoryId,
+    this.memorySpaceId,
+    this.messageId,
+    this.metadata,
+    this.organizationId,
+    this.payloadHash,
+    this.policyDecision,
+    this.recallQuery,
+    this.recallRank,
+    this.recallScore,
+    this.requestId,
+    this.retentionUntil,
+    this.runtimeInvocationId,
+    this.status,
+    this.tenantId,
+    this.tokenCount,
+    this.traceId,
+    this.userId,
+    this.uuid
+  });
+
+  factory AiMemoryLinkRecord.fromJson(Map<String, dynamic> json) {
+    return AiMemoryLinkRecord(
+      agentRunId: json['agent_run_id']?.toString(),
+      agentRunStepId: json['agent_run_step_id']?.toString(),
+      agentSessionId: json['agent_session_id']?.toString(),
+      chatItemId: json['chat_item_id']?.toString(),
+      chatTurnId: json['chat_turn_id']?.toString(),
+      conversationId: json['conversation_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      id: json['id']?.toString(),
+      injectedTextSnapshot: json['injected_text_snapshot']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      linkType: json['link_type']?.toString(),
+      memoryId: json['memory_id']?.toString(),
+      memorySpaceId: json['memory_space_id']?.toString(),
+      messageId: json['message_id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      policyDecision: json['policy_decision']?.toString(),
+      recallQuery: json['recall_query']?.toString(),
+      recallRank: json['recall_rank'] is int ? json['recall_rank'] : null,
+      recallScore: json['recall_score']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      runtimeInvocationId: json['runtime_invocation_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      tokenCount: json['token_count']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'agent_run_id': agentRunId,
+      'agent_run_step_id': agentRunStepId,
+      'agent_session_id': agentSessionId,
+      'chat_item_id': chatItemId,
+      'chat_turn_id': chatTurnId,
+      'conversation_id': conversationId,
+      'created_at': createdAt,
+      'id': id,
+      'injected_text_snapshot': injectedTextSnapshot,
+      'legal_hold': legalHold,
+      'link_type': linkType,
+      'memory_id': memoryId,
+      'memory_space_id': memorySpaceId,
+      'message_id': messageId,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'policy_decision': policyDecision,
+      'recall_query': recallQuery,
+      'recall_rank': recallRank,
+      'recall_score': recallScore,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'runtime_invocation_id': runtimeInvocationId,
+      'status': status,
+      'tenant_id': tenantId,
+      'token_count': tokenCount,
+      'trace_id': traceId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class AiMemorySpaceBindingRecord {
+  final String? bindingId;
+  final String? bindingRole;
+  final String? bindingType;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final bool? enabled;
+  final String? id;
+  final String? memorySpaceId;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final int? priority;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  AiMemorySpaceBindingRecord({
+    this.bindingId,
+    this.bindingRole,
+    this.bindingType,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.enabled,
+    this.id,
+    this.memorySpaceId,
+    this.metadata,
+    this.organizationId,
+    this.priority,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory AiMemorySpaceBindingRecord.fromJson(Map<String, dynamic> json) {
+    return AiMemorySpaceBindingRecord(
+      bindingId: json['binding_id']?.toString(),
+      bindingRole: json['binding_role']?.toString(),
+      bindingType: json['binding_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      enabled: json['enabled'] is bool ? json['enabled'] : null,
+      id: json['id']?.toString(),
+      memorySpaceId: json['memory_space_id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      priority: json['priority'] is int ? json['priority'] : null,
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'binding_id': bindingId,
+      'binding_role': bindingRole,
+      'binding_type': bindingType,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'enabled': enabled,
+      'id': id,
+      'memory_space_id': memorySpaceId,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'priority': priority,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class AiMemorySpaceRecord {
+  final bool? autoExtractEnabled;
+  final bool? autoRecallEnabled;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? entryCount;
+  final String? id;
+  final String? maxInjectedTokens;
+  final bool? memoryEnabled;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? ownerId;
+  final String? ownerType;
+  final Map<String, dynamic>? retentionPolicy;
+  final bool? reviewRequired;
+  final Map<String, dynamic>? sensitivityPolicy;
+  final String? spaceType;
+  final String? status;
+  final String? tenantId;
+  final String? title;
+  final String? updatedAt;
+  final String? userId;
+  final String? uuid;
+  final String? version;
+
+  AiMemorySpaceRecord({
+    this.autoExtractEnabled,
+    this.autoRecallEnabled,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.entryCount,
+    this.id,
+    this.maxInjectedTokens,
+    this.memoryEnabled,
+    this.metadata,
+    this.organizationId,
+    this.ownerId,
+    this.ownerType,
+    this.retentionPolicy,
+    this.reviewRequired,
+    this.sensitivityPolicy,
+    this.spaceType,
+    this.status,
+    this.tenantId,
+    this.title,
+    this.updatedAt,
+    this.userId,
+    this.uuid,
+    this.version
+  });
+
+  factory AiMemorySpaceRecord.fromJson(Map<String, dynamic> json) {
+    return AiMemorySpaceRecord(
+      autoExtractEnabled: json['auto_extract_enabled'] is bool ? json['auto_extract_enabled'] : null,
+      autoRecallEnabled: json['auto_recall_enabled'] is bool ? json['auto_recall_enabled'] : null,
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      entryCount: json['entry_count']?.toString(),
+      id: json['id']?.toString(),
+      maxInjectedTokens: json['max_injected_tokens']?.toString(),
+      memoryEnabled: json['memory_enabled'] is bool ? json['memory_enabled'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      ownerId: json['owner_id']?.toString(),
+      ownerType: json['owner_type']?.toString(),
+      retentionPolicy: (() {
+        final map = _sdkworkAsMap(json['retention_policy']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      reviewRequired: json['review_required'] is bool ? json['review_required'] : null,
+      sensitivityPolicy: (() {
+        final map = _sdkworkAsMap(json['sensitivity_policy']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      spaceType: json['space_type']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      title: json['title']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'auto_extract_enabled': autoExtractEnabled,
+      'auto_recall_enabled': autoRecallEnabled,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'entry_count': entryCount,
+      'id': id,
+      'max_injected_tokens': maxInjectedTokens,
+      'memory_enabled': memoryEnabled,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'owner_id': ownerId,
+      'owner_type': ownerType,
+      'retention_policy': retentionPolicy?.map((key, item) => MapEntry(key, item)),
+      'review_required': reviewRequired,
+      'sensitivity_policy': sensitivityPolicy?.map((key, item) => MapEntry(key, item)),
+      'space_type': spaceType,
+      'status': status,
+      'tenant_id': tenantId,
+      'title': title,
+      'updated_at': updatedAt,
+      'user_id': userId,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
 class AiModelCapabilityRecord {
   final String? capability;
   final String? capabilityCode;
@@ -9433,7 +13079,6 @@ class AiModelCapabilityRecord {
   final Map<String, dynamic>? outputModalities;
   final String? parameterName;
   final Map<String, dynamic>? parameterSchema;
-  final String? regionCode;
   final String? schemaVersion;
   final int? sortOrder;
   final String? status;
@@ -9466,7 +13111,6 @@ class AiModelCapabilityRecord {
     this.outputModalities,
     this.parameterName,
     this.parameterSchema,
-    this.regionCode,
     this.schemaVersion,
     this.sortOrder,
     this.status,
@@ -9566,7 +13210,6 @@ class AiModelCapabilityRecord {
         });
         return result;
       })(),
-      regionCode: json['region_code']?.toString(),
       schemaVersion: json['schema_version']?.toString(),
       sortOrder: json['sort_order'] is int ? json['sort_order'] : null,
       status: json['status']?.toString(),
@@ -9602,7 +13245,6 @@ class AiModelCapabilityRecord {
       'output_modalities': outputModalities?.map((key, item) => MapEntry(key, item)),
       'parameter_name': parameterName,
       'parameter_schema': parameterSchema?.map((key, item) => MapEntry(key, item)),
-      'region_code': regionCode,
       'schema_version': schemaVersion,
       'sort_order': sortOrder,
       'status': status,
@@ -10622,7 +14264,6 @@ class AiModelRecord {
   final Map<String, dynamic>? performanceProfile;
   final String? providerHint;
   final String? rankScore;
-  final String? regionCode;
   final String? releaseStage;
   final String? replacementModel;
   final String? retiredAt;
@@ -10681,7 +14322,6 @@ class AiModelRecord {
     this.performanceProfile,
     this.providerHint,
     this.rankScore,
-    this.regionCode,
     this.releaseStage,
     this.replacementModel,
     this.retiredAt,
@@ -10846,7 +14486,6 @@ class AiModelRecord {
       })(),
       providerHint: json['provider_hint']?.toString(),
       rankScore: json['rank_score']?.toString(),
-      regionCode: json['region_code']?.toString(),
       releaseStage: json['release_stage']?.toString(),
       replacementModel: json['replacement_model']?.toString(),
       retiredAt: json['retired_at']?.toString(),
@@ -10934,7 +14573,6 @@ class AiModelRecord {
       'performance_profile': performanceProfile?.map((key, item) => MapEntry(key, item)),
       'provider_hint': providerHint,
       'rank_score': rankScore,
-      'region_code': regionCode,
       'release_stage': releaseStage,
       'replacement_model': replacementModel,
       'retired_at': retiredAt,
@@ -13279,6 +16917,727 @@ class AiRoutingRuleRecord {
   }
 }
 
+class AiRuntimeArtifactRecord {
+  final String? agentRunId;
+  final String? agentRunStepId;
+  final String? agentSessionId;
+  final String? artifactType;
+  final String? chatItemId;
+  final String? chatTurnId;
+  final Map<String, dynamic>? contentJson;
+  final String? contentText;
+  final String? conversationId;
+  final String? createdAt;
+  final String? id;
+  final bool? legalHold;
+  final String? messageId;
+  final Map<String, dynamic>? metadata;
+  final String? mimeType;
+  final String? name;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? runtimeInvocationId;
+  final String? sha256;
+  final String? sizeBytes;
+  final String? status;
+  final String? storageKey;
+  final String? storageUrl;
+  final String? tenantId;
+  final String? traceId;
+  final String? userId;
+  final String? uuid;
+
+  AiRuntimeArtifactRecord({
+    this.agentRunId,
+    this.agentRunStepId,
+    this.agentSessionId,
+    this.artifactType,
+    this.chatItemId,
+    this.chatTurnId,
+    this.contentJson,
+    this.contentText,
+    this.conversationId,
+    this.createdAt,
+    this.id,
+    this.legalHold,
+    this.messageId,
+    this.metadata,
+    this.mimeType,
+    this.name,
+    this.organizationId,
+    this.payloadHash,
+    this.requestId,
+    this.retentionUntil,
+    this.runtimeInvocationId,
+    this.sha256,
+    this.sizeBytes,
+    this.status,
+    this.storageKey,
+    this.storageUrl,
+    this.tenantId,
+    this.traceId,
+    this.userId,
+    this.uuid
+  });
+
+  factory AiRuntimeArtifactRecord.fromJson(Map<String, dynamic> json) {
+    return AiRuntimeArtifactRecord(
+      agentRunId: json['agent_run_id']?.toString(),
+      agentRunStepId: json['agent_run_step_id']?.toString(),
+      agentSessionId: json['agent_session_id']?.toString(),
+      artifactType: json['artifact_type']?.toString(),
+      chatItemId: json['chat_item_id']?.toString(),
+      chatTurnId: json['chat_turn_id']?.toString(),
+      contentJson: (() {
+        final map = _sdkworkAsMap(json['content_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      contentText: json['content_text']?.toString(),
+      conversationId: json['conversation_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      id: json['id']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      messageId: json['message_id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      mimeType: json['mime_type']?.toString(),
+      name: json['name']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      runtimeInvocationId: json['runtime_invocation_id']?.toString(),
+      sha256: json['sha256']?.toString(),
+      sizeBytes: json['size_bytes']?.toString(),
+      status: json['status']?.toString(),
+      storageKey: json['storage_key']?.toString(),
+      storageUrl: json['storage_url']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'agent_run_id': agentRunId,
+      'agent_run_step_id': agentRunStepId,
+      'agent_session_id': agentSessionId,
+      'artifact_type': artifactType,
+      'chat_item_id': chatItemId,
+      'chat_turn_id': chatTurnId,
+      'content_json': contentJson?.map((key, item) => MapEntry(key, item)),
+      'content_text': contentText,
+      'conversation_id': conversationId,
+      'created_at': createdAt,
+      'id': id,
+      'legal_hold': legalHold,
+      'message_id': messageId,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'mime_type': mimeType,
+      'name': name,
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'runtime_invocation_id': runtimeInvocationId,
+      'sha256': sha256,
+      'size_bytes': sizeBytes,
+      'status': status,
+      'storage_key': storageKey,
+      'storage_url': storageUrl,
+      'tenant_id': tenantId,
+      'trace_id': traceId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class AiRuntimeInvocationEventRecord {
+  final String? agentRunId;
+  final String? agentRunStepId;
+  final String? agentSessionId;
+  final String? chatTurnId;
+  final String? conversationId;
+  final String? createdAt;
+  final String? eventNo;
+  final String? eventSource;
+  final String? eventType;
+  final String? id;
+  final String? invocationId;
+  final bool? legalHold;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? payloadHash;
+  final Map<String, dynamic>? payloadJson;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? status;
+  final String? tenantId;
+  final String? textDelta;
+  final String? traceId;
+  final String? userId;
+  final String? uuid;
+
+  AiRuntimeInvocationEventRecord({
+    this.agentRunId,
+    this.agentRunStepId,
+    this.agentSessionId,
+    this.chatTurnId,
+    this.conversationId,
+    this.createdAt,
+    this.eventNo,
+    this.eventSource,
+    this.eventType,
+    this.id,
+    this.invocationId,
+    this.legalHold,
+    this.metadata,
+    this.organizationId,
+    this.payloadHash,
+    this.payloadJson,
+    this.requestId,
+    this.retentionUntil,
+    this.status,
+    this.tenantId,
+    this.textDelta,
+    this.traceId,
+    this.userId,
+    this.uuid
+  });
+
+  factory AiRuntimeInvocationEventRecord.fromJson(Map<String, dynamic> json) {
+    return AiRuntimeInvocationEventRecord(
+      agentRunId: json['agent_run_id']?.toString(),
+      agentRunStepId: json['agent_run_step_id']?.toString(),
+      agentSessionId: json['agent_session_id']?.toString(),
+      chatTurnId: json['chat_turn_id']?.toString(),
+      conversationId: json['conversation_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      eventNo: json['event_no']?.toString(),
+      eventSource: json['event_source']?.toString(),
+      eventType: json['event_type']?.toString(),
+      id: json['id']?.toString(),
+      invocationId: json['invocation_id']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      payloadJson: (() {
+        final map = _sdkworkAsMap(json['payload_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      textDelta: json['text_delta']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'agent_run_id': agentRunId,
+      'agent_run_step_id': agentRunStepId,
+      'agent_session_id': agentSessionId,
+      'chat_turn_id': chatTurnId,
+      'conversation_id': conversationId,
+      'created_at': createdAt,
+      'event_no': eventNo,
+      'event_source': eventSource,
+      'event_type': eventType,
+      'id': id,
+      'invocation_id': invocationId,
+      'legal_hold': legalHold,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'payload_json': payloadJson?.map((key, item) => MapEntry(key, item)),
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'status': status,
+      'tenant_id': tenantId,
+      'text_delta': textDelta,
+      'trace_id': traceId,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class AiRuntimeInvocationRecord {
+  final String? agentRunId;
+  final String? agentRunStepId;
+  final String? agentSessionId;
+  final String? approvalPolicy;
+  final int? attemptNo;
+  final String? chatItemId;
+  final String? chatTurnId;
+  final String? completedAt;
+  final String? conversationId;
+  final String? createdAt;
+  final String? cwd;
+  final String? endpoint;
+  final String? errorCode;
+  final String? errorMessageMasked;
+  final String? errorType;
+  final String? exitCode;
+  final String? finishReason;
+  final String? id;
+  final String? invocationNo;
+  final String? invocationType;
+  final String? latencyMs;
+  final bool? legalHold;
+  final Map<String, dynamic>? metadata;
+  final String? model;
+  final String? organizationId;
+  final String? payloadHash;
+  final String? permissionMode;
+  final String? provider;
+  final String? providerConversationId;
+  final String? providerResponseId;
+  final String? providerSessionId;
+  final String? providerStepId;
+  final String? requestId;
+  final Map<String, dynamic>? requestJson;
+  final Map<String, dynamic>? responseJson;
+  final String? retentionUntil;
+  final String? runtime;
+  final String? sandboxPolicy;
+  final String? startedAt;
+  final String? status;
+  final String? tenantId;
+  final String? toolCallId;
+  final String? toolName;
+  final String? traceId;
+  final String? ttftMs;
+  final Map<String, dynamic>? usageJson;
+  final String? userId;
+  final String? uuid;
+
+  AiRuntimeInvocationRecord({
+    this.agentRunId,
+    this.agentRunStepId,
+    this.agentSessionId,
+    this.approvalPolicy,
+    this.attemptNo,
+    this.chatItemId,
+    this.chatTurnId,
+    this.completedAt,
+    this.conversationId,
+    this.createdAt,
+    this.cwd,
+    this.endpoint,
+    this.errorCode,
+    this.errorMessageMasked,
+    this.errorType,
+    this.exitCode,
+    this.finishReason,
+    this.id,
+    this.invocationNo,
+    this.invocationType,
+    this.latencyMs,
+    this.legalHold,
+    this.metadata,
+    this.model,
+    this.organizationId,
+    this.payloadHash,
+    this.permissionMode,
+    this.provider,
+    this.providerConversationId,
+    this.providerResponseId,
+    this.providerSessionId,
+    this.providerStepId,
+    this.requestId,
+    this.requestJson,
+    this.responseJson,
+    this.retentionUntil,
+    this.runtime,
+    this.sandboxPolicy,
+    this.startedAt,
+    this.status,
+    this.tenantId,
+    this.toolCallId,
+    this.toolName,
+    this.traceId,
+    this.ttftMs,
+    this.usageJson,
+    this.userId,
+    this.uuid
+  });
+
+  factory AiRuntimeInvocationRecord.fromJson(Map<String, dynamic> json) {
+    return AiRuntimeInvocationRecord(
+      agentRunId: json['agent_run_id']?.toString(),
+      agentRunStepId: json['agent_run_step_id']?.toString(),
+      agentSessionId: json['agent_session_id']?.toString(),
+      approvalPolicy: json['approval_policy']?.toString(),
+      attemptNo: json['attempt_no'] is int ? json['attempt_no'] : null,
+      chatItemId: json['chat_item_id']?.toString(),
+      chatTurnId: json['chat_turn_id']?.toString(),
+      completedAt: json['completed_at']?.toString(),
+      conversationId: json['conversation_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      cwd: json['cwd']?.toString(),
+      endpoint: json['endpoint']?.toString(),
+      errorCode: json['error_code']?.toString(),
+      errorMessageMasked: json['error_message_masked']?.toString(),
+      errorType: json['error_type']?.toString(),
+      exitCode: json['exit_code']?.toString(),
+      finishReason: json['finish_reason']?.toString(),
+      id: json['id']?.toString(),
+      invocationNo: json['invocation_no']?.toString(),
+      invocationType: json['invocation_type']?.toString(),
+      latencyMs: json['latency_ms']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      model: json['model']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      permissionMode: json['permission_mode']?.toString(),
+      provider: json['provider']?.toString(),
+      providerConversationId: json['provider_conversation_id']?.toString(),
+      providerResponseId: json['provider_response_id']?.toString(),
+      providerSessionId: json['provider_session_id']?.toString(),
+      providerStepId: json['provider_step_id']?.toString(),
+      requestId: json['request_id']?.toString(),
+      requestJson: (() {
+        final map = _sdkworkAsMap(json['request_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      responseJson: (() {
+        final map = _sdkworkAsMap(json['response_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      retentionUntil: json['retention_until']?.toString(),
+      runtime: json['runtime']?.toString(),
+      sandboxPolicy: json['sandbox_policy']?.toString(),
+      startedAt: json['started_at']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      toolCallId: json['tool_call_id']?.toString(),
+      toolName: json['tool_name']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      ttftMs: json['ttft_ms']?.toString(),
+      usageJson: (() {
+        final map = _sdkworkAsMap(json['usage_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'agent_run_id': agentRunId,
+      'agent_run_step_id': agentRunStepId,
+      'agent_session_id': agentSessionId,
+      'approval_policy': approvalPolicy,
+      'attempt_no': attemptNo,
+      'chat_item_id': chatItemId,
+      'chat_turn_id': chatTurnId,
+      'completed_at': completedAt,
+      'conversation_id': conversationId,
+      'created_at': createdAt,
+      'cwd': cwd,
+      'endpoint': endpoint,
+      'error_code': errorCode,
+      'error_message_masked': errorMessageMasked,
+      'error_type': errorType,
+      'exit_code': exitCode,
+      'finish_reason': finishReason,
+      'id': id,
+      'invocation_no': invocationNo,
+      'invocation_type': invocationType,
+      'latency_ms': latencyMs,
+      'legal_hold': legalHold,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'model': model,
+      'organization_id': organizationId,
+      'payload_hash': payloadHash,
+      'permission_mode': permissionMode,
+      'provider': provider,
+      'provider_conversation_id': providerConversationId,
+      'provider_response_id': providerResponseId,
+      'provider_session_id': providerSessionId,
+      'provider_step_id': providerStepId,
+      'request_id': requestId,
+      'request_json': requestJson?.map((key, item) => MapEntry(key, item)),
+      'response_json': responseJson?.map((key, item) => MapEntry(key, item)),
+      'retention_until': retentionUntil,
+      'runtime': runtime,
+      'sandbox_policy': sandboxPolicy,
+      'started_at': startedAt,
+      'status': status,
+      'tenant_id': tenantId,
+      'tool_call_id': toolCallId,
+      'tool_name': toolName,
+      'trace_id': traceId,
+      'ttft_ms': ttftMs,
+      'usage_json': usageJson?.map((key, item) => MapEntry(key, item)),
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
+class AiRuntimeUsageLinkRecord {
+  final String? agentRunId;
+  final String? agentRunStepId;
+  final String? agentSessionId;
+  final String? cachedTokens;
+  final String? chatItemId;
+  final String? chatTurnId;
+  final String? conversationId;
+  final String? costAmount;
+  final String? createdAt;
+  final String? currency;
+  final String? id;
+  final String? inputTokens;
+  final bool? legalHold;
+  final String? messageId;
+  final Map<String, dynamic>? metadata;
+  final String? model;
+  final String? occurredAt;
+  final String? organizationId;
+  final String? outputTokens;
+  final String? payloadHash;
+  final String? provider;
+  final String? reasoningTokens;
+  final String? requestId;
+  final String? retentionUntil;
+  final String? runtimeInvocationId;
+  final String? status;
+  final String? tenantId;
+  final String? totalTokens;
+  final String? traceId;
+  final String? usageFactId;
+  final String? usageType;
+  final String? userId;
+  final String? uuid;
+
+  AiRuntimeUsageLinkRecord({
+    this.agentRunId,
+    this.agentRunStepId,
+    this.agentSessionId,
+    this.cachedTokens,
+    this.chatItemId,
+    this.chatTurnId,
+    this.conversationId,
+    this.costAmount,
+    this.createdAt,
+    this.currency,
+    this.id,
+    this.inputTokens,
+    this.legalHold,
+    this.messageId,
+    this.metadata,
+    this.model,
+    this.occurredAt,
+    this.organizationId,
+    this.outputTokens,
+    this.payloadHash,
+    this.provider,
+    this.reasoningTokens,
+    this.requestId,
+    this.retentionUntil,
+    this.runtimeInvocationId,
+    this.status,
+    this.tenantId,
+    this.totalTokens,
+    this.traceId,
+    this.usageFactId,
+    this.usageType,
+    this.userId,
+    this.uuid
+  });
+
+  factory AiRuntimeUsageLinkRecord.fromJson(Map<String, dynamic> json) {
+    return AiRuntimeUsageLinkRecord(
+      agentRunId: json['agent_run_id']?.toString(),
+      agentRunStepId: json['agent_run_step_id']?.toString(),
+      agentSessionId: json['agent_session_id']?.toString(),
+      cachedTokens: json['cached_tokens']?.toString(),
+      chatItemId: json['chat_item_id']?.toString(),
+      chatTurnId: json['chat_turn_id']?.toString(),
+      conversationId: json['conversation_id']?.toString(),
+      costAmount: json['cost_amount']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currency: json['currency']?.toString(),
+      id: json['id']?.toString(),
+      inputTokens: json['input_tokens']?.toString(),
+      legalHold: json['legal_hold'] is bool ? json['legal_hold'] : null,
+      messageId: json['message_id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      model: json['model']?.toString(),
+      occurredAt: json['occurred_at']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      outputTokens: json['output_tokens']?.toString(),
+      payloadHash: json['payload_hash']?.toString(),
+      provider: json['provider']?.toString(),
+      reasoningTokens: json['reasoning_tokens']?.toString(),
+      requestId: json['request_id']?.toString(),
+      retentionUntil: json['retention_until']?.toString(),
+      runtimeInvocationId: json['runtime_invocation_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      totalTokens: json['total_tokens']?.toString(),
+      traceId: json['trace_id']?.toString(),
+      usageFactId: json['usage_fact_id']?.toString(),
+      usageType: json['usage_type']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'agent_run_id': agentRunId,
+      'agent_run_step_id': agentRunStepId,
+      'agent_session_id': agentSessionId,
+      'cached_tokens': cachedTokens,
+      'chat_item_id': chatItemId,
+      'chat_turn_id': chatTurnId,
+      'conversation_id': conversationId,
+      'cost_amount': costAmount,
+      'created_at': createdAt,
+      'currency': currency,
+      'id': id,
+      'input_tokens': inputTokens,
+      'legal_hold': legalHold,
+      'message_id': messageId,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'model': model,
+      'occurred_at': occurredAt,
+      'organization_id': organizationId,
+      'output_tokens': outputTokens,
+      'payload_hash': payloadHash,
+      'provider': provider,
+      'reasoning_tokens': reasoningTokens,
+      'request_id': requestId,
+      'retention_until': retentionUntil,
+      'runtime_invocation_id': runtimeInvocationId,
+      'status': status,
+      'tenant_id': tenantId,
+      'total_tokens': totalTokens,
+      'trace_id': traceId,
+      'usage_fact_id': usageFactId,
+      'usage_type': usageType,
+      'user_id': userId,
+      'uuid': uuid,
+    };
+  }
+}
+
 class AiUsageFactRecord {
   final String? apiKeyGroupId;
   final String? apiKeyGroupSnapshot;
@@ -13601,16 +17960,45 @@ class AiUsageFactRecord {
   }
 }
 
+class AnalyticsAdminOverviewRetrieveResult {
+  final String? code;
+  final AdminAnalyticsOverviewResponse? data;
+  final String? msg;
+
+  AnalyticsAdminOverviewRetrieveResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AnalyticsAdminOverviewRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return AnalyticsAdminOverviewRetrieveResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAnalyticsOverviewResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
 class AnnouncementsCreateResult {
   final String? code;
   final AdminAnnouncementMutationResponse? data;
-  final String? message;
   final String? msg;
 
   AnnouncementsCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -13621,7 +18009,6 @@ class AnnouncementsCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAnnouncementMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -13630,7 +18017,6 @@ class AnnouncementsCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -13639,13 +18025,11 @@ class AnnouncementsCreateResult {
 class AnnouncementsDeleteResult {
   final String? code;
   final AdminDeleteResponse? data;
-  final String? message;
   final String? msg;
 
   AnnouncementsDeleteResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -13656,7 +18040,6 @@ class AnnouncementsDeleteResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminDeleteResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -13665,7 +18048,6 @@ class AnnouncementsDeleteResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -13674,13 +18056,11 @@ class AnnouncementsDeleteResult {
 class AnnouncementsListResult {
   final String? code;
   final AdminAnnouncementsResponse? data;
-  final String? message;
   final String? msg;
 
   AnnouncementsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -13691,7 +18071,6 @@ class AnnouncementsListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAnnouncementsResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -13700,7 +18079,6 @@ class AnnouncementsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -13709,13 +18087,11 @@ class AnnouncementsListResult {
 class AnnouncementsUpdateResult {
   final String? code;
   final AdminAnnouncementMutationResponse? data;
-  final String? message;
   final String? msg;
 
   AnnouncementsUpdateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -13726,7 +18102,6 @@ class AnnouncementsUpdateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAnnouncementMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -13735,7 +18110,6 @@ class AnnouncementsUpdateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -13744,13 +18118,11 @@ class AnnouncementsUpdateResult {
 class ApiKeysCreateResult {
   final String? code;
   final AdminApiKeyCreateResponse? data;
-  final String? message;
   final String? msg;
 
   ApiKeysCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -13761,7 +18133,6 @@ class ApiKeysCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminApiKeyCreateResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -13770,7 +18141,6 @@ class ApiKeysCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -13779,13 +18149,11 @@ class ApiKeysCreateResult {
 class ApiKeysDeleteResult {
   final String? code;
   final AdminDeleteResponse? data;
-  final String? message;
   final String? msg;
 
   ApiKeysDeleteResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -13796,7 +18164,6 @@ class ApiKeysDeleteResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminDeleteResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -13805,7 +18172,6 @@ class ApiKeysDeleteResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -13814,13 +18180,11 @@ class ApiKeysDeleteResult {
 class ApiKeysListResult {
   final String? code;
   final AdminApiKeysMapResponse? data;
-  final String? message;
   final String? msg;
 
   ApiKeysListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -13831,7 +18195,6 @@ class ApiKeysListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminApiKeysMapResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -13840,7 +18203,130 @@ class ApiKeysListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
+      'msg': msg,
+    };
+  }
+}
+
+class AppsCategoriesCreateResult {
+  final String? code;
+  final AdminAppCategoryMutationResponse? data;
+  final String? msg;
+
+  AppsCategoriesCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AppsCategoriesCreateResult.fromJson(Map<String, dynamic> json) {
+    return AppsCategoriesCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAppCategoryMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AppsCategoriesDeleteResult {
+  final String? code;
+  final AdminAppCategoryDeleteResponse? data;
+  final String? msg;
+
+  AppsCategoriesDeleteResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AppsCategoriesDeleteResult.fromJson(Map<String, dynamic> json) {
+    return AppsCategoriesDeleteResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAppCategoryDeleteResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AppsCategoriesListResult {
+  final String? code;
+  final AdminAppCategoryListResponse? data;
+  final String? msg;
+
+  AppsCategoriesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AppsCategoriesListResult.fromJson(Map<String, dynamic> json) {
+    return AppsCategoriesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAppCategoryListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AppsCategoriesUpdateResult {
+  final String? code;
+  final AdminAppCategoryMutationResponse? data;
+  final String? msg;
+
+  AppsCategoriesUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AppsCategoriesUpdateResult.fromJson(Map<String, dynamic> json) {
+    return AppsCategoriesUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAppCategoryMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
       'msg': msg,
     };
   }
@@ -13849,13 +18335,11 @@ class ApiKeysListResult {
 class AppsCreateResult {
   final String? code;
   final AdminAppMutationResponse? data;
-  final String? message;
   final String? msg;
 
   AppsCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -13866,7 +18350,6 @@ class AppsCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAppMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -13875,7 +18358,6 @@ class AppsCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -13884,13 +18366,11 @@ class AppsCreateResult {
 class AppsDeleteResult {
   final String? code;
   final AdminAppDeleteResponse? data;
-  final String? message;
   final String? msg;
 
   AppsDeleteResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -13901,7 +18381,6 @@ class AppsDeleteResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAppDeleteResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -13910,7 +18389,6 @@ class AppsDeleteResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -13919,13 +18397,11 @@ class AppsDeleteResult {
 class AppsDisableResult {
   final String? code;
   final AdminAppMutationResponse? data;
-  final String? message;
   final String? msg;
 
   AppsDisableResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -13936,7 +18412,6 @@ class AppsDisableResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAppMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -13945,7 +18420,6 @@ class AppsDisableResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -13954,13 +18428,11 @@ class AppsDisableResult {
 class AppsEnableResult {
   final String? code;
   final AdminAppMutationResponse? data;
-  final String? message;
   final String? msg;
 
   AppsEnableResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -13971,7 +18443,6 @@ class AppsEnableResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAppMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -13980,7 +18451,6 @@ class AppsEnableResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -13989,13 +18459,11 @@ class AppsEnableResult {
 class AppsListResult {
   final String? code;
   final AdminAppListResponse? data;
-  final String? message;
   final String? msg;
 
   AppsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -14006,7 +18474,6 @@ class AppsListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAppListResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -14015,7 +18482,6 @@ class AppsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -14024,13 +18490,11 @@ class AppsListResult {
 class AppsPublishResult {
   final String? code;
   final AdminAppMutationResponse? data;
-  final String? message;
   final String? msg;
 
   AppsPublishResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -14041,7 +18505,6 @@ class AppsPublishResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAppMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -14050,7 +18513,6 @@ class AppsPublishResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -14059,13 +18521,11 @@ class AppsPublishResult {
 class AppsRetrieveResult {
   final String? code;
   final AdminAppMutationResponse? data;
-  final String? message;
   final String? msg;
 
   AppsRetrieveResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -14076,7 +18536,6 @@ class AppsRetrieveResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAppMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -14085,7 +18544,6 @@ class AppsRetrieveResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -14094,13 +18552,11 @@ class AppsRetrieveResult {
 class AppsUnpublishResult {
   final String? code;
   final AdminAppMutationResponse? data;
-  final String? message;
   final String? msg;
 
   AppsUnpublishResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -14111,7 +18567,6 @@ class AppsUnpublishResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAppMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -14120,7 +18575,6 @@ class AppsUnpublishResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -14129,13 +18583,11 @@ class AppsUnpublishResult {
 class AppsUpdateResult {
   final String? code;
   final AdminAppMutationResponse? data;
-  final String? message;
   final String? msg;
 
   AppsUpdateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -14146,7 +18598,6 @@ class AppsUpdateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAppMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -14155,7 +18606,37 @@ class AppsUpdateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
+      'msg': msg,
+    };
+  }
+}
+
+class AuditCommerceEventsListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
+
+  AuditCommerceEventsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AuditCommerceEventsListResult.fromJson(Map<String, dynamic> json) {
+    return AuditCommerceEventsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
       'msg': msg,
     };
   }
@@ -14164,13 +18645,11 @@ class AppsUpdateResult {
 class AuthSettingsRetrieveResult {
   final String? code;
   final AdminAuthSettingsResponse? data;
-  final String? message;
   final String? msg;
 
   AuthSettingsRetrieveResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -14181,7 +18660,6 @@ class AuthSettingsRetrieveResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAuthSettingsResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -14190,7 +18668,6 @@ class AuthSettingsRetrieveResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -14199,13 +18676,11 @@ class AuthSettingsRetrieveResult {
 class AuthSettingsUpdateResult {
   final String? code;
   final AdminAuthSettingsResponse? data;
-  final String? message;
   final String? msg;
 
   AuthSettingsUpdateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -14216,7 +18691,6 @@ class AuthSettingsUpdateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAuthSettingsResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -14225,7 +18699,688 @@ class AuthSettingsUpdateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
+      'msg': msg,
+    };
+  }
+}
+
+class CacheInstancesDeleteResult {
+  final String? code;
+  final AdminCacheOperationResponse? data;
+  final String? msg;
+
+  CacheInstancesDeleteResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CacheInstancesDeleteResult.fromJson(Map<String, dynamic> json) {
+    return CacheInstancesDeleteResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCacheOperationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CacheInstancesRefreshCreateResult {
+  final String? code;
+  final AdminCacheOperationResponse? data;
+  final String? msg;
+
+  CacheInstancesRefreshCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CacheInstancesRefreshCreateResult.fromJson(Map<String, dynamic> json) {
+    return CacheInstancesRefreshCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCacheOperationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CacheNamespacesDeleteResult {
+  final String? code;
+  final AdminCacheOperationResponse? data;
+  final String? msg;
+
+  CacheNamespacesDeleteResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CacheNamespacesDeleteResult.fromJson(Map<String, dynamic> json) {
+    return CacheNamespacesDeleteResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCacheOperationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CacheNamespacesKeysDeleteResult {
+  final String? code;
+  final AdminCacheOperationResponse? data;
+  final String? msg;
+
+  CacheNamespacesKeysDeleteResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CacheNamespacesKeysDeleteResult.fromJson(Map<String, dynamic> json) {
+    return CacheNamespacesKeysDeleteResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCacheOperationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CacheNamespacesKeysListResult {
+  final String? code;
+  final AdminCacheKeyListResponse? data;
+  final String? msg;
+
+  CacheNamespacesKeysListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CacheNamespacesKeysListResult.fromJson(Map<String, dynamic> json) {
+    return CacheNamespacesKeysListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCacheKeyListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CacheNamespacesRefreshCreateResult {
+  final String? code;
+  final AdminCacheOperationResponse? data;
+  final String? msg;
+
+  CacheNamespacesRefreshCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CacheNamespacesRefreshCreateResult.fromJson(Map<String, dynamic> json) {
+    return CacheNamespacesRefreshCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCacheOperationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CacheOverviewRetrieveResult {
+  final String? code;
+  final AdminCacheOverviewResponse? data;
+  final String? msg;
+
+  CacheOverviewRetrieveResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CacheOverviewRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return CacheOverviewRetrieveResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCacheOverviewResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CacheRefreshCreateResult {
+  final String? code;
+  final AdminCacheOperationResponse? data;
+  final String? msg;
+
+  CacheRefreshCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CacheRefreshCreateResult.fromJson(Map<String, dynamic> json) {
+    return CacheRefreshCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminCacheOperationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogAttributesCreateResult {
+  final String? code;
+  final CommerceProductAttributeMutationResponse? data;
+  final String? msg;
+
+  CatalogAttributesCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogAttributesCreateResult.fromJson(Map<String, dynamic> json) {
+    return CatalogAttributesCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceProductAttributeMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogAttributesListResult {
+  final String? code;
+  final CommerceProductAttributeListResponse? data;
+  final String? msg;
+
+  CatalogAttributesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogAttributesListResult.fromJson(Map<String, dynamic> json) {
+    return CatalogAttributesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceProductAttributeListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogCategoriesCreateResult {
+  final String? code;
+  final CommerceProductCategoryMutationResponse? data;
+  final String? msg;
+
+  CatalogCategoriesCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogCategoriesCreateResult.fromJson(Map<String, dynamic> json) {
+    return CatalogCategoriesCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceProductCategoryMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogCategoriesDeleteResult {
+  final String? code;
+  final AdminDeleteResponse? data;
+  final String? msg;
+
+  CatalogCategoriesDeleteResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogCategoriesDeleteResult.fromJson(Map<String, dynamic> json) {
+    return CatalogCategoriesDeleteResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminDeleteResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogCategoriesListResult {
+  final String? code;
+  final CommerceProductCategoryListResponse? data;
+  final String? msg;
+
+  CatalogCategoriesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogCategoriesListResult.fromJson(Map<String, dynamic> json) {
+    return CatalogCategoriesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceProductCategoryListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogCategoriesUpdateResult {
+  final String? code;
+  final CommerceProductCategoryMutationResponse? data;
+  final String? msg;
+
+  CatalogCategoriesUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogCategoriesUpdateResult.fromJson(Map<String, dynamic> json) {
+    return CatalogCategoriesUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceProductCategoryMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogPriceListsCreateResult {
+  final String? code;
+  final CommercePriceListMutationResponse? data;
+  final String? msg;
+
+  CatalogPriceListsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogPriceListsCreateResult.fromJson(Map<String, dynamic> json) {
+    return CatalogPriceListsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommercePriceListMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogPriceListsListResult {
+  final String? code;
+  final CommercePriceListResponse? data;
+  final String? msg;
+
+  CatalogPriceListsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogPriceListsListResult.fromJson(Map<String, dynamic> json) {
+    return CatalogPriceListsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommercePriceListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogProductsCreateResult {
+  final String? code;
+  final CommerceProductSpuMutationResponse? data;
+  final String? msg;
+
+  CatalogProductsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogProductsCreateResult.fromJson(Map<String, dynamic> json) {
+    return CatalogProductsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceProductSpuMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogProductsListResult {
+  final String? code;
+  final CommerceProductSpuListResponse? data;
+  final String? msg;
+
+  CatalogProductsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogProductsListResult.fromJson(Map<String, dynamic> json) {
+    return CatalogProductsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceProductSpuListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogProductsUpdateResult {
+  final String? code;
+  final CommerceProductSpuMutationResponse? data;
+  final String? msg;
+
+  CatalogProductsUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogProductsUpdateResult.fromJson(Map<String, dynamic> json) {
+    return CatalogProductsUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceProductSpuMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogSkusCreateResult {
+  final String? code;
+  final CommerceProductSkuMutationResponse? data;
+  final String? msg;
+
+  CatalogSkusCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogSkusCreateResult.fromJson(Map<String, dynamic> json) {
+    return CatalogSkusCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceProductSkuMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogSkusListResult {
+  final String? code;
+  final CommerceProductSkuListResponse? data;
+  final String? msg;
+
+  CatalogSkusListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogSkusListResult.fromJson(Map<String, dynamic> json) {
+    return CatalogSkusListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceProductSkuListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogSkusUpdateResult {
+  final String? code;
+  final CommerceProductSkuMutationResponse? data;
+  final String? msg;
+
+  CatalogSkusUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogSkusUpdateResult.fromJson(Map<String, dynamic> json) {
+    return CatalogSkusUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceProductSkuMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
       'msg': msg,
     };
   }
@@ -14234,13 +19389,11 @@ class AuthSettingsUpdateResult {
 class ChannelsCreateResult {
   final String? code;
   final AdminChannelMutationResponse? data;
-  final String? message;
   final String? msg;
 
   ChannelsCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -14251,7 +19404,6 @@ class ChannelsCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminChannelMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -14260,7 +19412,6 @@ class ChannelsCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -14269,13 +19420,11 @@ class ChannelsCreateResult {
 class ChannelsDeleteResult {
   final String? code;
   final AdminDeleteResponse? data;
-  final String? message;
   final String? msg;
 
   ChannelsDeleteResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -14286,7 +19435,6 @@ class ChannelsDeleteResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminDeleteResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -14295,7 +19443,6 @@ class ChannelsDeleteResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -14304,13 +19451,11 @@ class ChannelsDeleteResult {
 class ChannelsListResult {
   final String? code;
   final AdminChannelsResponse? data;
-  final String? message;
   final String? msg;
 
   ChannelsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -14321,7 +19466,6 @@ class ChannelsListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminChannelsResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -14330,7 +19474,6 @@ class ChannelsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -14339,13 +19482,11 @@ class ChannelsListResult {
 class ChannelsUpdateResult {
   final String? code;
   final AdminChannelMutationResponse? data;
-  final String? message;
   final String? msg;
 
   ChannelsUpdateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -14356,7 +19497,6 @@ class ChannelsUpdateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminChannelMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -14365,7 +19505,6 @@ class ChannelsUpdateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -14374,13 +19513,11 @@ class ChannelsUpdateResult {
 class ChannelsVerifyResult {
   final String? code;
   final AdminChannelTestResponse? data;
-  final String? message;
   final String? msg;
 
   ChannelsVerifyResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -14391,7 +19528,6 @@ class ChannelsVerifyResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminChannelTestResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -14400,13 +19536,6769 @@ class ChannelsVerifyResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
 }
 
-class CommerceBillingExportRecord {
+class CommerceAccountHoldRecord {
+  final String? accountId;
+  final String? amount;
+  final String? assetType;
+  final String? createdAt;
+  final String? expiresAt;
+  final String? idempotencyKey;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? preholdNo;
+  final String? releasedAt;
+  final String? requestNo;
+  final String? settledAt;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceAccountHoldRecord({
+    this.accountId,
+    this.amount,
+    this.assetType,
+    this.createdAt,
+    this.expiresAt,
+    this.idempotencyKey,
+    this.organizationId,
+    this.ownerUserId,
+    this.preholdNo,
+    this.releasedAt,
+    this.requestNo,
+    this.settledAt,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceAccountHoldRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceAccountHoldRecord(
+      accountId: json['account_id']?.toString(),
+      amount: json['amount']?.toString(),
+      assetType: json['asset_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      expiresAt: json['expires_at']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      preholdNo: json['prehold_no']?.toString(),
+      releasedAt: json['released_at']?.toString(),
+      requestNo: json['request_no']?.toString(),
+      settledAt: json['settled_at']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'account_id': accountId,
+      'amount': amount,
+      'asset_type': assetType,
+      'created_at': createdAt,
+      'expires_at': expiresAt,
+      'idempotency_key': idempotencyKey,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'prehold_no': preholdNo,
+      'released_at': releasedAt,
+      'request_no': requestNo,
+      'settled_at': settledAt,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceAccountLedgerEntryRecord {
+  final String? accountId;
+  final String? amount;
+  final String? assetType;
+  final String? balanceAfter;
+  final String? businessType;
+  final String? createdAt;
+  final String? direction;
+  final String? idempotencyKey;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? remark;
+  final String? requestNo;
+  final String? sourceId;
+  final String? sourceType;
+  final String? tenantId;
+  final String? transactionNo;
+
+  CommerceAccountLedgerEntryRecord({
+    this.accountId,
+    this.amount,
+    this.assetType,
+    this.balanceAfter,
+    this.businessType,
+    this.createdAt,
+    this.direction,
+    this.idempotencyKey,
+    this.organizationId,
+    this.ownerUserId,
+    this.remark,
+    this.requestNo,
+    this.sourceId,
+    this.sourceType,
+    this.tenantId,
+    this.transactionNo
+  });
+
+  factory CommerceAccountLedgerEntryRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceAccountLedgerEntryRecord(
+      accountId: json['account_id']?.toString(),
+      amount: json['amount']?.toString(),
+      assetType: json['asset_type']?.toString(),
+      balanceAfter: json['balance_after']?.toString(),
+      businessType: json['business_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      direction: json['direction']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      remark: json['remark']?.toString(),
+      requestNo: json['request_no']?.toString(),
+      sourceId: json['source_id']?.toString(),
+      sourceType: json['source_type']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      transactionNo: json['transaction_no']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'account_id': accountId,
+      'amount': amount,
+      'asset_type': assetType,
+      'balance_after': balanceAfter,
+      'business_type': businessType,
+      'created_at': createdAt,
+      'direction': direction,
+      'idempotency_key': idempotencyKey,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'remark': remark,
+      'request_no': requestNo,
+      'source_id': sourceId,
+      'source_type': sourceType,
+      'tenant_id': tenantId,
+      'transaction_no': transactionNo,
+    };
+  }
+}
+
+class CommerceAccountRecord {
+  final String? assetType;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceAccountRecord({
+    this.assetType,
+    this.createdAt,
+    this.currencyCode,
+    this.organizationId,
+    this.ownerUserId,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceAccountRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceAccountRecord(
+      assetType: json['asset_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'asset_type': assetType,
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceCartItemRecord {
+  final String? cartId;
+  final String? createdAt;
+  final Map<String, dynamic>? metadataJson;
+  final String? organizationId;
+  final Map<String, dynamic>? priceSnapshotJson;
+  final String? skuId;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceCartItemRecord({
+    this.cartId,
+    this.createdAt,
+    this.metadataJson,
+    this.organizationId,
+    this.priceSnapshotJson,
+    this.skuId,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceCartItemRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceCartItemRecord(
+      cartId: json['cart_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      metadataJson: (() {
+        final map = _sdkworkAsMap(json['metadata_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      priceSnapshotJson: (() {
+        final map = _sdkworkAsMap(json['price_snapshot_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      skuId: json['sku_id']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'cart_id': cartId,
+      'created_at': createdAt,
+      'metadata_json': metadataJson?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'price_snapshot_json': priceSnapshotJson?.map((key, item) => MapEntry(key, item)),
+      'sku_id': skuId,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceCartRecord {
+  final String? cartNo;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceCartRecord({
+    this.cartNo,
+    this.createdAt,
+    this.currencyCode,
+    this.organizationId,
+    this.ownerUserId,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceCartRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceCartRecord(
+      cartNo: json['cart_no']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'cart_no': cartNo,
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceCheckoutLineRecord {
+  final String? checkoutSessionId;
+  final String? createdAt;
+  final String? fulfillmentType;
+  final String? inventoryReservationId;
+  final String? organizationId;
+  final Map<String, dynamic>? priceSnapshotJson;
+  final Map<String, dynamic>? promotionSnapshotJson;
+  final String? purchaseType;
+  final String? skuId;
+  final String? tenantId;
+
+  CommerceCheckoutLineRecord({
+    this.checkoutSessionId,
+    this.createdAt,
+    this.fulfillmentType,
+    this.inventoryReservationId,
+    this.organizationId,
+    this.priceSnapshotJson,
+    this.promotionSnapshotJson,
+    this.purchaseType,
+    this.skuId,
+    this.tenantId
+  });
+
+  factory CommerceCheckoutLineRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceCheckoutLineRecord(
+      checkoutSessionId: json['checkout_session_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      fulfillmentType: json['fulfillment_type']?.toString(),
+      inventoryReservationId: json['inventory_reservation_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      priceSnapshotJson: (() {
+        final map = _sdkworkAsMap(json['price_snapshot_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      promotionSnapshotJson: (() {
+        final map = _sdkworkAsMap(json['promotion_snapshot_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      purchaseType: json['purchase_type']?.toString(),
+      skuId: json['sku_id']?.toString(),
+      tenantId: json['tenant_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'checkout_session_id': checkoutSessionId,
+      'created_at': createdAt,
+      'fulfillment_type': fulfillmentType,
+      'inventory_reservation_id': inventoryReservationId,
+      'organization_id': organizationId,
+      'price_snapshot_json': priceSnapshotJson?.map((key, item) => MapEntry(key, item)),
+      'promotion_snapshot_json': promotionSnapshotJson?.map((key, item) => MapEntry(key, item)),
+      'purchase_type': purchaseType,
+      'sku_id': skuId,
+      'tenant_id': tenantId,
+    };
+  }
+}
+
+class CommerceCheckoutQuoteRecord {
+  final String? checkoutSessionId;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? expiresAt;
+  final String? organizationId;
+  final String? originalAmount;
+  final String? payableAmount;
+  final String? quoteNo;
+  final String? tenantId;
+
+  CommerceCheckoutQuoteRecord({
+    this.checkoutSessionId,
+    this.createdAt,
+    this.currencyCode,
+    this.expiresAt,
+    this.organizationId,
+    this.originalAmount,
+    this.payableAmount,
+    this.quoteNo,
+    this.tenantId
+  });
+
+  factory CommerceCheckoutQuoteRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceCheckoutQuoteRecord(
+      checkoutSessionId: json['checkout_session_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      expiresAt: json['expires_at']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      originalAmount: json['original_amount']?.toString(),
+      payableAmount: json['payable_amount']?.toString(),
+      quoteNo: json['quote_no']?.toString(),
+      tenantId: json['tenant_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'checkout_session_id': checkoutSessionId,
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'expires_at': expiresAt,
+      'organization_id': organizationId,
+      'original_amount': originalAmount,
+      'payable_amount': payableAmount,
+      'quote_no': quoteNo,
+      'tenant_id': tenantId,
+    };
+  }
+}
+
+class CommerceCheckoutSessionRecord {
+  final String? checkoutSessionNo;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? expiresAt;
+  final String? idempotencyKey;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? requestHash;
+  final String? sourceId;
+  final String? sourceType;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceCheckoutSessionRecord({
+    this.checkoutSessionNo,
+    this.createdAt,
+    this.currencyCode,
+    this.expiresAt,
+    this.idempotencyKey,
+    this.organizationId,
+    this.ownerUserId,
+    this.requestHash,
+    this.sourceId,
+    this.sourceType,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceCheckoutSessionRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceCheckoutSessionRecord(
+      checkoutSessionNo: json['checkout_session_no']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      expiresAt: json['expires_at']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      requestHash: json['request_hash']?.toString(),
+      sourceId: json['source_id']?.toString(),
+      sourceType: json['source_type']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'checkout_session_no': checkoutSessionNo,
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'expires_at': expiresAt,
+      'idempotency_key': idempotencyKey,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'request_hash': requestHash,
+      'source_id': sourceId,
+      'source_type': sourceType,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceCouponIssueBatchRecord {
+  final String? audienceFilter;
+  final String? batchNo;
+  final String? campaignCode;
+  final String? codePattern;
+  final String? codePrefix;
+  final String? couponTemplateId;
+  final String? createdAt;
+  final String? createdBy;
+  final String? generatedAt;
+  final String? generationStatus;
+  final String? organizationId;
+  final String? requestedQuantity;
+  final String? status;
+  final String? tenantId;
+  final String? title;
+  final String? updatedAt;
+
+  CommerceCouponIssueBatchRecord({
+    this.audienceFilter,
+    this.batchNo,
+    this.campaignCode,
+    this.codePattern,
+    this.codePrefix,
+    this.couponTemplateId,
+    this.createdAt,
+    this.createdBy,
+    this.generatedAt,
+    this.generationStatus,
+    this.organizationId,
+    this.requestedQuantity,
+    this.status,
+    this.tenantId,
+    this.title,
+    this.updatedAt
+  });
+
+  factory CommerceCouponIssueBatchRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceCouponIssueBatchRecord(
+      audienceFilter: json['audience_filter']?.toString(),
+      batchNo: json['batch_no']?.toString(),
+      campaignCode: json['campaign_code']?.toString(),
+      codePattern: json['code_pattern']?.toString(),
+      codePrefix: json['code_prefix']?.toString(),
+      couponTemplateId: json['coupon_template_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      createdBy: json['created_by']?.toString(),
+      generatedAt: json['generated_at']?.toString(),
+      generationStatus: json['generation_status']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      requestedQuantity: json['requested_quantity']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      title: json['title']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'audience_filter': audienceFilter,
+      'batch_no': batchNo,
+      'campaign_code': campaignCode,
+      'code_pattern': codePattern,
+      'code_prefix': codePrefix,
+      'coupon_template_id': couponTemplateId,
+      'created_at': createdAt,
+      'created_by': createdBy,
+      'generated_at': generatedAt,
+      'generation_status': generationStatus,
+      'organization_id': organizationId,
+      'requested_quantity': requestedQuantity,
+      'status': status,
+      'tenant_id': tenantId,
+      'title': title,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceCouponRecord {
+  final String? claimedAt;
+  final String? couponCode;
+  final String? createdAt;
+  final String? disabledAt;
+  final String? expiresAt;
+  final String? idempotencyKey;
+  final String? issueBatchId;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? redeemedAt;
+  final String? requestNo;
+  final String? status;
+  final String? templateId;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceCouponRecord({
+    this.claimedAt,
+    this.couponCode,
+    this.createdAt,
+    this.disabledAt,
+    this.expiresAt,
+    this.idempotencyKey,
+    this.issueBatchId,
+    this.organizationId,
+    this.ownerUserId,
+    this.redeemedAt,
+    this.requestNo,
+    this.status,
+    this.templateId,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceCouponRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceCouponRecord(
+      claimedAt: json['claimed_at']?.toString(),
+      couponCode: json['coupon_code']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      disabledAt: json['disabled_at']?.toString(),
+      expiresAt: json['expires_at']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      issueBatchId: json['issue_batch_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      redeemedAt: json['redeemed_at']?.toString(),
+      requestNo: json['request_no']?.toString(),
+      status: json['status']?.toString(),
+      templateId: json['template_id']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'claimed_at': claimedAt,
+      'coupon_code': couponCode,
+      'created_at': createdAt,
+      'disabled_at': disabledAt,
+      'expires_at': expiresAt,
+      'idempotency_key': idempotencyKey,
+      'issue_batch_id': issueBatchId,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'redeemed_at': redeemedAt,
+      'request_no': requestNo,
+      'status': status,
+      'template_id': templateId,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceCouponRedemptionRecord {
+  final String? couponId;
+  final String? createdAt;
+  final String? discountAmount;
+  final String? idempotencyKey;
+  final String? orderId;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? redeemedAt;
+  final String? requestNo;
+  final String? rolledBackAt;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceCouponRedemptionRecord({
+    this.couponId,
+    this.createdAt,
+    this.discountAmount,
+    this.idempotencyKey,
+    this.orderId,
+    this.organizationId,
+    this.ownerUserId,
+    this.redeemedAt,
+    this.requestNo,
+    this.rolledBackAt,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceCouponRedemptionRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceCouponRedemptionRecord(
+      couponId: json['coupon_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      discountAmount: json['discount_amount']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      orderId: json['order_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      redeemedAt: json['redeemed_at']?.toString(),
+      requestNo: json['request_no']?.toString(),
+      rolledBackAt: json['rolled_back_at']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'coupon_id': couponId,
+      'created_at': createdAt,
+      'discount_amount': discountAmount,
+      'idempotency_key': idempotencyKey,
+      'order_id': orderId,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'redeemed_at': redeemedAt,
+      'request_no': requestNo,
+      'rolled_back_at': rolledBackAt,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceCouponTemplateRecord {
+  final String? createdAt;
+  final String? discountType;
+  final String? discountValue;
+  final String? expiresAt;
+  final String? organizationId;
+  final String? startsAt;
+  final String? status;
+  final String? templateNo;
+  final String? tenantId;
+  final String? title;
+  final String? totalQuantity;
+  final String? updatedAt;
+
+  CommerceCouponTemplateRecord({
+    this.createdAt,
+    this.discountType,
+    this.discountValue,
+    this.expiresAt,
+    this.organizationId,
+    this.startsAt,
+    this.status,
+    this.templateNo,
+    this.tenantId,
+    this.title,
+    this.totalQuantity,
+    this.updatedAt
+  });
+
+  factory CommerceCouponTemplateRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceCouponTemplateRecord(
+      createdAt: json['created_at']?.toString(),
+      discountType: json['discount_type']?.toString(),
+      discountValue: json['discount_value']?.toString(),
+      expiresAt: json['expires_at']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      startsAt: json['starts_at']?.toString(),
+      status: json['status']?.toString(),
+      templateNo: json['template_no']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      title: json['title']?.toString(),
+      totalQuantity: json['total_quantity']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'discount_type': discountType,
+      'discount_value': discountValue,
+      'expires_at': expiresAt,
+      'organization_id': organizationId,
+      'starts_at': startsAt,
+      'status': status,
+      'template_no': templateNo,
+      'tenant_id': tenantId,
+      'title': title,
+      'total_quantity': totalQuantity,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceDigitalDeliveryRecord {
+  final String? createdAt;
+  final String? deliveredAt;
+  final String? deliveryNo;
+  final String? deliveryRef;
+  final String? deliveryType;
+  final String? fulfillmentId;
+  final String? orderItemId;
+  final String? organizationId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceDigitalDeliveryRecord({
+    this.createdAt,
+    this.deliveredAt,
+    this.deliveryNo,
+    this.deliveryRef,
+    this.deliveryType,
+    this.fulfillmentId,
+    this.orderItemId,
+    this.organizationId,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceDigitalDeliveryRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceDigitalDeliveryRecord(
+      createdAt: json['created_at']?.toString(),
+      deliveredAt: json['delivered_at']?.toString(),
+      deliveryNo: json['delivery_no']?.toString(),
+      deliveryRef: json['delivery_ref']?.toString(),
+      deliveryType: json['delivery_type']?.toString(),
+      fulfillmentId: json['fulfillment_id']?.toString(),
+      orderItemId: json['order_item_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'delivered_at': deliveredAt,
+      'delivery_no': deliveryNo,
+      'delivery_ref': deliveryRef,
+      'delivery_type': deliveryType,
+      'fulfillment_id': fulfillmentId,
+      'order_item_id': orderItemId,
+      'organization_id': organizationId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceExchangeRuleRecord {
+  final String? createdAt;
+  final String? idempotencyKey;
+  final String? organizationId;
+  final String? rate;
+  final String? remark;
+  final String? requestNo;
+  final String? ruleNo;
+  final String? sourceAssetType;
+  final String? status;
+  final String? targetAssetType;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceExchangeRuleRecord({
+    this.createdAt,
+    this.idempotencyKey,
+    this.organizationId,
+    this.rate,
+    this.remark,
+    this.requestNo,
+    this.ruleNo,
+    this.sourceAssetType,
+    this.status,
+    this.targetAssetType,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceExchangeRuleRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceExchangeRuleRecord(
+      createdAt: json['created_at']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      rate: json['rate']?.toString(),
+      remark: json['remark']?.toString(),
+      requestNo: json['request_no']?.toString(),
+      ruleNo: json['rule_no']?.toString(),
+      sourceAssetType: json['source_asset_type']?.toString(),
+      status: json['status']?.toString(),
+      targetAssetType: json['target_asset_type']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'idempotency_key': idempotencyKey,
+      'organization_id': organizationId,
+      'rate': rate,
+      'remark': remark,
+      'request_no': requestNo,
+      'rule_no': ruleNo,
+      'source_asset_type': sourceAssetType,
+      'status': status,
+      'target_asset_type': targetAssetType,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceFulfillmentItemRecord {
+  final String? createdAt;
+  final String? fulfillmentId;
+  final String? orderItemId;
+  final String? organizationId;
+  final String? skuId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceFulfillmentItemRecord({
+    this.createdAt,
+    this.fulfillmentId,
+    this.orderItemId,
+    this.organizationId,
+    this.skuId,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceFulfillmentItemRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceFulfillmentItemRecord(
+      createdAt: json['created_at']?.toString(),
+      fulfillmentId: json['fulfillment_id']?.toString(),
+      orderItemId: json['order_item_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      skuId: json['sku_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'fulfillment_id': fulfillmentId,
+      'order_item_id': orderItemId,
+      'organization_id': organizationId,
+      'sku_id': skuId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceFulfillmentOrderRecord {
+  final String? addressSnapshotId;
+  final String? completedAt;
+  final String? createdAt;
+  final String? fulfillmentNo;
+  final String? fulfillmentType;
+  final String? orderId;
+  final String? organizationId;
+  final String? providerCode;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? warehouseId;
+
+  CommerceFulfillmentOrderRecord({
+    this.addressSnapshotId,
+    this.completedAt,
+    this.createdAt,
+    this.fulfillmentNo,
+    this.fulfillmentType,
+    this.orderId,
+    this.organizationId,
+    this.providerCode,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.warehouseId
+  });
+
+  factory CommerceFulfillmentOrderRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceFulfillmentOrderRecord(
+      addressSnapshotId: json['address_snapshot_id']?.toString(),
+      completedAt: json['completed_at']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      fulfillmentNo: json['fulfillment_no']?.toString(),
+      fulfillmentType: json['fulfillment_type']?.toString(),
+      orderId: json['order_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      providerCode: json['provider_code']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      warehouseId: json['warehouse_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'address_snapshot_id': addressSnapshotId,
+      'completed_at': completedAt,
+      'created_at': createdAt,
+      'fulfillment_no': fulfillmentNo,
+      'fulfillment_type': fulfillmentType,
+      'order_id': orderId,
+      'organization_id': organizationId,
+      'provider_code': providerCode,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'warehouse_id': warehouseId,
+    };
+  }
+}
+
+class CommerceIdempotencyKeyRecord {
+  final String? createdAt;
+  final String? expiresAt;
+  final String? idempotencyKey;
+  final String? lockedUntil;
+  final String? organizationId;
+  final String? requestHash;
+  final String? responseJson;
+  final String? scope;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceIdempotencyKeyRecord({
+    this.createdAt,
+    this.expiresAt,
+    this.idempotencyKey,
+    this.lockedUntil,
+    this.organizationId,
+    this.requestHash,
+    this.responseJson,
+    this.scope,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceIdempotencyKeyRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceIdempotencyKeyRecord(
+      createdAt: json['created_at']?.toString(),
+      expiresAt: json['expires_at']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      lockedUntil: json['locked_until']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      requestHash: json['request_hash']?.toString(),
+      responseJson: json['response_json']?.toString(),
+      scope: json['scope']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'expires_at': expiresAt,
+      'idempotency_key': idempotencyKey,
+      'locked_until': lockedUntil,
+      'organization_id': organizationId,
+      'request_hash': requestHash,
+      'response_json': responseJson,
+      'scope': scope,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceInventoryLedgerItem {
+  final int? balanceAfter;
+  final String? businessType;
+  final String? createdAt;
+  final String? direction;
+  final String? id;
+  final String? movementNo;
+  final int? quantity;
+  final String? skuId;
+  final String? sourceId;
+  final String? sourceType;
+  final String? warehouseId;
+
+  CommerceInventoryLedgerItem({
+    this.balanceAfter,
+    this.businessType,
+    this.createdAt,
+    this.direction,
+    this.id,
+    this.movementNo,
+    this.quantity,
+    this.skuId,
+    this.sourceId,
+    this.sourceType,
+    this.warehouseId
+  });
+
+  factory CommerceInventoryLedgerItem.fromJson(Map<String, dynamic> json) {
+    return CommerceInventoryLedgerItem(
+      balanceAfter: json['balanceAfter'] is int ? json['balanceAfter'] : null,
+      businessType: json['businessType']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      direction: json['direction']?.toString(),
+      id: json['id']?.toString(),
+      movementNo: json['movementNo']?.toString(),
+      quantity: json['quantity'] is int ? json['quantity'] : null,
+      skuId: json['skuId']?.toString(),
+      sourceId: json['sourceId']?.toString(),
+      sourceType: json['sourceType']?.toString(),
+      warehouseId: json['warehouseId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'balanceAfter': balanceAfter,
+      'businessType': businessType,
+      'createdAt': createdAt,
+      'direction': direction,
+      'id': id,
+      'movementNo': movementNo,
+      'quantity': quantity,
+      'skuId': skuId,
+      'sourceId': sourceId,
+      'sourceType': sourceType,
+      'warehouseId': warehouseId,
+    };
+  }
+}
+
+class CommerceInventoryLedgerListResponse {
+  final List<CommerceInventoryLedgerItem>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  CommerceInventoryLedgerListResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory CommerceInventoryLedgerListResponse.fromJson(Map<String, dynamic> json) {
+    return CommerceInventoryLedgerListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommerceInventoryLedgerItem.fromJson(map);
+      })())
+            .whereType<CommerceInventoryLedgerItem>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommerceInventoryLedgerRecord {
+  final String? businessType;
+  final String? createdAt;
+  final String? direction;
+  final String? idempotencyKey;
+  final String? movementNo;
+  final String? organizationId;
+  final String? skuId;
+  final String? sourceId;
+  final String? sourceType;
+  final String? tenantId;
+  final String? warehouseId;
+
+  CommerceInventoryLedgerRecord({
+    this.businessType,
+    this.createdAt,
+    this.direction,
+    this.idempotencyKey,
+    this.movementNo,
+    this.organizationId,
+    this.skuId,
+    this.sourceId,
+    this.sourceType,
+    this.tenantId,
+    this.warehouseId
+  });
+
+  factory CommerceInventoryLedgerRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceInventoryLedgerRecord(
+      businessType: json['business_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      direction: json['direction']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      movementNo: json['movement_no']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      skuId: json['sku_id']?.toString(),
+      sourceId: json['source_id']?.toString(),
+      sourceType: json['source_type']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      warehouseId: json['warehouse_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'business_type': businessType,
+      'created_at': createdAt,
+      'direction': direction,
+      'idempotency_key': idempotencyKey,
+      'movement_no': movementNo,
+      'organization_id': organizationId,
+      'sku_id': skuId,
+      'source_id': sourceId,
+      'source_type': sourceType,
+      'tenant_id': tenantId,
+      'warehouse_id': warehouseId,
+    };
+  }
+}
+
+class CommerceInventoryReservationItem {
+  final String? checkoutSessionId;
+  final String? createdAt;
+  final String? expiresAt;
+  final String? id;
+  final String? orderId;
+  final int? quantity;
+  final String? reservationNo;
+  final String? skuId;
+  final String? status;
+
+  CommerceInventoryReservationItem({
+    this.checkoutSessionId,
+    this.createdAt,
+    this.expiresAt,
+    this.id,
+    this.orderId,
+    this.quantity,
+    this.reservationNo,
+    this.skuId,
+    this.status
+  });
+
+  factory CommerceInventoryReservationItem.fromJson(Map<String, dynamic> json) {
+    return CommerceInventoryReservationItem(
+      checkoutSessionId: json['checkoutSessionId']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      expiresAt: json['expiresAt']?.toString(),
+      id: json['id']?.toString(),
+      orderId: json['orderId']?.toString(),
+      quantity: json['quantity'] is int ? json['quantity'] : null,
+      reservationNo: json['reservationNo']?.toString(),
+      skuId: json['skuId']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'checkoutSessionId': checkoutSessionId,
+      'createdAt': createdAt,
+      'expiresAt': expiresAt,
+      'id': id,
+      'orderId': orderId,
+      'quantity': quantity,
+      'reservationNo': reservationNo,
+      'skuId': skuId,
+      'status': status,
+    };
+  }
+}
+
+class CommerceInventoryReservationListResponse {
+  final List<CommerceInventoryReservationItem>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  CommerceInventoryReservationListResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory CommerceInventoryReservationListResponse.fromJson(Map<String, dynamic> json) {
+    return CommerceInventoryReservationListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommerceInventoryReservationItem.fromJson(map);
+      })())
+            .whereType<CommerceInventoryReservationItem>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommerceInventoryReservationRecord {
+  final String? checkoutSessionId;
+  final String? createdAt;
+  final String? expiresAt;
+  final String? idempotencyKey;
+  final String? orderId;
+  final String? organizationId;
+  final String? reservationNo;
+  final String? skuId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? warehouseId;
+
+  CommerceInventoryReservationRecord({
+    this.checkoutSessionId,
+    this.createdAt,
+    this.expiresAt,
+    this.idempotencyKey,
+    this.orderId,
+    this.organizationId,
+    this.reservationNo,
+    this.skuId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.warehouseId
+  });
+
+  factory CommerceInventoryReservationRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceInventoryReservationRecord(
+      checkoutSessionId: json['checkout_session_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      expiresAt: json['expires_at']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      orderId: json['order_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      reservationNo: json['reservation_no']?.toString(),
+      skuId: json['sku_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      warehouseId: json['warehouse_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'checkout_session_id': checkoutSessionId,
+      'created_at': createdAt,
+      'expires_at': expiresAt,
+      'idempotency_key': idempotencyKey,
+      'order_id': orderId,
+      'organization_id': organizationId,
+      'reservation_no': reservationNo,
+      'sku_id': skuId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'warehouse_id': warehouseId,
+    };
+  }
+}
+
+class CommerceInventoryStockItem {
+  final int? availableQuantity;
+  final String? createdAt;
+  final String? id;
+  final int? reservedQuantity;
+  final String? skuId;
+  final int? soldQuantity;
+  final String? status;
+  final String? updatedAt;
+  final int? version;
+  final String? warehouseId;
+
+  CommerceInventoryStockItem({
+    this.availableQuantity,
+    this.createdAt,
+    this.id,
+    this.reservedQuantity,
+    this.skuId,
+    this.soldQuantity,
+    this.status,
+    this.updatedAt,
+    this.version,
+    this.warehouseId
+  });
+
+  factory CommerceInventoryStockItem.fromJson(Map<String, dynamic> json) {
+    return CommerceInventoryStockItem(
+      availableQuantity: json['availableQuantity'] is int ? json['availableQuantity'] : null,
+      createdAt: json['createdAt']?.toString(),
+      id: json['id']?.toString(),
+      reservedQuantity: json['reservedQuantity'] is int ? json['reservedQuantity'] : null,
+      skuId: json['skuId']?.toString(),
+      soldQuantity: json['soldQuantity'] is int ? json['soldQuantity'] : null,
+      status: json['status']?.toString(),
+      updatedAt: json['updatedAt']?.toString(),
+      version: json['version'] is int ? json['version'] : null,
+      warehouseId: json['warehouseId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'availableQuantity': availableQuantity,
+      'createdAt': createdAt,
+      'id': id,
+      'reservedQuantity': reservedQuantity,
+      'skuId': skuId,
+      'soldQuantity': soldQuantity,
+      'status': status,
+      'updatedAt': updatedAt,
+      'version': version,
+      'warehouseId': warehouseId,
+    };
+  }
+}
+
+class CommerceInventoryStockListResponse {
+  final List<CommerceInventoryStockItem>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  CommerceInventoryStockListResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory CommerceInventoryStockListResponse.fromJson(Map<String, dynamic> json) {
+    return CommerceInventoryStockListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommerceInventoryStockItem.fromJson(map);
+      })())
+            .whereType<CommerceInventoryStockItem>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommerceInventoryStockMutationResponse {
+  final CommerceInventoryStockItem? item;
+
+  CommerceInventoryStockMutationResponse({
+    this.item
+  });
+
+  factory CommerceInventoryStockMutationResponse.fromJson(Map<String, dynamic> json) {
+    return CommerceInventoryStockMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : CommerceInventoryStockItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class CommerceInventoryStockRecord {
+  final String? createdAt;
+  final String? organizationId;
+  final String? skuId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? warehouseId;
+
+  CommerceInventoryStockRecord({
+    this.createdAt,
+    this.organizationId,
+    this.skuId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.warehouseId
+  });
+
+  factory CommerceInventoryStockRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceInventoryStockRecord(
+      createdAt: json['created_at']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      skuId: json['sku_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      warehouseId: json['warehouse_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'organization_id': organizationId,
+      'sku_id': skuId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'warehouse_id': warehouseId,
+    };
+  }
+}
+
+class CommerceInventoryStockUpdateRequest {
+  final int? availableQuantity;
+  final String? reasonCode;
+  final int? reservedQuantity;
+  final String? status;
+  final int? version;
+
+  CommerceInventoryStockUpdateRequest({
+    this.availableQuantity,
+    this.reasonCode,
+    this.reservedQuantity,
+    this.status,
+    this.version
+  });
+
+  factory CommerceInventoryStockUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return CommerceInventoryStockUpdateRequest(
+      availableQuantity: json['availableQuantity'] is int ? json['availableQuantity'] : null,
+      reasonCode: json['reasonCode']?.toString(),
+      reservedQuantity: json['reservedQuantity'] is int ? json['reservedQuantity'] : null,
+      status: json['status']?.toString(),
+      version: json['version'] is int ? json['version'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'availableQuantity': availableQuantity,
+      'reasonCode': reasonCode,
+      'reservedQuantity': reservedQuantity,
+      'status': status,
+      'version': version,
+    };
+  }
+}
+
+class CommerceInvoiceEventRecord {
+  final String? actorId;
+  final String? actorType;
+  final String? createdAt;
+  final String? eventNo;
+  final String? eventType;
+  final String? fromStatus;
+  final String? idempotencyKey;
+  final String? invoiceId;
+  final String? message;
+  final String? organizationId;
+  final Map<String, dynamic>? payloadJson;
+  final String? reasonCode;
+  final String? requestId;
+  final String? tenantId;
+  final String? toStatus;
+
+  CommerceInvoiceEventRecord({
+    this.actorId,
+    this.actorType,
+    this.createdAt,
+    this.eventNo,
+    this.eventType,
+    this.fromStatus,
+    this.idempotencyKey,
+    this.invoiceId,
+    this.message,
+    this.organizationId,
+    this.payloadJson,
+    this.reasonCode,
+    this.requestId,
+    this.tenantId,
+    this.toStatus
+  });
+
+  factory CommerceInvoiceEventRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceInvoiceEventRecord(
+      actorId: json['actor_id']?.toString(),
+      actorType: json['actor_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      eventNo: json['event_no']?.toString(),
+      eventType: json['event_type']?.toString(),
+      fromStatus: json['from_status']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      invoiceId: json['invoice_id']?.toString(),
+      message: json['message']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      payloadJson: (() {
+        final map = _sdkworkAsMap(json['payload_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      reasonCode: json['reason_code']?.toString(),
+      requestId: json['request_id']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      toStatus: json['to_status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'actor_id': actorId,
+      'actor_type': actorType,
+      'created_at': createdAt,
+      'event_no': eventNo,
+      'event_type': eventType,
+      'from_status': fromStatus,
+      'idempotency_key': idempotencyKey,
+      'invoice_id': invoiceId,
+      'message': message,
+      'organization_id': organizationId,
+      'payload_json': payloadJson?.map((key, item) => MapEntry(key, item)),
+      'reason_code': reasonCode,
+      'request_id': requestId,
+      'tenant_id': tenantId,
+      'to_status': toStatus,
+    };
+  }
+}
+
+class CommerceInvoiceItemRecord {
+  final String? amount;
+  final String? createdAt;
+  final String? invoiceId;
+  final String? orderItemId;
+  final String? tenantId;
+  final String? title;
+
+  CommerceInvoiceItemRecord({
+    this.amount,
+    this.createdAt,
+    this.invoiceId,
+    this.orderItemId,
+    this.tenantId,
+    this.title
+  });
+
+  factory CommerceInvoiceItemRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceInvoiceItemRecord(
+      amount: json['amount']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      invoiceId: json['invoice_id']?.toString(),
+      orderItemId: json['order_item_id']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      title: json['title']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'amount': amount,
+      'created_at': createdAt,
+      'invoice_id': invoiceId,
+      'order_item_id': orderItemId,
+      'tenant_id': tenantId,
+      'title': title,
+    };
+  }
+}
+
+class CommerceInvoiceProviderAttemptRecord {
+  final String? attemptNo;
+  final String? createdAt;
+  final String? failedAt;
+  final String? failureCode;
+  final String? failureMessage;
+  final String? invoiceId;
+  final String? organizationId;
+  final String? providerAccountId;
+  final String? providerCode;
+  final String? providerInvoiceId;
+  final String? status;
+  final String? submittedAt;
+  final String? succeededAt;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceInvoiceProviderAttemptRecord({
+    this.attemptNo,
+    this.createdAt,
+    this.failedAt,
+    this.failureCode,
+    this.failureMessage,
+    this.invoiceId,
+    this.organizationId,
+    this.providerAccountId,
+    this.providerCode,
+    this.providerInvoiceId,
+    this.status,
+    this.submittedAt,
+    this.succeededAt,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceInvoiceProviderAttemptRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceInvoiceProviderAttemptRecord(
+      attemptNo: json['attempt_no']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      failedAt: json['failed_at']?.toString(),
+      failureCode: json['failure_code']?.toString(),
+      failureMessage: json['failure_message']?.toString(),
+      invoiceId: json['invoice_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      providerAccountId: json['provider_account_id']?.toString(),
+      providerCode: json['provider_code']?.toString(),
+      providerInvoiceId: json['provider_invoice_id']?.toString(),
+      status: json['status']?.toString(),
+      submittedAt: json['submitted_at']?.toString(),
+      succeededAt: json['succeeded_at']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'attempt_no': attemptNo,
+      'created_at': createdAt,
+      'failed_at': failedAt,
+      'failure_code': failureCode,
+      'failure_message': failureMessage,
+      'invoice_id': invoiceId,
+      'organization_id': organizationId,
+      'provider_account_id': providerAccountId,
+      'provider_code': providerCode,
+      'provider_invoice_id': providerInvoiceId,
+      'status': status,
+      'submitted_at': submittedAt,
+      'succeeded_at': succeededAt,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceInvoiceRecord {
+  final String? createdAt;
+  final String? documentUrl;
+  final String? invoiceCode;
+  final String? invoiceNo;
+  final String? issuedAt;
+  final String? orderId;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? paymentId;
+  final String? status;
+  final String? tenantId;
+  final String? titleId;
+  final String? updatedAt;
+
+  CommerceInvoiceRecord({
+    this.createdAt,
+    this.documentUrl,
+    this.invoiceCode,
+    this.invoiceNo,
+    this.issuedAt,
+    this.orderId,
+    this.organizationId,
+    this.ownerUserId,
+    this.paymentId,
+    this.status,
+    this.tenantId,
+    this.titleId,
+    this.updatedAt
+  });
+
+  factory CommerceInvoiceRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceInvoiceRecord(
+      createdAt: json['created_at']?.toString(),
+      documentUrl: json['document_url']?.toString(),
+      invoiceCode: json['invoice_code']?.toString(),
+      invoiceNo: json['invoice_no']?.toString(),
+      issuedAt: json['issued_at']?.toString(),
+      orderId: json['order_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      paymentId: json['payment_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      titleId: json['title_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'document_url': documentUrl,
+      'invoice_code': invoiceCode,
+      'invoice_no': invoiceNo,
+      'issued_at': issuedAt,
+      'order_id': orderId,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'payment_id': paymentId,
+      'status': status,
+      'tenant_id': tenantId,
+      'title_id': titleId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceInvoiceTitleRecord {
+  final String? createdAt;
+  final String? name;
+  final String? ownerUserId;
+  final String? taxNo;
+  final String? tenantId;
+  final String? titleType;
+  final String? updatedAt;
+
+  CommerceInvoiceTitleRecord({
+    this.createdAt,
+    this.name,
+    this.ownerUserId,
+    this.taxNo,
+    this.tenantId,
+    this.titleType,
+    this.updatedAt
+  });
+
+  factory CommerceInvoiceTitleRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceInvoiceTitleRecord(
+      createdAt: json['created_at']?.toString(),
+      name: json['name']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      taxNo: json['tax_no']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      titleType: json['title_type']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'name': name,
+      'owner_user_id': ownerUserId,
+      'tax_no': taxNo,
+      'tenant_id': tenantId,
+      'title_type': titleType,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceMembershipBenefitMutationRequest {
+  final String? benefitKey;
+  final bool? claimed;
+  final String? description;
+  final String? icon;
+  final int? id;
+  final String? name;
+  final String? type;
+  final int? usageLimit;
+  final int? usedCount;
+
+  CommerceMembershipBenefitMutationRequest({
+    this.benefitKey,
+    this.claimed,
+    this.description,
+    this.icon,
+    this.id,
+    this.name,
+    this.type,
+    this.usageLimit,
+    this.usedCount
+  });
+
+  factory CommerceMembershipBenefitMutationRequest.fromJson(Map<String, dynamic> json) {
+    return CommerceMembershipBenefitMutationRequest(
+      benefitKey: json['benefitKey']?.toString(),
+      claimed: json['claimed'] is bool ? json['claimed'] : null,
+      description: json['description']?.toString(),
+      icon: json['icon']?.toString(),
+      id: json['id'] is int ? json['id'] : null,
+      name: json['name']?.toString(),
+      type: json['type']?.toString(),
+      usageLimit: json['usageLimit'] is int ? json['usageLimit'] : null,
+      usedCount: json['usedCount'] is int ? json['usedCount'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'benefitKey': benefitKey,
+      'claimed': claimed,
+      'description': description,
+      'icon': icon,
+      'id': id,
+      'name': name,
+      'type': type,
+      'usageLimit': usageLimit,
+      'usedCount': usedCount,
+    };
+  }
+}
+
+class CommerceMembershipEntitlementRecord {
+  final String? createdAt;
+  final String? entitlementCode;
+  final String? name;
+  final String? organizationId;
+  final String? planId;
+  final String? quotaAmount;
+  final String? quotaPeriod;
+  final String? resetPolicy;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceMembershipEntitlementRecord({
+    this.createdAt,
+    this.entitlementCode,
+    this.name,
+    this.organizationId,
+    this.planId,
+    this.quotaAmount,
+    this.quotaPeriod,
+    this.resetPolicy,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceMembershipEntitlementRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceMembershipEntitlementRecord(
+      createdAt: json['created_at']?.toString(),
+      entitlementCode: json['entitlement_code']?.toString(),
+      name: json['name']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      planId: json['plan_id']?.toString(),
+      quotaAmount: json['quota_amount']?.toString(),
+      quotaPeriod: json['quota_period']?.toString(),
+      resetPolicy: json['reset_policy']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'entitlement_code': entitlementCode,
+      'name': name,
+      'organization_id': organizationId,
+      'plan_id': planId,
+      'quota_amount': quotaAmount,
+      'quota_period': quotaPeriod,
+      'reset_policy': resetPolicy,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceMembershipEntitlementUsageRecord {
+  final String? balanceAfter;
+  final String? createdAt;
+  final String? entitlementId;
+  final String? idempotencyKey;
+  final String? membershipId;
+  final String? occurredAt;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? sourceId;
+  final String? sourceType;
+  final String? tenantId;
+  final String? usageNo;
+  final String? usedAmount;
+
+  CommerceMembershipEntitlementUsageRecord({
+    this.balanceAfter,
+    this.createdAt,
+    this.entitlementId,
+    this.idempotencyKey,
+    this.membershipId,
+    this.occurredAt,
+    this.organizationId,
+    this.ownerUserId,
+    this.sourceId,
+    this.sourceType,
+    this.tenantId,
+    this.usageNo,
+    this.usedAmount
+  });
+
+  factory CommerceMembershipEntitlementUsageRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceMembershipEntitlementUsageRecord(
+      balanceAfter: json['balance_after']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      entitlementId: json['entitlement_id']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      membershipId: json['membership_id']?.toString(),
+      occurredAt: json['occurred_at']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      sourceId: json['source_id']?.toString(),
+      sourceType: json['source_type']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      usageNo: json['usage_no']?.toString(),
+      usedAmount: json['used_amount']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'balance_after': balanceAfter,
+      'created_at': createdAt,
+      'entitlement_id': entitlementId,
+      'idempotency_key': idempotencyKey,
+      'membership_id': membershipId,
+      'occurred_at': occurredAt,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'source_id': sourceId,
+      'source_type': sourceType,
+      'tenant_id': tenantId,
+      'usage_no': usageNo,
+      'used_amount': usedAmount,
+    };
+  }
+}
+
+class CommerceMembershipMemberStatusRequest {
+  final String? status;
+
+  CommerceMembershipMemberStatusRequest({
+    this.status
+  });
+
+  factory CommerceMembershipMemberStatusRequest.fromJson(Map<String, dynamic> json) {
+    return CommerceMembershipMemberStatusRequest(
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'status': status,
+    };
+  }
+}
+
+class CommerceMembershipPackageGroupMutationRequest {
+  final String? billingCycle;
+  final String? code;
+  final String? description;
+  final int? durationDays;
+  final String? name;
+  final int? sortWeight;
+  final String? status;
+
+  CommerceMembershipPackageGroupMutationRequest({
+    this.billingCycle,
+    this.code,
+    this.description,
+    this.durationDays,
+    this.name,
+    this.sortWeight,
+    this.status
+  });
+
+  factory CommerceMembershipPackageGroupMutationRequest.fromJson(Map<String, dynamic> json) {
+    return CommerceMembershipPackageGroupMutationRequest(
+      billingCycle: json['billingCycle']?.toString(),
+      code: json['code']?.toString(),
+      description: json['description']?.toString(),
+      durationDays: json['durationDays'] is int ? json['durationDays'] : null,
+      name: json['name']?.toString(),
+      sortWeight: json['sortWeight'] is int ? json['sortWeight'] : null,
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'billingCycle': billingCycle,
+      'code': code,
+      'description': description,
+      'durationDays': durationDays,
+      'name': name,
+      'sortWeight': sortWeight,
+      'status': status,
+    };
+  }
+}
+
+class CommerceMembershipPackageGroupRecord {
+  final String? createdAt;
+  final String? description;
+  final String? groupNo;
+  final String? name;
+  final String? organizationId;
+  final String? planId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceMembershipPackageGroupRecord({
+    this.createdAt,
+    this.description,
+    this.groupNo,
+    this.name,
+    this.organizationId,
+    this.planId,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceMembershipPackageGroupRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceMembershipPackageGroupRecord(
+      createdAt: json['created_at']?.toString(),
+      description: json['description']?.toString(),
+      groupNo: json['group_no']?.toString(),
+      name: json['name']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      planId: json['plan_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'description': description,
+      'group_no': groupNo,
+      'name': name,
+      'organization_id': organizationId,
+      'plan_id': planId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceMembershipPackageMutationRequest {
+  final String? code;
+  final String? currencyCode;
+  final int? durationDays;
+  final String? name;
+  final String? packageGroupId;
+  final String? planId;
+  final String? priceAmount;
+  final String? status;
+
+  CommerceMembershipPackageMutationRequest({
+    this.code,
+    this.currencyCode,
+    this.durationDays,
+    this.name,
+    this.packageGroupId,
+    this.planId,
+    this.priceAmount,
+    this.status
+  });
+
+  factory CommerceMembershipPackageMutationRequest.fromJson(Map<String, dynamic> json) {
+    return CommerceMembershipPackageMutationRequest(
+      code: json['code']?.toString(),
+      currencyCode: json['currencyCode']?.toString(),
+      durationDays: json['durationDays'] is int ? json['durationDays'] : null,
+      name: json['name']?.toString(),
+      packageGroupId: json['packageGroupId']?.toString(),
+      planId: json['planId']?.toString(),
+      priceAmount: json['priceAmount']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'currencyCode': currencyCode,
+      'durationDays': durationDays,
+      'name': name,
+      'packageGroupId': packageGroupId,
+      'planId': planId,
+      'priceAmount': priceAmount,
+      'status': status,
+    };
+  }
+}
+
+class CommerceMembershipPackageRecord {
+  final String? createdAt;
+  final String? currencyCode;
+  final String? durationDays;
+  final String? endsAt;
+  final String? organizationId;
+  final String? packageGroupId;
+  final String? packageNo;
+  final String? planId;
+  final String? priceAmount;
+  final String? recurrenceCycle;
+  final String? skuId;
+  final String? startsAt;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceMembershipPackageRecord({
+    this.createdAt,
+    this.currencyCode,
+    this.durationDays,
+    this.endsAt,
+    this.organizationId,
+    this.packageGroupId,
+    this.packageNo,
+    this.planId,
+    this.priceAmount,
+    this.recurrenceCycle,
+    this.skuId,
+    this.startsAt,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceMembershipPackageRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceMembershipPackageRecord(
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      durationDays: json['duration_days']?.toString(),
+      endsAt: json['ends_at']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      packageGroupId: json['package_group_id']?.toString(),
+      packageNo: json['package_no']?.toString(),
+      planId: json['plan_id']?.toString(),
+      priceAmount: json['price_amount']?.toString(),
+      recurrenceCycle: json['recurrence_cycle']?.toString(),
+      skuId: json['sku_id']?.toString(),
+      startsAt: json['starts_at']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'duration_days': durationDays,
+      'ends_at': endsAt,
+      'organization_id': organizationId,
+      'package_group_id': packageGroupId,
+      'package_no': packageNo,
+      'plan_id': planId,
+      'price_amount': priceAmount,
+      'recurrence_cycle': recurrenceCycle,
+      'sku_id': skuId,
+      'starts_at': startsAt,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceMembershipPlanMutationRequest {
+  final List<CommerceMembershipBenefitMutationRequest>? benefits;
+  final String? code;
+  final String? name;
+  final int? rank;
+  final String? status;
+
+  CommerceMembershipPlanMutationRequest({
+    this.benefits,
+    this.code,
+    this.name,
+    this.rank,
+    this.status
+  });
+
+  factory CommerceMembershipPlanMutationRequest.fromJson(Map<String, dynamic> json) {
+    return CommerceMembershipPlanMutationRequest(
+      benefits: (() {
+        final list = _sdkworkAsList(json['benefits']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommerceMembershipBenefitMutationRequest.fromJson(map);
+      })())
+            .whereType<CommerceMembershipBenefitMutationRequest>()
+            .toList();
+      })(),
+      code: json['code']?.toString(),
+      name: json['name']?.toString(),
+      rank: json['rank'] is int ? json['rank'] : null,
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'benefits': benefits?.map((item) => item.toJson()).toList(),
+      'code': code,
+      'name': name,
+      'rank': rank,
+      'status': status,
+    };
+  }
+}
+
+class CommerceMembershipPlanRecord {
+  final Map<String, dynamic>? benefitsJson;
+  final String? createdAt;
+  final String? levelCode;
+  final String? name;
+  final String? organizationId;
+  final String? planNo;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceMembershipPlanRecord({
+    this.benefitsJson,
+    this.createdAt,
+    this.levelCode,
+    this.name,
+    this.organizationId,
+    this.planNo,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceMembershipPlanRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceMembershipPlanRecord(
+      benefitsJson: (() {
+        final map = _sdkworkAsMap(json['benefits_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      createdAt: json['created_at']?.toString(),
+      levelCode: json['level_code']?.toString(),
+      name: json['name']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      planNo: json['plan_no']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'benefits_json': benefitsJson?.map((key, item) => MapEntry(key, item)),
+      'created_at': createdAt,
+      'level_code': levelCode,
+      'name': name,
+      'organization_id': organizationId,
+      'plan_no': planNo,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceMembershipRecord {
+  final String? createdAt;
+  final String? expiresAt;
+  final String? graceUntil;
+  final String? membershipNo;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? planId;
+  final String? sourceOrderId;
+  final String? sourcePaymentIntentId;
+  final String? startsAt;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceMembershipRecord({
+    this.createdAt,
+    this.expiresAt,
+    this.graceUntil,
+    this.membershipNo,
+    this.organizationId,
+    this.ownerUserId,
+    this.planId,
+    this.sourceOrderId,
+    this.sourcePaymentIntentId,
+    this.startsAt,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceMembershipRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceMembershipRecord(
+      createdAt: json['created_at']?.toString(),
+      expiresAt: json['expires_at']?.toString(),
+      graceUntil: json['grace_until']?.toString(),
+      membershipNo: json['membership_no']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      planId: json['plan_id']?.toString(),
+      sourceOrderId: json['source_order_id']?.toString(),
+      sourcePaymentIntentId: json['source_payment_intent_id']?.toString(),
+      startsAt: json['starts_at']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'expires_at': expiresAt,
+      'grace_until': graceUntil,
+      'membership_no': membershipNo,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'plan_id': planId,
+      'source_order_id': sourceOrderId,
+      'source_payment_intent_id': sourcePaymentIntentId,
+      'starts_at': startsAt,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceOperationResponse {
+  final String? paymentId;
+  final String? qrCodeImageUrl;
+  final String? qrCodePayload;
+  final String? requestNo;
+  final String? status;
+  final bool? success;
+
+  CommerceOperationResponse({
+    this.paymentId,
+    this.qrCodeImageUrl,
+    this.qrCodePayload,
+    this.requestNo,
+    this.status,
+    this.success
+  });
+
+  factory CommerceOperationResponse.fromJson(Map<String, dynamic> json) {
+    return CommerceOperationResponse(
+      paymentId: json['paymentId']?.toString(),
+      qrCodeImageUrl: json['qrCodeImageUrl']?.toString(),
+      qrCodePayload: json['qrCodePayload']?.toString(),
+      requestNo: json['requestNo']?.toString(),
+      status: json['status']?.toString(),
+      success: json['success'] is bool ? json['success'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'paymentId': paymentId,
+      'qrCodeImageUrl': qrCodeImageUrl,
+      'qrCodePayload': qrCodePayload,
+      'requestNo': requestNo,
+      'status': status,
+      'success': success,
+    };
+  }
+}
+
+class CommerceOrderAddressSnapshotRecord {
+  final String? addressLine1Encrypted;
+  final String? capturedAt;
+  final String? city;
+  final String? countryCode;
+  final String? district;
+  final String? orderId;
+  final String? organizationId;
+  final String? phoneMasked;
+  final String? postalCode;
+  final String? recipientNameSnapshot;
+  final String? regionCode;
+  final String? sourceAddressId;
+  final String? tenantId;
+
+  CommerceOrderAddressSnapshotRecord({
+    this.addressLine1Encrypted,
+    this.capturedAt,
+    this.city,
+    this.countryCode,
+    this.district,
+    this.orderId,
+    this.organizationId,
+    this.phoneMasked,
+    this.postalCode,
+    this.recipientNameSnapshot,
+    this.regionCode,
+    this.sourceAddressId,
+    this.tenantId
+  });
+
+  factory CommerceOrderAddressSnapshotRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceOrderAddressSnapshotRecord(
+      addressLine1Encrypted: json['address_line1_encrypted']?.toString(),
+      capturedAt: json['captured_at']?.toString(),
+      city: json['city']?.toString(),
+      countryCode: json['country_code']?.toString(),
+      district: json['district']?.toString(),
+      orderId: json['order_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      phoneMasked: json['phone_masked']?.toString(),
+      postalCode: json['postal_code']?.toString(),
+      recipientNameSnapshot: json['recipient_name_snapshot']?.toString(),
+      regionCode: json['region_code']?.toString(),
+      sourceAddressId: json['source_address_id']?.toString(),
+      tenantId: json['tenant_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'address_line1_encrypted': addressLine1Encrypted,
+      'captured_at': capturedAt,
+      'city': city,
+      'country_code': countryCode,
+      'district': district,
+      'order_id': orderId,
+      'organization_id': organizationId,
+      'phone_masked': phoneMasked,
+      'postal_code': postalCode,
+      'recipient_name_snapshot': recipientNameSnapshot,
+      'region_code': regionCode,
+      'source_address_id': sourceAddressId,
+      'tenant_id': tenantId,
+    };
+  }
+}
+
+class CommerceOrderAmountBreakdownRecord {
+  final String? createdAt;
+  final String? currencyCode;
+  final String? discountAmount;
+  final String? orderId;
+  final String? originalAmount;
+  final String? payableAmount;
+  final String? tenantId;
+
+  CommerceOrderAmountBreakdownRecord({
+    this.createdAt,
+    this.currencyCode,
+    this.discountAmount,
+    this.orderId,
+    this.originalAmount,
+    this.payableAmount,
+    this.tenantId
+  });
+
+  factory CommerceOrderAmountBreakdownRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceOrderAmountBreakdownRecord(
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      discountAmount: json['discount_amount']?.toString(),
+      orderId: json['order_id']?.toString(),
+      originalAmount: json['original_amount']?.toString(),
+      payableAmount: json['payable_amount']?.toString(),
+      tenantId: json['tenant_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'discount_amount': discountAmount,
+      'order_id': orderId,
+      'original_amount': originalAmount,
+      'payable_amount': payableAmount,
+      'tenant_id': tenantId,
+    };
+  }
+}
+
+class CommerceOrderCancellationRecord {
+  final String? approvedBy;
+  final String? cancellationNo;
+  final String? completedAt;
+  final String? createdAt;
+  final String? idempotencyKey;
+  final String? orderId;
+  final String? organizationId;
+  final String? reasonCode;
+  final String? reasonMessage;
+  final String? requestedBy;
+  final String? status;
+  final String? tenantId;
+
+  CommerceOrderCancellationRecord({
+    this.approvedBy,
+    this.cancellationNo,
+    this.completedAt,
+    this.createdAt,
+    this.idempotencyKey,
+    this.orderId,
+    this.organizationId,
+    this.reasonCode,
+    this.reasonMessage,
+    this.requestedBy,
+    this.status,
+    this.tenantId
+  });
+
+  factory CommerceOrderCancellationRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceOrderCancellationRecord(
+      approvedBy: json['approved_by']?.toString(),
+      cancellationNo: json['cancellation_no']?.toString(),
+      completedAt: json['completed_at']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      orderId: json['order_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      reasonCode: json['reason_code']?.toString(),
+      reasonMessage: json['reason_message']?.toString(),
+      requestedBy: json['requested_by']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'approved_by': approvedBy,
+      'cancellation_no': cancellationNo,
+      'completed_at': completedAt,
+      'created_at': createdAt,
+      'idempotency_key': idempotencyKey,
+      'order_id': orderId,
+      'organization_id': organizationId,
+      'reason_code': reasonCode,
+      'reason_message': reasonMessage,
+      'requested_by': requestedBy,
+      'status': status,
+      'tenant_id': tenantId,
+    };
+  }
+}
+
+class CommerceOrderEventRecord {
+  final String? actorId;
+  final String? actorType;
+  final String? createdAt;
+  final String? eventNo;
+  final String? eventType;
+  final String? fromStatus;
+  final String? idempotencyKey;
+  final String? message;
+  final String? orderId;
+  final String? organizationId;
+  final Map<String, dynamic>? payloadJson;
+  final String? reasonCode;
+  final String? requestId;
+  final String? tenantId;
+  final String? toStatus;
+
+  CommerceOrderEventRecord({
+    this.actorId,
+    this.actorType,
+    this.createdAt,
+    this.eventNo,
+    this.eventType,
+    this.fromStatus,
+    this.idempotencyKey,
+    this.message,
+    this.orderId,
+    this.organizationId,
+    this.payloadJson,
+    this.reasonCode,
+    this.requestId,
+    this.tenantId,
+    this.toStatus
+  });
+
+  factory CommerceOrderEventRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceOrderEventRecord(
+      actorId: json['actor_id']?.toString(),
+      actorType: json['actor_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      eventNo: json['event_no']?.toString(),
+      eventType: json['event_type']?.toString(),
+      fromStatus: json['from_status']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      message: json['message']?.toString(),
+      orderId: json['order_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      payloadJson: (() {
+        final map = _sdkworkAsMap(json['payload_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      reasonCode: json['reason_code']?.toString(),
+      requestId: json['request_id']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      toStatus: json['to_status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'actor_id': actorId,
+      'actor_type': actorType,
+      'created_at': createdAt,
+      'event_no': eventNo,
+      'event_type': eventType,
+      'from_status': fromStatus,
+      'idempotency_key': idempotencyKey,
+      'message': message,
+      'order_id': orderId,
+      'organization_id': organizationId,
+      'payload_json': payloadJson?.map((key, item) => MapEntry(key, item)),
+      'reason_code': reasonCode,
+      'request_id': requestId,
+      'tenant_id': tenantId,
+      'to_status': toStatus,
+    };
+  }
+}
+
+class CommerceOrderItemRecord {
+  final String? createdAt;
+  final String? orderId;
+  final String? quantity;
+  final String? skuId;
+  final String? tenantId;
+  final String? title;
+  final String? totalAmount;
+  final String? unitPriceAmount;
+
+  CommerceOrderItemRecord({
+    this.createdAt,
+    this.orderId,
+    this.quantity,
+    this.skuId,
+    this.tenantId,
+    this.title,
+    this.totalAmount,
+    this.unitPriceAmount
+  });
+
+  factory CommerceOrderItemRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceOrderItemRecord(
+      createdAt: json['created_at']?.toString(),
+      orderId: json['order_id']?.toString(),
+      quantity: json['quantity']?.toString(),
+      skuId: json['sku_id']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      title: json['title']?.toString(),
+      totalAmount: json['total_amount']?.toString(),
+      unitPriceAmount: json['unit_price_amount']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'order_id': orderId,
+      'quantity': quantity,
+      'sku_id': skuId,
+      'tenant_id': tenantId,
+      'title': title,
+      'total_amount': totalAmount,
+      'unit_price_amount': unitPriceAmount,
+    };
+  }
+}
+
+class CommerceOrderRecord {
+  final String? cancelledAt;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? expiredAt;
+  final String? idempotencyKey;
+  final String? orderNo;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? paidAt;
+  final String? requestNo;
+  final String? status;
+  final String? subject;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceOrderRecord({
+    this.cancelledAt,
+    this.createdAt,
+    this.currencyCode,
+    this.expiredAt,
+    this.idempotencyKey,
+    this.orderNo,
+    this.organizationId,
+    this.ownerUserId,
+    this.paidAt,
+    this.requestNo,
+    this.status,
+    this.subject,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceOrderRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceOrderRecord(
+      cancelledAt: json['cancelled_at']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      expiredAt: json['expired_at']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      orderNo: json['order_no']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      paidAt: json['paid_at']?.toString(),
+      requestNo: json['request_no']?.toString(),
+      status: json['status']?.toString(),
+      subject: json['subject']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'cancelled_at': cancelledAt,
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'expired_at': expiredAt,
+      'idempotency_key': idempotencyKey,
+      'order_no': orderNo,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'paid_at': paidAt,
+      'request_no': requestNo,
+      'status': status,
+      'subject': subject,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommercePaymentAttemptItem {
+  final String? amount;
+  final String? attemptNo;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? externalTradeNo;
+  final String? id;
+  final String? intentId;
+  final String? methodCode;
+  final String? paidAt;
+  final String? providerCode;
+  final String? status;
+  final String? updatedAt;
+
+  CommercePaymentAttemptItem({
+    this.amount,
+    this.attemptNo,
+    this.createdAt,
+    this.currencyCode,
+    this.externalTradeNo,
+    this.id,
+    this.intentId,
+    this.methodCode,
+    this.paidAt,
+    this.providerCode,
+    this.status,
+    this.updatedAt
+  });
+
+  factory CommercePaymentAttemptItem.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentAttemptItem(
+      amount: json['amount']?.toString(),
+      attemptNo: json['attemptNo']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      currencyCode: json['currencyCode']?.toString(),
+      externalTradeNo: json['externalTradeNo']?.toString(),
+      id: json['id']?.toString(),
+      intentId: json['intentId']?.toString(),
+      methodCode: json['methodCode']?.toString(),
+      paidAt: json['paidAt']?.toString(),
+      providerCode: json['providerCode']?.toString(),
+      status: json['status']?.toString(),
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'amount': amount,
+      'attemptNo': attemptNo,
+      'createdAt': createdAt,
+      'currencyCode': currencyCode,
+      'externalTradeNo': externalTradeNo,
+      'id': id,
+      'intentId': intentId,
+      'methodCode': methodCode,
+      'paidAt': paidAt,
+      'providerCode': providerCode,
+      'status': status,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class CommercePaymentAttemptListResponse {
+  final List<CommercePaymentAttemptItem>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  CommercePaymentAttemptListResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory CommercePaymentAttemptListResponse.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentAttemptListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommercePaymentAttemptItem.fromJson(map);
+      })())
+            .whereType<CommercePaymentAttemptItem>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommercePaymentAttemptRecord {
+  final String? amount;
+  final String? callbackPayload;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? orderId;
+  final String? organizationId;
+  final String? outTradeNo;
+  final String? ownerUserId;
+  final String? paidAt;
+  final String? paymentIntentId;
+  final String? provider;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommercePaymentAttemptRecord({
+    this.amount,
+    this.callbackPayload,
+    this.createdAt,
+    this.currencyCode,
+    this.orderId,
+    this.organizationId,
+    this.outTradeNo,
+    this.ownerUserId,
+    this.paidAt,
+    this.paymentIntentId,
+    this.provider,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommercePaymentAttemptRecord.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentAttemptRecord(
+      amount: json['amount']?.toString(),
+      callbackPayload: json['callback_payload']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      orderId: json['order_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      outTradeNo: json['out_trade_no']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      paidAt: json['paid_at']?.toString(),
+      paymentIntentId: json['payment_intent_id']?.toString(),
+      provider: json['provider']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'amount': amount,
+      'callback_payload': callbackPayload,
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'order_id': orderId,
+      'organization_id': organizationId,
+      'out_trade_no': outTradeNo,
+      'owner_user_id': ownerUserId,
+      'paid_at': paidAt,
+      'payment_intent_id': paymentIntentId,
+      'provider': provider,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommercePaymentChannelItem {
+  final String? channelNo;
+  final String? countryCode;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? id;
+  final String? methodCode;
+  final int? priority;
+  final String? providerAccountId;
+  final String? providerCode;
+  final String? sceneCode;
+  final String? status;
+  final String? updatedAt;
+
+  CommercePaymentChannelItem({
+    this.channelNo,
+    this.countryCode,
+    this.createdAt,
+    this.currencyCode,
+    this.id,
+    this.methodCode,
+    this.priority,
+    this.providerAccountId,
+    this.providerCode,
+    this.sceneCode,
+    this.status,
+    this.updatedAt
+  });
+
+  factory CommercePaymentChannelItem.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentChannelItem(
+      channelNo: json['channelNo']?.toString(),
+      countryCode: json['countryCode']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      currencyCode: json['currencyCode']?.toString(),
+      id: json['id']?.toString(),
+      methodCode: json['methodCode']?.toString(),
+      priority: json['priority'] is int ? json['priority'] : null,
+      providerAccountId: json['providerAccountId']?.toString(),
+      providerCode: json['providerCode']?.toString(),
+      sceneCode: json['sceneCode']?.toString(),
+      status: json['status']?.toString(),
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'channelNo': channelNo,
+      'countryCode': countryCode,
+      'createdAt': createdAt,
+      'currencyCode': currencyCode,
+      'id': id,
+      'methodCode': methodCode,
+      'priority': priority,
+      'providerAccountId': providerAccountId,
+      'providerCode': providerCode,
+      'sceneCode': sceneCode,
+      'status': status,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class CommercePaymentChannelListResponse {
+  final List<CommercePaymentChannelItem>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  CommercePaymentChannelListResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory CommercePaymentChannelListResponse.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentChannelListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommercePaymentChannelItem.fromJson(map);
+      })())
+            .whereType<CommercePaymentChannelItem>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommercePaymentChannelRecord {
+  final String? channelNo;
+  final String? countryCode;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? methodId;
+  final String? organizationId;
+  final String? providerAccountId;
+  final String? sceneCode;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommercePaymentChannelRecord({
+    this.channelNo,
+    this.countryCode,
+    this.createdAt,
+    this.currencyCode,
+    this.methodId,
+    this.organizationId,
+    this.providerAccountId,
+    this.sceneCode,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommercePaymentChannelRecord.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentChannelRecord(
+      channelNo: json['channel_no']?.toString(),
+      countryCode: json['country_code']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      methodId: json['method_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      providerAccountId: json['provider_account_id']?.toString(),
+      sceneCode: json['scene_code']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'channel_no': channelNo,
+      'country_code': countryCode,
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'method_id': methodId,
+      'organization_id': organizationId,
+      'provider_account_id': providerAccountId,
+      'scene_code': sceneCode,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommercePaymentIntentItem {
+  final String? amount;
+  final String? checkoutSessionId;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? id;
+  final String? intentNo;
+  final String? methodCode;
+  final String? orderId;
+  final String? providerCode;
+  final String? status;
+  final String? subjectType;
+  final String? updatedAt;
+
+  CommercePaymentIntentItem({
+    this.amount,
+    this.checkoutSessionId,
+    this.createdAt,
+    this.currencyCode,
+    this.id,
+    this.intentNo,
+    this.methodCode,
+    this.orderId,
+    this.providerCode,
+    this.status,
+    this.subjectType,
+    this.updatedAt
+  });
+
+  factory CommercePaymentIntentItem.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentIntentItem(
+      amount: json['amount']?.toString(),
+      checkoutSessionId: json['checkoutSessionId']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      currencyCode: json['currencyCode']?.toString(),
+      id: json['id']?.toString(),
+      intentNo: json['intentNo']?.toString(),
+      methodCode: json['methodCode']?.toString(),
+      orderId: json['orderId']?.toString(),
+      providerCode: json['providerCode']?.toString(),
+      status: json['status']?.toString(),
+      subjectType: json['subjectType']?.toString(),
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'amount': amount,
+      'checkoutSessionId': checkoutSessionId,
+      'createdAt': createdAt,
+      'currencyCode': currencyCode,
+      'id': id,
+      'intentNo': intentNo,
+      'methodCode': methodCode,
+      'orderId': orderId,
+      'providerCode': providerCode,
+      'status': status,
+      'subjectType': subjectType,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class CommercePaymentIntentListResponse {
+  final List<CommercePaymentIntentItem>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  CommercePaymentIntentListResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory CommercePaymentIntentListResponse.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentIntentListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommercePaymentIntentItem.fromJson(map);
+      })())
+            .whereType<CommercePaymentIntentItem>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommercePaymentIntentRecord {
+  final String? amount;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? idempotencyKey;
+  final String? orderId;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? provider;
+  final String? requestNo;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommercePaymentIntentRecord({
+    this.amount,
+    this.createdAt,
+    this.currencyCode,
+    this.idempotencyKey,
+    this.orderId,
+    this.organizationId,
+    this.ownerUserId,
+    this.provider,
+    this.requestNo,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommercePaymentIntentRecord.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentIntentRecord(
+      amount: json['amount']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      orderId: json['order_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      provider: json['provider']?.toString(),
+      requestNo: json['request_no']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'amount': amount,
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'idempotency_key': idempotencyKey,
+      'order_id': orderId,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'provider': provider,
+      'request_no': requestNo,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommercePaymentMethodItem {
+  final List<String>? checkoutScenes;
+  final String? createdAt;
+  final String? displayName;
+  final String? id;
+  final String? methodCode;
+  final String? methodType;
+  final String? providerCode;
+  final int? sortOrder;
+  final String? status;
+  final String? updatedAt;
+
+  CommercePaymentMethodItem({
+    this.checkoutScenes,
+    this.createdAt,
+    this.displayName,
+    this.id,
+    this.methodCode,
+    this.methodType,
+    this.providerCode,
+    this.sortOrder,
+    this.status,
+    this.updatedAt
+  });
+
+  factory CommercePaymentMethodItem.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentMethodItem(
+      checkoutScenes: (() {
+        final list = _sdkworkAsList(json['checkoutScenes']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      createdAt: json['createdAt']?.toString(),
+      displayName: json['displayName']?.toString(),
+      id: json['id']?.toString(),
+      methodCode: json['methodCode']?.toString(),
+      methodType: json['methodType']?.toString(),
+      providerCode: json['providerCode']?.toString(),
+      sortOrder: json['sortOrder'] is int ? json['sortOrder'] : null,
+      status: json['status']?.toString(),
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'checkoutScenes': checkoutScenes?.map((item) => item).toList(),
+      'createdAt': createdAt,
+      'displayName': displayName,
+      'id': id,
+      'methodCode': methodCode,
+      'methodType': methodType,
+      'providerCode': providerCode,
+      'sortOrder': sortOrder,
+      'status': status,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class CommercePaymentMethodListResponse {
+  final List<CommercePaymentMethodItem>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  CommercePaymentMethodListResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory CommercePaymentMethodListResponse.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentMethodListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommercePaymentMethodItem.fromJson(map);
+      })())
+            .whereType<CommercePaymentMethodItem>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommercePaymentMethodRecord {
+  final String? createdAt;
+  final String? displayName;
+  final String? idempotencyKey;
+  final String? methodKey;
+  final String? organizationId;
+  final String? provider;
+  final String? requestNo;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommercePaymentMethodRecord({
+    this.createdAt,
+    this.displayName,
+    this.idempotencyKey,
+    this.methodKey,
+    this.organizationId,
+    this.provider,
+    this.requestNo,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommercePaymentMethodRecord.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentMethodRecord(
+      createdAt: json['created_at']?.toString(),
+      displayName: json['display_name']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      methodKey: json['method_key']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      provider: json['provider']?.toString(),
+      requestNo: json['request_no']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'display_name': displayName,
+      'idempotency_key': idempotencyKey,
+      'method_key': methodKey,
+      'organization_id': organizationId,
+      'provider': provider,
+      'request_no': requestNo,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommercePaymentProviderAccountItem {
+  final String? accountNo;
+  final String? certificateRef;
+  final String? countryCode;
+  final String? createdAt;
+  final String? environment;
+  final String? id;
+  final String? merchantId;
+  final String? note;
+  final String? providerCode;
+  final String? rotatedAt;
+  final String? secretRef;
+  final String? settlementCurrency;
+  final String? status;
+  final String? updatedAt;
+  final String? webhookSecretRef;
+
+  CommercePaymentProviderAccountItem({
+    this.accountNo,
+    this.certificateRef,
+    this.countryCode,
+    this.createdAt,
+    this.environment,
+    this.id,
+    this.merchantId,
+    this.note,
+    this.providerCode,
+    this.rotatedAt,
+    this.secretRef,
+    this.settlementCurrency,
+    this.status,
+    this.updatedAt,
+    this.webhookSecretRef
+  });
+
+  factory CommercePaymentProviderAccountItem.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentProviderAccountItem(
+      accountNo: json['accountNo']?.toString(),
+      certificateRef: json['certificateRef']?.toString(),
+      countryCode: json['countryCode']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      environment: json['environment']?.toString(),
+      id: json['id']?.toString(),
+      merchantId: json['merchantId']?.toString(),
+      note: json['note']?.toString(),
+      providerCode: json['providerCode']?.toString(),
+      rotatedAt: json['rotatedAt']?.toString(),
+      secretRef: json['secretRef']?.toString(),
+      settlementCurrency: json['settlementCurrency']?.toString(),
+      status: json['status']?.toString(),
+      updatedAt: json['updatedAt']?.toString(),
+      webhookSecretRef: json['webhookSecretRef']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'accountNo': accountNo,
+      'certificateRef': certificateRef,
+      'countryCode': countryCode,
+      'createdAt': createdAt,
+      'environment': environment,
+      'id': id,
+      'merchantId': merchantId,
+      'note': note,
+      'providerCode': providerCode,
+      'rotatedAt': rotatedAt,
+      'secretRef': secretRef,
+      'settlementCurrency': settlementCurrency,
+      'status': status,
+      'updatedAt': updatedAt,
+      'webhookSecretRef': webhookSecretRef,
+    };
+  }
+}
+
+class CommercePaymentProviderAccountListResponse {
+  final List<CommercePaymentProviderAccountItem>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  CommercePaymentProviderAccountListResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory CommercePaymentProviderAccountListResponse.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentProviderAccountListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommercePaymentProviderAccountItem.fromJson(map);
+      })())
+            .whereType<CommercePaymentProviderAccountItem>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommercePaymentProviderAccountMutationRequest {
+  final String? accountNo;
+  final String? certificateRef;
+  final String? clientRequestNo;
+  final String? countryCode;
+  final String? environment;
+  final String? merchantId;
+  final String? note;
+  final String? providerCode;
+  final String? rotatedAt;
+  final String? secretRef;
+  final String? settlementCurrency;
+  final String? status;
+  final String? webhookSecretRef;
+
+  CommercePaymentProviderAccountMutationRequest({
+    this.accountNo,
+    this.certificateRef,
+    this.clientRequestNo,
+    this.countryCode,
+    this.environment,
+    this.merchantId,
+    this.note,
+    this.providerCode,
+    this.rotatedAt,
+    this.secretRef,
+    this.settlementCurrency,
+    this.status,
+    this.webhookSecretRef
+  });
+
+  factory CommercePaymentProviderAccountMutationRequest.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentProviderAccountMutationRequest(
+      accountNo: json['accountNo']?.toString(),
+      certificateRef: json['certificateRef']?.toString(),
+      clientRequestNo: json['clientRequestNo']?.toString(),
+      countryCode: json['countryCode']?.toString(),
+      environment: json['environment']?.toString(),
+      merchantId: json['merchantId']?.toString(),
+      note: json['note']?.toString(),
+      providerCode: json['providerCode']?.toString(),
+      rotatedAt: json['rotatedAt']?.toString(),
+      secretRef: json['secretRef']?.toString(),
+      settlementCurrency: json['settlementCurrency']?.toString(),
+      status: json['status']?.toString(),
+      webhookSecretRef: json['webhookSecretRef']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'accountNo': accountNo,
+      'certificateRef': certificateRef,
+      'clientRequestNo': clientRequestNo,
+      'countryCode': countryCode,
+      'environment': environment,
+      'merchantId': merchantId,
+      'note': note,
+      'providerCode': providerCode,
+      'rotatedAt': rotatedAt,
+      'secretRef': secretRef,
+      'settlementCurrency': settlementCurrency,
+      'status': status,
+      'webhookSecretRef': webhookSecretRef,
+    };
+  }
+}
+
+class CommercePaymentProviderAccountMutationResponse {
+  final CommercePaymentProviderAccountItem? item;
+
+  CommercePaymentProviderAccountMutationResponse({
+    this.item
+  });
+
+  factory CommercePaymentProviderAccountMutationResponse.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentProviderAccountMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : CommercePaymentProviderAccountItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class CommercePaymentProviderAccountRecord {
+  final String? accountNo;
+  final String? certificateRef;
+  final String? countryCode;
+  final String? createdAt;
+  final String? environment;
+  final String? merchantId;
+  final String? organizationId;
+  final String? providerCode;
+  final String? rotatedAt;
+  final String? secretRef;
+  final String? settlementCurrency;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? webhookSecretRef;
+
+  CommercePaymentProviderAccountRecord({
+    this.accountNo,
+    this.certificateRef,
+    this.countryCode,
+    this.createdAt,
+    this.environment,
+    this.merchantId,
+    this.organizationId,
+    this.providerCode,
+    this.rotatedAt,
+    this.secretRef,
+    this.settlementCurrency,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.webhookSecretRef
+  });
+
+  factory CommercePaymentProviderAccountRecord.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentProviderAccountRecord(
+      accountNo: json['account_no']?.toString(),
+      certificateRef: json['certificate_ref']?.toString(),
+      countryCode: json['country_code']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      environment: json['environment']?.toString(),
+      merchantId: json['merchant_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      providerCode: json['provider_code']?.toString(),
+      rotatedAt: json['rotated_at']?.toString(),
+      secretRef: json['secret_ref']?.toString(),
+      settlementCurrency: json['settlement_currency']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      webhookSecretRef: json['webhook_secret_ref']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'account_no': accountNo,
+      'certificate_ref': certificateRef,
+      'country_code': countryCode,
+      'created_at': createdAt,
+      'environment': environment,
+      'merchant_id': merchantId,
+      'organization_id': organizationId,
+      'provider_code': providerCode,
+      'rotated_at': rotatedAt,
+      'secret_ref': secretRef,
+      'settlement_currency': settlementCurrency,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'webhook_secret_ref': webhookSecretRef,
+    };
+  }
+}
+
+class CommercePaymentProviderItem {
+  final List<String>? capabilities;
+  final String? createdAt;
+  final String? displayName;
+  final String? id;
+  final String? providerCode;
+  final String? providerType;
+  final String? settlementType;
+  final String? status;
+  final List<String>? supportedCountries;
+  final List<String>? supportedCurrencies;
+  final String? updatedAt;
+
+  CommercePaymentProviderItem({
+    this.capabilities,
+    this.createdAt,
+    this.displayName,
+    this.id,
+    this.providerCode,
+    this.providerType,
+    this.settlementType,
+    this.status,
+    this.supportedCountries,
+    this.supportedCurrencies,
+    this.updatedAt
+  });
+
+  factory CommercePaymentProviderItem.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentProviderItem(
+      capabilities: (() {
+        final list = _sdkworkAsList(json['capabilities']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      createdAt: json['createdAt']?.toString(),
+      displayName: json['displayName']?.toString(),
+      id: json['id']?.toString(),
+      providerCode: json['providerCode']?.toString(),
+      providerType: json['providerType']?.toString(),
+      settlementType: json['settlementType']?.toString(),
+      status: json['status']?.toString(),
+      supportedCountries: (() {
+        final list = _sdkworkAsList(json['supportedCountries']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      supportedCurrencies: (() {
+        final list = _sdkworkAsList(json['supportedCurrencies']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'capabilities': capabilities?.map((item) => item).toList(),
+      'createdAt': createdAt,
+      'displayName': displayName,
+      'id': id,
+      'providerCode': providerCode,
+      'providerType': providerType,
+      'settlementType': settlementType,
+      'status': status,
+      'supportedCountries': supportedCountries?.map((item) => item).toList(),
+      'supportedCurrencies': supportedCurrencies?.map((item) => item).toList(),
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class CommercePaymentProviderListResponse {
+  final List<CommercePaymentProviderItem>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  CommercePaymentProviderListResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory CommercePaymentProviderListResponse.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentProviderListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommercePaymentProviderItem.fromJson(map);
+      })())
+            .whereType<CommercePaymentProviderItem>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommercePaymentProviderRecord {
+  final String? createdAt;
+  final String? displayName;
+  final String? organizationId;
+  final String? providerCode;
+  final String? providerType;
+  final String? status;
+  final Map<String, dynamic>? supportedCountries;
+  final Map<String, dynamic>? supportedCurrencies;
+  final Map<String, dynamic>? supportedMethods;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommercePaymentProviderRecord({
+    this.createdAt,
+    this.displayName,
+    this.organizationId,
+    this.providerCode,
+    this.providerType,
+    this.status,
+    this.supportedCountries,
+    this.supportedCurrencies,
+    this.supportedMethods,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommercePaymentProviderRecord.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentProviderRecord(
+      createdAt: json['created_at']?.toString(),
+      displayName: json['display_name']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      providerCode: json['provider_code']?.toString(),
+      providerType: json['provider_type']?.toString(),
+      status: json['status']?.toString(),
+      supportedCountries: (() {
+        final map = _sdkworkAsMap(json['supported_countries']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      supportedCurrencies: (() {
+        final map = _sdkworkAsMap(json['supported_currencies']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      supportedMethods: (() {
+        final map = _sdkworkAsMap(json['supported_methods']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'display_name': displayName,
+      'organization_id': organizationId,
+      'provider_code': providerCode,
+      'provider_type': providerType,
+      'status': status,
+      'supported_countries': supportedCountries?.map((key, item) => MapEntry(key, item)),
+      'supported_currencies': supportedCurrencies?.map((key, item) => MapEntry(key, item)),
+      'supported_methods': supportedMethods?.map((key, item) => MapEntry(key, item)),
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommercePaymentReconciliationRunItem {
+  final String? businessDate;
+  final String? createdAt;
+  final String? finishedAt;
+  final String? id;
+  final String? providerCode;
+  final String? runNo;
+  final String? status;
+
+  CommercePaymentReconciliationRunItem({
+    this.businessDate,
+    this.createdAt,
+    this.finishedAt,
+    this.id,
+    this.providerCode,
+    this.runNo,
+    this.status
+  });
+
+  factory CommercePaymentReconciliationRunItem.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentReconciliationRunItem(
+      businessDate: json['businessDate']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      finishedAt: json['finishedAt']?.toString(),
+      id: json['id']?.toString(),
+      providerCode: json['providerCode']?.toString(),
+      runNo: json['runNo']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'businessDate': businessDate,
+      'createdAt': createdAt,
+      'finishedAt': finishedAt,
+      'id': id,
+      'providerCode': providerCode,
+      'runNo': runNo,
+      'status': status,
+    };
+  }
+}
+
+class CommercePaymentReconciliationRunListResponse {
+  final List<CommercePaymentReconciliationRunItem>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  CommercePaymentReconciliationRunListResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory CommercePaymentReconciliationRunListResponse.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentReconciliationRunListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommercePaymentReconciliationRunItem.fromJson(map);
+      })())
+            .whereType<CommercePaymentReconciliationRunItem>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommercePaymentReconciliationRunRecord {
+  final String? completedAt;
+  final String? createdAt;
+  final String? differenceAmount;
+  final String? idempotencyKey;
+  final String? matchedCount;
+  final String? mismatchedCount;
+  final String? missingInternalCount;
+  final String? missingProviderCount;
+  final String? organizationId;
+  final String? periodEnd;
+  final String? periodStart;
+  final String? providerAccountId;
+  final String? providerCode;
+  final String? reportFileRef;
+  final String? requestNo;
+  final String? runNo;
+  final String? settlementCurrency;
+  final String? startedAt;
+  final String? status;
+  final String? tenantId;
+  final String? totalInternalAmount;
+  final String? totalProviderAmount;
+  final String? updatedAt;
+
+  CommercePaymentReconciliationRunRecord({
+    this.completedAt,
+    this.createdAt,
+    this.differenceAmount,
+    this.idempotencyKey,
+    this.matchedCount,
+    this.mismatchedCount,
+    this.missingInternalCount,
+    this.missingProviderCount,
+    this.organizationId,
+    this.periodEnd,
+    this.periodStart,
+    this.providerAccountId,
+    this.providerCode,
+    this.reportFileRef,
+    this.requestNo,
+    this.runNo,
+    this.settlementCurrency,
+    this.startedAt,
+    this.status,
+    this.tenantId,
+    this.totalInternalAmount,
+    this.totalProviderAmount,
+    this.updatedAt
+  });
+
+  factory CommercePaymentReconciliationRunRecord.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentReconciliationRunRecord(
+      completedAt: json['completed_at']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      differenceAmount: json['difference_amount']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      matchedCount: json['matched_count']?.toString(),
+      mismatchedCount: json['mismatched_count']?.toString(),
+      missingInternalCount: json['missing_internal_count']?.toString(),
+      missingProviderCount: json['missing_provider_count']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      periodEnd: json['period_end']?.toString(),
+      periodStart: json['period_start']?.toString(),
+      providerAccountId: json['provider_account_id']?.toString(),
+      providerCode: json['provider_code']?.toString(),
+      reportFileRef: json['report_file_ref']?.toString(),
+      requestNo: json['request_no']?.toString(),
+      runNo: json['run_no']?.toString(),
+      settlementCurrency: json['settlement_currency']?.toString(),
+      startedAt: json['started_at']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      totalInternalAmount: json['total_internal_amount']?.toString(),
+      totalProviderAmount: json['total_provider_amount']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'completed_at': completedAt,
+      'created_at': createdAt,
+      'difference_amount': differenceAmount,
+      'idempotency_key': idempotencyKey,
+      'matched_count': matchedCount,
+      'mismatched_count': mismatchedCount,
+      'missing_internal_count': missingInternalCount,
+      'missing_provider_count': missingProviderCount,
+      'organization_id': organizationId,
+      'period_end': periodEnd,
+      'period_start': periodStart,
+      'provider_account_id': providerAccountId,
+      'provider_code': providerCode,
+      'report_file_ref': reportFileRef,
+      'request_no': requestNo,
+      'run_no': runNo,
+      'settlement_currency': settlementCurrency,
+      'started_at': startedAt,
+      'status': status,
+      'tenant_id': tenantId,
+      'total_internal_amount': totalInternalAmount,
+      'total_provider_amount': totalProviderAmount,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommercePaymentRouteRuleItem {
+  final String? channelId;
+  final String? countryCode;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? fallbackChannelId;
+  final bool? fallbackEnabled;
+  final String? id;
+  final String? methodCode;
+  final int? priority;
+  final String? ruleNo;
+  final String? sceneCode;
+  final String? status;
+  final String? updatedAt;
+
+  CommercePaymentRouteRuleItem({
+    this.channelId,
+    this.countryCode,
+    this.createdAt,
+    this.currencyCode,
+    this.fallbackChannelId,
+    this.fallbackEnabled,
+    this.id,
+    this.methodCode,
+    this.priority,
+    this.ruleNo,
+    this.sceneCode,
+    this.status,
+    this.updatedAt
+  });
+
+  factory CommercePaymentRouteRuleItem.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentRouteRuleItem(
+      channelId: json['channelId']?.toString(),
+      countryCode: json['countryCode']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      currencyCode: json['currencyCode']?.toString(),
+      fallbackChannelId: json['fallbackChannelId']?.toString(),
+      fallbackEnabled: json['fallbackEnabled'] is bool ? json['fallbackEnabled'] : null,
+      id: json['id']?.toString(),
+      methodCode: json['methodCode']?.toString(),
+      priority: json['priority'] is int ? json['priority'] : null,
+      ruleNo: json['ruleNo']?.toString(),
+      sceneCode: json['sceneCode']?.toString(),
+      status: json['status']?.toString(),
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'channelId': channelId,
+      'countryCode': countryCode,
+      'createdAt': createdAt,
+      'currencyCode': currencyCode,
+      'fallbackChannelId': fallbackChannelId,
+      'fallbackEnabled': fallbackEnabled,
+      'id': id,
+      'methodCode': methodCode,
+      'priority': priority,
+      'ruleNo': ruleNo,
+      'sceneCode': sceneCode,
+      'status': status,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class CommercePaymentRouteRuleListResponse {
+  final List<CommercePaymentRouteRuleItem>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  CommercePaymentRouteRuleListResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory CommercePaymentRouteRuleListResponse.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentRouteRuleListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommercePaymentRouteRuleItem.fromJson(map);
+      })())
+            .whereType<CommercePaymentRouteRuleItem>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommercePaymentRouteRuleRecord {
+  final String? amountMax;
+  final String? amountMin;
+  final String? channelId;
+  final String? clientPlatform;
+  final String? countryCode;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? endsAt;
+  final String? organizationId;
+  final String? purchaseType;
+  final String? riskLevel;
+  final String? ruleNo;
+  final String? startsAt;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? userSegment;
+
+  CommercePaymentRouteRuleRecord({
+    this.amountMax,
+    this.amountMin,
+    this.channelId,
+    this.clientPlatform,
+    this.countryCode,
+    this.createdAt,
+    this.currencyCode,
+    this.endsAt,
+    this.organizationId,
+    this.purchaseType,
+    this.riskLevel,
+    this.ruleNo,
+    this.startsAt,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.userSegment
+  });
+
+  factory CommercePaymentRouteRuleRecord.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentRouteRuleRecord(
+      amountMax: json['amount_max']?.toString(),
+      amountMin: json['amount_min']?.toString(),
+      channelId: json['channel_id']?.toString(),
+      clientPlatform: json['client_platform']?.toString(),
+      countryCode: json['country_code']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      endsAt: json['ends_at']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      purchaseType: json['purchase_type']?.toString(),
+      riskLevel: json['risk_level']?.toString(),
+      ruleNo: json['rule_no']?.toString(),
+      startsAt: json['starts_at']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      userSegment: json['user_segment']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'amount_max': amountMax,
+      'amount_min': amountMin,
+      'channel_id': channelId,
+      'client_platform': clientPlatform,
+      'country_code': countryCode,
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'ends_at': endsAt,
+      'organization_id': organizationId,
+      'purchase_type': purchaseType,
+      'risk_level': riskLevel,
+      'rule_no': ruleNo,
+      'starts_at': startsAt,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'user_segment': userSegment,
+    };
+  }
+}
+
+class CommercePaymentWebhookEventItem {
+  final String? eventNo;
+  final String? eventType;
+  final String? externalEventId;
+  final String? id;
+  final String? processStatus;
+  final String? processedAt;
+  final String? providerCode;
+  final String? receivedAt;
+
+  CommercePaymentWebhookEventItem({
+    this.eventNo,
+    this.eventType,
+    this.externalEventId,
+    this.id,
+    this.processStatus,
+    this.processedAt,
+    this.providerCode,
+    this.receivedAt
+  });
+
+  factory CommercePaymentWebhookEventItem.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentWebhookEventItem(
+      eventNo: json['eventNo']?.toString(),
+      eventType: json['eventType']?.toString(),
+      externalEventId: json['externalEventId']?.toString(),
+      id: json['id']?.toString(),
+      processStatus: json['processStatus']?.toString(),
+      processedAt: json['processedAt']?.toString(),
+      providerCode: json['providerCode']?.toString(),
+      receivedAt: json['receivedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'eventNo': eventNo,
+      'eventType': eventType,
+      'externalEventId': externalEventId,
+      'id': id,
+      'processStatus': processStatus,
+      'processedAt': processedAt,
+      'providerCode': providerCode,
+      'receivedAt': receivedAt,
+    };
+  }
+}
+
+class CommercePaymentWebhookEventListResponse {
+  final List<CommercePaymentWebhookEventItem>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  CommercePaymentWebhookEventListResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory CommercePaymentWebhookEventListResponse.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentWebhookEventListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommercePaymentWebhookEventItem.fromJson(map);
+      })())
+            .whereType<CommercePaymentWebhookEventItem>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommercePaymentWebhookEventRecord {
+  final String? createdAt;
+  final String? eventId;
+  final String? idempotencyKey;
+  final String? message;
+  final String? nonce;
+  final String? organizationId;
+  final String? outTradeNo;
+  final String? payloadDigest;
+  final String? processedAt;
+  final String? provider;
+  final String? requestNo;
+  final String? requestTimestamp;
+  final String? signature;
+  final String? status;
+  final String? tenantId;
+  final String? transactionId;
+  final String? updatedAt;
+
+  CommercePaymentWebhookEventRecord({
+    this.createdAt,
+    this.eventId,
+    this.idempotencyKey,
+    this.message,
+    this.nonce,
+    this.organizationId,
+    this.outTradeNo,
+    this.payloadDigest,
+    this.processedAt,
+    this.provider,
+    this.requestNo,
+    this.requestTimestamp,
+    this.signature,
+    this.status,
+    this.tenantId,
+    this.transactionId,
+    this.updatedAt
+  });
+
+  factory CommercePaymentWebhookEventRecord.fromJson(Map<String, dynamic> json) {
+    return CommercePaymentWebhookEventRecord(
+      createdAt: json['created_at']?.toString(),
+      eventId: json['event_id']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      message: json['message']?.toString(),
+      nonce: json['nonce']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      outTradeNo: json['out_trade_no']?.toString(),
+      payloadDigest: json['payload_digest']?.toString(),
+      processedAt: json['processed_at']?.toString(),
+      provider: json['provider']?.toString(),
+      requestNo: json['request_no']?.toString(),
+      requestTimestamp: json['request_timestamp']?.toString(),
+      signature: json['signature']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      transactionId: json['transaction_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'event_id': eventId,
+      'idempotency_key': idempotencyKey,
+      'message': message,
+      'nonce': nonce,
+      'organization_id': organizationId,
+      'out_trade_no': outTradeNo,
+      'payload_digest': payloadDigest,
+      'processed_at': processedAt,
+      'provider': provider,
+      'request_no': requestNo,
+      'request_timestamp': requestTimestamp,
+      'signature': signature,
+      'status': status,
+      'tenant_id': tenantId,
+      'transaction_id': transactionId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommercePriceListItem {
+  final String? createdAt;
+  final String? currencyCode;
+  final String? customerSegment;
+  final String? endsAt;
+  final String? id;
+  final String? marketCode;
+  final String? priceListNo;
+  final String? startsAt;
+  final String? status;
+  final String? updatedAt;
+
+  CommercePriceListItem({
+    this.createdAt,
+    this.currencyCode,
+    this.customerSegment,
+    this.endsAt,
+    this.id,
+    this.marketCode,
+    this.priceListNo,
+    this.startsAt,
+    this.status,
+    this.updatedAt
+  });
+
+  factory CommercePriceListItem.fromJson(Map<String, dynamic> json) {
+    return CommercePriceListItem(
+      createdAt: json['createdAt']?.toString(),
+      currencyCode: json['currencyCode']?.toString(),
+      customerSegment: json['customerSegment']?.toString(),
+      endsAt: json['endsAt']?.toString(),
+      id: json['id']?.toString(),
+      marketCode: json['marketCode']?.toString(),
+      priceListNo: json['priceListNo']?.toString(),
+      startsAt: json['startsAt']?.toString(),
+      status: json['status']?.toString(),
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'createdAt': createdAt,
+      'currencyCode': currencyCode,
+      'customerSegment': customerSegment,
+      'endsAt': endsAt,
+      'id': id,
+      'marketCode': marketCode,
+      'priceListNo': priceListNo,
+      'startsAt': startsAt,
+      'status': status,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class CommercePriceListItemRecord {
+  final String? compareAtAmount;
+  final String? createdAt;
+  final String? maxQuantity;
+  final String? organizationId;
+  final String? priceAmount;
+  final String? priceListId;
+  final String? skuId;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommercePriceListItemRecord({
+    this.compareAtAmount,
+    this.createdAt,
+    this.maxQuantity,
+    this.organizationId,
+    this.priceAmount,
+    this.priceListId,
+    this.skuId,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommercePriceListItemRecord.fromJson(Map<String, dynamic> json) {
+    return CommercePriceListItemRecord(
+      compareAtAmount: json['compare_at_amount']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      maxQuantity: json['max_quantity']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      priceAmount: json['price_amount']?.toString(),
+      priceListId: json['price_list_id']?.toString(),
+      skuId: json['sku_id']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'compare_at_amount': compareAtAmount,
+      'created_at': createdAt,
+      'max_quantity': maxQuantity,
+      'organization_id': organizationId,
+      'price_amount': priceAmount,
+      'price_list_id': priceListId,
+      'sku_id': skuId,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommercePriceListMutationRequest {
+  final String? currencyCode;
+  final String? customerSegment;
+  final String? endsAt;
+  final String? marketCode;
+  final String? priceListNo;
+  final String? startsAt;
+  final String? status;
+
+  CommercePriceListMutationRequest({
+    this.currencyCode,
+    this.customerSegment,
+    this.endsAt,
+    this.marketCode,
+    this.priceListNo,
+    this.startsAt,
+    this.status
+  });
+
+  factory CommercePriceListMutationRequest.fromJson(Map<String, dynamic> json) {
+    return CommercePriceListMutationRequest(
+      currencyCode: json['currencyCode']?.toString(),
+      customerSegment: json['customerSegment']?.toString(),
+      endsAt: json['endsAt']?.toString(),
+      marketCode: json['marketCode']?.toString(),
+      priceListNo: json['priceListNo']?.toString(),
+      startsAt: json['startsAt']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'currencyCode': currencyCode,
+      'customerSegment': customerSegment,
+      'endsAt': endsAt,
+      'marketCode': marketCode,
+      'priceListNo': priceListNo,
+      'startsAt': startsAt,
+      'status': status,
+    };
+  }
+}
+
+class CommercePriceListMutationResponse {
+  final CommercePriceListItem? item;
+
+  CommercePriceListMutationResponse({
+    this.item
+  });
+
+  factory CommercePriceListMutationResponse.fromJson(Map<String, dynamic> json) {
+    return CommercePriceListMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : CommercePriceListItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class CommercePriceListRecord {
+  final String? createdAt;
+  final String? currencyCode;
+  final String? customerSegment;
+  final String? endsAt;
+  final String? marketCode;
+  final String? organizationId;
+  final String? priceListNo;
+  final String? startsAt;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommercePriceListRecord({
+    this.createdAt,
+    this.currencyCode,
+    this.customerSegment,
+    this.endsAt,
+    this.marketCode,
+    this.organizationId,
+    this.priceListNo,
+    this.startsAt,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommercePriceListRecord.fromJson(Map<String, dynamic> json) {
+    return CommercePriceListRecord(
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      customerSegment: json['customer_segment']?.toString(),
+      endsAt: json['ends_at']?.toString(),
+      marketCode: json['market_code']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      priceListNo: json['price_list_no']?.toString(),
+      startsAt: json['starts_at']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'customer_segment': customerSegment,
+      'ends_at': endsAt,
+      'market_code': marketCode,
+      'organization_id': organizationId,
+      'price_list_no': priceListNo,
+      'starts_at': startsAt,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommercePriceListResponse {
+  final List<CommercePriceListItem>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  CommercePriceListResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory CommercePriceListResponse.fromJson(Map<String, dynamic> json) {
+    return CommercePriceListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommercePriceListItem.fromJson(map);
+      })())
+            .whereType<CommercePriceListItem>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommerceProductAttributeItem {
+  final String? attributeNo;
+  final bool? filterable;
+  final String? id;
+  final String? name;
+  final bool? required_;
+  final String? scope;
+  final bool? searchable;
+  final String? status;
+  final String? valueType;
+
+  CommerceProductAttributeItem({
+    this.attributeNo,
+    this.filterable,
+    this.id,
+    this.name,
+    this.required_,
+    this.scope,
+    this.searchable,
+    this.status,
+    this.valueType
+  });
+
+  factory CommerceProductAttributeItem.fromJson(Map<String, dynamic> json) {
+    return CommerceProductAttributeItem(
+      attributeNo: json['attributeNo']?.toString(),
+      filterable: json['filterable'] is bool ? json['filterable'] : null,
+      id: json['id']?.toString(),
+      name: json['name']?.toString(),
+      required_: json['required'] is bool ? json['required'] : null,
+      scope: json['scope']?.toString(),
+      searchable: json['searchable'] is bool ? json['searchable'] : null,
+      status: json['status']?.toString(),
+      valueType: json['valueType']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'attributeNo': attributeNo,
+      'filterable': filterable,
+      'id': id,
+      'name': name,
+      'required': required_,
+      'scope': scope,
+      'searchable': searchable,
+      'status': status,
+      'valueType': valueType,
+    };
+  }
+}
+
+class CommerceProductAttributeListResponse {
+  final List<CommerceProductAttributeItem>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  CommerceProductAttributeListResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory CommerceProductAttributeListResponse.fromJson(Map<String, dynamic> json) {
+    return CommerceProductAttributeListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommerceProductAttributeItem.fromJson(map);
+      })())
+            .whereType<CommerceProductAttributeItem>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommerceProductAttributeMutationRequest {
+  final String? attributeNo;
+  final bool? filterable;
+  final String? name;
+  final bool? required_;
+  final String? scope;
+  final bool? searchable;
+  final String? status;
+  final String? valueType;
+
+  CommerceProductAttributeMutationRequest({
+    this.attributeNo,
+    this.filterable,
+    this.name,
+    this.required_,
+    this.scope,
+    this.searchable,
+    this.status,
+    this.valueType
+  });
+
+  factory CommerceProductAttributeMutationRequest.fromJson(Map<String, dynamic> json) {
+    return CommerceProductAttributeMutationRequest(
+      attributeNo: json['attributeNo']?.toString(),
+      filterable: json['filterable'] is bool ? json['filterable'] : null,
+      name: json['name']?.toString(),
+      required_: json['required'] is bool ? json['required'] : null,
+      scope: json['scope']?.toString(),
+      searchable: json['searchable'] is bool ? json['searchable'] : null,
+      status: json['status']?.toString(),
+      valueType: json['valueType']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'attributeNo': attributeNo,
+      'filterable': filterable,
+      'name': name,
+      'required': required_,
+      'scope': scope,
+      'searchable': searchable,
+      'status': status,
+      'valueType': valueType,
+    };
+  }
+}
+
+class CommerceProductAttributeMutationResponse {
+  final CommerceProductAttributeItem? item;
+
+  CommerceProductAttributeMutationResponse({
+    this.item
+  });
+
+  factory CommerceProductAttributeMutationResponse.fromJson(Map<String, dynamic> json) {
+    return CommerceProductAttributeMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : CommerceProductAttributeItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class CommerceProductAttributeRecord {
+  final String? attributeNo;
+  final String? createdAt;
+  final bool? filterable;
+  final String? name;
+  final String? organizationId;
+  final bool? required_;
+  final String? scope;
+  final bool? searchable;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? valueType;
+
+  CommerceProductAttributeRecord({
+    this.attributeNo,
+    this.createdAt,
+    this.filterable,
+    this.name,
+    this.organizationId,
+    this.required_,
+    this.scope,
+    this.searchable,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.valueType
+  });
+
+  factory CommerceProductAttributeRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceProductAttributeRecord(
+      attributeNo: json['attribute_no']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      filterable: json['filterable'] is bool ? json['filterable'] : null,
+      name: json['name']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      required_: json['required'] is bool ? json['required'] : null,
+      scope: json['scope']?.toString(),
+      searchable: json['searchable'] is bool ? json['searchable'] : null,
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      valueType: json['value_type']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'attribute_no': attributeNo,
+      'created_at': createdAt,
+      'filterable': filterable,
+      'name': name,
+      'organization_id': organizationId,
+      'required': required_,
+      'scope': scope,
+      'searchable': searchable,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'value_type': valueType,
+    };
+  }
+}
+
+class CommerceProductAttributeValueRecord {
+  final String? attributeId;
+  final String? createdAt;
+  final String? displayValue;
+  final String? organizationId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? valueCode;
+
+  CommerceProductAttributeValueRecord({
+    this.attributeId,
+    this.createdAt,
+    this.displayValue,
+    this.organizationId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.valueCode
+  });
+
+  factory CommerceProductAttributeValueRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceProductAttributeValueRecord(
+      attributeId: json['attribute_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      displayValue: json['display_value']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      valueCode: json['value_code']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'attribute_id': attributeId,
+      'created_at': createdAt,
+      'display_value': displayValue,
+      'organization_id': organizationId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'value_code': valueCode,
+    };
+  }
+}
+
+class CommerceProductCategoryItem {
+  final String? categoryNo;
+  final String? createdAt;
+  final String? id;
+  final int? levelNo;
+  final String? name;
+  final String? parentId;
+  final String? path;
+  final int? sortOrder;
+  final String? status;
+  final String? updatedAt;
+
+  CommerceProductCategoryItem({
+    this.categoryNo,
+    this.createdAt,
+    this.id,
+    this.levelNo,
+    this.name,
+    this.parentId,
+    this.path,
+    this.sortOrder,
+    this.status,
+    this.updatedAt
+  });
+
+  factory CommerceProductCategoryItem.fromJson(Map<String, dynamic> json) {
+    return CommerceProductCategoryItem(
+      categoryNo: json['categoryNo']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      id: json['id']?.toString(),
+      levelNo: json['levelNo'] is int ? json['levelNo'] : null,
+      name: json['name']?.toString(),
+      parentId: json['parentId']?.toString(),
+      path: json['path']?.toString(),
+      sortOrder: json['sortOrder'] is int ? json['sortOrder'] : null,
+      status: json['status']?.toString(),
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'categoryNo': categoryNo,
+      'createdAt': createdAt,
+      'id': id,
+      'levelNo': levelNo,
+      'name': name,
+      'parentId': parentId,
+      'path': path,
+      'sortOrder': sortOrder,
+      'status': status,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class CommerceProductCategoryListResponse {
+  final List<CommerceProductCategoryItem>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  CommerceProductCategoryListResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory CommerceProductCategoryListResponse.fromJson(Map<String, dynamic> json) {
+    return CommerceProductCategoryListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommerceProductCategoryItem.fromJson(map);
+      })())
+            .whereType<CommerceProductCategoryItem>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommerceProductCategoryMutationRequest {
+  final String? categoryNo;
+  final String? name;
+  final String? parentId;
+  final int? sortOrder;
+  final String? status;
+
+  CommerceProductCategoryMutationRequest({
+    this.categoryNo,
+    this.name,
+    this.parentId,
+    this.sortOrder,
+    this.status
+  });
+
+  factory CommerceProductCategoryMutationRequest.fromJson(Map<String, dynamic> json) {
+    return CommerceProductCategoryMutationRequest(
+      categoryNo: json['categoryNo']?.toString(),
+      name: json['name']?.toString(),
+      parentId: json['parentId']?.toString(),
+      sortOrder: json['sortOrder'] is int ? json['sortOrder'] : null,
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'categoryNo': categoryNo,
+      'name': name,
+      'parentId': parentId,
+      'sortOrder': sortOrder,
+      'status': status,
+    };
+  }
+}
+
+class CommerceProductCategoryMutationResponse {
+  final CommerceProductCategoryItem? item;
+
+  CommerceProductCategoryMutationResponse({
+    this.item
+  });
+
+  factory CommerceProductCategoryMutationResponse.fromJson(Map<String, dynamic> json) {
+    return CommerceProductCategoryMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : CommerceProductCategoryItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class CommerceProductCategoryRecord {
+  final String? categoryNo;
+  final String? createdAt;
+  final String? description;
+  final String? iconUrl;
+  final int? levelNo;
+  final String? name;
+  final String? organizationId;
+  final String? parentId;
+  final String? path;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceProductCategoryRecord({
+    this.categoryNo,
+    this.createdAt,
+    this.description,
+    this.iconUrl,
+    this.levelNo,
+    this.name,
+    this.organizationId,
+    this.parentId,
+    this.path,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceProductCategoryRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceProductCategoryRecord(
+      categoryNo: json['category_no']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      description: json['description']?.toString(),
+      iconUrl: json['icon_url']?.toString(),
+      levelNo: json['level_no'] is int ? json['level_no'] : null,
+      name: json['name']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      parentId: json['parent_id']?.toString(),
+      path: json['path']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'category_no': categoryNo,
+      'created_at': createdAt,
+      'description': description,
+      'icon_url': iconUrl,
+      'level_no': levelNo,
+      'name': name,
+      'organization_id': organizationId,
+      'parent_id': parentId,
+      'path': path,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceProductMediaItem {
+  final String? altText;
+  final String? id;
+  final String? mediaType;
+  final String? ownerId;
+  final String? ownerType;
+  final int? sortOrder;
+  final String? status;
+  final String? url;
+
+  CommerceProductMediaItem({
+    this.altText,
+    this.id,
+    this.mediaType,
+    this.ownerId,
+    this.ownerType,
+    this.sortOrder,
+    this.status,
+    this.url
+  });
+
+  factory CommerceProductMediaItem.fromJson(Map<String, dynamic> json) {
+    return CommerceProductMediaItem(
+      altText: json['altText']?.toString(),
+      id: json['id']?.toString(),
+      mediaType: json['mediaType']?.toString(),
+      ownerId: json['ownerId']?.toString(),
+      ownerType: json['ownerType']?.toString(),
+      sortOrder: json['sortOrder'] is int ? json['sortOrder'] : null,
+      status: json['status']?.toString(),
+      url: json['url']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'altText': altText,
+      'id': id,
+      'mediaType': mediaType,
+      'ownerId': ownerId,
+      'ownerType': ownerType,
+      'sortOrder': sortOrder,
+      'status': status,
+      'url': url,
+    };
+  }
+}
+
+class CommerceProductMediaRecord {
+  final String? altText;
+  final String? createdAt;
+  final String? mediaType;
+  final String? organizationId;
+  final String? ownerId;
+  final String? ownerType;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? url;
+
+  CommerceProductMediaRecord({
+    this.altText,
+    this.createdAt,
+    this.mediaType,
+    this.organizationId,
+    this.ownerId,
+    this.ownerType,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.url
+  });
+
+  factory CommerceProductMediaRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceProductMediaRecord(
+      altText: json['alt_text']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      mediaType: json['media_type']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerId: json['owner_id']?.toString(),
+      ownerType: json['owner_type']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      url: json['url']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'alt_text': altText,
+      'created_at': createdAt,
+      'media_type': mediaType,
+      'organization_id': organizationId,
+      'owner_id': ownerId,
+      'owner_type': ownerType,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'url': url,
+    };
+  }
+}
+
+class CommerceProductSkuAttributeItem {
+  final String? attributeId;
+  final String? attributeName;
+  final String? attributeValueId;
+  final String? customValue;
+  final String? displayValue;
+  final String? valueCode;
+
+  CommerceProductSkuAttributeItem({
+    this.attributeId,
+    this.attributeName,
+    this.attributeValueId,
+    this.customValue,
+    this.displayValue,
+    this.valueCode
+  });
+
+  factory CommerceProductSkuAttributeItem.fromJson(Map<String, dynamic> json) {
+    return CommerceProductSkuAttributeItem(
+      attributeId: json['attributeId']?.toString(),
+      attributeName: json['attributeName']?.toString(),
+      attributeValueId: json['attributeValueId']?.toString(),
+      customValue: json['customValue']?.toString(),
+      displayValue: json['displayValue']?.toString(),
+      valueCode: json['valueCode']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'attributeId': attributeId,
+      'attributeName': attributeName,
+      'attributeValueId': attributeValueId,
+      'customValue': customValue,
+      'displayValue': displayValue,
+      'valueCode': valueCode,
+    };
+  }
+}
+
+class CommerceProductSkuAttributeRecord {
+  final String? attributeId;
+  final String? attributeValueId;
+  final String? createdAt;
+  final String? customValue;
+  final String? organizationId;
+  final String? skuId;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceProductSkuAttributeRecord({
+    this.attributeId,
+    this.attributeValueId,
+    this.createdAt,
+    this.customValue,
+    this.organizationId,
+    this.skuId,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceProductSkuAttributeRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceProductSkuAttributeRecord(
+      attributeId: json['attribute_id']?.toString(),
+      attributeValueId: json['attribute_value_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      customValue: json['custom_value']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      skuId: json['sku_id']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'attribute_id': attributeId,
+      'attribute_value_id': attributeValueId,
+      'created_at': createdAt,
+      'custom_value': customValue,
+      'organization_id': organizationId,
+      'sku_id': skuId,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceProductSkuItem {
+  final List<CommerceProductSkuAttributeItem>? attributes;
+  final String? createdAt;
+  final String? defaultCurrencyCode;
+  final String? defaultPriceAmount;
+  final String? fulfillmentType;
+  final String? id;
+  final String? productId;
+  final String? publishedAt;
+  final String? salesUnit;
+  final String? skuNo;
+  final String? status;
+  final String? taxCategory;
+  final String? title;
+  final String? updatedAt;
+
+  CommerceProductSkuItem({
+    this.attributes,
+    this.createdAt,
+    this.defaultCurrencyCode,
+    this.defaultPriceAmount,
+    this.fulfillmentType,
+    this.id,
+    this.productId,
+    this.publishedAt,
+    this.salesUnit,
+    this.skuNo,
+    this.status,
+    this.taxCategory,
+    this.title,
+    this.updatedAt
+  });
+
+  factory CommerceProductSkuItem.fromJson(Map<String, dynamic> json) {
+    return CommerceProductSkuItem(
+      attributes: (() {
+        final list = _sdkworkAsList(json['attributes']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommerceProductSkuAttributeItem.fromJson(map);
+      })())
+            .whereType<CommerceProductSkuAttributeItem>()
+            .toList();
+      })(),
+      createdAt: json['createdAt']?.toString(),
+      defaultCurrencyCode: json['defaultCurrencyCode']?.toString(),
+      defaultPriceAmount: json['defaultPriceAmount']?.toString(),
+      fulfillmentType: json['fulfillmentType']?.toString(),
+      id: json['id']?.toString(),
+      productId: json['productId']?.toString(),
+      publishedAt: json['publishedAt']?.toString(),
+      salesUnit: json['salesUnit']?.toString(),
+      skuNo: json['skuNo']?.toString(),
+      status: json['status']?.toString(),
+      taxCategory: json['taxCategory']?.toString(),
+      title: json['title']?.toString(),
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'attributes': attributes?.map((item) => item.toJson()).toList(),
+      'createdAt': createdAt,
+      'defaultCurrencyCode': defaultCurrencyCode,
+      'defaultPriceAmount': defaultPriceAmount,
+      'fulfillmentType': fulfillmentType,
+      'id': id,
+      'productId': productId,
+      'publishedAt': publishedAt,
+      'salesUnit': salesUnit,
+      'skuNo': skuNo,
+      'status': status,
+      'taxCategory': taxCategory,
+      'title': title,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class CommerceProductSkuListResponse {
+  final List<CommerceProductSkuItem>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  CommerceProductSkuListResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory CommerceProductSkuListResponse.fromJson(Map<String, dynamic> json) {
+    return CommerceProductSkuListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommerceProductSkuItem.fromJson(map);
+      })())
+            .whereType<CommerceProductSkuItem>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommerceProductSkuMutationRequest {
+  final List<CommerceProductSkuAttributeItem>? attributes;
+  final String? defaultCurrencyCode;
+  final String? defaultPriceAmount;
+  final String? fulfillmentType;
+  final String? productId;
+  final String? salesUnit;
+  final String? skuNo;
+  final String? status;
+  final String? taxCategory;
+  final String? title;
+
+  CommerceProductSkuMutationRequest({
+    this.attributes,
+    this.defaultCurrencyCode,
+    this.defaultPriceAmount,
+    this.fulfillmentType,
+    this.productId,
+    this.salesUnit,
+    this.skuNo,
+    this.status,
+    this.taxCategory,
+    this.title
+  });
+
+  factory CommerceProductSkuMutationRequest.fromJson(Map<String, dynamic> json) {
+    return CommerceProductSkuMutationRequest(
+      attributes: (() {
+        final list = _sdkworkAsList(json['attributes']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommerceProductSkuAttributeItem.fromJson(map);
+      })())
+            .whereType<CommerceProductSkuAttributeItem>()
+            .toList();
+      })(),
+      defaultCurrencyCode: json['defaultCurrencyCode']?.toString(),
+      defaultPriceAmount: json['defaultPriceAmount']?.toString(),
+      fulfillmentType: json['fulfillmentType']?.toString(),
+      productId: json['productId']?.toString(),
+      salesUnit: json['salesUnit']?.toString(),
+      skuNo: json['skuNo']?.toString(),
+      status: json['status']?.toString(),
+      taxCategory: json['taxCategory']?.toString(),
+      title: json['title']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'attributes': attributes?.map((item) => item.toJson()).toList(),
+      'defaultCurrencyCode': defaultCurrencyCode,
+      'defaultPriceAmount': defaultPriceAmount,
+      'fulfillmentType': fulfillmentType,
+      'productId': productId,
+      'salesUnit': salesUnit,
+      'skuNo': skuNo,
+      'status': status,
+      'taxCategory': taxCategory,
+      'title': title,
+    };
+  }
+}
+
+class CommerceProductSkuMutationResponse {
+  final CommerceProductSkuItem? item;
+
+  CommerceProductSkuMutationResponse({
+    this.item
+  });
+
+  factory CommerceProductSkuMutationResponse.fromJson(Map<String, dynamic> json) {
+    return CommerceProductSkuMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : CommerceProductSkuItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class CommerceProductSkuRecord {
+  final String? createdAt;
+  final String? defaultCurrencyCode;
+  final String? defaultPriceAmount;
+  final String? fulfillmentType;
+  final String? organizationId;
+  final String? publishedAt;
+  final String? salesUnit;
+  final String? skuNo;
+  final String? spuId;
+  final String? status;
+  final String? taxCategory;
+  final String? tenantId;
+  final String? title;
+  final String? updatedAt;
+
+  CommerceProductSkuRecord({
+    this.createdAt,
+    this.defaultCurrencyCode,
+    this.defaultPriceAmount,
+    this.fulfillmentType,
+    this.organizationId,
+    this.publishedAt,
+    this.salesUnit,
+    this.skuNo,
+    this.spuId,
+    this.status,
+    this.taxCategory,
+    this.tenantId,
+    this.title,
+    this.updatedAt
+  });
+
+  factory CommerceProductSkuRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceProductSkuRecord(
+      createdAt: json['created_at']?.toString(),
+      defaultCurrencyCode: json['default_currency_code']?.toString(),
+      defaultPriceAmount: json['default_price_amount']?.toString(),
+      fulfillmentType: json['fulfillment_type']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      publishedAt: json['published_at']?.toString(),
+      salesUnit: json['sales_unit']?.toString(),
+      skuNo: json['sku_no']?.toString(),
+      spuId: json['spu_id']?.toString(),
+      status: json['status']?.toString(),
+      taxCategory: json['tax_category']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      title: json['title']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'default_currency_code': defaultCurrencyCode,
+      'default_price_amount': defaultPriceAmount,
+      'fulfillment_type': fulfillmentType,
+      'organization_id': organizationId,
+      'published_at': publishedAt,
+      'sales_unit': salesUnit,
+      'sku_no': skuNo,
+      'spu_id': spuId,
+      'status': status,
+      'tax_category': taxCategory,
+      'tenant_id': tenantId,
+      'title': title,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceProductSpuItem {
+  final String? brand;
+  final String? categoryId;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? defaultSkuId;
+  final String? description;
+  final String? id;
+  final List<CommerceProductMediaItem>? media;
+  final String? minPriceAmount;
+  final String? productType;
+  final String? publishedAt;
+  final String? spuNo;
+  final String? status;
+  final String? subtitle;
+  final String? title;
+  final String? updatedAt;
+
+  CommerceProductSpuItem({
+    this.brand,
+    this.categoryId,
+    this.createdAt,
+    this.currencyCode,
+    this.defaultSkuId,
+    this.description,
+    this.id,
+    this.media,
+    this.minPriceAmount,
+    this.productType,
+    this.publishedAt,
+    this.spuNo,
+    this.status,
+    this.subtitle,
+    this.title,
+    this.updatedAt
+  });
+
+  factory CommerceProductSpuItem.fromJson(Map<String, dynamic> json) {
+    return CommerceProductSpuItem(
+      brand: json['brand']?.toString(),
+      categoryId: json['categoryId']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      currencyCode: json['currencyCode']?.toString(),
+      defaultSkuId: json['defaultSkuId']?.toString(),
+      description: json['description']?.toString(),
+      id: json['id']?.toString(),
+      media: (() {
+        final list = _sdkworkAsList(json['media']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommerceProductMediaItem.fromJson(map);
+      })())
+            .whereType<CommerceProductMediaItem>()
+            .toList();
+      })(),
+      minPriceAmount: json['minPriceAmount']?.toString(),
+      productType: json['productType']?.toString(),
+      publishedAt: json['publishedAt']?.toString(),
+      spuNo: json['spuNo']?.toString(),
+      status: json['status']?.toString(),
+      subtitle: json['subtitle']?.toString(),
+      title: json['title']?.toString(),
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'brand': brand,
+      'categoryId': categoryId,
+      'createdAt': createdAt,
+      'currencyCode': currencyCode,
+      'defaultSkuId': defaultSkuId,
+      'description': description,
+      'id': id,
+      'media': media?.map((item) => item.toJson()).toList(),
+      'minPriceAmount': minPriceAmount,
+      'productType': productType,
+      'publishedAt': publishedAt,
+      'spuNo': spuNo,
+      'status': status,
+      'subtitle': subtitle,
+      'title': title,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class CommerceProductSpuListResponse {
+  final List<CommerceProductSpuItem>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
+
+  CommerceProductSpuListResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
+  });
+
+  factory CommerceProductSpuListResponse.fromJson(Map<String, dynamic> json) {
+    return CommerceProductSpuListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommerceProductSpuItem.fromJson(map);
+      })())
+            .whereType<CommerceProductSpuItem>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommerceProductSpuMutationRequest {
+  final String? brand;
+  final String? categoryId;
+  final String? description;
+  final String? productType;
+  final String? spuNo;
+  final String? status;
+  final String? subtitle;
+  final String? title;
+
+  CommerceProductSpuMutationRequest({
+    this.brand,
+    this.categoryId,
+    this.description,
+    this.productType,
+    this.spuNo,
+    this.status,
+    this.subtitle,
+    this.title
+  });
+
+  factory CommerceProductSpuMutationRequest.fromJson(Map<String, dynamic> json) {
+    return CommerceProductSpuMutationRequest(
+      brand: json['brand']?.toString(),
+      categoryId: json['categoryId']?.toString(),
+      description: json['description']?.toString(),
+      productType: json['productType']?.toString(),
+      spuNo: json['spuNo']?.toString(),
+      status: json['status']?.toString(),
+      subtitle: json['subtitle']?.toString(),
+      title: json['title']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'brand': brand,
+      'categoryId': categoryId,
+      'description': description,
+      'productType': productType,
+      'spuNo': spuNo,
+      'status': status,
+      'subtitle': subtitle,
+      'title': title,
+    };
+  }
+}
+
+class CommerceProductSpuMutationResponse {
+  final CommerceProductSpuItem? item;
+
+  CommerceProductSpuMutationResponse({
+    this.item
+  });
+
+  factory CommerceProductSpuMutationResponse.fromJson(Map<String, dynamic> json) {
+    return CommerceProductSpuMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : CommerceProductSpuItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class CommerceProductSpuRecord {
+  final String? brand;
+  final String? categoryId;
+  final String? createdAt;
+  final String? description;
+  final String? organizationId;
+  final String? productType;
+  final String? publishedAt;
+  final String? spuNo;
+  final String? status;
+  final String? subtitle;
+  final String? tenantId;
+  final String? title;
+  final String? updatedAt;
+
+  CommerceProductSpuRecord({
+    this.brand,
+    this.categoryId,
+    this.createdAt,
+    this.description,
+    this.organizationId,
+    this.productType,
+    this.publishedAt,
+    this.spuNo,
+    this.status,
+    this.subtitle,
+    this.tenantId,
+    this.title,
+    this.updatedAt
+  });
+
+  factory CommerceProductSpuRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceProductSpuRecord(
+      brand: json['brand']?.toString(),
+      categoryId: json['category_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      description: json['description']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      productType: json['product_type']?.toString(),
+      publishedAt: json['published_at']?.toString(),
+      spuNo: json['spu_no']?.toString(),
+      status: json['status']?.toString(),
+      subtitle: json['subtitle']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      title: json['title']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'brand': brand,
+      'category_id': categoryId,
+      'created_at': createdAt,
+      'description': description,
+      'organization_id': organizationId,
+      'product_type': productType,
+      'published_at': publishedAt,
+      'spu_no': spuNo,
+      'status': status,
+      'subtitle': subtitle,
+      'tenant_id': tenantId,
+      'title': title,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceRechargePackageMutationRequest {
+  final int? bonus;
+  final String? rmb;
+  final String? status;
+
+  CommerceRechargePackageMutationRequest({
+    this.bonus,
+    this.rmb,
+    this.status
+  });
+
+  factory CommerceRechargePackageMutationRequest.fromJson(Map<String, dynamic> json) {
+    return CommerceRechargePackageMutationRequest(
+      bonus: json['bonus'] is int ? json['bonus'] : null,
+      rmb: json['rmb']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bonus': bonus,
+      'rmb': rmb,
+      'status': status,
+    };
+  }
+}
+
+class CommerceRechargePackageRecord {
+  final String? createdAt;
+  final String? currencyCode;
+  final String? externalId;
+  final String? idempotencyKey;
+  final String? name;
+  final String? organizationId;
+  final String? packageNo;
+  final String? priceAmount;
+  final String? requestNo;
+  final String? skuId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? validFrom;
+  final String? validTo;
+
+  CommerceRechargePackageRecord({
+    this.createdAt,
+    this.currencyCode,
+    this.externalId,
+    this.idempotencyKey,
+    this.name,
+    this.organizationId,
+    this.packageNo,
+    this.priceAmount,
+    this.requestNo,
+    this.skuId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.validFrom,
+    this.validTo
+  });
+
+  factory CommerceRechargePackageRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceRechargePackageRecord(
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      externalId: json['external_id']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      name: json['name']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      packageNo: json['package_no']?.toString(),
+      priceAmount: json['price_amount']?.toString(),
+      requestNo: json['request_no']?.toString(),
+      skuId: json['sku_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      validFrom: json['valid_from']?.toString(),
+      validTo: json['valid_to']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'external_id': externalId,
+      'idempotency_key': idempotencyKey,
+      'name': name,
+      'organization_id': organizationId,
+      'package_no': packageNo,
+      'price_amount': priceAmount,
+      'request_no': requestNo,
+      'sku_id': skuId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'valid_from': validFrom,
+      'valid_to': validTo,
+    };
+  }
+}
+
+class CommerceRefundAttemptRecord {
+  final String? amount;
+  final String? createdAt;
+  final String? currencyCode;
+  final String? failedAt;
+  final String? failureCode;
+  final String? failureMessage;
+  final String? organizationId;
+  final String? outRefundNo;
+  final String? providerAccountId;
+  final String? providerCode;
+  final String? providerRefundId;
+  final String? refundAttemptNo;
+  final String? refundId;
+  final String? status;
+  final String? submittedAt;
+  final String? succeededAt;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceRefundAttemptRecord({
+    this.amount,
+    this.createdAt,
+    this.currencyCode,
+    this.failedAt,
+    this.failureCode,
+    this.failureMessage,
+    this.organizationId,
+    this.outRefundNo,
+    this.providerAccountId,
+    this.providerCode,
+    this.providerRefundId,
+    this.refundAttemptNo,
+    this.refundId,
+    this.status,
+    this.submittedAt,
+    this.succeededAt,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceRefundAttemptRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceRefundAttemptRecord(
+      amount: json['amount']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      currencyCode: json['currency_code']?.toString(),
+      failedAt: json['failed_at']?.toString(),
+      failureCode: json['failure_code']?.toString(),
+      failureMessage: json['failure_message']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      outRefundNo: json['out_refund_no']?.toString(),
+      providerAccountId: json['provider_account_id']?.toString(),
+      providerCode: json['provider_code']?.toString(),
+      providerRefundId: json['provider_refund_id']?.toString(),
+      refundAttemptNo: json['refund_attempt_no']?.toString(),
+      refundId: json['refund_id']?.toString(),
+      status: json['status']?.toString(),
+      submittedAt: json['submitted_at']?.toString(),
+      succeededAt: json['succeeded_at']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'amount': amount,
+      'created_at': createdAt,
+      'currency_code': currencyCode,
+      'failed_at': failedAt,
+      'failure_code': failureCode,
+      'failure_message': failureMessage,
+      'organization_id': organizationId,
+      'out_refund_no': outRefundNo,
+      'provider_account_id': providerAccountId,
+      'provider_code': providerCode,
+      'provider_refund_id': providerRefundId,
+      'refund_attempt_no': refundAttemptNo,
+      'refund_id': refundId,
+      'status': status,
+      'submitted_at': submittedAt,
+      'succeeded_at': succeededAt,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceRefundEventRecord {
+  final String? actorId;
+  final String? actorType;
+  final String? createdAt;
+  final String? eventNo;
+  final String? eventType;
+  final String? fromStatus;
+  final String? idempotencyKey;
+  final String? message;
+  final String? organizationId;
+  final Map<String, dynamic>? payloadJson;
+  final String? reasonCode;
+  final String? refundId;
+  final String? requestId;
+  final String? tenantId;
+  final String? toStatus;
+
+  CommerceRefundEventRecord({
+    this.actorId,
+    this.actorType,
+    this.createdAt,
+    this.eventNo,
+    this.eventType,
+    this.fromStatus,
+    this.idempotencyKey,
+    this.message,
+    this.organizationId,
+    this.payloadJson,
+    this.reasonCode,
+    this.refundId,
+    this.requestId,
+    this.tenantId,
+    this.toStatus
+  });
+
+  factory CommerceRefundEventRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceRefundEventRecord(
+      actorId: json['actor_id']?.toString(),
+      actorType: json['actor_type']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      eventNo: json['event_no']?.toString(),
+      eventType: json['event_type']?.toString(),
+      fromStatus: json['from_status']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      message: json['message']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      payloadJson: (() {
+        final map = _sdkworkAsMap(json['payload_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      reasonCode: json['reason_code']?.toString(),
+      refundId: json['refund_id']?.toString(),
+      requestId: json['request_id']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      toStatus: json['to_status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'actor_id': actorId,
+      'actor_type': actorType,
+      'created_at': createdAt,
+      'event_no': eventNo,
+      'event_type': eventType,
+      'from_status': fromStatus,
+      'idempotency_key': idempotencyKey,
+      'message': message,
+      'organization_id': organizationId,
+      'payload_json': payloadJson?.map((key, item) => MapEntry(key, item)),
+      'reason_code': reasonCode,
+      'refund_id': refundId,
+      'request_id': requestId,
+      'tenant_id': tenantId,
+      'to_status': toStatus,
+    };
+  }
+}
+
+class CommerceRefundItemRecord {
+  final String? createdAt;
+  final String? orderItemId;
+  final String? organizationId;
+  final String? refundAmount;
+  final String? refundId;
+  final String? tenantId;
+
+  CommerceRefundItemRecord({
+    this.createdAt,
+    this.orderItemId,
+    this.organizationId,
+    this.refundAmount,
+    this.refundId,
+    this.tenantId
+  });
+
+  factory CommerceRefundItemRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceRefundItemRecord(
+      createdAt: json['created_at']?.toString(),
+      orderItemId: json['order_item_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      refundAmount: json['refund_amount']?.toString(),
+      refundId: json['refund_id']?.toString(),
+      tenantId: json['tenant_id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'order_item_id': orderItemId,
+      'organization_id': organizationId,
+      'refund_amount': refundAmount,
+      'refund_id': refundId,
+      'tenant_id': tenantId,
+    };
+  }
+}
+
+class CommerceRefundRecord {
+  final String? amount;
+  final String? createdAt;
+  final String? idempotencyKey;
+  final String? paymentAttemptId;
+  final String? refundNo;
+  final String? requestNo;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceRefundRecord({
+    this.amount,
+    this.createdAt,
+    this.idempotencyKey,
+    this.paymentAttemptId,
+    this.refundNo,
+    this.requestNo,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceRefundRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceRefundRecord(
+      amount: json['amount']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      idempotencyKey: json['idempotency_key']?.toString(),
+      paymentAttemptId: json['payment_attempt_id']?.toString(),
+      refundNo: json['refund_no']?.toString(),
+      requestNo: json['request_no']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'amount': amount,
+      'created_at': createdAt,
+      'idempotency_key': idempotencyKey,
+      'payment_attempt_id': paymentAttemptId,
+      'refund_no': refundNo,
+      'request_no': requestNo,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+    };
+  }
+}
+
+class CommerceReportsOrderRevenueListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
+
+  CommerceReportsOrderRevenueListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CommerceReportsOrderRevenueListResult.fromJson(Map<String, dynamic> json) {
+    return CommerceReportsOrderRevenueListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CommerceReportsPaymentReconciliationRetrieveResult {
+  final String? code;
+  final CommerceStandardResourceResponse? data;
+  final String? msg;
+
+  CommerceReportsPaymentReconciliationRetrieveResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CommerceReportsPaymentReconciliationRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return CommerceReportsPaymentReconciliationRetrieveResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CommerceReportsRefundsListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
+
+  CommerceReportsRefundsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CommerceReportsRefundsListResult.fromJson(Map<String, dynamic> json) {
+    return CommerceReportsRefundsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CommerceSettlementExportRecord {
   final String? approvedBy;
   final String? auditLogId;
   final String? createdAt;
@@ -14433,7 +26325,7 @@ class CommerceBillingExportRecord {
   final String? userId;
   final String? uuid;
 
-  CommerceBillingExportRecord({
+  CommerceSettlementExportRecord({
     this.approvedBy,
     this.auditLogId,
     this.createdAt,
@@ -14461,8 +26353,8 @@ class CommerceBillingExportRecord {
     this.uuid
   });
 
-  factory CommerceBillingExportRecord.fromJson(Map<String, dynamic> json) {
-    return CommerceBillingExportRecord(
+  factory CommerceSettlementExportRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceSettlementExportRecord(
       approvedBy: json['approved_by']?.toString(),
       auditLogId: json['audit_log_id']?.toString(),
       createdAt: json['created_at']?.toString(),
@@ -14548,98 +26440,229 @@ class CommerceBillingExportRecord {
   }
 }
 
-class CommerceExchangeRuleItem {
-  final String? id;
-  final String? rate;
-  final String? sourceAssetType;
+class CommerceShipmentRecord {
+  final String? carrierCode;
+  final String? createdAt;
+  final String? deliveredAt;
+  final String? fulfillmentId;
+  final String? organizationId;
+  final String? shipmentNo;
+  final String? shippedAt;
   final String? status;
-  final String? targetAssetType;
+  final String? tenantId;
+  final String? trackingNo;
+  final String? updatedAt;
 
-  CommerceExchangeRuleItem({
-    this.id,
-    this.rate,
-    this.sourceAssetType,
+  CommerceShipmentRecord({
+    this.carrierCode,
+    this.createdAt,
+    this.deliveredAt,
+    this.fulfillmentId,
+    this.organizationId,
+    this.shipmentNo,
+    this.shippedAt,
     this.status,
-    this.targetAssetType
+    this.tenantId,
+    this.trackingNo,
+    this.updatedAt
   });
 
-  factory CommerceExchangeRuleItem.fromJson(Map<String, dynamic> json) {
-    return CommerceExchangeRuleItem(
-      id: json['id']?.toString(),
-      rate: json['rate']?.toString(),
-      sourceAssetType: json['sourceAssetType']?.toString(),
+  factory CommerceShipmentRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceShipmentRecord(
+      carrierCode: json['carrier_code']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      deliveredAt: json['delivered_at']?.toString(),
+      fulfillmentId: json['fulfillment_id']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      shipmentNo: json['shipment_no']?.toString(),
+      shippedAt: json['shipped_at']?.toString(),
       status: json['status']?.toString(),
-      targetAssetType: json['targetAssetType']?.toString()
+      tenantId: json['tenant_id']?.toString(),
+      trackingNo: json['tracking_no']?.toString(),
+      updatedAt: json['updated_at']?.toString()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'id': id,
-      'rate': rate,
-      'sourceAssetType': sourceAssetType,
+      'carrier_code': carrierCode,
+      'created_at': createdAt,
+      'delivered_at': deliveredAt,
+      'fulfillment_id': fulfillmentId,
+      'organization_id': organizationId,
+      'shipment_no': shipmentNo,
+      'shipped_at': shippedAt,
       'status': status,
-      'targetAssetType': targetAssetType,
+      'tenant_id': tenantId,
+      'tracking_no': trackingNo,
+      'updated_at': updatedAt,
     };
   }
 }
 
-class CommerceExchangeRuleUpsertRequest {
-  final String? rate;
-  final String? sourceAssetType;
-  final String? status;
-  final String? targetAssetType;
+class CommerceShipmentTrackingEventRecord {
+  final String? createdAt;
+  final String? description;
+  final String? eventCode;
+  final String? eventTime;
+  final String? location;
+  final String? organizationId;
+  final Map<String, dynamic>? rawPayloadJson;
+  final String? shipmentId;
+  final String? tenantId;
 
-  CommerceExchangeRuleUpsertRequest({
-    this.rate,
-    this.sourceAssetType,
-    this.status,
-    this.targetAssetType
+  CommerceShipmentTrackingEventRecord({
+    this.createdAt,
+    this.description,
+    this.eventCode,
+    this.eventTime,
+    this.location,
+    this.organizationId,
+    this.rawPayloadJson,
+    this.shipmentId,
+    this.tenantId
   });
 
-  factory CommerceExchangeRuleUpsertRequest.fromJson(Map<String, dynamic> json) {
-    return CommerceExchangeRuleUpsertRequest(
-      rate: json['rate']?.toString(),
-      sourceAssetType: json['sourceAssetType']?.toString(),
-      status: json['status']?.toString(),
-      targetAssetType: json['targetAssetType']?.toString()
+  factory CommerceShipmentTrackingEventRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceShipmentTrackingEventRecord(
+      createdAt: json['created_at']?.toString(),
+      description: json['description']?.toString(),
+      eventCode: json['event_code']?.toString(),
+      eventTime: json['event_time']?.toString(),
+      location: json['location']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      rawPayloadJson: (() {
+        final map = _sdkworkAsMap(json['raw_payload_json']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      shipmentId: json['shipment_id']?.toString(),
+      tenantId: json['tenant_id']?.toString()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'rate': rate,
-      'sourceAssetType': sourceAssetType,
-      'status': status,
-      'targetAssetType': targetAssetType,
+      'created_at': createdAt,
+      'description': description,
+      'event_code': eventCode,
+      'event_time': eventTime,
+      'location': location,
+      'organization_id': organizationId,
+      'raw_payload_json': rawPayloadJson?.map((key, item) => MapEntry(key, item)),
+      'shipment_id': shipmentId,
+      'tenant_id': tenantId,
     };
   }
 }
 
-class CommerceRechargePackageMutationRequest {
-  final int? bonus;
-  final String? rmb;
-  final String? status;
+class CommerceStandardCollectionResponse {
+  final List<Map<String, dynamic>>? items;
+  final int? page;
+  final int? pageSize;
+  final int? total;
 
-  CommerceRechargePackageMutationRequest({
-    this.bonus,
-    this.rmb,
-    this.status
+  CommerceStandardCollectionResponse({
+    this.items,
+    this.page,
+    this.pageSize,
+    this.total
   });
 
-  factory CommerceRechargePackageMutationRequest.fromJson(Map<String, dynamic> json) {
-    return CommerceRechargePackageMutationRequest(
-      bonus: json['bonus'] is int ? json['bonus'] : null,
-      rmb: json['rmb']?.toString(),
-      status: json['status']?.toString()
+  factory CommerceStandardCollectionResponse.fromJson(Map<String, dynamic> json) {
+    return CommerceStandardCollectionResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => _sdkworkAsMap(item))
+            .whereType<Map<String, dynamic>>()
+            .toList();
+      })(),
+      page: json['page'] is int ? json['page'] : null,
+      pageSize: json['pageSize'] is int ? json['pageSize'] : null,
+      total: json['total'] is int ? json['total'] : null
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'bonus': bonus,
-      'rmb': rmb,
-      'status': status,
+      'items': items?.map((item) => item).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommerceStandardCommandRequest {
+  final String? clientRequestNo;
+  final Map<String, dynamic>? metadata;
+  final String? note;
+
+  CommerceStandardCommandRequest({
+    this.clientRequestNo,
+    this.metadata,
+    this.note
+  });
+
+  factory CommerceStandardCommandRequest.fromJson(Map<String, dynamic> json) {
+    return CommerceStandardCommandRequest(
+      clientRequestNo: json['clientRequestNo']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      note: json['note']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'clientRequestNo': clientRequestNo,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'note': note,
+    };
+  }
+}
+
+class CommerceStandardResourceResponse {
+  final Map<String, dynamic>? item;
+
+  CommerceStandardResourceResponse({
+    this.item
+  });
+
+  factory CommerceStandardResourceResponse.fromJson(Map<String, dynamic> json) {
+    return CommerceStandardResourceResponse(
+      item: _sdkworkAsMap(json['item'])
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item,
     };
   }
 }
@@ -14766,8 +26789,8 @@ class CommerceUsagePricingPlanRecord {
 }
 
 class CommerceUsageSettlementRecord {
-  final String? accountHistoryId;
   final String? accountId;
+  final String? accountLedgerEntryId;
   final String? amount;
   final String? assetType;
   final String? createdAt;
@@ -14798,8 +26821,8 @@ class CommerceUsageSettlementRecord {
   final String? uuid;
 
   CommerceUsageSettlementRecord({
-    this.accountHistoryId,
     this.accountId,
+    this.accountLedgerEntryId,
     this.amount,
     this.assetType,
     this.createdAt,
@@ -14832,8 +26855,8 @@ class CommerceUsageSettlementRecord {
 
   factory CommerceUsageSettlementRecord.fromJson(Map<String, dynamic> json) {
     return CommerceUsageSettlementRecord(
-      accountHistoryId: json['account_history_id']?.toString(),
       accountId: json['account_id']?.toString(),
+      accountLedgerEntryId: json['account_ledger_entry_id']?.toString(),
       amount: json['amount']?.toString(),
       assetType: json['asset_type']?.toString(),
       createdAt: json['created_at']?.toString(),
@@ -14893,8 +26916,8 @@ class CommerceUsageSettlementRecord {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'account_history_id': accountHistoryId,
       'account_id': accountId,
+      'account_ledger_entry_id': accountLedgerEntryId,
       'amount': amount,
       'asset_type': assetType,
       'created_at': createdAt,
@@ -15244,6 +27267,90 @@ class CommerceUsageStatementRecord {
       'total_tokens': totalTokens,
       'updated_at': updatedAt,
       'uuid': uuid,
+    };
+  }
+}
+
+class CommerceUserAddressRecord {
+  final String? addressLine1Encrypted;
+  final String? addressLine2Encrypted;
+  final String? city;
+  final String? countryCode;
+  final String? createdAt;
+  final String? district;
+  final String? organizationId;
+  final String? ownerUserId;
+  final String? phoneCountryCode;
+  final String? phoneMasked;
+  final String? phoneNumberEncrypted;
+  final String? postalCode;
+  final String? recipientName;
+  final String? regionCode;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+
+  CommerceUserAddressRecord({
+    this.addressLine1Encrypted,
+    this.addressLine2Encrypted,
+    this.city,
+    this.countryCode,
+    this.createdAt,
+    this.district,
+    this.organizationId,
+    this.ownerUserId,
+    this.phoneCountryCode,
+    this.phoneMasked,
+    this.phoneNumberEncrypted,
+    this.postalCode,
+    this.recipientName,
+    this.regionCode,
+    this.status,
+    this.tenantId,
+    this.updatedAt
+  });
+
+  factory CommerceUserAddressRecord.fromJson(Map<String, dynamic> json) {
+    return CommerceUserAddressRecord(
+      addressLine1Encrypted: json['address_line1_encrypted']?.toString(),
+      addressLine2Encrypted: json['address_line2_encrypted']?.toString(),
+      city: json['city']?.toString(),
+      countryCode: json['country_code']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      district: json['district']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      ownerUserId: json['owner_user_id']?.toString(),
+      phoneCountryCode: json['phone_country_code']?.toString(),
+      phoneMasked: json['phone_masked']?.toString(),
+      phoneNumberEncrypted: json['phone_number_encrypted']?.toString(),
+      postalCode: json['postal_code']?.toString(),
+      recipientName: json['recipient_name']?.toString(),
+      regionCode: json['region_code']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'address_line1_encrypted': addressLine1Encrypted,
+      'address_line2_encrypted': addressLine2Encrypted,
+      'city': city,
+      'country_code': countryCode,
+      'created_at': createdAt,
+      'district': district,
+      'organization_id': organizationId,
+      'owner_user_id': ownerUserId,
+      'phone_country_code': phoneCountryCode,
+      'phone_masked': phoneMasked,
+      'phone_number_encrypted': phoneNumberEncrypted,
+      'postal_code': postalCode,
+      'recipient_name': recipientName,
+      'region_code': regionCode,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
     };
   }
 }
@@ -16866,27 +28973,24 @@ class ContentSdkReleaseRecord {
   }
 }
 
-class CouponBatchesCreateResult {
+class CouponsCampaignsListResult {
   final String? code;
-  final AdminCouponBatchGenerateResponse? data;
-  final String? message;
+  final CommerceStandardCollectionResponse? data;
   final String? msg;
 
-  CouponBatchesCreateResult({
+  CouponsCampaignsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
-  factory CouponBatchesCreateResult.fromJson(Map<String, dynamic> json) {
-    return CouponBatchesCreateResult(
+  factory CouponsCampaignsListResult.fromJson(Map<String, dynamic> json) {
+    return CouponsCampaignsListResult(
       code: json['code']?.toString(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : AdminCouponBatchGenerateResponse.fromJson(map);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -16895,33 +28999,29 @@ class CouponBatchesCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
 }
 
-class CouponBatchesListResult {
+class CouponsCodesListResult {
   final String? code;
-  final AdminCouponBatchesResponse? data;
-  final String? message;
+  final CommerceStandardCollectionResponse? data;
   final String? msg;
 
-  CouponBatchesListResult({
+  CouponsCodesListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
-  factory CouponBatchesListResult.fromJson(Map<String, dynamic> json) {
-    return CouponBatchesListResult(
+  factory CouponsCodesListResult.fromJson(Map<String, dynamic> json) {
+    return CouponsCodesListResult(
       code: json['code']?.toString(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : AdminCouponBatchesResponse.fromJson(map);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -16930,33 +29030,29 @@ class CouponBatchesListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
 }
 
-class CouponCodesListResult {
+class CouponsRedemptionsListResult {
   final String? code;
-  final AdminPromoCodesResponse? data;
-  final String? message;
+  final CommerceStandardCollectionResponse? data;
   final String? msg;
 
-  CouponCodesListResult({
+  CouponsRedemptionsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
-  factory CouponCodesListResult.fromJson(Map<String, dynamic> json) {
-    return CouponCodesListResult(
+  factory CouponsRedemptionsListResult.fromJson(Map<String, dynamic> json) {
+    return CouponsRedemptionsListResult(
       code: json['code']?.toString(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : AdminPromoCodesResponse.fromJson(map);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -16965,33 +29061,29 @@ class CouponCodesListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
 }
 
-class CouponCodesStatusUpdateResult {
+class CouponsTemplatesListResult {
   final String? code;
-  final AdminPromoCodeStatusUpdateResponse? data;
-  final String? message;
+  final CommerceStandardCollectionResponse? data;
   final String? msg;
 
-  CouponCodesStatusUpdateResult({
+  CouponsTemplatesListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
-  factory CouponCodesStatusUpdateResult.fromJson(Map<String, dynamic> json) {
-    return CouponCodesStatusUpdateResult(
+  factory CouponsTemplatesListResult.fromJson(Map<String, dynamic> json) {
+    return CouponsTemplatesListResult(
       code: json['code']?.toString(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : AdminPromoCodeStatusUpdateResponse.fromJson(map);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -17000,147 +29092,6 @@ class CouponCodesStatusUpdateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
-      'msg': msg,
-    };
-  }
-}
-
-class CouponsCreateResult {
-  final String? code;
-  final AdminCouponMutationResponse? data;
-  final String? message;
-  final String? msg;
-
-  CouponsCreateResult({
-    this.code,
-    this.data,
-    this.message,
-    this.msg
-  });
-
-  factory CouponsCreateResult.fromJson(Map<String, dynamic> json) {
-    return CouponsCreateResult(
-      code: json['code']?.toString(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : AdminCouponMutationResponse.fromJson(map);
-      })(),
-      message: json['message']?.toString(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'message': message,
-      'msg': msg,
-    };
-  }
-}
-
-class CouponsDeleteResult {
-  final String? code;
-  final AdminDeleteResponse? data;
-  final String? message;
-  final String? msg;
-
-  CouponsDeleteResult({
-    this.code,
-    this.data,
-    this.message,
-    this.msg
-  });
-
-  factory CouponsDeleteResult.fromJson(Map<String, dynamic> json) {
-    return CouponsDeleteResult(
-      code: json['code']?.toString(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : AdminDeleteResponse.fromJson(map);
-      })(),
-      message: json['message']?.toString(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'message': message,
-      'msg': msg,
-    };
-  }
-}
-
-class CouponsListResult {
-  final String? code;
-  final AdminCouponsResponse? data;
-  final String? message;
-  final String? msg;
-
-  CouponsListResult({
-    this.code,
-    this.data,
-    this.message,
-    this.msg
-  });
-
-  factory CouponsListResult.fromJson(Map<String, dynamic> json) {
-    return CouponsListResult(
-      code: json['code']?.toString(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : AdminCouponsResponse.fromJson(map);
-      })(),
-      message: json['message']?.toString(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'message': message,
-      'msg': msg,
-    };
-  }
-}
-
-class CouponsUpdateResult {
-  final String? code;
-  final AdminCouponMutationResponse? data;
-  final String? message;
-  final String? msg;
-
-  CouponsUpdateResult({
-    this.code,
-    this.data,
-    this.message,
-    this.msg
-  });
-
-  factory CouponsUpdateResult.fromJson(Map<String, dynamic> json) {
-    return CouponsUpdateResult(
-      code: json['code']?.toString(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : AdminCouponMutationResponse.fromJson(map);
-      })(),
-      message: json['message']?.toString(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -17149,13 +29100,11 @@ class CouponsUpdateResult {
 class DashboardAdminOverviewRetrieveResult {
   final String? code;
   final AdminDashboardDataResponse? data;
-  final String? message;
   final String? msg;
 
   DashboardAdminOverviewRetrieveResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -17166,7 +29115,6 @@ class DashboardAdminOverviewRetrieveResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminDashboardDataResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -17175,86 +29123,6 @@ class DashboardAdminOverviewRetrieveResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
-      'msg': msg,
-    };
-  }
-}
-
-class ExchangeRulesListResult {
-  final String? code;
-  final List<CommerceExchangeRuleItem>? data;
-  final String? message;
-  final String? msg;
-
-  ExchangeRulesListResult({
-    this.code,
-    this.data,
-    this.message,
-    this.msg
-  });
-
-  factory ExchangeRulesListResult.fromJson(Map<String, dynamic> json) {
-    return ExchangeRulesListResult(
-      code: json['code']?.toString(),
-      data: (() {
-        final list = _sdkworkAsList(json['data']);
-        if (list == null) {
-          return null;
-        }
-        return list
-            .map((item) => (() {
-        final map = _sdkworkAsMap(item);
-        return map == null ? null : CommerceExchangeRuleItem.fromJson(map);
-      })())
-            .whereType<CommerceExchangeRuleItem>()
-            .toList();
-      })(),
-      message: json['message']?.toString(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.map((item) => item.toJson()).toList(),
-      'message': message,
-      'msg': msg,
-    };
-  }
-}
-
-class ExchangeRulesUpdateResult {
-  final String? code;
-  final AdminExchangeRuleMutationResponse? data;
-  final String? message;
-  final String? msg;
-
-  ExchangeRulesUpdateResult({
-    this.code,
-    this.data,
-    this.message,
-    this.msg
-  });
-
-  factory ExchangeRulesUpdateResult.fromJson(Map<String, dynamic> json) {
-    return ExchangeRulesUpdateResult(
-      code: json['code']?.toString(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : AdminExchangeRuleMutationResponse.fromJson(map);
-      })(),
-      message: json['message']?.toString(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -17288,86 +29156,14 @@ class FieldError {
   }
 }
 
-class FinanceLedgerListResult {
-  final String? code;
-  final AdminTransactionsResponse? data;
-  final String? message;
-  final String? msg;
-
-  FinanceLedgerListResult({
-    this.code,
-    this.data,
-    this.message,
-    this.msg
-  });
-
-  factory FinanceLedgerListResult.fromJson(Map<String, dynamic> json) {
-    return FinanceLedgerListResult(
-      code: json['code']?.toString(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : AdminTransactionsResponse.fromJson(map);
-      })(),
-      message: json['message']?.toString(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'message': message,
-      'msg': msg,
-    };
-  }
-}
-
-class FinanceUsageStatementsListResult {
-  final String? code;
-  final AdminBillingRecordsResponse? data;
-  final String? message;
-  final String? msg;
-
-  FinanceUsageStatementsListResult({
-    this.code,
-    this.data,
-    this.message,
-    this.msg
-  });
-
-  factory FinanceUsageStatementsListResult.fromJson(Map<String, dynamic> json) {
-    return FinanceUsageStatementsListResult(
-      code: json['code']?.toString(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : AdminBillingRecordsResponse.fromJson(map);
-      })(),
-      message: json['message']?.toString(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'message': message,
-      'msg': msg,
-    };
-  }
-}
-
 class FirewallsRulesCreateResult {
   final String? code;
   final AdminFirewallMutationResponse? data;
-  final String? message;
   final String? msg;
 
   FirewallsRulesCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -17378,7 +29174,6 @@ class FirewallsRulesCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminFirewallMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -17387,7 +29182,6 @@ class FirewallsRulesCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -17396,13 +29190,11 @@ class FirewallsRulesCreateResult {
 class FirewallsRulesDeleteResult {
   final String? code;
   final AdminDeleteResponse? data;
-  final String? message;
   final String? msg;
 
   FirewallsRulesDeleteResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -17413,7 +29205,6 @@ class FirewallsRulesDeleteResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminDeleteResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -17422,7 +29213,6 @@ class FirewallsRulesDeleteResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -17431,13 +29221,11 @@ class FirewallsRulesDeleteResult {
 class FirewallsRulesListResult {
   final String? code;
   final AdminFirewallRulesResponse? data;
-  final String? message;
   final String? msg;
 
   FirewallsRulesListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -17448,7 +29236,6 @@ class FirewallsRulesListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminFirewallRulesResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -17457,7 +29244,37 @@ class FirewallsRulesListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
+      'msg': msg,
+    };
+  }
+}
+
+class FulfillmentsListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
+
+  FulfillmentsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory FulfillmentsListResult.fromJson(Map<String, dynamic> json) {
+    return FulfillmentsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
       'msg': msg,
     };
   }
@@ -19747,13 +31564,11 @@ class InstallationStatusResponse {
 class InstallationStatusRetrieveResult {
   final String? code;
   final InstallationStatusResponse? data;
-  final String? message;
   final String? msg;
 
   InstallationStatusRetrieveResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -19764,7 +31579,6 @@ class InstallationStatusRetrieveResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : InstallationStatusResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -19773,7 +31587,6 @@ class InstallationStatusRetrieveResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -19945,7 +31758,7 @@ class IntegrationChannelModelRecord {
 class IntegrationChannelRecord {
   final String? accessType;
   final String? accountId;
-  final String? baseUrlOverride;
+  final String? baseUrl;
   final Map<String, dynamic>? capabilities;
   final String? channelCode;
   final Map<String, dynamic>? circuitBreakerPolicy;
@@ -19981,7 +31794,7 @@ class IntegrationChannelRecord {
   IntegrationChannelRecord({
     this.accessType,
     this.accountId,
-    this.baseUrlOverride,
+    this.baseUrl,
     this.capabilities,
     this.channelCode,
     this.circuitBreakerPolicy,
@@ -20019,7 +31832,7 @@ class IntegrationChannelRecord {
     return IntegrationChannelRecord(
       accessType: json['access_type']?.toString(),
       accountId: json['account_id']?.toString(),
-      baseUrlOverride: json['base_url_override']?.toString(),
+      baseUrl: json['base_url']?.toString(),
       capabilities: (() {
         final map = _sdkworkAsMap(json['capabilities']);
         if (map == null) {
@@ -20110,7 +31923,7 @@ class IntegrationChannelRecord {
     return <String, dynamic>{
       'access_type': accessType,
       'account_id': accountId,
-      'base_url_override': baseUrlOverride,
+      'base_url': baseUrl,
       'capabilities': capabilities?.map((key, item) => MapEntry(key, item)),
       'channel_code': channelCode,
       'circuit_breaker_policy': circuitBreakerPolicy?.map((key, item) => MapEntry(key, item)),
@@ -20151,6 +31964,7 @@ class IntegrationProviderAccountRecord {
   final String? accountName;
   final Map<String, dynamic>? authConfig;
   final String? authType;
+  final String? baseUrl;
   final String? consecutiveErrorCount;
   final String? createdAt;
   final String? credentialProfile;
@@ -20190,6 +32004,7 @@ class IntegrationProviderAccountRecord {
     this.accountName,
     this.authConfig,
     this.authType,
+    this.baseUrl,
     this.consecutiveErrorCount,
     this.createdAt,
     this.credentialProfile,
@@ -20244,6 +32059,7 @@ class IntegrationProviderAccountRecord {
         return result;
       })(),
       authType: json['auth_type']?.toString(),
+      baseUrl: json['base_url']?.toString(),
       consecutiveErrorCount: json['consecutive_error_count']?.toString(),
       createdAt: json['created_at']?.toString(),
       credentialProfile: json['credential_profile']?.toString(),
@@ -20312,6 +32128,7 @@ class IntegrationProviderAccountRecord {
       'account_name': accountName,
       'auth_config': authConfig?.map((key, item) => MapEntry(key, item)),
       'auth_type': authType,
+      'base_url': baseUrl,
       'consecutive_error_count': consecutiveErrorCount,
       'created_at': createdAt,
       'credential_profile': credentialProfile,
@@ -20489,7 +32306,7 @@ class IntegrationProviderHealthSnapshotRecord {
 
 class IntegrationProviderRecord {
   final String? authType;
-  final String? baseUrlTemplate;
+  final String? baseUrl;
   final Map<String, dynamic>? capabilities;
   final String? colorToken;
   final String? createdAt;
@@ -20520,7 +32337,7 @@ class IntegrationProviderRecord {
 
   IntegrationProviderRecord({
     this.authType,
-    this.baseUrlTemplate,
+    this.baseUrl,
     this.capabilities,
     this.colorToken,
     this.createdAt,
@@ -20553,7 +32370,7 @@ class IntegrationProviderRecord {
   factory IntegrationProviderRecord.fromJson(Map<String, dynamic> json) {
     return IntegrationProviderRecord(
       authType: json['auth_type']?.toString(),
-      baseUrlTemplate: json['base_url_template']?.toString(),
+      baseUrl: json['base_url']?.toString(),
       capabilities: (() {
         final map = _sdkworkAsMap(json['capabilities']);
         if (map == null) {
@@ -20613,7 +32430,7 @@ class IntegrationProviderRecord {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'auth_type': authType,
-      'base_url_template': baseUrlTemplate,
+      'base_url': baseUrl,
       'capabilities': capabilities?.map((key, item) => MapEntry(key, item)),
       'color_token': colorToken,
       'created_at': createdAt,
@@ -20913,6 +32730,750 @@ class IntegrationWebhookEndpointRecord {
       'user_id': userId,
       'uuid': uuid,
       'version': version,
+    };
+  }
+}
+
+class InventoryLedgerEntriesListResult {
+  final String? code;
+  final CommerceInventoryLedgerListResponse? data;
+  final String? msg;
+
+  InventoryLedgerEntriesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory InventoryLedgerEntriesListResult.fromJson(Map<String, dynamic> json) {
+    return InventoryLedgerEntriesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceInventoryLedgerListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class InventoryReservationsListResult {
+  final String? code;
+  final CommerceInventoryReservationListResponse? data;
+  final String? msg;
+
+  InventoryReservationsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory InventoryReservationsListResult.fromJson(Map<String, dynamic> json) {
+    return InventoryReservationsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceInventoryReservationListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class InventoryStocksListResult {
+  final String? code;
+  final CommerceInventoryStockListResponse? data;
+  final String? msg;
+
+  InventoryStocksListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory InventoryStocksListResult.fromJson(Map<String, dynamic> json) {
+    return InventoryStocksListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceInventoryStockListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class InventoryStocksUpdateResult {
+  final String? code;
+  final CommerceInventoryStockMutationResponse? data;
+  final String? msg;
+
+  InventoryStocksUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory InventoryStocksUpdateResult.fromJson(Map<String, dynamic> json) {
+    return InventoryStocksUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceInventoryStockMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class InvoicesListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
+
+  InvoicesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory InvoicesListResult.fromJson(Map<String, dynamic> json) {
+    return InvoicesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class InvoicesRetrieveResult {
+  final String? code;
+  final CommerceStandardResourceResponse? data;
+  final String? msg;
+
+  InvoicesRetrieveResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory InvoicesRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return InvoicesRetrieveResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class InvoicesTitlesListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
+
+  InvoicesTitlesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory InvoicesTitlesListResult.fromJson(Map<String, dynamic> json) {
+    return InvoicesTitlesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ManifestsListResult {
+  final String? code;
+  final OpenPlatformManifestListResponse? data;
+  final String? msg;
+
+  ManifestsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ManifestsListResult.fromJson(Map<String, dynamic> json) {
+    return ManifestsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : OpenPlatformManifestListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class MarketingReferralStatsListResult {
+  final String? code;
+  final AdminReferralStatsResponse? data;
+  final String? msg;
+
+  MarketingReferralStatsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory MarketingReferralStatsListResult.fromJson(Map<String, dynamic> json) {
+    return MarketingReferralStatsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminReferralStatsResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class MembershipsEntitlementsListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
+
+  MembershipsEntitlementsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory MembershipsEntitlementsListResult.fromJson(Map<String, dynamic> json) {
+    return MembershipsEntitlementsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class MembershipsMembersListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
+
+  MembershipsMembersListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory MembershipsMembersListResult.fromJson(Map<String, dynamic> json) {
+    return MembershipsMembersListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class MembershipsMembersStatusUpdateResult {
+  final String? code;
+  final CommerceStandardResourceResponse? data;
+  final String? msg;
+
+  MembershipsMembersStatusUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory MembershipsMembersStatusUpdateResult.fromJson(Map<String, dynamic> json) {
+    return MembershipsMembersStatusUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class MembershipsPackageGroupsCreateResult {
+  final String? code;
+  final CommerceStandardResourceResponse? data;
+  final String? msg;
+
+  MembershipsPackageGroupsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory MembershipsPackageGroupsCreateResult.fromJson(Map<String, dynamic> json) {
+    return MembershipsPackageGroupsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class MembershipsPackageGroupsDeleteResult {
+  final String? code;
+  final AdminDeleteResponse? data;
+  final String? msg;
+
+  MembershipsPackageGroupsDeleteResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory MembershipsPackageGroupsDeleteResult.fromJson(Map<String, dynamic> json) {
+    return MembershipsPackageGroupsDeleteResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminDeleteResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class MembershipsPackageGroupsListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
+
+  MembershipsPackageGroupsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory MembershipsPackageGroupsListResult.fromJson(Map<String, dynamic> json) {
+    return MembershipsPackageGroupsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class MembershipsPackageGroupsUpdateResult {
+  final String? code;
+  final CommerceStandardResourceResponse? data;
+  final String? msg;
+
+  MembershipsPackageGroupsUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory MembershipsPackageGroupsUpdateResult.fromJson(Map<String, dynamic> json) {
+    return MembershipsPackageGroupsUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class MembershipsPackagesCreateResult {
+  final String? code;
+  final CommerceStandardResourceResponse? data;
+  final String? msg;
+
+  MembershipsPackagesCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory MembershipsPackagesCreateResult.fromJson(Map<String, dynamic> json) {
+    return MembershipsPackagesCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class MembershipsPackagesDeleteResult {
+  final String? code;
+  final AdminDeleteResponse? data;
+  final String? msg;
+
+  MembershipsPackagesDeleteResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory MembershipsPackagesDeleteResult.fromJson(Map<String, dynamic> json) {
+    return MembershipsPackagesDeleteResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminDeleteResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class MembershipsPackagesListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
+
+  MembershipsPackagesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory MembershipsPackagesListResult.fromJson(Map<String, dynamic> json) {
+    return MembershipsPackagesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class MembershipsPackagesUpdateResult {
+  final String? code;
+  final CommerceStandardResourceResponse? data;
+  final String? msg;
+
+  MembershipsPackagesUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory MembershipsPackagesUpdateResult.fromJson(Map<String, dynamic> json) {
+    return MembershipsPackagesUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class MembershipsPlansCreateResult {
+  final String? code;
+  final CommerceStandardResourceResponse? data;
+  final String? msg;
+
+  MembershipsPlansCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory MembershipsPlansCreateResult.fromJson(Map<String, dynamic> json) {
+    return MembershipsPlansCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class MembershipsPlansDeleteResult {
+  final String? code;
+  final AdminDeleteResponse? data;
+  final String? msg;
+
+  MembershipsPlansDeleteResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory MembershipsPlansDeleteResult.fromJson(Map<String, dynamic> json) {
+    return MembershipsPlansDeleteResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminDeleteResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class MembershipsPlansListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
+
+  MembershipsPlansListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory MembershipsPlansListResult.fromJson(Map<String, dynamic> json) {
+    return MembershipsPlansListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class MembershipsPlansUpdateResult {
+  final String? code;
+  final CommerceStandardResourceResponse? data;
+  final String? msg;
+
+  MembershipsPlansUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory MembershipsPlansUpdateResult.fromJson(Map<String, dynamic> json) {
+    return MembershipsPlansUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
     };
   }
 }
@@ -21529,13 +34090,11 @@ class ModelRankingRefreshTriggerResponse {
 class ModelRankingsJobsListResult {
   final String? code;
   final ModelRankingRefreshJobHistoryPage? data;
-  final String? message;
   final String? msg;
 
   ModelRankingsJobsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -21546,7 +34105,6 @@ class ModelRankingsJobsListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : ModelRankingRefreshJobHistoryPage.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -21555,7 +34113,6 @@ class ModelRankingsJobsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -21564,13 +34121,11 @@ class ModelRankingsJobsListResult {
 class ModelRankingsListResult {
   final String? code;
   final ModelRankingsSnapshot? data;
-  final String? message;
   final String? msg;
 
   ModelRankingsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -21581,7 +34136,6 @@ class ModelRankingsListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : ModelRankingsSnapshot.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -21590,7 +34144,6 @@ class ModelRankingsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -21599,13 +34152,11 @@ class ModelRankingsListResult {
 class ModelRankingsRefreshResult {
   final String? code;
   final ModelRankingRefreshTriggerResponse? data;
-  final String? message;
   final String? msg;
 
   ModelRankingsRefreshResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -21616,7 +34167,6 @@ class ModelRankingsRefreshResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : ModelRankingRefreshTriggerResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -21625,7 +34175,6 @@ class ModelRankingsRefreshResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -21766,13 +34315,11 @@ class ModelRankingsSource {
 class ModelRankingsStatusRetrieveResult {
   final String? code;
   final ModelRankingRefreshStatus? data;
-  final String? message;
   final String? msg;
 
   ModelRankingsStatusRetrieveResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -21783,7 +34330,6 @@ class ModelRankingsStatusRetrieveResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : ModelRankingRefreshStatus.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -21792,7 +34338,6 @@ class ModelRankingsStatusRetrieveResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -21801,13 +34346,11 @@ class ModelRankingsStatusRetrieveResult {
 class ModelVendorsCreateResult {
   final String? code;
   final AdminModelVendorMutationResponse? data;
-  final String? message;
   final String? msg;
 
   ModelVendorsCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -21818,7 +34361,6 @@ class ModelVendorsCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminModelVendorMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -21827,7 +34369,6 @@ class ModelVendorsCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -21836,13 +34377,11 @@ class ModelVendorsCreateResult {
 class ModelVendorsListResult {
   final String? code;
   final AdminModelVendorsResponse? data;
-  final String? message;
   final String? msg;
 
   ModelVendorsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -21853,7 +34392,6 @@ class ModelVendorsListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminModelVendorsResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -21862,7 +34400,6 @@ class ModelVendorsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -21871,13 +34408,11 @@ class ModelVendorsListResult {
 class ModelsCreateResult {
   final String? code;
   final AdminAiModelMutationResponse? data;
-  final String? message;
   final String? msg;
 
   ModelsCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -21888,7 +34423,6 @@ class ModelsCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAiModelMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -21897,7 +34431,6 @@ class ModelsCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -21906,13 +34439,11 @@ class ModelsCreateResult {
 class ModelsDeleteResult {
   final String? code;
   final AdminDeleteResponse? data;
-  final String? message;
   final String? msg;
 
   ModelsDeleteResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -21923,7 +34454,6 @@ class ModelsDeleteResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminDeleteResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -21932,7 +34462,6 @@ class ModelsDeleteResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -21941,13 +34470,11 @@ class ModelsDeleteResult {
 class ModelsListResult {
   final String? code;
   final AdminAiModelsResponse? data;
-  final String? message;
   final String? msg;
 
   ModelsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -21958,7 +34485,6 @@ class ModelsListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAiModelsResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -21967,7 +34493,6 @@ class ModelsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -21976,13 +34501,11 @@ class ModelsListResult {
 class ModelsRefreshResult {
   final String? code;
   final AdminModelCatalogSyncResponse? data;
-  final String? message;
   final String? msg;
 
   ModelsRefreshResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -21993,7 +34516,6 @@ class ModelsRefreshResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminModelCatalogSyncResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -22002,7 +34524,6 @@ class ModelsRefreshResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -22011,13 +34532,11 @@ class ModelsRefreshResult {
 class ModelsUpdateResult {
   final String? code;
   final AdminAiModelMutationResponse? data;
-  final String? message;
   final String? msg;
 
   ModelsUpdateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -22028,7 +34547,6 @@ class ModelsUpdateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminAiModelMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -22037,7 +34555,6 @@ class ModelsUpdateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -22046,13 +34563,11 @@ class ModelsUpdateResult {
 class MonitorAlertsListResult {
   final String? code;
   final AdminMonitorAlertsResponse? data;
-  final String? message;
   final String? msg;
 
   MonitorAlertsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -22063,7 +34578,6 @@ class MonitorAlertsListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminMonitorAlertsResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -22072,7 +34586,6 @@ class MonitorAlertsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -22081,13 +34594,11 @@ class MonitorAlertsListResult {
 class MonitorNodesListResult {
   final String? code;
   final AdminMonitorNodesResponse? data;
-  final String? message;
   final String? msg;
 
   MonitorNodesListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -22098,7 +34609,6 @@ class MonitorNodesListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminMonitorNodesResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -22107,7 +34617,6 @@ class MonitorNodesListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -22116,13 +34625,11 @@ class MonitorNodesListResult {
 class MonitorPerformanceListResult {
   final String? code;
   final AdminMonitorPerformanceResponse? data;
-  final String? message;
   final String? msg;
 
   MonitorPerformanceListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -22133,7 +34640,6 @@ class MonitorPerformanceListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminMonitorPerformanceResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -22142,7 +34648,6 @@ class MonitorPerformanceListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -22159,6 +34664,1236 @@ class NoData {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{};
+  }
+}
+
+class OpenPlatformAccountCreateRequest {
+  final String? aesKeyRef;
+  final String? appId;
+  final String? key;
+  final String? name;
+  final String? provider;
+  final String? secretRef;
+  final String? tokenRef;
+  final String? type;
+
+  OpenPlatformAccountCreateRequest({
+    this.aesKeyRef,
+    this.appId,
+    this.key,
+    this.name,
+    this.provider,
+    this.secretRef,
+    this.tokenRef,
+    this.type
+  });
+
+  factory OpenPlatformAccountCreateRequest.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformAccountCreateRequest(
+      aesKeyRef: json['aesKeyRef']?.toString(),
+      appId: json['appId']?.toString(),
+      key: json['key']?.toString(),
+      name: json['name']?.toString(),
+      provider: json['provider']?.toString(),
+      secretRef: json['secretRef']?.toString(),
+      tokenRef: json['tokenRef']?.toString(),
+      type: json['type']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'aesKeyRef': aesKeyRef,
+      'appId': appId,
+      'key': key,
+      'name': name,
+      'provider': provider,
+      'secretRef': secretRef,
+      'tokenRef': tokenRef,
+      'type': type,
+    };
+  }
+}
+
+class OpenPlatformAccountItem {
+  final String? aesKeyRef;
+  final String? appId;
+  final String? createdAt;
+  final String? defaultEntryId;
+  final String? id;
+  final String? key;
+  final String? name;
+  final String? provider;
+  final bool? qrDefault;
+  final String? secretRef;
+  final String? status;
+  final String? tokenRef;
+  final String? type;
+  final String? updatedAt;
+
+  OpenPlatformAccountItem({
+    this.aesKeyRef,
+    this.appId,
+    this.createdAt,
+    this.defaultEntryId,
+    this.id,
+    this.key,
+    this.name,
+    this.provider,
+    this.qrDefault,
+    this.secretRef,
+    this.status,
+    this.tokenRef,
+    this.type,
+    this.updatedAt
+  });
+
+  factory OpenPlatformAccountItem.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformAccountItem(
+      aesKeyRef: json['aesKeyRef']?.toString(),
+      appId: json['appId']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      defaultEntryId: json['defaultEntryId']?.toString(),
+      id: json['id']?.toString(),
+      key: json['key']?.toString(),
+      name: json['name']?.toString(),
+      provider: json['provider']?.toString(),
+      qrDefault: json['qrDefault'] is bool ? json['qrDefault'] : null,
+      secretRef: json['secretRef']?.toString(),
+      status: json['status']?.toString(),
+      tokenRef: json['tokenRef']?.toString(),
+      type: json['type']?.toString(),
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'aesKeyRef': aesKeyRef,
+      'appId': appId,
+      'createdAt': createdAt,
+      'defaultEntryId': defaultEntryId,
+      'id': id,
+      'key': key,
+      'name': name,
+      'provider': provider,
+      'qrDefault': qrDefault,
+      'secretRef': secretRef,
+      'status': status,
+      'tokenRef': tokenRef,
+      'type': type,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class OpenPlatformAccountListResponse {
+  final List<OpenPlatformAccountItem>? items;
+
+  OpenPlatformAccountListResponse({
+    this.items
+  });
+
+  factory OpenPlatformAccountListResponse.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformAccountListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : OpenPlatformAccountItem.fromJson(map);
+      })())
+            .whereType<OpenPlatformAccountItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class OpenPlatformAccountRecord {
+  final String? accountKey;
+  final String? accountType;
+  final String? aesKeyRef;
+  final String? appId;
+  final String? createdAt;
+  final String? dataScope;
+  final String? defaultEntryId;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? name;
+  final String? organizationId;
+  final String? provider;
+  final bool? qrDefault;
+  final String? secretRef;
+  final String? status;
+  final String? tenantId;
+  final String? tokenRef;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  OpenPlatformAccountRecord({
+    this.accountKey,
+    this.accountType,
+    this.aesKeyRef,
+    this.appId,
+    this.createdAt,
+    this.dataScope,
+    this.defaultEntryId,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.metadata,
+    this.name,
+    this.organizationId,
+    this.provider,
+    this.qrDefault,
+    this.secretRef,
+    this.status,
+    this.tenantId,
+    this.tokenRef,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory OpenPlatformAccountRecord.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformAccountRecord(
+      accountKey: json['account_key']?.toString(),
+      accountType: json['account_type']?.toString(),
+      aesKeyRef: json['aes_key_ref']?.toString(),
+      appId: json['app_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      defaultEntryId: json['default_entry_id']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      name: json['name']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      provider: json['provider']?.toString(),
+      qrDefault: json['qr_default'] is bool ? json['qr_default'] : null,
+      secretRef: json['secret_ref']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      tokenRef: json['token_ref']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'account_key': accountKey,
+      'account_type': accountType,
+      'aes_key_ref': aesKeyRef,
+      'app_id': appId,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'default_entry_id': defaultEntryId,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'name': name,
+      'organization_id': organizationId,
+      'provider': provider,
+      'qr_default': qrDefault,
+      'secret_ref': secretRef,
+      'status': status,
+      'tenant_id': tenantId,
+      'token_ref': tokenRef,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class OpenPlatformAccountResponse {
+  final OpenPlatformAccountItem? item;
+
+  OpenPlatformAccountResponse({
+    this.item
+  });
+
+  factory OpenPlatformAccountResponse.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformAccountResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : OpenPlatformAccountItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class OpenPlatformAccountUpdateRequest {
+  final String? aesKeyRef;
+  final String? appId;
+  final String? defaultEntryId;
+  final String? name;
+  final bool? qrDefault;
+  final String? secretRef;
+  final String? status;
+  final String? tokenRef;
+
+  OpenPlatformAccountUpdateRequest({
+    this.aesKeyRef,
+    this.appId,
+    this.defaultEntryId,
+    this.name,
+    this.qrDefault,
+    this.secretRef,
+    this.status,
+    this.tokenRef
+  });
+
+  factory OpenPlatformAccountUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformAccountUpdateRequest(
+      aesKeyRef: json['aesKeyRef']?.toString(),
+      appId: json['appId']?.toString(),
+      defaultEntryId: json['defaultEntryId']?.toString(),
+      name: json['name']?.toString(),
+      qrDefault: json['qrDefault'] is bool ? json['qrDefault'] : null,
+      secretRef: json['secretRef']?.toString(),
+      status: json['status']?.toString(),
+      tokenRef: json['tokenRef']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'aesKeyRef': aesKeyRef,
+      'appId': appId,
+      'defaultEntryId': defaultEntryId,
+      'name': name,
+      'qrDefault': qrDefault,
+      'secretRef': secretRef,
+      'status': status,
+      'tokenRef': tokenRef,
+    };
+  }
+}
+
+class OpenPlatformEntryCreateRequest {
+  final String? key;
+  final String? type;
+  final String? url;
+
+  OpenPlatformEntryCreateRequest({
+    this.key,
+    this.type,
+    this.url
+  });
+
+  factory OpenPlatformEntryCreateRequest.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformEntryCreateRequest(
+      key: json['key']?.toString(),
+      type: json['type']?.toString(),
+      url: json['url']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'key': key,
+      'type': type,
+      'url': url,
+    };
+  }
+}
+
+class OpenPlatformEntryItem {
+  final String? accountId;
+  final String? createdAt;
+  final String? id;
+  final String? key;
+  final String? status;
+  final String? type;
+  final String? updatedAt;
+  final String? url;
+
+  OpenPlatformEntryItem({
+    this.accountId,
+    this.createdAt,
+    this.id,
+    this.key,
+    this.status,
+    this.type,
+    this.updatedAt,
+    this.url
+  });
+
+  factory OpenPlatformEntryItem.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformEntryItem(
+      accountId: json['accountId']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      id: json['id']?.toString(),
+      key: json['key']?.toString(),
+      status: json['status']?.toString(),
+      type: json['type']?.toString(),
+      updatedAt: json['updatedAt']?.toString(),
+      url: json['url']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'accountId': accountId,
+      'createdAt': createdAt,
+      'id': id,
+      'key': key,
+      'status': status,
+      'type': type,
+      'updatedAt': updatedAt,
+      'url': url,
+    };
+  }
+}
+
+class OpenPlatformEntryListResponse {
+  final List<OpenPlatformEntryItem>? items;
+
+  OpenPlatformEntryListResponse({
+    this.items
+  });
+
+  factory OpenPlatformEntryListResponse.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformEntryListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : OpenPlatformEntryItem.fromJson(map);
+      })())
+            .whereType<OpenPlatformEntryItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class OpenPlatformEntryRecord {
+  final String? accountId;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? entryKey;
+  final String? entryType;
+  final String? entryUrl;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  OpenPlatformEntryRecord({
+    this.accountId,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.entryKey,
+    this.entryType,
+    this.entryUrl,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory OpenPlatformEntryRecord.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformEntryRecord(
+      accountId: json['account_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      entryKey: json['entry_key']?.toString(),
+      entryType: json['entry_type']?.toString(),
+      entryUrl: json['entry_url']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'account_id': accountId,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'entry_key': entryKey,
+      'entry_type': entryType,
+      'entry_url': entryUrl,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class OpenPlatformEntryResponse {
+  final OpenPlatformEntryItem? item;
+
+  OpenPlatformEntryResponse({
+    this.item
+  });
+
+  factory OpenPlatformEntryResponse.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformEntryResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : OpenPlatformEntryItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class OpenPlatformEntryUpdateRequest {
+  final String? key;
+  final String? status;
+  final String? type;
+  final String? url;
+
+  OpenPlatformEntryUpdateRequest({
+    this.key,
+    this.status,
+    this.type,
+    this.url
+  });
+
+  factory OpenPlatformEntryUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformEntryUpdateRequest(
+      key: json['key']?.toString(),
+      status: json['status']?.toString(),
+      type: json['type']?.toString(),
+      url: json['url']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'key': key,
+      'status': status,
+      'type': type,
+      'url': url,
+    };
+  }
+}
+
+class OpenPlatformManifestItem {
+  final String? id;
+  final String? key;
+  final String? provider;
+  final String? status;
+  final String? type;
+  final String? version;
+
+  OpenPlatformManifestItem({
+    this.id,
+    this.key,
+    this.provider,
+    this.status,
+    this.type,
+    this.version
+  });
+
+  factory OpenPlatformManifestItem.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformManifestItem(
+      id: json['id']?.toString(),
+      key: json['key']?.toString(),
+      provider: json['provider']?.toString(),
+      status: json['status']?.toString(),
+      type: json['type']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'id': id,
+      'key': key,
+      'provider': provider,
+      'status': status,
+      'type': type,
+      'version': version,
+    };
+  }
+}
+
+class OpenPlatformManifestListResponse {
+  final List<OpenPlatformManifestItem>? items;
+
+  OpenPlatformManifestListResponse({
+    this.items
+  });
+
+  factory OpenPlatformManifestListResponse.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformManifestListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : OpenPlatformManifestItem.fromJson(map);
+      })())
+            .whereType<OpenPlatformManifestItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class OpenPlatformManifestRecord {
+  final String? accountType;
+  final Map<String, dynamic>? callbackSchema;
+  final Map<String, dynamic>? capabilitySchema;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final Map<String, dynamic>? entrySchema;
+  final String? id;
+  final String? manifestKey;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? provider;
+  final int? sortOrder;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  OpenPlatformManifestRecord({
+    this.accountType,
+    this.callbackSchema,
+    this.capabilitySchema,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.entrySchema,
+    this.id,
+    this.manifestKey,
+    this.metadata,
+    this.organizationId,
+    this.provider,
+    this.sortOrder,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory OpenPlatformManifestRecord.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformManifestRecord(
+      accountType: json['account_type']?.toString(),
+      callbackSchema: (() {
+        final map = _sdkworkAsMap(json['callback_schema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      capabilitySchema: (() {
+        final map = _sdkworkAsMap(json['capability_schema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      entrySchema: (() {
+        final map = _sdkworkAsMap(json['entry_schema']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      id: json['id']?.toString(),
+      manifestKey: json['manifest_key']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      provider: json['provider']?.toString(),
+      sortOrder: json['sort_order'] is int ? json['sort_order'] : null,
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'account_type': accountType,
+      'callback_schema': callbackSchema?.map((key, item) => MapEntry(key, item)),
+      'capability_schema': capabilitySchema?.map((key, item) => MapEntry(key, item)),
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'entry_schema': entrySchema?.map((key, item) => MapEntry(key, item)),
+      'id': id,
+      'manifest_key': manifestKey,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'provider': provider,
+      'sort_order': sortOrder,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class OpenPlatformPayBindingCreateRequest {
+  final String? mode;
+  final String? paymentAccountId;
+  final String? paymentChannelId;
+  final String? scene;
+
+  OpenPlatformPayBindingCreateRequest({
+    this.mode,
+    this.paymentAccountId,
+    this.paymentChannelId,
+    this.scene
+  });
+
+  factory OpenPlatformPayBindingCreateRequest.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformPayBindingCreateRequest(
+      mode: json['mode']?.toString(),
+      paymentAccountId: json['paymentAccountId']?.toString(),
+      paymentChannelId: json['paymentChannelId']?.toString(),
+      scene: json['scene']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'mode': mode,
+      'paymentAccountId': paymentAccountId,
+      'paymentChannelId': paymentChannelId,
+      'scene': scene,
+    };
+  }
+}
+
+class OpenPlatformPayBindingItem {
+  final String? accountId;
+  final String? createdAt;
+  final String? id;
+  final String? mode;
+  final String? paymentAccountId;
+  final String? paymentChannelId;
+  final String? scene;
+  final String? status;
+  final String? updatedAt;
+
+  OpenPlatformPayBindingItem({
+    this.accountId,
+    this.createdAt,
+    this.id,
+    this.mode,
+    this.paymentAccountId,
+    this.paymentChannelId,
+    this.scene,
+    this.status,
+    this.updatedAt
+  });
+
+  factory OpenPlatformPayBindingItem.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformPayBindingItem(
+      accountId: json['accountId']?.toString(),
+      createdAt: json['createdAt']?.toString(),
+      id: json['id']?.toString(),
+      mode: json['mode']?.toString(),
+      paymentAccountId: json['paymentAccountId']?.toString(),
+      paymentChannelId: json['paymentChannelId']?.toString(),
+      scene: json['scene']?.toString(),
+      status: json['status']?.toString(),
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'accountId': accountId,
+      'createdAt': createdAt,
+      'id': id,
+      'mode': mode,
+      'paymentAccountId': paymentAccountId,
+      'paymentChannelId': paymentChannelId,
+      'scene': scene,
+      'status': status,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class OpenPlatformPayBindingListResponse {
+  final List<OpenPlatformPayBindingItem>? items;
+
+  OpenPlatformPayBindingListResponse({
+    this.items
+  });
+
+  factory OpenPlatformPayBindingListResponse.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformPayBindingListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : OpenPlatformPayBindingItem.fromJson(map);
+      })())
+            .whereType<OpenPlatformPayBindingItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class OpenPlatformPayBindingRecord {
+  final String? accountId;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? mode;
+  final String? organizationId;
+  final String? paymentAccountId;
+  final String? paymentChannelId;
+  final String? scene;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  OpenPlatformPayBindingRecord({
+    this.accountId,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.metadata,
+    this.mode,
+    this.organizationId,
+    this.paymentAccountId,
+    this.paymentChannelId,
+    this.scene,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory OpenPlatformPayBindingRecord.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformPayBindingRecord(
+      accountId: json['account_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      mode: json['mode']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      paymentAccountId: json['payment_account_id']?.toString(),
+      paymentChannelId: json['payment_channel_id']?.toString(),
+      scene: json['scene']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'account_id': accountId,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'mode': mode,
+      'organization_id': organizationId,
+      'payment_account_id': paymentAccountId,
+      'payment_channel_id': paymentChannelId,
+      'scene': scene,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class OpenPlatformPayBindingResponse {
+  final OpenPlatformPayBindingItem? item;
+
+  OpenPlatformPayBindingResponse({
+    this.item
+  });
+
+  factory OpenPlatformPayBindingResponse.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformPayBindingResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        return map == null ? null : OpenPlatformPayBindingItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item?.toJson(),
+    };
+  }
+}
+
+class OpenPlatformProviderItem {
+  final String? id;
+  final String? name;
+  final String? provider;
+  final String? status;
+
+  OpenPlatformProviderItem({
+    this.id,
+    this.name,
+    this.provider,
+    this.status
+  });
+
+  factory OpenPlatformProviderItem.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformProviderItem(
+      id: json['id']?.toString(),
+      name: json['name']?.toString(),
+      provider: json['provider']?.toString(),
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'id': id,
+      'name': name,
+      'provider': provider,
+      'status': status,
+    };
+  }
+}
+
+class OpenPlatformProviderListResponse {
+  final List<OpenPlatformProviderItem>? items;
+
+  OpenPlatformProviderListResponse({
+    this.items
+  });
+
+  factory OpenPlatformProviderListResponse.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformProviderListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : OpenPlatformProviderItem.fromJson(map);
+      })())
+            .whereType<OpenPlatformProviderItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items?.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class OpenPlatformProviderRecord {
+  final Map<String, dynamic>? capabilities;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? docsUrl;
+  final String? iconUrl;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? name;
+  final String? organizationId;
+  final String? provider;
+  final int? sortOrder;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+  final String? websiteUrl;
+
+  OpenPlatformProviderRecord({
+    this.capabilities,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.docsUrl,
+    this.iconUrl,
+    this.id,
+    this.metadata,
+    this.name,
+    this.organizationId,
+    this.provider,
+    this.sortOrder,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version,
+    this.websiteUrl
+  });
+
+  factory OpenPlatformProviderRecord.fromJson(Map<String, dynamic> json) {
+    return OpenPlatformProviderRecord(
+      capabilities: (() {
+        final map = _sdkworkAsMap(json['capabilities']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      docsUrl: json['docs_url']?.toString(),
+      iconUrl: json['icon_url']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      name: json['name']?.toString(),
+      organizationId: json['organization_id']?.toString(),
+      provider: json['provider']?.toString(),
+      sortOrder: json['sort_order'] is int ? json['sort_order'] : null,
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString(),
+      websiteUrl: json['website_url']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'capabilities': capabilities?.map((key, item) => MapEntry(key, item)),
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'docs_url': docsUrl,
+      'icon_url': iconUrl,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'name': name,
+      'organization_id': organizationId,
+      'provider': provider,
+      'sort_order': sortOrder,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+      'website_url': websiteUrl,
+    };
   }
 }
 
@@ -22564,168 +36299,6 @@ class OpsConfigSnapshotRecord {
       'trace_id': traceId,
       'user_id': userId,
       'uuid': uuid,
-    };
-  }
-}
-
-class OpsCouponIssueBatchRecord {
-  final Map<String, dynamic>? audienceFilter;
-  final String? availableCount;
-  final String? batchNo;
-  final String? campaignCode;
-  final String? claimedCount;
-  final String? codePattern;
-  final String? codePrefix;
-  final String? couponId;
-  final String? couponTemplateId;
-  final String? createdAt;
-  final String? createdBy;
-  final String? dataScope;
-  final String? deletedAt;
-  final String? deletedBy;
-  final String? expireAt;
-  final String? generatedAt;
-  final String? generatedCount;
-  final String? generationStatus;
-  final String? id;
-  final Map<String, dynamic>? metadata;
-  final String? name;
-  final String? organizationId;
-  final String? requestedCount;
-  final String? status;
-  final String? tenantId;
-  final String? updatedAt;
-  final String? usedCount;
-  final String? uuid;
-  final String? version;
-  final String? voidedCount;
-
-  OpsCouponIssueBatchRecord({
-    this.audienceFilter,
-    this.availableCount,
-    this.batchNo,
-    this.campaignCode,
-    this.claimedCount,
-    this.codePattern,
-    this.codePrefix,
-    this.couponId,
-    this.couponTemplateId,
-    this.createdAt,
-    this.createdBy,
-    this.dataScope,
-    this.deletedAt,
-    this.deletedBy,
-    this.expireAt,
-    this.generatedAt,
-    this.generatedCount,
-    this.generationStatus,
-    this.id,
-    this.metadata,
-    this.name,
-    this.organizationId,
-    this.requestedCount,
-    this.status,
-    this.tenantId,
-    this.updatedAt,
-    this.usedCount,
-    this.uuid,
-    this.version,
-    this.voidedCount
-  });
-
-  factory OpsCouponIssueBatchRecord.fromJson(Map<String, dynamic> json) {
-    return OpsCouponIssueBatchRecord(
-      audienceFilter: (() {
-        final map = _sdkworkAsMap(json['audience_filter']);
-        if (map == null) {
-          return null;
-        }
-        final result = <String, String>{};
-        map.forEach((key, item) {
-          final deserialized = item?.toString();
-          if (deserialized is String) {
-            result[key] = deserialized;
-          }
-        });
-        return result;
-      })(),
-      availableCount: json['available_count']?.toString(),
-      batchNo: json['batch_no']?.toString(),
-      campaignCode: json['campaign_code']?.toString(),
-      claimedCount: json['claimed_count']?.toString(),
-      codePattern: json['code_pattern']?.toString(),
-      codePrefix: json['code_prefix']?.toString(),
-      couponId: json['coupon_id']?.toString(),
-      couponTemplateId: json['coupon_template_id']?.toString(),
-      createdAt: json['created_at']?.toString(),
-      createdBy: json['created_by']?.toString(),
-      dataScope: json['data_scope']?.toString(),
-      deletedAt: json['deleted_at']?.toString(),
-      deletedBy: json['deleted_by']?.toString(),
-      expireAt: json['expire_at']?.toString(),
-      generatedAt: json['generated_at']?.toString(),
-      generatedCount: json['generated_count']?.toString(),
-      generationStatus: json['generation_status']?.toString(),
-      id: json['id']?.toString(),
-      metadata: (() {
-        final map = _sdkworkAsMap(json['metadata']);
-        if (map == null) {
-          return null;
-        }
-        final result = <String, String>{};
-        map.forEach((key, item) {
-          final deserialized = item?.toString();
-          if (deserialized is String) {
-            result[key] = deserialized;
-          }
-        });
-        return result;
-      })(),
-      name: json['name']?.toString(),
-      organizationId: json['organization_id']?.toString(),
-      requestedCount: json['requested_count']?.toString(),
-      status: json['status']?.toString(),
-      tenantId: json['tenant_id']?.toString(),
-      updatedAt: json['updated_at']?.toString(),
-      usedCount: json['used_count']?.toString(),
-      uuid: json['uuid']?.toString(),
-      version: json['version']?.toString(),
-      voidedCount: json['voided_count']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'audience_filter': audienceFilter?.map((key, item) => MapEntry(key, item)),
-      'available_count': availableCount,
-      'batch_no': batchNo,
-      'campaign_code': campaignCode,
-      'claimed_count': claimedCount,
-      'code_pattern': codePattern,
-      'code_prefix': codePrefix,
-      'coupon_id': couponId,
-      'coupon_template_id': couponTemplateId,
-      'created_at': createdAt,
-      'created_by': createdBy,
-      'data_scope': dataScope,
-      'deleted_at': deletedAt,
-      'deleted_by': deletedBy,
-      'expire_at': expireAt,
-      'generated_at': generatedAt,
-      'generated_count': generatedCount,
-      'generation_status': generationStatus,
-      'id': id,
-      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
-      'name': name,
-      'organization_id': organizationId,
-      'requested_count': requestedCount,
-      'status': status,
-      'tenant_id': tenantId,
-      'updated_at': updatedAt,
-      'used_count': usedCount,
-      'uuid': uuid,
-      'version': version,
-      'voided_count': voidedCount,
     };
   }
 }
@@ -23411,6 +36984,7 @@ class OpsMetricSnapshotRecord {
 }
 
 class OpsNotificationDeliveryRecord {
+  final String? archivedAt;
   final String? createdAt;
   final String? dataScope;
   final String? deletedAt;
@@ -23425,6 +36999,7 @@ class OpsNotificationDeliveryRecord {
   final String? organizationId;
   final String? ownerId;
   final String? ownerType;
+  final String? popupSeenAt;
   final String? readAt;
   final int? retryCount;
   final String? status;
@@ -23435,6 +37010,7 @@ class OpsNotificationDeliveryRecord {
   final String? version;
 
   OpsNotificationDeliveryRecord({
+    this.archivedAt,
     this.createdAt,
     this.dataScope,
     this.deletedAt,
@@ -23449,6 +37025,7 @@ class OpsNotificationDeliveryRecord {
     this.organizationId,
     this.ownerId,
     this.ownerType,
+    this.popupSeenAt,
     this.readAt,
     this.retryCount,
     this.status,
@@ -23461,6 +37038,7 @@ class OpsNotificationDeliveryRecord {
 
   factory OpsNotificationDeliveryRecord.fromJson(Map<String, dynamic> json) {
     return OpsNotificationDeliveryRecord(
+      archivedAt: json['archived_at']?.toString(),
       createdAt: json['created_at']?.toString(),
       dataScope: json['data_scope']?.toString(),
       deletedAt: json['deleted_at']?.toString(),
@@ -23488,6 +37066,7 @@ class OpsNotificationDeliveryRecord {
       organizationId: json['organization_id']?.toString(),
       ownerId: json['owner_id']?.toString(),
       ownerType: json['owner_type']?.toString(),
+      popupSeenAt: json['popup_seen_at']?.toString(),
       readAt: json['read_at']?.toString(),
       retryCount: json['retry_count'] is int ? json['retry_count'] : null,
       status: json['status']?.toString(),
@@ -23501,6 +37080,7 @@ class OpsNotificationDeliveryRecord {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
+      'archived_at': archivedAt,
       'created_at': createdAt,
       'data_scope': dataScope,
       'deleted_at': deletedAt,
@@ -23515,6 +37095,7 @@ class OpsNotificationDeliveryRecord {
       'organization_id': organizationId,
       'owner_id': ownerId,
       'owner_type': ownerType,
+      'popup_seen_at': popupSeenAt,
       'read_at': readAt,
       'retry_count': retryCount,
       'status': status,
@@ -23529,6 +37110,7 @@ class OpsNotificationDeliveryRecord {
 
 class OpsNotificationMessageRecord {
   final String? actionUrl;
+  final String? appId;
   final String? content;
   final String? createdAt;
   final String? dataScope;
@@ -23544,10 +37126,6 @@ class OpsNotificationMessageRecord {
   final String? severity;
   final String? status;
   final String? summary;
-  final String? targetOwnerId;
-  final String? targetOwnerType;
-  final String? targetScope;
-  final String? targetUserId;
   final String? tenantId;
   final String? title;
   final String? updatedAt;
@@ -23556,6 +37134,7 @@ class OpsNotificationMessageRecord {
 
   OpsNotificationMessageRecord({
     this.actionUrl,
+    this.appId,
     this.content,
     this.createdAt,
     this.dataScope,
@@ -23571,10 +37150,6 @@ class OpsNotificationMessageRecord {
     this.severity,
     this.status,
     this.summary,
-    this.targetOwnerId,
-    this.targetOwnerType,
-    this.targetScope,
-    this.targetUserId,
     this.tenantId,
     this.title,
     this.updatedAt,
@@ -23585,6 +37160,7 @@ class OpsNotificationMessageRecord {
   factory OpsNotificationMessageRecord.fromJson(Map<String, dynamic> json) {
     return OpsNotificationMessageRecord(
       actionUrl: json['action_url']?.toString(),
+      appId: json['app_id']?.toString(),
       content: json['content']?.toString(),
       createdAt: json['created_at']?.toString(),
       dataScope: json['data_scope']?.toString(),
@@ -23613,10 +37189,6 @@ class OpsNotificationMessageRecord {
       severity: json['severity']?.toString(),
       status: json['status']?.toString(),
       summary: json['summary']?.toString(),
-      targetOwnerId: json['target_owner_id']?.toString(),
-      targetOwnerType: json['target_owner_type']?.toString(),
-      targetScope: json['target_scope']?.toString(),
-      targetUserId: json['target_user_id']?.toString(),
       tenantId: json['tenant_id']?.toString(),
       title: json['title']?.toString(),
       updatedAt: json['updated_at']?.toString(),
@@ -23628,6 +37200,7 @@ class OpsNotificationMessageRecord {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'action_url': actionUrl,
+      'app_id': appId,
       'content': content,
       'created_at': createdAt,
       'data_scope': dataScope,
@@ -23643,12 +37216,190 @@ class OpsNotificationMessageRecord {
       'severity': severity,
       'status': status,
       'summary': summary,
-      'target_owner_id': targetOwnerId,
-      'target_owner_type': targetOwnerType,
-      'target_scope': targetScope,
-      'target_user_id': targetUserId,
       'tenant_id': tenantId,
       'title': title,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class OpsNotificationPreferenceRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? ownerId;
+  final String? ownerType;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? userId;
+  final String? uuid;
+  final String? version;
+
+  OpsNotificationPreferenceRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.ownerId,
+    this.ownerType,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.userId,
+    this.uuid,
+    this.version
+  });
+
+  factory OpsNotificationPreferenceRecord.fromJson(Map<String, dynamic> json) {
+    return OpsNotificationPreferenceRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      ownerId: json['owner_id']?.toString(),
+      ownerType: json['owner_type']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      userId: json['user_id']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'owner_id': ownerId,
+      'owner_type': ownerType,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'user_id': userId,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class OpsNotificationRecipientRecord {
+  final String? appId;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String? organizationId;
+  final String? recipientRoleCode;
+  final String? recipientUserId;
+  final String? recipientValue;
+  final String? status;
+  final String? tenantId;
+  final String? updatedAt;
+  final String? uuid;
+  final String? version;
+
+  OpsNotificationRecipientRecord({
+    this.appId,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.id,
+    this.metadata,
+    this.organizationId,
+    this.recipientRoleCode,
+    this.recipientUserId,
+    this.recipientValue,
+    this.status,
+    this.tenantId,
+    this.updatedAt,
+    this.uuid,
+    this.version
+  });
+
+  factory OpsNotificationRecipientRecord.fromJson(Map<String, dynamic> json) {
+    return OpsNotificationRecipientRecord(
+      appId: json['app_id']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: json['organization_id']?.toString(),
+      recipientRoleCode: json['recipient_role_code']?.toString(),
+      recipientUserId: json['recipient_user_id']?.toString(),
+      recipientValue: json['recipient_value']?.toString(),
+      status: json['status']?.toString(),
+      tenantId: json['tenant_id']?.toString(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: json['uuid']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'app_id': appId,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'recipient_role_code': recipientRoleCode,
+      'recipient_user_id': recipientUserId,
+      'recipient_value': recipientValue,
+      'status': status,
+      'tenant_id': tenantId,
       'updated_at': updatedAt,
       'uuid': uuid,
       'version': version,
@@ -23964,27 +37715,24 @@ class OpsReferralStatSnapshotRecord {
   }
 }
 
-class PaymentsAttemptsListResult {
+class OrdersEventsListResult {
   final String? code;
-  final AdminPaymentAttemptsResponse? data;
-  final String? message;
+  final CommerceStandardCollectionResponse? data;
   final String? msg;
 
-  PaymentsAttemptsListResult({
+  OrdersEventsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
-  factory PaymentsAttemptsListResult.fromJson(Map<String, dynamic> json) {
-    return PaymentsAttemptsListResult(
+  factory OrdersEventsListResult.fromJson(Map<String, dynamic> json) {
+    return OrdersEventsListResult(
       code: json['code']?.toString(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : AdminPaymentAttemptsResponse.fromJson(map);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -23993,51 +37741,380 @@ class PaymentsAttemptsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
 }
 
-class PlusAccountExchangeConfigRecord {
+class OrdersListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
 
+  OrdersListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
 
-  PlusAccountExchangeConfigRecord();
-
-  factory PlusAccountExchangeConfigRecord.fromJson(Map<String, dynamic> json) {
-    return PlusAccountExchangeConfigRecord();
+  factory OrdersListResult.fromJson(Map<String, dynamic> json) {
+    return OrdersListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
   }
 
   Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
   }
 }
 
-class PlusAccountHistoryRecord {
+class OrdersRetrieveResult {
+  final String? code;
+  final CommerceStandardResourceResponse? data;
+  final String? msg;
 
+  OrdersRetrieveResult({
+    this.code,
+    this.data,
+    this.msg
+  });
 
-  PlusAccountHistoryRecord();
-
-  factory PlusAccountHistoryRecord.fromJson(Map<String, dynamic> json) {
-    return PlusAccountHistoryRecord();
+  factory OrdersRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return OrdersRetrieveResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
   }
 
   Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
   }
 }
 
-class PlusAccountRecord {
+class PaymentsAttemptsListResult {
+  final String? code;
+  final CommercePaymentAttemptListResponse? data;
+  final String? msg;
 
+  PaymentsAttemptsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
 
-  PlusAccountRecord();
-
-  factory PlusAccountRecord.fromJson(Map<String, dynamic> json) {
-    return PlusAccountRecord();
+  factory PaymentsAttemptsListResult.fromJson(Map<String, dynamic> json) {
+    return PaymentsAttemptsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommercePaymentAttemptListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
   }
 
   Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PaymentsChannelsListResult {
+  final String? code;
+  final CommercePaymentChannelListResponse? data;
+  final String? msg;
+
+  PaymentsChannelsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PaymentsChannelsListResult.fromJson(Map<String, dynamic> json) {
+    return PaymentsChannelsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommercePaymentChannelListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PaymentsIntentsListResult {
+  final String? code;
+  final CommercePaymentIntentListResponse? data;
+  final String? msg;
+
+  PaymentsIntentsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PaymentsIntentsListResult.fromJson(Map<String, dynamic> json) {
+    return PaymentsIntentsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommercePaymentIntentListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PaymentsMethodsListResult {
+  final String? code;
+  final CommercePaymentMethodListResponse? data;
+  final String? msg;
+
+  PaymentsMethodsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PaymentsMethodsListResult.fromJson(Map<String, dynamic> json) {
+    return PaymentsMethodsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommercePaymentMethodListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PaymentsProviderAccountsCreateResult {
+  final String? code;
+  final CommercePaymentProviderAccountMutationResponse? data;
+  final String? msg;
+
+  PaymentsProviderAccountsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PaymentsProviderAccountsCreateResult.fromJson(Map<String, dynamic> json) {
+    return PaymentsProviderAccountsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommercePaymentProviderAccountMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PaymentsProviderAccountsListResult {
+  final String? code;
+  final CommercePaymentProviderAccountListResponse? data;
+  final String? msg;
+
+  PaymentsProviderAccountsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PaymentsProviderAccountsListResult.fromJson(Map<String, dynamic> json) {
+    return PaymentsProviderAccountsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommercePaymentProviderAccountListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PaymentsProvidersListResult {
+  final String? code;
+  final CommercePaymentProviderListResponse? data;
+  final String? msg;
+
+  PaymentsProvidersListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PaymentsProvidersListResult.fromJson(Map<String, dynamic> json) {
+    return PaymentsProvidersListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommercePaymentProviderListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PaymentsReconciliationRunsListResult {
+  final String? code;
+  final CommercePaymentReconciliationRunListResponse? data;
+  final String? msg;
+
+  PaymentsReconciliationRunsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PaymentsReconciliationRunsListResult.fromJson(Map<String, dynamic> json) {
+    return PaymentsReconciliationRunsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommercePaymentReconciliationRunListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PaymentsRouteRulesListResult {
+  final String? code;
+  final CommercePaymentRouteRuleListResponse? data;
+  final String? msg;
+
+  PaymentsRouteRulesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PaymentsRouteRulesListResult.fromJson(Map<String, dynamic> json) {
+    return PaymentsRouteRulesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommercePaymentRouteRuleListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class PaymentsWebhookEventsListResult {
+  final String? code;
+  final CommercePaymentWebhookEventListResponse? data;
+  final String? msg;
+
+  PaymentsWebhookEventsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory PaymentsWebhookEventsListResult.fromJson(Map<String, dynamic> json) {
+    return PaymentsWebhookEventsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommercePaymentWebhookEventListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
   }
 }
 
@@ -24602,48 +38679,6 @@ class PlusContentVoteRecord {
   }
 }
 
-class PlusCouponRecord {
-
-
-  PlusCouponRecord();
-
-  factory PlusCouponRecord.fromJson(Map<String, dynamic> json) {
-    return PlusCouponRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusCouponTemplateRecord {
-
-
-  PlusCouponTemplateRecord();
-
-  factory PlusCouponTemplateRecord.fromJson(Map<String, dynamic> json) {
-    return PlusCouponTemplateRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusCurrencyRecord {
-
-
-  PlusCurrencyRecord();
-
-  factory PlusCurrencyRecord.fromJson(Map<String, dynamic> json) {
-    return PlusCurrencyRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
 class PlusDepartmentRecord {
 
 
@@ -24651,20 +38686,6 @@ class PlusDepartmentRecord {
 
   factory PlusDepartmentRecord.fromJson(Map<String, dynamic> json) {
     return PlusDepartmentRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusExchangeRateRecord {
-
-
-  PlusExchangeRateRecord();
-
-  factory PlusExchangeRateRecord.fromJson(Map<String, dynamic> json) {
-    return PlusExchangeRateRecord();
   }
 
   Map<String, dynamic> toJson() {
@@ -24861,62 +38882,6 @@ class PlusInvitationRelationRecord {
   }
 }
 
-class PlusInvoiceItemRecord {
-
-
-  PlusInvoiceItemRecord();
-
-  factory PlusInvoiceItemRecord.fromJson(Map<String, dynamic> json) {
-    return PlusInvoiceItemRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusInvoiceRecord {
-
-
-  PlusInvoiceRecord();
-
-  factory PlusInvoiceRecord.fromJson(Map<String, dynamic> json) {
-    return PlusInvoiceRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusInvoiceRecordRecord {
-
-
-  PlusInvoiceRecordRecord();
-
-  factory PlusInvoiceRecordRecord.fromJson(Map<String, dynamic> json) {
-    return PlusInvoiceRecordRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusLedgerBridgeRecord {
-
-
-  PlusLedgerBridgeRecord();
-
-  factory PlusLedgerBridgeRecord.fromJson(Map<String, dynamic> json) {
-    return PlusLedgerBridgeRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
 class PlusMemberCardRecord {
 
 
@@ -24945,62 +38910,6 @@ class PlusMemberLevelRecord {
   }
 }
 
-class PlusOrderDispatchRuleRecord {
-
-
-  PlusOrderDispatchRuleRecord();
-
-  factory PlusOrderDispatchRuleRecord.fromJson(Map<String, dynamic> json) {
-    return PlusOrderDispatchRuleRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusOrderItemRecord {
-
-
-  PlusOrderItemRecord();
-
-  factory PlusOrderItemRecord.fromJson(Map<String, dynamic> json) {
-    return PlusOrderItemRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusOrderRecord {
-
-
-  PlusOrderRecord();
-
-  factory PlusOrderRecord.fromJson(Map<String, dynamic> json) {
-    return PlusOrderRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusOrderWorkerDispatchProfileRecord {
-
-
-  PlusOrderWorkerDispatchProfileRecord();
-
-  factory PlusOrderWorkerDispatchProfileRecord.fromJson(Map<String, dynamic> json) {
-    return PlusOrderWorkerDispatchProfileRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
 class PlusPartnerRecord {
 
 
@@ -25015,34 +38924,6 @@ class PlusPartnerRecord {
   }
 }
 
-class PlusPaymentRecord {
-
-
-  PlusPaymentRecord();
-
-  factory PlusPaymentRecord.fromJson(Map<String, dynamic> json) {
-    return PlusPaymentRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusPaymentWebhookEventRecord {
-
-
-  PlusPaymentWebhookEventRecord();
-
-  factory PlusPaymentWebhookEventRecord.fromJson(Map<String, dynamic> json) {
-    return PlusPaymentWebhookEventRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
 class PlusPositionRecord {
 
 
@@ -25050,90 +38931,6 @@ class PlusPositionRecord {
 
   factory PlusPositionRecord.fromJson(Map<String, dynamic> json) {
     return PlusPositionRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusProductRecord {
-
-
-  PlusProductRecord();
-
-  factory PlusProductRecord.fromJson(Map<String, dynamic> json) {
-    return PlusProductRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusRefundRecord {
-
-
-  PlusRefundRecord();
-
-  factory PlusRefundRecord.fromJson(Map<String, dynamic> json) {
-    return PlusRefundRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusShopRecord {
-
-
-  PlusShopRecord();
-
-  factory PlusShopRecord.fromJson(Map<String, dynamic> json) {
-    return PlusShopRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusShoppingCartItemRecord {
-
-
-  PlusShoppingCartItemRecord();
-
-  factory PlusShoppingCartItemRecord.fromJson(Map<String, dynamic> json) {
-    return PlusShoppingCartItemRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusShoppingCartRecord {
-
-
-  PlusShoppingCartRecord();
-
-  factory PlusShoppingCartRecord.fromJson(Map<String, dynamic> json) {
-    return PlusShoppingCartRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusSkuRecord {
-
-
-  PlusSkuRecord();
-
-  factory PlusSkuRecord.fromJson(Map<String, dynamic> json) {
-    return PlusSkuRecord();
   }
 
   Map<String, dynamic> toJson() {
@@ -25211,179 +39008,12 @@ class PlusUserCardRecord {
   }
 }
 
-class PlusUserCouponRecord {
-
-
-  PlusUserCouponRecord();
-
-  factory PlusUserCouponRecord.fromJson(Map<String, dynamic> json) {
-    return PlusUserCouponRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusVipBenefitRecord {
-
-
-  PlusVipBenefitRecord();
-
-  factory PlusVipBenefitRecord.fromJson(Map<String, dynamic> json) {
-    return PlusVipBenefitRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusVipBenefitUsageRecord {
-
-
-  PlusVipBenefitUsageRecord();
-
-  factory PlusVipBenefitUsageRecord.fromJson(Map<String, dynamic> json) {
-    return PlusVipBenefitUsageRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusVipLevelBenefitRecord {
-
-
-  PlusVipLevelBenefitRecord();
-
-  factory PlusVipLevelBenefitRecord.fromJson(Map<String, dynamic> json) {
-    return PlusVipLevelBenefitRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusVipLevelRecord {
-
-
-  PlusVipLevelRecord();
-
-  factory PlusVipLevelRecord.fromJson(Map<String, dynamic> json) {
-    return PlusVipLevelRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusVipPackGroupRecord {
-
-
-  PlusVipPackGroupRecord();
-
-  factory PlusVipPackGroupRecord.fromJson(Map<String, dynamic> json) {
-    return PlusVipPackGroupRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusVipPackRecord {
-
-
-  PlusVipPackRecord();
-
-  factory PlusVipPackRecord.fromJson(Map<String, dynamic> json) {
-    return PlusVipPackRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusVipPointChangeRecord {
-
-
-  PlusVipPointChangeRecord();
-
-  factory PlusVipPointChangeRecord.fromJson(Map<String, dynamic> json) {
-    return PlusVipPointChangeRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusVipRechargeMethodRecord {
-
-
-  PlusVipRechargeMethodRecord();
-
-  factory PlusVipRechargeMethodRecord.fromJson(Map<String, dynamic> json) {
-    return PlusVipRechargeMethodRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusVipRechargePackRecord {
-
-
-  PlusVipRechargePackRecord();
-
-  factory PlusVipRechargePackRecord.fromJson(Map<String, dynamic> json) {
-    return PlusVipRechargePackRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusVipRechargeRecord {
-
-
-  PlusVipRechargeRecord();
-
-  factory PlusVipRechargeRecord.fromJson(Map<String, dynamic> json) {
-    return PlusVipRechargeRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
-class PlusVipUserRecord {
-
-
-  PlusVipUserRecord();
-
-  factory PlusVipUserRecord.fromJson(Map<String, dynamic> json) {
-    return PlusVipUserRecord();
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{};
-  }
-}
-
 class ProblemDetail {
   final String? code;
   final String? detail;
   final List<FieldError>? errors;
   final String? instance;
+  final String? requestId;
   final int? status;
   final String? title;
   final String? traceId;
@@ -25394,6 +39024,7 @@ class ProblemDetail {
     this.detail,
     this.errors,
     this.instance,
+    this.requestId,
     this.status,
     this.title,
     this.traceId,
@@ -25418,6 +39049,7 @@ class ProblemDetail {
             .toList();
       })(),
       instance: json['instance']?.toString(),
+      requestId: json['requestId']?.toString(),
       status: json['status'] is int ? json['status'] : null,
       title: json['title']?.toString(),
       traceId: json['traceId']?.toString(),
@@ -25431,10 +39063,31 @@ class ProblemDetail {
       'detail': detail,
       'errors': errors?.map((item) => item.toJson()).toList(),
       'instance': instance,
+      'requestId': requestId,
       'status': status,
       'title': title,
       'traceId': traceId,
       'type': type,
+    };
+  }
+}
+
+class ProviderCircuitBreakerPolicy {
+  final int? failureThreshold;
+
+  ProviderCircuitBreakerPolicy({
+    this.failureThreshold
+  });
+
+  factory ProviderCircuitBreakerPolicy.fromJson(Map<String, dynamic> json) {
+    return ProviderCircuitBreakerPolicy(
+      failureThreshold: json['failureThreshold'] is int ? json['failureThreshold'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'failureThreshold': failureThreshold,
     };
   }
 }
@@ -25479,13 +39132,11 @@ class ProviderRetryPolicy {
 class ProviderSecretsCreateResult {
   final String? code;
   final AdminProviderSecretMutationResponse? data;
-  final String? message;
   final String? msg;
 
   ProviderSecretsCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -25496,7 +39147,6 @@ class ProviderSecretsCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminProviderSecretMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -25505,7 +39155,6 @@ class ProviderSecretsCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -25514,13 +39163,11 @@ class ProviderSecretsCreateResult {
 class ProviderSecretsDeleteResult {
   final String? code;
   final AdminDeleteResponse? data;
-  final String? message;
   final String? msg;
 
   ProviderSecretsDeleteResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -25531,7 +39178,6 @@ class ProviderSecretsDeleteResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminDeleteResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -25540,7 +39186,6 @@ class ProviderSecretsDeleteResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -25549,13 +39194,11 @@ class ProviderSecretsDeleteResult {
 class ProviderSecretsListResult {
   final String? code;
   final AdminProviderSecretsResponse? data;
-  final String? message;
   final String? msg;
 
   ProviderSecretsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -25566,7 +39209,6 @@ class ProviderSecretsListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminProviderSecretsResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -25575,7 +39217,6 @@ class ProviderSecretsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -25584,13 +39225,11 @@ class ProviderSecretsListResult {
 class ProviderSecretsUpdateResult {
   final String? code;
   final AdminProviderSecretMutationResponse? data;
-  final String? message;
   final String? msg;
 
   ProviderSecretsUpdateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -25601,7 +39240,6 @@ class ProviderSecretsUpdateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminProviderSecretMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -25610,7 +39248,37 @@ class ProviderSecretsUpdateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
+      'msg': msg,
+    };
+  }
+}
+
+class ProvidersListResult {
+  final String? code;
+  final OpenPlatformProviderListResponse? data;
+  final String? msg;
+
+  ProvidersListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ProvidersListResult.fromJson(Map<String, dynamic> json) {
+    return ProvidersListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : OpenPlatformProviderListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
       'msg': msg,
     };
   }
@@ -25619,13 +39287,11 @@ class ProviderSecretsUpdateResult {
 class RateLimitsApiKeysCreateResult {
   final String? code;
   final AdminRateLimitMutationResponse? data;
-  final String? message;
   final String? msg;
 
   RateLimitsApiKeysCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -25636,7 +39302,6 @@ class RateLimitsApiKeysCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminRateLimitMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -25645,7 +39310,6 @@ class RateLimitsApiKeysCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -25654,13 +39318,11 @@ class RateLimitsApiKeysCreateResult {
 class RateLimitsApiKeysListResult {
   final String? code;
   final AdminTokenLimitsResponse? data;
-  final String? message;
   final String? msg;
 
   RateLimitsApiKeysListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -25671,7 +39333,6 @@ class RateLimitsApiKeysListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminTokenLimitsResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -25680,7 +39341,6 @@ class RateLimitsApiKeysListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -25689,13 +39349,11 @@ class RateLimitsApiKeysListResult {
 class RateLimitsIpCreateResult {
   final String? code;
   final AdminRateLimitMutationResponse? data;
-  final String? message;
   final String? msg;
 
   RateLimitsIpCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -25706,7 +39364,6 @@ class RateLimitsIpCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminRateLimitMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -25715,7 +39372,6 @@ class RateLimitsIpCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -25724,13 +39380,11 @@ class RateLimitsIpCreateResult {
 class RateLimitsIpListResult {
   final String? code;
   final AdminIpLimitsResponse? data;
-  final String? message;
   final String? msg;
 
   RateLimitsIpListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -25741,7 +39395,6 @@ class RateLimitsIpListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminIpLimitsResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -25750,7 +39403,6 @@ class RateLimitsIpListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -25759,13 +39411,11 @@ class RateLimitsIpListResult {
 class RateLimitsModelsCreateResult {
   final String? code;
   final AdminRateLimitMutationResponse? data;
-  final String? message;
   final String? msg;
 
   RateLimitsModelsCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -25776,7 +39426,6 @@ class RateLimitsModelsCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminRateLimitMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -25785,7 +39434,6 @@ class RateLimitsModelsCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -25794,13 +39442,11 @@ class RateLimitsModelsCreateResult {
 class RateLimitsModelsListResult {
   final String? code;
   final AdminModelLimitsResponse? data;
-  final String? message;
   final String? msg;
 
   RateLimitsModelsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -25811,7 +39457,6 @@ class RateLimitsModelsListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminModelLimitsResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -25820,40 +39465,38 @@ class RateLimitsModelsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
 }
 
-class RechargePackage {
-  final int? bonus;
-  final String? id;
-  final int? points;
-  final String? rmb;
+class RechargesOrdersListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
 
-  RechargePackage({
-    this.bonus,
-    this.id,
-    this.points,
-    this.rmb
+  RechargesOrdersListResult({
+    this.code,
+    this.data,
+    this.msg
   });
 
-  factory RechargePackage.fromJson(Map<String, dynamic> json) {
-    return RechargePackage(
-      bonus: json['bonus'] is int ? json['bonus'] : null,
-      id: json['id']?.toString(),
-      points: json['points'] is int ? json['points'] : null,
-      rmb: json['rmb']?.toString()
+  factory RechargesOrdersListResult.fromJson(Map<String, dynamic> json) {
+    return RechargesOrdersListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'bonus': bonus,
-      'id': id,
-      'points': points,
-      'rmb': rmb,
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
     };
   }
 }
@@ -25861,13 +39504,11 @@ class RechargePackage {
 class RechargesPackagesCreateResult {
   final String? code;
   final AdminRechargePackageMutationResponse? data;
-  final String? message;
   final String? msg;
 
   RechargesPackagesCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -25878,7 +39519,6 @@ class RechargesPackagesCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminRechargePackageMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -25887,7 +39527,6 @@ class RechargesPackagesCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -25896,13 +39535,11 @@ class RechargesPackagesCreateResult {
 class RechargesPackagesDeleteResult {
   final String? code;
   final AdminDeleteResponse? data;
-  final String? message;
   final String? msg;
 
   RechargesPackagesDeleteResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -25913,7 +39550,6 @@ class RechargesPackagesDeleteResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminDeleteResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -25922,7 +39558,6 @@ class RechargesPackagesDeleteResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -25930,14 +39565,12 @@ class RechargesPackagesDeleteResult {
 
 class RechargesPackagesListResult {
   final String? code;
-  final List<RechargePackage>? data;
-  final String? message;
+  final CommerceStandardCollectionResponse? data;
   final String? msg;
 
   RechargesPackagesListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -25945,19 +39578,9 @@ class RechargesPackagesListResult {
     return RechargesPackagesListResult(
       code: json['code']?.toString(),
       data: (() {
-        final list = _sdkworkAsList(json['data']);
-        if (list == null) {
-          return null;
-        }
-        return list
-            .map((item) => (() {
-        final map = _sdkworkAsMap(item);
-        return map == null ? null : RechargePackage.fromJson(map);
-      })())
-            .whereType<RechargePackage>()
-            .toList();
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -25965,8 +39588,7 @@ class RechargesPackagesListResult {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'code': code,
-      'data': data?.map((item) => item.toJson()).toList(),
-      'message': message,
+      'data': data?.toJson(),
       'msg': msg,
     };
   }
@@ -25975,13 +39597,11 @@ class RechargesPackagesListResult {
 class RechargesPackagesUpdateResult {
   final String? code;
   final AdminRechargePackageMutationResponse? data;
-  final String? message;
   final String? msg;
 
   RechargesPackagesUpdateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -25992,7 +39612,6 @@ class RechargesPackagesUpdateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminRechargePackageMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26001,77 +39620,6 @@ class RechargesPackagesUpdateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
-      'msg': msg,
-    };
-  }
-}
-
-class RechargesRecordsListResult {
-  final String? code;
-  final AdminRechargeRecordsResponse? data;
-  final String? message;
-  final String? msg;
-
-  RechargesRecordsListResult({
-    this.code,
-    this.data,
-    this.message,
-    this.msg
-  });
-
-  factory RechargesRecordsListResult.fromJson(Map<String, dynamic> json) {
-    return RechargesRecordsListResult(
-      code: json['code']?.toString(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : AdminRechargeRecordsResponse.fromJson(map);
-      })(),
-      message: json['message']?.toString(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'message': message,
-      'msg': msg,
-    };
-  }
-}
-
-class RechargesRecordsRetrieveResult {
-  final String? code;
-  final AdminRechargeRecordItem? data;
-  final String? message;
-  final String? msg;
-
-  RechargesRecordsRetrieveResult({
-    this.code,
-    this.data,
-    this.message,
-    this.msg
-  });
-
-  factory RechargesRecordsRetrieveResult.fromJson(Map<String, dynamic> json) {
-    return RechargesRecordsRetrieveResult(
-      code: json['code']?.toString(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : AdminRechargeRecordItem.fromJson(map);
-      })(),
-      message: json['message']?.toString(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26080,13 +39628,11 @@ class RechargesRecordsRetrieveResult {
 class RecordsListResult {
   final String? code;
   final AdminRecordLogsResponse? data;
-  final String? message;
   final String? msg;
 
   RecordsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26097,7 +39643,6 @@ class RecordsListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminRecordLogsResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26106,33 +39651,29 @@ class RecordsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
 }
 
-class ReferralsStatsListResult {
+class RefundsListResult {
   final String? code;
-  final AdminReferralStatsResponse? data;
-  final String? message;
+  final CommerceStandardCollectionResponse? data;
   final String? msg;
 
-  ReferralsStatsListResult({
+  RefundsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
-  factory ReferralsStatsListResult.fromJson(Map<String, dynamic> json) {
-    return ReferralsStatsListResult(
+  factory RefundsListResult.fromJson(Map<String, dynamic> json) {
+    return RefundsListResult(
       code: json['code']?.toString(),
       data: (() {
         final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : AdminReferralStatsResponse.fromJson(map);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26141,7 +39682,161 @@ class ReferralsStatsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
+      'msg': msg,
+    };
+  }
+}
+
+class RefundsRetrieveResult {
+  final String? code;
+  final CommerceStandardResourceResponse? data;
+  final String? msg;
+
+  RefundsRetrieveResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory RefundsRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return RefundsRetrieveResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardResourceResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ShipmentsListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
+
+  ShipmentsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ShipmentsListResult.fromJson(Map<String, dynamic> json) {
+    return ShipmentsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ShipmentsTrackingEventsListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
+
+  ShipmentsTrackingEventsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ShipmentsTrackingEventsListResult.fromJson(Map<String, dynamic> json) {
+    return ShipmentsTrackingEventsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SiteSettingsRetrieveResult {
+  final String? code;
+  final AdminSiteSettingsResponse? data;
+  final String? msg;
+
+  SiteSettingsRetrieveResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SiteSettingsRetrieveResult.fromJson(Map<String, dynamic> json) {
+    return SiteSettingsRetrieveResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminSiteSettingsResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SiteSettingsUpdateResult {
+  final String? code;
+  final AdminSiteSettingsResponse? data;
+  final String? msg;
+
+  SiteSettingsUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SiteSettingsUpdateResult.fromJson(Map<String, dynamic> json) {
+    return SiteSettingsUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminSiteSettingsResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
       'msg': msg,
     };
   }
@@ -26150,13 +39845,11 @@ class ReferralsStatsListResult {
 class SkillsArtifactsCreateResult {
   final String? code;
   final AdminSkillArtifactMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsArtifactsCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26167,7 +39860,6 @@ class SkillsArtifactsCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillArtifactMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26176,7 +39868,6 @@ class SkillsArtifactsCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26185,13 +39876,11 @@ class SkillsArtifactsCreateResult {
 class SkillsArtifactsDeleteResult {
   final String? code;
   final AdminSkillArtifactDeleteResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsArtifactsDeleteResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26202,7 +39891,6 @@ class SkillsArtifactsDeleteResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillArtifactDeleteResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26211,7 +39899,6 @@ class SkillsArtifactsDeleteResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26220,13 +39907,11 @@ class SkillsArtifactsDeleteResult {
 class SkillsArtifactsListResult {
   final String? code;
   final AdminSkillArtifactListResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsArtifactsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26237,7 +39922,6 @@ class SkillsArtifactsListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillArtifactListResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26246,7 +39930,6 @@ class SkillsArtifactsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26255,13 +39938,11 @@ class SkillsArtifactsListResult {
 class SkillsArtifactsRetrieveResult {
   final String? code;
   final AdminSkillArtifactMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsArtifactsRetrieveResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26272,7 +39953,6 @@ class SkillsArtifactsRetrieveResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillArtifactMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26281,7 +39961,6 @@ class SkillsArtifactsRetrieveResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26290,13 +39969,11 @@ class SkillsArtifactsRetrieveResult {
 class SkillsArtifactsUpdateResult {
   final String? code;
   final AdminSkillArtifactMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsArtifactsUpdateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26307,7 +39984,6 @@ class SkillsArtifactsUpdateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillArtifactMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26316,7 +39992,6 @@ class SkillsArtifactsUpdateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26325,13 +40000,11 @@ class SkillsArtifactsUpdateResult {
 class SkillsAssetsCreateResult {
   final String? code;
   final AdminSkillAssetMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsAssetsCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26342,7 +40015,6 @@ class SkillsAssetsCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillAssetMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26351,7 +40023,6 @@ class SkillsAssetsCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26360,13 +40031,11 @@ class SkillsAssetsCreateResult {
 class SkillsAssetsDeleteResult {
   final String? code;
   final AdminSkillAssetDeleteResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsAssetsDeleteResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26377,7 +40046,6 @@ class SkillsAssetsDeleteResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillAssetDeleteResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26386,7 +40054,6 @@ class SkillsAssetsDeleteResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26395,13 +40062,11 @@ class SkillsAssetsDeleteResult {
 class SkillsAssetsListResult {
   final String? code;
   final AdminSkillAssetListResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsAssetsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26412,7 +40077,6 @@ class SkillsAssetsListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillAssetListResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26421,7 +40085,6 @@ class SkillsAssetsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26430,13 +40093,11 @@ class SkillsAssetsListResult {
 class SkillsAssetsRetrieveResult {
   final String? code;
   final AdminSkillAssetMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsAssetsRetrieveResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26447,7 +40108,6 @@ class SkillsAssetsRetrieveResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillAssetMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26456,7 +40116,6 @@ class SkillsAssetsRetrieveResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26465,13 +40124,11 @@ class SkillsAssetsRetrieveResult {
 class SkillsAssetsUpdateResult {
   final String? code;
   final AdminSkillAssetMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsAssetsUpdateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26482,7 +40139,6 @@ class SkillsAssetsUpdateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillAssetMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26491,7 +40147,6 @@ class SkillsAssetsUpdateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26500,13 +40155,11 @@ class SkillsAssetsUpdateResult {
 class SkillsCategoriesCreateResult {
   final String? code;
   final AdminSkillCategoryMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsCategoriesCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26517,7 +40170,6 @@ class SkillsCategoriesCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillCategoryMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26526,7 +40178,37 @@ class SkillsCategoriesCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
+      'msg': msg,
+    };
+  }
+}
+
+class SkillsCategoriesDeleteResult {
+  final String? code;
+  final AdminSkillCategoryDeleteResponse? data;
+  final String? msg;
+
+  SkillsCategoriesDeleteResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SkillsCategoriesDeleteResult.fromJson(Map<String, dynamic> json) {
+    return SkillsCategoriesDeleteResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminSkillCategoryDeleteResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
       'msg': msg,
     };
   }
@@ -26535,13 +40217,11 @@ class SkillsCategoriesCreateResult {
 class SkillsCategoriesListResult {
   final String? code;
   final AdminSkillCategoryListResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsCategoriesListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26552,7 +40232,6 @@ class SkillsCategoriesListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillCategoryListResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26561,7 +40240,37 @@ class SkillsCategoriesListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
+      'msg': msg,
+    };
+  }
+}
+
+class SkillsCategoriesUpdateResult {
+  final String? code;
+  final AdminSkillCategoryMutationResponse? data;
+  final String? msg;
+
+  SkillsCategoriesUpdateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SkillsCategoriesUpdateResult.fromJson(Map<String, dynamic> json) {
+    return SkillsCategoriesUpdateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminSkillCategoryMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
       'msg': msg,
     };
   }
@@ -26570,13 +40279,11 @@ class SkillsCategoriesListResult {
 class SkillsCreateResult {
   final String? code;
   final AdminSkillMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26587,7 +40294,6 @@ class SkillsCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26596,7 +40302,6 @@ class SkillsCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26605,13 +40310,11 @@ class SkillsCreateResult {
 class SkillsDeleteResult {
   final String? code;
   final AdminSkillDeleteResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsDeleteResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26622,7 +40325,6 @@ class SkillsDeleteResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillDeleteResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26631,7 +40333,6 @@ class SkillsDeleteResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26640,13 +40341,11 @@ class SkillsDeleteResult {
 class SkillsDisableResult {
   final String? code;
   final AdminSkillMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsDisableResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26657,7 +40356,6 @@ class SkillsDisableResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26666,7 +40364,6 @@ class SkillsDisableResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26675,13 +40372,11 @@ class SkillsDisableResult {
 class SkillsEnableResult {
   final String? code;
   final AdminSkillMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsEnableResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26692,7 +40387,6 @@ class SkillsEnableResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26701,7 +40395,6 @@ class SkillsEnableResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26710,13 +40403,11 @@ class SkillsEnableResult {
 class SkillsListResult {
   final String? code;
   final AdminSkillListResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26727,7 +40418,6 @@ class SkillsListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillListResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26736,7 +40426,6 @@ class SkillsListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26745,13 +40434,11 @@ class SkillsListResult {
 class SkillsPackageCreateResult {
   final String? code;
   final AdminSkillPackageMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsPackageCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26762,7 +40449,6 @@ class SkillsPackageCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillPackageMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26771,7 +40457,6 @@ class SkillsPackageCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26780,13 +40465,11 @@ class SkillsPackageCreateResult {
 class SkillsPackageDeleteResult {
   final String? code;
   final AdminSkillPackageDeleteResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsPackageDeleteResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26797,7 +40480,6 @@ class SkillsPackageDeleteResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillPackageDeleteResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26806,7 +40488,6 @@ class SkillsPackageDeleteResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26815,13 +40496,11 @@ class SkillsPackageDeleteResult {
 class SkillsPackageDisableResult {
   final String? code;
   final AdminSkillPackageMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsPackageDisableResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26832,7 +40511,6 @@ class SkillsPackageDisableResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillPackageMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26841,7 +40519,6 @@ class SkillsPackageDisableResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26850,13 +40527,11 @@ class SkillsPackageDisableResult {
 class SkillsPackageEnableResult {
   final String? code;
   final AdminSkillPackageMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsPackageEnableResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26867,7 +40542,6 @@ class SkillsPackageEnableResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillPackageMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26876,7 +40550,6 @@ class SkillsPackageEnableResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26885,13 +40558,11 @@ class SkillsPackageEnableResult {
 class SkillsPackageListResult {
   final String? code;
   final AdminSkillPackageListResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsPackageListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26902,7 +40573,6 @@ class SkillsPackageListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillPackageListResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26911,7 +40581,6 @@ class SkillsPackageListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26920,13 +40589,11 @@ class SkillsPackageListResult {
 class SkillsPackageRetrieveResult {
   final String? code;
   final AdminSkillPackageMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsPackageRetrieveResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26937,7 +40604,6 @@ class SkillsPackageRetrieveResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillPackageMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26946,7 +40612,6 @@ class SkillsPackageRetrieveResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26955,13 +40620,11 @@ class SkillsPackageRetrieveResult {
 class SkillsPackageUpdateResult {
   final String? code;
   final AdminSkillPackageMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsPackageUpdateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -26972,7 +40635,6 @@ class SkillsPackageUpdateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillPackageMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -26981,7 +40643,6 @@ class SkillsPackageUpdateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -26990,13 +40651,11 @@ class SkillsPackageUpdateResult {
 class SkillsPublishResult {
   final String? code;
   final AdminSkillMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsPublishResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -27007,7 +40666,6 @@ class SkillsPublishResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -27016,7 +40674,6 @@ class SkillsPublishResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -27025,13 +40682,11 @@ class SkillsPublishResult {
 class SkillsRetrieveResult {
   final String? code;
   final AdminSkillMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsRetrieveResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -27042,7 +40697,6 @@ class SkillsRetrieveResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -27051,7 +40705,6 @@ class SkillsRetrieveResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -27060,13 +40713,11 @@ class SkillsRetrieveResult {
 class SkillsReviewApproveResult {
   final String? code;
   final AdminSkillMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsReviewApproveResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -27077,7 +40728,6 @@ class SkillsReviewApproveResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -27086,7 +40736,6 @@ class SkillsReviewApproveResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -27095,13 +40744,11 @@ class SkillsReviewApproveResult {
 class SkillsReviewRejectResult {
   final String? code;
   final AdminSkillMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsReviewRejectResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -27112,7 +40759,6 @@ class SkillsReviewRejectResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -27121,7 +40767,6 @@ class SkillsReviewRejectResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -27130,13 +40775,11 @@ class SkillsReviewRejectResult {
 class SkillsUnpublishResult {
   final String? code;
   final AdminSkillMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsUnpublishResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -27147,7 +40790,6 @@ class SkillsUnpublishResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -27156,7 +40798,6 @@ class SkillsUnpublishResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -27165,13 +40806,11 @@ class SkillsUnpublishResult {
 class SkillsUpdateResult {
   final String? code;
   final AdminSkillMutationResponse? data;
-  final String? message;
   final String? msg;
 
   SkillsUpdateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -27182,7 +40821,6 @@ class SkillsUpdateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSkillMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -27191,7 +40829,6 @@ class SkillsUpdateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -27726,86 +41363,14 @@ class SystemSchemaMigrationRecord {
   }
 }
 
-class UsersBalanceAdjustmentsCreateResult {
-  final String? code;
-  final AdminUserMutationResponse? data;
-  final String? message;
-  final String? msg;
-
-  UsersBalanceAdjustmentsCreateResult({
-    this.code,
-    this.data,
-    this.message,
-    this.msg
-  });
-
-  factory UsersBalanceAdjustmentsCreateResult.fromJson(Map<String, dynamic> json) {
-    return UsersBalanceAdjustmentsCreateResult(
-      code: json['code']?.toString(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : AdminUserMutationResponse.fromJson(map);
-      })(),
-      message: json['message']?.toString(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'message': message,
-      'msg': msg,
-    };
-  }
-}
-
-class UsersCouponsListResult {
-  final String? code;
-  final AdminRedemptionRecordsResponse? data;
-  final String? message;
-  final String? msg;
-
-  UsersCouponsListResult({
-    this.code,
-    this.data,
-    this.message,
-    this.msg
-  });
-
-  factory UsersCouponsListResult.fromJson(Map<String, dynamic> json) {
-    return UsersCouponsListResult(
-      code: json['code']?.toString(),
-      data: (() {
-        final map = _sdkworkAsMap(json['data']);
-        return map == null ? null : AdminRedemptionRecordsResponse.fromJson(map);
-      })(),
-      message: json['message']?.toString(),
-      msg: json['msg']?.toString()
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'code': code,
-      'data': data?.toJson(),
-      'message': message,
-      'msg': msg,
-    };
-  }
-}
-
 class UsersCreateResult {
   final String? code;
   final AdminUserMutationResponse? data;
-  final String? message;
   final String? msg;
 
   UsersCreateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -27816,7 +41381,6 @@ class UsersCreateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminUserMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -27825,7 +41389,6 @@ class UsersCreateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -27834,13 +41397,11 @@ class UsersCreateResult {
 class UsersListResult {
   final String? code;
   final AdminUsersResponse? data;
-  final String? message;
   final String? msg;
 
   UsersListResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -27851,7 +41412,6 @@ class UsersListResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminUsersResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -27860,7 +41420,6 @@ class UsersListResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
       'msg': msg,
     };
   }
@@ -27869,13 +41428,11 @@ class UsersListResult {
 class UsersUpdateResult {
   final String? code;
   final AdminUserMutationResponse? data;
-  final String? message;
   final String? msg;
 
   UsersUpdateResult({
     this.code,
     this.data,
-    this.message,
     this.msg
   });
 
@@ -27886,7 +41443,6 @@ class UsersUpdateResult {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminUserMutationResponse.fromJson(map);
       })(),
-      message: json['message']?.toString(),
       msg: json['msg']?.toString()
     );
   }
@@ -27895,7 +41451,130 @@ class UsersUpdateResult {
     return <String, dynamic>{
       'code': code,
       'data': data?.toJson(),
-      'message': message,
+      'msg': msg,
+    };
+  }
+}
+
+class WalletAccountsListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
+
+  WalletAccountsListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory WalletAccountsListResult.fromJson(Map<String, dynamic> json) {
+    return WalletAccountsListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class WalletAdjustmentsCreateResult {
+  final String? code;
+  final CommerceOperationResponse? data;
+  final String? msg;
+
+  WalletAdjustmentsCreateResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory WalletAdjustmentsCreateResult.fromJson(Map<String, dynamic> json) {
+    return WalletAdjustmentsCreateResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceOperationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class WalletExchangeRulesListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
+
+  WalletExchangeRulesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory WalletExchangeRulesListResult.fromJson(Map<String, dynamic> json) {
+    return WalletExchangeRulesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class WalletLedgerEntriesListResult {
+  final String? code;
+  final CommerceStandardCollectionResponse? data;
+  final String? msg;
+
+  WalletLedgerEntriesListResult({
+    this.code,
+    this.data,
+    this.msg
+  });
+
+  factory WalletLedgerEntriesListResult.fromJson(Map<String, dynamic> json) {
+    return WalletLedgerEntriesListResult(
+      code: json['code']?.toString(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
       'msg': msg,
     };
   }

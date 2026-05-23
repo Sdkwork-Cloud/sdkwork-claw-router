@@ -7,6 +7,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from tools.frontend_contract_loader import default_frontend_contract_path, load_frontend_field_contract
+
 try:
     import yaml
 except ImportError as exc:  # pragma: no cover - exercised only on missing tooling
@@ -91,12 +93,37 @@ class ApiContractManifestGenerator:
         "iam": "iam",
         "profile": "iam",
         "billing": "commerce",
+        "commerce": "commerce",
+        "accounts": "commerce",
+        "addresses": "commerce",
+        "audit": "commerce",
+        "catalog": "commerce",
+        "cart": "commerce",
+        "checkout": "commerce",
+        "coupons": "commerce",
+        "fulfillments": "commerce",
+        "invoices": "commerce",
+        "inventory": "commerce",
+        "memberships": "commerce",
+        "orders": "commerce",
+        "payments": "commerce",
+        "recharges": "commerce",
+        "refunds": "commerce",
+        "shipments": "commerce",
+        "wallet": "commerce",
+        "commerce_reports": "commerce",
         "content": "content",
         "communication": "communication",
+        "notification": "notification",
         "ai": "intelligence",
+        "chat": "chat",
+        "memory": "memory",
+        "runtime": "runtime",
         "agents": "agents",
+        "sdkReference": "sdkReference",
         "system": "system",
         "platform": "platform",
+        "openPlatform": "platform",
         "integration": "integration",
         "ecosystem": "ecosystem",
     }
@@ -107,9 +134,36 @@ class ApiContractManifestGenerator:
         "users": "iam",
         "profile": "iam",
         "account": "commerce",
+        "accounts": "commerce",
+        "address": "commerce",
+        "addresses": "commerce",
+        "cart": "commerce",
+        "checkout": "commerce",
         "billing": "commerce",
         "commerce": "commerce",
+        "commerce_reports": "commerce",
+        "catalog": "commerce",
         "coupon": "commerce",
+        "coupons": "commerce",
+        "fulfillment": "commerce",
+        "fulfillments": "commerce",
+        "invoice": "commerce",
+        "invoices": "commerce",
+        "inventory": "commerce",
+        "membership": "commerce",
+        "memberships": "commerce",
+        "order": "commerce",
+        "orders": "commerce",
+        "payment": "commerce",
+        "payments": "commerce",
+        "recharge": "commerce",
+        "recharges": "commerce",
+        "refund": "commerce",
+        "refunds": "commerce",
+        "shipment": "commerce",
+        "shipments": "commerce",
+        "wallet": "commerce",
+        "audit": "commerce",
         "course": "content",
         "feed": "content",
         "forum": "content",
@@ -119,8 +173,14 @@ class ApiContractManifestGenerator:
         "models": "intelligence",
         "router": "intelligence",
         "ai": "intelligence",
+        "chat": "chat",
+        "memory": "memory",
+        "runtime": "runtime",
         "agent": "agents",
         "agents": "agents",
+        "sdkReference": "sdkReference",
+        "sdkreference": "sdkReference",
+        "sdk_reference": "sdkReference",
         "intelligence": "intelligence",
         "provider": "integration",
         "providers": "integration",
@@ -128,10 +188,15 @@ class ApiContractManifestGenerator:
         "app": "platform",
         "apps": "platform",
         "platform": "platform",
+        "openPlatform": "platform",
+        "openplatform": "platform",
+        "open_platform": "platform",
         "skill": "ecosystem",
         "skills": "ecosystem",
         "ecosystem": "ecosystem",
         "system": "system",
+        "notification": "notification",
+        "notifications": "notification",
         "ops": "system",
     }
     TOP_LEVEL_TAGS = set(STANDARD_TAG_DOMAINS)
@@ -148,15 +213,6 @@ class ApiContractManifestGenerator:
         "routing",
         "settlements",
         "usage",
-    }
-    ROUTER_BILLING_SEGMENTS = {
-        "coupon_batches",
-        "coupon-batches",
-        "coupon_codes",
-        "coupon-codes",
-        "finance",
-        "referrals",
-        "settlements",
     }
     ROUTER_CONTENT_SEGMENTS = {"announcements"}
     ROUTER_SYSTEM_SEGMENTS = {"firewall", "monitor", "rate_limits", "rate-limits"}
@@ -209,18 +265,16 @@ class ApiContractManifestGenerator:
     TABLE_TAG_RULES = (
         ("iam_", "iam"),
         ("ai_", "ai"),
-        ("commerce_", "billing"),
+        ("commerce_", "commerce"),
         ("content_", "content"),
         ("agent_skill", "ecosystem"),
+        ("open_platform_", "openPlatform"),
+        ("open_platform", "openPlatform"),
         ("plus_app", "platform"),
-        ("plus_coupon", "billing"),
-        ("plus_user_coupon", "billing"),
-        ("plus_vip", "billing"),
-        ("plus_order", "billing"),
-        ("plus_payment", "billing"),
         ("plus_feeds", "content"),
         ("plus_comments", "content"),
         ("course_", "content"),
+        ("ops_notification", "notification"),
         ("ops_", "system"),
     )
     JSON_SCHEMA_CONSTRAINT_KEYS = {
@@ -267,7 +321,7 @@ class ApiContractManifestGenerator:
         self.contract_path = (
             Path(contract_path).resolve()
             if contract_path is not None
-            else self.root / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
+            else default_frontend_contract_path(self.root)
         )
         self.output_path = (
             Path(output_path).resolve()
@@ -567,11 +621,7 @@ class ApiContractManifestGenerator:
     def _load_contract(self) -> dict[str, Any]:
         if yaml is None:
             raise RuntimeError("PyYAML is required to load frontend field contracts") from _YAML_IMPORT_ERROR
-        if not self.contract_path.exists():
-            return {}
-        contract = yaml.safe_load(self.contract_path.read_text(encoding="utf-8"))
-        if contract is None:
-            return {}
+        contract = load_frontend_field_contract(self.root, self.contract_path)
         if not isinstance(contract, dict):
             raise ValueError("frontend field contract root must be a mapping")
         return contract
@@ -623,7 +673,15 @@ class ApiContractManifestGenerator:
         return prefix + "/" + "/".join(relative_segments)
 
     def _is_standard_appbase_resource_path(self, segments: list[str]) -> bool:
-        return bool(segments) and self._normalize_static_segment(segments[0]) in {"agent", "agents", "course", "courses"}
+        return bool(segments) and self._normalize_static_segment(segments[0]) in {
+            "agent",
+            "agents",
+            "chat",
+            "course",
+            "courses",
+            "memory",
+            "runtime",
+        }
 
     def _standard_tag(
         self,
@@ -639,6 +697,8 @@ class ApiContractManifestGenerator:
         if not segments:
             return "system"
         tag = self._tag_from_segments(segments, read_sources, write_tables)
+        if tag != "billing" and self.STANDARD_TAG_DOMAINS.get(tag) == "commerce":
+            return "commerce"
         return tag if tag in self.TOP_LEVEL_TAGS else self._tag_from_tables(read_sources, write_tables) or "system"
 
     def _standard_sdk_domain(
@@ -716,20 +776,51 @@ class ApiContractManifestGenerator:
             return router_tag or self._tag_from_tables(read_sources, write_tables) or "ai"
         if first in {"auth", "iam", "profile", "system"}:
             return first
+        if first in {"open_platform", "openplatform"}:
+            return "openPlatform"
         if first in {"app", "apps", "platform"}:
             return "platform"
         if first in {"skill", "skills", "ecosystem"}:
             return "ecosystem"
-        if first in {"coupon", "coupons", "payment", "payments", "vip", "account", "finance", "billing"}:
-            return "billing"
+        if first in {
+            "accounts",
+            "addresses",
+            "audit",
+            "billing",
+            "catalog",
+            "cart",
+            "checkout",
+            "commerce",
+            "commerce_reports",
+            "coupons",
+            "fulfillments",
+            "inventory",
+            "invoices",
+            "memberships",
+            "orders",
+            "payments",
+            "recharges",
+            "refunds",
+            "shipments",
+            "wallet",
+        }:
+            return first
+        if first in {"coupon", "payment", "vip", "account", "finance"}:
+            return self._tag_from_tables(read_sources, write_tables) or "commerce"
         if first in {"course", "courses", "feed", "feeds", "comment", "comments", "announcement", "announcements", "content"}:
             return "content"
-        if first in {"message", "messages", "notification", "notifications", "communication"}:
+        if first in {"notification", "notifications"}:
+            return "notification"
+        if first in {"message", "messages", "communication"}:
             return "communication"
         if first in {"channel", "channels", "provider", "providers", "provider_secrets", "integration"}:
             return "integration"
         if first in {"agent", "agents"}:
             return "agents"
+        if first in {"sdk_reference", "sdk-reference", "sdkreference"}:
+            return "sdkReference"
+        if first in {"chat", "memory", "runtime"}:
+            return first
         if first in {"ai", "model", "models", "model_vendors", "model_rankings", "routing", "playground"}:
             return "ai"
         if first in {"dashboard", "monitor", "firewall", "rate_limits", "record", "records"}:
@@ -747,13 +838,9 @@ class ApiContractManifestGenerator:
             return "iam"
         if first in self.ROUTER_CONTENT_SEGMENTS:
             return "content"
-        if first in self.ROUTER_BILLING_SEGMENTS:
-            return "billing"
         if first in self.ROUTER_SYSTEM_SEGMENTS:
             return "system"
         if first in self.ROUTER_AI_SEGMENTS:
-            if first == "settlements":
-                return "billing"
             return "ai"
         return self._tag_from_tables(read_sources, write_tables)
 
@@ -828,11 +915,18 @@ class ApiContractManifestGenerator:
         return alias
 
     def _is_top_level_path_segment_for_tag(self, segment: str, tag: str) -> bool:
-        return segment == self._path_segment_from_tag(tag) or segment in self.TOP_LEVEL_TAGS
+        normalized_segment = self._normalize_static_segment(segment)
+        normalized_tag_segment = self._normalize_static_segment(self._path_segment_from_tag(tag))
+        normalized_top_level_tags = {self._normalize_static_segment(value) for value in self.TOP_LEVEL_TAGS}
+        return normalized_segment == normalized_tag_segment or normalized_segment in normalized_top_level_tags
 
     def _path_segment_from_tag(self, tag: str) -> str:
         if tag == "ai":
             return "ai"
+        if tag == "sdkReference":
+            return "sdk_reference"
+        if tag == "openPlatform":
+            return "open_platform"
         return tag
 
     def _operation_resource_segments(

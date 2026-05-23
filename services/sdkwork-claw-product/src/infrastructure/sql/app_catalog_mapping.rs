@@ -255,12 +255,6 @@ pub(crate) fn query_matches_app(
     haystack.contains(&keyword)
 }
 
-pub(crate) fn app_category_from_raw(app_type: &str, config: &str, install_config: &str) -> String {
-    let config = parse_json(config);
-    let install_config = parse_json(install_config);
-    app_category(app_type, config.as_ref(), install_config.as_ref())
-}
-
 pub(crate) fn query_matches_skill(item: &AppSkillItem, keyword: Option<&str>) -> bool {
     let Some(keyword) = normalized_keyword(keyword) else {
         return true;

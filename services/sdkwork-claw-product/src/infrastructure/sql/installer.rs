@@ -1,9 +1,16 @@
 use std::collections::BTreeSet;
 use std::error::Error;
 use std::fmt::{Display, Formatter};
+use std::fs;
+use std::path::{Path, PathBuf};
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::time::{SystemTime, UNIX_EPOCH};
 
+use sdkwork_commerce_bootstrap::commerce_experience_seed_manifest;
+use sdkwork_commerce_core::CommerceServiceError;
+use sdkwork_commerce_storage_sqlx::{
+    commerce_database_indexes, commerce_database_tables, commerce_initial_migration_sql,
+};
 use sdkwork_iam_storage_sqlx::{
     DEFAULT_BOOTSTRAP_ADMIN_DISPLAY_NAME, DEFAULT_BOOTSTRAP_ADMIN_EMAIL,
     DEFAULT_BOOTSTRAP_ADMIN_USERNAME, DEFAULT_IAM_ORGANIZATION_CODE, DEFAULT_IAM_ORGANIZATION_ID,
@@ -29,7 +36,7 @@ use crate::infrastructure::sql::forum_seed::{
 };
 use crate::infrastructure::sql::model_catalog_import::{
     catalog_scope_counts, catalog_scope_vendor_codes, catalog_with_selected_vendors,
-    load_catalog_root_with_pin, DEFAULT_CATALOG_REFRESH_SOURCE,
+    load_catalog_root_with_pin, model_base_catalog_key, DEFAULT_CATALOG_REFRESH_SOURCE,
 };
 use crate::infrastructure::sql::skills_seed::{
     bundled_skills_seed_payload, import_postgres_skills_seed, import_sqlite_skills_seed,
@@ -39,9 +46,12 @@ use crate::ports::{AdminModelStore, AdminModelSubject, SyncAdminModelCatalogComm
 
 const GENERATED_POSTGRES_SCHEMA: &str =
     include_str!("../../../../../generated/schema/postgres/schema.sql");
+const BUNDLED_MODELS_CATALOG_MANIFEST: &str =
+    include_str!("../../../../../data/sdkwork-models/sdkwork-models.json");
 pub const CURRENT_SCHEMA_VERSION: &str = "2026.05.08.1";
 pub const DEFAULT_SEED_PROFILE: &str = "commercial";
 pub const DEFAULT_INSTALL_ENVIRONMENT: &str = "production";
+const OBSOLETE_GENERATED_SCHEMA_INDEXES: &[&str] = &["uk_integration_provider_account_secret_hash"];
 pub const ENV_INSTALL_ENVIRONMENT: &str = "SDKWORK_CLAW_INSTALL_ENVIRONMENT";
 pub const ENV_INSTALL_SEED_PROFILE: &str = "SDKWORK_CLAW_INSTALL_SEED_PROFILE";
 pub const ENV_MODELS_CATALOG_ROOT: &str = "SDKWORK_MODELS_CATALOG_ROOT";
@@ -440,7 +450,8 @@ impl DatabaseInstaller {
     }
 
     pub async fn status_report(&self) -> Result<InstallationReport, DatabaseInstallError> {
-        self.status_report_with_options(&self.options).await
+        self.lightweight_status_report_with_options(&self.options)
+            .await
     }
 
     pub async fn status_report_for_refresh_options(
@@ -449,17 +460,20 @@ impl DatabaseInstaller {
     ) -> Result<InstallationReport, DatabaseInstallError> {
         let options = normalize_catalog_refresh_options(options.clone())?;
         let install_options = self.refresh_install_options(options.catalog_root.as_deref())?;
-        self.status_report_with_options(&install_options).await
+        self.lightweight_status_report_with_options(&install_options)
+            .await
     }
 
-    async fn status_report_with_options(
+    async fn lightweight_status_report_with_options(
         &self,
         options: &DatabaseInstallOptions,
     ) -> Result<InstallationReport, DatabaseInstallError> {
         let options = self.effective_install_options(options).await?;
-        let status = self.status_with_resolved_options(&options).await?;
+        let status = self
+            .lightweight_status_with_resolved_options(&options)
+            .await?;
         let catalog_version = self
-            .status_report_catalog_version(&options, &status)
+            .lightweight_status_report_catalog_version(&options, &status)
             .await?;
         let last_catalog_refresh_status = self.last_catalog_refresh_status().await?;
         Ok(InstallationReport {
@@ -728,14 +742,25 @@ impl DatabaseInstaller {
         }
     }
 
-    async fn status_report_catalog_version(
+    async fn persisted_installation_catalog_version(
+        &self,
+    ) -> Result<Option<String>, DatabaseInstallError> {
+        match &self.backend {
+            InstallerBackend::Sqlite(pool) => Ok(sqlite_installation_catalog_version(pool).await?),
+            InstallerBackend::Postgres(pool) => {
+                Ok(postgres_installation_catalog_version(pool).await?)
+            }
+        }
+    }
+
+    async fn lightweight_status_report_catalog_version(
         &self,
         options: &DatabaseInstallOptions,
         status: &InstallationStatus,
     ) -> Result<String, DatabaseInstallError> {
-        match expected_install_catalog_version(options) {
+        match expected_install_catalog_version_fast(options) {
             Ok(version) => Ok(version),
-            Err(error)
+            Err(_)
                 if !matches!(
                     status,
                     InstallationStatus::Installed | InstallationStatus::UpgradeRequired
@@ -747,17 +772,6 @@ impl DatabaseInstaller {
                     .unwrap_or_else(|| "unknown".to_owned()))
             }
             Err(error) => Err(error),
-        }
-    }
-
-    async fn persisted_installation_catalog_version(
-        &self,
-    ) -> Result<Option<String>, DatabaseInstallError> {
-        match &self.backend {
-            InstallerBackend::Sqlite(pool) => Ok(sqlite_installation_catalog_version(pool).await?),
-            InstallerBackend::Postgres(pool) => {
-                Ok(postgres_installation_catalog_version(pool).await?)
-            }
         }
     }
 
@@ -785,6 +799,7 @@ impl DatabaseInstaller {
                 import_sqlite_bundled_course_seed(pool).await?;
                 import_sqlite_bundled_forum_seed(pool).await?;
                 import_sqlite_default_iam_subject_seed(pool).await?;
+                import_sqlite_commerce_experience_seed(pool).await?;
             }
             InstallerBackend::Postgres(pool) => {
                 import_postgres_bundled_app_seed(pool).await?;
@@ -792,6 +807,7 @@ impl DatabaseInstaller {
                 import_postgres_bundled_course_seed(pool).await?;
                 import_postgres_bundled_forum_seed(pool).await?;
                 import_postgres_default_iam_subject_seed(pool).await?;
+                import_postgres_commerce_experience_seed(pool).await?;
             }
         }
         Ok(())
@@ -856,6 +872,16 @@ impl DatabaseInstaller {
         }
     }
 
+    async fn lightweight_status_with_resolved_options(
+        &self,
+        options: &DatabaseInstallOptions,
+    ) -> Result<InstallationStatus, DatabaseInstallError> {
+        match &self.backend {
+            InstallerBackend::Sqlite(pool) => sqlite_lightweight_status(pool, options).await,
+            InstallerBackend::Postgres(pool) => postgres_lightweight_status(pool, options).await,
+        }
+    }
+
     async fn prepare_refresh_schema_if_needed(
         &self,
         options: &DatabaseInstallOptions,
@@ -890,6 +916,7 @@ impl DatabaseInstaller {
         let catalog_version = expected_install_catalog_version(&options)?;
         let status = self.status_with_resolved_options(&options).await?;
         if status == InstallationStatus::Installed {
+            let changed = self.apply_schema_startup_repairs().await?;
             let last_catalog_refresh_status = self.last_catalog_refresh_status().await?;
             return Ok(InstallationReport {
                 status,
@@ -900,7 +927,7 @@ impl DatabaseInstaller {
                 last_catalog_refresh_status,
                 environment: options.environment.clone(),
                 seed_profile: options.seed_profile.clone(),
-                changed: false,
+                changed,
                 bootstrap_admin: None,
             });
         }
@@ -927,6 +954,20 @@ impl DatabaseInstaller {
             changed: true,
             bootstrap_admin,
         })
+    }
+}
+
+impl DatabaseInstaller {
+    async fn apply_schema_startup_repairs(&self) -> Result<bool, DatabaseInstallError> {
+        let changed = match &self.backend {
+            InstallerBackend::Sqlite(pool) => {
+                drop_sqlite_obsolete_generated_schema_indexes(pool).await?
+            }
+            InstallerBackend::Postgres(pool) => {
+                drop_postgres_obsolete_generated_schema_indexes(pool).await?
+            }
+        };
+        Ok(changed)
     }
 }
 
@@ -1029,6 +1070,7 @@ fn persisted_models_catalog_root_from_metadata(metadata: &str) -> Option<String>
 pub enum DatabaseInstallError {
     Database(sqlx::Error),
     Catalog(sdkwork_models::CatalogError),
+    Commerce(CommerceServiceError),
     InvalidState(String),
 }
 
@@ -1037,6 +1079,12 @@ impl Display for DatabaseInstallError {
         match self {
             Self::Database(error) => write!(formatter, "database installation failed: {error}"),
             Self::Catalog(error) => write!(formatter, "model catalog load failed: {error}"),
+            Self::Commerce(error) => write!(
+                formatter,
+                "commerce bootstrap failed: {}: {}",
+                error.code(),
+                error.message()
+            ),
             Self::InvalidState(message) => write!(
                 formatter,
                 "database installation state is invalid: {message}"
@@ -1056,6 +1104,12 @@ impl From<sqlx::Error> for DatabaseInstallError {
 impl From<sdkwork_models::CatalogError> for DatabaseInstallError {
     fn from(value: sdkwork_models::CatalogError) -> Self {
         Self::Catalog(value)
+    }
+}
+
+impl From<CommerceServiceError> for DatabaseInstallError {
+    fn from(value: CommerceServiceError) -> Self {
+        Self::Commerce(value)
     }
 }
 
@@ -1298,6 +1352,37 @@ fn expected_install_catalog_version(
         .catalog_version)
 }
 
+fn expected_install_catalog_version_fast(
+    options: &DatabaseInstallOptions,
+) -> Result<String, DatabaseInstallError> {
+    Ok(load_install_catalog_manifest_fast(options)?.catalog_version)
+}
+
+fn load_install_catalog_manifest_fast(
+    options: &DatabaseInstallOptions,
+) -> Result<sdkwork_models::CatalogManifest, DatabaseInstallError> {
+    match options.models_catalog_root.as_deref() {
+        Some(root) => load_external_catalog_manifest_fast(root),
+        None => serde_json::from_str(BUNDLED_MODELS_CATALOG_MANIFEST).map_err(|source| {
+            DatabaseInstallError::Catalog(sdkwork_models::CatalogError::Json {
+                path: PathBuf::from("bundled sdkwork-models.json"),
+                source,
+            })
+        }),
+    }
+}
+
+fn load_external_catalog_manifest_fast(
+    root: &str,
+) -> Result<sdkwork_models::CatalogManifest, DatabaseInstallError> {
+    let path = Path::new(root).join("sdkwork-models.json");
+    let payload = fs::read_to_string(&path)
+        .map_err(|error| DatabaseInstallError::Catalog(sdkwork_models::CatalogError::Io(error)))?;
+    serde_json::from_str(&payload).map_err(|source| {
+        DatabaseInstallError::Catalog(sdkwork_models::CatalogError::Json { path, source })
+    })
+}
+
 #[derive(Debug, Clone, PartialEq, Eq)]
 struct CatalogCompletenessSpec {
     vendor_codes: BTreeSet<String>,
@@ -1363,13 +1448,10 @@ fn catalog_completeness_spec(catalog: &ModelCatalog) -> CatalogCompletenessSpec 
         .vendors
         .iter()
         .flat_map(|vendor| {
-            vendor.models.iter().map(|model| {
-                catalog_key(
-                    &vendor.vendor.vendor_code,
-                    &vendor.vendor.region_code,
-                    &model.model_id,
-                )
-            })
+            vendor
+                .models
+                .iter()
+                .map(|model| model_base_catalog_key(&vendor.vendor.vendor_code, &model.model_id))
         })
         .collect::<BTreeSet<_>>();
     let capability_keys = catalog
@@ -1378,11 +1460,7 @@ fn catalog_completeness_spec(catalog: &ModelCatalog) -> CatalogCompletenessSpec 
         .flat_map(|vendor| {
             vendor.models.iter().map(|model| {
                 (
-                    catalog_key(
-                        &vendor.vendor.vendor_code,
-                        &vendor.vendor.region_code,
-                        &model.model_id,
-                    ),
+                    model_base_catalog_key(&vendor.vendor.vendor_code, &model.model_id),
                     model,
                 )
             })
@@ -1448,14 +1526,16 @@ fn catalog_completeness_spec(catalog: &ModelCatalog) -> CatalogCompletenessSpec 
                 .map(move |snapshot| (vendor, snapshot))
         })
         .flat_map(|(vendor, snapshot)| {
-            let catalog_keys = catalog_keys.clone();
+            let model_catalog_keys = catalog_keys.clone();
             snapshot.items.iter().filter_map(move |item| {
                 let item_catalog_key = catalog_key(
                     &vendor.vendor.vendor_code,
                     &vendor.vendor.region_code,
                     &item.model_id,
                 );
-                if catalog_keys.contains(&item_catalog_key) {
+                let model_catalog_key =
+                    model_base_catalog_key(&vendor.vendor.vendor_code, &item.model_id);
+                if model_catalog_keys.contains(&model_catalog_key) {
                     Some(ModelRankingCompletenessKey {
                         snapshot_date: snapshot.snapshot_date.clone(),
                         rank_scope: snapshot.rank_scope.clone(),
@@ -1528,7 +1608,16 @@ async fn sqlite_status(
     if !sqlite_generated_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::Corrupt);
     }
+    if !sqlite_generated_schema_columns_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
     if !sqlite_generated_schema_indexes_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !sqlite_appbase_commerce_schema_tables_exist(pool).await? {
+        return Ok(InstallationStatus::Corrupt);
+    }
+    if !sqlite_appbase_commerce_schema_indexes_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     let catalog = match load_install_model_catalog(options) {
@@ -1555,6 +1644,9 @@ async fn sqlite_status(
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if !sqlite_default_iam_subject_seed_complete(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !sqlite_commerce_experience_seed_complete(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if bootstrap_admin_options.enabled
@@ -1590,6 +1682,37 @@ async fn sqlite_status(
     Ok(InstallationStatus::Installed)
 }
 
+async fn sqlite_lightweight_status(
+    pool: &SqlitePool,
+    options: &DatabaseInstallOptions,
+) -> Result<InstallationStatus, DatabaseInstallError> {
+    if !sqlite_table_exists(pool, "system_installation_state").await? {
+        return Ok(InstallationStatus::NotInstalled);
+    }
+
+    let Some(row) = sqlx::query(
+        r#"
+        SELECT schema_version, catalog_version, seed_profile, environment, status
+        FROM system_installation_state
+        WHERE id = 1
+        "#,
+    )
+    .fetch_optional(pool)
+    .await?
+    else {
+        return Ok(InstallationStatus::NotInstalled);
+    };
+
+    persisted_installation_state_status(
+        row.get::<String, _>("schema_version"),
+        row.get::<String, _>("catalog_version"),
+        row.get::<String, _>("seed_profile"),
+        row.get::<String, _>("environment"),
+        row.get::<String, _>("status"),
+        options,
+    )
+}
+
 async fn prepare_sqlite_schema_with_catalog_version(
     pool: &SqlitePool,
     options: &DatabaseInstallOptions,
@@ -1607,6 +1730,8 @@ async fn prepare_sqlite_schema_with_catalog_version(
     for statement in sqlite_schema_statements() {
         execute_sqlite_statement(pool, statement.as_str()).await?;
     }
+    drop_sqlite_obsolete_generated_schema_indexes(pool).await?;
+    apply_sqlite_appbase_commerce_schema(pool).await?;
     record_sqlite_migration_completed(
         pool,
         "schema",
@@ -1669,6 +1794,12 @@ async fn postgres_status(
     if !postgres_generated_schema_indexes_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
+    if !postgres_appbase_commerce_schema_tables_exist(pool).await? {
+        return Ok(InstallationStatus::Corrupt);
+    }
+    if !postgres_appbase_commerce_schema_indexes_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
     let catalog = match load_install_model_catalog(options) {
         Ok(catalog) => catalog,
         Err(DatabaseInstallError::Catalog(_)) if options.models_catalog_root.is_some() => {
@@ -1693,6 +1824,9 @@ async fn postgres_status(
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if !postgres_default_iam_subject_seed_complete(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !postgres_commerce_experience_seed_complete(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if bootstrap_admin_options.enabled
@@ -1728,6 +1862,67 @@ async fn postgres_status(
     Ok(InstallationStatus::Installed)
 }
 
+async fn postgres_lightweight_status(
+    pool: &PgPool,
+    options: &DatabaseInstallOptions,
+) -> Result<InstallationStatus, DatabaseInstallError> {
+    if !postgres_table_exists(pool, "system_installation_state").await? {
+        return Ok(InstallationStatus::NotInstalled);
+    }
+
+    let Some(row) = sqlx::query(
+        r#"
+        SELECT schema_version, catalog_version, seed_profile, environment, status
+        FROM system_installation_state
+        WHERE id = 1
+        "#,
+    )
+    .fetch_optional(pool)
+    .await?
+    else {
+        return Ok(InstallationStatus::NotInstalled);
+    };
+
+    persisted_installation_state_status(
+        row.get::<String, _>("schema_version"),
+        row.get::<String, _>("catalog_version"),
+        row.get::<String, _>("seed_profile"),
+        row.get::<String, _>("environment"),
+        row.get::<String, _>("status"),
+        options,
+    )
+}
+
+fn persisted_installation_state_status(
+    schema_version: String,
+    catalog_version: String,
+    seed_profile: String,
+    environment: String,
+    install_status: String,
+    options: &DatabaseInstallOptions,
+) -> Result<InstallationStatus, DatabaseInstallError> {
+    if install_status != "installed" {
+        return Ok(InstallationStatus::Incomplete);
+    }
+
+    let expected_catalog_version = match expected_install_catalog_version_fast(options) {
+        Ok(version) => version,
+        Err(DatabaseInstallError::Catalog(_)) if options.models_catalog_root.is_some() => {
+            return Ok(InstallationStatus::CatalogUnavailable);
+        }
+        Err(error) => return Err(error),
+    };
+    if schema_version != CURRENT_SCHEMA_VERSION
+        || catalog_version != expected_catalog_version
+        || seed_profile != options.seed_profile
+        || environment != options.environment
+    {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+
+    Ok(InstallationStatus::Installed)
+}
+
 async fn prepare_postgres_schema_with_catalog_version(
     pool: &PgPool,
     options: &DatabaseInstallOptions,
@@ -1745,6 +1940,8 @@ async fn prepare_postgres_schema_with_catalog_version(
     for statement in postgres_schema_statements() {
         execute_postgres_statement(pool, statement.as_str()).await?;
     }
+    drop_postgres_obsolete_generated_schema_indexes(pool).await?;
+    apply_postgres_appbase_commerce_schema(pool).await?;
     record_postgres_migration_completed(
         pool,
         "schema",
@@ -1793,6 +1990,7 @@ async fn install_sqlite(
     import_sqlite_bundled_course_seed(pool).await?;
     import_sqlite_bundled_forum_seed(pool).await?;
     import_sqlite_default_iam_subject_seed(pool).await?;
+    import_sqlite_commerce_experience_seed(pool).await?;
     let bootstrap_admin =
         bootstrap_sqlite_admin_user_if_needed(pool, bootstrap_admin_options).await?;
     mark_sqlite_installed(pool).await?;
@@ -1837,6 +2035,7 @@ async fn install_postgres(
     import_postgres_bundled_course_seed(pool).await?;
     import_postgres_bundled_forum_seed(pool).await?;
     import_postgres_default_iam_subject_seed(pool).await?;
+    import_postgres_commerce_experience_seed(pool).await?;
     let bootstrap_admin =
         bootstrap_postgres_admin_user_if_needed(pool, bootstrap_admin_options).await?;
     mark_postgres_installed(pool).await?;
@@ -1942,6 +2141,50 @@ async fn import_postgres_default_iam_subject_seed(
     pool: &PgPool,
 ) -> Result<(), DatabaseInstallError> {
     postgres_upsert_default_iam_subject(pool).await?;
+    Ok(())
+}
+
+async fn import_sqlite_commerce_experience_seed(
+    pool: &SqlitePool,
+) -> Result<(), DatabaseInstallError> {
+    let payload = commerce_experience_seed_manifest().payload_json;
+    record_sqlite_migration_started(
+        pool,
+        "commerce-experience",
+        CURRENT_SCHEMA_VERSION,
+        payload.as_str(),
+    )
+    .await?;
+    sdkwork_commerce_membership_sqlx::upsert_sqlite_commerce_experience_seed(pool).await?;
+    record_sqlite_migration_completed(
+        pool,
+        "commerce-experience",
+        CURRENT_SCHEMA_VERSION,
+        payload.as_str(),
+    )
+    .await?;
+    Ok(())
+}
+
+async fn import_postgres_commerce_experience_seed(
+    pool: &PgPool,
+) -> Result<(), DatabaseInstallError> {
+    let payload = commerce_experience_seed_manifest().payload_json;
+    record_postgres_migration_started(
+        pool,
+        "commerce-experience",
+        CURRENT_SCHEMA_VERSION,
+        payload.as_str(),
+    )
+    .await?;
+    sdkwork_commerce_membership_sqlx::upsert_postgres_commerce_experience_seed(pool).await?;
+    record_postgres_migration_completed(
+        pool,
+        "commerce-experience",
+        CURRENT_SCHEMA_VERSION,
+        payload.as_str(),
+    )
+    .await?;
     Ok(())
 }
 
@@ -2214,6 +2457,36 @@ async fn postgres_default_iam_subject_seed_complete(pool: &PgPool) -> Result<boo
     .fetch_one(pool)
     .await?;
     Ok(count == 1)
+}
+
+async fn sqlite_commerce_experience_seed_complete(
+    pool: &SqlitePool,
+) -> Result<bool, DatabaseInstallError> {
+    if !sdkwork_commerce_membership_sqlx::sqlite_commerce_experience_seed_complete(pool).await? {
+        return Ok(false);
+    }
+    Ok(sqlite_seed_migration_payload_current(
+        pool,
+        "commerce-experience",
+        CURRENT_SCHEMA_VERSION,
+        commerce_experience_seed_manifest().payload_json.as_str(),
+    )
+    .await?)
+}
+
+async fn postgres_commerce_experience_seed_complete(
+    pool: &PgPool,
+) -> Result<bool, DatabaseInstallError> {
+    if !sdkwork_commerce_membership_sqlx::postgres_commerce_experience_seed_complete(pool).await? {
+        return Ok(false);
+    }
+    Ok(postgres_seed_migration_payload_current(
+        pool,
+        "commerce-experience",
+        CURRENT_SCHEMA_VERSION,
+        commerce_experience_seed_manifest().payload_json.as_str(),
+    )
+    .await?)
 }
 
 async fn sqlite_bootstrap_admin_seed_complete(
@@ -2704,6 +2977,60 @@ async fn postgres_table_exists(pool: &PgPool, table_name: &str) -> Result<bool, 
     Ok(count == 1)
 }
 
+async fn drop_sqlite_obsolete_generated_schema_indexes(
+    pool: &SqlitePool,
+) -> Result<bool, sqlx::Error> {
+    let mut changed = false;
+    for index in OBSOLETE_GENERATED_SCHEMA_INDEXES {
+        let exists: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM sqlite_master
+            WHERE type = 'index'
+              AND name = ?
+            "#,
+        )
+        .bind(index)
+        .fetch_one(pool)
+        .await?;
+        if exists == 0 {
+            continue;
+        }
+        let drop_statement = format!("DROP INDEX IF EXISTS {}", quote_sqlite_identifier(index));
+        sqlx::query(drop_statement.as_str()).execute(pool).await?;
+        changed = true;
+    }
+    Ok(changed)
+}
+
+async fn drop_postgres_obsolete_generated_schema_indexes(
+    pool: &PgPool,
+) -> Result<bool, sqlx::Error> {
+    let mut changed = false;
+    for index in OBSOLETE_GENERATED_SCHEMA_INDEXES {
+        let exists: bool = sqlx::query_scalar(
+            r#"
+            SELECT EXISTS (
+                SELECT 1
+                FROM pg_indexes
+                WHERE schemaname = current_schema()
+                  AND indexname = $1
+            )
+            "#,
+        )
+        .bind(index)
+        .fetch_one(pool)
+        .await?;
+        if !exists {
+            continue;
+        }
+        let drop_statement = format!("DROP INDEX IF EXISTS {}", quote_postgres_identifier(index));
+        sqlx::query(drop_statement.as_str()).execute(pool).await?;
+        changed = true;
+    }
+    Ok(changed)
+}
+
 async fn sqlite_generated_schema_tables_exist(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
     let installed_tables = sqlite_string_set(
         pool,
@@ -2715,6 +3042,16 @@ async fn sqlite_generated_schema_tables_exist(pool: &SqlitePool) -> Result<bool,
     )
     .await?;
     Ok(generated_schema_table_names().is_subset(&installed_tables))
+}
+
+async fn sqlite_generated_schema_columns_exist(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
+    for (table, expected_columns) in generated_schema_table_columns() {
+        let installed_columns = sqlite_existing_columns(pool, &table).await?;
+        if !expected_columns.is_subset(&installed_columns) {
+            return Ok(false);
+        }
+    }
+    Ok(true)
 }
 
 async fn postgres_generated_schema_tables_exist(pool: &PgPool) -> Result<bool, sqlx::Error> {
@@ -2744,6 +3081,65 @@ async fn sqlite_generated_schema_indexes_exist(pool: &SqlitePool) -> Result<bool
     Ok(generated_schema_index_names().is_subset(&installed_indexes))
 }
 
+async fn sqlite_appbase_commerce_schema_tables_exist(
+    pool: &SqlitePool,
+) -> Result<bool, sqlx::Error> {
+    let installed_tables = sqlite_string_set(
+        pool,
+        r#"
+        SELECT name
+        FROM sqlite_master
+        WHERE type = 'table'
+        "#,
+    )
+    .await?;
+    Ok(string_set(commerce_database_tables()).is_subset(&installed_tables))
+}
+
+async fn postgres_appbase_commerce_schema_tables_exist(pool: &PgPool) -> Result<bool, sqlx::Error> {
+    let installed_tables = postgres_string_set(
+        pool,
+        r#"
+        SELECT table_name
+        FROM information_schema.tables
+        WHERE table_schema = current_schema()
+          AND table_type = 'BASE TABLE'
+        "#,
+    )
+    .await?;
+    Ok(string_set(commerce_database_tables()).is_subset(&installed_tables))
+}
+
+async fn sqlite_appbase_commerce_schema_indexes_exist(
+    pool: &SqlitePool,
+) -> Result<bool, sqlx::Error> {
+    let installed_indexes = sqlite_string_set(
+        pool,
+        r#"
+        SELECT name
+        FROM sqlite_master
+        WHERE type = 'index'
+        "#,
+    )
+    .await?;
+    Ok(string_set(commerce_database_indexes()).is_subset(&installed_indexes))
+}
+
+async fn postgres_appbase_commerce_schema_indexes_exist(
+    pool: &PgPool,
+) -> Result<bool, sqlx::Error> {
+    let installed_indexes = postgres_string_set(
+        pool,
+        r#"
+        SELECT indexname
+        FROM pg_indexes
+        WHERE schemaname = current_schema()
+        "#,
+    )
+    .await?;
+    Ok(string_set(commerce_database_indexes()).is_subset(&installed_indexes))
+}
+
 async fn postgres_generated_schema_indexes_exist(pool: &PgPool) -> Result<bool, sqlx::Error> {
     let installed_indexes = postgres_string_set(
         pool,
@@ -2767,7 +3163,16 @@ async fn sqlite_refresh_schema_needs_prepare(
     if !sqlite_generated_schema_tables_exist(pool).await? {
         return Ok(true);
     }
+    if !sqlite_generated_schema_columns_exist(pool).await? {
+        return Ok(true);
+    }
     if !sqlite_generated_schema_indexes_exist(pool).await? {
+        return Ok(true);
+    }
+    if !sqlite_appbase_commerce_schema_tables_exist(pool).await? {
+        return Ok(true);
+    }
+    if !sqlite_appbase_commerce_schema_indexes_exist(pool).await? {
         return Ok(true);
     }
     let Some(row) = sqlx::query(
@@ -2800,6 +3205,12 @@ async fn postgres_refresh_schema_needs_prepare(
         return Ok(true);
     }
     if !postgres_generated_schema_indexes_exist(pool).await? {
+        return Ok(true);
+    }
+    if !postgres_appbase_commerce_schema_tables_exist(pool).await? {
+        return Ok(true);
+    }
+    if !postgres_appbase_commerce_schema_indexes_exist(pool).await? {
         return Ok(true);
     }
     let Some(row) = sqlx::query(
@@ -3242,6 +3653,10 @@ async fn postgres_string_set(pool: &PgPool, query: &str) -> Result<BTreeSet<Stri
         .into_iter()
         .filter_map(|row| row.try_get::<String, _>(0).ok())
         .collect())
+}
+
+fn string_set(values: Vec<&'static str>) -> BTreeSet<String> {
+    values.into_iter().map(str::to_owned).collect()
 }
 
 async fn sqlite_model_family_keys(
@@ -3955,6 +4370,68 @@ fn sqlite_schema_statements() -> Vec<String> {
         .collect()
 }
 
+fn appbase_commerce_postgres_schema_statements() -> Vec<String> {
+    strip_line_comments(commerce_initial_migration_sql())
+        .split(';')
+        .map(str::trim)
+        .filter(|statement| !statement.is_empty())
+        .map(str::to_owned)
+        .collect()
+}
+
+fn appbase_commerce_sqlite_schema_statements() -> Vec<String> {
+    strip_line_comments(commerce_initial_migration_sql())
+        .split(';')
+        .map(str::trim)
+        .filter(|statement| !statement.is_empty())
+        .map(postgres_statement_to_sqlite)
+        .collect()
+}
+
+async fn apply_sqlite_appbase_commerce_schema(
+    pool: &SqlitePool,
+) -> Result<(), DatabaseInstallError> {
+    record_sqlite_migration_started(
+        pool,
+        "appbase-commerce-schema",
+        CURRENT_SCHEMA_VERSION,
+        commerce_initial_migration_sql(),
+    )
+    .await?;
+    for statement in appbase_commerce_sqlite_schema_statements() {
+        execute_sqlite_statement(pool, statement.as_str()).await?;
+    }
+    record_sqlite_migration_completed(
+        pool,
+        "appbase-commerce-schema",
+        CURRENT_SCHEMA_VERSION,
+        commerce_initial_migration_sql(),
+    )
+    .await?;
+    Ok(())
+}
+
+async fn apply_postgres_appbase_commerce_schema(pool: &PgPool) -> Result<(), DatabaseInstallError> {
+    record_postgres_migration_started(
+        pool,
+        "appbase-commerce-schema",
+        CURRENT_SCHEMA_VERSION,
+        commerce_initial_migration_sql(),
+    )
+    .await?;
+    for statement in appbase_commerce_postgres_schema_statements() {
+        execute_postgres_statement(pool, statement.as_str()).await?;
+    }
+    record_postgres_migration_completed(
+        pool,
+        "appbase-commerce-schema",
+        CURRENT_SCHEMA_VERSION,
+        commerce_initial_migration_sql(),
+    )
+    .await?;
+    Ok(())
+}
+
 fn generated_schema_table_names() -> BTreeSet<String> {
     postgres_schema_statements()
         .into_iter()
@@ -3969,6 +4446,20 @@ fn generated_schema_index_names() -> BTreeSet<String> {
         .collect()
 }
 
+fn generated_schema_table_columns() -> Vec<(String, BTreeSet<String>)> {
+    sqlite_schema_statements()
+        .into_iter()
+        .filter_map(|statement| {
+            let table = create_table_name(&statement)?;
+            let columns = sqlite_create_table_columns(&statement)
+                .into_iter()
+                .map(|column| column.name.to_ascii_lowercase())
+                .collect();
+            Some((table, columns))
+        })
+        .collect()
+}
+
 fn strip_line_comments(sql: &str) -> String {
     sql.lines()
         .filter(|line| !line.trim_start().starts_with("--"))
@@ -3979,6 +4470,14 @@ fn strip_line_comments(sql: &str) -> String {
 fn postgres_statement_to_sqlite(statement: &str) -> String {
     let mut sqlite =
         statement.replace("BIGSERIAL PRIMARY KEY", "INTEGER PRIMARY KEY AUTOINCREMENT");
+    sqlite = sqlite.replace(
+        "    agent_run_step_id_key VARCHAR(128) GENERATED ALWAYS AS (COALESCE(agent_run_step_id, '')) STORED,\n",
+        "",
+    );
+    sqlite = sqlite.replace(
+        "(tenant_id, organization_id, user_id, agent_run_id, usage_type, agent_run_step_id_key)",
+        "(tenant_id, organization_id, user_id, agent_run_id, usage_type, COALESCE(agent_run_step_id, ''))",
+    );
     sqlite = sqlite.replace("TIMESTAMPTZ", "TEXT");
     sqlite = sqlite.replace("JSONB", "TEXT");
     sqlite = sqlite.replace("BOOLEAN", "INTEGER");
@@ -4225,6 +4724,10 @@ fn sqlite_default_for_added_not_null_column(rest: &str) -> &'static str {
 }
 
 fn quote_sqlite_identifier(value: &str) -> String {
+    format!("\"{}\"", value.replace('"', "\"\""))
+}
+
+fn quote_postgres_identifier(value: &str) -> String {
     format!("\"{}\"", value.replace('"', "\"\""))
 }
 

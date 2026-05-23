@@ -15,7 +15,10 @@ class GenerationHistoryItem:
     prompt: str
     type: str
     videos: List[GenerationHistoryMediaItem]
+    aspect_ratio: Optional[str] = None
     created_at: Optional[str] = None
+    duration_seconds: Optional[int] = None
+    model_catalog_key: Optional[str] = None
     model_info: Optional[str] = None
     status: Optional[str] = None
     updated_at: Optional[str] = None

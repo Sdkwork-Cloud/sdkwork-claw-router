@@ -11,5 +11,4 @@ class VerificationPolicyRetrieveResult:
     """Verification policy retrieve result schema exposed by Claw Router."""
     code: str
     data: Optional[AuthVerificationPolicy] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

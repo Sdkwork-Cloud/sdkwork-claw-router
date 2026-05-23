@@ -89,7 +89,9 @@ async fn database_config_router_uses_sqlite_catalog_for_backend_model_list() {
         .as_str()
         .is_some_and(|value| !value.is_empty()));
     assert_eq!("openai", item["vendorCode"]);
-    assert_eq!("gpt-5.5-pro", item["name"]);
+    assert_eq!("gpt-5.5-pro", item["model"]);
+    assert_eq!("GPT-5.5 Pro", item["displayName"]);
+    assert_eq!("GPT-5.5 Pro", item["name"]);
     assert_eq!("Chat", item["type"]);
     assert_eq!("15.000000", item["priceIn"]);
     assert_eq!("120.000000", item["priceOut"]);
@@ -98,7 +100,7 @@ async fn database_config_router_uses_sqlite_catalog_for_backend_model_list() {
     assert_eq!(1_050_000, item["contextTokens"]);
     assert!(item.get("priceAvailability").is_none());
     let items = payload["data"]["items"].as_array().unwrap();
-    assert!(items.iter().any(|item| item["name"] == "claude-opus-4-7"));
+    assert!(items.iter().any(|item| item["model"] == "claude-opus-4-7"));
 }
 
 #[tokio::test]
@@ -150,7 +152,9 @@ async fn database_config_router_requires_admin_subject_for_backend_model_managem
     let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
 
     assert_eq!("2000", payload["code"]);
-    assert_eq!("gpt-5.5-pro", payload["data"]["items"][0]["name"]);
+    assert_eq!("gpt-5.5-pro", payload["data"]["items"][0]["model"]);
+    assert_eq!("GPT-5.5 Pro", payload["data"]["items"][0]["displayName"]);
+    assert_eq!("GPT-5.5 Pro", payload["data"]["items"][0]["name"]);
     assert_eq!("Chat", payload["data"]["items"][0]["type"]);
     assert!(payload["data"]["items"][0]
         .get("priceAvailability")
@@ -288,7 +292,7 @@ async fn database_config_router_serves_signed_subject_model_catalog_commands() {
         .as_array()
         .unwrap()
         .iter()
-        .any(|item| item["name"] == "gpt-5.5"));
+        .any(|item| item["model"] == "gpt-5.5"));
 }
 
 #[tokio::test]
@@ -457,10 +461,11 @@ async fn database_config_router_rejects_empty_backend_auth_setting_method_lists(
     )
     .unwrap();
     assert_eq!("4001", payload["code"]);
-    assert!(payload["message"]
+    assert!(payload["msg"]
         .as_str()
         .unwrap()
         .contains("loginMethods must include at least one item"));
+    assert_eq!(None, payload.get("message"));
 }
 
 #[tokio::test]
@@ -628,6 +633,46 @@ async fn database_config_router_serves_signed_subject_announcement_crud() {
     )
     .unwrap();
     assert_eq!(true, delete_payload["data"]["deleted"]);
+}
+
+#[tokio::test]
+async fn database_config_router_does_not_expose_admin_notification_management() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog(&pool).await;
+    pool.close().await;
+
+    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+        DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
+        Some(api_key_security_config()),
+        Some(trusted_subject_config()),
+        Some(app_session_config()),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .clone()
+        .oneshot(signed_request(
+            "GET",
+            "/backend/v3/api/notification/notifications",
+            Body::empty(),
+        ))
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::NOT_FOUND, response.status());
+
+    let response = router
+        .clone()
+        .oneshot(app_session_request(
+            "POST",
+            "/backend/v3/api/notification/notifications",
+            Body::empty(),
+        ))
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::NOT_FOUND, response.status());
 }
 
 #[tokio::test]
@@ -2174,11 +2219,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
 
     let recharge_packages_payload = request_json(
         router.clone(),
-        signed_request(
-            "GET",
-            "/backend/v3/api/billing/recharges/packages",
-            Body::empty(),
-        ),
+        signed_request("GET", "/backend/v3/api/recharges/packages", Body::empty()),
     )
     .await;
     assert_eq!(
@@ -2346,7 +2387,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         router.clone(),
         signed_request(
             "POST",
-            "/backend/v3/api/billing/recharges/packages",
+            "/backend/v3/api/recharges/packages",
             Body::from(r#"{"rmb":"12.00","bonus":30,"status":"active"}"#),
         ),
     )
@@ -2368,9 +2409,8 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
     let update_recharge_package_payload = request_json(
         router.clone(),
         signed_request(
-            "PUT",
-            format!("/backend/v3/api/billing/recharges/packages/{new_recharge_package_id}")
-                .as_str(),
+            "PATCH",
+            format!("/backend/v3/api/recharges/packages/{new_recharge_package_id}").as_str(),
             Body::from(r#"{"rmb":"20.00","bonus":50,"status":"inactive"}"#),
         ),
     )
@@ -2389,8 +2429,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         router.clone(),
         signed_request(
             "DELETE",
-            format!("/backend/v3/api/billing/recharges/packages/{new_recharge_package_id}")
-                .as_str(),
+            format!("/backend/v3/api/recharges/packages/{new_recharge_package_id}").as_str(),
             Body::empty(),
         ),
     )
@@ -2524,7 +2563,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
 
     let verification_pool = create_sqlite_pool(&database_url).await;
     let exchange_rate: String = sqlx::query_scalar(
-        "SELECT CAST(config_value AS TEXT) FROM plus_account_exchange_config WHERE tenant_id = 10 AND organization_id = 20 AND config_key = 'POINTS_TO_CASH_RATE'",
+        "SELECT CAST(rate AS TEXT) FROM commerce_exchange_rule WHERE tenant_id = '10' AND organization_id = '20' AND source_asset_type = 'points' AND target_asset_type = 'cash'",
     )
     .fetch_one(&verification_pool)
     .await
@@ -2923,7 +2962,6 @@ async fn create_schema(pool: &SqlitePool) {
             display_name TEXT NOT NULL,
             vendor_id INTEGER,
             vendor_code TEXT NOT NULL,
-            region_code TEXT,
             vendor_name_snapshot TEXT,
             family_id INTEGER,
             family_code TEXT,
@@ -2976,7 +3014,7 @@ async fn create_schema(pool: &SqlitePool) {
             provider_code TEXT NOT NULL,
             display_name TEXT,
             protocol INTEGER,
-            base_url_template TEXT,
+            base_url TEXT,
             status INTEGER NOT NULL,
             created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
             updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -3019,7 +3057,7 @@ async fn create_schema(pool: &SqlitePool) {
             name TEXT,
             protocol INTEGER,
             access_type INTEGER,
-            base_url_override TEXT,
+            base_url TEXT,
             timeout_ms INTEGER,
             retry_policy TEXT,
             circuit_breaker_policy TEXT,
@@ -3194,606 +3232,309 @@ async fn create_schema(pool: &SqlitePool) {
             remark TEXT,
             UNIQUE (tenant_id, organization_id, user_id)
         )"#,
-        r#"CREATE TABLE plus_account (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            data_scope INTEGER NOT NULL,
+        r#"CREATE TABLE commerce_account (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            owner_user_id TEXT NOT NULL,
+            asset_type TEXT NOT NULL,
+            currency_code TEXT,
+            available_amount TEXT NOT NULL DEFAULT '0',
+            frozen_amount TEXT NOT NULL DEFAULT '0',
+            version INTEGER NOT NULL DEFAULT 0,
+            status TEXT NOT NULL,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL,
-            user_id INTEGER NOT NULL,
-            account_type INTEGER NOT NULL,
-            owner INTEGER NOT NULL,
-            owner_id INTEGER NOT NULL,
-            available_balance TEXT NOT NULL,
-            frozen_balance TEXT NOT NULL,
-            available_points INTEGER NOT NULL,
-            frozen_points INTEGER NOT NULL,
-            token_balance INTEGER NOT NULL,
-            frozen_token INTEGER NOT NULL,
-            status INTEGER NOT NULL
+            UNIQUE (tenant_id, organization_id, owner_user_id, asset_type, currency_code)
         )"#,
-        r#"CREATE TABLE plus_account_exchange_config (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            config_key TEXT NOT NULL,
-            config_value TEXT NOT NULL,
-            remarks TEXT
-        )"#,
-        "CREATE UNIQUE INDEX uk_account_exchange_config_tenant_org_key ON plus_account_exchange_config (tenant_id, organization_id, config_key)",
-        "CREATE UNIQUE INDEX uk_plus_account_user_type ON plus_account (tenant_id, organization_id, user_id, account_type)",
-        "CREATE INDEX idx_plus_account_user_id ON plus_account (user_id)",
-        "CREATE INDEX idx_plus_account_owner_id ON plus_account (owner, owner_id)",
-        r#"CREATE TABLE plus_account_history (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            data_scope INTEGER NOT NULL,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL,
-            account_type INTEGER NOT NULL,
-            asset_type INTEGER NOT NULL,
-            account_id INTEGER NOT NULL,
-            transaction_id TEXT NOT NULL,
-            transaction_type INTEGER NOT NULL,
-            amount TEXT NOT NULL DEFAULT '0',
-            balance_before TEXT NOT NULL DEFAULT '0',
-            balance_after TEXT NOT NULL DEFAULT '0',
-            points_change INTEGER NOT NULL DEFAULT 0,
-            points_before INTEGER NOT NULL DEFAULT 0,
-            points_after INTEGER NOT NULL DEFAULT 0,
-            source_type INTEGER NOT NULL DEFAULT 0,
-            source_id TEXT NOT NULL DEFAULT '',
-            status INTEGER NOT NULL,
-            usage_result TEXT,
-            remarks TEXT
-        )"#,
-        "CREATE INDEX idx_account_history_account_id ON plus_account_history (account_id)",
-        "CREATE INDEX idx_account_history_transaction_id ON plus_account_history (transaction_id)",
-        "CREATE INDEX idx_account_history_source_id ON plus_account_history (source_id)",
-        r#"CREATE TABLE plus_vip_level (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            name TEXT NOT NULL,
-            level_value INTEGER NOT NULL,
-            required_points INTEGER NOT NULL DEFAULT 0,
-            description TEXT,
-            status INTEGER NOT NULL DEFAULT 1
-        )"#,
-        "CREATE UNIQUE INDEX uk_plus_vip_level_name ON plus_vip_level (name)",
-        "CREATE UNIQUE INDEX uk_plus_vip_level_value ON plus_vip_level (level_value)",
-        "CREATE INDEX idx_plus_vip_level_status ON plus_vip_level (status)",
-        r#"CREATE TABLE plus_vip_benefit (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            name TEXT NOT NULL,
-            description TEXT,
-            benefit_key TEXT,
-            type INTEGER NOT NULL,
-            status INTEGER NOT NULL DEFAULT 1
-        )"#,
-        "CREATE UNIQUE INDEX uk_plus_vip_benefit_name ON plus_vip_benefit (name)",
-        "CREATE UNIQUE INDEX uk_plus_vip_benefit_key ON plus_vip_benefit (benefit_key)",
-        "CREATE INDEX idx_plus_vip_benefit_type ON plus_vip_benefit (type)",
-        "CREATE INDEX idx_plus_vip_benefit_status ON plus_vip_benefit (status)",
-        r#"CREATE TABLE plus_vip_level_benefit (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            vip_level_id INTEGER NOT NULL,
-            benefit_id INTEGER NOT NULL,
-            daily_limit INTEGER,
-            monthly_limit INTEGER,
-            total_limit INTEGER,
-            status INTEGER NOT NULL,
-            metadata TEXT,
-            remark TEXT,
-            CONSTRAINT fk_plus_vip_level_benefit_level FOREIGN KEY (vip_level_id) REFERENCES plus_vip_level (id),
-            CONSTRAINT fk_plus_vip_level_benefit_benefit FOREIGN KEY (benefit_id) REFERENCES plus_vip_benefit (id)
-        )"#,
-        "CREATE UNIQUE INDEX uk_plus_vip_level_benefit_pair ON plus_vip_level_benefit (vip_level_id, benefit_id)",
-        "CREATE INDEX idx_plus_vip_level_benefit_level ON plus_vip_level_benefit (vip_level_id)",
-        "CREATE INDEX idx_plus_vip_level_benefit_benefit ON plus_vip_level_benefit (benefit_id)",
-        "CREATE INDEX idx_plus_vip_level_benefit_status ON plus_vip_level_benefit (status)",
-        r#"CREATE TABLE plus_vip_pack_group (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            app_id INTEGER NOT NULL DEFAULT 0,
-            scope_type INTEGER,
-            scope_id INTEGER,
-            group_key TEXT,
-            name TEXT NOT NULL,
-            description TEXT,
-            sort_weight INTEGER,
-            status INTEGER NOT NULL DEFAULT 1,
-            remark TEXT,
-            packs TEXT
-        )"#,
-        "CREATE UNIQUE INDEX uk_plus_vip_pack_group_scope_key ON plus_vip_pack_group (scope_type, scope_id, group_key)",
-        "CREATE INDEX idx_plus_vip_pack_group_status ON plus_vip_pack_group (status)",
-        "CREATE INDEX idx_plus_vip_pack_group_app ON plus_vip_pack_group (app_id)",
-        "CREATE INDEX idx_plus_vip_pack_group_scope ON plus_vip_pack_group (scope_type, scope_id)",
-        "CREATE INDEX idx_plus_vip_pack_group_sort ON plus_vip_pack_group (sort_weight)",
-        r#"CREATE TABLE plus_vip_recharge_pack (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            app_id INTEGER NOT NULL DEFAULT 1,
-            name TEXT NOT NULL,
-            description TEXT,
-            price TEXT NOT NULL,
-            point_amount INTEGER NOT NULL,
-            vip_duration_days INTEGER,
-            status INTEGER NOT NULL,
-            sort_weight INTEGER,
-            valid_from TEXT,
-            valid_to TEXT,
-            remark TEXT,
-            recharge_type INTEGER
-        )"#,
-        "CREATE INDEX idx_plus_vip_recharge_pack_status ON plus_vip_recharge_pack (status)",
-        "CREATE INDEX idx_plus_vip_recharge_pack_app ON plus_vip_recharge_pack (app_id)",
-        "CREATE INDEX idx_plus_vip_recharge_pack_sort ON plus_vip_recharge_pack (sort_weight)",
-        r#"CREATE TABLE plus_vip_pack (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            app_id INTEGER NOT NULL DEFAULT 0,
-            name TEXT NOT NULL,
-            description TEXT,
-            group_id INTEGER NOT NULL,
-            vip_level_id INTEGER NOT NULL,
-            price TEXT NOT NULL,
-            point_amount INTEGER NOT NULL,
-            vip_duration_days INTEGER,
-            billing_cycle INTEGER,
-            status INTEGER NOT NULL,
-            sort_weight INTEGER,
-            valid_from TEXT,
-            valid_to TEXT,
-            remark TEXT,
-            recharge_pack_id INTEGER,
-            point_reward_config TEXT,
-            CONSTRAINT fk_plus_vip_pack_group_id FOREIGN KEY (group_id) REFERENCES plus_vip_pack_group (id),
-            CONSTRAINT fk_plus_vip_pack_level_id FOREIGN KEY (vip_level_id) REFERENCES plus_vip_level (id),
-            CONSTRAINT fk_plus_vip_pack_recharge_pack FOREIGN KEY (recharge_pack_id) REFERENCES plus_vip_recharge_pack (id)
-        )"#,
-        "CREATE UNIQUE INDEX uk_plus_vip_pack_group_level_cycle ON plus_vip_pack (group_id, vip_level_id, billing_cycle)",
-        "CREATE INDEX idx_plus_vip_pack_status ON plus_vip_pack (status)",
-        "CREATE INDEX idx_plus_vip_pack_app ON plus_vip_pack (app_id)",
-        "CREATE INDEX idx_plus_vip_pack_group ON plus_vip_pack (group_id)",
-        "CREATE INDEX idx_plus_vip_pack_level ON plus_vip_pack (vip_level_id)",
-        "CREATE INDEX idx_plus_vip_pack_sort ON plus_vip_pack (sort_weight)",
-        "CREATE INDEX idx_plus_vip_pack_recharge_pack ON plus_vip_pack (recharge_pack_id)",
-        r#"CREATE TABLE plus_vip_user (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            user_id INTEGER NOT NULL,
-            vip_level_id INTEGER,
-            status INTEGER NOT NULL,
-            point_balance INTEGER NOT NULL,
-            total_recharged_points INTEGER NOT NULL,
-            valid_from TEXT,
-            valid_to TEXT,
-            last_active_time TEXT,
-            remark TEXT,
-            CONSTRAINT fk_plus_vip_user_user FOREIGN KEY (user_id) REFERENCES iam_user (id),
-            CONSTRAINT fk_plus_vip_user_level FOREIGN KEY (vip_level_id) REFERENCES plus_vip_level (id)
-        )"#,
-        "CREATE UNIQUE INDEX uk_plus_vip_user_user_id ON plus_vip_user (user_id)",
-        "CREATE INDEX idx_plus_vip_user_level ON plus_vip_user (vip_level_id)",
-        "CREATE INDEX idx_plus_vip_user_status ON plus_vip_user (status)",
-        r#"CREATE TABLE plus_vip_point_change (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            data_scope INTEGER NOT NULL,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL,
-            user_id INTEGER NOT NULL,
-            change_type INTEGER NOT NULL,
-            change_amount INTEGER NOT NULL,
-            before_balance INTEGER NOT NULL,
-            after_balance INTEGER NOT NULL,
-            source_id INTEGER,
+        r#"CREATE TABLE commerce_account_ledger_entry (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            account_id TEXT NOT NULL,
+            owner_user_id TEXT NOT NULL,
+            asset_type TEXT NOT NULL,
+            direction TEXT NOT NULL,
+            amount TEXT NOT NULL,
+            balance_after TEXT NOT NULL,
+            business_type TEXT NOT NULL,
+            transaction_no TEXT NOT NULL,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
             source_type TEXT,
+            source_id TEXT,
             remark TEXT,
-            CONSTRAINT fk_plus_vip_point_change_user FOREIGN KEY (user_id) REFERENCES iam_user (id)
-        )"#,
-        "CREATE INDEX idx_plus_vip_point_change_user ON plus_vip_point_change (user_id)",
-        "CREATE INDEX idx_plus_vip_point_change_type ON plus_vip_point_change (change_type)",
-        "CREATE INDEX idx_plus_vip_point_change_source ON plus_vip_point_change (source_type)",
-        r#"CREATE TABLE plus_vip_benefit_usage (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
             created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            user_id INTEGER NOT NULL,
-            benefit_type INTEGER NOT NULL,
-            usage_time TEXT NOT NULL,
-            usage_count INTEGER NOT NULL,
-            status INTEGER NOT NULL,
-            source_id INTEGER,
-            source_type TEXT,
-            remark TEXT,
-            CONSTRAINT fk_plus_vip_benefit_usage_user FOREIGN KEY (user_id) REFERENCES iam_user (id)
+            UNIQUE (tenant_id, transaction_no)
         )"#,
-        "CREATE INDEX idx_plus_vip_benefit_usage_user ON plus_vip_benefit_usage (user_id)",
-        "CREATE INDEX idx_plus_vip_benefit_usage_type ON plus_vip_benefit_usage (benefit_type)",
-        "CREATE INDEX idx_plus_vip_benefit_usage_time ON plus_vip_benefit_usage (usage_time)",
-        "CREATE INDEX idx_plus_vip_benefit_usage_status ON plus_vip_benefit_usage (status)",
-        r#"CREATE TABLE plus_shop (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            user_id INTEGER,
-            name TEXT NOT NULL,
-            description TEXT,
-            logo TEXT,
-            cover TEXT,
-            contact_phone TEXT,
-            contact_email TEXT,
-            location TEXT,
-            address TEXT,
-            license_number TEXT,
-            tags TEXT,
-            status INTEGER NOT NULL,
-            business_hours TEXT,
-            CONSTRAINT fk_plus_shop_user FOREIGN KEY (user_id) REFERENCES iam_user (id)
-        )"#,
-        "CREATE INDEX idx_plus_shop_user_id ON plus_shop (user_id)",
-        "CREATE INDEX idx_plus_shop_status ON plus_shop (status)",
-        "CREATE INDEX idx_plus_shop_tenant_org_status ON plus_shop (tenant_id, organization_id, status)",
-        r#"CREATE TABLE plus_product (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            user_id INTEGER,
+        r#"CREATE TABLE commerce_coupon_template (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            template_no TEXT NOT NULL,
             title TEXT NOT NULL,
-            code TEXT,
+            discount_type TEXT NOT NULL,
+            discount_value TEXT NOT NULL,
+            minimum_amount TEXT NOT NULL DEFAULT '0',
+            total_quantity INTEGER,
+            claimed_quantity INTEGER NOT NULL DEFAULT 0,
+            redeemed_quantity INTEGER NOT NULL DEFAULT 0,
+            status TEXT NOT NULL,
+            starts_at TEXT,
+            expires_at TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, template_no)
+        )"#,
+        r#"CREATE TABLE commerce_coupon_issue_batch (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            coupon_template_id TEXT NOT NULL,
+            batch_no TEXT NOT NULL,
+            campaign_code TEXT,
+            title TEXT NOT NULL,
+            code_prefix TEXT NOT NULL,
+            code_pattern TEXT NOT NULL,
+            requested_quantity INTEGER NOT NULL,
+            generated_quantity INTEGER NOT NULL DEFAULT 0,
+            available_quantity INTEGER NOT NULL DEFAULT 0,
+            claimed_quantity INTEGER NOT NULL DEFAULT 0,
+            redeemed_quantity INTEGER NOT NULL DEFAULT 0,
+            disabled_quantity INTEGER NOT NULL DEFAULT 0,
+            status TEXT NOT NULL,
+            generation_status TEXT NOT NULL,
+            audience_filter TEXT,
+            generated_at TEXT,
+            created_by TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, batch_no)
+        )"#,
+        r#"CREATE TABLE commerce_coupon (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            template_id TEXT NOT NULL,
+            issue_batch_id TEXT,
+            owner_user_id TEXT,
+            coupon_code TEXT NOT NULL,
+            status TEXT NOT NULL,
+            claimed_at TEXT,
+            expires_at TEXT,
+            redeemed_at TEXT,
+            disabled_at TEXT,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, coupon_code)
+        )"#,
+        r#"CREATE TABLE commerce_coupon_redemption (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            coupon_id TEXT NOT NULL,
+            order_id TEXT NOT NULL,
+            owner_user_id TEXT NOT NULL,
+            discount_amount TEXT NOT NULL,
+            status TEXT NOT NULL,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            redeemed_at TEXT NOT NULL,
+            rolled_back_at TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, coupon_id, order_id)
+        )"#,
+        r#"CREATE TABLE commerce_product (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            product_no TEXT NOT NULL,
+            title TEXT NOT NULL,
             subtitle TEXT,
-            resources TEXT,
-            price TEXT NOT NULL,
-            original_price TEXT,
-            stock INTEGER NOT NULL DEFAULT 0,
-            sales_count INTEGER NOT NULL DEFAULT 0,
-            status INTEGER NOT NULL,
-            on_sale_at TEXT,
             description TEXT,
-            tags TEXT,
-            category_id INTEGER NOT NULL,
-            base_attributes TEXT NOT NULL DEFAULT '{}',
-            spec_attributes TEXT NOT NULL DEFAULT '{}',
-            CONSTRAINT fk_plus_product_user FOREIGN KEY (user_id) REFERENCES iam_user (id)
-        )"#,
-        "CREATE UNIQUE INDEX uk_plus_product_code ON plus_product (code)",
-        "CREATE INDEX idx_plus_product_user_id ON plus_product (user_id)",
-        "CREATE INDEX idx_plus_product_category_id ON plus_product (category_id)",
-        "CREATE INDEX idx_plus_product_status ON plus_product (status)",
-        "CREATE INDEX idx_plus_product_tenant_org_status ON plus_product (tenant_id, organization_id, status)",
-        "CREATE INDEX idx_plus_product_category_status ON plus_product (category_id, status, created_at)",
-        r#"CREATE TABLE plus_sku (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
+            category_id TEXT,
+            status TEXT NOT NULL,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            product_id INTEGER NOT NULL,
-            sku_code TEXT NOT NULL,
+            UNIQUE (tenant_id, product_no)
+        )"#,
+        r#"CREATE TABLE commerce_sku (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            product_id TEXT NOT NULL,
+            sku_no TEXT NOT NULL,
             name TEXT NOT NULL,
-            title TEXT,
-            price TEXT NOT NULL,
-            original_price TEXT,
-            stock INTEGER NOT NULL DEFAULT 0,
-            sales INTEGER,
-            status INTEGER NOT NULL,
-            image TEXT,
-            specs TEXT,
-            CONSTRAINT fk_plus_sku_product FOREIGN KEY (product_id) REFERENCES plus_product (id)
-        )"#,
-        "CREATE UNIQUE INDEX uk_plus_sku_sku_code ON plus_sku (sku_code)",
-        "CREATE INDEX idx_plus_sku_product ON plus_sku (product_id)",
-        "CREATE INDEX idx_plus_sku_product_status ON plus_sku (product_id, status)",
-        r#"CREATE TABLE plus_shopping_cart (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
+            title TEXT NOT NULL,
+            price_amount TEXT NOT NULL,
+            original_price_amount TEXT,
+            currency_code TEXT NOT NULL,
+            stock_quantity INTEGER NOT NULL DEFAULT 0,
+            sold_quantity INTEGER NOT NULL DEFAULT 0,
+            status TEXT NOT NULL,
+            spec_json TEXT,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            user_id INTEGER,
-            owner INTEGER NOT NULL,
-            owner_id INTEGER NOT NULL,
-            name TEXT,
-            description TEXT,
-            group_list TEXT,
-            status INTEGER,
-            CONSTRAINT fk_plus_shopping_cart_user FOREIGN KEY (user_id) REFERENCES iam_user (id)
+            UNIQUE (tenant_id, sku_no)
         )"#,
-        "CREATE INDEX idx_plus_shopping_cart_user_id ON plus_shopping_cart (user_id)",
-        "CREATE INDEX idx_plus_shopping_cart_owner ON plus_shopping_cart (owner, owner_id)",
-        "CREATE INDEX idx_plus_shopping_cart_status ON plus_shopping_cart (status)",
-        r#"CREATE TABLE plus_shopping_cart_item (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
+        r#"CREATE TABLE commerce_recharge_package (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            external_id INTEGER,
+            package_no TEXT NOT NULL,
+            sku_id TEXT NOT NULL,
+            name TEXT NOT NULL,
+            price_amount TEXT NOT NULL,
+            currency_code TEXT NOT NULL,
+            bonus_points INTEGER NOT NULL,
+            status TEXT NOT NULL,
+            valid_from TEXT,
+            valid_to TEXT,
+            sort_weight INTEGER,
+            request_no TEXT,
+            idempotency_key TEXT,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            cart_id INTEGER NOT NULL,
-            cart_group_uuid TEXT NOT NULL,
-            product_id INTEGER NOT NULL,
-            sku_id INTEGER NOT NULL,
-            quantity INTEGER NOT NULL,
-            price TEXT NOT NULL,
-            is_selected INTEGER,
-            CONSTRAINT fk_plus_shopping_cart_item_cart FOREIGN KEY (cart_id) REFERENCES plus_shopping_cart (id),
-            CONSTRAINT fk_plus_shopping_cart_item_product FOREIGN KEY (product_id) REFERENCES plus_product (id),
-            CONSTRAINT fk_plus_shopping_cart_item_sku FOREIGN KEY (sku_id) REFERENCES plus_sku (id)
+            UNIQUE (tenant_id, package_no)
         )"#,
-        "CREATE UNIQUE INDEX uk_plus_shopping_cart_item_cart_sku ON plus_shopping_cart_item (cart_id, sku_id)",
-        "CREATE INDEX idx_plus_shopping_cart_item_cart_id ON plus_shopping_cart_item (cart_id)",
-        "CREATE INDEX idx_plus_shopping_cart_item_product_id ON plus_shopping_cart_item (product_id)",
-        "CREATE INDEX idx_plus_shopping_cart_item_sku_id ON plus_shopping_cart_item (sku_id)",
-        r#"CREATE TABLE plus_order (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
+        r#"CREATE TABLE commerce_order (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            owner_user_id TEXT NOT NULL,
+            order_no TEXT NOT NULL,
+            status TEXT NOT NULL,
             subject TEXT NOT NULL,
-            order_type INTEGER NOT NULL,
-            owner INTEGER,
-            owner_id INTEGER NOT NULL,
-            user_id INTEGER NOT NULL,
-            order_sn TEXT NOT NULL,
-            transaction_id TEXT,
-            out_trade_no TEXT NOT NULL,
-            total_amount TEXT NOT NULL,
-            paid_amount TEXT NOT NULL,
-            status INTEGER NOT NULL,
-            category_id INTEGER NOT NULL,
-            payment_expire_time TEXT,
-            task_code TEXT,
-            worker_user_id INTEGER,
-            dispatcher_user_id INTEGER,
-            pay_success_time TEXT,
-            cancel_time TEXT,
-            remark TEXT,
-            refunded_amount TEXT,
-            currency TEXT,
-            payment_method TEXT,
-            CONSTRAINT fk_plus_order_user FOREIGN KEY (user_id) REFERENCES iam_user (id),
-            CONSTRAINT fk_plus_order_worker_user FOREIGN KEY (worker_user_id) REFERENCES iam_user (id),
-            CONSTRAINT fk_plus_order_dispatcher_user FOREIGN KEY (dispatcher_user_id) REFERENCES iam_user (id)
-        )"#,
-        "CREATE UNIQUE INDEX uk_plus_order_order_sn ON plus_order (order_sn)",
-        "CREATE UNIQUE INDEX uk_plus_order_out_trade_no ON plus_order (out_trade_no)",
-        "CREATE INDEX idx_plus_order_user_id ON plus_order (user_id)",
-        "CREATE INDEX idx_plus_order_status ON plus_order (status)",
-        "CREATE INDEX idx_plus_order_status_payment_expire ON plus_order (status, payment_expire_time)",
-        "CREATE INDEX idx_plus_order_task_code ON plus_order (task_code)",
-        "CREATE INDEX idx_plus_order_worker_user_id ON plus_order (worker_user_id)",
-        "CREATE INDEX idx_plus_order_tenant_org_status ON plus_order (tenant_id, organization_id, status)",
-        r#"CREATE TABLE plus_order_item (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
+            currency_code TEXT NOT NULL,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
             created_at TEXT NOT NULL,
+            paid_at TEXT,
+            cancelled_at TEXT,
+            expired_at TEXT,
             updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            order_id INTEGER NOT NULL,
-            category_id INTEGER NOT NULL,
-            product_type TEXT NOT NULL,
-            product_id INTEGER NOT NULL,
-            sku_id INTEGER NOT NULL,
+            UNIQUE (tenant_id, order_no)
+        )"#,
+        r#"CREATE TABLE commerce_order_item (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            order_id TEXT NOT NULL,
+            sku_id TEXT NOT NULL,
+            title TEXT NOT NULL,
             quantity INTEGER NOT NULL,
-            unit_price TEXT NOT NULL,
+            unit_price_amount TEXT NOT NULL,
             total_amount TEXT NOT NULL,
-            expire_time TEXT,
-            content_type INTEGER,
-            content_id INTEGER,
-            product_name TEXT,
-            sku_spec TEXT,
-            buyer_info TEXT,
-            seller_info TEXT,
-            discount_amount TEXT,
-            paid_amount TEXT,
-            refunded_amount TEXT,
-            currency TEXT,
-            product_image TEXT,
-            refund_status INTEGER,
-            review_status INTEGER,
-            payment_provider INTEGER,
-            payment_product_type TEXT,
-            CONSTRAINT fk_plus_order_item_order FOREIGN KEY (order_id) REFERENCES plus_order (id),
-            CONSTRAINT fk_plus_order_item_product FOREIGN KEY (product_id) REFERENCES plus_product (id),
-            CONSTRAINT fk_plus_order_item_sku FOREIGN KEY (sku_id) REFERENCES plus_sku (id)
+            created_at TEXT NOT NULL
         )"#,
-        "CREATE INDEX idx_plus_order_item_order_id ON plus_order_item (order_id)",
-        "CREATE INDEX idx_plus_order_item_product_id ON plus_order_item (product_id)",
-        "CREATE INDEX idx_plus_order_item_sku_id ON plus_order_item (sku_id)",
-        r#"CREATE TABLE plus_payment (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
+        r#"CREATE TABLE commerce_order_amount_breakdown (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            order_id TEXT NOT NULL,
+            original_amount TEXT NOT NULL,
+            discount_amount TEXT NOT NULL,
+            payable_amount TEXT NOT NULL,
+            currency_code TEXT NOT NULL,
             created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            subject TEXT,
-            purpose TEXT NOT NULL,
-            order_id INTEGER NOT NULL,
-            transaction_id TEXT,
+            UNIQUE (tenant_id, order_id)
+        )"#,
+        r#"CREATE TABLE commerce_payment_intent (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            owner_user_id TEXT NOT NULL,
+            order_id TEXT NOT NULL,
+            provider TEXT NOT NULL,
+            amount TEXT NOT NULL,
+            currency_code TEXT NOT NULL,
+            status TEXT NOT NULL,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
+        )"#,
+        r#"CREATE TABLE commerce_payment_attempt (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            owner_user_id TEXT NOT NULL,
+            payment_intent_id TEXT NOT NULL,
+            order_id TEXT NOT NULL,
+            provider TEXT NOT NULL,
             out_trade_no TEXT NOT NULL,
-            channel INTEGER NOT NULL,
-            provider INTEGER NOT NULL,
-            status INTEGER NOT NULL,
             amount TEXT NOT NULL,
-            expire_time TEXT,
-            success_time TEXT,
-            remark TEXT,
-            CONSTRAINT fk_plus_payment_order FOREIGN KEY (order_id) REFERENCES plus_order (id)
+            currency_code TEXT NOT NULL,
+            status TEXT NOT NULL,
+            callback_payload TEXT,
+            created_at TEXT NOT NULL,
+            paid_at TEXT,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, provider, out_trade_no)
         )"#,
-        "CREATE UNIQUE INDEX uk_plus_payment_out_trade_no ON plus_payment (out_trade_no)",
-        "CREATE INDEX idx_plus_payment_status_expire ON plus_payment (status, expire_time)",
-        "CREATE INDEX idx_plus_payment_order_status ON plus_payment (order_id, status)",
-        "CREATE INDEX idx_plus_payment_provider_status ON plus_payment (provider, status)",
-        r#"CREATE TABLE plus_refund (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
+        r#"CREATE TABLE commerce_payment_method (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            method_key TEXT NOT NULL,
+            display_name TEXT NOT NULL,
+            provider TEXT NOT NULL,
+            status TEXT NOT NULL,
+            sort_weight INTEGER,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            order_id INTEGER NOT NULL,
-            payment_id INTEGER NOT NULL,
-            out_refund_no TEXT NOT NULL,
-            out_trade_no TEXT,
-            refund_id TEXT,
-            amount TEXT NOT NULL,
-            channel INTEGER,
-            provider INTEGER,
-            type TEXT NOT NULL,
-            status INTEGER NOT NULL,
-            apply_time TEXT NOT NULL,
-            complete_time TEXT,
-            remark TEXT,
-            operator_id INTEGER,
-            CONSTRAINT fk_plus_refund_order FOREIGN KEY (order_id) REFERENCES plus_order (id),
-            CONSTRAINT fk_plus_refund_payment FOREIGN KEY (payment_id) REFERENCES plus_payment (id)
+            UNIQUE (tenant_id, organization_id, method_key)
         )"#,
-        "CREATE UNIQUE INDEX uk_plus_refund_out_refund_no ON plus_refund (out_refund_no)",
-        "CREATE INDEX idx_plus_refund_order_id ON plus_refund (order_id)",
-        "CREATE INDEX idx_plus_refund_payment_id ON plus_refund (payment_id)",
-        "CREATE INDEX idx_plus_refund_status ON plus_refund (status)",
-        r#"CREATE TABLE plus_invoice (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
+        r#"CREATE TABLE commerce_exchange_rule (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            rule_no TEXT NOT NULL,
+            source_asset_type TEXT NOT NULL,
+            target_asset_type TEXT NOT NULL,
+            rate TEXT NOT NULL,
+            status TEXT NOT NULL,
+            remark TEXT,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            user_id INTEGER NOT NULL,
-            order_count INTEGER NOT NULL DEFAULT 0,
-            type INTEGER NOT NULL,
-            status INTEGER NOT NULL,
-            invoice_code TEXT,
-            invoice_no TEXT,
+            UNIQUE (tenant_id, organization_id, source_asset_type, target_asset_type)
+        )"#,
+        r#"CREATE TABLE commerce_invoice (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            owner_user_id TEXT NOT NULL,
+            invoice_no TEXT NOT NULL,
             title TEXT,
+            invoice_type TEXT NOT NULL,
+            status TEXT NOT NULL,
             amount_excluding_tax TEXT NOT NULL,
             tax_amount TEXT NOT NULL,
             total_amount TEXT NOT NULL,
-            currency TEXT,
-            invoice_time TEXT,
-            cancel_time TEXT,
-            fail_reason TEXT,
-            CONSTRAINT fk_plus_invoice_user FOREIGN KEY (user_id) REFERENCES iam_user (id)
-        )"#,
-        "CREATE INDEX idx_invoice_user ON plus_invoice (user_id)",
-        "CREATE INDEX idx_invoice_status ON plus_invoice (status)",
-        "CREATE INDEX idx_invoice_type ON plus_invoice (type)",
-        "CREATE INDEX idx_invoice_code ON plus_invoice (invoice_code)",
-        "CREATE INDEX idx_invoice_created ON plus_invoice (created_at)",
-        r#"CREATE TABLE plus_invoice_item (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
+            currency_code TEXT NOT NULL,
+            issued_at TEXT,
+            cancelled_at TEXT,
+            failure_reason TEXT,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            invoice_id INTEGER NOT NULL,
-            invoice_uuid TEXT NOT NULL,
-            order_item_id INTEGER,
-            product_id INTEGER,
-            product_code TEXT,
+            UNIQUE (tenant_id, invoice_no)
+        )"#,
+        r#"CREATE TABLE commerce_invoice_item (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            invoice_id TEXT NOT NULL,
+            order_item_id TEXT,
+            product_id TEXT,
+            sku_id TEXT,
             product_name TEXT NOT NULL,
             specification TEXT,
-            unit TEXT,
             quantity TEXT NOT NULL DEFAULT '0',
             unit_price_excluding_tax TEXT NOT NULL DEFAULT '0',
             unit_price_including_tax TEXT NOT NULL DEFAULT '0',
@@ -3801,57 +3542,11 @@ async fn create_schema(pool: &SqlitePool) {
             tax_amount TEXT NOT NULL DEFAULT '0',
             total_amount TEXT NOT NULL DEFAULT '0',
             tax_rate TEXT NOT NULL DEFAULT '0',
-            tax_rate_code TEXT,
-            tax_classification_code TEXT,
-            product_type TEXT,
-            product_category TEXT,
-            brand_name TEXT,
-            remark TEXT,
+            currency_code TEXT NOT NULL,
             sort_order INTEGER NOT NULL DEFAULT 0,
-            CONSTRAINT fk_plus_invoice_item_invoice FOREIGN KEY (invoice_id) REFERENCES plus_invoice (id),
-            CONSTRAINT fk_plus_invoice_item_order_item FOREIGN KEY (order_item_id) REFERENCES plus_order_item (id)
-        )"#,
-        "CREATE INDEX idx_invoice_item_invoice ON plus_invoice_item (invoice_id)",
-        "CREATE INDEX idx_invoice_item_order_item ON plus_invoice_item (order_item_id)",
-        "CREATE INDEX idx_invoice_item_created ON plus_invoice_item (created_at)",
-        r#"CREATE TABLE plus_invoice_record (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
             created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            invoice_id INTEGER NOT NULL,
-            invoice_uuid TEXT NOT NULL,
-            operation_type INTEGER NOT NULL,
-            before_status TEXT,
-            after_status TEXT,
-            invoice_code TEXT,
-            invoice_no TEXT,
-            amount_excluding_tax TEXT,
-            tax_amount TEXT,
-            total_amount TEXT,
-            currency TEXT,
-            third_party_invoice_id TEXT,
-            operator_id INTEGER NOT NULL,
-            operator_name TEXT,
-            operator_type TEXT,
-            operator_ip TEXT,
-            result TEXT,
-            result_message TEXT,
-            error_code TEXT,
-            error_message TEXT,
-            request_data TEXT,
-            response_data TEXT,
-            remark TEXT,
-            extra_data TEXT,
-            CONSTRAINT fk_plus_invoice_record_invoice FOREIGN KEY (invoice_id) REFERENCES plus_invoice (id)
+            updated_at TEXT NOT NULL
         )"#,
-        "CREATE INDEX idx_invoice_record_invoice ON plus_invoice_record (invoice_id)",
-        "CREATE INDEX idx_invoice_record_operation ON plus_invoice_record (operation_type)",
-        "CREATE INDEX idx_invoice_record_created ON plus_invoice_record (created_at)",
         r#"CREATE TABLE commerce_usage_settlement (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             uuid TEXT NOT NULL,
@@ -3864,12 +3559,12 @@ async fn create_schema(pool: &SqlitePool) {
             version INTEGER NOT NULL DEFAULT 0,
             settlement_no TEXT,
             usage_fact_id INTEGER,
-            account_id INTEGER,
-            account_history_id INTEGER,
+            account_id TEXT,
+            account_ledger_entry_id TEXT,
             order_id INTEGER,
             payment_id INTEGER,
-            asset_type INTEGER,
-            direction INTEGER,
+            asset_type TEXT,
+            direction TEXT,
             amount TEXT,
             points INTEGER,
             tokens INTEGER,
@@ -3904,7 +3599,7 @@ async fn create_schema(pool: &SqlitePool) {
             due_at TEXT,
             paid_at TEXT,
             payment_status INTEGER,
-            invoice_id INTEGER,
+            invoice_id TEXT,
             export_id INTEGER
         )"#,
         r#"CREATE TABLE iam_role (
@@ -3968,154 +3663,6 @@ async fn create_schema(pool: &SqlitePool) {
             occurred_at TEXT,
             created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
         )"#,
-        r#"CREATE TABLE plus_coupon_template (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            name TEXT NOT NULL,
-            template_code TEXT,
-            type INTEGER NOT NULL,
-            description TEXT,
-            amount INTEGER,
-            discount TEXT,
-            min_consume INTEGER,
-            start_time TEXT,
-            end_time TEXT,
-            total INTEGER,
-            get_limit INTEGER,
-            received_count INTEGER,
-            used_count INTEGER,
-            status INTEGER,
-            validity_type INTEGER,
-            validity_days INTEGER,
-            can_share INTEGER,
-            stackable INTEGER,
-            scope_type INTEGER,
-            scope_value TEXT
-        )"#,
-        "CREATE UNIQUE INDEX uk_plus_coupon_template_code ON plus_coupon_template (template_code)",
-        "CREATE INDEX idx_plus_coupon_template_status ON plus_coupon_template (status)",
-        "CREATE INDEX idx_plus_coupon_template_type ON plus_coupon_template (type)",
-        "CREATE INDEX idx_plus_coupon_template_time_window ON plus_coupon_template (start_time, end_time)",
-        "CREATE INDEX idx_plus_coupon_template_tenant_org_status ON plus_coupon_template (tenant_id, organization_id, status)",
-        r#"CREATE TABLE plus_coupon (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            name TEXT NOT NULL,
-            redeem_code TEXT,
-            point_cost INTEGER,
-            type INTEGER NOT NULL,
-            description TEXT,
-            amount INTEGER,
-            discount TEXT,
-            min_consume INTEGER,
-            start_time TEXT,
-            end_time TEXT,
-            total INTEGER,
-            get_limit INTEGER,
-            received_count INTEGER,
-            used_count INTEGER,
-            status INTEGER NOT NULL,
-            stackable INTEGER NOT NULL DEFAULT 0,
-            scope_type INTEGER NOT NULL,
-            scope_value TEXT
-        )"#,
-        "CREATE UNIQUE INDEX uk_plus_coupon_redeem_code ON plus_coupon (redeem_code)",
-        "CREATE INDEX idx_plus_coupon_status ON plus_coupon (status)",
-        "CREATE INDEX idx_plus_coupon_type ON plus_coupon (type)",
-        "CREATE INDEX idx_plus_coupon_tenant_org_status ON plus_coupon (tenant_id, organization_id, status)",
-        r#"CREATE TABLE plus_user_coupon (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            user_id INTEGER,
-            coupon_id INTEGER NOT NULL,
-            coupon_code TEXT NOT NULL,
-            acquire_at TEXT NOT NULL,
-            acquire_request_no TEXT,
-            acquire_type INTEGER NOT NULL,
-            point_cost INTEGER,
-            points_refunded INTEGER NOT NULL DEFAULT 0,
-            points_refund_at TEXT,
-            use_at TEXT,
-            expire_at TEXT,
-            status INTEGER NOT NULL,
-            order_id INTEGER,
-            can_shared INTEGER NOT NULL DEFAULT 0,
-            CONSTRAINT fk_plus_user_coupon_coupon FOREIGN KEY (coupon_id) REFERENCES plus_coupon (id),
-            CONSTRAINT fk_plus_user_coupon_user FOREIGN KEY (user_id) REFERENCES iam_user (id),
-            CONSTRAINT fk_plus_user_coupon_order FOREIGN KEY (order_id) REFERENCES plus_order (id)
-        )"#,
-        "CREATE UNIQUE INDEX uk_plus_user_coupon_code ON plus_user_coupon (coupon_code)",
-        "CREATE UNIQUE INDEX uk_plus_user_coupon_acquire_request_no ON plus_user_coupon (user_id, acquire_request_no)",
-        "CREATE INDEX idx_plus_user_coupon_coupon_id ON plus_user_coupon (coupon_id)",
-        "CREATE INDEX idx_plus_user_coupon_user_status ON plus_user_coupon (user_id, status)",
-        "CREATE INDEX idx_plus_user_coupon_expire_at ON plus_user_coupon (expire_at)",
-        r#"CREATE TABLE plus_vip_recharge_method (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            name TEXT NOT NULL,
-            description TEXT,
-            method_key TEXT NOT NULL,
-            status INTEGER NOT NULL,
-            sort_weight INTEGER,
-            remark TEXT
-        )"#,
-        "CREATE UNIQUE INDEX uk_plus_vip_recharge_method_key ON plus_vip_recharge_method (method_key)",
-        "CREATE INDEX idx_plus_vip_recharge_method_status ON plus_vip_recharge_method (status)",
-        "CREATE INDEX idx_plus_vip_recharge_method_sort ON plus_vip_recharge_method (sort_weight)",
-        r#"CREATE TABLE plus_vip_recharge (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL UNIQUE,
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL,
-            v INTEGER NOT NULL DEFAULT 0,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            user_id INTEGER NOT NULL,
-            vip_level_id INTEGER,
-            amount TEXT NOT NULL,
-            point_amount INTEGER NOT NULL,
-            recharge_type INTEGER NOT NULL,
-            recharge_time TEXT NOT NULL,
-            transaction_no TEXT,
-            status INTEGER NOT NULL,
-            remark TEXT,
-            recharge_method_id INTEGER,
-            recharge_pack_id INTEGER,
-            CONSTRAINT fk_plus_vip_recharge_user FOREIGN KEY (user_id) REFERENCES iam_user (id),
-            CONSTRAINT fk_plus_vip_recharge_level FOREIGN KEY (vip_level_id) REFERENCES plus_vip_level (id),
-            CONSTRAINT fk_plus_vip_recharge_method FOREIGN KEY (recharge_method_id) REFERENCES plus_vip_recharge_method (id),
-            CONSTRAINT fk_plus_vip_recharge_pack FOREIGN KEY (recharge_pack_id) REFERENCES plus_vip_recharge_pack (id)
-        )"#,
-        "CREATE INDEX idx_plus_vip_recharge_user ON plus_vip_recharge (user_id)",
-        "CREATE INDEX idx_plus_vip_recharge_level ON plus_vip_recharge (vip_level_id)",
-        "CREATE INDEX idx_plus_vip_recharge_status ON plus_vip_recharge (status)",
-        "CREATE INDEX idx_plus_vip_recharge_time ON plus_vip_recharge (recharge_time)",
-        "CREATE INDEX idx_plus_vip_recharge_transaction ON plus_vip_recharge (transaction_no)",
         r#"CREATE TABLE iam_gateway_api_key_group (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL DEFAULT 'seed-api-key-group',
@@ -4501,38 +4048,6 @@ async fn create_schema(pool: &SqlitePool) {
             metric_unit TEXT,
             payload TEXT
         )"#,
-        r#"CREATE TABLE ops_coupon_issue_batch (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL,
-            tenant_id INTEGER,
-            organization_id INTEGER,
-            data_scope INTEGER,
-            status INTEGER NOT NULL DEFAULT 1,
-            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-            version INTEGER NOT NULL DEFAULT 0,
-            deleted_at TEXT,
-            deleted_by INTEGER,
-            metadata TEXT NOT NULL DEFAULT '{}',
-            coupon_id INTEGER,
-            coupon_template_id INTEGER,
-            batch_no TEXT,
-            campaign_code TEXT,
-            name TEXT,
-            code_prefix TEXT,
-            code_pattern TEXT,
-            requested_count INTEGER,
-            generated_count INTEGER,
-            available_count INTEGER,
-            claimed_count INTEGER,
-            used_count INTEGER,
-            voided_count INTEGER,
-            generation_status INTEGER,
-            audience_filter TEXT,
-            expire_at TEXT,
-            generated_at TEXT,
-            created_by INTEGER
-        )"#,
         r#"CREATE TABLE ops_referral_stat_snapshot (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             uuid TEXT NOT NULL,
@@ -4564,6 +4079,53 @@ async fn create_schema(pool: &SqlitePool) {
             reward_pending_amount TEXT,
             currency TEXT,
             snapshot_at TEXT
+        )"#,
+        r#"CREATE TABLE ops_notification_message (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            app_id TEXT,
+            scope_type INTEGER NOT NULL DEFAULT 1,
+            message_code TEXT,
+            message_type INTEGER,
+            title TEXT,
+            summary TEXT,
+            content TEXT,
+            severity INTEGER,
+            priority INTEGER NOT NULL DEFAULT 0,
+            show_as_popup INTEGER NOT NULL DEFAULT 0,
+            action_url TEXT,
+            published_at TEXT,
+            expire_at TEXT
+        )"#,
+        r#"CREATE TABLE ops_notification_recipient (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            message_id INTEGER NOT NULL,
+            app_id TEXT,
+            recipient_type INTEGER NOT NULL,
+            recipient_value TEXT,
+            recipient_user_id INTEGER,
+            recipient_role_code TEXT
         )"#,
         r#"CREATE TABLE ops_audit_log (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -4625,11 +4187,11 @@ async fn seed_catalog(pool: &SqlitePool) {
     for statement in [
         "INSERT INTO ai_model_vendor (id, vendor_code, display_name, status, sort_order) VALUES (1, 'openai', 'OpenAI', 1, 1)",
         r#"INSERT INTO ai_model
-            (id, catalog_key, model, display_name, vendor_code, region_code, capabilities, status, rank_score)
-            VALUES (1, 'openai/global/gpt-4o-mini', 'gpt-4o-mini', 'GPT-4o mini', 'openai', 'global', '["chat"]', 1, '100.0')"#,
-        "INSERT INTO integration_provider (id, provider_code, base_url_template, status) VALUES (2, 'openrouter', 'http://provider-proxy.internal/openrouter-template', 1)",
+            (id, catalog_key, model, display_name, vendor_code, capabilities, status, rank_score)
+            VALUES (1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'GPT-4o mini', 'openai', '["chat"]', 1, '100.0')"#,
+        "INSERT INTO integration_provider (id, provider_code, base_url, status) VALUES (2, 'openrouter', 'http://provider-proxy.internal/openrouter-template', 1)",
         "INSERT INTO integration_provider_account (id, provider_code, secret_ref, status) VALUES (9002, 'openrouter', 'vault://providers/openrouter/account/main', 1)",
-        "INSERT INTO integration_channel (id, provider_code, base_url_override, account_id, status, priority, weight) VALUES (3001, 'openrouter', 'http://provider-proxy.internal/openrouter', 9002, 1, 10, 100)",
+        "INSERT INTO integration_channel (id, provider_code, base_url, account_id, status, priority, weight) VALUES (3001, 'openrouter', 'http://provider-proxy.internal/openrouter', 9002, 1, 10, 100)",
         "INSERT INTO integration_channel_model (id, catalog_key, model, channel_id, vendor_code, provider_model, status) VALUES (1, 'openai/global/gpt-4o-mini', 'gpt-4o-mini', 3001, 'openai', 'openai/global/gpt-4o-mini', 1)",
         "INSERT INTO ai_pricing_plan (id, plan_code, base_price_side, default_multiplier, default_markup_amount, currency, status, priority) VALUES (1, 'standard', 1, '1.200000', '0.000000', 'USD', 1, 1)",
         "INSERT INTO iam_gateway_api_key_group (id, code, pricing_plan_code, rate_multiplier, official_price_multiplier, status) VALUES (10, 'standard-group', 'standard', '1.000000', '1.100000', 1)",
@@ -4649,9 +4211,9 @@ async fn seed_admin_users(pool: &SqlitePool) {
         r#"INSERT INTO iam_organization_member
             (id, tenant_id, organization_id, user_id, role_code, status, joined_at, left_at, remark)
             VALUES ('member-30-admin', '10', '20', '30', 'admin', 'active', '2026-04-01 08:00:00', NULL, 'seed admin membership')"#,
-        r#"INSERT INTO plus_account
-            (id, uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, user_id, account_type, owner, owner_id, available_balance, frozen_balance, available_points, frozen_points, token_balance, frozen_token, status)
-            VALUES (400, 'account-400', 10, 20, 1, '2026-04-01 08:00:00', '2026-04-29 08:30:00', 0, 30, 1, 1, 30, '25.5000', '0', 0, 0, 0, 0, 1)"#,
+        r#"INSERT INTO commerce_account
+            (id, tenant_id, organization_id, owner_user_id, asset_type, currency_code, available_amount, frozen_amount, version, status, created_at, updated_at)
+            VALUES ('account-400', '10', '20', '30', 'cash', 'USD', '25.5000', '0', 0, 'active', '2026-04-01 08:00:00', '2026-04-29 08:30:00')"#,
         r#"INSERT INTO iam_role
             (id, tenant_id, code, name, status, created_at, updated_at)
             VALUES ('role-admin', '10', 'admin', 'Admin', 'active', '2026-04-01 08:00:00', '2026-04-01 08:00:00')"#,
@@ -4674,39 +4236,42 @@ async fn seed_admin_users(pool: &SqlitePool) {
 
 async fn seed_admin_marketing(pool: &SqlitePool) {
     for statement in [
-        r#"INSERT INTO plus_coupon_template
-            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, name, template_code, type, description, amount, discount, min_consume, total, get_limit, received_count, used_count, status, validity_type, validity_days, can_share, stackable, scope_type, scope_value)
-            VALUES (1, 'coupon-template-1', '2026-04-01 08:00:00', '2026-04-29 08:00:00', 0, 10, 20, 1, 'Welcome template', 'welcome-template', 1, '', 500, 0, 0, 100, 1, 2, 1, 1, 1, 0, 0, 0, 1, '')"#,
-        r#"INSERT INTO plus_coupon
-            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, name, redeem_code, point_cost, type, description, amount, discount, min_consume, total, get_limit, received_count, used_count, status, stackable, scope_type, scope_value)
-            VALUES (1, 'coupon-1', '2026-04-01 08:00:00', '2026-04-29 08:00:00', 0, 10, 20, 1, 'Welcome credit', 'WELCOME', 0, 1, '', 500, 0, 0, 100, 1, 2, 1, 1, 0, 1, '')"#,
-        r#"INSERT INTO ops_coupon_issue_batch
-            (id, uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, coupon_id, coupon_template_id, batch_no, campaign_code, name, code_prefix, code_pattern, requested_count, generated_count, available_count, claimed_count, used_count, voided_count, generation_status, audience_filter, generated_at, created_by)
-            VALUES (11, 'batch-11', 10, 20, 1, 1, '2026-04-29 09:00:00', '2026-04-29 09:00:00', 0, 1, 1, 'WELCOME-batch', 'WELCOME-batch', 'Welcome batch', 'WELCOME', 'WELCOME-{sequence:04}', 2, 2, 1, 0, 1, 0, 2, '{}', '2026-04-29 09:00:00', 30)"#,
-        r#"INSERT INTO plus_user_coupon
-            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, user_id, coupon_id, coupon_code, acquire_at, acquire_request_no, acquire_type, point_cost, points_refunded, use_at, expire_at, status, order_id, can_shared)
-            VALUES (501, 'user-coupon-501', '2026-04-29 09:00:00', '2026-04-29 09:00:00', 0, 10, 20, 1, NULL, 1, 'WELCOME-0001', '2026-04-29 09:00:00', 'WELCOME-501', 20, 0, 0, NULL, NULL, 1, NULL, 0)"#,
-        r#"INSERT INTO plus_user_coupon
-            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, user_id, coupon_id, coupon_code, acquire_at, acquire_request_no, acquire_type, point_cost, points_refunded, use_at, expire_at, status, order_id, can_shared)
-            VALUES (502, 'user-coupon-502', '2026-04-29 09:00:00', '2026-04-29 09:30:00', 0, 10, 20, 1, 30, 1, 'WELCOME-0002', '2026-04-29 09:00:00', 'WELCOME-502', 20, 0, 0, '2026-04-29 09:30:00', NULL, 3, NULL, 0)"#,
-        r#"INSERT INTO plus_vip_recharge_method
-            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, name, description, method_key, status, sort_weight, remark)
-            VALUES (1, 'recharge-method-1', '2026-04-01 08:00:00', '2026-04-01 08:00:00', 0, 10, 20, 1, 'Stripe', '', 'stripe', 1, 1, '')"#,
-        r#"INSERT INTO plus_vip_recharge
-            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, user_id, vip_level_id, amount, point_amount, recharge_type, recharge_time, transaction_no, status, remark, recharge_method_id, recharge_pack_id)
-            VALUES (701, 'recharge-701', '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, 10, 20, 1, 30, NULL, '10.00', 1000, 1, '2026-04-29 10:00:00', 'recharge-100', 1, '', 1, NULL)"#,
-        r#"INSERT INTO plus_vip_recharge_pack
-            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, app_id, name, description, price, point_amount, vip_duration_days, status, sort_weight, valid_from, valid_to, remark, recharge_type)
-            VALUES (801, 'recharge-pack-801', '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, 10, 20, 1, 1, 'Starter Recharge Pack', '', '10.00', 25, NULL, 1, 1, NULL, NULL, '', 2)"#,
-        r#"INSERT INTO plus_account_exchange_config
-            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, config_key, config_value, remarks)
-            VALUES (1, 'exchange-1', '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, 10, 20, 1, 'POINTS_TO_CASH_RATE', '120.000000', 'Points to cash rate')"#,
-        r#"INSERT INTO plus_order
-            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, subject, order_type, owner, owner_id, user_id, order_sn, transaction_id, out_trade_no, total_amount, paid_amount, status, category_id, pay_success_time, remark, refunded_amount, currency, payment_method)
-            VALUES (900, 'order-900', '2026-04-29 09:00:00', '2026-04-29 09:10:00', 0, 10, 20, 1, 'Recharge order', 1, 1, 30, 30, 'ORDER-900', 'pay-txn-900', 'order-900', '25.50', '25.50', 2, 1, '2026-04-29 09:10:00', 'Wallet recharge', '0.00', 'USD', 'stripe')"#,
-        r#"INSERT INTO plus_payment
-            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, subject, purpose, order_id, transaction_id, out_trade_no, channel, provider, status, amount, success_time, remark)
-            VALUES (910, 'payment-910', '2026-04-29 09:00:00', '2026-04-29 09:10:00', 0, 10, 20, 1, 'Recharge payment', 'POINTS', 900, 'pay-txn-900', 'order-900', 1, 7, 2, '25.50', '2026-04-29 09:10:00', 'Payment success')"#,
+        r#"INSERT INTO commerce_coupon_template
+            (id, tenant_id, organization_id, template_no, title, discount_type, discount_value, minimum_amount, total_quantity, claimed_quantity, redeemed_quantity, status, starts_at, expires_at, created_at, updated_at)
+            VALUES ('coupon-template-1', '10', '20', 'welcome-template', 'Welcome credit', 'fixed_amount', '5.00', '0', 100, 2, 1, 'active', '2026-04-01 08:00:00', '2099-01-01 00:00:00', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
+        r#"INSERT INTO commerce_coupon_issue_batch
+            (id, tenant_id, organization_id, coupon_template_id, batch_no, campaign_code, title, code_prefix, code_pattern, requested_quantity, generated_quantity, available_quantity, claimed_quantity, redeemed_quantity, disabled_quantity, status, generation_status, audience_filter, generated_at, created_by, created_at, updated_at)
+            VALUES ('batch-11', '10', '20', 'coupon-template-1', 'WELCOME-batch', 'WELCOME-batch', 'Welcome batch', 'WELCOME', 'WELCOME-{sequence:04}', 2, 2, 1, 0, 1, 0, 'active', 'completed', '{}', '2026-04-29 09:00:00', '30', '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
+        r#"INSERT INTO commerce_coupon
+            (id, tenant_id, organization_id, template_id, issue_batch_id, owner_user_id, coupon_code, status, claimed_at, expires_at, redeemed_at, disabled_at, request_no, idempotency_key, created_at, updated_at)
+            VALUES ('501', '10', '20', 'coupon-template-1', 'batch-11', NULL, 'WELCOME-0001', 'active', NULL, NULL, NULL, NULL, 'WELCOME-501', 'WELCOME-501', '2026-04-29 09:00:00', '2026-04-29 09:00:00')"#,
+        r#"INSERT INTO commerce_coupon
+            (id, tenant_id, organization_id, template_id, issue_batch_id, owner_user_id, coupon_code, status, claimed_at, expires_at, redeemed_at, disabled_at, request_no, idempotency_key, created_at, updated_at)
+            VALUES ('502', '10', '20', 'coupon-template-1', 'batch-11', '30', 'WELCOME-0002', 'redeemed', '2026-04-29 09:00:00', NULL, '2026-04-29 09:30:00', NULL, 'WELCOME-502', 'WELCOME-502', '2026-04-29 09:00:00', '2026-04-29 09:30:00')"#,
+        r#"INSERT INTO commerce_payment_method
+            (id, tenant_id, organization_id, method_key, display_name, provider, status, sort_weight, created_at, updated_at)
+            VALUES ('payment-method-7', '10', '20', '7', 'provider-7', 'provider-7', 'active', 1, '2026-04-01 08:00:00', '2026-04-01 08:00:00')"#,
+        r#"INSERT INTO commerce_product
+            (id, tenant_id, organization_id, product_no, title, subtitle, description, category_id, status, created_at, updated_at)
+            VALUES ('recharge-product-10-20-801', '10', '20', 'recharge-product-801', 'Starter Recharge Pack', '', 'seed recharge product', 'recharge', 'active', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
+        r#"INSERT INTO commerce_sku
+            (id, tenant_id, organization_id, product_id, sku_no, name, title, price_amount, original_price_amount, currency_code, stock_quantity, sold_quantity, status, spec_json, created_at, updated_at)
+            VALUES ('recharge-sku-10-20-801', '10', '20', 'recharge-product-10-20-801', 'recharge-sku-801', 'Starter Recharge Pack', 'Starter Recharge Pack', '10.00', '10.00', 'CNY', 999999, 0, 'active', '{}', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
+        r#"INSERT INTO commerce_recharge_package
+            (id, tenant_id, organization_id, external_id, package_no, sku_id, name, price_amount, currency_code, bonus_points, status, valid_from, valid_to, sort_weight, request_no, idempotency_key, created_at, updated_at)
+            VALUES ('recharge-package-10-20-801', '10', '20', 801, 'recharge-package-801', 'recharge-sku-10-20-801', 'Starter Recharge Pack', '10.00', 'CNY', 25, 'active', NULL, NULL, 1, 'recharge-package-801', 'recharge-package-801', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
+        r#"INSERT INTO commerce_exchange_rule
+            (id, tenant_id, organization_id, rule_no, source_asset_type, target_asset_type, rate, status, remark, request_no, idempotency_key, created_at, updated_at)
+            VALUES ('exchange-1', '10', '20', 'POINTS_TO_CASH', 'points', 'cash', '120.000000', 'active', 'Points to cash rate', 'exchange-1', 'exchange-1', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
+        r#"INSERT INTO commerce_order
+            (id, tenant_id, organization_id, owner_user_id, order_no, status, subject, currency_code, request_no, idempotency_key, created_at, paid_at, cancelled_at, expired_at, updated_at)
+            VALUES ('order-900', '10', '20', '30', 'order-900', 'paid', 'points_recharge', 'USD', 'order-900', 'order-900', '2026-04-29 09:00:00', '2026-04-29 09:10:00', NULL, NULL, '2026-04-29 09:10:00')"#,
+        r#"INSERT INTO commerce_payment_intent
+            (id, tenant_id, organization_id, owner_user_id, order_id, provider, amount, currency_code, status, request_no, idempotency_key, created_at, updated_at)
+            VALUES ('payment-intent-910', '10', '20', '30', 'order-900', '7', '25.50', 'USD', 'succeeded', 'order-900', 'order-900', '2026-04-29 09:00:00', '2026-04-29 09:10:00')"#,
+        r#"INSERT INTO commerce_payment_attempt
+            (id, tenant_id, organization_id, owner_user_id, payment_intent_id, order_id, provider, out_trade_no, amount, currency_code, status, callback_payload, created_at, paid_at, updated_at)
+            VALUES ('payment-910', '10', '20', '30', 'payment-intent-910', 'order-900', '7', 'recharge-100', '25.50', 'USD', 'succeeded', '{"points":1000}', '2026-04-29 09:00:00', '2026-04-29 09:10:00', '2026-04-29 09:10:00')"#,
         r#"INSERT INTO ops_referral_stat_snapshot
             (id, uuid, tenant_id, organization_id, source_type, source_id, source_version, status, created_at, updated_at, rebuild_version, metadata, inviter_user_id, inviter_name_snapshot, inviter_email_snapshot, invitation_code_id, invitation_code, invite_link, snapshot_period, period_start, period_end, total_invited_count, direct_invited_count, secondary_invited_count, paid_invitee_count, total_revenue_amount, reward_awarded_amount, reward_pending_amount, currency, snapshot_at)
             VALUES (801, 'referral-801', 10, 20, 'daily', 30, 1, 1, '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, '{}', 30, 'Owner', 'owner@example.com', 1, 'OWNER', 'https://claw.local/invite/OWNER', 'daily', '2026-04-29 00:00:00', '2026-04-29 23:59:59', 3, 2, 1, 1, '120.00', '12.00', '1.00', 'USD', '2026-04-29 10:00:00')"#,
@@ -4717,33 +4282,21 @@ async fn seed_admin_marketing(pool: &SqlitePool) {
 
 async fn seed_admin_finance(pool: &SqlitePool) {
     for statement in [
-        r#"INSERT INTO plus_order
-            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, subject, order_type, owner, owner_id, user_id, order_sn, transaction_id, out_trade_no, total_amount, paid_amount, status, category_id, pay_success_time, remark, refunded_amount, currency, payment_method)
-            VALUES (900, 'order-900', '2026-04-29 09:00:00', '2026-04-29 09:10:00', 0, 10, 20, 1, 'Recharge order', 1, 1, 30, 30, 'ORDER-900', 'pay-txn-900', 'order-900', '25.50', '25.50', 2, 1, '2026-04-29 09:10:00', 'Wallet recharge', '0.00', 'USD', 'stripe')"#,
-        r#"INSERT INTO plus_payment
-            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, subject, purpose, order_id, transaction_id, out_trade_no, channel, provider, status, amount, success_time, remark)
-            VALUES (910, 'payment-910', '2026-04-29 09:00:00', '2026-04-29 09:10:00', 0, 10, 20, 1, 'Recharge payment', 'POINTS', 900, 'pay-txn-900', 'order-900', 1, 7, 2, '25.50', '2026-04-29 09:10:00', 'Payment success')"#,
-        r#"INSERT INTO plus_refund
-            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, order_id, payment_id, out_refund_no, out_trade_no, refund_id, amount, channel, provider, type, status, apply_time, complete_time, remark, operator_id)
-            VALUES (920, 'refund-920', '2026-04-29 08:50:00', '2026-04-29 08:55:00', 0, 10, 20, 1, 900, 910, 'refund-920', 'order-900', 'refund-txn-920', '5.00', 1, 7, 'FULL', 2, '2026-04-29 08:50:00', '2026-04-29 08:55:00', 'Refund completed', 30)"#,
-        r#"INSERT INTO plus_account_history
-            (id, uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, account_type, asset_type, account_id, transaction_id, transaction_type, amount, balance_before, balance_after, points_change, points_before, points_after, source_type, source_id, status, usage_result, remarks)
-            VALUES (1000, 'ledger-1000', 10, 20, 1, '2026-04-29 09:10:00', '2026-04-29 09:10:00', 0, 1, 1, 400, 'pay-txn-900', 1, '25.50', '100.00', '125.50', 0, 0, 0, 1, '900', 2, '{}', 'Payment success')"#,
-        r#"INSERT INTO plus_account_history
-            (id, uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, account_type, asset_type, account_id, transaction_id, transaction_type, amount, balance_before, balance_after, points_change, points_before, points_after, source_type, source_id, status, usage_result, remarks)
-            VALUES (1001, 'ledger-1001', 10, 20, 1, '2026-04-29 08:55:00', '2026-04-29 08:55:00', 0, 1, 1, 400, 'refund-txn-920', 3, '-5.00', '125.50', '120.50', 0, 0, 0, 1, '920', 2, '{}', 'Refund completed')"#,
-        r#"INSERT INTO plus_vip_point_change
-            (id, uuid, tenant_id, organization_id, data_scope, created_at, updated_at, v, user_id, change_type, change_amount, before_balance, after_balance, source_id, source_type, remark)
-            VALUES (1100, 'vip-point-1100', 10, 20, 1, '2026-04-29 08:40:00', '2026-04-29 08:40:00', 0, 30, 2, -1200, 5000, 3800, 900, 'USAGE', 'Token consumption')"#,
-        r#"INSERT INTO plus_invoice
-            (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, user_id, order_count, type, status, invoice_code, invoice_no, title, amount_excluding_tax, tax_amount, total_amount, currency, invoice_time)
-            VALUES (1200, 'invoice-1200', '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, 10, 20, 1, 30, 1, 1, 1, 'INV', 'INV-202604', 'April usage', '80.00', '8.25', '88.25', 'USD', '2026-04-29 10:00:00')"#,
+        r#"INSERT INTO commerce_account_ledger_entry
+            (id, tenant_id, organization_id, account_id, owner_user_id, asset_type, direction, amount, balance_after, business_type, transaction_no, request_no, idempotency_key, source_type, source_id, remark, created_at)
+            VALUES ('ledger-1000', '10', '20', 'account-400', '30', 'cash', 'credit', '25.50', '125.50', 'recharge', 'pay-txn-900', 'pay-txn-900', 'pay-txn-900', 'payment', 'payment-910', 'Payment success', '2026-04-29 09:10:00')"#,
+        r#"INSERT INTO commerce_account_ledger_entry
+            (id, tenant_id, organization_id, account_id, owner_user_id, asset_type, direction, amount, balance_after, business_type, transaction_no, request_no, idempotency_key, source_type, source_id, remark, created_at)
+            VALUES ('ledger-1001', '10', '20', 'account-400', '30', 'cash', 'debit', '5.00', '120.50', 'refund', 'refund-txn-920', 'refund-txn-920', 'refund-txn-920', 'refund', 'refund-920', 'Refund completed', '2026-04-29 08:55:00')"#,
+        r#"INSERT INTO commerce_invoice
+            (id, tenant_id, organization_id, owner_user_id, invoice_no, title, invoice_type, status, amount_excluding_tax, tax_amount, total_amount, currency_code, issued_at, cancelled_at, failure_reason, request_no, idempotency_key, created_at, updated_at)
+            VALUES ('invoice-1200', '10', '20', '30', 'INV-202604', 'April usage', 'standard', 'draft', '80.00', '8.25', '88.25', 'USD', '2026-04-29 10:00:00', NULL, NULL, 'invoice-1200', 'invoice-1200', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
         r#"INSERT INTO commerce_usage_statement
             (id, uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, statement_no, period, period_start, period_end, owner_type, owner_id, total_tokens, total_requests, total_cost, currency, statement_status, generated_at, due_at, payment_status, invoice_id)
-            VALUES (1300, 'statement-1300', 10, 20, 1, 1, '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, 'stmt-202604', '2026-04', '2026-04-01 00:00:00', '2026-04-30 23:59:59', 1, 30, 12000, 80, '88.25', 'USD', 1, '2026-04-29 10:00:00', '2026-05-10 00:00:00', 1, 1200)"#,
+            VALUES (1300, 'statement-1300', 10, 20, 1, 1, '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, 'stmt-202604', '2026-04', '2026-04-01 00:00:00', '2026-04-30 23:59:59', 1, 30, 12000, 80, '88.25', 'USD', 1, '2026-04-29 10:00:00', '2026-05-10 00:00:00', 1, 'invoice-1200')"#,
         r#"INSERT INTO commerce_usage_settlement
-            (id, uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, settlement_no, account_id, account_history_id, order_id, payment_id, asset_type, direction, amount, points, tokens, currency, settlement_status, settled_at)
-            VALUES (1400, 'settlement-1400', 10, 20, 1, 1, '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, 'settlement-1400', 400, 1000, 900, 910, 1, 2, '88.25', 0, 12000, 'USD', 1, '2026-04-29 10:00:00')"#,
+            (id, uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, settlement_no, account_id, account_ledger_entry_id, order_id, payment_id, asset_type, direction, amount, points, tokens, currency, settlement_status, settled_at)
+            VALUES (1400, 'settlement-1400', 10, 20, 1, 1, '2026-04-29 10:00:00', '2026-04-29 10:00:00', 0, 'settlement-1400', 'account-400', 'ledger-1000', 900, 910, 'points', 'debit', '88.25', 0, 12000, 'USD', 1, '2026-04-29 10:00:00')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }

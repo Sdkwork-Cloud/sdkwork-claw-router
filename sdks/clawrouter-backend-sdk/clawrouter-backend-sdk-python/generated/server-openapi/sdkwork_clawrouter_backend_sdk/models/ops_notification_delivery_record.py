@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class OpsNotificationDeliveryRecord:
     """Ops notification delivery record schema exposed by Claw Router."""
+    archived_at: Optional[str] = None
     created_at: Optional[str] = None
     data_scope: Optional[str] = None
     deleted_at: Optional[str] = None
@@ -20,6 +21,7 @@ class OpsNotificationDeliveryRecord:
     organization_id: Optional[str] = None
     owner_id: Optional[str] = None
     owner_type: Optional[str] = None
+    popup_seen_at: Optional[str] = None
     read_at: Optional[str] = None
     retry_count: Optional[int] = None
     status: Optional[str] = None

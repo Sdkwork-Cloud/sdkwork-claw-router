@@ -3,7 +3,7 @@ package types
 // Integration provider record schema exposed by Claw Router.
 type IntegrationProviderRecord struct {
 	AuthType string `json:"auth_type"`
-	BaseUrlTemplate string `json:"base_url_template"`
+	BaseUrl string `json:"base_url"`
 	Capabilities map[string]JsonValue `json:"capabilities"`
 	ColorToken string `json:"color_token"`
 	CreatedAt string `json:"created_at"`

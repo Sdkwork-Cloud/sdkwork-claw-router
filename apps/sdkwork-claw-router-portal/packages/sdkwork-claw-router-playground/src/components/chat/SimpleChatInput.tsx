@@ -47,7 +47,7 @@ export function SimpleChatInput({
   const normalizedPrompt = prompt.trim();
   const hasRealModel = Boolean(realSelectedModel);
   const selectedApiKey = apiKeys.find((apiKey) => apiKey.id === selectedApiKeyId) || apiKeys[0];
-  const canSubmit = Boolean(normalizedPrompt && hasRealModel && selectedApiKey?.copyableKey && !submitting && !loadingHistory);
+  const canSubmit = Boolean(normalizedPrompt && hasRealModel && !submitting && !loadingHistory);
 
   useLayoutEffect(() => {
     const textarea = textareaRef.current;
@@ -88,8 +88,8 @@ export function SimpleChatInput({
     const submitted = await onSubmit({
       prompt: normalizedPrompt,
       selectedModelId: realSelectedModel!.id,
-      selectedApiKeyId: selectedApiKey.id,
-      apiKey: selectedApiKey.copyableKey || '',
+      selectedApiKeyId: selectedApiKey?.id || '',
+      apiKey: selectedApiKey?.copyableKey || '',
     });
     if (submitted) {
       setPrompt('');
@@ -121,7 +121,7 @@ export function SimpleChatInput({
 
       <div className="mt-2 flex flex-col gap-2 px-0.5 pb-0.5 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex min-w-0 flex-1 flex-wrap items-center gap-1.5">
-          <div className="w-full max-w-[128px] shrink-0">
+          <div className="w-full max-w-[220px] shrink-0">
             <PlaygroundModelPicker
               bucket="llms"
               modelGroups={modelGroups}

@@ -7,7 +7,5 @@ export interface RechargesPackagesDeleteResult {
   /** Data field on recharges packages delete result. */
   data?: AdminDeleteResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

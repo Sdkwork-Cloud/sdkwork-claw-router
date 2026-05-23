@@ -7,7 +7,5 @@ export interface ModelsListResult {
   /** Data field on models list result. */
   data?: AppModelCatalogResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

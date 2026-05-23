@@ -11,6 +11,10 @@ use sdkwork_claw_product::ports::{
     CreateAdminUserApiKeyCommand, CreateAdminUserCommand, ForumFeedQuery, ForumFeedReadStore,
     ListAdminUsersQuery, PricingCatalog, UpdateAdminUserCommand,
 };
+use sdkwork_commerce_bootstrap::{
+    commerce_membership_package_group_seeds, commerce_membership_plan_seeds,
+};
+use sdkwork_commerce_storage_sqlx::commerce_database_tables;
 use sqlx::sqlite::SqlitePoolOptions;
 use sqlx::{Row, SqlitePool};
 use std::collections::BTreeSet;
@@ -55,6 +59,7 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert_eq!("installed", state.get::<String, _>("status"));
 
     assert_table_exists(&pool, "ai_model").await;
+    assert_table_exists(&pool, "ai_model_capability").await;
     assert_table_exists(&pool, "ai_model_vendor").await;
     assert_table_exists(&pool, "ai_billing_meter").await;
     assert_table_exists(&pool, "ai_model_pricing").await;
@@ -71,6 +76,21 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert_table_exists(&pool, "plus_comments").await;
     assert_table_exists(&pool, "plus_content_vote").await;
     assert_table_exists(&pool, "plus_favorite").await;
+    assert_table_exists(&pool, "ai_chat_conversation").await;
+    assert_table_exists(&pool, "ai_chat_turn").await;
+    assert_table_exists(&pool, "ai_chat_message").await;
+    assert_table_exists(&pool, "ai_agent_session").await;
+    assert_table_exists(&pool, "ai_agent_run").await;
+    assert_table_exists(&pool, "ai_agent_run_step").await;
+    assert_table_exists(&pool, "ai_memory_space").await;
+    assert_table_exists(&pool, "ai_memory_entry").await;
+    assert_table_exists(&pool, "ai_runtime_invocation").await;
+    assert_table_exists(&pool, "ai_runtime_invocation_event").await;
+    assert_table_exists(&pool, "ai_runtime_usage_link").await;
+    assert_table_exists(&pool, "ai_runtime_artifact").await;
+    for table in commerce_database_tables() {
+        assert_table_exists(&pool, table).await;
+    }
     assert_sqlite_index_exists(&pool, "idx_ai_model_public_rank_desc").await;
     assert_sqlite_index_exists(&pool, "idx_ai_model_catalog_search").await;
     assert_sqlite_index_exists(&pool, "idx_ai_model_rank_snapshot_latest_scope").await;
@@ -80,9 +100,18 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert_sqlite_index_exists(&pool, "idx_app_project_id").await;
     assert_sqlite_index_exists(&pool, "idx_app_status").await;
     assert_sqlite_index_exists(&pool, "idx_category_type_shop").await;
+    assert_sqlite_index_exists(&pool, "uk_ops_notification_delivery_user_message_app").await;
     assert_sqlite_index_exists(&pool, "uk_plus_agent_skill_key").await;
     assert_sqlite_index_exists(&pool, "idx_plus_agent_skill_market").await;
     assert_sqlite_index_exists(&pool, "uk_plus_user_agent_skill").await;
+    assert_sqlite_index_exists(&pool, "uk_ai_runtime_usage_link_agent_scope").await;
+    assert_sqlite_index_exists(&pool, "idx_commerce_order_owner_status_created_at").await;
+    assert_sqlite_columns_absent(&pool, "ai_model", &["region_code"]).await;
+    assert_sqlite_columns_absent(&pool, "ai_model_capability", &["region_code"]).await;
+    assert_sqlite_columns_absent(&pool, "ai_model_vendor", &["region_code"]).await;
+    assert_sqlite_columns_exist(&pool, "ai_model_vendor_region", &["region_code"]).await;
+    assert_sqlite_columns_exist(&pool, "ai_model_family", &["region_code"]).await;
+    assert_sqlite_columns_exist(&pool, "ai_model_pricing", &["region_code"]).await;
     assert_sqlite_columns_exist(
         &pool,
         "ai_usage_fact",
@@ -173,6 +202,72 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
         ],
     )
     .await;
+    assert_sqlite_columns_exist(
+        &pool,
+        "ai_runtime_usage_link",
+        &[
+            "tenant_id",
+            "organization_id",
+            "user_id",
+            "agent_session_id",
+            "agent_run_id",
+            "agent_run_step_id",
+            "usage_fact_id",
+            "usage_type",
+            "input_tokens",
+            "output_tokens",
+            "total_tokens",
+        ],
+    )
+    .await;
+    assert_sqlite_columns_exist(
+        &pool,
+        "ai_memory_space",
+        &[
+            "tenant_id",
+            "organization_id",
+            "user_id",
+            "owner_type",
+            "owner_id",
+        ],
+    )
+    .await;
+    assert_sqlite_columns_exist(
+        &pool,
+        "ai_memory_entry",
+        &[
+            "tenant_id",
+            "organization_id",
+            "user_id",
+            "space_id",
+            "memory_code",
+        ],
+    )
+    .await;
+    assert_sqlite_columns_exist(
+        &pool,
+        "ai_memory_event",
+        &[
+            "tenant_id",
+            "organization_id",
+            "user_id",
+            "memory_id",
+            "space_id",
+        ],
+    )
+    .await;
+    assert_sqlite_columns_exist(
+        &pool,
+        "ai_memory_link",
+        &[
+            "tenant_id",
+            "organization_id",
+            "user_id",
+            "memory_id",
+            "link_type",
+        ],
+    )
+    .await;
     assert_sqlite_index_columns(
         &pool,
         "idx_ai_usage_fact_model_occurred",
@@ -248,6 +343,7 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
         ],
     )
     .await;
+    assert_sqlite_usage_link_agent_scope_index(&pool).await;
 
     let catalog = bundled_catalog();
     assert_catalog_rows(&pool, &catalog).await;
@@ -255,6 +351,7 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert_skill_store_seed_rows(&pool).await;
     assert_skill_store_seed_visible_to_app_tenants(&pool).await;
     assert_forum_tutorial_seed_rows(&pool).await;
+    assert_commerce_experience_seed_rows(&pool).await;
     assert_pricing_snapshot_contains_catalog_models(&pool, &catalog).await;
 
     let migration_count: i64 = sqlx::query_scalar("SELECT COUNT(1) FROM system_schema_migration")
@@ -274,7 +371,7 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
         .fetch_one(&pool)
         .await
         .unwrap();
-    assert_eq!(catalog_keys(&catalog).len() as i64, model_count_again);
+    assert_eq!(catalog_model_keys(&catalog).len() as i64, model_count_again);
 }
 
 #[tokio::test]
@@ -983,7 +1080,7 @@ async fn sqlite_installer_bootstraps_admin_without_touching_existing_plus_user_t
 }
 
 #[tokio::test]
-async fn sqlite_installer_keeps_regional_vendor_models_as_distinct_catalog_rows() {
+async fn sqlite_installer_keeps_models_global_while_pricing_stays_regional() {
     let pool = sqlite_pool().await;
     let installer = installer(pool.clone());
 
@@ -991,11 +1088,11 @@ async fn sqlite_installer_keeps_regional_vendor_models_as_distinct_catalog_rows(
 
     let rows = sqlx::query(
         r#"
-        SELECT model, catalog_key, vendor_code, region_code
+        SELECT model, catalog_key, vendor_code
         FROM ai_model
         WHERE model = 'MiniMax-M2.7'
           AND status = 1
-        ORDER BY region_code
+        ORDER BY catalog_key
         "#,
     )
     .fetch_all(&pool)
@@ -1003,22 +1100,15 @@ async fn sqlite_installer_keeps_regional_vendor_models_as_distinct_catalog_rows(
     .unwrap();
 
     assert_eq!(
-        2,
+        1,
         rows.len(),
-        "same upstream model id must not be collapsed across regional MiniMax vendors"
+        "ai_model must not duplicate rows per region; region is scoped to pricing and routes"
     );
     assert_eq!("minimax", rows[0].get::<String, _>("vendor_code"));
     assert_eq!(
-        "minimax/cn/MiniMax-M2.7",
+        "minimax/MiniMax-M2.7",
         rows[0].get::<String, _>("catalog_key")
     );
-    assert_eq!("cn", rows[0].get::<String, _>("region_code"));
-    assert_eq!("minimax", rows[1].get::<String, _>("vendor_code"));
-    assert_eq!(
-        "minimax/global/MiniMax-M2.7",
-        rows[1].get::<String, _>("catalog_key")
-    );
-    assert_eq!("global", rows[1].get::<String, _>("region_code"));
 
     let currencies = sqlx::query(
         r#"
@@ -1280,7 +1370,7 @@ async fn sqlite_installer_repairs_missing_sdkwork_models_catalog_rows_on_startup
     let pool = sqlite_pool().await;
     let installer = installer(pool.clone());
     let catalog = bundled_catalog();
-    let deleted_catalog_keys = catalog_keys(&catalog)
+    let deleted_catalog_keys = catalog_model_keys(&catalog)
         .into_iter()
         .take(2)
         .collect::<Vec<_>>();
@@ -2125,6 +2215,24 @@ async fn sqlite_installer_marks_generated_schema_table_loss_as_corrupt() {
 }
 
 #[tokio::test]
+async fn sqlite_installer_marks_appbase_commerce_order_schema_table_loss_as_corrupt() {
+    let pool = sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    installer.ensure_installed().await.unwrap();
+    sqlx::query("DROP TABLE commerce_order")
+        .execute(&pool)
+        .await
+        .unwrap();
+
+    assert_eq!(
+        InstallationStatus::Corrupt,
+        installer.status().await.unwrap(),
+        "installer status must validate sdkwork-appbase commerce tables used by shared base modules"
+    );
+}
+
+#[tokio::test]
 async fn sqlite_installer_repairs_missing_generated_schema_indexes_on_startup_check() {
     let pool = sqlite_pool().await;
     let installer = installer(pool.clone());
@@ -2145,6 +2253,130 @@ async fn sqlite_installer_repairs_missing_generated_schema_indexes_on_startup_ch
     assert_eq!(InstallationStatus::Installed, repaired.status);
     assert!(repaired.changed);
     assert_sqlite_index_exists(&pool, "idx_ai_model_public_rank_desc").await;
+}
+
+#[tokio::test]
+async fn sqlite_installer_repairs_missing_notification_delivery_upsert_index() {
+    let pool = sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    installer.ensure_installed().await.unwrap();
+    assert_sqlite_index_exists(&pool, "uk_ops_notification_delivery_user_message_app").await;
+    sqlx::query("DROP INDEX uk_ops_notification_delivery_user_message_app")
+        .execute(&pool)
+        .await
+        .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must detect the missing app notification delivery unique index because acknowledge uses it for ON CONFLICT upsert"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+    assert_sqlite_index_exists(&pool, "uk_ops_notification_delivery_user_message_app").await;
+}
+
+#[tokio::test]
+async fn sqlite_installer_drops_obsolete_provider_account_secret_hash_unique_index() {
+    let pool = sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    installer.ensure_installed().await.unwrap();
+    sqlx::query(
+        r#"
+        CREATE UNIQUE INDEX uk_integration_provider_account_secret_hash
+        ON integration_provider_account (tenant_id, organization_id, provider_code, secret_hash)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    assert_sqlite_index_exists(&pool, "uk_integration_provider_account_secret_hash").await;
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(
+        repaired.changed,
+        "installer must report changed=true when it repairs obsolete generated schema indexes"
+    );
+    assert_sqlite_index_absent(&pool, "uk_integration_provider_account_secret_hash").await;
+}
+
+#[tokio::test]
+async fn sqlite_installer_repairs_missing_generated_schema_columns_on_startup_check() {
+    let pool = sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    installer.ensure_installed().await.unwrap();
+    sqlx::query("ALTER TABLE ai_chat_turn DROP COLUMN request_id")
+        .execute(&pool)
+        .await
+        .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must detect missing generated schema columns because runtime stores depend on them"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+    assert_sqlite_columns_exist(&pool, "ai_chat_turn", &["request_id"]).await;
+}
+
+#[tokio::test]
+async fn sqlite_installer_repairs_missing_appbase_commerce_order_schema_indexes_on_startup_check() {
+    let pool = sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    installer.ensure_installed().await.unwrap();
+    sqlx::query("DROP INDEX idx_commerce_order_owner_status_created_at")
+        .execute(&pool)
+        .await
+        .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must detect missing sdkwork-appbase commerce indexes"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+    assert_sqlite_index_exists(&pool, "idx_commerce_order_owner_status_created_at").await;
+}
+
+#[tokio::test]
+async fn sqlite_installer_repairs_missing_commerce_experience_seed_on_startup_check() {
+    let pool = sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    installer.ensure_installed().await.unwrap();
+    assert_commerce_experience_seed_rows(&pool).await;
+    sqlx::query("DELETE FROM commerce_sku WHERE id = '203'")
+        .execute(&pool)
+        .await
+        .unwrap();
+    sqlx::query("DELETE FROM commerce_payment_method WHERE id = 'seed-payment-wechat'")
+        .execute(&pool)
+        .await
+        .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must detect missing VIP/recharge experience seed rows"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+    assert_commerce_experience_seed_rows(&pool).await;
 }
 
 #[tokio::test]
@@ -3204,7 +3436,7 @@ async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelC
 
     assert_eq!(catalog_vendor_codes(catalog).len() as i64, vendor_count);
     assert_eq!(catalog.vendors.len() as i64, vendor_region_count);
-    assert_eq!(catalog_keys(catalog).len() as i64, model_count);
+    assert_eq!(catalog_model_keys(catalog).len() as i64, model_count);
     assert_eq!(catalog.meters.len() as i64, meter_count);
     assert!(
         pricing_count >= catalog_price_keys(catalog).len() as i64,
@@ -3214,11 +3446,7 @@ async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelC
 
     for vendor in &catalog.vendors {
         for model in &vendor.models {
-            let catalog_key = sdkwork_models::catalog_key(
-                &vendor.vendor.vendor_code,
-                &vendor.vendor.region_code,
-                &model.model_id,
-            );
+            let catalog_key = catalog_model_key(&vendor.vendor.vendor_code, &model.model_id);
             let count: i64 = sqlx::query_scalar(
                 r#"
                 SELECT COUNT(1)
@@ -3332,7 +3560,7 @@ async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelC
         );
     }
 
-    for catalog_key in catalog_keys(catalog) {
+    for catalog_key in catalog_model_keys(catalog) {
         let count: i64 = sqlx::query_scalar(
             r#"
             SELECT COUNT(1)
@@ -3663,6 +3891,241 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
     );
 }
 
+async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
+    let membership_plan_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM commerce_membership_plan
+        WHERE tenant_id = '0'
+          AND organization_id = '0'
+          AND status = 'active'
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        4, membership_plan_count,
+        "installer must seed four membership plans: free, basic, pro, premium"
+    );
+
+    let membership_product_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM commerce_product_spu
+        WHERE tenant_id = '0'
+          AND organization_id = '0'
+          AND spu_no = 'membership'
+          AND sales_status = 'active'
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        1, membership_product_count,
+        "membership product SPU must be seeded"
+    );
+
+    let membership_package_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM commerce_product_sku
+        WHERE tenant_id = '0'
+          AND organization_id = '0'
+          AND spu_id = 'seed-product-membership'
+          AND sku_no LIKE 'membership-%'
+          AND sales_status = 'active'
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        16, membership_package_count,
+        "installer must seed four purchase groups with four membership packages each"
+    );
+
+    let expected_groups = commerce_membership_package_group_seeds()
+        .into_iter()
+        .map(|group| {
+            (
+                group
+                    .package_group_no
+                    .strip_prefix("membership-")
+                    .unwrap_or(group.package_group_no)
+                    .to_owned(),
+                group.name.to_owned(),
+                group.duration_days,
+            )
+        })
+        .collect::<Vec<_>>();
+    for (group_code, group_name, duration_days) in expected_groups {
+        let group_count: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM commerce_product_sku
+            WHERE tenant_id = '0'
+              AND organization_id = '0'
+              AND spu_id = 'seed-product-membership'
+              AND sku_no LIKE ?
+              AND sales_status = 'active'
+            "#,
+        )
+        .bind(format!("membership-{group_code}-%"))
+        .fetch_one(pool)
+        .await
+        .unwrap();
+        assert_eq!(
+            4, group_count,
+            "{group_name} group must contain free/basic/pro/premium packages"
+        );
+
+        let rows = sqlx::query(
+            r#"
+            SELECT sku_no, spec_json
+            FROM commerce_product_sku
+            WHERE tenant_id = '0'
+              AND organization_id = '0'
+              AND spu_id = 'seed-product-membership'
+              AND sku_no LIKE ?
+              AND sales_status = 'active'
+            "#,
+        )
+        .bind(format!("membership-{group_code}-%"))
+        .fetch_all(pool)
+        .await
+        .unwrap();
+        let mut tier_codes = BTreeSet::new();
+        for row in rows {
+            let sku_no = row.get::<String, _>("sku_no");
+            let spec: serde_json::Value =
+                serde_json::from_str(&row.get::<String, _>("spec_json")).unwrap();
+            assert_eq!(
+                "membership_package",
+                spec["kind"].as_str().unwrap_or_default()
+            );
+            assert_eq!(
+                group_code.as_str(),
+                spec["groupCode"].as_str().unwrap_or_default()
+            );
+            assert_eq!(
+                group_name.as_str(),
+                spec["groupName"].as_str().unwrap_or_default()
+            );
+            assert_eq!(
+                duration_days,
+                spec["durationDays"].as_i64().unwrap_or_default()
+            );
+            let tier_code = spec["planCode"].as_str().unwrap_or_default().to_owned();
+            assert!(
+                tier_codes.insert(tier_code),
+                "{sku_no} must not duplicate tier code inside {group_name}"
+            );
+        }
+        assert_eq!(
+            ["basic", "free", "premium", "pro"]
+                .into_iter()
+                .map(str::to_owned)
+                .collect::<BTreeSet<_>>(),
+            tier_codes,
+            "{group_name} group must seed expected tier codes"
+        );
+    }
+
+    let expected_levels = commerce_membership_plan_seeds()
+        .into_iter()
+        .map(|level| (level.plan_no.to_owned(), level.name.to_owned(), level.rank))
+        .collect::<Vec<_>>();
+    for (level_no, name, level_value) in expected_levels {
+        let row = sqlx::query(
+            r#"
+            SELECT name, benefits_json AS benefit_json
+            FROM commerce_membership_plan
+            WHERE tenant_id = '0'
+              AND organization_id = '0'
+              AND plan_no = ?
+              AND status = 'active'
+            "#,
+        )
+        .bind(level_no.as_str())
+        .fetch_one(pool)
+        .await
+        .unwrap();
+        assert_eq!(name, row.get::<String, _>("name"));
+        let benefits: serde_json::Value =
+            serde_json::from_str(&row.get::<String, _>("benefit_json")).unwrap();
+        assert_eq!(
+            level_value,
+            benefits["planRank"].as_i64().unwrap_or_default()
+        );
+        assert!(
+            benefits["items"].as_array().map_or(0, Vec::len) >= 5,
+            "{name} must expose enough benefit rows for the membership page"
+        );
+    }
+
+    let recharge_product_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM commerce_product_spu
+        WHERE tenant_id = '0'
+          AND organization_id = '0'
+          AND spu_no = 'points-recharge'
+          AND sales_status = 'active'
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        1, recharge_product_count,
+        "points recharge product must be seeded"
+    );
+
+    let recharge_package_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM commerce_recharge_package
+        WHERE tenant_id = '0'
+          AND organization_id = '0'
+          AND status = 'active'
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        4, recharge_package_count,
+        "installer must seed four points recharge packages"
+    );
+
+    let payment_methods = sqlx::query(
+        r#"
+        SELECT method_key
+        FROM commerce_payment_method
+        WHERE tenant_id = '0'
+          AND organization_id = '0'
+          AND status = 'active'
+        ORDER BY method_key
+        "#,
+    )
+    .fetch_all(pool)
+    .await
+    .unwrap()
+    .into_iter()
+    .map(|row| row.get::<String, _>("method_key"))
+    .collect::<BTreeSet<_>>();
+    assert_eq!(
+        ["alipay", "stripe", "wechat"]
+            .into_iter()
+            .map(str::to_owned)
+            .collect::<BTreeSet<_>>(),
+        payment_methods,
+        "installer must seed payment methods required by recharge submission"
+    );
+}
+
 async fn assert_skill_store_seed_visible_to_app_tenants(pool: &SqlitePool) {
     let store = SqliteAppSkillsReadStore::new(pool.clone());
     let skills = store
@@ -3870,22 +4333,24 @@ fn sdkwork_app_seed_count() -> usize {
     actual_count
 }
 
-fn catalog_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> {
+fn catalog_model_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> {
     let mut catalog_keys = catalog
         .vendors
         .iter()
         .flat_map(|vendor| {
-            vendor.models.iter().map(|model| {
-                sdkwork_models::catalog_key(
-                    &vendor.vendor.vendor_code,
-                    &vendor.vendor.region_code,
-                    &model.model_id,
-                )
-            })
+            vendor
+                .models
+                .iter()
+                .map(|model| catalog_model_key(&vendor.vendor.vendor_code, &model.model_id))
         })
         .collect::<Vec<_>>();
     catalog_keys.sort();
+    catalog_keys.dedup();
     catalog_keys
+}
+
+fn catalog_model_key(vendor_code: &str, model_id: &str) -> String {
+    format!("{vendor_code}/{model_id}")
 }
 
 fn catalog_vendor_codes(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<String> {
@@ -3905,16 +4370,11 @@ fn catalog_routable_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> 
                 .models
                 .iter()
                 .filter(|model| model.routing_state == "enabled" && model.shelf_state != "archived")
-                .map(|model| {
-                    sdkwork_models::catalog_key(
-                        &vendor.vendor.vendor_code,
-                        &vendor.vendor.region_code,
-                        &model.model_id,
-                    )
-                })
+                .map(|model| catalog_model_key(&vendor.vendor.vendor_code, &model.model_id))
         })
         .collect::<Vec<_>>();
     catalog_keys.sort();
+    catalog_keys.dedup();
     catalog_keys
 }
 
@@ -3972,7 +4432,9 @@ struct CatalogRankingKey {
 }
 
 fn catalog_ranking_keys(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<CatalogRankingKey> {
-    let catalog_keys = catalog_keys(catalog).into_iter().collect::<BTreeSet<_>>();
+    let model_catalog_keys = catalog_model_keys(catalog)
+        .into_iter()
+        .collect::<BTreeSet<_>>();
     catalog
         .vendors
         .iter()
@@ -3983,14 +4445,16 @@ fn catalog_ranking_keys(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<Cata
                 .map(move |snapshot| (vendor, snapshot))
         })
         .flat_map(|(vendor, snapshot)| {
-            let catalog_keys = catalog_keys.clone();
+            let model_catalog_keys = model_catalog_keys.clone();
             snapshot.items.iter().filter_map(move |item| {
                 let catalog_key = sdkwork_models::catalog_key(
                     &vendor.vendor.vendor_code,
                     &vendor.vendor.region_code,
                     &item.model_id,
                 );
-                if catalog_keys.contains(&catalog_key) {
+                let model_catalog_key =
+                    catalog_model_key(&vendor.vendor.vendor_code, &item.model_id);
+                if model_catalog_keys.contains(&model_catalog_key) {
                     Some(CatalogRankingKey {
                         snapshot_date: snapshot.snapshot_date.clone(),
                         rank_scope: snapshot.rank_scope.clone(),
@@ -4272,12 +4736,38 @@ async fn assert_sqlite_index_exists(pool: &SqlitePool, index: &str) {
     assert_eq!(1, exists, "{index} index must exist after installation");
 }
 
+async fn assert_sqlite_index_absent(pool: &SqlitePool, index: &str) {
+    let exists: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM sqlite_master
+        WHERE type = 'index'
+          AND name = ?
+        "#,
+    )
+    .bind(index)
+    .fetch_one(pool)
+    .await
+    .unwrap();
+    assert_eq!(0, exists, "{index} index must not exist after repair");
+}
+
 async fn assert_sqlite_columns_exist(pool: &SqlitePool, table: &str, expected_columns: &[&str]) {
     let columns = sqlite_table_columns(pool, table).await;
     for expected_column in expected_columns {
         assert!(
             columns.contains(&expected_column.to_string()),
             "{table}.{expected_column} column must exist after installation; actual columns: {columns:?}"
+        );
+    }
+}
+
+async fn assert_sqlite_columns_absent(pool: &SqlitePool, table: &str, absent_columns: &[&str]) {
+    let columns = sqlite_table_columns(pool, table).await;
+    for absent_column in absent_columns {
+        assert!(
+            !columns.contains(&absent_column.to_string()),
+            "{table}.{absent_column} column must not exist after installation; actual columns: {columns:?}"
         );
     }
 }
@@ -4328,6 +4818,44 @@ async fn assert_sqlite_index_columns(
             .collect::<Vec<_>>(),
         columns,
         "{index} column order must match the ranking refresh/read query contract"
+    );
+}
+
+async fn assert_sqlite_usage_link_agent_scope_index(pool: &SqlitePool) {
+    let row = sqlx::query(
+        r#"
+        SELECT [unique] AS is_unique
+        FROM pragma_index_list('ai_runtime_usage_link')
+        WHERE name = 'uk_ai_runtime_usage_link_agent_scope'
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        1,
+        row.get::<i64, _>("is_unique"),
+        "ai_runtime_usage_link agent scope index must be unique"
+    );
+
+    let index_sql: String = sqlx::query_scalar(
+        r#"
+        SELECT sql
+        FROM sqlite_master
+        WHERE type = 'index'
+          AND name = 'uk_ai_runtime_usage_link_agent_scope'
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    .unwrap();
+    assert!(
+        index_sql.contains("tenant_id, organization_id, user_id, agent_run_id, usage_type"),
+        "usage link agent scope index must scope by trusted product subject and run"
+    );
+    assert!(
+        index_sql.contains("COALESCE(agent_run_step_id, '')"),
+        "usage link agent scope index must normalize missing agent_run_step_id for idempotent run totals"
     );
 }
 

@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, ApiKeysUpdateResult, CreateApiKeyRequest, UpdateApiKeyRequest, UpdateSettingsRequest, UsersCurrentRetrieveResult, UsersSettingsRetrieveResult, UsersSettingsUpdateResult
+from ..models import ApiKeyGroupsListResult, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, ApiKeysUpdateResult, CreateApiKeyRequest, UpdateApiKeyRequest, UpdateSettingsRequest, UsersCurrentRetrieveResult, UsersSettingsRetrieveResult, UsersSettingsUpdateResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -132,9 +132,21 @@ class IamApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.api_key_groups = IamApiKeyGroupsApi(client)
         self.api_keys = IamApiKeysApi(client)
         self.users = IamUsersApi(client)
 
+
+class IamApiKeyGroupsApi:
+    """iam iam.api_key_groups API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> ApiKeyGroupsListResult:
+        """List groups"""
+        return self._client.get(f"/app/v3/api/iam/api_key_groups")
 
 class IamApiKeysApi:
     """iam iam.api_keys API client."""

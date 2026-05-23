@@ -1,6 +1,6 @@
 import {
   createRequestParams,
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
   normalizeJsonObject,
@@ -398,7 +398,7 @@ interface AdminSkillPackageListSdkParams {
 export class AdminSkillService {
   static async fetchSkillCategories(): Promise<AdminSkillCategory[]> {
     const result = await getClawRouterBackendSdkClient().ecosystem.skills.categories.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch skill categories');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill categories');
     return readRequiredApiItems(result, 'Failed to fetch skill categories')
       .map(normalizeSkillCategory);
   }
@@ -408,7 +408,7 @@ export class AdminSkillService {
       normalizeCreateCategoryRequest(input),
       createRequestParams('admin-skill-category-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to create skill category');
+    ensureSdkworkApiSuccess(result, 'Failed to create skill category');
     return normalizeSkillCategory(readRequiredApiItem(result, 'Created skill category response is missing data'));
   }
 
@@ -418,7 +418,7 @@ export class AdminSkillService {
       normalizeUpdateCategoryRequest(input),
       createRequestParams('admin-skill-category-update'),
     );
-    ensurePlusApiSuccess(result, 'Failed to update skill category');
+    ensureSdkworkApiSuccess(result, 'Failed to update skill category');
     return normalizeSkillCategory(readRequiredApiItem(result, 'Updated skill category response is missing data'));
   }
 
@@ -433,7 +433,7 @@ export class AdminSkillService {
 
   static async fetchSkillPackages(query: AdminSkillPackageListInput = {}): Promise<AdminSkillPackage[]> {
     const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.list(normalizePackageListRequest(query));
-    ensurePlusApiSuccess(result, 'Failed to fetch skill packages');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill packages');
     return readRequiredApiItems(result, 'Failed to fetch skill packages')
       .map(normalizeSkillPackage);
   }
@@ -442,7 +442,7 @@ export class AdminSkillService {
     const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.retrieve(
       requiredSafePathSegment(packageId, 'packageId'),
     );
-    ensurePlusApiSuccess(result, 'Failed to fetch skill package');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill package');
     return normalizeSkillPackage(readRequiredApiItem(result, 'Skill package response is missing data'));
   }
 
@@ -451,7 +451,7 @@ export class AdminSkillService {
       normalizeCreatePackageRequest(input),
       createRequestParams('admin-skill-package-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to create skill package');
+    ensureSdkworkApiSuccess(result, 'Failed to create skill package');
     return normalizeSkillPackage(readRequiredApiItem(result, 'Created skill package response is missing data'));
   }
 
@@ -461,7 +461,7 @@ export class AdminSkillService {
       normalizeUpdatePackageRequest(input),
       createRequestParams('admin-skill-package-update'),
     );
-    ensurePlusApiSuccess(result, 'Failed to update skill package');
+    ensureSdkworkApiSuccess(result, 'Failed to update skill package');
     return normalizeSkillPackage(readRequiredApiItem(result, 'Updated skill package response is missing data'));
   }
 
@@ -478,7 +478,7 @@ export class AdminSkillService {
       requiredSafePathSegment(packageId, 'packageId'),
       createRequestParams('admin-skill-package-enable'),
     );
-    ensurePlusApiSuccess(result, 'Failed to enable skill package');
+    ensureSdkworkApiSuccess(result, 'Failed to enable skill package');
     return ensureSkillPackageEnabled(
       normalizeSkillPackage(readRequiredApiItem(result, 'Enabled skill package response is missing data')),
       true,
@@ -491,7 +491,7 @@ export class AdminSkillService {
       requiredSafePathSegment(packageId, 'packageId'),
       createRequestParams('admin-skill-package-disable'),
     );
-    ensurePlusApiSuccess(result, 'Failed to disable skill package');
+    ensureSdkworkApiSuccess(result, 'Failed to disable skill package');
     return ensureSkillPackageEnabled(
       normalizeSkillPackage(readRequiredApiItem(result, 'Disabled skill package response is missing data')),
       false,
@@ -501,7 +501,7 @@ export class AdminSkillService {
 
   static async fetchSkills(query: AdminSkillListInput = {}): Promise<AdminSkill[]> {
     const result = await getClawRouterBackendSdkClient().ecosystem.skills.list(normalizeListRequest(query));
-    ensurePlusApiSuccess(result, 'Failed to fetch skills');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skills');
     return readRequiredApiItems(result, 'Failed to fetch skills')
       .map(normalizeSkill);
   }
@@ -510,7 +510,7 @@ export class AdminSkillService {
     const result = await getClawRouterBackendSdkClient().ecosystem.skills.retrieve(
       requiredSafePathSegment(skillId, 'skillId'),
     );
-    ensurePlusApiSuccess(result, 'Failed to fetch skill');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill');
     return normalizeSkill(readRequiredApiItem(result, 'Skill response is missing data'));
   }
 
@@ -519,7 +519,7 @@ export class AdminSkillService {
       normalizeCreateSkillRequest(input),
       createRequestParams('admin-skill-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to create skill');
+    ensureSdkworkApiSuccess(result, 'Failed to create skill');
     return normalizeSkill(readRequiredApiItem(result, 'Created skill response is missing data'));
   }
 
@@ -529,7 +529,7 @@ export class AdminSkillService {
       normalizeUpdateSkillRequest(input),
       createRequestParams('admin-skill-update'),
     );
-    ensurePlusApiSuccess(result, 'Failed to update skill');
+    ensureSdkworkApiSuccess(result, 'Failed to update skill');
     return normalizeSkill(readRequiredApiItem(result, 'Updated skill response is missing data'));
   }
 
@@ -546,7 +546,7 @@ export class AdminSkillService {
       requiredSafePathSegment(skillId, 'skillId'),
       createRequestParams('admin-skill-enable'),
     );
-    ensurePlusApiSuccess(result, 'Failed to enable skill');
+    ensureSdkworkApiSuccess(result, 'Failed to enable skill');
     return ensureSkillEnabled(
       normalizeSkill(readRequiredApiItem(result, 'Enabled skill response is missing data')),
       true,
@@ -559,7 +559,7 @@ export class AdminSkillService {
       requiredSafePathSegment(skillId, 'skillId'),
       createRequestParams('admin-skill-disable'),
     );
-    ensurePlusApiSuccess(result, 'Failed to disable skill');
+    ensureSdkworkApiSuccess(result, 'Failed to disable skill');
     return ensureSkillEnabled(
       normalizeSkill(readRequiredApiItem(result, 'Disabled skill response is missing data')),
       false,
@@ -572,7 +572,7 @@ export class AdminSkillService {
       requiredSafePathSegment(skillId, 'skillId'),
       createRequestParams('admin-skill-publish'),
     );
-    ensurePlusApiSuccess(result, 'Failed to publish skill');
+    ensureSdkworkApiSuccess(result, 'Failed to publish skill');
     return ensureSkillMarketStatus(
       normalizeSkill(readRequiredApiItem(result, 'Published skill response is missing data')),
       'PUBLISHED',
@@ -585,7 +585,7 @@ export class AdminSkillService {
       requiredSafePathSegment(skillId, 'skillId'),
       createRequestParams('admin-skill-offline'),
     );
-    ensurePlusApiSuccess(result, 'Failed to offline skill');
+    ensureSdkworkApiSuccess(result, 'Failed to offline skill');
     return ensureSkillMarketStatus(
       normalizeSkill(readRequiredApiItem(result, 'Offline skill response is missing data')),
       'OFFLINE',
@@ -599,7 +599,7 @@ export class AdminSkillService {
       normalizeReviewRequest({ reviewComment }),
       createRequestParams('admin-skill-review-approve'),
     );
-    ensurePlusApiSuccess(result, 'Failed to approve skill');
+    ensureSdkworkApiSuccess(result, 'Failed to approve skill');
     return ensureSkillReviewStatus(
       normalizeSkill(readRequiredApiItem(result, 'Approved skill response is missing data')),
       'APPROVED',
@@ -613,7 +613,7 @@ export class AdminSkillService {
       normalizeReviewRequest({ reviewComment }),
       createRequestParams('admin-skill-review-reject'),
     );
-    ensurePlusApiSuccess(result, 'Failed to reject skill');
+    ensureSdkworkApiSuccess(result, 'Failed to reject skill');
     return ensureSkillReviewStatus(
       normalizeSkill(readRequiredApiItem(result, 'Rejected skill response is missing data')),
       'REJECTED',
@@ -625,7 +625,7 @@ export class AdminSkillService {
     const result = await getClawRouterBackendSdkClient().ecosystem.skills.assets.list(
       requiredSafePathSegment(skillId, 'skillId'),
     );
-    ensurePlusApiSuccess(result, 'Failed to fetch skill assets');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill assets');
     return readRequiredApiItems(result, 'Failed to fetch skill assets')
       .map(normalizeSkillAsset);
   }
@@ -635,7 +635,7 @@ export class AdminSkillService {
       requiredSafePathSegment(skillId, 'skillId'),
       requiredSafePathSegment(assetId, 'assetId'),
     );
-    ensurePlusApiSuccess(result, 'Failed to fetch skill asset');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill asset');
     return normalizeSkillAsset(readRequiredApiItem(result, 'Skill asset response is missing data'));
   }
 
@@ -645,7 +645,7 @@ export class AdminSkillService {
       normalizeCreateAssetRequest(input),
       createRequestParams('admin-skill-asset-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to create skill asset');
+    ensureSdkworkApiSuccess(result, 'Failed to create skill asset');
     return normalizeSkillAsset(readRequiredApiItem(result, 'Created skill asset response is missing data'));
   }
 
@@ -656,7 +656,7 @@ export class AdminSkillService {
       normalizeUpdateAssetRequest(input),
       createRequestParams('admin-skill-asset-update'),
     );
-    ensurePlusApiSuccess(result, 'Failed to update skill asset');
+    ensureSdkworkApiSuccess(result, 'Failed to update skill asset');
     return normalizeSkillAsset(readRequiredApiItem(result, 'Updated skill asset response is missing data'));
   }
 
@@ -674,7 +674,7 @@ export class AdminSkillService {
     const result = await getClawRouterBackendSdkClient().ecosystem.skills.artifacts.list(
       requiredSafePathSegment(skillId, 'skillId'),
     );
-    ensurePlusApiSuccess(result, 'Failed to fetch skill artifacts');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill artifacts');
     return readRequiredApiItems(result, 'Failed to fetch skill artifacts')
       .map(normalizeSkillArtifact);
   }
@@ -684,7 +684,7 @@ export class AdminSkillService {
       requiredSafePathSegment(skillId, 'skillId'),
       requiredSafePathSegment(artifactId, 'artifactId'),
     );
-    ensurePlusApiSuccess(result, 'Failed to fetch skill artifact');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill artifact');
     return normalizeSkillArtifact(readRequiredApiItem(result, 'Skill artifact response is missing data'));
   }
 
@@ -694,7 +694,7 @@ export class AdminSkillService {
       normalizeCreateArtifactRequest(input),
       createRequestParams('admin-skill-artifact-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to create skill artifact');
+    ensureSdkworkApiSuccess(result, 'Failed to create skill artifact');
     return normalizeSkillArtifact(readRequiredApiItem(result, 'Created skill artifact response is missing data'));
   }
 
@@ -705,7 +705,7 @@ export class AdminSkillService {
       normalizeUpdateArtifactRequest(input),
       createRequestParams('admin-skill-artifact-update'),
     );
-    ensurePlusApiSuccess(result, 'Failed to update skill artifact');
+    ensureSdkworkApiSuccess(result, 'Failed to update skill artifact');
     return normalizeSkillArtifact(readRequiredApiItem(result, 'Updated skill artifact response is missing data'));
   }
 
@@ -1758,7 +1758,7 @@ function readNullableNumber(record: ApiRecord, key: string): number | null {
 }
 
 function ensureDeleteResult(result: unknown, message: string): void {
-  ensurePlusApiSuccess(result, message);
+  ensureSdkworkApiSuccess(result, message);
   if (readBoolean(readApiRecord(result), 'deleted') !== true) {
     throw new Error(message);
   }

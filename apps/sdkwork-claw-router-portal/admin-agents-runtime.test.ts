@@ -177,3 +177,60 @@ test("admin agent management uses category navigation and drawer-based details",
     assert.equal(source.includes(legacyMarker), false, `legacy right-side detail panel marker remains: ${legacyMarker}`);
   });
 });
+
+test("admin agent management uses bottom pagination controls", async () => {
+  const source = await readFile(adminAgentsSourcePath, "utf8");
+  const i18nSource = await readFile(
+    new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "data-admin-agent-pagination",
+    "BottomPagination",
+    "const [page, setPage] = useState(1);",
+    "page,",
+    "nextQuery.pageSize = normalizedPageSize;",
+    "setPage(1)",
+    "setPage((current) => Math.max(1, current - 1))",
+    "setPage((current) => current + 1)",
+    "hasNextPage={filteredAgents.length >= Number(pageSize)}",
+  ]) {
+    assert.ok(source.includes(expected), `missing admin agent pagination marker: ${expected}`);
+  }
+
+  for (const key of [
+    "admin.agents.pagination.showing",
+    "admin.agents.pagination.page",
+    "admin.agents.pagination.pageSize",
+  ]) {
+    assert.ok(source.includes(`t('${key}'`), `admin agents page should consume i18n key ${key}`);
+    assert.equal(
+      i18nSource.split(`"${key}":`).length - 1,
+      2,
+      `admin agent i18n key ${key} must exist once in English and once in Chinese resources`,
+    );
+  }
+});
+
+test("admin agent management table fills the available admin viewport", async () => {
+  const source = await readFile(adminAgentsSourcePath, "utf8");
+
+  for (const expected of [
+    "AdminTableShell",
+    "data-admin-agent-table-card",
+    "data-admin-agent-table-viewport",
+    "data-admin-agent-pagination",
+    "flex h-full w-full min-w-0 flex-col",
+    "data-admin-agent-layout className=\"grid min-h-0 flex-1",
+    "footer={",
+    "sticky top-0 z-10",
+  ]) {
+    assert.ok(source.includes(expected), `missing adaptive admin agent table marker: ${expected}`);
+  }
+
+  assert.ok(
+    source.indexOf("data-admin-agent-table-viewport") < source.indexOf("data-admin-agent-pagination"),
+    "admin agent pagination should render outside the scrollable table viewport",
+  );
+});

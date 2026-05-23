@@ -348,7 +348,7 @@ async fn create_routing_channel_tables(pool: &SqlitePool) {
             provider_code TEXT,
             protocol INTEGER NOT NULL,
             access_type INTEGER NOT NULL,
-            base_url_override TEXT,
+            base_url TEXT,
             capabilities TEXT,
             timeout_ms INTEGER,
             retry_policy TEXT,
@@ -414,7 +414,7 @@ async fn seed_routing_channel(pool: &SqlitePool) {
         r#"
         INSERT INTO integration_channel (
             id, tenant_id, organization_id, name, provider_code, protocol, access_type,
-            base_url_override, capabilities, timeout_ms, retry_policy, circuit_breaker_policy, weight, status, health_status, last_latency_ms,
+            base_url, capabilities, timeout_ms, retry_policy, circuit_breaker_policy, weight, status, health_status, last_latency_ms,
             rpm_limit, consecutive_error_count, account_id, priority
         )
         VALUES (

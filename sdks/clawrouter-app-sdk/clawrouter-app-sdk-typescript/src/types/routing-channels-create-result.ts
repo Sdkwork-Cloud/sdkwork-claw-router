@@ -7,7 +7,5 @@ export interface RoutingChannelsCreateResult {
   /** Data field on routing channels create result. */
   data?: RoutingChannelMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

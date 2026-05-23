@@ -7,6 +7,10 @@ pub struct OpsNotificationMessageRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub action_url: Option<String>,
 
+    /// App id field on ops notification message record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub app_id: Option<String>,
+
     /// Content field on ops notification message record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub content: Option<String>,
@@ -66,22 +70,6 @@ pub struct OpsNotificationMessageRecord {
     /// Summary field on ops notification message record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub summary: Option<String>,
-
-    /// Target owner id field on ops notification message record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub target_owner_id: Option<String>,
-
-    /// Target owner type field on ops notification message record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub target_owner_type: Option<String>,
-
-    /// Target scope field on ops notification message record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub target_scope: Option<String>,
-
-    /// Target user id field on ops notification message record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub target_user_id: Option<String>,
 
     /// Tenant id field on ops notification message record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

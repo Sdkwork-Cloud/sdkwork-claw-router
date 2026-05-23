@@ -11,5 +11,4 @@ class RechargesPackagesDeleteResult:
     """Recharges packages delete result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminDeleteResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

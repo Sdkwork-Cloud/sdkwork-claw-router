@@ -1,0 +1,20 @@
+fragment: models/console-providers
+frontend_models:
+- route: /console/providers
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-providers/src/providerService.ts
+  interface: ProviderConfig
+  fields:
+  - id
+  - providerFamily
+  - integrationType
+  - name
+  - description
+  - url
+  - status
+  data_sources:
+  - integration_provider
+  - integration_channel
+  - integration_channel_model
+  - integration_provider_account
+  - integration_proxy
+  - ops_config_snapshot

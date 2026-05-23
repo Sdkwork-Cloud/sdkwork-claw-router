@@ -7,7 +7,5 @@ export interface OauthAuthorizationUrlsRetrieveResult {
   /** Data field on oauth authorization urls retrieve result. */
   data?: IamOauthAuthorizationUrlResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

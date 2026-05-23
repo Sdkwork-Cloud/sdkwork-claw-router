@@ -4,6 +4,5 @@ package types
 type SessionsCreateResult struct {
 	Code string `json:"code"`
 	Data IamSessionResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

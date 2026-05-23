@@ -6,6 +6,7 @@ license-file.workspace = true
 
 [dependencies]
 axum.workspace = true
+base64.workspace = true
 bytes.workspace = true
 futures-util.workspace = true
 getrandom.workspace = true
@@ -16,6 +17,7 @@ hyper.workspace = true
 hyper-rustls.workspace = true
 hyper-util.workspace = true
 ring.workspace = true
+redis.workspace = true
 serde.workspace = true
 serde_json.workspace = true
 sha2.workspace = true
@@ -27,7 +29,17 @@ sdkwork-claw-contract = { path = "../../crates/sdkwork-claw-contract" }
 sdkwork-claw-config = { path = "../../crates/sdkwork-claw-config" }
 sdkwork-claw-core = { path = "../../crates/sdkwork-claw-core" }
 sdkwork-claw-http = { path = "../../crates/sdkwork-claw-http" }
-sdkwork_iam_storage_sqlx = { path = "../../../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-storage-sqlx-rust" }
+sdkwork-claw-provider-adapter-contract = { path = "../../crates/sdkwork-claw-provider-adapter-contract" }
+sdkwork-claw-provider-adapter-http = { path = "../../crates/sdkwork-claw-provider-adapter-http" }
+sdkwork-claw-provider-adapter-registry = { path = "../../crates/sdkwork-claw-provider-adapter-registry" }
+sdkwork_iam_storage_sqlx = { path = "../../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-storage-sqlx-rust" }
+sdkwork_commerce_core = { path = "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-core-rust" }
+sdkwork_commerce_storage_sqlx = { path = "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust" }
+sdkwork_commerce_bootstrap = { path = "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-bootstrap-rust" }
+sdkwork_commerce_membership_sqlx = { path = "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-membership-sqlx-rust" }
+sdkwork_commerce_payment = { path = "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-payment-rust" }
+sdkwork_commerce_invoice = { path = "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-invoice-rust" }
+sdkwork-sdk-generator-client = { path = "../../../../sdk/sdkwork-sdk-generator/rust" }
 
 [dev-dependencies]
 serde_json.workspace = true

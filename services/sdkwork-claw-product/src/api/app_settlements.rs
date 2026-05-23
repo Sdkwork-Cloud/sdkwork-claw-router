@@ -102,7 +102,7 @@ async fn fetch_settlements_dashboard(
                 StatusCode::UNAUTHORIZED,
                 Json(PlusApiResult::error("4010", error.to_string())),
             )
-                .into_response()
+                .into_response();
         }
         Err(_) => None,
     };
@@ -114,7 +114,7 @@ async fn fetch_settlements_dashboard(
                 StatusCode::BAD_REQUEST,
                 Json(PlusApiResult::error("4001", error.message)),
             )
-                .into_response()
+                .into_response();
         }
     };
 

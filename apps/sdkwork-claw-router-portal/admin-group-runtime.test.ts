@@ -597,6 +597,23 @@ test("admin group page localizes load errors instead of exposing internal servic
   assert.doesNotMatch(source, /error: loadError/);
 });
 
+test("admin group table fills the available admin viewport", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "AdminTableShell",
+    "data-admin-group-table-card",
+    "data-admin-group-table-viewport",
+    "flex h-full min-h-0 w-full flex-col",
+    "sticky top-0 z-10",
+  ]) {
+    assert.ok(source.includes(expected), `missing adaptive admin group table marker: ${expected}`);
+  }
+});
+
 test("admin group list fails closed when backend returns unsupported group enums", async () => {
   for (const [field, value, message] of [
     ["type", "enterprise", /Unsupported group type: enterprise/],

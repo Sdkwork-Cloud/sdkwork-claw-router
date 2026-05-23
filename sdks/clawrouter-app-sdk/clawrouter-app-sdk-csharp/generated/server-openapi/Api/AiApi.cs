@@ -38,19 +38,11 @@ namespace Sdkwork.ClawRouter.App.Api
         }
 
         /// <summary>
-        /// Create Playground generation agent run
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.GenerationAgentRunsCreateResult?> GenerationAgentRunsCreateAsync(Sdkwork.ClawRouter.App.Models.GenerationAgentRunCreateRequest body)
-        {
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.GenerationAgentRunsCreateResult>(ApiPaths.AppPath("/ai/generation_agent/runs"), body, null, null, "application/json");
-        }
-
-        /// <summary>
         /// List generation history
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.GenerationsListResult?> GenerationsListAsync()
+        public async Task<Sdkwork.ClawRouter.App.Models.GenerationListResult?> GenerationListAsync()
         {
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.GenerationsListResult>(ApiPaths.AppPath("/ai/generations"));
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.GenerationListResult>(ApiPaths.AppPath("/ai/generations"));
         }
 
         /// <summary>

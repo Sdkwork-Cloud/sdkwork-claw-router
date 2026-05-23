@@ -13,6 +13,26 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
     def sdk_base(self, root: Path, sdk_dir: str) -> Path:
         return root / "sdks" / sdk_dir / f"{sdk_dir}-typescript"
 
+    def javascript_function_body(self, source: str, function_name: str) -> str:
+        marker = f"function {function_name}("
+        start = source.find(marker)
+        self.assertGreaterEqual(start, 0, f"missing function {function_name}")
+
+        open_brace = source.find("{", start)
+        self.assertGreaterEqual(open_brace, 0, f"missing opening brace for {function_name}")
+
+        depth = 0
+        for index in range(open_brace, len(source)):
+            character = source[index]
+            if character == "{":
+                depth += 1
+            elif character == "}":
+                depth -= 1
+                if depth == 0:
+                    return source[open_brace + 1 : index]
+
+        self.fail(f"unclosed function body for {function_name}")
+
     def write_minimal_typescript_sdk(self, root: Path, sdk_dir: str, package_name: str) -> Path:
         base = self.sdk_base(root, sdk_dir)
         base.mkdir(parents=True, exist_ok=True)
@@ -99,6 +119,25 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 http_client = (base / "src" / "http" / "client.ts").read_text(encoding="utf-8")
                 self.assertIn("contentType?: string", http_client)
                 self.assertIn("headers: this.withContentType(headers, contentType)", http_client)
+
+    def test_standardizes_generated_sdk_runtime_build_metadata_idempotently(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for sdk_dir, package_name in (
+                ("clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk"),
+                ("clawrouter-backend-sdk", "@sdkwork/clawrouter-backend-sdk"),
+            ):
+                self.write_minimal_typescript_sdk(root, sdk_dir, package_name)
+
+            self.standardizer(root).run()
+            second_run = self.standardizer(root).run()
+
+            touched = {
+                path
+                for path in second_run
+                if path.name in {"package.json", "build-runtime.mjs"}
+            }
+            self.assertEqual(set(), touched)
 
     def test_standardizes_app_multipart_methods_to_request_dto_body(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -217,6 +256,7 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
             family = root / "sdks" / "clawrouter-open-sdk"
             authority = json.loads((family / "openapi" / "clawrouter-open-sdk.openapi.json").read_text(encoding="utf-8"))
             sdkgen = json.loads((family / "openapi" / "clawrouter-open-sdk.sdkgen.json").read_text(encoding="utf-8"))
+            assembly = json.loads((family / ".sdkwork-assembly.json").read_text(encoding="utf-8"))
             generate_script = (family / "bin" / "generate-sdk.mjs").read_text(encoding="utf-8")
 
             self.assertEqual(
@@ -236,9 +276,86 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
             self.assertIn("authorityInputPath", generate_script)
             self.assertIn("sdkgenInputPath", generate_script)
             self.assertIn("openapi/${sdkFamily}.sdkgen.json", generate_script)
+            self.assertEqual("openapi/clawrouter-open-sdk.sdkgen.json", assembly["generationInputSpec"])
+            self.assertNotIn("derivedSpec", assembly)
+            self.assertEqual(
+                {"sdk-generator": "openapi/clawrouter-open-sdk.sdkgen.json"},
+                assembly["derivedSpecs"],
+            )
+            strict_body = self.javascript_function_body(generate_script, "strictTypeScriptArgs")
+            generator_body = self.javascript_function_body(generate_script, "generatorArgs")
+            self.assertIn("'-i', sdkgenInputPath", strict_body)
+            self.assertIn("'-i', sdkgenInputPath", generator_body)
             self.assertIn("import { rmSync } from 'node:fs';", generate_script)
             self.assertIn("language !== 'typescript'", generate_script)
             self.assertIn("generated/server-openapi`), { recursive: true, force: true })", generate_script)
+
+    def test_standardizes_app_and_backend_typescript_generation_to_authority_openapi(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for sdk_dir, package_name in (
+                ("clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk"),
+                ("clawrouter-backend-sdk", "@sdkwork/clawrouter-backend-sdk"),
+            ):
+                self.write_minimal_typescript_sdk(root, sdk_dir, package_name)
+
+            self.standardizer(root).run()
+
+            for sdk_dir in ("clawrouter-app-sdk", "clawrouter-backend-sdk"):
+                generate_script = (root / "sdks" / sdk_dir / "bin" / "generate-sdk.mjs").read_text(encoding="utf-8")
+                assembly = json.loads((root / "sdks" / sdk_dir / ".sdkwork-assembly.json").read_text(encoding="utf-8"))
+                strict_body = self.javascript_function_body(generate_script, "strictTypeScriptArgs")
+                generator_body = self.javascript_function_body(generate_script, "generatorArgs")
+                self.assertIn("const authorityInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.openapi.json`;", generate_script)
+                self.assertNotIn("const sdkgenInputPath", generate_script)
+                self.assertEqual(f"openapi/{sdk_dir}.openapi.json", assembly["generationInputSpec"])
+                self.assertNotIn("derivedSpec", assembly)
+                self.assertEqual({}, assembly["derivedSpecs"])
+                self.assertIn("'-i', authorityInputPath", strict_body)
+                self.assertNotIn("'-i', sdkgenInputPath", strict_body)
+                self.assertIn("'-i', authorityInputPath", generator_body)
+                self.assertNotIn("'-i', sdkgenInputPath", generator_body)
+
+    def test_verify_script_checks_family_generation_input_contract(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for sdk_dir, package_name in (
+                ("clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk"),
+                ("clawrouter-backend-sdk", "@sdkwork/clawrouter-backend-sdk"),
+                ("clawrouter-open-sdk", "@sdkwork/clawrouter-open-sdk"),
+            ):
+                self.write_minimal_typescript_sdk(root, sdk_dir, package_name)
+
+            self.standardizer(
+                root,
+                ("clawrouter-app-sdk", "clawrouter-backend-sdk", "clawrouter-open-sdk"),
+            ).run()
+
+            expected_generation_inputs = {
+                "clawrouter-app-sdk": "openapi/clawrouter-app-sdk.openapi.json",
+                "clawrouter-backend-sdk": "openapi/clawrouter-backend-sdk.openapi.json",
+                "clawrouter-open-sdk": "openapi/clawrouter-open-sdk.sdkgen.json",
+            }
+            expected_derived_specs = {
+                "clawrouter-app-sdk": "{}",
+                "clawrouter-backend-sdk": "{}",
+                "clawrouter-open-sdk": '{"sdk-generator":"openapi/clawrouter-open-sdk.sdkgen.json"}',
+            }
+            for sdk_dir in expected_generation_inputs:
+                verify_script = (root / "sdks" / sdk_dir / "bin" / "verify-sdk.mjs").read_text(
+                    encoding="utf-8"
+                )
+                self.assertIn(
+                    f"const expectedGenerationInputSpec = '{expected_generation_inputs[sdk_dir]}';",
+                    verify_script,
+                )
+                self.assertIn(
+                    f"const expectedDerivedSpecs = {expected_derived_specs[sdk_dir]};",
+                    verify_script,
+                )
+                self.assertIn("assembly.generationInputSpec !== expectedGenerationInputSpec", verify_script)
+                self.assertIn("JSON.stringify(assembly.derivedSpecs ?? null)", verify_script)
+                self.assertIn("Object.prototype.hasOwnProperty.call(assembly, 'derivedSpec')", verify_script)
 
     def component_ref_cycles(self, spec: dict[str, object]) -> list[list[str]]:
         schemas = spec.get("components", {}).get("schemas", {})  # type: ignore[union-attr]

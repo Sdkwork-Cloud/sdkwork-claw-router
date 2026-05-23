@@ -1,0 +1,1541 @@
+fragment: operations/backend-platform
+frontend_operations:
+- route: /admin/open-platform
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
+  operation: listOpenPlatformProviders
+  operation_id: providers.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/open_platform/providers
+  sdk_domain: platform
+  read_sources:
+  - open_platform_provider
+  query_parameters:
+  - name: status
+    schema:
+      type: string
+      enum:
+      - active
+      - inactive
+  response_schema:
+    name: OpenPlatformProviderListResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: OpenPlatformProviderItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - provider
+          - name
+          - status
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            provider:
+              type: string
+              enum:
+              - wechat
+              - alipay
+              - douyin
+              - baidu
+              - kuaishou
+              - feishu
+            name:
+              type: string
+              minLength: 1
+              maxLength: 128
+            status:
+              type: string
+              enum:
+              - active
+              - inactive
+- route: /admin/open-platform
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
+  operation: listOpenPlatformManifests
+  operation_id: manifests.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/open_platform/manifests
+  sdk_domain: platform
+  read_sources:
+  - open_platform_manifest
+  query_parameters:
+  - name: provider
+    schema:
+      type: string
+      enum:
+      - wechat
+      - alipay
+      - douyin
+      - baidu
+      - kuaishou
+      - feishu
+  - name: type
+    schema:
+      type: string
+      enum:
+      - official_account
+      - mini_app
+      - life_account
+      - bot
+  response_schema:
+    name: OpenPlatformManifestListResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: OpenPlatformManifestItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - key
+          - provider
+          - type
+          - version
+          - status
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            key:
+              type: string
+              minLength: 1
+              maxLength: 128
+            provider:
+              type: string
+              enum:
+              - wechat
+              - alipay
+              - douyin
+              - baidu
+              - kuaishou
+              - feishu
+            type:
+              type: string
+              enum:
+              - official_account
+              - mini_app
+              - life_account
+              - bot
+            version:
+              type: string
+              minLength: 1
+              maxLength: 64
+            status:
+              type: string
+              enum:
+              - active
+              - inactive
+- route: /admin/open-platform
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
+  operation: listOpenPlatformAccounts
+  operation_id: accounts.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/open_platform/accounts
+  sdk_domain: platform
+  read_sources:
+  - open_platform_account
+  query_parameters:
+  - name: provider
+    schema:
+      type: string
+      enum:
+      - wechat
+      - alipay
+      - douyin
+      - baidu
+      - kuaishou
+      - feishu
+  - name: type
+    schema:
+      type: string
+      enum:
+      - official_account
+      - mini_app
+      - life_account
+      - bot
+  - name: status
+    schema:
+      type: string
+      enum:
+      - active
+      - inactive
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  response_schema:
+    name: OpenPlatformAccountListResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items: &id003
+          name: OpenPlatformAccountItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - key
+          - name
+          - provider
+          - qrDefault
+          - status
+          - type
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            key:
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[a-z0-9][a-z0-9._:-]*$
+            name:
+              type: string
+              minLength: 1
+              maxLength: 128
+            provider:
+              type: string
+              enum: &id001
+              - wechat
+              - alipay
+              - douyin
+              - baidu
+              - kuaishou
+              - feishu
+            type:
+              type: string
+              enum: &id002
+              - official_account
+              - mini_app
+              - life_account
+              - bot
+            appId:
+              type: string
+              nullable: true
+              maxLength: 128
+            secretRef:
+              type: string
+              nullable: true
+              maxLength: 256
+            tokenRef:
+              type: string
+              nullable: true
+              maxLength: 256
+            aesKeyRef:
+              type: string
+              nullable: true
+              maxLength: 256
+            defaultEntryId:
+              type: string
+              nullable: true
+              maxLength: 128
+            qrDefault:
+              type: boolean
+            status:
+              type: string
+              enum: &id005
+              - active
+              - inactive
+            createdAt:
+              type: string
+              maxLength: 64
+            updatedAt:
+              type: string
+              maxLength: 64
+- route: /admin/open-platform
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
+  operation: createOpenPlatformAccount
+  operation_id: accounts.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/open_platform/accounts
+  sdk_domain: platform
+  read_sources:
+  - open_platform_account
+  write_tables:
+  - open_platform_account
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: OpenPlatformAccountCreateRequest
+    required:
+    - key
+    - name
+    - provider
+    - type
+    properties:
+      key:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[a-z0-9][a-z0-9._:-]*$
+      name:
+        type: string
+        minLength: 1
+        maxLength: 128
+      provider:
+        type: string
+        enum: *id001
+      type:
+        type: string
+        enum: *id002
+      appId:
+        type: string
+        nullable: true
+        maxLength: 128
+      secretRef:
+        type: string
+        nullable: true
+        maxLength: 256
+      tokenRef:
+        type: string
+        nullable: true
+        maxLength: 256
+      aesKeyRef:
+        type: string
+        nullable: true
+        maxLength: 256
+  response_schema: &id004
+    name: OpenPlatformAccountResponse
+    required:
+    - item
+    properties:
+      item: *id003
+- route: /admin/open-platform
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
+  operation: retrieveOpenPlatformAccount
+  operation_id: accounts.retrieve
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/open_platform/accounts/{accountId}
+  sdk_domain: platform
+  read_sources:
+  - open_platform_account
+  query_parameters: []
+  response_schema: *id004
+- route: /admin/open-platform
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
+  operation: updateOpenPlatformAccount
+  operation_id: accounts.update
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/open_platform/accounts/{accountId}
+  sdk_domain: platform
+  read_sources:
+  - open_platform_account
+  write_tables:
+  - open_platform_account
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: OpenPlatformAccountUpdateRequest
+    required: []
+    properties:
+      name:
+        type: string
+        minLength: 1
+        maxLength: 128
+      appId:
+        type: string
+        nullable: true
+        maxLength: 128
+      secretRef:
+        type: string
+        nullable: true
+        maxLength: 256
+      tokenRef:
+        type: string
+        nullable: true
+        maxLength: 256
+      aesKeyRef:
+        type: string
+        nullable: true
+        maxLength: 256
+      defaultEntryId:
+        type: string
+        nullable: true
+        maxLength: 128
+      qrDefault:
+        type: boolean
+      status:
+        type: string
+        enum: *id005
+  response_schema: *id004
+- route: /admin/open-platform
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
+  operation: deleteOpenPlatformAccount
+  operation_id: accounts.delete
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/open_platform/accounts/{accountId}
+  sdk_domain: platform
+  read_sources:
+  - open_platform_account
+  write_tables:
+  - open_platform_account
+  - ops_audit_log
+  request_id_header: true
+  request_body_required: false
+  response_schema: *id004
+- route: /admin/open-platform
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
+  operation: listOpenPlatformAccountEntries
+  operation_id: accounts.entries.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/open_platform/accounts/{accountId}/entries
+  sdk_domain: platform
+  read_sources:
+  - open_platform_account
+  - open_platform_entry
+  query_parameters: []
+  response_schema:
+    name: OpenPlatformEntryListResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items: &id007
+          name: OpenPlatformEntryItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - accountId
+          - key
+          - type
+          - url
+          - status
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            accountId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            key:
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[a-z0-9][a-z0-9._:-]*$
+            type:
+              type: string
+              enum: &id006
+              - url
+              - qr
+              - mini_app_url
+            url:
+              type: string
+              minLength: 1
+              maxLength: 1024
+            status:
+              type: string
+              enum: *id005
+            createdAt:
+              type: string
+              maxLength: 64
+            updatedAt:
+              type: string
+              maxLength: 64
+- route: /admin/open-platform
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
+  operation: createOpenPlatformAccountEntry
+  operation_id: accounts.entries.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/open_platform/accounts/{accountId}/entries
+  sdk_domain: platform
+  read_sources:
+  - open_platform_account
+  - open_platform_entry
+  write_tables:
+  - open_platform_entry
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: OpenPlatformEntryCreateRequest
+    required:
+    - key
+    - type
+    - url
+    properties:
+      key:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[a-z0-9][a-z0-9._:-]*$
+      type:
+        type: string
+        enum: *id006
+      url:
+        type: string
+        minLength: 1
+        maxLength: 1024
+  response_schema: &id008
+    name: OpenPlatformEntryResponse
+    required:
+    - item
+    properties:
+      item: *id007
+- route: /admin/open-platform
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
+  operation: updateOpenPlatformAccountEntry
+  operation_id: accounts.entries.update
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/open_platform/accounts/{accountId}/entries/{entryId}
+  sdk_domain: platform
+  read_sources:
+  - open_platform_account
+  - open_platform_entry
+  write_tables:
+  - open_platform_entry
+  - open_platform_account
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: OpenPlatformEntryUpdateRequest
+    required: []
+    properties:
+      key:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[a-z0-9][a-z0-9._:-]*$
+      type:
+        type: string
+        enum: *id006
+      url:
+        type: string
+        minLength: 1
+        maxLength: 1024
+      status:
+        type: string
+        enum: *id005
+  response_schema: *id008
+- route: /admin/open-platform
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
+  operation: deleteOpenPlatformAccountEntry
+  operation_id: accounts.entries.delete
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/open_platform/accounts/{accountId}/entries/{entryId}
+  sdk_domain: platform
+  read_sources:
+  - open_platform_account
+  - open_platform_entry
+  write_tables:
+  - open_platform_entry
+  - open_platform_account
+  - ops_audit_log
+  request_id_header: true
+  request_body_required: false
+  response_schema: *id008
+- route: /admin/open-platform
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
+  operation: listOpenPlatformAccountPayBindings
+  operation_id: accounts.payBindings.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/open_platform/accounts/{accountId}/pay_bindings
+  sdk_domain: platform
+  read_sources:
+  - open_platform_account
+  - open_platform_pay_binding
+  query_parameters: []
+  response_schema:
+    name: OpenPlatformPayBindingListResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items: &id011
+          name: OpenPlatformPayBindingItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - accountId
+          - paymentAccountId
+          - scene
+          - mode
+          - status
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            accountId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            paymentAccountId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            paymentChannelId:
+              type: string
+              nullable: true
+              maxLength: 128
+            scene:
+              type: string
+              enum: &id009
+              - official_account
+              - mini_app
+              - h5
+              - app
+            mode:
+              type: string
+              enum: &id010
+              - direct
+              - cashier
+              - escrow
+            status:
+              type: string
+              enum: *id005
+            createdAt:
+              type: string
+              maxLength: 64
+            updatedAt:
+              type: string
+              maxLength: 64
+- route: /admin/open-platform
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
+  operation: createOpenPlatformAccountPayBinding
+  operation_id: accounts.payBindings.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/open_platform/accounts/{accountId}/pay_bindings
+  sdk_domain: platform
+  read_sources:
+  - open_platform_account
+  - open_platform_pay_binding
+  write_tables:
+  - open_platform_pay_binding
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: OpenPlatformPayBindingCreateRequest
+    required:
+    - paymentAccountId
+    - scene
+    - mode
+    properties:
+      paymentAccountId:
+        type: string
+        minLength: 1
+        maxLength: 128
+      paymentChannelId:
+        type: string
+        nullable: true
+        maxLength: 128
+      scene:
+        type: string
+        enum: *id009
+      mode:
+        type: string
+        enum: *id010
+  response_schema: &id012
+    name: OpenPlatformPayBindingResponse
+    required:
+    - item
+    properties:
+      item: *id011
+- route: /admin/open-platform
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
+  operation: deleteOpenPlatformAccountPayBinding
+  operation_id: accounts.payBindings.delete
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/open_platform/accounts/{accountId}/pay_bindings/{bindingId}
+  sdk_domain: platform
+  read_sources:
+  - open_platform_account
+  - open_platform_pay_binding
+  write_tables:
+  - open_platform_pay_binding
+  - ops_audit_log
+  request_id_header: true
+  request_body_required: false
+  response_schema: *id012
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: fetchApps
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/platform/apps
+  read_sources:
+  - plus_app
+  - plus_category
+  - studio_catalog_asset
+  - studio_catalog_artifact
+  request_id_header: true
+  query_parameters:
+  - name: q
+    schema:
+      type: string
+      maxLength: 128
+  - name: status
+    schema:
+      type: string
+      enum:
+      - ACTIVE
+      - INACTIVE
+  - name: market_status
+    schema:
+      type: string
+      enum:
+      - DRAFT
+      - PUBLISHED
+      - OFFLINE
+  - name: app_type
+    schema:
+      type: string
+      maxLength: 64
+      pattern: ^[A-Za-z0-9._:-]+$
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  response_schema:
+    name: AdminAppListResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 200
+        items:
+          name: AdminAppItemResponse
+          type: object
+          additionalProperties: false
+          required: &id017
+          - id
+          - uuid
+          - name
+          - icon
+          - resourceList
+          - config
+          - status
+          - marketStatus
+          - platforms
+          - installPlatforms
+          - installSkill
+          - installConfig
+          - releaseNotes
+          - createdAt
+          - updatedAt
+          properties: &id018
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            uuid:
+              type: string
+              minLength: 1
+              maxLength: 128
+            userId:
+              type: string
+              nullable: true
+              maxLength: 128
+            name:
+              type: string
+              minLength: 1
+              maxLength: 255
+            description:
+              type: string
+              nullable: true
+              maxLength: 4000
+            version:
+              type: string
+              nullable: true
+              maxLength: 64
+            icon:
+              type: object
+              additionalProperties: true
+            iconUrl:
+              type: string
+              nullable: true
+              maxLength: 512
+            resourceList:
+              type: object
+              additionalProperties: true
+            projectId:
+              type: string
+              nullable: true
+              maxLength: 128
+            accessUrl:
+              type: string
+              nullable: true
+              maxLength: 512
+            config:
+              name: AdminAppConfig
+              type: object
+              additionalProperties: true
+              required: &id015
+              - standard
+              properties: &id016
+                standard:
+                  name: AdminAppConfigStandard
+                  type: object
+                  additionalProperties: true
+                  required:
+                  - appKey
+                  properties:
+                    appKey:
+                      type: string
+                      minLength: 1
+                      maxLength: 128
+                      pattern: ^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$
+                      description: Stable PlusApp identity key. Must use lowercase kebab-case.
+                portal:
+                  name: AdminAppPortalConfig
+                  type: object
+                  additionalProperties: true
+                  properties:
+                    marketStatus:
+                      type: string
+                      enum:
+                      - DRAFT
+                      - PUBLISHED
+                      - OFFLINE
+            appKey:
+              type: string
+              nullable: true
+              maxLength: 128
+              pattern: ^[A-Za-z0-9._:-]+$
+            status:
+              type: string
+              enum:
+              - ACTIVE
+              - INACTIVE
+            marketStatus:
+              type: string
+              enum:
+              - DRAFT
+              - PUBLISHED
+              - OFFLINE
+            appType:
+              type: string
+              nullable: true
+              maxLength: 64
+              pattern: ^[A-Za-z0-9._:-]+$
+            platforms:
+              type: object
+              additionalProperties: true
+            installPlatforms:
+              type: object
+              additionalProperties: true
+            installSkill:
+              type: object
+              additionalProperties: true
+            installConfig:
+              type: object
+              additionalProperties: true
+            releaseNotes:
+              type: array
+              maxItems: 128
+              items:
+                type: object
+                additionalProperties: true
+            packageName:
+              type: string
+              nullable: true
+              maxLength: 255
+            bundleId:
+              type: string
+              nullable: true
+              maxLength: 255
+            storeUrl:
+              type: string
+              nullable: true
+              maxLength: 512
+            downloadUrl:
+              type: string
+              nullable: true
+              maxLength: 512
+            createdAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+            updatedAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+        description: PlusApp snapshots returned by the backend management API.
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: fetchAppCategories
+  operation_id: apps.categories.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/platform/apps/categories
+  read_sources:
+  - plus_category
+  query_parameters: []
+  response_schema:
+    name: AdminAppCategoryListResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminAppCategoryItem
+          type: object
+          additionalProperties: false
+          required: &id013
+          - id
+          - name
+          - sortWeight
+          - visible
+          - status
+          - type
+          properties: &id014
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            name:
+              type: string
+              minLength: 1
+              maxLength: 255
+            description:
+              type: string
+              maxLength: 4000
+            code:
+              type: string
+              maxLength: 128
+              pattern: ^[A-Za-z0-9_-]+$
+            icon:
+              type: string
+              maxLength: 255
+            sortWeight:
+              type: integer
+              format: int32
+              minimum: -1000000
+              maximum: 1000000
+            parentId:
+              type: string
+              nullable: true
+              maxLength: 128
+            path:
+              type: string
+              maxLength: 1024
+              pattern: ^/
+            visible:
+              type: boolean
+            status:
+              type: integer
+              format: int32
+            type:
+              type: integer
+              format: int32
+              enum:
+              - 999999
+        description: App store category snapshots returned by the backend.
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: createAppCategory
+  operation_id: apps.categories.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/platform/apps/categories
+  read_sources:
+  - plus_category
+  write_tables:
+  - plus_category
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminAppCategoryCreateRequest
+    required:
+    - name
+    properties:
+      name:
+        type: string
+        minLength: 1
+        maxLength: 255
+        description: App store category display name.
+      description:
+        type: string
+        maxLength: 4000
+        description: Optional category description.
+      code:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[A-Za-z0-9_-]+$
+        description: Optional stable category code.
+      icon:
+        type: string
+        maxLength: 255
+        description: Optional icon URL or asset path.
+      sortWeight:
+        type: integer
+        format: int32
+        minimum: -1000000
+        maximum: 1000000
+      parentId:
+        type: string
+        nullable: true
+        maxLength: 128
+      path:
+        type: string
+        maxLength: 1024
+        pattern: ^/
+      visible:
+        type: boolean
+      status:
+        type: integer
+        format: int32
+  response_schema:
+    name: AdminAppCategoryMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAppCategoryItem
+        type: object
+        additionalProperties: false
+        required: *id013
+        properties: *id014
+        description: Persisted app store category snapshot returned by the backend.
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: updateAppCategory
+  operation_id: apps.categories.update
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/platform/apps/categories/{categoryId}
+  read_sources:
+  - plus_category
+  write_tables:
+  - plus_category
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminAppCategoryUpdateRequest
+    required: []
+    properties:
+      name:
+        type: string
+        minLength: 1
+        maxLength: 255
+        description: App store category display name.
+      description:
+        type: string
+        nullable: true
+        maxLength: 4000
+        description: Optional category description.
+      code:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 128
+        pattern: ^[A-Za-z0-9_-]+$
+        description: Optional stable category code.
+      icon:
+        type: string
+        nullable: true
+        maxLength: 255
+        description: Optional icon URL or asset path.
+      sortWeight:
+        type: integer
+        format: int32
+        minimum: -1000000
+        maximum: 1000000
+      parentId:
+        type: string
+        nullable: true
+        maxLength: 128
+      path:
+        type: string
+        nullable: true
+        maxLength: 1024
+        pattern: ^/
+      visible:
+        type: boolean
+      status:
+        type: integer
+        format: int32
+  response_schema:
+    name: AdminAppCategoryMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAppCategoryItem
+        type: object
+        additionalProperties: false
+        required: *id013
+        properties: *id014
+        description: Updated app store category snapshot returned by the backend.
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: deleteAppCategory
+  operation_id: apps.categories.delete
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/platform/apps/categories/{categoryId}
+  read_sources:
+  - plus_category
+  write_tables:
+  - plus_category
+  - ops_audit_log
+  request_id_header: true
+  request_body_required: false
+  response_schema:
+    name: AdminAppCategoryDeleteResponse
+    required:
+    - deleted
+    properties:
+      deleted:
+        type: boolean
+        description: Whether the app store category was deleted.
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: createApp
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/platform/apps
+  read_sources:
+  - plus_app
+  - plus_category
+  - studio_catalog_asset
+  - studio_catalog_artifact
+  write_tables:
+  - plus_app
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminAppCreateRequest
+    required:
+    - name
+    - config
+    properties:
+      userId:
+        type: string
+        nullable: true
+        maxLength: 128
+        pattern: ^\d+$
+      name:
+        type: string
+        minLength: 1
+        maxLength: 255
+      description:
+        type: string
+        maxLength: 4000
+      version:
+        type: string
+        maxLength: 64
+      icon:
+        type: object
+        additionalProperties: true
+      iconUrl:
+        type: string
+        maxLength: 512
+      resourceList:
+        type: object
+        additionalProperties: true
+      projectId:
+        type: string
+        nullable: true
+        maxLength: 128
+        pattern: ^\d+$
+      accessUrl:
+        type: string
+        maxLength: 512
+      config:
+        name: AdminAppConfig
+        type: object
+        additionalProperties: true
+        required: *id015
+        properties: *id016
+        description: Java-compatible PlusApp config. Standard app keys are stored under config.standard.appKey; marketStatus is stored under config.portal.marketStatus.
+      status:
+        type: string
+        enum:
+        - ACTIVE
+        - INACTIVE
+      marketStatus:
+        type: string
+        enum:
+        - DRAFT
+        - PUBLISHED
+        - OFFLINE
+      appType:
+        type: string
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._:-]+$
+      platforms:
+        type: object
+        additionalProperties: true
+      installPlatforms:
+        type: object
+        additionalProperties: true
+      installSkill:
+        type: object
+        additionalProperties: true
+      installConfig:
+        type: object
+        additionalProperties: true
+      releaseNotes:
+        type: array
+        maxItems: 128
+        items:
+          type: object
+          additionalProperties: true
+      packageName:
+        type: string
+        maxLength: 255
+      bundleId:
+        type: string
+        maxLength: 255
+      storeUrl:
+        type: string
+        maxLength: 512
+      downloadUrl:
+        type: string
+        maxLength: 512
+  response_schema:
+    name: AdminAppMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAppItemResponse
+        type: object
+        additionalProperties: false
+        required: *id017
+        properties: *id018
+        description: Persisted PlusApp snapshot returned by the backend.
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: fetchApp
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/platform/apps/{appId}
+  read_sources:
+  - plus_app
+  - plus_category
+  - studio_catalog_asset
+  - studio_catalog_artifact
+  request_id_header: true
+  query_parameters: []
+  response_schema:
+    name: AdminAppMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAppItemResponse
+        type: object
+        additionalProperties: false
+        required: *id017
+        properties: *id018
+        description: PlusApp detail snapshot returned by the backend.
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: updateApp
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/platform/apps/{appId}
+  read_sources:
+  - plus_app
+  - plus_category
+  - studio_catalog_asset
+  - studio_catalog_artifact
+  write_tables:
+  - plus_app
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminAppUpdateRequest
+    required: []
+    properties:
+      userId:
+        type: string
+        nullable: true
+        maxLength: 128
+        pattern: ^\d+$
+      name:
+        type: string
+        minLength: 1
+        maxLength: 255
+      description:
+        type: string
+        nullable: true
+        maxLength: 4000
+      version:
+        type: string
+        nullable: true
+        maxLength: 64
+      icon:
+        type: object
+        additionalProperties: true
+      iconUrl:
+        type: string
+        nullable: true
+        maxLength: 512
+      resourceList:
+        type: object
+        additionalProperties: true
+      projectId:
+        type: string
+        nullable: true
+        maxLength: 128
+        pattern: ^\d+$
+      accessUrl:
+        type: string
+        nullable: true
+        maxLength: 512
+      config:
+        name: AdminAppConfig
+        type: object
+        additionalProperties: true
+        required: *id015
+        properties: *id016
+        description: Java-compatible PlusApp config. When supplied, config.standard.appKey is required and must use lowercase kebab-case.
+      appType:
+        type: string
+        nullable: true
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._:-]+$
+      platforms:
+        type: object
+        additionalProperties: true
+      installPlatforms:
+        type: object
+        additionalProperties: true
+      installSkill:
+        type: object
+        additionalProperties: true
+      installConfig:
+        type: object
+        additionalProperties: true
+      releaseNotes:
+        type: array
+        maxItems: 128
+        items:
+          type: object
+          additionalProperties: true
+      packageName:
+        type: string
+        nullable: true
+        maxLength: 255
+      bundleId:
+        type: string
+        nullable: true
+        maxLength: 255
+      storeUrl:
+        type: string
+        nullable: true
+        maxLength: 512
+      downloadUrl:
+        type: string
+        nullable: true
+        maxLength: 512
+  response_schema:
+    name: AdminAppMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAppItemResponse
+        type: object
+        additionalProperties: false
+        required: *id017
+        properties: *id018
+        description: Updated PlusApp snapshot returned by the backend.
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: deleteApp
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/platform/apps/{appId}
+  read_sources:
+  - plus_app
+  - studio_catalog_action
+  - studio_catalog_asset
+  - studio_catalog_artifact
+  write_tables:
+  - plus_app
+  - studio_catalog_action
+  - studio_catalog_asset
+  - studio_catalog_artifact
+  - ops_audit_log
+  request_id_header: true
+  response_schema:
+    name: AdminAppDeleteResponse
+    required:
+    - deleted
+    properties:
+      deleted:
+        type: boolean
+        description: Whether the PlusApp row and attached catalog records were deleted.
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: enableApp
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/platform/apps/{appId}/enable
+  description: Sets PlusApp runtime status to ACTIVE without changing config.portal.marketStatus.
+  read_sources:
+  - plus_app
+  write_tables:
+  - plus_app
+  - ops_audit_log
+  request_id_header: true
+  request_body_required: false
+  response_schema:
+    name: AdminAppMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAppItemResponse
+        type: object
+        additionalProperties: false
+        required: *id017
+        properties: *id018
+        description: Enabled PlusApp snapshot returned by the backend.
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: disableApp
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/platform/apps/{appId}/disable
+  description: Sets PlusApp runtime status to INACTIVE without changing config.portal.marketStatus.
+  read_sources:
+  - plus_app
+  write_tables:
+  - plus_app
+  - ops_audit_log
+  request_id_header: true
+  request_body_required: false
+  response_schema:
+    name: AdminAppMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAppItemResponse
+        type: object
+        additionalProperties: false
+        required: *id017
+        properties: *id018
+        description: Disabled PlusApp snapshot returned by the backend.
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: publishApp
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/platform/apps/{appId}/publish
+  description: Sets config.portal.marketStatus to PUBLISHED without changing PlusApp runtime status.
+  read_sources:
+  - plus_app
+  write_tables:
+  - plus_app
+  - ops_audit_log
+  request_id_header: true
+  request_body_required: false
+  response_schema:
+    name: AdminAppMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAppItemResponse
+        type: object
+        additionalProperties: false
+        required: *id017
+        properties: *id018
+        description: Published PlusApp snapshot returned by the backend.
+- route: /admin/app
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
+  operation: offlineApp
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/platform/apps/{appId}/unpublish
+  description: Sets config.portal.marketStatus to OFFLINE without changing PlusApp runtime status.
+  read_sources:
+  - plus_app
+  write_tables:
+  - plus_app
+  - ops_audit_log
+  request_id_header: true
+  request_body_required: false
+  response_schema:
+    name: AdminAppMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAppItemResponse
+        type: object
+        additionalProperties: false
+        required: *id017
+        properties: *id018
+        description: Offline PlusApp snapshot returned by the backend.

@@ -4,11 +4,15 @@ import 'src/api/agents.dart';
 import 'src/api/ai.dart';
 import 'src/api/auth.dart';
 import 'src/api/billing.dart';
-import 'src/api/communication.dart';
+import 'src/api/chat.dart';
 import 'src/api/content.dart';
 import 'src/api/ecosystem.dart';
 import 'src/api/iam.dart';
+import 'src/api/memory.dart';
+import 'src/api/notification.dart';
 import 'src/api/platform.dart';
+import 'src/api/runtime.dart';
+import 'src/api/system.dart';
 
 class SdkworkAppClient {
   final HttpClient _httpClient;
@@ -17,11 +21,15 @@ class SdkworkAppClient {
   late final AiApi ai;
   late final AuthApi auth;
   late final BillingApi billing;
-  late final CommunicationApi communication;
+  late final ChatApi chat;
   late final ContentApi content;
   late final EcosystemApi ecosystem;
   late final IamApi iam;
+  late final MemoryApi memory;
+  late final NotificationApi notification;
   late final PlatformApi platform;
+  late final RuntimeApi runtime;
+  late final SystemApi system;
 
   SdkworkAppClient({
     required SdkConfig config,
@@ -30,11 +38,15 @@ class SdkworkAppClient {
     ai = AiApi(_httpClient);
     auth = AuthApi(_httpClient);
     billing = BillingApi(_httpClient);
-    communication = CommunicationApi(_httpClient);
+    chat = ChatApi(_httpClient);
     content = ContentApi(_httpClient);
     ecosystem = EcosystemApi(_httpClient);
     iam = IamApi(_httpClient);
+    memory = MemoryApi(_httpClient);
+    notification = NotificationApi(_httpClient);
     platform = PlatformApi(_httpClient);
+    runtime = RuntimeApi(_httpClient);
+    system = SystemApi(_httpClient);
   }
 
   factory SdkworkAppClient.withBaseUrl({

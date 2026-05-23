@@ -126,7 +126,7 @@ ssl_mode = "require"
 max_connections = 16
 
 [redis]
-enabled = false
+enabled = true
 host = "redis.example.com"
 port = 6379
 database = 0
@@ -234,7 +234,7 @@ deployment_mode = "server"
 
 `.deb` 包创建的 `/etc/clawrouter/database.secret` 初始内容是占位值 `change-me`。启动 `clawrouter` 前必须替换为真实 PostgreSQL 密码；server 配置仍使用 `db.example.com` 或 `change-me` 时会被启动校验拒绝。
 
-Redis 目前只作为标准配置初始化，不是首次启动必需依赖。单节点或仅数据库部署保持 `[redis].enabled = false`。只有需要共享缓存、分布式锁、队列或限流桶时才启用 Redis。启用时优先配置 `[redis].host`、`[redis].port`、`[redis].database`；只有托管 Redis 端点无法用分离字段清晰表达时，才使用 `[redis].url` 作为高级覆盖。优先使用 `/etc/clawrouter/redis.secret` 或其他受保护的 `password_file`，只有 TOML 文件本身按密钥文件管理时才直接使用 `[redis].password`。
+server/service/container 部署默认启用并要求 Redis。首次启动前必须配置 `[redis].host`、`[redis].port`、`[redis].database`；只有托管 Redis 端点无法用分离字段清晰表达时，才使用 `[redis].url` 作为高级覆盖。优先使用 `/etc/clawrouter/redis.secret` 或其他受保护的 `password_file`，只有 TOML 文件本身按密钥文件管理时才直接使用 `[redis].password`。desktop 部署仍保持 Redis 可选且默认关闭。
 
 `[paths].course_upload_root` 用于保存本地课程申请视频上传文件。service 和 container 部署应放在持久化存储中，默认保持在应用数据卷内；只有明确挂载独立媒体卷时才改到其他目录。
 `[courses].video_upload_max_bytes` 是允许的视频文件大小，`[courses].video_upload_body_limit_bytes` 包含 multipart 开销。反向代理、容器 ingress 和负载均衡的请求体限制应不低于 body limit。
@@ -385,6 +385,7 @@ installer 标准输出为一个 JSON 对象。错误输出也是 JSON：
 - `invalid_state`
 - `database_error`
 - `catalog_error`
+- `commerce_error`
 - `installer_error`
 
 ## 健康检查

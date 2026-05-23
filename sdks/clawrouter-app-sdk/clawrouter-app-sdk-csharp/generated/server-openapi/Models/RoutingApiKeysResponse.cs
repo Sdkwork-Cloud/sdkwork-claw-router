@@ -6,6 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class RoutingApiKeysResponse
     {
-        public List<Dictionary<string, object>>? Items { get; set; }
+        public List<RoutingApiKeyItem>? Items { get; set; }
     }
 }

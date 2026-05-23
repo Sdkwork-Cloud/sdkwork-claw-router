@@ -1,0 +1,757 @@
+fragment: operations/backend-integration
+frontend_operations:
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: fetchChannels
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/integration/channels
+  read_sources:
+  - integration_provider
+  - integration_channel
+  - integration_channel_model
+  - integration_provider_account
+  - integration_provider_health_snapshot
+  query_parameters: []
+  response_schema:
+    name: AdminChannelsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminChannelItem
+          type: object
+          additionalProperties: false
+          required: &id002
+          - id
+          - name
+          - vendor
+          - protocol
+          - accessType
+          - models
+          - capabilities
+          - isMultimodal
+          - weight
+          - status
+          - balance
+          - errors
+          - createdAt
+          properties: &id003
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            name:
+              type: string
+              minLength: 1
+              maxLength: 128
+            vendor:
+              type: string
+              minLength: 1
+              maxLength: 64
+            protocol:
+              type: string
+              minLength: 1
+              maxLength: 64
+            accessType:
+              type: string
+              minLength: 1
+              maxLength: 64
+            baseUrl:
+              type: string
+              maxLength: 512
+            secretRef:
+              type: string
+              maxLength: 256
+              pattern: ^(vault|secret)://[^\\s]+$
+            apiKey:
+              type: string
+              maxLength: 4096
+              description: Full plaintext provider API key returned by authenticated admin management responses for channel account relay operations.
+            createdAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+            expiresAt:
+              type: string
+              nullable: true
+              maxLength: 64
+              description: Optional channel account expiration timestamp. Null or absence means the channel account never expires.
+            models:
+              type: array
+              maxItems: 200
+              items:
+                type: string
+                minLength: 1
+                maxLength: 128
+            capabilities:
+              type: array
+              maxItems: 16
+              items:
+                type: string
+                enum:
+                - llm
+                - image
+                - audio
+                - music
+                - sfx
+                - video
+            isMultimodal:
+              type: boolean
+            timeoutMs:
+              type: integer
+              format: int64
+              minimum: 1
+              maximum: 600000
+            retryPolicy:
+              name: ProviderRetryPolicy
+              type: object
+              additionalProperties: false
+              required:
+              - maxAttempts
+              - retryableStatusCodes
+              properties:
+                maxAttempts:
+                  type: integer
+                  minimum: 1
+                  maximum: 5
+                retryableStatusCodes:
+                  type: array
+                  maxItems: 8
+                  uniqueItems: true
+                  items:
+                    type: integer
+                    enum:
+                    - 408
+                    - 409
+                    - 425
+                    - 429
+                    - 500
+                    - 502
+                    - 503
+                    - 504
+                backoffMs:
+                  type: integer
+                  minimum: 0
+                  maximum: 2000
+            circuitBreakerPolicy: &id001
+              name: ProviderCircuitBreakerPolicy
+              type: object
+              additionalProperties: false
+              required: &id004
+              - failureThreshold
+              properties: &id005
+                failureThreshold:
+                  type: integer
+                  minimum: 1
+                  maximum: 100
+            weight:
+              type: integer
+              format: int64
+              minimum: 1
+              maximum: 10000
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+              - error
+            balance:
+              type: string
+              maxLength: 64
+            errors:
+              type: integer
+              format: int64
+              minimum: 0
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: addChannel
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/integration/channels
+  read_sources:
+  - integration_provider
+  - integration_channel
+  - integration_channel_model
+  - integration_provider_account
+  write_tables:
+  - integration_channel
+  - integration_channel_model
+  - integration_provider_account
+  - ops_config_snapshot
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminChannelCreateRequest
+    required:
+    - name
+    - vendor
+    - apiKey
+    - models
+    properties:
+      name:
+        type: string
+        minLength: 1
+        maxLength: 128
+      vendor:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9 _().-]+$
+      protocol:
+        type: string
+        minLength: 1
+        maxLength: 64
+      accessType:
+        type: string
+        minLength: 1
+        maxLength: 64
+      baseUrl:
+        type: string
+        maxLength: 512
+      apiKey:
+        type: string
+        minLength: 1
+        maxLength: 4096
+        description: Plaintext provider API key accepted only on create/update input. Backend encrypts it into integration_provider_account.auth_config and never returns it.
+      secretRef:
+        type: string
+        minLength: 1
+        maxLength: 256
+        pattern: ^(vault|secret)://[^\\s]+$
+        description: Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead.
+      expiresAt:
+        type: string
+        nullable: true
+        maxLength: 64
+        description: Optional channel account expiration timestamp. Omit or null to keep the channel account permanently valid.
+      models:
+        type: array
+        minItems: 1
+        maxItems: 200
+        uniqueItems: true
+        items:
+          type: string
+          minLength: 1
+          maxLength: 128
+          pattern: ^[A-Za-z0-9._:/-]+$
+      capabilities:
+        type: array
+        maxItems: 16
+        uniqueItems: true
+        items:
+          type: string
+          enum:
+          - llm
+          - image
+          - audio
+          - music
+          - sfx
+          - video
+      timeoutMs:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 600000
+        description: Per-channel upstream response timeout in milliseconds.
+      retryPolicy:
+        name: ProviderRetryPolicy
+        type: object
+        additionalProperties: false
+        required:
+        - maxAttempts
+        - retryableStatusCodes
+        properties:
+          maxAttempts:
+            type: integer
+            minimum: 1
+            maximum: 5
+          retryableStatusCodes:
+            type: array
+            minItems: 0
+            maxItems: 8
+            uniqueItems: true
+            items:
+              type: integer
+              enum:
+              - 408
+              - 409
+              - 425
+              - 429
+              - 500
+              - 502
+              - 503
+              - 504
+          backoffMs:
+            type: integer
+            minimum: 0
+            maximum: 2000
+      circuitBreakerPolicy: *id001
+      weight:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 10000
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+        - error
+  response_schema:
+    name: AdminChannelMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminChannelItem
+        type: object
+        additionalProperties: false
+        required: *id002
+        properties: *id003
+        description: Persisted channel snapshot returned by the backend.
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: updateChannel
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/integration/channels
+  read_sources:
+  - integration_provider
+  - integration_channel
+  - integration_channel_model
+  - integration_provider_account
+  write_tables:
+  - integration_channel
+  - integration_channel_model
+  - integration_provider_account
+  - ops_config_snapshot
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminChannelUpdateRequest
+    required:
+    - id
+    properties:
+      id:
+        type: string
+        minLength: 1
+        maxLength: 64
+      name:
+        type: string
+        minLength: 1
+        maxLength: 128
+      vendor:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9 _().-]+$
+      protocol:
+        type: string
+        minLength: 1
+        maxLength: 64
+      accessType:
+        type: string
+        minLength: 1
+        maxLength: 64
+      baseUrl:
+        type: string
+        maxLength: 512
+        nullable: true
+      apiKey:
+        type: string
+        minLength: 1
+        maxLength: 4096
+        description: Plaintext provider API key accepted only on create/update input. Backend encrypts it into integration_provider_account.auth_config and never returns it.
+      secretRef:
+        type: string
+        minLength: 1
+        maxLength: 256
+        pattern: ^(vault|secret)://[^\\s]+$
+        description: Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead.
+      expiresAt:
+        type: string
+        nullable: true
+        maxLength: 64
+        description: Optional channel account expiration timestamp. Null clears the expiration and makes the channel account permanently valid.
+      models:
+        type: array
+        maxItems: 200
+        uniqueItems: true
+        items:
+          type: string
+          minLength: 1
+          maxLength: 128
+          pattern: ^[A-Za-z0-9._:/-]+$
+      capabilities:
+        type: array
+        maxItems: 16
+        uniqueItems: true
+        items:
+          type: string
+          enum:
+          - llm
+          - image
+          - audio
+          - music
+          - sfx
+          - video
+      timeoutMs:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 600000
+        nullable: true
+        description: Per-channel upstream response timeout in milliseconds. Null clears the channel override.
+      retryPolicy:
+        name: ProviderRetryPolicy
+        type: object
+        additionalProperties: false
+        nullable: true
+        required:
+        - maxAttempts
+        - retryableStatusCodes
+        properties:
+          maxAttempts:
+            type: integer
+            minimum: 1
+            maximum: 5
+          retryableStatusCodes:
+            type: array
+            minItems: 0
+            maxItems: 8
+            uniqueItems: true
+            items:
+              type: integer
+              enum:
+              - 408
+              - 409
+              - 425
+              - 429
+              - 500
+              - 502
+              - 503
+              - 504
+          backoffMs:
+            type: integer
+            minimum: 0
+            maximum: 2000
+      circuitBreakerPolicy:
+        name: ProviderCircuitBreakerPolicy
+        type: object
+        additionalProperties: false
+        required: *id004
+        properties: *id005
+        nullable: true
+      weight:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 10000
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+        - error
+  response_schema:
+    name: AdminChannelMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminChannelItem
+        type: object
+        additionalProperties: false
+        required: *id002
+        properties: *id003
+        description: Persisted channel snapshot returned by the backend.
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: deleteChannel
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/integration/channels/{channelId}
+  read_sources:
+  - integration_channel
+  - integration_channel_model
+  write_tables:
+  - integration_channel
+  - integration_channel_model
+  - ops_config_snapshot
+  - ops_audit_log
+  response_schema: &id008
+    name: AdminDeleteResponse
+    type: object
+    additionalProperties: false
+    required:
+    - deleted
+    properties:
+      deleted:
+        type: boolean
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: testChannel
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/integration/channels/{channelId}/verify
+  read_sources:
+  - integration_channel
+  - integration_channel_model
+  - integration_provider_account
+  write_tables:
+  - integration_channel
+  - integration_provider_account
+  - integration_provider_health_snapshot
+  - ops_config_snapshot
+  - ops_audit_log
+  request_id_header: true
+  request_body_required: false
+  response_schema:
+    name: AdminChannelTestResponse
+    required:
+    - channelId
+    - success
+    - status
+    - latency
+    - item
+    properties:
+      channelId:
+        type: string
+      success:
+        type: boolean
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+        - error
+      latency:
+        type: string
+      item:
+        name: AdminChannelItem
+        type: object
+        additionalProperties: false
+        required: *id002
+        properties: *id003
+        description: Persisted channel snapshot returned after the provider health probe. Admin management responses may return the stored plaintext provider API key for channel account relay operations.
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: fetchProviderSecrets
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/integration/provider_secrets
+  read_sources:
+  - integration_provider_account
+  query_parameters:
+  - name: provider_code
+    schema:
+      type: string
+      maxLength: 64
+      pattern: ^[A-Za-z0-9_-]+$
+  - name: status
+    schema:
+      type: string
+      enum:
+      - active
+      - disabled
+  response_schema:
+    name: AdminProviderSecretsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminProviderSecretItem
+          type: object
+          additionalProperties: false
+          required: &id006
+          - id
+          - providerCode
+          - accountCode
+          - name
+          - authType
+          - secretRef
+          - maskedLabel
+          - status
+          - createdAt
+          - updatedAt
+          properties: &id007
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            providerCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+            accountCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+            name:
+              type: string
+              minLength: 1
+              maxLength: 128
+            authType:
+              type: string
+              maxLength: 64
+            secretRef:
+              type: string
+              minLength: 1
+              maxLength: 256
+              pattern: ^(vault|secret)://[^\\s]+$
+            maskedLabel:
+              type: string
+              minLength: 1
+              maxLength: 256
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+            createdAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+            updatedAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: addProviderSecret
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/integration/provider_secrets
+  read_sources:
+  - integration_provider_account
+  write_tables:
+  - integration_provider_account
+  - ops_config_snapshot
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminProviderSecretCreateRequest
+    required:
+    - providerCode
+    - name
+    - secretRef
+    properties:
+      providerCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9_-]+$
+      name:
+        type: string
+        minLength: 1
+        maxLength: 128
+      authType:
+        type: string
+        maxLength: 64
+      secretRef:
+        type: string
+        minLength: 1
+        maxLength: 256
+        pattern: ^(vault|secret)://[^\\s]+$
+        description: Vault/KMS secret reference. Plaintext provider secrets are forbidden.
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+  response_schema:
+    name: AdminProviderSecretMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminProviderSecretItem
+        type: object
+        additionalProperties: false
+        required: *id006
+        properties: *id007
+        description: Persisted provider secret account snapshot returned by the backend.
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: updateProviderSecret
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/integration/provider_secrets
+  read_sources:
+  - integration_provider_account
+  write_tables:
+  - integration_provider_account
+  - ops_config_snapshot
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: AdminProviderSecretUpdateRequest
+    required:
+    - id
+    properties:
+      id:
+        type: string
+        minLength: 1
+        maxLength: 64
+      providerCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9_-]+$
+      name:
+        type: string
+        minLength: 1
+        maxLength: 128
+      authType:
+        type: string
+        maxLength: 64
+      secretRef:
+        type: string
+        minLength: 1
+        maxLength: 256
+        pattern: ^(vault|secret)://[^\\s]+$
+        description: Vault/KMS secret reference. Plaintext provider secrets are forbidden.
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+  response_schema:
+    name: AdminProviderSecretMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminProviderSecretItem
+        type: object
+        additionalProperties: false
+        required: *id006
+        properties: *id007
+        description: Persisted provider secret account snapshot returned by the backend.
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: deleteProviderSecret
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/integration/provider_secrets/{secretId}
+  read_sources:
+  - integration_provider_account
+  write_tables:
+  - integration_provider_account
+  - ops_config_snapshot
+  - ops_audit_log
+  response_schema: *id008

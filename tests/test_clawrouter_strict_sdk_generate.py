@@ -375,17 +375,95 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
             self.assertEqual(repeated.returncode, 0, repeated.stderr)
             self.assertIn("Written files: 0", repeated.stdout)
 
-    def test_generates_generation_agent_usage_fact_metadata_user_id(self) -> None:
+    def test_open_sdk_apply_generation_preserves_authority_openapi_snapshot(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            temp_root = Path(tmp)
+            family = temp_root / "sdks" / "clawrouter-open-sdk"
+            output = family / "clawrouter-open-sdk-typescript"
+            authority_source = temp_root / "apps" / "sdkwork-claw-router-portal" / "public" / "openapi.json"
+            authority_source.parent.mkdir(parents=True, exist_ok=True)
+            authority_spec_path = self.write_openapi(temp_root)
+            authority = json.loads(authority_spec_path.read_text(encoding="utf-8"))
+            sdkgen = json.loads(json.dumps(authority))
+            sdkgen["x-sdkwork-derived-contract"] = {
+                "source": "authority-openapi",
+                "purpose": "sdk-generator-input",
+            }
+            authority_source.write_text(json.dumps(authority, indent=2) + "\n", encoding="utf-8")
+            sdkgen_path = family / "openapi" / "clawrouter-open-sdk.sdkgen.json"
+            sdkgen_path.parent.mkdir(parents=True, exist_ok=True)
+            sdkgen_path.write_text(json.dumps(sdkgen, indent=2) + "\n", encoding="utf-8")
+
+            completed = subprocess.run(
+                [
+                    "node",
+                    "tools/clawrouter_strict_sdk_generate.mjs",
+                    "generate",
+                    "-i",
+                    str(sdkgen_path),
+                    "-o",
+                    str(output),
+                    "-n",
+                    "clawrouter-open-sdk",
+                    "-t",
+                    "ai",
+                    "-l",
+                    "typescript",
+                    "--base-url",
+                    "http://localhost:18082",
+                    "--api-prefix",
+                    "/v1",
+                    "--package-name",
+                    "@sdkwork/clawrouter-open-sdk",
+                    "--fixed-sdk-version",
+                    "0.1.0",
+                    "--no-sync-published-version",
+                ],
+                cwd=ROOT,
+                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+            )
+
+            self.assertEqual(completed.returncode, 0, completed.stderr)
+
+            family_authority = json.loads(
+                (family / "openapi" / "clawrouter-open-sdk.openapi.json").read_text(encoding="utf-8")
+            )
+            family_sdkgen = json.loads(
+                (family / "openapi" / "clawrouter-open-sdk.sdkgen.json").read_text(encoding="utf-8")
+            )
+
+            self.assertEqual(authority, family_authority)
+            self.assertNotIn("x-sdkwork-derived-contract", family_authority)
+            self.assertIn("x-sdkwork-derived-contract", family_sdkgen)
+
+    def test_generates_agent_run_step_usage_fact_metadata_user_id(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             temp_root = Path(tmp)
             output = temp_root / "sdk"
             spec_path = self.write_openapi(temp_root)
 
             spec = json.loads(spec_path.read_text(encoding="utf-8"))
-            spec["paths"]["/app/v3/api/ai/generation/agents/runs"] = {
+            spec["paths"]["/app/v3/api/agents/runs/{runId}/steps/{stepId}/complete"] = {
                 "post": {
-                    "operationId": "generationAgentsRunsCreate",
-                    "tags": ["ai"],
+                    "operationId": "agentRunSteps.submit",
+                    "tags": ["agents"],
+                    "x-sdkwork-resource": "agentRunSteps",
+                    "parameters": [
+                        {
+                            "name": "runId",
+                            "in": "path",
+                            "required": True,
+                            "schema": {"type": "string"},
+                        },
+                        {
+                            "name": "stepId",
+                            "in": "path",
+                            "required": True,
+                            "schema": {"type": "string"},
+                        },
+                    ],
                     "requestBody": {
                         "required": True,
                         "content": {
@@ -393,8 +471,8 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
                                 "schema": {
                                     "type": "object",
                                     "additionalProperties": False,
-                                    "required": ["prompt"],
-                                    "properties": {"prompt": {"type": "string"}},
+                                    "required": ["status"],
+                                    "properties": {"status": {"type": "string"}},
                                 }
                             }
                         },
@@ -405,7 +483,7 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
                             "content": {
                                 "application/json": {
                                     "schema": {
-                                        "$ref": "#/components/schemas/GenerationAgentMeteringEvent"
+                                        "$ref": "#/components/schemas/AgentRunStepMeteringEvent"
                                     }
                                 }
                             },
@@ -413,7 +491,7 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
                     },
                 }
             }
-            spec["components"]["schemas"]["GenerationAgentUsageFactMetadata"] = {
+            spec["components"]["schemas"]["AgentRunStepUsageFactMetadata"] = {
                 "type": "object",
                 "additionalProperties": False,
                 "required": [
@@ -436,7 +514,7 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
                     "meteringSource": {"type": "string", "enum": ["agent-runtime"]},
                 },
             }
-            spec["components"]["schemas"]["GenerationAgentMeteringEvent"] = {
+            spec["components"]["schemas"]["AgentRunStepMeteringEvent"] = {
                 "type": "object",
                 "additionalProperties": False,
                 "required": ["type", "quantity", "usageFactMetadata"],
@@ -457,7 +535,7 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
                     },
                     "quantity": {"type": "string"},
                     "usageFactMetadata": {
-                        "$ref": "#/components/schemas/GenerationAgentUsageFactMetadata"
+                        "$ref": "#/components/schemas/AgentRunStepUsageFactMetadata"
                     },
                 },
             }
@@ -500,11 +578,11 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
             payload = json.loads(completed.stdout)
             files = {file["path"]: file["content"] for file in payload["files"]}
 
-            self.assertIn("src/types/generation-agent-usage-fact-metadata.ts", files)
-            self.assertIn("userId: string;", files["src/types/generation-agent-usage-fact-metadata.ts"])
+            self.assertIn("src/types/agent-run-step-usage-fact-metadata.ts", files)
+            self.assertIn("userId: string;", files["src/types/agent-run-step-usage-fact-metadata.ts"])
             self.assertIn(
-                "usageFactMetadata: GenerationAgentUsageFactMetadata;",
-                files["src/types/generation-agent-metering-event.ts"],
+                "usageFactMetadata: AgentRunStepUsageFactMetadata;",
+                files["src/types/agent-run-step-metering-event.ts"],
             )
 
 

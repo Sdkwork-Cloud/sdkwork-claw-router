@@ -7,6 +7,7 @@ public class AppApiKeyItem {
     private String created;
     private String expires;
     private String group;
+    private String groupName;
     private String id;
     private String ipLimit;
     private String maskedKey;
@@ -20,7 +21,7 @@ public class AppApiKeyItem {
     public String getCopyableKey() {
         return this.copyableKey;
     }
-    
+
     public void setCopyableKey(String copyableKey) {
         this.copyableKey = copyableKey;
     }
@@ -28,7 +29,7 @@ public class AppApiKeyItem {
     public String getCreated() {
         return this.created;
     }
-    
+
     public void setCreated(String created) {
         this.created = created;
     }
@@ -36,7 +37,7 @@ public class AppApiKeyItem {
     public String getExpires() {
         return this.expires;
     }
-    
+
     public void setExpires(String expires) {
         this.expires = expires;
     }
@@ -44,15 +45,23 @@ public class AppApiKeyItem {
     public String getGroup() {
         return this.group;
     }
-    
+
     public void setGroup(String group) {
         this.group = group;
+    }
+
+    public String getGroupName() {
+        return this.groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
     }
 
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -60,7 +69,7 @@ public class AppApiKeyItem {
     public String getIpLimit() {
         return this.ipLimit;
     }
-    
+
     public void setIpLimit(String ipLimit) {
         this.ipLimit = ipLimit;
     }
@@ -68,7 +77,7 @@ public class AppApiKeyItem {
     public String getMaskedKey() {
         return this.maskedKey;
     }
-    
+
     public void setMaskedKey(String maskedKey) {
         this.maskedKey = maskedKey;
     }
@@ -76,7 +85,7 @@ public class AppApiKeyItem {
     public List<String> getModalities() {
         return this.modalities;
     }
-    
+
     public void setModalities(List<String> modalities) {
         this.modalities = modalities;
     }
@@ -84,7 +93,7 @@ public class AppApiKeyItem {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -92,7 +101,7 @@ public class AppApiKeyItem {
     public String getQuota() {
         return this.quota;
     }
-    
+
     public void setQuota(String quota) {
         this.quota = quota;
     }
@@ -100,7 +109,7 @@ public class AppApiKeyItem {
     public String getRate() {
         return this.rate;
     }
-    
+
     public void setRate(String rate) {
         this.rate = rate;
     }
@@ -108,7 +117,7 @@ public class AppApiKeyItem {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -116,7 +125,7 @@ public class AppApiKeyItem {
     public String getUsedQuota() {
         return this.usedQuota;
     }
-    
+
     public void setUsedQuota(String usedQuota) {
         this.usedQuota = usedQuota;
     }

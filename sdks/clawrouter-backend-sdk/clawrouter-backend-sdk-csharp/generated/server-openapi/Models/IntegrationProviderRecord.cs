@@ -7,7 +7,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class IntegrationProviderRecord
     {
         public string? AuthType { get; set; }
-        public string? BaseUrlTemplate { get; set; }
+        public string? BaseUrl { get; set; }
         public Dictionary<string, string>? Capabilities { get; set; }
         public string? ColorToken { get; set; }
         public string? CreatedAt { get; set; }

@@ -8,7 +8,6 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public string? Code { get; set; }
         public IamUserResponse? Data { get; set; }
-        public string? Message { get; set; }
         public string? Msg { get; set; }
     }
 }

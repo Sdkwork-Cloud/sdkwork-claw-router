@@ -69,7 +69,7 @@ Common modules:
 - `/console/providers`: providers and models.
 - `/console/routing`: routing policy.
 - `/console/usage`: request records.
-- `/console/billing`, `/console/account`: billing and account.
+- `/console/commerce`, `/console/account`: billing and account.
 
 ## 5. Call The Gateway API
 

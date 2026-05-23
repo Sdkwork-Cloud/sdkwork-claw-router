@@ -63,11 +63,15 @@ client.set_header("X-Custom-Header", "value");
 - `client.ai()` - ai API
 - `client.auth()` - auth API
 - `client.billing()` - billing API
-- `client.communication()` - communication API
+- `client.chat()` - chat API
 - `client.content()` - content API
 - `client.ecosystem()` - ecosystem API
 - `client.iam()` - iam API
+- `client.memory()` - memory API
+- `client.notification()` - notification API
 - `client.platform()` - platform API
+- `client.runtime()` - runtime API
+- `client.system()` - system API
 
 ## Usage Examples
 
@@ -108,11 +112,15 @@ let result = client.billing().account_points_retrieve().await?;
 println!("{result:?}");
 ```
 
-### communication
+### chat
 
 ```rust
-// List notifications
-let result = client.communication().notifications_list().await?;
+use std::collections::HashMap;
+// List product chat conversations
+let mut query = HashMap::new();
+query.insert("page".to_string(), serde_json::json!(1));
+query.insert("page_size".to_string(), serde_json::json!(2));
+let result = client.chat().conversations_list(Some(&query)).await?;
 println!("{result:?}");
 ```
 
@@ -140,11 +148,66 @@ let result = client.iam().api_key_groups_list().await?;
 println!("{result:?}");
 ```
 
+### memory
+
+```rust
+use std::collections::HashMap;
+// List memory spaces
+let mut query = HashMap::new();
+query.insert("page".to_string(), serde_json::json!(1));
+query.insert("page_size".to_string(), serde_json::json!(2));
+let result = client.memory().spaces_list(Some(&query)).await?;
+println!("{result:?}");
+```
+
+### notification
+
+```rust
+use std::collections::HashMap;
+// List notifications
+let mut query = HashMap::new();
+query.insert("app_id".to_string(), serde_json::json!("1"));
+query.insert("include_archived".to_string(), serde_json::json!(false));
+query.insert("page".to_string(), serde_json::json!(3));
+query.insert("page_size".to_string(), serde_json::json!(4));
+let result = client.notification().notifications_list(Some(&query)).await?;
+println!("{result:?}");
+```
+
 ### platform
 
 ```rust
 // Get categories
 let result = client.platform().apps_store_categories_list().await?;
+println!("{result:?}");
+```
+
+### runtime
+
+```rust
+use std::collections::HashMap;
+// List runtime invocations
+let mut query = HashMap::new();
+query.insert("page".to_string(), serde_json::json!(1));
+query.insert("page_size".to_string(), serde_json::json!(2));
+query.insert("conversation_id".to_string(), serde_json::json!("1"));
+query.insert("chat_turn_id".to_string(), serde_json::json!("1"));
+query.insert("agent_session_id".to_string(), serde_json::json!("1"));
+query.insert("runtime".to_string(), serde_json::json!("runtime"));
+query.insert("status".to_string(), serde_json::json!("status"));
+let result = client.runtime().invocations_list(Some(&query)).await?;
+println!("{result:?}");
+```
+
+### system
+
+```rust
+use std::collections::HashMap;
+// Retrieve public site runtime branding settings
+let mut query = HashMap::new();
+query.insert("tenant_code".to_string(), serde_json::json!("ok"));
+query.insert("organization_code".to_string(), serde_json::json!("ok"));
+let result = client.system().site_runtime_retrieve(Some(&query)).await?;
 println!("{result:?}");
 ```
 

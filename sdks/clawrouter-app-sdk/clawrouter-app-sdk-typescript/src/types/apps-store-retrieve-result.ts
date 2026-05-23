@@ -7,7 +7,5 @@ export interface AppsStoreRetrieveResult {
   /** Data field on apps store retrieve result. */
   data?: AppDetailResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

@@ -1,4 +1,4 @@
-﻿import json
+import json
 import unittest
 from pathlib import Path
 
@@ -6,394 +6,156 @@ from tools.api_contract_manifest import ApiContractManifestGenerator
 
 
 ROOT = Path(__file__).resolve().parents[1]
+PACKAGE_ROOT = (
+    ROOT
+    / "apps"
+    / "sdkwork-claw-router-portal"
+    / "packages"
+    / "sdkwork-claw-router-admin-marketing"
+)
+SERVICE_PATH = PACKAGE_ROOT / "src" / "marketingService.ts"
+VIEW_PATH = PACKAGE_ROOT / "src" / "index.tsx"
+PACKAGE_JSON_PATH = PACKAGE_ROOT / "package.json"
+BACKEND_SDK_SYSTEM_PATH = (
+    ROOT
+    / "sdks"
+    / "clawrouter-backend-sdk"
+    / "clawrouter-backend-sdk-typescript"
+    / "src"
+    / "api"
+    / "system.ts"
+)
+BACKEND_SDK_TYPES_INDEX_PATH = (
+    ROOT
+    / "sdks"
+    / "clawrouter-backend-sdk"
+    / "clawrouter-backend-sdk-typescript"
+    / "src"
+    / "types"
+    / "index.ts"
+)
+BACKEND_SDK_MARKETING_RESULT_PATH = (
+    ROOT
+    / "sdks"
+    / "clawrouter-backend-sdk"
+    / "clawrouter-backend-sdk-typescript"
+    / "src"
+    / "types"
+    / "marketing-referral-stats-list-result.ts"
+)
+BACKEND_SDK_REFERRAL_RESPONSE_PATH = (
+    ROOT
+    / "sdks"
+    / "clawrouter-backend-sdk"
+    / "clawrouter-backend-sdk-typescript"
+    / "src"
+    / "types"
+    / "admin-referral-stats-response.ts"
+)
 
 
 class AdminMarketingRuntimeStandardTest(unittest.TestCase):
-    def test_admin_marketing_write_contracts_use_operation_specific_payloads(self) -> None:
+    def test_admin_marketing_referral_stats_contract_uses_backend_surface(self) -> None:
         manifest = ApiContractManifestGenerator(root=ROOT).generate()
         operations = {operation["key"]: operation for operation in manifest["operations"]}
-        source = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts"
-
-        add_coupon = operations[f"{source}#addCoupon"]
-        generate_batch = operations[f"{source}#generateBatch"]
-        update_promo_code_status = operations[f"{source}#updatePromoCodeStatus"]
-
-        self.assertEqual("AdminCouponCreateRequest", add_coupon["request_schema"]["name"])
-        self.assertEqual(["name", "type", "value"], add_coupon["request_schema"]["schema"]["required"])
-        self.assertEqual("AdminCouponMutationResponse", add_coupon["response_schema"]["name"])
-        self.assertTrue(add_coupon["request_id_header"])
-
-        self.assertEqual("AdminCouponBatchGenerateRequest", generate_batch["request_schema"]["name"])
-        self.assertEqual(
-            ["couponId", "name", "count", "prefix"],
-            generate_batch["request_schema"]["schema"]["required"],
+        key = (
+            "apps/sdkwork-claw-router-portal/packages/"
+            "sdkwork-claw-router-admin-marketing/src/marketingService.ts#fetchReferralStats"
         )
-        self.assertEqual("AdminCouponBatchGenerateResponse", generate_batch["response_schema"]["name"])
-        self.assertTrue(generate_batch["request_id_header"])
+        operation = operations[key]
 
-        self.assertEqual(
-            "AdminPromoCodeStatusUpdateRequest",
-            update_promo_code_status["request_schema"]["name"],
-        )
-        self.assertEqual(["status"], update_promo_code_status["request_schema"]["schema"]["required"])
-        self.assertEqual(
-            "AdminPromoCodeStatusUpdateResponse",
-            update_promo_code_status["response_schema"]["name"],
-        )
-        self.assertTrue(update_promo_code_status["request_id_header"])
+        self.assertEqual("fetchReferralStats", operation["operation"])
+        self.assertEqual("marketing.referralStats.list", operation["operation_id"])
+        self.assertEqual("backend", operation["api_surface"])
+        self.assertEqual("GET", operation["api_method"])
+        self.assertEqual("/backend/v3/api/system/marketing/referral_stats", operation["api_path"])
+        self.assertEqual("read", operation["kind"])
+        self.assertEqual("AdminReferralStatsResponse", operation["response_schema"]["name"])
 
-    def test_admin_marketing_frontend_and_backend_sdk_do_not_use_generic_write_payloads(self) -> None:
-        service = (
-            ROOT
-            / "apps"
-            / "sdkwork-claw-router-portal"
-            / "packages"
-            / "sdkwork-claw-router-admin-marketing"
-            / "src"
-            / "marketingService.ts"
-        ).read_text(encoding="utf-8")
-        billing_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "billing.ts").read_text(
-            encoding="utf-8"
-        )
-        type_exports = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "index.ts"
-        ).read_text(encoding="utf-8")
+    def test_admin_marketing_frontend_and_backend_sdk_use_typed_referral_stats(self) -> None:
+        package = json.loads(PACKAGE_JSON_PATH.read_text(encoding="utf-8"))
+        service = SERVICE_PATH.read_text(encoding="utf-8")
+        view = VIEW_PATH.read_text(encoding="utf-8")
+        sdk_system = BACKEND_SDK_SYSTEM_PATH.read_text(encoding="utf-8")
+        sdk_types_index = BACKEND_SDK_TYPES_INDEX_PATH.read_text(encoding="utf-8")
+        referral_list_result = BACKEND_SDK_MARKETING_RESULT_PATH.read_text(encoding="utf-8")
+        referral_response = BACKEND_SDK_REFERRAL_RESPONSE_PATH.read_text(encoding="utf-8")
 
+        self.assertEqual("module", package["type"])
+        self.assertEqual("tsc --noEmit", package["scripts"]["typecheck"])
+
+        self.assertIn("export interface ReferralStat", service)
         for token in [
-            "AdminCouponCreateRequest",
-            "AdminCouponBatchGenerateRequest",
-            "AdminPromoCodeStatusUpdateRequest",
-            "toCreateCouponRequest",
-            "toGenerateBatchRequest",
-            "toUpdatePromoCodeStatusRequest",
-            "createRequestParams('admin-coupon-create')",
-            "createRequestParams('admin-coupon-batch-generate')",
-            "createRequestParams('admin-promo-code-status-update')",
+            "id: string;",
+            "inviter: string;",
+            "total_invited: number;",
+            "total_revenue: string;",
+            "bonus_awarded: string;",
+            "link: string;",
+            "static async fetchReferralStats(): Promise<ReferralStat[]>",
+            "getClawRouterBackendSdkClient().system.marketing.referralStats.list()",
+            "readRequiredApiItems(result, 'Failed to fetch referral stats')",
+            "normalizeReferralStat",
+            "readRequiredString(item, 'id', 'Referral stat id is required')",
+            "readRequiredString(item, 'inviter', 'Referral inviter is required')",
+            "readRequiredNumber(item, 'total_invited', 'Referral invited total is required')",
+            "readRequiredString(item, 'total_revenue', 'Referral revenue is required')",
+            "readRequiredString(item, 'bonus_awarded', 'Referral bonus is required')",
+            "readRequiredString(item, 'link', 'Referral link is required')",
         ]:
             self.assertIn(token, service)
-
-        self.assertNotIn(".coupon.add(coupon)", service)
-        self.assertNotIn("router.generateBatch(batch)", service)
-        self.assertNotIn("router.updatePromoCodeStatus(id, { status })", service)
-        self.assertNotIn("as unknown as Record<string, unknown>", service)
-
-        self.assertIn(
-            "async create(body: AdminCouponCreateRequest, params?: BillingCouponsCreateParams): Promise<CouponsCreateResult>",
-            billing_api,
-        )
-        self.assertNotIn("async create(body?: OperationRequest): Promise<PlusApiResult>", billing_api)
-
-        self.assertIn(
-            "async create(body: AdminCouponBatchGenerateRequest, params?: BillingCouponBatchesCreateParams): Promise<CouponBatchesCreateResult>",
-            billing_api,
-        )
-        self.assertIn(
-            "async update(codeId: string, body: AdminPromoCodeStatusUpdateRequest, params?: BillingCouponCodesStatusUpdateParams): Promise<CouponCodesStatusUpdateResult>",
-            billing_api,
-        )
-        self.assertNotIn("async generateBatch(body?: OperationRequest): Promise<PlusApiResult>", billing_api)
-        self.assertNotIn(
-            "async updatePromoCodeStatus(promoCodeId: string | number, body?: OperationRequest): Promise<PlusApiResult>",
-            billing_api,
-        )
-        self.assertNotIn("async updatePromoCodeStatus(promoCodeId: string | number", billing_api)
-        self.assertNotIn("headers?: Record<string, string>", billing_api)
-
-        for token in [
+        for retired_token in [
+            "getClawRouterAppSdkClient()",
+            "getClawRouterCommerceService()",
             "AdminCouponCreateRequest",
-            "AdminCouponMutationResponse",
             "AdminCouponBatchGenerateRequest",
-            "AdminCouponBatchGenerateResponse",
             "AdminPromoCodeStatusUpdateRequest",
-            "AdminPromoCodeStatusUpdateResponse",
-            "CouponsCreateResult",
-            "CouponBatchesCreateResult",
-            "CouponCodesStatusUpdateResult",
+            "generateBatch",
+            "updatePromoCodeStatus",
+            "BillingService",
+            "console.billing",
         ]:
-            self.assertIn(f"export type {{ {token} }}", type_exports)
+            self.assertNotIn(retired_token, service)
 
-    def test_admin_marketing_create_forms_use_dedicated_inputs(self) -> None:
-        package_root = (
-            ROOT
-            / "apps"
-            / "sdkwork-claw-router-portal"
-            / "packages"
-            / "sdkwork-claw-router-admin-marketing"
-        )
-        package = json.loads((package_root / "package.json").read_text(encoding="utf-8"))
-        service = (package_root / "src" / "marketingService.ts").read_text(encoding="utf-8")
-        view = (package_root / "src" / "index.tsx").read_text(encoding="utf-8")
-        form = (package_root / "src" / "marketingForm.ts").read_text(encoding="utf-8")
-        verifier = (ROOT / "scripts" / "verify-claw-router-product.mjs").read_text(encoding="utf-8")
+        self.assertIn("MarketingService.fetchReferralStats()", view)
+        self.assertIn("useState<ReferralStat[]>([])", view)
+        self.assertIn("loadReferralStats", view)
+        self.assertIn("visibleStats", view)
+        self.assertIn("BusinessStatePanel", view)
+        self.assertIn("BusinessStateTableRow", view)
+        self.assertIn("AdminTableShell", view)
+        self.assertIn("CopyButton", view)
+        self.assertIn("Search inviter or link", view)
+        self.assertIn("Copy referral link", view)
+        self.assertIn("Referral activity appears here after invited users create commercial activity.", view)
+        for token in [
+            "item.total_invited",
+            "item.total_revenue",
+            "item.bonus_awarded",
+        ]:
+            self.assertIn(token, view)
+        for retired_token in [
+            "AdminCouponCreateRequest",
+            "AdminCouponBatchGenerateRequest",
+            "AdminPromoCodeStatusUpdateRequest",
+            "generateBatch",
+            "updatePromoCodeStatus",
+            "BillingService",
+            "console.billing",
+            "coupon.add",
+            "promo code",
+        ]:
+            self.assertNotIn(retired_token, view)
 
-        self.assertEqual(package["type"], "module")
-        self.assertEqual(package["scripts"]["typecheck"], "tsc --noEmit")
-        self.assertIn("export type CouponCreateInput", service)
-        self.assertIn("export type CouponBatchGenerateInput", service)
-        self.assertIn("static async addCoupon(coupon: CouponCreateInput): Promise<Coupon>", service)
-        self.assertIn(
-            "static async generateBatch(batch: CouponBatchGenerateInput): Promise<{ batch: Batch; codes: PromoCode[] }>",
-            service,
-        )
-        self.assertIn("function toCreateCouponRequest(coupon: CouponCreateInput)", service)
-        self.assertIn("function toGenerateBatchRequest(batch: CouponBatchGenerateInput)", service)
-        self.assertNotIn("Omit<Coupon", service)
-        self.assertIn("createCouponInputFromForm", view)
-        self.assertIn("createCouponBatchGenerateInputFromForm", view)
-        self.assertIn("MarketingService.addCoupon(createCouponInputFromForm(formData))", view)
-        self.assertIn(
-            "MarketingService.generateBatch(createCouponBatchGenerateInputFromForm(formData, selectedCouponId))",
-            view,
-        )
-        self.assertIn("export function createCouponInputFromForm", form)
-        self.assertIn("export function createCouponBatchGenerateInputFromForm", form)
-        self.assertNotIn("Date.now()", view)
-        self.assertNotIn("Math.random()", view)
-        self.assertNotIn("Date.now()", form)
-        self.assertNotIn("Math.random()", form)
-        self.assertIn("admin-marketing-runtime.test.ts", verifier)
-
-    def test_admin_marketing_view_uses_typed_collection_props(self) -> None:
-        view = (
-            ROOT
-            / "apps"
-            / "sdkwork-claw-router-portal"
-            / "packages"
-            / "sdkwork-claw-router-admin-marketing"
-            / "src"
-            / "index.tsx"
-        ).read_text(encoding="utf-8")
-
-        self.assertIn("type CouponsViewProps", view)
-        self.assertIn("type PromoCodesViewProps", view)
-        self.assertIn("React.Dispatch<React.SetStateAction<Coupon[]>>", view)
-        self.assertIn("React.Dispatch<React.SetStateAction<PromoCode[]>>", view)
-        self.assertNotIn(": any", view)
-        self.assertNotIn("as any", view)
-
-    def test_admin_marketing_rust_stores_fail_closed_for_unknown_status_codes(self) -> None:
-        store_paths = [
-            ROOT
-            / "services"
-            / "sdkwork-claw-product"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "sqlite"
-            / "admin_marketing_store.rs",
-            ROOT
-            / "services"
-            / "sdkwork-claw-product"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "postgres"
-            / "admin_marketing_store.rs",
-        ]
-
-        for store_path in store_paths:
-            source = store_path.read_text(encoding="utf-8")
-            relative = store_path.relative_to(ROOT).as_posix()
-
-            for signature in [
-                "fn coupon_status_label(status: i64) -> DomainResult<&'static str>",
-                "fn promo_status_label(\n    status: i64,\n    user_id: Option<&str>,\n    used_at: Option<&str>,\n) -> DomainResult<&'static str>",
-                "fn recharge_status_label(status: i64) -> DomainResult<&'static str>",
-            ]:
-                self.assertIn(signature, source, relative)
-
-            for error_fragment in [
-                "unsupported admin coupon status",
-                "unsupported admin promo code status",
-                "unsupported admin recharge status",
-            ]:
-                self.assertIn(error_fragment, source, relative)
-
-            for required_reader in [
-                'let status = recharge_status_label(integer_cell(row, "status"))?.to_owned();',
-                'let status = coupon_status_label(required_integer_cell(row, "status", "coupon")?)?.to_owned();',
-                'let status = required_integer_cell(row, "status", "promo code")?;',
-            ]:
-                self.assertIn(required_reader, source, relative)
-
-            for forbidden in [
-                "fn coupon_status_label(status: i64) -> &'static str",
-                "fn promo_status_label(status: i64, user_id: Option<&str>, used_at: Option<&str>) -> &'static str",
-                "fn recharge_status_label(status: i64) -> &'static str",
-                '_ => "pending"',
-                'status < 0',
-                'if status == COUPON_STATUS_ACTIVE {\n        "active"\n    } else {\n        "inactive"',
-            ]:
-                self.assertNotIn(forbidden, source, relative)
-
-    def test_admin_marketing_coupon_statuses_do_not_default_missing_database_values(self) -> None:
-        store_paths = [
-            ROOT
-            / "services"
-            / "sdkwork-claw-product"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "sqlite"
-            / "admin_marketing_store.rs",
-            ROOT
-            / "services"
-            / "sdkwork-claw-product"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "postgres"
-            / "admin_marketing_store.rs",
-        ]
-
-        for store_path in store_paths:
-            source = store_path.read_text(encoding="utf-8")
-            compact_source = " ".join(source.split())
-            relative = store_path.relative_to(ROOT).as_posix()
-
-            with self.subTest(store=relative):
-                self.assertIn("status AS status", source, relative)
-                self.assertIn(
-                    'coupon_status_label(required_integer_cell(row, "status", "coupon")?)?.to_owned();',
-                    compact_source,
-                    relative,
-                )
-                self.assertIn("missing admin marketing coupon status from database row", source, relative)
-
-                for forbidden in [
-                    "COALESCE(status, 0) AS status",
-                    "AND COALESCE(status, 0) >= 0",
-                    'coupon_status_label(integer_cell(row, "status"))?.to_owned();',
-                ]:
-                    self.assertNotIn(forbidden, source, relative)
-
-    def test_admin_marketing_coupon_types_do_not_default_missing_database_values(self) -> None:
-        store_paths = [
-            ROOT
-            / "services"
-            / "sdkwork-claw-product"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "sqlite"
-            / "admin_marketing_store.rs",
-            ROOT
-            / "services"
-            / "sdkwork-claw-product"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "postgres"
-            / "admin_marketing_store.rs",
-        ]
-
-        for store_path in store_paths:
-            source = store_path.read_text(encoding="utf-8")
-            compact_source = " ".join(source.split())
-            relative = store_path.relative_to(ROOT).as_posix()
-
-            with self.subTest(store=relative):
-                self.assertIn("type AS type_code", source, relative)
-                self.assertIn(
-                    'coupon_type_label(required_integer_cell(row, "type_code", "coupon type")?)?.to_owned();',
-                    compact_source,
-                    relative,
-                )
-                self.assertIn("fn coupon_type_label(type_code: i64) -> DomainResult<&'static str>", source, relative)
-                self.assertIn("missing admin marketing coupon type from database row", source, relative)
-                self.assertIn("unsupported admin coupon type", source, relative)
-
-                for forbidden in [
-                    "COALESCE(type, 1) AS type_code",
-                    "fn coupon_type_label(type_code: i64, discount: &str) -> &'static str",
-                    "type_code == COUPON_TYPE_DISCOUNT || decimal_is_positive(discount)",
-                    'let type_code = integer_cell(row, "type_code");',
-                ]:
-                    self.assertNotIn(forbidden, source, relative)
-
-    def test_admin_marketing_promo_code_statuses_do_not_default_missing_database_values(self) -> None:
-        store_paths = [
-            ROOT
-            / "services"
-            / "sdkwork-claw-product"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "sqlite"
-            / "admin_marketing_store.rs",
-            ROOT
-            / "services"
-            / "sdkwork-claw-product"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "postgres"
-            / "admin_marketing_store.rs",
-        ]
-
-        for store_path in store_paths:
-            source = store_path.read_text(encoding="utf-8")
-            compact_source = " ".join(source.split())
-            relative = store_path.relative_to(ROOT).as_posix()
-
-            with self.subTest(store=relative):
-                self.assertIn("uc.status AS status", source, relative)
-                self.assertIn("status AS status,", source, relative)
-                self.assertIn(
-                    'let status = required_integer_cell(row, "status", "promo code")?;',
-                    compact_source,
-                    relative,
-                )
-                self.assertIn(
-                    'status: required_integer_cell(&row, "status", "promo code")?,',
-                    compact_source,
-                    relative,
-                )
-                self.assertIn("missing admin marketing promo code status from database row", source, relative)
-
-                for forbidden in [
-                    "COALESCE(status, 1) AS status",
-                    "AND COALESCE(status, 1) > 0",
-                    "AND COALESCE(uc.status, 1) > 0",
-                ]:
-                    self.assertNotIn(forbidden, source, relative)
-
-    def test_admin_marketing_coupon_batch_statuses_do_not_default_missing_database_values(self) -> None:
-        store_paths = [
-            ROOT
-            / "services"
-            / "sdkwork-claw-product"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "sqlite"
-            / "admin_marketing_store.rs",
-            ROOT
-            / "services"
-            / "sdkwork-claw-product"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "postgres"
-            / "admin_marketing_store.rs",
-        ]
-
-        for store_path in store_paths:
-            source = store_path.read_text(encoding="utf-8")
-            relative = store_path.relative_to(ROOT).as_posix()
-
-            with self.subTest(store=relative):
-                self.assertIn("const BATCH_STATUS_ACTIVE: i64 = 1;", source, relative)
-                self.assertIn("AND b.status = 1", source, relative)
-                self.assertIn("AND exact_batch.status = 1", source, relative)
-                self.assertIn("AND status = 1", source, relative)
-
-                for forbidden in [
-                    "COALESCE(b.status, 1) = 1",
-                    "COALESCE(exact_batch.status, 1) = 1",
-                    "COALESCE(status, 1) = 1",
-                ]:
-                    self.assertNotIn(forbidden, source, relative)
+        self.assertIn("public readonly referralStats: SystemMarketingReferralStatsApi;", sdk_system)
+        self.assertIn("async list(): Promise<MarketingReferralStatsListResult>", sdk_system)
+        self.assertIn("backendApiPath(`/system/marketing/referral_stats`)", sdk_system)
+        self.assertIn("export type { MarketingReferralStatsListResult }", sdk_types_index)
+        self.assertIn("export type { AdminReferralStatsResponse }", sdk_types_index)
+        self.assertIn("export interface MarketingReferralStatsListResult", referral_list_result)
+        self.assertIn("data?: AdminReferralStatsResponse;", referral_list_result)
+        self.assertIn("export interface AdminReferralStatsResponse", referral_response)
+        self.assertIn("items: AdminReferralStatItem[];", referral_response)
 
 
 if __name__ == "__main__":

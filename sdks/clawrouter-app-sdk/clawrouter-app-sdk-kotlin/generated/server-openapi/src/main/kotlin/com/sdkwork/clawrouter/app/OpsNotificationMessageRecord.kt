@@ -2,6 +2,7 @@ package com.sdkwork.clawrouter.app
 
 data class OpsNotificationMessageRecord(
     val actionUrl: String? = null,
+    val appId: String? = null,
     val content: String? = null,
     val createdAt: String? = null,
     val dataScope: String? = null,
@@ -17,10 +18,6 @@ data class OpsNotificationMessageRecord(
     val severity: String? = null,
     val status: String? = null,
     val summary: String? = null,
-    val targetOwnerId: String? = null,
-    val targetOwnerType: String? = null,
-    val targetScope: String? = null,
-    val targetUserId: String? = null,
     val tenantId: String? = null,
     val title: String? = null,
     val updatedAt: String? = null,

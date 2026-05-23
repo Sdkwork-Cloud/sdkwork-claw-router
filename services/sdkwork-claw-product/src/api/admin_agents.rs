@@ -131,7 +131,7 @@ fn build_list_query(
     }
     let owner_user_id = match request.owner_user_id {
         Some(value) if value < 1 => {
-            return Err("owner_user_id must be greater than or equal to 1".to_owned())
+            return Err("owner_user_id must be greater than or equal to 1".to_owned());
         }
         value => value,
     };

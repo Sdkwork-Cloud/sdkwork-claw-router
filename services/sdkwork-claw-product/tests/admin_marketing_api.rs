@@ -91,7 +91,7 @@ async fn admin_marketing_route_lists_all_marketing_read_models() {
 
     let recharge_packages = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/billing/recharges/packages", ""),
+        signed_request("GET", "/backend/v3/api/recharges/packages", ""),
     )
     .await;
     assert_eq!("100", recharge_packages["data"]["items"][0]["id"]);
@@ -198,12 +198,15 @@ async fn admin_marketing_route_creates_deletes_generates_and_updates_codes() {
         router.clone(),
         signed_request(
             "POST",
-            "/backend/v3/api/billing/recharges/packages",
+            "/backend/v3/api/recharges/packages",
             r#"{"rmb":"12.00","bonus":30,"status":"active"}"#,
         ),
     )
     .await;
-    assert_eq!("901", create_package["data"]["item"]["id"]);
+    assert_eq!(
+        "recharge-package-10-20-901",
+        create_package["data"]["item"]["id"]
+    );
     assert_eq!("12.00", create_package["data"]["item"]["rmb"]);
     assert_eq!(30, create_package["data"]["item"]["bonus"]);
     assert_eq!(150, create_package["data"]["item"]["points"]);
@@ -211,13 +214,16 @@ async fn admin_marketing_route_creates_deletes_generates_and_updates_codes() {
     let update_package = request_json(
         router.clone(),
         signed_request(
-            "PUT",
-            "/backend/v3/api/billing/recharges/packages/901",
+            "PATCH",
+            "/backend/v3/api/recharges/packages/recharge-package-10-20-901",
             r#"{"rmb":"20.00","bonus":50,"status":"inactive"}"#,
         ),
     )
     .await;
-    assert_eq!("901", update_package["data"]["item"]["id"]);
+    assert_eq!(
+        "recharge-package-10-20-901",
+        update_package["data"]["item"]["id"]
+    );
     assert_eq!("20.00", update_package["data"]["item"]["rmb"]);
     assert_eq!(50, update_package["data"]["item"]["bonus"]);
     assert_eq!(250, update_package["data"]["item"]["points"]);
@@ -250,7 +256,7 @@ async fn admin_marketing_route_creates_deletes_generates_and_updates_codes() {
         router.clone(),
         signed_request(
             "DELETE",
-            "/backend/v3/api/billing/recharges/packages/901",
+            "/backend/v3/api/recharges/packages/recharge-package-10-20-901",
             "",
         ),
     )
@@ -429,7 +435,7 @@ impl AdminMarketingStore for TestAdminMarketingStore {
     ) -> AdminMarketingCommandFuture<'a, bool> {
         Box::pin(async move {
             self.commands.lock().unwrap().push("delete_coupon");
-            assert_eq!(99, command.coupon_id);
+            assert_eq!("99", command.coupon_id);
             Ok(true)
         })
     }
@@ -440,7 +446,7 @@ impl AdminMarketingStore for TestAdminMarketingStore {
     ) -> AdminMarketingCommandFuture<'a, AdminCouponItem> {
         Box::pin(async move {
             self.commands.lock().unwrap().push("update_coupon");
-            assert_eq!(99, command.coupon_id);
+            assert_eq!("99", command.coupon_id);
             assert_eq!("Launch credit updated", command.name);
             assert_eq!("discount", command.coupon_type);
             assert_eq!("15.00%", command.value);
@@ -480,7 +486,7 @@ impl AdminMarketingStore for TestAdminMarketingStore {
     ) -> AdminMarketingCommandFuture<'a, (AdminCouponBatchItem, Vec<AdminPromoCodeItem>)> {
         Box::pin(async move {
             self.commands.lock().unwrap().push("generate_batch");
-            assert_eq!(99, command.coupon_id);
+            assert_eq!("99", command.coupon_id);
             assert_eq!(3, command.count);
             let batch = AdminCouponBatchItem {
                 id: "12".to_owned(),
@@ -539,7 +545,7 @@ impl AdminMarketingStore for TestAdminMarketingStore {
                 .lock()
                 .unwrap()
                 .push("update_promo_code_status");
-            assert_eq!(501, command.promo_code_id);
+            assert_eq!("501", command.promo_code_id);
             assert_eq!("voided", command.status);
             Ok(true)
         })
@@ -652,7 +658,7 @@ impl AdminMarketingStore for TestAdminMarketingStore {
             assert_eq!("12.00", command.rmb);
             assert_eq!(30, command.bonus);
             Ok(AdminRechargePackageItem {
-                id: "901".to_owned(),
+                id: "recharge-package-10-20-901".to_owned(),
                 rmb: command.rmb,
                 bonus: command.bonus,
                 points: 150,
@@ -669,11 +675,11 @@ impl AdminMarketingStore for TestAdminMarketingStore {
                 .lock()
                 .unwrap()
                 .push("update_recharge_package");
-            assert_eq!(901, command.package_id);
+            assert_eq!("recharge-package-10-20-901", command.package_id);
             assert_eq!("20.00", command.rmb);
             assert_eq!(50, command.bonus);
             Ok(AdminRechargePackageItem {
-                id: command.package_id.to_string(),
+                id: command.package_id,
                 rmb: command.rmb,
                 bonus: command.bonus,
                 points: 250,
@@ -711,7 +717,7 @@ impl AdminMarketingStore for TestAdminMarketingStore {
                 .lock()
                 .unwrap()
                 .push("delete_recharge_package");
-            assert_eq!(901, command.package_id);
+            assert_eq!("recharge-package-10-20-901", command.package_id);
             Ok(true)
         })
     }

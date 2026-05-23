@@ -189,7 +189,7 @@ class ClawRouterOpenApiContractAudit:
         if not isinstance(problem_properties, dict):
             messages.append(f"{surface} schema component ProblemDetail properties must be an object")
             return messages
-        for field in ("type", "title", "status", "code", "traceId", "errors"):
+        for field in ("type", "title", "status", "detail", "instance", "requestId", "code", "traceId", "errors"):
             if field not in problem_properties:
                 messages.append(f"{surface} schema component ProblemDetail.{field} must be declared")
         return messages
@@ -261,6 +261,9 @@ class ClawRouterOpenApiContractAudit:
             messages.append(f"{label} must declare x-sdkwork-domain")
         if not self._non_empty_string(operation.get("x-sdkwork-resource")):
             messages.append(f"{label} must declare x-sdkwork-resource")
+        for field in ("summary", "description"):
+            if not self._non_empty_string(operation.get(field)):
+                messages.append(f"{label} must declare {field}")
         return messages
 
     def _audit_query_parameters(self, label: str, operation: dict[str, Any]) -> list[str]:
@@ -286,6 +289,11 @@ class ClawRouterOpenApiContractAudit:
         responses = operation.get("responses")
         if not isinstance(responses, dict):
             return messages
+        default_response = responses.get("default")
+        if not self._problem_detail_response(default_response):
+            messages.append(
+                f"{label} must declare default application/problem+json ProblemDetail response"
+            )
         for status_code, response in responses.items():
             numeric_status = int(status_code) if isinstance(status_code, str) and status_code.isdigit() else None
             if status_code != "default" and (numeric_status is None or numeric_status < 400):
@@ -301,6 +309,17 @@ class ClawRouterOpenApiContractAudit:
             if not self._schema_refers_to(schema, "#/components/schemas/ProblemDetail"):
                 messages.append(f"{label} {status_code} response must reference ProblemDetail")
         return messages
+
+    def _problem_detail_response(self, response: Any) -> bool:
+        if not isinstance(response, dict):
+            return False
+        content = response.get("content")
+        if not isinstance(content, dict):
+            return False
+        media = content.get("application/problem+json")
+        if not isinstance(media, dict):
+            return False
+        return self._schema_refers_to(media.get("schema"), "#/components/schemas/ProblemDetail")
 
     def _audit_success_response(
         self,
@@ -342,6 +361,18 @@ class ClawRouterOpenApiContractAudit:
             messages.append(f"{label} result schema {component_name}.data must be explicitly declared")
         elif self._schema_refers_to(properties.get("data"), "#/components/schemas/PlusApiResult"):
             messages.append(f"{label} result schema {component_name}.data must not reference PlusApiResult")
+        elif "data" in properties:
+            messages.extend(
+                self._validate_component_schema(
+                    label=label,
+                    component_name=component_name,
+                    schema=properties.get("data"),
+                    schemas=schemas,
+                    context=f"result schema {component_name}.data",
+                    allow_empty_closed_object=False,
+                    visited={component_name},
+                )
+            )
         return messages
 
     def _audit_request_body(
@@ -382,6 +413,159 @@ class ClawRouterOpenApiContractAudit:
                     messages.append(
                         f"{label} request schema {component_name}.{property_name} must use q for search text"
                     )
+            messages.extend(
+                self._validate_component_schema(
+                    label=label,
+                    component_name=component_name,
+                    schema=schema,
+                    schemas=schemas,
+                    context=f"request schema {component_name}",
+                    allow_empty_closed_object=True,
+                    visited={component_name},
+                )
+            )
+        return messages
+
+    def _validate_component_schema(
+        self,
+        *,
+        label: str,
+        component_name: str,
+        schema: Any,
+        schemas: dict[str, Any],
+        context: str,
+        allow_empty_closed_object: bool,
+        visited: set[str],
+    ) -> list[str]:
+        messages: list[str] = []
+        if not isinstance(schema, dict):
+            return [f"{label} {context} must use a typed schema or component reference"]
+
+        schema_ref = self._schema_ref(schema)
+        if schema_ref:
+            referenced_name = schema_ref.rsplit("/", 1)[-1] if schema_ref.startswith("#/components/schemas/") else ""
+            if not referenced_name:
+                return [f"{label} {context} must use a local component schema reference"]
+            referenced_schema = schemas.get(referenced_name)
+            if not isinstance(referenced_schema, dict):
+                return [f"{label} {context} references missing component schema {referenced_name}"]
+            if referenced_name in visited:
+                return []
+            return self._validate_component_schema(
+                label=label,
+                component_name=referenced_name,
+                schema=referenced_schema,
+                schemas=schemas,
+                context=f"{context} component {referenced_name}",
+                allow_empty_closed_object=False,
+                visited={*visited, referenced_name},
+            )
+
+        if schema.get("nullable") is True and not self._schema_has_base_type_or_ref(schema):
+            return [f"{label} {context} nullable schema must also declare a base type or reference"]
+
+        schema_type = schema.get("type")
+        if schema_type == "array":
+            items = schema.get("items")
+            if not self._meaningfully_typed_schema(items, allow_empty_closed_object=False):
+                return [f"{label} {context} array schema must declare typed items"]
+            messages.extend(
+                self._validate_component_schema(
+                    label=label,
+                    component_name=component_name,
+                    schema=items,
+                    schemas=schemas,
+                    context=f"{context}.items",
+                    allow_empty_closed_object=False,
+                    visited=visited,
+                )
+            )
+            return messages
+
+        for union_key in ("allOf", "anyOf", "oneOf"):
+            variants = schema.get(union_key)
+            if variants is None:
+                continue
+            if not isinstance(variants, list) or not variants:
+                messages.append(f"{label} {context}.{union_key} must contain typed schema variants")
+                continue
+            for index, variant in enumerate(variants):
+                if not self._meaningfully_typed_schema(variant, allow_empty_closed_object=False):
+                    messages.append(f"{label} {context}.{union_key}[{index}] must use a typed schema or component reference")
+                    continue
+                messages.extend(
+                    self._validate_component_schema(
+                        label=label,
+                        component_name=component_name,
+                        schema=variant,
+                        schemas=schemas,
+                        context=f"{context}.{union_key}[{index}]",
+                        allow_empty_closed_object=False,
+                        visited=visited,
+                    )
+                )
+            return messages
+
+        if schema_type == "object":
+            # Object schemas need detailed diagnostics below so callers can fix
+            # open maps, empty closed payloads, and unknown required fields.
+            pass
+        elif not self._meaningfully_typed_schema(schema, allow_empty_closed_object=allow_empty_closed_object):
+            return [f"{label} {context} must use a typed schema or component reference"]
+
+        if schema_type == "object":
+            properties = schema.get("properties")
+            additional_properties = schema.get("additionalProperties")
+            if additional_properties is True:
+                messages.append(f"{label} {context} object schema must not use unbounded additionalProperties true")
+            elif isinstance(additional_properties, dict):
+                if not self._meaningfully_typed_schema(additional_properties, allow_empty_closed_object=False):
+                    messages.append(f"{label} {context}.additionalProperties must use a typed schema or component reference")
+                else:
+                    messages.extend(
+                        self._validate_component_schema(
+                            label=label,
+                            component_name=component_name,
+                            schema=additional_properties,
+                            schemas=schemas,
+                            context=f"{context}.additionalProperties",
+                            allow_empty_closed_object=False,
+                            visited=visited,
+                        )
+                    )
+            elif additional_properties is not False and component_name not in {"JsonObject", "JsonValue", "ProblemDetail"}:
+                messages.append(
+                    f"{label} {context} object schema must explicitly close additionalProperties or declare a typed map value schema"
+                )
+
+            if isinstance(properties, dict):
+                if (
+                    not properties
+                    and additional_properties is False
+                    and not allow_empty_closed_object
+                    and component_name != "NoData"
+                ):
+                    messages.append(f"{label} {context} object schema must declare typed properties or typed additionalProperties")
+                for property_name, property_schema in properties.items():
+                    messages.extend(
+                        self._validate_component_schema(
+                            label=label,
+                            component_name=component_name,
+                            schema=property_schema,
+                            schemas=schemas,
+                            context=f"{context}.{property_name}",
+                            allow_empty_closed_object=False,
+                            visited=visited,
+                        )
+                    )
+                required = schema.get("required")
+                if isinstance(required, list):
+                    for required_property in required:
+                        if isinstance(required_property, str) and required_property not in properties:
+                            messages.append(f"{label} {context}.required declares unknown property {required_property}")
+            elif additional_properties is False and not allow_empty_closed_object and component_name != "NoData":
+                messages.append(f"{label} {context} object schema must declare properties")
+
         return messages
 
     def _is_search_text_property_alias(self, property_name: Any, property_schema: Any) -> bool:
@@ -486,6 +670,51 @@ class ClawRouterOpenApiContractAudit:
             return True
         all_of = schema.get("allOf")
         return isinstance(all_of, list) and all_of == [{"$ref": expected_ref}]
+
+    def _schema_ref(self, schema: Any) -> str:
+        if not isinstance(schema, dict):
+            return ""
+        ref = schema.get("$ref")
+        if isinstance(ref, str):
+            return ref
+        all_of = schema.get("allOf")
+        if isinstance(all_of, list) and len(all_of) == 1 and isinstance(all_of[0], dict):
+            nested_ref = all_of[0].get("$ref")
+            return nested_ref if isinstance(nested_ref, str) else ""
+        return ""
+
+    def _schema_has_base_type_or_ref(self, schema: dict[str, Any]) -> bool:
+        if self._schema_ref(schema):
+            return True
+        if isinstance(schema.get("type"), str) or isinstance(schema.get("type"), list):
+            return True
+        if isinstance(schema.get("oneOf"), list) or isinstance(schema.get("anyOf"), list) or isinstance(schema.get("allOf"), list):
+            return True
+        return False
+
+    def _meaningfully_typed_schema(self, schema: Any, *, allow_empty_closed_object: bool) -> bool:
+        if not isinstance(schema, dict):
+            return False
+        if self._schema_ref(schema):
+            return True
+        if isinstance(schema.get("oneOf"), list) or isinstance(schema.get("anyOf"), list) or isinstance(schema.get("allOf"), list):
+            return True
+        schema_type = schema.get("type")
+        if isinstance(schema_type, list):
+            return bool(schema_type) and all(isinstance(item, str) for item in schema_type)
+        if schema_type == "array":
+            return self._meaningfully_typed_schema(schema.get("items"), allow_empty_closed_object=False)
+        if schema_type == "object":
+            properties = schema.get("properties")
+            additional_properties = schema.get("additionalProperties")
+            if isinstance(properties, dict) and properties:
+                return True
+            if allow_empty_closed_object and properties == {} and additional_properties is False:
+                return True
+            if isinstance(additional_properties, dict):
+                return self._meaningfully_typed_schema(additional_properties, allow_empty_closed_object=False)
+            return False
+        return isinstance(schema_type, str)
 
 def method_upper(method: str) -> str:
     return method.upper()

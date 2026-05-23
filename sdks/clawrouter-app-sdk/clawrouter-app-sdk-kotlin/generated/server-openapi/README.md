@@ -75,11 +75,15 @@ val client = SdkworkAppClient(config)
 - `client.ai` - ai API
 - `client.auth` - auth API
 - `client.billing` - billing API
-- `client.communication` - communication API
+- `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
+- `client.memory` - memory API
+- `client.notification` - notification API
 - `client.platform` - platform API
+- `client.runtime` - runtime API
+- `client.system` - system API
 
 ## Usage Examples
 
@@ -92,7 +96,7 @@ val params = linkedMapOf<String, Any>(
     "page_size" to 2,
     "q" to "q"
 )
-val result = client.agents.list(params)
+val result = client.agents.agentDefinitionsList(params)
 println(result)
 ```
 
@@ -120,11 +124,15 @@ val result = client.billing.accountPointsRetrieve()
 println(result)
 ```
 
-### communication
+### chat
 
 ```kotlin
-// List messages
-val result = client.communication.notificationsList()
+// List product chat conversations
+val params = linkedMapOf<String, Any>(
+    "page" to 1,
+    "page_size" to 2
+)
+val result = client.chat.conversationsList(params)
 println(result)
 ```
 
@@ -147,8 +155,34 @@ println(result)
 ### iam
 
 ```kotlin
-// List keys
-val result = client.iam.apiKeysList()
+// List groups
+val result = client.iam.apiKeyGroupsList()
+println(result)
+```
+
+### memory
+
+```kotlin
+// List memory spaces
+val params = linkedMapOf<String, Any>(
+    "page" to 1,
+    "page_size" to 2
+)
+val result = client.memory.spacesList(params)
+println(result)
+```
+
+### notification
+
+```kotlin
+// List notifications
+val params = linkedMapOf<String, Any>(
+    "app_id" to "1",
+    "include_archived" to false,
+    "page" to 3,
+    "page_size" to 4
+)
+val result = client.notification.notificationsList(params)
 println(result)
 ```
 
@@ -157,6 +191,35 @@ println(result)
 ```kotlin
 // Get categories
 val result = client.platform.appsStoreCategoriesList()
+println(result)
+```
+
+### runtime
+
+```kotlin
+// List runtime invocations
+val params = linkedMapOf<String, Any>(
+    "page" to 1,
+    "page_size" to 2,
+    "conversation_id" to "1",
+    "chat_turn_id" to "1",
+    "agent_session_id" to "1",
+    "runtime" to "runtime",
+    "status" to "status"
+)
+val result = client.runtime.invocationsList(params)
+println(result)
+```
+
+### system
+
+```kotlin
+// Retrieve public site runtime branding settings
+val params = linkedMapOf<String, Any>(
+    "tenant_code" to "ok",
+    "organization_code" to "ok"
+)
+val result = client.system.siteRuntimeRetrieve(params)
 println(result)
 ```
 

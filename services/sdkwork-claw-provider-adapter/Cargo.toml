@@ -1,0 +1,24 @@
+[package]
+name = "sdkwork-claw-provider-adapter"
+version.workspace = true
+edition.workspace = true
+license-file.workspace = true
+
+[[bin]]
+name = "claw-provider-adapter"
+path = "src/main.rs"
+
+[dependencies]
+anyhow.workspace = true
+axum.workspace = true
+serde_json.workspace = true
+sdkwork-claw-config = { path = "../../crates/sdkwork-claw-config" }
+sdkwork-claw-provider-adapter-core = { path = "../../crates/sdkwork-claw-provider-adapter-core" }
+sdkwork-claw-provider-adapter-http = { path = "../../crates/sdkwork-claw-provider-adapter-http" }
+sdkwork-provider-adapter-alicloud = { path = "../../crates/provider-adapters/alicloud" }
+sdkwork-provider-adapter-tencent-cloud = { path = "../../crates/provider-adapters/tencent-cloud" }
+tokio.workspace = true
+
+[dev-dependencies]
+sdkwork-claw-provider-adapter-contract = { path = "../../crates/sdkwork-claw-provider-adapter-contract" }
+tower.workspace = true

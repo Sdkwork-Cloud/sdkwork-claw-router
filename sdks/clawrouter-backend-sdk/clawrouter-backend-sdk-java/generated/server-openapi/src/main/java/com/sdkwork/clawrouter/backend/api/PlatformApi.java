@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class PlatformApi {
     private final HttpClient client;
-    
+
     public PlatformApi(HttpClient client) {
         this.client = client;
     }
@@ -39,6 +39,42 @@ public class PlatformApi {
         );
         Object raw = client.post(ApiPaths.backendPath("/platform/apps"), body, null, requestHeaders, "application/json");
         return client.convertValue(raw, new TypeReference<AppsCreateResult>() {});
+    }
+
+    /** List app categories */
+    public AppsCategoriesListResult appsCategoriesList() throws Exception {
+        Object raw = client.get(ApiPaths.backendPath("/platform/apps/categories"));
+        return client.convertValue(raw, new TypeReference<AppsCategoriesListResult>() {});
+    }
+
+    /** Create app category */
+    public AppsCategoriesCreateResult appsCategoriesCreate(AdminAppCategoryCreateRequest body, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.backendPath("/platform/apps/categories"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<AppsCategoriesCreateResult>() {});
+    }
+
+    /** Delete app category */
+    public AppsCategoriesDeleteResult appsCategoriesDelete(String categoryId, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.delete(ApiPaths.backendPath("/platform/apps/categories/" + serializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false)) + ""), null, requestHeaders);
+        return client.convertValue(raw, new TypeReference<AppsCategoriesDeleteResult>() {});
+    }
+
+    /** Update app category */
+    public AppsCategoriesUpdateResult appsCategoriesUpdate(String categoryId, AdminAppCategoryUpdateRequest body, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.put(ApiPaths.backendPath("/platform/apps/categories/" + serializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<AppsCategoriesUpdateResult>() {});
     }
 
     /** Delete app */

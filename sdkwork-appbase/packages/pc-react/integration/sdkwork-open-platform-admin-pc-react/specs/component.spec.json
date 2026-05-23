@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.component.spec",
+  "component": {
+    "name": "@sdkwork/open-platform-admin-pc-react",
+    "displayName": "SDKWork Open Platform Admin PC React",
+    "version": "0.1.0",
+    "type": "react-package",
+    "root": "sdkwork-appbase/packages/pc-react/integration/sdkwork-open-platform-admin-pc-react",
+    "domain": "integration",
+    "declaredDomain": "integration",
+    "capability": "open-platform-admin",
+    "status": "ready",
+    "languages": [
+      "typescript"
+    ],
+    "generated": false,
+    "private": true,
+    "manifests": [
+      "package.json"
+    ]
+  },
+  "contracts": {
+    "publicExports": [
+      "."
+    ],
+    "runtimeEntrypoints": [
+      "package.json#scripts.typecheck"
+    ],
+    "sdkClients": [
+      "backend.openPlatform.accounts"
+    ],
+    "events": [],
+    "configKeys": [
+      "package.json#sdkwork"
+    ]
+  },
+  "integration": {
+    "sdkPolicy": "Generated backend SDK clients are injected into the service. The package must not create raw HTTP clients, manual auth headers, or provider-specific client modules."
+  },
+  "verification": {
+    "commands": [
+      "pnpm --filter @sdkwork/open-platform-admin-pc-react typecheck"
+    ]
+  },
+  "metadata": {
+    "managedBy": "manual-standardization",
+    "standardVersion": "2026-05-21"
+  }
+}

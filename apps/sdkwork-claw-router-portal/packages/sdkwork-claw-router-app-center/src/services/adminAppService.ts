@@ -1,18 +1,22 @@
 import {
   createRequestParams,
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
   readApiRecord,
   readBoolean,
   readNullableString,
+  readNumber,
   readRequiredApiItem,
   readRequiredApiItems,
   readRequiredString,
+  readString,
   requiredSafePathSegment,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
 import type {
+  AdminAppCategoryCreateRequest,
+  AdminAppCategoryUpdateRequest,
   AdminAppConfig,
   AdminAppCreateRequest,
   AdminAppItemResponse,
@@ -21,6 +25,44 @@ import type {
 
 export type AdminAppStatus = AdminAppItemResponse['status'];
 export type AdminAppMarketStatus = AdminAppItemResponse['marketStatus'];
+
+export interface AdminAppCategory {
+  id: string;
+  name: string;
+  description: string;
+  code: string;
+  icon: string;
+  sortWeight: number;
+  parentId: string | null;
+  path: string;
+  visible: boolean;
+  status: number;
+  type: 999999;
+}
+
+export interface AdminAppCategoryCreateInput extends AdminAppCategoryCreateRequest {
+  name: string;
+  description?: string;
+  code?: string;
+  icon?: string;
+  sortWeight?: number;
+  parentId?: string | null;
+  path?: string;
+  visible?: boolean;
+  status?: number;
+}
+
+export interface AdminAppCategoryUpdateInput extends AdminAppCategoryUpdateRequest {
+  name?: string;
+  description?: string | null;
+  code?: string | null;
+  icon?: string | null;
+  sortWeight?: number;
+  parentId?: string | null;
+  path?: string | null;
+  visible?: boolean;
+  status?: number;
+}
 
 export interface AdminApp {
   id: string;
@@ -119,6 +161,41 @@ interface AdminAppListSdkParams {
 }
 
 export class AdminAppService {
+  static async fetchAppCategories(): Promise<AdminAppCategory[]> {
+    const result = await getClawRouterBackendSdkClient().platform.apps.categories.list();
+    ensureSdkworkApiSuccess(result, 'Failed to fetch app categories');
+    return readRequiredApiItems(result, 'Failed to fetch app categories')
+      .map(normalizeAppCategory);
+  }
+
+  static async createAppCategory(input: AdminAppCategoryCreateInput): Promise<AdminAppCategory> {
+    const result = await getClawRouterBackendSdkClient().platform.apps.categories.create(
+      normalizeCreateCategoryRequest(input),
+      createRequestParams('admin-app-category-create'),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to create app category');
+    return normalizeAppCategory(readRequiredApiItem(result, 'Created app category response is missing data'));
+  }
+
+  static async updateAppCategory(categoryId: string, input: AdminAppCategoryUpdateInput): Promise<AdminAppCategory> {
+    const result = await getClawRouterBackendSdkClient().platform.apps.categories.update(
+      requiredSafePathSegment(categoryId, 'categoryId'),
+      normalizeUpdateCategoryRequest(input),
+      createRequestParams('admin-app-category-update'),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to update app category');
+    return normalizeAppCategory(readRequiredApiItem(result, 'Updated app category response is missing data'));
+  }
+
+  static async deleteAppCategory(categoryId: string): Promise<boolean> {
+    const result = await getClawRouterBackendSdkClient().platform.apps.categories.delete(
+      requiredSafePathSegment(categoryId, 'categoryId'),
+      createRequestParams('admin-app-category-delete'),
+    );
+    ensureDeleteResult(result, 'App category delete confirmation is required');
+    return true;
+  }
+
   static async fetchApps(query: AdminAppListInput = {}): Promise<AdminApp[]> {
     const result = await getClawRouterBackendSdkClient().platform.apps.list(
       {
@@ -126,7 +203,7 @@ export class AdminAppService {
         ...createRequestParams('admin-app-list'),
       },
     );
-    ensurePlusApiSuccess(result, 'Failed to fetch apps');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch apps');
     return readRequiredApiItems(result, 'Failed to fetch apps')
       .map(normalizeAdminApp);
   }
@@ -136,7 +213,7 @@ export class AdminAppService {
       requiredSafePathSegment(appId, 'appId'),
       createRequestParams('admin-app-fetch'),
     );
-    ensurePlusApiSuccess(result, 'Failed to fetch app');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch app');
     return normalizeAdminApp(readRequiredApiItem(result, 'App response is missing data'));
   }
 
@@ -145,7 +222,7 @@ export class AdminAppService {
       normalizeCreateRequest(input),
       createRequestParams('admin-app-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to create app');
+    ensureSdkworkApiSuccess(result, 'Failed to create app');
     return normalizeAdminApp(readRequiredApiItem(result, 'Created app response is missing data'));
   }
 
@@ -155,7 +232,7 @@ export class AdminAppService {
       normalizeUpdateRequest(input),
       createRequestParams('admin-app-update'),
     );
-    ensurePlusApiSuccess(result, 'Failed to update app');
+    ensureSdkworkApiSuccess(result, 'Failed to update app');
     return normalizeAdminApp(readRequiredApiItem(result, 'Updated app response is missing data'));
   }
 
@@ -173,7 +250,7 @@ export class AdminAppService {
       requiredSafePathSegment(appId, 'appId'),
       createRequestParams('admin-app-enable'),
     );
-    ensurePlusApiSuccess(result, 'Failed to enable app');
+    ensureSdkworkApiSuccess(result, 'Failed to enable app');
     return ensureAppStatus(
       normalizeAdminApp(readRequiredApiItem(result, 'Enabled app response is missing data')),
       'ACTIVE',
@@ -186,7 +263,7 @@ export class AdminAppService {
       requiredSafePathSegment(appId, 'appId'),
       createRequestParams('admin-app-disable'),
     );
-    ensurePlusApiSuccess(result, 'Failed to disable app');
+    ensureSdkworkApiSuccess(result, 'Failed to disable app');
     return ensureAppStatus(
       normalizeAdminApp(readRequiredApiItem(result, 'Disabled app response is missing data')),
       'INACTIVE',
@@ -199,7 +276,7 @@ export class AdminAppService {
       requiredSafePathSegment(appId, 'appId'),
       createRequestParams('admin-app-publish'),
     );
-    ensurePlusApiSuccess(result, 'Failed to publish app');
+    ensureSdkworkApiSuccess(result, 'Failed to publish app');
     return ensureAppMarketStatus(
       normalizeAdminApp(readRequiredApiItem(result, 'Published app response is missing data')),
       'PUBLISHED',
@@ -212,7 +289,7 @@ export class AdminAppService {
       requiredSafePathSegment(appId, 'appId'),
       createRequestParams('admin-app-offline'),
     );
-    ensurePlusApiSuccess(result, 'Failed to offline app');
+    ensureSdkworkApiSuccess(result, 'Failed to offline app');
     return ensureAppMarketStatus(
       normalizeAdminApp(readRequiredApiItem(result, 'Offline app response is missing data')),
       'OFFLINE',
@@ -239,6 +316,54 @@ export function updateAdminAppInputFromForm(form: FormData): AdminAppUpdateInput
   }
   mergeSharedFormFields(input, form, 'update');
   return input;
+}
+
+export function createAppCategoryInputFromForm(form: FormData): AdminAppCategoryCreateInput {
+  const input: AdminAppCategoryCreateInput = {
+    name: requiredFormText(form, 'name', 255),
+  };
+  mergeSharedCategoryFormFields(input, form, 'create');
+  return input;
+}
+
+export function updateAppCategoryInputFromForm(form: FormData): AdminAppCategoryUpdateInput {
+  const input: AdminAppCategoryUpdateInput = {};
+  const name = optionalFormText(form, 'name', 255);
+  if (name) {
+    input.name = name;
+  }
+  mergeSharedCategoryFormFields(input, form, 'update');
+  return input;
+}
+
+function normalizeCreateCategoryRequest(input: AdminAppCategoryCreateInput): AdminAppCategoryCreateRequest {
+  return pruneUndefined({
+    ...input,
+    name: requiredText(input.name, 'name', 255),
+    description: optionalText(input.description, 'description', 4000),
+    code: optionalCategoryCode(input.code, 'code', 128),
+    icon: optionalText(input.icon, 'icon', 255),
+    parentId: normalizeNullableId(input.parentId),
+    path: optionalPath(input.path, 'path', 1024),
+    sortWeight: input.sortWeight === undefined ? undefined : boundedInteger(input.sortWeight, 'sortWeight', -1_000_000, 1_000_000),
+    status: input.status === undefined ? undefined : boundedInteger(input.status, 'status', -1_000_000, 1_000_000),
+    visible: input.visible,
+  });
+}
+
+function normalizeUpdateCategoryRequest(input: AdminAppCategoryUpdateInput): AdminAppCategoryUpdateRequest {
+  return pruneUndefined({
+    ...input,
+    name: optionalText(input.name, 'name', 255),
+    description: normalizeNullableText(input.description, 'description', 4000),
+    code: normalizeNullableCategoryCode(input.code, 'code', 128),
+    icon: normalizeNullableText(input.icon, 'icon', 255),
+    parentId: normalizeNullableId(input.parentId),
+    path: normalizeNullablePath(input.path, 'path', 1024),
+    sortWeight: input.sortWeight === undefined ? undefined : boundedInteger(input.sortWeight, 'sortWeight', -1_000_000, 1_000_000),
+    status: input.status === undefined ? undefined : boundedInteger(input.status, 'status', -1_000_000, 1_000_000),
+    visible: input.visible,
+  });
 }
 
 function normalizeListRequest(input: AdminAppListInput): AdminAppListSdkParams {
@@ -297,7 +422,7 @@ function normalizeCreateRequest(input: AdminAppCreateInput): AdminAppCreateReque
 }
 
 function ensureDeleteResult(result: unknown, message: string): void {
-  ensurePlusApiSuccess(result, message);
+  ensureSdkworkApiSuccess(result, message);
   if (readBoolean(readApiRecord(result), 'deleted') !== true) {
     throw new Error(message);
   }
@@ -378,6 +503,27 @@ function normalizeAdminApp(value: unknown): AdminApp {
   };
 }
 
+function normalizeAppCategory(value: unknown): AdminAppCategory {
+  const item = readRequiredRecord(value, 'App category record is required');
+  const type = readRequiredInteger(item, 'type', 'App category type is required');
+  if (type !== 999999) {
+    throw new Error(`Unsupported app category type: ${type}`);
+  }
+  return {
+    id: readRequiredString(item, 'id', 'App category id is required'),
+    name: readRequiredString(item, 'name', 'App category name is required'),
+    description: readString(item, 'description'),
+    code: readString(item, 'code'),
+    icon: readString(item, 'icon'),
+    sortWeight: readRequiredInteger(item, 'sortWeight', 'App category sort weight is required'),
+    parentId: readNullableString(item, 'parentId'),
+    path: readString(item, 'path'),
+    visible: readRequiredBoolean(item, 'visible', 'App category visibility is required'),
+    status: readRequiredInteger(item, 'status', 'App category status is required'),
+    type,
+  };
+}
+
 function mergeSharedFormFields(input: AdminAppCreateInput | AdminAppUpdateInput, form: FormData, mode: 'create' | 'update'): void {
   for (const [key, maxLength] of [
     ['description', 4000],
@@ -435,6 +581,37 @@ function mergeSharedFormFields(input: AdminAppCreateInput | AdminAppUpdateInput,
   }
 }
 
+function mergeSharedCategoryFormFields(
+  input: AdminAppCategoryCreateInput | AdminAppCategoryUpdateInput,
+  form: FormData,
+  mode: 'create' | 'update',
+): void {
+  for (const [key, maxLength] of [
+    ['code', 128],
+    ['description', 4000],
+    ['icon', 255],
+    ['parentId', 128],
+    ['path', 1024],
+  ] as const) {
+    const value = mode === 'create'
+      ? optionalFormText(form, key, maxLength)
+      : optionalNullableFormText(form, key, maxLength);
+    if (value !== undefined) {
+      input[key] = value;
+    }
+  }
+  for (const key of ['sortWeight', 'status'] as const) {
+    const value = optionalFormBoundedInteger(form, key, -1_000_000, 1_000_000);
+    if (value !== undefined) {
+      input[key] = value;
+    }
+  }
+  const visible = optionalFormBoolean(form, 'visible');
+  if (visible !== undefined) {
+    input.visible = visible;
+  }
+}
+
 function requiredFormText(form: FormData, key: string, maxLength: number): string {
   return requiredText(formString(form, key), key, maxLength);
 }
@@ -443,8 +620,41 @@ function optionalFormText(form: FormData, key: string, maxLength: number): strin
   return optionalText(formString(form, key), key, maxLength);
 }
 
+function optionalNullableFormText(form: FormData, key: string, maxLength: number): string | null | undefined {
+  if (!form.has(key)) {
+    return undefined;
+  }
+  return optionalText(formString(form, key), key, maxLength) ?? null;
+}
+
 function nullableFormText(form: FormData, key: string, maxLength: number): string | null {
   return optionalText(formString(form, key), key, maxLength) ?? null;
+}
+
+function optionalFormBoundedInteger(form: FormData, key: string, minValue: number, maxValue: number): number | undefined {
+  const value = optionalFormText(form, key, 32);
+  if (value === undefined) {
+    return undefined;
+  }
+  if (!/^-?\d+$/.test(value)) {
+    throw new Error(`${key} must be an integer`);
+  }
+  return boundedInteger(Number(value), key, minValue, maxValue);
+}
+
+function optionalFormBoolean(form: FormData, key: string): boolean | undefined {
+  const value = optionalFormText(form, key, 16);
+  if (value === undefined) {
+    return undefined;
+  }
+  const normalized = value.toLowerCase();
+  if (['true', '1', 'yes', 'on'].includes(normalized)) {
+    return true;
+  }
+  if (['false', '0', 'no', 'off'].includes(normalized)) {
+    return false;
+  }
+  throw new Error(`${key} must be a boolean`);
 }
 
 function optionalJsonObjectFormField(form: FormData, key: string): Record<string, unknown> | undefined {
@@ -515,6 +725,14 @@ function optionalCode(value: unknown, fieldName: string, maxLength: number): str
   return normalized;
 }
 
+function optionalCategoryCode(value: unknown, fieldName: string, maxLength: number): string | undefined {
+  const normalized = optionalText(value, fieldName, maxLength);
+  if (normalized && !/^[A-Za-z0-9_-]+$/.test(normalized)) {
+    throw new Error(`${fieldName} must use ASCII letters, numbers, hyphen, or underscore`);
+  }
+  return normalized;
+}
+
 function normalizeNullableText(value: unknown, fieldName: string, maxLength: number): string | null | undefined {
   if (value === null) {
     return null;
@@ -527,6 +745,13 @@ function normalizeNullableCode(value: unknown, fieldName: string, maxLength: num
     return null;
   }
   return optionalCode(value, fieldName, maxLength);
+}
+
+function normalizeNullableCategoryCode(value: unknown, fieldName: string, maxLength: number): string | null | undefined {
+  if (value === null) {
+    return null;
+  }
+  return optionalCategoryCode(value, fieldName, maxLength);
 }
 
 function optionalUrl(value: unknown, fieldName: string, maxLength: number): string | undefined {
@@ -542,6 +767,21 @@ function normalizeNullableUrl(value: unknown, fieldName: string, maxLength: numb
     return null;
   }
   return optionalUrl(value, fieldName, maxLength);
+}
+
+function optionalPath(value: unknown, fieldName: string, maxLength: number): string | undefined {
+  const normalized = optionalText(value, fieldName, maxLength);
+  if (normalized && !normalized.startsWith('/')) {
+    throw new Error(`${fieldName} must start with /`);
+  }
+  return normalized;
+}
+
+function normalizeNullablePath(value: unknown, fieldName: string, maxLength: number): string | null | undefined {
+  if (value === null) {
+    return null;
+  }
+  return optionalPath(value, fieldName, maxLength);
 }
 
 function validateUrl(value: string, fieldName: string): void {
@@ -634,6 +874,14 @@ function positiveInteger(value: unknown, fieldName: string, maxValue: number): n
   return numberValue;
 }
 
+function boundedInteger(value: unknown, fieldName: string, minValue: number, maxValue: number): number {
+  const numberValue = typeof value === 'string' ? Number(value.trim()) : value;
+  if (typeof numberValue !== 'number' || !Number.isSafeInteger(numberValue) || numberValue < minValue || numberValue > maxValue) {
+    throw new Error(`${fieldName} must be between ${minValue} and ${maxValue}`);
+  }
+  return numberValue;
+}
+
 function readStatus(value: string): AdminAppStatus {
   const normalized = value.trim();
   if (normalized === 'ACTIVE' || normalized === 'INACTIVE') {
@@ -671,6 +919,22 @@ function readRequiredRecord(value: unknown, message: string): ApiRecord {
     throw new Error(message);
   }
   return value;
+}
+
+function readRequiredBoolean(record: ApiRecord, key: string, message: string): boolean {
+  const value = record[key];
+  if (typeof value !== 'boolean') {
+    throw new Error(message);
+  }
+  return value;
+}
+
+function readRequiredInteger(record: ApiRecord, key: string, message: string): number {
+  const numberValue = readNumber(record, key, Number.NaN);
+  if (!Number.isSafeInteger(numberValue)) {
+    throw new Error(message);
+  }
+  return numberValue;
 }
 
 function parseJsonObject(value: string, fieldName: string): Record<string, unknown> {

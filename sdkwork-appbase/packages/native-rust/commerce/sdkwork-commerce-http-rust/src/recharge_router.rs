@@ -1,0 +1,618 @@
+use std::future::Future;
+use std::pin::Pin;
+use std::sync::Arc;
+use std::time::{SystemTime, UNIX_EPOCH};
+
+use axum::extract::{Path, State};
+use axum::http::{HeaderMap, StatusCode};
+use axum::response::{IntoResponse, Response};
+use axum::routing::{get, post};
+use axum::{Json, Router};
+use sdkwork_commerce_core::{CommerceMoney, CommerceServiceError};
+use sdkwork_commerce_payment::{
+    CheckoutStatusQuery, CheckoutStatusSnapshot, CreatePointsRechargeOrderCommand,
+    CreatePointsRechargeOrderOutcome, RechargePackageItem, RechargePackageListQuery,
+};
+use sdkwork_commerce_storage_sqlx::{PostgresCommerceRechargeStore, SqliteCommerceRechargeStore};
+use serde::{Deserialize, Serialize};
+use sqlx::{PgPool, SqlitePool};
+
+const X_SDKWORK_TENANT_ID: &str = "x-sdkwork-tenant-id";
+const X_SDKWORK_ORGANIZATION_ID: &str = "x-sdkwork-organization-id";
+const X_SDKWORK_USER_ID: &str = "x-sdkwork-user-id";
+const IDEMPOTENCY_KEY_HEADER: &str = "Idempotency-Key";
+const REQUEST_NO_HEADER: &str = "Sdkwork-Request-No";
+const X_REQUEST_ID_HEADER: &str = "X-Request-Id";
+const MAX_PAYMENT_METHOD_LEN: usize = 50;
+const MAX_CHECKOUT_ORDER_NO_LEN: usize = 128;
+const MAX_RECHARGE_CENTS: i64 = 1_000_000;
+const PAYMENT_EXPIRE_SECONDS: i64 = 1_800;
+
+pub type AppbaseRechargeCheckoutFuture<'a, T> =
+    Pin<Box<dyn Future<Output = Result<T, CommerceServiceError>> + Send + 'a>>;
+
+pub trait AppbaseRechargeCheckoutStore: Send + Sync {
+    fn list_recharge_packages<'a>(
+        &'a self,
+        query: RechargePackageListQuery,
+    ) -> AppbaseRechargeCheckoutFuture<'a, Vec<RechargePackageItem>>;
+
+    fn create_points_recharge_order<'a>(
+        &'a self,
+        command: CreatePointsRechargeOrderCommand,
+    ) -> AppbaseRechargeCheckoutFuture<'a, CreatePointsRechargeOrderOutcome>;
+
+    fn retrieve_checkout_status<'a>(
+        &'a self,
+        query: CheckoutStatusQuery,
+    ) -> AppbaseRechargeCheckoutFuture<'a, Option<CheckoutStatusSnapshot>>;
+}
+
+#[derive(Clone)]
+struct AppRechargeCheckoutState {
+    store: Arc<dyn AppbaseRechargeCheckoutStore>,
+}
+
+#[derive(Debug, Clone)]
+struct AppRechargeSubject {
+    tenant_id: String,
+    organization_id: Option<String>,
+    user_id: String,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct SubmitRechargeRequest {
+    amount: Option<serde_json::Value>,
+    method: Option<String>,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AppRechargeApiResult<T: Serialize> {
+    code: String,
+    msg: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    data: Option<T>,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct RechargePackageResponse {
+    id: String,
+    rmb: String,
+    bonus: i64,
+    points: i64,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct SubmitRechargeResponse {
+    success: bool,
+    order_no: String,
+    amount: String,
+    points: i64,
+    payment_method: String,
+    status: String,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct CheckoutStatusResponse {
+    order_no: String,
+    out_trade_no: String,
+    amount: String,
+    points: i64,
+    payment_method: String,
+    order_status: String,
+    payment_status: String,
+    recharge_status: String,
+    status: String,
+    created_at: String,
+    expires_at: String,
+    paid_at: String,
+    next_action: String,
+    qr_code_payload: String,
+}
+
+impl AppbaseRechargeCheckoutStore for SqliteCommerceRechargeStore {
+    fn list_recharge_packages<'a>(
+        &'a self,
+        query: RechargePackageListQuery,
+    ) -> AppbaseRechargeCheckoutFuture<'a, Vec<RechargePackageItem>> {
+        Box::pin(async move { self.list_recharge_packages(query).await })
+    }
+
+    fn create_points_recharge_order<'a>(
+        &'a self,
+        command: CreatePointsRechargeOrderCommand,
+    ) -> AppbaseRechargeCheckoutFuture<'a, CreatePointsRechargeOrderOutcome> {
+        Box::pin(async move { self.create_points_recharge_order(command).await })
+    }
+
+    fn retrieve_checkout_status<'a>(
+        &'a self,
+        query: CheckoutStatusQuery,
+    ) -> AppbaseRechargeCheckoutFuture<'a, Option<CheckoutStatusSnapshot>> {
+        Box::pin(async move { self.load_checkout_status(query).await })
+    }
+}
+
+impl AppbaseRechargeCheckoutStore for PostgresCommerceRechargeStore {
+    fn list_recharge_packages<'a>(
+        &'a self,
+        query: RechargePackageListQuery,
+    ) -> AppbaseRechargeCheckoutFuture<'a, Vec<RechargePackageItem>> {
+        Box::pin(async move { self.list_recharge_packages(query).await })
+    }
+
+    fn create_points_recharge_order<'a>(
+        &'a self,
+        command: CreatePointsRechargeOrderCommand,
+    ) -> AppbaseRechargeCheckoutFuture<'a, CreatePointsRechargeOrderOutcome> {
+        Box::pin(async move { self.create_points_recharge_order(command).await })
+    }
+
+    fn retrieve_checkout_status<'a>(
+        &'a self,
+        query: CheckoutStatusQuery,
+    ) -> AppbaseRechargeCheckoutFuture<'a, Option<CheckoutStatusSnapshot>> {
+        Box::pin(async move { self.load_checkout_status(query).await })
+    }
+}
+
+impl<T: Serialize> AppRechargeApiResult<T> {
+    fn success(data: T) -> Self {
+        Self {
+            code: "2000".to_string(),
+            msg: "SUCCESS".to_string(),
+            data: Some(data),
+        }
+    }
+}
+
+impl AppRechargeApiResult<()> {
+    fn error(code: impl Into<String>, msg: impl Into<String>) -> Self {
+        Self {
+            code: code.into(),
+            msg: msg.into(),
+            data: None,
+        }
+    }
+}
+
+pub fn app_recharge_checkout_router_with_sqlite_pool(pool: SqlitePool) -> Router {
+    app_recharge_checkout_router_with_store(Arc::new(SqliteCommerceRechargeStore::new(pool)))
+}
+
+pub fn app_recharge_checkout_router_with_postgres_pool(pool: PgPool) -> Router {
+    app_recharge_checkout_router_with_store(Arc::new(PostgresCommerceRechargeStore::new(pool)))
+}
+
+pub fn app_recharge_checkout_router_with_store(
+    store: Arc<dyn AppbaseRechargeCheckoutStore>,
+) -> Router {
+    Router::new()
+        .route(
+            "/app/v3/api/recharges/packages",
+            get(fetch_recharge_packages),
+        )
+        .route("/app/v3/api/recharges/orders", post(submit_recharge))
+        .route(
+            "/app/v3/api/recharges/orders/{orderId}",
+            get(fetch_checkout_status),
+        )
+        .with_state(AppRechargeCheckoutState { store })
+}
+
+async fn fetch_recharge_packages(
+    State(state): State<AppRechargeCheckoutState>,
+    headers: HeaderMap,
+) -> Response {
+    let subject = match app_recharge_subject_from_headers(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let query = match RechargePackageListQuery::new(
+        &subject.tenant_id,
+        subject.organization_id.as_deref(),
+        &subject.user_id,
+    ) {
+        Ok(query) => query,
+        Err(error) => return commerce_error_response(error),
+    };
+
+    match state.store.list_recharge_packages(query).await {
+        Ok(items) => Json(AppRechargeApiResult::success(
+            items
+                .into_iter()
+                .map(map_recharge_package)
+                .collect::<Vec<_>>(),
+        ))
+        .into_response(),
+        Err(error) => commerce_error_response(error),
+    }
+}
+
+async fn submit_recharge(
+    State(state): State<AppRechargeCheckoutState>,
+    headers: HeaderMap,
+    Json(request): Json<SubmitRechargeRequest>,
+) -> Response {
+    let subject = match app_recharge_subject_from_headers(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let amount = match validate_recharge_amount(request.amount.as_ref()) {
+        Ok(amount) => amount,
+        Err(message) => return validation_response(message),
+    };
+    let method = match validate_payment_method(request.method.as_deref()) {
+        Ok(method) => method,
+        Err(message) => return validation_response(message),
+    };
+    let idempotency_key = match required_text_header(&headers, IDEMPOTENCY_KEY_HEADER) {
+        Ok(value) => value,
+        Err(response) => return response,
+    };
+    let request_no = optional_text_header(&headers, REQUEST_NO_HEADER)
+        .or_else(|| optional_text_header(&headers, X_REQUEST_ID_HEADER))
+        .unwrap_or_else(|| {
+            fallback_request_no(&subject, amount.as_str(), &method, &idempotency_key)
+        });
+    let command = match build_create_recharge_command(
+        &subject,
+        amount,
+        &method,
+        &request_no,
+        &idempotency_key,
+    ) {
+        Ok(command) => command,
+        Err(error) => return commerce_error_response(error),
+    };
+
+    match state.store.create_points_recharge_order(command).await {
+        Ok(outcome) => {
+            Json(AppRechargeApiResult::success(map_recharge_outcome(outcome))).into_response()
+        }
+        Err(error) => commerce_error_response(error),
+    }
+}
+
+async fn fetch_checkout_status(
+    State(state): State<AppRechargeCheckoutState>,
+    headers: HeaderMap,
+    Path(order_no): Path<String>,
+) -> Response {
+    let subject = match app_recharge_subject_from_headers(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let order_no = match validate_checkout_order_no(order_no) {
+        Ok(order_no) => order_no,
+        Err(message) => return validation_response(message),
+    };
+    let query = match CheckoutStatusQuery::new(
+        &subject.tenant_id,
+        subject.organization_id.as_deref(),
+        &subject.user_id,
+        &order_no,
+    ) {
+        Ok(query) => query,
+        Err(error) => return commerce_error_response(error),
+    };
+
+    match state.store.retrieve_checkout_status(query).await {
+        Ok(Some(snapshot)) => {
+            Json(AppRechargeApiResult::success(map_checkout_status(snapshot))).into_response()
+        }
+        Ok(None) => (
+            StatusCode::CONFLICT,
+            Json(AppRechargeApiResult::error(
+                "4090",
+                "checkout order was not found",
+            )),
+        )
+            .into_response(),
+        Err(error) => commerce_error_response(error),
+    }
+}
+
+fn app_recharge_subject_from_headers(headers: &HeaderMap) -> Result<AppRechargeSubject, Response> {
+    Ok(AppRechargeSubject {
+        tenant_id: required_text_header(headers, X_SDKWORK_TENANT_ID)?,
+        organization_id: optional_text_header(headers, X_SDKWORK_ORGANIZATION_ID),
+        user_id: required_text_header(headers, X_SDKWORK_USER_ID)?,
+    })
+}
+
+fn required_text_header(headers: &HeaderMap, name: &'static str) -> Result<String, Response> {
+    let value = headers
+        .get(name)
+        .ok_or_else(|| unauthorized_response(format!("{name} header is required")))?
+        .to_str()
+        .map(str::trim)
+        .map_err(|_| unauthorized_response(format!("{name} header value is invalid")))?;
+    if value.is_empty() {
+        return Err(unauthorized_response(format!("{name} header is required")));
+    }
+    Ok(value.to_string())
+}
+
+fn optional_text_header(headers: &HeaderMap, name: &'static str) -> Option<String> {
+    headers
+        .get(name)
+        .and_then(|value| value.to_str().ok())
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(str::to_string)
+}
+
+fn validate_recharge_amount(value: Option<&serde_json::Value>) -> Result<CommerceMoney, String> {
+    let Some(value) = value else {
+        return Err("recharge amount must be greater than zero".to_string());
+    };
+    let raw = match value {
+        serde_json::Value::String(value) => value.trim().to_string(),
+        serde_json::Value::Number(value) => value.to_string(),
+        _ => return Err("recharge amount must be a decimal amount".to_string()),
+    };
+    let cents = money_cents(&raw).map_err(|_| "recharge amount must be a decimal amount")?;
+    if cents <= 0 {
+        return Err("recharge amount must be greater than zero".to_string());
+    }
+    if cents > MAX_RECHARGE_CENTS {
+        return Err("recharge amount must not exceed 10000.00".to_string());
+    }
+    CommerceMoney::new(&format_money_minor(cents)).map_err(str::to_string)
+}
+
+fn validate_payment_method(value: Option<&str>) -> Result<String, String> {
+    let method = value.unwrap_or_default().trim().to_ascii_lowercase();
+    if method.is_empty() {
+        return Err("payment method must not be empty".to_string());
+    }
+    if method.chars().count() > MAX_PAYMENT_METHOD_LEN {
+        return Err(format!(
+            "payment method length must not exceed {MAX_PAYMENT_METHOD_LEN} characters"
+        ));
+    }
+    if !method.bytes().all(|byte| (0x21..=0x7e).contains(&byte)) {
+        return Err("payment method must contain only visible ASCII characters".to_string());
+    }
+    Ok(method)
+}
+
+fn validate_checkout_order_no(order_no: String) -> Result<String, String> {
+    let order_no = order_no.trim().to_string();
+    if order_no.is_empty() {
+        return Err("checkout order number must not be empty".to_string());
+    }
+    if order_no.chars().count() > MAX_CHECKOUT_ORDER_NO_LEN {
+        return Err(format!(
+            "checkout order number length must not exceed {MAX_CHECKOUT_ORDER_NO_LEN} characters"
+        ));
+    }
+    if !order_no.bytes().all(|byte| (0x21..=0x7e).contains(&byte)) {
+        return Err("checkout order number must contain only visible ASCII characters".to_string());
+    }
+    Ok(order_no)
+}
+
+fn build_create_recharge_command(
+    subject: &AppRechargeSubject,
+    amount: CommerceMoney,
+    method: &str,
+    request_no: &str,
+    idempotency_key: &str,
+) -> Result<CreatePointsRechargeOrderCommand, CommerceServiceError> {
+    let now = current_unix_timestamp();
+    let requested_at = format_unix_timestamp(now);
+    let expire_at = format_unix_timestamp(now + PAYMENT_EXPIRE_SECONDS);
+    let seed = format!(
+        "{}|{}|{}|{}|{}|{}|{}",
+        subject.tenant_id,
+        subject.organization_id.as_deref().unwrap_or(""),
+        subject.user_id,
+        amount.as_str(),
+        method,
+        request_no,
+        idempotency_key,
+    );
+    let token = stable_hex_token(&seed);
+    let order_no = format!("RC{}", token);
+    let out_trade_no = format!("RECHARGE{}", token);
+
+    CreatePointsRechargeOrderCommand::new(
+        &subject.tenant_id,
+        subject.organization_id.as_deref(),
+        &subject.user_id,
+        amount,
+        method,
+        &format!("order-{token}"),
+        &format!("order-item-{token}"),
+        &format!("payment-intent-{token}"),
+        &format!("payment-attempt-{token}"),
+        &order_no,
+        &out_trade_no,
+        &requested_at,
+        &expire_at,
+        idempotency_key,
+    )
+}
+
+fn map_recharge_package(value: RechargePackageItem) -> RechargePackageResponse {
+    RechargePackageResponse {
+        id: value.id,
+        rmb: value.rmb.as_str().to_string(),
+        bonus: value.bonus,
+        points: value.points,
+    }
+}
+
+fn map_recharge_outcome(value: CreatePointsRechargeOrderOutcome) -> SubmitRechargeResponse {
+    SubmitRechargeResponse {
+        success: value.success,
+        order_no: value.order_no,
+        amount: value.amount.as_str().to_string(),
+        points: value.points,
+        payment_method: value.payment_method,
+        status: value.status,
+    }
+}
+
+fn map_checkout_status(value: CheckoutStatusSnapshot) -> CheckoutStatusResponse {
+    CheckoutStatusResponse {
+        order_no: value.order_no,
+        out_trade_no: value.out_trade_no,
+        amount: value.amount.as_str().to_string(),
+        points: value.points,
+        payment_method: value.payment_method,
+        order_status: value.order_status,
+        payment_status: value.payment_status,
+        recharge_status: value.recharge_status,
+        status: value.status,
+        created_at: value.created_at,
+        expires_at: value.expires_at,
+        paid_at: value.paid_at,
+        next_action: value.next_action,
+        qr_code_payload: value.qr_code_payload,
+    }
+}
+
+fn commerce_error_response(error: CommerceServiceError) -> Response {
+    match error.code() {
+        "validation" => validation_response(error.message()),
+        "unauthenticated" | "unauthorized" => unauthorized_response(error.message().to_string()),
+        "not-found" => (
+            StatusCode::NOT_FOUND,
+            Json(AppRechargeApiResult::error("4040", error.message())),
+        )
+            .into_response(),
+        "conflict" | "invalid-state" | "unsupported-capability" => (
+            StatusCode::CONFLICT,
+            Json(AppRechargeApiResult::error("4090", error.message())),
+        )
+            .into_response(),
+        _ => (
+            StatusCode::INTERNAL_SERVER_ERROR,
+            Json(AppRechargeApiResult::error("5000", error.message())),
+        )
+            .into_response(),
+    }
+}
+
+fn unauthorized_response(message: String) -> Response {
+    (
+        StatusCode::UNAUTHORIZED,
+        Json(AppRechargeApiResult::error("4010", message)),
+    )
+        .into_response()
+}
+
+fn validation_response(message: impl Into<String>) -> Response {
+    (
+        StatusCode::BAD_REQUEST,
+        Json(AppRechargeApiResult::error("4001", message)),
+    )
+        .into_response()
+}
+
+fn fallback_request_no(
+    subject: &AppRechargeSubject,
+    amount: &str,
+    method: &str,
+    idempotency_key: &str,
+) -> String {
+    stable_header_token(&format!(
+        "points-recharge-{}-{}-{}-{}",
+        subject.user_id, amount, method, idempotency_key
+    ))
+}
+
+fn stable_header_token(value: &str) -> String {
+    value
+        .chars()
+        .map(|character| {
+            if character.is_ascii_alphanumeric() || matches!(character, '-' | '_' | '.') {
+                character
+            } else {
+                '-'
+            }
+        })
+        .collect()
+}
+
+fn stable_hex_token(value: &str) -> String {
+    let mut hash = 0xcbf29ce484222325u64;
+    for byte in value.bytes() {
+        hash ^= u64::from(byte);
+        hash = hash.wrapping_mul(0x100000001b3);
+    }
+    format!("{hash:016x}")
+}
+
+fn money_cents(amount: &str) -> Result<i64, ()> {
+    let value = amount.trim();
+    let mut parts = value.split('.');
+    let whole = parts
+        .next()
+        .unwrap_or_default()
+        .parse::<i64>()
+        .map_err(|_| ())?;
+    let fraction = parts.next().unwrap_or_default();
+    if parts.next().is_some() || fraction.len() > 2 {
+        return Err(());
+    }
+    let mut padded = fraction.to_string();
+    while padded.len() < 2 {
+        padded.push('0');
+    }
+    let cents = if padded.is_empty() {
+        0
+    } else {
+        padded.parse::<i64>().map_err(|_| ())?
+    };
+    whole
+        .checked_mul(100)
+        .and_then(|amount| amount.checked_add(cents))
+        .ok_or(())
+}
+
+fn format_money_minor(cents: i64) -> String {
+    let sign = if cents < 0 { "-" } else { "" };
+    let abs = cents.abs();
+    format!("{sign}{}.{:02}", abs / 100, abs % 100)
+}
+
+fn current_unix_timestamp() -> i64 {
+    SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .map(|duration| duration.as_secs() as i64)
+        .unwrap_or(0)
+}
+
+fn format_unix_timestamp(seconds: i64) -> String {
+    let days = seconds.div_euclid(86_400);
+    let seconds_of_day = seconds.rem_euclid(86_400);
+    let (year, month, day) = civil_from_days(days);
+    let hour = seconds_of_day / 3_600;
+    let minute = (seconds_of_day % 3_600) / 60;
+    let second = seconds_of_day % 60;
+    format!("{year:04}-{month:02}-{day:02} {hour:02}:{minute:02}:{second:02}")
+}
+
+fn civil_from_days(days: i64) -> (i64, i64, i64) {
+    let days = days + 719_468;
+    let era = if days >= 0 { days } else { days - 146_096 } / 146_097;
+    let day_of_era = days - era * 146_097;
+    let year_of_era =
+        (day_of_era - day_of_era / 1_460 + day_of_era / 36_524 - day_of_era / 146_096) / 365;
+    let year = year_of_era + era * 400;
+    let day_of_year = day_of_era - (365 * year_of_era + year_of_era / 4 - year_of_era / 100);
+    let month_prime = (5 * day_of_year + 2) / 153;
+    let day = day_of_year - (153 * month_prime + 2) / 5 + 1;
+    let month = month_prime + if month_prime < 10 { 3 } else { -9 };
+    let year = year + if month <= 2 { 1 } else { 0 };
+    (year, month, day)
+}

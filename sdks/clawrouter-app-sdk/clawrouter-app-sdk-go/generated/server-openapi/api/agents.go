@@ -18,7 +18,7 @@ func NewAgentsApi(client *sdkhttp.Client) *AgentsApi {
 }
 
 // List user agents
-func (a *AgentsApi) List(page *int, pageSize *int, q *string) (sdktypes.AgentsListResult, error) {
+func (a *AgentsApi) AgentDefinitionsList(page *int, pageSize *int, q *string) (sdktypes.AgentDefinitionsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -26,14 +26,14 @@ func (a *AgentsApi) List(page *int, pageSize *int, q *string) (sdktypes.AgentsLi
     })
     raw, err := a.client.Get(AppendQueryString(AppApiPath("/agents"), query), nil, nil)
     if err != nil {
-        var zero sdktypes.AgentsListResult
+        var zero sdktypes.AgentDefinitionsListResult
         return zero, err
     }
-    return decodeResult[sdktypes.AgentsListResult](raw)
+    return decodeResult[sdktypes.AgentDefinitionsListResult](raw)
 }
 
 // Create user agent
-func (a *AgentsApi) Create(body sdktypes.AgentCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentsCreateResult, error) {
+func (a *AgentsApi) AgentDefinitionsCreate(body sdktypes.AgentCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentDefinitionsCreateResult, error) {
     headers := BuildRequestHeaders(
         map[string]ParameterSpec{
             "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
@@ -43,20 +43,167 @@ func (a *AgentsApi) Create(body sdktypes.AgentCreateRequest, idempotencyKey stri
     )
     raw, err := a.client.Post(AppApiPath("/agents"), body, nil, headers, "application/json")
     if err != nil {
-        var zero sdktypes.AgentsCreateResult
+        var zero sdktypes.AgentDefinitionsCreateResult
         return zero, err
     }
-    return decodeResult[sdktypes.AgentsCreateResult](raw)
+    return decodeResult[sdktypes.AgentDefinitionsCreateResult](raw)
+}
+
+// Retrieve agent run
+func (a *AgentsApi) AgentRunsRetrieve(runId string) (sdktypes.AgentRunsRetrieveResult, error) {
+    raw, err := a.client.Get(AppApiPath(fmt.Sprintf("/agents/runs/%s", SerializePathParameter(runId, PathParameterSpec{Name: "runId", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.AgentRunsRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AgentRunsRetrieveResult](raw)
+}
+
+// Complete agent run
+func (a *AgentsApi) AgentRunsSubmit(runId string, body sdktypes.AgentRunCompleteRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentRunsSubmitResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{
+            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
+            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
+        },
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/agents/runs/%s/complete", SerializePathParameter(runId, PathParameterSpec{Name: "runId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.AgentRunsSubmitResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AgentRunsSubmitResult](raw)
+}
+
+// List agent run steps
+func (a *AgentsApi) AgentRunStepsList(runId string, page *int, pageSize *int) (sdktypes.AgentRunStepsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(AppApiPath(fmt.Sprintf("/agents/runs/%s/steps", SerializePathParameter(runId, PathParameterSpec{Name: "runId", Style: "simple", Explode: false}))), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.AgentRunStepsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AgentRunStepsListResult](raw)
+}
+
+// Create agent run step
+func (a *AgentsApi) AgentRunStepsCreate(runId string, body sdktypes.AgentRunStepCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentRunStepsCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{
+            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
+            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
+        },
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/agents/runs/%s/steps", SerializePathParameter(runId, PathParameterSpec{Name: "runId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.AgentRunStepsCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AgentRunStepsCreateResult](raw)
+}
+
+// Complete agent run step
+func (a *AgentsApi) AgentRunStepsSubmit(runId string, stepId string, body sdktypes.AgentRunStepCompleteRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentRunStepsSubmitResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{
+            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
+            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
+        },
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/agents/runs/%s/steps/%s/complete", SerializePathParameter(runId, PathParameterSpec{Name: "runId", Style: "simple", Explode: false}), SerializePathParameter(stepId, PathParameterSpec{Name: "stepId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.AgentRunStepsSubmitResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AgentRunStepsSubmitResult](raw)
+}
+
+// Retrieve agent session
+func (a *AgentsApi) AgentSessionsRetrieve(sessionId string) (sdktypes.AgentSessionsRetrieveResult, error) {
+    raw, err := a.client.Get(AppApiPath(fmt.Sprintf("/agents/sessions/%s", SerializePathParameter(sessionId, PathParameterSpec{Name: "sessionId", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.AgentSessionsRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AgentSessionsRetrieveResult](raw)
+}
+
+// List agent session runs
+func (a *AgentsApi) AgentRunsList(sessionId string, page *int, pageSize *int) (sdktypes.AgentRunsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(AppApiPath(fmt.Sprintf("/agents/sessions/%s/runs", SerializePathParameter(sessionId, PathParameterSpec{Name: "sessionId", Style: "simple", Explode: false}))), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.AgentRunsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AgentRunsListResult](raw)
+}
+
+// Create agent run
+func (a *AgentsApi) AgentRunsCreate(sessionId string, body sdktypes.AgentRunCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentRunsCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{
+            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
+            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
+        },
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/agents/sessions/%s/runs", SerializePathParameter(sessionId, PathParameterSpec{Name: "sessionId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.AgentRunsCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AgentRunsCreateResult](raw)
 }
 
 // Retrieve user agent
-func (a *AgentsApi) Retrieve(agentId string) (sdktypes.AgentsRetrieveResult, error) {
+func (a *AgentsApi) AgentDefinitionsRetrieve(agentId string) (sdktypes.AgentDefinitionsRetrieveResult, error) {
     raw, err := a.client.Get(AppApiPath(fmt.Sprintf("/agents/%s", SerializePathParameter(agentId, PathParameterSpec{Name: "agentId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
-        var zero sdktypes.AgentsRetrieveResult
+        var zero sdktypes.AgentDefinitionsRetrieveResult
         return zero, err
     }
-    return decodeResult[sdktypes.AgentsRetrieveResult](raw)
+    return decodeResult[sdktypes.AgentDefinitionsRetrieveResult](raw)
+}
+
+// List agent sessions
+func (a *AgentsApi) AgentSessionsList(agentId string, page *int, pageSize *int) (sdktypes.AgentSessionsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(AppApiPath(fmt.Sprintf("/agents/%s/sessions", SerializePathParameter(agentId, PathParameterSpec{Name: "agentId", Style: "simple", Explode: false}))), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.AgentSessionsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AgentSessionsListResult](raw)
+}
+
+// Create agent session
+func (a *AgentsApi) AgentSessionsCreate(agentId string, body sdktypes.AgentSessionCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentSessionsCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{
+            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
+            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
+        },
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/agents/%s/sessions", SerializePathParameter(agentId, PathParameterSpec{Name: "agentId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.AgentSessionsCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AgentSessionsCreateResult](raw)
 }
 
 type PathParameterSpec struct {

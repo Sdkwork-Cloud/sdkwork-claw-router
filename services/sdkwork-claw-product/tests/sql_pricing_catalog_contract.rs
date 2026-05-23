@@ -189,7 +189,7 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     );
     assert!(
         PricingCatalogSql::load_provider_routes()
-            .contains("NULLIF(COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template), '')"),
+            .contains("NULLIF(COALESCE(NULLIF(c.base_url, ''), p.base_url), '')"),
         "provider route snapshot query must filter routes without resolved base_url"
     );
     assert!(
@@ -238,7 +238,7 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     );
     assert!(
         PricingCatalogSql::load_provider_account_pool_routes()
-            .contains("NULLIF(COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template), '')"),
+            .contains("NULLIF(COALESCE(NULLIF(c.base_url, ''), p.base_url), '')"),
         "account pool snapshot query must filter channels without resolved base_url"
     );
     assert!(

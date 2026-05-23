@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { isSdkworkGenerationImageHistoryType } from '@sdkwork/generation-pc-react/react';
 import { ChatHistoryItem } from '../ChatHistoryItem';
 import type { PlaygroundHistoryItem, PlaygroundPreviewSetter } from '../../playgroundTypes';
 
@@ -30,7 +31,7 @@ export function SharedHistoryView({
 
   const filteredHistory = agentHistory.filter((item) => {
     if (activeTab === 'all') return true;
-    if (activeTab === 'image') return item.type === 'images' || item.type === 'image';
+    if (activeTab === 'image') return isSdkworkGenerationImageHistoryType(item.type);
     return item.type === activeTab;
   });
 

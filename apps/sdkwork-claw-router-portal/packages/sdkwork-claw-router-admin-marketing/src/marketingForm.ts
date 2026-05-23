@@ -1,8 +1,28 @@
-import type {
-  CommerceExchangeRuleUpsertRequest,
-  CommerceRechargePackageMutationRequest,
-} from '@sdkwork/clawrouter-backend-sdk';
-import type { CouponBatchGenerateInput, CouponCreateInput } from './marketingService';
+export type CouponCreateInput = {
+  name: string;
+  type: 'amount' | 'discount';
+  value: string;
+};
+
+export type CouponBatchGenerateInput = {
+  couponId: string;
+  name: string;
+  count: number;
+  prefix: string;
+};
+
+interface CommerceRechargePackageMutationRequest {
+  bonus: number;
+  rmb: string;
+  status?: 'active' | 'inactive';
+}
+
+interface CommerceExchangeRuleUpdateRequest {
+  rate: string;
+  sourceAssetType: 'POINTS';
+  status: 'active';
+  targetAssetType: 'CASH';
+}
 
 const MAX_BATCH_COUNT = 10_000;
 const MAX_BATCH_PREFIX_LENGTH = 32;
@@ -35,7 +55,7 @@ export function createRechargePackageInputFromForm(formData: FormData): Commerce
   };
 }
 
-export function createExchangeRuleInputFromForm(formData: FormData): CommerceExchangeRuleUpsertRequest {
+export function createExchangeRuleInputFromForm(formData: FormData): CommerceExchangeRuleUpdateRequest {
   return {
     sourceAssetType: 'POINTS',
     targetAssetType: 'CASH',

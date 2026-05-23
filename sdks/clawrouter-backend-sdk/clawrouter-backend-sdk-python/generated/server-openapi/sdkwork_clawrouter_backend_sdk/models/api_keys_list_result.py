@@ -11,5 +11,4 @@ class ApiKeysListResult:
     """Api keys list result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminApiKeysMapResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

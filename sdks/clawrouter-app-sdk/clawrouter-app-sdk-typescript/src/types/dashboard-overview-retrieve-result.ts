@@ -7,7 +7,5 @@ export interface DashboardOverviewRetrieveResult {
   /** Data field on dashboard overview retrieve result. */
   data?: DashboardOverviewResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

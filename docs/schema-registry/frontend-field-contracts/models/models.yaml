@@ -1,0 +1,136 @@
+fragment: models/models
+frontend_models:
+- route: /models
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/data/models.ts
+  interface: Model
+  fields:
+  - id
+  - modelId
+  - vendorCode
+  - regionCode
+  - name
+  - provider
+  - modality
+  - context
+  - groups
+  - categories
+  - pricing
+  - pricing.input
+  - pricing.output
+  - pricing.cachedInput
+  - pricing.unavailableFields
+  - pricing.referencePrices
+  - pricing.referencePrices.billingMeter
+  - pricing.referencePrices.unitPrice
+  - pricing.referencePrices.currency
+  - pricing.unit
+  - pricing.currency
+  - pricing.status
+  - pricing.reason
+  - description
+  - capabilities
+  - capabilityIntro
+  - limitations
+  - supportedLanguages
+  - apiFormat
+  - parameters
+  - latency
+  - throughput
+  - ttft
+  - maxOutput
+  - trainingData
+  - useCases
+  data_sources:
+  - ai_model_vendor
+  - ai_model_vendor_region
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing
+- route: /models
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/data/models.ts
+  interface: ModelPricing
+  fields:
+  - input
+  - output
+  - cachedInput
+  - unavailableFields
+  - referencePrices
+  - referencePrices.billingMeter
+  - referencePrices.unitPrice
+  - referencePrices.currency
+  - unit
+  - currency
+  - status
+  - reason
+  data_sources:
+  - ai_model_pricing
+- route: /models
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/data/models.ts
+  interface: ModelReferencePrice
+  fields:
+  - billingMeter
+  - unitPrice
+  - currency
+  data_sources:
+  - ai_model_pricing
+- route: /models
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
+  interface: ModelCatalogServiceFilters
+  fields:
+  - billingMeter
+  - vendorCodes
+  - modalities
+  - capabilities
+  - categories
+  - groups
+  - searchQuery
+  - limit
+  data_sources:
+  - ai_model_vendor
+  - ai_model_vendor_region
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing
+- route: /models
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/runtimeModelCatalog.ts
+  interface: RuntimeModelCatalogItem
+  fields:
+  - catalogKey
+  - model
+  - displayName
+  - vendorCode
+  - regionCode
+  - vendor
+  - capabilities
+  - groups
+  - categories
+  - description
+  - modalities
+  - inputModalities
+  - outputModalities
+  - apiFormat
+  - capabilityIntro
+  - limitations
+  - supportedLanguages
+  - useCases
+  - trainingDataCutoff
+  - contextTokens
+  - maxOutputTokens
+  - supportsStreaming
+  - supportsTools
+  - supportsJsonSchema
+  - releaseStage
+  - shelfState
+  - routingState
+  - replacementModel
+  - providerCodes
+  - officialReferenceUnitPrice
+  - officialReferenceCurrency
+  - officialReferencePrices
+  - priceAvailability
+  data_sources:
+  - ai_model_vendor
+  - ai_model_vendor_region
+  - ai_model
+  - ai_model_capability
+  - ai_model_pricing

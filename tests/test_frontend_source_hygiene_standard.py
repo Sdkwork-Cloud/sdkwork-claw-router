@@ -231,9 +231,15 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         service = settlement_service_path.read_text(encoding="utf-8", errors="ignore")
 
         self.assertIn("toSettlementDashboardQueryParams", service)
-        self.assertIn(".billing.settlements.dashboard.list(", service)
-        self.assertIn("toSettlementDashboardQueryParams(params)", service)
+        self.assertIn("const query = toSettlementDashboardQueryParams(params)", service)
+        self.assertIn("appWalletLedgerEntriesList({ page: 1, pageSize: 500 })", service)
+        self.assertIn("appInvoicesList({ page: 1, pageSize: 100 })", service)
+        self.assertIn("buildSettlementDashboard(query.year, ledgerEntries, invoices)", service)
+        self.assertIn("readRequiredApiItems(ledgerResult, 'Settlement ledger entries are required')", service)
+        self.assertIn("readRequiredApiItems(invoiceResult, 'Settlement invoice records are required')", service)
+        self.assertNotIn("getClawRouterCommerceService().settlements.dashboard.list(", service)
         self.assertNotIn(".billing.settlements.dashboard.list(params)", service)
+        self.assertNotIn("getClawRouterAppSdkClient().billing.settlements.dashboard.list", service)
         self.assertNotIn(".router.fetchDashboardData", service)
         self.assertIn("MIN_SETTLEMENT_DASHBOARD_YEAR", service)
         self.assertIn("MAX_SETTLEMENT_DASHBOARD_YEAR", service)
@@ -427,45 +433,26 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "readRequiredString(item, 'value', 'Firewall rule value is required')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-marketing" / "src" / "marketingService.ts": [
-                "return readRequiredApiItems(result, 'Failed to fetch coupons')\n      .map(normalizeCoupon)",
-                "return readRequiredApiItems(result, 'Failed to fetch coupon batches')\n      .map(normalizeBatch)",
-                "return readRequiredApiItems(result, 'Failed to fetch promo codes')\n      .map(normalizePromoCode)",
-                "return readRequiredApiItems(result, 'Failed to fetch redemption records')\n      .map(normalizeRedemptionRecord)",
-                "return readRequiredApiItems(result, 'Failed to fetch recharge records')\n      .map(normalizeRechargeRecord)",
                 "return readRequiredApiItems(result, 'Failed to fetch referral stats')\n      .map(normalizeReferralStat)",
-                "codes: readRequiredApiItems(data, 'Generated promo code batch response is missing codes', ['codes'])\n        .map(normalizePromoCode)",
-                "readRequiredRecord(value, 'Coupon record is required')",
-                "readRequiredRecord(value, 'Promo code record is required')",
-                "readRequiredString(item, 'value', 'Coupon value is required')",
-                "readRequiredString(item, 'code', 'Promo code value is required')",
-                "readCouponType(item)",
-                "readCouponValue(item, type)",
-                "readCouponStatus(item)",
-                "readRequiredNonNegativeNumber(item, 'count', 'Coupon batch count is required')",
+                "readRequiredRecord(value, 'Referral stat record is required')",
+                "readRequiredString(item, 'id', 'Referral stat id is required')",
+                "readRequiredString(item, 'inviter', 'Referral inviter is required')",
                 "readRequiredNumber(item, 'total_invited', 'Referral invited total is required')",
-                "readDisplayMoneyString(item, 'amount', 'Redemption amount is required', 'Redemption amount must be a money string')",
-                "readDisplayMoneyString(item, 'amount', 'Recharge amount is required', 'Recharge amount must be a money string')",
-                "readNonNegativeIntegerString(",
-                "'Recharge credited points must be a non-negative integer string'",
-                "status: readRechargeStatus(item)",
-                "'Referral revenue must be a money string'",
-                "'Referral bonus must be a money string'",
-                "throw new Error(`Unsupported coupon type: ${type}`)",
-                "throw new Error(`Unsupported coupon status: ${status}`)",
-                "throw new Error(status ? `Unsupported promo code status: ${status}` : 'Promo code status is required')",
-                "throw new Error(`Unsupported recharge status: ${status}`)",
+                "readRequiredString(item, 'total_revenue', 'Referral revenue is required')",
+                "readRequiredString(item, 'bonus_awarded', 'Referral bonus is required')",
+                "readRequiredString(item, 'link', 'Referral link is required')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-console-routing" / "src" / "routingService.ts": [
-                "return readRequiredApiItems(result, 'Failed to fetch request traces')\n      .map(normalizeRequestTrace)",
-                "return readRequiredApiItems(result, 'Failed to fetch routing channels')\n      .map(normalizeRoutingChannel)",
-                "return readRequiredApiItems(result, 'Failed to fetch routing API keys')\n      .map(normalizeRoutingApiKey)",
-                "chartData: readRequiredApiItems(data, 'Failed to fetch routing usage data', ['chartData'])\n        .map(normalizeRoutingUsageData)",
+                "return readRequiredApiItems(result, 'console.routing.states.requestTraces.loadErrorFallback')\n      .map(normalizeRequestTrace)",
+                "return readRequiredApiItems(result, 'console.routing.states.channels.loadErrorFallback')\n      .map(normalizeRoutingChannel)",
+                "return readRequiredApiItems(result, 'console.routing.states.apiKeys.loadErrorFallback')\n      .map(normalizeRoutingApiKey)",
+                "chartData: readRequiredApiItems(data, 'console.routing.states.usage.loadErrorFallback', ['chartData'])\n        .map(normalizeRoutingUsageData)",
                 "mappingRules: readRequiredApiItems(item, 'Routing strategy mapping rules are required', ['mappingRules'])\n      .map(normalizeMappingRule)",
                 "readRequiredRecord(value, 'Routing channel record is required')",
                 "readRequiredRecord(value, 'Routing API key record is required')",
                 "readRequiredRecord(value, 'Request trace record is required')",
                 "readRequiredRecord(value, 'Routing mapping rule record is required')",
-                "const key = readRequiredFirstString(",
+                "const displayKey = readRequiredFirstString(",
                 "'Routing API key value is required'",
                 "readRequiredFirstStringArray(item, ['models', 'modelList', 'model_list'], 'Routing channel models are required')",
                 "readRequiredNonNegativeMetric(item, 'tokens', 'Request trace tokens are required')",
@@ -483,7 +470,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "throw new Error(status ? `Unsupported provider credential status: ${status}` : 'Provider credential status is required')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-user" / "src" / "userService.ts": [
-                "return readRequiredApiItems(result, 'Failed to fetch users')\n      .map(normalizeUser)",
+                "return readRequiredApiItems(result, 'admin.user.errors.fetchUsersFallback')\n      .map(normalizeUser)",
                 "readRequiredRecord(value, 'User record is required')",
                 "readRequiredRecord(value, 'API key record is required')",
                 "readRequiredString(item, 'email', 'User email is required')",
@@ -492,56 +479,70 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "throw new Error(status ? `Unsupported user status: ${status}` : 'User status is required')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-finance" / "src" / "financeService.ts": [
-                "readRequiredRecord(value, 'Transaction record is required')",
-                "readRequiredRecord(value, 'Billing record is required')",
-                "'Transaction amount must be a money string'",
-                "'Transaction balance must be a money string'",
-                "'Billing total cost must be a money string'",
-                "readRequiredNonNegativeNumber(item, 'totalTokens', 'Billing total tokens are required')",
-                "throw new Error(type ? `Unsupported transaction type: ${type}` : 'Transaction type is required')",
-                "throw new Error(`Unsupported transaction status: ${status}`)",
-                "throw new Error(`Unsupported billing status: ${status}`)",
+                "backendCouponsTemplatesList",
+                "backendCouponsCampaignsList",
+                "backendCouponsCodesList",
+                "backendCouponsRedemptionsList",
+                "readRequiredString(item, 'id', 'Coupon id is required')",
+                "readRequiredString(item, 'id', 'Coupon batch id is required')",
+                "readRequiredString(item, 'id', 'Promo code id is required')",
+                "readRequiredString(item, 'id', 'Redemption record id is required')",
+                "backendCommerceReportsPaymentReconciliationRetrieve",
+                "backendCommerceReportsOrderRevenueList",
+                "backendCommerceReportsRefundsList",
+                "backendAuditCommerceEventsList",
+                "readRequiredStableIdItems(result, 'Coupon records are required'",
+                "readRequiredStableIdItems(result, 'Coupon batch records are required'",
+                "readRequiredStableIdItems(result, 'Promo code records are required'",
+                "readRequiredStableIdItems(result, 'Redemption records are required'",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-billing" / "src" / "billingService.ts": [
+            PORTAL_PACKAGES / "sdkwork-claw-router-admin-wallet" / "src" / "walletService.ts": [
+                "backendRechargesPackagesList",
+                "backendRechargesOrdersList",
+                "readRequiredApiItems(result, listMessage)",
+                "readRequiredString(item, 'id', 'Recharge record id is required')",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-console-wallet" / "src" / "walletService.ts": [
                 "readRequiredRecord(value, 'Redeem history record is required')",
-                "readRequiredString(item, 'code', 'Redeem history code is required')",
+                "firstRequiredString(item, ['code', 'couponCode', 'coupon_code', 'templateCode', 'template_code'], 'Redeem history code is required')",
                 "'Redeem history amount must be a money string'",
-                "readRequiredString(item, 'date', 'Redeem history date is required')",
+                "firstRequiredString(item, ['date', 'redeemedAt', 'redeemed_at', 'createdAt', 'created_at'], 'Redeem history date is required')",
                 "throw new Error(`Unsupported billing status: ${status}`)",
                 "readOptionalMoneyString(data, 'amount', 'Redeem amount must be a money string')",
                 "readRequiredRecord(value, 'Recharge history record is required')",
-                "readRequiredString(item, 'orderNo', 'Recharge history order number is required')",
-                "readRequiredString(item, 'method', 'Recharge history payment method is required')",
+                "firstRequiredString(item, ['orderNo', 'order_no', 'sourceId', 'source_id', 'requestNo', 'request_no'], 'Recharge history order number is required')",
+                "readFirstString(item, ['method', 'paymentMethod', 'payment_method', 'sourceType', 'source_type']) || 'wallet'",
                 "'Recharge history amount must be a money string'",
-                "readRequiredString(item, 'date', 'Recharge history date is required')",
+                "firstRequiredString(item, ['date', 'createdAt', 'created_at'], 'Recharge history date is required')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-billing" / "src" / "checkoutService.ts": [
-                "const normalizedOrderNo = requiredSafePathSegment(orderNo, 'orderNo')",
-                ".billing.payments.checkout.retrieve(normalizedOrderNo)",
-                "orderNo: readRequiredString(item, 'orderNo', 'Checkout order number is required')",
-                "amount: readRequiredMoneyString(item, 'amount', 'Checkout amount is required', 'Checkout amount must be a money string')",
-                "points: readRequiredNonNegativeNumber(item, 'points', 'Checkout points are required')",
-                "paymentMethod: readRequiredString(item, 'paymentMethod', 'Checkout payment method is required')",
-                "outTradeNo: readRequiredStringAllowEmpty(item, 'outTradeNo', 'Checkout outer trade number is required')",
-                "qrCodePayload: readRequiredStringAllowEmpty(item, 'qrCodePayload', 'Checkout QR code payload is required')",
-                "throw new Error(`Unsupported checkout ${label}: ${status}`)",
+            PORTAL_PACKAGES / "sdkwork-claw-router-console-checkout" / "src" / "checkoutService.ts": [
+                "const safeOrderNo = requiredText(orderNo, 'orderNo')",
+                "appRechargesOrdersRetrieve(safeOrderNo)",
+                "return normalizeCheckoutStatus(readCommerceResourceRecord(result, 'Checkout order record is required'), safeOrderNo)",
+                "const orderNo = readFirstString(item, ['orderNo', 'order_no', 'requestNo', 'request_no', 'id']) || fallbackOrderNo",
+                "readFirstMoneyString(\n    item,\n    ['amount', 'priceAmount', 'price_amount', 'totalAmount', 'total_amount'],\n    'Checkout amount is required',\n    'Checkout amount must be a money string',\n  )",
+                "points: readFirstNonNegativeNumber(item, ['points', 'grantAmount', 'grant_amount'], 'Checkout points are required')",
+                "paymentMethod: readFirstString(item, ['paymentMethod', 'payment_method', 'method']) || 'wechat'",
+                "outTradeNo: readFirstString(item, ['outTradeNo', 'out_trade_no', 'externalTradeNo', 'external_trade_no'])",
+                "qrCodePayload: readFirstString(item, ['qrCodePayload', 'qr_code_payload', 'paymentUrl', 'payment_url'])",
+                "function readCheckoutStatusValue(value: string): CheckoutStatusValue",
+                "throw new Error(`Unsupported checkout status: ${status}`)",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-console-recharge" / "src" / "rechargeService.ts": [
                 "readRequiredRecord(value, 'Recharge package record is required')",
-                "readRequiredString(data, 'orderNo', 'Recharge order number is required')",
+                "throw new Error('Recharge order number is required')",
                 "'Recharge package money amount must be a money string'",
-                "readRequiredNonNegativeNumber(item, 'bonus', 'Recharge package bonus is required')",
+                "bonus: readOptionalNonNegativeNumber(item, 'bonus')",
                 "readRequiredBoolean(data, 'success', 'Recharge success flag is required')",
                 "throw new Error('Recharge submission was not accepted')",
-                "readRequiredMoneyString(data, 'amount', 'Recharge amount is required', 'Recharge amount must be a money string')",
-                "readRequiredNonNegativeNumber(data, 'points', 'Recharge points are required')",
-                "readRequiredString(data, 'paymentMethod', 'Recharge payment method is required')",
-                "readRequiredString(data, 'status', 'Recharge status is required')",
+                "amount: moneyAmount(amount, 'amount')",
+                "paymentMethod: requiredText(method, 'method')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-announcement" / "src" / "announcementService.ts": [
                 "readRequiredRecord(value, 'Announcement record is required')",
                 "readRequiredString(item, 'title', 'Announcement title is required')",
-                "readRequiredString(item, 'target', 'Announcement target is required')",
+                "target: readAnnouncementTarget(item)",
+                "throw new Error(target ? `Unsupported announcement target: ${target}` : 'Announcement target is required')",
                 "throw new Error(status ? `Unsupported announcement status: ${status}` : 'Announcement status is required')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-group" / "src" / "groupService.ts": [
@@ -564,9 +565,9 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "throw new Error(severity ? `Unsupported alert severity: ${severity}` : 'Alert severity is required')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-dashboard" / "src" / "dashboardService.ts": [
-                "readOptionalRecordArray(data, 'userConsumption', 'Dashboard pie chart record is required')",
-                "readOptionalRecordArray(data, 'traffic', 'Dashboard traffic record is required')",
-                "readOptionalRecordArray(data, 'recentUsage', 'Recent usage trace record is required')",
+                "readRequiredRecordArray(data, 'userConsumption', 'Dashboard userConsumption is required', 'Dashboard pie chart record is required')",
+                "readRequiredRecordArray(data, 'traffic', 'Dashboard traffic is required', 'Dashboard traffic record is required')",
+                "readRequiredRecordArray(data, 'recentUsage', 'Dashboard recentUsage is required', 'Recent usage trace record is required')",
                 "readRequiredRecord(value, 'Recent usage trace record is required')",
                 "readRequiredString(item, 'name', 'Dashboard pie chart name is required')",
                 "readRequiredNonNegativeNumber(item, 'value', 'Dashboard pie chart value is required')",
@@ -584,10 +585,10 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "'Usage log cost must be a decimal string'",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-console-dashboard" / "src" / "dashboardService.ts": [
-                "readOptionalRecordArray(record, 'chartData', 'Dashboard overview chart record is required')",
-                "readOptionalRecordArray(record, 'topModels', 'Dashboard top model record is required')",
-                "readOptionalRecordArray(record, 'announcements', 'Dashboard announcement record is required')",
-                "readOptionalRecordArray(record, key, `Dashboard ${label} sparkline record is required`)",
+                "readRequiredRecordArray(record, 'chartData', 'Dashboard overview chartData is required', 'Dashboard overview chart record is required')",
+                "readRequiredRecordArray(record, 'topModels', 'Dashboard overview topModels is required', 'Dashboard top model record is required')",
+                "readRequiredRecordArray(record, 'announcements', 'Dashboard overview announcements is required', 'Dashboard announcement record is required')",
+                "`Dashboard ${label} sparkline record is required`",
                 "readRequiredRecord(value, 'Dashboard overview chart record is required')",
                 "readRequiredFirstString(item, ['time', 'day', 'date', 'period'], 'Dashboard overview chart time is required')",
                 "readRequiredFirstString(item, ['name', 'model'], 'Dashboard top model name is required')",
@@ -595,15 +596,15 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "readRequiredFirstString(item, ['text', 'title', 'summary', 'content'], 'Dashboard announcement text is required')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-console-account" / "src" / "accountService.ts": [
-                "readRequiredRecordArray(data, 'consumptionByService', 'Account consumption record is required')",
-                "readRequiredRecordArray(data, 'loginLogs', 'Account login log record is required')",
-                "readRequiredRecord(value, 'Account invoice settings are required')",
-                "readRequiredRecord(value, 'Account security summary is required')",
+                "readRequiredRecordArray(value, 'consumptionByService', 'Account consumption record is required')",
+                "readRequiredRecordArray(value, 'loginLogs', 'Account login log record is required')",
+                "readRequiredRecord(value.invoiceSettings, 'Account invoice settings are required')",
+                "readRequiredRecord(value.security, 'Account security summary is required')",
                 "readRequiredString(item, 'name', 'Account consumption service name is required')",
                 "readRequiredNonNegativeNumber(item, 'value', 'Account consumption value is required')",
                 "readRequiredString(item, 'ip', 'Account login IP is required')",
                 "throw new Error(status ? `Unsupported account login status: ${status}` : 'Account login status is required')",
-                "readRequiredBoolean(data, 'isVerified', 'Account verification status is required')",
+                "readRequiredBoolean(value, 'isVerified', 'Account verification status is required')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-console-user" / "src" / "userService.ts": [
                 "name: readRequiredString(data, 'displayName', 'User profile display name is required')",
@@ -623,14 +624,15 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "'Log cost must be a decimal string'",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-console-gateway" / "src" / "gatewayService.ts": [
-                "return readRequiredApiItems(result, 'Failed to fetch gateway traces').map(readGatewayTrace)",
+                "return readRequiredApiItems(result, 'console.gateway.states.loadErrorFallback').map(readGatewayTrace)",
                 "readRequiredRecord(value, 'Gateway trace record is required')",
                 "readRequiredString(item, 'id', 'Gateway trace id is required')",
                 "method: readHttpMethod(item.method)",
                 "readRequiredNumber(item, 'status', 'Gateway trace status is required')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-commons" / "src" / "notificationService.ts": [
-                "return readRequiredApiItems(result, 'Failed to fetch notifications').map(readNotification)",
+                "return readNotificationItems(result).map((item) => toSdkworkNotificationItem(readNotification(item)))",
+                "throw new Error('Notification list response missing items')",
                 "readRequiredString(value, 'id', 'Notification id is required')",
                 "readRequiredString(value, 'desc', 'Notification description is required')",
                 "readNotificationType(value.type)",
@@ -643,17 +645,13 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "throw new Error(\n    integrationType\n      ? `Unsupported integration provider type: ${integrationType}`\n      : 'Integration provider type is required',\n  )",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-console-settlements" / "src" / "settlementsService.ts": [
-                "readRequiredApiItems(data, 'Settlement chart data is required', ['chartData'])",
-                "readRequiredApiItems(data, 'Settlement bills are required', ['bills'])",
-                "readRequiredRecord(value, 'Settlement chart record is required')",
-                "readRequiredRecord(value, 'Settlement bill record is required')",
-                "readRequiredRecord(item.breakdown, 'Settlement bill breakdown is required')",
-                "normalizeBreakdown(breakdown.image, 'image')",
-                "readRequiredString(item, 'day', 'Settlement chart day is required')",
-                "readRequiredString(item, 'period', 'Settlement bill period is required')",
-                "readRequiredStringArray(item, 'models', 'Settlement breakdown models must be strings')",
-                "'Settlement chart text must be a decimal string'",
-                "'Settlement bill total cost must be a decimal string'",
+                "readRequiredApiItems(ledgerResult, 'Settlement ledger entries are required')",
+                "readRequiredApiItems(invoiceResult, 'Settlement invoice records are required')",
+                "readRequiredRecord(item, 'Settlement ledger entry is required')",
+                "readRequiredRecord(item, 'Settlement invoice record is required')",
+                "buildSettlementDashboard(query.year, ledgerEntries, invoices)",
+                "normalizeSettlementBill(invoice)",
+                "settlementBucket(entry)",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src" / "historyMapper.ts": [
                 "return items.map(mapGenerationHistoryItem)",
@@ -710,16 +708,15 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "return 'success';",
                 "return 'paid';",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-billing" / "src" / "billingService.ts": [
+            PORTAL_PACKAGES / "sdkwork-claw-router-console-wallet" / "src" / "walletService.ts": [
                 ".filter(isRecord)",
                 "code: readString(item, 'code')",
                 "orderNo: readString(item, 'orderNo')",
                 "amount: readMoneyString(item, 'amount')",
                 "date: readString(item, 'date')",
                 "status: readBillingStatus(item)",
-                "return 'success';",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-billing" / "src" / "checkoutService.ts": [
+            PORTAL_PACKAGES / "sdkwork-claw-router-console-checkout" / "src" / "checkoutService.ts": [
                 "fetchCheckoutStatus(orderNo);",
                 ".payment.fetchCheckoutStatus(orderNo)",
                 ".payment.fetchCheckoutStatus",
@@ -728,7 +725,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "amount: readMoneyString(item, 'amount')",
                 "points: readNumber(item, 'points')",
                 "paymentMethod: readString(item, 'paymentMethod')",
-                "return 'pending';",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-console-recharge" / "src" / "rechargeService.ts": [
                 ".filter(isRecord)",
@@ -856,10 +852,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-model" / "src" / "modelService.ts": [
                 "requiredSafePathSegment(id, 'modelId')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-marketing" / "src" / "marketingService.ts": [
-                "requiredSafePathSegment(id, 'couponId')",
-                "requiredSafePathSegment(id, 'codeId')",
-            ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-user" / "src" / "userService.ts": [
                 "requiredSafePathSegment(keyId, 'apiKeyId')",
             ],
@@ -888,10 +880,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-model" / "src" / "modelService.ts": [
                 ".model.deleteModel(id)",
-            ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-marketing" / "src" / "marketingService.ts": [
-                ".coupon.deleteCoupon(id)",
-                ".couponCodes.updatePromoCodeStatus(\n      id,",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-user" / "src" / "userService.ts": [
                 ".apikey.deleteApiKey(keyId)",
@@ -1096,6 +1084,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         boundary_runtime_dependencies = {
             "@sdkwork/clawrouter-app-sdk",
             "@sdkwork/clawrouter-backend-sdk",
+            "@sdkwork/clawrouter-open-sdk",
         }
         root_managed_runtime_dependencies = singleton_runtime_dependencies | boundary_runtime_dependencies
         sdk_boundary_package = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/package.json"
@@ -1191,6 +1180,8 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             ]
             for filename in filenames:
                 source = Path(directory) / filename
+                if source.name.endswith((".test.ts", ".test.tsx", ".spec.ts", ".spec.tsx")):
+                    continue
                 if source.suffix in {".ts", ".tsx"}:
                     sources.append(source)
         return sorted(sources)

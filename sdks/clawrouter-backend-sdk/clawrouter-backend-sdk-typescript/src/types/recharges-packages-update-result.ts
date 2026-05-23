@@ -7,7 +7,5 @@ export interface RechargesPackagesUpdateResult {
   /** Data field on recharges packages update result. */
   data?: AdminRechargePackageMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

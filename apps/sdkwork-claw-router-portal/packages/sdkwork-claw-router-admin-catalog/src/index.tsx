@@ -1,0 +1,129 @@
+import React, { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Layers, Package, PackageCheck, Tags } from 'lucide-react';
+import { AdminResourceCenter, type AdminResourceSection } from 'sdkwork-claw-router-commons';
+import {
+  listCommerceAttributes,
+  listCommerceCategories,
+  listCommercePriceLists,
+  listCommerceProducts,
+  listCommerceSkus,
+} from './catalogService';
+
+type CatalogAdminTab = 'categories' | 'products' | 'skus' | 'attributes' | 'prices';
+type CatalogAdminGroup = string;
+
+const DEFAULT_PAGE_PARAMS = { page: 1, pageSize: 100 };
+const DEFAULT_CATALOG_SECTION_ID: CatalogAdminTab = 'products';
+
+type CatalogAdminProps = {
+  sectionId?: string;
+};
+
+function resolveCatalogSectionId(sectionId?: string): CatalogAdminTab {
+  if (sectionId === 'categories' || sectionId === 'products' || sectionId === 'skus' || sectionId === 'attributes' || sectionId === 'prices') {
+    return sectionId;
+  }
+  return DEFAULT_CATALOG_SECTION_ID;
+}
+
+function buildCatalogSections(t: ReturnType<typeof useTranslation>['t']): AdminResourceSection<CatalogAdminTab, CatalogAdminGroup>[] {
+  return [
+    {
+      id: 'categories',
+      title: t('admin.commerce.catalog.categories.title', 'Categories'),
+      description: t('admin.commerce.catalog.categories.desc', 'Product category tree and storefront taxonomy.'),
+      icon: <Layers className="h-4 w-4" />,
+      group: t('admin.commerce.catalog.group.productCenter', 'Product Center'),
+      load: () => listCommerceCategories(DEFAULT_PAGE_PARAMS),
+      columns: [
+        { key: 'id', label: t('admin.col.id', 'ID') },
+        { key: 'name', label: t('admin.col.name', 'Name') },
+        { key: 'status', label: t('admin.col.status', 'Status') },
+        { key: 'sortWeight', label: t('admin.col.sort', 'Sort'), align: 'right' },
+      ],
+      searchFields: ['id', 'name', 'code', 'status'],
+    },
+    {
+      id: 'products',
+      title: t('admin.commerce.catalog.products.title', 'Products'),
+      description: t('admin.commerce.catalog.products.desc', 'SPU records for the shared product center.'),
+      icon: <Package className="h-4 w-4" />,
+      group: t('admin.commerce.catalog.group.productCenter', 'Product Center'),
+      load: () => listCommerceProducts(DEFAULT_PAGE_PARAMS),
+      columns: [
+        { key: 'id', label: t('admin.col.id', 'ID') },
+        { key: 'name', label: t('admin.col.name', 'Name') },
+        { key: 'productType', label: t('admin.col.type', 'Type') },
+        { key: 'status', label: t('admin.col.status', 'Status') },
+      ],
+      searchFields: ['id', 'name', 'code', 'productType', 'status'],
+    },
+    {
+      id: 'skus',
+      title: t('admin.commerce.catalog.skus.title', 'SKUs'),
+      description: t('admin.commerce.catalog.skus.desc', 'Purchasable product variants and fulfillment mode.'),
+      icon: <PackageCheck className="h-4 w-4" />,
+      group: t('admin.commerce.catalog.group.productCenter', 'Product Center'),
+      load: () => listCommerceSkus(DEFAULT_PAGE_PARAMS),
+      columns: [
+        { key: 'id', label: t('admin.col.id', 'ID') },
+        { key: 'skuNo', label: t('admin.col.sku', 'SKU') },
+        { key: 'productId', label: t('admin.col.product', 'Product') },
+        { key: 'status', label: t('admin.col.status', 'Status') },
+      ],
+      searchFields: ['id', 'skuNo', 'productId', 'status'],
+    },
+    {
+      id: 'attributes',
+      title: t('admin.commerce.catalog.attributes.title', 'Attributes'),
+      description: t('admin.commerce.catalog.attributes.desc', 'SPU and SKU structured attribute definitions.'),
+      icon: <Tags className="h-4 w-4" />,
+      group: t('admin.commerce.catalog.group.productCenter', 'Product Center'),
+      load: () => listCommerceAttributes(DEFAULT_PAGE_PARAMS),
+      columns: [
+        { key: 'id', label: t('admin.col.id', 'ID') },
+        { key: 'name', label: t('admin.col.name', 'Name') },
+        { key: 'scope', label: t('admin.col.scope', 'Scope') },
+        { key: 'status', label: t('admin.col.status', 'Status') },
+      ],
+      searchFields: ['id', 'name', 'scope', 'status'],
+    },
+    {
+      id: 'prices',
+      title: t('admin.commerce.catalog.prices.title', 'Price Lists'),
+      description: t('admin.commerce.catalog.prices.desc', 'Currency, market, channel, and segment pricing.'),
+      icon: <Tags className="h-4 w-4" />,
+      group: t('admin.commerce.catalog.group.productCenter', 'Product Center'),
+      load: () => listCommercePriceLists(DEFAULT_PAGE_PARAMS),
+      columns: [
+        { key: 'id', label: t('admin.col.id', 'ID') },
+        { key: 'name', label: t('admin.col.name', 'Name') },
+        { key: 'currencyCode', label: t('admin.col.currency', 'Currency') },
+        { key: 'status', label: t('admin.col.status', 'Status') },
+      ],
+      searchFields: ['id', 'name', 'currencyCode', 'marketCode', 'status'],
+    },
+  ];
+}
+
+export function CatalogAdmin({ sectionId }: CatalogAdminProps = {}) {
+  const { t } = useTranslation();
+  const sections = useMemo(() => buildCatalogSections(t), [t]);
+  const activeSectionId = resolveCatalogSectionId(sectionId);
+
+  return (
+    <AdminResourceCenter
+      activeSectionId={activeSectionId}
+      description={t('admin.commerce.catalog.desc', 'SPU, SKU, attributes, categories, and price lists.')}
+      emptyTitle={t('admin.commerce.catalog.empty', 'No catalog records')}
+      errorTitle={t('admin.commerce.catalog.error', 'Catalog data could not be loaded')}
+      icon={<Package className="h-5 w-5 text-blue-500" />}
+      loadingTitle={t('admin.commerce.catalog.loading', 'Loading catalog records...')}
+      sections={sections}
+      showSectionNavigation={false}
+      tableViewportDataAttribute="admin-catalog-table-viewport"
+      title={t('admin.commerce.catalog.title', 'Catalog')}
+    />
+  );
+}

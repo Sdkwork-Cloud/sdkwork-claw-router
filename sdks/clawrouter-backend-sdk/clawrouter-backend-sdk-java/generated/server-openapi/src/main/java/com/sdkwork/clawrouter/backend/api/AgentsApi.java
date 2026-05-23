@@ -8,13 +8,13 @@ import java.util.Map;
 
 public class AgentsApi {
     private final HttpClient client;
-    
+
     public AgentsApi(HttpClient client) {
         this.client = client;
     }
 
     /** List managed agents */
-    public AgentsListResult list(String q, Integer ownerUserId, String status, String visibility, Integer page, Integer pageSize) throws Exception {
+    public AgentDefinitionsListResult agentDefinitionsList(String q, Integer ownerUserId, String status, String visibility, Integer page, Integer pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("q", q, "form", true, false, null),
             new QueryParameterSpec("owner_user_id", ownerUserId, "form", true, false, null),
@@ -24,13 +24,13 @@ public class AgentsApi {
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
         ));
         Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/agents"), query));
-        return client.convertValue(raw, new TypeReference<AgentsListResult>() {});
+        return client.convertValue(raw, new TypeReference<AgentDefinitionsListResult>() {});
     }
 
     /** Retrieve managed agent */
-    public AgentsRetrieveResult retrieve(String agentId) throws Exception {
+    public AgentDefinitionsRetrieveResult agentDefinitionsRetrieve(String agentId) throws Exception {
         Object raw = client.get(ApiPaths.backendPath("/agents/" + serializePathParameter(agentId, new PathParameterSpec("agentId", "simple", false)) + ""));
-        return client.convertValue(raw, new TypeReference<AgentsRetrieveResult>() {});
+        return client.convertValue(raw, new TypeReference<AgentDefinitionsRetrieveResult>() {});
     }
 
     private record PathParameterSpec(String name, String style, boolean explode) {}

@@ -1,0 +1,13 @@
+package com.sdkwork.clawrouter.backend
+
+data class CommerceRefundRecord(
+    val amount: String? = null,
+    val createdAt: String? = null,
+    val idempotencyKey: String? = null,
+    val paymentAttemptId: String? = null,
+    val refundNo: String? = null,
+    val requestNo: String? = null,
+    val status: String? = null,
+    val tenantId: String? = null,
+    val updatedAt: String? = null
+)

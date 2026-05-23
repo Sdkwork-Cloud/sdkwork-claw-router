@@ -9,5 +9,5 @@ class BillingRedeemHistoryItem:
     amount: str
     code: str
     date: str
-    id: int
+    id: str
     status: str

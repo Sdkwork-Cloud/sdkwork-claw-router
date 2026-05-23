@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import CreateRoutingChannelRequest, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationAgentRunCreateRequest, GenerationAgentRunsCreateResult, GenerationsListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, ProvidersListResult, RoutingApiKeysListResult, RoutingChannelsCreateResult, RoutingChannelsDeleteResult, RoutingChannelsListResult, RoutingChannelsStatusUpdateResult, RoutingChannelsUpdateResult, RoutingChannelsVerifyResult, RoutingRequestTracesListResult, RoutingStrategyListResult, RoutingStrategyUpdateResult, RoutingUsageListResult, SetRoutingChannelStatusRequest, UpdateRoutingChannelRequest, UpdateRoutingStrategyRequest, UsageLogsListResult
+from ..models import CreateRoutingChannelRequest, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, ProvidersListResult, RoutingApiKeysListResult, RoutingChannelsCreateResult, RoutingChannelsDeleteResult, RoutingChannelsListResult, RoutingChannelsStatusUpdateResult, RoutingChannelsUpdateResult, RoutingChannelsVerifyResult, RoutingRequestTracesListResult, RoutingStrategyListResult, RoutingStrategyUpdateResult, RoutingUsageListResult, SetRoutingChannelStatusRequest, UpdateRoutingChannelRequest, UpdateRoutingStrategyRequest, UsageLogsListResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -244,8 +244,7 @@ class AiApi:
         self._client = client
         self.dashboard = AiDashboardApi(client)
         self.gateway = AiGatewayApi(client)
-        self.generation_agent = AiGenerationAgentApi(client)
-        self.generations = AiGenerationsApi(client)
+        self.generation = AiGenerationApi(client)
         self.model_rankings = AiModelRankingsApi(client)
         self.model_vendors = AiModelVendorsApi(client)
         self.models = AiModelsApi(client)
@@ -297,33 +296,14 @@ class AiGatewayTracesApi:
         """List traces"""
         return self._client.get(f"/app/v3/api/ai/gateway/traces")
 
-class AiGenerationAgentApi:
-    """ai ai.generation_agent API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-        self.runs = AiGenerationAgentRunsApi(client)
-
-
-class AiGenerationAgentRunsApi:
-    """ai ai.generation_agent.runs API client."""
+class AiGenerationApi:
+    """ai ai.generation API client."""
 
     def __init__(self, client: HttpClient):
         self._client = client
 
 
-    def create(self, body: GenerationAgentRunCreateRequest) -> GenerationAgentRunsCreateResult:
-        """Create Playground generation agent run"""
-        return self._client.post(f"/app/v3/api/ai/generation_agent/runs", json=body)
-
-class AiGenerationsApi:
-    """ai ai.generations API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def list(self) -> GenerationsListResult:
+    def list(self) -> GenerationListResult:
         """List generation history"""
         return self._client.get(f"/app/v3/api/ai/generations")
 

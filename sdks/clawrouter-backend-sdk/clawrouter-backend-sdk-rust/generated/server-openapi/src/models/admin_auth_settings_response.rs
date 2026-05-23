@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{AdminAuthVerificationPolicy};
+use crate::models::{AdminAuthVerificationPolicy, AdminAuthWechatSettings};
 
 /// Admin auth settings response schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -30,6 +30,10 @@ pub struct AdminAuthSettingsResponse {
     #[serde(rename = "qrLoginEnabled")]
     pub qr_login_enabled: bool,
 
+    /// Qr login type field on admin auth settings response.
+    #[serde(rename = "qrLoginType")]
+    pub qr_login_type: String,
+
     /// Recovery methods field on admin auth settings response.
     #[serde(rename = "recoveryMethods")]
     pub recovery_methods: Vec<String>,
@@ -41,4 +45,7 @@ pub struct AdminAuthSettingsResponse {
     /// Verification policy field on admin auth settings response.
     #[serde(rename = "verificationPolicy")]
     pub verification_policy: AdminAuthVerificationPolicy,
+
+    /// Wechat field on admin auth settings response.
+    pub wechat: AdminAuthWechatSettings,
 }

@@ -3,15 +3,17 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
 if TYPE_CHECKING:
+    from .provider_circuit_breaker_policy import ProviderCircuitBreakerPolicy
     from .provider_retry_policy import ProviderRetryPolicy
 
 
 @dataclass
 class AdminChannelItem:
-    """Persisted channel snapshot returned after the provider health probe. Secret refs and tokens are not returned."""
+    """Persisted channel snapshot returned after the provider health probe. Admin management responses may return the stored plaintext provider API key for channel account relay operations."""
     access_type: str
     balance: str
     capabilities: List[str]
+    created_at: str
     errors: int
     id: str
     is_multimodal: bool
@@ -21,7 +23,10 @@ class AdminChannelItem:
     status: str
     vendor: str
     weight: int
+    api_key: Optional[str] = None
     base_url: Optional[str] = None
+    circuit_breaker_policy: Optional[ProviderCircuitBreakerPolicy] = None
+    expires_at: Optional[str] = None
     retry_policy: Optional[ProviderRetryPolicy] = None
     secret_ref: Optional[str] = None
     timeout_ms: Optional[int] = None

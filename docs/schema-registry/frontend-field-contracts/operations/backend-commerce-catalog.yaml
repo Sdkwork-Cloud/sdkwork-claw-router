@@ -1,0 +1,1195 @@
+fragment: operations/backend-commerce-catalog
+frontend_operations:
+- route: /admin/catalog
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  operation: listCommerceCategories
+  operation_id: catalog.categories.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/catalog/categories
+  sdk_domain: commerce
+  summary: List product categories for admin management
+  description: Returns appbase commerce category tree records for backend catalog management.
+  read_sources:
+  - commerce_product_category
+  query_parameters:
+  - name: parent_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  response_schema:
+    name: CommerceProductCategoryListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items: &id001
+          name: CommerceProductCategoryItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - categoryNo
+          - name
+          - path
+          - levelNo
+          - status
+          - sortOrder
+          - createdAt
+          - updatedAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            categoryNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            parentId:
+              type: string
+              nullable: true
+              maxLength: 128
+            name:
+              type: string
+              minLength: 1
+              maxLength: 256
+            path:
+              type: string
+              minLength: 1
+              maxLength: 1024
+            levelNo:
+              type: integer
+              format: int64
+              minimum: 0
+            status:
+              type: string
+              enum:
+              - active
+              - inactive
+              - archived
+            sortOrder:
+              type: integer
+              format: int64
+              minimum: 0
+            createdAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+            updatedAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200
+- route: /admin/catalog
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  operation: createCommerceCategory
+  operation_id: catalog.categories.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/catalog/categories
+  sdk_domain: commerce
+  summary: Create product category
+  description: Creates one appbase commerce product category with stable category number and category tree placement.
+  request_id_header: true
+  idempotency_required: true
+  read_sources:
+  - commerce_product_category
+  write_tables:
+  - commerce_product_category
+  - ops_audit_log
+  request_schema: &id002
+    name: CommerceProductCategoryMutationRequest
+    type: object
+    additionalProperties: false
+    required:
+    - categoryNo
+    - name
+    - status
+    properties:
+      categoryNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      parentId:
+        type: string
+        nullable: true
+        maxLength: 128
+      name:
+        type: string
+        minLength: 1
+        maxLength: 256
+      status:
+        type: string
+        enum:
+        - active
+        - inactive
+        - archived
+      sortOrder:
+        type: integer
+        format: int64
+        minimum: 0
+  response_schema: &id003
+    name: CommerceProductCategoryMutationResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    properties:
+      item: *id001
+- route: /admin/catalog
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  operation: updateCommerceCategory
+  operation_id: catalog.categories.update
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/catalog/categories/{categoryId}
+  sdk_domain: commerce
+  summary: Update product category
+  description: Updates mutable category metadata and category tree placement.
+  request_id_header: true
+  idempotency_required: true
+  read_sources:
+  - commerce_product_category
+  write_tables:
+  - commerce_product_category
+  - ops_audit_log
+  request_schema: *id002
+  response_schema: *id003
+- route: /admin/catalog
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  operation: deleteCommerceCategory
+  operation_id: catalog.categories.delete
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/catalog/categories/{categoryId}
+  sdk_domain: commerce
+  summary: Delete product category
+  description: Deletes or archives a category after backend referential checks.
+  request_id_header: true
+  read_sources:
+  - commerce_product_category
+  - commerce_product_spu
+  write_tables:
+  - commerce_product_category
+  - ops_audit_log
+  response_schema:
+    name: AdminDeleteResponse
+    type: object
+    additionalProperties: false
+    required:
+    - deleted
+    properties:
+      deleted:
+        type: boolean
+- route: /admin/catalog
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  operation: listCommerceProducts
+  operation_id: catalog.products.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/catalog/products
+  sdk_domain: commerce
+  summary: List products for admin management
+  description: Returns SPU catalog records for backend product center management.
+  read_sources:
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_product_category
+  - commerce_product_media
+  - commerce_price_list
+  - commerce_price_list_item
+  query_parameters:
+  - name: q
+    schema:
+      type: string
+      maxLength: 256
+  - name: category_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: product_type
+    schema:
+      type: string
+      maxLength: 64
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  - name: sort
+    schema:
+      type: string
+      maxLength: 128
+  response_schema:
+    name: CommerceProductSpuListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items: &id004
+          name: CommerceProductSpuItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - spuNo
+          - productType
+          - title
+          - status
+          - createdAt
+          - updatedAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            spuNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            productType:
+              type: string
+              enum:
+              - physical_good
+              - virtual_good
+              - membership
+              - points_recharge
+              - wallet_recharge
+              - subscription
+              - service
+            title:
+              type: string
+              minLength: 1
+              maxLength: 512
+            subtitle:
+              type: string
+              nullable: true
+              maxLength: 512
+            description:
+              type: string
+              nullable: true
+              maxLength: 20000
+            categoryId:
+              type: string
+              nullable: true
+              maxLength: 128
+            brand:
+              type: string
+              nullable: true
+              maxLength: 128
+            status:
+              type: string
+              enum:
+              - draft
+              - active
+              - inactive
+              - archived
+            publishedAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            defaultSkuId:
+              type: string
+              nullable: true
+              maxLength: 128
+            minPriceAmount:
+              type: string
+              nullable: true
+              pattern: ^\d+(?:\.\d{1,6})?$
+            currencyCode:
+              type: string
+              nullable: true
+              minLength: 3
+              maxLength: 16
+            media:
+              type: array
+              items:
+                name: CommerceProductMediaItem
+                type: object
+                additionalProperties: false
+                required:
+                - id
+                - ownerType
+                - ownerId
+                - mediaType
+                - url
+                - sortOrder
+                - status
+                properties:
+                  id:
+                    type: string
+                    minLength: 1
+                    maxLength: 128
+                  ownerType:
+                    type: string
+                    enum:
+                    - spu
+                    - sku
+                  ownerId:
+                    type: string
+                    minLength: 1
+                    maxLength: 128
+                  mediaType:
+                    type: string
+                    enum:
+                    - image
+                    - video
+                    - document
+                  url:
+                    type: string
+                    minLength: 1
+                    maxLength: 2048
+                  altText:
+                    type: string
+                    nullable: true
+                    maxLength: 512
+                  sortOrder:
+                    type: integer
+                    format: int64
+                    minimum: 0
+                  status:
+                    type: string
+                    enum:
+                    - active
+                    - inactive
+                    - deleted
+            createdAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+            updatedAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200
+- route: /admin/catalog
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  operation: createCommerceProduct
+  operation_id: catalog.products.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/catalog/products
+  sdk_domain: commerce
+  summary: Create product SPU
+  description: Creates one standard product SPU for physical goods, virtual goods, memberships, recharges, subscriptions, or services.
+  request_id_header: true
+  idempotency_required: true
+  read_sources:
+  - commerce_product_spu
+  - commerce_product_category
+  write_tables:
+  - commerce_product_spu
+  - commerce_product_media
+  - ops_audit_log
+  request_schema: &id005
+    name: CommerceProductSpuMutationRequest
+    type: object
+    additionalProperties: false
+    required:
+    - spuNo
+    - productType
+    - title
+    - status
+    properties:
+      spuNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      productType:
+        type: string
+        enum:
+        - physical_good
+        - virtual_good
+        - membership
+        - points_recharge
+        - wallet_recharge
+        - subscription
+        - service
+      title:
+        type: string
+        minLength: 1
+        maxLength: 512
+      subtitle:
+        type: string
+        nullable: true
+        maxLength: 512
+      description:
+        type: string
+        nullable: true
+        maxLength: 20000
+      categoryId:
+        type: string
+        nullable: true
+        maxLength: 128
+      brand:
+        type: string
+        nullable: true
+        maxLength: 128
+      status:
+        type: string
+        enum:
+        - draft
+        - active
+        - inactive
+        - archived
+  response_schema: &id006
+    name: CommerceProductSpuMutationResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    properties:
+      item: *id004
+- route: /admin/catalog
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  operation: updateCommerceProduct
+  operation_id: catalog.products.update
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/catalog/products/{productId}
+  sdk_domain: commerce
+  summary: Update product SPU
+  description: Updates product SPU metadata, category binding, visibility, and lifecycle status.
+  request_id_header: true
+  idempotency_required: true
+  read_sources:
+  - commerce_product_spu
+  - commerce_product_category
+  write_tables:
+  - commerce_product_spu
+  - commerce_product_media
+  - ops_audit_log
+  request_schema: *id005
+  response_schema: *id006
+- route: /admin/catalog
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  operation: listCommerceSkus
+  operation_id: catalog.skus.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/catalog/skus
+  sdk_domain: commerce
+  summary: List product SKUs for admin management
+  description: Returns purchasable SKU variants with fulfillment type, price summary, and attribute values.
+  read_sources:
+  - commerce_product_sku
+  - commerce_product_spu
+  - commerce_product_attribute
+  - commerce_product_attribute_value
+  - commerce_product_sku_attribute
+  - commerce_price_list
+  - commerce_price_list_item
+  query_parameters:
+  - name: product_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: fulfillment_type
+    schema:
+      type: string
+      maxLength: 64
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  response_schema:
+    name: CommerceProductSkuListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items: &id008
+          name: CommerceProductSkuItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - skuNo
+          - productId
+          - title
+          - fulfillmentType
+          - status
+          - createdAt
+          - updatedAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            skuNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            productId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            title:
+              type: string
+              minLength: 1
+              maxLength: 512
+            fulfillmentType:
+              type: string
+              enum:
+              - physical_shipment
+              - digital_delivery
+              - entitlement_grant
+              - points_credit
+              - wallet_credit
+              - subscription_activation
+              - service_activation
+              - none
+            taxCategory:
+              type: string
+              nullable: true
+              maxLength: 128
+            salesUnit:
+              type: string
+              nullable: true
+              maxLength: 64
+            defaultPriceAmount:
+              type: string
+              nullable: true
+              pattern: ^\d+(?:\.\d{1,6})?$
+            defaultCurrencyCode:
+              type: string
+              nullable: true
+              minLength: 3
+              maxLength: 16
+            status:
+              type: string
+              enum:
+              - draft
+              - active
+              - inactive
+              - archived
+            publishedAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            attributes:
+              type: array
+              items: &id007
+                name: CommerceProductSkuAttributeItem
+                type: object
+                additionalProperties: false
+                required:
+                - attributeId
+                - attributeName
+                properties:
+                  attributeId:
+                    type: string
+                    minLength: 1
+                    maxLength: 128
+                  attributeName:
+                    type: string
+                    minLength: 1
+                    maxLength: 256
+                  attributeValueId:
+                    type: string
+                    nullable: true
+                    maxLength: 128
+                  valueCode:
+                    type: string
+                    nullable: true
+                    maxLength: 128
+                  displayValue:
+                    type: string
+                    nullable: true
+                    maxLength: 512
+                  customValue:
+                    type: string
+                    nullable: true
+                    maxLength: 512
+            createdAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+            updatedAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200
+- route: /admin/catalog
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  operation: createCommerceSku
+  operation_id: catalog.skus.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/catalog/skus
+  sdk_domain: commerce
+  summary: Create product SKU
+  description: Creates one purchasable SKU variant under a product SPU.
+  request_id_header: true
+  idempotency_required: true
+  read_sources:
+  - commerce_product_sku
+  - commerce_product_spu
+  - commerce_product_attribute
+  - commerce_product_attribute_value
+  write_tables:
+  - commerce_product_sku
+  - commerce_product_sku_attribute
+  - ops_audit_log
+  request_schema: &id009
+    name: CommerceProductSkuMutationRequest
+    type: object
+    additionalProperties: false
+    required:
+    - skuNo
+    - productId
+    - title
+    - fulfillmentType
+    - status
+    properties:
+      skuNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      productId:
+        type: string
+        minLength: 1
+        maxLength: 128
+      title:
+        type: string
+        minLength: 1
+        maxLength: 512
+      fulfillmentType:
+        type: string
+        enum:
+        - physical_shipment
+        - digital_delivery
+        - entitlement_grant
+        - points_credit
+        - wallet_credit
+        - subscription_activation
+        - service_activation
+        - none
+      taxCategory:
+        type: string
+        nullable: true
+        maxLength: 128
+      salesUnit:
+        type: string
+        nullable: true
+        maxLength: 64
+      defaultPriceAmount:
+        type: string
+        nullable: true
+        pattern: ^\d+(?:\.\d{1,6})?$
+      defaultCurrencyCode:
+        type: string
+        nullable: true
+        minLength: 3
+        maxLength: 16
+      status:
+        type: string
+        enum:
+        - draft
+        - active
+        - inactive
+        - archived
+      attributes:
+        type: array
+        items: *id007
+  response_schema: &id010
+    name: CommerceProductSkuMutationResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    properties:
+      item: *id008
+- route: /admin/catalog
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  operation: updateCommerceSku
+  operation_id: catalog.skus.update
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/catalog/skus/{skuId}
+  sdk_domain: commerce
+  summary: Update product SKU
+  description: Updates SKU fulfillment, price summary, lifecycle status, and attribute values.
+  request_id_header: true
+  idempotency_required: true
+  read_sources:
+  - commerce_product_sku
+  - commerce_product_spu
+  - commerce_product_attribute
+  - commerce_product_attribute_value
+  write_tables:
+  - commerce_product_sku
+  - commerce_product_sku_attribute
+  - ops_audit_log
+  request_schema: *id009
+  response_schema: *id010
+- route: /admin/catalog
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  operation: listCommerceAttributes
+  operation_id: catalog.attributes.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/catalog/attributes
+  sdk_domain: commerce
+  summary: List product attributes
+  description: Returns SPU/SKU attribute definitions for catalog management.
+  read_sources:
+  - commerce_product_attribute
+  - commerce_product_attribute_value
+  query_parameters:
+  - name: scope
+    schema:
+      type: string
+      maxLength: 32
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  response_schema:
+    name: CommerceProductAttributeListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items: &id011
+          name: CommerceProductAttributeItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - attributeNo
+          - name
+          - valueType
+          - scope
+          - required
+          - searchable
+          - filterable
+          - status
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            attributeNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            name:
+              type: string
+              minLength: 1
+              maxLength: 256
+            valueType:
+              type: string
+              enum:
+              - text
+              - number
+              - boolean
+              - enum
+              - date
+            scope:
+              type: string
+              enum:
+              - spu
+              - sku
+              - both
+            required:
+              type: boolean
+            searchable:
+              type: boolean
+            filterable:
+              type: boolean
+            status:
+              type: string
+              enum:
+              - active
+              - inactive
+              - archived
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200
+- route: /admin/catalog
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  operation: createCommerceAttribute
+  operation_id: catalog.attributes.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/catalog/attributes
+  sdk_domain: commerce
+  summary: Create product attribute
+  description: Creates one product attribute definition for SPU or SKU structured attributes.
+  request_id_header: true
+  idempotency_required: true
+  read_sources:
+  - commerce_product_attribute
+  write_tables:
+  - commerce_product_attribute
+  - commerce_product_attribute_value
+  - ops_audit_log
+  request_schema:
+    name: CommerceProductAttributeMutationRequest
+    type: object
+    additionalProperties: false
+    required:
+    - attributeNo
+    - name
+    - valueType
+    - scope
+    - required
+    - searchable
+    - filterable
+    - status
+    properties:
+      attributeNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      name:
+        type: string
+        minLength: 1
+        maxLength: 256
+      valueType:
+        type: string
+        enum:
+        - text
+        - number
+        - boolean
+        - enum
+        - date
+      scope:
+        type: string
+        enum:
+        - spu
+        - sku
+        - both
+      required:
+        type: boolean
+      searchable:
+        type: boolean
+      filterable:
+        type: boolean
+      status:
+        type: string
+        enum:
+        - active
+        - inactive
+        - archived
+  response_schema:
+    name: CommerceProductAttributeMutationResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    properties:
+      item: *id011
+- route: /admin/catalog
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  operation: listCommercePriceLists
+  operation_id: catalog.priceLists.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/catalog/price_lists
+  sdk_domain: commerce
+  summary: List product price lists
+  description: Returns price list headers used for currency, market, channel, and customer segment pricing.
+  read_sources:
+  - commerce_price_list
+  - commerce_price_list_item
+  query_parameters:
+  - name: currency_code
+    schema:
+      type: string
+      maxLength: 16
+  - name: market_code
+    schema:
+      type: string
+      maxLength: 64
+  - name: status
+    schema:
+      type: string
+      maxLength: 32
+  - name: page
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      format: int64
+      minimum: 1
+      maximum: 200
+  response_schema:
+    name: CommercePriceListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - total
+    - page
+    - pageSize
+    properties:
+      items:
+        type: array
+        items: &id012
+          name: CommercePriceListItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - priceListNo
+          - currencyCode
+          - status
+          - createdAt
+          - updatedAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            priceListNo:
+              type: string
+              minLength: 1
+              maxLength: 128
+            currencyCode:
+              type: string
+              minLength: 3
+              maxLength: 16
+            marketCode:
+              type: string
+              nullable: true
+              maxLength: 64
+            customerSegment:
+              type: string
+              nullable: true
+              maxLength: 128
+            startsAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            endsAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            status:
+              type: string
+              enum:
+              - active
+              - inactive
+              - archived
+            createdAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+            updatedAt:
+              type: string
+              minLength: 1
+              maxLength: 64
+      total:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      pageSize:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 200
+- route: /admin/catalog
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  operation: createCommercePriceList
+  operation_id: catalog.priceLists.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/catalog/price_lists
+  sdk_domain: commerce
+  summary: Create product price list
+  description: Creates one product price list header for market, currency, channel, or segment-specific pricing.
+  request_id_header: true
+  idempotency_required: true
+  read_sources:
+  - commerce_price_list
+  write_tables:
+  - commerce_price_list
+  - ops_audit_log
+  request_schema:
+    name: CommercePriceListMutationRequest
+    type: object
+    additionalProperties: false
+    required:
+    - priceListNo
+    - currencyCode
+    - status
+    properties:
+      priceListNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      currencyCode:
+        type: string
+        minLength: 3
+        maxLength: 16
+      marketCode:
+        type: string
+        nullable: true
+        maxLength: 64
+      customerSegment:
+        type: string
+        nullable: true
+        maxLength: 128
+      startsAt:
+        type: string
+        nullable: true
+        maxLength: 64
+      endsAt:
+        type: string
+        nullable: true
+        maxLength: 64
+      status:
+        type: string
+        enum:
+        - active
+        - inactive
+        - archived
+  response_schema:
+    name: CommercePriceListMutationResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    properties:
+      item: *id012

@@ -4,6 +4,5 @@ package types
 type GatewayTracesListResult struct {
 	Code string `json:"code"`
 	Data GatewayTracesResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

@@ -75,6 +75,34 @@ func (a *EcosystemApi) SkillsCategoriesCreate(body sdktypes.AdminSkillCategoryCr
     return decodeResult[sdktypes.SkillsCategoriesCreateResult](raw)
 }
 
+// Delete skill category
+func (a *EcosystemApi) SkillsCategoriesDelete(categoryId string, xRequestId *string) (sdktypes.SkillsCategoriesDeleteResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/ecosystem/skills/categories/%s", SerializePathParameter(categoryId, PathParameterSpec{Name: "categoryId", Style: "simple", Explode: false}))), nil, headers)
+    if err != nil {
+        var zero sdktypes.SkillsCategoriesDeleteResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.SkillsCategoriesDeleteResult](raw)
+}
+
+// Update skill category
+func (a *EcosystemApi) SkillsCategoriesUpdate(categoryId string, body sdktypes.AdminSkillCategoryUpdateRequest, xRequestId *string) (sdktypes.SkillsCategoriesUpdateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/ecosystem/skills/categories/%s", SerializePathParameter(categoryId, PathParameterSpec{Name: "categoryId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.SkillsCategoriesUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.SkillsCategoriesUpdateResult](raw)
+}
+
 // List skill packages
 func (a *EcosystemApi) SkillsPackageList(q *string, enabled *bool, categoryId *string, page *int, pageSize *int) (sdktypes.SkillsPackageListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{

@@ -9,11 +9,12 @@ type SdkworkBackendClient struct {
     http *sdkhttp.Client
     Agents *api.AgentsApi
     Ai *api.AiApi
-    Billing *api.BillingApi
+    Commerce *api.CommerceApi
     Content *api.ContentApi
     Ecosystem *api.EcosystemApi
     Iam *api.IamApi
     Integration *api.IntegrationApi
+    OpenPlatform *api.OpenPlatformApi
     Platform *api.PlatformApi
     System *api.SystemApi
 }
@@ -29,11 +30,12 @@ func NewSdkworkBackendClientWithConfig(config sdkhttp.Config) *SdkworkBackendCli
         http: client,
         Agents: api.NewAgentsApi(client),
         Ai: api.NewAiApi(client),
-        Billing: api.NewBillingApi(client),
+        Commerce: api.NewCommerceApi(client),
         Content: api.NewContentApi(client),
         Ecosystem: api.NewEcosystemApi(client),
         Iam: api.NewIamApi(client),
         Integration: api.NewIntegrationApi(client),
+        OpenPlatform: api.NewOpenPlatformApi(client),
         Platform: api.NewPlatformApi(client),
         System: api.NewSystemApi(client),
     }

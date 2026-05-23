@@ -13,12 +13,15 @@ type RegisterMethod = NonNullable<SdkworkAuthRuntimeConfig['registerMethods']>[n
 type RecoveryMethod = NonNullable<SdkworkAuthRuntimeConfig['recoveryMethods']>[number];
 type LeftRailMode = NonNullable<SdkworkAuthRuntimeConfig['leftRailMode']>;
 type OAuthProviderRegion = NonNullable<SdkworkAuthRuntimeConfig['oauthProviderRegion']>;
+type QrLoginType = NonNullable<SdkworkAuthRuntimeConfig['qrLoginType']>;
+type BackendQrLoginType = 'web' | 'official' | 'mini';
 
 const LOGIN_METHODS = ['password', 'emailCode', 'phoneCode', 'sessionBridge'] as const satisfies readonly LoginMethod[];
 const REGISTER_METHODS = ['email', 'phone'] as const satisfies readonly RegisterMethod[];
 const RECOVERY_METHODS = ['email', 'phone'] as const satisfies readonly RecoveryMethod[];
 const LEFT_RAIL_MODES = ['auto', 'highlights-only', 'qr-only'] as const satisfies readonly LeftRailMode[];
 const OAUTH_REGIONS = ['mainland', 'overseas'] as const satisfies readonly OAuthProviderRegion[];
+const BACKEND_QR_LOGIN_TYPES = ['web', 'official', 'mini'] as const satisfies readonly BackendQrLoginType[];
 
 export const DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG: SdkworkAuthRuntimeConfig = {
   leftRailMode: 'highlights-only',
@@ -26,6 +29,7 @@ export const DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG: SdkworkAuthRuntimeConfig =
   oauthLoginEnabled: false,
   oauthProviders: [],
   qrLoginEnabled: false,
+  qrLoginType: 'sdkwork_app',
   recoveryMethods: ['email', 'phone'],
   registerMethods: ['email', 'phone'],
   verificationPolicy: {
@@ -77,10 +81,46 @@ export function mergeClawRouterAuthRuntimeConfig(record: ApiRecord): SdkworkAuth
       ? {}
       : { oauthProviderRegion: readOptionalEnum(record, 'oauthRegion', OAUTH_REGIONS, 'Unsupported auth oauthRegion') }),
     qrLoginEnabled: readRequiredBoolean(record, 'qrLoginEnabled', 'Auth qrLoginEnabled flag is required'),
+    qrLoginType: readRequiredQrLoginType(record),
     recoveryMethods: readRequiredEnumArray(record, 'recoveryMethods', RECOVERY_METHODS, 'Auth recoveryMethods are required', 'Unsupported auth recoveryMethods'),
     registerMethods: readRequiredEnumArray(record, 'registerMethods', REGISTER_METHODS, 'Auth registerMethods are required', 'Unsupported auth registerMethods'),
     verificationPolicy: readVerificationPolicy(record.verificationPolicy),
   };
+}
+
+function readRequiredQrLoginType(record: ApiRecord): QrLoginType {
+  const value = record.qrLoginType;
+  if (typeof value !== 'string' || !value.trim()) {
+    throw new Error('Auth qrLoginType is required');
+  }
+  const normalized = value.trim();
+  const backendType = readBackendQrLoginType(normalized);
+  if (backendType === 'web') {
+    return 'sdkwork_app';
+  }
+  if (backendType === 'official') {
+    return 'wechat_official_account';
+  }
+  if (backendType === 'mini') {
+    return 'wechat_mini_program';
+  }
+  throw new Error(`Unsupported auth qrLoginType: ${normalized}`);
+}
+
+function readBackendQrLoginType(value: string): BackendQrLoginType | null {
+  if ((BACKEND_QR_LOGIN_TYPES as readonly string[]).includes(value)) {
+    return value as BackendQrLoginType;
+  }
+  if (value === 'sdkwork_app' || value === 'sdkwork-app' || value === 'sdkwork' || value === 'mobile_app') {
+    return 'web';
+  }
+  if (value === 'wechat_official_account' || value === 'wechat-official-account' || value === 'wechat-official' || value === 'official_account') {
+    return 'official';
+  }
+  if (value === 'wechat_mini_program' || value === 'wechat-mini-program' || value === 'miniapp' || value === 'mini_program') {
+    return 'mini';
+  }
+  return null;
 }
 
 function readVerificationPolicy(value: unknown): SdkworkAuthVerificationPolicyConfig {

@@ -7,7 +7,5 @@ export interface AppsUnpublishResult {
   /** Data field on apps unpublish result. */
   data?: AdminAppMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

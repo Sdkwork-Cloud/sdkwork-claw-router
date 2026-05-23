@@ -7,7 +7,5 @@ export interface UsersUpdateResult {
   /** Data field on users update result. */
   data?: AdminUserMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

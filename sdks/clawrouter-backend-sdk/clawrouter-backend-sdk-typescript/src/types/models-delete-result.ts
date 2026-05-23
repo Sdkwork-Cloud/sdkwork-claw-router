@@ -7,7 +7,5 @@ export interface ModelsDeleteResult {
   /** Data field on models delete result. */
   data?: AdminDeleteResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

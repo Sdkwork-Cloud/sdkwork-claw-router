@@ -44,6 +44,7 @@ async fn openai_compatible_responses_relay_posts_provider_model_and_upstream_sec
             pricing_plan_code: "standard".to_owned(),
             model: "gpt-4.1-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
+            provider_channel_id: 3001,
             provider_model: "openai/global/gpt-4.1-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),

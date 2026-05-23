@@ -7,7 +7,5 @@ export interface RoutingChannelsUpdateResult {
   /** Data field on routing channels update result. */
   data?: RoutingChannelMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

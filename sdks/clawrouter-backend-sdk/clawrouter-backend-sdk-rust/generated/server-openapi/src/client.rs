@@ -1,6 +1,6 @@
 use std::sync::Arc;
 
-use crate::api::{AgentsApi, AiApi, BillingApi, ContentApi, EcosystemApi, IamApi, IntegrationApi, PlatformApi, SystemApi};
+use crate::api::{AgentsApi, AiApi, CommerceApi, ContentApi, EcosystemApi, IamApi, IntegrationApi, OpenPlatformApi, PlatformApi, SystemApi};
 use crate::http::{SdkworkConfig, SdkworkError, SdkworkHttpClient};
 
 #[derive(Clone)]
@@ -51,8 +51,8 @@ impl SdkworkBackendClient {
             AiApi::new(Arc::clone(&self.http))
         }
 
-    pub fn billing(&self) -> BillingApi {
-            BillingApi::new(Arc::clone(&self.http))
+    pub fn commerce(&self) -> CommerceApi {
+            CommerceApi::new(Arc::clone(&self.http))
         }
 
     pub fn content(&self) -> ContentApi {
@@ -69,6 +69,10 @@ impl SdkworkBackendClient {
 
     pub fn integration(&self) -> IntegrationApi {
             IntegrationApi::new(Arc::clone(&self.http))
+        }
+
+    pub fn open_platform(&self) -> OpenPlatformApi {
+            OpenPlatformApi::new(Arc::clone(&self.http))
         }
 
     pub fn platform(&self) -> PlatformApi {

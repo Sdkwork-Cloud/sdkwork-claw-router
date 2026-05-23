@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List user agents
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AgentsListResult?> ListAsync(int? page = null, int? pageSize = null, string? q = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentDefinitionsListResult?> AgentDefinitionsListAsync(int? page = null, int? pageSize = null, string? q = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -26,13 +26,13 @@ namespace Sdkwork.ClawRouter.App.Api
                 new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
                 new QueryParameterSpec("q", q, "form", true, false, null),
             });
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.AgentsListResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath("/agents"), queryString));
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.AgentDefinitionsListResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath("/agents"), queryString));
         }
 
         /// <summary>
         /// Create user agent
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AgentsCreateResult?> CreateAsync(Sdkwork.ClawRouter.App.Models.AgentCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentDefinitionsCreateResult?> AgentDefinitionsCreateAsync(Sdkwork.ClawRouter.App.Models.AgentCreateRequest body, string idempotencyKey, string? xRequestId = null)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
@@ -42,15 +42,150 @@ namespace Sdkwork.ClawRouter.App.Api
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.AgentsCreateResult>(ApiPaths.AppPath("/agents"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.AgentDefinitionsCreateResult>(ApiPaths.AppPath("/agents"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
+        /// Retrieve agent run
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunsRetrieveResult?> AgentRunsRetrieveAsync(string runId)
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.AgentRunsRetrieveResult>(ApiPaths.AppPath($"/agents/runs/{SerializePathParameter(runId, new PathParameterSpec("runId", "simple", false))}"));
+        }
+
+        /// <summary>
+        /// Complete agent run
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunsSubmitResult?> AgentRunsSubmitAsync(string runId, Sdkwork.ClawRouter.App.Models.AgentRunCompleteRequest body, string idempotencyKey, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.AgentRunsSubmitResult>(ApiPaths.AppPath($"/agents/runs/{SerializePathParameter(runId, new PathParameterSpec("runId", "simple", false))}/complete"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
+        /// List agent run steps
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunStepsListResult?> AgentRunStepsListAsync(string runId, int? page = null, int? pageSize = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("page", page, "form", true, false, null),
+                new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.AgentRunStepsListResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath($"/agents/runs/{SerializePathParameter(runId, new PathParameterSpec("runId", "simple", false))}/steps"), queryString));
+        }
+
+        /// <summary>
+        /// Create agent run step
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunStepsCreateResult?> AgentRunStepsCreateAsync(string runId, Sdkwork.ClawRouter.App.Models.AgentRunStepCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.AgentRunStepsCreateResult>(ApiPaths.AppPath($"/agents/runs/{SerializePathParameter(runId, new PathParameterSpec("runId", "simple", false))}/steps"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
+        /// Complete agent run step
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunStepsSubmitResult?> AgentRunStepsSubmitAsync(string runId, string stepId, Sdkwork.ClawRouter.App.Models.AgentRunStepCompleteRequest body, string idempotencyKey, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.AgentRunStepsSubmitResult>(ApiPaths.AppPath($"/agents/runs/{SerializePathParameter(runId, new PathParameterSpec("runId", "simple", false))}/steps/{SerializePathParameter(stepId, new PathParameterSpec("stepId", "simple", false))}/complete"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
+        /// Retrieve agent session
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentSessionsRetrieveResult?> AgentSessionsRetrieveAsync(string sessionId)
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.AgentSessionsRetrieveResult>(ApiPaths.AppPath($"/agents/sessions/{SerializePathParameter(sessionId, new PathParameterSpec("sessionId", "simple", false))}"));
+        }
+
+        /// <summary>
+        /// List agent session runs
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunsListResult?> AgentRunsListAsync(string sessionId, int? page = null, int? pageSize = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("page", page, "form", true, false, null),
+                new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.AgentRunsListResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath($"/agents/sessions/{SerializePathParameter(sessionId, new PathParameterSpec("sessionId", "simple", false))}/runs"), queryString));
+        }
+
+        /// <summary>
+        /// Create agent run
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunsCreateResult?> AgentRunsCreateAsync(string sessionId, Sdkwork.ClawRouter.App.Models.AgentRunCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.AgentRunsCreateResult>(ApiPaths.AppPath($"/agents/sessions/{SerializePathParameter(sessionId, new PathParameterSpec("sessionId", "simple", false))}/runs"), body, null, requestHeaders, "application/json");
         }
 
         /// <summary>
         /// Retrieve user agent
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AgentsRetrieveResult?> RetrieveAsync(string agentId)
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentDefinitionsRetrieveResult?> AgentDefinitionsRetrieveAsync(string agentId)
         {
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.AgentsRetrieveResult>(ApiPaths.AppPath($"/agents/{SerializePathParameter(agentId, new PathParameterSpec("agentId", "simple", false))}"));
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.AgentDefinitionsRetrieveResult>(ApiPaths.AppPath($"/agents/{SerializePathParameter(agentId, new PathParameterSpec("agentId", "simple", false))}"));
+        }
+
+        /// <summary>
+        /// List agent sessions
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentSessionsListResult?> AgentSessionsListAsync(string agentId, int? page = null, int? pageSize = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("page", page, "form", true, false, null),
+                new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.AgentSessionsListResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath($"/agents/{SerializePathParameter(agentId, new PathParameterSpec("agentId", "simple", false))}/sessions"), queryString));
+        }
+
+        /// <summary>
+        /// Create agent session
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentSessionsCreateResult?> AgentSessionsCreateAsync(string agentId, Sdkwork.ClawRouter.App.Models.AgentSessionCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.AgentSessionsCreateResult>(ApiPaths.AppPath($"/agents/{SerializePathParameter(agentId, new PathParameterSpec("agentId", "simple", false))}/sessions"), body, null, requestHeaders, "application/json");
         }
 
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);

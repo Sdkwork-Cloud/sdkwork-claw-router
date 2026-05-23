@@ -6,6 +6,7 @@ type IntegrationProviderAccountRecord struct {
 	AccountName string `json:"account_name"`
 	AuthConfig map[string]JsonValue `json:"auth_config"`
 	AuthType string `json:"auth_type"`
+	BaseUrl string `json:"base_url"`
 	ConsecutiveErrorCount string `json:"consecutive_error_count"`
 	CreatedAt string `json:"created_at"`
 	CredentialProfile string `json:"credential_profile"`

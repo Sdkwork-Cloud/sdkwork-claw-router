@@ -3,9 +3,9 @@ use sqlx::{Row, SqlitePool};
 use crate::domain::DomainError;
 use crate::ports::{
     ActiveAppSession, AppSessionEventStore, AppSessionEventStoreFuture, AppSessionRecord,
-    AppSessionUserRecord, LoadActiveAppSessionQuery, RecordAppSessionIssuedEventCommand,
-    ResolveAppSessionOrganizationQuery, ResolvedAppSessionOrganization, RevokeAppSessionCommand,
-    RotateAppSessionTokensCommand,
+    AppSessionUserRecord, LoadActiveAppSessionQuery, RecordAppSecurityEventCommand,
+    RecordAppSessionIssuedEventCommand, ResolveAppSessionOrganizationQuery,
+    ResolvedAppSessionOrganization, RevokeAppSessionCommand, RotateAppSessionTokensCommand,
 };
 
 #[derive(Debug, Clone)]
@@ -137,6 +137,39 @@ impl AppSessionEventStore for SqliteAppSessionEventStore {
     ) -> AppSessionEventStoreFuture<'a, bool> {
         Box::pin(async move { revoke_app_session(&self.pool, command).await })
     }
+
+    fn record_app_security_event<'a>(
+        &'a self,
+        command: RecordAppSecurityEventCommand,
+    ) -> AppSessionEventStoreFuture<'a, ()> {
+        Box::pin(async move { record_app_security_event(&self.pool, command).await })
+    }
+}
+
+async fn record_app_security_event(
+    pool: &SqlitePool,
+    command: RecordAppSecurityEventCommand,
+) -> crate::domain::DomainResult<()> {
+    sqlx::query(
+        r#"
+        INSERT INTO iam_security_event
+            (id, tenant_id, user_id, session_id, event_type, severity, detail_json, created_at)
+        VALUES
+            (?, ?, ?, ?, ?, ?, ?, ?)
+        "#,
+    )
+    .bind(&command.security_event_id)
+    .bind(command.tenant_id.map(|value| value.to_string()))
+    .bind(command.user_id.map(|value| value.to_string()))
+    .bind(command.session_id.as_deref())
+    .bind(&command.event_type)
+    .bind(&command.severity)
+    .bind(&command.detail_json)
+    .bind(&command.created_at)
+    .execute(pool)
+    .await
+    .map_err(|error| store_error("failed to insert IAM security event", error))?;
+    Ok(())
 }
 
 async fn load_active_app_session(

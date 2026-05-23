@@ -11,5 +11,4 @@ class ModelRankingsListResult:
     """Model rankings list result schema exposed by Claw Router."""
     code: str
     data: Optional[ModelRankingsSnapshot] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

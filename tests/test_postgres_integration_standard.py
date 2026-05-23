@@ -26,7 +26,7 @@ class PostgresIntegrationStandardTest(unittest.TestCase):
             "postgres_payment_callback_concurrent_first_account_creation_credits_one_account",
             source,
         )
-        self.assertIn(
+        self.assertNotIn(
             "postgres_billing_redeem_concurrent_first_account_creation_credits_one_account",
             source,
         )
@@ -39,11 +39,12 @@ class PostgresIntegrationStandardTest(unittest.TestCase):
             source,
         )
         self.assertIn("PostgresPaymentCallbackStore", source)
-        self.assertIn("PostgresBillingStore", source)
+        self.assertNotIn("PostgresBillingStore", source)
         self.assertIn("PostgresAppGenerationHistoryReadStore", source)
         self.assertIn("AppGenerationHistorySubject", source)
         self.assertIn("tokio::join!", source)
-        self.assertIn("uk_plus_account_user_type", source)
+        self.assertIn("UNIQUE (tenant_id, organization_id, owner_user_id, asset_type, currency_code)", source)
+        self.assertNotIn("uk_plus_account_user_type", source)
 
 
 if __name__ == "__main__":

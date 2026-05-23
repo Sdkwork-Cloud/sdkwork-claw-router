@@ -4,6 +4,5 @@ package types
 type AccessGroupsUpdateResult struct {
 	Code string `json:"code"`
 	Data AdminAccessGroupMutationResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

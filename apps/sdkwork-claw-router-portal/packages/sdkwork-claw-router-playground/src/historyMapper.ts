@@ -4,6 +4,7 @@ import {
   readStringArray,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
+import { normalizeSdkworkGenerationHistoryType } from '@sdkwork/generation-pc-react/generation-history';
 import type { PlaygroundHistoryItem, PlaygroundMedia } from './playgroundTypes.ts';
 
 export function mapGenerationHistoryItems(
@@ -14,7 +15,7 @@ export function mapGenerationHistoryItems(
 
 function mapGenerationHistoryItem(value: unknown): PlaygroundHistoryItem {
   const item = readRequiredRecord(value, 'Playground history record is required');
-  const itemType = readHistoryType(item.type);
+  const itemType = normalizePlaygroundHistoryType(item.type);
   const createdAt = normalizeTimestamp(item.createdAt);
   const updatedAt = normalizeTimestamp(item.updatedAt);
   const date = normalizeHistoryDate(item.date) ?? readDatePrefix(createdAt);
@@ -35,6 +36,7 @@ function mapGenerationHistoryItem(value: unknown): PlaygroundHistoryItem {
     aspectRatio: normalizeAspectRatio(item.aspectRatio),
     durationSeconds: normalizeDurationSeconds(item.durationSeconds),
     status: normalizeOptionalString(item.status),
+    outputText: normalizeOptionalString(item.outputText ?? item.outputMessage),
     createdAt,
     updatedAt,
   };
@@ -44,29 +46,20 @@ function normalizeAspectRatio(value: unknown): PlaygroundHistoryItem['aspectRati
   return value === '1:1' || value === '16:9' || value === '9:16' ? value : undefined;
 }
 
+function normalizePlaygroundHistoryType(value: unknown): PlaygroundHistoryItem['type'] {
+  try {
+    return normalizeSdkworkGenerationHistoryType(value);
+  } catch {
+    throw new Error('Playground history type is required');
+  }
+}
+
 function normalizeDurationSeconds(value: unknown): number | undefined {
   if (value === null || value === undefined || value === '') {
     return undefined;
   }
   const duration = typeof value === 'number' ? value : Number(value);
   return Number.isFinite(duration) && duration >= 0 ? duration : undefined;
-}
-
-function readHistoryType(
-  value: unknown,
-): PlaygroundHistoryItem['type'] {
-  switch (value) {
-    case 'images':
-    case 'image':
-      return 'images';
-    case 'video':
-    case 'music':
-    case 'audio':
-    case 'sfx':
-      return value;
-    default:
-      throw new Error('Playground history type is required');
-  }
 }
 
 function normalizeStringArray(values: unknown): string[] | undefined {

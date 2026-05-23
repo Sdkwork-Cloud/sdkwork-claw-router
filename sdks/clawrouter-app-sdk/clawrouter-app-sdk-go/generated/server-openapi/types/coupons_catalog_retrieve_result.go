@@ -4,6 +4,5 @@ package types
 type CouponsCatalogRetrieveResult struct {
 	Code string `json:"code"`
 	Data CommerceCouponCatalogItem `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

@@ -8,6 +8,8 @@ import {
   ChevronRight,
   Cpu,
   Edit2,
+  Eye,
+  EyeOff,
   Image as ImageIcon,
   Key,
   Layers,
@@ -29,9 +31,14 @@ import { useTranslation } from 'react-i18next';
 import {
   ChannelService,
   ProviderSecretService,
+  ChannelModelCatalogService,
   type ChannelItem,
+  type ChannelModelCatalogItem,
   type ChannelUpdateInput,
   type ProviderSecretItem,
+  isCatalogModelKey,
+  normalizeModelCatalogKey,
+  providerCodeForVendor,
 } from './channelService';
 import { authTypesList, knownModelVendors, prefillModels, protocolsList } from './channelOptions';
 import {
@@ -44,7 +51,7 @@ import {
   resolveChannelSelectSubmitValue,
   type ChannelFormValues,
 } from './channelForm';
-import { BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
+import { AdminTableShell, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
 
 type ToastState = { message: string; type: 'success' | 'info' | 'error' } | null;
 type ModalMode = 'create' | 'edit';
@@ -76,21 +83,6 @@ const channelTabs = [
   { id: 'OpenRouter', label: 'OpenRouter' },
 ];
 
-function providerCodeForVendor(vendor: string): string {
-  const normalized = vendor.trim().toLowerCase();
-  const mapping: Record<string, string> = {
-    'azure openai': 'azure_openai',
-    gemini: 'google',
-    google: 'google',
-    'google gemini': 'google',
-    zhipuai: 'zhipu',
-    'zhipu ai': 'zhipu',
-    'mistral ai': 'mistral',
-    'meta llama': 'meta',
-  };
-  return (mapping[normalized] ?? normalized.replace(/\s+/g, '_')).replace(/[^a-z0-9_-]/g, '');
-}
-
 function getLoadErrorMessage(error: unknown, fallback: string): string {
   return error instanceof Error && error.message ? error.message : fallback;
 }
@@ -115,15 +107,65 @@ function readPositiveIntegerFormValue(
   return value;
 }
 
+function fallbackCatalogModelKeys(vendor: string): string[] {
+  return (prefillModels[vendor] ?? [])
+    .filter((model) => !model.includes('/'))
+    .map((model) => normalizeModelCatalogKey(model, vendor));
+}
+
+function toDateTimeLocalValue(value: string | undefined): string {
+  const normalized = value?.trim();
+  if (!normalized) {
+    return '';
+  }
+  const date = new Date(normalized);
+  if (Number.isNaN(date.getTime())) {
+    return normalized.slice(0, 16);
+  }
+  const local = new Date(date.getTime() - date.getTimezoneOffset() * 60_000);
+  return local.toISOString().slice(0, 16);
+}
+
+function displayChannelTime(value: string | undefined, fallback = ''): string {
+  const normalized = value?.trim();
+  if (!normalized) {
+    return fallback;
+  }
+  const date = new Date(normalized);
+  if (Number.isNaN(date.getTime())) {
+    return normalized;
+  }
+  return date.toLocaleString();
+}
+
+function optionalTranslatedLabel(
+  t: ReturnType<typeof useTranslation>['t'],
+  item: { label?: string; name?: string; labelKey?: string; nameKey?: string },
+): string {
+  if (typeof item.labelKey === 'string') {
+    return t(item.labelKey);
+  }
+  if (typeof item.nameKey === 'string') {
+    return t(item.nameKey);
+  }
+  return item.label ?? item.name ?? '';
+}
+
 function AddAccountModal({
   mode,
   initialChannel,
+  availableModels,
+  modelCatalogLoading,
+  modelCatalogError,
   isSaving,
   onClose,
   onSubmit,
 }: {
   mode: ModalMode;
   initialChannel?: ChannelItem | null;
+  availableModels: ChannelModelCatalogItem[];
+  modelCatalogLoading: boolean;
+  modelCatalogError: string | null;
   isSaving: boolean;
   onClose: () => void;
   onSubmit: (channel: ChannelFormValues) => Promise<void>;
@@ -138,15 +180,25 @@ function AddAccountModal({
     initialChannel?.capabilities?.length ? initialChannel.capabilities : ['llm'],
   );
   const [customModel, setCustomModel] = useState('');
+  const [apiKeyVisible, setApiKeyVisible] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
 
   const isEdit = mode === 'edit';
+  const selectedVendorCode = providerCodeForVendor(modelVendor);
+  const vendorCatalogModels = useMemo(
+    () => availableModels.filter((model) => model.vendorCode === selectedVendorCode),
+    [availableModels, selectedVendorCode],
+  );
+  const defaultModelKeys = useMemo(() => {
+    const catalogKeys = vendorCatalogModels.map((model) => model.catalogKey);
+    return catalogKeys.length > 0 ? catalogKeys : fallbackCatalogModelKeys(modelVendor);
+  }, [modelVendor, vendorCatalogModels]);
 
   useEffect(() => {
     if (!initialChannel && modelVendor) {
-      setWhitelist((prefillModels[modelVendor] ?? []).slice(0, 5));
+      setWhitelist(defaultModelKeys.slice(0, 5));
     }
-  }, [initialChannel, modelVendor]);
+  }, [defaultModelKeys, initialChannel, modelVendor]);
 
   const toggleCapability = (capability: string) => {
     setCapabilities((current) => {
@@ -158,15 +210,29 @@ function AddAccountModal({
   };
 
   const fillRelatedModels = () => {
-    setWhitelist(prefillModels[modelVendor] ?? []);
+    setWhitelist(defaultModelKeys);
   };
 
   const addCustomModel = () => {
-    const value = customModel.trim();
-    if (value && !whitelist.includes(value)) {
+    const rawValue = customModel.trim();
+    if (!rawValue) {
+      return;
+    }
+    let value: string;
+    try {
+      value = isCatalogModelKey(rawValue) ? rawValue : normalizeModelCatalogKey(rawValue, modelVendor);
+    } catch (err) {
+      setLocalError(err instanceof Error ? err.message : t('admin.channel.validation.modelRequired'));
+      return;
+    }
+    if (!whitelist.includes(value)) {
       setWhitelist((current) => [...current, value]);
       setCustomModel('');
     }
+  };
+
+  const addCatalogModel = (model: ChannelModelCatalogItem) => {
+    setWhitelist((current) => current.includes(model.catalogKey) ? current : [...current, model.catalogKey]);
   };
 
   const removeModel = (model: string) => {
@@ -180,6 +246,7 @@ function AddAccountModal({
     const name = String(formData.get('name') ?? '').trim();
     const baseUrl = String(formData.get('baseUrl') ?? '').trim();
     const apiKey = String(formData.get('apiKey') ?? '').trim();
+    const expiresAt = String(formData.get('expiresAt') ?? '').trim();
     const models = whitelist.map((item) => item.trim()).filter(Boolean);
 
     if (!name) {
@@ -208,6 +275,7 @@ function AddAccountModal({
         accessType: resolveAuthTypeSubmitValue(activeAuthType, authTypesList),
         baseUrl,
         apiKey,
+        expiresAt,
         capabilities,
         models,
         circuitBreakerEnabled,
@@ -271,7 +339,7 @@ function AddAccountModal({
                     >
                       {knownModelVendors.map((vendor) => (
                         <option key={vendor.id} value={vendor.id}>
-                          {'nameKey' in vendor ? t(vendor.nameKey) : vendor.name}
+                          {optionalTranslatedLabel(t, vendor)}
                         </option>
                       ))}
                       {!knownModelVendors.some((vendor) => vendor.id === modelVendor) && (
@@ -394,7 +462,7 @@ function AddAccountModal({
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4">
                 <div>
                   <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.baseUrl')}</label>
                   <input
@@ -407,14 +475,25 @@ function AddAccountModal({
                 </div>
                 <div>
                   <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.apiKey')}</label>
-                  <input
-                    required={!isEdit}
-                    type="password"
-                    name="apiKey"
-                    autoComplete="off"
-                    placeholder={t('admin.channel.placeholders.apiKey')}
-                    className="w-full font-mono bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors"
-                  />
+                  <div className="relative">
+                    <input
+                      required={!isEdit}
+                      type={apiKeyVisible ? 'text' : 'password'}
+                      name="apiKey"
+                      autoComplete="off"
+                      placeholder={t('admin.channel.placeholders.apiKey')}
+                      className="w-full font-mono bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 pr-10 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setApiKeyVisible((current) => !current)}
+                      title={apiKeyVisible ? t('admin.channel.actions.hideApiKey') : t('admin.channel.actions.showApiKey')}
+                      aria-label={apiKeyVisible ? t('admin.channel.actions.hideApiKey') : t('admin.channel.actions.showApiKey')}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md p-1 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-white/10 dark:hover:text-slate-200"
+                    >
+                      {apiKeyVisible ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -430,6 +509,16 @@ function AddAccountModal({
                     defaultValue={initialChannel?.weight ?? 100}
                     className="w-full bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors"
                   />
+                </div>
+                <div>
+                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.expiresAt')}</label>
+                  <input
+                    name="expiresAt"
+                    type="datetime-local"
+                    defaultValue={toDateTimeLocalValue(initialChannel?.expiresAt)}
+                    className="w-full bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors"
+                  />
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{t('admin.channel.help.expiresAt')}</p>
                 </div>
               </div>
 
@@ -522,6 +611,7 @@ function AddAccountModal({
                     <button
                       type="button"
                       onClick={fillRelatedModels}
+                      disabled={defaultModelKeys.length === 0}
                       className="border border-indigo-500 text-indigo-500 dark:border-indigo-500/50 dark:text-indigo-400 px-4 py-2 rounded-lg text-sm hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-colors font-medium"
                     >
                       {t('common.actions.applyDefaults')}
@@ -533,6 +623,41 @@ function AddAccountModal({
                     >
                       {t('common.actions.clearAll')}
                     </button>
+                  </div>
+
+                  <div className="rounded-xl border border-slate-200 bg-white p-3 dark:border-white/10 dark:bg-black">
+                    <div className="mb-2 flex items-center justify-between gap-3">
+                      <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
+                        {t('admin.channel.models.catalogForVendor')}
+                      </span>
+                      <span className="font-mono text-[10px] text-slate-400">{selectedVendorCode}</span>
+                    </div>
+                    {modelCatalogLoading ? (
+                      <div className="flex items-center gap-2 py-2 text-xs text-slate-500">
+                        <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                        {t('admin.channel.models.loading')}
+                      </div>
+                    ) : modelCatalogError ? (
+                      <div className="text-xs text-amber-700 dark:text-amber-300">{modelCatalogError}</div>
+                    ) : vendorCatalogModels.length > 0 ? (
+                      <div className="flex max-h-28 flex-wrap gap-2 overflow-y-auto">
+                        {vendorCatalogModels.slice(0, 24).map((model) => (
+                          <button
+                            key={model.catalogKey}
+                            type="button"
+                            onClick={() => addCatalogModel(model)}
+                            disabled={whitelist.includes(model.catalogKey)}
+                            className="rounded-md border border-slate-200 px-2 py-1 text-left text-[11px] font-mono text-slate-600 transition-colors hover:border-emerald-300 hover:bg-emerald-50 disabled:cursor-default disabled:border-emerald-200 disabled:bg-emerald-50 disabled:text-emerald-700 dark:border-white/10 dark:text-slate-300 dark:hover:border-emerald-500/40 dark:hover:bg-emerald-500/10 dark:disabled:border-emerald-500/30 dark:disabled:bg-emerald-500/10 dark:disabled:text-emerald-300"
+                          >
+                            {model.catalogKey}
+                          </button>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="text-xs text-slate-500 dark:text-slate-400">
+                        {t('admin.channel.models.emptyForVendor')}
+                      </div>
+                    )}
                   </div>
 
                   <div className="pt-4 border-t border-slate-200 dark:border-white/10">
@@ -548,7 +673,7 @@ function AddAccountModal({
                           }
                         }}
                         className="flex-1 bg-white dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-4 py-2 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500"
-                        placeholder="provider/model-name"
+                        placeholder={`${selectedVendorCode}/global/model-id`}
                       />
                       <button
                         type="button"
@@ -617,8 +742,10 @@ function CredentialDetailsModal({
   onClose: () => void;
 }) {
   const { t } = useTranslation();
+  const [apiKeyVisible, setApiKeyVisible] = useState(false);
   const secretRef = channel.secretRef?.trim() ?? '';
   const hasSecretRef = secretRef.length > 0;
+  const hasApiKey = Boolean(channel.apiKey?.trim());
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm">
@@ -650,11 +777,26 @@ function CredentialDetailsModal({
               <CredentialDetailField label={t('admin.channel.fields.vendor')} value={channel.vendor} />
               <CredentialDetailField label={t('admin.channel.fields.protocol')} value={channel.protocol} />
               <CredentialDetailField label={t('admin.channel.fields.authType')} value={channel.accessType} />
+              <CredentialDetailField label={t('admin.channel.fields.createdAt')} value={displayChannelTime(channel.createdAt)} />
+              <CredentialDetailField
+                label={t('admin.channel.fields.expiresAt')}
+                value={displayChannelTime(channel.expiresAt, t('admin.channel.expiration.never'))}
+              />
               <CredentialDetailField
                 label={t('admin.channel.fields.secretReference')}
                 value={secretRef || t('admin.channel.credentials.noReferenceValue')}
                 monospace={hasSecretRef}
                 wide
+              />
+              <CredentialDetailField
+                label={t('admin.channel.fields.apiKey')}
+                value={apiKeyVisible ? channel.apiKey : maskApiKeyForDisplay(channel.apiKey)}
+                emptyValue={t('admin.channel.credentials.apiKeyUnavailable')}
+                monospace={hasApiKey}
+                wide
+                onToggleVisibility={() => setApiKeyVisible((current) => !current)}
+                visibilityLabel={apiKeyVisible ? t('admin.channel.actions.hideApiKey') : t('admin.channel.actions.showApiKey')}
+                isSecretVisible={apiKeyVisible}
               />
             </div>
           </section>
@@ -730,26 +872,57 @@ function CredentialDetailsModal({
   );
 }
 
+function maskApiKeyForDisplay(value: string | undefined): string {
+  const normalized = value?.trim();
+  if (!normalized) {
+    return '';
+  }
+  if (normalized.length <= 8) {
+    return `${normalized.slice(0, 2)}****${normalized.slice(-2)}`;
+  }
+  return `${normalized.slice(0, 6)}****${normalized.slice(-4)}`;
+}
+
 function CredentialDetailField({
   label,
   value,
+  emptyValue,
   monospace = false,
   wide = false,
+  onToggleVisibility,
+  visibilityLabel,
+  isSecretVisible = false,
 }: {
   label: string;
-  value: string;
+  value: string | undefined;
+  emptyValue?: string;
   monospace?: boolean;
   wide?: boolean;
+  onToggleVisibility?: () => void;
+  visibilityLabel?: string;
+  isSecretVisible?: boolean;
 }) {
+  const displayValue = value?.trim() ? value : emptyValue ?? '';
   return (
     <div className={wide ? 'sm:col-span-2' : undefined}>
       <div className="mb-1 text-xs font-medium text-slate-500 dark:text-slate-400">{label}</div>
       <div
-        className={`break-words rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 dark:border-white/10 dark:bg-black dark:text-slate-200 ${
+        className={`flex items-center gap-2 break-words rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 dark:border-white/10 dark:bg-black dark:text-slate-200 ${
           monospace ? 'font-mono text-xs' : ''
         }`}
       >
-        {value}
+        <span className="min-w-0 flex-1 break-words">{displayValue}</span>
+        {onToggleVisibility && (
+          <button
+            type="button"
+            onClick={onToggleVisibility}
+            title={visibilityLabel}
+            aria-label={visibilityLabel}
+            className="shrink-0 rounded-md p-1 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-white/10 dark:hover:text-slate-200"
+          >
+            {isSecretVisible ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+          </button>
+        )}
       </div>
     </div>
   );
@@ -775,6 +948,9 @@ export function ChannelAdmin() {
   const [providerSecretLoadError, setProviderSecretLoadError] = useState<string | null>(null);
   const [channels, setChannels] = useState<ChannelItem[]>([]);
   const [providerSecrets, setProviderSecrets] = useState<ProviderSecretItem[]>([]);
+  const [modelCatalog, setModelCatalog] = useState<ChannelModelCatalogItem[]>([]);
+  const [modelCatalogLoading, setModelCatalogLoading] = useState(true);
+  const [modelCatalogError, setModelCatalogError] = useState<string | null>(null);
   const pageSize = 8;
 
   const showToast = useCallback((message: string, type: 'success' | 'info' | 'error' = 'success') => {
@@ -820,9 +996,28 @@ export function ChannelAdmin() {
     }
   }, [t]);
 
+  const loadModelCatalog = useCallback(async (isActive: () => boolean = () => true) => {
+    setModelCatalogLoading(true);
+    setModelCatalogError(null);
+    try {
+      const models = await ChannelModelCatalogService.fetchModels();
+      if (isActive()) {
+        setModelCatalog(models);
+      }
+    } catch (err) {
+      if (isActive()) {
+        setModelCatalogError(getLoadErrorMessage(err, t('admin.channel.models.loadError')));
+      }
+    } finally {
+      if (isActive()) {
+        setModelCatalogLoading(false);
+      }
+    }
+  }, [t]);
+
   const loadData = useCallback(async (isActive: () => boolean = () => true) => {
-    await Promise.all([loadChannels(isActive), loadProviderSecrets(isActive)]);
-  }, [loadChannels, loadProviderSecrets]);
+    await Promise.all([loadChannels(isActive), loadProviderSecrets(isActive), loadModelCatalog(isActive)]);
+  }, [loadChannels, loadModelCatalog, loadProviderSecrets]);
 
   useEffect(() => {
     let active = true;
@@ -984,7 +1179,7 @@ export function ChannelAdmin() {
   };
 
   return (
-    <div className="w-full h-full flex flex-col space-y-6">
+    <div className="flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden">
       {toast && (
         <div
           className={`fixed right-6 top-6 z-40 rounded-lg border px-4 py-3 text-sm shadow-lg ${
@@ -997,7 +1192,7 @@ export function ChannelAdmin() {
         </div>
       )}
 
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-4">
+      <div className="flex shrink-0 flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
         <div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-2">
             <Network className="w-6 h-6 text-emerald-500" />
@@ -1026,7 +1221,7 @@ export function ChannelAdmin() {
         </div>
       </div>
 
-      <div className="flex items-center gap-1 border-b border-slate-200 dark:border-white/10 pb-4 overflow-x-auto hide-scrollbar">
+      <div className="flex shrink-0 items-center gap-1 border-b border-slate-200 dark:border-white/10 pb-4 overflow-x-auto hide-scrollbar">
         {channelTabs.map((tab) => (
           <button
             key={tab.id}
@@ -1037,30 +1232,66 @@ export function ChannelAdmin() {
                 : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
-            {'labelKey' in tab ? t(tab.labelKey) : tab.label}
+            {optionalTranslatedLabel(t, tab)}
           </button>
         ))}
       </div>
 
-      <div className="flex-1 bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl shadow-sm overflow-hidden flex flex-col">
-        <div className="overflow-x-auto flex-1">
+      <AdminTableShell
+        data-admin-channel-table-card
+        className="rounded-xl dark:bg-[#1a1a1a]"
+        viewportProps={{ 'data-admin-channel-table-viewport': true }}
+        footer={(
+          <div className="p-4 border-t border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#121212] flex items-center justify-between">
+            <div className="text-sm text-slate-500 dark:text-slate-400">
+              {t('admin.channel.pagination.total', { count: totalItems })}
+            </div>
+            <div className="flex items-center gap-4">
+              <span className="text-sm text-slate-600 dark:text-slate-400 font-medium">
+                {t('admin.channel.pagination.page', { page: currentPage, totalPages })}
+              </span>
+              <div className="flex items-center gap-1">
+                <button
+                  onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
+                  disabled={currentPage === 1}
+                  className="p-1 rounded-lg text-slate-500 hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 dark:text-slate-400 dark:hover:text-emerald-400 disabled:opacity-30 disabled:hover:bg-transparent disabled:cursor-not-allowed transition-colors"
+                  title={t('common.actions.previousPage')}
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
+                  disabled={currentPage === totalPages}
+                  className="p-1 rounded-lg text-slate-500 hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 dark:text-slate-400 dark:hover:text-emerald-400 disabled:opacity-30 disabled:hover:bg-transparent disabled:cursor-not-allowed transition-colors"
+                  title={t('common.actions.nextPage')}
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      >
+        <div className="contents">
           <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
-            <thead className="bg-slate-50 dark:bg-[#121212] sticky top-0 border-b border-slate-200 dark:border-white/10 text-xs uppercase font-semibold text-slate-500 dark:text-slate-400">
+            <thead className="sticky top-0 z-10 bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10 text-xs uppercase font-semibold text-slate-500 dark:text-slate-400">
               <tr>
                 <th className="px-6 py-4">{t('admin.channel.table.channel')}</th>
                 <th className="px-6 py-4">{t('admin.channel.table.provider')}</th>
                 <th className="px-6 py-4 w-48">{t('admin.channel.table.models')}</th>
                 <th className="px-6 py-4">{t('admin.channel.table.weight')}</th>
                 <th className="px-6 py-4">{t('admin.channel.table.status')}</th>
+                <th className="px-6 py-4">{t('admin.channel.table.createdAt')}</th>
+                <th className="px-6 py-4">{t('admin.channel.table.expiresAt')}</th>
                 <th className="px-6 py-4 text-right">{t('admin.channel.table.actions')}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 dark:divide-white/5">
               {loading ? (
-                <BusinessStateTableRow colSpan={6} kind="loading" title={t('admin.channel.states.loadingChannels')} />
+                <BusinessStateTableRow colSpan={8} kind="loading" title={t('admin.channel.states.loadingChannels')} />
               ) : loadError ? (
                 <BusinessStateTableRow
-                  colSpan={6}
+                  colSpan={8}
                   kind="error"
                   title={t('admin.channel.states.channelsLoadErrorTitle')}
                   description={loadError}
@@ -1068,7 +1299,7 @@ export function ChannelAdmin() {
                 />
               ) : paginatedChannels.length === 0 ? (
                 <BusinessStateTableRow
-                  colSpan={6}
+                  colSpan={8}
                   kind="empty"
                   title={t('admin.channel.states.emptyChannelsTitle')}
                   description={
@@ -1121,28 +1352,20 @@ export function ChannelAdmin() {
                       </div>
                     </td>
                     <td className="px-6 py-4 align-top">
-                      <div className="flex flex-wrap gap-1.5">
-                        {channel.models.slice(0, 3).map((model) => (
-                          <span
-                            key={model}
-                            className="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/10 text-xs font-mono text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/5"
-                          >
-                            {model}
-                          </span>
-                        ))}
-                        {channel.models.length > 3 && (
-                          <span className="px-1.5 py-0.5 rounded bg-slate-50 dark:bg-black text-[10px] font-mono text-slate-500 border border-dashed border-slate-200 dark:border-white/10">
-                            +{channel.models.length - 3}
-                          </span>
-                        )}
-                      </div>
+                      <ChannelModelsCell models={channel.models} />
                     </td>
                     <td className="px-6 py-4 font-mono font-medium text-slate-700 dark:text-slate-300 align-top">{channel.weight}</td>
                     <td className="px-6 py-4 align-top">
                       <StatusBadge channel={channel} />
                     </td>
+                    <td className="px-6 py-4 align-top text-xs text-slate-500 dark:text-slate-400">
+                      {displayChannelTime(channel.createdAt)}
+                    </td>
+                    <td className="px-6 py-4 align-top text-xs text-slate-500 dark:text-slate-400">
+                      {displayChannelTime(channel.expiresAt, t('admin.channel.expiration.never'))}
+                    </td>
                     <td className="px-6 py-4 text-right align-middle">
-                      <div className="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="flex items-center justify-end gap-1">
                         <IconButton
                           title={t('admin.channel.actions.viewCredential')}
                           onClick={() => setViewingCredentialChannel(channel)}
@@ -1209,40 +1432,15 @@ export function ChannelAdmin() {
           </table>
         </div>
 
-        <div className="p-4 border-t border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#121212] flex items-center justify-between">
-          <div className="text-sm text-slate-500 dark:text-slate-400">
-            {t('admin.channel.pagination.total', { count: totalItems })}
-          </div>
-          <div className="flex items-center gap-4">
-            <span className="text-sm text-slate-600 dark:text-slate-400 font-medium">
-              {t('admin.channel.pagination.page', { page: currentPage, totalPages })}
-            </span>
-            <div className="flex items-center gap-1">
-              <button
-                onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
-                disabled={currentPage === 1}
-                className="p-1 rounded-lg text-slate-500 hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 dark:text-slate-400 dark:hover:text-emerald-400 disabled:opacity-30 disabled:hover:bg-transparent disabled:cursor-not-allowed transition-colors"
-                title={t('common.actions.previousPage')}
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button
-                onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
-                disabled={currentPage === totalPages}
-                className="p-1 rounded-lg text-slate-500 hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 dark:text-slate-400 dark:hover:text-emerald-400 disabled:opacity-30 disabled:hover:bg-transparent disabled:cursor-not-allowed transition-colors"
-                title={t('common.actions.nextPage')}
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      </AdminTableShell>
 
       {modalMode && (
         <AddAccountModal
           mode={modalMode}
           initialChannel={editingChannel}
+          availableModels={modelCatalog}
+          modelCatalogLoading={modelCatalogLoading}
+          modelCatalogError={modelCatalogError}
           isSaving={saving}
           onClose={closeModal}
           onSubmit={handleSubmitChannel}
@@ -1299,6 +1497,46 @@ function CapabilityBadges({ capabilities }: { capabilities: string[] }) {
           </span>
         );
       })}
+    </div>
+  );
+}
+
+function ChannelModelsCell({ models }: { models: string[] }) {
+  const { t } = useTranslation();
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="relative inline-flex">
+      <button
+        type="button"
+        onClick={() => setOpen((current) => !current)}
+        className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-2.5 text-xs font-medium text-slate-700 shadow-sm transition-colors hover:border-emerald-300 hover:text-emerald-700 dark:border-white/10 dark:bg-black dark:text-slate-300 dark:hover:border-emerald-500/50 dark:hover:text-emerald-300"
+      >
+        <Layers className="h-3.5 w-3.5 text-slate-400" />
+        {t('admin.channel.modelCount', { count: models.length })}
+      </button>
+      {open && (
+        <>
+          <button
+            type="button"
+            aria-label={t('common.actions.close')}
+            className="fixed inset-0 z-20 cursor-default bg-transparent"
+            onClick={() => setOpen(false)}
+          />
+          <div className="absolute left-0 top-9 z-30 w-80 max-w-[calc(100vw-2rem)] rounded-lg border border-slate-200 bg-white p-2 shadow-xl dark:border-white/10 dark:bg-[#1a1a1a]">
+            <div className="max-h-64 overflow-y-auto pr-1">
+              {models.map((model) => (
+                <div
+                  key={model}
+                  className="mb-1 last:mb-0 rounded-md bg-slate-50 px-2 py-1.5 font-mono text-xs text-slate-700 dark:bg-black dark:text-slate-300"
+                >
+                  {model}
+                </div>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

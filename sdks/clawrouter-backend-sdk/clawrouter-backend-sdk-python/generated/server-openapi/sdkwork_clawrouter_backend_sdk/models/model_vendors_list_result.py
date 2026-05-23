@@ -11,5 +11,4 @@ class ModelVendorsListResult:
     """Model vendors list result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminModelVendorsResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

@@ -4,6 +4,5 @@ package types
 type RateLimitsModelsListResult struct {
 	Code string `json:"code"`
 	Data AdminModelLimitsResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

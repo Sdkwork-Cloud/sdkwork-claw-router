@@ -10,8 +10,6 @@ const command = process.platform === 'win32' ? 'node.exe' : 'node';
 const sdkFamily = 'clawrouter-backend-sdk';
 const sdkType = 'backend';
 const authorityInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.openapi.json`;
-const sdkgenInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.sdkgen.json`;
-void authorityInputPath;
 const baseUrl = 'http://localhost:18081';
 const apiPrefix = '/backend/v3/api';
 const description = 'SDKWork Claw Router backend API SDK';
@@ -95,7 +93,7 @@ function strictTypeScriptArgs() {
   return [
     'tools/clawrouter_strict_sdk_generate.mjs',
     'generate',
-    '-i', sdkgenInputPath,
+    '-i', authorityInputPath,
     '-o', 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript',
     '-n', sdkFamily,
     '-t', sdkType,
@@ -114,7 +112,7 @@ function generatorArgs(language) {
   const args = [
     path.resolve(workspaceRoot, '..', '..', 'sdk', 'sdkwork-sdk-generator', 'bin', 'sdkgen.js'),
     'generate',
-    '-i', sdkgenInputPath,
+    '-i', authorityInputPath,
     '-o', `sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi`,
     '-n', sdkFamily,
     '-t', sdkType,

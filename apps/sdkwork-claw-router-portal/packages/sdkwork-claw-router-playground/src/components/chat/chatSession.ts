@@ -1,3 +1,4 @@
+import { createRequestToken } from 'sdkwork-claw-router-commons/runtime';
 import type { ChatMessage } from './chatTypes';
 
 export function createChatUserMessage(prompt: string, createdAt = new Date(), id = createChatMessageId('user')): ChatMessage {
@@ -53,9 +54,5 @@ export function createChatAssistantMessage({
 }
 
 export function createChatMessageId(prefix: string): string {
-  const crypto = globalThis.crypto;
-  if (crypto?.randomUUID) {
-    return `${prefix}-${crypto.randomUUID()}`;
-  }
-  return `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
+  return createRequestToken(prefix);
 }

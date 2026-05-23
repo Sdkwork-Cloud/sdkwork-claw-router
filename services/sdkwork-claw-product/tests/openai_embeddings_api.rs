@@ -121,9 +121,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
     catalog
 }
 
-fn catalog_with_hashed_api_key_missing_billing_subject(
-    key_hash: String,
-) -> InMemoryPricingCatalog {
+fn catalog_with_hashed_api_key_missing_billing_subject(key_hash: String) -> InMemoryPricingCatalog {
     let mut catalog = catalog_with_hashed_api_key(key_hash.clone());
     catalog.add_api_key(GatewayApiKey::new(101, 10, "sk-live", &key_hash));
     catalog

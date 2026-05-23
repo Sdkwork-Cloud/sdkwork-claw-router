@@ -1,8 +1,48 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminTokenLimitCreateRequest, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult } from '../types';
+import type { AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminSiteSettingsUpdateRequest, AdminTokenLimitCreateRequest, AnalyticsAdminOverviewRetrieveResult, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, CacheInstancesDeleteResult, CacheInstancesRefreshCreateResult, CacheNamespacesDeleteResult, CacheNamespacesKeysDeleteResult, CacheNamespacesKeysListResult, CacheNamespacesRefreshCreateResult, CacheOverviewRetrieveResult, CacheRefreshCreateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MarketingReferralStatsListResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, SiteSettingsRetrieveResult, SiteSettingsUpdateResult } from '../types';
 
+
+export interface SystemSiteSettingsUpdateParams {
+  xRequestId?: string;
+}
+
+export class SystemSiteSettingsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Retrieve site branding and deployment personalization settings */
+  async retrieve(): Promise<SiteSettingsRetrieveResult> {
+    return this.client.get<SiteSettingsRetrieveResult>(backendApiPath(`/system/site/settings`));
+  }
+
+/** Update site branding and deployment personalization settings */
+  async update(body: AdminSiteSettingsUpdateRequest, params?: SystemSiteSettingsUpdateParams): Promise<SiteSettingsUpdateResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.patch<SiteSettingsUpdateResult>(backendApiPath(`/system/site/settings`), body, undefined, requestHeaders, 'application/json');
+  }
+}
+
+export class SystemSiteApi {
+  private client: HttpClient;
+  public readonly settings: SystemSiteSettingsApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.settings = new SystemSiteSettingsApi(client);
+  }
+
+}
 
 export interface SystemRecordsListParams {
   page?: number;
@@ -192,6 +232,31 @@ export class SystemMonitorApi {
 
 }
 
+export class SystemMarketingReferralStatsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** List referral stats */
+  async list(): Promise<MarketingReferralStatsListResult> {
+    return this.client.get<MarketingReferralStatsListResult>(backendApiPath(`/system/marketing/referral_stats`));
+  }
+}
+
+export class SystemMarketingApi {
+  private client: HttpClient;
+  public readonly referralStats: SystemMarketingReferralStatsApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.referralStats = new SystemMarketingReferralStatsApi(client);
+  }
+
+}
+
 export class SystemInstallationStatusApi {
   private client: HttpClient;
 
@@ -298,6 +363,141 @@ export class SystemDashboardApi {
 
 }
 
+export class SystemCacheRefreshApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Refresh all runtime cache instances */
+  async create(): Promise<CacheRefreshCreateResult> {
+    return this.client.post<CacheRefreshCreateResult>(backendApiPath(`/system/cache/refresh`));
+  }
+}
+
+export class SystemCacheOverviewApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Retrieve runtime cache overview */
+  async retrieve(): Promise<CacheOverviewRetrieveResult> {
+    return this.client.get<CacheOverviewRetrieveResult>(backendApiPath(`/system/cache/overview`));
+  }
+}
+
+export class SystemCacheNamespacesRefreshApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Refresh one runtime cache namespace */
+  async create(namespace_: string): Promise<CacheNamespacesRefreshCreateResult> {
+    return this.client.post<CacheNamespacesRefreshCreateResult>(backendApiPath(`/system/cache/namespaces/${serializePathParameter(namespace_, { name: 'namespace', style: 'simple', explode: false })}/refresh`));
+  }
+}
+
+export interface SystemCacheNamespacesKeysListParams {
+  limit?: number;
+  cursor?: string;
+}
+
+export class SystemCacheNamespacesKeysApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** List runtime cache keys in a namespace */
+  async list(namespace_: string, params?: SystemCacheNamespacesKeysListParams): Promise<CacheNamespacesKeysListResult> {
+    const query = buildQueryString([
+      { name: 'limit', value: params?.limit, style: 'form', explode: true, allowReserved: false },
+      { name: 'cursor', value: params?.cursor, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<CacheNamespacesKeysListResult>(appendQueryString(backendApiPath(`/system/cache/namespaces/${serializePathParameter(namespace_, { name: 'namespace', style: 'simple', explode: false })}/keys`), query));
+  }
+
+/** Delete a runtime cache key */
+  async delete(namespace_: string, key: string): Promise<CacheNamespacesKeysDeleteResult> {
+    return this.client.delete<CacheNamespacesKeysDeleteResult>(backendApiPath(`/system/cache/namespaces/${serializePathParameter(namespace_, { name: 'namespace', style: 'simple', explode: false })}/keys/${serializePathParameter(key, { name: 'key', style: 'simple', explode: false })}`));
+  }
+}
+
+export class SystemCacheNamespacesApi {
+  private client: HttpClient;
+  public readonly keys: SystemCacheNamespacesKeysApi;
+  public readonly refresh: SystemCacheNamespacesRefreshApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.keys = new SystemCacheNamespacesKeysApi(client);
+    this.refresh = new SystemCacheNamespacesRefreshApi(client);
+  }
+
+
+/** Delete a runtime cache namespace */
+  async delete(namespace_: string): Promise<CacheNamespacesDeleteResult> {
+    return this.client.delete<CacheNamespacesDeleteResult>(backendApiPath(`/system/cache/namespaces/${serializePathParameter(namespace_, { name: 'namespace', style: 'simple', explode: false })}`));
+  }
+}
+
+export class SystemCacheInstancesRefreshApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Refresh one runtime cache instance */
+  async create(instanceName: string): Promise<CacheInstancesRefreshCreateResult> {
+    return this.client.post<CacheInstancesRefreshCreateResult>(backendApiPath(`/system/cache/instances/${serializePathParameter(instanceName, { name: 'instanceName', style: 'simple', explode: false })}/refresh`));
+  }
+}
+
+export class SystemCacheInstancesApi {
+  private client: HttpClient;
+  public readonly refresh: SystemCacheInstancesRefreshApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.refresh = new SystemCacheInstancesRefreshApi(client);
+  }
+
+
+/** Delete one runtime cache instance */
+  async delete(instanceName: string): Promise<CacheInstancesDeleteResult> {
+    return this.client.delete<CacheInstancesDeleteResult>(backendApiPath(`/system/cache/instances/${serializePathParameter(instanceName, { name: 'instanceName', style: 'simple', explode: false })}`));
+  }
+}
+
+export class SystemCacheApi {
+  private client: HttpClient;
+  public readonly instances: SystemCacheInstancesApi;
+  public readonly namespaces: SystemCacheNamespacesApi;
+  public readonly overview: SystemCacheOverviewApi;
+  public readonly refresh: SystemCacheRefreshApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.instances = new SystemCacheInstancesApi(client);
+    this.namespaces = new SystemCacheNamespacesApi(client);
+    this.overview = new SystemCacheOverviewApi(client);
+    this.refresh = new SystemCacheRefreshApi(client);
+  }
+
+}
+
 export interface SystemAuthSettingsUpdateParams {
   xRequestId?: string;
 }
@@ -338,25 +538,82 @@ export class SystemAuthApi {
 
 }
 
-export class SystemApi {
+export interface SystemAnalyticsAdminOverviewRetrieveParams {
+  timeRange?: 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly';
+  startTime?: string;
+  endTime?: string;
+  limit?: number;
+}
+
+export class SystemAnalyticsAdminOverviewApi {
   private client: HttpClient;
-  public readonly auth: SystemAuthApi;
-  public readonly dashboard: SystemDashboardApi;
-  public readonly firewalls: SystemFirewallsApi;
-  public readonly installation: SystemInstallationApi;
-  public readonly monitor: SystemMonitorApi;
-  public readonly rateLimits: SystemRateLimitsApi;
-  public readonly records: SystemRecordsApi;
 
   constructor(client: HttpClient) {
     this.client = client;
+  }
+
+
+/** List overview */
+  async retrieve(params?: SystemAnalyticsAdminOverviewRetrieveParams): Promise<AnalyticsAdminOverviewRetrieveResult> {
+    const query = buildQueryString([
+      { name: 'time_range', value: params?.timeRange, style: 'form', explode: true, allowReserved: false },
+      { name: 'start_time', value: params?.startTime, style: 'form', explode: true, allowReserved: false },
+      { name: 'end_time', value: params?.endTime, style: 'form', explode: true, allowReserved: false },
+      { name: 'limit', value: params?.limit, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<AnalyticsAdminOverviewRetrieveResult>(appendQueryString(backendApiPath(`/system/analytics/admin/overview`), query));
+  }
+}
+
+export class SystemAnalyticsAdminApi {
+  private client: HttpClient;
+  public readonly overview: SystemAnalyticsAdminOverviewApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.overview = new SystemAnalyticsAdminOverviewApi(client);
+  }
+
+}
+
+export class SystemAnalyticsApi {
+  private client: HttpClient;
+  public readonly admin: SystemAnalyticsAdminApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.admin = new SystemAnalyticsAdminApi(client);
+  }
+
+}
+
+export class SystemApi {
+  private client: HttpClient;
+  public readonly analytics: SystemAnalyticsApi;
+  public readonly auth: SystemAuthApi;
+  public readonly cache: SystemCacheApi;
+  public readonly dashboard: SystemDashboardApi;
+  public readonly firewalls: SystemFirewallsApi;
+  public readonly installation: SystemInstallationApi;
+  public readonly marketing: SystemMarketingApi;
+  public readonly monitor: SystemMonitorApi;
+  public readonly rateLimits: SystemRateLimitsApi;
+  public readonly records: SystemRecordsApi;
+  public readonly site: SystemSiteApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.analytics = new SystemAnalyticsApi(client);
     this.auth = new SystemAuthApi(client);
+    this.cache = new SystemCacheApi(client);
     this.dashboard = new SystemDashboardApi(client);
     this.firewalls = new SystemFirewallsApi(client);
     this.installation = new SystemInstallationApi(client);
+    this.marketing = new SystemMarketingApi(client);
     this.monitor = new SystemMonitorApi(client);
     this.rateLimits = new SystemRateLimitsApi(client);
     this.records = new SystemRecordsApi(client);
+    this.site = new SystemSiteApi(client);
   }
 
 }

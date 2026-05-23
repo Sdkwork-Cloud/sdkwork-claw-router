@@ -1,0 +1,66 @@
+fragment: operations/app-commerce-accounts
+frontend_operations:
+- route: /console/account
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src/accountService.ts
+  operation: appAccountsCurrentSummaryRetrieve
+  operation_id: accounts.current.summary.retrieve
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/accounts/current/summary
+  sdk_domain: commerce
+  summary: Accounts Current Summary Retrieve
+  description: Standard appbase commerce API for accounts.current.summary.retrieve; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_account
+  - commerce_account_ledger_entry
+  - commerce_membership
+  - commerce_order
+  - commerce_payment_attempt
+  query_parameters: []
+  response_schema:
+    name: CommerceStandardResourceResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    properties:
+      item:
+        type: object
+        additionalProperties: false
+        required:
+        - id
+        properties:
+          id:
+            type: string
+            minLength: 1
+            maxLength: 128
+          status:
+            type: string
+            nullable: true
+            maxLength: 64
+          createdAt:
+            type: string
+            nullable: true
+            maxLength: 64
+          updatedAt:
+            type: string
+            nullable: true
+            maxLength: 64
+- route: /console/account
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src/accountService.ts
+  operation: fetchAccountDetails
+  operation_id: console.accountDetails.retrieve
+  operation_scope: app_shell
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/accounts/current/summary
+  read_sources:
+  - iam_user
+  - commerce_account
+  - commerce_invoice
+  - ai_usage_fact
+  write_tables: []
+  file_targets: []
+  openapi_exposed: false

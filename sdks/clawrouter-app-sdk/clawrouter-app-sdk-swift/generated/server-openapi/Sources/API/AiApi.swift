@@ -2,7 +2,7 @@ import Foundation
 
 public class AiApi {
     private let client: HttpClient
-    
+
     public init(client: HttpClient) {
         self.client = client
     }
@@ -22,14 +22,9 @@ public class AiApi {
         return try await client.get(ApiPaths.appPath("/ai/gateway/traces"), responseType: GatewayTracesListResult.self)
     }
 
-    /// Create Playground generation agent run
-    public func generationAgentRunsCreate(body: GenerationAgentRunCreateRequest) async throws -> GenerationAgentRunsCreateResult? {
-        return try await client.post(ApiPaths.appPath("/ai/generation_agent/runs"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: GenerationAgentRunsCreateResult.self)
-    }
-
     /// List generation history
-    public func generationsList() async throws -> GenerationsListResult? {
-        return try await client.get(ApiPaths.appPath("/ai/generations"), responseType: GenerationsListResult.self)
+    public func generationList() async throws -> GenerationListResult? {
+        return try await client.get(ApiPaths.appPath("/ai/generations"), responseType: GenerationListResult.self)
     }
 
     /// List model rankings

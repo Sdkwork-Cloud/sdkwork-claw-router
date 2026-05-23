@@ -7,7 +7,5 @@ export interface ApplicationsVideosCreateResult {
   /** Data field on applications videos create result. */
   data?: CourseApplicationVideoUploadResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

@@ -520,6 +520,83 @@ test("admin skill page uses tabbed management sections and page-scoped i18n keys
   }
 });
 
+test("admin skill page uses bottom pagination for skill and package lists", async () => {
+  const fs = await import("node:fs/promises");
+  const source = await fs.readFile(
+    new URL("./packages/sdkwork-claw-router-admin-skill/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+  const i18nSource = await fs.readFile(
+    new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "data-admin-skill-pagination",
+    "BottomPagination",
+    "const [skillPage, setSkillPage] = useState(1);",
+    "const [packagePage, setPackagePage] = useState(1);",
+    "const [skillPageSize, setSkillPageSize] = useState(20);",
+    "const [packagePageSize, setPackagePageSize] = useState(20);",
+    "AdminSkillService.fetchSkillPackages(packageQuery)",
+    "AdminSkillService.fetchSkills(skillQuery)",
+    "page: skillPage,",
+    "pageSize: skillPageSize,",
+    "page: packagePage,",
+    "pageSize: packagePageSize,",
+    "hasNextPage={filteredSkills.length >= skillPageSize}",
+    "hasNextPage={filteredPackages.length >= packagePageSize}",
+  ]) {
+    assert.ok(source.includes(expected), `missing admin skill pagination marker: ${expected}`);
+  }
+
+  for (const removed of [
+    "AdminSkillService.fetchSkillPackages({ page: 1, pageSize: 100 })",
+    "AdminSkillService.fetchSkills({ page: 1, pageSize: 100 })",
+  ]) {
+    assert.ok(!source.includes(removed), `admin skill page still uses fixed pagination: ${removed}`);
+  }
+
+  for (const key of [
+    "admin.skill.pagination.showing",
+    "admin.skill.pagination.page",
+    "admin.skill.pagination.pageSize",
+  ]) {
+    assert.ok(source.includes(`t('${key}'`), `admin skill page should consume i18n key ${key}`);
+    assert.equal(
+      i18nSource.split(`"${key}":`).length - 1,
+      2,
+      `admin skill i18n key ${key} must exist once in English and once in Chinese resources`,
+    );
+  }
+});
+
+test("admin skill management tables fill the available admin viewport", async () => {
+  const fs = await import("node:fs/promises");
+  const source = await fs.readFile(
+    new URL("./packages/sdkwork-claw-router-admin-skill/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "AdminTableShell",
+    "data-admin-skill-table-card",
+    "data-admin-skill-table-viewport",
+    "data-admin-skill-pagination",
+    "flex h-full min-h-0 w-full flex-col",
+    "data-admin-skill-layout className=\"grid min-h-0 flex-1",
+    "footer={",
+    "sticky top-0 z-10",
+  ]) {
+    assert.ok(source.includes(expected), `missing adaptive admin skill table marker: ${expected}`);
+  }
+
+  assert.ok(
+    source.indexOf("data-admin-skill-table-viewport") < source.indexOf("data-admin-skill-pagination"),
+    "admin skill pagination should render outside the scrollable table viewport",
+  );
+});
+
 test("admin skill page uses a left category tree with CRUD and right-side tabs", async () => {
   const source = await import("node:fs/promises").then((fs) =>
     fs.readFile(new URL("./packages/sdkwork-claw-router-admin-skill/src/index.tsx", import.meta.url), "utf8"),

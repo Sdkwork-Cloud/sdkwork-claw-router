@@ -11,5 +11,4 @@ class PlusApiResult:
     """Base Claw Router response envelope. Operation-specific Result schemas carry concrete business data."""
     code: str
     data: Optional[NoData] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

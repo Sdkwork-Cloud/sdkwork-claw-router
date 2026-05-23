@@ -201,7 +201,7 @@ Installer failures emit exactly one JSON object to stderr and exit non-zero:
 
 Stable `errorCode` values are part of the installer contract:
 `missing_database_url`, `invalid_argument`, `invalid_state`,
-`database_error`, `catalog_error`, and `installer_error`. Command-line parsing
+`database_error`, `catalog_error`, `commerce_error`, and `installer_error`. Command-line parsing
 errors use `invalid_argument`; catalog/schema/runtime state problems use
 `invalid_state`. The CLI parses and validates command syntax before loading
 database configuration, so unsupported commands, missing option values, and

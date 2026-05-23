@@ -21,6 +21,9 @@ const DEFAULT_DEV_DATABASE_RELATIVE_PATH = path.join('target', 'dev', 'clawroute
 const DEFAULT_MODELS_CATALOG_RELATIVE_PATH = path.join('data', 'sdkwork-models');
 const DEFAULT_DEV_SECRET =
   'sdkwork-claw-router-local-dev-secret-20260507';
+const DEFAULT_DEV_REDIS_HOST = '127.0.0.1';
+const DEFAULT_DEV_REDIS_PORT = '6379';
+const DEFAULT_DEV_REDIS_DATABASE = '0';
 const GATEWAY_API_PREFIX = '/v1';
 const BACKEND_API_PREFIX = '/backend/v3/api';
 const APP_API_PREFIX = '/app/v3/api';
@@ -244,8 +247,27 @@ function serviceEnv(settings, bindEnvName, bindValue, {
 } = {}) {
   const databaseMaxConnections = process.env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS
     ?? (String(settings.databaseUrl ?? '').trim().toLowerCase().startsWith('sqlite:') ? '1' : undefined);
+  const redisUrl = String(process.env.SDKWORK_CLAW_REDIS_URL ?? '').trim();
+  const baseEnv = { ...process.env };
+  const redisStructuredDefaults = redisUrl
+    ? {}
+    : {
+        SDKWORK_CLAW_REDIS_HOST:
+          process.env.SDKWORK_CLAW_REDIS_HOST ?? DEFAULT_DEV_REDIS_HOST,
+        SDKWORK_CLAW_REDIS_PORT:
+          process.env.SDKWORK_CLAW_REDIS_PORT ?? DEFAULT_DEV_REDIS_PORT,
+        SDKWORK_CLAW_REDIS_DATABASE:
+          process.env.SDKWORK_CLAW_REDIS_DATABASE ?? DEFAULT_DEV_REDIS_DATABASE,
+      };
+  if (redisUrl) {
+    delete baseEnv.SDKWORK_CLAW_REDIS_HOST;
+    delete baseEnv.SDKWORK_CLAW_REDIS_PORT;
+    delete baseEnv.SDKWORK_CLAW_REDIS_DATABASE;
+    delete baseEnv.SDKWORK_CLAW_REDIS_USERNAME;
+  }
   const env = {
-    ...process.env,
+    ...baseEnv,
+    ...redisStructuredDefaults,
     SDKWORK_CLAW_DEPLOYMENT_MODE: 'server',
     [bindEnvName]: bindValue,
     SDKWORK_CLAW_DATABASE_URL: settings.databaseUrl,

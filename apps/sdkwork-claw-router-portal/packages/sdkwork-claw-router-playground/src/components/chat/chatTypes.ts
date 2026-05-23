@@ -42,13 +42,15 @@ export interface SimpleChatInputSubmit {
   prompt: string;
   selectedModelId: string;
   selectedApiKeyId: string;
-  apiKey: string;
+  apiKey?: string;
 }
 
 export interface ChatSendInput {
-  apiKey: string;
+  apiKey?: string;
   messages: ChatMessage[];
+  onDelta?: (delta: string) => void;
   prompt: string;
+  selectedApiKeyId?: string;
   selectedModel: PlaygroundModelOption;
   sessionId?: string;
 }

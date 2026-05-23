@@ -39,7 +39,6 @@ type AiModelRecord struct {
 	PerformanceProfile map[string]JsonValue `json:"performance_profile"`
 	ProviderHint string `json:"provider_hint"`
 	RankScore string `json:"rank_score"`
-	RegionCode string `json:"region_code"`
 	ReleaseStage string `json:"release_stage"`
 	ReplacementModel string `json:"replacement_model"`
 	RetiredAt string `json:"retired_at"`

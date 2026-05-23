@@ -891,6 +891,18 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                 app_spec["components"]["securitySchemes"]["SdkworkAccessToken"],
             )
 
+            self.assertEqual(
+                {
+                    "description": "Error response.",
+                    "content": {
+                        "application/problem+json": {
+                            "schema": {"$ref": "#/components/schemas/ProblemDetail"},
+                        },
+                    },
+                },
+                app_spec["paths"]["/app/v3/api/ai/model_vendors"]["get"]["responses"]["default"],
+            )
+
             redeem_operation = app_spec["paths"]["/app/v3/api/billing/coupons/redeem"]["post"]
             self.assertEqual(
                 {"$ref": "#/components/schemas/CouponsRedeemRequest"},

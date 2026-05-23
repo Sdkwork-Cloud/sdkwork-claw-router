@@ -1,0 +1,180 @@
+schemaVersion: 1
+kind: sdkwork.appbase.integration
+standardVersion: 2026-05-21
+app:
+  key: sdkwork-claw-router
+  role: assembly-layer
+  rule: >
+    sdkwork-claw-router composes sdkwork-appbase capabilities through generated
+    SDK adapters, app-specific runtime configuration, route registration,
+    product seed data, and installer hooks. It must not fork appbase-owned
+    stores, SDK clients, or base capability contracts.
+
+integrations:
+  - capability: commerce
+    requiredMaturity: L3
+    surfaces:
+      - app
+      - backend
+      - portal
+      - installer
+    frontend:
+      dependencies:
+        - "@sdkwork/clawrouter-app-sdk"
+        - "@sdkwork/clawrouter-backend-sdk"
+        - sdkwork-claw-router-commons
+        - sdkwork-claw-router-admin-catalog
+        - sdkwork-claw-router-admin-inventory
+        - sdkwork-claw-router-admin-orders
+        - sdkwork-claw-router-admin-payments
+        - sdkwork-claw-router-admin-memberships
+        - sdkwork-claw-router-admin-wallet
+        - sdkwork-claw-router-admin-finance
+        - sdkwork-claw-router-console-account
+        - sdkwork-claw-router-console-wallet
+        - sdkwork-claw-router-console-recharge
+        - sdkwork-claw-router-console-checkout
+        - sdkwork-claw-router-console-memberships
+        - sdkwork-claw-router-console-settlements
+      adapters:
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/inventoryService.ts
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/walletService.ts
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src/accountService.ts
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts
+      sdkInjectionAdapters: []
+    rust:
+      crates:
+        - name: sdkwork_commerce_http
+          manifest: services/sdkwork-claw-app-api/Cargo.toml
+        - name: sdkwork_commerce_membership_sqlx
+          manifest: services/sdkwork-claw-app-api/Cargo.toml
+        - name: sdkwork_commerce_membership_sqlx
+          manifest: services/sdkwork-claw-admin-api/Cargo.toml
+    contractTests:
+      - services/sdkwork-claw-app-api/tests/contract_routes.rs
+      - services/sdkwork-claw-app-api/tests/database_config_router.rs
+      - sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/tests/app_commerce_foundation_router.rs
+      - sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/tests/payment_records_read_model.rs
+      - services/sdkwork-claw-product/tests/sqlite_payment_callback_store.rs
+      - tests/test_checkout_runtime_standard.py
+      - tests/test_recharge_runtime_standard.py
+    verification:
+      - python -B -m unittest tests.test_commerce_standard tests.test_checkout_runtime_standard tests.test_recharge_runtime_standard tests.test_payment_callback_runtime_standard
+    forbiddenProductForks:
+      - services/sdkwork-claw-product/src/api/app_vip*.rs
+      - services/sdkwork-claw-product/src/api/app_checkout.rs
+      - services/sdkwork-claw-product/src/api/app_recharge.rs
+      - services/sdkwork-claw-product/src/ports/checkout_store.rs
+      - services/sdkwork-claw-product/src/ports/recharge_store.rs
+      - services/sdkwork-claw-product/src/infrastructure/sql/*/app_vip*.rs
+      - services/sdkwork-claw-product/src/infrastructure/sql/sqlite/checkout_store.rs
+      - services/sdkwork-claw-product/src/infrastructure/sql/sqlite/recharge_store.rs
+      - services/sdkwork-claw-product/src/infrastructure/sql/postgres/checkout_store.rs
+      - services/sdkwork-claw-product/src/infrastructure/sql/postgres/recharge_store.rs
+      - packages/common/commerce
+      - packages/native-rust/commerce
+    sdkBoundary: generated-sdk-through-ports
+
+  - capability: iam
+    requiredMaturity: L3
+    surfaces:
+      - app
+      - backend
+      - portal
+    frontend:
+      dependencies:
+        - "@sdkwork/auth-pc-react"
+        - "@sdkwork/auth-runtime-pc-react"
+        - "@sdkwork/iam-contracts"
+        - "@sdkwork/iam-core-pc-react"
+        - "@sdkwork/iam-react"
+        - "@sdkwork/iam-runtime"
+        - "@sdkwork/iam-sdk-ports"
+        - "@sdkwork/iam-service"
+      adapters:
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iam-runtime.ts
+        - apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+        - apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
+    contractTests:
+      - apps/sdkwork-claw-router-portal/auth-runtime.test.ts
+    verification:
+      - python -B -m unittest tests.test_iam_identity_contract_standard
+    forbiddenProductForks:
+      - apps/sdkwork-claw-router-portal/src/auth/corePcReactCompat.ts
+      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iam-sdk-clients.ts
+    sdkBoundary: generated-sdk-through-ports
+
+  - capability: foundation
+    requiredMaturity: L2
+    surfaces:
+      - portal
+      - runtime
+    frontend:
+      dependencies:
+        - "@sdkwork/appbase-pc-react"
+      adapters:
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sdk-clients.ts
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sdk-request-boundary.ts
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/app-session-token.ts
+    contractTests:
+      - apps/sdkwork-claw-router-portal/auth-runtime.test.ts
+      - tests/test_appbase_capability_guardian.py
+    verification:
+      - python -B -m unittest tests.test_appbase_capability_guardian tests.test_appbase_integration_guardian
+    forbiddenProductForks: []
+    sdkBoundary: generated-sdk-through-ports
+
+  - capability: notification
+    requiredMaturity: L1
+    surfaces:
+      - app
+      - portal
+    frontend:
+      dependencies:
+        - "@sdkwork/notification-pc-react"
+      adapters:
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-messages/src/messagesService.ts
+    contractTests:
+      - tests/test_console_messages_runtime_standard.py
+      - tests/test_console_messages_backend_runtime_standard.py
+    verification:
+      - python -B -m unittest tests.test_console_messages_runtime_standard tests.test_console_messages_backend_runtime_standard
+    forbiddenProductForks:
+      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notification-sdk-clients.ts
+    sdkBoundary: generated-sdk-through-ports
+
+  - capability: generation
+    requiredMaturity: L1
+    surfaces:
+      - app
+      - portal
+    frontend:
+      dependencies:
+        - "@sdkwork/generation-pc-react"
+        - sdkwork-claw-router-commons
+        - sdkwork-claw-router-playground
+      adapters:
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundGenerationService.ts
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+      sdkInjectionAdapters:
+        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+    contractTests:
+      - tests/test_playground_runtime_standard.py
+      - apps/sdkwork-claw-router-portal/playground-chat-runtime.test.ts
+    verification:
+      - python -B -m unittest tests.test_playground_runtime_standard
+    forbiddenProductForks:
+      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/generation-sdk-clients.ts
+      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/generationCompat.ts
+    sdkBoundary: generated-sdk-through-ports

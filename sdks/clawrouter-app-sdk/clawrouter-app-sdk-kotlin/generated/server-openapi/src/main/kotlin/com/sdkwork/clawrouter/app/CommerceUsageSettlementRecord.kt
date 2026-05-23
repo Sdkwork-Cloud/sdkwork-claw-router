@@ -1,8 +1,8 @@
 package com.sdkwork.clawrouter.app
 
 data class CommerceUsageSettlementRecord(
-    val accountHistoryId: String? = null,
     val accountId: String? = null,
+    val accountLedgerEntryId: String? = null,
     val amount: String? = null,
     val assetType: String? = null,
     val createdAt: String? = null,

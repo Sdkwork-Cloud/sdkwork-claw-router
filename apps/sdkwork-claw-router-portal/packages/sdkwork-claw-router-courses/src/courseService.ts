@@ -1,5 +1,5 @@
 import {
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
   optionalBoundedPositiveInteger,
@@ -174,7 +174,7 @@ export const courseService = {
       page: normalized.page,
       pageSize: normalized.pageSize,
     });
-    ensurePlusApiSuccess(result, 'Failed to fetch courses');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch courses');
     const catalog = normalizeCourseCatalogPayload(result);
     return {
       ...catalog,
@@ -185,7 +185,7 @@ export const courseService = {
 
   async fetchCourseCategories(): Promise<CourseCategory[]> {
     const result = await getClawRouterAppSdkClient().content.courses.categories.list();
-    ensurePlusApiSuccess(result, 'Failed to fetch course categories');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch course categories');
     return readRequiredApiItems(result, 'Course categories response is missing items')
       .map(normalizeCourseCategory)
       .filter((category): category is CourseCategory => category !== null);
@@ -193,7 +193,7 @@ export const courseService = {
 
   async fetchCourseOverview(): Promise<CourseOverview> {
     const result = await getClawRouterAppSdkClient().content.courses.overview.retrieve();
-    ensurePlusApiSuccess(result, 'Failed to fetch course overview');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch course overview');
     return normalizeCourseOverview(readRequiredApiItem(result, 'Course overview response is missing data'));
   },
 
@@ -204,14 +204,14 @@ export const courseService = {
     if (readApiData(result) === null || readApiData(result) === undefined) {
       return null;
     }
-    ensurePlusApiSuccess(result, 'Failed to fetch course detail');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch course detail');
     return normalizeCourseDetailPayload(result);
   },
 
   async submitCourseApplication(input: CourseApplicationInput): Promise<CourseApplicationResult> {
     const request = normalizeCourseApplicationInput(input);
     const result = await getClawRouterAppSdkClient().content.applications.create(request);
-    ensurePlusApiSuccess(result, 'Failed to submit course application');
+    ensureSdkworkApiSuccess(result, 'Failed to submit course application');
     return normalizeCourseApplicationResult(readRequiredApiItem(result, 'Course application response is missing data'));
   },
 
@@ -221,7 +221,7 @@ export const courseService = {
       fileName: normalizeUploadFileName(input),
     };
     const result = await getClawRouterAppSdkClient().content.applications.videos.create(request);
-    ensurePlusApiSuccess(result, 'Failed to upload course application video');
+    ensureSdkworkApiSuccess(result, 'Failed to upload course application video');
     return normalizeCourseApplicationVideoUploadResult(
       readRequiredApiItem(result, 'Course application video upload response is missing data'),
     );

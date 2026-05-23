@@ -7,15 +7,19 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 class AdminAiModelItem:
     """Persisted ai model snapshot returned by the backend."""
     api_format: Optional[str]
+    cache_read_price: str
+    cache_write_price: str
     calls: str
     capability_intro: Optional[str]
     context_tokens: Optional[int]
     description: Optional[str]
+    display_name: str
     id: str
     input_modalities: List[str]
     limitations: List[str]
     max_output_tokens: Optional[int]
     modalities: List[str]
+    model: str
     name: str
     output_modalities: List[str]
     price_in: str

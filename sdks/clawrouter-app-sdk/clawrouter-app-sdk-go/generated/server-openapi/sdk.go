@@ -11,11 +11,15 @@ type SdkworkAppClient struct {
     Ai *api.AiApi
     Auth *api.AuthApi
     Billing *api.BillingApi
-    Communication *api.CommunicationApi
+    Chat *api.ChatApi
     Content *api.ContentApi
     Ecosystem *api.EcosystemApi
     Iam *api.IamApi
+    Memory *api.MemoryApi
+    Notification *api.NotificationApi
     Platform *api.PlatformApi
+    Runtime *api.RuntimeApi
+    System *api.SystemApi
 }
 
 func NewSdkworkAppClient(baseURL string) *SdkworkAppClient {
@@ -31,11 +35,15 @@ func NewSdkworkAppClientWithConfig(config sdkhttp.Config) *SdkworkAppClient {
         Ai: api.NewAiApi(client),
         Auth: api.NewAuthApi(client),
         Billing: api.NewBillingApi(client),
-        Communication: api.NewCommunicationApi(client),
+        Chat: api.NewChatApi(client),
         Content: api.NewContentApi(client),
         Ecosystem: api.NewEcosystemApi(client),
         Iam: api.NewIamApi(client),
+        Memory: api.NewMemoryApi(client),
+        Notification: api.NewNotificationApi(client),
         Platform: api.NewPlatformApi(client),
+        Runtime: api.NewRuntimeApi(client),
+        System: api.NewSystemApi(client),
     }
 }
 

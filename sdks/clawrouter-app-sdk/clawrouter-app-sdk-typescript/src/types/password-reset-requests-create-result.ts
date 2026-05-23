@@ -7,7 +7,5 @@ export interface PasswordResetRequestsCreateResult {
   /** Data field on password reset requests create result. */
   data?: IamPasswordResetRequestResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

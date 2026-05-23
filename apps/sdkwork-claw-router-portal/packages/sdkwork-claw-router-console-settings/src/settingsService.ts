@@ -1,5 +1,5 @@
 import {
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
   readApiRecord,
@@ -29,7 +29,7 @@ export interface SettingsData {
 export class SettingsService {
   static async fetchSettings(): Promise<SettingsData> {
     const result = await getClawRouterAppSdkClient().iam.users.settings.retrieve();
-    ensurePlusApiSuccess(result, 'console.settings.states.loadErrorFallback');
+    ensureSdkworkApiSuccess(result, 'console.settings.states.loadErrorFallback');
     return normalizeSettings(readApiRecord(result));
   }
 
@@ -87,7 +87,7 @@ function normalizeSettings(data: ApiRecord): SettingsData {
 
 function ensureSettingsUpdateSuccess(result: unknown): void {
   try {
-    ensurePlusApiSuccess(result, 'Settings update confirmation is required');
+    ensureSdkworkApiSuccess(result, 'Settings update confirmation is required');
   } catch {
     throw new Error('Settings update confirmation is required');
   }

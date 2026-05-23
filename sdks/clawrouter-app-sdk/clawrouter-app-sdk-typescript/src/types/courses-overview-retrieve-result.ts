@@ -7,7 +7,5 @@ export interface CoursesOverviewRetrieveResult {
   /** Data field on courses overview retrieve result. */
   data?: CourseOverview;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

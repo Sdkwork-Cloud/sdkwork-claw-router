@@ -1,73 +1,81 @@
 import {
-  ensurePlusApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
-  readApiRecord,
+  readRequiredApiItem,
   readRequiredNonNegativeNumber,
   readRequiredString,
+  readString,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
-import type { AccountSummaryResponse as SdkAccountSummaryResponse } from '@sdkwork/clawrouter-app-sdk';
 
 export interface AccountStats {
-  id: SdkAccountSummaryResponse['id'];
-  name: SdkAccountSummaryResponse['name'];
-  email: SdkAccountSummaryResponse['email'];
-  isVerified: SdkAccountSummaryResponse['isVerified'];
-  tier: SdkAccountSummaryResponse['tier'];
-  organization: SdkAccountSummaryResponse['organization'];
-  availableCredits: SdkAccountSummaryResponse['availableCredits'];
-  estDaysRemaining: SdkAccountSummaryResponse['estDaysRemaining'];
-  monthlyConsumption: SdkAccountSummaryResponse['monthlyConsumption'];
+  id: string;
+  name: string;
+  email: string;
+  isVerified: boolean;
+  tier: string;
+  organization: string;
+  availableCredits: number;
+  estDaysRemaining: number;
+  monthlyConsumption: number;
   consumptionByService: {
-    name: SdkAccountSummaryResponse['consumptionByService'][number]['name'];
-    value: SdkAccountSummaryResponse['consumptionByService'][number]['value'];
-    color: SdkAccountSummaryResponse['consumptionByService'][number]['color'];
-    percentage: SdkAccountSummaryResponse['consumptionByService'][number]['percentage'];
+    name: string;
+    value: number;
+    color: string;
+    percentage: number;
   }[];
   invoiceSettings: {
-    orgFull: SdkAccountSummaryResponse['invoiceSettings']['orgFull'];
-    taxId: SdkAccountSummaryResponse['invoiceSettings']['taxId'];
-    paymentMethod: SdkAccountSummaryResponse['invoiceSettings']['paymentMethod'];
-    invoiceType: SdkAccountSummaryResponse['invoiceSettings']['invoiceType'];
+    orgFull: string;
+    taxId: string;
+    paymentMethod: string;
+    invoiceType: string;
   };
   security: {
-    mfaEnabled: SdkAccountSummaryResponse['security']['mfaEnabled'];
-    qpsLimit: SdkAccountSummaryResponse['security']['qpsLimit'];
-    ipWhitelistCount: SdkAccountSummaryResponse['security']['ipWhitelistCount'];
+    mfaEnabled: boolean;
+    qpsLimit: number;
+    ipWhitelistCount: number;
   };
   loginLogs: {
-    ip: SdkAccountSummaryResponse['loginLogs'][number]['ip'];
-    location: SdkAccountSummaryResponse['loginLogs'][number]['location'];
-    device: SdkAccountSummaryResponse['loginLogs'][number]['device'];
-    time: SdkAccountSummaryResponse['loginLogs'][number]['time'];
-    status: SdkAccountSummaryResponse['loginLogs'][number]['status'];
+    ip: string;
+    location: string;
+    device: string;
+    time: string;
+    status: 'success' | 'warning';
   }[];
 }
 
 export class AccountService {
   static async fetchAccountDetails(): Promise<AccountStats> {
-    const result = await getClawRouterAppSdkClient().billing.account.summary.retrieve();
-    ensurePlusApiSuccess(result, 'console.account.states.loadErrorFallback');
-    return normalizeAccountStats(readApiRecord(result));
+    const result = await appAccountsCurrentSummaryRetrieve();
+    return normalizeAccountStats(readRequiredApiItem(result, 'console.account.states.loadErrorFallback'));
   }
 }
 
-function normalizeAccountStats(data: ApiRecord): AccountStats {
+export async function appAccountsCurrentSummaryRetrieve() {
+  return getClawRouterAppSdkClient().commerce.accounts.current.summary.retrieve();
+}
+
+function normalizeAccountStats(value: ApiRecord): AccountStats {
   return {
-    id: readRequiredString(data, 'id', 'Account summary response missing data'),
-    name: readRequiredString(data, 'name', 'Account name is required'),
-    email: readRequiredString(data, 'email', 'Account summary response missing data'),
-    isVerified: readRequiredBoolean(data, 'isVerified', 'Account verification status is required'),
-    tier: readRequiredString(data, 'tier', 'Account tier is required'),
-    organization: readRequiredString(data, 'organization', 'Account organization is required'),
-    availableCredits: readRequiredNonNegativeNumber(data, 'availableCredits', 'Account available credits are required'),
-    estDaysRemaining: readRequiredNonNegativeNumber(data, 'estDaysRemaining', 'Account estimated days remaining is required'),
-    monthlyConsumption: readRequiredNonNegativeNumber(data, 'monthlyConsumption', 'Account monthly consumption is required'),
-    consumptionByService: readRequiredRecordArray(data, 'consumptionByService', 'Account consumption record is required').map(normalizeConsumptionItem),
-    invoiceSettings: normalizeInvoiceSettings(data.invoiceSettings),
-    security: normalizeSecuritySummary(data.security),
-    loginLogs: readRequiredRecordArray(data, 'loginLogs', 'Account login log record is required').map(normalizeLoginLog),
+    id: readRequiredString(value, 'id', 'Account summary id is required'),
+    name: readDisplayString(value, 'name', 'Console account'),
+    email: readDisplayString(value, 'email', 'No email bound'),
+    isVerified: readRequiredBoolean(value, 'isVerified', 'Account verification status is required'),
+    tier: readDisplayString(value, 'tier', 'Standard'),
+    organization: readDisplayString(value, 'organization', 'Personal workspace'),
+    availableCredits: readRequiredNonNegativeNumber(value, 'availableCredits', 'Account available credits are required'),
+    estDaysRemaining: readRequiredNonNegativeNumber(value, 'estDaysRemaining', 'Account estimated days remaining is required'),
+    monthlyConsumption: readRequiredNonNegativeNumber(value, 'monthlyConsumption', 'Account monthly consumption is required'),
+    consumptionByService: readRequiredRecordArray(value, 'consumptionByService', 'Account consumption record is required')
+      .map(normalizeConsumptionItem),
+    invoiceSettings: normalizeInvoiceSettings(
+      readRequiredRecord(value.invoiceSettings, 'Account invoice settings are required'),
+    ),
+    security: normalizeSecuritySummary(
+      readRequiredRecord(value.security, 'Account security summary is required'),
+    ),
+    loginLogs: readRequiredRecordArray(value, 'loginLogs', 'Account login log record is required')
+      .map(normalizeLoginLog),
   };
 }
 
@@ -76,48 +84,37 @@ function normalizeConsumptionItem(value: unknown): AccountStats['consumptionBySe
   return {
     name: readRequiredString(item, 'name', 'Account consumption service name is required'),
     value: readRequiredNonNegativeNumber(item, 'value', 'Account consumption value is required'),
-    color: readRequiredString(item, 'color', 'Account consumption color is required'),
-    percentage: readRequiredNonNegativeNumber(item, 'percentage', 'Account consumption percentage is required'),
+    color: readDisplayString(item, 'color', 'bg-blue-500'),
+    percentage: readOptionalNonNegativeNumber(item, 'percentage'),
   };
 }
 
-function normalizeInvoiceSettings(value: unknown): AccountStats['invoiceSettings'] {
-  const record = readRequiredRecord(value, 'Account invoice settings are required');
+function normalizeInvoiceSettings(item: ApiRecord): AccountStats['invoiceSettings'] {
   return {
-    orgFull: readRequiredString(record, 'orgFull', 'Account invoice organization is required'),
-    taxId: readRequiredString(record, 'taxId', 'Account invoice tax id is required'),
-    paymentMethod: readRequiredString(record, 'paymentMethod', 'Account invoice payment method is required'),
-    invoiceType: readRequiredString(record, 'invoiceType', 'Account invoice type is required'),
+    orgFull: readDisplayString(item, 'orgFull', '-'),
+    taxId: readDisplayString(item, 'taxId', '-'),
+    paymentMethod: readDisplayString(item, 'paymentMethod', '-'),
+    invoiceType: readDisplayString(item, 'invoiceType', '-'),
   };
 }
 
-function normalizeSecuritySummary(value: unknown): AccountStats['security'] {
-  const record = readRequiredRecord(value, 'Account security summary is required');
+function normalizeSecuritySummary(item: ApiRecord): AccountStats['security'] {
   return {
-    mfaEnabled: readRequiredBoolean(record, 'mfaEnabled', 'Account security MFA status is required'),
-    qpsLimit: readRequiredNonNegativeNumber(record, 'qpsLimit', 'Account security QPS limit is required'),
-    ipWhitelistCount: readRequiredNonNegativeNumber(record, 'ipWhitelistCount', 'Account security IP whitelist count is required'),
+    mfaEnabled: readRequiredBoolean(item, 'mfaEnabled', 'Account security MFA flag is required'),
+    qpsLimit: readOptionalNonNegativeNumber(item, 'qpsLimit'),
+    ipWhitelistCount: readOptionalNonNegativeNumber(item, 'ipWhitelistCount'),
   };
 }
 
 function normalizeLoginLog(value: unknown): AccountStats['loginLogs'][number] {
   const item = readRequiredRecord(value, 'Account login log record is required');
-  const status = readLoginStatus(item.status);
   return {
     ip: readRequiredString(item, 'ip', 'Account login IP is required'),
-    location: readRequiredString(item, 'location', 'Account login location is required'),
-    device: readRequiredString(item, 'device', 'Account login device is required'),
-    time: readRequiredString(item, 'time', 'Account login time is required'),
-    status,
+    location: readDisplayString(item, 'location', '-'),
+    device: readDisplayString(item, 'device', '-'),
+    time: readDisplayString(item, 'time', '-'),
+    status: readAccountLoginStatus(item),
   };
-}
-
-function readRequiredRecordArray(record: ApiRecord, key: string, itemMessage: string): ApiRecord[] {
-  const value = record[key];
-  if (!Array.isArray(value)) {
-    throw new Error(`${key} is required`);
-  }
-  return value.map((item) => readRequiredRecord(item, itemMessage));
 }
 
 function readRequiredRecord(value: unknown, message: string): ApiRecord {
@@ -127,26 +124,47 @@ function readRequiredRecord(value: unknown, message: string): ApiRecord {
   return value;
 }
 
+function readRequiredRecordArray(record: ApiRecord, key: string, itemMessage: string): ApiRecord[] {
+  const value = record[key];
+  if (!Array.isArray(value)) {
+    throw new Error(itemMessage);
+  }
+  return value.map((item) => readRequiredRecord(item, itemMessage));
+}
+
 function readRequiredBoolean(record: ApiRecord, key: string, message: string): boolean {
   const value = record[key];
   if (typeof value === 'boolean') {
     return value;
   }
   if (typeof value === 'string') {
-    if (value.toLowerCase() === 'true') {
-      return true;
-    }
-    if (value.toLowerCase() === 'false') {
-      return false;
-    }
+    if (value.toLowerCase() === 'true') return true;
+    if (value.toLowerCase() === 'false') return false;
   }
   throw new Error(message);
 }
 
-function readLoginStatus(value: unknown): AccountStats['loginLogs'][number]['status'] {
-  const status = typeof value === 'string' ? value.trim() : '';
+function readDisplayString(record: ApiRecord, key: string, fallback: string): string {
+  const value = readString(record, key).trim();
+  return value || fallback;
+}
+
+function readAccountLoginStatus(item: ApiRecord): AccountStats['loginLogs'][number]['status'] {
+  const status = readString(item, 'status').trim();
   if (status === 'success' || status === 'warning') {
     return status;
   }
   throw new Error(status ? `Unsupported account login status: ${status}` : 'Account login status is required');
+}
+
+function readOptionalNonNegativeNumber(record: ApiRecord, key: string): number {
+  const value = record[key];
+  if (value === undefined || value === null || value === '') {
+    return 0;
+  }
+  const number = typeof value === 'number' ? value : typeof value === 'string' ? Number(value.trim()) : Number.NaN;
+  if (!Number.isFinite(number) || number < 0) {
+    throw new Error(`${key} must be a non-negative number`);
+  }
+  return number;
 }

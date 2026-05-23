@@ -2,6 +2,8 @@ import type { JsonValue } from './json-value';
 
 /** Ops notification delivery record schema exposed by Claw Router. */
 export interface OpsNotificationDeliveryRecord {
+  /** Archived at field on ops notification delivery record. */
+  archived_at?: string;
   /** Created at field on ops notification delivery record. */
   created_at?: string;
   /** Data scope field on ops notification delivery record. */
@@ -30,6 +32,8 @@ export interface OpsNotificationDeliveryRecord {
   owner_id?: string;
   /** Owner type field on ops notification delivery record. */
   owner_type?: string;
+  /** Popup seen at field on ops notification delivery record. */
+  popup_seen_at?: string;
   /** Read at field on ops notification delivery record. */
   read_at?: string;
   /** Retry count field on ops notification delivery record. */

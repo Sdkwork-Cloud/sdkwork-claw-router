@@ -1,13 +1,14 @@
 import { MethodBadge } from '../components/MethodBadge';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ApiEndpointView } from '../components/ApiEndpointView';
-import { ChevronRight, Search, Loader2 } from 'lucide-react';
+import { ChevronRight, Search, Loader2, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   createReferenceSidebarGroupElementId,
   isReferenceSidebarGroupCollapsed,
   toggleReferenceSidebarGroup,
+  filterReferenceSidebarTree,
   type ReferenceSidebarCollapsedGroups,
 } from 'sdkwork-claw-router-commons';
 import type { ApiReferenceEndpoint } from '../openapiTypes';
@@ -29,6 +30,7 @@ export function ApiReference() {
   const [apiData, setApiData] = useState<ApiSystemData[]>([]);
   const [loading, setLoading] = useState(true);
   const [collapsedGroups, setCollapsedGroups] = useState<ReferenceSidebarCollapsedGroups>({});
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const loadOpenApi = async () => {
@@ -54,7 +56,10 @@ export function ApiReference() {
   }, []);
 
   const activeSystemData = apiData.find(s => s.id === activeSystem);
-  const sidebarTree = activeSystemData ? buildApiCategorySidebarTree(activeSystemData.categories) : [];
+  const sidebarTree = useMemo(() => {
+    const tree = activeSystemData ? buildApiCategorySidebarTree(activeSystemData.categories) : [];
+    return filterReferenceSidebarTree(tree, searchQuery);
+  }, [activeSystemData, searchQuery]);
 
   // Find the active endpoint
   let activeEndpoint: ApiReferenceEndpoint | null = null;
@@ -243,16 +248,24 @@ export function ApiReference() {
         >
           {/* Header Area: Search */}
           <div className="p-4 border-b border-slate-200 dark:border-white/10">
-            {/* Search Bar */}
-            <button className="w-full flex items-center justify-between bg-white dark:bg-[#111] border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm text-slate-500 hover:border-slate-300 dark:hover:border-white/20 transition-colors shadow-sm group">
-              <div className="flex items-center gap-2">
-                <Search className="w-4 h-4 text-slate-400 group-hover:text-slate-500 dark:group-hover:text-slate-300" />
-                <span>{t('api.searchDocs', 'Search docs...')}</span>
-              </div>
-              <kbd className="hidden sm:inline-flex items-center gap-1 text-[10px] font-medium text-slate-400 bg-slate-100 dark:bg-white/10 px-1.5 py-0.5 rounded border border-slate-200 dark:border-white/10">
-                <span className="text-xs">⌘</span>K
-              </kbd>
-            </button>
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+              <input
+                type="text"
+                placeholder={t('api.searchPlaceholder', 'Search endpoints...')}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full bg-white dark:bg-[#111] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-8 py-2 text-sm text-slate-900 dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors shadow-sm"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-0.5 rounded text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              )}
+            </div>
           </div>
 
           {/* Categories and Endpoints */}
@@ -266,7 +279,13 @@ export function ApiReference() {
                 transition={{ duration: 0.2 }}
                 className="space-y-8 pb-8"
               >
-                {sidebarTree.map((node) => renderSidebarNode(node))}
+                {sidebarTree.length === 0 && searchQuery ? (
+                  <div className="text-center py-8 text-slate-500 dark:text-slate-400 text-sm">
+                    {t('api.notFound', 'No endpoints found.')}
+                  </div>
+                ) : (
+                  sidebarTree.map((node) => renderSidebarNode(node))
+                )}
               </motion.div>
             </AnimatePresence>
           </div>

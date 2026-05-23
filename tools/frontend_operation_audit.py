@@ -8,6 +8,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from tools.frontend_contract_loader import default_frontend_contract_path, load_frontend_field_contract
+
 try:
     import yaml
 except ImportError as exc:  # pragma: no cover - exercised only on missing tooling
@@ -60,12 +62,23 @@ class FrontendOperationAudit:
         "backend": "getClawRouterBackendSdkClient",
         "openai_v1": "getClawRouterAiSdkClient",
     }
+    COMMERCE_SERVICE_PATTERN = re.compile(r"\bgetClawRouterCommerceService\s*\(")
+    COMMERCE_RUNTIME_IMPORT_PATTERN = re.compile(
+        r"from\s+['\"](?:\./)?commerce-runtime(?:\.ts)?['\"]"
+    )
+    LOCAL_RUNTIME_ADAPTER_IMPORT_PATTERN = re.compile(
+        r"(?:from\s+|import\s*\(\s*)['\"](\.{1,2}/[^'\"]*RuntimeApiOperations(?:\.[cm]?[tj]sx?)?)['\"]"
+    )
+    COMMERCE_RUNTIME_SOURCE = (
+        "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts"
+    )
     APPBASE_IAM_RUNTIME_PATTERN = re.compile(r"\bgetClawRouterIamRuntime\s*\(\s*\)\s*\.service\b")
     APPBASE_IAM_CONTROLLER_PATTERN = re.compile(
         r"\bcreateSdkworkIamRuntimeAuthController\s*\([\s\S]*\bgetRuntime\s*:\s*getClawRouterIamRuntime\b"
     )
     APPBASE_IAM_CONTROLLER_OPERATIONS = (
         "bootstrap",
+        "callbackLoginQrCode",
         "checkLoginQrCodeStatus",
         "confirmLoginQrCode",
         "generateLoginQrCode",
@@ -102,7 +115,7 @@ class FrontendOperationAudit:
         self.contract_path = (
             Path(contract_path).resolve()
             if contract_path is not None
-            else self.root / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
+            else default_frontend_contract_path(self.root)
         )
         self.output_path = (
             Path(output_path).resolve()
@@ -121,6 +134,7 @@ class FrontendOperationAudit:
                     {
                         "source": display_source,
                         "operation": operation,
+                        "operation_scope": contract.get("operation_scope"),
                         "route": contract.get("route"),
                         "kind": contract.get("kind"),
                         "api_surface": contract.get("api_surface"),
@@ -200,6 +214,8 @@ class FrontendOperationAudit:
             api_surface = entry.get("api_surface")
             api_method = entry.get("api_method")
             api_path = entry.get("api_path")
+            operation_scope = entry.get("operation_scope")
+            is_app_shell_operation = operation_scope == "app_shell"
             if not isinstance(source, str) or not isinstance(operation, str):
                 messages.append("frontend_operations entries must include source and operation")
                 continue
@@ -235,13 +251,11 @@ class FrontendOperationAudit:
                 sdk_client = self.SDK_CLIENTS[api_surface]
                 if (
                     source_text is not None
-                    and not re.search(rf"\b{re.escape(sdk_client)}\s*\(", source_text)
-                    and not (
-                        api_surface == "app"
-                        and (
-                            self.APPBASE_IAM_RUNTIME_PATTERN.search(source_text)
-                            or self.APPBASE_IAM_CONTROLLER_PATTERN.search(source_text)
-                        )
+                    and not self._source_uses_generated_sdk_boundary(
+                        api_surface=api_surface,
+                        source=source,
+                        source_text=source_text,
+                        source_text_cache=source_text_cache,
                     )
                 ):
                     messages.append(f"frontend operation {key} must use {sdk_client} for {api_surface} api_surface")
@@ -261,7 +275,12 @@ class FrontendOperationAudit:
                 messages.append(f"frontend operation {key} must declare read_sources as a string list")
             elif not read_sources and not is_multipart_upload:
                 messages.append(f"frontend operation {key} must declare non-empty read_sources")
-            elif read_sources and isinstance(route, str) and route in route_tables:
+            elif (
+                read_sources
+                and not is_app_shell_operation
+                and isinstance(route, str)
+                and route in route_tables
+            ):
                 for read_source in read_sources:
                     if read_source not in route_tables[route]:
                         messages.append(
@@ -278,7 +297,13 @@ class FrontendOperationAudit:
             if kind in self.WRITE_KINDS:
                 if valid_write_tables and not write_tables and not is_multipart_upload:
                     messages.append(f"frontend operation {key} kind {kind} must declare non-empty write_tables")
-                elif valid_write_tables and write_tables and isinstance(route, str) and route in route_tables:
+                elif (
+                    valid_write_tables
+                    and write_tables
+                    and not is_app_shell_operation
+                    and isinstance(route, str)
+                    and route in route_tables
+                ):
                     for write_table in write_tables:
                         if write_table not in route_tables[route]:
                             messages.append(
@@ -308,7 +333,11 @@ class FrontendOperationAudit:
                     continue
                 if self._is_operation_source_file(path, portal_root):
                     files.append(path)
-        return sorted(files)
+        for source in self._contract_operation_sources():
+            path = self.root / source
+            if path.exists() and path.is_file() and path.suffix in {".ts", ".tsx"}:
+                files.append(path)
+        return sorted(set(files))
 
     def _is_operation_source_file(self, path: Path, portal_root: Path) -> bool:
         lowered_name = path.name.lower()
@@ -383,11 +412,7 @@ class FrontendOperationAudit:
     def _load_contract(self) -> dict[str, Any]:
         if yaml is None:
             raise RuntimeError("PyYAML is required to load frontend field contracts") from _YAML_IMPORT_ERROR
-        if not self.contract_path.exists():
-            return {}
-        contract = yaml.safe_load(self.contract_path.read_text(encoding="utf-8"))
-        if contract is None:
-            return {}
+        contract = load_frontend_field_contract(self.root, self.contract_path)
         if not isinstance(contract, dict):
             raise ValueError("frontend field contract root must be a mapping")
         return contract
@@ -409,6 +434,21 @@ class FrontendOperationAudit:
             indexed[f"{source}#{operation}"] = entry
         return indexed
 
+    def _contract_operation_sources(self) -> set[str]:
+        contract = self._load_contract()
+        entries = contract.get("frontend_operations", [])
+        if not isinstance(entries, list):
+            return set()
+
+        sources: set[str] = set()
+        for entry in entries:
+            if not isinstance(entry, dict):
+                continue
+            source = entry.get("source")
+            if isinstance(source, str):
+                sources.add(source)
+        return sources
+
     def _allowed_methods(self, kind: str, api_surface: Any) -> set[str]:
         methods = set(self.KIND_METHODS[kind])
         if kind == "read" and api_surface == "backend":
@@ -424,6 +464,79 @@ class FrontendOperationAudit:
             return None
         cache[source] = path.read_text(encoding="utf-8", errors="ignore")
         return cache[source]
+
+    def _source_uses_generated_sdk_boundary(
+        self,
+        *,
+        api_surface: str,
+        source: str,
+        source_text: str,
+        source_text_cache: dict[str, str | None],
+    ) -> bool:
+        sdk_client = self.SDK_CLIENTS[api_surface]
+        if re.search(rf"\b{re.escape(sdk_client)}\s*\(", source_text):
+            return True
+        if (
+            api_surface == "app"
+            and (
+                self.APPBASE_IAM_RUNTIME_PATTERN.search(source_text)
+                or self.APPBASE_IAM_CONTROLLER_PATTERN.search(source_text)
+            )
+        ):
+            return True
+        if self._source_uses_local_runtime_adapter(
+            api_surface=api_surface,
+            source=source,
+            source_text=source_text,
+            source_text_cache=source_text_cache,
+        ):
+            return True
+        if not self.COMMERCE_SERVICE_PATTERN.search(source_text):
+            if not self.COMMERCE_RUNTIME_IMPORT_PATTERN.search(source_text):
+                return False
+            commerce_runtime = self._source_text(self.COMMERCE_RUNTIME_SOURCE, source_text_cache)
+            return commerce_runtime is not None and re.search(
+                rf"\b{re.escape(sdk_client)}\s*\(",
+                commerce_runtime,
+            ) is not None
+        commerce_runtime = self._source_text(self.COMMERCE_RUNTIME_SOURCE, source_text_cache)
+        return commerce_runtime is not None and re.search(
+            rf"\b{re.escape(sdk_client)}\s*\(",
+            commerce_runtime,
+        ) is not None
+
+    def _source_uses_local_runtime_adapter(
+        self,
+        *,
+        api_surface: str,
+        source: str,
+        source_text: str,
+        source_text_cache: dict[str, str | None],
+    ) -> bool:
+        sdk_client = self.SDK_CLIENTS[api_surface]
+        for match in self.LOCAL_RUNTIME_ADAPTER_IMPORT_PATTERN.finditer(source_text):
+            adapter_source = self._resolve_relative_import(source, match.group(1))
+            if adapter_source is None:
+                continue
+            adapter_text = self._source_text(adapter_source, source_text_cache)
+            if adapter_text is not None and re.search(rf"\b{re.escape(sdk_client)}\s*\(", adapter_text):
+                return True
+        return False
+
+    def _resolve_relative_import(self, source: str, import_spec: str) -> str | None:
+        source_path = (self.root / source).resolve()
+        candidate = (source_path.parent / import_spec).resolve()
+        candidates = [candidate]
+        if not candidate.suffix:
+            candidates.extend(candidate.with_suffix(suffix) for suffix in (".ts", ".tsx", ".mts", ".cts", ".js", ".jsx"))
+        for path in candidates:
+            try:
+                relative = path.relative_to(self.root)
+            except ValueError:
+                continue
+            if path.is_file():
+                return relative.as_posix()
+        return None
 
     def _mock_data_pattern_labels(self, source_text: str | None) -> list[str]:
         if source_text is None:

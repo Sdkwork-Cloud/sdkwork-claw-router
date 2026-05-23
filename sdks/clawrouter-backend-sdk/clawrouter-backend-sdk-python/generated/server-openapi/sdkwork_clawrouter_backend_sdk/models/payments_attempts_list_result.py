@@ -3,13 +3,12 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
 if TYPE_CHECKING:
-    from .admin_payment_attempts_response import AdminPaymentAttemptsResponse
+    from .commerce_payment_attempt_list_response import CommercePaymentAttemptListResponse
 
 
 @dataclass
 class PaymentsAttemptsListResult:
     """Payments attempts list result schema exposed by Claw Router."""
     code: str
-    data: Optional[AdminPaymentAttemptsResponse] = None
-    message: Optional[str] = None
+    data: Optional[CommercePaymentAttemptListResponse] = None
     msg: Optional[str] = None

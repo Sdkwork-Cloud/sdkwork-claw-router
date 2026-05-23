@@ -55,6 +55,59 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
+        /// List app categories
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesListResult?> AppsCategoriesListAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesListResult>(ApiPaths.BackendPath("/platform/apps/categories"));
+        }
+
+        /// <summary>
+        /// Create app category
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesCreateResult?> AppsCategoriesCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAppCategoryCreateRequest body, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesCreateResult>(ApiPaths.BackendPath("/platform/apps/categories"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
+        /// Delete app category
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesDeleteResult?> AppsCategoriesDeleteAsync(string categoryId, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesDeleteResult>(ApiPaths.BackendPath($"/platform/apps/categories/{SerializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false))}"), null, requestHeaders);
+        }
+
+        /// <summary>
+        /// Update app category
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesUpdateResult?> AppsCategoriesUpdateAsync(string categoryId, Sdkwork.ClawRouter.Backend.Models.AdminAppCategoryUpdateRequest body, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesUpdateResult>(ApiPaths.BackendPath($"/platform/apps/categories/{SerializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false))}"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
         /// Delete app
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.AppsDeleteResult?> AppsDeleteAsync(string appId, string? xRequestId = null)

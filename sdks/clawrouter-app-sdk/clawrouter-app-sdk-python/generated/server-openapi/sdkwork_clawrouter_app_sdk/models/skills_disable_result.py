@@ -11,5 +11,4 @@ class SkillsDisableResult:
     """Skills disable result schema exposed by Claw Router."""
     code: str
     data: Optional[AppInstalledSkillResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AgentsListResult, AgentsRetrieveResult
+from ..models import AgentDefinitionsListResult, AgentDefinitionsRetrieveResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -189,9 +189,17 @@ class AgentsApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.agent_definitions = AgentsAgentDefinitionsApi(client)
 
 
-    def list(self, q: Optional[str] = None, owner_user_id: Optional[int] = None, status: Optional[str] = None, visibility: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> AgentsListResult:
+class AgentsAgentDefinitionsApi:
+    """agents agents.agent_definitions API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, q: Optional[str] = None, owner_user_id: Optional[int] = None, status: Optional[str] = None, visibility: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> AgentDefinitionsListResult:
         """List managed agents"""
         query = build_query_string([
             {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -203,6 +211,6 @@ class AgentsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/agents", query))
 
-    def retrieve(self, agent_id: str) -> AgentsRetrieveResult:
+    def retrieve(self, agent_id: str) -> AgentDefinitionsRetrieveResult:
         """Retrieve managed agent"""
         return self._client.get(f"/backend/v3/api/agents/{serialize_path_parameter(agent_id, {'name': 'agentId', 'style': 'simple', 'explode': False})}")

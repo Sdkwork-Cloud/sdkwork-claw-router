@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class EcosystemApi {
     private final HttpClient client;
-    
+
     public EcosystemApi(HttpClient client) {
         this.client = client;
     }
@@ -53,6 +53,26 @@ public class EcosystemApi {
         );
         Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/categories"), body, null, requestHeaders, "application/json");
         return client.convertValue(raw, new TypeReference<SkillsCategoriesCreateResult>() {});
+    }
+
+    /** Delete skill category */
+    public SkillsCategoriesDeleteResult skillsCategoriesDelete(String categoryId, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.delete(ApiPaths.backendPath("/ecosystem/skills/categories/" + serializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false)) + ""), null, requestHeaders);
+        return client.convertValue(raw, new TypeReference<SkillsCategoriesDeleteResult>() {});
+    }
+
+    /** Update skill category */
+    public SkillsCategoriesUpdateResult skillsCategoriesUpdate(String categoryId, AdminSkillCategoryUpdateRequest body, String xRequestId) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.put(ApiPaths.backendPath("/ecosystem/skills/categories/" + serializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<SkillsCategoriesUpdateResult>() {});
     }
 
     /** List skill packages */

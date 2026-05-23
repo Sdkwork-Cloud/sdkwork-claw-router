@@ -7,7 +7,5 @@ export interface ModelVendorsListResult {
   /** Data field on model vendors list result. */
   data?: RankingVendorOptionsResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

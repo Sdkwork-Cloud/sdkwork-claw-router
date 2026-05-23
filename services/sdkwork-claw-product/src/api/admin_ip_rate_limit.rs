@@ -248,7 +248,7 @@ fn normalize_block_duration(value: Option<&serde_json::Value>) -> Result<i64, St
         })?,
         Some(serde_json::Value::String(value)) => parse_duration_string(value)?,
         Some(_) => {
-            return Err("blockDuration must be a positive integer or duration string".to_owned())
+            return Err("blockDuration must be a positive integer or duration string".to_owned());
         }
     };
     if !(MIN_LIMIT_VALUE..=MAX_BLOCK_DURATION_SECONDS).contains(&seconds) {

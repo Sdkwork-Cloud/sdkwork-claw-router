@@ -11,5 +11,4 @@ class ModelVendorsCreateResult:
     """Model vendors create result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminModelVendorMutationResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

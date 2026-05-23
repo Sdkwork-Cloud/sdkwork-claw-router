@@ -256,7 +256,6 @@ fn build_payment_callback_command(
         event_uuid: generate_entity_uuid(&state)?,
         account_uuid: generate_entity_uuid(&state)?,
         account_history_uuid: generate_entity_uuid(&state)?,
-        point_change_uuid: generate_entity_uuid(&state)?,
         event_id,
         nonce,
         signature,

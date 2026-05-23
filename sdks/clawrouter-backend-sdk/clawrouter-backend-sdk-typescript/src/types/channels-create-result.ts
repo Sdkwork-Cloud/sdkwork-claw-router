@@ -7,7 +7,5 @@ export interface ChannelsCreateResult {
   /** Data field on channels create result. */
   data?: AdminChannelMutationResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

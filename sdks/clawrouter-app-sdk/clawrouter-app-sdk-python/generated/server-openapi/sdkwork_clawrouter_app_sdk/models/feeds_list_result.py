@@ -11,5 +11,4 @@ class FeedsListResult:
     """Feeds list result schema exposed by Claw Router."""
     code: str
     data: Optional[List[ForumFeedItem]] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

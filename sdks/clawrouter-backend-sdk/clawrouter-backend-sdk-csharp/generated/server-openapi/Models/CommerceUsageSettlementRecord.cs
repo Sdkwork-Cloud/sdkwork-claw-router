@@ -6,8 +6,8 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class CommerceUsageSettlementRecord
     {
-        public string? AccountHistoryId { get; set; }
         public string? AccountId { get; set; }
+        public string? AccountLedgerEntryId { get; set; }
         public string? Amount { get; set; }
         public string? AssetType { get; set; }
         public string? CreatedAt { get; set; }

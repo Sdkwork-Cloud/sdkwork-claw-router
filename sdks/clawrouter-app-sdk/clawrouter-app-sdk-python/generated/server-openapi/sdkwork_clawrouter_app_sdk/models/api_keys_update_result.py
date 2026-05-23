@@ -11,5 +11,4 @@ class ApiKeysUpdateResult:
     """Api keys update result schema exposed by Claw Router."""
     code: str
     data: Optional[UpdateApiKeyResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

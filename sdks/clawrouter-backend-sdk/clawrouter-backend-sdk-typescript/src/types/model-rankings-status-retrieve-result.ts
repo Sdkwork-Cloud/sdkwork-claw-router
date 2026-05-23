@@ -7,7 +7,5 @@ export interface ModelRankingsStatusRetrieveResult {
   /** Data field on model rankings status retrieve result. */
   data?: ModelRankingRefreshStatus;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

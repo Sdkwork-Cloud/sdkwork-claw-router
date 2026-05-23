@@ -48,3 +48,60 @@ export function toggleReferenceSidebarGroup(
     [groupKey]: true,
   };
 }
+
+export interface ReferenceSidebarSearchNode {
+  id: string;
+  name: string;
+  fullName: string;
+  endpoints: { id: string; name: string; method: string; path: string }[];
+  children: ReferenceSidebarSearchNode[];
+  totalEndpoints: number;
+}
+
+export function filterReferenceSidebarTree<T extends ReferenceSidebarSearchNode>(
+  nodes: T[],
+  searchQuery: string,
+): T[] {
+  if (!searchQuery.trim()) {
+    return nodes;
+  }
+
+  const query = searchQuery.trim().toLowerCase();
+
+  return nodes
+    .map((node) => filterReferenceSidebarNode(node, query))
+    .filter((node): node is T => node !== null);
+}
+
+function filterReferenceSidebarNode<T extends ReferenceSidebarSearchNode>(
+  node: T,
+  query: string,
+): T | null {
+  const matchedEndpoints = node.endpoints.filter((endpoint) => {
+    const name = endpoint.name.toLowerCase();
+    const path = endpoint.path.toLowerCase();
+    const method = endpoint.method.toLowerCase();
+    return name.includes(query) || path.includes(query) || method.includes(query);
+  });
+
+  const matchedChildren = node.children
+    .map((child) => filterReferenceSidebarNode(child, query))
+    .filter((child): child is T => child !== null);
+
+  const categoryName = node.name.toLowerCase();
+  const categoryFullName = node.fullName.toLowerCase();
+  const categoryMatches = categoryName.includes(query) || categoryFullName.includes(query);
+
+  if (matchedEndpoints.length === 0 && matchedChildren.length === 0 && !categoryMatches) {
+    return null;
+  }
+
+  return {
+    ...node,
+    endpoints: categoryMatches ? node.endpoints : matchedEndpoints,
+    children: matchedChildren,
+    totalEndpoints: categoryMatches
+      ? node.totalEndpoints
+      : matchedEndpoints.length + matchedChildren.reduce((sum, child) => sum + child.totalEndpoints, 0),
+  };
+}

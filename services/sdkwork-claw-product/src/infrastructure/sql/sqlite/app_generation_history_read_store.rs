@@ -7,6 +7,137 @@ use crate::ports::{
 };
 
 const LOAD_GENERATION_HISTORY: &str = r#"
+WITH runtime_generation_candidates AS (
+    SELECT
+        COALESCE(NULLIF(r.run_uuid, ''), r.uuid) AS id,
+        strftime('%Y-%m-%dT%H:%M:%SZ', r.created_at) AS created_at,
+        strftime('%Y-%m-%dT%H:%M:%SZ', COALESCE(r.completed_at, i.completed_at, r.created_at)) AS updated_at,
+        COALESCE(NULLIF(r.input_message, ''), '') AS prompt,
+        r.target_modality AS target_modality,
+        lower(COALESCE(
+            NULLIF(CASE WHEN json_valid(i.request_json) THEN json_extract(i.request_json, '$.targetType') END, ''),
+            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].modality') END, ''),
+            NULLIF(CASE WHEN json_valid(ar.content_json) THEN json_extract(ar.content_json, '$.modality') END, ''),
+            NULLIF(ar.artifact_type, ''),
+            NULLIF(ar.mime_type, ''),
+            NULLIF(ar.storage_url, ''),
+            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].url') END, '')
+        )) AS target_signal,
+        COALESCE(NULLIF(r.model, ''), NULLIF(i.model, ''), '') AS model_info,
+        COALESCE(NULLIF(r.model, ''), NULLIF(i.model, ''), '') AS model_catalog_key,
+        COALESCE(
+            NULLIF(ar.storage_url, ''),
+            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].url') END, ''),
+            NULLIF(CASE WHEN json_valid(ar.content_json) THEN json_extract(ar.content_json, '$.url') END, ''),
+            ''
+        ) AS asset_url,
+        COALESCE(
+            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].thumb') END, ''),
+            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].thumbnailUrl') END, ''),
+            NULLIF(CASE WHEN json_valid(ar.content_json) THEN json_extract(ar.content_json, '$.thumb') END, ''),
+            NULLIF(CASE WHEN json_valid(ar.content_json) THEN json_extract(ar.content_json, '$.thumbnailUrl') END, ''),
+            ''
+        ) AS thumbnail_url,
+        CASE WHEN json_valid(i.request_json) THEN json_extract(i.request_json, '$.generationConfig.aspectRatio') END AS aspect_ratio,
+        COALESCE(
+            CASE WHEN json_valid(i.request_json) THEN json_extract(i.request_json, '$.generationConfig.durationSeconds') END,
+            CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].durationSeconds') END,
+            CASE WHEN json_valid(ar.content_json) THEN json_extract(ar.content_json, '$.durationSeconds') END
+        ) AS duration_seconds,
+        COALESCE(
+            NULLIF(r.output_message, ''),
+            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.outputText') END, ''),
+            ''
+        ) AS output_text,
+        CASE lower(COALESCE(r.run_status, ''))
+            WHEN 'pending' THEN 0
+            WHEN 'queued' THEN 0
+            WHEN 'planning' THEN 2
+            WHEN 'running' THEN 2
+            WHEN 'waiting_for_tool' THEN 2
+            WHEN 'completed' THEN 1
+            WHEN 'succeeded' THEN 1
+            WHEN 'failed' THEN 3
+            WHEN 'cancelled' THEN 4
+        END AS status_code,
+        COALESCE(r.completed_at, i.completed_at, r.created_at) AS sort_updated_at
+    FROM ai_agent_run r
+    LEFT JOIN ai_runtime_invocation i
+      ON i.id = (
+          SELECT ii.id
+          FROM ai_runtime_invocation ii
+          WHERE ii.tenant_id = r.tenant_id
+            AND ii.organization_id = r.organization_id
+            AND ii.user_id = r.user_id
+            AND (
+                ii.agent_run_id = r.run_uuid
+                OR ii.agent_run_id = r.uuid
+            )
+          ORDER BY
+            CASE lower(COALESCE(ii.status, ''))
+                WHEN 'completed' THEN 0
+                WHEN 'streaming' THEN 1
+                WHEN 'running' THEN 2
+                WHEN 'failed' THEN 3
+                WHEN 'cancelled' THEN 4
+                ELSE 5
+            END,
+            COALESCE(ii.completed_at, ii.created_at) DESC,
+            ii.id DESC
+          LIMIT 1
+      )
+    LEFT JOIN ai_runtime_artifact ar
+      ON ar.id = (
+          SELECT aa.id
+          FROM ai_runtime_artifact aa
+          WHERE aa.tenant_id = r.tenant_id
+            AND aa.organization_id = r.organization_id
+            AND aa.user_id = r.user_id
+            AND (
+                aa.agent_run_id = r.run_uuid
+                OR aa.agent_run_id = r.uuid
+                OR aa.runtime_invocation_id = i.uuid
+            )
+          ORDER BY
+            CASE WHEN NULLIF(aa.storage_url, '') IS NULL THEN 1 ELSE 0 END,
+            aa.created_at ASC,
+            aa.id ASC
+          LIMIT 1
+      )
+    WHERE r.status <> 'deleted'
+      AND lower(COALESCE(r.source_surface, '')) = 'playground'
+      AND lower(COALESCE(r.run_status, '')) IN ('pending', 'queued', 'planning', 'running', 'waiting_for_tool', 'completed', 'succeeded', 'failed', 'cancelled')
+      AND r.tenant_id = ?1
+      AND r.organization_id = ?2
+      AND r.user_id = ?3
+),
+runtime_generation_rows AS (
+    SELECT
+        id,
+        created_at,
+        updated_at,
+        prompt,
+        CASE
+            WHEN target_modality IN (1, 2, 3, 4, 5, 6) THEN target_modality
+            WHEN target_signal IN ('text', 'llm', 'chat', 'agent') OR target_signal LIKE '%text%' THEN 1
+            WHEN target_signal IN ('image', 'images') OR target_signal LIKE '%image%' OR target_signal LIKE '%.png%' OR target_signal LIKE '%.jpg%' OR target_signal LIKE '%.jpeg%' OR target_signal LIKE '%.webp%' THEN 2
+            WHEN target_signal = 'video' OR target_signal LIKE '%video%' OR target_signal LIKE '%.mp4%' OR target_signal LIKE '%.webm%' OR target_signal LIKE '%.mov%' THEN 3
+            WHEN target_signal = 'music' OR target_signal LIKE '%music%' THEN 5
+            WHEN target_signal = 'sfx' OR target_signal LIKE '%sound_effect%' THEN 6
+            WHEN target_signal = 'audio' OR target_signal LIKE '%audio%' OR target_signal LIKE '%speech%' OR target_signal LIKE '%voice%' OR target_signal LIKE '%.mp3%' OR target_signal LIKE '%.wav%' OR target_signal LIKE '%.m4a%' THEN 4
+            WHEN NULLIF(output_text, '') IS NOT NULL THEN 1
+        END AS item_kind,
+        model_info,
+        model_catalog_key,
+        asset_url,
+        thumbnail_url,
+        aspect_ratio,
+        duration_seconds,
+        output_text,
+        status_code,
+        sort_updated_at
+    FROM runtime_generation_candidates
+)
 SELECT
     CAST(COALESCE(a.id, j.id) AS TEXT) AS id,
     strftime('%Y-%m-%dT%H:%M:%SZ', COALESCE(a.created_at, j.created_at)) AS created_at,
@@ -14,8 +145,12 @@ SELECT
     COALESCE(NULLIF(a.prompt_snapshot, ''), NULLIF(j.prompt, ''), '') AS prompt,
     a.asset_type AS item_kind,
     COALESCE(NULLIF(a.model_snapshot, ''), NULLIF(j.model, ''), '') AS model_info,
+    COALESCE(NULLIF(a.model_snapshot, ''), NULLIF(j.model, ''), '') AS model_catalog_key,
     COALESCE(NULLIF(a.asset_url, ''), '') AS asset_url,
     COALESCE(NULLIF(a.thumbnail_url, ''), '') AS thumbnail_url,
+    '' AS aspect_ratio,
+    '' AS duration_seconds,
+    '' AS output_text,
     a.status AS status_code,
     COALESCE(a.updated_at, j.completed_at, j.created_at) AS sort_updated_at
 FROM ai_generation_asset a
@@ -38,8 +173,12 @@ SELECT
     COALESCE(NULLIF(j.prompt, ''), '') AS prompt,
     j.modality AS item_kind,
     COALESCE(NULLIF(j.model, ''), '') AS model_info,
+    COALESCE(NULLIF(j.model, ''), '') AS model_catalog_key,
     '' AS asset_url,
     '' AS thumbnail_url,
+    '' AS aspect_ratio,
+    '' AS duration_seconds,
+    '' AS output_text,
     j.status AS status_code,
     COALESCE(j.completed_at, j.created_at) AS sort_updated_at
 FROM ai_generation_job j
@@ -59,6 +198,25 @@ WHERE j.status IN (0, 1, 2, 3, 4)
         AND a.status IN (0, 1, 2, 3, 4)
         AND a.asset_type IN (2, 3, 4, 5, 6)
   )
+UNION ALL
+SELECT
+    id,
+    created_at,
+    updated_at,
+    prompt,
+    item_kind,
+    model_info,
+    model_catalog_key,
+    asset_url,
+    thumbnail_url,
+    aspect_ratio,
+    duration_seconds,
+    output_text,
+    status_code,
+    sort_updated_at
+FROM runtime_generation_rows
+WHERE item_kind IN (1, 2, 3, 4, 5, 6)
+  AND status_code IN (0, 1, 2, 3, 4)
 ORDER BY sort_updated_at DESC, id DESC
 LIMIT 100
 "#;
@@ -121,10 +279,14 @@ fn row_to_history_item(row: sqlx::sqlite::SqliteRow) -> DomainResult<AppGenerati
         prompt: string_cell(&row, "prompt"),
         item_type: item_type.to_owned(),
         model_info: optional_string(string_cell(&row, "model_info")),
+        model_catalog_key: optional_string(string_cell(&row, "model_catalog_key")),
         url,
         images,
         videos,
+        aspect_ratio: optional_string(string_cell(&row, "aspect_ratio")),
+        duration_seconds: optional_integer_cell(&row, "duration_seconds"),
         status: Some(status.to_owned()),
+        output_text: optional_string(string_cell(&row, "output_text")),
         created_at: optional_string(created_at),
         updated_at: optional_string(updated_at),
     })
@@ -140,6 +302,7 @@ fn require_subject(
 
 fn item_type_label(value: i64) -> DomainResult<&'static str> {
     match value {
+        1 => Ok("text"),
         2 => Ok("image"),
         3 => Ok("video"),
         4 => Ok("audio"),

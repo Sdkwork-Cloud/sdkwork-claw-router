@@ -76,7 +76,6 @@ class FrontendClipboardStandardTest(unittest.TestCase):
             FRONTEND_ROOT / "sdkwork-claw-router-admin-user" / "src" / "index.tsx",
             FRONTEND_ROOT / "sdkwork-claw-router-console-account" / "src" / "AccountView.tsx",
             FRONTEND_ROOT / "sdkwork-claw-router-console-api-keys" / "src" / "ApiKeysView.tsx",
-            FRONTEND_ROOT / "sdkwork-claw-router-console-billing" / "src" / "BillingView.tsx",
             FRONTEND_ROOT / "sdkwork-claw-router-console-routing" / "src" / "components" / "ApiKeysTab.tsx",
             FRONTEND_ROOT / "sdkwork-claw-router-console-routing" / "src" / "components" / "RequestDataTab.tsx",
             FRONTEND_ROOT / "sdkwork-claw-router-models" / "src" / "pages" / "ModelDetails.tsx",

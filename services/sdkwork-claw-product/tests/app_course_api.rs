@@ -333,7 +333,7 @@ async fn course_application_video_upload_uses_configured_size_limit() {
         .unwrap();
     assert_eq!(StatusCode::BAD_REQUEST, response.status());
     let payload = response_json(response).await;
-    assert_eq!("file must be at most 4 bytes", payload["message"]);
+    assert_eq!("file must be at most 4 bytes", payload["msg"]);
 }
 
 #[test]

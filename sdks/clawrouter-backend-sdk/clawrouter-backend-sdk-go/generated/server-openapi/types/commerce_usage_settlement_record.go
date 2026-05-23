@@ -2,8 +2,8 @@ package types
 
 // Commerce usage settlement record schema exposed by Claw Router.
 type CommerceUsageSettlementRecord struct {
-	AccountHistoryId string `json:"account_history_id"`
 	AccountId string `json:"account_id"`
+	AccountLedgerEntryId string `json:"account_ledger_entry_id"`
 	Amount string `json:"amount"`
 	AssetType string `json:"asset_type"`
 	CreatedAt string `json:"created_at"`

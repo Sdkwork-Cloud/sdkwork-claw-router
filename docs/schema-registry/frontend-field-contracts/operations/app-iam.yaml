@@ -1,0 +1,449 @@
+fragment: operations/app-iam
+frontend_operations:
+- route: /console/api-keys
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  operation: fetchKeys
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/iam/api_keys
+  read_sources:
+  - iam_gateway_api_key
+  - iam_gateway_api_key_group
+  - iam_gateway_api_key_group_metric_snapshot
+  - iam_gateway_access_policy
+  - ai_quota_policy
+  - ai_model_pricing
+  - ai_pricing_plan
+  query_parameters: []
+  response_schema:
+    name: AppApiKeyListResponse
+    required:
+    - items
+    - groups
+    properties:
+      items:
+        type: array
+        items:
+          name: AppApiKeyItem
+          type: object
+          additionalProperties: false
+          required: &id002
+          - id
+          - name
+          - maskedKey
+          - group
+          - quota
+          - usedQuota
+          - modalities
+          - ipLimit
+          - created
+          - expires
+          - status
+          properties: &id003
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            name:
+              type: string
+              minLength: 1
+              maxLength: 128
+            maskedKey:
+              type: string
+              minLength: 1
+              maxLength: 256
+            copyableKey:
+              type: string
+              minLength: 1
+              maxLength: 256
+              description: Full plaintext API key returned only by authenticated owner management responses; public catalog responses omit this field.
+            group:
+              type: string
+              minLength: 1
+              maxLength: 128
+            groupName:
+              type: string
+              minLength: 1
+              maxLength: 128
+              description: Display name snapshot for the bound API key group so the list view does not need to preload selectable groups.
+            rate:
+              type: string
+              nullable: true
+              maxLength: 64
+            quota:
+              type: string
+              minLength: 1
+              maxLength: 64
+            usedQuota:
+              type: string
+              minLength: 1
+              maxLength: 64
+            modalities:
+              type: array
+              items:
+                type: string
+                enum:
+                - text
+                - image
+                - video
+                - audio
+                - music
+            ipLimit:
+              type: string
+              maxLength: 1024
+            created:
+              type: string
+              maxLength: 64
+            expires:
+              type: string
+              maxLength: 64
+            status:
+              type: string
+              enum:
+              - enabled
+              - disabled
+          description: API key metadata with masked key material and authenticated owner copyable key material.
+      groups:
+        type: array
+        items: &id001
+          name: AppApiKeyGroup
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - code
+          - name
+          - rate
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            code:
+              type: string
+              minLength: 1
+              maxLength: 128
+            name:
+              type: string
+              minLength: 1
+              maxLength: 128
+            rate:
+              type: string
+              nullable: true
+              maxLength: 64
+- route: /console/api-keys
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  operation: fetchGroups
+  operation_id: apiKeyGroups.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/iam/api_key_groups
+  read_sources:
+  - iam_gateway_api_key_group
+  - iam_gateway_api_key_group_metric_snapshot
+  - ai_pricing_plan
+  query_parameters: []
+  response_schema:
+    name: AppApiKeyGroupListResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items: *id001
+- route: /console/api-keys
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  operation: createKey
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/iam/api_keys
+  idempotency_required: true
+  read_sources:
+  - iam_gateway_api_key_group
+  write_tables:
+  - iam_gateway_api_key_group
+  - iam_gateway_api_key
+  - iam_gateway_access_policy
+  - ai_quota_policy
+  - ops_audit_log
+  request_schema:
+    name: CreateApiKeyRequest
+    required:
+    - name
+    - group
+    properties:
+      name:
+        type: string
+        maxLength: 128
+        description: API key display name.
+      group:
+        type: string
+        maxLength: 64
+        description: API key group code.
+      quota:
+        type: string
+        format: decimal
+        description: Optional quota limit as a canonical decimal string.
+      isUnlimitedQuota:
+        type: boolean
+        description: Whether the quota is unlimited.
+      modalities:
+        type: array
+        minItems: 1
+        uniqueItems: true
+        items:
+          type: string
+          enum:
+          - text
+          - image
+          - video
+          - audio
+          - music
+      ipLimit:
+        type: string
+        maxLength: 1024
+        description: Comma-separated IP or CIDR allowlist, or unrestricted.
+      expires:
+        type: string
+        maxLength: 32
+        description: Expiration timestamp in YYYY-MM-DDTHH:mm format, or never.
+  response_schema:
+    name: CreateApiKeyResponse
+    required:
+    - item
+    - rawKey
+    properties:
+      item:
+        name: AppApiKeyItem
+        type: object
+        additionalProperties: false
+        required: *id002
+        properties: *id003
+        description: Created API key metadata. Authenticated owner management responses include copyableKey matching rawKey.
+      rawKey:
+        type: string
+        minLength: 1
+        description: Full raw API key secret returned by create responses. Authenticated owner management list and update responses also expose this value as item.copyableKey for console copy actions.
+- route: /console/api-keys
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  operation: updateKey
+  operation_id: apiKeys.update
+  kind: update
+  api_surface: app
+  api_method: PATCH
+  api_path: /app/v3/api/iam/api_keys/{apiKeyId}
+  read_sources:
+  - iam_gateway_api_key
+  - iam_gateway_api_key_group
+  - iam_gateway_access_policy
+  - ai_quota_policy
+  write_tables:
+  - iam_gateway_api_key
+  - iam_gateway_access_policy
+  - ai_quota_policy
+  - ops_audit_log
+  request_id_header: true
+  request_schema:
+    name: UpdateApiKeyRequest
+    type: object
+    additionalProperties: false
+    required: []
+    properties:
+      name:
+        type: string
+        maxLength: 128
+        description: API key display name.
+      group:
+        type: string
+        maxLength: 64
+        description: API key group code to bind to this key.
+      quota:
+        type: string
+        format: decimal
+        description: Optional quota limit as a canonical decimal string.
+      isUnlimitedQuota:
+        type: boolean
+        description: Whether the quota is unlimited.
+      modalities:
+        type: array
+        minItems: 1
+        uniqueItems: true
+        items:
+          type: string
+          enum:
+          - text
+          - image
+          - video
+          - audio
+          - music
+      ipLimit:
+        type: string
+        maxLength: 1024
+        description: Comma-separated IP or CIDR allowlist, or unrestricted.
+      expires:
+        type: string
+        maxLength: 32
+        description: Expiration timestamp in YYYY-MM-DDTHH:mm format, or never.
+  response_schema:
+    name: UpdateApiKeyResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AppApiKeyItem
+        type: object
+        additionalProperties: false
+        required: *id002
+        properties: *id003
+        description: Updated API key metadata. Authenticated owner management responses include copyableKey for console copy actions.
+- route: /console/api-keys
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  operation: deleteKey
+  operation_id: apiKeys.delete
+  kind: delete
+  api_surface: app
+  api_method: DELETE
+  api_path: /app/v3/api/iam/api_keys/{apiKeyId}
+  read_sources:
+  - iam_gateway_api_key
+  write_tables:
+  - iam_gateway_api_key
+  - ops_audit_log
+  response_schema:
+    name: DeleteApiKeyResponse
+    required:
+    - id
+    - deleted
+    properties:
+      id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      deleted:
+        type: boolean
+- route: /console/settings
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settings/src/settingsService.ts
+  operation: fetchSettings
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/iam/users/settings
+  read_sources:
+  - iam_user_preference
+  - integration_webhook_endpoint
+  - ops_notification_delivery
+  query_parameters: []
+  response_schema:
+    name: SettingsDataResponse
+    required:
+    - language
+    - timezone
+    - webhookUrl
+    - notifications
+    properties:
+      language:
+        type: string
+        minLength: 1
+        maxLength: 32
+      timezone:
+        type: string
+        minLength: 1
+        maxLength: 64
+      webhookUrl:
+        type: string
+        maxLength: 1024
+      notifications: &id004
+        name: SettingsNotifications
+        type: object
+        additionalProperties: false
+        required:
+        - billReminder
+        - quotaWarning
+        - apiMonitor
+        properties:
+          billReminder:
+            type: boolean
+          quotaWarning:
+            type: boolean
+          apiMonitor:
+            type: boolean
+- route: /console/settings
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settings/src/settingsService.ts
+  operation: updateSettings
+  kind: update
+  api_surface: app
+  api_method: PUT
+  api_path: /app/v3/api/iam/users/settings
+  read_sources:
+  - iam_user_preference
+  - integration_webhook_endpoint
+  write_tables:
+  - iam_user_preference
+  - integration_webhook_endpoint
+  request_schema:
+    name: UpdateSettingsRequest
+    required:
+    - language
+    - timezone
+    - webhookUrl
+    - notifications
+    properties:
+      language:
+        type: string
+        minLength: 1
+        maxLength: 32
+      timezone:
+        type: string
+        minLength: 1
+        maxLength: 64
+      webhookUrl:
+        type: string
+        maxLength: 1024
+      notifications: *id004
+  response_schema:
+    name: UpdateSettingsResponse
+    required:
+    - success
+    properties:
+      success:
+        type: boolean
+- route: /console/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-user/src/userService.ts
+  operation: fetchCurrentUser
+  operation_id: users.current.retrieve
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/iam/users/current
+  sdk_domain: iam
+  summary: Retrieve current IAM user
+  description: Returns the current tenant-scoped user profile from the active IAM AppContext.
+  read_sources:
+  - iam_user
+  - iam_user_identity
+  - iam_session
+  query_parameters: []
+  response_schema:
+    name: IamUserResponse
+    schema:
+      $ref: '#/components/schemas/IamUserResponse'
+- route: /auth/login
+  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  operation: signInWithSessionBridge
+  operation_id: sessions.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/auth/sessions
+  openapi_exposed: false
+  request_id_header: true
+  read_sources:
+  - iam_user
+  - iam_session
+  write_tables:
+  - iam_session
+  - iam_security_event
+  - iam_audit_event

@@ -4,6 +4,5 @@ package types
 type RoutingChannelsDeleteResult struct {
 	Code string `json:"code"`
 	Data RoutingChannelDeleteResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

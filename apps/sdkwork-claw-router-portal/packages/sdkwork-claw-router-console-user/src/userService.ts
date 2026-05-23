@@ -1,5 +1,5 @@
 import {
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterAppSdkClient,
   readApiRecord,
   readRequiredString,
@@ -26,7 +26,7 @@ export interface UserProfile {
 export class UserService {
   static async fetchCurrentUser(): Promise<UserProfile> {
     const result = await getClawRouterAppSdkClient().iam.users.current.retrieve();
-    ensurePlusApiSuccess(result, 'console.user.states.loadErrorFallback');
+    ensureSdkworkApiSuccess(result, 'console.user.states.loadErrorFallback');
     return normalizeUserProfile(readApiRecord(result));
   }
 }

@@ -4,8 +4,11 @@ import java.util.List;
 
 public class AdminChannelUpdateRequest {
     private String accessType;
+    private String apiKey;
     private String baseUrl;
     private List<String> capabilities;
+    private ProviderCircuitBreakerPolicy circuitBreakerPolicy;
+    private String expiresAt;
     private String id;
     private List<String> models;
     private String name;
@@ -20,15 +23,23 @@ public class AdminChannelUpdateRequest {
     public String getAccessType() {
         return this.accessType;
     }
-    
+
     public void setAccessType(String accessType) {
         this.accessType = accessType;
+    }
+
+    public String getApiKey() {
+        return this.apiKey;
+    }
+
+    public void setApiKey(String apiKey) {
+        this.apiKey = apiKey;
     }
 
     public String getBaseUrl() {
         return this.baseUrl;
     }
-    
+
     public void setBaseUrl(String baseUrl) {
         this.baseUrl = baseUrl;
     }
@@ -36,15 +47,31 @@ public class AdminChannelUpdateRequest {
     public List<String> getCapabilities() {
         return this.capabilities;
     }
-    
+
     public void setCapabilities(List<String> capabilities) {
         this.capabilities = capabilities;
+    }
+
+    public ProviderCircuitBreakerPolicy getCircuitBreakerPolicy() {
+        return this.circuitBreakerPolicy;
+    }
+
+    public void setCircuitBreakerPolicy(ProviderCircuitBreakerPolicy circuitBreakerPolicy) {
+        this.circuitBreakerPolicy = circuitBreakerPolicy;
+    }
+
+    public String getExpiresAt() {
+        return this.expiresAt;
+    }
+
+    public void setExpiresAt(String expiresAt) {
+        this.expiresAt = expiresAt;
     }
 
     public String getId() {
         return this.id;
     }
-    
+
     public void setId(String id) {
         this.id = id;
     }
@@ -52,7 +79,7 @@ public class AdminChannelUpdateRequest {
     public List<String> getModels() {
         return this.models;
     }
-    
+
     public void setModels(List<String> models) {
         this.models = models;
     }
@@ -60,7 +87,7 @@ public class AdminChannelUpdateRequest {
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -68,7 +95,7 @@ public class AdminChannelUpdateRequest {
     public String getProtocol() {
         return this.protocol;
     }
-    
+
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
@@ -76,7 +103,7 @@ public class AdminChannelUpdateRequest {
     public ProviderRetryPolicy getRetryPolicy() {
         return this.retryPolicy;
     }
-    
+
     public void setRetryPolicy(ProviderRetryPolicy retryPolicy) {
         this.retryPolicy = retryPolicy;
     }
@@ -84,7 +111,7 @@ public class AdminChannelUpdateRequest {
     public String getSecretRef() {
         return this.secretRef;
     }
-    
+
     public void setSecretRef(String secretRef) {
         this.secretRef = secretRef;
     }
@@ -92,7 +119,7 @@ public class AdminChannelUpdateRequest {
     public String getStatus() {
         return this.status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -100,7 +127,7 @@ public class AdminChannelUpdateRequest {
     public Integer getTimeoutMs() {
         return this.timeoutMs;
     }
-    
+
     public void setTimeoutMs(Integer timeoutMs) {
         this.timeoutMs = timeoutMs;
     }
@@ -108,7 +135,7 @@ public class AdminChannelUpdateRequest {
     public String getVendor() {
         return this.vendor;
     }
-    
+
     public void setVendor(String vendor) {
         this.vendor = vendor;
     }
@@ -116,7 +143,7 @@ public class AdminChannelUpdateRequest {
     public Integer getWeight() {
         return this.weight;
     }
-    
+
     public void setWeight(Integer weight) {
         this.weight = weight;
     }

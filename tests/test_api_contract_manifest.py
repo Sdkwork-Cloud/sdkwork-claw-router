@@ -128,6 +128,209 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
             self.assertEqual("sessions.create", operation["operation_id"])
             self.assertEqual("iam", operation["sdk_domain"])
 
+    def test_open_platform_paths_compile_to_open_platform_sdk_namespace(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            contract = self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /admin/open-platform
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/index.tsx
+                    operation: listOpenPlatformAccounts
+                    operation_id: accounts.list
+                    kind: read
+                    api_surface: backend
+                    api_method: GET
+                    api_path: /backend/v3/api/open_platform/accounts
+                    sdk_domain: platform
+                    read_sources: [open_platform_account]
+                    query_parameters: []
+                    response_schema:
+                      name: OpenPlatformAccountListResponse
+                      required: [items]
+                      properties:
+                        items:
+                          type: array
+                          items:
+                            type: object
+                """,
+            )
+
+            manifest = ApiContractManifestGenerator(root=root, contract_path=contract).generate()
+            operation = manifest["operations"][0]
+
+            self.assertEqual("/backend/v3/api/open_platform/accounts", operation["api_path"])
+            self.assertEqual("openPlatform", operation["tag"])
+            self.assertEqual("platform", operation["sdk_domain"])
+            self.assertEqual("accounts.list", operation["operation_id"])
+
+    def test_commerce_catalog_and_inventory_paths_generate_commerce_domain(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            contract = self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /console/commerce
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
+                    operation: listCatalogProducts
+                    operation_id: catalog.products.list
+                    kind: read
+                    api_surface: app
+                    api_method: GET
+                    api_path: /app/v3/api/catalog/products
+                    read_sources: [commerce_product_spu, commerce_product_sku]
+                    query_parameters: []
+                    response_schema:
+                      name: CatalogProductsResponse
+                      properties:
+                        items:
+                          type: array
+                  - route: /admin/commerce
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
+                    operation: listInventoryStocks
+                    operation_id: inventory.stocks.list
+                    kind: read
+                    api_surface: backend
+                    api_method: GET
+                    api_path: /backend/v3/api/inventory/stocks
+                    read_sources: [commerce_inventory_stock]
+                    query_parameters: []
+                    response_schema:
+                      name: InventoryStocksResponse
+                      properties:
+                        items:
+                          type: array
+                """,
+            )
+
+            manifest = ApiContractManifestGenerator(root=root, contract_path=contract).generate()
+            operations = {operation["operation_id"]: operation for operation in manifest["operations"]}
+
+            self.assertEqual("commerce", operations["catalog.products.list"]["tag"])
+            self.assertEqual("commerce", operations["catalog.products.list"]["sdk_domain"])
+            self.assertEqual("commerce", operations["inventory.stocks.list"]["tag"])
+            self.assertEqual("commerce", operations["inventory.stocks.list"]["sdk_domain"])
+
+    def test_standard_commerce_paths_are_not_rewritten_under_billing(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            contract = self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /vip
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/vipService.ts
+                    operation: retrieveMembership
+                    operation_id: memberships.current.retrieve
+                    kind: read
+                    api_surface: app
+                    api_method: GET
+                    api_path: /app/v3/api/memberships/current
+                    read_sources: [commerce_order, commerce_payment_attempt]
+                    query_parameters: []
+                    response_schema:
+                      name: MembershipCurrentResponse
+                      properties:
+                        id: { type: string }
+                  - route: /console/commerce
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
+                    operation: listWalletAccounts
+                    operation_id: wallet.accounts.list
+                    kind: read
+                    api_surface: app
+                    api_method: GET
+                    api_path: /app/v3/api/wallet/accounts
+                    read_sources: [commerce_account]
+                    query_parameters: []
+                    response_schema:
+                      name: WalletAccountsResponse
+                      properties:
+                        items:
+                          type: array
+                  - route: /admin/commerce
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
+                    operation: listPaymentAttempts
+                    operation_id: payments.attempts.list
+                    kind: read
+                    api_surface: backend
+                    api_method: GET
+                    api_path: /backend/v3/api/payments/attempts
+                    read_sources: [commerce_payment_attempt]
+                    query_parameters: []
+                    response_schema:
+                      name: PaymentAttemptsResponse
+                      properties:
+                        items:
+                          type: array
+                """,
+            )
+
+            manifest = ApiContractManifestGenerator(root=root, contract_path=contract).generate()
+            operations = {operation["operation_id"]: operation for operation in manifest["operations"]}
+
+            self.assertEqual("/app/v3/api/memberships/current", operations["memberships.current.retrieve"]["api_path"])
+            self.assertEqual("commerce", operations["memberships.current.retrieve"]["tag"])
+            self.assertEqual("commerce", operations["memberships.current.retrieve"]["sdk_domain"])
+            self.assertEqual("/app/v3/api/wallet/accounts", operations["wallet.accounts.list"]["api_path"])
+            self.assertEqual("commerce", operations["wallet.accounts.list"]["tag"])
+            self.assertEqual("commerce", operations["wallet.accounts.list"]["sdk_domain"])
+            self.assertEqual("/backend/v3/api/payments/attempts", operations["payments.attempts.list"]["api_path"])
+            self.assertEqual("commerce", operations["payments.attempts.list"]["tag"])
+            self.assertEqual("commerce", operations["payments.attempts.list"]["sdk_domain"])
+            self.assertNotIn("/billing/", str(manifest))
+
+    def test_explicit_billing_paths_keep_single_billing_namespace(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            contract = self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /console/commerce
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
+                    operation: fetchCheckoutStatus
+                    operation_id: payments.checkout.retrieve
+                    kind: read
+                    api_surface: app
+                    api_method: GET
+                    api_path: /app/v3/api/billing/payments/checkout/{orderNo}
+                    read_sources: [commerce_order, commerce_payment_attempt]
+                    query_parameters: []
+                    response_schema:
+                      name: CheckoutStatusResponse
+                      properties:
+                        orderNo: { type: string }
+                  - route: /admin/commerce
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+                    operation: fetchCoupons
+                    operation_id: coupons.list
+                    kind: read
+                    api_surface: backend
+                    api_method: GET
+                    api_path: /backend/v3/api/billing/coupons
+                    read_sources: [commerce_coupon_template, commerce_coupon]
+                    query_parameters: []
+                    response_schema:
+                      name: CouponsResponse
+                      properties:
+                        items:
+                          type: array
+                """,
+            )
+
+            manifest = ApiContractManifestGenerator(root=root, contract_path=contract).generate()
+            operations = {operation["operation_id"]: operation for operation in manifest["operations"]}
+
+            self.assertEqual("/app/v3/api/billing/payments/checkout/{orderNo}", operations["payments.checkout.retrieve"]["api_path"])
+            self.assertEqual("billing", operations["payments.checkout.retrieve"]["tag"])
+            self.assertEqual("commerce", operations["payments.checkout.retrieve"]["sdk_domain"])
+            self.assertEqual("/backend/v3/api/billing/coupons", operations["coupons.list"]["api_path"])
+            self.assertEqual("billing", operations["coupons.list"]["tag"])
+            self.assertEqual("commerce", operations["coupons.list"]["sdk_domain"])
+            self.assertNotIn("/commerce/billing/", str(manifest))
+
     def test_preserves_multipart_file_targets_in_operation_manifest(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -417,17 +620,9 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 "/backend/v3/api/integration/provider_secrets",
                 "providerSecrets.list",
             ),
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts#fetchCoupons": (
-                "/backend/v3/api/billing/coupons",
-                "coupons.list",
-            ),
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts#fetchRechargeRecords": (
-                "/backend/v3/api/billing/recharges/records",
-                "recharges.records.list",
-            ),
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts#fetchRedemptionRecords": (
-                "/backend/v3/api/billing/users/coupons",
-                "users.coupons.list",
+            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts#fetchReferralStats": (
+                "/backend/v3/api/system/marketing/referral_stats",
+                "marketing.referralStats.list",
             ),
             "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts#fetchModels": (
                 "/backend/v3/api/ai/models",
@@ -571,12 +766,22 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
         )
 
         self.assertIsNotNone(submit_recharge)
-        self.assertEqual("SubmitRechargeRequest", submit_recharge["request_schema"]["name"])
-        self.assertEqual(["amount", "method"], submit_recharge["request_schema"]["schema"]["required"])
-        self.assertEqual("SubmitRechargeResponse", submit_recharge["response_schema"]["name"])
+        self.assertEqual("console.rechargeOrders.create", submit_recharge["operation_id"])
+        self.assertEqual("/app/v3/api/recharges/orders", submit_recharge["api_path"])
+        self.assertEqual("POST", submit_recharge["api_method"])
+        self.assertEqual("create", submit_recharge["kind"])
+        self.assertEqual("app", submit_recharge["api_surface"])
+        self.assertEqual("commerce", submit_recharge["sdk_domain"])
+        self.assertFalse(submit_recharge["openapi_exposed"])
+        self.assertIsNone(submit_recharge.get("request_schema"))
+        self.assertIsNone(submit_recharge.get("response_schema"))
         self.assertEqual(
-            ["success", "orderNo", "amount", "points", "paymentMethod", "status"],
-            submit_recharge["response_schema"]["schema"]["required"],
+            ["commerce_recharge_package", "commerce_payment_method"],
+            submit_recharge["read_sources"],
+        )
+        self.assertEqual(
+            ["commerce_order", "commerce_order_item", "commerce_payment_intent", "ops_audit_log"],
+            submit_recharge["write_tables"],
         )
 
         self.assertIsNotNone(update_settings)
@@ -652,21 +857,22 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 root,
                 """
                 frontend_operations:
-                  - route: /console/billing
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/billingService.ts
+                  - route: /console/commerce
+                    source: apps/sdkwork-claw-router-portal/packages/demo/src/commerceService.ts
                     operation: fetchRedeemHistory
                     kind: read
                     api_surface: app
                     api_method: GET
-                    api_path: /app/v3/api/coupons/my
-                    read_sources: [plus_user_coupon, plus_coupon]
+                    api_path: /app/v3/api/billing/users/current/coupons
+                    operation_id: users.current.coupons.list
+                    read_sources: [commerce_coupon, commerce_coupon_template]
                     response_schema:
-                      name: BillingRedeemHistoryResponse
+                      name: CommerceCouponWalletListResponse
                       type: array
                       items:
                         type: object
                         additionalProperties: false
-                        name: BillingRedeemHistoryItem
+                        name: CommerceCouponWalletItem
                         required: [id, code, amount, date, status]
                         properties:
                           id: { type: integer, format: int64 }
@@ -680,10 +886,10 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
             manifest = ApiContractManifestGenerator(root=root, contract_path=contract).generate()
             operation = manifest["operations"][0]
 
-            self.assertEqual("BillingRedeemHistoryResponse", operation["response_schema"]["name"])
+            self.assertEqual("CommerceCouponWalletListResponse", operation["response_schema"]["name"])
             self.assertEqual("array", operation["response_schema"]["schema"]["type"])
             self.assertEqual(
-                "BillingRedeemHistoryItem",
+                "CommerceCouponWalletItem",
                 operation["response_schema"]["schema"]["items"]["name"],
             )
             self.assertNotIn("properties", operation["response_schema"]["schema"])

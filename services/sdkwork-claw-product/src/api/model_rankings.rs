@@ -192,7 +192,7 @@ async fn trigger_model_ranking_refresh(
                     "trusted subject is required to trigger model ranking refresh",
                 )),
             )
-                .into_response()
+                .into_response();
         }
         Err(response) => return response,
     };
@@ -217,7 +217,7 @@ async fn trigger_model_ranking_refresh(
                         "model ranking refresh is already running",
                     )),
                 )
-                    .into_response()
+                    .into_response();
             }
         };
 
@@ -349,7 +349,7 @@ async fn fetch_model_rankings(
                 StatusCode::BAD_REQUEST,
                 Json(PlusApiResult::error("4001", message)),
             )
-                .into_response()
+                .into_response();
         }
     };
 

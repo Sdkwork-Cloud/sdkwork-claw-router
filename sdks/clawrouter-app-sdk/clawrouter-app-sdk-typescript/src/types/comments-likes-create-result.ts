@@ -7,7 +7,5 @@ export interface CommentsLikesCreateResult {
   /** Data field on comments likes create result. */
   data?: ForumCommentItem;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

@@ -7,7 +7,5 @@ export interface RoutingApiKeysListResult {
   /** Data field on routing api keys list result. */
   data?: RoutingApiKeysResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

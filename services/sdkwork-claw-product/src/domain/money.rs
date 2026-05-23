@@ -67,6 +67,10 @@ impl DecimalValue {
         }
     }
 
+    pub fn is_zero(self) -> bool {
+        self.scaled == 0
+    }
+
     pub fn to_fixed_string(self, digits: u32) -> String {
         assert!(digits <= SCALE);
         let sign = if self.scaled < 0 { "-" } else { "" };
@@ -142,6 +146,10 @@ impl Money {
 
     pub fn to_fixed_string(&self, digits: u32) -> String {
         self.unit_price.to_fixed_string(digits)
+    }
+
+    pub fn is_zero(&self) -> bool {
+        self.unit_price.is_zero()
     }
 
     fn ensure_same_currency(&self, other: &Self) -> DomainResult<()> {

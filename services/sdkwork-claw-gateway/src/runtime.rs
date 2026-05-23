@@ -2,8 +2,9 @@ use std::sync::Arc;
 
 use axum::Router;
 use sdkwork_claw_config::{
-    ApiKeySecurityConfig, DatabaseConfig, DatabaseEngine, ProviderRelayConfig,
-    ProviderSecretMapConfig, RuntimeConfigProfile, RuntimeTomlConfig, StartupInstallMode,
+    ApiKeySecurityConfig, DatabaseConfig, DatabaseEngine, ProviderAdapterConfig,
+    ProviderAdapterManifestDiscoveryConfig, ProviderRelayConfig, ProviderSecretMapConfig,
+    RuntimeConfigProfile, RuntimeTomlConfig, StartupInstallMode,
 };
 use sdkwork_claw_product::api::{
     OpenAiInvocationPluginRef, OpenAiRuntimeFailureStrategy, OpenAiRuntimeRouteConfig,
@@ -19,6 +20,7 @@ use sdkwork_claw_product::infrastructure::crypto::{
     HmacSha256ApiKeySecretHasher, RingAeadApiKeySecretCodec,
 };
 use sdkwork_claw_product::infrastructure::provider::{
+    AdapterAwareChatCompletionRelay, AdapterAwareEmbeddingsRelay, AdapterAwareResponsesRelay,
     OpenAiCompatibleChatCompletionRelay, OpenAiCompatibleChatCompletionStreamRelay,
     OpenAiCompatibleEmbeddingsRelay, OpenAiCompatibleResponsesRelay,
     RefreshableProviderSecretMapResolver, SecretRefOpenAiCompatibleChatCompletionRelay,
@@ -41,8 +43,11 @@ use sdkwork_claw_product::infrastructure::sql::sqlite::{
 };
 use sdkwork_claw_product::ports::{
     ChatCompletionRelay, ChatCompletionStreamRelay, EmbeddingsRelay, GatewayUsageRecorder,
-    PricingCatalog, ResponsesRelay, UsageSettlementStore,
+    PricingCatalog, ProviderSecretResolver, ResponsesRelay, UsageSettlementStore,
 };
+use sdkwork_claw_provider_adapter_contract::AdapterRouteStatus;
+use sdkwork_claw_provider_adapter_http::ProviderAdapterHttpClient;
+use sdkwork_claw_provider_adapter_registry::{ProviderAdapterRegistry, ProviderAdapterRouteConfig};
 use sqlx::sqlite::{SqliteConnectOptions, SqlitePool, SqlitePoolOptions};
 use sqlx::PgPool;
 use std::str::FromStr;
@@ -88,6 +93,7 @@ where
         ProviderRetryPolicy::default(),
         None,
         None,
+        None,
     )
 }
 
@@ -113,6 +119,7 @@ where
         Vec::new(),
         OpenAiRuntimeFailureStrategy::default(),
         ProviderRetryPolicy::default(),
+        None,
         None,
         None,
     )
@@ -142,6 +149,7 @@ where
         ProviderRetryPolicy::default(),
         None,
         None,
+        None,
     )
 }
 
@@ -167,6 +175,7 @@ where
         Vec::new(),
         OpenAiRuntimeFailureStrategy::default(),
         ProviderRetryPolicy::default(),
+        None,
         None,
         None,
     )
@@ -196,6 +205,7 @@ where
         ProviderRetryPolicy::default(),
         None,
         None,
+        None,
     )
 }
 
@@ -209,6 +219,7 @@ fn router_with_openai_runtime_routes<C>(
     failure_strategy: OpenAiRuntimeFailureStrategy,
     default_retry_policy: ProviderRetryPolicy,
     provider_passthrough_config: Option<ProviderRelayConfig>,
+    provider_adapter_config: Option<ProviderAdapterConfig>,
     provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
 ) -> Router
 where
@@ -356,26 +367,36 @@ where
         router
     };
 
-    if let Some(config) = provider_passthrough_config {
-        if has_route_scoped_openai_passthrough {
-            router.merge(
-                crate::passthrough::authenticated_provider_native_passthrough_router(
-                    config,
-                    catalog,
-                    api_key_hasher,
-                ),
-            )
-        } else {
-            router.merge(
-                crate::passthrough::authenticated_gateway_passthrough_router(
-                    config,
-                    catalog,
-                    api_key_hasher,
-                ),
-            )
-        }
-    } else {
-        router
+    match (provider_passthrough_config, has_route_scoped_openai_passthrough) {
+        (Some(config), true) => router.merge(
+            crate::passthrough::authenticated_provider_native_passthrough_router_with_adapter_config(
+                Some(config),
+                catalog,
+                api_key_hasher,
+                provider_adapter_config,
+                provider_secret_resolver
+                    .map(|resolver| resolver as Arc<dyn ProviderSecretResolver + Send + Sync>),
+            ),
+        ),
+        (Some(config), false) => router.merge(
+            crate::passthrough::authenticated_gateway_passthrough_router_with_adapter_config(
+                config,
+                catalog,
+                api_key_hasher,
+                provider_adapter_config,
+            ),
+        ),
+        (None, true) if provider_adapter_config.is_some() => router.merge(
+            crate::passthrough::authenticated_provider_native_passthrough_router_with_adapter_config(
+                None,
+                catalog,
+                api_key_hasher,
+                provider_adapter_config,
+                provider_secret_resolver
+                    .map(|resolver| resolver as Arc<dyn ProviderSecretResolver + Send + Sync>),
+            ),
+        ),
+        _ => router,
     }
 }
 
@@ -416,6 +437,26 @@ pub async fn router_with_database_api_key_and_provider_configs(
     .await
 }
 
+pub async fn router_with_database_api_key_provider_configs_and_adapter_config(
+    config: DatabaseConfig,
+    api_key_config: Option<ApiKeySecurityConfig>,
+    provider_relay_config: Option<ProviderRelayConfig>,
+    provider_secret_map_config: Option<ProviderSecretMapConfig>,
+    provider_adapter_config: Option<ProviderAdapterConfig>,
+) -> Result<Router, GatewayRouterError> {
+    router_with_database_api_key_provider_configs_usage_settlement_worker_config_startup_install_mode_and_runtime_toml(
+        config,
+        api_key_config,
+        provider_relay_config,
+        provider_secret_map_config,
+        UsageSettlementWorkerConfig::disabled(),
+        StartupInstallMode::Ensure,
+        None,
+        provider_adapter_config,
+    )
+    .await
+}
+
 pub async fn router_with_database_api_key_provider_configs_and_usage_settlement_worker_config(
     config: DatabaseConfig,
     api_key_config: Option<ApiKeySecurityConfig>,
@@ -450,6 +491,7 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
         usage_settlement_worker_config,
         startup_install_mode,
         None,
+        None,
     )
     .await
 }
@@ -462,6 +504,7 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
     usage_settlement_worker_config: UsageSettlementWorkerConfig,
     startup_install_mode: StartupInstallMode,
     runtime_toml: Option<&RuntimeTomlConfig>,
+    provider_adapter_config_override: Option<ProviderAdapterConfig>,
 ) -> Result<Router, GatewayRouterError> {
     let api_key_security_config = require_api_key_security_config(api_key_config)?;
     let api_key_hasher = build_api_key_hasher(&api_key_security_config)?;
@@ -469,6 +512,13 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
     let provider_passthrough_config = provider_relay_config.clone();
     let provider_runtime = provider_relay_runtime_config_from_env_or_toml(runtime_toml)
         .map_err(GatewayRouterError::Config)?;
+    let provider_adapter_config = match provider_adapter_config_override {
+        Some(config) if !config.routes().is_empty() => Some(config),
+        Some(_) => None,
+        None => provider_adapter_config_from_env_or_runtime_toml(runtime_toml)
+            .await
+            .map_err(GatewayRouterError::Config)?,
+    };
     match config.engine {
         DatabaseEngine::Sqlite => {
             let sqlite_options = SqliteConnectOptions::from_str(config.url.as_str())
@@ -501,10 +551,13 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_secret_map_config.clone(),
                 snapshot.managed_provider_secrets(),
             );
-            let relays = build_openai_runtime_relays(
-                provider_relay_config.clone(),
-                provider_secret_resolver.clone(),
-                provider_runtime.clone(),
+            let relays = apply_provider_adapter_config(
+                build_openai_runtime_relays(
+                    provider_relay_config.clone(),
+                    provider_secret_resolver.clone(),
+                    provider_runtime.clone(),
+                )?,
+                provider_adapter_config.clone(),
             )?;
             let catalog = Arc::new(RefreshableSqlPricingCatalog::new(snapshot));
             let usage_recorder: UsageRecorder =
@@ -537,6 +590,7 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_runtime.failure_strategy,
                 provider_runtime.default_retry_policy.clone(),
                 provider_passthrough_config,
+                provider_adapter_config.clone(),
                 provider_secret_resolver.clone(),
             ))
         }
@@ -568,10 +622,13 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_secret_map_config.clone(),
                 snapshot.managed_provider_secrets(),
             );
-            let relays = build_openai_runtime_relays(
-                provider_relay_config.clone(),
-                provider_secret_resolver.clone(),
-                provider_runtime.clone(),
+            let relays = apply_provider_adapter_config(
+                build_openai_runtime_relays(
+                    provider_relay_config.clone(),
+                    provider_secret_resolver.clone(),
+                    provider_runtime.clone(),
+                )?,
+                provider_adapter_config.clone(),
             )?;
             let catalog = Arc::new(RefreshableSqlPricingCatalog::new(snapshot));
             let usage_recorder: UsageRecorder =
@@ -604,6 +661,7 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_runtime.failure_strategy,
                 provider_runtime.default_retry_policy.clone(),
                 provider_passthrough_config,
+                provider_adapter_config.clone(),
                 provider_secret_resolver.clone(),
             ))
         }
@@ -679,6 +737,7 @@ pub async fn router_from_env() -> Result<Router, GatewayRouterError> {
                 usage_settlement_worker_config,
                 startup_install_mode,
                 runtime_toml.as_ref(),
+                None,
             )
             .await
         }
@@ -850,8 +909,8 @@ async fn sqlite_usage_settlement_schema_ready(pool: &SqlitePool) -> Result<bool,
           AND name IN (
               'ai_usage_fact',
               'commerce_usage_settlement',
-              'plus_account',
-              'plus_account_history'
+              'commerce_account',
+              'commerce_account_ledger_entry'
           )
         "#,
     )
@@ -878,8 +937,8 @@ async fn postgres_usage_settlement_schema_ready(pool: &PgPool) -> Result<bool, s
           AND table_name IN (
               'ai_usage_fact',
               'commerce_usage_settlement',
-              'plus_account',
-              'plus_account_history'
+              'commerce_account',
+              'commerce_account_ledger_entry'
           )
         "#,
     )
@@ -1153,6 +1212,163 @@ fn build_openai_runtime_relays(
     })
 }
 
+fn apply_provider_adapter_config(
+    mut relays: OpenAiRuntimeRelays,
+    provider_adapter_config: Option<ProviderAdapterConfig>,
+) -> Result<OpenAiRuntimeRelays, GatewayRouterError> {
+    let Some(provider_adapter_config) = provider_adapter_config else {
+        return Ok(relays);
+    };
+    if provider_adapter_config.routes().is_empty() {
+        return Ok(relays);
+    }
+    let registry = Arc::new(ProviderAdapterRegistry::new(
+        provider_adapter_config.routes().to_vec(),
+    ));
+    let adapter_client =
+        ProviderAdapterHttpClient::new(provider_adapter_config.gateway_token().to_owned());
+    let routes = provider_adapter_config.routes();
+
+    if has_chat_adapter_route(routes) {
+        let Some(chat_relay) = relays.chat.take() else {
+            return Err(GatewayRouterError::Config(
+                "provider adapter routes for openai.chat_completions require a configured chat completion relay for direct HTTP fallback"
+                    .to_owned(),
+            ));
+        };
+        relays.chat = Some(Arc::new(AdapterAwareChatCompletionRelay::new(
+            chat_relay,
+            Arc::clone(&registry),
+            adapter_client.clone(),
+        )));
+    }
+    if has_responses_adapter_route(routes) {
+        let Some(responses_relay) = relays.responses.take() else {
+            return Err(GatewayRouterError::Config(
+                "provider adapter routes for openai.responses require a configured responses relay for direct HTTP fallback"
+                    .to_owned(),
+            ));
+        };
+        relays.responses = Some(Arc::new(AdapterAwareResponsesRelay::new(
+            responses_relay,
+            Arc::clone(&registry),
+            adapter_client.clone(),
+        )));
+    }
+    if has_embeddings_adapter_route(routes) {
+        let Some(embeddings_relay) = relays.embeddings.take() else {
+            return Err(GatewayRouterError::Config(
+                "provider adapter routes for openai.embeddings require a configured embeddings relay for direct HTTP fallback"
+                    .to_owned(),
+            ));
+        };
+        relays.embeddings = Some(Arc::new(AdapterAwareEmbeddingsRelay::new(
+            embeddings_relay,
+            registry,
+            adapter_client,
+        )));
+    }
+    Ok(relays)
+}
+
+async fn provider_adapter_config_from_env_or_runtime_toml(
+    runtime_toml: Option<&RuntimeTomlConfig>,
+) -> Result<Option<ProviderAdapterConfig>, String> {
+    let local_config = ProviderAdapterConfig::from_env_or_runtime_toml(runtime_toml)?;
+    if local_config.is_some() {
+        return Ok(local_config);
+    }
+
+    let Some(discovery_config) =
+        ProviderAdapterManifestDiscoveryConfig::from_env_or_runtime_toml(runtime_toml)?
+    else {
+        return Ok(None);
+    };
+    let client = ProviderAdapterHttpClient::new(discovery_config.gateway_token().to_owned());
+    let manifest = client
+        .fetch_manifest(discovery_config.adapter_base_url())
+        .await
+        .map_err(|error| {
+            format!(
+                "provider adapter manifest discovery failed: {}",
+                error.message
+            )
+        })?;
+    let adapter_config = ProviderAdapterConfig::from_manifest(
+        discovery_config.adapter_base_url(),
+        &manifest,
+        Some(discovery_config.gateway_token().to_owned()),
+    )?;
+    if adapter_config.routes().is_empty() {
+        Ok(None)
+    } else {
+        Ok(Some(adapter_config))
+    }
+}
+
+fn has_chat_adapter_route(routes: &[ProviderAdapterRouteConfig]) -> bool {
+    routes.iter().any(|route| {
+        adapter_route_matches_endpoint(
+            route,
+            "openai.chat_completions",
+            "chat",
+            "/v1/chat/completions",
+        )
+    })
+}
+
+fn has_responses_adapter_route(routes: &[ProviderAdapterRouteConfig]) -> bool {
+    routes.iter().any(|route| {
+        adapter_route_matches_endpoint(route, "openai.responses", "responses", "/v1/responses")
+    })
+}
+
+fn has_embeddings_adapter_route(routes: &[ProviderAdapterRouteConfig]) -> bool {
+    routes.iter().any(|route| {
+        adapter_route_matches_endpoint(route, "openai.embeddings", "embeddings", "/v1/embeddings")
+    })
+}
+
+fn adapter_route_matches_endpoint(
+    route: &ProviderAdapterRouteConfig,
+    endpoint_key: &str,
+    capability: &str,
+    standard_path: &str,
+) -> bool {
+    route.status == AdapterRouteStatus::Enabled
+        && (route
+            .endpoint_key
+            .as_deref()
+            .is_some_and(|value| value.trim().eq_ignore_ascii_case(endpoint_key))
+            || route
+                .capability
+                .as_deref()
+                .is_some_and(|value| value.trim().eq_ignore_ascii_case(capability))
+            || adapter_path_pattern_matches(route.standard_path_pattern.as_str(), standard_path))
+}
+
+fn adapter_path_pattern_matches(pattern: &str, path: &str) -> bool {
+    let pattern = normalize_adapter_path(pattern);
+    let path = normalize_adapter_path(path);
+    if pattern.eq_ignore_ascii_case(&path) || pattern == "/*" {
+        return true;
+    }
+    let pattern_lower = pattern.to_ascii_lowercase();
+    let path_lower = path.to_ascii_lowercase();
+    pattern_lower
+        .strip_suffix("/*")
+        .is_some_and(|prefix| path_lower == prefix || path_lower.starts_with(&format!("{prefix}/")))
+}
+
+fn normalize_adapter_path(value: &str) -> String {
+    let value = value.trim();
+    if value.starts_with('/') {
+        value.to_owned()
+    } else {
+        format!("/{value}")
+    }
+}
+
 #[derive(Clone)]
 struct ProviderRelayRuntimeConfig {
     response_timeout: Duration,
@@ -1342,5 +1558,368 @@ mod tests {
         assert!(error.contains("SDKWORK_CLAW_PROVIDER_FAILURE_STRATEGY"));
         assert!(error.contains("failover"));
         assert!(error.contains("fail_closed"));
+    }
+
+    #[tokio::test]
+    async fn provider_adapter_config_wraps_chat_relay_and_preserves_direct_miss() {
+        #[derive(Clone)]
+        struct DirectRelay;
+
+        impl ChatCompletionRelay for DirectRelay {
+            fn create_chat_completion<'a>(
+                &'a self,
+                _request: sdkwork_claw_product::ports::ChatCompletionRelayRequest,
+            ) -> sdkwork_claw_product::ports::ChatCompletionRelayFuture<'a> {
+                Box::pin(async {
+                    Ok(
+                        sdkwork_claw_product::ports::ChatCompletionRelayResponse::json(
+                            200,
+                            serde_json::json!({"id": "direct"}),
+                        ),
+                    )
+                })
+            }
+        }
+
+        let adapter_config = sdkwork_claw_config::ProviderAdapterConfig::from_json(
+            r#"{
+                "routes": [
+                    {
+                        "providerCode": "tencent-cloud",
+                        "adapterKind": "internal_http",
+                        "adapterBaseUrl": "http://127.0.0.1:39110",
+                        "method": "POST",
+                        "standardPathPattern": "/v1/chat/completions",
+                        "adapterPathTemplate": "/providers/{provider_code}{standard_path}",
+                        "status": "enabled",
+                        "priority": 10
+                    }
+                ]
+            }"#,
+            Some("adapter-token".to_owned()),
+        )
+        .unwrap();
+        let relays = apply_provider_adapter_config(
+            OpenAiRuntimeRelays {
+                chat: Some(Arc::new(DirectRelay)),
+                chat_stream: None,
+                embeddings: None,
+                responses: None,
+            },
+            Some(adapter_config),
+        )
+        .unwrap();
+
+        let response = relays
+            .chat
+            .unwrap()
+            .create_chat_completion(sdkwork_claw_product::ports::ChatCompletionRelayRequest {
+                api_key_id: 101,
+                tenant_id: 10,
+                organization_id: 20,
+                user_id: 30,
+                group_id: 10,
+                group_code: "standard-group".to_owned(),
+                pricing_plan_code: "standard".to_owned(),
+                model: "gpt-4o-mini".to_owned(),
+                provider_code: "openrouter".to_owned(),
+                provider_channel_id: 3001,
+                provider_model: "openai/global/gpt-4o-mini".to_owned(),
+                provider_base_url: Some("http://provider.example".to_owned()),
+                provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+                provider_auth_profile: sdkwork_claw_product::domain::ProviderAuthProfile::bearer(),
+                provider_timeout_ms: None,
+                provider_retry_policy: None,
+                request_body: serde_json::json!({"model": "gpt-4o-mini"}),
+            })
+            .await
+            .unwrap();
+
+        assert_eq!("direct", response.body["id"]);
+    }
+
+    #[tokio::test]
+    async fn provider_adapter_config_discovers_manifest_from_adapter_service() {
+        use axum::extract::State;
+        use axum::http::HeaderMap;
+        use axum::routing::get;
+        use sdkwork_claw_provider_adapter_contract::{
+            AdapterInvocationShape, ProviderAdapterEndpointManifest, ProviderAdapterManifest,
+            ProviderAdapterProviderManifest,
+        };
+        use std::sync::Mutex;
+
+        let captured_authorization = Arc::new(Mutex::new(None::<String>));
+        let app = Router::new()
+            .route(
+                "/internal/adapter-manifest",
+                get(
+                    |State(captured_authorization): State<Arc<Mutex<Option<String>>>>,
+                     headers: HeaderMap| async move {
+                        *captured_authorization.lock().unwrap() = headers
+                            .get(axum::http::header::AUTHORIZATION)
+                            .and_then(|value| value.to_str().ok())
+                            .map(str::to_owned);
+                        axum::Json(ProviderAdapterManifest {
+                            providers: vec![ProviderAdapterProviderManifest {
+                                package: "tencent-cloud".to_owned(),
+                                provider_family: "tencent-cloud".to_owned(),
+                                provider_codes: vec!["tencent-cloud".to_owned()],
+                                endpoints: vec![ProviderAdapterEndpointManifest {
+                                    endpoint_key: "video.start_end2video".to_owned(),
+                                    capability: Some("video_generation".to_owned()),
+                                    method: "POST".to_owned(),
+                                    standard_path_pattern: "/vidu/ent/v2/start-end2video"
+                                        .to_owned(),
+                                    invocation_shape: AdapterInvocationShape::AsyncTaskStart,
+                                }],
+                            }],
+                        })
+                    },
+                ),
+            )
+            .with_state(Arc::clone(&captured_authorization));
+        let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+        let base_url = format!("http://{}", listener.local_addr().unwrap());
+        let server = tokio::spawn(async move {
+            axum::serve(listener, app).await.unwrap();
+        });
+        let runtime_toml = RuntimeTomlConfig::from_toml_str(&format!(
+            r#"
+[provider_adapter]
+adapter_base_url = "{base_url}/"
+gateway_token = "adapter-token"
+"#
+        ))
+        .unwrap();
+
+        let adapter_config = provider_adapter_config_from_env_or_runtime_toml(Some(&runtime_toml))
+            .await
+            .unwrap()
+            .unwrap();
+
+        assert_eq!("adapter-token", adapter_config.gateway_token());
+        assert_eq!(1, adapter_config.routes().len());
+        let route = &adapter_config.routes()[0];
+        assert_eq!("tencent-cloud", route.provider_code);
+        assert_eq!(base_url, route.adapter_base_url);
+        assert_eq!(Some("video.start_end2video"), route.endpoint_key.as_deref());
+        assert_eq!(
+            Some("Bearer adapter-token".to_owned()),
+            captured_authorization.lock().unwrap().clone()
+        );
+
+        server.abort();
+    }
+
+    #[tokio::test]
+    async fn provider_adapter_config_fails_when_explicit_manifest_discovery_fails() {
+        use axum::http::StatusCode;
+        use axum::routing::get;
+
+        let app = Router::new().route(
+            "/internal/adapter-manifest",
+            get(|| async { StatusCode::UNAUTHORIZED }),
+        );
+        let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+        let base_url = format!("http://{}", listener.local_addr().unwrap());
+        let server = tokio::spawn(async move {
+            axum::serve(listener, app).await.unwrap();
+        });
+        let runtime_toml = RuntimeTomlConfig::from_toml_str(&format!(
+            r#"
+[provider_adapter]
+adapter_base_url = "{base_url}"
+gateway_token = "adapter-token"
+"#
+        ))
+        .unwrap();
+
+        let error = provider_adapter_config_from_env_or_runtime_toml(Some(&runtime_toml))
+            .await
+            .unwrap_err();
+
+        assert!(error.contains("provider adapter manifest discovery failed"));
+
+        server.abort();
+    }
+
+    #[tokio::test]
+    async fn provider_adapter_config_does_not_discover_without_explicit_base_url() {
+        let runtime_toml = RuntimeTomlConfig::from_toml_str(
+            r#"
+[provider_adapter]
+gateway_token = "adapter-token"
+"#,
+        )
+        .unwrap();
+
+        let adapter_config = provider_adapter_config_from_env_or_runtime_toml(Some(&runtime_toml))
+            .await
+            .unwrap();
+
+        assert!(adapter_config.is_none());
+    }
+
+    #[tokio::test]
+    async fn provider_adapter_config_discovery_empty_manifest_keeps_adapter_disabled() {
+        use axum::routing::get;
+        use sdkwork_claw_provider_adapter_contract::ProviderAdapterManifest;
+
+        let app = Router::new().route(
+            "/internal/adapter-manifest",
+            get(|| async { axum::Json(ProviderAdapterManifest { providers: vec![] }) }),
+        );
+        let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+        let base_url = format!("http://{}", listener.local_addr().unwrap());
+        let server = tokio::spawn(async move {
+            axum::serve(listener, app).await.unwrap();
+        });
+        let runtime_toml = RuntimeTomlConfig::from_toml_str(&format!(
+            r#"
+[provider_adapter]
+adapter_base_url = "{base_url}"
+gateway_token = "adapter-token"
+"#
+        ))
+        .unwrap();
+
+        let adapter_config = provider_adapter_config_from_env_or_runtime_toml(Some(&runtime_toml))
+            .await
+            .unwrap();
+
+        assert!(adapter_config.is_none());
+
+        server.abort();
+    }
+
+    #[tokio::test]
+    async fn provider_adapter_config_wraps_responses_and_embeddings_relays_independently() {
+        #[derive(Clone)]
+        struct DirectResponsesRelay;
+
+        impl ResponsesRelay for DirectResponsesRelay {
+            fn create_response<'a>(
+                &'a self,
+                _request: sdkwork_claw_product::ports::ResponsesRelayRequest,
+            ) -> sdkwork_claw_product::ports::ResponsesRelayFuture<'a> {
+                Box::pin(async {
+                    Ok(sdkwork_claw_product::ports::ResponsesRelayResponse::json(
+                        200,
+                        serde_json::json!({"id": "response-direct"}),
+                    ))
+                })
+            }
+        }
+
+        #[derive(Clone)]
+        struct DirectEmbeddingsRelay;
+
+        impl EmbeddingsRelay for DirectEmbeddingsRelay {
+            fn create_embedding<'a>(
+                &'a self,
+                _request: sdkwork_claw_product::ports::EmbeddingsRelayRequest,
+            ) -> sdkwork_claw_product::ports::EmbeddingsRelayFuture<'a> {
+                Box::pin(async {
+                    Ok(sdkwork_claw_product::ports::EmbeddingsRelayResponse::json(
+                        200,
+                        serde_json::json!({"object": "list"}),
+                    ))
+                })
+            }
+        }
+
+        let adapter_config = sdkwork_claw_config::ProviderAdapterConfig::from_json(
+            r#"{
+                "routes": [
+                    {
+                        "providerCode": "tencent-cloud",
+                        "adapterKind": "internal_http",
+                        "adapterBaseUrl": "http://127.0.0.1:39110",
+                        "endpointKey": "openai.responses",
+                        "method": "POST",
+                        "standardPathPattern": "/v1/responses",
+                        "adapterPathTemplate": "/providers/{provider_code}{standard_path}",
+                        "status": "enabled",
+                        "priority": 10
+                    },
+                    {
+                        "providerCode": "tencent-cloud",
+                        "adapterKind": "internal_http",
+                        "adapterBaseUrl": "http://127.0.0.1:39110",
+                        "endpointKey": "openai.embeddings",
+                        "method": "POST",
+                        "standardPathPattern": "/v1/embeddings",
+                        "adapterPathTemplate": "/providers/{provider_code}{standard_path}",
+                        "status": "enabled",
+                        "priority": 10
+                    }
+                ]
+            }"#,
+            Some("adapter-token".to_owned()),
+        )
+        .unwrap();
+        let relays = apply_provider_adapter_config(
+            OpenAiRuntimeRelays {
+                chat: None,
+                chat_stream: None,
+                embeddings: Some(Arc::new(DirectEmbeddingsRelay)),
+                responses: Some(Arc::new(DirectResponsesRelay)),
+            },
+            Some(adapter_config),
+        )
+        .unwrap();
+
+        let response = relays
+            .responses
+            .unwrap()
+            .create_response(sdkwork_claw_product::ports::ResponsesRelayRequest {
+                api_key_id: 101,
+                tenant_id: 10,
+                organization_id: 20,
+                user_id: 30,
+                group_id: 10,
+                group_code: "standard-group".to_owned(),
+                pricing_plan_code: "standard".to_owned(),
+                model: "gpt-4o-mini".to_owned(),
+                provider_code: "openrouter".to_owned(),
+                provider_channel_id: 3001,
+                provider_model: "openai/global/gpt-4o-mini".to_owned(),
+                provider_base_url: Some("http://provider.example".to_owned()),
+                provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+                provider_auth_profile: sdkwork_claw_product::domain::ProviderAuthProfile::bearer(),
+                provider_timeout_ms: None,
+                provider_retry_policy: None,
+                request_body: serde_json::json!({"model": "gpt-4o-mini"}),
+            })
+            .await
+            .unwrap();
+        let embedding = relays
+            .embeddings
+            .unwrap()
+            .create_embedding(sdkwork_claw_product::ports::EmbeddingsRelayRequest {
+                api_key_id: 101,
+                tenant_id: 10,
+                organization_id: 20,
+                user_id: 30,
+                group_id: 10,
+                group_code: "standard-group".to_owned(),
+                pricing_plan_code: "standard".to_owned(),
+                model: "text-embedding-3-small".to_owned(),
+                provider_code: "openrouter".to_owned(),
+                provider_channel_id: 3001,
+                provider_model: "openai/global/text-embedding-3-small".to_owned(),
+                provider_base_url: Some("http://provider.example".to_owned()),
+                provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+                provider_auth_profile: sdkwork_claw_product::domain::ProviderAuthProfile::bearer(),
+                provider_timeout_ms: None,
+                provider_retry_policy: None,
+                request_body: serde_json::json!({"model": "text-embedding-3-small"}),
+            })
+            .await
+            .unwrap();
+
+        assert_eq!("response-direct", response.body["id"]);
+        assert_eq!("list", embedding.body["object"]);
     }
 }

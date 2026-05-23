@@ -1,16 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { BusinessStatePanel, BusinessStateTableRow, CopyButton } from 'sdkwork-claw-router-commons';
-import { Search, Plus, User, Shield, CheckCircle2, X, Edit, MoreHorizontal, Key, Users, MinusCircle, DollarSign, Wallet } from 'lucide-react';
-import { UserService, UserListItem, ApiKeyItem } from './userService';
+import React, { useEffect, useRef, useState } from 'react';
+import { CheckCircle2, Edit, Key, MoreHorizontal, Plus, Search, Shield, User, Users, X } from 'lucide-react';
+import { AdminTableShell, BusinessStateTableRow, CopyButton } from 'sdkwork-claw-router-commons';
+import { ApiKeyItem, UserListItem, UserService } from './userService';
 import {
   createApiKeyInputFromForm,
-  createUserBalanceAdjustmentInputFromForm,
   createUserGroupUpdateInputFromForm,
   createUserInputFromForm,
   createUserProfileUpdateInputFromForm,
   createUserStatusUpdateInput,
 } from './userForm';
-
 import { useTranslation } from 'react-i18next';
 
 type TranslationFunction = ReturnType<typeof useTranslation>['t'];
@@ -33,7 +31,13 @@ function createDefaultUserGroupOptions(t: TranslationFunction) {
     { value: 'default', label: t('admin.user.groups.default', 'default (Default group)') },
     { value: 'vip', label: t('admin.user.groups.vip', 'VIP (Advanced users)') },
     { value: 'svip', label: t('admin.user.groups.svip', 'SVIP (Premium users)') },
+    { value: 'member', label: t('admin.user.groups.member', 'member (Standard member)') },
+    { value: 'operator', label: t('admin.user.groups.operator', 'operator (Operations user)') },
   ] as const;
+}
+
+function getStatusToggleLabel(u: UserListItem, t: TranslationFunction): string {
+  return u.status === 'active' ? t("admin.user.index.text.1dcdrxo", "禁用") : t("admin.marketing.index.text.5pm2ma", "启用");
 }
 
 export function UserAdmin() {
@@ -41,38 +45,51 @@ export function UserAdmin() {
   const defaultUserGroupOptions = createDefaultUserGroupOptions(t);
   const [search, setSearch] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [rechargeTarget, setRechargeTarget] = useState<UserListItem | null>(null);
-  const [refundTarget, setRefundTarget] = useState<UserListItem | null>(null);
-  const [recordsTarget, setRecordsTarget] = useState<UserListItem | null>(null);
   const [editTarget, setEditTarget] = useState<UserListItem | null>(null);
   const [apiKeysTarget, setApiKeysTarget] = useState<UserListItem | null>(null);
   const [groupsTarget, setGroupsTarget] = useState<UserListItem | null>(null);
   const [isCreateApiKeyModalOpen, setIsCreateApiKeyModalOpen] = useState(false);
   const [newlyCreatedKey, setNewlyCreatedKey] = useState<string | null>(null);
-  const [recordsTab, setRecordsTab] = useState<'recharge' | 'exchange'>('recharge');
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
-
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
-  const [apiKeysMap, setApiKeysMap] = useState<Record<number, ApiKeyItem[]>>({});
+  const [apiKeysLoadError, setApiKeysLoadError] = useState<string | null>(null);
   const [users, setUsers] = useState<UserListItem[]>([]);
+  const [apiKeysMap, setApiKeysMap] = useState<Record<number, ApiKeyItem[]>>({});
 
   const loadUsers = async () => {
     setLoading(true);
     setLoadError(null);
+    setApiKeysLoadError(null);
     try {
-      const [fetchedUsers, fetchedApiKeys] = await Promise.all([
-        UserService.fetchUsers(),
-        UserService.fetchApiKeysMap(),
-      ]);
-      setUsers(fetchedUsers);
-      setApiKeysMap(fetchedApiKeys);
+      const result = await UserService.loadAdminTableData();
+      setUsers(result.users);
+      setApiKeysMap(result.apiKeysMap);
+      setApiKeysLoadError(
+        result.apiKeysLoadError
+          ? getAdminUserErrorMessage(result.apiKeysLoadError, 'admin.user.errors.fetchApiKeysFallback', 'API keys could not be loaded', t)
+          : null,
+      );
     } catch (error) {
       setLoadError(getAdminUserErrorMessage(error, 'admin.user.errors.loadUsersFallback', 'Users could not be loaded', t));
     } finally {
       setLoading(false);
+    }
+  };
+
+  const ensureApiKeysLoaded = async (target: UserListItem) => {
+    setApiKeysTarget(target);
+    if ((apiKeysMap[target.id] ?? []).length > 0) {
+      return;
+    }
+    try {
+      const fetchedApiKeys = await UserService.fetchApiKeysMap();
+      setApiKeysMap(fetchedApiKeys);
+      setApiKeysLoadError(null);
+    } catch (error) {
+      setApiKeysLoadError(getAdminUserErrorMessage(error, 'admin.user.errors.fetchApiKeysFallback', 'API keys could not be loaded', t));
     }
   };
 
@@ -90,79 +107,32 @@ export function UserAdmin() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleAddUser = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const formData = new FormData(e.target as HTMLFormElement);
+  const handleAddUser = async (event: React.FormEvent) => {
+    event.preventDefault();
+    const formData = new FormData(event.target as HTMLFormElement);
     const user = await UserService.addUser(createUserInputFromForm(formData));
     setUsers((currentUsers) => [user, ...currentUsers]);
     setIsModalOpen(false);
   };
 
-  const handleRechargeSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!rechargeTarget) return;
-    const formData = new FormData(e.target as HTMLFormElement);
-
-    const updatedUser = await UserService.updateBalance(
-      rechargeTarget.id,
-      createUserBalanceAdjustmentInputFromForm(formData, 'recharge'),
-    );
-    if (updatedUser) {
-      setUsers((currentUsers) => currentUsers.map((user) => user.id === updatedUser.id ? updatedUser : user));
-    }
-    setRechargeTarget(null);
-  };
-
-  const handleRefundSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!refundTarget) return;
-    const formData = new FormData(e.target as HTMLFormElement);
-
-    const updatedUser = await UserService.updateBalance(
-      refundTarget.id,
-      createUserBalanceAdjustmentInputFromForm(formData, 'refund'),
-    );
-    if (updatedUser) {
-      setUsers((currentUsers) => currentUsers.map((user) => user.id === updatedUser.id ? updatedUser : user));
-    }
-    setRefundTarget(null);
-  };
-
-  const setRefundAll = (target: UserListItem) => {
-    const currentBalance = parseFloat(target.balance.replace(/[^0-9.-]+/g,"")) || 0;
-    const amountInput = document.getElementById('refund_amount') as HTMLInputElement;
-    if (amountInput) {
-        amountInput.value = currentBalance.toString();
-    }
-  };
-
-  const handleEditUserSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleEditUserSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
     if (!editTarget) return;
-    const formData = new FormData(e.target as HTMLFormElement);
-
+    const formData = new FormData(event.target as HTMLFormElement);
     const updatedUser = await UserService.updateUser(editTarget.id, createUserProfileUpdateInputFromForm(formData));
-    if (updatedUser) {
-       setUsers((currentUsers) => currentUsers.map((user) => user.id === updatedUser.id ? updatedUser : user));
-    }
-
+    setUsers((currentUsers) => currentUsers.map((user) => (user.id === updatedUser.id ? updatedUser : user)));
     setEditTarget(null);
   };
 
-  const handleCreateApiKeySubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleCreateApiKeySubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
     if (!apiKeysTarget) return;
-    const formData = new FormData(e.target as HTMLFormElement);
+    const formData = new FormData(event.target as HTMLFormElement);
     const { key, rawKey } = await UserService.createApiKey(createApiKeyInputFromForm(formData, apiKeysTarget.id));
-
-    setApiKeysMap((currentApiKeysMap) => {
-      const currentUserApiKeys = currentApiKeysMap[apiKeysTarget.id] || [];
-      return {
-        ...currentApiKeysMap,
-        [apiKeysTarget.id]: [...currentUserApiKeys, key],
-      };
-    });
-
+    setApiKeysMap((currentApiKeysMap) => ({
+      ...currentApiKeysMap,
+      [apiKeysTarget.id]: [...(currentApiKeysMap[apiKeysTarget.id] ?? []), key],
+    }));
     setNewlyCreatedKey(rawKey);
     setIsCreateApiKeyModalOpen(false);
   };
@@ -170,574 +140,550 @@ export function UserAdmin() {
   const deleteApiKey = async (keyId: string) => {
     if (!apiKeysTarget) return;
     await UserService.deleteApiKey(apiKeysTarget.id, keyId);
-    setApiKeysMap((currentApiKeysMap) => {
-      const currentUserApiKeys = currentApiKeysMap[apiKeysTarget.id] || [];
-      return {
-        ...currentApiKeysMap,
-        [apiKeysTarget.id]: currentUserApiKeys.filter((key) => key.id !== keyId),
-      };
-    });
+    setApiKeysMap((currentApiKeysMap) => ({
+      ...currentApiKeysMap,
+      [apiKeysTarget.id]: (currentApiKeysMap[apiKeysTarget.id] ?? []).filter((key) => key.id !== keyId),
+    }));
   };
 
-  const handleGroupSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleGroupSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
     if (!groupsTarget) return;
-    const formData = new FormData(e.target as HTMLFormElement);
-
+    const formData = new FormData(event.target as HTMLFormElement);
     const updatedUser = await UserService.updateUser(groupsTarget.id, createUserGroupUpdateInputFromForm(formData));
-    if (updatedUser) {
-      setUsers((currentUsers) => currentUsers.map((user) => user.id === updatedUser.id ? updatedUser : user));
-    }
+    setUsers((currentUsers) => currentUsers.map((user) => (user.id === updatedUser.id ? updatedUser : user)));
     setGroupsTarget(null);
   };
 
   const handleStatusToggle = async (target: UserListItem) => {
     const nextStatus = target.status === 'active' ? 'banned' : 'active';
     const updatedUser = await UserService.updateUser(target.id, createUserStatusUpdateInput(nextStatus));
-    if (updatedUser) {
-      setUsers((currentUsers) => currentUsers.map((user) => user.id === updatedUser.id ? updatedUser : user));
-    }
+    setUsers((currentUsers) => currentUsers.map((user) => (user.id === updatedUser.id ? updatedUser : user)));
     setActiveDropdown(null);
   };
 
+  const normalizedSearch = search.trim().toLowerCase();
+  const visibleUsers = normalizedSearch
+    ? users.filter((userItem) =>
+      [userItem.email, userItem.username, userItem.role, userItem.group, userItem.status, String(userItem.id)]
+        .some((value) => value.toLowerCase().includes(normalizedSearch)),
+    )
+    : users;
+
   return (
-    <div className="w-full h-full flex flex-col space-y-6">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-4">
+    <div className="flex h-full min-h-0 w-full flex-col gap-6 overflow-hidden">
+      <div className="flex shrink-0 flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
         <div>
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-2">
-            <User className="w-6 h-6 text-blue-500" />
-            {t("admin.user.index.text.1oim33", "用户管理")}</h2>
-          <p className="text-sm text-slate-500">{t("admin.user.index.text.zyzw4a", "管理平台注册用户生命周期，调配额度，分配权限架构。")}</p>
+          <h2 className="mb-2 flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
+            <User className="h-6 w-6 text-blue-500" />
+            {t('admin.user.index.title', 'User Management')}
+          </h2>
+          <p className="text-sm text-slate-500">
+            {t('admin.user.index.description', 'Manage identity profiles, user status, groups, and API keys.')}
+          </p>
         </div>
-        <div className="flex gap-3 w-full sm:w-auto">
+        <div className="flex w-full gap-3 sm:w-auto">
           <div className="relative">
-            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
             <input
+              className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-4 text-sm text-slate-900 shadow-sm transition-colors placeholder:text-slate-500 focus:border-blue-500 focus:outline-none dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white sm:w-64"
+              onChange={(event) => setSearch(event.target.value)}
+              placeholder={t('admin.user.index.searchPlaceholder', 'Search email, name, role, or group...')}
               type="text"
-              placeholder={t("admin.user.index.text.1hdxc8d", "搜索邮箱或昵称...")}
               value={search}
-              onChange={e => setSearch(e.target.value)}
-              className="bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-blue-500 w-full sm:w-64 text-slate-900 dark:text-white placeholder-slate-500 transition-colors shadow-sm"
             />
           </div>
-          <button onClick={() => setIsModalOpen(true)} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 flex-shrink-0">
-            <Plus className="w-4 h-4" />
-            <span className="hidden sm:inline">{t("admin.user.index.text.1x89nbx", "创建用户")}</span>
+          <button
+            className="flex shrink-0 items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+            onClick={() => setIsModalOpen(true)}
+            type="button"
+          >
+            <Plus className="h-4 w-4" />
+            <span className="hidden sm:inline">{t('admin.user.index.createUser', 'Create user')}</span>
           </button>
         </div>
       </div>
 
-      <div className="flex-1 bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl shadow-sm overflow-hidden flex flex-col" onClick={() => setActiveDropdown(null)}>
-        <div className="overflow-x-auto flex-1">
-          <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 pb-32">
-            <thead className="bg-slate-50 dark:bg-[#121212] sticky top-0 border-b border-slate-200 dark:border-white/10 text-xs font-semibold text-slate-500 dark:text-slate-400 select-none z-10">
-              <tr>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.record.index.text.1in002o", "用户")}</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t('common.labels.id', 'ID')}</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.user.index.text.u9jq8n", "用户名")}</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.user.index.text.1x858ed", "角色")}</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.user.index.text.115zp53", "分组")}</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.finance.index.text.1vbxvzf", "余额")}</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.finance.index.text.1ccx4t4", "状态")}</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.user.index.text.mo6aw3", "最后活跃时间")}</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.user.index.text.1dlip6e", "最后使用时间")}</div></th>
-                <th className="px-6 py-4 whitespace-nowrap"><div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-700 dark:hover:text-slate-200 transition-colors">{t("admin.user.index.text.miy8ea", "创建时间")}</div></th>
-                <th className="px-6 py-4 whitespace-nowrap text-right">{t("admin.group.index.text.501w24", "操作")}</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-200 dark:divide-white/5">
-              {loading ? (
-                <BusinessStateTableRow colSpan={11} kind="loading" title={t('admin.user.index.text.loadingUsers', 'Loading users...')} />
-              ) : loadError ? (
-                <BusinessStateTableRow
-                  colSpan={11}
-                  kind="error"
-                  title={t('admin.user.index.text.usersLoadError', 'Users could not be loaded')}
-                  description={loadError}
-                  onRetry={() => { void loadUsers(); }}
-                  retryLabel={t('admin.user.index.text.usersRetry', 'Retry')}
-                />
-              ) : users.length === 0 ? (
-                <BusinessStateTableRow
-                  colSpan={11}
-                  kind="empty"
-                  title={t('admin.user.index.text.usersEmpty', 'No users found')}
-                  description={t('admin.user.index.text.usersEmptyDescription', 'Create a user before assigning groups, balances, or API keys.')}
-                />
-              ) : users.map(u => (
-                <tr key={u.id} className="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group">
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-3 w-48">
-                      <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400 flex items-center justify-center text-sm font-bold shrink-0">
-                        {u.email.charAt(0).toUpperCase()}
-                      </div>
-                      <span className="font-semibold text-slate-900 dark:text-white truncate">{u.email}</span>
+      <AdminTableShell
+        className="rounded-xl dark:bg-[#1a1a1a]"
+        data-admin-user-table-card
+        onClick={() => setActiveDropdown(null)}
+        viewportProps={{ 'data-admin-user-table-viewport': true }}
+      >
+        <table className="w-full min-w-[1080px] text-left text-sm text-slate-600 dark:text-slate-400">
+          <thead className="sticky top-0 z-10 select-none border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
+            <tr>
+              <th className="px-6 py-4">{t('admin.user.index.columns.user', 'User')}</th>
+              <th className="px-6 py-4">{t('common.labels.id', 'ID')}</th>
+              <th className="px-6 py-4">{t('admin.user.index.columns.username', 'Username')}</th>
+              <th className="px-6 py-4">{t('admin.user.index.columns.role', 'Role')}</th>
+              <th className="px-6 py-4">{t('admin.user.index.columns.group', 'Group')}</th>
+              <th className="px-6 py-4">{t('admin.user.index.columns.status', 'Status')}</th>
+              <th className="px-6 py-4">{t('admin.user.index.columns.lastActive', 'Last active')}</th>
+              <th className="px-6 py-4">{t('admin.user.index.columns.lastUsed', 'Last used')}</th>
+              <th className="px-6 py-4">{t('admin.user.index.columns.createdAt', 'Created')}</th>
+              <th className="px-6 py-4 text-right">{t('admin.user.index.columns.actions', 'Actions')}</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+            {loading ? (
+              <BusinessStateTableRow colSpan={10} kind="loading" title={t('admin.user.index.text.loadingUsers', 'Loading users...')} />
+            ) : loadError ? (
+              <BusinessStateTableRow
+                colSpan={10}
+                description={loadError}
+                kind="error"
+                onRetry={() => { void loadUsers(); }}
+                retryLabel={t('admin.user.index.text.usersRetry', 'Retry')}
+                title={t('admin.user.index.text.usersLoadError', 'Users could not be loaded')}
+              />
+            ) : visibleUsers.length === 0 ? (
+              <BusinessStateTableRow
+                colSpan={10}
+                description={t('admin.user.index.text.usersEmptyDescription', 'Create a user before assigning groups, balances, or API keys.')}
+                kind="empty"
+                title={t('admin.user.index.text.usersEmpty', 'No users found')}
+              />
+            ) : visibleUsers.map((userItem) => (
+              <tr className="group transition-colors hover:bg-slate-50 dark:hover:bg-white/5" key={userItem.id}>
+                <td className="px-6 py-4">
+                  <div className="flex w-48 items-center gap-3">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-600 dark:bg-blue-500/10 dark:text-blue-400">
+                      {userItem.email.charAt(0).toUpperCase()}
                     </div>
-                  </td>
-                  <td className="px-6 py-4 font-mono text-xs">{u.id}</td>
-                  <td className="px-6 py-4 text-slate-700 dark:text-slate-300">{u.username}</td>
-                  <td className="px-6 py-4">
-                    <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium ${u.role === 'admin' ? 'bg-purple-100 text-purple-700 dark:bg-purple-500/10 dark:text-purple-400' : 'bg-slate-100 text-slate-700 dark:bg-white/10 dark:text-slate-300'}`}>
-                      {u.role === 'admin' ? t("admin.user.index.text.1yxtyq", "管理员") : t("admin.user.index.text.1cfg610", "普通用户")}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4">
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400">
-                      {u.group}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-3">
-                       <span className="font-mono text-slate-900 dark:text-white font-medium">{u.balance}</span>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4">
-                    {u.status === 'active' ? (
-                       <span className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 text-sm whitespace-nowrap"><div className="w-2 h-2 rounded-full bg-emerald-500"></div> {t("admin.marketing.index.text.5pm2ma", "启用")}</span>
-                    ) : (
-                       <span className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 text-sm whitespace-nowrap"><div className="w-2 h-2 rounded-full bg-red-500"></div> {t("admin.user.index.text.1dcdrxo", "禁用")}</span>
-                    )}
-                  </td>
-                  <td className="px-6 py-4 text-slate-500 dark:text-slate-400 whitespace-nowrap font-mono text-xs">{u.lastActive}</td>
-                  <td className="px-6 py-4 text-slate-500 dark:text-slate-400 whitespace-nowrap font-mono text-xs">{u.lastUsed}</td>
-                  <td className="px-6 py-4 text-slate-500 dark:text-slate-400 whitespace-nowrap font-mono text-xs">{u.createdAt}</td>
-                  <td className="px-6 py-4 text-right">
-                    <div className="flex items-center justify-end gap-2 text-slate-400 relative">
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setEditTarget(u);
-                        }}
-                        className="p-1.5 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded transition-colors" title={t("admin.group.index.text.qreyeg", "编辑")}>
-                         <Edit className="w-4 h-4" />
-                      </button>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setActiveDropdown(activeDropdown === u.id ? null : u.id);
-                        }}
-                        className={`p-1.5 rounded transition-colors flex items-center gap-1 ${activeDropdown === u.id ? 'text-slate-900 bg-slate-100 dark:text-white dark:bg-white/10' : 'hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10'}`}
-                        title={t("admin.user.index.text.6a5c57", "更多")}
-                      >
-                         <MoreHorizontal className="w-4 h-4" />
-                      </button>
+                    <span className="truncate font-semibold text-slate-900 dark:text-white">{userItem.email}</span>
+                  </div>
+                </td>
+                <td className="px-6 py-4 font-mono text-xs">{userItem.id}</td>
+                <td className="px-6 py-4 text-slate-700 dark:text-slate-300">{userItem.username}</td>
+                <td className="px-6 py-4">
+                  <span className={`inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium ${userItem.role === 'admin' ? 'bg-purple-100 text-purple-700 dark:bg-purple-500/10 dark:text-purple-400' : 'bg-slate-100 text-slate-700 dark:bg-white/10 dark:text-slate-300'}`}>
+                    {userItem.role}
+                  </span>
+                </td>
+                <td className="px-6 py-4">
+                  <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-600 dark:bg-blue-500/10 dark:text-blue-400">
+                    {userItem.group}
+                  </span>
+                </td>
+                <td className="px-6 py-4">
+                  <span className="inline-flex items-center gap-2 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                    <span className={`h-2 w-2 rounded-full ${userItem.status === 'active' ? 'bg-emerald-500' : 'bg-red-500'}`} />
+                    {userItem.status}
+                  </span>
+                </td>
+                <td className="whitespace-nowrap px-6 py-4 font-mono text-xs text-slate-500 dark:text-slate-400">{userItem.lastActive}</td>
+                <td className="whitespace-nowrap px-6 py-4 font-mono text-xs text-slate-500 dark:text-slate-400">{userItem.lastUsed}</td>
+                <td className="whitespace-nowrap px-6 py-4 font-mono text-xs text-slate-500 dark:text-slate-400">{userItem.createdAt}</td>
+                <td className="px-6 py-4 text-right">
+                  <div className="relative flex items-center justify-end gap-2 text-slate-400">
+                    <button
+                      className="rounded p-1.5 transition-colors hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-500/10 dark:hover:text-blue-400"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        setEditTarget(userItem);
+                      }}
+                      title={t('admin.user.index.edit', 'Edit')}
+                      type="button"
+                    >
+                      <Edit className="h-4 w-4" />
+                    </button>
+                    <button
+                      className={`flex items-center gap-1 rounded p-1.5 transition-colors ${activeDropdown === userItem.id ? 'bg-slate-100 text-slate-900 dark:bg-white/10 dark:text-white' : 'hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-white/10 dark:hover:text-white'}`}
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        setActiveDropdown(activeDropdown === userItem.id ? null : userItem.id);
+                      }}
+                      title={t('admin.user.index.more', 'More')}
+                      type="button"
+                    >
+                      <MoreHorizontal className="h-4 w-4" />
+                    </button>
 
-                      {/* Dropdown Menu */}
-                      {activeDropdown === u.id && (
-                        <div
-                          ref={dropdownRef}
-                          className="absolute top-10 right-0 w-36 bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-[#333] rounded-lg shadow-xl z-50 overflow-hidden flex flex-col divide-y divide-slate-100 dark:divide-white/5"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <div className="py-1">
-                            <button
-                              onClick={() => { setApiKeysTarget(u); setActiveDropdown(null); }}
-                              className="w-full px-4 py-2.5 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 flex items-center gap-3 transition-colors"
-                            >
-                              <Key className="w-4 h-4 text-slate-400" />
-                              {t("admin.user.index.text.pj8yg2", "API密钥")}</button>
-                            <button
-                              onClick={() => { setGroupsTarget(u); setActiveDropdown(null); }}
-                              className="w-full px-4 py-2.5 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 flex items-center gap-3 transition-colors"
-                            >
-                              <Users className="w-4 h-4 text-slate-400" />
-                              {t("admin.user.index.text.115zp53", "分组")}</button>
-                          </div>
-                          <div className="py-1">
-                            <button
-                              onClick={() => { void handleStatusToggle(u); }}
-                              className="w-full px-4 py-2.5 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 flex items-center gap-3 transition-colors"
-                            >
-                              <Shield className="w-4 h-4 text-slate-400" />
-                              {u.status === 'active' ? t("admin.user.index.text.1dcdrxo", "禁用") : t("admin.marketing.index.text.5pm2ma", "启用")}
-                            </button>
-                            <button
-                              onClick={() => { setRechargeTarget(u); setActiveDropdown(null); }}
-                              className="w-full px-4 py-2.5 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 flex items-center gap-3 transition-colors"
-                            >
-                              <Plus className="w-4 h-4 text-emerald-500" />
-                              {t("admin.finance.index.text.10c9xpw", "充值")}</button>
-                            <button
-                              onClick={() => { setRefundTarget(u); setActiveDropdown(null); }}
-                              className="w-full px-4 py-2.5 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 flex items-center gap-3 transition-colors"
-                            >
-                              <MinusCircle className="w-4 h-4 text-orange-500" />
-                              {t("admin.finance.index.text.1chn46r", "退款")}</button>
-                            <button
-                              onClick={() => { setRecordsTarget(u); setActiveDropdown(null); }}
-                              className="w-full px-4 py-2.5 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 flex items-center gap-3 transition-colors"
-                            >
-                              <DollarSign className="w-4 h-4 text-slate-400" />
-                              {t("admin.user.index.text.9z0mxn", "充值记录")}</button>
-                          </div>
+                    {activeDropdown === userItem.id && (
+                      <div
+                        className="absolute right-0 top-10 z-50 flex w-40 flex-col divide-y divide-slate-100 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-xl dark:divide-white/5 dark:border-[#333] dark:bg-[#1e1e1e]"
+                        onClick={(event) => event.stopPropagation()}
+                        ref={dropdownRef}
+                      >
+                        <div className="py-1">
+                          <button
+                            className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm text-slate-700 transition-colors hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-white/5"
+                            onClick={() => {
+                              void ensureApiKeysLoaded(userItem);
+                              setActiveDropdown(null);
+                            }}
+                            type="button"
+                          >
+                            <Key className="h-4 w-4 text-slate-400" />
+                            {t('admin.user.index.apiKeys', 'API keys')}
+                          </button>
+                          <button
+                            className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm text-slate-700 transition-colors hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-white/5"
+                            onClick={() => {
+                              setGroupsTarget(userItem);
+                              setActiveDropdown(null);
+                            }}
+                            type="button"
+                          >
+                            <Users className="h-4 w-4 text-slate-400" />
+                            {t('admin.user.index.groups', 'Groups')}
+                          </button>
                         </div>
-                      )}
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+                        <div className="py-1">
+                          <button
+                            className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm text-slate-700 transition-colors hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-white/5"
+                            onClick={() => { void handleStatusToggle(userItem); }}
+                            type="button"
+                          >
+                            <Shield className="h-4 w-4 text-slate-400" />
+                            {getStatusToggleLabel(userItem, t)}
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </AdminTableShell>
+
+      <div className="grid shrink-0 gap-1 text-xs text-slate-500 dark:text-slate-400 sm:grid-cols-[auto_auto_1fr] sm:gap-3">
+        <span>{t('admin.user.index.text.recordsEmptyRecharge', 'No recharge records loaded')}</span>
+        <span>{t('admin.user.index.text.recordsEmptyExchange', 'No exchange records loaded')}</span>
+        <span>
+          {t(
+            'admin.user.index.text.recordsEmptyDescription',
+            'Records are available from the billing history and recharge records modules; this user dialog does not synthesize transaction rows.',
+          )}
+        </span>
       </div>
 
-      {/* CREATE USER MODAL */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
-          <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col">
-            <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t("admin.user.index.text.1x89nbx", "创建用户")}</h3>
-              <button onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <form onSubmit={handleAddUser} className="flex flex-col flex-1">
-              <div className="p-5 space-y-5 flex-1">
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t("admin.user.index.text.185tvls", "邮箱")}</label>
-                  <input required name="email" type="email" placeholder={t("admin.user.index.text.u69mlf", "请输入邮箱")} className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
-                </div>
-                  <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2.5 text-sm text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300">
-                    {t('admin.user.index.text.passwordSetupCreate', 'Password setup is handled through registration and reset flows. This form creates the account profile.')}
-                  </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t("admin.user.index.text.u9jq8n", "用户名")}</label>
-                  <input name="username" type="text" placeholder={t("admin.user.index.text.198gacp", "请输入用户名 (选填)")} className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t("admin.finance.index.text.1vbxvzf", "余额")}</label>
-                  <input required name="balance" type="number" step="0.01" defaultValue="0" min="0" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
-                </div>
-              </div>
-              <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212] rounded-b-2xl">
-                <button type="button" onClick={() => setIsModalOpen(false)} className="px-5 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-[#1a1a1a] border border-slate-300 dark:border-zinc-700 hover:bg-slate-50 dark:hover:bg-zinc-800 rounded-xl transition-colors">
-                  {t("admin.group.index.text.1589w37", "取消")}</button>
-                <button type="submit" className="px-5 py-2.5 text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 rounded-xl shadow-sm transition-colors">
-                  {t("admin.group.index.text.khvw5c", "创建")}</button>
-              </div>
-            </form>
-          </div>
-        </div>
+        <UserProfileModal
+          onClose={() => setIsModalOpen(false)}
+          onSubmit={handleAddUser}
+          title={t('admin.user.index.createUser', 'Create user')}
+          t={t}
+        />
       )}
 
-      {/* RECHARGE MODAL */}
-      {rechargeTarget && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
-          <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-[420px] overflow-hidden flex flex-col">
-            <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t("admin.finance.index.text.10c9xpw", "充值")}</h3>
-              <button onClick={() => setRechargeTarget(null)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <form onSubmit={handleRechargeSubmit} className="flex flex-col flex-1">
-              <div className="p-5 space-y-5 flex-1">
-                <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl p-4 flex items-center gap-4">
-                   <div className="w-12 h-12 rounded-full bg-blue-100 text-blue-600 dark:bg-emerald-500/10 dark:text-emerald-400 flex items-center justify-center text-xl font-bold shrink-0">
-                     {rechargeTarget.email.charAt(0).toUpperCase()}
-                   </div>
-                   <div>
-                     <div className="font-semibold text-slate-900 dark:text-white">{rechargeTarget.email}</div>
-                     <div className="text-sm text-slate-500 mt-0.5">{t("admin.user.index.text.1y5eljv", "当前余额:")}<span className="font-mono">{rechargeTarget.balance}</span></div>
-                   </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t("admin.user.index.text.1qayakm", "充值金额")}</label>
-                  <div className="relative">
-                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 font-medium">$</span>
-                    <input required name="amount" type="number" step="0.01" min="0.01" placeholder="0.00" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl pl-8 pr-3 py-2.5 text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-slate-900 dark:text-white shadow-sm transition-all" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212] rounded-b-2xl">
-                <button type="button" onClick={() => setRechargeTarget(null)} className="px-5 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-[#1a1a1a] border border-slate-300 dark:border-zinc-700 hover:bg-slate-50 dark:hover:bg-zinc-800 rounded-xl transition-colors">
-                  {t("admin.group.index.text.1589w37", "取消")}</button>
-                <button type="submit" className="px-5 py-2.5 text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 rounded-xl shadow-sm transition-colors">
-                  {t("admin.user.index.text.kre8wf", "确认")}</button>
-              </div>
-            </form>
-          </div>
-        </div>
+      {editTarget && (
+        <UserProfileModal
+          defaultUsername={editTarget.username !== '-' ? editTarget.username : ''}
+          email={editTarget.email}
+          onClose={() => setEditTarget(null)}
+          onSubmit={handleEditUserSubmit}
+          title={t('admin.user.index.editUserTitle', 'Edit user - {{email}}', { email: editTarget.email })}
+          t={t}
+        />
       )}
 
-      {/* REFUND MODAL */}
-      {refundTarget && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
-          <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-[420px] overflow-hidden flex flex-col">
-            <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t("admin.finance.index.text.1chn46r", "退款")}</h3>
-              <button onClick={() => setRefundTarget(null)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <form onSubmit={handleRefundSubmit} className="flex flex-col flex-1">
-              <div className="p-5 space-y-5 flex-1">
-                <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl p-4 flex items-center gap-4">
-                   <div className="w-12 h-12 rounded-full bg-blue-100 text-blue-600 dark:bg-emerald-500/10 dark:text-emerald-400 flex items-center justify-center text-xl font-bold shrink-0">
-                     {refundTarget.email.charAt(0).toUpperCase()}
-                   </div>
-                   <div>
-                     <div className="font-semibold text-slate-900 dark:text-white">{refundTarget.email}</div>
-                     <div className="text-sm text-slate-500 mt-0.5">{t("admin.user.index.text.1y5eljv", "当前余额:")}<span className="font-mono">{refundTarget.balance}</span></div>
-                   </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t("admin.user.index.text.1qkqe0x", "退款金额")}</label>
-                  <div className="relative flex items-center">
-                    <span className="absolute left-3 text-slate-500 font-medium z-10">$</span>
-                    <input id="refund_amount" required name="amount" type="number" step="0.01" min="0.01" placeholder="0.00" className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl pl-8 pr-16 py-2.5 text-sm focus:outline-none focus:border-red-500 dark:focus:border-red-500 focus:ring-1 focus:ring-red-500 text-slate-900 dark:text-white shadow-sm transition-all" />
-                    <button type="button" onClick={() => setRefundAll(refundTarget)} className="absolute right-2 px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 rounded-md transition-colors">
-                      {t("admin.user.index.text.q6w6ul", "全部")}</button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212] rounded-b-2xl">
-                <button type="button" onClick={() => setRefundTarget(null)} className="px-5 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-[#1a1a1a] border border-slate-300 dark:border-zinc-700 hover:bg-slate-50 dark:hover:bg-zinc-800 rounded-xl transition-colors">
-                  {t("admin.group.index.text.1589w37", "取消")}</button>
-                <button type="submit" className="px-5 py-2.5 text-sm font-medium text-white bg-red-600 hover:bg-red-700 dark:bg-[rgba(164,54,54,1)] dark:hover:bg-red-800 rounded-xl shadow-sm transition-colors border border-transparent dark:border-[rgba(255,255,255,0.1)]">
-                  {t("admin.user.index.text.kre8wf", "确认")}</button>
-              </div>
-            </form>
-          </div>
-        </div>
+      {apiKeysTarget && (
+        <ApiKeysModal
+          apiKeys={apiKeysMap[apiKeysTarget.id] ?? []}
+          apiKeysLoadError={apiKeysLoadError}
+          onClose={() => setApiKeysTarget(null)}
+          onCreate={() => setIsCreateApiKeyModalOpen(true)}
+          onDelete={(keyId) => { void deleteApiKey(keyId); }}
+          target={apiKeysTarget}
+          t={t}
+        />
       )}
 
-      {/* RECORDS MODAL */}
-      {recordsTarget && (
-         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
-          <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-3xl h-[600px] overflow-hidden flex flex-col">
-            <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10 shrink-0">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <Wallet className="w-5 h-5 text-blue-500" />
-                {t("admin.user.index.text.uubfvk", "交易记录 -")}{recordsTarget.email}
-              </h3>
-              <button onClick={() => setRecordsTarget(null)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+      {groupsTarget && (
+        <GroupsModal
+          defaultUserGroupOptions={defaultUserGroupOptions}
+          groupsTarget={groupsTarget}
+          onClose={() => setGroupsTarget(null)}
+          onSubmit={handleGroupSubmit}
+          t={t}
+        />
+      )}
 
-            {/* Tabs */}
-            <div className="flex border-b border-slate-200 dark:border-white/10 px-5 shrink-0 bg-slate-50 dark:bg-[#121212]">
-                <button
-                  onClick={() => setRecordsTab('recharge')}
-                  className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors ${recordsTab === 'recharge' ? 'border-blue-500 text-blue-600 dark:text-blue-400' : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'}`}
-                >
-                  {t("admin.user.index.text.9z0mxn", "充值记录")}</button>
-                <button
-                  onClick={() => setRecordsTab('exchange')}
-                  className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors ${recordsTab === 'exchange' ? 'border-blue-500 text-blue-600 dark:text-blue-400' : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'}`}
-                >
-                  {t("admin.user.index.text.65nh81", "兑换记录")}</button>
-            </div>
+      {isCreateApiKeyModalOpen && (
+        <CreateApiKeyModal
+          onClose={() => setIsCreateApiKeyModalOpen(false)}
+          onSubmit={handleCreateApiKeySubmit}
+          t={t}
+        />
+      )}
 
-            {/* Content Area */}
-            <div className="flex-1 overflow-y-auto p-5">
-              <BusinessStatePanel
-                kind="empty"
-                title={recordsTab === 'recharge'
-                  ? t('admin.user.index.text.recordsEmptyRecharge', 'No recharge records loaded')
-                  : t('admin.user.index.text.recordsEmptyExchange', 'No exchange records loaded')}
-                description={t(
-                  'admin.user.index.text.recordsEmptyDescription',
-                  'Records are available from the billing history and recharge records modules; this user dialog does not synthesize transaction rows.',
-                )}
-                className="rounded-xl border border-dashed border-slate-200 bg-slate-50/70 dark:border-white/10 dark:bg-white/[0.02]"
+      {newlyCreatedKey && (
+        <RawApiKeyModal
+          onClose={() => setNewlyCreatedKey(null)}
+          rawKey={newlyCreatedKey}
+          t={t}
+        />
+      )}
+    </div>
+  );
+}
+
+type UserProfileModalProps = {
+  defaultUsername?: string;
+  email?: string;
+  onClose: () => void;
+  onSubmit: (event: React.FormEvent) => void;
+  title: string;
+  t: TranslationFunction;
+};
+
+function UserProfileModal({ defaultUsername, email, onClose, onSubmit, title, t }: UserProfileModalProps) {
+  const isCreate = !email;
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm">
+      <div className="flex w-full max-w-lg flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#1a1a1a]">
+        <div className="flex items-center justify-between border-b border-slate-200 p-5 dark:border-white/10">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-white">{title}</h3>
+          <button className="text-slate-400 transition-colors hover:text-slate-600 dark:hover:text-slate-200" onClick={onClose} type="button">
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+        <form className="flex flex-1 flex-col" onSubmit={onSubmit}>
+          <div className="flex-1 space-y-5 p-5">
+            {isCreate ? (
+              <div>
+                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">{t('admin.user.index.email', 'Email')}</label>
+                <input
+                  className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 shadow-sm transition-all focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-white/10 dark:bg-[#121212] dark:text-white"
+                  name="email"
+                  placeholder={t('admin.user.index.emailPlaceholder', 'Enter email')}
+                  required
+                  type="email"
+                />
+              </div>
+            ) : null}
+            <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2.5 text-sm text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300">
+              {isCreate
+                ? t('admin.user.index.text.passwordSetupCreate', 'Password setup is handled through registration and reset flows. This form creates the account profile.')
+                : t('admin.user.index.text.passwordSetupEdit', 'Password setup is managed by IAM registration and reset flows. No password update is sent from this profile dialog.')}
+            </div>
+            <div>
+              <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">{t('admin.user.index.username', 'Username')}</label>
+              <input
+                className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 shadow-sm transition-all focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-white/10 dark:bg-[#121212] dark:text-white"
+                defaultValue={defaultUsername}
+                name="username"
+                placeholder={t('admin.user.index.usernamePlaceholder', 'Enter username')}
+                type="text"
               />
             </div>
           </div>
-         </div>
-      )}
+          <div className="flex justify-end gap-3 border-t border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#121212]">
+            <button className="rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 dark:border-zinc-700 dark:bg-[#1a1a1a] dark:text-slate-300 dark:hover:bg-zinc-800" onClick={onClose} type="button">
+              {t('common.actions.cancel', 'Cancel')}
+            </button>
+            <button className="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700" type="submit">
+              {isCreate ? t('common.actions.create', 'Create') : t('common.actions.save', 'Save')}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
 
-      {/* EDIT USER MODAL */}
-      {editTarget && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
-          <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col">
-            <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t("admin.user.index.text.rndgbq", "编辑用户 -")}{editTarget.email}</h3>
-              <button onClick={() => setEditTarget(null)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
-                <X className="w-5 h-5" />
-              </button>
+type ApiKeysModalProps = {
+  apiKeys: ApiKeyItem[];
+  apiKeysLoadError: string | null;
+  onClose: () => void;
+  onCreate: () => void;
+  onDelete: (keyId: string) => void;
+  target: UserListItem;
+  t: TranslationFunction;
+};
+
+function ApiKeysModal({ apiKeys, apiKeysLoadError, onClose, onCreate, onDelete, target, t }: ApiKeysModalProps) {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm">
+      <div className="flex w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#1a1a1a]">
+        <div className="flex items-center justify-between border-b border-slate-200 p-5 dark:border-white/10">
+          <h3 className="flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-white">
+            <Key className="h-5 w-5 text-blue-500" />
+            {t('admin.user.index.apiKeysForUser', 'API keys - {{email}}', { email: target.email })}
+          </h3>
+          <button className="text-slate-400 transition-colors hover:text-slate-600 dark:hover:text-slate-200" onClick={onClose} type="button">
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+        <div className="space-y-4 p-5">
+          {apiKeysLoadError ? (
+            <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2.5 text-sm text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300">
+              {apiKeysLoadError}
             </div>
-
-            <form onSubmit={handleEditUserSubmit} className="flex flex-col flex-1">
-              <div className="p-5 space-y-5 flex-1">
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t("admin.user.index.text.u9jq8n", "用户名")}</label>
-                  <input name="username" type="text" defaultValue={editTarget.username !== '-' ? editTarget.username : ''} placeholder={t("admin.user.index.text.1j2tq2i", "请输入新的用户名")} className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-slate-900 dark:text-white shadow-sm transition-all" />
-                </div>
-                  <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2.5 text-sm text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300">
-                    {t('admin.user.index.text.passwordSetupEdit', 'Password setup is managed by IAM registration and reset flows. No password update is sent from this profile dialog.')}
-                  </div>
-              </div>
-              <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212] rounded-b-2xl">
-                <button type="button" onClick={() => setEditTarget(null)} className="px-5 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-[#1a1a1a] border border-slate-300 dark:border-zinc-700 hover:bg-slate-50 dark:hover:bg-zinc-800 rounded-xl transition-colors">
-                  {t("admin.group.index.text.1589w37", "取消")}</button>
-                <button type="submit" className="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 rounded-xl shadow-sm transition-colors">
-                  {t("admin.user.index.text.dwc9o9", "保存修改")}</button>
-              </div>
-            </form>
+          ) : null}
+          <button className="flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10" onClick={onCreate} type="button">
+            <Plus className="h-4 w-4" />
+            {t('admin.user.index.addApiKey', 'Add API key')}
+          </button>
+          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-white/10">
+            <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
+              <thead className="border-b border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-[#121212]">
+                <tr>
+                  <th className="px-4 py-3 font-medium">{t('admin.user.index.apiKeyName', 'Name')}</th>
+                  <th className="px-4 py-3 font-medium">{t('admin.user.index.apiKeyValue', 'Key')}</th>
+                  <th className="px-4 py-3 font-medium">{t('admin.user.index.apiKeyUsed', 'Used')}</th>
+                  <th className="px-4 py-3 font-medium">{t('admin.user.index.apiKeyStatus', 'Status')}</th>
+                  <th className="px-4 py-3 text-right font-medium">{t('admin.user.index.columns.actions', 'Actions')}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+                {apiKeys.length === 0 ? (
+                  <tr>
+                    <td className="px-4 py-6 text-center text-slate-500" colSpan={5}>
+                      {t('admin.user.index.noApiKeys', 'No API keys')}
+                    </td>
+                  </tr>
+                ) : apiKeys.map((key) => (
+                  <tr className="hover:bg-slate-50 dark:hover:bg-white/5" key={key.id}>
+                    <td className="px-4 py-3 text-slate-900 dark:text-white">{key.name}</td>
+                    <td className="px-4 py-3 font-mono text-xs text-slate-500">{key.key}</td>
+                    <td className="px-4 py-3">{key.used}</td>
+                    <td className="px-4 py-3">
+                      <span className="rounded bg-emerald-50 px-2 py-0.5 text-xs text-emerald-600 dark:bg-emerald-500/10">{key.status}</span>
+                    </td>
+                    <td className="px-4 py-3 text-right">
+                      <button className="text-xs font-medium text-slate-400 transition-colors hover:text-red-500" onClick={() => onDelete(key.id)} type="button">
+                        {t('common.actions.delete', 'Delete')}
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
-      )}
+      </div>
+    </div>
+  );
+}
 
-      {/* API KEYS MODAL */}
-      {apiKeysTarget && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
-          <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-2xl overflow-hidden flex flex-col">
-            <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <Key className="w-5 h-5 text-blue-500" /> {t("admin.user.index.text.15axwxa", "API密钥管理 -")}{apiKeysTarget.email}
-              </h3>
-              <button onClick={() => setApiKeysTarget(null)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <div className="p-5 space-y-4">
-              <button type="button" onClick={() => setIsCreateApiKeyModalOpen(true)} className="flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 dark:bg-white/5 dark:border-white/10 dark:text-white rounded-lg hover:bg-slate-100 dark:hover:bg-white/10 transition-colors text-sm font-medium">
-                <Plus className="w-4 h-4" /> {t("admin.user.index.text.jegmxz", "添加新的 API 密钥")}</button>
-              <div className="border border-slate-200 dark:border-white/10 rounded-xl overflow-hidden">
-                <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
-                  <thead className="bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
-                    <tr>
-                      <th className="px-4 py-3 font-medium">{t("admin.group.index.text.hzx914", "名称")}</th>
-                      <th className="px-4 py-3 font-medium">{t("admin.user.index.text.1sj8iyg", "密钥值")}</th>
-                      <th className="px-4 py-3 font-medium">{t("admin.user.index.text.i2uwd4", "已用额度")}</th>
-                      <th className="px-4 py-3 font-medium">{t("admin.finance.index.text.1ccx4t4", "状态")}</th>
-                      <th className="px-4 py-3 font-medium text-right">{t("admin.group.index.text.501w24", "操作")}</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-200 dark:divide-white/5">
-                    {(apiKeysMap[apiKeysTarget.id] || []).length === 0 ? (
-                      <tr>
-                        <td colSpan={5} className="px-4 py-6 text-center text-slate-500">
-                          {t("admin.user.index.text.1yo705o", "暂无 API 密钥")}</td>
-                      </tr>
-                    ) : (
-                      (apiKeysMap[apiKeysTarget.id] || []).map((key) => (
-                        <tr key={key.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
-                          <td className="px-4 py-3 text-slate-900 dark:text-white">{key.name}</td>
-                          <td className="px-4 py-3 font-mono text-xs text-slate-500">{key.key}</td>
-                          <td className="px-4 py-3">{key.used}</td>
-                          <td className="px-4 py-3"><span className="text-emerald-600 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded text-xs">{t("admin.marketing.index.text.5pm2ma", "启用")}</span></td>
-                          <td className="px-4 py-3 text-right">
-                            <button type="button" onClick={() => deleteApiKey(key.id)} className="text-slate-400 hover:text-red-500 transition-colors text-xs font-medium">
-                              {t("admin.group.index.text.1t2vi4h", "删除")}</button>
-                          </td>
-                        </tr>
-                      ))
-                    )}
-                  </tbody>
-                </table>
-              </div>
-            </div>
+type GroupsModalProps = {
+  defaultUserGroupOptions: ReadonlyArray<{ value: string; label: string }>;
+  groupsTarget: UserListItem;
+  onClose: () => void;
+  onSubmit: (event: React.FormEvent) => void;
+  t: TranslationFunction;
+};
+
+function GroupsModal({ defaultUserGroupOptions, groupsTarget, onClose, onSubmit, t }: GroupsModalProps) {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm">
+      <div className="flex w-full max-w-sm flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#1a1a1a]">
+        <div className="flex items-center justify-between border-b border-slate-200 p-5 dark:border-white/10">
+          <h3 className="flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-white">
+            <Users className="h-5 w-5 text-blue-500" />
+            {t('admin.user.index.assignGroup', 'Assign group')}
+          </h3>
+          <button className="text-slate-400 transition-colors hover:text-slate-600 dark:hover:text-slate-200" onClick={onClose} type="button">
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+        <form className="flex flex-col" onSubmit={onSubmit}>
+          <div className="p-5">
+            <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+              {t('admin.user.index.assignGroupForUser', 'Select group for {{email}}', { email: groupsTarget.email })}
+            </label>
+            <select
+              className="w-full cursor-pointer appearance-none rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 shadow-sm transition-all focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-white/10 dark:bg-[#121212] dark:text-white"
+              defaultValue={groupsTarget.group}
+              name="group"
+            >
+              {defaultUserGroupOptions.map((group) => (
+                <option key={group.value} value={group.value}>{group.label}</option>
+              ))}
+              {!defaultUserGroupOptions.some((group) => group.value === groupsTarget.group) && (
+                <option value={groupsTarget.group}>{t('admin.user.groups.current', '{{group}} (current)', { group: groupsTarget.group })}</option>
+              )}
+            </select>
+          </div>
+          <div className="flex justify-end gap-3 border-t border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#121212]">
+            <button className="rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 dark:border-zinc-700 dark:bg-[#1a1a1a] dark:text-slate-300 dark:hover:bg-zinc-800" onClick={onClose} type="button">
+              {t('common.actions.cancel', 'Cancel')}
+            </button>
+            <button className="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700" type="submit">
+              {t('common.actions.save', 'Save')}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+function CreateApiKeyModal({ onClose, onSubmit, t }: { onClose: () => void; onSubmit: (event: React.FormEvent) => void; t: TranslationFunction }) {
+  return (
+    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm">
+      <div className="flex w-full max-w-sm flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#1a1a1a]">
+        <div className="flex items-center justify-between border-b border-slate-200 p-5 dark:border-white/10">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t('admin.user.index.createApiKey', 'Create API key')}</h3>
+          <button className="text-slate-400 transition-colors hover:text-slate-600 dark:hover:text-slate-200" onClick={onClose} type="button">
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+        <form className="flex flex-col" onSubmit={onSubmit}>
+          <div className="p-5">
+            <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">{t('admin.user.index.apiKeyName', 'Name')}</label>
+            <input
+              className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 shadow-sm transition-all focus:border-blue-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
+              name="keyName"
+              placeholder={t('admin.user.index.apiKeyNamePlaceholder', 'Development environment')}
+              type="text"
+            />
+          </div>
+          <div className="flex justify-end gap-3 border-t border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#121212]">
+            <button className="rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 dark:border-zinc-700 dark:bg-[#1a1a1a] dark:text-slate-300 dark:hover:bg-zinc-800" onClick={onClose} type="button">
+              {t('common.actions.cancel', 'Cancel')}
+            </button>
+            <button className="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700" type="submit">
+              {t('admin.user.index.generateApiKey', 'Generate key')}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+function RawApiKeyModal({ onClose, rawKey, t }: { onClose: () => void; rawKey: string; t: TranslationFunction }) {
+  return (
+    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm">
+      <div className="flex w-full max-w-lg flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#1a1a1a]">
+        <div className="flex items-center justify-between border-b border-slate-200 p-5 dark:border-white/10">
+          <h3 className="flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-white">
+            <CheckCircle2 className="h-5 w-5 text-emerald-500" />
+            {t('admin.user.index.apiKeyCreated', 'API key created')}
+          </h3>
+          <button className="text-slate-400 transition-colors hover:text-slate-600 dark:hover:text-slate-200" onClick={onClose} type="button">
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+        <div className="space-y-6 p-6">
+          <div className="flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm leading-relaxed text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-400">
+            <Shield className="h-5 w-5 shrink-0" />
+            <div>{t('admin.user.index.copyApiKeyNotice', 'Copy this API key now. It cannot be shown again after this dialog closes.')}</div>
+          </div>
+          <div className="relative">
+            <input className="w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-4 pr-32 font-mono text-sm text-slate-900 dark:border-white/10 dark:bg-[#121212] dark:text-white" readOnly type="text" value={rawKey} />
+            <CopyButton
+              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50 dark:border-white/10 dark:bg-[#1a1a1a] dark:text-slate-300 dark:hover:bg-white/5"
+              copiedLabel={t('common.actions.copied', 'Copied')}
+              label={t('common.actions.copy', 'Copy')}
+              text={rawKey}
+              title={t('common.actions.copy', 'Copy')}
+              variant="inline"
+            />
           </div>
         </div>
-      )}
-
-      {/* GROUPS MODAL */}
-      {groupsTarget && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
-          <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-sm overflow-hidden flex flex-col">
-            <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <Users className="w-5 h-5 text-blue-500" /> {t("admin.user.index.text.1sl0na6", "分配分组")}</h3>
-              <button onClick={() => setGroupsTarget(null)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <form onSubmit={handleGroupSubmit} className="flex flex-col">
-              <div className="p-5">
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t("admin.user.index.text.zv14s8", "为用户")}{groupsTarget.email} {t("admin.user.index.text.1qui0bp", "选择分组")}</label>
-                <select name="group" defaultValue={groupsTarget.group} className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-slate-900 dark:text-white shadow-sm transition-all appearance-none cursor-pointer">
-                  {defaultUserGroupOptions.map((group) => (
-                    <option key={group.value} value={group.value}>{group.label}</option>
-                  ))}
-                  {!defaultUserGroupOptions.some((group) => group.value === groupsTarget.group) && (
-                    <option value={groupsTarget.group}>{t('admin.user.groups.current', '{{group}} (current)', { group: groupsTarget.group })}</option>
-                  )}
-                </select>
-              </div>
-              <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212]">
-                  <button type="button" onClick={() => setGroupsTarget(null)} className="px-5 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-[#1a1a1a] border border-slate-300 dark:border-zinc-700 hover:bg-slate-50 dark:hover:bg-zinc-800 rounded-xl transition-colors">
-                    {t("admin.group.index.text.1589w37", "取消")}</button>
-                  <button type="submit" className="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 rounded-xl shadow-sm transition-colors">
-                    {t("admin.group.index.text.1c3mapc", "保存")}</button>
-              </div>
-            </form>
-          </div>
+        <div className="flex justify-end border-t border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#121212]">
+          <button className="w-full rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 sm:w-auto" onClick={onClose} type="button">
+            {t('common.actions.done', 'Done')}
+          </button>
         </div>
-      )}
-      {/* CREATE API KEY MODAL */}
-      {isCreateApiKeyModalOpen && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
-          <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-sm overflow-hidden flex flex-col">
-            <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t("admin.user.index.text.12kqc6t", "创建新 API 密钥")}</h3>
-              <button onClick={() => setIsCreateApiKeyModalOpen(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <form onSubmit={handleCreateApiKeySubmit} className="flex flex-col">
-              <div className="p-5">
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t("admin.group.index.text.hzx914", "名称")}</label>
-                <input name="keyName" type="text" placeholder={t("admin.user.index.text.1tgxww1", "如：开发环境密钥")} className="w-full bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 text-slate-900 dark:text-white shadow-sm transition-all" />
-              </div>
-              <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212] rounded-b-2xl">
-                <button type="button" onClick={() => setIsCreateApiKeyModalOpen(false)} className="px-5 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-[#1a1a1a] border border-slate-300 dark:border-zinc-700 hover:bg-slate-50 dark:hover:bg-zinc-800 rounded-xl transition-colors">
-                  {t("admin.group.index.text.1589w37", "取消")}</button>
-                <button type="submit" className="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 rounded-xl shadow-sm transition-colors">
-                  {t("admin.user.index.text.4665sz", "生成密钥")}</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
-
-      {/* SHOW RAW KEY MODAL */}
-      {newlyCreatedKey && (
-        <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
-          <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col">
-            <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                 <CheckCircle2 className="w-5 h-5 text-emerald-500" />
-                 {t("admin.user.index.text.zarxao", "API 密钥创建成功")}</h3>
-              <button onClick={() => setNewlyCreatedKey(null)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <div className="p-6 space-y-6">
-              <div className="bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 text-amber-800 dark:text-amber-400 rounded-xl p-4 text-sm flex items-start gap-3">
-                 <Shield className="w-5 h-5 shrink-0" />
-                 <div className="leading-relaxed">{t("admin.user.index.text.odzkx6", "请立即复制您的 API 密钥。由于安全原因，您将无法再次查看此密钥的完整内容。如果丢失，请删除此密钥并重新创建。")}</div>
-              </div>
-              <div className="relative">
-                 <input type="text" readOnly value={newlyCreatedKey} className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-200 dark:border-white/10 rounded-xl pl-4 pr-32 py-3 text-sm font-mono text-slate-900 dark:text-white" />
-                  <CopyButton
-                    text={newlyCreatedKey}
-                    label={t("admin.user.index.text.1xbipwq", "复制")}
-                    copiedLabel={t("admin.marketing.index.text.alyyje", "已复制")}
-                    variant="inline"
-                    className="absolute right-2 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 shadow-sm transition-colors"
-                    title={t("admin.user.index.text.13wk0bb", "复制 API 密钥")}
-                  />
-              </div>
-            </div>
-            <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end bg-slate-50 dark:bg-[#121212]">
-                <button onClick={() => setNewlyCreatedKey(null)} className="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 rounded-xl shadow-sm transition-colors w-full sm:w-auto">
-                  {t("admin.user.index.text.m620qt", "我已经保存了此密钥")}</button>
-            </div>
-          </div>
-        </div>
-      )}
+      </div>
     </div>
   );
 }

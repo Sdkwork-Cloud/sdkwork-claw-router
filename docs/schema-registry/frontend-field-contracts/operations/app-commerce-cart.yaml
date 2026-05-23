@@ -1,0 +1,180 @@
+fragment: operations/app-commerce-cart
+frontend_operations:
+- route: /console/checkout
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  operation: appCartCurrentRetrieve
+  operation_id: cart.current.retrieve
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/cart/current
+  sdk_domain: commerce
+  summary: Cart Current Retrieve
+  description: Standard appbase commerce API for cart.current.retrieve; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_cart
+  - commerce_cart_item
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_price_list_item
+  - commerce_inventory_stock
+  - commerce_coupon
+  - commerce_coupon_redemption
+  query_parameters: []
+  response_schema:
+    name: CommerceStandardResourceResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    properties:
+      item:
+        type: object
+        additionalProperties: false
+        required:
+        - id
+        properties:
+          id:
+            type: string
+            minLength: 1
+            maxLength: 128
+          status:
+            type: string
+            nullable: true
+            maxLength: 64
+          createdAt:
+            type: string
+            nullable: true
+            maxLength: 64
+          updatedAt:
+            type: string
+            nullable: true
+            maxLength: 64
+- route: /console/checkout
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  operation: appCartItemsCreate
+  operation_id: cart.items.create
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/cart/items
+  sdk_domain: commerce
+  summary: Cart Items Create
+  description: Standard appbase commerce API for cart.items.create; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_cart
+  - commerce_cart_item
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_price_list_item
+  - commerce_inventory_stock
+  - commerce_coupon
+  - commerce_coupon_redemption
+  request_id_header: true
+  idempotency_required: true
+  write_tables:
+  - commerce_cart
+  - commerce_cart_item
+  - ops_audit_log
+  request_schema: &id001
+    name: CommerceStandardCommandRequest
+    type: object
+    additionalProperties: false
+    properties:
+      clientRequestNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      note:
+        type: string
+        maxLength: 512
+      metadata:
+        type: object
+        additionalProperties: true
+  response_schema: &id002
+    name: CommerceOperationResponse
+    type: object
+    additionalProperties: false
+    required:
+    - success
+    - requestNo
+    - status
+    properties:
+      success:
+        type: boolean
+      requestNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      status:
+        type: string
+        minLength: 1
+        maxLength: 64
+      paymentId:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 128
+      qrCodePayload:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 2048
+      qrCodeImageUrl:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 2048
+- route: /console/checkout
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  operation: appCartItemsUpdate
+  operation_id: cart.items.update
+  kind: update
+  api_surface: app
+  api_method: PATCH
+  api_path: /app/v3/api/cart/items/{cartItemId}
+  sdk_domain: commerce
+  summary: Cart Items Update
+  description: Standard appbase commerce API for cart.items.update; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_cart
+  - commerce_cart_item
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_price_list_item
+  - commerce_inventory_stock
+  - commerce_coupon
+  - commerce_coupon_redemption
+  request_id_header: true
+  idempotency_required: true
+  write_tables:
+  - commerce_cart_item
+  - ops_audit_log
+  request_schema: *id001
+  response_schema: *id002
+- route: /console/checkout
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  operation: appCartItemsDelete
+  operation_id: cart.items.delete
+  kind: delete
+  api_surface: app
+  api_method: DELETE
+  api_path: /app/v3/api/cart/items/{cartItemId}
+  sdk_domain: commerce
+  summary: Cart Items Delete
+  description: Standard appbase commerce API for cart.items.delete; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_cart
+  - commerce_cart_item
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_price_list_item
+  - commerce_inventory_stock
+  - commerce_coupon
+  - commerce_coupon_redemption
+  request_id_header: true
+  idempotency_required: true
+  write_tables:
+  - commerce_cart_item
+  - ops_audit_log
+  response_schema: *id002

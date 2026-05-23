@@ -25,16 +25,10 @@ class AiApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<GatewayTracesListResult>() {})
     }
 
-    /** Create Playground generation agent run */
-    suspend fun generationAgentRunsCreate(body: GenerationAgentRunCreateRequest): GenerationAgentRunsCreateResult? {
-        val raw = client.post(ApiPaths.appPath("/ai/generation_agent/runs"), body, null, null, "application/json")
-        return client.convertValue(raw, object : TypeReference<GenerationAgentRunsCreateResult>() {})
-    }
-
     /** List generation history */
-    suspend fun generationsList(): GenerationsListResult? {
+    suspend fun generationList(): GenerationListResult? {
         val raw = client.get(ApiPaths.appPath("/ai/generations"))
-        return client.convertValue(raw, object : TypeReference<GenerationsListResult>() {})
+        return client.convertValue(raw, object : TypeReference<GenerationListResult>() {})
     }
 
     /** List model rankings */

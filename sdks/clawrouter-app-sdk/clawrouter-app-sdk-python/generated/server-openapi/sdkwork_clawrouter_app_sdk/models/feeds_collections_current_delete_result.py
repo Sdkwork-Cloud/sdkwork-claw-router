@@ -11,5 +11,4 @@ class FeedsCollectionsCurrentDeleteResult:
     """Feeds collections current delete result schema exposed by Claw Router."""
     code: str
     data: Optional[ForumFeedItem] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

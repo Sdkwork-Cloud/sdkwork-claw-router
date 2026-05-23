@@ -231,6 +231,20 @@ const BROWSER_SMOKE_ADMIN_APP_RECORD = {
   updatedAt: "2026-05-09T00:00:00Z",
 };
 
+const BROWSER_SMOKE_ADMIN_APP_CATEGORY = {
+  id: "2001",
+  name: "Browser Smoke App Category",
+  description: "Production browser smoke app category.",
+  code: "browser-smoke-app-category",
+  icon: "/icons/browser-smoke-app.svg",
+  sortWeight: 1,
+  parentId: null,
+  path: "/apps/browser-smoke",
+  visible: true,
+  status: 1,
+  type: 999999,
+};
+
 const PRIVATE_PRICING_TOKENS = [
   "lowestUpstreamCostUnitPrice",
   "customerUnitPrice",
@@ -782,6 +796,14 @@ const BROWSER_SMOKE_COURSE_SECTIONS_BY_ID = new Map([
 ]);
 
 const APP_SDK_BROWSER_FIXTURES = new Map([
+  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/auth/sessions/current`, {
+    statusCode: 200,
+    body: {
+      code: "2000",
+      msg: "success",
+      data: BROWSER_SMOKE_SESSION,
+    },
+  }],
   [`${APP_SDK_MODEL_FIXTURE_MODE} GET /app/v3/api/ai/models`, {
     statusCode: 200,
     body: {
@@ -1084,7 +1106,54 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
   }],
 ]);
 
+const APP_SDK_SHARED_BROWSER_FIXTURES = new Map([
+  [`GET /app/v3/api/notification/notifications`, {
+    statusCode: 200,
+    body: {
+      code: "2000",
+      msg: "success",
+      data: {
+        items: [],
+      },
+    },
+  }],
+]);
+
 const BACKEND_SDK_BROWSER_FIXTURES = new Map([
+  [`${BACKEND_SDK_SKILL_FIXTURE_MODE} GET /backend/v3/api/system/installation/status`, {
+    statusCode: 200,
+    body: {
+      code: "2000",
+      msg: "success",
+      data: {
+        catalogSource: "browser-smoke",
+        catalogVersion: "2026.05.08.1",
+        environment: "production-smoke",
+        externalCatalog: false,
+        lastCatalogRefreshStatus: "ok",
+        schemaVersion: "2026-05-08",
+        seedProfile: "browser-smoke",
+        status: "ready",
+      },
+    },
+  }],
+  [`${BACKEND_SDK_APP_FIXTURE_MODE} GET /backend/v3/api/system/installation/status`, {
+    statusCode: 200,
+    body: {
+      code: "2000",
+      msg: "success",
+      data: {
+        catalogSource: "browser-smoke",
+        catalogVersion: "2026.05.08.1",
+        environment: "production-smoke",
+        externalCatalog: false,
+        lastCatalogRefreshStatus: "ok",
+        schemaVersion: "2026-05-08",
+        seedProfile: "browser-smoke",
+        status: "ready",
+      },
+    },
+  }],
   [`${BACKEND_SDK_SKILL_FIXTURE_MODE} GET /backend/v3/api/ecosystem/skills/categories`, {
     statusCode: 200,
     body: {
@@ -1122,6 +1191,16 @@ const BACKEND_SDK_BROWSER_FIXTURES = new Map([
       msg: "success",
       data: {
         items: [BROWSER_SMOKE_ADMIN_APP_RECORD],
+      },
+    },
+  }],
+  [`${BACKEND_SDK_APP_FIXTURE_MODE} GET /backend/v3/api/platform/apps/categories`, {
+    statusCode: 200,
+    body: {
+      code: "2000",
+      msg: "success",
+      data: {
+        items: [BROWSER_SMOKE_ADMIN_APP_CATEGORY],
       },
     },
   }],
@@ -1273,10 +1352,12 @@ const BROWSER_SMOKE_ROUTES = [
   },
   {
     pathName: "/admin/app?__browser-smoke-admin-app=1",
+    appSdkFixtureMode: APP_SDK_FIXTURE_MODE,
     backendSdkFixtureMode: BACKEND_SDK_APP_FIXTURE_MODE,
     requiresPortalSession: true,
     requiredTextTokens: [
       "App Store",
+      "Browser Smoke App Category",
       "Browser Smoke Admin App",
       "app-browser-smoke-admin",
       "com.sdkwork.browser.smoke",
@@ -1291,6 +1372,7 @@ const BROWSER_SMOKE_ROUTES = [
   },
   {
     pathName: "/admin/skill?__browser-smoke-admin-skill=1",
+    appSdkFixtureMode: APP_SDK_FIXTURE_MODE,
     backendSdkFixtureMode: BACKEND_SDK_SKILL_FIXTURE_MODE,
     requiresPortalSession: true,
     requiredTextTokens: [
@@ -1568,7 +1650,7 @@ const BROWSER_SMOKE_ROUTES = [
   {
     pathName: "/apps?__browser-smoke-empty=1",
     appSdkFixtureMode: APP_SDK_EMPTY_FIXTURE_MODE,
-    requiredTextTokens: ["No apps found", "Try adjusting your search or filters."],
+    requiredTextTokens: ["No apps found", "We couldn't find any apps matching your current filters."],
     forbiddenTextTokens: ["Browser Smoke App", "Apps could not be loaded"],
   },
   {
@@ -1577,7 +1659,7 @@ const BROWSER_SMOKE_ROUTES = [
     setupExpressions: [
       setRouteTextInputByPlaceholder("Search apps...", "no-match-browser-smoke-app"),
     ],
-    requiredTextTokens: ["No apps found", "Try adjusting your search or filters."],
+    requiredTextTokens: ["No apps found", "We couldn't find any apps matching your current filters."],
     requiredDomExpressions: [
       `document.querySelector('input[placeholder="Search apps..."]')?.value === "no-match-browser-smoke-app"`,
     ],
@@ -1807,9 +1889,9 @@ const BROWSER_SMOKE_ROUTES = [
       bodyTextIncludesExpression("Browser smoke playground response"),
       clickRouteResponseTabByExactText("Raw"),
       installRouteDownloadProbe(),
-      clickRouteButtonByExactText("Save Response"),
+      clickRouteSaveResponseButton(),
       installRouteClipboardProbe(),
-      clickRouteButtonByTitle("Copy Response"),
+      clickRouteCopyResponseButton(),
       clickRouteResponseTabByExactText("Headers"),
     ],
     requiredTextTokens: [
@@ -1825,7 +1907,7 @@ const BROWSER_SMOKE_ROUTES = [
     ],
     requiredDomExpressions: [
       `Boolean(document.querySelector('button[title="Save Response"]'))`,
-      `Boolean(document.querySelector('button[title="Copy Response"]'))`,
+      `Array.from(document.querySelectorAll('button')).some((button) => button instanceof HTMLButtonElement && button.getAttribute('title')?.trim().toLowerCase() === "copy response")`,
       `window.__BROWSER_SMOKE_DOWNLOAD__?.download === "playground-response-200-ok.json"`,
       `window.__BROWSER_SMOKE_DOWNLOAD__?.href?.startsWith("blob:")`,
       `window.__BROWSER_SMOKE_CLIPBOARD__?.includes("Browser smoke playground response")`,
@@ -1851,9 +1933,9 @@ const BROWSER_SMOKE_ROUTES = [
       clickRouteResponseTabByExactText("Raw"),
       bodyTextIncludesExpression("null"),
       installRouteClipboardProbe(),
-      clickRouteButtonByTitle("Copy Response"),
+      clickRouteCopyResponseButton(),
       installRouteDownloadProbe(),
-      clickRouteButtonByExactText("Save Response"),
+      clickRouteSaveResponseButton(),
       clickRouteResponseTabByExactText("Headers"),
     ],
     requiredTextTokens: [
@@ -1872,7 +1954,7 @@ const BROWSER_SMOKE_ROUTES = [
     ],
     requiredDomExpressions: [
       `Boolean(document.querySelector('button[title="Save Response"]'))`,
-      `Boolean(document.querySelector('button[title="Copy Response"]'))`,
+      `Array.from(document.querySelectorAll('button')).some((button) => button instanceof HTMLButtonElement && button.getAttribute('title')?.trim().toLowerCase() === "copy response")`,
       `window.__BROWSER_SMOKE_CLIPBOARD__ === "null"`,
       `window.__BROWSER_SMOKE_DOWNLOAD__?.download === "playground-response-200-ok.json"`,
       `window.__BROWSER_SMOKE_DOWNLOAD__?.href?.startsWith("blob:")`,
@@ -2492,7 +2574,7 @@ async function waitForRouteDomExpressions(cdp, pathName, requiredDomExpressions)
         headings: Array.from(document.querySelectorAll('h1,h2,h3')).map((heading) => heading.textContent?.trim() ?? '').slice(0, 80),
       }))()`);
       throw new Error(
-        `${error instanceof Error ? error.message : String(error)}; DOM diagnostics: ${stringifyBrowserDiagnostics(diagnostics)}`,
+        `${error instanceof Error ? error.message : String(error)}; expression: ${expression}; DOM diagnostics: ${stringifyBrowserDiagnostics(diagnostics)}`,
       );
     }
   }
@@ -2583,6 +2665,90 @@ function clickRouteCourseRelatedLinkByTitle(title) {
 function clickRouteButtonByTitle(title) {
   return `(() => {
     const button = document.querySelector(${JSON.stringify(`button[title="${title}"]`)});
+    if (!(button instanceof HTMLButtonElement)) {
+      return false;
+    }
+    button.click();
+    return true;
+  })()`;
+}
+
+function clickRouteCopyResponseButton() {
+  return `(() => {
+    const findResponseShell = () => {
+      const buttons = Array.from(document.querySelectorAll('button'))
+        .filter((item) => item instanceof HTMLButtonElement);
+      for (const button of buttons) {
+        const label = button.textContent?.trim();
+        const title = button.getAttribute('title')?.trim().toLowerCase();
+        if (label !== 'Save Response' && title !== 'save response') {
+          continue;
+        }
+        let shell = button.parentElement;
+        for (let depth = 0; depth < 8 && shell; depth += 1) {
+          if (
+            shell instanceof HTMLElement
+            && shell.innerText.includes('Status:')
+            && shell.innerText.includes('Save Response')
+            && shell.innerText.includes('Copy')
+          ) {
+            return shell;
+          }
+          shell = shell.parentElement;
+        }
+      }
+      return null;
+    };
+    const playground = findResponseShell();
+    if (!(playground instanceof HTMLElement)) {
+      return false;
+    }
+    const buttons = Array.from(playground.querySelectorAll('button'))
+      .filter((item) => item instanceof HTMLButtonElement);
+    const button = buttons.find((item) => item.getAttribute('title')?.trim().toLowerCase() === 'copy response')
+      ?? buttons.find((item) => item.textContent?.trim() === 'Copy');
+    if (!(button instanceof HTMLButtonElement)) {
+      return false;
+    }
+    button.click();
+    return true;
+  })()`;
+}
+
+function clickRouteSaveResponseButton() {
+  return `(() => {
+    const findResponseShell = () => {
+      const buttons = Array.from(document.querySelectorAll('button'))
+        .filter((item) => item instanceof HTMLButtonElement);
+      for (const button of buttons) {
+        const label = button.textContent?.trim();
+        const title = button.getAttribute('title')?.trim().toLowerCase();
+        if (label !== 'Save Response' && title !== 'save response') {
+          continue;
+        }
+        let shell = button.parentElement;
+        for (let depth = 0; depth < 8 && shell; depth += 1) {
+          if (
+            shell instanceof HTMLElement
+            && shell.innerText.includes('Status:')
+            && shell.innerText.includes('Save Response')
+            && shell.innerText.includes('Copy')
+          ) {
+            return shell;
+          }
+          shell = shell.parentElement;
+        }
+      }
+      return null;
+    };
+    const playground = findResponseShell();
+    if (!(playground instanceof HTMLElement)) {
+      return false;
+    }
+    const buttons = Array.from(playground.querySelectorAll('button'))
+      .filter((item) => item instanceof HTMLButtonElement);
+    const button = buttons.find((item) => item.getAttribute('title')?.trim().toLowerCase() === 'save response')
+      ?? buttons.find((item) => item.textContent?.trim() === 'Save Response');
     if (!(button instanceof HTMLButtonElement)) {
       return false;
     }
@@ -3152,6 +3318,12 @@ function createRetryFixtureResolver() {
 }
 
 function resolveAppSdkFixture(appSdkFixtureMode, request, resolveRetryFixture = () => null) {
+  const method = String(request.method ?? "GET").toUpperCase();
+  const pathName = normalizeFixtureUrlPath(request.url);
+  const sharedFixture = APP_SDK_SHARED_BROWSER_FIXTURES.get(`${method} ${pathName}`);
+  if (sharedFixture) {
+    return sharedFixture;
+  }
   if (!appSdkFixtureMode) {
     return null;
   }
@@ -3161,8 +3333,6 @@ function resolveAppSdkFixture(appSdkFixtureMode, request, resolveRetryFixture = 
       return retryFixture;
     }
   }
-  const method = String(request.method ?? "GET").toUpperCase();
-  const pathName = normalizeFixtureUrlPath(request.url);
   const courseFixture = resolveCourseAppSdkFixture(request);
   if (courseFixture) {
     return courseFixture;

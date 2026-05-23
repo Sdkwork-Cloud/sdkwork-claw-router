@@ -25,7 +25,7 @@ export function ChatMessageList({
 
   if (loading && messages.length === 0) {
     return (
-      <div style={bottomPaddingStyle} className="mx-auto flex min-h-full w-full max-w-2xl flex-col items-center justify-center px-6 pt-20 text-center">
+      <div style={bottomPaddingStyle} className="mx-auto flex min-h-full w-full max-w-5xl flex-col items-center justify-center px-4 pt-20 text-center">
         <Loader2 className="mb-4 h-6 w-6 animate-spin text-slate-500" />
         <p className="text-sm text-slate-500">{t('playground.chat.messagesLoading')}</p>
       </div>
@@ -34,7 +34,7 @@ export function ChatMessageList({
 
   if (messages.length === 0) {
     return (
-      <div style={bottomPaddingStyle} className="mx-auto flex min-h-full w-full max-w-2xl flex-col items-center justify-center px-6 pt-20 text-center">
+      <div style={bottomPaddingStyle} className="mx-auto flex min-h-full w-full max-w-5xl flex-col items-center justify-center px-4 pt-20 text-center">
         <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/5 text-cyan-300">
           <MessageSquareText className="h-7 w-7" />
         </div>
@@ -46,7 +46,7 @@ export function ChatMessageList({
   }
 
   return (
-    <div style={bottomPaddingStyle} className="mx-auto flex w-full max-w-4xl flex-col gap-6 px-4 pt-6 md:px-8">
+    <div style={bottomPaddingStyle} className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 pt-6 md:px-8">
       {loading && messages.length > 0 && (
         <div className="rounded-xl border border-white/5 bg-white/5 px-4 py-3 text-sm text-slate-400">
           {t('playground.chat.messagesLoading')}

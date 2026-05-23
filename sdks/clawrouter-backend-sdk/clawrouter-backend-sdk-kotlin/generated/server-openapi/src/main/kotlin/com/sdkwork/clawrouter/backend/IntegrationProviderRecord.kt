@@ -2,7 +2,7 @@ package com.sdkwork.clawrouter.backend
 
 data class IntegrationProviderRecord(
     val authType: String? = null,
-    val baseUrlTemplate: String? = null,
+    val baseUrl: String? = null,
     val capabilities: Map<String, String>? = null,
     val colorToken: String? = null,
     val createdAt: String? = null,

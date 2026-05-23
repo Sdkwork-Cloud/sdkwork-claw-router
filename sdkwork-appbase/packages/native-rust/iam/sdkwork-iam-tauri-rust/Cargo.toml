@@ -1,0 +1,13 @@
+[package]
+name = "sdkwork_iam_tauri"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "SDKWork IAM Tauri host adapter contract for local/private deployments."
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+sdkwork_iam_core = { path = "../sdkwork-iam-core-rust" }
+sdkwork_iam_http = { path = "../sdkwork-iam-http-rust" }

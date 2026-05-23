@@ -68,11 +68,12 @@ client.set_header('X-Custom-Header', 'value')
 
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.billing` - billing API
+- `client.commerce` - commerce API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.integration` - integration API
+- `client.open_platform` - open_platform API
 - `client.platform` - platform API
 - `client.system` - system API
 
@@ -90,7 +91,7 @@ params = {
     'page': 5,
     'page_size': 6,
 }
-result = client.agents.list(params)
+result = client.agents.agent_definitions.list(params)
 print(result)
 ```
 
@@ -102,11 +103,11 @@ result = client.ai.model_vendors.list()
 print(result)
 ```
 
-### billing
+### commerce
 
 ```python
-# List referral stats
-result = client.billing.referrals.stats.list()
+# Commerce Reports Payment Reconciliation Retrieve
+result = client.commerce.commerce_reports.payment_reconciliation.retrieve()
 print(result)
 ```
 
@@ -142,20 +143,22 @@ result = client.integration.channels.list()
 print(result)
 ```
 
+### open_platform
+
+```python
+# List open platform providers
+params = {
+    'status': 'active',
+}
+result = client.open_platform.providers.list(params)
+print(result)
+```
+
 ### platform
 
 ```python
-# List apps
-params = {
-    'q': 'q',
-    'status': 'ACTIVE',
-    'market_status': 'DRAFT',
-    'app_type': 'app_type',
-    'page': 5,
-    'page_size': 6,
-}
-x_request_id = 'X-Request-Id'
-result = client.platform.apps.list(params, x_request_id)
+# List app categories
+result = client.platform.apps.categories.list()
 print(result)
 ```
 

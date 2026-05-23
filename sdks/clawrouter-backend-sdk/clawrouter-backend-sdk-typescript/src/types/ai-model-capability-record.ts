@@ -44,8 +44,6 @@ export interface AiModelCapabilityRecord {
   parameter_name?: string;
   /** Parameter schema field on ai model capability record. */
   parameter_schema?: Record<string, JsonValue>;
-  /** Region code field on ai model capability record. */
-  region_code: string;
   /** Schema version field on ai model capability record. */
   schema_version?: string;
   /** Sort order field on ai model capability record. */

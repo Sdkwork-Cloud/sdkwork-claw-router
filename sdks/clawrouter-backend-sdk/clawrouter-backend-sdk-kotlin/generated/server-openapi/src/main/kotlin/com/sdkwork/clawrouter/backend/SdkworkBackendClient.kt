@@ -4,11 +4,12 @@ import com.sdkwork.common.core.SdkConfig
 import com.sdkwork.clawrouter.backend.http.HttpClient
 import com.sdkwork.clawrouter.backend.api.AgentsApi
 import com.sdkwork.clawrouter.backend.api.AiApi
-import com.sdkwork.clawrouter.backend.api.BillingApi
+import com.sdkwork.clawrouter.backend.api.CommerceApi
 import com.sdkwork.clawrouter.backend.api.ContentApi
 import com.sdkwork.clawrouter.backend.api.EcosystemApi
 import com.sdkwork.clawrouter.backend.api.IamApi
 import com.sdkwork.clawrouter.backend.api.IntegrationApi
+import com.sdkwork.clawrouter.backend.api.OpenPlatformApi
 import com.sdkwork.clawrouter.backend.api.PlatformApi
 import com.sdkwork.clawrouter.backend.api.SystemApi
 
@@ -17,11 +18,12 @@ class SdkworkBackendClient {
 
     lateinit var agents: AgentsApi
     lateinit var ai: AiApi
-    lateinit var billing: BillingApi
+    lateinit var commerce: CommerceApi
     lateinit var content: ContentApi
     lateinit var ecosystem: EcosystemApi
     lateinit var iam: IamApi
     lateinit var integration: IntegrationApi
+    lateinit var openPlatform: OpenPlatformApi
     lateinit var platform: PlatformApi
     lateinit var system: SystemApi
 
@@ -29,11 +31,12 @@ class SdkworkBackendClient {
         this.httpClient = HttpClient(baseUrl)
         agents = AgentsApi(httpClient)
         ai = AiApi(httpClient)
-        billing = BillingApi(httpClient)
+        commerce = CommerceApi(httpClient)
         content = ContentApi(httpClient)
         ecosystem = EcosystemApi(httpClient)
         iam = IamApi(httpClient)
         integration = IntegrationApi(httpClient)
+        openPlatform = OpenPlatformApi(httpClient)
         platform = PlatformApi(httpClient)
         system = SystemApi(httpClient)
     }
@@ -42,11 +45,12 @@ class SdkworkBackendClient {
         this.httpClient = HttpClient(config)
         agents = AgentsApi(httpClient)
         ai = AiApi(httpClient)
-        billing = BillingApi(httpClient)
+        commerce = CommerceApi(httpClient)
         content = ContentApi(httpClient)
         ecosystem = EcosystemApi(httpClient)
         iam = IamApi(httpClient)
         integration = IntegrationApi(httpClient)
+        openPlatform = OpenPlatformApi(httpClient)
         platform = PlatformApi(httpClient)
         system = SystemApi(httpClient)
     }

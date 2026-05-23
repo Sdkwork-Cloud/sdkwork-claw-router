@@ -66,6 +66,10 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
                 Write generated/openapi/clawrouter-app-openapi.json.
                 Write generated/openapi/clawrouter-backend-openapi.json.
                 Write apps/sdkwork-claw-router-portal/public/openapi.json with tools.clawrouter_gateway_openapi_generator.
+                app/backend SDK generation uses the authority OpenAPI snapshots.
+                open SDK generation uses openapi/clawrouter-open-sdk.sdkgen.json.
+                .sdkwork-assembly.json generationInputSpec declares the actual generation input.
+                .sdkwork-assembly.json derivedSpecs declares derived generator artifacts.
                 Run sdkwork-sdk-generator.
                 Never hand-edit generated SDK output.
                 """,
@@ -547,6 +551,10 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
             Write generated/openapi/clawrouter-app-openapi.json.
             Write generated/openapi/clawrouter-backend-openapi.json.
             Write apps/sdkwork-claw-router-portal/public/openapi.json with tools.clawrouter_gateway_openapi_generator.
+            app/backend SDK generation uses the authority OpenAPI snapshots.
+            open SDK generation uses openapi/clawrouter-open-sdk.sdkgen.json.
+            .sdkwork-assembly.json generationInputSpec declares the actual generation input.
+            .sdkwork-assembly.json derivedSpecs declares derived generator artifacts.
             Run sdkwork-sdk-generator.
             Never hand-edit generated SDK output.
             """,

@@ -59,6 +59,17 @@ clawrouter-windows-x64-archive-0.3.0.zip
 node scripts\plan-claw-router-install-packages.mjs --json
 ```
 
+从源码仓库构建 Linux x64 service release：
+
+```bash
+pnpm release:env:write -- --check
+pnpm release:env:write -- --force
+pnpm build
+pnpm install:package:build -- --package-id linux-x64-service
+```
+
+生成的 Ubuntu/Debian 安装包使用公开制品名 `clawrouter-linux-x64-server-0.3.0.deb`。
+
 ## 2. 快速安装路径
 
 ### Ubuntu/Debian 服务部署
@@ -372,11 +383,11 @@ macOS: ~/Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite
 
 `archive`、`service`、`container` 包默认使用 PostgreSQL。请在 TOML 中配置 `host`、`port`、`database`、`username`，并使用 `password_file` 或受保护的 `password`。生产环境优先使用 `password_file`。
 
-Redis 也纳入同一个运行时 TOML 标准，但默认可选且关闭：
+Redis 也纳入同一个运行时 TOML 标准。`archive`、`service`、`container` 服务端包默认启用并要求 Redis：
 
 ```toml
 [redis]
-enabled = false
+enabled = true
 host = "redis.example.com"
 port = 6379
 database = 0
@@ -392,7 +403,7 @@ command_timeout_millis = 1000
 pool_idle_timeout_seconds = 60
 ```
 
-除非部署需要共享缓存、分布式锁、队列或限流桶，否则保持 `[redis].enabled = false`。启用 Redis 时优先配置 `host`、`port`、`database`；只有托管 Redis 端点无法用分离字段清晰表达时，才使用 `url` 作为高级覆盖。优先使用 `password_file`，不要把密码直接写入普通配置文件。Linux service 安装使用 `/etc/clawrouter/redis.secret`；container 包使用 `/run/secrets/clawrouter-redis-password` 挂载。
+server 部署保持 `[redis].enabled = true`，首次启动前配置 `host`、`port`、`database`；只有托管 Redis 端点无法用分离字段清晰表达时，才使用 `url` 作为高级覆盖。优先使用 `password_file`，不要把密码直接写入普通配置文件。Linux service 安装使用 `/etc/clawrouter/redis.secret`；container 包使用 `/run/secrets/clawrouter-redis-password` 挂载。desktop 包仍保持 Redis 可选且默认关闭。
 
 `[edge]` 负责打包后的 Rust edge server、上游服务目标、portal 静态资源目录、上游超时和额外 CORS origin allowlist。同源打包部署保持 `cors_allowed_origins` 为空；只有外部可信 portal 或 CDN 必须从不同浏览器 origin 调用 edge API 时，才填写明确的 HTTP/HTTPS origin。通配符和带 path 的 origin 会被拒绝。`[portal.static]` 将 HTML/runtime env 的 no-store 响应与长期缓存的 hash 静态资源分离。`[portal.security]` 控制浏览器侧安全策略；只有公网主机名已经通过 HTTPS 访问时才启用 HSTS，启用 preload 时保持 `hsts_max_age_seconds >= 31536000` 且 `hsts_include_subdomains = true`。`csp_frame_src` 只填写允许 portal 嵌入的明确信任 HTTP/HTTPS origin。`[portal.tools]` 将可选工具 API 的请求体限制和限流放在 TOML 中。`[provider_relay.runtime]` 控制 OpenAI-compatible 上游响应超时和渠道健康检查超时。`[provider_relay.retry]` 是数据库路由渠道未单独定义 retry policy 时使用的默认重试策略。`[courses]` 控制本地课程视频上传大小；反向代理、容器 ingress 和负载均衡的请求体限制应不低于 `video_upload_body_limit_bytes`。`[request_limits]` 控制后台应用 JSON、后台技能 JSON、公开论坛 JSON 和支付回调请求体限制；负载均衡、反向代理和容器 ingress 的限制应与这些值保持一致。`[observability]` 负责生产日志默认策略：`log_filter` 是 tracing 过滤器，`log_format` 可选 `compact`、`json`、`pretty` 或 `full`，systemd 和 container 日志建议保持 `log_ansi = false`，target/thread 字段控制输出的日志元信息；`RUST_LOG` 只建议作为临时进程级覆盖。
 
@@ -483,6 +494,37 @@ curl http://127.0.0.1:3900/readyz
 
 `/healthz` 表示 edge 进程已运行。`/readyz` 表示数据库相关的 app/admin/gateway 就绪。
 
+### Nginx 反向代理
+
+生产 nginx 站点文件遵循 SDKWork site-family 约定：
+
+```text
+/etc/nginx/sites-enabled/sdkwork/<domain>.conf
+```
+
+`<domain>` 是完整公网域名，同时也是文件名主体。例如 `api.sdkwork.com` 部署到 `/etc/nginx/sites-enabled/sdkwork/api.sdkwork.com.conf`，`www.sdkwork.com` 部署到 `/etc/nginx/sites-enabled/sdkwork/www.sdkwork.com.conf`。
+
+服务本机健康检查通过后，可以从源码仓库渲染或部署 nginx 配置：
+
+```bash
+pnpm nginx:plan -- --domain api.sdkwork.com
+pnpm nginx:render -- --domain api.sdkwork.com --output-root target/nginx
+sudo pnpm nginx:deploy -- --domain api.sdkwork.com --cert-name sdkwork.com
+sudo nginx -t
+sudo systemctl reload nginx
+curl https://api.sdkwork.com/healthz
+curl https://api.sdkwork.com/readyz
+```
+
+生成配置默认代理到 release edge server `http://127.0.0.1:3900`，证书路径标准化为：
+
+```text
+/opt/certs/letsencrypt/live/sdkwork.com/fullchain.pem
+/opt/certs/letsencrypt/live/sdkwork.com/privkey.pem
+```
+
+如果证书或 nginx 安装布局不同，使用 `--cert-name`、`--cert-root`、`--output` 或 `--output-root` 覆盖。仓库内的通用 nginx 模板是 `etc/nginx/NGINX_SAMPLE.conf`，完整域名示例是 `etc/nginx/sdkwork/api.sdkwork.com.conf` 和 `etc/nginx/sdkwork/www.sdkwork.com.conf`；`etc/nginx/API_SAMPLE.conf` 只作为旧的 API 兼容样例保留。
+
 ## 7. 容器包
 
 `container` 包包含：
@@ -523,5 +565,6 @@ docker run --rm -p 3900:3900 \
 - `invalid_state`：当前安装状态不能满足请求的命令。
 - `database_error`：数据库不可达、权限不足或 schema 初始化失败。
 - `catalog_error`：模型目录路径、版本或内容校验失败。
+- `commerce_error`：Commerce bootstrap schema 或种子数据初始化失败。
 - `/healthz` 成功但 `/readyz` 失败：edge 进程已启动，但 gateway/admin/app/portal upstream 或数据库未就绪。
 - Linux 服务启动后立即退出：检查 `/etc/clawrouter/clawrouter.toml`、`/etc/clawrouter/database.secret`、`/etc/clawrouter/clawrouter.env` 和 `journalctl -u clawrouter`。

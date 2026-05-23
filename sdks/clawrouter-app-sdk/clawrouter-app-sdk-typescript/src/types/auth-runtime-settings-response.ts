@@ -14,6 +14,8 @@ export interface AuthRuntimeSettingsResponse {
   oauthRegion?: 'mainland' | 'overseas';
   /** Qr login enabled field on auth runtime settings response. */
   qrLoginEnabled: boolean;
+  /** Qr login type field on auth runtime settings response. */
+  qrLoginType: 'web' | 'official' | 'mini';
   /** Recovery methods field on auth runtime settings response. */
   recoveryMethods: ('email' | 'phone')[];
   /** Register methods field on auth runtime settings response. */

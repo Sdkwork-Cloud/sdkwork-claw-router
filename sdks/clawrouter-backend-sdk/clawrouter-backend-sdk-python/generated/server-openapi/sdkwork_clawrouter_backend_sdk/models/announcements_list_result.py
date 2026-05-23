@@ -11,5 +11,4 @@ class AnnouncementsListResult:
     """Announcements list result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminAnnouncementsResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

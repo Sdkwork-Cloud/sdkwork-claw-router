@@ -7,6 +7,10 @@ pub struct AiAgentRunRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub agent_id: Option<String>,
 
+    /// Agent session id field on ai agent run record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub agent_session_id: Option<String>,
+
     /// Agent version id field on ai agent run record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub agent_version_id: Option<String>,
@@ -63,6 +67,10 @@ pub struct AiAgentRunRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub legal_hold: Option<bool>,
 
+    /// Memory space id field on ai agent run record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub memory_space_id: Option<String>,
+
     /// Metadata field on ai agent run record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub metadata: Option<std::collections::HashMap<String, String>>,
@@ -70,6 +78,10 @@ pub struct AiAgentRunRecord {
     /// Metering status field on ai agent run record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub metering_status: Option<String>,
+
+    /// Model field on ai agent run record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub model: Option<String>,
 
     /// Organization id field on ai agent run record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -99,13 +111,13 @@ pub struct AiAgentRunRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub retention_until: Option<String>,
 
-    /// Run status field on ai agent run record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub run_status: Option<String>,
-
     /// Run uuid field on ai agent run record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub run_uuid: Option<String>,
+
+    /// Runtime field on ai agent run record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub runtime: Option<String>,
 
     /// Source surface field on ai agent run record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -142,6 +154,10 @@ pub struct AiAgentRunRecord {
     /// Usage fact id field on ai agent run record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub usage_fact_id: Option<String>,
+
+    /// Usage json field on ai agent run record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub usage_json: Option<std::collections::HashMap<String, String>>,
 
     /// User id field on ai agent run record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

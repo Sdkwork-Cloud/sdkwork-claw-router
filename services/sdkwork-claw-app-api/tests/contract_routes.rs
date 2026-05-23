@@ -1,7 +1,16 @@
 use axum::body::Body;
 use axum::http::{Method, Request, StatusCode};
+use sdkwork_claw_config::DatabaseConfig;
+use sdkwork_claw_test_support::{
+    api_key_security_config, app_session_config, payment_webhook_config, trusted_subject_config,
+};
 use serde_json::Value;
+use std::sync::atomic::{AtomicU64, Ordering};
+use std::sync::{Mutex, OnceLock};
+use std::time::{SystemTime, UNIX_EPOCH};
 use tower::ServiceExt;
+
+static SQLITE_DB_SEQUENCE: AtomicU64 = AtomicU64::new(0);
 
 async fn call(method: Method, uri: &str) -> (StatusCode, Value) {
     let response = sdkwork_claw_app_api::router()
@@ -48,12 +57,52 @@ async fn app_contract_routes_return_standard_not_implemented_envelope() {
 }
 
 #[tokio::test]
-async fn app_redeem_code_route_requires_trusted_subject_with_json_body() {
+async fn database_config_router_exposes_sdk_reference_generation_route() {
+    let _guard = env_guard().lock().unwrap();
+    clear_generator_env();
+
+    let router =
+        sdkwork_claw_app_api::router_with_database_config_api_key_trusted_subject_and_app_session_config(
+            DatabaseConfig::from_url_with_max_connections(unique_sqlite_url().as_str(), 1).unwrap(),
+            api_key_security_config().unwrap(),
+            trusted_subject_config().unwrap(),
+            app_session_config().unwrap(),
+            payment_webhook_config().unwrap(),
+        )
+        .await
+        .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method(Method::POST)
+                .uri("/app/v3/api/sdk_reference/documentation")
+                .header("content-type", "application/json")
+                .body(Body::from(sdk_reference_request_body()))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    let status = response.status();
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: Value = serde_json::from_slice(&body).unwrap();
+
+    assert_eq!(StatusCode::SERVICE_UNAVAILABLE, status);
+    assert_eq!("5030", payload["code"]);
+    assert_eq!("SDK generator is not configured", payload["msg"]);
+
+    clear_generator_env();
+}
+
+#[tokio::test]
+async fn app_coupon_redemption_route_is_not_product_local_without_appbase_store() {
     let response = sdkwork_claw_app_api::router()
         .oneshot(
             Request::builder()
                 .method(Method::POST)
-                .uri("/app/v3/api/billing/coupons/redeem")
+                .uri("/app/v3/api/coupons/redemptions")
                 .header("content-type", "application/json")
                 .body(Body::from(r#"{"code":"WELCOME"}"#))
                 .unwrap(),
@@ -66,8 +115,136 @@ async fn app_redeem_code_route_requires_trusted_subject_with_json_body() {
         .unwrap();
     let payload: Value = serde_json::from_slice(&body).unwrap();
 
-    assert_eq!(StatusCode::UNAUTHORIZED, status);
-    assert_eq!("4010", payload["code"]);
+    assert_eq!(StatusCode::NOT_IMPLEMENTED, status);
+    assert_eq!("5010", payload["code"]);
+}
+
+fn sdk_reference_request_body() -> String {
+    serde_json::json!({
+        "spec": {
+            "openapi": "3.1.0",
+            "info": {
+                "title": "Claw Router App API",
+                "version": "0.1.0"
+            },
+            "paths": {
+                "/app/v3/api/ai/models": {
+                    "get": {
+                        "operationId": "models.list",
+                        "responses": {
+                            "200": {
+                                "description": "ok"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "language": "typescript",
+        "config": {
+            "name": "SdkworkClawRouterAppClient",
+            "version": "0.1.0",
+            "language": "typescript",
+            "sdkType": "app",
+            "apiSpecPath": "/app/v3/api/openapi.json",
+            "baseUrl": "https://api.sdkwork.com",
+            "apiPrefix": "/app/v3/api",
+            "packageName": "@sdkwork/clawrouter-app-sdk"
+        }
+    })
+    .to_string()
+}
+
+fn unique_sqlite_url() -> String {
+    let nonce = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .unwrap()
+        .as_nanos();
+    let sequence = SQLITE_DB_SEQUENCE.fetch_add(1, Ordering::Relaxed);
+    let process_id = std::process::id();
+    let path =
+        format!("target/test-dbs/app-contract-routes-{process_id}-{sequence}-{nonce}.sqlite");
+    std::fs::create_dir_all("target/test-dbs").unwrap();
+    format!("sqlite://{path}")
+}
+
+fn clear_generator_env() {
+    for name in [
+        "SDKWORK_CLAW_SDK_GENERATOR_BASE_URL",
+        "SDKWORK_CLAW_SDK_GENERATOR_API_KEY",
+        "SDKWORK_CLAW_SDK_GENERATOR_API_KEY_FILE",
+        "PORTAL_TOOL_API_SDK_GENERATOR_BASE_URL",
+        "PORTAL_TOOL_API_SDK_GENERATOR_API_KEY",
+        "PORTAL_TOOL_API_SDK_GENERATOR_API_KEY_FILE",
+    ] {
+        std::env::remove_var(name);
+    }
+}
+
+fn env_guard() -> &'static Mutex<()> {
+    static ENV_GUARD: OnceLock<Mutex<()>> = OnceLock::new();
+    ENV_GUARD.get_or_init(|| Mutex::new(()))
+}
+
+#[tokio::test]
+async fn default_router_does_not_serve_appbase_owned_commerce_routes_without_appbase_store() {
+    let cases = [
+        (Method::POST, "/app/v3/api/coupons/redemptions"),
+        (Method::GET, "/app/v3/api/accounts/current/summary"),
+        (Method::GET, "/app/v3/api/wallet/accounts"),
+        (Method::GET, "/app/v3/api/wallet/tokens"),
+        (Method::GET, "/app/v3/api/recharges/packages"),
+        (Method::POST, "/app/v3/api/recharges/orders"),
+        (Method::GET, "/app/v3/api/recharges/orders/ORDER-1"),
+        (
+            Method::GET,
+            "/app/v3/api/payments/attempts/payment-attempt-1",
+        ),
+    ];
+
+    for (method, path) in cases {
+        let mut builder = Request::builder().method(method).uri(path);
+        let body = if path.ends_with("/coupons/redemptions") {
+            builder = builder.header("content-type", "application/json");
+            Body::from(r#"{"code":"WELCOME"}"#)
+        } else {
+            Body::empty()
+        };
+        let response = sdkwork_claw_app_api::router()
+            .oneshot(builder.body(body).unwrap())
+            .await
+            .unwrap();
+        let status = response.status();
+        let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+            .await
+            .unwrap();
+        let payload: Value = serde_json::from_slice(&body).unwrap();
+
+        assert_eq!(StatusCode::NOT_IMPLEMENTED, status, "{path}");
+        assert_eq!("5010", payload["code"], "{path}");
+    }
+
+    for (method, path) in [
+        (Method::GET, "/app/v3/api/wallet/operations/request-1"),
+        (Method::POST, "/app/v3/api/wallet/exchanges"),
+        (Method::POST, "/app/v3/api/wallet/tokens/deductions"),
+        (Method::POST, "/app/v3/api/checkout/preflight/estimates"),
+        (Method::POST, "/app/v3/api/coupons/usage"),
+        (Method::POST, "/app/v3/api/invoices/invoice-1/submissions"),
+    ] {
+        let response = sdkwork_claw_app_api::router()
+            .oneshot(
+                Request::builder()
+                    .method(method)
+                    .uri(path)
+                    .body(Body::empty())
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+
+        assert_eq!(StatusCode::NOT_FOUND, response.status(), "{path}");
+    }
 }
 
 #[tokio::test]
@@ -93,55 +270,65 @@ async fn app_store_route_is_exposed_by_default_router() {
 
 #[tokio::test]
 async fn app_commerce_foundation_routes_are_exposed_by_default_router() {
-    let success_cases = [
-        "/app/v3/api/billing/wallet/overview",
-        "/app/v3/api/billing/account/points",
-        "/app/v3/api/billing/account/points/recharges/packages",
-        "/app/v3/api/billing/account/tokens",
-        "/app/v3/api/billing/vip/info",
-        "/app/v3/api/billing/vip/points/daily_rewards/status",
-    ];
-
-    for path in success_cases {
+    for path in [
+        "/app/v3/api/wallet/exchange_rate",
+        "/app/v3/api/payments/attempts/payment-attempt-1",
+    ] {
         let (status, payload) = call(Method::GET, path).await;
-
-        assert_eq!(StatusCode::OK, status, "{path}");
-        assert_eq!("2000", payload["code"], "{path}");
-    }
-
-    let unavailable_cases = [
-        "/app/v3/api/billing/wallet/operations/request-1",
-        "/app/v3/api/billing/vip/packs/pack-1",
-        "/app/v3/api/billing/preflight/estimates",
-    ];
-
-    for path in unavailable_cases {
-        let method = if path.ends_with("/estimates") {
-            Method::POST
-        } else {
-            Method::GET
-        };
-        let (status, payload) = call(method, path).await;
 
         assert_eq!(StatusCode::NOT_IMPLEMENTED, status, "{path}");
         assert_eq!("5010", payload["code"], "{path}");
     }
+    let (status, payload) = call(Method::GET, "/app/v3/api/wallet/points/exchanges/rules").await;
+    assert_eq!(StatusCode::OK, status);
+    assert_eq!("2000", payload["code"]);
+    assert_eq!(0, payload["data"].as_array().unwrap().len());
+
+    let (status, payload) = call(Method::POST, "/app/v3/api/wallet/exchange_rate").await;
+    assert_eq!(StatusCode::METHOD_NOT_ALLOWED, status);
+    assert_eq!(Value::Null, payload);
 }
 
 #[tokio::test]
-async fn legacy_commerce_app_routes_are_not_exposed_by_default_router() {
-    let legacy_paths = [
-        "/app/v3/api/account/summary",
-        "/app/v3/api/account/points/recharge",
-        "/app/v3/api/vip/pack_groups/packs",
-        "/app/v3/api/payments/checkout/order-1",
-        "/app/v3/api/coupons/redeem",
+async fn appbase_vip_routes_are_exposed_by_default_router() {
+    let vip_read_paths = [
+        "/app/v3/api/memberships/current",
+        "/app/v3/api/memberships/packages",
     ];
 
-    for path in legacy_paths {
-        let (status, _payload) = call(Method::GET, path).await;
-        assert_eq!(StatusCode::NOT_FOUND, status, "{path}");
+    for path in vip_read_paths {
+        let (status, payload) = call(Method::GET, path).await;
+        assert_ne!(StatusCode::NOT_FOUND, status, "{path}");
+        assert!(
+            ["2000", "4090"].contains(&payload["code"].as_str().unwrap_or_default()),
+            "{path}: {payload}"
+        );
     }
+
+    for path in ["/app/v3/api/memberships/purchases"] {
+        let response = sdkwork_claw_app_api::router()
+            .oneshot(
+                Request::builder()
+                    .method(Method::POST)
+                    .uri(path)
+                    .header("content-type", "application/json")
+                    .body(Body::from(r#"{"packageId":1,"paymentMethod":"wechat"}"#))
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+        let status = response.status();
+        let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+            .await
+            .unwrap();
+        let payload: Value = serde_json::from_slice(&body).unwrap();
+
+        assert_eq!(StatusCode::UNAUTHORIZED, status, "{path}");
+        assert_eq!("4010", payload["code"], "{path}");
+    }
+    let (status, payload) = call(Method::POST, "/app/v3/api/memberships/purchases").await;
+    assert_eq!(StatusCode::UNSUPPORTED_MEDIA_TYPE, status);
+    assert_eq!(Value::Null, payload);
 }
 
 #[tokio::test]

@@ -111,24 +111,24 @@ fn app_store_detail_sql_accepts_numeric_id_or_stable_app_key() {
 }
 
 #[test]
-fn app_store_categories_sql_scans_complete_public_app_set() {
+fn app_store_categories_sql_reads_unified_plus_category_app_store_tree() {
     for expected in [
         "const LOAD_CATEGORIES",
-        "FROM plus_app a",
-        "a.tenant_id = $1",
-        "a.organization_id = $2",
-        "OR ($2 > 0 AND a.organization_id = 0)",
-        "COALESCE(a.status, 1) = 1",
-        "COALESCE(NULLIF(a.config -> 'portal' ->> 'marketStatus', ''), NULLIF(a.config ->> 'marketStatus', ''), 'DRAFT') = 'PUBLISHED'",
-        "COALESCE(a.config::text, '') AS config",
-        "COALESCE(CAST(a.app_type AS TEXT), '') AS app_type",
-        "COALESCE(a.install_config::text, '') AS install_config",
+        "FROM plus_category c",
+        "c.tenant_id = $1",
+        "c.organization_id = $2",
+        "OR (c.tenant_id = $3 AND c.organization_id = 0)",
+        "c.type = 999999",
+        "c.group_name = 'app-store'",
+        "COALESCE(c.visible, true) = true",
+        "COALESCE(c.status, 1) = 1",
+        "ORDER BY COALESCE(c.sort_weight, 0), c.id",
     ] {
         assert_sql_contains(POSTGRES_APP_STORE, expected);
     }
 
     assert!(
-        !compact_sql(POSTGRES_APP_STORE).contains("load_apps(AppStoreQuery::default()"),
-        "categories must not be derived from the default paged app catalog list"
+        !compact_sql(POSTGRES_APP_STORE).contains("app_category_from_raw("),
+        "categories must not be derived from plus_app.app_type or app DTO config"
     );
 }

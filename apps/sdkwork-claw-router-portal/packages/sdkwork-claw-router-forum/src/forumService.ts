@@ -8,7 +8,7 @@ import type {
 import { toDataURL } from 'qrcode';
 import {
   createRequestParams,
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
   optionalBoundedPositiveInteger,
@@ -124,7 +124,7 @@ export interface ForumReplyInput {
 export const forumService = {
   async fetchForumOverview(): Promise<ForumOverview> {
     const result = await getClawRouterAppSdkClient().content.feeds.overview.retrieve();
-    ensurePlusApiSuccess(result, 'Failed to fetch forum overview');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch forum overview');
     return normalizeForumOverview(readRequiredApiItem(result, 'Forum overview response is missing data'));
   },
 
@@ -138,7 +138,7 @@ export const forumService = {
       page: query.page,
       pageSize: query.pageSize,
     });
-    ensurePlusApiSuccess(result, 'Failed to fetch forum feeds');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch forum feeds');
     const items = readRequiredApiItems(result, 'Failed to fetch forum feeds')
       .map(normalizeForumPost)
       .filter((post): post is ForumPost => post !== null);
@@ -207,7 +207,7 @@ export const forumService = {
     if (readApiData(result) === null || readApiData(result) === undefined) {
       return undefined;
     }
-    ensurePlusApiSuccess(result, 'Failed to fetch forum feed detail');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch forum feed detail');
     return normalizeForumPost(readRequiredApiItem(result, 'Forum feed detail response is missing data')) ?? undefined;
   },
 
@@ -224,7 +224,7 @@ export const forumService = {
       page: normalized.page,
       pageSize: normalized.pageSize,
     });
-    ensurePlusApiSuccess(result, 'Failed to fetch forum comments');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch forum comments');
     return readForumCommentTree(result, 'Failed to fetch forum comments');
   },
 
@@ -233,7 +233,7 @@ export const forumService = {
     const page = optionalPositiveInteger(query.page, 'page');
     const pageSize = optionalBoundedPositiveInteger(query.size, 'size', MAX_FORUM_PAGE_SIZE);
     const result = await getClawRouterAppSdkClient().content.comments.replies.list(normalizedCommentId, { page, pageSize });
-    ensurePlusApiSuccess(result, 'Failed to fetch forum comment replies');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch forum comment replies');
     return readForumCommentTree(result, 'Failed to fetch forum comment replies');
   },
 
@@ -242,7 +242,7 @@ export const forumService = {
     if (readApiData(result) === null || readApiData(result) === undefined) {
       return undefined;
     }
-    ensurePlusApiSuccess(result, 'Failed to fetch forum comment detail');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch forum comment detail');
     return normalizeForumCommentDetail(readRequiredApiItem(result, 'Forum comment detail response is missing data')) ?? undefined;
   },
 
@@ -250,7 +250,7 @@ export const forumService = {
     const page = optionalPositiveInteger(query.page, 'page');
     const pageSize = optionalBoundedPositiveInteger(query.size, 'size', MAX_FORUM_PAGE_SIZE);
     const result = await getClawRouterAppSdkClient().content.users.current.comments.list({ page, pageSize });
-    ensurePlusApiSuccess(result, 'Failed to fetch my forum comments');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch my forum comments');
     return readForumCommentTree(result, 'Failed to fetch my forum comments');
   },
 
@@ -260,7 +260,7 @@ export const forumService = {
       contentType: normalized.contentType,
       contentId: normalized.contentId,
     });
-    ensurePlusApiSuccess(result, 'Failed to fetch forum comment statistics');
+    ensureSdkworkApiSuccess(result, 'Failed to fetch forum comment statistics');
     return {
       totalComments: Math.max(0, Math.round(readNumber(readApiRecord(result), 'totalComments', 0))),
     };
@@ -271,7 +271,7 @@ export const forumService = {
       normalizeCreateFeedRequest(input),
       createRequestParams('forum-feed-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to create forum feed');
+    ensureSdkworkApiSuccess(result, 'Failed to create forum feed');
     const post = normalizeForumPost(readRequiredApiItem(result, 'Created forum feed response is missing data'));
     if (!post) {
       throw new Error('Created forum feed response is invalid');
@@ -313,7 +313,7 @@ export const forumService = {
       normalizeCreateCommentRequest(input),
       createRequestParams('forum-comment-create'),
     );
-    ensurePlusApiSuccess(result, 'Failed to create forum comment');
+    ensureSdkworkApiSuccess(result, 'Failed to create forum comment');
     const comment = normalizeForumComment(readRequiredApiItem(result, 'Created forum comment response is missing data'));
     if (!comment) {
       throw new Error('Created forum comment response is invalid');
@@ -338,7 +338,7 @@ export const forumService = {
     if (result === null || result === undefined) {
       return true;
     }
-    ensurePlusApiSuccess(result, 'Failed to delete forum comment');
+    ensureSdkworkApiSuccess(result, 'Failed to delete forum comment');
     return true;
   },
 
@@ -376,7 +376,7 @@ export const forumService = {
 };
 
 function readForumPostList(result: unknown, filters: ForumFeedFilters, message: string): ForumPost[] {
-  ensurePlusApiSuccess(result, message);
+  ensureSdkworkApiSuccess(result, message);
   const items = readRequiredApiItems(result, message)
     .map(normalizeForumPost)
     .filter((post): post is ForumPost => post !== null);
@@ -398,7 +398,7 @@ function readBooleanResult(result: unknown, message: string): boolean {
   if (typeof result === 'boolean') {
     return result;
   }
-  ensurePlusApiSuccess(result, message);
+  ensureSdkworkApiSuccess(result, message);
   const data = readApiData(result);
   if (typeof data === 'boolean') {
     return data;
@@ -465,7 +465,7 @@ async function mutateFeed(
   message: string,
 ): Promise<ForumPost> {
   const result = await operation(requiredSafePathSegment(feedId, 'feedId'));
-  ensurePlusApiSuccess(result, message);
+  ensureSdkworkApiSuccess(result, message);
   const post = normalizeForumPost(readRequiredApiItem(result, `${message}: response is missing data`));
   if (!post) {
     throw new Error(`${message}: response is invalid`);
@@ -479,7 +479,7 @@ async function mutateComment(
   message: string,
 ): Promise<ForumComment> {
   const result = await operation(requiredSafePathSegment(commentId, 'commentId'));
-  ensurePlusApiSuccess(result, message);
+  ensureSdkworkApiSuccess(result, message);
   const comment = normalizeForumComment(readRequiredApiItem(result, `${message}: response is missing data`));
   if (!comment) {
     throw new Error(`${message}: response is invalid`);

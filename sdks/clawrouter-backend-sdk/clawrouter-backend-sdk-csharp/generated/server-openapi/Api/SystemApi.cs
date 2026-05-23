@@ -16,6 +16,21 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
+        /// List overview
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AnalyticsAdminOverviewRetrieveResult?> AnalyticsAdminOverviewRetrieveAsync(string? timeRange = null, string? startTime = null, string? endTime = null, int? limit = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("time_range", timeRange, "form", true, false, null),
+                new QueryParameterSpec("start_time", startTime, "form", true, false, null),
+                new QueryParameterSpec("end_time", endTime, "form", true, false, null),
+                new QueryParameterSpec("limit", limit, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AnalyticsAdminOverviewRetrieveResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/system/analytics/admin/overview"), queryString));
+        }
+
+        /// <summary>
         /// Retrieve IAM auth runtime settings
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.AuthSettingsRetrieveResult?> AuthSettingsRetrieveAsync()
@@ -36,6 +51,75 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 new Dictionary<string, HeaderParameterSpec>()
             );
             return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.AuthSettingsUpdateResult>(ApiPaths.BackendPath("/system/auth/settings"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
+        /// Delete one runtime cache instance
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CacheInstancesDeleteResult?> CacheInstancesDeleteAsync(string instanceName)
+        {
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.CacheInstancesDeleteResult>(ApiPaths.BackendPath($"/system/cache/instances/{SerializePathParameter(instanceName, new PathParameterSpec("instanceName", "simple", false))}"));
+        }
+
+        /// <summary>
+        /// Refresh one runtime cache instance
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CacheInstancesRefreshCreateResult?> CacheInstancesRefreshCreateAsync(string instanceName)
+        {
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.CacheInstancesRefreshCreateResult>(ApiPaths.BackendPath($"/system/cache/instances/{SerializePathParameter(instanceName, new PathParameterSpec("instanceName", "simple", false))}/refresh"), null);
+        }
+
+        /// <summary>
+        /// Delete a runtime cache namespace
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CacheNamespacesDeleteResult?> CacheNamespacesDeleteAsync(string namespace_)
+        {
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.CacheNamespacesDeleteResult>(ApiPaths.BackendPath($"/system/cache/namespaces/{SerializePathParameter(namespace_, new PathParameterSpec("namespace", "simple", false))}"));
+        }
+
+        /// <summary>
+        /// List runtime cache keys in a namespace
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CacheNamespacesKeysListResult?> CacheNamespacesKeysListAsync(string namespace_, int? limit = null, string? cursor = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("limit", limit, "form", true, false, null),
+                new QueryParameterSpec("cursor", cursor, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.CacheNamespacesKeysListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath($"/system/cache/namespaces/{SerializePathParameter(namespace_, new PathParameterSpec("namespace", "simple", false))}/keys"), queryString));
+        }
+
+        /// <summary>
+        /// Delete a runtime cache key
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CacheNamespacesKeysDeleteResult?> CacheNamespacesKeysDeleteAsync(string namespace_, string key)
+        {
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.CacheNamespacesKeysDeleteResult>(ApiPaths.BackendPath($"/system/cache/namespaces/{SerializePathParameter(namespace_, new PathParameterSpec("namespace", "simple", false))}/keys/{SerializePathParameter(key, new PathParameterSpec("key", "simple", false))}"));
+        }
+
+        /// <summary>
+        /// Refresh one runtime cache namespace
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CacheNamespacesRefreshCreateResult?> CacheNamespacesRefreshCreateAsync(string namespace_)
+        {
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.CacheNamespacesRefreshCreateResult>(ApiPaths.BackendPath($"/system/cache/namespaces/{SerializePathParameter(namespace_, new PathParameterSpec("namespace", "simple", false))}/refresh"), null);
+        }
+
+        /// <summary>
+        /// Retrieve runtime cache overview
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CacheOverviewRetrieveResult?> CacheOverviewRetrieveAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.CacheOverviewRetrieveResult>(ApiPaths.BackendPath("/system/cache/overview"));
+        }
+
+        /// <summary>
+        /// Refresh all runtime cache instances
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CacheRefreshCreateResult?> CacheRefreshCreateAsync()
+        {
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.CacheRefreshCreateResult>(ApiPaths.BackendPath("/system/cache/refresh"), null);
         }
 
         /// <summary>
@@ -83,6 +167,14 @@ namespace Sdkwork.ClawRouter.Backend.Api
         public async Task<Sdkwork.ClawRouter.Backend.Models.InstallationStatusRetrieveResult?> InstallationStatusRetrieveAsync()
         {
             return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.InstallationStatusRetrieveResult>(ApiPaths.BackendPath("/system/installation/status"));
+        }
+
+        /// <summary>
+        /// List referral stats
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.MarketingReferralStatsListResult?> MarketingReferralStatsListAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.MarketingReferralStatsListResult>(ApiPaths.BackendPath("/system/marketing/referral_stats"));
         }
 
         /// <summary>
@@ -192,6 +284,29 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 new QueryParameterSpec("model", model, "form", true, false, null),
             });
             return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.RecordsListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/system/records"), queryString));
+        }
+
+        /// <summary>
+        /// Retrieve site branding and deployment personalization settings
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SiteSettingsRetrieveResult?> SiteSettingsRetrieveAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.SiteSettingsRetrieveResult>(ApiPaths.BackendPath("/system/site/settings"));
+        }
+
+        /// <summary>
+        /// Update site branding and deployment personalization settings
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SiteSettingsUpdateResult?> SiteSettingsUpdateAsync(Sdkwork.ClawRouter.Backend.Models.AdminSiteSettingsUpdateRequest body, string? xRequestId = null)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.SiteSettingsUpdateResult>(ApiPaths.BackendPath("/system/site/settings"), body, null, requestHeaders, "application/json");
         }
 
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);

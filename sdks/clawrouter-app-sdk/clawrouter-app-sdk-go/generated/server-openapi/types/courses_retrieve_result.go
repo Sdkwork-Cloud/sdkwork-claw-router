@@ -4,6 +4,5 @@ package types
 type CoursesRetrieveResult struct {
 	Code string `json:"code"`
 	Data CourseDetail `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

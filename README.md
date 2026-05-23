@@ -8,6 +8,67 @@ Claw Router product. The core rule is simple: product UI and service code must
 be backed by schema registry contracts, generated OpenAPI specs, generated SDKs,
 Rust handlers, persistence implementations, and repeatable verification.
 
+## Product Overview
+
+SDKWork Claw Router is a commercial AI gateway product for teams that need to
+operate OpenAI-compatible model access, provider routing, model catalog data,
+usage accounting, API keys, and administrative controls from one deployable
+workspace. It combines a Rust gateway and product API layer with a React portal
+so operators, developers, and administrators can manage AI traffic through a
+single browser entrypoint.
+
+## 产品概览
+
+SDKWork Claw Router 是面向商业化交付的 AI 网关与控制台产品，用于统一管理
+OpenAI 兼容接口、模型供应商路由、模型目录、价格与用量、API Key、用户与后台
+运营能力。产品由 Rust 网关和业务 API、React Portal、生成式 SDK、Schema/OpenAPI
+契约与交付校验组成，适合私有化部署、服务化部署和二次集成场景。
+
+Core product surfaces:
+
+- **OpenAI-compatible Gateway**: exposes `/v1/*` APIs for OpenAI-compatible
+  clients while forwarding traffic through controlled provider and routing
+  policies.
+- **Portal and Console**: gives users a browser workspace for API keys,
+  billing, usage, routing, model discovery, playground workflows, and account
+  operations.
+- **Admin Console**: gives operators backend management for users, providers,
+  channels, announcements, analytics, rate limits, cache, and commercial
+  operations.
+- **Model Catalog and Pricing**: keeps model facts, vendor regions, pricing,
+  and install-time catalog refreshes in a repeatable delivery flow.
+- **Generated SDK Surfaces**: provides generated app, backend, and
+  OpenAI-compatible SDK packages from the product OpenAPI contracts.
+- **Contract-driven Delivery**: binds frontend routes, database tables,
+  OpenAPI payloads, generated SDKs, Rust handlers, and verification gates to
+  schema registry evidence.
+
+核心产品能力：
+
+- **OpenAI 兼容网关**：提供 `/v1/*` 兼容接口，并通过受控的供应商和路由策略转发流量。
+- **Portal 与用户控制台**：面向最终用户提供 API Key、账单、用量、路由、模型发现、
+  Playground 和账户操作。
+- **管理后台**：面向运营和管理员提供用户、供应商、通道、公告、分析、限流、缓存与商业化管理。
+- **模型目录与价格体系**：管理模型事实、供应商区域、价格数据和安装期目录刷新。
+- **生成式 SDK**：基于 OpenAPI 契约生成 app、backend 和 OpenAI 兼容 SDK。
+- **契约驱动交付**：用 schema registry 证据串联前端路由、数据库表、OpenAPI、
+  SDK、Rust handler 和交付验证。
+
+## Product Screenshots
+
+The images below are placeholder PNG files stored in
+[`docs/assets/product-screenshots`](./docs/assets/product-screenshots/). Replace
+each file with a real screenshot using the same filename when you prepare
+customer-facing documentation.
+
+| Product area | Screenshot |
+| --- | --- |
+| Portal home / 产品首页 | ![SDKWork Claw Router portal home placeholder](./docs/assets/product-screenshots/portal-home.png) |
+| Console dashboard / 用户控制台 | ![SDKWork Claw Router console dashboard placeholder](./docs/assets/product-screenshots/console-dashboard.png) |
+| Model catalog and routing / 模型与路由 | ![SDKWork Claw Router model routing placeholder](./docs/assets/product-screenshots/model-routing.png) |
+| API playground / API 调试台 | ![SDKWork Claw Router playground placeholder](./docs/assets/product-screenshots/playground.png) |
+| Admin console / 管理后台 | ![SDKWork Claw Router admin console placeholder](./docs/assets/product-screenshots/admin-console.png) |
+
 ## Installation And Usage
 
 Current release: `0.3.0` (`2026-05-17`). Release records live under
@@ -47,6 +108,23 @@ sudo systemctl start clawrouter
 curl http://127.0.0.1:3900/healthz
 curl http://127.0.0.1:3900/readyz
 ```
+
+Quick nginx reverse proxy deployment after the local service is healthy:
+
+```bash
+pnpm nginx:plan -- --domain api.sdkwork.com
+sudo pnpm nginx:deploy -- --domain api.sdkwork.com --cert-name sdkwork.com
+sudo nginx -t
+sudo systemctl reload nginx
+```
+
+Generated nginx configs proxy to `http://127.0.0.1:3900` and deploy to
+`/etc/nginx/sites-enabled/sdkwork/api.sdkwork.com.conf` for the
+`api.sdkwork.com` domain. Use
+[`etc/nginx/NGINX_SAMPLE.conf`](./etc/nginx/NGINX_SAMPLE.conf) as the canonical
+template and [`etc/nginx/sdkwork`](./etc/nginx/sdkwork/) for full-domain
+examples. See the release install guide for certificate path conventions under
+`/opt/certs/letsencrypt/live/<cert-name>`.
 
 The `.deb` package creates `/etc/clawrouter/clawrouter.toml`,
 `/etc/clawrouter/clawrouter.env`, `/etc/clawrouter/database.secret`,
@@ -179,6 +257,8 @@ pnpm.cmd install:packages:plan
 pnpm.cmd install:packages:check
 pnpm.cmd install:package:check
 pnpm.cmd install:init:smoke
+pnpm.cmd nginx:plan -- --domain api.sdkwork.com
+pnpm.cmd nginx:render -- --domain api.sdkwork.com --output-root target/nginx
 ```
 
 Validate the standalone model catalog before installer or release work:

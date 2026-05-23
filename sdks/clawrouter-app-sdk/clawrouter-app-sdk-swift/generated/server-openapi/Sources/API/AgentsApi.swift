@@ -2,23 +2,23 @@ import Foundation
 
 public class AgentsApi {
     private let client: HttpClient
-    
+
     public init(client: HttpClient) {
         self.client = client
     }
 
     /// List user agents
-    public func list(page: Int? = nil, pageSize: Int? = nil, q: String? = nil) async throws -> AgentsListResult? {
+    public func agentDefinitionsList(page: Int? = nil, pageSize: Int? = nil, q: String? = nil) async throws -> AgentDefinitionsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
-        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/agents"), query), responseType: AgentsListResult.self)
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/agents"), query), responseType: AgentDefinitionsListResult.self)
     }
 
     /// Create user agent
-    public func create(body: AgentCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentsCreateResult? {
+    public func agentDefinitionsCreate(body: AgentCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentDefinitionsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
@@ -26,12 +26,109 @@ public class AgentsApi {
             ],
             [:]
         )
-        return try await client.post(ApiPaths.appPath("/agents"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AgentsCreateResult.self)
+        return try await client.post(ApiPaths.appPath("/agents"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AgentDefinitionsCreateResult.self)
+    }
+
+    /// Retrieve agent run
+    public func agentRunsRetrieve(runId: String) async throws -> AgentRunsRetrieveResult? {
+        return try await client.get(ApiPaths.appPath("/agents/runs/\(serializePathParameter(runId, PathParameterSpec(name: "runId", style: "simple", explode: false)))"), responseType: AgentRunsRetrieveResult.self)
+    }
+
+    /// Complete agent run
+    public func agentRunsSubmit(runId: String, body: AgentRunCompleteRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentRunsSubmitResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.post(ApiPaths.appPath("/agents/runs/\(serializePathParameter(runId, PathParameterSpec(name: "runId", style: "simple", explode: false)))/complete"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AgentRunsSubmitResult.self)
+    }
+
+    /// List agent run steps
+    public func agentRunStepsList(runId: String, page: Int? = nil, pageSize: Int? = nil) async throws -> AgentRunStepsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/agents/runs/\(serializePathParameter(runId, PathParameterSpec(name: "runId", style: "simple", explode: false)))/steps"), query), responseType: AgentRunStepsListResult.self)
+    }
+
+    /// Create agent run step
+    public func agentRunStepsCreate(runId: String, body: AgentRunStepCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentRunStepsCreateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.post(ApiPaths.appPath("/agents/runs/\(serializePathParameter(runId, PathParameterSpec(name: "runId", style: "simple", explode: false)))/steps"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AgentRunStepsCreateResult.self)
+    }
+
+    /// Complete agent run step
+    public func agentRunStepsSubmit(runId: String, stepId: String, body: AgentRunStepCompleteRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentRunStepsSubmitResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.post(ApiPaths.appPath("/agents/runs/\(serializePathParameter(runId, PathParameterSpec(name: "runId", style: "simple", explode: false)))/steps/\(serializePathParameter(stepId, PathParameterSpec(name: "stepId", style: "simple", explode: false)))/complete"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AgentRunStepsSubmitResult.self)
+    }
+
+    /// Retrieve agent session
+    public func agentSessionsRetrieve(sessionId: String) async throws -> AgentSessionsRetrieveResult? {
+        return try await client.get(ApiPaths.appPath("/agents/sessions/\(serializePathParameter(sessionId, PathParameterSpec(name: "sessionId", style: "simple", explode: false)))"), responseType: AgentSessionsRetrieveResult.self)
+    }
+
+    /// List agent session runs
+    public func agentRunsList(sessionId: String, page: Int? = nil, pageSize: Int? = nil) async throws -> AgentRunsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/agents/sessions/\(serializePathParameter(sessionId, PathParameterSpec(name: "sessionId", style: "simple", explode: false)))/runs"), query), responseType: AgentRunsListResult.self)
+    }
+
+    /// Create agent run
+    public func agentRunsCreate(sessionId: String, body: AgentRunCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentRunsCreateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.post(ApiPaths.appPath("/agents/sessions/\(serializePathParameter(sessionId, PathParameterSpec(name: "sessionId", style: "simple", explode: false)))/runs"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AgentRunsCreateResult.self)
     }
 
     /// Retrieve user agent
-    public func retrieve(agentId: String) async throws -> AgentsRetrieveResult? {
-        return try await client.get(ApiPaths.appPath("/agents/\(serializePathParameter(agentId, PathParameterSpec(name: "agentId", style: "simple", explode: false)))"), responseType: AgentsRetrieveResult.self)
+    public func agentDefinitionsRetrieve(agentId: String) async throws -> AgentDefinitionsRetrieveResult? {
+        return try await client.get(ApiPaths.appPath("/agents/\(serializePathParameter(agentId, PathParameterSpec(name: "agentId", style: "simple", explode: false)))"), responseType: AgentDefinitionsRetrieveResult.self)
+    }
+
+    /// List agent sessions
+    public func agentSessionsList(agentId: String, page: Int? = nil, pageSize: Int? = nil) async throws -> AgentSessionsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/agents/\(serializePathParameter(agentId, PathParameterSpec(name: "agentId", style: "simple", explode: false)))/sessions"), query), responseType: AgentSessionsListResult.self)
+    }
+
+    /// Create agent session
+    public func agentSessionsCreate(agentId: String, body: AgentSessionCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentSessionsCreateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.post(ApiPaths.appPath("/agents/\(serializePathParameter(agentId, PathParameterSpec(name: "agentId", style: "simple", explode: false)))/sessions"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AgentSessionsCreateResult.self)
     }
 
     private struct PathParameterSpec {

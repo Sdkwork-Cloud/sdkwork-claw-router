@@ -150,23 +150,32 @@ test("console settlement reports stay product-focused without read-only caveats"
   assertNoImplementationCaveats(source);
 });
 
-test("console billing stays product-focused without command-contract caveats", () => {
-  const source = readPortalFile("./packages/sdkwork-claw-router-console-billing/src/BillingView.tsx");
+test("console commerce business pages stay product-focused without command-contract caveats", () => {
+  const businessPageFiles = [
+    "./packages/sdkwork-claw-router-console-account/src/AccountView.tsx",
+    "./packages/sdkwork-claw-router-console-wallet/src/WalletView.tsx",
+    "./packages/sdkwork-claw-router-console-recharge/src/RechargeView.tsx",
+    "./packages/sdkwork-claw-router-console-checkout/src/CheckoutView.tsx",
+    "./packages/sdkwork-claw-router-console-memberships/src/MembershipsView.tsx",
+    "./packages/sdkwork-claw-router-console-settlements/src/SettlementsView.tsx",
+  ];
 
-  assertNoImplementationCaveats(source);
+  for (const file of businessPageFiles) {
+    assertNoImplementationCaveats(readPortalFile(file));
+  }
 });
 
 test("console message center stays product-focused without implementation caveats", () => {
   const source = readPortalFile("./packages/sdkwork-claw-router-console-messages/src/MessagesView.tsx");
 
-  assert.match(source, /Notification Center/);
+  assert.match(source, /console\.messages\.title/);
   assertNoImplementationCaveats(source);
 });
 
 test("console gateway tooling stays product-focused without implementation caveats", () => {
   const source = readPortalFile("./packages/sdkwork-claw-router-console-gateway/src/GatewayView.tsx");
 
-  assert.match(source, /Gateway & Logs/);
+  assert.match(source, /console\.gateway\.title/);
   assertNoImplementationCaveats(source);
 });
 
@@ -217,7 +226,6 @@ test("console auth unavailable copy stays product-focused without app-contract c
 
 test("playground unavailable states stay product-focused without implementation caveats", () => {
   const files = [
-    "./packages/sdkwork-claw-router-playground/src/components/ReadOnlyPlaygroundControl.tsx",
     "./packages/sdkwork-claw-router-playground/src/components/views/AudioView.tsx",
     "./packages/sdkwork-claw-router-playground/src/components/views/ImageView.tsx",
     "./packages/sdkwork-claw-router-playground/src/components/views/MusicView.tsx",

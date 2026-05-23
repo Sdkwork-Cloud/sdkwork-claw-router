@@ -4,7 +4,7 @@ use crate::api::base::{RequestHeaders};
 use crate::api::paths::app_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AgentCreateRequest, AgentDefinitionsCreateResult, AgentDefinitionsListResult, AgentDefinitionsRetrieveResult};
+use crate::models::{AgentCreateRequest, AgentDefinitionsCreateResult, AgentDefinitionsListResult, AgentDefinitionsRetrieveResult, AgentRunCompleteRequest, AgentRunCreateRequest, AgentRunStepCompleteRequest, AgentRunStepCreateRequest, AgentRunStepsCreateResult, AgentRunStepsListResult, AgentRunStepsSubmitResult, AgentRunsCreateResult, AgentRunsListResult, AgentRunsRetrieveResult, AgentRunsSubmitResult, AgentSessionCreateRequest, AgentSessionsCreateResult, AgentSessionsListResult, AgentSessionsRetrieveResult};
 
 #[derive(Clone)]
 pub struct AgentsApi {
@@ -40,10 +40,117 @@ impl AgentsApi {
         self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
+    /// Retrieve agent run
+    pub async fn agent_runs_retrieve(&self, run_id: &str) -> Result<AgentRunsRetrieveResult, SdkworkError> {
+        let path = app_path(&format!("/agents/runs/{}", serialize_path_parameter(run_id, PathParameterSpec::new("runId", "simple", false))));
+        self.client.get(&path, None, None).await
+    }
+
+    /// Complete agent run
+    pub async fn agent_runs_submit(&self, run_id: &str, body: &AgentRunCompleteRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<AgentRunsSubmitResult, SdkworkError> {
+        let path = app_path(&format!("/agents/runs/{}/complete", serialize_path_parameter(run_id, PathParameterSpec::new("runId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// List agent run steps
+    pub async fn agent_run_steps_list(&self, run_id: &str, page: Option<i64>, page_size: Option<i64>) -> Result<AgentRunStepsListResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("page", page, "form", true, false, None),
+            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
+        ]);
+        let path = append_query_string(app_path(&format!("/agents/runs/{}/steps", serialize_path_parameter(run_id, PathParameterSpec::new("runId", "simple", false)))), &query);
+        self.client.get(&path, None, None).await
+    }
+
+    /// Create agent run step
+    pub async fn agent_run_steps_create(&self, run_id: &str, body: &AgentRunStepCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<AgentRunStepsCreateResult, SdkworkError> {
+        let path = app_path(&format!("/agents/runs/{}/steps", serialize_path_parameter(run_id, PathParameterSpec::new("runId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// Complete agent run step
+    pub async fn agent_run_steps_submit(&self, run_id: &str, step_id: &str, body: &AgentRunStepCompleteRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<AgentRunStepsSubmitResult, SdkworkError> {
+        let path = app_path(&format!("/agents/runs/{}/steps/{}/complete", serialize_path_parameter(run_id, PathParameterSpec::new("runId", "simple", false)), serialize_path_parameter(step_id, PathParameterSpec::new("stepId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// Retrieve agent session
+    pub async fn agent_sessions_retrieve(&self, session_id: &str) -> Result<AgentSessionsRetrieveResult, SdkworkError> {
+        let path = app_path(&format!("/agents/sessions/{}", serialize_path_parameter(session_id, PathParameterSpec::new("sessionId", "simple", false))));
+        self.client.get(&path, None, None).await
+    }
+
+    /// List agent session runs
+    pub async fn agent_runs_list(&self, session_id: &str, page: Option<i64>, page_size: Option<i64>) -> Result<AgentRunsListResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("page", page, "form", true, false, None),
+            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
+        ]);
+        let path = append_query_string(app_path(&format!("/agents/sessions/{}/runs", serialize_path_parameter(session_id, PathParameterSpec::new("sessionId", "simple", false)))), &query);
+        self.client.get(&path, None, None).await
+    }
+
+    /// Create agent run
+    pub async fn agent_runs_create(&self, session_id: &str, body: &AgentRunCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<AgentRunsCreateResult, SdkworkError> {
+        let path = app_path(&format!("/agents/sessions/{}/runs", serialize_path_parameter(session_id, PathParameterSpec::new("sessionId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
     /// Retrieve user agent
     pub async fn agent_definitions_retrieve(&self, agent_id: &str) -> Result<AgentDefinitionsRetrieveResult, SdkworkError> {
         let path = app_path(&format!("/agents/{}", serialize_path_parameter(agent_id, PathParameterSpec::new("agentId", "simple", false))));
         self.client.get(&path, None, None).await
+    }
+
+    /// List agent sessions
+    pub async fn agent_sessions_list(&self, agent_id: &str, page: Option<i64>, page_size: Option<i64>) -> Result<AgentSessionsListResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("page", page, "form", true, false, None),
+            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
+        ]);
+        let path = append_query_string(app_path(&format!("/agents/{}/sessions", serialize_path_parameter(agent_id, PathParameterSpec::new("agentId", "simple", false)))), &query);
+        self.client.get(&path, None, None).await
+    }
+
+    /// Create agent session
+    pub async fn agent_sessions_create(&self, agent_id: &str, body: &AgentSessionCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<AgentSessionsCreateResult, SdkworkError> {
+        let path = app_path(&format!("/agents/{}/sessions", serialize_path_parameter(agent_id, PathParameterSpec::new("agentId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
 }

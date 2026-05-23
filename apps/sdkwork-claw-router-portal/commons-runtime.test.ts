@@ -5,7 +5,7 @@ import test from "node:test";
 import { getLoadErrorMessage } from "./packages/sdkwork-claw-router-commons/src/load-error.ts";
 import { createRequestParams, createRequestToken } from "./packages/sdkwork-claw-router-commons/src/request-id.ts";
 import {
-  ensurePlusApiSuccess,
+  ensureSdkworkApiSuccess,
   readApiItems,
   readRequiredApiItems,
   readApiRecord,
@@ -202,6 +202,159 @@ test("generated SDK metadata declares independent runtime base URL variables for
   assert.equal(SDK_SYSTEM_CONFIG.backend.runtimeEnvName, "VITE_CLAWROUTER_BACKEND_API_BASE_URL");
 });
 
+test("commons exports an adaptive admin table shell with a fixed footer slot", () => {
+  const shellSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-commons/src/components/AdminTableShell.tsx", import.meta.url),
+    "utf8",
+  );
+  const indexSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-commons/src/index.ts", import.meta.url),
+    "utf8",
+  );
+
+  for (const marker of [
+    "export interface AdminTableShellProps",
+    "export function AdminTableShell",
+    "min-h-0 flex-1 overflow-hidden",
+    "min-h-0 flex-1 overflow-auto",
+    "data-admin-table-shell-viewport",
+    "data-admin-table-shell-footer",
+  ]) {
+    assert.ok(shellSource.includes(marker), `missing admin table shell marker: ${marker}`);
+  }
+
+  assert.match(indexSource, /export \* from '\.\/components\/AdminTableShell';/);
+});
+
+test("navbar notification dropdown has a portal-side outside click dismiss guard", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-commons/src/components/Navbar.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const marker of [
+    "const notificationBellRef = useRef<HTMLDivElement>(null)",
+    "const handleNotificationPointerDown = (event: PointerEvent) => {",
+    "notificationBellRef.current.contains(target)",
+    "notificationBellRef.current.querySelector('[role=\"menu\"]')",
+    "notificationBellRef.current.querySelector<HTMLButtonElement>('button[aria-label]')",
+    "toggleButton?.click()",
+    "document.addEventListener('pointerdown', handleNotificationPointerDown, true)",
+    "document.removeEventListener('pointerdown', handleNotificationPointerDown, true)",
+    "ref={notificationBellRef}",
+    "data-claw-notification-bell",
+  ]) {
+    assert.ok(source.includes(marker), `missing navbar notification dismiss marker: ${marker}`);
+  }
+});
+
+test("portal notification service fetches console announcements without frontend app id", () => {
+  const serviceSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-commons/src/notificationService.ts", import.meta.url),
+    "utf8",
+  );
+  const navbarSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-commons/src/components/Navbar.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const marker of [
+    "client.notification.listNotifications({",
+    "includeArchived: options.includeArchived ?? false",
+    "page: options.page ?? DEFAULT_NOTIFICATION_PAGE",
+    "pageSize: options.pageSize ?? DEFAULT_NOTIFICATION_PAGE_SIZE",
+    "client.notification.acknowledge.create(notificationId)",
+    "client.notification.popupSeen.create(notificationId)",
+  ]) {
+    assert.ok(serviceSource.includes(marker), `missing app-id-free notification service marker: ${marker}`);
+  }
+
+  assert.doesNotMatch(serviceSource, /createSdkworkNotificationService/u);
+  assert.doesNotMatch(serviceSource, /appId:\s*DEFAULT_NOTIFICATION_APP_ID/u);
+  assert.ok(navbarSource.includes("service={notificationService}"));
+  assert.ok(navbarSource.includes("const notificationService = useMemo(() => createPortalNotificationService(), [])"));
+});
+
+test("portal css stabilizes navbar notification dropdown empty state dimensions", () => {
+  const cssSource = readFileSync(
+    new URL("./src/index.css", import.meta.url),
+    "utf8",
+  );
+  const navbarSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-commons/src/components/Navbar.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.ok(
+    navbarSource.includes('className="claw-router-navbar-notification-bell"'),
+    "Navbar must pass the notification bell CSS scope class",
+  );
+
+  for (const marker of [
+    ".claw-router-navbar-notification-bell",
+    ".claw-router-navbar-notification-bell [role=\"menu\"]",
+    "width: min(22rem, calc(100vw - 2rem));",
+    "min-width: min(22rem, calc(100vw - 2rem));",
+    ".claw-router-navbar-notification-bell [role=\"menu\"] > div:nth-child(2)",
+    "min-height: 7rem;",
+    ".claw-router-navbar-notification-bell [role=\"menu\"] > div:nth-child(2) > div:not(:has(*))",
+    "white-space: normal;",
+  ]) {
+    assert.ok(cssSource.includes(marker), `missing navbar notification CSS marker: ${marker}`);
+  }
+});
+
+test("navbar localizes notification unread counter and uses runtime site branding", () => {
+  const navbarSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-commons/src/components/Navbar.tsx", import.meta.url),
+    "utf8",
+  );
+  const siteBrandingSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-commons/src/siteBranding.ts", import.meta.url),
+    "utf8",
+  );
+
+  for (const marker of [
+    "useSiteBranding()",
+    "siteBranding.siteName",
+    "siteBranding.shortName",
+    "siteBranding.logoUrl",
+    "unreadCount: t('commons.navbar.unreadCount'",
+    "0 ? t('commons.navbar.unreadCountZero'",
+    "applySiteBrandingToDocument",
+  ]) {
+    assert.ok(navbarSource.includes(marker) || siteBrandingSource.includes(marker), `missing site branding marker: ${marker}`);
+  }
+
+  assert.doesNotMatch(navbarSource, />\s*Claw Router\s*</u, "Navbar must render the configurable site name instead of hard-coded text");
+});
+
+test("footer renders configurable site branding and copyright", () => {
+  const footerSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-commons/src/components/Footer.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const marker of [
+    "useSiteBranding()",
+    "siteBranding.siteName",
+    "siteBranding.footerCopyright",
+    "siteBranding.logoUrl",
+    "siteBranding.icpRecordNumber",
+    "siteBranding.icpRecordUrl",
+    "siteBranding.policeRecordNumber",
+    "siteBranding.policeRecordUrl",
+    "footer.icpRecordLabel",
+    "footer.policeRecordLabel",
+  ]) {
+    assert.ok(footerSource.includes(marker), `missing footer branding marker: ${marker}`);
+  }
+
+  assert.doesNotMatch(footerSource, />\s*Claw Router\s*</u, "Footer must render the configurable site name instead of hard-coded text");
+  assert.doesNotMatch(footerSource, /XXXXXXX|浜琁CP|beian\.miit\.gov\.cn/, "Footer must render filing records from site branding instead of hard-coded placeholders");
+  assert.ok(footerSource.includes('target="_blank"'), "Footer filing links must open official query pages in a new tab");
+});
+
 test("console layout keeps readable navigation labels and valid logout markup", () => {
   const source = readFileSync(
     new URL("./packages/sdkwork-claw-router-console-core/src/ConsoleLayout.tsx", import.meta.url),
@@ -212,7 +365,7 @@ test("console layout keeps readable navigation labels and valid logout markup", 
     "仪表盘",
     "令牌管理",
     "调用统计",
-    "钱包与充值",
+    "充值兑换",
     "账单与报表",
     "消息中心",
     "工具配置",
@@ -225,8 +378,57 @@ test("console layout keeps readable navigation labels and valid logout markup", 
   }
 
   assert.doesNotMatch(source, /浠|璋|閽|璐|娑|宸|鏈|閰|閫/);
+  assert.doesNotMatch(source, /path:\s*'\/console\/recharge'/);
+  assert.doesNotMatch(source, /path:\s*'\/console\/checkout'/);
+  assert.doesNotMatch(source, /console\.recharge\.nav\.recharge/);
+  assert.doesNotMatch(source, /console\.checkout\.nav\.checkout/);
   assert.match(source, /<span>\{t\("console\.core\.consolelayout\.text\.12hokt7", "退出登录"\)\}<\/span>/);
   assert.doesNotMatch(source, /<span>[^<]*\/span>/);
+});
+
+test("console wallet uses recharge exchange wording and concise tabs", () => {
+  const walletSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-console-wallet/src/WalletView.tsx", import.meta.url),
+    "utf8",
+  );
+  const i18nSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-i18n/src/index.ts", import.meta.url),
+    "utf8",
+  );
+  const walletPackageJson = readFileSync(
+    new URL("./packages/sdkwork-claw-router-console-wallet/package.json", import.meta.url),
+    "utf8",
+  );
+  const rechargeSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-console-recharge/src/RechargeView.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(walletSource, /"充值兑换"/);
+  assert.match(walletSource, /"兑换"/);
+  assert.match(walletSource, /"充值"/);
+  assert.match(i18nSource, /"console\.billing\.billingview\.text\.gd62li": "充值兑换"/);
+  assert.match(i18nSource, /"console\.billing\.billingview\.text\.1iq97ql": "兑换"/);
+  assert.match(i18nSource, /"console\.billing\.billingview\.text\.1wlfhep": "充值"/);
+  assert.match(i18nSource, /"console\.recharge\.tabs\.redeem": "兑换"/);
+  assert.match(i18nSource, /"console\.recharge\.tabs\.online": "充值"/);
+  assert.match(walletPackageJson, /"sdkwork-claw-router-console-recharge": "workspace:\*"/);
+  assert.match(walletSource, /import \{ RechargePanel \} from 'sdkwork-claw-router-console-recharge';/);
+  assert.match(walletSource, /const \[activeTab, setActiveTab\] = useState<'redeem' \| 'recharge'>\('redeem'\);/);
+  assert.match(walletSource, /<RechargePanel embedded showTabs=\{false\} \/>/);
+  assert.doesNotMatch(walletSource, /const \[historyTab, setHistoryTab\]/);
+  assert.doesNotMatch(walletSource, /setHistoryTab\('recharge'\)/);
+  assert.doesNotMatch(walletSource, /historyTab === 'recharge'/);
+  assert.doesNotMatch(walletSource, /<WalletHistoryTable/);
+  assert.doesNotMatch(walletSource, /fetchRechargeHistory/);
+  assert.doesNotMatch(walletSource, /"钱包与充值"|"卡密兑换"/);
+  assert.doesNotMatch(rechargeSource, /"卡密兑换"|"在线充值"/);
+  assert.doesNotMatch(walletSource, /璐︽埛|鍏戞崲|姝ｅ湪|涓撳睘|鐘舵|鏈湀|棰勮|杈撳叆|渚嬪|绔嬪嵆|閭€璇|浜岀淮|閲戦|鏀粯|澶辫触|鏆傛棤|鍏呭€/);
+  assert.doesNotMatch(i18nSource, /"console\.billing\.billingview\.text\.gd62li": "\u94b1\u5305\u4e0e\u5145\u503c"/u);
+  assert.doesNotMatch(i18nSource, /"console\.billing\.billingview\.text\.1iq97ql": "\u5361\u5bc6\u5151\u6362"/u);
+  assert.doesNotMatch(i18nSource, /"console\.billing\.billingview\.text\.1wlfhep": "\u5728\u7ebf\u5145\u503c"/u);
+  assert.doesNotMatch(i18nSource, /"console\.recharge\.tabs\.redeem": "\u5361\u5bc6\u5151\u6362"/u);
+  assert.doesNotMatch(i18nSource, /"console\.recharge\.tabs\.online": "\u5728\u7ebf\u5145\u503c"/u);
 });
 
 test("portal auth helpers preserve the current route for login-required actions", () => {
@@ -274,6 +476,29 @@ test("navbar sign-in preserves the current public route while console links use 
   assert.match(navbarSource, /const handleSignIn = \(\) => \{\s*navigate\(buildPortalAuthLoginRedirect\(location\)\);\s*\}/u);
   assert.match(navbarSource, /<Link to="\/console"/u);
   assert.doesNotMatch(navbarSource, /redirect=\/console/u);
+});
+
+test("navbar exposes the existing VIP purchase entry through the dedicated VIP route", () => {
+  const navbarSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-commons/src/components/Navbar.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(navbarSource, /href: '\/vip'/u);
+  assert.match(navbarSource, /t\('nav\.buyVip'/u);
+  assert.doesNotMatch(navbarSource, /href: '\/console\/memberships'/u);
+  assert.doesNotMatch(navbarSource, /\/console\/billing\?vip/u);
+});
+
+test("navbar keeps the public GitHub repository entry hidden", () => {
+  const navbarSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-commons/src/components/Navbar.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.doesNotMatch(navbarSource, /github\.com\/Sdkwork-Cloud\/sdkwork-claw-router\.git/u);
+  assert.doesNotMatch(navbarSource, /GitHub Repository/u);
+  assert.doesNotMatch(navbarSource, /\bGithub\b/u);
 });
 
 test("sdk request boundary validates query primitives and safe path segments", () => {
@@ -434,52 +659,52 @@ test("api result required non-negative number reader rejects missing or invalid 
   );
 });
 
-test("ensurePlusApiSuccess accepts generated SDK data objects and raw success envelopes", () => {
-  assert.doesNotThrow(() => ensurePlusApiSuccess({ code: 0, data: { ok: true } }, "Failed to fetch apps"));
-  assert.doesNotThrow(() => ensurePlusApiSuccess({ code: "200", data: { ok: true } }, "Failed to fetch apps"));
-  assert.doesNotThrow(() => ensurePlusApiSuccess({ items: [] }, "Failed to fetch apps"));
-  assert.doesNotThrow(() => ensurePlusApiSuccess({ items: [{ id: "runtime-model" }] }, "Failed to fetch models"));
-  assert.doesNotThrow(() => ensurePlusApiSuccess([{ id: "runtime-model" }], "Failed to fetch models"));
+test("ensureSdkworkApiSuccess accepts generated SDK data objects and raw success envelopes", () => {
+  assert.doesNotThrow(() => ensureSdkworkApiSuccess({ code: 0, data: { ok: true } }, "Failed to fetch apps"));
+  assert.doesNotThrow(() => ensureSdkworkApiSuccess({ code: "200", data: { ok: true } }, "Failed to fetch apps"));
+  assert.doesNotThrow(() => ensureSdkworkApiSuccess({ items: [] }, "Failed to fetch apps"));
+  assert.doesNotThrow(() => ensureSdkworkApiSuccess({ items: [{ id: "runtime-model" }] }, "Failed to fetch models"));
+  assert.doesNotThrow(() => ensureSdkworkApiSuccess([{ id: "runtime-model" }], "Failed to fetch models"));
   assert.doesNotThrow(() =>
-    ensurePlusApiSuccess(
+    ensureSdkworkApiSuccess(
       { code: "default", name: "Default group", message: "Standard routing group" },
       "Failed to add group",
     ),
   );
   assert.throws(
-    () => ensurePlusApiSuccess({}, "Failed to fetch apps"),
+    () => ensureSdkworkApiSuccess({}, "Failed to fetch apps"),
     /Failed to fetch apps/,
   );
   assert.throws(
-    () => ensurePlusApiSuccess([], "Failed to fetch models"),
+    () => ensureSdkworkApiSuccess([], "Failed to fetch models"),
     /Failed to fetch models/,
   );
   assert.throws(
-    () => ensurePlusApiSuccess("<!doctype html><html></html>", "Failed to fetch apps"),
+    () => ensureSdkworkApiSuccess("<!doctype html><html></html>", "Failed to fetch apps"),
     /Failed to fetch apps/,
   );
   assert.throws(
-    () => ensurePlusApiSuccess({ code: "4001", msg: "Invalid group", data: null }, "Failed to add group"),
+    () => ensureSdkworkApiSuccess({ code: "4001", msg: "Invalid group", data: null }, "Failed to add group"),
     /Invalid group/,
   );
   assert.throws(
-    () => ensurePlusApiSuccess({ code: "4001", msg: "Invalid group" }, "Failed to add group"),
+    () => ensureSdkworkApiSuccess({ code: "4001", msg: "Invalid group" }, "Failed to add group"),
     /Invalid group/,
   );
   assert.throws(
-    () => ensurePlusApiSuccess({ code: "4001" }, "Failed to add group"),
+    () => ensureSdkworkApiSuccess({ code: "4001" }, "Failed to add group"),
     /Failed to add group: 4001/,
   );
   assert.throws(
-    () => ensurePlusApiSuccess({ code: 5000, message: "System error", data: null }, "Failed to add group"),
+    () => ensureSdkworkApiSuccess({ code: 5000, message: "System error", data: null }, "Failed to add group"),
     /System error/,
   );
   assert.throws(
-    () => ensurePlusApiSuccess({ code: 5000, message: "System error" }, "Failed to add group"),
+    () => ensureSdkworkApiSuccess({ code: 5000, message: "System error" }, "Failed to add group"),
     /System error/,
   );
   assert.throws(
-    () => ensurePlusApiSuccess({ code: 5000 }, "Failed to add group"),
+    () => ensureSdkworkApiSuccess({ code: 5000 }, "Failed to add group"),
     /Failed to add group: 5000/,
   );
 });
@@ -668,9 +893,9 @@ test("portal admin access check denies non-admin sessions and clears expired ses
           },
         );
       }
-      if (url === "/backend/v3/api/system/dashboard/admin/overview") {
+      if (url === "/backend/v3/api/system/installation/status") {
         if (adminStatus === 200) {
-          return new Response(JSON.stringify({ code: "2000", data: { metrics: [] } }), {
+          return new Response(JSON.stringify({ code: "2000", data: { status: "installed" } }), {
             status: 200,
             headers: { "content-type": "application/json" },
           });
@@ -693,7 +918,7 @@ test("portal admin access check denies non-admin sessions and clears expired ses
         captured.map((request) => `${request.method} ${request.url}`),
         [
           "GET /app/v3/api/auth/sessions/current",
-          "GET /backend/v3/api/system/dashboard/admin/overview",
+          "GET /backend/v3/api/system/installation/status",
         ],
       );
       assert.equal(getStoredAppSessionAuthToken(), shouldKeepTokens ? `auth-${adminStatus}` : undefined);
@@ -709,4 +934,157 @@ test("portal admin access check denies non-admin sessions and clears expired ses
       }
     }
   }
+});
+
+test("portal admin access check allows admin sessions when system status succeeds", async () => {
+  const captured: { url: string; method: string }[] = [];
+  Object.defineProperty(globalThis, "window", {
+    configurable: true,
+    enumerable: true,
+    value: {},
+  });
+  globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
+    const url = typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url;
+    captured.push({ url, method: init?.method ?? "GET" });
+    if (url === "/app/v3/api/auth/sessions/current") {
+      return new Response(
+        JSON.stringify({
+          code: "2000",
+          data: {
+            accessToken: "access-admin",
+            authToken: "auth-admin",
+            sessionId: "session-admin",
+            expiresAt: new Date(Date.now() + 3600_000).toISOString(),
+          },
+        }),
+        {
+          status: 200,
+          headers: { "content-type": "application/json" },
+        },
+      );
+    }
+    if (url === "/backend/v3/api/system/installation/status") {
+      return new Response(JSON.stringify({ code: "2000", data: { status: "installed" } }), {
+        status: 200,
+        headers: { "content-type": "application/json" },
+      });
+    }
+    throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+  }) as typeof fetch;
+  clearStoredAppSessionToken();
+  resetClawRouterSdkClients();
+
+  try {
+    const state = await verifyCurrentPortalAdminAccess();
+
+    assert.equal(state, "allowed");
+    assert.deepEqual(
+      captured.map((request) => `${request.method} ${request.url}`),
+      [
+        "GET /app/v3/api/auth/sessions/current",
+        "GET /backend/v3/api/system/installation/status",
+      ],
+    );
+    assert.equal(getStoredAppSessionAuthToken(), "auth-admin");
+    assert.equal(getStoredAppSessionAccessToken(), "access-admin");
+  } finally {
+    clearStoredAppSessionToken();
+    resetClawRouterSdkClients();
+    globalThis.fetch = originalFetch;
+    if (originalWindowDescriptor) {
+      Object.defineProperty(globalThis, "window", originalWindowDescriptor);
+    } else {
+      delete (globalThis as { window?: Window }).window;
+    }
+  }
+});
+
+test("portal admin access check returns error when system status request stalls", async () => {
+  const captured: { url: string; method: string }[] = [];
+  let statusRequestAborted = false;
+  Object.defineProperty(globalThis, "window", {
+    configurable: true,
+    enumerable: true,
+    value: {},
+  });
+  globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
+    const url = typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url;
+    captured.push({ url, method: init?.method ?? "GET" });
+    if (url === "/app/v3/api/auth/sessions/current") {
+      return new Response(
+        JSON.stringify({
+          code: "2000",
+          data: {
+            accessToken: "access-admin-stalled-status",
+            authToken: "auth-admin-stalled-status",
+            sessionId: "session-admin-stalled-status",
+            expiresAt: new Date(Date.now() + 3600_000).toISOString(),
+          },
+        }),
+        {
+          status: 200,
+          headers: { "content-type": "application/json" },
+        },
+      );
+    }
+    if (url === "/backend/v3/api/system/installation/status") {
+      return new Promise<Response>((_resolve, reject) => {
+        const abort = () => {
+          statusRequestAborted = true;
+          const error = new Error("aborted");
+          error.name = "AbortError";
+          reject(error);
+        };
+        if (init?.signal?.aborted) {
+          abort();
+          return;
+        }
+        init?.signal?.addEventListener("abort", abort, { once: true });
+      });
+    }
+    throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+  }) as typeof fetch;
+  clearStoredAppSessionToken();
+  resetClawRouterSdkClients();
+
+  try {
+    const state = await Promise.race([
+      verifyCurrentPortalAdminAccess({ timeoutMs: 10 }),
+      new Promise<never>((_resolve, reject) => {
+        setTimeout(() => reject(new Error("admin access check did not settle")), 80);
+      }),
+    ]);
+
+    assert.equal(state, "error");
+    assert.equal(statusRequestAborted, true);
+    assert.deepEqual(
+      captured.map((request) => `${request.method} ${request.url}`),
+      [
+        "GET /app/v3/api/auth/sessions/current",
+        "GET /backend/v3/api/system/installation/status",
+      ],
+    );
+    assert.equal(getStoredAppSessionAuthToken(), "auth-admin-stalled-status");
+    assert.equal(getStoredAppSessionAccessToken(), "access-admin-stalled-status");
+  } finally {
+    clearStoredAppSessionToken();
+    resetClawRouterSdkClients();
+    globalThis.fetch = originalFetch;
+    if (originalWindowDescriptor) {
+      Object.defineProperty(globalThis, "window", originalWindowDescriptor);
+    } else {
+      delete (globalThis as { window?: Window }).window;
+    }
+  }
+});
+
+test("portal admin access check uses the generated backend SDK system status method", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-commons/src/portal-session.ts", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /system\.installation\.status\.retrieve\(\)/);
+  assert.doesNotMatch(source, /system\.dashboardAdminOverviewRetrieve\(\)/);
+  assert.doesNotMatch(source, /system\.dashboard\.admin\.overview\.retrieve/);
 });

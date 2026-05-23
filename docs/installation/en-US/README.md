@@ -2,6 +2,25 @@
 
 This documentation is for operators, developers, and delivery engineers who install, initialize, deploy, and use SDKWork Claw Router. The current release version is defined by `docs/release/VERSION.md`; at the time this guide was written, it is `0.3.0`.
 
+## What Is SDKWork Claw Router?
+
+SDKWork Claw Router is a commercial AI gateway and console workspace. It
+provides OpenAI-compatible `/v1/*` APIs, provider routing, model catalog and
+pricing management, API keys, billing and usage workflows, a user portal, an
+admin console, and generated SDKs backed by schema and OpenAPI contracts.
+
+The screenshots below are placeholder PNG files. Replace the files in
+[`../../assets/product-screenshots`](../../assets/product-screenshots/) with
+real product screenshots when preparing customer-facing installation material.
+
+| Product area | Screenshot |
+| --- | --- |
+| Portal home | ![SDKWork Claw Router portal home placeholder](../../assets/product-screenshots/portal-home.png) |
+| Console dashboard | ![SDKWork Claw Router console dashboard placeholder](../../assets/product-screenshots/console-dashboard.png) |
+| Model catalog and routing | ![SDKWork Claw Router model routing placeholder](../../assets/product-screenshots/model-routing.png) |
+| API playground | ![SDKWork Claw Router playground placeholder](../../assets/product-screenshots/playground.png) |
+| Admin console | ![SDKWork Claw Router admin console placeholder](../../assets/product-screenshots/admin-console.png) |
+
 ## Choose A Path
 
 | Scenario | Guide | Default database policy | Audience |
@@ -11,6 +30,7 @@ This documentation is for operators, developers, and delivery engineers who inst
 | First-time initialization only | [initialization.md](./initialization.md) | depends on deployment mode | operators |
 | Use the portal and APIs | [usage.md](./usage.md) | initialized database required | admins and users |
 | Pick a package or deployment mode | [deployment-modes.md](./deployment-modes.md) | depends on mode | architecture and operations |
+| Publish through nginx | [release-install.md](./release-install.md#nginx-reverse-proxy) | proxies to the release edge server at `http://127.0.0.1:3900` | operators |
 
 Chinese documentation is available at [../zh-CN/README.md](../zh-CN/README.md).
 
@@ -20,7 +40,7 @@ The current release is recorded in [docs/release/VERSION.md](../../release/VERSI
 
 ```text
 Current Version: 0.3.0
-Release Date: 2026-05-16
+Release Date: 2026-05-17
 ```
 
 Package names use this version:
@@ -73,8 +93,23 @@ curl http://127.0.0.1:3900/healthz
 curl http://127.0.0.1:3900/readyz
 ```
 
+Nginx reverse proxy after local health checks pass:
+
+```bash
+pnpm nginx:plan -- --domain api.sdkwork.com
+sudo pnpm nginx:deploy -- --domain api.sdkwork.com --cert-name sdkwork.com
+sudo nginx -t
+sudo systemctl reload nginx
+```
+
+The canonical deployed file is
+`/etc/nginx/sites-enabled/sdkwork/api.sdkwork.com.conf`: `api.sdkwork.com` is the
+complete domain and the file name stem. Generated configs proxy to
+`http://127.0.0.1:3900`. Use `etc/nginx/NGINX_SAMPLE.conf` as the canonical
+template and `etc/nginx/sdkwork/` for full-domain examples.
+
 The Debian service package creates `/etc/clawrouter/clawrouter.toml`,
-`/etc/clawrouter/clawrouter.env`, `/etc/clawrouter/database.secret`, optional
+`/etc/clawrouter/clawrouter.env`, `/etc/clawrouter/database.secret`,
 `/etc/clawrouter/redis.secret`, and the writable data/log directories. The
 package enables `clawrouter.service` on systemd hosts but does not start it
 until the PostgreSQL host, database,
@@ -82,12 +117,12 @@ username, and password are configured. The systemd unit runs installer
 initialization automatically before starting the gateway and runs with
 restricted systemd protections for filesystem, kernel, control group, syscall
 architecture, and open-file limits. The post-install output prints the runtime
-TOML, service environment, PostgreSQL password file, optional Redis password
-file, systemd service name, and first-start commands. The package manifest also
+TOML, service environment, PostgreSQL password file, Redis password file,
+systemd service name, and first-start commands. The package manifest also
 includes a `nativeInstall` layout for deployment automation and support
-diagnostics. Redis is standardized in `clawrouter.toml` but disabled by default;
-enable `[redis]` only when a deployment needs shared cache, distributed locks,
-queues, or rate-limit buckets.
+diagnostics. Redis is standardized in `clawrouter.toml`, enabled by default for
+server deployments, and must be configured before first startup. Desktop
+packages keep Redis optional and disabled by default.
 
 Linux native desktop package:
 

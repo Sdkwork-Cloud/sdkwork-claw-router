@@ -616,11 +616,29 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
             ],
         )
 
-        for table in (ai_model, ai_model_pricing):
+        ai_model_capability = tables["ai_model_capability"]
+        for table in (ai_model, ai_model_capability):
             with self.subTest(table=table["table"]):
-                self.assertIn("region_code", table.get("columns", {}))
-                self.assertIn("region_code", table.get("required_columns", []))
-                self.assertIn("region_code", table.get("not_null_columns", []))
+                self.assertNotIn("region_code", table.get("columns", {}))
+                self.assertNotIn("region_code", table.get("required_columns", []))
+                self.assertNotIn("region_code", table.get("not_null_columns", []))
+        self.assertIn("region_code", ai_model_pricing.get("columns", {}))
+        self.assertIn("region_code", ai_model_pricing.get("required_columns", []))
+        self.assertIn("region_code", ai_model_pricing.get("not_null_columns", []))
+        model_indexes = {
+            item["name"]: item.get("columns", [])
+            for item in ai_model.get("indexes", [])
+            if isinstance(item, dict)
+        }
+        capability_indexes = {
+            item["name"]: item.get("columns", [])
+            for item in ai_model_capability.get("indexes", [])
+            if isinstance(item, dict)
+        }
+        self.assertNotIn("idx_ai_model_vendor_region_status", model_indexes)
+        self.assertNotIn("idx_ai_model_capability_vendor_region_capability", capability_indexes)
+        self.assertNotIn("region_code", model_indexes["idx_ai_model_vendor_status"])
+        self.assertNotIn("region_code", model_indexes["idx_ai_model_catalog_search"])
 
         sdkwork_models_root = ROOT / "data" / "sdkwork-models" / "models"
         self.assertTrue((sdkwork_models_root / "minimax" / "cn" / "vendor.json").is_file())
@@ -868,6 +886,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         self.assertIn('"invalid_state"', cli_source)
         self.assertIn('"database_error"', cli_source)
         self.assertIn('"catalog_error"', cli_source)
+        self.assertIn('"commerce_error"', cli_source)
         self.assertNotIn("changed={}", cli_source)
         self.assertNotIn("catalog_version={}", cli_source)
 

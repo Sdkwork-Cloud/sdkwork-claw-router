@@ -7,7 +7,5 @@ export interface RoutingUsageListResult {
   /** Data field on routing usage list result. */
   data?: RoutingUsageSnapshot;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

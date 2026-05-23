@@ -7,7 +7,5 @@ export interface AppsListResult {
   /** Data field on apps list result. */
   data?: AdminAppListResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

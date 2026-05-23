@@ -7,7 +7,5 @@ export interface FeedsLikesCreateResult {
   /** Data field on feeds likes create result. */
   data?: ForumFeedItem;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

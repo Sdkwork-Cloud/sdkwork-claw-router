@@ -70,11 +70,12 @@ client.SetHeader("X-Custom-Header", "value");
 
 - `client.Agents` - agents API
 - `client.Ai` - ai API
-- `client.Billing` - billing API
+- `client.Commerce` - commerce API
 - `client.Content` - content API
 - `client.Ecosystem` - ecosystem API
 - `client.Iam` - iam API
 - `client.Integration` - integration API
+- `client.OpenPlatform` - open_platform API
 - `client.Platform` - platform API
 - `client.System` - system API
 
@@ -93,7 +94,7 @@ var query = new Dictionary<string, object>
     ["page"] = 5,
     ["page_size"] = 6,
 };
-var result = await client.Agents.ListAsync(query);
+var result = await client.Agents.AgentDefinitionsListAsync(query);
 Console.WriteLine(result);
 ```
 
@@ -105,11 +106,11 @@ var result = await client.Ai.ModelVendorsListAsync();
 Console.WriteLine(result);
 ```
 
-### billing
+### commerce
 
 ```csharp
-// List referral stats
-var result = await client.Billing.ReferralsStatsListAsync();
+// Commerce Reports Payment Reconciliation Retrieve
+var result = await client.Commerce.ReportsPaymentReconciliationRetrieveAsync();
 Console.WriteLine(result);
 ```
 
@@ -145,21 +146,23 @@ var result = await client.Integration.ChannelsListAsync();
 Console.WriteLine(result);
 ```
 
+### open_platform
+
+```csharp
+// List open platform providers
+var query = new Dictionary<string, object>
+{
+    ["status"] = "active",
+};
+var result = await client.OpenPlatform.ProvidersListAsync(query);
+Console.WriteLine(result);
+```
+
 ### platform
 
 ```csharp
-// List apps
-var query = new Dictionary<string, object>
-{
-    ["q"] = "q",
-    ["status"] = "ACTIVE",
-    ["market_status"] = "DRAFT",
-    ["app_type"] = "app-type",
-    ["page"] = 5,
-    ["page_size"] = 6,
-};
-var xRequestId = "X-Request-Id";
-var result = await client.Platform.AppsListAsync(query, xRequestId);
+// List app categories
+var result = await client.Platform.AppsCategoriesListAsync();
 Console.WriteLine(result);
 ```
 

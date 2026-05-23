@@ -39,6 +39,47 @@ body {
   @apply bg-slate-50 text-slate-900 dark:bg-[#050505] dark:text-slate-50 transition-colors duration-300;
 }
 
+.claw-router-navbar-notification-bell {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.claw-router-navbar-notification-bell [role="menu"] {
+  position: absolute;
+  top: calc(100% + 0.625rem);
+  right: 0;
+  z-index: 50;
+  display: flex;
+  width: min(22rem, calc(100vw - 2rem));
+  min-width: min(22rem, calc(100vw - 2rem));
+  max-width: calc(100vw - 2rem);
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 25px 50px -12px rgb(15 23 42 / 0.25);
+}
+
+.dark .claw-router-navbar-notification-bell [role="menu"] {
+  background: #151515;
+}
+
+.claw-router-navbar-notification-bell [role="menu"] > div:nth-child(2) {
+  min-height: 7rem;
+  max-height: 24rem;
+  overflow-y: auto;
+}
+
+.claw-router-navbar-notification-bell [role="menu"] > div:nth-child(2) > div:not(:has(*)) {
+  display: flex;
+  min-height: 7rem;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem;
+  text-align: center;
+  white-space: normal;
+}
+
 .theme-aware-dark-surface {
   --theme-aware-surface: #050505;
   --theme-aware-panel: #111111;

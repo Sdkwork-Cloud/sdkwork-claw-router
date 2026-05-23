@@ -11,5 +11,4 @@ class SkillsPackageUpdateResult:
     """Skills package update result schema exposed by Claw Router."""
     code: str
     data: Optional[AdminSkillPackageMutationResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

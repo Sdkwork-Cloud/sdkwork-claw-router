@@ -7,7 +7,8 @@ This directory is the SDK family workspace for one OpenAPI surface. Language SDK
 ## Workspace Layout
 
 - Authority contract: `openapi/clawrouter-backend-sdk.openapi.json`
-- Derived sdkgen contract: `openapi/clawrouter-backend-sdk.sdkgen.json`
+- Derived sdkgen contract: `openapi/clawrouter-backend-sdk.sdkgen.json` (synchronized artifact, not a generation source)
+- SDK generation input: `openapi/clawrouter-backend-sdk.openapi.json`
 - Assembly snapshot: `.sdkwork-assembly.json`
 - TypeScript workspace: `clawrouter-backend-sdk-typescript`
 - Other language workspaces: `<family>-<language>/generated/server-openapi`

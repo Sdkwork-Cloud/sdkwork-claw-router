@@ -11,5 +11,4 @@ class RoutingUsageListResult:
     """Routing usage list result schema exposed by Claw Router."""
     code: str
     data: Optional[RoutingUsageSnapshot] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

@@ -5,11 +5,12 @@ public class SdkworkBackendClient {
     private let httpClient: HttpClient
     public let agents: AgentsApi
     public let ai: AiApi
-    public let billing: BillingApi
+    public let commerce: CommerceApi
     public let content: ContentApi
     public let ecosystem: EcosystemApi
     public let iam: IamApi
     public let integration: IntegrationApi
+    public let openPlatform: OpenPlatformApi
     public let platform: PlatformApi
     public let system: SystemApi
 
@@ -17,11 +18,12 @@ public class SdkworkBackendClient {
         self.httpClient = HttpClient(baseURL: baseURL)
         self.agents = AgentsApi(client: httpClient)
         self.ai = AiApi(client: httpClient)
-        self.billing = BillingApi(client: httpClient)
+        self.commerce = CommerceApi(client: httpClient)
         self.content = ContentApi(client: httpClient)
         self.ecosystem = EcosystemApi(client: httpClient)
         self.iam = IamApi(client: httpClient)
         self.integration = IntegrationApi(client: httpClient)
+        self.openPlatform = OpenPlatformApi(client: httpClient)
         self.platform = PlatformApi(client: httpClient)
         self.system = SystemApi(client: httpClient)
     }
@@ -30,11 +32,12 @@ public class SdkworkBackendClient {
         self.httpClient = HttpClient(config: config)
         self.agents = AgentsApi(client: httpClient)
         self.ai = AiApi(client: httpClient)
-        self.billing = BillingApi(client: httpClient)
+        self.commerce = CommerceApi(client: httpClient)
         self.content = ContentApi(client: httpClient)
         self.ecosystem = EcosystemApi(client: httpClient)
         self.iam = IamApi(client: httpClient)
         self.integration = IntegrationApi(client: httpClient)
+        self.openPlatform = OpenPlatformApi(client: httpClient)
         self.platform = PlatformApi(client: httpClient)
         self.system = SystemApi(client: httpClient)
     }

@@ -1,0 +1,1205 @@
+fragment: shared/entities/content
+x_response_entities:
+  forum_author: &id001
+    name: ForumAuthor
+    type: object
+    additionalProperties: false
+    required:
+    - id
+    - name
+    - isFollowing
+    properties:
+      id:
+        type: integer
+        format: int64
+        minimum: 0
+      name:
+        type: string
+        minLength: 1
+        maxLength: 128
+      avatar:
+        type: string
+        maxLength: 2048
+      bio:
+        type: string
+        maxLength: 512
+      isFollowing:
+        type: boolean
+  forum_feed_item: &id002
+    name: ForumFeedItem
+    type: object
+    additionalProperties: false
+    required:
+    - id
+    - title
+    - content
+    - summary
+    - coverImage
+    - contentType
+    - categoryId
+    - tags
+    - author
+    - viewCount
+    - likeCount
+    - commentCount
+    - shareCount
+    - isLiked
+    - isCollected
+    - isTop
+    - isHot
+    - isRecommended
+    - createdAt
+    - updatedAt
+    properties:
+      id:
+        type: integer
+        format: int64
+        minimum: 1
+      title:
+        type: string
+        minLength: 1
+        maxLength: 255
+      content:
+        type: string
+        maxLength: 20000
+      summary:
+        type: string
+        maxLength: 1024
+      coverImage:
+        type: string
+        maxLength: 2048
+      contentType:
+        type: string
+        enum:
+        - feeds
+      categoryId:
+        type: integer
+        format: int64
+        minimum: 0
+      tags:
+        type: array
+        maxItems: 20
+        items:
+          type: string
+          minLength: 1
+          maxLength: 64
+      author: *id001
+      viewCount:
+        type: integer
+        format: int64
+        minimum: 0
+      likeCount:
+        type: integer
+        format: int64
+        minimum: 0
+      commentCount:
+        type: integer
+        format: int64
+        minimum: 0
+      shareCount:
+        type: integer
+        format: int64
+        minimum: 0
+      isLiked:
+        type: boolean
+      isCollected:
+        type: boolean
+      isTop:
+        type: boolean
+      isHot:
+        type: boolean
+      isRecommended:
+        type: boolean
+      createdAt:
+        type: string
+        maxLength: 64
+      updatedAt:
+        type: string
+        maxLength: 64
+  forum_feed_item_list:
+    name: ForumFeedItemList
+    type: array
+    maxItems: 100
+    items: *id002
+  forum_comment_item: &id003
+    name: ForumCommentItem
+    type: object
+    additionalProperties: false
+    required:
+    - commentId
+    - content
+    - contentType
+    - contentId
+    - userId
+    - status
+    - likes
+    - replyCount
+    - isTop
+    - author
+    - createdAt
+    properties:
+      commentId:
+        type: string
+        minLength: 1
+        maxLength: 128
+      content:
+        type: string
+        minLength: 1
+        maxLength: 20000
+      contentType:
+        type: string
+        enum:
+        - FEEDS
+        - COMMENTS
+        - COURSE
+      contentId:
+        type: integer
+        format: int64
+        minimum: 1
+      userId:
+        type: integer
+        format: int64
+        minimum: 0
+      status:
+        type: string
+        enum:
+        - PUBLISHED
+        - PENDING
+        - DELETED
+      likes:
+        type: integer
+        format: int64
+        minimum: 0
+      replyCount:
+        type: integer
+        format: int64
+        minimum: 0
+      isTop:
+        type: boolean
+      parentId:
+        type: integer
+        format: int64
+        minimum: 1
+      author: *id001
+      createdAt:
+        type: string
+        maxLength: 64
+  forum_comment_detail:
+    name: ForumCommentDetail
+    type: object
+    additionalProperties: false
+    required:
+    - commentId
+    - content
+    - contentType
+    - contentId
+    - userId
+    - status
+    - likes
+    - replyCount
+    - isTop
+    - author
+    - ipAddress
+    - deviceInfo
+    - createdAt
+    - updatedAt
+    - replies
+    properties:
+      commentId:
+        type: string
+        minLength: 1
+        maxLength: 128
+      content:
+        type: string
+        minLength: 1
+        maxLength: 20000
+      contentType:
+        type: string
+        enum:
+        - FEEDS
+        - COMMENTS
+        - COURSE
+      contentId:
+        type: integer
+        format: int64
+        minimum: 1
+      userId:
+        type: integer
+        format: int64
+        minimum: 0
+      status:
+        type: string
+        enum:
+        - PUBLISHED
+        - PENDING
+        - DELETED
+      likes:
+        type: integer
+        format: int64
+        minimum: 0
+      replyCount:
+        type: integer
+        format: int64
+        minimum: 0
+      isTop:
+        type: boolean
+      parentId:
+        type: integer
+        format: int64
+        minimum: 1
+      author: *id001
+      ipAddress:
+        type: string
+        maxLength: 128
+      deviceInfo:
+        type: string
+        maxLength: 512
+      createdAt:
+        type: string
+        maxLength: 64
+      updatedAt:
+        type: string
+        maxLength: 64
+      replies:
+        type: array
+        maxItems: 100
+        items: *id003
+  forum_comment_page:
+    name: ForumCommentPage
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - content
+    - totalElements
+    - page
+    - size
+    properties:
+      items:
+        type: array
+        maxItems: 100
+        items: *id003
+      content:
+        type: array
+        maxItems: 100
+        items: *id003
+      totalElements:
+        type: integer
+        format: int64
+        minimum: 0
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      size:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 100
+  forum_boolean_response:
+    name: ForumBooleanResponse
+    type: boolean
+  forum_comment_statistics:
+    name: ForumCommentStatistics
+    type: object
+    additionalProperties: false
+    required:
+    - totalComments
+    properties:
+      totalComments:
+        type: integer
+        format: int64
+        minimum: 0
+  forum_overview_stats: &id004
+    name: ForumOverviewStats
+    type: object
+    additionalProperties: false
+    required:
+    - totalPosts
+    - totalComments
+    - memberCount
+    - onlineMembers
+    properties:
+      totalPosts:
+        type: integer
+        format: int64
+        minimum: 0
+      totalComments:
+        type: integer
+        format: int64
+        minimum: 0
+      memberCount:
+        type: integer
+        format: int64
+        minimum: 0
+      onlineMembers:
+        type: integer
+        format: int64
+        minimum: 0
+  forum_community_link: &id005
+    name: ForumCommunityLink
+    type: object
+    additionalProperties: false
+    required:
+    - id
+    - label
+    - url
+    - tone
+    properties:
+      id:
+        type: string
+        minLength: 1
+        maxLength: 64
+      label:
+        type: string
+        minLength: 1
+        maxLength: 128
+      url:
+        type: string
+        minLength: 1
+        maxLength: 2048
+      qrCodeUrl:
+        type: string
+        maxLength: 2048
+      tone:
+        type: string
+        enum:
+        - green
+        - blue
+        - teal
+        - red
+        - pink
+  forum_overview_source: &id006
+    name: ForumOverviewSource
+    type: object
+    additionalProperties: false
+    required:
+    - sourceLabel
+    - sourceDescription
+    - sourceTables
+    - observedAt
+    properties:
+      sourceLabel:
+        type: string
+        minLength: 1
+        maxLength: 128
+      sourceDescription:
+        type: string
+        minLength: 1
+        maxLength: 512
+      sourceTables:
+        type: array
+        maxItems: 8
+        items:
+          type: string
+          minLength: 1
+          maxLength: 128
+      observedAt:
+        type: string
+        minLength: 1
+        maxLength: 64
+  forum_overview_response:
+    name: ForumOverviewResponse
+    type: object
+    additionalProperties: false
+    required:
+    - stats
+    - communityLinks
+    - source
+    properties:
+      stats: *id004
+      communityLinks:
+        type: array
+        maxItems: 16
+        items: *id005
+      source: *id006
+  forum_create_feed_request:
+    name: ForumCreateFeedRequest
+    type: object
+    additionalProperties: false
+    required:
+    - content
+    properties:
+      title:
+        type: string
+        maxLength: 255
+      content:
+        type: string
+        minLength: 1
+        maxLength: 2000
+      categoryId:
+        type: integer
+        format: int64
+        minimum: 0
+      images:
+        type: array
+        maxItems: 20
+        items:
+          type: string
+          maxLength: 2048
+      tags:
+        type: array
+        maxItems: 20
+        items:
+          type: string
+          minLength: 1
+          maxLength: 64
+      source:
+        type: string
+        maxLength: 100
+      sourceUrl:
+        type: string
+        maxLength: 500
+  forum_create_comment_request:
+    name: ForumCreateCommentRequest
+    type: object
+    additionalProperties: false
+    required:
+    - contentType
+    - contentId
+    - content
+    properties:
+      contentType:
+        type: string
+        enum:
+        - feeds
+        - comments
+        - course
+        - courses
+        - FEEDS
+        - COMMENTS
+        - COURSE
+        - COURSES
+      contentId:
+        type: integer
+        format: int64
+        minimum: 1
+      content:
+        type: string
+        minLength: 1
+        maxLength: 20000
+      deviceInfo:
+        type: string
+        maxLength: 512
+  forum_reply_comment_request:
+    name: ForumReplyCommentRequest
+    type: object
+    additionalProperties: false
+    required:
+    - content
+    properties:
+      content:
+        type: string
+        minLength: 1
+        maxLength: 20000
+      deviceInfo:
+        type: string
+        maxLength: 512
+  course_instructor: &id009
+    name: CourseInstructor
+    type: object
+    additionalProperties: false
+    required:
+    - name
+    - avatar
+    - title
+    - bio
+    properties:
+      name:
+        type: string
+        minLength: 1
+        maxLength: 128
+      avatar:
+        type: string
+        maxLength: 2048
+      title:
+        type: string
+        maxLength: 128
+      bio:
+        type: string
+        maxLength: 1024
+  course_engagement: &id010
+    name: CourseEngagement
+    type: object
+    additionalProperties: false
+    required:
+    - views
+    - likes
+    - saves
+    - shares
+    - discussions
+    - studentsCount
+    properties:
+      views:
+        type: integer
+        format: int64
+        minimum: 0
+      likes:
+        type: integer
+        format: int64
+        minimum: 0
+      saves:
+        type: integer
+        format: int64
+        minimum: 0
+      shares:
+        type: integer
+        format: int64
+        minimum: 0
+      discussions:
+        type: integer
+        format: int64
+        minimum: 0
+      studentsCount:
+        type: integer
+        format: int64
+        minimum: 0
+  course_category_item: &id007
+    name: CourseCategoryItem
+    type: object
+    additionalProperties: false
+    required:
+    - id
+    - code
+    - label
+    - name
+    - description
+    - icon
+    - sortWeight
+    - courseCount
+    properties:
+      id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      code:
+        type: string
+        minLength: 1
+        maxLength: 128
+      label:
+        type: string
+        minLength: 1
+        maxLength: 128
+      name:
+        type: string
+        minLength: 1
+        maxLength: 128
+      description:
+        type: string
+        maxLength: 1024
+      icon:
+        type: string
+        maxLength: 128
+      sortWeight:
+        type: integer
+        format: int64
+      courseCount:
+        type: integer
+        format: int64
+        minimum: 0
+  course_category_list:
+    name: CourseCategoryList
+    type: array
+    maxItems: 100
+    items: *id007
+  course_application_request:
+    name: CourseApplicationCreateRequest
+    type: object
+    additionalProperties: false
+    required:
+    - title
+    - category
+    - description
+    - sourceProvider
+    properties:
+      title:
+        type: string
+        minLength: 1
+        maxLength: 200
+      category:
+        type: string
+        minLength: 1
+        maxLength: 64
+      description:
+        type: string
+        minLength: 1
+        maxLength: 2000
+      sourceProvider:
+        type: string
+        enum:
+        - bilibili
+        - local
+      externalBvid:
+        type: string
+        maxLength: 64
+      videoUrl:
+        type: string
+        maxLength: 1024
+      contactName:
+        type: string
+        maxLength: 128
+      contactEmail:
+        type: string
+        maxLength: 254
+      notes:
+        type: string
+        maxLength: 2000
+  course_application_video_upload_request:
+    name: CourseApplicationVideoUploadRequest
+    type: object
+    additionalProperties: false
+    required:
+    - file
+    properties:
+      file:
+        type: string
+        format: binary
+      fileName:
+        type: string
+        minLength: 1
+        maxLength: 255
+  course_application_video_upload_response:
+    name: CourseApplicationVideoUploadResponse
+    type: object
+    additionalProperties: false
+    required:
+    - videoUrl
+    - fileName
+    - contentType
+    - sizeBytes
+    - sha256
+    - uploadedAt
+    properties:
+      videoUrl:
+        type: string
+        minLength: 1
+        maxLength: 1024
+      fileName:
+        type: string
+        minLength: 1
+        maxLength: 255
+      contentType:
+        type: string
+        minLength: 1
+        maxLength: 128
+      sizeBytes:
+        type: integer
+        format: int64
+        minimum: 1
+      sha256:
+        type: string
+        minLength: 64
+        maxLength: 64
+        pattern: ^[a-f0-9]{64}$
+      uploadedAt:
+        type: string
+        minLength: 1
+        maxLength: 64
+  course_application_item:
+    name: CourseApplicationCreateResponse
+    type: object
+    additionalProperties: false
+    required:
+    - id
+    - applicationId
+    - title
+    - category
+    - description
+    - sourceProvider
+    - status
+    - submittedAt
+    properties:
+      id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      applicationId:
+        type: integer
+        format: int64
+        minimum: 1
+      title:
+        type: string
+        minLength: 1
+        maxLength: 200
+      category:
+        type: string
+        minLength: 1
+        maxLength: 64
+      description:
+        type: string
+        minLength: 1
+        maxLength: 2000
+      sourceProvider:
+        type: string
+        enum:
+        - bilibili
+        - local
+      externalBvid:
+        type: string
+        maxLength: 64
+      videoUrl:
+        type: string
+        maxLength: 1024
+      contactName:
+        type: string
+        maxLength: 128
+      contactEmail:
+        type: string
+        maxLength: 254
+      status:
+        type: string
+        minLength: 1
+        maxLength: 64
+      submittedAt:
+        type: string
+        minLength: 1
+        maxLength: 64
+  course_lesson_item: &id008
+    name: CourseLessonItem
+    type: object
+    additionalProperties: false
+    required:
+    - id
+    - lessonId
+    - lessonNo
+    - number
+    - title
+    - description
+    - videoUrl
+    - externalBvid
+    - sourceProvider
+    - durationSeconds
+    - durationText
+    - content
+    - sortOrder
+    - freePreview
+    properties:
+      id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      lessonId:
+        type: integer
+        format: int64
+        minimum: 1
+      lessonNo:
+        type: integer
+        format: int64
+        minimum: 0
+      number:
+        type: integer
+        format: int64
+        minimum: 0
+      title:
+        type: string
+        minLength: 1
+        maxLength: 255
+      description:
+        type: string
+        maxLength: 1024
+      videoUrl:
+        type: string
+        maxLength: 2048
+      externalBvid:
+        type: string
+        maxLength: 128
+      sourceProvider:
+        type: string
+        maxLength: 64
+      durationSeconds:
+        type: integer
+        format: int64
+        minimum: 0
+      durationText:
+        type: string
+        maxLength: 64
+      content:
+        type: string
+        maxLength: 20000
+      sortOrder:
+        type: integer
+        format: int64
+      freePreview:
+        type: boolean
+  course_section_item: &id012
+    name: CourseSectionItem
+    type: object
+    additionalProperties: false
+    required:
+    - id
+    - sectionId
+    - sectionNo
+    - title
+    - description
+    - sortOrder
+    - lessonCount
+    - durationSeconds
+    - lessons
+    properties:
+      id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      sectionId:
+        type: integer
+        format: int64
+        minimum: 1
+      sectionNo:
+        type: integer
+        format: int64
+        minimum: 0
+      title:
+        type: string
+        minLength: 1
+        maxLength: 255
+      description:
+        type: string
+        maxLength: 1024
+      sortOrder:
+        type: integer
+        format: int64
+      lessonCount:
+        type: integer
+        format: int64
+        minimum: 0
+      durationSeconds:
+        type: integer
+        format: int64
+        minimum: 0
+      lessons:
+        type: array
+        maxItems: 100
+        items: *id008
+  course_item: &id011
+    name: CourseItem
+    type: object
+    additionalProperties: false
+    required:
+    - id
+    - contentId
+    - courseCode
+    - title
+    - description
+    - thumbnailUrl
+    - instructor
+    - durationText
+    - lessonsCount
+    - ratingScore
+    - studentsCount
+    - level
+    - levelLabel
+    - category
+    - categoryLabel
+    - tags
+    - externalBvid
+    - content
+    - currency
+    - isCollection
+    - publishedAt
+    - commentCount
+    - engagement
+    properties:
+      id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      contentId:
+        type: integer
+        format: int64
+        minimum: 1
+      courseCode:
+        type: string
+        minLength: 1
+        maxLength: 128
+      title:
+        type: string
+        minLength: 1
+        maxLength: 255
+      description:
+        type: string
+        maxLength: 2048
+      thumbnailUrl:
+        type: string
+        maxLength: 2048
+      instructor: *id009
+      durationText:
+        type: string
+        maxLength: 64
+      lessonsCount:
+        type: integer
+        format: int64
+        minimum: 0
+      ratingScore:
+        type: number
+        minimum: 0
+        maximum: 5
+      studentsCount:
+        type: integer
+        format: int64
+        minimum: 0
+      level:
+        type: integer
+        format: int64
+        minimum: 0
+        maximum: 3
+      levelLabel:
+        type: string
+        maxLength: 64
+      category:
+        type: string
+        maxLength: 128
+      categoryLabel:
+        type: string
+        maxLength: 128
+      tags:
+        type: array
+        maxItems: 32
+        items:
+          type: string
+          minLength: 1
+          maxLength: 64
+      externalBvid:
+        type: string
+        maxLength: 128
+      content:
+        type: string
+        maxLength: 20000
+      priceAmount:
+        type:
+        - string
+        - 'null'
+        maxLength: 64
+      currency:
+        type: string
+        maxLength: 16
+      isCollection:
+        type: boolean
+      publishedAt:
+        type: string
+        maxLength: 64
+      commentCount:
+        type: integer
+        format: int64
+        minimum: 0
+      engagement: *id010
+  course_list_response:
+    name: CourseListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    - content
+    - page
+    - size
+    - totalElements
+    properties:
+      items:
+        type: array
+        maxItems: 100
+        items: *id011
+      content:
+        type: array
+        maxItems: 100
+        items: *id011
+      page:
+        type: integer
+        format: int64
+        minimum: 1
+      size:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 100
+      totalElements:
+        type: integer
+        format: int64
+        minimum: 0
+  course_overview_source: &id013
+    name: CourseOverviewSource
+    type: object
+    additionalProperties: false
+    required:
+    - sourceLabel
+    - sourceDescription
+    - sourceTables
+    - observedAt
+    properties:
+      sourceLabel:
+        type: string
+        minLength: 1
+        maxLength: 128
+      sourceDescription:
+        type: string
+        minLength: 1
+        maxLength: 512
+      sourceTables:
+        type: array
+        maxItems: 8
+        items:
+          type: string
+          minLength: 1
+          maxLength: 128
+      observedAt:
+        type: string
+        minLength: 1
+        maxLength: 64
+  course_detail:
+    name: CourseDetail
+    type: object
+    additionalProperties: false
+    required:
+    - id
+    - contentId
+    - courseCode
+    - title
+    - description
+    - thumbnailUrl
+    - instructor
+    - durationText
+    - lessonsCount
+    - ratingScore
+    - studentsCount
+    - level
+    - levelLabel
+    - category
+    - categoryLabel
+    - tags
+    - externalBvid
+    - content
+    - currency
+    - isCollection
+    - publishedAt
+    - commentCount
+    - engagement
+    - sections
+    - relatedCourses
+    - source
+    properties:
+      id:
+        type: string
+        minLength: 1
+        maxLength: 128
+      contentId:
+        type: integer
+        format: int64
+        minimum: 1
+      courseCode:
+        type: string
+        minLength: 1
+        maxLength: 128
+      title:
+        type: string
+        minLength: 1
+        maxLength: 255
+      description:
+        type: string
+        maxLength: 2048
+      thumbnailUrl:
+        type: string
+        maxLength: 2048
+      instructor: *id009
+      durationText:
+        type: string
+        maxLength: 64
+      lessonsCount:
+        type: integer
+        format: int64
+        minimum: 0
+      ratingScore:
+        type: number
+        minimum: 0
+        maximum: 5
+      studentsCount:
+        type: integer
+        format: int64
+        minimum: 0
+      level:
+        type: integer
+        format: int64
+        minimum: 0
+        maximum: 3
+      levelLabel:
+        type: string
+        maxLength: 64
+      category:
+        type: string
+        maxLength: 128
+      categoryLabel:
+        type: string
+        maxLength: 128
+      tags:
+        type: array
+        maxItems: 32
+        items:
+          type: string
+          minLength: 1
+          maxLength: 64
+      externalBvid:
+        type: string
+        maxLength: 128
+      content:
+        type: string
+        maxLength: 20000
+      priceAmount:
+        type:
+        - string
+        - 'null'
+        maxLength: 64
+      currency:
+        type: string
+        maxLength: 16
+      isCollection:
+        type: boolean
+      publishedAt:
+        type: string
+        maxLength: 64
+      commentCount:
+        type: integer
+        format: int64
+        minimum: 0
+      engagement: *id010
+      sections:
+        type: array
+        maxItems: 100
+        items: *id012
+      relatedCourses:
+        type: array
+        maxItems: 16
+        items: *id011
+      source: *id013
+  course_overview_stats: &id014
+    name: CourseOverviewStats
+    type: object
+    additionalProperties: false
+    required:
+    - totalCourses
+    - totalLessons
+    - totalStudents
+    - totalCategories
+    properties:
+      totalCourses:
+        type: integer
+        format: int64
+        minimum: 0
+      totalLessons:
+        type: integer
+        format: int64
+        minimum: 0
+      totalStudents:
+        type: integer
+        format: int64
+        minimum: 0
+      totalCategories:
+        type: integer
+        format: int64
+        minimum: 0
+  course_overview_response:
+    name: CourseOverview
+    type: object
+    additionalProperties: false
+    required:
+    - stats
+    - source
+    properties:
+      stats: *id014
+      source: *id013

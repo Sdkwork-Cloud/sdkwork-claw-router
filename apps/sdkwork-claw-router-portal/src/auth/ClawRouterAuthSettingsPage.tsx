@@ -1,6 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Loader2, QrCode, RefreshCw, Save, Settings2, ShieldCheck } from 'lucide-react';
-import type { AdminAuthSettingsUpdateRequest } from '@sdkwork/clawrouter-backend-sdk';
+import { Loader2, Plus, QrCode, RefreshCw, Save, Settings2, ShieldCheck, Trash2 } from 'lucide-react';
+import type {
+  AdminAuthSettingsUpdateRequest,
+  AdminAuthWechatMini,
+  AdminAuthWechatOfficial,
+} from '@sdkwork/clawrouter-backend-sdk';
 import { useTranslation } from 'react-i18next';
 import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
 import {
@@ -17,6 +21,12 @@ type RegisterMethod = NonNullable<AdminAuthSettingsUpdateRequest['registerMethod
 type RecoveryMethod = NonNullable<AdminAuthSettingsUpdateRequest['recoveryMethods']>[number];
 type LeftRailMode = NonNullable<AdminAuthSettingsUpdateRequest['leftRailMode']>;
 type OAuthRegion = NonNullable<AdminAuthSettingsUpdateRequest['oauthRegion']>;
+type QrLoginType = NonNullable<AdminAuthSettingsUpdateRequest['qrLoginType']>;
+type WechatEnv = AdminAuthWechatMini['env'];
+type WechatSettingsForm = {
+  mini: AdminAuthWechatMini[];
+  official: AdminAuthWechatOfficial[];
+};
 
 type AuthSettingsForm = Required<Pick<
   AdminAuthSettingsUpdateRequest,
@@ -25,11 +35,13 @@ type AuthSettingsForm = Required<Pick<
   | 'oauthLoginEnabled'
   | 'oauthProviders'
   | 'qrLoginEnabled'
+  | 'qrLoginType'
   | 'recoveryMethods'
   | 'registerMethods'
   | 'verificationPolicy'
 >> & {
   oauthRegion: OAuthRegion;
+  wechat: WechatSettingsForm;
 };
 
 const LOGIN_METHOD_OPTIONS: Array<{ labelKey: string, value: LoginMethod }> = [
@@ -50,6 +62,16 @@ const RECOVERY_METHOD_OPTIONS: Array<{ labelKey: string, value: RecoveryMethod }
 ];
 
 const OAUTH_PROVIDER_OPTIONS = ['wechat', 'alipay', 'douyin', 'google', 'github'] as const;
+const QR_LOGIN_TYPE_OPTIONS: Array<{ labelKey: string, value: QrLoginType }> = [
+  { labelKey: 'admin.authSettings.options.qrLoginType.web', value: 'web' },
+  { labelKey: 'admin.authSettings.options.qrLoginType.official', value: 'official' },
+  { labelKey: 'admin.authSettings.options.qrLoginType.mini', value: 'mini' },
+];
+const WECHAT_ENV_OPTIONS: Array<{ labelKey: string, value: WechatEnv }> = [
+  { labelKey: 'admin.authSettings.options.wechatEnv.release', value: 'release' },
+  { labelKey: 'admin.authSettings.options.wechatEnv.trial', value: 'trial' },
+  { labelKey: 'admin.authSettings.options.wechatEnv.develop', value: 'develop' },
+];
 
 const DEFAULT_AUTH_SETTINGS_FORM: AuthSettingsForm = {
   leftRailMode: DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG.leftRailMode ?? 'highlights-only',
@@ -58,6 +80,7 @@ const DEFAULT_AUTH_SETTINGS_FORM: AuthSettingsForm = {
   oauthProviders: [...(DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG.oauthProviders ?? [])],
   oauthRegion: 'mainland',
   qrLoginEnabled: DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG.qrLoginEnabled ?? false,
+  qrLoginType: 'web',
   recoveryMethods: ['email', 'phone'],
   registerMethods: ['email', 'phone'],
   verificationPolicy: {
@@ -65,6 +88,10 @@ const DEFAULT_AUTH_SETTINGS_FORM: AuthSettingsForm = {
     emailRegistrationVerificationRequired: DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG.verificationPolicy?.emailRegistrationVerificationRequired ?? false,
     phoneCodeLoginEnabled: DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG.verificationPolicy?.phoneCodeLoginEnabled ?? false,
     phoneRegistrationVerificationRequired: DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG.verificationPolicy?.phoneRegistrationVerificationRequired ?? false,
+  },
+  wechat: {
+    mini: [],
+    official: [],
   },
 };
 
@@ -242,6 +269,28 @@ export function ClawRouterAuthSettingsPage() {
                   ? 'highlights-only'
                   : current.leftRailMode,
                 qrLoginEnabled: !current.qrLoginEnabled,
+              }))}
+            />
+            <SegmentedControl
+              label={t('admin.authSettings.fields.qrLoginType')}
+              value={form.qrLoginType}
+              options={QR_LOGIN_TYPE_OPTIONS.map((option) => ({ ...option, label: t(option.labelKey) }))}
+              onChange={(qrLoginType) => setForm((current) => ({ ...current, qrLoginType }))}
+            />
+            <WechatChannelEditor
+              kind="official"
+              values={form.wechat.official}
+              onChange={(official) => setForm((current) => ({
+                ...current,
+                wechat: { ...current.wechat, official },
+              }))}
+            />
+            <WechatChannelEditor
+              kind="mini"
+              values={form.wechat.mini}
+              onChange={(mini) => setForm((current) => ({
+                ...current,
+                wechat: { ...current.wechat, mini },
               }))}
             />
             <ToggleRow
@@ -452,6 +501,219 @@ function OAuthProviderEditor({
   );
 }
 
+type WechatChannelEditorProps =
+  | {
+    kind: 'official';
+    onChange: (values: AdminAuthWechatOfficial[]) => void;
+    values: readonly AdminAuthWechatOfficial[];
+  }
+  | {
+    kind: 'mini';
+    onChange: (values: AdminAuthWechatMini[]) => void;
+    values: readonly AdminAuthWechatMini[];
+  };
+
+function WechatChannelEditor(props: WechatChannelEditorProps) {
+  const { t } = useTranslation();
+  const title = props.kind === 'official'
+    ? t('admin.authSettings.fields.wechatOfficial')
+    : t('admin.authSettings.fields.wechatMini');
+  const addLabel = props.kind === 'official'
+    ? t('admin.authSettings.actions.addOfficial')
+    : t('admin.authSettings.actions.addMini');
+
+  const updateItem = (index: number, patch: Partial<AdminAuthWechatOfficial & AdminAuthWechatMini>) => {
+    if (props.kind === 'official') {
+      props.onChange(props.values.map((item, itemIndex) => (
+        itemIndex === index ? normalizeWechatOfficialDraft({ ...item, ...patch }) : item
+      )));
+      return;
+    }
+    props.onChange(props.values.map((item, itemIndex) => (
+      itemIndex === index ? normalizeWechatMiniDraft({ ...item, ...patch }) : item
+    )));
+  };
+
+  const markPrimary = (index: number) => {
+    if (props.kind === 'official') {
+      props.onChange(props.values.map((item, itemIndex) => ({ ...item, enabled: itemIndex === index ? true : item.enabled, primary: itemIndex === index })));
+      return;
+    }
+    props.onChange(props.values.map((item, itemIndex) => ({ ...item, enabled: itemIndex === index ? true : item.enabled, primary: itemIndex === index })));
+  };
+
+  const addItem = () => {
+    if (props.kind === 'official') {
+      props.onChange([...props.values, createOfficialWechatDraft(props.values.length)]);
+      return;
+    }
+    props.onChange([...props.values, createMiniWechatDraft(props.values.length)]);
+  };
+
+  const removeItem = (index: number) => {
+    if (props.kind === 'official') {
+      props.onChange(ensurePrimaryWechatItems(props.values.filter((_, itemIndex) => itemIndex !== index)));
+      return;
+    }
+    props.onChange(ensurePrimaryWechatItems(props.values.filter((_, itemIndex) => itemIndex !== index)));
+  };
+
+  return (
+    <div className="rounded-lg border border-slate-200 p-3 dark:border-white/10">
+      <div className="flex items-center justify-between gap-3">
+        <div className="text-sm font-medium text-slate-700 dark:text-slate-200">{title}</div>
+        <button
+          type="button"
+          onClick={addItem}
+          className="inline-flex items-center gap-1.5 rounded-md border border-slate-200 px-2.5 py-1.5 text-xs font-medium text-slate-600 transition-colors hover:bg-slate-50 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/10"
+        >
+          <Plus className="h-3.5 w-3.5" />
+          {addLabel}
+        </button>
+      </div>
+      <div className="mt-3 space-y-3">
+        {props.values.length === 0 ? (
+          <div className="rounded-md border border-dashed border-slate-200 px-3 py-3 text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">
+            {t('admin.authSettings.empty.wechat')}
+          </div>
+        ) : null}
+        {props.values.map((item, index) => (
+          <div key={`${props.kind}-${index}-${item.key}`} className="rounded-md border border-slate-200 p-3 dark:border-white/10">
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+              <TextField
+                label={t('admin.authSettings.fields.wechatKey')}
+                value={item.key}
+                onChange={(value) => updateItem(index, { key: value })}
+              />
+              <TextField
+                label={t('admin.authSettings.fields.wechatName')}
+                value={item.name}
+                onChange={(value) => updateItem(index, { name: value })}
+              />
+              <TextField
+                label={t('admin.authSettings.fields.wechatAppId')}
+                value={item.appId}
+                onChange={(value) => updateItem(index, { appId: value })}
+              />
+              <TextField
+                label={t('admin.authSettings.fields.wechatSecretRef')}
+                value={item.secretRef}
+                onChange={(value) => updateItem(index, { secretRef: value })}
+              />
+              {props.kind === 'official' ? (
+                <>
+                  <TextField
+                    label={t('admin.authSettings.fields.wechatTokenRef')}
+                    value={(item as AdminAuthWechatOfficial).tokenRef}
+                    onChange={(value) => updateItem(index, { tokenRef: value } as Partial<AdminAuthWechatOfficial>)}
+                  />
+                  <TextField
+                    label={t('admin.authSettings.fields.wechatAesKeyRef')}
+                    value={(item as AdminAuthWechatOfficial).aesKeyRef ?? ''}
+                    onChange={(value) => updateItem(index, { aesKeyRef: value } as Partial<AdminAuthWechatOfficial>)}
+                  />
+                  <TextField
+                    label={t('admin.authSettings.fields.wechatOriginalId')}
+                    value={(item as AdminAuthWechatOfficial).originalId ?? ''}
+                    onChange={(value) => updateItem(index, { originalId: value } as Partial<AdminAuthWechatOfficial>)}
+                  />
+                  <TextField
+                    label={t('admin.authSettings.fields.wechatScene')}
+                    value={(item as AdminAuthWechatOfficial).scene ?? ''}
+                    onChange={(value) => updateItem(index, { scene: value } as Partial<AdminAuthWechatOfficial>)}
+                  />
+                </>
+              ) : (
+                <>
+                  <TextField
+                    label={t('admin.authSettings.fields.wechatPath')}
+                    value={(item as AdminAuthWechatMini).path}
+                    onChange={(value) => updateItem(index, { path: value } as Partial<AdminAuthWechatMini>)}
+                  />
+                  <div>
+                    <label className="mb-1.5 block text-xs font-medium text-slate-500 dark:text-slate-400">
+                      {t('admin.authSettings.fields.wechatEnv')}
+                    </label>
+                    <select
+                      value={(item as AdminAuthWechatMini).env}
+                      onChange={(event) => updateItem(index, { env: readWechatEnv(event.target.value) } as Partial<AdminAuthWechatMini>)}
+                      className="h-9 w-full rounded-md border border-slate-200 bg-white px-2.5 text-sm text-slate-700 outline-none focus:border-blue-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-100"
+                    >
+                      {WECHAT_ENV_OPTIONS.map((option) => (
+                        <option key={option.value} value={option.value}>{t(option.labelKey)}</option>
+                      ))}
+                    </select>
+                  </div>
+                </>
+              )}
+              <div className="md:col-span-2">
+                <TextField
+                  label={t('admin.authSettings.fields.wechatUrl')}
+                  value={item.url ?? ''}
+                  onChange={(value) => updateItem(index, { url: value })}
+                />
+              </div>
+            </div>
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              <label className="inline-flex min-h-9 items-center gap-2 rounded-md border border-slate-200 px-2.5 py-1.5 text-xs font-medium text-slate-600 dark:border-white/10 dark:text-slate-300">
+                <input
+                  type="checkbox"
+                  checked={item.enabled}
+                  onChange={() => updateItem(index, { enabled: !item.enabled })}
+                  className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+                />
+                {t('admin.authSettings.fields.wechatEnabled')}
+              </label>
+              <button
+                type="button"
+                onClick={() => markPrimary(index)}
+                className={`inline-flex min-h-9 items-center rounded-md border px-2.5 py-1.5 text-xs font-medium transition-colors ${item.primary
+                  ? 'border-blue-500 bg-blue-50 text-blue-700 dark:border-blue-400/70 dark:bg-blue-500/10 dark:text-blue-300'
+                  : 'border-slate-200 text-slate-600 hover:bg-slate-50 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/10'
+                }`}
+              >
+                {t('admin.authSettings.fields.wechatPrimary')}
+              </button>
+              <button
+                type="button"
+                onClick={() => removeItem(index)}
+                className="ml-auto inline-flex min-h-9 items-center gap-1.5 rounded-md border border-red-200 px-2.5 py-1.5 text-xs font-medium text-red-600 transition-colors hover:bg-red-50 dark:border-red-500/20 dark:text-red-300 dark:hover:bg-red-500/10"
+              >
+                <Trash2 className="h-3.5 w-3.5" />
+                {t('common.actions.delete')}
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function TextField({
+  label,
+  onChange,
+  value,
+}: {
+  label: string;
+  onChange: (value: string) => void;
+  value: string;
+}) {
+  return (
+    <div>
+      <label className="mb-1.5 block text-xs font-medium text-slate-500 dark:text-slate-400">
+        {label}
+      </label>
+      <input
+        type="text"
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        className="h-9 w-full rounded-md border border-slate-200 bg-white px-2.5 text-sm text-slate-700 outline-none focus:border-blue-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-100"
+      />
+    </div>
+  );
+}
+
 export function toAuthSettingsForm(record: Record<string, unknown>): AuthSettingsForm {
   const config = mergeClawRouterAuthRuntimeConfig(record);
   return {
@@ -461,6 +723,7 @@ export function toAuthSettingsForm(record: Record<string, unknown>): AuthSetting
     oauthProviders: normalizeOAuthProviders(config.oauthProviders ?? DEFAULT_AUTH_SETTINGS_FORM.oauthProviders),
     oauthRegion: readOAuthRegion(record.oauthRegion),
     qrLoginEnabled: config.qrLoginEnabled ?? DEFAULT_AUTH_SETTINGS_FORM.qrLoginEnabled,
+    qrLoginType: readQrLoginType(record.qrLoginType),
     recoveryMethods: recoveryMethods(config.recoveryMethods),
     registerMethods: registerMethods(config.registerMethods),
     verificationPolicy: {
@@ -469,12 +732,16 @@ export function toAuthSettingsForm(record: Record<string, unknown>): AuthSetting
       phoneCodeLoginEnabled: config.verificationPolicy?.phoneCodeLoginEnabled ?? false,
       phoneRegistrationVerificationRequired: config.verificationPolicy?.phoneRegistrationVerificationRequired ?? false,
     },
+    wechat: normalizeWechatSettings(record.wechat),
   };
 }
 
 export function toAuthSettingsRequest(form: AuthSettingsForm): AdminAuthSettingsUpdateRequest {
   const qrLoginEnabled = form.leftRailMode === 'qr-only' ? true : form.qrLoginEnabled;
+  const qrLoginType = readQrLoginType(form.qrLoginType);
   const oauthRegion = readRequiredOAuthRegion(form.oauthRegion);
+  const wechat = normalizeWechatSettings(form.wechat);
+  validateQrLoginChannelUrl(qrLoginEnabled, qrLoginType, wechat);
   return {
     leftRailMode: qrLoginEnabled ? form.leftRailMode : form.leftRailMode === 'qr-only' ? 'highlights-only' : form.leftRailMode,
     loginMethods: effectiveLoginMethods(form),
@@ -482,9 +749,11 @@ export function toAuthSettingsRequest(form: AuthSettingsForm): AdminAuthSettings
     oauthProviders: normalizeOAuthProviders(form.oauthProviders),
     oauthRegion,
     qrLoginEnabled,
+    qrLoginType,
     recoveryMethods: [...form.recoveryMethods],
     registerMethods: [...form.registerMethods],
     verificationPolicy: { ...form.verificationPolicy },
+    wechat,
   };
 }
 
@@ -611,6 +880,255 @@ function normalizeOAuthProviders(values: readonly unknown[]): string[] {
   return normalized;
 }
 
+function normalizeWechatSettings(value: unknown): WechatSettingsForm {
+  if (!isRecord(value)) {
+    return { mini: [], official: [] };
+  }
+  return {
+    official: normalizeWechatOfficialList(value.official),
+    mini: normalizeWechatMiniList(value.mini),
+  };
+}
+
+function normalizeWechatOfficialList(value: unknown): AdminAuthWechatOfficial[] {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+  if (value.length > 8) {
+    throw new Error('wechat official accounts must include at most 8 items');
+  }
+  const items = value
+    .map((item) => normalizeWechatOfficial(item))
+    .filter((item): item is AdminAuthWechatOfficial => item !== null);
+  return ensurePrimaryWechatItems(items) as AdminAuthWechatOfficial[];
+}
+
+function normalizeWechatMiniList(value: unknown): AdminAuthWechatMini[] {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+  if (value.length > 8) {
+    throw new Error('wechat mini programs must include at most 8 items');
+  }
+  const items = value
+    .map((item) => normalizeWechatMini(item))
+    .filter((item): item is AdminAuthWechatMini => item !== null);
+  return ensurePrimaryWechatItems(items) as AdminAuthWechatMini[];
+}
+
+function normalizeWechatOfficial(value: unknown): AdminAuthWechatOfficial | null {
+  if (!isRecord(value)) {
+    throw new Error('wechat official account must be an object');
+  }
+  const item = normalizeWechatOfficialDraft(value);
+  if (isEmptyWechatItem(item, ['key', 'name', 'appId', 'secretRef', 'tokenRef', 'url', 'originalId', 'aesKeyRef', 'scene'])) {
+    return null;
+  }
+  requireWechatFields(item, ['key', 'name', 'appId', 'secretRef', 'tokenRef']);
+  validateSecretRef(item.secretRef);
+  validateSecretRef(item.tokenRef);
+  validateOptionalSecretRef(item.aesKeyRef);
+  validateOptionalHttpsUrl(item.url);
+  return item;
+}
+
+function normalizeWechatMini(value: unknown): AdminAuthWechatMini | null {
+  if (!isRecord(value)) {
+    throw new Error('wechat mini program must be an object');
+  }
+  const item = normalizeWechatMiniDraft(value);
+  if (isEmptyWechatItem(item, ['key', 'name', 'appId', 'secretRef', 'url', 'path'])) {
+    return null;
+  }
+  requireWechatFields(item, ['key', 'name', 'appId', 'secretRef', 'path']);
+  validateSecretRef(item.secretRef);
+  validateOptionalHttpsUrl(item.url);
+  validateMiniProgramPath(item.path);
+  return item;
+}
+
+function validateQrLoginChannelUrl(
+  qrLoginEnabled: boolean,
+  qrLoginType: QrLoginType,
+  wechat: WechatSettingsForm,
+): void {
+  if (!qrLoginEnabled) {
+    return;
+  }
+  if (qrLoginType === 'official') {
+    const account = primaryEnabledWechatItem(wechat.official);
+    if (account && !account.url) {
+      throw new Error('wechat.official.url is required when official QR login is enabled');
+    }
+  }
+  if (qrLoginType === 'mini') {
+    const mini = primaryEnabledWechatItem(wechat.mini);
+    if (mini && !mini.url) {
+      throw new Error('wechat.mini.url is required when mini QR login is enabled');
+    }
+  }
+}
+
+function primaryEnabledWechatItem<T extends { enabled: boolean; primary: boolean }>(items: readonly T[]): T | undefined {
+  return items.find((item) => item.enabled && item.primary) ?? items.find((item) => item.enabled);
+}
+
+function normalizeWechatOfficialDraft(value: unknown): AdminAuthWechatOfficial {
+  const record = isRecord(value) ? value : {};
+  return {
+    key: readTrimmedString(record.key),
+    name: readTrimmedString(record.name),
+    appId: readTrimmedString(record.appId),
+    originalId: optionalTrimmedString(record.originalId),
+    secretRef: readTrimmedString(record.secretRef),
+    tokenRef: readTrimmedString(record.tokenRef),
+    aesKeyRef: optionalTrimmedString(record.aesKeyRef),
+    url: optionalTrimmedString(record.url),
+    enabled: record.enabled !== false,
+    primary: record.primary === true,
+    scene: optionalTrimmedString(record.scene),
+  };
+}
+
+function normalizeWechatMiniDraft(value: unknown): AdminAuthWechatMini {
+  const record = isRecord(value) ? value : {};
+  return {
+    key: readTrimmedString(record.key),
+    name: readTrimmedString(record.name),
+    appId: readTrimmedString(record.appId),
+    secretRef: readTrimmedString(record.secretRef),
+    url: optionalTrimmedString(record.url),
+    enabled: record.enabled !== false,
+    primary: record.primary === true,
+    path: readTrimmedString(record.path),
+    env: readWechatEnv(record.env),
+  };
+}
+
+function createOfficialWechatDraft(index: number): AdminAuthWechatOfficial {
+  return {
+    key: `official-${index + 1}`,
+    name: `official-${index + 1}`,
+    appId: '',
+    secretRef: '',
+    tokenRef: '',
+    enabled: true,
+    primary: index === 0,
+  };
+}
+
+function createMiniWechatDraft(index: number): AdminAuthWechatMini {
+  return {
+    key: `mini-${index + 1}`,
+    name: `mini-${index + 1}`,
+    appId: '',
+    secretRef: '',
+    enabled: true,
+    primary: index === 0,
+    path: 'pages/login/index',
+    env: 'release',
+  };
+}
+
+function ensurePrimaryWechatItems<T extends { enabled: boolean; primary: boolean }>(items: readonly T[]): T[] {
+  let primaryAssigned = false;
+  const enabledIndex = items.findIndex((item) => item.enabled);
+  return items.map((item, index) => {
+    const primary = item.enabled && item.primary && !primaryAssigned;
+    if (primary) {
+      primaryAssigned = true;
+      return { ...item, primary };
+    }
+    if (!primaryAssigned && index === enabledIndex) {
+      primaryAssigned = true;
+      return { ...item, primary: true };
+    }
+    return { ...item, primary: false };
+  });
+}
+
+function isEmptyWechatItem(item: object, keys: readonly string[]): boolean {
+  const record = item as Record<string, unknown>;
+  return keys.every((key) => typeof record[key] !== 'string' || !(record[key] as string).trim());
+}
+
+function requireWechatFields(item: object, keys: readonly string[]): void {
+  const record = item as Record<string, unknown>;
+  for (const key of keys) {
+    if (typeof record[key] !== 'string' || !(record[key] as string).trim()) {
+      throw new Error(`wechat ${key} is required`);
+    }
+  }
+}
+
+function validateSecretRef(value: string): void {
+  if (!value.startsWith('secret://') && !value.startsWith('vault://')) {
+    throw new Error('wechat secret refs must start with secret:// or vault://');
+  }
+}
+
+function validateOptionalSecretRef(value: string | undefined): void {
+  if (value) {
+    validateSecretRef(value);
+  }
+}
+
+function validateOptionalHttpsUrl(value: string | undefined): void {
+  if (!value) {
+    return;
+  }
+  let parsed: URL;
+  try {
+    parsed = new URL(value);
+  } catch {
+    throw new Error('wechat urls must be valid HTTPS URLs without fragments');
+  }
+  if (parsed.protocol !== 'https:' || parsed.hash) {
+    throw new Error('wechat urls must be valid HTTPS URLs without fragments');
+  }
+}
+
+function validateMiniProgramPath(value: string): void {
+  if (value.startsWith('/') || value.includes('?') || value.includes('#')) {
+    throw new Error('mini program path must not start with slash or contain query or fragment');
+  }
+  if (!/^[A-Za-z0-9._~!$&'()*+,;=:@%/-]+$/.test(value)) {
+    throw new Error('mini program path must use URL path-safe characters');
+  }
+}
+
+function readTrimmedString(value: unknown): string {
+  return typeof value === 'string' ? value.trim() : '';
+}
+
+function optionalTrimmedString(value: unknown): string | undefined {
+  const normalized = readTrimmedString(value);
+  return normalized || undefined;
+}
+
+function readQrLoginType(value: unknown): QrLoginType {
+  if (value === 'web' || value === 'official' || value === 'mini') {
+    return value;
+  }
+  if (value === 'sdkwork_app' || value === 'sdkwork-app') {
+    return 'web';
+  }
+  if (value === 'wechat_official_account' || value === 'wechat-official-account' || value === 'wechat-official') {
+    return 'official';
+  }
+  if (value === 'wechat_mini_program' || value === 'wechat-mini-program' || value === 'miniapp') {
+    return 'mini';
+  }
+  throw new Error('qrLoginType must be one of web, official, mini');
+}
+
+function readWechatEnv(value: unknown): WechatEnv {
+  if (value === 'release' || value === 'trial' || value === 'develop') {
+    return value;
+  }
+  return 'release';
+}
+
 function readOAuthRegion(value: unknown): OAuthRegion {
   if (value === undefined || value === null || value === '') {
     return 'mainland';
@@ -623,6 +1141,10 @@ function readRequiredOAuthRegion(value: unknown): OAuthRegion {
     return value;
   }
   throw new Error('oauthRegion must be one of mainland, overseas');
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
 
 function providerLabel(value: string): string {

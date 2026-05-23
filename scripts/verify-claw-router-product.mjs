@@ -152,6 +152,12 @@ function buildFastVerificationPlan(env = process.env) {
       env,
     },
     {
+      label: 'claw router download catalog check',
+      command: pnpmCommand(),
+      args: ['downloads:check'],
+      env,
+    },
+    {
       label: 'app store seed check',
       command: pnpmCommand(),
       args: ['app-store:seed:check'],
@@ -204,9 +210,15 @@ function buildVerificationPlan(settings, env = process.env) {
       env,
     },
     {
+      label: 'claw router download catalog check',
+      command: pnpmCommand(),
+      args: ['downloads:check'],
+      env,
+    },
+    {
       label: 'rust format',
-      command: 'cargo',
-      args: ['fmt', '--check'],
+      command: 'node',
+      args: ['scripts/cargo-fmt-workspace.mjs', '--check'],
       env,
     },
     {
@@ -346,6 +358,12 @@ function buildVerificationPlan(settings, env = process.env) {
     env,
   });
   plan.push({
+    label: 'portal home downloads runtime tests',
+    command: 'node',
+    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/home-downloads-runtime.test.ts'],
+    env,
+  });
+  plan.push({
     label: 'portal api reference playground runtime tests',
     command: pnpmCommand(),
     args: ['--dir', 'apps/sdkwork-claw-router-portal', 'exec', 'tsx', 'api-reference-playground-runtime.test.ts'],
@@ -358,15 +376,21 @@ function buildVerificationPlan(settings, env = process.env) {
     env,
   });
   plan.push({
+    label: 'portal playground chat runtime tests',
+    command: 'node',
+    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/playground-chat-runtime.test.ts'],
+    env,
+  });
+  plan.push({
     label: 'portal api key runtime tests',
     command: 'node',
     args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/api-key-runtime.test.ts'],
     env,
   });
   plan.push({
-    label: 'portal billing runtime tests',
+    label: 'portal commerce business runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/billing-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/commerce-business-runtime.test.ts'],
     env,
   });
   plan.push({

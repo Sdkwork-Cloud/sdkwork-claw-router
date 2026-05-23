@@ -4,7 +4,7 @@ use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminTokenLimitCreateRequest, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult};
+use crate::models::{AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminSiteSettingsUpdateRequest, AdminTokenLimitCreateRequest, AnalyticsAdminOverviewRetrieveResult, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, CacheInstancesDeleteResult, CacheInstancesRefreshCreateResult, CacheNamespacesDeleteResult, CacheNamespacesKeysDeleteResult, CacheNamespacesKeysListResult, CacheNamespacesRefreshCreateResult, CacheOverviewRetrieveResult, CacheRefreshCreateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MarketingReferralStatsListResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, SiteSettingsRetrieveResult, SiteSettingsUpdateResult};
 
 #[derive(Clone)]
 pub struct SystemApi {
@@ -14,6 +14,18 @@ pub struct SystemApi {
 impl SystemApi {
     pub fn new(client: Arc<SdkworkHttpClient>) -> Self {
         Self { client }
+    }
+
+    /// List overview
+    pub async fn analytics_admin_overview_retrieve(&self, time_range: Option<&str>, start_time: Option<&str>, end_time: Option<&str>, limit: Option<i64>) -> Result<AnalyticsAdminOverviewRetrieveResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("time_range", time_range, "form", true, false, None),
+            QueryParameterSpec::new("start_time", start_time, "form", true, false, None),
+            QueryParameterSpec::new("end_time", end_time, "form", true, false, None),
+            QueryParameterSpec::new("limit", limit, "form", true, false, None),
+        ]);
+        let path = append_query_string(backend_path(&"/system/analytics/admin/overview".to_string()), &query);
+        self.client.get(&path, None, None).await
     }
 
     /// Retrieve IAM auth runtime settings
@@ -32,6 +44,58 @@ impl SystemApi {
             &[],
         );
         self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// Delete one runtime cache instance
+    pub async fn cache_instances_delete(&self, instance_name: &str) -> Result<CacheInstancesDeleteResult, SdkworkError> {
+        let path = backend_path(&format!("/system/cache/instances/{}", serialize_path_parameter(instance_name, PathParameterSpec::new("instanceName", "simple", false))));
+        self.client.delete(&path, None, None).await
+    }
+
+    /// Refresh one runtime cache instance
+    pub async fn cache_instances_refresh_create(&self, instance_name: &str) -> Result<CacheInstancesRefreshCreateResult, SdkworkError> {
+        let path = backend_path(&format!("/system/cache/instances/{}/refresh", serialize_path_parameter(instance_name, PathParameterSpec::new("instanceName", "simple", false))));
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
+    }
+
+    /// Delete a runtime cache namespace
+    pub async fn cache_namespaces_delete(&self, namespace: &str) -> Result<CacheNamespacesDeleteResult, SdkworkError> {
+        let path = backend_path(&format!("/system/cache/namespaces/{}", serialize_path_parameter(namespace, PathParameterSpec::new("namespace", "simple", false))));
+        self.client.delete(&path, None, None).await
+    }
+
+    /// List runtime cache keys in a namespace
+    pub async fn cache_namespaces_keys_list(&self, namespace: &str, limit: Option<i64>, cursor: Option<&str>) -> Result<CacheNamespacesKeysListResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("limit", limit, "form", true, false, None),
+            QueryParameterSpec::new("cursor", cursor, "form", true, false, None),
+        ]);
+        let path = append_query_string(backend_path(&format!("/system/cache/namespaces/{}/keys", serialize_path_parameter(namespace, PathParameterSpec::new("namespace", "simple", false)))), &query);
+        self.client.get(&path, None, None).await
+    }
+
+    /// Delete a runtime cache key
+    pub async fn cache_namespaces_keys_delete(&self, namespace: &str, key: &str) -> Result<CacheNamespacesKeysDeleteResult, SdkworkError> {
+        let path = backend_path(&format!("/system/cache/namespaces/{}/keys/{}", serialize_path_parameter(namespace, PathParameterSpec::new("namespace", "simple", false)), serialize_path_parameter(key, PathParameterSpec::new("key", "simple", false))));
+        self.client.delete(&path, None, None).await
+    }
+
+    /// Refresh one runtime cache namespace
+    pub async fn cache_namespaces_refresh_create(&self, namespace: &str) -> Result<CacheNamespacesRefreshCreateResult, SdkworkError> {
+        let path = backend_path(&format!("/system/cache/namespaces/{}/refresh", serialize_path_parameter(namespace, PathParameterSpec::new("namespace", "simple", false))));
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
+    }
+
+    /// Retrieve runtime cache overview
+    pub async fn cache_overview_retrieve(&self) -> Result<CacheOverviewRetrieveResult, SdkworkError> {
+        let path = backend_path(&"/system/cache/overview".to_string());
+        self.client.get(&path, None, None).await
+    }
+
+    /// Refresh all runtime cache instances
+    pub async fn cache_refresh_create(&self) -> Result<CacheRefreshCreateResult, SdkworkError> {
+        let path = backend_path(&"/system/cache/refresh".to_string());
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// List dashboard data
@@ -67,6 +131,12 @@ impl SystemApi {
     /// List installation status
     pub async fn installation_status_retrieve(&self) -> Result<InstallationStatusRetrieveResult, SdkworkError> {
         let path = backend_path(&"/system/installation/status".to_string());
+        self.client.get(&path, None, None).await
+    }
+
+    /// List referral stats
+    pub async fn marketing_referral_stats_list(&self) -> Result<MarketingReferralStatsListResult, SdkworkError> {
+        let path = backend_path(&"/system/marketing/referral_stats".to_string());
         self.client.get(&path, None, None).await
     }
 
@@ -153,6 +223,24 @@ impl SystemApi {
         ]);
         let path = append_query_string(backend_path(&"/system/records".to_string()), &query);
         self.client.get(&path, None, None).await
+    }
+
+    /// Retrieve site branding and deployment personalization settings
+    pub async fn site_settings_retrieve(&self) -> Result<SiteSettingsRetrieveResult, SdkworkError> {
+        let path = backend_path(&"/system/site/settings".to_string());
+        self.client.get(&path, None, None).await
+    }
+
+    /// Update site branding and deployment personalization settings
+    pub async fn site_settings_update(&self, body: &AdminSiteSettingsUpdateRequest, x_request_id: Option<&str>) -> Result<SiteSettingsUpdateResult, SdkworkError> {
+        let path = backend_path(&"/system/site/settings".to_string());
+        let headers = build_request_headers(
+            &[
+                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
 }

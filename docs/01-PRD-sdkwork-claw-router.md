@@ -56,7 +56,7 @@
 | `/console/routing` | 本地路由 | 渠道、策略、fallback、日志、请求数据、API key 关联 |
 | `/console/api-keys` | 令牌管理 | API Key 创建、停用、轮换、权限、模型范围、限流 |
 | `/console/user` | 用户信息 | 用户资料、认证、组织、绑定账号 |
-| `/console/billing` | 钱包与充值 | 余额、套餐、支付、充值记录 |
+| `/console/commerce` | 钱包与充值 | 余额、套餐、支付、充值记录 |
 | `/console/checkout` | 结账 | 订单确认、支付方式、优惠券 |
 | `/console/settlements` | 账单报表 | 账单、结算、发票、导出 |
 | `/console/account` | 账户详情 | 账户余额、流水、积分、VIP、权益 |

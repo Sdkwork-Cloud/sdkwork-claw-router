@@ -867,7 +867,9 @@ function installConfigurationNextSteps(packageItem) {
   const policy = packageItem.databasePolicy;
   const redisPolicy = packageItem.redisPolicy;
   const redisStep = redisPolicy
-    ? `Keep [redis].enabled = false unless this deployment needs shared cache, locks, queues, or rate-limit buckets; when enabled, set [redis].host, [redis].port, [redis].database, and use [redis].password_file at ${redisPolicy.passwordFile.path} or protected [redis].password. Use [redis].url only as an advanced override for managed Redis endpoints.`
+    ? redisPolicy.required
+      ? `Redis is required for server deployments: keep [redis].enabled = true, set [redis].host, [redis].port, [redis].database, and use [redis].password_file at ${redisPolicy.passwordFile.path} or protected [redis].password before first startup. Use [redis].url only as an advanced override for managed Redis endpoints.`
+      : `Keep [redis].enabled = false unless this desktop deployment explicitly needs shared cache, locks, queues, or rate-limit buckets; when enabled, set [redis].host, [redis].port, [redis].database, and use [redis].password_file at ${redisPolicy.passwordFile.path} or protected [redis].password. Use [redis].url only as an advanced override for managed Redis endpoints.`
     : null;
   if (policy.defaultEngine === 'postgresql') {
     const steps = [
@@ -949,7 +951,7 @@ function createInstallGuide(packageItem) {
     lines.push(`PostgreSQL password file: ${installConfiguration.files.passwordFile}`);
   }
   if (installConfiguration.files.redisPasswordFile) {
-    lines.push(`Optional Redis password file: ${installConfiguration.files.redisPasswordFile}`);
+    lines.push(`${installConfiguration.redis?.required ? 'Redis password file' : 'Optional Redis password file'}: ${installConfiguration.files.redisPasswordFile}`);
   }
   if (installConfiguration.files.systemdUnit) {
     lines.push(`Systemd unit: ${installConfiguration.files.systemdUnit}`);
@@ -988,13 +990,22 @@ function createInstallGuide(packageItem) {
   }
 
   if (installConfiguration.redis) {
-    lines.push(
-      'Redis is optional and disabled by default.',
-      `Keep [redis].enabled = false unless this deployment needs shared cache, locks, queues, or rate-limit buckets.`,
-      `When enabling Redis, set [redis].enabled = true, [redis].host, [redis].port, and [redis].database; prefer [redis].password_file = "${installConfiguration.redis.passwordFile}" over direct [redis].password.`,
-      `[redis].url is an optional advanced override for managed Redis endpoints. Example: ${installConfiguration.redis.urlOverrideExample}`,
-      '',
-    );
+    if (installConfiguration.redis.required) {
+      lines.push(
+        'Redis is enabled and required by default for server deployments.',
+        `Keep [redis].enabled = true and configure [redis].host, [redis].port, and [redis].database before first startup; prefer [redis].password_file = "${installConfiguration.redis.passwordFile}" over direct [redis].password.`,
+        `[redis].url is an optional advanced override for managed Redis endpoints. Example: ${installConfiguration.redis.urlOverrideExample}`,
+        '',
+      );
+    } else {
+      lines.push(
+        'Redis is optional and disabled by default.',
+        `Keep [redis].enabled = false unless this desktop deployment explicitly needs shared cache, locks, queues, or rate-limit buckets.`,
+        `When enabling Redis, set [redis].enabled = true, [redis].host, [redis].port, and [redis].database; prefer [redis].password_file = "${installConfiguration.redis.passwordFile}" over direct [redis].password.`,
+        `[redis].url is an optional advanced override for managed Redis endpoints. Example: ${installConfiguration.redis.urlOverrideExample}`,
+        '',
+      );
+    }
   }
 
   lines.push(
@@ -1200,7 +1211,9 @@ function createRuntimeConfigTemplate(packageItem) {
   lines.push(
     '',
     '[redis]',
-    '# Redis is optional. Leave disabled unless this deployment needs shared cache, locks, queues, or rate-limit buckets.',
+    redisPolicy.required
+      ? '# Redis is required for server deployments. Configure this section before first startup.'
+      : '# Redis is optional for desktop deployments. Leave disabled unless shared infrastructure is explicitly needed.',
     `enabled = ${redisPolicy.enabledByDefault ? 'true' : 'false'}`,
     `host = "${redisPolicy.defaultHost}"`,
     `port = ${redisPolicy.defaultPort}`,

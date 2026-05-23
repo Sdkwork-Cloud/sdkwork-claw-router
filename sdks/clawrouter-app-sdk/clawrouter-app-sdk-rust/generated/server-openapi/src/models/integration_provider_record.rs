@@ -7,9 +7,9 @@ pub struct IntegrationProviderRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub auth_type: Option<String>,
 
-    /// Base url template field on integration provider record.
+    /// Base url field on integration provider record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub base_url_template: Option<String>,
+    pub base_url: Option<String>,
 
     /// Capabilities field on integration provider record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

@@ -528,7 +528,7 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         PricingResolver::new(self.catalog)
             .resolve(ResolveModelPriceQuery {
                 api_key_id: query.context.api_key_id,
-                model: query.catalog_key.clone(),
+                model: route.catalog_key.clone(),
                 billing_meter: query.billing_meter.clone(),
                 provider_code: Some(route.provider_code.clone()),
                 channel_id: Some(route.channel_id),

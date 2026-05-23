@@ -39,7 +39,7 @@ async fn active_config_for(
             c.tenant_id,
             c.organization_id,
             c.provider_code,
-            COALESCE(c.base_url_override, '') AS base_url,
+            COALESCE(c.base_url, '') AS base_url,
             COALESCE(c.capabilities, '[]') AS capabilities_json,
             COALESCE(c.priority, 100) AS priority,
             COALESCE(c.weight, 0) AS weight,

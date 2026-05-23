@@ -243,6 +243,32 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         )
         self.assertNotIn("ProviderSecretService.updateProviderSecret(secret.id, { status: nextStatus })", view)
 
+    def test_admin_channel_model_picker_uses_runtime_model_ids(self) -> None:
+        source_dir = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-admin-channel"
+            / "src"
+        )
+        service = (source_dir / "channelService.ts").read_text(encoding="utf-8")
+        runtime_test = (
+            ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-channel-runtime.test.ts"
+        ).read_text(encoding="utf-8")
+
+        normalizer = service.split("function normalizeModelCatalogItem", 1)[1]
+
+        self.assertIn("ChannelModelCatalogService", service)
+        self.assertIn("channelBackendClient().ai.models.list()", service)
+        self.assertIn("readRequiredString(item, 'model', 'Model catalog runtime model id is required')", normalizer)
+        self.assertNotIn("readRequiredString(item, 'name', 'Model catalog name is required')", normalizer)
+        self.assertIn("displayName: readOptionalString(item, 'displayName') ?? readOptionalString(item, 'name') ?? model", normalizer)
+        self.assertIn("admin channel model catalog maps runtime ids instead of display aliases", runtime_test)
+        self.assertIn('displayName: "GPT-4o Mini"', runtime_test)
+        self.assertIn('catalogKey: "openai/global/gpt-4o-mini"', runtime_test)
+        self.assertNotIn('catalogKey: "openai/global/GPT-4o Mini"', runtime_test)
+
     def test_admin_channel_test_ui_is_sdk_backed_and_persists_probe_result(self) -> None:
         source_dir = (
             ROOT

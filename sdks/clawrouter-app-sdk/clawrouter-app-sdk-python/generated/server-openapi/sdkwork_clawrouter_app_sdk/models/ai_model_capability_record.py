@@ -11,7 +11,6 @@ class AiModelCapabilityRecord:
     model: str
     model_id: str
     organization_id: str
-    region_code: str
     status: str
     supported: bool
     tenant_id: str

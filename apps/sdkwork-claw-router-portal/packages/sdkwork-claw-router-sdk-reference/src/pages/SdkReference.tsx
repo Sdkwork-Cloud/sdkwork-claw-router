@@ -1,7 +1,7 @@
 import { MethodBadge } from '../components/MethodBadge';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { AlertCircle, Terminal, Code, Coffee, Box, BookOpen, ChevronRight, Download, Gem, FileCode2, Hash, Cog, Smartphone } from 'lucide-react';
+import { AlertCircle, Terminal, Code, Coffee, Box, BookOpen, ChevronRight, Download, Gem, FileCode2, Hash, Cog, Smartphone, Search, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import type { SdkLanguage } from '../data/sdkData';
 import { getSdkDataForSystem } from '../data/sdkData';
@@ -10,6 +10,7 @@ import {
   createReferenceSidebarGroupElementId,
   isReferenceSidebarGroupCollapsed,
   toggleReferenceSidebarGroup,
+  filterReferenceSidebarTree,
   type ReferenceSidebarCollapsedGroups,
 } from 'sdkwork-claw-router-commons';
 import { resolveClawRouterRuntimeBoolean } from 'sdkwork-claw-router-commons/runtime';
@@ -18,6 +19,10 @@ import type { ApiReferenceEndpoint } from 'sdkwork-claw-router-api-reference/ope
 import { getApiSystemDisplayName, type ApiCategorySidebarNode } from 'sdkwork-claw-router-api-reference/apiReferenceSchemaTabs';
 import type { OpenApiDocument } from 'sdkwork-claw-router-api-reference/openapiTypes';
 import type { SdkReferenceSystem, SdkReferenceSystemData, GeneratedSdkToolConfig } from '../sdkReferenceRuntime';
+import {
+  generateSdkReferenceArchive,
+  generateSdkReferenceDocumentation,
+} from '../sdkReferenceGenerationService';
 import {
   buildSdkReferenceSidebarTree,
   createGeneratedSdkToolConfig,
@@ -41,29 +46,6 @@ const IconMap: Record<string, React.ElementType> = {
 
 const localToolApiEnabled = resolveClawRouterRuntimeBoolean('VITE_TOOL_API_ENABLED', false);
 
-function readReadmeContent(value: unknown): string | null {
-  if (typeof value !== 'object' || value === null || Array.isArray(value)) {
-    return null;
-  }
-  const readme = (value as { readme?: unknown }).readme;
-  return typeof readme === 'string' ? readme : null;
-}
-
-function readErrorMessage(value: unknown): string | null {
-  if (typeof value !== 'object' || value === null || Array.isArray(value)) {
-    return null;
-  }
-  const error = (value as { error?: unknown; message?: unknown }).error;
-  const message = (value as { error?: unknown; message?: unknown }).message;
-  if (typeof error === 'string' && error.trim()) {
-    return error;
-  }
-  if (typeof message === 'string' && message.trim()) {
-    return message;
-  }
-  return null;
-}
-
 export function SdkReference() {
   const { t } = useTranslation();
   const [activeSystem, setActiveSystem] = useState<SdkReferenceSystem>('gateway');
@@ -77,6 +59,7 @@ export function SdkReference() {
   const [activeSdkConfig, setActiveSdkConfig] = useState<GeneratedSdkToolConfig | null>(null);
   const [downloadError, setDownloadError] = useState<string | null>(null);
   const [collapsedGroups, setCollapsedGroups] = useState<ReferenceSidebarCollapsedGroups>({});
+  const [searchQuery, setSearchQuery] = useState('');
 
   const sdkData = getSdkDataForSystem(activeSystem);
   const activeSdk = sdkData.find(s => s.id === activeSdkId) || sdkData[0];
@@ -125,7 +108,7 @@ export function SdkReference() {
   }, [activeSystem, activeLanguage, activeSchemaUrl]);
 
   useEffect(() => {
-    if (!localToolApiEnabled || !activeSpec || !activeSdkConfig) {
+    if (!activeSpec || !activeSdkConfig) {
       setReadmeContent(null);
       setLoadingReadme(false);
       return;
@@ -136,23 +119,15 @@ export function SdkReference() {
       setReadmeContent(null);
       setLoadingReadme(true);
       try {
-        const generateResponse = await fetch('/api/sdk-readme', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ spec: activeSpec, language: activeLanguage, config: activeSdkConfig }),
+        const documentation = await generateSdkReferenceDocumentation({
+          spec: activeSpec,
+          language: activeLanguage,
+          config: activeSdkConfig,
         });
-
         if (cancelled) {
           return;
         }
-        if (generateResponse.ok) {
-          const data: unknown = await generateResponse.json();
-          setReadmeContent(readReadmeContent(data));
-        } else {
-          setReadmeContent(null);
-        }
+        setReadmeContent(documentation.readme);
       } catch {
         if (!cancelled) {
           setReadmeContent(null);
@@ -201,7 +176,7 @@ export function SdkReference() {
   const displayExampleCode = generatedExampleCode || activeSdk.exampleCode;
 
   const handleDownloadSdk = async (sdk: SdkLanguage) => {
-    if (!localToolApiEnabled || !activeSpec) {
+    if (!activeSpec || !localToolApiEnabled) {
       return;
     }
 
@@ -210,25 +185,17 @@ export function SdkReference() {
       const language = normalizeSdkReferenceLanguage(sdk.id);
       const config = createGeneratedSdkToolConfig(activeSystem, language, activeSchemaUrl);
       const generatedSdkMetadata = getGeneratedSdkMetadataForSystem(activeSystem);
-
-      const generateResponse = await fetch('/api/generate-sdk', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ spec: activeSpec, language, config }),
+      const archive = await generateSdkReferenceArchive({
+        spec: activeSpec,
+        language,
+        config,
       });
-
-      if (!generateResponse.ok) {
-        const errorData: unknown = await generateResponse.json();
-        throw new Error(readErrorMessage(errorData) || 'Failed to generate SDK');
-      }
-
-      const blob = await generateResponse.blob();
+      const blob = base64ToBlob(archive.contentBase64, archive.contentType || 'application/zip');
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `${generatedSdkMetadata.packageName.replace(/^@/, '').replace(/\//g, '-')}-${language}-${generatedSdkMetadata.version}.zip`;
+      a.download = archive.fileName
+        || `${generatedSdkMetadata.packageName.replace(/^@/, '').replace(/\//g, '-')}-${language}-${generatedSdkMetadata.version}.zip`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -238,7 +205,7 @@ export function SdkReference() {
     }
   };
 
-  const sidebarTree = activeSystemData ? buildSdkReferenceSidebarTree(activeSystemData.categories) : [];
+  const sidebarTree = activeSystemData ? filterReferenceSidebarTree(buildSdkReferenceSidebarTree(activeSystemData.categories), searchQuery) : [];
   const activeEndpoint = activeSystemData?.categories.flatMap(c => c.endpoints).find(e => e.id === activeEndpointId);
 
   const handleEndpointClick = (id: string) => {
@@ -399,6 +366,24 @@ export function SdkReference() {
         >
           <div className="md:h-full overflow-y-auto custom-scrollbar py-6 px-6 md:py-8">
             <div className="mb-4">
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+                <input
+                  type="text"
+                  placeholder={t('sdk.searchPlaceholder', 'Search endpoints...')}
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full bg-white dark:bg-[#111] border border-slate-200 dark:border-white/10 rounded-lg pl-9 pr-8 py-2 text-sm text-slate-900 dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors shadow-sm"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 p-0.5 rounded text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+                  >
+                    <X className="w-3.5 h-3.5" />
+                  </button>
+                )}
+              </div>
 
               <div className="mt-4 pt-4">
                 <button
@@ -426,7 +411,13 @@ export function SdkReference() {
                   transition={{ duration: 0.2 }}
                   className="space-y-6 pb-8"
                 >
-                  {sidebarTree.map((node) => renderSidebarNode(node))}
+                  {sidebarTree.length === 0 && searchQuery ? (
+                    <div className="text-center py-8 text-slate-500 dark:text-slate-400 text-sm">
+                      {t('sdk.notFound', 'No endpoints found.')}
+                    </div>
+                  ) : (
+                    sidebarTree.map((node) => renderSidebarNode(node))
+                  )}
                 </motion.div>
               </AnimatePresence>
             </div>
@@ -470,7 +461,7 @@ export function SdkReference() {
                   </svg>
                   GitHub
                 </a>
-                {localToolApiEnabled && isGeneratedSdkArchiveLanguage(activeSdk.id) && (
+                {activeSpec && localToolApiEnabled && isGeneratedSdkArchiveLanguage(activeSdk.id) && (
                   <button
                     onClick={() => handleDownloadSdk(activeSdk)}
                     className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors shadow-sm"
@@ -598,6 +589,8 @@ export function SdkReference() {
                 endpoint={activeEndpoint}
                 sdkData={activeSdkConfig}
                 language={activeSdk.id}
+                sdkConfig={activeSdkConfig}
+                spec={activeSpec}
               />
             )
           )}
@@ -606,4 +599,10 @@ export function SdkReference() {
       </div>
     </div>
   );
+}
+
+function base64ToBlob(contentBase64: string, contentType: string): Blob {
+  const binary = atob(contentBase64);
+  const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0));
+  return new Blob([bytes], { type: contentType });
 }

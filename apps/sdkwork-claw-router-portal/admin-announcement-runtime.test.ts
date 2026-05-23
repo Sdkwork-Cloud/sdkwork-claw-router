@@ -191,6 +191,20 @@ test("admin announcement page exposes publish, move to draft, edit, and delete r
   assert.match(pageSource, /common\.actions\.delete/, "row actions must keep delete available");
 });
 
+test("admin announcement table fills the available admin viewport", () => {
+  const pageSource = readPortalFile("./packages/sdkwork-claw-router-admin-announcement/src/index.tsx");
+
+  for (const expected of [
+    "AdminTableShell",
+    "data-admin-announcement-table-card",
+    "data-admin-announcement-table-viewport",
+    "flex h-full min-h-0 w-full flex-col",
+    "sticky top-0 z-10",
+  ]) {
+    assert.ok(pageSource.includes(expected), `missing adaptive admin announcement table marker: ${expected}`);
+  }
+});
+
 test("admin announcement create input does not reuse returned announcement view model", () => {
   const input = createAnnouncementInputFromForm({
     title: " Platform maintenance ",

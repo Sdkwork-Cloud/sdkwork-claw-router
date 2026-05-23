@@ -27,6 +27,49 @@ database = 0
 }
 
 #[test]
+fn server_default_enabled_parses_structured_config_without_enabled_flag() {
+    let config = RuntimeTomlConfig::from_toml_str(
+        r#"
+[redis]
+host = "redis.example.com"
+port = 6379
+database = 0
+key_prefix = "clawrouter"
+"#,
+    )
+    .unwrap();
+
+    let redis = RedisConfig::from_env_or_runtime_toml_with_default_enabled(Some(&config), true)
+        .unwrap()
+        .unwrap();
+
+    assert!(redis.enabled());
+    assert_eq!("redis://redis.example.com:6379/0", redis.url());
+    assert_eq!(Some("redis.example.com"), redis.host());
+    assert_eq!(Some(6379), redis.port());
+    assert_eq!(Some(0), redis.database());
+}
+
+#[test]
+fn explicit_disabled_redis_wins_over_server_default_enabled() {
+    let config = RuntimeTomlConfig::from_toml_str(
+        r#"
+[redis]
+enabled = false
+host = "redis.example.com"
+port = 6379
+database = 0
+"#,
+    )
+    .unwrap();
+
+    assert_eq!(
+        None,
+        RedisConfig::from_env_or_runtime_toml_with_default_enabled(Some(&config), true).unwrap()
+    );
+}
+
+#[test]
 fn parses_structured_redis_config_without_leaking_password() {
     let secret_path = unique_secret_path("redis-password");
     std::fs::write(&secret_path, "redis-secret\n").unwrap();
@@ -96,6 +139,39 @@ max_connections = 16
     assert_eq!(None, redis.port());
     assert_eq!(None, redis.database());
     assert!(redis.tls());
+}
+
+#[test]
+fn rejects_explicit_redis_tls_scheme_mismatch() {
+    let rediss_with_tls_disabled = RuntimeTomlConfig::from_toml_str(
+        r#"
+[redis]
+enabled = true
+url = "rediss://cache.example.com:6380/5"
+tls = false
+"#,
+    )
+    .unwrap();
+    assert!(
+        RedisConfig::from_env_or_runtime_toml(Some(&rediss_with_tls_disabled))
+            .unwrap_err()
+            .contains("tls is disabled but url uses rediss://")
+    );
+
+    let redis_with_tls_enabled = RuntimeTomlConfig::from_toml_str(
+        r#"
+[redis]
+enabled = true
+url = "redis://cache.example.com:6379/0"
+tls = true
+"#,
+    )
+    .unwrap();
+    assert!(
+        RedisConfig::from_env_or_runtime_toml(Some(&redis_with_tls_enabled))
+            .unwrap_err()
+            .contains("tls is enabled but url uses redis://")
+    );
 }
 
 #[test]

@@ -7,7 +7,5 @@ export interface CommentsStatisticsListResult {
   /** Data field on comments statistics list result. */
   data?: ForumCommentStatistics;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

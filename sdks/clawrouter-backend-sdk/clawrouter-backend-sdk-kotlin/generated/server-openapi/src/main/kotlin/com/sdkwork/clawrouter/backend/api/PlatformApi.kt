@@ -40,6 +40,48 @@ class PlatformApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<AppsCreateResult>() {})
     }
 
+    /** List app categories */
+    suspend fun appsCategoriesList(): AppsCategoriesListResult? {
+        val raw = client.get(ApiPaths.backendPath("/platform/apps/categories"))
+        return client.convertValue(raw, object : TypeReference<AppsCategoriesListResult>() {})
+    }
+
+    /** Create app category */
+    suspend fun appsCategoriesCreate(body: AdminAppCategoryCreateRequest, xRequestId: String? = null): AppsCategoriesCreateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.post(ApiPaths.backendPath("/platform/apps/categories"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<AppsCategoriesCreateResult>() {})
+    }
+
+    /** Delete app category */
+    suspend fun appsCategoriesDelete(categoryId: String, xRequestId: String? = null): AppsCategoriesDeleteResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.delete(ApiPaths.backendPath("/platform/apps/categories/${serializePathParameter(categoryId, PathParameterSpec("categoryId", "simple", false))}"), null, requestHeaders)
+        return client.convertValue(raw, object : TypeReference<AppsCategoriesDeleteResult>() {})
+    }
+
+    /** Update app category */
+    suspend fun appsCategoriesUpdate(categoryId: String, body: AdminAppCategoryUpdateRequest, xRequestId: String? = null): AppsCategoriesUpdateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.put(ApiPaths.backendPath("/platform/apps/categories/${serializePathParameter(categoryId, PathParameterSpec("categoryId", "simple", false))}"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<AppsCategoriesUpdateResult>() {})
+    }
+
     /** Delete app */
     suspend fun appsDelete(appId: String, xRequestId: String? = null): AppsDeleteResult? {
         val requestHeaders = buildRequestHeaders(

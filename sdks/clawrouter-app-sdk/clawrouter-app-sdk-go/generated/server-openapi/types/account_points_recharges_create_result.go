@@ -4,6 +4,5 @@ package types
 type AccountPointsRechargesCreateResult struct {
 	Code string `json:"code"`
 	Data SubmitRechargeResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }

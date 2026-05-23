@@ -1,11 +1,12 @@
 from .http_client import HttpClient, SdkConfig
 from .api.agents import AgentsApi
 from .api.ai import AiApi
-from .api.billing import BillingApi
+from .api.commerce import CommerceApi
 from .api.content import ContentApi
 from .api.ecosystem import EcosystemApi
 from .api.iam import IamApi
 from .api.integration import IntegrationApi
+from .api.open_platform import OpenPlatformApi
 from .api.platform import PlatformApi
 from .api.system import SystemApi
 
@@ -17,22 +18,24 @@ class SdkworkBackendClient:
         self._client = HttpClient(config)
         self.agents: AgentsApi
         self.ai: AiApi
-        self.billing: BillingApi
+        self.commerce: CommerceApi
         self.content: ContentApi
         self.ecosystem: EcosystemApi
         self.iam: IamApi
         self.integration: IntegrationApi
+        self.open_platform: OpenPlatformApi
         self.platform: PlatformApi
         self.system: SystemApi
 
         # Initialize API modules
         self.agents = AgentsApi(self._client)
         self.ai = AiApi(self._client)
-        self.billing = BillingApi(self._client)
+        self.commerce = CommerceApi(self._client)
         self.content = ContentApi(self._client)
         self.ecosystem = EcosystemApi(self._client)
         self.iam = IamApi(self._client)
         self.integration = IntegrationApi(self._client)
+        self.open_platform = OpenPlatformApi(self._client)
         self.platform = PlatformApi(self._client)
         self.system = SystemApi(self._client)
 

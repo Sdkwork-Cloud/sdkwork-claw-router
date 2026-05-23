@@ -1,10 +1,12 @@
 import type { ProviderCircuitBreakerPolicy } from './provider-circuit-breaker-policy';
 import type { ProviderRetryPolicy } from './provider-retry-policy';
 
-/** Persisted channel snapshot returned after the provider health probe. Secret references may be returned for credential lookup; plaintext tokens are never returned. */
+/** Persisted channel snapshot returned after the provider health probe. Admin management responses may return the stored plaintext provider API key for channel account relay operations. */
 export interface AdminChannelItem {
   /** Access type field on admin channel item. */
   accessType: string;
+  /** Full plaintext provider API key returned by authenticated admin management responses for channel account relay operations. */
+  apiKey?: string;
   /** Balance field on admin channel item. */
   balance: string;
   /** Base url field on admin channel item. */
@@ -13,8 +15,12 @@ export interface AdminChannelItem {
   capabilities: ('llm' | 'image' | 'audio' | 'music' | 'sfx' | 'video')[];
   /** Circuit breaker policy field on admin channel item. */
   circuitBreakerPolicy?: ProviderCircuitBreakerPolicy;
+  /** Created at field on admin channel item. */
+  createdAt: string;
   /** Errors field on admin channel item. */
   errors: number;
+  /** Expires at field on admin channel item. */
+  expiresAt?: string | null;
   /** Id field on admin channel item. */
   id: string;
   /** Is multimodal field on admin channel item. */

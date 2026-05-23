@@ -11,5 +11,4 @@ class RoutingStrategyUpdateResult:
     """Routing strategy update result schema exposed by Claw Router."""
     code: str
     data: Optional[UpdateRoutingStrategyResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

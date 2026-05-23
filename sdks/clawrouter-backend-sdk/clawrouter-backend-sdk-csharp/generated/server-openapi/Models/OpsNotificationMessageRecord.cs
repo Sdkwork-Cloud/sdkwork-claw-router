@@ -7,6 +7,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class OpsNotificationMessageRecord
     {
         public string? ActionUrl { get; set; }
+        public string? AppId { get; set; }
         public string? Content { get; set; }
         public string? CreatedAt { get; set; }
         public string? DataScope { get; set; }
@@ -22,10 +23,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? Severity { get; set; }
         public string? Status { get; set; }
         public string? Summary { get; set; }
-        public string? TargetOwnerId { get; set; }
-        public string? TargetOwnerType { get; set; }
-        public string? TargetScope { get; set; }
-        public string? TargetUserId { get; set; }
         public string? TenantId { get; set; }
         public string? Title { get; set; }
         public string? UpdatedAt { get; set; }

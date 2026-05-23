@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { AlertCircle, Clock, Loader2, PlaySquare, Play } from 'lucide-react';
+import { readSdkworkGenerationMediaThumb } from '@sdkwork/generation-pc-react/react';
 import { getDeterministicWaveBarStyle } from './waveform';
 import type { PlaygroundHistoryItem, PlaygroundMedia, PlaygroundPreviewSetter } from '../playgroundTypes';
 
@@ -22,7 +23,7 @@ export function VideoMessageItem({ item, setPreviewItem }: { item: PlaygroundHis
   return (
     <div className={`grid ${gridClass} gap-3 w-full`}>
        {videos.map((vid: PlaygroundMedia, i: number) => {
-         const thumbSrc = typeof vid === 'string' ? vid : vid.thumb || vid.url;
+         const thumbSrc = readSdkworkGenerationMediaThumb(vid);
          return (
            <div key={i} className="relative aspect-[16/9] bg-[#1a1a1a] rounded-lg overflow-hidden border border-white/5 shadow-sm group">
              <img src={thumbSrc} alt={t('playground.generation.videoThumbnailAlt')} className="w-full h-full object-cover opacity-90 mx-auto transition-transform duration-700 group-hover:scale-105" />

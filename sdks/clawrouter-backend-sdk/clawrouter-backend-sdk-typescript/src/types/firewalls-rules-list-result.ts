@@ -7,7 +7,5 @@ export interface FirewallsRulesListResult {
   /** Data field on firewalls rules list result. */
   data?: AdminFirewallRulesResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

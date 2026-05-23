@@ -1,0 +1,21 @@
+fragment: models/commons
+frontend_models:
+- route: /console/notifications
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
+  interface: NotificationItem
+  fields:
+  - actionUrl
+  - appId
+  - archived
+  - content
+  - desc
+  - id
+  - popupSeen
+  - read
+  - showAsPopup
+  - time
+  - title
+  - type
+  data_sources:
+  - ops_notification_message
+  - ops_notification_delivery

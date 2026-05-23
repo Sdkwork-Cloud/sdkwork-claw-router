@@ -18,4 +18,5 @@ class AppApiKeyItem:
     status: str
     used_quota: str
     copyable_key: Optional[str] = None
+    group_name: Optional[str] = None
     rate: Optional[str] = None

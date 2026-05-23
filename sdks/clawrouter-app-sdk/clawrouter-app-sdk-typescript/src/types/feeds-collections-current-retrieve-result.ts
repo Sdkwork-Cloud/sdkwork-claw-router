@@ -7,7 +7,5 @@ export interface FeedsCollectionsCurrentRetrieveResult {
   /** Data field on feeds collections current retrieve result. */
   data?: ForumBooleanResponse;
   /** Human-readable response message. */
-  message?: string;
-  /** Java-compatible response message field. */
   msg?: string;
 }

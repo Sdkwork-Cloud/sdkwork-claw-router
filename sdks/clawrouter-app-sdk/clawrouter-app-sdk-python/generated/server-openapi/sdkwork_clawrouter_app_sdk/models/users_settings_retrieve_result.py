@@ -11,5 +11,4 @@ class UsersSettingsRetrieveResult:
     """Users settings retrieve result schema exposed by Claw Router."""
     code: str
     data: Optional[SettingsDataResponse] = None
-    message: Optional[str] = None
     msg: Optional[str] = None

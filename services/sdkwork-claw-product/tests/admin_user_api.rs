@@ -186,7 +186,7 @@ async fn admin_user_route_returns_not_found_when_api_key_user_is_missing() {
     assert_eq!(StatusCode::NOT_FOUND, response.status());
     let payload = json_payload(response).await;
     assert_eq!("4004", payload["code"]);
-    assert_eq!("user was not found", payload["message"]);
+    assert_eq!("user was not found", payload["msg"]);
 }
 
 fn signed_request(method: &str, path: &str, body: &str) -> Request<Body> {

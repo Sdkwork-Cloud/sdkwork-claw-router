@@ -147,9 +147,6 @@ pub struct AiModelRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub rank_score: Option<String>,
 
-    /// Region code field on ai model record.
-    pub region_code: String,
-
     /// Release stage field on ai model record.
     pub release_stage: String,
 

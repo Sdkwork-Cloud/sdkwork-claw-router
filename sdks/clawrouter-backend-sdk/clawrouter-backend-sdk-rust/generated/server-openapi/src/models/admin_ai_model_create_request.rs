@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{AdminAiModelRegionPrice};
+
 /// Admin ai model create request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminAiModelCreateRequest {
@@ -7,6 +9,16 @@ pub struct AdminAiModelCreateRequest {
     #[serde(rename = "apiFormat")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub api_format: Option<String>,
+
+    /// Optional official reference cache-read unit price in USD.
+    #[serde(rename = "cacheReadPrice")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub cache_read_price: Option<String>,
+
+    /// Optional official reference cache-write unit price in USD.
+    #[serde(rename = "cacheWritePrice")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub cache_write_price: Option<String>,
 
     /// Capability intro field on admin ai model create request.
     #[serde(rename = "capabilityIntro")]
@@ -20,6 +32,11 @@ pub struct AdminAiModelCreateRequest {
     /// Description field on admin ai model create request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
+
+    /// Display name field on admin ai model create request.
+    #[serde(rename = "displayName")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub display_name: Option<String>,
 
     /// Input modalities field on admin ai model create request.
     #[serde(rename = "inputModalities")]
@@ -39,8 +56,12 @@ pub struct AdminAiModelCreateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub modalities: Option<Vec<String>>,
 
-    /// AI model identifier.
-    pub name: String,
+    /// Runtime model identifier used for provider calls, routing, and pricing keys.
+    pub model: String,
+
+    /// Deprecated compatibility alias for model.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub name: Option<String>,
 
     /// Output modalities field on admin ai model create request.
     #[serde(rename = "outputModalities")]
@@ -54,6 +75,11 @@ pub struct AdminAiModelCreateRequest {
     /// Official reference output unit price in USD.
     #[serde(rename = "priceOut")]
     pub price_out: String,
+
+    /// Official reference prices by region.
+    #[serde(rename = "regionPrices")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub region_prices: Option<Vec<AdminAiModelRegionPrice>>,
 
     /// Release stage field on admin ai model create request.
     #[serde(rename = "releaseStage")]

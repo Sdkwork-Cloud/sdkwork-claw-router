@@ -4,6 +4,5 @@ package types
 type AnnouncementsListResult struct {
 	Code string `json:"code"`
 	Data AdminAnnouncementsResponse `json:"data"`
-	Message string `json:"message"`
 	Msg string `json:"msg"`
 }
