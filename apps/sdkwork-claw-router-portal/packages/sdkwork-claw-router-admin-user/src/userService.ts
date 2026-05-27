@@ -1,5 +1,5 @@
-import {
-  createRequestParams,
+﻿import {
+  createIdempotencyParams,
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
@@ -106,7 +106,7 @@ export class UserService {
   static async createApiKey(input: ApiKeyCreateInput): Promise<{ key: ApiKeyItem; rawKey: string }> {
     const result = await getClawRouterBackendSdkClient().iam.apiKeys.create(
       toCreateApiKeyRequest(input),
-      createRequestParams('admin-api-key-create'),
+      createIdempotencyParams('admin-api-key-create'),
     );
     ensureSdkworkApiSuccess(result, 'admin.user.errors.createApiKeyFallback');
     const data = readApiRecord(result);

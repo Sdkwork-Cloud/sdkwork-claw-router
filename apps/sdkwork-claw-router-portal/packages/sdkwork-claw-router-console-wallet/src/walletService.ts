@@ -1,7 +1,7 @@
-import {
+﻿import {
   getClawRouterAppSdkClient,
-  createRequestParams,
-  createRequestToken,
+  createIdempotencyParams,
+  createClientOperationToken,
   isRecord,
   readApiRecord,
   readRequiredString,
@@ -43,7 +43,7 @@ export class WalletService {
       const data = readRequiredRecord(
         readApiRecord(await appPromotionCodeRedemptionsCreate(
           {
-            clientRequestNo: createRequestToken('promotion-code-redemption'),
+            clientRequestNo: createClientOperationToken('promotion-code-redemption'),
             code: normalizedCode,
             source: 'console-wallet',
           },
@@ -78,7 +78,7 @@ export async function appPromotionUserCouponClaimsCreate(
 ) {
   return getClawRouterAppSdkClient().system.promotions.userCoupons.claims.create(
     body,
-    createRequestParams('app-promotion-user-coupon-claim-create'),
+    createIdempotencyParams('app-promotion-user-coupon-claim-create'),
   );
 }
 
@@ -87,7 +87,7 @@ export async function appPromotionCodeRedemptionsCreate(
 ) {
   return getClawRouterAppSdkClient().system.promotions.codes.redemptions.create(
     body,
-    createRequestParams('app-promotion-code-redemption-create'),
+    createIdempotencyParams('app-promotion-code-redemption-create'),
   );
 }
 

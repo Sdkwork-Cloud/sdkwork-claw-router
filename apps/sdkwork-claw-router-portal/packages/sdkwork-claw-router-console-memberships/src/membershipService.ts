@@ -1,6 +1,6 @@
-import {
+﻿import {
   getClawRouterAppSdkClient,
-  createRequestParams,
+  createIdempotencyParams,
   ensureSdkworkApiSuccess,
   isRecord,
   readApiItem,
@@ -264,21 +264,21 @@ export async function appMembershipsPackagesRetrieve(packageId: string) {
 export async function appMembershipsPurchasesCreate(body: Parameters<AppCommerce['memberships']['purchases']['create']>[0]) {
   return getClawRouterAppSdkClient().commerce.memberships.purchases.create(
     body,
-    createRequestParams('app-membership-purchase-create'),
+    createIdempotencyParams('app-membership-purchase-create'),
   );
 }
 
 export async function appMembershipsPurchasesRenew(body: Parameters<AppCommerce['memberships']['purchases']['renew']>[0]) {
   return getClawRouterAppSdkClient().commerce.memberships.purchases.renew(
     body,
-    createRequestParams('app-membership-purchase-renew'),
+    createIdempotencyParams('app-membership-purchase-renew'),
   );
 }
 
 export async function appMembershipsPurchasesUpgrade(body: Parameters<AppCommerce['memberships']['purchases']['upgrade']>[0]) {
   return getClawRouterAppSdkClient().commerce.memberships.purchases.upgrade(
     body,
-    createRequestParams('app-membership-purchase-upgrade'),
+    createIdempotencyParams('app-membership-purchase-upgrade'),
   );
 }
 

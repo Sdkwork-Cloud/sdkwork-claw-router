@@ -911,9 +911,9 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_portal_services_do_not_keep_unused_sdk_request_param_imports(self) -> None:
         violations: list[str] = []
-        import_name = "createRequestParams"
+        import_name = "createIdempotencyParams"
         import_block = re.compile(
-            r"import\s*\{(?P<body>[^}]*\bcreateRequestParams\b[^}]*)\}\s*from\s*['\"]sdkwork-claw-router-commons/runtime['\"]",
+            r"import\s*\{(?P<body>[^}]*\bcreateIdempotencyParams\b[^}]*)\}\s*from\s*['\"]sdkwork-claw-router-commons/runtime['\"]",
             re.DOTALL,
         )
 
@@ -929,7 +929,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         self.assertEqual(
             [],
             violations,
-            "Portal SDK services must not keep stale request-id/idempotency helper imports after generated SDK migration.",
+            "Portal SDK services must not keep stale idempotency helper imports after generated SDK migration.",
         )
 
     def test_portal_and_generated_sdk_do_not_reintroduce_legacy_operation_signatures(self) -> None:
@@ -1028,7 +1028,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         self.assertEqual(
             [],
             sdk_api_violations,
-            "Generated SDK operation APIs must expose named request-id/idempotency parameters and string path ids, not old raw headers or string|number path ids.",
+            "Generated SDK operation APIs must expose named idempotency parameters and string path ids, not old raw headers or string|number path ids.",
         )
 
     def test_portal_root_does_not_ship_ai_studio_starter_or_one_off_rewrite_scripts(self) -> None:

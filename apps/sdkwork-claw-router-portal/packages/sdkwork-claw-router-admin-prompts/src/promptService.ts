@@ -1,5 +1,5 @@
-import {
-  createRequestParams,
+﻿import {
+  createIdempotencyParams,
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   requiredSafePathSegment,
@@ -46,7 +46,7 @@ export async function listPrompts(params?: AdminPromptListParams) {
 export async function createPrompt(input: AdminPromptCreateInput) {
   const result = await getClawRouterBackendSdkClient().prompts.definitions.create(
     input,
-    createRequestParams('admin-prompt-create'),
+    createIdempotencyParams('admin-prompt-create'),
   );
   ensureSdkworkApiSuccess(result, 'Failed to create prompt');
   return result;
@@ -61,7 +61,7 @@ export async function createPromptVersion(promptId: string, input: AdminPromptVe
   const result = await getClawRouterBackendSdkClient().prompts.versions.create(
     requiredSafePathSegment(promptId, 'promptId'),
     input,
-    createRequestParams('admin-prompt-version-create'),
+    createIdempotencyParams('admin-prompt-version-create'),
   );
   ensureSdkworkApiSuccess(result, 'Failed to create prompt version');
   return result;
@@ -93,7 +93,7 @@ export async function createPromptBinding(promptId: string, input: AdminPromptBi
   const result = await getClawRouterBackendSdkClient().prompts.definitionBindings.create(
     requiredSafePathSegment(promptId, 'promptId'),
     input,
-    createRequestParams('admin-prompt-binding-create'),
+    createIdempotencyParams('admin-prompt-binding-create'),
   );
   ensureSdkworkApiSuccess(result, 'Failed to create prompt binding');
   return result;

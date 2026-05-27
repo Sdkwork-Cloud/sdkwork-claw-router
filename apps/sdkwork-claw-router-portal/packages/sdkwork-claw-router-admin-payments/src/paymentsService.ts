@@ -1,4 +1,4 @@
-import { createRequestParams, createRequestToken, getClawRouterBackendSdkClient } from 'sdkwork-claw-router-commons/runtime';
+﻿import { createIdempotencyParams, createClientOperationToken, getClawRouterBackendSdkClient } from 'sdkwork-claw-router-commons/runtime';
 
 type BackendCommerce = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
 export type PaymentProviderAccountMutationInput = Parameters<BackendCommerce['payments']['providerAccounts']['create']>[0];
@@ -16,11 +16,11 @@ export async function backendPaymentsProviderAccountsList(
 export async function backendPaymentsProviderAccountsCreate(input: PaymentProviderAccountMutationInput) {
   const body: PaymentProviderAccountMutationInput = {
     ...input,
-    clientRequestNo: input.clientRequestNo ?? createRequestToken('payment-provider-account'),
+    clientRequestNo: input.clientRequestNo ?? createClientOperationToken('payment-provider-account'),
   };
   return getClawRouterBackendSdkClient().commerce.payments.providerAccounts.create(
     body,
-    createRequestParams('backend-payment-provider-account-create'),
+    createIdempotencyParams('backend-payment-provider-account-create'),
   );
 }
 

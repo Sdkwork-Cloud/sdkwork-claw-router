@@ -1,4 +1,4 @@
-import {
+﻿import {
   ensureSdkworkApiSuccess,
   isRecord,
   readRequiredApiItem,
@@ -8,7 +8,7 @@ import {
   readString,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/api-result';
-import { createRequestToken } from 'sdkwork-claw-router-commons/request-id';
+import { createClientOperationToken } from 'sdkwork-claw-router-commons/idempotency';
 import { getClawRouterBackendSdkClient } from 'sdkwork-claw-router-commons/sdk-clients';
 import type { StorageRecord } from './storageSectionDefinitions';
 
@@ -73,7 +73,7 @@ function resolveSdkOssClient() {
 }
 
 function idempotencyParams() {
-  return { idempotencyKey: createRequestToken('admin-storage-command') };
+  return { idempotencyKey: createClientOperationToken('admin-storage-command') };
 }
 
 export async function fetchStorageProviders(): Promise<StorageRecord[]> {

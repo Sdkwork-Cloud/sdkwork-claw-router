@@ -1,10 +1,10 @@
-import {
+﻿import {
   getClawRouterAppSdkClient,
   readApiRecord,
   readRequiredApiItems,
   readString,
-  createRequestToken,
-  createRequestParams,
+  createClientOperationToken,
+  createIdempotencyParams,
   isRecord,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
@@ -117,7 +117,7 @@ export async function appRechargesPackagesList(params?: Parameters<AppCommerce['
 export async function appRechargesOrdersCreate(body: Parameters<AppCommerce['recharges']['orders']['create']>[0]) {
   return getClawRouterAppSdkClient().commerce.recharges.orders.create(
     body,
-    createRequestParams('app-recharge-order-create'),
+    createIdempotencyParams('app-recharge-order-create'),
   );
 }
 
@@ -136,7 +136,7 @@ export async function fetchRechargePackages(): Promise<RechargePackage[]> {
 }
 
 function createCommerceRequestNo(scope: string): string {
-  return createRequestToken(scope);
+  return createClientOperationToken(scope);
 }
 
 function normalizeRechargePackage(value: unknown): RechargePackage {

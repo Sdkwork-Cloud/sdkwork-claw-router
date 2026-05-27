@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { getLoadErrorMessage } from "./packages/sdkwork-claw-router-commons/src/load-error.ts";
-import { createRequestParams, createRequestToken } from "./packages/sdkwork-claw-router-commons/src/request-id.ts";
+import { createClientOperationToken, createIdempotencyParams } from "./packages/sdkwork-claw-router-commons/src/idempotency.ts";
 import {
   ensureSdkworkApiSuccess,
   readApiItems,
@@ -74,7 +74,7 @@ function withCrypto<T>(cryptoValue: Crypto | undefined, fn: () => T): T {
   }
 }
 
-test("createRequestToken uses cryptographic random bytes without crypto.randomUUID", () => {
+test("createClientOperationToken uses cryptographic random bytes without crypto.randomUUID", () => {
   const token = withCrypto(
     {
       randomUUID: () => "11111111-2222-4333-8444-555555555555",
@@ -85,13 +85,13 @@ test("createRequestToken uses cryptographic random bytes without crypto.randomUU
         return array;
       },
     } as unknown as Crypto,
-    () => createRequestToken(" api-key "),
+    () => createClientOperationToken(" api-key "),
   );
 
   assert.equal(token, "api-key-01020304-0506-4708-890a-0b0c0d0e0f10");
 });
 
-test("createRequestToken falls back only to cryptographic random bytes", () => {
+test("createClientOperationToken falls back only to cryptographic random bytes", () => {
   const token = withCrypto(
     {
       getRandomValues: (array: Uint8Array) => {
@@ -101,33 +101,33 @@ test("createRequestToken falls back only to cryptographic random bytes", () => {
         return array;
       },
     } as unknown as Crypto,
-    () => createRequestToken("request"),
+    () => createClientOperationToken("request"),
   );
 
   assert.equal(token, "request-01020304-0506-4708-890a-0b0c0d0e0f10");
 });
 
-test("createRequestToken fails closed when secure randomness is unavailable", () => {
+test("createClientOperationToken fails closed when secure randomness is unavailable", () => {
   assert.throws(
-    () => withCrypto(undefined, () => createRequestToken("request")),
+    () => withCrypto(undefined, () => createClientOperationToken("request")),
     /Secure random source is unavailable/,
   );
 });
 
-test("createRequestToken rejects an all-zero random byte result", () => {
+test("createClientOperationToken rejects an all-zero random byte result", () => {
   assert.throws(
     () =>
       withCrypto(
         {
           getRandomValues: (array: Uint8Array) => array,
         } as unknown as Crypto,
-        () => createRequestToken("request"),
+        () => createClientOperationToken("request"),
       ),
     /Secure random source returned an invalid token seed/,
   );
 });
 
-test("createRequestParams creates only idempotency keys for generated SDK write calls", () => {
+test("createIdempotencyParams creates only idempotency keys for generated SDK write calls", () => {
   const params = withCrypto(
     {
       getRandomValues: (array: Uint8Array) => {
@@ -144,7 +144,7 @@ test("createRequestParams creates only idempotency keys for generated SDK write 
         return array;
       },
     } as unknown as Crypto,
-    () => createRequestParams(" commerce-wallet-topup "),
+    () => createIdempotencyParams(" commerce-wallet-topup "),
   );
 
   assert.deepEqual(params, {

@@ -1,5 +1,5 @@
-import {
-  createRequestToken,
+﻿import {
+  createClientOperationToken,
   getClawRouterBackendSdkClient,
 } from 'sdkwork-claw-router-commons/runtime';
 
@@ -111,9 +111,9 @@ export async function backendServiceProviderDownstreamsList(
 }
 
 export async function backendServiceProviderDownstreamCreate(input: ServiceProviderDownstreamCreateInput) {
-  const requestToken = createRequestToken('admin-service-provider-downstream-create');
+  const idempotencyKey = createClientOperationToken('admin-service-provider-downstream-create');
   return getClawRouterBackendSdkClient().serviceProviders.downstreams.create(input, {
-    idempotencyKey: requestToken,
+    idempotencyKey: idempotencyKey,
   });
 }
 
@@ -142,9 +142,9 @@ export async function backendServiceProviderPricingRulesList(
 }
 
 export async function backendServiceProviderPricingRuleCreate(input: ServiceProviderPricingRuleCreateInput) {
-  const requestToken = createRequestToken('admin-service-provider-pricing-rule-create');
+  const idempotencyKey = createClientOperationToken('admin-service-provider-pricing-rule-create');
   return getClawRouterBackendSdkClient().serviceProviders.pricingRules.create(input, {
-    idempotencyKey: requestToken,
+    idempotencyKey: idempotencyKey,
   });
 }
 
@@ -152,16 +152,16 @@ export async function backendServiceProviderPricingRuleUpdate(
   ruleId: string,
   input: ServiceProviderPricingRuleUpdateInput,
 ) {
-  const requestToken = createRequestToken('admin-service-provider-pricing-rule-update');
+  const idempotencyKey = createClientOperationToken('admin-service-provider-pricing-rule-update');
   return getClawRouterBackendSdkClient().serviceProviders.pricingRules.update(ruleId, input, {
-    idempotencyKey: requestToken,
+    idempotencyKey: idempotencyKey,
   });
 }
 
 export async function backendServiceProviderPriceSimulationCreate(input: ServiceProviderPriceSimulationInput) {
-  const requestToken = createRequestToken('admin-service-provider-price-simulation');
+  const idempotencyKey = createClientOperationToken('admin-service-provider-price-simulation');
   return getClawRouterBackendSdkClient().serviceProviders.priceSimulation.create(input, {
-    idempotencyKey: requestToken,
+    idempotencyKey: idempotencyKey,
   });
 }
 

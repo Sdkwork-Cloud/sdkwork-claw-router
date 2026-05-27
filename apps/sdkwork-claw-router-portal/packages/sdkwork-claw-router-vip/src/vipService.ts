@@ -1,7 +1,7 @@
-import {
+﻿import {
   getClawRouterAppSdkClient,
-  createRequestParams,
-  createRequestToken,
+  createIdempotencyParams,
+  createClientOperationToken,
   isRecord,
   readApiItems,
   readApiRecord,
@@ -150,7 +150,7 @@ export class VipService {
     const normalizedCode = requiredText(code, 'code');
     const result = await appPromotionCodeRedemptionsCreate(
       {
-        clientRequestNo: createRequestToken('vip-membership-redemption'),
+        clientRequestNo: createClientOperationToken('vip-membership-redemption'),
         code: normalizedCode,
         scene: 'membership_redeem',
         source: 'vip-page',
@@ -166,7 +166,7 @@ export class VipService {
     const message = readFirstString(data, ['msg', 'message']);
     return {
       success,
-      requestNo: requestNo || createRequestToken('vip-membership-redemption-result'),
+      requestNo: requestNo || createClientOperationToken('vip-membership-redemption-result'),
       status,
       ...(message ? { message } : {}),
     };
@@ -194,14 +194,14 @@ async function appMembershipsCurrentRetrieve() {
 async function appMembershipsPurchasesCreate(body: Parameters<AppCommerce['memberships']['purchases']['create']>[0]) {
   return getClawRouterAppSdkClient().commerce.memberships.purchases.create(
     body,
-    createRequestParams('app-vip-purchase-create'),
+    createIdempotencyParams('app-vip-purchase-create'),
   );
 }
 
 async function appPromotionCodeRedemptionsCreate(body: Parameters<AppSystem['promotions']['codes']['redemptions']['create']>[0]) {
   return getClawRouterAppSdkClient().system.promotions.codes.redemptions.create(
     body,
-    createRequestParams('app-vip-membership-redemption-create'),
+    createIdempotencyParams('app-vip-membership-redemption-create'),
   );
 }
 

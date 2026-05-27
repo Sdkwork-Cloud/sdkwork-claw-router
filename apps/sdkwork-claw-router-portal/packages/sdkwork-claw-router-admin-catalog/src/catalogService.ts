@@ -1,4 +1,4 @@
-import { createRequestParams, getClawRouterBackendSdkClient } from 'sdkwork-claw-router-commons/runtime';
+﻿import { createIdempotencyParams, getClawRouterBackendSdkClient } from 'sdkwork-claw-router-commons/runtime';
 
 type BackendCommerce = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
 
@@ -25,7 +25,7 @@ export async function listCommercePriceLists(params?: Parameters<BackendCommerce
 export async function createCommerceCategory(body: Parameters<BackendCommerce['catalog']['categories']['create']>[0]) {
   return getClawRouterBackendSdkClient().commerce.catalog.categories.create(
     body,
-    createRequestParams('backend-catalog-category-create'),
+    createIdempotencyParams('backend-catalog-category-create'),
   );
 }
 
@@ -33,7 +33,7 @@ export async function updateCommerceCategory(categoryId: string, body: Parameter
   return getClawRouterBackendSdkClient().commerce.catalog.categories.update(
     categoryId,
     body,
-    createRequestParams('backend-catalog-category-update'),
+    createIdempotencyParams('backend-catalog-category-update'),
   );
 }
 
@@ -44,7 +44,7 @@ export async function deleteCommerceCategory(categoryId: string) {
 export async function createCommerceProduct(body: Parameters<BackendCommerce['catalog']['products']['create']>[0]) {
   return getClawRouterBackendSdkClient().commerce.catalog.products.create(
     body,
-    createRequestParams('backend-catalog-product-create'),
+    createIdempotencyParams('backend-catalog-product-create'),
   );
 }
 
@@ -52,14 +52,14 @@ export async function updateCommerceProduct(productId: string, body: Parameters<
   return getClawRouterBackendSdkClient().commerce.catalog.products.update(
     productId,
     body,
-    createRequestParams('backend-catalog-product-update'),
+    createIdempotencyParams('backend-catalog-product-update'),
   );
 }
 
 export async function createCommerceSku(body: Parameters<BackendCommerce['catalog']['skus']['create']>[0]) {
   return getClawRouterBackendSdkClient().commerce.catalog.skus.create(
     body,
-    createRequestParams('backend-catalog-sku-create'),
+    createIdempotencyParams('backend-catalog-sku-create'),
   );
 }
 
@@ -67,20 +67,20 @@ export async function updateCommerceSku(skuId: string, body: Parameters<BackendC
   return getClawRouterBackendSdkClient().commerce.catalog.skus.update(
     skuId,
     body,
-    createRequestParams('backend-catalog-sku-update'),
+    createIdempotencyParams('backend-catalog-sku-update'),
   );
 }
 
 export async function createCommerceAttribute(body: Parameters<BackendCommerce['catalog']['attributes']['create']>[0]) {
   return getClawRouterBackendSdkClient().commerce.catalog.attributes.create(
     body,
-    createRequestParams('backend-catalog-attribute-create'),
+    createIdempotencyParams('backend-catalog-attribute-create'),
   );
 }
 
 export async function createCommercePriceList(body: Parameters<BackendCommerce['catalog']['priceLists']['create']>[0]) {
   return getClawRouterBackendSdkClient().commerce.catalog.priceLists.create(
     body,
-    createRequestParams('backend-catalog-price-list-create'),
+    createIdempotencyParams('backend-catalog-price-list-create'),
   );
 }

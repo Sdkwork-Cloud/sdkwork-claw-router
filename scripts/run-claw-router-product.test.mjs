@@ -1,4 +1,4 @@
-import assert from 'node:assert/strict';
+﻿import assert from 'node:assert/strict';
 import { execFile } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
@@ -542,11 +542,11 @@ test('installation documentation covers release, source, initialization, usage, 
   assert.ok(enRelease.includes('./bin/clawrouterctl ensure'));
   assert.ok(zhSource.includes('pnpm release:env:write -- --check'));
   assert.ok(enSource.includes('pnpm release:env:write -- --check'));
-  assert.ok(zhSource.includes('目标机器后，不要求安装 `pnpm`'));
+  assert.ok(zhSource.includes('鐩爣鏈哄櫒鍚庯紝涓嶈姹傚畨瑁?`pnpm`'));
   assert.ok(enSource.includes('the host does not need `pnpm`'));
-  assert.ok(zhUsage.includes('注册是否需要验证码由 IAM 运行时策略控制'));
+  assert.ok(zhUsage.includes('娉ㄥ唽鏄惁闇€瑕侀獙璇佺爜鐢?IAM 杩愯鏃剁瓥鐣ユ帶鍒?));
   assert.ok(enUsage.includes('Whether registration requires verification code is controlled by IAM runtime policy'));
-  assert.ok(zhUsage.includes('SDK 包版本独立于 Claw Router release 版本'));
+  assert.ok(zhUsage.includes('SDK 鍖呯増鏈嫭绔嬩簬 Claw Router release 鐗堟湰'));
   assert.ok(enUsage.includes('SDK package versions are independent from Claw Router release versions'));
 
   for (const relativePath of ['README.md', ...requiredDocs]) {
@@ -6775,7 +6775,7 @@ test('verification plan includes portal commons runtime tests before route runti
   const pythonTestsIndex = plan.findIndex((step) => step.label === 'python standard tests');
 
   assert.ok(commonsRuntimeIndex > browserSmokeIndex, 'commons runtime tests must run after production browser smoke');
-  assert.ok(commonsRuntimeIndex < modelsRuntimeIndex, 'commons runtime tests must run before route runtime tests that depend on shared request tokens');
+  assert.ok(commonsRuntimeIndex < modelsRuntimeIndex, 'commons runtime tests must run before route runtime tests that depend on shared idempotency tokens');
   assert.ok(commonsRuntimeIndex < rustTestsIndex, 'commons runtime tests must run before broad Rust tests');
   assert.ok(commonsRuntimeIndex < pythonTestsIndex, 'commons runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(

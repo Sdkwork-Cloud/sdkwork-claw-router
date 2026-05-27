@@ -1,5 +1,5 @@
-import {
-  createRequestParams,
+﻿import {
+  createIdempotencyParams,
   getClawRouterAppSdkClient,
   isRecord,
   readApiRecord,
@@ -42,22 +42,22 @@ export async function appAddressesList(params?: Parameters<AppCommerce['addresse
 }
 
 export async function appAddressesCreate(body: Parameters<AppCommerce['addresses']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.addresses.create(body, createRequestParams('app-address-create'));
+  return getClawRouterAppSdkClient().commerce.addresses.create(body, createIdempotencyParams('app-address-create'));
 }
 
 export async function appAddressesUpdate(addressId: string, body: Parameters<AppCommerce['addresses']['update']>[1]) {
-  return getClawRouterAppSdkClient().commerce.addresses.update(addressId, body, createRequestParams('app-address-update'));
+  return getClawRouterAppSdkClient().commerce.addresses.update(addressId, body, createIdempotencyParams('app-address-update'));
 }
 
 export async function appAddressesDelete(addressId: string) {
-  return getClawRouterAppSdkClient().commerce.addresses.delete(addressId, createRequestParams('app-address-delete'));
+  return getClawRouterAppSdkClient().commerce.addresses.delete(addressId, createIdempotencyParams('app-address-delete'));
 }
 
 export async function appAddressesDefaultSelectionCreate(addressId: string) {
   return getClawRouterAppSdkClient().commerce.addresses.defaultSelection.create(
     addressId,
-    { clientRequestNo: createRequestParams('app-address-default-selection').idempotencyKey, metadata: {} },
-    createRequestParams('app-address-default-selection'),
+    { clientRequestNo: createIdempotencyParams('app-address-default-selection').idempotencyKey, metadata: {} },
+    createIdempotencyParams('app-address-default-selection'),
   );
 }
 
@@ -66,19 +66,19 @@ export async function appCartCurrentRetrieve() {
 }
 
 export async function appCartItemsCreate(body: Parameters<AppCommerce['cart']['items']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.cart.items.create(body, createRequestParams('app-cart-item-create'));
+  return getClawRouterAppSdkClient().commerce.cart.items.create(body, createIdempotencyParams('app-cart-item-create'));
 }
 
 export async function appCartItemsUpdate(cartItemId: string, body: Parameters<AppCommerce['cart']['items']['update']>[1]) {
-  return getClawRouterAppSdkClient().commerce.cart.items.update(cartItemId, body, createRequestParams('app-cart-item-update'));
+  return getClawRouterAppSdkClient().commerce.cart.items.update(cartItemId, body, createIdempotencyParams('app-cart-item-update'));
 }
 
 export async function appCartItemsDelete(cartItemId: string) {
-  return getClawRouterAppSdkClient().commerce.cart.items.delete(cartItemId, createRequestParams('app-cart-item-delete'));
+  return getClawRouterAppSdkClient().commerce.cart.items.delete(cartItemId, createIdempotencyParams('app-cart-item-delete'));
 }
 
 export async function appCheckoutSessionsCreate(body: Parameters<AppCommerce['checkout']['sessions']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.checkout.sessions.create(body, createRequestParams('app-checkout-session-create'));
+  return getClawRouterAppSdkClient().commerce.checkout.sessions.create(body, createIdempotencyParams('app-checkout-session-create'));
 }
 
 export async function appCheckoutSessionsRetrieve(checkoutSessionId: string) {
@@ -92,7 +92,7 @@ export async function appCheckoutSessionsOrdersCreate(
   return getClawRouterAppSdkClient().commerce.checkout.sessions.orders.create(
     checkoutSessionId,
     body,
-    createRequestParams('app-checkout-session-order-create'),
+    createIdempotencyParams('app-checkout-session-order-create'),
   );
 }
 
@@ -103,7 +103,7 @@ export async function appCheckoutSessionsQuotesCreate(
   return getClawRouterAppSdkClient().commerce.checkout.sessions.quotes.create(
     checkoutSessionId,
     body,
-    createRequestParams('app-checkout-session-quote-create'),
+    createIdempotencyParams('app-checkout-session-quote-create'),
   );
 }
 
@@ -126,7 +126,7 @@ export async function appOrdersCancellationsCreate(
   return getClawRouterAppSdkClient().commerce.orders.cancellations.create(
     orderId,
     body,
-    createRequestParams('app-order-cancellation-create'),
+    createIdempotencyParams('app-order-cancellation-create'),
   );
 }
 
@@ -135,7 +135,7 @@ export async function appPaymentsMethodsList(params?: Parameters<AppCommerce['pa
 }
 
 export async function appPaymentsIntentsCreate(body: Parameters<AppCommerce['payments']['intents']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.payments.intents.create(body, createRequestParams('app-payment-intent-create'));
+  return getClawRouterAppSdkClient().commerce.payments.intents.create(body, createIdempotencyParams('app-payment-intent-create'));
 }
 
 export async function appPaymentsIntentsRetrieve(paymentIntentId: string) {
@@ -149,7 +149,7 @@ export async function appPaymentsIntentsAttemptsCreate(
   return getClawRouterAppSdkClient().commerce.payments.intents.attempts.create(
     paymentIntentId,
     body,
-    createRequestParams('app-payment-intent-attempt-create'),
+    createIdempotencyParams('app-payment-intent-attempt-create'),
   );
 }
 
@@ -166,7 +166,7 @@ export async function appRefundsList(params?: Parameters<AppCommerce['refunds'][
 }
 
 export async function appRefundsCreate(body: Parameters<AppCommerce['refunds']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.refunds.create(body, createRequestParams('app-refund-create'));
+  return getClawRouterAppSdkClient().commerce.refunds.create(body, createIdempotencyParams('app-refund-create'));
 }
 
 export async function appRefundsRetrieve(refundId: string) {
@@ -190,7 +190,7 @@ export async function appPromotionDiscountApplicationsCreate(
 ) {
   return getClawRouterAppSdkClient().system.promotions.discountApplications.create(
     body,
-    createRequestParams('app-promotion-discount-application-create'),
+    createIdempotencyParams('app-promotion-discount-application-create'),
   );
 }
 
@@ -201,7 +201,7 @@ export async function appPromotionDiscountApplicationsSettle(
   return getClawRouterAppSdkClient().system.promotions.discountApplications.settle(
     applicationId,
     body,
-    createRequestParams('app-promotion-discount-application-settle'),
+    createIdempotencyParams('app-promotion-discount-application-settle'),
   );
 }
 
@@ -212,7 +212,7 @@ export async function appPromotionDiscountApplicationsRelease(
   return getClawRouterAppSdkClient().system.promotions.discountApplications.release(
     applicationId,
     body,
-    createRequestParams('app-promotion-discount-application-release'),
+    createIdempotencyParams('app-promotion-discount-application-release'),
   );
 }
 
@@ -221,7 +221,7 @@ export async function appPromotionDiscountApplicationReversalsCreate(
 ) {
   return getClawRouterAppSdkClient().system.promotions.discountApplications.reversals.create(
     body,
-    createRequestParams('app-promotion-discount-application-reversal-create'),
+    createIdempotencyParams('app-promotion-discount-application-reversal-create'),
   );
 }
 

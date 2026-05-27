@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 import json
 from pathlib import Path
 
@@ -57,7 +57,7 @@ class AdminAnnouncementRuntimeStandardTest(unittest.TestCase):
             "toUpdateAnnouncementRequest",
             "requestParams('admin-announcement-create')",
             "requestParams('admin-announcement-update')",
-            "createRequestToken(scope)",
+            "createClientOperationToken(scope)",
         ]:
             self.assertIn(token, service)
 

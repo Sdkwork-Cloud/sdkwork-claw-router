@@ -1,5 +1,5 @@
-import {
-  createRequestToken,
+﻿import {
+  createClientOperationToken,
   getClawRouterAppSdkClient,
   streamRuntimeInvocationEvents,
   type ClawRouterAppSdkClient,
@@ -203,7 +203,7 @@ function appClient(client?: ClawRouterAppSdkClient): ClawRouterAppSdkClient {
 
 function mutationParams(prefix: string, options: MutationOptions = {}): { idempotencyKey: string } {
   return {
-    idempotencyKey: options.idempotencyKey ?? createRequestToken(options.idempotencyPrefix ?? prefix),
+    idempotencyKey: options.idempotencyKey ?? createClientOperationToken(options.idempotencyPrefix ?? prefix),
   };
 }
 

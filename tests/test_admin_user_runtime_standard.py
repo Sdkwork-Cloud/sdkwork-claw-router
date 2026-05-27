@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 from pathlib import Path
 
 from tools.api_contract_manifest import ApiContractManifestGenerator
@@ -70,9 +70,9 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
             "toUpdateUserRequest",
             "toBalanceAdjustmentRequest",
             "toCreateApiKeyRequest",
-            "createRequestParams('admin-user-create')",
-            "createRequestParams('admin-user-update')",
-            "createRequestParams('admin-user-balance-adjust')",
+            "createIdempotencyParams('admin-user-create')",
+            "createIdempotencyParams('admin-user-update')",
+            "createIdempotencyParams('admin-user-balance-adjust')",
             "idempotencyTokens('admin-api-key-create')",
         ]:
             self.assertIn(token, service)

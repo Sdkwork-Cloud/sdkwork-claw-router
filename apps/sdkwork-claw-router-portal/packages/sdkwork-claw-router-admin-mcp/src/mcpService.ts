@@ -1,5 +1,5 @@
-import {
-  createRequestParams,
+﻿import {
+  createIdempotencyParams,
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   requiredSafePathSegment,
@@ -56,7 +56,7 @@ export async function getMcpServer(serverId: string) {
 export async function createMcpServer(input: AdminMcpServerCreateInput) {
   const result = await getClawRouterBackendSdkClient().mcp.servers.create(
     input,
-    createRequestParams('admin-mcp-server-create'),
+    createIdempotencyParams('admin-mcp-server-create'),
   );
   ensureSdkworkApiSuccess(result, 'Failed to create MCP server');
   return result;
@@ -81,7 +81,7 @@ export async function createMcpServerRevision(serverId: string, input: AdminMcpS
   const result = await getClawRouterBackendSdkClient().mcp.servers.revisions.create(
     requiredSafePathSegment(serverId, 'serverId'),
     input,
-    createRequestParams('admin-mcp-server-revision-create'),
+    createIdempotencyParams('admin-mcp-server-revision-create'),
   );
   ensureSdkworkApiSuccess(result, 'Failed to create MCP server revision');
   return result;
@@ -136,7 +136,7 @@ export async function createMcpBinding(serverId: string, input: AdminMcpBindingC
   const result = await getClawRouterBackendSdkClient().mcp.servers.bindings.create(
     requiredSafePathSegment(serverId, 'serverId'),
     input,
-    createRequestParams('admin-mcp-binding-create'),
+    createIdempotencyParams('admin-mcp-binding-create'),
   );
   ensureSdkworkApiSuccess(result, 'Failed to create MCP binding');
   return result;

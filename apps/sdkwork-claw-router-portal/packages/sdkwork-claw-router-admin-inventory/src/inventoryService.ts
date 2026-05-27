@@ -1,4 +1,4 @@
-import { createRequestParams, getClawRouterBackendSdkClient } from 'sdkwork-claw-router-commons/runtime';
+﻿import { createIdempotencyParams, getClawRouterBackendSdkClient } from 'sdkwork-claw-router-commons/runtime';
 
 type BackendCommerce = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
 
@@ -18,6 +18,6 @@ export async function updateInventoryStock(stockId: string, body: Parameters<Bac
   return getClawRouterBackendSdkClient().commerce.inventory.stocks.update(
     stockId,
     body,
-    createRequestParams('backend-inventory-stock-update'),
+    createIdempotencyParams('backend-inventory-stock-update'),
   );
 }

@@ -259,7 +259,7 @@ export * from './load-error.ts';
 export * from './notificationService.ts';
 export * from './portal-auth.ts';
 export * from './portal-session.ts';
-export * from './request-id.ts';
+export * from './idempotency.ts';
 export * from './sdk-request-boundary.ts';
 export * from './sdk-clients.ts';
 export * from './sessionService.ts';

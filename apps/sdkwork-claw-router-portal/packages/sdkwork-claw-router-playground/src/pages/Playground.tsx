@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+﻿import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { createRequestToken } from 'sdkwork-claw-router-commons/runtime';
+import { createClientOperationToken } from 'sdkwork-claw-router-commons/runtime';
 import {
   appendSdkworkGenerationArtifactToHistoryItem,
   createSdkworkGenerationPendingHistoryItem,
@@ -174,8 +174,8 @@ function previewPromptLabelKey(kind: 'text' | 'image' | 'video' | 'audio' | null
   return 'playground.preview.audioPrompt';
 }
 
-function createClientRunId(): string {
-  return createRequestToken('pending-agent-run');
+function createPendingHistoryItemId(): string {
+  return createClientOperationToken('pending-agent-run');
 }
 
 export function Playground() {
@@ -353,7 +353,7 @@ export function Playground() {
     const targetType = inputModality === 'agent' ? undefined : inputModality;
     const modelId = selectedModel || selectedModels[inputModality] || selectedModels.agent || undefined;
     const pendingItem = createSdkworkGenerationPendingHistoryItem({
-      id: createClientRunId(),
+      id: createPendingHistoryItemId(),
       prompt,
       selectedModel: modelId,
       targetType,

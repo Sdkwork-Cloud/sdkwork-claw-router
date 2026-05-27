@@ -1,4 +1,4 @@
-import { createRequestToken } from 'sdkwork-claw-router-commons/request-id';
+﻿import { createClientOperationToken } from 'sdkwork-claw-router-commons/idempotency';
 import { getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/sdk-clients';
 import {
   ensureSdkworkApiSuccess,
@@ -92,7 +92,7 @@ export class ApiKeyService {
   }
 
   static async createKey(input: CreateApiKeyInput): Promise<CreatedApiKey> {
-    const idempotencyKey = createRequestToken('create-api-key');
+    const idempotencyKey = createClientOperationToken('create-api-key');
     try {
       const result = await getClawRouterAppSdkClient().iam.apiKeys.create(
         toCreateApiKeyRequest(input),

@@ -1,4 +1,4 @@
-import json
+﻿import json
 import unittest
 from pathlib import Path
 
@@ -83,9 +83,9 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
             "toSyncCatalogRequest",
             "toCreateVendorRequest",
             "toCreateModelRequest",
-            "createRequestParams('admin-model-catalog-sync')",
-            "createRequestParams('admin-model-vendor-create')",
-            "createRequestParams('admin-ai-model-create')",
+            "createIdempotencyParams('admin-model-catalog-sync')",
+            "createIdempotencyParams('admin-model-vendor-create')",
+            "createIdempotencyParams('admin-ai-model-create')",
         ]:
             self.assertIn(token, service)
 

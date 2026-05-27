@@ -192,7 +192,7 @@ class BillingRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "commerce-runtime.ts"
         ).read_text(encoding="utf-8")
-        self.assertIn("createRequestParams('commerce-coupon-redeem')", commerce_runtime)
+        self.assertIn("createIdempotencyParams('commerce-coupon-redeem')", commerce_runtime)
         self.assertIn("'Redeem history amount must be a money string'", billing_service)
         self.assertIn("'Recharge history amount must be a money string'", billing_service)
         self.assertIn("readRequiredString(item, 'date', 'Redeem history date is required')", billing_service)

@@ -218,7 +218,11 @@ function optionalNonNegativeInteger(value: unknown, fieldName: string): number |
   if (value === undefined || value === null || value === '') {
     return undefined;
   }
-  const numberValue = typeof value === 'string' ? Number(value.trim()) : value;
+  const numberValue = typeof value === 'number'
+    ? value
+    : typeof value === 'string'
+      ? Number(value.trim())
+      : Number.NaN;
   if (!Number.isSafeInteger(numberValue) || numberValue < 0) {
     throw new Error(`${fieldName} must be a non-negative integer`);
   }

@@ -1,4 +1,5 @@
-﻿import {
+import {
+  createIdempotencyParams,
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
@@ -267,6 +268,7 @@ export class ModelService {
   static async syncVendorsAndModels(): Promise<ModelCatalogSyncReport> {
     const result = await getClawRouterBackendSdkClient().ai.models.refresh(
       toSyncCatalogRequest(),
+      createIdempotencyParams('admin-model-catalog-sync'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to sync vendors and models');
     const data = readApiRecord(result);
@@ -300,6 +302,7 @@ export class ModelService {
   static async addVendor(vendor: VendorCreateInput): Promise<Vendor> {
     const result = await getClawRouterBackendSdkClient().ai.modelVendors.create(
       toCreateVendorRequest(vendor),
+      createIdempotencyParams('admin-model-vendor-create'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to add vendor');
     return normalizeVendor(readRequiredApiItem(result, 'Created vendor response is missing data'));
@@ -308,6 +311,7 @@ export class ModelService {
   static async addModel(model: ModelCreateInput): Promise<Model> {
     const result = await getClawRouterBackendSdkClient().ai.models.create(
       toCreateModelRequest(model),
+      createIdempotencyParams('admin-ai-model-create'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to add model');
     return normalizeModel(readRequiredApiItem(result, 'Created model response is missing data'));

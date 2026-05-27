@@ -1,4 +1,4 @@
-import { createRequestToken } from 'sdkwork-claw-router-commons/runtime';
+﻿import { createClientOperationToken } from 'sdkwork-claw-router-commons/runtime';
 import type { ChatMessage } from './chatTypes';
 
 export function createChatUserMessage(prompt: string, createdAt = new Date(), id = createChatMessageId('user')): ChatMessage {
@@ -54,5 +54,5 @@ export function createChatAssistantMessage({
 }
 
 export function createChatMessageId(prefix: string): string {
-  return createRequestToken(prefix);
+  return createClientOperationToken(prefix);
 }

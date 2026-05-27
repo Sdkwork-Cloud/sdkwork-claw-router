@@ -1,5 +1,5 @@
-import {
-  createRequestParams,
+﻿import {
+  createIdempotencyParams,
   getClawRouterBackendSdkClient,
   isRecord,
   readRequiredApiItems,
@@ -29,7 +29,7 @@ export async function backendWalletExchangeRulesList(params?: Parameters<Backend
 export async function backendWalletAdjustmentsCreate(body: Parameters<BackendCommerce['wallet']['adjustments']['create']>[0]) {
   return getClawRouterBackendSdkClient().commerce.wallet.adjustments.create(
     body,
-    createRequestParams('backend-wallet-adjustment-create'),
+    createIdempotencyParams('backend-wallet-adjustment-create'),
   );
 }
 

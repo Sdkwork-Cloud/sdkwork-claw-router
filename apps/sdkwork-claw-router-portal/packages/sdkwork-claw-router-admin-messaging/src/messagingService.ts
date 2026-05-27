@@ -1,5 +1,5 @@
-import {
-  createRequestToken,
+﻿import {
+  createClientOperationToken,
   getClawRouterBackendSdkClient,
 } from 'sdkwork-claw-router-commons/runtime';
 
@@ -34,9 +34,9 @@ export async function listMessagingProviderAccounts(params?: MessagingProviderAc
 }
 
 export async function createMessagingProviderAccount(input: MessagingProviderAccountCreateInput) {
-  const requestToken = createRequestToken('admin-messaging-provider-account-create');
+  const idempotencyKey = createClientOperationToken('admin-messaging-provider-account-create');
   return getClawRouterBackendSdkClient().messaging.providerAccounts.create(input, {
-    idempotencyKey: requestToken,
+    idempotencyKey: idempotencyKey,
   });
 }
 
@@ -45,9 +45,9 @@ export async function listMessagingSenderIdentities(params?: MessagingSenderIden
 }
 
 export async function createMessagingSenderIdentity(input: MessagingSenderIdentityCreateInput) {
-  const requestToken = createRequestToken('admin-messaging-sender-identity-create');
+  const idempotencyKey = createClientOperationToken('admin-messaging-sender-identity-create');
   return getClawRouterBackendSdkClient().messaging.senderIdentities.create(input, {
-    idempotencyKey: requestToken,
+    idempotencyKey: idempotencyKey,
   });
 }
 
@@ -56,9 +56,9 @@ export async function listMessagingTemplates(params?: MessagingTemplateListParam
 }
 
 export async function createMessagingTemplate(input: MessagingTemplateCreateInput) {
-  const requestToken = createRequestToken('admin-messaging-template-create');
+  const idempotencyKey = createClientOperationToken('admin-messaging-template-create');
   return getClawRouterBackendSdkClient().messaging.templates.create(input, {
-    idempotencyKey: requestToken,
+    idempotencyKey: idempotencyKey,
   });
 }
 
@@ -71,9 +71,9 @@ export async function listMessagingRouteRules(params?: MessagingRouteRuleListPar
 }
 
 export async function createMessagingRouteRule(input: MessagingRouteRuleCreateInput) {
-  const requestToken = createRequestToken('admin-messaging-route-rule-create');
+  const idempotencyKey = createClientOperationToken('admin-messaging-route-rule-create');
   return getClawRouterBackendSdkClient().messaging.routeRules.create(input, {
-    idempotencyKey: requestToken,
+    idempotencyKey: idempotencyKey,
   });
 }
 
@@ -86,16 +86,16 @@ export async function simulateMessagingRoute(input: MessagingRouteSimulationInpu
 }
 
 export async function testMessagingSend(input: MessagingTestSendInput) {
-  const requestToken = createRequestToken('admin-messaging-test-send');
+  const idempotencyKey = createClientOperationToken('admin-messaging-test-send');
   return getClawRouterBackendSdkClient().messaging.diagnostics.testSends.create(input, {
-    idempotencyKey: requestToken,
+    idempotencyKey: idempotencyKey,
   });
 }
 
 export async function sendMessagingTemplate(input: MessagingTemplateSendInput) {
-  const requestToken = createRequestToken('admin-messaging-template-send');
+  const idempotencyKey = createClientOperationToken('admin-messaging-template-send');
   return getClawRouterBackendSdkClient().messaging.templateSends.create(input, {
-    idempotencyKey: requestToken,
+    idempotencyKey: idempotencyKey,
   });
 }
 
@@ -104,9 +104,9 @@ export async function listMessagingSuppressions(params?: MessagingSuppressionLis
 }
 
 export async function createMessagingSuppression(input: MessagingSuppressionCreateInput) {
-  const requestToken = createRequestToken('admin-messaging-suppression-create');
+  const idempotencyKey = createClientOperationToken('admin-messaging-suppression-create');
   return getClawRouterBackendSdkClient().messaging.suppressions.create(input, {
-    idempotencyKey: requestToken,
+    idempotencyKey: idempotencyKey,
   });
 }
 

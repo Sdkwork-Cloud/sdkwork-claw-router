@@ -1,7 +1,7 @@
-import {
+﻿import {
   getClawRouterAppSdkClient,
-  createRequestParams,
-  createRequestToken,
+  createIdempotencyParams,
+  createClientOperationToken,
   isRecord,
   readRequiredApiItems,
   readString,
@@ -96,7 +96,7 @@ export async function appInvoicesRetrieve(invoiceId: string) {
 }
 
 export async function appInvoicesCreate(body: Parameters<AppCommerce['invoices']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.invoices.create(body, createRequestParams('app-invoice-create'));
+  return getClawRouterAppSdkClient().commerce.invoices.create(body, createIdempotencyParams('app-invoice-create'));
 }
 
 export async function appWalletLedgerEntriesList(params?: Parameters<AppCommerce['wallet']['ledgerEntries']['list']>[0]) {
@@ -149,7 +149,7 @@ function settlementBucket(entry: ApiRecord): SettlementUsageBucket {
 }
 
 function normalizeSettlementBill(invoice: ApiRecord): Bill {
-  const id = readFirstString(invoice, ['invoiceNo', 'invoice_no', 'id']) || createRequestToken('invoice');
+  const id = readFirstString(invoice, ['invoiceNo', 'invoice_no', 'id']) || createClientOperationToken('invoice');
   const createdAt = readFirstString(invoice, ['createdAt', 'created_at', 'issuedAt', 'issued_at']) || new Date().toISOString().slice(0, 10);
   const amount = readFirstString(invoice, ['invoiceAmount', 'invoice_amount', 'amount', 'totalAmount', 'total_amount']) || '0';
   const normalizedAmount = formatDecimalString(amount, 6);

@@ -1,11 +1,11 @@
 function createSecureUuid(): string {
   const crypto = globalThis.crypto;
   if (!crypto) {
-    throw new Error('Secure random source is unavailable for request token generation.');
+    throw new Error('Secure random source is unavailable for idempotency token generation.');
   }
 
   if (!crypto.getRandomValues) {
-    throw new Error('Secure random source is unavailable for request token generation.');
+    throw new Error('Secure random source is unavailable for idempotency token generation.');
   }
 
   const randomBytes = new Uint8Array(16);
@@ -26,14 +26,14 @@ function createSecureUuid(): string {
   ].join('-');
 }
 
-export function createRequestToken(prefix: string): string {
+export function createClientOperationToken(prefix: string): string {
   const normalizedPrefix = prefix.trim() || 'request';
   return `${normalizedPrefix}-${createSecureUuid()}`;
 }
 
-export function createRequestParams(prefix: string): { idempotencyKey: string } {
+export function createIdempotencyParams(prefix: string): { idempotencyKey: string } {
   const normalizedPrefix = prefix.trim() || 'request';
   return {
-    idempotencyKey: createRequestToken(normalizedPrefix),
+    idempotencyKey: createClientOperationToken(normalizedPrefix),
   };
 }

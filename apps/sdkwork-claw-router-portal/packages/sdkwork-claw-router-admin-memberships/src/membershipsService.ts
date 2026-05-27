@@ -1,5 +1,5 @@
-import {
-  createRequestParams,
+﻿import {
+  createIdempotencyParams,
   getClawRouterBackendSdkClient,
   isRecord,
   readRequiredApiItem,
@@ -378,7 +378,7 @@ export async function createMembershipAdminPackageGroup(
 ): Promise<MembershipsAdminPackageGroup> {
   const result = await backendMembershipsPackageGroupsCreate(
     buildPackageGroupMutationRequest(input),
-    createRequestParams('admin-membership-package-group-create'),
+    createIdempotencyParams('admin-membership-package-group-create'),
   );
   return normalizeAdminPackageGroup(readRequiredApiItem(result, 'Membership package group could not be created'));
 }
@@ -390,7 +390,7 @@ export async function updateMembershipAdminPackageGroup(
   const result = await backendMembershipsPackageGroupsUpdate(
     requiredMembershipText(packageGroupId, 'packageGroupId'),
     buildPackageGroupMutationRequest(input),
-    createRequestParams('admin-membership-package-group-update'),
+    createIdempotencyParams('admin-membership-package-group-update'),
   );
   return normalizeAdminPackageGroup(readRequiredApiItem(result, 'Membership package group could not be updated'));
 }
@@ -419,7 +419,7 @@ export async function createMembershipAdminPackage(
 ): Promise<MembershipsAdminPackageItem> {
   const result = await backendMembershipsPackagesCreate(
     buildPackageMutationRequest(input),
-    createRequestParams('admin-membership-package-create'),
+    createIdempotencyParams('admin-membership-package-create'),
   );
   return normalizeAdminPackage(readRequiredApiItem(result, 'Membership package could not be created'));
 }
@@ -431,7 +431,7 @@ export async function updateMembershipAdminPackage(
   const result = await backendMembershipsPackagesUpdate(
     requiredMembershipText(packageId, 'packageId'),
     buildPackageMutationRequest(input),
-    createRequestParams('admin-membership-package-update'),
+    createIdempotencyParams('admin-membership-package-update'),
   );
   return normalizeAdminPackage(readRequiredApiItem(result, 'Membership package could not be updated'));
 }
@@ -450,7 +450,7 @@ export async function fetchMembershipAdminPlans(): Promise<MembershipsAdminPlanI
 export async function createMembershipAdminPlan(input: MembershipsAdminPlanCreateInput): Promise<MembershipsAdminPlanItem> {
   const result = await backendMembershipsPlansCreate(
     buildPlanMutationRequest(input),
-    createRequestParams('admin-membership-plan-create'),
+    createIdempotencyParams('admin-membership-plan-create'),
   );
   return normalizeAdminPlan(readRequiredApiItem(result, 'Membership plan could not be created'));
 }
@@ -462,7 +462,7 @@ export async function updateMembershipAdminPlan(
   const result = await backendMembershipsPlansUpdate(
     requiredMembershipText(planId, 'planId'),
     buildPlanMutationRequest(input),
-    createRequestParams('admin-membership-plan-update'),
+    createIdempotencyParams('admin-membership-plan-update'),
   );
   return normalizeAdminPlan(readRequiredApiItem(result, 'Membership plan could not be updated'));
 }
@@ -493,7 +493,7 @@ export async function updateMembershipAdminMemberStatus(
   const result = await backendMembershipsMembersStatusUpdate(
     requiredMembershipText(membershipId, 'membershipId'),
     { status: requiredMembershipMemberStatus(input.status) },
-    createRequestParams('admin-membership-member-status-update'),
+    createIdempotencyParams('admin-membership-member-status-update'),
   );
   return readRequiredApiItem(result, 'Membership status could not be updated');
 }
@@ -521,7 +521,7 @@ export async function createMembershipAdminRechargePackage(
 ): Promise<MembershipsAdminRechargePackageItem> {
   const result = await backendMembershipsRechargePackagesCreate(
     buildRechargePackageMutationRequest(input),
-    createRequestParams('admin-membership-recharge-package-create'),
+    createIdempotencyParams('admin-membership-recharge-package-create'),
   );
   return normalizeAdminRechargePackage(readRequiredApiItem(result, 'Recharge package could not be created'));
 }
@@ -533,7 +533,7 @@ export async function updateMembershipAdminRechargePackage(
   const result = await backendMembershipsRechargePackagesUpdate(
     requiredMembershipText(packageId, 'packageId'),
     buildRechargePackageMutationRequest(input),
-    createRequestParams('admin-membership-recharge-package-update'),
+    createIdempotencyParams('admin-membership-recharge-package-update'),
   );
   return normalizeAdminRechargePackage(readRequiredApiItem(result, 'Recharge package could not be updated'));
 }

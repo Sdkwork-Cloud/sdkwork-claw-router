@@ -1,4 +1,4 @@
-import json
+﻿import json
 import re
 import unittest
 from pathlib import Path
@@ -409,7 +409,7 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
             app_sdk_auth,
         )
         self.assertNotIn("xRequestId", app_sdk_auth)
-        self.assertNotIn("createRequestParams('app-session')", session_service)
+        self.assertNotIn("createIdempotencyParams('app-session')", session_service)
         self.assertIn(".auth.sessions.create(", session_service)
         self.assertIn("grantType: 'session_bridge'", session_service)
         self.assertNotIn("xRequestId", session_service)

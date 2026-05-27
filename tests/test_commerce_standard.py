@@ -1,4 +1,4 @@
-import json
+﻿import json
 import re
 import unittest
 from collections import Counter
@@ -1176,7 +1176,7 @@ class CommerceStandardTest(unittest.TestCase):
         self.assertIn("getClawRouterAppSdkClient().commerce.memberships.purchases.create", service)
         self.assertIn("packageId: requiredPositiveIntegerId(packageId, 'packageId')", service)
         self.assertIn("paymentMethod: 'wechat'", service)
-        self.assertNotIn("createRequestToken('membership-purchase')", service)
+        self.assertNotIn("createClientOperationToken('membership-purchase')", service)
         self.assertNotIn("metadata:", service)
         self.assertNotIn('"/vip"', view)
         self.assertNotIn("'/vip'", view)
@@ -1423,26 +1423,26 @@ class CommerceStandardTest(unittest.TestCase):
         migrated_files = {
             "AccountOverviewView.tsx": [
                 "AccountOverviewView",
-                "账户详情与财务总览",
+                "璐︽埛璇︽儏涓庤储鍔℃€昏",
                 "/console/commerce?tab=recharge",
             ],
             "CommerceRechargeView.tsx": [
                 "CommerceRechargeView",
-                "余额充值",
-                "微信支付 (WeChat Pay)",
-                "国际信用卡 (Stripe)",
+                "浣欓鍏呭€?,
+                "寰俊鏀粯 (WeChat Pay)",
+                "鍥介檯淇＄敤鍗?(Stripe)",
                 "/console/commerce?tab=checkout",
             ],
             "CommerceCheckoutView.tsx": [
                 "CommerceCheckoutView",
-                "收银台",
-                "创建扫码支付订单",
+                "鏀堕摱鍙?,
+                "鍒涘缓鎵爜鏀粯璁㈠崟",
                 "CommerceService.fetchCheckoutStatus",
             ],
             "CommerceSettlementsView.tsx": [
                 "CommerceSettlementsView",
-                "账单与多模态结算",
-                "本月多模态日均消耗趋势",
+                "璐﹀崟涓庡妯℃€佺粨绠?,
+                "鏈湀澶氭ā鎬佹棩鍧囨秷鑰楄秼鍔?,
                 "CommerceService.fetchSettlementDashboard",
             ],
         }
@@ -1531,10 +1531,10 @@ class CommerceStandardTest(unittest.TestCase):
 
         for token in [
             "AdminFinancePanel",
-            "财务中心",
-            "资金流水",
-            "账单结算",
-            "导出报表",
+            "璐㈠姟涓績",
+            "璧勯噾娴佹按",
+            "璐﹀崟缁撶畻",
+            "瀵煎嚭鎶ヨ〃",
         ]:
             self.assertIn(token, finance_panel)
 

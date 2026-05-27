@@ -12,7 +12,7 @@ REQUEST_ID_SOURCE = (
     / "packages"
     / "sdkwork-claw-router-commons"
     / "src"
-    / "request-id.ts"
+    / "idempotency.ts"
 )
 PORTAL_SOURCE_ROOT = ROOT / "apps" / "sdkwork-claw-router-portal"
 APP_OPENAPI_SOURCE = ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json"
@@ -46,14 +46,17 @@ class FrontendRequestTokenStandardTest(unittest.TestCase):
         source = REQUEST_ID_SOURCE.read_text(encoding="utf-8")
 
         self.assertNotIn("createRequestId", source)
-        self.assertIn("export function createRequestToken", source)
-        self.assertIn("export function createRequestParams", source)
+        self.assertNotIn("createRequestToken", source)
+        self.assertNotIn("createRequestParams", source)
+        self.assertIn("export function createClientOperationToken", source)
+        self.assertIn("export function createIdempotencyParams", source)
         self.assertNotIn("randomUUID", source)
         self.assertIn("getRandomValues", source)
         self.assertIn("Secure random source is unavailable", source)
         self.assertIn("Secure random source returned an invalid token seed", source)
         self.assertNotIn("xRequestId", source)
         self.assertNotIn("X-Request-Id", source)
+        self.assertNotIn("request token", source.lower())
         self.assertNotIn("Math.random", source)
         self.assertNotIn("Date.now", source)
         self.assertNotIn("toString(36)", source)
@@ -67,10 +70,10 @@ class FrontendRequestTokenStandardTest(unittest.TestCase):
         self.assertIn("portal commons runtime tests", verifier)
         self.assertIn("apps/sdkwork-claw-router-portal/commons-runtime.test.ts", verifier)
         self.assertIn("verification plan includes portal commons runtime tests", tooling_test)
-        self.assertIn("createRequestParams creates only idempotency keys", node_test)
+        self.assertIn("createIdempotencyParams creates only idempotency keys", node_test)
         self.assertIn('assert.equal(captured[0].headers["x-request-id"], undefined)', node_test)
-        self.assertIn("createRequestToken fails closed when secure randomness is unavailable", node_test)
-        self.assertIn("createRequestToken rejects an all-zero random byte result", node_test)
+        self.assertIn("createClientOperationToken fails closed when secure randomness is unavailable", node_test)
+        self.assertIn("createClientOperationToken rejects an all-zero random byte result", node_test)
 
     def test_frontend_application_code_does_not_generate_or_send_request_ids(self) -> None:
         forbidden_patterns = [
@@ -78,6 +81,8 @@ class FrontendRequestTokenStandardTest(unittest.TestCase):
             re.compile(r"X-Request-Id"),
             re.compile(r"x-request-id"),
             re.compile(r"createRequestId"),
+            re.compile(r"createRequestToken"),
+            re.compile(r"createRequestParams"),
             re.compile(r"crypto\.randomUUID\(\)"),
         ]
         offenders: list[str] = []
@@ -86,6 +91,7 @@ class FrontendRequestTokenStandardTest(unittest.TestCase):
         for source_root in source_roots:
             for source_path in source_root.rglob("*.ts*"):
                 if source_path.name == "request-id.ts":
+                    offenders.append(str(source_path.relative_to(ROOT)))
                     continue
                 source = source_path.read_text(encoding="utf-8")
                 for pattern in forbidden_patterns:
@@ -115,6 +121,7 @@ class FrontendRequestTokenStandardTest(unittest.TestCase):
         for source_root in source_roots:
             for source_path in source_root.rglob("*.ts*"):
                 if source_path.name == "request-id.ts":
+                    offenders.append(str(source_path.relative_to(ROOT)))
                     continue
                 source = source_path.read_text(encoding="utf-8")
                 declarations = list(declaration_pattern.finditer(source))
